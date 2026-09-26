@@ -57,7 +57,7 @@ export function ForgotPasswordFlow() {
         )}
         {step.name === "reset" && (
           <ResetPasswordForm
-            email={step.session.email}
+            session={step.session}
             onDone={() => navigate("/login", { replace: true })}
           />
         )}

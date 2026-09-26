@@ -13,13 +13,13 @@ import {
 } from "~/components/ui/field";
 import { useResetPassword } from "../mutations/use-password-reset";
 import { resetPasswordSchema } from "../schemas/auth.schema";
-import type { ResetPasswordInput } from "../types";
+import type { OtpSession, ResetPasswordInput } from "../types";
 
 export function ResetPasswordForm({
-  email,
+  session,
   onDone,
 }: {
-  email: string;
+  session: OtpSession;
   onDone: () => void;
 }) {
   const resetPassword = useResetPassword();
@@ -32,7 +32,7 @@ export function ResetPasswordForm({
     <form
       noValidate
       onSubmit={form.handleSubmit(({ password }) =>
-        resetPassword.mutate({ email, password }, { onSuccess: onDone }),
+        resetPassword.mutate({ session, password }, { onSuccess: onDone }),
       )}
     >
       <FieldGroup>

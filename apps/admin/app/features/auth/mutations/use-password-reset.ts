@@ -19,8 +19,13 @@ export function useVerifyOtp() {
 
 export function useResetPassword() {
   return useMutation({
-    mutationFn: ({ email, password }: { email: string; password: string }) =>
-      authService.resetPassword(email, password),
+    mutationFn: ({
+      session,
+      password,
+    }: {
+      session: OtpSession;
+      password: string;
+    }) => authService.resetPassword(session, password),
     meta: {
       successMessage: "Password reset. Sign in with your new password.",
       errorMessage: false,

@@ -77,10 +77,15 @@ export const authService = {
     assertOk(statusResultSchema.parse(data), "Invalid code");
   },
 
-  async resetPassword(email: string, password: string) {
+  async resetPassword(session: OtpSession, password: string) {
     const { data } = await http.post(
       "user/v1/forgot_password/",
-      { email, new_password: password, confirm_password: password },
+      {
+        email: session.email,
+        otp_session_key: session.otpSessionKey,
+        new_password: password,
+        confirm_password: password,
+      },
       { skipAuth: true },
     );
     assertOk(statusResultSchema.parse(data), "Couldn't reset the password");
