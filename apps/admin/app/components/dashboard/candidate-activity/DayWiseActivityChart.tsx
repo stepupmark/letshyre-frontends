@@ -75,7 +75,7 @@ export default function DayWiseActivityChart({ data, days, onDaysChange, isFetch
                 try {
                   const d = new Date(val);
                   return `${d.getDate()} ${d.toLocaleString('default', { month: 'short' })}`;
-                } catch(e) {
+                } catch {
                   return val;
                 }
               }}

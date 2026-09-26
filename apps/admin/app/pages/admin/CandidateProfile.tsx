@@ -38,7 +38,7 @@ function fmtMonthYear(date?: string | null) {
   });
 }
 
-function formatDateRange(start?: string, end?: string | null) {
+function formatDateRange(start?: string | null, end?: string | null) {
   return `${fmtMonthYear(start)} - ${end ? fmtMonthYear(end) : "Present"}`;
 }
 
@@ -243,7 +243,7 @@ export default function CandidateProfile() {
         <Card title="Education">
           {c.education?.length ? (
             <div className="space-y-4">
-              {c.education.map((e: any, i: number) => (
+              {c.education.map((e, i) => (
                 <div
                   key={i}
                   className="p-5 transition-all duration-200 bg-card border border-border shadow-xs rounded-2xl hover:border-input hover:shadow-md"
@@ -290,7 +290,7 @@ export default function CandidateProfile() {
         <Card title="Work Experience">
           {c.experience?.length ? (
             <div className="space-y-3">
-              {c.experience.map((ex: any, i: number) => (
+              {c.experience.map((ex, i) => (
                 <div
                   key={i}
                   className="p-4 border border-border rounded-xl bg-muted/50"
@@ -315,7 +315,7 @@ export default function CandidateProfile() {
         <Card title="Projects">
           {c.projects?.length ? (
             <div className="space-y-3">
-              {c.projects.map((p: any, i: number) => (
+              {c.projects.map((p, i) => (
                 <div
                   key={i}
                   className="p-4 border border-border rounded-xl bg-muted/50"

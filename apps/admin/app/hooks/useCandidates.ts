@@ -41,8 +41,8 @@ export const useUpdateCandidateApproval = (profileId: string) => {
     mutationFn: (payload: CandidateApprovalPayload) =>
       updateCandidateApproval(profileId, payload),
 
-    onSuccess: (data, variables) => {
-      queryClient.setQueryData(["candidate_profile", profileId], (old: any) => {
+    onSuccess: (_, variables) => {
+      queryClient.setQueryData<CandidateProfileData>(["candidate_profile", profileId], (old) => {
         if (!old) return old;
         return {
           ...old,

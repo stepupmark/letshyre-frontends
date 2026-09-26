@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, Download, FileText, ChevronLeft, ChevronRight } from "lucide-react";
+import { Search, FileText, ChevronLeft, ChevronRight } from "lucide-react";
 import { useUnlockedProfiles } from "../../../hooks/useUnlocks";
 import { Table, TableHeader, TableBody, TableRow, TableCell } from "../../legacy-ui/table";
 

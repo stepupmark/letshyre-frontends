@@ -113,7 +113,7 @@ const JobsFilters: React.FC<JobsFiltersProps> = ({
             <select
               className="w-full px-3 py-2 text-sm text-foreground transition-colors border border-transparent appearance-none bg-muted/50 focus:bg-card focus:border-ring rounded-xl"
               value={approvalStatus}
-              onChange={(e) => setApprovalStatus(e.target.value as any)}
+              onChange={(e) => setApprovalStatus(e.target.value as ApprovalStatus | "")}
             >
               <option value="">All</option>
               <option value="pending">Pending</option>
@@ -129,7 +129,7 @@ const JobsFilters: React.FC<JobsFiltersProps> = ({
             <select
               className="w-full px-3 py-2 text-sm text-foreground transition-colors border border-transparent appearance-none bg-muted/50 focus:bg-card focus:border-ring rounded-xl"
               value={jobStatus}
-              onChange={(e) => setJobStatus(e.target.value as any)}
+              onChange={(e) => setJobStatus(e.target.value as JobStatus | "")}
             >
               <option value="">All</option>
               <option value="open">Open</option>

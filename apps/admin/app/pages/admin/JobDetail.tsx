@@ -202,13 +202,9 @@ export default function JobDetail() {
                 className="flex-1 border-transparent shadow-xs md:flex-none bg-green-600 hover:bg-green-700"
                 startIcon={<CheckCircle size={18} />}
                 onClick={handleApprove}
-                disabled={
-                  jobActionMutation.isPending ||
-                  (jobActionMutation as any).isLoading
-                }
+                disabled={jobActionMutation.isPending}
               >
-                {jobActionMutation.isPending ||
-                (jobActionMutation as any).isLoading
+                {jobActionMutation.isPending
                   ? "Approving..."
                   : jobStatus === "Rejected"
                     ? "Re-Approve"

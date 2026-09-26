@@ -32,8 +32,8 @@ export interface PaymentRecord {
   payment_order_id: string;
   order_signature: string;
   invoice_number: string | null;
-  order_data: any;
-  response_data: any;
+  order_data: unknown;
+  response_data: unknown;
   invoice_file: string | null;
   created_at: string;
   updated_at: string;

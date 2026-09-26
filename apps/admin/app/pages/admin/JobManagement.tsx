@@ -37,7 +37,7 @@ export default function JobManagement() {
     page,
   };
 
-  const { data, isLoading, isError } = useJobs(filters);
+  const { data, isLoading } = useJobs(filters);
   const { data: cardsData, isLoading: cardsLoading } = useJobManagementCards();
   const cards = cardsData?.data;
 

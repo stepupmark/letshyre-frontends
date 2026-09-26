@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router";
-import { Search, Filter, SlidersHorizontal, X } from "lucide-react";
+import { Search, SlidersHorizontal, X } from "lucide-react";
 import PageMeta from "../../components/common/PageMeta";
 import PaymentsCards from "../../components/payments/PaymentsCards";
 import PaymentsTable from "../../components/payments/PaymentsTable";

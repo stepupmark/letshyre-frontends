@@ -14,7 +14,7 @@ export type ChannelSettingsPatchPayload = Partial<
   Pick<ChannelSettings, "email_enabled" | "sms_enabled" | "push_enabled">
 >;
 
-interface ChannelSettingsGetResponse extends ChannelSettings {}
+type ChannelSettingsGetResponse = ChannelSettings;
 
 interface ChannelSettingsPatchResponse {
   status: boolean;

@@ -35,6 +35,33 @@ export interface CandidatesApiResponse {
   data: CandidatesData;
 }
 
+export interface CandidateEducation {
+  institution: string;
+  degree?: string | null;
+  level?: string | null;
+  field?: string | null;
+  stream?: string | null;
+  start_year?: string | number | null;
+  end_year?: string | number | null;
+  percentage?: string | number | null;
+}
+
+export interface CandidateExperience {
+  company: string;
+  role: string;
+  start_date?: string | null;
+  end_date?: string | null;
+  description?: string | null;
+}
+
+export interface CandidateProject {
+  title: string;
+  description?: string | null;
+  live_url?: string | null;
+  github_url?: string | null;
+  tech_stack?: string[] | null;
+}
+
 export interface CandidateProfileData {
   id: string;
   user: string;
@@ -45,16 +72,16 @@ export interface CandidateProfileData {
   dob: string | null;
   gender: string | null;
   location: string | null;
-  education: { institution: string; degree: string; year: string }[];
-  experience: { company: string; role: string; duration: string }[];
+  education: CandidateEducation[];
+  experience: CandidateExperience[];
   skills: string[];
   resume: string | null;
   resume_url: string | null;
-  projects: { title: string; description: string; link?: string }[];
+  projects: CandidateProject[];
   accomplishments: string[];
   address: string | null;
   interview_score: number[];
-  job_preferences: any;
+  job_preferences: unknown;
   preferred_locations: string[];
   preferred_industry: string | null;
   portfolio_links: string[];

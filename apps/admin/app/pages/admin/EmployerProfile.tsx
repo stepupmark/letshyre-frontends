@@ -30,22 +30,6 @@ function initials(name: string | null | undefined) {
     .toUpperCase();
 }
 
-const AVATAR_COLORS = [
-  "from-indigo-500 to-purple-600",
-  "from-blue-500 to-cyan-500",
-  "from-emerald-400 to-teal-500",
-  "from-rose-500 to-pink-600",
-  "from-amber-400 to-orange-500",
-  "from-violet-500 to-fuchsia-600",
-];
-
-function avatarGradient(name: string | null | undefined) {
-  if (!name) return AVATAR_COLORS[0];
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) hash += name.charCodeAt(i);
-  return AVATAR_COLORS[hash % AVATAR_COLORS.length];
-}
-
 export default function EmployerProfile() {
   const { id } = useParams<{ id: string }>();
   const { data: employer, isLoading, isError } = useEmployerProfile(id || "");
@@ -88,7 +72,7 @@ export default function EmployerProfile() {
       <div className="pb-6 space-y-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Link
-            to={-1}
+            to="/dashboard/employers"
             className="inline-flex items-center gap-2 text-sm font-medium transition-colors text-muted-foreground hover:text-foreground"
           >
             <ArrowLeft className="w-4 h-4" />

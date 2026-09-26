@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
@@ -14,6 +14,7 @@ import {
   CreditFormValues,
   creditSchema,
 } from "../../schemas/credit.schema";
+import { getErrorMessage } from "~/lib/api/api-error";
 
 const formatCurrency = (value: string | number) => {
   if (!value) return "₹ 0.00";
@@ -46,6 +47,8 @@ export default function CreditSetup() {
 
   const [isSaved, setIsSaved] = useState(false);
   const [displayValue, setDisplayValue] = useState("0");
+  const displayValueRef = useRef(displayValue);
+  displayValueRef.current = displayValue;
 
   useEffect(() => {
     if (data) {
@@ -57,11 +60,12 @@ export default function CreditSetup() {
   useEffect(() => {
     if (!data?.creditValue) return;
 
-    let start = Number(displayValue || 0);
+    const start = Number(displayValueRef.current || 0);
     const end = Number(data.creditValue);
     const duration = 300;
 
     const startTime = performance.now();
+    let frame = 0;
 
     const animate = (time: number) => {
       const progress = Math.min((time - startTime) / duration, 1);
@@ -69,10 +73,11 @@ export default function CreditSetup() {
 
       setDisplayValue(current.toFixed(2));
 
-      if (progress < 1) requestAnimationFrame(animate);
+      if (progress < 1) frame = requestAnimationFrame(animate);
     };
 
-    requestAnimationFrame(animate);
+    frame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frame);
   }, [data?.creditValue]);
 
   const onSubmit = (formData: CreditFormValues) => {
@@ -88,9 +93,9 @@ export default function CreditSetup() {
 
           setTimeout(() => setIsSaved(false), 2000);
         },
-        onError: (error: any) => {
+        onError: (error: Error) => {
           toast.error(
-            error?.response?.data?.data.credit_value || "Something went wrong",
+            getErrorMessage(error, "Something went wrong"),
           );
         },
       },

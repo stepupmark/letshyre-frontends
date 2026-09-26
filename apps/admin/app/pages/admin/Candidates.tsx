@@ -81,7 +81,6 @@ export default function Candidates() {
     useCandidateCards();
 
   const cards = cardsData?.data;
-  console.log("cards data", cards);
 
   const paginated = qData?.results || [];
   const totalPages = qData?.total_pages || 1;
@@ -229,7 +228,6 @@ export default function Candidates() {
                 value={filterGender}
                 onChange={(e) => {
                   setFilterGender(e.target.value);
-                  console.log("ssss gender ", e.target.value);
                   setPage(1);
                 }}
                 className="py-2 text-sm text-foreground transition bg-card border border-border shadow-xs rounded-xl focus:border-ring focus:outline-hidden focus:ring-2 focus:ring-ring/50"

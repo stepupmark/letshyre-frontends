@@ -1,5 +1,5 @@
 import React from "react";
-import Badge from "../legacy-ui/badge/Badge";
+import Badge, { type BadgeColor } from "../legacy-ui/badge/Badge";
 
 interface StatusBadgeProps {
   status: "open" | "paused" | "closed";
@@ -12,10 +12,10 @@ const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
     closed: { color: "error", label: "Closed" },
   } as const;
 
-  const { color, label } = config[status] || { color: "light", label: status };
+  const { color, label }: { color: BadgeColor; label: string } = config[status] ?? { color: "light", label: status };
 
   return (
-    <Badge variant="light" color={color as any}>
+    <Badge variant="light" color={color}>
       {label}
     </Badge>
   );

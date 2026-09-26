@@ -101,7 +101,8 @@ export default function PieChartCard({ title, subtitle, data, icon, badge }: Pro
                     key={`cell-${index}`}
                     fill={entry.color}
                     opacity={activeIndex === null || activeIndex === index ? 1 : 0.4}
-                    outerRadius={activeIndex === index ? HOVER_OUTER : OUTER_RADIUS}
+                    // Cell forwards this to the slice, the recharts types just don't list it
+                    {...{ outerRadius: activeIndex === index ? HOVER_OUTER : OUTER_RADIUS }}
                     style={{
                       cursor: "pointer",
                       transition: "opacity 0.18s ease, filter 0.18s ease",

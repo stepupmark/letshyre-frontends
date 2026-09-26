@@ -95,9 +95,9 @@ export default function RolePerformanceChart({
             <Bar
               dataKey="avg_score"
               radius={[6, 6, 0, 0]}
-              background={{ fill: barBackground, radius: [6, 6, 0, 0] }}
+              background={{ fill: barBackground, radius: 6 }}
             >
-              {data.map((entry, index) => (
+              {data.map((_, index) => (
                 <Cell
                   key={`cell-${index}`}
                   fill={colors[index % colors.length]}
@@ -106,7 +106,7 @@ export default function RolePerformanceChart({
               <LabelList
                 dataKey="avg_score"
                 position="top"
-                formatter={(value: number) => `${value}%`}
+                formatter={(value) => `${value}%`}
                 style={{ fill: "#4b5563", fontSize: 12, fontWeight: 600 }}
                 dy={-10}
               />

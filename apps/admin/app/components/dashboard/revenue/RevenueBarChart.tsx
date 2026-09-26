@@ -9,6 +9,7 @@ import {
   Cell,
   Legend,
 } from "recharts";
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { MonthlyRevenueDataPoint } from "../../../api/revenue.api";
 
@@ -19,14 +20,14 @@ interface RevenueBarChartProps {
 
 interface CustomTooltipProps {
   active?: boolean;
-  payload?: { value: number }[];
-  label?: string;
+  payload?: ReadonlyArray<{ value?: unknown }>;
+  label?: ReactNode;
   currency?: "USD" | "INR";
 }
 
 const CustomTooltip = ({ active, payload, label, currency = "USD" }: CustomTooltipProps) => {
   if (active && payload && payload.length) {
-    const formattedValue = payload[0].value.toLocaleString(currency === 'INR' ? 'en-IN' : 'en-US', {
+    const formattedValue = Number(payload[0]?.value ?? 0).toLocaleString(currency === 'INR' ? 'en-IN' : 'en-US', {
       style: 'currency',
       currency: currency === 'INR' ? 'INR' : 'USD',
       maximumFractionDigits: 0,
@@ -124,7 +125,8 @@ export default function RevenueBarChart({ data, currency }: RevenueBarChartProps
               fill: "#3B82F6",
               fontSize: 12,
               fontWeight: 600,
-              formatter: (value: number) => {
+              formatter: (label: unknown) => {
+                const value = Number(label);
                 if (value === 0) return "";
                 if (value >= 1000) return `${currency === 'INR' ? '₹' : '$'}${(value / 1000).toFixed(1)}k`;
                 return `${currency === 'INR' ? '₹' : '$'}${value}`;
