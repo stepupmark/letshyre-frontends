@@ -15,7 +15,7 @@ export function AppShell() {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <SidebarInset>
+      <SidebarInset className="min-w-0">
         <AppHeader />
         <main className="mx-auto w-full max-w-screen-2xl flex-1 p-4 md:p-6">
           <Outlet />
