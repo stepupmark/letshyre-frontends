@@ -11,17 +11,19 @@ import {
 
 export type RouteHandle = {
   breadcrumb?: string;
+  /** For flat detail routes whose list page isn't a parent match. */
+  parent?: { label: string; path: string };
 };
 
+type Crumb = { label: string; path: string };
+
 export function Breadcrumbs() {
-  const crumbs = useMatches()
-    .map((match) => ({
-      label: (match.handle as RouteHandle | undefined)?.breadcrumb,
-      path: match.pathname,
-    }))
-    .filter((crumb): crumb is { label: string; path: string } =>
-      Boolean(crumb.label),
-    );
+  const crumbs = useMatches().flatMap((match): Crumb[] => {
+    const handle = match.handle as RouteHandle | undefined;
+    if (!handle?.breadcrumb) return [];
+    const own = { label: handle.breadcrumb, path: match.pathname };
+    return handle.parent ? [handle.parent, own] : [own];
+  });
 
   if (!crumbs.length) return null;
 

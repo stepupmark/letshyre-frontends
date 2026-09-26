@@ -5,7 +5,10 @@ export const meta: Route.MetaFunction = () => [
   { title: "New coupon · LetsHyre Admin" },
 ];
 
-export const handle = { breadcrumb: "New coupon" };
+export const handle = {
+  breadcrumb: "New coupon",
+  parent: { label: "Coupons", path: "/dashboard/coupons" },
+};
 
 export { RouteErrorBoundary as ErrorBoundary } from "~/components/feedback/route-error-boundary";
 
