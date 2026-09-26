@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
 import { FileText } from "lucide-react";
+import { DetailList } from "~/components/detail-list";
 import { ExternalLink } from "~/components/external-link";
 import { SensitiveValue } from "~/components/sensitive-value";
 import { Button } from "~/components/ui/button";
@@ -12,25 +12,6 @@ import {
 } from "~/components/ui/card";
 import { safeExternalUrl } from "~/lib/safe-url";
 import type { CompanyKyc } from "../schemas/kyc.schema";
-
-export function DetailList({
-  items,
-}: {
-  items: { label: string; value: ReactNode }[];
-}) {
-  return (
-    <dl className="grid gap-x-6 gap-y-4 sm:grid-cols-2">
-      {items.map((item) => (
-        <div key={item.label} className="min-w-0">
-          <dt className="text-xs text-muted-foreground">{item.label}</dt>
-          <dd className="mt-0.5 text-sm break-words">
-            {item.value || <span className="text-muted-foreground">—</span>}
-          </dd>
-        </div>
-      ))}
-    </dl>
-  );
-}
 
 function WebLink({ href }: { href: string | null | undefined }) {
   return (

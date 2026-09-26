@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowLeft } from "lucide-react";
+import { DetailList } from "~/components/detail-list";
 import { EmptyState } from "~/components/feedback/empty-state";
 import { ErrorState } from "~/components/feedback/error-state";
 import { Button } from "~/components/ui/button";
@@ -9,7 +10,6 @@ import { Skeleton } from "~/components/ui/skeleton";
 import {
   CompanyAvatar,
   CompanyKycDetails,
-  DetailList,
   KycStatusBadge,
 } from "~/features/kyc";
 import { formatDate, formatNumber } from "~/lib/format";
