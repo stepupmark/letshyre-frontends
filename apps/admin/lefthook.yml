@@ -1,0 +1,22 @@
+# CI was removed, so these hooks are the quality gate before code is shared
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      glob: "*.{ts,tsx,js,json,css,md,yml,yaml}"
+      # call node directly, the .cmd shims hit Windows' 8k command-line limit on big commits
+      run: node node_modules/prettier/bin/prettier.cjs --write {staged_files}
+      stage_fixed: true
+    lint:
+      glob: "*.{ts,tsx}"
+      run: node node_modules/eslint/bin/eslint.js --max-warnings 0 {staged_files}
+
+pre-push:
+  parallel: true
+  commands:
+    typecheck:
+      run: pnpm typecheck
+    lint:
+      run: pnpm lint
+    format:
+      run: pnpm format:check
