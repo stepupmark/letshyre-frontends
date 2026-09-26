@@ -21,6 +21,7 @@ import ToggleRow from "../../components/system-config/ToggleRow";
 import ReadonlyRow from "../../components/system-config/ReadonlyRow";
 import EditableRow from "../../components/system-config/EditableRow";
 import SystemConfigSkeleton from "../../components/system-config/SystemConfigSkeleton";
+import { getErrorMessage } from "~/lib/api/api-error";
 
 function formatUpdatedAt(iso: string): string {
   return new Intl.DateTimeFormat("en-IN", {
@@ -100,8 +101,7 @@ export default function SystemConfigs() {
         },
         onError: (err: unknown) => {
           const message =
-            (err as { response?: { data?: { message?: string } } })?.response
-              ?.data?.message || "Something went wrong. Please try again.";
+            getErrorMessage(err, "Something went wrong. Please try again.");
           toast.error(message);
         },
       },
@@ -124,8 +124,7 @@ export default function SystemConfigs() {
         },
         onError: (err: unknown) => {
           const message =
-            (err as { response?: { data?: { message?: string } } })?.response
-              ?.data?.message || "Something went wrong. Please try again.";
+            getErrorMessage(err, "Something went wrong. Please try again.");
           toast.error(message);
         },
       },

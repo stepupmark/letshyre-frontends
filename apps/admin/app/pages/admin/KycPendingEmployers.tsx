@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import PageMeta from "../../components/common/PageMeta";
 import { usePendingKycEmployers } from "../../hooks/useKyc";
 import { Link } from "react-router";
-import { AxiosError } from "axios";
 import {
   Table,
   TableBody,
@@ -11,6 +10,7 @@ import {
   TableRow,
 } from "../../components/legacy-ui/table";
 import { ChevronRight } from "lucide-react";
+import { getErrorMessage } from "~/lib/api/api-error";
 
 const GlobeIcon = () => (
   <svg
@@ -84,8 +84,7 @@ export default function KycPendingEmployers() {
   } = usePendingKycEmployers(page, statusFilter);
 
   const errorMessage = isError
-    ? (error as AxiosError<{ message: string }>)?.response?.data?.message ||
-      "Failed to fetch KYC records."
+    ? getErrorMessage(error, "Failed to fetch KYC records.")
     : null;
 
   const handleNextPage = () => {

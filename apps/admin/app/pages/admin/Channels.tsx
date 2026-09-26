@@ -17,6 +17,7 @@ import {
 import type { ChannelSettingsPatchPayload } from "../../api/channels.api";
 import ChannelCard from "../../components/channels/ChannelCard";
 import ChannelsSkeleton from "../../components/channels/ChannelsSkeleton";
+import { getErrorMessage } from "~/lib/api/api-error";
 
 function formatUpdatedAt(iso: string): string {
   return new Intl.DateTimeFormat("en-IN", {
@@ -88,8 +89,7 @@ export default function Channels() {
         },
         onError: (err: unknown) => {
           const message =
-            (err as { response?: { data?: { message?: string } } })?.response
-              ?.data?.message ?? "Something went wrong. Please try again.";
+            getErrorMessage(err, "Something went wrong. Please try again.");
           toast.error(message);
         },
       },

@@ -6,8 +6,8 @@ import { toast } from "sonner";
 import PageMeta from "../../components/common/PageMeta";
 import { useKycDetail, useUpdateKycStatus } from "../../hooks/useKyc";
 import { Modal } from "../../components/legacy-ui/modal/model2";
-import { AxiosError } from "axios";
 import { KycRejectFormValues, kycRejectSchema } from "../../schemas/kyc.schema";
+import { getErrorMessage } from "~/lib/api/api-error";
 
 const CheckCircleIcon = () => (
   <svg
@@ -271,8 +271,7 @@ export default function KycDetail() {
   const [approving, setApproving] = useState(false);
 
   const errorMessage = isError
-    ? (error as AxiosError<{ message: string }>)?.response?.data?.message ||
-      "Failed to fetch KYC detail."
+    ? getErrorMessage(error, "Failed to fetch KYC detail.")
     : null;
 
   const handleApprove = () => {
@@ -287,10 +286,7 @@ export default function KycDetail() {
         },
         onError: (err: unknown) => {
           setApproving(false);
-          const authError = err as AxiosError<{ message: string }>;
-          toast.error(
-            authError.response?.data?.message || "Failed to approve KYC.",
-          );
+          toast.error(getErrorMessage(err, "Failed to approve KYC."));
         },
       },
     );
@@ -306,10 +302,7 @@ export default function KycDetail() {
           toast.error("KYC Rejected successfully");
         },
         onError: (err: unknown) => {
-          const authError = err as AxiosError<{ message: string }>;
-          toast.error(
-            authError.response?.data?.message || "Failed to reject KYC.",
-          );
+          toast.error(getErrorMessage(err, "Failed to reject KYC."));
         },
       },
     );

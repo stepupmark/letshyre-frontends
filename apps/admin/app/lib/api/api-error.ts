@@ -16,9 +16,14 @@ export class ApiError extends Error {
   }
 }
 
-function firstString(value: unknown): string | undefined {
+// DRF nests messages in arrays and objects, e.g. { message: { code: ["Already exists"] } }
+function firstString(value: unknown, depth = 0): string | undefined {
   if (typeof value === "string") return value.trim() || undefined;
-  if (Array.isArray(value)) return firstString(value[0]);
+  if (depth > 3 || !value || typeof value !== "object") return undefined;
+  for (const item of Array.isArray(value) ? value : Object.values(value)) {
+    const found = firstString(item, depth + 1);
+    if (found) return found;
+  }
   return undefined;
 }
 
@@ -53,6 +58,7 @@ export function toApiError(error: unknown): ApiError {
       firstString(body.detail) ??
       firstString(nested.message) ??
       Object.values(fieldErrors)[0]?.[0] ??
+      firstString(nested) ??
       (typeof data === "string" && data.length < 200 ? firstString(data) : undefined) ??
       (status === null ? NETWORK_MESSAGE : FALLBACK_MESSAGE);
 

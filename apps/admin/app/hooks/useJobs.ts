@@ -16,6 +16,7 @@ import {
   JobManagementCards,
 } from "../api/jobs.api";
 import { toast } from "sonner";
+import { getErrorMessage } from "~/lib/api/api-error";
 
 export const useJobs = (filters: JobFilters) => {
   return useQuery({
@@ -44,8 +45,8 @@ export const useApproveJob = () => {
       queryClient.invalidateQueries({ queryKey: ["jobs"] });
       toast.success("Job approved successfully");
     },
-    onError: (error: any) => {
-      toast.error(error?.response?.data?.message || "Failed to approve job");
+    onError: (error: Error) => {
+      toast.error(getErrorMessage(error, "Failed to approve job"));
     },
   });
 };
@@ -58,8 +59,8 @@ export const useRejectJob = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["jobs"] });
     },
-    onError: (error: any) => {
-      toast.error(error?.response?.data?.message || "Failed to reject job");
+    onError: (error: Error) => {
+      toast.error(getErrorMessage(error, "Failed to reject job"));
     },
   });
 };
@@ -79,9 +80,9 @@ export const useUpdateJobStatus = () => {
       queryClient.invalidateQueries({ queryKey: ["jobs"] });
       toast.success("Job status updated successfully");
     },
-    onError: (error: any) => {
+    onError: (error: Error) => {
       toast.error(
-        error?.response?.data?.message || "Failed to update job status",
+        getErrorMessage(error, "Failed to update job status"),
       );
     },
   });
@@ -97,8 +98,8 @@ export const useDeleteJob = () => {
       queryClient.invalidateQueries({ queryKey: ["jobs"] });
       toast.success("Job deleted successfully");
     },
-    onError: (error: any) => {
-      toast.error(error?.response?.data?.message || "Failed to delete job");
+    onError: (error: Error) => {
+      toast.error(getErrorMessage(error, "Failed to delete job"));
     },
   });
 };
@@ -122,9 +123,9 @@ export const useBulkActionJobs = () => {
             : "deleted";
       toast.success(`Jobs ${actionPastTense} successfully`);
     },
-    onError: (error: any) => {
+    onError: (error: Error) => {
       toast.error(
-        error?.response?.data?.message || "Failed to perform bulk action",
+        getErrorMessage(error, "Failed to perform bulk action"),
       );
     },
   });
@@ -154,9 +155,9 @@ export const useJobActions = () => {
             : "deleted";
       toast.success(`Jobs ${actionPastTense} successfully`);
     },
-    onError: (error: any) => {
+    onError: (error: Error) => {
       toast.error(
-        error?.response?.data?.message || "Failed to perform bulk action",
+        getErrorMessage(error, "Failed to perform bulk action"),
       );
     },
   });
