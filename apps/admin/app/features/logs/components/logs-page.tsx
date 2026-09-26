@@ -1,0 +1,125 @@
+import { useQuery } from "@tanstack/react-query";
+import type { ColumnDef } from "@tanstack/react-table";
+import { useQueryStates } from "nuqs";
+import { DataTable } from "~/components/data-table/data-table";
+import { EmptyState } from "~/components/feedback/empty-state";
+import { PageHeader } from "~/components/page-header";
+import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
+import { formatDateTime } from "~/lib/format";
+import { logsQueries } from "../queries/logs.queries";
+import type { EmailLog, SmsLog } from "../schemas/logs.schema";
+import { logsSearchParams } from "../search-params";
+import { OtpStatusBadge, VerifiedBadge } from "./otp-status-badge";
+
+function statusColumns<T extends EmailLog | SmsLog>(): ColumnDef<T, unknown>[] {
+  return [
+    {
+      id: "status",
+      header: "Status",
+      cell: ({ row }) => <OtpStatusBadge status={row.original.otp_status} />,
+    },
+    {
+      id: "verified",
+      header: "Verified",
+      cell: ({ row }) => <VerifiedBadge verified={row.original.is_verified} />,
+    },
+    {
+      id: "sent",
+      header: "Sent at",
+      cell: ({ row }) => (
+        <span className="text-muted-foreground">
+          {formatDateTime(row.original.created_at)}
+        </span>
+      ),
+    },
+  ];
+}
+
+const emailColumns: ColumnDef<EmailLog, unknown>[] = [
+  {
+    id: "recipient",
+    header: "Recipient",
+    cell: ({ row }) => (
+      <span className="font-medium">{row.original.email}</span>
+    ),
+  },
+  {
+    id: "type",
+    header: "OTP type",
+    cell: ({ row }) => row.original.otp_type ?? "—",
+  },
+  ...statusColumns<EmailLog>(),
+];
+
+const smsColumns: ColumnDef<SmsLog, unknown>[] = [
+  {
+    id: "phone",
+    header: "Phone number",
+    cell: ({ row }) => (
+      <span className="font-medium tabular-nums">
+        {row.original.phone_number}
+      </span>
+    ),
+  },
+  ...statusColumns<SmsLog>(),
+];
+
+export function LogsPage() {
+  const [{ channel, page }, setParams] = useQueryStates(logsSearchParams);
+  const email = useQuery({
+    ...logsQueries.email(page),
+    enabled: channel === "email",
+  });
+  const sms = useQuery({
+    ...logsQueries.sms(page),
+    enabled: channel === "sms",
+  });
+  const logs = channel === "email" ? email : sms;
+
+  const tableProps = {
+    page,
+    pageCount: logs.data?.total_pages ?? 1,
+    totalCount: logs.data?.count,
+    onPageChange: (next: number) => void setParams({ page: next }),
+    isLoading: logs.isPending,
+    error: logs.error,
+    onRetry: () => void logs.refetch(),
+    empty: <EmptyState title="No logs yet" />,
+  };
+
+  return (
+    <>
+      <PageHeader
+        title="Communication logs"
+        description="Outgoing OTP emails and SMS messages, newest first."
+      />
+      <Tabs
+        value={channel}
+        onValueChange={(value) =>
+          void setParams({ channel: value as typeof channel, page: null })
+        }
+        className="mb-4"
+      >
+        <TabsList>
+          <TabsTrigger value="email">Email</TabsTrigger>
+          <TabsTrigger value="sms">SMS</TabsTrigger>
+        </TabsList>
+      </Tabs>
+      {channel === "email" ? (
+        <DataTable
+          columns={emailColumns}
+          data={email.data?.results}
+          getRowId={(row) => row.id}
+          {...tableProps}
+        />
+      ) : (
+        <DataTable
+          columns={smsColumns}
+          data={sms.data?.results}
+          getRowId={(row) => row.id}
+          {...tableProps}
+        />
+      )}
+    </>
+  );
+}
