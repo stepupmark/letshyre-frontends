@@ -12,6 +12,7 @@ import {
 } from "../../schemas/paymentsGateway.schema";
 import { useAddPaymentGateway } from "../../hooks/usePaymentGateways";
 import { toast } from "sonner";
+import { getErrorMessage } from "~/lib/api/api-error";
 
 export default function AddPaymentGateway() {
   const {
@@ -39,16 +40,15 @@ export default function AddPaymentGateway() {
   const { mutate, isPending } = useAddPaymentGateway();
 
   const onSubmit = (data: PaymentGateway) => {
-    console.log(data);
 
     mutate(data, {
       onSuccess: () => {
         toast.success("Payment Gateway added successfully");
         reset();
       },
-      onError: (error: any) => {
+      onError: (error: Error) => {
         toast.error(
-          error?.response?.data?.data.message || "Something went wrong",
+          getErrorMessage(error, "Something went wrong"),
         );
       },
     });
@@ -59,7 +59,7 @@ export default function AddPaymentGateway() {
       <div className="max-w-6xl">
         <div className="flex items-center gap-3 mb-5 text-sm">
           <Link
-            to={-1}
+            to="/dashboard/payment-gateways"
             className="flex items-center gap-1 text-muted-foreground transition hover:text-foreground"
           >
             <ChevronLeft size={15} />

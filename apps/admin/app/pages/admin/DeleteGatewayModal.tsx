@@ -3,6 +3,7 @@ import { Modal } from "../../components/legacy-ui/modal/model2";
 import Button from "../../components/legacy-ui/button/Button";
 import { Gateway, useDeletePaymentGateway } from "../../hooks/usePaymentGateways";
 import { toast } from "sonner";
+import { getErrorMessage } from "~/lib/api/api-error";
 
 interface DeleteGatewayModalProps {
   isOpen: boolean;
@@ -26,8 +27,8 @@ export default function DeleteGatewayModal({
         toast.success("Payment Gateway deleted successfully");
         onClose();
       },
-      onError: (error: any) => {
-        toast.error(error?.response?.data?.message || "Something went wrong");
+      onError: (error: Error) => {
+        toast.error(getErrorMessage(error, "Something went wrong"));
       },
     });
   };

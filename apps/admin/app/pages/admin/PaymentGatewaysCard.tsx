@@ -15,10 +15,10 @@ import {
 } from "../../schemas/paymentsGateway.schema";
 import {
   Gateway,
-  useDeletePaymentGateway,
   usePaymentGatewayDetail,
   useUpdatePaymentGateway,
 } from "../../hooks/usePaymentGateways";
+import { getErrorMessage } from "~/lib/api/api-error";
 
 export default function GatewayCard({ gateway }: { gateway: Gateway }) {
   const [showSecret, setShowSecret] = useState(false);
@@ -62,10 +62,8 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
 
   const { mutate, isPending } = useUpdatePaymentGateway();
 
-  const { isPending: deleteIsPending } = useDeletePaymentGateway();
 
   const onSubmit = (data: PaymentGateway) => {
-    console.log(data);
 
     mutate(
       { ...data, id },
@@ -76,9 +74,9 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
           setIsEditModalOpen((prev) => !prev);
           setId("");
         },
-        onError: (error: any) => {
+        onError: (error: Error) => {
           toast.error(
-            error?.response?.data?.data.message || "Something went wrong",
+            getErrorMessage(error, "Something went wrong"),
           );
         },
       },
@@ -191,13 +189,12 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
             variant="outline"
             className="px-4 text-sm h-9 rounded-2xl dark:border-border dark:bg-muted dark:text-white dark:hover:bg-muted"
             onClick={() => setIsDeleteModalOpen(true)}
-            disabled={deleteIsPending}
             aria-label="Delete payment gateway"
           >
             <span className="mr-2">
               <Trash2 size={14} className="text-red-500" />
             </span>
-            {deleteIsPending ? "Deleting..." : "Delete"}
+            Delete
           </Button>
           <Button
             onClick={() => {

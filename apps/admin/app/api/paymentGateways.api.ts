@@ -60,7 +60,7 @@ export const addPaymentGateway = async (data: PaymentGateway) => {
     return await http.post(`finances/v1/payment_gateway_managment/`, {
       name: data.gatewayName,
       display_name: data.displayName,
-      is_sandbox: data.isActive,
+      is_sandbox: data.environment === "sandbox",
       credentials: {
         client_id: data.clientId,
         client_secret: data.clientSecret,
@@ -81,7 +81,7 @@ export const updatePaymentGateway = async ({
       {
         name: data.gatewayName,
         display_name: data.displayName,
-        is_sandbox: data.isActive,
+        is_sandbox: data.environment === "sandbox",
         credentials: {
           client_id: data.clientId,
           client_secret: data.clientSecret,
