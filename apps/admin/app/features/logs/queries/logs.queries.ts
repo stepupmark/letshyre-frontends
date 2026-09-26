@@ -1,7 +1,7 @@
 import { keepPreviousData, queryOptions } from "@tanstack/react-query";
 import { logsService } from "../services/logs.service";
 
-export const logsKeys = {
+const logsKeys = {
   all: ["logs"] as const,
   email: (page: number) => [...logsKeys.all, "email", page] as const,
   sms: (page: number) => [...logsKeys.all, "sms", page] as const,

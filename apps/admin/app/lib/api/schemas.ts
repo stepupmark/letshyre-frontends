@@ -18,14 +18,4 @@ export const paginated = <T extends z.ZodType>(item: T) =>
     results: z.array(item),
   });
 
-export type Paginated<T> = {
-  count: number;
-  total_pages: number;
-  current_page: number;
-  page_size?: number;
-  next?: string | null;
-  previous?: string | null;
-  results: T[];
-};
-
 export const id = z.union([z.string(), z.number()]).transform(String);

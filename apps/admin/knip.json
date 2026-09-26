@@ -1,0 +1,5 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "ignore": ["app/components/ui/**", "app/lib/utils.ts"],
+  "ignoreDependencies": ["@react-router/node"]
+}

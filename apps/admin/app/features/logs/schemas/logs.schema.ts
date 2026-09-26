@@ -8,13 +8,13 @@ const logBase = {
   created_at: z.string(),
 };
 
-export const emailLogSchema = z.object({
+const emailLogSchema = z.object({
   ...logBase,
   email: z.string(),
   otp_type: z.string().nullish(),
 });
 
-export const smsLogSchema = z.object({
+const smsLogSchema = z.object({
   ...logBase,
   phone_number: z.string(),
 });

@@ -2,7 +2,7 @@ import { keepPreviousData, queryOptions } from "@tanstack/react-query";
 import type { UnlockedProfilesFilters } from "../schemas/unlocks.schema";
 import { unlocksService } from "../services/unlocks.service";
 
-export const unlocksKeys = {
+const unlocksKeys = {
   all: ["unlocks"] as const,
   overview: () => [...unlocksKeys.all, "overview"] as const,
   list: (filters: UnlockedProfilesFilters) =>

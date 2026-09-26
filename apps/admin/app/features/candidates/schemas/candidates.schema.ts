@@ -25,7 +25,7 @@ export const INDUSTRIES = [
   "Logistics & Supply Chain",
 ] as const;
 
-export const candidateSchema = z.object({
+const candidateSchema = z.object({
   id,
   name: text,
   email: text,
@@ -39,7 +39,7 @@ export const candidateSchema = z.object({
   created_at: z.string(),
 });
 
-export const candidateProfileSchema = z.object({
+const candidateProfileSchema = z.object({
   id,
   name: text,
   email: text,
@@ -104,7 +104,7 @@ export const candidateProfileSchema = z.object({
   updated_at: text,
 });
 
-export const candidateSummarySchema = z.object({
+const candidateSummarySchema = z.object({
   total_candidates: count,
   today_registrations: count,
   completed_profiles: count,

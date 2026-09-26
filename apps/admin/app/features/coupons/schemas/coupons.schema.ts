@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { envelope, id, paginated } from "~/lib/api/schemas";
 
-export const couponSchema = z.object({
+const couponSchema = z.object({
   id,
   code: z.string(),
   discount_type: z.enum(["flat", "percentage"]),

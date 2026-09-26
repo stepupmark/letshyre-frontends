@@ -8,7 +8,7 @@ const count = z
 
 const money = z.union([z.string(), z.number()]).nullish();
 
-export const paymentSummarySchema = z.object({
+const paymentSummarySchema = z.object({
   total_payments: count,
   success_payments: count,
   pending_payments: count,
@@ -16,7 +16,7 @@ export const paymentSummarySchema = z.object({
   repeated_customers: count,
 });
 
-export const paymentSchema = z.object({
+const paymentSchema = z.object({
   id,
   employeer: z.string().nullish(),
   employeer_id: z.union([z.string(), z.number()]).nullish(),

@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { envelope, id } from "~/lib/api/schemas";
 
-export const systemConfigSchema = z.object({
+const systemConfigSchema = z.object({
   id,
   maintenance_mode: z.boolean(),
   mfa_required_for_admins: z.boolean(),

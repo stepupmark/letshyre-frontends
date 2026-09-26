@@ -13,7 +13,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-export type NavLink = {
+type NavLink = {
   title: string;
   url: string;
 };

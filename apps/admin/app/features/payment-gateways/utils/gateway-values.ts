@@ -13,7 +13,7 @@ export const EMPTY_GATEWAY: GatewayFormValues = {
   clientSecret: "",
 };
 
-export function isProvider(value: string): value is GatewayProvider {
+function isProvider(value: string): value is GatewayProvider {
   return value in GATEWAY_PROVIDERS;
 }
 

@@ -1,7 +1,7 @@
 import { keepPreviousData, queryOptions } from "@tanstack/react-query";
 import { employersService } from "../services/employers.service";
 
-export const employersKeys = {
+const employersKeys = {
   all: ["employers"] as const,
   list: (page: number) => [...employersKeys.all, "list", page] as const,
   detail: (id: string) => [...employersKeys.all, "detail", id] as const,

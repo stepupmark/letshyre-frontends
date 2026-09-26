@@ -3,7 +3,7 @@ import { dashboardService } from "../services/dashboard.service";
 
 const FIVE_MINUTES = 5 * 60_000;
 
-export const dashboardKeys = {
+const dashboardKeys = {
   all: ["dashboard"] as const,
   revenueSummary: () => [...dashboardKeys.all, "revenue"] as const,
   monthlyRevenue: (year: number) =>

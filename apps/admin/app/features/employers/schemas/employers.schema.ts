@@ -7,7 +7,7 @@ const count = z
   .nullish()
   .transform((value) => value ?? 0);
 
-export const employerSchema = z.object({
+const employerSchema = z.object({
   id,
   user_name: z.string().nullish(),
   email: z.string().nullish(),
@@ -17,7 +17,7 @@ export const employerSchema = z.object({
   employer_kyc: companyKycSchema.nullish(),
 });
 
-export const employerSummarySchema = z.object({
+const employerSummarySchema = z.object({
   total_employees: count,
   today_registerations: count,
   completed_kycs: count,

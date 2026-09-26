@@ -6,7 +6,7 @@ const count = z
   .nullish()
   .transform((value) => value ?? 0);
 
-export const unlocksOverviewSchema = z.object({
+const unlocksOverviewSchema = z.object({
   summary: z.object({
     total_unlocks: count,
     today_unlocks: count,
@@ -37,7 +37,7 @@ export const unlocksOverviewSchema = z.object({
     .nullish(),
 });
 
-export const unlockedProfileSchema = z.object({
+const unlockedProfileSchema = z.object({
   employer: z.string().nullish(),
   candidate: z.string().nullish(),
   candidate_name: z.string().nullish(),
@@ -54,7 +54,6 @@ export const unlockedProfilesResponseSchema = envelope(
   paginated(unlockedProfileSchema),
 );
 
-export type UnlocksOverview = z.infer<typeof unlocksOverviewSchema>;
 export type UnlockedProfile = z.infer<typeof unlockedProfileSchema>;
 export type UnlockedProfilesFilters = {
   page: number;

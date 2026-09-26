@@ -9,7 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "~/components/ui/breadcrumb";
 
-export type RouteHandle = {
+type RouteHandle = {
   breadcrumb?: string;
   /** For flat detail routes whose list page isn't a parent match. */
   parent?: { label: string; path: string };

@@ -9,7 +9,7 @@ export const GATEWAY_PROVIDERS = {
 
 export type GatewayProvider = keyof typeof GATEWAY_PROVIDERS;
 
-export const gatewaySchema = z
+const gatewaySchema = z
   .object({
     id,
     name: z.string(),

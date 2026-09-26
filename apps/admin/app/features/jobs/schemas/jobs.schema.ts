@@ -26,7 +26,7 @@ function approvalOf(job: {
   return "pending";
 }
 
-export const jobSchema = z
+const jobSchema = z
   .object({
     id,
     title: text,
@@ -42,7 +42,7 @@ export const jobSchema = z
   })
   .transform((job) => ({ ...job, approval: approvalOf(job) }));
 
-export const jobDetailSchema = z
+const jobDetailSchema = z
   .object({
     id,
     employer: z.union([z.string(), z.number()]).nullish(),
@@ -81,7 +81,7 @@ export const jobDetailSchema = z
     approval: (job.job_status?.toLowerCase() ?? "pending") as ApprovalStatus,
   }));
 
-export const jobsSummarySchema = z.object({
+const jobsSummarySchema = z.object({
   total_post_jobs: count,
   today_job_posts: count,
   approved_jobs: count,

@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { envelope, id } from "~/lib/api/schemas";
 
-export const creditSchema = z
+const creditSchema = z
   .object({
     id,
     credit_value: z.union([z.string(), z.number()]).transform(String),

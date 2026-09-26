@@ -3,7 +3,7 @@ import { envelope } from "~/lib/api/schemas";
 
 const amount = z.coerce.number().catch(0);
 
-export const revenueSummarySchema = z.object({
+const revenueSummarySchema = z.object({
   total_revenue: amount,
   today_revenue: amount,
   weekly_revenue: amount,
