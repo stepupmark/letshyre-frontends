@@ -8,6 +8,7 @@
     "dev": "react-router dev",
     "build": "react-router build && node scripts/security-headers.mjs",
     "preview": "node scripts/preview.mjs",
+    "size": "node scripts/check-bundle.mjs",
     "typecheck": "react-router typegen && tsc",
     "lint": "eslint . --max-warnings 0",
     "format": "prettier --write .",
