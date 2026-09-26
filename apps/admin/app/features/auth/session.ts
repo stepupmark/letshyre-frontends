@@ -21,6 +21,12 @@ async function getSession(): Promise<Session | null> {
     return { user: await queryClient.ensureQueryData(authQueries.me()) };
   } catch (error) {
     if (error instanceof ApiError && error.status === 401) return null;
+    // a valid token that isn't an admin's
+    if (error instanceof ApiError && error.status === 403) {
+      tokenStore.clear();
+      queryClient.clear();
+      throw redirect("/login?reason=forbidden");
+    }
     throw error;
   }
 }

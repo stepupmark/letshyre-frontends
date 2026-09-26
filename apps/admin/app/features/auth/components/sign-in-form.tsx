@@ -26,6 +26,7 @@ import type { LoginInput } from "../types";
 const REASON_MESSAGES: Record<string, string> = {
   expired: "Your session expired. Please sign in again.",
   idle: "You were signed out after a period of inactivity.",
+  forbidden: "This account doesn't have admin access.",
 };
 
 export function SignInForm() {
