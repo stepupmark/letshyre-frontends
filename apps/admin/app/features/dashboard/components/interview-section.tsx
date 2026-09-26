@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import { Suspense } from "react";
 import { EmptyState } from "~/components/feedback/empty-state";
 import { ErrorState } from "~/components/feedback/error-state";
 import {
@@ -9,21 +9,12 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-  type ChartConfig,
-} from "~/components/ui/chart";
 import { Progress } from "~/components/ui/progress";
 import { Skeleton } from "~/components/ui/skeleton";
 import { formatNumber } from "~/lib/format";
 import { dashboardQueries } from "../queries/dashboard.queries";
+import { RoleScoreChart } from "./lazy-charts";
 import { DashboardSection } from "./section";
-
-const chartConfig = {
-  avg_score: { label: "Average score", color: "var(--chart-2)" },
-} satisfies ChartConfig;
 
 export function InterviewSection() {
   const insights = useQuery(dashboardQueries.interview());
@@ -58,28 +49,9 @@ export function InterviewSection() {
           </CardHeader>
           <CardContent>
             {roles.length ? (
-              <ChartContainer
-                config={chartConfig}
-                className="aspect-[2/1] w-full"
-              >
-                <BarChart data={roles} layout="vertical" margin={{ left: 8 }}>
-                  <CartesianGrid horizontal={false} />
-                  <XAxis type="number" domain={[0, 100]} hide />
-                  <YAxis
-                    type="category"
-                    dataKey="role"
-                    tickLine={false}
-                    axisLine={false}
-                    width={120}
-                  />
-                  <ChartTooltip content={<ChartTooltipContent />} />
-                  <Bar
-                    dataKey="avg_score"
-                    fill="var(--color-avg_score)"
-                    radius={4}
-                  />
-                </BarChart>
-              </ChartContainer>
+              <Suspense fallback={<Skeleton className="aspect-[2/1] w-full" />}>
+                <RoleScoreChart data={roles} />
+              </Suspense>
             ) : (
               <EmptyState title="No interviews yet" />
             )}

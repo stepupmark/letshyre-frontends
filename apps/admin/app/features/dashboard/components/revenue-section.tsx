@@ -7,7 +7,7 @@ import {
   Receipt,
   ShoppingCart,
 } from "lucide-react";
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import { Suspense } from "react";
 import { ErrorState } from "~/components/feedback/error-state";
 import { StatCard } from "~/components/stat-card";
 import {
@@ -19,12 +19,6 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-  type ChartConfig,
-} from "~/components/ui/chart";
-import {
   Select,
   SelectContent,
   SelectItem,
@@ -35,17 +29,8 @@ import { Skeleton } from "~/components/ui/skeleton";
 import { formatCurrency, formatNumber } from "~/lib/format";
 import { dashboardQueries } from "../queries/dashboard.queries";
 import { currentYear } from "../search-params";
+import { RevenueChart } from "./lazy-charts";
 import { DashboardSection } from "./section";
-
-const chartConfig = {
-  revenue: { label: "Revenue", color: "var(--chart-2)" },
-} satisfies ChartConfig;
-
-const compactCurrency = new Intl.NumberFormat("en-IN", {
-  style: "currency",
-  currency: "INR",
-  notation: "compact",
-});
 
 export function RevenueSection({
   year,
@@ -144,36 +129,9 @@ export function RevenueSection({
           ) : !monthly.data ? (
             <Skeleton className="aspect-[3/1] w-full" />
           ) : (
-            <ChartContainer
-              config={chartConfig}
-              className="aspect-[3/1] w-full"
-            >
-              <BarChart data={monthly.data} margin={{ left: 8 }}>
-                <CartesianGrid vertical={false} />
-                <XAxis
-                  dataKey="month"
-                  tickLine={false}
-                  axisLine={false}
-                  tickFormatter={(month: string) => month.slice(0, 3)}
-                />
-                <YAxis
-                  tickLine={false}
-                  axisLine={false}
-                  width={56}
-                  tickFormatter={(value: number) =>
-                    compactCurrency.format(value)
-                  }
-                />
-                <ChartTooltip
-                  content={
-                    <ChartTooltipContent
-                      formatter={(value) => formatCurrency(Number(value))}
-                    />
-                  }
-                />
-                <Bar dataKey="revenue" fill="var(--color-revenue)" radius={4} />
-              </BarChart>
-            </ChartContainer>
+            <Suspense fallback={<Skeleton className="aspect-[3/1] w-full" />}>
+              <RevenueChart data={monthly.data} />
+            </Suspense>
           )}
         </CardContent>
       </Card>
