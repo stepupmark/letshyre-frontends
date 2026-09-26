@@ -1,7 +1,11 @@
 import { Link, NavLink, useLocation } from "react-router";
 import { ChevronRight } from "lucide-react";
 import { navigation, type NavItem } from "~/config/navigation";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "~/components/ui/collapsible";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "~/components/ui/collapsible";
 import {
   Sidebar,
   SidebarContent,
@@ -18,7 +22,9 @@ import {
 } from "~/components/ui/sidebar";
 
 function isActive(pathname: string, url: string, exact: boolean) {
-  return exact ? pathname === url : pathname === url || pathname.startsWith(`${url}/`);
+  return exact
+    ? pathname === url
+    : pathname === url || pathname.startsWith(`${url}/`);
 }
 
 function NavEntry({ item }: { item: NavItem }) {
@@ -27,7 +33,11 @@ function NavEntry({ item }: { item: NavItem }) {
   if (!item.items?.length) {
     return (
       <SidebarMenuItem>
-        <SidebarMenuButton asChild tooltip={item.title} isActive={isActive(pathname, item.url, item.url === "/dashboard")}>
+        <SidebarMenuButton
+          asChild
+          tooltip={item.title}
+          isActive={isActive(pathname, item.url, item.url === "/dashboard")}
+        >
           <NavLink to={item.url} end={item.url === "/dashboard"}>
             <item.icon />
             <span>{item.title}</span>
@@ -38,10 +48,17 @@ function NavEntry({ item }: { item: NavItem }) {
   }
 
   return (
-    <Collapsible asChild defaultOpen={isActive(pathname, item.url, false)} className="group/collapsible">
+    <Collapsible
+      asChild
+      defaultOpen={isActive(pathname, item.url, false)}
+      className="group/collapsible"
+    >
       <SidebarMenuItem>
         <CollapsibleTrigger asChild>
-          <SidebarMenuButton tooltip={item.title} isActive={isActive(pathname, item.url, false)}>
+          <SidebarMenuButton
+            tooltip={item.title}
+            isActive={isActive(pathname, item.url, false)}
+          >
             <item.icon />
             <span>{item.title}</span>
             <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />

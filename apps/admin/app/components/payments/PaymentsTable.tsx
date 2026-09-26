@@ -49,56 +49,56 @@ export default function PaymentsTable({
   };
 
   return (
-    <div className="overflow-hidden bg-card border border-border rounded-xl shadow-xs">
+    <div className="overflow-hidden rounded-xl border border-border bg-card shadow-xs">
       <div className="overflow-x-auto">
         <Table>
           <TableHeader className="border-b border-border bg-muted/50">
             <TableRow>
               <TableCell
                 isHeader
-                className="px-5 py-3 text-xs font-medium tracking-wider text-left text-muted-foreground uppercase"
+                className="px-5 py-3 text-left text-xs font-medium tracking-wider text-muted-foreground uppercase"
               >
                 Employer
               </TableCell>
               <TableCell
                 isHeader
-                className="px-5 py-3 text-xs font-medium tracking-wider text-left text-muted-foreground uppercase"
+                className="px-5 py-3 text-left text-xs font-medium tracking-wider text-muted-foreground uppercase"
               >
                 Company
               </TableCell>
               <TableCell
                 isHeader
-                className="px-5 py-3 text-xs font-medium tracking-wider text-left text-muted-foreground uppercase"
+                className="px-5 py-3 text-left text-xs font-medium tracking-wider text-muted-foreground uppercase"
               >
                 Amount
               </TableCell>
               <TableCell
                 isHeader
-                className="px-5 py-3 text-xs font-medium tracking-wider text-left text-muted-foreground uppercase"
+                className="px-5 py-3 text-left text-xs font-medium tracking-wider text-muted-foreground uppercase"
               >
                 Tokens
               </TableCell>
               <TableCell
                 isHeader
-                className="px-5 py-3 text-xs font-medium tracking-wider text-left text-muted-foreground uppercase"
+                className="px-5 py-3 text-left text-xs font-medium tracking-wider text-muted-foreground uppercase"
               >
                 Status
               </TableCell>
               <TableCell
                 isHeader
-                className="px-5 py-3 text-xs font-medium tracking-wider text-left text-muted-foreground uppercase"
+                className="px-5 py-3 text-left text-xs font-medium tracking-wider text-muted-foreground uppercase"
               >
                 Order ID
               </TableCell>
               <TableCell
                 isHeader
-                className="px-5 py-3 text-xs font-medium tracking-wider text-left text-muted-foreground uppercase"
+                className="px-5 py-3 text-left text-xs font-medium tracking-wider text-muted-foreground uppercase"
               >
                 Date
               </TableCell>
               <TableCell
                 isHeader
-                className="px-5 py-3 text-xs font-medium tracking-wider text-right text-muted-foreground uppercase"
+                className="px-5 py-3 text-right text-xs font-medium tracking-wider text-muted-foreground uppercase"
               >
                 Actions
               </TableCell>
@@ -109,7 +109,7 @@ export default function PaymentsTable({
               <TableRow>
                 <TableCell
                   colSpan={8}
-                  className="px-5 py-8 text-sm text-center text-muted-foreground"
+                  className="px-5 py-8 text-center text-sm text-muted-foreground"
                 >
                   Loading payments...
                 </TableCell>
@@ -118,7 +118,7 @@ export default function PaymentsTable({
               <TableRow>
                 <TableCell
                   colSpan={8}
-                  className="px-5 py-8 text-sm text-center text-muted-foreground"
+                  className="px-5 py-8 text-center text-sm text-muted-foreground"
                 >
                   No payments found.
                 </TableCell>
@@ -127,7 +127,7 @@ export default function PaymentsTable({
               payments.map((payment) => (
                 <TableRow
                   key={payment.id}
-                  className="transition-colors border-b border-border hover:bg-accent"
+                  className="border-b border-border transition-colors hover:bg-accent"
                 >
                   <TableCell className="px-5 py-4 whitespace-nowrap">
                     <span className="font-medium text-foreground">
@@ -135,9 +135,7 @@ export default function PaymentsTable({
                     </span>
                   </TableCell>
                   <TableCell className="px-5 py-4 whitespace-nowrap">
-                    <span className="text-foreground">
-                      {payment.company}
-                    </span>
+                    <span className="text-foreground">{payment.company}</span>
                   </TableCell>
                   <TableCell className="px-5 py-4 whitespace-nowrap">
                     <span className="font-semibold text-foreground">
@@ -145,7 +143,7 @@ export default function PaymentsTable({
                     </span>
                   </TableCell>
                   <TableCell className="px-5 py-4 whitespace-nowrap">
-                    <span className="inline-flex items-center px-2.5 py-1 text-xs font-medium bg-muted text-foreground rounded-full">
+                    <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-foreground">
                       {payment.tokens_credited}
                     </span>
                   </TableCell>
@@ -163,13 +161,12 @@ export default function PaymentsTable({
                     </span>
                   </TableCell>
                   <TableCell className="px-5 py-4 text-right whitespace-nowrap">
-
                     <Link
                       to={`/dashboard/employers/${payment.employeer_id}`}
                       className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-3.5 py-1.5 text-xs font-semibold text-primary-foreground shadow-xs transition hover:bg-primary/90 active:scale-95"
                     >
                       View Profile
-                      <ChevronRight className="w-5 h-5" />
+                      <ChevronRight className="h-5 w-5" />
                     </Link>
                   </TableCell>
                 </TableRow>

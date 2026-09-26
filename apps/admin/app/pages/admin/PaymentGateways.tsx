@@ -21,7 +21,7 @@ export default function PaymentGateways() {
   }
 
   return (
-    <div className="w-full space-y-6 ">
+    <div className="w-full space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-foreground">
@@ -36,7 +36,7 @@ export default function PaymentGateways() {
         </Link>
       </div>
 
-      <div className="grid max-w-5xl gap-4 mr-auto xl:w-full">
+      <div className="mr-auto grid max-w-5xl gap-4 xl:w-full">
         {data?.map((gateway) => (
           <GatewayCard key={gateway.id} gateway={gateway} />
         ))}

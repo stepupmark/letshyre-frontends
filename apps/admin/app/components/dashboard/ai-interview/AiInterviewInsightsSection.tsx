@@ -8,10 +8,10 @@ export default function AiInterviewInsightsSection() {
   if (isLoading) {
     return (
       <div className="mt-12 animate-pulse">
-        <div className="w-64 h-8 mb-6 bg-muted rounded-lg"></div>
+        <div className="mb-6 h-8 w-64 rounded-lg bg-muted"></div>
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          <div className="lg:col-span-2 h-[400px] bg-muted rounded-2xl"></div>
-          <div className="lg:col-span-1 h-[400px] bg-muted rounded-2xl"></div>
+          <div className="h-[400px] rounded-2xl bg-muted lg:col-span-2"></div>
+          <div className="h-[400px] rounded-2xl bg-muted lg:col-span-1"></div>
         </div>
       </div>
     );
@@ -19,8 +19,8 @@ export default function AiInterviewInsightsSection() {
 
   if (isError || !data) {
     return (
-      <div className="flex flex-col items-center justify-center p-6 mt-12 text-center border border-red-100 bg-red-50 dark:bg-red-900/20 rounded-2xl dark:border-red-900/50">
-        <AlertCircle className="w-10 h-10 mb-3 text-red-500" />
+      <div className="mt-12 flex flex-col items-center justify-center rounded-2xl border border-red-100 bg-red-50 p-6 text-center dark:border-red-900/50 dark:bg-red-900/20">
+        <AlertCircle className="mb-3 h-10 w-10 text-red-500" />
         <h3 className="text-lg font-semibold text-red-700 dark:text-red-400">
           Failed to load insights
         </h3>
@@ -33,9 +33,9 @@ export default function AiInterviewInsightsSection() {
 
   return (
     <div className="mt-8">
-      <div className="flex items-center justify-between mb-6">
+      <div className="mb-6 flex items-center justify-between">
         <div>
-          <div className="flex items-center gap-2 mb-1">
+          <div className="mb-1 flex items-center gap-2">
             <h2 className="text-2xl font-bold tracking-tight text-foreground">
               Role-wise Performance
             </h2>

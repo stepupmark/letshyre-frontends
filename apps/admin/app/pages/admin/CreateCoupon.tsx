@@ -52,8 +52,8 @@ export default function CreateCoupon() {
         description="Create a new discount coupon."
       />
 
-      <div className="w-full max-w-4xl mx-auto">
-        <div className="flex items-center gap-2 mb-6 text-sm">
+      <div className="mx-auto w-full max-w-4xl">
+        <div className="mb-6 flex items-center gap-2 text-sm">
           <button
             onClick={() => navigate("/dashboard/coupons")}
             className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary"
@@ -75,13 +75,11 @@ export default function CreateCoupon() {
 
           <span className="text-muted-foreground/70">/</span>
 
-          <span className="font-medium text-foreground">
-            Create Coupon
-          </span>
+          <span className="font-medium text-foreground">Create Coupon</span>
         </div>
 
         <div className="mb-8">
-          <p className="text-sm font-semibold tracking-wide uppercase text-primary">
+          <p className="text-sm font-semibold tracking-wide text-primary uppercase">
             Coupon Management
           </p>
 
@@ -95,7 +93,7 @@ export default function CreateCoupon() {
           </p>
         </div>
 
-        <div className="p-6 bg-card border border-border shadow-xs rounded-3xl sm:p-8">
+        <div className="rounded-3xl border border-border bg-card p-6 shadow-xs sm:p-8">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
             <section>
               <h2 className="mb-5 text-sm font-semibold tracking-wide text-muted-foreground uppercase">
@@ -104,7 +102,7 @@ export default function CreateCoupon() {
 
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div className="sm:col-span-1">
-                  <label className="block mb-2 text-sm font-medium text-foreground">
+                  <label className="mb-2 block text-sm font-medium text-foreground">
                     Coupon Code <span className="text-destructive">*</span>
                   </label>
 
@@ -112,7 +110,7 @@ export default function CreateCoupon() {
                     type="text"
                     {...register("code")}
                     placeholder="WELCOME50"
-                    className="w-full px-4 py-3 text-sm font-semibold tracking-widest text-foreground uppercase transition-all duration-200 bg-card border border-input outline-hidden rounded-2xl placeholder:font-normal placeholder:tracking-normal placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/50"
+                    className="w-full rounded-2xl border border-input bg-card px-4 py-3 text-sm font-semibold tracking-widest text-foreground uppercase outline-hidden transition-all duration-200 placeholder:font-normal placeholder:tracking-normal placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/50"
                   />
 
                   {errors.code ? (
@@ -127,7 +125,7 @@ export default function CreateCoupon() {
                 </div>
 
                 <div>
-                  <label className="block mb-2 text-sm font-medium text-foreground">
+                  <label className="mb-2 block text-sm font-medium text-foreground">
                     Usage Limit <span className="text-destructive">*</span>
                   </label>
 
@@ -136,7 +134,7 @@ export default function CreateCoupon() {
                     {...register("usage_limit")}
                     min="1"
                     placeholder="Maximum uses"
-                    className="w-full px-4 py-3 text-sm text-foreground transition-all duration-200 bg-card border border-input outline-hidden rounded-2xl placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/50"
+                    className="w-full rounded-2xl border border-input bg-card px-4 py-3 text-sm text-foreground outline-hidden transition-all duration-200 placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/50"
                   />
 
                   {errors.usage_limit && (
@@ -155,13 +153,13 @@ export default function CreateCoupon() {
 
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
-                  <label className="block mb-2 text-sm font-medium text-foreground">
+                  <label className="mb-2 block text-sm font-medium text-foreground">
                     Discount Type <span className="text-destructive">*</span>
                   </label>
 
                   <select
                     {...register("discount_type")}
-                    className="w-full px-4 py-3 text-sm text-foreground transition-all duration-200 bg-card border border-input outline-hidden rounded-2xl focus:border-ring focus:ring-4 focus:ring-ring/50"
+                    className="w-full rounded-2xl border border-input bg-card px-4 py-3 text-sm text-foreground outline-hidden transition-all duration-200 focus:border-ring focus:ring-4 focus:ring-ring/50"
                   >
                     <option value="flat">Flat Amount</option>
                     <option value="percentage">Percentage (%)</option>
@@ -173,7 +171,7 @@ export default function CreateCoupon() {
                 </div>
 
                 <div>
-                  <label className="block mb-2 text-sm font-medium text-foreground">
+                  <label className="mb-2 block text-sm font-medium text-foreground">
                     Discount Value <span className="text-destructive">*</span>
                   </label>
 
@@ -187,7 +185,7 @@ export default function CreateCoupon() {
                         ? "Enter flat amount"
                         : "Enter percentage"
                     }
-                    className="w-full px-4 py-3 text-sm text-foreground transition-all duration-200 bg-card border border-input outline-hidden rounded-2xl placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/50"
+                    className="w-full rounded-2xl border border-input bg-card px-4 py-3 text-sm text-foreground outline-hidden transition-all duration-200 placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/50"
                   />
 
                   {errors.discount_value && (
@@ -206,14 +204,15 @@ export default function CreateCoupon() {
 
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
-                  <label className="block mb-2 text-sm font-medium text-foreground">
-                    Start Date & Time <span className="text-destructive">*</span>
+                  <label className="mb-2 block text-sm font-medium text-foreground">
+                    Start Date & Time{" "}
+                    <span className="text-destructive">*</span>
                   </label>
 
                   <input
                     type="datetime-local"
                     {...register("start_date")}
-                    className="w-full px-4 py-3 text-sm text-foreground transition-all duration-200 bg-card border border-input outline-hidden rounded-2xl focus:border-ring focus:ring-4 focus:ring-ring/50"
+                    className="w-full rounded-2xl border border-input bg-card px-4 py-3 text-sm text-foreground outline-hidden transition-all duration-200 focus:border-ring focus:ring-4 focus:ring-ring/50"
                   />
 
                   {errors.start_date && (
@@ -224,14 +223,14 @@ export default function CreateCoupon() {
                 </div>
 
                 <div>
-                  <label className="block mb-2 text-sm font-medium text-foreground">
+                  <label className="mb-2 block text-sm font-medium text-foreground">
                     End Date & Time <span className="text-destructive">*</span>
                   </label>
 
                   <input
                     type="datetime-local"
                     {...register("end_date")}
-                    className="w-full px-4 py-3 text-sm text-foreground transition-all duration-200 bg-card border border-input outline-hidden rounded-2xl focus:border-ring focus:ring-4 focus:ring-ring/50"
+                    className="w-full rounded-2xl border border-input bg-card px-4 py-3 text-sm text-foreground outline-hidden transition-all duration-200 focus:border-ring focus:ring-4 focus:ring-ring/50"
                   />
 
                   {errors.end_date && (
@@ -243,7 +242,7 @@ export default function CreateCoupon() {
               </div>
             </section>
 
-            <div className="sticky bottom-0 pt-6 border-t border-border bg-card/90 backdrop-blur-sm">
+            <div className="sticky bottom-0 border-t border-border bg-card/90 pt-6 backdrop-blur-sm">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-sm text-muted-foreground">
                   Review all coupon details before publishing.

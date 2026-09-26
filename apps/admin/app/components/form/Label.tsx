@@ -14,7 +14,7 @@ const Label: FC<LabelProps> = ({ htmlFor, children, className }) => {
       className={twMerge(
         "mb-1.5 block text-sm font-medium text-foreground",
 
-        className
+        className,
       )}
     >
       {children}

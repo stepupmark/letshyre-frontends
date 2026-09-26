@@ -9,7 +9,14 @@ import {
 } from "@tanstack/react-table";
 import { ErrorState } from "~/components/feedback/error-state";
 import { Skeleton } from "~/components/ui/skeleton";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "~/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "~/components/ui/table";
 import { DataTablePagination } from "./data-table-pagination";
 
 type DataTableProps<TData> = {
@@ -61,7 +68,14 @@ export function DataTable<TData>({
   const columnCount = table.getVisibleLeafColumns().length;
   const rows = table.getRowModel().rows;
 
-  if (error && !data) return <ErrorState error={error} onRetry={onRetry} className="rounded-lg border" />;
+  if (error && !data)
+    return (
+      <ErrorState
+        error={error}
+        onRetry={onRetry}
+        className="rounded-lg border"
+      />
+    );
 
   return (
     <div className="space-y-3">
@@ -71,8 +85,16 @@ export function DataTable<TData>({
             {table.getHeaderGroups().map((group) => (
               <TableRow key={group.id}>
                 {group.headers.map((header) => (
-                  <TableHead key={header.id} style={{ width: header.column.columnDef.size }}>
-                    {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
+                  <TableHead
+                    key={header.id}
+                    style={{ width: header.column.columnDef.size }}
+                  >
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext(),
+                        )}
                   </TableHead>
                 ))}
               </TableRow>
@@ -91,23 +113,38 @@ export function DataTable<TData>({
               ))
             ) : rows.length ? (
               rows.map((row) => (
-                <TableRow key={row.id} data-state={row.getIsSelected() ? "selected" : undefined}>
+                <TableRow
+                  key={row.id}
+                  data-state={row.getIsSelected() ? "selected" : undefined}
+                >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</TableCell>
+                    <TableCell key={cell.id}>
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext(),
+                      )}
+                    </TableCell>
                   ))}
                 </TableRow>
               ))
             ) : (
               <TableRow className="hover:bg-transparent">
                 <TableCell colSpan={columnCount} className="h-48 text-center">
-                  {empty ?? <span className="text-muted-foreground">No results.</span>}
+                  {empty ?? (
+                    <span className="text-muted-foreground">No results.</span>
+                  )}
                 </TableCell>
               </TableRow>
             )}
           </TableBody>
         </Table>
       </div>
-      <DataTablePagination page={page} pageCount={pageCount} totalCount={totalCount} onPageChange={onPageChange} />
+      <DataTablePagination
+        page={page}
+        pageCount={pageCount}
+        totalCount={totalCount}
+        onPageChange={onPageChange}
+      />
     </div>
   );
 }

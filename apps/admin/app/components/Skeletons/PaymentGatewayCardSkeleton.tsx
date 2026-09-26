@@ -1,52 +1,52 @@
 export default function PaymentGatewayCardSkeleton() {
   return (
-    <div className="p-5 bg-card border border-border shadow-xs animate-pulse rounded-3xl">
+    <div className="animate-pulse rounded-3xl border border-border bg-card p-5 shadow-xs">
       <div className="flex items-start justify-between gap-4">
-        <div className="flex items-center min-w-0 gap-3">
-          <div className="bg-muted size-11 shrink-0 rounded-2xl" />
+        <div className="flex min-w-0 items-center gap-3">
+          <div className="size-11 shrink-0 rounded-2xl bg-muted" />
 
           <div className="space-y-2">
-            <div className="h-4 bg-muted rounded-md w-36" />
-            <div className="w-20 h-3 bg-muted rounded-md" />
+            <div className="h-4 w-36 rounded-md bg-muted" />
+            <div className="h-3 w-20 rounded-md bg-muted" />
           </div>
         </div>
 
-        <div className="w-24 bg-muted rounded-full h-7" />
+        <div className="h-7 w-24 rounded-full bg-muted" />
       </div>
 
-      <div className="h-px my-4 bg-muted" />
+      <div className="my-4 h-px bg-muted" />
 
       {[1, 2].map(() => (
         <>
           <div className="space-y-3">
-            <div className="flex items-center justify-between px-4 py-3 rounded-2xl bg-muted/50">
+            <div className="flex items-center justify-between rounded-2xl bg-muted/50 px-4 py-3">
               <div className="space-y-2">
-                <div className="w-16 h-3 bg-muted rounded-sm" />
-                <div className="w-40 h-4 bg-muted rounded-sm" />
+                <div className="h-3 w-16 rounded-sm bg-muted" />
+                <div className="h-4 w-40 rounded-sm bg-muted" />
               </div>
 
-              <div className="bg-muted h-9 w-9 rounded-xl" />
+              <div className="h-9 w-9 rounded-xl bg-muted" />
             </div>
 
-            <div className="flex items-center justify-between px-4 py-3 rounded-2xl bg-muted/50">
+            <div className="flex items-center justify-between rounded-2xl bg-muted/50 px-4 py-3">
               <div className="space-y-2">
-                <div className="w-24 h-3 bg-muted rounded-sm" />
-                <div className="w-32 h-4 bg-muted rounded-sm" />
+                <div className="h-3 w-24 rounded-sm bg-muted" />
+                <div className="h-4 w-32 rounded-sm bg-muted" />
               </div>
 
               <div className="flex gap-2">
-                <div className="bg-muted h-9 w-9 rounded-xl" />
-                <div className="bg-muted h-9 w-9 rounded-xl" />
+                <div className="h-9 w-9 rounded-xl bg-muted" />
+                <div className="h-9 w-9 rounded-xl bg-muted" />
               </div>
             </div>
           </div>
 
-          <div className="flex items-center justify-between mt-4">
-            <div className="h-3 bg-muted rounded-sm w-36" />
+          <div className="mt-4 flex items-center justify-between">
+            <div className="h-3 w-36 rounded-sm bg-muted" />
 
             <div className="flex gap-3">
-              <div className="w-24 bg-muted h-9 rounded-2xl" />
-              <div className="w-20 bg-muted h-9 rounded-2xl" />
+              <div className="h-9 w-24 rounded-2xl bg-muted" />
+              <div className="h-9 w-20 rounded-2xl bg-muted" />
             </div>
           </div>
         </>

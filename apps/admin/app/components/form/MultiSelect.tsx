@@ -45,7 +45,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
   };
 
   const selectedValuesText = selectedOptions.map(
-    (value) => options.find((option) => option.value === value)?.text || ""
+    (value) => options.find((option) => option.value === value)?.text || "",
   );
 
   return (
@@ -57,22 +57,22 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
       <div className="relative z-20 inline-block w-full">
         <div className="relative flex flex-col items-center">
           <div onClick={toggleDropdown} className="w-full">
-            <div className="mb-2 flex h-11 rounded-lg border border-input py-1.5 pl-3 pr-3 shadow-xs outline-hidden transition focus:border-ring focus:ring-[3px] focus:ring-ring/50 dark:bg-input/30">
-              <div className="flex flex-wrap flex-auto gap-2">
+            <div className="mb-2 flex h-11 rounded-lg border border-input py-1.5 pr-3 pl-3 shadow-xs outline-hidden transition focus:border-ring focus:ring-[3px] focus:ring-ring/50 dark:bg-input/30">
+              <div className="flex flex-auto flex-wrap gap-2">
                 {selectedValuesText.length > 0 ? (
                   selectedValuesText.map((text, index) => (
                     <div
                       key={index}
-                      className="group flex items-center justify-center rounded-full border-[0.7px] border-transparent bg-muted py-1 pl-2.5 pr-2 text-sm text-foreground hover:border-border"
+                      className="group flex items-center justify-center rounded-full border-[0.7px] border-transparent bg-muted py-1 pr-2 pl-2.5 text-sm text-foreground hover:border-border"
                     >
-                      <span className="flex-initial max-w-full">{text}</span>
-                      <div className="flex flex-row-reverse flex-auto">
+                      <span className="max-w-full flex-initial">{text}</span>
+                      <div className="flex flex-auto flex-row-reverse">
                         <div
                           onClick={(e) => {
                             e.stopPropagation();
                             removeOption(selectedOptions[index]);
                           }}
-                          className="pl-2 text-muted-foreground cursor-pointer group-hover:text-muted-foreground"
+                          className="cursor-pointer pl-2 text-muted-foreground group-hover:text-muted-foreground"
                         >
                           <svg
                             className="fill-current"
@@ -95,17 +95,17 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
                 ) : (
                   <input
                     placeholder="Select option"
-                    className="w-full h-full p-1 pr-2 text-sm bg-transparent border-0 outline-hidden appearance-none placeholder:text-foreground focus:border-0 focus:outline-hidden focus:ring-0"
+                    className="h-full w-full appearance-none border-0 bg-transparent p-1 pr-2 text-sm outline-hidden placeholder:text-foreground focus:border-0 focus:ring-0 focus:outline-hidden"
                     readOnly
                     value="Select option"
                   />
                 )}
               </div>
-              <div className="flex items-center py-1 pl-1 pr-1 w-7">
+              <div className="flex w-7 items-center py-1 pr-1 pl-1">
                 <button
                   type="button"
                   onClick={toggleDropdown}
-                  className="w-5 h-5 text-foreground outline-hidden cursor-pointer focus:outline-hidden"
+                  className="h-5 w-5 cursor-pointer text-foreground outline-hidden focus:outline-hidden"
                 >
                   <svg
                     className={`stroke-current ${isOpen ? "rotate-180" : ""}`}
@@ -130,14 +130,14 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
 
           {isOpen && (
             <div
-              className="absolute left-0 z-40 w-full overflow-y-auto bg-card rounded-lg shadow-sm top-full max-h-60"
+              className="absolute top-full left-0 z-40 max-h-60 w-full overflow-y-auto rounded-lg bg-card shadow-sm"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex flex-col">
                 {options.map((option, index) => (
                   <div
                     key={index}
-                    className={`hover:bg-primary/5 w-full cursor-pointer rounded-t border-b border-border`}
+                    className={`w-full cursor-pointer rounded-t border-b border-border hover:bg-primary/5`}
                     onClick={() => handleSelect(option.value)}
                   >
                     <div

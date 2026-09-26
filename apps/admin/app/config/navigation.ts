@@ -49,7 +49,11 @@ export const navigation: NavGroup[] = [
   {
     label: "Finance",
     items: [
-      { title: "Payment Gateways", url: "/dashboard/payment-gateways", icon: CreditCard },
+      {
+        title: "Payment Gateways",
+        url: "/dashboard/payment-gateways",
+        icon: CreditCard,
+      },
       { title: "Payments History", url: "/dashboard/payments", icon: History },
       { title: "Credits", url: "/dashboard/credits", icon: Coins },
       { title: "Coupons", url: "/dashboard/coupons", icon: Tag },

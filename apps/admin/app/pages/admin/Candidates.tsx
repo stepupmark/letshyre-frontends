@@ -2,18 +2,15 @@ import { useState } from "react";
 import { Link } from "react-router";
 import PageMeta from "../../components/common/PageMeta";
 
+import { useCandidateCards, useCandidates } from "../../hooks/useCandidates";
 import {
-  useCandidateCards,
-  useCandidates,
-} from "../../hooks/useCandidates";
-import { 
-  ChevronRight, 
-  FileIcon, 
-  Users, 
-  Calendar, 
-  Target, 
-  AlertTriangle, 
-  ShieldCheck 
+  ChevronRight,
+  FileIcon,
+  Users,
+  Calendar,
+  Target,
+  AlertTriangle,
+  ShieldCheck,
 } from "lucide-react";
 import { formatDate } from "../../lib/formatDate";
 
@@ -77,8 +74,7 @@ export default function Candidates() {
     filterComplete,
   );
 
-  const { data: cardsData, isLoading: cardsLoading } =
-    useCandidateCards();
+  const { data: cardsData, isLoading: cardsLoading } = useCandidateCards();
 
   const cards = cardsData?.data;
 
@@ -112,9 +108,7 @@ export default function Candidates() {
       <div className="space-y-5 overflow-x-hidden bg-muted/50">
         <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-foreground">
-              Candidates
-            </h1>
+            <h1 className="text-2xl font-bold text-foreground">Candidates</h1>
             <p className="mt-0.5 text-sm text-muted-foreground">
               Browse, search and manage registered candidates.
             </p>
@@ -126,7 +120,9 @@ export default function Candidates() {
             {
               label: "Total Candidates",
               value: cards?.total_candidates || 0,
-              icon: <Users className="size-5 text-indigo-600 dark:text-indigo-400" />,
+              icon: (
+                <Users className="size-5 text-indigo-600 dark:text-indigo-400" />
+              ),
               bg: "bg-indigo-50 dark:bg-indigo-900/20",
               border: "border-indigo-100 dark:border-indigo-800",
               accent: "from-indigo-500 to-indigo-600",
@@ -134,7 +130,9 @@ export default function Candidates() {
             {
               label: "Today Joined",
               value: cards?.today_registrations || 0,
-              icon: <Calendar className="size-5 text-emerald-600 dark:text-emerald-400" />,
+              icon: (
+                <Calendar className="size-5 text-emerald-600 dark:text-emerald-400" />
+              ),
               bg: "bg-emerald-50 dark:bg-emerald-900/20",
               border: "border-emerald-100 dark:border-emerald-800",
               accent: "from-emerald-500 to-emerald-600",
@@ -142,7 +140,9 @@ export default function Candidates() {
             {
               label: "Completed",
               value: cards?.completed_profiles || 0,
-              icon: <Target className="size-5 text-blue-600 dark:text-blue-400" />,
+              icon: (
+                <Target className="size-5 text-blue-600 dark:text-blue-400" />
+              ),
               bg: "bg-blue-50 dark:bg-blue-900/20",
               border: "border-blue-100 dark:border-blue-800",
               accent: "from-blue-500 to-blue-600",
@@ -150,7 +150,9 @@ export default function Candidates() {
             {
               label: "Incomplete",
               value: cards?.in_completed_profiles || 0,
-              icon: <AlertTriangle className="size-5 text-amber-600 dark:text-amber-400" />,
+              icon: (
+                <AlertTriangle className="size-5 text-amber-600 dark:text-amber-400" />
+              ),
               bg: "bg-amber-50 dark:bg-amber-900/20",
               border: "border-amber-100 dark:border-amber-800",
               accent: "from-amber-500 to-amber-600",
@@ -158,7 +160,9 @@ export default function Candidates() {
             {
               label: "Verified",
               value: cards?.verified_candidates || 0,
-              icon: <ShieldCheck className="size-5 text-purple-600 dark:text-purple-400" />,
+              icon: (
+                <ShieldCheck className="size-5 text-purple-600 dark:text-purple-400" />
+              ),
               bg: "bg-purple-50 dark:bg-purple-900/20",
               border: "border-purple-100 dark:border-purple-800",
               accent: "from-purple-500 to-purple-600",
@@ -166,19 +170,19 @@ export default function Candidates() {
           ].map((card) => (
             <div
               key={card.label}
-              className="relative overflow-hidden group rounded-2xl border border-border bg-card p-5 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <div
                 className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${card.accent} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
               />
 
-              <div className="flex items-start justify-between gap-4 mt-1">
+              <div className="mt-1 flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs font-bold tracking-widest text-muted-foreground uppercase">
                     {card.label}
                   </p>
 
-                  <p className="mt-2 text-3xl font-extrabold tracking-tight tabular-nums text-foreground">
+                  <p className="mt-2 text-3xl font-extrabold tracking-tight text-foreground tabular-nums">
                     {cardsLoading ? "--" : card.value}
                   </p>
                 </div>
@@ -193,11 +197,11 @@ export default function Candidates() {
           ))}
         </div>
 
-        <div className="px-5 py-4 bg-card border border-border shadow-xs rounded-2xl">
+        <div className="rounded-2xl border border-border bg-card px-5 py-4 shadow-xs">
           <div className="flex flex-col gap-3">
             <div className="relative">
               <svg
-                className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground"
+                className="pointer-events-none absolute top-1/2 left-3.5 h-4 w-4 -translate-y-1/2 text-muted-foreground"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -218,7 +222,7 @@ export default function Candidates() {
                   setSearch(e.target.value);
                   setPage(1);
                 }}
-                className="w-full rounded-xl border border-border bg-muted/50 py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground transition focus:border-ring focus:bg-card focus:outline-hidden focus:ring-2 focus:ring-ring/50"
+                className="w-full rounded-xl border border-border bg-muted/50 py-2.5 pr-4 pl-10 text-sm text-foreground transition placeholder:text-muted-foreground focus:border-ring focus:bg-card focus:ring-2 focus:ring-ring/50 focus:outline-hidden"
               />
             </div>
 
@@ -230,7 +234,7 @@ export default function Candidates() {
                   setFilterGender(e.target.value);
                   setPage(1);
                 }}
-                className="py-2 text-sm text-foreground transition bg-card border border-border shadow-xs rounded-xl focus:border-ring focus:outline-hidden focus:ring-2 focus:ring-ring/50"
+                className="rounded-xl border border-border bg-card py-2 text-sm text-foreground shadow-xs transition focus:border-ring focus:ring-2 focus:ring-ring/50 focus:outline-hidden"
               >
                 <option value="">All Genders</option>
                 {GENDER_OPTIONS.map((o) => (
@@ -247,7 +251,7 @@ export default function Candidates() {
                   setFilterIndustry(e.target.value);
                   setPage(1);
                 }}
-                className="py-2 text-sm text-foreground transition bg-card border border-border shadow-xs rounded-xl focus:border-ring focus:outline-hidden focus:ring-2 focus:ring-ring/50"
+                className="rounded-xl border border-border bg-card py-2 text-sm text-foreground shadow-xs transition focus:border-ring focus:ring-2 focus:ring-ring/50 focus:outline-hidden"
               >
                 <option value="">All Industries</option>
                 {INDUSTRY_OPTIONS.map((o) => (
@@ -264,7 +268,7 @@ export default function Candidates() {
                   setFilterVerified(e.target.value);
                   setPage(1);
                 }}
-                className="py-2 text-sm text-foreground transition bg-card border border-border shadow-xs rounded-xl focus:border-ring focus:outline-hidden focus:ring-2 focus:ring-ring/50"
+                className="rounded-xl border border-border bg-card py-2 text-sm text-foreground shadow-xs transition focus:border-ring focus:ring-2 focus:ring-ring/50 focus:outline-hidden"
               >
                 <option value="">KYC: All</option>
                 <option value="verified">Verified</option>
@@ -278,7 +282,7 @@ export default function Candidates() {
                   setFilterComplete(e.target.value);
                   setPage(1);
                 }}
-                className="py-2 text-sm text-foreground transition bg-card border border-border shadow-xs rounded-xl focus:border-ring focus:outline-hidden focus:ring-2 focus:ring-ring/50"
+                className="rounded-xl border border-border bg-card py-2 text-sm text-foreground shadow-xs transition focus:border-ring focus:ring-2 focus:ring-ring/50 focus:outline-hidden"
               >
                 <option value="">Profile: All</option>
                 <option value="complete">Complete</option>
@@ -288,7 +292,7 @@ export default function Candidates() {
               {hasFilters && (
                 <button
                   onClick={clearAll}
-                  className="flex items-center gap-1 px-3 py-2 ml-auto text-sm font-medium text-muted-foreground transition bg-card border border-border shadow-xs rounded-xl hover:border-rose-300 hover:text-rose-500"
+                  className="ml-auto flex items-center gap-1 rounded-xl border border-border bg-card px-3 py-2 text-sm font-medium text-muted-foreground shadow-xs transition hover:border-rose-300 hover:text-rose-500"
                 >
                   <svg
                     className="h-3.5 w-3.5"
@@ -310,7 +314,7 @@ export default function Candidates() {
           </div>
         </div>
 
-        <div className="overflow-hidden bg-card border border-border shadow-xs rounded-2xl">
+        <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[680px]">
               <thead>
@@ -327,7 +331,7 @@ export default function Candidates() {
                   ].map((col) => (
                     <th
                       key={col}
-                      className="px-5 py-4 text-xs font-semibold tracking-widest text-left text-muted-foreground uppercase"
+                      className="px-5 py-4 text-left text-xs font-semibold tracking-widest text-muted-foreground uppercase"
                     >
                       {col}
                     </th>
@@ -339,7 +343,7 @@ export default function Candidates() {
                   <tr>
                     <td colSpan={7} className="py-20 text-center">
                       <div className="flex flex-col items-center gap-2">
-                        <span className="text-4xl animate-spin">⏳</span>
+                        <span className="animate-spin text-4xl">⏳</span>
                         <p className="text-sm font-medium text-muted-foreground">
                           Loading candidates...
                         </p>
@@ -395,11 +399,11 @@ export default function Candidates() {
                           </div>
                         </td>
 
-                        <td className="px-5 py-4 text-sm text-muted-foreground whitespace-nowrap">
+                        <td className="px-5 py-4 text-sm whitespace-nowrap text-muted-foreground">
                           {c.email}
                         </td>
 
-                        <td className="px-5 py-4 text-sm text-muted-foreground whitespace-nowrap">
+                        <td className="px-5 py-4 text-sm whitespace-nowrap text-muted-foreground">
                           {c.phone_number || "—"}
                         </td>
 
@@ -463,7 +467,7 @@ export default function Candidates() {
                               <ChevronRight className="size-4" />
                             </Link>
                           ) : (
-                            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-amber-500 text-sm font-semibold">
+                            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-sm font-semibold text-amber-500">
                               Incomplete
                             </span>
                           )}
@@ -488,10 +492,10 @@ export default function Candidates() {
                   onClick={() => setPage((p) => Math.max(1, p - 1))}
                   disabled={safePage === 1}
                   aria-label="Go to previous page"
-                  className="flex items-center justify-center w-8 h-8 text-muted-foreground transition border border-border rounded-lg hover:bg-accent disabled:cursor-not-allowed disabled:opacity-30"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-30"
                 >
                   <svg
-                    className="w-4 h-4"
+                    className="h-4 w-4"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -545,10 +549,10 @@ export default function Candidates() {
                   onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                   disabled={safePage === totalPages}
                   aria-label="Go to next page"
-                  className="flex items-center justify-center w-8 h-8 text-muted-foreground transition border border-border rounded-lg hover:bg-accent disabled:cursor-not-allowed disabled:opacity-30"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-30"
                 >
                   <svg
-                    className="w-4 h-4"
+                    className="h-4 w-4"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

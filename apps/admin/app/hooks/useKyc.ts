@@ -7,7 +7,7 @@ import {
 
 export const usePendingKycEmployers = (
   page: number,
-  status: "Pending" | "Verified" | "Rejected" = "Pending"
+  status: "Pending" | "Verified" | "Rejected" = "Pending",
 ) => {
   return useQuery({
     queryKey: ["kyc_employers", { page, status }],
@@ -30,7 +30,9 @@ export const useUpdateKycStatus = () => {
     }) => updateEmployerKycStatus(kycId, status, remarks),
     onSuccess: (_, variables) => {
       queryClient.invalidateQueries({ queryKey: ["kyc_employers"] });
-      queryClient.invalidateQueries({ queryKey: ["kyc_detail", variables.kycId] });
+      queryClient.invalidateQueries({
+        queryKey: ["kyc_detail", variables.kycId],
+      });
     },
   });
 };

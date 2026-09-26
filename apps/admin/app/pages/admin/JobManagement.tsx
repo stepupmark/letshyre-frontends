@@ -48,7 +48,7 @@ export default function JobManagement() {
       label: "Total Job Posts",
       value: cards?.total_post_jobs || 0,
       icon: (
-        <BriefcaseBusiness className="text-indigo-600 size-5 dark:text-indigo-400" />
+        <BriefcaseBusiness className="size-5 text-indigo-600 dark:text-indigo-400" />
       ),
       bg: "bg-indigo-50 dark:bg-indigo-900/20",
       border: "border-indigo-100 dark:border-indigo-800",
@@ -69,7 +69,7 @@ export default function JobManagement() {
     {
       label: "Approved Jobs",
       value: cards?.approved_jobs || 0,
-      icon: <BadgeCheck className="text-blue-600 size-5 dark:text-blue-400" />,
+      icon: <BadgeCheck className="size-5 text-blue-600 dark:text-blue-400" />,
       bg: "bg-blue-50 dark:bg-blue-900/20",
       border: "border-blue-100 dark:border-blue-800",
       accent: "from-blue-500 to-blue-600",
@@ -90,7 +90,7 @@ export default function JobManagement() {
       label: "Pending Approvals",
       value: cards?.pending_approvals || 0,
       icon: (
-        <Hourglass className="text-orange-600 size-5 dark:text-orange-400" />
+        <Hourglass className="size-5 text-orange-600 dark:text-orange-400" />
       ),
       bg: "bg-orange-50 dark:bg-orange-900/20",
       border: "border-orange-100 dark:border-orange-800",
@@ -184,25 +184,23 @@ export default function JobManagement() {
 
       <div className="w-full max-w-full">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-foreground">
-            Job Management
-          </h1>
+          <h1 className="text-2xl font-bold text-foreground">Job Management</h1>
           <p className="mt-1 text-muted-foreground">
             Review, approve, and manage all job postings across employers.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 mb-6 sm:grid-cols-2 xl:grid-cols-5">
+        <div className="mb-6 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-5">
           {statsCards.map((card) => (
             <div
               key={card.label}
-              className="relative p-8 overflow-hidden transition-all duration-300 bg-card border border-border shadow-xs group rounded-2xl hover:-translate-y-1 hover:shadow-lg"
+              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <div
                 className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${card.accent} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
               />
 
-              <div className="flex items-start justify-between gap-4 mt-1">
+              <div className="mt-1 flex items-start justify-between gap-4">
                 <div>
                   <p className="text-[11px] font-bold tracking-widest text-muted-foreground uppercase">
                     {card.label}
@@ -240,7 +238,7 @@ export default function JobManagement() {
         />
 
         {data && data.totalPages > 1 && (
-          <div className="flex items-center justify-between p-4 mt-6 bg-card border border-border rounded-xl shadow-xs">
+          <div className="mt-6 flex items-center justify-between rounded-xl border border-border bg-card p-4 shadow-xs">
             <p className="text-sm text-muted-foreground">
               Showing{" "}
               <span className="font-semibold text-foreground">
@@ -260,14 +258,14 @@ export default function JobManagement() {
               <button
                 onClick={() => handlePageChange(data.currentPage - 1)}
                 disabled={data.currentPage === 1}
-                className="px-3 py-1.5 text-sm font-medium rounded-lg border border-input bg-card text-foreground hover:bg-accent disabled:opacity-50 disabled:cursor-not-allowed transition"
+                className="rounded-lg border border-input bg-card px-3 py-1.5 text-sm font-medium text-foreground transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Previous
               </button>
               <button
                 onClick={() => handlePageChange(data.currentPage + 1)}
                 disabled={data.currentPage === data.totalPages}
-                className="px-3 py-1.5 text-sm font-medium rounded-lg border border-input bg-card text-foreground hover:bg-accent disabled:opacity-50 disabled:cursor-not-allowed transition"
+                className="rounded-lg border border-input bg-card px-3 py-1.5 text-sm font-medium text-foreground transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Next
               </button>

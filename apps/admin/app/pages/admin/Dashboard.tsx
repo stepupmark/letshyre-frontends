@@ -32,7 +32,7 @@ export default function Dashboard() {
       <RevenueSection />
 
       <div className="mb-8">
-        <div className="flex items-center gap-2 mb-1">
+        <div className="mb-1 flex items-center gap-2">
           <h1 className="text-2xl font-bold tracking-tight text-foreground">
             Analytics
           </h1>
@@ -55,7 +55,7 @@ export default function Dashboard() {
               subtitle={buildSkillsSubtitle(data)}
               data={data}
               badge="Skills"
-              icon={<PieChartIcon className="w-4 h-4" />}
+              icon={<PieChartIcon className="h-4 w-4" />}
             />
           )}
         </ChartContainer>
@@ -72,7 +72,7 @@ export default function Dashboard() {
               subtitle={buildTechSubtitle(data)}
               data={data}
               badge="Technology"
-              icon={<Cpu className="w-4 h-4" />}
+              icon={<Cpu className="h-4 w-4" />}
             />
           )}
         </ChartContainer>

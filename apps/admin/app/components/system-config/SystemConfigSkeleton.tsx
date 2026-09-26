@@ -11,10 +11,7 @@ export default function SystemConfigSkeleton() {
 
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         {Array.from({ length: 4 }).map((_, i) => (
-          <div
-            key={i}
-            className="rounded-2xl border border-border bg-card p-5"
-          >
+          <div key={i} className="rounded-2xl border border-border bg-card p-5">
             <div className="mb-3 h-9 w-9 rounded-xl bg-muted" />
             <div className="mb-1 h-6 w-16 rounded-lg bg-muted" />
             <div className="h-3 w-24 rounded-sm bg-muted" />
@@ -23,10 +20,7 @@ export default function SystemConfigSkeleton() {
       </div>
 
       {Array.from({ length: 3 }).map((_, i) => (
-        <div
-          key={i}
-          className="rounded-2xl border border-border bg-card p-6"
-        >
+        <div key={i} className="rounded-2xl border border-border bg-card p-6">
           <div className="mb-5 flex items-center gap-3">
             <div className="h-10 w-10 rounded-xl bg-muted" />
             <div className="space-y-1">

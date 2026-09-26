@@ -21,24 +21,33 @@ interface InsightCardProps {
   iconBg: string;
 }
 
-function InsightCard({ icon, label, value, sub, gradient, iconBg }: InsightCardProps) {
+function InsightCard({
+  icon,
+  label,
+  value,
+  sub,
+  gradient,
+  iconBg,
+}: InsightCardProps) {
   return (
     <div
       className={`relative overflow-hidden rounded-xl border border-background/20 px-5 py-4 shadow-xs ${gradient}`}
     >
-      <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full opacity-20 blur-2xl bg-card" />
+      <div className="absolute -top-4 -right-4 h-20 w-20 rounded-full bg-card opacity-20 blur-2xl" />
 
-      <div className="flex items-start gap-3.5 relative">
-        <div className={`shrink-0 w-9 h-9 rounded-xl flex items-center justify-center ${iconBg}`}>
+      <div className="relative flex items-start gap-3.5">
+        <div
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${iconBg}`}
+        >
           {icon}
         </div>
         <div className="min-w-0">
-          <p className="text-[10px] font-semibold uppercase tracking-widest opacity-70 mb-0.5">
+          <p className="mb-0.5 text-[10px] font-semibold tracking-widest uppercase opacity-70">
             {label}
           </p>
-          <p className="text-sm font-bold leading-tight truncate">{value}</p>
+          <p className="truncate text-sm leading-tight font-bold">{value}</p>
           {sub && (
-            <p className="text-[11px] opacity-60 mt-0.5 truncate">{sub}</p>
+            <p className="mt-0.5 truncate text-[11px] opacity-60">{sub}</p>
           )}
         </div>
       </div>
@@ -46,7 +55,10 @@ function InsightCard({ icon, label, value, sub, gradient, iconBg }: InsightCardP
   );
 }
 
-export default function AnalyticsInsights({ skillsData, technologyData }: Props) {
+export default function AnalyticsInsights({
+  skillsData,
+  technologyData,
+}: Props) {
   const topSkill = skillsData[0];
   const topTech = technologyData[0];
 
@@ -54,13 +66,15 @@ export default function AnalyticsInsights({ skillsData, technologyData }: Props)
 
   return (
     <div className="mt-6">
-      <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground mb-3">
+      <p className="mb-3 text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">
         Key Insights
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
         {topSkill && (
           <InsightCard
-            icon={<TrendingUp className="w-4 h-4 text-indigo-600 dark:text-indigo-300" />}
+            icon={
+              <TrendingUp className="h-4 w-4 text-indigo-600 dark:text-indigo-300" />
+            }
             label="Most Common Skill"
             value={`${topSkill.label} (${topSkill.percentage}%)`}
             sub={`${topSkill.count} candidate${topSkill.count !== 1 ? "s" : ""}`}
@@ -70,7 +84,9 @@ export default function AnalyticsInsights({ skillsData, technologyData }: Props)
         )}
         {technologyData.length > 0 && (
           <InsightCard
-            icon={<Zap className="w-4 h-4 text-violet-600 dark:text-violet-300" />}
+            icon={
+              <Zap className="h-4 w-4 text-violet-600 dark:text-violet-300" />
+            }
             label="Top Technologies"
             value={`${getTopTwo(technologyData)} dominate`}
             sub={`${technologyData.length} technologies tracked`}
@@ -80,7 +96,9 @@ export default function AnalyticsInsights({ skillsData, technologyData }: Props)
         )}
         {skillsData.length > 0 && (
           <InsightCard
-            icon={<Award className="w-4 h-4 text-amber-600 dark:text-amber-300" />}
+            icon={
+              <Award className="h-4 w-4 text-amber-600 dark:text-amber-300" />
+            }
             label="Skill Diversity"
             value={`${skillsData.length} unique skill${skillsData.length !== 1 ? "s" : ""}`}
             sub={`Spread across ${skillsData.reduce((s, d) => s + d.count, 0)} candidates`}
@@ -90,7 +108,9 @@ export default function AnalyticsInsights({ skillsData, technologyData }: Props)
         )}
         {topTech && (
           <InsightCard
-            icon={<Code2 className="w-4 h-4 text-emerald-600 dark:text-emerald-300" />}
+            icon={
+              <Code2 className="h-4 w-4 text-emerald-600 dark:text-emerald-300" />
+            }
             label="Leading Technology"
             value={topTech.label}
             sub={`${topTech.percentage}% of candidates`}

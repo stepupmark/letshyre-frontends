@@ -20,13 +20,19 @@ import { queryClient } from "~/lib/query/query-client";
 import "./app.css";
 
 const ReactQueryDevtools = import.meta.env.DEV
-  ? lazy(() => import("@tanstack/react-query-devtools").then((m) => ({ default: m.ReactQueryDevtools })))
+  ? lazy(() =>
+      import("@tanstack/react-query-devtools").then((m) => ({
+        default: m.ReactQueryDevtools,
+      })),
+    )
   : () => null;
 
 // runs before first paint so dark mode users don't see a light flash
 const themeScript = `try{var t=localStorage.getItem("theme");var d=t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.classList.toggle("dark",d)}catch(e){}`;
 
-export const meta: Route.MetaFunction = () => [{ name: "robots", content: "noindex, nofollow" }];
+export const meta: Route.MetaFunction = () => [
+  { name: "robots", content: "noindex, nofollow" },
+];
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
@@ -81,7 +87,10 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 
   if (isRouteErrorResponse(error)) {
     title = error.status === 404 ? "Page not found" : `Error ${error.status}`;
-    details = error.status === 404 ? "The page you're looking for doesn't exist." : error.statusText || details;
+    details =
+      error.status === 404
+        ? "The page you're looking for doesn't exist."
+        : error.statusText || details;
   } else if (error instanceof Error && error.name === "ApiError") {
     details = error.message;
   } else if (import.meta.env.DEV && error instanceof Error) {

@@ -5,8 +5,18 @@ import { LoaderCircle } from "lucide-react";
 import { toast } from "sonner";
 import { Alert, AlertDescription } from "~/components/ui/alert";
 import { Button } from "~/components/ui/button";
-import { Field, FieldDescription, FieldError, FieldGroup, FieldLabel } from "~/components/ui/field";
-import { InputOTP, InputOTPGroup, InputOTPSlot } from "~/components/ui/input-otp";
+import {
+  Field,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "~/components/ui/field";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+} from "~/components/ui/input-otp";
 import { useSendOtp, useVerifyOtp } from "../mutations/use-password-reset";
 import { verifyOtpSchema } from "../schemas/auth.schema";
 import type { OtpSession, VerifyOtpInput } from "../types";
@@ -24,7 +34,11 @@ type VerifyOtpFormProps = {
   onVerified: () => void;
 };
 
-export function VerifyOtpForm({ session, onResent, onVerified }: VerifyOtpFormProps) {
+export function VerifyOtpForm({
+  session,
+  onResent,
+  onVerified,
+}: VerifyOtpFormProps) {
   const [secondsLeft, setSecondsLeft] = useState(RESEND_AFTER_SECONDS);
   const verifyOtp = useVerifyOtp();
   const sendOtp = useSendOtp();
@@ -35,7 +49,10 @@ export function VerifyOtpForm({ session, onResent, onVerified }: VerifyOtpFormPr
 
   useEffect(() => {
     if (secondsLeft <= 0) return;
-    const timer = window.setTimeout(() => setSecondsLeft((value) => value - 1), 1000);
+    const timer = window.setTimeout(
+      () => setSecondsLeft((value) => value - 1),
+      1000,
+    );
     return () => window.clearTimeout(timer);
   }, [secondsLeft]);
 
@@ -76,7 +93,9 @@ export function VerifyOtpForm({ session, onResent, onVerified }: VerifyOtpFormPr
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
               <FieldLabel htmlFor="otp">Verification code</FieldLabel>
-              <FieldDescription>Enter the 6-digit code sent to {maskEmail(session.email)}.</FieldDescription>
+              <FieldDescription>
+                Enter the 6-digit code sent to {maskEmail(session.email)}.
+              </FieldDescription>
               <InputOTP
                 id="otp"
                 maxLength={6}
@@ -106,7 +125,13 @@ export function VerifyOtpForm({ session, onResent, onVerified }: VerifyOtpFormPr
           {secondsLeft > 0 ? (
             <span>Resend in {secondsLeft}s</span>
           ) : (
-            <Button type="button" variant="link" className="h-auto p-0" disabled={sendOtp.isPending} onClick={resend}>
+            <Button
+              type="button"
+              variant="link"
+              className="h-auto p-0"
+              disabled={sendOtp.isPending}
+              onClick={resend}
+            >
               Resend code
             </Button>
           )}

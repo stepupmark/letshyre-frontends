@@ -75,8 +75,8 @@ function Card({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-card border border-border shadow-xs rounded-2xl">
-      <div className="px-6 py-4 border-b border-border">
+    <div className="rounded-2xl border border-border bg-card shadow-xs">
+      <div className="border-b border-border px-6 py-4">
         <h2 className="text-sm font-bold tracking-wide text-foreground uppercase">
           {title}
         </h2>
@@ -87,7 +87,7 @@ function Card({
 }
 
 function EmptyState({ text }: { text: string }) {
-  return <p className="text-sm italic text-muted-foreground">{text}</p>;
+  return <p className="text-sm text-muted-foreground italic">{text}</p>;
 }
 
 export default function CandidateProfile() {
@@ -100,8 +100,10 @@ export default function CandidateProfile() {
 
   if (isError || !c) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen gap-4">
-        <p className="text-muted-foreground">Failed to load candidate profile.</p>
+      <div className="flex min-h-screen flex-col items-center justify-center gap-4">
+        <p className="text-muted-foreground">
+          Failed to load candidate profile.
+        </p>
         <Link to="/dashboard/candidates" className="text-primary">
           Go Back
         </Link>
@@ -122,7 +124,7 @@ export default function CandidateProfile() {
         <div className="flex items-center gap-3 text-sm font-medium">
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors"
+            className="flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary"
           >
             <ChevronLeft size={18} />
             <span>Candidates</span>
@@ -131,18 +133,18 @@ export default function CandidateProfile() {
           <span className="text-primary">Candidate Details</span>
         </div>
 
-        <div className="overflow-hidden bg-card border border-border shadow-xs rounded-2xl">
+        <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
           <div className={`h-1.5 bg-linear-to-r ${grad}`} />
 
           <div className="p-6">
             <div className="flex flex-col gap-6 sm:flex-row">
               <div className="flex flex-col items-center gap-3">
-                <div className="w-24 h-24 overflow-hidden bg-muted rounded-2xl">
+                <div className="h-24 w-24 overflow-hidden rounded-2xl bg-muted">
                   {c.profile_photo ? (
                     <img
                       src={c.profile_photo}
                       alt={c.name}
-                      className="object-cover w-full h-full"
+                      className="h-full w-full object-cover"
                     />
                   ) : null}
                 </div>
@@ -150,7 +152,7 @@ export default function CandidateProfile() {
                 {c.resume_url && (
                   <button
                     onClick={() => openFile(c.resume_url)}
-                    className="flex items-center gap-2 px-3 py-2 text-xs font-semibold border rounded-xl border-violet-200 bg-violet-50 text-violet-700"
+                    className="flex items-center gap-2 rounded-xl border border-violet-200 bg-violet-50 px-3 py-2 text-xs font-semibold text-violet-700"
                   >
                     <ArrowDownToLine size={14} />
                     Resume
@@ -174,7 +176,7 @@ export default function CandidateProfile() {
                   {c.preferred_industry}
                 </p>
 
-                <div className="grid gap-3 mt-4 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                   <Field label="Email" value={c.email} />
                   <Field label="Phone" value={c.phone_number} />
                   <Field label="Gender" value={c.gender} />
@@ -229,7 +231,7 @@ export default function CandidateProfile() {
               {c.skills.map((skill: string) => (
                 <span
                   key={skill}
-                  className="px-3 py-1 text-sm font-medium rounded-full bg-primary/10 text-primary"
+                  className="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary"
                 >
                   {skill}
                 </span>
@@ -246,10 +248,10 @@ export default function CandidateProfile() {
               {c.education.map((e, i) => (
                 <div
                   key={i}
-                  className="p-5 transition-all duration-200 bg-card border border-border shadow-xs rounded-2xl hover:border-input hover:shadow-md"
+                  className="rounded-2xl border border-border bg-card p-5 shadow-xs transition-all duration-200 hover:border-input hover:shadow-md"
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1 min-w-0">
+                    <div className="min-w-0 flex-1">
                       <h3 className="text-base font-semibold text-foreground">
                         {e.degree || e.level || "--"}
                       </h3>
@@ -258,7 +260,7 @@ export default function CandidateProfile() {
                         {e.institution || "--"}
                       </p>
 
-                      <div className="flex flex-wrap items-center gap-2 mt-3">
+                      <div className="mt-3 flex flex-wrap items-center gap-2">
                         <span className="rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
                           {e.start_year || "--"} - {e.end_year || "Present"}
                         </span>
@@ -269,8 +271,8 @@ export default function CandidateProfile() {
                       </div>
                     </div>
 
-                    <div className="px-4 py-3 text-center border shrink-0 rounded-2xl border-emerald-200 bg-emerald-50 dark:border-emerald-800 dark:bg-emerald-900/20">
-                      <p className="text-[11px] font-medium uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
+                    <div className="shrink-0 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-center dark:border-emerald-800 dark:bg-emerald-900/20">
+                      <p className="text-[11px] font-medium tracking-wide text-emerald-600 uppercase dark:text-emerald-400">
                         Score
                       </p>
 
@@ -293,7 +295,7 @@ export default function CandidateProfile() {
               {c.experience.map((ex, i) => (
                 <div
                   key={i}
-                  className="p-4 border border-border rounded-xl bg-muted/50"
+                  className="rounded-xl border border-border bg-muted/50 p-4"
                 >
                   <p className="font-semibold text-foreground">{ex.role}</p>
 
@@ -303,7 +305,9 @@ export default function CandidateProfile() {
                     {formatDateRange(ex.start_date, ex.end_date)}
                   </p>
 
-                  <p className="mt-2 text-sm text-muted-foreground">{ex.description}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {ex.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -318,7 +322,7 @@ export default function CandidateProfile() {
               {c.projects.map((p, i) => (
                 <div
                   key={i}
-                  className="p-4 border border-border rounded-xl bg-muted/50"
+                  className="rounded-xl border border-border bg-muted/50 p-4"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <p className="font-semibold text-foreground">{p.title}</p>
@@ -326,20 +330,22 @@ export default function CandidateProfile() {
                     {(p.live_url || p.github_url) && (
                       <button
                         onClick={() => openFile(p.live_url || p.github_url)}
-                        className="px-3 py-1 text-xs font-semibold rounded-lg bg-primary/10 text-primary"
+                        className="rounded-lg bg-primary/10 px-3 py-1 text-xs font-semibold text-primary"
                       >
                         View
                       </button>
                     )}
                   </div>
 
-                  <p className="mt-2 text-sm text-muted-foreground">{p.description}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {p.description}
+                  </p>
 
-                  <div className="flex flex-wrap gap-2 mt-3">
+                  <div className="mt-3 flex flex-wrap gap-2">
                     {p.tech_stack?.map((tech: string) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 text-xs font-medium text-muted-foreground bg-card rounded-full"
+                        className="rounded-full bg-card px-2 py-1 text-xs font-medium text-muted-foreground"
                       >
                         {tech}
                       </span>
@@ -367,7 +373,7 @@ export default function CandidateProfile() {
                 <button
                   key={item.label}
                   onClick={() => openFile(item.file)}
-                  className="flex items-center justify-between px-4 py-3 text-sm font-medium border border-border rounded-xl bg-muted/50 hover:bg-accent"
+                  className="flex items-center justify-between rounded-xl border border-border bg-muted/50 px-4 py-3 text-sm font-medium hover:bg-accent"
                 >
                   <span>{item.label}</span>
                   <ArrowDownToLine size={16} />
@@ -378,13 +384,13 @@ export default function CandidateProfile() {
 
         {c.cover_letter && (
           <Card title="Cover Letter">
-            <p className="text-sm leading-relaxed text-foreground whitespace-pre-wrap">
+            <p className="text-sm leading-relaxed whitespace-pre-wrap text-foreground">
               {c.cover_letter}
             </p>
           </Card>
         )}
 
-        <div className="p-6 bg-card border border-border shadow-xs rounded-2xl">
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-xs">
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Registered" value={fmtDate(c.created_at)} />
             <Field label="Updated" value={fmtDate(c.updated_at)} />

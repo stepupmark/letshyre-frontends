@@ -22,9 +22,9 @@ const Radio: React.FC<RadioProps> = ({
   return (
     <label
       htmlFor={id}
-      className={`relative flex cursor-pointer  select-none items-center gap-3 text-sm font-medium ${
+      className={`relative flex cursor-pointer items-center gap-3 text-sm font-medium select-none ${
         disabled
-          ? "text-muted-foreground/70 cursor-not-allowed"
+          ? "cursor-not-allowed text-muted-foreground/70"
           : "text-foreground"
       } ${className}`}
     >
@@ -40,14 +40,8 @@ const Radio: React.FC<RadioProps> = ({
       />
       <span
         className={`flex h-5 w-5 items-center justify-center rounded-full border-[1.25px] ${
-          checked
-            ? "border-primary bg-primary"
-            : "bg-transparent border-input"
-        } ${
-          disabled
-            ? "bg-muted border-border"
-            : ""
-        }`}
+          checked ? "border-primary bg-primary" : "border-input bg-transparent"
+        } ${disabled ? "border-border bg-muted" : ""}`}
       >
         <span
           className={`h-2 w-2 rounded-full bg-card ${

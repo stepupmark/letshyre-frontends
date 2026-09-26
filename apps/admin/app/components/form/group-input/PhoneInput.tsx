@@ -23,7 +23,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
 
   const countryCodes: Record<string, string> = countries.reduce(
     (acc, { code, label }) => ({ ...acc, [code]: label }),
-    {}
+    {},
   );
 
   const handleCountryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -50,7 +50,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
           <select
             value={selectedCountry}
             onChange={handleCountryChange}
-            className="appearance-none bg-none rounded-l-lg border-0 border-r border-border bg-transparent py-3 pl-3.5 pr-8 leading-tight text-foreground focus:border-ring focus:outline-hidden focus:ring-3 focus:ring-ring/50"
+            className="appearance-none rounded-l-lg border-0 border-r border-border bg-transparent bg-none py-3 pr-8 pl-3.5 leading-tight text-foreground focus:border-ring focus:ring-3 focus:ring-ring/50 focus:outline-hidden"
           >
             {countries.map((country) => (
               <option
@@ -62,7 +62,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
               </option>
             ))}
           </select>
-          <div className="absolute inset-y-0 flex items-center text-foreground pointer-events-none bg-none right-3">
+          <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center bg-none text-foreground">
             <svg
               className="stroke-current"
               width="20"
@@ -90,7 +90,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
         placeholder={placeholder}
         className={`h-11 w-full ${
           selectPosition === "start" ? "pl-[84px]" : "pr-[84px]"
-        } rounded-lg border border-input bg-transparent py-3 px-4 text-sm text-foreground shadow-xs placeholder:text-muted-foreground focus:border-ring focus:outline-hidden focus:ring-3 focus:ring-ring/50 dark:bg-input/30`}
+        } rounded-lg border border-input bg-transparent px-4 py-3 text-sm text-foreground shadow-xs placeholder:text-muted-foreground focus:border-ring focus:ring-3 focus:ring-ring/50 focus:outline-hidden dark:bg-input/30`}
       />
 
       {selectPosition === "end" && (
@@ -98,7 +98,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
           <select
             value={selectedCountry}
             onChange={handleCountryChange}
-            className="appearance-none bg-none rounded-r-lg border-0 border-l border-border bg-transparent py-3 pl-3.5 pr-8 leading-tight text-foreground focus:border-ring focus:outline-hidden focus:ring-3 focus:ring-ring/50"
+            className="appearance-none rounded-r-lg border-0 border-l border-border bg-transparent bg-none py-3 pr-8 pl-3.5 leading-tight text-foreground focus:border-ring focus:ring-3 focus:ring-ring/50 focus:outline-hidden"
           >
             {countries.map((country) => (
               <option
@@ -110,7 +110,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
               </option>
             ))}
           </select>
-          <div className="absolute inset-y-0 flex items-center text-foreground pointer-events-none right-3">
+          <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-foreground">
             <svg
               className="stroke-current"
               width="20"

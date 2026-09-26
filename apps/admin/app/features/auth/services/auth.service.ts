@@ -11,7 +11,10 @@ import type { LoginInput, OtpSession } from "../types";
 
 const OTP_TYPE = "Forgot Password";
 
-function assertOk(result: { status?: boolean; success?: boolean; message?: string }, fallback: string) {
+function assertOk(
+  result: { status?: boolean; success?: boolean; message?: string },
+  fallback: string,
+) {
   if (result.status === false || result.success === false) {
     throw new ApiError(result.message || fallback, 400);
   }
@@ -19,14 +22,21 @@ function assertOk(result: { status?: boolean; success?: boolean; message?: strin
 
 export const authService = {
   async login(payload: LoginInput) {
-    const { data } = await http.post("user/v1/login/", payload, { skipAuth: true });
+    const { data } = await http.post("user/v1/login/", payload, {
+      skipAuth: true,
+    });
     const body = envelope(loginResultSchema).parse(data);
-    if (body.success === false) throw new ApiError(body.message || "Login failed", 400);
+    if (body.success === false)
+      throw new ApiError(body.message || "Login failed", 400);
     return body.data;
   },
 
   async logout(refreshToken: string) {
-    await http.post("user/v1/logout/", { refresh_token: refreshToken }, { skipRefresh: true });
+    await http.post(
+      "user/v1/logout/",
+      { refresh_token: refreshToken },
+      { skipRefresh: true },
+    );
   },
 
   async getProfile(signal?: AbortSignal) {
@@ -47,13 +57,21 @@ export const authService = {
       { email, otp_type: OTP_TYPE },
       { skipAuth: true },
     );
-    return { email, otpSessionKey: sendOtpResultSchema.parse(data).otp_session_key };
+    return {
+      email,
+      otpSessionKey: sendOtpResultSchema.parse(data).otp_session_key,
+    };
   },
 
   async verifyOtp(session: OtpSession, otp: string) {
     const { data } = await http.post(
       "commonapp/v1/verify_otp/",
-      { email: session.email, otp, otp_session_key: session.otpSessionKey, otp_type: OTP_TYPE },
+      {
+        email: session.email,
+        otp,
+        otp_session_key: session.otpSessionKey,
+        otp_type: OTP_TYPE,
+      },
       { skipAuth: true },
     );
     assertOk(statusResultSchema.parse(data), "Invalid code");

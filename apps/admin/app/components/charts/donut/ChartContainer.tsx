@@ -23,15 +23,15 @@ export default function ChartContainer({
 
   if (isError) {
     return (
-      <div className="bg-card border border-red-100 dark:border-red-900/30 rounded-2xl p-6 shadow-xs flex items-start gap-3">
-        <div className="shrink-0 w-8 h-8 rounded-lg bg-red-50 dark:bg-red-900/20 flex items-center justify-center">
-          <AlertCircle className="w-4 h-4 text-red-500" />
+      <div className="flex items-start gap-3 rounded-2xl border border-red-100 bg-card p-6 shadow-xs dark:border-red-900/30">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-red-50 dark:bg-red-900/20">
+          <AlertCircle className="h-4 w-4 text-red-500" />
         </div>
         <div>
           <p className="text-sm font-medium text-red-600 dark:text-red-400">
             Failed to load data
           </p>
-          <p className="text-xs text-muted-foreground mt-0.5">
+          <p className="mt-0.5 text-xs text-muted-foreground">
             Please refresh the page or try again later.
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function ChartContainer({
 
   if (!data || data.length === 0) {
     return (
-      <div className="bg-card border border-border rounded-2xl shadow-xs">
+      <div className="rounded-2xl border border-border bg-card shadow-xs">
         <ChartEmptyState title={emptyMessage} />
       </div>
     );

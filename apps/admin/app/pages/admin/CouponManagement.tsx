@@ -28,16 +28,20 @@ export default function CouponManagement() {
       />
 
       <div className="w-full max-w-full">
-        <div className="flex flex-col gap-4 mb-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="text-2xl font-bold text-foreground">
               Coupon Management
             </h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              List of existing coupons. You can create, update, and delete coupons here.
+              List of existing coupons. You can create, update, and delete
+              coupons here.
             </p>
           </div>
-          <Button startIcon={<Plus size={18} />} onClick={() => setIsCreateModalOpen(true)}>
+          <Button
+            startIcon={<Plus size={18} />}
+            onClick={() => setIsCreateModalOpen(true)}
+          >
             Create New Coupon
           </Button>
         </div>
@@ -45,7 +49,7 @@ export default function CouponManagement() {
         <CouponTable coupons={data?.results || []} isLoading={isLoading} />
 
         {data && data.total_pages > 1 && (
-          <div className="flex items-center justify-between p-4 mt-6 bg-card border border-border rounded-xl shadow-xs">
+          <div className="mt-6 flex items-center justify-between rounded-xl border border-border bg-card p-4 shadow-xs">
             <p className="text-sm text-muted-foreground">
               Showing{" "}
               <span className="font-semibold text-foreground">
@@ -65,14 +69,14 @@ export default function CouponManagement() {
               <button
                 onClick={() => handlePageChange(data.current_page - 1)}
                 disabled={data.current_page === 1}
-                className="px-3 py-1.5 text-sm font-medium rounded-lg border border-input bg-card text-foreground hover:bg-accent disabled:opacity-50 disabled:cursor-not-allowed transition"
+                className="rounded-lg border border-input bg-card px-3 py-1.5 text-sm font-medium text-foreground transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Previous
               </button>
               <button
                 onClick={() => handlePageChange(data.current_page + 1)}
                 disabled={data.current_page === data.total_pages}
-                className="px-3 py-1.5 text-sm font-medium rounded-lg border border-input bg-card text-foreground hover:bg-accent disabled:opacity-50 disabled:cursor-not-allowed transition"
+                className="rounded-lg border border-input bg-card px-3 py-1.5 text-sm font-medium text-foreground transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Next
               </button>

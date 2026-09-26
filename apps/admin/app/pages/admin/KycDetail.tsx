@@ -11,7 +11,7 @@ import { getErrorMessage } from "~/lib/api/api-error";
 
 const CheckCircleIcon = () => (
   <svg
-    className="w-4 h-4"
+    className="h-4 w-4"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -27,7 +27,7 @@ const CheckCircleIcon = () => (
 
 const XCircleIcon = () => (
   <svg
-    className="w-5 h-5"
+    className="h-5 w-5"
     fill="none"
     viewBox="0 0 24 24"
     strokeWidth="1.5"
@@ -42,7 +42,7 @@ const XCircleIcon = () => (
 );
 
 const LoaderIcon = () => (
-  <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+  <svg className="h-5 w-5 animate-spin" fill="none" viewBox="0 0 24 24">
     <circle
       className="opacity-25"
       cx="12"
@@ -61,7 +61,7 @@ const LoaderIcon = () => (
 
 const BackIcon = () => (
   <svg
-    className="w-4 h-4"
+    className="h-4 w-4"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -73,7 +73,7 @@ const BackIcon = () => (
 
 const MailIcon = () => (
   <svg
-    className="w-5 h-5"
+    className="h-5 w-5"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -89,7 +89,7 @@ const MailIcon = () => (
 
 const GlobeIcon = () => (
   <svg
-    className="w-5 h-5"
+    className="h-5 w-5"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -105,7 +105,7 @@ const GlobeIcon = () => (
 
 const MapPinIcon = () => (
   <svg
-    className="w-5 h-5"
+    className="h-5 w-5"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -126,7 +126,7 @@ const MapPinIcon = () => (
 
 const LinkIcon = () => (
   <svg
-    className="w-5 h-5"
+    className="h-5 w-5"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -142,7 +142,7 @@ const LinkIcon = () => (
 
 const BuildingIcon = () => (
   <svg
-    className="w-5 h-5"
+    className="h-5 w-5"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -158,7 +158,7 @@ const BuildingIcon = () => (
 
 const FileTextIcon = () => (
   <svg
-    className="w-5 h-5"
+    className="h-5 w-5"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -207,8 +207,8 @@ function RejectModal({
       showCloseButton={false}
       className="w-full max-w-md p-6"
     >
-      <div className="flex items-center gap-3 mb-4 text-rose-600 dark:text-rose-400">
-        <div className="p-2 rounded-full bg-rose-100 dark:bg-rose-900/30">
+      <div className="mb-4 flex items-center gap-3 text-rose-600 dark:text-rose-400">
+        <div className="rounded-full bg-rose-100 p-2 dark:bg-rose-900/30">
           <XCircleIcon />
         </div>
         <h3 className="text-xl font-bold text-foreground">
@@ -227,7 +227,7 @@ function RejectModal({
           </label>
           <textarea
             {...register("remarks")}
-            className="w-full p-3 mt-2 text-sm text-foreground transition-all border border-border resize-none bg-muted/50 rounded-xl focus:ring-2 focus:ring-ring/50 focus:border-ring"
+            className="mt-2 w-full resize-none rounded-xl border border-border bg-muted/50 p-3 text-sm text-foreground transition-all focus:border-ring focus:ring-2 focus:ring-ring/50"
             rows={4}
             placeholder="e.g., GST document is heavily blurred..."
           />
@@ -238,19 +238,19 @@ function RejectModal({
           )}
         </div>
 
-        <div className="flex justify-end gap-3 mt-8">
+        <div className="mt-8 flex justify-end gap-3">
           <button
             type="button"
             onClick={onClose}
             disabled={isSubmitting}
-            className="px-5 py-2.5 text-sm font-semibold text-foreground transition bg-card border border-input rounded-xl hover:bg-accent disabled:opacity-50"
+            className="rounded-xl border border-input bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:bg-accent disabled:opacity-50"
           >
             Cancel
           </button>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white transition shadow-xs bg-rose-600 rounded-xl hover:bg-rose-700 focus:ring-4 focus:ring-rose-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 rounded-xl bg-rose-600 px-5 py-2.5 text-sm font-semibold text-white shadow-xs transition hover:bg-rose-700 focus:ring-4 focus:ring-rose-500/20 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {isSubmitting ? <LoaderIcon /> : "Confirm Rejection"}
           </button>
@@ -310,11 +310,11 @@ export default function KycDetail() {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[70vh] gap-4">
-        <div className="p-4 rounded-full bg-primary/10 text-primary">
+      <div className="flex min-h-[70vh] flex-col items-center justify-center gap-4">
+        <div className="rounded-full bg-primary/10 p-4 text-primary">
           <LoaderIcon />
         </div>
-        <span className="font-semibold text-muted-foreground animate-pulse">
+        <span className="animate-pulse font-semibold text-muted-foreground">
           Loading details...
         </span>
       </div>
@@ -323,20 +323,18 @@ export default function KycDetail() {
 
   if (isError || !record) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[70vh] gap-4 text-center">
-        <div className="p-4 rounded-full bg-rose-50 dark:bg-rose-500/10 text-rose-500">
+      <div className="flex min-h-[70vh] flex-col items-center justify-center gap-4 text-center">
+        <div className="rounded-full bg-rose-50 p-4 text-rose-500 dark:bg-rose-500/10">
           <XCircleIcon />
         </div>
-        <h2 className="text-lg font-bold text-foreground">
-          Record Not Found
-        </h2>
+        <h2 className="text-lg font-bold text-foreground">Record Not Found</h2>
         <span className="max-w-md text-sm text-muted-foreground">
           {errorMessage ||
             "The requested KYC detailed record could not be loaded."}
         </span>
         <button
           onClick={() => navigate(-1)}
-          className="px-5 py-2.5 mt-4 text-sm font-semibold text-foreground transition bg-card border border-border shadow-xs rounded-xl hover:bg-accent"
+          className="mt-4 rounded-xl border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground shadow-xs transition hover:bg-accent"
         >
           Go Back to KYC List
         </button>
@@ -351,32 +349,30 @@ export default function KycDetail() {
         description="Comprehensive review of employer KYC verification"
       />
 
-      <div className="pb-12 space-y-6 font-sans bg-muted/50">
+      <div className="space-y-6 bg-muted/50 pb-12 font-sans">
         <div className="flex items-center text-sm font-medium text-muted-foreground">
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center gap-1.5 transition-colors hover:text-foreground py-1 pr-2"
+            className="flex items-center gap-1.5 py-1 pr-2 transition-colors hover:text-foreground"
           >
             <BackIcon />
             Back to Employers
           </button>
           <span className="mx-2 text-muted-foreground/70">/</span>
-          <span className="text-foreground">
-            KYC Verification
-          </span>
+          <span className="text-foreground">KYC Verification</span>
         </div>
 
-        <div className="relative overflow-hidden bg-card border border-border shadow-xs rounded-3xl">
-          <div className="absolute top-0 left-0 right-0 h-32 bg-linear-to-r from-primary/10 via-background to-background" />
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-card shadow-xs">
+          <div className="absolute top-0 right-0 left-0 h-32 bg-linear-to-r from-primary/10 via-background to-background" />
 
           <div className="relative flex flex-col justify-between gap-6 p-6 sm:p-8 md:flex-row md:items-end">
             <div className="flex items-center gap-5 sm:gap-6">
-              <div className="flex items-center justify-center p-1.5 bg-card border border-border shadow-md shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl">
+              <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-border bg-card p-1.5 shadow-md sm:h-24 sm:w-24">
                 {record.company_logo ? (
                   <img
                     src={record.company_logo}
                     alt={record.company_name}
-                    className="object-contain w-full h-full rounded-xl"
+                    className="h-full w-full rounded-xl object-contain"
                   />
                 ) : (
                   <span className="text-2xl font-black text-muted-foreground/70">
@@ -392,26 +388,26 @@ export default function KycDetail() {
                   </h1>
 
                   {record.kyc_status === "Verified" && (
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg dark:bg-emerald-900/20 dark:border-emerald-800/40 dark:text-emerald-400">
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />{" "}
+                    <span className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-bold tracking-wider text-emerald-700 uppercase dark:border-emerald-800/40 dark:bg-emerald-900/20 dark:text-emerald-400">
+                      <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />{" "}
                       Verified
                     </span>
                   )}
                   {record.kyc_status === "Rejected" && (
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-50 border border-rose-200 rounded-lg dark:bg-rose-900/20 dark:border-rose-800/40 dark:text-rose-400">
-                      <div className="w-1.5 h-1.5 rounded-full bg-rose-500" />{" "}
+                    <span className="inline-flex items-center gap-1.5 rounded-lg border border-rose-200 bg-rose-50 px-3 py-1 text-xs font-bold tracking-wider text-rose-700 uppercase dark:border-rose-800/40 dark:bg-rose-900/20 dark:text-rose-400">
+                      <div className="h-1.5 w-1.5 rounded-full bg-rose-500" />{" "}
                       Rejected
                     </span>
                   )}
                   {record.kyc_status === "Pending" && (
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200 rounded-lg dark:bg-amber-900/20 dark:border-amber-800/40 dark:text-amber-400">
-                      <div className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />{" "}
+                    <span className="inline-flex items-center gap-1.5 rounded-lg border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-bold tracking-wider text-amber-700 uppercase dark:border-amber-800/40 dark:bg-amber-900/20 dark:text-amber-400">
+                      <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-500" />{" "}
                       Pending Review
                     </span>
                   )}
                 </div>
 
-                <div className="flex items-center gap-4 mb-1 text-sm font-medium text-muted-foreground">
+                <div className="mb-1 flex items-center gap-4 text-sm font-medium text-muted-foreground">
                   <span className="flex items-center gap-1.5">
                     <BuildingIcon />
                     {record.company_industry || "Industry Not Specified"}
@@ -422,12 +418,12 @@ export default function KycDetail() {
 
             {(record.kyc_status === "Pending" ||
               record.kyc_status === "Rejected") && (
-              <div className="flex flex-col w-full gap-3 sm:flex-row sm:w-auto md:shrink-0">
+              <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row md:shrink-0">
                 {record.kyc_status === "Pending" && (
                   <button
                     onClick={() => setIsRejectModalOpen(true)}
                     disabled={approving || isUpdating}
-                    className="flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-bold text-foreground transition bg-card border border-border rounded-xl hover:bg-rose-50 hover:text-rose-600 hover:border-rose-200 shadow-xs disabled:opacity-50 dark:hover:bg-rose-500/10 dark:hover:text-rose-400"
+                    className="flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-5 py-2.5 text-sm font-bold text-foreground shadow-xs transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-600 disabled:opacity-50 dark:hover:bg-rose-500/10 dark:hover:text-rose-400"
                   >
                     <XCircleIcon />
                     Reject Request
@@ -436,7 +432,7 @@ export default function KycDetail() {
                 <button
                   onClick={handleApprove}
                   disabled={approving || isUpdating}
-                  className="flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-bold text-primary-foreground transition shadow-xs bg-primary rounded-xl hover:bg-primary/90 focus:ring-4 focus:ring-ring/20 disabled:opacity-70"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-2.5 text-sm font-bold text-primary-foreground shadow-xs transition hover:bg-primary/90 focus:ring-4 focus:ring-ring/20 disabled:opacity-70"
                 >
                   {approving ? <LoaderIcon /> : <CheckCircleIcon />}
                   {approving ? "Approving..." : "Approve Now"}
@@ -448,16 +444,16 @@ export default function KycDetail() {
 
         <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
           <div className="flex flex-col gap-6 xl:col-span-2">
-            <div className="overflow-hidden bg-card border border-border shadow-xs rounded-3xl">
-              <div className="px-6 py-5 border-b border-border bg-muted/50">
+            <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-xs">
+              <div className="border-b border-border bg-muted/50 px-6 py-5">
                 <h2 className="text-lg font-bold text-foreground">
                   Profile Overview
                 </h2>
               </div>
               <div className="p-6">
-                <div className="grid grid-cols-1 gap-y-8 gap-x-6 sm:grid-cols-2">
+                <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
                   <div className="flex items-start gap-4">
-                    <div className="p-2.5 rounded-xl border border-border bg-muted/50 text-muted-foreground">
+                    <div className="rounded-xl border border-border bg-muted/50 p-2.5 text-muted-foreground">
                       <MailIcon />
                     </div>
                     <div>
@@ -471,7 +467,7 @@ export default function KycDetail() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="p-2.5 rounded-xl border border-border bg-muted/50 text-muted-foreground">
+                    <div className="rounded-xl border border-border bg-muted/50 p-2.5 text-muted-foreground">
                       <GlobeIcon />
                     </div>
                     <div>
@@ -485,7 +481,7 @@ export default function KycDetail() {
                           }
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-1 mt-1 text-sm font-semibold text-primary hover:text-primary hover:underline"
+                          className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary hover:underline"
                         >
                           {record.website_url || record.company_website}
                         </a>
@@ -498,7 +494,7 @@ export default function KycDetail() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="p-2.5 rounded-xl border border-border bg-muted/50 text-muted-foreground">
+                    <div className="rounded-xl border border-border bg-muted/50 p-2.5 text-muted-foreground">
                       <LinkIcon />
                     </div>
                     <div>
@@ -510,7 +506,7 @@ export default function KycDetail() {
                           href={record.linkedin_url}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-1 mt-1 text-sm font-semibold text-primary hover:text-primary hover:underline"
+                          className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary hover:underline"
                         >
                           Visit LinkedIn Profile
                         </a>
@@ -523,7 +519,7 @@ export default function KycDetail() {
                   </div>
 
                   <div className="flex items-start gap-4 sm:col-span-2">
-                    <div className="p-2.5 rounded-xl border border-border bg-muted/50 text-muted-foreground">
+                    <div className="rounded-xl border border-border bg-muted/50 p-2.5 text-muted-foreground">
                       <MapPinIcon />
                     </div>
                     <div>
@@ -543,13 +539,13 @@ export default function KycDetail() {
                   <h3 className="mb-3 text-sm font-bold tracking-wider text-foreground uppercase">
                     About the Company
                   </h3>
-                  <div className="p-5 text-sm leading-relaxed text-foreground border border-border bg-muted/50 rounded-2xl">
+                  <div className="rounded-2xl border border-border bg-muted/50 p-5 text-sm leading-relaxed text-foreground">
                     {record.company_description ? (
                       <p className="whitespace-pre-line">
                         {record.company_description}
                       </p>
                     ) : (
-                      <span className="italic text-muted-foreground">
+                      <span className="text-muted-foreground italic">
                         No company description provided.
                       </span>
                     )}
@@ -558,32 +554,32 @@ export default function KycDetail() {
               </div>
             </div>
 
-            <div className="overflow-hidden bg-card border border-border shadow-xs rounded-3xl">
-              <div className="px-6 py-5 border-b border-border bg-muted/50">
+            <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-xs">
+              <div className="border-b border-border bg-muted/50 px-6 py-5">
                 <h2 className="text-lg font-bold text-foreground">
                   Tax & Registration
                 </h2>
               </div>
               <div className="p-6">
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-                  <div className="p-4 bg-card border border-border shadow-xs rounded-2xl">
-                    <span className="block mb-1 text-xs font-bold tracking-wider text-muted-foreground uppercase">
+                  <div className="rounded-2xl border border-border bg-card p-4 shadow-xs">
+                    <span className="mb-1 block text-xs font-bold tracking-wider text-muted-foreground uppercase">
                       PAN Status
                     </span>
                     <span className="block font-mono text-sm font-black tracking-wide text-foreground">
                       {record.pan_number || "PENDING"}
                     </span>
                   </div>
-                  <div className="p-4 bg-card border border-border shadow-xs rounded-2xl">
-                    <span className="block mb-1 text-xs font-bold tracking-wider text-muted-foreground uppercase">
+                  <div className="rounded-2xl border border-border bg-card p-4 shadow-xs">
+                    <span className="mb-1 block text-xs font-bold tracking-wider text-muted-foreground uppercase">
                       GST Status
                     </span>
                     <span className="block font-mono text-sm font-black tracking-wide text-foreground">
                       {record.gst_number || "PENDING"}
                     </span>
                   </div>
-                  <div className="col-span-2 p-4 bg-card border border-border shadow-xs sm:col-span-1 rounded-2xl">
-                    <span className="block mb-1 text-xs font-bold tracking-wider text-muted-foreground uppercase">
+                  <div className="col-span-2 rounded-2xl border border-border bg-card p-4 shadow-xs sm:col-span-1">
+                    <span className="mb-1 block text-xs font-bold tracking-wider text-muted-foreground uppercase">
                       Reg Number
                     </span>
                     <span className="block font-mono text-sm font-black tracking-wide text-foreground">
@@ -596,8 +592,8 @@ export default function KycDetail() {
           </div>
 
           <div className="xl:col-span-1">
-            <div className="sticky overflow-hidden bg-card border border-border shadow-xs rounded-3xl top-6">
-              <div className="px-6 py-5 border-b border-border bg-muted/50">
+            <div className="sticky top-6 overflow-hidden rounded-3xl border border-border bg-card shadow-xs">
+              <div className="border-b border-border bg-muted/50 px-6 py-5">
                 <h2 className="text-lg font-bold text-foreground">
                   Proof Documents
                 </h2>
@@ -606,7 +602,7 @@ export default function KycDetail() {
                 </p>
               </div>
 
-              <div className="p-6 space-y-4">
+              <div className="space-y-4 p-6">
                 {[
                   {
                     label: "Registration Certificate",
@@ -622,16 +618,16 @@ export default function KycDetail() {
                 ].map((doc, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-4 p-3 transition-colors border border-border shadow-xs group rounded-2xl hover:border-border hover:shadow-md dark:bg-muted/30 dark:hover:bg-accent"
+                    className="group flex items-center gap-4 rounded-2xl border border-border p-3 shadow-xs transition-colors hover:border-border hover:shadow-md dark:bg-muted/30 dark:hover:bg-accent"
                   >
-                    <div className="flex items-center justify-center p-2.5 text-primary bg-primary/10 rounded-xl">
+                    <div className="flex items-center justify-center rounded-xl bg-primary/10 p-2.5 text-primary">
                       <FileTextIcon />
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-bold text-foreground truncate">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-bold text-foreground">
                         {doc.label}
                       </p>
-                      <p className="text-xs text-muted-foreground uppercase tracking-widest mt-0.5">
+                      <p className="mt-0.5 text-xs tracking-widest text-muted-foreground uppercase">
                         {doc.url ? "ATTACHED" : "MISSING"}
                       </p>
                     </div>
@@ -640,7 +636,7 @@ export default function KycDetail() {
                         href={doc.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="px-4 py-2 text-xs font-bold text-foreground transition-colors bg-card border border-border shadow-xs shrink-0 rounded-xl hover:bg-accent hover:text-primary"
+                        className="shrink-0 rounded-xl border border-border bg-card px-4 py-2 text-xs font-bold text-foreground shadow-xs transition-colors hover:bg-accent hover:text-primary"
                       >
                         View
                       </a>

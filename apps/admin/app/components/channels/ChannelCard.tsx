@@ -63,14 +63,11 @@ export default function ChannelCard({
 }: ChannelCardProps) {
   return (
     <div
-      className={`
-        group relative flex flex-col gap-5 rounded-2xl border bg-card p-6 shadow-xs transition-all duration-200
-        ${
-          value
-            ? `${borderOnMap[color]} shadow-md ${glowMap[color]}`
-            : "border-border"
-        }
-      `}
+      className={`group relative flex flex-col gap-5 rounded-2xl border bg-card p-6 shadow-xs transition-all duration-200 ${
+        value
+          ? `${borderOnMap[color]} shadow-md ${glowMap[color]}`
+          : "border-border"
+      } `}
     >
       <div className="flex items-start justify-between">
         <span
@@ -81,9 +78,7 @@ export default function ChannelCard({
 
         <span
           className={`rounded-full px-3 py-1 text-[11px] font-semibold tracking-wide transition-all ${
-            value
-              ? pillOnMap[color]
-              : "bg-muted text-muted-foreground"
+            value ? pillOnMap[color] : "bg-muted text-muted-foreground"
           }`}
         >
           {value ? "Active" : "Inactive"}
@@ -91,9 +86,7 @@ export default function ChannelCard({
       </div>
 
       <div>
-        <p className="text-base font-semibold text-foreground">
-          {label}
-        </p>
+        <p className="text-base font-semibold text-foreground">{label}</p>
         <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
           {description}
         </p>
@@ -113,10 +106,8 @@ export default function ChannelCard({
           aria-checked={value}
           disabled={isPending}
           onClick={() => onChange(!value)}
-          className={`relative h-7 w-12 rounded-full transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 ${
-            value
-              ? toggleOnMap[color]
-              : "bg-muted focus-visible:ring-input"
+          className={`relative h-7 w-12 rounded-full transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-60 ${
+            value ? toggleOnMap[color] : "bg-muted focus-visible:ring-input"
           }`}
         >
           <span

@@ -45,7 +45,7 @@ const RowActions: React.FC<RowActionsProps> = ({ jobId, approvalStatus }) => {
           <button
             onClick={handleApprove}
             disabled={bulkActionMutation.isPending}
-            className="px-3 py-1.5 text-[13px] font-medium text-primary-foreground bg-primary hover:bg-primary/90 rounded-lg shadow-xs transition-colors disabled:opacity-50 whitespace-nowrap"
+            className="rounded-lg bg-primary px-3 py-1.5 text-[13px] font-medium whitespace-nowrap text-primary-foreground shadow-xs transition-colors hover:bg-primary/90 disabled:opacity-50"
           >
             Approve
           </button>
@@ -55,7 +55,7 @@ const RowActions: React.FC<RowActionsProps> = ({ jobId, approvalStatus }) => {
           <button
             onClick={handleApprove}
             disabled={bulkActionMutation.isPending}
-            className="px-3 py-1.5 text-[13px] font-medium text-foreground bg-card border border-input hover:bg-accent rounded-lg shadow-xs transition-colors disabled:opacity-50 whitespace-nowrap"
+            className="rounded-lg border border-input bg-card px-3 py-1.5 text-[13px] font-medium whitespace-nowrap text-foreground shadow-xs transition-colors hover:bg-accent disabled:opacity-50"
           >
             Re-approve
           </button>
@@ -67,9 +67,7 @@ const RowActions: React.FC<RowActionsProps> = ({ jobId, approvalStatus }) => {
         onClose={() => setIsRejectModalOpen(false)}
         className="max-w-md p-6 text-left"
       >
-        <h3 className="mb-2 text-lg font-bold text-foreground">
-          Reject Job
-        </h3>
+        <h3 className="mb-2 text-lg font-bold text-foreground">Reject Job</h3>
         <p className="mt-5 mb-4 text-sm text-muted-foreground">
           Please provide a reason for rejecting this job. This reason may be
           visible to the employer.
@@ -78,7 +76,7 @@ const RowActions: React.FC<RowActionsProps> = ({ jobId, approvalStatus }) => {
         <textarea
           value={rejectReason}
           onChange={(e) => setRejectReason(e.target.value)}
-          className="w-full p-3 mb-6 text-foreground border border-input outline-hidden rounded-xl bg-muted/50 focus:ring-ring/50 focus:border-ring"
+          className="mb-6 w-full rounded-xl border border-input bg-muted/50 p-3 text-foreground outline-hidden focus:border-ring focus:ring-ring/50"
           rows={4}
           placeholder="Enter rejection reason..."
         ></textarea>
@@ -86,14 +84,14 @@ const RowActions: React.FC<RowActionsProps> = ({ jobId, approvalStatus }) => {
         <div className="flex justify-end gap-3">
           <button
             onClick={() => setIsRejectModalOpen(false)}
-            className="px-4 py-2 text-sm font-medium text-foreground bg-card border border-input rounded-lg hover:bg-accent"
+            className="rounded-lg border border-input bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-accent"
           >
             Cancel
           </button>
           <button
             onClick={handleReject}
             disabled={bulkActionMutation.isPending || !rejectReason.trim()}
-            className="px-4 py-2 text-sm font-medium text-white transition-colors rounded-lg bg-destructive hover:bg-destructive/90 disabled:opacity-50"
+            className="rounded-lg bg-destructive px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-destructive/90 disabled:opacity-50"
           >
             {bulkActionMutation.isPending ? "Rejecting..." : "Reject Job"}
           </button>

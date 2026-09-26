@@ -75,8 +75,8 @@ export default function JobDetail() {
 
   if (error || !data) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[60vh] text-muted-foreground">
-        <AlertCircle className="w-16 h-16 mb-4 text-destructive" />
+      <div className="flex min-h-[60vh] flex-col items-center justify-center text-muted-foreground">
+        <AlertCircle className="mb-4 h-16 w-16 text-destructive" />
         <h2 className="mb-2 text-2xl font-bold text-foreground">
           Failed to load job details
         </h2>
@@ -118,12 +118,12 @@ export default function JobDetail() {
   } = data;
 
   return (
-    <div className="mx-auto space-y-8 font-sans max-w-7xl">
+    <div className="mx-auto max-w-7xl space-y-8 font-sans">
       <div className="space-y-4">
         <div className="flex items-center gap-3 text-sm font-medium">
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors"
+            className="flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary"
           >
             <ChevronLeft size={18} />
             <span>Back to Jobs</span>
@@ -132,10 +132,10 @@ export default function JobDetail() {
           <span className="text-primary">Job Details</span>
         </div>
 
-        <div className="flex flex-col justify-between gap-6 p-6 bg-card border border-border shadow-xs md:flex-row md:items-start rounded-2xl">
+        <div className="flex flex-col justify-between gap-6 rounded-2xl border border-border bg-card p-6 shadow-xs md:flex-row md:items-start">
           <div className="flex items-start gap-4">
             <div>
-              <div className="flex flex-wrap items-center gap-3 mb-2">
+              <div className="mb-2 flex flex-wrap items-center gap-3">
                 <h1 className="text-2xl font-bold text-foreground md:text-3xl">
                   {title || "Untitled Job"}
                 </h1>
@@ -153,9 +153,9 @@ export default function JobDetail() {
                 </Badge>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3 mt-4 text-sm text-muted-foreground">
+              <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                 {employerId && (
-                  <div className="flex items-center gap-2 px-3 py-1.5 bg-muted/50 rounded-lg border border-border/80">
+                  <div className="flex items-center gap-2 rounded-lg border border-border/80 bg-muted/50 px-3 py-1.5">
                     <Building size={15} className="text-primary" />
                     <span>
                       Employer ID:{" "}
@@ -166,7 +166,7 @@ export default function JobDetail() {
                   </div>
                 )}
                 {city && country && (
-                  <div className="flex items-center gap-2 px-3 py-1.5 bg-muted/50 rounded-lg border border-border/80">
+                  <div className="flex items-center gap-2 rounded-lg border border-border/80 bg-muted/50 px-3 py-1.5">
                     <MapPin size={15} className="text-primary" />
                     <span className="font-medium text-foreground">
                       {city}, {country}
@@ -174,7 +174,7 @@ export default function JobDetail() {
                   </div>
                 )}
                 {createdAt && (
-                  <div className="flex items-center gap-2 px-3 py-1.5 bg-muted/50 rounded-lg border border-border/80">
+                  <div className="flex items-center gap-2 rounded-lg border border-border/80 bg-muted/50 px-3 py-1.5">
                     <Clock size={15} className="text-primary" />
                     <span className="font-medium text-foreground">
                       Posted {new Date(createdAt).toLocaleDateString()}
@@ -186,11 +186,11 @@ export default function JobDetail() {
           </div>
 
           {jobStatus !== "Approved" && (
-            <div className="flex items-center w-full gap-3 mt-4 md:ml-auto md:w-auto md:mt-0">
+            <div className="mt-4 flex w-full items-center gap-3 md:mt-0 md:ml-auto md:w-auto">
               {jobStatus === "Pending" && (
                 <Button
                   variant="outline"
-                  className="flex-1 md:flex-none text-destructive hover:bg-destructive/10 hover:text-destructive ring-destructive/20 border-destructive/50"
+                  className="flex-1 border-destructive/50 text-destructive ring-destructive/20 hover:bg-destructive/10 hover:text-destructive md:flex-none"
                   startIcon={<XCircle size={18} />}
                   onClick={() => setIsRejectModalOpen(true)}
                 >
@@ -199,7 +199,7 @@ export default function JobDetail() {
               )}
               <Button
                 variant="primary"
-                className="flex-1 border-transparent shadow-xs md:flex-none bg-green-600 hover:bg-green-700"
+                className="flex-1 border-transparent bg-green-600 shadow-xs hover:bg-green-700 md:flex-none"
                 startIcon={<CheckCircle size={18} />}
                 onClick={handleApprove}
                 disabled={jobActionMutation.isPending}
@@ -215,26 +215,26 @@ export default function JobDetail() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 ">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
         <div className="space-y-8 lg:col-span-2">
           {description && (
-            <section className="p-6 bg-card border border-border shadow-xs md:p-8 rounded-2xl">
-              <h2 className="flex items-center gap-3 mb-5 text-xl font-bold text-foreground">
-                <div className="flex items-center justify-center p-2 rounded-lg bg-primary/10">
+            <section className="rounded-2xl border border-border bg-card p-6 shadow-xs md:p-8">
+              <h2 className="mb-5 flex items-center gap-3 text-xl font-bold text-foreground">
+                <div className="flex items-center justify-center rounded-lg bg-primary/10 p-2">
                   <FileText className="text-primary" size={20} />
                 </div>
                 About The Role
               </h2>
-              <div className="leading-relaxed text-muted-foreground whitespace-pre-wrap">
+              <div className="leading-relaxed whitespace-pre-wrap text-muted-foreground">
                 {description}
               </div>
             </section>
           )}
 
           {responsibilities && responsibilities.length > 0 && (
-            <section className="p-6 bg-card border border-border shadow-xs md:p-8 rounded-2xl">
-              <h2 className="flex items-center gap-3 mb-5 text-xl font-bold text-foreground">
-                <div className="flex items-center justify-center p-2 rounded-lg bg-primary/10">
+            <section className="rounded-2xl border border-border bg-card p-6 shadow-xs md:p-8">
+              <h2 className="mb-5 flex items-center gap-3 text-xl font-bold text-foreground">
+                <div className="flex items-center justify-center rounded-lg bg-primary/10 p-2">
                   <CheckCircle className="text-primary" size={20} />
                 </div>
                 Key Responsibilities
@@ -242,10 +242,12 @@ export default function JobDetail() {
               <ul className="space-y-4">
                 {responsibilities.map((req: string, idx: number) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <span className="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                       <CheckCircle size={14} />
                     </span>
-                    <span className="leading-relaxed text-muted-foreground">{req}</span>
+                    <span className="leading-relaxed text-muted-foreground">
+                      {req}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -253,9 +255,9 @@ export default function JobDetail() {
           )}
 
           {skills && skills.length > 0 && (
-            <section className="p-6 bg-card border border-border shadow-xs md:p-8 rounded-2xl">
-              <h2 className="flex items-center gap-3 mb-5 text-xl font-bold text-foreground">
-                <div className="flex items-center justify-center p-2 rounded-lg bg-primary/10">
+            <section className="rounded-2xl border border-border bg-card p-6 shadow-xs md:p-8">
+              <h2 className="mb-5 flex items-center gap-3 text-xl font-bold text-foreground">
+                <div className="flex items-center justify-center rounded-lg bg-primary/10 p-2">
                   <Award className="text-primary" size={20} />
                 </div>
                 Skills Required
@@ -264,7 +266,7 @@ export default function JobDetail() {
                 {skills.map((skill: string, idx: number) => (
                   <span
                     key={idx}
-                    className="px-3.5 py-1.5 bg-primary/50 border border-primary/60 text-primary rounded-lg text-sm font-medium hover:bg-primary/10 transition-colors shadow-xs"
+                    className="rounded-lg border border-primary/60 bg-primary/50 px-3.5 py-1.5 text-sm font-medium text-primary shadow-xs transition-colors hover:bg-primary/10"
                   >
                     {skill}
                   </span>
@@ -274,9 +276,9 @@ export default function JobDetail() {
           )}
 
           {questions && questions.length > 0 && (
-            <section className="p-6 bg-card border border-border shadow-xs md:p-8 rounded-2xl">
-              <h2 className="flex items-center gap-3 mb-5 text-xl font-bold text-foreground">
-                <div className="flex items-center justify-center p-2 rounded-lg bg-primary/10">
+            <section className="rounded-2xl border border-border bg-card p-6 shadow-xs md:p-8">
+              <h2 className="mb-5 flex items-center gap-3 text-xl font-bold text-foreground">
+                <div className="flex items-center justify-center rounded-lg bg-primary/10 p-2">
                   <AlertCircle className="text-primary" size={20} />
                 </div>
                 Screening Questions
@@ -285,13 +287,13 @@ export default function JobDetail() {
                 {questions.map((q: string, idx: number) => (
                   <li
                     key={idx}
-                    className="p-4 text-foreground transition-all bg-card border border-border shadow-xs rounded-xl hover:shadow-md hover:border-primary/60"
+                    className="rounded-xl border border-border bg-card p-4 text-foreground shadow-xs transition-all hover:border-primary/60 hover:shadow-md"
                   >
                     <div className="flex gap-4">
-                      <div className="flex items-center justify-center shrink-0 w-8 h-8 font-semibold rounded-lg bg-primary/10 text-primary">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 font-semibold text-primary">
                         {idx + 1}
                       </div>
-                      <p className="pt-1 font-medium leading-relaxed text-foreground">
+                      <p className="pt-1 leading-relaxed font-medium text-foreground">
                         {q}
                       </p>
                     </div>
@@ -303,9 +305,9 @@ export default function JobDetail() {
         </div>
 
         <div className="space-y-6">
-          <div className="p-6 bg-card border border-border shadow-xs rounded-2xl">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex items-center justify-center p-2 rounded-lg bg-primary/10">
+          <div className="rounded-2xl border border-border bg-card p-6 shadow-xs">
+            <div className="mb-6 flex items-center gap-3">
+              <div className="flex items-center justify-center rounded-lg bg-primary/10 p-2">
                 <Briefcase className="text-primary" size={20} />
               </div>
               <h3 className="text-lg font-bold text-foreground">
@@ -315,11 +317,11 @@ export default function JobDetail() {
 
             <div className="space-y-5">
               <div className="flex items-start gap-4">
-                <div className="p-2.5 bg-primary/10 text-primary rounded-xl shrink-0">
+                <div className="shrink-0 rounded-xl bg-primary/10 p-2.5 text-primary">
                   <IndianRupee size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground font-medium mb-0.5">
+                  <p className="mb-0.5 text-sm font-medium text-muted-foreground">
                     Salary Range
                   </p>
                   <p className="font-semibold text-foreground">
@@ -329,11 +331,11 @@ export default function JobDetail() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="p-2.5 bg-primary/10 text-primary rounded-xl shrink-0">
+                <div className="shrink-0 rounded-xl bg-primary/10 p-2.5 text-primary">
                   <Briefcase size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground font-medium mb-0.5">
+                  <p className="mb-0.5 text-sm font-medium text-muted-foreground">
                     Experience
                   </p>
                   <p className="font-semibold text-foreground">
@@ -343,11 +345,11 @@ export default function JobDetail() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="p-2.5 bg-primary/10 text-primary rounded-xl shrink-0">
+                <div className="shrink-0 rounded-xl bg-primary/10 p-2.5 text-primary">
                   <Layers size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground font-medium mb-0.5">
+                  <p className="mb-0.5 text-sm font-medium text-muted-foreground">
                     Employment Type
                   </p>
                   <p className="font-semibold text-foreground capitalize">
@@ -359,11 +361,11 @@ export default function JobDetail() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="p-2.5 bg-primary/10 text-primary rounded-xl shrink-0">
+                <div className="shrink-0 rounded-xl bg-primary/10 p-2.5 text-primary">
                   <Building size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground font-medium mb-0.5">
+                  <p className="mb-0.5 text-sm font-medium text-muted-foreground">
                     Work Mode
                   </p>
                   <p className="font-semibold text-foreground capitalize">
@@ -373,11 +375,11 @@ export default function JobDetail() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="p-2.5 bg-primary/10 text-primary rounded-xl shrink-0">
+                <div className="shrink-0 rounded-xl bg-primary/10 p-2.5 text-primary">
                   <Calendar size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground font-medium mb-0.5">
+                  <p className="mb-0.5 text-sm font-medium text-muted-foreground">
                     Deadline
                   </p>
                   <p className="font-semibold text-foreground">
@@ -391,9 +393,9 @@ export default function JobDetail() {
           </div>
 
           {(minimumEducation || specialization) && (
-            <div className="p-6 bg-card border border-border shadow-xs rounded-2xl">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex items-center justify-center p-2 rounded-lg bg-primary/10">
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-xs">
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex items-center justify-center rounded-lg bg-primary/10 p-2">
                   <GraduationCap className="text-primary" size={20} />
                 </div>
                 <h3 className="text-lg font-bold text-foreground">
@@ -403,7 +405,7 @@ export default function JobDetail() {
               <div className="space-y-4">
                 {minimumEducation && (
                   <div>
-                    <p className="text-sm text-muted-foreground flex items-center gap-2 mb-1.5">
+                    <p className="mb-1.5 flex items-center gap-2 text-sm text-muted-foreground">
                       <GraduationCap size={16} /> Minimum Education
                     </p>
                     <p className="pl-6 font-medium text-foreground">
@@ -413,7 +415,7 @@ export default function JobDetail() {
                 )}
                 {specialization && (
                   <div>
-                    <p className="text-sm text-muted-foreground flex items-center gap-2 mb-1.5">
+                    <p className="mb-1.5 flex items-center gap-2 text-sm text-muted-foreground">
                       <BookOpen size={16} /> Specialization
                     </p>
                     <p className="pl-6 font-medium text-foreground">
@@ -426,12 +428,12 @@ export default function JobDetail() {
           )}
 
           {jdFileUrl && (
-            <div className="p-6 border bg-linear-to-br from-primary/10 to-primary/50 rounded-2xl border-primary/20">
-              <div className="flex items-center justify-between mb-4">
+            <div className="rounded-2xl border border-primary/20 bg-linear-to-br from-primary/10 to-primary/50 p-6">
+              <div className="mb-4 flex items-center justify-between">
                 <h3 className="text-lg font-bold text-primary">
                   Job Description
                 </h3>
-                <div className="p-2 bg-card rounded-lg shadow-xs text-primary">
+                <div className="rounded-lg bg-card p-2 text-primary shadow-xs">
                   <FileText size={20} />
                 </div>
               </div>
@@ -440,7 +442,7 @@ export default function JobDetail() {
               </p>
               <Button
                 variant="primary"
-                className="justify-center w-full text-primary-foreground border-transparent bg-primary hover:bg-primary/90"
+                className="w-full justify-center border-transparent bg-primary text-primary-foreground hover:bg-primary/90"
                 startIcon={<Download size={18} />}
                 onClick={() => window.open(jdFileUrl, "_blank")}
               >
@@ -450,8 +452,8 @@ export default function JobDetail() {
           )}
 
           {optimizedScore !== null && optimizedScore !== undefined && (
-            <div className="p-6 bg-card border border-border shadow-xs rounded-2xl">
-              <div className="flex items-center justify-between mb-2">
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-xs">
+              <div className="mb-2 flex items-center justify-between">
                 <h3 className="text-sm font-semibold tracking-wider text-muted-foreground uppercase">
                   JD Quality Score
                 </h3>
@@ -468,7 +470,7 @@ export default function JobDetail() {
                   {optimizedScore}/100
                 </Badge>
               </div>
-              <div className="w-full bg-muted rounded-full h-2.5 mt-3">
+              <div className="mt-3 h-2.5 w-full rounded-full bg-muted">
                 <div
                   className={`h-2.5 rounded-full transition-all duration-1000 ${
                     optimizedScore > 70
@@ -488,11 +490,9 @@ export default function JobDetail() {
       <Modal
         isOpen={isRejectModalOpen}
         onClose={() => setIsRejectModalOpen(false)}
-        className="max-w-md p-6 dark:bg-muted dark:border-border"
+        className="max-w-md p-6 dark:border-border dark:bg-muted"
       >
-        <h3 className="mb-2 text-lg font-bold text-foreground">
-          Reject Jobs
-        </h3>
+        <h3 className="mb-2 text-lg font-bold text-foreground">Reject Jobs</h3>
         <p className="mt-5 mb-4 text-sm text-muted-foreground">
           Please provide a reason for rejecting the job. This reason may be
           visible to the employers.
@@ -501,7 +501,7 @@ export default function JobDetail() {
         <form onSubmit={handleSubmit(handleReject)}>
           <textarea
             {...register("rejectReason")}
-            className="w-full p-3 text-foreground border border-input outline-hidden rounded-xl bg-muted/50 focus:ring-ring/50 focus:border-ring"
+            className="w-full rounded-xl border border-input bg-muted/50 p-3 text-foreground outline-hidden focus:border-ring focus:ring-ring/50"
             rows={4}
             placeholder="Enter rejection reason..."
           ></textarea>
@@ -512,18 +512,18 @@ export default function JobDetail() {
             </p>
           )}
 
-          <div className="flex justify-end gap-3 mt-6">
+          <div className="mt-6 flex justify-end gap-3">
             <button
               type="button"
               onClick={() => setIsRejectModalOpen(false)}
-              className="px-4 py-2 text-sm font-medium text-foreground bg-card border border-input rounded-lg hover:bg-accent"
+              className="rounded-lg border border-input bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-accent"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={jobActionMutation.isPending}
-              className="px-4 py-2 text-sm font-medium text-white transition-colors rounded-lg bg-destructive hover:bg-destructive/90 disabled:opacity-50"
+              className="rounded-lg bg-destructive px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-destructive/90 disabled:opacity-50"
             >
               {jobActionMutation.isPending ? "Rejecting..." : "Reject Jobs"}
             </button>

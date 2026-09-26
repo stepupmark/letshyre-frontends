@@ -1,20 +1,17 @@
 export default function CandidateProfileSkeleton() {
   return (
     <div className="min-h-screen animate-pulse bg-muted/50">
-      <div className="px-6 py-6 mx-auto space-y-6 max-w-7xl">
+      <div className="mx-auto max-w-7xl space-y-6 px-6 py-6">
         <div className="flex items-center justify-between">
-          <div className="w-40 h-5 rounded-md bg-muted" />
-          <div className="h-8 rounded-full w-28 bg-muted" />
+          <div className="h-5 w-40 rounded-md bg-muted" />
+          <div className="h-8 w-28 rounded-full bg-muted" />
         </div>
 
-        <div className="rounded-3xl bg-muted h-52" />
+        <div className="h-52 rounded-3xl bg-muted" />
 
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           {[1, 2, 3, 4].map((i) => (
-            <div
-              key={i}
-              className="h-28 rounded-2xl bg-muted"
-            />
+            <div key={i} className="h-28 rounded-2xl bg-muted" />
           ))}
         </div>
 

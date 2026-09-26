@@ -42,14 +42,17 @@ export const useUpdateCandidateApproval = (profileId: string) => {
       updateCandidateApproval(profileId, payload),
 
     onSuccess: (_, variables) => {
-      queryClient.setQueryData<CandidateProfileData>(["candidate_profile", profileId], (old) => {
-        if (!old) return old;
-        return {
-          ...old,
-          is_approved: variables.is_approved ?? old.is_approved,
-          is_rejected: variables.is_rejected ?? old.is_rejected,
-        };
-      });
+      queryClient.setQueryData<CandidateProfileData>(
+        ["candidate_profile", profileId],
+        (old) => {
+          if (!old) return old;
+          return {
+            ...old,
+            is_approved: variables.is_approved ?? old.is_approved,
+            is_rejected: variables.is_rejected ?? old.is_rejected,
+          };
+        },
+      );
     },
     onError: () => {
       toast.error("Failed to update candidate approval");

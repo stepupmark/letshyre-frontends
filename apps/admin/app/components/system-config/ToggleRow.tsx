@@ -37,22 +37,16 @@ export default function ToggleRow({
   onChange,
 }: ToggleRowProps) {
   return (
-    <div className="flex items-center justify-between gap-4 px-5 py-4 rounded-2xl bg-muted/50">
+    <div className="flex items-center justify-between gap-4 rounded-2xl bg-muted/50 px-5 py-4">
       <div className="min-w-0">
-        <p className="text-sm font-medium text-foreground">
-          {label}
-        </p>
-        <p className="mt-0.5 text-xs text-muted-foreground">
-          {description}
-        </p>
+        <p className="text-sm font-medium text-foreground">{label}</p>
+        <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>
       </div>
 
-      <div className="flex items-center gap-3 shrink-0">
+      <div className="flex shrink-0 items-center gap-3">
         <span
           className={`rounded-full px-2.5 py-1 text-[11px] font-medium transition-all ${
-            value
-              ? pillOn[colorOn]
-              : "bg-muted text-muted-foreground"
+            value ? pillOn[colorOn] : "bg-muted text-muted-foreground"
           }`}
         >
           {value ? onLabel : offLabel}
@@ -65,10 +59,8 @@ export default function ToggleRow({
           aria-checked={value}
           disabled={isPending}
           onClick={() => onChange(!value)}
-          className={`relative h-7 w-12 rounded-full transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 ${
-            value
-              ? colorMap[colorOn]
-              : "bg-muted focus-visible:ring-input"
+          className={`relative h-7 w-12 rounded-full transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-60 ${
+            value ? colorMap[colorOn] : "bg-muted focus-visible:ring-input"
           }`}
         >
           <span

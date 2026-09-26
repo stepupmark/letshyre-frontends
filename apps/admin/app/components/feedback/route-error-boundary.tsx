@@ -22,13 +22,17 @@ export function RouteErrorBoundary() {
     );
   }
 
-  const details = import.meta.env.DEV && error instanceof Error ? error.message : undefined;
+  const details =
+    import.meta.env.DEV && error instanceof Error ? error.message : undefined;
 
   return (
     <EmptyState
       icon={TriangleAlert}
       title="Something went wrong"
-      description={details ?? "An unexpected error occurred. Try again, and contact support if it keeps happening."}
+      description={
+        details ??
+        "An unexpected error occurred. Try again, and contact support if it keeps happening."
+      }
       className="min-h-[60vh]"
       action={
         <Button variant="outline" onClick={() => window.location.reload()}>

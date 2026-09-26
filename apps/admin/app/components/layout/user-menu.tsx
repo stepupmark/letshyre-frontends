@@ -16,7 +16,12 @@ import { Skeleton } from "~/components/ui/skeleton";
 
 function initials(name: string | null | undefined) {
   const parts = (name ?? "").trim().split(/\s+/).filter(Boolean);
-  return parts.length ? parts.slice(0, 2).map((part) => part[0]?.toUpperCase()).join("") : "A";
+  return parts.length
+    ? parts
+        .slice(0, 2)
+        .map((part) => part[0]?.toUpperCase())
+        .join("")
+    : "A";
 }
 
 export function UserMenu() {
@@ -29,9 +34,15 @@ export function UserMenu() {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="h-9 gap-2 px-2" aria-label="Account menu">
+          <Button
+            variant="ghost"
+            className="h-9 gap-2 px-2"
+            aria-label="Account menu"
+          >
             <Avatar className="size-7">
-              <AvatarFallback className="text-xs">{initials(user?.name)}</AvatarFallback>
+              <AvatarFallback className="text-xs">
+                {initials(user?.name)}
+              </AvatarFallback>
             </Avatar>
             {profile.isPending ? (
               <Skeleton className="hidden h-4 w-20 sm:block" />
@@ -44,9 +55,13 @@ export function UserMenu() {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-60">
           <DropdownMenuLabel className="font-normal">
-            <p className="truncate text-sm font-medium capitalize">{user?.name ?? "Admin"}</p>
+            <p className="truncate text-sm font-medium capitalize">
+              {user?.name ?? "Admin"}
+            </p>
             <p className="truncate text-xs text-muted-foreground">
-              {profile.isError ? "Couldn't load your profile" : (user?.email ?? "")}
+              {profile.isError
+                ? "Couldn't load your profile"
+                : (user?.email ?? "")}
             </p>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
@@ -54,12 +69,19 @@ export function UserMenu() {
             <KeyRound /> Change password
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem variant="destructive" disabled={logout.isPending} onSelect={() => logout.mutate()}>
+          <DropdownMenuItem
+            variant="destructive"
+            disabled={logout.isPending}
+            onSelect={() => logout.mutate()}
+          >
             <LogOut /> Sign out
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-      <ChangePasswordDialog open={changePasswordOpen} onOpenChange={setChangePasswordOpen} />
+      <ChangePasswordDialog
+        open={changePasswordOpen}
+        onOpenChange={setChangePasswordOpen}
+      />
     </>
   );
 }

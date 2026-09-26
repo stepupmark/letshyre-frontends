@@ -81,27 +81,27 @@ const KpiCard = ({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
-      className="flex gap-4 p-4 transition-shadow duration-300 bg-card border border-border shadow-xs rounded-2xl hover:shadow-md"
+      className="flex gap-4 rounded-2xl border border-border bg-card p-4 shadow-xs transition-shadow duration-300 hover:shadow-md"
     >
       <div
-        className={`flex items-center justify-center w-12 h-12 rounded-xl ${iconBgColor} ${iconColor} shrink-0`}
+        className={`flex h-12 w-12 items-center justify-center rounded-xl ${iconBgColor} ${iconColor} shrink-0`}
       >
         {icon}
       </div>
-      <div className="flex flex-col justify-between flex-1 min-w-0">
+      <div className="flex min-w-0 flex-1 flex-col justify-between">
         <div>
-          <div className="flex items-center gap-1.5 mb-1">
+          <div className="mb-1 flex items-center gap-1.5">
             <h3 className="text-xs font-semibold text-muted-foreground">
               {title}
             </h3>
-            <Info className="w-3.5 h-3.5 text-muted-foreground/70" />
+            <Info className="h-3.5 w-3.5 text-muted-foreground/70" />
           </div>
           <p className="mb-2 text-2xl font-bold tracking-tight text-foreground">
             {value.toLocaleString()}
           </p>
         </div>
-        <div className="flex items-end justify-between mt-auto">
-          <p className="text-[11px] font-medium text-muted-foreground whitespace-nowrap mb-0.5">
+        <div className="mt-auto flex items-end justify-between">
+          <p className="mb-0.5 text-[11px] font-medium whitespace-nowrap text-muted-foreground">
             {subtitle}{" "}
             {trendText && (
               <span className={`ml-1 font-semibold ${trendColor}`}>
@@ -124,13 +124,13 @@ export default function KpiSummaryCards({
   summary: UnlocksDashboardData["summary"];
 }) {
   return (
-    <div className="grid grid-cols-1 gap-4 mb-8 md:grid-cols-2 xl:grid-cols-4">
+    <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
       <KpiCard
         index={0}
         title="Total Unlocks"
         value={summary.total_unlocks || 0}
         subtitle="All time unlocks"
-        icon={<Lock className="w-5 h-5" strokeWidth={2} />}
+        icon={<Lock className="h-5 w-5" strokeWidth={2} />}
         iconBgColor="bg-blue-50 dark:bg-blue-900/30"
         iconColor="text-blue-500"
       />
@@ -141,7 +141,7 @@ export default function KpiSummaryCards({
         subtitle=""
         trendText=""
         trendColor="text-green-500"
-        icon={<CalendarCheck className="w-5 h-5" strokeWidth={2} />}
+        icon={<CalendarCheck className="h-5 w-5" strokeWidth={2} />}
         iconBgColor="bg-green-50 dark:bg-green-900/30"
         iconColor="text-green-500"
       />
@@ -152,7 +152,7 @@ export default function KpiSummaryCards({
         subtitle=""
         trendText=""
         trendColor="text-green-500"
-        icon={<CalendarDays className="w-5 h-5" strokeWidth={2} />}
+        icon={<CalendarDays className="h-5 w-5" strokeWidth={2} />}
         iconBgColor="bg-purple-50 dark:bg-purple-900/30"
         iconColor="text-purple-500"
       />
@@ -163,7 +163,7 @@ export default function KpiSummaryCards({
         subtitle=""
         trendText=""
         trendColor="text-green-500"
-        icon={<CalendarHeart className="w-5 h-5" strokeWidth={2} />}
+        icon={<CalendarHeart className="h-5 w-5" strokeWidth={2} />}
         iconBgColor="bg-orange-50 dark:bg-orange-900/30"
         iconColor="text-orange-500"
       />

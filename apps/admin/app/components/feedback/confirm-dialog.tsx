@@ -36,11 +36,16 @@ export function ConfirmDialog({
   children,
 }: ConfirmDialogProps) {
   return (
-    <AlertDialog open={open} onOpenChange={(next) => !pending && onOpenChange(next)}>
+    <AlertDialog
+      open={open}
+      onOpenChange={(next) => !pending && onOpenChange(next)}
+    >
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>{title}</AlertDialogTitle>
-          {description && <AlertDialogDescription>{description}</AlertDialogDescription>}
+          {description && (
+            <AlertDialogDescription>{description}</AlertDialogDescription>
+          )}
         </AlertDialogHeader>
         {children}
         <AlertDialogFooter>

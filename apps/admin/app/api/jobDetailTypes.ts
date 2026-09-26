@@ -1,10 +1,6 @@
 export type WorkMode = "remote" | "onsite" | "hybrid";
 export type EmploymentType =
-  | "full_time"
-  | "part_time"
-  | "contract"
-  | "internship"
-  | "freelance";
+  "full_time" | "part_time" | "contract" | "internship" | "freelance";
 
 export type JobStatus = "Approved" | "Pending" | "Rejected";
 

@@ -17,19 +17,24 @@ interface DayWiseActivityChartProps {
   isFetching?: boolean;
 }
 
-export default function DayWiseActivityChart({ data, days, onDaysChange, isFetching }: DayWiseActivityChartProps) {
+export default function DayWiseActivityChart({
+  data,
+  days,
+  onDaysChange,
+  isFetching,
+}: DayWiseActivityChartProps) {
   return (
-    <div className="bg-card rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] border border-border flex flex-col h-full relative overflow-hidden transition-all duration-300">
-      <div className="flex flex-col items-start justify-between gap-4 mb-6 sm:flex-row sm:items-center">
+    <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)]">
+      <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
         <div>
-          <div className="flex items-center gap-3 mb-1">
-            <div className="p-2 text-indigo-600 rounded-lg bg-indigo-50 dark:bg-indigo-500/10 dark:text-indigo-400">
-              <Activity className="w-5 h-5" />
+          <div className="mb-1 flex items-center gap-3">
+            <div className="rounded-lg bg-indigo-50 p-2 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-400">
+              <Activity className="h-5 w-5" />
             </div>
-            <h3 className="text-lg font-bold tracking-tight text-foreground flex items-center gap-2">
+            <h3 className="flex items-center gap-2 text-lg font-bold tracking-tight text-foreground">
               Activity Trend
               {isFetching && (
-                <div className="w-4 h-4 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+                <div className="h-4 w-4 animate-spin rounded-full border-2 border-indigo-500 border-t-transparent"></div>
               )}
             </h3>
           </div>
@@ -42,17 +47,17 @@ export default function DayWiseActivityChart({ data, days, onDaysChange, isFetch
           <select
             value={days}
             onChange={(e) => onDaysChange(Number(e.target.value))}
-            className="py-2 pl-4 pr-10 text-sm font-semibold text-foreground transition-colors bg-card border border-border shadow-xs appearance-none cursor-pointer rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 hover:bg-accent"
+            className="cursor-pointer appearance-none rounded-xl border border-border bg-card py-2 pr-10 pl-4 text-sm font-semibold text-foreground shadow-xs transition-colors hover:bg-accent focus:ring-2 focus:ring-indigo-500 focus:outline-hidden"
           >
             <option value={7}>Last 7 Days</option>
             <option value={14}>Last 14 Days</option>
             <option value={30}>Last 30 Days (1 Month)</option>
           </select>
-          <ChevronDown className="absolute w-4 h-4 text-muted-foreground -translate-y-1/2 pointer-events-none right-3 top-1/2" />
+          <ChevronDown className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         </div>
       </div>
 
-      <div className="w-full h-[300px] mt-4">
+      <div className="mt-4 h-[300px] w-full">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
             data={data}
@@ -64,7 +69,13 @@ export default function DayWiseActivityChart({ data, days, onDaysChange, isFetch
                 <stop offset="95%" stopColor="#6366f1" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" className="dark:stroke-muted-foreground" opacity={0.5} />
+            <CartesianGrid
+              strokeDasharray="3 3"
+              vertical={false}
+              stroke="#e5e7eb"
+              className="dark:stroke-muted-foreground"
+              opacity={0.5}
+            />
             <XAxis
               dataKey="date"
               axisLine={false}
@@ -74,7 +85,7 @@ export default function DayWiseActivityChart({ data, days, onDaysChange, isFetch
               tickFormatter={(val) => {
                 try {
                   const d = new Date(val);
-                  return `${d.getDate()} ${d.toLocaleString('default', { month: 'short' })}`;
+                  return `${d.getDate()} ${d.toLocaleString("default", { month: "short" })}`;
                 } catch {
                   return val;
                 }
@@ -90,12 +101,17 @@ export default function DayWiseActivityChart({ data, days, onDaysChange, isFetch
               content={({ active, payload, label }) => {
                 if (active && payload && payload.length) {
                   return (
-                    <div className="z-50 p-4 border border-border shadow-xl bg-card/95 backdrop-blur-md rounded-xl">
-                      <p className="mb-2 font-semibold text-foreground">{label}</p>
+                    <div className="z-50 rounded-xl border border-border bg-card/95 p-4 shadow-xl backdrop-blur-md">
+                      <p className="mb-2 font-semibold text-foreground">
+                        {label}
+                      </p>
                       <div className="flex items-center gap-2">
-                        <div className="w-2.5 h-2.5 rounded-full bg-indigo-500" />
+                        <div className="h-2.5 w-2.5 rounded-full bg-indigo-500" />
                         <span className="text-sm text-muted-foreground">
-                          Active: <strong className="ml-1 text-foreground">{payload[0].value}</strong>
+                          Active:{" "}
+                          <strong className="ml-1 text-foreground">
+                            {payload[0].value}
+                          </strong>
                         </span>
                       </div>
                     </div>

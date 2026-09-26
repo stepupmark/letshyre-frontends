@@ -20,32 +20,24 @@ export default function ReadonlyRow({
   unit,
 }: ReadonlyRowProps) {
   return (
-    <div className="flex items-center justify-between gap-4 px-5 py-4 pr-10 rounded-2xl bg-muted/50">
-      <div className="flex items-center flex-1 min-w-0 gap-3">
+    <div className="flex items-center justify-between gap-4 rounded-2xl bg-muted/50 px-5 py-4 pr-10">
+      <div className="flex min-w-0 flex-1 items-center gap-3">
         <span
           className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${iconBg}`}
         >
           <Icon className={`h-4 w-4 ${iconColor}`} />
         </span>
         <div className="min-w-0">
-          <p className="text-sm font-medium text-foreground">
-            {label}
-          </p>
-          <p className="mt-0.5 text-xs text-muted-foreground">
-            {description}
-          </p>
+          <p className="text-sm font-medium text-foreground">{label}</p>
+          <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>
         </div>
       </div>
 
-      <div className="flex items-baseline gap-1 shrink-0">
+      <div className="flex shrink-0 items-baseline gap-1">
         <span className="text-base font-semibold text-foreground tabular-nums">
           {value}
         </span>
-        {unit && (
-          <span className="text-xs text-muted-foreground">
-            {unit}
-          </span>
-        )}
+        {unit && <span className="text-xs text-muted-foreground">{unit}</span>}
       </div>
     </div>
   );

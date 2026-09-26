@@ -20,18 +20,18 @@ const Checkbox: React.FC<CheckboxProps> = ({
   return (
     <label
       className={clsx(
-        "flex items-center space-x-3 cursor-pointer text-foreground",
-        { "cursor-not-allowed opacity-50": disabled }
+        "flex cursor-pointer items-center space-x-3 text-foreground",
+        { "cursor-not-allowed opacity-50": disabled },
       )}
     >
       <input
         id={id}
         type="checkbox"
         className={clsx(
-          "w-4 h-4 border-input rounded-sm focus:ring-2 focus:ring-ring/50",
-          "dark:bg-input/30 dark:checked:bg-primary dark:checked:border-primary",
+          "h-4 w-4 rounded-sm border-input focus:ring-2 focus:ring-ring/50",
+          "dark:bg-input/30 dark:checked:border-primary dark:checked:bg-primary",
           "focus:ring-offset-0 focus:outline-hidden",
-          className
+          className,
         )}
         checked={checked}
         onChange={(e) => onChange(e.target.checked)}

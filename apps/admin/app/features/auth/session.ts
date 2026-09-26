@@ -1,4 +1,8 @@
-import { createContext, redirect, type RouterContextProvider } from "react-router";
+import {
+  createContext,
+  redirect,
+  type RouterContextProvider,
+} from "react-router";
 import { ApiError } from "~/lib/api/api-error";
 import { tokenStore } from "~/lib/auth/token-store";
 import { queryClient } from "~/lib/query/query-client";
@@ -30,7 +34,9 @@ export async function requireSession({ request, context }: MiddlewareArgs) {
   const session = await getSession();
   if (!session) {
     const { pathname, search } = new URL(request.url);
-    throw redirect(`/login?redirectTo=${encodeURIComponent(pathname + search)}`);
+    throw redirect(
+      `/login?redirectTo=${encodeURIComponent(pathname + search)}`,
+    );
   }
   context.set(sessionContext, session);
 }

@@ -81,9 +81,7 @@ export const useUpdateJobStatus = () => {
       toast.success("Job status updated successfully");
     },
     onError: (error: Error) => {
-      toast.error(
-        getErrorMessage(error, "Failed to update job status"),
-      );
+      toast.error(getErrorMessage(error, "Failed to update job status"));
     },
   });
 };
@@ -124,9 +122,7 @@ export const useBulkActionJobs = () => {
       toast.success(`Jobs ${actionPastTense} successfully`);
     },
     onError: (error: Error) => {
-      toast.error(
-        getErrorMessage(error, "Failed to perform bulk action"),
-      );
+      toast.error(getErrorMessage(error, "Failed to perform bulk action"));
     },
   });
 };
@@ -156,9 +152,7 @@ export const useJobActions = () => {
       toast.success(`Jobs ${actionPastTense} successfully`);
     },
     onError: (error: Error) => {
-      toast.error(
-        getErrorMessage(error, "Failed to perform bulk action"),
-      );
+      toast.error(getErrorMessage(error, "Failed to perform bulk action"));
     },
   });
 };

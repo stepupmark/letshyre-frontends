@@ -65,7 +65,7 @@ export interface UpdateCouponPayload {
 export const fetchCoupons = async (page: number = 1): Promise<CouponsData> => {
   try {
     const response = await http.get<CouponsApiResponse>(
-      `/user/v1/admin/coupon/management/?page=${page}`
+      `/user/v1/admin/coupon/management/?page=${page}`,
     );
     return response.data.data;
   } catch (err) {
@@ -73,11 +73,13 @@ export const fetchCoupons = async (page: number = 1): Promise<CouponsData> => {
   }
 };
 
-export const createCoupon = async (data: CreateCouponPayload): Promise<Coupon> => {
+export const createCoupon = async (
+  data: CreateCouponPayload,
+): Promise<Coupon> => {
   try {
     const response = await http.post<CouponApiResponse>(
       `/user/v1/admin/coupon/management/`,
-      data
+      data,
     );
     return response.data.data;
   } catch (err) {
@@ -85,11 +87,14 @@ export const createCoupon = async (data: CreateCouponPayload): Promise<Coupon> =
   }
 };
 
-export const updateCoupon = async (id: string, data: UpdateCouponPayload): Promise<Coupon> => {
+export const updateCoupon = async (
+  id: string,
+  data: UpdateCouponPayload,
+): Promise<Coupon> => {
   try {
     const response = await http.put<CouponApiResponse>(
       `/user/v1/admin/coupon/detail/${id}/`,
-      data
+      data,
     );
     return response.data.data;
   } catch (err) {
@@ -100,7 +105,7 @@ export const updateCoupon = async (id: string, data: UpdateCouponPayload): Promi
 export const deleteCoupon = async (id: string): Promise<void> => {
   try {
     await http.delete<DeleteCouponApiResponse>(
-      `/user/v1/admin/coupon/detail/${id}/`
+      `/user/v1/admin/coupon/detail/${id}/`,
     );
   } catch (err) {
     throw toApiError(err);

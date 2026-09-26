@@ -26,8 +26,8 @@ const JobsTable: React.FC<JobsTableProps> = ({
 }) => {
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center w-full py-24 bg-card border border-border shadow-xs rounded-2xl">
-        <div className="w-8 h-8 border-b-2 rounded-full animate-spin border-primary"></div>
+      <div className="flex w-full flex-col items-center justify-center rounded-2xl border border-border bg-card py-24 shadow-xs">
+        <div className="h-8 w-8 animate-spin rounded-full border-b-2 border-primary"></div>
         <p className="mt-4 text-sm font-medium text-muted-foreground">
           Loading jobs...
         </p>
@@ -37,10 +37,10 @@ const JobsTable: React.FC<JobsTableProps> = ({
 
   if (jobs.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center w-full py-24 bg-card border border-border shadow-xs rounded-2xl">
-        <div className="flex items-center justify-center mb-4 rounded-full w-14 h-14 bg-muted/50">
+      <div className="flex w-full flex-col items-center justify-center rounded-2xl border border-border bg-card py-24 shadow-xs">
+        <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-muted/50">
           <svg
-            className="w-6 h-6 text-muted-foreground"
+            className="h-6 w-6 text-muted-foreground"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -64,47 +64,47 @@ const JobsTable: React.FC<JobsTableProps> = ({
   }
 
   return (
-    <div className="overflow-hidden bg-card border border-border shadow-xs rounded-2xl">
-      <div className="overflow-x-auto [scrollbar-width:thin]">
-        <Table className="w-full pb-20 text-left border-collapse min-w-max">
-          <TableHeader className="bg-muted/80 border-b border-border">
+    <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
+      <div className="[scrollbar-width:thin] overflow-x-auto">
+        <Table className="w-full min-w-max border-collapse pb-20 text-left">
+          <TableHeader className="border-b border-border bg-muted/80">
             <TableRow>
               <TableCell isHeader className="w-10 px-4 py-3">
                 {""}
               </TableCell>
               <TableCell
                 isHeader
-                className="px-4 py-3 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider"
+                className="px-4 py-3 text-[11px] font-semibold tracking-wider text-muted-foreground uppercase"
               >
                 Job Details
               </TableCell>
               <TableCell
                 isHeader
-                className="px-4 py-3 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider"
+                className="px-4 py-3 text-[11px] font-semibold tracking-wider text-muted-foreground uppercase"
               >
                 Applications
               </TableCell>
               <TableCell
                 isHeader
-                className="px-4 py-3 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider"
+                className="px-4 py-3 text-[11px] font-semibold tracking-wider text-muted-foreground uppercase"
               >
                 Details
               </TableCell>
               <TableCell
                 isHeader
-                className="px-4 py-3 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider"
+                className="px-4 py-3 text-[11px] font-semibold tracking-wider text-muted-foreground uppercase"
               >
                 Created
               </TableCell>
               <TableCell
                 isHeader
-                className="px-4 py-3 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider"
+                className="px-4 py-3 text-[11px] font-semibold tracking-wider text-muted-foreground uppercase"
               >
                 Status
               </TableCell>
               <TableCell
                 isHeader
-                className="px-4 py-3 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider"
+                className="px-4 py-3 text-[11px] font-semibold tracking-wider text-muted-foreground uppercase"
               >
                 Approval
               </TableCell>

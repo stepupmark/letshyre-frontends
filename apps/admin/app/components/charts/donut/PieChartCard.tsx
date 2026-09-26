@@ -1,11 +1,5 @@
 import { useState, useCallback } from "react";
-import {
-  PieChart,
-  Pie,
-  Cell,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import type { ChartSlice } from "../../../lib/chartTransformers";
 import DonutTooltip from "./DonutTooltip";
 
@@ -21,7 +15,13 @@ const INNER_RADIUS = 64;
 const OUTER_RADIUS = 96;
 const HOVER_OUTER = 103;
 
-export default function PieChartCard({ title, subtitle, data, icon, badge }: Props) {
+export default function PieChartCard({
+  title,
+  subtitle,
+  data,
+  icon,
+  badge,
+}: Props) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const totalCount = data.reduce((sum, d) => sum + d.count, 0);
@@ -36,7 +36,7 @@ export default function PieChartCard({ title, subtitle, data, icon, badge }: Pro
   }, []);
 
   return (
-    <div className="bg-card border border-border rounded-2xl shadow-xs hover:shadow-lg transition-all duration-300 overflow-hidden group">
+    <div className="group overflow-hidden rounded-2xl border border-border bg-card shadow-xs transition-all duration-300 hover:shadow-lg">
       <div
         className="h-0.5 w-full"
         style={{
@@ -47,28 +47,31 @@ export default function PieChartCard({ title, subtitle, data, icon, badge }: Pro
       />
 
       <div className="p-6">
-        <div className="flex items-start justify-between gap-3 mb-5">
+        <div className="mb-5 flex items-start justify-between gap-3">
           <div className="min-w-0">
             {badge && (
-              <span className="inline-block text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 mb-2">
+              <span className="mb-2 inline-block rounded-full bg-indigo-50 px-2 py-0.5 text-[10px] font-semibold tracking-widest text-indigo-600 uppercase dark:bg-indigo-900/30 dark:text-indigo-400">
                 {badge}
               </span>
             )}
-            <h3 className="text-[15px] font-semibold text-foreground tracking-tight leading-snug">
+            <h3 className="text-[15px] leading-snug font-semibold tracking-tight text-foreground">
               {title}
             </h3>
-            <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
+            <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
               {subtitle}
             </p>
           </div>
           {icon && (
-            <div className="shrink-0 w-9 h-9 rounded-xl bg-muted/50 flex items-center justify-center text-muted-foreground group-hover:bg-indigo-50 dark:group-hover:bg-indigo-900/20 group-hover:text-indigo-500 transition-colors duration-200">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-muted/50 text-muted-foreground transition-colors duration-200 group-hover:bg-indigo-50 group-hover:text-indigo-500 dark:group-hover:bg-indigo-900/20">
               {icon}
             </div>
           )}
         </div>
 
-        <div className="relative flex items-center justify-center" style={{ height: 210 }}>
+        <div
+          className="relative flex items-center justify-center"
+          style={{ height: 210 }}
+        >
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <defs>
@@ -100,13 +103,21 @@ export default function PieChartCard({ title, subtitle, data, icon, badge }: Pro
                   <Cell
                     key={`cell-${index}`}
                     fill={entry.color}
-                    opacity={activeIndex === null || activeIndex === index ? 1 : 0.4}
+                    opacity={
+                      activeIndex === null || activeIndex === index ? 1 : 0.4
+                    }
                     // Cell forwards this to the slice, the recharts types just don't list it
-                    {...{ outerRadius: activeIndex === index ? HOVER_OUTER : OUTER_RADIUS }}
+                    {...{
+                      outerRadius:
+                        activeIndex === index ? HOVER_OUTER : OUTER_RADIUS,
+                    }}
                     style={{
                       cursor: "pointer",
                       transition: "opacity 0.18s ease, filter 0.18s ease",
-                      filter: activeIndex === index ? `drop-shadow(0 0 6px ${entry.color}99)` : "none",
+                      filter:
+                        activeIndex === index
+                          ? `drop-shadow(0 0 6px ${entry.color}99)`
+                          : "none",
                     }}
                   />
                 ))}
@@ -118,17 +129,17 @@ export default function PieChartCard({ title, subtitle, data, icon, badge }: Pro
             </PieChart>
           </ResponsiveContainer>
 
-          <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-            <span className="text-[26px] font-bold text-foreground leading-none tabular-nums">
+          <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
+            <span className="text-[26px] leading-none font-bold text-foreground tabular-nums">
               {activeIndex !== null ? data[activeIndex].count : totalCount}
             </span>
-            <span className="text-[11px] text-muted-foreground mt-1 uppercase tracking-widest font-medium">
+            <span className="mt-1 text-[11px] font-medium tracking-widest text-muted-foreground uppercase">
               {activeIndex !== null ? data[activeIndex].label : "Total"}
             </span>
           </div>
         </div>
 
-        <div className="border-t border-border my-4" />
+        <div className="my-4 border-t border-border" />
 
         <div className="space-y-2.5">
           {data.map((entry, index) => (
@@ -138,14 +149,14 @@ export default function PieChartCard({ title, subtitle, data, icon, badge }: Pro
               onMouseEnter={() => setActiveIndex(index)}
               onMouseLeave={() => setActiveIndex(null)}
             >
-              <div className="flex items-center justify-between gap-2 mb-1">
-                <div className="flex items-center gap-2 min-w-0">
+              <div className="mb-1 flex items-center justify-between gap-2">
+                <div className="flex min-w-0 items-center gap-2">
                   <span
-                    className="w-2 h-2 rounded-full shrink-0 transition-transform duration-150 group-hover/row:scale-[1.4]"
+                    className="h-2 w-2 shrink-0 rounded-full transition-transform duration-150 group-hover/row:scale-[1.4]"
                     style={{ backgroundColor: entry.color }}
                   />
                   <span
-                    className={`text-[13px] leading-tight truncate transition-colors duration-150 ${
+                    className={`truncate text-[13px] leading-tight transition-colors duration-150 ${
                       entry.isTop
                         ? "font-semibold text-foreground"
                         : "text-muted-foreground group-hover/row:text-foreground"
@@ -154,7 +165,7 @@ export default function PieChartCard({ title, subtitle, data, icon, badge }: Pro
                     {entry.label}
                     {entry.isTop && (
                       <span
-                        className="ml-1.5 text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase tracking-wide"
+                        className="ml-1.5 rounded-full px-1.5 py-0.5 text-[9px] font-bold tracking-wide uppercase"
                         style={{
                           backgroundColor: `${entry.color}18`,
                           color: entry.color,
@@ -165,12 +176,12 @@ export default function PieChartCard({ title, subtitle, data, icon, badge }: Pro
                     )}
                   </span>
                 </div>
-                <div className="flex items-center gap-2 shrink-0">
+                <div className="flex shrink-0 items-center gap-2">
                   <span className="text-[12px] text-muted-foreground tabular-nums">
                     {entry.count}
                   </span>
                   <span
-                    className="text-[12px] font-semibold tabular-nums w-9 text-right"
+                    className="w-9 text-right text-[12px] font-semibold tabular-nums"
                     style={{ color: entry.color }}
                   >
                     {entry.percentage}%
@@ -178,13 +189,14 @@ export default function PieChartCard({ title, subtitle, data, icon, badge }: Pro
                 </div>
               </div>
 
-              <div className="h-1 w-full bg-muted rounded-full overflow-hidden">
+              <div className="h-1 w-full overflow-hidden rounded-full bg-muted">
                 <div
                   className="h-full rounded-full transition-all duration-500"
                   style={{
                     width: `${entry.percentage}%`,
                     backgroundColor: entry.color,
-                    opacity: activeIndex === null || activeIndex === index ? 1 : 0.35,
+                    opacity:
+                      activeIndex === null || activeIndex === index ? 1 : 0.35,
                   }}
                 />
               </div>

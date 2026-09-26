@@ -10,10 +10,7 @@ import { useCredit, useUpdateCredit } from "../../hooks/useCredit";
 import Label from "../../components/form/Label";
 import Button from "../../components/legacy-ui/button/Button";
 import CreditSkeleton from "../../components/Skeletons/CreditSkeleton";
-import {
-  CreditFormValues,
-  creditSchema,
-} from "../../schemas/credit.schema";
+import { CreditFormValues, creditSchema } from "../../schemas/credit.schema";
 import { getErrorMessage } from "~/lib/api/api-error";
 
 const formatCurrency = (value: string | number) => {
@@ -94,9 +91,7 @@ export default function CreditSetup() {
           setTimeout(() => setIsSaved(false), 2000);
         },
         onError: (error: Error) => {
-          toast.error(
-            getErrorMessage(error, "Something went wrong"),
-          );
+          toast.error(getErrorMessage(error, "Something went wrong"));
         },
       },
     );
@@ -105,8 +100,8 @@ export default function CreditSetup() {
 
   return (
     <div className="bg-muted/50">
-      <div className="max-w-6xl mx-auto 2xl:w-full ">
-        <div className="flex items-end justify-between gap-6 pb-6 border-b border-border">
+      <div className="mx-auto max-w-6xl 2xl:w-full">
+        <div className="flex items-end justify-between gap-6 border-b border-border pb-6">
           <div>
             <h1 className="text-3xl font-semibold tracking-tight text-foreground">
               Credit Pricing
@@ -121,7 +116,7 @@ export default function CreditSetup() {
           <Button
             onClick={handleSubmit(onSubmit)}
             disabled={!value || !isDirty || isPending}
-            className="px-6 text-sm font-medium h-11"
+            className="h-11 px-6 text-sm font-medium"
           >
             {isPending ? "Updating..." : "Save Changes"}
           </Button>
@@ -141,7 +136,7 @@ export default function CreditSetup() {
               credit unlocks one candidate profile.
             </p>
 
-            <div className="p-5 mt-6 bg-card border border-border rounded-2xl">
+            <div className="mt-6 rounded-2xl border border-border bg-card p-5">
               <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
                 Credit Rule
               </p>
@@ -157,7 +152,7 @@ export default function CreditSetup() {
           </div>
 
           <div className="col-span-12 space-y-8 lg:col-span-8">
-            <div className="px-6 py-5 bg-card border border-border rounded-2xl">
+            <div className="rounded-2xl border border-border bg-card px-6 py-5">
               <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
                 Current Price Per Credit
               </p>
@@ -175,7 +170,7 @@ export default function CreditSetup() {
               <Label className="dark:text-foreground">Price for 1 Credit</Label>
 
               <div className="relative">
-                <span className="absolute text-sm text-muted-foreground -translate-y-1/2 left-4 top-1/2">
+                <span className="absolute top-1/2 left-4 -translate-y-1/2 text-sm text-muted-foreground">
                   ₹
                 </span>
 
@@ -185,7 +180,7 @@ export default function CreditSetup() {
                     onChange: () => setIsSaved(false),
                   })}
                   placeholder="Enter price"
-                  className="w-full h-12 pl-10 pr-4 text-base font-medium text-foreground transition-all bg-card border border-input rounded-2xl focus:border-ring focus:outline-hidden focus:ring-2 focus:ring-ring/50"
+                  className="h-12 w-full rounded-2xl border border-input bg-card pr-4 pl-10 text-base font-medium text-foreground transition-all focus:border-ring focus:ring-2 focus:ring-ring/50 focus:outline-hidden"
                 />
               </div>
 
@@ -201,34 +196,28 @@ export default function CreditSetup() {
             </div>
 
             {value && Number(value) > 0 && (
-              <div className="p-5 bg-card border border-border rounded-2xl">
+              <div className="rounded-2xl border border-border bg-card p-5">
                 <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
                   Purchase Preview
                 </p>
 
-                <div className="grid gap-3 mt-4 sm:grid-cols-3">
-                  <div className="px-4 py-3 rounded-xl bg-muted/50">
-                    <p className="text-sm text-muted-foreground">
-                      10 Credits
-                    </p>
+                <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                  <div className="rounded-xl bg-muted/50 px-4 py-3">
+                    <p className="text-sm text-muted-foreground">10 Credits</p>
                     <p className="mt-1 font-semibold text-foreground">
                       ₹{Number(value) * 10}
                     </p>
                   </div>
 
-                  <div className="px-4 py-3 rounded-xl bg-muted/50">
-                    <p className="text-sm text-muted-foreground">
-                      50 Credits
-                    </p>
+                  <div className="rounded-xl bg-muted/50 px-4 py-3">
+                    <p className="text-sm text-muted-foreground">50 Credits</p>
                     <p className="mt-1 font-semibold text-foreground">
                       ₹{Number(value) * 50}
                     </p>
                   </div>
 
-                  <div className="px-4 py-3 rounded-xl bg-muted/50">
-                    <p className="text-sm text-muted-foreground">
-                      100 Credits
-                    </p>
+                  <div className="rounded-xl bg-muted/50 px-4 py-3">
+                    <p className="text-sm text-muted-foreground">100 Credits</p>
                     <p className="mt-1 font-semibold text-foreground">
                       ₹{Number(value) * 100}
                     </p>
@@ -237,7 +226,7 @@ export default function CreditSetup() {
               </div>
             )}
 
-            <div className="pt-5 border-t border-border">
+            <div className="border-t border-border pt-5">
               {isSaved ? (
                 <p className="text-sm font-medium text-green-600 dark:text-green-400">
                   ✓ Pricing updated successfully

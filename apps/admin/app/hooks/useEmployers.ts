@@ -1,5 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchEmployers, fetchEmployerProfile, employerCards } from "../api/employers.api";
+import {
+  fetchEmployers,
+  fetchEmployerProfile,
+  employerCards,
+} from "../api/employers.api";
 
 export const useEmployers = (page: number) => {
   return useQuery({

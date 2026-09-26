@@ -101,12 +101,10 @@ export default function UpdateCouponModal({
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      className="max-w-lg p-4 mx-2 sm:p-6"
+      className="mx-2 max-w-lg p-4 sm:p-6"
     >
       <div className="mb-6">
-        <h2 className="text-xl font-bold text-foreground">
-          Update Coupon
-        </h2>
+        <h2 className="text-xl font-bold text-foreground">Update Coupon</h2>
         <p className="mt-1 text-sm text-muted-foreground">
           Modify the details of the selected coupon.
         </p>
@@ -114,7 +112,7 @@ export default function UpdateCouponModal({
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block mb-1 text-sm font-medium text-foreground">
+          <label className="mb-1 block text-sm font-medium text-foreground">
             Coupon Code
           </label>
           <input
@@ -123,27 +121,27 @@ export default function UpdateCouponModal({
             value={formData.code}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border border-input rounded-lg focus:ring-ring/50 focus:border-ring dark:bg-input/30 dark:text-white"
+            className="w-full rounded-lg border border-input px-4 py-2 focus:border-ring focus:ring-ring/50 dark:bg-input/30 dark:text-white"
           />
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block mb-1 text-sm font-medium text-foreground">
+            <label className="mb-1 block text-sm font-medium text-foreground">
               Discount Type
             </label>
             <select
               name="discount_type"
               value={formData.discount_type}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-input rounded-lg focus:ring-ring/50 focus:border-ring dark:bg-input/30 dark:text-white"
+              className="w-full rounded-lg border border-input px-4 py-2 focus:border-ring focus:ring-ring/50 dark:bg-input/30 dark:text-white"
             >
               <option value="flat">Flat</option>
               <option value="percentage">Percentage</option>
             </select>
           </div>
           <div>
-            <label className="block mb-1 text-sm font-medium text-foreground">
+            <label className="mb-1 block text-sm font-medium text-foreground">
               Discount Value
             </label>
             <input
@@ -155,13 +153,13 @@ export default function UpdateCouponModal({
               step="0.01"
               min="0"
               max={formData.discount_type === "percentage" ? "99" : undefined}
-              className="w-full px-4 py-2 border border-input rounded-lg focus:ring-ring/50 focus:border-ring dark:bg-input/30 dark:text-white"
+              className="w-full rounded-lg border border-input px-4 py-2 focus:border-ring focus:ring-ring/50 dark:bg-input/30 dark:text-white"
             />
           </div>
         </div>
 
         <div>
-          <label className="block mb-1 text-sm font-medium text-foreground">
+          <label className="mb-1 block text-sm font-medium text-foreground">
             Usage Limit
           </label>
           <input
@@ -171,13 +169,13 @@ export default function UpdateCouponModal({
             onChange={handleChange}
             required
             min="1"
-            className="w-full px-4 py-2 border border-input rounded-lg focus:ring-ring/50 focus:border-ring dark:bg-input/30 dark:text-white"
+            className="w-full rounded-lg border border-input px-4 py-2 focus:border-ring focus:ring-ring/50 dark:bg-input/30 dark:text-white"
           />
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block mb-1 text-sm font-medium text-foreground">
+            <label className="mb-1 block text-sm font-medium text-foreground">
               Start Date
             </label>
             <input
@@ -186,11 +184,11 @@ export default function UpdateCouponModal({
               value={formData.start_date}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-input rounded-lg focus:ring-ring/50 focus:border-ring dark:bg-input/30 dark:text-white"
+              className="w-full rounded-lg border border-input px-4 py-2 focus:border-ring focus:ring-ring/50 dark:bg-input/30 dark:text-white"
             />
           </div>
           <div>
-            <label className="block mb-1 text-sm font-medium text-foreground">
+            <label className="mb-1 block text-sm font-medium text-foreground">
               End Date
             </label>
             <input
@@ -199,12 +197,12 @@ export default function UpdateCouponModal({
               value={formData.end_date}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-input rounded-lg focus:ring-ring/50 focus:border-ring dark:bg-input/30 dark:text-white"
+              className="w-full rounded-lg border border-input px-4 py-2 focus:border-ring focus:ring-ring/50 dark:bg-input/30 dark:text-white"
             />
           </div>
         </div>
 
-        <div className="flex justify-end gap-3 mt-6">
+        <div className="mt-6 flex justify-end gap-3">
           <Button variant="outline" onClick={onClose}>
             Cancel
           </Button>

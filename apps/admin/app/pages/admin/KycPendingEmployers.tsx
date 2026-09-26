@@ -14,7 +14,7 @@ import { getErrorMessage } from "~/lib/api/api-error";
 
 const GlobeIcon = () => (
   <svg
-    className="w-3.5 h-3.5"
+    className="h-3.5 w-3.5"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -29,7 +29,7 @@ const GlobeIcon = () => (
 );
 
 const LoaderIcon = () => (
-  <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+  <svg className="h-5 w-5 animate-spin" fill="none" viewBox="0 0 24 24">
     <circle
       className="opacity-25"
       cx="12"
@@ -119,7 +119,7 @@ export default function KycPendingEmployers() {
         description="Verify and manage employer KYC records"
       />
 
-      <div className="pb-10 space-y-6 overflow-x-hidden bg-muted/50 ">
+      <div className="space-y-6 overflow-x-hidden bg-muted/50 pb-10">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
           <div className="flex flex-col gap-1">
             <h1 className="text-2xl font-bold tracking-tight text-foreground">
@@ -139,19 +139,16 @@ export default function KycPendingEmployers() {
               <button
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
-                className={`
-            flex items-center justify-between w-40 px-4 py-2.5 text-sm font-bold transition-all duration-200 bg-card border-2 rounded-2xl outline-hidden
-            ${
-              isOpen
-                ? "border-indigo-500 ring-4 ring-indigo-500/10 shadow-xs"
-                : "border-border text-foreground hover:border-border"
-            }
-          `}
+                className={`flex w-40 items-center justify-between rounded-2xl border-2 bg-card px-4 py-2.5 text-sm font-bold outline-hidden transition-all duration-200 ${
+                  isOpen
+                    ? "border-indigo-500 shadow-xs ring-4 ring-indigo-500/10"
+                    : "border-border text-foreground hover:border-border"
+                } `}
               >
                 {statusFilter}
-                <div className="absolute inset-y-0 right-0 flex items-center pr-3 text-muted-foreground transition-colors pointer-events-none group-hover:text-muted-foreground">
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-muted-foreground transition-colors group-hover:text-muted-foreground">
                   <svg
-                    className="w-4 h-4"
+                    className="h-4 w-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -167,7 +164,7 @@ export default function KycPendingEmployers() {
               </button>
 
               {isOpen && (
-                <div className="absolute left-0 z-50 w-full mt-2 overflow-hidden bg-card border border-border shadow-2xl rounded-2xl animate-in fade-in slide-in-from-top-1">
+                <div className="absolute left-0 z-50 mt-2 w-full animate-in overflow-hidden rounded-2xl border border-border bg-card shadow-2xl fade-in slide-in-from-top-1">
                   {statusOptions.map((status) => (
                     <button
                       key={status}
@@ -177,14 +174,11 @@ export default function KycPendingEmployers() {
                         setIsOpen(false);
                         setPage(1);
                       }}
-                      className={`
-                  flex items-center justify-between w-full px-4 py-3 text-sm font-medium transition-colors
-                  ${
-                    statusFilter === status
-                      ? "bg-indigo-50 text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-400"
-                      : "text-muted-foreground hover:bg-accent"
-                  }
-                `}
+                      className={`flex w-full items-center justify-between px-4 py-3 text-sm font-medium transition-colors ${
+                        statusFilter === status
+                          ? "bg-indigo-50 text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-400"
+                          : "text-muted-foreground hover:bg-accent"
+                      } `}
                     >
                       {status}
                     </button>
@@ -196,10 +190,10 @@ export default function KycPendingEmployers() {
         </div>
 
         {errorMessage && (
-          <div className="p-4 text-sm border rounded-xl bg-rose-50 border-rose-100 dark:bg-rose-950/30 dark:border-rose-900/50 text-rose-600 dark:text-rose-400">
+          <div className="rounded-xl border border-rose-100 bg-rose-50 p-4 text-sm text-rose-600 dark:border-rose-900/50 dark:bg-rose-950/30 dark:text-rose-400">
             <div className="flex items-center gap-2 font-medium">
               <svg
-                className="w-4 h-4"
+                className="h-4 w-4"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -216,9 +210,9 @@ export default function KycPendingEmployers() {
           </div>
         )}
 
-        <div className="overflow-hidden bg-card border border-border shadow-xs rounded-2xl">
+        <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
           <div className="overflow-x-auto">
-            <Table className="w-full min-w-[1000px] text-sm text-left">
+            <Table className="w-full min-w-[1000px] text-left text-sm">
               <TableHeader className="border-b border-border bg-muted/50">
                 <TableRow>
                   <TableCell
@@ -241,7 +235,7 @@ export default function KycPendingEmployers() {
                   </TableCell>
                   <TableCell
                     isHeader
-                    className="px-6 py-4 text-xs font-semibold tracking-wider text-right text-muted-foreground uppercase"
+                    className="px-6 py-4 text-right text-xs font-semibold tracking-wider text-muted-foreground uppercase"
                   >
                     ""
                   </TableCell>
@@ -286,11 +280,11 @@ export default function KycPendingEmployers() {
                             <img
                               src={record.company_logo}
                               alt={record.company_name}
-                              className="object-contain w-10 h-10 p-1 bg-muted border border-border rounded-lg"
+                              className="h-10 w-10 rounded-lg border border-border bg-muted object-contain p-1"
                             />
                           ) : (
                             <div
-                              className={`flex items-center justify-center w-10 h-10 shrink-0 font-bold text-white rounded-lg shadow-xs bg-linear-to-br ${avatarGradient(
+                              className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-linear-to-br font-bold text-white shadow-xs ${avatarGradient(
                                 record.company_name || "Unknown",
                               )}`}
                             >
@@ -312,7 +306,7 @@ export default function KycPendingEmployers() {
                                 }
                                 target="_blank"
                                 rel="noreferrer"
-                                className="flex items-center gap-1.5 mt-1 text-xs text-primary hover:text-primary transition-colors font-medium"
+                                className="mt-1 flex items-center gap-1.5 text-xs font-medium text-primary transition-colors hover:text-primary"
                               >
                                 <GlobeIcon />
                                 Website
@@ -328,7 +322,7 @@ export default function KycPendingEmployers() {
                             {record.official_email}
                           </span>
                         ) : (
-                          <span className="text-sm italic text-muted-foreground">
+                          <span className="text-sm text-muted-foreground italic">
                             Not Specified
                           </span>
                         )}
@@ -351,7 +345,7 @@ export default function KycPendingEmployers() {
                         <div className="flex justify-end">
                           <Link
                             to={`/dashboard/kyc/${record.id}`}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-primary transition bg-primary/10 border border-primary/20 rounded-lg hover:bg-primary/10"
+                            className="inline-flex items-center gap-1.5 rounded-lg border border-primary/20 bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary transition hover:bg-primary/10"
                           >
                             View Details
                             <ChevronRight className="size-5" />
@@ -366,7 +360,7 @@ export default function KycPendingEmployers() {
           </div>
 
           {pageData && pageData.total_pages > 1 && (
-            <div className="flex items-center justify-between px-6 py-4 bg-card border-t border-border">
+            <div className="flex items-center justify-between border-t border-border bg-card px-6 py-4">
               <span className="text-sm text-muted-foreground">
                 Page{" "}
                 <span className="font-semibold text-foreground">
@@ -381,14 +375,14 @@ export default function KycPendingEmployers() {
                 <button
                   onClick={handlePrevPage}
                   disabled={pageData.current_page === 1}
-                  className="px-4 py-2 text-sm font-medium text-foreground transition-colors bg-card border border-border shadow-xs rounded-xl hover:bg-accent disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="rounded-xl border border-border bg-card px-4 py-2 text-sm font-medium text-foreground shadow-xs transition-colors hover:bg-accent disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   Previous
                 </button>
                 <button
                   onClick={handleNextPage}
                   disabled={pageData.current_page === pageData.total_pages}
-                  className="px-4 py-2 text-sm font-medium text-foreground transition-colors bg-card border border-border shadow-xs rounded-xl hover:bg-accent disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="rounded-xl border border-border bg-card px-4 py-2 text-sm font-medium text-foreground shadow-xs transition-colors hover:bg-accent disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   Next
                 </button>

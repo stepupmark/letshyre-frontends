@@ -37,7 +37,7 @@ export default function CandidateApprovalActions({
 
   if (isApproved) {
     return (
-      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold">
+      <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700">
         <CheckCircle size={13} className="shrink-0" />
         Approved
       </span>
@@ -47,7 +47,7 @@ export default function CandidateApprovalActions({
   if (isRejected) {
     return (
       <div className="flex flex-wrap items-center gap-2">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-600 text-xs font-semibold">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-red-200 bg-red-50 px-3 py-1.5 text-xs font-semibold text-red-600">
           <XCircle size={13} className="shrink-0" />
           Rejected
         </span>
@@ -55,7 +55,7 @@ export default function CandidateApprovalActions({
         <button
           onClick={handleApprove}
           disabled={isPending}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-600 hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-xs font-semibold transition-colors duration-150"
+          className="inline-flex items-center gap-1.5 rounded-full bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white transition-colors duration-150 hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isPending ? (
             <Loader2 size={12} className="animate-spin" />
@@ -73,7 +73,7 @@ export default function CandidateApprovalActions({
       <button
         onClick={handleApprove}
         disabled={isPending}
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-xs font-semibold transition-colors duration-150"
+        className="inline-flex items-center gap-1.5 rounded-full bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white transition-colors duration-150 hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isPending ? (
           <Loader2 size={12} className="animate-spin" />
@@ -85,7 +85,7 @@ export default function CandidateApprovalActions({
       <button
         onClick={handleReject}
         disabled={isPending}
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-500 hover:bg-red-600 disabled:opacity-60 disabled:cursor-not-allowed text-white text-xs font-semibold transition-colors duration-150"
+        className="inline-flex items-center gap-1.5 rounded-full bg-red-500 px-3 py-1.5 text-xs font-semibold text-white transition-colors duration-150 hover:bg-red-600 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isPending ? (
           <Loader2 size={12} className="animate-spin" />

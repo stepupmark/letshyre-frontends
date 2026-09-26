@@ -38,7 +38,9 @@ export const fetchSkillsChart = async (): Promise<SkillDataPoint[]> => {
   }
 };
 
-export const fetchTechnologyChart = async (): Promise<TechnologyDataPoint[]> => {
+export const fetchTechnologyChart = async (): Promise<
+  TechnologyDataPoint[]
+> => {
   try {
     const response = await http.get<TechnologyChartApiResponse>(
       "user/v1/admin/candidate/experience/pie-chart/",

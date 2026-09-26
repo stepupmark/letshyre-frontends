@@ -53,7 +53,7 @@ function StatCard({
   iconColor,
 }: StatCardProps) {
   return (
-    <div className="p-5 bg-card border border-border shadow-xs rounded-2xl">
+    <div className="rounded-2xl border border-border bg-card p-5 shadow-xs">
       <div
         className={`mb-3 flex h-10 w-10 items-center justify-center rounded-xl ${iconBg}`}
       >
@@ -100,8 +100,10 @@ export default function SystemConfigs() {
           );
         },
         onError: (err: unknown) => {
-          const message =
-            getErrorMessage(err, "Something went wrong. Please try again.");
+          const message = getErrorMessage(
+            err,
+            "Something went wrong. Please try again.",
+          );
           toast.error(message);
         },
       },
@@ -123,8 +125,10 @@ export default function SystemConfigs() {
           toast.success(`${label} updated to ${value}.`);
         },
         onError: (err: unknown) => {
-          const message =
-            getErrorMessage(err, "Something went wrong. Please try again.");
+          const message = getErrorMessage(
+            err,
+            "Something went wrong. Please try again.",
+          );
           toast.error(message);
         },
       },
@@ -136,8 +140,8 @@ export default function SystemConfigs() {
   if (isError || !config) {
     return (
       <div className="flex min-h-[40vh] flex-col items-center justify-center gap-4 text-center">
-        <div className="flex items-center justify-center h-14 w-14 rounded-2xl bg-red-50 dark:bg-red-500/10">
-          <AlertTriangle className="w-6 h-6 text-red-500" />
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 dark:bg-red-500/10">
+          <AlertTriangle className="h-6 w-6 text-red-500" />
         </div>
         <div>
           <p className="text-sm font-semibold text-foreground">
@@ -151,7 +155,7 @@ export default function SystemConfigs() {
           onClick={() => refetch()}
           className="flex items-center gap-2 rounded-2xl bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
         >
-          <RefreshCw className="w-4 h-4" />
+          <RefreshCw className="h-4 w-4" />
           Retry
         </button>
       </div>
@@ -333,7 +337,6 @@ export default function SystemConfigs() {
           value={config.celery_task_default_queue}
         />
       </ConfigSection>
-
     </div>
   );
 }

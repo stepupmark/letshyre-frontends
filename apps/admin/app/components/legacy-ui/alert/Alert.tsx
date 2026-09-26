@@ -24,8 +24,7 @@ const Alert: React.FC<AlertProps> = ({
       icon: "text-green-500",
     },
     error: {
-      container:
-        "border-destructive bg-destructive/10",
+      container: "border-destructive bg-destructive/10",
       icon: "text-destructive",
     },
     warning: {
@@ -128,7 +127,7 @@ const Alert: React.FC<AlertProps> = ({
           {showLink && (
             <Link
               to={linkHref}
-              className="inline-block mt-3 text-sm font-medium text-muted-foreground underline"
+              className="mt-3 inline-block text-sm font-medium text-muted-foreground underline"
             >
               {linkText}
             </Link>

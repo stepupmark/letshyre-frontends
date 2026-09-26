@@ -25,12 +25,18 @@ async function rotate(failedToken: string | null): Promise<string | null> {
   if (!refreshToken) return null;
 
   try {
-    const { data } = await axios.post<RefreshResponse>(`${env.VITE_API_BASE_URL}user/v1/login_refresh/`, {
-      refresh_token: refreshToken,
-    });
+    const { data } = await axios.post<RefreshResponse>(
+      `${env.VITE_API_BASE_URL}user/v1/login_refresh/`,
+      {
+        refresh_token: refreshToken,
+      },
+    );
     if (!data.access_token) return null;
     // the backend rotates refresh tokens on every use, so the new one must be stored
-    tokenStore.setTokens({ accessToken: data.access_token, refreshToken: data.refresh_token });
+    tokenStore.setTokens({
+      accessToken: data.access_token,
+      refreshToken: data.refresh_token,
+    });
     return data.access_token;
   } catch {
     return null;

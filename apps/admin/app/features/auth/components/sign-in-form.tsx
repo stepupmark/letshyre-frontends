@@ -5,8 +5,19 @@ import { LoaderCircle } from "lucide-react";
 import { PasswordInput } from "~/components/password-input";
 import { Alert, AlertDescription } from "~/components/ui/alert";
 import { Button } from "~/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
-import { Field, FieldError, FieldGroup, FieldLabel } from "~/components/ui/field";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "~/components/ui/card";
+import {
+  Field,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "~/components/ui/field";
 import { Input } from "~/components/ui/input";
 import { useLogin } from "../mutations/use-login";
 import { loginSchema } from "../schemas/auth.schema";
@@ -33,11 +44,16 @@ export function SignInForm() {
         <CardDescription>Enter your admin email and password.</CardDescription>
       </CardHeader>
       <CardContent>
-        <form noValidate onSubmit={form.handleSubmit((values) => login.mutate(values))}>
+        <form
+          noValidate
+          onSubmit={form.handleSubmit((values) => login.mutate(values))}
+        >
           <FieldGroup>
             {(login.error || reason) && (
               <Alert variant={login.error ? "destructive" : "default"}>
-                <AlertDescription>{login.error?.message ?? reason}</AlertDescription>
+                <AlertDescription>
+                  {login.error?.message ?? reason}
+                </AlertDescription>
               </Alert>
             )}
             <Controller
@@ -65,7 +81,10 @@ export function SignInForm() {
                 <Field data-invalid={fieldState.invalid}>
                   <div className="flex items-center justify-between">
                     <FieldLabel htmlFor="password">Password</FieldLabel>
-                    <Link to="/forgot-password" className="text-sm text-muted-foreground underline-offset-4 hover:underline">
+                    <Link
+                      to="/forgot-password"
+                      className="text-sm text-muted-foreground underline-offset-4 hover:underline"
+                    >
                       Forgot password?
                     </Link>
                   </div>

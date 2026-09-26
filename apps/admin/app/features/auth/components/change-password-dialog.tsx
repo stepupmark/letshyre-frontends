@@ -13,17 +13,35 @@ import {
   DialogHeader,
   DialogTitle,
 } from "~/components/ui/dialog";
-import { Field, FieldDescription, FieldError, FieldGroup, FieldLabel } from "~/components/ui/field";
+import {
+  Field,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "~/components/ui/field";
 import { useChangePassword } from "../mutations/use-change-password";
 import { changePasswordSchema } from "../schemas/auth.schema";
 import type { ChangePasswordInput } from "../types";
 
-const EMPTY: ChangePasswordInput = { currentPassword: "", newPassword: "", confirmPassword: "" };
+const EMPTY: ChangePasswordInput = {
+  currentPassword: "",
+  newPassword: "",
+  confirmPassword: "",
+};
 
 const FIELDS = [
-  { name: "currentPassword", label: "Current password", autoComplete: "current-password" },
+  {
+    name: "currentPassword",
+    label: "Current password",
+    autoComplete: "current-password",
+  },
   { name: "newPassword", label: "New password", autoComplete: "new-password" },
-  { name: "confirmPassword", label: "Confirm new password", autoComplete: "new-password" },
+  {
+    name: "confirmPassword",
+    label: "Confirm new password",
+    autoComplete: "new-password",
+  },
 ] as const;
 
 type ChangePasswordDialogProps = {
@@ -31,7 +49,10 @@ type ChangePasswordDialogProps = {
   onOpenChange: (open: boolean) => void;
 };
 
-export function ChangePasswordDialog({ open, onOpenChange }: ChangePasswordDialogProps) {
+export function ChangePasswordDialog({
+  open,
+  onOpenChange,
+}: ChangePasswordDialogProps) {
   const changePassword = useChangePassword();
   const form = useForm<ChangePasswordInput>({
     resolver: zodResolver(changePasswordSchema),
@@ -47,7 +68,10 @@ export function ChangePasswordDialog({ open, onOpenChange }: ChangePasswordDialo
   };
 
   const submit = form.handleSubmit(({ currentPassword, newPassword }) =>
-    changePassword.mutate({ currentPassword, newPassword }, { onSuccess: () => handleOpenChange(false) }),
+    changePassword.mutate(
+      { currentPassword, newPassword },
+      { onSuccess: () => handleOpenChange(false) },
+    ),
   );
 
   return (
@@ -56,12 +80,16 @@ export function ChangePasswordDialog({ open, onOpenChange }: ChangePasswordDialo
         <form noValidate onSubmit={submit}>
           <DialogHeader>
             <DialogTitle>Change password</DialogTitle>
-            <DialogDescription>Use at least 8 characters, with an uppercase letter and a number.</DialogDescription>
+            <DialogDescription>
+              Use at least 8 characters, with an uppercase letter and a number.
+            </DialogDescription>
           </DialogHeader>
           <FieldGroup className="py-4">
             {changePassword.error && (
               <Alert variant="destructive">
-                <AlertDescription>{changePassword.error.message}</AlertDescription>
+                <AlertDescription>
+                  {changePassword.error.message}
+                </AlertDescription>
               </Alert>
             )}
             {FIELDS.map(({ name, label, autoComplete }) => (
@@ -72,9 +100,16 @@ export function ChangePasswordDialog({ open, onOpenChange }: ChangePasswordDialo
                 render={({ field, fieldState }) => (
                   <Field data-invalid={fieldState.invalid}>
                     <FieldLabel htmlFor={name}>{label}</FieldLabel>
-                    <PasswordInput {...field} id={name} autoComplete={autoComplete} aria-invalid={fieldState.invalid} />
+                    <PasswordInput
+                      {...field}
+                      id={name}
+                      autoComplete={autoComplete}
+                      aria-invalid={fieldState.invalid}
+                    />
                     {name === "newPassword" && !fieldState.error && (
-                      <FieldDescription>Must differ from your current password.</FieldDescription>
+                      <FieldDescription>
+                        Must differ from your current password.
+                      </FieldDescription>
                     )}
                     <FieldError errors={[fieldState.error]} />
                   </Field>
@@ -89,7 +124,9 @@ export function ChangePasswordDialog({ open, onOpenChange }: ChangePasswordDialo
               </Button>
             </DialogClose>
             <Button type="submit" disabled={changePassword.isPending}>
-              {changePassword.isPending && <LoaderCircle className="animate-spin" />}
+              {changePassword.isPending && (
+                <LoaderCircle className="animate-spin" />
+              )}
               Update password
             </Button>
           </DialogFooter>

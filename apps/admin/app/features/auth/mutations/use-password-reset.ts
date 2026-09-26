@@ -11,7 +11,8 @@ export function useSendOtp() {
 
 export function useVerifyOtp() {
   return useMutation({
-    mutationFn: ({ session, otp }: { session: OtpSession; otp: string }) => authService.verifyOtp(session, otp),
+    mutationFn: ({ session, otp }: { session: OtpSession; otp: string }) =>
+      authService.verifyOtp(session, otp),
     meta: { errorMessage: false },
   });
 }
@@ -20,6 +21,9 @@ export function useResetPassword() {
   return useMutation({
     mutationFn: ({ email, password }: { email: string; password: string }) =>
       authService.resetPassword(email, password),
-    meta: { successMessage: "Password reset. Sign in with your new password.", errorMessage: false },
+    meta: {
+      successMessage: "Password reset. Sign in with your new password.",
+      errorMessage: false,
+    },
   });
 }

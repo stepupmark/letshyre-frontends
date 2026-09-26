@@ -12,7 +12,7 @@ export interface PaymentDashboardCards {
 export interface PaymentRecord {
   id: string;
   employeer: string;
-  employeer_id:string;
+  employeer_id: string;
   company: string;
   tokens_credited: number;
   available_tokens: number;
@@ -70,21 +70,31 @@ export interface FetchPaymentHistoryParams {
 }
 
 export const fetchPaymentHistory = async (
-  params: FetchPaymentHistoryParams
+  params: FetchPaymentHistoryParams,
 ): Promise<PaginatedPayments> => {
-  const { page = 1, payment_status, min_amount, max_amount, start_date, end_date, company, search } = params;
-  
+  const {
+    page = 1,
+    payment_status,
+    min_amount,
+    max_amount,
+    start_date,
+    end_date,
+    company,
+    search,
+  } = params;
+
   const queryParams = new URLSearchParams();
   queryParams.append("page", page.toString());
-  
-  if (payment_status && payment_status !== "ALL") queryParams.append("payment_status", payment_status);
+
+  if (payment_status && payment_status !== "ALL")
+    queryParams.append("payment_status", payment_status);
   if (min_amount) queryParams.append("min_amount", min_amount);
   if (max_amount) queryParams.append("max_amount", max_amount);
   if (start_date) queryParams.append("start_date", start_date);
   if (end_date) queryParams.append("end_date", end_date);
   if (company) queryParams.append("company", company);
   if (search) queryParams.append("search", search);
-  
+
   const url = `payment/v1/employer/payments/history/?${queryParams.toString()}`;
 
   try {

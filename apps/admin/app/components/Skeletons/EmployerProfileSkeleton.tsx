@@ -1,7 +1,7 @@
 export default function EmployerProfileSkeleton() {
   return (
     <div className="min-h-screen animate-pulse bg-muted/50">
-      <div className="h-full px-6 py-6 space-y-6">
+      <div className="h-full space-y-6 px-6 py-6">
         <div className="h-44 rounded-3xl bg-muted" />
 
         <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">

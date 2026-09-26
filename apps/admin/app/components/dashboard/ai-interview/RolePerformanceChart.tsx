@@ -22,8 +22,8 @@ export default function RolePerformanceChart({
   const colors = ["#8b5cf6", "#3b82f6", "#10b981", "#f59e0b", "#ef4444"];
 
   return (
-    <div className="bg-card rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)] border border-border flex flex-col h-full relative overflow-hidden transition-all duration-300">
-      <div className="flex-1 min-h-[350px] w-full">
+    <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)]">
+      <div className="min-h-[350px] w-full flex-1">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}
@@ -56,13 +56,13 @@ export default function RolePerformanceChart({
                 if (active && payload && payload.length) {
                   const item = payload[0].payload as RoleWisePerformance;
                   return (
-                    <div className="bg-card p-4 rounded-xl shadow-xl border border-border z-50 min-w-[200px]">
-                      <p className="font-bold text-foreground mb-3 text-sm">
+                    <div className="z-50 min-w-[200px] rounded-xl border border-border bg-card p-4 shadow-xl">
+                      <p className="mb-3 text-sm font-bold text-foreground">
                         {item.role}
                       </p>
                       <div className="flex flex-col gap-2 text-sm">
                         <div className="flex items-center justify-between gap-4">
-                          <span className="text-muted-foreground font-medium">
+                          <span className="font-medium text-muted-foreground">
                             Avg Score:
                           </span>
                           <span className="font-bold text-indigo-600 dark:text-indigo-400">
@@ -70,7 +70,7 @@ export default function RolePerformanceChart({
                           </span>
                         </div>
                         <div className="flex items-center justify-between gap-4">
-                          <span className="text-muted-foreground font-medium flex items-center gap-1">
+                          <span className="flex items-center gap-1 font-medium text-muted-foreground">
                             Candidates:
                           </span>
                           <span className="font-bold text-foreground">
@@ -78,7 +78,7 @@ export default function RolePerformanceChart({
                           </span>
                         </div>
                         <div className="flex items-center justify-between gap-4">
-                          <span className="text-muted-foreground font-medium">
+                          <span className="font-medium text-muted-foreground">
                             Rating:
                           </span>
                           <span className="font-bold text-emerald-600 dark:text-emerald-400">

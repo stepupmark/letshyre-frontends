@@ -64,38 +64,38 @@ export default function CouponTable({ coupons, isLoading }: CouponTableProps) {
 
   return (
     <>
-      <div className="overflow-hidden bg-card border border-border rounded-xl shadow-xs">
+      <div className="overflow-hidden rounded-xl border border-border bg-card shadow-xs">
         <div className="overflow-x-auto">
           <Table>
             <TableHeader className="border-b border-border bg-muted/50">
               <TableRow>
                 <TableCell
                   isHeader
-                  className="px-5 py-3 text-xs font-medium tracking-wider text-left text-muted-foreground uppercase"
+                  className="px-5 py-3 text-left text-xs font-medium tracking-wider text-muted-foreground uppercase"
                 >
                   Code
                 </TableCell>
                 <TableCell
                   isHeader
-                  className="px-5 py-3 text-xs font-medium tracking-wider text-left text-muted-foreground uppercase"
+                  className="px-5 py-3 text-left text-xs font-medium tracking-wider text-muted-foreground uppercase"
                 >
                   Discount
                 </TableCell>
                 <TableCell
                   isHeader
-                  className="px-5 py-3 text-xs font-medium tracking-wider text-left text-muted-foreground uppercase"
+                  className="px-5 py-3 text-left text-xs font-medium tracking-wider text-muted-foreground uppercase"
                 >
                   Usage
                 </TableCell>
                 <TableCell
                   isHeader
-                  className="px-5 py-3 text-xs font-medium tracking-wider text-left text-muted-foreground uppercase"
+                  className="px-5 py-3 text-left text-xs font-medium tracking-wider text-muted-foreground uppercase"
                 >
                   Validity
                 </TableCell>
                 <TableCell
                   isHeader
-                  className="px-5 py-3 text-xs font-medium tracking-wider text-right text-muted-foreground uppercase"
+                  className="px-5 py-3 text-right text-xs font-medium tracking-wider text-muted-foreground uppercase"
                 >
                   Actions
                 </TableCell>
@@ -106,7 +106,7 @@ export default function CouponTable({ coupons, isLoading }: CouponTableProps) {
                 <TableRow>
                   <TableCell
                     colSpan={5}
-                    className="px-5 py-8 text-sm text-center text-muted-foreground"
+                    className="px-5 py-8 text-center text-sm text-muted-foreground"
                   >
                     Loading coupons...
                   </TableCell>
@@ -115,7 +115,7 @@ export default function CouponTable({ coupons, isLoading }: CouponTableProps) {
                 <TableRow>
                   <TableCell
                     colSpan={5}
-                    className="px-5 py-8 text-sm text-center text-muted-foreground"
+                    className="px-5 py-8 text-center text-sm text-muted-foreground"
                   >
                     No coupons found.
                   </TableCell>
@@ -124,7 +124,7 @@ export default function CouponTable({ coupons, isLoading }: CouponTableProps) {
                 coupons.map((coupon) => (
                   <TableRow
                     key={coupon.id}
-                    className="transition-colors border-b border-border hover:bg-accent"
+                    className="border-b border-border transition-colors hover:bg-accent"
                   >
                     <TableCell className="px-5 py-4 whitespace-nowrap">
                       <div className="flex items-center gap-2">
@@ -133,7 +133,7 @@ export default function CouponTable({ coupons, isLoading }: CouponTableProps) {
                         </span>
                         <button
                           onClick={() => copyToClipboard(coupon.code)}
-                          className="p-1 text-muted-foreground transition-colors rounded-md hover:text-primary hover:bg-accent"
+                          className="rounded-md p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-primary"
                           title="Copy Code"
                         >
                           {copiedCode === coupon.code ? (
@@ -169,15 +169,18 @@ export default function CouponTable({ coupons, isLoading }: CouponTableProps) {
                     </TableCell>
                     <TableCell className="px-5 py-4 whitespace-nowrap">
                       <div className="flex items-center gap-2">
-                        <div className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium text-foreground bg-muted rounded-lg">
+                        <div className="flex items-center gap-1.5 rounded-lg bg-muted px-2.5 py-1 text-xs font-medium text-foreground">
                           <Calendar
                             size={12}
                             className="text-muted-foreground"
                           />
                           {formatDate(coupon.start_date)}
                         </div>
-                        <ArrowRight size={14} className="text-muted-foreground" />
-                        <div className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium text-foreground bg-muted rounded-lg">
+                        <ArrowRight
+                          size={14}
+                          className="text-muted-foreground"
+                        />
+                        <div className="flex items-center gap-1.5 rounded-lg bg-muted px-2.5 py-1 text-xs font-medium text-foreground">
                           <Calendar
                             size={12}
                             className="text-muted-foreground"
@@ -190,7 +193,7 @@ export default function CouponTable({ coupons, isLoading }: CouponTableProps) {
                       <div className="flex items-center justify-end gap-3">
                         <button
                           onClick={() => setSelectedCoupon(coupon)}
-                          className="flex items-center gap-1 text-sm font-medium transition-colors text-primary hover:text-primary"
+                          className="flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-primary"
                           title="Edit"
                         >
                           <Pencil size={16} />
@@ -198,7 +201,7 @@ export default function CouponTable({ coupons, isLoading }: CouponTableProps) {
                         </button>
                         <button
                           onClick={() => handleDelete(coupon)}
-                          className="flex items-center gap-1 text-sm font-medium transition-colors text-destructive hover:text-destructive"
+                          className="flex items-center gap-1 text-sm font-medium text-destructive transition-colors hover:text-destructive"
                           title="Delete"
                         >
                           <Trash2 size={16} />

@@ -103,9 +103,7 @@ export default function PaymentHistory() {
 
       <div className="w-full max-w-full space-y-6">
         <div>
-          <h1 className="text-2xl font-bold text-foreground">
-            Payments
-          </h1>
+          <h1 className="text-2xl font-bold text-foreground">Payments</h1>
           <p className="mt-1 text-sm text-muted-foreground">
             A comprehensive financial control panel for tracking all
             transactions.
@@ -114,24 +112,24 @@ export default function PaymentHistory() {
 
         <PaymentsCards />
 
-        <div className="overflow-hidden bg-card border border-border rounded-xl shadow-xs">
-          <div className="flex flex-col gap-4 p-4 border-b border-border sm:flex-row sm:items-center sm:justify-between">
-            <form onSubmit={applyFilters} className="relative flex-1 max-w-lg">
+        <div className="overflow-hidden rounded-xl border border-border bg-card shadow-xs">
+          <div className="flex flex-col gap-4 border-b border-border p-4 sm:flex-row sm:items-center sm:justify-between">
+            <form onSubmit={applyFilters} className="relative max-w-lg flex-1">
               <div className="relative w-full">
-                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                  <Search className="w-5 h-5 text-muted-foreground" />
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <Search className="h-5 w-5 text-muted-foreground" />
                 </div>
                 <input
                   type="text"
                   name="search"
-                  className="block w-full p-2.5 pl-10 pr-20 text-sm text-foreground border border-input rounded-lg bg-muted/50 focus:ring-ring/50 focus:border-ring dark:placeholder:text-muted-foreground"
+                  className="block w-full rounded-lg border border-input bg-muted/50 p-2.5 pr-20 pl-10 text-sm text-foreground focus:border-ring focus:ring-ring/50 dark:placeholder:text-muted-foreground"
                   placeholder="Search by Order ID or Keyword..."
                   value={localFilters.search}
                   onChange={handleFilterChange}
                 />
                 <button
                   type="submit"
-                  className="absolute inset-y-1 right-1 px-3 py-1.5 text-xs font-medium text-primary-foreground bg-primary rounded-md hover:bg-primary/90 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-ring/50 dark:focus:ring-offset-background transition-colors"
+                  className="absolute inset-y-1 right-1 rounded-md bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus:ring-2 focus:ring-ring/50 focus:ring-offset-2 focus:outline-hidden dark:focus:ring-offset-background"
                 >
                   Search
                 </button>
@@ -161,18 +159,15 @@ export default function PaymentHistory() {
           </div>
 
           {showFilters && (
-            <form
-              onSubmit={applyFilters}
-              className="p-5 bg-muted/50"
-            >
+            <form onSubmit={applyFilters} className="bg-muted/50 p-5">
               <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                 <div>
-                  <label className="block mb-1.5 text-xs font-semibold text-muted-foreground uppercase">
+                  <label className="mb-1.5 block text-xs font-semibold text-muted-foreground uppercase">
                     Status
                   </label>
                   <select
                     name="payment_status"
-                    className="w-full p-2.5 text-sm border-input rounded-lg dark:bg-muted dark:text-white focus:ring-ring/50 focus:border-ring"
+                    className="w-full rounded-lg border-input p-2.5 text-sm focus:border-ring focus:ring-ring/50 dark:bg-muted dark:text-white"
                     value={localFilters.payment_status}
                     onChange={handleFilterChange}
                   >
@@ -184,21 +179,21 @@ export default function PaymentHistory() {
                 </div>
 
                 <div>
-                  <label className="block mb-1.5 text-xs font-semibold text-muted-foreground uppercase">
+                  <label className="mb-1.5 block text-xs font-semibold text-muted-foreground uppercase">
                     Company
                   </label>
                   <input
                     type="text"
                     name="company"
                     placeholder="e.g. Amazon"
-                    className="w-full p-2.5 text-sm border-input rounded-lg dark:bg-muted dark:text-white focus:ring-ring/50 focus:border-ring"
+                    className="w-full rounded-lg border-input p-2.5 text-sm focus:border-ring focus:ring-ring/50 dark:bg-muted dark:text-white"
                     value={localFilters.company}
                     onChange={handleFilterChange}
                   />
                 </div>
 
                 <div>
-                  <label className="block mb-1.5 text-xs font-semibold text-muted-foreground uppercase">
+                  <label className="mb-1.5 block text-xs font-semibold text-muted-foreground uppercase">
                     Amount Range
                   </label>
                   <div className="flex items-center gap-2">
@@ -206,7 +201,7 @@ export default function PaymentHistory() {
                       type="number"
                       name="min_amount"
                       placeholder="Min"
-                      className="w-full p-2.5 text-sm border-input rounded-lg dark:bg-muted dark:text-white focus:ring-ring/50 focus:border-ring"
+                      className="w-full rounded-lg border-input p-2.5 text-sm focus:border-ring focus:ring-ring/50 dark:bg-muted dark:text-white"
                       value={localFilters.min_amount}
                       onChange={handleFilterChange}
                     />
@@ -215,7 +210,7 @@ export default function PaymentHistory() {
                       type="number"
                       name="max_amount"
                       placeholder="Max"
-                      className="w-full p-2.5 text-sm border-input rounded-lg dark:bg-muted dark:text-white focus:ring-ring/50 focus:border-ring"
+                      className="w-full rounded-lg border-input p-2.5 text-sm focus:border-ring focus:ring-ring/50 dark:bg-muted dark:text-white"
                       value={localFilters.max_amount}
                       onChange={handleFilterChange}
                     />
@@ -223,14 +218,14 @@ export default function PaymentHistory() {
                 </div>
 
                 <div className="lg:col-span-2 xl:col-span-2">
-                  <label className="block mb-1.5 text-xs font-semibold text-muted-foreground uppercase">
+                  <label className="mb-1.5 block text-xs font-semibold text-muted-foreground uppercase">
                     Date Range
                   </label>
                   <div className="flex items-center gap-2">
                     <input
                       type="date"
                       name="start_date"
-                      className="w-full p-2.5 text-sm border-input rounded-lg dark:bg-muted dark:text-white focus:ring-ring/50 focus:border-ring"
+                      className="w-full rounded-lg border-input p-2.5 text-sm focus:border-ring focus:ring-ring/50 dark:bg-muted dark:text-white"
                       value={localFilters.start_date}
                       onChange={handleFilterChange}
                     />
@@ -238,7 +233,7 @@ export default function PaymentHistory() {
                     <input
                       type="date"
                       name="end_date"
-                      className="w-full p-2.5 text-sm border-input rounded-lg dark:bg-muted dark:text-white focus:ring-ring/50 focus:border-ring"
+                      className="w-full rounded-lg border-input p-2.5 text-sm focus:border-ring focus:ring-ring/50 dark:bg-muted dark:text-white"
                       value={localFilters.end_date}
                       onChange={handleFilterChange}
                     />
@@ -246,7 +241,7 @@ export default function PaymentHistory() {
                 </div>
               </div>
 
-              <div className="flex justify-end mt-5">
+              <div className="mt-5 flex justify-end">
                 <Button type="submit">Apply Filters</Button>
               </div>
             </form>
@@ -256,7 +251,7 @@ export default function PaymentHistory() {
         <PaymentsTable payments={data?.results || []} isLoading={isLoading} />
 
         {data && data.total_pages > 1 && (
-          <div className="flex items-center justify-between p-4 bg-card border border-border rounded-xl shadow-xs">
+          <div className="flex items-center justify-between rounded-xl border border-border bg-card p-4 shadow-xs">
             <p className="text-sm text-muted-foreground">
               Showing{" "}
               <span className="font-semibold text-foreground">
@@ -276,14 +271,14 @@ export default function PaymentHistory() {
               <button
                 onClick={() => handlePageChange(data.current_page - 1)}
                 disabled={data.current_page === 1}
-                className="px-3 py-1.5 text-sm font-medium rounded-lg border border-input bg-card text-foreground hover:bg-accent disabled:opacity-50 disabled:cursor-not-allowed transition"
+                className="rounded-lg border border-input bg-card px-3 py-1.5 text-sm font-medium text-foreground transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Previous
               </button>
               <button
                 onClick={() => handlePageChange(data.current_page + 1)}
                 disabled={data.current_page === data.total_pages}
-                className="px-3 py-1.5 text-sm font-medium rounded-lg border border-input bg-card text-foreground hover:bg-accent disabled:opacity-50 disabled:cursor-not-allowed transition"
+                className="rounded-lg border border-input bg-card px-3 py-1.5 text-sm font-medium text-foreground transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Next
               </button>

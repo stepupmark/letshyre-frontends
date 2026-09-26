@@ -10,14 +10,14 @@ export default function PaymentsCards() {
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
-            className="p-5 bg-card border border-border/80 rounded-2xl shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] animate-pulse"
+            className="animate-pulse rounded-2xl border border-border/80 bg-card p-5 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]"
           >
             <div className="flex items-center justify-between">
               <div className="flex flex-col gap-3">
-                <div className="h-3.5 w-24 bg-muted rounded-sm"></div>
-                <div className="w-10 rounded-sm h-7 bg-muted"></div>
+                <div className="h-3.5 w-24 rounded-sm bg-muted"></div>
+                <div className="h-7 w-10 rounded-sm bg-muted"></div>
               </div>
-              <div className="w-10 h-10 rounded-full bg-muted"></div>
+              <div className="h-10 w-10 rounded-full bg-muted"></div>
             </div>
           </div>
         ))}
@@ -72,11 +72,11 @@ export default function PaymentsCards() {
         return (
           <div
             key={index}
-            className="p-5 bg-card border border-border/80 rounded-2xl shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] transition-all hover:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)] hover:-translate-y-0.5 group"
+            className="group rounded-2xl border border-border/80 bg-card p-5 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.12)]"
           >
-            <div className="flex items-center justify-between h-full">
-              <div className="flex flex-col justify-between h-full gap-2.5">
-                <h3 className="text-[13px] font-medium text-muted-foreground whitespace-nowrap">
+            <div className="flex h-full items-center justify-between">
+              <div className="flex h-full flex-col justify-between gap-2.5">
+                <h3 className="text-[13px] font-medium whitespace-nowrap text-muted-foreground">
                   {metric.title}
                 </h3>
                 <p className="text-[28px] leading-none font-bold tracking-tight text-foreground">
@@ -84,9 +84,9 @@ export default function PaymentsCards() {
                 </p>
               </div>
               <div
-                className={`flex items-center justify-center w-[42px] h-[42px] rounded-full transition-transform duration-300 group-hover:scale-110 ${metric.bgColor}`}
+                className={`flex h-[42px] w-[42px] items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-110 ${metric.bgColor}`}
               >
-                <Icon className={`w-5 h-5 ${metric.color}`} strokeWidth={2} />
+                <Icon className={`h-5 w-5 ${metric.color}`} strokeWidth={2} />
               </div>
             </div>
           </div>

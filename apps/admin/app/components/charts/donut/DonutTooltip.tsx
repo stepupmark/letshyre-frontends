@@ -1,5 +1,8 @@
 import type { TooltipProps } from "recharts";
-import type { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
+import type {
+  NameType,
+  ValueType,
+} from "recharts/types/component/DefaultTooltipContent";
 import type { ChartSlice } from "../../../lib/chartTransformers";
 
 interface CustomPayload {
@@ -19,21 +22,21 @@ export default function DonutTooltip({ active, payload }: Props) {
   const slice = payload[0].payload;
 
   return (
-    <div className="bg-primary text-primary-foreground rounded-xl px-4 py-3 shadow-2xl border border-background/10 backdrop-blur-xs text-sm min-w-[140px]">
-      <div className="flex items-center gap-2 mb-1">
+    <div className="min-w-[140px] rounded-xl border border-background/10 bg-primary px-4 py-3 text-sm text-primary-foreground shadow-2xl backdrop-blur-xs">
+      <div className="mb-1 flex items-center gap-2">
         <span
-          className="w-2.5 h-2.5 rounded-full shrink-0"
+          className="h-2.5 w-2.5 shrink-0 rounded-full"
           style={{ backgroundColor: slice.color }}
         />
-        <span className="font-semibold truncate">{slice.label}</span>
+        <span className="truncate font-semibold">{slice.label}</span>
       </div>
-      <div className="text-muted-foreground/70 text-xs space-y-0.5 pl-[18px]">
+      <div className="space-y-0.5 pl-[18px] text-xs text-muted-foreground/70">
         <div>
-          Count: <span className="text-white font-medium">{slice.count}</span>
+          Count: <span className="font-medium text-white">{slice.count}</span>
         </div>
         <div>
           Share:{" "}
-          <span className="text-white font-medium">{slice.percentage}%</span>
+          <span className="font-medium text-white">{slice.percentage}%</span>
         </div>
       </div>
     </div>

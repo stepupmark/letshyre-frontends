@@ -23,7 +23,8 @@ export const http = axios.create({
 
 http.interceptors.request.use((config) => {
   const token = tokenStore.getAccessToken();
-  if (token && !config.skipAuth) config.headers.Authorization = `Bearer ${token}`;
+  if (token && !config.skipAuth)
+    config.headers.Authorization = `Bearer ${token}`;
   return config;
 });
 
@@ -32,7 +33,9 @@ http.interceptors.response.use(undefined, async (error: unknown) => {
     const config = error.config;
     if (config && !config.skipAuth && !config.skipRefresh && !config._retry) {
       config._retry = true;
-      const failedToken = String(config.headers.Authorization ?? "").replace(/^Bearer /, "") || null;
+      const failedToken =
+        String(config.headers.Authorization ?? "").replace(/^Bearer /, "") ||
+        null;
       const token = await refreshAccessToken(failedToken);
       if (token) return http(config);
       endSession("expired");

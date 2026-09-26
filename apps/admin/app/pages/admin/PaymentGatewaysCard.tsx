@@ -62,9 +62,7 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
 
   const { mutate, isPending } = useUpdatePaymentGateway();
 
-
   const onSubmit = (data: PaymentGateway) => {
-
     mutate(
       { ...data, id },
       {
@@ -75,9 +73,7 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
           setId("");
         },
         onError: (error: Error) => {
-          toast.error(
-            getErrorMessage(error, "Something went wrong"),
-          );
+          toast.error(getErrorMessage(error, "Something went wrong"));
         },
       },
     );
@@ -97,15 +93,15 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
   }, [data, id, reset]);
 
   return (
-    <div className="p-5 transition-all duration-200 bg-card border border-border shadow-xs rounded-3xl hover:border-input hover:shadow-md">
+    <div className="rounded-3xl border border-border bg-card p-5 shadow-xs transition-all duration-200 hover:border-input hover:shadow-md">
       <div className="flex items-start justify-between gap-4">
-        <div className="flex items-center min-w-0 gap-3">
-          <div className="flex items-center justify-center text-sm font-semibold text-foreground bg-muted size-11 shrink-0 rounded-2xl">
+        <div className="flex min-w-0 items-center gap-3">
+          <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-muted text-sm font-semibold text-foreground">
             {gateway.displayName.charAt(0)}
           </div>
 
           <div className="min-w-0">
-            <h3 className="text-sm font-semibold text-foreground truncate">
+            <h3 className="truncate text-sm font-semibold text-foreground">
               {gateway.displayName}
             </h3>
 
@@ -126,12 +122,12 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
         </span>
       </div>
 
-      <div className="h-px my-4 bg-muted" />
+      <div className="my-4 h-px bg-muted" />
 
       <div className="space-y-3">
-        <div className="flex items-center justify-between px-4 py-3 rounded-2xl bg-muted/50">
+        <div className="flex items-center justify-between rounded-2xl bg-muted/50 px-4 py-3">
           <div>
-            <p className="text-[11px] uppercase tracking-wide text-muted-foreground">
+            <p className="text-[11px] tracking-wide text-muted-foreground uppercase">
               Client ID
             </p>
 
@@ -143,15 +139,15 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
           <button
             onClick={() => copy(gateway.clientId, "id")}
             aria-label="Copy client ID"
-            className="p-2 text-muted-foreground transition rounded-xl hover:bg-accent hover:text-foreground"
+            className="rounded-xl p-2 text-muted-foreground transition hover:bg-accent hover:text-foreground"
           >
             {copied === "id" ? <Check size={15} /> : <Copy size={15} />}
           </button>
         </div>
 
-        <div className="flex items-center justify-between px-4 py-3 rounded-2xl bg-muted/50">
+        <div className="flex items-center justify-between rounded-2xl bg-muted/50 px-4 py-3">
           <div>
-            <p className="text-[11px] uppercase tracking-wide text-muted-foreground">
+            <p className="text-[11px] tracking-wide text-muted-foreground uppercase">
               Client Secret
             </p>
 
@@ -163,8 +159,10 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
           <div className="flex gap-1">
             <button
               onClick={() => setShowSecret((prev) => !prev)}
-              aria-label={showSecret ? "Hide client secret" : "Show client secret"}
-              className="p-2 text-muted-foreground transition rounded-xl hover:bg-accent hover:text-foreground"
+              aria-label={
+                showSecret ? "Hide client secret" : "Show client secret"
+              }
+              className="rounded-xl p-2 text-muted-foreground transition hover:bg-accent hover:text-foreground"
             >
               {showSecret ? <EyeOff size={15} /> : <Eye size={15} />}
             </button>
@@ -172,7 +170,7 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
             <button
               onClick={() => copy(gateway.clientSecret, "secret")}
               aria-label="Copy client secret"
-              className="p-2 text-muted-foreground transition rounded-xl hover:bg-accent hover:text-foreground"
+              className="rounded-xl p-2 text-muted-foreground transition hover:bg-accent hover:text-foreground"
             >
               {copied === "secret" ? <Check size={15} /> : <Copy size={15} />}
             </button>
@@ -180,14 +178,14 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
         </div>
       </div>
 
-      <div className="flex items-center justify-between mt-4">
+      <div className="mt-4 flex items-center justify-between">
         <p className="text-xs text-muted-foreground">
           Secure payment credentials
         </p>
         <div className="space-x-5">
           <Button
             variant="outline"
-            className="px-4 text-sm h-9 rounded-2xl dark:border-border dark:bg-muted dark:text-white dark:hover:bg-muted"
+            className="h-9 rounded-2xl px-4 text-sm dark:border-border dark:bg-muted dark:text-white dark:hover:bg-muted"
             onClick={() => setIsDeleteModalOpen(true)}
             aria-label="Delete payment gateway"
           >
@@ -202,7 +200,7 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
               setId(gateway.id);
             }}
             variant="outline"
-            className="px-4 text-sm h-9 rounded-2xl dark:border-border dark:bg-muted dark:text-white dark:hover:bg-muted"
+            className="h-9 rounded-2xl px-4 text-sm dark:border-border dark:bg-muted dark:text-white dark:hover:bg-muted"
             aria-label="Edit payment gateway"
           >
             <span className="mr-2">
@@ -216,9 +214,9 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
       <Modal
         isOpen={isEditModalOpen}
         onClose={() => setIsEditModalOpen(false)}
-        className="max-w-2xl p-0 overflow-hidden bg-card border border-border"
+        className="max-w-2xl overflow-hidden border border-border bg-card p-0"
       >
-        <div className="px-6 py-5 border-b border-border">
+        <div className="border-b border-border px-6 py-5">
           <h3 className="text-lg font-semibold text-foreground">
             Edit Payment Gateway
           </h3>
@@ -231,7 +229,7 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
         <div className="flex max-h-[80vh] flex-col overflow-hidden bg-card">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex-1 px-6 py-6 overflow-y-auto"
+            className="flex-1 overflow-y-auto px-6 py-6"
           >
             <div className="space-y-5">
               <section className="rounded-2xl border border-border bg-muted/50 p-5 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.02)]">
@@ -251,7 +249,7 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
 
                     <select
                       {...register("gatewayName")}
-                      className="w-full px-4 mt-2 text-sm text-foreground bg-card border border-input h-11 rounded-2xl focus:outline-hidden focus:ring-2 focus:ring-blue-500/20"
+                      className="mt-2 h-11 w-full rounded-2xl border border-input bg-card px-4 text-sm text-foreground focus:ring-2 focus:ring-blue-500/20 focus:outline-hidden"
                     >
                       <option value="paypal">PayPal</option>
                       <option value="razorpay">Razorpay</option>
@@ -274,7 +272,7 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between px-4 py-3 mt-5 bg-card border border-border rounded-2xl">
+                <div className="mt-5 flex items-center justify-between rounded-2xl border border-border bg-card px-4 py-3">
                   <div>
                     <p className="text-sm font-medium text-foreground">
                       Enable Gateway
@@ -289,9 +287,7 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
                     type="button"
                     onClick={() => setValue("isActive", !isActive)}
                     className={`relative h-7 w-12 rounded-full transition ${
-                      isActive
-                        ? "bg-emerald-500"
-                        : "bg-input"
+                      isActive ? "bg-emerald-500" : "bg-input"
                     }`}
                   >
                     <span
@@ -323,9 +319,7 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
                           : "border-border bg-card hover:bg-accent"
                       }`}
                     >
-                      <p className="font-medium text-foreground">
-                        Sandbox
-                      </p>
+                      <p className="font-medium text-foreground">Sandbox</p>
 
                       <p className="mt-1 text-xs text-muted-foreground">
                         Test mode
@@ -341,9 +335,7 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
                           : "border-border bg-card hover:bg-accent"
                       }`}
                     >
-                      <p className="font-medium text-foreground">
-                        Live
-                      </p>
+                      <p className="font-medium text-foreground">Live</p>
 
                       <p className="mt-1 text-xs text-muted-foreground">
                         Production mode
@@ -352,7 +344,7 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-4 mt-5 md:grid-cols-2">
+                <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
                   <div>
                     <Label className="dark:text-foreground">API Key</Label>
 
@@ -386,12 +378,12 @@ export default function GatewayCard({ gateway }: { gateway: Gateway }) {
             </div>
           </form>
 
-          <div className="px-6 py-4 bg-card border-t border-border shrink-0">
+          <div className="shrink-0 border-t border-border bg-card px-6 py-4">
             <Button
               type="submit"
               onClick={handleSubmit(onSubmit)}
               disabled={isPending}
-              className="w-full h-11 rounded-2xl"
+              className="h-11 w-full rounded-2xl"
             >
               {isPending ? "Saving..." : "Save Gateway"}
             </Button>

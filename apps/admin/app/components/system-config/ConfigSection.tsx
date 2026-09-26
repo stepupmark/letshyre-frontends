@@ -26,12 +26,8 @@ export default function ConfigSection({
           <Icon className={`h-5 w-5 ${iconColor}`} />
         </span>
         <div>
-          <h2 className="text-sm font-semibold text-foreground">
-            {title}
-          </h2>
-          <p className="mt-0.5 text-xs text-muted-foreground">
-            {description}
-          </p>
+          <h2 className="text-sm font-semibold text-foreground">{title}</h2>
+          <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>
         </div>
       </div>
 

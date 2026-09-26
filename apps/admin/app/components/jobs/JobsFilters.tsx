@@ -74,16 +74,16 @@ const JobsFilters: React.FC<JobsFiltersProps> = ({
   };
 
   return (
-    <div className="p-4 mb-6 transition-all bg-card border border-border shadow-xs rounded-2xl">
+    <div className="mb-6 rounded-2xl border border-border bg-card p-4 shadow-xs transition-all">
       <div className="flex flex-col items-end gap-4 xl:flex-row">
         <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-5">
           <div className="flex flex-col">
-            <label className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5 ml-1">
+            <label className="mb-1.5 ml-1 text-[11px] font-semibold tracking-wider text-muted-foreground uppercase">
               Search
             </label>
             <div className="relative">
               <svg
-                className="absolute w-4 h-4 text-muted-foreground -translate-y-1/2 left-3 top-1/2"
+                className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -97,7 +97,7 @@ const JobsFilters: React.FC<JobsFiltersProps> = ({
               </svg>
               <input
                 type="text"
-                className="w-full py-2 pr-3 text-sm text-foreground transition-colors border border-transparent pl-9 bg-muted/50 focus:bg-card focus:border-ring rounded-xl"
+                className="w-full rounded-xl border border-transparent bg-muted/50 py-2 pr-3 pl-9 text-sm text-foreground transition-colors focus:border-ring focus:bg-card"
                 placeholder="Job title..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -107,13 +107,15 @@ const JobsFilters: React.FC<JobsFiltersProps> = ({
           </div>
 
           <div className="flex flex-col">
-            <label className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5 ml-1">
+            <label className="mb-1.5 ml-1 text-[11px] font-semibold tracking-wider text-muted-foreground uppercase">
               Approval
             </label>
             <select
-              className="w-full px-3 py-2 text-sm text-foreground transition-colors border border-transparent appearance-none bg-muted/50 focus:bg-card focus:border-ring rounded-xl"
+              className="w-full appearance-none rounded-xl border border-transparent bg-muted/50 px-3 py-2 text-sm text-foreground transition-colors focus:border-ring focus:bg-card"
               value={approvalStatus}
-              onChange={(e) => setApprovalStatus(e.target.value as ApprovalStatus | "")}
+              onChange={(e) =>
+                setApprovalStatus(e.target.value as ApprovalStatus | "")
+              }
             >
               <option value="">All</option>
               <option value="pending">Pending</option>
@@ -123,11 +125,11 @@ const JobsFilters: React.FC<JobsFiltersProps> = ({
           </div>
 
           <div className="flex flex-col">
-            <label className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5 ml-1">
+            <label className="mb-1.5 ml-1 text-[11px] font-semibold tracking-wider text-muted-foreground uppercase">
               Status
             </label>
             <select
-              className="w-full px-3 py-2 text-sm text-foreground transition-colors border border-transparent appearance-none bg-muted/50 focus:bg-card focus:border-ring rounded-xl"
+              className="w-full appearance-none rounded-xl border border-transparent bg-muted/50 px-3 py-2 text-sm text-foreground transition-colors focus:border-ring focus:bg-card"
               value={jobStatus}
               onChange={(e) => setJobStatus(e.target.value as JobStatus | "")}
             >
@@ -139,40 +141,40 @@ const JobsFilters: React.FC<JobsFiltersProps> = ({
           </div>
 
           <div className="flex flex-col">
-            <label className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5 ml-1">
+            <label className="mb-1.5 ml-1 text-[11px] font-semibold tracking-wider text-muted-foreground uppercase">
               From
             </label>
             <input
               type="date"
-              className="w-full px-3 py-2 text-sm text-foreground transition-colors border border-transparent bg-muted/50 focus:bg-card focus:border-ring rounded-xl"
+              className="w-full rounded-xl border border-transparent bg-muted/50 px-3 py-2 text-sm text-foreground transition-colors focus:border-ring focus:bg-card"
               value={fromDate}
               onChange={(e) => setFromDate(e.target.value)}
             />
           </div>
 
           <div className="flex flex-col">
-            <label className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5 ml-1">
+            <label className="mb-1.5 ml-1 text-[11px] font-semibold tracking-wider text-muted-foreground uppercase">
               To
             </label>
             <input
               type="date"
-              className="w-full px-3 py-2 text-sm text-foreground transition-colors border border-transparent bg-muted/50 focus:bg-card focus:border-ring rounded-xl"
+              className="w-full rounded-xl border border-transparent bg-muted/50 px-3 py-2 text-sm text-foreground transition-colors focus:border-ring focus:bg-card"
               value={toDate}
               onChange={(e) => setToDate(e.target.value)}
             />
           </div>
         </div>
 
-        <div className="flex items-center justify-end w-full gap-2 mt-4 xl:w-auto shrink-0 xl:mt-0">
+        <div className="mt-4 flex w-full shrink-0 items-center justify-end gap-2 xl:mt-0 xl:w-auto">
           <button
             onClick={handleReset}
-            className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hover:bg-accent rounded-xl"
+            className="rounded-xl px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
           >
             Clear
           </button>
           <button
             onClick={handleApply}
-            className="px-5 py-2 text-sm font-medium text-primary-foreground transition-all shadow-xs bg-primary hover:bg-primary/90 rounded-xl hover:shadow-sm"
+            className="rounded-xl bg-primary px-5 py-2 text-sm font-medium text-primary-foreground shadow-xs transition-all hover:bg-primary/90 hover:shadow-sm"
           >
             Apply Filters
           </button>

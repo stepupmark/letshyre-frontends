@@ -237,4 +237,3 @@ export async function bulkActionJobs(data: {
     throw toApiError(err);
   }
 }
-

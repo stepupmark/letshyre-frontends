@@ -36,12 +36,12 @@ const Avatar: React.FC<AvatarProps> = ({
   status = "none",
 }) => {
   return (
-    <div className={`relative  rounded-full ${sizeClasses[size]}`}>
-      <img src={`${src}`} alt={alt} className="object-cover rounded-full" />
+    <div className={`relative rounded-full ${sizeClasses[size]}`}>
+      <img src={`${src}`} alt={alt} className="rounded-full object-cover" />
 
       {status !== "none" && (
         <span
-          className={`absolute bottom-0 right-0 rounded-full border-[1.5px] border-background ${
+          className={`absolute right-0 bottom-0 rounded-full border-[1.5px] border-background ${
             statusSizeClasses[size]
           } ${statusColorClasses[status] || ""}`}
         ></span>

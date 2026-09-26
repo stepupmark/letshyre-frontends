@@ -10,7 +10,12 @@ type ErrorStateProps = {
   className?: string;
 };
 
-export function ErrorState({ title = "Couldn't load this", error, onRetry, className }: ErrorStateProps) {
+export function ErrorState({
+  title = "Couldn't load this",
+  error,
+  onRetry,
+  className,
+}: ErrorStateProps) {
   return (
     <EmptyState
       icon={TriangleAlert}

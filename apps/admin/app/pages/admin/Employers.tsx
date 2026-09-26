@@ -82,9 +82,7 @@ export default function Employers() {
       <div className="space-y-5 overflow-x-hidden bg-muted/50">
         <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-foreground">
-              Employers
-            </h1>
+            <h1 className="text-2xl font-bold text-foreground">Employers</h1>
             <p className="mt-0.5 text-sm text-muted-foreground">
               Browse and manage registered employers and their companies.
             </p>
@@ -97,7 +95,7 @@ export default function Employers() {
               label: "Total Employers",
               value: cards?.total_employees || 0,
               icon: (
-                <Building2 className="text-indigo-600 size-5 dark:text-indigo-400" />
+                <Building2 className="size-5 text-indigo-600 dark:text-indigo-400" />
               ),
               bg: "bg-indigo-50 dark:bg-indigo-900/20",
               border: "border-indigo-100 dark:border-indigo-800",
@@ -117,7 +115,7 @@ export default function Employers() {
               label: "Completed KYC",
               value: cards?.completed_kycs || 0,
               icon: (
-                <FileCheck className="text-blue-600 size-5 dark:text-blue-400" />
+                <FileCheck className="size-5 text-blue-600 dark:text-blue-400" />
               ),
               bg: "bg-blue-50 dark:bg-blue-900/20",
               border: "border-blue-100 dark:border-blue-800",
@@ -137,7 +135,7 @@ export default function Employers() {
               label: "Pending KYC",
               value: cards?.pending_kycs || 0,
               icon: (
-                <Clock className="text-orange-600 size-5 dark:text-orange-400" />
+                <Clock className="size-5 text-orange-600 dark:text-orange-400" />
               ),
               bg: "bg-orange-50 dark:bg-orange-900/20",
               border: "border-orange-100 dark:border-orange-800",
@@ -147,7 +145,7 @@ export default function Employers() {
               label: "Verified KYC",
               value: cards?.verified_kycs || 0,
               icon: (
-                <ShieldCheck className="text-purple-600 size-5 dark:text-purple-400" />
+                <ShieldCheck className="size-5 text-purple-600 dark:text-purple-400" />
               ),
               bg: "bg-purple-50 dark:bg-purple-900/20",
               border: "border-purple-100 dark:border-purple-800",
@@ -156,13 +154,13 @@ export default function Employers() {
           ].map((card) => (
             <div
               key={card.label}
-              className="relative p-5 overflow-hidden transition-all duration-300 bg-card border border-border shadow-xs group rounded-2xl hover:-translate-y-1 hover:shadow-lg"
+              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <div
                 className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${card.accent} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
               />
 
-              <div className="flex items-start justify-between gap-4 mt-1">
+              <div className="mt-1 flex items-start justify-between gap-4">
                 <div>
                   <p className="text-[11px] font-bold tracking-widest text-muted-foreground uppercase">
                     {card.label}
@@ -182,7 +180,7 @@ export default function Employers() {
           ))}
         </div>
 
-        <div className="overflow-hidden bg-card border border-border shadow-xs rounded-2xl">
+        <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
           <div className="overflow-x-auto">
             <Table>
               <TableHeader className="border-b border-border">
@@ -200,7 +198,7 @@ export default function Employers() {
                     <TableCell
                       key={col}
                       isHeader
-                      className="px-5 py-4 text-xs font-semibold tracking-widest text-left text-muted-foreground uppercase"
+                      className="px-5 py-4 text-left text-xs font-semibold tracking-widest text-muted-foreground uppercase"
                     >
                       {col}
                     </TableCell>
@@ -212,34 +210,34 @@ export default function Employers() {
                   Array.from({ length: 5 }).map((_, i) => (
                     <TableRow
                       key={i}
-                      className="border-b border-border animate-pulse"
+                      className="animate-pulse border-b border-border"
                     >
                       <TableCell className="px-5 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="bg-muted w-9 h-9 rounded-xl"></div>
-                          <div className="w-24 h-4 bg-muted rounded-sm"></div>
+                          <div className="h-9 w-9 rounded-xl bg-muted"></div>
+                          <div className="h-4 w-24 rounded-sm bg-muted"></div>
                         </div>
                       </TableCell>
                       <TableCell className="px-5 py-4">
-                        <div className="w-20 h-4 bg-muted rounded-sm"></div>
+                        <div className="h-4 w-20 rounded-sm bg-muted"></div>
                       </TableCell>
                       <TableCell className="px-5 py-4">
                         <div className="flex flex-col gap-1">
-                          <div className="w-32 h-3 bg-muted rounded-sm"></div>
-                          <div className="w-24 h-3 bg-muted rounded-sm"></div>
+                          <div className="h-3 w-32 rounded-sm bg-muted"></div>
+                          <div className="h-3 w-24 rounded-sm bg-muted"></div>
                         </div>
                       </TableCell>
                       <TableCell className="px-5 py-4">
-                        <div className="w-24 h-4 bg-muted rounded-sm"></div>
+                        <div className="h-4 w-24 rounded-sm bg-muted"></div>
                       </TableCell>
                       <TableCell className="px-5 py-4">
-                        <div className="w-8 h-4 bg-muted rounded-sm"></div>
+                        <div className="h-4 w-8 rounded-sm bg-muted"></div>
                       </TableCell>
                       <TableCell className="px-5 py-4">
-                        <div className="w-16 h-5 bg-muted rounded-full"></div>
+                        <div className="h-5 w-16 rounded-full bg-muted"></div>
                       </TableCell>
                       <TableCell className="px-5 py-4">
-                        <div className="w-20 h-8 bg-muted rounded-xl"></div>
+                        <div className="h-8 w-20 rounded-xl bg-muted"></div>
                       </TableCell>
                     </TableRow>
                   ))
@@ -288,7 +286,7 @@ export default function Employers() {
                               <img
                                 src={emp.employer_kyc.company_logo}
                                 alt={cName}
-                                className="object-cover border border-border w-9 h-9 rounded-xl"
+                                className="h-9 w-9 rounded-xl border border-border object-cover"
                               />
                             ) : (
                               <div
@@ -303,7 +301,7 @@ export default function Employers() {
                           </div>
                         </TableCell>
 
-                        <TableCell className="px-5 py-4 text-sm text-foreground whitespace-nowrap">
+                        <TableCell className="px-5 py-4 text-sm whitespace-nowrap text-foreground">
                           {emp.user_name}
                         </TableCell>
 
@@ -318,11 +316,11 @@ export default function Employers() {
                           </div>
                         </TableCell>
 
-                        <TableCell className="px-5 py-4 text-sm text-muted-foreground whitespace-nowrap">
+                        <TableCell className="px-5 py-4 text-sm whitespace-nowrap text-muted-foreground">
                           {emp.employer_kyc?.company_industry || "—"}
                         </TableCell>
 
-                        <TableCell className="px-5 py-4 text-sm text-muted-foreground whitespace-nowrap">
+                        <TableCell className="px-5 py-4 text-sm whitespace-nowrap text-muted-foreground">
                           {emp.job_posts}
                         </TableCell>
 
@@ -350,7 +348,7 @@ export default function Employers() {
                             className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-3.5 py-1.5 text-xs font-semibold text-primary-foreground shadow-xs transition hover:bg-primary/90 active:scale-95"
                           >
                             View Profile
-                            <ChevronRight className="w-5 h-5" />
+                            <ChevronRight className="h-5 w-5" />
                           </Link>
                         </TableCell>
                       </TableRow>
@@ -372,10 +370,10 @@ export default function Employers() {
                 <button
                   onClick={() => setPage((p) => Math.max(1, p - 1))}
                   disabled={safePage === 1}
-                  className="flex items-center justify-center w-8 h-8 text-muted-foreground transition border border-border rounded-lg hover:bg-accent disabled:cursor-not-allowed disabled:opacity-30"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-30"
                 >
                   <svg
-                    className="w-4 h-4"
+                    className="h-4 w-4"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -433,10 +431,10 @@ export default function Employers() {
                 <button
                   onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                   disabled={safePage === totalPages}
-                  className="flex items-center justify-center w-8 h-8 text-muted-foreground transition border border-border rounded-lg hover:bg-accent disabled:cursor-not-allowed disabled:opacity-30"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-30"
                 >
                   <svg
-                    className="w-4 h-4"
+                    className="h-4 w-4"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

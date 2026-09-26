@@ -1,6 +1,13 @@
 import type { ReactNode } from "react";
 import { Inbox, type LucideIcon } from "lucide-react";
-import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "~/components/ui/empty";
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from "~/components/ui/empty";
 
 type EmptyStateProps = {
   title: string;
@@ -10,7 +17,13 @@ type EmptyStateProps = {
   className?: string;
 };
 
-export function EmptyState({ title, description, icon: Icon = Inbox, action, className }: EmptyStateProps) {
+export function EmptyState({
+  title,
+  description,
+  icon: Icon = Inbox,
+  action,
+  className,
+}: EmptyStateProps) {
   return (
     <Empty className={className}>
       <EmptyHeader>

@@ -27,13 +27,14 @@ export interface AiInterviewInsightsResponse {
   data: AiInterviewInsightsData;
 }
 
-export const fetchAiInterviewInsights = async (): Promise<AiInterviewInsightsData> => {
-  try {
-    const response = await http.get<AiInterviewInsightsResponse>(
-      "user/v1/admin/ai-interview/insights/"
-    );
-    return response.data.data;
-  } catch (err) {
-    throw toApiError(err);
-  }
-};
+export const fetchAiInterviewInsights =
+  async (): Promise<AiInterviewInsightsData> => {
+    try {
+      const response = await http.get<AiInterviewInsightsResponse>(
+        "user/v1/admin/ai-interview/insights/",
+      );
+      return response.data.data;
+    } catch (err) {
+      throw toApiError(err);
+    }
+  };

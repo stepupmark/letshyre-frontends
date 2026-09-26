@@ -47,7 +47,7 @@ export interface KycApiResponse {
 
 export const fetchPendingKycEmployers = async (
   page: number = 1,
-  status: "Pending" | "Verified" | "Rejected" = "Pending"
+  status: "Pending" | "Verified" | "Rejected" = "Pending",
 ): Promise<KycData> => {
   try {
     const response = await http.get<KycApiResponse>(

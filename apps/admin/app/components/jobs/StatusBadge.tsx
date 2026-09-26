@@ -12,7 +12,9 @@ const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
     closed: { color: "error", label: "Closed" },
   } as const;
 
-  const { color, label }: { color: BadgeColor; label: string } = config[status] ?? { color: "light", label: status };
+  const { color, label }: { color: BadgeColor; label: string } = config[
+    status
+  ] ?? { color: "light", label: status };
 
   return (
     <Badge variant="light" color={color}>

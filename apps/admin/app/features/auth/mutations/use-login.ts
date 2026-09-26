@@ -14,7 +14,10 @@ export function useLogin() {
     mutationFn: authService.login,
     meta: { errorMessage: false },
     onSuccess: (result) => {
-      tokenStore.setTokens({ accessToken: result.access_token, refreshToken: result.refresh_token });
+      tokenStore.setTokens({
+        accessToken: result.access_token,
+        refreshToken: result.refresh_token,
+      });
       queryClient.removeQueries({ queryKey: authKeys.all });
       navigate(safeRedirect(searchParams.get("redirectTo")), { replace: true });
     },

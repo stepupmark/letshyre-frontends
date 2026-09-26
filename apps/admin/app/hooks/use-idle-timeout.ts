@@ -1,7 +1,12 @@
 import { useEffect, useRef } from "react";
 
 const ACTIVITY_KEY = "last_activity";
-const EVENTS = ["pointerdown", "keydown", "scroll", "visibilitychange"] as const;
+const EVENTS = [
+  "pointerdown",
+  "keydown",
+  "scroll",
+  "visibilitychange",
+] as const;
 
 function readLastActivity() {
   try {
@@ -35,7 +40,9 @@ export function useIdleTimeout(timeoutMs: number, onIdle: () => void) {
       }
     };
 
-    EVENTS.forEach((event) => window.addEventListener(event, onActivity, { passive: true }));
+    EVENTS.forEach((event) =>
+      window.addEventListener(event, onActivity, { passive: true }),
+    );
     const timer = window.setInterval(() => {
       if (Date.now() - readLastActivity() >= timeoutMs) onIdleRef.current();
     }, 30_000);

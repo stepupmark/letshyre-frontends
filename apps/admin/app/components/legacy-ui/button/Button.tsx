@@ -29,8 +29,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const variantClasses = {
-    primary:
-      "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
+    primary: "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
     outline:
       "bg-card text-foreground ring-1 ring-inset ring-input hover:bg-accent dark:hover:text-muted-foreground/70",
   };

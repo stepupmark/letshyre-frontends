@@ -1,5 +1,10 @@
 {
-  "include": ["app/**/*", ".react-router/types/**/*", "vite.config.ts", "react-router.config.ts"],
+  "include": [
+    "app/**/*",
+    ".react-router/types/**/*",
+    "vite.config.ts",
+    "react-router.config.ts"
+  ],
   "compilerOptions": {
     "target": "ES2022",
     "lib": ["ES2023", "DOM", "DOM.Iterable"],

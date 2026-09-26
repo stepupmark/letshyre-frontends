@@ -40,7 +40,7 @@ export default function SmsLogsTable() {
   if (isLoading) return <LogsTableSkeleton columns={4} />;
   if (isError) {
     return (
-      <div className="p-6 text-center text-red-600 border border-red-200 rounded-2xl bg-red-50 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-400">
+      <div className="rounded-2xl border border-red-200 bg-red-50 p-6 text-center text-red-600 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-400">
         Failed to load SMS logs. Please try again later.
       </div>
     );
@@ -49,10 +49,10 @@ export default function SmsLogsTable() {
   const logs = data?.results || [];
 
   return (
-    <div className="flex flex-col overflow-hidden bg-card border border-border shadow-xs rounded-2xl">
+    <div className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
       <div className="overflow-x-auto">
-        <table className="w-full text-sm text-left text-muted-foreground">
-          <thead className="text-xs text-foreground uppercase bg-muted/50">
+        <table className="w-full text-left text-sm text-muted-foreground">
+          <thead className="bg-muted/50 text-xs text-foreground uppercase">
             <tr>
               <th scope="col" className="px-6 py-4 font-semibold">
                 Phone Number
@@ -71,17 +71,17 @@ export default function SmsLogsTable() {
           <tbody className="divide-y divide-border">
             {logs.length === 0 ? (
               <tr>
-                <td colSpan={4} className="px-6 py-8 text-center text-muted-foreground">
+                <td
+                  colSpan={4}
+                  className="px-6 py-8 text-center text-muted-foreground"
+                >
                   No SMS logs found.
                 </td>
               </tr>
             ) : (
               logs.map((log) => (
-                <tr
-                  key={log.id}
-                  className="transition-colors hover:bg-accent"
-                >
-                  <td className="px-6 py-4 font-medium text-foreground whitespace-nowrap">
+                <tr key={log.id} className="transition-colors hover:bg-accent">
+                  <td className="px-6 py-4 font-medium whitespace-nowrap text-foreground">
                     {log.phone_number}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
@@ -90,7 +90,7 @@ export default function SmsLogsTable() {
                   <td className="px-6 py-4 whitespace-nowrap">
                     <LogsVerifiedBadge verified={log.is_verified} />
                   </td>
-                  <td className="px-6 py-4 text-xs text-muted-foreground whitespace-nowrap">
+                  <td className="px-6 py-4 text-xs whitespace-nowrap text-muted-foreground">
                     {formatDate(log.created_at)}
                   </td>
                 </tr>

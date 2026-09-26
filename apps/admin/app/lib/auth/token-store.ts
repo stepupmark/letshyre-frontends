@@ -24,7 +24,13 @@ write("auth_user", null);
 export const tokenStore = {
   getAccessToken: () => read(ACCESS_KEY),
   getRefreshToken: () => read(REFRESH_KEY),
-  setTokens({ accessToken, refreshToken }: { accessToken: string; refreshToken?: string }) {
+  setTokens({
+    accessToken,
+    refreshToken,
+  }: {
+    accessToken: string;
+    refreshToken?: string;
+  }) {
     write(ACCESS_KEY, accessToken);
     if (refreshToken) write(REFRESH_KEY, refreshToken);
   },

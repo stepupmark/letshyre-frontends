@@ -41,11 +41,13 @@ export default function EmployerProfile() {
   if (isError || !employer) {
     return (
       <div className="flex h-[80vh] flex-col items-center justify-center gap-6">
-        <div className="flex items-center justify-center w-20 h-20 text-4xl rounded-full shadow-lg bg-red-50 shadow-red-100">
+        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-red-50 text-4xl shadow-lg shadow-red-100">
           ⚠️
         </div>
         <div className="text-center">
-          <h2 className="text-xl font-bold text-foreground">Profile Not Found</h2>
+          <h2 className="text-xl font-bold text-foreground">
+            Profile Not Found
+          </h2>
           <p className="mt-2 text-sm text-muted-foreground">
             We couldn't load the employer profile.
           </p>
@@ -69,13 +71,13 @@ export default function EmployerProfile() {
         title={`Employer Profile – ${cName}`}
         description="Detailed view of an employer"
       />
-      <div className="pb-6 space-y-6">
+      <div className="space-y-6 pb-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Link
             to="/dashboard/employers"
-            className="inline-flex items-center gap-2 text-sm font-medium transition-colors text-muted-foreground hover:text-foreground"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="h-4 w-4" />
             Back
           </Link>
 
@@ -88,18 +90,18 @@ export default function EmployerProfile() {
           </Badge>
         </div>
 
-        <div className="overflow-hidden bg-card border shadow-xs rounded-3xl border-border">
+        <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-xs">
           <div className="h-28 bg-linear-to-r from-indigo-600 via-violet-600 to-purple-600" />
 
           <div className="px-6 pb-6">
-            <div className="flex flex-col gap-6 -mt-12 xl:flex-row xl:items-end xl:justify-between">
+            <div className="-mt-12 flex flex-col gap-6 xl:flex-row xl:items-end xl:justify-between">
               <div className="flex flex-col gap-5 sm:flex-row sm:items-end">
-                <div className="flex items-center justify-center w-24 h-24 overflow-hidden bg-card border-4 border-background shadow-lg rounded-3xl">
+                <div className="flex h-24 w-24 items-center justify-center overflow-hidden rounded-3xl border-4 border-background bg-card shadow-lg">
                   {kyc?.company_logo ? (
                     <img
                       src={kyc.company_logo}
                       alt={cName}
-                      className="object-cover w-full h-full"
+                      className="h-full w-full object-cover"
                     />
                   ) : (
                     <span className="text-3xl font-semibold text-foreground">
@@ -127,12 +129,12 @@ export default function EmployerProfile() {
                     {kyc?.company_industry || "Unspecified Industry"}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mt-1.5">
-                    <span className="px-3 py-1 text-xs font-medium rounded-full bg-muted text-foreground">
+                  <div className="mt-1.5 flex flex-wrap gap-2">
+                    <span className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-foreground">
                       {employer.role}
                     </span>
 
-                    <span className="px-3 py-1 text-xs font-medium rounded-full bg-muted text-foreground">
+                    <span className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-foreground">
                       {employer.email}
                     </span>
                   </div>
@@ -140,7 +142,7 @@ export default function EmployerProfile() {
               </div>
 
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                <div className="px-4 py-3 border rounded-2xl border-border bg-muted/50">
+                <div className="rounded-2xl border border-border bg-muted/50 px-4 py-3">
                   <p className="text-xs font-medium text-muted-foreground">
                     Jobs Posted
                   </p>
@@ -149,14 +151,16 @@ export default function EmployerProfile() {
                   </p>
                 </div>
 
-                <div className="px-4 py-3 border rounded-2xl border-border bg-muted/50">
-                  <p className="text-xs font-medium text-muted-foreground">Phone</p>
+                <div className="rounded-2xl border border-border bg-muted/50 px-4 py-3">
+                  <p className="text-xs font-medium text-muted-foreground">
+                    Phone
+                  </p>
                   <p className="mt-1 text-sm font-semibold text-foreground">
                     {employer.phone_number || "--"}
                   </p>
                 </div>
 
-                <div className="px-4 py-3 border rounded-2xl border-border bg-muted/50">
+                <div className="rounded-2xl border border-border bg-muted/50 px-4 py-3">
                   <p className="text-xs font-medium text-muted-foreground">
                     Member Since
                   </p>
@@ -173,7 +177,7 @@ export default function EmployerProfile() {
 
         <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
           <div className="space-y-6 xl:col-span-2">
-            <div className="p-6 bg-card border shadow-xs rounded-2xl border-border">
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-xs">
               <h2 className="text-lg font-semibold text-foreground">
                 About Company
               </h2>
@@ -183,12 +187,12 @@ export default function EmployerProfile() {
               </p>
             </div>
 
-            <div className="p-6 bg-card border shadow-xs rounded-2xl border-border">
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-xs">
               <h2 className="text-lg font-semibold text-foreground">
                 Registration & Compliance
               </h2>
 
-              <div className="grid grid-cols-1 gap-4 mt-5 sm:grid-cols-2">
+              <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <p className="text-xs font-medium text-muted-foreground">
                     Registration / CIN
@@ -217,7 +221,9 @@ export default function EmployerProfile() {
                 </div>
 
                 <div>
-                  <p className="text-xs font-medium text-muted-foreground">Remarks</p>
+                  <p className="text-xs font-medium text-muted-foreground">
+                    Remarks
+                  </p>
                   <p className="mt-1 text-sm text-foreground">
                     {kyc?.verification_remarks || "No remarks"}
                   </p>
@@ -225,16 +231,18 @@ export default function EmployerProfile() {
               </div>
             </div>
 
-            <div className="p-6 bg-card border shadow-xs rounded-2xl border-border">
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-xs">
               <div className="flex items-center justify-between">
                 <h2 className="text-lg font-semibold text-foreground">
                   Uploaded Documents
                 </h2>
 
-                <span className="text-xs text-muted-foreground">Opens in new tab</span>
+                <span className="text-xs text-muted-foreground">
+                  Opens in new tab
+                </span>
               </div>
 
-              <div className="grid grid-cols-1 gap-4 mt-5 sm:grid-cols-2">
+              <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {[
                   {
                     label: "Registration Certificate",
@@ -259,7 +267,7 @@ export default function EmployerProfile() {
                 ].map((doc, index) => (
                   <div
                     key={index}
-                    className="p-4 border rounded-xl border-border"
+                    className="rounded-xl border border-border p-4"
                   >
                     <p className="text-sm font-medium text-foreground">
                       {doc.label}
@@ -270,7 +278,7 @@ export default function EmployerProfile() {
                         href={doc.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex mt-3 text-sm font-semibold text-indigo-600 hover:text-indigo-700"
+                        className="mt-3 inline-flex text-sm font-semibold text-indigo-600 hover:text-indigo-700"
                       >
                         View Document
                       </a>
@@ -286,7 +294,7 @@ export default function EmployerProfile() {
           </div>
 
           <div className="space-y-6">
-            <div className="p-6 bg-card border shadow-xs rounded-2xl border-border">
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-xs">
               <h2 className="text-lg font-semibold text-foreground">
                 Contact Details
               </h2>
@@ -311,21 +319,27 @@ export default function EmployerProfile() {
                 </div>
 
                 <div>
-                  <p className="text-xs font-medium text-muted-foreground">Phone</p>
+                  <p className="text-xs font-medium text-muted-foreground">
+                    Phone
+                  </p>
                   <p className="mt-1 font-medium text-foreground">
                     {employer.phone_number || "--"}
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-xs font-medium text-muted-foreground">Website</p>
+                  <p className="text-xs font-medium text-muted-foreground">
+                    Website
+                  </p>
                   <p className="mt-1 font-medium break-all text-foreground">
                     {kyc?.website_url || "--"}
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-xs font-medium text-muted-foreground">Address</p>
+                  <p className="text-xs font-medium text-muted-foreground">
+                    Address
+                  </p>
                   <p className="mt-1 font-medium text-foreground">
                     {kyc?.company_address || "--"}
                   </p>
@@ -333,7 +347,7 @@ export default function EmployerProfile() {
               </div>
             </div>
 
-            <div className="p-6 bg-card border shadow-xs rounded-2xl border-border">
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-xs">
               <h2 className="text-lg font-semibold text-foreground">
                 Account Info
               </h2>

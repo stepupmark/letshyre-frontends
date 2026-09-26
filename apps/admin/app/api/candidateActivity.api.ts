@@ -26,7 +26,6 @@ export interface DayWiseActivityResponse {
   data: DayWiseActivityData[];
 }
 
-
 export const fetchCandidateActivitySummary =
   async (): Promise<ActivitySummaryData> => {
     try {

@@ -25,24 +25,32 @@ interface CustomTooltipProps {
   currency?: "USD" | "INR";
 }
 
-const CustomTooltip = ({ active, payload, label, currency = "USD" }: CustomTooltipProps) => {
+const CustomTooltip = ({
+  active,
+  payload,
+  label,
+  currency = "USD",
+}: CustomTooltipProps) => {
   if (active && payload && payload.length) {
-    const formattedValue = Number(payload[0]?.value ?? 0).toLocaleString(currency === 'INR' ? 'en-IN' : 'en-US', {
-      style: 'currency',
-      currency: currency === 'INR' ? 'INR' : 'USD',
-      maximumFractionDigits: 0,
-    });
-    
+    const formattedValue = Number(payload[0]?.value ?? 0).toLocaleString(
+      currency === "INR" ? "en-IN" : "en-US",
+      {
+        style: "currency",
+        currency: currency === "INR" ? "INR" : "USD",
+        maximumFractionDigits: 0,
+      },
+    );
+
     return (
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.15 }}
-        className="bg-card/90 backdrop-blur-md p-3 rounded-lg shadow-xl border border-border pointer-events-none"
+        className="pointer-events-none rounded-lg border border-border bg-card/90 p-3 shadow-xl backdrop-blur-md"
       >
-        <div className="flex items-center gap-2 mb-2">
-          <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></div>
-          <p className="font-medium text-sm text-foreground">{label}</p>
+        <div className="mb-2 flex items-center gap-2">
+          <div className="h-2 w-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></div>
+          <p className="text-sm font-medium text-foreground">{label}</p>
         </div>
         <div className="flex items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">Revenue</p>
@@ -56,13 +64,16 @@ const CustomTooltip = ({ active, payload, label, currency = "USD" }: CustomToolt
   return null;
 };
 
-export default function RevenueBarChart({ data, currency }: RevenueBarChartProps) {
+export default function RevenueBarChart({
+  data,
+  currency,
+}: RevenueBarChartProps) {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
-      className="w-full h-[400px]"
+      className="h-[400px] w-full"
     >
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
@@ -97,19 +108,22 @@ export default function RevenueBarChart({ data, currency }: RevenueBarChartProps
             dx={-10}
             tickFormatter={(value) => {
               if (value === 0) return "0";
-              if (value >= 1000) return `${currency === 'INR' ? '₹' : '$'}${(value / 1000).toFixed(1)}k`;
-              return `${currency === 'INR' ? '₹' : '$'}${value}`;
+              if (value >= 1000)
+                return `${currency === "INR" ? "₹" : "$"}${(value / 1000).toFixed(1)}k`;
+              return `${currency === "INR" ? "₹" : "$"}${value}`;
             }}
           />
-          <Tooltip 
+          <Tooltip
             cursor={{ fill: "rgba(59, 130, 246, 0.08)", radius: 6 }}
-            content={(props) => <CustomTooltip {...props} currency={currency} />}
+            content={(props) => (
+              <CustomTooltip {...props} currency={currency} />
+            )}
           />
           <Legend
             iconType="square"
             iconSize={10}
             formatter={(value) => (
-              <span className="text-sm text-muted-foreground ml-1">
+              <span className="ml-1 text-sm text-muted-foreground">
                 {value.replace("(USD)", `(${currency})`)}
               </span>
             )}
@@ -128,8 +142,9 @@ export default function RevenueBarChart({ data, currency }: RevenueBarChartProps
               formatter: (label: unknown) => {
                 const value = Number(label);
                 if (value === 0) return "";
-                if (value >= 1000) return `${currency === 'INR' ? '₹' : '$'}${(value / 1000).toFixed(1)}k`;
-                return `${currency === 'INR' ? '₹' : '$'}${value}`;
+                if (value >= 1000)
+                  return `${currency === "INR" ? "₹" : "$"}${(value / 1000).toFixed(1)}k`;
+                return `${currency === "INR" ? "₹" : "$"}${value}`;
               },
             }}
           >
@@ -137,7 +152,11 @@ export default function RevenueBarChart({ data, currency }: RevenueBarChartProps
               <Cell
                 key={`cell-${index}`}
                 fill={entry.revenue > 0 ? "#3B82F6" : "#E5E7EB"}
-                className={entry.revenue > 0 ? "hover:fill-blue-400 transition-all duration-300 cursor-pointer" : "dark:fill-muted-foreground"}
+                className={
+                  entry.revenue > 0
+                    ? "cursor-pointer transition-all duration-300 hover:fill-blue-400"
+                    : "dark:fill-muted-foreground"
+                }
               />
             ))}
           </Bar>

@@ -80,18 +80,16 @@ export default function EditableRow({
   }
 
   return (
-    <div className="px-5 py-4 transition-colors group rounded-2xl bg-muted/50">
+    <div className="group rounded-2xl bg-muted/50 px-5 py-4 transition-colors">
       <div className="flex items-center justify-between gap-4">
-        <div className="flex items-center flex-1 min-w-0 gap-3">
+        <div className="flex min-w-0 flex-1 items-center gap-3">
           <span
             className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${iconBg}`}
           >
             <Icon className={`h-4 w-4 ${iconColor}`} />
           </span>
           <div className="min-w-0">
-            <p className="text-sm font-medium text-foreground">
-              {label}
-            </p>
+            <p className="text-sm font-medium text-foreground">{label}</p>
             <p className="mt-0.5 text-xs text-muted-foreground">
               {description}
             </p>
@@ -99,7 +97,7 @@ export default function EditableRow({
         </div>
 
         {isEditing ? (
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex shrink-0 items-center gap-2">
             <div className="flex items-center gap-1.5">
               <input
                 ref={inputRef}
@@ -113,12 +111,10 @@ export default function EditableRow({
                 }}
                 onKeyDown={handleKeyDown}
                 disabled={isPending}
-                className="w-24 h-8 px-3 text-sm font-semibold text-right text-foreground transition bg-card border border-input shadow-xs outline-hidden rounded-xl tabular-nums ring-0 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 disabled:opacity-60"
+                className="h-8 w-24 rounded-xl border border-input bg-card px-3 text-right text-sm font-semibold text-foreground tabular-nums shadow-xs ring-0 outline-hidden transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 disabled:opacity-60"
               />
               {unit && (
-                <span className="text-xs text-muted-foreground">
-                  {unit}
-                </span>
+                <span className="text-xs text-muted-foreground">{unit}</span>
               )}
             </div>
 
@@ -127,7 +123,7 @@ export default function EditableRow({
               onClick={handleSave}
               disabled={isPending}
               title="Save"
-              className="flex items-center justify-center w-8 h-8 text-white transition bg-blue-600 rounded-xl hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+              className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-600 text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
             >
               <Check className="h-3.5 w-3.5" />
             </button>
@@ -137,21 +133,19 @@ export default function EditableRow({
               onClick={handleCancel}
               disabled={isPending}
               title="Cancel"
-              className="flex items-center justify-center w-8 h-8 text-muted-foreground transition bg-card border border-border rounded-xl hover:border-input hover:text-foreground disabled:opacity-60"
+              className="flex h-8 w-8 items-center justify-center rounded-xl border border-border bg-card text-muted-foreground transition hover:border-input hover:text-foreground disabled:opacity-60"
             >
               <X className="h-3.5 w-3.5" />
             </button>
           </div>
         ) : (
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex shrink-0 items-center gap-2">
             <div className="flex items-baseline gap-1">
               <span className="text-base font-semibold text-foreground tabular-nums">
                 {value}
               </span>
               {unit && (
-                <span className="text-xs text-muted-foreground">
-                  {unit}
-                </span>
+                <span className="text-xs text-muted-foreground">{unit}</span>
               )}
             </div>
 
@@ -160,7 +154,7 @@ export default function EditableRow({
               onClick={handleEdit}
               disabled={isPending}
               title={`Edit ${label}`}
-              className="flex items-center justify-center text-muted-foreground transition rounded-lg opacity-80 h-7 w-7 hover:bg-accent hover:text-foreground group-hover:opacity-100 disabled:cursor-not-allowed"
+              className="flex h-7 w-7 items-center justify-center rounded-lg text-muted-foreground opacity-80 transition group-hover:opacity-100 hover:bg-accent hover:text-foreground disabled:cursor-not-allowed"
             >
               <Pencil className="h-3.5 w-3.5" />
             </button>
@@ -169,7 +163,7 @@ export default function EditableRow({
       </div>
 
       {error && (
-        <p className="pl-12 mt-2 text-xs text-red-500 dark:text-red-400">
+        <p className="mt-2 pl-12 text-xs text-red-500 dark:text-red-400">
           {error}
         </p>
       )}

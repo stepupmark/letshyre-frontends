@@ -9,9 +9,9 @@ export default function NotFound() {
         description="The page you are looking for does not exist."
       />
 
-      <div className="flex items-center justify-center min-h-screen px-4 bg-muted/50">
-        <div className="w-full max-w-md p-8 text-center bg-card border border-border shadow-xs rounded-3xl">
-          <p className="text-sm font-semibold tracking-wide uppercase text-primary">
+      <div className="flex min-h-screen items-center justify-center bg-muted/50 px-4">
+        <div className="w-full max-w-md rounded-3xl border border-border bg-card p-8 text-center shadow-xs">
+          <p className="text-sm font-semibold tracking-wide text-primary uppercase">
             Error 404
           </p>
 
@@ -25,7 +25,7 @@ export default function NotFound() {
 
           <Link
             to="/dashboard"
-            className="inline-flex items-center justify-center px-5 py-3 mt-6 text-sm font-semibold text-primary-foreground transition rounded-2xl bg-primary hover:opacity-90"
+            className="mt-6 inline-flex items-center justify-center rounded-2xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
           >
             Back to Dashboard
           </Link>

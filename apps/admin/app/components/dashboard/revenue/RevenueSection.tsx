@@ -59,17 +59,17 @@ const SparklineFlat = ({ color }: { color: string }) => (
 );
 
 const SkeletonCard = () => (
-  <div className="p-5 bg-card border border-border shadow-xs rounded-xl animate-pulse">
-    <div className="flex items-start gap-4 mb-4">
-      <div className="w-12 h-12 bg-muted rounded-xl"></div>
-      <div className="flex-1 pt-1 space-y-3">
-        <div className="w-24 h-4 bg-muted rounded-sm"></div>
-        <div className="w-32 h-6 bg-muted rounded-sm"></div>
+  <div className="animate-pulse rounded-xl border border-border bg-card p-5 shadow-xs">
+    <div className="mb-4 flex items-start gap-4">
+      <div className="h-12 w-12 rounded-xl bg-muted"></div>
+      <div className="flex-1 space-y-3 pt-1">
+        <div className="h-4 w-24 rounded-sm bg-muted"></div>
+        <div className="h-6 w-32 rounded-sm bg-muted"></div>
       </div>
     </div>
     <div className="flex items-end justify-between">
-      <div className="w-20 h-3 bg-muted rounded-sm"></div>
-      <div className="w-16 h-6 bg-muted rounded-sm"></div>
+      <div className="h-3 w-20 rounded-sm bg-muted"></div>
+      <div className="h-6 w-16 rounded-sm bg-muted"></div>
     </div>
   </div>
 );
@@ -84,23 +84,23 @@ export default function RevenueSection() {
 
   if (isLoading) {
     return (
-      <div className="p-6 mb-8 bg-card border border-border rounded-2xl">
-        <div className="flex items-center justify-between mb-8">
+      <div className="mb-8 rounded-2xl border border-border bg-card p-6">
+        <div className="mb-8 flex items-center justify-between">
           <div className="space-y-3">
-            <div className="w-48 h-8 bg-muted rounded-sm animate-pulse"></div>
-            <div className="w-64 h-4 bg-muted rounded-sm animate-pulse"></div>
+            <div className="h-8 w-48 animate-pulse rounded-sm bg-muted"></div>
+            <div className="h-4 w-64 animate-pulse rounded-sm bg-muted"></div>
           </div>
           <div className="flex gap-3">
-            <div className="w-32 h-10 bg-muted rounded-sm animate-pulse"></div>
-            <div className="w-32 h-10 bg-muted rounded-sm animate-pulse"></div>
+            <div className="h-10 w-32 animate-pulse rounded-sm bg-muted"></div>
+            <div className="h-10 w-32 animate-pulse rounded-sm bg-muted"></div>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-4 mb-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           {[...Array(7)].map((_, i) => (
             <SkeletonCard key={i} />
           ))}
         </div>
-        <div className="border border-border rounded-xl bg-muted/50 p-6 h-[400px] animate-pulse flex items-center justify-center">
+        <div className="flex h-[400px] animate-pulse items-center justify-center rounded-xl border border-border bg-muted/50 p-6">
           <p className="font-medium text-muted-foreground">
             Loading chart data...
           </p>
@@ -111,8 +111,8 @@ export default function RevenueSection() {
 
   if (isError) {
     return (
-      <div className="flex items-center w-full gap-3 p-6 mb-8 text-red-600 bg-red-50 dark:bg-red-900/20 dark:text-red-400 rounded-2xl">
-        <Info className="w-5 h-5" />
+      <div className="mb-8 flex w-full items-center gap-3 rounded-2xl bg-red-50 p-6 text-red-600 dark:bg-red-900/20 dark:text-red-400">
+        <Info className="h-5 w-5" />
         <p className="font-medium">
           Failed to load revenue analytics. Please try again later.
         </p>
@@ -130,7 +130,7 @@ export default function RevenueSection() {
 
   return (
     <div className="mb-8 overflow-hidden rounded-2xl">
-      <div className="flex flex-col items-start justify-between gap-4 mb-8 sm:flex-row sm:items-center">
+      <div className="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -138,10 +138,10 @@ export default function RevenueSection() {
           className="flex items-center gap-3"
         >
           <div>
-            <h2 className="text-2xl font-bold tracking-tight text-foreground flex items-center gap-2">
+            <h2 className="flex items-center gap-2 text-2xl font-bold tracking-tight text-foreground">
               Revenue Analytics
               {isFetching && (
-                <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                <div className="h-4 w-4 animate-spin rounded-full border-2 border-blue-500 border-t-transparent"></div>
               )}
             </h2>
             <p className="mt-1 text-sm text-muted-foreground">
@@ -151,7 +151,7 @@ export default function RevenueSection() {
         </motion.div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 mb-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         {cardsData && (
           <>
             <RevenueStatCard
@@ -161,7 +161,7 @@ export default function RevenueSection() {
               isCurrency={true}
               currency={currency}
               subtitle="Lifetime revenue"
-              icon={<Banknote className="w-6 h-6" />}
+              icon={<Banknote className="h-6 w-6" />}
               iconBgColor="bg-blue-100 dark:bg-blue-900/30"
               iconColor="text-blue-600 dark:text-blue-400"
               trendIndicator={<SparklineUp color="#3B82F6" />}
@@ -173,10 +173,10 @@ export default function RevenueSection() {
               isCurrency={true}
               currency={currency}
               subtitle="Revenue for today"
-              icon={<Calendar className="w-6 h-6" />}
+              icon={<Calendar className="h-6 w-6" />}
               iconBgColor="bg-green-100 dark:bg-green-900/30"
               iconColor="text-green-600 dark:text-green-400"
-              trendIndicator={<TrendingUp className="w-5 h-5 text-green-500" />}
+              trendIndicator={<TrendingUp className="h-5 w-5 text-green-500" />}
             />
             <RevenueStatCard
               index={2}
@@ -185,7 +185,7 @@ export default function RevenueSection() {
               isCurrency={true}
               currency={currency}
               subtitle="This week's revenue"
-              icon={<CalendarDays className="w-6 h-6" />}
+              icon={<CalendarDays className="h-6 w-6" />}
               iconBgColor="bg-orange-100 dark:bg-orange-900/30"
               iconColor="text-orange-600 dark:text-orange-400"
               trendIndicator={<SparklineUp color="#F97316" />}
@@ -197,7 +197,7 @@ export default function RevenueSection() {
               isCurrency={true}
               currency={currency}
               subtitle="This month's revenue"
-              icon={<CalendarClock className="w-6 h-6" />}
+              icon={<CalendarClock className="h-6 w-6" />}
               iconBgColor="bg-purple-100 dark:bg-purple-900/30"
               iconColor="text-purple-600 dark:text-purple-400"
               trendIndicator={<SparklineFlat color="#A855F7" />}
@@ -209,7 +209,7 @@ export default function RevenueSection() {
               isCurrency={true}
               currency={currency}
               subtitle="Per transaction"
-              icon={<Activity className="w-6 h-6" />}
+              icon={<Activity className="h-6 w-6" />}
               iconBgColor="bg-indigo-100 dark:bg-indigo-900/30"
               iconColor="text-indigo-600 dark:text-indigo-400"
               trendIndicator={<SparklineUp color="#6366F1" />}
@@ -220,7 +220,7 @@ export default function RevenueSection() {
               value={cardsData.total_transactions || 0}
               isCurrency={false}
               subtitle="All-time transactions"
-              icon={<TrendingUp className="w-6 h-6" />}
+              icon={<TrendingUp className="h-6 w-6" />}
               iconBgColor="bg-pink-100 dark:bg-pink-900/30"
               iconColor="text-pink-600 dark:text-pink-400"
               trendIndicator={<SparklineUp color="#EC4899" />}
@@ -231,10 +231,10 @@ export default function RevenueSection() {
               value={cardsData.total_credits_sold || 0}
               isCurrency={false}
               subtitle="All-time credits"
-              icon={<Coins className="w-6 h-6" />}
+              icon={<Coins className="h-6 w-6" />}
               iconBgColor="bg-teal-100 dark:bg-teal-900/30"
               iconColor="text-teal-600 dark:text-teal-400"
-              trendIndicator={<TrendingUp className="w-5 h-5 text-teal-500" />}
+              trendIndicator={<TrendingUp className="h-5 w-5 text-teal-500" />}
             />
           </>
         )}
@@ -244,9 +244,9 @@ export default function RevenueSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="border border-border rounded-xl bg-card p-6 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow duration-300 mb-6"
+        className="mb-6 rounded-xl border border-border bg-card p-6 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] transition-shadow duration-300 hover:shadow-md"
       >
-        <div className="flex flex-col items-start justify-between gap-4 mb-8 sm:flex-row sm:items-center">
+        <div className="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <h3 className="text-lg font-semibold text-foreground">
             Monthly Revenue
           </h3>
@@ -255,7 +255,7 @@ export default function RevenueSection() {
               <select
                 value={selectedYear}
                 onChange={(e) => setSelectedYear(Number(e.target.value))}
-                className="py-2 pl-10 pr-10 text-sm font-medium text-foreground transition-colors bg-card border border-border rounded-lg appearance-none cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-blue-500 hover:bg-accent"
+                className="cursor-pointer appearance-none rounded-lg border border-border bg-card py-2 pr-10 pl-10 text-sm font-medium text-foreground transition-colors hover:bg-accent focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
               >
                 {[
                   currentYear - 4,
@@ -269,24 +269,23 @@ export default function RevenueSection() {
                   </option>
                 ))}
               </select>
-              <CalendarIcon className="absolute w-4 h-4 text-muted-foreground -translate-y-1/2 pointer-events-none left-3 top-1/2" />
-              <ChevronDown className="absolute w-4 h-4 text-muted-foreground -translate-y-1/2 pointer-events-none right-3 top-1/2" />
+              <CalendarIcon className="pointer-events-none absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <ChevronDown className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             </div>
 
-            <button className="flex items-center gap-2 px-3 py-2 border border-border rounded-lg text-sm font-medium text-muted-foreground hover:bg-accent transition-all active:scale-95">
-              <BarChart3 className="w-4 h-4" />
+            <button className="flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm font-medium text-muted-foreground transition-all hover:bg-accent active:scale-95">
+              <BarChart3 className="h-4 w-4" />
               <span className="hidden sm:inline">Bar Chart</span>
-              <ChevronDown className="w-4 h-4 ml-1 text-muted-foreground" />
+              <ChevronDown className="ml-1 h-4 w-4 text-muted-foreground" />
             </button>
-            <button className="p-2 text-muted-foreground hover:text-muted-foreground hover:bg-accent rounded-lg transition-all active:scale-95">
-              <MoreVertical className="w-5 h-5" />
+            <button className="rounded-lg p-2 text-muted-foreground transition-all hover:bg-accent hover:text-muted-foreground active:scale-95">
+              <MoreVertical className="h-5 w-5" />
             </button>
           </div>
         </div>
 
         <RevenueBarChart data={formattedChartData} currency={currency} />
       </motion.div>
-
     </div>
   );
 }

@@ -88,8 +88,10 @@ export default function Channels() {
           );
         },
         onError: (err: unknown) => {
-          const message =
-            getErrorMessage(err, "Something went wrong. Please try again.");
+          const message = getErrorMessage(
+            err,
+            "Something went wrong. Please try again.",
+          );
           toast.error(message);
         },
       },
@@ -101,8 +103,8 @@ export default function Channels() {
   if (isError || !settings) {
     return (
       <div className="flex min-h-[40vh] flex-col items-center justify-center gap-4 text-center">
-        <div className="flex items-center justify-center h-14 w-14 rounded-2xl bg-red-50 dark:bg-red-500/10">
-          <AlertTriangle className="w-6 h-6 text-red-500" />
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 dark:bg-red-500/10">
+          <AlertTriangle className="h-6 w-6 text-red-500" />
         </div>
         <div>
           <p className="text-sm font-semibold text-foreground">
@@ -116,7 +118,7 @@ export default function Channels() {
           onClick={() => refetch()}
           className="flex items-center gap-2 rounded-2xl bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
         >
-          <RefreshCw className="w-4 h-4" />
+          <RefreshCw className="h-4 w-4" />
           Retry
         </button>
       </div>
@@ -159,10 +161,10 @@ export default function Channels() {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-4 px-6 py-4 bg-card border border-border shadow-xs rounded-2xl">
+      <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border bg-card px-6 py-4 shadow-xs">
         <div className="flex items-center gap-3">
-          <span className="flex items-center justify-center w-10 h-10 shrink-0 rounded-xl bg-indigo-50 dark:bg-indigo-500/10">
-            <Bell className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-50 dark:bg-indigo-500/10">
+            <Bell className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
           </span>
           <div>
             <p className="text-sm font-semibold text-foreground">
@@ -187,9 +189,7 @@ export default function Channels() {
           />
           <span className="text-sm font-medium text-foreground">
             <span className="tabular-nums">{activeCount}</span>
-            <span className="text-muted-foreground">
-              /{totalCount}
-            </span>
+            <span className="text-muted-foreground">/{totalCount}</span>
             &nbsp;channels active
           </span>
         </div>

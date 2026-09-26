@@ -64,9 +64,7 @@ export interface FetchUnlockedProfilesParams {
 export const fetchUnlocksDashboardCards =
   async (): Promise<UnlocksDashboardData> => {
     try {
-      const response = await http.get(
-        `user/v1/admin/unlocked_profiles/cards/`,
-      );
+      const response = await http.get(`user/v1/admin/unlocked_profiles/cards/`);
       return response.data.data;
     } catch (err) {
       throw toApiError(err);

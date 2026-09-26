@@ -11,7 +11,7 @@ export default function Unlocks() {
   const { data: dashboardData, isLoading, isError } = useUnlocksDashboard();
 
   if (isLoading) {
-    return <UnlocksDashboardSkeleton />        
+    return <UnlocksDashboardSkeleton />;
   }
 
   if (isError || !dashboardData) {
@@ -29,8 +29,8 @@ export default function Unlocks() {
             Overview of all candidate Unlocks and engagement analytics.
           </p>
         </div>
-        <div className="flex items-center gap-3 p-6 mt-6 text-red-600 bg-red-50 dark:bg-red-900/20 dark:text-red-400 rounded-2xl">
-          <Info className="w-5 h-5" />
+        <div className="mt-6 flex items-center gap-3 rounded-2xl bg-red-50 p-6 text-red-600 dark:bg-red-900/20 dark:text-red-400">
+          <Info className="h-5 w-5" />
           <p className="font-medium">
             Failed to load dashboard data. Please try again later.
           </p>
@@ -46,7 +46,7 @@ export default function Unlocks() {
         description="Unlocks dashboard analytics"
       />
       <div className="mb-8">
-        <div className="flex items-center gap-2 mb-1">
+        <div className="mb-1 flex items-center gap-2">
           <h1 className="text-2xl font-bold tracking-tight text-foreground">
             Unlocks
           </h1>
@@ -59,7 +59,7 @@ export default function Unlocks() {
       <div className="mt-6">
         <KpiSummaryCards summary={dashboardData.summary} />
 
-        <div className="grid grid-cols-1 gap-6 mb-8 xl:grid-cols-4">
+        <div className="mb-8 grid grid-cols-1 gap-6 xl:grid-cols-4">
           <div className="xl:col-span-3">
             <EngagementInsights engagement={dashboardData.engagement} />
           </div>
