@@ -37,11 +37,22 @@ export function formatDateTime(value: string | Date | null | undefined) {
   return date ? dateTimeFormat.format(date) : "—";
 }
 
-export function formatCurrency(value: number | string | null | undefined) {
+export function formatCurrency(
+  value: number | string | null | undefined,
+  currency?: string | null,
+) {
   const amount = Number(value);
-  return value === null || value === undefined || Number.isNaN(amount)
-    ? "—"
-    : currencyFormat.format(amount);
+  if (value === null || value === undefined || value === "" || isNaN(amount))
+    return "—";
+  if (!currency || currency === "INR") return currencyFormat.format(amount);
+  try {
+    return new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency,
+    }).format(amount);
+  } catch {
+    return `${currency} ${amount}`;
+  }
 }
 
 export function formatNumber(value: number | string | null | undefined) {
