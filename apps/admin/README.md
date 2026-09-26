@@ -1,150 +1,110 @@
-# Letshyre Admin Frontend 🚀
+# LetsHyre Admin
 
-A modern, high-performance admin dashboard built with React 18, Vite, and Tailwind CSS. This dashboard provides comprehensive management tools for the Letshyre platform, including candidate tracking, employer management, system configurations, and payment monitoring.
+The internal admin panel for LetsHyre. Admins use it to review candidates, employers, KYC and job posts, manage payments, credits and coupons, and configure the platform.
 
-## ✨ Key Features
+It is a client-only single-page app (React Router SPA mode). All data comes from the LetsHyre API.
 
-- **📊 Dynamic Dashboard**: Real-time analytics and data visualization using ApexCharts and Recharts.
-- **🛠️ System Configuration**:
-  - Centralized platform controls and resource limits.
-  - Communication channel management (Email, SMS, Push).
-  - Detailed audit logs for tracking system communications.
-- **👥 User Management**:
-  - Comprehensive Candidate and Employer management interfaces.
-  - KYC verification workflow for business accounts.
-- **💰 Financial Operations**:
-  - Payment gateway configurations.
-  - Detailed transaction history and credit management.
-  - Coupon creation and lifecycle management.
-- **💼 Job Management**: oversee platform job postings and matching systems.
-- **🎨 Premium UI/UX**:
-  - Responsive design with dark mode support.
-  - Smooth micro-animations powered by Framer Motion.
-  - Interactive tables with pagination and server-side filtering.
+## Stack
 
-## 🛠️ Tech Stack
+- React 19, TypeScript 6, Vite 8
+- React Router 8 in framework mode (`ssr: false`), file-based routes
+- TanStack Query 5 for server state, nuqs for URL state
+- Tailwind CSS 4 and shadcn/ui (Radix), lucide icons, sonner toasts
+- react-hook-form and zod 4
+- recharts, only on the dashboard and loaded lazily
 
-- **Core**: [React 18](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [Vite](https://vitejs.dev/)
-- **Routing**: [React Router 7](https://reactrouter.com/)
-- **State Management**: [TanStack Query (v5)](https://tanstack.com/query/latest)
-- **Styling**: [Tailwind CSS v3](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Forms**: [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/)
-- **Charts**: [ApexCharts](https://apexcharts.com/), [Recharts](https://recharts.org/)
-- **HTTP Client**: [Axios](https://axios-http.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+## Getting started
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v18 or higher)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/ShivajiVS/letshyre-admin-frontend.git
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Configure environment variables:
-   Create a `.env` file in the root directory and add the following:
-   ```env
-   VITE_API_BASE_URL=https://api.letshyre.com/
-   ```
-
-### Development
-
-Run the development server:
+Requires Node 22+ and pnpm 11 (`corepack enable` picks up the version from `package.json`).
 
 ```bash
-npm run dev
+pnpm install
+cp .env.example .env
+pnpm dev
 ```
 
-### Build
+The dev server runs on http://localhost:5173.
 
-Build the project for production:
+### Environment
 
-```bash
-npm run build
-```
+| Variable            | Required | Notes                                                                               |
+| ------------------- | -------- | ----------------------------------------------------------------------------------- |
+| `VITE_API_BASE_URL` | yes      | API root, e.g. `https://api.letshyre.com/`. Must be `https` for production builds.  |
+| `MEDIA_ORIGINS`     | no       | Build time only. Hosts allowed in the CSP `img-src`; defaults to any `https:` host. |
 
-The production-ready files will be located in the `dist/` directory.
+## Scripts
 
-## 📁 Project Structure
+| Script         | What it does                                                           |
+| -------------- | ---------------------------------------------------------------------- |
+| `pnpm dev`     | Dev server with HMR                                                    |
+| `pnpm build`   | Production build to `build/client`, plus `_headers` and `_redirects`   |
+| `pnpm preview` | Serves the build with the production security headers                  |
+| `pnpm size`    | Checks each route against the bundle budget (run after a build)        |
+| `pnpm check`   | Typecheck, lint, format check and knip, the same gate as the git hooks |
+| `pnpm format`  | Formats everything with Prettier                                       |
+
+## Project structure
 
 ```text
-src/
-├── api/          # Axios instances and API services
-├── components/   # Reusable UI components (common, logs, config, etc.)
-├── hooks/        # Custom React hooks and Query hooks
-├── pages/        # Main application pages
-├── router/       # Routing and navigation configurations
-├── types/        # TypeScript interfaces and types
-├── lib/          # Utility functions and formatters
-└── assets/       # Static assets and global styles
+app/
+├── root.tsx              document shell, providers, root error boundary
+├── routes/               one file per URL (flat routes); thin, they wire loaders to features
+├── features/<name>/      everything for one area of the admin
+│   ├── components/
+│   ├── queries/          query key factory + queryOptions
+│   ├── mutations/        useMutation hooks with toast and invalidation meta
+│   ├── services/         API calls, validated with zod
+│   ├── schemas/          zod schemas and inferred types
+│   ├── search-params.ts  URL filters (nuqs parsers)
+│   └── index.ts          the feature's public API
+├── components/
+│   ├── ui/               shadcn components, kept close to upstream
+│   ├── layout/           sidebar, header, breadcrumbs
+│   ├── feedback/         empty, error, confirm and coming-soon states
+│   └── data-table/       TanStack Table wrapper with server pagination
+├── lib/
+│   ├── api/              axios client, ApiError, shared response schemas
+│   ├── auth/             token store, single-flight refresh, cross-tab sign-out
+│   └── query/            QueryClient with global toasts and invalidation
+└── config/navigation.ts  sidebar items
+scripts/                  build-time headers, preview server, bundle budget
+docs/adr/                 architecture decisions
 ```
 
-## 🏗️ Architecture & Patterns
+Routes import only from a feature's `index.ts`. Features don't import from each other, except through that index.
 
-### API Layer
+## How data flows
 
-- **Axios Instance**: A centralized `apiClient` handles all HTTP requests.
-- **Interceptors**:
-  - **Request**: Automatically attaches the `Authorization` bearer token from `localStorage`.
-  - **Response**: Features a **Silent Refresh** mechanism. If a `401 Unauthorized` occurs, it automatically attempts to refresh the access token and retries the original request seamlessly.
-- **Service Pattern**: API calls are organized into domain-specific service files (e.g., `logs.api.ts`, `auth.api.ts`).
+1. A route's `clientLoader` prefetches its queries and returns `null`, so the page renders straight away with skeletons.
+2. Components read data with `useQuery(featureQueries.something(filters))`.
+3. Services call the API through `http` (`lib/api/http-client.ts`) and parse every response with zod, so a changed backend shape fails loudly in one place.
+4. Mutations declare `meta.successMessage` and `meta.invalidates`; the shared `QueryClient` shows the toast and refetches.
+5. Filters, search and paging live in the URL, so every list view can be shared and survives a reload.
 
-### State Management
+## Authentication
 
-- **Server State**: Managed via **TanStack Query (v5)**.
-  - `staleTime` is set to 5 minutes by default to reduce redundant network calls.
-  - Queries are decoupled into custom hooks (e.g., `useLogs.ts`) for reusability.
-- **UI State**: Managed via standard React `useState` and `useContext` for global concerns like Theme and Auth status.
+- The access and refresh tokens are kept in `localStorage`, behind `lib/auth/token-store.ts`. Moving the refresh token to an `HttpOnly` cookie needs backend work and is tracked separately.
+- A 401 triggers one refresh, shared across tabs with the Web Locks API, because the backend rotates refresh tokens.
+- Signing out, an expired session or 30 minutes of inactivity signs out every open tab.
+- A token that gets a 403 from the admin profile endpoint is treated as a non-admin and signed out.
 
-### Authentication Flow
+## Security
 
-1. **Login**: User authenticates and receives an `access_token`.
-2. **Persistence**: The token is stored in `localStorage`.
-3. **Guard**: Protected routes are wrapped in an `AuthGuard` that checks for token validity before rendering.
-4. **Auto-Refresh**: The Axios interceptor handles token expiration by calling the refresh endpoint without user intervention.
+- `pnpm build` writes a strict Content-Security-Policy with a `sha256` hash for each inline script, plus HSTS, `nosniff`, `frame-ancestors 'none'`, `Referrer-Policy` and `Permissions-Policy`.
+- The generated `_headers` and `_redirects` files work as-is on Netlify and Cloudflare Pages. On another host, copy the headers from `scripts/security-headers.mjs` and serve `index.html` for unknown paths.
+- Hashed files under `/assets` are cached for a year; `index.html` is never cached.
+- Links from user data go through `safeExternalUrl()` / `<ExternalLink>`, which only allow `http` and `https`.
+- Personal data (Aadhaar, PAN, GST numbers, gateway secrets) is masked until an admin reveals it.
+- The panel is marked `noindex` and `robots.txt` disallows crawling.
 
-## 🎨 Theme & Styling
+## Deployment
 
-- **Tailwind CSS**: Utility-first styling with a custom configuration for the Letshyre design system.
-- **Dark Mode**: Fully supported via a `ThemeProvider` and CSS variables. It detects system preferences and allows manual toggling.
-- **Layouts**: Responsive grid and flexbox layouts ensure the dashboard remains functional across all device sizes.
+There is no CI pipeline. Build with the production API URL and upload `build/client` to a static host:
 
-## 📝 Form Handling
+```bash
+VITE_API_BASE_URL=https://api.letshyre.com/ pnpm build
+```
 
-- **React Hook Form**: Used for high-performance, uncontrolled form components.
-- **Zod**: Provides schema-based validation for all forms, ensuring type safety from the UI down to the API request body.
+Check the output with `pnpm preview` first; CSP violations show up in the browser console.
 
-## 🔧 Development Best Practices
-
-- **Type Safety**: Avoid using `any`. Define interfaces in `src/types/` for all API responses and component props.
-- **Component Isolation**: Keep components small and focused. Large components should be broken down into sub-components.
-- **Error Handling**: Use the `sonner` toast library for user-facing success/error feedback.
-- **Performance**: Use `React.memo` or `useMemo` sparingly, only when profiling shows a clear benefit. Leverage TanStack Query's built-in caching.
-
-## 🧪 Testing & Quality
-
-- **Linting**: ESLint with a strict configuration ensures code consistency.
-- **Formatting**: Vite-integrated formatting helps maintain a clean codebase.
-- **Manual Verification**: Test all UI changes in both Light and Dark modes.
-
-## 📜 License
-
-This project is private and proprietary. All rights reserved.
-
----
-
-Built with ❤️ by the Letshyre Team.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for conventions.
