@@ -5,7 +5,18 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@keyframes nav-progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+
 @theme inline {
+  --animate-nav-progress: nav-progress 8s cubic-bezier(0.1, 0.6, 0.3, 1) 150ms
+    both;
   --font-heading: var(--font-sans);
   --font-sans: "Geist Variable", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
