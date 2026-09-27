@@ -161,17 +161,11 @@ export function JobReview({
         description="Approved jobs go live for candidates right away."
         confirmLabel="Approve"
         pending={action.isPending}
-        onConfirm={() =>
-          action.mutate(
-            { action: "approve", job_ids: jobIds },
-            {
-              onSuccess: () => {
-                setApproveOpen(false);
-                onDone?.();
-              },
-            },
-          )
-        }
+        onConfirm={() => {
+          action.mutate({ action: "approve", job_ids: jobIds });
+          setApproveOpen(false);
+          onDone?.();
+        }}
       />
       <RejectDialog
         jobIds={jobIds}

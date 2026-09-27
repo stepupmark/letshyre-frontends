@@ -108,9 +108,10 @@ export function KycReviewPage() {
         description="Check every document first. The employer can start posting jobs and unlocking candidates right away."
         confirmLabel="Approve"
         pending={approve.isPending}
-        onConfirm={() =>
-          approve.mutate(record.id, { onSuccess: () => setApproveOpen(false) })
-        }
+        onConfirm={() => {
+          approve.mutate(record.id);
+          setApproveOpen(false);
+        }}
       />
       <RejectKycDialog
         kycId={record.id}

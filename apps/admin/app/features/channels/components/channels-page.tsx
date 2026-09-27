@@ -90,7 +90,9 @@ export function ChannelsPage() {
                       <Switch
                         aria-label={`${label} notifications`}
                         checked={settings.data[key]}
-                        disabled={update.isPending}
+                        disabled={
+                          update.isPending && update.variables.key === key
+                        }
                         onCheckedChange={(checked) => toggle(channel, checked)}
                       />
                     ) : (
@@ -121,12 +123,10 @@ export function ChannelsPage() {
         confirmLabel="Turn off"
         destructive
         pending={update.isPending}
-        onConfirm={() =>
-          update.mutate(
-            { key: disabling.key, enabled: false },
-            { onSuccess: () => setConfirmOpen(false) },
-          )
-        }
+        onConfirm={() => {
+          update.mutate({ key: disabling.key, enabled: false });
+          setConfirmOpen(false);
+        }}
       />
     </>
   );

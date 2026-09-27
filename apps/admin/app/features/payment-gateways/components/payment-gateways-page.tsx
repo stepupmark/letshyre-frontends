@@ -137,12 +137,10 @@ export function PaymentGatewaysPage() {
         confirmLabel="Delete"
         destructive
         pending={remove.isPending}
-        onConfirm={() =>
-          selected &&
-          remove.mutate(selected.id, {
-            onSuccess: () => setDeleteOpen(false),
-          })
-        }
+        onConfirm={() => {
+          if (selected) remove.mutate(selected.id);
+          setDeleteOpen(false);
+        }}
       />
     </>
   );

@@ -12,3 +12,4 @@ export const channelSettingsSchema = z.object({
 export const channelSettingsUpdateSchema = envelope(channelSettingsSchema);
 
 export type ChannelKey = "email_enabled" | "sms_enabled" | "push_enabled";
+export type ChannelSettings = z.infer<typeof channelSettingsSchema>;

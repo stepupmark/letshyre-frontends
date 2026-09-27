@@ -1,9 +1,12 @@
 import { useMutation } from "@tanstack/react-query";
+import { patchQueries } from "~/lib/query/optimistic";
 import { paymentGatewaysKeys } from "../queries/payment-gateways.queries";
 import type { GatewayFormValues } from "../schemas/payment-gateways.schema";
 import { paymentGatewaysService } from "../services/payment-gateways.service";
 
 const invalidates = [paymentGatewaysKeys.all];
+
+type Gateways = Awaited<ReturnType<typeof paymentGatewaysService.list>>;
 
 export function useCreateGateway() {
   return useMutation({
@@ -24,6 +27,12 @@ export function useUpdateGateway() {
 export function useDeleteGateway() {
   return useMutation({
     mutationFn: (id: string) => paymentGatewaysService.remove(id),
+    onMutate: async (id) => ({
+      rollback: await patchQueries<Gateways>(paymentGatewaysKeys.all, (list) =>
+        list.filter((gateway) => gateway.id !== id),
+      ),
+    }),
+    onError: (_error, _variables, context) => context?.rollback(),
     meta: { successMessage: "Gateway deleted", invalidates },
   });
 }

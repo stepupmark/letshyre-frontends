@@ -258,12 +258,10 @@ export function CouponsPage() {
         confirmLabel="Delete"
         destructive
         pending={remove.isPending}
-        onConfirm={() =>
-          deleting &&
-          remove.mutate(deleting.id, {
-            onSuccess: () => setDeleteOpen(false),
-          })
-        }
+        onConfirm={() => {
+          if (deleting) remove.mutate(deleting.id);
+          setDeleteOpen(false);
+        }}
       />
     </>
   );
