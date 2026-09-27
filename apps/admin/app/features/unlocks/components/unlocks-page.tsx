@@ -7,14 +7,15 @@ import {
   FileText,
   LockOpen,
   Trophy,
+  Unlock,
   X,
 } from "lucide-react";
 import { useQueryStates } from "nuqs";
 import { DataTable } from "~/components/data-table/data-table";
 import { DateRangeFilter } from "~/components/date-range-filter";
 import { ExternalLink } from "~/components/external-link";
-import { EmptyState } from "~/components/feedback/empty-state";
 import { ErrorState } from "~/components/feedback/error-state";
+import { ListEmptyState } from "~/components/feedback/list-empty-state";
 import { PageHeader } from "~/components/page-header";
 import { SearchInput } from "~/components/search-input";
 import { StatCard } from "~/components/stat-card";
@@ -246,9 +247,12 @@ export function UnlocksPage() {
         error={profiles.error}
         onRetry={() => void profiles.refetch()}
         empty={
-          <EmptyState
-            title="No unlocked profiles"
-            description="Try a different search or date range."
+          <ListEmptyState
+            noun="unlocked profiles"
+            icon={Unlock}
+            description="Profiles appear here when employers unlock candidates."
+            filtered={hasFilters}
+            onClearFilters={() => void setParams(null)}
           />
         }
       />

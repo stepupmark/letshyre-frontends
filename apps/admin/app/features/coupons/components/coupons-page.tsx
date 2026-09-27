@@ -7,12 +7,13 @@ import {
   MoreHorizontal,
   Pencil,
   Plus,
+  Tag,
   Trash2,
 } from "lucide-react";
 import { useQueryState } from "nuqs";
 import { DataTable } from "~/components/data-table/data-table";
 import { ConfirmDialog } from "~/components/feedback/confirm-dialog";
-import { EmptyState } from "~/components/feedback/empty-state";
+import { ListEmptyState } from "~/components/feedback/list-empty-state";
 import { PageHeader } from "~/components/page-header";
 import { StatusBadge, type StatusTone } from "~/components/status-badge";
 import { Button } from "~/components/ui/button";
@@ -204,9 +205,17 @@ export function CouponsPage() {
         error={coupons.error}
         onRetry={() => void coupons.refetch()}
         empty={
-          <EmptyState
-            title="No coupons yet"
-            description="Create one to offer a discount."
+          <ListEmptyState
+            noun="coupons"
+            icon={Tag}
+            description="Create one to offer a discount at checkout."
+            action={
+              <Button asChild>
+                <Link to="/dashboard/coupons/new">
+                  <Plus /> New coupon
+                </Link>
+              </Button>
+            }
           />
         }
       />

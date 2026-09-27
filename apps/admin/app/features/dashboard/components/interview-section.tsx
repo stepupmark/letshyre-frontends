@@ -53,7 +53,10 @@ export function InterviewSection() {
                 <RoleScoreChart data={roles} />
               </Suspense>
             ) : (
-              <EmptyState title="No interviews yet" />
+              <EmptyState
+                title="No interviews yet"
+                description="Scores by role appear once candidates finish AI interviews."
+              />
             )}
           </CardContent>
         </Card>
@@ -85,7 +88,10 @@ export function InterviewSection() {
                 </dl>
               </>
             ) : (
-              <EmptyState title="No results yet" />
+              <EmptyState
+                title="No results yet"
+                description="Pass and fail counts appear after the first interviews are scored."
+              />
             )}
           </CardContent>
         </Card>

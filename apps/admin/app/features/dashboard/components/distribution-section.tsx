@@ -50,7 +50,10 @@ function ShareCard({
             ))}
           </div>
         ) : !shares.length ? (
-          <EmptyState title="No data yet" />
+          <EmptyState
+            title="No data yet"
+            description="This fills in as candidates complete their profiles."
+          />
         ) : (
           <ul className="space-y-3">
             {shares.slice(0, TOP).map((share) => (

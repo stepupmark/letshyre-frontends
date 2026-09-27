@@ -12,13 +12,14 @@ import {
   CircleCheck,
   CircleX,
   Clock,
+  Rows3,
   X,
 } from "lucide-react";
 import { useQueryStates } from "nuqs";
 import { DataTable } from "~/components/data-table/data-table";
 import { DateRangeFilter } from "~/components/date-range-filter";
-import { EmptyState } from "~/components/feedback/empty-state";
 import { FilterSelect } from "~/components/filter-select";
+import { ListEmptyState } from "~/components/feedback/list-empty-state";
 import { PageHeader } from "~/components/page-header";
 import { SearchInput } from "~/components/search-input";
 import { StatCard } from "~/components/stat-card";
@@ -310,9 +311,12 @@ export function JobsPage() {
         rowSelection={rowSelection}
         onRowSelectionChange={onRowSelectionChange}
         empty={
-          <EmptyState
-            title="No jobs found"
-            description={hasFilters ? "Try removing some filters." : undefined}
+          <ListEmptyState
+            noun="jobs"
+            icon={Rows3}
+            description="Jobs appear here when employers post them."
+            filtered={hasFilters}
+            onClearFilters={() => void setParams(null)}
           />
         }
       />

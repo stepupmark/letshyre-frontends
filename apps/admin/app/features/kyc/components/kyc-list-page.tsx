@@ -1,9 +1,10 @@
 import { Link } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import type { ColumnDef } from "@tanstack/react-table";
+import { BadgeCheck } from "lucide-react";
 import { useQueryStates } from "nuqs";
 import { DataTable } from "~/components/data-table/data-table";
-import { EmptyState } from "~/components/feedback/empty-state";
+import { ListEmptyState } from "~/components/feedback/list-empty-state";
 import { PageHeader } from "~/components/page-header";
 import { Button } from "~/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
@@ -115,10 +116,13 @@ export function KycListPage() {
         error={kyc.error}
         onRetry={() => void kyc.refetch()}
         empty={
-          <EmptyState
-            title={`No ${status.toLowerCase()} requests`}
+          <ListEmptyState
+            noun={`${status.toLowerCase()} requests`}
+            icon={BadgeCheck}
             description={
-              status === "Pending" ? "You're all caught up." : undefined
+              status === "Pending"
+                ? "You're all caught up."
+                : `${status} requests show up here.`
             }
           />
         }

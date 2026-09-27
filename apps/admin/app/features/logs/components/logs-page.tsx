@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import type { ColumnDef } from "@tanstack/react-table";
+import { MessageSquare } from "lucide-react";
 import { useQueryStates } from "nuqs";
 import { DataTable } from "~/components/data-table/data-table";
-import { EmptyState } from "~/components/feedback/empty-state";
+import { ListEmptyState } from "~/components/feedback/list-empty-state";
 import { PageHeader } from "~/components/page-header";
 import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { RelativeTime } from "~/components/relative-time";
@@ -92,7 +93,13 @@ export function LogsPage() {
     isLoading: logs.isPending,
     error: logs.error,
     onRetry: () => void logs.refetch(),
-    empty: <EmptyState title="No logs yet" />,
+    empty: (
+      <ListEmptyState
+        noun="logs"
+        icon={MessageSquare}
+        description="OTP emails and SMS messages appear here once they're sent."
+      />
+    ),
     filters: (
       <Tabs
         value={channel}

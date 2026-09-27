@@ -11,8 +11,8 @@ import {
 } from "lucide-react";
 import { useQueryStates } from "nuqs";
 import { DataTable } from "~/components/data-table/data-table";
-import { EmptyState } from "~/components/feedback/empty-state";
 import { FilterSelect } from "~/components/filter-select";
+import { ListEmptyState } from "~/components/feedback/list-empty-state";
 import { PageHeader } from "~/components/page-header";
 import { SearchInput } from "~/components/search-input";
 import { StatCard } from "~/components/stat-card";
@@ -241,9 +241,12 @@ export function CandidatesPage() {
         error={candidates.error}
         onRetry={() => void candidates.refetch()}
         empty={
-          <EmptyState
-            title="No candidates found"
-            description={hasFilters ? "Try removing some filters." : undefined}
+          <ListEmptyState
+            noun="candidates"
+            icon={Users}
+            description="Candidates appear here after they sign up."
+            filtered={hasFilters}
+            onClearFilters={() => void setParams(null)}
           />
         }
       />

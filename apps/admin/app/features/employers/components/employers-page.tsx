@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { useQueryState } from "nuqs";
 import { DataTable } from "~/components/data-table/data-table";
-import { EmptyState } from "~/components/feedback/empty-state";
+import { ListEmptyState } from "~/components/feedback/list-empty-state";
 import { PageHeader } from "~/components/page-header";
 import { StatCard } from "~/components/stat-card";
 import { Button } from "~/components/ui/button";
@@ -174,7 +174,13 @@ export function EmployersPage() {
         isLoading={employers.isPending}
         error={employers.error}
         onRetry={() => void employers.refetch()}
-        empty={<EmptyState title="No employers yet" />}
+        empty={
+          <ListEmptyState
+            noun="employers"
+            icon={Building2}
+            description="Employers appear here after they sign up."
+          />
+        }
       />
     </>
   );

@@ -6,6 +6,7 @@ import {
   CircleX,
   Clock,
   CreditCard,
+  History,
   Repeat,
   SlidersHorizontal,
   X,
@@ -13,7 +14,7 @@ import {
 import { useQueryStates, type inferParserType } from "nuqs";
 import { DataTable } from "~/components/data-table/data-table";
 import { DateRangeFilter } from "~/components/date-range-filter";
-import { EmptyState } from "~/components/feedback/empty-state";
+import { ListEmptyState } from "~/components/feedback/list-empty-state";
 import { PageHeader } from "~/components/page-header";
 import { SearchInput } from "~/components/search-input";
 import { StatCard } from "~/components/stat-card";
@@ -195,6 +196,18 @@ export function PaymentsPage() {
   ].filter(Boolean).length;
   const hasFilters = Boolean(params.q || params.status || extraFilters);
 
+  const clearFilters = () =>
+    void setParams({
+      q: null,
+      status: null,
+      company: null,
+      min: null,
+      max: null,
+      from: null,
+      to: null,
+      page: null,
+    });
+
   const update = (next: ParamsUpdate) =>
     void setParams({ ...next, page: null });
 
@@ -302,21 +315,7 @@ export function PaymentsPage() {
               </PopoverContent>
             </Popover>
             {hasFilters && (
-              <Button
-                variant="ghost"
-                onClick={() =>
-                  void setParams({
-                    q: null,
-                    status: null,
-                    company: null,
-                    min: null,
-                    max: null,
-                    from: null,
-                    to: null,
-                    page: null,
-                  })
-                }
-              >
+              <Button variant="ghost" onClick={clearFilters}>
                 <X /> Clear
               </Button>
             )}
@@ -333,11 +332,12 @@ export function PaymentsPage() {
         error={payments.error}
         onRetry={() => void payments.refetch()}
         empty={
-          <EmptyState
-            title="No payments found"
-            description={
-              hasFilters ? "Try removing some filters." : "Nothing here yet."
-            }
+          <ListEmptyState
+            noun="payments"
+            icon={History}
+            description="Payments appear here once employers buy credits."
+            filtered={hasFilters}
+            onClearFilters={clearFilters}
           />
         }
       />

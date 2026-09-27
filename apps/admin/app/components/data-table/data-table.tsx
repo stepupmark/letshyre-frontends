@@ -12,6 +12,7 @@ import {
 } from "@tanstack/react-table";
 import { cn } from "cn";
 import type { CsvCell } from "~/lib/csv";
+import { EmptyState } from "~/components/feedback/empty-state";
 import { ErrorState } from "~/components/feedback/error-state";
 import { Skeleton } from "~/components/ui/skeleton";
 import {
@@ -183,7 +184,10 @@ export function DataTable<TData>({
     );
 
   const emptyState = empty ?? (
-    <span className="text-muted-foreground">No results.</span>
+    <EmptyState
+      title="No results"
+      description="Nothing matches this view right now."
+    />
   );
 
   const loading = isLoading && !data;
