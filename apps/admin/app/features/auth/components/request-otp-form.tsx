@@ -1,6 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
-import { Link } from "react-router";
 import { LoaderCircle } from "lucide-react";
 import { Alert, AlertDescription } from "~/components/ui/alert";
 import { Button } from "~/components/ui/button";
@@ -60,9 +59,6 @@ export function RequestOtpForm({
         <Button type="submit" disabled={sendOtp.isPending}>
           {sendOtp.isPending && <LoaderCircle className="animate-spin" />}
           Send code
-        </Button>
-        <Button variant="link" asChild>
-          <Link to="/login">Back to sign in</Link>
         </Button>
       </FieldGroup>
     </form>

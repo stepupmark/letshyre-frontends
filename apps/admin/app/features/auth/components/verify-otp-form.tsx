@@ -7,7 +7,6 @@ import { Alert, AlertDescription } from "~/components/ui/alert";
 import { Button } from "~/components/ui/button";
 import {
   Field,
-  FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
@@ -22,11 +21,6 @@ import { verifyOtpSchema } from "../schemas/auth.schema";
 import type { OtpSession, VerifyOtpInput } from "../types";
 
 const RESEND_AFTER_SECONDS = 60;
-
-function maskEmail(email: string) {
-  const [name = "", domain = ""] = email.split("@");
-  return `${name.slice(0, 2)}${"*".repeat(Math.max(name.length - 2, 2))}@${domain}`;
-}
 
 type VerifyOtpFormProps = {
   session: OtpSession;
@@ -93,9 +87,6 @@ export function VerifyOtpForm({
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
               <FieldLabel htmlFor="otp">Verification code</FieldLabel>
-              <FieldDescription>
-                Enter the 6-digit code sent to {maskEmail(session.email)}.
-              </FieldDescription>
               <InputOTP
                 id="otp"
                 maxLength={6}
@@ -104,11 +95,15 @@ export function VerifyOtpForm({
                 onChange={field.onChange}
                 onComplete={() => submit()}
                 disabled={verifyOtp.isPending}
-                containerClassName="justify-center"
+                containerClassName="w-full"
               >
-                <InputOTPGroup>
+                <InputOTPGroup className="w-full">
                   {Array.from({ length: 6 }, (_, index) => (
-                    <InputOTPSlot key={index} index={index} />
+                    <InputOTPSlot
+                      key={index}
+                      index={index}
+                      className="h-12 flex-1 text-base"
+                    />
                   ))}
                 </InputOTPGroup>
               </InputOTP>
@@ -120,7 +115,7 @@ export function VerifyOtpForm({
           {verifyOtp.isPending && <LoaderCircle className="animate-spin" />}
           Verify
         </Button>
-        <p className="text-center text-sm text-muted-foreground">
+        <p className="text-sm text-muted-foreground">
           Didn&apos;t get it?{" "}
           {secondsLeft > 0 ? (
             <span>Resend in {secondsLeft}s</span>
