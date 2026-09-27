@@ -21,6 +21,8 @@ import { StatCard } from "~/components/stat-card";
 import { StatusBadge } from "~/components/status-badge";
 import { Button } from "~/components/ui/button";
 import { RelativeTime } from "~/components/relative-time";
+import { unlocksService } from "../services/unlocks.service";
+import { fetchAllPages } from "~/lib/fetch-all-pages";
 import { useDebouncedValue } from "~/hooks/use-debounced-value";
 import { formatNumber } from "~/lib/format";
 import { unlocksQueries } from "../queries/unlocks.queries";
@@ -44,6 +46,7 @@ function ScoreBadge({ score }: { score: number | string | null | undefined }) {
 const columns: ColumnDef<UnlockedProfile, unknown>[] = [
   {
     id: "employer",
+    meta: { csv: (row) => ({ Employer: row.employer }) },
     header: "Employer",
     cell: ({ row }) => (
       <span className="font-medium">{row.original.employer ?? "—"}</span>
@@ -51,6 +54,13 @@ const columns: ColumnDef<UnlockedProfile, unknown>[] = [
   },
   {
     id: "candidate",
+    meta: {
+      csv: (row) => ({
+        Candidate: row.candidate_name,
+        Email: row.candidate_email,
+        Phone: row.candidate_phone,
+      }),
+    },
     header: "Candidate",
     cell: ({ row }) => (
       <div className="flex flex-col">
@@ -67,11 +77,13 @@ const columns: ColumnDef<UnlockedProfile, unknown>[] = [
   },
   {
     id: "unlocked",
+    meta: { csv: (row) => ({ Unlocked: row.unlocked_date }) },
     header: "Unlocked",
     cell: ({ row }) => <RelativeTime value={row.original.unlocked_date} />,
   },
   {
     id: "score",
+    meta: { csv: (row) => ({ "AI score": row.ai_overall_score }) },
     header: "AI score",
     cell: ({ row }) => <ScoreBadge score={row.original.ai_overall_score} />,
   },
@@ -183,9 +195,8 @@ function Overview() {
 export function UnlocksPage() {
   const [params, setParams] = useQueryStates(unlocksSearchParams);
   const search = useDebouncedValue(params.q);
-  const profiles = useQuery(
-    unlocksQueries.list(toUnlocksFilters({ ...params, q: search })),
-  );
+  const filters = toUnlocksFilters({ ...params, q: search });
+  const profiles = useQuery(unlocksQueries.list(filters));
   const hasFilters = Boolean(params.q || params.from || params.to);
 
   return (
@@ -195,26 +206,36 @@ export function UnlocksPage() {
         description="Candidate profiles unlocked by employers."
       />
       <Overview />
-      <div className="mb-3 flex flex-wrap items-center gap-2">
-        <SearchInput
-          value={params.q}
-          placeholder="Search candidates"
-          onChange={(q) => void setParams({ q: q || null, page: null })}
-        />
-        <DateRangeFilter
-          from={params.from}
-          to={params.to}
-          onChange={({ from, to }) =>
-            void setParams({ from: from || null, to: to || null, page: null })
-          }
-        />
-        {hasFilters && (
-          <Button variant="ghost" onClick={() => void setParams(null)}>
-            <X /> Clear
-          </Button>
-        )}
-      </div>
       <DataTable
+        exportName="unlocks"
+        exportRows={() =>
+          fetchAllPages((page) => unlocksService.list({ ...filters, page }))
+        }
+        filters={
+          <>
+            <SearchInput
+              value={params.q}
+              placeholder="Search candidates"
+              onChange={(q) => void setParams({ q: q || null, page: null })}
+            />
+            <DateRangeFilter
+              from={params.from}
+              to={params.to}
+              onChange={({ from, to }) =>
+                void setParams({
+                  from: from || null,
+                  to: to || null,
+                  page: null,
+                })
+              }
+            />
+            {hasFilters && (
+              <Button variant="ghost" onClick={() => void setParams(null)}>
+                <X /> Clear
+              </Button>
+            )}
+          </>
+        }
         columns={columns}
         data={profiles.data?.results}
         page={params.page}

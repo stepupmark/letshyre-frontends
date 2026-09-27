@@ -6,6 +6,8 @@ import { EmptyState } from "~/components/feedback/empty-state";
 import { PageHeader } from "~/components/page-header";
 import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { RelativeTime } from "~/components/relative-time";
+import { logsService } from "../services/logs.service";
+import { fetchAllPages } from "~/lib/fetch-all-pages";
 import { logsQueries } from "../queries/logs.queries";
 import type { EmailLog, SmsLog } from "../schemas/logs.schema";
 import { logsSearchParams } from "../search-params";
@@ -15,16 +17,19 @@ function statusColumns<T extends EmailLog | SmsLog>(): ColumnDef<T, unknown>[] {
   return [
     {
       id: "status",
+      meta: { csv: (row) => ({ Status: row.otp_status }) },
       header: "Status",
       cell: ({ row }) => <OtpStatusBadge status={row.original.otp_status} />,
     },
     {
       id: "verified",
+      meta: { csv: (row) => ({ Verified: row.is_verified }) },
       header: "Verified",
       cell: ({ row }) => <VerifiedBadge verified={row.original.is_verified} />,
     },
     {
       id: "sent",
+      meta: { csv: (row) => ({ "Sent at": row.created_at }) },
       header: "Sent at",
       cell: ({ row }) => (
         <span className="text-muted-foreground">
@@ -38,6 +43,7 @@ function statusColumns<T extends EmailLog | SmsLog>(): ColumnDef<T, unknown>[] {
 const emailColumns: ColumnDef<EmailLog, unknown>[] = [
   {
     id: "recipient",
+    meta: { csv: (row) => ({ Email: row.email }) },
     header: "Recipient",
     cell: ({ row }) => (
       <span className="font-medium">{row.original.email}</span>
@@ -45,6 +51,7 @@ const emailColumns: ColumnDef<EmailLog, unknown>[] = [
   },
   {
     id: "type",
+    meta: { csv: (row) => ({ "OTP type": row.otp_type }) },
     header: "OTP type",
     cell: ({ row }) => row.original.otp_type ?? "—",
   },
@@ -54,6 +61,7 @@ const emailColumns: ColumnDef<EmailLog, unknown>[] = [
 const smsColumns: ColumnDef<SmsLog, unknown>[] = [
   {
     id: "phone",
+    meta: { csv: (row) => ({ Phone: row.phone_number }) },
     header: "Phone number",
     cell: ({ row }) => (
       <span className="font-medium tabular-nums">
@@ -85,6 +93,19 @@ export function LogsPage() {
     error: logs.error,
     onRetry: () => void logs.refetch(),
     empty: <EmptyState title="No logs yet" />,
+    filters: (
+      <Tabs
+        value={channel}
+        onValueChange={(value) =>
+          void setParams({ channel: value as typeof channel, page: null })
+        }
+      >
+        <TabsList>
+          <TabsTrigger value="email">Email</TabsTrigger>
+          <TabsTrigger value="sms">SMS</TabsTrigger>
+        </TabsList>
+      </Tabs>
+    ),
   };
 
   return (
@@ -93,21 +114,11 @@ export function LogsPage() {
         title="Communication logs"
         description="Outgoing OTP emails and SMS messages, newest first."
       />
-      <Tabs
-        value={channel}
-        onValueChange={(value) =>
-          void setParams({ channel: value as typeof channel, page: null })
-        }
-        className="mb-4"
-      >
-        <TabsList>
-          <TabsTrigger value="email">Email</TabsTrigger>
-          <TabsTrigger value="sms">SMS</TabsTrigger>
-        </TabsList>
-      </Tabs>
       {channel === "email" ? (
         <DataTable
           columns={emailColumns}
+          exportName="email-logs"
+          exportRows={() => fetchAllPages((next) => logsService.email(next))}
           data={email.data?.results}
           getRowId={(row) => row.id}
           {...tableProps}
@@ -115,6 +126,8 @@ export function LogsPage() {
       ) : (
         <DataTable
           columns={smsColumns}
+          exportName="sms-logs"
+          exportRows={() => fetchAllPages((next) => logsService.sms(next))}
           data={sms.data?.results}
           getRowId={(row) => row.id}
           {...tableProps}

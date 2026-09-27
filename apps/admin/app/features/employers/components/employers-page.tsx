@@ -15,6 +15,8 @@ import { PageHeader } from "~/components/page-header";
 import { StatCard } from "~/components/stat-card";
 import { Button } from "~/components/ui/button";
 import { CompanyAvatar, KycStatusBadge } from "~/features/kyc";
+import { employersService } from "../services/employers.service";
+import { fetchAllPages } from "~/lib/fetch-all-pages";
 import { formatNumber } from "~/lib/format";
 import { pageParser } from "~/lib/search-params";
 import { employersQueries } from "../queries/employers.queries";
@@ -23,6 +25,12 @@ import type { Employer } from "../schemas/employers.schema";
 const columns: ColumnDef<Employer>[] = [
   {
     id: "company",
+    meta: {
+      csv: (row) => ({
+        Company: row.employer_kyc?.company_name,
+        Industry: row.employer_kyc?.company_industry,
+      }),
+    },
     header: "Company",
     cell: ({ row }) => {
       const kyc = row.original.employer_kyc;
@@ -47,6 +55,13 @@ const columns: ColumnDef<Employer>[] = [
   },
   {
     id: "contact",
+    meta: {
+      csv: (row) => ({
+        Contact: row.user_name,
+        Email: row.email,
+        Phone: row.phone_number,
+      }),
+    },
     header: "Contact",
     cell: ({ row }) => (
       <div className="flex flex-col">
@@ -61,12 +76,15 @@ const columns: ColumnDef<Employer>[] = [
   },
   {
     id: "jobs",
-    meta: { align: "right" },
+    meta: { align: "right", csv: (row) => ({ Jobs: row.job_posts }) },
     header: "Jobs",
     cell: ({ row }) => formatNumber(row.original.job_posts),
   },
   {
     id: "kyc",
+    meta: {
+      csv: (row) => ({ KYC: row.employer_kyc?.kyc_status ?? "Not submitted" }),
+    },
     header: "KYC",
     cell: ({ row }) => (
       <KycStatusBadge status={row.original.employer_kyc?.kyc_status} />
@@ -144,6 +162,8 @@ export function EmployersPage() {
       />
       <Summary />
       <DataTable
+        exportName="employers"
+        exportRows={() => fetchAllPages((page) => employersService.list(page))}
         columns={columns}
         data={employers.data?.results}
         getRowId={(row) => row.id}

@@ -8,6 +8,8 @@ import { PageHeader } from "~/components/page-header";
 import { Button } from "~/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { RelativeTime } from "~/components/relative-time";
+import { kycService } from "../services/kyc.service";
+import { fetchAllPages } from "~/lib/fetch-all-pages";
 import { kycQueries } from "../queries/kyc.queries";
 import {
   KYC_STATUSES,
@@ -20,6 +22,9 @@ import { CompanyAvatar, KycStatusBadge } from "./kyc-status-badge";
 const columns: ColumnDef<CompanyKyc>[] = [
   {
     id: "company",
+    meta: {
+      csv: (row) => ({ Company: row.company_name, Email: row.official_email }),
+    },
     header: "Company",
     cell: ({ row }) => (
       <div className="flex items-center gap-3">
@@ -41,16 +46,19 @@ const columns: ColumnDef<CompanyKyc>[] = [
   },
   {
     id: "industry",
+    meta: { csv: (row) => ({ Industry: row.company_industry }) },
     header: "Industry",
     cell: ({ row }) => row.original.company_industry || "—",
   },
   {
     id: "submitted",
+    meta: { csv: (row) => ({ Submitted: row.created_at }) },
     header: "Submitted",
     cell: ({ row }) => <RelativeTime value={row.original.created_at} />,
   },
   {
     id: "status",
+    meta: { csv: (row) => ({ Status: row.kyc_status }) },
     header: "Status",
     cell: ({ row }) => <KycStatusBadge status={row.original.kyc_status} />,
   },
@@ -75,22 +83,27 @@ export function KycListPage() {
         title="KYC verification"
         description="Review the company documents employers submit before they can hire."
       />
-      <Tabs
-        value={status}
-        onValueChange={(value) =>
-          void setParams({ status: value as KycStatus, page: null })
-        }
-        className="mb-4"
-      >
-        <TabsList>
-          {KYC_STATUSES.map((value) => (
-            <TabsTrigger key={value} value={value}>
-              {value}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-      </Tabs>
       <DataTable
+        exportName={`kyc-${status.toLowerCase()}`}
+        exportRows={() =>
+          fetchAllPages((next) => kycService.list(next, status))
+        }
+        filters={
+          <Tabs
+            value={status}
+            onValueChange={(value) =>
+              void setParams({ status: value as KycStatus, page: null })
+            }
+          >
+            <TabsList>
+              {KYC_STATUSES.map((value) => (
+                <TabsTrigger key={value} value={value}>
+                  {value}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </Tabs>
+        }
         columns={columns}
         data={kyc.data?.results}
         getRowId={(row) => row.id}

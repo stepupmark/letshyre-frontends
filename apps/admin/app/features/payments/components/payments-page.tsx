@@ -36,6 +36,8 @@ import {
 } from "~/components/ui/select";
 import { Copyable } from "~/components/copyable";
 import { RelativeTime } from "~/components/relative-time";
+import { paymentsService } from "../services/payments.service";
+import { fetchAllPages } from "~/lib/fetch-all-pages";
 import { useDebouncedValue } from "~/hooks/use-debounced-value";
 import { formatCurrency, formatNumber } from "~/lib/format";
 import { paymentsQueries } from "../queries/payments.queries";
@@ -57,6 +59,7 @@ const statusTone: Record<string, StatusTone> = {
 const columns: ColumnDef<Payment>[] = [
   {
     id: "employer",
+    meta: { csv: (row) => ({ Employer: row.employeer, Company: row.company }) },
     header: "Employer",
     cell: ({ row }) => (
       <div className="flex flex-col">
@@ -69,7 +72,10 @@ const columns: ColumnDef<Payment>[] = [
   },
   {
     id: "amount",
-    meta: { align: "right" },
+    meta: {
+      align: "right",
+      csv: (row) => ({ Amount: row.amount_paid, Currency: row.currency }),
+    },
     header: "Amount",
     cell: ({ row }) => (
       <span className="font-medium tabular-nums">
@@ -79,12 +85,13 @@ const columns: ColumnDef<Payment>[] = [
   },
   {
     id: "credits",
-    meta: { align: "right" },
+    meta: { align: "right", csv: (row) => ({ Credits: row.tokens_credited }) },
     header: "Credits",
     cell: ({ row }) => formatNumber(row.original.tokens_credited),
   },
   {
     id: "status",
+    meta: { csv: (row) => ({ Status: row.payment_status }) },
     header: "Status",
     cell: ({ row }) => (
       <StatusBadge
@@ -100,6 +107,7 @@ const columns: ColumnDef<Payment>[] = [
   },
   {
     id: "order",
+    meta: { csv: (row) => ({ "Order ID": row.payment_order_id }) },
     header: "Order ID",
     cell: ({ row }) => (
       <Copyable
@@ -111,6 +119,7 @@ const columns: ColumnDef<Payment>[] = [
   },
   {
     id: "date",
+    meta: { csv: (row) => ({ Date: row.created_at }) },
     header: "Date",
     cell: ({ row }) => <RelativeTime value={row.original.created_at} />,
   },
@@ -176,9 +185,8 @@ export function PaymentsPage() {
   const company = useDebouncedValue(params.company);
   const min = useDebouncedValue(params.min);
   const max = useDebouncedValue(params.max);
-  const payments = useQuery(
-    paymentsQueries.list(toPaymentFilters({ ...params, q, company, min, max })),
-  );
+  const filters = toPaymentFilters({ ...params, q, company, min, max });
+  const payments = useQuery(paymentsQueries.list(filters));
 
   const extraFilters = [
     params.company,
@@ -198,117 +206,122 @@ export function PaymentsPage() {
       />
       <Summary />
 
-      <div className="mb-3 flex flex-wrap items-center gap-2">
-        <SearchInput
-          value={params.q}
-          placeholder="Search order ID or keyword"
-          onChange={(value) => update({ q: value || null })}
-        />
-        <Select
-          value={params.status ?? "all"}
-          onValueChange={(value) =>
-            update({
-              status:
-                value === "all"
-                  ? null
-                  : (value as (typeof PAYMENT_STATUSES)[number]),
-            })
-          }
-        >
-          <SelectTrigger className="w-36" aria-label="Payment status">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All statuses</SelectItem>
-            {PAYMENT_STATUSES.map((status) => (
-              <SelectItem key={status} value={status}>
-                {status}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        <Popover>
-          <PopoverTrigger asChild>
-            <Button variant="outline">
-              <SlidersHorizontal /> Filters
-              {extraFilters > 0 && (
-                <Badge variant="secondary">{extraFilters}</Badge>
-              )}
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent align="start" className="w-80">
-            <FieldGroup className="gap-4">
-              <Field>
-                <FieldLabel htmlFor="company">Company</FieldLabel>
-                <Input
-                  id="company"
-                  value={params.company}
-                  onChange={(event) =>
-                    update({ company: event.target.value || null })
-                  }
-                />
-              </Field>
-              <Field>
-                <FieldLabel htmlFor="min-amount">Amount (₹)</FieldLabel>
-                <div className="flex items-center gap-2">
-                  <Input
-                    id="min-amount"
-                    type="number"
-                    min={0}
-                    placeholder="Min"
-                    value={params.min}
-                    onChange={(event) =>
-                      update({ min: event.target.value || null })
-                    }
-                  />
-                  <span className="text-sm text-muted-foreground">to</span>
-                  <Input
-                    type="number"
-                    min={0}
-                    placeholder="Max"
-                    aria-label="Maximum amount"
-                    value={params.max}
-                    onChange={(event) =>
-                      update({ max: event.target.value || null })
-                    }
-                  />
-                </div>
-              </Field>
-              <Field>
-                <FieldLabel>Date</FieldLabel>
-                <DateRangeFilter
-                  from={params.from}
-                  to={params.to}
-                  onChange={({ from, to }) =>
-                    update({ from: from || null, to: to || null })
-                  }
-                />
-              </Field>
-            </FieldGroup>
-          </PopoverContent>
-        </Popover>
-        {hasFilters && (
-          <Button
-            variant="ghost"
-            onClick={() =>
-              void setParams({
-                q: null,
-                status: null,
-                company: null,
-                min: null,
-                max: null,
-                from: null,
-                to: null,
-                page: null,
-              })
-            }
-          >
-            <X /> Clear
-          </Button>
-        )}
-      </div>
-
       <DataTable
+        exportName="payments"
+        exportRows={() =>
+          fetchAllPages((page) => paymentsService.list({ ...filters, page }))
+        }
+        filters={
+          <>
+            <SearchInput
+              value={params.q}
+              placeholder="Search order ID or keyword"
+              onChange={(value) => update({ q: value || null })}
+            />
+            <Select
+              value={params.status ?? "all"}
+              onValueChange={(value) =>
+                update({
+                  status:
+                    value === "all"
+                      ? null
+                      : (value as (typeof PAYMENT_STATUSES)[number]),
+                })
+              }
+            >
+              <SelectTrigger className="w-36" aria-label="Payment status">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All statuses</SelectItem>
+                {PAYMENT_STATUSES.map((status) => (
+                  <SelectItem key={status} value={status}>
+                    {status}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="outline">
+                  <SlidersHorizontal /> Filters
+                  {extraFilters > 0 && (
+                    <Badge variant="secondary">{extraFilters}</Badge>
+                  )}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent align="start" className="w-80">
+                <FieldGroup className="gap-4">
+                  <Field>
+                    <FieldLabel htmlFor="company">Company</FieldLabel>
+                    <Input
+                      id="company"
+                      value={params.company}
+                      onChange={(event) =>
+                        update({ company: event.target.value || null })
+                      }
+                    />
+                  </Field>
+                  <Field>
+                    <FieldLabel htmlFor="min-amount">Amount (₹)</FieldLabel>
+                    <div className="flex items-center gap-2">
+                      <Input
+                        id="min-amount"
+                        type="number"
+                        min={0}
+                        placeholder="Min"
+                        value={params.min}
+                        onChange={(event) =>
+                          update({ min: event.target.value || null })
+                        }
+                      />
+                      <span className="text-sm text-muted-foreground">to</span>
+                      <Input
+                        type="number"
+                        min={0}
+                        placeholder="Max"
+                        aria-label="Maximum amount"
+                        value={params.max}
+                        onChange={(event) =>
+                          update({ max: event.target.value || null })
+                        }
+                      />
+                    </div>
+                  </Field>
+                  <Field>
+                    <FieldLabel>Date</FieldLabel>
+                    <DateRangeFilter
+                      from={params.from}
+                      to={params.to}
+                      onChange={({ from, to }) =>
+                        update({ from: from || null, to: to || null })
+                      }
+                    />
+                  </Field>
+                </FieldGroup>
+              </PopoverContent>
+            </Popover>
+            {hasFilters && (
+              <Button
+                variant="ghost"
+                onClick={() =>
+                  void setParams({
+                    q: null,
+                    status: null,
+                    company: null,
+                    min: null,
+                    max: null,
+                    from: null,
+                    to: null,
+                    page: null,
+                  })
+                }
+              >
+                <X /> Clear
+              </Button>
+            )}
+          </>
+        }
         columns={columns}
         data={payments.data?.results}
         getRowId={(row) => row.id}

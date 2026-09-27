@@ -31,6 +31,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
+import { couponsService } from "../services/coupons.service";
+import { fetchAllPages } from "~/lib/fetch-all-pages";
 import { formatCurrency, formatDateTime, formatNumber } from "~/lib/format";
 import { pageParser } from "~/lib/search-params";
 import {
@@ -68,6 +70,7 @@ function buildColumns({ onEdit, onDelete }: RowActions): ColumnDef<Coupon>[] {
   return [
     {
       id: "code",
+      meta: { csv: (row) => ({ Code: row.code }) },
       header: "Code",
       cell: ({ row }) => (
         <span className="font-mono font-medium">{row.original.code}</span>
@@ -75,12 +78,21 @@ function buildColumns({ onEdit, onDelete }: RowActions): ColumnDef<Coupon>[] {
     },
     {
       id: "discount",
+      meta: {
+        csv: (row) => ({
+          "Discount type": row.discount_type,
+          Discount: row.discount_value,
+        }),
+      },
       header: "Discount",
       cell: ({ row }) => discountLabel(row.original),
     },
     {
       id: "usage",
-      meta: { align: "right" },
+      meta: {
+        align: "right",
+        csv: (row) => ({ Used: row.used_count, Limit: row.usage_limit }),
+      },
       header: "Used",
       cell: ({ row }) => (
         <span className="tabular-nums">
@@ -91,6 +103,7 @@ function buildColumns({ onEdit, onDelete }: RowActions): ColumnDef<Coupon>[] {
     },
     {
       id: "validity",
+      meta: { csv: (row) => ({ Starts: row.start_date, Ends: row.end_date }) },
       header: "Valid",
       cell: ({ row }) => (
         <div className="flex flex-col text-xs">
@@ -103,6 +116,7 @@ function buildColumns({ onEdit, onDelete }: RowActions): ColumnDef<Coupon>[] {
     },
     {
       id: "status",
+      meta: { csv: (row) => ({ Status: couponStatus(row).label }) },
       header: "Status",
       cell: ({ row }) => {
         const status = couponStatus(row.original);
@@ -177,6 +191,8 @@ export function CouponsPage() {
         }
       />
       <DataTable
+        exportName="coupons"
+        exportRows={() => fetchAllPages((next) => couponsService.list(next))}
         columns={columns}
         data={coupons.data?.results}
         getRowId={(row) => row.id}

@@ -25,6 +25,8 @@ import { StatCard } from "~/components/stat-card";
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
 import { RelativeTime } from "~/components/relative-time";
+import { jobsService } from "../services/jobs.service";
+import { fetchAllPages } from "~/lib/fetch-all-pages";
 import { useDebouncedValue } from "~/hooks/use-debounced-value";
 import { formatNumber } from "~/lib/format";
 import { jobsQueries } from "../queries/jobs.queries";
@@ -59,6 +61,13 @@ const columns: ColumnDef<Job>[] = [
   },
   {
     id: "job",
+    meta: {
+      csv: (row) => ({
+        Title: row.title,
+        Company: row.company_name,
+        Employer: row.employer_name,
+      }),
+    },
     header: "Job",
     cell: ({ row }) => (
       <div className="flex flex-col">
@@ -78,6 +87,12 @@ const columns: ColumnDef<Job>[] = [
   },
   {
     id: "type",
+    meta: {
+      csv: (row) => ({
+        "Employment type": row.employment_type,
+        Industry: row.industry_type,
+      }),
+    },
     header: "Type",
     cell: ({ row }) => (
       <div className="flex flex-col text-xs">
@@ -92,21 +107,28 @@ const columns: ColumnDef<Job>[] = [
   },
   {
     id: "applications",
+    meta: {
+      align: "right",
+      csv: (row) => ({ Applicants: row.applications_count }),
+    },
     header: "Applicants",
     cell: ({ row }) => formatNumber(row.original.applications_count),
   },
   {
     id: "status",
+    meta: { csv: (row) => ({ Status: row.status }) },
     header: "Status",
     cell: ({ row }) => <JobStatusBadge status={row.original.status} />,
   },
   {
     id: "approval",
+    meta: { csv: (row) => ({ Review: row.approval }) },
     header: "Review",
     cell: ({ row }) => <ApprovalBadge status={row.original.approval} />,
   },
   {
     id: "posted",
+    meta: { csv: (row) => ({ Posted: row.created_at }) },
     header: "Posted",
     cell: ({ row }) => <RelativeTime value={row.original.created_at} />,
   },
@@ -203,62 +225,78 @@ export function JobsPage() {
       />
       <Summary />
 
-      <div className="mb-3 flex flex-wrap items-center gap-2">
-        <SearchInput
-          value={params.q}
-          placeholder="Search title or company"
-          onChange={(value) => void setParams({ q: value || null, page: null })}
-        />
-        <FilterSelect
-          label="Review"
-          allLabel="Any review"
-          value={params.approval}
-          options={[
-            { value: "pending", label: "Pending review" },
-            { value: "approved", label: "Approved" },
-            { value: "rejected", label: "Rejected" },
-          ]}
-          onChange={(approval) => void setParams({ approval, page: null })}
-        />
-        <FilterSelect
-          label="Status"
-          allLabel="Any status"
-          value={params.status}
-          options={[
-            { value: "open", label: "Open" },
-            { value: "paused", label: "Paused" },
-            { value: "closed", label: "Closed" },
-          ]}
-          onChange={(status) => void setParams({ status, page: null })}
-          className="w-36"
-        />
-        <DateRangeFilter
-          from={params.from}
-          to={params.to}
-          onChange={({ from, to }) =>
-            void setParams({ from: from || null, to: to || null, page: null })
-          }
-        />
-        {hasFilters && (
-          <Button variant="ghost" onClick={() => void setParams(null)}>
-            <X /> Clear
-          </Button>
-        )}
-      </div>
-
-      {selectedIds.length > 0 && (
-        <div className="mb-3 flex flex-wrap items-center justify-between gap-3 rounded-lg border bg-muted/50 px-3 py-2">
-          <span className="text-sm">
-            {selectedIds.length} selected
-            <Button variant="link" size="sm" onClick={clearSelection}>
-              Clear
-            </Button>
-          </span>
-          <JobReview jobIds={selectedIds} size="sm" onDone={clearSelection} />
-        </div>
-      )}
-
       <DataTable
+        exportName="jobs"
+        exportRows={() =>
+          fetchAllPages((page) => jobsService.list({ ...filters, page }))
+        }
+        banner={
+          selectedIds.length > 0 && (
+            <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border bg-muted/50 px-3 py-2">
+              <span className="text-sm">
+                {selectedIds.length} selected
+                <Button variant="link" size="sm" onClick={clearSelection}>
+                  Clear
+                </Button>
+              </span>
+              <JobReview
+                jobIds={selectedIds}
+                size="sm"
+                onDone={clearSelection}
+              />
+            </div>
+          )
+        }
+        filters={
+          <>
+            <SearchInput
+              value={params.q}
+              placeholder="Search title or company"
+              onChange={(value) =>
+                void setParams({ q: value || null, page: null })
+              }
+            />
+            <FilterSelect
+              label="Review"
+              allLabel="Any review"
+              value={params.approval}
+              options={[
+                { value: "pending", label: "Pending review" },
+                { value: "approved", label: "Approved" },
+                { value: "rejected", label: "Rejected" },
+              ]}
+              onChange={(approval) => void setParams({ approval, page: null })}
+            />
+            <FilterSelect
+              label="Status"
+              allLabel="Any status"
+              value={params.status}
+              options={[
+                { value: "open", label: "Open" },
+                { value: "paused", label: "Paused" },
+                { value: "closed", label: "Closed" },
+              ]}
+              onChange={(status) => void setParams({ status, page: null })}
+              className="w-36"
+            />
+            <DateRangeFilter
+              from={params.from}
+              to={params.to}
+              onChange={({ from, to }) =>
+                void setParams({
+                  from: from || null,
+                  to: to || null,
+                  page: null,
+                })
+              }
+            />
+            {hasFilters && (
+              <Button variant="ghost" onClick={() => void setParams(null)}>
+                <X /> Clear
+              </Button>
+            )}
+          </>
+        }
         columns={columns}
         data={jobs.data?.results}
         getRowId={(row) => row.id}
