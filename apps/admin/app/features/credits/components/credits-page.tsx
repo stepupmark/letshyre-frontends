@@ -27,6 +27,7 @@ import {
   InputGroupText,
 } from "~/components/ui/input-group";
 import { Skeleton } from "~/components/ui/skeleton";
+import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard";
 import { formatCurrency } from "~/lib/format";
 import { useUpdateCreditPrice } from "../mutations/use-update-credit-price";
 import { creditsQueries } from "../queries/credits.queries";
@@ -58,6 +59,7 @@ function PriceForm({ credit }: { credit: Credit }) {
           setConfirmOpen(true);
         })}
       >
+        <UnsavedChangesGuard when={form.formState.isDirty} />
         <CardHeader>
           <CardTitle>Price per credit</CardTitle>
           <CardDescription>

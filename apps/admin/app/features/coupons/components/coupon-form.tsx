@@ -16,6 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "~/components/ui/select";
+import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard";
 import {
   couponFormSchema,
   type CouponFormValues,
@@ -52,6 +53,9 @@ export function CouponForm({
         onSubmit(toCouponPayload(values)),
       )}
     >
+      <UnsavedChangesGuard
+        when={form.formState.isDirty && !form.formState.isSubmitSuccessful}
+      />
       <FieldGroup className="grid gap-5 sm:grid-cols-2">
         <Field data-invalid={Boolean(errors.code)}>
           <FieldLabel htmlFor={`${id}-code`}>Code</FieldLabel>

@@ -21,6 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "~/components/ui/select";
+import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard";
 import {
   GATEWAY_PROVIDERS,
   gatewayFormSchema,
@@ -49,6 +50,9 @@ export function GatewayForm({
 
   return (
     <form id={id} noValidate onSubmit={form.handleSubmit(onSubmit)}>
+      <UnsavedChangesGuard
+        when={form.formState.isDirty && !form.formState.isSubmitSuccessful}
+      />
       <FieldGroup className="gap-5">
         <div className="grid gap-5 sm:grid-cols-2">
           <Field>

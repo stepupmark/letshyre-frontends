@@ -23,6 +23,7 @@ import {
   InputGroupInput,
   InputGroupText,
 } from "~/components/ui/input-group";
+import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard";
 import { useUpdateSystemConfig } from "../mutations/use-update-system-config";
 import {
   limitsSchema,
@@ -79,6 +80,7 @@ export function LimitsForm({ config }: { config: SystemConfig }) {
   return (
     <Card>
       <form noValidate onSubmit={submit}>
+        <UnsavedChangesGuard when={form.formState.isDirty} />
         <CardHeader>
           <CardTitle>Resource limits</CardTitle>
           <CardDescription>
