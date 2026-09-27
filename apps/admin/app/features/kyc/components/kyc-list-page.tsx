@@ -7,7 +7,7 @@ import { EmptyState } from "~/components/feedback/empty-state";
 import { PageHeader } from "~/components/page-header";
 import { Button } from "~/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
-import { formatDate } from "~/lib/format";
+import { RelativeTime } from "~/components/relative-time";
 import { kycQueries } from "../queries/kyc.queries";
 import {
   KYC_STATUSES,
@@ -47,7 +47,7 @@ const columns: ColumnDef<CompanyKyc>[] = [
   {
     id: "submitted",
     header: "Submitted",
-    cell: ({ row }) => formatDate(row.original.created_at),
+    cell: ({ row }) => <RelativeTime value={row.original.created_at} />,
   },
   {
     id: "status",

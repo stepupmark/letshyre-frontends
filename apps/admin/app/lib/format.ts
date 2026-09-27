@@ -37,6 +37,41 @@ export function formatDateTime(value: string | Date | null | undefined) {
   return date ? dateTimeFormat.format(date) : "—";
 }
 
+const relativeFormat = new Intl.RelativeTimeFormat("en-IN", {
+  numeric: "auto",
+});
+
+const RELATIVE_UNITS: [Intl.RelativeTimeFormatUnit, number][] = [
+  ["year", 365 * 24 * 60 * 60],
+  ["month", 30 * 24 * 60 * 60],
+  ["week", 7 * 24 * 60 * 60],
+  ["day", 24 * 60 * 60],
+  ["hour", 60 * 60],
+  ["minute", 60],
+];
+
+export const isDateOnly = (value: string) => /^\d{4}-\d{2}-\d{2}$/.test(value);
+
+export function formatRelative(value: string | null | undefined) {
+  if (!value) return "—";
+  if (isDateOnly(value)) {
+    const [year = 0, month = 1, day = 1] = value.split("-").map(Number);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const days = Math.round(
+      (new Date(year, month - 1, day).getTime() - today.getTime()) / 86_400_000,
+    );
+    if (Math.abs(days) < 7) return relativeFormat.format(days, "day");
+  }
+  const date = toDate(value);
+  if (!date) return "—";
+  const seconds = (date.getTime() - Date.now()) / 1000;
+  const unit = RELATIVE_UNITS.find(([, size]) => Math.abs(seconds) >= size);
+  return unit
+    ? relativeFormat.format(Math.round(seconds / unit[1]), unit[0])
+    : "just now";
+}
+
 export function formatCurrency(
   value: number | string | null | undefined,
   currency?: string | null,

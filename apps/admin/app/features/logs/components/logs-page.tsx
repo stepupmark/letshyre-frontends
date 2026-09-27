@@ -5,7 +5,7 @@ import { DataTable } from "~/components/data-table/data-table";
 import { EmptyState } from "~/components/feedback/empty-state";
 import { PageHeader } from "~/components/page-header";
 import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
-import { formatDateTime } from "~/lib/format";
+import { RelativeTime } from "~/components/relative-time";
 import { logsQueries } from "../queries/logs.queries";
 import type { EmailLog, SmsLog } from "../schemas/logs.schema";
 import { logsSearchParams } from "../search-params";
@@ -28,7 +28,7 @@ function statusColumns<T extends EmailLog | SmsLog>(): ColumnDef<T, unknown>[] {
       header: "Sent at",
       cell: ({ row }) => (
         <span className="text-muted-foreground">
-          {formatDateTime(row.original.created_at)}
+          <RelativeTime value={row.original.created_at} />
         </span>
       ),
     },

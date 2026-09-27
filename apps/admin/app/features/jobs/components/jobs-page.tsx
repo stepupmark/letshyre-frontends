@@ -24,8 +24,9 @@ import { SearchInput } from "~/components/search-input";
 import { StatCard } from "~/components/stat-card";
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
+import { RelativeTime } from "~/components/relative-time";
 import { useDebouncedValue } from "~/hooks/use-debounced-value";
-import { formatDate, formatNumber } from "~/lib/format";
+import { formatNumber } from "~/lib/format";
 import { jobsQueries } from "../queries/jobs.queries";
 import type { Job } from "../schemas/jobs.schema";
 import { jobsSearchParams, toJobsFilters } from "../search-params";
@@ -107,7 +108,7 @@ const columns: ColumnDef<Job>[] = [
   {
     id: "posted",
     header: "Posted",
-    cell: ({ row }) => formatDate(row.original.created_at),
+    cell: ({ row }) => <RelativeTime value={row.original.created_at} />,
   },
   {
     id: "actions",

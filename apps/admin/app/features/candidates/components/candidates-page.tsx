@@ -19,8 +19,9 @@ import { StatCard } from "~/components/stat-card";
 import { StatusBadge } from "~/components/status-badge";
 import { Button } from "~/components/ui/button";
 import { Progress } from "~/components/ui/progress";
+import { RelativeTime } from "~/components/relative-time";
 import { useDebouncedValue } from "~/hooks/use-debounced-value";
-import { formatDate, formatNumber } from "~/lib/format";
+import { formatNumber } from "~/lib/format";
 import { candidatesQueries } from "../queries/candidates.queries";
 import {
   GENDERS,
@@ -78,7 +79,7 @@ const columns: ColumnDef<Candidate>[] = [
   {
     id: "joined",
     header: "Joined",
-    cell: ({ row }) => formatDate(row.original.created_at),
+    cell: ({ row }) => <RelativeTime value={row.original.created_at} />,
   },
   {
     id: "actions",
