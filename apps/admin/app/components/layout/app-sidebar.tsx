@@ -90,14 +90,16 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <Link to="/dashboard" aria-label="LetsHyre dashboard">
-                {/* collapsed, only the "L" of the wordmark is shown */}
-                <span className="overflow-hidden group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:w-2.5">
-                  <img
-                    src="/letshyre.png"
-                    alt=""
-                    className="h-6 w-auto max-w-none"
-                  />
-                </span>
+                <img
+                  src="/letshyre.png"
+                  alt=""
+                  className="h-6 w-auto group-data-[collapsible=icon]:hidden"
+                />
+                <img
+                  src="/icon.png"
+                  alt=""
+                  className="hidden size-8 rounded-md group-data-[collapsible=icon]:block"
+                />
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
