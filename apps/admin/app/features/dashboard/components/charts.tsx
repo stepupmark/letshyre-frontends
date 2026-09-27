@@ -13,7 +13,11 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "~/components/ui/chart";
-import { formatCurrency } from "~/lib/format";
+import {
+  formatCompactCurrency,
+  formatCurrency,
+  formatShortDate,
+} from "~/lib/format";
 
 const revenueConfig = {
   revenue: { label: "Revenue", color: "var(--chart-2)" },
@@ -26,17 +30,6 @@ const activityConfig = {
 const scoreConfig = {
   avg_score: { label: "Average score", color: "var(--chart-2)" },
 } satisfies ChartConfig;
-
-const compactCurrency = new Intl.NumberFormat("en-IN", {
-  style: "currency",
-  currency: "INR",
-  notation: "compact",
-});
-
-const shortDate = new Intl.DateTimeFormat("en-IN", {
-  day: "numeric",
-  month: "short",
-});
 
 export function RevenueChart({
   data,
@@ -57,7 +50,7 @@ export function RevenueChart({
           tickLine={false}
           axisLine={false}
           width={56}
-          tickFormatter={(value: number) => compactCurrency.format(value)}
+          tickFormatter={(value: number) => formatCompactCurrency(value)}
         />
         <ChartTooltip
           content={
@@ -86,7 +79,7 @@ export function ActivityChart({
           tickLine={false}
           axisLine={false}
           minTickGap={24}
-          tickFormatter={(date: string) => shortDate.format(new Date(date))}
+          tickFormatter={(date: string) => formatShortDate(date)}
         />
         <YAxis
           tickLine={false}
@@ -97,9 +90,7 @@ export function ActivityChart({
         <ChartTooltip
           content={
             <ChartTooltipContent
-              labelFormatter={(date) =>
-                shortDate.format(new Date(String(date)))
-              }
+              labelFormatter={(date) => formatShortDate(String(date))}
             />
           }
         />

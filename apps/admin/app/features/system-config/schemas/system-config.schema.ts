@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { formatNumber } from "~/lib/format";
 import { envelope, id } from "~/lib/api/schemas";
 
 const systemConfigSchema = z.object({
@@ -19,7 +20,7 @@ const wholeNumber = (min: number, max: number) =>
     .number({ error: "Enter a number" })
     .int("Use a whole number")
     .min(min, `At least ${min}`)
-    .max(max, `At most ${max.toLocaleString()}`);
+    .max(max, `At most ${formatNumber(max)}`);
 
 export const limitsSchema = z.object({
   max_file_upload_size_mb: wholeNumber(1, 500),

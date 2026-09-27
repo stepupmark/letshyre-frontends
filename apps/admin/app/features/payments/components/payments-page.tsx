@@ -69,6 +69,7 @@ const columns: ColumnDef<Payment>[] = [
   },
   {
     id: "amount",
+    meta: { align: "right" },
     header: "Amount",
     cell: ({ row }) => (
       <span className="font-medium tabular-nums">
@@ -78,6 +79,7 @@ const columns: ColumnDef<Payment>[] = [
   },
   {
     id: "credits",
+    meta: { align: "right" },
     header: "Credits",
     cell: ({ row }) => formatNumber(row.original.tokens_credited),
   },

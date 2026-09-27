@@ -61,6 +61,7 @@ const columns: ColumnDef<Employer>[] = [
   },
   {
     id: "jobs",
+    meta: { align: "right" },
     header: "Jobs",
     cell: ({ row }) => formatNumber(row.original.job_posts),
   },

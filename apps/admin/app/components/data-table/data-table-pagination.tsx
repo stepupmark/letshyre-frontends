@@ -5,8 +5,7 @@ import {
   ChevronsRight,
 } from "lucide-react";
 import { Button } from "~/components/ui/button";
-
-const count = new Intl.NumberFormat("en-IN");
+import { formatNumber } from "~/lib/format";
 
 // page size isn't passed in, so it's inferred from a full page; the last page counts back from the total
 function rangeLabel(
@@ -16,11 +15,11 @@ function rangeLabel(
   totalCount: number | undefined,
 ) {
   if (totalCount === undefined) return `Page ${page} of ${lastPage}`;
-  if (!rowCount) return `${count.format(totalCount)} results`;
+  if (!rowCount) return `${formatNumber(totalCount)} results`;
   const end = page >= lastPage ? totalCount : (page - 1) * rowCount + rowCount;
   const start =
     page >= lastPage ? totalCount - rowCount + 1 : end - rowCount + 1;
-  return `Showing ${count.format(start)}–${count.format(end)} of ${count.format(totalCount)}`;
+  return `Showing ${formatNumber(start)}–${formatNumber(end)} of ${formatNumber(totalCount)}`;
 }
 
 type DataTablePaginationProps = {

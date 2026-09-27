@@ -80,6 +80,7 @@ function buildColumns({ onEdit, onDelete }: RowActions): ColumnDef<Coupon>[] {
     },
     {
       id: "usage",
+      meta: { align: "right" },
       header: "Used",
       cell: ({ row }) => (
         <span className="tabular-nums">

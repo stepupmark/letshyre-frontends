@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   flexRender,
+  type RowData,
   getCoreRowModel,
   useReactTable,
   type ColumnDef,
@@ -20,6 +21,13 @@ import {
 } from "~/components/ui/table";
 import { DataTablePagination } from "./data-table-pagination";
 
+declare module "@tanstack/react-table" {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- must match the library's signature
+  interface ColumnMeta<TData extends RowData, TValue> {
+    align?: "right";
+  }
+}
+
 type DataTableProps<TData> = {
   columns: ColumnDef<TData, unknown>[];
   data: TData[] | undefined;
@@ -38,6 +46,9 @@ type DataTableProps<TData> = {
 };
 
 const SKELETON_ROWS = 8;
+
+const alignClass = (meta?: { align?: "right" }) =>
+  meta?.align === "right" ? "text-right tabular-nums" : undefined;
 
 export function DataTable<TData>({
   columns,
@@ -116,6 +127,7 @@ export function DataTable<TData>({
                   <TableHead
                     key={header.id}
                     style={{ width: header.column.columnDef.size }}
+                    className={alignClass(header.column.columnDef.meta)}
                   >
                     {header.isPlaceholder
                       ? null
@@ -148,7 +160,10 @@ export function DataTable<TData>({
                   className="data-active:bg-muted data-active:shadow-[inset_2px_0_0_var(--primary)]"
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                    <TableCell
+                      key={cell.id}
+                      className={alignClass(cell.column.columnDef.meta)}
+                    >
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext(),

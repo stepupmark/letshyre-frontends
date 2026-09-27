@@ -19,7 +19,18 @@ const currencyFormat = new Intl.NumberFormat("en-IN", {
   maximumFractionDigits: 2,
 });
 
+const compactCurrencyFormat = new Intl.NumberFormat("en-IN", {
+  style: "currency",
+  currency: "INR",
+  notation: "compact",
+});
+
 const numberFormat = new Intl.NumberFormat("en-IN");
+
+const shortDateFormat = new Intl.DateTimeFormat("en-IN", {
+  day: "numeric",
+  month: "short",
+});
 
 function toDate(value: string | number | Date | null | undefined) {
   if (value === null || value === undefined || value === "") return null;
@@ -88,6 +99,15 @@ export function formatCurrency(
   } catch {
     return `${currency} ${amount}`;
   }
+}
+
+export function formatCompactCurrency(value: number) {
+  return compactCurrencyFormat.format(value);
+}
+
+export function formatShortDate(value: string | null | undefined) {
+  const date = toDate(value);
+  return date ? shortDateFormat.format(date) : "—";
 }
 
 export function formatNumber(value: number | string | null | undefined) {
