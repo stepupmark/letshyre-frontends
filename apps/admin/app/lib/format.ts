@@ -110,6 +110,10 @@ export function formatShortDate(value: string | null | undefined) {
   return date ? shortDateFormat.format(date) : "—";
 }
 
+export function percentChange(current: number, previous: number) {
+  return previous > 0 ? ((current - previous) / previous) * 100 : null;
+}
+
 export function formatNumber(value: number | string | null | undefined) {
   const n = Number(value);
   return value === null || value === undefined || Number.isNaN(n)

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "react-router";
 import type { LucideIcon } from "lucide-react";
 import {
   Card,
@@ -15,6 +16,8 @@ type StatCardProps = {
   icon?: LucideIcon;
   hint?: ReactNode;
   loading?: boolean;
+  /** Makes the whole card a link, e.g. to the filtered list behind the number. */
+  href?: string;
 };
 
 export function StatCard({
@@ -23,9 +26,14 @@ export function StatCard({
   icon: Icon,
   hint,
   loading = false,
+  href,
 }: StatCardProps) {
-  return (
-    <Card>
+  const card = (
+    <Card
+      className={
+        href ? "h-full transition-colors hover:bg-muted/40" : undefined
+      }
+    >
       <CardHeader>
         <CardDescription>{label}</CardDescription>
         {Icon && (
@@ -41,5 +49,16 @@ export function StatCard({
         )}
       </CardHeader>
     </Card>
+  );
+
+  return href ? (
+    <Link
+      to={href}
+      className="rounded-xl outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+    >
+      {card}
+    </Link>
+  ) : (
+    card
   );
 }

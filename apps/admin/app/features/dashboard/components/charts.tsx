@@ -33,8 +33,10 @@ const scoreConfig = {
 
 export function RevenueChart({
   data,
+  onMonthClick,
 }: {
   data: { month: string; revenue: number }[];
+  onMonthClick?: (month: number) => void;
 }) {
   return (
     <ChartContainer config={revenueConfig} className="aspect-[3/1] w-full">
@@ -59,7 +61,13 @@ export function RevenueChart({
             />
           }
         />
-        <Bar dataKey="revenue" fill="var(--color-revenue)" radius={4} />
+        <Bar
+          dataKey="revenue"
+          fill="var(--color-revenue)"
+          radius={4}
+          className={onMonthClick ? "cursor-pointer" : undefined}
+          onClick={(_, index) => onMonthClick?.(index)}
+        />
       </BarChart>
     </ChartContainer>
   );
