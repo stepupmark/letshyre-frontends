@@ -13,12 +13,17 @@ import {
   KycStatusBadge,
 } from "~/features/kyc";
 import { Copyable } from "~/components/copyable";
+import { useDocumentTitle } from "~/hooks/use-document-title";
 import { formatDate, formatNumber } from "~/lib/format";
 import { employersQueries } from "../queries/employers.queries";
 
 export function EmployerProfilePage() {
   const { id = "" } = useParams();
   const employer = useQuery(employersQueries.detail(id));
+  useDocumentTitle(
+    employer.data &&
+      `${employer.data.employer_kyc?.company_name || employer.data.user_name || "Employer"} · Employers`,
+  );
 
   const back = (
     <Button variant="ghost" size="sm" className="mb-4 -ml-2" asChild>

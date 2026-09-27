@@ -9,6 +9,7 @@ import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Skeleton } from "~/components/ui/skeleton";
+import { useDocumentTitle } from "~/hooks/use-document-title";
 import { formatDate } from "~/lib/format";
 import { jobsQueries } from "../queries/jobs.queries";
 import type { JobDetail } from "../schemas/jobs.schema";
@@ -160,6 +161,7 @@ function Details({ job }: { job: JobDetail }) {
 export function JobDetailPage() {
   const { id = "" } = useParams();
   const job = useQuery(jobsQueries.detail(id));
+  useDocumentTitle(job.data && `${job.data.title || "Untitled job"} · Jobs`);
 
   const back = (
     <Button variant="ghost" size="sm" className="mb-4 -ml-2" asChild>

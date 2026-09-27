@@ -13,6 +13,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Separator } from "~/components/ui/separator";
 import { Skeleton } from "~/components/ui/skeleton";
 import { Copyable } from "~/components/copyable";
+import { useDocumentTitle } from "~/hooks/use-document-title";
 import { formatCurrency, formatDate, initials } from "~/lib/format";
 import { safeExternalUrl } from "~/lib/safe-url";
 import { candidatesQueries } from "../queries/candidates.queries";
@@ -270,6 +271,9 @@ function Profile({ profile }: { profile: CandidateProfile }) {
 export function CandidateProfilePage() {
   const { id = "" } = useParams();
   const profile = useQuery(candidatesQueries.profile(id));
+  useDocumentTitle(
+    profile.data && `${profile.data.name || "Unnamed candidate"} · Candidates`,
+  );
 
   const back = (
     <Button variant="ghost" size="sm" className="mb-4 -ml-2" asChild>

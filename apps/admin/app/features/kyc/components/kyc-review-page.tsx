@@ -7,6 +7,7 @@ import { ErrorState } from "~/components/feedback/error-state";
 import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
 import { Button } from "~/components/ui/button";
 import { Skeleton } from "~/components/ui/skeleton";
+import { useDocumentTitle } from "~/hooks/use-document-title";
 import { formatDate } from "~/lib/format";
 import { useApproveKyc } from "../mutations/use-review-kyc";
 import { kycQueries } from "../queries/kyc.queries";
@@ -17,6 +18,9 @@ import { RejectKycDialog } from "./reject-kyc-dialog";
 export function KycReviewPage() {
   const { id = "" } = useParams();
   const kyc = useQuery(kycQueries.detail(id));
+  useDocumentTitle(
+    kyc.data && `${kyc.data.company_name || "Unnamed company"} · KYC`,
+  );
   const approve = useApproveKyc();
   const [approveOpen, setApproveOpen] = useState(false);
   const [rejectOpen, setRejectOpen] = useState(false);
