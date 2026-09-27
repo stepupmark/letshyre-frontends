@@ -12,6 +12,7 @@ import {
   CompanyKycDetails,
   KycStatusBadge,
 } from "~/features/kyc";
+import { Copyable } from "~/components/copyable";
 import { formatDate, formatNumber } from "~/lib/format";
 import { employersQueries } from "../queries/employers.queries";
 
@@ -104,8 +105,16 @@ export function EmployerProfilePage() {
             <DetailList
               items={[
                 { label: "Name", value: data.user_name },
-                { label: "Email", value: data.email },
-                { label: "Phone", value: data.phone_number },
+                {
+                  label: "Email",
+                  value: <Copyable value={data.email} label="Email" />,
+                },
+                {
+                  label: "Phone",
+                  value: (
+                    <Copyable value={data.phone_number} label="Phone number" />
+                  ),
+                },
                 { label: "Role", value: data.role },
                 { label: "Job posts", value: formatNumber(data.job_posts) },
               ]}

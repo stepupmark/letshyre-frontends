@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
+import { Copyable } from "~/components/copyable";
 import { safeExternalUrl } from "~/lib/safe-url";
 import type { CompanyKyc } from "../schemas/kyc.schema";
 
@@ -55,7 +56,10 @@ export function CompanyKycDetails({ kyc }: { kyc: CompanyKyc }) {
           <DetailList
             items={[
               { label: "Industry", value: kyc.company_industry },
-              { label: "Official email", value: kyc.official_email },
+              {
+                label: "Official email",
+                value: <Copyable value={kyc.official_email} label="Email" />,
+              },
               {
                 label: "Website",
                 value: (

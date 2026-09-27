@@ -12,6 +12,7 @@ import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Separator } from "~/components/ui/separator";
 import { Skeleton } from "~/components/ui/skeleton";
+import { Copyable } from "~/components/copyable";
 import { formatCurrency, formatDate, initials } from "~/lib/format";
 import { safeExternalUrl } from "~/lib/safe-url";
 import { candidatesQueries } from "../queries/candidates.queries";
@@ -156,8 +157,16 @@ function Profile({ profile }: { profile: CandidateProfile }) {
         <Section title="Personal">
           <DetailList
             items={[
-              { label: "Email", value: profile.email },
-              { label: "Phone", value: profile.phone_number },
+              {
+                label: "Email",
+                value: <Copyable value={profile.email} label="Email" />,
+              },
+              {
+                label: "Phone",
+                value: (
+                  <Copyable value={profile.phone_number} label="Phone number" />
+                ),
+              },
               {
                 label: "Date of birth",
                 value: profile.dob && formatDate(profile.dob),

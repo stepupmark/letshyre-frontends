@@ -34,8 +34,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "~/components/ui/select";
+import { Copyable } from "~/components/copyable";
+import { RelativeTime } from "~/components/relative-time";
 import { useDebouncedValue } from "~/hooks/use-debounced-value";
-import { formatCurrency, formatDateTime, formatNumber } from "~/lib/format";
+import { formatCurrency, formatNumber } from "~/lib/format";
 import { paymentsQueries } from "../queries/payments.queries";
 import { PAYMENT_STATUSES, type Payment } from "../schemas/payments.schema";
 import { paymentsSearchParams, toPaymentFilters } from "../search-params";
@@ -98,15 +100,17 @@ const columns: ColumnDef<Payment>[] = [
     id: "order",
     header: "Order ID",
     cell: ({ row }) => (
-      <span className="font-mono text-xs text-muted-foreground">
-        {row.original.payment_order_id ?? "—"}
-      </span>
+      <Copyable
+        value={row.original.payment_order_id}
+        label="Order ID"
+        className="font-mono text-xs text-muted-foreground"
+      />
     ),
   },
   {
     id: "date",
     header: "Date",
-    cell: ({ row }) => formatDateTime(row.original.created_at),
+    cell: ({ row }) => <RelativeTime value={row.original.created_at} />,
   },
   {
     id: "actions",

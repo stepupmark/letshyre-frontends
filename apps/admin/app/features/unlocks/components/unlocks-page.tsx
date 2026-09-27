@@ -7,6 +7,7 @@ import {
   FileText,
   LockOpen,
   Trophy,
+  X,
 } from "lucide-react";
 import { useQueryStates } from "nuqs";
 import { DataTable } from "~/components/data-table/data-table";
@@ -19,8 +20,9 @@ import { SearchInput } from "~/components/search-input";
 import { StatCard } from "~/components/stat-card";
 import { StatusBadge } from "~/components/status-badge";
 import { Button } from "~/components/ui/button";
+import { RelativeTime } from "~/components/relative-time";
 import { useDebouncedValue } from "~/hooks/use-debounced-value";
-import { formatDate, formatNumber } from "~/lib/format";
+import { formatNumber } from "~/lib/format";
 import { unlocksQueries } from "../queries/unlocks.queries";
 import type { UnlockedProfile } from "../schemas/unlocks.schema";
 import { toUnlocksFilters, unlocksSearchParams } from "../search-params";
@@ -66,7 +68,7 @@ const columns: ColumnDef<UnlockedProfile, unknown>[] = [
   {
     id: "unlocked",
     header: "Unlocked",
-    cell: ({ row }) => formatDate(row.original.unlocked_date),
+    cell: ({ row }) => <RelativeTime value={row.original.unlocked_date} />,
   },
   {
     id: "score",
@@ -184,6 +186,7 @@ export function UnlocksPage() {
   const profiles = useQuery(
     unlocksQueries.list(toUnlocksFilters({ ...params, q: search })),
   );
+  const hasFilters = Boolean(params.q || params.from || params.to);
 
   return (
     <>
@@ -192,7 +195,7 @@ export function UnlocksPage() {
         description="Candidate profiles unlocked by employers."
       />
       <Overview />
-      <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+      <div className="mb-3 flex flex-wrap items-center gap-2">
         <SearchInput
           value={params.q}
           placeholder="Search candidates"
@@ -205,6 +208,11 @@ export function UnlocksPage() {
             void setParams({ from: from || null, to: to || null, page: null })
           }
         />
+        {hasFilters && (
+          <Button variant="ghost" onClick={() => void setParams(null)}>
+            <X /> Clear
+          </Button>
+        )}
       </div>
       <DataTable
         columns={columns}
