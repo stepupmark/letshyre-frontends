@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   flexRender,
   getCoreRowModel,
@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-table";
 import { ErrorState } from "~/components/feedback/error-state";
 import { Skeleton } from "~/components/ui/skeleton";
+import { useHotkey } from "~/hooks/use-hotkey";
 import {
   Table,
   TableBody,
@@ -67,6 +68,33 @@ export function DataTable<TData>({
 
   const columnCount = table.getVisibleLeafColumns().length;
   const rows = table.getRowModel().rows;
+  const bodyRef = useRef<HTMLTableSectionElement>(null);
+  const [activeRow, setActiveRow] = useState(-1);
+
+  useEffect(() => setActiveRow(-1), [data]);
+  useEffect(() => {
+    bodyRef.current?.rows[activeRow]?.scrollIntoView({ block: "nearest" });
+  }, [activeRow]);
+
+  useHotkey(
+    ["j", "k", "Enter"],
+    (event) => {
+      if (event.key === "Enter") {
+        if (activeRow < 0 || (event.target as Element).closest("a, button"))
+          return;
+        bodyRef.current?.rows[activeRow]
+          ?.querySelector<HTMLElement>("a[href]")
+          ?.click();
+        return;
+      }
+      event.preventDefault();
+      const step = event.key === "j" ? 1 : -1;
+      setActiveRow((index) =>
+        Math.min(Math.max(index + step, 0), rows.length - 1),
+      );
+    },
+    rows.length > 0,
+  );
 
   if (error && !data)
     return (
@@ -100,7 +128,7 @@ export function DataTable<TData>({
               </TableRow>
             ))}
           </TableHeader>
-          <TableBody>
+          <TableBody ref={bodyRef}>
             {isLoading && !data ? (
               Array.from({ length: SKELETON_ROWS }, (_, index) => (
                 <TableRow key={index}>
@@ -112,10 +140,12 @@ export function DataTable<TData>({
                 </TableRow>
               ))
             ) : rows.length ? (
-              rows.map((row) => (
+              rows.map((row, index) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() ? "selected" : undefined}
+                  data-active={index === activeRow || undefined}
+                  className="data-active:bg-muted data-active:shadow-[inset_2px_0_0_var(--primary)]"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
@@ -143,6 +173,7 @@ export function DataTable<TData>({
         page={page}
         pageCount={pageCount}
         totalCount={totalCount}
+        rowCount={rows.length}
         onPageChange={onPageChange}
       />
     </div>

@@ -6,10 +6,28 @@ import {
 } from "lucide-react";
 import { Button } from "~/components/ui/button";
 
+const count = new Intl.NumberFormat("en-IN");
+
+// page size isn't passed in, so it's inferred from a full page; the last page counts back from the total
+function rangeLabel(
+  page: number,
+  lastPage: number,
+  rowCount: number,
+  totalCount: number | undefined,
+) {
+  if (totalCount === undefined) return `Page ${page} of ${lastPage}`;
+  if (!rowCount) return `${count.format(totalCount)} results`;
+  const end = page >= lastPage ? totalCount : (page - 1) * rowCount + rowCount;
+  const start =
+    page >= lastPage ? totalCount - rowCount + 1 : end - rowCount + 1;
+  return `Showing ${count.format(start)}–${count.format(end)} of ${count.format(totalCount)}`;
+}
+
 type DataTablePaginationProps = {
   page: number;
   pageCount: number;
   totalCount?: number;
+  rowCount: number;
   onPageChange: (page: number) => void;
 };
 
@@ -17,6 +35,7 @@ export function DataTablePagination({
   page,
   pageCount,
   totalCount,
+  rowCount,
   onPageChange,
 }: DataTablePaginationProps) {
   const lastPage = Math.max(pageCount, 1);
@@ -25,11 +44,13 @@ export function DataTablePagination({
 
   return (
     <div className="flex items-center justify-between gap-4 text-sm">
-      <p className="text-muted-foreground">
-        {totalCount !== undefined && `${totalCount.toLocaleString()} total · `}
-        Page {page} of {lastPage}
+      <p className="text-muted-foreground tabular-nums">
+        {rangeLabel(page, lastPage, rowCount, totalCount)}
       </p>
       <div className="flex items-center gap-1">
+        <span className="mr-2 hidden text-muted-foreground tabular-nums sm:inline">
+          Page {page} of {lastPage}
+        </span>
         <Button
           variant="outline"
           size="icon-sm"

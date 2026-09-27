@@ -27,6 +27,7 @@ export function SearchInput({
       </InputGroupAddon>
       <InputGroupInput
         type="search"
+        data-page-search
         value={value}
         placeholder={placeholder}
         aria-label={placeholder}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { KeyRound, LogOut } from "lucide-react";
+import { Keyboard, KeyRound, LogOut } from "lucide-react";
 import { authQueries, ChangePasswordDialog, useLogout } from "~/features/auth";
 import { Avatar, AvatarFallback } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
@@ -10,22 +10,16 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 import { Skeleton } from "~/components/ui/skeleton";
-
-function initials(name: string | null | undefined) {
-  const parts = (name ?? "").trim().split(/\s+/).filter(Boolean);
-  return parts.length
-    ? parts
-        .slice(0, 2)
-        .map((part) => part[0]?.toUpperCase())
-        .join("")
-    : "A";
-}
+import { initials } from "~/lib/format";
+import { KeyboardShortcuts } from "./keyboard-shortcuts";
 
 export function UserMenu() {
   const [changePasswordOpen, setChangePasswordOpen] = useState(false);
+  const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const profile = useQuery(authQueries.me());
   const logout = useLogout();
   const user = profile.data;
@@ -41,7 +35,7 @@ export function UserMenu() {
           >
             <Avatar className="size-7">
               <AvatarFallback className="text-xs">
-                {initials(user?.name)}
+                {initials(user?.name, "A")}
               </AvatarFallback>
             </Avatar>
             {profile.isPending ? (
@@ -68,6 +62,10 @@ export function UserMenu() {
           <DropdownMenuItem onSelect={() => setChangePasswordOpen(true)}>
             <KeyRound /> Change password
           </DropdownMenuItem>
+          <DropdownMenuItem onSelect={() => setShortcutsOpen(true)}>
+            <Keyboard /> Keyboard shortcuts
+            <DropdownMenuShortcut>?</DropdownMenuShortcut>
+          </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem
             variant="destructive"
@@ -82,6 +80,7 @@ export function UserMenu() {
         open={changePasswordOpen}
         onOpenChange={setChangePasswordOpen}
       />
+      <KeyboardShortcuts open={shortcutsOpen} onOpenChange={setShortcutsOpen} />
     </>
   );
 }
