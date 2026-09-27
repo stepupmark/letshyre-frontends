@@ -2,6 +2,7 @@ import { ThemeToggle } from "~/components/theme-toggle";
 import { Separator } from "~/components/ui/separator";
 import { SidebarTrigger } from "~/components/ui/sidebar";
 import { Breadcrumbs } from "./breadcrumbs";
+import { CommandPalette } from "./command-palette";
 import { UserMenu } from "./user-menu";
 
 export function AppHeader() {
@@ -14,6 +15,7 @@ export function AppHeader() {
       />
       <Breadcrumbs />
       <div className="ml-auto flex items-center gap-1">
+        <CommandPalette />
         <ThemeToggle />
         <UserMenu />
       </div>

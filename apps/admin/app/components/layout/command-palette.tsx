@@ -1,0 +1,259 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import { useQuery } from "@tanstack/react-query";
+import {
+  Briefcase,
+  CreditCard,
+  Moon,
+  Search,
+  Tag,
+  User,
+  type LucideIcon,
+} from "lucide-react";
+import { useTheme } from "~/components/theme-provider";
+import { Button } from "~/components/ui/button";
+import {
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "~/components/ui/command";
+import { navigation } from "~/config/navigation";
+import { candidatesQueries } from "~/features/candidates";
+import { jobsQueries } from "~/features/jobs";
+import { useDebouncedValue } from "~/hooks/use-debounced-value";
+
+type Entry = { label: string; url: string; icon: LucideIcon; hint?: string };
+
+const PAGES: Entry[] = navigation.flatMap((group) =>
+  group.items.flatMap((item) =>
+    item.items
+      ? item.items.map((child) => ({
+          label: child.title,
+          url: child.url,
+          icon: item.icon,
+          hint: item.title,
+        }))
+      : [{ label: item.title, url: item.url, icon: item.icon }],
+  ),
+);
+
+const CREATE: Entry[] = [
+  { label: "New coupon", url: "/dashboard/coupons/new", icon: Tag },
+  {
+    label: "New payment gateway",
+    url: "/dashboard/payment-gateways/new",
+    icon: CreditCard,
+  },
+];
+
+const THEME_ENTRY: Entry = {
+  label: "Toggle dark mode",
+  url: "",
+  icon: Moon,
+  hint: "theme",
+};
+
+const isMac = () =>
+  typeof navigator !== "undefined" &&
+  /Mac|iPhone|iPad/.test(navigator.platform);
+
+const matches = (entry: Entry, query: string) =>
+  `${entry.label} ${entry.hint ?? ""}`
+    .toLowerCase()
+    .includes(query.toLowerCase());
+
+export function CommandPalette() {
+  const navigate = useNavigate();
+  const { toggleTheme } = useTheme();
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const [selected, setSelected] = useState("");
+  const [shortcut] = useState(() => (isMac() ? "⌘K" : "Ctrl K"));
+  const search = useDebouncedValue(query.trim());
+  const searching = search.length >= 2;
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key.toLowerCase() !== "k") return;
+      if (!(event.metaKey || event.ctrlKey) || event.altKey) return;
+      event.preventDefault();
+      setOpen((value) => !value);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  const candidates = useQuery({
+    ...candidatesQueries.list({ page: 1, search }),
+    enabled: open && searching,
+    placeholderData: undefined,
+  });
+  const jobs = useQuery({
+    ...jobsQueries.list({ page: 1, search }),
+    enabled: open && searching,
+    placeholderData: undefined,
+  });
+
+  const go = (url: string) => {
+    setOpen(false);
+    void navigate(url);
+  };
+
+  const onOpenChange = (next: boolean) => {
+    setOpen(next);
+    if (!next) setQuery("");
+  };
+
+  const pages = PAGES.filter((entry) => matches(entry, query));
+  const create = CREATE.filter((entry) => matches(entry, query));
+  const people = searching ? (candidates.data?.results ?? []).slice(0, 5) : [];
+  const jobResults = searching ? (jobs.data?.results ?? []).slice(0, 5) : [];
+  const loading = searching && (candidates.isFetching || jobs.isFetching);
+  const showTheme = matches(THEME_ENTRY, query);
+
+  // cmdk keeps a selection that no longer exists when results change, so fall back to the first item
+  const values = [
+    ...people.map((candidate) => `candidate-${candidate.id}`),
+    ...jobResults.map((job) => `job-${job.id}`),
+    ...pages.map((entry) => `page-${entry.url}`),
+    ...create.map((entry) => `create-${entry.url}`),
+    ...(showTheme ? ["toggle-theme"] : []),
+  ];
+  const active = values.includes(selected) ? selected : (values[0] ?? "");
+
+  return (
+    <>
+      <Button
+        variant="outline"
+        className="hidden h-8 w-56 justify-start gap-2 px-2.5 font-normal text-muted-foreground md:flex"
+        onClick={() => setOpen(true)}
+      >
+        <Search />
+        <span className="flex-1 text-left">Search…</span>
+        <kbd className="rounded border bg-muted px-1.5 font-sans text-[11px] font-medium">
+          {shortcut}
+        </kbd>
+      </Button>
+      <Button
+        variant="ghost"
+        size="icon"
+        aria-label="Search"
+        className="md:hidden"
+        onClick={() => setOpen(true)}
+      >
+        <Search />
+      </Button>
+
+      <CommandDialog
+        open={open}
+        onOpenChange={onOpenChange}
+        title="Search"
+        description="Jump to a page, candidate or job."
+      >
+        <Command
+          shouldFilter={false}
+          value={active}
+          onValueChange={setSelected}
+        >
+          <CommandInput
+            value={query}
+            onValueChange={setQuery}
+            placeholder="Search pages, candidates and jobs…"
+          />
+          <CommandList>
+            <CommandEmpty>
+              {loading ? "Searching…" : "No results found."}
+            </CommandEmpty>
+            {people.length > 0 && (
+              <CommandGroup heading="Candidates">
+                {people.map((candidate) => (
+                  <CommandItem
+                    key={candidate.id}
+                    value={`candidate-${candidate.id}`}
+                    onSelect={() => go(`/dashboard/candidates/${candidate.id}`)}
+                  >
+                    <User />
+                    <span className="truncate">
+                      {candidate.name || "Unnamed"}
+                    </span>
+                    <span className="ml-auto truncate text-xs text-muted-foreground">
+                      {candidate.email}
+                    </span>
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            )}
+            {jobResults.length > 0 && (
+              <CommandGroup heading="Jobs">
+                {jobResults.map((job) => (
+                  <CommandItem
+                    key={job.id}
+                    value={`job-${job.id}`}
+                    onSelect={() => go(`/dashboard/jobs/${job.id}`)}
+                  >
+                    <Briefcase />
+                    <span className="truncate">
+                      {job.title || "Untitled job"}
+                    </span>
+                    <span className="ml-auto truncate text-xs text-muted-foreground">
+                      {job.company_name}
+                    </span>
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            )}
+            {pages.length > 0 && (
+              <CommandGroup heading="Pages">
+                {pages.map((entry) => (
+                  <CommandItem
+                    key={entry.url}
+                    value={`page-${entry.url}`}
+                    onSelect={() => go(entry.url)}
+                  >
+                    <entry.icon />
+                    {entry.label}
+                    {entry.hint && (
+                      <span className="ml-auto text-xs text-muted-foreground">
+                        {entry.hint}
+                      </span>
+                    )}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            )}
+            {(create.length > 0 || showTheme) && (
+              <CommandGroup heading="Actions">
+                {create.map((entry) => (
+                  <CommandItem
+                    key={entry.url}
+                    value={`create-${entry.url}`}
+                    onSelect={() => go(entry.url)}
+                  >
+                    <entry.icon />
+                    {entry.label}
+                  </CommandItem>
+                ))}
+                {showTheme && (
+                  <CommandItem
+                    value="toggle-theme"
+                    onSelect={() => {
+                      toggleTheme();
+                      setOpen(false);
+                    }}
+                  >
+                    <Moon />
+                    {THEME_ENTRY.label}
+                  </CommandItem>
+                )}
+              </CommandGroup>
+            )}
+          </CommandList>
+        </Command>
+      </CommandDialog>
+    </>
+  );
+}

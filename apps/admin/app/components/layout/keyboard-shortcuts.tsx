@@ -8,6 +8,7 @@ import {
 import { useHotkey } from "~/hooks/use-hotkey";
 
 const SHORTCUTS: { keys: string[]; action: string }[] = [
+  { keys: ["Ctrl / ⌘", "K"], action: "Open the command palette" },
   { keys: ["/"], action: "Search this page" },
   { keys: ["J"], action: "Next row" },
   { keys: ["K"], action: "Previous row" },
