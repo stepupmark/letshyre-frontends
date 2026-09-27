@@ -27,10 +27,10 @@ The dev server runs on http://localhost:5173.
 
 ### Environment
 
-| Variable            | Required | Notes                                                                               |
-| ------------------- | -------- | ----------------------------------------------------------------------------------- |
-| `VITE_API_BASE_URL` | yes      | API root, e.g. `https://api.letshyre.com/`. Must be `https` for production builds.  |
-| `MEDIA_ORIGINS`     | no       | Build time only. Hosts allowed in the CSP `img-src`; defaults to any `https:` host. |
+| Variable            | Required | Notes                                                                                                                 |
+| ------------------- | -------- | --------------------------------------------------------------------------------------------------------------------- |
+| `VITE_API_BASE_URL` | yes      | API root, e.g. `https://api.letshyre.com/`. Must be `https` for production builds.                                    |
+| `MEDIA_ORIGINS`     | no       | Build time only. Hosts allowed in the CSP `img-src` and `frame-src` (images and PDFs); defaults to any `https:` host. |
 
 ## Scripts
 

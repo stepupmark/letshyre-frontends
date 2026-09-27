@@ -1,8 +1,7 @@
-import { FileText } from "lucide-react";
 import { DetailList } from "~/components/detail-list";
+import { DocumentList } from "~/components/document-viewer";
 import { ExternalLink } from "~/components/external-link";
 import { SensitiveValue } from "~/components/sensitive-value";
-import { Button } from "~/components/ui/button";
 import {
   Card,
   CardContent,
@@ -12,6 +11,7 @@ import {
 } from "~/components/ui/card";
 import { Copyable } from "~/components/copyable";
 import { safeExternalUrl } from "~/lib/safe-url";
+import { kycDocuments } from "../documents";
 import type { CompanyKyc } from "../schemas/kyc.schema";
 
 function WebLink({ href }: { href: string | null | undefined }) {
@@ -32,15 +32,13 @@ function WebLink({ href }: { href: string | null | undefined }) {
   );
 }
 
-export function CompanyKycDetails({ kyc }: { kyc: CompanyKyc }) {
-  const documents = [
-    { label: "Registration certificate", url: kyc.registration_certificate },
-    { label: "GST certificate", url: kyc.gst_certificate },
-    { label: "Address proof", url: kyc.address_proof },
-    { label: "Authorised ID proof", url: kyc.authorized_id_proof },
-    { label: "Bank proof", url: kyc.bank_proof },
-  ];
-
+export function CompanyKycDetails({
+  kyc,
+  showDocuments = true,
+}: {
+  kyc: CompanyKyc;
+  showDocuments?: boolean;
+}) {
   return (
     <>
       <Card>
@@ -107,36 +105,19 @@ export function CompanyKycDetails({ kyc }: { kyc: CompanyKyc }) {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Documents</CardTitle>
-        </CardHeader>
-        <CardContent className="grid gap-2 sm:grid-cols-2">
-          {documents.map((doc) => (
-            <div
-              key={doc.label}
-              className="flex items-center justify-between gap-3 rounded-lg border px-3 py-2"
-            >
-              <span className="flex items-center gap-2 text-sm">
-                <FileText className="size-4 text-muted-foreground" />
-                {doc.label}
-              </span>
-              <Button variant="outline" size="sm" asChild>
-                <ExternalLink
-                  href={doc.url}
-                  fallback={
-                    <span className="text-xs text-muted-foreground">
-                      {doc.url ? "Invalid link" : "Not uploaded"}
-                    </span>
-                  }
-                >
-                  View
-                </ExternalLink>
-              </Button>
-            </div>
-          ))}
-        </CardContent>
-      </Card>
+      {showDocuments && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Documents</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <DocumentList
+              documents={kycDocuments(kyc)}
+              className="sm:grid-cols-2"
+            />
+          </CardContent>
+        </Card>
+      )}
     </>
   );
 }

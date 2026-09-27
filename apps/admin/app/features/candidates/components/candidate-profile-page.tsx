@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
 import { Link, useParams } from "react-router";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowLeft, FileText } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { DetailList } from "~/components/detail-list";
+import { DocumentList } from "~/components/document-viewer";
 import { ExternalLink } from "~/components/external-link";
 import { ErrorState } from "~/components/feedback/error-state";
 import { SensitiveValue } from "~/components/sensitive-value";
@@ -237,31 +238,7 @@ function Profile({ profile }: { profile: CandidateProfile }) {
         </Section>
 
         <Section title="Documents">
-          <div className="grid gap-2">
-            {documents.map((doc) => (
-              <div
-                key={doc.label}
-                className="flex items-center justify-between gap-3 rounded-lg border px-3 py-2"
-              >
-                <span className="flex items-center gap-2 text-sm">
-                  <FileText className="size-4 text-muted-foreground" />
-                  {doc.label}
-                </span>
-                <Button variant="outline" size="sm" asChild>
-                  <ExternalLink
-                    href={doc.url}
-                    fallback={
-                      <span className="text-xs text-muted-foreground">
-                        {doc.url ? "Invalid link" : "Not uploaded"}
-                      </span>
-                    }
-                  >
-                    View
-                  </ExternalLink>
-                </Button>
-              </div>
-            ))}
-          </div>
+          <DocumentList documents={documents} />
         </Section>
       </div>
     </div>

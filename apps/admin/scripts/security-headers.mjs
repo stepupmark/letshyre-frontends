@@ -21,7 +21,7 @@ function scriptHashes(html) {
 function contentSecurityPolicy(html) {
   const env = { ...loadEnv("production", process.cwd(), ""), ...process.env };
   const apiOrigin = new URL(env.VITE_API_BASE_URL).origin;
-  // where profile photos and logos are hosted; any https host until it's pinned
+  // where photos, logos and KYC documents are hosted; any https host until it's pinned
   const mediaOrigins = env.MEDIA_ORIGINS || "https:";
 
   return [
@@ -29,6 +29,7 @@ function contentSecurityPolicy(html) {
     `script-src 'self' ${scriptHashes(html).join(" ")}`,
     "style-src 'self' 'unsafe-inline'",
     `img-src 'self' data: ${mediaOrigins}`,
+    `frame-src ${mediaOrigins}`,
     "font-src 'self'",
     `connect-src 'self' ${apiOrigin}`,
     "object-src 'none'",
