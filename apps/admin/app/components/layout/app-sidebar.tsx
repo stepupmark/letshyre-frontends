@@ -89,9 +89,15 @@ export function AppSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <Link to="/dashboard">
-                <img src="/letshyre.png" alt="" className="size-8 rounded-md" />
-                <span className="font-semibold">LetsHyre Admin</span>
+              <Link to="/dashboard" aria-label="LetsHyre dashboard">
+                {/* collapsed, only the "L" of the wordmark is shown */}
+                <span className="overflow-hidden group-data-[collapsible=icon]:mx-auto group-data-[collapsible=icon]:w-2.5">
+                  <img
+                    src="/letshyre.png"
+                    alt=""
+                    className="h-6 w-auto max-w-none"
+                  />
+                </span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
