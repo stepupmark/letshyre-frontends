@@ -227,7 +227,7 @@ pnpm dlx shadcn@4.21.1 add button badge card separator navigation-menu sheet dro
 
 **Now (local):**
 
-- Root script `pnpm verify` = `turbo run lint typecheck test build` → `pnpm ui:drift` → `pnpm knip` → `turbo run test:e2e --filter marketing`. This is the same gate CI will run, and I run it before every commit.
+- Root script `pnpm verify` = `turbo run lint typecheck build` → `turbo run test --concurrency=1` → `pnpm ui:drift` → `pnpm knip` → `turbo run test:e2e`. Tests run on their own, one package at a time: under full parallel load the legacy suite times out. This is the same gate CI runs.
 - lefthook (step 1.2) enforces format + lint on commit and typecheck on push, so the rules hold even without CI.
 
 **Committed but dormant until a GitHub remote exists:** `.github/workflows/ci.yml`

@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main, "migration/**"]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  VITE_ENV: development
+  VITE_SITE_URL: http://localhost:4173
+  VITE_APP_URL: http://localhost:5180
+  VITE_API_BASE_URL: https://api.letshyre.ai
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - uses: actions/cache@v4
+        with:
+          path: .turbo/cache
+          key: turbo-${{ runner.os }}-${{ github.sha }}
+          restore-keys: turbo-${{ runner.os }}-
+
+      - run: pnpm turbo run lint typecheck build --cache-dir=.turbo/cache
+
+      - run: pnpm turbo run test --concurrency=1 --cache-dir=.turbo/cache
+
+      - run: pnpm ui:drift
+
+      - run: pnpm knip
+
+      - name: Playwright browsers
+        run: pnpm --filter marketing exec playwright install --with-deps chromium webkit
+
+      - run: pnpm turbo run test:e2e --cache-dir=.turbo/cache
+
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: apps/marketing/playwright-report
+          retention-days: 7

@@ -17,7 +17,8 @@
     "check": "turbo run lint typecheck test",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "ui:drift": "node tooling/ui-drift.ts"
+    "ui:drift": "node tooling/ui-drift.ts",
+    "verify": "turbo run lint typecheck build && turbo run test --concurrency=1 && pnpm ui:drift && pnpm knip && turbo run test:e2e"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.3",
