@@ -1,6 +1,6 @@
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { Button } from "@workspace/ui/components/button"
+import { buttonVariants } from "@workspace/ui/components/button"
 import { Link } from "react-router"
 
 export function InterviewCta() {
@@ -21,13 +21,12 @@ export function InterviewCta() {
       <p className="max-w-xl text-pretty text-muted-foreground">
         {t("cta.desc")}
       </p>
-      <Button
-        size="lg"
-        nativeButton={false}
-        render={<Link to={localePath(lang, "/download")} />}
+      <Link
+        to={localePath(lang, "/download")}
+        className={buttonVariants({ size: "lg" })}
       >
         {t("cta.button")}
-      </Button>
+      </Link>
     </section>
   )
 }

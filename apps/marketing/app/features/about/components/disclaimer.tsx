@@ -1,6 +1,6 @@
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { Button } from "@workspace/ui/components/button"
+import { buttonVariants } from "@workspace/ui/components/button"
 import { Link } from "react-router"
 
 import { Container } from "@/components/section"
@@ -24,13 +24,12 @@ export function Disclaimer() {
         <p className="max-w-3xl text-pretty text-muted-foreground">
           {t("commitment.body")}
         </p>
-        <Button
-          variant="outline"
-          nativeButton={false}
-          render={<Link to={localePath(lang, "/contact")} />}
+        <Link
+          to={localePath(lang, "/contact")}
+          className={buttonVariants({ variant: "outline" })}
         >
           {t("commitment.contactUs")}
-        </Button>
+        </Link>
       </section>
     </Container>
   )
