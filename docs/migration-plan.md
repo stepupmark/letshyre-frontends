@@ -55,7 +55,7 @@
 
 | # | Question | Needed by |
 |---|---|---|
-| O1 | This folder **is not a git repository**. Is it a download of the GitHub repo? Work must happen on a branch of the real repo (clone it, preferably **outside OneDrive**: see risk R7). | Phase 0 |
+| O1 | ✅ Resolved: work happens in this folder (OneDrive sync is off for it). Git initialized: `main` holds the legacy snapshot (tag `legacy-baseline`) plus this plan. Work continues on `migration/monorepo`. Still to do: add a GitHub remote before CI (implementation step 1.9). | Phase 0 |
 | O2 | **Cookie consent** for Meta Pixel. 6+ of the 19 locales target EU visitors, and India's DPDP Act also applies. Recommendation: a consent banner, with the pixel loading only after opt-in. | Phase 4 |
 | O3 | **Backend:** CORS for `app.letshyre.ai`. Meta **Conversions API** (server-side) for `Purchase` / `CompleteRegistration` so the app needs no third-party pixel. Is an **OpenAPI schema** available (drf-spectacular)? httpOnly refresh-cookie roadmap. | Phase 5 |
 | O4 | Who **approves new marketing copy**? Which **translation workflow** (TMS such as Tolgee/Crowdin/Lokalise, or vendor files)? | Phase 3 / 4 |
@@ -388,7 +388,7 @@ Estimates assume one experienced engineer. Each phase ends with an exit review.
 
 ### Phase 0: Preparation (1–2 days)
 
-- [ ] Resolve O1: work in a clone of the real repo **outside OneDrive** (`C:\dev\letshyre`). Branch `migration/monorepo`. Tag `legacy-baseline`.
+- [x] Git initialized in place. `main` = legacy snapshot (tag `legacy-baseline`) + plan. Branch `migration/monorepo` created.
 - [ ] **Baseline capture:** crawl every sitemap URL in production. Store status, title, description, canonical, hreflang set, OG tags and JSON-LD per URL as `baseline/seo.json`. Lighthouse baseline for 11 URLs. Export GA/Search Console top pages by locale (to prioritise translations).
 - [ ] **Content inventory:** a per-page list of current copy keys, flagging *keep*, *rewrite* or *drop* (e.g. drop unverifiable stats).
 - [ ] **URL & redirect map:** marketing (unchanged), app paths (→ subdomain in Phase 7), pricing `?checkout=` → `app/employer/billing?checkout=`.
@@ -489,7 +489,7 @@ Delete `apps/legacy` and the interim nginx routes. Archive old scripts. Write AD
 | R4 | Session loss when the app moves to a subdomain | Planned one-time re-login with notice. Interim phase keeps the same origin, so marketing launch causes no logouts. |
 | R5 | Pricing → checkout handoff breaks during the interim | Legacy `/employer/billing` patch ships in the same release as the new marketing. E2E covers the handoff. |
 | R6 | Meta Pixel compliance (EU/DPDP) | Consent gate (O2). App uses server-side CAPI. |
-| R7 | **Repo inside OneDrive**: sync thrash and file locks on `node_modules` and pnpm hard links in a monorepo | Clone to a non-synced path (`C:\dev\letshyre`). Excluding the folder from OneDrive is not enough. |
+| R7 | Repo lives under the OneDrive folder | Sync is off for this folder (confirmed). If sync is ever re-enabled, pause it during installs/builds or move the repo, since pnpm hard links and `node_modules` churn cause file locks. |
 | R8 | Fonts: Outfit (CLI default) covers Latin only | Browser fallback renders Devanagari, Tamil, Telugu, Kannada, Malayalam, Bengali, Arabic, Urdu, CJK and Cyrillic with system fonts. Visual QA per script in Phase 4. Any change goes through `shadcn apply`, not hand edits. |
 | R9 | Scope creep in Phase 6 (16+ screens) | One feature per PR with fixed exit criteria. Legacy remains the fallback until Phase 7. |
 
