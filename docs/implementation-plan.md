@@ -13,9 +13,10 @@
 |---|---|
 | Branch | `migration/monorepo` (created from `main`; `main` = legacy baseline + plan, tag `legacy-baseline`) |
 | Unit of work | One step = one commit, Conventional Commits (`feat(marketing): …`, `chore(repo): …`). Once a GitHub remote exists, one step = one PR into `migration/monorepo`. |
+| CI / CD | **CI runs locally for now** (git hooks + `pnpm check` / `pnpm test:e2e`). The GitHub Actions workflow is committed but only runs once a remote exists. **CD is deferred** until hosting is decided (no EC2 yet): deploy scripts are written but not wired up. |
 | Green rule | Every commit leaves `pnpm check` (lint + typecheck + test) and `pnpm build` passing. The legacy app keeps building at every step. |
 | Review gates | 🔵 = I stop and you review before continuing (3 gates in total). |
-| Local env | Node 24.19 ✅ · pnpm 10.20 ✅ (pinned, upgrade later in its own PR) · Docker ✗ (nginx tests run in CI only; optional: install Docker Desktop to run them locally) |
+| Local env | Node 24.19 ✅ · pnpm 10.20 ✅ (pinned, upgrade later in its own PR) · Docker ✗ (nginx config tests are skipped locally until Docker Desktop is installed or CI runs on GitHub) |
 | Code snippets below | Show the **shape** to implement. Final code is verified against the installed versions at implementation time. |
 
 ### Step overview
@@ -34,7 +35,7 @@
 | 1.6 | `apps/marketing` skeleton | 0.5 d | |
 | 1.7 | shadcn component set | 0.25 d | |
 | 1.8 | Test harness (Vitest, Playwright, knip) | 0.5 d | |
-| 1.9 | CI workflow | 0.5 d | |
+| 1.9 | Local CI (`pnpm verify`) + dormant GitHub workflow | 0.5 d | |
 | 2.1 | `@workspace/i18n` | 1.5 d | |
 | 2.2 | `@workspace/api` | 1 d | |
 | 2.3 | `@workspace/analytics` | 0.5 d | |
@@ -51,7 +52,7 @@
 | 4.4 | Security headers + CSP | 1 d | |
 | 4.5 | Legacy patch: `/employer/billing` | 0.5 d | |
 | 4.6 | nginx interim config + CI test | 1 d | |
-| 4.7 | Deploy + rollback scripts | 1 d | |
+| 4.7 | Deploy + rollback scripts (**CD deferred**) | 1 d | |
 | 4.8 | Staging → UAT → production → monitor | 2 d + 7 d monitor | |
 
 **Total ≈ 5–6 weeks of engineering**, plus review turnaround and the translation batch.
@@ -63,7 +64,7 @@
 ### 0.1 Git baseline ✅ (done)
 `git init -b main` → `663120e` legacy snapshot (tag `legacy-baseline`) → `758f28f` migration plan → branch `migration/monorepo`. `.gitattributes` pins LF (Git for Windows has `core.autocrlf=true` system-wide).
 
-**Recommended (you):** create the GitHub repo and add it as a remote: `git remote add origin <url>` and `git push -u origin main migration/monorepo --follow-tags`. CI (step 1.9) needs it.
+**Later (you):** when you create the GitHub repo, add it as a remote (`git remote add origin <url>`, then `git push -u origin main migration/monorepo --follow-tags`). The committed workflow (step 1.9) starts running then. Until that point, everything runs locally.
 
 ### 0.2 SEO + Lighthouse baseline
 - `tooling/baseline/capture-seo.ts` (run with `node`; Node 24 strips TS types natively):
@@ -207,12 +208,17 @@ pnpm dlx shadcn@4.21.1 add button badge card separator navigation-menu sheet dro
 - Playwright in `apps/marketing/e2e/`: `playwright.config.ts` builds, then serves `build/client` with a tiny static server that mimics nginx (`e2e/serve.ts`: trailing-slash redirect, `/:lang/<page>/index.html` resolution, 404.html). Projects: chromium, webkit, mobile-chrome. First spec: `/en` renders, has `lang="en"`, `h1`, and passes axe.
 - `knip.json` at the root (workspaces aware, ignore `apps/legacy`).
 
-### 1.9 CI (`.github/workflows/ci.yml`)
+### 1.9 Local CI + dormant GitHub workflow
+**Now (local):**
+- Root script `pnpm verify` = `turbo run lint typecheck test build` → `pnpm ui:drift` → `pnpm knip` → `turbo run test:e2e --filter marketing`. This is the same gate CI will run, and I run it before every commit.
+- lefthook (step 1.2) enforces format + lint on commit and typecheck on push, so the rules hold even without CI.
+
+**Committed but dormant until a GitHub remote exists:** `.github/workflows/ci.yml`
 - Trigger on PR and push to `main` / `migration/**`.
 - Jobs: `verify` (pnpm store cache + Turbo cache → `turbo run lint typecheck test build --affected` → `pnpm ui:drift` → `pnpm knip`) → `e2e` (Playwright browsers cached, `turbo run test:e2e --filter marketing`, upload report artifact). The `nginx` job is added in 4.6.
 - Concurrency group per ref. Node from `.nvmrc`.
 
-**Exit:** a green run on GitHub (needs the remote from 0.1).
+**Exit:** `pnpm verify` green locally. The workflow file passes `actionlint`.
 
 ---
 
@@ -427,9 +433,11 @@ In `apps/legacy` only (minimal, tested):
 - `/assets/` → marketing first, then `@legacy_assets` (hash-named, no collisions), `immutable`.
 - `/(employer|employee|get-started|forgot-password|shared-scorecard)(/|$)` → `legacy/current/index.html` + `X-Robots-Tag: noindex, nofollow`.
 - `error_page 404 /404/index.html`.
-- **CI job `nginx`:** `nginx:stable` container with both builds mounted. A curl-based test script asserts every rule above (ported from `verify-live.mjs` checks).
+- **nginx test:** `infra/nginx/test/run.sh` starts an `nginx:stable` container with both builds mounted, and a curl-based script asserts every rule above (ported from `verify-live.mjs` checks). It runs in the GitHub workflow, or locally once Docker Desktop is installed. Until then, the Playwright static server (step 1.8) covers the same redirect and fallback rules.
 
-### 4.7 Deploy + rollback
+### 4.7 Deploy + rollback (CD deferred)
+> **Deferred:** there is no EC2 (or other host) yet. The scripts below get written and reviewed, but stay unwired until hosting is decided (O5). The marketing build is plain static files, so if you pick S3 + CloudFront, Cloudflare Pages or Netlify instead, only this step changes.
+
 `tooling/deploy/`:
 - `deploy.sh <app> <artifact.tgz> <sha>`: upload to `/var/www/letshyre/<app>/releases/<sha>/`, rsync `assets/` into the shared `/var/www/letshyre/<app>/assets/` (no delete), atomically swap `current` (`ln -sfn` + `mv -T`), `nginx -t && nginx -s reload`, keep the last 5 releases, prune shared assets older than 30 days.
 - `rollback.sh <app> [sha]`: re-point `current` to the previous (or given) release and reload.
@@ -450,11 +458,11 @@ In `apps/legacy` only (minimal, tested):
 
 | Need | By step |
 |---|---|
-| GitHub remote for this repo | 1.9 |
+| GitHub remote for this repo (optional; until then CI runs locally) | anytime |
 | Approve content decisions + URL contract | 0.4 (Gate 1) |
 | Logo as SVG | 2.4 |
 | Approve visual direction | 3.2 (Gate 2) |
 | Approve full English site | 3.14 (Gate 3) |
 | O2: consent banner yes/no | 4.4 |
 | O4: who translates, and how | 4.8 |
-| Server SSH access + staging hostnames | 4.7 |
+| Hosting decision (EC2 or static host) + staging hostnames, needed to un-defer CD | before 4.8 |
