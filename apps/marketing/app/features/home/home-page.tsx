@@ -1,10 +1,19 @@
-import { useTranslation } from "@workspace/i18n/react"
-
-import { PageHeader } from "@/components/section"
+import { FinalCta } from "./components/final-cta"
+import { ForCandidates } from "./components/for-candidates"
+import { Hero } from "./components/hero"
+import { HomeFaq } from "./components/home-faq"
+import { HowItWorks } from "./components/how-it-works"
+import { PricingTeaser } from "./components/pricing-teaser"
 
 export function HomePage() {
-  const { t } = useTranslation("home")
   return (
-    <PageHeader title={t("meta.name")} description={t("meta.description")} />
+    <>
+      <Hero />
+      <HowItWorks />
+      <ForCandidates />
+      <PricingTeaser />
+      <HomeFaq />
+      <FinalCta />
+    </>
   )
 }

@@ -2,6 +2,7 @@ import AxeBuilder from "@axe-core/playwright"
 import { expect, test } from "@playwright/test"
 
 import { PAGES } from "../app/lib/pages.ts"
+import { mockApi } from "./mock-api.ts"
 
 const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
 
@@ -20,6 +21,7 @@ for (const [id, page] of Object.entries(PAGES)) {
     tab.on("console", (msg) => {
       if (msg.type() === "error") errors.push(msg.text())
     })
+    await mockApi(tab)
     await tab.goto(url)
     await expect(tab.locator("html")).toHaveAttribute("lang", "en")
     await expect(tab.getByRole("heading", { level: 1 })).toHaveCount(1)
