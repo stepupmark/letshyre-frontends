@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "Plateforme de recrutement et d'entretien IA | letshyre.ai",
+    "description": "Tri des CV, entretiens IA structurés et vérification des candidats au même endroit. Pensé pour recruter des profils déjà en préavis.",
+    "name": "LetsHyre — plateforme de recrutement IA pour talents en préavis",
+    "schemaDescription": "Plateforme de recrutement basée sur l'IA qui automatise le tri des CV, les entretiens IA et la vérification des candidats."
+  },
+  "hero": {
+    "title": "La plateforme de recrutement IA pour <hl>les talents en préavis</hl>",
+    "ctaHiring": "Je recrute",
+    "ctaJob": "Je cherche un emploi",
+    "tagline": {
+      "stop": "Arrêtez de trier.",
+      "start": "Commencez à présélectionner."
+    }
+  },
+  "assistance": {
+    "ariaLabel": "Comment ça marche",
+    "steps": {
+      "post": {
+        "pill": "Publiez votre offre",
+        "heading": "Définissez le poste,<br/><hl>l'IA fait le reste</hl>"
+      },
+      "screen": {
+        "pill": "Tri par IA",
+        "heading": "Des entretiens 24/7,<br/><hl>sans contrainte de planning</hl>"
+      },
+      "scorecards": {
+        "pill": "Recevez les évaluations",
+        "heading": "Des données brutes transformées en<br/><hl>recommandations claires</hl>"
+      }
+    }
+  },
+  "faq": {
+    "title": "FAQ : Recrutement IA et préavis",
+    "subtitle": "Tout ce que vous devez savoir sur la plateforme de recrutement IA de LetsHyre.",
+    "items": [
+      {
+        "q": "Comment fonctionne la plateforme de recrutement IA de LetsHyre ?",
+        "a": "LetsHyre analyse instantanément les CV, mène des entretiens IA interactifs pour évaluer les compétences en communication et techniques, et fournit une évaluation vérifiée afin que vous ne consacriez du temps qu'aux meilleurs candidats."
+      },
+      {
+        "q": "Qu'est-ce qui distingue LetsHyre des autres plateformes de recrutement ?",
+        "a": "Contrairement aux sites d'emploi traditionnels, LetsHyre automatise l'ensemble du processus de tri. Notre IA vérifie les compétences en temps réel avant même que vous ne voyiez le candidat, réduisant considérablement votre délai de recrutement."
+      },
+      {
+        "q": "Quelle est la précision de l'évaluation par entretien IA ?",
+        "a": "Nos modèles d'IA sont entraînés sur des millions de points de données pour évaluer la communication, les compétences techniques et l'adéquation culturelle avec plus de 98 % de précision, garantissant une notation équitable et impartiale."
+      },
+      {
+        "q": "Que vérifie la détection d'objets par vidéo IA ?",
+        "a": "Notre système anti-triche avancé surveille le suivi oculaire, détecte plusieurs visages et recherche les appareils non autorisés comme les téléphones ou les écrans secondaires pendant l'évaluation."
+      },
+      {
+        "q": "Les candidats en préavis sont-ils vérifiés ?",
+        "a": "Oui, nous priorisons et vérifions les candidats en préavis afin que vous puissiez constituer votre équipe jusqu'à 40 % plus vite avec des talents prêts à rejoindre immédiatement."
+      },
+      {
+        "q": "Quelles informations l'évaluation IA inclut-elle ?",
+        "a": "L'évaluation fournit une analyse complète du score de potentiel du candidat, de son score d'adéquation, de ses points forts techniques, de ses axes d'amélioration et d'une analyse comportementale détaillée."
+      },
+      {
+        "q": "Puis-je intégrer LetsHyre à nos systèmes RH existants ?",
+        "a": "Absolument ! LetsHyre s'intègre parfaitement aux plateformes ATS et SIRH populaires via notre API sécurisée, pour que votre flux de recrutement reste ininterrompu."
+      }
+    ]
+  },
+  "hireCard": {
+    "title": "Prêt à recruter ou à être recruté ?",
+    "startHiring": "Commencer à recruter",
+    "applyJob": "Postuler à un emploi"
+  },
+  "chatbot": {
+    "title": "Assistant LetsHyre",
+    "launcherAria": "Ouvrir l'assistant de discussion"
+  }
+}

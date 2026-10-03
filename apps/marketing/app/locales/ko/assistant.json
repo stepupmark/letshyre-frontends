@@ -1,0 +1,26 @@
+{
+  "chatbot": {
+    "subtitle": "무엇이든 물어보세요",
+    "inputPlaceholder": "질문을 입력하세요…",
+    "send": "전송",
+    "sendAria": "메시지 보내기",
+    "thinking": "생각 중…",
+    "you": "나",
+    "assistant": "어시스턴트",
+    "retry": "다시 시도",
+    "errorMessage": "문제가 발생했습니다. 다시 시도해 주세요.",
+    "clear": "지우기",
+    "messagesLabel": "채팅 메시지",
+    "closeAria": "채팅 닫기",
+    "empty": {
+      "greeting": "안녕하세요! 저는 LetsHyre 어시스턴트입니다.",
+      "hint": "LetsHyre에 대해 무엇이든 물어보세요. 아래 질문을 시도해 보세요:",
+      "prompts": {
+        "what": "LetsHyre는 무엇인가요?",
+        "scorecard": "기업 입장에서는 어떻게 작동하나요?",
+        "applications": "구직자 입장에서는 어떻게 작동하나요?",
+        "interview": "무료로 시작할 수 있나요?"
+      }
+    }
+  }
+}

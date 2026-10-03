@@ -1,3 +1,12 @@
 {
-  "assistant:chatbot.*": "home:chatbot.*"
+  "assistant:chatbot.*": "home:chatbot.*",
+  "common:nav.about": "about:meta.crumb",
+  "common:footer.candidates": "dashboard:tour.steps.candidates.title",
+  "common:error.title": "common:pageState.generic.title",
+  "common:error.body": "common:pageState.generic.body",
+  "common:error.retry": "employer:states.retry",
+  "common:error.goHome": "common:notFound.goHome",
+  "legalTerms:chrome.*": "legal:chrome.*",
+  "legalPolicy:chrome.*": "legal:chrome.*",
+  "legalRefund:chrome.*": "legal:chrome.*"
 }

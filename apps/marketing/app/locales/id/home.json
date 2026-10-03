@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "Platform Rekrutmen dan Wawancara AI | letshyre.ai",
+    "description": "Penyaringan CV, wawancara AI terstruktur, dan verifikasi kandidat dalam satu tempat. Untuk tim yang merekrut kandidat dalam masa pemberitahuan.",
+    "name": "LetsHyre — Platform Perekrutan AI untuk Talenta Notice Period",
+    "schemaDescription": "Platform perekrutan bertenaga AI yang mengotomatisasi penyaringan resume, wawancara AI, dan verifikasi kandidat."
+  },
+  "hero": {
+    "title": "Platform Perekrutan AI untuk <hl>Talenta Notice Period</hl>",
+    "ctaHiring": "Saya Sedang Merekrut",
+    "ctaJob": "Saya Sedang Mencari Kerja",
+    "tagline": {
+      "stop": "Berhenti menyaring.",
+      "start": "Mulai menyusun daftar pendek."
+    }
+  },
+  "assistance": {
+    "ariaLabel": "Cara kerja",
+    "steps": {
+      "post": {
+        "pill": "Pasang lowongan Anda",
+        "heading": "Tentukan perannya,<br/><hl>biarkan AI yang mengurus sisanya</hl>"
+      },
+      "screen": {
+        "pill": "Penyaringan AI",
+        "heading": "Wawancara 24/7,<br/><hl>tanpa hambatan penjadwalan</hl>"
+      },
+      "scorecards": {
+        "pill": "Terima Scorecard",
+        "heading": "Data mentah diubah menjadi<br/><hl>rekomendasi yang jelas</hl>"
+      }
+    }
+  },
+  "faq": {
+    "title": "FAQ: Perekrutan AI & Notice Period",
+    "subtitle": "Semua yang perlu Anda ketahui tentang platform perekrutan bertenaga AI LetsHyre.",
+    "items": [
+      {
+        "q": "Bagaimana cara kerja platform perekrutan AI LetsHyre?",
+        "a": "LetsHyre langsung menguraikan resume, melakukan wawancara AI interaktif untuk menilai komunikasi dan keterampilan teknis, dan menyediakan scorecard terverifikasi sehingga Anda hanya perlu meluangkan waktu untuk kandidat terbaik."
+      },
+      {
+        "q": "Apa yang membedakan LetsHyre dari platform perekrutan lainnya?",
+        "a": "Berbeda dengan situs lowongan kerja tradisional, LetsHyre mengotomatisasi seluruh proses penyaringan. AI kami memverifikasi keterampilan secara real-time bahkan sebelum Anda melihat kandidatnya, sehingga secara drastis mengurangi waktu perekrutan Anda."
+      },
+      {
+        "q": "Seberapa akurat evaluasi wawancara AI?",
+        "a": "Model AI kami dilatih dengan jutaan data untuk mengevaluasi komunikasi, kemahiran teknis, dan kesesuaian budaya dengan akurasi lebih dari 98%, memastikan penilaian yang adil dan tidak bias."
+      },
+      {
+        "q": "Apa yang diperiksa oleh Deteksi Objek video AI?",
+        "a": "Sistem anti-kecurangan canggih kami memantau pergerakan mata, mendeteksi banyak wajah, dan memeriksa perangkat yang tidak sah seperti ponsel atau monitor tambahan selama penilaian berlangsung."
+      },
+      {
+        "q": "Apakah kandidat notice period terverifikasi?",
+        "a": "Ya, kami memprioritaskan dan memverifikasi kandidat notice period sehingga Anda dapat membangun tim hingga 40% lebih cepat dengan talenta yang siap bergabung segera."
+      },
+      {
+        "q": "Informasi apa saja yang tercakup dalam scorecard AI?",
+        "a": "Scorecard menyajikan rincian lengkap Skor Potensi, Skor Kecocokan, kekuatan teknis, area yang perlu ditingkatkan, dan analisis perilaku yang mendetail dari kandidat."
+      },
+      {
+        "q": "Bisakah saya mengintegrasikan LetsHyre dengan sistem HR kami yang sudah ada?",
+        "a": "Tentu saja! LetsHyre terintegrasi dengan mulus dengan platform ATS dan HRIS populer melalui API kami yang aman, sehingga alur kerja perekrutan Anda tetap berjalan tanpa hambatan."
+      }
+    ]
+  },
+  "hireCard": {
+    "title": "Siap untuk Merekrut atau Direkrut?",
+    "startHiring": "Mulai Merekrut",
+    "applyJob": "Lamar Pekerjaan"
+  },
+  "chatbot": {
+    "title": "Asisten LetsHyre",
+    "launcherAria": "Buka asisten obrolan"
+  }
+}

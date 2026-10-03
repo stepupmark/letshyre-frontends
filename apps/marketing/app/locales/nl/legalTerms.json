@@ -1,0 +1,428 @@
+{
+  "terms": {
+    "title": "Algemene Voorwaarden",
+    "intro": "Door LetsHyre (\"LetsHyre\", \"wij\", \"ons\" of \"onze\") te openen of te gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Algemene Voorwaarden. Indien u niet akkoord gaat met deze Voorwaarden, verzoeken wij u het platform niet te gebruiken.",
+    "sections": [
+      {
+        "id": "platform-overview",
+        "title": "1. Platformoverzicht",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre is een AI-gestuurd wervingsplatform dat werkgevers helpt ervaren professionals te ontdekken via:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Screening van cv's",
+              "Op functie gebaseerde AI-interviews",
+              "Interviewscorecards",
+              "Transparantie van interviews",
+              "Screening van kandidaten"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre is ontworpen om het wervingsproces te stroomlijnen door werkgevers in staat te stellen kandidaten te beoordelen via AI-ondersteunde interviews en gestructureerde interview-inzichten."
+          }
+        ]
+      },
+      {
+        "id": "eligibility",
+        "title": "2. Geschiktheid",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "2.1 Geschiktheid van kandidaten"
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre is uitsluitend bedoeld voor ervaren professionals die op zoek zijn naar werkgelegenheid. Om LetsHyre als kandidaat te gebruiken, dient u:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Eerdere professionele werkervaring te hebben.",
+              "Actief op zoek te zijn naar werkgelegenheid.",
+              "Direct beschikbaar te zijn of een opzegtermijn te doorlopen.",
+              "Nauwkeurige, volledige en waarheidsgetrouwe professionele informatie te verstrekken."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Starters, studenten, stagiairs en kandidaten zonder eerdere professionele werkervaring komen mogelijk niet in aanmerking voor bepaalde kandidaatdiensten die op het platform beschikbaar zijn."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre behoudt zich het recht voor om kandidaatprofielen die niet aansluiten bij het beoogde doel van het platform te beoordelen, te beperken, op te schorten of te verwijderen."
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "subheading",
+            "text": "2.2 Geschiktheid van werkgevers:"
+          },
+          {
+            "type": "p",
+            "text": "Werkgevers, recruiters, hiring managers en bevoegde vertegenwoordigers van organisaties mogen het platform gebruiken voor legitieme wervings- en aanwervingsdoeleinden."
+          },
+          {
+            "type": "p",
+            "text": "Werkgevers dienen nauwkeurige bedrijfsinformatie te verstrekken en te voldoen aan alle toepasselijke arbeids- en wervingswetgeving."
+          }
+        ]
+      },
+      {
+        "id": "candidate-responsibilities",
+        "title": "3. Verantwoordelijkheden van kandidaten",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Kandidaten gaan ermee akkoord dat:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Alle verstrekte informatie nauwkeurig en waarheidsgetrouw is.",
+              "Cv's, werkervaring, kwalificaties en ervaringsgegevens authentiek zijn.",
+              "AI-interviews eerlijk en zonder identiteitsfraude worden afgerond.",
+              "Alle tijdens interviews verstrekte informatie hun daadwerkelijke professionele ervaring en vaardigheden weerspiegelt.",
+              "Zij geen meerdere misleidende profielen zullen aanmaken of zich zullen bezighouden met frauduleuze activiteiten."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre behoudt zich het recht voor om profielen op te schorten of te verwijderen die valse, misleidende of frauduleuze informatie bevatten."
+          }
+        ]
+      },
+      {
+        "id": "profile-availability",
+        "title": "4. Beschikbaarheid van profielen",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Om een talentenpool van hoge kwaliteit en actieve beschikbaarheid te behouden, blijven kandidaatprofielen tot 90 dagen na de datum van aanmaak actief op het platform."
+          },
+          {
+            "type": "p",
+            "text": "Kandidaten kunnen hun profielinformatie gedurende deze periode bijwerken en deelnemen aan aanvullende AI-interviews, inclusief herkansingen voor dezelfde functie of interviews voor andere functies, in overeenstemming met het platformbeleid."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre kan kandidaten toestaan tot drie interviewpogingen te voltooien om hun interviewscorecards, profielsterkte en zichtbaarheid voor werkgevers te verbeteren."
+          },
+          {
+            "type": "p",
+            "text": "Na het verstrijken van de periode van 90 dagen kunnen kandidaatprofielen permanent worden verwijderd uit de actieve kandidatenpool van LetsHyre."
+          },
+          {
+            "type": "p",
+            "text": "Kandidaten die LetsHyre willen blijven gebruiken na verwijdering van hun profiel, kunnen een nieuw profiel aanmaken, onder voorbehoud van het beleid en de vereisten van het platform."
+          }
+        ]
+      },
+      {
+        "id": "employer-responsibilities",
+        "title": "5. Verantwoordelijkheden van werkgevers",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Werkgevers gaan ermee akkoord dat:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Op het platform geplaatste vacatures echt zijn.",
+              "Kandidaatinformatie uitsluitend zal worden gebruikt voor wervings- en aanwervingsdoeleinden.",
+              "Kandidaatinformatie niet zal worden verkocht, gedeeld, verspreid of misbruikt.",
+              "Wervingsactiviteiten zullen voldoen aan alle toepasselijke arbeidswetten en -regelgeving.",
+              "Werkgevers kandidaatgegevens niet zullen gebruiken voor marketing, werving of niet-gerelateerde zakelijke activiteiten."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ai-interview-disclaimer",
+        "title": "6. Disclaimer AI-interviews",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre gebruikt kunstmatige-intelligentietechnologieën om op functie gebaseerde interviews af te nemen en interviewrapporten en -inzichten te genereren."
+          },
+          {
+            "type": "p",
+            "text": "Gebruikers erkennen dat:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              [
+                "Door AI gegenereerde interviewrapporten en -inzichten ",
+                {
+                  "tip": "bedoeld zijn als hulpmiddel bij",
+                  "tooltip": "Dienen als aanwijzing of suggestie in plaats van een definitieve garantie."
+                },
+                " aanwervingsbeslissingen."
+              ],
+              "Interview-inzichten niet altijd volledig nauwkeurig of compleet hoeven te zijn.",
+              "Door AI gegenereerde rapporten niet mogen worden beschouwd als de enige basis voor aanwervingsbeslissingen.",
+              "Definitieve aanwervingsbeslissingen uitsluitend de verantwoordelijkheid van werkgevers blijven.",
+              "LetsHyre AI-ondersteunde interview- en kandidaatscreeningsdiensten levert.",
+              "LetsHyre geen werkgelegenheid, functieaanbiedingen, kandidaatselectie, succesvolle aanwervingsresultaten of wervingsresultaten garandeert.",
+              "Definitieve aanwervingsbeslissingen uitsluitend de verantwoordelijkheid van werkgevers blijven."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "payment-and-candidate-unlocks",
+        "title": "7. Betaling en het ontgrendelen van kandidaten",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre werkt volgens een Pay-Per-Unlock-wervingsmodel."
+          },
+          {
+            "type": "p",
+            "text": "Werkgevers kunnen eenmalige betalingen doen om het volgende te ontgrendelen:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Kandidaatprofielen",
+              "Interviewscorecards",
+              "Interviewopnamen",
+              "Contactgegevens van kandidaten"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Zodra kandidaatinformatie succesvol is ontgrendeld en beschikbaar is gesteld aan de werkgever, wordt de transactie als voltooid beschouwd."
+          },
+          {
+            "type": "p",
+            "text": "Alle betalingen zijn onderworpen aan het Restitutiebeleid van LetsHyre."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre behoudt zich het recht voor om prijzen, ontgrendelingskosten en betalingsstructuren op elk moment te wijzigen. Eventuele prijswijzigingen gelden uitsluitend voor toekomstige transacties."
+          }
+        ]
+      },
+      {
+        "id": "intellectual-property",
+        "title": "8. Intellectueel eigendom",
+        "blocks": [
+          {
+            "type": "p",
+            "text": [
+              "Alle platforminhoud, software, branding, logo's, interviewkaders, rapporten, technologie, ontwerpen en gerelateerd materiaal zijn het exclusieve ",
+              {
+                "tip": "eigendom van LetsHyre",
+                "tooltip": "Voortbrengselen van de geest, zoals software, branding en eigen algoritmen."
+              },
+              "."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Gebruikers mogen niet:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Platforminhoud kopiëren",
+              [
+                {
+                  "tip": "Reverse-engineeren",
+                  "tooltip": "Software ontleden om de broncode of eigen logica te achterhalen."
+                },
+                " van de platformfunctionaliteit"
+              ],
+              "Materiaal dat eigendom is reproduceren",
+              "Platforminhoud verspreiden zonder toestemming",
+              "De branding van LetsHyre gebruiken zonder voorafgaande schriftelijke toestemming"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prohibited-activities",
+        "title": "9. Verboden activiteiten",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Gebruikers mogen niet:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Valse of misleidende informatie verstrekken.",
+              "Zich voordoen als een andere persoon of organisatie.",
+              "Proberen ongeautoriseerde toegang tot het platform te verkrijgen.",
+              "Schadelijke software, malware of schadelijke code uploaden.",
+              "De functionaliteit of beveiliging van het platform verstoren.",
+              "Kandidaat- of werkgeversinformatie misbruiken.",
+              "Toepasselijke wet- of regelgeving overtreden."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "account-suspension",
+        "title": "10. Opschorting of beëindiging van accounts",
+        "blocks": [
+          {
+            "type": "p",
+            "text": [
+              "LetsHyre behoudt zich het recht voor om accounts te ",
+              {
+                "highlight": "schorsen, beperken of beëindigen"
+              },
+              " die:"
+            ]
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Deze Algemene Voorwaarden overtreden.",
+              "Zich bezighouden met frauduleuze activiteiten.",
+              "Platformbronnen misbruiken.",
+              "Valse of misleidende informatie verstrekken.",
+              "Proberen de beveiliging van het platform in gevaar te brengen."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Dergelijke maatregelen kunnen zonder voorafgaande kennisgeving worden genomen wanneer dit noodzakelijk is ter bescherming van het platform, de gebruikers ervan, of om te voldoen aan wettelijke verplichtingen."
+          }
+        ]
+      },
+      {
+        "id": "limitation-of-liability",
+        "title": "11. Beperking van aansprakelijkheid",
+        "blocks": [
+          {
+            "type": "p",
+            "text": [
+              "LetsHyre is ",
+              {
+                "highlight": "niet aansprakelijk"
+              },
+              " voor:"
+            ]
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Aanwervingsbeslissingen genomen door werkgevers.",
+              "Arbeidsgeschillen tussen werkgevers en kandidaten.",
+              "Communicatie of overeenkomsten tussen kandidaat en werkgever.",
+              "Zakelijke verliezen of wervingsresultaten.",
+              [
+                "Indirecte, incidentele, bijzondere of ",
+                {
+                  "tip": "gevolgschade",
+                  "tooltip": "Schade die niet rechtstreeks uit een handeling voortvloeit, maar uit bepaalde gevolgen van die handeling."
+                },
+                " voortvloeiend uit het gebruik van het platform."
+              ]
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Gebruikers erkennen dat zij het platform naar eigen goeddunken en op eigen risico gebruiken."
+          }
+        ]
+      },
+      {
+        "id": "privacy",
+        "title": "12. Privacy",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Het gebruik van LetsHyre wordt tevens beheerst door ons Privacybeleid, waarin wordt uitgelegd hoe persoonsgegevens worden verzameld, verwerkt, opgeslagen en beschermd."
+          }
+        ]
+      },
+      {
+        "id": "governing-law",
+        "title": "13. Toepasselijk recht",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Deze Algemene Voorwaarden worden beheerst door de wetten van India."
+          },
+          {
+            "type": "p",
+            "text": "Eventuele geschillen die voortvloeien uit het gebruik van LetsHyre vallen onder de bevoegdheid van de rechtbanken in Hyderabad, Telangana."
+          },
+          {
+            "type": "p",
+            "text": "Deze Algemene Voorwaarden zijn opgesteld in het Engels. Vertalingen worden uitsluitend voor het gemak verstrekt. In geval van strijdigheid of afwijking tussen de Engelse versie en een vertaalde versie prevaleert de Engelse versie."
+          }
+        ]
+      },
+      {
+        "id": "changes-to-terms",
+        "title": "14. Wijzigingen in de Voorwaarden",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre behoudt zich het recht voor om deze Algemene Voorwaarden op elk moment te wijzigen."
+          },
+          {
+            "type": "p",
+            "text": "Bijgewerkte versies worden op het platform gepubliceerd, en voortgezet gebruik van LetsHyre na dergelijke updates geldt als aanvaarding van de herziene Voorwaarden."
+          }
+        ]
+      },
+      {
+        "id": "contact-us",
+        "title": "15. Neem contact met ons op",
+        "blocks": [
+          {
+            "type": "contact",
+            "intro": "Voor vragen over deze Algemene Voorwaarden kunt u contact opnemen met:",
+            "emailLabel": "E-mail:",
+            "email": "support@letshyre.ai",
+            "team": "LetsHyre Support Team"
+          }
+        ]
+      }
+    ]
+  },
+  "chrome": {
+    "contents": "Inhoud",
+    "readTime": "~{{count}} min leestijd",
+    "backToTop": "Terug naar boven",
+    "translationNotice": "Dit is een vertaling die voor het gemak wordt aangeboden. De officiële tekst is de <en>Engelse versie</en>."
+  },
+  "meta": {
+    "title": "Algemene voorwaarden | letshyre.ai",
+    "description": "De voorwaarden voor je gebruik van LetsHyre, met accounts, interviews, betalingen en aanvaardbaar gebruik.",
+    "name": "Algemene voorwaarden",
+    "schemaDescription": "Voorwaarden voor gebruik van het LetsHyre-platform.",
+    "crumb": "Algemene voorwaarden"
+  }
+}

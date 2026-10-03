@@ -1,0 +1,26 @@
+{
+  "chatbot": {
+    "subtitle": "Tanyakan apa saja kepada kami",
+    "inputPlaceholder": "Ajukan pertanyaan…",
+    "send": "Kirim",
+    "sendAria": "Kirim pesan",
+    "thinking": "Sedang berpikir…",
+    "you": "Anda",
+    "assistant": "Asisten",
+    "retry": "Coba Lagi",
+    "errorMessage": "Terjadi kesalahan. Silakan coba lagi.",
+    "clear": "Hapus",
+    "messagesLabel": "Pesan obrolan",
+    "closeAria": "Tutup obrolan",
+    "empty": {
+      "greeting": "Hai! Saya asisten LetsHyre.",
+      "hint": "Tanyakan apa saja tentang LetsHyre. Coba salah satu ini:",
+      "prompts": {
+        "what": "Apa itu LetsHyre?",
+        "scorecard": "Bagaimana cara kerjanya untuk perusahaan?",
+        "applications": "Bagaimana cara kerjanya untuk pencari kerja?",
+        "interview": "Apakah gratis untuk memulai?"
+      }
+    }
+  }
+}

@@ -1,0 +1,428 @@
+{
+  "terms": {
+    "title": "Syarat & Ketentuan",
+    "intro": "Dengan mengakses atau menggunakan LetsHyre (“LetsHyre”, “kami”), Anda setuju untuk terikat oleh Syarat & Ketentuan ini. Jika Anda tidak menyetujui Syarat ini, mohon untuk tidak menggunakan platform ini.",
+    "sections": [
+      {
+        "id": "platform-overview",
+        "title": "1. Gambaran Umum Platform",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre adalah platform perekrutan berbasis AI yang membantu pemberi kerja menemukan profesional berpengalaman melalui:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Penyaringan Resume",
+              "Wawancara AI Berbasis Peran",
+              "Scorecard Wawancara",
+              "Transparansi Wawancara",
+              "Penyaringan Kandidat"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre dirancang untuk menyederhanakan proses perekrutan dengan memungkinkan pemberi kerja mengevaluasi kandidat melalui wawancara berbantuan AI dan wawasan wawancara yang terstruktur."
+          }
+        ]
+      },
+      {
+        "id": "eligibility",
+        "title": "2. Kelayakan",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "2.1 Kelayakan Kandidat"
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre dirancang khusus untuk profesional berpengalaman yang mencari peluang kerja. Untuk menggunakan LetsHyre sebagai kandidat, Anda harus:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Memiliki pengalaman kerja profesional sebelumnya.",
+              "Sedang aktif mencari peluang kerja.",
+              "Merupakan kandidat yang dapat segera bergabung atau sedang menjalani masa pemberitahuan (notice period).",
+              "Memberikan informasi profesional yang akurat, lengkap, dan benar."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Fresh graduate, pelajar, peserta magang, dan kandidat tanpa pengalaman kerja profesional sebelumnya mungkin tidak memenuhi syarat untuk menggunakan layanan kandidat tertentu yang tersedia di platform."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre berhak untuk meninjau, membatasi, menangguhkan, atau menghapus profil kandidat yang tidak sesuai dengan tujuan platform yang dimaksud."
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "subheading",
+            "text": "2.2 Kelayakan Pemberi Kerja:"
+          },
+          {
+            "type": "p",
+            "text": "Pemberi kerja, perekrut, manajer perekrutan, dan perwakilan resmi organisasi dapat menggunakan platform ini untuk tujuan perekrutan dan pengangkatan kerja yang sah."
+          },
+          {
+            "type": "p",
+            "text": "Pemberi kerja harus memberikan informasi perusahaan yang akurat dan mematuhi semua undang-undang ketenagakerjaan dan perekrutan yang berlaku."
+          }
+        ]
+      },
+      {
+        "id": "candidate-responsibilities",
+        "title": "3. Tanggung Jawab Kandidat",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Kandidat setuju bahwa:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Seluruh informasi yang disampaikan adalah akurat dan benar.",
+              "Resume, riwayat pekerjaan, kualifikasi, dan detail pengalaman adalah asli.",
+              "Wawancara AI diselesaikan secara jujur dan tanpa penyamaran identitas.",
+              "Setiap informasi yang diberikan selama wawancara mencerminkan pengalaman dan keterampilan profesional mereka yang sebenarnya.",
+              "Mereka tidak akan membuat beberapa profil yang menyesatkan atau terlibat dalam aktivitas penipuan."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre berhak untuk menangguhkan atau menghapus profil yang terbukti memuat informasi palsu, menyesatkan, atau curang."
+          }
+        ]
+      },
+      {
+        "id": "profile-availability",
+        "title": "4. Ketersediaan Profil",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Untuk menjaga kualitas dan ketersediaan kumpulan talenta yang aktif, profil kandidat akan tetap aktif di platform selama maksimal 90 hari sejak tanggal pembuatan profil."
+          },
+          {
+            "type": "p",
+            "text": "Kandidat dapat memperbarui informasi profil mereka selama periode ini dan mengikuti wawancara AI tambahan, termasuk pengulangan untuk peran yang sama atau wawancara untuk peran yang berbeda, sesuai dengan kebijakan platform."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre dapat mengizinkan kandidat untuk menyelesaikan hingga tiga kali percobaan wawancara guna meningkatkan kartu penilaian wawancara, kekuatan profil, dan visibilitas kepada pemberi kerja."
+          },
+          {
+            "type": "p",
+            "text": "Setelah periode 90 hari berakhir, profil kandidat dapat dihapus secara permanen dari kumpulan kandidat aktif LetsHyre."
+          },
+          {
+            "type": "p",
+            "text": "Kandidat yang ingin melanjutkan penggunaan LetsHyre setelah profilnya dihapus dapat membuat profil baru, sesuai dengan kebijakan dan persyaratan platform."
+          }
+        ]
+      },
+      {
+        "id": "employer-responsibilities",
+        "title": "5. Tanggung Jawab Pemberi Kerja",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Pemberi kerja setuju bahwa:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Peluang kerja yang diposting di platform adalah asli.",
+              "Informasi kandidat hanya akan digunakan untuk tujuan perekrutan dan pengangkatan kerja.",
+              "Informasi kandidat tidak akan dijual, dibagikan, didistribusikan, atau disalahgunakan.",
+              "Aktivitas perekrutan akan mematuhi semua undang-undang dan peraturan ketenagakerjaan yang berlaku.",
+              "Pemberi kerja tidak akan menggunakan data kandidat untuk pemasaran, penawaran, atau aktivitas bisnis lain yang tidak terkait."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ai-interview-disclaimer",
+        "title": "6. Sangkalan Wawancara AI",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre menggunakan teknologi kecerdasan buatan untuk melakukan wawancara berbasis peran serta menghasilkan laporan dan wawasan wawancara."
+          },
+          {
+            "type": "p",
+            "text": "Pengguna mengakui bahwa:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              [
+                "Laporan dan wawasan wawancara yang dihasilkan AI ",
+                {
+                  "tip": "dimaksudkan untuk membantu",
+                  "tooltip": "Berfungsi sebagai tanda atau saran, bukan jaminan yang pasti."
+                },
+                " keputusan perekrutan."
+              ],
+              "Wawasan wawancara mungkin tidak selalu sepenuhnya akurat atau lengkap.",
+              "Laporan yang dihasilkan AI tidak boleh dianggap sebagai satu-satunya dasar untuk keputusan ketenagakerjaan.",
+              "Keputusan perekrutan akhir tetap menjadi tanggung jawab penuh pemberi kerja.",
+              "LetsHyre menyediakan layanan wawancara dan penyaringan kandidat berbantuan AI.",
+              "LetsHyre tidak menjamin peluang kerja, penawaran kerja, seleksi kandidat, hasil perekrutan yang berhasil, atau hasil rekrutmen.",
+              "Keputusan perekrutan akhir tetap menjadi tanggung jawab penuh pemberi kerja."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "payment-and-candidate-unlocks",
+        "title": "7. Pembayaran dan Pembukaan Akses Kandidat",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre beroperasi dengan model perekrutan Bayar-Per-Buka-Akses (Pay-Per-Unlock)."
+          },
+          {
+            "type": "p",
+            "text": "Pemberi kerja dapat melakukan pembayaran satu kali untuk membuka akses ke:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Profil kandidat",
+              "Scorecard Wawancara",
+              "Rekaman Wawancara",
+              "Informasi kontak kandidat"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Setelah informasi kandidat berhasil dibuka aksesnya dan tersedia bagi pemberi kerja, transaksi tersebut dianggap selesai."
+          },
+          {
+            "type": "p",
+            "text": "Semua pembayaran tunduk pada Kebijakan Pengembalian Dana LetsHyre."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre berhak untuk mengubah harga, biaya pembukaan akses, dan struktur pembayaran kapan pun. Perubahan harga apa pun hanya akan berlaku untuk transaksi di masa mendatang."
+          }
+        ]
+      },
+      {
+        "id": "intellectual-property",
+        "title": "8. Hak Kekayaan Intelektual",
+        "blocks": [
+          {
+            "type": "p",
+            "text": [
+              "Seluruh konten platform, perangkat lunak, merek, logo, kerangka wawancara, laporan, teknologi, desain, dan materi terkait merupakan ",
+              {
+                "tip": "kekayaan eksklusif LetsHyre",
+                "tooltip": "Ciptaan hasil pemikiran, seperti perangkat lunak, merek, dan algoritma milik pribadi."
+              },
+              "."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Pengguna tidak diperbolehkan untuk:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Menyalin konten platform",
+              [
+                {
+                  "tip": "Melakukan rekayasa balik",
+                  "tooltip": "Membongkar perangkat lunak untuk mengekstrak kode sumber atau logika kepemilikannya."
+                },
+                " terhadap fungsi platform"
+              ],
+              "Menggandakan materi berhak milik",
+              "Mendistribusikan konten platform tanpa izin",
+              "Menggunakan merek LetsHyre tanpa izin tertulis terlebih dahulu"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prohibited-activities",
+        "title": "9. Aktivitas yang Dilarang",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Pengguna dilarang untuk:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Menyampaikan informasi palsu atau menyesatkan.",
+              "Menyamar sebagai individu atau organisasi lain.",
+              "Mencoba mengakses platform tanpa izin.",
+              "Mengunggah perangkat lunak berbahaya, malware, atau kode berbahaya lainnya.",
+              "Mengganggu fungsi atau keamanan platform.",
+              "Menyalahgunakan informasi kandidat atau pemberi kerja.",
+              "Melanggar undang-undang atau peraturan yang berlaku."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "account-suspension",
+        "title": "10. Penangguhan atau Penghentian Akun",
+        "blocks": [
+          {
+            "type": "p",
+            "text": [
+              "LetsHyre berhak untuk ",
+              {
+                "highlight": "menangguhkan, membatasi, atau menghentikan"
+              },
+              " akun yang:"
+            ]
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Melanggar Syarat & Ketentuan ini.",
+              "Terlibat dalam aktivitas penipuan.",
+              "Menyalahgunakan sumber daya platform.",
+              "Memberikan informasi palsu atau menyesatkan.",
+              "Berupaya membahayakan keamanan platform."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Tindakan tersebut dapat diambil tanpa pemberitahuan terlebih dahulu apabila diperlukan untuk melindungi platform, penggunanya, atau kewajiban hukum."
+          }
+        ]
+      },
+      {
+        "id": "limitation-of-liability",
+        "title": "11. Batasan Tanggung Jawab",
+        "blocks": [
+          {
+            "type": "p",
+            "text": [
+              "LetsHyre ",
+              {
+                "highlight": "tidak bertanggung jawab"
+              },
+              " atas:"
+            ]
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Keputusan perekrutan yang dibuat oleh pemberi kerja.",
+              "Perselisihan ketenagakerjaan antara pemberi kerja dan kandidat.",
+              "Komunikasi atau kesepakatan antara kandidat dan pemberi kerja.",
+              "Kerugian bisnis atau hasil perekrutan.",
+              [
+                "Kerugian tidak langsung, insidental, khusus, atau ",
+                {
+                  "tip": "kerugian konsekuensial",
+                  "tooltip": "Kerugian yang tidak timbul secara langsung dari suatu tindakan, tetapi dari beberapa akibat dari tindakan tersebut."
+                },
+                " yang timbul akibat penggunaan platform."
+              ]
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Pengguna mengakui bahwa mereka menggunakan platform ini atas kebijakan dan risiko mereka sendiri."
+          }
+        ]
+      },
+      {
+        "id": "privacy",
+        "title": "12. Privasi",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Penggunaan LetsHyre juga tunduk pada Kebijakan Privasi kami, yang menjelaskan bagaimana informasi pribadi dikumpulkan, diproses, disimpan, dan dilindungi."
+          }
+        ]
+      },
+      {
+        "id": "governing-law",
+        "title": "13. Hukum yang Berlaku",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Syarat & Ketentuan ini tunduk pada hukum negara India."
+          },
+          {
+            "type": "p",
+            "text": "Setiap perselisihan yang timbul dari penggunaan LetsHyre akan tunduk pada yurisdiksi pengadilan di Hyderabad, Telangana."
+          },
+          {
+            "type": "p",
+            "text": "Syarat dan Ketentuan ini disusun dalam bahasa Inggris. Terjemahan disediakan semata-mata untuk kemudahan. Apabila terdapat pertentangan atau perbedaan antara versi bahasa Inggris dan versi terjemahan, versi bahasa Inggris yang berlaku."
+          }
+        ]
+      },
+      {
+        "id": "changes-to-terms",
+        "title": "14. Perubahan Syarat",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre berhak untuk mengubah Syarat & Ketentuan ini kapan pun."
+          },
+          {
+            "type": "p",
+            "text": "Versi terbaru akan dipublikasikan di platform, dan penggunaan LetsHyre yang berkelanjutan setelah pembaruan tersebut merupakan bentuk penerimaan atas Syarat yang telah direvisi."
+          }
+        ]
+      },
+      {
+        "id": "contact-us",
+        "title": "15. Hubungi Kami",
+        "blocks": [
+          {
+            "type": "contact",
+            "intro": "Untuk pertanyaan mengenai Syarat & Ketentuan ini, silakan hubungi:",
+            "emailLabel": "Email:",
+            "email": "support@letshyre.ai",
+            "team": "Tim Dukungan LetsHyre"
+          }
+        ]
+      }
+    ]
+  },
+  "chrome": {
+    "contents": "Daftar Isi",
+    "readTime": "~{{count}} menit membaca",
+    "backToTop": "Kembali ke atas",
+    "translationNotice": "Ini adalah terjemahan yang disediakan untuk kemudahan. Teks resmi adalah <en>versi bahasa Inggris</en>."
+  },
+  "meta": {
+    "title": "Syarat dan Ketentuan | letshyre.ai",
+    "description": "Ketentuan yang mengatur penggunaan LetsHyre, mencakup akun, wawancara, pembayaran, dan penggunaan yang wajar.",
+    "name": "Syarat & Ketentuan",
+    "schemaDescription": "Ketentuan yang mengatur penggunaan platform LetsHyre.",
+    "crumb": "Syarat & Ketentuan"
+  }
+}

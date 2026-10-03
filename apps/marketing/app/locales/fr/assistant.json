@@ -1,0 +1,26 @@
+{
+  "chatbot": {
+    "subtitle": "Posez-nous vos questions",
+    "inputPlaceholder": "Posez une question…",
+    "send": "Envoyer",
+    "sendAria": "Envoyer le message",
+    "thinking": "Réflexion…",
+    "you": "Vous",
+    "assistant": "Assistant",
+    "retry": "Réessayer",
+    "errorMessage": "Une erreur s'est produite. Veuillez réessayer.",
+    "clear": "Effacer",
+    "messagesLabel": "Messages de la discussion",
+    "closeAria": "Fermer la discussion",
+    "empty": {
+      "greeting": "Bonjour ! Je suis l'assistant LetsHyre.",
+      "hint": "Posez-moi n'importe quelle question sur LetsHyre. Essayez l'une de celles-ci :",
+      "prompts": {
+        "what": "Qu'est-ce que LetsHyre ?",
+        "scorecard": "Comment ça marche pour les employeurs ?",
+        "applications": "Comment ça marche pour les candidats ?",
+        "interview": "Est-ce gratuit pour commencer ?"
+      }
+    }
+  }
+}

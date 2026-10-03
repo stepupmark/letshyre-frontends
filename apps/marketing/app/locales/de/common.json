@@ -1,0 +1,58 @@
+{
+  "skipToContent": "Zum Hauptinhalt springen",
+  "copyright": "LetsHyre © {{year}}",
+  "nav": {
+    "howItWorks": "So funktioniert's",
+    "aiInterview": "KI-Interview",
+    "pricing": "Preise",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "getStarted": "Jetzt starten",
+    "language": "Sprache ändern",
+    "logoAlt": "LetsHyre-Logo",
+    "toggle": "Navigation umschalten",
+    "siteNavigation": "Seitennavigation",
+    "primaryAria": "Hauptnavigation",
+    "mobileAria": "Mobile Navigation"
+  },
+  "footer": {
+    "product": "Produkt",
+    "candidates": "Kandidaten",
+    "company": "Unternehmen",
+    "stayUpdated": "Bleiben Sie auf dem Laufenden",
+    "newsletterDesc": "Erhalten Sie die neuesten Nachrichten und Updates von LetsHyre",
+    "links": {
+      "interviewProcess": "Interviewprozess",
+      "downloadApp": "Anwendung herunterladen",
+      "pricing": "Preise",
+      "about": "Über uns",
+      "terms": "Allgemeine Geschäftsbedingungen",
+      "privacy": "Datenschutzerklärung",
+      "refund": "Rückerstattungsrichtlinie",
+      "contact": "Kontakt"
+    }
+  },
+  "newsletter": {
+    "emailPlaceholder": "Ihre E-Mail-Adresse",
+    "emailLabel": "E-Mail-Adresse",
+    "subscribe": "Abonnieren",
+    "subscribed": "Abonnement erfolgreich gespeichert.",
+    "subscribeFailed": "Abonnement fehlgeschlagen. Bitte versuchen Sie es erneut."
+  },
+  "pageState": {
+    "loading": "Seite wird geladen"
+  },
+  "notFound": {
+    "badge": "404 Seite nicht gefunden",
+    "title": "Wir konnten diese Seite nicht finden",
+    "body": "Die gesuchte Seite existiert nicht oder wurde möglicherweise verschoben. Wir bringen Sie zurück auf den richtigen Weg.",
+    "goHome": "Zur Startseite",
+    "goBack": "Zurück"
+  },
+  "error": {
+    "title": "Diese Seite wurde nicht geladen",
+    "body": "Bei uns ist etwas schiefgelaufen. Lade die Seite neu, um es erneut zu versuchen, oder kontaktiere uns, wenn das Problem bleibt.",
+    "retry": "Erneut versuchen",
+    "goHome": "Zur Startseite"
+  }
+}

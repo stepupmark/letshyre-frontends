@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "title": "Redefiniendo la contratación con<br/><hl>entrevistas potenciadas por IA</hl>",
+    "description": "LetsHyre es una plataforma de contratación con IA diseñada para ayudar a los empleadores a descubrir, evaluar y conectarse con profesionales experimentados que buscan activamente nuevas oportunidades profesionales."
+  },
+  "intro": {
+    "title": "El desafío<br/><hl>& nuestra solución</hl>",
+    "p1": "Los procesos de contratación tradicionales a menudo requieren tiempo y esfuerzo significativos para revisar currículos, realizar entrevistas e identificar los candidatos correctos. LetsHyre agiliza este proceso a través de la selección inteligente de candidatos, entrevistas basadas en roles con IA, tarjetas de puntuación de entrevistas y evaluación transparente de candidatos.",
+    "p2": "Nuestra plataforma permite a los empleadores desbloquear perfiles de candidatos, tarjetas de puntuación de entrevistas, grabaciones de entrevistas e información de contacto a través de un modelo simple de Pago Por Desbloqueo."
+  },
+  "mission": {
+    "title": "Nuestra misión",
+    "desc": "Simplificar la contratación combinando inteligencia artificial con evaluación transparente de candidatos, ayudando a los empleadores a descubrir talento calificado eficientemente brindando a los profesionales con experiencia oportunidades justas para mostrar sus capacidades."
+  },
+  "vision": {
+    "title": "Nuestra visión",
+    "desc": "Convertirnos en el mercado de contratación con IA más confiable para profesionales experimentados, permitiendo a los empleadores tomar mejores decisiones de contratación y ayudando a los candidatos a conectarse con oportunidades profesionales significativas."
+  },
+  "whatWeDo": {
+    "employersHeading": "Para empleadores",
+    "employerPoints": [
+      "Accede a profesionales experimentados que buscan activamente oportunidades",
+      "Descubre incorporaciones inmediatas y candidatos en período de preaviso",
+      "Realiza entrevistas basadas en roles con IA",
+      "Revisa tarjetas de puntuación e información de entrevistas",
+      "Grabaciones de entrevistas",
+      "Reduce el esfuerzo de contratación y el tiempo de selección",
+      "Accede a información transparente sobre candidatos",
+      "Paga solo por los perfiles de candidatos que elijas desbloquear"
+    ],
+    "candidatesHeading": "Para candidatos",
+    "candidatePoints": [
+      "Crea un perfil profesional",
+      "Muestra habilidades y experiencia",
+      "Participa en entrevistas basadas en roles con IA",
+      "Mejora la visibilidad del perfil",
+      "Aumenta las oportunidades de ser descubierto por empleadores",
+      "Conéctate con empresas que contratan profesionales experimentados"
+    ]
+  },
+  "why": {
+    "heading": "¿Por qué LetsHyre?",
+    "cards": {
+      "aiPowered": {
+        "title": "Contratación con IA",
+        "desc": "Las entrevistas de IA basadas en roles ayudan a los empleadores a evaluar candidatos de manera más eficiente."
+      },
+      "faster": {
+        "title": "Contratación más rápida",
+        "desc": "Reduce el esfuerzo de selección manual y acelera las decisiones de contratación."
+      },
+      "network": {
+        "title": "Red de talento experimentado",
+        "desc": "Conecta con incorporaciones inmediatas, profesionales en período de preaviso y candidatos experimentados que buscan activamente oportunidades."
+      },
+      "payPerUnlock": {
+        "title": "Modelo de pago por desbloqueo",
+        "desc": "Paga solo cuando eliges desbloquear información de candidatos relevante para tus necesidades de contratación."
+      },
+      "transparency": {
+        "title": "Transparencia en las entrevistas",
+        "desc": "Las tarjetas de puntuación estructuradas e información de entrevistas apoyan decisiones de contratación informadas."
+      }
+    }
+  },
+  "profileDuration": {
+    "title": "Duración de actividad del perfil",
+    "p1": "Para mantener un grupo de talento de alta calidad y activamente disponible, los perfiles de candidatos permanecen activos en la plataforma hasta <b>90 días</b> desde la fecha de creación del perfil.",
+    "p2": "Los candidatos pueden actualizar su información de perfil durante este período.",
+    "p3": "Después de que expire el período de 90 días, los perfiles de candidatos pueden ser eliminados permanentemente del grupo activo de candidatos de LetsHyre.",
+    "p4": "Los candidatos que deseen continuar usando LetsHyre después de la eliminación del perfil pueden crear un nuevo perfil, sujeto a las políticas y requisitos de la plataforma."
+  },
+  "commitment": {
+    "title": "Aviso legal",
+    "body": "LetsHyre proporciona servicios de entrevista asistida por IA y selección de candidatos. Las tarjetas de puntuación e información generadas por IA están destinadas a apoyar las decisiones de contratación y no deben considerarse la única base para las decisiones de empleo. Las decisiones finales de contratación siguen siendo responsabilidad de los empleadores.",
+    "contactUs": "Contáctanos"
+  },
+  "meta": {
+    "title": "Sobre nosotros | letshyre.ai",
+    "description": "El enfoque de LetsHyre en las entrevistas con IA: criba automatizada, preguntas por puesto e informes verificados para equipos de selección.",
+    "name": "Sobre LetsHyre",
+    "schemaDescription": "Cómo LetsHyre usa IA para automatizar la selección, entrevistas y verificación de candidatos.",
+    "crumb": "Sobre nosotros"
+  }
+}

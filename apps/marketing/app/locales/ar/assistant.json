@@ -1,0 +1,26 @@
+{
+  "chatbot": {
+    "subtitle": "اسألنا أي شيء",
+    "inputPlaceholder": "اطرح سؤالاً…",
+    "send": "إرسال",
+    "sendAria": "إرسال الرسالة",
+    "thinking": "جارٍ التفكير…",
+    "you": "أنت",
+    "assistant": "المساعد",
+    "retry": "إعادة المحاولة",
+    "errorMessage": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+    "clear": "مسح",
+    "messagesLabel": "رسائل المحادثة",
+    "closeAria": "إغلاق المحادثة",
+    "empty": {
+      "greeting": "مرحباً! أنا مساعد LetsHyre.",
+      "hint": "اسألني أي شيء عن LetsHyre. جرّب أحد هذه الأسئلة:",
+      "prompts": {
+        "what": "ما هو LetsHyre؟",
+        "scorecard": "كيف يعمل لأصحاب العمل؟",
+        "applications": "كيف يعمل للباحثين عن عمل؟",
+        "interview": "هل البدء مجاني؟"
+      }
+    }
+  }
+}

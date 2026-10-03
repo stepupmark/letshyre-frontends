@@ -1,0 +1,35 @@
+{
+  "info": {
+    "title": "Nehmen Sie Kontakt auf<br/><hl>mit unserem Team</hl>",
+    "description": "Haben Sie Fragen zu KI-Interviews, Kandidatenberichten, Tarifen, Guthaben oder technischen Problemen? Unser Support-Team hilft Ihnen gerne weiter.",
+    "emailLabel": "E-Mail"
+  },
+  "form": {
+    "title": "Nachricht senden",
+    "subtitle": "Füllen Sie das untenstehende Formular aus, und unser Team meldet sich bei Ihnen.",
+    "fields": {
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "subject": "Betreff",
+      "message": "Nachrichtendetails"
+    },
+    "privacy": "Wir legen großen Wert auf Ihre Privatsphäre. Mit dem Absenden Ihrer Angaben stimmen Sie den <pp>Datenschutzbestimmungen</pp> von LetsHyre zu. Unser Team antwortet in der Regel innerhalb von 2–4 Stunden.",
+    "submit": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "successTitle": "Nachricht gesendet!",
+    "successBody": "Vielen Dank für Ihre Kontaktaufnahme. Unser Support-Team hat Ihre Nachricht erhalten und wird sich in Kürze bei Ihnen melden.",
+    "validation": {
+      "nameMin": "Der Name muss mindestens 2 Zeichen lang sein",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "subjectMin": "Der Betreff muss mindestens 3 Zeichen lang sein",
+      "messageMin": "Die Nachricht muss mindestens 10 Zeichen lang sein"
+    }
+  },
+  "meta": {
+    "title": "Kontakt | letshyre.ai",
+    "description": "Fragen zu KI-Interviews, Scorecards, Tarifen oder Credits? Schreiben Sie dem LetsHyre-Team, wir melden uns.",
+    "name": "LetsHyre kontaktieren",
+    "schemaDescription": "Erreichen Sie den Support und Vertrieb von LetsHyre.",
+    "crumb": "Kontakt"
+  }
+}

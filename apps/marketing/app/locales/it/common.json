@@ -1,0 +1,58 @@
+{
+  "skipToContent": "Vai al contenuto principale",
+  "copyright": "LetsHyre © {{year}}",
+  "nav": {
+    "howItWorks": "Come Funziona",
+    "aiInterview": "Colloquio IA",
+    "pricing": "Prezzi",
+    "about": "Chi Siamo",
+    "contact": "Contatti",
+    "getStarted": "Inizia Ora",
+    "language": "Cambia lingua",
+    "logoAlt": "Logo LetsHyre",
+    "toggle": "Attiva/disattiva navigazione",
+    "siteNavigation": "Navigazione del sito",
+    "primaryAria": "Navigazione principale",
+    "mobileAria": "Navigazione mobile"
+  },
+  "footer": {
+    "product": "Prodotto",
+    "candidates": "Candidati",
+    "company": "Azienda",
+    "stayUpdated": "Resta Aggiornato",
+    "newsletterDesc": "Ricevi le ultime notizie e aggiornamenti da LetsHyre",
+    "links": {
+      "interviewProcess": "Processo di Colloquio",
+      "downloadApp": "Scarica Applicazione",
+      "pricing": "Prezzi",
+      "about": "Chi Siamo",
+      "terms": "Termini e Condizioni",
+      "privacy": "Informativa sulla Privacy",
+      "refund": "Politica di Rimborso",
+      "contact": "Contatti"
+    }
+  },
+  "newsletter": {
+    "emailPlaceholder": "La tua email",
+    "emailLabel": "Indirizzo email",
+    "subscribe": "Iscriviti",
+    "subscribed": "Iscrizione salvata con successo.",
+    "subscribeFailed": "Impossibile completare l'iscrizione. Riprova."
+  },
+  "pageState": {
+    "loading": "Caricamento della pagina"
+  },
+  "notFound": {
+    "badge": "404 Pagina non trovata",
+    "title": "Non abbiamo trovato questa pagina",
+    "body": "La pagina che cerchi non esiste o potrebbe essere stata spostata. Ti riportiamo sulla strada giusta.",
+    "goHome": "Vai alla home",
+    "goBack": "Indietro"
+  },
+  "error": {
+    "title": "Questa pagina non si è caricata",
+    "body": "Qualcosa è andato storto da parte nostra. Ricarica la pagina per riprovare o contattaci se il problema persiste.",
+    "retry": "Riprova",
+    "goHome": "Vai alla home"
+  }
+}

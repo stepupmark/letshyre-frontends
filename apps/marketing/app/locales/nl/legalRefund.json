@@ -1,0 +1,176 @@
+{
+  "refund": {
+    "title": "Restitutiebeleid",
+    "intro": "Welkom bij LetsHyre. Dit Restitutiebeleid legt uit onder welke voorwaarden restituties kunnen worden verstrekt voor betalingen die op het platform van LetsHyre zijn gedaan.",
+    "sections": [
+      {
+        "id": "service-model",
+        "title": "1. Dienstenmodel",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre werkt volgens een Pay-Per-Unlock-wervingsmodel. Werkgevers kunnen eenmalige betalingen doen om het volgende te ontgrendelen:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Kandidaatprofielen",
+              "Interviewscorecards",
+              "Interviewopnamen",
+              "Contactgegevens van kandidaten"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Elke ontgrendelaankoop geeft toegang tot de profielinformatie, interviewscorecards, interviewopnamen en contactgegevens van de geselecteerde kandidaat, onder voorbehoud van beschikbaarheid op het platform."
+          },
+          {
+            "type": "p",
+            "text": "Ontgrendelaankopen zijn eenmalige transacties en vormen geen abonnement of terugkerende dienst."
+          }
+        ]
+      },
+      {
+        "id": "refund-eligibility",
+        "title": "2. In aanmerking komen voor restitutie",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Restitutieverzoeken worden uitsluitend in de volgende omstandigheden in overweging genomen:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Dubbele betalingen voor het ontgrendelen van dezelfde kandidaat.",
+              "Onjuiste facturering veroorzaakt door een technische fout op het platform van LetsHyre.",
+              "Succesvolle betaling waarbij toegang tot de aangekochte kandidaatinformatie niet is verstrekt vanwege een platformprobleem.",
+              "Ongeautoriseerde transacties die door onderzoek zijn bevestigd."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Alle restitutieverzoeken moeten binnen 7 dagen na de transactiedatum worden ingediend."
+          }
+        ]
+      },
+      {
+        "id": "non-refundable-purchases",
+        "title": "3. Niet-restitueerbare aankopen",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Restituties worden over het algemeen niet verstrekt in de volgende situaties:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Kandidaatprofielen die succesvol zijn ontgrendeld.",
+              "Interviewscorecards of interviewopnamen waartoe succesvol toegang is verkregen.",
+              "Contactgegevens van kandidaten die succesvol zijn onthuld.",
+              "Ontevredenheid van de werkgever over de kwalificaties, vaardigheden, ervaring, communicatievaardigheden of geschiktheid van een kandidaat voor een functie.",
+              "Het niet kunnen bereiken of aannemen van een kandidaat na het ontgrendelen van diens profiel.",
+              "Het uitblijven van een reactie van de kandidaat na het ontgrendelen van het profiel.",
+              "Wijzigingen in wervingsvereisten nadat een kandidaat is ontgrendeld.",
+              "Aanwervingsresultaten of wervingsresultaten."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Zodra kandidaatinformatie succesvol is ontgrendeld en beschikbaar is gesteld aan de werkgever, wordt de transactie als voltooid beschouwd."
+          }
+        ]
+      },
+      {
+        "id": "refund-review-process",
+        "title": "4. Beoordelingsproces van restituties",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "In aanmerking komende restitutieverzoeken worden binnen 7 tot 14 werkdagen door LetsHyre beoordeeld."
+          },
+          {
+            "type": "p",
+            "text": "Er kan aanvullende informatie worden opgevraagd om de geschiktheid voor restitutie te verifiëren."
+          },
+          {
+            "type": "p",
+            "text": "Goedgekeurde restituties worden verwerkt via de oorspronkelijke betaalmethode die voor de transactie is gebruikt. Verwerkingstijden kunnen variëren afhankelijk van de betalingsprovider of financiële instelling."
+          }
+        ]
+      },
+      {
+        "id": "fraud-prevention",
+        "title": "5. Fraudepreventie",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre behoudt zich het recht voor om restitutieverzoeken te weigeren wanneer frauduleuze activiteit, misbruik van het platform, overtreding van de Algemene Voorwaarden, of misbruik van het restitutieproces wordt vermoed."
+          },
+          {
+            "type": "p",
+            "text": "Accounts die betrokken zijn bij frauduleuze betalingsactiviteiten kunnen worden opgeschort of permanent worden beëindigd."
+          }
+        ]
+      },
+      {
+        "id": "chargebacks-and-payment-disputes",
+        "title": "6. Chargebacks en betalingsgeschillen",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Indien een gebruiker via een bank, kaartuitgever of betalingsprovider een chargeback of betalingsgeschil initieert, behoudt LetsHyre zich het recht voor de transactie te onderzoeken en relevante gegevens aan de betalingsverwerker te verstrekken."
+          },
+          {
+            "type": "p",
+            "text": "Frauduleuze of onrechtmatige chargeback-activiteit kan leiden tot opschorting of beëindiging van het account."
+          }
+        ]
+      },
+      {
+        "id": "changes-to-refund-policy",
+        "title": "7. Wijzigingen in dit Restitutiebeleid",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre behoudt zich het recht voor dit Restitutiebeleid op elk moment te wijzigen of bij te werken. Bijgewerkte versies worden op de website gepubliceerd en treden in werking bij publicatie."
+          }
+        ]
+      },
+      {
+        "id": "contact-us",
+        "title": "8. Neem contact met ons op",
+        "blocks": [
+          {
+            "type": "contact",
+            "intro": "Voor vragen over facturering, betalingen of restituties kunt u contact opnemen met:",
+            "emailLabel": "E-mail:",
+            "email": "support@letshyre.ai",
+            "team": "LetsHyre Support Team"
+          }
+        ]
+      }
+    ]
+  },
+  "chrome": {
+    "contents": "Inhoud",
+    "readTime": "~{{count}} min leestijd",
+    "backToTop": "Terug naar boven",
+    "translationNotice": "Dit is een vertaling die voor het gemak wordt aangeboden. De officiële tekst is de <en>Engelse versie</en>."
+  },
+  "meta": {
+    "title": "Restitutiebeleid | letshyre.ai",
+    "description": "Wanneer LetsHyre-credits en -abonnementen in aanmerking komen voor restitutie, de termijnen en hoe je een verzoek indient.",
+    "name": "Terugbetalingsbeleid",
+    "schemaDescription": "Terugbetalingsgeschiktheid en -proces voor LetsHyre-aankopen.",
+    "crumb": "Terugbetalingsbeleid"
+  }
+}

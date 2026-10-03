@@ -1,0 +1,35 @@
+{
+  "info": {
+    "title": "Entre em Contacto<br/><hl>com a Nossa Equipa</hl>",
+    "description": "Tem questões sobre entrevistas com IA, relatórios de candidatos, planos de contratação, créditos ou problemas técnicos? Os nossos especialistas de suporte estão aqui para ajudar.",
+    "emailLabel": "Email"
+  },
+  "form": {
+    "title": "Enviar uma Mensagem",
+    "subtitle": "Preencha o formulário abaixo e a nossa equipa entrará em contacto consigo.",
+    "fields": {
+      "name": "Nome Completo",
+      "email": "Endereço de Email",
+      "subject": "Assunto",
+      "message": "Detalhes da Mensagem"
+    },
+    "privacy": "Valorizamos a sua privacidade. Ao submeter as suas informações, concorda com a <pp>Política de Privacidade</pp> da LetsHyre. A nossa equipa responde normalmente dentro de 2 a 4 horas.",
+    "submit": "Enviar Mensagem",
+    "sending": "A enviar...",
+    "successTitle": "Mensagem Enviada!",
+    "successBody": "Obrigado pelo seu contacto. A nossa equipa de suporte recebeu a sua mensagem e responderá em breve.",
+    "validation": {
+      "nameMin": "O nome deve ter pelo menos 2 caracteres",
+      "emailInvalid": "Introduza um endereço de email válido",
+      "subjectMin": "O assunto deve ter pelo menos 3 carateres",
+      "messageMin": "A mensagem deve ter pelo menos 10 carateres"
+    }
+  },
+  "meta": {
+    "title": "Contacte-nos | letshyre.ai",
+    "description": "Dúvidas sobre entrevistas com IA, relatórios, planos ou créditos? Fale com a equipa da LetsHyre e responderemos.",
+    "name": "Contactar a LetsHyre",
+    "schemaDescription": "Contacte o suporte e as vendas da LetsHyre.",
+    "crumb": "Contacto"
+  }
+}

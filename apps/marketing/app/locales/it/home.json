@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "Piattaforma di selezione e colloqui con IA | letshyre.ai",
+    "description": "Screening dei CV, colloqui con IA strutturati e verifica dei candidati in un unico posto, per chi assume profili in preavviso.",
+    "name": "LetsHyre — Piattaforma di Assunzione IA per Talenti in Preavviso",
+    "schemaDescription": "Piattaforma di assunzione basata sull'IA che automatizza la selezione dei curriculum, i colloqui IA e la verifica dei candidati."
+  },
+  "hero": {
+    "title": "La Piattaforma di Assunzione IA per <hl>Talenti in Preavviso</hl>",
+    "ctaHiring": "Sto Assumendo",
+    "ctaJob": "Sto cercando lavoro",
+    "tagline": {
+      "stop": "Basta con lo screening.",
+      "start": "Inizia a selezionare."
+    }
+  },
+  "assistance": {
+    "ariaLabel": "Come funziona",
+    "steps": {
+      "post": {
+        "pill": "Pubblica il tuo annuncio",
+        "heading": "Definisci il ruolo,<br/><hl>lascia il resto all'IA</hl>"
+      },
+      "screen": {
+        "pill": "Selezione IA",
+        "heading": "Colloqui 24/7,<br/><hl>zero attriti di pianificazione</hl>"
+      },
+      "scorecards": {
+        "pill": "Ricevi le Scorecard",
+        "heading": "Dati grezzi trasformati in<br/><hl>raccomandazioni chiare</hl>"
+      }
+    }
+  },
+  "faq": {
+    "title": "FAQ: Assunzioni IA e Periodo di Preavviso",
+    "subtitle": "Tutto quello che devi sapere sulla piattaforma di assunzione basata sull'IA di LetsHyre.",
+    "items": [
+      {
+        "q": "Come funziona la piattaforma di assunzione IA di LetsHyre?",
+        "a": "LetsHyre analizza istantaneamente i curriculum, conduce colloqui IA interattivi per valutare le competenze comunicative e tecniche, e fornisce una scorecard verificata così puoi dedicare tempo solo ai migliori candidati."
+      },
+      {
+        "q": "Cosa rende LetsHyre diversa dalle altre piattaforme di assunzione?",
+        "a": "A differenza delle tradizionali bacheche di lavoro, LetsHyre automatizza l'intero processo di selezione. La nostra IA verifica le competenze in tempo reale prima ancora che tu veda il candidato, riducendo drasticamente i tempi di assunzione."
+      },
+      {
+        "q": "Quanto è accurata la valutazione del colloquio IA?",
+        "a": "I nostri modelli IA sono addestrati su milioni di dati per valutare comunicazione, competenza tecnica e affinità culturale con oltre il 98% di precisione, garantendo una valutazione equa e imparziale."
+      },
+      {
+        "q": "Cosa controlla il rilevamento oggetti video basato sull'IA?",
+        "a": "Il nostro avanzato sistema anti-cheating monitora il movimento degli occhi, rileva la presenza di più volti e verifica dispositivi non autorizzati come telefoni o monitor secondari durante la valutazione."
+      },
+      {
+        "q": "I candidati in preavviso sono verificati?",
+        "a": "Sì, diamo priorità e verifichiamo i candidati in preavviso in modo da poter costruire il tuo team fino al 40% più velocemente con talenti pronti a unirsi immediatamente."
+      },
+      {
+        "q": "Quali informazioni include la scorecard IA?",
+        "a": "La scorecard fornisce un quadro completo del Punteggio Potenziale, del Punteggio di Affinità, dei punti di forza tecnici, delle aree di miglioramento e un'analisi comportamentale dettagliata del candidato."
+      },
+      {
+        "q": "Posso integrare LetsHyre con i nostri sistemi HR esistenti?",
+        "a": "Assolutamente! LetsHyre si integra perfettamente con le più diffuse piattaforme ATS e HRIS tramite la nostra API sicura, in modo che il tuo flusso di assunzione rimanga ininterrotto."
+      }
+    ]
+  },
+  "hireCard": {
+    "title": "Pronto ad Assumere o a Essere Assunto?",
+    "startHiring": "Inizia ad Assumere",
+    "applyJob": "Candidati per un Lavoro"
+  },
+  "chatbot": {
+    "title": "Assistente LetsHyre",
+    "launcherAria": "Apri assistente chat"
+  }
+}

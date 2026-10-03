@@ -1,0 +1,428 @@
+{
+  "terms": {
+    "title": "Allgemeine Geschäftsbedingungen",
+    "intro": "Durch den Zugriff auf oder die Nutzung von LetsHyre („LetsHyre“, „wir“, „unser“ oder „uns“) erklären Sie sich mit diesen Allgemeinen Geschäftsbedingungen einverstanden. Wenn Sie diesen Bedingungen nicht zustimmen, nutzen Sie die Plattform bitte nicht.",
+    "sections": [
+      {
+        "id": "platform-overview",
+        "title": "1. Überblick über die Plattform",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre ist eine KI-gestützte Recruiting-Plattform, die Arbeitgebern hilft, erfahrene Fachkräfte zu finden durch:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Lebenslauf-Prüfung",
+              "Rollenbasierte KI-Interviews",
+              "Interview-Auswertungsbögen",
+              "Transparenz im Interviewprozess",
+              "Kandidatenprüfung"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre wurde entwickelt, um den Einstellungsprozess zu optimieren, indem Arbeitgeber Kandidaten durch KI-gestützte Interviews und strukturierte Interview-Einblicke bewerten können."
+          }
+        ]
+      },
+      {
+        "id": "eligibility",
+        "title": "2. Teilnahmeberechtigung",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "2.1 Teilnahmeberechtigung für Kandidaten"
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre richtet sich ausschließlich an erfahrene Fachkräfte, die eine Beschäftigung suchen. Um LetsHyre als Kandidat zu nutzen, müssen Sie:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Über vorherige Berufserfahrung verfügen.",
+              "Aktiv auf der Suche nach einer Beschäftigung sein.",
+              "Sofort verfügbar sein oder sich derzeit in einer Kündigungsfrist befinden.",
+              "Genaue, vollständige und wahrheitsgemäße berufliche Informationen bereitstellen."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Berufseinsteiger, Studierende, Praktikanten und Kandidaten ohne vorherige Berufserfahrung sind unter Umständen nicht berechtigt, bestimmte Kandidatendienste der Plattform zu nutzen."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre behält sich das Recht vor, Kandidatenprofile, die nicht dem beabsichtigten Zweck der Plattform entsprechen, zu überprüfen, einzuschränken, zu sperren oder zu entfernen."
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "subheading",
+            "text": "2.2 Teilnahmeberechtigung für Arbeitgeber:"
+          },
+          {
+            "type": "p",
+            "text": "Arbeitgeber, Personalvermittler, Einstellungsverantwortliche und autorisierte Vertreter von Organisationen dürfen die Plattform für legitime Recruiting- und Einstellungszwecke nutzen."
+          },
+          {
+            "type": "p",
+            "text": "Arbeitgeber müssen korrekte Unternehmensinformationen bereitstellen und alle geltenden Beschäftigungs- und Recruiting-Gesetze einhalten."
+          }
+        ]
+      },
+      {
+        "id": "candidate-responsibilities",
+        "title": "3. Pflichten der Kandidaten",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Kandidaten erklären sich damit einverstanden, dass:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Alle übermittelten Informationen korrekt und wahrheitsgemäß sind.",
+              "Lebensläufe, Beschäftigungshistorie, Qualifikationen und Erfahrungsangaben echt sind.",
+              "KI-Interviews ehrlich und ohne Identitätstäuschung absolviert werden.",
+              "Alle während der Interviews bereitgestellten Informationen ihre tatsächliche Berufserfahrung und Fähigkeiten widerspiegeln.",
+              "Sie keine mehrfachen irreführenden Profile erstellen oder betrügerische Handlungen begehen."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre behält sich das Recht vor, Profile zu sperren oder zu entfernen, die falsche, irreführende oder betrügerische Informationen enthalten."
+          }
+        ]
+      },
+      {
+        "id": "profile-availability",
+        "title": "4. Verfügbarkeit des Profils",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Um einen qualitativ hochwertigen und aktiv verfügbaren Talentpool zu gewährleisten, bleiben Kandidatenprofile ab dem Datum der Profilerstellung bis zu 90 Tage lang auf der Plattform aktiv."
+          },
+          {
+            "type": "p",
+            "text": "Kandidaten können ihre Profilinformationen innerhalb dieses Zeitraums aktualisieren und an weiteren KI-Interviews teilnehmen, einschließlich Wiederholungen für dieselbe Rolle oder Interviews für andere Rollen, gemäß den Richtlinien der Plattform."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre kann Kandidaten erlauben, bis zu drei Interviewversuche zu absolvieren, um ihre Interview-Auswertungsbögen, Profilstärke und Sichtbarkeit für Arbeitgeber zu verbessern."
+          },
+          {
+            "type": "p",
+            "text": "Nach Ablauf der 90-Tage-Frist können Kandidatenprofile dauerhaft aus dem aktiven LetsHyre-Kandidatenpool entfernt werden."
+          },
+          {
+            "type": "p",
+            "text": "Kandidaten, die LetsHyre nach der Entfernung ihres Profils weiterhin nutzen möchten, können vorbehaltlich der Richtlinien und Anforderungen der Plattform ein neues Profil erstellen."
+          }
+        ]
+      },
+      {
+        "id": "employer-responsibilities",
+        "title": "5. Pflichten der Arbeitgeber",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Arbeitgeber erklären sich damit einverstanden, dass:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Auf der Plattform veröffentlichte Stellenangebote echt sind.",
+              "Kandidateninformationen ausschließlich für Recruiting- und Einstellungszwecke verwendet werden.",
+              "Kandidateninformationen nicht verkauft, weitergegeben, verbreitet oder missbraucht werden.",
+              "Einstellungsaktivitäten allen geltenden Beschäftigungsgesetzen und -vorschriften entsprechen.",
+              "Arbeitgeber Kandidatendaten nicht für Marketing, Werbung oder branchenfremde Geschäftstätigkeiten verwenden."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ai-interview-disclaimer",
+        "title": "6. Haftungsausschluss für KI-Interviews",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre nutzt Technologien der künstlichen Intelligenz, um rollenbasierte Interviews durchzuführen und Interviewberichte sowie Einblicke zu erstellen."
+          },
+          {
+            "type": "p",
+            "text": "Nutzer erkennen an, dass:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              [
+                "KI-generierte Interviewberichte und Einblicke ",
+                {
+                  "tip": "als Unterstützung dienen sollen",
+                  "tooltip": "Ein Hinweis oder eine Empfehlung, keine endgültige Garantie."
+                },
+                " für Einstellungsentscheidungen."
+              ],
+              "Interview-Einblicke möglicherweise nicht immer vollständig genau oder umfassend sind.",
+              "KI-generierte Berichte nicht als alleinige Grundlage für Beschäftigungsentscheidungen betrachtet werden sollten.",
+              "Endgültige Einstellungsentscheidungen ausschließlich in der Verantwortung der Arbeitgeber liegen.",
+              "LetsHyre KI-gestützte Interview- und Kandidatenprüfungsdienste bereitstellt.",
+              "LetsHyre keine Beschäftigungsmöglichkeiten, Stellenangebote, Kandidatenauswahl, erfolgreiche Einstellungsergebnisse oder Recruiting-Ergebnisse garantiert.",
+              "Endgültige Einstellungsentscheidungen ausschließlich in der Verantwortung der Arbeitgeber liegen."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "payment-and-candidate-unlocks",
+        "title": "7. Zahlung und Freischaltung von Kandidaten",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre arbeitet nach einem Pay-per-Unlock-Modell für die Personalgewinnung."
+          },
+          {
+            "type": "p",
+            "text": "Arbeitgeber können einmalige Zahlungen leisten, um Folgendes freizuschalten:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Kandidatenprofile",
+              "Interview-Auswertungsbögen",
+              "Interviewaufzeichnungen",
+              "Kontaktinformationen der Kandidaten"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Sobald Kandidateninformationen erfolgreich freigeschaltet und dem Arbeitgeber zur Verfügung gestellt wurden, gilt die Transaktion als abgeschlossen."
+          },
+          {
+            "type": "p",
+            "text": "Für alle Zahlungen gilt die Rückerstattungsrichtlinie von LetsHyre."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre behält sich das Recht vor, Preise, Freischaltgebühren und Zahlungsstrukturen jederzeit zu ändern. Preisänderungen gelten ausschließlich für zukünftige Transaktionen."
+          }
+        ]
+      },
+      {
+        "id": "intellectual-property",
+        "title": "8. Geistiges Eigentum",
+        "blocks": [
+          {
+            "type": "p",
+            "text": [
+              "Sämtliche Plattforminhalte, Software, Markenzeichen, Logos, Interview-Frameworks, Berichte, Technologien, Designs und zugehörigen Materialien sind ausschließliches ",
+              {
+                "tip": "Eigentum von LetsHyre",
+                "tooltip": "Geistige Schöpfungen wie Software, Markenzeichen und proprietäre Algorithmen."
+              },
+              "."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nutzer dürfen nicht:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Plattforminhalte kopieren",
+              [
+                {
+                  "tip": "Reverse Engineering",
+                  "tooltip": "Das Zerlegen von Software, um deren Quellcode oder proprietäre Logik zu extrahieren."
+                },
+                " der Plattformfunktionen betreiben"
+              ],
+              "Urheberrechtlich geschützte Materialien reproduzieren",
+              "Plattforminhalte ohne Genehmigung verbreiten",
+              "Die Markenzeichen von LetsHyre ohne vorherige schriftliche Zustimmung verwenden"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "prohibited-activities",
+        "title": "9. Verbotene Aktivitäten",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nutzer dürfen nicht:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Falsche oder irreführende Informationen übermitteln.",
+              "Sich als eine andere Person oder Organisation ausgeben.",
+              "Unbefugten Zugriff auf die Plattform versuchen.",
+              "Schadsoftware, Malware oder schädlichen Code hochladen.",
+              "Die Funktionalität oder Sicherheit der Plattform beeinträchtigen.",
+              "Kandidaten- oder Arbeitgeberinformationen missbrauchen.",
+              "Gegen geltende Gesetze oder Vorschriften verstoßen."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "account-suspension",
+        "title": "10. Sperrung oder Kündigung des Kontos",
+        "blocks": [
+          {
+            "type": "p",
+            "text": [
+              "LetsHyre behält sich das Recht vor, Konten zu ",
+              {
+                "highlight": "sperren, einzuschränken oder zu kündigen"
+              },
+              ", die:"
+            ]
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Gegen diese Allgemeinen Geschäftsbedingungen verstoßen.",
+              "An betrügerischen Aktivitäten beteiligt sind.",
+              "Plattformressourcen missbrauchen.",
+              "Falsche oder irreführende Informationen bereitstellen.",
+              "Versuchen, die Plattformsicherheit zu gefährden."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Solche Maßnahmen können ohne vorherige Ankündigung ergriffen werden, sofern dies zum Schutz der Plattform, ihrer Nutzer oder zur Erfüllung rechtlicher Verpflichtungen erforderlich ist."
+          }
+        ]
+      },
+      {
+        "id": "limitation-of-liability",
+        "title": "11. Haftungsbeschränkung",
+        "blocks": [
+          {
+            "type": "p",
+            "text": [
+              "LetsHyre haftet ",
+              {
+                "highlight": "nicht"
+              },
+              " für:"
+            ]
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Einstellungsentscheidungen, die von Arbeitgebern getroffen werden.",
+              "Arbeitsrechtliche Streitigkeiten zwischen Arbeitgebern und Kandidaten.",
+              "Kommunikation oder Vereinbarungen zwischen Kandidaten und Arbeitgebern.",
+              "Geschäftliche Verluste oder Recruiting-Ergebnisse.",
+              [
+                "Indirekte, zufällige, besondere oder ",
+                {
+                  "tip": "Folgeschäden",
+                  "tooltip": "Schäden, die nicht unmittelbar aus einer Handlung entstehen, sondern aus deren Folgen."
+                },
+                ", die aus der Nutzung der Plattform entstehen."
+              ]
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Nutzer erkennen an, dass sie die Plattform nach eigenem Ermessen und auf eigenes Risiko nutzen."
+          }
+        ]
+      },
+      {
+        "id": "privacy",
+        "title": "12. Datenschutz",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Die Nutzung von LetsHyre unterliegt außerdem unserer Datenschutzerklärung, in der erläutert wird, wie personenbezogene Daten erfasst, verarbeitet, gespeichert und geschützt werden."
+          }
+        ]
+      },
+      {
+        "id": "governing-law",
+        "title": "13. Anwendbares Recht",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Diese Allgemeinen Geschäftsbedingungen unterliegen den Gesetzen Indiens."
+          },
+          {
+            "type": "p",
+            "text": "Alle Streitigkeiten, die sich aus der Nutzung von LetsHyre ergeben, unterliegen der Gerichtsbarkeit der Gerichte in Hyderabad, Telangana."
+          },
+          {
+            "type": "p",
+            "text": "Diese Allgemeinen Geschäftsbedingungen wurden in englischer Sprache verfasst. Übersetzungen dienen ausschließlich der Vereinfachung. Im Falle von Widersprüchen oder Abweichungen zwischen der englischen Fassung und einer übersetzten Fassung ist die englische Fassung maßgeblich."
+          }
+        ]
+      },
+      {
+        "id": "changes-to-terms",
+        "title": "14. Änderungen der Bedingungen",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre behält sich das Recht vor, diese Allgemeinen Geschäftsbedingungen jederzeit zu ändern."
+          },
+          {
+            "type": "p",
+            "text": "Aktualisierte Fassungen werden auf der Plattform veröffentlicht, und die fortgesetzte Nutzung von LetsHyre nach solchen Aktualisierungen gilt als Zustimmung zu den überarbeiteten Bedingungen."
+          }
+        ]
+      },
+      {
+        "id": "contact-us",
+        "title": "15. Kontakt",
+        "blocks": [
+          {
+            "type": "contact",
+            "intro": "Bei Fragen zu diesen Allgemeinen Geschäftsbedingungen wenden Sie sich bitte an:",
+            "emailLabel": "E-Mail:",
+            "email": "support@letshyre.ai",
+            "team": "LetsHyre Support-Team"
+          }
+        ]
+      }
+    ]
+  },
+  "chrome": {
+    "contents": "Inhalt",
+    "readTime": "~{{count}} Min. Lesezeit",
+    "backToTop": "Nach oben",
+    "translationNotice": "Dies ist eine Übersetzung, die der Vereinfachung dient. Maßgeblich ist die <en>englische Fassung</en>."
+  },
+  "meta": {
+    "title": "Allgemeine Geschäftsbedingungen | letshyre.ai",
+    "description": "Die Bedingungen für Ihre Nutzung von LetsHyre: Konten, Interviews, Zahlungen und zulässige Nutzung.",
+    "name": "Allgemeine Geschäftsbedingungen",
+    "schemaDescription": "Bedingungen für die Nutzung der LetsHyre-Plattform.",
+    "crumb": "Allgemeine Geschäftsbedingungen"
+  }
+}

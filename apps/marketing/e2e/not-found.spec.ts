@@ -21,7 +21,7 @@ for (const url of ["/404", "/en/does-not-exist", "/xx/nonsense"]) {
       "href",
       "/en"
     )
-    const homes = page.getByRole("navigation", { name: "Language" })
+    const homes = page.getByRole("navigation", { name: "Change language" })
     await expect(homes.getByRole("link")).toHaveCount(19)
     const hindi = homes.getByRole("link", { name: "हिन्दी" })
     await expect(hindi).toHaveAttribute("href", "/hi")

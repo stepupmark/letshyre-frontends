@@ -1,0 +1,176 @@
+{
+  "refund": {
+    "title": "Politica di Rimborso",
+    "intro": "Benvenuto su LetsHyre. La presente Politica di Rimborso illustra le condizioni in base alle quali possono essere concessi rimborsi per i pagamenti effettuati sulla piattaforma LetsHyre.",
+    "sections": [
+      {
+        "id": "service-model",
+        "title": "1. Modello di Servizio",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre opera secondo un modello di assunzione a Pagamento per Sblocco. I datori di lavoro possono effettuare pagamenti una tantum per sbloccare:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Profili dei candidati",
+              "Scorecard del colloquio",
+              "Registrazioni del colloquio",
+              "Informazioni di contatto dei candidati"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Ogni acquisto di sblocco concede l'accesso alle informazioni del profilo del candidato selezionato, alle schede di valutazione del colloquio, alle registrazioni del colloquio e ai dettagli di contatto, subordinatamente alla disponibilità della piattaforma."
+          },
+          {
+            "type": "p",
+            "text": "Gli acquisti di sblocco sono transazioni una tantum e non costituiscono un abbonamento o un servizio ricorrente."
+          }
+        ]
+      },
+      {
+        "id": "refund-eligibility",
+        "title": "2. Ammissibilità al Rimborso",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Le richieste di rimborso possono essere prese in considerazione solo nelle seguenti circostanze:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Pagamenti duplicati per lo sblocco dello stesso candidato.",
+              "Fatturazione errata causata da un errore tecnico della piattaforma LetsHyre.",
+              "Pagamento riuscito senza che l'accesso alle informazioni del candidato acquistate sia stato fornito a causa di un problema della piattaforma.",
+              "Transazioni non autorizzate verificate a seguito di indagine."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Tutte le richieste di rimborso devono essere presentate entro 7 giorni dalla data della transazione."
+          }
+        ]
+      },
+      {
+        "id": "non-refundable-purchases",
+        "title": "3. Acquisti Non Rimborsabili",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "I rimborsi generalmente non saranno concessi nelle seguenti situazioni:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Profili dei candidati che sono stati sbloccati con successo.",
+              "Scorecard del colloquio o registrazioni del colloquio a cui si è avuto accesso con successo.",
+              "Informazioni di contatto dei candidati che sono state rivelate con successo.",
+              "Insoddisfazione del datore di lavoro riguardo alle qualifiche, competenze, esperienza, capacità comunicative o idoneità del candidato per un ruolo.",
+              "Mancato contatto o mancata assunzione di un candidato dopo lo sblocco del suo profilo.",
+              "Mancata risposta del candidato dopo lo sblocco del profilo.",
+              "Modifiche ai requisiti di assunzione dopo lo sblocco di un candidato.",
+              "Esiti di assunzione o risultati di reclutamento."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Una volta che le informazioni del candidato sono state sbloccate con successo e rese disponibili al datore di lavoro, la transazione è considerata completata."
+          }
+        ]
+      },
+      {
+        "id": "refund-review-process",
+        "title": "4. Procedura di Revisione del Rimborso",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Le richieste di rimborso ammissibili saranno esaminate da LetsHyre entro 7–14 giorni lavorativi."
+          },
+          {
+            "type": "p",
+            "text": "Potrebbero essere richieste informazioni aggiuntive per verificare l'ammissibilità al rimborso."
+          },
+          {
+            "type": "p",
+            "text": "I rimborsi approvati saranno elaborati tramite il metodo di pagamento originale utilizzato per la transazione. I tempi di elaborazione possono variare a seconda del fornitore di servizi di pagamento o dell'istituto finanziario."
+          }
+        ]
+      },
+      {
+        "id": "fraud-prevention",
+        "title": "5. Prevenzione delle Frodi",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre si riserva il diritto di rifiutare richieste di rimborso qualora si sospetti attività fraudolenta, uso improprio della piattaforma, violazione dei Termini e Condizioni o abuso del processo di rimborso."
+          },
+          {
+            "type": "p",
+            "text": "Gli account coinvolti in attività di pagamento fraudolente potrebbero essere sospesi o chiusi definitivamente."
+          }
+        ]
+      },
+      {
+        "id": "chargebacks-and-payment-disputes",
+        "title": "6. Storni e Controversie di Pagamento",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Se un utente avvia uno storno o una controversia di pagamento tramite una banca, un emittente di carte di credito o un fornitore di servizi di pagamento, LetsHyre si riserva il diritto di indagare sulla transazione e di fornire i relativi documenti al processore di pagamento."
+          },
+          {
+            "type": "p",
+            "text": "Attività di storno fraudolente o abusive possono comportare la sospensione o la chiusura dell'account."
+          }
+        ]
+      },
+      {
+        "id": "changes-to-refund-policy",
+        "title": "7. Modifiche alla Presente Politica di Rimborso",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre si riserva il diritto di modificare o aggiornare in qualsiasi momento la presente Politica di Rimborso. Le versioni aggiornate saranno pubblicate sul sito web e diventeranno efficaci al momento della pubblicazione."
+          }
+        ]
+      },
+      {
+        "id": "contact-us",
+        "title": "8. Contattaci",
+        "blocks": [
+          {
+            "type": "contact",
+            "intro": "Per richieste relative a fatturazione, pagamenti o rimborsi, contattaci a:",
+            "emailLabel": "Email:",
+            "email": "support@letshyre.ai",
+            "team": "Team di Supporto LetsHyre"
+          }
+        ]
+      }
+    ]
+  },
+  "chrome": {
+    "contents": "Indice",
+    "readTime": "~{{count}} min di lettura",
+    "backToTop": "Torna all'inizio",
+    "translationNotice": "Questa è una traduzione fornita per comodità. Il testo ufficiale è la <en>versione inglese</en>."
+  },
+  "meta": {
+    "title": "Politica di rimborso | letshyre.ai",
+    "description": "Quando i crediti e gli abbonamenti LetsHyre danno diritto al rimborso, i tempi previsti e come fare richiesta.",
+    "name": "Politica di Rimborso",
+    "schemaDescription": "Idoneità e processo di rimborso per gli acquisti su LetsHyre.",
+    "crumb": "Politica di Rimborso"
+  }
+}

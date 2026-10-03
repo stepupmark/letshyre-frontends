@@ -1,0 +1,26 @@
+{
+  "chatbot": {
+    "subtitle": "Stel ons alles",
+    "inputPlaceholder": "Stel een vraag…",
+    "send": "Versturen",
+    "sendAria": "Bericht versturen",
+    "thinking": "Denken…",
+    "you": "U",
+    "assistant": "Assistent",
+    "retry": "Opnieuw proberen",
+    "errorMessage": "Er is iets misgegaan. Probeer het opnieuw.",
+    "clear": "Wissen",
+    "messagesLabel": "Chatberichten",
+    "closeAria": "Chat sluiten",
+    "empty": {
+      "greeting": "Hallo! Ik ben de LetsHyre-assistent.",
+      "hint": "Stel mij alles over LetsHyre. Probeer een van deze:",
+      "prompts": {
+        "what": "Wat is LetsHyre?",
+        "scorecard": "Hoe werkt het voor werkgevers?",
+        "applications": "Hoe werkt het voor werkzoekenden?",
+        "interview": "Is het gratis om te beginnen?"
+      }
+    }
+  }
+}

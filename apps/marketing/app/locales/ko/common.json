@@ -1,0 +1,58 @@
+{
+  "skipToContent": "본문 바로가기",
+  "copyright": "LetsHyre © {{year}}",
+  "nav": {
+    "howItWorks": "이용 방법",
+    "aiInterview": "AI 인터뷰",
+    "pricing": "요금",
+    "about": "회사 소개",
+    "contact": "문의",
+    "getStarted": "시작하기",
+    "language": "언어 변경",
+    "logoAlt": "LetsHyre 로고",
+    "toggle": "내비게이션 열기/닫기",
+    "siteNavigation": "사이트 내비게이션",
+    "primaryAria": "주요 내비게이션",
+    "mobileAria": "모바일 내비게이션"
+  },
+  "footer": {
+    "product": "제품",
+    "candidates": "후보자",
+    "company": "회사",
+    "stayUpdated": "최신 소식 받기",
+    "newsletterDesc": "LetsHyre의 최신 소식과 업데이트를 받아보세요",
+    "links": {
+      "interviewProcess": "인터뷰 프로세스",
+      "downloadApp": "애플리케이션 다운로드",
+      "pricing": "요금",
+      "about": "회사 소개",
+      "terms": "이용약관",
+      "privacy": "개인정보 처리방침",
+      "refund": "환불 정책",
+      "contact": "문의"
+    }
+  },
+  "newsletter": {
+    "emailPlaceholder": "이메일 주소",
+    "emailLabel": "이메일 주소",
+    "subscribe": "구독하기",
+    "subscribed": "구독이 저장되었습니다.",
+    "subscribeFailed": "구독에 실패했습니다. 다시 시도해 주세요."
+  },
+  "pageState": {
+    "loading": "페이지를 불러오는 중"
+  },
+  "notFound": {
+    "badge": "404 페이지를 찾을 수 없음",
+    "title": "이 페이지를 찾을 수 없습니다",
+    "body": "찾으시는 페이지가 없거나 이동되었을 수 있습니다. 처음부터 다시 시작해 보세요.",
+    "goHome": "홈으로",
+    "goBack": "뒤로 가기"
+  },
+  "error": {
+    "title": "페이지를 불러오지 못했습니다",
+    "body": "저희 쪽에서 문제가 발생했습니다. 페이지를 새로고침해 다시 시도하시고, 문제가 계속되면 문의해 주세요.",
+    "retry": "다시 시도",
+    "goHome": "홈으로"
+  }
+}

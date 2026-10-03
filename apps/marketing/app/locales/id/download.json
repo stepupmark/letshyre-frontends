@@ -1,0 +1,21 @@
+{
+  "title": "Unduh Aplikasi",
+  "subtitle": "Dapatkan aplikasi desktop yang aman untuk memulai sesi wawancara yang stabil dan bebas gangguan.",
+  "loading": "Memuat rilis...",
+  "comingSoon": "Segera Hadir",
+  "retry": "Coba Lagi",
+  "downloadFor": "Unduh untuk {{os}}",
+  "steps": {
+    "download": "Unduh",
+    "install": "Instal",
+    "interview": "Wawancara"
+  },
+  "support": "Mengalami kendala? Lihat panduan instalasi",
+  "meta": {
+    "title": "Unduh Aplikasi Desktop | letshyre.ai",
+    "description": "Dapatkan aplikasi desktop LetsHyre untuk Windows dan ikuti wawancara di lingkungan yang stabil, bebas gangguan, dan terawasi.",
+    "name": "Unduh Aplikasi Desktop LetsHyre",
+    "schemaDescription": "Dapatkan aplikasi desktop LetsHyre untuk Windows.",
+    "crumb": "Unduh"
+  }
+}

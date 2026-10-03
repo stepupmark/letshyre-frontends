@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "AI-wervings- en interviewplatform | letshyre.ai",
+    "description": "Cv-selectie, gestructureerde AI-interviews en kandidaatverificatie op één plek. Voor teams die mensen in hun opzegtermijn aannemen.",
+    "name": "LetsHyre — AI wervingsplatform voor talent in opzegtermijn",
+    "schemaDescription": "AI-aangedreven wervingsplatform dat cv-screening, AI-interviews en kandidaatsverificatie automatiseert."
+  },
+  "hero": {
+    "title": "Het AI-wervingsplatform voor <hl>talent in opzegtermijn</hl>",
+    "ctaHiring": "Ik zoek personeel",
+    "ctaJob": "Ik zoek werk",
+    "tagline": {
+      "stop": "Stop met screenen.",
+      "start": "Begin met shortlisten."
+    }
+  },
+  "assistance": {
+    "ariaLabel": "Hoe het werkt",
+    "steps": {
+      "post": {
+        "pill": "Plaats uw vacature",
+        "heading": "Definieer de rol,<br/><hl>laat AI de rest doen</hl>"
+      },
+      "screen": {
+        "pill": "AI-screening",
+        "heading": "24/7 sollicitatiegesprekken,<br/><hl>zonder planningsfrictie</hl>"
+      },
+      "scorecards": {
+        "pill": "Ontvang scorecards",
+        "heading": "Ruwe data omgezet in<br/><hl>heldere aanbevelingen</hl>"
+      }
+    }
+  },
+  "faq": {
+    "title": "FAQ: AI-werving & opzegtermijn",
+    "subtitle": "Alles wat u moet weten over het AI-wervingsplatform van LetsHyre.",
+    "items": [
+      {
+        "q": "Hoe werkt het AI-wervingsplatform van LetsHyre?",
+        "a": "LetsHyre verwerkt cv's onmiddellijk, voert interactieve AI-sollicitatiegesprekken uit om communicatie- en technische vaardigheden te beoordelen, en biedt een geverifieerde scorecard zodat u alleen tijd besteedt aan de beste kandidaten."
+      },
+      {
+        "q": "Wat onderscheidt LetsHyre van andere wervingsplatforms?",
+        "a": "In tegenstelling tot traditionele vacaturesites automatiseert LetsHyre het volledige selectieproces. Onze AI verifieert vaardigheden in real-time voordat u de kandidaat zelfs maar te zien krijgt, waardoor uw time-to-hire drastisch wordt verkort."
+      },
+      {
+        "q": "Hoe nauwkeurig is de AI-beoordeling van het sollicitatiegesprek?",
+        "a": "Onze AI-modellen zijn getraind op miljoenen datapunten om communicatie, technische bekwaamheid en culturele fit te beoordelen met meer dan 98% nauwkeurigheid, wat zorgt voor eerlijke en onbevooroordeelde scoring."
+      },
+      {
+        "q": "Waar controleert AI-video-objectdetectie op?",
+        "a": "Ons geavanceerde anti-cheat systeem monitort oogbewegingen, detecteert meerdere gezichten en controleert op ongeautoriseerde apparaten zoals telefoons of secundaire monitoren tijdens de beoordeling."
+      },
+      {
+        "q": "Worden kandidaten in opzegtermijn geverifieerd?",
+        "a": "Ja, wij prioriteren en verifiëren kandidaten in opzegtermijn zodat u uw team tot 40% sneller kunt samenstellen met talent dat direct beschikbaar is."
+      },
+      {
+        "q": "Welke informatie bevat de AI-scorecard?",
+        "a": "De scorecard biedt een uitgebreide uitsplitsing van de Potentiaalscore, Fitscore, technische sterke punten, verbeterpunten en een gedetailleerde gedragsanalyse van de kandidaat."
+      },
+      {
+        "q": "Kan ik LetsHyre integreren met onze bestaande HR-systemen?",
+        "a": "Absoluut! LetsHyre integreert naadloos met populaire ATS- en HRIS-platforms via onze beveiligde API, zodat uw wervingsworkflow ononderbroken blijft."
+      }
+    ]
+  },
+  "hireCard": {
+    "title": "Klaar om aan te nemen of aangenomen te worden?",
+    "startHiring": "Begin met aanwerven",
+    "applyJob": "Solliciteer op een baan"
+  },
+  "chatbot": {
+    "title": "LetsHyre assistent",
+    "launcherAria": "Chatassistent openen"
+  }
+}

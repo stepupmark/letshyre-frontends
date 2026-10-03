@@ -1,0 +1,58 @@
+{
+  "skipToContent": "Ga naar hoofdinhoud",
+  "copyright": "LetsHyre © {{year}}",
+  "nav": {
+    "howItWorks": "Hoe het werkt",
+    "aiInterview": "AI sollicitatiegesprek",
+    "pricing": "Prijzen",
+    "about": "Over ons",
+    "contact": "Contact",
+    "getStarted": "Aan de slag",
+    "language": "Taal wijzigen",
+    "logoAlt": "LetsHyre logo",
+    "toggle": "Navigatie aan/uit",
+    "siteNavigation": "Site navigatie",
+    "primaryAria": "Hoofdnavigatie",
+    "mobileAria": "Mobiele navigatie"
+  },
+  "footer": {
+    "product": "Product",
+    "candidates": "Kandidaten",
+    "company": "Bedrijf",
+    "stayUpdated": "Blijf op de hoogte",
+    "newsletterDesc": "Ontvang het laatste nieuws en updates van LetsHyre",
+    "links": {
+      "interviewProcess": "Sollicitatieproces",
+      "downloadApp": "App downloaden",
+      "pricing": "Prijzen",
+      "about": "Over ons",
+      "terms": "Algemene voorwaarden",
+      "privacy": "Privacybeleid",
+      "refund": "Terugbetalingsbeleid",
+      "contact": "Contact"
+    }
+  },
+  "newsletter": {
+    "emailPlaceholder": "Uw e-mail",
+    "emailLabel": "E-mailadres",
+    "subscribe": "Abonneren",
+    "subscribed": "Abonnement succesvol opgeslagen.",
+    "subscribeFailed": "Abonneren mislukt. Probeer het opnieuw."
+  },
+  "pageState": {
+    "loading": "Pagina wordt geladen"
+  },
+  "notFound": {
+    "badge": "404 Niet gevonden",
+    "title": "We konden deze pagina niet vinden",
+    "body": "De pagina die je zoekt bestaat niet of is mogelijk verplaatst. We helpen je weer op weg.",
+    "goHome": "Naar home",
+    "goBack": "Terug"
+  },
+  "error": {
+    "title": "Deze pagina is niet geladen",
+    "body": "Er ging iets mis aan onze kant. Laad de pagina opnieuw om het nog eens te proberen, of neem contact met ons op als het blijft gebeuren.",
+    "retry": "Opnieuw proberen",
+    "goHome": "Naar home"
+  }
+}

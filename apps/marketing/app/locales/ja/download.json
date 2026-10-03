@@ -1,0 +1,21 @@
+{
+  "title": "アプリをダウンロード",
+  "subtitle": "安定した集中できる面接セッションを始めるために、安全なデスクトップアプリを入手してください。",
+  "loading": "リリースを読み込み中...",
+  "comingSoon": "近日公開",
+  "retry": "再試行",
+  "downloadFor": "{{os}}用をダウンロード",
+  "steps": {
+    "download": "ダウンロード",
+    "install": "インストール",
+    "interview": "面接"
+  },
+  "support": "お困りですか？インストールガイドを見る",
+  "meta": {
+    "title": "デスクトップアプリをダウンロード | letshyre.ai",
+    "description": "Windows版LetsHyreデスクトップアプリを入手し、安定して集中できる監督付きの環境で面接を受けましょう。",
+    "name": "LetsHyreデスクトップアプリをダウンロード",
+    "schemaDescription": "Windows用のLetsHyreデスクトップアプリを入手。",
+    "crumb": "ダウンロード"
+  }
+}

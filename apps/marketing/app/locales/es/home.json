@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "Contratación y entrevistas con IA | letshyre.ai",
+    "description": "Criba de currículums, entrevistas con IA estructuradas y verificación de candidatos en un solo sitio, para contratar perfiles en preaviso.",
+    "name": "LetsHyre — Plataforma de Contratación IA para Talento en Período de Preaviso",
+    "schemaDescription": "Plataforma de contratación con IA que automatiza la selección de currículos, entrevistas IA y verificación de candidatos."
+  },
+  "hero": {
+    "title": "La plataforma de contratación con IA para <hl>talento en período de preaviso</hl>",
+    "ctaHiring": "Quiero contratar",
+    "ctaJob": "Busco empleo",
+    "tagline": {
+      "stop": "Deja de filtrar.",
+      "start": "Empieza a preseleccionar."
+    }
+  },
+  "assistance": {
+    "ariaLabel": "Cómo funciona",
+    "steps": {
+      "post": {
+        "pill": "Publica tu vacante",
+        "heading": "Define el puesto,<br/><hl>deja que la IA haga el resto</hl>"
+      },
+      "screen": {
+        "pill": "Cribado con IA",
+        "heading": "Entrevistas 24/7,<br/><hl>sin fricciones de programación</hl>"
+      },
+      "scorecards": {
+        "pill": "Recibe informes de evaluación",
+        "heading": "Datos brutos transformados en<br/><hl>recomendaciones claras</hl>"
+      }
+    }
+  },
+  "faq": {
+    "title": "Preguntas frecuentes: Contratación con IA y período de preaviso",
+    "subtitle": "Todo lo que necesitas saber sobre la plataforma de contratación impulsada por IA de LetsHyre.",
+    "items": [
+      {
+        "q": "¿Cómo funciona la plataforma de contratación con IA de LetsHyre?",
+        "a": "LetsHyre analiza currículums al instante, realiza entrevistas interactivas con IA para evaluar habilidades de comunicación y técnicas, y proporciona un informe de evaluación verificado para que solo inviertas tiempo en los mejores candidatos."
+      },
+      {
+        "q": "¿Qué diferencia a LetsHyre de otras plataformas de contratación?",
+        "a": "A diferencia de los portales de empleo tradicionales, LetsHyre automatiza todo el proceso de selección. Nuestra IA verifica las habilidades en tiempo real antes de que siquiera veas al candidato, reduciendo drásticamente el tiempo de contratación."
+      },
+      {
+        "q": "¿Qué tan precisa es la evaluación de la entrevista con IA?",
+        "a": "Nuestros modelos de IA están entrenados con millones de puntos de datos para evaluar la comunicación, la competencia técnica y el ajuste cultural con más del 98 % de precisión, garantizando una puntuación justa e imparcial."
+      },
+      {
+        "q": "¿Qué verifica la detección de objetos en video con IA?",
+        "a": "Nuestro avanzado sistema anti-trampa monitorea el seguimiento ocular, detecta múltiples rostros y comprueba la presencia de dispositivos no autorizados, como teléfonos o monitores secundarios, durante la evaluación."
+      },
+      {
+        "q": "¿Se verifican los candidatos en período de preaviso?",
+        "a": "Sí, priorizamos y verificamos a los candidatos en período de preaviso para que puedas formar tu equipo hasta un 40 % más rápido con talento listo para incorporarse de inmediato."
+      },
+      {
+        "q": "¿Qué información incluye el informe de evaluación de IA?",
+        "a": "El informe proporciona un desglose integral de la Puntuación de potencial, la Puntuación de ajuste, las fortalezas técnicas, las áreas de mejora y un análisis conductual detallado del candidato."
+      },
+      {
+        "q": "¿Puedo integrar LetsHyre con nuestros sistemas de RRHH existentes?",
+        "a": "¡Por supuesto! LetsHyre se integra a la perfección con las plataformas ATS y HRIS más populares a través de nuestra API segura, para que tu flujo de contratación permanezca ininterrumpido."
+      }
+    ]
+  },
+  "hireCard": {
+    "title": "¿Listo para contratar o ser contratado?",
+    "startHiring": "Empezar a contratar",
+    "applyJob": "Solicitar empleo"
+  },
+  "chatbot": {
+    "title": "Asistente LetsHyre",
+    "launcherAria": "Abrir asistente de chat"
+  }
+}

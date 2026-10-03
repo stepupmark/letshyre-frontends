@@ -1,0 +1,176 @@
+{
+  "refund": {
+    "title": "Kebijakan Pengembalian Dana",
+    "intro": "Selamat datang di LetsHyre. Kebijakan Pengembalian Dana ini menjelaskan ketentuan-ketentuan di mana pengembalian dana dapat diberikan untuk pembayaran yang dilakukan di platform LetsHyre.",
+    "sections": [
+      {
+        "id": "service-model",
+        "title": "1. Model Layanan",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre beroperasi dengan model perekrutan Bayar-Per-Buka-Akses (Pay-Per-Unlock). Pemberi kerja dapat melakukan pembayaran satu kali untuk membuka akses ke:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Profil Kandidat",
+              "Scorecard Wawancara",
+              "Rekaman Wawancara",
+              "Informasi Kontak Kandidat"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Setiap pembelian pembukaan akses memberikan akses ke informasi profil, kartu penilaian wawancara, rekaman wawancara, dan detail kontak kandidat terpilih, sesuai dengan ketersediaan platform."
+          },
+          {
+            "type": "p",
+            "text": "Pembelian pembukaan akses merupakan transaksi satu kali dan bukan merupakan langganan atau layanan berulang."
+          }
+        ]
+      },
+      {
+        "id": "refund-eligibility",
+        "title": "2. Kelayakan Pengembalian Dana",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Permintaan pengembalian dana hanya dapat dipertimbangkan dalam kondisi-kondisi berikut:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Pembayaran ganda untuk pembukaan akses kandidat yang sama.",
+              "Kesalahan penagihan yang disebabkan oleh kesalahan teknis pada platform LetsHyre.",
+              "Pembayaran berhasil namun akses ke informasi kandidat yang dibeli tidak diberikan akibat masalah pada platform.",
+              "Transaksi tidak sah yang telah diverifikasi melalui investigasi."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Seluruh permintaan pengembalian dana harus diajukan dalam waktu 7 hari sejak tanggal transaksi."
+          }
+        ]
+      },
+      {
+        "id": "non-refundable-purchases",
+        "title": "3. Pembelian yang Tidak Dapat Dikembalikan Dananya",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Pengembalian dana umumnya tidak akan diberikan dalam situasi-situasi berikut:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Profil kandidat yang telah berhasil dibuka aksesnya.",
+              "Kartu penilaian wawancara atau rekaman wawancara yang telah berhasil diakses.",
+              "Informasi kontak kandidat yang telah berhasil diungkapkan.",
+              "Ketidakpuasan pemberi kerja terhadap kualifikasi, keterampilan, pengalaman, kemampuan komunikasi, atau kesesuaian kandidat untuk suatu peran.",
+              "Kegagalan menghubungi atau merekrut kandidat setelah membuka akses profilnya.",
+              "Kandidat tidak responsif setelah pembukaan akses profil.",
+              "Perubahan kebutuhan perekrutan setelah akses kandidat dibuka.",
+              "Hasil perekrutan atau hasil rekrutmen."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Setelah informasi kandidat berhasil dibuka aksesnya dan tersedia bagi pemberi kerja, transaksi tersebut dianggap selesai."
+          }
+        ]
+      },
+      {
+        "id": "refund-review-process",
+        "title": "4. Proses Peninjauan Pengembalian Dana",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Permintaan pengembalian dana yang memenuhi syarat akan ditinjau oleh LetsHyre dalam waktu 7–14 hari kerja."
+          },
+          {
+            "type": "p",
+            "text": "Informasi tambahan dapat diminta untuk memverifikasi kelayakan pengembalian dana."
+          },
+          {
+            "type": "p",
+            "text": "Pengembalian dana yang disetujui akan diproses melalui metode pembayaran asli yang digunakan untuk transaksi tersebut. Waktu pemrosesan dapat bervariasi tergantung pada penyedia pembayaran atau lembaga keuangan."
+          }
+        ]
+      },
+      {
+        "id": "fraud-prevention",
+        "title": "5. Pencegahan Penipuan",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre berhak untuk menolak permintaan pengembalian dana apabila terdapat kecurigaan aktivitas penipuan, penyalahgunaan platform, pelanggaran Syarat & Ketentuan, atau penyalahgunaan proses pengembalian dana."
+          },
+          {
+            "type": "p",
+            "text": "Akun yang terlibat dalam aktivitas pembayaran curang dapat ditangguhkan atau dihentikan secara permanen."
+          }
+        ]
+      },
+      {
+        "id": "chargebacks-and-payment-disputes",
+        "title": "6. Chargeback dan Sengketa Pembayaran",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Apabila pengguna mengajukan chargeback atau sengketa pembayaran melalui bank, penerbit kartu, atau penyedia pembayaran, LetsHyre berhak untuk menyelidiki transaksi tersebut dan memberikan catatan yang relevan kepada penyedia pemrosesan pembayaran."
+          },
+          {
+            "type": "p",
+            "text": "Aktivitas chargeback yang curang atau bersifat penyalahgunaan dapat mengakibatkan penangguhan atau penghentian akun."
+          }
+        ]
+      },
+      {
+        "id": "changes-to-refund-policy",
+        "title": "7. Perubahan Kebijakan Pengembalian Dana Ini",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre berhak untuk mengubah atau memperbarui Kebijakan Pengembalian Dana ini kapan pun. Versi terbaru akan dipublikasikan di situs web dan berlaku efektif segera setelah dipublikasikan."
+          }
+        ]
+      },
+      {
+        "id": "contact-us",
+        "title": "8. Hubungi Kami",
+        "blocks": [
+          {
+            "type": "contact",
+            "intro": "Untuk pertanyaan mengenai penagihan, pembayaran, atau pengembalian dana, silakan hubungi:",
+            "emailLabel": "Email:",
+            "email": "support@letshyre.ai",
+            "team": "Tim Dukungan LetsHyre"
+          }
+        ]
+      }
+    ]
+  },
+  "chrome": {
+    "contents": "Daftar Isi",
+    "readTime": "~{{count}} menit membaca",
+    "backToTop": "Kembali ke atas",
+    "translationNotice": "Ini adalah terjemahan yang disediakan untuk kemudahan. Teks resmi adalah <en>versi bahasa Inggris</en>."
+  },
+  "meta": {
+    "title": "Kebijakan Pengembalian Dana | letshyre.ai",
+    "description": "Kapan kredit dan langganan LetsHyre memenuhi syarat pengembalian dana, berapa lama prosesnya, dan cara mengajukannya.",
+    "name": "Kebijakan Pengembalian Dana",
+    "schemaDescription": "Kelayakan dan proses pengembalian dana untuk pembelian LetsHyre.",
+    "crumb": "Kebijakan Pengembalian Dana"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "title": "Recruiting neu definiert mit<br/><hl>KI-gestützten Interviews</hl>",
+    "description": "LetsHyre ist eine KI-gestützte Recruiting-Plattform, die Arbeitgebern hilft, erfahrene Fachkräfte, die aktiv nach neuen Karrierechancen suchen, zu entdecken, zu bewerten und mit ihnen in Kontakt zu treten."
+  },
+  "intro": {
+    "title": "Die Herausforderung<br/><hl>& unsere Lösung</hl>",
+    "p1": "Traditionelle Einstellungsprozesse erfordern oft erheblichen Zeit- und Arbeitsaufwand, um Lebensläufe zu prüfen, Interviews zu führen und die passenden Kandidaten zu identifizieren. LetsHyre optimiert diesen Prozess durch intelligentes Kandidaten-Screening, KI-gestützte rollenbasierte Interviews, Interview-Scorecards und transparente Kandidatenbewertung.",
+    "p2": "Unsere Plattform ermöglicht es Arbeitgebern, Kandidatenprofile, Interview-Scorecards, Interviewaufzeichnungen und Kontaktinformationen über ein einfaches Pay-per-Unlock-Modell freizuschalten."
+  },
+  "mission": {
+    "title": "Unsere Mission",
+    "desc": "Wir vereinfachen die Personalgewinnung, indem wir künstliche Intelligenz mit transparenter Kandidatenbewertung kombinieren. So helfen wir Arbeitgebern, qualifizierte Talente effizient zu finden, und bieten erfahrenen Fachkräften faire Möglichkeiten, ihre Fähigkeiten unter Beweis zu stellen."
+  },
+  "vision": {
+    "title": "Unsere Vision",
+    "desc": "Wir möchten der vertrauenswürdigste KI-gestützte Recruiting-Marktplatz für erfahrene Fachkräfte werden, der Arbeitgebern bessere Einstellungsentscheidungen ermöglicht und Kandidaten mit sinnvollen Karrierechancen verbindet."
+  },
+  "whatWeDo": {
+    "employersHeading": "Für Arbeitgeber",
+    "employerPoints": [
+      "Zugang zu erfahrenen Fachkräften, die aktiv nach Möglichkeiten suchen",
+      "Sofort verfügbare Kandidaten und Kandidaten in der Kündigungsfrist entdecken",
+      "KI-gestützte rollenbasierte Interviews durchführen",
+      "Interview-Scorecards und Erkenntnisse einsehen",
+      "Interviewaufzeichnungen",
+      "Aufwand und Zeit für das Screening reduzieren",
+      "Zugang zu transparenten Kandidateninformationen",
+      "Nur für die Kandidatenprofile bezahlen, die Sie freischalten möchten"
+    ],
+    "candidatesHeading": "Für Kandidaten",
+    "candidatePoints": [
+      "Ein professionelles Profil erstellen",
+      "Fähigkeiten und Erfahrungen präsentieren",
+      "An KI-gestützten rollenbasierten Interviews teilnehmen",
+      "Profilsichtbarkeit verbessern",
+      "Chancen erhöhen, von Arbeitgebern entdeckt zu werden",
+      "Mit Unternehmen in Kontakt treten, die erfahrene Fachkräfte suchen"
+    ]
+  },
+  "why": {
+    "heading": "Warum LetsHyre?",
+    "cards": {
+      "aiPowered": {
+        "title": "KI-gestütztes Recruiting",
+        "desc": "Rollenbasierte KI-Interviews helfen Arbeitgebern, Kandidaten effizienter zu bewerten."
+      },
+      "faster": {
+        "title": "Schnelleres Einstellen",
+        "desc": "Reduzieren Sie den manuellen Screening-Aufwand und beschleunigen Sie Einstellungsentscheidungen."
+      },
+      "network": {
+        "title": "Netzwerk erfahrener Talente",
+        "desc": "Vernetzen Sie sich mit sofort verfügbaren Kandidaten, Fachkräften in der Kündigungsfrist und erfahrenen Kandidaten, die aktiv nach Möglichkeiten suchen."
+      },
+      "payPerUnlock": {
+        "title": "Pay-per-Unlock-Modell",
+        "desc": "Zahlen Sie nur, wenn Sie Kandidateninformationen freischalten, die für Ihre Einstellungsbedürfnisse relevant sind."
+      },
+      "transparency": {
+        "title": "Interview-Transparenz",
+        "desc": "Strukturierte Interview-Scorecards und Erkenntnisse unterstützen fundierte Einstellungsentscheidungen."
+      }
+    }
+  },
+  "profileDuration": {
+    "title": "Dauer der Profilaktivität",
+    "p1": "Um einen hochwertigen und aktiv verfügbaren Talentpool zu erhalten, bleiben Kandidatenprofile ab dem Datum der Profilerstellung bis zu <b>90 Tage</b> auf der Plattform aktiv.",
+    "p2": "Kandidaten können ihre Profilinformationen innerhalb dieses Zeitraums aktualisieren.",
+    "p3": "Nach Ablauf der 90-Tage-Frist können Kandidatenprofile dauerhaft aus dem aktiven LetsHyre-Kandidatenpool entfernt werden.",
+    "p4": "Kandidaten, die LetsHyre nach der Profilentfernung weiterhin nutzen möchten, können ein neues Profil erstellen, vorbehaltlich der Richtlinien und Anforderungen der Plattform."
+  },
+  "commitment": {
+    "title": "Haftungsausschluss",
+    "body": "LetsHyre bietet KI-gestützte Interview- und Kandidaten-Screening-Dienste an. KI-generierte Scorecards und Erkenntnisse sollen Einstellungsentscheidungen unterstützen und sollten nicht als alleinige Grundlage für Beschäftigungsentscheidungen betrachtet werden. Die endgültigen Einstellungsentscheidungen liegen weiterhin in der Verantwortung der Arbeitgeber.",
+    "contactUs": "Kontaktieren Sie uns"
+  },
+  "meta": {
+    "title": "Über uns | letshyre.ai",
+    "description": "Der Ansatz von LetsHyre für KI-Interviews: automatisches Screening, rollenbezogene Fragen und geprüfte Scorecards.",
+    "name": "Über LetsHyre",
+    "schemaDescription": "Wie LetsHyre KI einsetzt, um Screening, Interviews und Kandidatenverifizierung zu automatisieren.",
+    "crumb": "Über uns"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "chatbot": {
+    "subtitle": "Fragen Sie uns alles",
+    "inputPlaceholder": "Stellen Sie eine Frage…",
+    "send": "Senden",
+    "sendAria": "Nachricht senden",
+    "thinking": "Denkt nach…",
+    "you": "Sie",
+    "assistant": "Assistent",
+    "retry": "Erneut versuchen",
+    "errorMessage": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "clear": "Löschen",
+    "messagesLabel": "Chat-Nachrichten",
+    "closeAria": "Chat schließen",
+    "empty": {
+      "greeting": "Hallo! Ich bin der LetsHyre-Assistent.",
+      "hint": "Fragen Sie mich alles über LetsHyre. Probieren Sie es mit einer dieser Fragen:",
+      "prompts": {
+        "what": "Was ist LetsHyre?",
+        "scorecard": "Wie funktioniert es für Arbeitgeber?",
+        "applications": "Wie funktioniert es für Arbeitsuchende?",
+        "interview": "Ist der Einstieg kostenlos?"
+      }
+    }
+  }
+}

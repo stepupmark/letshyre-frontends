@@ -1,0 +1,58 @@
+{
+  "skipToContent": "Saltar para o conteúdo principal",
+  "copyright": "LetsHyre © {{year}}",
+  "nav": {
+    "howItWorks": "Como Funciona",
+    "aiInterview": "Entrevista com IA",
+    "pricing": "Preços",
+    "about": "Sobre",
+    "contact": "Contacto",
+    "getStarted": "Começar",
+    "language": "Alterar idioma",
+    "logoAlt": "Logótipo LetsHyre",
+    "toggle": "Alternar navegação",
+    "siteNavigation": "Navegação do site",
+    "primaryAria": "Navegação principal",
+    "mobileAria": "Navegação móvel"
+  },
+  "footer": {
+    "product": "Produto",
+    "candidates": "Candidatos",
+    "company": "Empresa",
+    "stayUpdated": "Mantenha-se Atualizado",
+    "newsletterDesc": "Receba as últimas notícias e novidades da LetsHyre",
+    "links": {
+      "interviewProcess": "Processo de Entrevista",
+      "downloadApp": "Transferir Aplicação",
+      "pricing": "Preços",
+      "about": "Sobre Nós",
+      "terms": "Termos e Condições",
+      "privacy": "Política de Privacidade",
+      "refund": "Política de Reembolso",
+      "contact": "Contacto"
+    }
+  },
+  "newsletter": {
+    "emailPlaceholder": "O seu Email",
+    "emailLabel": "Endereço de email",
+    "subscribe": "Subscrever",
+    "subscribed": "Subscrição guardada com sucesso.",
+    "subscribeFailed": "Falha ao subscrever. Tente novamente."
+  },
+  "pageState": {
+    "loading": "A carregar a página"
+  },
+  "notFound": {
+    "badge": "404 Página não encontrada",
+    "title": "Não encontramos esta página",
+    "body": "A página que você procura não existe ou pode ter sido movida. Vamos colocá-lo de volta no caminho certo.",
+    "goHome": "Ir para o início",
+    "goBack": "Voltar"
+  },
+  "error": {
+    "title": "Esta página não carregou",
+    "body": "Algo correu mal do nosso lado. Recarregue a página para tentar novamente ou contacte-nos se o problema persistir.",
+    "retry": "Tentar novamente",
+    "goHome": "Ir para o início"
+  }
+}

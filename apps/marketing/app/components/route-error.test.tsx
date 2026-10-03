@@ -31,7 +31,7 @@ describe("RouteError", () => {
       "href",
       "/en"
     )
-    const nav = screen.getByRole("navigation", { name: "Language" })
+    const nav = screen.getByRole("navigation", { name: "Change language" })
     const links = within(nav).getAllByRole("link")
     expect(links).toHaveLength(LOCALES.length)
     const arabic = within(nav).getByRole("link", { name: "العربية" })
