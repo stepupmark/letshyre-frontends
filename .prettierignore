@@ -1,0 +1,10 @@
+apps/legacy
+infra/nginx/legacy
+docs/baseline
+pnpm-lock.yaml
+build
+coverage
+.react-router
+.turbo
+playwright-report
+test-results

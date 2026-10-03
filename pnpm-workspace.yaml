@@ -1,6 +1,37 @@
 packages:
   - apps/*
+  - packages/*
+
+catalog:
+  "@playwright/test": ^1.63.0
+  "@react-router/dev": 8.4.0
+  "@react-router/node": 8.4.0
+  "@tailwindcss/vite": ^4.3.3
+  "@tanstack/react-query": ^5.104.1
+  "@types/node": ^24.19.1
+  "@types/react": ^19.2.18
+  "@types/react-dom": ^19.2.3
+  eslint: ^10.12.0
+  i18next: ^26.4.2
+  react: ^19.2.8
+  react-dom: ^19.2.8
+  react-i18next: ^17.0.15
+  react-router: 8.4.0
+  tailwindcss: ^4.3.3
+  typescript: ~6.0.3
+  vite: ^8.3.2
+  vitest: ^5.0.3
+  zod: ^4.6.5
+
+# don't install versions published in the last 24h
+minimumReleaseAge: 1440
+
+onlyBuiltDependencies:
+  - esbuild
+  - lefthook
+  - sharp
 
 peerDependencyRules:
   allowedVersions:
     eslint-plugin-react>eslint: "10"
+    eslint-plugin-jsx-a11y>eslint: "10"

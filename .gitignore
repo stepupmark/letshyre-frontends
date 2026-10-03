@@ -46,3 +46,8 @@ lighthouse-report/
 # Claude Code local machine state
 .claude/
 coverage
+
+# Monorepo tooling
+.turbo
+playwright-report
+test-results

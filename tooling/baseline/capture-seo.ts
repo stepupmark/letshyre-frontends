@@ -45,7 +45,9 @@ function tags(html: string, name: string): Record<string, string>[] {
   const out: Record<string, string>[] = []
   for (const m of html.matchAll(new RegExp(`<${name}\\b([^>]*)>`, "gi"))) {
     const attrs: Record<string, string> = {}
-    for (const a of (m[1] ?? "").matchAll(/([\w:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)')/g)) {
+    for (const a of (m[1] ?? "").matchAll(
+      /([\w:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)')/g
+    )) {
       attrs[a[1]!.toLowerCase()] = decode(a[2] ?? a[3] ?? "")
     }
     out.push(attrs)
@@ -62,7 +64,9 @@ function jsonLdTypes(html: string) {
     try {
       const node = JSON.parse(m[1] ?? "")
       for (const n of Array.isArray(node) ? node : [node]) {
-        const t = Array.isArray(n["@type"]) ? n["@type"].join("+") : String(n["@type"])
+        const t = Array.isArray(n["@type"])
+          ? n["@type"].join("+")
+          : String(n["@type"])
         types.push(t)
         if (t === "FAQPage") faqQuestions += n.mainEntity?.length ?? 0
       }
@@ -134,7 +138,10 @@ async function captureUrl(url: string) {
   }
 }
 
-async function pool<T, R>(items: T[], fn: (item: T) => Promise<R>): Promise<R[]> {
+async function pool<T, R>(
+  items: T[],
+  fn: (item: T) => Promise<R>
+): Promise<R[]> {
   const results: R[] = new Array(items.length)
   let next = 0
   const worker = async () => {
@@ -152,13 +159,19 @@ async function pool<T, R>(items: T[], fn: (item: T) => Promise<R>): Promise<R[]>
 }
 
 const sitemapXml = await (await get(`${ORIGIN}/sitemap.xml`, "follow")).text()
-const sitemap = [...sitemapXml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) => ({
-  loc: decode(m[1]!.match(/<loc>([^<]+)<\/loc>/)?.[1] ?? ""),
-  lastmod: m[1]!.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1] ?? null,
-  alternates: [...m[1]!.matchAll(/hreflang="([^"]+)"/g)].map((a) => a[1]!).sort(),
-}))
+const sitemap = [...sitemapXml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(
+  (m) => ({
+    loc: decode(m[1]!.match(/<loc>([^<]+)<\/loc>/)?.[1] ?? ""),
+    lastmod: m[1]!.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1] ?? null,
+    alternates: [...m[1]!.matchAll(/hreflang="([^"]+)"/g)]
+      .map((a) => a[1]!)
+      .sort(),
+  })
+)
 
-console.log(`capture-seo: ${sitemap.length} sitemap URLs, ${PROBES.length} probes on ${ORIGIN}`)
+console.log(
+  `capture-seo: ${sitemap.length} sitemap URLs, ${PROBES.length} probes on ${ORIGIN}`
+)
 
 const pages = await pool(
   sitemap.map((s) => s.loc),
@@ -190,4 +203,6 @@ writeFileSync(
   ) + "\n"
 )
 
-console.log(`capture-seo: wrote ${OUT} (${failures.length} non-200 sitemap URLs)`)
+console.log(
+  `capture-seo: wrote ${OUT} (${failures.length} non-200 sitemap URLs)`
+)

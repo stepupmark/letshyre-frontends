@@ -3,7 +3,11 @@
 import { readFileSync, readdirSync, writeFileSync } from "node:fs"
 import { dirname, join, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
-import { MARKETING_NAMESPACES, RULES, type Decision } from "./content-decisions.ts"
+import {
+  MARKETING_NAMESPACES,
+  RULES,
+  type Decision,
+} from "./content-decisions.ts"
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..")
 const MESSAGES = existingDir([
@@ -19,7 +23,9 @@ function existingDir(candidates: string[]) {
       return dir
     } catch {}
   }
-  throw new Error(`content-inventory: no catalogs found in ${candidates.join(" or ")}`)
+  throw new Error(
+    `content-inventory: no catalogs found in ${candidates.join(" or ")}`
+  )
 }
 
 type Json = string | number | boolean | null | Json[] | { [k: string]: Json }
@@ -27,24 +33,34 @@ type Json = string | number | boolean | null | Json[] | { [k: string]: Json }
 // arrays are leaves: they're translated as one unit
 function flatten(value: Json, prefix = ""): [string, Json][] {
   if (value && typeof value === "object" && !Array.isArray(value)) {
-    return Object.entries(value).flatMap(([k, v]) => flatten(v, prefix ? `${prefix}.${k}` : k))
+    return Object.entries(value).flatMap(([k, v]) =>
+      flatten(v, prefix ? `${prefix}.${k}` : k)
+    )
   }
   return [[prefix, value]]
 }
 
 const readCatalog = (locale: string, ns: string) => {
   try {
-    return new Map(flatten(JSON.parse(readFileSync(join(MESSAGES, locale, `${ns}.json`), "utf8"))))
+    return new Map(
+      flatten(
+        JSON.parse(readFileSync(join(MESSAGES, locale, `${ns}.json`), "utf8"))
+      )
+    )
   } catch {
     return new Map<string, Json>()
   }
 }
 
 const toRegex = (pattern: string) =>
-  new RegExp(`^${pattern.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, ".*")}$`)
+  new RegExp(
+    `^${pattern.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, ".*")}$`
+  )
 const compiled = RULES.map((rule) => ({ ...rule, re: toRegex(rule.pattern) }))
 
-const locales = readdirSync(MESSAGES).filter((d) => d !== "en" && !d.includes("."))
+const locales = readdirSync(MESSAGES).filter(
+  (d) => d !== "en" && !d.includes(".")
+)
 
 const preview = (value: Json) => {
   const text = typeof value === "string" ? value : JSON.stringify(value)
@@ -52,7 +68,13 @@ const preview = (value: Json) => {
   return clipped.replace(/\|/g, "\\|").replace(/\n/g, " ")
 }
 
-type Row = { key: string; english: Json; decision: Decision; note: string; translated: number }
+type Row = {
+  key: string
+  english: Json
+  decision: Decision
+  note: string
+  translated: number
+}
 const sections: { ns: string; rows: Row[] }[] = []
 const undecided: string[] = []
 
@@ -79,12 +101,15 @@ for (const ns of MARKETING_NAMESPACES) {
 }
 
 if (undecided.length) {
-  console.error(`content-inventory: no rule for ${undecided.length} keys:\n  ${undecided.join("\n  ")}`)
+  console.error(
+    `content-inventory: no rule for ${undecided.length} keys:\n  ${undecided.join("\n  ")}`
+  )
   process.exit(1)
 }
 
 const DECISIONS: Decision[] = ["keep", "rewrite", "drop", "move"]
-const count = (rows: Row[], d: Decision) => rows.filter((r) => r.decision === d).length
+const count = (rows: Row[], d: Decision) =>
+  rows.filter((r) => r.decision === d).length
 const all = sections.flatMap((s) => s.rows)
 
 const lines = [
@@ -108,12 +133,13 @@ const lines = [
   "| Namespace | Keys | keep | rewrite | drop | move |",
   "|---|---:|---:|---:|---:|---:|",
   ...sections.map(
-    (s) => `| \`${s.ns}\` | ${s.rows.length} | ${DECISIONS.map((d) => count(s.rows, d)).join(" | ")} |`
+    (s) =>
+      `| \`${s.ns}\` | ${s.rows.length} | ${DECISIONS.map((d) => count(s.rows, d)).join(" | ")} |`
   ),
   `| **Total** | **${all.length}** | ${DECISIONS.map((d) => `**${count(all, d)}**`).join(" | ")} |`,
   "",
-  "New copy the redesign needs (no legacy key): home \"Inside a scorecard\" section, pricing teaser on home,",
-  "nav \"About\" and \"Log in\", footer column headings for Candidates and Legal, consent banner. These are",
+  'New copy the redesign needs (no legacy key): home "Inside a scorecard" section, pricing teaser on home,',
+  'nav "About" and "Log in", footer column headings for Candidates and Legal, consent banner. These are',
   "drafted as `rewrite` work in Phase 3.",
   "",
   "**Translation reuse:** every `keep` key outside `pricing` is already translated in all",
@@ -123,9 +149,16 @@ const lines = [
 ]
 
 for (const { ns, rows } of sections) {
-  lines.push(`## \`${ns}\``, "", "| Key | English | Decision | Tr. | Note |", "|---|---|---|---:|---|")
+  lines.push(
+    `## \`${ns}\``,
+    "",
+    "| Key | English | Decision | Tr. | Note |",
+    "|---|---|---|---:|---|"
+  )
   for (const r of rows) {
-    lines.push(`| \`${r.key}\` | ${preview(r.english)} | **${r.decision}** | ${r.translated} | ${r.note.replace(/\|/g, "\\|")} |`)
+    lines.push(
+      `| \`${r.key}\` | ${preview(r.english)} | **${r.decision}** | ${r.translated} | ${r.note.replace(/\|/g, "\\|")} |`
+    )
   }
   lines.push("")
 }

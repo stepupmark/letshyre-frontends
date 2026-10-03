@@ -9,14 +9,14 @@
 
 ## 0. Summary
 
-| | Today | Target |
-|---|---|---|
-| Repo | One app (`app/`), JavaScript | pnpm + Turborepo monorepo, TypeScript (strict) |
-| Apps | One app serves marketing, auth and both dashboards | `apps/marketing` → **letshyre.ai** (SSG) · `apps/app` → **app.letshyre.ai** (SPA) · later `apps/admin` → **admin.letshyre.ai** |
-| UI | shadcn new-york/slate, hand-customized tokens, Merriweather, custom `@theme` | `packages/ui`: shadcn CLI **default preset** (Base UI, nova style, neutral). CLI-owned and never hand-edited. Shared by every app |
-| Theme | Custom brand colors and fonts | shadcn default tokens only. Light only for now; every component is dark-ready |
-| Architecture | Feature folders, partly consistent | Strict feature-based architecture with lint-enforced boundaries |
-| Delivery | Build on the EC2 box | CI-built artifacts, atomic release folders on nginx, one-command rollback |
+|              | Today                                                                        | Target                                                                                                                            |
+| ------------ | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Repo         | One app (`app/`), JavaScript                                                 | pnpm + Turborepo monorepo, TypeScript (strict)                                                                                    |
+| Apps         | One app serves marketing, auth and both dashboards                           | `apps/marketing` → **letshyre.ai** (SSG) · `apps/app` → **app.letshyre.ai** (SPA) · later `apps/admin` → **admin.letshyre.ai**    |
+| UI           | shadcn new-york/slate, hand-customized tokens, Merriweather, custom `@theme` | `packages/ui`: shadcn CLI **default preset** (Base UI, nova style, neutral). CLI-owned and never hand-edited. Shared by every app |
+| Theme        | Custom brand colors and fonts                                                | shadcn default tokens only. Light only for now; every component is dark-ready                                                     |
+| Architecture | Feature folders, partly consistent                                           | Strict feature-based architecture with lint-enforced boundaries                                                                   |
+| Delivery     | Build on the EC2 box                                                         | CI-built artifacts, atomic release folders on nginx, one-command rollback                                                         |
 
 **Order of work:** Phase 0 (prep) → 1 (monorepo foundation) → 2 (shared packages) → 3 (marketing build) → 4 (marketing launch). **Marketing is complete and live at this point.** → 5–7 (app) → 8 (decommission legacy, admin-ready).
 
@@ -26,41 +26,41 @@
 
 ### 1.1 Confirmed with you
 
-| # | Decision |
-|---|---|
-| D1 | **React Router 8** (framework mode) for both apps. Marketing uses `ssr: false` + `prerender` (pure static HTML). App uses SPA mode. |
-| D2 | **Subdomains**: `letshyre.ai` (marketing), `app.letshyre.ai` (auth + employer + employee), `admin.letshyre.ai` (future). |
-| D3 | **Keep 19 locales + RTL.** Reuse existing translations wherever the new design fits. New copy ships **English-first**. A locale's version of a page is only published (prerendered, in the sitemap, in hreflang) once that page's translations are complete. |
-| D4 | **Light theme only** in the UI. shadcn's default dark tokens stay in the shared theme CSS, and every component is written dark-ready, so a toggle can be added later with no refactor. |
-| D5 | Use the **shadcn default theme**. Do not modify shadcn components. Do not reuse the current colors, fonts or typography. Tailwind classes are written **inline on elements**, never stored in variables. |
+| #   | Decision                                                                                                                                                                                                                                                     |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| D1  | **React Router 8** (framework mode) for both apps. Marketing uses `ssr: false` + `prerender` (pure static HTML). App uses SPA mode.                                                                                                                          |
+| D2  | **Subdomains**: `letshyre.ai` (marketing), `app.letshyre.ai` (auth + employer + employee), `admin.letshyre.ai` (future).                                                                                                                                     |
+| D3  | **Keep 19 locales + RTL.** Reuse existing translations wherever the new design fits. New copy ships **English-first**. A locale's version of a page is only published (prerendered, in the sitemap, in hreflang) once that page's translations are complete. |
+| D4  | **Light theme only** in the UI. shadcn's default dark tokens stay in the shared theme CSS, and every component is written dark-ready, so a toggle can be added later with no refactor.                                                                       |
+| D5  | Use the **shadcn default theme**. Do not modify shadcn components. Do not reuse the current colors, fonts or typography. Tailwind classes are written **inline on elements**, never stored in variables.                                                     |
 
 ### 1.2 Defaults I chose (industry standard, tell me if you disagree)
 
-| # | Decision | Why |
-|---|---|---|
-| A1 | **TypeScript 6.0, `strict`** everywhere | 2026 baseline. TS 7 (native compiler) is out, but `typescript-eslint` only supports `<6.1`, and the shadcn monorepo template pins `^6.0.2`. Move to TS 7 when lint tooling supports it. |
-| A2 | **pnpm workspaces + Turborepo** (+ pnpm `catalog:` for single-version deps) | This is shadcn's own monorepo template. Gives task caching and `--affected` CI. |
-| A3 | **Node 24 LTS** (`.nvmrc` + `engines`) | Current active LTS. The shadcn template requires ≥ 22.22. |
-| A4 | shadcn CLI default component base = **Base UI** (`@base-ui/react`) | The current CLI default preset is `base-nova`. The old setup was Radix. Components are re-added fresh, not ported. |
-| A5 | HTTP via a small typed **`fetch` wrapper (`ky`)** with **Zod-validated responses** replaces axios | Smaller bundle, native streaming and abort. Responses are validated at the edge. |
-| A6 | **TanStack Query v5** (`queryOptions` factories), **React Hook Form + Zod 4**, **Zustand** only for real client state | Same libraries the team uses today, applied consistently. |
-| A7 | **kebab-case file names** (`plan-card.tsx`, `use-billing-period.ts`), PascalCase component exports | Matches shadcn and modern React convention. Avoids case-only renames on Windows and macOS. |
-| A8 | **Explicit `routes.ts`** (`route`/`layout`/`prefix`/`index`) instead of `flatRoutes()` file naming | Routes are typed and reviewable in one place. This removes the double-layout bug class the README documents. |
-| A9 | **ESLint 10 flat config + Prettier** (with `prettier-plugin-tailwindcss`, as in the shadcn template) | Lint plugins enforce a11y, feature boundaries, token-only colors and no hard-coded strings (see §6). |
-| A10 | **Vitest 5** (unit/component) + **Playwright** (E2E, axe a11y, visual) + **Lighthouse CI** | This replaces the jsdom-based a11y script with checks in a real browser. |
-| A11 | Internal package scope **`@workspace/*`** | This is the shadcn CLI default. No alias friction when running `shadcn add`. |
-| A12 | Font = whatever the shadcn CLI emits for the React Router template (currently **Outfit**, a variable font via Fontsource). Non-Latin scripts use the browser's system fallback. | Satisfies "default shadcn theme". No custom font work. (The Next.js template emits Geist instead, so this is template-dependent.) |
+| #   | Decision                                                                                                                                                                        | Why                                                                                                                                                                                     |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A1  | **TypeScript 6.0, `strict`** everywhere                                                                                                                                         | 2026 baseline. TS 7 (native compiler) is out, but `typescript-eslint` only supports `<6.1`, and the shadcn monorepo template pins `^6.0.2`. Move to TS 7 when lint tooling supports it. |
+| A2  | **pnpm workspaces + Turborepo** (+ pnpm `catalog:` for single-version deps)                                                                                                     | This is shadcn's own monorepo template. Gives task caching and `--affected` CI.                                                                                                         |
+| A3  | **Node 24 LTS** (`.nvmrc` + `engines`)                                                                                                                                          | Current active LTS. The shadcn template requires ≥ 22.22.                                                                                                                               |
+| A4  | shadcn CLI default component base = **Base UI** (`@base-ui/react`)                                                                                                              | The current CLI default preset is `base-nova`. The old setup was Radix. Components are re-added fresh, not ported.                                                                      |
+| A5  | HTTP via a small typed **`fetch` wrapper (`ky`)** with **Zod-validated responses** replaces axios                                                                               | Smaller bundle, native streaming and abort. Responses are validated at the edge.                                                                                                        |
+| A6  | **TanStack Query v5** (`queryOptions` factories), **React Hook Form + Zod 4**, **Zustand** only for real client state                                                           | Same libraries the team uses today, applied consistently.                                                                                                                               |
+| A7  | **kebab-case file names** (`plan-card.tsx`, `use-billing-period.ts`), PascalCase component exports                                                                              | Matches shadcn and modern React convention. Avoids case-only renames on Windows and macOS.                                                                                              |
+| A8  | **Explicit `routes.ts`** (`route`/`layout`/`prefix`/`index`) instead of `flatRoutes()` file naming                                                                              | Routes are typed and reviewable in one place. This removes the double-layout bug class the README documents.                                                                            |
+| A9  | **ESLint 10 flat config + Prettier** (with `prettier-plugin-tailwindcss`, as in the shadcn template)                                                                            | Lint plugins enforce a11y, feature boundaries, token-only colors and no hard-coded strings (see §6).                                                                                    |
+| A10 | **Vitest 5** (unit/component) + **Playwright** (E2E, axe a11y, visual) + **Lighthouse CI**                                                                                      | This replaces the jsdom-based a11y script with checks in a real browser.                                                                                                                |
+| A11 | Internal package scope **`@workspace/*`**                                                                                                                                       | This is the shadcn CLI default. No alias friction when running `shadcn add`.                                                                                                            |
+| A12 | Font = whatever the shadcn CLI emits for the React Router template (currently **Outfit**, a variable font via Fontsource). Non-Latin scripts use the browser's system fallback. | Satisfies "default shadcn theme". No custom font work. (The Next.js template emits Geist instead, so this is template-dependent.)                                                       |
 
 ### 1.3 Still open: needed before the phase shown
 
-| # | Question | Needed by |
-|---|---|---|
-| O1 | ✅ Resolved: work happens in this folder (OneDrive sync is off for it). Git initialized: `main` holds the legacy snapshot (tag `legacy-baseline`) plus this plan. Work continues on `migration/monorepo`. Still to do: add a GitHub remote before CI (implementation step 1.9). | Phase 0 |
-| O2 | **Cookie consent** for Meta Pixel. 6+ of the 19 locales target EU visitors, and India's DPDP Act also applies. Recommendation: a consent banner, with the pixel loading only after opt-in. | Phase 4 |
-| O3 | **Backend:** CORS for `app.letshyre.ai`. Meta **Conversions API** (server-side) for `Purchase` / `CompleteRegistration` so the app needs no third-party pixel. Is an **OpenAPI schema** available (drf-spectacular)? httpOnly refresh-cookie roadmap. | Phase 5 |
-| O4 | Who **approves new marketing copy**? Which **translation workflow** (TMS such as Tolgee/Crowdin/Lokalise, or vendor files)? | Phase 3 / 4 |
-| O5 | **Hosting:** stay on EC2 + nginx (assumed in this plan), or move static hosting to S3 + CloudFront? | Phase 4 |
-| O6 | A **staging account with realistic demo data**, for real product screenshots and UI mockups. | Phase 3 |
+| #   | Question                                                                                                                                                                                                                                                                        | Needed by   |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| O1  | ✅ Resolved: work happens in this folder (OneDrive sync is off for it). Git initialized: `main` holds the legacy snapshot (tag `legacy-baseline`) plus this plan. Work continues on `migration/monorepo`. Still to do: add a GitHub remote before CI (implementation step 1.9). | Phase 0     |
+| O2  | **Cookie consent** for Meta Pixel. 6+ of the 19 locales target EU visitors, and India's DPDP Act also applies. Recommendation: a consent banner, with the pixel loading only after opt-in.                                                                                      | Phase 4     |
+| O3  | **Backend:** CORS for `app.letshyre.ai`. Meta **Conversions API** (server-side) for `Purchase` / `CompleteRegistration` so the app needs no third-party pixel. Is an **OpenAPI schema** available (drf-spectacular)? httpOnly refresh-cookie roadmap.                           | Phase 5     |
+| O4  | Who **approves new marketing copy**? Which **translation workflow** (TMS such as Tolgee/Crowdin/Lokalise, or vendor files)?                                                                                                                                                     | Phase 3 / 4 |
+| O5  | **Hosting:** stay on EC2 + nginx (assumed in this plan), or move static hosting to S3 + CloudFront?                                                                                                                                                                             | Phase 4     |
+| O6  | A **staging account with realistic demo data**, for real product screenshots and UI mockups.                                                                                                                                                                                    | Phase 3     |
 
 ---
 
@@ -80,18 +80,19 @@
 
 ### 3.1 Domains & URL map
 
-| URL | Served by | Rendering | Indexed |
-|---|---|---|---|
-| `letshyre.ai/` | nginx | 301 → `/en` | – |
-| `letshyre.ai/:lang/{,about,contact,download,how-it-works-interview,pricing,terms,policy,refund-policy}` | `apps/marketing` | Prerendered HTML | Yes (ready locales only) |
-| `app.letshyre.ai/{sign-in,register,forgot-password,get-started}` | `apps/app` | SPA | No |
-| `app.letshyre.ai/employer/**`, `/employee/**` | `apps/app` | SPA | No |
-| `app.letshyre.ai/shared-scorecard/:id` | `apps/app` | SPA | No (`noindex`, `no-referrer`) |
-| `admin.letshyre.ai/**` (future) | `apps/admin` | SPA | No |
+| URL                                                                                                     | Served by        | Rendering        | Indexed                       |
+| ------------------------------------------------------------------------------------------------------- | ---------------- | ---------------- | ----------------------------- |
+| `letshyre.ai/`                                                                                          | nginx            | 301 → `/en`      | –                             |
+| `letshyre.ai/:lang/{,about,contact,download,how-it-works-interview,pricing,terms,policy,refund-policy}` | `apps/marketing` | Prerendered HTML | Yes (ready locales only)      |
+| `app.letshyre.ai/{sign-in,register,forgot-password,get-started}`                                        | `apps/app`       | SPA              | No                            |
+| `app.letshyre.ai/employer/**`, `/employee/**`                                                           | `apps/app`       | SPA              | No                            |
+| `app.letshyre.ai/shared-scorecard/:id`                                                                  | `apps/app`       | SPA              | No (`noindex`, `no-referrer`) |
+| `admin.letshyre.ai/**` (future)                                                                         | `apps/admin`     | SPA              | No                            |
 
 **Marketing URLs do not change**, which protects SEO. App URLs move to the subdomain in Phase 7. Old paths on `letshyre.ai` get permanent 301s to the same path on `app.letshyre.ai` (shared-scorecard links already sent to people keep working).
 
 **Handoffs between apps** are plain links built from `VITE_APP_URL`:
+
 - "Log in" → `${APP_URL}/sign-in` · "Get started" → `${APP_URL}/get-started`
 - Pricing "Buy <plan>" → `${APP_URL}/employer/billing?checkout=<planKey>`. The app handles auth (sign in, then return) and runs the Razorpay checkout.
 - The marketing language choice is stored in the `lh_locale` cookie (`Domain=.letshyre.ai`, not sensitive) so the app opens in the same language.
@@ -127,33 +128,33 @@ letshyre/
 
 ### 3.3 Packages: responsibilities and rules
 
-| Package | Owns | May import | Consumers |
-|---|---|---|---|
-| `@workspace/ui` | shadcn components (`src/components`), `globals.css` (theme tokens), `cn`, shadcn hooks | npm deps only | blocks, all apps |
-| `@workspace/blocks` | `Logo`, `LanguageSwitcher`, `ErrorScreen`, `NotFoundScreen`, `ConsentBanner`, `PageHeader`, … (composition only, no new primitives) | `ui`, `i18n` | all apps |
-| `@workspace/i18n` | `LOCALES`, `RTL_LOCALES`, `dirFor`, `localePath`, `OG_LOCALE`, i18next instance factory, typed `t`, formatters, pseudo-locale, parity/budget check CLIs | npm deps only | all apps |
-| `@workspace/api` | `createHttpClient()`, `ApiError` hierarchy, `{success,data,message}` envelope unwrapping, `parseWith(schema)`, public endpoint services (contact, newsletter, plans, releases, chatbot) | npm deps only | all apps |
-| `@workspace/auth` | token store, refresh queue, `requireAuth`/`requireGuest` middleware, `ROLES`, role → home | `api` | app, admin |
-| `@workspace/analytics` | `track(event)`, consent state, Meta Pixel adapter | npm deps only | marketing (app only via server-side CAPI) |
+| Package                | Owns                                                                                                                                                                                    | May import    | Consumers                                 |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------- |
+| `@workspace/ui`        | shadcn components (`src/components`), `globals.css` (theme tokens), `cn`, shadcn hooks                                                                                                  | npm deps only | blocks, all apps                          |
+| `@workspace/blocks`    | `Logo`, `LanguageSwitcher`, `ErrorScreen`, `NotFoundScreen`, `ConsentBanner`, `PageHeader`, … (composition only, no new primitives)                                                     | `ui`, `i18n`  | all apps                                  |
+| `@workspace/i18n`      | `LOCALES`, `RTL_LOCALES`, `dirFor`, `localePath`, `OG_LOCALE`, i18next instance factory, typed `t`, formatters, pseudo-locale, parity/budget check CLIs                                 | npm deps only | all apps                                  |
+| `@workspace/api`       | `createHttpClient()`, `ApiError` hierarchy, `{success,data,message}` envelope unwrapping, `parseWith(schema)`, public endpoint services (contact, newsletter, plans, releases, chatbot) | npm deps only | all apps                                  |
+| `@workspace/auth`      | token store, refresh queue, `requireAuth`/`requireGuest` middleware, `ROLES`, role → home                                                                                               | `api`         | app, admin                                |
+| `@workspace/analytics` | `track(event)`, consent state, Meta Pixel adapter                                                                                                                                       | npm deps only | marketing (app only via server-side CAPI) |
 
 **Rules:** packages never import from apps. `ui` imports nothing internal. Every package exports through an explicit `exports` map (no deep imports). Enforced with `eslint-plugin-boundaries` and `turbo boundaries`. A module moves into a package only when **two apps** need it. Until then it lives in the app.
 
 ### 3.4 Stack (versions verified on npm 2026-10-03)
 
-| Concern | Choice |
-|---|---|
-| Runtime / PM | Node 24 LTS · pnpm (latest major, pinned via `packageManager`) · Turborepo 2.11 |
-| Framework | React 19.2 · React Router 8.4 (framework mode) · Vite 8 |
-| Styling | Tailwind CSS 4.3 · shadcn CLI 4.21 (`base-nova`, neutral, lucide, `rtl: true`) · tw-animate-css |
-| Data | TanStack Query 5 · ky 2 · Zod 4 |
-| Forms | React Hook Form 7 + `@hookform/resolvers` + shadcn `Field` components |
-| i18n | i18next 26 · react-i18next 17 · `Intl.*` for numbers/dates/plurals |
-| Client state | Zustand 5 (only where server state does not fit) |
-| Motion | CSS transitions + tw-animate-css by default. `motion` (successor to framer-motion) only where it pays for itself, lazy-loaded |
-| Toasts | sonner via the shadcn `sonner` component |
-| Quality | TypeScript 6.0 · ESLint 10 · typescript-eslint · jsx-a11y · eslint-plugin-boundaries · eslint-plugin-better-tailwindcss · eslint-plugin-i18next · Prettier 3 · knip |
-| Tests | Vitest 5 · Testing Library · Playwright 1.63 · @axe-core/playwright · Lighthouse CI · size-limit |
-| Git hooks | lefthook (format + lint staged files, typecheck pre-push) · Conventional Commits |
+| Concern      | Choice                                                                                                                                                              |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Runtime / PM | Node 24 LTS · pnpm (latest major, pinned via `packageManager`) · Turborepo 2.11                                                                                     |
+| Framework    | React 19.2 · React Router 8.4 (framework mode) · Vite 8                                                                                                             |
+| Styling      | Tailwind CSS 4.3 · shadcn CLI 4.21 (`base-nova`, neutral, lucide, `rtl: true`) · tw-animate-css                                                                     |
+| Data         | TanStack Query 5 · ky 2 · Zod 4                                                                                                                                     |
+| Forms        | React Hook Form 7 + `@hookform/resolvers` + shadcn `Field` components                                                                                               |
+| i18n         | i18next 26 · react-i18next 17 · `Intl.*` for numbers/dates/plurals                                                                                                  |
+| Client state | Zustand 5 (only where server state does not fit)                                                                                                                    |
+| Motion       | CSS transitions + tw-animate-css by default. `motion` (successor to framer-motion) only where it pays for itself, lazy-loaded                                       |
+| Toasts       | sonner via the shadcn `sonner` component                                                                                                                            |
+| Quality      | TypeScript 6.0 · ESLint 10 · typescript-eslint · jsx-a11y · eslint-plugin-boundaries · eslint-plugin-better-tailwindcss · eslint-plugin-i18next · Prettier 3 · knip |
+| Tests        | Vitest 5 · Testing Library · Playwright 1.63 · @axe-core/playwright · Lighthouse CI · size-limit                                                                    |
+| Git hooks    | lefthook (format + lint staged files, typecheck pre-push) · Conventional Commits                                                                                    |
 
 ---
 
@@ -182,6 +183,7 @@ letshyre/
 The current site leans on patterns that read as template or AI output: badges like "100% AI-Screened" and "AI Powered Platform", unbacked stats ("Accuracy", "Uptime"), highlight-word gradients, floating decorative cards. The new design is **typography-led, monochrome, content-first**. Reference quality bar: Linear, Stripe docs, Vercel, Resend, Mercury.
 
 **Do**
+
 - One clear message per section. One primary CTA per viewport.
 - Left-aligned, editorial layouts on a 12-column grid, with deliberate asymmetry. Generous but consistent spacing rhythm (Tailwind 4/8 scale).
 - A restrained type scale: 3–4 sizes per page, `text-balance` on headings, `text-pretty` and `max-w-prose` on body copy.
@@ -191,6 +193,7 @@ The current site leans on patterns that read as template or AI output: badges li
 - Real `<table>` for plan comparison. Real FAQ (`Accordion`) mirrored in JSON-LD.
 
 **Don't**
+
 - Gradient blobs, mesh or noise backgrounds, glassmorphism, glow borders, animated gradients, sparkle or emoji icons.
 - Repeated three-icon-card grids in every section. Bento grids used as filler.
 - Fake logos, fake testimonials, invented metrics, stock 3D illustrations, AI-generated people.
@@ -275,6 +278,7 @@ features/pricing/
 ```
 
 **Layer rules (lint-enforced):**
+
 - `routes/*` → feature **`index.ts` only** + `layouts` + `lib`.
 - `features/X/**` → its own files, `@/components`, `@/hooks`, `@/lib`, `@workspace/*`. **Never another feature.** Shared code moves down a layer.
 - `components|hooks|lib` (app-shared) → `@workspace/*` only. Never `features`.
@@ -282,15 +286,15 @@ features/pricing/
 
 ### 5.3 Naming
 
-| Thing | Convention | Example |
-|---|---|---|
-| Files & folders | kebab-case | `plan-card.tsx`, `candidate-pool/` |
-| Components | PascalCase named export (no default exports except route modules) | `export function PlanCard()` |
-| Hooks | `use-*.ts` → `useX` | `use-billing-period.ts` |
-| Services / queries / schemas | `<domain>.service.ts` · `<domain>.queries.ts` · `<domain>.schema.ts` | `jobs.service.ts` |
-| Page | `<feature>-page.tsx` → `XPage` | `pricing-page.tsx` |
-| Tests | `*.test.ts(x)` colocated · Playwright `*.spec.ts` in `e2e/` | |
-| i18n keys | `namespace:section.element` | `pricing:plans.buy` |
+| Thing                        | Convention                                                           | Example                            |
+| ---------------------------- | -------------------------------------------------------------------- | ---------------------------------- |
+| Files & folders              | kebab-case                                                           | `plan-card.tsx`, `candidate-pool/` |
+| Components                   | PascalCase named export (no default exports except route modules)    | `export function PlanCard()`       |
+| Hooks                        | `use-*.ts` → `useX`                                                  | `use-billing-period.ts`            |
+| Services / queries / schemas | `<domain>.service.ts` · `<domain>.queries.ts` · `<domain>.schema.ts` | `jobs.service.ts`                  |
+| Page                         | `<feature>-page.tsx` → `XPage`                                       | `pricing-page.tsx`                 |
+| Tests                        | `*.test.ts(x)` colocated · Playwright `*.spec.ts` in `e2e/`          |                                    |
+| i18n keys                    | `namespace:section.element`                                          | `pricing:plans.buy`                |
 
 ### 5.4 Routing
 
@@ -320,7 +324,7 @@ Server state goes in TanStack Query. URL state (filters, pagination, `?checkout=
 
 - `@workspace/i18n` holds the locale model (TS port of `app/i18n/config.js`), an i18next factory, lazy catalog loading via `import.meta.glob` (one chunk per `locale × namespace`, as today), **typed keys** (i18next `CustomTypeOptions` from `en` catalogs), `Intl` formatters, and the pseudo-locale.
 - **Marketing** keeps `/:lang` URLs. The **app** has no URL prefix: the locale comes from the user's choice, then the `lh_locale` cookie, then `navigator.languages`, then `en`.
-- **English-first readiness (D3):** a page is *ready* in a locale when every key its namespaces use exists in that locale. That is computed at build time by the parity check. **Prerender list, sitemap, hreflang and the language switcher all derive from it.** A not-ready locale/page 302s to `/en/<page>` (generic nginx fallback, as today's `@missing_translation`). The result: no mixed-language pages and no 404s.
+- **English-first readiness (D3):** a page is _ready_ in a locale when every key its namespaces use exists in that locale. That is computed at build time by the parity check. **Prerender list, sitemap, hreflang and the language switcher all derive from it.** A not-ready locale/page 302s to `/en/<page>` (generic nginx fallback, as today's `@missing_translation`). The result: no mixed-language pages and no 404s.
 - **Translation reuse:** a `key-map.json` (old key → new key) plus a migration script copies existing translations into new keys for all 18 locales wherever the meaning is unchanged. Legal pages reuse their copy fully, so they launch in all 19 locales on day one.
 - Lint: `eslint-plugin-i18next` (`no-literal-string` in JSX). CI: parity, unused keys, ICU/plural validity per locale, catalog chunk budget.
 
@@ -340,20 +344,20 @@ Every route has an `ErrorBoundary` (`@workspace/blocks/error-screen`). Skeletons
 
 ## 6. Quality gates (CI, all blocking)
 
-| Gate | Tool | Replaces today's |
-|---|---|---|
-| Format | Prettier + tailwind plugin | – |
-| Lint | ESLint: typescript-eslint (strict-type-checked), react-hooks, jsx-a11y, **boundaries** (layer rules §5.2), **better-tailwindcss** (raw colors, physical `ml/mr`, conflicting classes), **i18next** (no literal strings) | `check-naming`, `check-feature-boundaries`, `check-shared-layer`, `check-rtl-classes` |
-| Types | `tsc --noEmit` per package (+ `react-router typegen`) | – |
-| Dead code | knip | – |
-| Unit/component | Vitest + Testing Library, coverage ratchet on schemas, services, lib | same intent |
-| i18n | `@workspace/i18n` CLIs: parity, quality, unused, budget | 6 `check-i18n-*` scripts |
-| E2E | Playwright: every route × locale renders; nav, forms, language switch, pricing → app handoff | – (README lists this as the biggest gap) |
-| A11y | @axe-core/playwright on every prerendered page | `check-a11y.mjs`, pa11y |
-| SEO | Playwright SEO spec against baseline; sitemap/robots verify | `verify-seo.mjs` |
-| Perf | Lighthouse CI on representative pages (`en` + `ar`) · size-limit per route | `check-bundle-budget.mjs` |
-| UI drift | `shadcn add --diff` on installed components | – |
-| nginx | `nginx -t` + redirect/fallback tests against the real config in Docker | `verify-live.mjs` (still run post-deploy) |
+| Gate           | Tool                                                                                                                                                                                                                    | Replaces today's                                                                      |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Format         | Prettier + tailwind plugin                                                                                                                                                                                              | –                                                                                     |
+| Lint           | ESLint: typescript-eslint (strict-type-checked), react-hooks, jsx-a11y, **boundaries** (layer rules §5.2), **better-tailwindcss** (raw colors, physical `ml/mr`, conflicting classes), **i18next** (no literal strings) | `check-naming`, `check-feature-boundaries`, `check-shared-layer`, `check-rtl-classes` |
+| Types          | `tsc --noEmit` per package (+ `react-router typegen`)                                                                                                                                                                   | –                                                                                     |
+| Dead code      | knip                                                                                                                                                                                                                    | –                                                                                     |
+| Unit/component | Vitest + Testing Library, coverage ratchet on schemas, services, lib                                                                                                                                                    | same intent                                                                           |
+| i18n           | `@workspace/i18n` CLIs: parity, quality, unused, budget                                                                                                                                                                 | 6 `check-i18n-*` scripts                                                              |
+| E2E            | Playwright: every route × locale renders; nav, forms, language switch, pricing → app handoff                                                                                                                            | – (README lists this as the biggest gap)                                              |
+| A11y           | @axe-core/playwright on every prerendered page                                                                                                                                                                          | `check-a11y.mjs`, pa11y                                                               |
+| SEO            | Playwright SEO spec against baseline; sitemap/robots verify                                                                                                                                                             | `verify-seo.mjs`                                                                      |
+| Perf           | Lighthouse CI on representative pages (`en` + `ar`) · size-limit per route                                                                                                                                              | `check-bundle-budget.mjs`                                                             |
+| UI drift       | `shadcn add --diff` on installed components                                                                                                                                                                             | –                                                                                     |
+| nginx          | `nginx -t` + redirect/fallback tests against the real config in Docker                                                                                                                                                  | `verify-live.mjs` (still run post-deploy)                                             |
 
 **Budgets (marketing):** LCP ≤ 2.0 s (Moto G-class, 4G) · CLS ≤ 0.05 · INP ≤ 200 ms · initial JS ≤ 130 kB gzip on content pages · Lighthouse Perf ≥ 90, A11y ≥ 95, SEO = 100, Best Practices ≥ 95.
 
@@ -371,12 +375,12 @@ Every route has an `ErrorBoundary` (`@workspace/blocks/error-screen`). Skeletons
 
 ## 8. Environments & deployment
 
-| Env | Marketing | App | Notes |
-|---|---|---|---|
-| Local | `pnpm dev --filter marketing` | `pnpm dev --filter app` | `VITE_APP_URL=http://localhost:5174` |
-| Preview (per PR) | static build artifact | static build artifact | optional: S3 bucket per PR |
-| Staging | `staging.letshyre.ai` | `app.staging.letshyre.ai` | `noindex`, basic-auth |
-| Production | `letshyre.ai` | `app.letshyre.ai` | |
+| Env              | Marketing                     | App                       | Notes                                |
+| ---------------- | ----------------------------- | ------------------------- | ------------------------------------ |
+| Local            | `pnpm dev --filter marketing` | `pnpm dev --filter app`   | `VITE_APP_URL=http://localhost:5174` |
+| Preview (per PR) | static build artifact         | static build artifact     | optional: S3 bucket per PR           |
+| Staging          | `staging.letshyre.ai`         | `app.staging.letshyre.ai` | `noindex`, basic-auth                |
+| Production       | `letshyre.ai`                 | `app.letshyre.ai`         |                                      |
 
 **Pipeline:** PR → `turbo run lint typecheck test build --affected` → Playwright (e2e, a11y, seo, visual) against the built output behind the real nginx config in Docker → merge → CI builds once → artifact uploaded → deploy rsyncs to `/var/www/<app>/releases/<sha>/`, merges hashed `assets/` into a shared folder (never deleted immediately, so open tabs keep working), then switches `current` with an atomic symlink → `nginx -s reload` → `verify-live`. **Rollback = re-point the symlink** (seconds). The box no longer runs `git pull && pnpm build`.
 
@@ -390,7 +394,7 @@ Estimates assume one experienced engineer. Each phase ends with an exit review.
 
 - [x] Git initialized in place. `main` = legacy snapshot (tag `legacy-baseline`) + plan. Branch `migration/monorepo` created.
 - [ ] **Baseline capture:** crawl every sitemap URL in production. Store status, title, description, canonical, hreflang set, OG tags and JSON-LD per URL as `baseline/seo.json`. Lighthouse baseline for 11 URLs. Export GA/Search Console top pages by locale (to prioritise translations).
-- [ ] **Content inventory:** a per-page list of current copy keys, flagging *keep*, *rewrite* or *drop* (e.g. drop unverifiable stats).
+- [ ] **Content inventory:** a per-page list of current copy keys, flagging _keep_, _rewrite_ or _drop_ (e.g. drop unverifiable stats).
 - [ ] **URL & redirect map:** marketing (unchanged), app paths (→ subdomain in Phase 7), pricing `?checkout=` → `app/employer/billing?checkout=`.
 - [ ] File backend tickets for O3 (CORS, CAPI, OpenAPI, cookie auth).
 - **Exit:** baseline files committed, redirect map approved, open decisions O1–O2 answered.
@@ -416,22 +420,23 @@ Estimates assume one experienced engineer. Each phase ends with an exit review.
 ### Phase 3: Marketing app build & redesign (2–3 weeks)
 
 **3a. Foundation + design checkpoint (3–4 days)**
+
 - [ ] `root.tsx` (lang/dir, providers, skip link, consent, pixel), `site-layout` (header with measured-width nav and `Sheet` on small screens, footer with sitemap, legal links, language switcher), `lib/seo/*` (TS port of `seo.js`/`routeMeta.js`), `lib/env.ts`, `routes.ts`, readiness-driven `prerender`.
 - [ ] Build **home hero + one section** using real component-based product visuals.
 - [ ] **You review and approve the visual direction** before continuing.
 
 **3b. Pages (each = feature folder + route + meta/JSON-LD + English copy + tests)**
 
-| # | Page | Key content (proposed IA) | Interactive parts |
-|---|---|---|---|
-| 1 | **Home** `/:lang` | Hero (value prop for employers; secondary path for candidates) · product visual (live-component scorecard) · How it works for employers (3 steps: post role → candidates interview with AI → unlock with credits) · Inside a scorecard · For candidates (desktop interview, 90-day active profile) · Pricing teaser · FAQ (+ `FAQPage` JSON-LD) · Final CTA | FAQ accordion, chatbot launcher (lazy-loaded on click) |
-| 2 | **Pricing** | Hero ("Pay only for the candidates you unlock") · plan cards · comparison `<table>` · top-up packs · GST note · FAQ · CTA | Plans fetched client-side with skeleton + error state; "Buy" → app handoff |
-| 3 | **How it works (AI interview)** | 8-step candidate guide as an ordered list with tips · system requirements · CTA to download | Anchor TOC |
-| 4 | **Download** | OS-detected primary download, other platforms, version/date, 3-step install, link to the guide | Releases fetched client-side, "Coming soon" state |
-| 5 | **Contact** | Form + direct channels + response time | RHF + Zod form, toast + inline success |
-| 6 | **About** | Problem → approach · mission/vision · for employers / for candidates · profile duration policy · AI disclaimer | – |
-| 7–9 | **Terms · Privacy · Refund** | Readable document layout: sticky TOC on `lg+`, "Last updated", anchor headings, print styles | TOC scroll-spy |
-| 10 | **404** | Helpful links, search-free | – |
+| #   | Page                            | Key content (proposed IA)                                                                                                                                                                                                                                                                                                                                   | Interactive parts                                                          |
+| --- | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| 1   | **Home** `/:lang`               | Hero (value prop for employers; secondary path for candidates) · product visual (live-component scorecard) · How it works for employers (3 steps: post role → candidates interview with AI → unlock with credits) · Inside a scorecard · For candidates (desktop interview, 90-day active profile) · Pricing teaser · FAQ (+ `FAQPage` JSON-LD) · Final CTA | FAQ accordion, chatbot launcher (lazy-loaded on click)                     |
+| 2   | **Pricing**                     | Hero ("Pay only for the candidates you unlock") · plan cards · comparison `<table>` · top-up packs · GST note · FAQ · CTA                                                                                                                                                                                                                                   | Plans fetched client-side with skeleton + error state; "Buy" → app handoff |
+| 3   | **How it works (AI interview)** | 8-step candidate guide as an ordered list with tips · system requirements · CTA to download                                                                                                                                                                                                                                                                 | Anchor TOC                                                                 |
+| 4   | **Download**                    | OS-detected primary download, other platforms, version/date, 3-step install, link to the guide                                                                                                                                                                                                                                                              | Releases fetched client-side, "Coming soon" state                          |
+| 5   | **Contact**                     | Form + direct channels + response time                                                                                                                                                                                                                                                                                                                      | RHF + Zod form, toast + inline success                                     |
+| 6   | **About**                       | Problem → approach · mission/vision · for employers / for candidates · profile duration policy · AI disclaimer                                                                                                                                                                                                                                              | –                                                                          |
+| 7–9 | **Terms · Privacy · Refund**    | Readable document layout: sticky TOC on `lg+`, "Last updated", anchor headings, print styles                                                                                                                                                                                                                                                                | TOC scroll-spy                                                             |
+| 10  | **404**                         | Helpful links, search-free                                                                                                                                                                                                                                                                                                                                  | –                                                                          |
 
 - [ ] Newsletter form (footer). Chatbot widget (`features/assistant`, lazy, guest mode).
 - [ ] Copy written to `locales/en/*`. `key-map.json` + migration script carries over existing translations.
@@ -457,6 +462,7 @@ Estimates assume one experienced engineer. Each phase ends with an exit review.
 ### Phase 6: App features (4–6 weeks)
 
 Migrate and redesign, feature by feature, in this order (each slice shipped behind the same quality gates):
+
 1. **auth**: sign-in (proposal: one sign-in for both roles, since the API returns the role), register with email/mobile OTP, forgot/reset, get-started.
 2. **employer-onboarding**: KYC.
 3. **employer-dashboard**: product tour (re-evaluate `react-joyride` versus a lighter shadcn-based tour).
@@ -481,17 +487,17 @@ Delete `apps/legacy` and the interim nginx routes. Archive old scripts. Write AD
 
 ## 10. Risks & mitigations
 
-| # | Risk | Mitigation |
-|---|---|---|
-| R1 | Non-English SEO drops while redesigned copy awaits translation | Translation reuse via key map. Legal pages ready in all locales on day one. Top-traffic locales translated before launch. Un-ready pages 302 (not 404) to `/en`. Sitemap only lists ready pages. |
-| R2 | The shadcn default (Base UI) differs from the old Radix behavior | Components are re-added, not ported. E2E covers keyboard and focus behavior. No custom primitives. |
-| R3 | The redesign stalls on subjective review | Design checkpoint in Phase 3a. Explicit do/don't list (§4.3). Approve one page pattern, then replicate. |
-| R4 | Session loss when the app moves to a subdomain | Planned one-time re-login with notice. Interim phase keeps the same origin, so marketing launch causes no logouts. |
-| R5 | Pricing → checkout handoff breaks during the interim | Legacy `/employer/billing` patch ships in the same release as the new marketing. E2E covers the handoff. |
-| R6 | Meta Pixel compliance (EU/DPDP) | Consent gate (O2). App uses server-side CAPI. |
-| R7 | Repo lives under the OneDrive folder | Sync is off for this folder (confirmed). If sync is ever re-enabled, pause it during installs/builds or move the repo, since pnpm hard links and `node_modules` churn cause file locks. |
-| R8 | Fonts: Outfit (CLI default) covers Latin only | Browser fallback renders Devanagari, Tamil, Telugu, Kannada, Malayalam, Bengali, Arabic, Urdu, CJK and Cyrillic with system fonts. Visual QA per script in Phase 4. Any change goes through `shadcn apply`, not hand edits. |
-| R9 | Scope creep in Phase 6 (16+ screens) | One feature per PR with fixed exit criteria. Legacy remains the fallback until Phase 7. |
+| #   | Risk                                                             | Mitigation                                                                                                                                                                                                                  |
+| --- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| R1  | Non-English SEO drops while redesigned copy awaits translation   | Translation reuse via key map. Legal pages ready in all locales on day one. Top-traffic locales translated before launch. Un-ready pages 302 (not 404) to `/en`. Sitemap only lists ready pages.                            |
+| R2  | The shadcn default (Base UI) differs from the old Radix behavior | Components are re-added, not ported. E2E covers keyboard and focus behavior. No custom primitives.                                                                                                                          |
+| R3  | The redesign stalls on subjective review                         | Design checkpoint in Phase 3a. Explicit do/don't list (§4.3). Approve one page pattern, then replicate.                                                                                                                     |
+| R4  | Session loss when the app moves to a subdomain                   | Planned one-time re-login with notice. Interim phase keeps the same origin, so marketing launch causes no logouts.                                                                                                          |
+| R5  | Pricing → checkout handoff breaks during the interim             | Legacy `/employer/billing` patch ships in the same release as the new marketing. E2E covers the handoff.                                                                                                                    |
+| R6  | Meta Pixel compliance (EU/DPDP)                                  | Consent gate (O2). App uses server-side CAPI.                                                                                                                                                                               |
+| R7  | Repo lives under the OneDrive folder                             | Sync is off for this folder (confirmed). If sync is ever re-enabled, pause it during installs/builds or move the repo, since pnpm hard links and `node_modules` churn cause file locks.                                     |
+| R8  | Fonts: Outfit (CLI default) covers Latin only                    | Browser fallback renders Devanagari, Tamil, Telugu, Kannada, Malayalam, Bengali, Arabic, Urdu, CJK and Cyrillic with system fonts. Visual QA per script in Phase 4. Any change goes through `shadcn apply`, not hand edits. |
+| R9  | Scope creep in Phase 6 (16+ screens)                             | One feature per PR with fixed exit criteria. Legacy remains the fallback until Phase 7.                                                                                                                                     |
 
 ---
 
