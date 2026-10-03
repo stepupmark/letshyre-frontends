@@ -16,7 +16,8 @@
     "test:e2e": "turbo run test:e2e",
     "check": "turbo run lint typecheck test",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "ui:drift": "node tooling/ui-drift.ts"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.3",
