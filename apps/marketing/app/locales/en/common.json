@@ -2,10 +2,58 @@
   "skipToContent": "Skip to main content",
   "copyright": "LetsHyre © {{year}}",
   "nav": {
+    "howItWorks": "How It Works",
+    "aiInterview": "AI Interview",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "logIn": "Log in",
+    "getStarted": "Get Started",
     "language": "Language",
     "logoAlt": "LetsHyre logo",
     "toggle": "Toggle navigation",
-    "primaryAria": "Primary navigation"
+    "close": "Close menu",
+    "siteNavigation": "Site navigation",
+    "primaryAria": "Primary navigation",
+    "mobileAria": "Mobile navigation"
+  },
+  "footer": {
+    "tagline": "AI interviews and scorecards for teams hiring people who are serving their notice period.",
+    "product": "Product",
+    "candidates": "Candidates",
+    "company": "Company",
+    "legal": "Legal",
+    "stayUpdated": "Stay Updated",
+    "newsletterDesc": "Get the latest news and updates from LetsHyre",
+    "social": "LetsHyre on social media",
+    "socialLinks": {
+      "linkedin": "LetsHyre on LinkedIn",
+      "x": "LetsHyre on X",
+      "instagram": "LetsHyre on Instagram",
+      "youtube": "LetsHyre on YouTube"
+    },
+    "links": {
+      "interviewProcess": "Interview Process",
+      "downloadApp": "Download Application",
+      "pricing": "Pricing",
+      "about": "About Us",
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy Policy",
+      "refund": "Refund Policy",
+      "contact": "Contact",
+      "employerRegister": "Create employer account",
+      "candidateRegister": "Create candidate profile"
+    }
+  },
+  "newsletter": {
+    "emailPlaceholder": "Your Email",
+    "emailLabel": "Email address",
+    "subscribe": "Subscribe",
+    "subscribing": "Subscribing",
+    "subscribed": "Subscription saved successfully.",
+    "subscribeFailed": "Failed to subscribe. Please try again.",
+    "emailRequired": "Enter your email address.",
+    "emailInvalid": "Enter a valid email address, like name@company.com."
   },
   "pageState": {
     "loading": "Loading page"
