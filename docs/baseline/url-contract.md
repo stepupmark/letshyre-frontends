@@ -62,10 +62,8 @@ The legacy dashboards link to `/en/pricing`, `/en/terms`, `/en/policy`, `/en/ref
 These are served by the new marketing build on the same origin, with no change needed.
 Exception: "Buy credits" (`CreditUsageCard`, `Invoice`) is repointed to `/employer/billing` in step 4.5.
 
-## Open points for your review
+## Approved (Gate 1, 2026-10-03)
 
-1. **Trailing slash direction.** Production currently prefers `/en/pricing/`. Google may have indexed either
-   form, since the canonical tag says no slash. Switching to no-slash matches every canonical and the sitemap,
-   and Search Console will consolidate. Confirm you're fine with this (recommended).
-2. **Log in target.** `/get-started` is a role chooser, not a sign-in form. Alternative: link "Log in" to
-   `/employer/sign-in` and add a "Candidate? Sign in here" link on that page.
+- No-slash URLs are canonical and served with 200. The trailing-slash form 301s to them.
+- "Log in" goes to `/get-started` until the app has a unified sign-in.
+- All content decisions in [content-inventory.md](./content-inventory.md) are approved as proposed.

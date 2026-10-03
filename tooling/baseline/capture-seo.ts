@@ -1,7 +1,4 @@
-// Records what production actually serves, so the new marketing build can be
-// diffed against it (implementation plan step 4.2). Captures every sitemap URL
-// plus a set of redirect/fallback probes. Dependency-free: runs with
-// `node tooling/baseline/capture-seo.ts [origin]` on Node 24 (native type stripping).
+// usage: node tooling/baseline/capture-seo.ts [origin]
 
 import { mkdirSync, writeFileSync } from "node:fs"
 import { dirname, resolve } from "node:path"
@@ -17,7 +14,6 @@ const TIMEOUT_MS = 30_000
 
 type Probe = { path: string; expect: string }
 
-// Behaviour the migration must consciously keep or change.
 const PROBES: Probe[] = [
   { path: "/", expect: "root entry" },
   { path: "/en", expect: "locale home without trailing slash" },
@@ -45,7 +41,6 @@ const decode = (s: string) =>
     .replace(/&#(?:39|x27);/g, "'")
     .trim()
 
-// Attribute order varies, so read each tag's attributes into a map.
 function tags(html: string, name: string): Record<string, string>[] {
   const out: Record<string, string>[] = []
   for (const m of html.matchAll(new RegExp(`<${name}\\b([^>]*)>`, "gi"))) {

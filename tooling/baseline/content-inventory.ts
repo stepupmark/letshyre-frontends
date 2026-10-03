@@ -1,7 +1,4 @@
-// Renders docs/baseline/content-inventory.md from the legacy English catalogs
-// and the decisions in content-decisions.ts. Fails if a key matches no rule,
-// so new legacy keys can't slip through undecided.
-// Usage: node tooling/baseline/content-inventory.ts
+// usage: node tooling/baseline/content-inventory.ts
 
 import { readFileSync, readdirSync, writeFileSync } from "node:fs"
 import { dirname, join, resolve } from "node:path"
@@ -27,7 +24,7 @@ function existingDir(candidates: string[]) {
 
 type Json = string | number | boolean | null | Json[] | { [k: string]: Json }
 
-// Objects are walked; arrays and scalars are leaves (they translate as a unit).
+// arrays are leaves: they're translated as one unit
 function flatten(value: Json, prefix = ""): [string, Json][] {
   if (value && typeof value === "object" && !Array.isArray(value)) {
     return Object.entries(value).flatMap(([k, v]) => flatten(v, prefix ? `${prefix}.${k}` : k))

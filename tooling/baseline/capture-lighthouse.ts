@@ -1,7 +1,4 @@
-// Lighthouse baseline (mobile preset) for representative production pages.
-// Writes docs/baseline/lighthouse.json; the summary table in lighthouse.md is
-// built from it. Usage: node tooling/baseline/capture-lighthouse.ts [origin]
-// Needs Chrome installed; lighthouse is fetched with pnpm dlx.
+// usage: node tooling/baseline/capture-lighthouse.ts [origin]  (needs Chrome)
 
 import { execFileSync } from "node:child_process"
 import { mkdtempSync, readFileSync, writeFileSync } from "node:fs"
@@ -16,8 +13,7 @@ const OUT = resolve(
   "../../docs/baseline/lighthouse.json"
 )
 
-// Same set as the legacy lighthouserc.json. Measured at the URL users land on
-// (with trailing slash), so the canonical's 301 doesn't skew the numbers.
+// trailing slash: that's where production lands after its 301
 const PATHS = [
   "/en/",
   "/en/about/",

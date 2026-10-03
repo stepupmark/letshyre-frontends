@@ -1,13 +1,4 @@
-// Proposed fate of every legacy marketing copy key. First matching rule wins.
-// `pattern` matches "namespace:key.path" exactly, or as a prefix when it ends with "*".
-//
-//   keep    → key carries over; its 18 existing translations are reused (step 3.14)
-//   rewrite → new English copy; needs translation before the page is ready in a locale
-//   drop    → not used by the redesign
-//   move    → belongs to the dashboard app (apps/app), not marketing
-//
-// Edit decisions here, then regenerate docs/baseline/content-inventory.md:
-//   node tooling/baseline/content-inventory.ts
+// First matching rule wins. Regenerate the report with: node tooling/baseline/content-inventory.ts
 
 export type Decision = "keep" | "rewrite" | "drop" | "move"
 export type Rule = { pattern: string; decision: Decision; note?: string }
@@ -30,7 +21,6 @@ export const MARKETING_NAMESPACES = [
 const HL = "Inline <hl>/<br/> markup is rendered as plain text in the new design, so translations stay valid."
 
 export const RULES: Rule[] = [
-  // ── common ─────────────────────────────────────────────────────────────
   { pattern: "common:nav.home", decision: "drop", note: "Logo links home; no 'Home' nav item." },
   { pattern: "common:nav.scorecards", decision: "drop", note: "Was an anchor link; scorecards become a home section." },
   { pattern: "common:nav.languageSuggested", decision: "keep" },
@@ -41,12 +31,10 @@ export const RULES: Rule[] = [
   { pattern: "common:pagination.*", decision: "move", note: "Only the dashboards paginate." },
   { pattern: "common:*", decision: "keep" },
 
-  // ── seo ────────────────────────────────────────────────────────────────
   { pattern: "seo:homeCrumb", decision: "keep" },
   { pattern: "seo:notFound.*", decision: "keep" },
   { pattern: "seo:*", decision: "move", note: "Titles for auth/dashboard routes, which move to apps/app." },
 
-  // ── home ───────────────────────────────────────────────────────────────
   { pattern: "home:hero.badgeNew", decision: "drop", note: "Decorative badge." },
   { pattern: "home:hero.badgeText", decision: "drop", note: "'100% AI-Screened' is an absolute claim we can't evidence on the page." },
   { pattern: "home:hero.title", decision: "keep", note: `Clear positioning. ${HL}` },
@@ -73,7 +61,6 @@ export const RULES: Rule[] = [
   { pattern: "home:chatbot.*", decision: "keep", note: "Moves to the `assistant` namespace with the widget." },
   { pattern: "home:meta.*", decision: "keep" },
 
-  // ── about ──────────────────────────────────────────────────────────────
   { pattern: "about:hero.badge", decision: "drop" },
   { pattern: "about:hero.imgAlt", decision: "drop" },
   { pattern: "about:whatWeDo.*ImgAlt", decision: "drop" },
@@ -81,11 +68,9 @@ export const RULES: Rule[] = [
   { pattern: "about:intro.title", decision: "keep", note: HL },
   { pattern: "about:*", decision: "keep", note: "Factual and policy copy." },
 
-  // ── pricing ────────────────────────────────────────────────────────────
   { pattern: "pricing:checkout.*", decision: "move", note: "Checkout moves to /employer/billing in the app." },
   { pattern: "pricing:*", decision: "keep", note: "Recent, concrete copy. English-only today, so no translations exist yet." },
 
-  // ── interview / download / contact ─────────────────────────────────────
   { pattern: "interview:badge", decision: "drop" },
   { pattern: "interview:*", decision: "keep", note: "Clear, specific step-by-step copy." },
   { pattern: "download:features.*", decision: "rewrite", note: "'Highly stable' is vague. Say what the app does (proctored, full-screen, blocks other apps)." },
@@ -95,7 +80,6 @@ export const RULES: Rule[] = [
   { pattern: "contact:info.title", decision: "keep", note: HL },
   { pattern: "contact:*", decision: "keep" },
 
-  // ── legal ──────────────────────────────────────────────────────────────
   { pattern: "legal:chrome.collapseSidebar", decision: "drop", note: "New layout has a sticky TOC, not a collapsible sidebar." },
   { pattern: "legal:chrome.expandSidebar", decision: "drop" },
   { pattern: "legal:chrome.searchPlaceholder", decision: "drop", note: "Section search removed. Native find-in-page works on a plain document." },
