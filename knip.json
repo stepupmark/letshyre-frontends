@@ -17,6 +17,9 @@
     },
     "packages/i18n": {
       "entry": ["test/**/*.test.{ts,tsx}"]
+    },
+    "packages/api": {
+      "entry": ["test/**/*.test.ts"]
     }
   }
 }
