@@ -1,5 +1,6 @@
-# eslint-plugin-react 7.37.5 has no release declaring ESLint 10 support, but
-# every rule we use works against it. Drop this once upstream widens the range.
+packages:
+  - apps/*
+
 peerDependencyRules:
   allowedVersions:
     eslint-plugin-react>eslint: "10"

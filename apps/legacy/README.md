@@ -24,7 +24,7 @@ pages — the last of which are localized into 19 languages.
 | Animation | Framer Motion |
 | Tour/onboarding | react-joyride (employer dashboard product tour) |
 | Payments | Razorpay (employer credit purchases) |
-| Hosting | nginx on AWS EC2 serving static `build/client` (`deploy/nginx.conf`) |
+| Hosting | nginx on AWS EC2 serving static `build/client` (`infra/nginx/legacy/nginx.conf`) |
 
 Language: JavaScript (JSX). No TypeScript — `jsconfig.json` provides path-alias
 intellisense only, and `@react-router/dev` generates route types at build time
@@ -289,14 +289,14 @@ public marketing/legal pages **prerendered** to static HTML per locale
 combination). `pnpm build` produces `build/client/`, served as static hosting.
 
 Production runs on AWS EC2 behind an ALB, which terminates TLS. nginx serves a
-copy of `build/client` from `/var/www/letshyre`. `deploy/nginx.conf` is the
-server block and `deploy/letshyre-headers.conf` goes in `/etc/nginx/snippets/`.
+copy of `build/client` from `/var/www/letshyre`. `infra/nginx/legacy/nginx.conf` is the
+server block and `infra/nginx/legacy/letshyre-headers.conf` goes in `/etc/nginx/snippets/`.
 It 301s `/` to `/en` and strips trailing slashes, serves prerendered pages per
 locale (falling back to `/en/<page>` for pages not translated yet, like
 pricing), gives client-only routes the SPA shell, and returns a real 404 for
 anything else, including missing `/assets/*`. The ALB health check uses
 `/health`. A new top-level client route has to be added to the client-route
-`location` in `deploy/nginx.conf`.
+`location` in `infra/nginx/legacy/nginx.conf`.
 
 One-time setup on the server: create `.env.production` in the repo root
 (git-ignored, loaded by Vite for every build):
