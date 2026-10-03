@@ -1,0 +1,93 @@
+{
+  "step1": {
+    "heading": "Conozcámonos"
+  },
+  "step2": {
+    "badge": "Bienvenido a Bordo",
+    "titlePrefix": "Tu ",
+    "titleHighlight": "Cuenta Está Lista!",
+    "body": "Descubre candidatos preevaluados, revisa tarjetas de puntuación transparentes y desbloquea el talento adecuado en solo unos clics.",
+    "features": {
+      "candidates": "Candidatos Evaluados por IA",
+      "scorecards": "Tarjetas de Puntuación Transparentes",
+      "unlock": "Desbloquea y Conecta"
+    },
+    "watchWalkthrough": "Ver Recorrido Rápido (30s)",
+    "skip": "Omitir por ahora"
+  },
+  "form": {
+    "progress": {
+      "step1Label": "Datos de la Empresa",
+      "step2Label": "Documentos Legales"
+    },
+    "fields": {
+      "companyName": "Nombre de la Empresa",
+      "companyWebsite": "Sitio Web de la Empresa",
+      "officialEmail": "Correo Electrónico Oficial",
+      "registrationNumber": "Número de Registro",
+      "registrationNumberTooltip": "ej. U72900TG2024PTC123456",
+      "panNumber": "Número PAN",
+      "gstNumber": "Número GST",
+      "companyAddress": "Dirección de la Empresa",
+      "selectIndustry": "Seleccionar Industria",
+      "linkedinUrl": "URL de LinkedIn",
+      "linkedinUrlTooltip": "ej. https://linkedin.com/company/example",
+      "companyDescription": "Descripción de la Empresa",
+      "descriptionCount": "{{count}} / 500"
+    },
+    "draftSaved": "Borrador guardado ✓",
+    "next": "Siguiente",
+    "back": "Atrás",
+    "uploadHeading": "Subir Documentos (Máx. 5MB cada uno)",
+    "uploadSubheading": "Por favor sube copias claras y legibles de todos los documentos requeridos.",
+    "documents": {
+      "companyLogo": "Logo de la Empresa",
+      "companyLogoTooltip": "Se recomienda una imagen cuadrada (PNG/JPG)",
+      "registrationCertificate": "Certificado de Registro",
+      "registrationCertificateTooltip": "Certificado de Constitución",
+      "gstCertificate": "Certificado GST",
+      "gstCertificateTooltip": "Documento de registro GST válido",
+      "addressProof": "Comprobante de Domicilio",
+      "addressProofTooltip": "Factura de servicios o contrato de arrendamiento"
+    },
+    "upload": {
+      "uploadedSuccess": "Subido correctamente • {{size}}",
+      "selectFile": "Seleccionar Archivo",
+      "viewFile": "Ver archivo",
+      "removeFile": "Eliminar archivo",
+      "replaceFile": "Reemplazar archivo",
+      "previewAlt": "Vista previa del archivo subido",
+      "rulesImage": "JPG, PNG o WEBP, hasta 5 MB",
+      "rulesDocument": "PDF, DOC o DOCX, hasta 5 MB",
+      "dropHint": "o suelta un archivo aquí",
+      "progress": "{{count}} de {{total}} subidos"
+    },
+    "processing": "Procesando...",
+    "submit": "Enviar y Completar",
+    "successTitle": "Envío Exitoso!",
+    "successBody": "Cargando tu panel de control...",
+    "previewAlt": "Vista previa ampliada",
+    "closePreview": "Cerrar vista previa",
+    "toasts": {
+      "submitFailed": "Error al enviar el KYC. Por favor intenta de nuevo."
+    },
+    "validation": {
+      "companyNameMin": "El nombre de la empresa debe tener al menos 2 caracteres",
+      "companyWebsiteUrl": "Debe ser una URL válida (ej. https://example.com)",
+      "linkedinUrlInvalid": "Debe ser una URL válida (ej. https://linkedin.com)",
+      "linkedinUrlRequired": "La URL de LinkedIn es obligatoria",
+      "linkedinUrlDomain": "Debe ser una URL de linkedin.com",
+      "companyDescriptionMin": "Por favor proporciona una breve descripción",
+      "companyIndustryRequired": "Por favor selecciona una industria",
+      "registrationNumberRequired": "El número de registro es obligatorio",
+      "gstNumberRequired": "Se requiere un número GST válido",
+      "panNumberRequired": "Se requiere un número PAN válido",
+      "companyAddressRequired": "La dirección completa de la empresa es obligatoria",
+      "officialEmailInvalid": "Se requiere un correo electrónico oficial válido",
+      "fileRequired": "El archivo es obligatorio",
+      "fileMaxSize": "El tamaño máximo del archivo es 5MB.",
+      "imageFormat": "Solo se admiten los formatos .jpg, .jpeg, .png y .webp.",
+      "documentFormat": "Solo se admiten los formatos .pdf, .doc y .docx."
+    }
+  }
+}

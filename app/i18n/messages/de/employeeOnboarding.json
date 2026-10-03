@@ -1,0 +1,202 @@
+{
+  "errors": {
+    "aadhaarExists": "Diese Aadhaar-Nummer ist bereits mit einem anderen Profil registriert.",
+    "validationFailed": "Einige Angaben konnten nicht gespeichert werden. Bitte überprüfen Sie die markierten Felder.",
+    "submitFailed": "Die Profileinreichung ist fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "sessionExpired": "Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an.",
+    "fileTooLarge": "Diese Datei ist zum Hochladen zu groß.",
+    "tooManyAttempts": "Zu viele Versuche. Bitte warten Sie einige Minuten und versuchen Sie es erneut.",
+    "network": "Der Server ist nicht erreichbar. Überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "server": "Auf unserer Seite ist ein Fehler aufgetreten. Bitte versuchen Sie es in Kürze erneut.",
+    "genericField": "Bitte überprüfen Sie dieses Feld und versuchen Sie es erneut."
+  },
+  "toast": {
+    "jumpedToStep": "Wir haben Sie zu Schritt {{step}} zurückgebracht, um ein Problem zu beheben."
+  },
+  "back": "Zurück",
+  "continue": "Weiter",
+  "stepper": {
+    "identity": "Identität",
+    "photo": "Profilfoto",
+    "jobPreferences": "Jobpräferenzen",
+    "resumeRole": "Lebenslauf & Rolle",
+    "review": "Überprüfung"
+  },
+  "steps": {
+    "progressHeading": "Profilfortschritt",
+    "illustrationAlt": "Illustration zum Schritt",
+    "identity": {
+      "title": "Bestätigen Sie Ihre Identität",
+      "description": "Bestätigen Sie Ihre Identität, um einen sicheren und vertrauenswürdigen Interviewprozess zu gewährleisten."
+    },
+    "photo": {
+      "title": "Profilfoto",
+      "description": "Laden Sie ein klares, professionelles Foto für Ihr Profil hoch."
+    },
+    "jobPreferences": {
+      "title": "Jobpräferenzen",
+      "description": "Geben Sie Unternehmensdetails, Gehaltsvorstellungen und Präferenzen an."
+    },
+    "resume": {
+      "title": "Lebenslauf & Rolle hochladen",
+      "description": "Laden Sie Ihren Lebenslauf hoch, erhalten Sie KI-Rollenvorschläge und wählen Sie Ihre Rolle aus."
+    }
+  },
+  "photo": {
+    "heading": "Fügen Sie Ihr Foto hinzu",
+    "subtitle": "Wählen Sie unten eine Methode zum Hochladen Ihres Profilbilds.",
+    "uploadTitle": "Foto hochladen",
+    "uploadHint": "PNG, JPG bis zu 10 MB",
+    "selfieTitle": "Selfie aufnehmen",
+    "selfieHint": "Verwenden Sie Ihre Kamera",
+    "cancel": "Abbrechen",
+    "capture": "Foto aufnehmen",
+    "previewAlt": "Profilvorschau",
+    "changePhoto": "Foto ändern",
+    "cameraUnavailable": "Kamera nicht verfügbar",
+    "invalidImage": "Laden Sie ein gültiges Bild hoch",
+    "maxSize": "Max. 10 MB",
+    "required": "Bitte laden Sie ein Profilfoto hoch, um fortzufahren"
+  },
+  "jobPreferences": {
+    "mandatoryDocumentsLabel": "Pflichtdokumente hochladen",
+    "companyDetails": {
+      "companyLabel": "Aktuelles / letztes Unternehmen *",
+      "companyPlaceholder": "z. B. Google, Microsoft",
+      "companyRequired": "Der Firmenname ist erforderlich",
+      "lastDayLabel": "Letzter Arbeitstag *",
+      "lastDayRequired": "Der letzte Arbeitstag ist erforderlich",
+      "currentCtcLabel": "Aktuelles Gehalt (LPA) *",
+      "currentCtcPlaceholder": "z. B. 12,5",
+      "currentCtcRequired": "Das aktuelle Gehalt ist erforderlich",
+      "expectedCtcLabel": "Gewünschtes Gehalt (LPA) *",
+      "expectedCtcPlaceholder": "z. B. 18,0",
+      "expectedCtcRequired": "Das gewünschte Gehalt ist erforderlich",
+      "expectedCtcTooLow": "Das gewünschte Gehalt darf nicht niedriger sein als das aktuelle Gehalt"
+    },
+    "industry": {
+      "label": "Bevorzugte Branche *",
+      "placeholder": "Suchen oder Branche eingeben",
+      "loading": "Branchen werden geladen...",
+      "noResults": "Keine Branchen gefunden",
+      "required": "Bitte wählen Sie eine gültige Branche aus der Liste aus"
+    },
+    "locations": {
+      "label": "Bevorzugte Standorte *",
+      "placeholder": "z. B. Hyderabad, Bangalore, Pune (durch Komma getrennt)",
+      "required": "Mindestens ein bevorzugter Standort ist erforderlich"
+    },
+    "documents": {
+      "resignation": {
+        "title": "Kündigungsschreiben",
+        "description": "Offizielle Kündigungsbestätigung oder E-Mail.",
+        "required": "Das Kündigungsschreiben ist obligatorisch."
+      },
+      "experience": {
+        "title": "Erfahrungsnachweis",
+        "description": "Erfahrungs- oder Freistellungsschreiben des vorherigen Unternehmens.",
+        "required": "Der Erfahrungsnachweis ist obligatorisch."
+      },
+      "noticeProof": {
+        "title": "Nachweis der Kündigungsfrist",
+        "description": "Wählen Sie die Art des vorhandenen Nachweises aus und laden Sie dann das entsprechende Dokument hoch.",
+        "tooltip": "Wenn Sie sich in der Kündigungsfrist befinden, laden Sie Ihr neues Angebot hoch. Wenn Sie bereits freigestellt sind, laden Sie Ihr Freistellungsschreiben hoch.",
+        "typeLabel": "Nachweisart auswählen *",
+        "typePlaceholder": "Nachweisart auswählen",
+        "required": "Die Art des Kündigungsfrist-Nachweises ist erforderlich",
+        "fileRequired": "Die Datei zum Nachweis der Kündigungsfrist ist obligatorisch.",
+        "uploadProof": "Nachweis hochladen"
+      },
+      "presentOffer": {
+        "title": "Aktuelles Angebotsschreiben",
+        "description": "Haben Sie ein bestehendes Angebot? Laden Sie es hier hoch."
+      },
+      "optionalLabel": "Optionale Dokumente",
+      "upload": "Hochladen",
+      "uploadLabel": "Hochladen",
+      "viewFile": "Datei ansehen",
+      "replaceFile": "Datei ersetzen",
+      "removeFile": "Datei entfernen",
+      "clear": "Löschen",
+      "errors": {
+        "invalidFormat": "Nur PDF-, DOC- und DOCX-Dateien sind zulässig",
+        "maxSize": "Die Dateigröße muss unter 5 MB liegen"
+      }
+    }
+  },
+  "identity": {
+    "genderLabel": "Geschlecht *",
+    "genderPlaceholder": "Geschlecht auswählen",
+    "genderRequired": "Das Geschlecht ist erforderlich",
+    "genderOptions": {
+      "male": "Männlich",
+      "female": "Weiblich",
+      "other": "Divers"
+    },
+    "dobLabel": "Geburtsdatum *",
+    "dobRequired": "Das Geburtsdatum ist erforderlich",
+    "dobMinAge": "Sie müssen mindestens 18 Jahre alt sein",
+    "locationLabel": "Standort *",
+    "locationPlaceholder": "z. B. Mumbai, Indien",
+    "locationRequired": "Der Standort ist erforderlich",
+    "aadhaarLabel": "Aadhaar-Nummer *",
+    "aadhaarPlaceholder": "XXXX-XXXX-XXXX",
+    "aadhaarRequired": "Die Aadhaar-Nummer ist erforderlich",
+    "aadhaarInvalid": "Ungültige Aadhaar-Nummer",
+    "addressLabel": "Vollständige Adresse *",
+    "addressPlaceholder": "Geben Sie Ihre vollständige Wohnadresse ein...",
+    "addressRequired": "Die Adresse ist erforderlich",
+    "addressMinLength": "Die Adresse muss mindestens 10 Zeichen lang sein"
+  },
+  "resume": {
+    "uploadHeading": "Laden Sie Ihren Lebenslauf hoch",
+    "uploadSub": "Unsere KI extrahiert automatisch Ihre Angaben und schlägt passende Rollen vor.",
+    "selectFile": "Datei auswählen",
+    "changeFile": "Datei ändern",
+    "fileTypeInvalid": "Nur PDF-, DOC- und DOCX-Dateien sind zulässig",
+    "noRolesDetected": "Es wurden keine Rollen automatisch erkannt. Bitte fügen Sie eine benutzerdefinierte Rolle hinzu.",
+    "noRolesDetectedBanner": "Es wurden keine Rollen automatisch erkannt. Bitte fügen Sie unten eine benutzerdefinierte Rolle hinzu.",
+    "clarifyRole": "Bitte wählen Sie eine spezifischere Rolle aus der Liste aus oder tippen Sie weiter.",
+    "customRoleRequired": "Bitte geben Sie eine benutzerdefinierte Rolle ein.",
+    "customRoleReasonRequired": "Bitte geben Sie einen Grund für die Auswahl einer benutzerdefinierten Rolle an.",
+    "refinedRoleSuggestions": "Verfeinerte Rollenvorschläge",
+    "selectYourRole": "Wählen Sie Ihre Rolle",
+    "roleSuggestionSub": "Basierend auf Ihrem Lebenslauf schlägt unsere KI diese Rollen vor. Wählen Sie eine aus, um fortzufahren.",
+    "otherRole": "+ Andere Rolle",
+    "customRoleLabel": "Benutzerdefinierte Rolle eingeben *",
+    "customRolePlaceholder": "z. B. Frontend-Entwickler",
+    "suggestedSpecificRoles": "Vorgeschlagene spezifische Rollen:",
+    "customRoleReasonLabel": "Grund für die Wahl einer anderen Rolle *",
+    "customRoleReasonPlaceholder": "Warum passt diese benutzerdefinierte Rolle besser zu Ihnen?",
+    "suggestedSkillsFor": "Vorgeschlagene Fähigkeiten für {{role}}",
+    "noJobId": "Beim Hochladen wurde keine Job-ID empfangen.",
+    "aiTimeout": "Die KI benötigt zu lange. Bitte versuchen Sie es erneut.",
+    "processingFailed": "Wir konnten Ihren Lebenslauf nicht automatisch verarbeiten. Bitte versuchen Sie es erneut.",
+    "roleValidationFailed": "Die Rollenvalidierung ist fehlgeschlagen. Bitte versuchen Sie es erneut."
+  },
+  "review": {
+    "candidateFallback": "Kandidat",
+    "candidateAlt": "Kandidat",
+    "aadhaarVerified": "Aadhaar verifiziert",
+    "jobPreferencesHeading": "Jobpräferenzen",
+    "currentCompany": "Aktuelles Unternehmen",
+    "lastWorkingDay": "Letzter Arbeitstag",
+    "currentCtc": "Aktuelles Gehalt",
+    "expectedCtc": "Gewünschtes Gehalt",
+    "ctcValue": "{{value}} LPA",
+    "industry": "Branche",
+    "locations": "Standorte",
+    "selectedRoles": "Ausgewählte Rollen",
+    "topSkills": "Wichtigste extrahierte Fähigkeiten",
+    "noSkills": "Keine spezifischen Fähigkeiten extrahiert.",
+    "experienceHeading": "Erfahrung",
+    "noExperience": "Keine Erfahrungsdaten gefunden.",
+    "educationHeading": "Ausbildung",
+    "noEducation": "Keine Ausbildungsdaten gefunden.",
+    "notAvailable": "N/V",
+    "submitting": "Profil wird übermittelt...",
+    "pleaseWait": "Bitte warten Sie einen Moment.",
+    "backToEdit": "Zurück zur Bearbeitung",
+    "confirmSubmit": "Bestätigen & absenden"
+  }
+}

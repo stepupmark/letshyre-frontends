@@ -1,0 +1,322 @@
+{
+  "dashboard": {
+    "welcome": "Bem-vindo(a) de volta!",
+    "subtitle": "Aqui está o que se passa hoje no seu centro de contratação.",
+    "cards": {
+      "activeJobs": "Vagas Ativas",
+      "inactiveJobs": "Vagas Inativas",
+      "totalApplications": "Total de Candidaturas",
+      "activeCaption1": "/Atualmente",
+      "activeCaption2": "ativas",
+      "inactiveCaption1": "/Fechadas ou",
+      "inactiveCaption2": "Rascunho",
+      "applicationsCaption1": "/Total",
+      "applicationsCaption2": "recebidas"
+    },
+    "credits": {
+      "heading": "O Seu Saldo de Créditos",
+      "used": "Utilizados",
+      "creditsLeft_one": "{{count}} Crédito Restante",
+      "creditsLeft_other": "{{count}} Créditos Restantes",
+      "blurb": "Utilize créditos para desbloquear perfis de candidatos e ligar-se ao melhor talento.",
+      "addCredits": "Adicionar Créditos",
+      "viewTransactions": "Ver Transações"
+    }
+  },
+  "profile": {
+    "editDialogAria": "Editar perfil da empresa",
+    "na": "N/D",
+    "banner": {
+      "aria": "Banner do perfil",
+      "defaultCompany": "A Sua Empresa",
+      "blurb": "Reveja e faça a gestão dos principais dados, imagem de marca e informações de contacto da sua organização.",
+      "editProfile": "Editar Perfil",
+      "editAria": "Editar informações do perfil",
+      "sideAlt": "Ilustração de perfil com elementos decorativos",
+      "shapeAlt": "Forma poligonal decorativa",
+      "jobsPosted": "Vagas Publicadas",
+      "activeJobs": "Vagas Ativas",
+      "matches": "Correspondências",
+      "alreadyHired": "Já Contratados"
+    },
+    "primary": {
+      "heading": "Detalhes Principais",
+      "name": "Nome",
+      "industry": "Setor",
+      "email": "Email",
+      "phone": "Telefone",
+      "officialEmail": "Email Oficial",
+      "kycStatus": "Estado do KYC"
+    },
+    "company": {
+      "heading": "Detalhes da Empresa",
+      "companyName": "Nome da Empresa",
+      "website": "Website",
+      "registrationNumber": "Número de Registo",
+      "gstNumber": "Número de IVA",
+      "panNumber": "Número Fiscal",
+      "address": "Morada",
+      "linkedin": "LinkedIn",
+      "viewProfile": "Ver Perfil",
+      "description": "Descrição"
+    },
+    "documents": {
+      "heading": "Documentos Carregados",
+      "viewDocument": "Ver Documento",
+      "registrationCertificate": "Certidão de Registo",
+      "gstCertificate": "Certificado de IVA",
+      "addressProof": "Comprovativo de Morada",
+      "bankProof": "Comprovativo Bancário"
+    },
+    "edit": {
+      "title": "Editar o Seu Perfil",
+      "close": "Fechar",
+      "illustrationAlt": "Ilustração de perfil",
+      "step1": "Passo 1: Detalhes Básicos",
+      "step2": "Passo 2: Informação e Logótipo da Empresa",
+      "officialEmail": "Email Oficial",
+      "emailPlaceholder": "exemplo@empresa.com",
+      "location": "Localização",
+      "locationPlaceholder": "Introduza a localização",
+      "industry": "Setor",
+      "selectIndustry": "Selecione o Setor",
+      "linkedinUrl": "URL do LinkedIn",
+      "linkedinPlaceholder": "https://linkedin.com/company/...",
+      "companyDescription": "Descrição da Empresa",
+      "descriptionPlaceholder": "Descreva brevemente a sua empresa...",
+      "companyLogo": "Logótipo da Empresa",
+      "logoPreviewAlt": "Pré-visualização do logótipo",
+      "noLogoUploaded": "Nenhum Logótipo Carregado",
+      "uploadNewLogo": "Carregar Novo Logótipo",
+      "uploadLogo": "Carregar Logótipo",
+      "logoHint": "JPG, PNG ou SVG. Tamanho máximo 5MB.",
+      "cancel": "Cancelar",
+      "next": "Seguinte",
+      "back": "Voltar",
+      "saving": "A guardar...",
+      "saveChanges": "Guardar Alterações"
+    },
+    "validation": {
+      "emailInvalid": "Introduza um endereço de email válido",
+      "locationRequired": "Introduza uma localização",
+      "industryRequired": "Selecione um setor",
+      "linkedinInvalid": "Introduza um URL de LinkedIn válido",
+      "linkedinDomain": "Tem de ser um URL do LinkedIn",
+      "descriptionMax": "A descrição deve ter menos de 500 caracteres",
+      "logoSize": "O tamanho do ficheiro deve ser inferior a 5MB",
+      "logoType": "Apenas são permitidos ficheiros JPG, PNG, SVG ou WEBP"
+    },
+    "toasts": {
+      "updated": "Perfil atualizado com sucesso",
+      "updateFailed": "Falha ao atualizar o perfil"
+    }
+  },
+  "team": {
+    "heading": "Conheça a sua equipa",
+    "subtitle": "Veja quem já está aqui e traga novos membros para a equipa.",
+    "addMember": "Adicionar membro",
+    "errorLoad": "Falha ao carregar os membros da equipa. Tente novamente.",
+    "scrollLeft": "Deslocar para a esquerda",
+    "scrollRight": "Deslocar para a direita",
+    "optionsAria": "Opções",
+    "memberImageAlt": "membro da equipa",
+    "card": {
+      "edit": "Editar",
+      "remove": "Remover",
+      "hold": "Suspender",
+      "activate": "Ativar"
+    },
+    "status": {
+      "active": "Ativo",
+      "hold": "Suspenso"
+    },
+    "empty": {
+      "title": "Ainda não há membros na equipa",
+      "body": "Comece a construir a sua equipa adicionando recrutadores e gestores."
+    },
+    "confirmRemove": "Tem a certeza de que pretende remover {{name}}?",
+    "toasts": {
+      "memberUpdated": "Membro atualizado com sucesso",
+      "updateFailed": "Falha ao atualizar o membro",
+      "memberAdded": "Membro adicionado com sucesso",
+      "addFailed": "Falha ao adicionar o membro",
+      "statusUpdated": "Estado atualizado para {{status}}",
+      "toggleFailed": "Falha ao alternar o estado",
+      "memberRemoved": "Membro removido com sucesso",
+      "removeFailed": "Falha ao remover o membro"
+    },
+    "modal": {
+      "close": "Fechar modal",
+      "addTitle": "Adicionar Membro",
+      "editTitle": "Editar Membro",
+      "addDesc": "Convide um novo membro para se juntar à sua equipa. Poderá colaborar e ajudá-lo(a) a gerir a contratação.",
+      "editDesc": "Atualize os detalhes deste membro da equipa.",
+      "fullName": "Nome Completo",
+      "fullNamePlaceholder": "ex. Joana Silva",
+      "email": "Endereço de Email",
+      "emailPlaceholder": "ex. joana@empresa.com",
+      "password": "Palavra-passe",
+      "passwordPlaceholder": "Crie uma palavra-passe segura",
+      "passwordHint": "A palavra-passe deve ter pelo menos 8 caracteres.",
+      "showPassword": "Mostrar palavra-passe",
+      "hidePassword": "Ocultar palavra-passe",
+      "cancel": "Cancelar",
+      "saving": "A guardar...",
+      "updateMember": "Atualizar Membro",
+      "addMemberBtn": "Adicionar Membro"
+    },
+    "validation": {
+      "nameMin": "O nome deve ter pelo menos 2 caracteres",
+      "nameMax": "O nome deve ter no máximo 100 caracteres",
+      "emailInvalid": "Introduza um endereço de email válido",
+      "passwordMin": "A palavra-passe deve ter pelo menos 6 caracteres",
+      "passwordMax": "A palavra-passe deve ter no máximo 50 caracteres"
+    }
+  },
+  "invoice": {
+    "title": "Faturas",
+    "subtitle": "As suas compras de créditos e faturas com GST.",
+    "buyCredits": "Comprar créditos",
+    "caption": "As suas compras de créditos concluídas",
+    "columns": {
+      "date": "Data",
+      "purchase": "Compra",
+      "amount": "Valor",
+      "invoice": "Fatura"
+    },
+    "plan": "Plano {{name}}",
+    "topUp": "Carregamento",
+    "credits_one": "{{count}} crédito",
+    "credits_other": "{{count}} créditos",
+    "preparing": "Em preparação",
+    "downloadLabel": "Transferir fatura {{number}}",
+    "note": "Só aparecem aqui os pagamentos concluídos. Pagou recentemente e não vê a compra? <contact>Contacte-nos</contact> com a sua referência de pagamento.",
+    "empty": {
+      "title": "Ainda sem compras",
+      "body": "Os créditos que comprar aparecem aqui com as respetivas faturas."
+    },
+    "receipt": {
+      "paidOn": "Pago em {{date}}",
+      "caption": "Detalhe do pagamento",
+      "subtotal": "Subtotal",
+      "coupon": "Cupão {{code}}",
+      "discount": "Desconto",
+      "gst": "GST",
+      "total": "Total pago",
+      "invoiceNumber": "Número da fatura",
+      "reference": "Referência de pagamento",
+      "download": "Transferir fatura (PDF)"
+    }
+  },
+  "chatbot": {
+    "title": "Assistente de IA",
+    "subtitle": "Pergunte sobre a LetsHyre, contratação, candidatos e relatórios de avaliação.",
+    "inputPlaceholder": "Faça uma pergunta…",
+    "send": "Enviar",
+    "sendAria": "Enviar mensagem",
+    "thinking": "A pensar…",
+    "you": "Você",
+    "assistant": "Assistente",
+    "retry": "Tentar novamente",
+    "errorMessage": "Ocorreu um erro. Tente novamente.",
+    "clear": "Limpar chat",
+    "messagesLabel": "Mensagens do chat",
+    "launcherAria": "Abrir assistente de chat",
+    "closeAria": "Fechar chat",
+    "empty": {
+      "greeting": "Olá! Sou o seu assistente da LetsHyre.",
+      "hint": "Pergunte-me qualquer coisa sobre a contratação na LetsHyre. Experimente uma destas:",
+      "prompts": {
+        "what": "O que é a LetsHyre?",
+        "scorecard": "Como leio o relatório de avaliação de um candidato?",
+        "applications": "Como publico uma vaga e revejo candidatos?",
+        "interview": "Como funciona a entrevista com IA?"
+      }
+    }
+  },
+  "sharing": {
+    "manageLink": "Ligações partilhadas",
+    "shareAction": "Partilhar",
+    "createDialog": {
+      "title": "Partilhar o perfil de {{name}}",
+      "description": "Crie uma ligação que expira automaticamente e deixa de funcionar após um número definido de visualizações.",
+      "jobLabel": "Corresponder à vaga",
+      "jobPlaceholder": "Selecione uma vaga",
+      "jobLoading": "A carregar vagas…",
+      "jobEmpty": "Não há vagas abertas para corresponder",
+      "expiryLabel": "Expira em (dias)",
+      "expiryHint": "Até 30 dias.",
+      "maxViewsLabel": "Visualizações máximas",
+      "maxViewsHint": "A ligação deixa de funcionar assim que este limite for atingido.",
+      "cancel": "Cancelar",
+      "submit": "Criar ligação",
+      "submitting": "A criar…"
+    },
+    "successDialog": {
+      "title": "Ligação criada",
+      "description": "Partilhe esta ligação com qualquer pessoa que pretenda rever o relatório de avaliação de {{name}}.",
+      "expiresOn": "Expira a {{date}}",
+      "viewLimit_one": "{{count}} visualização permitida",
+      "viewLimit_other": "{{count}} visualizações permitidas",
+      "done": "Concluído"
+    },
+    "copy": {
+      "button": "Copiar ligação",
+      "copied": "Copiado",
+      "toastSuccess": "Ligação copiada para a área de transferência.",
+      "toastError": "Não foi possível copiar a ligação. Copie-a manualmente."
+    },
+    "toasts": {
+      "created": "Ligação de partilha criada.",
+      "createFailed": "Não foi possível criar a ligação de partilha."
+    },
+    "validation": {
+      "jobRequired": "Selecione uma vaga para corresponder.",
+      "expiryRequired": "Introduza o número de dias até esta ligação expirar.",
+      "expiryInt": "Introduza um número inteiro de dias.",
+      "expiryMin": "Deve expirar em pelo menos 1 dia.",
+      "expiryMax": "Não pode ser superior a 30 dias.",
+      "maxViewsRequired": "Introduza um limite de visualizações.",
+      "maxViewsInt": "Introduza um número inteiro.",
+      "maxViewsMin": "Deve permitir pelo menos 1 visualização.",
+      "extendRequired": "Introduza o número de dias a prolongar.",
+      "extendInt": "Introduza um número inteiro de dias.",
+      "extendMin": "Não pode ser negativo.",
+      "extendMax": "Não é possível prolongar mais de 30 dias de cada vez."
+    }
+  },
+  "states": {
+    "loading": "A carregar…",
+    "slow": "Isto está a demorar mais do que o habitual…",
+    "retry": "Tentar novamente",
+    "retrying": "A tentar novamente…",
+    "backToDashboard": "Ir para o painel",
+    "errorCode": "Erro {{code}}",
+    "stale": {
+      "title": "Não foi possível atualizar",
+      "body": "Está a ver os últimos dados carregados."
+    },
+    "error": {
+      "offline": {
+        "title": "Está offline",
+        "body": "Verifique a sua ligação à Internet. Esta página será recarregada assim que voltar a estar online."
+      },
+      "unreachable": {
+        "title": "Não é possível ligar agora",
+        "body": "Não conseguimos contactar os nossos servidores. Verifique a sua ligação e tente novamente."
+      },
+      "generic": {
+        "title": "Algo correu mal",
+        "body": "Não foi possível carregar isto agora. Normalmente é temporário, tente novamente."
+      },
+      "forbidden": {
+        "title": "Não tem acesso",
+        "body": "A sua conta não tem permissão para ver isto. Peça acesso ao administrador da sua empresa, se necessário."
+      },
+      "notFound": {
+        "title": "Não encontrado",
+        "body": "Pode ter sido removido ou a ligação pode estar incorreta."
+      }
+    }
+  }
+}

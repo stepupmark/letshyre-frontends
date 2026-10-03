@@ -1,0 +1,124 @@
+{
+  "homeCrumb": "الرئيسية",
+  "sharedScorecard": {
+    "title": "بطاقة تقييم المرشح | letshyre.ai",
+    "description": "بطاقة تقييم مقابلة مرشح، جرى تقييمها بالذكاء الاصطناعي وشاركها صاحب عمل على LetsHyre."
+  },
+  "getStarted": {
+    "title": "ابدأ الآن | letshyre.ai",
+    "description": "حدِّد ما إذا كنت توظِّف أو تبحث عن عمل، ثم أنشئ حسابك على LetsHyre."
+  },
+  "employeeSignIn": {
+    "title": "تسجيل دخول المرشح | letshyre.ai",
+    "description": "سجِّل الدخول إلى حساب المرشح على LetsHyre لإجراء المقابلات ومتابعة طلباتك."
+  },
+  "employeeRegister": {
+    "title": "إنشاء حساب مرشح | letshyre.ai",
+    "description": "أنشئ حساب مرشح على LetsHyre لإجراء مقابلات الذكاء الاصطناعي ومشاركة بطاقات تقييم موثَّقة."
+  },
+  "employerSignIn": {
+    "title": "تسجيل دخول صاحب العمل | letshyre.ai",
+    "description": "سجِّل الدخول إلى حساب صاحب العمل على LetsHyre لنشر الوظائف ومراجعة بطاقات التقييم."
+  },
+  "employerRegister": {
+    "title": "إنشاء حساب صاحب عمل | letshyre.ai",
+    "description": "أنشئ حساب صاحب عمل على LetsHyre لنشر الوظائف وإجراء مقابلات الذكاء الاصطناعي والتوظيف بسرعة."
+  },
+  "forgotPassword": {
+    "title": "إعادة تعيين كلمة المرور | letshyre.ai",
+    "description": "أعد تعيين كلمة مرور LetsHyre عبر التحقق بالبريد الإلكتروني وعُد إلى حسابك."
+  },
+  "notFound": {
+    "title": "الصفحة غير موجودة | letshyre.ai",
+    "description": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها."
+  },
+  "employeeFindJobs": {
+    "title": "ابحث عن وظائف | letshyre.ai",
+    "description": "ابدأ باكتشاف الفرص التي تتوافق مع مهاراتك وطموحاتك"
+  },
+  "employeeChatbot": {
+    "title": "مساعد الذكاء الاصطناعي | letshyre.ai",
+    "description": "اسأل عن LetsHyre وطلباتك وبطاقات التقييم والمزيد."
+  },
+  "employeeInterviewGuide": {
+    "title": "دليل المقابلة | letshyre.ai",
+    "description": "ثماني خطوات تفصلك عن المقابلة. إليك بالضبط ما تتضمنه كل خطوة حتى لا تكون هناك مفاجآت في اليوم المحدد."
+  },
+  "employeeMyApplications": {
+    "title": "طلباتي | letshyre.ai",
+    "description": "تابع وظائفك المتقدَّم لها والمُدرجة والمختارة والمرفوضة"
+  },
+  "employeeProfile": {
+    "title": "الملف الشخصي | letshyre.ai",
+    "description": "نموذج من خمس خطوات يغطي هويتك وصورتك وتفضيلات الوظيفة والسيرة الذاتية."
+  },
+  "employeeScoreCardsList": {
+    "title": "بطاقات تقييمي | letshyre.ai",
+    "description": "راجع أداءك في المقابلات والملاحظات المولّدة بالذكاء الاصطناعي."
+  },
+  "employeeScorecard": {
+    "title": "بطاقة تقييمك | letshyre.ai",
+    "description": "ملخّص مولّد بالذكاء الاصطناعي لأدائك خلال المقابلة."
+  },
+  "employerDashboard": {
+    "title": "لوحة التحكم | letshyre.ai",
+    "description": "إليك ما يحدث في مركز التوظيف الخاص بك اليوم."
+  },
+  "employerCandidatePool": {
+    "title": "مجموعة المرشحين | letshyre.ai",
+    "description": "اكتشف مرشحين مطابقين بالذكاء الاصطناعي لوظائفك المفتوحة."
+  },
+  "employerChatbot": {
+    "title": "مساعد الذكاء الاصطناعي | letshyre.ai",
+    "description": "اسأل عن LetsHyre والتوظيف والمرشحين وبطاقات التقييم."
+  },
+  "employerCandidateProfile": {
+    "title": "الملف الشخصي للمرشح | letshyre.ai",
+    "description": "استعرض الملف الشخصي للمرشح ومهاراته وخبرته على LetsHyre."
+  },
+  "employerCandidateScorecard": {
+    "title": "بطاقة تقييم المرشح | letshyre.ai",
+    "description": "ملخّص مولّد بالذكاء الاصطناعي لأداء هذا المرشح خلال المقابلة."
+  },
+  "employerInvoices": {
+    "title": "فواتيري | letshyre.ai",
+    "description": "سجل فواتيرك معنا."
+  },
+  "employerPostJob": {
+    "title": "نشر وظيفة | letshyre.ai",
+    "description": "سنساعدك في إنشاء إعلان وظيفي جذاب في ثوانٍ."
+  },
+  "employerProfile": {
+    "title": "الملف الشخصي | letshyre.ai",
+    "description": "راجع وأدر التفاصيل الأساسية والعلامة التجارية ومعلومات الاتصال لمؤسستك."
+  },
+  "employerUnlockedCandidates": {
+    "title": "المرشحون المفتوحون | letshyre.ai",
+    "description": "ستظهر الملفات التي تفتحها هنا."
+  },
+  "employerViewJobs": {
+    "title": "عرض الوظائف | letshyre.ai",
+    "description": "اعرض وأدر جميع الوظائف التي نشرتها."
+  },
+  "employerApplicants": {
+    "title": "المتقدمون للوظيفة | letshyre.ai",
+    "description": "راجع وأدِر المرشحين الذين تقدموا لهذا الدور."
+  },
+  "employerTeam": {
+    "title": "فريقك | letshyre.ai",
+    "description": "شاهد من هو موجود بالفعل وأضف أعضاء جددًا."
+  },
+  "employerOnboarding": {
+    "title": "تفاصيل الشركة | letshyre.ai",
+    "description": "أضف تفاصيل الشركة والمستندات القانونية لإكمال إعداد حساب صاحب العمل على LetsHyre."
+  },
+  "employerJobDetail": {
+    "title": "{{jobTitle}} | letshyre.ai",
+    "description": "استعرض تفاصيل {{jobTitle}} وأدرها على LetsHyre.",
+    "fallbackTitle": "تفاصيل الوظيفة"
+  },
+  "employerSharedLinks": {
+    "title": "الروابط المشتركة | letshyre.ai",
+    "description": "ستظهر هنا الروابط التي تشاركها."
+  }
+}

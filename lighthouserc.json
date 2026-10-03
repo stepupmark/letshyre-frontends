@@ -1,0 +1,35 @@
+{
+  "ci": {
+    "collect": {
+      "url": [
+        "http://localhost:8080/en/",
+        "http://localhost:8080/en/about/",
+        "http://localhost:8080/en/contact/",
+        "http://localhost:8080/en/download/",
+        "http://localhost:8080/en/how-it-works-interview/",
+        "http://localhost:8080/en/pricing/",
+        "http://localhost:8080/en/terms/",
+        "http://localhost:8080/en/policy/",
+        "http://localhost:8080/en/refund-policy/",
+        "http://localhost:8080/ar/",
+        "http://localhost:8080/ar/about/"
+      ],
+      "numberOfRuns": 1,
+      "settings": {
+        "chromeFlags": "--no-sandbox --headless=new",
+        "onlyCategories": ["accessibility", "seo", "best-practices"]
+      }
+    },
+    "assert": {
+      "assertions": {
+        "categories:seo": ["error", { "minScore": 0.95 }],
+        "categories:accessibility": ["error", { "minScore": 0.95 }],
+        "categories:best-practices": ["warn", { "minScore": 0.9 }]
+      }
+    },
+    "upload": {
+      "target": "filesystem",
+      "outputDir": "./lighthouse-report"
+    }
+  }
+}

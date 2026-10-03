@@ -1,0 +1,93 @@
+{
+  "step1": {
+    "heading": "Conosciamoci"
+  },
+  "step2": {
+    "badge": "Benvenuto a Bordo",
+    "titlePrefix": "Il Tuo ",
+    "titleHighlight": "Account è Pronto!",
+    "body": "Scopri candidati pre-valutati, consulta scorecard trasparenti e sblocca il talento giusto in pochi clic.",
+    "features": {
+      "candidates": "Candidati Valutati con IA",
+      "scorecards": "Scorecard Trasparenti",
+      "unlock": "Sblocca e Connetti"
+    },
+    "watchWalkthrough": "Guarda la Panoramica Rapida (30s)",
+    "skip": "Salta per ora"
+  },
+  "form": {
+    "progress": {
+      "step1Label": "Dettagli Azienda",
+      "step2Label": "Documenti Legali"
+    },
+    "fields": {
+      "companyName": "Nome Azienda",
+      "companyWebsite": "Sito Web Azienda",
+      "officialEmail": "Email Ufficiale",
+      "registrationNumber": "Numero di Registrazione",
+      "registrationNumberTooltip": "es. U72900TG2024PTC123456",
+      "panNumber": "Numero PAN",
+      "gstNumber": "Numero GST",
+      "companyAddress": "Indirizzo Azienda",
+      "selectIndustry": "Seleziona Settore",
+      "linkedinUrl": "URL LinkedIn",
+      "linkedinUrlTooltip": "es. https://linkedin.com/company/example",
+      "companyDescription": "Descrizione Azienda",
+      "descriptionCount": "{{count}} / 500"
+    },
+    "draftSaved": "Bozza salvata ✓",
+    "next": "Avanti",
+    "back": "Indietro",
+    "uploadHeading": "Carica Documenti (Max 5MB ciascuno)",
+    "uploadSubheading": "Carica copie chiare e leggibili di tutti i documenti richiesti.",
+    "documents": {
+      "companyLogo": "Logo Azienda",
+      "companyLogoTooltip": "Si consiglia un'immagine quadrata (PNG/JPG)",
+      "registrationCertificate": "Certificato di Registrazione",
+      "registrationCertificateTooltip": "Certificato di Costituzione",
+      "gstCertificate": "Certificato GST",
+      "gstCertificateTooltip": "Documento di registrazione GST valido",
+      "addressProof": "Prova di Indirizzo",
+      "addressProofTooltip": "Bolletta o contratto di locazione"
+    },
+    "upload": {
+      "uploadedSuccess": "Caricato con successo • {{size}}",
+      "selectFile": "Seleziona File",
+      "viewFile": "Visualizza file",
+      "removeFile": "Rimuovi file",
+      "replaceFile": "Sostituisci file",
+      "previewAlt": "Anteprima del file caricato",
+      "rulesImage": "JPG, PNG o WEBP, fino a 5 MB",
+      "rulesDocument": "PDF, DOC o DOCX, fino a 5 MB",
+      "dropHint": "oppure trascina qui un file",
+      "progress": "{{count}} di {{total}} caricati"
+    },
+    "processing": "Elaborazione in corso...",
+    "submit": "Invia e Completa",
+    "successTitle": "Invio Riuscito!",
+    "successBody": "Caricamento della tua dashboard...",
+    "previewAlt": "Anteprima grande",
+    "closePreview": "Chiudi anteprima",
+    "toasts": {
+      "submitFailed": "Impossibile inviare il KYC. Riprova."
+    },
+    "validation": {
+      "companyNameMin": "Il nome dell'azienda deve contenere almeno 2 caratteri",
+      "companyWebsiteUrl": "Deve essere un URL valido (es. https://example.com)",
+      "linkedinUrlInvalid": "Deve essere un URL valido (es. https://linkedin.com)",
+      "linkedinUrlRequired": "L'URL LinkedIn è obbligatorio",
+      "linkedinUrlDomain": "Deve essere un URL linkedin.com",
+      "companyDescriptionMin": "Fornisci una breve descrizione",
+      "companyIndustryRequired": "Seleziona un settore",
+      "registrationNumberRequired": "Il numero di registrazione è obbligatorio",
+      "gstNumberRequired": "È richiesto un numero GST valido",
+      "panNumberRequired": "È richiesto un numero PAN valido",
+      "companyAddressRequired": "L'indirizzo completo dell'azienda è obbligatorio",
+      "officialEmailInvalid": "È richiesta un'email ufficiale valida",
+      "fileRequired": "Il file è obbligatorio",
+      "fileMaxSize": "La dimensione massima del file è 5MB.",
+      "imageFormat": "Sono supportati solo i formati .jpg, .jpeg, .png e .webp.",
+      "documentFormat": "Sono supportati solo i formati .pdf, .doc e .docx."
+    }
+  }
+}

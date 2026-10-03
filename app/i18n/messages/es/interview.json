@@ -1,0 +1,53 @@
+{
+  "badge": "Guía del candidato",
+  "title": "Todo lo que sucede antes de tu primera pregunta",
+  "intro": "Ocho pasos te separan de la entrevista. Aquí está exactamente lo que implica cada uno para que no haya sorpresas el día.",
+  "steps": {
+    "download": {
+      "title": "Descargar la aplicación de escritorio",
+      "desc": "Para garantizar un entorno de prueba seguro, todas las entrevistas deben realizarse en nuestra aplicación de escritorio dedicada. <dl>Descarga e instala la aplicación LetsHyre</dl> para tu sistema operativo."
+    },
+    "signIn": {
+      "title": "Iniciar sesión en la aplicación",
+      "desc": "Inicia la aplicación de escritorio e inicia sesión con tus credenciales de candidato. Si aún no tienes una cuenta, visita letshyre.ai para crear un perfil. Tu cuenta contiene tu espacio de entrevista, foto de perfil y resultados."
+    },
+    "dashboard": {
+      "title": "Comenzar desde tu panel",
+      "desc": "Después de iniciar sesión, llegarás a tu panel personal que muestra tu perfil y los espacios de entrevista disponibles. Haz clic en Tomar Entrevista para comenzar — la aplicación ejecuta inmediatamente una verificación de seguridad en segundo plano antes de que se abra cualquier otra cosa."
+    },
+    "clearEnv": {
+      "title": "Despeja tu entorno",
+      "desc": "El escáner de seguridad verifica aplicaciones que podrían comprometer la integridad del examen — navegadores web, grabadores de pantalla, asistentes de IA y herramientas de videollamadas. Cualquier aplicación marcada debe cerrarse antes de continuar.",
+      "tip": "Consejo: cierra todas las demás aplicaciones antes de hacer clic en Tomar Entrevista"
+    },
+    "permissions": {
+      "title": "Otorgar permisos del dispositivo",
+      "desc": "Se te pedirá que permitas el acceso a tu micrófono, cámara y pantalla. Los tres son necesarios para la supervisión en vivo. Otorga cada permiso cuando tu sistema operativo te lo solicite — la entrevista no puede continuar sin ellos."
+    },
+    "verifyId": {
+      "title": "Verificar tu identidad",
+      "desc": "Lee una declaración breve en voz alta para el registro de voz, luego permite que la cámara tome una foto en vivo. Tu imagen en vivo se compara con la foto de perfil que subiste al crear tu cuenta.",
+      "tip": "Consejo: mira directamente a la cámara en una habitación bien iluminada"
+    },
+    "chooseRole": {
+      "title": "Elige tu rol de entrevista",
+      "desc": "Selecciona el puesto para el que te estás entrevistando. Puedes continuar con el rol asignado durante la incorporación, o elegir un espacio diferente si hay varios disponibles."
+    },
+    "begin": {
+      "title": "Comenzar tu entrevista",
+      "desc": "Estás listo. La ventana de entrevista se abre en pantalla completa con la grabación de pantalla activa. Responde cada pregunta dentro del tiempo asignado — puedes navegar entre preguntas antes de que se acabe el temporizador de la sesión."
+    }
+  },
+  "cta": {
+    "title": "¿Listo para comenzar?",
+    "desc": "Descarga la aplicación de escritorio, inicia sesión en tu cuenta y haz clic en Tomar Entrevista cuando estés preparado.",
+    "button": "Descargar aplicación"
+  },
+  "meta": {
+    "title": "Cómo es la entrevista con IA | letshyre.ai",
+    "description": "Qué esperar: instalar la aplicación, iniciar sesión, verificar tu identidad, despejar tu espacio y responder preguntas del puesto.",
+    "name": "Cómo funciona la entrevista IA",
+    "schemaDescription": "Guía paso a paso del proceso de entrevista de candidatos de LetsHyre.",
+    "crumb": "Proceso de entrevista"
+  }
+}

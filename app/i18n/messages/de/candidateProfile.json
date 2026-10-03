@@ -1,0 +1,29 @@
+{
+  "completion": {
+    "heading": "Profilvollständigkeit",
+    "complete": "Vollständig",
+    "noteComplete": "Großartig! Ihr Profil ist vollständig.",
+    "noteIncomplete": "Vervollständigen Sie Ihr Profil, um bei Arbeitgebern hervorzustechen.",
+    "noteCompleteCandidate": "Das Profil dieses Kandidaten ist vollständig ausgefüllt.",
+    "noteIncompleteCandidate": "Dieser Kandidat hat sein Profil noch nicht vervollständigt."
+  },
+  "contact": {
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "location": "Standort",
+    "experience": "Erfahrung"
+  },
+  "dash": "—",
+  "interviews": {
+    "heading": "KI-Interviews",
+    "usage": "{{remaining}} von {{total}} verbleibend"
+  },
+  "units": {
+    "years_one": "{{count}} Jahr",
+    "years_other": "{{count}} Jahre",
+    "notSpecified": "Nicht angegeben",
+    "immediateJoiner": "Sofort verfügbar",
+    "days_one": "{{count}} Tag",
+    "days_other": "{{count}} Tage"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "chrome": {
+    "readTime": "~{{count}} min de leitura",
+    "contents": "Índice",
+    "collapseSidebar": "Recolher Barra Lateral",
+    "expandSidebar": "Expandir Barra Lateral",
+    "searchPlaceholder": "Pesquisar secções...",
+    "noMatches": "Nenhuma secção corresponde à sua pesquisa.",
+    "reading": "A ler:",
+    "feedbackPrompt": "Este documento foi claro e útil?",
+    "feedbackYes": "👍 Sim",
+    "feedbackNo": "👎 Não",
+    "feedbackThanks": "Obrigado pelo seu feedback!",
+    "backToTop": "Voltar ao topo",
+    "translationNotice": "Esta é uma tradução disponibilizada por conveniência. O texto oficial é a <en>versão em inglês</en>."
+  }
+}

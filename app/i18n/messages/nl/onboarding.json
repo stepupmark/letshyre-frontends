@@ -1,0 +1,93 @@
+{
+  "step1": {
+    "heading": "Laten we u leren kennen"
+  },
+  "step2": {
+    "badge": "Welkom aan boord",
+    "titlePrefix": "Uw ",
+    "titleHighlight": "account is klaar!",
+    "body": "Ontdek vooraf beoordeelde kandidaten, bekijk transparante scorecards en ontgrendel het juiste talent met slechts een paar klikken.",
+    "features": {
+      "candidates": "AI-beoordeelde kandidaten",
+      "scorecards": "Transparante scorecards",
+      "unlock": "Ontgrendelen & Verbinden"
+    },
+    "watchWalkthrough": "Bekijk korte rondleiding (30s)",
+    "skip": "Voorlopig overslaan"
+  },
+  "form": {
+    "progress": {
+      "step1Label": "Bedrijfsgegevens",
+      "step2Label": "Juridische documenten"
+    },
+    "fields": {
+      "companyName": "Bedrijfsnaam",
+      "companyWebsite": "Bedrijfswebsite",
+      "officialEmail": "Officiële E-mail",
+      "registrationNumber": "Registratienummer",
+      "registrationNumberTooltip": "bijv. U72900TG2024PTC123456",
+      "panNumber": "PAN-nummer",
+      "gstNumber": "GST-nummer",
+      "companyAddress": "Bedrijfsadres",
+      "selectIndustry": "Selecteer Sector",
+      "linkedinUrl": "LinkedIn URL",
+      "linkedinUrlTooltip": "bijv. https://linkedin.com/company/example",
+      "companyDescription": "Bedrijfsbeschrijving",
+      "descriptionCount": "{{count}} / 500"
+    },
+    "draftSaved": "Concept opgeslagen ✓",
+    "next": "Volgende",
+    "back": "Terug",
+    "uploadHeading": "Documenten uploaden (max. 5MB per bestand)",
+    "uploadSubheading": "Upload duidelijke, leesbare kopieën van alle vereiste documenten.",
+    "documents": {
+      "companyLogo": "Bedrijfslogo",
+      "companyLogoTooltip": "Vierkante afbeelding aanbevolen (PNG/JPG)",
+      "registrationCertificate": "Registratiecertificaat",
+      "registrationCertificateTooltip": "Oprichtingsakte",
+      "gstCertificate": "GST-certificaat",
+      "gstCertificateTooltip": "Geldig GST-registratiedocument",
+      "addressProof": "Adresbewijs",
+      "addressProofTooltip": "Energierekening of huurovereenkomst"
+    },
+    "upload": {
+      "uploadedSuccess": "Succesvol geüpload • {{size}}",
+      "selectFile": "Bestand Selecteren",
+      "viewFile": "Bestand bekijken",
+      "removeFile": "Bestand verwijderen",
+      "replaceFile": "Bestand vervangen",
+      "previewAlt": "Voorbeeld van het geüploade bestand",
+      "rulesImage": "JPG, PNG of WEBP, max. 5 MB",
+      "rulesDocument": "PDF, DOC of DOCX, max. 5 MB",
+      "dropHint": "of sleep een bestand hierheen",
+      "progress": "{{count}} van {{total}} geüpload"
+    },
+    "processing": "Verwerken...",
+    "submit": "Indienen & Voltooien",
+    "successTitle": "Succesvol ingediend!",
+    "successBody": "Uw dashboard wordt geladen...",
+    "previewAlt": "Grote voorbeeldweergave",
+    "closePreview": "Voorbeeld sluiten",
+    "toasts": {
+      "submitFailed": "KYC indienen mislukt. Probeer het opnieuw."
+    },
+    "validation": {
+      "companyNameMin": "Bedrijfsnaam moet minimaal 2 tekens bevatten",
+      "companyWebsiteUrl": "Moet een geldige URL zijn (bijv. https://example.com)",
+      "linkedinUrlInvalid": "Moet een geldige URL zijn (bijv. https://linkedin.com)",
+      "linkedinUrlRequired": "LinkedIn-URL is verplicht",
+      "linkedinUrlDomain": "Moet een linkedin.com-URL zijn",
+      "companyDescriptionMin": "Geef een korte beschrijving op",
+      "companyIndustryRequired": "Selecteer een sector",
+      "registrationNumberRequired": "Registratienummer is verplicht",
+      "gstNumberRequired": "Een geldig GST-nummer is verplicht",
+      "panNumberRequired": "Een geldig PAN-nummer is verplicht",
+      "companyAddressRequired": "Volledig bedrijfsadres is verplicht",
+      "officialEmailInvalid": "Een geldig officieel e-mailadres is verplicht",
+      "fileRequired": "Bestand is verplicht",
+      "fileMaxSize": "Maximale bestandsgrootte is 5MB.",
+      "imageFormat": "Alleen .jpg, .jpeg, .png en .webp formaten worden ondersteund.",
+      "documentFormat": "Alleen .pdf, .doc en .docx formaten worden ondersteund."
+    }
+  }
+}

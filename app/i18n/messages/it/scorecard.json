@@ -1,0 +1,56 @@
+{
+  "header": {
+    "goBack": "Torna Indietro",
+    "title": "Scorecard del Candidato",
+    "subtitle": "Un riepilogo generato dall'IA delle prestazioni del candidato durante il colloquio.",
+    "name": "Nome del Candidato",
+    "role": "Ruolo Richiesto",
+    "date": "Data del Colloquio",
+    "na": "N/D"
+  },
+  "interview": {
+    "title": "Registrazione del Colloquio",
+    "videoLabel": "Registrazione del colloquio del candidato",
+    "error": "Impossibile caricare la registrazione del colloquio.",
+    "play": "Riproduci colloquio",
+    "empty": "Nessuna registrazione del colloquio disponibile per questo candidato.",
+    "retry": "Riprova",
+    "loading": "Caricamento video…"
+  },
+  "summary": {
+    "candidate": "Candidato",
+    "overall": "Prestazione Complessiva",
+    "basedOn_one": "Basato su {{count}} domanda del colloquio",
+    "basedOn_other": "Basato su {{count}} domande del colloquio"
+  },
+  "metrics": {
+    "heading": "Metriche di Comunicazione Audio",
+    "range": "(0–100)",
+    "clarity": "Chiarezza",
+    "relevance": "Pertinenza",
+    "confidence": "Sicurezza",
+    "depth": "Profondità di Pensiero",
+    "keyConcept": "Copertura dei Concetti Chiave"
+  },
+  "skills": {
+    "heading": "Competenze del Candidato",
+    "empty": "Nessuna competenza registrata."
+  },
+  "questions": {
+    "heading": "Domande e Risposte",
+    "empty": "Nessuna domanda trovata per questo colloquio.",
+    "candidateAnswer": "Risposta del Candidato",
+    "noQuestionText": "Nessun testo della domanda fornito.",
+    "noCode": "Nessun codice fornito.",
+    "noAudio": "Nessuna risposta audio registrata.",
+    "audioUnsupported": "Il tuo browser non supporta l'elemento audio.",
+    "noAnswer": "Nessuna risposta fornita.",
+    "types": {
+      "mcq": "Scelta Multipla",
+      "pseudocodeMcq": "Scelta Multipla Pseudocodice",
+      "coding": "Programmazione",
+      "typing": "Digitazione",
+      "audio": "Audio"
+    }
+  }
+}

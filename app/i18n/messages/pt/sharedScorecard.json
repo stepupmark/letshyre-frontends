@@ -1,0 +1,130 @@
+{
+  "provenance": {
+    "sharedBy": "Partilhado por {{company}}",
+    "confidential": "Confidencial — partilhado de forma privada"
+  },
+  "header": {
+    "unnamed": "Candidato",
+    "fresher": "Sem experiência",
+    "experience_one": "{{count}} ano de experiência",
+    "experience_other": "{{count}} anos de experiência",
+    "matchedTo": "Correspondente a {{job}}"
+  },
+  "overview": {
+    "overallScore": "Desempenho Geral",
+    "basedOn_one": "Com base em {{count}} pergunta de entrevista",
+    "basedOn_other": "Com base em {{count}} perguntas de entrevista"
+  },
+  "aiMatch": {
+    "heading": "Correspondência de IA com a Vaga",
+    "overall": "Correspondência Geral",
+    "role": "Correspondência de Função",
+    "skills": "Correspondência de Competências"
+  },
+  "metrics": {
+    "heading": "Métricas de Comunicação",
+    "clarity": "Clareza",
+    "relevance": "Relevância",
+    "confidence": "Confiança",
+    "depth": "Profundidade de Pensamento",
+    "keyConcept": "Cobertura de Conceitos-Chave"
+  },
+  "sections": {
+    "heading": "Desempenho por Tipo de Pergunta",
+    "correctOf": "{{correct}} de {{count}} corretas",
+    "types": {
+      "mcq": "Escolha Múltipla",
+      "pseudocode_mcq": "Pseudocódigo (Escolha Múltipla)",
+      "coding": "Programação",
+      "typing": "Escrita",
+      "audio": "Áudio"
+    }
+  },
+  "insights": {
+    "heading": "Análises da Entrevista",
+    "strengths": "Pontos Fortes",
+    "areasForImprovement": "Áreas a Melhorar",
+    "recommendations": "Recomendações"
+  },
+  "interview": {
+    "heading": "Gravação da Entrevista",
+    "unsupported": "O seu navegador não suporta o elemento de vídeo."
+  },
+  "profile": {
+    "heading": "Perfil do Candidato",
+    "sections": {
+      "skills": "Competências",
+      "experience": "Experiência",
+      "education": "Formação",
+      "projects": "Projetos",
+      "certifications": "Certificações",
+      "accomplishments": "Conquistas",
+      "portfolio": "Links de Portefólio",
+      "resume": "Currículo"
+    },
+    "empty": {
+      "skills": "Nenhuma competência listada.",
+      "education": "Nenhum histórico académico listado.",
+      "experience": "Nenhuma experiência profissional listada.",
+      "projects": "Nenhum projeto listado.",
+      "certifications": "Nenhuma certificação listada.",
+      "accomplishments": "Nenhuma conquista listada.",
+      "portfolio": "Nenhum link de portefólio partilhado.",
+      "resume": "Nenhum currículo disponível."
+    },
+    "untitledProject": "Projeto Sem Título",
+    "certificationFallback": "Certificação",
+    "accomplishmentFallback": "Conquista",
+    "viewResume": "Ver Currículo"
+  },
+  "questions": {
+    "heading": "Perguntas e Respostas da Entrevista",
+    "empty": "Não foram encontradas perguntas para esta entrevista.",
+    "expandAll": "Expandir tudo",
+    "collapseAll": "Recolher tudo",
+    "candidateAnswer": "Resposta do Candidato",
+    "noQuestionText": "Não foi fornecido texto da pergunta.",
+    "noCode": "Nenhum código fornecido.",
+    "noAudio": "Nenhuma resposta em áudio gravada.",
+    "audioUnsupported": "O seu navegador não suporta o elemento de áudio.",
+    "noAnswer": "Nenhuma resposta fornecida.",
+    "types": {
+      "mcq": "Escolha Múltipla",
+      "mcq_pseudocode": "Pseudocódigo (Escolha Múltipla)",
+      "pseudocode_mcq": "Pseudocódigo (Escolha Múltipla)",
+      "coding": "Programação",
+      "typing": "Escrita",
+      "audio": "Áudio",
+      "default": "Pergunta"
+    }
+  },
+  "toc": {
+    "label": "Secções do relatório",
+    "overview": "Resumo",
+    "aiMatch": "Correspondência de IA com a Vaga",
+    "communication": "Comunicação",
+    "sections": "Desempenho",
+    "insights": "Análises",
+    "profile": "Perfil",
+    "questions": "Perguntas e Respostas"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "Link Não Encontrado",
+      "description": "Este link de scorecard partilhado é inválido ou já não existe. Verifique o URL ou peça um novo link ao remetente."
+    },
+    "expired": {
+      "title": "Link Expirado",
+      "description": "Este link de scorecard partilhado expirou. Peça um novo link ao remetente."
+    },
+    "limit": {
+      "title": "Limite de Visualizações Atingido",
+      "description": "Este link de scorecard partilhado atingiu o número máximo de visualizações. Peça um novo link ao remetente."
+    },
+    "unavailable": {
+      "title": "Algo Correu Mal",
+      "description": "Não conseguimos carregar este scorecard neste momento. Tente novamente dentro de instantes."
+    },
+    "retry": "Tentar Novamente"
+  }
+}

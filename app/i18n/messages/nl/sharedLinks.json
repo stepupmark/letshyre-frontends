@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "Gedeelde links",
+    "subtitleLoading": "Je gedeelde links worden geladen…",
+    "subtitle_one": "{{count}} link tot nu toe gedeeld.",
+    "subtitle_other": "{{count}} links tot nu toe gedeeld.",
+    "subtitleEmpty": "Links die je deelt, verschijnen hier.",
+    "back": "Terug naar ontgrendelde kandidaten",
+    "errorGeneric": "Er ging iets mis bij het ophalen van gedeelde links.",
+    "emptyTitle": "Nog geen gedeelde links",
+    "emptyBody": "Deel het profiel van een kandidaat vanaf de pagina met ontgrendelde kandidaten en het verschijnt hier.",
+    "columns": {
+      "candidate": "Kandidaat",
+      "job": "Bijpassende vacature",
+      "status": "Status",
+      "views": "Weergaven",
+      "expires": "Verloopt",
+      "actions": "Acties"
+    },
+    "viewsOf": "{{count}} / {{max}}",
+    "noJob": "Geen vacature gevonden",
+    "sharedBy": "Gedeeld door {{name}}",
+    "copyLink": "Link kopiëren",
+    "edit": "Bewerken",
+    "delete": "Verwijderen"
+  },
+  "status": {
+    "active": "Actief",
+    "inactive": "Inactief",
+    "expired": "Verlopen",
+    "limitReached": "Weergavelimiet bereikt"
+  },
+  "editDialog": {
+    "title": "Deellink bewerken",
+    "description": "Pas de vervaldatum of het weergavelimiet aan, of schakel deze link uit.",
+    "extendLabel": "Vervaldatum verlengen met (dagen)",
+    "extendHint": "Wordt toegevoegd aan de huidige vervaldatum. Gebruik 0 om deze ongewijzigd te laten.",
+    "maxViewsLabel": "Maximaal aantal weergaven",
+    "activeLabel": "Link is actief",
+    "activeHint": "Schakel uit om de link te deactiveren zonder deze te verwijderen.",
+    "cancel": "Annuleren",
+    "submit": "Wijzigingen opslaan",
+    "submitting": "Bezig met opslaan…"
+  },
+  "deleteDialog": {
+    "title": "Deze deellink verwijderen?",
+    "description": "Iedereen met de link verliest direct de toegang. Dit kan niet ongedaan worden gemaakt.",
+    "cancel": "Annuleren",
+    "confirm": "Link verwijderen",
+    "deleting": "Bezig met verwijderen…"
+  },
+  "toasts": {
+    "updated": "Deellink bijgewerkt.",
+    "updateFailed": "De deellink kon niet worden bijgewerkt.",
+    "deleted": "Deellink verwijderd.",
+    "deleteFailed": "De deellink kon niet worden verwijderd."
+  }
+}

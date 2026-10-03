@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "Liens partagés",
+    "subtitleLoading": "Chargement de vos liens partagés…",
+    "subtitle_one": "{{count}} lien partagé jusqu'à présent.",
+    "subtitle_other": "{{count}} liens partagés jusqu'à présent.",
+    "subtitleEmpty": "Les liens que vous partagez apparaîtront ici.",
+    "back": "Retour aux candidats débloqués",
+    "errorGeneric": "Une erreur s'est produite lors de la récupération des liens partagés.",
+    "emptyTitle": "Aucun lien partagé pour l'instant",
+    "emptyBody": "Partagez le profil d'un candidat depuis la page des candidats débloqués et il apparaîtra ici.",
+    "columns": {
+      "candidate": "Candidat",
+      "job": "Offre associée",
+      "status": "Statut",
+      "views": "Vues",
+      "expires": "Expire",
+      "actions": "Actions"
+    },
+    "viewsOf": "{{count}} / {{max}}",
+    "noJob": "Aucune offre associée",
+    "sharedBy": "Partagé par {{name}}",
+    "copyLink": "Copier le lien",
+    "edit": "Modifier",
+    "delete": "Supprimer"
+  },
+  "status": {
+    "active": "Actif",
+    "inactive": "Inactif",
+    "expired": "Expiré",
+    "limitReached": "Limite de vues atteinte"
+  },
+  "editDialog": {
+    "title": "Modifier le lien de partage",
+    "description": "Ajustez l'expiration, la limite de vues, ou désactivez ce lien.",
+    "extendLabel": "Prolonger l'expiration de (jours)",
+    "extendHint": "Ajouté à la date d'expiration actuelle. Utilisez 0 pour ne rien changer.",
+    "maxViewsLabel": "Nombre maximal de vues",
+    "activeLabel": "Le lien est actif",
+    "activeHint": "Désactivez pour suspendre le lien sans le supprimer.",
+    "cancel": "Annuler",
+    "submit": "Enregistrer les modifications",
+    "submitting": "Enregistrement…"
+  },
+  "deleteDialog": {
+    "title": "Supprimer ce lien de partage ?",
+    "description": "Toute personne disposant du lien perdra immédiatement l'accès. Cette action est irréversible.",
+    "cancel": "Annuler",
+    "confirm": "Supprimer le lien",
+    "deleting": "Suppression…"
+  },
+  "toasts": {
+    "updated": "Lien de partage mis à jour.",
+    "updateFailed": "Impossible de mettre à jour le lien de partage.",
+    "deleted": "Lien de partage supprimé.",
+    "deleteFailed": "Impossible de supprimer le lien de partage."
+  }
+}

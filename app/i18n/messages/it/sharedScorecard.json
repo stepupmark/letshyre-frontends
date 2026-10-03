@@ -1,0 +1,130 @@
+{
+  "provenance": {
+    "sharedBy": "Condiviso da {{company}}",
+    "confidential": "Riservato — condiviso privatamente"
+  },
+  "header": {
+    "unnamed": "Candidato",
+    "fresher": "Neolaureato",
+    "experience_one": "{{count}} anno di esperienza",
+    "experience_other": "{{count}} anni di esperienza",
+    "matchedTo": "Abbinato a {{job}}"
+  },
+  "overview": {
+    "overallScore": "Prestazione Complessiva",
+    "basedOn_one": "Basato su {{count}} domanda del colloquio",
+    "basedOn_other": "Basato su {{count}} domande del colloquio"
+  },
+  "aiMatch": {
+    "heading": "Abbinamento IA alla Posizione",
+    "overall": "Abbinamento Complessivo",
+    "role": "Abbinamento Ruolo",
+    "skills": "Abbinamento Competenze"
+  },
+  "metrics": {
+    "heading": "Metriche di Comunicazione",
+    "clarity": "Chiarezza",
+    "relevance": "Pertinenza",
+    "confidence": "Sicurezza",
+    "depth": "Profondità di Pensiero",
+    "keyConcept": "Copertura dei Concetti Chiave"
+  },
+  "sections": {
+    "heading": "Prestazione per Tipo di Domanda",
+    "correctOf": "{{correct}} su {{count}} corrette",
+    "types": {
+      "mcq": "Scelta Multipla",
+      "pseudocode_mcq": "Scelta Multipla Pseudocodice",
+      "coding": "Programmazione",
+      "typing": "Digitazione",
+      "audio": "Audio"
+    }
+  },
+  "insights": {
+    "heading": "Approfondimenti sul Colloquio",
+    "strengths": "Punti di Forza",
+    "areasForImprovement": "Aree di Miglioramento",
+    "recommendations": "Raccomandazioni"
+  },
+  "interview": {
+    "heading": "Registrazione del Colloquio",
+    "unsupported": "Il tuo browser non supporta l'elemento video."
+  },
+  "profile": {
+    "heading": "Profilo del Candidato",
+    "sections": {
+      "skills": "Competenze",
+      "experience": "Esperienza",
+      "education": "Istruzione",
+      "projects": "Progetti",
+      "certifications": "Certificazioni",
+      "accomplishments": "Risultati",
+      "portfolio": "Link al Portfolio",
+      "resume": "Curriculum"
+    },
+    "empty": {
+      "skills": "Nessuna competenza indicata.",
+      "education": "Nessun percorso formativo indicato.",
+      "experience": "Nessuna esperienza lavorativa indicata.",
+      "projects": "Nessun progetto indicato.",
+      "certifications": "Nessuna certificazione indicata.",
+      "accomplishments": "Nessun risultato indicato.",
+      "portfolio": "Nessun link al portfolio condiviso.",
+      "resume": "Nessun curriculum disponibile."
+    },
+    "untitledProject": "Progetto Senza Titolo",
+    "certificationFallback": "Certificazione",
+    "accomplishmentFallback": "Risultato",
+    "viewResume": "Visualizza Curriculum"
+  },
+  "questions": {
+    "heading": "Domande e Risposte del Colloquio",
+    "empty": "Nessuna domanda trovata per questo colloquio.",
+    "expandAll": "Espandi tutto",
+    "collapseAll": "Comprimi tutto",
+    "candidateAnswer": "Risposta del Candidato",
+    "noQuestionText": "Nessun testo della domanda fornito.",
+    "noCode": "Nessun codice fornito.",
+    "noAudio": "Nessuna risposta audio registrata.",
+    "audioUnsupported": "Il tuo browser non supporta l'elemento audio.",
+    "noAnswer": "Nessuna risposta fornita.",
+    "types": {
+      "mcq": "Scelta Multipla",
+      "mcq_pseudocode": "Scelta Multipla Pseudocodice",
+      "pseudocode_mcq": "Scelta Multipla Pseudocodice",
+      "coding": "Programmazione",
+      "typing": "Digitazione",
+      "audio": "Audio",
+      "default": "Domanda"
+    }
+  },
+  "toc": {
+    "label": "Sezioni del report",
+    "overview": "Panoramica",
+    "aiMatch": "Abbinamento IA alla Posizione",
+    "communication": "Comunicazione",
+    "sections": "Prestazione",
+    "insights": "Approfondimenti",
+    "profile": "Profilo",
+    "questions": "Domande e Risposte"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "Link Non Trovato",
+      "description": "Questo link della scorecard condivisa non è valido o non esiste più. Controlla l'URL o chiedi un nuovo link al mittente."
+    },
+    "expired": {
+      "title": "Link Scaduto",
+      "description": "Questo link della scorecard condivisa è scaduto. Chiedi un nuovo link al mittente."
+    },
+    "limit": {
+      "title": "Limite di Visualizzazioni Raggiunto",
+      "description": "Questo link della scorecard condivisa ha raggiunto il numero massimo di visualizzazioni. Chiedi un nuovo link al mittente."
+    },
+    "unavailable": {
+      "title": "Qualcosa È Andato Storto",
+      "description": "Al momento non è stato possibile caricare questa scorecard. Riprova tra qualche istante."
+    },
+    "retry": "Riprova"
+  }
+}

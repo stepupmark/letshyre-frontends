@@ -1,0 +1,85 @@
+{
+  "skipToContent": "Saltar al contenido principal",
+  "copyright": "LetsHyre © {{year}}",
+  "nav": {
+    "home": "Inicio",
+    "howItWorks": "Cómo funciona",
+    "aiInterview": "Entrevista IA",
+    "scorecards": "Tarjetas de puntuación",
+    "pricing": "Precios",
+    "contact": "Contacto",
+    "getStarted": "Comenzar",
+    "toggle": "Alternar navegación",
+    "siteNavigation": "Navegación del sitio",
+    "logoAlt": "Logo de LetsHyre",
+    "language": "Cambiar idioma",
+    "languageMenu": "Elige tu idioma",
+    "languageSuggested": "Sugeridos",
+    "languageAll": "Todos los idiomas",
+    "languageFailed": "No se pudo cambiar el idioma. Comprueba tu conexión e inténtalo de nuevo.",
+    "primaryAria": "Navegación principal",
+    "mobileAria": "Navegación móvil",
+    "englishOnly": "Por ahora, esta página solo está disponible en inglés."
+  },
+  "footer": {
+    "tagline": "La plataforma de IA que revoluciona cómo el talento y las oportunidades se conectan.",
+    "product": "Producto",
+    "company": "Empresa",
+    "stayUpdated": "Mantente actualizado",
+    "newsletterDesc": "Obtén las últimas noticias y actualizaciones de LetsHyre",
+    "links": {
+      "interviewProcess": "Proceso de entrevista",
+      "downloadApp": "Descargar aplicación",
+      "pricing": "Precios",
+      "about": "Sobre nosotros",
+      "terms": "Términos y condiciones",
+      "privacy": "Política de privacidad",
+      "refund": "Política de reembolso",
+      "contact": "Contacto"
+    }
+  },
+  "newsletter": {
+    "emailPlaceholder": "Tu correo",
+    "emailLabel": "Dirección de correo electrónico",
+    "subscribe": "Suscribirse",
+    "subscribed": "Suscripción guardada correctamente.",
+    "subscribeFailed": "Error al suscribirse. Por favor, inténtelo de nuevo."
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "previousPage": "Página anterior",
+    "nextPage": "Página siguiente",
+    "page": "Página {{page}}",
+    "summary": "Mostrando {{from}}–{{to}} de {{count}}"
+  },
+  "toast": {
+    "genericError": "Algo salió mal. Por favor, inténtalo de nuevo."
+  },
+  "notFound": {
+    "badge": "404 Página no encontrada",
+    "title": "No encontramos esta página",
+    "body": "La página que buscas no existe o puede que se haya movido. Vamos a devolverte al buen camino.",
+    "goHome": "Ir al inicio",
+    "goBack": "Volver"
+  },
+  "pageState": {
+    "loading": "Cargando la página",
+    "slow": "Está tardando más de lo habitual. Espera un momento.",
+    "update": {
+      "title": "LetsHyre se ha actualizado",
+      "body": "Se publicó una versión nueva mientras navegabas. Recarga la página para continuar."
+    },
+    "offline": {
+      "title": "No tienes conexión",
+      "body": "Comprueba tu conexión a internet y vuelve a cargar la página."
+    },
+    "generic": {
+      "title": "Esta página no se ha cargado",
+      "body": "Algo ha fallado por nuestra parte. Recarga la página para intentarlo de nuevo o contáctanos si el problema continúa."
+    },
+    "reload": "Recargar la página",
+    "contact": "Contáctanos",
+    "home": "Ir a la página de inicio"
+  }
+}

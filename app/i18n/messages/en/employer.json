@@ -1,0 +1,322 @@
+{
+  "dashboard": {
+    "welcome": "Welcome back!",
+    "subtitle": "Here's what's happening with your hiring hub today.",
+    "cards": {
+      "activeJobs": "Active Jobs",
+      "inactiveJobs": "In-Active Jobs",
+      "totalApplications": "Total Applications",
+      "activeCaption1": "/Currently",
+      "activeCaption2": "active",
+      "inactiveCaption1": "/Closed or",
+      "inactiveCaption2": "Draft",
+      "applicationsCaption1": "/Total",
+      "applicationsCaption2": "received"
+    },
+    "credits": {
+      "heading": "Your Credit Balance",
+      "used": "Used",
+      "creditsLeft_one": "{{count}} Credit Left",
+      "creditsLeft_other": "{{count}} Credits Left",
+      "blurb": "Use credits to unlock applicant profiles and connect with top talent.",
+      "addCredits": "Add Credits",
+      "viewTransactions": "View Transactions"
+    }
+  },
+  "profile": {
+    "editDialogAria": "Edit company profile",
+    "na": "NA",
+    "banner": {
+      "aria": "Profile banner",
+      "defaultCompany": "Your Company",
+      "blurb": "Review and manage your organization's core details, branding, and contact information.",
+      "editProfile": "Edit Profile",
+      "editAria": "Edit profile information",
+      "sideAlt": "Profile illustration with decorative elements",
+      "shapeAlt": "Decorative polygon shape",
+      "jobsPosted": "Jobs Posted",
+      "activeJobs": "Active Jobs",
+      "matches": "Matches",
+      "alreadyHired": "Already Hired"
+    },
+    "primary": {
+      "heading": "Primary Details",
+      "name": "Name",
+      "industry": "Industry",
+      "email": "Email",
+      "phone": "Phone",
+      "officialEmail": "Official Email",
+      "kycStatus": "KYC Status"
+    },
+    "company": {
+      "heading": "Company Details",
+      "companyName": "Company Name",
+      "website": "Website",
+      "registrationNumber": "Registration Number",
+      "gstNumber": "GST Number",
+      "panNumber": "PAN Number",
+      "address": "Address",
+      "linkedin": "LinkedIn",
+      "viewProfile": "View Profile",
+      "description": "Description"
+    },
+    "documents": {
+      "heading": "Uploaded Documents",
+      "viewDocument": "View Document",
+      "registrationCertificate": "Registration Certificate",
+      "gstCertificate": "GST Certificate",
+      "addressProof": "Address Proof",
+      "bankProof": "Bank Proof"
+    },
+    "edit": {
+      "title": "Edit Your Profile",
+      "close": "Close",
+      "illustrationAlt": "Profile illustration",
+      "step1": "Step 1: Basic Details",
+      "step2": "Step 2: Company Info & Logo",
+      "officialEmail": "Official Email",
+      "emailPlaceholder": "example@company.com",
+      "location": "Location",
+      "locationPlaceholder": "Enter location",
+      "industry": "Industry",
+      "selectIndustry": "Select Industry",
+      "linkedinUrl": "LinkedIn URL",
+      "linkedinPlaceholder": "https://linkedin.com/company/...",
+      "companyDescription": "Company Description",
+      "descriptionPlaceholder": "Briefly describe your company...",
+      "companyLogo": "Company Logo",
+      "logoPreviewAlt": "Logo preview",
+      "noLogoUploaded": "No Logo Uploaded",
+      "uploadNewLogo": "Upload New Logo",
+      "uploadLogo": "Upload Logo",
+      "logoHint": "JPG, PNG or SVG. Max size 5MB.",
+      "cancel": "Cancel",
+      "next": "Next",
+      "back": "Back",
+      "saving": "Saving...",
+      "saveChanges": "Save Changes"
+    },
+    "validation": {
+      "emailInvalid": "Please enter a valid email address",
+      "locationRequired": "Please enter a location",
+      "industryRequired": "Please select an industry",
+      "linkedinInvalid": "Please enter a valid LinkedIn URL",
+      "linkedinDomain": "Must be a LinkedIn URL",
+      "descriptionMax": "Description must be under 500 characters",
+      "logoSize": "File size must be under 5MB",
+      "logoType": "Only JPG, PNG, SVG or WEBP allowed"
+    },
+    "toasts": {
+      "updated": "Profile updated successfully",
+      "updateFailed": "Failed to update profile"
+    }
+  },
+  "team": {
+    "heading": "Meet your team",
+    "subtitle": "See who is already here and bring new members into the fold.",
+    "addMember": "Add member",
+    "errorLoad": "Failed to load team members. Please try again.",
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right",
+    "optionsAria": "Options",
+    "memberImageAlt": "team member",
+    "card": {
+      "edit": "Edit",
+      "remove": "Remove",
+      "hold": "Hold",
+      "activate": "Activate"
+    },
+    "status": {
+      "active": "Active",
+      "hold": "Hold"
+    },
+    "empty": {
+      "title": "No team members yet",
+      "body": "Start building your team by adding recruiters and managers."
+    },
+    "confirmRemove": "Are you sure you want to remove {{name}}?",
+    "toasts": {
+      "memberUpdated": "Member updated successfully",
+      "updateFailed": "Failed to update member",
+      "memberAdded": "Member added successfully",
+      "addFailed": "Failed to add member",
+      "statusUpdated": "Status updated to {{status}}",
+      "toggleFailed": "Failed to toggle status",
+      "memberRemoved": "Member removed successfully",
+      "removeFailed": "Failed to remove member"
+    },
+    "modal": {
+      "close": "Close modal",
+      "addTitle": "Add Member",
+      "editTitle": "Edit Member",
+      "addDesc": "Invite a new member to join your team. They'll be able to collaborate and help you manage hiring.",
+      "editDesc": "Update the details for this team member.",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "e.g. Jane Doe",
+      "email": "Email Address",
+      "emailPlaceholder": "e.g. jane@company.com",
+      "password": "Password",
+      "passwordPlaceholder": "Create a secure password",
+      "passwordHint": "Password must be at least 8 characters long.",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "cancel": "Cancel",
+      "saving": "Saving...",
+      "updateMember": "Update Member",
+      "addMemberBtn": "Add Member"
+    },
+    "validation": {
+      "nameMin": "Name must be at least 2 characters",
+      "nameMax": "Name must be at most 100 characters",
+      "emailInvalid": "Please enter a valid email address",
+      "passwordMin": "Password must be at least 6 characters",
+      "passwordMax": "Password must be at most 50 characters"
+    }
+  },
+  "invoice": {
+    "title": "Invoices",
+    "subtitle": "Your credit purchases and GST invoices.",
+    "buyCredits": "Buy credits",
+    "caption": "Your completed credit purchases",
+    "columns": {
+      "date": "Date",
+      "purchase": "Purchase",
+      "amount": "Amount",
+      "invoice": "Invoice"
+    },
+    "plan": "{{name}} plan",
+    "topUp": "Top-up",
+    "credits_one": "{{count}} credit",
+    "credits_other": "{{count}} credits",
+    "preparing": "Being prepared",
+    "downloadLabel": "Download invoice {{number}}",
+    "note": "Only completed payments are listed. Paid recently and don't see it? <contact>Contact us</contact> with your payment reference.",
+    "empty": {
+      "title": "No purchases yet",
+      "body": "Credits you buy will show up here with their invoices."
+    },
+    "receipt": {
+      "paidOn": "Paid on {{date}}",
+      "caption": "Payment breakdown",
+      "subtotal": "Subtotal",
+      "coupon": "Coupon {{code}}",
+      "discount": "Discount",
+      "gst": "GST",
+      "total": "Total paid",
+      "invoiceNumber": "Invoice number",
+      "reference": "Payment reference",
+      "download": "Download invoice (PDF)"
+    }
+  },
+  "chatbot": {
+    "title": "AI Assistant",
+    "subtitle": "Ask about LetsHyre, hiring, candidates, and scorecards.",
+    "inputPlaceholder": "Ask a question…",
+    "send": "Send",
+    "sendAria": "Send message",
+    "thinking": "Thinking…",
+    "you": "You",
+    "assistant": "Assistant",
+    "retry": "Retry",
+    "errorMessage": "Something went wrong. Please try again.",
+    "clear": "Clear chat",
+    "messagesLabel": "Chat messages",
+    "launcherAria": "Open chat assistant",
+    "closeAria": "Close chat",
+    "empty": {
+      "greeting": "Hi! I'm your LetsHyre assistant.",
+      "hint": "Ask me anything about hiring on LetsHyre. Try one of these:",
+      "prompts": {
+        "what": "What is LetsHyre?",
+        "scorecard": "How do I read a candidate scorecard?",
+        "applications": "How do I post a job and review applicants?",
+        "interview": "How does the AI interview work?"
+      }
+    }
+  },
+  "sharing": {
+    "manageLink": "Shared links",
+    "shareAction": "Share",
+    "createDialog": {
+      "title": "Share {{name}}'s profile",
+      "description": "Create a link that expires automatically and stops working after a set number of views.",
+      "jobLabel": "Match against job",
+      "jobPlaceholder": "Select a job",
+      "jobLoading": "Loading jobs…",
+      "jobEmpty": "No open jobs to match against",
+      "expiryLabel": "Expires in (days)",
+      "expiryHint": "Up to 30 days.",
+      "maxViewsLabel": "Maximum views",
+      "maxViewsHint": "The link stops working once this limit is reached.",
+      "cancel": "Cancel",
+      "submit": "Create link",
+      "submitting": "Creating…"
+    },
+    "successDialog": {
+      "title": "Link created",
+      "description": "Share this link with anyone you want to review {{name}}'s scorecard.",
+      "expiresOn": "Expires {{date}}",
+      "viewLimit_one": "{{count}} view allowed",
+      "viewLimit_other": "{{count}} views allowed",
+      "done": "Done"
+    },
+    "copy": {
+      "button": "Copy link",
+      "copied": "Copied",
+      "toastSuccess": "Link copied to clipboard.",
+      "toastError": "Couldn't copy the link. Copy it manually instead."
+    },
+    "toasts": {
+      "created": "Share link created.",
+      "createFailed": "Couldn't create the share link."
+    },
+    "validation": {
+      "jobRequired": "Select a job to match against.",
+      "expiryRequired": "Enter the number of days until this link expires.",
+      "expiryInt": "Enter a whole number of days.",
+      "expiryMin": "Must expire in at least 1 day.",
+      "expiryMax": "Can't be more than 30 days.",
+      "maxViewsRequired": "Enter a view limit.",
+      "maxViewsInt": "Enter a whole number.",
+      "maxViewsMin": "Must allow at least 1 view.",
+      "extendRequired": "Enter the number of days to extend by.",
+      "extendInt": "Enter a whole number of days.",
+      "extendMin": "Can't be negative.",
+      "extendMax": "Can't extend by more than 30 days at a time."
+    }
+  },
+  "states": {
+    "loading": "Loading…",
+    "slow": "This is taking longer than usual…",
+    "retry": "Try again",
+    "retrying": "Trying again…",
+    "backToDashboard": "Go to dashboard",
+    "errorCode": "Error {{code}}",
+    "stale": {
+      "title": "Couldn't refresh",
+      "body": "You're seeing the last loaded data."
+    },
+    "error": {
+      "offline": {
+        "title": "You're offline",
+        "body": "Check your internet connection. This page will reload as soon as you're back online."
+      },
+      "unreachable": {
+        "title": "Can't connect right now",
+        "body": "We couldn't reach our servers. Check your connection and try again."
+      },
+      "generic": {
+        "title": "Something went wrong",
+        "body": "We couldn't load this right now. It's usually temporary, so please try again."
+      },
+      "forbidden": {
+        "title": "You don't have access",
+        "body": "Your account doesn't have permission to view this. Ask your company admin if you need access."
+      },
+      "notFound": {
+        "title": "Not found",
+        "body": "It may have been removed, or the link may be incorrect."
+      }
+    }
+  }
+}

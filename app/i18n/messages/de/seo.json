@@ -1,0 +1,124 @@
+{
+  "homeCrumb": "Startseite",
+  "sharedScorecard": {
+    "title": "Kandidaten-Scorecard | letshyre.ai",
+    "description": "Die KI-bewertete Interview-Scorecard eines Kandidaten, geteilt von einem Arbeitgeber auf LetsHyre."
+  },
+  "getStarted": {
+    "title": "Loslegen | letshyre.ai",
+    "description": "Wählen Sie, ob Sie einstellen oder einen Job suchen, und richten Sie Ihr LetsHyre-Konto ein."
+  },
+  "employeeSignIn": {
+    "title": "Anmeldung für Bewerber | letshyre.ai",
+    "description": "Melden Sie sich in Ihrem LetsHyre-Bewerberkonto an, um Interviews zu führen und Bewerbungen zu verfolgen."
+  },
+  "employeeRegister": {
+    "title": "Registrierung für Bewerber | letshyre.ai",
+    "description": "Erstellen Sie ein LetsHyre-Bewerberkonto für KI-Interviews und geprüfte Scorecards."
+  },
+  "employerSignIn": {
+    "title": "Anmeldung für Arbeitgeber | letshyre.ai",
+    "description": "Melden Sie sich in Ihrem LetsHyre-Arbeitgeberkonto an, um Stellen zu veröffentlichen und Scorecards zu prüfen."
+  },
+  "employerRegister": {
+    "title": "Registrierung für Arbeitgeber | letshyre.ai",
+    "description": "Erstellen Sie ein LetsHyre-Arbeitgeberkonto, um Stellen zu veröffentlichen, KI-Interviews zu führen und schneller einzustellen."
+  },
+  "forgotPassword": {
+    "title": "Passwort zurücksetzen | letshyre.ai",
+    "description": "Setzen Sie Ihr LetsHyre-Passwort per E-Mail-Bestätigung zurück und kehren Sie zu Ihrem Konto zurück."
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden | letshyre.ai",
+    "description": "Die gesuchte Seite existiert nicht oder wurde verschoben."
+  },
+  "employeeFindJobs": {
+    "title": "Jobs finden | letshyre.ai",
+    "description": "Entdecken Sie Chancen, die zu Ihren Fähigkeiten und Zielen passen"
+  },
+  "employeeChatbot": {
+    "title": "KI-Assistent | letshyre.ai",
+    "description": "Fragen Sie zu LetsHyre, Ihren Bewerbungen, Scorecards und mehr."
+  },
+  "employeeInterviewGuide": {
+    "title": "Interview-Leitfaden | letshyre.ai",
+    "description": "Acht Schritte trennen Sie vom Interview. Hier erfahren Sie genau, was jeder Schritt beinhaltet, damit es am Tag selbst keine Überraschungen gibt."
+  },
+  "employeeMyApplications": {
+    "title": "Meine Bewerbungen | letshyre.ai",
+    "description": "Verfolgen Sie Ihre beworbenen, in die engere Wahl gezogenen, ausgewählten & abgelehnten Jobs"
+  },
+  "employeeProfile": {
+    "title": "Profil | letshyre.ai",
+    "description": "Ein fünfstufiges Formular zu Identität, Foto, Jobpräferenzen und Lebenslauf."
+  },
+  "employeeScoreCardsList": {
+    "title": "Meine Scorecards | letshyre.ai",
+    "description": "Überprüfen Sie Ihre Interviewleistungen und das KI-generierte Feedback."
+  },
+  "employeeScorecard": {
+    "title": "Ihre Scorecard | letshyre.ai",
+    "description": "Eine KI-generierte Zusammenfassung Ihrer Leistung im Interview."
+  },
+  "employerDashboard": {
+    "title": "Dashboard | letshyre.ai",
+    "description": "Das passiert heute in Ihrem Recruiting-Hub."
+  },
+  "employerCandidatePool": {
+    "title": "Kandidatenpool | letshyre.ai",
+    "description": "Entdecken Sie KI-abgeglichene Kandidaten für Ihre offenen Stellen."
+  },
+  "employerChatbot": {
+    "title": "KI-Assistent | letshyre.ai",
+    "description": "Fragen Sie zu LetsHyre, Recruiting, Kandidaten und Scorecards."
+  },
+  "employerCandidateProfile": {
+    "title": "Kandidatenprofil | letshyre.ai",
+    "description": "Sehen Sie sich Profil, Fähigkeiten und Erfahrung eines Kandidaten auf LetsHyre an."
+  },
+  "employerCandidateScorecard": {
+    "title": "Kandidaten-Scorecard | letshyre.ai",
+    "description": "Eine KI-generierte Zusammenfassung der Leistung dieses Kandidaten im Interview."
+  },
+  "employerInvoices": {
+    "title": "Meine Rechnungen | letshyre.ai",
+    "description": "Ihr Rechnungsverlauf bei uns."
+  },
+  "employerPostJob": {
+    "title": "Stelle ausschreiben | letshyre.ai",
+    "description": "Wir helfen Ihnen, in Sekunden eine überzeugende Stellenanzeige zu erstellen."
+  },
+  "employerProfile": {
+    "title": "Profil | letshyre.ai",
+    "description": "Überprüfen und verwalten Sie die wichtigsten Daten, das Branding und die Kontaktinformationen Ihres Unternehmens."
+  },
+  "employerUnlockedCandidates": {
+    "title": "Freigeschaltete Kandidaten | letshyre.ai",
+    "description": "Von Ihnen freigeschaltete Profile werden hier angezeigt."
+  },
+  "employerViewJobs": {
+    "title": "Stellen anzeigen | letshyre.ai",
+    "description": "Sehen und verwalten Sie alle von Ihnen veröffentlichten Stellen."
+  },
+  "employerApplicants": {
+    "title": "Stellenbewerber | letshyre.ai",
+    "description": "Überprüfen und verwalten Sie Kandidaten, die sich auf diese Rolle beworben haben."
+  },
+  "employerTeam": {
+    "title": "Ihr Team | letshyre.ai",
+    "description": "Sehen Sie, wer bereits dabei ist, und holen Sie neue Mitglieder ins Team."
+  },
+  "employerOnboarding": {
+    "title": "Unternehmensdaten | letshyre.ai",
+    "description": "Geben Sie Ihre Unternehmensdaten und Rechtsdokumente an, um die Einrichtung Ihres LetsHyre-Arbeitgeberkontos abzuschließen."
+  },
+  "employerJobDetail": {
+    "title": "{{jobTitle}} | letshyre.ai",
+    "description": "Details zu {{jobTitle}} auf LetsHyre ansehen und verwalten.",
+    "fallbackTitle": "Stellendetails"
+  },
+  "employerSharedLinks": {
+    "title": "Geteilte Links | letshyre.ai",
+    "description": "Von Ihnen geteilte Links werden hier angezeigt."
+  }
+}

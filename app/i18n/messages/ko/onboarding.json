@@ -1,0 +1,93 @@
+{
+  "step1": {
+    "heading": "먼저 회원님에 대해 알려주세요"
+  },
+  "step2": {
+    "badge": "합류를 환영합니다",
+    "titlePrefix": "회원님의 ",
+    "titleHighlight": "계정 준비가 완료되었습니다!",
+    "body": "사전 검증된 후보자를 발견하고, 투명한 스코어카드를 검토하며, 몇 번의 클릭만으로 적합한 인재를 열람하세요.",
+    "features": {
+      "candidates": "AI 검증 후보자",
+      "scorecards": "투명한 스코어카드",
+      "unlock": "열람 및 연결"
+    },
+    "watchWalkthrough": "빠른 둘러보기 보기 (30초)",
+    "skip": "나중에 하기"
+  },
+  "form": {
+    "progress": {
+      "step1Label": "회사 정보",
+      "step2Label": "법적 서류"
+    },
+    "fields": {
+      "companyName": "회사명",
+      "companyWebsite": "회사 웹사이트",
+      "officialEmail": "공식 이메일",
+      "registrationNumber": "등록 번호",
+      "registrationNumberTooltip": "예: U72900TG2024PTC123456",
+      "panNumber": "PAN 번호",
+      "gstNumber": "GST 번호",
+      "companyAddress": "회사 주소",
+      "selectIndustry": "산업 분야 선택",
+      "linkedinUrl": "링크드인 URL",
+      "linkedinUrlTooltip": "예: https://linkedin.com/company/example",
+      "companyDescription": "회사 소개",
+      "descriptionCount": "{{count}} / 500"
+    },
+    "draftSaved": "임시저장 완료 ✓",
+    "next": "다음",
+    "back": "이전",
+    "uploadHeading": "서류 업로드 (각 파일 최대 5MB)",
+    "uploadSubheading": "필요한 모든 서류의 선명하고 읽기 쉬운 사본을 업로드해 주세요.",
+    "documents": {
+      "companyLogo": "회사 로고",
+      "companyLogoTooltip": "정사각형 이미지 권장 (PNG/JPG)",
+      "registrationCertificate": "사업자등록증",
+      "registrationCertificateTooltip": "법인 설립 증명서",
+      "gstCertificate": "GST 증명서",
+      "gstCertificateTooltip": "유효한 GST 등록 서류",
+      "addressProof": "주소 증빙",
+      "addressProofTooltip": "공공요금 고지서 또는 임대차 계약서"
+    },
+    "upload": {
+      "uploadedSuccess": "업로드 완료 • {{size}}",
+      "selectFile": "파일 선택",
+      "viewFile": "파일 보기",
+      "removeFile": "파일 삭제",
+      "replaceFile": "파일 교체",
+      "previewAlt": "업로드한 파일 미리보기",
+      "rulesImage": "JPG, PNG 또는 WEBP, 최대 5MB",
+      "rulesDocument": "PDF, DOC 또는 DOCX, 최대 5MB",
+      "dropHint": "또는 여기에 파일을 놓으세요",
+      "progress": "{{total}}개 중 {{count}}개 업로드됨"
+    },
+    "processing": "처리 중...",
+    "submit": "제출하고 완료",
+    "successTitle": "제출이 완료되었습니다!",
+    "successBody": "대시보드를 불러오는 중...",
+    "previewAlt": "확대 미리보기",
+    "closePreview": "미리보기 닫기",
+    "toasts": {
+      "submitFailed": "KYC 제출에 실패했습니다. 다시 시도해 주세요."
+    },
+    "validation": {
+      "companyNameMin": "회사명은 최소 2자 이상이어야 합니다",
+      "companyWebsiteUrl": "유효한 URL을 입력해 주세요 (예: https://example.com)",
+      "linkedinUrlInvalid": "유효한 URL을 입력해 주세요 (예: https://linkedin.com)",
+      "linkedinUrlRequired": "링크드인 URL은 필수입니다",
+      "linkedinUrlDomain": "linkedin.com URL이어야 합니다",
+      "companyDescriptionMin": "간단한 소개를 입력해 주세요",
+      "companyIndustryRequired": "산업 분야를 선택해 주세요",
+      "registrationNumberRequired": "등록 번호는 필수입니다",
+      "gstNumberRequired": "유효한 GST 번호가 필요합니다",
+      "panNumberRequired": "유효한 PAN 번호가 필요합니다",
+      "companyAddressRequired": "회사의 전체 주소는 필수입니다",
+      "officialEmailInvalid": "유효한 공식 이메일이 필요합니다",
+      "fileRequired": "파일은 필수입니다",
+      "fileMaxSize": "최대 파일 크기는 5MB입니다.",
+      "imageFormat": ".jpg, .jpeg, .png, .webp 형식만 지원됩니다.",
+      "documentFormat": ".pdf, .doc, .docx 형식만 지원됩니다."
+    }
+  }
+}

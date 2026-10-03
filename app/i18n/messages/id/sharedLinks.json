@@ -1,0 +1,57 @@
+{
+  "list": {
+    "title": "Tautan yang dibagikan",
+    "subtitleLoading": "Memuat tautan yang Anda bagikan…",
+    "subtitle_other": "{{count}} tautan dibagikan sejauh ini.",
+    "subtitleEmpty": "Tautan yang Anda bagikan akan muncul di sini.",
+    "back": "Kembali ke kandidat terbuka",
+    "errorGeneric": "Terjadi kesalahan saat mengambil data tautan yang dibagikan.",
+    "emptyTitle": "Belum ada tautan yang dibagikan",
+    "emptyBody": "Bagikan profil kandidat dari halaman kandidat terbuka dan tautan tersebut akan muncul di sini.",
+    "columns": {
+      "candidate": "Kandidat",
+      "job": "Lowongan yang cocok",
+      "status": "Status",
+      "views": "Dilihat",
+      "expires": "Kedaluwarsa",
+      "actions": "Tindakan"
+    },
+    "viewsOf": "{{count}} / {{max}}",
+    "noJob": "Tidak ada lowongan yang cocok",
+    "sharedBy": "Dibagikan oleh {{name}}",
+    "copyLink": "Salin tautan",
+    "edit": "Edit",
+    "delete": "Hapus"
+  },
+  "status": {
+    "active": "Aktif",
+    "inactive": "Tidak aktif",
+    "expired": "Kedaluwarsa",
+    "limitReached": "Batas tampilan tercapai"
+  },
+  "editDialog": {
+    "title": "Edit tautan berbagi",
+    "description": "Sesuaikan masa berlaku, batas tampilan, atau nonaktifkan tautan ini.",
+    "extendLabel": "Perpanjang masa berlaku (hari)",
+    "extendHint": "Ditambahkan ke tanggal kedaluwarsa saat ini. Gunakan 0 untuk membiarkannya tidak berubah.",
+    "maxViewsLabel": "Tampilan maksimum",
+    "activeLabel": "Tautan aktif",
+    "activeHint": "Nonaktifkan untuk mematikan tautan tanpa menghapusnya.",
+    "cancel": "Batal",
+    "submit": "Simpan perubahan",
+    "submitting": "Menyimpan…"
+  },
+  "deleteDialog": {
+    "title": "Hapus tautan berbagi ini?",
+    "description": "Siapa pun yang memiliki tautan ini akan langsung kehilangan akses. Tindakan ini tidak dapat dibatalkan.",
+    "cancel": "Batal",
+    "confirm": "Hapus tautan",
+    "deleting": "Menghapus…"
+  },
+  "toasts": {
+    "updated": "Tautan berbagi diperbarui.",
+    "updateFailed": "Tautan berbagi tidak dapat diperbarui.",
+    "deleted": "Tautan berbagi dihapus.",
+    "deleteFailed": "Tautan berbagi tidak dapat dihapus."
+  }
+}

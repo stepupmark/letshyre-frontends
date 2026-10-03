@@ -1,0 +1,179 @@
+{
+  "hero": {
+    "badgeNew": "Novo",
+    "badgeText": "100% dos Candidatos Analisados por IA",
+    "title": "A Plataforma de Contratação com IA para <hl>Talento em Período de Aviso Prévio</hl>",
+    "description": "A LetsHyre automatiza a avaliação de currículos, entrevistas com IA e verificação de candidatos para equipas de RH modernas. Construa a sua equipa ideal mais rapidamente, sem o esforço da triagem manual.",
+    "ctaHiring": "Estou a Contratar",
+    "ctaJob": "Procuro emprego",
+    "verifiedLabel": "Verificado por IA",
+    "increaseBy": "Aumente a sua contratação em",
+    "seeCategories": "Ver as categorias",
+    "imgAlt": "Plataforma LetsHyre",
+    "tagline": {
+      "stop": "Pare de triar.",
+      "start": "Comece a pré-selecionar."
+    }
+  },
+  "assistance": {
+    "ariaLabel": "Como funciona",
+    "steps": {
+      "post": {
+        "pill": "Publique a sua vaga",
+        "heading": "Defina a função,<br/><hl>deixe a IA tratar do resto</hl>",
+        "description": "Liste os requisitos da vaga e a nossa IA assume imediatamente o processo — automatizando a avaliação de currículos, realizando entrevistas escaláveis e destacando o perfil de candidato ideal para uma tomada de decisão simples.",
+        "link": "Saiba como funciona",
+        "imageAlt": "Publique a sua vaga"
+      },
+      "screen": {
+        "pill": "Triagem por IA",
+        "heading": "Entrevistas 24/7,<br/><hl>sem atrito de agendamento</hl>",
+        "description": "Avaliações profundas e objetivas de competências, experiência e adequação cultural — realizadas continuamente em todos os fusos horários. Consistente, justo e mais rápido do que qualquer processo manual.",
+        "link": "Veja em ação",
+        "imageAlt": "Triagem de candidatos por IA"
+      },
+      "scorecards": {
+        "pill": "Receba Relatórios de Avaliação",
+        "heading": "Dados brutos transformados em<br/><hl>recomendações claras</hl>",
+        "description": "Relatórios de avaliação abrangentes gerados por IA com insights prescritivos — para eliminar suposições e avançar de forma decisiva rumo ao melhor candidato para cada função.",
+        "link": "Ver um exemplo de relatório",
+        "imageAlt": "Receba relatórios de avaliação gerados por IA"
+      },
+      "hire": {
+        "pill": "Contrate com Confiança",
+        "heading": "Indicadores preditivos,<br/><hl>não intuição</hl>",
+        "description": "Os relatórios de avaliação apoiados por PSI oferecem-lhe uma previsão estatística do desempenho e retenção futuros de um candidato — transformando cada decisão de contratação num movimento estratégico baseado em dados.",
+        "link": "Explore as pontuações PSI",
+        "imageAlt": "Contrate com confiança usando dados"
+      }
+    }
+  },
+  "candidate": {
+    "eyebrow": "Para Candidatos",
+    "title": "O Seu Emprego de Sonho<br/>Encontrado pela IA",
+    "items": {
+      "interview": {
+        "title": "Faça uma Entrevista com IA",
+        "desc": "Complete uma entrevista conversacional com IA a qualquer hora, em qualquer lugar. Aumente as suas oportunidades com uma experiência simples e flexível."
+      },
+      "evaluation": {
+        "title": "Avaliação Instantânea",
+        "desc": "Experimente uma avaliação verdadeiramente instantânea. Obtenha informações rápidas e claras sobre o seu desempenho e capacidades."
+      },
+      "matching": {
+        "title": "Correspondência Inteligente",
+        "desc": "Uma correspondência inteligente que trabalha por si. A nossa IA liga-o a oportunidades alinhadas com as suas competências e objetivos de carreira."
+      },
+      "hired": {
+        "title": "Seja Contratado Mais Depressa",
+        "desc": "Experimente uma correspondência inteligente que encontra oportunidades adequadas aos seus pontos fortes e aspirações. Evite triagens demoradas e ligue-se diretamente aos recrutadores certos."
+      }
+    }
+  },
+  "video": {
+    "heading": "A Entrevista com IA",
+    "intro": "A LetsHyre automatiza a triagem de currículos, entrevistas com IA e verificação de candidatos — tornando a contratação mais rápida e inteligente.",
+    "videoLabel": "Demonstração da Entrevista com IA"
+  },
+  "scorecard": {
+    "badge": "Plataforma com Tecnologia de IA",
+    "title": "Relatório de Avaliação <hl>com IA</hl> e Correspondência",
+    "subtitle": "Decisões de contratação inteligentes, com o poder da inteligência artificial",
+    "tagFeature": "Funcionalidade",
+    "tagSmart": "Inteligente",
+    "tagAnalytics": "Análise de Dados",
+    "skillMatching": "Correspondência de Competências",
+    "aiScreening": "Triagem de Candidatos por IA",
+    "performance": "Análise de Desempenho",
+    "bullets": [
+      "Correspondência instantânea de competências com IA",
+      "Apresenta apenas o talento mais relevante",
+      "Elimina o ruído e encontra a verdadeira adequação",
+      "Ajuda-o a contratar de forma mais inteligente e rápida"
+    ],
+    "stats": {
+      "accuracy": "Precisão",
+      "faster": "Mais Rápido",
+      "matches": "Correspondências",
+      "reports": "Relatórios",
+      "uptime": "Disponibilidade"
+    },
+    "growthTitle": "Potencial de Crescimento",
+    "growthDesc": "Avalie os melhores colaboradores. Modelação preditiva para um crescimento máximo.",
+    "potentialScore": "Pontuação de Potencial",
+    "fitScore": "Pontuação de Adequação"
+  },
+  "faq": {
+    "eyebrow": "Suporte",
+    "title": "Perguntas Frequentes: Contratação com IA e Período de Aviso Prévio",
+    "subtitle": "Tudo o que precisa de saber sobre a plataforma de contratação com IA da LetsHyre.",
+    "items": [
+      {
+        "q": "Como funciona a plataforma de contratação com IA da LetsHyre?",
+        "a": "A LetsHyre analisa currículos instantaneamente, realiza entrevistas interativas com IA para avaliar competências de comunicação e técnicas, e fornece um relatório de avaliação verificado para que dedique tempo apenas aos melhores candidatos."
+      },
+      {
+        "q": "O que torna a LetsHyre diferente de outras plataformas de contratação?",
+        "a": "Ao contrário dos portais de emprego tradicionais, a LetsHyre automatiza todo o processo de triagem. A nossa IA verifica competências em tempo real antes mesmo de o candidato ser visualizado, reduzindo drasticamente o tempo até à contratação."
+      },
+      {
+        "q": "Qual é o grau de precisão da avaliação da entrevista por IA?",
+        "a": "Os nossos modelos de IA são treinados com milhões de pontos de dados para avaliar a comunicação, a proficiência técnica e a adequação cultural com mais de 98% de precisão, garantindo uma pontuação justa e imparcial."
+      },
+      {
+        "q": "O que verifica a deteção de objetos por vídeo com IA?",
+        "a": "O nosso sistema avançado antifraude monitoriza o movimento dos olhos, deteta múltiplos rostos e verifica a existência de dispositivos não autorizados, como telemóveis ou monitores secundários, durante a avaliação."
+      },
+      {
+        "q": "Os candidatos em período de aviso prévio são verificados?",
+        "a": "Sim, priorizamos e verificamos os candidatos em período de aviso prévio para que possa construir a sua equipa até 40% mais rápido com talento pronto a iniciar de imediato."
+      },
+      {
+        "q": "Que informações inclui o relatório de avaliação gerado por IA?",
+        "a": "O relatório de avaliação fornece uma análise abrangente da Pontuação de Potencial e da Pontuação de Adequação do candidato, dos seus pontos fortes técnicos, áreas a melhorar e uma análise comportamental detalhada."
+      },
+      {
+        "q": "Posso integrar a LetsHyre com os nossos sistemas de RH existentes?",
+        "a": "Sem dúvida! A LetsHyre integra-se perfeitamente com as plataformas ATS e HRIS mais populares através da nossa API segura, para que o seu processo de contratação permaneça ininterrupto."
+      }
+    ]
+  },
+  "hireCard": {
+    "title": "Pronto para Contratar ou Ser Contratado?",
+    "description": "Impulsione a sua carreira ou expanda a sua equipa com IA. Ligue-se de forma mais rápida e inteligente do que nunca numa plataforma construída para o futuro do recrutamento.",
+    "startHiring": "Começar a Contratar",
+    "applyJob": "Candidatar-se a uma Vaga"
+  },
+  "chatbot": {
+    "title": "Assistente LetsHyre",
+    "subtitle": "Pergunte-nos o que quiser",
+    "inputPlaceholder": "Faça uma pergunta…",
+    "send": "Enviar",
+    "sendAria": "Enviar mensagem",
+    "thinking": "A pensar…",
+    "you": "Você",
+    "assistant": "Assistente",
+    "retry": "Tentar novamente",
+    "errorMessage": "Ocorreu um erro. Tente novamente.",
+    "clear": "Limpar",
+    "messagesLabel": "Mensagens do chat",
+    "launcherAria": "Abrir assistente de chat",
+    "closeAria": "Fechar chat",
+    "empty": {
+      "greeting": "Olá! Sou o assistente da LetsHyre.",
+      "hint": "Pergunte-me qualquer coisa sobre a LetsHyre. Experimente uma destas:",
+      "prompts": {
+        "what": "O que é a LetsHyre?",
+        "scorecard": "Como funciona para as empresas?",
+        "applications": "Como funciona para candidatos a emprego?",
+        "interview": "É gratuito começar?"
+      }
+    }
+  },
+  "meta": {
+    "title": "Recrutamento e entrevistas com IA | letshyre.ai",
+    "description": "Triagem de currículos, entrevistas com IA estruturadas e verificação de candidatos num só lugar, para contratar perfis em aviso prévio.",
+    "name": "LetsHyre — Plataforma de Contratação com IA para Talento em Período de Aviso Prévio",
+    "schemaDescription": "Plataforma de contratação com IA que automatiza a triagem de currículos, entrevistas com IA e verificação de candidatos."
+  }
+}

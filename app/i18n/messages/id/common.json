@@ -1,0 +1,85 @@
+{
+  "skipToContent": "Lewati ke konten utama",
+  "copyright": "LetsHyre © {{year}}",
+  "nav": {
+    "home": "Beranda",
+    "howItWorks": "Cara Kerja",
+    "aiInterview": "Wawancara AI",
+    "scorecards": "Scorecard",
+    "pricing": "Harga",
+    "contact": "Kontak",
+    "getStarted": "Mulai Sekarang",
+    "toggle": "Alihkan navigasi",
+    "siteNavigation": "Navigasi situs",
+    "logoAlt": "Logo LetsHyre",
+    "language": "Ganti bahasa",
+    "languageMenu": "Pilih bahasa Anda",
+    "languageSuggested": "Disarankan",
+    "languageAll": "Semua bahasa",
+    "languageFailed": "Tidak dapat mengganti bahasa. Periksa koneksi Anda dan coba lagi.",
+    "primaryAria": "Navigasi utama",
+    "mobileAria": "Navigasi seluler",
+    "englishOnly": "Untuk saat ini, halaman ini hanya tersedia dalam bahasa Inggris."
+  },
+  "footer": {
+    "tagline": "Platform AI yang merevolusi cara talenta dan peluang saling terhubung.",
+    "product": "Produk",
+    "company": "Perusahaan",
+    "stayUpdated": "Tetap Terkini",
+    "newsletterDesc": "Dapatkan berita dan pembaruan terbaru dari LetsHyre",
+    "links": {
+      "interviewProcess": "Proses Wawancara",
+      "downloadApp": "Unduh Aplikasi",
+      "pricing": "Harga",
+      "about": "Tentang Kami",
+      "terms": "Syarat & Ketentuan",
+      "privacy": "Kebijakan Privasi",
+      "refund": "Kebijakan Pengembalian Dana",
+      "contact": "Kontak"
+    }
+  },
+  "newsletter": {
+    "emailPlaceholder": "Email Anda",
+    "emailLabel": "Alamat email",
+    "subscribe": "Berlangganan",
+    "subscribed": "Langganan berhasil disimpan.",
+    "subscribeFailed": "Gagal berlangganan. Silakan coba lagi."
+  },
+  "pagination": {
+    "previous": "Sebelumnya",
+    "next": "Berikutnya",
+    "previousPage": "Halaman sebelumnya",
+    "nextPage": "Halaman berikutnya",
+    "page": "Halaman {{page}}",
+    "summary": "Menampilkan {{from}}–{{to}} dari {{count}}"
+  },
+  "toast": {
+    "genericError": "Terjadi kesalahan. Silakan coba lagi."
+  },
+  "notFound": {
+    "badge": "404 Tidak Ditemukan",
+    "title": "Kami tidak dapat menemukan halaman ini",
+    "body": "Halaman yang Anda cari tidak ada atau mungkin telah dipindahkan. Mari kembali ke jalur yang benar.",
+    "goHome": "Ke Beranda",
+    "goBack": "Kembali"
+  },
+  "pageState": {
+    "loading": "Memuat halaman",
+    "slow": "Ini memakan waktu lebih lama dari biasanya. Mohon tunggu sebentar.",
+    "update": {
+      "title": "LetsHyre telah diperbarui",
+      "body": "Versi baru dirilis saat Anda sedang menjelajah. Muat ulang halaman untuk melanjutkan."
+    },
+    "offline": {
+      "title": "Anda sedang offline",
+      "body": "Periksa koneksi internet Anda, lalu muat ulang halaman."
+    },
+    "generic": {
+      "title": "Halaman ini tidak termuat",
+      "body": "Terjadi kesalahan di pihak kami. Muat ulang halaman untuk mencoba lagi, atau hubungi kami jika masalah berlanjut."
+    },
+    "reload": "Muat ulang halaman",
+    "contact": "Hubungi kami",
+    "home": "Ke beranda"
+  }
+}

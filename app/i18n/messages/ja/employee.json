@@ -1,0 +1,183 @@
+{
+  "findJobs": {
+    "welcome": "ようこそ {{name}} さん！",
+    "subtitle": "あなたのスキルと志望に合った機会を見つけましょう",
+    "searchPlaceholder": "職種名で仕事を検索...",
+    "filters": "フィルター",
+    "searching": "検索中...",
+    "showing_other": "<b>{{count}}</b> 件の求人を表示",
+    "updating": "更新中...",
+    "errorLoad": "求人の読み込み中に問題が発生しました。",
+    "tryAgain": "再試行",
+    "noJobsTitle": "求人が見つかりません",
+    "noJobsSubtitle": "検索条件やフィルターを調整して、より多くの機会を見つけてください。",
+    "bannerAlt": "求人バナー {{number}}",
+    "slideAria": "スライド {{number}}",
+    "applyFailed": "応募に失敗しました。もう一度お試しください。",
+    "filter": {
+      "location": "勤務地",
+      "locationPlaceholder": "例：ハイデラバード",
+      "employmentType": "雇用形態",
+      "allTypes": "すべての形態",
+      "fullTime": "フルタイム",
+      "partTime": "パートタイム",
+      "internship": "インターンシップ",
+      "contract": "契約",
+      "freelance": "フリーランス",
+      "industry": "業界",
+      "loading": "読み込み中...",
+      "allIndustries": "すべての業界",
+      "salary": "給与範囲",
+      "salaryPlaceholder": "例：3-10",
+      "experience": "経験",
+      "experiencePlaceholder": "例：2-5",
+      "clearAll": "すべてクリア",
+      "done": "完了",
+      "clear": "フィルターをクリア"
+    },
+    "card": {
+      "company": "会社",
+      "untitled": "無題",
+      "today": "今日",
+      "daysAgo_other": "{{count}}日前",
+      "posted": "{{when}}に掲載",
+      "view": "表示",
+      "viewDetails": "詳細を見る",
+      "more": "他 +{{count}}",
+      "yrs": "年",
+      "na": "該当なし",
+      "logoAlt": "{{company}} のロゴ"
+    },
+    "modal": {
+      "close": "閉じる",
+      "skillsRequired": "必要なスキル",
+      "jobDescription": "職務内容",
+      "noDescription": "説明はありません",
+      "applying": "応募中...",
+      "alreadyApplied": "応募済み",
+      "applyNow": "今すぐ応募"
+    }
+  },
+  "applications": {
+    "title": "応募履歴",
+    "subtitle": "応募済み、書類選考通過、選考通過、不採用の求人を管理",
+    "tabs": {
+      "applied": "応募済み",
+      "shortlisted": "書類選考通過",
+      "selected": "選考通過",
+      "rejected": "不採用"
+    },
+    "statusLower": {
+      "applied": "応募済み",
+      "shortlisted": "書類選考通過",
+      "selected": "選考通過",
+      "rejected": "不採用"
+    },
+    "failedLoad": "応募履歴の読み込みに失敗しました。",
+    "emptyTitle": "「{{status}}」の応募はありません",
+    "emptyBody": "まだ「{{status}}」の求人がありません。次の役割を見つけるために探し始めましょう。",
+    "findJobs": "仕事を探す",
+    "appliedWhen": "{{when}}に応募",
+    "today": "今日",
+    "daysAgo_other": "{{count}}日前",
+    "na": "該当なし",
+    "viewJob": "求人を見る",
+    "notDisclosed": "非公開",
+    "fullTime": "フルタイム",
+    "years_other": "{{count}}年",
+    "noSkills": "特定のスキルの記載なし",
+    "more": "他 +{{count}}",
+    "loadMore": "もっと読み込む",
+    "loadingMore": "読み込み中...",
+    "modalAria": "応募の詳細",
+    "closeModal": "モーダルを閉じる",
+    "skillsRequired": "必要なスキル",
+    "jobDescription": "職務内容",
+    "noDescription": "説明はありません"
+  },
+  "scorecards": {
+    "title": "マイスコアカード",
+    "subtitle": "面接のパフォーマンスとAI生成のフィードバックを確認しましょう。",
+    "failedTitle": "スコアカードの読み込みに失敗しました",
+    "failedBody": "後でもう一度お試しください。",
+    "emptyTitle": "スコアカードが見つかりません",
+    "emptyBody": "まだ面接を完了していないか、スコアカードを生成中のようです。",
+    "emptyCta": "応募する仕事を探す",
+    "na": "該当なし",
+    "score": "スコア：{{score}}",
+    "more": "他 +{{count}}",
+    "aiEvaluated": "AI評価済み",
+    "viewDetails": "詳細を見る",
+    "detail": {
+      "empty": "スコアカードが生成される面接をまだ完了していません。",
+      "title": "あなたのスコアカード",
+      "subtitle": "面接全体でのあなたのパフォーマンスをAIが要約したものです。"
+    }
+  },
+  "profile": {
+    "errorLoad": "プロフィールを読み込めませんでした。接続を確認してください。",
+    "tryAgain": "再試行",
+    "salaryAria": "給与の希望",
+    "photoAlt": "プロフィール写真",
+    "verified": "認証済み",
+    "dash": "—",
+    "currentCtc": "現在の年収",
+    "expectedCtc": "希望年収",
+    "noticePeriod": "通知期間",
+    "availability": "対応可能状況",
+    "lastWorkingDay": "最終勤務日",
+    "preferredLocations": "希望勤務地",
+    "preferences": "希望条件",
+    "role": "職種",
+    "industry": "業界",
+    "sections": {
+      "education": "学歴",
+      "skills": "スキル",
+      "projects": "プロジェクト",
+      "experience": "職歴",
+      "documents": "書類",
+      "tablistAria": "プロフィールのセクション"
+    },
+    "empty": {
+      "education": "学歴はまだ追加されていません。",
+      "skills": "スキルはまだ追加されていません。",
+      "projects": "プロジェクトはまだ追加されていません。",
+      "experience": "職歴はまだ追加されていません。",
+      "documents": "書類はまだアップロードされていません。"
+    },
+    "untitledProject": "無題のプロジェクト",
+    "docs": {
+      "resume": "履歴書",
+      "experienceLetter": "在職証明書",
+      "resignationLetter": "退職届",
+      "noticePeriodProof": "通知期間の証明",
+      "presentOffer": "現在のオファーレター"
+    }
+  },
+  "chatbot": {
+    "title": "AIアシスタント",
+    "subtitle": "LetsHyre、応募状況、スコアカードなどについてお尋ねください。",
+    "inputPlaceholder": "質問を入力…",
+    "send": "送信",
+    "sendAria": "メッセージを送信",
+    "thinking": "考えています…",
+    "you": "あなた",
+    "assistant": "アシスタント",
+    "retry": "再試行",
+    "errorMessage": "問題が発生しました。もう一度お試しください。",
+    "clear": "チャットをクリア",
+    "messagesLabel": "チャットメッセージ",
+    "launcherAria": "チャットアシスタントを開く",
+    "closeAria": "チャットを閉じる",
+    "empty": {
+      "greeting": "こんにちは！LetsHyre アシスタントです。",
+      "hint": "プラットフォームや求職についてなんでもお尋ねください。次のいずれかをお試しください:",
+      "prompts": {
+        "what": "LetsHyre とは何ですか？",
+        "scorecard": "スコアカードはどのように機能しますか？",
+        "applications": "応募状況はどう確認しますか？",
+        "interview": "AI面接はどのように行われますか？"
+      }
+    }
+  }
+}

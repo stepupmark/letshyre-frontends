@@ -1,0 +1,170 @@
+{
+  "refund": {
+    "title": "Refund Policy",
+    "intro": "Welcome to LetsHyre. This Refund Policy explains the conditions under which refunds may be provided for payments made on the LetsHyre platform.",
+    "sections": [
+      {
+        "id": "service-model",
+        "title": "1. Service Model",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre operates on a Pay-Per-Unlock hiring model. Employers may make one-time payments to unlock:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Candidate Profiles",
+              "Interview Scorecards",
+              "Interview Recordings",
+              "Candidate Contact Information"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Each unlock purchase grants access to the selected candidate's profile information, interview scorecards, interview recordings, and contact details, subject to platform availability."
+          },
+          {
+            "type": "p",
+            "text": "Unlock purchases are one-time transactions and do not constitute a subscription or recurring service."
+          }
+        ]
+      },
+      {
+        "id": "refund-eligibility",
+        "title": "2. Refund Eligibility",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Refund requests may be considered only in the following circumstances:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Duplicate payments for the same candidate unlock.",
+              "Incorrect billing caused by a technical error on the LetsHyre platform.",
+              "Successful payment where access to the purchased candidate information was not provided due to a platform issue.",
+              "Unauthorized transactions verified through investigation."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "All refund requests must be submitted within 7 days of the transaction date."
+          }
+        ]
+      },
+      {
+        "id": "non-refundable-purchases",
+        "title": "3. Non-Refundable Purchases",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Refunds will generally not be provided in the following situations:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Candidate profiles that have been successfully unlocked.",
+              "Interview scorecards or interview recordings that have been successfully accessed.",
+              "Candidate contact information that has been successfully revealed.",
+              "Employer dissatisfaction with a candidate's qualifications, skills, experience, communication abilities, or suitability for a role.",
+              "Failure to contact or hire a candidate after unlocking their profile.",
+              "Candidate unresponsiveness after profile unlock.",
+              "Changes in hiring requirements after a candidate has been unlocked.",
+              "Hiring outcomes or recruitment results."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Once candidate information has been successfully unlocked and made available to the employer, the transaction is considered completed."
+          }
+        ]
+      },
+      {
+        "id": "refund-review-process",
+        "title": "4. Refund Review Process",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Eligible refund requests will be reviewed by LetsHyre within 7–14 business days."
+          },
+          {
+            "type": "p",
+            "text": "Additional information may be requested to verify refund eligibility."
+          },
+          {
+            "type": "p",
+            "text": "Approved refunds will be processed through the original payment method used for the transaction. Processing times may vary depending on the payment provider or financial institution."
+          }
+        ]
+      },
+      {
+        "id": "fraud-prevention",
+        "title": "5. Fraud Prevention",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre reserves the right to deny refund requests where fraudulent activity, misuse of the platform, violation of the Terms & Conditions, or abuse of the refund process is suspected."
+          },
+          {
+            "type": "p",
+            "text": "Accounts involved in fraudulent payment activity may be suspended or permanently terminated."
+          }
+        ]
+      },
+      {
+        "id": "chargebacks-and-payment-disputes",
+        "title": "6. Chargebacks and Payment Disputes",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "If a user initiates a chargeback or payment dispute through a bank, card issuer, or payment provider, LetsHyre reserves the right to investigate the transaction and provide relevant records to the payment processor."
+          },
+          {
+            "type": "p",
+            "text": "Fraudulent or abusive chargeback activity may result in account suspension or termination."
+          }
+        ]
+      },
+      {
+        "id": "changes-to-refund-policy",
+        "title": "7. Changes to this Refund Policy",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre reserves the right to modify or update this Refund Policy at any time. Updated versions will be published on the website and become effective upon publication."
+          }
+        ]
+      },
+      {
+        "id": "contact-us",
+        "title": "8. Contact Us",
+        "blocks": [
+          {
+            "type": "contact",
+            "intro": "For billing, payment, or refund-related inquiries, please contact:",
+            "emailLabel": "Email:",
+            "email": "support@letshyre.ai",
+            "team": "LetsHyre Support Team"
+          }
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "title": "Refund Policy | letshyre.ai",
+    "description": "When LetsHyre credits and subscriptions qualify for a refund, the timelines involved, and how to raise a request.",
+    "name": "Refund Policy",
+    "schemaDescription": "Refund eligibility and process for LetsHyre purchases.",
+    "crumb": "Refund Policy"
+  }
+}

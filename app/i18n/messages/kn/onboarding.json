@@ -1,0 +1,93 @@
+{
+  "step1": {
+    "heading": "ನಿಮ್ಮ ಬಗ್ಗೆ ತಿಳಿದುಕೊಳ್ಳೋಣ"
+  },
+  "step2": {
+    "badge": "ಸ್ವಾಗತ",
+    "titlePrefix": "ನಿಮ್ಮ ",
+    "titleHighlight": "ಖಾತೆ ಸಿದ್ಧವಾಗಿದೆ!",
+    "body": "ಪೂರ್ವ-ಮೌಲ್ಯಮಾಪನ ಮಾಡಿದ ಅಭ್ಯರ್ಥಿಗಳನ್ನು ಅನ್ವೇಷಿಸಿ, ಪಾರದರ್ಶಕ ಸ್ಕೋರ್‌ಕಾರ್ಡ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಕೆಲವೇ ಕ್ಲಿಕ್‌ಗಳಲ್ಲಿ ಸರಿಯಾದ ಪ್ರತಿಭೆಯನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಿ.",
+    "features": {
+      "candidates": "AI-ಮೌಲ್ಯಮಾಪನ ಮಾಡಿದ ಅಭ್ಯರ್ಥಿಗಳು",
+      "scorecards": "ಪಾರದರ್ಶಕ ಸ್ಕೋರ್‌ಕಾರ್ಡ್‌ಗಳು",
+      "unlock": "ಅನ್‌ಲಾಕ್ ಮಾಡಿ ಮತ್ತು ಸಂಪರ್ಕಿಸಿ"
+    },
+    "watchWalkthrough": "ತ್ವರಿತ ವಾಕ್‌ಥ್ರೂ ವೀಕ್ಷಿಸಿ (30ಸೆ)",
+    "skip": "ಸದ್ಯಕ್ಕೆ ಬಿಟ್ಟುಬಿಡಿ"
+  },
+  "form": {
+    "progress": {
+      "step1Label": "ಕಂಪನಿ ವಿವರಗಳು",
+      "step2Label": "ಕಾನೂನು ದಾಖಲೆಗಳು"
+    },
+    "fields": {
+      "companyName": "ಕಂಪನಿ ಹೆಸರು",
+      "companyWebsite": "ಕಂಪನಿ ವೆಬ್‌ಸೈಟ್",
+      "officialEmail": "ಅಧಿಕೃತ ಇಮೇಲ್",
+      "registrationNumber": "ನೋಂದಣಿ ಸಂಖ್ಯೆ",
+      "registrationNumberTooltip": "ಉದಾ. U72900TG2024PTC123456",
+      "panNumber": "PAN ಸಂಖ್ಯೆ",
+      "gstNumber": "GST ಸಂಖ್ಯೆ",
+      "companyAddress": "ಕಂಪನಿ ವಿಳಾಸ",
+      "selectIndustry": "ಉದ್ಯಮ ಆಯ್ಕೆಮಾಡಿ",
+      "linkedinUrl": "LinkedIn URL",
+      "linkedinUrlTooltip": "ಉದಾ. https://linkedin.com/company/example",
+      "companyDescription": "ಕಂಪನಿ ವಿವರಣೆ",
+      "descriptionCount": "{{count}} / 500"
+    },
+    "draftSaved": "ಡ್ರಾಫ್ಟ್ ಉಳಿಸಲಾಗಿದೆ ✓",
+    "next": "ಮುಂದೆ",
+    "back": "ಹಿಂದೆ",
+    "uploadHeading": "ದಾಖಲೆಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ (ಗರಿಷ್ಠ 5MB ಪ್ರತಿ)",
+    "uploadSubheading": "ದಯವಿಟ್ಟು ಎಲ್ಲಾ ಅಗತ್ಯ ದಾಖಲೆಗಳ ಸ್ಪಷ್ಟ, ಓದಬಹುದಾದ ಪ್ರತಿಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ.",
+    "documents": {
+      "companyLogo": "ಕಂಪನಿ ಲೋಗೋ",
+      "companyLogoTooltip": "ಚೌಕಾಕಾರದ ಚಿತ್ರ ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ (PNG/JPG)",
+      "registrationCertificate": "ನೋಂದಣಿ ಪ್ರಮಾಣಪತ್ರ",
+      "registrationCertificateTooltip": "ಸಂಸ್ಥಾಪನಾ ಪ್ರಮಾಣಪತ್ರ",
+      "gstCertificate": "GST ಪ್ರಮಾಣಪತ್ರ",
+      "gstCertificateTooltip": "ಮಾನ್ಯ GST ನೋಂದಣಿ ದಾಖಲೆ",
+      "addressProof": "ವಿಳಾಸ ಪುರಾವೆ",
+      "addressProofTooltip": "ಯುಟಿಲಿಟಿ ಬಿಲ್ ಅಥವಾ ಗುತ್ತಿಗೆ ಒಪ್ಪಂದ"
+    },
+    "upload": {
+      "uploadedSuccess": "ಯಶಸ್ವಿಯಾಗಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗಿದೆ • {{size}}",
+      "selectFile": "ಫೈಲ್ ಆಯ್ಕೆಮಾಡಿ",
+      "viewFile": "ಫೈಲ್ ವೀಕ್ಷಿಸಿ",
+      "removeFile": "ಫೈಲ್ ತೆಗೆದುಹಾಕಿ",
+      "replaceFile": "ಫೈಲ್ ಬದಲಾಯಿಸಿ",
+      "previewAlt": "ಅಪ್‌ಲೋಡ್ ಮಾಡಿದ ಫೈಲ್‌ನ ಪೂರ್ವವೀಕ್ಷಣೆ",
+      "rulesImage": "JPG, PNG ಅಥವಾ WEBP, ಗರಿಷ್ಠ 5MB",
+      "rulesDocument": "PDF, DOC ಅಥವಾ DOCX, ಗರಿಷ್ಠ 5MB",
+      "dropHint": "ಅಥವಾ ಫೈಲ್ ಅನ್ನು ಇಲ್ಲಿ ಬಿಡಿ",
+      "progress": "{{total}} ರಲ್ಲಿ {{count}} ಅಪ್‌ಲೋಡ್ ಆಗಿದೆ"
+    },
+    "processing": "ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲಾಗುತ್ತಿದೆ...",
+    "submit": "ಸಲ್ಲಿಸಿ ಮತ್ತು ಪೂರ್ಣಗೊಳಿಸಿ",
+    "successTitle": "ಸಲ್ಲಿಕೆ ಯಶಸ್ವಿಯಾಗಿದೆ!",
+    "successBody": "ನಿಮ್ಮ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
+    "previewAlt": "ದೊಡ್ಡ ಪೂರ್ವವೀಕ್ಷಣೆ",
+    "closePreview": "ಪೂರ್ವವೀಕ್ಷಣೆ ಮುಚ್ಚಿ",
+    "toasts": {
+      "submitFailed": "KYC ಸಲ್ಲಿಸಲು ವಿಫಲವಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+    },
+    "validation": {
+      "companyNameMin": "ಕಂಪನಿ ಹೆಸರು ಕನಿಷ್ಠ 2 ಅಕ್ಷರಗಳಾಗಿರಬೇಕು",
+      "companyWebsiteUrl": "ಮಾನ್ಯವಾದ URL ಆಗಿರಬೇಕು (ಉದಾ. https://example.com)",
+      "linkedinUrlInvalid": "ಮಾನ್ಯವಾದ URL ಆಗಿರಬೇಕು (ಉದಾ. https://linkedin.com)",
+      "linkedinUrlRequired": "LinkedIn URL ಅಗತ್ಯವಿದೆ",
+      "linkedinUrlDomain": "linkedin.com ನ URL ಆಗಿರಬೇಕು",
+      "companyDescriptionMin": "ದಯವಿಟ್ಟು ಸಂಕ್ಷಿಪ್ತ ವಿವರಣೆ ನೀಡಿ",
+      "companyIndustryRequired": "ದಯವಿಟ್ಟು ಒಂದು ಉದ್ಯಮ ಆಯ್ಕೆಮಾಡಿ",
+      "registrationNumberRequired": "ನೋಂದಣಿ ಸಂಖ್ಯೆ ಅಗತ್ಯವಿದೆ",
+      "gstNumberRequired": "ಮಾನ್ಯ GST ಸಂಖ್ಯೆ ಅಗತ್ಯವಿದೆ",
+      "panNumberRequired": "ಮಾನ್ಯ PAN ಸಂಖ್ಯೆ ಅಗತ್ಯವಿದೆ",
+      "companyAddressRequired": "ಪೂರ್ಣ ಕಂಪನಿ ವಿಳಾಸ ಅಗತ್ಯವಿದೆ",
+      "officialEmailInvalid": "ಮಾನ್ಯ ಅಧಿಕೃತ ಇಮೇಲ್ ಅಗತ್ಯವಿದೆ",
+      "fileRequired": "ಫೈಲ್ ಅಗತ್ಯವಿದೆ",
+      "fileMaxSize": "ಗರಿಷ್ಠ ಫೈಲ್ ಗಾತ್ರ 5MB.",
+      "imageFormat": ".jpg, .jpeg, .png, ಮತ್ತು .webp ಫಾರ್ಮ್ಯಾಟ್‌ಗಳು ಮಾತ್ರ ಬೆಂಬಲಿತವಾಗಿವೆ.",
+      "documentFormat": ".pdf, .doc, ಮತ್ತು .docx ಫಾರ್ಮ್ಯಾಟ್‌ಗಳು ಮಾತ್ರ ಬೆಂಬಲಿತವಾಗಿವೆ."
+    }
+  }
+}

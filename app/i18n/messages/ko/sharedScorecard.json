@@ -1,0 +1,130 @@
+{
+  "provenance": {
+    "sharedBy": "{{company}}님이 공유함",
+    "confidential": "기밀 — 비공개로 공유됨"
+  },
+  "header": {
+    "unnamed": "후보자",
+    "fresher": "신입",
+    "experience_one": "경력 {{count}}년",
+    "experience_other": "경력 {{count}}년",
+    "matchedTo": "{{job}}에 매칭됨"
+  },
+  "overview": {
+    "overallScore": "종합 평가",
+    "basedOn_one": "인터뷰 질문 {{count}}개를 기준으로 산출",
+    "basedOn_other": "인터뷰 질문 {{count}}개를 기준으로 산출"
+  },
+  "aiMatch": {
+    "heading": "AI 직무 매칭",
+    "overall": "종합 매칭도",
+    "role": "직무 매칭도",
+    "skills": "역량 매칭도"
+  },
+  "metrics": {
+    "heading": "커뮤니케이션 지표",
+    "clarity": "명확성",
+    "relevance": "적합성",
+    "confidence": "자신감",
+    "depth": "사고의 깊이",
+    "keyConcept": "핵심 개념 이해도"
+  },
+  "sections": {
+    "heading": "질문 유형별 성과",
+    "correctOf": "{{count}}개 중 {{correct}}개 정답",
+    "types": {
+      "mcq": "객관식",
+      "pseudocode_mcq": "의사코드 객관식",
+      "coding": "코딩",
+      "typing": "타이핑",
+      "audio": "음성"
+    }
+  },
+  "insights": {
+    "heading": "인터뷰 인사이트",
+    "strengths": "강점",
+    "areasForImprovement": "개선이 필요한 영역",
+    "recommendations": "추천 사항"
+  },
+  "interview": {
+    "heading": "인터뷰 녹화 영상",
+    "unsupported": "사용 중인 브라우저는 동영상 요소를 지원하지 않습니다."
+  },
+  "profile": {
+    "heading": "후보자 프로필",
+    "sections": {
+      "skills": "역량",
+      "experience": "경력",
+      "education": "학력",
+      "projects": "프로젝트",
+      "certifications": "자격증",
+      "accomplishments": "성과",
+      "portfolio": "포트폴리오 링크",
+      "resume": "이력서"
+    },
+    "empty": {
+      "skills": "등록된 역량이 없습니다.",
+      "education": "등록된 학력 사항이 없습니다.",
+      "experience": "등록된 경력 사항이 없습니다.",
+      "projects": "등록된 프로젝트가 없습니다.",
+      "certifications": "등록된 자격증이 없습니다.",
+      "accomplishments": "등록된 성과가 없습니다.",
+      "portfolio": "공유된 포트폴리오 링크가 없습니다.",
+      "resume": "이용 가능한 이력서가 없습니다."
+    },
+    "untitledProject": "제목 없는 프로젝트",
+    "certificationFallback": "자격증",
+    "accomplishmentFallback": "성과",
+    "viewResume": "이력서 보기"
+  },
+  "questions": {
+    "heading": "인터뷰 질문 및 답변",
+    "empty": "이 인터뷰에 대한 질문이 없습니다.",
+    "expandAll": "모두 펼치기",
+    "collapseAll": "모두 접기",
+    "candidateAnswer": "후보자 답변",
+    "noQuestionText": "제공된 질문 내용이 없습니다.",
+    "noCode": "제출된 코드가 없습니다.",
+    "noAudio": "녹음된 음성 답변이 없습니다.",
+    "audioUnsupported": "사용 중인 브라우저는 오디오 요소를 지원하지 않습니다.",
+    "noAnswer": "제공된 답변이 없습니다.",
+    "types": {
+      "mcq": "객관식",
+      "mcq_pseudocode": "의사코드 객관식",
+      "pseudocode_mcq": "의사코드 객관식",
+      "coding": "코딩",
+      "typing": "타이핑",
+      "audio": "음성",
+      "default": "질문"
+    }
+  },
+  "toc": {
+    "label": "리포트 섹션",
+    "overview": "개요",
+    "aiMatch": "AI 직무 매칭",
+    "communication": "커뮤니케이션",
+    "sections": "성과",
+    "insights": "인사이트",
+    "profile": "프로필",
+    "questions": "질문 및 답변"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "링크를 찾을 수 없음",
+      "description": "공유된 스코어카드 링크가 유효하지 않거나 더 이상 존재하지 않습니다. URL을 확인하거나 발신자에게 새 링크를 요청해 주세요."
+    },
+    "expired": {
+      "title": "링크 만료됨",
+      "description": "공유된 스코어카드 링크가 만료되었습니다. 발신자에게 새 링크를 요청해 주세요."
+    },
+    "limit": {
+      "title": "조회 제한 도달",
+      "description": "공유된 스코어카드 링크가 최대 조회 횟수에 도달했습니다. 발신자에게 새 링크를 요청해 주세요."
+    },
+    "unavailable": {
+      "title": "문제가 발생했습니다",
+      "description": "현재 이 스코어카드를 불러올 수 없습니다. 잠시 후 다시 시도해 주세요."
+    },
+    "retry": "다시 시도"
+  }
+}

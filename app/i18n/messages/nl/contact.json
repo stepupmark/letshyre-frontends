@@ -1,0 +1,37 @@
+{
+  "info": {
+    "badge": "Ondersteuning",
+    "helpCenter": "Helpcentrum",
+    "title": "Neem contact op<br/><hl>met ons team</hl>",
+    "description": "Heeft u vragen over AI-interviews, kandidaatrapporten, wervingsplannen, tegoeden of technische problemen? Onze supportspecialisten helpen u graag.",
+    "emailLabel": "E-mail"
+  },
+  "form": {
+    "title": "Stuur een bericht",
+    "subtitle": "Vul onderstaand formulier in en ons team neemt spoedig contact met u op.",
+    "fields": {
+      "name": "Volledige naam",
+      "email": "E-mailadres",
+      "subject": "Onderwerp",
+      "message": "Berichtdetails"
+    },
+    "privacy": "Wij waarderen uw privacy. Door uw informatie in te dienen, gaat u akkoord met LetsHyre's <pp>Privacybeleid</pp>. Ons team reageert doorgaans binnen 2-4 uur.",
+    "submit": "Bericht versturen",
+    "sending": "Verzenden...",
+    "successTitle": "Bericht Verstuurd!",
+    "successBody": "Bedankt voor uw bericht. Ons supportteam heeft uw bericht ontvangen en neemt spoedig contact met u op.",
+    "validation": {
+      "nameMin": "Naam moet minimaal 2 tekens bevatten",
+      "emailInvalid": "Voer een geldig e-mailadres in",
+      "subjectMin": "Onderwerp moet minimaal 3 tekens bevatten",
+      "messageMin": "Bericht moet minimaal 10 tekens bevatten"
+    }
+  },
+  "meta": {
+    "title": "Contact | letshyre.ai",
+    "description": "Vragen over AI-interviews, scorecards, abonnementen of credits? Neem contact op met het team van LetsHyre.",
+    "name": "Contact LetsHyre",
+    "schemaDescription": "Bereik LetsHyre ondersteuning en verkoop.",
+    "crumb": "Contact"
+  }
+}

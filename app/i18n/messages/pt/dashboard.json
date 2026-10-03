@@ -1,0 +1,96 @@
+{
+  "logo": "Logótipo LetsHyre",
+  "nav": {
+    "findJobs": "Encontrar Vagas",
+    "myApplications": "As Minhas Candidaturas",
+    "scorecard": "Relatório de Avaliação",
+    "profile": "Perfil",
+    "logout": "Terminar Sessão",
+    "dashboard": "Painel",
+    "postJob": "Publicar Vaga",
+    "viewJobs": "Ver Vagas",
+    "candidatePool": "Grupo de Candidatos",
+    "unlockedCandidates": "Candidatos Desbloqueados",
+    "yourTeam": "A Sua Equipa",
+    "invoiceHistory": "Histórico de Faturas",
+    "assistant": "Assistente",
+    "interviewGuide": "Guia da entrevista"
+  },
+  "aria": {
+    "openProfile": "Abrir perfil",
+    "openMenu": "Abrir menu",
+    "mainNav": "Navegação principal",
+    "closeNav": "Fechar navegação",
+    "mainContent": "Conteúdo Principal",
+    "userAvatar": "utilizador"
+  },
+  "employer": {
+    "credits": "Créditos: {{count}}",
+    "member_one": "{{count}} Membro",
+    "member_other": "{{count}} Membros",
+    "replayTour": "Repetir a visita guiada",
+    "profileAlt": "perfil"
+  },
+  "tour": {
+    "back": "Voltar",
+    "next": "Seguinte",
+    "finish": "Concluir",
+    "skip": "Saltar",
+    "alt": "visita guiada",
+    "steps": {
+      "dashboard": {
+        "title": "O Seu Centro de Contratação",
+        "content": "Tenha uma visão geral das suas métricas de recrutamento e atalhos rápidos."
+      },
+      "postJob": {
+        "title": "Contrate em Minutos",
+        "content": "Carregue uma descrição de função. A nossa IA trata da introdução de dados instantaneamente por si."
+      },
+      "viewJobs": {
+        "title": "Ver Vagas",
+        "content": "Faça a gestão de todas as vagas publicadas aqui."
+      },
+      "candidates": {
+        "title": "Candidatos",
+        "content": "Veja todos os candidatos aqui."
+      },
+      "team": {
+        "title": "Contratação Colaborativa",
+        "content": "Convide os membros da sua equipa para rever candidatos."
+      },
+      "billing": {
+        "title": "Histórico de Faturas",
+        "content": "Cada compra de créditos aparece aqui com a respetiva fatura GST."
+      },
+      "credits": {
+        "title": "Saldo de Créditos",
+        "content": "Acompanhe os créditos restantes aqui e recarregue a qualquer momento para continuar a desbloquear candidatos."
+      },
+      "addMember": {
+        "title": "Adicionar Membros à Equipa",
+        "content": "Traga mais recrutadores e gestores para acelerar as suas decisões de contratação."
+      },
+      "profile": {
+        "title": "Faça a Gestão do Seu Perfil",
+        "content": "Faça a gestão das definições da sua conta."
+      }
+    }
+  },
+  "onboarding": {
+    "title": "Complete o seu perfil",
+    "description": "Um formulário de cinco passos que abrange a sua identidade, fotografia, preferências de emprego e currículo."
+  },
+  "logout": {
+    "title": "Oh não, vai sair",
+    "confirm": "Tem a certeza de que pretende terminar sessão?",
+    "cancel": "Não!",
+    "confirmButton": "Sim, terminar sessão",
+    "loggingOut": "A terminar sessão...",
+    "closeAria": "Fechar"
+  },
+  "locked": {
+    "title": "Desbloqueie o Acesso Total!",
+    "description": "Complete o seu perfil para aceder a todas as funcionalidades",
+    "action": "Ir para o Perfil"
+  }
+}

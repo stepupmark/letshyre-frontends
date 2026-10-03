@@ -1,0 +1,1 @@
+export { EmployerDashboard as default } from "@/features/employer/EmployerDashboard";

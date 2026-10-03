@@ -1,0 +1,37 @@
+{
+  "info": {
+    "badge": "Assistenza",
+    "helpCenter": "Centro Assistenza",
+    "title": "Mettiti in Contatto<br/><hl>Con il Nostro Team</hl>",
+    "description": "Hai domande sui colloqui IA, sui report dei candidati, sui piani di assunzione, sui crediti o su problemi tecnici? I nostri specialisti dell'assistenza sono qui per aiutarti.",
+    "emailLabel": "Email"
+  },
+  "form": {
+    "title": "Invia un Messaggio",
+    "subtitle": "Compila il modulo qui sotto e il nostro team ti risponderà al più presto.",
+    "fields": {
+      "name": "Nome Completo",
+      "email": "Indirizzo Email",
+      "subject": "Oggetto",
+      "message": "Dettagli del Messaggio"
+    },
+    "privacy": "La tua privacy è importante per noi. Inviando le tue informazioni, accetti l'<pp>Informativa sulla Privacy</pp> di LetsHyre. Il nostro team risponde generalmente entro 2-4 ore.",
+    "submit": "Invia Messaggio",
+    "sending": "Invio in corso...",
+    "successTitle": "Messaggio Inviato!",
+    "successBody": "Grazie per averci contattato. Il nostro team di assistenza ha ricevuto il tuo messaggio e ti risponderà a breve.",
+    "validation": {
+      "nameMin": "Il nome deve contenere almeno 2 caratteri",
+      "emailInvalid": "Inserisci un indirizzo email valido",
+      "subjectMin": "L'oggetto deve contenere almeno 3 caratteri",
+      "messageMin": "Il messaggio deve contenere almeno 10 caratteri"
+    }
+  },
+  "meta": {
+    "title": "Contattaci | letshyre.ai",
+    "description": "Domande su colloqui con IA, Scorecard, piani o crediti? Scrivi al team di LetsHyre e ti risponderemo.",
+    "name": "Contatta LetsHyre",
+    "schemaDescription": "Contatta l'assistenza e le vendite di LetsHyre.",
+    "crumb": "Contatti"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "logo": "Logo LetsHyre",
+  "nav": {
+    "findJobs": "Trova Lavoro",
+    "myApplications": "Le Mie Candidature",
+    "scorecard": "Scorecard",
+    "profile": "Profilo",
+    "logout": "Esci",
+    "dashboard": "Dashboard",
+    "postJob": "Pubblica Annuncio",
+    "viewJobs": "Visualizza Annunci",
+    "candidatePool": "Bacino Candidati",
+    "unlockedCandidates": "Candidati Sbloccati",
+    "yourTeam": "Il Tuo Team",
+    "invoiceHistory": "Cronologia Fatture",
+    "assistant": "Assistente",
+    "interviewGuide": "Guida al colloquio"
+  },
+  "aria": {
+    "openProfile": "Apri profilo",
+    "openMenu": "Apri menu",
+    "mainNav": "Navigazione principale",
+    "closeNav": "Chiudi navigazione",
+    "mainContent": "Contenuto Principale",
+    "userAvatar": "utente"
+  },
+  "employer": {
+    "credits": "Crediti: {{count}}",
+    "member_one": "{{count}} Membro",
+    "member_other": "{{count}} Membri",
+    "replayTour": "Rivedi il tour del prodotto",
+    "profileAlt": "profilo"
+  },
+  "tour": {
+    "back": "Indietro",
+    "next": "Avanti",
+    "finish": "Fine",
+    "skip": "Salta",
+    "alt": "tour",
+    "steps": {
+      "dashboard": {
+        "title": "Il Tuo Centro Assunzioni",
+        "content": "Ottieni una panoramica completa delle tue metriche di reclutamento e delle scorciatoie rapide."
+      },
+      "postJob": {
+        "title": "Assumi in Pochi Minuti",
+        "content": "Carica una descrizione del lavoro. La nostra IA gestirà l'inserimento dati istantaneamente per te."
+      },
+      "viewJobs": {
+        "title": "Visualizza Annunci",
+        "content": "Gestisci qui tutti gli annunci di lavoro."
+      },
+      "candidates": {
+        "title": "Candidati",
+        "content": "Visualizza qui tutti i candidati."
+      },
+      "team": {
+        "title": "Assunzioni Collaborative",
+        "content": "Invita i membri del tuo team a esaminare i candidati."
+      },
+      "billing": {
+        "title": "Cronologia Fatture",
+        "content": "Qui trovi ogni acquisto di crediti con la relativa fattura GST."
+      },
+      "credits": {
+        "title": "Saldo Crediti",
+        "content": "Tieni traccia dei crediti rimanenti e ricaricali in qualsiasi momento per continuare a sbloccare candidati."
+      },
+      "addMember": {
+        "title": "Aggiungi Membri del Team",
+        "content": "Coinvolgi altri recruiter e manager per velocizzare le tue decisioni di assunzione."
+      },
+      "profile": {
+        "title": "Gestisci il Tuo Profilo",
+        "content": "Gestisci le impostazioni del tuo account."
+      }
+    }
+  },
+  "onboarding": {
+    "title": "Completa il tuo profilo",
+    "description": "Un modulo in cinque passaggi che copre identità, foto, preferenze lavorative e curriculum."
+  },
+  "logout": {
+    "title": "Oh no, ci lasci",
+    "confirm": "Sei sicuro di voler uscire?",
+    "cancel": "Nooo!",
+    "confirmButton": "Sì, esci",
+    "loggingOut": "Uscita in corso...",
+    "closeAria": "Chiudi"
+  },
+  "locked": {
+    "title": "Sblocca l'Accesso Completo!",
+    "description": "Completa il tuo profilo per accedere a tutte le funzionalità",
+    "action": "Vai al Profilo"
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "pool": {
+    "title": "Kandidatenpool",
+    "subtitleLoading": "Ihre offenen Stellen werden geladen…",
+    "subtitle_one": "KI-abgeglichene Kandidaten für {{count}} offene Stelle.",
+    "subtitle_other": "KI-abgeglichene Kandidaten für {{count}} offene Stellen.",
+    "subtitleEmpty": "Entdecken Sie KI-abgeglichene Kandidaten für Ihre offenen Stellen.",
+    "noJobsTitle": "Keine offenen Stellen",
+    "noJobsBody": "Sie haben noch keine offenen Stellen. Veröffentlichen Sie eine Stelle, um KI-abgeglichene Kandidaten zu erhalten.",
+    "jobNotFoundTitle": "Stelle nicht gefunden",
+    "jobNotFoundBody": "Dieser Link ist nicht mehr gültig oder die Stelle wurde entfernt. Wählen Sie stattdessen unten eine Stelle aus.",
+    "clearSelection": "Alle Stellen anzeigen",
+    "postJob": "Stelle veröffentlichen",
+    "matchedTitle": "Übereinstimmende Kandidaten",
+    "matchedSummary": "<b>{{matched}}</b> von <b>{{total}}</b> Kandidaten übereinstimmend",
+    "forJob": " für {{title}}",
+    "filterAria": "Kandidaten filtern",
+    "filters": {
+      "aiMatched": "KI-abgeglichen",
+      "applied": "Beworben"
+    },
+    "noMatchesTitle": "Noch keine Übereinstimmungen",
+    "noMatchesBody": "Unsere KI hat noch keine passenden Kandidaten für diese Stelle gefunden. Schauen Sie später wieder vorbei, wenn weitere Kandidaten ihre Interviews abgeschlossen haben.",
+    "selectJobTitle": "Wählen Sie oben eine Stelle aus",
+    "selectJobBody": "Wählen Sie eine Ihrer offenen Stellen, um KI-abgeglichene Kandidaten anzuzeigen.",
+    "columns": {
+      "candidate": "Kandidat",
+      "aiMatch": "KI-Übereinstimmung",
+      "roleMatch": "Rollenübereinstimmung",
+      "skillsMatch": "Fähigkeitenübereinstimmung",
+      "interviews": "Anzahl der Interviews",
+      "experience": "Erfahrung"
+    },
+    "selector": {
+      "heading": "Stelle auswählen",
+      "prevPage": "Vorherige Seite der Stellen",
+      "nextPage": "Nächste Seite der Stellen",
+      "listAria": "Offene Stellen"
+    },
+    "row": {
+      "unknown": "Unbekannter Kandidat",
+      "dash": "—",
+      "viewProfileAria": "Profil von {{name}} ansehen",
+      "candidate": "Kandidat",
+      "view": "Ansehen",
+      "viewAria": "Profil von {{name}} ansehen",
+      "aiScoreAria": "KI-Übereinstimmungswert: {{value}} Prozent",
+      "expYears": "{{count}} J."
+    },
+    "scan": {
+      "aiMatcher": "KI-Matching",
+      "step1": "Kandidatenprofile werden mit den Stellenanforderungen abgeglichen…",
+      "step2": "Fachkenntnisse & Erfahrungstiefe werden bewertet…",
+      "step3": "KI-Kompatibilität & Interview-Scores werden berechnet…",
+      "step4": "Top-Talente werden für Ihre Prüfung eingestuft…"
+    },
+    "unlockModal": {
+      "title": "Kandidatenprofil freischalten",
+      "subtitle_one": "Scorecard von {{name}} für {{count}} Guthaben freischalten.",
+      "subtitle_other": "Scorecard von {{name}} für {{count}} Guthaben freischalten.",
+      "close": "Schließen",
+      "unlocked": "Freigeschaltet",
+      "loadingInterviews": "Interviews werden geladen...",
+      "otherInterviews": "Der Kandidat ist auch in einem anderen Interview aufgetreten",
+      "footerText": "Dies umfasst die KI-Scorecard, die Interviewaufzeichnung und den Lebenslauf.",
+      "unlocking": "Wird freigeschaltet...",
+      "unlockFor": "Profil für {{count}} Guthaben freischalten"
+    },
+    "toasts": {
+      "unlockSuccess": "Kandidatenprofil erfolgreich freigeschaltet.",
+      "unlockFailed": "Freischalten des Profils fehlgeschlagen."
+    },
+    "loadingJobs": "Stellen werden geladen"
+  },
+  "unlocked": {
+    "title": "Freigeschaltete Kandidaten",
+    "subtitleLoading": "Ihre freigeschalteten Profile werden geladen…",
+    "subtitle_one": "{{count}} von Ihnen freigeschaltetes Profil.",
+    "subtitle_other": "{{count}} von Ihnen freigeschaltete Profile.",
+    "subtitleEmpty": "Von Ihnen freigeschaltete Profile werden hier angezeigt.",
+    "emptyTitle": "Noch keine Kandidaten freigeschaltet",
+    "emptyBody": "Wenn Sie Kandidatenprofile aus dem Kandidatenpool freischalten, erscheinen sie hier für den schnellen Zugriff.",
+    "card": {
+      "unnamed": "Unbenannter Kandidat",
+      "verified": "Verifiziert",
+      "verifiedTitle": "Verifizierter Kandidat",
+      "expNa": "Erfahrung k. A.",
+      "exp": "{{value}} Erfahrung",
+      "notSpecified": "Nicht angegeben",
+      "noticeDays": "{{count}} Tage Kündigungsfrist",
+      "unlockedOn": "Freigeschaltet am {{date}}",
+      "overallScoreTitle": "Gesamter KI-Score",
+      "overallScoreAria": "Gesamter KI-Score: {{value}} Prozent",
+      "photoAlt": "Profilfoto von {{name}}",
+      "profile": "Profil",
+      "scorecard": "Scorecard",
+      "yr_one": "{{count}} Jahr",
+      "yr_other": "{{count}} Jahre"
+    }
+  },
+  "candidateProfile": {
+    "goBack": "Zurück",
+    "verified": "Verifiziert",
+    "photoAlt": "Foto des Kandidaten",
+    "na": "—",
+    "errorBody": "Das Profil des Kandidaten konnte nicht geladen werden. Bitte überprüfen Sie Ihre Verbindung.",
+    "tryAgain": "Erneut versuchen",
+    "currentCtc": "Aktuelles Gehalt",
+    "expectedCtc": "Erwartetes Gehalt",
+    "noticePeriodHeading": "Kündigungsfrist",
+    "availability": "Verfügbarkeit",
+    "notSpecified": "Nicht angegeben",
+    "preferredLocations": "Bevorzugte Standorte",
+    "preferencesHeading": "Präferenzen",
+    "industry": "Branche",
+    "addressHeading": "Adresse",
+    "rolesApplied": "Beworbene Rollen",
+    "sectionsLabel": "Kandidatenbereiche",
+    "sections": {
+      "education": "Ausbildung",
+      "skills": "Fähigkeiten",
+      "projects": "Projekte",
+      "experience": "Erfahrung",
+      "certifications": "Zertifizierungen",
+      "documents": "Dokumente"
+    },
+    "empty": {
+      "education": "Keine Ausbildungsdetails verfügbar.",
+      "skills": "Keine Fähigkeiten verfügbar.",
+      "projects": "Keine Projektdetails verfügbar.",
+      "experience": "Keine Angaben zur Berufserfahrung verfügbar.",
+      "certifications": "Keine Zertifizierungen verfügbar.",
+      "documents": "Keine Dokumente verfügbar."
+    },
+    "untitledProject": "Projekt ohne Titel",
+    "certificationFallback": "Zertifizierung",
+    "resume": "Lebenslauf",
+    "noticeProof": "Nachweis der Kündigungsfrist",
+    "salaryExpectations": "Gehaltsvorstellungen"
+  }
+}

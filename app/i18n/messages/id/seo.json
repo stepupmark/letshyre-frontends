@@ -1,0 +1,124 @@
+{
+  "homeCrumb": "Beranda",
+  "sharedScorecard": {
+    "title": "Scorecard Kandidat | letshyre.ai",
+    "description": "Scorecard wawancara kandidat yang dinilai AI dan dibagikan oleh perekrut di LetsHyre."
+  },
+  "getStarted": {
+    "title": "Mulai | letshyre.ai",
+    "description": "Pilih apakah Anda merekrut atau mencari kerja, lalu buat akun LetsHyre Anda."
+  },
+  "employeeSignIn": {
+    "title": "Masuk sebagai kandidat | letshyre.ai",
+    "description": "Masuk ke akun kandidat LetsHyre untuk mengikuti wawancara dan melacak lamaran Anda."
+  },
+  "employeeRegister": {
+    "title": "Daftar sebagai kandidat | letshyre.ai",
+    "description": "Buat akun kandidat LetsHyre untuk mengikuti wawancara AI dan membagikan skorkartu terverifikasi."
+  },
+  "employerSignIn": {
+    "title": "Masuk sebagai perekrut | letshyre.ai",
+    "description": "Masuk ke akun perekrut LetsHyre untuk memasang lowongan dan meninjau skorkartu kandidat."
+  },
+  "employerRegister": {
+    "title": "Daftar sebagai perekrut | letshyre.ai",
+    "description": "Buat akun perekrut LetsHyre untuk memasang lowongan, menjalankan wawancara AI, dan merekrut lebih cepat."
+  },
+  "forgotPassword": {
+    "title": "Atur ulang kata sandi | letshyre.ai",
+    "description": "Atur ulang kata sandi LetsHyre Anda dengan verifikasi email dan kembali ke akun Anda."
+  },
+  "notFound": {
+    "title": "Halaman tidak ditemukan | letshyre.ai",
+    "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan."
+  },
+  "employeeFindJobs": {
+    "title": "Cari Pekerjaan | letshyre.ai",
+    "description": "Mulai temukan peluang yang sesuai dengan keterampilan dan ambisi Anda"
+  },
+  "employeeChatbot": {
+    "title": "Asisten AI | letshyre.ai",
+    "description": "Tanyakan tentang LetsHyre, lamaran, scorecard Anda, dan lainnya."
+  },
+  "employeeInterviewGuide": {
+    "title": "Panduan Wawancara | letshyre.ai",
+    "description": "Delapan langkah memisahkan Anda dari sesi wawancara. Berikut penjelasan lengkap setiap langkah agar tidak ada kejutan pada harinya."
+  },
+  "employeeMyApplications": {
+    "title": "Lamaran Saya | letshyre.ai",
+    "description": "Lacak pekerjaan yang Anda lamar, yang masuk shortlist, terpilih & ditolak"
+  },
+  "employeeProfile": {
+    "title": "Profil | letshyre.ai",
+    "description": "Formulir lima langkah yang mencakup identitas, foto, preferensi pekerjaan, dan resume Anda."
+  },
+  "employeeScoreCardsList": {
+    "title": "Scorecard Saya | letshyre.ai",
+    "description": "Tinjau performa wawancara dan umpan balik hasil AI Anda."
+  },
+  "employeeScorecard": {
+    "title": "Scorecard Anda | letshyre.ai",
+    "description": "Ringkasan hasil performa wawancara Anda yang dihasilkan oleh AI."
+  },
+  "employerDashboard": {
+    "title": "Dashboard | letshyre.ai",
+    "description": "Berikut yang terjadi di pusat perekrutan Anda hari ini."
+  },
+  "employerCandidatePool": {
+    "title": "Pool kandidat | letshyre.ai",
+    "description": "Temukan kandidat yang dicocokkan AI untuk posisi terbuka Anda."
+  },
+  "employerChatbot": {
+    "title": "Asisten AI | letshyre.ai",
+    "description": "Tanyakan tentang LetsHyre, perekrutan, kandidat, dan scorecard."
+  },
+  "employerCandidateProfile": {
+    "title": "Profil Kandidat | letshyre.ai",
+    "description": "Lihat profil, keterampilan, dan pengalaman kandidat di LetsHyre."
+  },
+  "employerCandidateScorecard": {
+    "title": "Scorecard Kandidat | letshyre.ai",
+    "description": "Ringkasan hasil wawancara kandidat ini yang dihasilkan oleh AI."
+  },
+  "employerInvoices": {
+    "title": "Faktur Saya | letshyre.ai",
+    "description": "Riwayat faktur Anda bersama kami."
+  },
+  "employerPostJob": {
+    "title": "Pasang Lowongan | letshyre.ai",
+    "description": "Kami akan membantu Anda membuat lowongan pekerjaan yang menarik dalam hitungan detik."
+  },
+  "employerProfile": {
+    "title": "Profil | letshyre.ai",
+    "description": "Tinjau dan kelola detail inti, branding, dan informasi kontak organisasi Anda."
+  },
+  "employerUnlockedCandidates": {
+    "title": "Kandidat Terbuka | letshyre.ai",
+    "description": "Profil yang Anda buka akan muncul di sini."
+  },
+  "employerViewJobs": {
+    "title": "Lihat Lowongan | letshyre.ai",
+    "description": "Lihat dan kelola semua lowongan yang telah Anda pasang."
+  },
+  "employerApplicants": {
+    "title": "Pelamar Lowongan | letshyre.ai",
+    "description": "Tinjau dan kelola kandidat yang melamar untuk peran ini."
+  },
+  "employerTeam": {
+    "title": "Tim Anda | letshyre.ai",
+    "description": "Lihat siapa saja yang sudah ada dan libatkan anggota baru ke dalam tim."
+  },
+  "employerOnboarding": {
+    "title": "Detail Perusahaan | letshyre.ai",
+    "description": "Tambahkan detail perusahaan dan dokumen legal Anda untuk menyelesaikan pengaturan akun perekrut LetsHyre Anda."
+  },
+  "employerJobDetail": {
+    "title": "{{jobTitle}} | letshyre.ai",
+    "description": "Lihat dan kelola detail {{jobTitle}} di LetsHyre.",
+    "fallbackTitle": "Detail Lowongan"
+  },
+  "employerSharedLinks": {
+    "title": "Tautan yang dibagikan | letshyre.ai",
+    "description": "Tautan yang Anda bagikan akan muncul di sini."
+  }
+}

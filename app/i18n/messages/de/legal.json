@@ -1,0 +1,17 @@
+{
+  "chrome": {
+    "readTime": "~{{count}} Min. Lesezeit",
+    "contents": "Inhalt",
+    "collapseSidebar": "Seitenleiste einklappen",
+    "expandSidebar": "Seitenleiste ausklappen",
+    "searchPlaceholder": "Abschnitte durchsuchen...",
+    "noMatches": "Keine Abschnitte entsprechen Ihrer Suche.",
+    "reading": "Aktuell:",
+    "feedbackPrompt": "War dieses Dokument klar und hilfreich?",
+    "feedbackYes": "👍 Ja",
+    "feedbackNo": "👎 Nein",
+    "feedbackThanks": "Vielen Dank für Ihr Feedback!",
+    "backToTop": "Nach oben",
+    "translationNotice": "Dies ist eine Übersetzung, die der Vereinfachung dient. Maßgeblich ist die <en>englische Fassung</en>."
+  }
+}

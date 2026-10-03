@@ -1,0 +1,57 @@
+{
+  "list": {
+    "title": "공유된 링크",
+    "subtitleLoading": "공유된 링크를 불러오는 중…",
+    "subtitle_other": "지금까지 {{count}}개의 링크를 공유했습니다.",
+    "subtitleEmpty": "공유한 링크가 여기에 표시됩니다.",
+    "back": "열람한 후보자로 돌아가기",
+    "errorGeneric": "공유된 링크를 불러오는 중 문제가 발생했습니다.",
+    "emptyTitle": "아직 공유된 링크가 없습니다",
+    "emptyBody": "열람한 후보자 페이지에서 후보자의 프로필을 공유하면 여기에 표시됩니다.",
+    "columns": {
+      "candidate": "후보자",
+      "job": "매칭된 채용공고",
+      "status": "상태",
+      "views": "조회수",
+      "expires": "만료일",
+      "actions": "작업"
+    },
+    "viewsOf": "{{count}} / {{max}}",
+    "noJob": "매칭된 채용공고 없음",
+    "sharedBy": "{{name}}님이 공유함",
+    "copyLink": "링크 복사",
+    "edit": "수정",
+    "delete": "삭제"
+  },
+  "status": {
+    "active": "활성",
+    "inactive": "비활성",
+    "expired": "만료됨",
+    "limitReached": "조회 제한 도달"
+  },
+  "editDialog": {
+    "title": "공유 링크 수정",
+    "description": "만료일, 조회 제한을 조정하거나 이 링크를 비활성화하세요.",
+    "extendLabel": "만료일 연장 (일)",
+    "extendHint": "현재 만료일에 더해집니다. 변경하지 않으려면 0을 입력하세요.",
+    "maxViewsLabel": "최대 조회수",
+    "activeLabel": "링크 활성 상태",
+    "activeHint": "삭제하지 않고 링크를 비활성화하려면 끄세요.",
+    "cancel": "취소",
+    "submit": "변경 사항 저장",
+    "submitting": "저장 중…"
+  },
+  "deleteDialog": {
+    "title": "이 공유 링크를 삭제하시겠습니까?",
+    "description": "링크를 가진 모든 사람이 즉시 접근 권한을 잃습니다. 이 작업은 되돌릴 수 없습니다.",
+    "cancel": "취소",
+    "confirm": "링크 삭제",
+    "deleting": "삭제 중…"
+  },
+  "toasts": {
+    "updated": "공유 링크가 수정되었습니다.",
+    "updateFailed": "공유 링크를 수정할 수 없습니다.",
+    "deleted": "공유 링크가 삭제되었습니다.",
+    "deleteFailed": "공유 링크를 삭제할 수 없습니다."
+  }
+}

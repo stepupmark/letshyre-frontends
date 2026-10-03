@@ -1,0 +1,29 @@
+{
+  "completion": {
+    "heading": "ಪ್ರೊಫೈಲ್ ಪೂರ್ಣಗೊಳಿಕೆ",
+    "complete": "ಪೂರ್ಣಗೊಂಡಿದೆ",
+    "noteComplete": "ಚೆನ್ನಾಗಿದೆ! ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಪೂರ್ಣಗೊಂಡಿದೆ.",
+    "noteIncomplete": "ಉದ್ಯೋಗದಾತರಿಗೆ ಎದ್ದುಕಾಣಲು ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಪೂರ್ಣಗೊಳಿಸಿ.",
+    "noteCompleteCandidate": "ಈ ಅಭ್ಯರ್ಥಿಯ ಪ್ರೊಫೈಲ್ ಸಂಪೂರ್ಣವಾಗಿ ಪೂರ್ಣಗೊಂಡಿದೆ.",
+    "noteIncompleteCandidate": "ಈ ಅಭ್ಯರ್ಥಿ ಇನ್ನೂ ಪ್ರೊಫೈಲ್ ಪೂರ್ಣಗೊಳಿಸಿಲ್ಲ."
+  },
+  "contact": {
+    "email": "ಇಮೇಲ್",
+    "phone": "ಫೋನ್",
+    "location": "ಸ್ಥಳ",
+    "experience": "ಅನುಭವ"
+  },
+  "dash": "—",
+  "interviews": {
+    "heading": "AI ಸಂದರ್ಶನಗಳು",
+    "usage": "{{total}} ರಲ್ಲಿ ಬಳಸಲಾಗಿದೆ · {{remaining}} ಉಳಿದಿದೆ"
+  },
+  "units": {
+    "years_one": "{{count}} ವರ್ಷ",
+    "years_other": "{{count}} ವರ್ಷಗಳು",
+    "notSpecified": "ನಿರ್ದಿಷ್ಟಪಡಿಸಿಲ್ಲ",
+    "immediateJoiner": "ತಕ್ಷಣ ಸೇರುವವರು",
+    "days_one": "{{count}} ದಿನ",
+    "days_other": "{{count}} ದಿನಗಳು"
+  }
+}

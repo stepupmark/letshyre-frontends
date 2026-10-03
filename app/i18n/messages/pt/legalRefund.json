@@ -1,0 +1,170 @@
+{
+  "refund": {
+    "title": "Política de Reembolso",
+    "intro": "Bem-vindo à LetsHyre. Esta Política de Reembolso explica as condições em que poderão ser concedidos reembolsos relativos a pagamentos efetuados na plataforma LetsHyre.",
+    "sections": [
+      {
+        "id": "service-model",
+        "title": "1. Modelo de Serviço",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "A LetsHyre funciona segundo um modelo de contratação de Pagamento por Desbloqueio. Os empregadores podem efetuar pagamentos únicos para desbloquear:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Perfis de Candidatos",
+              "Fichas de Avaliação de Entrevistas",
+              "Gravações de Entrevistas",
+              "Informações de Contacto dos Candidatos"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Cada compra de desbloqueio concede acesso às informações de perfil, fichas de avaliação de entrevistas, gravações de entrevistas e dados de contacto do candidato selecionado, sujeito à disponibilidade da plataforma."
+          },
+          {
+            "type": "p",
+            "text": "As compras de desbloqueio são transações únicas e não constituem uma subscrição ou serviço recorrente."
+          }
+        ]
+      },
+      {
+        "id": "refund-eligibility",
+        "title": "2. Elegibilidade para Reembolso",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Os pedidos de reembolso só poderão ser considerados nas seguintes circunstâncias:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Pagamentos duplicados para o mesmo desbloqueio de candidato.",
+              "Faturação incorreta causada por um erro técnico na plataforma LetsHyre.",
+              "Pagamento efetuado com sucesso em que o acesso às informações do candidato adquiridas não foi disponibilizado devido a um problema da plataforma.",
+              "Transações não autorizadas confirmadas através de investigação."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Todos os pedidos de reembolso devem ser submetidos no prazo de 7 dias a contar da data da transação."
+          }
+        ]
+      },
+      {
+        "id": "non-refundable-purchases",
+        "title": "3. Compras Não Reembolsáveis",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Em geral, não serão concedidos reembolsos nas seguintes situações:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Perfis de candidatos que tenham sido desbloqueados com sucesso.",
+              "Fichas de avaliação de entrevistas ou gravações de entrevistas que tenham sido acedidas com sucesso.",
+              "Informações de contacto de candidatos que tenham sido reveladas com sucesso.",
+              "Insatisfação do empregador relativamente às qualificações, competências, experiência, capacidades de comunicação ou adequação de um candidato a uma função.",
+              "Não contacto ou não contratação de um candidato após o desbloqueio do seu perfil.",
+              "Falta de resposta do candidato após o desbloqueio do perfil.",
+              "Alterações nos requisitos de contratação após o desbloqueio de um candidato.",
+              "Resultados de contratação ou resultados de recrutamento."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Uma vez que as informações do candidato tenham sido desbloqueadas e disponibilizadas com sucesso ao empregador, a transação é considerada concluída."
+          }
+        ]
+      },
+      {
+        "id": "refund-review-process",
+        "title": "4. Processo de Análise de Reembolso",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Os pedidos de reembolso elegíveis serão analisados pela LetsHyre no prazo de 7 a 14 dias úteis."
+          },
+          {
+            "type": "p",
+            "text": "Poderão ser solicitadas informações adicionais para verificar a elegibilidade do reembolso."
+          },
+          {
+            "type": "p",
+            "text": "Os reembolsos aprovados serão processados através do método de pagamento original utilizado na transação. Os prazos de processamento poderão variar consoante o prestador de serviços de pagamento ou a instituição financeira."
+          }
+        ]
+      },
+      {
+        "id": "fraud-prevention",
+        "title": "5. Prevenção de Fraude",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "A LetsHyre reserva-se o direito de recusar pedidos de reembolso caso se suspeite de atividade fraudulenta, utilização indevida da plataforma, violação dos Termos e Condições ou abuso do processo de reembolso."
+          },
+          {
+            "type": "p",
+            "text": "As contas envolvidas em atividades de pagamento fraudulentas poderão ser suspensas ou permanentemente encerradas."
+          }
+        ]
+      },
+      {
+        "id": "chargebacks-and-payment-disputes",
+        "title": "6. Estornos e Litígios de Pagamento",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Caso um utilizador inicie um estorno ou um litígio de pagamento junto de um banco, emissor de cartão ou prestador de serviços de pagamento, a LetsHyre reserva-se o direito de investigar a transação e de fornecer os registos relevantes ao processador de pagamentos."
+          },
+          {
+            "type": "p",
+            "text": "Atividades de estorno fraudulentas ou abusivas poderão resultar na suspensão ou no encerramento da conta."
+          }
+        ]
+      },
+      {
+        "id": "changes-to-refund-policy",
+        "title": "7. Alterações a Esta Política de Reembolso",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "A LetsHyre reserva-se o direito de alterar ou atualizar esta Política de Reembolso a qualquer momento. As versões atualizadas serão publicadas no website e entrarão em vigor a partir da sua publicação."
+          }
+        ]
+      },
+      {
+        "id": "contact-us",
+        "title": "8. Contacte-nos",
+        "blocks": [
+          {
+            "type": "contact",
+            "intro": "Para questões relacionadas com faturação, pagamentos ou reembolsos, contacte-nos através de:",
+            "emailLabel": "Email:",
+            "email": "support@letshyre.ai",
+            "team": "Equipa de Suporte da LetsHyre"
+          }
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "title": "Política de reembolso | letshyre.ai",
+    "description": "Quando os créditos e subscrições da LetsHyre dão direito a reembolso, os prazos aplicáveis e como pedir.",
+    "name": "Política de Reembolso",
+    "schemaDescription": "Elegibilidade e processo de reembolso para compras na LetsHyre.",
+    "crumb": "Política de Reembolso"
+  }
+}

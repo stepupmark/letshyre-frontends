@@ -1,0 +1,202 @@
+{
+  "errors": {
+    "aadhaarExists": "Nomor Aadhaar ini sudah terdaftar dengan profil lain.",
+    "validationFailed": "Beberapa detail tidak dapat disimpan. Silakan periksa kolom yang ditandai.",
+    "submitFailed": "Pengiriman profil gagal. Silakan coba lagi.",
+    "sessionExpired": "Sesi Anda telah berakhir. Silakan masuk kembali.",
+    "fileTooLarge": "File tersebut terlalu besar untuk diunggah.",
+    "tooManyAttempts": "Terlalu banyak percobaan. Tunggu beberapa menit dan coba lagi.",
+    "network": "Tidak dapat menjangkau server. Periksa koneksi Anda dan coba lagi.",
+    "server": "Terjadi kesalahan di pihak kami. Silakan coba lagi sebentar lagi.",
+    "genericField": "Silakan periksa kembali kolom ini dan coba lagi."
+  },
+  "toast": {
+    "jumpedToStep": "Kami telah membawa Anda kembali ke langkah {{step}} untuk memperbaiki masalah."
+  },
+  "back": "Kembali",
+  "continue": "Lanjutkan",
+  "stepper": {
+    "identity": "Identitas",
+    "photo": "Foto Profil",
+    "jobPreferences": "Preferensi Pekerjaan",
+    "resumeRole": "Resume & Peran",
+    "review": "Tinjau"
+  },
+  "steps": {
+    "progressHeading": "Progres Profil",
+    "illustrationAlt": "Ilustrasi Langkah",
+    "identity": {
+      "title": "Verifikasi Identitas Anda",
+      "description": "Konfirmasi identitas Anda untuk memastikan proses wawancara yang aman dan terpercaya."
+    },
+    "photo": {
+      "title": "Foto Profil",
+      "description": "Unggah foto yang jelas dan profesional untuk profil Anda."
+    },
+    "jobPreferences": {
+      "title": "Preferensi Pekerjaan",
+      "description": "Berikan detail perusahaan, ekspektasi gaji, dan preferensi Anda."
+    },
+    "resume": {
+      "title": "Unggah Resume & Peran",
+      "description": "Unggah resume, dapatkan saran peran dari AI, dan pilih peran Anda."
+    }
+  },
+  "photo": {
+    "heading": "Tambahkan Foto Anda",
+    "subtitle": "Pilih salah satu cara di bawah ini untuk mengunggah foto profil Anda.",
+    "uploadTitle": "Unggah Foto",
+    "uploadHint": "PNG, JPG hingga 10MB",
+    "selfieTitle": "Ambil Swafoto",
+    "selfieHint": "Gunakan kamera Anda",
+    "cancel": "Batal",
+    "capture": "Ambil Foto",
+    "previewAlt": "Pratinjau Profil",
+    "changePhoto": "Ganti Foto",
+    "cameraUnavailable": "Kamera tidak tersedia",
+    "invalidImage": "Unggah gambar yang valid",
+    "maxSize": "Maks 10MB",
+    "required": "Silakan unggah foto profil untuk melanjutkan"
+  },
+  "jobPreferences": {
+    "mandatoryDocumentsLabel": "Unggah Dokumen Wajib",
+    "companyDetails": {
+      "companyLabel": "Perusahaan Saat Ini / Terakhir *",
+      "companyPlaceholder": "mis. Google, Microsoft",
+      "companyRequired": "Nama perusahaan wajib diisi",
+      "lastDayLabel": "Hari Kerja Terakhir *",
+      "lastDayRequired": "Hari kerja terakhir wajib diisi",
+      "currentCtcLabel": "CTC Saat Ini (LPA) *",
+      "currentCtcPlaceholder": "mis. 12.5",
+      "currentCtcRequired": "CTC saat ini wajib diisi",
+      "expectedCtcLabel": "CTC yang Diharapkan (LPA) *",
+      "expectedCtcPlaceholder": "mis. 18.0",
+      "expectedCtcRequired": "CTC yang diharapkan wajib diisi",
+      "expectedCtcTooLow": "CTC yang diharapkan tidak boleh lebih rendah dari CTC saat ini"
+    },
+    "industry": {
+      "label": "Industri yang Diminati *",
+      "placeholder": "Cari atau ketik industri Anda",
+      "loading": "Memuat daftar industri...",
+      "noResults": "Tidak ada industri yang ditemukan",
+      "required": "Silakan pilih industri yang valid dari daftar"
+    },
+    "locations": {
+      "label": "Lokasi yang Diminati *",
+      "placeholder": "mis. Hyderabad, Bangalore, Pune (dipisahkan koma)",
+      "required": "Setidaknya satu lokasi yang diminati wajib diisi"
+    },
+    "documents": {
+      "resignation": {
+        "title": "Surat Pengunduran Diri",
+        "description": "Penerimaan pengunduran diri resmi atau email.",
+        "required": "Surat Pengunduran Diri wajib diunggah."
+      },
+      "experience": {
+        "title": "Surat Pengalaman Kerja",
+        "description": "Surat pengalaman atau surat pembebasan tugas dari perusahaan sebelumnya.",
+        "required": "Surat Pengalaman Kerja wajib diunggah."
+      },
+      "noticeProof": {
+        "title": "Bukti Masa Pemberitahuan",
+        "description": "Pilih jenis bukti yang Anda miliki, lalu unggah dokumen yang sesuai.",
+        "tooltip": "Jika sedang menjalani masa pemberitahuan, unggah tawaran kerja baru Anda. Jika sudah dibebastugaskan, unggah surat pembebasan tugas Anda.",
+        "typeLabel": "Pilih Jenis Bukti *",
+        "typePlaceholder": "Pilih Jenis Bukti",
+        "required": "Jenis bukti masa pemberitahuan wajib diisi",
+        "fileRequired": "File Bukti Masa Pemberitahuan wajib diunggah.",
+        "uploadProof": "Unggah Bukti"
+      },
+      "presentOffer": {
+        "title": "Surat Tawaran Kerja Saat Ini",
+        "description": "Punya tawaran kerja yang sudah ada? Unggah di sini."
+      },
+      "optionalLabel": "Dokumen Opsional",
+      "upload": "Unggah",
+      "uploadLabel": "Unggah",
+      "viewFile": "Lihat File",
+      "replaceFile": "Ganti File",
+      "removeFile": "Hapus File",
+      "clear": "Hapus",
+      "errors": {
+        "invalidFormat": "Hanya file PDF/DOC/DOCX yang diizinkan",
+        "maxSize": "Ukuran file harus kurang dari 5MB"
+      }
+    }
+  },
+  "identity": {
+    "genderLabel": "Jenis Kelamin *",
+    "genderPlaceholder": "Pilih Jenis Kelamin",
+    "genderRequired": "Jenis kelamin wajib diisi",
+    "genderOptions": {
+      "male": "Laki-laki",
+      "female": "Perempuan",
+      "other": "Lainnya"
+    },
+    "dobLabel": "Tanggal Lahir *",
+    "dobRequired": "Tanggal lahir wajib diisi",
+    "dobMinAge": "Usia minimal harus 18 tahun",
+    "locationLabel": "Lokasi *",
+    "locationPlaceholder": "mis. Mumbai, India",
+    "locationRequired": "Lokasi wajib diisi",
+    "aadhaarLabel": "Nomor Aadhaar *",
+    "aadhaarPlaceholder": "XXXX-XXXX-XXXX",
+    "aadhaarRequired": "Aadhaar wajib diisi",
+    "aadhaarInvalid": "Nomor Aadhaar tidak valid",
+    "addressLabel": "Alamat Lengkap *",
+    "addressPlaceholder": "Masukkan alamat tempat tinggal lengkap Anda...",
+    "addressRequired": "Alamat wajib diisi",
+    "addressMinLength": "Alamat harus terdiri dari minimal 10 karakter"
+  },
+  "resume": {
+    "uploadHeading": "Unggah Resume Anda",
+    "uploadSub": "AI kami akan secara otomatis mengekstrak detail Anda dan menyarankan peran.",
+    "selectFile": "Pilih File",
+    "changeFile": "Ganti File",
+    "fileTypeInvalid": "Hanya file PDF / DOC / DOCX yang diizinkan",
+    "noRolesDetected": "Tidak ada peran yang terdeteksi secara otomatis. Silakan tambahkan peran khusus.",
+    "noRolesDetectedBanner": "Tidak ada peran yang terdeteksi secara otomatis. Silakan tambahkan peran khusus di bawah ini.",
+    "clarifyRole": "Silakan pilih peran yang lebih spesifik dari daftar, atau lanjutkan mengetik.",
+    "customRoleRequired": "Silakan masukkan peran khusus.",
+    "customRoleReasonRequired": "Silakan berikan alasan pemilihan peran khusus.",
+    "refinedRoleSuggestions": "Saran Peran yang Disempurnakan",
+    "selectYourRole": "Pilih Peran Anda",
+    "roleSuggestionSub": "Berdasarkan resume Anda, AI kami menyarankan peran-peran ini. Pilih salah satu untuk melanjutkan.",
+    "otherRole": "+ Peran Lainnya",
+    "customRoleLabel": "Masukkan Peran Khusus *",
+    "customRolePlaceholder": "mis. Frontend Developer",
+    "suggestedSpecificRoles": "Peran Spesifik yang Disarankan:",
+    "customRoleReasonLabel": "Alasan memilih peran lain *",
+    "customRoleReasonPlaceholder": "Mengapa peran khusus ini lebih cocok untuk Anda?",
+    "suggestedSkillsFor": "Keahlian yang Disarankan untuk {{role}}",
+    "noJobId": "Tidak ada ID pekerjaan yang diterima dari unggahan.",
+    "aiTimeout": "AI membutuhkan waktu terlalu lama. Silakan coba lagi.",
+    "processingFailed": "Kami tidak dapat memproses resume Anda secara otomatis. Silakan coba lagi.",
+    "roleValidationFailed": "Validasi peran gagal. Silakan coba lagi."
+  },
+  "review": {
+    "candidateFallback": "Kandidat",
+    "candidateAlt": "Kandidat",
+    "aadhaarVerified": "Aadhaar Terverifikasi",
+    "jobPreferencesHeading": "Preferensi Pekerjaan",
+    "currentCompany": "Perusahaan Saat Ini",
+    "lastWorkingDay": "Hari Kerja Terakhir",
+    "currentCtc": "CTC Saat Ini",
+    "expectedCtc": "CTC yang Diharapkan",
+    "ctcValue": "{{value}} LPA",
+    "industry": "Industri",
+    "locations": "Lokasi",
+    "selectedRoles": "Peran yang Dipilih",
+    "topSkills": "Keahlian Utama yang Diekstrak",
+    "noSkills": "Tidak ada keahlian spesifik yang diekstrak.",
+    "experienceHeading": "Pengalaman",
+    "noExperience": "Tidak ada data pengalaman yang ditemukan.",
+    "educationHeading": "Pendidikan",
+    "noEducation": "Tidak ada data pendidikan yang ditemukan.",
+    "notAvailable": "T/A",
+    "submitting": "Mengirim profil...",
+    "pleaseWait": "Mohon tunggu sebentar.",
+    "backToEdit": "Kembali untuk Mengedit",
+    "confirmSubmit": "Konfirmasi & Kirim"
+  }
+}

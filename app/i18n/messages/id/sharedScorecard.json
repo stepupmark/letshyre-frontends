@@ -1,0 +1,130 @@
+{
+  "provenance": {
+    "sharedBy": "Dibagikan oleh {{company}}",
+    "confidential": "Rahasia — dibagikan secara pribadi"
+  },
+  "header": {
+    "unnamed": "Kandidat",
+    "fresher": "Fresh Graduate",
+    "experience_one": "{{count}} tahun pengalaman",
+    "experience_other": "{{count}} tahun pengalaman",
+    "matchedTo": "Cocok dengan {{job}}"
+  },
+  "overview": {
+    "overallScore": "Performa Keseluruhan",
+    "basedOn_one": "Berdasarkan {{count}} pertanyaan wawancara",
+    "basedOn_other": "Berdasarkan {{count}} pertanyaan wawancara"
+  },
+  "aiMatch": {
+    "heading": "Kecocokan AI dengan Pekerjaan",
+    "overall": "Kecocokan Keseluruhan",
+    "role": "Kecocokan Peran",
+    "skills": "Kecocokan Keterampilan"
+  },
+  "metrics": {
+    "heading": "Metrik Komunikasi",
+    "clarity": "Kejelasan",
+    "relevance": "Relevansi",
+    "confidence": "Kepercayaan Diri",
+    "depth": "Kedalaman Pemikiran",
+    "keyConcept": "Cakupan Konsep Kunci"
+  },
+  "sections": {
+    "heading": "Performa berdasarkan Jenis Pertanyaan",
+    "correctOf": "{{correct}} dari {{count}} benar",
+    "types": {
+      "mcq": "Pilihan Ganda",
+      "pseudocode_mcq": "Pilihan Ganda Pseudocode",
+      "coding": "Pemrograman",
+      "typing": "Mengetik",
+      "audio": "Audio"
+    }
+  },
+  "insights": {
+    "heading": "Wawasan Wawancara",
+    "strengths": "Kekuatan",
+    "areasForImprovement": "Area yang Perlu Ditingkatkan",
+    "recommendations": "Rekomendasi"
+  },
+  "interview": {
+    "heading": "Rekaman Wawancara",
+    "unsupported": "Browser Anda tidak mendukung elemen video."
+  },
+  "profile": {
+    "heading": "Profil Kandidat",
+    "sections": {
+      "skills": "Keterampilan",
+      "experience": "Pengalaman",
+      "education": "Pendidikan",
+      "projects": "Proyek",
+      "certifications": "Sertifikasi",
+      "accomplishments": "Pencapaian",
+      "portfolio": "Tautan Portofolio",
+      "resume": "Resume"
+    },
+    "empty": {
+      "skills": "Tidak ada keterampilan yang tercantum.",
+      "education": "Tidak ada riwayat pendidikan yang tercantum.",
+      "experience": "Tidak ada pengalaman kerja yang tercantum.",
+      "projects": "Tidak ada proyek yang tercantum.",
+      "certifications": "Tidak ada sertifikasi yang tercantum.",
+      "accomplishments": "Tidak ada pencapaian yang tercantum.",
+      "portfolio": "Tidak ada tautan portofolio yang dibagikan.",
+      "resume": "Tidak ada resume yang tersedia."
+    },
+    "untitledProject": "Proyek Tanpa Judul",
+    "certificationFallback": "Sertifikasi",
+    "accomplishmentFallback": "Pencapaian",
+    "viewResume": "Lihat Resume"
+  },
+  "questions": {
+    "heading": "Pertanyaan & Jawaban Wawancara",
+    "empty": "Tidak ada pertanyaan yang ditemukan untuk wawancara ini.",
+    "expandAll": "Perluas semua",
+    "collapseAll": "Ciutkan semua",
+    "candidateAnswer": "Jawaban Kandidat",
+    "noQuestionText": "Tidak ada teks pertanyaan yang tersedia.",
+    "noCode": "Tidak ada kode yang diberikan.",
+    "noAudio": "Tidak ada rekaman jawaban audio.",
+    "audioUnsupported": "Browser Anda tidak mendukung elemen audio.",
+    "noAnswer": "Tidak ada jawaban yang diberikan.",
+    "types": {
+      "mcq": "Pilihan Ganda",
+      "mcq_pseudocode": "Pilihan Ganda Pseudocode",
+      "pseudocode_mcq": "Pilihan Ganda Pseudocode",
+      "coding": "Pemrograman",
+      "typing": "Mengetik",
+      "audio": "Audio",
+      "default": "Pertanyaan"
+    }
+  },
+  "toc": {
+    "label": "Bagian laporan",
+    "overview": "Ikhtisar",
+    "aiMatch": "Kecocokan AI dengan Pekerjaan",
+    "communication": "Komunikasi",
+    "sections": "Performa",
+    "insights": "Wawasan",
+    "profile": "Profil",
+    "questions": "Pertanyaan & Jawaban"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "Tautan Tidak Ditemukan",
+      "description": "Tautan scorecard yang dibagikan ini tidak valid atau tidak lagi ada. Harap periksa URL atau minta tautan baru dari pengirim."
+    },
+    "expired": {
+      "title": "Tautan Kedaluwarsa",
+      "description": "Tautan scorecard yang dibagikan ini telah kedaluwarsa. Harap minta tautan baru dari pengirim."
+    },
+    "limit": {
+      "title": "Batas Tampilan Tercapai",
+      "description": "Tautan scorecard yang dibagikan ini telah mencapai jumlah maksimum tampilan. Harap minta tautan baru dari pengirim."
+    },
+    "unavailable": {
+      "title": "Terjadi Kesalahan",
+      "description": "Kami tidak dapat memuat scorecard ini saat ini. Silakan coba lagi sebentar lagi."
+    },
+    "retry": "Coba Lagi"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "title": "애플리케이션 다운로드",
+  "subtitle": "안정적이고 방해받지 않는 인터뷰를 위해 보안 데스크톱 앱을 다운로드하세요.",
+  "features": {
+    "distractionFree": "방해 요소 없음",
+    "stable": "높은 안정성",
+    "secure": "안전한 작업 환경"
+  },
+  "loading": "릴리스를 불러오는 중...",
+  "comingSoon": "출시 예정",
+  "retry": "다시 시도",
+  "downloadFor": "{{os}}용 다운로드",
+  "steps": {
+    "download": "다운로드",
+    "install": "설치",
+    "interview": "인터뷰"
+  },
+  "support": "문제가 있으신가요? 설치 가이드 보기",
+  "meta": {
+    "title": "데스크톱 앱 다운로드 | letshyre.ai",
+    "description": "Windows용 LetsHyre 데스크톱 앱을 받아 안정적이고 방해 없는 감독 환경에서 면접에 참여하세요.",
+    "name": "LetsHyre 데스크톱 앱 다운로드",
+    "schemaDescription": "Windows용 LetsHyre 데스크톱 앱을 받으세요.",
+    "crumb": "다운로드"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Scarica l'Applicazione",
+  "subtitle": "Ottieni l'app desktop sicura per iniziare una sessione di colloquio stabile e senza distrazioni.",
+  "features": {
+    "distractionFree": "Senza distrazioni",
+    "stable": "Altamente stabile",
+    "secure": "Spazio di lavoro sicuro"
+  },
+  "loading": "Caricamento versioni in corso...",
+  "comingSoon": "Prossimamente",
+  "retry": "Riprova",
+  "downloadFor": "Scarica per {{os}}",
+  "steps": {
+    "download": "Scarica",
+    "install": "Installa",
+    "interview": "Colloquio"
+  },
+  "support": "Problemi? Consulta la guida all'installazione",
+  "meta": {
+    "title": "Scarica l'app desktop | letshyre.ai",
+    "description": "Scarica l'app desktop LetsHyre per Windows e sostieni il colloquio in un ambiente stabile, senza distrazioni e supervisionato.",
+    "name": "Scarica l'App Desktop LetsHyre",
+    "schemaDescription": "Ottieni l'app desktop LetsHyre per Windows.",
+    "crumb": "Download"
+  }
+}

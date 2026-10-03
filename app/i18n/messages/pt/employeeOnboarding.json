@@ -1,0 +1,202 @@
+{
+  "errors": {
+    "aadhaarExists": "Este número de Aadhaar já está registado noutro perfil.",
+    "validationFailed": "Alguns dados não puderam ser guardados. Verifique os campos assinalados.",
+    "submitFailed": "Não foi possível submeter o perfil. Tente novamente.",
+    "sessionExpired": "A sua sessão expirou. Inicie sessão novamente.",
+    "fileTooLarge": "Esse ficheiro é demasiado grande para ser carregado.",
+    "tooManyAttempts": "Muitas tentativas. Aguarde alguns minutos e tente novamente.",
+    "network": "Não foi possível contactar o servidor. Verifique a sua ligação e tente novamente.",
+    "server": "Ocorreu um erro do nosso lado. Tente novamente dentro de momentos.",
+    "genericField": "Reveja este campo e tente novamente."
+  },
+  "toast": {
+    "jumpedToStep": "Levámo-lo de volta ao passo {{step}} para corrigir um problema."
+  },
+  "back": "Voltar",
+  "continue": "Continuar",
+  "stepper": {
+    "identity": "Identidade",
+    "photo": "Foto de Perfil",
+    "jobPreferences": "Preferências de Emprego",
+    "resumeRole": "Currículo & Função",
+    "review": "Rever"
+  },
+  "steps": {
+    "progressHeading": "Progresso do Perfil",
+    "illustrationAlt": "Ilustração do Passo",
+    "identity": {
+      "title": "Verifique a Sua Identidade",
+      "description": "Confirme a sua identidade para garantir um processo de entrevista seguro e fiável."
+    },
+    "photo": {
+      "title": "Foto de Perfil",
+      "description": "Carregue uma foto nítida e profissional para o seu perfil."
+    },
+    "jobPreferences": {
+      "title": "Preferências de Emprego",
+      "description": "Indique os dados da empresa, expectativas salariais e preferências."
+    },
+    "resume": {
+      "title": "Carregar Currículo & Função",
+      "description": "Carregue o currículo, receba sugestões de funções da IA e escolha a sua função."
+    }
+  },
+  "photo": {
+    "heading": "Adicione a Sua Foto",
+    "subtitle": "Escolha abaixo um método para carregar a sua fotografia de perfil.",
+    "uploadTitle": "Carregar Foto",
+    "uploadHint": "PNG, JPG até 10MB",
+    "selfieTitle": "Tirar uma Selfie",
+    "selfieHint": "Utilize a sua câmara",
+    "cancel": "Cancelar",
+    "capture": "Capturar Foto",
+    "previewAlt": "Pré-visualização do Perfil",
+    "changePhoto": "Alterar Foto",
+    "cameraUnavailable": "Câmara indisponível",
+    "invalidImage": "Carregue uma imagem válida",
+    "maxSize": "Máx. 10MB",
+    "required": "Carregue uma foto de perfil para continuar"
+  },
+  "jobPreferences": {
+    "mandatoryDocumentsLabel": "Carregar Documentos Obrigatórios",
+    "companyDetails": {
+      "companyLabel": "Empresa Atual / Anterior *",
+      "companyPlaceholder": "ex. Google, Microsoft",
+      "companyRequired": "O nome da empresa é obrigatório",
+      "lastDayLabel": "Último Dia de Trabalho *",
+      "lastDayRequired": "O último dia de trabalho é obrigatório",
+      "currentCtcLabel": "CTC Atual (LPA) *",
+      "currentCtcPlaceholder": "ex. 12,5",
+      "currentCtcRequired": "O CTC atual é obrigatório",
+      "expectedCtcLabel": "CTC Esperado (LPA) *",
+      "expectedCtcPlaceholder": "ex. 18,0",
+      "expectedCtcRequired": "O CTC esperado é obrigatório",
+      "expectedCtcTooLow": "O CTC esperado não pode ser inferior ao CTC atual"
+    },
+    "industry": {
+      "label": "Setor Preferido *",
+      "placeholder": "Pesquise ou escreva o seu setor",
+      "loading": "A carregar setores...",
+      "noResults": "Nenhum setor encontrado",
+      "required": "Selecione um setor válido na lista"
+    },
+    "locations": {
+      "label": "Localizações Preferidas *",
+      "placeholder": "ex. Hyderabad, Bangalore, Pune (separadas por vírgulas)",
+      "required": "É necessária pelo menos uma localização preferida"
+    },
+    "documents": {
+      "resignation": {
+        "title": "Carta de Demissão",
+        "description": "Aceitação oficial da demissão ou email correspondente.",
+        "required": "A Carta de Demissão é obrigatória."
+      },
+      "experience": {
+        "title": "Carta de Experiência",
+        "description": "Carta de experiência ou de exoneração da empresa anterior.",
+        "required": "A Carta de Experiência é obrigatória."
+      },
+      "noticeProof": {
+        "title": "Comprovativo do Período de Aviso Prévio",
+        "description": "Selecione o tipo de comprovativo que possui e depois carregue o documento correspondente.",
+        "tooltip": "Se ainda está a cumprir o aviso prévio, carregue a sua nova proposta de emprego. Se já foi exonerado, carregue a sua carta de exoneração.",
+        "typeLabel": "Selecione o Tipo de Comprovativo *",
+        "typePlaceholder": "Selecione o Tipo de Comprovativo",
+        "required": "O tipo de comprovativo do aviso prévio é obrigatório",
+        "fileRequired": "O ficheiro do comprovativo do período de aviso prévio é obrigatório.",
+        "uploadProof": "Carregar Comprovativo"
+      },
+      "presentOffer": {
+        "title": "Carta de Oferta Atual",
+        "description": "Tem alguma proposta existente? Carregue-a aqui."
+      },
+      "optionalLabel": "Documentos Opcionais",
+      "upload": "Carregar",
+      "uploadLabel": "Carregar",
+      "viewFile": "Ver Ficheiro",
+      "replaceFile": "Substituir Ficheiro",
+      "removeFile": "Remover Ficheiro",
+      "clear": "Limpar",
+      "errors": {
+        "invalidFormat": "Apenas são permitidos ficheiros PDF/DOC/DOCX",
+        "maxSize": "O tamanho do ficheiro deve ser inferior a 5MB"
+      }
+    }
+  },
+  "identity": {
+    "genderLabel": "Género *",
+    "genderPlaceholder": "Selecione o Género",
+    "genderRequired": "O género é obrigatório",
+    "genderOptions": {
+      "male": "Masculino",
+      "female": "Feminino",
+      "other": "Outro"
+    },
+    "dobLabel": "Data de Nascimento *",
+    "dobRequired": "A data de nascimento é obrigatória",
+    "dobMinAge": "Deve ter pelo menos 18 anos",
+    "locationLabel": "Localização *",
+    "locationPlaceholder": "ex. Mumbai, Índia",
+    "locationRequired": "A localização é obrigatória",
+    "aadhaarLabel": "Número de Aadhaar *",
+    "aadhaarPlaceholder": "XXXX-XXXX-XXXX",
+    "aadhaarRequired": "O Aadhaar é obrigatório",
+    "aadhaarInvalid": "Número de Aadhaar inválido",
+    "addressLabel": "Morada Completa *",
+    "addressPlaceholder": "Introduza a sua morada residencial completa...",
+    "addressRequired": "A morada é obrigatória",
+    "addressMinLength": "A morada deve ter pelo menos 10 carateres"
+  },
+  "resume": {
+    "uploadHeading": "Carregue o Seu Currículo",
+    "uploadSub": "A nossa IA extrai automaticamente os seus dados e sugere funções.",
+    "selectFile": "Selecionar Ficheiro",
+    "changeFile": "Alterar Ficheiro",
+    "fileTypeInvalid": "Apenas são permitidos ficheiros PDF/DOC/DOCX",
+    "noRolesDetected": "Nenhuma função foi detetada automaticamente. Adicione uma função personalizada.",
+    "noRolesDetectedBanner": "Nenhuma função foi detetada automaticamente. Adicione uma função personalizada abaixo.",
+    "clarifyRole": "Escolha uma função mais específica na lista, ou continue a escrever.",
+    "customRoleRequired": "Introduza uma função personalizada.",
+    "customRoleReasonRequired": "Indique um motivo para selecionar uma função personalizada.",
+    "refinedRoleSuggestions": "Sugestões de Funções Refinadas",
+    "selectYourRole": "Selecione a Sua Função",
+    "roleSuggestionSub": "Com base no seu currículo, a nossa IA sugere estas funções. Selecione uma para continuar.",
+    "otherRole": "+ Outra Função",
+    "customRoleLabel": "Introduza uma Função Personalizada *",
+    "customRolePlaceholder": "ex. Frontend Developer",
+    "suggestedSpecificRoles": "Funções Específicas Sugeridas:",
+    "customRoleReasonLabel": "Motivo para selecionar outra função *",
+    "customRoleReasonPlaceholder": "Porque é que esta função personalizada é mais adequada para si?",
+    "suggestedSkillsFor": "Competências Sugeridas para {{role}}",
+    "noJobId": "Nenhum ID de tarefa recebido do carregamento.",
+    "aiTimeout": "A IA está a demorar demasiado tempo. Tente novamente.",
+    "processingFailed": "Não conseguimos processar o seu currículo automaticamente. Tente novamente.",
+    "roleValidationFailed": "A validação da função falhou. Tente novamente."
+  },
+  "review": {
+    "candidateFallback": "Candidato",
+    "candidateAlt": "Candidato",
+    "aadhaarVerified": "Aadhaar Verificado",
+    "jobPreferencesHeading": "Preferências de Emprego",
+    "currentCompany": "Empresa Atual",
+    "lastWorkingDay": "Último Dia de Trabalho",
+    "currentCtc": "CTC Atual",
+    "expectedCtc": "CTC Esperado",
+    "ctcValue": "{{value}} LPA",
+    "industry": "Setor",
+    "locations": "Localizações",
+    "selectedRoles": "Funções Selecionadas",
+    "topSkills": "Principais Competências Extraídas",
+    "noSkills": "Nenhuma competência específica extraída.",
+    "experienceHeading": "Experiência",
+    "noExperience": "Não foram encontrados dados de experiência.",
+    "educationHeading": "Formação",
+    "noEducation": "Não foram encontrados dados de formação.",
+    "notAvailable": "N/D",
+    "submitting": "A submeter o perfil...",
+    "pleaseWait": "Aguarde um momento.",
+    "backToEdit": "Voltar a Editar",
+    "confirmSubmit": "Confirmar & Submeter"
+  }
+}

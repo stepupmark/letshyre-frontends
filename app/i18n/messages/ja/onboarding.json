@@ -1,0 +1,93 @@
+{
+  "step1": {
+    "heading": "まずはあなたについて教えてください"
+  },
+  "step2": {
+    "badge": "ご登録ありがとうございます",
+    "titlePrefix": "あなたの",
+    "titleHighlight": "アカウントの準備が整いました！",
+    "body": "事前審査済みの候補者を発見し、透明性のあるスコアカードを確認して、数クリックで最適な人材を解除しましょう。",
+    "features": {
+      "candidates": "AI審査済み候補者",
+      "scorecards": "透明性のあるスコアカード",
+      "unlock": "解除して接続"
+    },
+    "watchWalkthrough": "クイックウォークスルーを見る（30秒）",
+    "skip": "後でスキップ"
+  },
+  "form": {
+    "progress": {
+      "step1Label": "会社詳細",
+      "step2Label": "法的書類"
+    },
+    "fields": {
+      "companyName": "会社名",
+      "companyWebsite": "会社ウェブサイト",
+      "officialEmail": "公式メール",
+      "registrationNumber": "登録番号",
+      "registrationNumberTooltip": "例：U72900TG2024PTC123456",
+      "panNumber": "PAN番号",
+      "gstNumber": "GST番号",
+      "companyAddress": "会社住所",
+      "selectIndustry": "業種を選択",
+      "linkedinUrl": "LinkedIn URL",
+      "linkedinUrlTooltip": "例：https://linkedin.com/company/example",
+      "companyDescription": "会社概要",
+      "descriptionCount": "{{count}} / 500"
+    },
+    "draftSaved": "下書きを保存しました ✓",
+    "next": "次へ",
+    "back": "戻る",
+    "uploadHeading": "書類をアップロード（各最大5MB）",
+    "uploadSubheading": "必要な書類はすべて、鮮明で読み取り可能なコピーをアップロードしてください。",
+    "documents": {
+      "companyLogo": "会社ロゴ",
+      "companyLogoTooltip": "正方形の画像を推奨（PNG/JPG）",
+      "registrationCertificate": "登録証明書",
+      "registrationCertificateTooltip": "法人設立証明書",
+      "gstCertificate": "GST証明書",
+      "gstCertificateTooltip": "有効なGST登録書類",
+      "addressProof": "住所証明",
+      "addressProofTooltip": "公共料金の請求書または賃貸契約書"
+    },
+    "upload": {
+      "uploadedSuccess": "アップロードが完了しました • {{size}}",
+      "selectFile": "ファイルを選択",
+      "viewFile": "ファイルを表示",
+      "removeFile": "ファイルを削除",
+      "replaceFile": "ファイルを差し替え",
+      "previewAlt": "アップロードしたファイルのプレビュー",
+      "rulesImage": "JPG・PNG・WEBP、5MBまで",
+      "rulesDocument": "PDF・DOC・DOCX、5MBまで",
+      "dropHint": "またはここにファイルをドロップ",
+      "progress": "{{total}}件中{{count}}件アップロード済み"
+    },
+    "processing": "処理中...",
+    "submit": "送信して完了",
+    "successTitle": "送信が完了しました！",
+    "successBody": "ダッシュボードを読み込んでいます...",
+    "previewAlt": "拡大プレビュー",
+    "closePreview": "プレビューを閉じる",
+    "toasts": {
+      "submitFailed": "KYCの送信に失敗しました。もう一度お試しください。"
+    },
+    "validation": {
+      "companyNameMin": "会社名は2文字以上で入力してください",
+      "companyWebsiteUrl": "有効なURLを入力してください（例：https://example.com）",
+      "linkedinUrlInvalid": "有効なURLを入力してください（例：https://linkedin.com）",
+      "linkedinUrlRequired": "LinkedIn URLは必須です",
+      "linkedinUrlDomain": "linkedin.com のURLを入力してください",
+      "companyDescriptionMin": "簡単な説明を入力してください",
+      "companyIndustryRequired": "業種を選択してください",
+      "registrationNumberRequired": "登録番号は必須です",
+      "gstNumberRequired": "有効なGST番号が必要です",
+      "panNumberRequired": "有効なPAN番号が必要です",
+      "companyAddressRequired": "会社の完全な住所は必須です",
+      "officialEmailInvalid": "有効な公式メールアドレスが必要です",
+      "fileRequired": "ファイルは必須です",
+      "fileMaxSize": "ファイルサイズの上限は5MBです。",
+      "imageFormat": ".jpg、.jpeg、.png、.webp形式のみサポートされています。",
+      "documentFormat": ".pdf、.doc、.docx形式のみサポートされています。"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Descargar aplicación",
+  "subtitle": "Obtén la aplicación de escritorio segura para iniciar tu sesión de entrevista estable y sin distracciones.",
+  "features": {
+    "distractionFree": "Sin distracciones",
+    "stable": "Altamente estable",
+    "secure": "Espacio de trabajo seguro"
+  },
+  "loading": "Cargando versiones...",
+  "comingSoon": "Próximamente",
+  "retry": "Reintentar",
+  "downloadFor": "Descargar para {{os}}",
+  "steps": {
+    "download": "Descargar",
+    "install": "Instalar",
+    "interview": "Entrevistar"
+  },
+  "support": "¿Tienes problemas? Ver guía de instalación",
+  "meta": {
+    "title": "Descargar la aplicación de escritorio | letshyre.ai",
+    "description": "Consigue la aplicación de escritorio de LetsHyre para Windows y haz tu entrevista en un entorno estable y supervisado.",
+    "name": "Descargar la aplicación de escritorio LetsHyre",
+    "schemaDescription": "Obtén la aplicación de escritorio LetsHyre para Windows.",
+    "crumb": "Descargar"
+  }
+}

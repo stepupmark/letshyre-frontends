@@ -1,0 +1,170 @@
+{
+  "refund": {
+    "title": "Rückerstattungsrichtlinie",
+    "intro": "Willkommen bei LetsHyre. Diese Rückerstattungsrichtlinie erläutert die Bedingungen, unter denen Rückerstattungen für Zahlungen auf der LetsHyre-Plattform gewährt werden können.",
+    "sections": [
+      {
+        "id": "service-model",
+        "title": "1. Servicemodell",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre arbeitet nach einem Pay-per-Unlock-Modell für die Personalgewinnung. Arbeitgeber können einmalige Zahlungen leisten, um Folgendes freizuschalten:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Kandidatenprofile",
+              "Interview-Auswertungsbögen",
+              "Interviewaufzeichnungen",
+              "Kontaktinformationen der Kandidaten"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Jeder Freischaltungskauf gewährt Zugriff auf die Profilinformationen, Interview-Auswertungsbögen, Interviewaufzeichnungen und Kontaktdaten des ausgewählten Kandidaten, vorbehaltlich der Verfügbarkeit auf der Plattform."
+          },
+          {
+            "type": "p",
+            "text": "Freischaltungskäufe sind einmalige Transaktionen und stellen kein Abonnement oder wiederkehrenden Dienst dar."
+          }
+        ]
+      },
+      {
+        "id": "refund-eligibility",
+        "title": "2. Anspruch auf Rückerstattung",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Rückerstattungsanfragen können nur in den folgenden Fällen berücksichtigt werden:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Doppelte Zahlungen für dieselbe Kandidatenfreischaltung.",
+              "Fehlerhafte Abrechnung aufgrund eines technischen Fehlers auf der LetsHyre-Plattform.",
+              "Erfolgreiche Zahlung, bei der der Zugriff auf die erworbenen Kandidateninformationen aufgrund eines Plattformproblems nicht gewährt wurde.",
+              "Unautorisierte Transaktionen, die durch eine Untersuchung bestätigt wurden."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Alle Rückerstattungsanfragen müssen innerhalb von 7 Tagen nach dem Transaktionsdatum eingereicht werden."
+          }
+        ]
+      },
+      {
+        "id": "non-refundable-purchases",
+        "title": "3. Nicht erstattungsfähige Käufe",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "In den folgenden Situationen werden in der Regel keine Rückerstattungen gewährt:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Kandidatenprofile, die erfolgreich freigeschaltet wurden.",
+              "Interview-Auswertungsbögen oder Interviewaufzeichnungen, auf die erfolgreich zugegriffen wurde.",
+              "Kontaktinformationen von Kandidaten, die erfolgreich offengelegt wurden.",
+              "Unzufriedenheit des Arbeitgebers mit den Qualifikationen, Fähigkeiten, der Erfahrung, den Kommunikationsfähigkeiten oder der Eignung eines Kandidaten für eine Rolle.",
+              "Nichterreichen oder Nichteinstellen eines Kandidaten nach Freischaltung seines Profils.",
+              "Nichterreichbarkeit des Kandidaten nach Profilfreischaltung.",
+              "Änderungen der Einstellungsanforderungen, nachdem ein Kandidat freigeschaltet wurde.",
+              "Einstellungsergebnisse oder Recruiting-Ergebnisse."
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Sobald Kandidateninformationen erfolgreich freigeschaltet und dem Arbeitgeber zur Verfügung gestellt wurden, gilt die Transaktion als abgeschlossen."
+          }
+        ]
+      },
+      {
+        "id": "refund-review-process",
+        "title": "4. Prüfverfahren für Rückerstattungen",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Berechtigte Rückerstattungsanfragen werden von LetsHyre innerhalb von 7–14 Werktagen geprüft."
+          },
+          {
+            "type": "p",
+            "text": "Zur Überprüfung der Rückerstattungsberechtigung können zusätzliche Informationen angefordert werden."
+          },
+          {
+            "type": "p",
+            "text": "Genehmigte Rückerstattungen werden über die ursprünglich für die Transaktion verwendete Zahlungsmethode abgewickelt. Die Bearbeitungszeiten können je nach Zahlungsanbieter oder Finanzinstitut variieren."
+          }
+        ]
+      },
+      {
+        "id": "fraud-prevention",
+        "title": "5. Betrugsprävention",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre behält sich das Recht vor, Rückerstattungsanfragen abzulehnen, wenn betrügerische Aktivitäten, Missbrauch der Plattform, Verstöße gegen die Allgemeinen Geschäftsbedingungen oder ein Missbrauch des Rückerstattungsverfahrens vermutet werden."
+          },
+          {
+            "type": "p",
+            "text": "Konten, die an betrügerischen Zahlungsaktivitäten beteiligt sind, können gesperrt oder dauerhaft gekündigt werden."
+          }
+        ]
+      },
+      {
+        "id": "chargebacks-and-payment-disputes",
+        "title": "6. Rückbuchungen und Zahlungsstreitigkeiten",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Wenn ein Nutzer über eine Bank, einen Kartenaussteller oder einen Zahlungsanbieter eine Rückbuchung oder Zahlungsstreitigkeit einleitet, behält sich LetsHyre das Recht vor, die Transaktion zu untersuchen und dem Zahlungsabwickler relevante Unterlagen zur Verfügung zu stellen."
+          },
+          {
+            "type": "p",
+            "text": "Betrügerische oder missbräuchliche Rückbuchungsaktivitäten können zur Sperrung oder Kündigung des Kontos führen."
+          }
+        ]
+      },
+      {
+        "id": "changes-to-refund-policy",
+        "title": "7. Änderungen dieser Rückerstattungsrichtlinie",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre behält sich das Recht vor, diese Rückerstattungsrichtlinie jederzeit zu ändern oder zu aktualisieren. Aktualisierte Fassungen werden auf der Website veröffentlicht und treten mit der Veröffentlichung in Kraft."
+          }
+        ]
+      },
+      {
+        "id": "contact-us",
+        "title": "8. Kontakt",
+        "blocks": [
+          {
+            "type": "contact",
+            "intro": "Bei Fragen zu Abrechnung, Zahlung oder Rückerstattung wenden Sie sich bitte an:",
+            "emailLabel": "E-Mail:",
+            "email": "support@letshyre.ai",
+            "team": "LetsHyre Support-Team"
+          }
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "title": "Rückerstattungsrichtlinie | letshyre.ai",
+    "description": "Wann LetsHyre-Credits und -Abos erstattungsfähig sind, welche Fristen gelten und wie Sie einen Antrag stellen.",
+    "name": "Rückerstattungsrichtlinie",
+    "schemaDescription": "Anspruchsvoraussetzungen und Ablauf für Rückerstattungen bei LetsHyre-Käufen.",
+    "crumb": "Rückerstattungsrichtlinie"
+  }
+}

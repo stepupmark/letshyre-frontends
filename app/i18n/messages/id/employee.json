@@ -1,0 +1,183 @@
+{
+  "findJobs": {
+    "welcome": "Selamat datang {{name}}!",
+    "subtitle": "Mulai temukan peluang yang sesuai dengan keterampilan dan ambisi Anda",
+    "searchPlaceholder": "Cari pekerjaan berdasarkan judul...",
+    "filters": "Filter",
+    "searching": "Mencari...",
+    "showing_other": "Menampilkan <b>{{count}}</b> lowongan",
+    "updating": "Memperbarui...",
+    "errorLoad": "Terjadi kesalahan saat memuat lowongan.",
+    "tryAgain": "Coba Lagi",
+    "noJobsTitle": "Tidak ada lowongan ditemukan",
+    "noJobsSubtitle": "Coba sesuaikan pencarian atau filter Anda untuk menemukan lebih banyak peluang.",
+    "bannerAlt": "Banner peluang kerja {{number}}",
+    "slideAria": "Slide {{number}}",
+    "applyFailed": "Gagal melamar. Silakan coba lagi.",
+    "filter": {
+      "location": "Lokasi",
+      "locationPlaceholder": "cth. Hyderabad",
+      "employmentType": "Jenis Pekerjaan",
+      "allTypes": "Semua Jenis",
+      "fullTime": "Penuh Waktu",
+      "partTime": "Paruh Waktu",
+      "internship": "Magang",
+      "contract": "Kontrak",
+      "freelance": "Freelance",
+      "industry": "Industri",
+      "loading": "Memuat...",
+      "allIndustries": "Semua Industri",
+      "salary": "Rentang Gaji",
+      "salaryPlaceholder": "cth. 3-10",
+      "experience": "Pengalaman",
+      "experiencePlaceholder": "cth. 2-5",
+      "clearAll": "Hapus Semua",
+      "done": "Selesai",
+      "clear": "Hapus filter"
+    },
+    "card": {
+      "company": "Perusahaan",
+      "untitled": "Tanpa Judul",
+      "today": "Hari ini",
+      "daysAgo_other": "{{count}} hari yang lalu",
+      "posted": "Diposting {{when}}",
+      "view": "Lihat",
+      "viewDetails": "Lihat Detail",
+      "more": "+{{count}} lainnya",
+      "yrs": "thn",
+      "na": "T/A",
+      "logoAlt": "Logo {{company}}"
+    },
+    "modal": {
+      "close": "Tutup",
+      "skillsRequired": "Keterampilan yang Dibutuhkan",
+      "jobDescription": "Deskripsi Pekerjaan",
+      "noDescription": "Tidak ada deskripsi tersedia",
+      "applying": "Mengirim lamaran...",
+      "alreadyApplied": "Sudah Dilamar",
+      "applyNow": "Lamar Sekarang"
+    }
+  },
+  "applications": {
+    "title": "Lamaran Saya",
+    "subtitle": "Lacak pekerjaan yang Anda lamar, yang masuk shortlist, terpilih & ditolak",
+    "tabs": {
+      "applied": "Dilamar",
+      "shortlisted": "Shortlist",
+      "selected": "Terpilih",
+      "rejected": "Ditolak"
+    },
+    "statusLower": {
+      "applied": "dilamar",
+      "shortlisted": "masuk shortlist",
+      "selected": "terpilih",
+      "rejected": "ditolak"
+    },
+    "failedLoad": "Gagal memuat lamaran.",
+    "emptyTitle": "Tidak ada lamaran yang {{status}}",
+    "emptyBody": "Anda belum {{status}} untuk pekerjaan apa pun. Mulai jelajahi untuk menemukan peran berikutnya.",
+    "findJobs": "Cari Pekerjaan",
+    "appliedWhen": "Dilamar {{when}}",
+    "today": "Hari ini",
+    "daysAgo_other": "{{count}} hari yang lalu",
+    "na": "T/A",
+    "viewJob": "Lihat Pekerjaan",
+    "notDisclosed": "Tidak diungkapkan",
+    "fullTime": "Penuh Waktu",
+    "years_other": "{{count}} Tahun",
+    "noSkills": "Tidak ada keterampilan spesifik yang disebutkan",
+    "more": "+{{count}} lainnya",
+    "loadMore": "Muat Lebih Banyak",
+    "loadingMore": "Memuat lebih banyak...",
+    "modalAria": "Detail lamaran",
+    "closeModal": "Tutup modal",
+    "skillsRequired": "Keterampilan yang Dibutuhkan",
+    "jobDescription": "Deskripsi Pekerjaan",
+    "noDescription": "Tidak ada deskripsi tersedia"
+  },
+  "scorecards": {
+    "title": "Scorecard Saya",
+    "subtitle": "Tinjau performa wawancara dan umpan balik hasil AI Anda.",
+    "failedTitle": "Gagal memuat scorecard",
+    "failedBody": "Silakan coba lagi nanti.",
+    "emptyTitle": "Tidak Ada Scorecard Ditemukan",
+    "emptyBody": "Sepertinya Anda belum menyelesaikan wawancara apa pun, atau scorecard Anda masih dalam proses pembuatan.",
+    "emptyCta": "Cari Pekerjaan untuk Dilamar",
+    "na": "T/A",
+    "score": "Skor: {{score}}",
+    "more": "+{{count}} lainnya",
+    "aiEvaluated": "Dievaluasi AI",
+    "viewDetails": "Lihat Detail",
+    "detail": {
+      "empty": "Anda belum menyelesaikan wawancara apa pun yang menghasilkan scorecard.",
+      "title": "Scorecard Anda",
+      "subtitle": "Ringkasan hasil performa wawancara Anda yang dihasilkan oleh AI."
+    }
+  },
+  "profile": {
+    "errorLoad": "Tidak dapat memuat profil Anda. Silakan periksa koneksi Anda.",
+    "tryAgain": "Coba Lagi",
+    "salaryAria": "Ekspektasi gaji",
+    "photoAlt": "Foto profil",
+    "verified": "Terverifikasi",
+    "dash": "—",
+    "currentCtc": "CTC Saat Ini",
+    "expectedCtc": "CTC yang Diharapkan",
+    "noticePeriod": "Notice Period",
+    "availability": "Ketersediaan",
+    "lastWorkingDay": "Hari Kerja Terakhir",
+    "preferredLocations": "Lokasi yang Diinginkan",
+    "preferences": "Preferensi",
+    "role": "Peran",
+    "industry": "Industri",
+    "sections": {
+      "education": "Pendidikan",
+      "skills": "Keterampilan",
+      "projects": "Proyek",
+      "experience": "Pengalaman",
+      "documents": "Dokumen",
+      "tablistAria": "Bagian profil"
+    },
+    "empty": {
+      "education": "Belum ada detail pendidikan yang ditambahkan.",
+      "skills": "Belum ada keterampilan yang ditambahkan.",
+      "projects": "Belum ada proyek yang ditambahkan.",
+      "experience": "Belum ada pengalaman kerja yang ditambahkan.",
+      "documents": "Belum ada dokumen yang diunggah."
+    },
+    "untitledProject": "Proyek Tanpa Judul",
+    "docs": {
+      "resume": "Resume",
+      "experienceLetter": "Surat Pengalaman Kerja",
+      "resignationLetter": "Surat Pengunduran Diri",
+      "noticePeriodProof": "Bukti Notice Period",
+      "presentOffer": "Surat Penawaran Saat Ini"
+    }
+  },
+  "chatbot": {
+    "title": "Asisten AI",
+    "subtitle": "Tanyakan tentang LetsHyre, lamaran, scorecard Anda, dan lainnya.",
+    "inputPlaceholder": "Ajukan pertanyaan…",
+    "send": "Kirim",
+    "sendAria": "Kirim pesan",
+    "thinking": "Sedang berpikir…",
+    "you": "Anda",
+    "assistant": "Asisten",
+    "retry": "Coba Lagi",
+    "errorMessage": "Terjadi kesalahan. Silakan coba lagi.",
+    "clear": "Hapus obrolan",
+    "messagesLabel": "Pesan obrolan",
+    "launcherAria": "Buka asisten obrolan",
+    "closeAria": "Tutup obrolan",
+    "empty": {
+      "greeting": "Hai! Saya asisten LetsHyre Anda.",
+      "hint": "Tanyakan apa saja tentang platform atau pencarian kerja Anda. Coba salah satu ini:",
+      "prompts": {
+        "what": "Apa itu LetsHyre?",
+        "scorecard": "Bagaimana cara kerja scorecard?",
+        "applications": "Bagaimana cara melacak lamaran saya?",
+        "interview": "Bagaimana cara kerja wawancara AI?"
+      }
+    }
+  }
+}

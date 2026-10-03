@@ -1,0 +1,29 @@
+{
+  "completion": {
+    "heading": "പ്രൊഫൈൽ പൂർത്തീകരണം",
+    "complete": "പൂർത്തിയായി",
+    "noteComplete": "ഗംഭീരം! നിങ്ങളുടെ പ്രൊഫൈൽ പൂർത്തിയായി.",
+    "noteIncomplete": "തൊഴിലുടമകളുടെ ശ്രദ്ധയാകർഷിക്കാൻ നിങ്ങളുടെ പ്രൊഫൈൽ പൂർത്തിയാക്കുക.",
+    "noteCompleteCandidate": "ഈ സ്ഥാനാർത്ഥിയുടെ പ്രൊഫൈൽ പൂർണ്ണമായി പൂർത്തിയായി.",
+    "noteIncompleteCandidate": "ഈ സ്ഥാനാർത്ഥി ഇതുവരെ പ്രൊഫൈൽ പൂർത്തിയാക്കിയിട്ടില്ല."
+  },
+  "contact": {
+    "email": "ഇമെയിൽ",
+    "phone": "ഫോൺ",
+    "location": "സ്ഥലം",
+    "experience": "പരിചയം"
+  },
+  "dash": "—",
+  "interviews": {
+    "heading": "AI ഇന്റർവ്യൂകൾ",
+    "usage": "{{total}}-ൽ {{remaining}} ബാക്കി"
+  },
+  "units": {
+    "years_one": "{{count}} വർഷം",
+    "years_other": "{{count}} വർഷങ്ങൾ",
+    "notSpecified": "വ്യക്തമാക്കിയിട്ടില്ല",
+    "immediateJoiner": "ഉടൻ ചേരാൻ കഴിയുന്നയാൾ",
+    "days_one": "{{count}} ദിവസം",
+    "days_other": "{{count}} ദിവസങ്ങൾ"
+  }
+}

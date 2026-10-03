@@ -1,0 +1,96 @@
+{
+  "logo": "LetsHyre logo",
+  "nav": {
+    "findJobs": "Find Jobs",
+    "myApplications": "My Applications",
+    "scorecard": "Scorecard",
+    "profile": "Profile",
+    "logout": "Logout",
+    "dashboard": "Dashboard",
+    "postJob": "Post Job",
+    "viewJobs": "View Jobs",
+    "candidatePool": "Candidate Pool",
+    "unlockedCandidates": "Unlocked Candidates",
+    "yourTeam": "Your Team",
+    "invoiceHistory": "Invoice History",
+    "assistant": "Assistant",
+    "interviewGuide": "Interview Guide"
+  },
+  "aria": {
+    "openProfile": "Open profile",
+    "openMenu": "Open menu",
+    "mainNav": "Main navigation",
+    "closeNav": "Close navigation",
+    "mainContent": "Main Content",
+    "userAvatar": "user"
+  },
+  "employer": {
+    "credits": "Credits : {{count}}",
+    "member_one": "{{count}} Member",
+    "member_other": "{{count}} Members",
+    "replayTour": "Replay product tour",
+    "profileAlt": "profile"
+  },
+  "tour": {
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "skip": "Skip",
+    "alt": "tour",
+    "steps": {
+      "dashboard": {
+        "title": "Your Hiring Hub",
+        "content": "Get a bird's-eye view of your recruitment metrics and quick shortcuts."
+      },
+      "postJob": {
+        "title": "Hire in Minutes",
+        "content": "Upload a JD. Our AI will handle the data entry for you instantly."
+      },
+      "viewJobs": {
+        "title": "View Jobs",
+        "content": "Manage all job postings here."
+      },
+      "candidates": {
+        "title": "Candidates",
+        "content": "View all candidates here."
+      },
+      "team": {
+        "title": "Collaborative Hiring",
+        "content": "Invite your team members to review candidates."
+      },
+      "billing": {
+        "title": "Invoice History",
+        "content": "Every credit purchase is listed here with its GST invoice."
+      },
+      "credits": {
+        "title": "Balance Credits",
+        "content": "Track your remaining credits here and top up anytime to keep unlocking candidates."
+      },
+      "addMember": {
+        "title": "Add Team Members",
+        "content": "Bring in more recruiters and managers to speed up your hiring decisions."
+      },
+      "profile": {
+        "title": "Manage Your Profile",
+        "content": "Manage your account settings."
+      }
+    }
+  },
+  "onboarding": {
+    "title": "Complete your profile",
+    "description": "A five-step form covering your identity, photo, job preferences and resume."
+  },
+  "logout": {
+    "title": "Oh no, you're leaving",
+    "confirm": "Are you sure you want to logout?",
+    "cancel": "Naah!",
+    "confirmButton": "Yes, Log me out",
+    "loggingOut": "Logging out...",
+    "closeAria": "Close"
+  },
+  "locked": {
+    "title": "Unlock Full Access!",
+    "description": "Complete your profile to access all features",
+    "action": "Go to Profile"
+  }
+}

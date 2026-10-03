@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "title": "Pricing: Pay per Candidate Unlock | letshyre.ai",
+    "description": "Start with 5 free credits and buy more only when you need them, with no subscription. Each unlock includes the candidate's profile, scorecard and recording.",
+    "name": "LetsHyre Pricing",
+    "schemaDescription": "Credit plans for unlocking AI-interviewed candidates on LetsHyre, from a free starter plan to custom plans for large teams.",
+    "crumb": "Pricing"
+  },
+  "hero": {
+    "eyebrow": "Pricing",
+    "title": "Pay only for the candidates you unlock.",
+    "body": "Credits unlock candidates who have already finished a LetsHyre AI interview. You buy them once, there's no monthly bill, and they don't expire.",
+    "includes": "Every unlock includes",
+    "items": [
+      "Candidate profile and resume",
+      "AI interview scorecard",
+      "Interview recording"
+    ]
+  },
+  "plans": {
+    "heading": "Plans",
+    "note": "Prices are in Indian rupees and don't include GST, which is added at checkout.",
+    "credits_one": "{{count}} credit",
+    "credits_other": "{{count}} credits",
+    "rate": "Every credit costs {{price}}, whichever plan you choose.",
+    "unavailable": "Price unavailable",
+    "seats_one": "Share results with {{count}} teammate",
+    "seats_other": "Share results with {{count}} teammates",
+    "topUps": "Top up whenever you need",
+    "noExpiry": "Credits never expire",
+    "buy": "Buy {{name}}",
+    "recommended": "Recommended",
+    "free": {
+      "name": "Free",
+      "audience": "Try it on a real role",
+      "priceNote": "on sign-up",
+      "cta": "Start free"
+    },
+    "pro": {
+      "name": "Pro",
+      "audience": "For teams that hire now and then",
+      "priceNote": "plus GST, one-time",
+      "cta": "Buy Pro"
+    },
+    "business": {
+      "name": "Business",
+      "audience": "For teams hiring every month",
+      "priceNote": "plus GST, one-time",
+      "badge": "Most credits",
+      "cta": "Buy Business"
+    },
+    "custom": {
+      "name": "Custom",
+      "audience": "For high-volume and agency hiring",
+      "price": "Let's talk",
+      "priceNote": "Priced on volume",
+      "cta": "Talk to sales",
+      "features": [
+        "Everything in Business",
+        "Credits sized to your hiring",
+        "Any team size",
+        "Dedicated support"
+      ]
+    }
+  },
+  "compare": {
+    "title": "Compare plans",
+    "body": "Every plan unlocks the same candidate information. What changes is how many credits you get, who on your team can see results, and the support you get.",
+    "caption": "What each plan includes",
+    "feature": "Feature",
+    "picker": "Plan to compare",
+    "rows": {
+      "credits": "Credits included",
+      "profiles": "Candidate profile and resume",
+      "scorecards": "AI interview scorecard",
+      "recordings": "Interview recording",
+      "seats": "Teammates who can view results",
+      "topUps": "Buy extra credits",
+      "validity": "Credit expiry",
+      "support": "Dedicated support"
+    },
+    "values": {
+      "included": "Included",
+      "notIncluded": "Not included",
+      "custom": "Custom",
+      "noExpiry": "Never"
+    }
+  },
+  "topUps": {
+    "title": "Need more credits?",
+    "body": "On Pro or Business you can top up at any time. Top-up credits never expire, just like the ones in your plan.",
+    "credits_one": "{{count}} credit",
+    "credits_other": "{{count}} credits",
+    "priceNote": "plus GST",
+    "cta": "Buy",
+    "ctaLabel_one": "Buy {{count}} credit for {{price}}",
+    "ctaLabel_other": "Buy {{count}} credits for {{price}}",
+    "ctaLabelNoPrice_one": "Buy {{count}} credit",
+    "ctaLabelNoPrice_other": "Buy {{count}} credits"
+  },
+  "faq": {
+    "title": "Questions about pricing",
+    "body": "Can't find what you need?",
+    "contact": "Get in touch",
+    "items": [
+      {
+        "q": "What does a credit get me?",
+        "a": "Credits unlock candidates who have finished a LetsHyre AI interview. An unlocked candidate shows you their full profile, resume, AI scorecard and interview recording. You'll see how many credits an unlock needs before you confirm it."
+      },
+      {
+        "q": "Do credits expire?",
+        "a": "No. Credits stay in your account until you use them, whether they came with your plan or from a top-up."
+      },
+      {
+        "q": "Is this a subscription?",
+        "a": "No. Every purchase is a one-time payment. Nothing renews and you're never charged automatically."
+      },
+      {
+        "q": "Who on my team can see results?",
+        "a": "Free lets you share results with 1 teammate, Pro with 5 and Business with 25. If you need more seats than that, a custom plan covers any team size."
+      },
+      {
+        "q": "How do I pay?",
+        "a": "Payments go through Razorpay, so you can use UPI, a card or net banking. Prices are in Indian rupees, and any applicable tax is shown at checkout before you pay."
+      },
+      {
+        "q": "Can I get a refund?",
+        "a": "We review refund requests made within 7 days for duplicate payments, billing errors, or a platform problem that stopped you getting what you paid for. Profiles you've already unlocked can't be refunded. The <refund>refund policy</refund> has the full details."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Start with free credits.",
+    "body": "Create an employer account, post a role and unlock your first candidates without paying anything.",
+    "primary": "Create free account",
+    "secondary": "Talk to sales"
+  },
+  "prices": {
+    "loading": "Loading current prices",
+    "slow": "Still fetching today's prices. This is taking longer than usual.",
+    "retry": "Try again",
+    "retrying": "Trying again",
+    "error": {
+      "title": "We couldn't load today's prices",
+      "body": "Plans and features are all here. Try again to see what they cost right now."
+    },
+    "offline": {
+      "title": "You're offline",
+      "body": "Prices will load as soon as you're back online."
+    }
+  },
+  "checkout": {
+    "plan": {
+      "title": "{{name}} plan",
+      "summary_one": "{{count}} credit, paid once. Credits never expire.",
+      "summary_other": "{{count}} credits, paid once. Credits never expire."
+    },
+    "topUp": {
+      "title_one": "{{count}} credit",
+      "title_other": "{{count}} credits",
+      "summary": "Added to your balance. Credits never expire."
+    },
+    "loading": {
+      "title": "Loading your order",
+      "body": "Getting the latest price."
+    },
+    "unavailable": {
+      "title": "This plan isn't available",
+      "body": "Plans may have changed since the page loaded. Close this and pick one again."
+    },
+    "plansError": {
+      "title": "We couldn't load this plan",
+      "body": "Check your connection and try again."
+    },
+    "breakdown": {
+      "caption": "Price breakdown",
+      "credits_one": "{{count}} credit × {{rate}}",
+      "credits_other": "{{count}} credits × {{rate}}",
+      "coupon": "Coupon {{code}}",
+      "discount": "Discount",
+      "gst": "GST ({{percent}}%)",
+      "total": "Total"
+    },
+    "quoteError": {
+      "title": "We couldn't work out your total",
+      "body": "Check your connection and try again."
+    },
+    "coupon": {
+      "toggle": "Have a coupon code?",
+      "label": "Coupon code",
+      "apply": "Apply",
+      "remove": "Remove",
+      "removeLabel": "Remove coupon {{code}}",
+      "required": "Enter a coupon code.",
+      "invalid": "Coupon codes use only letters, numbers, hyphens and underscores.",
+      "rejected": "This code can't be used on this purchase.",
+      "error": "We couldn't check this code. Try again.",
+      "percentOff": "{{value}}% off applied",
+      "applied": "Coupon applied"
+    },
+    "pay": "Pay {{amount}}",
+    "payPending": "Pay",
+    "paying": "Starting payment",
+    "secure": "Payments are processed securely by Razorpay. By paying, you agree to our <terms>terms</terms> and <refund>refund policy</refund>.",
+    "razorpay_one": "{{count}} LetsHyre credit",
+    "razorpay_other": "{{count}} LetsHyre credits",
+    "notice": {
+      "cancelled": {
+        "title": "Payment cancelled",
+        "body": "You haven't been charged. Pay again whenever you're ready."
+      },
+      "failed": {
+        "title": "Payment didn't go through",
+        "body": "You haven't been charged. Try again or use another payment method."
+      },
+      "priceChanged": {
+        "title": "Your total has changed",
+        "body": "The price was updated after you opened this. Check the new total before you pay."
+      },
+      "blocked": {
+        "title": "The payment window didn't load",
+        "body": "Check your connection. If you use an ad blocker, allow checkout.razorpay.com and try again."
+      },
+      "error": {
+        "title": "We couldn't start the payment",
+        "body": "You haven't been charged. Try again in a moment."
+      }
+    },
+    "gate": {
+      "guest": {
+        "body": "Credits are bought from an employer account. Sign in or create one, then come back here to pay.",
+        "signIn": "Sign in",
+        "register": "Create employer account",
+        "candidates": "Looking for a job? Candidates don't need credits."
+      },
+      "candidate": {
+        "title": "Credits are for employers",
+        "body": "You're signed in with a candidate account. To buy credits, sign in with an employer account instead.",
+        "action": "Go to your dashboard"
+      },
+      "onboarding": {
+        "title": "Finish setting up your company",
+        "body": "Complete your company profile first, then come back here to buy credits.",
+        "action": "Complete profile"
+      }
+    },
+    "verifying": {
+      "title": "Confirming your payment",
+      "body": "This takes a few seconds. Keep this window open."
+    },
+    "paid": {
+      "title_one": "{{count}} credit added",
+      "title_other": "{{count}} credits added",
+      "body": "We've received your payment of {{amount}}. Your invoice is on the invoices page.",
+      "primary": "Find candidates",
+      "secondary": "View invoices"
+    },
+    "unconfirmed": {
+      "title": "We couldn't confirm your payment yet",
+      "body": "If money has left your account, your credits aren't lost. Try again, or contact us with the payment reference below.",
+      "retry": "Try again",
+      "contact": "Contact support"
+    },
+    "reference": "Payment reference",
+    "retry": "Try again",
+    "close": "Close"
+  }
+}

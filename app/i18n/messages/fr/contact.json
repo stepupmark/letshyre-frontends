@@ -1,0 +1,37 @@
+{
+  "info": {
+    "badge": "Support",
+    "helpCenter": "Centre d'aide",
+    "title": "Contactez<br/><hl>notre équipe</hl>",
+    "description": "Des questions sur les entretiens IA, les rapports de candidats, les forfaits, les crédits ou des problèmes techniques ? Nos spécialistes du support sont là pour vous aider.",
+    "emailLabel": "E-mail"
+  },
+  "form": {
+    "title": "Envoyer un message",
+    "subtitle": "Remplissez le formulaire ci-dessous et notre équipe vous répondra.",
+    "fields": {
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "subject": "Objet",
+      "message": "Détails du message"
+    },
+    "privacy": "Nous respectons votre vie privée. En soumettant vos informations, vous acceptez la <pp>politique de confidentialité</pp> de LetsHyre. Notre équipe répond généralement sous 2 à 4 heures.",
+    "submit": "Envoyer le message",
+    "sending": "Envoi...",
+    "successTitle": "Message envoyé !",
+    "successBody": "Merci de nous avoir contactés. Notre équipe de support a bien reçu votre message et vous répondra sous peu.",
+    "validation": {
+      "nameMin": "Le nom doit comporter au moins 2 caractères",
+      "emailInvalid": "Veuillez saisir une adresse e-mail valide",
+      "subjectMin": "L'objet doit comporter au moins 3 caractères",
+      "messageMin": "Le message doit comporter au moins 10 caractères"
+    }
+  },
+  "meta": {
+    "title": "Nous contacter | letshyre.ai",
+    "description": "Des questions sur les entretiens IA, les bilans, les offres ou les crédits ? Écrivez à l'équipe LetsHyre, nous vous répondrons.",
+    "name": "Contacter LetsHyre",
+    "schemaDescription": "Joignez le support et les ventes de LetsHyre.",
+    "crumb": "Contact"
+  }
+}

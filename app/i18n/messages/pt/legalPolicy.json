@@ -1,0 +1,323 @@
+{
+  "policy": {
+    "title": "Política de Privacidade",
+    "intro": [
+      "Bem-vindo à LetsHyre (\"LetsHyre\", \"nós\", \"nosso\" ou \"nossa\"). Estamos empenhados em proteger a sua privacidade e em garantir a segurança das suas informações pessoais.",
+      "Ao utilizar a plataforma LetsHyre, o utilizador consente a recolha, utilização, armazenamento e tratamento das suas informações, conforme descrito nesta Política de Privacidade."
+    ],
+    "sections": [
+      {
+        "id": "information-we-collect",
+        "title": "1. Informações que Recolhemos",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "Informações do Candidato:"
+          },
+          {
+            "type": "p",
+            "text": "Podemos recolher:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Nome Completo",
+              "Endereço de Email",
+              "Número de Telefone",
+              "Currículo/CV",
+              "Histórico Profissional",
+              "Habilitações Académicas",
+              "Competências e Experiência Profissional",
+              "Respostas às Entrevistas com IA",
+              "Fichas de Avaliação de Entrevistas",
+              "Informações de Perfil submetidas pelos candidatos"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "subheading",
+            "text": "Informações do Empregador:"
+          },
+          {
+            "type": "p",
+            "text": "Podemos recolher:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Nome da Empresa",
+              "Nome do Recrutador",
+              "Endereço de Email Profissional",
+              "Informações de Contacto",
+              "Requisitos de Contratação",
+              "Descrições de Funções",
+              "Informações de Perfil submetidas pelos empregadores"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "subheading",
+            "text": "Informações Técnicas:"
+          },
+          {
+            "type": "p",
+            "text": "Podemos recolher automaticamente:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Endereço IP",
+              "Informações do Navegador",
+              "Informações do Dispositivo",
+              "Sistema Operativo",
+              "Dados de Utilização do Website",
+              "Cookies e Tecnologias Semelhantes"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "how-we-use-information",
+        "title": "2. Como Utilizamos as Informações",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Utilizamos as informações recolhidas para:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Criar e gerir contas de utilizador",
+              "Associar candidatos a oportunidades de emprego relevantes",
+              "Realizar entrevistas com IA baseadas na função",
+              "Gerar fichas de avaliação de entrevistas e análises de candidatos",
+              "Facilitar os processos de recrutamento e contratação",
+              "Melhorar o desempenho da plataforma e a experiência do utilizador",
+              "Comunicar atualizações e notificações da plataforma",
+              "Prevenir fraudes, abusos e atividades não autorizadas."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ai-interview-processing-and-consent",
+        "title": "3. Tratamento das Entrevistas com IA e Consentimento",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "A LetsHyre utiliza tecnologias de inteligência artificial para realizar entrevistas baseadas na função e gerar fichas de avaliação e análises das entrevistas."
+          },
+          {
+            "type": "p",
+            "text": "Ao participar em entrevistas com IA, os candidatos reconhecem e consentem:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "O tratamento das respostas da entrevista com base em IA",
+              "A geração de fichas de avaliação e análises de entrevistas com IA",
+              "A avaliação das respostas para fins de recrutamento",
+              "A partilha das fichas de avaliação e análises de entrevistas com os empregadores através da plataforma LetsHyre"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Poderemos tratar:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Respostas da Entrevista",
+              "Gravações da Entrevista",
+              "Fichas de Avaliação de Entrevistas Geradas por IA"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "As fichas de avaliação e análises geradas por IA destinam-se a apoiar os empregadores na avaliação dos candidatos e não garantem resultados de contratação."
+          }
+        ]
+      },
+      {
+        "id": "sharing-of-information",
+        "title": "4. Partilha de Informações",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Podemos partilhar informações com:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Empregadores que utilizam a LetsHyre para fins legítimos de recrutamento",
+              "Prestadores de serviços autorizados que apoiam as operações da plataforma",
+              "Prestadores de serviços de confiança de alojamento em nuvem, análise, comunicação, processamento de pagamentos e IA",
+              "Autoridades governamentais ou legais, quando exigido pela lei aplicável"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Os perfis dos candidatos podem ser associados e apresentados aos empregadores com base nos requisitos da função, na relevância da função, nas competências, na experiência e noutros critérios de correspondência."
+          },
+          {
+            "type": "p",
+            "text": "Informações detalhadas do candidato, fichas de avaliação de entrevistas, gravações de entrevistas e informações de contacto do candidato poderão ser disponibilizadas aos empregadores quando estes optarem por desbloquear as informações do candidato através da plataforma LetsHyre."
+          },
+          {
+            "type": "p",
+            "text": "Os empregadores são responsáveis por utilizar as informações dos candidatos exclusivamente para fins legítimos de recrutamento e em conformidade com a lei aplicável."
+          },
+          {
+            "type": "p",
+            "text": "A LetsHyre não vende informações pessoais a terceiros."
+          }
+        ]
+      },
+      {
+        "id": "profile-activity-and-data-retention",
+        "title": "5. Atividade do Perfil e Retenção de Dados",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Para manter um conjunto de talentos de elevada qualidade e ativamente disponível, os perfis dos candidatos permanecem ativos na plataforma durante um período máximo de 90 dias a contar da data de criação do perfil."
+          },
+          {
+            "type": "p",
+            "text": "Durante este período, os candidatos podem atualizar as informações do seu perfil e participar em entrevistas com IA adicionais, incluindo repetições para a mesma função ou entrevistas para funções diferentes, de acordo com as políticas da plataforma."
+          },
+          {
+            "type": "p",
+            "text": "A LetsHyre poderá permitir que os candidatos realizem até três tentativas de entrevista para melhorar as suas fichas de avaliação, a solidez do seu perfil e a sua visibilidade junto dos empregadores."
+          },
+          {
+            "type": "p",
+            "text": "Após o termo do período de 90 dias, os perfis dos candidatos poderão ser permanentemente removidos do conjunto de candidatos ativos da LetsHyre."
+          },
+          {
+            "type": "p",
+            "text": "Os candidatos que pretendam continuar a utilizar a LetsHyre após a remoção do perfil poderão criar um novo perfil, sujeito às políticas e requisitos da plataforma."
+          }
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "6. Direitos do Utilizador",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Os utilizadores podem:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Aceder às suas informações pessoais",
+              "Solicitar a retificação de informações incorretas",
+              "Solicitar o encerramento da sua conta",
+              "Solicitar a remoção de informações pessoais quando legalmente aplicável"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Os utilizadores podem submeter pedidos de encerramento de conta ou de remoção de dados através do contacto com o suporte da LetsHyre. Determinadas informações poderão ser conservadas quando exigido por lei ou para fins comerciais legítimos."
+          }
+        ]
+      },
+      {
+        "id": "data-security",
+        "title": "7. Segurança dos Dados",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "A LetsHyre implementa salvaguardas técnicas e organizacionais razoáveis para proteger as informações pessoais contra acesso não autorizado, divulgação, alteração, utilização indevida ou destruição."
+          },
+          {
+            "type": "p",
+            "text": "Embora adotemos medidas adequadas para proteger as informações, nenhum método de armazenamento eletrónico ou de transmissão pela internet pode ser garantido como totalmente seguro."
+          }
+        ]
+      },
+      {
+        "id": "cookies",
+        "title": "8. Cookies",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "A LetsHyre poderá utilizar cookies e tecnologias semelhantes para melhorar a funcionalidade, a segurança, a análise, o desempenho e a experiência do utilizador na plataforma."
+          },
+          {
+            "type": "p",
+            "text": "Os utilizadores podem optar por desativar os cookies através das definições do seu navegador; no entanto, determinadas funcionalidades da plataforma poderão não funcionar corretamente."
+          }
+        ]
+      },
+      {
+        "id": "third-party-services",
+        "title": "9. Serviços de Terceiros",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "A LetsHyre poderá recorrer a prestadores de serviços terceiros de confiança para apoiar as operações da plataforma, incluindo serviços de alojamento, análise, comunicação, processamento de pagamentos e serviços relacionados com IA."
+          },
+          {
+            "type": "p",
+            "text": "Estes prestadores de serviços poderão tratar informações em nosso nome, exclusivamente para efeitos de prestação dos seus serviços à LetsHyre."
+          },
+          {
+            "type": "p",
+            "text": "A LetsHyre não é responsável pelas práticas de privacidade de websites ou serviços de terceiros a que se possa aceder através de ligações externas."
+          }
+        ]
+      },
+      {
+        "id": "changes-to-this-policy",
+        "title": "10. Alterações a Esta Política",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "A LetsHyre poderá atualizar esta Política de Privacidade periodicamente."
+          },
+          {
+            "type": "p",
+            "text": "Quaisquer atualizações serão publicadas nesta página. A utilização continuada da plataforma após essas atualizações constitui aceitação da Política de Privacidade revista."
+          }
+        ]
+      },
+      {
+        "id": "contact-us",
+        "title": "11. Contacte-nos",
+        "blocks": [
+          {
+            "type": "contact",
+            "intro": "Para questões, pedidos ou preocupações relacionados com a privacidade, contacte-nos através de:",
+            "emailLabel": "Email:",
+            "email": "support@letshyre.ai",
+            "team": "Equipa de Suporte da LetsHyre"
+          }
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "title": "Política de privacidade | letshyre.ai",
+    "description": "Como a LetsHyre recolhe, utiliza, armazena e protege os dados de candidatos e empregadores na plataforma.",
+    "name": "Política de Privacidade",
+    "schemaDescription": "Como a LetsHyre gere e protege os seus dados.",
+    "crumb": "Política de Privacidade"
+  }
+}

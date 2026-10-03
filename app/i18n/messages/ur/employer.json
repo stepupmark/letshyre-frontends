@@ -1,0 +1,322 @@
+{
+  "dashboard": {
+    "welcome": "خوش آمدید!",
+    "subtitle": "آج آپ کے ہائرنگ ہب میں یہ کچھ ہو رہا ہے۔",
+    "cards": {
+      "activeJobs": "فعال نوکریاں",
+      "inactiveJobs": "غیر فعال نوکریاں",
+      "totalApplications": "کل درخواستیں",
+      "activeCaption1": "/فی الحال",
+      "activeCaption2": "فعال",
+      "inactiveCaption1": "/بند یا",
+      "inactiveCaption2": "ڈرافٹ",
+      "applicationsCaption1": "/کل",
+      "applicationsCaption2": "موصول شدہ"
+    },
+    "credits": {
+      "heading": "آپ کا کریڈٹ بیلنس",
+      "used": "استعمال شدہ",
+      "creditsLeft_one": "{{count}} کریڈٹ باقی",
+      "creditsLeft_other": "{{count}} کریڈٹس باقی",
+      "blurb": "درخواست دہندگان کی پروفائلز ان لاک کرنے اور بہترین ٹیلنٹ سے رابطہ کرنے کے لیے کریڈٹس استعمال کریں۔",
+      "addCredits": "کریڈٹس شامل کریں",
+      "viewTransactions": "لین دین دیکھیں"
+    }
+  },
+  "profile": {
+    "editDialogAria": "کمپنی پروفائل میں ترمیم کریں",
+    "na": "دستیاب نہیں",
+    "banner": {
+      "aria": "پروفائل بینر",
+      "defaultCompany": "آپ کی کمپنی",
+      "blurb": "اپنی تنظیم کی بنیادی تفصیلات، برانڈنگ اور رابطے کی معلومات کا جائزہ لیں اور انہیں مینیج کریں۔",
+      "editProfile": "پروفائل میں ترمیم کریں",
+      "editAria": "پروفائل کی معلومات میں ترمیم کریں",
+      "sideAlt": "سجاوٹی عناصر کے ساتھ پروفائل کی تصویر",
+      "shapeAlt": "سجاوٹی کثیر الاضلاع شکل",
+      "jobsPosted": "پوسٹ کردہ نوکریاں",
+      "activeJobs": "فعال نوکریاں",
+      "matches": "میچز",
+      "alreadyHired": "پہلے سے بھرتی شدہ"
+    },
+    "primary": {
+      "heading": "بنیادی تفصیلات",
+      "name": "نام",
+      "industry": "صنعت",
+      "email": "ای میل",
+      "phone": "فون",
+      "officialEmail": "سرکاری ای میل",
+      "kycStatus": "KYC حیثیت"
+    },
+    "company": {
+      "heading": "کمپنی کی تفصیلات",
+      "companyName": "کمپنی کا نام",
+      "website": "ویب سائٹ",
+      "registrationNumber": "رجسٹریشن نمبر",
+      "gstNumber": "GST نمبر",
+      "panNumber": "PAN نمبر",
+      "address": "پتہ",
+      "linkedin": "LinkedIn",
+      "viewProfile": "پروفائل دیکھیں",
+      "description": "تفصیل"
+    },
+    "documents": {
+      "heading": "اپلوڈ کردہ دستاویزات",
+      "viewDocument": "دستاویز دیکھیں",
+      "registrationCertificate": "رجسٹریشن سرٹیفکیٹ",
+      "gstCertificate": "GST سرٹیفکیٹ",
+      "addressProof": "پتے کا ثبوت",
+      "bankProof": "بینک کا ثبوت"
+    },
+    "edit": {
+      "title": "اپنی پروفائل میں ترمیم کریں",
+      "close": "بند کریں",
+      "illustrationAlt": "پروفائل کی تصویر",
+      "step1": "مرحلہ 1: بنیادی تفصیلات",
+      "step2": "مرحلہ 2: کمپنی کی معلومات اور لوگو",
+      "officialEmail": "سرکاری ای میل",
+      "emailPlaceholder": "example@company.com",
+      "location": "مقام",
+      "locationPlaceholder": "مقام درج کریں",
+      "industry": "صنعت",
+      "selectIndustry": "صنعت منتخب کریں",
+      "linkedinUrl": "LinkedIn URL",
+      "linkedinPlaceholder": "https://linkedin.com/company/...",
+      "companyDescription": "کمپنی کی تفصیل",
+      "descriptionPlaceholder": "اپنی کمپنی کا مختصر تعارف دیں...",
+      "companyLogo": "کمپنی کا لوگو",
+      "logoPreviewAlt": "لوگو کا پیش منظر",
+      "noLogoUploaded": "کوئی لوگو اپلوڈ نہیں کیا گیا",
+      "uploadNewLogo": "نیا لوگو اپلوڈ کریں",
+      "uploadLogo": "لوگو اپلوڈ کریں",
+      "logoHint": "JPG، PNG یا SVG۔ زیادہ سے زیادہ سائز 5MB۔",
+      "cancel": "منسوخ کریں",
+      "next": "اگلا",
+      "back": "واپس",
+      "saving": "محفوظ ہو رہا ہے...",
+      "saveChanges": "تبدیلیاں محفوظ کریں"
+    },
+    "validation": {
+      "emailInvalid": "براہِ کرم درست ای میل ایڈریس درج کریں",
+      "locationRequired": "براہِ کرم مقام درج کریں",
+      "industryRequired": "براہِ کرم صنعت منتخب کریں",
+      "linkedinInvalid": "براہِ کرم درست LinkedIn URL درج کریں",
+      "linkedinDomain": "LinkedIn URL ہونا ضروری ہے",
+      "descriptionMax": "تفصیل 500 حروف سے کم ہونی چاہیے",
+      "logoSize": "فائل کا سائز 5MB سے کم ہونا چاہیے",
+      "logoType": "صرف JPG، PNG، SVG یا WEBP کی اجازت ہے"
+    },
+    "toasts": {
+      "updated": "پروفائل کامیابی سے اپ ڈیٹ ہو گیا",
+      "updateFailed": "پروفائل اپ ڈیٹ کرنے میں ناکامی"
+    }
+  },
+  "team": {
+    "heading": "اپنی ٹیم سے ملیں",
+    "subtitle": "دیکھیں کہ یہاں پہلے سے کون موجود ہے اور نئے اراکین کو شامل کریں۔",
+    "addMember": "رکن شامل کریں",
+    "errorLoad": "ٹیم کے اراکین لوڈ کرنے میں ناکامی۔ براہِ کرم دوبارہ کوشش کریں۔",
+    "scrollLeft": "بائیں سکرول کریں",
+    "scrollRight": "دائیں سکرول کریں",
+    "optionsAria": "اختیارات",
+    "memberImageAlt": "ٹیم کا رکن",
+    "card": {
+      "edit": "ترمیم کریں",
+      "remove": "ہٹائیں",
+      "hold": "روکیں",
+      "activate": "فعال کریں"
+    },
+    "status": {
+      "active": "فعال",
+      "hold": "روکا گیا"
+    },
+    "empty": {
+      "title": "ابھی تک کوئی ٹیم ممبر نہیں",
+      "body": "ریکروٹرز اور مینیجرز شامل کر کے اپنی ٹیم بنانا شروع کریں۔"
+    },
+    "confirmRemove": "کیا آپ واقعی {{name}} کو ہٹانا چاہتے ہیں؟",
+    "toasts": {
+      "memberUpdated": "رکن کامیابی سے اپ ڈیٹ ہو گیا",
+      "updateFailed": "رکن اپ ڈیٹ کرنے میں ناکامی",
+      "memberAdded": "رکن کامیابی سے شامل کر دیا گیا",
+      "addFailed": "رکن شامل کرنے میں ناکامی",
+      "statusUpdated": "حیثیت {{status}} میں اپ ڈیٹ کر دی گئی",
+      "toggleFailed": "حیثیت تبدیل کرنے میں ناکامی",
+      "memberRemoved": "رکن کامیابی سے ہٹا دیا گیا",
+      "removeFailed": "رکن ہٹانے میں ناکامی"
+    },
+    "modal": {
+      "close": "موڈل بند کریں",
+      "addTitle": "رکن شامل کریں",
+      "editTitle": "رکن میں ترمیم کریں",
+      "addDesc": "اپنی ٹیم میں شامل ہونے کے لیے ایک نئے رکن کو مدعو کریں۔ وہ تعاون کر سکیں گے اور آپ کی بھرتی مینیج کرنے میں مدد دیں گے۔",
+      "editDesc": "اس ٹیم رکن کی تفصیلات اپ ڈیٹ کریں۔",
+      "fullName": "پورا نام",
+      "fullNamePlaceholder": "مثلاً Jane Doe",
+      "email": "ای میل ایڈریس",
+      "emailPlaceholder": "مثلاً jane@company.com",
+      "password": "پاس ورڈ",
+      "passwordPlaceholder": "ایک محفوظ پاس ورڈ بنائیں",
+      "passwordHint": "پاس ورڈ کم از کم 8 حروف کا ہونا چاہیے۔",
+      "showPassword": "پاس ورڈ دکھائیں",
+      "hidePassword": "پاس ورڈ چھپائیں",
+      "cancel": "منسوخ کریں",
+      "saving": "محفوظ ہو رہا ہے...",
+      "updateMember": "رکن اپ ڈیٹ کریں",
+      "addMemberBtn": "رکن شامل کریں"
+    },
+    "validation": {
+      "nameMin": "نام کم از کم 2 حروف کا ہونا چاہیے",
+      "nameMax": "نام زیادہ سے زیادہ 100 حروف کا ہونا چاہیے",
+      "emailInvalid": "براہِ کرم درست ای میل ایڈریس درج کریں",
+      "passwordMin": "پاس ورڈ کم از کم 6 حروف کا ہونا چاہیے",
+      "passwordMax": "پاس ورڈ زیادہ سے زیادہ 50 حروف کا ہونا چاہیے"
+    }
+  },
+  "invoice": {
+    "title": "انوائسز",
+    "subtitle": "آپ کی کریڈٹ خریداریاں اور GST انوائسز۔",
+    "buyCredits": "کریڈٹس خریدیں",
+    "caption": "آپ کی مکمل شدہ کریڈٹ خریداریاں",
+    "columns": {
+      "date": "تاریخ",
+      "purchase": "خریداری",
+      "amount": "رقم",
+      "invoice": "انوائس"
+    },
+    "plan": "{{name}} پلان",
+    "topUp": "ٹاپ اپ",
+    "credits_one": "{{count}} کریڈٹ",
+    "credits_other": "{{count}} کریڈٹس",
+    "preparing": "تیار ہو رہی ہے",
+    "downloadLabel": "انوائس {{number}} ڈاؤن لوڈ کریں",
+    "note": "یہاں صرف مکمل ادائیگیاں دکھائی جاتی ہیں۔ حال ہی میں ادائیگی کی اور یہاں نظر نہیں آ رہی؟ اپنے ادائیگی حوالے کے ساتھ <contact>ہم سے رابطہ کریں</contact>۔",
+    "empty": {
+      "title": "ابھی تک کوئی خریداری نہیں",
+      "body": "آپ جو کریڈٹس خریدیں گے وہ اپنی انوائسز کے ساتھ یہاں نظر آئیں گے۔"
+    },
+    "receipt": {
+      "paidOn": "{{date}} کو ادائیگی کی گئی",
+      "caption": "ادائیگی کی تفصیل",
+      "subtotal": "ذیلی کل",
+      "coupon": "کوپن {{code}}",
+      "discount": "رعایت",
+      "gst": "GST",
+      "total": "کل ادا شدہ رقم",
+      "invoiceNumber": "انوائس نمبر",
+      "reference": "ادائیگی کا حوالہ",
+      "download": "انوائس ڈاؤن لوڈ کریں (PDF)"
+    }
+  },
+  "chatbot": {
+    "title": "اے آئی اسسٹنٹ",
+    "subtitle": "LetsHyre، بھرتی، امیدواروں اور اسکور کارڈز کے بارے میں پوچھیں۔",
+    "inputPlaceholder": "سوال پوچھیں…",
+    "send": "بھیجیں",
+    "sendAria": "پیغام بھیجیں",
+    "thinking": "سوچ رہا ہے…",
+    "you": "آپ",
+    "assistant": "اسسٹنٹ",
+    "retry": "دوبارہ کوشش کریں",
+    "errorMessage": "کچھ غلط ہو گیا۔ براہِ کرم دوبارہ کوشش کریں۔",
+    "clear": "چیٹ صاف کریں",
+    "messagesLabel": "چیٹ پیغامات",
+    "launcherAria": "چیٹ اسسٹنٹ کھولیں",
+    "closeAria": "چیٹ بند کریں",
+    "empty": {
+      "greeting": "ہیلو! میں آپ کا LetsHyre اسسٹنٹ ہوں۔",
+      "hint": "LetsHyre پر بھرتی کے بارے میں مجھ سے کچھ بھی پوچھیں۔ ان میں سے ایک آزمائیں:",
+      "prompts": {
+        "what": "LetsHyre کیا ہے؟",
+        "scorecard": "میں امیدوار کا اسکور کارڈ کیسے پڑھوں؟",
+        "applications": "میں نوکری کیسے پوسٹ کروں اور درخواست دہندگان کا جائزہ کیسے لوں؟",
+        "interview": "اے آئی انٹرویو کیسے کام کرتا ہے؟"
+      }
+    }
+  },
+  "sharing": {
+    "manageLink": "شیئر کردہ لنکس",
+    "shareAction": "شیئر کریں",
+    "createDialog": {
+      "title": "{{name}} کا پروفائل شیئر کریں",
+      "description": "ایک ایسا لنک بنائیں جو خودکار طور پر میعاد ختم ہو جائے اور مقررہ تعداد میں ملاحظات کے بعد کام کرنا بند کر دے۔",
+      "jobLabel": "نوکری کے ساتھ میچ کریں",
+      "jobPlaceholder": "ایک نوکری منتخب کریں",
+      "jobLoading": "نوکریاں لوڈ ہو رہی ہیں…",
+      "jobEmpty": "میچ کرنے کے لیے کوئی کھلی نوکری نہیں",
+      "expiryLabel": "میعاد ختم ہونے میں (دن)",
+      "expiryHint": "زیادہ سے زیادہ 30 دن تک۔",
+      "maxViewsLabel": "زیادہ سے زیادہ ملاحظات",
+      "maxViewsHint": "یہ حد پوری ہونے کے بعد لنک کام کرنا بند کر دیتا ہے۔",
+      "cancel": "منسوخ کریں",
+      "submit": "لنک بنائیں",
+      "submitting": "بنایا جا رہا ہے…"
+    },
+    "successDialog": {
+      "title": "لنک بن گیا",
+      "description": "یہ لنک اُن کے ساتھ شیئر کریں جنہیں {{name}} کا اسکور کارڈ دیکھنا ہے۔",
+      "expiresOn": "{{date}} کو میعاد ختم ہوگی",
+      "viewLimit_one": "{{count}} ملاحظہ کی اجازت",
+      "viewLimit_other": "{{count}} ملاحظات کی اجازت",
+      "done": "مکمل"
+    },
+    "copy": {
+      "button": "لنک کاپی کریں",
+      "copied": "کاپی ہو گیا",
+      "toastSuccess": "لنک کلپ بورڈ پر کاپی ہو گیا۔",
+      "toastError": "لنک کاپی نہیں ہو سکا۔ اسے دستی طور پر کاپی کریں۔"
+    },
+    "toasts": {
+      "created": "شیئر لنک بن گیا۔",
+      "createFailed": "شیئر لنک نہیں بن سکا۔"
+    },
+    "validation": {
+      "jobRequired": "میچ کرنے کے لیے ایک نوکری منتخب کریں۔",
+      "expiryRequired": "اس لنک کی میعاد ختم ہونے تک کے دنوں کی تعداد درج کریں۔",
+      "expiryInt": "دنوں کی مکمل تعداد درج کریں۔",
+      "expiryMin": "کم از کم 1 دن میں میعاد ختم ہونی چاہیے۔",
+      "expiryMax": "30 دن سے زیادہ نہیں ہو سکتی۔",
+      "maxViewsRequired": "ملاحظات کی حد درج کریں۔",
+      "maxViewsInt": "ایک مکمل عدد درج کریں۔",
+      "maxViewsMin": "کم از کم 1 ملاحظے کی اجازت ہونی چاہیے۔",
+      "extendRequired": "کتنے دنوں تک بڑھانا ہے وہ تعداد درج کریں۔",
+      "extendInt": "دنوں کی مکمل تعداد درج کریں۔",
+      "extendMin": "منفی نہیں ہو سکتی۔",
+      "extendMax": "ایک وقت میں 30 دن سے زیادہ نہیں بڑھایا جا سکتا۔"
+    }
+  },
+  "states": {
+    "loading": "لوڈ ہو رہا ہے…",
+    "slow": "اس میں معمول سے زیادہ وقت لگ رہا ہے…",
+    "retry": "دوبارہ کوشش کریں",
+    "retrying": "دوبارہ کوشش کی جا رہی ہے…",
+    "backToDashboard": "ڈیش بورڈ پر جائیں",
+    "errorCode": "خرابی {{code}}",
+    "stale": {
+      "title": "ریفریش نہیں ہو سکا",
+      "body": "آپ آخری بار لوڈ کیا گیا ڈیٹا دیکھ رہے ہیں۔"
+    },
+    "error": {
+      "offline": {
+        "title": "آپ آف لائن ہیں",
+        "body": "اپنا انٹرنیٹ کنکشن چیک کریں۔ آن لائن ہوتے ہی یہ صفحہ دوبارہ لوڈ ہو جائے گا۔"
+      },
+      "unreachable": {
+        "title": "ابھی کنیکٹ نہیں ہو پا رہا",
+        "body": "ہم اپنے سرورز تک نہیں پہنچ سکے۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔"
+      },
+      "generic": {
+        "title": "کچھ غلط ہو گیا",
+        "body": "ہم ابھی اسے لوڈ نہیں کر سکے۔ یہ عموماً عارضی ہوتا ہے، براہ کرم دوبارہ کوشش کریں۔"
+      },
+      "forbidden": {
+        "title": "آپ کو رسائی حاصل نہیں",
+        "body": "آپ کے اکاؤنٹ کو یہ دیکھنے کی اجازت نہیں۔ ضرورت ہو تو اپنی کمپنی کے ایڈمن سے رابطہ کریں۔"
+      },
+      "notFound": {
+        "title": "نہیں ملا",
+        "body": "ممکن ہے اسے ہٹا دیا گیا ہو، یا لنک غلط ہو۔"
+      }
+    }
+  }
+}

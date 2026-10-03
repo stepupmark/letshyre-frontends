@@ -1,0 +1,124 @@
+{
+  "homeCrumb": "ಮುಖಪುಟ",
+  "sharedScorecard": {
+    "title": "ಅಭ್ಯರ್ಥಿ ಸ್ಕೋರ್‌ಕಾರ್ಡ್ | letshyre.ai",
+    "description": "LetsHyre ಉದ್ಯೋಗದಾತರು ಹಂಚಿಕೊಂಡ, AI ಮೌಲ್ಯಮಾಪನ ಮಾಡಿದ ಅಭ್ಯರ್ಥಿ ಸಂದರ್ಶನ ಸ್ಕೋರ್‌ಕಾರ್ಡ್."
+  },
+  "getStarted": {
+    "title": "ಪ್ರಾರಂಭಿಸಿ | letshyre.ai",
+    "description": "ನೀವು ನೇಮಕ ಮಾಡುತ್ತಿದ್ದೀರಾ ಅಥವಾ ಕೆಲಸ ಹುಡುಕುತ್ತಿದ್ದೀರಾ ಎಂದು ಆರಿಸಿ, ನಂತರ ನಿಮ್ಮ LetsHyre ಖಾತೆಯನ್ನು ರಚಿಸಿ."
+  },
+  "employeeSignIn": {
+    "title": "ಅಭ್ಯರ್ಥಿ ಸೈನ್ ಇನ್ | letshyre.ai",
+    "description": "ಸಂದರ್ಶನಗಳನ್ನು ನೀಡಲು ಮತ್ತು ನಿಮ್ಮ ಅರ್ಜಿಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಲು ನಿಮ್ಮ LetsHyre ಅಭ್ಯರ್ಥಿ ಖಾತೆಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ."
+  },
+  "employeeRegister": {
+    "title": "ಅಭ್ಯರ್ಥಿ ಸೈನ್ ಅಪ್ | letshyre.ai",
+    "description": "AI ಸಂದರ್ಶನಗಳನ್ನು ನೀಡಲು ಮತ್ತು ಪರಿಶೀಲಿಸಿದ ಸ್ಕೋರ್‌ಕಾರ್ಡ್‌ಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಲು LetsHyre ಅಭ್ಯರ್ಥಿ ಖಾತೆಯನ್ನು ರಚಿಸಿ."
+  },
+  "employerSignIn": {
+    "title": "ಉದ್ಯೋಗದಾತ ಸೈನ್ ಇನ್ | letshyre.ai",
+    "description": "ಉದ್ಯೋಗಗಳನ್ನು ಪೋಸ್ಟ್ ಮಾಡಲು ಮತ್ತು ಅಭ್ಯರ್ಥಿ ಸ್ಕೋರ್‌ಕಾರ್ಡ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸಲು ನಿಮ್ಮ LetsHyre ಉದ್ಯೋಗದಾತ ಖಾತೆಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ."
+  },
+  "employerRegister": {
+    "title": "ಉದ್ಯೋಗದಾತ ಸೈನ್ ಅಪ್ | letshyre.ai",
+    "description": "ಉದ್ಯೋಗಗಳನ್ನು ಪೋಸ್ಟ್ ಮಾಡಲು, AI ಸಂದರ್ಶನಗಳನ್ನು ನಡೆಸಲು ಮತ್ತು ವೇಗವಾಗಿ ನೇಮಕ ಮಾಡಲು LetsHyre ಉದ್ಯೋಗದಾತ ಖಾತೆಯನ್ನು ರಚಿಸಿ."
+  },
+  "forgotPassword": {
+    "title": "ಪಾಸ್‌ವರ್ಡ್ ಮರುಹೊಂದಿಸಿ | letshyre.ai",
+    "description": "ಇಮೇಲ್ ಪರಿಶೀಲನೆಯೊಂದಿಗೆ ನಿಮ್ಮ LetsHyre ಪಾಸ್‌ವರ್ಡ್ ಮರುಹೊಂದಿಸಿ ಮತ್ತು ನಿಮ್ಮ ಖಾತೆಗೆ ಮರಳಿ."
+  },
+  "notFound": {
+    "title": "ಪುಟ ಸಿಗಲಿಲ್ಲ | letshyre.ai",
+    "description": "ನೀವು ಹುಡುಕುತ್ತಿರುವ ಪುಟ ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲ ಅಥವಾ ಸ್ಥಳಾಂತರಗೊಂಡಿದೆ."
+  },
+  "employeeFindJobs": {
+    "title": "ಉದ್ಯೋಗ ಹುಡುಕಿ | letshyre.ai",
+    "description": "ನಿಮ್ಮ ಕೌಶಲ್ಯ ಮತ್ತು ಆಕಾಂಕ್ಷೆಗಳಿಗೆ ಹೊಂದಿಕೆಯಾಗುವ ಅವಕಾಶಗಳನ್ನು ಕಂಡುಹಿಡಿಯಲು ಪ್ರಾರಂಭಿಸಿ"
+  },
+  "employeeChatbot": {
+    "title": "AI ಸಹಾಯಕ | letshyre.ai",
+    "description": "LetsHyre, ನಿಮ್ಮ ಅರ್ಜಿಗಳು, ಸ್ಕೋರ್‌ಕಾರ್ಡ್‌ಗಳು ಮತ್ತು ಇನ್ನಷ್ಟರ ಬಗ್ಗೆ ಕೇಳಿ."
+  },
+  "employeeInterviewGuide": {
+    "title": "ಸಂದರ್ಶನ ಮಾರ್ಗದರ್ಶಿ | letshyre.ai",
+    "description": "ಸಂದರ್ಶನದ ಮೊದಲು ನೀವು ಪೂರ್ಣಗೊಳಿಸಬೇಕಾದ ಎಂಟು ಹಂತಗಳಿವೆ. ದಿನದಂದು ಯಾವುದೇ ಆಶ್ಚರ್ಯ ಆಗದಂತೆ ಪ್ರತಿಯೊಂದು ಹಂತದಲ್ಲಿ ಏನಿದೆ ಎಂಬುದು ಇಲ್ಲಿದೆ."
+  },
+  "employeeMyApplications": {
+    "title": "ನನ್ನ ಅರ್ಜಿಗಳು | letshyre.ai",
+    "description": "ನಿಮ್ಮ ಅರ್ಜಿ ಸಲ್ಲಿಸಿದ, ಶಾರ್ಟ್‌ಲಿಸ್ಟ್ ಆದ, ಆಯ್ಕೆಯಾದ ಮತ್ತು ತಿರಸ್ಕರಿಸಲಾದ ಉದ್ಯೋಗಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ"
+  },
+  "employeeProfile": {
+    "title": "ಪ್ರೊಫೈಲ್ | letshyre.ai",
+    "description": "ನಿಮ್ಮ ಗುರುತು, ಫೋಟೋ, ಉದ್ಯೋಗ ಆದ್ಯತೆಗಳು ಮತ್ತು ರೆಸ್ಯೂಮ್ ಒಳಗೊಂಡ ಐದು ಹಂತದ ಫಾರ್ಮ್."
+  },
+  "employeeScoreCardsList": {
+    "title": "ನನ್ನ ಸ್ಕೋರ್ ಕಾರ್ಡ್‌ಗಳು | letshyre.ai",
+    "description": "ನಿಮ್ಮ ಸಂದರ್ಶನ ಪ್ರದರ್ಶನಗಳು ಮತ್ತು AI-ಜನಿತ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಪರಿಶೀಲಿಸಿ."
+  },
+  "employeeScorecard": {
+    "title": "ನಿಮ್ಮ ಸ್ಕೋರ್‌ಕಾರ್ಡ್ | letshyre.ai",
+    "description": "ಸಂದರ್ಶನದಲ್ಲಿ ನೀವು ಹೇಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸಿದ್ದೀರಿ ಎಂಬುದರ AI-ಜನಿತ ಸಾರಾಂಶ."
+  },
+  "employerDashboard": {
+    "title": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ | letshyre.ai",
+    "description": "ಇಂದು ನಿಮ್ಮ ನೇಮಕಾತಿ ಕೇಂದ್ರದಲ್ಲಿ ಏನಾಗುತ್ತಿದೆ ಎಂಬುದು ಇಲ್ಲಿದೆ."
+  },
+  "employerCandidatePool": {
+    "title": "ಅಭ್ಯರ್ಥಿ ಪೂಲ್ | letshyre.ai",
+    "description": "ನಿಮ್ಮ ತೆರೆದ ಹುದ್ದೆಗಳಿಗೆ AI-ಹೊಂದಿಸಿದ ಅಭ್ಯರ್ಥಿಗಳನ್ನು ಕಂಡುಹಿಡಿಯಿರಿ."
+  },
+  "employerChatbot": {
+    "title": "AI ಸಹಾಯಕ | letshyre.ai",
+    "description": "LetsHyre, ನೇಮಕಾತಿ, ಅಭ್ಯರ್ಥಿಗಳು ಮತ್ತು ಸ್ಕೋರ್‌ಕಾರ್ಡ್‌ಗಳ ಬಗ್ಗೆ ಕೇಳಿ."
+  },
+  "employerCandidateProfile": {
+    "title": "ಅಭ್ಯರ್ಥಿ ಪ್ರೊಫೈಲ್ | letshyre.ai",
+    "description": "LetsHyre ನಲ್ಲಿ ಅಭ್ಯರ್ಥಿಯ ಪ್ರೊಫೈಲ್, ಕೌಶಲ್ಯಗಳು ಮತ್ತು ಅನುಭವವನ್ನು ನೋಡಿ."
+  },
+  "employerCandidateScorecard": {
+    "title": "ಅಭ್ಯರ್ಥಿ ಸ್ಕೋರ್‌ಕಾರ್ಡ್ | letshyre.ai",
+    "description": "ಈ ಅಭ್ಯರ್ಥಿ ಸಂದರ್ಶನದಲ್ಲಿ ಹೇಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸಿದರು ಎಂಬುದರ AI-ಜನಿತ ಸಾರಾಂಶ."
+  },
+  "employerInvoices": {
+    "title": "ನನ್ನ ಇನ್‌ವಾಯ್ಸ್‌ಗಳು | letshyre.ai",
+    "description": "ನಮ್ಮೊಂದಿಗಿನ ನಿಮ್ಮ ಇನ್‌ವಾಯ್ಸ್ ಇತಿಹಾಸ."
+  },
+  "employerPostJob": {
+    "title": "ಉದ್ಯೋಗ ಪೋಸ್ಟ್ ಮಾಡಿ | letshyre.ai",
+    "description": "ಕೆಲವೇ ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಆಕರ್ಷಕ ಉದ್ಯೋಗ ಪೋಸ್ಟ್ ರಚಿಸಲು ನಾವು ನಿಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತೇವೆ."
+  },
+  "employerProfile": {
+    "title": "ಪ್ರೊಫೈಲ್ | letshyre.ai",
+    "description": "ನಿಮ್ಮ ಸಂಸ್ಥೆಯ ಪ್ರಮುಖ ವಿವರಗಳು, ಬ್ರ್ಯಾಂಡಿಂಗ್ ಮತ್ತು ಸಂಪರ್ಕ ಮಾಹಿತಿಯನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ನಿರ್ವಹಿಸಿ."
+  },
+  "employerUnlockedCandidates": {
+    "title": "ಅನ್‌ಲಾಕ್ ಮಾಡಿದ ಅಭ್ಯರ್ಥಿಗಳು | letshyre.ai",
+    "description": "ನೀವು ಅನ್‌ಲಾಕ್ ಮಾಡುವ ಪ್ರೊಫೈಲ್‌ಗಳು ಇಲ್ಲಿ ಗೋಚರಿಸುತ್ತವೆ."
+  },
+  "employerViewJobs": {
+    "title": "ಉದ್ಯೋಗಗಳನ್ನು ವೀಕ್ಷಿಸಿ | letshyre.ai",
+    "description": "ನೀವು ಪೋಸ್ಟ್ ಮಾಡಿದ ಎಲ್ಲಾ ಉದ್ಯೋಗಗಳನ್ನು ವೀಕ್ಷಿಸಿ ಮತ್ತು ನಿರ್ವಹಿಸಿ."
+  },
+  "employerApplicants": {
+    "title": "ಉದ್ಯೋಗ ಅರ್ಜಿದಾರರು | letshyre.ai",
+    "description": "ಈ ಪಾತ್ರಕ್ಕೆ ಅರ್ಜಿ ಸಲ್ಲಿಸಿದ ಅಭ್ಯರ್ಥಿಗಳನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ನಿರ್ವಹಿಸಿ."
+  },
+  "employerTeam": {
+    "title": "ನಿಮ್ಮ ತಂಡ | letshyre.ai",
+    "description": "ಈಗಾಗಲೇ ಇಲ್ಲಿರುವವರನ್ನು ನೋಡಿ ಮತ್ತು ಹೊಸ ಸದಸ್ಯರನ್ನು ತಂಡಕ್ಕೆ ಸೇರಿಸಿ."
+  },
+  "employerOnboarding": {
+    "title": "ಕಂಪನಿ ವಿವರಗಳು | letshyre.ai",
+    "description": "ನಿಮ್ಮ LetsHyre ಉದ್ಯೋಗದಾತ ಖಾತೆಯ ಸೆಟಪ್ ಅನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ಕಂಪನಿ ವಿವರಗಳು ಮತ್ತು ಕಾನೂನು ದಾಖಲೆಗಳನ್ನು ಸೇರಿಸಿ."
+  },
+  "employerJobDetail": {
+    "title": "{{jobTitle}} | letshyre.ai",
+    "description": "LetsHyre ನಲ್ಲಿ {{jobTitle}} ವಿವರಗಳನ್ನು ನೋಡಿ ಮತ್ತು ನಿರ್ವಹಿಸಿ.",
+    "fallbackTitle": "ಉದ್ಯೋಗ ವಿವರಗಳು"
+  },
+  "employerSharedLinks": {
+    "title": "ಹಂಚಿಕೊಂಡ ಲಿಂಕ್‌ಗಳು | letshyre.ai",
+    "description": "ನೀವು ಹಂಚಿಕೊಳ್ಳುವ ಲಿಂಕ್‌ಗಳು ಇಲ್ಲಿ ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತವೆ."
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "homeCrumb": "Home",
+  "sharedScorecard": {
+    "title": "Scorecard van kandidaat | letshyre.ai",
+    "description": "De door AI beoordeelde interview-scorecard van een kandidaat, gedeeld door een werkgever op LetsHyre."
+  },
+  "getStarted": {
+    "title": "Aan de slag | letshyre.ai",
+    "description": "Kies of je werft of werk zoekt en maak vervolgens je LetsHyre-account aan."
+  },
+  "employeeSignIn": {
+    "title": "Inloggen kandidaat | letshyre.ai",
+    "description": "Log in op je LetsHyre-kandidaataccount om interviews te doen en je sollicitaties te volgen."
+  },
+  "employeeRegister": {
+    "title": "Registreren als kandidaat | letshyre.ai",
+    "description": "Maak een LetsHyre-kandidaataccount aan voor AI-interviews en geverifieerde scorecards."
+  },
+  "employerSignIn": {
+    "title": "Inloggen werkgever | letshyre.ai",
+    "description": "Log in op je LetsHyre-werkgeversaccount om vacatures te plaatsen en scorecards te bekijken."
+  },
+  "employerRegister": {
+    "title": "Registreren als werkgever | letshyre.ai",
+    "description": "Maak een LetsHyre-werkgeversaccount aan om vacatures te plaatsen, AI-interviews te doen en sneller te werven."
+  },
+  "forgotPassword": {
+    "title": "Wachtwoord opnieuw instellen | letshyre.ai",
+    "description": "Stel je LetsHyre-wachtwoord opnieuw in via e-mailverificatie en ga terug naar je account."
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden | letshyre.ai",
+    "description": "De pagina die je zoekt bestaat niet of is verplaatst."
+  },
+  "employeeFindJobs": {
+    "title": "Vacatures zoeken | letshyre.ai",
+    "description": "Ontdek kansen die aansluiten bij jouw vaardigheden en ambities"
+  },
+  "employeeChatbot": {
+    "title": "AI-assistent | letshyre.ai",
+    "description": "Stel vragen over LetsHyre, uw sollicitaties, scorecards en meer."
+  },
+  "employeeInterviewGuide": {
+    "title": "Interviewgids | letshyre.ai",
+    "description": "Acht stappen staan tussen u en het sollicitatiegesprek. Hier is precies wat elke stap inhoudt, zodat er geen verrassingen zijn op de dag zelf."
+  },
+  "employeeMyApplications": {
+    "title": "Mijn sollicitaties | letshyre.ai",
+    "description": "Volg uw gesolliciteerde, shortlisted, geselecteerde & afgewezen vacatures"
+  },
+  "employeeProfile": {
+    "title": "Profiel | letshyre.ai",
+    "description": "Een vijfstappenformulier met uw identiteit, foto, werkvoorkeuren en cv."
+  },
+  "employeeScoreCardsList": {
+    "title": "Mijn scorecards | letshyre.ai",
+    "description": "Bekijk uw interviewprestaties en door AI gegenereerde feedback."
+  },
+  "employeeScorecard": {
+    "title": "Uw scorecard | letshyre.ai",
+    "description": "Een door AI gegenereerde samenvatting van uw prestaties tijdens het interview."
+  },
+  "employerDashboard": {
+    "title": "Dashboard | letshyre.ai",
+    "description": "Dit is wat er vandaag gebeurt in uw wervingshub."
+  },
+  "employerCandidatePool": {
+    "title": "Kandidatenpool | letshyre.ai",
+    "description": "Ontdek AI-gematchte kandidaten voor uw openstaande posities."
+  },
+  "employerChatbot": {
+    "title": "AI Assistent | letshyre.ai",
+    "description": "Stel vragen over LetsHyre, werving, kandidaten en scorecards."
+  },
+  "employerCandidateProfile": {
+    "title": "Kandidaatprofiel | letshyre.ai",
+    "description": "Bekijk het profiel, de vaardigheden en de ervaring van een kandidaat op LetsHyre."
+  },
+  "employerCandidateScorecard": {
+    "title": "Kandidaat Scorecard | letshyre.ai",
+    "description": "Een door AI gegenereerde samenvatting van de prestaties van de kandidaat tijdens het interview."
+  },
+  "employerInvoices": {
+    "title": "Mijn Facturen | letshyre.ai",
+    "description": "Uw factuurgeschiedenis bij ons."
+  },
+  "employerPostJob": {
+    "title": "Vacature plaatsen | letshyre.ai",
+    "description": "Wij helpen u in seconden een overtuigende vacature te maken."
+  },
+  "employerProfile": {
+    "title": "Profiel | letshyre.ai",
+    "description": "Bekijk en beheer de kerngegevens, huisstijl en contactinformatie van uw organisatie."
+  },
+  "employerUnlockedCandidates": {
+    "title": "Ontgrendelde kandidaten | letshyre.ai",
+    "description": "Profielen die u ontgrendelt verschijnen hier."
+  },
+  "employerViewJobs": {
+    "title": "Vacatures bekijken | letshyre.ai",
+    "description": "Bekijk en beheer alle vacatures die u heeft geplaatst."
+  },
+  "employerApplicants": {
+    "title": "Vacaturesollicitanten | letshyre.ai",
+    "description": "Bekijk en beheer kandidaten die voor deze rol hebben gesolliciteerd."
+  },
+  "employerTeam": {
+    "title": "Uw team | letshyre.ai",
+    "description": "Zie wie er al is en breng nieuwe leden aan boord."
+  },
+  "employerOnboarding": {
+    "title": "Bedrijfsgegevens | letshyre.ai",
+    "description": "Voeg uw bedrijfsgegevens en juridische documenten toe om het instellen van uw LetsHyre-werkgeversaccount te voltooien."
+  },
+  "employerJobDetail": {
+    "title": "{{jobTitle}} | letshyre.ai",
+    "description": "Bekijk en beheer de details van {{jobTitle}} op LetsHyre.",
+    "fallbackTitle": "Vacaturedetails"
+  },
+  "employerSharedLinks": {
+    "title": "Gedeelde links | letshyre.ai",
+    "description": "Links die je deelt, verschijnen hier."
+  }
+}

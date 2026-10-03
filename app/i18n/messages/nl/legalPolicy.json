@@ -1,0 +1,323 @@
+{
+  "policy": {
+    "title": "Privacybeleid",
+    "intro": [
+      "Welkom bij LetsHyre (\"LetsHyre\", \"wij\", \"ons\" of \"onze\"). Wij zetten ons in voor het beschermen van uw privacy en het waarborgen van de veiligheid van uw persoonsgegevens.",
+      "Door gebruik te maken van het platform van LetsHyre, stemt u in met het verzamelen, gebruiken, opslaan en verwerken van uw informatie zoals beschreven in dit Privacybeleid."
+    ],
+    "sections": [
+      {
+        "id": "information-we-collect",
+        "title": "1. Informatie die wij verzamelen",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "Informatie van kandidaten:"
+          },
+          {
+            "type": "p",
+            "text": "Wij kunnen het volgende verzamelen:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Volledige naam",
+              "E-mailadres",
+              "Telefoonnummer",
+              "Cv",
+              "Werkervaring",
+              "Opleidingskwalificaties",
+              "Professionele vaardigheden en ervaring",
+              "AI-interviewantwoorden",
+              "Interviewscorecards",
+              "Door kandidaten ingediende profielinformatie"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "subheading",
+            "text": "Informatie van werkgevers:"
+          },
+          {
+            "type": "p",
+            "text": "Wij kunnen het volgende verzamelen:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Bedrijfsnaam",
+              "Naam van de recruiter",
+              "Zakelijk e-mailadres",
+              "Contactgegevens",
+              "Wervingsvereisten",
+              "Functiebeschrijvingen",
+              "Door werkgevers ingediende profielinformatie"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "subheading",
+            "text": "Technische informatie:"
+          },
+          {
+            "type": "p",
+            "text": "Wij kunnen automatisch verzamelen:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "IP-adres",
+              "Browserinformatie",
+              "Apparaatinformatie",
+              "Besturingssysteem",
+              "Websitegebruiksgegevens",
+              "Cookies en vergelijkbare technologieën"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "how-we-use-information",
+        "title": "2. Hoe wij informatie gebruiken",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Wij gebruiken verzamelde informatie om:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Gebruikersaccounts aan te maken en te beheren",
+              "Kandidaten te koppelen aan relevante functiemogelijkheden",
+              "Op functie gebaseerde AI-interviews af te nemen",
+              "Interviewscorecards en kandidaatinzichten te genereren",
+              "Wervings- en aanwervingsprocessen te faciliteren",
+              "De prestaties van het platform en de gebruikerservaring te verbeteren",
+              "Platformupdates en meldingen te communiceren",
+              "Fraude, misbruik en ongeautoriseerde activiteiten te voorkomen."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ai-interview-processing-and-consent",
+        "title": "3. Verwerking van AI-interviews en toestemming",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre gebruikt kunstmatige-intelligentietechnologieën om op functie gebaseerde interviews af te nemen en interviewscorecards en -inzichten te genereren."
+          },
+          {
+            "type": "p",
+            "text": "Door deel te nemen aan AI-interviews erkennen en stemmen kandidaten in met:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "AI-gebaseerde verwerking van interviewantwoorden",
+              "Het genereren van door AI ondersteunde interviewscorecards en -inzichten",
+              "Beoordeling van antwoorden voor wervingsdoeleinden",
+              "Het delen van interviewscorecards en -inzichten met werkgevers via het platform van LetsHyre"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Wij kunnen het volgende verwerken:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Interviewantwoorden",
+              "Interviewopnamen",
+              "Door AI gegenereerde interviewscorecards"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Door AI gegenereerde scorecards en inzichten zijn bedoeld om werkgevers te ondersteunen bij het beoordelen van kandidaten en bieden geen garantie op aanwervingsresultaten."
+          }
+        ]
+      },
+      {
+        "id": "sharing-of-information",
+        "title": "4. Delen van informatie",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Wij kunnen informatie delen met:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Werkgevers die LetsHyre gebruiken voor legitieme wervingsdoeleinden",
+              "Geautoriseerde dienstverleners die platformactiviteiten ondersteunen",
+              "Vertrouwde aanbieders van cloudhosting, analyse, communicatie, betalingsverwerking en AI-diensten",
+              "Overheids- of wetshandhavingsinstanties wanneer dit vereist is door toepasselijke wetgeving"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Kandidaatprofielen kunnen aan werkgevers worden gekoppeld en gepresenteerd op basis van functievereisten, relevantie van de functie, vaardigheden, ervaring en andere matchingcriteria."
+          },
+          {
+            "type": "p",
+            "text": "Gedetailleerde kandidaatinformatie, interviewscorecards, interviewopnamen en contactgegevens van kandidaten kunnen beschikbaar worden gesteld aan werkgevers wanneer werkgevers ervoor kiezen kandidaatinformatie te ontgrendelen via het platform van LetsHyre."
+          },
+          {
+            "type": "p",
+            "text": "Werkgevers zijn verantwoordelijk voor het gebruik van kandidaatinformatie uitsluitend voor legitieme wervingsdoeleinden en in overeenstemming met toepasselijke wetgeving."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre verkoopt geen persoonsgegevens aan derden."
+          }
+        ]
+      },
+      {
+        "id": "profile-activity-and-data-retention",
+        "title": "5. Profielactiviteit en gegevensbewaring",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Om een talentenpool van hoge kwaliteit en actieve beschikbaarheid te behouden, blijven kandidaatprofielen tot 90 dagen na de datum van aanmaak actief op het platform."
+          },
+          {
+            "type": "p",
+            "text": "Kandidaten kunnen hun profielinformatie gedurende deze periode bijwerken en deelnemen aan aanvullende AI-interviews, inclusief herkansingen voor dezelfde functie of interviews voor andere functies, in overeenstemming met het platformbeleid."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre kan kandidaten toestaan tot drie interviewpogingen te voltooien om hun interviewscorecards, profielsterkte en zichtbaarheid voor werkgevers te verbeteren."
+          },
+          {
+            "type": "p",
+            "text": "Na het verstrijken van de periode van 90 dagen kunnen kandidaatprofielen permanent worden verwijderd uit de actieve kandidatenpool van LetsHyre."
+          },
+          {
+            "type": "p",
+            "text": "Kandidaten die LetsHyre willen blijven gebruiken na verwijdering van hun profiel, kunnen een nieuw profiel aanmaken, onder voorbehoud van het beleid en de vereisten van het platform."
+          }
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "6. Rechten van gebruikers",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Gebruikers kunnen:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Toegang krijgen tot hun persoonsgegevens",
+              "Correctie van onjuiste informatie aanvragen",
+              "Verwijdering van hun account aanvragen",
+              "Verwijdering van persoonsgegevens aanvragen waar wettelijk van toepassing"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Gebruikers kunnen verzoeken tot accountverwijdering of gegevensverwijdering indienen door contact op te nemen met de klantenservice van LetsHyre. Bepaalde informatie kan worden bewaard indien dit wettelijk vereist is of voor legitieme zakelijke doeleinden."
+          }
+        ]
+      },
+      {
+        "id": "data-security",
+        "title": "7. Gegevensbeveiliging",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre implementeert redelijke technische en organisatorische maatregelen om persoonsgegevens te beschermen tegen ongeautoriseerde toegang, openbaarmaking, wijziging, misbruik of vernietiging."
+          },
+          {
+            "type": "p",
+            "text": "Hoewel wij passende maatregelen nemen om informatie te beschermen, kan geen enkele methode van elektronische opslag of verzending via het internet als volledig veilig worden gegarandeerd."
+          }
+        ]
+      },
+      {
+        "id": "cookies",
+        "title": "8. Cookies",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre kan cookies en vergelijkbare technologieën gebruiken om de platformfunctionaliteit, beveiliging, analyse, prestaties en gebruikerservaring te verbeteren."
+          },
+          {
+            "type": "p",
+            "text": "Gebruikers kunnen ervoor kiezen cookies uit te schakelen via hun browserinstellingen; bepaalde platformfuncties werken in dat geval mogelijk niet correct."
+          }
+        ]
+      },
+      {
+        "id": "third-party-services",
+        "title": "9. Diensten van derden",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre kan gebruikmaken van vertrouwde externe dienstverleners ter ondersteuning van platformactiviteiten, waaronder hosting, analyse, communicatie, betalingsverwerking en AI-gerelateerde diensten."
+          },
+          {
+            "type": "p",
+            "text": "Deze dienstverleners kunnen informatie namens ons verwerken, uitsluitend met het doel hun diensten aan LetsHyre te leveren."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre is niet verantwoordelijk voor de privacypraktijken van websites of diensten van derden die toegankelijk zijn via externe links."
+          }
+        ]
+      },
+      {
+        "id": "changes-to-this-policy",
+        "title": "10. Wijzigingen in dit beleid",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre kan dit Privacybeleid van tijd tot tijd bijwerken."
+          },
+          {
+            "type": "p",
+            "text": "Eventuele updates worden op deze pagina gepubliceerd. Voortgezet gebruik van het platform na dergelijke updates geldt als aanvaarding van het herziene Privacybeleid."
+          }
+        ]
+      },
+      {
+        "id": "contact-us",
+        "title": "11. Neem contact met ons op",
+        "blocks": [
+          {
+            "type": "contact",
+            "intro": "Voor privacygerelateerde vragen, verzoeken of zorgen kunt u contact opnemen met:",
+            "emailLabel": "E-mail:",
+            "email": "support@letshyre.ai",
+            "team": "LetsHyre Support Team"
+          }
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "title": "Privacybeleid | letshyre.ai",
+    "description": "Hoe LetsHyre gegevens van kandidaten en werkgevers verzamelt, gebruikt, bewaart en beschermt op het platform.",
+    "name": "Privacybeleid",
+    "schemaDescription": "Hoe LetsHyre uw gegevens beheert en beschermt.",
+    "crumb": "Privacybeleid"
+  }
+}

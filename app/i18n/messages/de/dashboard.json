@@ -1,0 +1,96 @@
+{
+  "logo": "LetsHyre-Logo",
+  "nav": {
+    "findJobs": "Jobs finden",
+    "myApplications": "Meine Bewerbungen",
+    "scorecard": "Scorecard",
+    "profile": "Profil",
+    "logout": "Abmelden",
+    "dashboard": "Dashboard",
+    "postJob": "Stelle ausschreiben",
+    "viewJobs": "Stellen anzeigen",
+    "candidatePool": "Kandidatenpool",
+    "unlockedCandidates": "Freigeschaltete Kandidaten",
+    "yourTeam": "Ihr Team",
+    "invoiceHistory": "Rechnungsverlauf",
+    "assistant": "Assistent",
+    "interviewGuide": "Interview-Leitfaden"
+  },
+  "aria": {
+    "openProfile": "Profil öffnen",
+    "openMenu": "Menü öffnen",
+    "mainNav": "Hauptnavigation",
+    "closeNav": "Navigation schließen",
+    "mainContent": "Hauptinhalt",
+    "userAvatar": "Benutzer"
+  },
+  "employer": {
+    "credits": "Guthaben: {{count}}",
+    "member_one": "{{count}} Mitglied",
+    "member_other": "{{count}} Mitglieder",
+    "replayTour": "Produkttour erneut ansehen",
+    "profileAlt": "Profil"
+  },
+  "tour": {
+    "back": "Zurück",
+    "next": "Weiter",
+    "finish": "Fertig",
+    "skip": "Überspringen",
+    "alt": "Tour",
+    "steps": {
+      "dashboard": {
+        "title": "Ihr Recruiting-Hub",
+        "content": "Verschaffen Sie sich einen Überblick über Ihre Recruiting-Kennzahlen und schnelle Zugriffe."
+      },
+      "postJob": {
+        "title": "In Minuten einstellen",
+        "content": "Laden Sie eine Stellenbeschreibung hoch. Unsere KI übernimmt die Dateneingabe sofort für Sie."
+      },
+      "viewJobs": {
+        "title": "Stellen anzeigen",
+        "content": "Verwalten Sie hier alle Stellenausschreibungen."
+      },
+      "candidates": {
+        "title": "Kandidaten",
+        "content": "Sehen Sie hier alle Kandidaten ein."
+      },
+      "team": {
+        "title": "Gemeinsames Recruiting",
+        "content": "Laden Sie Ihre Teammitglieder ein, um Kandidaten zu prüfen."
+      },
+      "billing": {
+        "title": "Rechnungsverlauf",
+        "content": "Hier finden Sie jeden Guthabenkauf mit der zugehörigen GST-Rechnung."
+      },
+      "credits": {
+        "title": "Guthaben im Blick",
+        "content": "Behalten Sie hier Ihr verbleibendes Guthaben im Blick und laden Sie es jederzeit auf, um weiterhin Kandidaten freizuschalten."
+      },
+      "addMember": {
+        "title": "Teammitglieder hinzufügen",
+        "content": "Holen Sie weitere Recruiter und Manager ins Team, um Ihre Einstellungsentscheidungen zu beschleunigen."
+      },
+      "profile": {
+        "title": "Ihr Profil verwalten",
+        "content": "Verwalten Sie Ihre Kontoeinstellungen."
+      }
+    }
+  },
+  "onboarding": {
+    "title": "Vervollständigen Sie Ihr Profil",
+    "description": "Ein fünfstufiges Formular zu Identität, Foto, Jobpräferenzen und Lebenslauf."
+  },
+  "logout": {
+    "title": "Oh nein, Sie verlassen uns",
+    "confirm": "Möchten Sie sich wirklich abmelden?",
+    "cancel": "Nö!",
+    "confirmButton": "Ja, abmelden",
+    "loggingOut": "Wird abgemeldet...",
+    "closeAria": "Schließen"
+  },
+  "locked": {
+    "title": "Vollständigen Zugriff freischalten!",
+    "description": "Vervollständigen Sie Ihr Profil, um auf alle Funktionen zuzugreifen",
+    "action": "Zum Profil"
+  }
+}

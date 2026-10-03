@@ -1,0 +1,429 @@
+{
+  "scorecard": {
+    "note": "The interview result sheet. Product pages and legal pages were translated separately and drifted apart.",
+    "locales": {
+      "it": {
+        "use": "Scorecard",
+        "avoid": [
+          "Schede di valutazione",
+          "Scheda di valutazione"
+        ],
+        "status": "enforced"
+      },
+      "id": {
+        "use": "Scorecard",
+        "avoid": [
+          "Kartu Penilaian"
+        ],
+        "status": "enforced"
+      },
+      "nl": {
+        "use": "scorecard",
+        "avoid": [
+          "scorekaart",
+          "scorekaarten"
+        ],
+        "status": "enforced"
+      },
+      "de": {
+        "use": "Scorecard",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Scorecard",
+          "Interview-Auswertungsbögen"
+        ]
+      },
+      "pt": {
+        "use": "Relatório de Avaliação",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Relatório de Avaliação",
+          "Ficha de Avaliação de Entrevistas"
+        ]
+      },
+      "es": {
+        "use": "Informe de evaluación",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Informe de evaluación",
+          "Tarjetas de puntuación"
+        ]
+      },
+      "fr": {
+        "use": "grille d'évaluation d'entretien",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "évaluation",
+          "grilles d'évaluation d'entretien"
+        ]
+      },
+      "ru": {
+        "use": "оценочная карта",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "скоркарта",
+          "оценочные листы",
+          "оценочные карты"
+        ]
+      },
+      "ta": {
+        "use": "மதிப்பீட்டு அட்டை",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "ஸ்கோர்கார்டு",
+          "மதிப்பெண் அட்டை",
+          "மதிப்பீட்டு அட்டை"
+        ]
+      }
+    }
+  },
+  "candidate": {
+    "note": "A job seeker on the platform. Distinct from an applicant to a specific job — see the applicants page, which keeps its own word.",
+    "locales": {
+      "ko": {
+        "use": "후보자",
+        "avoid": [],
+        "status": "enforced",
+        "except": [
+          "employerJobs.json"
+        ]
+      }
+    }
+  },
+  "employer": {
+    "locales": {
+      "ja": {
+        "use": "雇用主",
+        "avoid": [],
+        "status": "enforced",
+        "seen": [
+          "雇用主",
+          "採用担当者"
+        ]
+      },
+      "ko": {
+        "use": "기업",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "기업",
+          "고용주"
+        ]
+      },
+      "id": {
+        "use": "Pemberi Kerja",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Perusahaan",
+          "Pemberi Kerja"
+        ]
+      }
+    }
+  },
+  "ai-powered": {
+    "locales": {
+      "ml": {
+        "use": "AI-അധിഷ്ഠിത",
+        "avoid": [
+          "AI-ശക്തിയുള്ള",
+          "AI-ചാലിത"
+        ],
+        "status": "enforced"
+      },
+      "hi": {
+        "use": "एआई",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "एआई",
+          "AI"
+        ]
+      }
+    }
+  },
+  "screening": {
+    "locales": {
+      "ar": {
+        "use": "فرز",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "فرز",
+          "فحص"
+        ]
+      },
+      "ur": {
+        "use": "اسکریننگ",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "اسکریننگ",
+          "جانچ"
+        ]
+      },
+      "es": {
+        "use": "cribado",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "cribado",
+          "preselección"
+        ]
+      },
+      "fr": {
+        "use": "présélection",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "tri",
+          "présélection"
+        ]
+      },
+      "it": {
+        "use": "screening",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "screening",
+          "selezione"
+        ]
+      }
+    }
+  },
+  "interview": {
+    "locales": {
+      "ml": {
+        "use": "ഇന്റർവ്യൂ",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "ഇന്റർവ്യൂ",
+          "അഭിമുഖ"
+        ]
+      },
+      "nl": {
+        "use": "interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "interview",
+          "sollicitatiegesprek"
+        ]
+      }
+    }
+  },
+  "hiring": {
+    "locales": {
+      "te": {
+        "use": "హైరింగ్",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "హైరింగ్",
+          "నియామకం"
+        ]
+      },
+      "ta": {
+        "use": "பணியமர்த்தல்",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "ஆட்சேர்ப்பு",
+          "பணியமர்த்தல்",
+          "பணிமேற்கொள்ளல்"
+        ]
+      }
+    }
+  },
+  "resume": {
+    "locales": {
+      "ta": {
+        "use": "பயோடேட்டா",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "பயோடேட்டா",
+          "விண்ணப்பம்"
+        ]
+      }
+    }
+  },
+  "pay-per-unlock": {
+    "locales": {
+      "ru": {
+        "use": "«Плата за разблокировку»",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Оплата За Разблокировку",
+          "«Плата за открытие доступа»"
+        ]
+      },
+      "id": {
+        "use": "Bayar-Per-Buka-Akses (Pay-Per-Unlock)",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Model Bayar-Per-Buka",
+          "Bayar-Per-Buka-Akses (Pay-Per-Unlock)"
+        ]
+      }
+    }
+  },
+  "take-interview": {
+    "note": "The button a candidate clicks in the desktop app. Locales split four ways — left in English, English in quotes, translated in quotes, translated bare — and the translations disagree on the verb: es/ta calque \"take\" as administer, de/id/pt chose \"start\", ru chose \"undergo\". At most one is right. Blocked until the desktop app confirms whether it localizes this label and, if so, what it says in each locale. \"use\" below is the conservative default (leave the English label alone) and must be replaced with the app's own wording if the app turns out to be localized.",
+    "locales": {
+      "ar": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "«إجراء المقابلة»"
+        ]
+      },
+      "bn": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Take Interview"
+        ]
+      },
+      "de": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "„Interview starten“"
+        ]
+      },
+      "es": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Tomar Entrevista"
+        ]
+      },
+      "fr": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Passer l'entretien"
+        ]
+      },
+      "hi": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Take Interview"
+        ]
+      },
+      "id": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Mulai Wawancara"
+        ]
+      },
+      "it": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Inizia Colloquio"
+        ]
+      },
+      "ja": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Take Interview"
+        ]
+      },
+      "kn": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "'Take Interview'"
+        ]
+      },
+      "ko": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "인터뷰 시작"
+        ]
+      },
+      "ml": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Take Interview"
+        ]
+      },
+      "nl": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Interview Nemen"
+        ]
+      },
+      "pt": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Iniciar Entrevista"
+        ]
+      },
+      "ru": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Пройти собеседование"
+        ]
+      },
+      "ta": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "நேர்காணல் எடு"
+        ]
+      },
+      "te": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "ఇంటర్వ్యూ తీసుకోండి"
+        ]
+      },
+      "ur": {
+        "use": "Take Interview",
+        "avoid": [],
+        "status": "pending",
+        "seen": [
+          "Take Interview"
+        ]
+      }
+    }
+  }
+}

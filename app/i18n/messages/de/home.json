@@ -1,0 +1,179 @@
+{
+  "hero": {
+    "badgeNew": "Neu",
+    "badgeText": "100 % KI-geprüfte Kandidaten",
+    "title": "Die KI-Recruiting-Plattform für <hl>Talente in der Kündigungsfrist</hl>",
+    "description": "LetsHyre automatisiert die Lebenslaufbewertung, KI-Interviews und Kandidatenverifizierung für moderne HR-Teams. Stellen Sie Ihr Traumteam schneller zusammen — ohne Screening-Aufwand.",
+    "ctaHiring": "Ich stelle ein",
+    "ctaJob": "Ich suche einen Job",
+    "verifiedLabel": "KI-verifiziert",
+    "increaseBy": "Steigern Sie Ihre Einstellungen um",
+    "seeCategories": "Kategorien ansehen",
+    "imgAlt": "LetsHyre-Plattform",
+    "tagline": {
+      "stop": "Schluss mit Screening.",
+      "start": "Zeit für die Shortlist."
+    }
+  },
+  "assistance": {
+    "ariaLabel": "So funktioniert's",
+    "steps": {
+      "post": {
+        "pill": "Stelle ausschreiben",
+        "heading": "Definieren Sie die Rolle,<br/><hl>die KI erledigt den Rest</hl>",
+        "description": "Listen Sie Ihre Stellenanforderungen auf, und unsere KI übernimmt sofort — automatisierte Lebenslaufbewertung, skalierbare Interviews und die Ermittlung Ihres idealen Kandidatenprofils für reibungslose Entscheidungen.",
+        "link": "Erfahren Sie, wie es funktioniert",
+        "imageAlt": "Stellenausschreibung veröffentlichen"
+      },
+      "screen": {
+        "pill": "KI-Screening",
+        "heading": "Interviews rund um die Uhr,<br/><hl>ohne Terminreibung</hl>",
+        "description": "Tiefgehende, objektive Bewertungen von Fähigkeiten, Erfahrung und kultureller Passung — durchgehend über alle Zeitzonen hinweg. Konsistent, fair und schneller als jeder manuelle Prozess.",
+        "link": "Live erleben",
+        "imageAlt": "KI prüft Kandidaten"
+      },
+      "scorecards": {
+        "pill": "Scorecards erhalten",
+        "heading": "Rohdaten verwandelt in<br/><hl>klare Empfehlungen</hl>",
+        "description": "Umfassende, KI-generierte Scorecards mit konkreten Handlungsempfehlungen — damit Sie Rätselraten vermeiden und zielsicher den besten Kandidaten für jede Rolle finden.",
+        "link": "Beispiel-Scorecard ansehen",
+        "imageAlt": "KI-generierte Scorecards erhalten"
+      },
+      "hire": {
+        "pill": "Sicher einstellen",
+        "heading": "Prädiktive Indikatoren,<br/><hl>kein Bauchgefühl</hl>",
+        "description": "PSI-gestützte Scorecards liefern Ihnen eine statistische Prognose zu zukünftiger Leistung und Bindung eines Kandidaten — und machen jede Einstellungsentscheidung zu einem datengestützten strategischen Schritt.",
+        "link": "PSI-Werte entdecken",
+        "imageAlt": "Mit Daten sicher einstellen"
+      }
+    }
+  },
+  "candidate": {
+    "eyebrow": "Für Kandidaten",
+    "title": "Ihr Traumjob<br/>von der KI gefunden",
+    "items": {
+      "interview": {
+        "title": "KI-Interview absolvieren",
+        "desc": "Führen Sie jederzeit und überall ein interaktives KI-Interview durch. Steigern Sie Ihre Chancen mit einer nahtlosen und flexiblen Erfahrung."
+      },
+      "evaluation": {
+        "title": "Sofortige Auswertung",
+        "desc": "Erleben Sie eine wirklich sofortige Auswertung. Erhalten Sie schnelle, klare Einblicke in Ihre Leistung und Fähigkeiten."
+      },
+      "matching": {
+        "title": "Intelligentes Matching",
+        "desc": "Intelligentes Matching, das für Sie arbeitet. Unsere KI verbindet Sie mit Chancen, die zu Ihren Fähigkeiten und Karrierezielen passen."
+      },
+      "hired": {
+        "title": "Schneller eingestellt werden",
+        "desc": "Erleben Sie intelligentes Matching, das Chancen findet, die zu Ihren Stärken und Zielen passen. Vermeiden Sie langwieriges Screening und treten Sie direkt mit den richtigen Recruitern in Kontakt."
+      }
+    }
+  },
+  "video": {
+    "heading": "Das KI-Interview",
+    "intro": "LetsHyre automatisiert das Lebenslauf-Screening, KI-Interviews und die Kandidatenverifizierung — und macht Recruiting so schneller und smarter.",
+    "videoLabel": "KI-Interview-Demo"
+  },
+  "scorecard": {
+    "badge": "KI-gestützte Plattform",
+    "title": "KI-gestützte <hl>Scorecard</hl> & Matching",
+    "subtitle": "Intelligente Einstellungsentscheidungen, angetrieben von künstlicher Intelligenz",
+    "tagFeature": "Funktion",
+    "tagSmart": "Smart",
+    "tagAnalytics": "Analysen",
+    "skillMatching": "Fähigkeiten-Matching",
+    "aiScreening": "KI-Kandidaten-Screening",
+    "performance": "Leistungsanalysen",
+    "bullets": [
+      "Sofortiges KI-gestütztes Fähigkeiten-Matching",
+      "Liefert nur die relevantesten Talente",
+      "Filtert Rauschen heraus und findet die wahre Passung",
+      "Hilft Ihnen, klüger und schneller einzustellen"
+    ],
+    "stats": {
+      "accuracy": "Genauigkeit",
+      "faster": "Schneller",
+      "matches": "Übereinstimmungen",
+      "reports": "Berichte",
+      "uptime": "Verfügbarkeit"
+    },
+    "growthTitle": "Wachstumspotenzial",
+    "growthDesc": "Bewerten Sie die besten Mitarbeiter. Prädiktive Modellierung für maximales Wachstum.",
+    "potentialScore": "Potenzial-Score",
+    "fitScore": "Fit-Score"
+  },
+  "faq": {
+    "eyebrow": "Support",
+    "title": "FAQ: KI-Recruiting & Kündigungsfrist",
+    "subtitle": "Alles, was Sie über die KI-gestützte Recruiting-Plattform von LetsHyre wissen müssen.",
+    "items": [
+      {
+        "q": "Wie funktioniert die KI-Recruiting-Plattform von LetsHyre?",
+        "a": "LetsHyre analysiert Lebensläufe sofort, führt interaktive KI-Interviews zur Bewertung von Kommunikations- und Fachkompetenzen durch und liefert eine verifizierte Scorecard, sodass Sie nur Zeit in die besten Kandidaten investieren."
+      },
+      {
+        "q": "Was unterscheidet LetsHyre von anderen Recruiting-Plattformen?",
+        "a": "Im Gegensatz zu herkömmlichen Jobbörsen automatisiert LetsHyre den gesamten Screening-Prozess. Unsere KI verifiziert Fähigkeiten in Echtzeit, noch bevor Sie den Kandidaten sehen, und verkürzt so Ihre Time-to-Hire erheblich."
+      },
+      {
+        "q": "Wie genau ist die KI-Interviewbewertung?",
+        "a": "Unsere KI-Modelle wurden mit Millionen von Datenpunkten trainiert, um Kommunikation, fachliche Kompetenz und kulturelle Passung mit über 98 % Genauigkeit zu bewerten und so eine faire, unvoreingenommene Bewertung sicherzustellen."
+      },
+      {
+        "q": "Worauf prüft die KI-Objekterkennung bei Video?",
+        "a": "Unser fortschrittliches Anti-Betrugssystem überwacht die Blickrichtung, erkennt mehrere Gesichter und prüft während der Bewertung auf nicht autorisierte Geräte wie Telefone oder zusätzliche Monitore."
+      },
+      {
+        "q": "Werden Kandidaten in der Kündigungsfrist verifiziert?",
+        "a": "Ja, wir priorisieren und verifizieren Kandidaten in der Kündigungsfrist, damit Sie Ihr Team bis zu 40 % schneller mit sofort verfügbaren Talenten aufbauen können."
+      },
+      {
+        "q": "Welche Informationen enthält die KI-Scorecard?",
+        "a": "Die Scorecard bietet eine umfassende Aufschlüsselung von Potenzial-Score, Fit-Score, fachlichen Stärken, Verbesserungsbereichen und einer detaillierten Verhaltensanalyse des Kandidaten."
+      },
+      {
+        "q": "Kann ich LetsHyre in unsere bestehenden HR-Systeme integrieren?",
+        "a": "Auf jeden Fall! LetsHyre lässt sich nahtlos über unsere sichere API in gängige ATS- und HRIS-Plattformen integrieren, sodass Ihr Recruiting-Workflow ununterbrochen bleibt."
+      }
+    ]
+  },
+  "hireCard": {
+    "title": "Bereit einzustellen oder eingestellt zu werden?",
+    "description": "Stärken Sie Ihre Karriere oder skalieren Sie Ihr Team mit KI. Verbinden Sie sich schneller und smarter als je zuvor auf einer Plattform, die für die Zukunft des Recruitings entwickelt wurde.",
+    "startHiring": "Jetzt einstellen",
+    "applyJob": "Auf Job bewerben"
+  },
+  "chatbot": {
+    "title": "LetsHyre-Assistent",
+    "subtitle": "Fragen Sie uns alles",
+    "inputPlaceholder": "Stellen Sie eine Frage…",
+    "send": "Senden",
+    "sendAria": "Nachricht senden",
+    "thinking": "Denkt nach…",
+    "you": "Sie",
+    "assistant": "Assistent",
+    "retry": "Erneut versuchen",
+    "errorMessage": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "clear": "Löschen",
+    "messagesLabel": "Chat-Nachrichten",
+    "launcherAria": "Chat-Assistenten öffnen",
+    "closeAria": "Chat schließen",
+    "empty": {
+      "greeting": "Hallo! Ich bin der LetsHyre-Assistent.",
+      "hint": "Fragen Sie mich alles über LetsHyre. Probieren Sie es mit einer dieser Fragen:",
+      "prompts": {
+        "what": "Was ist LetsHyre?",
+        "scorecard": "Wie funktioniert es für Arbeitgeber?",
+        "applications": "Wie funktioniert es für Arbeitsuchende?",
+        "interview": "Ist der Einstieg kostenlos?"
+      }
+    }
+  },
+  "meta": {
+    "title": "KI-Recruiting- und Interview-Plattform | letshyre.ai",
+    "description": "Lebenslauf-Screening, strukturierte KI-Interviews und Kandidatenprüfung an einem Ort. Für Teams, die Talente in der Kündigungsfrist einstellen.",
+    "name": "LetsHyre — KI-Recruiting-Plattform für Talente in der Kündigungsfrist",
+    "schemaDescription": "KI-gestützte Recruiting-Plattform, die Lebenslauf-Screening, KI-Interviews und Kandidatenverifizierung automatisiert."
+  }
+}

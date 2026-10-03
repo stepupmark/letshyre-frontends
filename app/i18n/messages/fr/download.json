@@ -1,0 +1,26 @@
+{
+  "title": "Télécharger l'application",
+  "subtitle": "Obtenez l'application de bureau sécurisée pour commencer votre session d'entretien stable et sans distraction.",
+  "features": {
+    "distractionFree": "Sans distraction",
+    "stable": "Très stable",
+    "secure": "Espace de travail sécurisé"
+  },
+  "loading": "Chargement des versions...",
+  "comingSoon": "Bientôt disponible",
+  "retry": "Réessayer",
+  "downloadFor": "Télécharger pour {{os}}",
+  "steps": {
+    "download": "Télécharger",
+    "install": "Installer",
+    "interview": "Entretien"
+  },
+  "support": "Un problème ? Consultez le guide d'installation",
+  "meta": {
+    "title": "Télécharger l'application de bureau | letshyre.ai",
+    "description": "Installez l'application de bureau LetsHyre pour Windows et passez votre entretien dans un environnement stable et surveillé.",
+    "name": "Télécharger l'application de bureau LetsHyre",
+    "schemaDescription": "Obtenez l'application de bureau LetsHyre pour Windows.",
+    "crumb": "Télécharger"
+  }
+}

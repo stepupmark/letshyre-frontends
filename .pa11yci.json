@@ -1,0 +1,21 @@
+{
+  "defaults": {
+    "runners": ["axe"],
+    "standard": "WCAG2AA",
+    "timeout": 60000,
+    "chromeLaunchConfig": { "args": ["--no-sandbox"] }
+  },
+  "urls": [
+    "http://localhost:8080/en/",
+    "http://localhost:8080/en/about/",
+    "http://localhost:8080/en/contact/",
+    "http://localhost:8080/en/download/",
+    "http://localhost:8080/en/how-it-works-interview/",
+    "http://localhost:8080/en/pricing/",
+    "http://localhost:8080/en/terms/",
+    "http://localhost:8080/en/policy/",
+    "http://localhost:8080/en/refund-policy/",
+    "http://localhost:8080/ar/",
+    "http://localhost:8080/ar/about/"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "chrome": {
+    "readTime": "~{{count}} 分で読めます",
+    "contents": "目次",
+    "collapseSidebar": "サイドバーを折りたたむ",
+    "expandSidebar": "サイドバーを展開する",
+    "searchPlaceholder": "セクションを検索...",
+    "noMatches": "該当するセクションが見つかりません。",
+    "reading": "閲覧中:",
+    "feedbackPrompt": "この文書は分かりやすく、お役に立ちましたか?",
+    "feedbackYes": "👍 はい",
+    "feedbackNo": "👎 いいえ",
+    "feedbackThanks": "フィードバックをありがとうございます。",
+    "backToTop": "ページの先頭に戻る",
+    "translationNotice": "これは便宜上提供される翻訳です。正式な文書は<en>英語版</en>です。"
+  }
+}

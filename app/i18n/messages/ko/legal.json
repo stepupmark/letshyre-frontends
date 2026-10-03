@@ -1,0 +1,17 @@
+{
+  "chrome": {
+    "readTime": "~{{count}}분 소요",
+    "contents": "목차",
+    "collapseSidebar": "사이드바 접기",
+    "expandSidebar": "사이드바 펼치기",
+    "searchPlaceholder": "섹션 검색...",
+    "noMatches": "검색 결과와 일치하는 섹션이 없습니다.",
+    "reading": "읽는 중:",
+    "feedbackPrompt": "이 문서가 명확하고 도움이 되었나요?",
+    "feedbackYes": "👍 예",
+    "feedbackNo": "👎 아니요",
+    "feedbackThanks": "소중한 의견 감사합니다!",
+    "backToTop": "맨 위로",
+    "translationNotice": "본 문서는 편의를 위해 제공되는 번역본입니다. 공식 문서는 <en>영문본</en>입니다."
+  }
+}

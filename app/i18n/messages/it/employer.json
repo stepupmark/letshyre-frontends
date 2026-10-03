@@ -1,0 +1,322 @@
+{
+  "dashboard": {
+    "welcome": "Bentornato/a!",
+    "subtitle": "Ecco cosa sta succedendo oggi nel tuo centro assunzioni.",
+    "cards": {
+      "activeJobs": "Annunci Attivi",
+      "inactiveJobs": "Annunci Inattivi",
+      "totalApplications": "Candidature Totali",
+      "activeCaption1": "/Attualmente",
+      "activeCaption2": "attivi",
+      "inactiveCaption1": "/Chiusi o",
+      "inactiveCaption2": "in Bozza",
+      "applicationsCaption1": "/Totale",
+      "applicationsCaption2": "ricevute"
+    },
+    "credits": {
+      "heading": "Il Tuo Saldo Crediti",
+      "used": "Utilizzati",
+      "creditsLeft_one": "{{count}} Credito Rimanente",
+      "creditsLeft_other": "{{count}} Crediti Rimanenti",
+      "blurb": "Usa i crediti per sbloccare i profili dei candidati e connetterti con i migliori talenti.",
+      "addCredits": "Aggiungi Crediti",
+      "viewTransactions": "Visualizza Transazioni"
+    }
+  },
+  "profile": {
+    "editDialogAria": "Modifica profilo aziendale",
+    "na": "N/D",
+    "banner": {
+      "aria": "Banner profilo",
+      "defaultCompany": "La Tua Azienda",
+      "blurb": "Rivedi e gestisci i dettagli principali, il branding e le informazioni di contatto della tua organizzazione.",
+      "editProfile": "Modifica Profilo",
+      "editAria": "Modifica informazioni profilo",
+      "sideAlt": "Illustrazione profilo con elementi decorativi",
+      "shapeAlt": "Forma poligonale decorativa",
+      "jobsPosted": "Annunci Pubblicati",
+      "activeJobs": "Annunci Attivi",
+      "matches": "Abbinamenti",
+      "alreadyHired": "Già Assunti"
+    },
+    "primary": {
+      "heading": "Dettagli Principali",
+      "name": "Nome",
+      "industry": "Settore",
+      "email": "Email",
+      "phone": "Telefono",
+      "officialEmail": "Email Ufficiale",
+      "kycStatus": "Stato KYC"
+    },
+    "company": {
+      "heading": "Dettagli Azienda",
+      "companyName": "Nome Azienda",
+      "website": "Sito Web",
+      "registrationNumber": "Numero di Registrazione",
+      "gstNumber": "Numero GST",
+      "panNumber": "Numero PAN",
+      "address": "Indirizzo",
+      "linkedin": "LinkedIn",
+      "viewProfile": "Visualizza Profilo",
+      "description": "Descrizione"
+    },
+    "documents": {
+      "heading": "Documenti Caricati",
+      "viewDocument": "Visualizza Documento",
+      "registrationCertificate": "Certificato di Registrazione",
+      "gstCertificate": "Certificato GST",
+      "addressProof": "Prova di Indirizzo",
+      "bankProof": "Prova Bancaria"
+    },
+    "edit": {
+      "title": "Modifica il Tuo Profilo",
+      "close": "Chiudi",
+      "illustrationAlt": "Illustrazione profilo",
+      "step1": "Passaggio 1: Dettagli di Base",
+      "step2": "Passaggio 2: Informazioni Azienda e Logo",
+      "officialEmail": "Email Ufficiale",
+      "emailPlaceholder": "esempio@azienda.com",
+      "location": "Località",
+      "locationPlaceholder": "Inserisci località",
+      "industry": "Settore",
+      "selectIndustry": "Seleziona Settore",
+      "linkedinUrl": "URL LinkedIn",
+      "linkedinPlaceholder": "https://linkedin.com/company/...",
+      "companyDescription": "Descrizione Azienda",
+      "descriptionPlaceholder": "Descrivi brevemente la tua azienda...",
+      "companyLogo": "Logo Azienda",
+      "logoPreviewAlt": "Anteprima logo",
+      "noLogoUploaded": "Nessun Logo Caricato",
+      "uploadNewLogo": "Carica Nuovo Logo",
+      "uploadLogo": "Carica Logo",
+      "logoHint": "JPG, PNG o SVG. Dimensione massima 5MB.",
+      "cancel": "Annulla",
+      "next": "Avanti",
+      "back": "Indietro",
+      "saving": "Salvataggio in corso...",
+      "saveChanges": "Salva Modifiche"
+    },
+    "validation": {
+      "emailInvalid": "Inserisci un indirizzo email valido",
+      "locationRequired": "Inserisci una località",
+      "industryRequired": "Seleziona un settore",
+      "linkedinInvalid": "Inserisci un URL LinkedIn valido",
+      "linkedinDomain": "Deve essere un URL LinkedIn",
+      "descriptionMax": "La descrizione deve essere inferiore a 500 caratteri",
+      "logoSize": "La dimensione del file deve essere inferiore a 5MB",
+      "logoType": "Sono ammessi solo JPG, PNG, SVG o WEBP"
+    },
+    "toasts": {
+      "updated": "Profilo aggiornato con successo",
+      "updateFailed": "Impossibile aggiornare il profilo"
+    }
+  },
+  "team": {
+    "heading": "Conosci il tuo team",
+    "subtitle": "Scopri chi è già presente e porta nuovi membri nel gruppo.",
+    "addMember": "Aggiungi membro",
+    "errorLoad": "Impossibile caricare i membri del team. Riprova.",
+    "scrollLeft": "Scorri a sinistra",
+    "scrollRight": "Scorri a destra",
+    "optionsAria": "Opzioni",
+    "memberImageAlt": "membro del team",
+    "card": {
+      "edit": "Modifica",
+      "remove": "Rimuovi",
+      "hold": "Sospendi",
+      "activate": "Attiva"
+    },
+    "status": {
+      "active": "Attivo",
+      "hold": "Sospeso"
+    },
+    "empty": {
+      "title": "Ancora nessun membro del team",
+      "body": "Inizia a costruire il tuo team aggiungendo recruiter e manager."
+    },
+    "confirmRemove": "Sei sicuro di voler rimuovere {{name}}?",
+    "toasts": {
+      "memberUpdated": "Membro aggiornato con successo",
+      "updateFailed": "Impossibile aggiornare il membro",
+      "memberAdded": "Membro aggiunto con successo",
+      "addFailed": "Impossibile aggiungere il membro",
+      "statusUpdated": "Stato aggiornato a {{status}}",
+      "toggleFailed": "Impossibile cambiare lo stato",
+      "memberRemoved": "Membro rimosso con successo",
+      "removeFailed": "Impossibile rimuovere il membro"
+    },
+    "modal": {
+      "close": "Chiudi finestra",
+      "addTitle": "Aggiungi Membro",
+      "editTitle": "Modifica Membro",
+      "addDesc": "Invita un nuovo membro a unirsi al tuo team. Potrà collaborare e aiutarti a gestire le assunzioni.",
+      "editDesc": "Aggiorna i dettagli di questo membro del team.",
+      "fullName": "Nome Completo",
+      "fullNamePlaceholder": "es. Giulia Rossi",
+      "email": "Indirizzo Email",
+      "emailPlaceholder": "es. giulia@azienda.com",
+      "password": "Password",
+      "passwordPlaceholder": "Crea una password sicura",
+      "passwordHint": "La password deve contenere almeno 8 caratteri.",
+      "showPassword": "Mostra password",
+      "hidePassword": "Nascondi password",
+      "cancel": "Annulla",
+      "saving": "Salvataggio in corso...",
+      "updateMember": "Aggiorna Membro",
+      "addMemberBtn": "Aggiungi Membro"
+    },
+    "validation": {
+      "nameMin": "Il nome deve contenere almeno 2 caratteri",
+      "nameMax": "Il nome deve contenere al massimo 100 caratteri",
+      "emailInvalid": "Inserisci un indirizzo email valido",
+      "passwordMin": "La password deve contenere almeno 6 caratteri",
+      "passwordMax": "La password deve contenere al massimo 50 caratteri"
+    }
+  },
+  "invoice": {
+    "title": "Fatture",
+    "subtitle": "I tuoi acquisti di crediti e le fatture GST.",
+    "buyCredits": "Acquista crediti",
+    "caption": "I tuoi acquisti di crediti completati",
+    "columns": {
+      "date": "Data",
+      "purchase": "Acquisto",
+      "amount": "Importo",
+      "invoice": "Fattura"
+    },
+    "plan": "Piano {{name}}",
+    "topUp": "Ricarica",
+    "credits_one": "{{count}} credito",
+    "credits_other": "{{count}} crediti",
+    "preparing": "In preparazione",
+    "downloadLabel": "Scarica la fattura {{number}}",
+    "note": "Qui compaiono solo i pagamenti completati. Hai pagato di recente e non lo vedi? <contact>Contattaci</contact> con il riferimento del pagamento.",
+    "empty": {
+      "title": "Ancora nessun acquisto",
+      "body": "I crediti che acquisti compariranno qui insieme alle fatture."
+    },
+    "receipt": {
+      "paidOn": "Pagato il {{date}}",
+      "caption": "Dettaglio del pagamento",
+      "subtotal": "Subtotale",
+      "coupon": "Buono sconto {{code}}",
+      "discount": "Sconto",
+      "gst": "GST",
+      "total": "Totale pagato",
+      "invoiceNumber": "Numero fattura",
+      "reference": "Riferimento del pagamento",
+      "download": "Scarica la fattura (PDF)"
+    }
+  },
+  "chatbot": {
+    "title": "Assistente IA",
+    "subtitle": "Chiedi informazioni su LetsHyre, assunzioni, candidati e scorecard.",
+    "inputPlaceholder": "Fai una domanda…",
+    "send": "Invia",
+    "sendAria": "Invia messaggio",
+    "thinking": "Sto pensando…",
+    "you": "Tu",
+    "assistant": "Assistente",
+    "retry": "Riprova",
+    "errorMessage": "Qualcosa è andato storto. Riprova.",
+    "clear": "Cancella chat",
+    "messagesLabel": "Messaggi della chat",
+    "launcherAria": "Apri assistente chat",
+    "closeAria": "Chiudi chat",
+    "empty": {
+      "greeting": "Ciao! Sono il tuo assistente LetsHyre.",
+      "hint": "Chiedimi qualsiasi cosa sulle assunzioni su LetsHyre. Prova una di queste:",
+      "prompts": {
+        "what": "Cos'è LetsHyre?",
+        "scorecard": "Come leggo la scorecard di un candidato?",
+        "applications": "Come pubblico un annuncio e rivedo i candidati?",
+        "interview": "Come funziona il colloquio IA?"
+      }
+    }
+  },
+  "sharing": {
+    "manageLink": "Link condivisi",
+    "shareAction": "Condividi",
+    "createDialog": {
+      "title": "Condividi il profilo di {{name}}",
+      "description": "Crea un link che scade automaticamente e smette di funzionare dopo un numero prestabilito di visualizzazioni.",
+      "jobLabel": "Abbina all'annuncio",
+      "jobPlaceholder": "Seleziona un annuncio",
+      "jobLoading": "Caricamento annunci…",
+      "jobEmpty": "Nessun annuncio aperto da abbinare",
+      "expiryLabel": "Scade tra (giorni)",
+      "expiryHint": "Fino a 30 giorni.",
+      "maxViewsLabel": "Visualizzazioni massime",
+      "maxViewsHint": "Il link smette di funzionare al raggiungimento di questo limite.",
+      "cancel": "Annulla",
+      "submit": "Crea link",
+      "submitting": "Creazione in corso…"
+    },
+    "successDialog": {
+      "title": "Link creato",
+      "description": "Condividi questo link con chiunque desideri esaminare la scorecard di {{name}}.",
+      "expiresOn": "Scade il {{date}}",
+      "viewLimit_one": "{{count}} visualizzazione consentita",
+      "viewLimit_other": "{{count}} visualizzazioni consentite",
+      "done": "Fatto"
+    },
+    "copy": {
+      "button": "Copia link",
+      "copied": "Copiato",
+      "toastSuccess": "Link copiato negli appunti.",
+      "toastError": "Impossibile copiare il link. Copialo manualmente."
+    },
+    "toasts": {
+      "created": "Link di condivisione creato.",
+      "createFailed": "Impossibile creare il link di condivisione."
+    },
+    "validation": {
+      "jobRequired": "Seleziona un annuncio a cui abbinare.",
+      "expiryRequired": "Inserisci il numero di giorni prima della scadenza di questo link.",
+      "expiryInt": "Inserisci un numero intero di giorni.",
+      "expiryMin": "Deve scadere tra almeno 1 giorno.",
+      "expiryMax": "Non può superare i 30 giorni.",
+      "maxViewsRequired": "Inserisci un limite di visualizzazioni.",
+      "maxViewsInt": "Inserisci un numero intero.",
+      "maxViewsMin": "Deve consentire almeno 1 visualizzazione.",
+      "extendRequired": "Inserisci il numero di giorni per l'estensione.",
+      "extendInt": "Inserisci un numero intero di giorni.",
+      "extendMin": "Non può essere negativo.",
+      "extendMax": "Non è possibile estendere di più di 30 giorni alla volta."
+    }
+  },
+  "states": {
+    "loading": "Caricamento…",
+    "slow": "Ci vuole più tempo del solito…",
+    "retry": "Riprova",
+    "retrying": "Nuovo tentativo…",
+    "backToDashboard": "Vai alla dashboard",
+    "errorCode": "Errore {{code}}",
+    "stale": {
+      "title": "Impossibile aggiornare",
+      "body": "Stai visualizzando gli ultimi dati caricati."
+    },
+    "error": {
+      "offline": {
+        "title": "Sei offline",
+        "body": "Controlla la connessione a Internet. Questa pagina si ricaricherà appena tornerai online."
+      },
+      "unreachable": {
+        "title": "Impossibile connettersi ora",
+        "body": "Non siamo riusciti a raggiungere i nostri server. Controlla la connessione e riprova."
+      },
+      "generic": {
+        "title": "Qualcosa è andato storto",
+        "body": "Non è stato possibile caricare il contenuto. Di solito è temporaneo, riprova."
+      },
+      "forbidden": {
+        "title": "Accesso negato",
+        "body": "Il tuo account non ha i permessi per visualizzare questo contenuto. Chiedi l'accesso all'amministratore della tua azienda."
+      },
+      "notFound": {
+        "title": "Non trovato",
+        "body": "Potrebbe essere stato rimosso o il link potrebbe essere errato."
+      }
+    }
+  }
+}

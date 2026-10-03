@@ -1,0 +1,323 @@
+{
+  "policy": {
+    "title": "Kebijakan Privasi",
+    "intro": [
+      "Selamat datang di LetsHyre (\"LetsHyre\", \"kami\"). Kami berkomitmen untuk melindungi privasi Anda dan memastikan keamanan informasi pribadi Anda.",
+      "Dengan menggunakan platform LetsHyre, Anda menyetujui pengumpulan, penggunaan, penyimpanan, dan pemrosesan informasi Anda sebagaimana dijelaskan dalam Kebijakan Privasi ini."
+    ],
+    "sections": [
+      {
+        "id": "information-we-collect",
+        "title": "1. Informasi yang Kami Kumpulkan",
+        "blocks": [
+          {
+            "type": "subheading",
+            "text": "Informasi Kandidat:"
+          },
+          {
+            "type": "p",
+            "text": "Kami dapat mengumpulkan:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Nama Lengkap",
+              "Alamat Email",
+              "Nomor Telepon",
+              "Resume/CV",
+              "Riwayat Pekerjaan",
+              "Kualifikasi Pendidikan",
+              "Keterampilan dan Pengalaman Profesional",
+              "Jawaban Wawancara AI",
+              "Scorecard Wawancara",
+              "Informasi Profil yang disampaikan oleh kandidat"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "subheading",
+            "text": "Informasi Pemberi Kerja:"
+          },
+          {
+            "type": "p",
+            "text": "Kami dapat mengumpulkan:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Nama Perusahaan",
+              "Nama Perekrut",
+              "Alamat Email Bisnis",
+              "Informasi Kontak",
+              "Kebutuhan Perekrutan",
+              "Deskripsi Pekerjaan",
+              "Informasi Profil yang disampaikan oleh pemberi kerja"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "subheading",
+            "text": "Informasi Teknis:"
+          },
+          {
+            "type": "p",
+            "text": "Kami dapat secara otomatis mengumpulkan:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Alamat IP",
+              "Informasi Peramban (Browser)",
+              "Informasi Perangkat",
+              "Sistem Operasi",
+              "Data Penggunaan Situs Web",
+              "Cookie dan Teknologi Serupa"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "how-we-use-information",
+        "title": "2. Bagaimana Kami Menggunakan Informasi",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Kami menggunakan informasi yang dikumpulkan untuk:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Membuat dan mengelola akun pengguna",
+              "Mencocokkan kandidat dengan peluang kerja yang relevan",
+              "Melaksanakan wawancara berbasis peran bertenaga AI",
+              "Menghasilkan kartu penilaian wawancara dan wawasan kandidat",
+              "Memfasilitasi proses perekrutan dan pengangkatan kerja",
+              "Meningkatkan kinerja platform dan pengalaman pengguna",
+              "Menyampaikan pembaruan dan pemberitahuan platform",
+              "Mencegah penipuan, penyalahgunaan, dan aktivitas tidak sah."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ai-interview-processing-and-consent",
+        "title": "3. Pemrosesan Wawancara AI dan Persetujuan",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre menggunakan teknologi kecerdasan buatan untuk melakukan wawancara berbasis peran serta menghasilkan kartu penilaian dan wawasan wawancara."
+          },
+          {
+            "type": "p",
+            "text": "Dengan mengikuti wawancara AI, kandidat mengakui dan menyetujui:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Pemrosesan jawaban wawancara berbasis AI",
+              "Pembuatan kartu penilaian dan wawasan wawancara bertenaga AI",
+              "Evaluasi jawaban untuk tujuan perekrutan",
+              "Pembagian kartu penilaian dan wawasan wawancara kepada pemberi kerja melalui platform LetsHyre"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Kami dapat memproses:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Jawaban Wawancara",
+              "Rekaman Wawancara",
+              "Scorecard Wawancara yang Dihasilkan AI"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Kartu penilaian dan wawasan yang dihasilkan AI dimaksudkan untuk membantu pemberi kerja dalam mengevaluasi kandidat dan tidak menjamin hasil perekrutan."
+          }
+        ]
+      },
+      {
+        "id": "sharing-of-information",
+        "title": "4. Pembagian Informasi",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Kami dapat membagikan informasi kepada:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Pemberi kerja yang menggunakan LetsHyre untuk tujuan perekrutan yang sah",
+              "Penyedia layanan resmi yang mendukung operasional platform",
+              "Penyedia layanan hosting cloud, analitik, komunikasi, pemrosesan pembayaran, dan layanan AI yang tepercaya",
+              "Otoritas pemerintah atau hukum apabila diwajibkan oleh undang-undang yang berlaku"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Profil kandidat dapat dicocokkan dan ditampilkan kepada pemberi kerja berdasarkan kebutuhan pekerjaan, relevansi peran, keterampilan, pengalaman, dan kriteria pencocokan lainnya."
+          },
+          {
+            "type": "p",
+            "text": "Informasi rinci kandidat, kartu penilaian wawancara, rekaman wawancara, dan informasi kontak kandidat dapat disediakan kepada pemberi kerja apabila pemberi kerja memilih untuk membuka akses informasi kandidat melalui platform LetsHyre."
+          },
+          {
+            "type": "p",
+            "text": "Pemberi kerja bertanggung jawab untuk menggunakan informasi kandidat semata-mata untuk tujuan perekrutan yang sah dan sesuai dengan hukum yang berlaku."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre tidak menjual informasi pribadi kepada pihak ketiga."
+          }
+        ]
+      },
+      {
+        "id": "profile-activity-and-data-retention",
+        "title": "5. Aktivitas Profil dan Retensi Data",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Untuk menjaga kualitas dan ketersediaan kumpulan talenta yang aktif, profil kandidat akan tetap aktif di platform selama maksimal 90 hari sejak tanggal pembuatan profil."
+          },
+          {
+            "type": "p",
+            "text": "Kandidat dapat memperbarui informasi profil mereka selama periode ini dan mengikuti wawancara AI tambahan, termasuk pengulangan untuk peran yang sama atau wawancara untuk peran yang berbeda, sesuai dengan kebijakan platform."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre dapat mengizinkan kandidat untuk menyelesaikan hingga tiga kali percobaan wawancara guna meningkatkan kartu penilaian wawancara, kekuatan profil, dan visibilitas kepada pemberi kerja."
+          },
+          {
+            "type": "p",
+            "text": "Setelah periode 90 hari berakhir, profil kandidat dapat dihapus secara permanen dari kumpulan kandidat aktif LetsHyre."
+          },
+          {
+            "type": "p",
+            "text": "Kandidat yang ingin melanjutkan penggunaan LetsHyre setelah profilnya dihapus dapat membuat profil baru, sesuai dengan kebijakan dan persyaratan platform."
+          }
+        ]
+      },
+      {
+        "id": "user-rights",
+        "title": "6. Hak Pengguna",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Pengguna dapat:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Mengakses informasi pribadi mereka",
+              "Meminta koreksi atas informasi yang tidak akurat",
+              "Meminta penghapusan akun mereka",
+              "Meminta penghapusan informasi pribadi apabila secara hukum berlaku"
+            ]
+          },
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "p",
+            "text": "Pengguna dapat mengajukan permintaan penghapusan akun atau data dengan menghubungi dukungan LetsHyre. Informasi tertentu mungkin tetap disimpan apabila diwajibkan oleh hukum atau untuk tujuan bisnis yang sah."
+          }
+        ]
+      },
+      {
+        "id": "data-security",
+        "title": "7. Keamanan Data",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre menerapkan langkah-langkah pengamanan teknis dan organisasi yang wajar untuk melindungi informasi pribadi dari akses tidak sah, pengungkapan, perubahan, penyalahgunaan, atau kerusakan."
+          },
+          {
+            "type": "p",
+            "text": "Meskipun kami mengambil langkah-langkah yang tepat untuk melindungi informasi, tidak ada metode penyimpanan atau transmisi elektronik melalui internet yang dapat dijamin sepenuhnya aman."
+          }
+        ]
+      },
+      {
+        "id": "cookies",
+        "title": "8. Cookie",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre dapat menggunakan cookie dan teknologi serupa untuk meningkatkan fungsi platform, keamanan, analitik, kinerja, dan pengalaman pengguna."
+          },
+          {
+            "type": "p",
+            "text": "Pengguna dapat memilih untuk menonaktifkan cookie melalui pengaturan peramban mereka; namun, fitur platform tertentu mungkin tidak berfungsi dengan baik."
+          }
+        ]
+      },
+      {
+        "id": "third-party-services",
+        "title": "9. Layanan Pihak Ketiga",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre dapat menggunakan penyedia layanan pihak ketiga yang tepercaya untuk mendukung operasional platform, termasuk hosting, analitik, komunikasi, pemrosesan pembayaran, dan layanan terkait AI."
+          },
+          {
+            "type": "p",
+            "text": "Penyedia layanan ini dapat memproses informasi atas nama kami semata-mata untuk tujuan memberikan layanan mereka kepada LetsHyre."
+          },
+          {
+            "type": "p",
+            "text": "LetsHyre tidak bertanggung jawab atas praktik privasi situs web atau layanan pihak ketiga yang mungkin diakses melalui tautan eksternal."
+          }
+        ]
+      },
+      {
+        "id": "changes-to-this-policy",
+        "title": "10. Perubahan Kebijakan Ini",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "LetsHyre dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu."
+          },
+          {
+            "type": "p",
+            "text": "Setiap pembaruan akan dipublikasikan di halaman ini. Penggunaan platform yang berkelanjutan setelah pembaruan tersebut merupakan bentuk penerimaan atas Kebijakan Privasi yang telah direvisi."
+          }
+        ]
+      },
+      {
+        "id": "contact-us",
+        "title": "11. Hubungi Kami",
+        "blocks": [
+          {
+            "type": "contact",
+            "intro": "Untuk pertanyaan, permintaan, atau kekhawatiran terkait privasi, silakan hubungi:",
+            "emailLabel": "Email:",
+            "email": "support@letshyre.ai",
+            "team": "Tim Dukungan LetsHyre"
+          }
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "title": "Kebijakan Privasi | letshyre.ai",
+    "description": "Bagaimana LetsHyre mengumpulkan, menggunakan, menyimpan, dan melindungi data kandidat serta perekrut di platform.",
+    "name": "Kebijakan Privasi",
+    "schemaDescription": "Bagaimana LetsHyre menangani dan melindungi data Anda.",
+    "crumb": "Kebijakan Privasi"
+  }
+}

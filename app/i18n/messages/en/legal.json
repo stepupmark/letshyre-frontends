@@ -1,0 +1,17 @@
+{
+  "chrome": {
+    "readTime": "~{{count}} min read",
+    "contents": "Contents",
+    "collapseSidebar": "Collapse Sidebar",
+    "expandSidebar": "Expand Sidebar",
+    "searchPlaceholder": "Search sections...",
+    "noMatches": "No sections match your search.",
+    "reading": "Reading:",
+    "feedbackPrompt": "Was this document clear and helpful?",
+    "feedbackYes": "👍 Yes",
+    "feedbackNo": "👎 No",
+    "feedbackThanks": "Thank you for your feedback!",
+    "backToTop": "Back to top",
+    "translationNotice": "This is a translation provided for convenience. The <en>English version</en> is the official text."
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "homeCrumb": "Accueil",
+  "sharedScorecard": {
+    "title": "Bilan du candidat | letshyre.ai",
+    "description": "Le bilan d'entretien d'un candidat, évalué par l'IA et partagé par un recruteur LetsHyre."
+  },
+  "getStarted": {
+    "title": "Commencer | letshyre.ai",
+    "description": "Indiquez si vous recrutez ou cherchez un emploi, puis créez votre compte LetsHyre."
+  },
+  "employeeSignIn": {
+    "title": "Connexion candidat | letshyre.ai",
+    "description": "Connectez-vous à votre compte candidat LetsHyre pour passer vos entretiens et suivre vos candidatures."
+  },
+  "employeeRegister": {
+    "title": "Inscription candidat | letshyre.ai",
+    "description": "Créez un compte candidat LetsHyre pour passer des entretiens IA et partager des bilans vérifiés."
+  },
+  "employerSignIn": {
+    "title": "Connexion recruteur | letshyre.ai",
+    "description": "Connectez-vous à votre compte recruteur LetsHyre pour publier des offres et consulter les bilans."
+  },
+  "employerRegister": {
+    "title": "Inscription recruteur | letshyre.ai",
+    "description": "Créez un compte recruteur LetsHyre pour publier des offres, mener des entretiens IA et recruter plus vite."
+  },
+  "forgotPassword": {
+    "title": "Réinitialiser le mot de passe | letshyre.ai",
+    "description": "Réinitialisez votre mot de passe LetsHyre par vérification e-mail et retrouvez votre compte."
+  },
+  "notFound": {
+    "title": "Page introuvable | letshyre.ai",
+    "description": "La page que vous cherchez n'existe pas ou a été déplacée."
+  },
+  "employeeFindJobs": {
+    "title": "Trouver des emplois | letshyre.ai",
+    "description": "Commencez à découvrir des opportunités adaptées à vos compétences et à vos ambitions"
+  },
+  "employeeChatbot": {
+    "title": "Assistant IA | letshyre.ai",
+    "description": "Posez des questions sur LetsHyre, vos candidatures, vos scorecards, et plus."
+  },
+  "employeeInterviewGuide": {
+    "title": "Guide d'entretien | letshyre.ai",
+    "description": "Huit étapes vous séparent de l'entretien. Voici précisément ce que chacune implique, pour qu'il n'y ait aucune surprise le jour J."
+  },
+  "employeeMyApplications": {
+    "title": "Mes candidatures | letshyre.ai",
+    "description": "Suivez vos emplois postulés, présélectionnés, sélectionnés et refusés"
+  },
+  "employeeProfile": {
+    "title": "Profil | letshyre.ai",
+    "description": "Un formulaire en cinq étapes couvrant votre identité, votre photo, vos préférences d'emploi et votre CV."
+  },
+  "employeeScoreCardsList": {
+    "title": "Mes évaluations | letshyre.ai",
+    "description": "Consultez vos performances d'entretien et les retours générés par l'IA."
+  },
+  "employeeScorecard": {
+    "title": "Votre évaluation | letshyre.ai",
+    "description": "Un résumé généré par l'IA de vos performances tout au long de l'entretien."
+  },
+  "employerDashboard": {
+    "title": "Tableau de bord | letshyre.ai",
+    "description": "Voici ce qui se passe aujourd'hui dans votre hub de recrutement."
+  },
+  "employerCandidatePool": {
+    "title": "Vivier de candidats | letshyre.ai",
+    "description": "Découvrez des candidats sélectionnés par IA pour vos postes ouverts."
+  },
+  "employerChatbot": {
+    "title": "Assistant IA | letshyre.ai",
+    "description": "Posez des questions sur LetsHyre, le recrutement, les candidats et les scorecards."
+  },
+  "employerCandidateProfile": {
+    "title": "Profil du candidat | letshyre.ai",
+    "description": "Consultez le profil, les compétences et l'expérience d'un candidat sur LetsHyre."
+  },
+  "employerCandidateScorecard": {
+    "title": "Évaluation du candidat | letshyre.ai",
+    "description": "Un résumé généré par l'IA de la performance de ce candidat tout au long de l'entretien."
+  },
+  "employerInvoices": {
+    "title": "Mes factures | letshyre.ai",
+    "description": "L'historique de vos factures chez nous."
+  },
+  "employerPostJob": {
+    "title": "Publier une offre | letshyre.ai",
+    "description": "Nous vous aiderons à créer une offre d'emploi attrayante en quelques secondes."
+  },
+  "employerProfile": {
+    "title": "Profil | letshyre.ai",
+    "description": "Consultez et gérez les informations essentielles, l'image de marque et les coordonnées de votre organisation."
+  },
+  "employerUnlockedCandidates": {
+    "title": "Candidats débloqués | letshyre.ai",
+    "description": "Les profils que vous débloquez apparaîtront ici."
+  },
+  "employerViewJobs": {
+    "title": "Voir les offres | letshyre.ai",
+    "description": "Consultez et gérez toutes les offres que vous avez publiées."
+  },
+  "employerApplicants": {
+    "title": "Candidats à l'offre | letshyre.ai",
+    "description": "Consultez et gérez les candidats ayant postulé à ce poste."
+  },
+  "employerTeam": {
+    "title": "Votre équipe | letshyre.ai",
+    "description": "Voyez qui est déjà là et intégrez de nouveaux membres."
+  },
+  "employerOnboarding": {
+    "title": "Détails de l'Entreprise | letshyre.ai",
+    "description": "Ajoutez les détails de votre entreprise et vos documents légaux pour terminer la configuration de votre compte employeur LetsHyre."
+  },
+  "employerJobDetail": {
+    "title": "{{jobTitle}} | letshyre.ai",
+    "description": "Consultez et gérez les détails de {{jobTitle}} sur LetsHyre.",
+    "fallbackTitle": "Détails de l'offre"
+  },
+  "employerSharedLinks": {
+    "title": "Liens partagés | letshyre.ai",
+    "description": "Les liens que vous partagez apparaîtront ici."
+  }
+}

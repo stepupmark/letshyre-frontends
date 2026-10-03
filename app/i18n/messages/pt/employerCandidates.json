@@ -1,0 +1,141 @@
+{
+  "pool": {
+    "title": "Grupo de candidatos",
+    "subtitleLoading": "A carregar as suas vagas abertas…",
+    "subtitle_one": "Candidatos correspondidos por IA em {{count}} vaga aberta.",
+    "subtitle_other": "Candidatos correspondidos por IA em {{count}} vagas abertas.",
+    "subtitleEmpty": "Descubra candidatos correspondidos por IA para as suas vagas abertas.",
+    "noJobsTitle": "Nenhuma vaga aberta",
+    "noJobsBody": "Ainda não tem vagas abertas. Publique uma vaga para começar a receber candidatos correspondidos por IA.",
+    "jobNotFoundTitle": "Vaga não encontrada",
+    "jobNotFoundBody": "Esta ligação já não é válida ou a vaga foi removida. Selecione uma vaga abaixo.",
+    "clearSelection": "Ver todas as vagas",
+    "postJob": "Publicar uma vaga",
+    "matchedTitle": "Candidatos correspondidos",
+    "matchedSummary": "<b>{{matched}}</b> correspondidos de <b>{{total}}</b> candidatos",
+    "forJob": " para {{title}}",
+    "filterAria": "Filtrar candidatos",
+    "filters": {
+      "aiMatched": "Correspondido por IA",
+      "applied": "Candidatado"
+    },
+    "noMatchesTitle": "Ainda sem correspondências",
+    "noMatchesBody": "A nossa IA ainda não encontrou candidatos correspondentes para esta vaga. Volte mais tarde, à medida que mais candidatos concluam as suas entrevistas.",
+    "selectJobTitle": "Selecione uma vaga acima",
+    "selectJobBody": "Escolha uma das suas vagas abertas para ver os candidatos correspondidos por IA.",
+    "columns": {
+      "candidate": "Candidato",
+      "aiMatch": "Correspondência IA",
+      "roleMatch": "Correspondência de Função",
+      "skillsMatch": "Correspondência de Competências",
+      "interviews": "N.º de Entrevistas",
+      "experience": "Experiência"
+    },
+    "selector": {
+      "heading": "Selecione uma vaga",
+      "prevPage": "Página anterior de vagas",
+      "nextPage": "Página seguinte de vagas",
+      "listAria": "Vagas abertas"
+    },
+    "row": {
+      "unknown": "Candidato desconhecido",
+      "dash": "—",
+      "viewProfileAria": "Ver perfil de {{name}}",
+      "candidate": "candidato",
+      "view": "Ver",
+      "viewAria": "Ver o perfil de {{name}}",
+      "aiScoreAria": "Pontuação de correspondência IA: {{value}} por cento",
+      "expYears": "{{count}}a"
+    },
+    "scan": {
+      "aiMatcher": "Correspondência por IA",
+      "step1": "A analisar perfis de candidatos face aos requisitos da vaga…",
+      "step2": "A avaliar competências de domínio e profundidade de experiência…",
+      "step3": "A calcular a compatibilidade de IA e as pontuações de entrevista…",
+      "step4": "A classificar o melhor talento para a sua revisão…"
+    },
+    "unlockModal": {
+      "title": "Desbloquear Perfil do Candidato",
+      "subtitle_one": "Desbloqueie o Relatório de Avaliação de {{name}} por {{count}} Crédito.",
+      "subtitle_other": "Desbloqueie o Relatório de Avaliação de {{name}} por {{count}} Créditos.",
+      "close": "Fechar",
+      "unlocked": "Desbloqueado",
+      "loadingInterviews": "A carregar entrevistas...",
+      "otherInterviews": "O candidato também participou noutra entrevista",
+      "footerText": "Isto inclui o Relatório de Avaliação de IA, a Gravação da Entrevista e o Currículo.",
+      "unlocking": "A desbloquear...",
+      "unlockFor": "Desbloquear Perfil por {{count}}C"
+    },
+    "toasts": {
+      "unlockSuccess": "Perfil do Candidato desbloqueado com sucesso.",
+      "unlockFailed": "Falha ao desbloquear o perfil."
+    },
+    "loadingJobs": "A carregar vagas"
+  },
+  "unlocked": {
+    "title": "Candidatos desbloqueados",
+    "subtitleLoading": "A carregar os seus perfis desbloqueados…",
+    "subtitle_one": "{{count}} perfil que desbloqueou.",
+    "subtitle_other": "{{count}} perfis que desbloqueou.",
+    "subtitleEmpty": "Os perfis que desbloquear aparecerão aqui.",
+    "emptyTitle": "Ainda não desbloqueou nenhum candidato",
+    "emptyBody": "Quando desbloquear perfis de candidatos no grupo de candidatos, estes aparecerão aqui para acesso rápido.",
+    "card": {
+      "unnamed": "Candidato sem nome",
+      "verified": "Verificado",
+      "verifiedTitle": "Candidato verificado",
+      "expNa": "Experiência N/D",
+      "exp": "{{value}} de experiência",
+      "notSpecified": "Não especificado",
+      "noticeDays": "{{count}}d de aviso prévio",
+      "unlockedOn": "Desbloqueado em {{date}}",
+      "overallScoreTitle": "Pontuação geral de IA",
+      "overallScoreAria": "Pontuação geral de IA: {{value}} por cento",
+      "photoAlt": "Fotografia de perfil de {{name}}",
+      "profile": "Perfil",
+      "scorecard": "Relatório de Avaliação",
+      "yr_one": "{{count}} ano",
+      "yr_other": "{{count}} anos"
+    }
+  },
+  "candidateProfile": {
+    "goBack": "Voltar",
+    "verified": "Verificado",
+    "photoAlt": "Fotografia do candidato",
+    "na": "—",
+    "errorBody": "Não foi possível carregar o perfil do candidato. Verifique a sua ligação.",
+    "tryAgain": "Tentar Novamente",
+    "currentCtc": "Remuneração Atual",
+    "expectedCtc": "Remuneração Pretendida",
+    "noticePeriodHeading": "Período de Aviso Prévio",
+    "availability": "Disponibilidade",
+    "notSpecified": "Não especificado",
+    "preferredLocations": "Localizações Preferidas",
+    "preferencesHeading": "Preferências",
+    "industry": "Setor",
+    "addressHeading": "Morada",
+    "rolesApplied": "Funções a que se Candidatou",
+    "sectionsLabel": "Secções do candidato",
+    "sections": {
+      "education": "Formação Académica",
+      "skills": "Competências",
+      "projects": "Projetos",
+      "experience": "Experiência",
+      "certifications": "Certificações",
+      "documents": "Documentos"
+    },
+    "empty": {
+      "education": "Nenhum detalhe académico disponível.",
+      "skills": "Nenhuma competência disponível.",
+      "projects": "Nenhum detalhe de projeto disponível.",
+      "experience": "Nenhum detalhe de experiência profissional disponível.",
+      "certifications": "Nenhuma certificação disponível.",
+      "documents": "Nenhum documento disponível."
+    },
+    "untitledProject": "Projeto Sem Título",
+    "certificationFallback": "Certificação",
+    "resume": "Currículo",
+    "noticeProof": "Comprovativo de Aviso Prévio",
+    "salaryExpectations": "Expectativas salariais"
+  }
+}

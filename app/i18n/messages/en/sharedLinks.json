@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "Shared links",
+    "subtitleLoading": "Loading your shared links…",
+    "subtitle_one": "{{count}} link shared so far.",
+    "subtitle_other": "{{count}} links shared so far.",
+    "subtitleEmpty": "Links you share will appear here.",
+    "back": "Back to unlocked candidates",
+    "errorGeneric": "Something went wrong while fetching shared links.",
+    "emptyTitle": "No shared links yet",
+    "emptyBody": "Share a candidate's profile from the unlocked candidates page and it'll show up here.",
+    "columns": {
+      "candidate": "Candidate",
+      "job": "Matched job",
+      "status": "Status",
+      "views": "Views",
+      "expires": "Expires",
+      "actions": "Actions"
+    },
+    "viewsOf": "{{count}} / {{max}}",
+    "noJob": "No job matched",
+    "sharedBy": "Shared by {{name}}",
+    "copyLink": "Copy link",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "expired": "Expired",
+    "limitReached": "View limit reached"
+  },
+  "editDialog": {
+    "title": "Edit share link",
+    "description": "Adjust the expiry, view limit, or turn this link off.",
+    "extendLabel": "Extend expiry by (days)",
+    "extendHint": "Added to the current expiry date. Use 0 to leave it unchanged.",
+    "maxViewsLabel": "Maximum views",
+    "activeLabel": "Link is active",
+    "activeHint": "Turn off to disable the link without deleting it.",
+    "cancel": "Cancel",
+    "submit": "Save changes",
+    "submitting": "Saving…"
+  },
+  "deleteDialog": {
+    "title": "Delete this share link?",
+    "description": "Anyone with the link will immediately lose access. This can't be undone.",
+    "cancel": "Cancel",
+    "confirm": "Delete link",
+    "deleting": "Deleting…"
+  },
+  "toasts": {
+    "updated": "Share link updated.",
+    "updateFailed": "Couldn't update the share link.",
+    "deleted": "Share link deleted.",
+    "deleteFailed": "Couldn't delete the share link."
+  }
+}

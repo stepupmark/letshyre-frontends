@@ -1,0 +1,56 @@
+{
+  "header": {
+    "goBack": "Zurück",
+    "title": "Kandidaten-Scorecard",
+    "subtitle": "Eine KI-generierte Zusammenfassung der Leistung dieses Kandidaten im Interview.",
+    "name": "Name des Kandidaten",
+    "role": "Beworbene Rolle",
+    "date": "Interviewdatum",
+    "na": "K. A."
+  },
+  "interview": {
+    "title": "Interviewaufzeichnung",
+    "videoLabel": "Interviewaufzeichnung des Kandidaten",
+    "error": "Die Interviewaufzeichnung konnte nicht geladen werden.",
+    "play": "Interview abspielen",
+    "empty": "Für diesen Kandidaten ist keine Interviewaufzeichnung verfügbar.",
+    "retry": "Erneut versuchen",
+    "loading": "Video wird geladen…"
+  },
+  "summary": {
+    "candidate": "Kandidat",
+    "overall": "Gesamtleistung",
+    "basedOn_one": "Basierend auf {{count}} Interviewfrage",
+    "basedOn_other": "Basierend auf {{count}} Interviewfragen"
+  },
+  "metrics": {
+    "heading": "Metriken zur mündlichen Kommunikation",
+    "range": "(0–100)",
+    "clarity": "Klarheit",
+    "relevance": "Relevanz",
+    "confidence": "Selbstsicherheit",
+    "depth": "Gedankentiefe",
+    "keyConcept": "Abdeckung der Kernkonzepte"
+  },
+  "skills": {
+    "heading": "Fähigkeiten des Kandidaten",
+    "empty": "Keine Fähigkeiten erfasst."
+  },
+  "questions": {
+    "heading": "Fragen & Antworten",
+    "empty": "Für dieses Interview wurden keine Fragen gefunden.",
+    "candidateAnswer": "Antwort des Kandidaten",
+    "noQuestionText": "Kein Fragetext angegeben.",
+    "noCode": "Kein Code angegeben.",
+    "noAudio": "Keine Audioantwort aufgezeichnet.",
+    "audioUnsupported": "Ihr Browser unterstützt das Audioelement nicht.",
+    "noAnswer": "Keine Antwort angegeben.",
+    "types": {
+      "mcq": "Multiple-Choice",
+      "pseudocodeMcq": "Pseudocode-Multiple-Choice",
+      "coding": "Programmierung",
+      "typing": "Texteingabe",
+      "audio": "Audio"
+    }
+  }
+}

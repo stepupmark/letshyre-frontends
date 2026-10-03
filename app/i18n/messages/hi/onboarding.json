@@ -1,0 +1,93 @@
+{
+  "step1": {
+    "heading": "आइए आपके बारे में जानें"
+  },
+  "step2": {
+    "badge": "स्वागत है",
+    "titlePrefix": "आपका ",
+    "titleHighlight": "अकाउंट तैयार है!",
+    "body": "पहले से मूल्यांकित उम्मीदवारों को खोजें, पारदर्शी स्कोरकार्ड की समीक्षा करें और बस कुछ ही क्लिक में सही प्रतिभा को अनलॉक करें।",
+    "features": {
+      "candidates": "AI-मूल्यांकित उम्मीदवार",
+      "scorecards": "पारदर्शी स्कोरकार्ड",
+      "unlock": "अनलॉक करें और जुड़ें"
+    },
+    "watchWalkthrough": "त्वरित वॉकथ्रू देखें (30 सेकंड)",
+    "skip": "अभी के लिए छोड़ें"
+  },
+  "form": {
+    "progress": {
+      "step1Label": "कंपनी विवरण",
+      "step2Label": "कानूनी दस्तावेज़"
+    },
+    "fields": {
+      "companyName": "कंपनी का नाम",
+      "companyWebsite": "कंपनी की वेबसाइट",
+      "officialEmail": "आधिकारिक ईमेल",
+      "registrationNumber": "पंजीकरण संख्या",
+      "registrationNumberTooltip": "उदा. U72900TG2024PTC123456",
+      "panNumber": "PAN संख्या",
+      "gstNumber": "GST संख्या",
+      "companyAddress": "कंपनी का पता",
+      "selectIndustry": "उद्योग चुनें",
+      "linkedinUrl": "LinkedIn URL",
+      "linkedinUrlTooltip": "उदा. https://linkedin.com/company/example",
+      "companyDescription": "कंपनी विवरण",
+      "descriptionCount": "{{count}} / 500"
+    },
+    "draftSaved": "ड्राफ़्ट सहेजा गया ✓",
+    "next": "अगला",
+    "back": "वापस",
+    "uploadHeading": "दस्तावेज़ अपलोड करें (प्रत्येक अधिकतम 5MB)",
+    "uploadSubheading": "कृपया सभी आवश्यक दस्तावेज़ों की स्पष्ट, पठनीय प्रतियां अपलोड करें।",
+    "documents": {
+      "companyLogo": "कंपनी लोगो",
+      "companyLogoTooltip": "स्क्वायर इमेज की सलाह दी जाती है (PNG/JPG)",
+      "registrationCertificate": "पंजीकरण प्रमाणपत्र",
+      "registrationCertificateTooltip": "निगमन प्रमाणपत्र",
+      "gstCertificate": "GST प्रमाणपत्र",
+      "gstCertificateTooltip": "मान्य GST पंजीकरण दस्तावेज़",
+      "addressProof": "पते का प्रमाण",
+      "addressProofTooltip": "यूटिलिटी बिल या लीज़ एग्रीमेंट"
+    },
+    "upload": {
+      "uploadedSuccess": "सफलतापूर्वक अपलोड हुआ • {{size}}",
+      "selectFile": "फ़ाइल चुनें",
+      "viewFile": "फ़ाइल देखें",
+      "removeFile": "फ़ाइल हटाएँ",
+      "replaceFile": "फ़ाइल बदलें",
+      "previewAlt": "अपलोड की गई फ़ाइल का पूर्वावलोकन",
+      "rulesImage": "JPG, PNG या WEBP, अधिकतम 5MB",
+      "rulesDocument": "PDF, DOC या DOCX, अधिकतम 5MB",
+      "dropHint": "या फ़ाइल यहाँ छोड़ें",
+      "progress": "{{total}} में से {{count}} अपलोड हुए"
+    },
+    "processing": "प्रोसेस हो रहा है...",
+    "submit": "सबमिट करें और पूरा करें",
+    "successTitle": "सबमिशन सफल!",
+    "successBody": "आपका डैशबोर्ड लोड हो रहा है...",
+    "previewAlt": "बड़ा पूर्वावलोकन",
+    "closePreview": "पूर्वावलोकन बंद करें",
+    "toasts": {
+      "submitFailed": "KYC सबमिट करने में विफल। कृपया पुनः प्रयास करें।"
+    },
+    "validation": {
+      "companyNameMin": "कंपनी का नाम कम से कम 2 अक्षरों का होना चाहिए",
+      "companyWebsiteUrl": "एक मान्य URL होना चाहिए (उदा. https://example.com)",
+      "linkedinUrlInvalid": "एक मान्य URL होना चाहिए (उदा. https://linkedin.com)",
+      "linkedinUrlRequired": "LinkedIn URL आवश्यक है",
+      "linkedinUrlDomain": "linkedin.com का URL होना चाहिए",
+      "companyDescriptionMin": "कृपया एक संक्षिप्त विवरण प्रदान करें",
+      "companyIndustryRequired": "कृपया एक उद्योग चुनें",
+      "registrationNumberRequired": "पंजीकरण संख्या आवश्यक है",
+      "gstNumberRequired": "एक मान्य GST संख्या आवश्यक है",
+      "panNumberRequired": "एक मान्य PAN संख्या आवश्यक है",
+      "companyAddressRequired": "पूरा कंपनी का पता आवश्यक है",
+      "officialEmailInvalid": "एक मान्य आधिकारिक ईमेल आवश्यक है",
+      "fileRequired": "फ़ाइल आवश्यक है",
+      "fileMaxSize": "अधिकतम फ़ाइल आकार 5MB है।",
+      "imageFormat": "केवल .jpg, .jpeg, .png और .webp प्रारूप समर्थित हैं।",
+      "documentFormat": "केवल .pdf, .doc और .docx प्रारूप समर्थित हैं।"
+    }
+  }
+}

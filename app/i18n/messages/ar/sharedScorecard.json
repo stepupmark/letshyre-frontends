@@ -1,0 +1,138 @@
+{
+  "provenance": {
+    "sharedBy": "شارَكه {{company}}",
+    "confidential": "سرّي — تمت مشاركته بشكل خاص"
+  },
+  "header": {
+    "unnamed": "المرشح",
+    "fresher": "خريج جديد",
+    "experience_zero": "{{count}} سنوات خبرة",
+    "experience_one": "{{count}} سنة خبرة",
+    "experience_two": "سنتي خبرة",
+    "experience_few": "{{count}} سنوات خبرة",
+    "experience_many": "{{count}} سنة خبرة",
+    "experience_other": "{{count}} سنوات خبرة",
+    "matchedTo": "مطابق لوظيفة {{job}}"
+  },
+  "overview": {
+    "overallScore": "الأداء العام",
+    "basedOn_zero": "بناءً على {{count}} أسئلة مقابلة",
+    "basedOn_one": "بناءً على {{count}} سؤال مقابلة",
+    "basedOn_two": "بناءً على سؤالي مقابلة",
+    "basedOn_few": "بناءً على {{count}} أسئلة مقابلة",
+    "basedOn_many": "بناءً على {{count}} سؤال مقابلة",
+    "basedOn_other": "بناءً على {{count}} أسئلة مقابلة"
+  },
+  "aiMatch": {
+    "heading": "مطابقة الوظيفة بالذكاء الاصطناعي",
+    "overall": "المطابقة العامة",
+    "role": "مطابقة الدور الوظيفي",
+    "skills": "مطابقة المهارات"
+  },
+  "metrics": {
+    "heading": "مقاييس التواصل",
+    "clarity": "الوضوح",
+    "relevance": "الصلة",
+    "confidence": "الثقة",
+    "depth": "عمق التفكير",
+    "keyConcept": "تغطية المفاهيم الأساسية"
+  },
+  "sections": {
+    "heading": "الأداء حسب نوع السؤال",
+    "correctOf": "{{correct}} من أصل {{count}} إجابة صحيحة",
+    "types": {
+      "mcq": "اختيار من متعدد",
+      "pseudocode_mcq": "اختيار من متعدد بالكود الوهمي",
+      "coding": "برمجة",
+      "typing": "كتابة",
+      "audio": "صوت"
+    }
+  },
+  "insights": {
+    "heading": "رؤى المقابلة",
+    "strengths": "نقاط القوة",
+    "areasForImprovement": "مجالات التحسين",
+    "recommendations": "التوصيات"
+  },
+  "interview": {
+    "heading": "تسجيل المقابلة",
+    "unsupported": "متصفحك لا يدعم عنصر الفيديو."
+  },
+  "profile": {
+    "heading": "الملف الشخصي للمرشح",
+    "sections": {
+      "skills": "المهارات",
+      "experience": "الخبرة",
+      "education": "التعليم",
+      "projects": "المشاريع",
+      "certifications": "الشهادات",
+      "accomplishments": "الإنجازات",
+      "portfolio": "روابط ملف الأعمال",
+      "resume": "السيرة الذاتية"
+    },
+    "empty": {
+      "skills": "لا توجد مهارات مدرجة.",
+      "education": "لا يوجد سجل تعليمي مدرج.",
+      "experience": "لا توجد خبرة عملية مدرجة.",
+      "projects": "لا توجد مشاريع مدرجة.",
+      "certifications": "لا توجد شهادات مدرجة.",
+      "accomplishments": "لا توجد إنجازات مدرجة.",
+      "portfolio": "لم تتم مشاركة أي روابط لملف الأعمال.",
+      "resume": "لا توجد سيرة ذاتية متاحة."
+    },
+    "untitledProject": "مشروع بلا عنوان",
+    "certificationFallback": "شهادة",
+    "accomplishmentFallback": "إنجاز",
+    "viewResume": "عرض السيرة الذاتية"
+  },
+  "questions": {
+    "heading": "أسئلة وأجوبة المقابلة",
+    "empty": "لم يتم العثور على أسئلة لهذه المقابلة.",
+    "expandAll": "توسيع الكل",
+    "collapseAll": "طي الكل",
+    "candidateAnswer": "إجابة المرشح",
+    "noQuestionText": "لم يُقدَّم نص للسؤال.",
+    "noCode": "لم يُقدَّم أي كود.",
+    "noAudio": "لم يتم تسجيل أي رد صوتي.",
+    "audioUnsupported": "متصفحك لا يدعم عنصر الصوت.",
+    "noAnswer": "لم تُقدَّم أي إجابة.",
+    "types": {
+      "mcq": "اختيار من متعدد",
+      "mcq_pseudocode": "اختيار من متعدد بالكود الوهمي",
+      "pseudocode_mcq": "اختيار من متعدد بالكود الوهمي",
+      "coding": "برمجة",
+      "typing": "كتابة",
+      "audio": "صوت",
+      "default": "سؤال"
+    }
+  },
+  "toc": {
+    "label": "أقسام التقرير",
+    "overview": "نظرة عامة",
+    "aiMatch": "مطابقة الوظيفة بالذكاء الاصطناعي",
+    "communication": "التواصل",
+    "sections": "الأداء",
+    "insights": "الرؤى",
+    "profile": "الملف الشخصي",
+    "questions": "الأسئلة والأجوبة"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "الرابط غير موجود",
+      "description": "رابط بطاقة التقييم المشتركة هذا غير صالح أو لم يعد موجودًا. يرجى التحقق من الرابط أو طلب رابط جديد من المرسل."
+    },
+    "expired": {
+      "title": "انتهت صلاحية الرابط",
+      "description": "انتهت صلاحية رابط بطاقة التقييم المشتركة هذا. يرجى طلب رابط جديد من المرسل."
+    },
+    "limit": {
+      "title": "تم بلوغ حد المشاهدات",
+      "description": "بلغ رابط بطاقة التقييم المشتركة هذا الحد الأقصى لعدد المشاهدات. يرجى طلب رابط جديد من المرسل."
+    },
+    "unavailable": {
+      "title": "حدث خطأ ما",
+      "description": "تعذّر علينا تحميل بطاقة التقييم هذه في الوقت الحالي. يرجى المحاولة مرة أخرى بعد لحظات."
+    },
+    "retry": "إعادة المحاولة"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "badge": "Guide du candidat",
+  "title": "Tout ce qui se passe avant votre première question",
+  "intro": "Huit étapes vous séparent de l'entretien. Voici précisément ce que chacune implique, pour qu'il n'y ait aucune surprise le jour J.",
+  "steps": {
+    "download": {
+      "title": "Télécharger l'application de bureau",
+      "desc": "Pour garantir un environnement de test sécurisé, tous les entretiens doivent se dérouler sur notre application de bureau dédiée. <dl>Téléchargez et installez l'application LetsHyre</dl> pour votre système d'exploitation."
+    },
+    "signIn": {
+      "title": "Se connecter à l'application",
+      "desc": "Lancez l'application de bureau et connectez-vous avec vos identifiants de candidat. Si vous n'avez pas encore de compte, rendez-vous sur letshyre.ai pour créer un profil. Votre compte contient votre créneau d'entretien, votre photo de profil et vos résultats."
+    },
+    "dashboard": {
+      "title": "Démarrer depuis votre tableau de bord",
+      "desc": "Après vous être connecté, vous arriverez sur votre tableau de bord personnel indiquant votre profil et vos créneaux d'entretien disponibles. Cliquez sur Passer l'entretien pour commencer — l'application lance immédiatement une vérification de sécurité en arrière-plan avant toute autre chose."
+    },
+    "clearEnv": {
+      "title": "Préparer votre environnement",
+      "desc": "Le scanner de sécurité recherche les applications susceptibles de compromettre l'intégrité de l'examen — navigateurs web, enregistreurs d'écran, assistants IA et outils d'appel vidéo. Toute application signalée doit être fermée avant de continuer.",
+      "tip": "Astuce : fermez toutes les autres applications avant de cliquer sur Passer l'entretien"
+    },
+    "permissions": {
+      "title": "Accorder les autorisations de l'appareil",
+      "desc": "Vous serez invité à autoriser l'accès à votre microphone, votre caméra et votre écran. Les trois sont requis pour la surveillance en direct. Accordez chaque autorisation lorsque votre système d'exploitation le demande — l'entretien ne peut pas se dérouler sans elles."
+    },
+    "verifyId": {
+      "title": "Vérifier votre identité",
+      "desc": "Lisez une courte déclaration à voix haute pour l'enregistrement vocal, puis autorisez la caméra à prendre une photo en direct. Votre image en direct est comparée à la photo de profil que vous avez téléchargée lors de la création de votre compte.",
+      "tip": "Astuce : faites face à la caméra dans une pièce bien éclairée"
+    },
+    "chooseRole": {
+      "title": "Choisir votre poste d'entretien",
+      "desc": "Sélectionnez le poste pour lequel vous passez l'entretien. Vous pouvez continuer avec le rôle attribué lors de l'intégration, ou choisir un autre créneau si plusieurs vous sont proposés."
+    },
+    "begin": {
+      "title": "Commencer votre entretien",
+      "desc": "Tout est prêt. La fenêtre d'entretien s'ouvre en plein écran avec l'enregistrement d'écran actif. Répondez à chaque question dans le temps imparti — vous pouvez naviguer entre les questions avant la fin du minuteur de session."
+    }
+  },
+  "cta": {
+    "title": "Prêt à commencer ?",
+    "desc": "Téléchargez l'application de bureau, connectez-vous à votre compte et cliquez sur Passer l'entretien lorsque vous êtes prêt.",
+    "button": "Télécharger l'application"
+  },
+  "meta": {
+    "title": "Comment se déroule l'entretien IA | letshyre.ai",
+    "description": "Au programme : installer l'application, se connecter, vérifier son identité, dégager son espace et répondre aux questions du poste.",
+    "name": "Comment fonctionne l'entretien IA",
+    "schemaDescription": "Guide étape par étape du processus d'entretien candidat LetsHyre.",
+    "crumb": "Processus d'entretien"
+  }
+}

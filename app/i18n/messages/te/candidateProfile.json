@@ -1,0 +1,29 @@
+{
+  "completion": {
+    "heading": "ప్రొఫైల్ పూర్తిత్వం",
+    "complete": "పూర్తయింది",
+    "noteComplete": "అద్భుతం! మీ ప్రొఫైల్ పూర్తయింది.",
+    "noteIncomplete": "యజమానులకు మీరు ఎక్కువగా కనిపించడానికి మీ ప్రొఫైల్ పూర్తి చేయండి.",
+    "noteCompleteCandidate": "ఈ అభ్యర్థి ప్రొఫైల్ పూర్తిగా పూర్తయింది.",
+    "noteIncompleteCandidate": "ఈ అభ్యర్థి ఇంకా తమ ప్రొఫైల్ పూర్తి చేయలేదు."
+  },
+  "contact": {
+    "email": "ఇమెయిల్",
+    "phone": "ఫోన్",
+    "location": "స్థానం",
+    "experience": "అనుభవం"
+  },
+  "dash": "—",
+  "interviews": {
+    "heading": "AI ఇంటర్వ్యూలు",
+    "usage": "{{total}} లో వాడబడింది · {{remaining}} మిగిలాయి"
+  },
+  "units": {
+    "years_one": "{{count}} సంవత్సరం",
+    "years_other": "{{count}} సంవత్సరాలు",
+    "notSpecified": "పేర్కొనలేదు",
+    "immediateJoiner": "వెంటనే చేరగలరు",
+    "days_one": "{{count}} రోజు",
+    "days_other": "{{count}} రోజులు"
+  }
+}

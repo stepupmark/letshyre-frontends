@@ -1,0 +1,124 @@
+{
+  "homeCrumb": "হোম",
+  "sharedScorecard": {
+    "title": "প্রার্থীর স্কোরকার্ড | letshyre.ai",
+    "description": "LetsHyre নিয়োগকর্তার শেয়ার করা, এআই-মূল্যায়িত প্রার্থীর সাক্ষাৎকার স্কোরকার্ড।"
+  },
+  "getStarted": {
+    "title": "শুরু করুন | letshyre.ai",
+    "description": "আপনি নিয়োগ করছেন না কাজ খুঁজছেন তা বেছে নিন, তারপর আপনার LetsHyre অ্যাকাউন্ট তৈরি করুন।"
+  },
+  "employeeSignIn": {
+    "title": "প্রার্থী সাইন ইন | letshyre.ai",
+    "description": "সাক্ষাৎকার দিতে এবং আবেদন ট্র্যাক করতে আপনার LetsHyre প্রার্থী অ্যাকাউন্টে সাইন ইন করুন।"
+  },
+  "employeeRegister": {
+    "title": "প্রার্থী সাইন আপ | letshyre.ai",
+    "description": "AI সাক্ষাৎকার দিতে এবং যাচাই করা স্কোরকার্ড শেয়ার করতে LetsHyre প্রার্থী অ্যাকাউন্ট তৈরি করুন।"
+  },
+  "employerSignIn": {
+    "title": "নিয়োগকর্তা সাইন ইন | letshyre.ai",
+    "description": "চাকরি পোস্ট করতে এবং প্রার্থীর স্কোরকার্ড দেখতে আপনার LetsHyre নিয়োগকর্তা অ্যাকাউন্টে সাইন ইন করুন।"
+  },
+  "employerRegister": {
+    "title": "নিয়োগকর্তা সাইন আপ | letshyre.ai",
+    "description": "চাকরি পোস্ট করতে, AI সাক্ষাৎকার নিতে এবং দ্রুত নিয়োগ দিতে LetsHyre নিয়োগকর্তা অ্যাকাউন্ট তৈরি করুন।"
+  },
+  "forgotPassword": {
+    "title": "পাসওয়ার্ড রিসেট করুন | letshyre.ai",
+    "description": "ইমেল যাচাইয়ের মাধ্যমে আপনার LetsHyre পাসওয়ার্ড রিসেট করে অ্যাকাউন্টে ফিরে যান।"
+  },
+  "notFound": {
+    "title": "পৃষ্ঠা পাওয়া যায়নি | letshyre.ai",
+    "description": "আপনি যে পৃষ্ঠাটি খুঁজছেন তা নেই বা সরিয়ে ফেলা হয়েছে।"
+  },
+  "employeeFindJobs": {
+    "title": "চাকরি খুঁজুন | letshyre.ai",
+    "description": "আপনার দক্ষতা ও উচ্চাকাঙ্ক্ষার সাথে মেলে এমন সুযোগ আবিষ্কার শুরু করুন"
+  },
+  "employeeChatbot": {
+    "title": "এআই সহায়ক | letshyre.ai",
+    "description": "LetsHyre, আপনার আবেদন, স্কোরকার্ড ও আরও অনেক কিছু সম্পর্কে জিজ্ঞাসা করুন।"
+  },
+  "employeeInterviewGuide": {
+    "title": "ইন্টারভিউ গাইড | letshyre.ai",
+    "description": "আপনার ও ইন্টারভিউয়ের মাঝে আটটি ধাপ রয়েছে। প্রতিটিতে ঠিক কী জড়িত তা এখানে দেওয়া হলো, যাতে সেদিন কোনো বিস্ময় না থাকে।"
+  },
+  "employeeMyApplications": {
+    "title": "আমার আবেদনসমূহ | letshyre.ai",
+    "description": "আপনার আবেদিত, শর্টলিস্টেড, নির্বাচিত ও প্রত্যাখ্যাত চাকরি ট্র্যাক করুন"
+  },
+  "employeeProfile": {
+    "title": "প্রোফাইল | letshyre.ai",
+    "description": "আপনার পরিচয়, ছবি, চাকরির পছন্দ ও রিজিউমি কভার করে একটি পাঁচ-ধাপের ফর্ম।"
+  },
+  "employeeScoreCardsList": {
+    "title": "আমার স্কোরকার্ড | letshyre.ai",
+    "description": "আপনার ইন্টারভিউ পারফরম্যান্স ও এআই-জেনারেটেড প্রতিক্রিয়া পর্যালোচনা করুন।"
+  },
+  "employeeScorecard": {
+    "title": "আপনার স্কোরকার্ড | letshyre.ai",
+    "description": "ইন্টারভিউ জুড়ে আপনি কীভাবে পারফর্ম করেছেন তার একটি এআই-জেনারেটেড সারাংশ।"
+  },
+  "employerDashboard": {
+    "title": "ড্যাশবোর্ড | letshyre.ai",
+    "description": "আজ আপনার হায়ারিং হাবে যা ঘটছে তা এখানে দেওয়া হলো।"
+  },
+  "employerCandidatePool": {
+    "title": "প্রার্থী পুল | letshyre.ai",
+    "description": "আপনার খোলা পদগুলোর জন্য এআই-ম্যাচড প্রার্থী আবিষ্কার করুন।"
+  },
+  "employerChatbot": {
+    "title": "এআই সহায়ক | letshyre.ai",
+    "description": "LetsHyre, নিয়োগ, প্রার্থী ও স্কোরকার্ড সম্পর্কে জিজ্ঞাসা করুন।"
+  },
+  "employerCandidateProfile": {
+    "title": "প্রার্থীর প্রোফাইল | letshyre.ai",
+    "description": "LetsHyre-এ একজন প্রার্থীর প্রোফাইল, দক্ষতা এবং অভিজ্ঞতা দেখুন।"
+  },
+  "employerCandidateScorecard": {
+    "title": "প্রার্থী স্কোরকার্ড | letshyre.ai",
+    "description": "ইন্টারভিউ জুড়ে এই প্রার্থী কীভাবে পারফর্ম করেছেন তার একটি এআই-জেনারেটেড সারাংশ।"
+  },
+  "employerInvoices": {
+    "title": "আমার ইনভয়েস | letshyre.ai",
+    "description": "আমাদের সাথে আপনার ইনভয়েসের ইতিহাস।"
+  },
+  "employerPostJob": {
+    "title": "চাকরি পোস্ট করুন | letshyre.ai",
+    "description": "আমরা সেকেন্ডের মধ্যে একটি আকর্ষণীয় চাকরির পোস্ট তৈরি করতে সাহায্য করব।"
+  },
+  "employerProfile": {
+    "title": "প্রোফাইল | letshyre.ai",
+    "description": "আপনার প্রতিষ্ঠানের মূল বিবরণ, ব্র্যান্ডিং ও যোগাযোগের তথ্য পর্যালোচনা ও পরিচালনা করুন।"
+  },
+  "employerUnlockedCandidates": {
+    "title": "আনলক করা প্রার্থী | letshyre.ai",
+    "description": "আপনার আনলক করা প্রোফাইল এখানে প্রদর্শিত হবে।"
+  },
+  "employerViewJobs": {
+    "title": "চাকরি দেখুন | letshyre.ai",
+    "description": "আপনার পোস্ট করা সব চাকরি দেখুন ও পরিচালনা করুন।"
+  },
+  "employerApplicants": {
+    "title": "চাকরির আবেদনকারী | letshyre.ai",
+    "description": "এই পদের জন্য আবেদনকারী প্রার্থীদের পর্যালোচনা ও পরিচালনা করুন।"
+  },
+  "employerTeam": {
+    "title": "আপনার টিম | letshyre.ai",
+    "description": "কারা ইতিমধ্যে আছেন দেখুন এবং নতুন সদস্যদের নিয়ে আসুন।"
+  },
+  "employerOnboarding": {
+    "title": "কোম্পানির বিবরণ | letshyre.ai",
+    "description": "আপনার LetsHyre নিয়োগকর্তা অ্যাকাউন্ট সেটআপ সম্পূর্ণ করতে কোম্পানির বিবরণ ও আইনি ডকুমেন্ট যুক্ত করুন।"
+  },
+  "employerJobDetail": {
+    "title": "{{jobTitle}} | letshyre.ai",
+    "description": "LetsHyre-এ {{jobTitle}}-এর বিবরণ দেখুন এবং পরিচালনা করুন।",
+    "fallbackTitle": "চাকরির বিবরণ"
+  },
+  "employerSharedLinks": {
+    "title": "শেয়ার করা লিঙ্ক | letshyre.ai",
+    "description": "আপনি যে লিঙ্কগুলো শেয়ার করবেন তা এখানে দেখা যাবে।"
+  }
+}

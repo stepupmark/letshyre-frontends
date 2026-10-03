@@ -1,0 +1,93 @@
+{
+  "step1": {
+    "heading": "Vamos Conhecê-lo(a)"
+  },
+  "step2": {
+    "badge": "Bem-vindo(a) a Bordo",
+    "titlePrefix": "A Sua ",
+    "titleHighlight": "Conta Está Pronta!",
+    "body": "Descubra candidatos pré-avaliados, reveja relatórios de avaliação transparentes e desbloqueie o talento certo em poucos cliques.",
+    "features": {
+      "candidates": "Candidatos Avaliados por IA",
+      "scorecards": "Relatórios de Avaliação Transparentes",
+      "unlock": "Desbloquear e Ligar"
+    },
+    "watchWalkthrough": "Ver Demonstração Rápida (30s)",
+    "skip": "Ignorar por agora"
+  },
+  "form": {
+    "progress": {
+      "step1Label": "Dados da Empresa",
+      "step2Label": "Documentos Legais"
+    },
+    "fields": {
+      "companyName": "Nome da Empresa",
+      "companyWebsite": "Website da Empresa",
+      "officialEmail": "Email Oficial",
+      "registrationNumber": "Número de Registo",
+      "registrationNumberTooltip": "ex. U72900TG2024PTC123456",
+      "panNumber": "Número PAN",
+      "gstNumber": "Número GST",
+      "companyAddress": "Morada da Empresa",
+      "selectIndustry": "Selecionar Setor",
+      "linkedinUrl": "URL do LinkedIn",
+      "linkedinUrlTooltip": "ex. https://linkedin.com/company/example",
+      "companyDescription": "Descrição da Empresa",
+      "descriptionCount": "{{count}} / 500"
+    },
+    "draftSaved": "Rascunho guardado ✓",
+    "next": "Seguinte",
+    "back": "Voltar",
+    "uploadHeading": "Carregar Documentos (Máx. 5MB cada)",
+    "uploadSubheading": "Por favor carregue cópias claras e legíveis de todos os documentos necessários.",
+    "documents": {
+      "companyLogo": "Logótipo da Empresa",
+      "companyLogoTooltip": "Recomenda-se uma imagem quadrada (PNG/JPG)",
+      "registrationCertificate": "Certidão de Registo",
+      "registrationCertificateTooltip": "Certidão de Constituição",
+      "gstCertificate": "Certificado de GST",
+      "gstCertificateTooltip": "Documento de registo de GST válido",
+      "addressProof": "Comprovativo de Morada",
+      "addressProofTooltip": "Fatura de serviços ou contrato de arrendamento"
+    },
+    "upload": {
+      "uploadedSuccess": "Carregado com sucesso • {{size}}",
+      "selectFile": "Selecionar Ficheiro",
+      "viewFile": "Ver ficheiro",
+      "removeFile": "Remover ficheiro",
+      "replaceFile": "Substituir ficheiro",
+      "previewAlt": "Pré-visualização do ficheiro carregado",
+      "rulesImage": "JPG, PNG ou WEBP, até 5 MB",
+      "rulesDocument": "PDF, DOC ou DOCX, até 5 MB",
+      "dropHint": "ou solte um arquivo aqui",
+      "progress": "{{count}} de {{total}} enviados"
+    },
+    "processing": "A processar...",
+    "submit": "Enviar e Concluir",
+    "successTitle": "Envio Bem-sucedido!",
+    "successBody": "A carregar o seu painel...",
+    "previewAlt": "Pré-visualização ampliada",
+    "closePreview": "Fechar pré-visualização",
+    "toasts": {
+      "submitFailed": "Falha ao enviar o KYC. Por favor tente novamente."
+    },
+    "validation": {
+      "companyNameMin": "O nome da empresa deve ter pelo menos 2 caracteres",
+      "companyWebsiteUrl": "Deve ser um URL válido (ex. https://example.com)",
+      "linkedinUrlInvalid": "Deve ser um URL válido (ex. https://linkedin.com)",
+      "linkedinUrlRequired": "A URL do LinkedIn é obrigatória",
+      "linkedinUrlDomain": "Deve ser uma URL do linkedin.com",
+      "companyDescriptionMin": "Por favor forneça uma breve descrição",
+      "companyIndustryRequired": "Por favor selecione um setor",
+      "registrationNumberRequired": "O número de registo é obrigatório",
+      "gstNumberRequired": "É necessário um número de GST válido",
+      "panNumberRequired": "É necessário um número PAN válido",
+      "companyAddressRequired": "A morada completa da empresa é obrigatória",
+      "officialEmailInvalid": "É necessário um email oficial válido",
+      "fileRequired": "O ficheiro é obrigatório",
+      "fileMaxSize": "O tamanho máximo do ficheiro é 5MB.",
+      "imageFormat": "Apenas são suportados os formatos .jpg, .jpeg, .png e .webp.",
+      "documentFormat": "Apenas são suportados os formatos .pdf, .doc e .docx."
+    }
+  }
+}

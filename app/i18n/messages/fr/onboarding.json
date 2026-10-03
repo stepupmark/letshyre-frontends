@@ -1,0 +1,93 @@
+{
+  "step1": {
+    "heading": "Faisons connaissance"
+  },
+  "step2": {
+    "badge": "Bienvenue à Bord",
+    "titlePrefix": "Votre ",
+    "titleHighlight": "Compte est Prêt !",
+    "body": "Découvrez des candidats préévalués, consultez des fiches d'évaluation transparentes et débloquez le bon talent en quelques clics.",
+    "features": {
+      "candidates": "Candidats Évalués par IA",
+      "scorecards": "Fiches d'Évaluation Transparentes",
+      "unlock": "Débloquer et Connecter"
+    },
+    "watchWalkthrough": "Voir la Visite Guidée (30s)",
+    "skip": "Ignorer pour l'instant"
+  },
+  "form": {
+    "progress": {
+      "step1Label": "Détails de l'Entreprise",
+      "step2Label": "Documents Légaux"
+    },
+    "fields": {
+      "companyName": "Nom de l'Entreprise",
+      "companyWebsite": "Site Web de l'Entreprise",
+      "officialEmail": "E-mail Officiel",
+      "registrationNumber": "Numéro d'Immatriculation",
+      "registrationNumberTooltip": "ex. U72900TG2024PTC123456",
+      "panNumber": "Numéro PAN",
+      "gstNumber": "Numéro GST",
+      "companyAddress": "Adresse de l'Entreprise",
+      "selectIndustry": "Sélectionner un Secteur",
+      "linkedinUrl": "URL LinkedIn",
+      "linkedinUrlTooltip": "ex. https://linkedin.com/company/example",
+      "companyDescription": "Description de l'Entreprise",
+      "descriptionCount": "{{count}} / 500"
+    },
+    "draftSaved": "Brouillon enregistré ✓",
+    "next": "Suivant",
+    "back": "Retour",
+    "uploadHeading": "Téléverser des Documents (Max 5 Mo chacun)",
+    "uploadSubheading": "Veuillez téléverser des copies claires et lisibles de tous les documents requis.",
+    "documents": {
+      "companyLogo": "Logo de l'Entreprise",
+      "companyLogoTooltip": "Image carrée recommandée (PNG/JPG)",
+      "registrationCertificate": "Certificat d'Immatriculation",
+      "registrationCertificateTooltip": "Certificat de Constitution",
+      "gstCertificate": "Certificat GST",
+      "gstCertificateTooltip": "Document d'immatriculation GST valide",
+      "addressProof": "Justificatif de Domicile",
+      "addressProofTooltip": "Facture de services ou bail de location"
+    },
+    "upload": {
+      "uploadedSuccess": "Téléversé avec succès • {{size}}",
+      "selectFile": "Sélectionner un Fichier",
+      "viewFile": "Voir le fichier",
+      "removeFile": "Supprimer le fichier",
+      "replaceFile": "Remplacer le fichier",
+      "previewAlt": "Aperçu du fichier téléversé",
+      "rulesImage": "JPG, PNG ou WEBP, jusqu'à 5 Mo",
+      "rulesDocument": "PDF, DOC ou DOCX, jusqu'à 5 Mo",
+      "dropHint": "ou déposez un fichier ici",
+      "progress": "{{count}} sur {{total}} importés"
+    },
+    "processing": "Traitement en cours...",
+    "submit": "Envoyer et Terminer",
+    "successTitle": "Envoi Réussi !",
+    "successBody": "Chargement de votre tableau de bord...",
+    "previewAlt": "Aperçu agrandi",
+    "closePreview": "Fermer l'aperçu",
+    "toasts": {
+      "submitFailed": "Échec de l'envoi du KYC. Veuillez réessayer."
+    },
+    "validation": {
+      "companyNameMin": "Le nom de l'entreprise doit comporter au moins 2 caractères",
+      "companyWebsiteUrl": "Doit être une URL valide (ex. https://example.com)",
+      "linkedinUrlInvalid": "Doit être une URL valide (ex. https://linkedin.com)",
+      "linkedinUrlRequired": "L'URL LinkedIn est requise",
+      "linkedinUrlDomain": "Doit être une URL linkedin.com",
+      "companyDescriptionMin": "Veuillez fournir une brève description",
+      "companyIndustryRequired": "Veuillez sélectionner un secteur",
+      "registrationNumberRequired": "Le numéro d'immatriculation est requis",
+      "gstNumberRequired": "Un numéro GST valide est requis",
+      "panNumberRequired": "Un numéro PAN valide est requis",
+      "companyAddressRequired": "L'adresse complète de l'entreprise est requise",
+      "officialEmailInvalid": "Un e-mail officiel valide est requis",
+      "fileRequired": "Le fichier est requis",
+      "fileMaxSize": "La taille maximale du fichier est de 5 Mo.",
+      "imageFormat": "Seuls les formats .jpg, .jpeg, .png et .webp sont pris en charge.",
+      "documentFormat": "Seuls les formats .pdf, .doc et .docx sont pris en charge."
+    }
+  }
+}

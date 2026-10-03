@@ -1,0 +1,93 @@
+{
+  "step1": {
+    "heading": "உங்களை பற்றி தெரிந்துகொள்வோம்"
+  },
+  "step2": {
+    "badge": "வரவேற்கிறோம்",
+    "titlePrefix": "உங்கள் ",
+    "titleHighlight": "கணக்கு தயார்!",
+    "body": "முன்-மதிப்பீடு செய்யப்பட்ட வேட்பாளர்களைக் கண்டறியுங்கள், வெளிப்படையான மதிப்பெண் அட்டைகளை மதிப்பாய்வு செய்யுங்கள், மற்றும் சில கிளிக்குகளில் சரியான திறமையை திறக்கவும்.",
+    "features": {
+      "candidates": "AI-மதிப்பீடு செய்யப்பட்ட வேட்பாளர்கள்",
+      "scorecards": "வெளிப்படையான மதிப்பெண் அட்டைகள்",
+      "unlock": "திற மற்றும் இணை"
+    },
+    "watchWalkthrough": "விரைவு வழிகாட்டியை காண்க (30வி)",
+    "skip": "இப்போது தவிர்"
+  },
+  "form": {
+    "progress": {
+      "step1Label": "நிறுவன விவரங்கள்",
+      "step2Label": "சட்ட ஆவணங்கள்"
+    },
+    "fields": {
+      "companyName": "நிறுவனப் பெயர்",
+      "companyWebsite": "நிறுவன இணையதளம்",
+      "officialEmail": "அதிகாரப்பூர்வ மின்னஞ்சல்",
+      "registrationNumber": "பதிவு எண்",
+      "registrationNumberTooltip": "எ.கா. U72900TG2024PTC123456",
+      "panNumber": "PAN எண்",
+      "gstNumber": "GST எண்",
+      "companyAddress": "நிறுவன முகவரி",
+      "selectIndustry": "தொழிலை தேர்ந்தெடுக்கவும்",
+      "linkedinUrl": "LinkedIn URL",
+      "linkedinUrlTooltip": "எ.கா. https://linkedin.com/company/example",
+      "companyDescription": "நிறுவன விளக்கம்",
+      "descriptionCount": "{{count}} / 500"
+    },
+    "draftSaved": "வரைவு சேமிக்கப்பட்டது ✓",
+    "next": "அடுத்தது",
+    "back": "பின்செல்",
+    "uploadHeading": "ஆவணங்களை பதிவேற்றவும் (ஒவ்வொன்றும் அதிகபட்சம் 5MB)",
+    "uploadSubheading": "தேவையான அனைத்து ஆவணங்களின் தெளிவான, படிக்கக்கூடிய நகல்களை பதிவேற்றவும்.",
+    "documents": {
+      "companyLogo": "நிறுவன லோகோ",
+      "companyLogoTooltip": "சதுர வடிவ படம் பரிந்துரைக்கப்படுகிறது (PNG/JPG)",
+      "registrationCertificate": "பதிவுச் சான்றிதழ்",
+      "registrationCertificateTooltip": "இணைப்புச் சான்றிதழ்",
+      "gstCertificate": "GST சான்றிதழ்",
+      "gstCertificateTooltip": "செல்லுபடியாகும் GST பதிவு ஆவணம்",
+      "addressProof": "முகவரி சான்று",
+      "addressProofTooltip": "பயன்பாட்டு பில் அல்லது குத்தகை ஒப்பந்தம்"
+    },
+    "upload": {
+      "uploadedSuccess": "வெற்றிகரமாக பதிவேற்றப்பட்டது • {{size}}",
+      "selectFile": "கோப்பை தேர்ந்தெடு",
+      "viewFile": "கோப்பை காண்க",
+      "removeFile": "கோப்பை அகற்று",
+      "replaceFile": "கோப்பை மாற்று",
+      "previewAlt": "பதிவேற்றிய கோப்பின் முன்னோட்டம்",
+      "rulesImage": "JPG, PNG அல்லது WEBP, அதிகபட்சம் 5MB",
+      "rulesDocument": "PDF, DOC அல்லது DOCX, அதிகபட்சம் 5MB",
+      "dropHint": "அல்லது கோப்பை இங்கே விடவும்",
+      "progress": "{{total}} இல் {{count}} பதிவேற்றப்பட்டது"
+    },
+    "processing": "செயலாக்குகிறது...",
+    "submit": "சமர்ப்பித்து முடிக்கவும்",
+    "successTitle": "சமர்ப்பணம் வெற்றிகரம்!",
+    "successBody": "உங்கள் டாஷ்போர்டு ஏற்றப்படுகிறது...",
+    "previewAlt": "பெரிய முன்னோட்டம்",
+    "closePreview": "முன்னோட்டத்தை மூடு",
+    "toasts": {
+      "submitFailed": "KYC சமர்ப்பிக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்."
+    },
+    "validation": {
+      "companyNameMin": "நிறுவனப் பெயர் குறைந்தபட்சம் 2 எழுத்துக்கள் இருக்க வேண்டும்",
+      "companyWebsiteUrl": "செல்லுபடியாகும் URL ஆக இருக்க வேண்டும் (எ.கா. https://example.com)",
+      "linkedinUrlInvalid": "செல்லுபடியாகும் URL ஆக இருக்க வேண்டும் (எ.கா. https://linkedin.com)",
+      "linkedinUrlRequired": "LinkedIn URL தேவை",
+      "linkedinUrlDomain": "linkedin.com URL ஆக இருக்க வேண்டும்",
+      "companyDescriptionMin": "தயவுசெய்து ஒரு சுருக்கமான விளக்கத்தை வழங்கவும்",
+      "companyIndustryRequired": "தயவுசெய்து ஒரு தொழிலை தேர்ந்தெடுக்கவும்",
+      "registrationNumberRequired": "பதிவு எண் அவசியம்",
+      "gstNumberRequired": "செல்லுபடியாகும் GST எண் அவசியம்",
+      "panNumberRequired": "செல்லுபடியாகும் PAN எண் அவசியம்",
+      "companyAddressRequired": "முழு நிறுவன முகவரி அவசியம்",
+      "officialEmailInvalid": "செல்லுபடியாகும் அதிகாரப்பூர்வ மின்னஞ்சல் அவசியம்",
+      "fileRequired": "கோப்பு அவசியம்",
+      "fileMaxSize": "அதிகபட்ச கோப்பு அளவு 5MB.",
+      "imageFormat": ".jpg, .jpeg, .png, மற்றும் .webp வடிவங்கள் மட்டுமே ஆதரிக்கப்படுகின்றன.",
+      "documentFormat": ".pdf, .doc, மற்றும் .docx வடிவங்கள் மட்டுமே ஆதரிக்கப்படுகின்றன."
+    }
+  }
+}

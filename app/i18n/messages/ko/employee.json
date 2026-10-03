@@ -1,0 +1,183 @@
+{
+    "findJobs": {
+        "welcome": "환영합니다, {{name}}님!",
+        "subtitle": "역량과 목표에 맞는 기회를 지금 탐색해 보세요",
+        "searchPlaceholder": "채용공고 제목으로 검색...",
+        "filters": "필터",
+        "searching": "검색 중...",
+        "showing_other": "<b>{{count}}</b>개의 채용공고 표시 중",
+        "updating": "업데이트 중...",
+        "errorLoad": "채용공고를 불러오는 중 문제가 발생했습니다.",
+        "tryAgain": "다시 시도",
+        "noJobsTitle": "채용공고를 찾을 수 없습니다",
+        "noJobsSubtitle": "검색어나 필터를 조정하여 더 많은 기회를 찾아보세요.",
+        "bannerAlt": "채용 기회 배너 {{number}}",
+        "slideAria": "슬라이드 {{number}}",
+        "applyFailed": "지원에 실패했습니다. 다시 시도해 주세요.",
+        "filter": {
+            "location": "지역",
+            "locationPlaceholder": "예: 서울",
+            "employmentType": "고용 형태",
+            "allTypes": "전체 형태",
+            "fullTime": "정규직",
+            "partTime": "파트타임",
+            "internship": "인턴십",
+            "contract": "계약직",
+            "freelance": "프리랜서",
+            "industry": "산업 분야",
+            "loading": "불러오는 중...",
+            "allIndustries": "전체 산업",
+            "salary": "연봉 범위",
+            "salaryPlaceholder": "예: 3000-10000",
+            "experience": "경력",
+            "experiencePlaceholder": "예: 2-5",
+            "clear": "필터 지우기",
+            "clearAll": "전체 초기화",
+            "done": "완료"
+        },
+        "card": {
+            "company": "회사",
+            "untitled": "제목 없음",
+            "today": "오늘",
+            "daysAgo_other": "{{count}}일 전",
+            "posted": "{{when}} 등록",
+            "view": "보기",
+            "viewDetails": "상세 보기",
+            "more": "+{{count}}개 더보기",
+            "yrs": "년",
+            "na": "해당 없음",
+            "logoAlt": "{{company}} 로고"
+        },
+        "modal": {
+            "close": "닫기",
+            "skillsRequired": "필요 역량",
+            "jobDescription": "직무 설명",
+            "noDescription": "설명이 제공되지 않았습니다",
+            "applying": "지원 중...",
+            "alreadyApplied": "이미 지원함",
+            "applyNow": "지금 지원하기"
+        }
+    },
+    "applications": {
+        "title": "내 지원 현황",
+        "subtitle": "지원, 서류합격, 최종합격, 불합격한 채용공고를 확인하세요",
+        "tabs": {
+            "applied": "지원함",
+            "shortlisted": "서류합격",
+            "selected": "최종합격",
+            "rejected": "불합격"
+        },
+        "statusLower": {
+            "applied": "지원함",
+            "shortlisted": "서류합격",
+            "selected": "최종합격",
+            "rejected": "불합격"
+        },
+        "failedLoad": "지원 내역을 불러오지 못했습니다.",
+        "emptyTitle": "{{status}} 내역이 없습니다",
+        "emptyBody": "아직 {{status}} 채용공고가 없습니다. 새로운 기회를 찾아보세요.",
+        "findJobs": "채용공고 찾기",
+        "appliedWhen": "{{when}} 지원",
+        "today": "오늘",
+        "daysAgo_other": "{{count}}일 전",
+        "na": "해당 없음",
+        "viewJob": "채용공고 보기",
+        "notDisclosed": "비공개",
+        "fullTime": "정규직",
+        "years_other": "{{count}}년",
+        "noSkills": "명시된 역량이 없습니다",
+        "more": "+{{count}}개 더보기",
+        "loadMore": "더 보기",
+        "loadingMore": "더 불러오는 중...",
+        "modalAria": "지원 상세 정보",
+        "closeModal": "모달 닫기",
+        "skillsRequired": "필요 역량",
+        "jobDescription": "직무 설명",
+        "noDescription": "설명이 제공되지 않았습니다"
+    },
+    "scorecards": {
+        "title": "내 스코어카드",
+        "subtitle": "인터뷰 성과와 AI 피드백을 확인하세요.",
+        "failedTitle": "스코어카드를 불러오지 못했습니다",
+        "failedBody": "잠시 후 다시 시도해 주세요.",
+        "emptyTitle": "스코어카드가 없습니다",
+        "emptyBody": "아직 완료한 인터뷰가 없거나 스코어카드가 생성 중인 것 같습니다.",
+        "emptyCta": "지원할 채용공고 찾기",
+        "na": "해당 없음",
+        "score": "점수: {{score}}",
+        "more": "+{{count}}개 더보기",
+        "aiEvaluated": "AI 평가 완료",
+        "viewDetails": "상세 보기",
+        "detail": {
+            "empty": "아직 스코어카드가 생성된 인터뷰를 완료하지 않았습니다.",
+            "title": "내 스코어카드",
+            "subtitle": "인터뷰 전반에서 보여준 성과를 AI가 요약한 자료입니다."
+        }
+    },
+    "profile": {
+        "errorLoad": "프로필을 불러올 수 없습니다. 연결 상태를 확인해 주세요.",
+        "tryAgain": "다시 시도",
+        "salaryAria": "희망 연봉",
+        "photoAlt": "프로필 사진",
+        "verified": "인증됨",
+        "dash": "—",
+        "currentCtc": "현재 연봉",
+        "expectedCtc": "희망 연봉",
+        "noticePeriod": "통보 기간",
+        "availability": "입사 가능 시기",
+        "lastWorkingDay": "최종 근무일",
+        "preferredLocations": "희망 근무 지역",
+        "preferences": "희망 사항",
+        "role": "직무",
+        "industry": "산업 분야",
+        "sections": {
+            "education": "학력",
+            "skills": "역량",
+            "projects": "프로젝트",
+            "experience": "경력",
+            "documents": "문서",
+            "tablistAria": "프로필 섹션"
+        },
+        "empty": {
+            "education": "아직 등록된 학력 정보가 없습니다.",
+            "skills": "아직 등록된 역량이 없습니다.",
+            "projects": "아직 등록된 프로젝트가 없습니다.",
+            "experience": "아직 등록된 경력 사항이 없습니다.",
+            "documents": "아직 업로드된 문서가 없습니다."
+        },
+        "untitledProject": "제목 없는 프로젝트",
+        "docs": {
+            "resume": "이력서",
+            "experienceLetter": "경력증명서",
+            "resignationLetter": "사직서",
+            "noticePeriodProof": "통보 기간 증빙",
+            "presentOffer": "현재 오퍼레터"
+        }
+    },
+    "chatbot": {
+        "title": "AI 어시스턴트",
+        "subtitle": "LetsHyre, 지원 현황, 스코어카드 등 무엇이든 물어보세요.",
+        "inputPlaceholder": "질문을 입력하세요…",
+        "send": "전송",
+        "sendAria": "메시지 보내기",
+        "thinking": "생각 중…",
+        "you": "나",
+        "assistant": "어시스턴트",
+        "retry": "다시 시도",
+        "errorMessage": "문제가 발생했습니다. 다시 시도해 주세요.",
+        "clear": "채팅 지우기",
+        "messagesLabel": "채팅 메시지",
+        "launcherAria": "채팅 어시스턴트 열기",
+        "closeAria": "채팅 닫기",
+        "empty": {
+            "greeting": "안녕하세요! 저는 여러분의 LetsHyre 어시스턴트입니다.",
+            "hint": "플랫폼이나 구직 활동에 대해 무엇이든 물어보세요. 아래 질문을 시도해 보세요:",
+            "prompts": {
+                "what": "LetsHyre는 무엇인가요?",
+                "scorecard": "스코어카드는 어떻게 작동하나요?",
+                "applications": "지원 현황은 어떻게 확인하나요?",
+                "interview": "AI 인터뷰는 어떻게 진행되나요?"
+            }
+        }
+    }
+}

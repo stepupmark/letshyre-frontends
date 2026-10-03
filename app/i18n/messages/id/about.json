@@ -1,0 +1,89 @@
+{
+  "hero": {
+    "badge": "Tentang LetsHyre",
+    "title": "Mendefinisikan Ulang Perekrutan dengan<br/><hl>Wawancara Bertenaga AI</hl>",
+    "description": "LetsHyre adalah platform perekrutan bertenaga AI yang dirancang untuk membantu perusahaan menemukan, mengevaluasi, dan terhubung dengan para profesional berpengalaman yang sedang aktif mencari peluang karier baru.",
+    "imgAlt": "Profesional HR menggunakan LetsHyre"
+  },
+  "mission": {
+    "title": "Misi Kami",
+    "desc": "Menyederhanakan proses perekrutan dengan memadukan kecerdasan buatan dan evaluasi kandidat yang transparan, membantu perusahaan menemukan talenta berkualitas secara efisien sekaligus memberi para profesional berpengalaman kesempatan yang adil untuk menunjukkan kemampuan mereka."
+  },
+  "vision": {
+    "title": "Visi Kami",
+    "desc": "Menjadi marketplace perekrutan bertenaga AI paling terpercaya untuk para profesional berpengalaman, memungkinkan perusahaan mengambil keputusan perekrutan yang lebih baik dan membantu kandidat terhubung dengan peluang karier yang bermakna."
+  },
+  "intro": {
+    "title": "Tantangan<br/><hl>& Solusi Kami</hl>",
+    "p1": "Proses perekrutan tradisional sering kali membutuhkan banyak waktu dan tenaga untuk menyaring resume, melakukan wawancara, dan menemukan kandidat yang tepat. LetsHyre menyederhanakan proses ini melalui penyaringan kandidat cerdas, wawancara berbasis peran bertenaga AI, scorecard wawancara, dan evaluasi kandidat yang transparan.",
+    "p2": "Platform kami memungkinkan perusahaan membuka profil kandidat, scorecard wawancara, rekaman wawancara, dan informasi kontak melalui model Bayar-Per-Buka yang sederhana."
+  },
+  "whatWeDo": {
+    "employersHeading": "Untuk Perusahaan",
+    "employerPoints": [
+      "Akses ke profesional berpengalaman yang aktif mencari peluang",
+      "Temukan kandidat yang siap bergabung segera maupun yang masih dalam masa notice period",
+      "Lakukan wawancara berbasis peran bertenaga AI",
+      "Tinjau scorecard dan wawasan wawancara",
+      "Rekaman Wawancara",
+      "Kurangi upaya perekrutan dan waktu penyaringan",
+      "Akses informasi kandidat secara transparan",
+      "Bayar hanya untuk profil kandidat yang Anda pilih untuk dibuka"
+    ],
+    "candidatesHeading": "Untuk Kandidat",
+    "candidatePoints": [
+      "Buat profil profesional",
+      "Tampilkan keterampilan dan pengalaman Anda",
+      "Ikuti wawancara berbasis peran bertenaga AI",
+      "Tingkatkan visibilitas profil Anda",
+      "Perbesar peluang untuk ditemukan oleh perusahaan",
+      "Terhubung dengan perusahaan yang merekrut profesional berpengalaman"
+    ],
+    "employersImgAlt": "Dashboard AI untuk Perusahaan",
+    "candidatesImgAlt": "Pencocokan AI untuk Kandidat"
+  },
+  "why": {
+    "heading": "Mengapa LetsHyre?",
+    "cards": {
+      "aiPowered": {
+        "title": "Perekrutan Bertenaga AI",
+        "desc": "Wawancara AI berbasis peran membantu perusahaan mengevaluasi kandidat dengan lebih efisien."
+      },
+      "faster": {
+        "title": "Perekrutan Lebih Cepat",
+        "desc": "Kurangi upaya penyaringan manual dan percepat keputusan perekrutan."
+      },
+      "network": {
+        "title": "Jaringan Talenta Berpengalaman",
+        "desc": "Terhubung dengan kandidat yang siap bergabung segera, dalam masa notice period, dan profesional berpengalaman yang aktif mencari peluang."
+      },
+      "payPerUnlock": {
+        "title": "Model Bayar-Per-Buka",
+        "desc": "Bayar hanya saat Anda memilih untuk membuka informasi kandidat yang relevan dengan kebutuhan perekrutan Anda."
+      },
+      "transparency": {
+        "title": "Transparansi Wawancara",
+        "desc": "Scorecard dan wawasan wawancara yang terstruktur mendukung keputusan perekrutan yang tepat."
+      }
+    }
+  },
+  "profileDuration": {
+    "title": "Durasi Aktivitas Profil",
+    "p1": "Untuk menjaga kualitas dan ketersediaan aktif talenta, profil kandidat tetap aktif di platform selama maksimal <b>90 hari</b> sejak tanggal profil dibuat.",
+    "p2": "Kandidat dapat memperbarui informasi profil mereka selama periode ini.",
+    "p3": "Setelah periode 90 hari berakhir, profil kandidat dapat dihapus secara permanen dari pool kandidat aktif LetsHyre.",
+    "p4": "Kandidat yang ingin terus menggunakan LetsHyre setelah profil mereka dihapus dapat membuat profil baru, sesuai dengan kebijakan dan ketentuan platform."
+  },
+  "commitment": {
+    "title": "Sangkalan",
+    "body": "LetsHyre menyediakan layanan wawancara dan penyaringan kandidat berbantuan AI. Scorecard dan wawasan yang dihasilkan AI dimaksudkan untuk mendukung keputusan perekrutan dan tidak boleh dijadikan satu-satunya dasar keputusan ketenagakerjaan. Keputusan perekrutan akhir tetap menjadi tanggung jawab perusahaan.",
+    "contactUs": "Hubungi Kami"
+  },
+  "meta": {
+    "title": "Tentang Kami | letshyre.ai",
+    "description": "Pendekatan LetsHyre terhadap wawancara AI: penyaringan otomatis, pertanyaan sesuai peran, dan Scorecard terverifikasi.",
+    "name": "Tentang LetsHyre",
+    "schemaDescription": "Bagaimana LetsHyre menggunakan AI untuk mengotomatisasi penyaringan, wawancara, dan verifikasi kandidat.",
+    "crumb": "Tentang"
+  }
+}

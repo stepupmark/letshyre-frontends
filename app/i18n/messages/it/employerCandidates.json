@@ -1,0 +1,141 @@
+{
+  "pool": {
+    "title": "Bacino candidati",
+    "subtitleLoading": "Caricamento delle tue posizioni aperte…",
+    "subtitle_one": "Candidati abbinati dall'IA in {{count}} posizione aperta.",
+    "subtitle_other": "Candidati abbinati dall'IA in {{count}} posizioni aperte.",
+    "subtitleEmpty": "Scopri i candidati abbinati dall'IA per le tue posizioni aperte.",
+    "noJobsTitle": "Nessun annuncio aperto",
+    "noJobsBody": "Non hai ancora posizioni aperte. Pubblica un annuncio per iniziare a ricevere candidati abbinati dall'IA.",
+    "jobNotFoundTitle": "Offerta non trovata",
+    "jobNotFoundBody": "Questo link non è più valido o l'offerta è stata rimossa. Seleziona un'offerta qui sotto.",
+    "clearSelection": "Visualizza tutte le offerte",
+    "postJob": "Pubblica un annuncio",
+    "matchedTitle": "Candidati abbinati",
+    "matchedSummary": "<b>{{matched}}</b> abbinati su <b>{{total}}</b> candidati",
+    "forJob": " per {{title}}",
+    "filterAria": "Filtra candidati",
+    "filters": {
+      "aiMatched": "Abbinati dall'IA",
+      "applied": "Candidati"
+    },
+    "noMatchesTitle": "Ancora nessun abbinamento",
+    "noMatchesBody": "La nostra IA non ha ancora trovato candidati corrispondenti per questo annuncio. Controlla più tardi quando altri candidati avranno completato i colloqui.",
+    "selectJobTitle": "Seleziona un annuncio qui sopra",
+    "selectJobBody": "Scegli una delle tue posizioni aperte per visualizzare i candidati abbinati dall'IA.",
+    "columns": {
+      "candidate": "Candidato",
+      "aiMatch": "Abbinamento IA",
+      "roleMatch": "Abbinamento Ruolo",
+      "skillsMatch": "Abbinamento Competenze",
+      "interviews": "N. di Colloqui",
+      "experience": "Esperienza"
+    },
+    "selector": {
+      "heading": "Seleziona un annuncio",
+      "prevPage": "Pagina precedente degli annunci",
+      "nextPage": "Pagina successiva degli annunci",
+      "listAria": "Annunci aperti"
+    },
+    "row": {
+      "unknown": "Candidato sconosciuto",
+      "dash": "—",
+      "viewProfileAria": "Visualizza profilo di {{name}}",
+      "candidate": "candidato",
+      "view": "Visualizza",
+      "viewAria": "Visualizza il profilo di {{name}}",
+      "aiScoreAria": "Punteggio di abbinamento IA: {{value}} percento",
+      "expYears": "{{count}}a"
+    },
+    "scan": {
+      "aiMatcher": "Abbinatore IA",
+      "step1": "Analisi dei profili dei candidati rispetto ai requisiti della JD…",
+      "step2": "Valutazione delle competenze di settore e della profondità di esperienza…",
+      "step3": "Calcolo della compatibilità IA e dei punteggi del colloquio…",
+      "step4": "Classifica dei migliori talenti per la tua revisione…"
+    },
+    "unlockModal": {
+      "title": "Sblocca Profilo Candidato",
+      "subtitle_one": "Sblocca la Scorecard di {{name}} per {{count}} Credito.",
+      "subtitle_other": "Sblocca la Scorecard di {{name}} per {{count}} Crediti.",
+      "close": "Chiudi",
+      "unlocked": "Sbloccato",
+      "loadingInterviews": "Caricamento colloqui...",
+      "otherInterviews": "Il candidato è comparso anche in un altro colloquio",
+      "footerText": "Questo include la Scorecard IA, la Registrazione del Colloquio e il Curriculum.",
+      "unlocking": "Sblocco in corso...",
+      "unlockFor": "Sblocca Profilo per {{count}}C"
+    },
+    "toasts": {
+      "unlockSuccess": "Profilo del Candidato sbloccato con successo.",
+      "unlockFailed": "Impossibile sbloccare il profilo."
+    },
+    "loadingJobs": "Caricamento annunci"
+  },
+  "unlocked": {
+    "title": "Candidati sbloccati",
+    "subtitleLoading": "Caricamento dei tuoi profili sbloccati…",
+    "subtitle_one": "{{count}} profilo che hai sbloccato.",
+    "subtitle_other": "{{count}} profili che hai sbloccato.",
+    "subtitleEmpty": "I profili che sblocchi appariranno qui.",
+    "emptyTitle": "Nessun candidato ancora sbloccato",
+    "emptyBody": "Quando sblocchi i profili dei candidati dal bacino candidati, appariranno qui per un accesso rapido.",
+    "card": {
+      "unnamed": "Candidato senza nome",
+      "verified": "Verificato",
+      "verifiedTitle": "Candidato verificato",
+      "expNa": "Esperienza N/D",
+      "exp": "{{value}} esperienza",
+      "notSpecified": "Non specificato",
+      "noticeDays": "{{count}}gg preavviso",
+      "unlockedOn": "Sbloccato il {{date}}",
+      "overallScoreTitle": "Punteggio IA complessivo",
+      "overallScoreAria": "Punteggio IA complessivo: {{value}} percento",
+      "photoAlt": "Foto profilo di {{name}}",
+      "profile": "Profilo",
+      "scorecard": "Scorecard",
+      "yr_one": "{{count}} anno",
+      "yr_other": "{{count}} anni"
+    }
+  },
+  "candidateProfile": {
+    "goBack": "Torna Indietro",
+    "verified": "Verificato",
+    "photoAlt": "Foto del candidato",
+    "na": "—",
+    "errorBody": "Impossibile caricare il profilo del candidato. Controlla la tua connessione.",
+    "tryAgain": "Riprova",
+    "currentCtc": "CTC Attuale",
+    "expectedCtc": "CTC Atteso",
+    "noticePeriodHeading": "Periodo di Preavviso",
+    "availability": "Disponibilità",
+    "notSpecified": "Non specificato",
+    "preferredLocations": "Località Preferite",
+    "preferencesHeading": "Preferenze",
+    "industry": "Settore",
+    "addressHeading": "Indirizzo",
+    "rolesApplied": "Ruoli Candidati",
+    "sectionsLabel": "Sezioni del candidato",
+    "sections": {
+      "education": "Istruzione",
+      "skills": "Competenze",
+      "projects": "Progetti",
+      "experience": "Esperienza",
+      "certifications": "Certificazioni",
+      "documents": "Documenti"
+    },
+    "empty": {
+      "education": "Nessun dettaglio sull'istruzione disponibile.",
+      "skills": "Nessuna competenza disponibile.",
+      "projects": "Nessun dettaglio del progetto disponibile.",
+      "experience": "Nessun dettaglio sull'esperienza lavorativa disponibile.",
+      "certifications": "Nessuna certificazione disponibile.",
+      "documents": "Nessun documento disponibile."
+    },
+    "untitledProject": "Progetto Senza Titolo",
+    "certificationFallback": "Certificazione",
+    "resume": "Curriculum",
+    "noticeProof": "Prova del Periodo di Preavviso",
+    "salaryExpectations": "Aspettative salariali"
+  }
+}
