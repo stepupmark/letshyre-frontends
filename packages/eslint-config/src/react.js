@@ -30,6 +30,15 @@ export const restrictedClasses = [
   },
 ]
 
+// RTL only flips the inline axis, so sizing and top/bottom stay physical
+const directionNeutral = [
+  "^(?:.*:)?-?(?:min-|max-)?[wh]-",
+  "^(?:.*:)?-?(?:scroll-)?[pm][tb]-",
+  "^(?:.*:)?-?(?:top|bottom)-",
+  "^(?:.*:)?border-[tb](?:-|$)",
+  "^(?:.*:)?rounded-[tb](?:-|$)",
+]
+
 const local = { rules: { "no-class-constants": noClassConstants } }
 
 /** @param {{ tsconfigRootDir?: string, tailwindEntryPoint?: string }} [options] */
@@ -66,7 +75,10 @@ export function react({
         "better-tailwindcss/no-deprecated-classes": "error",
         "better-tailwindcss/no-unnecessary-whitespace": "error",
         "better-tailwindcss/enforce-canonical-classes": "error",
-        "better-tailwindcss/enforce-logical-properties": "error",
+        "better-tailwindcss/enforce-logical-properties": [
+          "error",
+          { ignore: directionNeutral },
+        ],
         "better-tailwindcss/no-restricted-classes": [
           "error",
           { restrict: restrictedClasses },
