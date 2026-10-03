@@ -35,7 +35,7 @@ test.describe("desktop header", () => {
       nav.getByRole("link", { name: "Pricing" }),
       nav.getByRole("link", { name: "About" }),
       nav.getByRole("link", { name: "Contact" }),
-      banner.getByRole("button", { name: /Language/ }),
+      banner.getByRole("button", { name: /language/i }),
       banner.getByRole("link", { name: "Log in" }),
       banner.getByRole("link", { name: "Get Started" }),
     ]

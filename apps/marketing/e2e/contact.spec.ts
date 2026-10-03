@@ -5,9 +5,12 @@ const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
 const CORS = { "access-control-allow-origin": "*" }
 
 async function fillIn(page: Page) {
-  await page.getByLabel("Full Name").fill("Ada Lovelace")
-  await page.getByLabel("Email Address").fill("ada@example.com")
-  await page.getByLabel("Subject").fill("Hiring help")
+  await page.getByRole("main").getByLabel("Full Name").fill("Ada Lovelace")
+  await page
+    .getByRole("main")
+    .getByLabel("Email Address")
+    .fill("ada@example.com")
+  await page.getByRole("main").getByLabel("Subject").fill("Hiring help")
   await page
     .getByLabel("Message Details")
     .fill("We would like to try LetsHyre for three roles.")
@@ -22,7 +25,7 @@ test("validation errors are announced and accessible", async ({ page }) => {
   await expect(
     page.getByText("Name must be at least 2 characters")
   ).toBeVisible()
-  await expect(page.getByLabel("Full Name")).toHaveAttribute(
+  await expect(page.getByRole("main").getByLabel("Full Name")).toHaveAttribute(
     "aria-invalid",
     "true"
   )
@@ -69,12 +72,16 @@ test("keeps the message when sending fails", async ({ page }) => {
   await expect(page.getByRole("alert")).toContainText(
     "We couldn't reach our server."
   )
-  await expect(page.getByLabel("Full Name")).toHaveValue("Ada Lovelace")
+  await expect(page.getByRole("main").getByLabel("Full Name")).toHaveValue(
+    "Ada Lovelace"
+  )
 })
 
 test("prefills the subject for sales", async ({ page }) => {
   await page.goto("/en/contact?topic=sales")
-  await expect(page.getByLabel("Subject")).toHaveValue("Custom plan enquiry")
+  await expect(page.getByRole("main").getByLabel("Subject")).toHaveValue(
+    "Custom plan enquiry"
+  )
 })
 
 test("ships ContactPage JSON-LD", async ({ request }) => {
