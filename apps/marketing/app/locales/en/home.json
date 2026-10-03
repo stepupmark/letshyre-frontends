@@ -35,9 +35,18 @@
       "check": "Check",
       "result": "Result",
       "rows": {
-        "identity": { "label": "Identity", "result": "Verified" },
-        "resume": { "label": "Resume claims", "result": "Consistent" },
-        "proctoring": { "label": "Proctoring flags", "result": "None" }
+        "identity": {
+          "label": "Identity",
+          "result": "Verified"
+        },
+        "resume": {
+          "label": "Resume claims",
+          "result": "Consistent"
+        },
+        "proctoring": {
+          "label": "Proctoring flags",
+          "result": "None"
+        }
       }
     }
   },
@@ -136,5 +145,9 @@
     "description": "Post a role and get scored candidates, or take one interview and get in front of employers who are hiring now.",
     "startHiring": "Start Hiring",
     "applyJob": "Apply for Job"
+  },
+  "chatbot": {
+    "title": "LetsHyre Assistant",
+    "launcherAria": "Open chat assistant"
   }
 }

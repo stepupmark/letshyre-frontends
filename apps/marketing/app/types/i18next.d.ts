@@ -1,6 +1,7 @@
 import "i18next"
 
 import type about from "../locales/en/about.json"
+import type assistant from "../locales/en/assistant.json"
 import type common from "../locales/en/common.json"
 import type contact from "../locales/en/contact.json"
 import type download from "../locales/en/download.json"
@@ -17,6 +18,7 @@ declare module "i18next" {
     defaultNS: false
     resources: {
       about: typeof about
+      assistant: typeof assistant
       common: typeof common
       contact: typeof contact
       download: typeof download

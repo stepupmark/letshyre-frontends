@@ -1,3 +1,4 @@
+import { AssistantLauncher } from "@/features/assistant"
 import { HomePage, homeJsonLd } from "@/features/home"
 import { pageData } from "@/lib/page-data.server"
 import { pageMeta } from "@/lib/seo/page-meta"
@@ -9,4 +10,11 @@ export const loader = ({ params }: Route.LoaderArgs) =>
 
 export const meta = pageMeta("home", homeJsonLd)
 
-export default HomePage
+export default function HomeRoute() {
+  return (
+    <>
+      <HomePage />
+      <AssistantLauncher />
+    </>
+  )
+}
