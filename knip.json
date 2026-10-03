@@ -20,6 +20,9 @@
     },
     "packages/api": {
       "entry": ["test/**/*.test.ts"]
+    },
+    "packages/analytics": {
+      "entry": ["test/**/*.test.{ts,tsx}"]
     }
   }
 }
