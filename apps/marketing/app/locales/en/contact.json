@@ -1,4 +1,50 @@
 {
+  "info": {
+    "title": "Get in Touch<br/><hl>With Our Team</hl>",
+    "description": "Have questions about AI interviews, candidate reports, hiring plans, credits, or technical issues? Our support specialists are here to help.",
+    "emailLabel": "Email"
+  },
+  "form": {
+    "title": "Send a Message",
+    "subtitle": "Fill out the form below and our team will get back to you.",
+    "fields": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Message Details"
+    },
+    "privacy": "We value your privacy. By submitting your information, you agree to LetsHyre's <pp>Privacy Policy</pp>. Our team typically responds within 2-4 hours.",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Message Sent!",
+    "successBody": "Thank you for reaching out. Our support team has received your message and will get back to you shortly.",
+    "validation": {
+      "nameMin": "Name must be at least 2 characters",
+      "emailInvalid": "Please enter a valid email address",
+      "subjectMin": "Subject must be at least 3 characters",
+      "messageMin": "Message must be at least 10 characters"
+    },
+    "sendAnother": "Send another message",
+    "topics": {
+      "sales": "Custom plan enquiry"
+    },
+    "errors": {
+      "generic": "We couldn't send your message. Try again in a moment.",
+      "network": "We couldn't reach our server. Check your connection and try again.",
+      "rateLimited": "You've sent several messages in a short time. Wait a minute and try again."
+    }
+  },
+  "channels": {
+    "title": "Other ways to reach us",
+    "candidates": {
+      "title": "Preparing for an interview?",
+      "link": "Read the interview guide"
+    },
+    "employers": {
+      "title": "Comparing plans?",
+      "link": "See pricing"
+    }
+  },
   "meta": {
     "title": "Contact Us | letshyre.ai",
     "description": "Questions about AI interviews, scorecards, plans, or credits? Reach the LetsHyre team and we will get back to you.",

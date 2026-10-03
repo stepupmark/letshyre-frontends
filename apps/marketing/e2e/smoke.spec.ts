@@ -17,6 +17,17 @@ for (const [id, page] of Object.entries(PAGES)) {
     expect(raw).toMatch(/<title>[^<]+<\/title>/)
     expect(raw).toContain('rel="canonical"')
 
+    // the real API rejects localhost origins, so answer its calls with an empty envelope
+    await tab.route(
+      (target) => target.hostname !== "localhost",
+      (route) =>
+        route.fulfill({
+          contentType: "application/json",
+          headers: { "access-control-allow-origin": "*" },
+          body: JSON.stringify({ success: true, data: [] }),
+        })
+    )
+
     const errors: string[] = []
     tab.on("console", (msg) => {
       if (msg.type() === "error") errors.push(msg.text())

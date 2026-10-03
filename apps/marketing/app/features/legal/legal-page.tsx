@@ -1,12 +1,6 @@
-import { useTranslation } from "@workspace/i18n/react"
+import { LegalDocument } from "./components/legal-document"
+import type { LegalNamespace } from "./lib/legal-doc"
 
-import { PageHeader } from "@/components/section"
-
-export type LegalNamespace = "legalTerms" | "legalPolicy" | "legalRefund"
-
-export function LegalPage({ ns }: { ns: LegalNamespace }) {
-  const { t } = useTranslation(ns)
-  return (
-    <PageHeader title={t("meta.name")} description={t("meta.description")} />
-  )
+export function LegalPage({ ns, path }: { ns: LegalNamespace; path: string }) {
+  return <LegalDocument ns={ns} path={path} />
 }
