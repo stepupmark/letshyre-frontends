@@ -1,0 +1,32 @@
+{
+  "skipToContent": "Skip to main content",
+  "copyright": "LetsHyre © {{year}}",
+  "nav": {
+    "language": "Language",
+    "logoAlt": "LetsHyre logo",
+    "toggle": "Toggle navigation",
+    "primaryAria": "Primary navigation"
+  },
+  "pageState": {
+    "loading": "Loading page"
+  },
+  "notFound": {
+    "badge": "404 Not Found",
+    "title": "We couldn't find this page",
+    "body": "The page you're looking for doesn't exist or might have been moved. Let's get you back on track.",
+    "goHome": "Go Home",
+    "goBack": "Go Back"
+  },
+  "error": {
+    "title": "This page didn't load",
+    "body": "Something went wrong on our side. Reload to try again, or contact us if it keeps happening.",
+    "retry": "Try again",
+    "goHome": "Go Home"
+  },
+  "consent": {
+    "label": "Cookie preferences",
+    "body": "We use cookies to measure how our ads perform. Nothing is shared unless you accept. <0>Privacy policy</0>",
+    "accept": "Accept",
+    "reject": "Reject"
+  }
+}

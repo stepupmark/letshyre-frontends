@@ -13,7 +13,8 @@
       "ignoreDependencies": ["eslint-import-resolver-typescript", "valibot"]
     },
     "apps/marketing": {
-      "entry": ["test/setup.ts"]
+      "entry": ["test/setup.ts"],
+      "ignoreDependencies": ["tailwindcss"]
     },
     "packages/i18n": {
       "entry": ["test/**/*.test.{ts,tsx}"]

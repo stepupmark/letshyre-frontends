@@ -7,6 +7,11 @@ const schema = z
     VITE_APP_URL: z.url(),
     VITE_API_BASE_URL: z.url(),
     VITE_META_PIXEL_ID: z.string().optional(),
+    // shared by letshyre.ai and app.letshyre.ai; empty on localhost
+    VITE_COOKIE_DOMAIN: z
+      .string()
+      .optional()
+      .transform((v) => (v === "" ? undefined : v)),
   })
   .refine((env) => env.VITE_ENV !== "production" || env.VITE_META_PIXEL_ID, {
     message: "VITE_META_PIXEL_ID is required in production",

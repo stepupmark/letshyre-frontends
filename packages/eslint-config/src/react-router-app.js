@@ -84,6 +84,20 @@ export function reactRouterApp(options = {}) {
     },
     rules: {
       "boundaries/dependencies": ["error", { default: "disallow", policies }],
+      // loaders throw data() and Response for 404s
+      "@typescript-eslint/only-throw-error": [
+        "error",
+        {
+          allow: [
+            { from: "lib", name: "Response" },
+            {
+              from: "package",
+              package: "react-router",
+              name: "DataWithResponseInit",
+            },
+          ],
+        },
+      ],
       "react-refresh/only-export-components": [
         "error",
         { allowConstantExport: true, allowExportNames: ROUTE_EXPORTS },

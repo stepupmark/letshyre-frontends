@@ -1,14 +1,12 @@
-import { Button } from "@workspace/ui/components/button"
+import { HomePage } from "@/features/home"
+import { pageData } from "@/lib/page-data.server"
+import { pageMeta } from "@/lib/seo/page-meta"
 
-const brand = "LetsHyre"
+import type { Route } from "./+types/home"
 
-export const meta = () => [{ title: brand }]
+export const loader = ({ params }: Route.LoaderArgs) =>
+  pageData(params.lang, "home")
 
-export default function Home() {
-  return (
-    <main className="mx-auto flex min-h-svh max-w-5xl flex-col justify-center gap-4 px-4">
-      <h1 className="text-4xl font-semibold tracking-tight">{brand}</h1>
-      <Button className="w-fit">{brand}</Button>
-    </main>
-  )
-}
+export const meta = pageMeta("home")
+
+export default HomePage

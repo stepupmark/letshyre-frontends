@@ -1,5 +1,11 @@
+import outfitLatin from "@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2?url"
+import { QueryClientProvider } from "@tanstack/react-query"
+import { ThemeProvider } from "@workspace/blocks/theme-provider"
+import { dirFor, toLocale } from "@workspace/i18n"
+import { I18nProvider } from "@workspace/i18n/react"
+import { Toaster } from "@workspace/ui/components/sonner"
+import { useState } from "react"
 import {
-  isRouteErrorResponse,
   Links,
   Meta,
   Outlet,
@@ -9,27 +15,42 @@ import {
 } from "react-router"
 
 import type { Route } from "./+types/root"
+import { RouteError } from "./components/route-error"
+import { usePageViews } from "./hooks/use-page-views"
 import { env } from "./lib/env"
+import { createQueryClient } from "./lib/query-client"
+import common from "./locales/en/common.json"
 import "./styles/app.css"
 
+export const links: Route.LinksFunction = () => [
+  {
+    rel: "preload",
+    href: outfitLatin,
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+  },
+  { rel: "icon", href: "/favicon.ico", sizes: "32x32" },
+  { rel: "icon", href: "/favicon.png", type: "image/png" },
+  { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+  { rel: "manifest", href: "/site.webmanifest" },
+]
+
 export function Layout({ children }: { children: React.ReactNode }) {
-  const { lang = "en" } = useParams()
+  const lang = toLocale(useParams().lang)
 
   return (
-    <html lang={lang}>
+    <html lang={lang} dir={dirFor(lang)}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="/favicon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         {env.VITE_ENV !== "production" && (
           <meta name="robots" content="noindex, nofollow" />
         )}
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="min-h-svh bg-background text-foreground antialiased">
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -39,18 +60,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />
-}
-
-export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  const status = isRouteErrorResponse(error) ? error.status : 500
+  const [queryClient] = useState(createQueryClient)
+  usePageViews()
 
   return (
-    <main className="mx-auto flex min-h-svh max-w-xl flex-col justify-center gap-2 px-4">
-      <p className="text-sm text-muted-foreground">{status}</p>
-      {import.meta.env.DEV && error instanceof Error && (
-        <pre className="overflow-x-auto text-xs">{error.stack}</pre>
-      )}
-    </main>
+    <ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <Outlet />
+        <Toaster />
+      </QueryClientProvider>
+    </ThemeProvider>
+  )
+}
+
+// outside every layout, e.g. a URL no route matches; English is always available
+export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+  return (
+    <I18nProvider lang="en" messages={{ en: { common } }}>
+      <main id="main">
+        <RouteError error={error} />
+      </main>
+    </I18nProvider>
   )
 }
