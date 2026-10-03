@@ -6,7 +6,7 @@ import { Container } from "@/components/section"
 import { APP_LINKS } from "@/lib/app-links"
 
 import { plainText } from "../lib/plain-text"
-import { ArrowRightIcon } from "./icons"
+import { ArrowRightIcon } from "lucide-react"
 import { ScorecardPreview } from "./scorecard-preview"
 
 export function Hero() {
@@ -39,7 +39,7 @@ export function Hero() {
               className="group inline-flex items-center gap-1.5 rounded-md text-sm font-medium underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               {t("hero.ctaJob")}
-              <ArrowRightIcon className="transition-transform block-4 inline-4 group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5" />
+              <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5" />
             </a>
           </div>
         </div>

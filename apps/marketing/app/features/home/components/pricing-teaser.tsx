@@ -7,7 +7,7 @@ import { Link } from "react-router"
 
 import { Section, SectionHeader } from "@/components/section"
 
-import { CheckIcon } from "./icons"
+import { CheckIcon } from "lucide-react"
 
 export function PricingTeaser() {
   const { t } = useTranslation("home")
@@ -28,7 +28,7 @@ export function PricingTeaser() {
           <ul className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
             {points.map((point) => (
               <li key={point} className="flex items-center gap-2 text-sm">
-                <CheckIcon className="shrink-0 text-muted-foreground block-4 inline-4" />
+                <CheckIcon className="size-4 shrink-0 text-muted-foreground" />
                 {point}
               </li>
             ))}

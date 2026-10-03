@@ -20,7 +20,7 @@ import {
   comparisonValue,
   type ComparisonValue,
 } from "../lib/plans"
-import { CheckIcon } from "./check-icon"
+import { CheckIcon } from "lucide-react"
 
 const COL = "col"
 const ROW = "row"
@@ -32,7 +32,7 @@ function Value({ value }: { value: ComparisonValue }) {
   if (value === true) {
     return (
       <>
-        <CheckIcon className="mx-auto block-4 inline-4" />
+        <CheckIcon className="mx-auto size-4" />
         <span className="sr-only">{t("compare.values.included")}</span>
       </>
     )

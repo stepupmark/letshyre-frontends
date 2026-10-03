@@ -24,7 +24,7 @@ export function InterviewSteps() {
         return (
           <li key={id} id={anchor} className="flex scroll-mt-24 gap-4 sm:gap-6">
             <div aria-hidden className="flex flex-col items-center">
-              <span className="flex shrink-0 items-center justify-center rounded-full border bg-background text-sm font-medium tabular-nums block-9 inline-9">
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-full border bg-background text-sm font-medium tabular-nums">
                 {format.number(index + 1)}
               </span>
               {index < STEPS.length - 1 && (

@@ -1,3 +1,4 @@
+import { ChevronDownIcon } from "lucide-react"
 import { localePath } from "@workspace/i18n"
 import {
   Trans,
@@ -66,20 +67,10 @@ export function LegalDocument({
           <Collapsible className="rounded-xl border lg:hidden">
             <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none">
               <span id={tocId}>{t("chrome.contents")}</span>
-              <svg
+              <ChevronDownIcon
                 aria-hidden
-                viewBox="0 0 16 16"
-                className="text-muted-foreground transition-transform block-4 inline-4 group-aria-expanded:rotate-180"
-              >
-                <path
-                  d="m4 6 4 4 4-4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+                className="size-4 text-muted-foreground transition-transform group-aria-expanded:rotate-180"
+              />
             </CollapsibleTrigger>
             <CollapsibleContent className="px-2 pb-3">
               <LegalToc entries={toc} active={active} />

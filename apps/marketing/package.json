@@ -24,6 +24,7 @@
     "@workspace/ui": "workspace:*",
     "cn": "^0.4.0",
     "isbot": "^5.2.2",
+    "lucide-react": "^1.50.0",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-hook-form": "^7.89.0",

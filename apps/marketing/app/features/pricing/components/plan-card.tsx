@@ -16,7 +16,7 @@ import { Link } from "react-router"
 import { usePlanCopy } from "../hooks/use-plan-copy"
 import { planHref } from "../lib/checkout-url"
 import type { PricingPlan } from "../lib/plans"
-import { CheckIcon } from "./check-icon"
+import { CheckIcon } from "lucide-react"
 import { Price } from "./price"
 
 export function PlanCard({
@@ -81,7 +81,7 @@ export function PlanCard({
         <ul className="flex flex-col gap-3 border-t pt-5">
           {features.map((feature) => (
             <li key={feature} className="flex items-start gap-2.5 text-sm">
-              <CheckIcon className="mt-0.5 shrink-0 text-muted-foreground block-4 inline-4" />
+              <CheckIcon className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
               {feature}
             </li>
           ))}

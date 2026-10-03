@@ -23,10 +23,7 @@ export function DownloadPage() {
         <ul className="mt-2 flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:flex-wrap sm:gap-x-6">
           {FEATURES.map((id) => (
             <li key={id} className="flex items-center gap-2">
-              <span
-                aria-hidden
-                className="rounded-full bg-primary block-1.5 inline-1.5"
-              />
+              <span aria-hidden className="size-1.5 rounded-full bg-primary" />
               {t(`features.${id}`)}
             </li>
           ))}

@@ -16,7 +16,7 @@ import { Link } from "react-router"
 
 import { APP_LINKS } from "@/lib/app-links"
 
-import { CloseIcon, MenuIcon } from "./site-header-icons"
+import { MenuIcon, XIcon } from "lucide-react"
 import { NAV_ITEMS, navHref, useIsCurrent } from "./site-header-nav"
 
 export function SiteHeaderMenu({ className }: { className?: string }) {
@@ -49,7 +49,7 @@ export function SiteHeaderMenu({ className }: { className?: string }) {
             render={<Button variant="ghost" size="icon-lg" />}
             aria-label={t("nav.close")}
           >
-            <CloseIcon />
+            <XIcon />
           </SheetClose>
         </SheetHeader>
         <nav

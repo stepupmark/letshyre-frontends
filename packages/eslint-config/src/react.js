@@ -33,6 +33,7 @@ export const restrictedClasses = [
 // RTL only flips the inline axis, so sizing and top/bottom stay physical
 const directionNeutral = [
   "^(?:.*:)?-?(?:min-|max-)?[wh]-",
+  "^(?:.*:)?size-",
   "^(?:.*:)?-?(?:scroll-)?[pm][tb]-",
   "^(?:.*:)?-?(?:top|bottom)-",
   "^(?:.*:)?border-[tb](?:-|$)",
