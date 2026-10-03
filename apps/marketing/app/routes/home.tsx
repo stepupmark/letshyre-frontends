@@ -2,6 +2,8 @@ import { Button } from "@workspace/ui/components/button"
 
 const brand = "LetsHyre"
 
+export const meta = () => [{ title: brand }]
+
 export default function Home() {
   return (
     <main className="mx-auto flex min-h-svh max-w-5xl flex-col justify-center gap-4 px-4">

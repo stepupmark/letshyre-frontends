@@ -9,6 +9,7 @@ import {
 } from "react-router"
 
 import type { Route } from "./+types/root"
+import { env } from "./lib/env"
 import "./styles/app.css"
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -22,6 +23,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {env.VITE_ENV !== "production" && (
+          <meta name="robots" content="noindex, nofollow" />
+        )}
         <Meta />
         <Links />
       </head>

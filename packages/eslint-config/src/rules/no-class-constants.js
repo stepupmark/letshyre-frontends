@@ -1,7 +1,7 @@
 const CLASS_TOKEN = /^[!\w:\-[\]/.%#()_,&>*@=']+$/
 const HAS_UTILITY = /[-:]/
 
-export function looksLikeClassList(value) {
+function looksLikeClassList(value) {
   const tokens = value.trim().split(/\s+/)
   if (tokens.length < 3) return false
   if (!tokens.every((t) => CLASS_TOKEN.test(t))) return false

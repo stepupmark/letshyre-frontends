@@ -1,0 +1,19 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "ignoreWorkspaces": ["apps/legacy"],
+  "workspaces": {
+    ".": {
+      "entry": ["tooling/**/*.ts"]
+    },
+    "packages/ui": {
+      "entry": ["src/components/*.tsx", "src/lib/*.ts"]
+    },
+    "packages/eslint-config": {
+      "entry": ["src/*.js", "test/*.test.js"],
+      "ignoreDependencies": ["eslint-import-resolver-typescript", "valibot"]
+    },
+    "apps/marketing": {
+      "entry": ["test/setup.ts"]
+    }
+  }
+}
