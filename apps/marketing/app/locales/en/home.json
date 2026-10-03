@@ -4,5 +4,137 @@
     "description": "Screen resumes, run structured AI interviews, and verify candidates in one place. Built for teams hiring people already serving notice.",
     "name": "LetsHyre — AI Hiring Platform for Notice-Period Talent",
     "schemaDescription": "AI-powered hiring platform that automates resume screening, AI interviews, and candidate verification."
+  },
+  "hero": {
+    "title": "The AI Hiring Platform for <hl>Notice-Period Talent</hl>",
+    "description": "LetsHyre automates resume evaluation, AI interviews, and candidate verification for modern HR teams.",
+    "ctaHiring": "I'm Hiring",
+    "ctaJob": "I'm looking for a job",
+    "tagline": {
+      "stop": "Stop Screening.",
+      "start": "Start Shortlisting."
+    }
+  },
+  "preview": {
+    "label": "Sample candidate scorecard",
+    "candidate": "Ananya Rao",
+    "role": "Senior Frontend Engineer",
+    "notice": "Notice period: 30 days",
+    "recommendation": "Shortlist",
+    "overall": "Overall score",
+    "outOf": "out of {{max}}",
+    "skillsHeading": "Skills",
+    "skills": {
+      "communication": "Communication",
+      "technical": "Technical depth",
+      "problemSolving": "Problem solving",
+      "roleFit": "Role fit"
+    },
+    "checks": {
+      "caption": "Verification",
+      "check": "Check",
+      "result": "Result",
+      "rows": {
+        "identity": { "label": "Identity", "result": "Verified" },
+        "resume": { "label": "Resume claims", "result": "Consistent" },
+        "proctoring": { "label": "Proctoring flags", "result": "None" }
+      }
+    }
+  },
+  "assistance": {
+    "ariaLabel": "How it works",
+    "intro": "Three steps from job post to shortlist.",
+    "steps": {
+      "post": {
+        "pill": "Post your opening",
+        "heading": "Define the role,<br/><hl>let AI do the rest</hl>",
+        "description": "Add the role and what it needs. LetsHyre starts checking resumes against it straight away."
+      },
+      "screen": {
+        "pill": "AI Screening",
+        "heading": "24/7 interviews,<br/><hl>zero scheduling friction</hl>",
+        "description": "Candidates take a structured AI interview when it suits them. Every answer is assessed on the same criteria."
+      },
+      "scorecards": {
+        "pill": "Receive Scorecards",
+        "heading": "Raw data transformed into<br/><hl>clear recommendations</hl>",
+        "description": "Each candidate gets a scorecard with scores, strengths, gaps and the recording, so you decide who to meet."
+      }
+    }
+  },
+  "candidate": {
+    "eyebrow": "For candidates",
+    "title": "One interview, in front of many employers",
+    "body": "Take the AI interview once and employers hiring for matching roles can find you. No repeat screening calls.",
+    "guide": "Read the interview guide",
+    "items": {
+      "interview": {
+        "title": "Interview from the desktop app",
+        "desc": "Install the LetsHyre app and follow the 8-step guide. Take the interview whenever it suits you."
+      },
+      "evaluation": {
+        "title": "Scored on the same criteria",
+        "desc": "Every candidate answers in the same format and is assessed the same way, so your skills speak for themselves."
+      },
+      "matching": {
+        "title": "Active for 90 days",
+        "desc": "Your profile and scorecard stay visible to employers for 90 days after the interview."
+      },
+      "hired": {
+        "title": "Hear from employers directly",
+        "desc": "Employers who unlock your profile contact you about the role. You don't pay anything."
+      }
+    }
+  },
+  "pricingTeaser": {
+    "eyebrow": "Pricing",
+    "title": "Pay only for the candidates you unlock",
+    "body": "Employers get free credits on sign-up and buy more only when they need them.",
+    "points": [
+      "No subscription or monthly bill",
+      "Credits never expire",
+      "Free for candidates"
+    ],
+    "cta": "See pricing"
+  },
+  "faq": {
+    "title": "FAQ: AI Hiring & Notice Period",
+    "subtitle": "Everything you need to know about LetsHyre's AI-Powered hiring platform.",
+    "items": [
+      {
+        "q": "How does LetsHyre's AI hiring platform work?",
+        "a": "LetsHyre instantly parses resumes, conducts interactive AI interviews to assess communication and technical skills, and provides a verified scorecard so you only spend time on top candidates."
+      },
+      {
+        "q": "What makes LetsHyre different from other hiring platforms?",
+        "a": "Unlike traditional job boards, LetsHyre automates the entire screening process. Our AI verifies skills in real-time before you even see the candidate, drastically reducing your time-to-hire."
+      },
+      {
+        "q": "How accurate is the AI interview evaluation?",
+        "a": "Our AI models are trained on millions of data points to evaluate communication, technical proficiency, and cultural fit with over 98% accuracy, ensuring fair and unbiased scoring."
+      },
+      {
+        "q": "What does AI video Object Detection check for?",
+        "a": "Our advanced anti-cheating system monitors eye tracking, detects multiple faces, and checks for unauthorized devices like phones or secondary monitors during the assessment."
+      },
+      {
+        "q": "Are notice-period candidates verified?",
+        "a": "Yes, we prioritize and verify notice-period candidates so you can build your team up to 40% faster with talent that is ready to join immediately."
+      },
+      {
+        "q": "What information does the AI scorecard include?",
+        "a": "The scorecard provides a comprehensive breakdown of the candidate's Potential Score, Fit Score, technical strengths, areas for improvement, and a detailed behavioral analysis."
+      },
+      {
+        "q": "Can I integrate LetsHyre with our existing HR systems?",
+        "a": "Absolutely! LetsHyre seamlessly integrates with popular ATS and HRIS platforms via our secure API, so your hiring workflow remains uninterrupted."
+      }
+    ]
+  },
+  "hireCard": {
+    "title": "Ready to Hire or Get Hired?",
+    "description": "Post a role and get scored candidates, or take one interview and get in front of employers who are hiring now.",
+    "startHiring": "Start Hiring",
+    "applyJob": "Apply for Job"
   }
 }
