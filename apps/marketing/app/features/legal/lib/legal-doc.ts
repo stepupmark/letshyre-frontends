@@ -73,7 +73,7 @@ export function buildToc(doc: LegalDoc): TocEntry[] {
   }))
 }
 
-export function plainText(text: RichText): string {
+function plainText(text: RichText): string {
   if (typeof text === "string") return text
   return text
     .map((run) =>

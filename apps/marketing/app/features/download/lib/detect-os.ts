@@ -1,6 +1,6 @@
 import type { DesktopOs } from "@workspace/api/public"
 
-export const DESKTOP_OSES = ["windows", "mac"] as const satisfies DesktopOs[]
+const DESKTOP_OSES = ["windows", "mac"] as const satisfies DesktopOs[]
 
 export type DetectedOs = DesktopOs | "other"
 

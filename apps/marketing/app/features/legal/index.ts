@@ -1,2 +1,2 @@
 export { LegalPage } from "./legal-page"
-export { LEGAL_DOCS, type LegalNamespace } from "./lib/legal-doc"
+export { LEGAL_DOCS } from "./lib/legal-doc"

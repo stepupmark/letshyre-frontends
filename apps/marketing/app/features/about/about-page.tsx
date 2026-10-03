@@ -8,7 +8,7 @@ import { Disclaimer } from "./components/disclaimer"
 import { MissionVision } from "./components/mission-vision"
 import { ProfileDuration } from "./components/profile-duration"
 import { WhyLetsHyre } from "./components/why-letshyre"
-import { plainText } from "./lib/plain-text"
+import { plainText } from "@/lib/plain-text"
 
 export function AboutPage() {
   const { t } = useTranslation("about")

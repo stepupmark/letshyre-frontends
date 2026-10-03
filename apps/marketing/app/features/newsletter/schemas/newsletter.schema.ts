@@ -9,9 +9,7 @@ export const newsletterSchema = z.object({
     .pipe(z.email("newsletter.emailInvalid")),
 })
 
-export type NewsletterInput = z.input<typeof newsletterSchema>
-
-export const NEWSLETTER_ERRORS = [
+const NEWSLETTER_ERRORS = [
   "newsletter.emailRequired",
   "newsletter.emailInvalid",
 ] as const

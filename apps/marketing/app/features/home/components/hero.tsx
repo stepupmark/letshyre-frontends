@@ -5,7 +5,7 @@ import { cn } from "@workspace/ui/lib/utils"
 import { Container } from "@/components/section"
 import { APP_LINKS } from "@/lib/app-links"
 
-import { plainText } from "../lib/plain-text"
+import { plainText } from "@/lib/plain-text"
 import { ArrowRightIcon } from "lucide-react"
 import { ScorecardPreview } from "./scorecard-preview"
 

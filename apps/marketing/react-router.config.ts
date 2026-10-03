@@ -6,7 +6,8 @@ export default {
   ssr: false,
   prerender: {
     paths: () => [...readyPaths("app/locales"), "/404"],
-    concurrency: 4,
+    // parallel prerender requests drop sockets intermittently on Windows
+    concurrency: process.platform === "win32" ? 1 : 4,
   },
   // no server to answer /__manifest on static hosting
   routeDiscovery: { mode: "initial" },

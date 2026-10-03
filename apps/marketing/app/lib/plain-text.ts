@@ -1,7 +1,4 @@
-/**
- * Legacy copy carries inline markup like `<hl>` and `<br/>`. The redesign shows it as plain
- * text, so existing translations stay usable as they are.
- */
+// legacy copy carries <br/> and <hl> markup; shown as plain text so its translations still fit
 export const plainText = (value: string) =>
   value
     .replace(/<br\s*\/?>/gi, " ")

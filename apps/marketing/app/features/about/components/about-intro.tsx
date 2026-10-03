@@ -3,7 +3,7 @@ import { useId } from "react"
 
 import { Section } from "@/components/section"
 
-import { plainText } from "../lib/plain-text"
+import { plainText } from "@/lib/plain-text"
 
 export function AboutIntro() {
   const { t } = useTranslation("about")

@@ -1,6 +1,6 @@
 import type { Plan } from "@workspace/api/public"
 
-export type Billing = "free" | "credits" | "custom"
+type Billing = "free" | "credits" | "custom"
 
 export interface PricingPlan {
   /** The plan slug. Also the `?checkout=` key in the app. */
@@ -19,7 +19,7 @@ export interface PricingPlan {
   tagline: string | null
 }
 
-export const KNOWN_PLANS = ["free", "pro", "business", "custom"] as const
+const KNOWN_PLANS = ["free", "pro", "business", "custom"] as const
 export type KnownPlan = (typeof KNOWN_PLANS)[number]
 
 export const isKnownPlan = (id: string): id is KnownPlan =>

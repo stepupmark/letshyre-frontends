@@ -3,7 +3,7 @@ import { useId } from "react"
 
 import { Section, SectionHeader } from "@/components/section"
 
-import { plainText } from "../lib/plain-text"
+import { plainText } from "@/lib/plain-text"
 
 const STEPS = ["post", "screen", "scorecards"] as const
 

@@ -4,7 +4,7 @@ import { Container, PageHeader } from "@/components/section"
 
 import { ContactChannels } from "./components/contact-channels"
 import { ContactForm } from "./components/contact-form"
-import { plainText } from "./lib/plain-text"
+import { plainText } from "@/lib/plain-text"
 
 export function ContactPage() {
   const { t } = useTranslation("contact")
