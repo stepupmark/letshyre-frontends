@@ -1,0 +1,8 @@
+{
+  "title": "Willkommen, {{name}}",
+  "items_one": "{{count}} Eintrag",
+  "items_other": "{{count}} Einträge",
+  "body": "Lies <b>das</b> zuerst",
+  "steps": ["Bewerben", "Interview"],
+  "old": "Nicht mehr verwendet"
+}

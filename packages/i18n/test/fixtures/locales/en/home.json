@@ -1,0 +1,7 @@
+{
+  "title": "Welcome, {{name}}",
+  "items_one": "{{count}} item",
+  "items_other": "{{count}} items",
+  "body": "Read <b>this</b> first",
+  "steps": ["Apply", "Interview"]
+}

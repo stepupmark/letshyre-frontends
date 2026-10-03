@@ -41,10 +41,79 @@ const directionNeutral = [
 
 const local = { rules: { "no-class-constants": noClassConstants } }
 
-/** @param {{ tsconfigRootDir?: string, tailwindEntryPoint?: string }} [options] */
+const literalStringRule = [
+  "error",
+  {
+    mode: "jsx-only",
+    "jsx-attributes": {
+      exclude: [
+        "className",
+        "style",
+        "type",
+        "key",
+        "id",
+        "width",
+        "height",
+        "href",
+        "to",
+        "src",
+        "srcSet",
+        "sizes",
+        "rel",
+        "target",
+        "role",
+        "name",
+        "htmlFor",
+        "autoComplete",
+        "inputMode",
+        "variant",
+        "size",
+        "side",
+        "align",
+        "orientation",
+        "dir",
+        "lang",
+        "loading",
+        "decoding",
+        "fetchPriority",
+        "method",
+        "as",
+        "data-.*",
+        "aria-hidden",
+        "aria-live",
+        "aria-current",
+      ],
+    },
+  },
+]
+
+const tailwindRules = {
+  "better-tailwindcss/no-conflicting-classes": "error",
+  "better-tailwindcss/no-duplicate-classes": "error",
+  "better-tailwindcss/no-unknown-classes": "error",
+  "better-tailwindcss/no-deprecated-classes": "error",
+  "better-tailwindcss/no-unnecessary-whitespace": "error",
+  "better-tailwindcss/enforce-canonical-classes": "error",
+  "better-tailwindcss/enforce-logical-properties": [
+    "error",
+    { ignore: directionNeutral },
+  ],
+  "better-tailwindcss/no-restricted-classes": [
+    "error",
+    { restrict: restrictedClasses },
+  ],
+}
+
+/**
+ * `library` is for packages: no fast-refresh rule, and no Tailwind rules unless
+ * the package ships markup (`tailwind: true`).
+ * @param {{ tsconfigRootDir?: string, tailwindEntryPoint?: string, library?: boolean, tailwind?: boolean }} [options]
+ */
 export function react({
   tsconfigRootDir,
   tailwindEntryPoint = DEFAULT_TAILWIND_ENTRY,
+  library = false,
+  tailwind = !library,
 } = {}) {
   return defineConfig(
     base({ tsconfigRootDir }),
@@ -54,85 +123,34 @@ export function react({
         reactHooks.configs.flat["recommended-latest"],
         jsxA11y.flatConfigs.strict,
       ],
-      plugins: {
-        "react-refresh": reactRefresh,
-        "better-tailwindcss": betterTailwind,
-        i18next,
-        local,
-      },
-      settings: {
-        "better-tailwindcss": { entryPoint: tailwindEntryPoint },
-      },
+      plugins: { i18next, local },
       rules: {
-        "react-refresh/only-export-components": [
-          "error",
-          { allowConstantExport: true },
-        ],
-
-        "better-tailwindcss/no-conflicting-classes": "error",
-        "better-tailwindcss/no-duplicate-classes": "error",
-        "better-tailwindcss/no-unknown-classes": "error",
-        "better-tailwindcss/no-deprecated-classes": "error",
-        "better-tailwindcss/no-unnecessary-whitespace": "error",
-        "better-tailwindcss/enforce-canonical-classes": "error",
-        "better-tailwindcss/enforce-logical-properties": [
-          "error",
-          { ignore: directionNeutral },
-        ],
-        "better-tailwindcss/no-restricted-classes": [
-          "error",
-          { restrict: restrictedClasses },
-        ],
-
-        "i18next/no-literal-string": [
-          "error",
-          {
-            mode: "jsx-only",
-            "jsx-attributes": {
-              exclude: [
-                "className",
-                "style",
-                "type",
-                "key",
-                "id",
-                "width",
-                "height",
-                "href",
-                "to",
-                "src",
-                "srcSet",
-                "sizes",
-                "rel",
-                "target",
-                "role",
-                "name",
-                "htmlFor",
-                "autoComplete",
-                "inputMode",
-                "variant",
-                "size",
-                "side",
-                "align",
-                "orientation",
-                "dir",
-                "lang",
-                "loading",
-                "decoding",
-                "fetchPriority",
-                "method",
-                "as",
-                "data-.*",
-                "aria-hidden",
-                "aria-live",
-                "aria-current",
-              ],
-            },
-          },
-        ],
-
+        "i18next/no-literal-string": literalStringRule,
         "local/no-class-constants": "error",
       },
     },
+    library
+      ? []
+      : {
+          files: ["**/*.{ts,tsx}"],
+          plugins: { "react-refresh": reactRefresh },
+          rules: {
+            "react-refresh/only-export-components": [
+              "error",
+              { allowConstantExport: true },
+            ],
+          },
+        },
+    tailwind
+      ? {
+          files: ["**/*.{ts,tsx}"],
+          plugins: { "better-tailwindcss": betterTailwind },
+          settings: {
+            "better-tailwindcss": { entryPoint: tailwindEntryPoint },
+          },
+          rules: tailwindRules,
+        }
+      : [],
     {
       files: ["**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}", "**/e2e/**"],
       rules: {

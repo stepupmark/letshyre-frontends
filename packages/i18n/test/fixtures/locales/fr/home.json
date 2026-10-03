@@ -1,0 +1,7 @@
+{
+  "title": "Bienvenue, {{name}}",
+  "items_one": "{{count}} élément",
+  "items_many": "{{count}} d’éléments",
+  "items_other": "{{count}} éléments",
+  "steps": ["Postuler", "Entretien"]
+}
