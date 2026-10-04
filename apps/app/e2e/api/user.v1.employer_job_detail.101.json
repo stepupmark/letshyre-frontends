@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "data": {
+    "id": 101,
+    "title": "Senior React Developer",
+    "status": "Open",
+    "job_status": "approved",
+    "job_posted_date": "2026-09-20T09:30:00Z",
+    "work_mode": "hybrid",
+    "employment_type": "full_time",
+    "industry_type": "Information technology",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "country": "India",
+    "location": "",
+    "experience_min_years": 4,
+    "experience_max_years": 7,
+    "experience_required": "4-7 years",
+    "salary_min_lpa": 18,
+    "salary_max_lpa": 28,
+    "salary_range": "18 - 28 LPA",
+    "number_of_openings": 2,
+    "application_deadline": "2026-12-31",
+    "description": "We're building hiring software used by small teams across India.",
+    "responsibilities": [
+      "Own the candidate review screens",
+      "Mentor two developers"
+    ],
+    "skills_required": ["React", "TypeScript", "Testing"],
+    "minimum_education": "Any graduate",
+    "specialization": "",
+    "jd_file_url": "https://files.example.com/jd/101.pdf",
+    "ai_generated_jd": true
+  }
+}

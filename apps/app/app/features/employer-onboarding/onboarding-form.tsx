@@ -29,9 +29,10 @@ import { FileDropzone } from "@/components/file-dropzone"
 import { TextField } from "@/components/text-field"
 import { Wizard, type WizardStep } from "@/components/wizard"
 import { clearDraft, loadDraft, saveDraft } from "@/lib/draft"
+import { industriesQuery } from "@/lib/industries"
 import { checkOnBlur } from "@/lib/forms"
 
-import { industriesQuery, submitKyc } from "./api"
+import { submitKyc } from "./api"
 import {
   DOCUMENTS,
   makeSchema,

@@ -1,0 +1,41 @@
+{
+  "bands": {
+    "all": "All",
+    "strong": "Strong",
+    "partial": "Partial",
+    "low": "Low"
+  },
+  "columns": {
+    "candidate": "Candidate",
+    "match": "Match",
+    "experience": "Experience",
+    "interviews": "Interviews"
+  },
+  "years_one": "{{count}} yr",
+  "years_other": "{{count}} yrs",
+  "unnamed": "Unnamed candidate",
+  "sortedNote": "Best match first",
+  "peek": {
+    "why": "Why this match",
+    "whyNote": "From the AI interview and resume. Check the scorecard before deciding.",
+    "noReason": "The AI didn't give a reason for this one.",
+    "role": "Role fit",
+    "skills": "Skills fit",
+    "has": "Has",
+    "missing": "Missing",
+    "noneMissing": "Nothing from the job's list.",
+    "interviews": "AI interviews",
+    "noInterviews": "No AI interviews yet.",
+    "experience_one": "{{count}} year of experience",
+    "experience_other": "{{count}} years of experience"
+  },
+  "applicants": {
+    "title": "Applicants",
+    "lead_one": "{{count}} applied · best match first",
+    "lead_other": "{{count}} applied · best match first",
+    "leadEmpty": "No one has applied yet.",
+    "emptyTitle": "No applicants yet",
+    "emptyBody": "Applicants show up here once they finish the AI interview. You can also find people in the candidate pool.",
+    "pool": "Open the candidate pool"
+  }
+}

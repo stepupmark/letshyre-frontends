@@ -49,6 +49,10 @@ export default [
     ...prefix("employer", [
       index("routes/employer/dashboard.tsx", { id: "employer-home" }),
       route("dashboard", "routes/employer/dashboard.tsx"),
+      route("post-job", "routes/employer/post-job.tsx"),
+      route("view-jobs", "routes/employer/jobs.tsx"),
+      route("view-jobs/:jobId", "routes/employer/job.tsx"),
+      route("view-jobs/applicants/:jobId", "routes/employer/applicants.tsx"),
     ]),
   ]),
   layout("layouts/employee-layout.tsx", [

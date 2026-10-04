@@ -99,6 +99,7 @@ Lessons from Phases 3–4 that become rules here:
 | B4  | **CORS** for `app.letshyre.ai` (credentials allowed, explicit origin)                                                                                | Phase 7   | Subdomain move                                     |
 | B5  | Optional, recommended: **httpOnly refresh-token cookie** with `Domain=.letshyre.ai` ([token-storage.md](./security/token-storage.md))                | Phase 7   | Removes the forced re-login and the XSS token risk |
 | B6  | Nice to have, for the UX targets: dashboard "needs attention" counts in one call, and a job-draft endpoint (autosave). Workarounds exist for both    | 6.3, 6.5  | Fewer requests, drafts across devices              |
+| B7  | Applicant status (shortlist, reject) per job, and search, sort and filters on the jobs list. Until then applicants are reviewed, not triaged         | 6.5       | Bulk applicant actions, job filter chips           |
 
 ---
 
@@ -574,6 +575,20 @@ with status tabs and filter chips, job detail and inline edit, applicants per jo
 (`employer_job_ai/matching`) as bands with reasons, peek sheet, bulk actions with undo, keyboard review.
 **🔵 Gate 7:** you approve the table and form patterns here; later slices reuse them unchanged.
 
+- **Done 2026-10-04:** `/employer/post-job` reads the JD (upload helper, since AI parsing can
+  outlast the fetch timeout) into one form; every field the JD filled shows "From your JD" until
+  the employer changes it. Draft on this device (the JD file stays in memory), candidate preview,
+  "Fill it in myself" without a JD. Post now sends the overview as `description`; legacy sent the
+  responsibilities there and dropped the overview. `/employer/view-jobs` is a table with status
+  tabs (approval counts as its own tab) and bulk reopen, pause and close with Undo.
+  `/employer/view-jobs/:jobId` shows the job as candidates read it, edits in place with the same
+  form, changes status with Undo, deletes after a confirm. Applicants come from
+  `employer_job_ai/matching` (applied only): match bands with the AI's reason, band tabs, a side
+  panel stepped with j/k. **Not built, needs B7:** shortlist/reject and their bulk actions (no
+  endpoint), filter chips on the jobs list (the API filters by status only). Applied date and
+  pipeline status from `employer_candidate_job_management` aren't shown; UAT checks whether
+  matching returns them. **UAT:** create accepts the numeric range fields beside the text ones.
+
 ### 6.6 Candidate pool, unlock, unlocked candidates
 
 Pool search and filters, **unlock (spends credits)**: price on the button, balance after in the
@@ -690,5 +705,6 @@ Preconditions: every app route is in `live-routes.ts`, legacy serves nothing, B4
 | D8: setup checklist instead of the modal tour        | 6.3      |
 | B3: Conversions API                                  | 6.2, 6.8 |
 | B6: attention counts, job drafts (optional)          | 6.3, 6.5 |
+| B7: applicant status, jobs list filters              | 6.5      |
 | Native translation review per locale                 | 6.13     |
 | B4 (+ B5): CORS and refresh cookie for the subdomain | 7.1      |

@@ -4,9 +4,11 @@ import { expect, test } from "vitest"
 import type { z } from "zod"
 
 import { cardsSchema, teamSchema } from "@/features/employer-dashboard/queries"
-import { industriesSchema } from "@/features/employer-onboarding/api"
+import { jobSchema, jobsPageSchema } from "@/features/employer-jobs/api"
+import { matchesSchema } from "@/features/job-matches/api"
 import { sharedScorecardSchema } from "@/features/shared-scorecard/schema"
 import { creditsSchema } from "@/lib/credits"
+import { industriesSchema } from "@/lib/industries"
 import { dataOf } from "@/lib/response"
 
 // every schema the app parses responses with, against its fixture in e2e/api
@@ -16,6 +18,9 @@ const CONTRACTS: Record<string, z.ZodType> = {
   "user.v1.employer_dashboard_cards": cardsSchema,
   "user.v1.employer_team_members": teamSchema,
   "user.v1.industries.list": industriesSchema,
+  "user.v1.employer_jobs": jobsPageSchema,
+  "user.v1.employer_job_detail.101": jobSchema,
+  "user.v1.employer_job_ai.matching.101": matchesSchema,
 }
 
 const fixture = (name: string): unknown =>

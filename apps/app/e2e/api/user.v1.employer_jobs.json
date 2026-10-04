@@ -1,0 +1,48 @@
+{
+  "success": true,
+  "data": {
+    "count": 3,
+    "total_pages": 1,
+    "page_size": 10,
+    "results": [
+      {
+        "id": 101,
+        "title": "Senior React Developer",
+        "status": "Open",
+        "job_status": "approved",
+        "job_posted_date": "2026-09-20T09:30:00Z",
+        "work_mode": "hybrid",
+        "employment_type": "full_time",
+        "city": "Hyderabad",
+        "state": "Telangana",
+        "country": "India",
+        "experience_min_years": 4,
+        "experience_max_years": 7,
+        "salary_min_lpa": 18,
+        "salary_max_lpa": 28,
+        "number_of_openings": 2
+      },
+      {
+        "id": 102,
+        "title": "QA Engineer",
+        "status": "Paused",
+        "job_status": "approved",
+        "job_posted_date": "2026-08-02T09:30:00Z",
+        "location": "Bengaluru",
+        "experience_required": "2-4 years",
+        "salary_range": "8 - 12 LPA"
+      },
+      {
+        "id": 103,
+        "title": "Product Designer",
+        "status": "Open",
+        "job_status": "pending",
+        "job_posted_date": "2026-10-03T09:30:00Z",
+        "city": "Pune",
+        "country": "India",
+        "experience_min_years": 0,
+        "experience_max_years": 0
+      }
+    ]
+  }
+}

@@ -59,6 +59,8 @@ export interface DataTableProps<T extends RowData> {
   columns: DataTableColumn<T>[]
   data: T[] | undefined
   total: number
+  /** when the API pages differently from PAGE_SIZE, or not at all */
+  pageCount?: number
   getRowId: (row: T) => string
   /** Accessible name of a row, e.g. the candidate's name. */
   rowLabel: (row: T) => string
@@ -84,6 +86,7 @@ export function DataTable<T extends RowData>({
   columns,
   data,
   total,
+  pageCount,
   getRowId,
   rowLabel,
   params,
@@ -202,7 +205,7 @@ export function DataTable<T extends RowData>({
   if (data.length === 0)
     return filtered ? <NoMatches onClear={onClearFilters} /> : empty
 
-  const pages = Math.max(1, Math.ceil(total / PAGE_SIZE))
+  const pages = pageCount ?? Math.max(1, Math.ceil(total / PAGE_SIZE))
   const selected = Object.keys(rowSelection).filter((id) => rowSelection[id])
   const clear = () => {
     setRowSelection({})

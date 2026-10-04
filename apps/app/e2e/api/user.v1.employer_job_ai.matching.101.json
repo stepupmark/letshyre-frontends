@@ -1,0 +1,59 @@
+{
+  "success": true,
+  "data": {
+    "total_candidates": 40,
+    "matched_candidates_count": 3,
+    "matches": [
+      {
+        "candidate_id": 7,
+        "candidate_name": "Kavya Rao",
+        "profile_photo_url": null,
+        "score": 58,
+        "ai_match": {
+          "ai_matching_score": 58,
+          "role_match_score": 62,
+          "skills_match_score": "51",
+          "rationale": "Strong on React, little TypeScript in production.",
+          "role_applied": "Frontend Developer",
+          "years_experience": 3
+        },
+        "interview_attempts": [
+          { "role": "Frontend Developer", "overall_score": 64 }
+        ]
+      },
+      {
+        "candidate_id": 5,
+        "candidate_name": "Arjun Mehta",
+        "profile_photo_url": null,
+        "score": 86,
+        "ai_match": {
+          "ai_matching_score": 86,
+          "role_match_score": 90,
+          "skills_match_score": 82,
+          "rationale": "Five years of React with production TypeScript and testing.",
+          "role_applied": "Senior React Developer",
+          "years_experience": 5,
+          "matched_skills": ["React", "TypeScript"],
+          "missing_skills": ["Testing"]
+        },
+        "interview_attempts": [
+          { "role": "Senior React Developer", "overall_score": 81 },
+          { "role": "Node.js Developer", "overall_score": 55 }
+        ]
+      },
+      {
+        "candidate_id": 9,
+        "candidate_name": "Meera Iyer",
+        "profile_photo_url": null,
+        "score": 31,
+        "ai_match": {
+          "ai_matching_score": 31,
+          "rationale": "Mostly backend work; React only in side projects.",
+          "role_applied": "Backend Developer",
+          "years_experience": 6
+        },
+        "interview_attempts": []
+      }
+    ]
+  }
+}
