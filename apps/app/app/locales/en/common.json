@@ -95,5 +95,8 @@
     "show": "Show password",
     "hide": "Hide password",
     "capsLock": "Caps Lock is on"
+  },
+  "tip": {
+    "gotIt": "Got it"
   }
 }

@@ -1,0 +1,75 @@
+{
+  "title": "Dashboard",
+  "postJob": "Post a job",
+  "attention": {
+    "heading": "Needs your attention",
+    "addCredits": "Add credits",
+    "viewJobs": "View jobs",
+    "postJob": "Post a job",
+    "creditsOut": {
+      "title": "You're out of credits",
+      "body": "Add credits to unlock candidates' contact details."
+    },
+    "creditsLow": {
+      "title": "Credits are running low",
+      "body_one": "You have {{count}} credit left. Each unlock uses one.",
+      "body_other": "You have {{count}} credits left. Each unlock uses one."
+    },
+    "noOpenJobs": {
+      "title": "No jobs are open",
+      "body_one": "{{count}} job is closed or in draft. Reopen it to keep receiving applicants.",
+      "body_other": "{{count}} jobs are closed or in draft. Reopen one to keep receiving applicants."
+    },
+    "noJobs": {
+      "title": "Post your first job",
+      "body": "Candidates who match it are interviewed by our AI before you see them."
+    },
+    "clear": {
+      "title": "You're all caught up.",
+      "body": "Nothing needs you right now."
+    }
+  },
+  "stats": {
+    "heading": "Hiring",
+    "open": "Open jobs",
+    "closed": "Closed or draft",
+    "applications": "Applications received"
+  },
+  "credits": {
+    "heading": "Credits",
+    "low": "Low",
+    "explain": "One credit unlocks one candidate's contact details, recording and resume.",
+    "used": "{{percent}}% of your credits used",
+    "add": "Add credits",
+    "invoices": "Invoices"
+  },
+  "setup": {
+    "title": "Finish setting up",
+    "progress": "{{done}} of {{total}} done",
+    "hide": "Hide",
+    "isDone": "(done)",
+    "isTodo": "(to do)",
+    "account": {
+      "title": "Create your account",
+      "done": "Done",
+      "todo": "Sign up with your work email."
+    },
+    "company": {
+      "title": "Add company details and documents",
+      "done": "Submitted for review",
+      "todo": "Your company's name, website and registration documents."
+    },
+    "job": {
+      "title": "Post your first job",
+      "done": "Done",
+      "todo": "Upload a job description and we'll fill in the form.",
+      "action": "Post a job"
+    },
+    "team": {
+      "title": "Invite your team",
+      "done": "Done",
+      "todo": "Add colleagues so they can review candidates with you.",
+      "action": "Invite"
+    }
+  }
+}

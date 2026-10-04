@@ -25,16 +25,17 @@ import {
   ChevronsUpDown,
   Keyboard,
   Languages,
+  Lightbulb,
   LogOut,
   UserRound,
 } from "lucide-react"
-import { useNavigate } from "react-router"
 
 import { api } from "@/lib/api"
-import { isLive } from "@/lib/live-routes"
 import { APP_LOCALES, changeLocale, locale } from "@/lib/i18n"
+import { useGo } from "@/lib/navigation"
 
 import type { Area } from "./nav"
+import { restartTips } from "./tips"
 
 const text = (value: unknown) =>
   typeof value === "string" && value ? value : undefined
@@ -48,7 +49,7 @@ export function UserMenu({
 }) {
   const { t } = useTranslation("shell")
   const session = useSession()
-  const navigate = useNavigate()
+  const go = useGo()
   if (session.status !== "signed-in") return null
 
   const { user } = session
@@ -67,11 +68,6 @@ export function UserMenu({
     .join("")
   const profile =
     area === "employer" ? "/employer/profile" : "/employee/profile"
-
-  const go = (to: string) => {
-    if (isLive(to)) void navigate(to, { viewTransition: true })
-    else window.location.assign(to)
-  }
 
   const signOut = async () => {
     await logout(api)
@@ -144,6 +140,10 @@ export function UserMenu({
             <DropdownMenuItem onClick={onOpenShortcuts}>
               <Keyboard />
               {t("user.shortcuts")}
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={restartTips}>
+              <Lightbulb />
+              {t("user.tips")}
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => void signOut()}>

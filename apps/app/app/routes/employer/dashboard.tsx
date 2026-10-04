@@ -1,16 +1,32 @@
 import { useTranslation } from "@workspace/i18n/react"
+import { buttonVariants } from "@workspace/ui/components/button"
+import { Plus } from "lucide-react"
 
+import { AppLink } from "@/components/app-link"
 import { PageHeader } from "@/components/page-header"
+import { EmployerDashboard } from "@/features/employer-dashboard"
+import { namespaces } from "@/lib/i18n"
 
 export const handle = { crumb: "dashboard" } as const
 
-export default function EmployerDashboard() {
-  const { t } = useTranslation(["shell", "common"])
+export const clientMiddleware = [namespaces(["dashboard"])]
+
+export default function EmployerDashboardPage() {
+  const { t } = useTranslation(["dashboard", "common"])
 
   return (
-    <>
-      <title>{`${t("shell:nav.dashboard")} · ${t("common:appName")}`}</title>
-      <PageHeader title={t("shell:nav.dashboard")} />
-    </>
+    <div className="flex flex-col gap-8">
+      <title>{`${t("title")} · ${t("common:appName")}`}</title>
+      <PageHeader
+        title={t("title")}
+        actions={
+          <AppLink to="/employer/post-job" className={buttonVariants()}>
+            <Plus />
+            {t("postJob")}
+          </AppLink>
+        }
+      />
+      <EmployerDashboard />
+    </div>
   )
 }

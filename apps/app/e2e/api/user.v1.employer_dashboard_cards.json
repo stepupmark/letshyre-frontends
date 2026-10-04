@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "data": {
+    "active_jobs": 3,
+    "in_active_jobs": 1,
+    "total_applications": 48,
+    "credits": { "usage_percent": 40, "available": 12 }
+  }
+}

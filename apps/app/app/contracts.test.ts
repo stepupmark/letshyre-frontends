@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs"
 import { expect, test } from "vitest"
 import type { z } from "zod"
 
+import { cardsSchema, teamSchema } from "@/features/employer-dashboard/queries"
 import { sharedScorecardSchema } from "@/features/shared-scorecard/schema"
 import { creditsSchema } from "@/lib/credits"
 import { dataOf } from "@/lib/response"
@@ -11,6 +12,8 @@ import { dataOf } from "@/lib/response"
 const CONTRACTS: Record<string, z.ZodType> = {
   "payment.v1.employer_credits": creditsSchema,
   "user.v1.public.shared-candidate": sharedScorecardSchema,
+  "user.v1.employer_dashboard_cards": cardsSchema,
+  "user.v1.employer_team_members": teamSchema,
 }
 
 const fixture = (name: string): unknown =>

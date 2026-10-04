@@ -68,7 +68,11 @@ async function mockApi(page: Page, overrides: Handlers, unhandled: string[]) {
 
 export const test = base.extend<{
   api: (overrides: Handlers) => Promise<void>
-  signInAs: (who: keyof typeof USERS) => Promise<void>
+  /** `tips: true` leaves the one-time tips unseen */
+  signInAs: (
+    who: keyof typeof USERS,
+    options?: { tips?: boolean }
+  ) => Promise<void>
 }>({
   api: [
     async ({ page }, use) => {
@@ -80,15 +84,19 @@ export const test = base.extend<{
     { auto: true },
   ],
   signInAs: async ({ page }, use) => {
-    await use(async (who) => {
-      await page.addInitScript((user) => {
-        // once per tab, so a sign-out in the test sticks across reloads
-        if (sessionStorage.getItem("e2e-seeded")) return
-        sessionStorage.setItem("e2e-seeded", "1")
-        localStorage.setItem("accessToken", "e2e-access")
-        localStorage.setItem("refreshToken", "e2e-refresh")
-        localStorage.setItem("user", JSON.stringify(user))
-      }, USERS[who])
+    await use(async (who, { tips = false } = {}) => {
+      await page.addInitScript(
+        ({ user, tips }) => {
+          // once per tab, so a sign-out in the test sticks across reloads
+          if (sessionStorage.getItem("e2e-seeded")) return
+          sessionStorage.setItem("e2e-seeded", "1")
+          localStorage.setItem("accessToken", "e2e-access")
+          localStorage.setItem("refreshToken", "e2e-refresh")
+          localStorage.setItem("user", JSON.stringify(user))
+          if (!tips) localStorage.setItem("tips:v1:seen", "search,credits")
+        },
+        { user: USERS[who], tips }
+      )
     })
   },
 })
