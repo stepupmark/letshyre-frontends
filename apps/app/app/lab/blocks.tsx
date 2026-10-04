@@ -2,6 +2,7 @@ import { Button } from "@workspace/ui/components/button"
 import { Input } from "@workspace/ui/components/input"
 import { Label } from "@workspace/ui/components/label"
 import { createColumnHelper } from "@tanstack/react-table"
+import { useQuery } from "@tanstack/react-query"
 import { useMemo, useState } from "react"
 import { useSearchParams } from "react-router"
 
@@ -14,7 +15,7 @@ import { FileDropzone } from "@/components/file-dropzone"
 import { AnimatedList } from "@/components/motion/animated-list"
 import { Shake } from "@/components/motion/shake"
 import { PageHeader } from "@/components/page-header"
-import { LoadError } from "@/components/query-state"
+import { QueryState } from "@/components/query-state"
 import { ScoreBand } from "@/components/score-band"
 import { StatusBadge } from "@/components/status-badge"
 import { Wizard } from "@/components/wizard"
@@ -26,6 +27,7 @@ import type {
 import { clearDraft, loadDraft, saveDraft } from "@/lib/draft"
 import { relativeTime } from "@/lib/relative-time"
 import {
+  ordering,
   PAGE_SIZE,
   readTableParams,
   writeTableParams,
@@ -289,11 +291,10 @@ export default function Blocks() {
         >
           {(r) => r.name}
         </AnimatedList>
-        <LoadError
-          onRetry={() => {
-            setView("ready")
-          }}
-        />
+        <QueryDemo />
+        <p className="text-sm text-muted-foreground">
+          API ordering for the table: {ordering(params.sort) ?? "none"}
+        </p>
       </section>
     </div>
   )
@@ -375,5 +376,26 @@ function WizardDemo() {
         }}
       />
     </section>
+  )
+}
+
+function QueryDemo() {
+  const { view } = useLab()
+  const query = useQuery({
+    queryKey: ["lab", "query-demo", view],
+    queryFn: async () => {
+      await new Promise((resolve) => setTimeout(resolve, 800))
+      if (view === "error") throw new Error("demo failure")
+      return "Loaded after 800 ms; the skeleton waited 300 ms before showing."
+    },
+    retry: false,
+  })
+  return (
+    <QueryState
+      query={query}
+      skeleton={<p className="text-sm text-muted-foreground">Loading…</p>}
+    >
+      {(text) => <p className="text-sm">{text}</p>}
+    </QueryState>
   )
 }
