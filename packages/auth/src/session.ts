@@ -87,6 +87,12 @@ export function saveUser(record: Record<string, unknown>) {
   notify()
 }
 
+/** Merges into the stored user, e.g. once onboarding is done. */
+export function updateUser(patch: Partial<User>) {
+  const session = readSession()
+  if (session.status === "signed-in") saveUser({ ...session.user, ...patch })
+}
+
 let cached: { raw: string | null; session: Session } = {
   raw: null,
   session: GUEST,

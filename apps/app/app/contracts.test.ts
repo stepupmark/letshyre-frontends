@@ -4,6 +4,7 @@ import { expect, test } from "vitest"
 import type { z } from "zod"
 
 import { cardsSchema, teamSchema } from "@/features/employer-dashboard/queries"
+import { industriesSchema } from "@/features/employer-onboarding/api"
 import { sharedScorecardSchema } from "@/features/shared-scorecard/schema"
 import { creditsSchema } from "@/lib/credits"
 import { dataOf } from "@/lib/response"
@@ -14,6 +15,7 @@ const CONTRACTS: Record<string, z.ZodType> = {
   "user.v1.public.shared-candidate": sharedScorecardSchema,
   "user.v1.employer_dashboard_cards": cardsSchema,
   "user.v1.employer_team_members": teamSchema,
+  "user.v1.industries.list": industriesSchema,
 }
 
 const fixture = (name: string): unknown =>

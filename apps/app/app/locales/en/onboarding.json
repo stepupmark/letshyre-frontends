@@ -1,0 +1,73 @@
+{
+  "title": "Tell us about your company",
+  "lead": "About five minutes, in three steps. We save your progress on this device, so you can stop and come back.",
+  "steps": {
+    "company": "Company details",
+    "legal": "Registration and tax",
+    "documents": "Documents"
+  },
+  "fields": {
+    "companyName": "Company name",
+    "website": "Website",
+    "officialEmail": "Official email",
+    "officialEmailHint": "Where we send account and billing messages.",
+    "industry": "Industry",
+    "industryPlaceholder": "Choose an industry",
+    "industryFailed": "Industries didn't load. Reload to try again.",
+    "linkedin": "Company LinkedIn page",
+    "description": "What does your company do?",
+    "descriptionCount": "{{count}} / 500",
+    "registration": "Company registration number",
+    "registrationHint": "The CIN or your registration certificate's number, e.g. U72900TG2024PTC123456.",
+    "pan": "PAN",
+    "gst": "GSTIN",
+    "address": "Registered address"
+  },
+  "documents": {
+    "lead": "Clear scans or photos, up to 5 MB each. Candidates never see these.",
+    "company_logo": {
+      "label": "Company logo",
+      "hint": "Square works best"
+    },
+    "registration_certificate": {
+      "label": "Registration certificate",
+      "hint": "Certificate of incorporation"
+    },
+    "gst_certificate": {
+      "label": "GST certificate",
+      "hint": "Your GST registration"
+    },
+    "address_proof": {
+      "label": "Address proof",
+      "hint": "A utility bill or lease agreement"
+    }
+  },
+  "draftSaved": "Draft saved on this device. Documents need adding again if you leave.",
+  "submitting": "Uploading your documents… {{percent}}%",
+  "submitFailed": "We couldn't submit your details. Everything you entered is still here, so try again.",
+  "validation": {
+    "nameMin": "Enter your company's name",
+    "website": "Enter a web address like https://example.com",
+    "email": "Enter an email address like accounts@company.com",
+    "industry": "Choose an industry",
+    "linkedin": "Enter a web address like https://www.linkedin.com/company/example",
+    "linkedinDomain": "Use your company's linkedin.com page",
+    "description": "Write at least a sentence about what you do",
+    "registration": "Enter your registration number (5 to 50 characters)",
+    "pan": "A PAN has 10 characters, like ABCDE1234F",
+    "gst": "A GSTIN has 15 characters, like 36ABCDE1234F1Z5",
+    "address": "Enter your registered address",
+    "fileRequired": "Add this document",
+    "fileInvalid": "Use a file of an accepted type, up to 5 MB"
+  },
+  "done": {
+    "title": "Thanks, your details are in",
+    "lead": "Your account is ready to use while we check your documents.",
+    "nextHeading": "What happens next",
+    "review": "Our team reviews your company details and documents.",
+    "contact": "If anything is missing, we'll email {{email}}.",
+    "start": "Meanwhile, you can post jobs and see candidates.",
+    "postJob": "Post your first job",
+    "dashboard": "Go to the dashboard"
+  }
+}

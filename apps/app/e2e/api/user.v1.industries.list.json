@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "data": [
+    { "value": "it", "label": "Information technology" },
+    { "value": "finance", "label": "Finance" }
+  ]
+}

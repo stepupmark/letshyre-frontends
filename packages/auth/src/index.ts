@@ -16,6 +16,7 @@ export {
   readSession,
   ROLES,
   subscribe,
+  updateUser,
   type Role,
   type Session,
   type User,

@@ -14,6 +14,7 @@ import {
 
 type State =
   | { status: "idle" }
+  | { status: "selected"; file: File }
   | { status: "invalid"; problem: FileProblem }
   | { status: "uploading"; file: File; progress: number }
   | { status: "failed"; file: File }
@@ -22,7 +23,14 @@ type State =
 export interface FileDropzoneProps {
   label: string
   rules: FileRules
-  upload: (
+  /** shown under the box, e.g. what the document is */
+  description?: string
+  /** a form error for this file */
+  error?: string
+  /** without `upload` the file is only picked here and sent with the form */
+  value?: File | null
+  onSelect?: (file: File | null) => void
+  upload?: (
     file: File,
     options: { onProgress: (fraction: number) => void; signal: AbortSignal }
   ) => Promise<unknown>
@@ -30,10 +38,18 @@ export interface FileDropzoneProps {
   onRemove?: () => void
 }
 
-/** Validates before sending, shows progress, keeps the file for a retry when the upload fails. */
+/**
+ * Validates before sending, shows progress, keeps the file for a retry when the
+ * upload fails. Without `upload`, picks a file for the form to send, with a
+ * preview for images.
+ */
 export function FileDropzone({
   label,
   rules,
+  description,
+  error,
+  value,
+  onSelect,
   upload,
   onUploaded,
   onRemove,
@@ -42,7 +58,9 @@ export function FileDropzone({
   const locale = useLocale()
   const id = useId()
   const controller = useRef<AbortController | null>(null)
-  const [state, setState] = useState<State>({ status: "idle" })
+  const [state, setState] = useState<State>(
+    value ? { status: "selected", file: value } : { status: "idle" }
+  )
   const [dragging, setDragging] = useState(false)
 
   useEffect(() => () => controller.current?.abort(), [])
@@ -54,6 +72,11 @@ export function FileDropzone({
     const problem = checkFile(file, rules)
     if (problem) {
       setState({ status: "invalid", problem })
+      return
+    }
+    if (!upload) {
+      setState({ status: "selected", file })
+      onSelect?.(file)
       return
     }
     controller.current?.abort()
@@ -106,15 +129,17 @@ export function FileDropzone({
     }
   }, [])
 
-  if (
-    state.status === "uploading" ||
-    state.status === "done" ||
-    state.status === "failed"
-  ) {
+  if (state.status !== "idle" && state.status !== "invalid") {
     return (
       <div className="flex flex-col gap-2 rounded-lg border p-4 text-sm">
+        <p className="font-medium">{label}</p>
         <div className="flex items-center gap-3">
-          <FileUp className="size-4 shrink-0 text-muted-foreground" />
+          {state.status === "selected" &&
+          state.file.type.startsWith("image/") ? (
+            <ImagePreview file={state.file} />
+          ) : (
+            <FileUp className="size-4 shrink-0 text-muted-foreground" />
+          )}
           <span className="min-w-0 flex-1 truncate font-medium">
             {state.file.name}
           </span>
@@ -128,6 +153,7 @@ export function FileDropzone({
               aria-label={t("upload.remove", { name: state.file.name })}
               onClick={() => {
                 setState({ status: "idle" })
+                onSelect?.(null)
                 onRemove?.()
               }}
             >
@@ -180,6 +206,7 @@ export function FileDropzone({
           </span>
         </span>
         <span className="text-xs text-muted-foreground">
+          {description ? `${description} · ` : ""}
           {t("upload.hint", { types, size: max })}
         </span>
         <input
@@ -194,6 +221,11 @@ export function FileDropzone({
           }}
         />
       </label>
+      {error && state.status !== "invalid" && (
+        <p role="alert" className="text-sm text-danger">
+          {error}
+        </p>
+      )}
       {state.status === "invalid" && (
         <p role="alert" className="text-sm text-danger">
           {state.problem.kind === "wrongType"
@@ -205,5 +237,27 @@ export function FileDropzone({
         </p>
       )}
     </div>
+  )
+}
+
+function ImagePreview({ file }: { file: File }) {
+  // a ref with cleanup, so the object URL lives exactly as long as the img
+  const attach = useCallback(
+    (img: HTMLImageElement | null) => {
+      if (!img) return
+      const url = URL.createObjectURL(file)
+      img.src = url
+      return () => {
+        URL.revokeObjectURL(url)
+      }
+    },
+    [file]
+  )
+  return (
+    <img
+      ref={attach}
+      alt=""
+      className="size-10 shrink-0 rounded-md border object-cover"
+    />
   )
 }
