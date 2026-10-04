@@ -16,6 +16,9 @@
       "entry": ["test/setup.ts", "lighthouserc.cjs"],
       "ignoreDependencies": ["tailwindcss"]
     },
+    "apps/app": {
+      "ignoreDependencies": ["tailwindcss"]
+    },
     "packages/i18n": {
       "entry": ["test/**/*.test.{ts,tsx}"]
     },
