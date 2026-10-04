@@ -79,15 +79,15 @@ Lessons from Phases 3–4 that become rules here:
 
 ### 1.3 Decisions needed
 
-| #   | Question                                                                                                                                                                                                                              | Needed by |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| D6  | Incremental rollout on `letshyre.ai` (§1.1)?                                                                                                                                                                                          | 🔵 5      |
-| D7  | **One sign-in page for both roles** (`/sign-in`; the API returns the role)? Today there are two (`/employer/sign-in`, `/employee/sign-in`); both would redirect.                                                                      | 6.2       |
-| D8  | Product tour: **recommended: drop the modal tour** (`react-joyride`) for a setup checklist on the dashboard plus one-time contextual tips on shadcn `Popover` (§2.4). Alternative: keep joyride, restyled.                            | 6.3       |
-| D9  | ~~Data tables~~ **Settled in 5.6:** `@tanstack/react-table` v9 (shadcn's `data-table` pattern) for jobs, applicants, candidate pool, invoices, team?                                                                                  | 5.6       |
-| D10 | ~~Numerals~~ **Settled in 5.0:** Outfit has tabular figures (`tnum`), measured in the lab; no second font.                                                                                                                            | –         |
-| D11 | **Colour:** the shadcn neutral theme stays as is, no brand accent on `--primary`. Status colours are new tokens (`success`, `warning`, `info`, `danger`) added next to the shadcn ones, because lint blocks palette classes. Confirm? | 🔵 4      |
-| D12 | **UX metrics:** a few first-party product events (task started/completed, step reached) sent to our own backend, so the UX targets in §2.6 can be measured. No third-party analytics. Yes / later / no?                               | 6.2       |
+| #   | Question                                                                                                                                                                                                                                                                               | Needed by |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| D6  | ~~Incremental rollout~~ **Approved at 🔵 5:** incremental rollout on `letshyre.ai` (§1.1).                                                                                                                                                                                             | 🔵 5      |
+| D7  | **Taken in 6.2 (recommended option):** one sign-in page for both roles (`/sign-in`; the API returns the role)? Today there are two (`/employer/sign-in`, `/employee/sign-in`); both would redirect.                                                                                    | 6.2       |
+| D8  | **Taken in 6.3 (recommended option):** drop the modal tour (`react-joyride`) for a setup checklist on the dashboard plus one-time contextual tips on shadcn `Popover` (§2.4). Alternative: keep joyride, restyled.                                                                     | 6.3       |
+| D9  | ~~Data tables~~ **Settled in 5.6:** `@tanstack/react-table` v9 (shadcn's `data-table` pattern) for jobs, applicants, candidate pool, invoices, team?                                                                                                                                   | 5.6       |
+| D10 | ~~Numerals~~ **Settled in 5.0:** Outfit has tabular figures (`tnum`), measured in the lab; no second font.                                                                                                                                                                             | –         |
+| D11 | **Colour:** the shadcn neutral theme stays as is, no brand accent on `--primary`. Status colours are new tokens (`success`, `warning`, `info`, `danger`) added next to the shadcn ones, because lint blocks palette classes. Confirm?                                                  | 🔵 4      |
+| D12 | **Deferred to "later" in 6.2** (no events sent yet; needs a backend endpoint). **UX metrics:** a few first-party product events (task started/completed, step reached) sent to our own backend, so the UX targets in §2.6 can be measured. No third-party analytics. Yes / later / no? | 6.2       |
 
 ### 1.4 What the backend needs to provide
 
@@ -516,6 +516,11 @@ In `apps/app/app/components/` (app-shared; moves to `@workspace/blocks` only if 
 switch, API client, error pages and CSP in production, and the first real use of the scorecard
 design from 5.0 (band bars, evidence, print view). `noindex`, `Referrer-Policy: no-referrer`.
 
+- **Done 2026-10-04:** public layout, report with band, meters that fill once, insights, profile,
+  answers (Markdown questions, MCQ marks, code, audio), print expands every answer, TOC on wide
+  screens. A refresh replays the fetched copy (links have a view limit). nginx sends
+  `Referrer-Policy: no-referrer` for these paths. Not live yet: needs UAT on staging (B1).
+
 ### 6.2 Auth → 🔵 Gate 6
 
 `/get-started` (role choice), sign-in (D7), employer and employee registration with email + mobile
@@ -525,6 +530,18 @@ autofill (`autocomplete="one-time-code"`) and auto-submit, resend countdown, rat
 say when to retry, data kept across back/refresh. `CompleteRegistration` via B3.
 **🔵 Gate 6:** first slice live for real users; you confirm the release and rollback process.
 
+- **Done 2026-10-04:** `/sign-in` for both roles (old per-role URLs forward with `?next=`),
+  `/get-started`, `/employer/register` and `/employee/register` (details → email code → mobile →
+  SMS code → password, step in the URL, answers in sessionStorage without the password, signs the
+  new account straight in), `/forgot-password` (back at sign-in with the email filled in). Guards
+  send signed-out visitors to `/sign-in?next=`; the build refuses a live dashboard page unless
+  `/sign-in` is live. The 5.x deferral is closed: when a session ends under an open page, a
+  sign-in dialog appears over it and nothing typed is lost. Validation on blur only once a field
+  has content (an empty-field error had shifted the "Forgot password?" link mid-click). Tooltips
+  moved into the shell: first load 171 kB, budget lowered to 180 kB.
+  **Open for UAT:** legacy sent `role` with the login request; the single page doesn't. Check the
+  backend accepts that. `CompleteRegistration` still needs B3 (the app loads no pixel).
+
 ### 6.3 Employer dashboard + setup checklist
 
 "Needs your attention" list from `employer_dashboard_cards` (B6 if the backend can merge the counts),
@@ -532,10 +549,22 @@ credits card with low-balance warning, quick actions. Per D8: a setup checklist 
 first job, invite team) that disappears when done, and one-time tips anchored to new controls,
 dismissible, restartable from the user menu, keyboard and screen-reader usable.
 
+- **Done 2026-10-04:** "Needs your attention" built from what the API has today (credits low or
+  out, no open jobs, no jobs yet), hiring numbers that link to jobs, credits card with a ticking
+  balance. Applicants to review and finished interviews need counts the API doesn't return yet
+  (B6). Setup checklist (hideable, gone when done) and two one-time tips (search, credits) with
+  "Show tips again" in the user menu.
+
 ### 6.4 Employer onboarding (KYC)
 
 The onboarding gate, company details, KYC document upload (`employer_kyc`), with the persisted wizard,
 document preview, and a "what happens next" screen with the review time.
+
+- **Done 2026-10-04:** own layout (no sidebar, sign out in the header), three steps (company
+  details, registration and tax, documents), drafted text fields (the legacy draft is picked up
+  once), PAN and GSTIN format checks, image preview, one multipart PATCH with upload progress,
+  server field errors routed to their step. "What happens next" screen after submit. No review
+  time is promised: the backend has no figure to show yet.
 
 ### 6.5 Jobs → 🔵 Gate 7
 
