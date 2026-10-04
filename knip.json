@@ -31,6 +31,9 @@
     "packages/blocks": {
       "entry": ["test/**/*.{ts,tsx}"],
       "ignoreDependencies": ["tailwindcss"]
+    },
+    "packages/auth": {
+      "entry": ["test/**/*.test.ts"]
     }
   }
 }

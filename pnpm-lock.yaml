@@ -109,6 +109,9 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.104.1
         version: 5.104.1(react@19.2.8)
+      '@workspace/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
       '@workspace/blocks':
         specifier: workspace:*
         version: link:../../packages/blocks
@@ -518,6 +521,46 @@ importers:
       msw:
         specifier: ^2.15.0
         version: 2.15.0(@types/node@24.19.1)(typescript@6.0.3)
+      typescript:
+        specifier: 'catalog:'
+        version: 6.0.3
+      vitest:
+        specifier: 'catalog:'
+        version: 5.0.3(@types/node@24.19.1)(@vitest/coverage-v8@5.0.3)(jsdom@30.0.1)(msw@2.15.0(@types/node@24.19.1)(typescript@6.0.3))(vite@8.3.2(@types/node@24.19.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))
+
+  packages/auth:
+    dependencies:
+      '@workspace/api':
+        specifier: workspace:*
+        version: link:../api
+    devDependencies:
+      '@types/node':
+        specifier: 'catalog:'
+        version: 24.19.1
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.3.0
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 5.0.3(vitest@5.0.3)
+      '@workspace/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@workspace/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      eslint:
+        specifier: 'catalog:'
+        version: 10.11.0(jiti@2.7.0)
+      jsdom:
+        specifier: 'catalog:'
+        version: 30.0.1
+      msw:
+        specifier: ^2.15.0
+        version: 2.15.0(@types/node@24.19.1)(typescript@6.0.3)
+      react:
+        specifier: 'catalog:'
+        version: 19.2.8
       typescript:
         specifier: 'catalog:'
         version: 6.0.3

@@ -20,6 +20,8 @@ const lab =
       ])
 
 export default [
-  route("employer/dashboard", "routes/employer/dashboard.tsx"),
+  layout("layouts/employer-layout.tsx", [
+    route("employer/dashboard", "routes/employer/dashboard.tsx"),
+  ]),
   ...lab,
 ] satisfies RouteConfig
