@@ -1,13 +1,20 @@
 // Serves build/client the way production nginx will (docs/baseline/url-contract.md).
 // usage: node e2e/serve.ts [port]
 
-import { createReadStream, existsSync, statSync } from "node:fs"
+import { createReadStream, existsSync, readFileSync, statSync } from "node:fs"
 import { createServer } from "node:http"
 import { extname, join, normalize, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 
+import { parseNginxMap } from "../scripts/csp.ts"
+
 const ROOT = resolve(fileURLToPath(new URL("../build/client", import.meta.url)))
 const PORT = Number(process.argv[2] ?? 4173)
+const CSP_MAP = resolve(ROOT, "../csp.map")
+// enforced here (report-only in production) so e2e catches a policy that breaks the page
+const csp = existsSync(CSP_MAP)
+  ? parseNginxMap(readFileSync(CSP_MAP, "utf8"))
+  : undefined
 
 const LOCALES = "en|hi|fr|ja|ar|te|ta|es|nl|ru|kn|ml|ur|bn|de|pt|it|ko|id"
 const LOCALE_PAGE = new RegExp(`^/(${LOCALES})(/[a-z-]+)?$`)
@@ -44,8 +51,14 @@ createServer((req, res) => {
 
   const send = (status: number, file: string | null) => {
     if (!file) return res.writeHead(status).end()
+    const type = TYPES[extname(file)] ?? "application/octet-stream"
+    const policy =
+      csp && type.startsWith("text/html")
+        ? (csp.policies.get(path) ?? csp.fallback)
+        : undefined
     res.writeHead(status, {
-      "content-type": TYPES[extname(file)] ?? "application/octet-stream",
+      "content-type": type,
+      ...(policy && { "content-security-policy": policy }),
     })
     createReadStream(file).pipe(res)
   }

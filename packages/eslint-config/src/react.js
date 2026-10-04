@@ -153,7 +153,12 @@ export function react({
         }
       : [],
     {
-      files: ["**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}", "**/e2e/**"],
+      files: [
+        "**/*.test.{ts,tsx}",
+        "**/*.spec.{ts,tsx}",
+        "**/e2e/**",
+        "**/scripts/**",
+      ],
       rules: {
         "i18next/no-literal-string": "off",
         "local/no-class-constants": "off",

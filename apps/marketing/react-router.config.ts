@@ -8,6 +8,7 @@ export default {
     paths: () => [...readyPaths("app/locales"), "/404"],
     concurrency: 4,
   },
+  subResourceIntegrity: true,
   // no server to answer /__manifest on static hosting
   routeDiscovery: { mode: "initial" },
 } satisfies Config
