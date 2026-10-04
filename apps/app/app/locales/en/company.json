@@ -1,0 +1,63 @@
+{
+  "title": "Company profile",
+  "unnamed": "Your company",
+  "jobs_one": "{{open}} open of {{count}} job posted",
+  "jobs_other": "{{open}} open of {{count}} jobs posted",
+  "kyc": {
+    "approved": "Verified",
+    "verified": "Verified",
+    "pending": "Under review",
+    "rejected": "Needs changes"
+  },
+  "details": {
+    "title": "Company details",
+    "edit": "Edit",
+    "email": "Official email",
+    "industry": "Industry",
+    "chooseIndustry": "Choose an industry",
+    "website": "Website",
+    "linkedin": "LinkedIn page",
+    "linkedinOpen": "Open on LinkedIn",
+    "address": "Address",
+    "description": "About the company",
+    "descriptionHint": "Candidates read this on your job posts. Up to 500 characters."
+  },
+  "logo": {
+    "label": "Logo",
+    "upload": "Upload logo",
+    "replace": "Replace logo",
+    "hint": "A square PNG, JPG or WebP up to 5 MB. It's cropped to a square, as shown.",
+    "tooLarge": "The logo is over 5 MB. Choose a smaller image.",
+    "wrongType": "Use a PNG, JPG or WebP image."
+  },
+  "account": {
+    "title": "Your account",
+    "name": "Name",
+    "email": "Sign-in email",
+    "phone": "Phone"
+  },
+  "legal": {
+    "title": "Registration",
+    "note": "These were checked when your company was verified. Contact us to change them.",
+    "registration": "Registration number",
+    "gst": "GSTIN",
+    "pan": "PAN"
+  },
+  "documents": {
+    "registration_certificate": "Registration certificate",
+    "gst_certificate": "GST certificate",
+    "address_proof": "Address proof",
+    "bank_proof": "Bank proof"
+  },
+  "errors": {
+    "email": "Enter an email like hr@company.com.",
+    "address": "Enter the full address.",
+    "industry": "Choose an industry.",
+    "linkedin": "Enter a linkedin.com link, or leave it empty.",
+    "description": "Keep it to 500 characters."
+  },
+  "save": "Save changes",
+  "saving": "Saving…",
+  "saved": "Company details saved",
+  "saveFailed": "That didn't save. Your changes are still here; try again."
+}

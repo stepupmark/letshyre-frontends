@@ -1,0 +1,47 @@
+{
+  "title": "Team",
+  "lead": "People who can post jobs and review candidates with you.",
+  "count_one": "{{count}} person can post jobs and review candidates.",
+  "count_other": "{{count}} people can post jobs and review candidates.",
+  "add": "Add member",
+  "active": "Active",
+  "onHold": "On hold",
+  "actions": "Actions for {{name}}",
+  "edit": "Edit",
+  "hold": "Put on hold",
+  "activate": "Make active",
+  "remove": "Remove",
+  "holdNote": "Members on hold can't sign in until you make them active again. Their jobs stay as they are.",
+  "emptyTitle": "It's just you so far",
+  "emptyBody": "Add recruiters so they can post jobs and review candidates on this account.",
+  "confirmTitle": "Remove {{name}}?",
+  "confirmBody": "They lose access right away. Jobs they posted stay with your company. This can't be undone.",
+  "dialog": {
+    "addTitle": "Add a team member",
+    "addLead": "They join as a recruiter. Set a password and share it with them; they sign in with their email.",
+    "editTitle": "Edit team member",
+    "editLead": "Changes apply the next time they sign in.",
+    "name": "Full name",
+    "email": "Work email",
+    "password": "Password",
+    "passwordHint": "At least 8 characters. Share it privately.",
+    "generate": "Generate",
+    "add": "Add member",
+    "save": "Save changes"
+  },
+  "errors": {
+    "name": "Enter their full name (2 to 100 characters).",
+    "email": "Enter an email like name@company.com.",
+    "password": "Use 8 to 50 characters."
+  },
+  "toast": {
+    "added": "{{name}} added",
+    "updated": "{{name}} updated",
+    "held": "{{name}} is on hold",
+    "activated": "{{name}} is active",
+    "removed": "{{name}} removed",
+    "statusFailed": "The status didn't change. Try again.",
+    "removeFailed": "They weren't removed. Try again.",
+    "saveFailed": "That didn't save. Try again."
+  }
+}

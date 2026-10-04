@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": 71,
+      "share_token": "tok_71_abcdef",
+      "candidate_name": "Priya Nair",
+      "candidate_role": "Frontend Developer",
+      "matched_job_title": "Senior React Developer",
+      "view_count": 3,
+      "max_views": 20,
+      "expires_at": "2026-10-20T00:00:00Z",
+      "is_active": true,
+      "is_expired": false,
+      "has_reached_max_views": false
+    },
+    {
+      "id": 72,
+      "share_token": "tok_72_abcdef",
+      "candidate_name": "Arjun Mehta",
+      "candidate_role": "Backend Developer",
+      "matched_job_title": null,
+      "view_count": 5,
+      "max_views": 5,
+      "expires_at": "2026-10-02T00:00:00Z",
+      "is_active": true,
+      "is_expired": true,
+      "has_reached_max_views": true
+    }
+  ]
+}

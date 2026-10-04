@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "data": {
+    "name": "Neha Kapoor",
+    "email": "employer@test.in",
+    "phone_number": "9812345678",
+    "open_jobs_posted": 3,
+    "total_jobs_posted": 8,
+    "kyc": {
+      "company_name": "Acme Labs",
+      "company_website": "https://acme.test",
+      "official_email": "hr@acme.test",
+      "company_industry": "it",
+      "linkedin_url": "https://www.linkedin.com/company/acme",
+      "company_description": "We build hiring tools.",
+      "company_address": "5th floor, MG Road, Bengaluru",
+      "company_registration_number": "U72900KA2020PTC123456",
+      "gst_number": "29ABCDE1234F1Z5",
+      "pan_number": "ABCDE1234F",
+      "kyc_status": "Approved",
+      "company_logo": null,
+      "registration_certificate": "https://cdn.letshyre.ai/kyc/reg.pdf",
+      "gst_certificate": null,
+      "address_proof": null,
+      "bank_proof": null
+    }
+  }
+}

@@ -1,1 +1,22 @@
-{ "success": true, "data": { "count": 2, "results": [] } }
+{
+  "success": true,
+  "data": {
+    "count": 2,
+    "results": [
+      {
+        "id": 11,
+        "full_name": "Meera Iyer",
+        "email": "meera@acme.test",
+        "title": "Recruiter",
+        "status": "Active"
+      },
+      {
+        "id": 12,
+        "full_name": "Rahul Verma",
+        "email": "rahul@acme.test",
+        "title": "Recruiter",
+        "status": "Hold"
+      }
+    ]
+  }
+}

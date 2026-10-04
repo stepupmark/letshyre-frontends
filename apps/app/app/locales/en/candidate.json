@@ -76,5 +76,48 @@
     "viewLimit_other": "{{count}} views",
     "noLink": "The link was created, but it came back in a form we can't show. Find it under Shared links.",
     "done": "Done"
+  },
+  "links": {
+    "title": "Shared links",
+    "lead": "Scorecards you've shared outside your team. Revoke a link to stop it working at once.",
+    "columns": {
+      "candidate": "Candidate",
+      "job": "Job",
+      "views": "Views",
+      "expires": "Expires",
+      "status": "Status"
+    },
+    "views": "{{count}} of {{max}}",
+    "state": {
+      "active": "Active",
+      "revoked": "Revoked",
+      "expired": "Expired",
+      "used": "View limit reached"
+    },
+    "actions": "Actions for {{name}}'s link",
+    "edit": "Change limits",
+    "revoke": "Revoke",
+    "restore": "Turn back on",
+    "delete": "Delete",
+    "revoked": "Link to {{name}}'s scorecard revoked",
+    "deleted": "Link deleted",
+    "saved": "Link updated",
+    "failed": "That didn't go through. Try again.",
+    "deleteTitle": "Delete this link?",
+    "deleteBody": "The link to {{name}}'s scorecard stops working and leaves this list. This can't be undone.",
+    "editTitle": "Change limits for {{name}}",
+    "editLead": "Give the link more time or more views. Anyone who has it keeps using the same link.",
+    "extend": "Add days",
+    "extendHint": "0 keeps the current date. Up to {{max}}.",
+    "viewsHint_one": "Used {{count}} time so far.",
+    "viewsHint_other": "Used {{count}} times so far.",
+    "save": "Save",
+    "errors": {
+      "days": "Enter a whole number from 0 to {{max}}.",
+      "views": "Enter a whole number of at least {{min}}."
+    },
+    "emptyTitle": "No shared links yet",
+    "emptyBody": "Share a scorecard from an unlocked candidate, and the link shows up here.",
+    "toUnlocked": "Open unlocked candidates"
   }
 }

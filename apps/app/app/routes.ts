@@ -59,6 +59,9 @@ export default [
       route("employee-score-card", "routes/employer/candidate-scorecard.tsx"),
       route("billing", "routes/employer/billing.tsx"),
       route("invoice", "routes/employer/invoices.tsx"),
+      route("your-team", "routes/employer/team.tsx"),
+      route("shared-links", "routes/employer/shared-links.tsx"),
+      route("profile", "routes/employer/company.tsx"),
     ]),
   ]),
   layout("layouts/employee-layout.tsx", [
