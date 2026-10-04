@@ -3,7 +3,7 @@
 > Companion to [migration-plan.md](./migration-plan.md), which holds the _what and why_.
 > This document is the _how_: ordered, commit-sized steps with files, commands and exit checks.
 > Scope: everything up to and including the **marketing app live on letshyre.ai**.
-> The app (Phases 5–8) gets its own implementation plan once marketing ships, using what we learn here.
+> The app (Phases 5–8) has its own plan: [app-implementation-plan.md](./app-implementation-plan.md).
 
 ---
 
