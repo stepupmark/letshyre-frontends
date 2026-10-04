@@ -10,5 +10,7 @@ export default defineConfig(({ mode }) => {
   return {
     resolve: { tsconfigPaths: true },
     plugins: [tailwindcss(), reactRouter()],
+    // prerender fetches from here; "localhost" races ::1 and times out on Windows
+    preview: { host: "127.0.0.1" },
   }
 })
