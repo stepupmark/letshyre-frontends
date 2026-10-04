@@ -30,6 +30,11 @@ const screens = [
     title: "Scorecard",
     detail: "Score with reasons, answers with evidence, recording timestamps.",
   },
+  {
+    to: "/_lab/blocks",
+    title: "Building blocks",
+    detail: "Data table, detail sheet, upload, wizard and the smaller pieces.",
+  },
 ]
 
 const tones: Tone[] = ["success", "warning", "danger", "info", "neutral"]

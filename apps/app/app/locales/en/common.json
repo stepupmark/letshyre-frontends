@@ -13,5 +13,73 @@
     "body": "Something went wrong on our side. Reload to try again, or contact us if it keeps happening.",
     "retry": "Try again",
     "goHome": "Go to your dashboard"
+  },
+  "table": {
+    "selectAll": "Select all rows",
+    "selectRow": "Select {{name}}",
+    "selected_one": "{{count}} selected",
+    "selected_other": "{{count}} selected",
+    "clearSelection": "Clear selection",
+    "columns": "Columns",
+    "compact": "Compact rows",
+    "sortBy": "Sort by {{column}}",
+    "previous": "Previous page",
+    "next": "Next page",
+    "pageOf": "Page {{page}} of {{total}}",
+    "results_one": "{{count}} result",
+    "results_other": "{{count}} results",
+    "rowActions": "Actions for {{name}}",
+    "bulkActions": "Bulk actions",
+    "navigateHint": "to move,",
+    "openHint": "to open",
+    "enterKey": "Enter"
+  },
+  "state": {
+    "error": "This didn't load.",
+    "errorBody": "Nothing was lost. Check your connection and try again.",
+    "retry": "Try again",
+    "loading": "Loading"
+  },
+  "empty": {
+    "filteredTitle": "Nothing matches",
+    "filteredBody": "Try a different search or clear the filters.",
+    "clearFilters": "Clear filters"
+  },
+  "upload": {
+    "drop": "Drag a file here, or",
+    "browse": "choose one",
+    "hint": "{{types}}, up to {{size}}",
+    "tooLarge": "That file is {{size}}. The limit is {{max}}.",
+    "wrongType": "That file type isn't accepted. Use {{types}}.",
+    "uploading": "Uploading {{name}}",
+    "failed": "Upload failed. Your file is still here, so you can try again.",
+    "retry": "Try again",
+    "remove": "Remove {{name}}",
+    "done": "Uploaded"
+  },
+  "wizard": {
+    "step": "Step {{current}} of {{total}}",
+    "back": "Back",
+    "next": "Continue",
+    "finish": "Finish",
+    "draftSaved": "Draft saved on this device"
+  },
+  "confirm": {
+    "cancel": "Cancel"
+  },
+  "undo": "Undo",
+  "copy": {
+    "copy": "Copy",
+    "copied": "Copied"
+  },
+  "band": {
+    "strong": "Strong match",
+    "partial": "Partial match",
+    "low": "Low match"
+  },
+  "detail": {
+    "previous": "Previous",
+    "next": "Next",
+    "position": "{{current}} of {{total}}"
   }
 }

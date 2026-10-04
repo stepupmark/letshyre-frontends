@@ -16,6 +16,7 @@ const lab =
           route("dashboard", "lab/dashboard.tsx"),
           route("applicants", "lab/applicants.tsx"),
           route("scorecard", "lab/scorecard.tsx"),
+          route("blocks", "lab/blocks.tsx"),
         ]),
       ])
 
