@@ -12,8 +12,12 @@ import { loadEnv } from "vite"
 import { parseEnv } from "../app/lib/env.schema.ts"
 import { PAGES, type PageId } from "../app/lib/pages.ts"
 import { readyLocales } from "../app/lib/readiness.ts"
-import { injectMetaPolicy, nginxMap, pagePolicy } from "./csp.ts"
-import { initialScriptsOf } from "./html.ts"
+import {
+  initialScriptsOf,
+  injectMetaPolicy,
+  nginxMap,
+} from "../../../tooling/csp.ts"
+import { pagePolicy } from "./csp.ts"
 import { checkPage } from "./seo-checks.ts"
 import { renderRobots, renderSitemap } from "./sitemap.ts"
 

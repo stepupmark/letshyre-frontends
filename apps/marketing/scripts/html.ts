@@ -38,25 +38,4 @@ export const jsonLdOf = (html: string): string[] =>
     ),
   ].map((m) => m[1] ?? "")
 
-/** Inline scripts the browser executes, i.e. everything CSP has to allow. */
-export const inlineScriptsOf = (html: string): string[] =>
-  [...html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)]
-    .filter(([, attrs = "", body]) => {
-      if (!body || /\ssrc=/.test(attrs)) return false
-      const type = /type="([^"]*)"/.exec(attrs)?.[1]
-      return !type || ["module", "importmap", "text/javascript"].includes(type)
-    })
-    .map((m) => m[2] ?? "")
-
 export const h1Count = (html: string) => (html.match(/<h1[\s>]/g) ?? []).length
-
-/** `/assets/*.js` the page loads before it's interactive. */
-export const initialScriptsOf = (html: string): string[] => [
-  ...new Set(
-    [
-      ...html.matchAll(/<link rel="modulepreload" href="([^"]+\.js)"/g),
-      ...html.matchAll(/<script[^>]* src="([^"]+\.js)"/g),
-      ...html.matchAll(/import (?:\* as \w+ from )?"([^"]+\.js)"/g),
-    ].map((m) => m[1] ?? "")
-  ),
-]

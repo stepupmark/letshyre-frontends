@@ -2,8 +2,13 @@ import { createHash } from "node:crypto"
 
 import { describe, expect, it } from "vitest"
 
-import { injectMetaPolicy, nginxMap, pagePolicy, parseNginxMap } from "./csp"
-import { initialScriptsOf } from "./html"
+import {
+  initialScriptsOf,
+  injectMetaPolicy,
+  nginxMap,
+  parseNginxMap,
+} from "../../../tooling/csp"
+import { pagePolicy } from "./csp"
 import { checkPage, width } from "./seo-checks"
 import { renderRobots, renderSitemap } from "./sitemap"
 

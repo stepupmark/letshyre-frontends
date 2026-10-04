@@ -7,7 +7,7 @@ import { extname, join, normalize, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { createGzip } from "node:zlib"
 
-import { parseNginxMap } from "../scripts/csp.ts"
+import { parseNginxMap } from "../../../tooling/csp.ts"
 
 const ROOT = resolve(fileURLToPath(new URL("../build/client", import.meta.url)))
 const PORT = Number(process.argv[2] ?? 4173)
