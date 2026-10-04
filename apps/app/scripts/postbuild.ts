@@ -1,4 +1,4 @@
-// Runs after `react-router build`: CSP for the SPA shell and the JS budget.
+// Runs after `react-router build`: CSP for the SPA shell, the JS budget and the live-route list.
 
 import { readFileSync, writeFileSync } from "node:fs"
 import { join, resolve } from "node:path"
@@ -14,6 +14,7 @@ import {
   pagePolicy,
 } from "../../../tooling/csp.ts"
 import { parseEnv } from "../app/lib/env.schema.ts"
+import { LIVE_ROUTES, routePattern } from "../app/lib/live-routes.ts"
 
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)))
 const CLIENT = join(ROOT, "build/client")
@@ -43,6 +44,22 @@ if (process.env.CSP_ENFORCE === "true") {
   writeFileSync(INDEX, html)
 }
 writeFileSync(join(ROOT, "build/csp.map"), nginxMap(new Map(), policy))
+
+const live = LIVE_ROUTES.map(routePattern)
+writeFileSync(
+  join(CLIENT, "live-routes.json"),
+  `${JSON.stringify(live)}
+`
+)
+writeFileSync(
+  join(ROOT, "build/live-routes.map"),
+  live
+    .map(
+      (pattern) => `"~${pattern}" 1;
+`
+    )
+    .join("")
+)
 
 if (!html.includes('name="robots" content="noindex, nofollow"')) {
   problems.push("index.html: missing noindex")

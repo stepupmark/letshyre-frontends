@@ -9,7 +9,7 @@ Files here are hand-written from the legacy app until staging exists (B1). Then 
 them with real responses:
 
 ```bash
-STAGING_API=https://staging-api.letshyre.ai STAGING_TOKEN=... node scripts/capture-fixtures.ts
+STAGING_API=https://staging-api.letshyre.ai STAGING_TOKEN=... pnpm --filter app fixtures:capture
 ```
 
 The script scrubs names, emails, phone numbers and URLs before writing.

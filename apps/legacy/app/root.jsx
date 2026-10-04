@@ -18,12 +18,15 @@ import { DEFAULT_LOCALE, dirFor, isLocale } from "@/i18n/config";
 import { SITE } from "@/lib/seo";
 import { useMetaPixel } from "@/hooks/useMetaPixel";
 import { metaPixelSnippet } from "@/lib/metaPixel";
+import { handOffLiveRoutes } from "@/lib/liveRoutes";
 
 import "./styles/tailwind.css";
 
 import "./styles/fonts.css";
 import "./styles/global.css";
 import "./styles/typeset.css";
+
+export const clientMiddleware = [handOffLiveRoutes];
 
 export function Layout({ children }) {
   // Locale lives in the first path segment (/en/about); the document tag mirrors

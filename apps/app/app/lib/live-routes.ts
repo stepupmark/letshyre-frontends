@@ -1,13 +1,14 @@
 /**
- * Paths this app serves; everything else is still the legacy app.
- * nginx reads the same list (build/live-routes.map), so adding a path here moves it.
- * `:param` matches one segment.
+ * Paths this app serves; everything else is still the legacy app. The build publishes
+ * this list to nginx (build/live-routes.map) and to legacy (live-routes.json), so adding
+ * or removing a path here moves it in one app release. `:param` matches one segment.
  */
 export const LIVE_ROUTES = ["/employer", "/employer/dashboard", "/employee"]
 
-const patterns = LIVE_ROUTES.map(
-  (route) => new RegExp(`^${route.replace(/:[^/]+/g, "[^/]+")}/?$`)
-)
+export const routePattern = (route: string) =>
+  `^${route.replace(/:[^/]+/g, "[^/]+")}/?$`
+
+const patterns = LIVE_ROUTES.map((route) => new RegExp(routePattern(route)))
 
 export const isLive = (path: string) =>
   patterns.some((pattern) => pattern.test(path.split(/[?#]/)[0] ?? path))

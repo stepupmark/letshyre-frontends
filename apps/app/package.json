@@ -10,7 +10,8 @@
     "typecheck": "react-router typegen && tsc",
     "lint": "eslint .",
     "test": "vitest run",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "fixtures:capture": "node scripts/capture-fixtures.ts"
   },
   "dependencies": {
     "@fontsource-variable/outfit": "^5.3.0",
