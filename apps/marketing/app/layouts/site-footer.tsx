@@ -1,14 +1,19 @@
 import { Logo } from "@workspace/blocks/logo"
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
+import { lazy, Suspense } from "react"
 import { Link } from "react-router"
 
 import { Container } from "@/components/section"
-import { NewsletterForm } from "@/features/newsletter"
 
 import { FOOTER_COLUMNS } from "./site-footer-links"
 import { SiteFooterSocial } from "./site-footer-social"
 import { SiteLanguageSwitcher } from "./site-header-language"
+
+// prerendered as usual; the form code (react-hook-form, zod) loads after first paint
+const NewsletterForm = lazy(() =>
+  import("@/features/newsletter").then((m) => ({ default: m.NewsletterForm }))
+)
 
 export function SiteFooter() {
   const { t } = useTranslation("common")
@@ -28,7 +33,9 @@ export function SiteFooter() {
             <p className="text-sm text-pretty text-muted-foreground">
               {t("footer.tagline")}
             </p>
-            <NewsletterForm />
+            <Suspense>
+              <NewsletterForm />
+            </Suspense>
           </div>
 
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-3">

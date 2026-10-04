@@ -1,21 +1,8 @@
-import { z } from "zod"
+import type { Env } from "./env.schema"
 
-const schema = z
-  .object({
-    VITE_ENV: z.enum(["production", "staging", "development"]),
-    VITE_SITE_URL: z.url(),
-    VITE_APP_URL: z.url(),
-    VITE_API_BASE_URL: z.url(),
-    VITE_META_PIXEL_ID: z.string().optional(),
-    // shared by letshyre.ai and app.letshyre.ai; empty on localhost
-    VITE_COOKIE_DOMAIN: z
-      .string()
-      .optional()
-      .transform((v) => (v === "" ? undefined : v)),
-  })
-  .refine((env) => env.VITE_ENV !== "production" || env.VITE_META_PIXEL_ID, {
-    message: "VITE_META_PIXEL_ID is required in production",
-    path: ["VITE_META_PIXEL_ID"],
-  })
-
-export const env = schema.parse(import.meta.env)
+// validated in vite.config.ts, so zod stays out of the client bundle
+export const env = {
+  ...(import.meta.env as unknown as Env),
+  VITE_COOKIE_DOMAIN:
+    (import.meta.env.VITE_COOKIE_DOMAIN as string) || undefined,
+} satisfies Env
