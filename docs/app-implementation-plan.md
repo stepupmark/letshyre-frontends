@@ -79,15 +79,15 @@ Lessons from Phases 3–4 that become rules here:
 
 ### 1.3 Decisions needed
 
-| #   | Question                                                                                                                                                                                                              | Needed by |
-| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| D6  | Incremental rollout on `letshyre.ai` (§1.1)?                                                                                                                                                                          | 🔵 5      |
-| D7  | **One sign-in page for both roles** (`/sign-in`; the API returns the role)? Today there are two (`/employer/sign-in`, `/employee/sign-in`); both would redirect.                                                      | 6.2       |
-| D8  | Product tour: **recommended: drop the modal tour** (`react-joyride`) for a setup checklist on the dashboard plus one-time contextual tips on shadcn `Popover` (§2.4). Alternative: keep joyride, restyled.            | 6.3       |
-| D9  | Data tables: add `@tanstack/react-table` (shadcn's `data-table` pattern) for jobs, applicants, candidate pool, invoices, team?                                                                                        | 5.6       |
-| D10 | **Numerals:** Outfit's figures are proportional, so columns of scores, credits and prices don't line up. If its `tnum` feature is missing (checked in 5.0), add one tabular face for numbers only (Geist Mono)?       | 5.0       |
-| D11 | **Colour:** the shadcn neutral theme stays as is. Colour is used only for meaning (status, score bands, credits warnings) with Tailwind palette classes, never as decoration. Confirm no brand accent on `--primary`? | 🔵 4      |
-| D12 | **UX metrics:** a few first-party product events (task started/completed, step reached) sent to our own backend, so the UX targets in §2.6 can be measured. No third-party analytics. Yes / later / no?               | 6.2       |
+| #   | Question                                                                                                                                                                                                                              | Needed by |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| D6  | Incremental rollout on `letshyre.ai` (§1.1)?                                                                                                                                                                                          | 🔵 5      |
+| D7  | **One sign-in page for both roles** (`/sign-in`; the API returns the role)? Today there are two (`/employer/sign-in`, `/employee/sign-in`); both would redirect.                                                                      | 6.2       |
+| D8  | Product tour: **recommended: drop the modal tour** (`react-joyride`) for a setup checklist on the dashboard plus one-time contextual tips on shadcn `Popover` (§2.4). Alternative: keep joyride, restyled.                            | 6.3       |
+| D9  | Data tables: add `@tanstack/react-table` (shadcn's `data-table` pattern) for jobs, applicants, candidate pool, invoices, team?                                                                                                        | 5.6       |
+| D10 | ~~Numerals~~ **Settled in 5.0:** Outfit has tabular figures (`tnum`), measured in the lab; no second font.                                                                                                                            | –         |
+| D11 | **Colour:** the shadcn neutral theme stays as is, no brand accent on `--primary`. Status colours are new tokens (`success`, `warning`, `info`, `danger`) added next to the shadcn ones, because lint blocks palette classes. Confirm? | 🔵 4      |
+| D12 | **UX metrics:** a few first-party product events (task started/completed, step reached) sent to our own backend, so the UX targets in §2.6 can be measured. No third-party analytics. Yes / later / no?                               | 6.2       |
 
 ### 1.4 What the backend needs to provide
 
@@ -144,8 +144,9 @@ process. Both need the same thing from the UI: clarity, speed and trust in what 
   (sticky at the bottom on mobile for forms).
 - **Type scale:** 4 sizes in the app (`text-2xl` page title, `text-base` section, `text-sm` body and
   tables, `text-xs` meta). `tabular-nums` on every number column, price and counter.
-- **Status palette:** one mapping in `StatusBadge` (success emerald, warning amber, danger red, info
-  sky, neutral), each pair checked for 4.5:1 contrast in a unit test. Score bands use the same five.
+- **Status colours:** `success`, `warning`, `danger`, `info` tokens (+ `-muted` backgrounds) added to
+  `globals.css` next to the shadcn tokens, with dark values ready. `StatusBadge` maps tones to them;
+  each pair is checked for 4.5:1 contrast in a unit test. Score bands use the same tones.
 - **Icons:** lucide at 16px in UI, 20px in navigation, stroke width default. Icons support labels,
   they don't replace them (except toolbar buttons with a tooltip and `aria-label`).
 - **New shadcn components** come from the CLI (`command`, `data-table`, `chart`, `sidebar`,
@@ -197,8 +198,9 @@ process. Both need the same thing from the UI: clarity, speed and trust in what 
 ### 2.5 Motion (motion.dev)
 
 **Library:** `motion` (the current name of Framer Motion; `framer-motion` from legacy is not carried
-over). Imported only as `m` from `motion/react` inside `LazyMotion`, features loaded asynchronously, so
-the first paint carries ~5 kB of motion and the rest (~25 kB with layout animations) arrives after.
+over). Imported only as `m` from `motion/react-m` inside `LazyMotion`, features loaded asynchronously, so
+the first paint carries ~10 kB gzip of motion and the `domMax` features (~29 kB) arrive after
+(measured in 5.0).
 Nothing is clickable only after motion loads: without it, elements simply appear.
 `MotionConfig reducedMotion="user"` at the root. ESLint `no-restricted-imports` blocks `framer-motion`
 and `motion` (the non-lazy component).
@@ -246,8 +248,8 @@ Designed for, switched on when ready (future scope, no rework needed):
 
 - **Passkeys** (WebAuthn) as the sign-in default once the backend supports them; the sign-in screen
   leaves room for it.
-- **Dark theme** toggle (tokens exist; every colour used is a token or a palette class with a `dark:`
-  pair checked in review).
+- **Dark theme** toggle (tokens exist; every colour used is a token, and the status tokens already have
+  dark values).
 - **CSS anchor positioning** and the **Popover API** as Base UI adopts them (shadcn updates, no edits
   from us).
 - **Scroll-driven animations** for long read-only views (scorecard, shared scorecard).
@@ -271,32 +273,32 @@ Designed for, switched on when ready (future scope, no rework needed):
 
 ## Step overview
 
-| Step | Title                                                                    | Est.  | Gate                              |
-| ---- | ------------------------------------------------------------------------ | ----- | --------------------------------- |
-| 5.0  | Design direction: UX audit, principles, prototypes of 3 key screens      | 4 d   | 🔵 4 (design direction, D10, D11) |
-| 5.1  | `apps/app` skeleton (SPA, providers, env, CSP, budgets, motion setup)    | 1 d   |                                   |
-| 5.2  | `@workspace/api`: all methods, uploads, downloads, error copy            | 1 d   |                                   |
-| 5.3  | `@workspace/auth`: session, refresh, guards                              | 1.5 d |                                   |
-| 5.4  | App i18n: locale resolution, whole-app readiness, key map                | 1 d   |                                   |
-| 5.5  | Dashboard shell: sidebar, topbar, user menu, credits, command palette    | 3 d   | 🔵 5 (shell + rollout model, D6)  |
-| 5.6  | App building blocks: data table, filters, upload, wizard, states, motion | 3 d   |                                   |
-| 5.7  | Test harness: API fixtures, auth fixtures, MSW, visual + motion checks   | 1 d   |                                   |
-| 5.8  | Rollout infra: route manifest, nginx map, cross-app links                | 1 d   |                                   |
-| 6.1  | Pilot: public shared scorecard                                           | 2 d   |                                   |
-| 6.2  | Auth: get-started, sign-in, register (OTP), forgot password              | 3.5 d | 🔵 6 (first live slice)           |
-| 6.3  | Employer dashboard + setup checklist                                     | 2.5 d |                                   |
-| 6.4  | Employer onboarding (KYC)                                                | 2 d   |                                   |
-| 6.5  | Jobs: post (JD parse), list, detail/edit, applicants                     | 5 d   | 🔵 7 (table + form patterns)      |
-| 6.6  | Candidate pool, unlock, unlocked candidates                              | 3.5 d |                                   |
-| 6.7  | Candidate profile + scorecard views (both roles)                         | 2.5 d |                                   |
-| 6.8  | Billing (Razorpay) + invoices                                            | 2.5 d |                                   |
-| 6.9  | Team, shared links, employer profile                                     | 2.5 d |                                   |
-| 6.10 | Employee onboarding wizard (resume AI, photo, documents)                 | 3.5 d |                                   |
-| 6.11 | Employee: profile, find jobs, applications, score cards, guide           | 3.5 d |                                   |
-| 6.12 | Assistant (chatbot) for both roles                                       | 1.5 d |                                   |
-| 6.13 | App translation batch + readiness                                        | 1 d   |                                   |
-| 7.1  | Subdomain move: `app.letshyre.ai`                                        | 2 d   | 🔵 8 (all routes on the new app)  |
-| 8.1  | Decommission legacy, ADRs, `apps/admin` template doc                     | 1.5 d |                                   |
+| Step | Title                                                                    | Est.  | Gate                             |
+| ---- | ------------------------------------------------------------------------ | ----- | -------------------------------- |
+| 5.0  | Design direction: UX audit, principles, prototypes of 3 key screens      | 4 d   | 🔵 4 (design direction, D11)     |
+| 5.1  | `apps/app` skeleton (SPA, providers, env, CSP, budgets, motion setup)    | 1 d   |                                  |
+| 5.2  | `@workspace/api`: all methods, uploads, downloads, error copy            | 1 d   |                                  |
+| 5.3  | `@workspace/auth`: session, refresh, guards                              | 1.5 d |                                  |
+| 5.4  | App i18n: locale resolution, whole-app readiness, key map                | 1 d   |                                  |
+| 5.5  | Dashboard shell: sidebar, topbar, user menu, credits, command palette    | 3 d   | 🔵 5 (shell + rollout model, D6) |
+| 5.6  | App building blocks: data table, filters, upload, wizard, states, motion | 3 d   |                                  |
+| 5.7  | Test harness: API fixtures, auth fixtures, MSW, visual + motion checks   | 1 d   |                                  |
+| 5.8  | Rollout infra: route manifest, nginx map, cross-app links                | 1 d   |                                  |
+| 6.1  | Pilot: public shared scorecard                                           | 2 d   |                                  |
+| 6.2  | Auth: get-started, sign-in, register (OTP), forgot password              | 3.5 d | 🔵 6 (first live slice)          |
+| 6.3  | Employer dashboard + setup checklist                                     | 2.5 d |                                  |
+| 6.4  | Employer onboarding (KYC)                                                | 2 d   |                                  |
+| 6.5  | Jobs: post (JD parse), list, detail/edit, applicants                     | 5 d   | 🔵 7 (table + form patterns)     |
+| 6.6  | Candidate pool, unlock, unlocked candidates                              | 3.5 d |                                  |
+| 6.7  | Candidate profile + scorecard views (both roles)                         | 2.5 d |                                  |
+| 6.8  | Billing (Razorpay) + invoices                                            | 2.5 d |                                  |
+| 6.9  | Team, shared links, employer profile                                     | 2.5 d |                                  |
+| 6.10 | Employee onboarding wizard (resume AI, photo, documents)                 | 3.5 d |                                  |
+| 6.11 | Employee: profile, find jobs, applications, score cards, guide           | 3.5 d |                                  |
+| 6.12 | Assistant (chatbot) for both roles                                       | 1.5 d |                                  |
+| 6.13 | App translation batch + readiness                                        | 1 d   |                                  |
+| 7.1  | Subdomain move: `app.letshyre.ai`                                        | 2 d   | 🔵 8 (all routes on the new app) |
+| 8.1  | Decommission legacy, ADRs, `apps/admin` template doc                     | 1.5 d |                                  |
 
 **Total ≈ 10–11 weeks of engineering** for one engineer, plus UAT turnaround per slice. The redesign
 adds about 2 weeks over a straight port: the design step, the command palette, motion, and the extra
@@ -321,7 +323,10 @@ Design is done in code, with real data shapes, not in mockups that drift from wh
   table with peek sheet, and candidate scorecard, built on shadcn defaults with fixture data, with
   their motion. Shown at 360 / 768 / 1280 / 1920, in English, German (long words) and Arabic (RTL).
 - **Checks:** Outfit `tnum` support (D10), status palette contrast, the font loads.
-- **🔵 Gate 4:** you review the prototypes and the audit, decide D10 and D11. Changes here are cheap;
+- **Done 2026-10-04:** audit and checklist written ([ux-audit.md](./design/ux-audit.md),
+  [app-design.md](./design/app-design.md)); lab in `apps/app/app/lab`; D10 settled (Outfit has `tnum`).
+  The timed walk-through and its baselines wait for staging (B1).
+- **🔵 Gate 4:** you review the prototypes and the audit, decide D11. Changes here are cheap;
   after 🔵 5 the patterns are fixed.
 
 ### 5.1 `apps/app` skeleton
@@ -617,7 +622,7 @@ Preconditions: every app route is in `live-routes.ts`, legacy serves nothing, B4
 | Need                                                 | By step  |
 | ---------------------------------------------------- | -------- |
 | Approve this plan                                    | 5.0      |
-| 🔵 4: design direction; D10 numerals, D11 colour     | 5.0      |
+| 🔵 4: design direction; D11 colour                   | 5.0      |
 | B1: staging API, Razorpay test keys, 4 test accounts | 5.7      |
 | B2: OpenAPI schema, if the backend can expose one    | 5.2      |
 | D9: data-table dependency                            | 5.6      |
