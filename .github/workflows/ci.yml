@@ -52,6 +52,9 @@ jobs:
 
       - run: pnpm turbo run test:e2e --cache-dir=.turbo/cache
 
+      - name: nginx config
+        run: bash infra/nginx/test/run.sh
+
       - if: failure()
         uses: actions/upload-artifact@v4
         with:
