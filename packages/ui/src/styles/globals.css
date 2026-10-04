@@ -128,3 +128,36 @@
     @apply bg-background text-foreground;
     }
 }
+/* status colours, added next to the shadcn defaults (which stay untouched) */
+:root {
+    --success: oklch(43.2% 0.095 166.913);
+    --success-muted: oklch(97.9% 0.021 166.113);
+    --warning: oklch(47.3% 0.137 46.201);
+    --warning-muted: oklch(98.7% 0.022 95.277);
+    --info: oklch(44.3% 0.11 240.79);
+    --info-muted: oklch(97.7% 0.013 236.62);
+    --danger: oklch(50.5% 0.213 27.518);
+    --danger-muted: oklch(97.1% 0.013 17.38);
+}
+
+.dark {
+    --success: oklch(84.5% 0.143 164.978);
+    --success-muted: oklch(26.2% 0.051 172.552);
+    --warning: oklch(87.9% 0.169 91.605);
+    --warning-muted: oklch(27.9% 0.077 45.635);
+    --info: oklch(82.8% 0.111 230.318);
+    --info-muted: oklch(29.3% 0.066 243.157);
+    --danger: oklch(80.8% 0.114 19.571);
+    --danger-muted: oklch(25.8% 0.092 26.042);
+}
+
+@theme inline {
+    --color-success: var(--success);
+    --color-success-muted: var(--success-muted);
+    --color-warning: var(--warning);
+    --color-warning-muted: var(--warning-muted);
+    --color-info: var(--info);
+    --color-info-muted: var(--info-muted);
+    --color-danger: var(--danger);
+    --color-danger-muted: var(--danger-muted);
+}
