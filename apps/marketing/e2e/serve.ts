@@ -5,6 +5,7 @@ import { createReadStream, existsSync, readFileSync, statSync } from "node:fs"
 import { createServer } from "node:http"
 import { extname, join, normalize, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
+import { createGzip } from "node:zlib"
 
 import { parseNginxMap } from "../scripts/csp.ts"
 
@@ -56,11 +57,18 @@ createServer((req, res) => {
       csp && type.startsWith("text/html")
         ? (csp.policies.get(path) ?? csp.fallback)
         : undefined
+    // like nginx gzip_types, so Lighthouse measures real transfer sizes
+    const gzip =
+      /^(text|application\/(json|xml|manifest))/.test(type) &&
+      /\bgzip\b/.test(req.headers["accept-encoding"] ?? "")
     res.writeHead(status, {
       "content-type": type,
+      ...(gzip && { "content-encoding": "gzip", vary: "accept-encoding" }),
       ...(policy && { "content-security-policy": policy }),
     })
-    createReadStream(file).pipe(res)
+    const stream = createReadStream(file)
+    if (gzip) stream.pipe(createGzip()).pipe(res)
+    else stream.pipe(res)
   }
   const redirect = (status: number, to: string) =>
     res.writeHead(status, { location: to + url.search }).end()

@@ -55,6 +55,17 @@ jobs:
       - name: nginx config
         run: bash infra/nginx/test/run.sh
 
+      - name: Lighthouse
+        run: pnpm --filter marketing lighthouse
+
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: apps/marketing/lighthouse-report
+          retention-days: 14
+          if-no-files-found: ignore
+
       - if: failure()
         uses: actions/upload-artifact@v4
         with:
