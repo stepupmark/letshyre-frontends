@@ -31,8 +31,8 @@ export function Tip({
       <Popover.Portal>
         <Popover.Positioner
           anchor={anchor}
-          side="bottom"
-          align="end"
+          side="inline-start"
+          align="start"
           sideOffset={8}
           className="isolate z-50"
         >

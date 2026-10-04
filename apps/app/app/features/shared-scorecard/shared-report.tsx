@@ -153,12 +153,15 @@ export function SharedReport({ report }: { report: SharedScorecard }) {
                     <span className="text-xl font-semibold tabular-nums">
                       {score}
                     </span>
-                    <span className="text-xs text-muted-foreground tabular-nums">
-                      {t("types.correct", {
-                        correct: section?.correct ?? 0,
-                        count: section?.count ?? 0,
-                      })}
-                    </span>
+                    {/* spoken and written answers are scored, not marked right or wrong */}
+                    {key !== "audio" && key !== "typing" && (
+                      <span className="text-xs text-muted-foreground tabular-nums">
+                        {t("types.correct", {
+                          correct: section?.correct ?? 0,
+                          count: section?.count ?? 0,
+                        })}
+                      </span>
+                    )}
                   </li>
                 )
               })}
