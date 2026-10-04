@@ -1,3 +1,4 @@
+import { readdirSync, readFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 
 import { test as base, expect, type Page, type Route } from "@playwright/test"
@@ -22,13 +23,17 @@ export const USERS = {
   candidate: { role: "Candidate", email: "candidate@test.in" },
 } as const
 
-/** Default answers, keyed "METHOD path". Tests override per endpoint. */
-const DEFAULTS: Handlers = {
-  "GET /payment/v1/employer_credits/": {
-    success: true,
-    data: { available_credits: 12 },
-  },
-}
+/** GET answers from e2e/api, keyed "GET /path/". Tests override per endpoint. */
+const DEFAULTS: Handlers = Object.fromEntries(
+  readdirSync(new URL("api", import.meta.url))
+    .filter((file) => file.endsWith(".json"))
+    .map((file) => [
+      `GET /${file.slice(0, -5).replaceAll(".", "/")}/`,
+      JSON.parse(
+        readFileSync(new URL(`api/${file}`, import.meta.url), "utf8")
+      ) as Record<string, unknown>,
+    ])
+)
 
 type Handler = ((route: Route) => Promise<void>) | Record<string, unknown>
 type Handlers = Record<string, Handler>
