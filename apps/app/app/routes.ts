@@ -45,6 +45,9 @@ export default [
   layout("layouts/onboarding-layout.tsx", [
     route("employer/onboarding", "routes/employer/onboarding.tsx"),
   ]),
+  layout("layouts/candidate-onboarding-layout.tsx", [
+    route("employee/onboarding", "routes/employee/onboarding.tsx"),
+  ]),
   layout("layouts/employer-layout.tsx", [
     ...prefix("employer", [
       index("routes/employer/dashboard.tsx", { id: "employer-home" }),

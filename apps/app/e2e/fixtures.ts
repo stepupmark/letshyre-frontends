@@ -24,16 +24,23 @@ export const USERS = {
 } as const
 
 /** GET answers from e2e/api, keyed "GET /path/". Tests override per endpoint. */
-const DEFAULTS: Handlers = Object.fromEntries(
-  readdirSync(new URL("api", import.meta.url))
-    .filter((file) => file.endsWith(".json"))
-    .map((file) => [
-      `GET /${file.slice(0, -5).replaceAll(".", "/")}/`,
-      JSON.parse(
-        readFileSync(new URL(`api/${file}`, import.meta.url), "utf8")
-      ) as Record<string, unknown>,
-    ])
-)
+const DEFAULTS: Handlers = {
+  // the API reads a candidate's own profile with a POST
+  "POST /user/v1/candidate_profile/": {
+    success: true,
+    data: { is_profile_complete: true },
+  },
+  ...Object.fromEntries(
+    readdirSync(new URL("api", import.meta.url))
+      .filter((file) => file.endsWith(".json"))
+      .map((file) => [
+        `GET /${file.slice(0, -5).replaceAll(".", "/")}/`,
+        JSON.parse(
+          readFileSync(new URL(`api/${file}`, import.meta.url), "utf8")
+        ) as Record<string, unknown>,
+      ])
+  ),
+}
 
 type Handler = ((route: Route) => Promise<void>) | Record<string, unknown>
 type Handlers = Record<string, Handler>

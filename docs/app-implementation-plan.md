@@ -676,6 +676,19 @@ permission-denied help), resume upload with AI review polling (`candidate_resume
 progress shown as named steps), "we found these, check them" review with inline edits, skills for role,
 preferences, documents. Draft in Zustand `persist` without `File` objects (legacy behaviour).
 
+- **Done 2026-10-04:** `/employee/onboarding` in its own layout; the employee dashboard sends
+  candidates there until `is_profile_complete`. Five steps: about you (Aadhaar with the Verhoeff
+  check, 18 or older), photo (front camera with a framing oval, square mirrored capture, retake,
+  upload fallback, plain help when the camera is blocked or missing, camera released on leave),
+  work and preferences (pay checks, places as chips, the required letters), resume (upload
+  progress, then polled stages "reading" and "finding roles" that stop when done, failed or after
+  a minute; then "we found these, check them" with the suggested role, skills for that role,
+  editable skills, experience and education), and a review with edit links. One multipart POST
+  with the legacy field names; server field errors jump back to their step. Draft on this device
+  through `lib/draft` (not Zustand; files are asked for again), legacy draft picked up once.
+  City search used a third-party API the CSP doesn't allow, so the city is typed with the
+  browser's autofill.
+
 ### 6.11 Employee pages
 
 Profile view and inline edit, find jobs (filters in the URL, saved searches), my applications as a
