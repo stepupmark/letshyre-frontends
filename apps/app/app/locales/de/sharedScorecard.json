@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "Kandidat",
+    "fresher": "Berufseinsteiger",
+    "matchedTo": "Passend zu {{job}}",
+    "experience_one": "{{count}} Jahr Berufserfahrung",
+    "experience_other": "{{count}} Jahre Berufserfahrung"
+  },
+  "metrics": {
+    "clarity": "Klarheit",
+    "relevance": "Relevanz",
+    "confidence": "Selbstsicherheit"
+  },
+  "types": {
+    "coding": "Programmierung"
+  },
+  "insights": {
+    "strengths": "Stärken",
+    "recommendations": "Empfehlungen"
+  },
+  "profile": {
+    "skills": "Fähigkeiten",
+    "experience": "Berufserfahrung",
+    "education": "Ausbildung",
+    "projects": "Projekte",
+    "resume": "Lebenslauf"
+  },
+  "answers": {
+    "expandAll": "Alle erweitern",
+    "collapseAll": "Alle einklappen",
+    "types": {
+      "coding": "Programmierung"
+    }
+  },
+  "toc": {
+    "communication": "Kommunikation",
+    "insights": "Erkenntnisse",
+    "profile": "Profil"
+  }
+}

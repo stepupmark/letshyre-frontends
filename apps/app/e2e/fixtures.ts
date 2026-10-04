@@ -90,3 +90,18 @@ export const test = base.extend<{
 })
 
 export { expect }
+
+// fails the test on any console error, uncaught error or CSP violation
+export function watch(page: Page) {
+  const problems: string[] = []
+  page.on("pageerror", (e) => problems.push(e.message))
+  page.on("console", (m) => {
+    if (m.type() === "error") problems.push(m.text())
+  })
+  void page.addInitScript(() => {
+    document.addEventListener("securitypolicyviolation", (e) => {
+      console.error(`CSP: ${e.violatedDirective} ${e.blockedURI}`)
+    })
+  })
+  return problems
+}

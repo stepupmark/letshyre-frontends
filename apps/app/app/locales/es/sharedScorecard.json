@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "Candidato",
+    "fresher": "Recién egresado",
+    "matchedTo": "Coincide con {{job}}",
+    "experience_one": "{{count}} año de experiencia",
+    "experience_other": "{{count}} años de experiencia"
+  },
+  "metrics": {
+    "clarity": "Claridad",
+    "relevance": "Relevancia",
+    "confidence": "Confianza"
+  },
+  "types": {
+    "coding": "Codificación"
+  },
+  "insights": {
+    "strengths": "Fortalezas",
+    "recommendations": "Recomendaciones"
+  },
+  "profile": {
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "projects": "Proyectos",
+    "resume": "Currículum"
+  },
+  "answers": {
+    "expandAll": "Expandir todo",
+    "collapseAll": "Contraer todo",
+    "types": {
+      "coding": "Codificación"
+    }
+  },
+  "toc": {
+    "communication": "Comunicación",
+    "insights": "Perspectivas",
+    "profile": "Perfil"
+  }
+}

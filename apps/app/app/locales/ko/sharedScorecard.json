@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "후보자",
+    "fresher": "신입",
+    "matchedTo": "{{job}}에 매칭됨",
+    "experience_one": "경력 {{count}}년",
+    "experience_other": "경력 {{count}}년"
+  },
+  "metrics": {
+    "clarity": "명확성",
+    "relevance": "적합성",
+    "confidence": "자신감"
+  },
+  "types": {
+    "coding": "코딩"
+  },
+  "insights": {
+    "strengths": "강점",
+    "recommendations": "추천 사항"
+  },
+  "profile": {
+    "skills": "역량",
+    "experience": "경력",
+    "education": "학력",
+    "projects": "프로젝트",
+    "resume": "이력서"
+  },
+  "answers": {
+    "expandAll": "모두 펼치기",
+    "collapseAll": "모두 접기",
+    "types": {
+      "coding": "코딩"
+    }
+  },
+  "toc": {
+    "communication": "커뮤니케이션",
+    "insights": "인사이트",
+    "profile": "프로필"
+  }
+}

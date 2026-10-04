@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "Candidat",
+    "fresher": "Débutant",
+    "matchedTo": "Associé à {{job}}",
+    "experience_one": "{{count}} an d'expérience",
+    "experience_other": "{{count}} ans d'expérience"
+  },
+  "metrics": {
+    "clarity": "Clarté",
+    "relevance": "Pertinence",
+    "confidence": "Assurance"
+  },
+  "types": {
+    "coding": "Codage"
+  },
+  "insights": {
+    "strengths": "Points forts",
+    "recommendations": "Recommandations"
+  },
+  "profile": {
+    "skills": "Compétences",
+    "experience": "Expérience",
+    "education": "Formation",
+    "projects": "Projets",
+    "resume": "CV"
+  },
+  "answers": {
+    "expandAll": "Tout développer",
+    "collapseAll": "Tout réduire",
+    "types": {
+      "coding": "Codage"
+    }
+  },
+  "toc": {
+    "communication": "Communication",
+    "insights": "Aperçus",
+    "profile": "Profil"
+  }
+}

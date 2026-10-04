@@ -1,0 +1,127 @@
+{
+  "title": "Interview scorecard",
+  "print": "Print",
+  "provenance": {
+    "sharedBy": "Shared privately by {{company}}. The link has a view limit and an expiry date, so please don't forward it.",
+    "private": "Shared privately. The link has a view limit and an expiry date, so please don't forward it."
+  },
+  "header": {
+    "unnamed": "Candidate",
+    "fresher": "Fresher",
+    "experience_one": "{{count}} year of experience",
+    "experience_other": "{{count}} years of experience",
+    "matchedTo": "Matched to {{job}}"
+  },
+  "summary": {
+    "heading": "Summary",
+    "outOf": "/ 100",
+    "basedOn_one": "Based on {{count}} answered question",
+    "basedOn_other": "Based on {{count}} answered questions",
+    "howScored": "How is this scored?",
+    "howScoredBody": "The AI interviewer scores each answer against the role, then checks it for clarity, relevance and depth. Use the score as a starting point for your decision, not a replacement for it."
+  },
+  "match": {
+    "heading": "Fit for the job",
+    "headingFor": "Fit for {{job}}",
+    "overall": "Overall",
+    "role": "Role",
+    "skills": "Skills",
+    "why": "Why this match"
+  },
+  "metrics": {
+    "heading": "Communication",
+    "clarity": "Clarity",
+    "relevance": "Relevance",
+    "confidence": "Confidence",
+    "depth": "Depth of thought",
+    "keyConcept": "Key concepts covered"
+  },
+  "types": {
+    "heading": "By question type",
+    "correct_one": "{{correct}} of {{count}} correct",
+    "correct_other": "{{correct}} of {{count}} correct",
+    "mcq": "Multiple choice",
+    "pseudocode_mcq": "Pseudocode",
+    "coding": "Coding",
+    "typing": "Written",
+    "audio": "Spoken"
+  },
+  "insights": {
+    "heading": "Insights",
+    "strengths": "Strengths",
+    "improve": "Areas to improve",
+    "recommendations": "Recommendations"
+  },
+  "recording": {
+    "heading": "Recording",
+    "unsupported": "Your browser can't play this recording."
+  },
+  "profile": {
+    "heading": "Profile",
+    "empty": "The candidate hasn't added profile details yet.",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "awards": "Certifications and achievements",
+    "links": "Resume and links",
+    "resume": "Resume",
+    "untitled": "Untitled project"
+  },
+  "answers": {
+    "heading": "Answers",
+    "none": "This interview has no answered questions.",
+    "expandAll": "Expand all",
+    "collapseAll": "Collapse all",
+    "number": "Question {{number}}",
+    "noQuestion": "Question text unavailable",
+    "answer": "Answer",
+    "assessment": "Assessment",
+    "correct": "Correct",
+    "wrong": "Incorrect",
+    "chosen": "Their answer",
+    "correctAnswer": "Correct answer",
+    "noAnswer": "No answer given.",
+    "noCode": "No code submitted.",
+    "noAudio": "No audio recorded.",
+    "audioUnsupported": "Your browser can't play this audio.",
+    "types": {
+      "mcq": "Multiple choice",
+      "mcq_pseudocode": "Pseudocode",
+      "pseudocode_mcq": "Pseudocode",
+      "coding": "Coding",
+      "typing": "Written",
+      "audio": "Spoken",
+      "other": "Question"
+    }
+  },
+  "toc": {
+    "label": "On this page",
+    "summary": "Summary",
+    "communication": "Communication",
+    "types": "By question type",
+    "insights": "Insights",
+    "recording": "Recording",
+    "profile": "Profile",
+    "answers": "Answers"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "This link doesn't work",
+      "body": "It may be mistyped or removed. Ask the person who shared it for a new link."
+    },
+    "expired": {
+      "title": "This link has expired",
+      "body": "Shared scorecards are only available for a limited time. Ask the person who shared it for a new link."
+    },
+    "limit": {
+      "title": "This link has reached its view limit",
+      "body": "Ask the person who shared it for a new link."
+    },
+    "unavailable": {
+      "title": "This scorecard didn't load",
+      "body": "Something went wrong on our side. Try again in a moment."
+    },
+    "retry": "Try again"
+  }
+}

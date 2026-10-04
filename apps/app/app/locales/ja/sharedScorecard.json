@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "候補者",
+    "fresher": "未経験",
+    "matchedTo": "{{job}} にマッチ",
+    "experience_one": "経験 {{count}} 年",
+    "experience_other": "経験 {{count}} 年"
+  },
+  "metrics": {
+    "clarity": "明瞭さ",
+    "relevance": "関連性",
+    "confidence": "自信"
+  },
+  "types": {
+    "coding": "コーディング"
+  },
+  "insights": {
+    "strengths": "強み",
+    "recommendations": "推奨事項"
+  },
+  "profile": {
+    "skills": "スキル",
+    "experience": "経験",
+    "education": "学歴",
+    "projects": "プロジェクト",
+    "resume": "履歴書"
+  },
+  "answers": {
+    "expandAll": "すべて展開",
+    "collapseAll": "すべて折りたたむ",
+    "types": {
+      "coding": "コーディング"
+    }
+  },
+  "toc": {
+    "communication": "コミュニケーション",
+    "insights": "インサイト",
+    "profile": "プロフィール"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "उम्मीदवार",
+    "fresher": "फ्रेशर",
+    "matchedTo": "{{job}} से मिलान किया गया",
+    "experience_one": "{{count}} वर्ष का अनुभव",
+    "experience_other": "{{count}} वर्षों का अनुभव"
+  },
+  "metrics": {
+    "clarity": "स्पष्टता",
+    "relevance": "प्रासंगिकता",
+    "confidence": "आत्मविश्वास"
+  },
+  "types": {
+    "coding": "कोडिंग"
+  },
+  "insights": {
+    "strengths": "ताकतें",
+    "recommendations": "सिफारिशें"
+  },
+  "profile": {
+    "skills": "कौशल",
+    "experience": "अनुभव",
+    "education": "शिक्षा",
+    "projects": "प्रोजेक्ट्स",
+    "resume": "रिज्यूमे"
+  },
+  "answers": {
+    "expandAll": "सभी विस्तृत करें",
+    "collapseAll": "सभी संक्षिप्त करें",
+    "types": {
+      "coding": "कोडिंग"
+    }
+  },
+  "toc": {
+    "communication": "संचार",
+    "insights": "इनसाइट्स",
+    "profile": "प्रोफ़ाइल"
+  }
+}

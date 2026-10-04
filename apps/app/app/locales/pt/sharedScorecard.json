@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "Candidato",
+    "fresher": "Sem experiência",
+    "matchedTo": "Correspondente a {{job}}",
+    "experience_one": "{{count}} ano de experiência",
+    "experience_other": "{{count}} anos de experiência"
+  },
+  "metrics": {
+    "clarity": "Clareza",
+    "relevance": "Relevância",
+    "confidence": "Confiança"
+  },
+  "types": {
+    "coding": "Programação"
+  },
+  "insights": {
+    "strengths": "Pontos Fortes",
+    "recommendations": "Recomendações"
+  },
+  "profile": {
+    "skills": "Competências",
+    "experience": "Experiência",
+    "education": "Formação",
+    "projects": "Projetos",
+    "resume": "Currículo"
+  },
+  "answers": {
+    "expandAll": "Expandir tudo",
+    "collapseAll": "Recolher tudo",
+    "types": {
+      "coding": "Programação"
+    }
+  },
+  "toc": {
+    "communication": "Comunicação",
+    "insights": "Análises",
+    "profile": "Perfil"
+  }
+}

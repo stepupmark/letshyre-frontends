@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "Kandidaat",
+    "fresher": "Starter",
+    "matchedTo": "Gematcht met {{job}}",
+    "experience_one": "{{count}} jaar ervaring",
+    "experience_other": "{{count}} jaar ervaring"
+  },
+  "metrics": {
+    "clarity": "Duidelijkheid",
+    "relevance": "Relevantie",
+    "confidence": "Zelfvertrouwen"
+  },
+  "types": {
+    "coding": "Codering"
+  },
+  "insights": {
+    "strengths": "Sterke punten",
+    "recommendations": "Aanbevelingen"
+  },
+  "profile": {
+    "skills": "Vaardigheden",
+    "experience": "Ervaring",
+    "education": "Opleiding",
+    "projects": "Projecten",
+    "resume": "Cv"
+  },
+  "answers": {
+    "expandAll": "Alles uitklappen",
+    "collapseAll": "Alles inklappen",
+    "types": {
+      "coding": "Codering"
+    }
+  },
+  "toc": {
+    "communication": "Communicatie",
+    "insights": "Inzichten",
+    "profile": "Profiel"
+  }
+}

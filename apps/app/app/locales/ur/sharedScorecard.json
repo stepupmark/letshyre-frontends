@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "امیدوار",
+    "fresher": "فریشر",
+    "matchedTo": "{{job}} سے مماثل",
+    "experience_one": "{{count}} سال کا تجربہ",
+    "experience_other": "{{count}} سال کا تجربہ"
+  },
+  "metrics": {
+    "clarity": "وضاحت",
+    "relevance": "مطابقت",
+    "confidence": "اعتماد"
+  },
+  "types": {
+    "coding": "کوڈنگ"
+  },
+  "insights": {
+    "strengths": "خوبیاں",
+    "recommendations": "سفارشات"
+  },
+  "profile": {
+    "skills": "مہارتیں",
+    "experience": "تجربہ",
+    "education": "تعلیم",
+    "projects": "پروجیکٹس",
+    "resume": "ریزیومے"
+  },
+  "answers": {
+    "expandAll": "سب کو پھیلائیں",
+    "collapseAll": "سب کو سمیٹیں",
+    "types": {
+      "coding": "کوڈنگ"
+    }
+  },
+  "toc": {
+    "communication": "کمیونیکیشن",
+    "insights": "بصیرتیں",
+    "profile": "پروفائل"
+  }
+}

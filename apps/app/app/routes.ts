@@ -21,6 +21,9 @@ const lab =
       ])
 
 export default [
+  layout("layouts/public-layout.tsx", [
+    route("shared-scorecard/:shareId", "routes/shared-scorecard.tsx"),
+  ]),
   layout("layouts/employer-layout.tsx", [
     ...prefix("employer", [
       index("routes/employer/dashboard.tsx", { id: "employer-home" }),

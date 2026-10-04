@@ -4,8 +4,18 @@ import { StatusBadge } from "@/components/status-badge"
 import { bandOf, toneOf } from "@/lib/score-band"
 
 /** AI scores as a band, never as a precise-looking number. */
-export function ScoreBand({ score }: { score: number }) {
+export function ScoreBand({
+  score,
+  of = "match",
+}: {
+  score: number
+  of?: "match" | "interview"
+}) {
   const { t } = useTranslation("common")
   const band = bandOf(score)
-  return <StatusBadge tone={toneOf[band]}>{t(`band.${band}`)}</StatusBadge>
+  return (
+    <StatusBadge tone={toneOf[band]}>
+      {of === "match" ? t(`band.${band}`) : t(`interviewBand.${band}`)}
+    </StatusBadge>
+  )
 }

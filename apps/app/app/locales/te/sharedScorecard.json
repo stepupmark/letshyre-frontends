@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "అభ్యర్థి",
+    "fresher": "నూతన పట్టభద్రుడు",
+    "matchedTo": "{{job}}తో మ్యాచ్ చేయబడింది",
+    "experience_one": "{{count}} సంవత్సరం అనుభవం",
+    "experience_other": "{{count}} సంవత్సరాల అనుభవం"
+  },
+  "metrics": {
+    "clarity": "స్పష్టత",
+    "relevance": "సంబంధితత",
+    "confidence": "ఆత్మవిశ్వాసం"
+  },
+  "types": {
+    "coding": "కోడింగ్"
+  },
+  "insights": {
+    "strengths": "బలాలు",
+    "recommendations": "సిఫార్సులు"
+  },
+  "profile": {
+    "skills": "నైపుణ్యాలు",
+    "experience": "అనుభవం",
+    "education": "విద్య",
+    "projects": "ప్రాజెక్టులు",
+    "resume": "రెజ్యూమే"
+  },
+  "answers": {
+    "expandAll": "అన్నీ విస్తరించండి",
+    "collapseAll": "అన్నీ కుదించండి",
+    "types": {
+      "coding": "కోడింగ్"
+    }
+  },
+  "toc": {
+    "communication": "కమ్యూనికేషన్",
+    "insights": "ఇన్‌సైట్‌లు",
+    "profile": "ప్రొఫైల్"
+  }
+}

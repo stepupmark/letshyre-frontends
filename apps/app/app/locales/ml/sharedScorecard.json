@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "സ്ഥാനാർത്ഥി",
+    "fresher": "ഫ്രെഷർ",
+    "matchedTo": "{{job}} ഉമായി പൊരുത്തപ്പെടുന്നു",
+    "experience_one": "{{count}} വർഷത്തെ പരിചയം",
+    "experience_other": "{{count}} വർഷത്തെ പരിചയം"
+  },
+  "metrics": {
+    "clarity": "വ്യക്തത",
+    "relevance": "പ്രസക്തി",
+    "confidence": "ആത്മവിശ്വാസം"
+  },
+  "types": {
+    "coding": "കോഡിംഗ്"
+  },
+  "insights": {
+    "strengths": "ശക്തികൾ",
+    "recommendations": "ശുപാർശകൾ"
+  },
+  "profile": {
+    "skills": "കഴിവുകൾ",
+    "experience": "പരിചയം",
+    "education": "വിദ്യാഭ്യാസം",
+    "projects": "പ്രോജക്ടുകൾ",
+    "resume": "റെസ്യൂമെ"
+  },
+  "answers": {
+    "expandAll": "എല്ലാം വികസിപ്പിക്കുക",
+    "collapseAll": "എല്ലാം ചുരുക്കുക",
+    "types": {
+      "coding": "കോഡിംഗ്"
+    }
+  },
+  "toc": {
+    "communication": "ആശയവിനിമയം",
+    "insights": "ഉൾക്കാഴ്ചകൾ",
+    "profile": "പ്രൊഫൈൽ"
+  }
+}

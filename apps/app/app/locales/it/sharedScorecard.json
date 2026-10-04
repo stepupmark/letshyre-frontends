@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "Candidato",
+    "fresher": "Neolaureato",
+    "matchedTo": "Abbinato a {{job}}",
+    "experience_one": "{{count}} anno di esperienza",
+    "experience_other": "{{count}} anni di esperienza"
+  },
+  "metrics": {
+    "clarity": "Chiarezza",
+    "relevance": "Pertinenza",
+    "confidence": "Sicurezza"
+  },
+  "types": {
+    "coding": "Programmazione"
+  },
+  "insights": {
+    "strengths": "Punti di Forza",
+    "recommendations": "Raccomandazioni"
+  },
+  "profile": {
+    "skills": "Competenze",
+    "experience": "Esperienza",
+    "education": "Istruzione",
+    "projects": "Progetti",
+    "resume": "Curriculum"
+  },
+  "answers": {
+    "expandAll": "Espandi tutto",
+    "collapseAll": "Comprimi tutto",
+    "types": {
+      "coding": "Programmazione"
+    }
+  },
+  "toc": {
+    "communication": "Comunicazione",
+    "insights": "Approfondimenti",
+    "profile": "Profilo"
+  }
+}

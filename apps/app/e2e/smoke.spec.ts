@@ -1,22 +1,6 @@
 import AxeBuilder from "@axe-core/playwright"
-import type { Page } from "@playwright/test"
 
-import { expect, test } from "./fixtures"
-
-// fails the test on any console error, uncaught error or CSP violation
-function watch(page: Page) {
-  const problems: string[] = []
-  page.on("pageerror", (e) => problems.push(e.message))
-  page.on("console", (m) => {
-    if (m.type() === "error") problems.push(m.text())
-  })
-  void page.addInitScript(() => {
-    document.addEventListener("securitypolicyviolation", (e) => {
-      console.error(`CSP: ${e.violatedDirective} ${e.blockedURI}`)
-    })
-  })
-  return problems
-}
+import { expect, test, watch } from "./fixtures"
 
 test("the employer shell renders under the production CSP", async ({
   page,

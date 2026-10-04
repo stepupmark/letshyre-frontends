@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "வேட்பாளர்",
+    "fresher": "புதியவர்",
+    "matchedTo": "{{job}}க்கு பொருந்தியது",
+    "experience_one": "{{count}} ஆண்டு அனுபவம்",
+    "experience_other": "{{count}} ஆண்டுகள் அனுபவம்"
+  },
+  "metrics": {
+    "clarity": "தெளிவு",
+    "relevance": "தொடர்புடைமை",
+    "confidence": "நம்பிக்கை"
+  },
+  "types": {
+    "coding": "குறியீட்டு"
+  },
+  "insights": {
+    "strengths": "பலம்",
+    "recommendations": "பரிந்துரைகள்"
+  },
+  "profile": {
+    "skills": "திறன்கள்",
+    "experience": "அனுபவம்",
+    "education": "கல்வி",
+    "projects": "திட்டங்கள்",
+    "resume": "ரெஸ்யூம்"
+  },
+  "answers": {
+    "expandAll": "அனைத்தையும் விரிவாக்கு",
+    "collapseAll": "அனைத்தையும் சுருக்கு",
+    "types": {
+      "coding": "குறியீட்டு"
+    }
+  },
+  "toc": {
+    "communication": "தொடர்பு",
+    "insights": "நுண்ணறிவுகள்",
+    "profile": "சுயவிவரம்"
+  }
+}

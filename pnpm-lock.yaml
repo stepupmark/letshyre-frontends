@@ -112,6 +112,9 @@ importers:
       '@tanstack/react-table':
         specifier: ^9.2.4
         version: 9.2.4(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@workspace/api':
+        specifier: workspace:*
+        version: link:../../packages/api
       '@workspace/auth':
         specifier: workspace:*
         version: link:../../packages/auth

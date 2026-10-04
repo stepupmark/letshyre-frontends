@@ -77,6 +77,11 @@
     "partial": "Partial match",
     "low": "Low match"
   },
+  "interviewBand": {
+    "strong": "Strong interview",
+    "partial": "Mixed interview",
+    "low": "Weak interview"
+  },
   "detail": {
     "previous": "Previous",
     "next": "Next",

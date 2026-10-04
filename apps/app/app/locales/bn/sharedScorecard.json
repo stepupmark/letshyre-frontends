@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "প্রার্থী",
+    "fresher": "ফ্রেশার",
+    "matchedTo": "{{job}} এর সাথে ম্যাচ করা হয়েছে",
+    "experience_one": "{{count}} বছরের অভিজ্ঞতা",
+    "experience_other": "{{count}} বছরের অভিজ্ঞতা"
+  },
+  "metrics": {
+    "clarity": "স্পষ্টতা",
+    "relevance": "প্রাসঙ্গিকতা",
+    "confidence": "আত্মবিশ্বাস"
+  },
+  "types": {
+    "coding": "কোডিং"
+  },
+  "insights": {
+    "strengths": "শক্তিশালী দিক",
+    "recommendations": "সুপারিশ"
+  },
+  "profile": {
+    "skills": "দক্ষতা",
+    "experience": "অভিজ্ঞতা",
+    "education": "শিক্ষা",
+    "projects": "প্রজেক্ট",
+    "resume": "রিজিউমি"
+  },
+  "answers": {
+    "expandAll": "সব বিস্তৃত করুন",
+    "collapseAll": "সব সংকুচিত করুন",
+    "types": {
+      "coding": "কোডিং"
+    }
+  },
+  "toc": {
+    "communication": "যোগাযোগ",
+    "insights": "ইনসাইটস",
+    "profile": "প্রোফাইল"
+  }
+}

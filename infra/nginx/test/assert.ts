@@ -184,6 +184,16 @@ for (const path of [
   )
 }
 
+const shared = await get("/shared-scorecard/a1b2c3d4e5f6")
+check(
+  shared.status === 200 && header(shared, "referrer-policy") === "no-referrer",
+  "shared scorecards send no referrer"
+)
+check(
+  header(home, "referrer-policy") === "strict-origin-when-cross-origin",
+  "other pages keep the default referrer policy"
+)
+
 const legacyFile = await get("/ai-Interview-thumbnail.webp")
 check(legacyFile.status === 200, "legacy public files still resolve")
 

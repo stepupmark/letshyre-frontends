@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "Kandidat",
+    "fresher": "Fresh Graduate",
+    "matchedTo": "Cocok dengan {{job}}",
+    "experience_one": "{{count}} tahun pengalaman",
+    "experience_other": "{{count}} tahun pengalaman"
+  },
+  "metrics": {
+    "clarity": "Kejelasan",
+    "relevance": "Relevansi",
+    "confidence": "Kepercayaan Diri"
+  },
+  "types": {
+    "coding": "Pemrograman"
+  },
+  "insights": {
+    "strengths": "Kekuatan",
+    "recommendations": "Rekomendasi"
+  },
+  "profile": {
+    "skills": "Keterampilan",
+    "experience": "Pengalaman",
+    "education": "Pendidikan",
+    "projects": "Proyek",
+    "resume": "Resume"
+  },
+  "answers": {
+    "expandAll": "Perluas semua",
+    "collapseAll": "Ciutkan semua",
+    "types": {
+      "coding": "Pemrograman"
+    }
+  },
+  "toc": {
+    "communication": "Komunikasi",
+    "insights": "Wawasan",
+    "profile": "Profil"
+  }
+}

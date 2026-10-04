@@ -1,0 +1,107 @@
+{
+  "success": true,
+  "data": {
+    "shared_by_company_name": "Acme Labs",
+    "candidate_name": "Asha Rao",
+    "candidate_role": "Frontend Developer",
+    "candidate_profile_photo": null,
+    "candidate_location": "Hyderabad",
+    "candidate_total_experience_years": 4,
+    "matched_job_title": "Senior React Developer",
+    "overall_score": 78.4,
+    "interview_video": null,
+    "ai_match": {
+      "ai_matching_score": 82,
+      "role_match_score": 80,
+      "skills_match_score": "76",
+      "rationale": "Four years of React with production TypeScript; no React Native experience, which the role lists as a plus."
+    },
+    "category_scores": {
+      "comm_metrics": {
+        "clarity": 81,
+        "relevance": 77,
+        "confidence": 72,
+        "depth_of_thought": 69,
+        "key_concept_coverage": 74
+      },
+      "section_summary": {
+        "mcq": { "count": 2, "correct": 1, "section_score": 50 },
+        "coding": { "count": 1, "correct": 1, "section_score": 88 },
+        "audio": { "count": 1, "correct": 0, "section_score": 76 },
+        "typing": { "count": 0, "correct": 0, "section_score": 0 }
+      },
+      "strengths": [
+        "Explains trade-offs between state libraries clearly",
+        "Writes small, testable functions"
+      ],
+      "areas_for_improvement": [
+        "Accessibility testing beyond automated checks"
+      ],
+      "recommendations": [
+        "Ask about a time they shipped under a hard deadline"
+      ],
+      "question_breakdown": [
+        {
+          "type": "MCQ",
+          "question_text": "Which hook memoises a computed value?",
+          "options": ["useMemo", "useRef", "useEffect"],
+          "answer_provided": "useMemo",
+          "correct_answer": "useMemo",
+          "is_correct": true
+        },
+        {
+          "type": "MCQ",
+          "question_text": "What does React.StrictMode do in production?",
+          "options": ["Nothing", "Double renders"],
+          "answer_provided": "Double renders",
+          "correct_answer": "Nothing",
+          "is_correct": false
+        },
+        {
+          "type": "CODING",
+          "question_text": "## Debounce\n\nWrite `debounce(fn, ms)` that:\n\n- delays calls by `ms`\n- keeps only the **last** call\n\n```js\nconst save = debounce(post, 300)\n```",
+          "answer_provided": "function debounce(fn, ms) {\n  let id\n  return (...args) => {\n    clearTimeout(id)\n    id = setTimeout(() => fn(...args), ms)\n  }\n}",
+          "feedback": "Correct and idiomatic. Doesn't handle `this`, which the task didn't ask for."
+        },
+        {
+          "type": "AUDIO",
+          "question_text": "Tell us about a performance problem you fixed.",
+          "candidate_audio_file_url": null,
+          "is_dummy_audio": false,
+          "feedback": "Clear example with numbers before and after."
+        },
+        {
+          "type": "AUDIO",
+          "question_text": "Why do you want this role?",
+          "is_dummy_audio": true
+        }
+      ]
+    },
+    "candidate_skills": ["React", "TypeScript", "Testing Library"],
+    "candidate_experience": [
+      {
+        "role": "Frontend Developer",
+        "company": "Brightside",
+        "duration": "2022 – now",
+        "description": "Rebuilt the checkout in React."
+      }
+    ],
+    "candidate_education": [
+      {
+        "institution": "JNTU Hyderabad",
+        "degree": "B.Tech, Computer Science",
+        "duration": "2016 – 2020"
+      }
+    ],
+    "candidate_projects": [],
+    "candidate_certifications": ["AWS Cloud Practitioner"],
+    "candidate_accomplishments": [
+      { "title": "Hackathon winner", "issuer": "DevFest" }
+    ],
+    "candidate_portfolio_links": [
+      "https://github.com/example",
+      "javascript:alert(1)"
+    ],
+    "candidate_resume": "https://cdn.letshyre.ai/resumes/example.pdf"
+  }
+}

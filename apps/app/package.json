@@ -18,6 +18,7 @@
     "@react-router/node": "catalog:",
     "@tanstack/react-query": "^5.104.1",
     "@tanstack/react-table": "^9.2.4",
+    "@workspace/api": "workspace:*",
     "@workspace/auth": "workspace:*",
     "@workspace/blocks": "workspace:*",
     "@workspace/i18n": "workspace:*",

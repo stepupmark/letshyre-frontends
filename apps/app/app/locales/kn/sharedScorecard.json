@@ -1,0 +1,40 @@
+{
+  "header": {
+    "unnamed": "ಅಭ್ಯರ್ಥಿ",
+    "fresher": "ಫ್ರೆಶರ್",
+    "matchedTo": "{{job}} ಗೆ ಹೊಂದಿಕೆಯಾಗಿದೆ",
+    "experience_one": "{{count}} ವರ್ಷದ ಅನುಭವ",
+    "experience_other": "{{count}} ವರ್ಷಗಳ ಅನುಭವ"
+  },
+  "metrics": {
+    "clarity": "ಸ್ಪಷ್ಟತೆ",
+    "relevance": "ಪ್ರಸ್ತುತತೆ",
+    "confidence": "ಆತ್ಮವಿಶ್ವಾಸ"
+  },
+  "types": {
+    "coding": "ಕೋಡಿಂಗ್"
+  },
+  "insights": {
+    "strengths": "ಸಾಮರ್ಥ್ಯಗಳು",
+    "recommendations": "ಶಿಫಾರಸುಗಳು"
+  },
+  "profile": {
+    "skills": "ಕೌಶಲ್ಯಗಳು",
+    "experience": "ಅನುಭವ",
+    "education": "ಶಿಕ್ಷಣ",
+    "projects": "ಯೋಜನೆಗಳು",
+    "resume": "ರೆಸ್ಯೂಮೆ"
+  },
+  "answers": {
+    "expandAll": "ಎಲ್ಲವನ್ನೂ ವಿಸ್ತರಿಸಿ",
+    "collapseAll": "ಎಲ್ಲವನ್ನೂ ಕುಗ್ಗಿಸಿ",
+    "types": {
+      "coding": "ಕೋಡಿಂಗ್"
+    }
+  },
+  "toc": {
+    "communication": "ಸಂವಹನ",
+    "insights": "ಒಳನೋಟಗಳು",
+    "profile": "ಪ್ರೊಫೈಲ್"
+  }
+}

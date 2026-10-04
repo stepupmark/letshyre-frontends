@@ -1,0 +1,42 @@
+{
+  "header": {
+    "unnamed": "Кандидат",
+    "fresher": "Без опыта",
+    "matchedTo": "Соответствует вакансии {{job}}",
+    "experience_one": "{{count}} год опыта",
+    "experience_few": "{{count}} года опыта",
+    "experience_many": "{{count}} лет опыта",
+    "experience_other": "{{count}} лет опыта"
+  },
+  "metrics": {
+    "clarity": "Чёткость",
+    "relevance": "Релевантность",
+    "confidence": "Уверенность"
+  },
+  "types": {
+    "coding": "Программирование"
+  },
+  "insights": {
+    "strengths": "Сильные стороны",
+    "recommendations": "Рекомендации"
+  },
+  "profile": {
+    "skills": "Навыки",
+    "experience": "Опыт работы",
+    "education": "Образование",
+    "projects": "Проекты",
+    "resume": "Резюме"
+  },
+  "answers": {
+    "expandAll": "Развернуть все",
+    "collapseAll": "Свернуть все",
+    "types": {
+      "coding": "Программирование"
+    }
+  },
+  "toc": {
+    "communication": "Коммуникация",
+    "insights": "Итоги",
+    "profile": "Профиль"
+  }
+}

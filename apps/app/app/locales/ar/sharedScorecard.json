@@ -1,0 +1,44 @@
+{
+  "header": {
+    "unnamed": "المرشح",
+    "fresher": "خريج جديد",
+    "matchedTo": "مطابق لوظيفة {{job}}",
+    "experience_zero": "{{count}} سنوات خبرة",
+    "experience_one": "{{count}} سنة خبرة",
+    "experience_two": "سنتي خبرة",
+    "experience_few": "{{count}} سنوات خبرة",
+    "experience_many": "{{count}} سنة خبرة",
+    "experience_other": "{{count}} سنوات خبرة"
+  },
+  "metrics": {
+    "clarity": "الوضوح",
+    "relevance": "الصلة",
+    "confidence": "الثقة"
+  },
+  "types": {
+    "coding": "برمجة"
+  },
+  "insights": {
+    "strengths": "نقاط القوة",
+    "recommendations": "التوصيات"
+  },
+  "profile": {
+    "skills": "المهارات",
+    "experience": "الخبرة",
+    "education": "التعليم",
+    "projects": "المشاريع",
+    "resume": "السيرة الذاتية"
+  },
+  "answers": {
+    "expandAll": "توسيع الكل",
+    "collapseAll": "طي الكل",
+    "types": {
+      "coding": "برمجة"
+    }
+  },
+  "toc": {
+    "communication": "التواصل",
+    "insights": "الرؤى",
+    "profile": "الملف الشخصي"
+  }
+}
