@@ -151,7 +151,7 @@ check(
   `live-routes.json lists ${live.length} route(s), uncached`
 )
 
-for (const path of ["/employer", "/employer/dashboard", "/employee"]) {
+for (const path of ["/employer/release-check"]) {
   check(
     live.some((p) => p.test(path)),
     `${path} is live`
@@ -168,6 +168,8 @@ for (const path of ["/employer", "/employer/dashboard", "/employee"]) {
 
 for (const path of [
   "/get-started",
+  "/employer",
+  "/employer/dashboard",
   "/employer/post-job",
   "/employee/interviews/1",
 ]) {

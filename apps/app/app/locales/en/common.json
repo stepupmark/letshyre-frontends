@@ -81,5 +81,9 @@
     "previous": "Previous",
     "next": "Next",
     "position": "{{current}} of {{total}}"
+  },
+  "releaseCheck": {
+    "title": "New app check",
+    "body": "This page is served by the new app. If you can read this, the release is routed correctly."
   }
 }

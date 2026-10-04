@@ -3,7 +3,8 @@
  * this list to nginx (build/live-routes.map) and to legacy (live-routes.json), so adding
  * or removing a path here moves it in one app release. `:param` matches one segment.
  */
-export const LIVE_ROUTES = ["/employer", "/employer/dashboard", "/employee"]
+// only finished pages go here; the dashboards are placeholders until their slices ship
+export const LIVE_ROUTES = ["/employer/release-check"]
 
 export const routePattern = (route: string) =>
   `^${route.replace(/:[^/]+/g, "[^/]+")}/?$`
