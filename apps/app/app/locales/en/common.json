@@ -1,0 +1,17 @@
+{
+  "appName": "LetsHyre",
+  "nav": {
+    "dashboard": "Dashboard"
+  },
+  "notFound": {
+    "title": "We couldn't find this page",
+    "body": "The link may be old, or the page has moved.",
+    "goHome": "Go to your dashboard"
+  },
+  "error": {
+    "title": "This page didn't load",
+    "body": "Something went wrong on our side. Reload to try again, or contact us if it keeps happening.",
+    "retry": "Try again",
+    "goHome": "Go to your dashboard"
+  }
+}

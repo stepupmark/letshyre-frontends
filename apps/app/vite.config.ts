@@ -1,10 +1,17 @@
 import { reactRouter } from "@react-router/dev/vite"
 import tailwindcss from "@tailwindcss/vite"
-import { defineConfig } from "vite"
+import { defineConfig, loadEnv } from "vite"
 
-export default defineConfig({
-  resolve: { tsconfigPaths: true },
-  plugins: [tailwindcss(), reactRouter()],
-  server: { port: 5175 },
-  preview: { host: "127.0.0.1" },
+import { parseEnv } from "./app/lib/env.schema.ts"
+
+export default defineConfig(({ mode }) => {
+  parseEnv(loadEnv(mode, import.meta.dirname, "VITE_"))
+
+  return {
+    resolve: { tsconfigPaths: true },
+    plugins: [tailwindcss(), reactRouter()],
+    server: { port: 5175 },
+    // "localhost" races ::1 and times out on Windows
+    preview: { host: "127.0.0.1" },
+  }
 })

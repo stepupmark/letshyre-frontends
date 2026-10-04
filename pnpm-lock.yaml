@@ -106,9 +106,15 @@ importers:
       '@react-router/node':
         specifier: 'catalog:'
         version: 8.4.0(react-router@8.4.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(typescript@6.0.3)
+      '@tanstack/react-query':
+        specifier: ^5.104.1
+        version: 5.104.1(react@19.2.8)
       '@workspace/blocks':
         specifier: workspace:*
         version: link:../../packages/blocks
+      '@workspace/i18n':
+        specifier: workspace:*
+        version: link:../../packages/i18n
       '@workspace/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -134,6 +140,12 @@ importers:
         specifier: ^2.0.8
         version: 2.0.8(@types/react@19.3.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
     devDependencies:
+      '@axe-core/playwright':
+        specifier: 'catalog:'
+        version: 4.13.0(playwright-core@1.63.0)
+      '@playwright/test':
+        specifier: 'catalog:'
+        version: 1.63.0
       '@react-router/dev':
         specifier: 'catalog:'
         version: 8.4.0(react-router@8.4.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(typescript@6.0.3)(vite@8.3.2(@types/node@24.19.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))
@@ -158,6 +170,9 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 10.11.0(jiti@2.7.0)
+      i18next:
+        specifier: ^26.4.2
+        version: 26.4.2(typescript@6.0.3)
       jsdom:
         specifier: 'catalog:'
         version: 30.0.1
@@ -173,6 +188,9 @@ importers:
       vitest:
         specifier: 'catalog:'
         version: 5.0.3(@types/node@24.19.1)(@vitest/coverage-v8@5.0.3)(jsdom@30.0.1)(msw@2.15.0(@types/node@24.19.1)(typescript@6.0.3))(vite@8.3.2(@types/node@24.19.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))
+      zod:
+        specifier: 'catalog:'
+        version: 4.6.5
 
   apps/legacy:
     dependencies:
@@ -11799,8 +11817,8 @@ snapshots:
       '@babel/parser': 7.29.7
       eslint: 10.10.0(jiti@2.7.0)
       hermes-parser: 0.25.1
-      zod: 4.5.4
-      zod-validation-error: 4.0.2(zod@4.5.4)
+      zod: 4.6.5
+      zod-validation-error: 4.0.2(zod@4.6.5)
     transitivePeerDependencies:
       - supports-color
 
@@ -11810,8 +11828,8 @@ snapshots:
       '@babel/parser': 7.29.7
       eslint: 10.11.0(jiti@2.7.0)
       hermes-parser: 0.25.1
-      zod: 4.5.4
-      zod-validation-error: 4.0.2(zod@4.5.4)
+      zod: 4.6.5
+      zod-validation-error: 4.0.2(zod@4.6.5)
     transitivePeerDependencies:
       - supports-color
 
@@ -15733,9 +15751,9 @@ snapshots:
     dependencies:
       zod: 3.25.76
 
-  zod-validation-error@4.0.2(zod@4.5.4):
+  zod-validation-error@4.0.2(zod@4.6.5):
     dependencies:
-      zod: 4.5.4
+      zod: 4.6.5
 
   zod@3.25.76: {}
 

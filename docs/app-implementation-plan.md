@@ -348,6 +348,11 @@ Design is done in code, with real data shapes, not in mockups that drift from wh
   `frame-src https://api.razorpay.com`, `connect-src 'self' <api>`, `img-src 'self' data: blob: <media host>`,
   `media-src 'self' blob:`. Motion writes styles through the CSSOM, which `style-src` doesn't block.
 - **Exit:** `pnpm --filter app build` and `dev` work; an empty dashboard route renders; CI runs it.
+- **Done 2026-10-04:** CSP and script helpers moved to `tooling/csp.ts` (marketing policy verified
+  identical on all 171 pages). Initial JS measured at 161 kB gzip, ratchet 170 kB. Media origins come
+  from `VITE_MEDIA_ORIGINS` (default `https://cdn.letshyre.ai`; confirm the real hosts on staging, B1).
+  The client-side `env.ts` arrives with its first user, the API client (5.2). Razorpay origins are
+  verified in the billing slice (6.8).
 
 ### 5.2 `@workspace/api`: what the dashboards need
 

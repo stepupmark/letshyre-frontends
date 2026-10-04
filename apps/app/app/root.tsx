@@ -1,12 +1,20 @@
 import outfitLatin from "@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2?url"
+import { QueryClientProvider } from "@tanstack/react-query"
 import { ThemeProvider } from "@workspace/blocks/theme-provider"
+import { I18nProvider } from "@workspace/i18n/react"
 import { Toaster } from "@workspace/ui/components/sonner"
 import { TooltipProvider } from "@workspace/ui/components/tooltip"
+import { useState } from "react"
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router"
 
 import type { Route } from "./+types/root"
 import { MotionProvider } from "./components/motion/motion-provider"
+import { RouteError } from "./components/route-error"
+import { createQueryClient } from "./lib/query-client"
+import common from "./locales/en/common.json"
 import "./styles/app.css"
+
+const messages = { en: { common } }
 
 export const links: Route.LinksFunction = () => [
   {
@@ -39,14 +47,35 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  const [queryClient] = useState(createQueryClient)
+
   return (
     <ThemeProvider>
-      <MotionProvider>
-        <TooltipProvider>
-          <Outlet />
-          <Toaster position="bottom-center" />
-        </TooltipProvider>
-      </MotionProvider>
+      <I18nProvider lang="en" messages={messages}>
+        <QueryClientProvider client={queryClient}>
+          <MotionProvider>
+            <TooltipProvider>
+              <Outlet />
+              <Toaster position="bottom-center" />
+            </TooltipProvider>
+          </MotionProvider>
+        </QueryClientProvider>
+      </I18nProvider>
     </ThemeProvider>
+  )
+}
+
+// SPA mode renders this into index.html; the page is blank until JS runs
+export function HydrateFallback() {
+  return null
+}
+
+export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+  return (
+    <I18nProvider lang="en" messages={messages}>
+      <main id="main">
+        <RouteError error={error} />
+      </main>
+    </I18nProvider>
   )
 }
