@@ -84,7 +84,7 @@ Lessons from Phases 3–4 that become rules here:
 | D6  | Incremental rollout on `letshyre.ai` (§1.1)?                                                                                                                                                                                          | 🔵 5      |
 | D7  | **One sign-in page for both roles** (`/sign-in`; the API returns the role)? Today there are two (`/employer/sign-in`, `/employee/sign-in`); both would redirect.                                                                      | 6.2       |
 | D8  | Product tour: **recommended: drop the modal tour** (`react-joyride`) for a setup checklist on the dashboard plus one-time contextual tips on shadcn `Popover` (§2.4). Alternative: keep joyride, restyled.                            | 6.3       |
-| D9  | Data tables: add `@tanstack/react-table` (shadcn's `data-table` pattern) for jobs, applicants, candidate pool, invoices, team?                                                                                                        | 5.6       |
+| D9  | ~~Data tables~~ **Settled in 5.6:** `@tanstack/react-table` v9 (shadcn's `data-table` pattern) for jobs, applicants, candidate pool, invoices, team?                                                                                  | 5.6       |
 | D10 | ~~Numerals~~ **Settled in 5.0:** Outfit has tabular figures (`tnum`), measured in the lab; no second font.                                                                                                                            | –         |
 | D11 | **Colour:** the shadcn neutral theme stays as is, no brand accent on `--primary`. Status colours are new tokens (`success`, `warning`, `info`, `danger`) added next to the shadcn ones, because lint blocks palette classes. Confirm? | 🔵 4      |
 | D12 | **UX metrics:** a few first-party product events (task started/completed, step reached) sent to our own backend, so the UX targets in §2.6 can be measured. No third-party analytics. Yes / later / no?                               | 6.2       |
@@ -368,6 +368,9 @@ Today the client has `get` and `post`, enough for marketing. Add:
   (what happened, what's kept, what to do).
 - Pagination envelope helper (`{ count, next, previous, results }`) with a Zod factory.
 - **Exit:** unit tests for each method, multipart, abort, progress, 401 hook.
+- **Done 2026-10-04:** `put`/`patch`/`delete`, FormData bodies, `getBlob`, `xhrUpload` (progress, abort,
+  refresh-and-retry), `refreshAuth` hook (401 → refresh → one retry), DRF `fieldErrors`, `paginated()`,
+  `errorKey()`. Error copy per area (auth messages) moves in with each slice.
 
 ### 5.3 `@workspace/auth`
 
@@ -387,6 +390,10 @@ New package (app and future admin use it; marketing never loads it).
 - `ROLES`, `roleHome()`, `safeNext()` (same-site path check, already proven in legacy tests).
 - **Exit:** ≥ 90% coverage; legacy's `requireAuth.test`, `useAuth.test`, `api.test`,
   `authStorage.test` cases all ported and green.
+- **Done 2026-10-04:** `packages/auth` with the legacy storage keys, single-flight refresh, cross-tab
+  sign-out, `login`/`logout`, `authRedirect`/`guestRedirect` (onboarding gate, billing `?next=`),
+  `safeNext`, `useSession`. Tests cover the money/session-critical paths only. **Deferred to 6.2:**
+  the sign-in dialog over an open form when the session expires; until then it goes to `/`.
 
 ### 5.4 App i18n
 
@@ -400,6 +407,9 @@ New package (app and future admin use it; marketing never loads it).
   namespaces. Copy that is kept verbatim keeps all 18 translations; new copy goes through
   `pnpm i18n:apply` (step 6.13).
 - **Exit:** typed keys for app namespaces; language switcher in the user menu writes the cookie.
+- **Done 2026-10-04:** `lh_locale` → browser → English, limited to locales where every app namespace is
+  complete (computed at build, `__APP_LOCALES__`); per-route `namespaces()` middleware;
+  `pnpm i18n:migrate:app` with `tooling/i18n/key-map.app.json`. Only English ships today, as intended.
 
 ### 5.5 Dashboard shell → 🔵 Gate 5
 
@@ -415,6 +425,10 @@ New package (app and future admin use it; marketing never loads it).
   View Transitions on navigation.
 - **🔵 Gate 5:** you review the shell at 360/768/1280/1920 with one real page (employer dashboard
   attention list) and decide D6 (rollout model).
+- **Done 2026-10-04:** `features/shell` (sidebar per role, crumbs from route `handle`, live credits,
+  Ctrl K, account menu with language and sign-out, `?` shortcuts, skip link, focus on the new `<h1>`).
+  The employer dashboard is still a placeholder; the attention list needs the API (6.3). Nav badges
+  and recent items in Ctrl K arrive with the slices that own the data. JS ratchet raised to 200 kB.
 
 ### 5.6 App building blocks
 
@@ -434,6 +448,10 @@ In `apps/app/app/components/` (app-shared; moves to `@workspace/blocks` only if 
 - `components/motion/`: `AnimatedList` (presence + layout), `AnimatedNumber`, `StepTransition`,
   `ShakeOnError`, all reading the tokens in `lib/motion.ts` and honouring reduced motion.
 - **Exit:** each block has unit + axe tests and a Playwright check on mobile and in RTL.
+- **Done 2026-10-04:** D9 settled on `@tanstack/react-table` v9. `DataTable`, `DetailSheet` +
+  `useDetailParam`, `FileDropzone`, `Wizard` + `lib/draft`, `ConfirmDialog`, `undoToast`, `EmptyState`,
+  `QueryState`, `ScoreBand`, `CopyButton`, motion helpers. All on `/_lab/blocks`. Unit tests only for
+  the logic that can lose data (URL params, file checks, drafts); axe runs per page in each slice.
 
 ### 5.7 Test harness
 
@@ -448,6 +466,9 @@ In `apps/app/app/components/` (app-shared; moves to `@workspace/blocks` only if 
   `reducedMotion: "reduce"` so animations never cause flaky diffs. A separate check runs with motion on
   and asserts no layout shift and no console errors.
 - **Exit:** a sample test signs in as each role and lands on its home.
+- **Done 2026-10-04:** `e2e/fixtures.ts` (auto API mock that fails on unmocked calls, `signInAs`),
+  `e2e/api/*.json` fixtures, `contracts.test.ts`, role landing test, `pnpm --filter app fixtures:capture`.
+  Fixtures are hand-written until staging (B1); MSW waits for the first service that needs it.
 
 ### 5.8 Rollout infrastructure (incremental model)
 
@@ -463,6 +484,10 @@ In `apps/app/app/components/` (app-shared; moves to `@workspace/blocks` only if 
   does a full page load to that URL instead, so nginx hands it to the new app.
 - Docker nginx test extended: each live route serves the new app, each other route the legacy shell.
 - **Exit:** a dummy live route switches between apps by editing one line; tests cover both states.
+- **Done 2026-10-04:** build writes `live-routes.map` and `client/live-routes.json`; nginx serves live
+  paths from the app (own headers, CSP), assets fall back marketing → app → legacy; legacy root
+  middleware hands its own links to live routes over. Only `/employer/release-check` is live until
+  6.1. The Docker nginx test needs CI (no Docker on this machine).
 
 ---
 
