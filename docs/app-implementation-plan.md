@@ -101,6 +101,7 @@ Lessons from Phases 3–4 that become rules here:
 | B6  | Nice to have, for the UX targets: dashboard "needs attention" counts in one call, and a job-draft endpoint (autosave). Workarounds exist for both    | 6.3, 6.5  | Fewer requests, drafts across devices              |
 | B7  | Applicant status (shortlist, reject) per job, and search, sort and filters on the jobs list. Until then applicants are reviewed, not triaged         | 6.5       | Bulk applicant actions, job filter chips           |
 | B8  | Per-question start times in the interview recording on the scorecard response, so evidence can seek the video                                        | 6.7       | Evidence linked to the recording                   |
+| B9  | Team invites by email (pending, resend, revoke) and seat limits on plans, instead of admin-set passwords                                             | 6.9       | Invite flow, seat count before inviting            |
 
 ---
 
@@ -656,6 +657,17 @@ Invite and remove team members, seat limits from the plan shown before inviting,
 resendable, shared links list and revoke (with undo while the toast is open), company profile inline
 edit with logo upload and crop preview.
 
+- **Done 2026-10-04:** `/employer/your-team` lists members with their status; add (name, email,
+  a password the admin sets or generates, joined as a recruiter as in legacy), edit, put on hold
+  or make active with Undo, and remove after a confirm. `/employer/shared-links` is a paged table
+  with status (active, revoked, expired, view limit reached), copy, change limits (more days, more
+  views), revoke with Undo and delete after a confirm. `/employer/profile` shows company details,
+  account and registration; company details edit in place (official email, industry, LinkedIn,
+  address, about, logo with a square preview at both sizes) in one multipart PATCH, as legacy.
+  Registration numbers stay read-only, since they were checked at verification. **Needs B9:**
+  invites by email, pending and resendable invites, and seat limits from the plan; the API only
+  creates accounts with a password, and plans don't carry seats.
+
 ### 6.10 Employee onboarding wizard
 
 Identity, **photo via camera** (`getUserMedia`, framing guide, retake, upload fallback and clear
@@ -747,5 +759,6 @@ Preconditions: every app route is in `live-routes.ts`, legacy serves nothing, B4
 | B6: attention counts, job drafts (optional)          | 6.3, 6.5 |
 | B7: applicant status, jobs list filters              | 6.5      |
 | B8: recording timestamps per question                | 6.7      |
+| B9: team invites and plan seat limits                | 6.9      |
 | Native translation review per locale                 | 6.13     |
 | B4 (+ B5): CORS and refresh cookie for the subdomain | 7.1      |
