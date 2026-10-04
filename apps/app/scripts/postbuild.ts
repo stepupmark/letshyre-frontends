@@ -18,8 +18,9 @@ import { parseEnv } from "../app/lib/env.schema.ts"
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)))
 const CLIENT = join(ROOT, "build/client")
 const INDEX = join(CLIENT, "index.html")
-// measured 161 kB at 5.1; a ratchet, raise it only on purpose
-const JS_BUDGET = 170 * 1024
+// 161 kB at 5.1, 195 kB at 5.5 once the shell shared UI code with the root; a ratchet,
+// raise it only on purpose
+const JS_BUDGET = 200 * 1024
 
 const env = parseEnv(loadEnv("production", ROOT, "VITE_"))
 const api = new URL(env.VITE_API_BASE_URL).origin

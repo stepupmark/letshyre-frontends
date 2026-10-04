@@ -21,7 +21,13 @@ const lab =
 
 export default [
   layout("layouts/employer-layout.tsx", [
-    route("employer/dashboard", "routes/employer/dashboard.tsx"),
+    ...prefix("employer", [
+      index("routes/employer/dashboard.tsx", { id: "employer-home" }),
+      route("dashboard", "routes/employer/dashboard.tsx"),
+    ]),
+  ]),
+  layout("layouts/employee-layout.tsx", [
+    ...prefix("employee", [index("routes/employee/find-jobs.tsx")]),
   ]),
   ...lab,
 ] satisfies RouteConfig

@@ -1,4 +1,5 @@
 import { readdirSync } from "node:fs"
+import { join } from "node:path"
 
 import { reactRouter } from "@react-router/dev/vite"
 import tailwindcss from "@tailwindcss/vite"
@@ -7,11 +8,13 @@ import { defineConfig, loadEnv } from "vite"
 
 import { parseEnv } from "./app/lib/env.schema.ts"
 
-const LOCALES_DIR = "app/locales"
+const LOCALES_DIR = join(import.meta.dirname, "app/locales")
 
 // a locale ships only when every app namespace is complete, so no screen mixes languages
 function readyLocales() {
-  const namespaces = readdirSync(`${LOCALES_DIR}/en`).map((f) => f.slice(0, -5))
+  const namespaces = readdirSync(join(LOCALES_DIR, "en")).map((f) =>
+    f.slice(0, -5)
+  )
   return computeReadiness({
     localesDir: LOCALES_DIR,
     pages: { app: namespaces },

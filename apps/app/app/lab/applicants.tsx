@@ -448,10 +448,10 @@ export default function Applicants() {
           </ul>
 
           <p className="hidden items-center gap-1.5 text-xs text-muted-foreground md:flex">
-            <Kbd>J</Kbd>
-            <Kbd>K</Kbd>
+            <Kbd className="text-foreground">J</Kbd>
+            <Kbd className="text-foreground">K</Kbd>
             to move,
-            <Kbd>Enter</Kbd>
+            <Kbd className="text-foreground">Enter</Kbd>
             to open
           </p>
         </>

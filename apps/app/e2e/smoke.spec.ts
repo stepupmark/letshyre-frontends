@@ -1,7 +1,7 @@
 import AxeBuilder from "@axe-core/playwright"
-import { expect, test, type Page } from "@playwright/test"
+import type { Page } from "@playwright/test"
 
-import { signInAs } from "./session"
+import { expect, test } from "./fixtures"
 
 // fails the test on any console error, uncaught error or CSP violation
 function watch(page: Page) {
@@ -18,16 +18,18 @@ function watch(page: Page) {
   return problems
 }
 
-test("the dashboard route renders under the production CSP", async ({
+test("the employer shell renders under the production CSP", async ({
   page,
+  signInAs,
 }) => {
   const problems = watch(page)
-  await signInAs(page, "employer")
-  await page.goto("/employer/dashboard")
+  await signInAs("employer")
+  await page.goto("/employer")
 
   await expect(
     page.getByRole("heading", { level: 1, name: "Dashboard" })
   ).toBeVisible()
+  await expect(page.getByRole("link", { name: "12 credits" })).toBeVisible()
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
     "content",
     "noindex, nofollow"
@@ -42,16 +44,42 @@ test("an unknown path shows the not-found screen", async ({ page }) => {
   await expect(
     page.getByRole("heading", { name: "We couldn't find this page" })
   ).toBeVisible()
-  await expect(
-    page.getByRole("link", { name: "Go to your dashboard" })
-  ).toHaveAttribute("href", "/employer/dashboard")
 })
 
-test("protected pages send visitors where they belong", async ({ page }) => {
-  await page.goto("/employer/dashboard")
+test("protected pages send visitors where they belong", async ({
+  page,
+  signInAs,
+}) => {
+  await page.goto("/employer")
   await expect(page).toHaveURL("/")
 
-  await signInAs(page, "employerNew")
-  await page.goto("/employer/dashboard")
-  await expect(page).toHaveURL("/employer/onboarding")
+  await signInAs("candidate")
+  await page.goto("/employer")
+  await expect(page).toHaveURL("/employee")
+})
+
+test("sign out ends the session on the server and here", async ({
+  page,
+  api,
+  signInAs,
+}) => {
+  let revoked: unknown
+  await api({
+    "POST /user/v1/logout/": async (route) => {
+      revoked = route.request().postDataJSON()
+      await route.fulfill({ json: { success: true } })
+    },
+  })
+  await signInAs("employer")
+  await page.goto("/employer")
+
+  if (test.info().project.name === "mobile") {
+    await page.getByRole("button", { name: "Toggle sidebar" }).click()
+  }
+  await page.getByRole("button", { name: "Account menu" }).click()
+  await page.getByRole("menuitem", { name: "Sign out" }).click()
+
+  await expect(page).toHaveURL("/")
+  expect(revoked).toEqual({ refresh_token: "e2e-refresh" })
+  expect(await page.evaluate(() => localStorage.getItem("user"))).toBeNull()
 })

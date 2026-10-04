@@ -27,4 +27,9 @@ export default [
     files: ["app/lab/**"],
     rules: { "i18next/no-literal-string": "off" },
   },
+  {
+    // Playwright fixtures call their callback `use`, which isn't the React hook
+    files: ["e2e/**"],
+    rules: { "react-hooks/rules-of-hooks": "off" },
+  },
 ]

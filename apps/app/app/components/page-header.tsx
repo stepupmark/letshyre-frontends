@@ -12,7 +12,10 @@ export function PageHeader({
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
       <div className="min-w-0">
-        <h1 className="text-2xl font-semibold tracking-tight text-balance">
+        <h1
+          tabIndex={-1}
+          className="text-2xl font-semibold tracking-tight text-balance outline-none"
+        >
           {title}
         </h1>
         {description && (

@@ -1,0 +1,54 @@
+{
+  "skipToContent": "Skip to main content",
+  "loading": "Loading the page",
+  "toggleSidebar": "Toggle sidebar",
+  "navigation": "Main navigation",
+  "groups": {
+    "hiring": "Hiring",
+    "company": "Company",
+    "you": "You",
+    "help": "Help"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "postJob": "Post a job",
+    "jobs": "Jobs",
+    "candidatePool": "Candidate pool",
+    "unlocked": "Unlocked candidates",
+    "team": "Team",
+    "sharedLinks": "Shared links",
+    "billing": "Billing",
+    "findJobs": "Find jobs",
+    "applications": "My applications",
+    "scorecards": "Scorecards",
+    "profile": "Profile",
+    "interviewGuide": "Interview guide",
+    "assistant": "Assistant"
+  },
+  "search": {
+    "button": "Search or jump to…",
+    "shortcut": "Ctrl K",
+    "title": "Search",
+    "description": "Jump to a page or run an action",
+    "empty": "Nothing matches.",
+    "pages": "Pages"
+  },
+  "credits": {
+    "label_one": "{{count}} credit",
+    "label_other": "{{count}} credits",
+    "add": "Add credits"
+  },
+  "user": {
+    "menu": "Account menu",
+    "profile": "Profile",
+    "language": "Language",
+    "shortcuts": "Keyboard shortcuts",
+    "signOut": "Sign out"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "search": "Search and jump to pages",
+    "sidebar": "Show or hide the sidebar",
+    "help": "Show this list"
+  }
+}

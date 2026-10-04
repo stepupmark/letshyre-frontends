@@ -20,6 +20,7 @@ import {
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -198,7 +199,9 @@ function Shell() {
                   <ChevronsUpDown className="ms-auto size-4" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent side="top" align="start" className="w-56">
-                  <DropdownMenuLabel>priya@orbitlabs.in</DropdownMenuLabel>
+                  <DropdownMenuGroup>
+                    <DropdownMenuLabel>priya@orbitlabs.in</DropdownMenuLabel>
+                  </DropdownMenuGroup>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={notInLab}>
                     Profile
@@ -244,7 +247,9 @@ function Shell() {
               <span className="hidden truncate md:inline">
                 {t("nav.search")}
               </span>
-              <Kbd className="ms-auto hidden md:inline-flex">Ctrl K</Kbd>
+              <Kbd className="ms-auto hidden text-foreground md:inline-flex">
+                Ctrl K
+              </Kbd>
             </Button>
             <Button
               variant="ghost"
