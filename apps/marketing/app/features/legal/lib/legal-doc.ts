@@ -1,5 +1,8 @@
 import { z } from "zod"
 
+// parsed in the browser too; avoid the eval probe our CSP blocks (see @workspace/api envelope)
+z.config({ jitless: true })
+
 export type LegalNamespace = "legalTerms" | "legalPolicy" | "legalRefund"
 
 /** Catalog key of each document and when its English text last changed. */

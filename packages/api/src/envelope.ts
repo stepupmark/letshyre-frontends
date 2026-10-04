@@ -2,6 +2,9 @@ import { z } from "zod"
 
 import { HttpError, ResponseShapeError } from "./errors.ts"
 
+// skip zod's new Function() probe, which a CSP without unsafe-eval reports as a violation
+z.config({ jitless: true })
+
 const envelopeSchema = z.object({
   success: z.boolean(),
   data: z.unknown().optional(),

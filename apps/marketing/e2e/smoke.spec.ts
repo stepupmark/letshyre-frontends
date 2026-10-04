@@ -31,6 +31,11 @@ for (const { path, lang } of SITEMAP) {
       if (res.status() >= 400) errors.push(`${res.status()}: ${res.url()}`)
     })
 
+    await page.addInitScript(() => {
+      document.addEventListener("securitypolicyviolation", (event) => {
+        console.error(`CSP: ${event.violatedDirective} ${event.blockedURI}`)
+      })
+    })
     await page.goto(path)
     await page.waitForLoadState("networkidle")
     const html = page.locator("html")
