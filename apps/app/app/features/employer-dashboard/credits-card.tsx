@@ -1,5 +1,4 @@
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { buttonVariants } from "@workspace/ui/components/button"
 import {
   Card,
   CardContent,
@@ -14,6 +13,7 @@ import { Skeleton } from "@workspace/ui/components/skeleton"
 import { AnimatedNumber } from "@/components/animated-number"
 import { AppLink } from "@/components/app-link"
 import { StatusBadge } from "@/components/status-badge"
+import { buttonLink } from "@/lib/button-link"
 
 import { LOW_CREDITS } from "./queries"
 
@@ -60,13 +60,13 @@ export function CreditsCard({
       <CardFooter className="flex gap-2">
         <AppLink
           to="/employer/billing"
-          className={buttonVariants({ className: "flex-1" })}
+          className={buttonLink({ className: "flex-1" })}
         >
           {t("credits.add")}
         </AppLink>
         <AppLink
           to="/employer/invoice"
-          className={buttonVariants({ variant: "ghost" })}
+          className={buttonLink({ variant: "ghost" })}
         >
           {t("credits.invoices")}
         </AppLink>

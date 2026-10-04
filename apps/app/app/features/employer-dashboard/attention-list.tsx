@@ -1,5 +1,4 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { buttonVariants } from "@workspace/ui/components/button"
 import {
   Item,
   ItemActions,
@@ -12,6 +11,7 @@ import {
 import { CircleCheck } from "lucide-react"
 
 import { AppLink } from "@/components/app-link"
+import { buttonLink } from "@/lib/button-link"
 
 import type { AttentionItem } from "./use-attention"
 
@@ -48,7 +48,7 @@ export function AttentionList({ items }: { items: AttentionItem[] }) {
               <ItemActions>
                 <AppLink
                   to={item.to}
-                  className={buttonVariants({ variant: "outline", size: "sm" })}
+                  className={buttonLink({ variant: "outline", size: "sm" })}
                 >
                   {item.action}
                 </AppLink>

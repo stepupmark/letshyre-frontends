@@ -1,5 +1,5 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { Button, buttonVariants } from "@workspace/ui/components/button"
+import { Button } from "@workspace/ui/components/button"
 import {
   Card,
   CardAction,
@@ -13,6 +13,7 @@ import { Check, CircleDashed } from "lucide-react"
 import { useState } from "react"
 
 import { AppLink } from "@/components/app-link"
+import { buttonLink } from "@/lib/button-link"
 
 const KEY = "setup-checklist:v1:hidden"
 
@@ -117,7 +118,7 @@ export function SetupChecklist({
               {step === next && step.to && (
                 <AppLink
                   to={step.to}
-                  className={buttonVariants({
+                  className={buttonLink({
                     size: "sm",
                     className: "shrink-0",
                   })}

@@ -7,10 +7,11 @@ import {
   interviewsSchema,
   unlockedPageSchema,
 } from "@/features/candidate-unlock/api"
+import { profileSchema } from "@/features/candidate/api"
+import { scorecardSchema } from "@/features/candidate/scorecard-schema"
 import { cardsSchema, teamSchema } from "@/features/employer-dashboard/queries"
 import { jobSchema, jobsPageSchema } from "@/features/employer-jobs/api"
 import { matchesSchema } from "@/features/job-matches/api"
-import { sharedScorecardSchema } from "@/features/shared-scorecard/schema"
 import { creditsSchema } from "@/lib/credits"
 import { industriesSchema } from "@/lib/industries"
 import { dataOf } from "@/lib/response"
@@ -18,7 +19,7 @@ import { dataOf } from "@/lib/response"
 // every schema the app parses responses with, against its fixture in e2e/api
 const CONTRACTS: Record<string, z.ZodType> = {
   "payment.v1.employer_credits": creditsSchema,
-  "user.v1.public.shared-candidate": sharedScorecardSchema,
+  "user.v1.public.shared-candidate": scorecardSchema,
   "user.v1.employer_dashboard_cards": cardsSchema,
   "user.v1.employer_team_members": teamSchema,
   "user.v1.industries.list": industriesSchema,
@@ -27,6 +28,9 @@ const CONTRACTS: Record<string, z.ZodType> = {
   "user.v1.employer_job_ai.matching.101": matchesSchema,
   "user.v1.employer_candidate_interviews.5": interviewsSchema,
   "user.v1.employer_unlock_candidate": unlockedPageSchema,
+  "user.v1.employer_unlock_candidate.31": profileSchema,
+  "user.v1.employer_unlock_candidate.31.scorecard": scorecardSchema,
+  "user.v1.candidate_scorecard.9": scorecardSchema,
 }
 
 const fixture = (name: string): unknown =>

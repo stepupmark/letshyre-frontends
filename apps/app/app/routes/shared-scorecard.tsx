@@ -7,18 +7,18 @@ import {
   isShareId,
   LinkUnavailable,
   ReportSkeleton,
-  SharedReport,
+  ScorecardView,
   sharedScorecardQuery,
   shareProblem,
-} from "@/features/shared-scorecard"
+} from "@/features/candidate"
 import { namespaces } from "@/lib/i18n"
 
 import type { Route } from "./+types/shared-scorecard"
 
-export const clientMiddleware = [namespaces(["sharedScorecard"])]
+export const clientMiddleware = [namespaces(["scorecard"])]
 
 export default function SharedScorecard({ params }: Route.ComponentProps) {
-  const { t } = useTranslation(["sharedScorecard", "common"])
+  const { t } = useTranslation(["scorecard", "common"])
   const valid = isShareId(params.shareId)
   const query = useQuery(sharedScorecardQuery(params.shareId))
   const skeleton = useDelayed(valid && query.isPending)
@@ -45,7 +45,7 @@ export default function SharedScorecard({ params }: Route.ComponentProps) {
                 })
               : t("provenance.private")}
           </p>
-          <SharedReport report={report} />
+          <ScorecardView report={report} />
         </div>
       ) : query.isError ? (
         <LinkUnavailable

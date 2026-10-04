@@ -1,7 +1,7 @@
 import { HttpError } from "@workspace/api"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Alert, AlertDescription } from "@workspace/ui/components/alert"
-import { Button, buttonVariants } from "@workspace/ui/components/button"
+import { Button } from "@workspace/ui/components/button"
 import {
   Select,
   SelectContent,
@@ -37,6 +37,7 @@ import { duration, ease } from "@/lib/motion"
 import { safeUrl } from "@/lib/safe-url"
 import { useGo } from "@/lib/navigation"
 import { undoToast } from "@/lib/undo-toast"
+import { buttonLink } from "@/lib/button-link"
 
 import {
   deleteJob,
@@ -68,7 +69,7 @@ export function JobDetail({ jobId }: { jobId: string }) {
         action={
           <AppLink
             to="/employer/view-jobs"
-            className={buttonVariants({ variant: "outline" })}
+            className={buttonLink({ variant: "outline" })}
           >
             {t("detail.back")}
           </AppLink>
@@ -180,7 +181,7 @@ function Loaded({ job }: { job: Job }) {
             !editing && (
               <AppLink
                 to={`/employer/view-jobs/applicants/${job.id}`}
-                className={buttonVariants()}
+                className={buttonLink()}
               >
                 <Users />
                 {t("detail.applicants")}
@@ -248,7 +249,7 @@ function Loaded({ job }: { job: Job }) {
                 href={jdFile}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={buttonVariants({ variant: "outline" })}
+                className={buttonLink({ variant: "outline" })}
               >
                 <FileText />
                 {t("detail.jdFile")}

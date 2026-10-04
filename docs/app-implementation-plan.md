@@ -100,6 +100,7 @@ Lessons from Phases 3–4 that become rules here:
 | B5  | Optional, recommended: **httpOnly refresh-token cookie** with `Domain=.letshyre.ai` ([token-storage.md](./security/token-storage.md))                | Phase 7   | Removes the forced re-login and the XSS token risk |
 | B6  | Nice to have, for the UX targets: dashboard "needs attention" counts in one call, and a job-draft endpoint (autosave). Workarounds exist for both    | 6.3, 6.5  | Fewer requests, drafts across devices              |
 | B7  | Applicant status (shortlist, reject) per job, and search, sort and filters on the jobs list. Until then applicants are reviewed, not triaged         | 6.5       | Bulk applicant actions, job filter chips           |
+| B8  | Per-question start times in the interview recording on the scorecard response, so evidence can seek the video                                        | 6.7       | Evidence linked to the recording                   |
 
 ---
 
@@ -614,6 +615,19 @@ Used by the employer routes (unlocked candidate, applicant) and the employee rou
 composed in routes, so no feature imports another. Evidence linked to recording timestamps, interview
 recording player, share link creation with copy and expiry, print view.
 
+- **Done 2026-10-04:** the 6.1 report moved into `features/candidate` as `ScorecardView` (catalog
+  renamed `sharedScorecard` → `scorecard`) and now serves the shared link,
+  `/employer/employee-score-card` and `/employee/scorecard`. The candidate's copy says "your", drops
+  the recording, the profile and the employer-facing recommendations, as legacy did.
+  `/employer/employee-profile` shows contact details (mailto, tel, copy), background, pay, notice,
+  applications and documents; older profiles that store lists as JSON strings still read. Share
+  (job, expiry up to 30 days, view limit) from the profile, the scorecard and each unlocked row;
+  the link is built on this app's origin, not the API's `share_url`. The recording resumes where
+  the viewer stopped. Also fixed: links styled as outline buttons had lost their border (cva
+  doesn't merge classes; `buttonLink` runs them through `cn`). **Needs B8:** evidence that seeks
+  the recording (no timestamps in the API). Applicant pages still link here only after unlock,
+  since profiles are keyed by the unlock record.
+
 ### 6.8 Billing + invoices
 
 `/employer/billing?checkout=<key>` (contract from Phase 4), plan comparison, top-ups, Razorpay Checkout
@@ -718,5 +732,6 @@ Preconditions: every app route is in `live-routes.ts`, legacy serves nothing, B4
 | B3: Conversions API                                  | 6.2, 6.8 |
 | B6: attention counts, job drafts (optional)          | 6.3, 6.5 |
 | B7: applicant status, jobs list filters              | 6.5      |
+| B8: recording timestamps per question                | 6.7      |
 | Native translation review per locale                 | 6.13     |
 | B4 (+ B5): CORS and refresh cookie for the subdomain | 7.1      |

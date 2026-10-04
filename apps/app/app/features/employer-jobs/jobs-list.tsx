@@ -1,5 +1,5 @@
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { Button, buttonVariants } from "@workspace/ui/components/button"
+import { Button } from "@workspace/ui/components/button"
 import { Tabs, TabsList, TabsTrigger } from "@workspace/ui/components/tabs"
 import {
   keepPreviousData,
@@ -19,6 +19,7 @@ import { StatusBadge } from "@/components/status-badge"
 import type { DataTableColumn } from "@/lib/data-table-features"
 import { readTableParams, writeTableParams } from "@/lib/table-params"
 import { undoToast } from "@/lib/undo-toast"
+import { buttonLink } from "@/lib/button-link"
 
 import {
   JOB_TABS,
@@ -231,7 +232,7 @@ export function JobsList() {
             title={t("list.emptyTitle")}
             description={t("list.emptyBody")}
             action={
-              <AppLink to="/employer/post-job" className={buttonVariants()}>
+              <AppLink to="/employer/post-job" className={buttonLink()}>
                 <Plus />
                 {t("list.postJob")}
               </AppLink>

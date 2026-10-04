@@ -4,7 +4,7 @@ import { queryOptions } from "@tanstack/react-query"
 import { api } from "@/lib/api"
 import { dataOf } from "@/lib/response"
 
-import { sharedScorecardSchema, type SharedScorecard } from "./schema"
+import { scorecardSchema, type Scorecard } from "./scorecard-schema"
 
 export const isShareId = (id: string | undefined): id is string =>
   typeof id === "string" && /^[\w-]{8,64}$/.test(id)
@@ -13,11 +13,11 @@ const storageKey = (id: string) => `shared-scorecard:${id}`
 
 // Each open of a link spends one of its limited views, so a refresh in the same
 // tab replays the copy it already has instead of asking again.
-function recall(id: string): SharedScorecard | undefined {
+function recall(id: string): Scorecard | undefined {
   try {
     const raw = sessionStorage.getItem(storageKey(id))
     if (!raw) return undefined
-    const parsed = sharedScorecardSchema.safeParse(JSON.parse(raw))
+    const parsed = scorecardSchema.safeParse(JSON.parse(raw))
     return parsed.success ? parsed.data : undefined
   } catch {
     return undefined
@@ -39,7 +39,7 @@ export const sharedScorecardQuery = (id: string) =>
       const body = dataOf(
         await api.get(`user/v1/public/shared-candidate/${id}`, { auth: false })
       )
-      const report = sharedScorecardSchema.parse(body)
+      const report = scorecardSchema.parse(body)
       remember(id, body)
       return report
     },

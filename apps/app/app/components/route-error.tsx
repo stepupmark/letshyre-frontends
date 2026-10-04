@@ -1,9 +1,11 @@
 import { ErrorScreen, NotFoundScreen } from "@workspace/blocks/error-screen"
 import { useTranslation } from "@workspace/i18n/react"
-import { Button, buttonVariants } from "@workspace/ui/components/button"
+import { Button } from "@workspace/ui/components/button"
 import { isRouteErrorResponse, Link } from "react-router"
 
 import { errorId } from "./error-id"
+
+import { buttonLink } from "@/lib/button-link"
 
 const HOME = "/employer/dashboard"
 
@@ -19,7 +21,7 @@ export function RouteError({ error }: { error: unknown }) {
           title={t("notFound.title")}
           description={t("notFound.body")}
         >
-          <Link to={HOME} className={buttonVariants({ size: "lg" })}>
+          <Link to={HOME} className={buttonLink({ size: "lg" })}>
             {t("notFound.goHome")}
           </Link>
         </NotFoundScreen>
@@ -55,7 +57,7 @@ export function RouteError({ error }: { error: unknown }) {
         </Button>
         <Link
           to={HOME}
-          className={buttonVariants({ size: "lg", variant: "outline" })}
+          className={buttonLink({ size: "lg", variant: "outline" })}
         >
           {t("error.goHome")}
         </Link>

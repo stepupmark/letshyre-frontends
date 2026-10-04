@@ -35,7 +35,10 @@ import { ScoreBand } from "@/components/score-band"
 import { StatusBadge } from "@/components/status-badge"
 import { safeUrl } from "@/lib/safe-url"
 
-import type { Question, SharedScorecard } from "./schema"
+import { Recording } from "./recording"
+import type { Question, Scorecard } from "./scorecard-schema"
+
+export type Viewer = "employer" | "candidate"
 
 const MCQ = new Set(["MCQ", "MCQ_PSEUDOCODE", "PSEUDOCODE_MCQ"])
 // these arrive as Markdown problem statements, too long for the trigger line
@@ -79,15 +82,26 @@ function answered(questions: Question[]) {
 const hasItems = <T,>(list: T[] | null | undefined): list is T[] =>
   Array.isArray(list) && list.length > 0
 
-export function SharedReport({ report }: { report: SharedScorecard }) {
-  const { t } = useTranslation("sharedScorecard")
+export function ScorecardView({
+  report,
+  viewer = "employer",
+  actions,
+}: {
+  report: Scorecard
+  viewer?: Viewer
+  /** beside Print, e.g. Share */
+  actions?: ReactNode
+}) {
+  const own = viewer === "candidate"
+  const { t } = useTranslation("scorecard")
   const scores = report.category_scores
   const questions = answered(scores?.question_breakdown ?? [])
-  const video = safeUrl(report.interview_video)
+  // the candidate's own copy has never shown the recording
+  const video = own ? null : safeUrl(report.interview_video)
   const hasInsights =
     hasItems(scores?.strengths) ||
     hasItems(scores?.areas_for_improvement) ||
-    hasItems(scores?.recommendations)
+    (!own && hasItems(scores?.recommendations))
   const sections = SECTIONS.filter(
     (key) => (scores?.section_summary?.[key]?.count ?? 0) > 0
   )
@@ -98,7 +112,7 @@ export function SharedReport({ report }: { report: SharedScorecard }) {
     { id: "types", label: t("toc.types"), show: sections.length > 0 },
     { id: "insights", label: t("toc.insights"), show: hasInsights },
     { id: "recording", label: t("toc.recording"), show: Boolean(video) },
-    { id: "profile", label: t("toc.profile"), show: true },
+    { id: "profile", label: t("toc.profile"), show: !own },
     { id: "answers", label: t("toc.answers"), show: true },
   ].filter((item) => item.show)
 
@@ -120,8 +134,8 @@ export function SharedReport({ report }: { report: SharedScorecard }) {
       </nav>
 
       <article className="flex min-w-0 flex-col gap-12">
-        <Header report={report} />
-        <Summary report={report} answeredCount={questions.length} />
+        <Header report={report} own={own} actions={actions} />
+        <Summary report={report} own={own} answeredCount={questions.length} />
 
         <Section id="communication" title={t("metrics.heading")}>
           <ul className="flex flex-col gap-3">
@@ -180,31 +194,24 @@ export function SharedReport({ report }: { report: SharedScorecard }) {
                 title={t("insights.improve")}
                 items={scores.areas_for_improvement}
               />
-              <Insights
-                title={t("insights.recommendations")}
-                items={scores.recommendations}
-              />
+              {!own && (
+                <Insights
+                  title={t("insights.recommendations")}
+                  items={scores.recommendations}
+                />
+              )}
             </div>
           </Section>
         )}
 
         {video && (
           <Section id="recording" title={t("recording.heading")}>
-            {/* recordings come without a caption track */}
-            {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-            <video
-              controls
-              preload="none"
-              src={video}
-              className="aspect-video w-full rounded-lg bg-muted print:hidden"
-            >
-              {t("recording.unsupported")}
-            </video>
+            <Recording src={video} />
           </Section>
         )}
 
-        <Profile report={report} />
-        <Answers questions={questions} />
+        {!own && <Profile report={report} />}
+        <Answers questions={questions} own={own} />
       </article>
     </div>
   )
@@ -238,21 +245,38 @@ function Section({
   )
 }
 
-function Header({ report }: { report: SharedScorecard }) {
-  const { t } = useTranslation("sharedScorecard")
+function Header({
+  report,
+  own,
+  actions,
+}: {
+  report: Scorecard
+  own: boolean
+  actions?: ReactNode
+}) {
+  const { t } = useTranslation("scorecard")
+  const locale = useLocale()
   const name = report.candidate_name?.trim()
     ? report.candidate_name.trim()
     : t("header.unnamed")
   const photo = safeUrl(report.candidate_profile_photo)
   const years = report.candidate_total_experience_years
+  const taken = report.created_at ? new Date(report.created_at) : null
   const facts = [
     report.candidate_role,
-    report.candidate_location,
-    years === null
+    own ? null : report.candidate_location,
+    years === null || own
       ? null
       : years === 0
         ? t("header.fresher")
         : t("header.experience", { count: years }),
+    taken && !Number.isNaN(taken.getTime())
+      ? t("header.taken", {
+          date: new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
+            taken
+          ),
+        })
+      : null,
   ].filter(Boolean)
 
   return (
@@ -268,7 +292,7 @@ function Header({ report }: { report: SharedScorecard }) {
           tabIndex={-1}
           className="text-2xl font-semibold tracking-tight text-balance outline-none sm:text-3xl"
         >
-          {name}
+          {own ? t("header.yours") : name}
         </h1>
         {facts.length > 0 && (
           <p className="text-sm text-muted-foreground">{facts.join(" · ")}</p>
@@ -281,28 +305,32 @@ function Header({ report }: { report: SharedScorecard }) {
           </Badge>
         )}
       </div>
-      <Button
-        variant="outline"
-        className="self-start sm:self-center print:hidden"
-        onClick={() => {
-          window.print()
-        }}
-      >
-        <Printer />
-        {t("print")}
-      </Button>
+      <div className="flex flex-wrap gap-2 self-start sm:self-center print:hidden">
+        {actions}
+        <Button
+          variant="outline"
+          onClick={() => {
+            window.print()
+          }}
+        >
+          <Printer />
+          {t("print")}
+        </Button>
+      </div>
     </header>
   )
 }
 
 function Summary({
   report,
+  own,
   answeredCount,
 }: {
-  report: SharedScorecard
+  report: Scorecard
+  own: boolean
   answeredCount: number
 }) {
-  const { t } = useTranslation("sharedScorecard")
+  const { t } = useTranslation("scorecard")
   const score = report.overall_score ?? 0
   const match = report.ai_match
 
@@ -334,7 +362,7 @@ function Summary({
               <ChevronDown className="size-4 transition-transform group-data-panel-open:rotate-180" />
             </CollapsibleTrigger>
             <CollapsibleContent className="mt-2 max-w-prose text-sm text-muted-foreground">
-              {t("summary.howScoredBody")}
+              {own ? t("summary.howScoredYours") : t("summary.howScoredBody")}
             </CollapsibleContent>
           </Collapsible>
         </div>
@@ -402,8 +430,8 @@ function Insights({
   )
 }
 
-function Profile({ report }: { report: SharedScorecard }) {
-  const { t } = useTranslation("sharedScorecard")
+function Profile({ report }: { report: Scorecard }) {
+  const { t } = useTranslation("scorecard")
   const links = (report.candidate_portfolio_links ?? [])
     .map(safeUrl)
     .filter((url): url is string => url !== null)
@@ -589,8 +617,8 @@ function ExternalLinkItem({
   )
 }
 
-function Answers({ questions }: { questions: Question[] }) {
-  const { t } = useTranslation("sharedScorecard")
+function Answers({ questions, own }: { questions: Question[]; own: boolean }) {
+  const { t } = useTranslation("scorecard")
   const locale = useLocale()
   const all = questions.map((_, i) => String(i))
   const [open, setOpen] = useState<string[]>([])
@@ -684,7 +712,7 @@ function Answers({ questions }: { questions: Question[] }) {
                     <h3 className="text-xs text-muted-foreground">
                       {t("answers.answer")}
                     </h3>
-                    <Answer q={q} />
+                    <Answer q={q} own={own} />
                   </div>
                   {q.feedback && (
                     <div className="flex flex-col gap-1">
@@ -704,8 +732,8 @@ function Answers({ questions }: { questions: Question[] }) {
   )
 }
 
-function Answer({ q }: { q: Question }) {
-  const { t } = useTranslation("sharedScorecard")
+function Answer({ q, own }: { q: Question; own: boolean }) {
+  const { t } = useTranslation("scorecard")
   const type = (q.type ?? "").toUpperCase()
 
   if (MCQ.has(type)) {
@@ -726,7 +754,7 @@ function Answer({ q }: { q: Question }) {
               <span>{option}</span>
               <span className="shrink-0 text-xs text-muted-foreground">
                 {[
-                  chosen && t("answers.chosen"),
+                  chosen && (own ? t("answers.yours") : t("answers.chosen")),
                   correct && t("answers.correctAnswer"),
                 ]
                   .filter(Boolean)

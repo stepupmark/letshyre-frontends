@@ -1,0 +1,56 @@
+{
+  "success": true,
+  "data": {
+    "id": 31,
+    "candidate": 5,
+    "candidate_name": "Priya Nair",
+    "candidate_email": "priya@example.com",
+    "candidate_phone": "9876543210",
+    "candidate_location": "Kochi",
+    "candidate_address": "12 Marine Drive, Kochi, Kerala",
+    "candidate_profile_photo": null,
+    "candidate_is_verified": true,
+    "candidate_gender": "female",
+    "candidate_total_experience_years": "4.5",
+    "candidate_current_ctc": 12,
+    "candidate_expected_ctc": 16.5,
+    "candidate_notice_period": 30,
+    "candidate_notice_period_prof": null,
+    "candidate_preferred_industry": "Software",
+    "candidate_preferred_locations": "[\"Kochi\", \"Bengaluru\"]",
+    "candidate_skills": ["React", "TypeScript", "Testing Library"],
+    "candidate_education": [
+      {
+        "institution": "NIT Calicut",
+        "degree": "B.Tech, Computer Science",
+        "duration": "2016 – 2020"
+      }
+    ],
+    "candidate_experience": "[{\"role\": \"Frontend Developer\", \"company\": \"Finch Labs\", \"duration\": \"2022 – now\", \"description\": \"Leads the design system and the checkout rebuild.\"}, {\"role\": \"Software Engineer\", \"company\": \"Orbit\", \"duration\": \"2020 – 2022\", \"description\": null}]",
+    "candidate_projects": [
+      {
+        "title": "Accessible date picker",
+        "description": "Open-source picker used by 40 teams."
+      }
+    ],
+    "candidate_certifications": [
+      {
+        "name": "AWS Cloud Practitioner",
+        "issuer": "Amazon"
+      }
+    ],
+    "candidate_roles_applied": [
+      {
+        "job_title": "Senior React Developer",
+        "status": "Shortlisted"
+      }
+    ],
+    "candidate_resume": "https://cdn.letshyre.ai/resumes/31.pdf",
+    "candidate_interview_scores": [
+      {
+        "role": "Frontend Developer",
+        "score": 78
+      }
+    ]
+  }
+}

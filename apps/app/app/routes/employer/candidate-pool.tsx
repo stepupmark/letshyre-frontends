@@ -1,5 +1,4 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { buttonVariants } from "@workspace/ui/components/button"
 import { Label } from "@workspace/ui/components/label"
 import {
   Select,
@@ -23,6 +22,7 @@ import { UnlockPanel } from "@/features/candidate-unlock"
 import { isJobId, jobQuery, jobsQuery } from "@/features/employer-jobs"
 import { MatchList, matchesQuery } from "@/features/job-matches"
 import { namespaces } from "@/lib/i18n"
+import { buttonLink } from "@/lib/button-link"
 
 export const handle = { crumb: "candidatePool" } as const
 
@@ -105,7 +105,7 @@ export default function CandidatePoolPage() {
           title={t("pool.noJobsTitle")}
           description={t("pool.noJobsBody")}
           action={
-            <AppLink to="/employer/post-job" className={buttonVariants()}>
+            <AppLink to="/employer/post-job" className={buttonLink()}>
               <Plus />
               {t("pool.postJob")}
             </AppLink>

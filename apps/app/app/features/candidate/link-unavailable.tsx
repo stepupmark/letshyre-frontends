@@ -16,7 +16,7 @@ import {
   TriangleAlert,
 } from "lucide-react"
 
-import type { ShareProblem } from "./query"
+import type { ShareProblem } from "./shared-query"
 
 const ICON = {
   invalid: Link2Off,
@@ -34,7 +34,7 @@ export function LinkUnavailable({
   onRetry?: () => void
   retrying?: boolean
 }) {
-  const { t } = useTranslation("sharedScorecard")
+  const { t } = useTranslation("scorecard")
   const Icon = ICON[problem]
 
   return (

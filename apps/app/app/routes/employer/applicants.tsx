@@ -1,5 +1,4 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { buttonVariants } from "@workspace/ui/components/button"
 import { useQuery } from "@tanstack/react-query"
 import { ArrowLeft } from "lucide-react"
 
@@ -10,6 +9,7 @@ import { UnlockPanel } from "@/features/candidate-unlock"
 import { isJobId, jobQuery } from "@/features/employer-jobs"
 import { MatchList, matchesQuery } from "@/features/job-matches"
 import { namespaces } from "@/lib/i18n"
+import { buttonLink } from "@/lib/button-link"
 
 import type { Route } from "./+types/applicants"
 
@@ -72,7 +72,7 @@ export default function ApplicantsPage({ params }: Route.ComponentProps) {
             action={
               <AppLink
                 to={`/employer/candidate-pool?jobId=${jobId}`}
-                className={buttonVariants({ variant: "outline" })}
+                className={buttonLink({ variant: "outline" })}
               >
                 {t("applicants.pool")}
               </AppLink>

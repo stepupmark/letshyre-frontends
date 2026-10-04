@@ -5,7 +5,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
 } from "@workspace/ui/components/breadcrumb"
-import { Button, buttonVariants } from "@workspace/ui/components/button"
+import { Button } from "@workspace/ui/components/button"
 import { Kbd } from "@workspace/ui/components/kbd"
 import { Separator } from "@workspace/ui/components/separator"
 import { SidebarTrigger } from "@workspace/ui/components/sidebar"
@@ -19,6 +19,7 @@ import { AppLink } from "@/components/app-link"
 import { Tip } from "@/components/tip"
 import { creditsQuery } from "@/lib/credits"
 import { locale } from "@/lib/i18n"
+import { buttonLink } from "@/lib/button-link"
 
 import type { Area, NavItem } from "./nav"
 import { dismissTip, useCurrentTip } from "./tips"
@@ -112,7 +113,7 @@ function Credits({ ref }: { ref: Ref<HTMLAnchorElement> }) {
     <AppLink
       ref={ref}
       to="/employer/billing"
-      className={buttonVariants({ variant: "ghost", className: "gap-1.5" })}
+      className={buttonLink({ variant: "ghost", className: "gap-1.5" })}
       aria-label={
         count === undefined ? t("credits.add") : t("credits.label", { count })
       }

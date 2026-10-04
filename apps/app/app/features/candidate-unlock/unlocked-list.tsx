@@ -4,10 +4,9 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@workspace/ui/components/avatar"
-import { buttonVariants } from "@workspace/ui/components/button"
 import { keepPreviousData, useQuery } from "@tanstack/react-query"
 import { BadgeCheck } from "lucide-react"
-import { useMemo } from "react"
+import { useMemo, type ReactNode } from "react"
 import { useSearchParams } from "react-router"
 
 import { AppLink } from "@/components/app-link"
@@ -17,6 +16,7 @@ import { ScoreBand } from "@/components/score-band"
 import type { DataTableColumn } from "@/lib/data-table-features"
 import { safeUrl } from "@/lib/safe-url"
 import { readTableParams, writeTableParams } from "@/lib/table-params"
+import { buttonLink } from "@/lib/button-link"
 
 import { unlockedQuery, type Unlocked } from "./api"
 
@@ -40,7 +40,11 @@ const initials = (name: string) =>
 const lpa = (n: number) =>
   Number.isInteger(n) ? String(n) : (Math.round(n * 10) / 10).toString()
 
-export function UnlockedList() {
+export function UnlockedList({
+  share,
+}: {
+  share?: (row: Unlocked) => ReactNode
+}) {
   const { t } = useTranslation("unlock")
   const locale = useLocale()
   const [search, setSearch] = useSearchParams()
@@ -136,10 +140,10 @@ export function UnlockedList() {
         id: "actions",
         header: "",
         enableHiding: false,
-        cell: ({ row }) => <Actions row={row.original} />,
+        cell: ({ row }) => <Actions row={row.original} share={share} />,
       },
     ]
-  }, [t, locale])
+  }, [t, locale, share])
 
   return (
     <DataTable
@@ -167,7 +171,7 @@ export function UnlockedList() {
           action={
             <AppLink
               to="/employer/candidate-pool"
-              className={buttonVariants({ variant: "outline" })}
+              className={buttonLink({ variant: "outline" })}
             >
               {t("list.toPool")}
             </AppLink>
@@ -184,7 +188,7 @@ export function UnlockedList() {
               <ScoreBand score={row.ai_overall_score} of="interview" />
             )}
           </div>
-          <Actions row={row} />
+          <Actions row={row} share={share} />
         </div>
       )}
     />
@@ -224,19 +228,26 @@ function Person({ row }: { row: Unlocked }) {
   )
 }
 
-function Actions({ row }: { row: Unlocked }) {
+function Actions({
+  row,
+  share,
+}: {
+  row: Unlocked
+  share?: (row: Unlocked) => ReactNode
+}) {
   const { t } = useTranslation("unlock")
   return (
     <span className="flex gap-2">
+      {share?.(row)}
       <AppLink
         to={`/employer/employee-profile?id=${encodeURIComponent(row.id)}`}
-        className={buttonVariants({ variant: "outline", size: "sm" })}
+        className={buttonLink({ variant: "outline", size: "sm" })}
       >
         {t("list.profile")}
       </AppLink>
       <AppLink
         to={`/employer/employee-score-card?id=${encodeURIComponent(row.id)}`}
-        className={buttonVariants({ size: "sm" })}
+        className={buttonLink({ size: "sm" })}
       >
         {t("list.scorecard")}
       </AppLink>

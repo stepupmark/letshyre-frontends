@@ -55,10 +55,15 @@ export default [
       route("view-jobs/applicants/:jobId", "routes/employer/applicants.tsx"),
       route("candidate-pool", "routes/employer/candidate-pool.tsx"),
       route("unlocked-candidates", "routes/employer/unlocked.tsx"),
+      route("employee-profile", "routes/employer/candidate-profile.tsx"),
+      route("employee-score-card", "routes/employer/candidate-scorecard.tsx"),
     ]),
   ]),
   layout("layouts/employee-layout.tsx", [
-    ...prefix("employee", [index("routes/employee/find-jobs.tsx")]),
+    ...prefix("employee", [
+      index("routes/employee/find-jobs.tsx"),
+      route("scorecard", "routes/employee/scorecard.tsx"),
+    ]),
   ]),
   ...lab,
 ] satisfies RouteConfig

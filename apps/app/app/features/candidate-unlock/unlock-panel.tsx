@@ -1,5 +1,5 @@
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { Button, buttonVariants } from "@workspace/ui/components/button"
+import { Button } from "@workspace/ui/components/button"
 import { Checkbox } from "@workspace/ui/components/checkbox"
 import { Skeleton } from "@workspace/ui/components/skeleton"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
@@ -18,6 +18,7 @@ import { ScoreBand } from "@/components/score-band"
 import { StatusBadge } from "@/components/status-badge"
 import { creditsQuery } from "@/lib/credits"
 import { duration, ease } from "@/lib/motion"
+import { buttonLink } from "@/lib/button-link"
 
 import { interviewsQuery, unlockCandidate, UNLOCKED_KEY } from "./api"
 import { costOf, toggle, unlockChoices } from "./choices"
@@ -122,7 +123,7 @@ export function UnlockPanel({
               </p>
               <AppLink
                 to="/employer/unlocked-candidates"
-                className={buttonVariants({ variant: "outline", size: "sm" })}
+                className={buttonLink({ variant: "outline", size: "sm" })}
               >
                 {t("panel.openUnlocked")}
               </AppLink>
@@ -179,7 +180,7 @@ export function UnlockPanel({
                   </p>
                   <AppLink
                     to={`/employer/billing?next=${encodeURIComponent(back)}`}
-                    className={buttonVariants()}
+                    className={buttonLink()}
                   >
                     {t("panel.addCredits")}
                   </AppLink>

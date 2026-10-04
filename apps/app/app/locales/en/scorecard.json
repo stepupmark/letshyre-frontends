@@ -10,7 +10,9 @@
     "fresher": "Fresher",
     "experience_one": "{{count}} year of experience",
     "experience_other": "{{count}} years of experience",
-    "matchedTo": "Matched to {{job}}"
+    "matchedTo": "Matched to {{job}}",
+    "yours": "Your interview scorecard",
+    "taken": "Interviewed {{date}}"
   },
   "summary": {
     "heading": "Summary",
@@ -18,7 +20,8 @@
     "basedOn_one": "Based on {{count}} answered question",
     "basedOn_other": "Based on {{count}} answered questions",
     "howScored": "How is this scored?",
-    "howScoredBody": "The AI interviewer scores each answer against the role, then checks it for clarity, relevance and depth. Use the score as a starting point for your decision, not a replacement for it."
+    "howScoredBody": "The AI interviewer scores each answer against the role, then checks it for clarity, relevance and depth. Use the score as a starting point for your decision, not a replacement for it.",
+    "howScoredYours": "The AI interviewer scores each answer against the role, then checks it for clarity, relevance and depth. Employers see the same scores, so the areas to improve are a good place to start."
   },
   "match": {
     "heading": "Fit for the job",
@@ -54,7 +57,9 @@
   },
   "recording": {
     "heading": "Recording",
-    "unsupported": "Your browser can't play this recording."
+    "unsupported": "Your browser can't play this recording.",
+    "failed": "The recording didn't load. The link may have timed out.",
+    "retry": "Try again"
   },
   "profile": {
     "heading": "Profile",
@@ -93,7 +98,8 @@
       "typing": "Written",
       "audio": "Spoken",
       "other": "Question"
-    }
+    },
+    "yours": "Your answer"
   },
   "toc": {
     "label": "On this page",
