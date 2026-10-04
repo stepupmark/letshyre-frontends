@@ -1,6 +1,11 @@
 {
   "title": "Applicatie downloaden",
   "subtitle": "Haal de beveiligde desktop-app op om uw stabiele, afleidingsvrije interviewsessie te starten.",
+  "features": {
+    "distractionFree": "Voert het interview schermvullend uit",
+    "stable": "Controleert op geblokkeerde apps voordat u begint",
+    "secure": "Bewaakt via camera, microfoon en scherm"
+  },
   "loading": "Releases laden...",
   "comingSoon": "Binnenkort beschikbaar",
   "retry": "Opnieuw proberen",
@@ -11,6 +16,23 @@
     "interview": "Interview"
   },
   "support": "Problemen? Bekijk de installatiehandleiding",
+  "os": {
+    "windows": "Windows",
+    "mac": "macOS"
+  },
+  "release": {
+    "detected": "Uw computer",
+    "version": "Versie {{version}}",
+    "notYet": "Nog niet beschikbaar",
+    "error": "We konden de nieuwste versie niet controleren.",
+    "unsupported": "De interviewapp werkt op een Windows-computer. Open deze pagina daar om hem te downloaden."
+  },
+  "install": {
+    "title": "Van download tot interview",
+    "download": "Sla het installatieprogramma op vanaf deze pagina. Het is één bestand.",
+    "install": "Open het bestand en volg de stappen. Windows kan om bevestiging vragen voordat het wordt uitgevoerd.",
+    "interview": "Open LetsHyre, <signIn>log in</signIn> met uw kandidaataccount en klik op Interview starten."
+  },
   "meta": {
     "title": "Desktop-app downloaden | letshyre.ai",
     "description": "Download de LetsHyre desktop-app voor Windows en doe je interview in een stabiele, afleidingsvrije en bewaakte omgeving.",

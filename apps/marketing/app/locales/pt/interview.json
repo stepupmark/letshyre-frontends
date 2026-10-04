@@ -37,6 +37,36 @@
       "desc": "Está tudo pronto. A janela da entrevista abre em ecrã completo com a gravação de ecrã ativa. Responda a cada pergunta dentro do tempo atribuído — pode navegar entre perguntas antes de o temporizador da sessão terminar."
     }
   },
+  "toc": {
+    "label": "Nesta página",
+    "steps": "Etapas"
+  },
+  "requirements": {
+    "title": "O que você precisa",
+    "description": "Confira estes itens antes do dia da sua entrevista.",
+    "items": {
+      "computer": {
+        "title": "Um computador Windows",
+        "desc": "A entrevista acontece no aplicativo para computador do LetsHyre. Não é possível fazê-la no celular ou tablet."
+      },
+      "camera": {
+        "title": "Uma câmera funcionando",
+        "desc": "Ela tira sua foto de verificação e fica ligada enquanto você responde."
+      },
+      "microphone": {
+        "title": "Um microfone",
+        "desc": "Usado no registro de voz e nas suas respostas faladas."
+      },
+      "internet": {
+        "title": "Uma conexão de internet estável",
+        "desc": "Suas respostas e a gravação da tela são enviadas durante a sessão."
+      },
+      "room": {
+        "title": "Um ambiente silencioso e bem iluminado",
+        "desc": "Fique de frente para a luz para a câmera ver você bem e mantenha o ruído de fundo baixo."
+      }
+    }
+  },
   "cta": {
     "title": "Pronto para começar?",
     "desc": "Transfira a aplicação de ambiente de trabalho, inicie sessão na sua conta e clique em Iniciar Entrevista quando estiver preparado.",

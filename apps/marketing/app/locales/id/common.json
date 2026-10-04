@@ -7,20 +7,31 @@
     "pricing": "Harga",
     "about": "Tentang",
     "contact": "Kontak",
+    "logIn": "Masuk",
     "getStarted": "Mulai Sekarang",
     "language": "Ganti bahasa",
     "logoAlt": "Logo LetsHyre",
     "toggle": "Alihkan navigasi",
+    "close": "Tutup menu",
     "siteNavigation": "Navigasi situs",
     "primaryAria": "Navigasi utama",
     "mobileAria": "Navigasi seluler"
   },
   "footer": {
+    "tagline": "Wawancara AI dan kartu penilaian untuk tim yang merekrut orang yang sedang menjalani masa pemberitahuan.",
     "product": "Produk",
     "candidates": "Kandidat",
     "company": "Perusahaan",
+    "legal": "Hukum",
     "stayUpdated": "Tetap Terkini",
     "newsletterDesc": "Dapatkan berita dan pembaruan terbaru dari LetsHyre",
+    "social": "LetsHyre di media sosial",
+    "socialLinks": {
+      "linkedin": "LetsHyre di LinkedIn",
+      "x": "LetsHyre di X",
+      "instagram": "LetsHyre di Instagram",
+      "youtube": "LetsHyre di YouTube"
+    },
     "links": {
       "interviewProcess": "Proses Wawancara",
       "downloadApp": "Unduh Aplikasi",
@@ -29,15 +40,20 @@
       "terms": "Syarat & Ketentuan",
       "privacy": "Kebijakan Privasi",
       "refund": "Kebijakan Pengembalian Dana",
-      "contact": "Kontak"
+      "contact": "Kontak",
+      "employerRegister": "Buat akun perusahaan",
+      "candidateRegister": "Buat profil kandidat"
     }
   },
   "newsletter": {
     "emailPlaceholder": "Email Anda",
     "emailLabel": "Alamat email",
     "subscribe": "Berlangganan",
+    "subscribing": "Sedang berlangganan",
     "subscribed": "Langganan berhasil disimpan.",
-    "subscribeFailed": "Gagal berlangganan. Silakan coba lagi."
+    "subscribeFailed": "Gagal berlangganan. Silakan coba lagi.",
+    "emailRequired": "Masukkan alamat email Anda.",
+    "emailInvalid": "Masukkan alamat email yang valid, seperti nama@perusahaan.com."
   },
   "pageState": {
     "loading": "Memuat halaman"
@@ -54,5 +70,11 @@
     "body": "Terjadi kesalahan di pihak kami. Muat ulang halaman untuk mencoba lagi, atau hubungi kami jika masalah berlanjut.",
     "retry": "Coba lagi",
     "goHome": "Ke Beranda"
+  },
+  "consent": {
+    "label": "Preferensi cookie",
+    "body": "Kami menggunakan cookie untuk mengukur kinerja iklan kami. Tidak ada yang dibagikan tanpa persetujuan Anda. <0>Kebijakan privasi</0>",
+    "accept": "Terima",
+    "reject": "Tolak"
   }
 }

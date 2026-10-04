@@ -37,6 +37,36 @@
       "desc": "Estás listo. La ventana de entrevista se abre en pantalla completa con la grabación de pantalla activa. Responde cada pregunta dentro del tiempo asignado — puedes navegar entre preguntas antes de que se acabe el temporizador de la sesión."
     }
   },
+  "toc": {
+    "label": "En esta página",
+    "steps": "Pasos"
+  },
+  "requirements": {
+    "title": "Lo que necesitas",
+    "description": "Revisa esto antes del día de tu entrevista.",
+    "items": {
+      "computer": {
+        "title": "Un ordenador con Windows",
+        "desc": "La entrevista se hace en la aplicación de escritorio de LetsHyre. No se puede hacer en un móvil ni en una tableta."
+      },
+      "camera": {
+        "title": "Una cámara que funcione",
+        "desc": "Toma tu foto de verificación y sigue encendida mientras respondes."
+      },
+      "microphone": {
+        "title": "Un micrófono",
+        "desc": "Se usa para el registro de voz y tus respuestas habladas."
+      },
+      "internet": {
+        "title": "Una conexión a internet estable",
+        "desc": "Tus respuestas y la grabación de pantalla se suben durante la sesión."
+      },
+      "room": {
+        "title": "Una sala tranquila y bien iluminada",
+        "desc": "Ponte de cara a la luz para que la cámara te vea bien y reduce el ruido de fondo."
+      }
+    }
+  },
   "cta": {
     "title": "¿Listo para comenzar?",
     "desc": "Descarga la aplicación de escritorio, inicia sesión en tu cuenta y haz clic en Tomar Entrevista cuando estés preparado.",

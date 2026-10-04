@@ -23,6 +23,26 @@
       "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
       "subjectMin": "Der Betreff muss mindestens 3 Zeichen lang sein",
       "messageMin": "Die Nachricht muss mindestens 10 Zeichen lang sein"
+    },
+    "sendAnother": "Weitere Nachricht senden",
+    "topics": {
+      "sales": "Anfrage zu einem individuellen Tarif"
+    },
+    "errors": {
+      "generic": "Ihre Nachricht konnte nicht gesendet werden. Versuchen Sie es gleich noch einmal.",
+      "network": "Unser Server ist nicht erreichbar. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+      "rateLimited": "Sie haben in kurzer Zeit mehrere Nachrichten gesendet. Warten Sie eine Minute und versuchen Sie es erneut."
+    }
+  },
+  "channels": {
+    "title": "Weitere Kontaktmöglichkeiten",
+    "candidates": {
+      "title": "Bereiten Sie sich auf ein Interview vor?",
+      "link": "Interviewleitfaden lesen"
+    },
+    "employers": {
+      "title": "Vergleichen Sie Tarife?",
+      "link": "Preise ansehen"
     }
   },
   "meta": {

@@ -7,20 +7,31 @@
     "pricing": "Preços",
     "about": "Sobre",
     "contact": "Contacto",
+    "logIn": "Entrar",
     "getStarted": "Começar",
     "language": "Alterar idioma",
     "logoAlt": "Logótipo LetsHyre",
     "toggle": "Alternar navegação",
+    "close": "Fechar menu",
     "siteNavigation": "Navegação do site",
     "primaryAria": "Navegação principal",
     "mobileAria": "Navegação móvel"
   },
   "footer": {
+    "tagline": "Entrevistas com IA e avaliações para equipes que contratam pessoas em aviso prévio.",
     "product": "Produto",
     "candidates": "Candidatos",
     "company": "Empresa",
+    "legal": "Jurídico",
     "stayUpdated": "Mantenha-se Atualizado",
     "newsletterDesc": "Receba as últimas notícias e novidades da LetsHyre",
+    "social": "LetsHyre nas redes sociais",
+    "socialLinks": {
+      "linkedin": "LetsHyre no LinkedIn",
+      "x": "LetsHyre no X",
+      "instagram": "LetsHyre no Instagram",
+      "youtube": "LetsHyre no YouTube"
+    },
     "links": {
       "interviewProcess": "Processo de Entrevista",
       "downloadApp": "Transferir Aplicação",
@@ -29,15 +40,20 @@
       "terms": "Termos e Condições",
       "privacy": "Política de Privacidade",
       "refund": "Política de Reembolso",
-      "contact": "Contacto"
+      "contact": "Contacto",
+      "employerRegister": "Criar conta de empresa",
+      "candidateRegister": "Criar perfil de candidato"
     }
   },
   "newsletter": {
     "emailPlaceholder": "O seu Email",
     "emailLabel": "Endereço de email",
     "subscribe": "Subscrever",
+    "subscribing": "Inscrevendo",
     "subscribed": "Subscrição guardada com sucesso.",
-    "subscribeFailed": "Falha ao subscrever. Tente novamente."
+    "subscribeFailed": "Falha ao subscrever. Tente novamente.",
+    "emailRequired": "Digite seu endereço de e-mail.",
+    "emailInvalid": "Digite um e-mail válido, como nome@empresa.com."
   },
   "pageState": {
     "loading": "A carregar a página"
@@ -54,5 +70,11 @@
     "body": "Algo correu mal do nosso lado. Recarregue a página para tentar novamente ou contacte-nos se o problema persistir.",
     "retry": "Tentar novamente",
     "goHome": "Ir para o início"
+  },
+  "consent": {
+    "label": "Preferências de cookies",
+    "body": "Usamos cookies para medir o desempenho dos nossos anúncios. Nada é compartilhado sem a sua aceitação. <0>Política de privacidade</0>",
+    "accept": "Aceitar",
+    "reject": "Recusar"
   }
 }

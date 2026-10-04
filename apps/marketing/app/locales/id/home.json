@@ -7,6 +7,7 @@
   },
   "hero": {
     "title": "Platform Perekrutan AI untuk <hl>Talenta Notice Period</hl>",
+    "description": "LetsHyre mengotomatiskan penilaian CV, wawancara AI, dan verifikasi kandidat untuk tim HR modern.",
     "ctaHiring": "Saya Sedang Merekrut",
     "ctaJob": "Saya Sedang Mencari Kerja",
     "tagline": {
@@ -14,22 +15,96 @@
       "start": "Mulai menyusun daftar pendek."
     }
   },
+  "preview": {
+    "label": "Contoh kartu penilaian kandidat",
+    "candidate": "Ananya Rao",
+    "role": "Senior Frontend Engineer",
+    "notice": "Masa pemberitahuan: 30 hari",
+    "recommendation": "Daftar pendek",
+    "overall": "Skor keseluruhan",
+    "outOf": "dari {{max}}",
+    "skillsHeading": "Keterampilan",
+    "skills": {
+      "communication": "Komunikasi",
+      "technical": "Kedalaman teknis",
+      "problemSolving": "Pemecahan masalah",
+      "roleFit": "Kecocokan posisi"
+    },
+    "checks": {
+      "caption": "Verifikasi",
+      "check": "Pemeriksaan",
+      "result": "Hasil",
+      "rows": {
+        "identity": {
+          "label": "Identitas",
+          "result": "Terverifikasi"
+        },
+        "resume": {
+          "label": "Klaim di CV",
+          "result": "Konsisten"
+        },
+        "proctoring": {
+          "label": "Catatan pengawasan",
+          "result": "Tidak ada"
+        }
+      }
+    }
+  },
   "assistance": {
     "ariaLabel": "Cara kerja",
+    "intro": "Tiga langkah dari lowongan ke daftar pendek.",
     "steps": {
       "post": {
         "pill": "Pasang lowongan Anda",
-        "heading": "Tentukan perannya,<br/><hl>biarkan AI yang mengurus sisanya</hl>"
+        "heading": "Tentukan perannya,<br/><hl>biarkan AI yang mengurus sisanya</hl>",
+        "description": "Tambahkan posisi dan kebutuhannya. LetsHyre langsung mulai mencocokkan CV."
       },
       "screen": {
         "pill": "Penyaringan AI",
-        "heading": "Wawancara 24/7,<br/><hl>tanpa hambatan penjadwalan</hl>"
+        "heading": "Wawancara 24/7,<br/><hl>tanpa hambatan penjadwalan</hl>",
+        "description": "Kandidat mengikuti wawancara AI terstruktur kapan pun mereka sempat. Setiap jawaban dinilai dengan kriteria yang sama."
       },
       "scorecards": {
         "pill": "Terima Scorecard",
-        "heading": "Data mentah diubah menjadi<br/><hl>rekomendasi yang jelas</hl>"
+        "heading": "Data mentah diubah menjadi<br/><hl>rekomendasi yang jelas</hl>",
+        "description": "Setiap kandidat mendapat kartu penilaian berisi skor, kekuatan, kekurangan, dan rekaman, jadi Anda yang memutuskan siapa yang ditemui."
       }
     }
+  },
+  "candidate": {
+    "eyebrow": "Untuk kandidat",
+    "title": "Satu wawancara, dilihat banyak perusahaan",
+    "body": "Ikuti wawancara AI sekali dan perusahaan yang merekrut untuk posisi yang cocok bisa menemukan Anda. Tanpa panggilan seleksi berulang.",
+    "guide": "Baca panduan wawancara",
+    "items": {
+      "interview": {
+        "title": "Wawancara dari aplikasi desktop",
+        "desc": "Instal aplikasi LetsHyre dan ikuti panduan 8 langkah. Ikuti wawancara kapan pun Anda sempat."
+      },
+      "evaluation": {
+        "title": "Dinilai dengan kriteria yang sama",
+        "desc": "Setiap kandidat menjawab dalam format yang sama dan dinilai dengan cara yang sama, jadi kemampuan Anda berbicara sendiri."
+      },
+      "matching": {
+        "title": "Aktif selama 90 hari",
+        "desc": "Profil dan kartu penilaian Anda tetap terlihat oleh perusahaan selama 90 hari setelah wawancara."
+      },
+      "hired": {
+        "title": "Dihubungi langsung oleh perusahaan",
+        "desc": "Perusahaan yang membuka profil Anda akan menghubungi Anda soal posisinya. Anda tidak membayar apa pun."
+      }
+    }
+  },
+  "pricingTeaser": {
+    "eyebrow": "Harga",
+    "title": "Bayar hanya untuk kandidat yang Anda buka",
+    "body": "Perusahaan mendapat kredit gratis saat mendaftar dan hanya membeli lagi saat dibutuhkan.",
+    "points": [
+      "Tanpa langganan atau tagihan bulanan",
+      "Kredit tidak pernah kedaluwarsa",
+      "Gratis untuk kandidat"
+    ],
+    "cta": "Lihat harga"
   },
   "faq": {
     "title": "FAQ: Perekrutan AI & Notice Period",
@@ -67,6 +142,7 @@
   },
   "hireCard": {
     "title": "Siap untuk Merekrut atau Direkrut?",
+    "description": "Pasang lowongan dan dapatkan kandidat yang sudah dinilai, atau ikuti satu wawancara dan tampil di depan perusahaan yang sedang merekrut.",
     "startHiring": "Mulai Merekrut",
     "applyJob": "Lamar Pekerjaan"
   },

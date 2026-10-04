@@ -23,6 +23,26 @@
       "emailInvalid": "Silakan masukkan alamat email yang valid",
       "subjectMin": "Subjek harus terdiri dari minimal 3 karakter",
       "messageMin": "Pesan harus terdiri dari minimal 10 karakter"
+    },
+    "sendAnother": "Kirim pesan lain",
+    "topics": {
+      "sales": "Pertanyaan paket khusus"
+    },
+    "errors": {
+      "generic": "Kami tidak dapat mengirim pesan Anda. Coba lagi sebentar lagi.",
+      "network": "Kami tidak dapat menjangkau server. Periksa koneksi Anda dan coba lagi.",
+      "rateLimited": "Anda mengirim beberapa pesan dalam waktu singkat. Tunggu satu menit lalu coba lagi."
+    }
+  },
+  "channels": {
+    "title": "Cara lain menghubungi kami",
+    "candidates": {
+      "title": "Sedang bersiap untuk wawancara?",
+      "link": "Baca panduan wawancara"
+    },
+    "employers": {
+      "title": "Sedang membandingkan paket?",
+      "link": "Lihat harga"
     }
   },
   "meta": {

@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "title": "Harga: bayar per kandidat yang dibuka | letshyre.ai",
+    "description": "Mulai dengan 10 kredit gratis dan beli lagi hanya saat perlu, tanpa langganan. Setiap pembukaan mencakup profil, kartu penilaian, dan rekaman.",
+    "name": "Harga LetsHyre",
+    "schemaDescription": "Paket kredit untuk membuka kandidat yang diwawancarai AI di LetsHyre, dari paket gratis hingga paket khusus untuk tim besar.",
+    "crumb": "Harga"
+  },
+  "hero": {
+    "eyebrow": "Harga",
+    "title": "Bayar hanya untuk kandidat yang Anda buka.",
+    "body": "Kredit membuka kandidat yang sudah menyelesaikan wawancara AI LetsHyre. Anda membelinya sekali, tanpa tagihan bulanan, dan kredit tidak kedaluwarsa.",
+    "includes": "Setiap pembukaan mencakup",
+    "items": [
+      "Profil dan CV kandidat",
+      "Kartu penilaian wawancara AI",
+      "Rekaman wawancara"
+    ]
+  },
+  "plans": {
+    "heading": "Paket",
+    "note": "Harga dalam rupee India dan belum termasuk GST, yang ditambahkan saat checkout.",
+    "credits_other": "{{count}} kredit",
+    "rate": "Setiap kredit seharga {{price}}, paket apa pun yang Anda pilih.",
+    "unavailable": "Harga tidak tersedia",
+    "seats_other": "Bagikan hasil dengan {{count}} rekan tim",
+    "topUps": "Isi ulang kapan saja",
+    "noExpiry": "Kredit tidak pernah kedaluwarsa",
+    "buy": "Beli {{name}}",
+    "recommended": "Direkomendasikan",
+    "free": {
+      "name": "Free",
+      "audience": "Coba pada posisi sungguhan",
+      "priceNote": "saat mendaftar",
+      "cta": "Mulai gratis"
+    },
+    "pro": {
+      "name": "Pro",
+      "audience": "Untuk tim yang sesekali merekrut",
+      "priceNote": "belum termasuk GST, sekali bayar",
+      "cta": "Beli Pro"
+    },
+    "business": {
+      "name": "Business",
+      "audience": "Untuk tim yang merekrut setiap bulan",
+      "priceNote": "belum termasuk GST, sekali bayar",
+      "badge": "Kredit terbanyak",
+      "cta": "Beli Business"
+    },
+    "custom": {
+      "name": "Khusus",
+      "audience": "Untuk volume besar dan agensi rekrutmen",
+      "price": "Mari bicara",
+      "priceNote": "Harga sesuai volume",
+      "cta": "Hubungi tim penjualan",
+      "features": [
+        "Semua yang ada di Business",
+        "Kredit sesuai kebutuhan rekrutmen Anda",
+        "Tim berukuran berapa pun",
+        "Dukungan khusus"
+      ]
+    }
+  },
+  "compare": {
+    "title": "Bandingkan paket",
+    "body": "Setiap paket membuka informasi kandidat yang sama. Yang berbeda adalah jumlah kredit, siapa di tim yang bisa melihat hasil, dan dukungan yang Anda dapat.",
+    "caption": "Isi setiap paket",
+    "feature": "Fitur",
+    "picker": "Paket untuk dibandingkan",
+    "rows": {
+      "credits": "Kredit yang termasuk",
+      "profiles": "Profil dan CV kandidat",
+      "scorecards": "Kartu penilaian wawancara AI",
+      "recordings": "Rekaman wawancara",
+      "seats": "Rekan tim yang bisa melihat hasil",
+      "topUps": "Beli kredit tambahan",
+      "validity": "Masa berlaku kredit",
+      "support": "Dukungan khusus"
+    },
+    "values": {
+      "included": "Termasuk",
+      "notIncluded": "Tidak termasuk",
+      "custom": "Khusus",
+      "noExpiry": "Tidak pernah"
+    }
+  },
+  "topUps": {
+    "title": "Butuh lebih banyak kredit?",
+    "body": "Dengan Pro atau Business Anda bisa isi ulang kapan saja. Kredit isi ulang tidak pernah kedaluwarsa, sama seperti kredit paket Anda.",
+    "credits_other": "{{count}} kredit",
+    "priceNote": "belum termasuk GST",
+    "cta": "Beli",
+    "ctaLabel_other": "Beli {{count}} kredit seharga {{price}}",
+    "ctaLabelNoPrice_other": "Beli {{count}} kredit"
+  },
+  "faq": {
+    "title": "Pertanyaan seputar harga",
+    "body": "Tidak menemukan yang Anda cari?",
+    "contact": "Hubungi kami",
+    "items": [
+      {
+        "q": "Apa yang saya dapat dari satu kredit?",
+        "a": "Kredit membuka kandidat yang sudah menyelesaikan wawancara AI LetsHyre. Kandidat yang dibuka menampilkan profil lengkap, CV, kartu penilaian AI, dan rekaman wawancara. Anda melihat berapa kredit yang dibutuhkan sebelum mengonfirmasi."
+      },
+      {
+        "q": "Apakah kredit bisa kedaluwarsa?",
+        "a": "Tidak. Kredit tetap di akun Anda sampai dipakai, baik dari paket maupun dari isi ulang."
+      },
+      {
+        "q": "Apakah ini langganan?",
+        "a": "Tidak. Setiap pembelian adalah pembayaran sekali. Tidak ada yang diperpanjang dan Anda tidak pernah ditagih otomatis."
+      },
+      {
+        "q": "Siapa di tim saya yang bisa melihat hasil?",
+        "a": "Free memungkinkan Anda berbagi hasil dengan 1 rekan tim, Pro dengan 5, dan Business dengan 25. Jika butuh lebih banyak kursi, paket khusus mencakup tim berukuran berapa pun."
+      },
+      {
+        "q": "Bagaimana cara membayar?",
+        "a": "Pembayaran melalui Razorpay, jadi Anda bisa memakai UPI, kartu, atau internet banking. Harga dalam rupee India, dan pajak yang berlaku ditampilkan saat checkout sebelum Anda membayar."
+      },
+      {
+        "q": "Bisakah saya mendapat pengembalian dana?",
+        "a": "Kami meninjau permintaan pengembalian dana yang diajukan dalam 7 hari untuk pembayaran ganda, kesalahan tagihan, atau masalah platform yang membuat Anda tidak mendapat yang dibayar. Profil yang sudah dibuka tidak dapat dikembalikan dananya. <refund>Kebijakan pengembalian dana</refund> memuat detail lengkapnya."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Mulai dengan kredit gratis.",
+    "body": "Buat akun perusahaan, pasang lowongan, dan buka kandidat pertama Anda tanpa membayar apa pun.",
+    "primary": "Buat akun gratis",
+    "secondary": "Hubungi tim penjualan"
+  },
+  "prices": {
+    "loading": "Memuat harga terkini",
+    "slow": "Masih mengambil harga hari ini. Ini memakan waktu lebih lama dari biasanya.",
+    "retry": "Coba lagi",
+    "retrying": "Mencoba lagi",
+    "error": {
+      "title": "Kami tidak dapat memuat harga hari ini",
+      "body": "Semua paket dan fitur ada di sini. Coba lagi untuk melihat harganya sekarang."
+    },
+    "offline": {
+      "title": "Anda sedang offline",
+      "body": "Harga akan dimuat begitu Anda kembali online."
+    }
+  }
+}

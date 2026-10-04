@@ -416,7 +416,8 @@
     "contents": "Sommaire",
     "readTime": "~{{count}} min de lecture",
     "backToTop": "Retour en haut",
-    "translationNotice": "Ceci est une traduction fournie à titre indicatif. Le texte officiel est la <en>version anglaise</en>."
+    "translationNotice": "Ceci est une traduction fournie à titre indicatif. Le texte officiel est la <en>version anglaise</en>.",
+    "lastUpdated": "Dernière mise à jour : {{date}}"
   },
   "meta": {
     "title": "Conditions générales | letshyre.ai",

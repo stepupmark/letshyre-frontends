@@ -1,6 +1,11 @@
 {
   "title": "Unduh Aplikasi",
   "subtitle": "Dapatkan aplikasi desktop yang aman untuk memulai sesi wawancara yang stabil dan bebas gangguan.",
+  "features": {
+    "distractionFree": "Menjalankan wawancara dalam layar penuh",
+    "stable": "Memeriksa aplikasi yang diblokir sebelum mulai",
+    "secure": "Diawasi lewat kamera, mikrofon, dan layar"
+  },
   "loading": "Memuat rilis...",
   "comingSoon": "Segera Hadir",
   "retry": "Coba Lagi",
@@ -11,6 +16,23 @@
     "interview": "Wawancara"
   },
   "support": "Mengalami kendala? Lihat panduan instalasi",
+  "os": {
+    "windows": "Windows",
+    "mac": "macOS"
+  },
+  "release": {
+    "detected": "Komputer Anda",
+    "version": "Versi {{version}}",
+    "notYet": "Belum tersedia",
+    "error": "Kami tidak dapat memeriksa versi terbaru.",
+    "unsupported": "Aplikasi wawancara berjalan di komputer Windows. Buka halaman ini di sana untuk mengunduhnya."
+  },
+  "install": {
+    "title": "Dari unduhan ke wawancara",
+    "download": "Simpan penginstal dari halaman ini. Hanya satu file.",
+    "install": "Buka file dan ikuti petunjuknya. Windows mungkin meminta konfirmasi sebelum menjalankannya.",
+    "interview": "Buka LetsHyre, <signIn>masuk</signIn> dengan akun kandidat Anda, lalu klik Ikuti Wawancara."
+  },
   "meta": {
     "title": "Unduh Aplikasi Desktop | letshyre.ai",
     "description": "Dapatkan aplikasi desktop LetsHyre untuk Windows dan ikuti wawancara di lingkungan yang stabil, bebas gangguan, dan terawasi.",

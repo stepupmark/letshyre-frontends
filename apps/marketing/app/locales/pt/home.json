@@ -7,6 +7,7 @@
   },
   "hero": {
     "title": "A Plataforma de Contratação com IA para <hl>Talento em Período de Aviso Prévio</hl>",
+    "description": "O LetsHyre automatiza a análise de currículos, as entrevistas com IA e a verificação de candidatos para equipes de RH modernas.",
     "ctaHiring": "Estou a Contratar",
     "ctaJob": "Procuro emprego",
     "tagline": {
@@ -14,22 +15,96 @@
       "start": "Comece a pré-selecionar."
     }
   },
+  "preview": {
+    "label": "Exemplo de avaliação de candidato",
+    "candidate": "Ananya Rao",
+    "role": "Engenheira frontend sênior",
+    "notice": "Aviso prévio: 30 dias",
+    "recommendation": "Pré-selecionar",
+    "overall": "Nota geral",
+    "outOf": "de {{max}}",
+    "skillsHeading": "Habilidades",
+    "skills": {
+      "communication": "Comunicação",
+      "technical": "Profundidade técnica",
+      "problemSolving": "Resolução de problemas",
+      "roleFit": "Adequação à vaga"
+    },
+    "checks": {
+      "caption": "Verificação",
+      "check": "Verificação",
+      "result": "Resultado",
+      "rows": {
+        "identity": {
+          "label": "Identidade",
+          "result": "Verificada"
+        },
+        "resume": {
+          "label": "Informações do currículo",
+          "result": "Consistentes"
+        },
+        "proctoring": {
+          "label": "Alertas de supervisão",
+          "result": "Nenhum"
+        }
+      }
+    }
+  },
   "assistance": {
     "ariaLabel": "Como funciona",
+    "intro": "Três etapas da vaga à pré-seleção.",
     "steps": {
       "post": {
         "pill": "Publique a sua vaga",
-        "heading": "Defina a função,<br/><hl>deixe a IA tratar do resto</hl>"
+        "heading": "Defina a função,<br/><hl>deixe a IA tratar do resto</hl>",
+        "description": "Adicione a vaga e o que ela exige. O LetsHyre começa a analisar currículos na hora."
       },
       "screen": {
         "pill": "Triagem por IA",
-        "heading": "Entrevistas 24/7,<br/><hl>sem atrito de agendamento</hl>"
+        "heading": "Entrevistas 24/7,<br/><hl>sem atrito de agendamento</hl>",
+        "description": "Os candidatos fazem uma entrevista estruturada com IA quando for melhor para eles. Cada resposta é avaliada pelos mesmos critérios."
       },
       "scorecards": {
         "pill": "Receba Relatórios de Avaliação",
-        "heading": "Dados brutos transformados em<br/><hl>recomendações claras</hl>"
+        "heading": "Dados brutos transformados em<br/><hl>recomendações claras</hl>",
+        "description": "Cada candidato recebe uma avaliação com notas, pontos fortes, lacunas e a gravação, para você decidir quem conhecer."
       }
     }
+  },
+  "candidate": {
+    "eyebrow": "Para candidatos",
+    "title": "Uma entrevista, vista por muitas empresas",
+    "body": "Faça a entrevista com IA uma vez e as empresas que contratam para vagas compatíveis podem encontrar você. Sem ligações de triagem repetidas.",
+    "guide": "Ler o guia da entrevista",
+    "items": {
+      "interview": {
+        "title": "Entrevista pelo aplicativo para computador",
+        "desc": "Instale o aplicativo LetsHyre e siga o guia de 8 etapas. Faça a entrevista quando for melhor para você."
+      },
+      "evaluation": {
+        "title": "Avaliado pelos mesmos critérios",
+        "desc": "Todos os candidatos respondem no mesmo formato e são avaliados da mesma forma, para que suas habilidades falem por si."
+      },
+      "matching": {
+        "title": "Ativo por 90 dias",
+        "desc": "Seu perfil e sua avaliação ficam visíveis para as empresas por 90 dias após a entrevista."
+      },
+      "hired": {
+        "title": "Contato direto das empresas",
+        "desc": "As empresas que desbloqueiam seu perfil entram em contato sobre a vaga. Você não paga nada."
+      }
+    }
+  },
+  "pricingTeaser": {
+    "eyebrow": "Preços",
+    "title": "Pague só pelos candidatos que você desbloqueia",
+    "body": "As empresas ganham créditos grátis no cadastro e só compram mais quando precisam.",
+    "points": [
+      "Sem assinatura nem mensalidade",
+      "Os créditos nunca expiram",
+      "Grátis para candidatos"
+    ],
+    "cta": "Ver preços"
   },
   "faq": {
     "title": "Perguntas Frequentes: Contratação com IA e Período de Aviso Prévio",
@@ -67,6 +142,7 @@
   },
   "hireCard": {
     "title": "Pronto para Contratar ou Ser Contratado?",
+    "description": "Publique uma vaga e receba candidatos avaliados, ou faça uma entrevista e seja visto por empresas que estão contratando agora.",
     "startHiring": "Começar a Contratar",
     "applyJob": "Candidatar-se a uma Vaga"
   },

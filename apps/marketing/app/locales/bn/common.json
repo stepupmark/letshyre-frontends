@@ -7,20 +7,31 @@
     "pricing": "মূল্য",
     "about": "সম্পর্কে",
     "contact": "যোগাযোগ",
+    "logIn": "লগ ইন",
     "getStarted": "শুরু করুন",
     "language": "ভাষা পরিবর্তন করুন",
     "logoAlt": "LetsHyre লোগো",
     "toggle": "নেভিগেশন টগল করুন",
+    "close": "মেনু বন্ধ করুন",
     "siteNavigation": "সাইট নেভিগেশন",
     "primaryAria": "প্রধান নেভিগেশন",
     "mobileAria": "মোবাইল নেভিগেশন"
   },
   "footer": {
+    "tagline": "নোটিস পিরিয়ডে থাকা কর্মীদের নিয়োগকারী দলের জন্য এআই ইন্টারভিউ ও স্কোরকার্ড।",
     "product": "প্রোডাক্ট",
     "candidates": "প্রার্থীরা",
     "company": "কোম্পানি",
+    "legal": "আইনি",
     "stayUpdated": "আপডেট থাকুন",
     "newsletterDesc": "LetsHyre-এর সর্বশেষ খবর ও আপডেট পান",
+    "social": "সোশ্যাল মিডিয়ায় LetsHyre",
+    "socialLinks": {
+      "linkedin": "LinkedIn-এ LetsHyre",
+      "x": "X-এ LetsHyre",
+      "instagram": "Instagram-এ LetsHyre",
+      "youtube": "YouTube-এ LetsHyre"
+    },
     "links": {
       "interviewProcess": "ইন্টারভিউ প্রক্রিয়া",
       "downloadApp": "অ্যাপ্লিকেশন ডাউনলোড করুন",
@@ -29,15 +40,20 @@
       "terms": "শর্তাবলী",
       "privacy": "গোপনীয়তা নীতি",
       "refund": "রিফান্ড নীতি",
-      "contact": "যোগাযোগ"
+      "contact": "যোগাযোগ",
+      "employerRegister": "নিয়োগকর্তা অ্যাকাউন্ট তৈরি করুন",
+      "candidateRegister": "প্রার্থী প্রোফাইল তৈরি করুন"
     }
   },
   "newsletter": {
     "emailPlaceholder": "আপনার ইমেইল",
     "emailLabel": "ইমেইল ঠিকানা",
     "subscribe": "সাবস্ক্রাইব করুন",
+    "subscribing": "সাবস্ক্রাইব করা হচ্ছে",
     "subscribed": "সাবস্ক্রিপশন সফলভাবে সংরক্ষণ করা হয়েছে।",
-    "subscribeFailed": "সাবস্ক্রাইব করতে ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
+    "subscribeFailed": "সাবস্ক্রাইব করতে ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।",
+    "emailRequired": "আপনার ইমেল ঠিকানা লিখুন।",
+    "emailInvalid": "একটি বৈধ ইমেল ঠিকানা লিখুন, যেমন name@company.com।"
   },
   "pageState": {
     "loading": "পৃষ্ঠা লোড হচ্ছে"
@@ -54,5 +70,11 @@
     "body": "আমাদের দিকে কিছু সমস্যা হয়েছে। আবার চেষ্টা করতে পৃষ্ঠাটি আবার লোড করুন, সমস্যা থেকে গেলে আমাদের সঙ্গে যোগাযোগ করুন।",
     "retry": "আবার চেষ্টা করুন",
     "goHome": "হোমে যান"
+  },
+  "consent": {
+    "label": "কুকি পছন্দ",
+    "body": "আমাদের বিজ্ঞাপন কেমন কাজ করছে তা মাপতে আমরা কুকি ব্যবহার করি। আপনি সম্মতি না দিলে কিছুই শেয়ার করা হয় না। <0>গোপনীয়তা নীতি</0>",
+    "accept": "গ্রহণ করুন",
+    "reject": "প্রত্যাখ্যান করুন"
   }
 }

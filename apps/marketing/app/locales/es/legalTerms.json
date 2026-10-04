@@ -416,7 +416,8 @@
     "contents": "Contenido",
     "readTime": "~{{count}} min de lectura",
     "backToTop": "Volver arriba",
-    "translationNotice": "Esta es una traducción ofrecida por comodidad. El texto oficial es la <en>versión en inglés</en>."
+    "translationNotice": "Esta es una traducción ofrecida por comodidad. El texto oficial es la <en>versión en inglés</en>.",
+    "lastUpdated": "Última actualización: {{date}}"
   },
   "meta": {
     "title": "Términos y condiciones | letshyre.ai",

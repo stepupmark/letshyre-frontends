@@ -317,7 +317,8 @@
     "contents": "Inhoud",
     "readTime": "~{{count}} min leestijd",
     "backToTop": "Terug naar boven",
-    "translationNotice": "Dit is een vertaling die voor het gemak wordt aangeboden. De officiële tekst is de <en>Engelse versie</en>."
+    "translationNotice": "Dit is een vertaling die voor het gemak wordt aangeboden. De officiële tekst is de <en>Engelse versie</en>.",
+    "lastUpdated": "Laatst bijgewerkt op {{date}}"
   },
   "meta": {
     "title": "Privacybeleid | letshyre.ai",

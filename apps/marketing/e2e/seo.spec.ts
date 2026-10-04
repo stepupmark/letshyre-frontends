@@ -25,7 +25,9 @@ const before = new Map(
   baseline.pages.map((p) => [new URL(p.url).pathname.replace(/\/$/, ""), p])
 )
 const allowed = (path: string, field: string) =>
-  SEO_ALLOWLIST.some((a) => a.path === path && a.field === field)
+  SEO_ALLOWLIST.some(
+    (a) => path.replace(/^\/[a-z]{2}/, "") === a.page && a.field === field
+  )
 
 test.describe("seo baseline", () => {
   test.skip(({ browserName }) => browserName !== "chromium", "static HTML")
@@ -62,8 +64,8 @@ test.describe("seo baseline", () => {
   }
 
   test("the allowlist only names baseline pages", () => {
-    for (const { path } of SEO_ALLOWLIST) {
-      expect(before.has(path), path).toBe(true)
+    for (const { page } of SEO_ALLOWLIST) {
+      expect(before.has(`/en${page}`), page).toBe(true)
     }
   })
 })

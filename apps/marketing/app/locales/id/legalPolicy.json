@@ -317,7 +317,8 @@
     "contents": "Daftar Isi",
     "readTime": "~{{count}} menit membaca",
     "backToTop": "Kembali ke atas",
-    "translationNotice": "Ini adalah terjemahan yang disediakan untuk kemudahan. Teks resmi adalah <en>versi bahasa Inggris</en>."
+    "translationNotice": "Ini adalah terjemahan yang disediakan untuk kemudahan. Teks resmi adalah <en>versi bahasa Inggris</en>.",
+    "lastUpdated": "Terakhir diperbarui {{date}}"
   },
   "meta": {
     "title": "Kebijakan Privasi | letshyre.ai",

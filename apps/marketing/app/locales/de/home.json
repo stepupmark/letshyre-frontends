@@ -7,6 +7,7 @@
   },
   "hero": {
     "title": "Die KI-Recruiting-Plattform für <hl>Talente in der Kündigungsfrist</hl>",
+    "description": "LetsHyre automatisiert Lebenslaufprüfung, KI-Interviews und Kandidatenverifizierung für moderne HR-Teams.",
     "ctaHiring": "Ich stelle ein",
     "ctaJob": "Ich suche einen Job",
     "tagline": {
@@ -14,22 +15,96 @@
       "start": "Zeit für die Shortlist."
     }
   },
+  "preview": {
+    "label": "Beispiel-Scorecard eines Kandidaten",
+    "candidate": "Ananya Rao",
+    "role": "Senior Frontend Engineer",
+    "notice": "Kündigungsfrist: 30 Tage",
+    "recommendation": "Shortlist",
+    "overall": "Gesamtbewertung",
+    "outOf": "von {{max}}",
+    "skillsHeading": "Fähigkeiten",
+    "skills": {
+      "communication": "Kommunikation",
+      "technical": "Technische Tiefe",
+      "problemSolving": "Problemlösung",
+      "roleFit": "Passung zur Stelle"
+    },
+    "checks": {
+      "caption": "Verifizierung",
+      "check": "Prüfung",
+      "result": "Ergebnis",
+      "rows": {
+        "identity": {
+          "label": "Identität",
+          "result": "Verifiziert"
+        },
+        "resume": {
+          "label": "Angaben im Lebenslauf",
+          "result": "Stimmig"
+        },
+        "proctoring": {
+          "label": "Auffälligkeiten bei der Aufsicht",
+          "result": "Keine"
+        }
+      }
+    }
+  },
   "assistance": {
     "ariaLabel": "So funktioniert's",
+    "intro": "In drei Schritten von der Stellenanzeige zur Shortlist.",
     "steps": {
       "post": {
         "pill": "Stelle ausschreiben",
-        "heading": "Definieren Sie die Rolle,<br/><hl>die KI erledigt den Rest</hl>"
+        "heading": "Definieren Sie die Rolle,<br/><hl>die KI erledigt den Rest</hl>",
+        "description": "Erfassen Sie die Stelle und ihre Anforderungen. LetsHyre prüft Lebensläufe sofort dagegen."
       },
       "screen": {
         "pill": "KI-Screening",
-        "heading": "Interviews rund um die Uhr,<br/><hl>ohne Terminreibung</hl>"
+        "heading": "Interviews rund um die Uhr,<br/><hl>ohne Terminreibung</hl>",
+        "description": "Kandidaten führen ein strukturiertes KI-Interview, wann es ihnen passt. Jede Antwort wird nach denselben Kriterien bewertet."
       },
       "scorecards": {
         "pill": "Scorecards erhalten",
-        "heading": "Rohdaten verwandelt in<br/><hl>klare Empfehlungen</hl>"
+        "heading": "Rohdaten verwandelt in<br/><hl>klare Empfehlungen</hl>",
+        "description": "Jeder Kandidat erhält eine Scorecard mit Bewertungen, Stärken, Lücken und der Aufzeichnung, damit Sie entscheiden, wen Sie treffen."
       }
     }
+  },
+  "candidate": {
+    "eyebrow": "Für Kandidaten",
+    "title": "Ein Interview, sichtbar für viele Arbeitgeber",
+    "body": "Führen Sie das KI-Interview einmal, und Arbeitgeber mit passenden Stellen können Sie finden. Keine wiederholten Vorgespräche.",
+    "guide": "Interviewleitfaden lesen",
+    "items": {
+      "interview": {
+        "title": "Interview in der Desktop-App",
+        "desc": "Installieren Sie die LetsHyre-App und folgen Sie dem 8-Schritte-Leitfaden. Führen Sie das Interview, wann es Ihnen passt."
+      },
+      "evaluation": {
+        "title": "Nach denselben Kriterien bewertet",
+        "desc": "Alle Kandidaten antworten im selben Format und werden gleich bewertet, damit Ihre Fähigkeiten für sich sprechen."
+      },
+      "matching": {
+        "title": "90 Tage aktiv",
+        "desc": "Ihr Profil und Ihre Scorecard bleiben nach dem Interview 90 Tage für Arbeitgeber sichtbar."
+      },
+      "hired": {
+        "title": "Direkt von Arbeitgebern hören",
+        "desc": "Arbeitgeber, die Ihr Profil freischalten, kontaktieren Sie zur Stelle. Sie zahlen nichts."
+      }
+    }
+  },
+  "pricingTeaser": {
+    "eyebrow": "Preise",
+    "title": "Zahlen Sie nur für die Kandidaten, die Sie freischalten",
+    "body": "Arbeitgeber erhalten bei der Registrierung kostenlose Credits und kaufen nur dann mehr, wenn sie sie brauchen.",
+    "points": [
+      "Kein Abo, keine Monatsrechnung",
+      "Credits verfallen nie",
+      "Kostenlos für Kandidaten"
+    ],
+    "cta": "Preise ansehen"
   },
   "faq": {
     "title": "FAQ: KI-Recruiting & Kündigungsfrist",
@@ -67,6 +142,7 @@
   },
   "hireCard": {
     "title": "Bereit einzustellen oder eingestellt zu werden?",
+    "description": "Schreiben Sie eine Stelle aus und erhalten Sie bewertete Kandidaten, oder führen Sie ein Interview und werden Sie von Arbeitgebern gesehen, die jetzt einstellen.",
     "startHiring": "Jetzt einstellen",
     "applyJob": "Auf Job bewerben"
   },

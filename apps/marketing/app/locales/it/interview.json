@@ -37,6 +37,36 @@
       "desc": "Sei pronto. La finestra del colloquio si apre a schermo intero con la registrazione dello schermo attiva. Rispondi a ogni domanda entro il tempo assegnato: puoi navigare tra le domande prima che il timer della sessione scada."
     }
   },
+  "toc": {
+    "label": "In questa pagina",
+    "steps": "Passaggi"
+  },
+  "requirements": {
+    "title": "Cosa ti serve",
+    "description": "Controlla questi punti prima del giorno del colloquio.",
+    "items": {
+      "computer": {
+        "title": "Un computer Windows",
+        "desc": "Il colloquio si svolge nell'app desktop di LetsHyre. Non si può fare da smartphone o tablet."
+      },
+      "camera": {
+        "title": "Una fotocamera funzionante",
+        "desc": "Scatta la foto di verifica e resta accesa mentre rispondi."
+      },
+      "microphone": {
+        "title": "Un microfono",
+        "desc": "Serve per la registrazione vocale e per le tue risposte a voce."
+      },
+      "internet": {
+        "title": "Una connessione internet stabile",
+        "desc": "Le tue risposte e la registrazione dello schermo vengono caricate durante la sessione."
+      },
+      "room": {
+        "title": "Una stanza tranquilla e ben illuminata",
+        "desc": "Mettiti di fronte alla luce perché la fotocamera ti veda bene e riduci il rumore di fondo."
+      }
+    }
+  },
   "cta": {
     "title": "Pronto per iniziare?",
     "desc": "Scarica l'app desktop, accedi al tuo account e clicca su Inizia Colloquio quando sei pronto.",

@@ -23,6 +23,26 @@
       "emailInvalid": "Introduza um endereço de email válido",
       "subjectMin": "O assunto deve ter pelo menos 3 carateres",
       "messageMin": "A mensagem deve ter pelo menos 10 carateres"
+    },
+    "sendAnother": "Enviar outra mensagem",
+    "topics": {
+      "sales": "Consulta sobre plano personalizado"
+    },
+    "errors": {
+      "generic": "Não conseguimos enviar sua mensagem. Tente novamente em instantes.",
+      "network": "Não conseguimos acessar nosso servidor. Verifique sua conexão e tente novamente.",
+      "rateLimited": "Você enviou várias mensagens em pouco tempo. Aguarde um minuto e tente novamente."
+    }
+  },
+  "channels": {
+    "title": "Outras formas de falar conosco",
+    "candidates": {
+      "title": "Preparando-se para uma entrevista?",
+      "link": "Ler o guia da entrevista"
+    },
+    "employers": {
+      "title": "Comparando planos?",
+      "link": "Ver preços"
     }
   },
   "meta": {

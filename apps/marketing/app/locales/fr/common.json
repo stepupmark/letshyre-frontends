@@ -7,20 +7,31 @@
     "pricing": "Tarifs",
     "about": "À propos",
     "contact": "Contact",
+    "logIn": "Se connecter",
     "getStarted": "Commencer",
     "language": "Changer de langue",
     "logoAlt": "Logo LetsHyre",
     "toggle": "Basculer la navigation",
+    "close": "Fermer le menu",
     "siteNavigation": "Navigation du site",
     "primaryAria": "Navigation principale",
     "mobileAria": "Navigation mobile"
   },
   "footer": {
+    "tagline": "Entretiens IA et grilles d'évaluation pour les équipes qui recrutent des candidats en préavis.",
     "product": "Produit",
     "candidates": "Candidats",
     "company": "Entreprise",
+    "legal": "Mentions légales",
     "stayUpdated": "Restez informé",
     "newsletterDesc": "Recevez les dernières nouvelles et mises à jour de LetsHyre",
+    "social": "LetsHyre sur les réseaux sociaux",
+    "socialLinks": {
+      "linkedin": "LetsHyre sur LinkedIn",
+      "x": "LetsHyre sur X",
+      "instagram": "LetsHyre sur Instagram",
+      "youtube": "LetsHyre sur YouTube"
+    },
     "links": {
       "interviewProcess": "Processus d'entretien",
       "downloadApp": "Télécharger l'application",
@@ -29,15 +40,20 @@
       "terms": "Conditions générales",
       "privacy": "Politique de confidentialité",
       "refund": "Politique de remboursement",
-      "contact": "Contact"
+      "contact": "Contact",
+      "employerRegister": "Créer un compte employeur",
+      "candidateRegister": "Créer un profil candidat"
     }
   },
   "newsletter": {
     "emailPlaceholder": "Votre e-mail",
     "emailLabel": "Adresse e-mail",
     "subscribe": "S'abonner",
+    "subscribing": "Inscription en cours",
     "subscribed": "Abonnement enregistré avec succès.",
-    "subscribeFailed": "Échec de l'abonnement. Veuillez réessayer."
+    "subscribeFailed": "Échec de l'abonnement. Veuillez réessayer.",
+    "emailRequired": "Saisissez votre adresse e-mail.",
+    "emailInvalid": "Saisissez une adresse e-mail valide, par exemple nom@entreprise.com."
   },
   "pageState": {
     "loading": "Chargement de la page"
@@ -54,5 +70,11 @@
     "body": "Un problème est survenu de notre côté. Rechargez la page pour réessayer, ou contactez-nous si le problème persiste.",
     "retry": "Réessayer",
     "goHome": "Accueil"
+  },
+  "consent": {
+    "label": "Préférences de cookies",
+    "body": "Nous utilisons des cookies pour mesurer les performances de nos annonces. Rien n'est partagé sans votre accord. <0>Politique de confidentialité</0>",
+    "accept": "Accepter",
+    "reject": "Refuser"
   }
 }

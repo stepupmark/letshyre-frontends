@@ -7,20 +7,31 @@
     "pricing": "Prezzi",
     "about": "Chi Siamo",
     "contact": "Contatti",
+    "logIn": "Accedi",
     "getStarted": "Inizia Ora",
     "language": "Cambia lingua",
     "logoAlt": "Logo LetsHyre",
     "toggle": "Attiva/disattiva navigazione",
+    "close": "Chiudi menu",
     "siteNavigation": "Navigazione del sito",
     "primaryAria": "Navigazione principale",
     "mobileAria": "Navigazione mobile"
   },
   "footer": {
+    "tagline": "Colloqui con IA e valutazioni per i team che assumono persone in periodo di preavviso.",
     "product": "Prodotto",
     "candidates": "Candidati",
     "company": "Azienda",
+    "legal": "Note legali",
     "stayUpdated": "Resta Aggiornato",
     "newsletterDesc": "Ricevi le ultime notizie e aggiornamenti da LetsHyre",
+    "social": "LetsHyre sui social",
+    "socialLinks": {
+      "linkedin": "LetsHyre su LinkedIn",
+      "x": "LetsHyre su X",
+      "instagram": "LetsHyre su Instagram",
+      "youtube": "LetsHyre su YouTube"
+    },
     "links": {
       "interviewProcess": "Processo di Colloquio",
       "downloadApp": "Scarica Applicazione",
@@ -29,15 +40,20 @@
       "terms": "Termini e Condizioni",
       "privacy": "Informativa sulla Privacy",
       "refund": "Politica di Rimborso",
-      "contact": "Contatti"
+      "contact": "Contatti",
+      "employerRegister": "Crea account aziendale",
+      "candidateRegister": "Crea profilo candidato"
     }
   },
   "newsletter": {
     "emailPlaceholder": "La tua email",
     "emailLabel": "Indirizzo email",
     "subscribe": "Iscriviti",
+    "subscribing": "Iscrizione in corso",
     "subscribed": "Iscrizione salvata con successo.",
-    "subscribeFailed": "Impossibile completare l'iscrizione. Riprova."
+    "subscribeFailed": "Impossibile completare l'iscrizione. Riprova.",
+    "emailRequired": "Inserisci il tuo indirizzo email.",
+    "emailInvalid": "Inserisci un indirizzo email valido, ad esempio nome@azienda.com."
   },
   "pageState": {
     "loading": "Caricamento della pagina"
@@ -54,5 +70,11 @@
     "body": "Qualcosa è andato storto da parte nostra. Ricarica la pagina per riprovare o contattaci se il problema persiste.",
     "retry": "Riprova",
     "goHome": "Vai alla home"
+  },
+  "consent": {
+    "label": "Preferenze sui cookie",
+    "body": "Usiamo i cookie per misurare il rendimento dei nostri annunci. Non condividiamo nulla senza il tuo consenso. <0>Informativa sulla privacy</0>",
+    "accept": "Accetta",
+    "reject": "Rifiuta"
   }
 }

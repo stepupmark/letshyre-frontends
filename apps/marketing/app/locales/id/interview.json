@@ -37,6 +37,36 @@
       "desc": "Anda sudah siap. Jendela wawancara akan terbuka dalam mode layar penuh dengan perekaman layar aktif. Jawab setiap pertanyaan dalam waktu yang ditentukan — Anda dapat berpindah antar pertanyaan sebelum waktu sesi habis."
     }
   },
+  "toc": {
+    "label": "Di halaman ini",
+    "steps": "Langkah"
+  },
+  "requirements": {
+    "title": "Yang Anda perlukan",
+    "description": "Periksa hal-hal ini sebelum hari wawancara Anda.",
+    "items": {
+      "computer": {
+        "title": "Komputer Windows",
+        "desc": "Wawancara berjalan di aplikasi desktop LetsHyre. Tidak bisa diikuti dari ponsel atau tablet."
+      },
+      "camera": {
+        "title": "Kamera yang berfungsi",
+        "desc": "Kamera mengambil foto verifikasi Anda dan tetap menyala selama Anda menjawab."
+      },
+      "microphone": {
+        "title": "Mikrofon",
+        "desc": "Digunakan untuk pendaftaran suara dan jawaban lisan Anda."
+      },
+      "internet": {
+        "title": "Koneksi internet yang stabil",
+        "desc": "Jawaban dan rekaman layar Anda diunggah selama sesi."
+      },
+      "room": {
+        "title": "Ruangan tenang dan terang",
+        "desc": "Hadap ke arah cahaya agar kamera melihat Anda dengan jelas, dan kurangi kebisingan latar."
+      }
+    }
+  },
   "cta": {
     "title": "Siap untuk memulai?",
     "desc": "Unduh aplikasi desktop, masuk ke akun Anda, dan klik Mulai Wawancara saat Anda sudah siap.",

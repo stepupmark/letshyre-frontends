@@ -7,20 +7,31 @@
     "pricing": "الأسعار",
     "about": "من نحن",
     "contact": "تواصل معنا",
+    "logIn": "تسجيل الدخول",
     "getStarted": "ابدأ الآن",
     "language": "تغيير اللغة",
     "logoAlt": "شعار LetsHyre",
     "toggle": "تبديل التنقل",
+    "close": "إغلاق القائمة",
     "siteNavigation": "تنقّل الموقع",
     "primaryAria": "التنقّل الرئيسي",
     "mobileAria": "تنقّل الهاتف"
   },
   "footer": {
+    "tagline": "مقابلات بالذكاء الاصطناعي وبطاقات تقييم للفرق التي توظف أشخاصًا في فترة الإشعار.",
     "product": "المنتج",
     "candidates": "المرشحون",
     "company": "الشركة",
+    "legal": "قانوني",
     "stayUpdated": "ابقَ على اطلاع",
     "newsletterDesc": "احصل على آخر الأخبار والتحديثات من LetsHyre",
+    "social": "LetsHyre على وسائل التواصل الاجتماعي",
+    "socialLinks": {
+      "linkedin": "LetsHyre على LinkedIn",
+      "x": "LetsHyre على X",
+      "instagram": "LetsHyre على Instagram",
+      "youtube": "LetsHyre على YouTube"
+    },
     "links": {
       "interviewProcess": "عملية المقابلة",
       "downloadApp": "تنزيل التطبيق",
@@ -29,15 +40,20 @@
       "terms": "الشروط والأحكام",
       "privacy": "سياسة الخصوصية",
       "refund": "سياسة الاسترداد",
-      "contact": "تواصل معنا"
+      "contact": "تواصل معنا",
+      "employerRegister": "إنشاء حساب صاحب عمل",
+      "candidateRegister": "إنشاء ملف مرشح"
     }
   },
   "newsletter": {
     "emailPlaceholder": "بريدك الإلكتروني",
     "emailLabel": "عنوان البريد الإلكتروني",
     "subscribe": "اشترك",
+    "subscribing": "جارٍ الاشتراك",
     "subscribed": "تم حفظ الاشتراك بنجاح.",
-    "subscribeFailed": "فشل الاشتراك. يُرجى المحاولة مرة أخرى."
+    "subscribeFailed": "فشل الاشتراك. يُرجى المحاولة مرة أخرى.",
+    "emailRequired": "أدخل بريدك الإلكتروني.",
+    "emailInvalid": "أدخل بريدًا إلكترونيًا صالحًا، مثل name@company.com."
   },
   "pageState": {
     "loading": "جارٍ تحميل الصفحة"
@@ -54,5 +70,11 @@
     "body": "حدث خطأ من جانبنا. أعد تحميل الصفحة للمحاولة مرة أخرى، أو تواصل معنا إذا استمرت المشكلة.",
     "retry": "إعادة المحاولة",
     "goHome": "الصفحة الرئيسية"
+  },
+  "consent": {
+    "label": "تفضيلات ملفات تعريف الارتباط",
+    "body": "نستخدم ملفات تعريف الارتباط لقياس أداء إعلاناتنا. لا تتم مشاركة أي شيء ما لم توافق. <0>سياسة الخصوصية</0>",
+    "accept": "قبول",
+    "reject": "رفض"
   }
 }

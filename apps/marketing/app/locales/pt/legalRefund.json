@@ -164,7 +164,8 @@
     "contents": "Índice",
     "readTime": "~{{count}} min de leitura",
     "backToTop": "Voltar ao topo",
-    "translationNotice": "Esta é uma tradução disponibilizada por conveniência. O texto oficial é a <en>versão em inglês</en>."
+    "translationNotice": "Esta é uma tradução disponibilizada por conveniência. O texto oficial é a <en>versão em inglês</en>.",
+    "lastUpdated": "Última atualização: {{date}}"
   },
   "meta": {
     "title": "Política de reembolso | letshyre.ai",

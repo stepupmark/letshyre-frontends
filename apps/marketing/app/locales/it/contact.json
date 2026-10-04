@@ -23,6 +23,26 @@
       "emailInvalid": "Inserisci un indirizzo email valido",
       "subjectMin": "L'oggetto deve contenere almeno 3 caratteri",
       "messageMin": "Il messaggio deve contenere almeno 10 caratteri"
+    },
+    "sendAnother": "Invia un altro messaggio",
+    "topics": {
+      "sales": "Richiesta per un piano personalizzato"
+    },
+    "errors": {
+      "generic": "Non siamo riusciti a inviare il messaggio. Riprova tra poco.",
+      "network": "Non riusciamo a raggiungere il server. Controlla la connessione e riprova.",
+      "rateLimited": "Hai inviato diversi messaggi in poco tempo. Attendi un minuto e riprova."
+    }
+  },
+  "channels": {
+    "title": "Altri modi per contattarci",
+    "candidates": {
+      "title": "Ti stai preparando a un colloquio?",
+      "link": "Leggi la guida al colloquio"
+    },
+    "employers": {
+      "title": "Stai confrontando i piani?",
+      "link": "Vedi i prezzi"
     }
   },
   "meta": {

@@ -7,6 +7,7 @@
   },
   "hero": {
     "title": "La Piattaforma di Assunzione IA per <hl>Talenti in Preavviso</hl>",
+    "description": "LetsHyre automatizza la valutazione dei curriculum, i colloqui con IA e la verifica dei candidati per i team HR moderni.",
     "ctaHiring": "Sto Assumendo",
     "ctaJob": "Sto cercando lavoro",
     "tagline": {
@@ -14,22 +15,96 @@
       "start": "Inizia a selezionare."
     }
   },
+  "preview": {
+    "label": "Esempio di valutazione di un candidato",
+    "candidate": "Ananya Rao",
+    "role": "Senior Frontend Engineer",
+    "notice": "Preavviso: 30 giorni",
+    "recommendation": "In rosa",
+    "overall": "Punteggio complessivo",
+    "outOf": "su {{max}}",
+    "skillsHeading": "Competenze",
+    "skills": {
+      "communication": "Comunicazione",
+      "technical": "Competenza tecnica",
+      "problemSolving": "Problem solving",
+      "roleFit": "Adeguatezza al ruolo"
+    },
+    "checks": {
+      "caption": "Verifica",
+      "check": "Controllo",
+      "result": "Esito",
+      "rows": {
+        "identity": {
+          "label": "Identità",
+          "result": "Verificata"
+        },
+        "resume": {
+          "label": "Dati del curriculum",
+          "result": "Coerenti"
+        },
+        "proctoring": {
+          "label": "Segnalazioni di supervisione",
+          "result": "Nessuna"
+        }
+      }
+    }
+  },
   "assistance": {
     "ariaLabel": "Come funziona",
+    "intro": "Tre passaggi dall'annuncio alla rosa dei candidati.",
     "steps": {
       "post": {
         "pill": "Pubblica il tuo annuncio",
-        "heading": "Definisci il ruolo,<br/><hl>lascia il resto all'IA</hl>"
+        "heading": "Definisci il ruolo,<br/><hl>lascia il resto all'IA</hl>",
+        "description": "Aggiungi il ruolo e i requisiti. LetsHyre inizia subito a confrontare i curriculum."
       },
       "screen": {
         "pill": "Selezione IA",
-        "heading": "Colloqui 24/7,<br/><hl>zero attriti di pianificazione</hl>"
+        "heading": "Colloqui 24/7,<br/><hl>zero attriti di pianificazione</hl>",
+        "description": "I candidati sostengono un colloquio strutturato con IA quando preferiscono. Ogni risposta è valutata con gli stessi criteri."
       },
       "scorecards": {
         "pill": "Ricevi le Scorecard",
-        "heading": "Dati grezzi trasformati in<br/><hl>raccomandazioni chiare</hl>"
+        "heading": "Dati grezzi trasformati in<br/><hl>raccomandazioni chiare</hl>",
+        "description": "Ogni candidato riceve una valutazione con punteggi, punti di forza, lacune e la registrazione, così decidi chi incontrare."
       }
     }
+  },
+  "candidate": {
+    "eyebrow": "Per i candidati",
+    "title": "Un colloquio, davanti a molte aziende",
+    "body": "Sostieni il colloquio con IA una volta e le aziende che assumono per ruoli compatibili possono trovarti. Niente più telefonate di preselezione ripetute.",
+    "guide": "Leggi la guida al colloquio",
+    "items": {
+      "interview": {
+        "title": "Colloquio dall'app desktop",
+        "desc": "Installa l'app LetsHyre e segui la guida in 8 passaggi. Sostieni il colloquio quando preferisci."
+      },
+      "evaluation": {
+        "title": "Valutato con gli stessi criteri",
+        "desc": "Tutti i candidati rispondono nello stesso formato e vengono valutati allo stesso modo, così le tue competenze parlano da sole."
+      },
+      "matching": {
+        "title": "Attivo per 90 giorni",
+        "desc": "Il tuo profilo e la tua valutazione restano visibili alle aziende per 90 giorni dopo il colloquio."
+      },
+      "hired": {
+        "title": "Contatti diretti dalle aziende",
+        "desc": "Le aziende che sbloccano il tuo profilo ti contattano per il ruolo. Non paghi nulla."
+      }
+    }
+  },
+  "pricingTeaser": {
+    "eyebrow": "Prezzi",
+    "title": "Paghi solo i candidati che sblocchi",
+    "body": "Le aziende ricevono crediti gratuiti alla registrazione e ne comprano altri solo quando servono.",
+    "points": [
+      "Nessun abbonamento né canone mensile",
+      "I crediti non scadono mai",
+      "Gratis per i candidati"
+    ],
+    "cta": "Vedi i prezzi"
   },
   "faq": {
     "title": "FAQ: Assunzioni IA e Periodo di Preavviso",
@@ -67,6 +142,7 @@
   },
   "hireCard": {
     "title": "Pronto ad Assumere o a Essere Assunto?",
+    "description": "Pubblica un ruolo e ricevi candidati valutati, oppure sostieni un colloquio e fatti notare dalle aziende che assumono ora.",
     "startHiring": "Inizia ad Assumere",
     "applyJob": "Candidati per un Lavoro"
   },

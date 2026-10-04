@@ -1,6 +1,11 @@
 {
   "title": "Télécharger l'application",
   "subtitle": "Obtenez l'application de bureau sécurisée pour commencer votre session d'entretien stable et sans distraction.",
+  "features": {
+    "distractionFree": "Lance l'entretien en plein écran",
+    "stable": "Vérifie les applications bloquées avant de commencer",
+    "secure": "Surveillé par caméra, micro et écran"
+  },
   "loading": "Chargement des versions...",
   "comingSoon": "Bientôt disponible",
   "retry": "Réessayer",
@@ -11,6 +16,23 @@
     "interview": "Entretien"
   },
   "support": "Un problème ? Consultez le guide d'installation",
+  "os": {
+    "windows": "Windows",
+    "mac": "macOS"
+  },
+  "release": {
+    "detected": "Votre ordinateur",
+    "version": "Version {{version}}",
+    "notYet": "Pas encore disponible",
+    "error": "Impossible de vérifier la dernière version.",
+    "unsupported": "L'application d'entretien fonctionne sur un ordinateur Windows. Ouvrez cette page sur celui-ci pour la télécharger."
+  },
+  "install": {
+    "title": "Du téléchargement à l'entretien",
+    "download": "Enregistrez le programme d'installation depuis cette page. C'est un seul fichier.",
+    "install": "Ouvrez le fichier et suivez les instructions. Windows peut vous demander de confirmer avant de l'exécuter.",
+    "interview": "Ouvrez LetsHyre, <signIn>connectez-vous</signIn> avec votre compte candidat et cliquez sur Passer l'entretien."
+  },
   "meta": {
     "title": "Télécharger l'application de bureau | letshyre.ai",
     "description": "Installez l'application de bureau LetsHyre pour Windows et passez votre entretien dans un environnement stable et surveillé.",

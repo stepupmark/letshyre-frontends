@@ -29,3 +29,7 @@ export const SITEMAP: SitemapPage[] = [
 })
 
 export const RTL = new Set(["ar", "ur"])
+
+/** Other locales only add translated copy, so the chromium project covers them. */
+export const otherEngine = (lang: string, project: string) =>
+  lang !== "en" && project !== "chromium"

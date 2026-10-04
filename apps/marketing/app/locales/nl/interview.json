@@ -37,6 +37,36 @@
       "desc": "U bent er klaar voor. Het interviewvenster opent op volledig scherm met actieve schermopname. Beantwoord elke vraag binnen de toegewezen tijd — u kunt navigeren tussen vragen voordat de sessietimer afloopt."
     }
   },
+  "toc": {
+    "label": "Op deze pagina",
+    "steps": "Stappen"
+  },
+  "requirements": {
+    "title": "Wat u nodig hebt",
+    "description": "Controleer dit vóór de dag van uw interview.",
+    "items": {
+      "computer": {
+        "title": "Een Windows-computer",
+        "desc": "Het interview draait in de LetsHyre-desktopapp. Het kan niet op een telefoon of tablet."
+      },
+      "camera": {
+        "title": "Een werkende camera",
+        "desc": "Hij maakt uw verificatiefoto en blijft aan terwijl u antwoordt."
+      },
+      "microphone": {
+        "title": "Een microfoon",
+        "desc": "Voor de stemregistratie en uw gesproken antwoorden."
+      },
+      "internet": {
+        "title": "Een stabiele internetverbinding",
+        "desc": "Uw antwoorden en de schermopname worden tijdens de sessie geüpload."
+      },
+      "room": {
+        "title": "Een rustige, goed verlichte ruimte",
+        "desc": "Zit met uw gezicht naar het licht zodat de camera u goed ziet, en houd achtergrondgeluid laag."
+      }
+    }
+  },
   "cta": {
     "title": "Klaar om te beginnen?",
     "desc": "Download de desktopapp, log in op uw account en klik op Interview Nemen wanneer u klaar bent.",

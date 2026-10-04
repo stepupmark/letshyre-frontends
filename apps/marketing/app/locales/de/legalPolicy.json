@@ -317,7 +317,8 @@
     "contents": "Inhalt",
     "readTime": "~{{count}} Min. Lesezeit",
     "backToTop": "Nach oben",
-    "translationNotice": "Dies ist eine Übersetzung, die der Vereinfachung dient. Maßgeblich ist die <en>englische Fassung</en>."
+    "translationNotice": "Dies ist eine Übersetzung, die der Vereinfachung dient. Maßgeblich ist die <en>englische Fassung</en>.",
+    "lastUpdated": "Zuletzt aktualisiert am {{date}}"
   },
   "meta": {
     "title": "Datenschutzerklärung | letshyre.ai",

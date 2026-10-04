@@ -2,7 +2,7 @@ import AxeBuilder from "@axe-core/playwright"
 import { expect, type Page, test } from "@playwright/test"
 
 import { mockApi } from "./mock-api.ts"
-import { SITEMAP } from "./sitemap.ts"
+import { otherEngine, SITEMAP } from "./sitemap.ts"
 
 // Open states are covered next to their feature: mobile menu and newsletter in
 // header.spec, FAQ in home.spec, form errors in contact.spec, chat in assistant.spec.
@@ -18,8 +18,9 @@ test.beforeEach(async ({ page }) => {
   await mockApi(page)
 })
 
-for (const { path } of SITEMAP) {
-  test(`${path}: no axe violations`, async ({ page }) => {
+for (const { path, lang } of SITEMAP) {
+  test(`${path}: no axe violations`, async ({ page }, info) => {
+    test.skip(otherEngine(lang, info.project.name), "chromium only")
     await page.goto(path)
     await page.waitForLoadState("networkidle")
     await axe(page)

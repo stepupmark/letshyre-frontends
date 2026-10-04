@@ -164,7 +164,8 @@
     "contents": "فہرست",
     "readTime": "~{{count}} منٹ کا مطالعہ",
     "backToTop": "اوپر واپس جائیں",
-    "translationNotice": "یہ سہولت کے لیے فراہم کردہ ترجمہ ہے۔ سرکاری متن <en>انگریزی نسخہ</en> ہے۔"
+    "translationNotice": "یہ سہولت کے لیے فراہم کردہ ترجمہ ہے۔ سرکاری متن <en>انگریزی نسخہ</en> ہے۔",
+    "lastUpdated": "آخری اپ ڈیٹ {{date}}"
   },
   "meta": {
     "title": "رقم کی واپسی کی پالیسی | letshyre.ai",

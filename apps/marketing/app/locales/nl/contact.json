@@ -23,6 +23,26 @@
       "emailInvalid": "Voer een geldig e-mailadres in",
       "subjectMin": "Onderwerp moet minimaal 3 tekens bevatten",
       "messageMin": "Bericht moet minimaal 10 tekens bevatten"
+    },
+    "sendAnother": "Nog een bericht verzenden",
+    "topics": {
+      "sales": "Vraag over een maatwerkpakket"
+    },
+    "errors": {
+      "generic": "We konden uw bericht niet verzenden. Probeer het zo opnieuw.",
+      "network": "We konden onze server niet bereiken. Controleer uw verbinding en probeer het opnieuw.",
+      "rateLimited": "U hebt in korte tijd meerdere berichten verzonden. Wacht een minuut en probeer het opnieuw."
+    }
+  },
+  "channels": {
+    "title": "Andere manieren om ons te bereiken",
+    "candidates": {
+      "title": "Bereidt u zich voor op een interview?",
+      "link": "Lees de interviewgids"
+    },
+    "employers": {
+      "title": "Vergelijkt u abonnementen?",
+      "link": "Bekijk prijzen"
     }
   },
   "meta": {

@@ -7,20 +7,31 @@
     "pricing": "요금",
     "about": "회사 소개",
     "contact": "문의",
+    "logIn": "로그인",
     "getStarted": "시작하기",
     "language": "언어 변경",
     "logoAlt": "LetsHyre 로고",
     "toggle": "내비게이션 열기/닫기",
+    "close": "메뉴 닫기",
     "siteNavigation": "사이트 내비게이션",
     "primaryAria": "주요 내비게이션",
     "mobileAria": "모바일 내비게이션"
   },
   "footer": {
+    "tagline": "퇴사 예고 기간 중인 인재를 채용하는 팀을 위한 AI 면접과 평가표.",
     "product": "제품",
     "candidates": "후보자",
     "company": "회사",
+    "legal": "법적 고지",
     "stayUpdated": "최신 소식 받기",
     "newsletterDesc": "LetsHyre의 최신 소식과 업데이트를 받아보세요",
+    "social": "소셜 미디어의 LetsHyre",
+    "socialLinks": {
+      "linkedin": "LinkedIn의 LetsHyre",
+      "x": "X의 LetsHyre",
+      "instagram": "Instagram의 LetsHyre",
+      "youtube": "YouTube의 LetsHyre"
+    },
     "links": {
       "interviewProcess": "인터뷰 프로세스",
       "downloadApp": "애플리케이션 다운로드",
@@ -29,15 +40,20 @@
       "terms": "이용약관",
       "privacy": "개인정보 처리방침",
       "refund": "환불 정책",
-      "contact": "문의"
+      "contact": "문의",
+      "employerRegister": "기업 계정 만들기",
+      "candidateRegister": "지원자 프로필 만들기"
     }
   },
   "newsletter": {
     "emailPlaceholder": "이메일 주소",
     "emailLabel": "이메일 주소",
     "subscribe": "구독하기",
+    "subscribing": "구독 중",
     "subscribed": "구독이 저장되었습니다.",
-    "subscribeFailed": "구독에 실패했습니다. 다시 시도해 주세요."
+    "subscribeFailed": "구독에 실패했습니다. 다시 시도해 주세요.",
+    "emailRequired": "이메일 주소를 입력하세요.",
+    "emailInvalid": "name@company.com처럼 올바른 이메일 주소를 입력하세요."
   },
   "pageState": {
     "loading": "페이지를 불러오는 중"
@@ -54,5 +70,11 @@
     "body": "저희 쪽에서 문제가 발생했습니다. 페이지를 새로고침해 다시 시도하시고, 문제가 계속되면 문의해 주세요.",
     "retry": "다시 시도",
     "goHome": "홈으로"
+  },
+  "consent": {
+    "label": "쿠키 설정",
+    "body": "광고 성과를 측정하기 위해 쿠키를 사용합니다. 동의하지 않으면 아무것도 공유되지 않습니다. <0>개인정보 처리방침</0>",
+    "accept": "동의",
+    "reject": "거부"
   }
 }

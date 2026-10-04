@@ -37,6 +37,36 @@
       "desc": "Tout est prêt. La fenêtre d'entretien s'ouvre en plein écran avec l'enregistrement d'écran actif. Répondez à chaque question dans le temps imparti — vous pouvez naviguer entre les questions avant la fin du minuteur de session."
     }
   },
+  "toc": {
+    "label": "Sur cette page",
+    "steps": "Étapes"
+  },
+  "requirements": {
+    "title": "Ce qu'il vous faut",
+    "description": "Vérifiez ces points avant le jour de votre entretien.",
+    "items": {
+      "computer": {
+        "title": "Un ordinateur Windows",
+        "desc": "L'entretien se déroule dans l'application de bureau LetsHyre. Il ne peut pas se faire sur téléphone ou tablette."
+      },
+      "camera": {
+        "title": "Une caméra qui fonctionne",
+        "desc": "Elle prend votre photo de vérification et reste allumée pendant vos réponses."
+      },
+      "microphone": {
+        "title": "Un micro",
+        "desc": "Utilisé pour l'enregistrement vocal et vos réponses orales."
+      },
+      "internet": {
+        "title": "Une connexion internet stable",
+        "desc": "Vos réponses et l'enregistrement de l'écran sont envoyés pendant la session."
+      },
+      "room": {
+        "title": "Une pièce calme et bien éclairée",
+        "desc": "Placez-vous face à la lumière pour que la caméra vous voie bien, et limitez le bruit de fond."
+      }
+    }
+  },
   "cta": {
     "title": "Prêt à commencer ?",
     "desc": "Téléchargez l'application de bureau, connectez-vous à votre compte et cliquez sur Passer l'entretien lorsque vous êtes prêt.",

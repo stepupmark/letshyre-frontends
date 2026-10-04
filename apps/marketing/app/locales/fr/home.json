@@ -7,6 +7,7 @@
   },
   "hero": {
     "title": "La plateforme de recrutement IA pour <hl>les talents en préavis</hl>",
+    "description": "LetsHyre automatise l'évaluation des CV, les entretiens IA et la vérification des candidats pour les équipes RH modernes.",
     "ctaHiring": "Je recrute",
     "ctaJob": "Je cherche un emploi",
     "tagline": {
@@ -14,22 +15,96 @@
       "start": "Commencez à présélectionner."
     }
   },
+  "preview": {
+    "label": "Exemple de grille d'évaluation",
+    "candidate": "Ananya Rao",
+    "role": "Ingénieur frontend senior",
+    "notice": "Préavis : 30 jours",
+    "recommendation": "Présélectionner",
+    "overall": "Score global",
+    "outOf": "sur {{max}}",
+    "skillsHeading": "Compétences",
+    "skills": {
+      "communication": "Communication",
+      "technical": "Profondeur technique",
+      "problemSolving": "Résolution de problèmes",
+      "roleFit": "Adéquation au poste"
+    },
+    "checks": {
+      "caption": "Vérification",
+      "check": "Contrôle",
+      "result": "Résultat",
+      "rows": {
+        "identity": {
+          "label": "Identité",
+          "result": "Vérifiée"
+        },
+        "resume": {
+          "label": "Informations du CV",
+          "result": "Cohérentes"
+        },
+        "proctoring": {
+          "label": "Alertes de surveillance",
+          "result": "Aucune"
+        }
+      }
+    }
+  },
   "assistance": {
     "ariaLabel": "Comment ça marche",
+    "intro": "Trois étapes de l'offre d'emploi à la présélection.",
     "steps": {
       "post": {
         "pill": "Publiez votre offre",
-        "heading": "Définissez le poste,<br/><hl>l'IA fait le reste</hl>"
+        "heading": "Définissez le poste,<br/><hl>l'IA fait le reste</hl>",
+        "description": "Ajoutez le poste et ses exigences. LetsHyre commence aussitôt à comparer les CV."
       },
       "screen": {
         "pill": "Tri par IA",
-        "heading": "Des entretiens 24/7,<br/><hl>sans contrainte de planning</hl>"
+        "heading": "Des entretiens 24/7,<br/><hl>sans contrainte de planning</hl>",
+        "description": "Les candidats passent un entretien IA structuré quand cela leur convient. Chaque réponse est évaluée selon les mêmes critères."
       },
       "scorecards": {
         "pill": "Recevez les évaluations",
-        "heading": "Des données brutes transformées en<br/><hl>recommandations claires</hl>"
+        "heading": "Des données brutes transformées en<br/><hl>recommandations claires</hl>",
+        "description": "Chaque candidat reçoit une grille avec scores, points forts, lacunes et l'enregistrement, pour que vous choisissiez qui rencontrer."
       }
     }
+  },
+  "candidate": {
+    "eyebrow": "Pour les candidats",
+    "title": "Un entretien, vu par de nombreux employeurs",
+    "body": "Passez l'entretien IA une seule fois et les employeurs qui recrutent pour des postes correspondants peuvent vous trouver. Plus d'appels de présélection à répétition.",
+    "guide": "Lire le guide d'entretien",
+    "items": {
+      "interview": {
+        "title": "Entretien depuis l'application de bureau",
+        "desc": "Installez l'application LetsHyre et suivez le guide en 8 étapes. Passez l'entretien quand cela vous convient."
+      },
+      "evaluation": {
+        "title": "Évalué selon les mêmes critères",
+        "desc": "Chaque candidat répond dans le même format et est évalué de la même façon, pour que vos compétences parlent d'elles-mêmes."
+      },
+      "matching": {
+        "title": "Actif pendant 90 jours",
+        "desc": "Votre profil et votre grille restent visibles par les employeurs pendant 90 jours après l'entretien."
+      },
+      "hired": {
+        "title": "Contact direct des employeurs",
+        "desc": "Les employeurs qui débloquent votre profil vous contactent pour le poste. Vous ne payez rien."
+      }
+    }
+  },
+  "pricingTeaser": {
+    "eyebrow": "Tarifs",
+    "title": "Ne payez que les candidats que vous débloquez",
+    "body": "Les employeurs reçoivent des crédits gratuits à l'inscription et n'en achètent que lorsqu'ils en ont besoin.",
+    "points": [
+      "Ni abonnement ni facture mensuelle",
+      "Les crédits n'expirent jamais",
+      "Gratuit pour les candidats"
+    ],
+    "cta": "Voir les tarifs"
   },
   "faq": {
     "title": "FAQ : Recrutement IA et préavis",
@@ -67,6 +142,7 @@
   },
   "hireCard": {
     "title": "Prêt à recruter ou à être recruté ?",
+    "description": "Publiez un poste et recevez des candidats évalués, ou passez un entretien et soyez vu par des employeurs qui recrutent maintenant.",
     "startHiring": "Commencer à recruter",
     "applyJob": "Postuler à un emploi"
   },

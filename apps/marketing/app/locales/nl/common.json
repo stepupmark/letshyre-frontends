@@ -7,20 +7,31 @@
     "pricing": "Prijzen",
     "about": "Over ons",
     "contact": "Contact",
+    "logIn": "Inloggen",
     "getStarted": "Aan de slag",
     "language": "Taal wijzigen",
     "logoAlt": "LetsHyre logo",
     "toggle": "Navigatie aan/uit",
+    "close": "Menu sluiten",
     "siteNavigation": "Site navigatie",
     "primaryAria": "Hoofdnavigatie",
     "mobileAria": "Mobiele navigatie"
   },
   "footer": {
+    "tagline": "AI-interviews en scorecards voor teams die mensen in hun opzegtermijn aannemen.",
     "product": "Product",
     "candidates": "Kandidaten",
     "company": "Bedrijf",
+    "legal": "Juridisch",
     "stayUpdated": "Blijf op de hoogte",
     "newsletterDesc": "Ontvang het laatste nieuws en updates van LetsHyre",
+    "social": "LetsHyre op sociale media",
+    "socialLinks": {
+      "linkedin": "LetsHyre op LinkedIn",
+      "x": "LetsHyre op X",
+      "instagram": "LetsHyre op Instagram",
+      "youtube": "LetsHyre op YouTube"
+    },
     "links": {
       "interviewProcess": "Sollicitatieproces",
       "downloadApp": "App downloaden",
@@ -29,15 +40,20 @@
       "terms": "Algemene voorwaarden",
       "privacy": "Privacybeleid",
       "refund": "Terugbetalingsbeleid",
-      "contact": "Contact"
+      "contact": "Contact",
+      "employerRegister": "Werkgeversaccount aanmaken",
+      "candidateRegister": "Kandidaatprofiel aanmaken"
     }
   },
   "newsletter": {
     "emailPlaceholder": "Uw e-mail",
     "emailLabel": "E-mailadres",
     "subscribe": "Abonneren",
+    "subscribing": "Bezig met aanmelden",
     "subscribed": "Abonnement succesvol opgeslagen.",
-    "subscribeFailed": "Abonneren mislukt. Probeer het opnieuw."
+    "subscribeFailed": "Abonneren mislukt. Probeer het opnieuw.",
+    "emailRequired": "Voer uw e-mailadres in.",
+    "emailInvalid": "Voer een geldig e-mailadres in, zoals naam@bedrijf.nl."
   },
   "pageState": {
     "loading": "Pagina wordt geladen"
@@ -54,5 +70,11 @@
     "body": "Er ging iets mis aan onze kant. Laad de pagina opnieuw om het nog eens te proberen, of neem contact met ons op als het blijft gebeuren.",
     "retry": "Opnieuw proberen",
     "goHome": "Naar home"
+  },
+  "consent": {
+    "label": "Cookievoorkeuren",
+    "body": "We gebruiken cookies om te meten hoe onze advertenties presteren. Er wordt niets gedeeld zonder uw toestemming. <0>Privacybeleid</0>",
+    "accept": "Accepteren",
+    "reject": "Weigeren"
   }
 }

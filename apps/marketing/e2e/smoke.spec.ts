@@ -1,10 +1,11 @@
 import { expect, test } from "@playwright/test"
 
 import { mockApi } from "./mock-api.ts"
-import { RTL, SITEMAP } from "./sitemap.ts"
+import { otherEngine, RTL, SITEMAP } from "./sitemap.ts"
 
 for (const { path, lang } of SITEMAP) {
-  test(`${path}: renders cleanly`, async ({ page, request }) => {
+  test(`${path}: renders cleanly`, async ({ page, request }, info) => {
+    test.skip(otherEngine(lang, info.project.name), "chromium only")
     const raw = await request.get(path)
     expect(raw.status()).toBe(200)
     expect(await raw.text()).toMatch(/<h1[\s>]/)

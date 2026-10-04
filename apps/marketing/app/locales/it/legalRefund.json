@@ -164,7 +164,8 @@
     "contents": "Indice",
     "readTime": "~{{count}} min di lettura",
     "backToTop": "Torna all'inizio",
-    "translationNotice": "Questa è una traduzione fornita per comodità. Il testo ufficiale è la <en>versione inglese</en>."
+    "translationNotice": "Questa è una traduzione fornita per comodità. Il testo ufficiale è la <en>versione inglese</en>.",
+    "lastUpdated": "Ultimo aggiornamento: {{date}}"
   },
   "meta": {
     "title": "Politica di rimborso | letshyre.ai",

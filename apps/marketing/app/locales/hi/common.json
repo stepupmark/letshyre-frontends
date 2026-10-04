@@ -7,20 +7,31 @@
     "pricing": "मूल्य निर्धारण",
     "about": "हमारे बारे में",
     "contact": "संपर्क",
+    "logIn": "लॉग इन करें",
     "getStarted": "शुरू करें",
     "language": "भाषा बदलें",
     "logoAlt": "LetsHyre लोगो",
     "toggle": "नेविगेशन टॉगल करें",
+    "close": "मेनू बंद करें",
     "siteNavigation": "साइट नेविगेशन",
     "primaryAria": "मुख्य नेविगेशन",
     "mobileAria": "मोबाइल नेविगेशन"
   },
   "footer": {
+    "tagline": "नोटिस पीरियड में चल रहे लोगों को नियुक्त करने वाली टीमों के लिए एआई इंटरव्यू और स्कोरकार्ड।",
     "product": "उत्पाद",
     "candidates": "उम्मीदवार",
     "company": "कंपनी",
+    "legal": "कानूनी",
     "stayUpdated": "अपडेट रहें",
     "newsletterDesc": "LetsHyre से नवीनतम समाचार और अपडेट प्राप्त करें",
+    "social": "सोशल मीडिया पर LetsHyre",
+    "socialLinks": {
+      "linkedin": "LinkedIn पर LetsHyre",
+      "x": "X पर LetsHyre",
+      "instagram": "Instagram पर LetsHyre",
+      "youtube": "YouTube पर LetsHyre"
+    },
     "links": {
       "interviewProcess": "इंटरव्यू प्रक्रिया",
       "downloadApp": "एप्लिकेशन डाउनलोड करें",
@@ -29,15 +40,20 @@
       "terms": "नियम और शर्तें",
       "privacy": "गोपनीयता नीति",
       "refund": "रिफंड नीति",
-      "contact": "संपर्क"
+      "contact": "संपर्क",
+      "employerRegister": "नियोक्ता खाता बनाएँ",
+      "candidateRegister": "उम्मीदवार प्रोफ़ाइल बनाएँ"
     }
   },
   "newsletter": {
     "emailPlaceholder": "आपका ईमेल",
     "emailLabel": "ईमेल पता",
     "subscribe": "सदस्यता लें",
+    "subscribing": "सदस्यता ली जा रही है",
     "subscribed": "सदस्यता सफलतापूर्वक सहेजी गई।",
-    "subscribeFailed": "सदस्यता लेने में विफल। कृपया पुनः प्रयास करें।"
+    "subscribeFailed": "सदस्यता लेने में विफल। कृपया पुनः प्रयास करें।",
+    "emailRequired": "अपना ईमेल पता दर्ज करें।",
+    "emailInvalid": "मान्य ईमेल पता दर्ज करें, जैसे name@company.com।"
   },
   "pageState": {
     "loading": "पेज लोड हो रहा है"
@@ -54,5 +70,11 @@
     "body": "हमारी ओर से कुछ गड़बड़ हो गई। फिर से कोशिश करने के लिए पेज दोबारा लोड करें, या समस्या बनी रहे तो हमसे संपर्क करें।",
     "retry": "फिर से कोशिश करें",
     "goHome": "होम पर जाएं"
+  },
+  "consent": {
+    "label": "कुकी प्राथमिकताएँ",
+    "body": "हम अपने विज्ञापनों के प्रदर्शन को मापने के लिए कुकीज़ का उपयोग करते हैं। आपकी सहमति के बिना कुछ भी साझा नहीं किया जाता। <0>गोपनीयता नीति</0>",
+    "accept": "स्वीकार करें",
+    "reject": "अस्वीकार करें"
   }
 }

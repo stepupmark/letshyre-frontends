@@ -3,7 +3,7 @@ import { readdirSync, readFileSync } from "node:fs"
 import { expect, test } from "@playwright/test"
 
 import { mockApi } from "./mock-api.ts"
-import { SITEMAP } from "./sitemap.ts"
+import { otherEngine, SITEMAP } from "./sitemap.ts"
 
 const LOCALES =
   "en hi fr ja ar te ta es nl ru kn ml ur bn de pt it ko id".split(" ")
@@ -25,17 +25,18 @@ test.beforeEach(async ({ page }) => {
   await mockApi(page)
 })
 
-for (const { path, alternates } of SITEMAP) {
+for (const { path, lang, alternates } of SITEMAP) {
   test(`${path}: offers its ready locales and shows no raw keys`, async ({
     page,
-  }) => {
+  }, info) => {
+    test.skip(otherEngine(lang, info.project.name), "chromium only")
     await page.goto(path)
     const text = await page.locator("body").innerText()
     expect(KEYS.filter((key) => text.includes(key))).toEqual([])
 
     await page
       .getByRole("contentinfo")
-      .getByRole("button", { name: /language/i })
+      .locator('button[aria-haspopup="menu"]')
       .click()
     const items = page.getByRole("menuitem")
     await expect(items).toHaveCount(alternates.size)
@@ -76,7 +77,7 @@ test("choosing a language remembers it in a cookie", async ({
   await page.goto("/en/about")
   await page
     .getByRole("contentinfo")
-    .getByRole("button", { name: /language/i })
+    .locator('button[aria-haspopup="menu"]')
     .click()
   await page.getByRole("menuitem").first().click()
   const cookies = await context.cookies()

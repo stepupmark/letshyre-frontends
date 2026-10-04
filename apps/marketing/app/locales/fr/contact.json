@@ -23,6 +23,26 @@
       "emailInvalid": "Veuillez saisir une adresse e-mail valide",
       "subjectMin": "L'objet doit comporter au moins 3 caractères",
       "messageMin": "Le message doit comporter au moins 10 caractères"
+    },
+    "sendAnother": "Envoyer un autre message",
+    "topics": {
+      "sales": "Demande d'offre sur mesure"
+    },
+    "errors": {
+      "generic": "Nous n'avons pas pu envoyer votre message. Réessayez dans un instant.",
+      "network": "Impossible de joindre notre serveur. Vérifiez votre connexion et réessayez.",
+      "rateLimited": "Vous avez envoyé plusieurs messages en peu de temps. Patientez une minute et réessayez."
+    }
+  },
+  "channels": {
+    "title": "Autres moyens de nous joindre",
+    "candidates": {
+      "title": "Vous préparez un entretien ?",
+      "link": "Lire le guide d'entretien"
+    },
+    "employers": {
+      "title": "Vous comparez les offres ?",
+      "link": "Voir les tarifs"
     }
   },
   "meta": {

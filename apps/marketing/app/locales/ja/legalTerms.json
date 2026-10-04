@@ -416,7 +416,8 @@
     "contents": "目次",
     "readTime": "~{{count}} 分で読めます",
     "backToTop": "ページの先頭に戻る",
-    "translationNotice": "これは便宜上提供される翻訳です。正式な文書は<en>英語版</en>です。"
+    "translationNotice": "これは便宜上提供される翻訳です。正式な文書は<en>英語版</en>です。",
+    "lastUpdated": "最終更新日：{{date}}"
   },
   "meta": {
     "title": "利用規約 | letshyre.ai",

@@ -7,20 +7,31 @@
     "pricing": "料金",
     "about": "会社概要",
     "contact": "お問い合わせ",
+    "logIn": "ログイン",
     "getStarted": "始める",
     "language": "言語を変更",
     "logoAlt": "LetsHyreロゴ",
     "toggle": "ナビゲーションの切り替え",
+    "close": "メニューを閉じる",
     "siteNavigation": "サイトナビゲーション",
     "primaryAria": "メインナビゲーション",
     "mobileAria": "モバイルナビゲーション"
   },
   "footer": {
+    "tagline": "退職予告期間中の人材を採用するチームのための AI 面接と評価シート。",
     "product": "製品",
     "candidates": "候補者",
     "company": "会社",
+    "legal": "法的情報",
     "stayUpdated": "最新情報を受け取る",
     "newsletterDesc": "LetsHyreの最新ニュースとアップデートをお届けします",
+    "social": "LetsHyre のソーシャルメディア",
+    "socialLinks": {
+      "linkedin": "LinkedIn の LetsHyre",
+      "x": "X の LetsHyre",
+      "instagram": "Instagram の LetsHyre",
+      "youtube": "YouTube の LetsHyre"
+    },
     "links": {
       "interviewProcess": "面接プロセス",
       "downloadApp": "アプリをダウンロード",
@@ -29,15 +40,20 @@
       "terms": "利用規約",
       "privacy": "プライバシーポリシー",
       "refund": "返金ポリシー",
-      "contact": "お問い合わせ"
+      "contact": "お問い合わせ",
+      "employerRegister": "企業アカウントを作成",
+      "candidateRegister": "候補者プロフィールを作成"
     }
   },
   "newsletter": {
     "emailPlaceholder": "メールアドレス",
     "emailLabel": "メールアドレス",
     "subscribe": "登録する",
+    "subscribing": "登録中",
     "subscribed": "登録が完了しました。",
-    "subscribeFailed": "登録に失敗しました。もう一度お試しください。"
+    "subscribeFailed": "登録に失敗しました。もう一度お試しください。",
+    "emailRequired": "メールアドレスを入力してください。",
+    "emailInvalid": "name@company.com のような有効なメールアドレスを入力してください。"
   },
   "pageState": {
     "loading": "ページを読み込んでいます"
@@ -54,5 +70,11 @@
     "body": "こちら側で問題が発生しました。再読み込みしてもう一度お試しください。問題が続く場合はお問い合わせください。",
     "retry": "再試行",
     "goHome": "ホームへ"
+  },
+  "consent": {
+    "label": "Cookie の設定",
+    "body": "広告の効果測定のために Cookie を使用しています。同意がない限り、情報は共有されません。<0>プライバシーポリシー</0>",
+    "accept": "同意する",
+    "reject": "拒否する"
   }
 }

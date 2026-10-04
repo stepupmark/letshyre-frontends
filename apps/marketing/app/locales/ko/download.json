@@ -1,6 +1,11 @@
 {
   "title": "애플리케이션 다운로드",
   "subtitle": "안정적이고 방해받지 않는 인터뷰를 위해 보안 데스크톱 앱을 다운로드하세요.",
+  "features": {
+    "distractionFree": "면접을 전체 화면으로 실행",
+    "stable": "시작 전에 차단 대상 앱 확인",
+    "secure": "카메라, 마이크, 화면으로 감독"
+  },
   "loading": "릴리스를 불러오는 중...",
   "comingSoon": "출시 예정",
   "retry": "다시 시도",
@@ -11,6 +16,23 @@
     "interview": "인터뷰"
   },
   "support": "문제가 있으신가요? 설치 가이드 보기",
+  "os": {
+    "windows": "Windows",
+    "mac": "macOS"
+  },
+  "release": {
+    "detected": "사용 중인 컴퓨터",
+    "version": "버전 {{version}}",
+    "notYet": "아직 사용할 수 없음",
+    "error": "최신 버전을 확인하지 못했습니다.",
+    "unsupported": "면접 앱은 Windows 컴퓨터에서 실행됩니다. 다운로드하려면 해당 컴퓨터에서 이 페이지를 여세요."
+  },
+  "install": {
+    "title": "다운로드부터 면접까지",
+    "download": "이 페이지에서 설치 파일을 저장하세요. 파일은 하나뿐입니다.",
+    "install": "파일을 열고 안내를 따르세요. 실행 전에 Windows가 확인을 요청할 수 있습니다.",
+    "interview": "LetsHyre를 열고 지원자 계정으로 <signIn>로그인</signIn>한 다음 면접 보기를 클릭하세요."
+  },
   "meta": {
     "title": "데스크톱 앱 다운로드 | letshyre.ai",
     "description": "Windows용 LetsHyre 데스크톱 앱을 받아 안정적이고 방해 없는 감독 환경에서 면접에 참여하세요.",

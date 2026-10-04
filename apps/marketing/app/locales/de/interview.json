@@ -37,6 +37,36 @@
       "desc": "Sie sind bereit. Das Interviewfenster öffnet sich im Vollbildmodus mit aktiver Bildschirmaufnahme. Beantworten Sie jede Frage innerhalb der vorgesehenen Zeit – Sie können zwischen den Fragen navigieren, bevor der Sitzungstimer abläuft."
     }
   },
+  "toc": {
+    "label": "Auf dieser Seite",
+    "steps": "Schritte"
+  },
+  "requirements": {
+    "title": "Was Sie brauchen",
+    "description": "Prüfen Sie diese Punkte vor dem Tag Ihres Interviews.",
+    "items": {
+      "computer": {
+        "title": "Ein Windows-Computer",
+        "desc": "Das Interview läuft in der LetsHyre-Desktop-App. Auf Smartphone oder Tablet ist es nicht möglich."
+      },
+      "camera": {
+        "title": "Eine funktionierende Kamera",
+        "desc": "Sie nimmt Ihr Verifizierungsfoto auf und bleibt eingeschaltet, während Sie antworten."
+      },
+      "microphone": {
+        "title": "Ein Mikrofon",
+        "desc": "Für die Stimmregistrierung und Ihre gesprochenen Antworten."
+      },
+      "internet": {
+        "title": "Eine stabile Internetverbindung",
+        "desc": "Ihre Antworten und die Bildschirmaufzeichnung werden während der Sitzung hochgeladen."
+      },
+      "room": {
+        "title": "Ein ruhiger, gut beleuchteter Raum",
+        "desc": "Setzen Sie sich zum Licht, damit die Kamera Sie gut sieht, und halten Sie Hintergrundgeräusche gering."
+      }
+    }
+  },
   "cta": {
     "title": "Bereit loszulegen?",
     "desc": "Laden Sie die Desktop-App herunter, melden Sie sich bei Ihrem Konto an und klicken Sie auf „Interview starten“, sobald Sie vorbereitet sind.",

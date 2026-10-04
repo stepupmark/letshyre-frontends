@@ -1,6 +1,11 @@
 {
   "title": "Descargar aplicación",
   "subtitle": "Obtén la aplicación de escritorio segura para iniciar tu sesión de entrevista estable y sin distracciones.",
+  "features": {
+    "distractionFree": "Ejecuta la entrevista a pantalla completa",
+    "stable": "Comprueba si hay aplicaciones bloqueadas antes de empezar",
+    "secure": "Supervisada con cámara, micrófono y pantalla"
+  },
   "loading": "Cargando versiones...",
   "comingSoon": "Próximamente",
   "retry": "Reintentar",
@@ -11,6 +16,23 @@
     "interview": "Entrevistar"
   },
   "support": "¿Tienes problemas? Ver guía de instalación",
+  "os": {
+    "windows": "Windows",
+    "mac": "macOS"
+  },
+  "release": {
+    "detected": "Tu ordenador",
+    "version": "Versión {{version}}",
+    "notYet": "Aún no disponible",
+    "error": "No pudimos comprobar la última versión.",
+    "unsupported": "La aplicación de entrevistas funciona en un ordenador con Windows. Abre esta página allí para descargarla."
+  },
+  "install": {
+    "title": "De la descarga a la entrevista",
+    "download": "Guarda el instalador desde esta página. Es un solo archivo.",
+    "install": "Abre el archivo y sigue las indicaciones. Windows puede pedirte que confirmes antes de ejecutarlo.",
+    "interview": "Abre LetsHyre, <signIn>inicia sesión</signIn> con tu cuenta de candidato y haz clic en Hacer entrevista."
+  },
   "meta": {
     "title": "Descargar la aplicación de escritorio | letshyre.ai",
     "description": "Consigue la aplicación de escritorio de LetsHyre para Windows y haz tu entrevista en un entorno estable y supervisado.",
