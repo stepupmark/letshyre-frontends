@@ -84,6 +84,10 @@
     "title": "내 청구서 | letshyre.ai",
     "description": "청구 내역을 확인하세요."
   },
+  "employerBilling": {
+    "title": "크레딧 구매 | letshyre.ai",
+    "description": "크레딧을 사용해 지원자 프로필을 열람하고 우수 인재와 연결하세요."
+  },
   "employerPostJob": {
     "title": "채용공고 등록 | letshyre.ai",
     "description": "몇 초 만에 매력적인 채용공고 작성을 도와드립니다."

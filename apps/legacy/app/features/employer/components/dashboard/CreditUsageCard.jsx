@@ -3,8 +3,6 @@ import { useTranslation } from "react-i18next";
 import { ChevronRight, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { localePath } from "@/i18n/config";
-import { useAppLocale } from "@/i18n/appLocale";
 import { cn } from "@/lib/utils";
 
 const CARD =
@@ -37,7 +35,6 @@ const CreditUsageSkeleton = () => (
 
 const CreditUsageCard = ({ credits, isLoading }) => {
   const navigate = useNavigate();
-  const { locale } = useAppLocale();
   const { t } = useTranslation("employer");
   if (isLoading) {
     return <CreditUsageSkeleton />;
@@ -152,7 +149,7 @@ const CreditUsageCard = ({ credits, isLoading }) => {
           <div className="flex flex-wrap gap-3 max-sm:w-full max-sm:flex-col">
             <Button
               className={cn(BUTTON, "bg-brand-600 text-white hover:bg-brand-600 hover:brightness-110")}
-              onClick={() => navigate(localePath(locale, "/pricing"))}
+              onClick={() => navigate("/employer/billing")}
             >
               {t("dashboard.credits.addCredits")}
               <Plus className="size-5" aria-hidden="true" />

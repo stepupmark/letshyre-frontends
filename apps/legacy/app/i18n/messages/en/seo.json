@@ -84,6 +84,10 @@
     "title": "My Invoices | letshyre.ai",
     "description": "Your invoices history with us."
   },
+  "employerBilling": {
+    "title": "Buy credits | letshyre.ai",
+    "description": "Use credits to unlock applicant profiles and connect with top talent."
+  },
   "employerPostJob": {
     "title": "Post Job | letshyre.ai",
     "description": "We'll help you create a compelling job post in seconds."

@@ -1,9 +1,7 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { localePath } from "@/i18n/config";
-import { useLocale } from "@/i18n/hooks";
 import { CheckoutHeader } from "@/features/pricing/components/checkout/CheckoutHeader";
 import { checkoutSearch } from "@/features/pricing/lib/checkout";
 
@@ -13,8 +11,9 @@ const FOOTER = "flex-col gap-2 sm:flex-col";
 
 function GuestGate({ item }) {
   const { t } = useTranslation("pricing");
-  const lang = useLocale();
-  const from = { pathname: localePath(lang, "/pricing"), search: checkoutSearch(item.key) };
+  const { pathname } = useLocation();
+  // back to this page (pricing or billing) with the same checkout open
+  const from = { pathname, search: checkoutSearch(item.key) };
 
   return (
     <>

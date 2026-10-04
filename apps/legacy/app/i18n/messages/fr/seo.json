@@ -84,6 +84,10 @@
     "title": "Mes factures | letshyre.ai",
     "description": "L'historique de vos factures chez nous."
   },
+  "employerBilling": {
+    "title": "Acheter des crédits | letshyre.ai",
+    "description": "Utilisez des crédits pour débloquer les profils des candidats et entrer en contact avec les meilleurs talents."
+  },
   "employerPostJob": {
     "title": "Publier une offre | letshyre.ai",
     "description": "Nous vous aiderons à créer une offre d'emploi attrayante en quelques secondes."

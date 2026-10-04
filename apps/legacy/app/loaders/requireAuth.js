@@ -19,6 +19,12 @@ export const requireAuth =
     const authData = getUser();
 
     if (!authData?.isAuthenticated) {
+      // Checkout links from the marketing site arrive signed out; come back after sign-in.
+      const url = request?.url ? new URL(request.url) : null;
+      if (url?.pathname === "/employer/billing") {
+        const next = new URLSearchParams({ next: url.pathname + url.search });
+        throw redirect(`/employer/sign-in?${next}`);
+      }
       throw redirect(FALLBACK_HOME);
     }
 

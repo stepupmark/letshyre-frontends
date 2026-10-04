@@ -31,12 +31,18 @@ export const useLoginMutation = () => {
       // Validate redirect target: must be a relative path starting with a
       // single slash. Rejects external URLs ("//evil.com") and non-string
       // values to prevent open-redirect attacks via crafted location.state.
-      const from = location.state?.from?.pathname;
-      const isSafeRedirect =
-        typeof from === "string" && from.startsWith("/") && !from.startsWith("//");
+      // ?next= is set by requireAuth when a signed-out visitor opens /employer/billing.
       const search = location.state?.from?.search;
       const query = typeof search === "string" && search.startsWith("?") ? search : "";
-      const redirectTo = isSafeRedirect ? from + query : defaultRedirect;
+      const from = location.state?.from?.pathname;
+      const target =
+        typeof from === "string" ? from + query : new URLSearchParams(location.search).get("next");
+      const isSafeRedirect =
+        typeof target === "string" &&
+        target.startsWith("/") &&
+        !target.startsWith("//") &&
+        !target.startsWith("/\\");
+      const redirectTo = isSafeRedirect ? target : defaultRedirect;
       navigate(redirectTo, { replace: true });
     },
     onError: (error) => {

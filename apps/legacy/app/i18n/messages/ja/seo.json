@@ -84,6 +84,10 @@
     "title": "請求書 | letshyre.ai",
     "description": "当社との請求履歴です。"
   },
+  "employerBilling": {
+    "title": "クレジットを購入 | letshyre.ai",
+    "description": "クレジットを使って応募者のプロフィールを解除し、優秀な人材とつながりましょう。"
+  },
   "employerPostJob": {
     "title": "求人を掲載 | letshyre.ai",
     "description": "魅力的な求人投稿を数秒で作成できるようお手伝いします。"

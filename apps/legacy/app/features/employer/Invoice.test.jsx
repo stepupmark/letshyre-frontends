@@ -76,10 +76,10 @@ describe("Invoice", () => {
     expect(getInvoices).toHaveBeenCalledWith({ page: 1 });
   });
 
-  it("links to the pricing page to buy more", async () => {
+  it("links to billing to buy more", async () => {
     getInvoices.mockResolvedValue({ invoices: [invoice()], totalPages: 1, currentPage: 1 });
     renderPage();
-    expect(await screen.findByRole("link", { name: en.invoice.buyCredits })).toHaveAttribute("href", "/en/pricing");
+    expect(await screen.findByRole("link", { name: en.invoice.buyCredits })).toHaveAttribute("href", "/employer/billing");
   });
 
   it("opens a receipt with the breakdown and payment reference", async () => {

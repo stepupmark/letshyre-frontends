@@ -24,11 +24,11 @@ function Harness() {
   );
 }
 
-const signInFrom = async (from) => {
+const signInFrom = async (from, search = "") => {
   const { client } = queryWrapper();
   render(
     <QueryClientProvider client={client}>
-      <MemoryRouter initialEntries={[{ pathname: "/employer/sign-in", state: { from } }]}>
+      <MemoryRouter initialEntries={[{ pathname: "/employer/sign-in", search, state: { from } }]}>
         <Routes>
           <Route path="*" element={<Harness />} />
         </Routes>
@@ -59,6 +59,19 @@ describe("useLoginMutation redirect", () => {
     await signInFrom(undefined);
     await waitFor(() => expect(toast.success).toHaveBeenCalledWith(expect.any(String), { duration: 2000 }));
   });
+
+  it("returns to the ?next= page billing sent it from", async () => {
+    await signInFrom(undefined, "?next=%2Femployer%2Fbilling%3Fcheckout%3Dbusiness");
+    await waitFor(() => expect(location()).toBe("/employer/billing?checkout=business"));
+  });
+
+  it.each(["//evil.example", "/\\evil.example", "https://evil.example"])(
+    "ignores an off-site ?next= (%s)",
+    async (next) => {
+      await signInFrom(undefined, `?${new URLSearchParams({ next })}`);
+      await waitFor(() => expect(location()).toBe("/employer"));
+    },
+  );
 
   it("won't redirect off the site", async () => {
     await signInFrom({ pathname: "//evil.example", search: "?checkout=business" });

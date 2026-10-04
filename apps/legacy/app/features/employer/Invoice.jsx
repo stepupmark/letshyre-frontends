@@ -39,7 +39,7 @@ export function Invoice() {
           <p className="mt-2 text-sm leading-normal text-neutral-500">{t("invoice.subtitle")}</p>
         </div>
         <Button asChild className="h-10 rounded-sm px-5 font-semibold no-underline hover:bg-brand-700">
-          <Link to={localePath(lang, "/pricing")}>{t("invoice.buyCredits")}</Link>
+          <Link to="/employer/billing">{t("invoice.buyCredits")}</Link>
         </Button>
       </div>
 
