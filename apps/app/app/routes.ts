@@ -53,6 +53,8 @@ export default [
       route("view-jobs", "routes/employer/jobs.tsx"),
       route("view-jobs/:jobId", "routes/employer/job.tsx"),
       route("view-jobs/applicants/:jobId", "routes/employer/applicants.tsx"),
+      route("candidate-pool", "routes/employer/candidate-pool.tsx"),
+      route("unlocked-candidates", "routes/employer/unlocked.tsx"),
     ]),
   ]),
   layout("layouts/employee-layout.tsx", [

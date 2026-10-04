@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "data": [
+    {
+      "interview_id": 701,
+      "role": "Frontend Developer",
+      "score": 64,
+      "unlocked": false
+    }
+  ]
+}

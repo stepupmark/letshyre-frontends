@@ -3,6 +3,10 @@ import { readFileSync } from "node:fs"
 import { expect, test } from "vitest"
 import type { z } from "zod"
 
+import {
+  interviewsSchema,
+  unlockedPageSchema,
+} from "@/features/candidate-unlock/api"
 import { cardsSchema, teamSchema } from "@/features/employer-dashboard/queries"
 import { jobSchema, jobsPageSchema } from "@/features/employer-jobs/api"
 import { matchesSchema } from "@/features/job-matches/api"
@@ -21,6 +25,8 @@ const CONTRACTS: Record<string, z.ZodType> = {
   "user.v1.employer_jobs": jobsPageSchema,
   "user.v1.employer_job_detail.101": jobSchema,
   "user.v1.employer_job_ai.matching.101": matchesSchema,
+  "user.v1.employer_candidate_interviews.5": interviewsSchema,
+  "user.v1.employer_unlock_candidate": unlockedPageSchema,
 }
 
 const fixture = (name: string): unknown =>

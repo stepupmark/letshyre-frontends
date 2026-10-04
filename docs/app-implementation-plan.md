@@ -595,6 +595,18 @@ Pool search and filters, **unlock (spends credits)**: price on the button, balan
 confirm, details resolve in place and the balance ticks down. Insufficient credits opens a top-up and
 returns to the same candidate. Unlocked list. Port all unlock tests; unlock is money-adjacent.
 
+- **Done 2026-10-04:** `/employer/candidate-pool` picks an open job (a linked job off the first
+  page still loads), AI matched or applied, and reuses the 6.5 match list. Unlock lives in the
+  candidate's side panel, on the pool and on applicants: one credit per interview as before, the
+  matched role's interview first, unlocked ones can't be picked again, the cost on the button,
+  the balance left in the confirm, the topbar balance ticks down, and the panel turns to
+  "unlocked" in place. Short on credits, the button becomes "Add credits" to
+  `/employer/billing?next=<this candidate>`; **6.8 must honour `next`** (legacy billing ignores
+  it). Legacy unlock tests ported as unit tests on the selection rules, plus e2e for the exact
+  POST body. `/employer/unlocked-candidates` is a paged table; profile, scorecard and share links
+  stay on legacy pages until 6.7. Unlock doesn't return contact details, so "in place" means the
+  unlocked state and a link, not the details themselves.
+
 ### 6.7 Candidate profile + scorecard views
 
 One `features/candidate` exporting `CandidateProfileView` and `ScorecardView` through its `index.ts`.

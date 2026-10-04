@@ -1,0 +1,65 @@
+{
+  "panel": {
+    "title": "Unlock",
+    "lead": "Unlocking shows contact details, the full scorecard, the recording and the resume. Each interview costs one credit.",
+    "matched": "This job's role",
+    "unlocked": "Unlocked",
+    "button_one": "Unlock · {{count}} credit",
+    "button_other": "Unlock · {{count}} credits",
+    "pick": "Choose at least one interview.",
+    "balance": "Balance",
+    "short": "This needs {{cost}} credits and you have {{balance}}. Add credits and you'll come back here.",
+    "addCredits": "Add credits",
+    "none": "No AI interviews yet, so there's nothing to unlock.",
+    "allUnlocked": "Everything for this candidate is unlocked.",
+    "openUnlocked": "See unlocked candidates",
+    "failed": "The unlock didn't go through. Check your balance before trying again."
+  },
+  "confirm": {
+    "title": "Unlock {{name}}?",
+    "body_one": "This uses {{count}} credit and can't be undone. You'll have {{left}} left.",
+    "body_other": "This uses {{count}} credits and can't be undone. You'll have {{left}} left."
+  },
+  "done": "{{name}} unlocked",
+  "doneBody_one": "{{count}} credit used, {{left}} left.",
+  "doneBody_other": "{{count}} credits used, {{left}} left.",
+  "pool": {
+    "title": "Candidate pool",
+    "lead": "People our AI matched to your open jobs, best match first.",
+    "job": "Job",
+    "chooseJob": "Choose a job",
+    "matched": "AI matched",
+    "applied": "Applied",
+    "noJobsTitle": "No open jobs",
+    "noJobsBody": "Matches come from your open jobs. Post one, or reopen a paused job.",
+    "postJob": "Post a job",
+    "emptyTitle": "No matches yet",
+    "emptyBody": "Our AI keeps matching as candidates finish interviews. Check back soon.",
+    "emptyApplied": "No one has applied to this job yet.",
+    "summary": "{{matched}} of {{total}} candidates match"
+  },
+  "list": {
+    "title": "Unlocked candidates",
+    "lead": "Everyone you've unlocked, newest first.",
+    "sharedLinks": "Shared links",
+    "columns": {
+      "candidate": "Candidate",
+      "experience": "Experience",
+      "place": "Location",
+      "pay": "Pay (LPA)",
+      "notice": "Notice",
+      "interview": "Interview",
+      "unlocked": "Unlocked"
+    },
+    "years_one": "{{count}} yr",
+    "years_other": "{{count}} yrs",
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days",
+    "verified": "Verified",
+    "profile": "Profile",
+    "scorecard": "Scorecard",
+    "emptyTitle": "No one unlocked yet",
+    "emptyBody": "Unlock a candidate from the pool or an applicant list to see their details here.",
+    "toPool": "Open the candidate pool"
+  }
+}

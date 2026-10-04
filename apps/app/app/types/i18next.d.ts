@@ -8,6 +8,7 @@ import type matches from "../locales/en/matches.json"
 import type onboarding from "../locales/en/onboarding.json"
 import type sharedScorecard from "../locales/en/sharedScorecard.json"
 import type shell from "../locales/en/shell.json"
+import type unlock from "../locales/en/unlock.json"
 
 declare module "i18next" {
   interface CustomTypeOptions {
@@ -21,6 +22,7 @@ declare module "i18next" {
       onboarding: typeof onboarding
       sharedScorecard: typeof sharedScorecard
       shell: typeof shell
+      unlock: typeof unlock
     }
   }
 }

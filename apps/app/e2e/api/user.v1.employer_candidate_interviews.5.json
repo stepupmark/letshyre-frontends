@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "data": [
+    {
+      "interview_id": 501,
+      "role": "Senior React Developer",
+      "score": 81,
+      "unlocked": false
+    },
+    {
+      "interview_id": 502,
+      "role": "Node.js Developer",
+      "score": 55,
+      "unlocked": false
+    },
+    {
+      "interview_id": 503,
+      "role": "QA Engineer",
+      "score": 40,
+      "unlocked": true
+    }
+  ]
+}

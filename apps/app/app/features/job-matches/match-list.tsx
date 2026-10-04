@@ -326,6 +326,31 @@ function Peek({
         </p>
       </section>
 
+      {actions ? (
+        actions(match)
+      ) : (
+        <section className="flex flex-col gap-2">
+          <h3 className="font-medium">{t("peek.interviews")}</h3>
+          {match.interview_attempts?.length ? (
+            <ul className="flex flex-col divide-y rounded-lg border">
+              {match.interview_attempts.map((attempt, i) => (
+                <li
+                  key={i}
+                  className="flex items-center justify-between gap-3 px-3 py-2"
+                >
+                  <span className="min-w-0 truncate">{attempt.role}</span>
+                  {attempt.overall_score != null && (
+                    <ScoreBand score={attempt.overall_score} of="interview" />
+                  )}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-muted-foreground">{t("peek.noInterviews")}</p>
+          )}
+        </section>
+      )}
+
       {(ai?.role_match_score != null || ai?.skills_match_score != null) && (
         <section className="flex flex-col gap-2">
           {fit(ai.role_match_score, t("peek.role"))}
@@ -344,29 +369,6 @@ function Peek({
           />
         </section>
       ) : null}
-
-      <section className="flex flex-col gap-2">
-        <h3 className="font-medium">{t("peek.interviews")}</h3>
-        {match.interview_attempts?.length ? (
-          <ul className="flex flex-col divide-y rounded-lg border">
-            {match.interview_attempts.map((attempt, i) => (
-              <li
-                key={i}
-                className="flex items-center justify-between gap-3 px-3 py-2"
-              >
-                <span className="min-w-0 truncate">{attempt.role}</span>
-                {attempt.overall_score != null && (
-                  <ScoreBand score={attempt.overall_score} of="interview" />
-                )}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-muted-foreground">{t("peek.noInterviews")}</p>
-        )}
-      </section>
-
-      {actions?.(match)}
     </div>
   )
 }

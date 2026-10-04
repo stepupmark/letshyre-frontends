@@ -6,6 +6,7 @@ import { ArrowLeft } from "lucide-react"
 import { AppLink } from "@/components/app-link"
 import { EmptyState } from "@/components/empty-state"
 import { PageHeader } from "@/components/page-header"
+import { UnlockPanel } from "@/features/candidate-unlock"
 import { isJobId, jobQuery } from "@/features/employer-jobs"
 import { MatchList, matchesQuery } from "@/features/job-matches"
 import { namespaces } from "@/lib/i18n"
@@ -14,7 +15,7 @@ import type { Route } from "./+types/applicants"
 
 export const handle = { crumb: "jobs" } as const
 
-export const clientMiddleware = [namespaces(["jobs", "matches"])]
+export const clientMiddleware = [namespaces(["jobs", "matches", "unlock"])]
 
 export default function ApplicantsPage({ params }: Route.ComponentProps) {
   const { t } = useTranslation(["matches", "jobs", "common"])
@@ -57,6 +58,13 @@ export default function ApplicantsPage({ params }: Route.ComponentProps) {
       <MatchList
         jobId={jobId}
         appliedOnly
+        actions={(match) => (
+          <UnlockPanel
+            candidateId={match.candidate_id}
+            name={match.candidate_name ?? ""}
+            matchedRole={match.ai_match?.role_applied}
+          />
+        )}
         empty={
           <EmptyState
             title={t("applicants.emptyTitle")}

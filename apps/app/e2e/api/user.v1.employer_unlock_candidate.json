@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "data": {
+    "count": 1,
+    "total_pages": 1,
+    "results": [
+      {
+        "id": 31,
+        "candidate_name": "Priya Nair",
+        "candidate_profile_photo": null,
+        "candidate_is_verified": true,
+        "candidate_tech_experience": { "Frontend Developer": 4 },
+        "candidate_total_experience_years": "4.5",
+        "candidate_location": "Kochi",
+        "candidate_current_ctc": 12,
+        "candidate_expected_ctc": 16.5,
+        "candidate_notice_period": 30,
+        "unlocked_date": "2026-09-28T10:00:00Z",
+        "ai_overall_score": 78
+      }
+    ]
+  }
+}
