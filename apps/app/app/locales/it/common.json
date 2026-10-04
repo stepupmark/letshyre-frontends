@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "dashboard": "Dashboard"
+  },
+  "notFound": {
+    "title": "Non abbiamo trovato questa pagina"
+  },
+  "error": {
+    "title": "Questa pagina non si è caricata",
+    "retry": "Riprova"
+  }
+}

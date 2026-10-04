@@ -1,20 +1,25 @@
 import outfitLatin from "@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2?url"
 import { QueryClientProvider } from "@tanstack/react-query"
 import { ThemeProvider } from "@workspace/blocks/theme-provider"
+import { dirFor } from "@workspace/i18n"
 import { I18nProvider } from "@workspace/i18n/react"
 import { Toaster } from "@workspace/ui/components/sonner"
 import { TooltipProvider } from "@workspace/ui/components/tooltip"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router"
 
 import type { Route } from "./+types/root"
 import { MotionProvider } from "./components/motion/motion-provider"
 import { RouteError } from "./components/route-error"
+import { locale, namespaces } from "./lib/i18n"
 import { createQueryClient } from "./lib/query-client"
 import common from "./locales/en/common.json"
 import "./styles/app.css"
 
+// English common is bundled so the error screen works before anything loads
 const messages = { en: { common } }
+
+export const clientMiddleware = [namespaces(["common"])]
 
 export const links: Route.LinksFunction = () => [
   {
@@ -49,9 +54,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   const [queryClient] = useState(createQueryClient)
 
+  useEffect(() => {
+    document.documentElement.lang = locale
+    document.documentElement.dir = dirFor(locale)
+  }, [])
+
   return (
     <ThemeProvider>
-      <I18nProvider lang="en" messages={messages}>
+      <I18nProvider lang={locale} messages={messages}>
         <QueryClientProvider client={queryClient}>
           <MotionProvider>
             <TooltipProvider>

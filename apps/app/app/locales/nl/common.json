@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "dashboard": "Dashboard"
+  },
+  "notFound": {
+    "title": "We konden deze pagina niet vinden"
+  },
+  "error": {
+    "title": "Deze pagina is niet geladen",
+    "retry": "Opnieuw proberen"
+  }
+}

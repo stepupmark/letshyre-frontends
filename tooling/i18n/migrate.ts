@@ -1,7 +1,7 @@
-// Copies legacy translations into the marketing catalogs.
+// Copies legacy translations into the marketing or app catalogs.
 // A value carries over only when the legacy English text equals the new English text,
 // so rewritten copy never inherits an outdated translation.
-// usage: node tooling/i18n/migrate.ts [--dry-run]
+// usage: node tooling/i18n/migrate.ts [--app] [--dry-run]
 
 import {
   existsSync,
@@ -29,12 +29,19 @@ type Node = Catalog[string]
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..")
 const LEGACY = join(ROOT, "apps/legacy/app/i18n/messages")
-const TARGET = join(ROOT, "apps/marketing/app/locales")
+const app = process.argv.includes("--app")
+const TARGET = join(
+  ROOT,
+  app ? "apps/app/app/locales" : "apps/marketing/app/locales"
+)
 const dryRun = process.argv.includes("--dry-run")
 
 /** new "ns:path" → old "ns:path". A trailing ".*" maps a whole subtree. */
 const keyMap = JSON.parse(
-  readFileSync(join(ROOT, "tooling/i18n/key-map.json"), "utf8")
+  readFileSync(
+    join(ROOT, `tooling/i18n/${app ? "key-map.app.json" : "key-map.json"}`),
+    "utf8"
+  )
 ) as Record<string, string>
 
 const PLURAL = /_(zero|one|two|few|many|other)$/
@@ -175,11 +182,14 @@ for (const lang of LOCALES) {
   }
 }
 
+// the app ships a locale only when every namespace is complete
 const readiness = readinessFrom(
   readCatalogs(TARGET),
-  Object.fromEntries(
-    Object.keys(PAGES).map((id) => [id, pageNamespaces(id as PageId)])
-  )
+  app
+    ? { app: namespaces }
+    : Object.fromEntries(
+        Object.keys(PAGES).map((id) => [id, pageNamespaces(id as PageId)])
+      )
 )
 console.log(`${dryRun ? "would write" : "wrote"} ${written} catalog file(s)\n`)
 for (const [page, locales] of readiness) {

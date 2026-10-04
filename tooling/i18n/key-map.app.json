@@ -1,0 +1,6 @@
+{
+  "common:nav.dashboard": "dashboard:nav.dashboard",
+  "common:notFound.title": "common:notFound.title",
+  "common:error.title": "common:pageState.generic.title",
+  "common:error.retry": "employer:states.retry"
+}

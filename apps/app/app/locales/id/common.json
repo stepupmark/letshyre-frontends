@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "dashboard": "Dashboard"
+  },
+  "notFound": {
+    "title": "Kami tidak dapat menemukan halaman ini"
+  },
+  "error": {
+    "title": "Halaman ini tidak termuat",
+    "retry": "Coba lagi"
+  }
+}
