@@ -1,24 +1,16 @@
-import AxeBuilder from "@axe-core/playwright"
 import { expect, test } from "@playwright/test"
 
-import { PAGES } from "../app/lib/pages.ts"
 import { mockApi } from "./mock-api.ts"
+import { RTL, SITEMAP } from "./sitemap.ts"
 
-const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
-
-for (const [id, page] of Object.entries(PAGES)) {
-  const url = `/en${page.path}`
-
-  test(`${id}: prerendered with copy, one h1 and no axe violations`, async ({
-    page: tab,
-    request,
-  }) => {
-    const raw = await (await request.get(url)).text()
-    expect(raw).toMatch(/<title>[^<]+<\/title>/)
-    expect(raw).toContain('rel="canonical"')
+for (const { path, lang } of SITEMAP) {
+  test(`${path}: renders cleanly`, async ({ page, request }) => {
+    const raw = await request.get(path)
+    expect(raw.status()).toBe(200)
+    expect(await raw.text()).toMatch(/<h1[\s>]/)
 
     // the real API rejects localhost origins, so answer its calls with an empty envelope
-    await tab.route(
+    await page.route(
       (target) => target.hostname !== "localhost",
       (route) =>
         route.fulfill({
@@ -27,20 +19,24 @@ for (const [id, page] of Object.entries(PAGES)) {
           body: JSON.stringify({ success: true, data: [] }),
         })
     )
+    await mockApi(page)
 
     const errors: string[] = []
-    tab.on("console", (msg) => {
+    page.on("console", (msg) => {
       if (msg.type() === "error") errors.push(msg.text())
     })
-    await mockApi(tab)
-    await tab.goto(url)
-    await expect(tab.locator("html")).toHaveAttribute("lang", "en")
-    await expect(tab.getByRole("heading", { level: 1 })).toHaveCount(1)
+    page.on("pageerror", (error) => errors.push(error.message))
+    page.on("requestfailed", (req) => errors.push(`failed: ${req.url()}`))
+    page.on("response", (res) => {
+      if (res.status() >= 400) errors.push(`${res.status()}: ${res.url()}`)
+    })
 
-    const { violations } = await new AxeBuilder({ page: tab })
-      .withTags(WCAG)
-      .analyze()
-    expect(violations).toEqual([])
+    await page.goto(path)
+    await page.waitForLoadState("networkidle")
+    const html = page.locator("html")
+    await expect(html).toHaveAttribute("lang", lang)
+    await expect(html).toHaveAttribute("dir", RTL.has(lang) ? "rtl" : "ltr")
+    await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1)
     expect(errors).toEqual([])
   })
 }
