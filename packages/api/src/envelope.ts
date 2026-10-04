@@ -37,3 +37,13 @@ export function unwrap<T extends z.ZodType>(schema: T) {
 export function acknowledge(json: unknown): { message: string | undefined } {
   return { message: open(json).message }
 }
+
+/** DRF page: `{ count, next, previous, results }`, plus `total_pages` on some endpoints. */
+export const paginated = <T extends z.ZodType>(item: T) =>
+  z.object({
+    count: z.number(),
+    next: z.string().nullish(),
+    previous: z.string().nullish(),
+    total_pages: z.number().optional(),
+    results: z.array(item),
+  })

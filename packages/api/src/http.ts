@@ -5,12 +5,14 @@ import {
   TimeoutError,
 } from "./errors.ts"
 
-type Query = Record<string, string | number | boolean | null | undefined>
+export type Query = Record<string, string | number | boolean | null | undefined>
 
 export interface RequestOptions {
   query?: Query
   signal?: AbortSignal
   headers?: Record<string, string>
+  /** false for endpoints that must go out without a token, e.g. login. */
+  auth?: boolean
 }
 
 export interface HttpClientOptions {
@@ -20,17 +22,39 @@ export interface HttpClientOptions {
   retries?: number
   retryDelayMs?: (attempt: number) => number
   getAuthHeader?: () => string | null | undefined
+  /** Called on a 401; resolve true once a new token is stored and the request is retried once. */
+  refreshAuth?: () => Promise<boolean>
   onUnauthorized?: (error: HttpError) => void
   fetch?: typeof fetch
 }
+
+type Body = unknown
 
 export interface HttpClient {
   get: (path: string, options?: RequestOptions) => Promise<unknown>
   post: (
     path: string,
-    body?: unknown,
+    body?: Body,
     options?: RequestOptions
   ) => Promise<unknown>
+  put: (path: string, body?: Body, options?: RequestOptions) => Promise<unknown>
+  patch: (
+    path: string,
+    body?: Body,
+    options?: RequestOptions
+  ) => Promise<unknown>
+  delete: (path: string, options?: RequestOptions) => Promise<unknown>
+  getBlob: (path: string, options?: RequestOptions) => Promise<Blob>
+  /** Builds the full URL and auth header, for callers that can't use fetch (uploads with progress). */
+  prepare: (
+    path: string,
+    options?: RequestOptions
+  ) => { url: URL; headers: Record<string, string> }
+  /** Runs the 401 → refresh → retry-once flow around any request. */
+  withAuthRetry: <T>(
+    run: () => Promise<T>,
+    options?: RequestOptions
+  ) => Promise<T>
 }
 
 const backoff = (attempt: number) => 300 * 2 ** attempt
@@ -41,6 +65,7 @@ export function createHttpClient({
   retries = 2,
   retryDelayMs = backoff,
   getAuthHeader,
+  refreshAuth,
   onUnauthorized,
   fetch: fetchImpl = (...args) => globalThis.fetch(...args),
 }: HttpClientOptions): HttpClient {
@@ -54,19 +79,27 @@ export function createHttpClient({
     return target
   }
 
-  async function send(
-    method: string,
-    path: string,
-    body: unknown,
-    options: RequestOptions
-  ) {
+  function prepare(path: string, options: RequestOptions = {}) {
     const headers: Record<string, string> = {
       Accept: "application/json",
       ...options.headers,
     }
-    if (body !== undefined) headers["Content-Type"] = "application/json"
-    const auth = getAuthHeader?.()
+    const auth = options.auth === false ? undefined : getAuthHeader?.()
     if (auth) headers.Authorization = auth
+    return { url: url(path, options.query), headers }
+  }
+
+  async function raw(
+    method: string,
+    path: string,
+    body: Body,
+    options: RequestOptions
+  ) {
+    const { url: target, headers } = prepare(path, options)
+    // FormData sets its own multipart content type with the boundary
+    const form = body instanceof FormData
+    if (body !== undefined && !form)
+      headers["Content-Type"] = "application/json"
 
     const timeout = AbortSignal.timeout(timeoutMs)
     const signal = options.signal
@@ -75,10 +108,11 @@ export function createHttpClient({
 
     let response: Response
     try {
-      response = await fetchImpl(url(path, options.query), {
+      response = await fetchImpl(target, {
         method,
         headers,
-        body: body === undefined ? undefined : JSON.stringify(body),
+        body:
+          body === undefined ? undefined : form ? body : JSON.stringify(body),
         signal,
       })
     } catch (error) {
@@ -90,32 +124,60 @@ export function createHttpClient({
       throw new NetworkError(`${method} ${path} failed`, { cause: error })
     }
 
-    const text = await response.text()
-    let json: unknown = null
-    if (text) {
-      try {
-        json = JSON.parse(text)
-      } catch (error) {
-        if (response.ok)
-          throw new ResponseShapeError(
-            `${method} ${path} returned invalid JSON`,
-            { cause: error }
-          )
-      }
-    }
-
-    if (!response.ok) {
-      const error = new HttpError(response.status, json)
-      if (response.status === 401) onUnauthorized?.(error)
-      throw error
-    }
-    return json
+    if (!response.ok)
+      throw new HttpError(response.status, await readJson(response))
+    return response
   }
 
-  async function withRetry(path: string, options: RequestOptions) {
+  async function withAuthRetry<T>(
+    run: () => Promise<T>,
+    options: RequestOptions = {}
+  ): Promise<T> {
+    try {
+      return await run()
+    } catch (error) {
+      if (!(error instanceof HttpError) || error.status !== 401) throw error
+      if (options.auth !== false && refreshAuth && (await refreshAuth())) {
+        try {
+          return await run()
+        } catch (retryError) {
+          if (retryError instanceof HttpError && retryError.status === 401)
+            onUnauthorized?.(retryError)
+          throw retryError
+        }
+      }
+      onUnauthorized?.(error)
+      throw error
+    }
+  }
+
+  async function json(
+    method: string,
+    path: string,
+    body: Body,
+    options: RequestOptions
+  ) {
+    return withAuthRetry(async () => {
+      const response = await raw(method, path, body, options)
+      const text = await response.text()
+      if (!text) return null
+      try {
+        return JSON.parse(text) as unknown
+      } catch (error) {
+        throw new ResponseShapeError(
+          `${method} ${path} returned invalid JSON`,
+          {
+            cause: error,
+          }
+        )
+      }
+    }, options)
+  }
+
+  async function withRetry<T>(run: () => Promise<T>, options: RequestOptions) {
     for (let attempt = 0; ; attempt++) {
       try {
-        return await send("GET", path, undefined, options)
+        return await run()
       } catch (error) {
         if (attempt >= retries || !isRetryable(error)) throw error
         await sleep(retryDelayMs(attempt), options.signal)
@@ -124,8 +186,27 @@ export function createHttpClient({
   }
 
   return {
-    get: (path, options = {}) => withRetry(path, options),
-    post: (path, body, options = {}) => send("POST", path, body, options),
+    get: (path, options = {}) =>
+      withRetry(() => json("GET", path, undefined, options), options),
+    post: (path, body, options = {}) => json("POST", path, body, options),
+    put: (path, body, options = {}) => json("PUT", path, body, options),
+    patch: (path, body, options = {}) => json("PATCH", path, body, options),
+    delete: (path, options = {}) => json("DELETE", path, undefined, options),
+    getBlob: (path, options = {}) =>
+      withAuthRetry(
+        async () => (await raw("GET", path, undefined, options)).blob(),
+        options
+      ),
+    prepare,
+    withAuthRetry,
+  }
+}
+
+async function readJson(response: Response): Promise<unknown> {
+  try {
+    return JSON.parse(await response.text()) as unknown
+  } catch {
+    return null
   }
 }
 

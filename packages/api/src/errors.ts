@@ -16,6 +16,8 @@ export class HttpError extends ApiError {
   readonly code: string | undefined
   /** The backend's own message, when it sent one. Not always fit to show users. */
   readonly backendMessage: string | undefined
+  /** DRF field errors as { field: "first message" }, for forms. */
+  readonly fieldErrors: Record<string, string> | undefined
 
   constructor(status: number, body?: unknown) {
     const { code, message } = readErrorBody(body)
@@ -23,6 +25,7 @@ export class HttpError extends ApiError {
     this.status = status
     this.code = code
     this.backendMessage = message
+    this.fieldErrors = fieldErrorsOf(body)
   }
 }
 
@@ -39,4 +42,26 @@ function readErrorBody(body: unknown): { code?: string; message?: string } {
     code: text("code") ?? text("error_code"),
     message: text("message") ?? text("detail") ?? text("error"),
   }
+}
+
+const isRecord = (value: unknown): value is Record<string, unknown> =>
+  typeof value === "object" && value !== null && !Array.isArray(value)
+
+// DRF sends { field: ["msg"] }, at the top level or under errors/data;
+// custom serializers sometimes send a bare string
+function fieldErrorsOf(body: unknown): Record<string, string> | undefined {
+  if (!isRecord(body)) return undefined
+  const source = [body.errors, body.data].find(isRecord) ?? body
+  const errors: Record<string, string> = {}
+  for (const [field, value] of Object.entries(source)) {
+    if (
+      ["code", "error_code", "message", "detail", "error", "success"].includes(
+        field
+      )
+    )
+      continue
+    const first: unknown = Array.isArray(value) ? value[0] : value
+    if (typeof first === "string") errors[field] = first
+  }
+  return Object.keys(errors).length > 0 ? errors : undefined
 }
