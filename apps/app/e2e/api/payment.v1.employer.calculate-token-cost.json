@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "data": {
+    "breakdown": {
+      "tokens": 25,
+      "rate_per_credit": "49.00",
+      "base_amount": "1225.00",
+      "discount_amount": "0.00",
+      "gst_percent": "18",
+      "gst_amount": "220.50",
+      "total_with_gst": "1445.50"
+    },
+    "coupon": null
+  }
+}

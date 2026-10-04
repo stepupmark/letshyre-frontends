@@ -57,6 +57,8 @@ export default [
       route("unlocked-candidates", "routes/employer/unlocked.tsx"),
       route("employee-profile", "routes/employer/candidate-profile.tsx"),
       route("employee-score-card", "routes/employer/candidate-scorecard.tsx"),
+      route("billing", "routes/employer/billing.tsx"),
+      route("invoice", "routes/employer/invoices.tsx"),
     ]),
   ]),
   layout("layouts/employee-layout.tsx", [

@@ -1,0 +1,138 @@
+{
+  "title": "Buy credits",
+  "lead": "Each credit unlocks one AI interview: the candidate's contact details, full scorecard, recording and resume. Credits never expire.",
+  "balance": "Balance",
+  "invoices": "Invoices",
+  "buyCredits": "Buy credits",
+  "plusGst": "{{price}} + GST",
+  "nextNote": "Once you've paid, we'll take you back to the candidate you were looking at.",
+  "nextBack": "Back to the candidate",
+  "plans": {
+    "title": "Plans",
+    "lead": "Paid once, not a subscription. GST is added at checkout.",
+    "popular": "Most popular",
+    "once": "+ GST, paid once",
+    "credits_one": "{{count}} credit",
+    "credits_other": "{{count}} credits",
+    "rate": "{{rate}} per credit",
+    "seats_one": "{{count}} team seat",
+    "seats_other": "{{count}} team seats",
+    "unlocks": "Contact details, scorecards and recordings",
+    "noExpiry": "Credits never expire",
+    "topUps": "Top up any time",
+    "buy": "Buy {{name}}"
+  },
+  "topUps": {
+    "title": "Top up",
+    "lead": "Add credits to your balance whenever you need more.",
+    "credits_one": "{{count}} credit",
+    "credits_other": "{{count}} credits",
+    "buy": "Buy",
+    "buyLabel_one": "Buy {{count}} credit",
+    "buyLabel_other": "Buy {{count}} credits"
+  },
+  "unavailable": {
+    "title": "This plan isn't available",
+    "body": "Plans may have changed since the link was made. Close this and pick one below.",
+    "failedTitle": "We couldn't load this plan",
+    "failedBody": "Check your connection and try again. Nothing was charged.",
+    "close": "Close"
+  },
+  "checkout": {
+    "planTitle": "{{name}} plan",
+    "topUpTitle_one": "{{count}} credit",
+    "topUpTitle_other": "{{count}} credits",
+    "summary_one": "{{count}} credit, paid once. Credits never expire.",
+    "summary_other": "{{count}} credits, paid once. Credits never expire.",
+    "credits_one": "{{count}} credit × {{rate}}",
+    "credits_other": "{{count}} credits × {{rate}}",
+    "couponLine": "Coupon {{code}}",
+    "discount": "Discount",
+    "gst": "GST ({{percent}}%)",
+    "total": "Total",
+    "quoteError": "We couldn't work out your total. Nothing was charged.",
+    "retry": "Try again",
+    "coupon": {
+      "toggle": "Have a coupon code?",
+      "label": "Coupon code",
+      "apply": "Apply",
+      "applied": "{{code}} applied",
+      "remove": "Remove coupon {{code}}",
+      "required": "Enter a coupon code.",
+      "invalid": "Coupon codes use only letters, numbers, hyphens and underscores.",
+      "rejected": "This code can't be used on this purchase."
+    },
+    "pay": "Pay {{amount}}",
+    "payPending": "Pay",
+    "paying": "Starting payment…",
+    "secure": "Payments are handled by Razorpay. By paying, you agree to our <terms>terms</terms> and <refund>refund policy</refund>.",
+    "razorpay_one": "{{count}} LetsHyre credit",
+    "razorpay_other": "{{count}} LetsHyre credits",
+    "notice": {
+      "cancelled": {
+        "title": "Payment cancelled",
+        "body": "Nothing was charged. Pay again whenever you're ready."
+      },
+      "failed": {
+        "title": "The payment didn't go through",
+        "body": "Nothing was charged. Try again or use another payment method."
+      },
+      "priceChanged": {
+        "title": "Your total has changed",
+        "body": "The price was updated after you opened this, and nothing was charged. Check the new total before you pay."
+      },
+      "blocked": {
+        "title": "The payment window didn't load",
+        "body": "Nothing was charged. Check your connection; if you use an ad blocker, allow checkout.razorpay.com."
+      },
+      "error": {
+        "title": "We couldn't start the payment",
+        "body": "Nothing was charged. Try again in a moment."
+      }
+    },
+    "verifying": {
+      "title": "Confirming your payment",
+      "body": "This takes a few seconds. Keep this window open."
+    },
+    "paid": {
+      "title_one": "{{count}} credit added",
+      "title_other": "{{count}} credits added",
+      "body": "We've received {{amount}}. Your invoice is on the invoices page.",
+      "balance": "Your balance is now",
+      "primary": "Find candidates",
+      "back": "Back to the candidate",
+      "invoices": "View invoices"
+    },
+    "unconfirmed": {
+      "title": "We couldn't confirm your payment yet",
+      "body": "If money has left your account, your credits aren't lost. Try again, or contact us with the payment reference below.",
+      "retry": "Try again",
+      "contact": "Contact support"
+    },
+    "reference": "Payment reference"
+  },
+  "invoiceList": {
+    "title": "Invoices",
+    "lead": "Every credit purchase, with its receipt.",
+    "columns": {
+      "date": "Date",
+      "purchase": "Purchase",
+      "number": "Invoice",
+      "total": "Total"
+    },
+    "plan": "{{name}} plan",
+    "topUp": "Top-up",
+    "preparing": "Being prepared",
+    "emptyTitle": "No invoices yet",
+    "emptyBody": "Your first purchase will show up here with its receipt."
+  },
+  "receipt": {
+    "title": "Receipt",
+    "subtotal": "Subtotal",
+    "gst": "GST",
+    "paidOn": "Paid on",
+    "pdf": "PDF",
+    "print": "Print",
+    "noPdf": "The PDF invoice is still being prepared. Check back in a few minutes."
+  }
+}

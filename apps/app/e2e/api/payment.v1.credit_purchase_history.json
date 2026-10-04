@@ -1,0 +1,47 @@
+{
+  "success": true,
+  "data": {
+    "count": 2,
+    "total_pages": 1,
+    "current_page": 1,
+    "results": [
+      {
+        "id": "pur-2",
+        "is_paid": true,
+        "invoice_number": "LH-2026-0042",
+        "paid_at": "2026-09-30T11:20:00Z",
+        "created_at": "2026-09-30T11:18:00Z",
+        "tokens_credited": 100,
+        "credit_plan": {
+          "name": "Business"
+        },
+        "base_amount": "4900.00",
+        "discount_amount": "490.00",
+        "gst_percent": "18",
+        "gst_amount": "793.80",
+        "total_with_gst": "5203.80",
+        "coupon": {
+          "code": "WELCOME10"
+        },
+        "transaction_id": "pay_Nx81b2",
+        "invoice_file": "/media/invoices/LH-2026-0042.pdf",
+        "razorpay_signature": "secret"
+      },
+      {
+        "id": "pur-1",
+        "is_paid": true,
+        "invoice_number": null,
+        "paid_at": null,
+        "created_at": "2026-09-12T08:00:00Z",
+        "tokens_credited": 10,
+        "credit_plan": null,
+        "base_amount": "490.00",
+        "discount_amount": "0",
+        "gst_amount": "88.20",
+        "total_with_gst": "578.20",
+        "transaction_id": "pay_Mm3k9q",
+        "invoice_file": null
+      }
+    ]
+  }
+}

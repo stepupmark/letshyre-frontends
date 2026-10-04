@@ -7,6 +7,7 @@ import {
   interviewsSchema,
   unlockedPageSchema,
 } from "@/features/candidate-unlock/api"
+import { invoicesPageSchema, quoteSchema } from "@/features/billing/api"
 import { profileSchema } from "@/features/candidate/api"
 import { scorecardSchema } from "@/features/candidate/scorecard-schema"
 import { cardsSchema, teamSchema } from "@/features/employer-dashboard/queries"
@@ -19,6 +20,8 @@ import { dataOf } from "@/lib/response"
 // every schema the app parses responses with, against its fixture in e2e/api
 const CONTRACTS: Record<string, z.ZodType> = {
   "payment.v1.employer_credits": creditsSchema,
+  "payment.v1.employer.calculate-token-cost": quoteSchema,
+  "payment.v1.credit_purchase_history": invoicesPageSchema,
   "user.v1.public.shared-candidate": scorecardSchema,
   "user.v1.employer_dashboard_cards": cardsSchema,
   "user.v1.employer_team_members": teamSchema,

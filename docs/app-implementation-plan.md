@@ -636,6 +636,20 @@ plain words ("nothing was charged"), balance updated in place after payment, inv
 download. Razorpay script loaded on demand; CSP allows only its origins.
 **Exit includes a real Razorpay test-mode purchase on staging** (the item open since Phase 4).
 
+- **Done 2026-10-04:** `/employer/billing` shows the balance, paid plans side by side (price,
+  credits, rate, seats, what a credit buys) and four top-up packs. `?checkout=<slug>` or
+  `?checkout=<n>-credits` opens the checkout (the Phase 4 contract), back closes it, and the
+  route guard covers guests, candidates and unfinished onboarding, so there's no gate inside.
+  Checkout ports the legacy flow: server breakdown with GST, coupons, `checkout.js` loaded on
+  demand, one order reused if Razorpay is closed, the order total checked against the one shown
+  ("your total has changed"), cancelled, failed and blocked states that say nothing was charged,
+  and an unconfirmed state with the payment reference and a retry. After paying, the balance
+  updates in place and `?next=` (validated to `/employer/...`) leads back to the candidate from
+  6.6. `/employer/invoice` is a paged table with a receipt panel (breakdown, coupon, reference,
+  PDF, print). Prices show "+ GST" because the rate only comes with a quote. No Meta pixel; the
+  purchase event waits for B3. E2E stubs Razorpay and checks the exact order and verify bodies.
+  **Still open:** the real test-mode purchase on staging (B1).
+
 ### 6.9 Team, shared links, employer profile
 
 Invite and remove team members, seat limits from the plan shown before inviting, pending invites

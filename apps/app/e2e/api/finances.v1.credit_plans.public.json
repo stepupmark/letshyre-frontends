@@ -1,0 +1,43 @@
+{
+  "success": true,
+  "data": {
+    "results": [
+      {
+        "tagline": null,
+        "highlight": false,
+        "per_credit_effective_rate": null,
+        "id": "p-free",
+        "slug": "free",
+        "name": "Free",
+        "credits_included": 0,
+        "base_price": "0",
+        "plan_type": "free",
+        "sort_order": 0
+      },
+      {
+        "tagline": "For a few roles a month",
+        "highlight": false,
+        "per_credit_effective_rate": "49.00",
+        "id": "p-pro",
+        "slug": "pro",
+        "name": "Pro",
+        "credits_included": 50,
+        "base_price": "2450",
+        "plan_type": "paid_one_time",
+        "sort_order": 1
+      },
+      {
+        "tagline": "For teams hiring every week",
+        "highlight": true,
+        "per_credit_effective_rate": "49.00",
+        "id": "p-business",
+        "slug": "business",
+        "name": "Business",
+        "credits_included": 100,
+        "base_price": "4900",
+        "plan_type": "paid_one_time",
+        "sort_order": 2
+      }
+    ]
+  }
+}

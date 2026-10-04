@@ -1,6 +1,7 @@
 import "i18next"
 
 import type auth from "../locales/en/auth.json"
+import type billing from "../locales/en/billing.json"
 import type candidate from "../locales/en/candidate.json"
 import type common from "../locales/en/common.json"
 import type dashboard from "../locales/en/dashboard.json"
@@ -16,6 +17,7 @@ declare module "i18next" {
     defaultNS: false
     resources: {
       auth: typeof auth
+      billing: typeof billing
       candidate: typeof candidate
       common: typeof common
       dashboard: typeof dashboard
