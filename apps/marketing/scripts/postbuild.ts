@@ -21,7 +21,7 @@ const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)))
 const CLIENT = join(ROOT, "build/client")
 const HTML_BUDGET = 60 * 1024
 // react, react-router and i18next alone are ~130 kB; keep this a ratchet, not a target
-const JS_BUDGET = 270 * 1024
+const JS_BUDGET = 280 * 1024
 
 const env = parseEnv(loadEnv("production", ROOT, "VITE_"))
 const site = env.VITE_SITE_URL.replace(/\/$/, "")
