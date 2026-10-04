@@ -8,5 +8,10 @@
   "error": {
     "title": "Diese Seite wurde nicht geladen",
     "retry": "Erneut versuchen"
+  },
+  "password": {
+    "show": "Passwort anzeigen",
+    "hide": "Passwort ausblenden",
+    "capsLock": "Feststelltaste ist aktiviert"
   }
 }

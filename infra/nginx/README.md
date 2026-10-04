@@ -12,6 +12,11 @@ build writes `live-routes.map` (nginx sends direct visits to the app) and
 `client/live-routes.json` (legacy hands its own links over with a full page load). Rollback
 is the same in reverse: remove the path, release, reload.
 
+Sign-in goes first: the app's guards send signed-out visitors to `/sign-in`, which legacy
+doesn't have, so the build refuses a live dashboard page without it. Move the auth pages
+together: `/sign-in`, `/employer/sign-in`, `/employee/sign-in`, `/get-started`,
+`/employer/register`, `/employee/register` and `/forgot-password`.
+
 ## Layout on the server
 
 ```

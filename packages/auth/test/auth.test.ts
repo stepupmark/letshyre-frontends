@@ -171,11 +171,10 @@ describe("login and logout", () => {
 describe("guards", () => {
   const at = (path: string) => new URL(`https://letshyre.ai${path}`)
 
-  it("sends a signed-out checkout to sign-in and back, everything else home", () => {
+  it("sends signed-out visitors to sign in and back to the page they asked for", () => {
     expect(authRedirect(at("/employer/billing?checkout=pro"))).toBe(
-      "/employer/sign-in?next=%2Femployer%2Fbilling%3Fcheckout%3Dpro"
+      "/sign-in?next=%2Femployer%2Fbilling%3Fcheckout%3Dpro"
     )
-    expect(authRedirect(at("/employer/jobs"))).toBe("/")
   })
 
   it("keeps each role in its own area", () => {

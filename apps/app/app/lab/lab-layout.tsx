@@ -44,6 +44,7 @@ import {
   SidebarRail,
   SidebarTrigger,
 } from "@workspace/ui/components/sidebar"
+import { TooltipProvider } from "@workspace/ui/components/tooltip"
 import {
   ToggleGroup,
   ToggleGroupItem,
@@ -131,212 +132,218 @@ function Shell() {
   }
 
   return (
-    <SidebarProvider>
-      <Sidebar collapsible="icon" side={lang === "ar" ? "right" : "left"}>
-        <SidebarHeader>
-          <Link
-            to="/_lab"
-            className="flex h-8 items-center gap-2 rounded-md px-2 text-base font-semibold tracking-tight group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:px-0"
-          >
-            <span className="flex size-6 shrink-0 items-center justify-center rounded-md bg-primary text-xs text-primary-foreground">
-              L
-            </span>
-            <span className="group-data-[collapsible=icon]:hidden">
-              LetsHyre
-            </span>
-          </Link>
-        </SidebarHeader>
-        <SidebarContent>
-          {[
-            { label: t("nav.hiring"), items: hiring },
-            { label: t("nav.company"), items: company },
-          ].map((group) => (
-            <SidebarGroup key={group.label}>
-              <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
-              <SidebarMenu>
-                {group.items.map((item) => (
-                  <SidebarMenuItem key={item.label}>
-                    <SidebarMenuButton
-                      tooltip={item.label}
-                      isActive={item.to !== undefined && pathname === item.to}
-                      render={
-                        item.to ? (
-                          <NavLink to={item.to} viewTransition />
-                        ) : undefined
-                      }
-                      onClick={item.to ? undefined : notInLab}
-                    >
-                      <item.icon />
-                      <span>{item.label}</span>
-                    </SidebarMenuButton>
-                    {item.badge !== undefined && (
-                      <SidebarMenuBadge className="tabular-nums">
-                        {item.badge}
-                      </SidebarMenuBadge>
-                    )}
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            </SidebarGroup>
-          ))}
-        </SidebarContent>
-        <SidebarFooter>
-          <SidebarMenu>
-            <SidebarMenuItem>
-              <DropdownMenu>
-                <DropdownMenuTrigger render={<SidebarMenuButton size="lg" />}>
-                  <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-muted text-xs font-medium">
-                    PS
-                  </span>
-                  <span className="grid flex-1 text-start leading-tight">
-                    <span className="truncate text-sm font-medium">
-                      Priya Sharma
-                    </span>
-                    <span className="truncate text-xs text-muted-foreground">
-                      Orbit Labs
-                    </span>
-                  </span>
-                  <ChevronsUpDown className="ms-auto size-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent side="top" align="start" className="w-56">
-                  <DropdownMenuGroup>
-                    <DropdownMenuLabel>priya@orbitlabs.in</DropdownMenuLabel>
-                  </DropdownMenuGroup>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={notInLab}>
-                    Profile
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={() => {
-                      setPaletteOpen(true)
-                    }}
-                  >
-                    Search and shortcuts
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={notInLab}>
-                    <LogOut />
-                    {t("user.signOut")}
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </SidebarMenuItem>
-          </SidebarMenu>
-        </SidebarFooter>
-        <SidebarRail />
-      </Sidebar>
-
-      <SidebarInset>
-        <LabControls />
-        <header className="sticky top-0 z-10 flex h-14 items-center gap-2 border-b bg-background/95 px-4 backdrop-blur-sm supports-backdrop-filter:bg-background/80">
-          <SidebarTrigger className="-ms-1" />
-          <Separator
-            orientation="vertical"
-            className="me-1 data-vertical:h-4 data-vertical:self-center"
-          />
-          <Crumbs />
-          <div className="ms-auto flex items-center gap-2">
-            <Button
-              variant="outline"
-              className="w-9 justify-center px-0 text-muted-foreground md:w-60 md:justify-start md:px-3"
-              onClick={() => {
-                setPaletteOpen(true)
-              }}
+    <TooltipProvider>
+      <SidebarProvider>
+        <Sidebar collapsible="icon" side={lang === "ar" ? "right" : "left"}>
+          <SidebarHeader>
+            <Link
+              to="/_lab"
+              className="flex h-8 items-center gap-2 rounded-md px-2 text-base font-semibold tracking-tight group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:px-0"
             >
-              <Search />
-              <span className="hidden truncate md:inline">
-                {t("nav.search")}
+              <span className="flex size-6 shrink-0 items-center justify-center rounded-md bg-primary text-xs text-primary-foreground">
+                L
               </span>
-              <Kbd className="ms-auto hidden text-foreground md:inline-flex">
-                Ctrl K
-              </Kbd>
-            </Button>
-            <Button
-              variant="ghost"
-              className="gap-1.5"
-              onClick={notInLab}
-              aria-label={`${credits} credits`}
-            >
-              <Coins />
-              <AnimatedNumber value={view === "empty" ? 10 : credits} />
-            </Button>
-          </div>
-        </header>
-        <div className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 md:p-8 2xl:max-w-7xl">
-          <Outlet />
-        </div>
-      </SidebarInset>
+              <span className="group-data-[collapsible=icon]:hidden">
+                LetsHyre
+              </span>
+            </Link>
+          </SidebarHeader>
+          <SidebarContent>
+            {[
+              { label: t("nav.hiring"), items: hiring },
+              { label: t("nav.company"), items: company },
+            ].map((group) => (
+              <SidebarGroup key={group.label}>
+                <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+                <SidebarMenu>
+                  {group.items.map((item) => (
+                    <SidebarMenuItem key={item.label}>
+                      <SidebarMenuButton
+                        tooltip={item.label}
+                        isActive={item.to !== undefined && pathname === item.to}
+                        render={
+                          item.to ? (
+                            <NavLink to={item.to} viewTransition />
+                          ) : undefined
+                        }
+                        onClick={item.to ? undefined : notInLab}
+                      >
+                        <item.icon />
+                        <span>{item.label}</span>
+                      </SidebarMenuButton>
+                      {item.badge !== undefined && (
+                        <SidebarMenuBadge className="tabular-nums">
+                          {item.badge}
+                        </SidebarMenuBadge>
+                      )}
+                    </SidebarMenuItem>
+                  ))}
+                </SidebarMenu>
+              </SidebarGroup>
+            ))}
+          </SidebarContent>
+          <SidebarFooter>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <DropdownMenu>
+                  <DropdownMenuTrigger render={<SidebarMenuButton size="lg" />}>
+                    <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-muted text-xs font-medium">
+                      PS
+                    </span>
+                    <span className="grid flex-1 text-start leading-tight">
+                      <span className="truncate text-sm font-medium">
+                        Priya Sharma
+                      </span>
+                      <span className="truncate text-xs text-muted-foreground">
+                        Orbit Labs
+                      </span>
+                    </span>
+                    <ChevronsUpDown className="ms-auto size-4" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent
+                    side="top"
+                    align="start"
+                    className="w-56"
+                  >
+                    <DropdownMenuGroup>
+                      <DropdownMenuLabel>priya@orbitlabs.in</DropdownMenuLabel>
+                    </DropdownMenuGroup>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={notInLab}>
+                      Profile
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={() => {
+                        setPaletteOpen(true)
+                      }}
+                    >
+                      Search and shortcuts
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={notInLab}>
+                      <LogOut />
+                      {t("user.signOut")}
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarFooter>
+          <SidebarRail />
+        </Sidebar>
 
-      <CommandDialog
-        open={paletteOpen}
-        onOpenChange={setPaletteOpen}
-        title={t("nav.search")}
-        description="Jump to a page, candidate or job"
-      >
-        <Command>
-          <CommandInput placeholder={t("nav.search")} />
-          <CommandList>
-            <CommandEmpty>No results.</CommandEmpty>
-            <CommandGroup heading="Go to">
-              <CommandItem
-                onSelect={() => {
-                  go("/_lab/dashboard")
+        <SidebarInset>
+          <LabControls />
+          <header className="sticky top-0 z-10 flex h-14 items-center gap-2 border-b bg-background/95 px-4 backdrop-blur-sm supports-backdrop-filter:bg-background/80">
+            <SidebarTrigger className="-ms-1" />
+            <Separator
+              orientation="vertical"
+              className="me-1 data-vertical:h-4 data-vertical:self-center"
+            />
+            <Crumbs />
+            <div className="ms-auto flex items-center gap-2">
+              <Button
+                variant="outline"
+                className="w-9 justify-center px-0 text-muted-foreground md:w-60 md:justify-start md:px-3"
+                onClick={() => {
+                  setPaletteOpen(true)
                 }}
               >
-                <LayoutDashboard />
-                {t("nav.dashboard")}
-                <CommandShortcut>G D</CommandShortcut>
-              </CommandItem>
-              <CommandItem
-                onSelect={() => {
-                  go("/_lab/applicants")
-                }}
+                <Search />
+                <span className="hidden truncate md:inline">
+                  {t("nav.search")}
+                </span>
+                <Kbd className="ms-auto hidden text-foreground md:inline-flex">
+                  Ctrl K
+                </Kbd>
+              </Button>
+              <Button
+                variant="ghost"
+                className="gap-1.5"
+                onClick={notInLab}
+                aria-label={`${credits} credits`}
               >
-                <BriefcaseBusiness />
-                {t("nav.jobs")}
-                <CommandShortcut>G J</CommandShortcut>
-              </CommandItem>
-              <CommandItem
-                onSelect={() => {
-                  go("/_lab/scorecard")
-                }}
-              >
-                <FlaskConical />
-                {t("scorecard.title")}
-              </CommandItem>
-            </CommandGroup>
-            <CommandGroup heading="Candidates">
-              {applicants.map((a) => (
+                <Coins />
+                <AnimatedNumber value={view === "empty" ? 10 : credits} />
+              </Button>
+            </div>
+          </header>
+          <div className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 md:p-8 2xl:max-w-7xl">
+            <Outlet />
+          </div>
+        </SidebarInset>
+
+        <CommandDialog
+          open={paletteOpen}
+          onOpenChange={setPaletteOpen}
+          title={t("nav.search")}
+          description="Jump to a page, candidate or job"
+        >
+          <Command>
+            <CommandInput placeholder={t("nav.search")} />
+            <CommandList>
+              <CommandEmpty>No results.</CommandEmpty>
+              <CommandGroup heading="Go to">
                 <CommandItem
-                  key={a.id}
-                  value={`${a.name} ${a.role_applied}`}
                   onSelect={() => {
-                    go(`/_lab/applicants?candidate=${a.id}`)
+                    go("/_lab/dashboard")
                   }}
                 >
-                  {a.name}
-                  <span className="truncate text-muted-foreground">
-                    {a.role_applied}
-                  </span>
+                  <LayoutDashboard />
+                  {t("nav.dashboard")}
+                  <CommandShortcut>G D</CommandShortcut>
                 </CommandItem>
-              ))}
-            </CommandGroup>
-            <CommandGroup heading="Jobs">
-              {jobs.map((job) => (
                 <CommandItem
-                  key={job.id}
                   onSelect={() => {
                     go("/_lab/applicants")
                   }}
                 >
-                  {job.title}
+                  <BriefcaseBusiness />
+                  {t("nav.jobs")}
+                  <CommandShortcut>G J</CommandShortcut>
                 </CommandItem>
-              ))}
-            </CommandGroup>
-          </CommandList>
-        </Command>
-      </CommandDialog>
-    </SidebarProvider>
+                <CommandItem
+                  onSelect={() => {
+                    go("/_lab/scorecard")
+                  }}
+                >
+                  <FlaskConical />
+                  {t("scorecard.title")}
+                </CommandItem>
+              </CommandGroup>
+              <CommandGroup heading="Candidates">
+                {applicants.map((a) => (
+                  <CommandItem
+                    key={a.id}
+                    value={`${a.name} ${a.role_applied}`}
+                    onSelect={() => {
+                      go(`/_lab/applicants?candidate=${a.id}`)
+                    }}
+                  >
+                    {a.name}
+                    <span className="truncate text-muted-foreground">
+                      {a.role_applied}
+                    </span>
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+              <CommandGroup heading="Jobs">
+                {jobs.map((job) => (
+                  <CommandItem
+                    key={job.id}
+                    onSelect={() => {
+                      go("/_lab/applicants")
+                    }}
+                  >
+                    {job.title}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            </CommandList>
+          </Command>
+        </CommandDialog>
+      </SidebarProvider>
+    </TooltipProvider>
   )
 }
 

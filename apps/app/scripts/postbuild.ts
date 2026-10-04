@@ -19,9 +19,9 @@ import { LIVE_ROUTES, routePattern } from "../app/lib/live-routes.ts"
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)))
 const CLIENT = join(ROOT, "build/client")
 const INDEX = join(CLIENT, "index.html")
-// 161 kB at 5.1, 195 kB at 5.5 once the shell shared UI code with the root; a ratchet,
-// raise it only on purpose
-const JS_BUDGET = 200 * 1024
+// 161 kB at 5.1, 195 kB at 5.5, 171 kB at 6.2 once tooltips moved into the shell;
+// a ratchet, raise it only on purpose
+const JS_BUDGET = 180 * 1024
 
 const env = parseEnv(loadEnv("production", ROOT, "VITE_"))
 const api = new URL(env.VITE_API_BASE_URL).origin
@@ -60,6 +60,15 @@ writeFileSync(
     )
     .join("")
 )
+
+// guards send signed-out visitors to /sign-in, which legacy doesn't have
+const PROTECTED = /^\/(employer|employee)\/(?!sign-in|register|release-check)/
+if (
+  LIVE_ROUTES.some((route) => PROTECTED.test(`${route}/`)) &&
+  !LIVE_ROUTES.includes("/sign-in")
+) {
+  problems.push("live-routes: protected pages need /sign-in live too")
+}
 
 if (!html.includes('name="robots" content="noindex, nofollow"')) {
   problems.push("index.html: missing noindex")

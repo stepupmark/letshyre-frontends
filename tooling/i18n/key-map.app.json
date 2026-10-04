@@ -21,5 +21,13 @@
   "sharedScorecard:profile.projects": "sharedScorecard:profile.sections.projects",
   "sharedScorecard:profile.resume": "sharedScorecard:profile.sections.resume",
   "sharedScorecard:answers.expandAll": "sharedScorecard:questions.expandAll",
-  "sharedScorecard:answers.collapseAll": "sharedScorecard:questions.collapseAll"
+  "sharedScorecard:answers.collapseAll": "sharedScorecard:questions.collapseAll",
+  "auth:back": "auth:back",
+  "auth:fields.email": "auth:fields.email",
+  "auth:fields.password": "auth:fields.password",
+  "auth:errors.emailExists": "auth:errors.emailExists",
+  "auth:errors.phoneExists": "auth:errors.phoneExists",
+  "common:password.show": "auth:field.showPassword",
+  "common:password.hide": "auth:field.hidePassword",
+  "common:password.capsLock": "auth:field.capsLock"
 }

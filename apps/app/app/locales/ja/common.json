@@ -8,5 +8,10 @@
   "error": {
     "title": "ページを読み込めませんでした",
     "retry": "再試行"
+  },
+  "password": {
+    "show": "パスワードを表示",
+    "hide": "パスワードを非表示",
+    "capsLock": "Caps Lock がオンです"
   }
 }

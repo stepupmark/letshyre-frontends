@@ -28,6 +28,11 @@ export default [
     rules: { "i18next/no-literal-string": "off" },
   },
   {
+    // single-task screens: the first field takes focus
+    files: ["app/features/auth/**"],
+    rules: { "jsx-a11y/no-autofocus": "off" },
+  },
+  {
     // Playwright fixtures call their callback `use`, which isn't the React hook
     files: ["e2e/**"],
     rules: { "react-hooks/rules-of-hooks": "off" },

@@ -90,5 +90,10 @@
   "releaseCheck": {
     "title": "New app check",
     "body": "This page is served by the new app. If you can read this, the release is routed correctly."
+  },
+  "password": {
+    "show": "Show password",
+    "hide": "Hide password",
+    "capsLock": "Caps Lock is on"
   }
 }

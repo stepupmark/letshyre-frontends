@@ -7,6 +7,7 @@ export {
   PUBLIC_HOME,
   ROLE_HOME,
   safeNext,
+  SIGN_IN,
 } from "./guards.ts"
 export { createRefresher, type RefresherOptions } from "./refresh.ts"
 export { AccountInactiveError, login, logout } from "./service.ts"

@@ -8,5 +8,10 @@
   "error": {
     "title": "페이지를 불러오지 못했습니다",
     "retry": "다시 시도"
+  },
+  "password": {
+    "show": "비밀번호 표시",
+    "hide": "비밀번호 숨기기",
+    "capsLock": "Caps Lock이 켜져 있습니다"
   }
 }

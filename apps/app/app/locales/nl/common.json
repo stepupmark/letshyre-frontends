@@ -8,5 +8,10 @@
   "error": {
     "title": "Deze pagina is niet geladen",
     "retry": "Opnieuw proberen"
+  },
+  "password": {
+    "show": "Wachtwoord weergeven",
+    "hide": "Wachtwoord verbergen",
+    "capsLock": "Caps Lock is ingeschakeld"
   }
 }

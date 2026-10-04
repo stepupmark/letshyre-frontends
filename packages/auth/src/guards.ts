@@ -5,8 +5,11 @@ export const ROLE_HOME: Record<Role, string> = {
   [ROLES.candidate]: "/employee",
 }
 
-/** Where signed-out visitors go: the marketing site. */
+/** The marketing site. */
 export const PUBLIC_HOME = "/"
+
+/** One sign-in page for both roles; the API says which role signed in. */
+export const SIGN_IN = "/sign-in"
 
 export const ONBOARDING = "/employer/onboarding"
 
@@ -37,12 +40,8 @@ export function authRedirect(
   const session = readSession()
 
   if (session.status !== "signed-in") {
-    // checkout links from the marketing site arrive signed out and return after sign-in
-    if (url.pathname === "/employer/billing") {
-      const next = new URLSearchParams({ next: url.pathname + url.search })
-      return `/employer/sign-in?${next.toString()}`
-    }
-    return PUBLIC_HOME
+    const next = new URLSearchParams({ next: url.pathname + url.search })
+    return `${SIGN_IN}?${next.toString()}`
   }
 
   if (roles.length > 0 && !roles.includes(session.role)) return homeFor(session)

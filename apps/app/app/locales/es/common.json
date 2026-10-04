@@ -8,5 +8,10 @@
   "error": {
     "title": "Esta página no se ha cargado",
     "retry": "Reintentar"
+  },
+  "password": {
+    "show": "Mostrar contraseña",
+    "hide": "Ocultar contraseña",
+    "capsLock": "Bloq Mayús activado"
   }
 }

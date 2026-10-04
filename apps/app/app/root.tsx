@@ -4,7 +4,6 @@ import { ThemeProvider } from "@workspace/blocks/theme-provider"
 import { dirFor } from "@workspace/i18n"
 import { I18nProvider } from "@workspace/i18n/react"
 import { Toaster } from "@workspace/ui/components/sonner"
-import { TooltipProvider } from "@workspace/ui/components/tooltip"
 import { useEffect, useState } from "react"
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router"
 
@@ -64,10 +63,8 @@ export default function App() {
       <I18nProvider lang={locale} messages={messages}>
         <QueryClientProvider client={queryClient}>
           <MotionProvider>
-            <TooltipProvider>
-              <Outlet />
-              <Toaster position="bottom-center" />
-            </TooltipProvider>
+            <Outlet />
+            <Toaster position="bottom-center" />
           </MotionProvider>
         </QueryClientProvider>
       </I18nProvider>

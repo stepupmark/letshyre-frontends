@@ -8,5 +8,10 @@
   "error": {
     "title": "Questa pagina non si è caricata",
     "retry": "Riprova"
+  },
+  "password": {
+    "show": "Mostra password",
+    "hide": "Nascondi password",
+    "capsLock": "Blocco maiuscole attivo"
   }
 }

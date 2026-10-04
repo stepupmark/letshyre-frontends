@@ -8,5 +8,10 @@
   "error": {
     "title": "Halaman ini tidak termuat",
     "retry": "Coba lagi"
+  },
+  "password": {
+    "show": "Tampilkan kata sandi",
+    "hide": "Sembunyikan kata sandi",
+    "capsLock": "Caps Lock aktif"
   }
 }

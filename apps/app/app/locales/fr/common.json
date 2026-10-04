@@ -8,5 +8,10 @@
   "error": {
     "title": "Cette page ne s'est pas chargée",
     "retry": "Réessayer"
+  },
+  "password": {
+    "show": "Afficher le mot de passe",
+    "hide": "Masquer le mot de passe",
+    "capsLock": "Verrouillage des majuscules activé"
   }
 }

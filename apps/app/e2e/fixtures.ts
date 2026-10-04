@@ -44,6 +44,10 @@ const CORS = {
   "access-control-allow-methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
 }
 
+/** Answers a mocked call from a handler, with the CORS headers the browser needs. */
+export const reply = (route: Route, json: unknown, status = 200) =>
+  route.fulfill({ status, json, headers: CORS })
+
 /** The browser never reaches the real API; unknown calls fail the test. */
 async function mockApi(page: Page, overrides: Handlers, unhandled: string[]) {
   const handlers: Handlers = { ...DEFAULTS, ...overrides }

@@ -1,4 +1,4 @@
-import { authRedirect, type Role } from "@workspace/auth"
+import { authRedirect, guestRedirect, type Role } from "@workspace/auth"
 import {
   redirect,
   redirectDocument,
@@ -18,3 +18,10 @@ export const guard =
     if (to) throw go(to)
     return next()
   }
+
+/** clientMiddleware for sign-in and registration: signed-in users go home. */
+export const guestOnly: MiddlewareFunction<Response> = async (_args, next) => {
+  const to = guestRedirect()
+  if (to) throw go(to)
+  return next()
+}
