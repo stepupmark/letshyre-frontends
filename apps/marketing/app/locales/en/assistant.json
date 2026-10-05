@@ -21,6 +21,8 @@
         "applications": "How does it work for job seekers?",
         "interview": "Is it free to start?"
       }
-    }
+    },
+    "stop": "Stop answering",
+    "stopped": "You stopped this answer."
   }
 }

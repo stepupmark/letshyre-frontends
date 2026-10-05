@@ -1,4 +1,5 @@
 import { logout, PUBLIC_HOME } from "@workspace/auth"
+import { clearAll as clearAssistantChats } from "@workspace/blocks/assistant-store"
 import { useSession } from "@workspace/auth/react"
 import { LOCALE_NAMES } from "@workspace/i18n"
 import { useTranslation } from "@workspace/i18n/react"
@@ -70,6 +71,7 @@ export function UserMenu({
     area === "employer" ? "/employer/profile" : "/employee/profile"
 
   const signOut = async () => {
+    clearAssistantChats()
     await logout(api)
     window.location.assign(PUBLIC_HOME)
   }

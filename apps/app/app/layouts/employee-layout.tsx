@@ -4,6 +4,7 @@ import { Navigate } from "react-router"
 
 import { SessionGate } from "@/features/auth"
 import { myProfileQuery } from "@/features/candidate-onboarding"
+import { AssistantLauncher } from "@/features/assistant"
 import { DashboardShell } from "@/features/shell"
 import { guard } from "@/lib/guard"
 import { namespaces } from "@/lib/i18n"
@@ -21,7 +22,10 @@ export default function EmployeeLayout() {
 
   return (
     <SessionGate>
-      <DashboardShell area="candidate" />
+      <DashboardShell
+        area="candidate"
+        actions={<AssistantLauncher side="candidate" />}
+      />
     </SessionGate>
   )
 }

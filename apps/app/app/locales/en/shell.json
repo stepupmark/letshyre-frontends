@@ -61,5 +61,10 @@
       "title": "Your credit balance",
       "body": "Credits unlock a candidate's contact details. Select it to add more or see invoices."
     }
+  },
+  "assistant": {
+    "open": "Ask the assistant",
+    "full": "Open as a full page",
+    "lead": "Your conversation stays here while you move between pages."
   }
 }

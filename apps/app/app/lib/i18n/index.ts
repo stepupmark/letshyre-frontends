@@ -37,6 +37,18 @@ export const namespaces =
     return next()
   }
 
+const loading = new Map<string, Promise<void>>()
+
+/** For copy a component needs on demand, e.g. a sheet's; read it with `use()`. */
+export function loadCopy(ns: string) {
+  let promise = loading.get(ns)
+  if (!promise) {
+    promise = load(locale, [ns]).then(addMessages)
+    loading.set(ns, promise)
+  }
+  return promise
+}
+
 /** Saves the choice for both apps and reloads, so every loaded namespace switches. */
 export function changeLocale(next: Locale) {
   writeLocaleCookie(next, { domain: env.VITE_COOKIE_DOMAIN })

@@ -4,7 +4,7 @@ import { dirFor } from "@workspace/i18n"
 import { useTranslation } from "@workspace/i18n/react"
 import { SidebarInset, SidebarProvider } from "@workspace/ui/components/sidebar"
 import { TooltipProvider } from "@workspace/ui/components/tooltip"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, type ReactNode } from "react"
 import { Outlet, useLocation } from "react-router"
 
 import { locale } from "@/lib/i18n"
@@ -19,7 +19,14 @@ const typing = (target: EventTarget | null) =>
   target instanceof HTMLElement &&
   (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))
 
-export function DashboardShell({ area }: { area: Area }) {
+export function DashboardShell({
+  area,
+  actions,
+}: {
+  area: Area
+  /** Extra topbar buttons, e.g. the assistant. */
+  actions?: ReactNode
+}) {
   const { t } = useTranslation("shell")
   const [searchOpen, setSearchOpen] = useState(false)
   const [shortcutsOpen, setShortcutsOpen] = useState(false)
@@ -68,6 +75,7 @@ export function DashboardShell({ area }: { area: Area }) {
         <SidebarInset>
           <Topbar
             area={area}
+            actions={actions}
             onSearch={() => {
               setSearchOpen(true)
             }}

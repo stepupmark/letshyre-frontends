@@ -65,6 +65,7 @@ export default [
       route("your-team", "routes/employer/team.tsx"),
       route("shared-links", "routes/employer/shared-links.tsx"),
       route("profile", "routes/employer/company.tsx"),
+      route("chatbot", "routes/employer/assistant.tsx"),
     ]),
   ]),
   layout("layouts/employee-layout.tsx", [
@@ -76,6 +77,7 @@ export default [
       route("scorecard", "routes/employee/scorecard.tsx"),
       route("profile", "routes/employee/profile.tsx"),
       route("interview-guide", "routes/employee/interview-guide.tsx"),
+      route("chatbot", "routes/employee/assistant.tsx"),
     ]),
   ]),
   ...lab,

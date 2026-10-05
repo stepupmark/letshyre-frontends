@@ -1,0 +1,44 @@
+{
+  "title": "Assistant",
+  "lead": {
+    "employer": "Answers about hiring on LetsHyre: jobs, matches, scorecards and credits.",
+    "candidate": "Answers about your job search: applying, interviews and your scorecard."
+  },
+  "log": "Conversation",
+  "you": "You",
+  "assistant": "Assistant",
+  "greeting": "Hi, I'm the LetsHyre assistant.",
+  "hint": {
+    "employer": "Ask about anything in your hiring. These come up a lot on this page:",
+    "candidate": "Ask about anything in your job search. These come up a lot on this page:"
+  },
+  "input": "Ask a question",
+  "send": "Send",
+  "stop": "Stop answering",
+  "thinking": "Thinking…",
+  "stopped": "You stopped this answer.",
+  "failed": "No answer came back.",
+  "retry": "Try again",
+  "clear": "Clear chat",
+  "prompts": {
+    "firstJob": "How do I post my first job?",
+    "readScorecard": "How do I read a candidate's scorecard?",
+    "credits": "How do credits work?",
+    "betterJob": "How do I write a job that gets better matches?",
+    "pauseJob": "How do I pause or close a job?",
+    "matchScore": "How is the match score worked out?",
+    "unlockCost": "What does unlocking a candidate cost?",
+    "shareScorecard": "How do I share a scorecard with my team?",
+    "gstInvoice": "Can I get a GST invoice?",
+    "findFit": "How do I find jobs that fit me?",
+    "howInterview": "How does the AI interview work?",
+    "afterApply": "What happens after I apply?",
+    "shortlist": "How do employers decide who to shortlist?",
+    "ownScore": "How is my scorecard worked out?",
+    "retake": "Can I retake the interview?",
+    "standOut": "How do I make my profile stand out?",
+    "whoSees": "Who can see my documents?",
+    "needForInterview": "What do I need for the interview?",
+    "connectionDrops": "What if my internet drops during the interview?"
+  }
+}

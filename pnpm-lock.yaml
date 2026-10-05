@@ -36,9 +36,6 @@ catalogs:
     '@types/react-dom':
       specifier: ^19.3.0
       version: 19.3.0
-    '@vitest/coverage-v8':
-      specifier: ^5.0.3
-      version: 5.0.3
     eslint:
       specifier: ^10.11.0
       version: 10.11.0
@@ -399,9 +396,6 @@ importers:
       react-hook-form:
         specifier: ^7.89.0
         version: 7.89.0(@types/react@19.3.0)(react@19.2.8)
-      react-markdown:
-        specifier: ^10.1.0
-        version: 10.1.0(@types/react@19.3.0)(react@19.2.8)
       react-router:
         specifier: 'catalog:'
         version: 8.4.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -597,6 +591,9 @@ importers:
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      react-markdown:
+        specifier: ^10.1.0
+        version: 10.1.0(@types/react@19.3.0)(react@19.2.8)
     devDependencies:
       '@testing-library/jest-dom':
         specifier: 'catalog:'

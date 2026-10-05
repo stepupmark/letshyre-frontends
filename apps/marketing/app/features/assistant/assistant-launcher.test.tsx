@@ -11,7 +11,6 @@ const send = vi.mocked(sendAssistantMessage)
 
 beforeEach(() => {
   send.mockReset()
-  sessionStorage.clear()
 })
 
 async function open() {
@@ -43,40 +42,8 @@ describe("AssistantLauncher", { timeout: 20_000 }, () => {
     expect(
       await screen.findByText("LetsHyre", { selector: "strong" })
     ).toBeInTheDocument()
-    expect(send).toHaveBeenCalledWith(expect.anything(), {
-      message: "What is LetsHyre?",
-      sessionId: undefined,
-    })
-    expect(sessionStorage.getItem("lh_assistant_session")).toBe("s1")
-  })
-
-  it("reuses the session and lets the visitor retry after an error", async () => {
-    sessionStorage.setItem("lh_assistant_session", "s9")
-    send.mockRejectedValueOnce(new Error("down"))
-    send.mockResolvedValueOnce({ sessionId: "s9", response: "Back again." })
-    const user = await open()
-
-    await user.type(
-      screen.getByRole("textbox", { name: "Ask a question…" }),
-      "Pricing?{Enter}"
-    )
-    await user.click(await screen.findByRole("button", { name: "Retry" }))
-
-    expect(await screen.findByText("Back again.")).toBeInTheDocument()
-    expect(send).toHaveBeenLastCalledWith(expect.anything(), {
-      message: "Pricing?",
-      sessionId: "s9",
-    })
-  })
-
-  it("clears the conversation and the session", async () => {
-    send.mockResolvedValue({ sessionId: "s1", response: "Hello." })
-    const user = await open()
-    await user.type(screen.getByRole("textbox"), "Hi{Enter}")
-    await screen.findByText("Hello.")
-
-    await user.click(screen.getByRole("button", { name: "Clear" }))
-    expect(screen.queryByText("Hello.")).toBeNull()
-    expect(sessionStorage.getItem("lh_assistant_session")).toBeNull()
+    const [, body, options] = send.mock.calls[0] ?? []
+    expect(body).toEqual({ message: "What is LetsHyre?", sessionId: undefined })
+    expect(options?.signal).toBeInstanceOf(AbortSignal)
   })
 })

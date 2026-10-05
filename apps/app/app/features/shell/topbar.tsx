@@ -11,7 +11,7 @@ import { Separator } from "@workspace/ui/components/separator"
 import { SidebarTrigger } from "@workspace/ui/components/sidebar"
 import { useQuery } from "@tanstack/react-query"
 import { Coins, Search } from "lucide-react"
-import { useRef, type Ref } from "react"
+import { useRef, type ReactNode, type Ref } from "react"
 import { useMatches } from "react-router"
 
 import { AnimatedNumber } from "@/components/animated-number"
@@ -31,9 +31,11 @@ interface Crumb {
 
 export function Topbar({
   area,
+  actions,
   onSearch,
 }: {
   area: Area
+  actions?: ReactNode
   onSearch: () => void
 }) {
   const { t } = useTranslation("shell")
@@ -80,6 +82,7 @@ export function Topbar({
             {t("search.shortcut")}
           </Kbd>
         </Button>
+        {actions}
         {area === "employer" && <Credits ref={creditsRef} />}
       </div>
       <Tip

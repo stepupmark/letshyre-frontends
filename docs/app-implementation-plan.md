@@ -102,6 +102,7 @@ Lessons from Phases 3–4 that become rules here:
 | B7  | Applicant status (shortlist, reject) per job, and search, sort and filters on the jobs list. Until then applicants are reviewed, not triaged         | 6.5       | Bulk applicant actions, job filter chips           |
 | B8  | Per-question start times in the interview recording on the scorecard response, so evidence can seek the video                                        | 6.7       | Evidence linked to the recording                   |
 | B9  | Team invites by email (pending, resend, revoke) and seat limits on plans, instead of admin-set passwords                                             | 6.9       | Invite flow, seat count before inviting            |
+| B10 | Streamed assistant replies (SSE or chunked) from `commonapp/v1/chatbot/chat/`. Today the whole answer arrives at once                                | 6.12      | Replies that appear as they're written             |
 
 ---
 
@@ -713,6 +714,15 @@ Reuse marketing's assistant feature as a shared block (`@workspace/blocks` or a 
 signed-in mode (session id per user), in the sidebar as a page and a sheet. Streaming replies, stop,
 suggested questions per page, links into the app.
 
+- **Done 2026-10-05:** the chat is one block, `@workspace/blocks/assistant`, used by marketing and
+  the app. One conversation per person and side, kept for the tab (an hour idle at most) and
+  cleared on sign-out; the page and the sheet share it. A topbar button opens it beside any page
+  with questions for that page; `/employer/chatbot` and `/employee/chatbot` are the full page.
+  Stop cancels the request, and a stopped or failed question can be asked again. Answers render
+  Markdown; app paths in them open in place and close the sheet, other links open in a new tab.
+  **Needs B10** for replies that appear as they're written; the client takes the whole answer
+  until then. Marketing's new "Stop" strings are English-only until the 6.13 batch.
+
 ### 6.13 App translation batch
 
 Everything new or reworded since the key-map migration, through `pnpm i18n:apply`, reviewed by a
@@ -785,5 +795,6 @@ Preconditions: every app route is in `live-routes.ts`, legacy serves nothing, B4
 | B7: applicant status, jobs list filters              | 6.5      |
 | B8: recording timestamps per question                | 6.7      |
 | B9: team invites and plan seat limits                | 6.9      |
+| B10: streamed assistant replies (optional)           | 6.12     |
 | Native translation review per locale                 | 6.13     |
 | B4 (+ B5): CORS and refresh cookie for the subdomain | 7.1      |

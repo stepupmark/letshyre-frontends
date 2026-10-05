@@ -1,5 +1,6 @@
 import "i18next"
 
+import type assistant from "../locales/en/assistant.json"
 import type auth from "../locales/en/auth.json"
 import type billing from "../locales/en/billing.json"
 import type candidate from "../locales/en/candidate.json"
@@ -21,6 +22,7 @@ declare module "i18next" {
   interface CustomTypeOptions {
     defaultNS: false
     resources: {
+      assistant: typeof assistant
       auth: typeof auth
       billing: typeof billing
       candidate: typeof candidate
