@@ -1,0 +1,67 @@
+{
+  "title": "ملف الشركة",
+  "unnamed": "شركتك",
+  "jobs_zero": "{{open}} مفتوحة من {{count}} وظيفة منشورة",
+  "jobs_one": "{{open}} مفتوحة من وظيفة منشورة واحدة",
+  "jobs_two": "{{open}} مفتوحة من وظيفتين منشورتين",
+  "jobs_few": "{{open}} مفتوحة من {{count}} وظائف منشورة",
+  "jobs_many": "{{open}} مفتوحة من {{count}} وظيفة منشورة",
+  "jobs_other": "{{open}} مفتوحة من {{count}} وظيفة منشورة",
+  "kyc": {
+    "approved": "موثّقة",
+    "verified": "موثّقة",
+    "pending": "قيد المراجعة",
+    "rejected": "تحتاج إلى تعديلات"
+  },
+  "details": {
+    "title": "بيانات الشركة",
+    "edit": "تعديل",
+    "email": "البريد الرسمي",
+    "industry": "القطاع",
+    "chooseIndustry": "اختر قطاعًا",
+    "website": "الموقع الإلكتروني",
+    "linkedin": "صفحة LinkedIn",
+    "linkedinOpen": "الفتح في LinkedIn",
+    "address": "العنوان",
+    "description": "عن الشركة",
+    "descriptionHint": "يقرأ المرشحون هذا في إعلانات وظائفك. حتى 500 حرف."
+  },
+  "logo": {
+    "label": "الشعار",
+    "upload": "رفع الشعار",
+    "replace": "استبدال الشعار",
+    "hint": "صورة مربعة PNG أو JPG أو WebP حتى 5 ميغابايت. تُقص بشكل مربع كما هو معروض.",
+    "tooLarge": "حجم الشعار أكبر من 5 ميغابايت. اختر صورة أصغر.",
+    "wrongType": "استخدم صورة PNG أو JPG أو WebP."
+  },
+  "account": {
+    "title": "حسابك",
+    "name": "الاسم",
+    "email": "بريد تسجيل الدخول",
+    "phone": "الهاتف"
+  },
+  "legal": {
+    "title": "التسجيل",
+    "note": "تم التحقق من هذه البيانات عند توثيق شركتك. تواصل معنا لتغييرها.",
+    "registration": "رقم التسجيل",
+    "gst": "GSTIN",
+    "pan": "PAN"
+  },
+  "documents": {
+    "registration_certificate": "شهادة التسجيل",
+    "gst_certificate": "شهادة GST",
+    "address_proof": "إثبات العنوان",
+    "bank_proof": "إثبات بنكي"
+  },
+  "errors": {
+    "email": "أدخل بريدًا مثل hr@company.com.",
+    "address": "أدخل العنوان الكامل.",
+    "industry": "اختر قطاعًا.",
+    "linkedin": "أدخل رابطًا من linkedin.com أو اتركه فارغًا.",
+    "description": "اجعله في حدود 500 حرف."
+  },
+  "save": "حفظ التغييرات",
+  "saving": "جارٍ الحفظ…",
+  "saved": "حُفظت بيانات الشركة",
+  "saveFailed": "لم يُحفظ. ما زالت تعديلاتك هنا؛ حاول مجددًا."
+}

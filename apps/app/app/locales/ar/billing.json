@@ -1,0 +1,174 @@
+{
+  "title": "شراء رصيد",
+  "lead": "كل وحدة رصيد تفتح مقابلة واحدة بالذكاء الاصطناعي: بيانات اتصال المرشح، وبطاقة التقييم الكاملة، والتسجيل، والسيرة الذاتية. لا تنتهي صلاحية الرصيد أبدًا.",
+  "balance": "الرصيد",
+  "invoices": "الفواتير",
+  "buyCredits": "شراء رصيد",
+  "plusGst": "{{price}} + GST",
+  "nextNote": "بعد الدفع سنعيدك إلى المرشح الذي كنت تشاهده.",
+  "nextBack": "العودة إلى المرشح",
+  "plans": {
+    "title": "الباقات",
+    "lead": "دفعة واحدة، وليست اشتراكًا. تُضاف GST عند الدفع.",
+    "popular": "الأكثر طلبًا",
+    "once": "+ GST، دفعة واحدة",
+    "credits_zero": "لا وحدات",
+    "credits_one": "وحدة واحدة",
+    "credits_two": "وحدتان",
+    "credits_few": "{{count}} وحدات",
+    "credits_many": "{{count}} وحدة",
+    "credits_other": "{{count}} وحدة",
+    "rate": "{{rate}} لكل وحدة",
+    "seats_zero": "لا مقاعد للفريق",
+    "seats_one": "مقعد واحد للفريق",
+    "seats_two": "مقعدان للفريق",
+    "seats_few": "{{count}} مقاعد للفريق",
+    "seats_many": "{{count}} مقعدًا للفريق",
+    "seats_other": "{{count}} مقعد للفريق",
+    "unlocks": "بيانات الاتصال وبطاقات التقييم والتسجيلات",
+    "noExpiry": "لا تنتهي صلاحية الرصيد",
+    "topUps": "اشحن في أي وقت",
+    "buy": "شراء {{name}}"
+  },
+  "topUps": {
+    "title": "شحن الرصيد",
+    "lead": "أضف وحدات إلى رصيدك متى احتجت المزيد.",
+    "credits_zero": "لا وحدات",
+    "credits_one": "وحدة واحدة",
+    "credits_two": "وحدتان",
+    "credits_few": "{{count}} وحدات",
+    "credits_many": "{{count}} وحدة",
+    "credits_other": "{{count}} وحدة",
+    "buy": "شراء",
+    "buyLabel_zero": "شراء {{count}} وحدة",
+    "buyLabel_one": "شراء وحدة واحدة",
+    "buyLabel_two": "شراء وحدتين",
+    "buyLabel_few": "شراء {{count}} وحدات",
+    "buyLabel_many": "شراء {{count}} وحدة",
+    "buyLabel_other": "شراء {{count}} وحدة"
+  },
+  "unavailable": {
+    "title": "هذه الباقة غير متاحة",
+    "body": "ربما تغيّرت الباقات منذ إنشاء الرابط. أغلق هذا واختر باقة من الأسفل.",
+    "failedTitle": "تعذّر تحميل هذه الباقة",
+    "failedBody": "تحقق من اتصالك وحاول مجددًا. لم يُخصم أي مبلغ.",
+    "close": "إغلاق"
+  },
+  "checkout": {
+    "planTitle": "باقة {{name}}",
+    "topUpTitle_zero": "{{count}} وحدة",
+    "topUpTitle_one": "وحدة واحدة",
+    "topUpTitle_two": "وحدتان",
+    "topUpTitle_few": "{{count}} وحدات",
+    "topUpTitle_many": "{{count}} وحدة",
+    "topUpTitle_other": "{{count}} وحدة",
+    "summary_zero": "{{count}} وحدة، دفعة واحدة. لا تنتهي صلاحية الرصيد.",
+    "summary_one": "وحدة واحدة، دفعة واحدة. لا تنتهي صلاحية الرصيد.",
+    "summary_two": "وحدتان، دفعة واحدة. لا تنتهي صلاحية الرصيد.",
+    "summary_few": "{{count}} وحدات، دفعة واحدة. لا تنتهي صلاحية الرصيد.",
+    "summary_many": "{{count}} وحدة، دفعة واحدة. لا تنتهي صلاحية الرصيد.",
+    "summary_other": "{{count}} وحدة، دفعة واحدة. لا تنتهي صلاحية الرصيد.",
+    "credits_zero": "{{count}} وحدة × {{rate}}",
+    "credits_one": "وحدة واحدة × {{rate}}",
+    "credits_two": "وحدتان × {{rate}}",
+    "credits_few": "{{count}} وحدات × {{rate}}",
+    "credits_many": "{{count}} وحدة × {{rate}}",
+    "credits_other": "{{count}} وحدة × {{rate}}",
+    "couponLine": "القسيمة {{code}}",
+    "discount": "الخصم",
+    "gst": "GST ({{percent}}%)",
+    "total": "الإجمالي",
+    "quoteError": "تعذّر حساب الإجمالي. لم يُخصم أي مبلغ.",
+    "retry": "إعادة المحاولة",
+    "coupon": {
+      "toggle": "هل لديك رمز قسيمة؟",
+      "label": "رمز القسيمة",
+      "apply": "تطبيق",
+      "applied": "تم تطبيق {{code}}",
+      "remove": "إزالة القسيمة {{code}}",
+      "required": "أدخل رمز القسيمة.",
+      "invalid": "رموز القسائم تحتوي على حروف وأرقام وشرطات وشرطات سفلية فقط.",
+      "rejected": "لا يمكن استخدام هذا الرمز في هذه العملية."
+    },
+    "pay": "ادفع {{amount}}",
+    "payPending": "ادفع",
+    "paying": "جارٍ بدء الدفع…",
+    "secure": "تتولى Razorpay معالجة المدفوعات. بالدفع، فإنك توافق على <terms>الشروط</terms> و<refund>سياسة الاسترداد</refund>.",
+    "razorpay_zero": "{{count}} وحدة LetsHyre",
+    "razorpay_one": "وحدة LetsHyre واحدة",
+    "razorpay_two": "وحدتا LetsHyre",
+    "razorpay_few": "{{count}} وحدات LetsHyre",
+    "razorpay_many": "{{count}} وحدة LetsHyre",
+    "razorpay_other": "{{count}} وحدة LetsHyre",
+    "notice": {
+      "cancelled": {
+        "title": "أُلغي الدفع",
+        "body": "لم يُخصم أي مبلغ. ادفع مجددًا عندما تكون مستعدًا."
+      },
+      "failed": {
+        "title": "لم تكتمل عملية الدفع",
+        "body": "لم يُخصم أي مبلغ. حاول مجددًا أو استخدم طريقة دفع أخرى."
+      },
+      "priceChanged": {
+        "title": "تغيّر الإجمالي",
+        "body": "تم تحديث السعر بعد أن فتحت هذه النافذة، ولم يُخصم أي مبلغ. راجع الإجمالي الجديد قبل الدفع."
+      },
+      "blocked": {
+        "title": "لم تُحمَّل نافذة الدفع",
+        "body": "لم يُخصم أي مبلغ. تحقق من اتصالك؛ وإن كنت تستخدم مانع إعلانات فاسمح بـ checkout.razorpay.com."
+      },
+      "error": {
+        "title": "تعذّر بدء الدفع",
+        "body": "لم يُخصم أي مبلغ. حاول مجددًا بعد قليل."
+      }
+    },
+    "verifying": {
+      "title": "جارٍ تأكيد الدفع",
+      "body": "يستغرق ذلك بضع ثوانٍ. أبقِ هذه النافذة مفتوحة."
+    },
+    "paid": {
+      "title_zero": "لم تُضف أي وحدة",
+      "title_one": "أُضيفت وحدة واحدة",
+      "title_two": "أُضيفت وحدتان",
+      "title_few": "أُضيفت {{count}} وحدات",
+      "title_many": "أُضيفت {{count}} وحدة",
+      "title_other": "أُضيفت {{count}} وحدة",
+      "body": "استلمنا {{amount}}. فاتورتك في صفحة الفواتير.",
+      "balance": "رصيدك الآن",
+      "primary": "ابحث عن مرشحين",
+      "back": "العودة إلى المرشح",
+      "invoices": "عرض الفواتير"
+    },
+    "unconfirmed": {
+      "title": "لم نتمكن من تأكيد الدفع بعد",
+      "body": "إن خُصم المبلغ من حسابك، فلن يضيع رصيدك. حاول مجددًا، أو تواصل معنا مع مرجع الدفع أدناه.",
+      "retry": "إعادة المحاولة",
+      "contact": "التواصل مع الدعم"
+    },
+    "reference": "مرجع الدفع"
+  },
+  "invoiceList": {
+    "title": "الفواتير",
+    "lead": "كل عملية شراء رصيد مع إيصالها.",
+    "columns": {
+      "date": "التاريخ",
+      "purchase": "الشراء",
+      "number": "الفاتورة",
+      "total": "الإجمالي"
+    },
+    "plan": "باقة {{name}}",
+    "topUp": "شحن",
+    "preparing": "قيد الإعداد",
+    "emptyTitle": "لا فواتير بعد",
+    "emptyBody": "ستظهر أول عملية شراء هنا مع إيصالها."
+  },
+  "receipt": {
+    "title": "الإيصال",
+    "subtotal": "المجموع الفرعي",
+    "gst": "GST",
+    "paidOn": "تاريخ الدفع",
+    "pdf": "PDF",
+    "print": "طباعة",
+    "noPdf": "فاتورة PDF ما زالت قيد الإعداد. عد بعد بضع دقائق."
+  }
+}

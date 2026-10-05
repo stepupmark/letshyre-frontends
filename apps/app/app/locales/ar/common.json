@@ -1,17 +1,111 @@
 {
+  "appName": "LetsHyre",
   "nav": {
     "dashboard": "لوحة التحكم"
   },
   "notFound": {
-    "title": "لم نتمكن من العثور على هذه الصفحة"
+    "title": "لم نتمكن من العثور على هذه الصفحة",
+    "body": "ربما يكون الرابط قديمًا، أو نُقلت الصفحة.",
+    "goHome": "الذهاب إلى لوحة التحكم"
   },
   "error": {
     "title": "تعذّر تحميل هذه الصفحة",
-    "retry": "إعادة المحاولة"
+    "body": "حدث خطأ من جانبنا. أعد التحميل للمحاولة مجددًا، أو تواصل معنا إن تكرر ذلك.",
+    "retry": "إعادة المحاولة",
+    "goHome": "الذهاب إلى لوحة التحكم"
+  },
+  "table": {
+    "selectAll": "تحديد كل الصفوف",
+    "selectRow": "تحديد {{name}}",
+    "selected_zero": "لا شيء محدد",
+    "selected_one": "عنصر واحد محدد",
+    "selected_two": "عنصران محددان",
+    "selected_few": "{{count}} عناصر محددة",
+    "selected_many": "{{count}} عنصرًا محددًا",
+    "selected_other": "{{count}} عنصر محدد",
+    "clearSelection": "إلغاء التحديد",
+    "columns": "الأعمدة",
+    "compact": "صفوف مضغوطة",
+    "sortBy": "الترتيب حسب {{column}}",
+    "previous": "الصفحة السابقة",
+    "next": "الصفحة التالية",
+    "pageOf": "الصفحة {{page}} من {{total}}",
+    "results_zero": "لا نتائج",
+    "results_one": "نتيجة واحدة",
+    "results_two": "نتيجتان",
+    "results_few": "{{count}} نتائج",
+    "results_many": "{{count}} نتيجة",
+    "results_other": "{{count}} نتيجة",
+    "rowActions": "إجراءات {{name}}",
+    "bulkActions": "إجراءات جماعية",
+    "navigateHint": "للتنقل،",
+    "openHint": "للفتح",
+    "enterKey": "Enter",
+    "pages": "الصفحات"
+  },
+  "state": {
+    "error": "لم يُحمَّل هذا.",
+    "errorBody": "لم يضع شيء. تحقق من اتصالك وحاول مجددًا.",
+    "retry": "إعادة المحاولة",
+    "loading": "جارٍ التحميل"
+  },
+  "empty": {
+    "filteredTitle": "لا تطابق",
+    "filteredBody": "جرّب بحثًا مختلفًا أو امسح عوامل التصفية.",
+    "clearFilters": "مسح عوامل التصفية"
+  },
+  "upload": {
+    "drop": "اسحب ملفًا إلى هنا، أو",
+    "browse": "اختر ملفًا",
+    "hint": "{{types}}، حتى {{size}}",
+    "tooLarge": "حجم هذا الملف {{size}}. الحد الأقصى {{max}}.",
+    "wrongType": "نوع الملف هذا غير مقبول. استخدم {{types}}.",
+    "uploading": "جارٍ رفع {{name}}",
+    "failed": "فشل الرفع. ملفك ما زال هنا، فيمكنك المحاولة مجددًا.",
+    "retry": "إعادة المحاولة",
+    "remove": "إزالة {{name}}",
+    "done": "تم الرفع"
+  },
+  "wizard": {
+    "step": "الخطوة {{current}} من {{total}}",
+    "back": "رجوع",
+    "next": "متابعة",
+    "finish": "إنهاء",
+    "draftSaved": "حُفظت المسودة على هذا الجهاز"
+  },
+  "confirm": {
+    "cancel": "إلغاء"
+  },
+  "undo": "تراجع",
+  "copy": {
+    "copy": "نسخ",
+    "copied": "تم النسخ"
+  },
+  "band": {
+    "strong": "تطابق قوي",
+    "partial": "تطابق جزئي",
+    "low": "تطابق ضعيف"
+  },
+  "interviewBand": {
+    "strong": "مقابلة قوية",
+    "partial": "مقابلة متفاوتة",
+    "low": "مقابلة ضعيفة"
+  },
+  "detail": {
+    "previous": "السابق",
+    "next": "التالي",
+    "position": "{{current}} من {{total}}"
+  },
+  "releaseCheck": {
+    "title": "فحص التطبيق الجديد",
+    "body": "هذه الصفحة يقدّمها التطبيق الجديد. إن كنت تقرأ هذا، فإن توجيه الإصدار صحيح."
   },
   "password": {
     "show": "إظهار كلمة المرور",
     "hide": "إخفاء كلمة المرور",
     "capsLock": "مفتاح Caps Lock مُفعّل"
+  },
+  "tip": {
+    "gotIt": "فهمت"
   }
 }

@@ -1,0 +1,73 @@
+{
+  "title": "أخبرنا عن شركتك",
+  "lead": "نحو خمس دقائق، في ثلاث خطوات. نحفظ تقدمك على هذا الجهاز، فيمكنك التوقف والعودة.",
+  "steps": {
+    "company": "بيانات الشركة",
+    "legal": "التسجيل والضرائب",
+    "documents": "المستندات"
+  },
+  "fields": {
+    "companyName": "اسم الشركة",
+    "website": "الموقع الإلكتروني",
+    "officialEmail": "البريد الرسمي",
+    "officialEmailHint": "حيث نرسل رسائل الحساب والفوترة.",
+    "industry": "القطاع",
+    "industryPlaceholder": "اختر قطاعًا",
+    "industryFailed": "لم تُحمَّل القطاعات. أعد التحميل للمحاولة مجددًا.",
+    "linkedin": "صفحة الشركة على LinkedIn",
+    "description": "ماذا تعمل شركتك؟",
+    "descriptionCount": "{{count}} / 500",
+    "registration": "رقم تسجيل الشركة",
+    "registrationHint": "رقم CIN أو رقم شهادة التسجيل، مثل U72900TG2024PTC123456.",
+    "pan": "PAN",
+    "gst": "GSTIN",
+    "address": "العنوان المسجّل"
+  },
+  "documents": {
+    "lead": "مسح ضوئي أو صور واضحة، حتى 5 ميغابايت لكل منها. لا يراها المرشحون أبدًا.",
+    "company_logo": {
+      "label": "شعار الشركة",
+      "hint": "الشكل المربع هو الأفضل"
+    },
+    "registration_certificate": {
+      "label": "شهادة التسجيل",
+      "hint": "شهادة التأسيس"
+    },
+    "gst_certificate": {
+      "label": "شهادة GST",
+      "hint": "تسجيلك في GST"
+    },
+    "address_proof": {
+      "label": "إثبات العنوان",
+      "hint": "فاتورة خدمات أو عقد إيجار"
+    }
+  },
+  "draftSaved": "حُفظت المسودة على هذا الجهاز. ستحتاج إلى إضافة المستندات مجددًا إن غادرت.",
+  "submitting": "جارٍ رفع مستنداتك… {{percent}}%",
+  "submitFailed": "تعذّر إرسال بياناتك. كل ما أدخلته ما زال هنا، فحاول مجددًا.",
+  "validation": {
+    "nameMin": "أدخل اسم شركتك",
+    "website": "أدخل عنوان ويب مثل https://example.com",
+    "email": "أدخل بريدًا مثل accounts@company.com",
+    "industry": "اختر قطاعًا",
+    "linkedin": "أدخل عنوان ويب مثل https://www.linkedin.com/company/example",
+    "linkedinDomain": "استخدم صفحة شركتك على linkedin.com",
+    "description": "اكتب جملة واحدة على الأقل عمّا تقومون به",
+    "registration": "أدخل رقم التسجيل (من 5 إلى 50 حرفًا)",
+    "pan": "يتكون PAN من 10 أحرف، مثل ABCDE1234F",
+    "gst": "يتكون GSTIN من 15 حرفًا، مثل 36ABCDE1234F1Z5",
+    "address": "أدخل العنوان المسجّل",
+    "fileRequired": "أضف هذا المستند",
+    "fileInvalid": "استخدم ملفًا من نوع مقبول، حتى 5 ميغابايت"
+  },
+  "done": {
+    "title": "شكرًا، وصلتنا بياناتك",
+    "lead": "حسابك جاهز للاستخدام بينما نراجع مستنداتك.",
+    "nextHeading": "ماذا بعد",
+    "review": "يراجع فريقنا بيانات شركتك ومستنداتها.",
+    "contact": "إن نقص شيء، سنراسل {{email}}.",
+    "start": "في الأثناء، يمكنك نشر الوظائف ورؤية المرشحين.",
+    "postJob": "انشر وظيفتك الأولى",
+    "dashboard": "الذهاب إلى لوحة التحكم"
+  }
+}
