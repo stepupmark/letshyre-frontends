@@ -1,0 +1,44 @@
+{
+  "bands": {
+    "all": "Todas",
+    "strong": "Fortes",
+    "partial": "Parciais",
+    "low": "Fracas"
+  },
+  "columns": {
+    "candidate": "Candidato",
+    "match": "Correspondência",
+    "experience": "Experiência",
+    "interviews": "Entrevistas"
+  },
+  "years_one": "{{count}} ano",
+  "years_many": "{{count}} anos",
+  "years_other": "{{count}} anos",
+  "unnamed": "Candidato sem nome",
+  "sortedNote": "Melhor correspondência primeiro",
+  "peek": {
+    "why": "Por que combina",
+    "whyNote": "Com base na entrevista com IA e no currículo. Confira a avaliação antes de decidir.",
+    "noReason": "A IA não deu um motivo para esta.",
+    "role": "Aderência à vaga",
+    "skills": "Aderência de habilidades",
+    "has": "Tem",
+    "missing": "Falta",
+    "noneMissing": "Nada da lista da vaga.",
+    "interviews": "Entrevistas com IA",
+    "noInterviews": "Ainda sem entrevistas com IA.",
+    "experience_one": "{{count}} ano de experiência",
+    "experience_many": "{{count}} anos de experiência",
+    "experience_other": "{{count}} anos de experiência"
+  },
+  "applicants": {
+    "title": "Candidatos",
+    "lead_one": "{{count}} candidatura · melhor correspondência primeiro",
+    "lead_many": "{{count}} candidaturas · melhor correspondência primeiro",
+    "lead_other": "{{count}} candidaturas · melhor correspondência primeiro",
+    "leadEmpty": "Ninguém se candidatou ainda.",
+    "emptyTitle": "Ainda não há candidatos",
+    "emptyBody": "Os candidatos aparecem aqui depois de concluir a entrevista com IA. Você também pode buscar no banco de candidatos.",
+    "pool": "Abrir o banco de candidatos"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "title": "Conte sobre sua empresa",
+  "lead": "Cerca de cinco minutos, em três etapas. Salvamos seu progresso neste dispositivo, então você pode parar e voltar.",
+  "steps": {
+    "company": "Dados da empresa",
+    "legal": "Registro e impostos",
+    "documents": "Documentos"
+  },
+  "fields": {
+    "companyName": "Nome da empresa",
+    "website": "Site",
+    "officialEmail": "E-mail oficial",
+    "officialEmailHint": "Para onde enviamos mensagens da conta e de cobrança.",
+    "industry": "Setor",
+    "industryPlaceholder": "Escolha um setor",
+    "industryFailed": "Os setores não carregaram. Recarregue para tentar de novo.",
+    "linkedin": "Página da empresa no LinkedIn",
+    "description": "O que sua empresa faz?",
+    "descriptionCount": "{{count}} / 500",
+    "registration": "Número de registro da empresa",
+    "registrationHint": "O CIN ou o número do seu certificado de registro, ex. U72900TG2024PTC123456.",
+    "pan": "PAN",
+    "gst": "GSTIN",
+    "address": "Endereço registrado"
+  },
+  "documents": {
+    "lead": "Digitalizações ou fotos nítidas, até 5 MB cada. Os candidatos nunca veem estes documentos.",
+    "company_logo": {
+      "label": "Logotipo da empresa",
+      "hint": "Quadrado funciona melhor"
+    },
+    "registration_certificate": {
+      "label": "Certificado de registro",
+      "hint": "Certificado de constituição"
+    },
+    "gst_certificate": {
+      "label": "Certificado de GST",
+      "hint": "Seu registro de GST"
+    },
+    "address_proof": {
+      "label": "Comprovante de endereço",
+      "hint": "Uma conta de consumo ou contrato de aluguel"
+    }
+  },
+  "draftSaved": "Rascunho salvo neste dispositivo. Se você sair, será preciso adicionar os documentos de novo.",
+  "submitting": "Enviando seus documentos… {{percent}}%",
+  "submitFailed": "Não conseguimos enviar seus dados. Tudo o que você digitou continua aqui, então tente de novo.",
+  "validation": {
+    "nameMin": "Digite o nome da sua empresa",
+    "website": "Digite um endereço como https://example.com",
+    "email": "Digite um e-mail como financeiro@empresa.com",
+    "industry": "Escolha um setor",
+    "linkedin": "Digite um endereço como https://www.linkedin.com/company/example",
+    "linkedinDomain": "Use a página da sua empresa no linkedin.com",
+    "description": "Escreva pelo menos uma frase sobre o que vocês fazem",
+    "registration": "Digite seu número de registro (5 a 50 caracteres)",
+    "pan": "Um PAN tem 10 caracteres, como ABCDE1234F",
+    "gst": "Um GSTIN tem 15 caracteres, como 36ABCDE1234F1Z5",
+    "address": "Digite seu endereço registrado",
+    "fileRequired": "Adicione este documento",
+    "fileInvalid": "Use um arquivo de um tipo aceito, até 5 MB"
+  },
+  "done": {
+    "title": "Obrigado, recebemos seus dados",
+    "lead": "Sua conta já pode ser usada enquanto conferimos seus documentos.",
+    "nextHeading": "O que acontece agora",
+    "review": "Nossa equipe analisa os dados e documentos da sua empresa.",
+    "contact": "Se faltar algo, escreveremos para {{email}}.",
+    "start": "Enquanto isso, você pode publicar vagas e ver candidatos.",
+    "postJob": "Publique sua primeira vaga",
+    "dashboard": "Ir para o painel"
+  }
+}

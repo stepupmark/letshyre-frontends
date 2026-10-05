@@ -1,0 +1,60 @@
+{
+  "panel": {
+    "title": "アンロック",
+    "lead": "アンロックすると、連絡先、スコアカード全体、録画、履歴書が表示されます。面接1件につき1クレジットです。",
+    "matched": "この求人の職種",
+    "unlocked": "アンロック済み",
+    "button_other": "アンロック・{{count}} クレジット",
+    "pick": "面接を1件以上選んでください。",
+    "balance": "残高",
+    "short": "{{cost}} クレジット必要ですが、残高は {{balance}} です。クレジットを追加すると、ここに戻ってきます。",
+    "addCredits": "クレジットを追加",
+    "none": "AI 面接がまだないため、アンロックできるものはありません。",
+    "allUnlocked": "この候補者はすべてアンロック済みです。",
+    "openUnlocked": "アンロック済みの候補者を見る",
+    "failed": "アンロックできませんでした。もう一度試す前に残高を確認してください。"
+  },
+  "confirm": {
+    "title": "{{name}} さんをアンロックしますか？",
+    "body_other": "{{count}} クレジットを使います。元に戻せません。残りは {{left}} です。"
+  },
+  "done": "{{name}} さんをアンロックしました",
+  "doneBody_other": "{{count}} クレジット使用、残り {{left}}。",
+  "pool": {
+    "title": "候補者プール",
+    "lead": "AI が募集中の求人とマッチさせた人たちを、マッチ度の高い順に表示します。",
+    "job": "求人",
+    "chooseJob": "求人を選択",
+    "matched": "AI のマッチ",
+    "applied": "応募者",
+    "noJobsTitle": "募集中の求人がありません",
+    "noJobsBody": "マッチは募集中の求人から生まれます。求人を掲載するか、一時停止中の求人を再開してください。",
+    "postJob": "求人を掲載",
+    "emptyTitle": "まだマッチはありません",
+    "emptyBody": "候補者が面接を終えるたびに、AI はマッチングを続けます。また後で確認してください。",
+    "emptyApplied": "この求人にはまだ応募がありません。",
+    "summary": "{{total}} 人中 {{matched}} 人がマッチ"
+  },
+  "list": {
+    "title": "アンロック済みの候補者",
+    "lead": "アンロックしたすべての人を、新しい順に表示します。",
+    "sharedLinks": "共有リンク",
+    "columns": {
+      "candidate": "候補者",
+      "experience": "経験",
+      "place": "勤務地",
+      "pay": "給与（LPA）",
+      "notice": "退職予告",
+      "interview": "面接",
+      "unlocked": "アンロック日"
+    },
+    "years_other": "{{count}} 年",
+    "days_other": "{{count}} 日",
+    "verified": "確認済み",
+    "profile": "プロフィール",
+    "scorecard": "スコアカード",
+    "emptyTitle": "まだ誰もアンロックしていません",
+    "emptyBody": "候補者プールや応募者一覧から候補者をアンロックすると、ここに詳細が表示されます。",
+    "toPool": "候補者プールを開く"
+  }
+}

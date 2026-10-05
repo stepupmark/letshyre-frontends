@@ -1,0 +1,138 @@
+{
+  "title": "Credits kopen",
+  "lead": "Elke credit ontgrendelt één AI-interview: de contactgegevens, volledige scorekaart, opname en het cv van de kandidaat. Credits verlopen nooit.",
+  "balance": "Saldo",
+  "invoices": "Facturen",
+  "buyCredits": "Credits kopen",
+  "plusGst": "{{price}} + GST",
+  "nextNote": "Na de betaling brengen we u terug naar de kandidaat die u bekeek.",
+  "nextBack": "Terug naar de kandidaat",
+  "plans": {
+    "title": "Pakketten",
+    "lead": "Eenmalige betaling, geen abonnement. GST wordt bij het afrekenen toegevoegd.",
+    "popular": "Meest gekozen",
+    "once": "+ GST, eenmalig",
+    "credits_one": "{{count}} credit",
+    "credits_other": "{{count}} credits",
+    "rate": "{{rate}} per credit",
+    "seats_one": "{{count}} teamplek",
+    "seats_other": "{{count}} teamplekken",
+    "unlocks": "Contactgegevens, scorekaarten en opnames",
+    "noExpiry": "Credits verlopen nooit",
+    "topUps": "Altijd bij te kopen",
+    "buy": "{{name}} kopen"
+  },
+  "topUps": {
+    "title": "Bijkopen",
+    "lead": "Voeg credits toe aan uw saldo wanneer u er meer nodig hebt.",
+    "credits_one": "{{count}} credit",
+    "credits_other": "{{count}} credits",
+    "buy": "Kopen",
+    "buyLabel_one": "{{count}} credit kopen",
+    "buyLabel_other": "{{count}} credits kopen"
+  },
+  "unavailable": {
+    "title": "Dit pakket is niet beschikbaar",
+    "body": "De pakketten zijn misschien veranderd sinds de link is gemaakt. Sluit dit en kies hieronder een pakket.",
+    "failedTitle": "We konden dit pakket niet laden",
+    "failedBody": "Controleer uw verbinding en probeer het opnieuw. Er is niets afgeschreven.",
+    "close": "Sluiten"
+  },
+  "checkout": {
+    "planTitle": "Pakket {{name}}",
+    "topUpTitle_one": "{{count}} credit",
+    "topUpTitle_other": "{{count}} credits",
+    "summary_one": "{{count}} credit, eenmalig betaald. Credits verlopen nooit.",
+    "summary_other": "{{count}} credits, eenmalig betaald. Credits verlopen nooit.",
+    "credits_one": "{{count}} credit × {{rate}}",
+    "credits_other": "{{count}} credits × {{rate}}",
+    "couponLine": "Kortingscode {{code}}",
+    "discount": "Korting",
+    "gst": "GST ({{percent}}%)",
+    "total": "Totaal",
+    "quoteError": "We konden uw totaal niet berekenen. Er is niets afgeschreven.",
+    "retry": "Opnieuw proberen",
+    "coupon": {
+      "toggle": "Hebt u een kortingscode?",
+      "label": "Kortingscode",
+      "apply": "Toepassen",
+      "applied": "{{code}} toegepast",
+      "remove": "Kortingscode {{code}} verwijderen",
+      "required": "Vul een kortingscode in.",
+      "invalid": "Kortingscodes bevatten alleen letters, cijfers, streepjes en underscores.",
+      "rejected": "Deze code geldt niet voor deze aankoop."
+    },
+    "pay": "{{amount}} betalen",
+    "payPending": "Betalen",
+    "paying": "Betaling wordt gestart…",
+    "secure": "Betalingen lopen via Razorpay. Door te betalen gaat u akkoord met onze <terms>voorwaarden</terms> en ons <refund>terugbetalingsbeleid</refund>.",
+    "razorpay_one": "{{count}} LetsHyre-credit",
+    "razorpay_other": "{{count}} LetsHyre-credits",
+    "notice": {
+      "cancelled": {
+        "title": "Betaling geannuleerd",
+        "body": "Er is niets afgeschreven. Betaal opnieuw wanneer u klaar bent."
+      },
+      "failed": {
+        "title": "De betaling is niet gelukt",
+        "body": "Er is niets afgeschreven. Probeer het opnieuw of gebruik een andere betaalmethode."
+      },
+      "priceChanged": {
+        "title": "Uw totaal is gewijzigd",
+        "body": "De prijs is bijgewerkt nadat u dit opende, en er is niets afgeschreven. Bekijk het nieuwe totaal voordat u betaalt."
+      },
+      "blocked": {
+        "title": "Het betaalvenster laadde niet",
+        "body": "Er is niets afgeschreven. Controleer uw verbinding; gebruikt u een adblocker, sta dan checkout.razorpay.com toe."
+      },
+      "error": {
+        "title": "We konden de betaling niet starten",
+        "body": "Er is niets afgeschreven. Probeer het zo opnieuw."
+      }
+    },
+    "verifying": {
+      "title": "Uw betaling wordt bevestigd",
+      "body": "Dit duurt een paar seconden. Houd dit venster open."
+    },
+    "paid": {
+      "title_one": "{{count}} credit toegevoegd",
+      "title_other": "{{count}} credits toegevoegd",
+      "body": "We hebben {{amount}} ontvangen. Uw factuur staat op de pagina met facturen.",
+      "balance": "Uw saldo is nu",
+      "primary": "Kandidaten vinden",
+      "back": "Terug naar de kandidaat",
+      "invoices": "Facturen bekijken"
+    },
+    "unconfirmed": {
+      "title": "We konden uw betaling nog niet bevestigen",
+      "body": "Als er geld van uw rekening is gegaan, raakt u uw credits niet kwijt. Probeer het opnieuw of neem contact met ons op met de betalingsreferentie hieronder.",
+      "retry": "Opnieuw proberen",
+      "contact": "Contact met support"
+    },
+    "reference": "Betalingsreferentie"
+  },
+  "invoiceList": {
+    "title": "Facturen",
+    "lead": "Elke aankoop van credits, met de bon.",
+    "columns": {
+      "date": "Datum",
+      "purchase": "Aankoop",
+      "number": "Factuur",
+      "total": "Totaal"
+    },
+    "plan": "Pakket {{name}}",
+    "topUp": "Bijkoop",
+    "preparing": "Wordt gemaakt",
+    "emptyTitle": "Nog geen facturen",
+    "emptyBody": "Uw eerste aankoop verschijnt hier met de bon."
+  },
+  "receipt": {
+    "title": "Bon",
+    "subtotal": "Subtotaal",
+    "gst": "GST",
+    "paidOn": "Betaald op",
+    "pdf": "PDF",
+    "print": "Afdrukken",
+    "noPdf": "De pdf-factuur wordt nog gemaakt. Kijk over een paar minuten opnieuw."
+  }
+}

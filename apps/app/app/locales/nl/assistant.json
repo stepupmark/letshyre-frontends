@@ -1,0 +1,44 @@
+{
+  "title": "Assistent",
+  "lead": {
+    "employer": "Antwoorden over werven met LetsHyre: vacatures, matches, scorekaarten en credits.",
+    "candidate": "Antwoorden over uw zoektocht naar werk: solliciteren, interviews en uw scorekaart."
+  },
+  "log": "Gesprek",
+  "you": "U",
+  "assistant": "Assistent",
+  "greeting": "Hallo, ik ben de assistent van LetsHyre.",
+  "hint": {
+    "employer": "Vraag alles over uw werving. Deze vragen komen op deze pagina vaak voor:",
+    "candidate": "Vraag alles over uw zoektocht naar werk. Deze vragen komen op deze pagina vaak voor:"
+  },
+  "input": "Stel een vraag",
+  "send": "Versturen",
+  "stop": "Antwoord stoppen",
+  "thinking": "Bezig met nadenken…",
+  "stopped": "U hebt dit antwoord gestopt.",
+  "failed": "Er kwam geen antwoord.",
+  "retry": "Opnieuw proberen",
+  "clear": "Chat wissen",
+  "prompts": {
+    "firstJob": "Hoe plaats ik mijn eerste vacature?",
+    "readScorecard": "Hoe lees ik de scorekaart van een kandidaat?",
+    "credits": "Hoe werken credits?",
+    "betterJob": "Hoe schrijf ik een vacature die betere matches krijgt?",
+    "pauseJob": "Hoe pauzeer of sluit ik een vacature?",
+    "matchScore": "Hoe wordt de matchscore berekend?",
+    "unlockCost": "Wat kost het om een kandidaat te ontgrendelen?",
+    "shareScorecard": "Hoe deel ik een scorekaart met mijn team?",
+    "gstInvoice": "Kan ik een factuur met GST krijgen?",
+    "findFit": "Hoe vind ik vacatures die bij mij passen?",
+    "howInterview": "Hoe werkt het AI-interview?",
+    "afterApply": "Wat gebeurt er nadat ik heb gesolliciteerd?",
+    "shortlist": "Hoe bepalen werkgevers wie op de shortlist komt?",
+    "ownScore": "Hoe wordt mijn scorekaart berekend?",
+    "retake": "Kan ik het interview opnieuw doen?",
+    "standOut": "Hoe laat ik mijn profiel opvallen?",
+    "whoSees": "Wie kan mijn documenten zien?",
+    "needForInterview": "Wat heb ik nodig voor het interview?",
+    "connectionDrops": "Wat als mijn internet uitvalt tijdens het interview?"
+  }
+}

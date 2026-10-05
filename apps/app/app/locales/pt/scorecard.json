@@ -1,40 +1,136 @@
 {
+  "title": "Avaliação da entrevista",
+  "print": "Imprimir",
+  "provenance": {
+    "sharedBy": "Compartilhada em particular por {{company}}. O link tem limite de visualizações e data de expiração, então não o encaminhe.",
+    "private": "Compartilhada em particular. O link tem limite de visualizações e data de expiração, então não o encaminhe."
+  },
   "header": {
     "unnamed": "Candidato",
     "fresher": "Sem experiência",
-    "matchedTo": "Correspondente a {{job}}",
     "experience_one": "{{count}} ano de experiência",
-    "experience_other": "{{count}} anos de experiência"
+    "experience_many": "{{count}} anos de experiência",
+    "experience_other": "{{count}} anos de experiência",
+    "matchedTo": "Correspondente a {{job}}",
+    "yours": "Sua avaliação da entrevista",
+    "taken": "Entrevista em {{date}}"
+  },
+  "summary": {
+    "heading": "Resumo",
+    "outOf": "/ 100",
+    "basedOn_one": "Com base em {{count}} pergunta respondida",
+    "basedOn_many": "Com base em {{count}} perguntas respondidas",
+    "basedOn_other": "Com base em {{count}} perguntas respondidas",
+    "howScored": "Como é a pontuação?",
+    "howScoredBody": "O entrevistador de IA pontua cada resposta em relação à vaga e depois confere clareza, relevância e profundidade. Use a nota como ponto de partida para sua decisão, não como substituta.",
+    "howScoredYours": "O entrevistador de IA pontua cada resposta em relação à vaga e depois confere clareza, relevância e profundidade. Os empregadores veem as mesmas notas, então os pontos a melhorar são um bom começo."
+  },
+  "match": {
+    "heading": "Aderência à vaga",
+    "headingFor": "Aderência a {{job}}",
+    "overall": "Geral",
+    "role": "Cargo",
+    "skills": "Habilidades",
+    "why": "Por que combina"
   },
   "metrics": {
+    "heading": "Comunicação",
     "clarity": "Clareza",
     "relevance": "Relevância",
-    "confidence": "Confiança"
+    "confidence": "Confiança",
+    "depth": "Profundidade de raciocínio",
+    "keyConcept": "Conceitos-chave abordados"
   },
   "types": {
-    "coding": "Programação"
+    "heading": "Por tipo de pergunta",
+    "correct_one": "{{correct}} de {{count}} correta",
+    "correct_many": "{{correct}} de {{count}} corretas",
+    "correct_other": "{{correct}} de {{count}} corretas",
+    "mcq": "Múltipla escolha",
+    "pseudocode_mcq": "Pseudocódigo",
+    "coding": "Programação",
+    "typing": "Escrita",
+    "audio": "Falada"
   },
   "insights": {
+    "heading": "Observações",
     "strengths": "Pontos Fortes",
+    "improve": "Pontos a melhorar",
     "recommendations": "Recomendações"
   },
+  "recording": {
+    "heading": "Gravação",
+    "unsupported": "Seu navegador não consegue reproduzir esta gravação.",
+    "failed": "A gravação não carregou. O link pode ter expirado.",
+    "retry": "Tentar de novo"
+  },
   "profile": {
+    "heading": "Perfil",
+    "empty": "O candidato ainda não adicionou dados de perfil.",
     "skills": "Competências",
     "experience": "Experiência",
     "education": "Formação",
     "projects": "Projetos",
-    "resume": "Currículo"
+    "awards": "Certificações e conquistas",
+    "links": "Currículo e links",
+    "resume": "Currículo",
+    "untitled": "Projeto sem título"
   },
   "answers": {
+    "heading": "Respostas",
+    "none": "Esta entrevista não tem perguntas respondidas.",
     "expandAll": "Expandir tudo",
     "collapseAll": "Recolher tudo",
+    "number": "Pergunta {{number}}",
+    "noQuestion": "Texto da pergunta indisponível",
+    "answer": "Resposta",
+    "assessment": "Avaliação",
+    "correct": "Correta",
+    "wrong": "Incorreta",
+    "chosen": "A resposta dada",
+    "correctAnswer": "Resposta correta",
+    "noAnswer": "Sem resposta.",
+    "noCode": "Nenhum código enviado.",
+    "noAudio": "Nenhum áudio gravado.",
+    "audioUnsupported": "Seu navegador não consegue reproduzir este áudio.",
     "types": {
-      "coding": "Programação"
-    }
+      "mcq": "Múltipla escolha",
+      "mcq_pseudocode": "Pseudocódigo",
+      "pseudocode_mcq": "Pseudocódigo",
+      "coding": "Programação",
+      "typing": "Escrita",
+      "audio": "Falada",
+      "other": "Pergunta"
+    },
+    "yours": "Sua resposta"
   },
   "toc": {
+    "label": "Nesta página",
+    "summary": "Resumo",
     "communication": "Comunicação",
+    "types": "Por tipo de pergunta",
     "insights": "Análises",
-    "profile": "Perfil"
+    "recording": "Gravação",
+    "profile": "Perfil",
+    "answers": "Respostas"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "Este link não funciona",
+      "body": "Ele pode estar digitado errado ou ter sido removido. Peça um novo link a quem compartilhou."
+    },
+    "expired": {
+      "title": "Este link expirou",
+      "body": "As avaliações compartilhadas ficam disponíveis só por um tempo. Peça um novo link a quem compartilhou."
+    },
+    "limit": {
+      "title": "Este link atingiu o limite de visualizações",
+      "body": "Peça um novo link a quem compartilhou."
+    },
+    "unavailable": {
+      "title": "Esta avaliação não carregou",
+      "body": "Algo deu errado do nosso lado. Tente de novo em instantes."
+    },
+    "retry": "Tentar de novo"
   }
 }

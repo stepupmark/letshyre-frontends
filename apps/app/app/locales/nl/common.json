@@ -1,17 +1,103 @@
 {
+  "appName": "LetsHyre",
   "nav": {
     "dashboard": "Dashboard"
   },
   "notFound": {
-    "title": "We konden deze pagina niet vinden"
+    "title": "We konden deze pagina niet vinden",
+    "body": "De link is misschien oud, of de pagina is verplaatst.",
+    "goHome": "Naar uw dashboard"
   },
   "error": {
     "title": "Deze pagina is niet geladen",
-    "retry": "Opnieuw proberen"
+    "body": "Er ging iets mis bij ons. Laad de pagina opnieuw, of neem contact op als het blijft gebeuren.",
+    "retry": "Opnieuw proberen",
+    "goHome": "Naar uw dashboard"
+  },
+  "table": {
+    "selectAll": "Alle rijen selecteren",
+    "selectRow": "{{name}} selecteren",
+    "selected_one": "{{count}} geselecteerd",
+    "selected_other": "{{count}} geselecteerd",
+    "clearSelection": "Selectie wissen",
+    "columns": "Kolommen",
+    "compact": "Compacte rijen",
+    "sortBy": "Sorteren op {{column}}",
+    "previous": "Vorige pagina",
+    "next": "Volgende pagina",
+    "pageOf": "Pagina {{page}} van {{total}}",
+    "results_one": "{{count}} resultaat",
+    "results_other": "{{count}} resultaten",
+    "rowActions": "Acties voor {{name}}",
+    "bulkActions": "Bulkacties",
+    "navigateHint": "om te bewegen,",
+    "openHint": "om te openen",
+    "enterKey": "Enter",
+    "pages": "Pagina's"
+  },
+  "state": {
+    "error": "Dit is niet geladen.",
+    "errorBody": "Er is niets verloren. Controleer uw verbinding en probeer het opnieuw.",
+    "retry": "Opnieuw proberen",
+    "loading": "Laden"
+  },
+  "empty": {
+    "filteredTitle": "Geen resultaten",
+    "filteredBody": "Probeer een andere zoekopdracht of wis de filters.",
+    "clearFilters": "Filters wissen"
+  },
+  "upload": {
+    "drop": "Sleep een bestand hierheen, of",
+    "browse": "kies er een",
+    "hint": "{{types}}, tot {{size}}",
+    "tooLarge": "Dat bestand is {{size}}. De limiet is {{max}}.",
+    "wrongType": "Dat bestandstype wordt niet geaccepteerd. Gebruik {{types}}.",
+    "uploading": "{{name}} wordt geüpload",
+    "failed": "Uploaden mislukt. Uw bestand staat er nog, dus u kunt het opnieuw proberen.",
+    "retry": "Opnieuw proberen",
+    "remove": "{{name}} verwijderen",
+    "done": "Geüpload"
+  },
+  "wizard": {
+    "step": "Stap {{current}} van {{total}}",
+    "back": "Terug",
+    "next": "Doorgaan",
+    "finish": "Afronden",
+    "draftSaved": "Concept opgeslagen op dit apparaat"
+  },
+  "confirm": {
+    "cancel": "Annuleren"
+  },
+  "undo": "Ongedaan maken",
+  "copy": {
+    "copy": "Kopiëren",
+    "copied": "Gekopieerd"
+  },
+  "band": {
+    "strong": "Sterke match",
+    "partial": "Gedeeltelijke match",
+    "low": "Zwakke match"
+  },
+  "interviewBand": {
+    "strong": "Sterk interview",
+    "partial": "Wisselend interview",
+    "low": "Zwak interview"
+  },
+  "detail": {
+    "previous": "Vorige",
+    "next": "Volgende",
+    "position": "{{current}} van {{total}}"
+  },
+  "releaseCheck": {
+    "title": "Controle nieuwe app",
+    "body": "Deze pagina komt van de nieuwe app. Als u dit kunt lezen, is de release goed gerouteerd."
   },
   "password": {
     "show": "Wachtwoord weergeven",
     "hide": "Wachtwoord verbergen",
     "capsLock": "Caps Lock is ingeschakeld"
+  },
+  "tip": {
+    "gotIt": "Begrepen"
   }
 }

@@ -1,0 +1,100 @@
+{
+  "find": {
+    "title": "Vacatures zoeken",
+    "lead": "Nu open functies. Solliciteren is één stap, en de werkgever ziet uw profiel en scorekaart."
+  },
+  "applications": {
+    "title": "Mijn sollicitaties",
+    "lead": "Waar elke sollicitatie staat en wat er hierna gebeurt."
+  },
+  "filters": {
+    "keyword": "Functie of vaardigheid",
+    "location": "Stad",
+    "search": "Zoeken",
+    "type": "Soort dienstverband",
+    "anyType": "Elk dienstverband",
+    "industry": "Sector",
+    "anyIndustry": "Elke sector",
+    "experience": "Ervaring, bijv. 2-5",
+    "years": "jr",
+    "salary": "Salaris, bijv. 6-10",
+    "clear": "Alles wissen"
+  },
+  "saved": {
+    "save": "Zoekopdracht opslaan",
+    "saved": "Opgeslagen",
+    "remove": "Opgeslagen zoekopdracht {{search}} verwijderen"
+  },
+  "types": {
+    "full_time": "Voltijd",
+    "part_time": "Deeltijd",
+    "internship": "Stage",
+    "contract": "Tijdelijk",
+    "freelance": "Freelance"
+  },
+  "facts": {
+    "fresher": "Starters welkom",
+    "years": "{{years}} jr"
+  },
+  "results_one": "{{count}} vacature",
+  "results_other": "{{count}} vacatures",
+  "searching": "Bezig met zoeken…",
+  "empty": {
+    "title": "Nu geen open vacatures",
+    "body": "Elke week komen er nieuwe functies bij. Kijk binnenkort opnieuw, of houd uw scorekaart actueel zodat werkgevers u vinden.",
+    "Applied": {
+      "title": "Nog geen sollicitaties",
+      "body": "Vacatures waarop u solliciteert, verschijnen hier met hun stand van zaken."
+    },
+    "Shortlisted": {
+      "title": "Nog niet op een shortlist",
+      "body": "Als een werkgever u op de shortlist zet, verschijnt de vacature hier."
+    },
+    "Selected": {
+      "title": "Nog geen aanbiedingen",
+      "body": "Vacatures waarvoor een werkgever u kiest, verschijnen hier."
+    },
+    "Rejected": {
+      "title": "Niets hier",
+      "body": "Sollicitaties die niet zijn doorgegaan, verschijnen hier."
+    }
+  },
+  "company": "Bedrijf",
+  "untitled": "Functie zonder titel",
+  "moreSkills": "+{{count}} meer",
+  "applied": "Gesolliciteerd",
+  "appliedWhen": "gesolliciteerd {{when}}",
+  "detail": {
+    "skills": "Gezochte vaardigheden",
+    "about": "Over de functie",
+    "noDescription": "De werkgever heeft geen beschrijving toegevoegd."
+  },
+  "apply": {
+    "button": "Solliciteren",
+    "sending": "Bezig met solliciteren…",
+    "note": "De werkgever ziet uw profiel en nieuwste scorekaart.",
+    "done": "Gesolliciteerd. De werkgever kan uw profiel nu zien.",
+    "track": "Mijn sollicitaties bekijken",
+    "failed": "Uw sollicitatie is niet doorgekomen. Probeer het zo opnieuw."
+  },
+  "stages": {
+    "Applied": "Gesolliciteerd",
+    "Shortlisted": "Op de shortlist",
+    "Selected": "Gekozen",
+    "Rejected": "Niet gekozen"
+  },
+  "timeline": {
+    "label": "Voortgang van de sollicitatie",
+    "notSelected": "Niet gekozen",
+    "done": "(klaar)"
+  },
+  "next": {
+    "label": "Volgende stap:",
+    "Applied": "De werkgever bekijkt de sollicitanten. Een recent AI-interview voor deze functie brengt u hoger in de lijst.",
+    "Shortlisted": "U staat op de shortlist. De werkgever neemt contact op per e-mail of telefoon, dus blijf op beide bereikbaar.",
+    "Selected": "De werkgever heeft u gekozen. Verwacht contact over het aanbod.",
+    "Rejected": "Deze keer niet gelukt. Er staan vergelijkbare functies open.",
+    "guide": "Hoe het interview werkt",
+    "findJobs": "Vacatures zoeken"
+  }
+}

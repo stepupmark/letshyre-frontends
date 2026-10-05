@@ -1,0 +1,54 @@
+{
+  "title": "Interviewgids",
+  "lead": "Acht stappen van download tot uw eerste vraag. Vink ze af terwijl u zich voorbereidt.",
+  "progress": "{{done}} van {{total}} klaar",
+  "progressLabel": "Stappen klaar",
+  "reset": "Opnieuw beginnen",
+  "phases": {
+    "setup": "Installeren",
+    "security": "Veiligheidscontroles",
+    "interview": "Het interview"
+  },
+  "steps": {
+    "download": {
+      "title": "Installeer de desktop-app",
+      "body": "Interviews lopen alleen in de LetsHyre-desktop-app, zodat de sessie veilig blijft.",
+      "link": "Downloaden voor uw computer"
+    },
+    "signIn": {
+      "title": "Log in op de app",
+      "body": "Gebruik hetzelfde e-mailadres en wachtwoord als hier. Uw profielfoto en resultaten gaan mee."
+    },
+    "dashboard": {
+      "title": "Begin bij uw dashboard",
+      "body": "Kies Interview starten. De app controleert uw computer voordat er iets anders opent."
+    },
+    "clearEnv": {
+      "title": "Sluit andere apps",
+      "body": "Browsers, schermrecorders, AI-assistenten en videobel-apps moeten gesloten zijn voordat u verder kunt.",
+      "tip": "Sluit al het andere voordat u Interview starten kiest."
+    },
+    "permissions": {
+      "title": "Sta camera, microfoon en scherm toe",
+      "body": "Alle drie zijn nodig voor het toezicht. Sta elk toe wanneer uw computer erom vraagt."
+    },
+    "verifyId": {
+      "title": "Bevestig dat u het bent",
+      "body": "Lees een korte zin hardop voor, daarna maakt de camera een foto om met uw profielfoto te vergelijken.",
+      "tip": "Kijk recht in de camera in een goed verlichte ruimte."
+    },
+    "chooseRole": {
+      "title": "Kies de functie",
+      "body": "Kies de functie waarvoor u het interview doet. De functie uit uw profiel staat al klaar."
+    },
+    "begin": {
+      "title": "Beginnen",
+      "body": "Het interview opent op volledig scherm met de opname aan. Beantwoord elke vraag binnen de tijd; u kunt tussen vragen wisselen tot de timer afloopt."
+    }
+  },
+  "cta": {
+    "title": "Haal de desktop-app",
+    "body": "Log in met uw LetsHyre-account en begin wanneer u klaar bent.",
+    "button": "App downloaden"
+  }
+}

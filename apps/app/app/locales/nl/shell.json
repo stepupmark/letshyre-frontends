@@ -1,0 +1,70 @@
+{
+  "skipToContent": "Naar de hoofdinhoud",
+  "loading": "Pagina wordt geladen",
+  "toggleSidebar": "Zijbalk tonen of verbergen",
+  "navigation": "Hoofdnavigatie",
+  "groups": {
+    "hiring": "Werving",
+    "company": "Bedrijf",
+    "you": "U",
+    "help": "Hulp"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "postJob": "Vacature plaatsen",
+    "jobs": "Vacatures",
+    "candidatePool": "Kandidatenpool",
+    "unlocked": "Ontgrendelde kandidaten",
+    "team": "Team",
+    "sharedLinks": "Gedeelde links",
+    "billing": "Facturering",
+    "findJobs": "Vacatures zoeken",
+    "applications": "Mijn sollicitaties",
+    "scorecards": "Scorekaarten",
+    "profile": "Profiel",
+    "interviewGuide": "Interviewgids",
+    "assistant": "Assistent"
+  },
+  "search": {
+    "button": "Zoeken of springen naar…",
+    "shortcut": "Ctrl K",
+    "title": "Zoeken",
+    "description": "Naar een pagina springen of een actie uitvoeren",
+    "empty": "Geen resultaten.",
+    "pages": "Pagina's"
+  },
+  "credits": {
+    "label_one": "{{count}} credit",
+    "label_other": "{{count}} credits",
+    "add": "Credits toevoegen"
+  },
+  "user": {
+    "menu": "Accountmenu",
+    "profile": "Profiel",
+    "language": "Taal",
+    "shortcuts": "Sneltoetsen",
+    "signOut": "Uitloggen",
+    "tips": "Tips opnieuw tonen"
+  },
+  "shortcuts": {
+    "title": "Sneltoetsen",
+    "search": "Zoeken en naar pagina's springen",
+    "sidebar": "Zijbalk tonen of verbergen",
+    "help": "Deze lijst tonen"
+  },
+  "tips": {
+    "search": {
+      "title": "Overal heen springen",
+      "body": "Zoek een pagina of actie. Druk overal op Ctrl K."
+    },
+    "credits": {
+      "title": "Uw creditsaldo",
+      "body": "Credits ontgrendelen de contactgegevens van een kandidaat. Kies dit om er meer toe te voegen of facturen te bekijken."
+    }
+  },
+  "assistant": {
+    "open": "Vraag de assistent",
+    "full": "Openen als volledige pagina",
+    "lead": "Uw gesprek blijft hier terwijl u tussen pagina's wisselt."
+  }
+}

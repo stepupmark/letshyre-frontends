@@ -1,0 +1,71 @@
+{
+  "skipToContent": "Pular para o conteúdo principal",
+  "loading": "Carregando a página",
+  "toggleSidebar": "Mostrar ou ocultar a barra lateral",
+  "navigation": "Navegação principal",
+  "groups": {
+    "hiring": "Contratação",
+    "company": "Empresa",
+    "you": "Você",
+    "help": "Ajuda"
+  },
+  "nav": {
+    "dashboard": "Painel",
+    "postJob": "Publicar uma vaga",
+    "jobs": "Vagas",
+    "candidatePool": "Banco de candidatos",
+    "unlocked": "Candidatos desbloqueados",
+    "team": "Equipe",
+    "sharedLinks": "Links compartilhados",
+    "billing": "Cobrança",
+    "findJobs": "Encontrar vagas",
+    "applications": "Minhas candidaturas",
+    "scorecards": "Avaliações",
+    "profile": "Perfil",
+    "interviewGuide": "Guia da entrevista",
+    "assistant": "Assistente"
+  },
+  "search": {
+    "button": "Buscar ou ir para…",
+    "shortcut": "Ctrl K",
+    "title": "Busca",
+    "description": "Ir para uma página ou executar uma ação",
+    "empty": "Nenhum resultado.",
+    "pages": "Páginas"
+  },
+  "credits": {
+    "label_one": "{{count}} crédito",
+    "label_many": "{{count}} créditos",
+    "label_other": "{{count}} créditos",
+    "add": "Adicionar créditos"
+  },
+  "user": {
+    "menu": "Menu da conta",
+    "profile": "Perfil",
+    "language": "Idioma",
+    "shortcuts": "Atalhos de teclado",
+    "signOut": "Sair",
+    "tips": "Mostrar dicas de novo"
+  },
+  "shortcuts": {
+    "title": "Atalhos de teclado",
+    "search": "Buscar e ir para páginas",
+    "sidebar": "Mostrar ou ocultar a barra lateral",
+    "help": "Mostrar esta lista"
+  },
+  "tips": {
+    "search": {
+      "title": "Vá para qualquer lugar",
+      "body": "Busque uma página ou ação. Pressione Ctrl K de qualquer lugar."
+    },
+    "credits": {
+      "title": "Seu saldo de créditos",
+      "body": "Os créditos desbloqueiam os contatos de um candidato. Selecione aqui para adicionar mais ou ver notas fiscais."
+    }
+  },
+  "assistant": {
+    "open": "Perguntar ao assistente",
+    "full": "Abrir em página inteira",
+    "lead": "Sua conversa fica aqui enquanto você muda de página."
+  }
+}

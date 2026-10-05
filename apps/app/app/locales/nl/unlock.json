@@ -1,0 +1,65 @@
+{
+  "panel": {
+    "title": "Ontgrendelen",
+    "lead": "Ontgrendelen toont contactgegevens, de volledige scorekaart, de opname en het cv. Elk interview kost één credit.",
+    "matched": "Functie van deze vacature",
+    "unlocked": "Ontgrendeld",
+    "button_one": "Ontgrendelen · {{count}} credit",
+    "button_other": "Ontgrendelen · {{count}} credits",
+    "pick": "Kies minstens één interview.",
+    "balance": "Saldo",
+    "short": "Dit kost {{cost}} credits en u hebt er {{balance}}. Voeg credits toe en u komt hier terug.",
+    "addCredits": "Credits toevoegen",
+    "none": "Nog geen AI-interviews, dus er is niets te ontgrendelen.",
+    "allUnlocked": "Alles van deze kandidaat is ontgrendeld.",
+    "openUnlocked": "Ontgrendelde kandidaten bekijken",
+    "failed": "Het ontgrendelen is niet gelukt. Controleer uw saldo voordat u het opnieuw probeert."
+  },
+  "confirm": {
+    "title": "{{name}} ontgrendelen?",
+    "body_one": "Dit kost {{count}} credit en kan niet ongedaan worden gemaakt. U houdt er {{left}} over.",
+    "body_other": "Dit kost {{count}} credits en kan niet ongedaan worden gemaakt. U houdt er {{left}} over."
+  },
+  "done": "{{name}} ontgrendeld",
+  "doneBody_one": "{{count}} credit gebruikt, nog {{left}} over.",
+  "doneBody_other": "{{count}} credits gebruikt, nog {{left}} over.",
+  "pool": {
+    "title": "Kandidatenpool",
+    "lead": "Mensen die onze AI aan uw open vacatures koppelde, beste match eerst.",
+    "job": "Vacature",
+    "chooseJob": "Kies een vacature",
+    "matched": "Door AI gematcht",
+    "applied": "Gesolliciteerd",
+    "noJobsTitle": "Geen open vacatures",
+    "noJobsBody": "Matches komen uit uw open vacatures. Plaats er een of heropen een gepauzeerde.",
+    "postJob": "Vacature plaatsen",
+    "emptyTitle": "Nog geen matches",
+    "emptyBody": "Onze AI blijft matchen terwijl kandidaten interviews afronden. Kijk binnenkort opnieuw.",
+    "emptyApplied": "Er heeft nog niemand op deze vacature gesolliciteerd.",
+    "summary": "{{matched}} van {{total}} kandidaten passen"
+  },
+  "list": {
+    "title": "Ontgrendelde kandidaten",
+    "lead": "Iedereen die u hebt ontgrendeld, nieuwste eerst.",
+    "sharedLinks": "Gedeelde links",
+    "columns": {
+      "candidate": "Kandidaat",
+      "experience": "Ervaring",
+      "place": "Locatie",
+      "pay": "Salaris (LPA)",
+      "notice": "Opzegtermijn",
+      "interview": "Interview",
+      "unlocked": "Ontgrendeld"
+    },
+    "years_one": "{{count}} jr",
+    "years_other": "{{count}} jr",
+    "days_one": "{{count}} dag",
+    "days_other": "{{count}} dagen",
+    "verified": "Geverifieerd",
+    "profile": "Profiel",
+    "scorecard": "Scorekaart",
+    "emptyTitle": "Nog niemand ontgrendeld",
+    "emptyBody": "Ontgrendel een kandidaat uit de pool of een sollicitantenlijst om de gegevens hier te zien.",
+    "toPool": "Kandidatenpool openen"
+  }
+}

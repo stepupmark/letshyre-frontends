@@ -1,0 +1,41 @@
+{
+  "bands": {
+    "all": "Alle",
+    "strong": "Sterk",
+    "partial": "Gedeeltelijk",
+    "low": "Zwak"
+  },
+  "columns": {
+    "candidate": "Kandidaat",
+    "match": "Match",
+    "experience": "Ervaring",
+    "interviews": "Interviews"
+  },
+  "years_one": "{{count}} jr",
+  "years_other": "{{count}} jr",
+  "unnamed": "Kandidaat zonder naam",
+  "sortedNote": "Beste match eerst",
+  "peek": {
+    "why": "Waarom deze match",
+    "whyNote": "Uit het AI-interview en het cv. Bekijk de scorekaart voordat u beslist.",
+    "noReason": "De AI gaf hiervoor geen reden.",
+    "role": "Functiematch",
+    "skills": "Vaardighedenmatch",
+    "has": "Heeft",
+    "missing": "Mist",
+    "noneMissing": "Niets van de lijst van de vacature.",
+    "interviews": "AI-interviews",
+    "noInterviews": "Nog geen AI-interviews.",
+    "experience_one": "{{count}} jaar ervaring",
+    "experience_other": "{{count}} jaar ervaring"
+  },
+  "applicants": {
+    "title": "Sollicitanten",
+    "lead_one": "{{count}} sollicitant · beste match eerst",
+    "lead_other": "{{count}} sollicitanten · beste match eerst",
+    "leadEmpty": "Er heeft nog niemand gesolliciteerd.",
+    "emptyTitle": "Nog geen sollicitanten",
+    "emptyBody": "Sollicitanten verschijnen hier zodra ze het AI-interview hebben afgerond. U kunt ook mensen vinden in de kandidatenpool.",
+    "pool": "Kandidatenpool openen"
+  }
+}

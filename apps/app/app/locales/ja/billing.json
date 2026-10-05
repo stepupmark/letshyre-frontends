@@ -1,0 +1,129 @@
+{
+  "title": "クレジットを購入",
+  "lead": "1クレジットで AI 面接1件をアンロックします：候補者の連絡先、スコアカード全体、録画、履歴書。クレジットに有効期限はありません。",
+  "balance": "残高",
+  "invoices": "請求書",
+  "buyCredits": "クレジットを購入",
+  "plusGst": "{{price}} + GST",
+  "nextNote": "支払いが済んだら、見ていた候補者のページに戻ります。",
+  "nextBack": "候補者に戻る",
+  "plans": {
+    "title": "プラン",
+    "lead": "一括払いで、サブスクリプションではありません。GST はお支払い時に加算されます。",
+    "popular": "いちばん人気",
+    "once": "+ GST、一括払い",
+    "credits_other": "{{count}} クレジット",
+    "rate": "1クレジットあたり {{rate}}",
+    "seats_other": "チーム {{count}} 席",
+    "unlocks": "連絡先、スコアカード、録画",
+    "noExpiry": "クレジットに有効期限なし",
+    "topUps": "いつでも追加購入",
+    "buy": "{{name}} を購入"
+  },
+  "topUps": {
+    "title": "追加購入",
+    "lead": "必要なときにいつでも残高にクレジットを追加できます。",
+    "credits_other": "{{count}} クレジット",
+    "buy": "購入",
+    "buyLabel_other": "{{count}} クレジットを購入"
+  },
+  "unavailable": {
+    "title": "このプランは利用できません",
+    "body": "リンク作成後にプランが変わった可能性があります。閉じて下から選んでください。",
+    "failedTitle": "このプランを読み込めませんでした",
+    "failedBody": "接続を確認してもう一度お試しください。料金は発生していません。",
+    "close": "閉じる"
+  },
+  "checkout": {
+    "planTitle": "{{name}} プラン",
+    "topUpTitle_other": "{{count}} クレジット",
+    "summary_other": "{{count}} クレジット、一括払い。クレジットに有効期限はありません。",
+    "credits_other": "{{count}} クレジット × {{rate}}",
+    "couponLine": "クーポン {{code}}",
+    "discount": "割引",
+    "gst": "GST（{{percent}}%）",
+    "total": "合計",
+    "quoteError": "合計を計算できませんでした。料金は発生していません。",
+    "retry": "再試行",
+    "coupon": {
+      "toggle": "クーポンコードをお持ちですか？",
+      "label": "クーポンコード",
+      "apply": "適用",
+      "applied": "{{code}} を適用しました",
+      "remove": "クーポン {{code}} を外す",
+      "required": "クーポンコードを入力してください。",
+      "invalid": "クーポンコードに使えるのは英字、数字、ハイフン、アンダースコアだけです。",
+      "rejected": "このコードはこの購入には使えません。"
+    },
+    "pay": "{{amount}} を支払う",
+    "payPending": "支払う",
+    "paying": "支払いを開始しています…",
+    "secure": "お支払いは Razorpay が処理します。支払うことで、当社の<terms>規約</terms>と<refund>返金ポリシー</refund>に同意したことになります。",
+    "razorpay_other": "LetsHyre クレジット {{count}} 件",
+    "notice": {
+      "cancelled": {
+        "title": "支払いをキャンセルしました",
+        "body": "料金は発生していません。準備ができたら改めてお支払いください。"
+      },
+      "failed": {
+        "title": "支払いが完了しませんでした",
+        "body": "料金は発生していません。もう一度試すか、別の支払い方法を使ってください。"
+      },
+      "priceChanged": {
+        "title": "合計金額が変わりました",
+        "body": "この画面を開いた後に価格が更新されました。料金は発生していません。新しい合計を確認してからお支払いください。"
+      },
+      "blocked": {
+        "title": "支払い画面が読み込まれませんでした",
+        "body": "料金は発生していません。接続を確認してください。広告ブロッカーを使っている場合は checkout.razorpay.com を許可してください。"
+      },
+      "error": {
+        "title": "支払いを開始できませんでした",
+        "body": "料金は発生していません。少ししてからもう一度お試しください。"
+      }
+    },
+    "verifying": {
+      "title": "支払いを確認しています",
+      "body": "数秒かかります。このウィンドウは開いたままにしてください。"
+    },
+    "paid": {
+      "title_other": "{{count}} クレジットを追加しました",
+      "body": "{{amount}} を受け取りました。請求書は請求書ページにあります。",
+      "balance": "現在の残高",
+      "primary": "候補者を探す",
+      "back": "候補者に戻る",
+      "invoices": "請求書を見る"
+    },
+    "unconfirmed": {
+      "title": "まだ支払いを確認できていません",
+      "body": "口座から引き落とされていても、クレジットは失われません。もう一度試すか、下の支払い番号を添えてお問い合わせください。",
+      "retry": "再試行",
+      "contact": "サポートに連絡"
+    },
+    "reference": "支払い番号"
+  },
+  "invoiceList": {
+    "title": "請求書",
+    "lead": "クレジット購入ごとの領収書です。",
+    "columns": {
+      "date": "日付",
+      "purchase": "購入内容",
+      "number": "請求書",
+      "total": "合計"
+    },
+    "plan": "{{name}} プラン",
+    "topUp": "追加購入",
+    "preparing": "作成中",
+    "emptyTitle": "請求書はまだありません",
+    "emptyBody": "初めての購入が、領収書と一緒にここに表示されます。"
+  },
+  "receipt": {
+    "title": "領収書",
+    "subtotal": "小計",
+    "gst": "GST",
+    "paidOn": "支払日",
+    "pdf": "PDF",
+    "print": "印刷",
+    "noPdf": "PDF の請求書はまだ作成中です。数分後にご確認ください。"
+  }
+}

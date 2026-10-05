@@ -1,0 +1,47 @@
+{
+  "title": "Team",
+  "lead": "Mensen die samen met u vacatures kunnen plaatsen en kandidaten beoordelen.",
+  "count_one": "{{count}} persoon kan vacatures plaatsen en kandidaten beoordelen.",
+  "count_other": "{{count}} mensen kunnen vacatures plaatsen en kandidaten beoordelen.",
+  "add": "Lid toevoegen",
+  "active": "Actief",
+  "onHold": "Gepauzeerd",
+  "actions": "Acties voor {{name}}",
+  "edit": "Bewerken",
+  "hold": "Pauzeren",
+  "activate": "Activeren",
+  "remove": "Verwijderen",
+  "holdNote": "Gepauzeerde leden kunnen pas inloggen als u ze weer activeert. Hun vacatures blijven zoals ze zijn.",
+  "emptyTitle": "Voorlopig alleen u",
+  "emptyBody": "Voeg recruiters toe zodat ze vacatures plaatsen en kandidaten beoordelen op dit account.",
+  "confirmTitle": "{{name}} verwijderen?",
+  "confirmBody": "De toegang stopt meteen. Geplaatste vacatures blijven bij uw bedrijf. Dit kan niet ongedaan worden gemaakt.",
+  "dialog": {
+    "addTitle": "Teamlid toevoegen",
+    "addLead": "Deze persoon wordt recruiter. Stel een wachtwoord in en deel het; inloggen gaat met het eigen e-mailadres.",
+    "editTitle": "Teamlid bewerken",
+    "editLead": "Wijzigingen gelden bij de volgende keer inloggen.",
+    "name": "Volledige naam",
+    "email": "Zakelijk e-mailadres",
+    "password": "Wachtwoord",
+    "passwordHint": "Minstens 8 tekens. Deel het privé.",
+    "generate": "Genereren",
+    "add": "Lid toevoegen",
+    "save": "Wijzigingen opslaan"
+  },
+  "errors": {
+    "name": "Vul de volledige naam in (2 tot 100 tekens).",
+    "email": "Vul een e-mailadres in zoals naam@bedrijf.nl.",
+    "password": "Gebruik 8 tot 50 tekens."
+  },
+  "toast": {
+    "added": "{{name}} toegevoegd",
+    "updated": "{{name}} bijgewerkt",
+    "held": "{{name}} is gepauzeerd",
+    "activated": "{{name}} is actief",
+    "removed": "{{name}} verwijderd",
+    "statusFailed": "De status is niet gewijzigd. Probeer het opnieuw.",
+    "removeFailed": "Verwijderen is niet gelukt. Probeer het opnieuw.",
+    "saveFailed": "Dat is niet opgeslagen. Probeer het opnieuw."
+  }
+}

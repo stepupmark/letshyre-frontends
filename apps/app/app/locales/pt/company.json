@@ -1,0 +1,64 @@
+{
+  "title": "Perfil da empresa",
+  "unnamed": "Sua empresa",
+  "jobs_one": "{{open}} abertas de {{count}} vaga publicada",
+  "jobs_many": "{{open}} abertas de {{count}} vagas publicadas",
+  "jobs_other": "{{open}} abertas de {{count}} vagas publicadas",
+  "kyc": {
+    "approved": "Verificada",
+    "verified": "Verificada",
+    "pending": "Em análise",
+    "rejected": "Precisa de ajustes"
+  },
+  "details": {
+    "title": "Dados da empresa",
+    "edit": "Editar",
+    "email": "E-mail oficial",
+    "industry": "Setor",
+    "chooseIndustry": "Escolha um setor",
+    "website": "Site",
+    "linkedin": "Página no LinkedIn",
+    "linkedinOpen": "Abrir no LinkedIn",
+    "address": "Endereço",
+    "description": "Sobre a empresa",
+    "descriptionHint": "Os candidatos leem isto nas suas vagas. Até 500 caracteres."
+  },
+  "logo": {
+    "label": "Logotipo",
+    "upload": "Enviar logotipo",
+    "replace": "Trocar logotipo",
+    "hint": "Um PNG, JPG ou WebP quadrado de até 5 MB. Ele é cortado em quadrado, como mostrado.",
+    "tooLarge": "O logotipo passa de 5 MB. Escolha uma imagem menor.",
+    "wrongType": "Use uma imagem PNG, JPG ou WebP."
+  },
+  "account": {
+    "title": "Sua conta",
+    "name": "Nome",
+    "email": "E-mail de acesso",
+    "phone": "Telefone"
+  },
+  "legal": {
+    "title": "Registro",
+    "note": "Estes dados foram conferidos quando sua empresa foi verificada. Fale conosco para alterá-los.",
+    "registration": "Número de registro",
+    "gst": "GSTIN",
+    "pan": "PAN"
+  },
+  "documents": {
+    "registration_certificate": "Certificado de registro",
+    "gst_certificate": "Certificado de GST",
+    "address_proof": "Comprovante de endereço",
+    "bank_proof": "Comprovante bancário"
+  },
+  "errors": {
+    "email": "Digite um e-mail como rh@empresa.com.",
+    "address": "Digite o endereço completo.",
+    "industry": "Escolha um setor.",
+    "linkedin": "Digite um link do linkedin.com, ou deixe em branco.",
+    "description": "Use até 500 caracteres."
+  },
+  "save": "Salvar alterações",
+  "saving": "Salvando…",
+  "saved": "Dados da empresa salvos",
+  "saveFailed": "Não foi salvo. Suas alterações continuam aqui; tente de novo."
+}

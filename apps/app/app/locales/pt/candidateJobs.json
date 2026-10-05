@@ -1,0 +1,101 @@
+{
+  "find": {
+    "title": "Encontrar vagas",
+    "lead": "Vagas abertas agora. A candidatura leva um passo, e o empregador vê seu perfil e sua avaliação."
+  },
+  "applications": {
+    "title": "Minhas candidaturas",
+    "lead": "Em que pé está cada candidatura e o que vem depois."
+  },
+  "filters": {
+    "keyword": "Cargo ou habilidade",
+    "location": "Cidade",
+    "search": "Buscar",
+    "type": "Tipo de vaga",
+    "anyType": "Qualquer tipo de vaga",
+    "industry": "Setor",
+    "anyIndustry": "Qualquer setor",
+    "experience": "Experiência, ex. 2-5",
+    "years": "anos",
+    "salary": "Salário, ex. 6-10",
+    "clear": "Limpar tudo"
+  },
+  "saved": {
+    "save": "Salvar busca",
+    "saved": "Salva",
+    "remove": "Remover a busca salva {{search}}"
+  },
+  "types": {
+    "full_time": "Tempo integral",
+    "part_time": "Meio período",
+    "internship": "Estágio",
+    "contract": "Contrato",
+    "freelance": "Freelance"
+  },
+  "facts": {
+    "fresher": "Aceita sem experiência",
+    "years": "{{years}} anos"
+  },
+  "results_one": "{{count}} vaga",
+  "results_many": "{{count}} vagas",
+  "results_other": "{{count}} vagas",
+  "searching": "Buscando…",
+  "empty": {
+    "title": "Nenhuma vaga aberta agora",
+    "body": "Novas vagas são publicadas toda semana. Volte em breve, ou mantenha sua avaliação atualizada para os empregadores encontrarem você.",
+    "Applied": {
+      "title": "Ainda não há candidaturas",
+      "body": "As vagas em que você se candidata aparecem aqui, com o andamento de cada uma."
+    },
+    "Shortlisted": {
+      "title": "Ainda não há pré-seleções",
+      "body": "Quando um empregador pré-selecionar você, a vaga vem para cá."
+    },
+    "Selected": {
+      "title": "Ainda não há propostas",
+      "body": "As vagas em que um empregador escolhe você aparecem aqui."
+    },
+    "Rejected": {
+      "title": "Nada aqui",
+      "body": "As candidaturas que não deram certo aparecem aqui."
+    }
+  },
+  "company": "Empresa",
+  "untitled": "Vaga sem título",
+  "moreSkills": "+{{count}} mais",
+  "applied": "Candidatado",
+  "appliedWhen": "candidatura {{when}}",
+  "detail": {
+    "skills": "Habilidades procuradas",
+    "about": "Sobre a vaga",
+    "noDescription": "O empregador não adicionou uma descrição."
+  },
+  "apply": {
+    "button": "Candidatar-se",
+    "sending": "Enviando…",
+    "note": "O empregador vê seu perfil e sua avaliação mais recente.",
+    "done": "Candidatura enviada. O empregador já pode ver seu perfil.",
+    "track": "Ver minhas candidaturas",
+    "failed": "Sua candidatura não foi enviada. Tente de novo em instantes."
+  },
+  "stages": {
+    "Applied": "Candidatado",
+    "Shortlisted": "Pré-selecionado",
+    "Selected": "Selecionado",
+    "Rejected": "Não selecionado"
+  },
+  "timeline": {
+    "label": "Andamento da candidatura",
+    "notSelected": "Não selecionado",
+    "done": "(feito)"
+  },
+  "next": {
+    "label": "Próximo passo:",
+    "Applied": "O empregador está analisando os candidatos. Uma entrevista com IA recente para esta vaga faz você subir na lista.",
+    "Shortlisted": "Você foi pré-selecionado. O empregador vai entrar em contato por e-mail ou telefone, então fique disponível nos dois.",
+    "Selected": "O empregador escolheu você. Aguarde o contato sobre a proposta.",
+    "Rejected": "Desta vez não deu certo. Há vagas parecidas abertas.",
+    "guide": "Como funciona a entrevista",
+    "findJobs": "Encontrar vagas"
+  }
+}

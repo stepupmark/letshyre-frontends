@@ -1,0 +1,62 @@
+{
+  "title": "会社プロフィール",
+  "unnamed": "あなたの会社",
+  "jobs_other": "掲載 {{count}} 件中 {{open}} 件募集中",
+  "kyc": {
+    "approved": "確認済み",
+    "verified": "確認済み",
+    "pending": "確認中",
+    "rejected": "修正が必要"
+  },
+  "details": {
+    "title": "会社情報",
+    "edit": "編集",
+    "email": "公式メールアドレス",
+    "industry": "業界",
+    "chooseIndustry": "業界を選択",
+    "website": "ウェブサイト",
+    "linkedin": "LinkedIn ページ",
+    "linkedinOpen": "LinkedIn で開く",
+    "address": "住所",
+    "description": "会社について",
+    "descriptionHint": "求人ページで候補者が読みます。500文字まで。"
+  },
+  "logo": {
+    "label": "ロゴ",
+    "upload": "ロゴをアップロード",
+    "replace": "ロゴを差し替える",
+    "hint": "5 MB までの正方形の PNG、JPG、WebP。表示のとおり正方形に切り取られます。",
+    "tooLarge": "ロゴが 5 MB を超えています。小さい画像を選んでください。",
+    "wrongType": "PNG、JPG、WebP の画像を使ってください。"
+  },
+  "account": {
+    "title": "あなたのアカウント",
+    "name": "名前",
+    "email": "ログイン用メールアドレス",
+    "phone": "電話"
+  },
+  "legal": {
+    "title": "登録情報",
+    "note": "会社の確認時に照合済みです。変更する場合はお問い合わせください。",
+    "registration": "登録番号",
+    "gst": "GSTIN",
+    "pan": "PAN"
+  },
+  "documents": {
+    "registration_certificate": "登記証明書",
+    "gst_certificate": "GST 証明書",
+    "address_proof": "住所証明",
+    "bank_proof": "銀行証明"
+  },
+  "errors": {
+    "email": "hr@company.com のようなメールアドレスを入力してください。",
+    "address": "住所をすべて入力してください。",
+    "industry": "業界を選んでください。",
+    "linkedin": "linkedin.com のリンクを入力するか、空欄のままにしてください。",
+    "description": "500文字以内にしてください。"
+  },
+  "save": "変更を保存",
+  "saving": "保存中…",
+  "saved": "会社情報を保存しました",
+  "saveFailed": "保存できませんでした。変更内容は残っています。もう一度お試しください。"
+}

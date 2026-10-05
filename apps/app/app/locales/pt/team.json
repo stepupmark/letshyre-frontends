@@ -1,0 +1,48 @@
+{
+  "title": "Equipe",
+  "lead": "Pessoas que podem publicar vagas e avaliar candidatos com você.",
+  "count_one": "{{count}} pessoa pode publicar vagas e avaliar candidatos.",
+  "count_many": "{{count}} pessoas podem publicar vagas e avaliar candidatos.",
+  "count_other": "{{count}} pessoas podem publicar vagas e avaliar candidatos.",
+  "add": "Adicionar membro",
+  "active": "Ativo",
+  "onHold": "Pausado",
+  "actions": "Ações para {{name}}",
+  "edit": "Editar",
+  "hold": "Pausar",
+  "activate": "Ativar",
+  "remove": "Remover",
+  "holdNote": "Membros pausados não conseguem entrar até você ativá-los de novo. As vagas deles continuam como estão.",
+  "emptyTitle": "Por enquanto é só você",
+  "emptyBody": "Adicione recrutadores para que publiquem vagas e avaliem candidatos nesta conta.",
+  "confirmTitle": "Remover {{name}}?",
+  "confirmBody": "O acesso termina na hora. As vagas publicadas ficam com sua empresa. Não é possível desfazer.",
+  "dialog": {
+    "addTitle": "Adicionar membro da equipe",
+    "addLead": "A pessoa entra como recrutador. Defina uma senha e compartilhe; ela entra com o próprio e-mail.",
+    "editTitle": "Editar membro da equipe",
+    "editLead": "As alterações valem no próximo acesso.",
+    "name": "Nome completo",
+    "email": "E-mail corporativo",
+    "password": "Senha",
+    "passwordHint": "Pelo menos 8 caracteres. Compartilhe em particular.",
+    "generate": "Gerar",
+    "add": "Adicionar membro",
+    "save": "Salvar alterações"
+  },
+  "errors": {
+    "name": "Digite o nome completo (2 a 100 caracteres).",
+    "email": "Digite um e-mail como nome@empresa.com.",
+    "password": "Use de 8 a 50 caracteres."
+  },
+  "toast": {
+    "added": "{{name}} adicionado",
+    "updated": "{{name}} atualizado",
+    "held": "{{name}} está pausado",
+    "activated": "{{name}} está ativo",
+    "removed": "{{name}} removido",
+    "statusFailed": "O status não mudou. Tente de novo.",
+    "removeFailed": "A pessoa não foi removida. Tente de novo.",
+    "saveFailed": "Não foi salvo. Tente de novo."
+  }
+}

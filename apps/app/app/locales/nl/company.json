@@ -1,0 +1,63 @@
+{
+  "title": "Bedrijfsprofiel",
+  "unnamed": "Uw bedrijf",
+  "jobs_one": "{{open}} open van {{count}} geplaatste vacature",
+  "jobs_other": "{{open}} open van {{count}} geplaatste vacatures",
+  "kyc": {
+    "approved": "Geverifieerd",
+    "verified": "Geverifieerd",
+    "pending": "Wordt beoordeeld",
+    "rejected": "Aanpassing nodig"
+  },
+  "details": {
+    "title": "Bedrijfsgegevens",
+    "edit": "Bewerken",
+    "email": "Officieel e-mailadres",
+    "industry": "Sector",
+    "chooseIndustry": "Kies een sector",
+    "website": "Website",
+    "linkedin": "LinkedIn-pagina",
+    "linkedinOpen": "Openen op LinkedIn",
+    "address": "Adres",
+    "description": "Over het bedrijf",
+    "descriptionHint": "Kandidaten lezen dit bij uw vacatures. Maximaal 500 tekens."
+  },
+  "logo": {
+    "label": "Logo",
+    "upload": "Logo uploaden",
+    "replace": "Logo vervangen",
+    "hint": "Een vierkante PNG, JPG of WebP tot 5 MB. Het wordt vierkant bijgesneden, zoals getoond.",
+    "tooLarge": "Het logo is groter dan 5 MB. Kies een kleinere afbeelding.",
+    "wrongType": "Gebruik een PNG-, JPG- of WebP-afbeelding."
+  },
+  "account": {
+    "title": "Uw account",
+    "name": "Naam",
+    "email": "Inlog-e-mailadres",
+    "phone": "Telefoon"
+  },
+  "legal": {
+    "title": "Registratie",
+    "note": "Deze zijn gecontroleerd toen uw bedrijf werd geverifieerd. Neem contact op om ze te wijzigen.",
+    "registration": "Registratienummer",
+    "gst": "GSTIN",
+    "pan": "PAN"
+  },
+  "documents": {
+    "registration_certificate": "Registratiebewijs",
+    "gst_certificate": "GST-certificaat",
+    "address_proof": "Adresbewijs",
+    "bank_proof": "Bankbewijs"
+  },
+  "errors": {
+    "email": "Vul een e-mailadres in zoals hr@bedrijf.nl.",
+    "address": "Vul het volledige adres in.",
+    "industry": "Kies een sector.",
+    "linkedin": "Vul een linkedin.com-link in, of laat het leeg.",
+    "description": "Houd het bij 500 tekens."
+  },
+  "save": "Wijzigingen opslaan",
+  "saving": "Bezig met opslaan…",
+  "saved": "Bedrijfsgegevens opgeslagen",
+  "saveFailed": "Dat is niet opgeslagen. Uw wijzigingen staan er nog; probeer het opnieuw."
+}

@@ -1,0 +1,180 @@
+{
+  "profile": {
+    "title": "候補者のプロフィール",
+    "unnamed": "候補者",
+    "verified": "確認済み",
+    "contact": "連絡先",
+    "email": "メール",
+    "phone": "電話",
+    "location": "所在地",
+    "experience": "経験",
+    "copy": "コピー",
+    "fresher": "未経験",
+    "years_other": "{{count}} 年",
+    "empty": "候補者はまだ経歴を追加していません。",
+    "skills": "スキル",
+    "work": "職歴",
+    "education": "学歴",
+    "projects": "プロジェクト",
+    "untitled": "無題のプロジェクト",
+    "awards": "資格",
+    "pay": "給与",
+    "current": "現在",
+    "expected": "希望",
+    "lpa": "₹{{value}} LPA",
+    "availability": "入社可能時期",
+    "notSaid": "退職予告期間は未記入",
+    "immediate": "すぐに入社可能",
+    "notice_other": "退職予告 {{formatted}} 日",
+    "openTo": "希望勤務地：{{places}}",
+    "industry": "希望業界：{{industry}}",
+    "applied": "あなたの求人への応募",
+    "documents": "書類",
+    "resume": "履歴書",
+    "noticeProof": "退職予告期間の証明",
+    "address": "住所",
+    "scorecard": "スコアカード",
+    "back": "アンロック済みの候補者"
+  },
+  "scorecard": {
+    "title": "スコアカード",
+    "profile": "プロフィール"
+  },
+  "missing": {
+    "title": "この候補者が見つかりません",
+    "body": "リンクが不完全か、この候補者がこのアカウントでアンロックされていない可能性があります。",
+    "scorecardTitle": "スコアカードはまだありません",
+    "scorecardBody": "スコアカードは面接終了の数分後にできあがります。それ以上経っている場合は、リンクが不完全かもしれません。",
+    "back": "アンロック済みの候補者に戻る",
+    "backOwn": "スコアカード一覧に戻る"
+  },
+  "share": {
+    "button": "共有",
+    "title": "{{name}} さんのスコアカードを共有",
+    "lead": "リンクを持つ人は、期限切れか閲覧上限に達するまで、連絡先を除くスコアカードとプロフィールを見られます。",
+    "job": "対象の求人",
+    "chooseJob": "求人を選択",
+    "days": "有効期間（日）",
+    "daysHint": "最長 {{max}} 日。",
+    "views": "閲覧上限",
+    "viewsHint": "開くたびに1回と数えます。",
+    "create": "リンクを作成",
+    "creating": "作成中…",
+    "failed": "リンクを作成できませんでした。少ししてからもう一度お試しください。",
+    "errors": {
+      "job": "共有する求人を選んでください。",
+      "days": "1〜{{max}} の整数を入力してください。",
+      "views": "1 以上の整数を入力してください。"
+    },
+    "readyTitle": "リンクの準備ができました",
+    "readyLead": "{{name}} さんのスコアカードを見せたい人に送ってください。",
+    "copy": "リンクをコピー",
+    "expires": "{{date}} まで有効",
+    "viewLimit_other": "{{count}} 回",
+    "noLink": "リンクは作成されましたが、表示できない形式で返ってきました。共有リンクの一覧で確認してください。",
+    "done": "完了"
+  },
+  "links": {
+    "title": "共有リンク",
+    "lead": "チーム外に共有したスコアカードです。リンクを取り消すとすぐに使えなくなります。",
+    "columns": {
+      "candidate": "候補者",
+      "job": "求人",
+      "views": "閲覧数",
+      "expires": "有効期限",
+      "status": "状態"
+    },
+    "views": "{{count}} / {{max}}",
+    "state": {
+      "active": "有効",
+      "revoked": "取り消し済み",
+      "expired": "期限切れ",
+      "used": "閲覧上限に到達"
+    },
+    "actions": "{{name}} さんのリンクの操作",
+    "edit": "上限を変更",
+    "revoke": "取り消す",
+    "restore": "再び有効にする",
+    "delete": "削除",
+    "revoked": "{{name}} さんのスコアカードへのリンクを取り消しました",
+    "deleted": "リンクを削除しました",
+    "saved": "リンクを更新しました",
+    "failed": "うまくいきませんでした。もう一度お試しください。",
+    "deleteTitle": "このリンクを削除しますか？",
+    "deleteBody": "{{name}} さんのスコアカードへのリンクは使えなくなり、一覧からも消えます。元に戻せません。",
+    "editTitle": "{{name}} さんのリンクの上限を変更",
+    "editLead": "リンクの期間や閲覧回数を増やせます。リンクを持つ人は同じリンクを使い続けられます。",
+    "extend": "日数を追加",
+    "extendHint": "0 なら現在の日付のまま。最大 {{max}}。",
+    "viewsHint_other": "これまでに {{count}} 回使われています。",
+    "save": "保存",
+    "errors": {
+      "days": "0〜{{max}} の整数を入力してください。",
+      "views": "{{min}} 以上の整数を入力してください。"
+    },
+    "emptyTitle": "共有リンクはまだありません",
+    "emptyBody": "アンロック済みの候補者からスコアカードを共有すると、ここに表示されます。",
+    "toUnlocked": "アンロック済みの候補者を開く"
+  },
+  "own": {
+    "title": "あなたのプロフィール",
+    "fromResume": "履歴書からの情報です。AI が求人とマッチさせると、雇用主に表示されます。",
+    "emptyBackground": "履歴書からの情報はまだありません。",
+    "completion": "プロフィールの完成度",
+    "interviews": "AI 面接",
+    "interviewsUsed": "{{max}} 回中 {{used}} 回使用",
+    "interviewsLeft_other": "（残り {{count}} 回）",
+    "edit": "{{section}}を編集",
+    "editShort": "編集",
+    "save": "保存",
+    "saving": "保存中…",
+    "saved": "保存しました",
+    "saveFailed": "保存できませんでした。変更内容は残っています。もう一度お試しください。",
+    "contact": {
+      "title": "連絡先",
+      "city": "お住まいの都市"
+    },
+    "work": {
+      "title": "仕事と給与",
+      "company": "現在または直近の会社",
+      "lastDay": "最終出勤日",
+      "currentLpa": "現在の給与（LPA）",
+      "expectedLpa": "希望給与（LPA）"
+    },
+    "preferences": {
+      "title": "希望条件",
+      "industry": "業界",
+      "choose": "選択…",
+      "places": "希望勤務地",
+      "placesHint": "都市はカンマで区切ってください。"
+    },
+    "docs": {
+      "resume": "履歴書",
+      "experience_letter": "在職証明書",
+      "resignation_letter": "退職届",
+      "notice_period_prof": "退職予告期間の証明",
+      "present_offer": "現在の内定通知"
+    },
+    "errors": {
+      "city": "都市を入力してください。",
+      "address": "住所を10文字以上で入力してください。",
+      "company": "会社名を入力してください。",
+      "ctc": "ラク単位で金額を入力してください（例：8.5）。",
+      "expectedLow": "希望給与は現在の給与より低くできません。",
+      "lastDay": "日付を入力してください。",
+      "industry": "業界を選んでください。",
+      "places": "都市を1つ以上追加してください。"
+    }
+  },
+  "list": {
+    "title": "あなたのスコアカード",
+    "lead": "AI 面接ごとの結果です。応募先の雇用主には最新のものが表示されます。",
+    "interview": "面接",
+    "open": "スコアカードを開く",
+    "more": "ほか {{count}} 件",
+    "emptyTitle": "スコアカードはまだありません",
+    "emptyBody": "デスクトップアプリで AI 面接を受けてください。終了から数分でスコアカードができあがります。",
+    "download": "アプリをダウンロード",
+    "guide": "使い方"
+  }
+}

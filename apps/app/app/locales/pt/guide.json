@@ -1,0 +1,54 @@
+{
+  "title": "Guia da entrevista",
+  "lead": "Oito etapas do download até sua primeira pergunta. Marque cada uma enquanto se prepara.",
+  "progress": "{{done}} de {{total}} prontas",
+  "progressLabel": "Etapas prontas",
+  "reset": "Recomeçar",
+  "phases": {
+    "setup": "Preparação",
+    "security": "Verificações de segurança",
+    "interview": "A entrevista"
+  },
+  "steps": {
+    "download": {
+      "title": "Instale o aplicativo para computador",
+      "body": "As entrevistas acontecem só no aplicativo para computador da LetsHyre, para a sessão ficar segura.",
+      "link": "Baixar para o seu computador"
+    },
+    "signIn": {
+      "title": "Entre no aplicativo",
+      "body": "Use o mesmo e-mail e senha daqui. Sua foto de perfil e resultados vão junto."
+    },
+    "dashboard": {
+      "title": "Comece pelo seu painel",
+      "body": "Selecione Fazer entrevista. O aplicativo verifica seu computador antes de abrir qualquer outra coisa."
+    },
+    "clearEnv": {
+      "title": "Feche os outros aplicativos",
+      "body": "Navegadores, gravadores de tela, assistentes de IA e aplicativos de videochamada precisam estar fechados para continuar.",
+      "tip": "Feche todo o resto antes de selecionar Fazer entrevista."
+    },
+    "permissions": {
+      "title": "Permita câmera, microfone e tela",
+      "body": "Os três são necessários para a supervisão. Permita cada um quando o computador pedir."
+    },
+    "verifyId": {
+      "title": "Confirme que é você",
+      "body": "Leia uma frase curta em voz alta, e a câmera tira uma foto para comparar com sua foto de perfil.",
+      "tip": "Olhe para a câmera num ambiente bem iluminado."
+    },
+    "chooseRole": {
+      "title": "Escolha a vaga",
+      "body": "Escolha a vaga para a qual está fazendo a entrevista. Começa pela do seu perfil."
+    },
+    "begin": {
+      "title": "Comece",
+      "body": "A entrevista abre em tela cheia com a gravação ligada. Responda cada pergunta no tempo dela; você pode navegar entre as perguntas até o cronômetro acabar."
+    }
+  },
+  "cta": {
+    "title": "Baixe o aplicativo para computador",
+    "body": "Entre com sua conta LetsHyre e comece quando estiver pronto.",
+    "button": "Baixar o aplicativo"
+  }
+}

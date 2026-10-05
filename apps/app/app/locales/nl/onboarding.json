@@ -1,0 +1,73 @@
+{
+  "title": "Vertel ons over uw bedrijf",
+  "lead": "Ongeveer vijf minuten, in drie stappen. We bewaren uw voortgang op dit apparaat, dus u kunt stoppen en later terugkomen.",
+  "steps": {
+    "company": "Bedrijfsgegevens",
+    "legal": "Registratie en belasting",
+    "documents": "Documenten"
+  },
+  "fields": {
+    "companyName": "Bedrijfsnaam",
+    "website": "Website",
+    "officialEmail": "Officieel e-mailadres",
+    "officialEmailHint": "Hierheen sturen we account- en factuurberichten.",
+    "industry": "Sector",
+    "industryPlaceholder": "Kies een sector",
+    "industryFailed": "De sectoren zijn niet geladen. Laad de pagina opnieuw.",
+    "linkedin": "LinkedIn-pagina van het bedrijf",
+    "description": "Wat doet uw bedrijf?",
+    "descriptionCount": "{{count}} / 500",
+    "registration": "Registratienummer van het bedrijf",
+    "registrationHint": "Het CIN of het nummer van uw registratiebewijs, bijv. U72900TG2024PTC123456.",
+    "pan": "PAN",
+    "gst": "GSTIN",
+    "address": "Statutair adres"
+  },
+  "documents": {
+    "lead": "Duidelijke scans of foto's, tot 5 MB per stuk. Kandidaten zien deze nooit.",
+    "company_logo": {
+      "label": "Bedrijfslogo",
+      "hint": "Vierkant werkt het best"
+    },
+    "registration_certificate": {
+      "label": "Registratiebewijs",
+      "hint": "Oprichtingsakte"
+    },
+    "gst_certificate": {
+      "label": "GST-certificaat",
+      "hint": "Uw GST-registratie"
+    },
+    "address_proof": {
+      "label": "Adresbewijs",
+      "hint": "Een energierekening of huurcontract"
+    }
+  },
+  "draftSaved": "Concept opgeslagen op dit apparaat. Als u weggaat, moet u de documenten opnieuw toevoegen.",
+  "submitting": "Uw documenten worden geüpload… {{percent}}%",
+  "submitFailed": "We konden uw gegevens niet versturen. Alles wat u invulde staat er nog, dus probeer het opnieuw.",
+  "validation": {
+    "nameMin": "Vul de naam van uw bedrijf in",
+    "website": "Vul een webadres in zoals https://example.com",
+    "email": "Vul een e-mailadres in zoals boekhouding@bedrijf.nl",
+    "industry": "Kies een sector",
+    "linkedin": "Vul een webadres in zoals https://www.linkedin.com/company/example",
+    "linkedinDomain": "Gebruik de linkedin.com-pagina van uw bedrijf",
+    "description": "Schrijf minstens één zin over wat u doet",
+    "registration": "Vul uw registratienummer in (5 tot 50 tekens)",
+    "pan": "Een PAN heeft 10 tekens, zoals ABCDE1234F",
+    "gst": "Een GSTIN heeft 15 tekens, zoals 36ABCDE1234F1Z5",
+    "address": "Vul uw statutaire adres in",
+    "fileRequired": "Voeg dit document toe",
+    "fileInvalid": "Gebruik een bestand van een toegestaan type, tot 5 MB"
+  },
+  "done": {
+    "title": "Bedankt, uw gegevens zijn binnen",
+    "lead": "U kunt uw account gebruiken terwijl wij uw documenten controleren.",
+    "nextHeading": "Wat er nu gebeurt",
+    "review": "Ons team bekijkt uw bedrijfsgegevens en documenten.",
+    "contact": "Als er iets ontbreekt, mailen we naar {{email}}.",
+    "start": "Intussen kunt u vacatures plaatsen en kandidaten bekijken.",
+    "postJob": "Plaats uw eerste vacature",
+    "dashboard": "Naar het dashboard"
+  }
+}

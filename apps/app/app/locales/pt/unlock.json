@@ -1,0 +1,70 @@
+{
+  "panel": {
+    "title": "Desbloquear",
+    "lead": "Desbloquear mostra os contatos, a avaliação completa, a gravação e o currículo. Cada entrevista custa um crédito.",
+    "matched": "O cargo desta vaga",
+    "unlocked": "Desbloqueado",
+    "button_one": "Desbloquear · {{count}} crédito",
+    "button_many": "Desbloquear · {{count}} créditos",
+    "button_other": "Desbloquear · {{count}} créditos",
+    "pick": "Escolha pelo menos uma entrevista.",
+    "balance": "Saldo",
+    "short": "São necessários {{cost}} créditos e você tem {{balance}}. Adicione créditos e você volta para cá.",
+    "addCredits": "Adicionar créditos",
+    "none": "Ainda sem entrevistas com IA, então não há nada para desbloquear.",
+    "allUnlocked": "Tudo deste candidato está desbloqueado.",
+    "openUnlocked": "Ver candidatos desbloqueados",
+    "failed": "O desbloqueio não foi concluído. Confira seu saldo antes de tentar de novo."
+  },
+  "confirm": {
+    "title": "Desbloquear {{name}}?",
+    "body_one": "Isso usa {{count}} crédito e não pode ser desfeito. Vão sobrar {{left}}.",
+    "body_many": "Isso usa {{count}} créditos e não pode ser desfeito. Vão sobrar {{left}}.",
+    "body_other": "Isso usa {{count}} créditos e não pode ser desfeito. Vão sobrar {{left}}."
+  },
+  "done": "{{name}} desbloqueado",
+  "doneBody_one": "{{count}} crédito usado, restam {{left}}.",
+  "doneBody_many": "{{count}} créditos usados, restam {{left}}.",
+  "doneBody_other": "{{count}} créditos usados, restam {{left}}.",
+  "pool": {
+    "title": "Banco de candidatos",
+    "lead": "Pessoas que nossa IA ligou às suas vagas abertas, melhor correspondência primeiro.",
+    "job": "Vaga",
+    "chooseJob": "Escolha uma vaga",
+    "matched": "Ligados pela IA",
+    "applied": "Candidatados",
+    "noJobsTitle": "Nenhuma vaga aberta",
+    "noJobsBody": "As correspondências vêm das suas vagas abertas. Publique uma ou reabra uma pausada.",
+    "postJob": "Publicar uma vaga",
+    "emptyTitle": "Ainda não há correspondências",
+    "emptyBody": "Nossa IA continua buscando correspondências à medida que os candidatos terminam as entrevistas. Volte em breve.",
+    "emptyApplied": "Ninguém se candidatou a esta vaga ainda.",
+    "summary": "{{matched}} de {{total}} candidatos combinam"
+  },
+  "list": {
+    "title": "Candidatos desbloqueados",
+    "lead": "Todos que você desbloqueou, dos mais recentes para os mais antigos.",
+    "sharedLinks": "Links compartilhados",
+    "columns": {
+      "candidate": "Candidato",
+      "experience": "Experiência",
+      "place": "Local",
+      "pay": "Salário (LPA)",
+      "notice": "Aviso prévio",
+      "interview": "Entrevista",
+      "unlocked": "Desbloqueado"
+    },
+    "years_one": "{{count}} ano",
+    "years_many": "{{count}} anos",
+    "years_other": "{{count}} anos",
+    "days_one": "{{count}} dia",
+    "days_many": "{{count}} dias",
+    "days_other": "{{count}} dias",
+    "verified": "Verificado",
+    "profile": "Perfil",
+    "scorecard": "Avaliação",
+    "emptyTitle": "Ninguém desbloqueado ainda",
+    "emptyBody": "Desbloqueie um candidato no banco ou numa lista de candidaturas para ver os dados dele aqui.",
+    "toPool": "Abrir o banco de candidatos"
+  }
+}

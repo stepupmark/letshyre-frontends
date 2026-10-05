@@ -1,0 +1,77 @@
+{
+  "title": "Painel",
+  "postJob": "Publicar uma vaga",
+  "attention": {
+    "heading": "Precisa da sua atenção",
+    "addCredits": "Adicionar créditos",
+    "viewJobs": "Ver vagas",
+    "postJob": "Publicar uma vaga",
+    "creditsOut": {
+      "title": "Seus créditos acabaram",
+      "body": "Adicione créditos para desbloquear os contatos dos candidatos."
+    },
+    "creditsLow": {
+      "title": "Seus créditos estão acabando",
+      "body_one": "Você tem {{count}} crédito. Cada desbloqueio usa um.",
+      "body_many": "Você tem {{count}} créditos. Cada desbloqueio usa um.",
+      "body_other": "Você tem {{count}} créditos. Cada desbloqueio usa um."
+    },
+    "noOpenJobs": {
+      "title": "Nenhuma vaga está aberta",
+      "body_one": "{{count}} vaga está encerrada ou em rascunho. Reabra para continuar recebendo candidatos.",
+      "body_many": "{{count}} vagas estão encerradas ou em rascunho. Reabra uma para continuar recebendo candidatos.",
+      "body_other": "{{count}} vagas estão encerradas ou em rascunho. Reabra uma para continuar recebendo candidatos."
+    },
+    "noJobs": {
+      "title": "Publique sua primeira vaga",
+      "body": "Os candidatos que combinam com ela são entrevistados pela nossa IA antes de você vê-los."
+    },
+    "clear": {
+      "title": "Está tudo em dia.",
+      "body": "Nada precisa de você agora."
+    }
+  },
+  "stats": {
+    "heading": "Contratação",
+    "open": "Vagas abertas",
+    "closed": "Encerradas ou em rascunho",
+    "applications": "Candidaturas recebidas"
+  },
+  "credits": {
+    "heading": "Créditos",
+    "low": "Baixo",
+    "explain": "Um crédito desbloqueia os contatos, a gravação e o currículo de um candidato.",
+    "used": "{{percent}}% dos seus créditos usados",
+    "add": "Adicionar créditos",
+    "invoices": "Notas fiscais"
+  },
+  "setup": {
+    "title": "Termine a configuração",
+    "progress": "{{done}} de {{total}} feitos",
+    "hide": "Ocultar",
+    "isDone": "(feito)",
+    "isTodo": "(a fazer)",
+    "account": {
+      "title": "Crie sua conta",
+      "done": "Feito",
+      "todo": "Cadastre-se com seu e-mail corporativo."
+    },
+    "company": {
+      "title": "Adicione dados e documentos da empresa",
+      "done": "Enviado para análise",
+      "todo": "Nome, site e documentos de registro da sua empresa."
+    },
+    "job": {
+      "title": "Publique sua primeira vaga",
+      "done": "Feito",
+      "todo": "Envie a descrição da vaga e nós preenchemos o formulário.",
+      "action": "Publicar uma vaga"
+    },
+    "team": {
+      "title": "Convide sua equipe",
+      "done": "Feito",
+      "todo": "Adicione colegas para avaliarem candidatos com você.",
+      "action": "Convidar"
+    }
+  }
+}

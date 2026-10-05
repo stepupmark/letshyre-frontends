@@ -1,40 +1,133 @@
 {
+  "title": "Interviewscorekaart",
+  "print": "Afdrukken",
+  "provenance": {
+    "sharedBy": "Privé gedeeld door {{company}}. De link heeft een weergavelimiet en een vervaldatum, stuur hem dus niet door.",
+    "private": "Privé gedeeld. De link heeft een weergavelimiet en een vervaldatum, stuur hem dus niet door."
+  },
   "header": {
     "unnamed": "Kandidaat",
     "fresher": "Starter",
-    "matchedTo": "Gematcht met {{job}}",
     "experience_one": "{{count}} jaar ervaring",
-    "experience_other": "{{count}} jaar ervaring"
+    "experience_other": "{{count}} jaar ervaring",
+    "matchedTo": "Gematcht met {{job}}",
+    "yours": "Uw interviewscorekaart",
+    "taken": "Interview op {{date}}"
+  },
+  "summary": {
+    "heading": "Samenvatting",
+    "outOf": "/ 100",
+    "basedOn_one": "Gebaseerd op {{count}} beantwoorde vraag",
+    "basedOn_other": "Gebaseerd op {{count}} beantwoorde vragen",
+    "howScored": "Hoe wordt dit gescoord?",
+    "howScoredBody": "De AI-interviewer scoort elk antwoord tegen de functie en controleert het daarna op helderheid, relevantie en diepgang. Gebruik de score als startpunt voor uw beslissing, niet als vervanging ervan.",
+    "howScoredYours": "De AI-interviewer scoort elk antwoord tegen de functie en controleert het daarna op helderheid, relevantie en diepgang. Werkgevers zien dezelfde scores, dus de verbeterpunten zijn een goed startpunt."
+  },
+  "match": {
+    "heading": "Match met de vacature",
+    "headingFor": "Match met {{job}}",
+    "overall": "Totaal",
+    "role": "Functie",
+    "skills": "Vaardigheden",
+    "why": "Waarom deze match"
   },
   "metrics": {
+    "heading": "Communicatie",
     "clarity": "Duidelijkheid",
     "relevance": "Relevantie",
-    "confidence": "Zelfvertrouwen"
+    "confidence": "Zelfvertrouwen",
+    "depth": "Diepgang van denken",
+    "keyConcept": "Behandelde kernbegrippen"
   },
   "types": {
-    "coding": "Codering"
+    "heading": "Per vraagsoort",
+    "correct_one": "{{correct}} van {{count}} goed",
+    "correct_other": "{{correct}} van {{count}} goed",
+    "mcq": "Meerkeuze",
+    "pseudocode_mcq": "Pseudocode",
+    "coding": "Codering",
+    "typing": "Schriftelijk",
+    "audio": "Mondeling"
   },
   "insights": {
+    "heading": "Inzichten",
     "strengths": "Sterke punten",
+    "improve": "Verbeterpunten",
     "recommendations": "Aanbevelingen"
   },
+  "recording": {
+    "heading": "Opname",
+    "unsupported": "Uw browser kan deze opname niet afspelen.",
+    "failed": "De opname is niet geladen. De link is misschien verlopen.",
+    "retry": "Opnieuw proberen"
+  },
   "profile": {
+    "heading": "Profiel",
+    "empty": "De kandidaat heeft nog geen profielgegevens toegevoegd.",
     "skills": "Vaardigheden",
     "experience": "Ervaring",
     "education": "Opleiding",
     "projects": "Projecten",
-    "resume": "Cv"
+    "awards": "Certificaten en prestaties",
+    "links": "Cv en links",
+    "resume": "Cv",
+    "untitled": "Project zonder titel"
   },
   "answers": {
+    "heading": "Antwoorden",
+    "none": "Dit interview heeft geen beantwoorde vragen.",
     "expandAll": "Alles uitklappen",
     "collapseAll": "Alles inklappen",
+    "number": "Vraag {{number}}",
+    "noQuestion": "Vraagtekst niet beschikbaar",
+    "answer": "Antwoord",
+    "assessment": "Beoordeling",
+    "correct": "Goed",
+    "wrong": "Fout",
+    "chosen": "Gegeven antwoord",
+    "correctAnswer": "Juiste antwoord",
+    "noAnswer": "Geen antwoord gegeven.",
+    "noCode": "Geen code ingediend.",
+    "noAudio": "Geen audio opgenomen.",
+    "audioUnsupported": "Uw browser kan deze audio niet afspelen.",
     "types": {
-      "coding": "Codering"
-    }
+      "mcq": "Meerkeuze",
+      "mcq_pseudocode": "Pseudocode",
+      "pseudocode_mcq": "Pseudocode",
+      "coding": "Codering",
+      "typing": "Schriftelijk",
+      "audio": "Mondeling",
+      "other": "Vraag"
+    },
+    "yours": "Uw antwoord"
   },
   "toc": {
+    "label": "Op deze pagina",
+    "summary": "Samenvatting",
     "communication": "Communicatie",
+    "types": "Per vraagsoort",
     "insights": "Inzichten",
-    "profile": "Profiel"
+    "recording": "Opname",
+    "profile": "Profiel",
+    "answers": "Antwoorden"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "Deze link werkt niet",
+      "body": "Hij is misschien verkeerd getypt of verwijderd. Vraag de persoon die hem deelde om een nieuwe link."
+    },
+    "expired": {
+      "title": "Deze link is verlopen",
+      "body": "Gedeelde scorekaarten zijn maar een beperkte tijd beschikbaar. Vraag de persoon die hem deelde om een nieuwe link."
+    },
+    "limit": {
+      "title": "Deze link heeft zijn weergavelimiet bereikt",
+      "body": "Vraag de persoon die hem deelde om een nieuwe link."
+    },
+    "unavailable": {
+      "title": "Deze scorekaart is niet geladen",
+      "body": "Er ging iets mis bij ons. Probeer het zo opnieuw."
+    },
+    "retry": "Opnieuw proberen"
   }
 }

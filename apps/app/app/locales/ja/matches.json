@@ -1,0 +1,38 @@
+{
+  "bands": {
+    "all": "すべて",
+    "strong": "高",
+    "partial": "中",
+    "low": "低"
+  },
+  "columns": {
+    "candidate": "候補者",
+    "match": "マッチ",
+    "experience": "経験",
+    "interviews": "面接"
+  },
+  "years_other": "{{count}} 年",
+  "unnamed": "名前のない候補者",
+  "sortedNote": "マッチ度の高い順",
+  "peek": {
+    "why": "マッチの理由",
+    "whyNote": "AI 面接と履歴書に基づいています。判断する前にスコアカードを確認してください。",
+    "noReason": "AI はこのマッチの理由を示していません。",
+    "role": "職種への適合",
+    "skills": "スキルの適合",
+    "has": "あり",
+    "missing": "不足",
+    "noneMissing": "求人の条件はすべて満たしています。",
+    "interviews": "AI 面接",
+    "noInterviews": "AI 面接はまだありません。",
+    "experience_other": "経験 {{count}} 年"
+  },
+  "applicants": {
+    "title": "応募者",
+    "lead_other": "応募 {{count}} 件・マッチ度の高い順",
+    "leadEmpty": "まだ応募はありません。",
+    "emptyTitle": "応募者はまだいません",
+    "emptyBody": "応募者は AI 面接を終えるとここに表示されます。候補者プールから探すこともできます。",
+    "pool": "候補者プールを開く"
+  }
+}

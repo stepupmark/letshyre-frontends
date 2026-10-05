@@ -1,40 +1,130 @@
 {
+  "title": "面接スコアカード",
+  "print": "印刷",
+  "provenance": {
+    "sharedBy": "{{company}} から非公開で共有されました。リンクには閲覧回数と有効期限の上限があるため、転送しないでください。",
+    "private": "非公開で共有されました。リンクには閲覧回数と有効期限の上限があるため、転送しないでください。"
+  },
   "header": {
     "unnamed": "候補者",
     "fresher": "未経験",
+    "experience_other": "経験 {{count}} 年",
     "matchedTo": "{{job}} にマッチ",
-    "experience_one": "経験 {{count}} 年",
-    "experience_other": "経験 {{count}} 年"
+    "yours": "あなたの面接スコアカード",
+    "taken": "{{date}} に面接"
+  },
+  "summary": {
+    "heading": "まとめ",
+    "outOf": "/ 100",
+    "basedOn_other": "回答済みの {{count}} 問に基づく",
+    "howScored": "どのように採点していますか？",
+    "howScoredBody": "AI 面接官は各回答を職種に照らして採点し、明確さ、関連性、深さを確認します。スコアは判断の出発点として使い、判断そのものの代わりにはしないでください。",
+    "howScoredYours": "AI 面接官は各回答を職種に照らして採点し、明確さ、関連性、深さを確認します。雇用主にも同じスコアが表示されるので、改善点から始めるのがおすすめです。"
+  },
+  "match": {
+    "heading": "求人への適合",
+    "headingFor": "{{job}} への適合",
+    "overall": "総合",
+    "role": "職種",
+    "skills": "スキル",
+    "why": "マッチの理由"
   },
   "metrics": {
+    "heading": "コミュニケーション",
     "clarity": "明瞭さ",
     "relevance": "関連性",
-    "confidence": "自信"
+    "confidence": "自信",
+    "depth": "思考の深さ",
+    "keyConcept": "押さえた重要概念"
   },
   "types": {
-    "coding": "コーディング"
+    "heading": "問題の種類別",
+    "correct_other": "{{count}} 問中 {{correct}} 問正解",
+    "mcq": "選択式",
+    "pseudocode_mcq": "疑似コード",
+    "coding": "コーディング",
+    "typing": "記述式",
+    "audio": "口頭"
   },
   "insights": {
+    "heading": "所見",
     "strengths": "強み",
+    "improve": "改善点",
     "recommendations": "推奨事項"
   },
+  "recording": {
+    "heading": "録画",
+    "unsupported": "このブラウザではこの録画を再生できません。",
+    "failed": "録画を読み込めませんでした。リンクの有効期限が切れた可能性があります。",
+    "retry": "再試行"
+  },
   "profile": {
+    "heading": "プロフィール",
+    "empty": "候補者はまだプロフィールを追加していません。",
     "skills": "スキル",
     "experience": "経験",
     "education": "学歴",
     "projects": "プロジェクト",
-    "resume": "履歴書"
+    "awards": "資格と実績",
+    "links": "履歴書とリンク",
+    "resume": "履歴書",
+    "untitled": "無題のプロジェクト"
   },
   "answers": {
+    "heading": "回答",
+    "none": "この面接には回答済みの質問がありません。",
     "expandAll": "すべて展開",
     "collapseAll": "すべて折りたたむ",
+    "number": "質問 {{number}}",
+    "noQuestion": "質問文を表示できません",
+    "answer": "回答",
+    "assessment": "評価",
+    "correct": "正解",
+    "wrong": "不正解",
+    "chosen": "選んだ回答",
+    "correctAnswer": "正しい回答",
+    "noAnswer": "回答なし。",
+    "noCode": "コードの提出なし。",
+    "noAudio": "音声の録音なし。",
+    "audioUnsupported": "このブラウザではこの音声を再生できません。",
     "types": {
-      "coding": "コーディング"
-    }
+      "mcq": "選択式",
+      "mcq_pseudocode": "疑似コード",
+      "pseudocode_mcq": "疑似コード",
+      "coding": "コーディング",
+      "typing": "記述式",
+      "audio": "口頭",
+      "other": "質問"
+    },
+    "yours": "あなたの回答"
   },
   "toc": {
+    "label": "このページの内容",
+    "summary": "まとめ",
     "communication": "コミュニケーション",
+    "types": "問題の種類別",
     "insights": "インサイト",
-    "profile": "プロフィール"
+    "recording": "録画",
+    "profile": "プロフィール",
+    "answers": "回答"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "このリンクは使えません",
+      "body": "入力ミスか、削除された可能性があります。共有した人に新しいリンクを依頼してください。"
+    },
+    "expired": {
+      "title": "このリンクは期限切れです",
+      "body": "共有されたスコアカードは期間限定です。共有した人に新しいリンクを依頼してください。"
+    },
+    "limit": {
+      "title": "このリンクは閲覧上限に達しました",
+      "body": "共有した人に新しいリンクを依頼してください。"
+    },
+    "unavailable": {
+      "title": "このスコアカードを読み込めませんでした",
+      "body": "こちらで問題が発生しました。少ししてからもう一度お試しください。"
+    },
+    "retry": "再試行"
   }
 }

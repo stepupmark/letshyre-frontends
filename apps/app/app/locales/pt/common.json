@@ -1,17 +1,105 @@
 {
+  "appName": "LetsHyre",
   "nav": {
     "dashboard": "Painel"
   },
   "notFound": {
-    "title": "Não encontramos esta página"
+    "title": "Não encontramos esta página",
+    "body": "O link pode ser antigo, ou a página mudou de lugar.",
+    "goHome": "Ir para o painel"
   },
   "error": {
     "title": "Esta página não carregou",
-    "retry": "Tentar novamente"
+    "body": "Algo deu errado do nosso lado. Recarregue para tentar de novo, ou fale conosco se continuar.",
+    "retry": "Tentar novamente",
+    "goHome": "Ir para o painel"
+  },
+  "table": {
+    "selectAll": "Selecionar todas as linhas",
+    "selectRow": "Selecionar {{name}}",
+    "selected_one": "{{count}} selecionado",
+    "selected_many": "{{count}} selecionados",
+    "selected_other": "{{count}} selecionados",
+    "clearSelection": "Limpar seleção",
+    "columns": "Colunas",
+    "compact": "Linhas compactas",
+    "sortBy": "Ordenar por {{column}}",
+    "previous": "Página anterior",
+    "next": "Próxima página",
+    "pageOf": "Página {{page}} de {{total}}",
+    "results_one": "{{count}} resultado",
+    "results_many": "{{count}} resultados",
+    "results_other": "{{count}} resultados",
+    "rowActions": "Ações para {{name}}",
+    "bulkActions": "Ações em lote",
+    "navigateHint": "para mover,",
+    "openHint": "para abrir",
+    "enterKey": "Enter",
+    "pages": "Páginas"
+  },
+  "state": {
+    "error": "Isto não carregou.",
+    "errorBody": "Nada se perdeu. Verifique sua conexão e tente de novo.",
+    "retry": "Tentar de novo",
+    "loading": "Carregando"
+  },
+  "empty": {
+    "filteredTitle": "Nenhum resultado",
+    "filteredBody": "Tente outra busca ou limpe os filtros.",
+    "clearFilters": "Limpar filtros"
+  },
+  "upload": {
+    "drop": "Arraste um arquivo para cá, ou",
+    "browse": "escolha um",
+    "hint": "{{types}}, até {{size}}",
+    "tooLarge": "Esse arquivo tem {{size}}. O limite é {{max}}.",
+    "wrongType": "Esse tipo de arquivo não é aceito. Use {{types}}.",
+    "uploading": "Enviando {{name}}",
+    "failed": "O envio falhou. Seu arquivo continua aqui, então dá para tentar de novo.",
+    "retry": "Tentar de novo",
+    "remove": "Remover {{name}}",
+    "done": "Enviado"
+  },
+  "wizard": {
+    "step": "Etapa {{current}} de {{total}}",
+    "back": "Voltar",
+    "next": "Continuar",
+    "finish": "Concluir",
+    "draftSaved": "Rascunho salvo neste dispositivo"
+  },
+  "confirm": {
+    "cancel": "Cancelar"
+  },
+  "undo": "Desfazer",
+  "copy": {
+    "copy": "Copiar",
+    "copied": "Copiado"
+  },
+  "band": {
+    "strong": "Correspondência forte",
+    "partial": "Correspondência parcial",
+    "low": "Correspondência fraca"
+  },
+  "interviewBand": {
+    "strong": "Entrevista forte",
+    "partial": "Entrevista mista",
+    "low": "Entrevista fraca"
+  },
+  "detail": {
+    "previous": "Anterior",
+    "next": "Próximo",
+    "position": "{{current}} de {{total}}"
+  },
+  "releaseCheck": {
+    "title": "Verificação do novo aplicativo",
+    "body": "Esta página é servida pelo novo aplicativo. Se você consegue ler isto, a versão está roteada corretamente."
   },
   "password": {
     "show": "Mostrar palavra-passe",
     "hide": "Ocultar palavra-passe",
     "capsLock": "Caps Lock está ativado"
+  },
+  "tip": {
+    "gotIt": "Entendi"
   }
 }

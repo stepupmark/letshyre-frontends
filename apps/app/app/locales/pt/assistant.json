@@ -1,0 +1,44 @@
+{
+  "title": "Assistente",
+  "lead": {
+    "employer": "Respostas sobre contratar com a LetsHyre: vagas, correspondências, avaliações e créditos.",
+    "candidate": "Respostas sobre sua busca de emprego: candidaturas, entrevistas e sua avaliação."
+  },
+  "log": "Conversa",
+  "you": "Você",
+  "assistant": "Assistente",
+  "greeting": "Olá, sou o assistente da LetsHyre.",
+  "hint": {
+    "employer": "Pergunte qualquer coisa sobre suas contratações. Estas perguntas são comuns nesta página:",
+    "candidate": "Pergunte qualquer coisa sobre sua busca de emprego. Estas perguntas são comuns nesta página:"
+  },
+  "input": "Faça uma pergunta",
+  "send": "Enviar",
+  "stop": "Parar a resposta",
+  "thinking": "Pensando…",
+  "stopped": "Você parou esta resposta.",
+  "failed": "Nenhuma resposta chegou.",
+  "retry": "Tentar de novo",
+  "clear": "Limpar a conversa",
+  "prompts": {
+    "firstJob": "Como publico minha primeira vaga?",
+    "readScorecard": "Como leio a avaliação de um candidato?",
+    "credits": "Como funcionam os créditos?",
+    "betterJob": "Como escrevo uma vaga que tenha correspondências melhores?",
+    "pauseJob": "Como pauso ou encerro uma vaga?",
+    "matchScore": "Como a pontuação de correspondência é calculada?",
+    "unlockCost": "Quanto custa desbloquear um candidato?",
+    "shareScorecard": "Como compartilho uma avaliação com minha equipe?",
+    "gstInvoice": "Posso receber uma nota fiscal com GST?",
+    "findFit": "Como encontro vagas que combinam comigo?",
+    "howInterview": "Como funciona a entrevista com IA?",
+    "afterApply": "O que acontece depois que me candidato?",
+    "shortlist": "Como os empregadores decidem quem pré-selecionar?",
+    "ownScore": "Como minha avaliação é calculada?",
+    "retake": "Posso refazer a entrevista?",
+    "standOut": "Como faço meu perfil se destacar?",
+    "whoSees": "Quem pode ver meus documentos?",
+    "needForInterview": "Do que preciso para a entrevista?",
+    "connectionDrops": "E se minha internet cair durante a entrevista?"
+  }
+}

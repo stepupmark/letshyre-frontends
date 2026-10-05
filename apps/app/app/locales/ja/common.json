@@ -1,17 +1,101 @@
 {
+  "appName": "LetsHyre",
   "nav": {
     "dashboard": "ダッシュボード"
   },
   "notFound": {
-    "title": "このページは見つかりませんでした"
+    "title": "このページは見つかりませんでした",
+    "body": "リンクが古いか、ページが移動した可能性があります。",
+    "goHome": "ダッシュボードへ"
   },
   "error": {
     "title": "ページを読み込めませんでした",
-    "retry": "再試行"
+    "body": "こちらで問題が発生しました。再読み込みしてお試しください。続く場合はお問い合わせください。",
+    "retry": "再試行",
+    "goHome": "ダッシュボードへ"
+  },
+  "table": {
+    "selectAll": "すべての行を選択",
+    "selectRow": "{{name}} を選択",
+    "selected_other": "{{count}} 件選択中",
+    "clearSelection": "選択を解除",
+    "columns": "列",
+    "compact": "行を詰めて表示",
+    "sortBy": "{{column}}で並べ替え",
+    "previous": "前のページ",
+    "next": "次のページ",
+    "pageOf": "{{page}} / {{total}} ページ",
+    "results_other": "{{count}} 件",
+    "rowActions": "{{name}} の操作",
+    "bulkActions": "一括操作",
+    "navigateHint": "で移動、",
+    "openHint": "で開く",
+    "enterKey": "Enter",
+    "pages": "ページ"
+  },
+  "state": {
+    "error": "読み込めませんでした。",
+    "errorBody": "データは失われていません。接続を確認してもう一度お試しください。",
+    "retry": "再試行",
+    "loading": "読み込み中"
+  },
+  "empty": {
+    "filteredTitle": "一致するものがありません",
+    "filteredBody": "検索を変えるか、フィルターをクリアしてください。",
+    "clearFilters": "フィルターをクリア"
+  },
+  "upload": {
+    "drop": "ここにファイルをドラッグするか、",
+    "browse": "選択してください",
+    "hint": "{{types}}、最大 {{size}}",
+    "tooLarge": "ファイルのサイズは {{size}} です。上限は {{max}} です。",
+    "wrongType": "このファイル形式は使えません。{{types}} を使ってください。",
+    "uploading": "{{name}} をアップロード中",
+    "failed": "アップロードに失敗しました。ファイルは残っているので、もう一度お試しいただけます。",
+    "retry": "再試行",
+    "remove": "{{name}} を削除",
+    "done": "アップロード済み"
+  },
+  "wizard": {
+    "step": "ステップ {{current}}/{{total}}",
+    "back": "戻る",
+    "next": "続ける",
+    "finish": "完了",
+    "draftSaved": "この端末に下書きを保存しました"
+  },
+  "confirm": {
+    "cancel": "キャンセル"
+  },
+  "undo": "元に戻す",
+  "copy": {
+    "copy": "コピー",
+    "copied": "コピーしました"
+  },
+  "band": {
+    "strong": "高いマッチ",
+    "partial": "部分的なマッチ",
+    "low": "低いマッチ"
+  },
+  "interviewBand": {
+    "strong": "良好な面接",
+    "partial": "ばらつきのある面接",
+    "low": "課題の多い面接"
+  },
+  "detail": {
+    "previous": "前へ",
+    "next": "次へ",
+    "position": "{{current}} / {{total}}"
+  },
+  "releaseCheck": {
+    "title": "新しいアプリの確認",
+    "body": "このページは新しいアプリから表示されています。これが読めれば、リリースのルーティングは正しく設定されています。"
   },
   "password": {
     "show": "パスワードを表示",
     "hide": "パスワードを非表示",
     "capsLock": "Caps Lock がオンです"
+  },
+  "tip": {
+    "gotIt": "わかりました"
   }
 }

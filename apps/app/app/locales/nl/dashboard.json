@@ -1,0 +1,75 @@
+{
+  "title": "Dashboard",
+  "postJob": "Vacature plaatsen",
+  "attention": {
+    "heading": "Vraagt uw aandacht",
+    "addCredits": "Credits toevoegen",
+    "viewJobs": "Vacatures bekijken",
+    "postJob": "Vacature plaatsen",
+    "creditsOut": {
+      "title": "Uw credits zijn op",
+      "body": "Voeg credits toe om contactgegevens van kandidaten te ontgrendelen."
+    },
+    "creditsLow": {
+      "title": "Uw credits raken op",
+      "body_one": "U hebt nog {{count}} credit. Elke ontgrendeling kost er één.",
+      "body_other": "U hebt nog {{count}} credits. Elke ontgrendeling kost er één."
+    },
+    "noOpenJobs": {
+      "title": "Er staan geen vacatures open",
+      "body_one": "{{count}} vacature is gesloten of een concept. Open hem opnieuw om sollicitanten te blijven ontvangen.",
+      "body_other": "{{count}} vacatures zijn gesloten of concepten. Open er een opnieuw om sollicitanten te blijven ontvangen."
+    },
+    "noJobs": {
+      "title": "Plaats uw eerste vacature",
+      "body": "Passende kandidaten worden door onze AI geïnterviewd voordat u ze ziet."
+    },
+    "clear": {
+      "title": "U bent helemaal bij.",
+      "body": "Er is nu niets dat uw aandacht vraagt."
+    }
+  },
+  "stats": {
+    "heading": "Werving",
+    "open": "Open vacatures",
+    "closed": "Gesloten of concept",
+    "applications": "Ontvangen sollicitaties"
+  },
+  "credits": {
+    "heading": "Credits",
+    "low": "Laag",
+    "explain": "Eén credit ontgrendelt de contactgegevens, opname en het cv van één kandidaat.",
+    "used": "{{percent}}% van uw credits gebruikt",
+    "add": "Credits toevoegen",
+    "invoices": "Facturen"
+  },
+  "setup": {
+    "title": "Rond de inrichting af",
+    "progress": "{{done}} van {{total}} klaar",
+    "hide": "Verbergen",
+    "isDone": "(klaar)",
+    "isTodo": "(te doen)",
+    "account": {
+      "title": "Maak uw account aan",
+      "done": "Klaar",
+      "todo": "Registreer met uw zakelijke e-mailadres."
+    },
+    "company": {
+      "title": "Voeg bedrijfsgegevens en documenten toe",
+      "done": "Ingediend ter beoordeling",
+      "todo": "De naam, website en registratiedocumenten van uw bedrijf."
+    },
+    "job": {
+      "title": "Plaats uw eerste vacature",
+      "done": "Klaar",
+      "todo": "Upload een functieomschrijving en wij vullen het formulier in.",
+      "action": "Vacature plaatsen"
+    },
+    "team": {
+      "title": "Nodig uw team uit",
+      "done": "Klaar",
+      "todo": "Voeg collega's toe zodat ze samen met u kandidaten beoordelen.",
+      "action": "Uitnodigen"
+    }
+  }
+}
