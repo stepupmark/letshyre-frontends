@@ -1,0 +1,71 @@
+{
+  "skipToContent": "Vai al contenuto principale",
+  "loading": "Caricamento della pagina",
+  "toggleSidebar": "Mostra o nascondi la barra laterale",
+  "navigation": "Navigazione principale",
+  "groups": {
+    "hiring": "Assunzioni",
+    "company": "Azienda",
+    "you": "Tu",
+    "help": "Aiuto"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "postJob": "Pubblica un'offerta",
+    "jobs": "Offerte",
+    "candidatePool": "Bacino di candidati",
+    "unlocked": "Candidati sbloccati",
+    "team": "Team",
+    "sharedLinks": "Link condivisi",
+    "billing": "Fatturazione",
+    "findJobs": "Trova lavoro",
+    "applications": "Le mie candidature",
+    "scorecards": "Schede di valutazione",
+    "profile": "Profilo",
+    "interviewGuide": "Guida al colloquio",
+    "assistant": "Assistente"
+  },
+  "search": {
+    "button": "Cerca o vai a…",
+    "shortcut": "Ctrl K",
+    "title": "Cerca",
+    "description": "Vai a una pagina o esegui un'azione",
+    "empty": "Nessun risultato.",
+    "pages": "Pagine"
+  },
+  "credits": {
+    "label_one": "{{count}} credito",
+    "label_many": "{{count}} crediti",
+    "label_other": "{{count}} crediti",
+    "add": "Aggiungi crediti"
+  },
+  "user": {
+    "menu": "Menu dell'account",
+    "profile": "Profilo",
+    "language": "Lingua",
+    "shortcuts": "Scorciatoie da tastiera",
+    "signOut": "Esci",
+    "tips": "Mostra di nuovo i suggerimenti"
+  },
+  "shortcuts": {
+    "title": "Scorciatoie da tastiera",
+    "search": "Cerca e vai alle pagine",
+    "sidebar": "Mostra o nascondi la barra laterale",
+    "help": "Mostra questo elenco"
+  },
+  "tips": {
+    "search": {
+      "title": "Vai ovunque",
+      "body": "Cerca una pagina o un'azione. Premi Ctrl K da qualsiasi punto."
+    },
+    "credits": {
+      "title": "Il tuo saldo crediti",
+      "body": "I crediti sbloccano i contatti di un candidato. Selezionalo per aggiungerne o vedere le fatture."
+    }
+  },
+  "assistant": {
+    "open": "Chiedi all'assistente",
+    "full": "Apri a pagina intera",
+    "lead": "La conversazione resta qui mentre cambi pagina."
+  }
+}

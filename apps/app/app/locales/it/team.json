@@ -1,0 +1,48 @@
+{
+  "title": "Team",
+  "lead": "Le persone che possono pubblicare offerte e valutare candidati con te.",
+  "count_one": "{{count}} persona può pubblicare offerte e valutare candidati.",
+  "count_many": "{{count}} persone possono pubblicare offerte e valutare candidati.",
+  "count_other": "{{count}} persone possono pubblicare offerte e valutare candidati.",
+  "add": "Aggiungi membro",
+  "active": "Attivo",
+  "onHold": "In pausa",
+  "actions": "Azioni per {{name}}",
+  "edit": "Modifica",
+  "hold": "Metti in pausa",
+  "activate": "Riattiva",
+  "remove": "Rimuovi",
+  "holdNote": "I membri in pausa non possono accedere finché non li riattivi. Le loro offerte restano invariate.",
+  "emptyTitle": "Per ora ci sei solo tu",
+  "emptyBody": "Aggiungi recruiter perché pubblichino offerte e valutino candidati su questo account.",
+  "confirmTitle": "Rimuovere {{name}}?",
+  "confirmBody": "Perde subito l'accesso. Le offerte pubblicate restano alla tua azienda. L'operazione è irreversibile.",
+  "dialog": {
+    "addTitle": "Aggiungi un membro del team",
+    "addLead": "Entra come recruiter. Imposta una password e condividila; accederà con la sua email.",
+    "editTitle": "Modifica membro del team",
+    "editLead": "Le modifiche valgono dal prossimo accesso.",
+    "name": "Nome e cognome",
+    "email": "Email di lavoro",
+    "password": "Password",
+    "passwordHint": "Almeno 8 caratteri. Condividila in privato.",
+    "generate": "Genera",
+    "add": "Aggiungi membro",
+    "save": "Salva le modifiche"
+  },
+  "errors": {
+    "name": "Inserisci nome e cognome (da 2 a 100 caratteri).",
+    "email": "Inserisci un'email come nome@azienda.com.",
+    "password": "Usa da 8 a 50 caratteri."
+  },
+  "toast": {
+    "added": "{{name}} aggiunto",
+    "updated": "{{name}} aggiornato",
+    "held": "{{name}} è in pausa",
+    "activated": "{{name}} è attivo",
+    "removed": "{{name}} rimosso",
+    "statusFailed": "Lo stato non è cambiato. Riprova.",
+    "removeFailed": "La rimozione non è riuscita. Riprova.",
+    "saveFailed": "Non è stato salvato. Riprova."
+  }
+}

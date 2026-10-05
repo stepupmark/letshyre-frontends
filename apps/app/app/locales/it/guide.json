@@ -1,0 +1,54 @@
+{
+  "title": "Guida al colloquio",
+  "lead": "Otto passaggi dal download alla prima domanda. Spuntali mentre ti prepari.",
+  "progress": "{{done}} di {{total}} pronti",
+  "progressLabel": "Passaggi pronti",
+  "reset": "Ricomincia",
+  "phases": {
+    "setup": "Preparazione",
+    "security": "Controlli di sicurezza",
+    "interview": "Il colloquio"
+  },
+  "steps": {
+    "download": {
+      "title": "Installa l'app desktop",
+      "body": "I colloqui si svolgono solo nell'app desktop di LetsHyre, così la sessione resta sicura.",
+      "link": "Scarica per il tuo computer"
+    },
+    "signIn": {
+      "title": "Accedi all'app",
+      "body": "Usa la stessa email e la stessa password di qui. La foto profilo e i risultati ti seguono."
+    },
+    "dashboard": {
+      "title": "Parti dalla dashboard",
+      "body": "Seleziona Fai il colloquio. L'app controlla il computer prima di aprire altro."
+    },
+    "clearEnv": {
+      "title": "Chiudi le altre app",
+      "body": "Browser, registratori dello schermo, assistenti IA e app per videochiamate devono essere chiusi per proseguire.",
+      "tip": "Chiudi tutto il resto prima di selezionare Fai il colloquio."
+    },
+    "permissions": {
+      "title": "Consenti fotocamera, microfono e schermo",
+      "body": "Servono tutti e tre per la sorveglianza. Consenti ciascuno quando il computer lo chiede."
+    },
+    "verifyId": {
+      "title": "Conferma la tua identità",
+      "body": "Leggi ad alta voce una breve frase, poi la fotocamera scatta una foto da confrontare con la tua foto profilo.",
+      "tip": "Guarda la fotocamera in una stanza ben illuminata."
+    },
+    "chooseRole": {
+      "title": "Scegli il ruolo",
+      "body": "Scegli il ruolo per cui fai il colloquio. Parte da quello del tuo profilo."
+    },
+    "begin": {
+      "title": "Inizia",
+      "body": "Il colloquio si apre a schermo intero con la registrazione attiva. Rispondi a ogni domanda nel suo tempo; puoi spostarti tra le domande finché il timer non scade."
+    }
+  },
+  "cta": {
+    "title": "Scarica l'app desktop",
+    "body": "Accedi con il tuo account LetsHyre e inizia quando sei pronto.",
+    "button": "Scarica l'app"
+  }
+}

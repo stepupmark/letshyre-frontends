@@ -1,0 +1,70 @@
+{
+  "panel": {
+    "title": "Sblocca",
+    "lead": "Lo sblocco mostra contatti, scheda completa, registrazione e curriculum. Ogni colloquio costa un credito.",
+    "matched": "Il ruolo di questa offerta",
+    "unlocked": "Sbloccato",
+    "button_one": "Sblocca · {{count}} credito",
+    "button_many": "Sblocca · {{count}} crediti",
+    "button_other": "Sblocca · {{count}} crediti",
+    "pick": "Scegli almeno un colloquio.",
+    "balance": "Saldo",
+    "short": "Servono {{cost}} crediti e ne hai {{balance}}. Aggiungi crediti e tornerai qui.",
+    "addCredits": "Aggiungi crediti",
+    "none": "Ancora nessun colloquio con IA, quindi non c'è nulla da sbloccare.",
+    "allUnlocked": "Per questo candidato è tutto sbloccato.",
+    "openUnlocked": "Vedi i candidati sbloccati",
+    "failed": "Lo sblocco non è andato a buon fine. Controlla il saldo prima di riprovare."
+  },
+  "confirm": {
+    "title": "Sbloccare {{name}}?",
+    "body_one": "Usa {{count}} credito ed è irreversibile. Te ne resteranno {{left}}.",
+    "body_many": "Usa {{count}} crediti ed è irreversibile. Te ne resteranno {{left}}.",
+    "body_other": "Usa {{count}} crediti ed è irreversibile. Te ne resteranno {{left}}."
+  },
+  "done": "{{name}} sbloccato",
+  "doneBody_one": "{{count}} credito usato, ne restano {{left}}.",
+  "doneBody_many": "{{count}} crediti usati, ne restano {{left}}.",
+  "doneBody_other": "{{count}} crediti usati, ne restano {{left}}.",
+  "pool": {
+    "title": "Bacino di candidati",
+    "lead": "Le persone che la nostra IA ha abbinato alle tue offerte aperte, prima le migliori.",
+    "job": "Offerta",
+    "chooseJob": "Scegli un'offerta",
+    "matched": "Abbinati dall'IA",
+    "applied": "Candidati",
+    "noJobsTitle": "Nessuna offerta aperta",
+    "noJobsBody": "Le corrispondenze nascono dalle tue offerte aperte. Pubblicane una o riaprine una in pausa.",
+    "postJob": "Pubblica un'offerta",
+    "emptyTitle": "Ancora nessuna corrispondenza",
+    "emptyBody": "La nostra IA continua ad abbinare man mano che i candidati concludono i colloqui. Torna presto.",
+    "emptyApplied": "Nessuno si è ancora candidato a questa offerta.",
+    "summary": "{{matched}} candidati su {{total}} corrispondono"
+  },
+  "list": {
+    "title": "Candidati sbloccati",
+    "lead": "Tutte le persone che hai sbloccato, dalle più recenti.",
+    "sharedLinks": "Link condivisi",
+    "columns": {
+      "candidate": "Candidato",
+      "experience": "Esperienza",
+      "place": "Località",
+      "pay": "Retribuzione (LPA)",
+      "notice": "Preavviso",
+      "interview": "Colloquio",
+      "unlocked": "Sbloccato"
+    },
+    "years_one": "{{count}} anno",
+    "years_many": "{{count}} anni",
+    "years_other": "{{count}} anni",
+    "days_one": "{{count}} giorno",
+    "days_many": "{{count}} giorni",
+    "days_other": "{{count}} giorni",
+    "verified": "Verificato",
+    "profile": "Profilo",
+    "scorecard": "Scheda",
+    "emptyTitle": "Nessuno sbloccato per ora",
+    "emptyBody": "Sblocca un candidato dal bacino o da un elenco di candidature per vederne i dati qui.",
+    "toPool": "Apri il bacino di candidati"
+  }
+}

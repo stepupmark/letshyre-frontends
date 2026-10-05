@@ -1,0 +1,64 @@
+{
+  "title": "Profilo aziendale",
+  "unnamed": "La tua azienda",
+  "jobs_one": "{{open}} aperte su {{count}} offerta pubblicata",
+  "jobs_many": "{{open}} aperte su {{count}} offerte pubblicate",
+  "jobs_other": "{{open}} aperte su {{count}} offerte pubblicate",
+  "kyc": {
+    "approved": "Verificata",
+    "verified": "Verificata",
+    "pending": "In revisione",
+    "rejected": "Servono modifiche"
+  },
+  "details": {
+    "title": "Dati aziendali",
+    "edit": "Modifica",
+    "email": "Email ufficiale",
+    "industry": "Settore",
+    "chooseIndustry": "Scegli un settore",
+    "website": "Sito web",
+    "linkedin": "Pagina LinkedIn",
+    "linkedinOpen": "Apri su LinkedIn",
+    "address": "Indirizzo",
+    "description": "Chi siamo",
+    "descriptionHint": "I candidati lo leggono nelle tue offerte. Fino a 500 caratteri."
+  },
+  "logo": {
+    "label": "Logo",
+    "upload": "Carica il logo",
+    "replace": "Sostituisci il logo",
+    "hint": "Un PNG, JPG o WebP quadrato fino a 5 MB. Viene ritagliato in quadrato, come mostrato.",
+    "tooLarge": "Il logo supera i 5 MB. Scegli un'immagine più piccola.",
+    "wrongType": "Usa un'immagine PNG, JPG o WebP."
+  },
+  "account": {
+    "title": "Il tuo account",
+    "name": "Nome",
+    "email": "Email di accesso",
+    "phone": "Telefono"
+  },
+  "legal": {
+    "title": "Registrazione",
+    "note": "Questi dati sono stati verificati con la tua azienda. Contattaci per modificarli.",
+    "registration": "Numero di registrazione",
+    "gst": "GSTIN",
+    "pan": "PAN"
+  },
+  "documents": {
+    "registration_certificate": "Certificato di registrazione",
+    "gst_certificate": "Certificato GST",
+    "address_proof": "Prova dell'indirizzo",
+    "bank_proof": "Prova bancaria"
+  },
+  "errors": {
+    "email": "Inserisci un'email come hr@azienda.com.",
+    "address": "Inserisci l'indirizzo completo.",
+    "industry": "Scegli un settore.",
+    "linkedin": "Inserisci un link linkedin.com, oppure lascia vuoto.",
+    "description": "Resta entro 500 caratteri."
+  },
+  "save": "Salva le modifiche",
+  "saving": "Salvataggio…",
+  "saved": "Dati aziendali salvati",
+  "saveFailed": "Non è stato salvato. Le modifiche sono ancora qui; riprova."
+}

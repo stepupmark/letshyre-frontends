@@ -1,0 +1,44 @@
+{
+  "title": "Assistant",
+  "lead": {
+    "employer": "Des réponses sur le recrutement avec LetsHyre : offres, correspondances, grilles et crédits.",
+    "candidate": "Des réponses sur votre recherche d'emploi : candidatures, entretiens et votre grille."
+  },
+  "log": "Conversation",
+  "you": "Vous",
+  "assistant": "Assistant",
+  "greeting": "Bonjour, je suis l'assistant LetsHyre.",
+  "hint": {
+    "employer": "Posez n'importe quelle question sur votre recrutement. Celles-ci reviennent souvent sur cette page :",
+    "candidate": "Posez n'importe quelle question sur votre recherche d'emploi. Celles-ci reviennent souvent sur cette page :"
+  },
+  "input": "Poser une question",
+  "send": "Envoyer",
+  "stop": "Arrêter la réponse",
+  "thinking": "Réflexion…",
+  "stopped": "Vous avez arrêté cette réponse.",
+  "failed": "Aucune réponse n'est arrivée.",
+  "retry": "Réessayer",
+  "clear": "Effacer la conversation",
+  "prompts": {
+    "firstJob": "Comment publier ma première offre ?",
+    "readScorecard": "Comment lire la grille d'un candidat ?",
+    "credits": "Comment fonctionnent les crédits ?",
+    "betterJob": "Comment rédiger une offre qui obtient de meilleures correspondances ?",
+    "pauseJob": "Comment suspendre ou fermer une offre ?",
+    "matchScore": "Comment le score de correspondance est-il calculé ?",
+    "unlockCost": "Combien coûte le déblocage d'un candidat ?",
+    "shareScorecard": "Comment partager une grille avec mon équipe ?",
+    "gstInvoice": "Puis-je obtenir une facture avec GST ?",
+    "findFit": "Comment trouver des offres qui me correspondent ?",
+    "howInterview": "Comment fonctionne l'entretien IA ?",
+    "afterApply": "Que se passe-t-il après ma candidature ?",
+    "shortlist": "Comment les employeurs choisissent-ils qui présélectionner ?",
+    "ownScore": "Comment ma grille est-elle calculée ?",
+    "retake": "Puis-je repasser l'entretien ?",
+    "standOut": "Comment faire ressortir mon profil ?",
+    "whoSees": "Qui peut voir mes documents ?",
+    "needForInterview": "De quoi ai-je besoin pour l'entretien ?",
+    "connectionDrops": "Que se passe-t-il si ma connexion coupe pendant l'entretien ?"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "find": {
+    "title": "Buscar empleo",
+    "lead": "Puestos abiertos ahora. Postularse lleva un paso, y el empleador ve su perfil y su ficha de evaluación."
+  },
+  "applications": {
+    "title": "Mis candidaturas",
+    "lead": "En qué punto está cada candidatura y qué pasa después."
+  },
+  "filters": {
+    "keyword": "Puesto o habilidad",
+    "location": "Ciudad",
+    "search": "Buscar",
+    "type": "Tipo de empleo",
+    "anyType": "Cualquier tipo de empleo",
+    "industry": "Sector",
+    "anyIndustry": "Cualquier sector",
+    "experience": "Experiencia, p. ej. 2-5",
+    "years": "años",
+    "salary": "Salario, p. ej. 6-10",
+    "clear": "Borrar todo"
+  },
+  "saved": {
+    "save": "Guardar búsqueda",
+    "saved": "Guardada",
+    "remove": "Quitar la búsqueda guardada {{search}}"
+  },
+  "types": {
+    "full_time": "Jornada completa",
+    "part_time": "Media jornada",
+    "internship": "Prácticas",
+    "contract": "Temporal",
+    "freelance": "Autónomo"
+  },
+  "facts": {
+    "fresher": "Se aceptan sin experiencia",
+    "years": "{{years}} años"
+  },
+  "results_one": "{{count}} empleo",
+  "results_many": "{{count}} empleos",
+  "results_other": "{{count}} empleos",
+  "searching": "Buscando…",
+  "empty": {
+    "title": "No hay ofertas abiertas ahora mismo",
+    "body": "Cada semana se publican puestos nuevos. Vuelva pronto, o mantenga su ficha al día para que los empleadores le encuentren.",
+    "Applied": {
+      "title": "Aún no hay candidaturas",
+      "body": "Las ofertas a las que se postule aparecen aquí, con el punto en que está cada una."
+    },
+    "Shortlisted": {
+      "title": "Aún no hay preselecciones",
+      "body": "Cuando un empleador le preseleccione, la oferta pasará aquí."
+    },
+    "Selected": {
+      "title": "Aún no hay ofertas",
+      "body": "Aquí aparecen las ofertas en las que un empleador le selecciona."
+    },
+    "Rejected": {
+      "title": "Nada por aquí",
+      "body": "Aquí aparecen las candidaturas que no salieron adelante."
+    }
+  },
+  "company": "Empresa",
+  "untitled": "Puesto sin título",
+  "moreSkills": "+{{count}} más",
+  "applied": "Postulado",
+  "appliedWhen": "postulado {{when}}",
+  "detail": {
+    "skills": "Habilidades que buscan",
+    "about": "Sobre el puesto",
+    "noDescription": "El empleador no ha añadido una descripción."
+  },
+  "apply": {
+    "button": "Postularse",
+    "sending": "Postulando…",
+    "note": "El empleador ve su perfil y su ficha más reciente.",
+    "done": "Candidatura enviada. El empleador ya puede ver su perfil.",
+    "track": "Ver mis candidaturas",
+    "failed": "Su candidatura no se ha enviado. Inténtelo de nuevo en un momento."
+  },
+  "stages": {
+    "Applied": "Postulado",
+    "Shortlisted": "Preseleccionado",
+    "Selected": "Seleccionado",
+    "Rejected": "No seleccionado"
+  },
+  "timeline": {
+    "label": "Progreso de la candidatura",
+    "notSelected": "No seleccionado",
+    "done": "(hecho)"
+  },
+  "next": {
+    "label": "Siguiente:",
+    "Applied": "El empleador está revisando candidatos. Una entrevista con IA reciente para este puesto le hace subir en su lista.",
+    "Shortlisted": "Está preseleccionado. El empleador le contactará por correo o teléfono, así que manténgase localizable en ambos.",
+    "Selected": "El empleador le ha elegido. Espere su contacto sobre la oferta.",
+    "Rejected": "Esta vez no salió. Hay puestos similares abiertos.",
+    "guide": "Cómo funciona la entrevista",
+    "findJobs": "Buscar empleo"
+  }
+}

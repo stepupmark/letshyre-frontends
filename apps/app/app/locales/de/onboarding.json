@@ -1,0 +1,73 @@
+{
+  "title": "Erzählen Sie uns von Ihrem Unternehmen",
+  "lead": "Etwa fünf Minuten in drei Schritten. Wir speichern Ihren Fortschritt auf diesem Gerät, Sie können also pausieren und später weitermachen.",
+  "steps": {
+    "company": "Unternehmensdaten",
+    "legal": "Registrierung und Steuern",
+    "documents": "Dokumente"
+  },
+  "fields": {
+    "companyName": "Firmenname",
+    "website": "Website",
+    "officialEmail": "Offizielle E-Mail",
+    "officialEmailHint": "Hierhin senden wir Konto- und Abrechnungsnachrichten.",
+    "industry": "Branche",
+    "industryPlaceholder": "Branche wählen",
+    "industryFailed": "Die Branchen wurden nicht geladen. Laden Sie neu, um es erneut zu versuchen.",
+    "linkedin": "LinkedIn-Seite des Unternehmens",
+    "description": "Was macht Ihr Unternehmen?",
+    "descriptionCount": "{{count}} / 500",
+    "registration": "Registrierungsnummer des Unternehmens",
+    "registrationHint": "Die CIN oder die Nummer Ihrer Registrierungsurkunde, z. B. U72900TG2024PTC123456.",
+    "pan": "PAN",
+    "gst": "GSTIN",
+    "address": "Eingetragene Adresse"
+  },
+  "documents": {
+    "lead": "Klare Scans oder Fotos, je bis 5 MB. Kandidaten sehen diese nie.",
+    "company_logo": {
+      "label": "Firmenlogo",
+      "hint": "Quadratisch eignet sich am besten"
+    },
+    "registration_certificate": {
+      "label": "Registrierungsurkunde",
+      "hint": "Gründungsurkunde"
+    },
+    "gst_certificate": {
+      "label": "GST-Bescheinigung",
+      "hint": "Ihre GST-Registrierung"
+    },
+    "address_proof": {
+      "label": "Adressnachweis",
+      "hint": "Eine Versorgerrechnung oder ein Mietvertrag"
+    }
+  },
+  "draftSaved": "Entwurf auf diesem Gerät gespeichert. Dokumente müssen erneut hinzugefügt werden, wenn Sie die Seite verlassen.",
+  "submitting": "Ihre Dokumente werden hochgeladen… {{percent}} %",
+  "submitFailed": "Wir konnten Ihre Angaben nicht übermitteln. Alle Eingaben sind noch da, versuchen Sie es erneut.",
+  "validation": {
+    "nameMin": "Geben Sie den Namen Ihres Unternehmens ein",
+    "website": "Geben Sie eine Webadresse wie https://example.com ein",
+    "email": "Geben Sie eine E-Mail-Adresse wie buchhaltung@firma.de ein",
+    "industry": "Wählen Sie eine Branche",
+    "linkedin": "Geben Sie eine Webadresse wie https://www.linkedin.com/company/example ein",
+    "linkedinDomain": "Verwenden Sie die linkedin.com-Seite Ihres Unternehmens",
+    "description": "Schreiben Sie mindestens einen Satz darüber, was Sie tun",
+    "registration": "Geben Sie Ihre Registrierungsnummer ein (5 bis 50 Zeichen)",
+    "pan": "Eine PAN hat 10 Zeichen, z. B. ABCDE1234F",
+    "gst": "Eine GSTIN hat 15 Zeichen, z. B. 36ABCDE1234F1Z5",
+    "address": "Geben Sie Ihre eingetragene Adresse ein",
+    "fileRequired": "Fügen Sie dieses Dokument hinzu",
+    "fileInvalid": "Verwenden Sie eine Datei eines akzeptierten Typs bis 5 MB"
+  },
+  "done": {
+    "title": "Danke, Ihre Angaben sind da",
+    "lead": "Ihr Konto ist nutzbar, während wir Ihre Dokumente prüfen.",
+    "nextHeading": "Wie es weitergeht",
+    "review": "Unser Team prüft Ihre Unternehmensdaten und Dokumente.",
+    "contact": "Falls etwas fehlt, schreiben wir an {{email}}.",
+    "start": "In der Zwischenzeit können Sie Stellen veröffentlichen und Kandidaten sehen.",
+    "postJob": "Erste Stelle veröffentlichen",
+    "dashboard": "Zum Dashboard"
+  }
+}

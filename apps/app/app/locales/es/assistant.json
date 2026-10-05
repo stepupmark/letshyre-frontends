@@ -1,0 +1,44 @@
+{
+  "title": "Asistente",
+  "lead": {
+    "employer": "Respuestas sobre cómo contratar con LetsHyre: ofertas, coincidencias, fichas de evaluación y créditos.",
+    "candidate": "Respuestas sobre su búsqueda de empleo: candidaturas, entrevistas y su ficha de evaluación."
+  },
+  "log": "Conversación",
+  "you": "Usted",
+  "assistant": "Asistente",
+  "greeting": "Hola, soy el asistente de LetsHyre.",
+  "hint": {
+    "employer": "Pregunte lo que quiera sobre sus contrataciones. Estas preguntas son habituales en esta página:",
+    "candidate": "Pregunte lo que quiera sobre su búsqueda de empleo. Estas preguntas son habituales en esta página:"
+  },
+  "input": "Haga una pregunta",
+  "send": "Enviar",
+  "stop": "Detener la respuesta",
+  "thinking": "Pensando…",
+  "stopped": "Ha detenido esta respuesta.",
+  "failed": "No llegó ninguna respuesta.",
+  "retry": "Reintentar",
+  "clear": "Borrar el chat",
+  "prompts": {
+    "firstJob": "¿Cómo publico mi primera oferta?",
+    "readScorecard": "¿Cómo leo la ficha de evaluación de un candidato?",
+    "credits": "¿Cómo funcionan los créditos?",
+    "betterJob": "¿Cómo redacto una oferta que consiga mejores coincidencias?",
+    "pauseJob": "¿Cómo pauso o cierro una oferta?",
+    "matchScore": "¿Cómo se calcula la puntuación de coincidencia?",
+    "unlockCost": "¿Cuánto cuesta desbloquear a un candidato?",
+    "shareScorecard": "¿Cómo comparto una ficha de evaluación con mi equipo?",
+    "gstInvoice": "¿Puedo obtener una factura con GST?",
+    "findFit": "¿Cómo encuentro ofertas que encajen conmigo?",
+    "howInterview": "¿Cómo funciona la entrevista con IA?",
+    "afterApply": "¿Qué pasa después de presentar mi candidatura?",
+    "shortlist": "¿Cómo deciden los empleadores a quién preseleccionar?",
+    "ownScore": "¿Cómo se calcula mi ficha de evaluación?",
+    "retake": "¿Puedo repetir la entrevista?",
+    "standOut": "¿Cómo hago que mi perfil destaque?",
+    "whoSees": "¿Quién puede ver mis documentos?",
+    "needForInterview": "¿Qué necesito para la entrevista?",
+    "connectionDrops": "¿Qué pasa si se corta mi conexión durante la entrevista?"
+  }
+}

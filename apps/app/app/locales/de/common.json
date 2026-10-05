@@ -1,17 +1,103 @@
 {
+  "appName": "LetsHyre",
   "nav": {
     "dashboard": "Dashboard"
   },
   "notFound": {
-    "title": "Wir konnten diese Seite nicht finden"
+    "title": "Wir konnten diese Seite nicht finden",
+    "body": "Der Link ist vielleicht veraltet, oder die Seite wurde verschoben.",
+    "goHome": "Zu Ihrem Dashboard"
   },
   "error": {
     "title": "Diese Seite wurde nicht geladen",
-    "retry": "Erneut versuchen"
+    "body": "Bei uns ist etwas schiefgelaufen. Laden Sie neu, um es erneut zu versuchen, oder kontaktieren Sie uns, falls es weiter passiert.",
+    "retry": "Erneut versuchen",
+    "goHome": "Zu Ihrem Dashboard"
+  },
+  "table": {
+    "selectAll": "Alle Zeilen auswählen",
+    "selectRow": "{{name}} auswählen",
+    "selected_one": "{{count}} ausgewählt",
+    "selected_other": "{{count}} ausgewählt",
+    "clearSelection": "Auswahl aufheben",
+    "columns": "Spalten",
+    "compact": "Kompakte Zeilen",
+    "sortBy": "Nach {{column}} sortieren",
+    "previous": "Vorherige Seite",
+    "next": "Nächste Seite",
+    "pageOf": "Seite {{page}} von {{total}}",
+    "results_one": "{{count}} Ergebnis",
+    "results_other": "{{count}} Ergebnisse",
+    "rowActions": "Aktionen für {{name}}",
+    "bulkActions": "Sammelaktionen",
+    "navigateHint": "zum Wechseln,",
+    "openHint": "zum Öffnen",
+    "enterKey": "Enter",
+    "pages": "Seiten"
+  },
+  "state": {
+    "error": "Das wurde nicht geladen.",
+    "errorBody": "Es ist nichts verloren. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "retry": "Erneut versuchen",
+    "loading": "Wird geladen"
+  },
+  "empty": {
+    "filteredTitle": "Keine Treffer",
+    "filteredBody": "Versuchen Sie eine andere Suche oder löschen Sie die Filter.",
+    "clearFilters": "Filter löschen"
+  },
+  "upload": {
+    "drop": "Datei hierher ziehen oder",
+    "browse": "eine auswählen",
+    "hint": "{{types}}, bis {{size}}",
+    "tooLarge": "Diese Datei hat {{size}}. Das Limit ist {{max}}.",
+    "wrongType": "Dieser Dateityp wird nicht akzeptiert. Verwenden Sie {{types}}.",
+    "uploading": "{{name}} wird hochgeladen",
+    "failed": "Der Upload ist fehlgeschlagen. Ihre Datei ist noch da, Sie können es erneut versuchen.",
+    "retry": "Erneut versuchen",
+    "remove": "{{name}} entfernen",
+    "done": "Hochgeladen"
+  },
+  "wizard": {
+    "step": "Schritt {{current}} von {{total}}",
+    "back": "Zurück",
+    "next": "Weiter",
+    "finish": "Abschließen",
+    "draftSaved": "Entwurf auf diesem Gerät gespeichert"
+  },
+  "confirm": {
+    "cancel": "Abbrechen"
+  },
+  "undo": "Rückgängig",
+  "copy": {
+    "copy": "Kopieren",
+    "copied": "Kopiert"
+  },
+  "band": {
+    "strong": "Starker Match",
+    "partial": "Teilweiser Match",
+    "low": "Schwacher Match"
+  },
+  "interviewBand": {
+    "strong": "Starkes Interview",
+    "partial": "Gemischtes Interview",
+    "low": "Schwaches Interview"
+  },
+  "detail": {
+    "previous": "Zurück",
+    "next": "Weiter",
+    "position": "{{current}} von {{total}}"
+  },
+  "releaseCheck": {
+    "title": "Prüfung der neuen App",
+    "body": "Diese Seite kommt von der neuen App. Wenn Sie dies lesen können, ist das Release richtig geroutet."
   },
   "password": {
     "show": "Passwort anzeigen",
     "hide": "Passwort ausblenden",
     "capsLock": "Feststelltaste ist aktiviert"
+  },
+  "tip": {
+    "gotIt": "Verstanden"
   }
 }

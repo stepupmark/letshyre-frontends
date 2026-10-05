@@ -1,17 +1,105 @@
 {
+  "appName": "LetsHyre",
   "nav": {
     "dashboard": "Panel"
   },
   "notFound": {
-    "title": "No encontramos esta página"
+    "title": "No encontramos esta página",
+    "body": "Puede que el enlace sea antiguo o que la página se haya movido.",
+    "goHome": "Ir a su panel"
   },
   "error": {
     "title": "Esta página no se ha cargado",
-    "retry": "Reintentar"
+    "body": "Algo ha fallado por nuestra parte. Recargue para intentarlo de nuevo, o contáctenos si sigue pasando.",
+    "retry": "Reintentar",
+    "goHome": "Ir a su panel"
+  },
+  "table": {
+    "selectAll": "Seleccionar todas las filas",
+    "selectRow": "Seleccionar {{name}}",
+    "selected_one": "{{count}} seleccionado",
+    "selected_many": "{{count}} seleccionados",
+    "selected_other": "{{count}} seleccionados",
+    "clearSelection": "Quitar la selección",
+    "columns": "Columnas",
+    "compact": "Filas compactas",
+    "sortBy": "Ordenar por {{column}}",
+    "previous": "Página anterior",
+    "next": "Página siguiente",
+    "pageOf": "Página {{page}} de {{total}}",
+    "results_one": "{{count}} resultado",
+    "results_many": "{{count}} resultados",
+    "results_other": "{{count}} resultados",
+    "rowActions": "Acciones para {{name}}",
+    "bulkActions": "Acciones en bloque",
+    "navigateHint": "para moverse,",
+    "openHint": "para abrir",
+    "enterKey": "Intro",
+    "pages": "Páginas"
+  },
+  "state": {
+    "error": "No se ha cargado.",
+    "errorBody": "No se ha perdido nada. Revise su conexión e inténtelo de nuevo.",
+    "retry": "Reintentar",
+    "loading": "Cargando"
+  },
+  "empty": {
+    "filteredTitle": "Sin resultados",
+    "filteredBody": "Pruebe otra búsqueda o quite los filtros.",
+    "clearFilters": "Quitar filtros"
+  },
+  "upload": {
+    "drop": "Arrastre un archivo aquí o",
+    "browse": "elija uno",
+    "hint": "{{types}}, hasta {{size}}",
+    "tooLarge": "Ese archivo pesa {{size}}. El límite es {{max}}.",
+    "wrongType": "Ese tipo de archivo no se acepta. Use {{types}}.",
+    "uploading": "Subiendo {{name}}",
+    "failed": "La subida ha fallado. Su archivo sigue aquí, así que puede volver a intentarlo.",
+    "retry": "Reintentar",
+    "remove": "Quitar {{name}}",
+    "done": "Subido"
+  },
+  "wizard": {
+    "step": "Paso {{current}} de {{total}}",
+    "back": "Atrás",
+    "next": "Continuar",
+    "finish": "Terminar",
+    "draftSaved": "Borrador guardado en este dispositivo"
+  },
+  "confirm": {
+    "cancel": "Cancelar"
+  },
+  "undo": "Deshacer",
+  "copy": {
+    "copy": "Copiar",
+    "copied": "Copiado"
+  },
+  "band": {
+    "strong": "Coincidencia alta",
+    "partial": "Coincidencia parcial",
+    "low": "Coincidencia baja"
+  },
+  "interviewBand": {
+    "strong": "Entrevista sólida",
+    "partial": "Entrevista irregular",
+    "low": "Entrevista floja"
+  },
+  "detail": {
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "position": "{{current}} de {{total}}"
+  },
+  "releaseCheck": {
+    "title": "Comprobación de la nueva aplicación",
+    "body": "Esta página la sirve la nueva aplicación. Si puede leer esto, la versión está bien enrutada."
   },
   "password": {
     "show": "Mostrar contraseña",
     "hide": "Ocultar contraseña",
     "capsLock": "Bloq Mayús activado"
+  },
+  "tip": {
+    "gotIt": "Entendido"
   }
 }

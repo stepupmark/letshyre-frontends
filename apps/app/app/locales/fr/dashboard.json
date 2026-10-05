@@ -1,0 +1,77 @@
+{
+  "title": "Tableau de bord",
+  "postJob": "Publier une offre",
+  "attention": {
+    "heading": "À traiter",
+    "addCredits": "Ajouter des crédits",
+    "viewJobs": "Voir les offres",
+    "postJob": "Publier une offre",
+    "creditsOut": {
+      "title": "Vous n'avez plus de crédits",
+      "body": "Ajoutez des crédits pour débloquer les coordonnées des candidats."
+    },
+    "creditsLow": {
+      "title": "Vos crédits s'épuisent",
+      "body_one": "Il vous reste {{count}} crédit. Chaque déblocage en utilise un.",
+      "body_many": "Il vous reste {{count}} crédits. Chaque déblocage en utilise un.",
+      "body_other": "Il vous reste {{count}} crédits. Chaque déblocage en utilise un."
+    },
+    "noOpenJobs": {
+      "title": "Aucune offre n'est ouverte",
+      "body_one": "{{count}} offre est fermée ou en brouillon. Rouvrez-la pour continuer à recevoir des candidats.",
+      "body_many": "{{count}} offres sont fermées ou en brouillon. Rouvrez-en une pour continuer à recevoir des candidats.",
+      "body_other": "{{count}} offres sont fermées ou en brouillon. Rouvrez-en une pour continuer à recevoir des candidats."
+    },
+    "noJobs": {
+      "title": "Publiez votre première offre",
+      "body": "Les candidats correspondants passent un entretien avec notre IA avant que vous ne les voyiez."
+    },
+    "clear": {
+      "title": "Vous êtes à jour.",
+      "body": "Rien ne requiert votre attention pour le moment."
+    }
+  },
+  "stats": {
+    "heading": "Recrutement",
+    "open": "Offres ouvertes",
+    "closed": "Fermées ou en brouillon",
+    "applications": "Candidatures reçues"
+  },
+  "credits": {
+    "heading": "Crédits",
+    "low": "Bas",
+    "explain": "Un crédit débloque les coordonnées, l'enregistrement et le CV d'un candidat.",
+    "used": "{{percent}} % de vos crédits utilisés",
+    "add": "Ajouter des crédits",
+    "invoices": "Factures"
+  },
+  "setup": {
+    "title": "Terminez la configuration",
+    "progress": "{{done}} sur {{total}} terminées",
+    "hide": "Masquer",
+    "isDone": "(fait)",
+    "isTodo": "(à faire)",
+    "account": {
+      "title": "Créer votre compte",
+      "done": "Fait",
+      "todo": "Inscrivez-vous avec votre e-mail professionnel."
+    },
+    "company": {
+      "title": "Ajouter les informations et documents de l'entreprise",
+      "done": "Envoyé pour examen",
+      "todo": "Le nom, le site web et les documents d'immatriculation de votre entreprise."
+    },
+    "job": {
+      "title": "Publiez votre première offre",
+      "done": "Fait",
+      "todo": "Importez une fiche de poste et nous remplirons le formulaire.",
+      "action": "Publier une offre"
+    },
+    "team": {
+      "title": "Invitez votre équipe",
+      "done": "Fait",
+      "todo": "Ajoutez des collègues pour qu'ils examinent les candidats avec vous.",
+      "action": "Inviter"
+    }
+  }
+}

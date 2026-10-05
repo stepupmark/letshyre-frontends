@@ -1,0 +1,44 @@
+{
+  "title": "Assistente",
+  "lead": {
+    "employer": "Risposte su come assumere con LetsHyre: offerte, corrispondenze, schede di valutazione e crediti.",
+    "candidate": "Risposte sulla tua ricerca di lavoro: candidature, colloqui e la tua scheda di valutazione."
+  },
+  "log": "Conversazione",
+  "you": "Tu",
+  "assistant": "Assistente",
+  "greeting": "Ciao, sono l'assistente di LetsHyre.",
+  "hint": {
+    "employer": "Chiedi qualsiasi cosa sulle tue assunzioni. Queste domande sono frequenti in questa pagina:",
+    "candidate": "Chiedi qualsiasi cosa sulla tua ricerca di lavoro. Queste domande sono frequenti in questa pagina:"
+  },
+  "input": "Fai una domanda",
+  "send": "Invia",
+  "stop": "Interrompi la risposta",
+  "thinking": "Sto pensando…",
+  "stopped": "Hai interrotto questa risposta.",
+  "failed": "Non è arrivata nessuna risposta.",
+  "retry": "Riprova",
+  "clear": "Cancella la chat",
+  "prompts": {
+    "firstJob": "Come pubblico la mia prima offerta?",
+    "readScorecard": "Come leggo la scheda di valutazione di un candidato?",
+    "credits": "Come funzionano i crediti?",
+    "betterJob": "Come scrivo un'offerta che ottenga corrispondenze migliori?",
+    "pauseJob": "Come metto in pausa o chiudo un'offerta?",
+    "matchScore": "Come viene calcolato il punteggio di corrispondenza?",
+    "unlockCost": "Quanto costa sbloccare un candidato?",
+    "shareScorecard": "Come condivido una scheda di valutazione con il mio team?",
+    "gstInvoice": "Posso avere una fattura con GST?",
+    "findFit": "Come trovo offerte adatte a me?",
+    "howInterview": "Come funziona il colloquio con l'IA?",
+    "afterApply": "Cosa succede dopo la candidatura?",
+    "shortlist": "Come scelgono i datori di lavoro chi mettere in rosa?",
+    "ownScore": "Come viene calcolata la mia scheda di valutazione?",
+    "retake": "Posso ripetere il colloquio?",
+    "standOut": "Come faccio a far risaltare il mio profilo?",
+    "whoSees": "Chi può vedere i miei documenti?",
+    "needForInterview": "Cosa mi serve per il colloquio?",
+    "connectionDrops": "E se la connessione cade durante il colloquio?"
+  }
+}

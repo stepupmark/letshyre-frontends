@@ -1,0 +1,71 @@
+{
+  "skipToContent": "Aller au contenu principal",
+  "loading": "Chargement de la page",
+  "toggleSidebar": "Afficher ou masquer la barre latérale",
+  "navigation": "Navigation principale",
+  "groups": {
+    "hiring": "Recrutement",
+    "company": "Entreprise",
+    "you": "Vous",
+    "help": "Aide"
+  },
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "postJob": "Publier une offre",
+    "jobs": "Offres",
+    "candidatePool": "Vivier de candidats",
+    "unlocked": "Candidats débloqués",
+    "team": "Équipe",
+    "sharedLinks": "Liens partagés",
+    "billing": "Facturation",
+    "findJobs": "Trouver des offres",
+    "applications": "Mes candidatures",
+    "scorecards": "Grilles",
+    "profile": "Profil",
+    "interviewGuide": "Guide de l'entretien",
+    "assistant": "Assistant"
+  },
+  "search": {
+    "button": "Rechercher ou aller à…",
+    "shortcut": "Ctrl K",
+    "title": "Recherche",
+    "description": "Aller à une page ou lancer une action",
+    "empty": "Aucun résultat.",
+    "pages": "Pages"
+  },
+  "credits": {
+    "label_one": "{{count}} crédit",
+    "label_many": "{{count}} crédits",
+    "label_other": "{{count}} crédits",
+    "add": "Ajouter des crédits"
+  },
+  "user": {
+    "menu": "Menu du compte",
+    "profile": "Profil",
+    "language": "Langue",
+    "shortcuts": "Raccourcis clavier",
+    "signOut": "Se déconnecter",
+    "tips": "Revoir les astuces"
+  },
+  "shortcuts": {
+    "title": "Raccourcis clavier",
+    "search": "Rechercher et aller aux pages",
+    "sidebar": "Afficher ou masquer la barre latérale",
+    "help": "Afficher cette liste"
+  },
+  "tips": {
+    "search": {
+      "title": "Allez partout",
+      "body": "Cherchez une page ou une action. Appuyez sur Ctrl K de n'importe où."
+    },
+    "credits": {
+      "title": "Votre solde de crédits",
+      "body": "Les crédits débloquent les coordonnées d'un candidat. Sélectionnez-le pour en ajouter ou voir les factures."
+    }
+  },
+  "assistant": {
+    "open": "Demander à l'assistant",
+    "full": "Ouvrir en pleine page",
+    "lead": "Votre conversation reste ici pendant que vous changez de page."
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "title": "Panel",
+  "postJob": "Publicar una oferta",
+  "attention": {
+    "heading": "Requiere su atención",
+    "addCredits": "Añadir créditos",
+    "viewJobs": "Ver ofertas",
+    "postJob": "Publicar una oferta",
+    "creditsOut": {
+      "title": "Se ha quedado sin créditos",
+      "body": "Añada créditos para desbloquear los datos de contacto de los candidatos."
+    },
+    "creditsLow": {
+      "title": "Le quedan pocos créditos",
+      "body_one": "Le queda {{count}} crédito. Cada desbloqueo usa uno.",
+      "body_many": "Le quedan {{count}} créditos. Cada desbloqueo usa uno.",
+      "body_other": "Le quedan {{count}} créditos. Cada desbloqueo usa uno."
+    },
+    "noOpenJobs": {
+      "title": "No hay ofertas abiertas",
+      "body_one": "{{count}} oferta está cerrada o en borrador. Vuelva a abrirla para seguir recibiendo candidatos.",
+      "body_many": "{{count}} ofertas están cerradas o en borrador. Vuelva a abrir una para seguir recibiendo candidatos.",
+      "body_other": "{{count}} ofertas están cerradas o en borrador. Vuelva a abrir una para seguir recibiendo candidatos."
+    },
+    "noJobs": {
+      "title": "Publique su primera oferta",
+      "body": "Los candidatos que encajan hacen la entrevista con nuestra IA antes de que usted los vea."
+    },
+    "clear": {
+      "title": "Está todo al día.",
+      "body": "Ahora mismo no hay nada pendiente."
+    }
+  },
+  "stats": {
+    "heading": "Contratación",
+    "open": "Ofertas abiertas",
+    "closed": "Cerradas o en borrador",
+    "applications": "Candidaturas recibidas"
+  },
+  "credits": {
+    "heading": "Créditos",
+    "low": "Bajo",
+    "explain": "Un crédito desbloquea los datos de contacto, la grabación y el currículum de un candidato.",
+    "used": "{{percent}} % de sus créditos usados",
+    "add": "Añadir créditos",
+    "invoices": "Facturas"
+  },
+  "setup": {
+    "title": "Termine la configuración",
+    "progress": "{{done}} de {{total}} hechos",
+    "hide": "Ocultar",
+    "isDone": "(hecho)",
+    "isTodo": "(pendiente)",
+    "account": {
+      "title": "Cree su cuenta",
+      "done": "Hecho",
+      "todo": "Regístrese con su correo del trabajo."
+    },
+    "company": {
+      "title": "Añada datos y documentos de la empresa",
+      "done": "Enviado a revisión",
+      "todo": "El nombre, el sitio web y los documentos de registro de su empresa."
+    },
+    "job": {
+      "title": "Publique su primera oferta",
+      "done": "Hecho",
+      "todo": "Suba una descripción del puesto y rellenaremos el formulario.",
+      "action": "Publicar una oferta"
+    },
+    "team": {
+      "title": "Invite a su equipo",
+      "done": "Hecho",
+      "todo": "Añada compañeros para que revisen candidatos con usted.",
+      "action": "Invitar"
+    }
+  }
+}

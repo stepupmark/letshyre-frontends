@@ -1,17 +1,105 @@
 {
+  "appName": "LetsHyre",
   "nav": {
     "dashboard": "Tableau de bord"
   },
   "notFound": {
-    "title": "Nous n'avons pas trouvé cette page"
+    "title": "Nous n'avons pas trouvé cette page",
+    "body": "Le lien est peut-être ancien, ou la page a été déplacée.",
+    "goHome": "Aller au tableau de bord"
   },
   "error": {
     "title": "Cette page ne s'est pas chargée",
-    "retry": "Réessayer"
+    "body": "Un problème est survenu de notre côté. Rechargez pour réessayer, ou contactez-nous si cela persiste.",
+    "retry": "Réessayer",
+    "goHome": "Aller au tableau de bord"
+  },
+  "table": {
+    "selectAll": "Sélectionner toutes les lignes",
+    "selectRow": "Sélectionner {{name}}",
+    "selected_one": "{{count}} sélectionné",
+    "selected_many": "{{count}} sélectionnés",
+    "selected_other": "{{count}} sélectionnés",
+    "clearSelection": "Effacer la sélection",
+    "columns": "Colonnes",
+    "compact": "Lignes compactes",
+    "sortBy": "Trier par {{column}}",
+    "previous": "Page précédente",
+    "next": "Page suivante",
+    "pageOf": "Page {{page}} sur {{total}}",
+    "results_one": "{{count}} résultat",
+    "results_many": "{{count}} résultats",
+    "results_other": "{{count}} résultats",
+    "rowActions": "Actions pour {{name}}",
+    "bulkActions": "Actions groupées",
+    "navigateHint": "pour se déplacer,",
+    "openHint": "pour ouvrir",
+    "enterKey": "Entrée",
+    "pages": "Pages"
+  },
+  "state": {
+    "error": "Le chargement a échoué.",
+    "errorBody": "Rien n'est perdu. Vérifiez votre connexion et réessayez.",
+    "retry": "Réessayer",
+    "loading": "Chargement"
+  },
+  "empty": {
+    "filteredTitle": "Aucun résultat",
+    "filteredBody": "Essayez une autre recherche ou effacez les filtres.",
+    "clearFilters": "Effacer les filtres"
+  },
+  "upload": {
+    "drop": "Glissez un fichier ici, ou",
+    "browse": "choisissez-en un",
+    "hint": "{{types}}, jusqu'à {{size}}",
+    "tooLarge": "Ce fichier fait {{size}}. La limite est de {{max}}.",
+    "wrongType": "Ce type de fichier n'est pas accepté. Utilisez {{types}}.",
+    "uploading": "Import de {{name}}",
+    "failed": "L'import a échoué. Votre fichier est toujours là, vous pouvez réessayer.",
+    "retry": "Réessayer",
+    "remove": "Retirer {{name}}",
+    "done": "Importé"
+  },
+  "wizard": {
+    "step": "Étape {{current}} sur {{total}}",
+    "back": "Retour",
+    "next": "Continuer",
+    "finish": "Terminer",
+    "draftSaved": "Brouillon enregistré sur cet appareil"
+  },
+  "confirm": {
+    "cancel": "Annuler"
+  },
+  "undo": "Annuler",
+  "copy": {
+    "copy": "Copier",
+    "copied": "Copié"
+  },
+  "band": {
+    "strong": "Forte correspondance",
+    "partial": "Correspondance partielle",
+    "low": "Faible correspondance"
+  },
+  "interviewBand": {
+    "strong": "Entretien solide",
+    "partial": "Entretien mitigé",
+    "low": "Entretien faible"
+  },
+  "detail": {
+    "previous": "Précédent",
+    "next": "Suivant",
+    "position": "{{current}} sur {{total}}"
+  },
+  "releaseCheck": {
+    "title": "Vérification de la nouvelle application",
+    "body": "Cette page est servie par la nouvelle application. Si vous pouvez lire ceci, la mise en production est bien routée."
   },
   "password": {
     "show": "Afficher le mot de passe",
     "hide": "Masquer le mot de passe",
     "capsLock": "Verrouillage des majuscules activé"
+  },
+  "tip": {
+    "gotIt": "Compris"
   }
 }

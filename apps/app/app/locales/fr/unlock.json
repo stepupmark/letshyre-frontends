@@ -1,0 +1,70 @@
+{
+  "panel": {
+    "title": "Débloquer",
+    "lead": "Le déblocage affiche les coordonnées, la grille complète, l'enregistrement et le CV. Chaque entretien coûte un crédit.",
+    "matched": "Le poste de cette offre",
+    "unlocked": "Débloqué",
+    "button_one": "Débloquer · {{count}} crédit",
+    "button_many": "Débloquer · {{count}} crédits",
+    "button_other": "Débloquer · {{count}} crédits",
+    "pick": "Choisissez au moins un entretien.",
+    "balance": "Solde",
+    "short": "Il faut {{cost}} crédits et vous en avez {{balance}}. Ajoutez des crédits et vous reviendrez ici.",
+    "addCredits": "Ajouter des crédits",
+    "none": "Aucun entretien IA pour l'instant, il n'y a donc rien à débloquer.",
+    "allUnlocked": "Tout est débloqué pour ce candidat.",
+    "openUnlocked": "Voir les candidats débloqués",
+    "failed": "Le déblocage n'est pas passé. Vérifiez votre solde avant de réessayer."
+  },
+  "confirm": {
+    "title": "Débloquer {{name}} ?",
+    "body_one": "Cela utilise {{count}} crédit et est irréversible. Il vous en restera {{left}}.",
+    "body_many": "Cela utilise {{count}} crédits et est irréversible. Il vous en restera {{left}}.",
+    "body_other": "Cela utilise {{count}} crédits et est irréversible. Il vous en restera {{left}}."
+  },
+  "done": "{{name}} débloqué",
+  "doneBody_one": "{{count}} crédit utilisé, {{left}} restants.",
+  "doneBody_many": "{{count}} crédits utilisés, {{left}} restants.",
+  "doneBody_other": "{{count}} crédits utilisés, {{left}} restants.",
+  "pool": {
+    "title": "Vivier de candidats",
+    "lead": "Les personnes que notre IA a associées à vos offres ouvertes, meilleure correspondance en premier.",
+    "job": "Offre",
+    "chooseJob": "Choisir une offre",
+    "matched": "Associés par l'IA",
+    "applied": "Ont postulé",
+    "noJobsTitle": "Aucune offre ouverte",
+    "noJobsBody": "Les correspondances viennent de vos offres ouvertes. Publiez-en une, ou rouvrez une offre suspendue.",
+    "postJob": "Publier une offre",
+    "emptyTitle": "Pas encore de correspondances",
+    "emptyBody": "Notre IA continue d'associer des candidats à mesure qu'ils terminent leurs entretiens. Revenez bientôt.",
+    "emptyApplied": "Personne n'a encore postulé à cette offre.",
+    "summary": "{{matched}} candidats sur {{total}} correspondent"
+  },
+  "list": {
+    "title": "Candidats débloqués",
+    "lead": "Toutes les personnes que vous avez débloquées, les plus récentes en premier.",
+    "sharedLinks": "Liens partagés",
+    "columns": {
+      "candidate": "Candidat",
+      "experience": "Expérience",
+      "place": "Lieu",
+      "pay": "Rémunération (LPA)",
+      "notice": "Préavis",
+      "interview": "Entretien",
+      "unlocked": "Débloqué"
+    },
+    "years_one": "{{count}} an",
+    "years_many": "{{count}} ans",
+    "years_other": "{{count}} ans",
+    "days_one": "{{count}} jour",
+    "days_many": "{{count}} jours",
+    "days_other": "{{count}} jours",
+    "verified": "Vérifié",
+    "profile": "Profil",
+    "scorecard": "Grille",
+    "emptyTitle": "Personne n'est encore débloqué",
+    "emptyBody": "Débloquez un candidat depuis le vivier ou une liste de candidatures pour voir ses informations ici.",
+    "toPool": "Ouvrir le vivier de candidats"
+  }
+}

@@ -1,40 +1,136 @@
 {
+  "title": "Ficha de evaluación de la entrevista",
+  "print": "Imprimir",
+  "provenance": {
+    "sharedBy": "Compartida en privado por {{company}}. El enlace tiene un límite de visitas y una fecha de caducidad, así que no lo reenvíe.",
+    "private": "Compartida en privado. El enlace tiene un límite de visitas y una fecha de caducidad, así que no lo reenvíe."
+  },
   "header": {
     "unnamed": "Candidato",
     "fresher": "Recién egresado",
-    "matchedTo": "Coincide con {{job}}",
     "experience_one": "{{count}} año de experiencia",
-    "experience_other": "{{count}} años de experiencia"
+    "experience_many": "{{count}} años de experiencia",
+    "experience_other": "{{count}} años de experiencia",
+    "matchedTo": "Coincide con {{job}}",
+    "yours": "Su ficha de evaluación de la entrevista",
+    "taken": "Entrevista del {{date}}"
+  },
+  "summary": {
+    "heading": "Resumen",
+    "outOf": "/ 100",
+    "basedOn_one": "Basado en {{count}} pregunta respondida",
+    "basedOn_many": "Basado en {{count}} preguntas respondidas",
+    "basedOn_other": "Basado en {{count}} preguntas respondidas",
+    "howScored": "¿Cómo se puntúa?",
+    "howScoredBody": "El entrevistador de IA puntúa cada respuesta según el puesto y luego comprueba su claridad, relevancia y profundidad. Use la puntuación como punto de partida para su decisión, no como sustituto.",
+    "howScoredYours": "El entrevistador de IA puntúa cada respuesta según el puesto y luego comprueba su claridad, relevancia y profundidad. Los empleadores ven las mismas puntuaciones, así que las áreas de mejora son un buen punto de partida."
+  },
+  "match": {
+    "heading": "Encaje con la oferta",
+    "headingFor": "Encaje con {{job}}",
+    "overall": "Global",
+    "role": "Puesto",
+    "skills": "Habilidades",
+    "why": "Por qué coincide"
   },
   "metrics": {
+    "heading": "Comunicación",
     "clarity": "Claridad",
     "relevance": "Relevancia",
-    "confidence": "Confianza"
+    "confidence": "Confianza",
+    "depth": "Profundidad de razonamiento",
+    "keyConcept": "Conceptos clave tratados"
   },
   "types": {
-    "coding": "Codificación"
+    "heading": "Por tipo de pregunta",
+    "correct_one": "{{correct}} de {{count}} correcta",
+    "correct_many": "{{correct}} de {{count}} correctas",
+    "correct_other": "{{correct}} de {{count}} correctas",
+    "mcq": "Opción múltiple",
+    "pseudocode_mcq": "Pseudocódigo",
+    "coding": "Codificación",
+    "typing": "Escrita",
+    "audio": "Oral"
   },
   "insights": {
+    "heading": "Observaciones",
     "strengths": "Fortalezas",
+    "improve": "Áreas de mejora",
     "recommendations": "Recomendaciones"
   },
+  "recording": {
+    "heading": "Grabación",
+    "unsupported": "Su navegador no puede reproducir esta grabación.",
+    "failed": "La grabación no se ha cargado. Puede que el enlace haya caducado.",
+    "retry": "Reintentar"
+  },
   "profile": {
+    "heading": "Perfil",
+    "empty": "El candidato aún no ha añadido datos de perfil.",
     "skills": "Habilidades",
     "experience": "Experiencia",
     "education": "Educación",
     "projects": "Proyectos",
-    "resume": "Currículum"
+    "awards": "Certificaciones y logros",
+    "links": "Currículum y enlaces",
+    "resume": "Currículum",
+    "untitled": "Proyecto sin título"
   },
   "answers": {
+    "heading": "Respuestas",
+    "none": "Esta entrevista no tiene preguntas respondidas.",
     "expandAll": "Expandir todo",
     "collapseAll": "Contraer todo",
+    "number": "Pregunta {{number}}",
+    "noQuestion": "Texto de la pregunta no disponible",
+    "answer": "Respuesta",
+    "assessment": "Valoración",
+    "correct": "Correcta",
+    "wrong": "Incorrecta",
+    "chosen": "Su respuesta",
+    "correctAnswer": "Respuesta correcta",
+    "noAnswer": "No respondió.",
+    "noCode": "No envió código.",
+    "noAudio": "No se grabó audio.",
+    "audioUnsupported": "Su navegador no puede reproducir este audio.",
     "types": {
-      "coding": "Codificación"
-    }
+      "mcq": "Opción múltiple",
+      "mcq_pseudocode": "Pseudocódigo",
+      "pseudocode_mcq": "Pseudocódigo",
+      "coding": "Codificación",
+      "typing": "Escrita",
+      "audio": "Oral",
+      "other": "Pregunta"
+    },
+    "yours": "Su respuesta"
   },
   "toc": {
+    "label": "En esta página",
+    "summary": "Resumen",
     "communication": "Comunicación",
+    "types": "Por tipo de pregunta",
     "insights": "Perspectivas",
-    "profile": "Perfil"
+    "recording": "Grabación",
+    "profile": "Perfil",
+    "answers": "Respuestas"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "Este enlace no funciona",
+      "body": "Puede estar mal escrito o haberse eliminado. Pida un enlace nuevo a quien lo compartió."
+    },
+    "expired": {
+      "title": "Este enlace ha caducado",
+      "body": "Las fichas compartidas solo están disponibles durante un tiempo. Pida un enlace nuevo a quien la compartió."
+    },
+    "limit": {
+      "title": "Este enlace ha alcanzado su límite de visitas",
+      "body": "Pida un enlace nuevo a quien lo compartió."
+    },
+    "unavailable": {
+      "title": "Esta ficha no se ha cargado",
+      "body": "Algo ha fallado por nuestra parte. Inténtelo de nuevo en un momento."
+    },
+    "retry": "Reintentar"
   }
 }

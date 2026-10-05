@@ -1,0 +1,71 @@
+{
+  "skipToContent": "Saltar al contenido principal",
+  "loading": "Cargando la página",
+  "toggleSidebar": "Mostrar u ocultar la barra lateral",
+  "navigation": "Navegación principal",
+  "groups": {
+    "hiring": "Contratación",
+    "company": "Empresa",
+    "you": "Usted",
+    "help": "Ayuda"
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "postJob": "Publicar una oferta",
+    "jobs": "Ofertas",
+    "candidatePool": "Reserva de candidatos",
+    "unlocked": "Candidatos desbloqueados",
+    "team": "Equipo",
+    "sharedLinks": "Enlaces compartidos",
+    "billing": "Facturación",
+    "findJobs": "Buscar empleo",
+    "applications": "Mis candidaturas",
+    "scorecards": "Fichas de evaluación",
+    "profile": "Perfil",
+    "interviewGuide": "Guía de la entrevista",
+    "assistant": "Asistente"
+  },
+  "search": {
+    "button": "Buscar o ir a…",
+    "shortcut": "Ctrl K",
+    "title": "Buscar",
+    "description": "Ir a una página o ejecutar una acción",
+    "empty": "Sin resultados.",
+    "pages": "Páginas"
+  },
+  "credits": {
+    "label_one": "{{count}} crédito",
+    "label_many": "{{count}} créditos",
+    "label_other": "{{count}} créditos",
+    "add": "Añadir créditos"
+  },
+  "user": {
+    "menu": "Menú de la cuenta",
+    "profile": "Perfil",
+    "language": "Idioma",
+    "shortcuts": "Atajos de teclado",
+    "signOut": "Cerrar sesión",
+    "tips": "Volver a mostrar consejos"
+  },
+  "shortcuts": {
+    "title": "Atajos de teclado",
+    "search": "Buscar e ir a páginas",
+    "sidebar": "Mostrar u ocultar la barra lateral",
+    "help": "Mostrar esta lista"
+  },
+  "tips": {
+    "search": {
+      "title": "Vaya a cualquier sitio",
+      "body": "Busque una página o una acción. Pulse Ctrl K desde cualquier lugar."
+    },
+    "credits": {
+      "title": "Su saldo de créditos",
+      "body": "Los créditos desbloquean los datos de contacto de un candidato. Selecciónelo para añadir más o ver facturas."
+    }
+  },
+  "assistant": {
+    "open": "Preguntar al asistente",
+    "full": "Abrir a página completa",
+    "lead": "Su conversación se mantiene aquí mientras cambia de página."
+  }
+}

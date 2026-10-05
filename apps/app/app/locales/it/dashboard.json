@@ -1,0 +1,77 @@
+{
+  "title": "Dashboard",
+  "postJob": "Pubblica un'offerta",
+  "attention": {
+    "heading": "Richiede la tua attenzione",
+    "addCredits": "Aggiungi crediti",
+    "viewJobs": "Vedi le offerte",
+    "postJob": "Pubblica un'offerta",
+    "creditsOut": {
+      "title": "Hai finito i crediti",
+      "body": "Aggiungi crediti per sbloccare i contatti dei candidati."
+    },
+    "creditsLow": {
+      "title": "I crediti stanno finendo",
+      "body_one": "Ti resta {{count}} credito. Ogni sblocco ne usa uno.",
+      "body_many": "Ti restano {{count}} crediti. Ogni sblocco ne usa uno.",
+      "body_other": "Ti restano {{count}} crediti. Ogni sblocco ne usa uno."
+    },
+    "noOpenJobs": {
+      "title": "Nessuna offerta è aperta",
+      "body_one": "{{count}} offerta è chiusa o in bozza. Riaprila per continuare a ricevere candidati.",
+      "body_many": "{{count}} offerte sono chiuse o in bozza. Riaprine una per continuare a ricevere candidati.",
+      "body_other": "{{count}} offerte sono chiuse o in bozza. Riaprine una per continuare a ricevere candidati."
+    },
+    "noJobs": {
+      "title": "Pubblica la tua prima offerta",
+      "body": "I candidati adatti fanno il colloquio con la nostra IA prima che tu li veda."
+    },
+    "clear": {
+      "title": "Sei in pari.",
+      "body": "Al momento non serve nulla da parte tua."
+    }
+  },
+  "stats": {
+    "heading": "Assunzioni",
+    "open": "Offerte aperte",
+    "closed": "Chiuse o in bozza",
+    "applications": "Candidature ricevute"
+  },
+  "credits": {
+    "heading": "Crediti",
+    "low": "Bassi",
+    "explain": "Un credito sblocca contatti, registrazione e curriculum di un candidato.",
+    "used": "{{percent}}% dei crediti usati",
+    "add": "Aggiungi crediti",
+    "invoices": "Fatture"
+  },
+  "setup": {
+    "title": "Completa la configurazione",
+    "progress": "{{done}} di {{total}} fatti",
+    "hide": "Nascondi",
+    "isDone": "(fatto)",
+    "isTodo": "(da fare)",
+    "account": {
+      "title": "Crea il tuo account",
+      "done": "Fatto",
+      "todo": "Registrati con la tua email di lavoro."
+    },
+    "company": {
+      "title": "Aggiungi dati e documenti aziendali",
+      "done": "Inviato per la revisione",
+      "todo": "Nome, sito web e documenti di registrazione della tua azienda."
+    },
+    "job": {
+      "title": "Pubblica la tua prima offerta",
+      "done": "Fatto",
+      "todo": "Carica una descrizione del ruolo e compiliamo noi il modulo.",
+      "action": "Pubblica un'offerta"
+    },
+    "team": {
+      "title": "Invita il tuo team",
+      "done": "Fatto",
+      "todo": "Aggiungi colleghi perché valutino i candidati con te.",
+      "action": "Invita"
+    }
+  }
+}

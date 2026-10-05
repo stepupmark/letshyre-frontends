@@ -1,0 +1,100 @@
+{
+  "find": {
+    "title": "Jobs finden",
+    "lead": "Jetzt offene Rollen. Die Bewerbung ist ein Schritt, und der Arbeitgeber sieht Ihr Profil und Ihre Scorecard."
+  },
+  "applications": {
+    "title": "Meine Bewerbungen",
+    "lead": "Wo jede Bewerbung steht und was als Nächstes passiert."
+  },
+  "filters": {
+    "keyword": "Jobtitel oder Fähigkeit",
+    "location": "Stadt",
+    "search": "Suchen",
+    "type": "Anstellungsart",
+    "anyType": "Jede Anstellungsart",
+    "industry": "Branche",
+    "anyIndustry": "Jede Branche",
+    "experience": "Erfahrung, z. B. 2-5",
+    "years": "J.",
+    "salary": "Gehalt, z. B. 6-10",
+    "clear": "Alle löschen"
+  },
+  "saved": {
+    "save": "Suche speichern",
+    "saved": "Gespeichert",
+    "remove": "Gespeicherte Suche {{search}} entfernen"
+  },
+  "types": {
+    "full_time": "Vollzeit",
+    "part_time": "Teilzeit",
+    "internship": "Praktikum",
+    "contract": "Befristet",
+    "freelance": "Freiberuflich"
+  },
+  "facts": {
+    "fresher": "Berufseinsteiger willkommen",
+    "years": "{{years}} J."
+  },
+  "results_one": "{{count}} Job",
+  "results_other": "{{count}} Jobs",
+  "searching": "Suche läuft…",
+  "empty": {
+    "title": "Gerade keine offenen Jobs",
+    "body": "Jede Woche kommen neue Rollen hinzu. Schauen Sie bald wieder vorbei oder halten Sie Ihre Scorecard aktuell, damit Arbeitgeber Sie finden.",
+    "Applied": {
+      "title": "Noch keine Bewerbungen",
+      "body": "Jobs, auf die Sie sich bewerben, erscheinen hier mit ihrem aktuellen Stand."
+    },
+    "Shortlisted": {
+      "title": "Noch nicht in der engeren Wahl",
+      "body": "Wenn ein Arbeitgeber Sie in die engere Wahl nimmt, erscheint der Job hier."
+    },
+    "Selected": {
+      "title": "Noch keine Zusagen",
+      "body": "Jobs, bei denen ein Arbeitgeber Sie auswählt, erscheinen hier."
+    },
+    "Rejected": {
+      "title": "Hier ist nichts",
+      "body": "Bewerbungen, die nicht geklappt haben, erscheinen hier."
+    }
+  },
+  "company": "Unternehmen",
+  "untitled": "Rolle ohne Titel",
+  "moreSkills": "+{{count}} weitere",
+  "applied": "Beworben",
+  "appliedWhen": "beworben {{when}}",
+  "detail": {
+    "skills": "Gesuchte Fähigkeiten",
+    "about": "Über die Rolle",
+    "noDescription": "Der Arbeitgeber hat keine Beschreibung hinzugefügt."
+  },
+  "apply": {
+    "button": "Bewerben",
+    "sending": "Bewerbung läuft…",
+    "note": "Der Arbeitgeber sieht Ihr Profil und Ihre neueste Scorecard.",
+    "done": "Beworben. Der Arbeitgeber kann Ihr Profil jetzt sehen.",
+    "track": "Meine Bewerbungen ansehen",
+    "failed": "Ihre Bewerbung ist nicht durchgegangen. Versuchen Sie es gleich noch einmal."
+  },
+  "stages": {
+    "Applied": "Beworben",
+    "Shortlisted": "Engere Wahl",
+    "Selected": "Ausgewählt",
+    "Rejected": "Nicht ausgewählt"
+  },
+  "timeline": {
+    "label": "Bewerbungsstand",
+    "notSelected": "Nicht ausgewählt",
+    "done": "(erledigt)"
+  },
+  "next": {
+    "label": "Als Nächstes:",
+    "Applied": "Der Arbeitgeber prüft die Bewerber. Ein aktuelles KI-Interview für diese Rolle bringt Sie in seiner Liste nach oben.",
+    "Shortlisted": "Sie sind in der engeren Wahl. Der Arbeitgeber meldet sich per E-Mail oder Telefon, halten Sie also beides erreichbar.",
+    "Selected": "Der Arbeitgeber hat Sie ausgewählt. Er meldet sich wegen des Angebots bei Ihnen.",
+    "Rejected": "Das hat diesmal nicht geklappt. Ähnliche Rollen sind gerade offen.",
+    "guide": "So funktioniert das Interview",
+    "findJobs": "Jobs finden"
+  }
+}

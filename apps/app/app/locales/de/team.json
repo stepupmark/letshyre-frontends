@@ -1,0 +1,47 @@
+{
+  "title": "Team",
+  "lead": "Personen, die mit Ihnen Stellen veröffentlichen und Kandidaten prüfen können.",
+  "count_one": "{{count}} Person kann Stellen veröffentlichen und Kandidaten prüfen.",
+  "count_other": "{{count}} Personen können Stellen veröffentlichen und Kandidaten prüfen.",
+  "add": "Mitglied hinzufügen",
+  "active": "Aktiv",
+  "onHold": "Pausiert",
+  "actions": "Aktionen für {{name}}",
+  "edit": "Bearbeiten",
+  "hold": "Pausieren",
+  "activate": "Aktivieren",
+  "remove": "Entfernen",
+  "holdNote": "Pausierte Mitglieder können sich erst wieder anmelden, wenn Sie sie aktivieren. Ihre Stellen bleiben unverändert.",
+  "emptyTitle": "Bisher nur Sie",
+  "emptyBody": "Fügen Sie Recruiter hinzu, damit sie in diesem Konto Stellen veröffentlichen und Kandidaten prüfen können.",
+  "confirmTitle": "{{name}} entfernen?",
+  "confirmBody": "Der Zugriff endet sofort. Veröffentlichte Stellen bleiben bei Ihrem Unternehmen. Das lässt sich nicht rückgängig machen.",
+  "dialog": {
+    "addTitle": "Teammitglied hinzufügen",
+    "addLead": "Die Person wird als Recruiter hinzugefügt. Legen Sie ein Passwort fest und teilen Sie es mit ihr; die Anmeldung erfolgt mit ihrer E-Mail.",
+    "editTitle": "Teammitglied bearbeiten",
+    "editLead": "Änderungen gelten bei der nächsten Anmeldung.",
+    "name": "Vollständiger Name",
+    "email": "Geschäftliche E-Mail",
+    "password": "Passwort",
+    "passwordHint": "Mindestens 8 Zeichen. Teilen Sie es vertraulich.",
+    "generate": "Erzeugen",
+    "add": "Mitglied hinzufügen",
+    "save": "Änderungen speichern"
+  },
+  "errors": {
+    "name": "Geben Sie den vollständigen Namen ein (2 bis 100 Zeichen).",
+    "email": "Geben Sie eine E-Mail wie name@firma.de ein.",
+    "password": "Verwenden Sie 8 bis 50 Zeichen."
+  },
+  "toast": {
+    "added": "{{name}} hinzugefügt",
+    "updated": "{{name}} aktualisiert",
+    "held": "{{name}} ist pausiert",
+    "activated": "{{name}} ist aktiv",
+    "removed": "{{name}} entfernt",
+    "statusFailed": "Der Status wurde nicht geändert. Versuchen Sie es erneut.",
+    "removeFailed": "Die Person wurde nicht entfernt. Versuchen Sie es erneut.",
+    "saveFailed": "Das wurde nicht gespeichert. Versuchen Sie es erneut."
+  }
+}

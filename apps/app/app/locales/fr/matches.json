@@ -1,0 +1,44 @@
+{
+  "bands": {
+    "all": "Toutes",
+    "strong": "Fortes",
+    "partial": "Partielles",
+    "low": "Faibles"
+  },
+  "columns": {
+    "candidate": "Candidat",
+    "match": "Correspondance",
+    "experience": "Expérience",
+    "interviews": "Entretiens"
+  },
+  "years_one": "{{count}} an",
+  "years_many": "{{count}} ans",
+  "years_other": "{{count}} ans",
+  "unnamed": "Candidat sans nom",
+  "sortedNote": "Meilleure correspondance en premier",
+  "peek": {
+    "why": "Pourquoi cette correspondance",
+    "whyNote": "D'après l'entretien IA et le CV. Consultez la grille avant de décider.",
+    "noReason": "L'IA n'a pas donné de raison pour celle-ci.",
+    "role": "Adéquation au poste",
+    "skills": "Adéquation des compétences",
+    "has": "Possède",
+    "missing": "Manque",
+    "noneMissing": "Rien de la liste de l'offre.",
+    "interviews": "Entretiens IA",
+    "noInterviews": "Aucun entretien IA pour l'instant.",
+    "experience_one": "{{count}} an d'expérience",
+    "experience_many": "{{count}} ans d'expérience",
+    "experience_other": "{{count}} ans d'expérience"
+  },
+  "applicants": {
+    "title": "Candidats",
+    "lead_one": "{{count}} candidature · meilleure correspondance en premier",
+    "lead_many": "{{count}} candidatures · meilleure correspondance en premier",
+    "lead_other": "{{count}} candidatures · meilleure correspondance en premier",
+    "leadEmpty": "Personne n'a encore postulé.",
+    "emptyTitle": "Aucun candidat pour l'instant",
+    "emptyBody": "Les candidats apparaissent ici une fois leur entretien IA terminé. Vous pouvez aussi chercher dans le vivier de candidats.",
+    "pool": "Ouvrir le vivier de candidats"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "panel": {
+    "title": "Desbloquear",
+    "lead": "Al desbloquear verá los datos de contacto, la ficha completa, la grabación y el currículum. Cada entrevista cuesta un crédito.",
+    "matched": "El puesto de esta oferta",
+    "unlocked": "Desbloqueado",
+    "button_one": "Desbloquear · {{count}} crédito",
+    "button_many": "Desbloquear · {{count}} créditos",
+    "button_other": "Desbloquear · {{count}} créditos",
+    "pick": "Elija al menos una entrevista.",
+    "balance": "Saldo",
+    "short": "Necesita {{cost}} créditos y tiene {{balance}}. Añada créditos y volverá aquí.",
+    "addCredits": "Añadir créditos",
+    "none": "Aún no hay entrevistas con IA, así que no hay nada que desbloquear.",
+    "allUnlocked": "Todo está desbloqueado para este candidato.",
+    "openUnlocked": "Ver candidatos desbloqueados",
+    "failed": "El desbloqueo no se ha completado. Revise su saldo antes de volver a intentarlo."
+  },
+  "confirm": {
+    "title": "¿Desbloquear a {{name}}?",
+    "body_one": "Usa {{count}} crédito y no se puede deshacer. Le quedarán {{left}}.",
+    "body_many": "Usa {{count}} créditos y no se puede deshacer. Le quedarán {{left}}.",
+    "body_other": "Usa {{count}} créditos y no se puede deshacer. Le quedarán {{left}}."
+  },
+  "done": "{{name}} desbloqueado",
+  "doneBody_one": "{{count}} crédito usado, quedan {{left}}.",
+  "doneBody_many": "{{count}} créditos usados, quedan {{left}}.",
+  "doneBody_other": "{{count}} créditos usados, quedan {{left}}.",
+  "pool": {
+    "title": "Reserva de candidatos",
+    "lead": "Personas que nuestra IA relacionó con sus ofertas abiertas, mejor coincidencia primero.",
+    "job": "Oferta",
+    "chooseJob": "Elija una oferta",
+    "matched": "Coincidencias de la IA",
+    "applied": "Postulados",
+    "noJobsTitle": "No hay ofertas abiertas",
+    "noJobsBody": "Las coincidencias salen de sus ofertas abiertas. Publique una o reabra una en pausa.",
+    "postJob": "Publicar una oferta",
+    "emptyTitle": "Aún no hay coincidencias",
+    "emptyBody": "Nuestra IA sigue buscando coincidencias a medida que los candidatos terminan entrevistas. Vuelva pronto.",
+    "emptyApplied": "Aún no se ha postulado nadie a esta oferta.",
+    "summary": "{{matched}} de {{total}} candidatos coinciden"
+  },
+  "list": {
+    "title": "Candidatos desbloqueados",
+    "lead": "Todas las personas que ha desbloqueado, las más recientes primero.",
+    "sharedLinks": "Enlaces compartidos",
+    "columns": {
+      "candidate": "Candidato",
+      "experience": "Experiencia",
+      "place": "Ubicación",
+      "pay": "Salario (LPA)",
+      "notice": "Preaviso",
+      "interview": "Entrevista",
+      "unlocked": "Desbloqueado"
+    },
+    "years_one": "{{count}} año",
+    "years_many": "{{count}} años",
+    "years_other": "{{count}} años",
+    "days_one": "{{count}} día",
+    "days_many": "{{count}} días",
+    "days_other": "{{count}} días",
+    "verified": "Verificado",
+    "profile": "Perfil",
+    "scorecard": "Ficha",
+    "emptyTitle": "Aún no ha desbloqueado a nadie",
+    "emptyBody": "Desbloquee a un candidato desde la reserva o una lista de candidatos para ver sus datos aquí.",
+    "toPool": "Abrir la reserva de candidatos"
+  }
+}

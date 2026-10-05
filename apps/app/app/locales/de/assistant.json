@@ -1,0 +1,44 @@
+{
+  "title": "Assistent",
+  "lead": {
+    "employer": "Antworten rund ums Einstellen mit LetsHyre: Stellen, Matches, Scorecards und Credits.",
+    "candidate": "Antworten rund um Ihre Jobsuche: Bewerbungen, Interviews und Ihre Scorecard."
+  },
+  "log": "Unterhaltung",
+  "you": "Sie",
+  "assistant": "Assistent",
+  "greeting": "Hallo, ich bin der LetsHyre-Assistent.",
+  "hint": {
+    "employer": "Fragen Sie alles rund um Ihre Einstellungen. Diese Fragen kommen auf dieser Seite oft:",
+    "candidate": "Fragen Sie alles rund um Ihre Jobsuche. Diese Fragen kommen auf dieser Seite oft:"
+  },
+  "input": "Frage stellen",
+  "send": "Senden",
+  "stop": "Antwort stoppen",
+  "thinking": "Denkt nach…",
+  "stopped": "Sie haben diese Antwort gestoppt.",
+  "failed": "Es kam keine Antwort.",
+  "retry": "Erneut versuchen",
+  "clear": "Chat löschen",
+  "prompts": {
+    "firstJob": "Wie veröffentliche ich meine erste Stelle?",
+    "readScorecard": "Wie lese ich die Scorecard eines Kandidaten?",
+    "credits": "Wie funktionieren Credits?",
+    "betterJob": "Wie schreibe ich eine Stelle, die bessere Matches bekommt?",
+    "pauseJob": "Wie pausiere oder schließe ich eine Stelle?",
+    "matchScore": "Wie wird der Match-Score berechnet?",
+    "unlockCost": "Was kostet das Freischalten eines Kandidaten?",
+    "shareScorecard": "Wie teile ich eine Scorecard mit meinem Team?",
+    "gstInvoice": "Kann ich eine GST-Rechnung bekommen?",
+    "findFit": "Wie finde ich passende Stellen?",
+    "howInterview": "Wie funktioniert das KI-Interview?",
+    "afterApply": "Was passiert nach meiner Bewerbung?",
+    "shortlist": "Wie entscheiden Arbeitgeber, wen sie in die engere Wahl nehmen?",
+    "ownScore": "Wie wird meine Scorecard berechnet?",
+    "retake": "Kann ich das Interview wiederholen?",
+    "standOut": "Wie hebt sich mein Profil ab?",
+    "whoSees": "Wer kann meine Dokumente sehen?",
+    "needForInterview": "Was brauche ich für das Interview?",
+    "connectionDrops": "Was passiert, wenn meine Internetverbindung im Interview abbricht?"
+  }
+}

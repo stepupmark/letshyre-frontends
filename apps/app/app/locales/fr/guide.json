@@ -1,0 +1,54 @@
+{
+  "title": "Guide de l'entretien",
+  "lead": "Huit étapes du téléchargement à votre première question. Cochez-les au fur et à mesure de votre préparation.",
+  "progress": "{{done}} sur {{total}} prêtes",
+  "progressLabel": "Étapes prêtes",
+  "reset": "Recommencer",
+  "phases": {
+    "setup": "Installation",
+    "security": "Contrôles de sécurité",
+    "interview": "L'entretien"
+  },
+  "steps": {
+    "download": {
+      "title": "Installer l'application de bureau",
+      "body": "Les entretiens se déroulent uniquement dans l'application de bureau LetsHyre, pour que la session reste sécurisée.",
+      "link": "Télécharger pour votre ordinateur"
+    },
+    "signIn": {
+      "title": "Se connecter à l'application",
+      "body": "Utilisez le même e-mail et le même mot de passe qu'ici. Votre photo de profil et vos résultats vous suivent."
+    },
+    "dashboard": {
+      "title": "Commencer depuis votre tableau de bord",
+      "body": "Sélectionnez Passer l'entretien. L'application vérifie votre ordinateur avant que quoi que ce soit d'autre ne s'ouvre."
+    },
+    "clearEnv": {
+      "title": "Fermer les autres applications",
+      "body": "Navigateurs, enregistreurs d'écran, assistants IA et applications d'appel vidéo doivent être fermés avant de continuer.",
+      "tip": "Fermez tout le reste avant de sélectionner Passer l'entretien."
+    },
+    "permissions": {
+      "title": "Autoriser la caméra, le micro et l'écran",
+      "body": "Les trois sont nécessaires pour la surveillance. Autorisez chacun quand votre ordinateur le demande."
+    },
+    "verifyId": {
+      "title": "Confirmer votre identité",
+      "body": "Lisez une courte phrase à voix haute, puis la caméra prend une photo à comparer avec votre photo de profil.",
+      "tip": "Faites face à la caméra dans une pièce bien éclairée."
+    },
+    "chooseRole": {
+      "title": "Choisir le poste",
+      "body": "Choisissez le poste pour lequel vous passez l'entretien. Celui de votre profil est présélectionné."
+    },
+    "begin": {
+      "title": "Commencer",
+      "body": "L'entretien s'ouvre en plein écran avec l'enregistrement actif. Répondez à chaque question dans le temps imparti ; vous pouvez passer d'une question à l'autre jusqu'à la fin du minuteur."
+    }
+  },
+  "cta": {
+    "title": "Obtenir l'application de bureau",
+    "body": "Connectez-vous avec votre compte LetsHyre et commencez quand vous êtes prêt.",
+    "button": "Télécharger l'application"
+  }
+}

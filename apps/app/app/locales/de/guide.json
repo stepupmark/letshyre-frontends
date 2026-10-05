@@ -1,0 +1,54 @@
+{
+  "title": "Interview-Leitfaden",
+  "lead": "Acht Schritte vom Download bis zur ersten Frage. Haken Sie sie ab, während Sie sich vorbereiten.",
+  "progress": "{{done}} von {{total}} bereit",
+  "progressLabel": "Bereite Schritte",
+  "reset": "Von vorn beginnen",
+  "phases": {
+    "setup": "Einrichten",
+    "security": "Sicherheitsprüfungen",
+    "interview": "Das Interview"
+  },
+  "steps": {
+    "download": {
+      "title": "Desktop-App installieren",
+      "body": "Interviews laufen nur in der LetsHyre-Desktop-App, damit die Sitzung sicher bleibt.",
+      "link": "Für Ihren Computer herunterladen"
+    },
+    "signIn": {
+      "title": "In der App anmelden",
+      "body": "Verwenden Sie dieselbe E-Mail und dasselbe Passwort wie hier. Profilfoto und Ergebnisse kommen mit."
+    },
+    "dashboard": {
+      "title": "Im Dashboard starten",
+      "body": "Wählen Sie „Interview starten“. Die App prüft Ihren Computer, bevor sich etwas anderes öffnet."
+    },
+    "clearEnv": {
+      "title": "Andere Apps schließen",
+      "body": "Browser, Bildschirmrekorder, KI-Assistenten und Videoanruf-Apps müssen geschlossen sein, bevor es weitergeht.",
+      "tip": "Schließen Sie alles andere, bevor Sie „Interview starten“ wählen."
+    },
+    "permissions": {
+      "title": "Kamera, Mikrofon und Bildschirm erlauben",
+      "body": "Alle drei werden für die Aufsicht gebraucht. Erlauben Sie jedes, wenn Ihr Computer fragt."
+    },
+    "verifyId": {
+      "title": "Bestätigen, dass Sie es sind",
+      "body": "Lesen Sie einen kurzen Satz laut vor, dann nimmt die Kamera ein Foto auf, das mit Ihrem Profilfoto verglichen wird.",
+      "tip": "Schauen Sie in einem gut beleuchteten Raum direkt in die Kamera."
+    },
+    "chooseRole": {
+      "title": "Rolle wählen",
+      "body": "Wählen Sie die Rolle, für die Sie das Interview führen. Vorausgewählt ist die aus Ihrem Profil."
+    },
+    "begin": {
+      "title": "Beginnen",
+      "body": "Das Interview öffnet sich im Vollbild mit laufender Aufzeichnung. Beantworten Sie jede Frage in ihrer Zeit; Sie können zwischen Fragen wechseln, bis der Timer abläuft."
+    }
+  },
+  "cta": {
+    "title": "Desktop-App holen",
+    "body": "Melden Sie sich mit Ihrem LetsHyre-Konto an und starten Sie, wenn Sie bereit sind.",
+    "button": "App herunterladen"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "title": "Parlez-nous de votre entreprise",
+  "lead": "Environ cinq minutes, en trois étapes. Nous enregistrons votre progression sur cet appareil, vous pouvez donc vous arrêter et revenir.",
+  "steps": {
+    "company": "Informations sur l'entreprise",
+    "legal": "Immatriculation et fiscalité",
+    "documents": "Documents"
+  },
+  "fields": {
+    "companyName": "Nom de l'entreprise",
+    "website": "Site web",
+    "officialEmail": "E-mail officiel",
+    "officialEmailHint": "Là où nous envoyons les messages concernant le compte et la facturation.",
+    "industry": "Secteur",
+    "industryPlaceholder": "Choisir un secteur",
+    "industryFailed": "Les secteurs ne se sont pas chargés. Rechargez pour réessayer.",
+    "linkedin": "Page LinkedIn de l'entreprise",
+    "description": "Que fait votre entreprise ?",
+    "descriptionCount": "{{count}} / 500",
+    "registration": "Numéro d'immatriculation de l'entreprise",
+    "registrationHint": "Le CIN ou le numéro de votre certificat d'immatriculation, ex. U72900TG2024PTC123456.",
+    "pan": "PAN",
+    "gst": "GSTIN",
+    "address": "Adresse du siège"
+  },
+  "documents": {
+    "lead": "Scans ou photos nets, jusqu'à 5 Mo chacun. Les candidats ne les voient jamais.",
+    "company_logo": {
+      "label": "Logo de l'entreprise",
+      "hint": "Un format carré fonctionne le mieux"
+    },
+    "registration_certificate": {
+      "label": "Certificat d'immatriculation",
+      "hint": "Certificat de constitution"
+    },
+    "gst_certificate": {
+      "label": "Certificat GST",
+      "hint": "Votre enregistrement GST"
+    },
+    "address_proof": {
+      "label": "Justificatif d'adresse",
+      "hint": "Une facture ou un bail"
+    }
+  },
+  "draftSaved": "Brouillon enregistré sur cet appareil. Les documents devront être rajoutés si vous partez.",
+  "submitting": "Import de vos documents… {{percent}} %",
+  "submitFailed": "Nous n'avons pas pu envoyer vos informations. Tout ce que vous avez saisi est conservé, réessayez.",
+  "validation": {
+    "nameMin": "Saisissez le nom de votre entreprise",
+    "website": "Saisissez une adresse web comme https://example.com",
+    "email": "Saisissez une adresse e-mail comme compta@entreprise.com",
+    "industry": "Choisissez un secteur",
+    "linkedin": "Saisissez une adresse web comme https://www.linkedin.com/company/example",
+    "linkedinDomain": "Utilisez la page linkedin.com de votre entreprise",
+    "description": "Écrivez au moins une phrase sur votre activité",
+    "registration": "Saisissez votre numéro d'immatriculation (5 à 50 caractères)",
+    "pan": "Un PAN comporte 10 caractères, comme ABCDE1234F",
+    "gst": "Un GSTIN comporte 15 caractères, comme 36ABCDE1234F1Z5",
+    "address": "Saisissez l'adresse de votre siège",
+    "fileRequired": "Ajoutez ce document",
+    "fileInvalid": "Utilisez un fichier d'un type accepté, jusqu'à 5 Mo"
+  },
+  "done": {
+    "title": "Merci, vos informations sont enregistrées",
+    "lead": "Votre compte est utilisable pendant que nous vérifions vos documents.",
+    "nextHeading": "La suite",
+    "review": "Notre équipe examine les informations et documents de votre entreprise.",
+    "contact": "S'il manque quelque chose, nous écrirons à {{email}}.",
+    "start": "En attendant, vous pouvez publier des offres et voir des candidats.",
+    "postJob": "Publier votre première offre",
+    "dashboard": "Aller au tableau de bord"
+  }
+}

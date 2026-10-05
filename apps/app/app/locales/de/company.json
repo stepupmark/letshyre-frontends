@@ -1,0 +1,63 @@
+{
+  "title": "Unternehmensprofil",
+  "unnamed": "Ihr Unternehmen",
+  "jobs_one": "{{open}} offen von {{count}} veröffentlichten Stelle",
+  "jobs_other": "{{open}} offen von {{count}} veröffentlichten Stellen",
+  "kyc": {
+    "approved": "Verifiziert",
+    "verified": "Verifiziert",
+    "pending": "In Prüfung",
+    "rejected": "Änderungen nötig"
+  },
+  "details": {
+    "title": "Unternehmensdaten",
+    "edit": "Bearbeiten",
+    "email": "Offizielle E-Mail",
+    "industry": "Branche",
+    "chooseIndustry": "Branche wählen",
+    "website": "Website",
+    "linkedin": "LinkedIn-Seite",
+    "linkedinOpen": "Auf LinkedIn öffnen",
+    "address": "Adresse",
+    "description": "Über das Unternehmen",
+    "descriptionHint": "Kandidaten lesen dies in Ihren Stellenanzeigen. Bis zu 500 Zeichen."
+  },
+  "logo": {
+    "label": "Logo",
+    "upload": "Logo hochladen",
+    "replace": "Logo ersetzen",
+    "hint": "Ein quadratisches PNG, JPG oder WebP bis 5 MB. Es wird wie gezeigt quadratisch zugeschnitten.",
+    "tooLarge": "Das Logo ist größer als 5 MB. Wählen Sie ein kleineres Bild.",
+    "wrongType": "Verwenden Sie ein PNG-, JPG- oder WebP-Bild."
+  },
+  "account": {
+    "title": "Ihr Konto",
+    "name": "Name",
+    "email": "Anmelde-E-Mail",
+    "phone": "Telefon"
+  },
+  "legal": {
+    "title": "Registrierung",
+    "note": "Diese Angaben wurden bei der Verifizierung Ihres Unternehmens geprüft. Kontaktieren Sie uns, um sie zu ändern.",
+    "registration": "Registrierungsnummer",
+    "gst": "GSTIN",
+    "pan": "PAN"
+  },
+  "documents": {
+    "registration_certificate": "Registrierungsurkunde",
+    "gst_certificate": "GST-Bescheinigung",
+    "address_proof": "Adressnachweis",
+    "bank_proof": "Banknachweis"
+  },
+  "errors": {
+    "email": "Geben Sie eine E-Mail wie hr@firma.de ein.",
+    "address": "Geben Sie die vollständige Adresse ein.",
+    "industry": "Wählen Sie eine Branche.",
+    "linkedin": "Geben Sie einen linkedin.com-Link ein oder lassen Sie das Feld leer.",
+    "description": "Bleiben Sie bei 500 Zeichen."
+  },
+  "save": "Änderungen speichern",
+  "saving": "Wird gespeichert…",
+  "saved": "Unternehmensdaten gespeichert",
+  "saveFailed": "Das wurde nicht gespeichert. Ihre Änderungen sind noch da; versuchen Sie es erneut."
+}

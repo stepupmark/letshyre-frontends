@@ -1,0 +1,101 @@
+{
+  "find": {
+    "title": "Trova lavoro",
+    "lead": "Ruoli aperti ora. Candidarsi richiede un passaggio, e il datore di lavoro vede il tuo profilo e la tua scheda."
+  },
+  "applications": {
+    "title": "Le mie candidature",
+    "lead": "A che punto è ogni candidatura e cosa succede dopo."
+  },
+  "filters": {
+    "keyword": "Ruolo o competenza",
+    "location": "Città",
+    "search": "Cerca",
+    "type": "Tipo di contratto",
+    "anyType": "Qualsiasi contratto",
+    "industry": "Settore",
+    "anyIndustry": "Qualsiasi settore",
+    "experience": "Esperienza, es. 2-5",
+    "years": "anni",
+    "salary": "Retribuzione, es. 6-10",
+    "clear": "Cancella tutto"
+  },
+  "saved": {
+    "save": "Salva ricerca",
+    "saved": "Salvata",
+    "remove": "Rimuovi la ricerca salvata {{search}}"
+  },
+  "types": {
+    "full_time": "Tempo pieno",
+    "part_time": "Part-time",
+    "internship": "Tirocinio",
+    "contract": "A tempo determinato",
+    "freelance": "Freelance"
+  },
+  "facts": {
+    "fresher": "Aperto a neolaureati",
+    "years": "{{years}} anni"
+  },
+  "results_one": "{{count}} offerta",
+  "results_many": "{{count}} offerte",
+  "results_other": "{{count}} offerte",
+  "searching": "Ricerca…",
+  "empty": {
+    "title": "Nessuna offerta aperta al momento",
+    "body": "Ogni settimana arrivano nuovi ruoli. Torna presto, oppure tieni aggiornata la tua scheda così i datori di lavoro ti trovano.",
+    "Applied": {
+      "title": "Ancora nessuna candidatura",
+      "body": "Le offerte a cui ti candidi compaiono qui, con lo stato di ciascuna."
+    },
+    "Shortlisted": {
+      "title": "Ancora in nessuna rosa",
+      "body": "Quando un datore di lavoro ti mette in rosa, l'offerta passa qui."
+    },
+    "Selected": {
+      "title": "Ancora nessuna proposta",
+      "body": "Qui compaiono le offerte per cui un datore di lavoro ti sceglie."
+    },
+    "Rejected": {
+      "title": "Niente qui",
+      "body": "Qui compaiono le candidature che non sono andate a buon fine."
+    }
+  },
+  "company": "Azienda",
+  "untitled": "Ruolo senza titolo",
+  "moreSkills": "+{{count}} altre",
+  "applied": "Candidato",
+  "appliedWhen": "candidatura {{when}}",
+  "detail": {
+    "skills": "Competenze richieste",
+    "about": "Il ruolo",
+    "noDescription": "Il datore di lavoro non ha aggiunto una descrizione."
+  },
+  "apply": {
+    "button": "Candidati",
+    "sending": "Invio candidatura…",
+    "note": "Il datore di lavoro vede il tuo profilo e la tua scheda più recente.",
+    "done": "Candidatura inviata. Il datore di lavoro può ora vedere il tuo profilo.",
+    "track": "Vedi le mie candidature",
+    "failed": "La candidatura non è andata a buon fine. Riprova tra poco."
+  },
+  "stages": {
+    "Applied": "Candidato",
+    "Shortlisted": "In rosa",
+    "Selected": "Scelto",
+    "Rejected": "Non scelto"
+  },
+  "timeline": {
+    "label": "Avanzamento della candidatura",
+    "notSelected": "Non scelto",
+    "done": "(fatto)"
+  },
+  "next": {
+    "label": "Prossimo passo:",
+    "Applied": "Il datore di lavoro sta valutando i candidati. Un colloquio con IA recente per questo ruolo ti fa salire nella sua lista.",
+    "Shortlisted": "Sei in rosa. Il datore di lavoro ti contatterà via email o telefono, quindi resta raggiungibile su entrambi.",
+    "Selected": "Il datore di lavoro ti ha scelto. Ti contatterà per la proposta.",
+    "Rejected": "Questa volta non è andata. Ci sono ruoli simili aperti.",
+    "guide": "Come funziona il colloquio",
+    "findJobs": "Trova lavoro"
+  }
+}

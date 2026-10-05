@@ -1,0 +1,54 @@
+{
+  "title": "Guía de la entrevista",
+  "lead": "Ocho pasos desde la descarga hasta su primera pregunta. Márquelos a medida que se prepara.",
+  "progress": "{{done}} de {{total}} listos",
+  "progressLabel": "Pasos listos",
+  "reset": "Empezar de nuevo",
+  "phases": {
+    "setup": "Preparación",
+    "security": "Controles de seguridad",
+    "interview": "La entrevista"
+  },
+  "steps": {
+    "download": {
+      "title": "Instale la aplicación de escritorio",
+      "body": "Las entrevistas solo se hacen en la aplicación de escritorio de LetsHyre, para que la sesión sea segura.",
+      "link": "Descargar para su ordenador"
+    },
+    "signIn": {
+      "title": "Inicie sesión en la aplicación",
+      "body": "Use el mismo correo y contraseña que aquí. Su foto de perfil y sus resultados le acompañan."
+    },
+    "dashboard": {
+      "title": "Empiece desde su panel",
+      "body": "Seleccione Hacer la entrevista. La aplicación revisa su ordenador antes de abrir nada más."
+    },
+    "clearEnv": {
+      "title": "Cierre las demás aplicaciones",
+      "body": "Navegadores, grabadores de pantalla, asistentes de IA y aplicaciones de videollamada deben estar cerrados para continuar.",
+      "tip": "Cierre todo lo demás antes de seleccionar Hacer la entrevista."
+    },
+    "permissions": {
+      "title": "Permita cámara, micrófono y pantalla",
+      "body": "Los tres son necesarios para la supervisión. Permita cada uno cuando su ordenador lo pida."
+    },
+    "verifyId": {
+      "title": "Confirme que es usted",
+      "body": "Lea una frase corta en voz alta y la cámara tomará una foto para compararla con su foto de perfil.",
+      "tip": "Mire a la cámara en una habitación bien iluminada."
+    },
+    "chooseRole": {
+      "title": "Elija el puesto",
+      "body": "Elija el puesto para el que hace la entrevista. Empieza con el de su perfil."
+    },
+    "begin": {
+      "title": "Empiece",
+      "body": "La entrevista se abre a pantalla completa con la grabación activa. Responda cada pregunta en su tiempo; puede moverse entre preguntas hasta que acabe el temporizador."
+    }
+  },
+  "cta": {
+    "title": "Consiga la aplicación de escritorio",
+    "body": "Inicie sesión con su cuenta de LetsHyre y empiece cuando esté listo.",
+    "button": "Descargar la aplicación"
+  }
+}

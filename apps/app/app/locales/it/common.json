@@ -1,17 +1,105 @@
 {
+  "appName": "LetsHyre",
   "nav": {
     "dashboard": "Dashboard"
   },
   "notFound": {
-    "title": "Non abbiamo trovato questa pagina"
+    "title": "Non abbiamo trovato questa pagina",
+    "body": "Il link potrebbe essere vecchio, o la pagina è stata spostata.",
+    "goHome": "Vai alla dashboard"
   },
   "error": {
     "title": "Questa pagina non si è caricata",
-    "retry": "Riprova"
+    "body": "Qualcosa è andato storto da parte nostra. Ricarica per riprovare, o contattaci se continua.",
+    "retry": "Riprova",
+    "goHome": "Vai alla dashboard"
+  },
+  "table": {
+    "selectAll": "Seleziona tutte le righe",
+    "selectRow": "Seleziona {{name}}",
+    "selected_one": "{{count}} selezionato",
+    "selected_many": "{{count}} selezionati",
+    "selected_other": "{{count}} selezionati",
+    "clearSelection": "Annulla selezione",
+    "columns": "Colonne",
+    "compact": "Righe compatte",
+    "sortBy": "Ordina per {{column}}",
+    "previous": "Pagina precedente",
+    "next": "Pagina successiva",
+    "pageOf": "Pagina {{page}} di {{total}}",
+    "results_one": "{{count}} risultato",
+    "results_many": "{{count}} risultati",
+    "results_other": "{{count}} risultati",
+    "rowActions": "Azioni per {{name}}",
+    "bulkActions": "Azioni multiple",
+    "navigateHint": "per spostarti,",
+    "openHint": "per aprire",
+    "enterKey": "Invio",
+    "pages": "Pagine"
+  },
+  "state": {
+    "error": "Il caricamento non è riuscito.",
+    "errorBody": "Non si è perso nulla. Controlla la connessione e riprova.",
+    "retry": "Riprova",
+    "loading": "Caricamento"
+  },
+  "empty": {
+    "filteredTitle": "Nessun risultato",
+    "filteredBody": "Prova un'altra ricerca o cancella i filtri.",
+    "clearFilters": "Cancella i filtri"
+  },
+  "upload": {
+    "drop": "Trascina qui un file, oppure",
+    "browse": "scegline uno",
+    "hint": "{{types}}, fino a {{size}}",
+    "tooLarge": "Il file pesa {{size}}. Il limite è {{max}}.",
+    "wrongType": "Questo tipo di file non è accettato. Usa {{types}}.",
+    "uploading": "Caricamento di {{name}}",
+    "failed": "Caricamento non riuscito. Il file è ancora qui, quindi puoi riprovare.",
+    "retry": "Riprova",
+    "remove": "Rimuovi {{name}}",
+    "done": "Caricato"
+  },
+  "wizard": {
+    "step": "Passaggio {{current}} di {{total}}",
+    "back": "Indietro",
+    "next": "Continua",
+    "finish": "Concludi",
+    "draftSaved": "Bozza salvata su questo dispositivo"
+  },
+  "confirm": {
+    "cancel": "Annulla"
+  },
+  "undo": "Annulla",
+  "copy": {
+    "copy": "Copia",
+    "copied": "Copiato"
+  },
+  "band": {
+    "strong": "Corrispondenza forte",
+    "partial": "Corrispondenza parziale",
+    "low": "Corrispondenza debole"
+  },
+  "interviewBand": {
+    "strong": "Colloquio solido",
+    "partial": "Colloquio altalenante",
+    "low": "Colloquio debole"
+  },
+  "detail": {
+    "previous": "Precedente",
+    "next": "Successivo",
+    "position": "{{current}} di {{total}}"
+  },
+  "releaseCheck": {
+    "title": "Verifica della nuova app",
+    "body": "Questa pagina è servita dalla nuova app. Se riesci a leggerla, il rilascio è instradato correttamente."
   },
   "password": {
     "show": "Mostra password",
     "hide": "Nascondi password",
     "capsLock": "Blocco maiuscole attivo"
+  },
+  "tip": {
+    "gotIt": "Capito"
   }
 }

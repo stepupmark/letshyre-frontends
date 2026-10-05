@@ -1,0 +1,147 @@
+{
+  "title": "Comprar créditos",
+  "lead": "Cada crédito desbloquea una entrevista con IA: los datos de contacto del candidato, la ficha completa, la grabación y el currículum. Los créditos no caducan.",
+  "balance": "Saldo",
+  "invoices": "Facturas",
+  "buyCredits": "Comprar créditos",
+  "plusGst": "{{price}} + GST",
+  "nextNote": "Cuando haya pagado, le llevaremos de vuelta al candidato que estaba viendo.",
+  "nextBack": "Volver al candidato",
+  "plans": {
+    "title": "Planes",
+    "lead": "Pago único, no es una suscripción. El GST se añade al pagar.",
+    "popular": "El más elegido",
+    "once": "+ GST, pago único",
+    "credits_one": "{{count}} crédito",
+    "credits_many": "{{count}} créditos",
+    "credits_other": "{{count}} créditos",
+    "rate": "{{rate}} por crédito",
+    "seats_one": "{{count}} plaza de equipo",
+    "seats_many": "{{count}} plazas de equipo",
+    "seats_other": "{{count}} plazas de equipo",
+    "unlocks": "Datos de contacto, fichas y grabaciones",
+    "noExpiry": "Los créditos no caducan",
+    "topUps": "Recargue cuando quiera",
+    "buy": "Comprar {{name}}"
+  },
+  "topUps": {
+    "title": "Recargar",
+    "lead": "Añada créditos a su saldo cuando necesite más.",
+    "credits_one": "{{count}} crédito",
+    "credits_many": "{{count}} créditos",
+    "credits_other": "{{count}} créditos",
+    "buy": "Comprar",
+    "buyLabel_one": "Comprar {{count}} crédito",
+    "buyLabel_many": "Comprar {{count}} créditos",
+    "buyLabel_other": "Comprar {{count}} créditos"
+  },
+  "unavailable": {
+    "title": "Este plan no está disponible",
+    "body": "Puede que los planes hayan cambiado desde que se creó el enlace. Cierre esto y elija uno abajo.",
+    "failedTitle": "No hemos podido cargar este plan",
+    "failedBody": "Revise su conexión e inténtelo de nuevo. No se ha cobrado nada.",
+    "close": "Cerrar"
+  },
+  "checkout": {
+    "planTitle": "Plan {{name}}",
+    "topUpTitle_one": "{{count}} crédito",
+    "topUpTitle_many": "{{count}} créditos",
+    "topUpTitle_other": "{{count}} créditos",
+    "summary_one": "{{count}} crédito, pago único. Los créditos no caducan.",
+    "summary_many": "{{count}} créditos, pago único. Los créditos no caducan.",
+    "summary_other": "{{count}} créditos, pago único. Los créditos no caducan.",
+    "credits_one": "{{count}} crédito × {{rate}}",
+    "credits_many": "{{count}} créditos × {{rate}}",
+    "credits_other": "{{count}} créditos × {{rate}}",
+    "couponLine": "Cupón {{code}}",
+    "discount": "Descuento",
+    "gst": "GST ({{percent}} %)",
+    "total": "Total",
+    "quoteError": "No hemos podido calcular su total. No se ha cobrado nada.",
+    "retry": "Reintentar",
+    "coupon": {
+      "toggle": "¿Tiene un código de cupón?",
+      "label": "Código de cupón",
+      "apply": "Aplicar",
+      "applied": "{{code}} aplicado",
+      "remove": "Quitar el cupón {{code}}",
+      "required": "Introduzca un código de cupón.",
+      "invalid": "Los códigos de cupón solo llevan letras, números, guiones y guiones bajos.",
+      "rejected": "Este código no se puede usar en esta compra."
+    },
+    "pay": "Pagar {{amount}}",
+    "payPending": "Pagar",
+    "paying": "Iniciando el pago…",
+    "secure": "Los pagos los gestiona Razorpay. Al pagar, acepta nuestros <terms>términos</terms> y la <refund>política de reembolsos</refund>.",
+    "razorpay_one": "{{count}} crédito de LetsHyre",
+    "razorpay_many": "{{count}} créditos de LetsHyre",
+    "razorpay_other": "{{count}} créditos de LetsHyre",
+    "notice": {
+      "cancelled": {
+        "title": "Pago cancelado",
+        "body": "No se ha cobrado nada. Pague de nuevo cuando quiera."
+      },
+      "failed": {
+        "title": "El pago no se ha completado",
+        "body": "No se ha cobrado nada. Inténtelo de nuevo o use otro método de pago."
+      },
+      "priceChanged": {
+        "title": "Su total ha cambiado",
+        "body": "El precio se actualizó después de que abriera esto, y no se ha cobrado nada. Revise el nuevo total antes de pagar."
+      },
+      "blocked": {
+        "title": "La ventana de pago no se ha cargado",
+        "body": "No se ha cobrado nada. Revise su conexión; si usa un bloqueador de anuncios, permita checkout.razorpay.com."
+      },
+      "error": {
+        "title": "No hemos podido iniciar el pago",
+        "body": "No se ha cobrado nada. Inténtelo de nuevo en un momento."
+      }
+    },
+    "verifying": {
+      "title": "Confirmando su pago",
+      "body": "Tarda unos segundos. Mantenga esta ventana abierta."
+    },
+    "paid": {
+      "title_one": "{{count}} crédito añadido",
+      "title_many": "{{count}} créditos añadidos",
+      "title_other": "{{count}} créditos añadidos",
+      "body": "Hemos recibido {{amount}}. Su factura está en la página de facturas.",
+      "balance": "Su saldo ahora es",
+      "primary": "Buscar candidatos",
+      "back": "Volver al candidato",
+      "invoices": "Ver facturas"
+    },
+    "unconfirmed": {
+      "title": "Aún no hemos podido confirmar su pago",
+      "body": "Si se le ha cobrado, sus créditos no se pierden. Inténtelo de nuevo o contáctenos con la referencia de pago de abajo.",
+      "retry": "Reintentar",
+      "contact": "Contactar con soporte"
+    },
+    "reference": "Referencia de pago"
+  },
+  "invoiceList": {
+    "title": "Facturas",
+    "lead": "Cada compra de créditos, con su recibo.",
+    "columns": {
+      "date": "Fecha",
+      "purchase": "Compra",
+      "number": "Factura",
+      "total": "Total"
+    },
+    "plan": "Plan {{name}}",
+    "topUp": "Recarga",
+    "preparing": "En preparación",
+    "emptyTitle": "Aún no hay facturas",
+    "emptyBody": "Su primera compra aparecerá aquí con su recibo."
+  },
+  "receipt": {
+    "title": "Recibo",
+    "subtotal": "Subtotal",
+    "gst": "GST",
+    "paidOn": "Pagado el",
+    "pdf": "PDF",
+    "print": "Imprimir",
+    "noPdf": "La factura en PDF aún se está preparando. Vuelva en unos minutos."
+  }
+}

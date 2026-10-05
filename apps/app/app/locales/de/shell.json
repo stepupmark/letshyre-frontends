@@ -1,0 +1,70 @@
+{
+  "skipToContent": "Zum Hauptinhalt springen",
+  "loading": "Seite wird geladen",
+  "toggleSidebar": "Seitenleiste ein- oder ausblenden",
+  "navigation": "Hauptnavigation",
+  "groups": {
+    "hiring": "Einstellen",
+    "company": "Unternehmen",
+    "you": "Sie",
+    "help": "Hilfe"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "postJob": "Stelle veröffentlichen",
+    "jobs": "Stellen",
+    "candidatePool": "Kandidatenpool",
+    "unlocked": "Freigeschaltete Kandidaten",
+    "team": "Team",
+    "sharedLinks": "Geteilte Links",
+    "billing": "Abrechnung",
+    "findJobs": "Jobs finden",
+    "applications": "Meine Bewerbungen",
+    "scorecards": "Scorecards",
+    "profile": "Profil",
+    "interviewGuide": "Interview-Leitfaden",
+    "assistant": "Assistent"
+  },
+  "search": {
+    "button": "Suchen oder springen…",
+    "shortcut": "Strg K",
+    "title": "Suche",
+    "description": "Zu einer Seite springen oder eine Aktion ausführen",
+    "empty": "Keine Treffer.",
+    "pages": "Seiten"
+  },
+  "credits": {
+    "label_one": "{{count}} Credit",
+    "label_other": "{{count}} Credits",
+    "add": "Credits hinzufügen"
+  },
+  "user": {
+    "menu": "Kontomenü",
+    "profile": "Profil",
+    "language": "Sprache",
+    "shortcuts": "Tastenkürzel",
+    "signOut": "Abmelden",
+    "tips": "Tipps erneut anzeigen"
+  },
+  "shortcuts": {
+    "title": "Tastenkürzel",
+    "search": "Suchen und zu Seiten springen",
+    "sidebar": "Seitenleiste ein- oder ausblenden",
+    "help": "Diese Liste anzeigen"
+  },
+  "tips": {
+    "search": {
+      "title": "Überall hinspringen",
+      "body": "Suchen Sie nach einer Seite oder Aktion. Drücken Sie überall Strg K."
+    },
+    "credits": {
+      "title": "Ihr Credit-Guthaben",
+      "body": "Credits schalten die Kontaktdaten eines Kandidaten frei. Wählen Sie es aus, um mehr hinzuzufügen oder Rechnungen zu sehen."
+    }
+  },
+  "assistant": {
+    "open": "Assistenten fragen",
+    "full": "Als ganze Seite öffnen",
+    "lead": "Ihre Unterhaltung bleibt hier, während Sie zwischen Seiten wechseln."
+  }
+}

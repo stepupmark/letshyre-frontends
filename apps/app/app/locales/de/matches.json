@@ -1,0 +1,41 @@
+{
+  "bands": {
+    "all": "Alle",
+    "strong": "Stark",
+    "partial": "Teilweise",
+    "low": "Schwach"
+  },
+  "columns": {
+    "candidate": "Kandidat",
+    "match": "Match",
+    "experience": "Erfahrung",
+    "interviews": "Interviews"
+  },
+  "years_one": "{{count}} J.",
+  "years_other": "{{count}} J.",
+  "unnamed": "Unbenannter Kandidat",
+  "sortedNote": "Bester Match zuerst",
+  "peek": {
+    "why": "Warum dieser Match",
+    "whyNote": "Aus dem KI-Interview und dem Lebenslauf. Prüfen Sie die Scorecard, bevor Sie entscheiden.",
+    "noReason": "Die KI hat hierfür keinen Grund genannt.",
+    "role": "Rollenpassung",
+    "skills": "Fähigkeitspassung",
+    "has": "Hat",
+    "missing": "Fehlt",
+    "noneMissing": "Nichts aus der Liste der Stelle.",
+    "interviews": "KI-Interviews",
+    "noInterviews": "Noch keine KI-Interviews.",
+    "experience_one": "{{count}} Jahr Erfahrung",
+    "experience_other": "{{count}} Jahre Erfahrung"
+  },
+  "applicants": {
+    "title": "Bewerber",
+    "lead_one": "{{count}} beworben · bester Match zuerst",
+    "lead_other": "{{count}} beworben · bester Match zuerst",
+    "leadEmpty": "Noch hat sich niemand beworben.",
+    "emptyTitle": "Noch keine Bewerber",
+    "emptyBody": "Bewerber erscheinen hier, sobald sie das KI-Interview abgeschlossen haben. Sie können auch im Kandidatenpool suchen.",
+    "pool": "Kandidatenpool öffnen"
+  }
+}

@@ -1,40 +1,136 @@
 {
+  "title": "Scheda di valutazione del colloquio",
+  "print": "Stampa",
+  "provenance": {
+    "sharedBy": "Condivisa privatamente da {{company}}. Il link ha un limite di visualizzazioni e una scadenza, quindi non inoltrarlo.",
+    "private": "Condivisa privatamente. Il link ha un limite di visualizzazioni e una scadenza, quindi non inoltrarlo."
+  },
   "header": {
     "unnamed": "Candidato",
     "fresher": "Neolaureato",
-    "matchedTo": "Abbinato a {{job}}",
     "experience_one": "{{count}} anno di esperienza",
-    "experience_other": "{{count}} anni di esperienza"
+    "experience_many": "{{count}} anni di esperienza",
+    "experience_other": "{{count}} anni di esperienza",
+    "matchedTo": "Abbinato a {{job}}",
+    "yours": "La tua scheda di valutazione del colloquio",
+    "taken": "Colloquio del {{date}}"
+  },
+  "summary": {
+    "heading": "Sintesi",
+    "outOf": "/ 100",
+    "basedOn_one": "Basata su {{count}} domanda con risposta",
+    "basedOn_many": "Basata su {{count}} domande con risposta",
+    "basedOn_other": "Basata su {{count}} domande con risposta",
+    "howScored": "Come viene valutato?",
+    "howScoredBody": "L'intervistatore IA valuta ogni risposta in base al ruolo, poi ne controlla chiarezza, pertinenza e profondità. Usa il punteggio come punto di partenza per la tua decisione, non come sostituto.",
+    "howScoredYours": "L'intervistatore IA valuta ogni risposta in base al ruolo, poi ne controlla chiarezza, pertinenza e profondità. I datori di lavoro vedono gli stessi punteggi, quindi le aree da migliorare sono un buon punto di partenza."
+  },
+  "match": {
+    "heading": "Adeguatezza all'offerta",
+    "headingFor": "Adeguatezza a {{job}}",
+    "overall": "Complessiva",
+    "role": "Ruolo",
+    "skills": "Competenze",
+    "why": "Perché corrisponde"
   },
   "metrics": {
+    "heading": "Comunicazione",
     "clarity": "Chiarezza",
     "relevance": "Pertinenza",
-    "confidence": "Sicurezza"
+    "confidence": "Sicurezza",
+    "depth": "Profondità di ragionamento",
+    "keyConcept": "Concetti chiave trattati"
   },
   "types": {
-    "coding": "Programmazione"
+    "heading": "Per tipo di domanda",
+    "correct_one": "{{correct}} su {{count}} corretta",
+    "correct_many": "{{correct}} su {{count}} corrette",
+    "correct_other": "{{correct}} su {{count}} corrette",
+    "mcq": "Scelta multipla",
+    "pseudocode_mcq": "Pseudocodice",
+    "coding": "Programmazione",
+    "typing": "Scritta",
+    "audio": "Orale"
   },
   "insights": {
+    "heading": "Osservazioni",
     "strengths": "Punti di Forza",
+    "improve": "Aree da migliorare",
     "recommendations": "Raccomandazioni"
   },
+  "recording": {
+    "heading": "Registrazione",
+    "unsupported": "Il tuo browser non può riprodurre questa registrazione.",
+    "failed": "La registrazione non si è caricata. Il link potrebbe essere scaduto.",
+    "retry": "Riprova"
+  },
   "profile": {
+    "heading": "Profilo",
+    "empty": "Il candidato non ha ancora aggiunto dati al profilo.",
     "skills": "Competenze",
     "experience": "Esperienza",
     "education": "Istruzione",
     "projects": "Progetti",
-    "resume": "Curriculum"
+    "awards": "Certificazioni e risultati",
+    "links": "Curriculum e link",
+    "resume": "Curriculum",
+    "untitled": "Progetto senza titolo"
   },
   "answers": {
+    "heading": "Risposte",
+    "none": "Questo colloquio non ha domande con risposta.",
     "expandAll": "Espandi tutto",
     "collapseAll": "Comprimi tutto",
+    "number": "Domanda {{number}}",
+    "noQuestion": "Testo della domanda non disponibile",
+    "answer": "Risposta",
+    "assessment": "Valutazione",
+    "correct": "Corretta",
+    "wrong": "Errata",
+    "chosen": "La sua risposta",
+    "correctAnswer": "Risposta corretta",
+    "noAnswer": "Nessuna risposta.",
+    "noCode": "Nessun codice inviato.",
+    "noAudio": "Nessun audio registrato.",
+    "audioUnsupported": "Il tuo browser non può riprodurre questo audio.",
     "types": {
-      "coding": "Programmazione"
-    }
+      "mcq": "Scelta multipla",
+      "mcq_pseudocode": "Pseudocodice",
+      "pseudocode_mcq": "Pseudocodice",
+      "coding": "Programmazione",
+      "typing": "Scritta",
+      "audio": "Orale",
+      "other": "Domanda"
+    },
+    "yours": "La tua risposta"
   },
   "toc": {
+    "label": "In questa pagina",
+    "summary": "Sintesi",
     "communication": "Comunicazione",
+    "types": "Per tipo di domanda",
     "insights": "Approfondimenti",
-    "profile": "Profilo"
+    "recording": "Registrazione",
+    "profile": "Profilo",
+    "answers": "Risposte"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "Questo link non funziona",
+      "body": "Potrebbe essere scritto male o rimosso. Chiedi un nuovo link a chi l'ha condiviso."
+    },
+    "expired": {
+      "title": "Questo link è scaduto",
+      "body": "Le schede condivise sono disponibili solo per un tempo limitato. Chiedi un nuovo link a chi l'ha condivisa."
+    },
+    "limit": {
+      "title": "Questo link ha raggiunto il limite di visualizzazioni",
+      "body": "Chiedi un nuovo link a chi l'ha condiviso."
+    },
+    "unavailable": {
+      "title": "Questa scheda non si è caricata",
+      "body": "Qualcosa è andato storto da parte nostra. Riprova tra poco."
+    },
+    "retry": "Riprova"
   }
 }

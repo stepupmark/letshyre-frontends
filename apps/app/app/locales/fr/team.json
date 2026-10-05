@@ -1,0 +1,48 @@
+{
+  "title": "Équipe",
+  "lead": "Les personnes qui peuvent publier des offres et examiner des candidats avec vous.",
+  "count_one": "{{count}} personne peut publier des offres et examiner des candidats.",
+  "count_many": "{{count}} personnes peuvent publier des offres et examiner des candidats.",
+  "count_other": "{{count}} personnes peuvent publier des offres et examiner des candidats.",
+  "add": "Ajouter un membre",
+  "active": "Actif",
+  "onHold": "Suspendu",
+  "actions": "Actions pour {{name}}",
+  "edit": "Modifier",
+  "hold": "Suspendre",
+  "activate": "Réactiver",
+  "remove": "Retirer",
+  "holdNote": "Les membres suspendus ne peuvent pas se connecter tant que vous ne les réactivez pas. Leurs offres restent inchangées.",
+  "emptyTitle": "Vous êtes seul pour l'instant",
+  "emptyBody": "Ajoutez des recruteurs pour qu'ils publient des offres et examinent des candidats sur ce compte.",
+  "confirmTitle": "Retirer {{name}} ?",
+  "confirmBody": "L'accès est coupé immédiatement. Les offres publiées restent à votre entreprise. Cette action est irréversible.",
+  "dialog": {
+    "addTitle": "Ajouter un membre de l'équipe",
+    "addLead": "La personne rejoint l'équipe comme recruteur. Définissez un mot de passe et partagez-le avec elle ; elle se connecte avec son e-mail.",
+    "editTitle": "Modifier le membre de l'équipe",
+    "editLead": "Les modifications s'appliquent à sa prochaine connexion.",
+    "name": "Nom complet",
+    "email": "E-mail professionnel",
+    "password": "Mot de passe",
+    "passwordHint": "Au moins 8 caractères. Partagez-le en privé.",
+    "generate": "Générer",
+    "add": "Ajouter le membre",
+    "save": "Enregistrer les modifications"
+  },
+  "errors": {
+    "name": "Saisissez son nom complet (2 à 100 caractères).",
+    "email": "Saisissez un e-mail comme nom@entreprise.com.",
+    "password": "Utilisez 8 à 50 caractères."
+  },
+  "toast": {
+    "added": "{{name}} ajouté",
+    "updated": "{{name}} mis à jour",
+    "held": "{{name}} est suspendu",
+    "activated": "{{name}} est actif",
+    "removed": "{{name}} retiré",
+    "statusFailed": "Le statut n'a pas changé. Réessayez.",
+    "removeFailed": "La personne n'a pas été retirée. Réessayez.",
+    "saveFailed": "Cela n'a pas été enregistré. Réessayez."
+  }
+}

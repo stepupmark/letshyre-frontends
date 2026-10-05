@@ -1,0 +1,75 @@
+{
+  "title": "Dashboard",
+  "postJob": "Stelle veröffentlichen",
+  "attention": {
+    "heading": "Braucht Ihre Aufmerksamkeit",
+    "addCredits": "Credits hinzufügen",
+    "viewJobs": "Stellen ansehen",
+    "postJob": "Stelle veröffentlichen",
+    "creditsOut": {
+      "title": "Sie haben keine Credits mehr",
+      "body": "Fügen Sie Credits hinzu, um Kontaktdaten von Kandidaten freizuschalten."
+    },
+    "creditsLow": {
+      "title": "Ihre Credits werden knapp",
+      "body_one": "Sie haben noch {{count}} Credit. Jede Freischaltung kostet einen.",
+      "body_other": "Sie haben noch {{count}} Credits. Jede Freischaltung kostet einen."
+    },
+    "noOpenJobs": {
+      "title": "Keine Stellen sind offen",
+      "body_one": "{{count}} Stelle ist geschlossen oder im Entwurf. Öffnen Sie sie wieder, um weiter Bewerber zu bekommen.",
+      "body_other": "{{count}} Stellen sind geschlossen oder im Entwurf. Öffnen Sie eine wieder, um weiter Bewerber zu bekommen."
+    },
+    "noJobs": {
+      "title": "Erste Stelle veröffentlichen",
+      "body": "Passende Kandidaten werden von unserer KI interviewt, bevor Sie sie sehen."
+    },
+    "clear": {
+      "title": "Sie sind auf dem neuesten Stand.",
+      "body": "Gerade braucht nichts Ihre Aufmerksamkeit."
+    }
+  },
+  "stats": {
+    "heading": "Einstellungen",
+    "open": "Offene Stellen",
+    "closed": "Geschlossen oder Entwurf",
+    "applications": "Erhaltene Bewerbungen"
+  },
+  "credits": {
+    "heading": "Credits",
+    "low": "Niedrig",
+    "explain": "Ein Credit schaltet Kontaktdaten, Aufzeichnung und Lebenslauf eines Kandidaten frei.",
+    "used": "{{percent}} % Ihrer Credits genutzt",
+    "add": "Credits hinzufügen",
+    "invoices": "Rechnungen"
+  },
+  "setup": {
+    "title": "Einrichtung abschließen",
+    "progress": "{{done}} von {{total}} erledigt",
+    "hide": "Ausblenden",
+    "isDone": "(erledigt)",
+    "isTodo": "(offen)",
+    "account": {
+      "title": "Konto erstellen",
+      "done": "Erledigt",
+      "todo": "Registrieren Sie sich mit Ihrer geschäftlichen E-Mail."
+    },
+    "company": {
+      "title": "Unternehmensdaten und Dokumente hinzufügen",
+      "done": "Zur Prüfung eingereicht",
+      "todo": "Name, Website und Registrierungsdokumente Ihres Unternehmens."
+    },
+    "job": {
+      "title": "Erste Stelle veröffentlichen",
+      "done": "Erledigt",
+      "todo": "Laden Sie eine Stellenbeschreibung hoch, und wir füllen das Formular aus.",
+      "action": "Stelle veröffentlichen"
+    },
+    "team": {
+      "title": "Team einladen",
+      "done": "Erledigt",
+      "todo": "Fügen Sie Kollegen hinzu, damit sie Kandidaten mit Ihnen prüfen können.",
+      "action": "Einladen"
+    }
+  }
+}

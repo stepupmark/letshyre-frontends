@@ -1,0 +1,101 @@
+{
+  "find": {
+    "title": "Trouver des offres",
+    "lead": "Postes ouverts maintenant. Postuler se fait en une étape, et l'employeur voit votre profil et votre grille."
+  },
+  "applications": {
+    "title": "Mes candidatures",
+    "lead": "Où en est chaque candidature et ce qui se passe ensuite."
+  },
+  "filters": {
+    "keyword": "Intitulé ou compétence",
+    "location": "Ville",
+    "search": "Rechercher",
+    "type": "Type de contrat",
+    "anyType": "Tous types de contrat",
+    "industry": "Secteur",
+    "anyIndustry": "Tous secteurs",
+    "experience": "Expérience, ex. 2-5",
+    "years": "ans",
+    "salary": "Salaire, ex. 6-10",
+    "clear": "Tout effacer"
+  },
+  "saved": {
+    "save": "Enregistrer la recherche",
+    "saved": "Enregistrée",
+    "remove": "Supprimer la recherche enregistrée {{search}}"
+  },
+  "types": {
+    "full_time": "Temps plein",
+    "part_time": "Temps partiel",
+    "internship": "Stage",
+    "contract": "CDD",
+    "freelance": "Freelance"
+  },
+  "facts": {
+    "fresher": "Débutants bienvenus",
+    "years": "{{years}} ans"
+  },
+  "results_one": "{{count}} offre",
+  "results_many": "{{count}} offres",
+  "results_other": "{{count}} offres",
+  "searching": "Recherche…",
+  "empty": {
+    "title": "Aucune offre ouverte pour le moment",
+    "body": "De nouveaux postes sont publiés chaque semaine. Revenez bientôt, ou gardez votre grille à jour pour que les employeurs vous trouvent.",
+    "Applied": {
+      "title": "Aucune candidature pour l'instant",
+      "body": "Les offres auxquelles vous postulez apparaissent ici, avec leur avancement."
+    },
+    "Shortlisted": {
+      "title": "Aucune présélection pour l'instant",
+      "body": "Quand un employeur vous présélectionne, l'offre apparaît ici."
+    },
+    "Selected": {
+      "title": "Aucune offre pour l'instant",
+      "body": "Les postes pour lesquels un employeur vous retient apparaissent ici."
+    },
+    "Rejected": {
+      "title": "Rien ici",
+      "body": "Les candidatures qui n'ont pas abouti apparaissent ici."
+    }
+  },
+  "company": "Entreprise",
+  "untitled": "Poste sans titre",
+  "moreSkills": "+{{count}} de plus",
+  "applied": "Postulé",
+  "appliedWhen": "postulé {{when}}",
+  "detail": {
+    "skills": "Compétences recherchées",
+    "about": "À propos du poste",
+    "noDescription": "L'employeur n'a pas ajouté de description."
+  },
+  "apply": {
+    "button": "Postuler",
+    "sending": "Envoi…",
+    "note": "L'employeur voit votre profil et votre grille la plus récente.",
+    "done": "Candidature envoyée. L'employeur peut maintenant voir votre profil.",
+    "track": "Voir mes candidatures",
+    "failed": "Votre candidature n'est pas passée. Réessayez dans un instant."
+  },
+  "stages": {
+    "Applied": "Postulé",
+    "Shortlisted": "Présélectionné",
+    "Selected": "Retenu",
+    "Rejected": "Non retenu"
+  },
+  "timeline": {
+    "label": "Avancement de la candidature",
+    "notSelected": "Non retenu",
+    "done": "(fait)"
+  },
+  "next": {
+    "label": "Ensuite :",
+    "Applied": "L'employeur examine les candidats. Un entretien IA récent pour ce poste vous fait remonter dans sa liste.",
+    "Shortlisted": "Vous êtes présélectionné. L'employeur vous contacte par e-mail ou par téléphone, restez joignable sur les deux.",
+    "Selected": "L'employeur vous a retenu. Il va vous contacter au sujet de l'offre.",
+    "Rejected": "Cela n'a pas abouti cette fois. Des postes similaires sont ouverts.",
+    "guide": "Comment se passe l'entretien",
+    "findJobs": "Trouver des offres"
+  }
+}

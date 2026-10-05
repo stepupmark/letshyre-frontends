@@ -1,0 +1,64 @@
+{
+  "title": "Perfil de la empresa",
+  "unnamed": "Su empresa",
+  "jobs_one": "{{open}} abiertas de {{count}} oferta publicada",
+  "jobs_many": "{{open}} abiertas de {{count}} ofertas publicadas",
+  "jobs_other": "{{open}} abiertas de {{count}} ofertas publicadas",
+  "kyc": {
+    "approved": "Verificada",
+    "verified": "Verificada",
+    "pending": "En revisión",
+    "rejected": "Necesita cambios"
+  },
+  "details": {
+    "title": "Datos de la empresa",
+    "edit": "Editar",
+    "email": "Correo oficial",
+    "industry": "Sector",
+    "chooseIndustry": "Elija un sector",
+    "website": "Sitio web",
+    "linkedin": "Página de LinkedIn",
+    "linkedinOpen": "Abrir en LinkedIn",
+    "address": "Dirección",
+    "description": "Sobre la empresa",
+    "descriptionHint": "Los candidatos lo leen en sus ofertas. Hasta 500 caracteres."
+  },
+  "logo": {
+    "label": "Logotipo",
+    "upload": "Subir logotipo",
+    "replace": "Cambiar logotipo",
+    "hint": "Un PNG, JPG o WebP cuadrado de hasta 5 MB. Se recorta en cuadrado, como se muestra.",
+    "tooLarge": "El logotipo supera los 5 MB. Elija una imagen más pequeña.",
+    "wrongType": "Use una imagen PNG, JPG o WebP."
+  },
+  "account": {
+    "title": "Su cuenta",
+    "name": "Nombre",
+    "email": "Correo de acceso",
+    "phone": "Teléfono"
+  },
+  "legal": {
+    "title": "Registro",
+    "note": "Se comprobaron al verificar su empresa. Contáctenos para cambiarlos.",
+    "registration": "Número de registro",
+    "gst": "GSTIN",
+    "pan": "PAN"
+  },
+  "documents": {
+    "registration_certificate": "Certificado de registro",
+    "gst_certificate": "Certificado de GST",
+    "address_proof": "Justificante de domicilio",
+    "bank_proof": "Justificante bancario"
+  },
+  "errors": {
+    "email": "Introduzca un correo como rrhh@empresa.com.",
+    "address": "Introduzca la dirección completa.",
+    "industry": "Elija un sector.",
+    "linkedin": "Introduzca un enlace de linkedin.com o déjelo vacío.",
+    "description": "Manténgalo en 500 caracteres."
+  },
+  "save": "Guardar cambios",
+  "saving": "Guardando…",
+  "saved": "Datos de la empresa guardados",
+  "saveFailed": "No se ha guardado. Sus cambios siguen aquí; inténtelo de nuevo."
+}

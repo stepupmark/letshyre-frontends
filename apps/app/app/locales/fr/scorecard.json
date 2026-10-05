@@ -1,40 +1,136 @@
 {
+  "title": "Grille d'entretien",
+  "print": "Imprimer",
+  "provenance": {
+    "sharedBy": "Partagée en privé par {{company}}. Le lien a une limite de vues et une date d'expiration, merci de ne pas le transférer.",
+    "private": "Partagée en privé. Le lien a une limite de vues et une date d'expiration, merci de ne pas le transférer."
+  },
   "header": {
     "unnamed": "Candidat",
     "fresher": "Débutant",
-    "matchedTo": "Associé à {{job}}",
     "experience_one": "{{count}} an d'expérience",
-    "experience_other": "{{count}} ans d'expérience"
+    "experience_many": "{{count}} ans d'expérience",
+    "experience_other": "{{count}} ans d'expérience",
+    "matchedTo": "Associé à {{job}}",
+    "yours": "Votre grille d'entretien",
+    "taken": "Entretien du {{date}}"
+  },
+  "summary": {
+    "heading": "Synthèse",
+    "outOf": "/ 100",
+    "basedOn_one": "Basé sur {{count}} question répondue",
+    "basedOn_many": "Basé sur {{count}} questions répondues",
+    "basedOn_other": "Basé sur {{count}} questions répondues",
+    "howScored": "Comment est-ce noté ?",
+    "howScoredBody": "L'intervieweur IA note chaque réponse au regard du poste, puis vérifie sa clarté, sa pertinence et sa profondeur. Utilisez le score comme point de départ de votre décision, pas comme un substitut.",
+    "howScoredYours": "L'intervieweur IA note chaque réponse au regard du poste, puis vérifie sa clarté, sa pertinence et sa profondeur. Les employeurs voient les mêmes scores ; les axes d'amélioration sont donc un bon point de départ."
+  },
+  "match": {
+    "heading": "Adéquation au poste",
+    "headingFor": "Adéquation à {{job}}",
+    "overall": "Globale",
+    "role": "Poste",
+    "skills": "Compétences",
+    "why": "Pourquoi cette correspondance"
   },
   "metrics": {
+    "heading": "Communication",
     "clarity": "Clarté",
     "relevance": "Pertinence",
-    "confidence": "Assurance"
+    "confidence": "Assurance",
+    "depth": "Profondeur de réflexion",
+    "keyConcept": "Notions clés abordées"
   },
   "types": {
-    "coding": "Codage"
+    "heading": "Par type de question",
+    "correct_one": "{{correct}} sur {{count}} correcte",
+    "correct_many": "{{correct}} sur {{count}} correctes",
+    "correct_other": "{{correct}} sur {{count}} correctes",
+    "mcq": "Choix multiple",
+    "pseudocode_mcq": "Pseudocode",
+    "coding": "Codage",
+    "typing": "Écrit",
+    "audio": "Oral"
   },
   "insights": {
+    "heading": "Analyses",
     "strengths": "Points forts",
+    "improve": "Axes d'amélioration",
     "recommendations": "Recommandations"
   },
+  "recording": {
+    "heading": "Enregistrement",
+    "unsupported": "Votre navigateur ne peut pas lire cet enregistrement.",
+    "failed": "L'enregistrement ne s'est pas chargé. Le lien a peut-être expiré.",
+    "retry": "Réessayer"
+  },
   "profile": {
+    "heading": "Profil",
+    "empty": "Le candidat n'a pas encore ajouté d'informations de profil.",
     "skills": "Compétences",
     "experience": "Expérience",
     "education": "Formation",
     "projects": "Projets",
-    "resume": "CV"
+    "awards": "Certifications et réalisations",
+    "links": "CV et liens",
+    "resume": "CV",
+    "untitled": "Projet sans titre"
   },
   "answers": {
+    "heading": "Réponses",
+    "none": "Cet entretien ne contient aucune question répondue.",
     "expandAll": "Tout développer",
     "collapseAll": "Tout réduire",
+    "number": "Question {{number}}",
+    "noQuestion": "Texte de la question indisponible",
+    "answer": "Réponse",
+    "assessment": "Évaluation",
+    "correct": "Correct",
+    "wrong": "Incorrect",
+    "chosen": "Sa réponse",
+    "correctAnswer": "Bonne réponse",
+    "noAnswer": "Aucune réponse donnée.",
+    "noCode": "Aucun code soumis.",
+    "noAudio": "Aucun audio enregistré.",
+    "audioUnsupported": "Votre navigateur ne peut pas lire cet audio.",
     "types": {
-      "coding": "Codage"
-    }
+      "mcq": "Choix multiple",
+      "mcq_pseudocode": "Pseudocode",
+      "pseudocode_mcq": "Pseudocode",
+      "coding": "Codage",
+      "typing": "Écrit",
+      "audio": "Oral",
+      "other": "Question"
+    },
+    "yours": "Votre réponse"
   },
   "toc": {
+    "label": "Sur cette page",
+    "summary": "Synthèse",
     "communication": "Communication",
+    "types": "Par type de question",
     "insights": "Aperçus",
-    "profile": "Profil"
+    "recording": "Enregistrement",
+    "profile": "Profil",
+    "answers": "Réponses"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "Ce lien ne fonctionne pas",
+      "body": "Il est peut-être mal saisi ou a été supprimé. Demandez un nouveau lien à la personne qui l'a partagé."
+    },
+    "expired": {
+      "title": "Ce lien a expiré",
+      "body": "Les grilles partagées ne sont disponibles que pour une durée limitée. Demandez un nouveau lien à la personne qui l'a partagée."
+    },
+    "limit": {
+      "title": "Ce lien a atteint sa limite de vues",
+      "body": "Demandez un nouveau lien à la personne qui l'a partagé."
+    },
+    "unavailable": {
+      "title": "Cette grille ne s'est pas chargée",
+      "body": "Un problème est survenu de notre côté. Réessayez dans un instant."
+    },
+    "retry": "Réessayer"
   }
 }

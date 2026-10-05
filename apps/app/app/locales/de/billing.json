@@ -1,0 +1,138 @@
+{
+  "title": "Credits kaufen",
+  "lead": "Ein Credit schaltet ein KI-Interview frei: Kontaktdaten, vollständige Scorecard, Aufzeichnung und Lebenslauf des Kandidaten. Credits verfallen nie.",
+  "balance": "Guthaben",
+  "invoices": "Rechnungen",
+  "buyCredits": "Credits kaufen",
+  "plusGst": "{{price}} + GST",
+  "nextNote": "Nach der Zahlung bringen wir Sie zurück zu dem Kandidaten, den Sie angesehen haben.",
+  "nextBack": "Zurück zum Kandidaten",
+  "plans": {
+    "title": "Pakete",
+    "lead": "Einmalige Zahlung, kein Abo. GST wird an der Kasse hinzugerechnet.",
+    "popular": "Am beliebtesten",
+    "once": "+ GST, einmalig",
+    "credits_one": "{{count}} Credit",
+    "credits_other": "{{count}} Credits",
+    "rate": "{{rate}} pro Credit",
+    "seats_one": "{{count}} Teamplatz",
+    "seats_other": "{{count}} Teamplätze",
+    "unlocks": "Kontaktdaten, Scorecards und Aufzeichnungen",
+    "noExpiry": "Credits verfallen nie",
+    "topUps": "Jederzeit aufladen",
+    "buy": "{{name}} kaufen"
+  },
+  "topUps": {
+    "title": "Aufladen",
+    "lead": "Fügen Sie Ihrem Guthaben Credits hinzu, wann immer Sie mehr brauchen.",
+    "credits_one": "{{count}} Credit",
+    "credits_other": "{{count}} Credits",
+    "buy": "Kaufen",
+    "buyLabel_one": "{{count}} Credit kaufen",
+    "buyLabel_other": "{{count}} Credits kaufen"
+  },
+  "unavailable": {
+    "title": "Dieses Paket ist nicht verfügbar",
+    "body": "Die Pakete haben sich vielleicht geändert, seit der Link erstellt wurde. Schließen Sie dies und wählen Sie unten eines aus.",
+    "failedTitle": "Wir konnten dieses Paket nicht laden",
+    "failedBody": "Prüfen Sie Ihre Verbindung und versuchen Sie es erneut. Es wurde nichts berechnet.",
+    "close": "Schließen"
+  },
+  "checkout": {
+    "planTitle": "Paket {{name}}",
+    "topUpTitle_one": "{{count}} Credit",
+    "topUpTitle_other": "{{count}} Credits",
+    "summary_one": "{{count}} Credit, einmalig bezahlt. Credits verfallen nie.",
+    "summary_other": "{{count}} Credits, einmalig bezahlt. Credits verfallen nie.",
+    "credits_one": "{{count}} Credit × {{rate}}",
+    "credits_other": "{{count}} Credits × {{rate}}",
+    "couponLine": "Gutschein {{code}}",
+    "discount": "Rabatt",
+    "gst": "GST ({{percent}} %)",
+    "total": "Gesamt",
+    "quoteError": "Wir konnten Ihren Gesamtbetrag nicht berechnen. Es wurde nichts berechnet.",
+    "retry": "Erneut versuchen",
+    "coupon": {
+      "toggle": "Haben Sie einen Gutscheincode?",
+      "label": "Gutscheincode",
+      "apply": "Einlösen",
+      "applied": "{{code}} eingelöst",
+      "remove": "Gutschein {{code}} entfernen",
+      "required": "Geben Sie einen Gutscheincode ein.",
+      "invalid": "Gutscheincodes enthalten nur Buchstaben, Ziffern, Bindestriche und Unterstriche.",
+      "rejected": "Dieser Code gilt nicht für diesen Kauf."
+    },
+    "pay": "{{amount}} bezahlen",
+    "payPending": "Bezahlen",
+    "paying": "Zahlung wird gestartet…",
+    "secure": "Zahlungen werden über Razorpay abgewickelt. Mit der Zahlung stimmen Sie unseren <terms>Bedingungen</terms> und der <refund>Erstattungsrichtlinie</refund> zu.",
+    "razorpay_one": "{{count}} LetsHyre-Credit",
+    "razorpay_other": "{{count}} LetsHyre-Credits",
+    "notice": {
+      "cancelled": {
+        "title": "Zahlung abgebrochen",
+        "body": "Es wurde nichts berechnet. Zahlen Sie erneut, wenn Sie bereit sind."
+      },
+      "failed": {
+        "title": "Die Zahlung ist nicht durchgegangen",
+        "body": "Es wurde nichts berechnet. Versuchen Sie es erneut oder nutzen Sie eine andere Zahlungsart."
+      },
+      "priceChanged": {
+        "title": "Ihr Gesamtbetrag hat sich geändert",
+        "body": "Der Preis wurde aktualisiert, nachdem Sie dies geöffnet haben, und es wurde nichts berechnet. Prüfen Sie den neuen Betrag, bevor Sie bezahlen."
+      },
+      "blocked": {
+        "title": "Das Zahlungsfenster wurde nicht geladen",
+        "body": "Es wurde nichts berechnet. Prüfen Sie Ihre Verbindung; falls Sie einen Werbeblocker nutzen, erlauben Sie checkout.razorpay.com."
+      },
+      "error": {
+        "title": "Wir konnten die Zahlung nicht starten",
+        "body": "Es wurde nichts berechnet. Versuchen Sie es gleich noch einmal."
+      }
+    },
+    "verifying": {
+      "title": "Ihre Zahlung wird bestätigt",
+      "body": "Das dauert ein paar Sekunden. Lassen Sie dieses Fenster geöffnet."
+    },
+    "paid": {
+      "title_one": "{{count}} Credit hinzugefügt",
+      "title_other": "{{count}} Credits hinzugefügt",
+      "body": "Wir haben {{amount}} erhalten. Ihre Rechnung finden Sie auf der Rechnungsseite.",
+      "balance": "Ihr Guthaben beträgt jetzt",
+      "primary": "Kandidaten finden",
+      "back": "Zurück zum Kandidaten",
+      "invoices": "Rechnungen ansehen"
+    },
+    "unconfirmed": {
+      "title": "Wir konnten Ihre Zahlung noch nicht bestätigen",
+      "body": "Falls Geld abgebucht wurde, gehen Ihre Credits nicht verloren. Versuchen Sie es erneut oder kontaktieren Sie uns mit der Zahlungsreferenz unten.",
+      "retry": "Erneut versuchen",
+      "contact": "Support kontaktieren"
+    },
+    "reference": "Zahlungsreferenz"
+  },
+  "invoiceList": {
+    "title": "Rechnungen",
+    "lead": "Jeder Credit-Kauf mit seinem Beleg.",
+    "columns": {
+      "date": "Datum",
+      "purchase": "Kauf",
+      "number": "Rechnung",
+      "total": "Gesamt"
+    },
+    "plan": "Paket {{name}}",
+    "topUp": "Aufladung",
+    "preparing": "Wird erstellt",
+    "emptyTitle": "Noch keine Rechnungen",
+    "emptyBody": "Ihr erster Kauf erscheint hier mit seinem Beleg."
+  },
+  "receipt": {
+    "title": "Beleg",
+    "subtotal": "Zwischensumme",
+    "gst": "GST",
+    "paidOn": "Bezahlt am",
+    "pdf": "PDF",
+    "print": "Drucken",
+    "noPdf": "Die PDF-Rechnung wird noch erstellt. Schauen Sie in ein paar Minuten wieder vorbei."
+  }
+}

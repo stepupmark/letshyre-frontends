@@ -1,0 +1,64 @@
+{
+  "title": "Profil de l'entreprise",
+  "unnamed": "Votre entreprise",
+  "jobs_one": "{{open}} ouverte sur {{count}} offre publiée",
+  "jobs_many": "{{open}} ouvertes sur {{count}} offres publiées",
+  "jobs_other": "{{open}} ouvertes sur {{count}} offres publiées",
+  "kyc": {
+    "approved": "Vérifiée",
+    "verified": "Vérifiée",
+    "pending": "En cours d'examen",
+    "rejected": "Modifications nécessaires"
+  },
+  "details": {
+    "title": "Informations sur l'entreprise",
+    "edit": "Modifier",
+    "email": "E-mail officiel",
+    "industry": "Secteur",
+    "chooseIndustry": "Choisir un secteur",
+    "website": "Site web",
+    "linkedin": "Page LinkedIn",
+    "linkedinOpen": "Ouvrir sur LinkedIn",
+    "address": "Adresse",
+    "description": "À propos de l'entreprise",
+    "descriptionHint": "Les candidats le lisent sur vos offres. Jusqu'à 500 caractères."
+  },
+  "logo": {
+    "label": "Logo",
+    "upload": "Importer un logo",
+    "replace": "Remplacer le logo",
+    "hint": "Un PNG, JPG ou WebP carré jusqu'à 5 Mo. Il est recadré en carré, comme affiché.",
+    "tooLarge": "Le logo dépasse 5 Mo. Choisissez une image plus petite.",
+    "wrongType": "Utilisez une image PNG, JPG ou WebP."
+  },
+  "account": {
+    "title": "Votre compte",
+    "name": "Nom",
+    "email": "E-mail de connexion",
+    "phone": "Téléphone"
+  },
+  "legal": {
+    "title": "Immatriculation",
+    "note": "Ces informations ont été vérifiées lors de la validation de votre entreprise. Contactez-nous pour les modifier.",
+    "registration": "Numéro d'immatriculation",
+    "gst": "GSTIN",
+    "pan": "PAN"
+  },
+  "documents": {
+    "registration_certificate": "Certificat d'immatriculation",
+    "gst_certificate": "Certificat GST",
+    "address_proof": "Justificatif d'adresse",
+    "bank_proof": "Justificatif bancaire"
+  },
+  "errors": {
+    "email": "Saisissez un e-mail comme rh@entreprise.com.",
+    "address": "Saisissez l'adresse complète.",
+    "industry": "Choisissez un secteur.",
+    "linkedin": "Saisissez un lien linkedin.com, ou laissez vide.",
+    "description": "Limitez-vous à 500 caractères."
+  },
+  "save": "Enregistrer les modifications",
+  "saving": "Enregistrement…",
+  "saved": "Informations de l'entreprise enregistrées",
+  "saveFailed": "Cela n'a pas été enregistré. Vos modifications sont conservées ; réessayez."
+}

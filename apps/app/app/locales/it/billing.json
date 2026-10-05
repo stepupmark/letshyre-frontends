@@ -1,0 +1,147 @@
+{
+  "title": "Acquista crediti",
+  "lead": "Ogni credito sblocca un colloquio con IA: contatti del candidato, scheda completa, registrazione e curriculum. I crediti non scadono mai.",
+  "balance": "Saldo",
+  "invoices": "Fatture",
+  "buyCredits": "Acquista crediti",
+  "plusGst": "{{price}} + GST",
+  "nextNote": "Dopo il pagamento ti riportiamo al candidato che stavi guardando.",
+  "nextBack": "Torna al candidato",
+  "plans": {
+    "title": "Piani",
+    "lead": "Pagamento unico, non è un abbonamento. La GST si aggiunge al pagamento.",
+    "popular": "Il più scelto",
+    "once": "+ GST, pagamento unico",
+    "credits_one": "{{count}} credito",
+    "credits_many": "{{count}} crediti",
+    "credits_other": "{{count}} crediti",
+    "rate": "{{rate}} per credito",
+    "seats_one": "{{count}} posto nel team",
+    "seats_many": "{{count}} posti nel team",
+    "seats_other": "{{count}} posti nel team",
+    "unlocks": "Contatti, schede di valutazione e registrazioni",
+    "noExpiry": "I crediti non scadono mai",
+    "topUps": "Ricarica quando vuoi",
+    "buy": "Acquista {{name}}"
+  },
+  "topUps": {
+    "title": "Ricarica",
+    "lead": "Aggiungi crediti al saldo quando te ne servono altri.",
+    "credits_one": "{{count}} credito",
+    "credits_many": "{{count}} crediti",
+    "credits_other": "{{count}} crediti",
+    "buy": "Acquista",
+    "buyLabel_one": "Acquista {{count}} credito",
+    "buyLabel_many": "Acquista {{count}} crediti",
+    "buyLabel_other": "Acquista {{count}} crediti"
+  },
+  "unavailable": {
+    "title": "Questo piano non è disponibile",
+    "body": "I piani potrebbero essere cambiati da quando è stato creato il link. Chiudi qui e scegline uno qui sotto.",
+    "failedTitle": "Non siamo riusciti a caricare questo piano",
+    "failedBody": "Controlla la connessione e riprova. Non è stato addebitato nulla.",
+    "close": "Chiudi"
+  },
+  "checkout": {
+    "planTitle": "Piano {{name}}",
+    "topUpTitle_one": "{{count}} credito",
+    "topUpTitle_many": "{{count}} crediti",
+    "topUpTitle_other": "{{count}} crediti",
+    "summary_one": "{{count}} credito, pagamento unico. I crediti non scadono mai.",
+    "summary_many": "{{count}} crediti, pagamento unico. I crediti non scadono mai.",
+    "summary_other": "{{count}} crediti, pagamento unico. I crediti non scadono mai.",
+    "credits_one": "{{count}} credito × {{rate}}",
+    "credits_many": "{{count}} crediti × {{rate}}",
+    "credits_other": "{{count}} crediti × {{rate}}",
+    "couponLine": "Coupon {{code}}",
+    "discount": "Sconto",
+    "gst": "GST ({{percent}}%)",
+    "total": "Totale",
+    "quoteError": "Non siamo riusciti a calcolare il totale. Non è stato addebitato nulla.",
+    "retry": "Riprova",
+    "coupon": {
+      "toggle": "Hai un codice coupon?",
+      "label": "Codice coupon",
+      "apply": "Applica",
+      "applied": "{{code}} applicato",
+      "remove": "Rimuovi il coupon {{code}}",
+      "required": "Inserisci un codice coupon.",
+      "invalid": "I codici coupon contengono solo lettere, numeri, trattini e trattini bassi.",
+      "rejected": "Questo codice non vale per questo acquisto."
+    },
+    "pay": "Paga {{amount}}",
+    "payPending": "Paga",
+    "paying": "Avvio del pagamento…",
+    "secure": "I pagamenti sono gestiti da Razorpay. Pagando accetti i nostri <terms>termini</terms> e la <refund>politica di rimborso</refund>.",
+    "razorpay_one": "{{count}} credito LetsHyre",
+    "razorpay_many": "{{count}} crediti LetsHyre",
+    "razorpay_other": "{{count}} crediti LetsHyre",
+    "notice": {
+      "cancelled": {
+        "title": "Pagamento annullato",
+        "body": "Non è stato addebitato nulla. Paga di nuovo quando sei pronto."
+      },
+      "failed": {
+        "title": "Il pagamento non è andato a buon fine",
+        "body": "Non è stato addebitato nulla. Riprova o usa un altro metodo di pagamento."
+      },
+      "priceChanged": {
+        "title": "Il totale è cambiato",
+        "body": "Il prezzo è stato aggiornato dopo che hai aperto questa finestra, e non è stato addebitato nulla. Controlla il nuovo totale prima di pagare."
+      },
+      "blocked": {
+        "title": "La finestra di pagamento non si è caricata",
+        "body": "Non è stato addebitato nulla. Controlla la connessione; se usi un blocco pubblicità, consenti checkout.razorpay.com."
+      },
+      "error": {
+        "title": "Non siamo riusciti ad avviare il pagamento",
+        "body": "Non è stato addebitato nulla. Riprova tra poco."
+      }
+    },
+    "verifying": {
+      "title": "Conferma del pagamento",
+      "body": "Ci vogliono pochi secondi. Tieni aperta questa finestra."
+    },
+    "paid": {
+      "title_one": "{{count}} credito aggiunto",
+      "title_many": "{{count}} crediti aggiunti",
+      "title_other": "{{count}} crediti aggiunti",
+      "body": "Abbiamo ricevuto {{amount}}. La fattura è nella pagina delle fatture.",
+      "balance": "Il tuo saldo ora è",
+      "primary": "Trova candidati",
+      "back": "Torna al candidato",
+      "invoices": "Vedi le fatture"
+    },
+    "unconfirmed": {
+      "title": "Non abbiamo ancora potuto confermare il pagamento",
+      "body": "Se il denaro è uscito dal tuo conto, i crediti non sono persi. Riprova o contattaci con il riferimento di pagamento qui sotto.",
+      "retry": "Riprova",
+      "contact": "Contatta l'assistenza"
+    },
+    "reference": "Riferimento del pagamento"
+  },
+  "invoiceList": {
+    "title": "Fatture",
+    "lead": "Ogni acquisto di crediti, con la sua ricevuta.",
+    "columns": {
+      "date": "Data",
+      "purchase": "Acquisto",
+      "number": "Fattura",
+      "total": "Totale"
+    },
+    "plan": "Piano {{name}}",
+    "topUp": "Ricarica",
+    "preparing": "In preparazione",
+    "emptyTitle": "Ancora nessuna fattura",
+    "emptyBody": "Il tuo primo acquisto comparirà qui con la ricevuta."
+  },
+  "receipt": {
+    "title": "Ricevuta",
+    "subtotal": "Subtotale",
+    "gst": "GST",
+    "paidOn": "Pagato il",
+    "pdf": "PDF",
+    "print": "Stampa",
+    "noPdf": "La fattura PDF è ancora in preparazione. Torna tra qualche minuto."
+  }
+}

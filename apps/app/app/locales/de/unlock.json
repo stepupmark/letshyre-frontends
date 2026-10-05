@@ -1,0 +1,65 @@
+{
+  "panel": {
+    "title": "Freischalten",
+    "lead": "Das Freischalten zeigt Kontaktdaten, die vollständige Scorecard, die Aufzeichnung und den Lebenslauf. Jedes Interview kostet einen Credit.",
+    "matched": "Rolle dieser Stelle",
+    "unlocked": "Freigeschaltet",
+    "button_one": "Freischalten · {{count}} Credit",
+    "button_other": "Freischalten · {{count}} Credits",
+    "pick": "Wählen Sie mindestens ein Interview.",
+    "balance": "Guthaben",
+    "short": "Das kostet {{cost}} Credits und Sie haben {{balance}}. Fügen Sie Credits hinzu, dann kommen Sie hierher zurück.",
+    "addCredits": "Credits hinzufügen",
+    "none": "Noch keine KI-Interviews, es gibt also nichts freizuschalten.",
+    "allUnlocked": "Für diesen Kandidaten ist alles freigeschaltet.",
+    "openUnlocked": "Freigeschaltete Kandidaten ansehen",
+    "failed": "Das Freischalten ist nicht durchgegangen. Prüfen Sie Ihr Guthaben, bevor Sie es erneut versuchen."
+  },
+  "confirm": {
+    "title": "{{name}} freischalten?",
+    "body_one": "Das kostet {{count}} Credit und lässt sich nicht rückgängig machen. Danach haben Sie noch {{left}}.",
+    "body_other": "Das kostet {{count}} Credits und lässt sich nicht rückgängig machen. Danach haben Sie noch {{left}}."
+  },
+  "done": "{{name}} freigeschaltet",
+  "doneBody_one": "{{count}} Credit genutzt, noch {{left}}.",
+  "doneBody_other": "{{count}} Credits genutzt, noch {{left}}.",
+  "pool": {
+    "title": "Kandidatenpool",
+    "lead": "Personen, die unsere KI zu Ihren offenen Stellen gematcht hat, bester Match zuerst.",
+    "job": "Stelle",
+    "chooseJob": "Stelle wählen",
+    "matched": "Von der KI gematcht",
+    "applied": "Beworben",
+    "noJobsTitle": "Keine offenen Stellen",
+    "noJobsBody": "Matches kommen aus Ihren offenen Stellen. Veröffentlichen Sie eine oder öffnen Sie eine pausierte wieder.",
+    "postJob": "Stelle veröffentlichen",
+    "emptyTitle": "Noch keine Matches",
+    "emptyBody": "Unsere KI matcht laufend weiter, während Kandidaten Interviews abschließen. Schauen Sie bald wieder vorbei.",
+    "emptyApplied": "Auf diese Stelle hat sich noch niemand beworben.",
+    "summary": "{{matched}} von {{total}} Kandidaten passen"
+  },
+  "list": {
+    "title": "Freigeschaltete Kandidaten",
+    "lead": "Alle, die Sie freigeschaltet haben, die neuesten zuerst.",
+    "sharedLinks": "Geteilte Links",
+    "columns": {
+      "candidate": "Kandidat",
+      "experience": "Erfahrung",
+      "place": "Ort",
+      "pay": "Gehalt (LPA)",
+      "notice": "Kündigungsfrist",
+      "interview": "Interview",
+      "unlocked": "Freigeschaltet"
+    },
+    "years_one": "{{count}} J.",
+    "years_other": "{{count}} J.",
+    "days_one": "{{count}} Tag",
+    "days_other": "{{count}} Tage",
+    "verified": "Verifiziert",
+    "profile": "Profil",
+    "scorecard": "Scorecard",
+    "emptyTitle": "Noch niemand freigeschaltet",
+    "emptyBody": "Schalten Sie einen Kandidaten im Pool oder in einer Bewerberliste frei, um seine Daten hier zu sehen.",
+    "toPool": "Kandidatenpool öffnen"
+  }
+}

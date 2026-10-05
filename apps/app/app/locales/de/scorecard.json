@@ -1,40 +1,133 @@
 {
+  "title": "Interview-Scorecard",
+  "print": "Drucken",
+  "provenance": {
+    "sharedBy": "Privat geteilt von {{company}}. Der Link hat ein Aufruflimit und ein Ablaufdatum, bitte leiten Sie ihn nicht weiter.",
+    "private": "Privat geteilt. Der Link hat ein Aufruflimit und ein Ablaufdatum, bitte leiten Sie ihn nicht weiter."
+  },
   "header": {
     "unnamed": "Kandidat",
     "fresher": "Berufseinsteiger",
-    "matchedTo": "Passend zu {{job}}",
     "experience_one": "{{count}} Jahr Berufserfahrung",
-    "experience_other": "{{count}} Jahre Berufserfahrung"
+    "experience_other": "{{count}} Jahre Berufserfahrung",
+    "matchedTo": "Passend zu {{job}}",
+    "yours": "Ihre Interview-Scorecard",
+    "taken": "Interview am {{date}}"
+  },
+  "summary": {
+    "heading": "Zusammenfassung",
+    "outOf": "/ 100",
+    "basedOn_one": "Basiert auf {{count}} beantworteten Frage",
+    "basedOn_other": "Basiert auf {{count}} beantworteten Fragen",
+    "howScored": "Wie wird bewertet?",
+    "howScoredBody": "Der KI-Interviewer bewertet jede Antwort im Hinblick auf die Rolle und prüft sie dann auf Klarheit, Relevanz und Tiefe. Nutzen Sie die Bewertung als Ausgangspunkt für Ihre Entscheidung, nicht als Ersatz dafür.",
+    "howScoredYours": "Der KI-Interviewer bewertet jede Antwort im Hinblick auf die Rolle und prüft sie dann auf Klarheit, Relevanz und Tiefe. Arbeitgeber sehen dieselben Bewertungen, die Verbesserungsbereiche sind also ein guter Startpunkt."
+  },
+  "match": {
+    "heading": "Passung zur Stelle",
+    "headingFor": "Passung zu {{job}}",
+    "overall": "Gesamt",
+    "role": "Rolle",
+    "skills": "Fähigkeiten",
+    "why": "Warum dieser Match"
   },
   "metrics": {
+    "heading": "Kommunikation",
     "clarity": "Klarheit",
     "relevance": "Relevanz",
-    "confidence": "Selbstsicherheit"
+    "confidence": "Selbstsicherheit",
+    "depth": "Gedankentiefe",
+    "keyConcept": "Abgedeckte Kernkonzepte"
   },
   "types": {
-    "coding": "Programmierung"
+    "heading": "Nach Fragetyp",
+    "correct_one": "{{correct}} von {{count}} richtig",
+    "correct_other": "{{correct}} von {{count}} richtig",
+    "mcq": "Multiple Choice",
+    "pseudocode_mcq": "Pseudocode",
+    "coding": "Programmierung",
+    "typing": "Schriftlich",
+    "audio": "Mündlich"
   },
   "insights": {
+    "heading": "Erkenntnisse",
     "strengths": "Stärken",
+    "improve": "Verbesserungsbereiche",
     "recommendations": "Empfehlungen"
   },
+  "recording": {
+    "heading": "Aufzeichnung",
+    "unsupported": "Ihr Browser kann diese Aufzeichnung nicht abspielen.",
+    "failed": "Die Aufzeichnung wurde nicht geladen. Der Link ist vielleicht abgelaufen.",
+    "retry": "Erneut versuchen"
+  },
   "profile": {
+    "heading": "Profil",
+    "empty": "Der Kandidat hat noch keine Profilangaben hinzugefügt.",
     "skills": "Fähigkeiten",
     "experience": "Berufserfahrung",
     "education": "Ausbildung",
     "projects": "Projekte",
-    "resume": "Lebenslauf"
+    "awards": "Zertifikate und Erfolge",
+    "links": "Lebenslauf und Links",
+    "resume": "Lebenslauf",
+    "untitled": "Projekt ohne Titel"
   },
   "answers": {
+    "heading": "Antworten",
+    "none": "Dieses Interview hat keine beantworteten Fragen.",
     "expandAll": "Alle erweitern",
     "collapseAll": "Alle einklappen",
+    "number": "Frage {{number}}",
+    "noQuestion": "Fragetext nicht verfügbar",
+    "answer": "Antwort",
+    "assessment": "Bewertung",
+    "correct": "Richtig",
+    "wrong": "Falsch",
+    "chosen": "Gewählte Antwort",
+    "correctAnswer": "Richtige Antwort",
+    "noAnswer": "Keine Antwort gegeben.",
+    "noCode": "Kein Code eingereicht.",
+    "noAudio": "Kein Audio aufgenommen.",
+    "audioUnsupported": "Ihr Browser kann dieses Audio nicht abspielen.",
     "types": {
-      "coding": "Programmierung"
-    }
+      "mcq": "Multiple Choice",
+      "mcq_pseudocode": "Pseudocode",
+      "pseudocode_mcq": "Pseudocode",
+      "coding": "Programmierung",
+      "typing": "Schriftlich",
+      "audio": "Mündlich",
+      "other": "Frage"
+    },
+    "yours": "Ihre Antwort"
   },
   "toc": {
+    "label": "Auf dieser Seite",
+    "summary": "Zusammenfassung",
     "communication": "Kommunikation",
+    "types": "Nach Fragetyp",
     "insights": "Erkenntnisse",
-    "profile": "Profil"
+    "recording": "Aufzeichnung",
+    "profile": "Profil",
+    "answers": "Antworten"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "Dieser Link funktioniert nicht",
+      "body": "Er ist vielleicht falsch geschrieben oder wurde entfernt. Bitten Sie die Person, die ihn geteilt hat, um einen neuen Link."
+    },
+    "expired": {
+      "title": "Dieser Link ist abgelaufen",
+      "body": "Geteilte Scorecards sind nur begrenzt verfügbar. Bitten Sie die Person, die sie geteilt hat, um einen neuen Link."
+    },
+    "limit": {
+      "title": "Dieser Link hat sein Aufruflimit erreicht",
+      "body": "Bitten Sie die Person, die ihn geteilt hat, um einen neuen Link."
+    },
+    "unavailable": {
+      "title": "Diese Scorecard wurde nicht geladen",
+      "body": "Bei uns ist etwas schiefgelaufen. Versuchen Sie es gleich noch einmal."
+    },
+    "retry": "Erneut versuchen"
   }
 }

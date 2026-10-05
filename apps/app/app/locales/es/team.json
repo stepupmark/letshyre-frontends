@@ -1,0 +1,48 @@
+{
+  "title": "Equipo",
+  "lead": "Personas que pueden publicar ofertas y revisar candidatos con usted.",
+  "count_one": "{{count}} persona puede publicar ofertas y revisar candidatos.",
+  "count_many": "{{count}} personas pueden publicar ofertas y revisar candidatos.",
+  "count_other": "{{count}} personas pueden publicar ofertas y revisar candidatos.",
+  "add": "Añadir miembro",
+  "active": "Activo",
+  "onHold": "En pausa",
+  "actions": "Acciones para {{name}}",
+  "edit": "Editar",
+  "hold": "Poner en pausa",
+  "activate": "Activar",
+  "remove": "Quitar",
+  "holdNote": "Los miembros en pausa no pueden iniciar sesión hasta que los vuelva a activar. Sus ofertas se quedan como están.",
+  "emptyTitle": "Por ahora solo está usted",
+  "emptyBody": "Añada reclutadores para que publiquen ofertas y revisen candidatos en esta cuenta.",
+  "confirmTitle": "¿Quitar a {{name}}?",
+  "confirmBody": "Pierde el acceso de inmediato. Las ofertas que publicó se quedan en su empresa. No se puede deshacer.",
+  "dialog": {
+    "addTitle": "Añadir un miembro del equipo",
+    "addLead": "Se une como reclutador. Defina una contraseña y compártala; iniciará sesión con su correo.",
+    "editTitle": "Editar miembro del equipo",
+    "editLead": "Los cambios se aplican la próxima vez que inicie sesión.",
+    "name": "Nombre completo",
+    "email": "Correo del trabajo",
+    "password": "Contraseña",
+    "passwordHint": "Al menos 8 caracteres. Compártala en privado.",
+    "generate": "Generar",
+    "add": "Añadir miembro",
+    "save": "Guardar cambios"
+  },
+  "errors": {
+    "name": "Introduzca su nombre completo (de 2 a 100 caracteres).",
+    "email": "Introduzca un correo como nombre@empresa.com.",
+    "password": "Use de 8 a 50 caracteres."
+  },
+  "toast": {
+    "added": "{{name}} añadido",
+    "updated": "{{name}} actualizado",
+    "held": "{{name}} está en pausa",
+    "activated": "{{name}} está activo",
+    "removed": "{{name}} quitado",
+    "statusFailed": "El estado no ha cambiado. Inténtelo de nuevo.",
+    "removeFailed": "No se ha quitado. Inténtelo de nuevo.",
+    "saveFailed": "No se ha guardado. Inténtelo de nuevo."
+  }
+}
