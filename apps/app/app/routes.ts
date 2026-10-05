@@ -40,7 +40,6 @@ export default [
   }),
   layout("layouts/public-layout.tsx", [
     route("shared-scorecard/:shareId", "routes/shared-scorecard.tsx"),
-    route("employer/release-check", "routes/employer/release-check.tsx"),
   ]),
   layout("layouts/onboarding-layout.tsx", [
     route("employer/onboarding", "routes/employer/onboarding.tsx"),

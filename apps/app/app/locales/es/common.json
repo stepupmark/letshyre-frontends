@@ -90,10 +90,6 @@
     "next": "Siguiente",
     "position": "{{current}} de {{total}}"
   },
-  "releaseCheck": {
-    "title": "Comprobación de la nueva aplicación",
-    "body": "Esta página la sirve la nueva aplicación. Si puede leer esto, la versión está bien enrutada."
-  },
   "password": {
     "show": "Mostrar contraseña",
     "hide": "Ocultar contraseña",

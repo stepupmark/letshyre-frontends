@@ -10,7 +10,7 @@ import {
 } from "@workspace/ui/components/command"
 import { useNavigate } from "react-router"
 
-import { isLive } from "@/lib/live-routes"
+import { isAppPath } from "@/lib/app-paths"
 
 import { NAV, type Area } from "./nav"
 
@@ -29,7 +29,7 @@ export function CommandPalette({
 
   const go = (to: string) => {
     onOpenChange(false)
-    if (isLive(to)) void navigate(to, { viewTransition: true })
+    if (isAppPath(to)) void navigate(to, { viewTransition: true })
     else window.location.assign(to)
   }
 

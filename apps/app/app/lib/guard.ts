@@ -5,10 +5,10 @@ import {
   type MiddlewareFunction,
 } from "react-router"
 
-import { isLive } from "./live-routes"
+import { isAppPath } from "./app-paths"
 
-/** Redirect within the app, or a full load when the target is on legacy or marketing. */
-const go = (to: string) => (isLive(to) ? redirect(to) : redirectDocument(to))
+/** Redirect within the app, or a full load when the target is a marketing page. */
+const go = (to: string) => (isAppPath(to) ? redirect(to) : redirectDocument(to))
 
 /** clientMiddleware for a protected branch. */
 export const guard =

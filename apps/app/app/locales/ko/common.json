@@ -86,10 +86,6 @@
     "next": "다음",
     "position": "{{total}}개 중 {{current}}번째"
   },
-  "releaseCheck": {
-    "title": "새 앱 확인",
-    "body": "이 페이지는 새 앱에서 제공돼요. 이 글이 보이면 릴리스 라우팅이 올바르게 설정된 거예요."
-  },
   "password": {
     "show": "비밀번호 표시",
     "hide": "비밀번호 숨기기",

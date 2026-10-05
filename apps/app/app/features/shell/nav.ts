@@ -43,7 +43,7 @@ export interface NavGroup {
   items: NavItem[]
 }
 
-// URLs match the legacy app so links and bookmarks keep working during the rollout
+// URLs match the legacy app so old links and bookmarks keep working
 export const NAV = {
   employer: [
     {

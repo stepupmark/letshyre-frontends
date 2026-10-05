@@ -88,10 +88,6 @@
     "next": "Weiter",
     "position": "{{current}} von {{total}}"
   },
-  "releaseCheck": {
-    "title": "Prüfung der neuen App",
-    "body": "Diese Seite kommt von der neuen App. Wenn Sie dies lesen können, ist das Release richtig geroutet."
-  },
   "password": {
     "show": "Passwort anzeigen",
     "hide": "Passwort ausblenden",

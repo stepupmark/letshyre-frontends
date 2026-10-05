@@ -17,7 +17,6 @@ export default {
         "typescript-config",
         "marketing",
         "app",
-        "legacy",
         "infra",
         "docs",
       ],

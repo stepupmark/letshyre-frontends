@@ -745,7 +745,9 @@ for overflow (German, Tamil) and RTL (Arabic, Urdu).
 
 ### 7.1 `app.letshyre.ai` → 🔵 Gate 8
 
-Preconditions: every app route is in `live-routes.ts`, legacy serves nothing, B4 done (and ideally B5).
+**Deferred 2026-10-05** ([ADR 0004](./adr/0004-incremental-rollout.md)): the app stays on
+`letshyre.ai`'s dashboard paths. Revisit when B5 lands, so the move doesn't sign everyone out, or when
+`apps/admin` needs its own subdomain. Preconditions then: B4, ideally B5.
 
 - New nginx server block for `app.letshyre.ai` (SPA fallback, CSP, `noindex`), HSTS with
   `includeSubDomains` once every subdomain is HTTPS.
@@ -769,6 +771,16 @@ Preconditions: every app route is in `live-routes.ts`, legacy serves nothing, B4
   `auth`, the design doc and motion tokens; own role guard, own subdomain).
 - Backlog: httpOnly cookie auth if not done (B5), passkeys, dark theme toggle, CSP enforce on the app,
   error monitoring (Sentry or similar) with web-vitals, TypeScript 7 when typescript-eslint supports it.
+
+- **Done 2026-10-05, ahead of 7.1:** legacy is retired. nginx sends every dashboard path to the app,
+  with no legacy fallback for routes, assets or public files; the live-routes manifest, its nginx map,
+  `/live-routes.json` and the release-check page are gone, and `app/lib/app-paths.ts` decides client
+  navigation versus a page load. The one-time migration tools (`i18n:migrate`, the content
+  inventory generator and key maps) went with it. Twelve ADRs in [docs/adr](./adr/README.md) and
+  [new-app.md](./new-app.md) record the decisions and how `apps/admin` starts. The old per-role
+  sign-in URLs and the legacy draft pick-up stay, so bookmarks and in-progress forms survive the
+  switch. **Before the first production release:** UAT per area (needs B1), then deploy marketing
+  and the app together and drop `/var/www/letshyre/legacy` from the server.
 
 ---
 

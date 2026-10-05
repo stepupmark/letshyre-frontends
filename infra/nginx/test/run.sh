@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Serves every build through the real nginx config and checks the URL contract.
-# Needs Docker and `pnpm build` for all three apps first.
+# Needs Docker and `pnpm build` for marketing and the app first.
 set -euo pipefail
 
 cd "$(dirname "$0")/../../.."
@@ -18,8 +18,6 @@ docker run -d --rm --name "$name" -p "$port:80" \
   -v "$PWD/apps/marketing/build/client/assets:$www/marketing/assets:ro" \
   -v "$PWD/apps/app/build:$www/app/current:ro" \
   -v "$PWD/apps/app/build/client/assets:$www/app/assets:ro" \
-  -v "$PWD/apps/legacy/build:$www/legacy/current:ro" \
-  -v "$PWD/apps/legacy/build/client/assets:$www/legacy/assets:ro" \
   nginx:stable >/dev/null
 trap 'docker logs "$name" | tail -20; docker rm -f "$name" >/dev/null' EXIT
 

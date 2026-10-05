@@ -90,10 +90,6 @@
     "next": "Suivant",
     "position": "{{current}} sur {{total}}"
   },
-  "releaseCheck": {
-    "title": "Vérification de la nouvelle application",
-    "body": "Cette page est servie par la nouvelle application. Si vous pouvez lire ceci, la mise en production est bien routée."
-  },
   "password": {
     "show": "Afficher le mot de passe",
     "hide": "Masquer le mot de passe",

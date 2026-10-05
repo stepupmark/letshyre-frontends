@@ -90,10 +90,6 @@
     "next": "Successivo",
     "position": "{{current}} di {{total}}"
   },
-  "releaseCheck": {
-    "title": "Verifica della nuova app",
-    "body": "Questa pagina è servita dalla nuova app. Se riesci a leggerla, il rilascio è instradato correttamente."
-  },
   "password": {
     "show": "Mostra password",
     "hide": "Nascondi password",

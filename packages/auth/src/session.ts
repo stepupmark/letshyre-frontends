@@ -1,4 +1,4 @@
-// Same localStorage keys as the legacy app, so both share one session during the rollout.
+// Same localStorage keys as the legacy app, so people stay signed in across the switch.
 const KEYS = {
   access: "accessToken",
   refresh: "refreshToken",

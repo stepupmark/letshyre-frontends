@@ -132,7 +132,7 @@ const firstJs = (app: string) =>
     f.endsWith(".js")
   )
 
-for (const app of ["marketing", "app", "legacy"]) {
+for (const app of ["marketing", "app"]) {
   const file = firstJs(app)
   const res = await get(`/assets/${file}`)
   check(
@@ -141,46 +141,20 @@ for (const app of ["marketing", "app", "legacy"]) {
   )
 }
 
-// paths in the app's live-routes.map come from the new app, everything else from legacy
-const liveJson = await get("/live-routes.json")
-const live = (JSON.parse(liveJson.body) as string[]).map(
-  (pattern) => new RegExp(pattern)
-)
-check(
-  live.length > 0 && header(liveJson, "cache-control") === "no-cache",
-  `live-routes.json lists ${live.length} route(s), uncached`
-)
-
-for (const path of ["/employer/release-check"]) {
-  check(
-    live.some((p) => p.test(path)),
-    `${path} is live`
-  )
+for (const path of [
+  "/sign-in",
+  "/get-started",
+  "/employer",
+  "/employer/post-job",
+  "/employee/find-jobs",
+]) {
   const res = await get(path)
   check(
     res.status === 200 &&
       header(res, "x-robots-tag") === "noindex, nofollow" &&
       /'sha256-/.test(header(res, "content-security-policy-report-only")) &&
       header(res, "permissions-policy").includes("camera=(self)"),
-    `${path} -> new app, noindex, its CSP, camera for itself (got ${res.status})`
-  )
-}
-
-for (const path of [
-  "/get-started",
-  "/employer",
-  "/employer/dashboard",
-  "/employer/post-job",
-  "/employee/interviews/1",
-]) {
-  check(!live.some((p) => p.test(path)), `${path} is not live yet`)
-  const res = await get(path)
-  check(
-    res.status === 200 &&
-      header(res, "x-robots-tag") === "noindex, nofollow" &&
-      header(res, "permissions-policy") === "" &&
-      header(res, "content-security-policy-report-only") === "",
-    `${path} -> legacy shell, noindex, camera allowed (got ${res.status})`
+    `${path} -> app, noindex, its CSP, camera for itself (got ${res.status})`
   )
 }
 
@@ -193,9 +167,6 @@ check(
   header(home, "referrer-policy") === "strict-origin-when-cross-origin",
   "other pages keep the default referrer policy"
 )
-
-const legacyFile = await get("/ai-Interview-thumbnail.webp")
-check(legacyFile.status === 200, "legacy public files still resolve")
 
 if (failures.length) {
   console.error(`\n${failures.length} check(s) failed against ${BASE.origin}`)

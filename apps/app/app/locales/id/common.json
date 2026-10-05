@@ -86,10 +86,6 @@
     "next": "Berikutnya",
     "position": "{{current}} dari {{total}}"
   },
-  "releaseCheck": {
-    "title": "Pemeriksaan aplikasi baru",
-    "body": "Halaman ini disajikan oleh aplikasi baru. Jika Anda bisa membaca ini, rilis sudah diarahkan dengan benar."
-  },
   "password": {
     "show": "Tampilkan kata sandi",
     "hide": "Sembunyikan kata sandi",

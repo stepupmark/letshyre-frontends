@@ -88,10 +88,6 @@
     "next": "Volgende",
     "position": "{{current}} van {{total}}"
   },
-  "releaseCheck": {
-    "title": "Controle nieuwe app",
-    "body": "Deze pagina komt van de nieuwe app. Als u dit kunt lezen, is de release goed gerouteerd."
-  },
   "password": {
     "show": "Wachtwoord weergeven",
     "hide": "Wachtwoord verbergen",

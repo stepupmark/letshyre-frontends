@@ -1,21 +1,9 @@
 # nginx
 
-`sites/letshyre.ai.conf` serves letshyre.ai until the app moves to app.letshyre.ai (Phase 7):
-marketing pages from the marketing build, dashboard routes from the new app when they are
-live, otherwise from the legacy build. `legacy/` is the config running today, kept for
-rollback until launch.
-
-## Moving a page to the new app
-
-Add its path to `apps/app/app/lib/live-routes.ts`, release the app and reload nginx. The
-build writes `live-routes.map` (nginx sends direct visits to the app) and
-`client/live-routes.json` (legacy hands its own links over with a full page load). Rollback
-is the same in reverse: remove the path, release, reload.
-
-Sign-in goes first: the app's guards send signed-out visitors to `/sign-in`, which legacy
-doesn't have, so the build refuses a live dashboard page without it. Move the auth pages
-together: `/sign-in`, `/employer/sign-in`, `/employee/sign-in`, `/get-started`,
-`/employer/register`, `/employee/register` and `/forgot-password`.
+`sites/letshyre.ai.conf` serves letshyre.ai: marketing pages from the marketing build, and the
+dashboard paths (`/employer`, `/employee`, `/sign-in`, `/get-started`, `/forgot-password`,
+`/shared-scorecard`) from the app build. The app's `app/lib/app-paths.ts` lists the same prefixes,
+so keep the two in step. Moving the app to `app.letshyre.ai` is deferred (ADR 0004).
 
 ## Layout on the server
 
@@ -23,14 +11,11 @@ together: `/sign-in`, `/employer/sign-in`, `/employee/sign-in`, `/get-started`,
 /etc/nginx/snippets/                      ← snippets/*.conf
 /var/www/letshyre/marketing/current/      ← apps/marketing/build (client/ and csp.map)
 /var/www/letshyre/marketing/assets/       ← every release's client/assets, added to, never replaced
-/var/www/letshyre/app/current/            ← apps/app/build (client/, csp.map, live-routes.map)
+/var/www/letshyre/app/current/            ← apps/app/build (client/ and csp.map)
 /var/www/letshyre/app/assets/             ← same, for the app
-/var/www/letshyre/legacy/current/         ← apps/legacy/build
-/var/www/letshyre/legacy/assets/          ← same, for legacy
 ```
 
-`csp.map` and `live-routes.map` are read when nginx loads, so reload after each marketing or
-app release.
+`csp.map` is read when nginx loads, so reload after each marketing or app release.
 
 ## CSP
 
