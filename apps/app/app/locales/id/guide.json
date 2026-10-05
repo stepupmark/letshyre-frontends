@@ -1,0 +1,54 @@
+{
+  "title": "Panduan wawancara",
+  "lead": "Delapan langkah dari unduhan sampai pertanyaan pertama. Centang satu per satu saat Anda bersiap.",
+  "progress": "{{done}} dari {{total}} siap",
+  "progressLabel": "Langkah yang siap",
+  "reset": "Mulai dari awal",
+  "phases": {
+    "setup": "Persiapan",
+    "security": "Pemeriksaan keamanan",
+    "interview": "Wawancara"
+  },
+  "steps": {
+    "download": {
+      "title": "Pasang aplikasi desktop",
+      "body": "Wawancara hanya berjalan di aplikasi desktop LetsHyre agar sesi tetap aman.",
+      "link": "Unduh untuk komputer Anda"
+    },
+    "signIn": {
+      "title": "Masuk ke aplikasi",
+      "body": "Gunakan email dan kata sandi yang sama seperti di sini. Foto profil dan hasil Anda ikut terbawa."
+    },
+    "dashboard": {
+      "title": "Mulai dari dasbor Anda",
+      "body": "Pilih Ikuti wawancara. Aplikasi memeriksa komputer Anda sebelum membuka hal lain."
+    },
+    "clearEnv": {
+      "title": "Tutup aplikasi lain",
+      "body": "Browser, perekam layar, asisten AI, dan aplikasi panggilan video harus ditutup sebelum Anda bisa lanjut.",
+      "tip": "Tutup semua yang lain sebelum memilih Ikuti wawancara."
+    },
+    "permissions": {
+      "title": "Izinkan kamera, mikrofon, dan layar",
+      "body": "Ketiganya diperlukan untuk pengawasan. Izinkan masing-masing saat komputer meminta."
+    },
+    "verifyId": {
+      "title": "Pastikan itu Anda",
+      "body": "Baca kalimat singkat dengan suara keras, lalu kamera mengambil foto untuk dibandingkan dengan foto profil Anda.",
+      "tip": "Hadap kamera di ruangan yang terang."
+    },
+    "chooseRole": {
+      "title": "Pilih posisi",
+      "body": "Pilih posisi yang Anda wawancarai. Awalnya terpilih posisi dari profil Anda."
+    },
+    "begin": {
+      "title": "Mulai",
+      "body": "Wawancara terbuka dalam layar penuh dengan perekaman aktif. Jawab setiap pertanyaan dalam waktunya; Anda bisa berpindah antarpertanyaan sampai pengatur waktu habis."
+    }
+  },
+  "cta": {
+    "title": "Dapatkan aplikasi desktop",
+    "body": "Masuk dengan akun LetsHyre Anda dan mulai saat Anda siap.",
+    "button": "Unduh aplikasinya"
+  }
+}

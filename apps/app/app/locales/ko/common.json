@@ -1,17 +1,101 @@
 {
+  "appName": "LetsHyre",
   "nav": {
     "dashboard": "대시보드"
   },
   "notFound": {
-    "title": "이 페이지를 찾을 수 없습니다"
+    "title": "이 페이지를 찾을 수 없습니다",
+    "body": "링크가 오래되었거나 페이지가 이동했을 수 있어요.",
+    "goHome": "대시보드로 이동"
   },
   "error": {
     "title": "페이지를 불러오지 못했습니다",
-    "retry": "다시 시도"
+    "body": "저희 쪽에 문제가 생겼어요. 새로고침해서 다시 시도하고, 계속되면 문의하세요.",
+    "retry": "다시 시도",
+    "goHome": "대시보드로 이동"
+  },
+  "table": {
+    "selectAll": "모든 행 선택",
+    "selectRow": "{{name}} 선택",
+    "selected_other": "{{count}}개 선택됨",
+    "clearSelection": "선택 해제",
+    "columns": "열",
+    "compact": "좁은 행",
+    "sortBy": "{{column}} 기준 정렬",
+    "previous": "이전 페이지",
+    "next": "다음 페이지",
+    "pageOf": "{{total}}페이지 중 {{page}}페이지",
+    "results_other": "결과 {{count}}개",
+    "rowActions": "{{name}} 작업",
+    "bulkActions": "일괄 작업",
+    "navigateHint": "로 이동,",
+    "openHint": "로 열기",
+    "enterKey": "Enter",
+    "pages": "페이지"
+  },
+  "state": {
+    "error": "불러오지 못했어요.",
+    "errorBody": "잃어버린 건 없어요. 연결을 확인하고 다시 시도하세요.",
+    "retry": "다시 시도",
+    "loading": "불러오는 중"
+  },
+  "empty": {
+    "filteredTitle": "일치하는 항목이 없어요",
+    "filteredBody": "다른 검색어를 쓰거나 필터를 지워 보세요.",
+    "clearFilters": "필터 지우기"
+  },
+  "upload": {
+    "drop": "파일을 여기로 끌어오거나",
+    "browse": "선택하세요",
+    "hint": "{{types}}, 최대 {{size}}",
+    "tooLarge": "파일 크기가 {{size}}예요. 최대 {{max}}까지 가능해요.",
+    "wrongType": "이 파일 형식은 사용할 수 없어요. {{types}}을(를) 사용하세요.",
+    "uploading": "{{name}} 업로드 중",
+    "failed": "업로드에 실패했어요. 파일은 그대로 있으니 다시 시도할 수 있어요.",
+    "retry": "다시 시도",
+    "remove": "{{name}} 삭제",
+    "done": "업로드됨"
+  },
+  "wizard": {
+    "step": "{{total}}단계 중 {{current}}단계",
+    "back": "뒤로",
+    "next": "계속",
+    "finish": "완료",
+    "draftSaved": "이 기기에 임시 저장됨"
+  },
+  "confirm": {
+    "cancel": "취소"
+  },
+  "undo": "실행 취소",
+  "copy": {
+    "copy": "복사",
+    "copied": "복사됨"
+  },
+  "band": {
+    "strong": "높은 매칭",
+    "partial": "부분 매칭",
+    "low": "낮은 매칭"
+  },
+  "interviewBand": {
+    "strong": "우수한 인터뷰",
+    "partial": "고르지 않은 인터뷰",
+    "low": "부족한 인터뷰"
+  },
+  "detail": {
+    "previous": "이전",
+    "next": "다음",
+    "position": "{{total}}개 중 {{current}}번째"
+  },
+  "releaseCheck": {
+    "title": "새 앱 확인",
+    "body": "이 페이지는 새 앱에서 제공돼요. 이 글이 보이면 릴리스 라우팅이 올바르게 설정된 거예요."
   },
   "password": {
     "show": "비밀번호 표시",
     "hide": "비밀번호 숨기기",
     "capsLock": "Caps Lock이 켜져 있습니다"
+  },
+  "tip": {
+    "gotIt": "확인"
   }
 }

@@ -1,0 +1,63 @@
+{
+  "title": "कंपनी प्रोफ़ाइल",
+  "unnamed": "आपकी कंपनी",
+  "jobs_one": "{{count}} पोस्ट की गई नौकरी में से {{open}} खुली",
+  "jobs_other": "{{count}} पोस्ट की गई नौकरियों में से {{open}} खुली",
+  "kyc": {
+    "approved": "सत्यापित",
+    "verified": "सत्यापित",
+    "pending": "जाँच में",
+    "rejected": "बदलाव चाहिए"
+  },
+  "details": {
+    "title": "कंपनी की जानकारी",
+    "edit": "बदलें",
+    "email": "आधिकारिक ईमेल",
+    "industry": "उद्योग",
+    "chooseIndustry": "उद्योग चुनें",
+    "website": "वेबसाइट",
+    "linkedin": "LinkedIn पेज",
+    "linkedinOpen": "LinkedIn पर खोलें",
+    "address": "पता",
+    "description": "कंपनी के बारे में",
+    "descriptionHint": "उम्मीदवार इसे आपकी नौकरी पोस्ट पर पढ़ते हैं। 500 अक्षरों तक।"
+  },
+  "logo": {
+    "label": "लोगो",
+    "upload": "लोगो अपलोड करें",
+    "replace": "लोगो बदलें",
+    "hint": "5 MB तक का चौकोर PNG, JPG या WebP। यह दिखाए अनुसार चौकोर काटा जाता है।",
+    "tooLarge": "लोगो 5 MB से बड़ा है। छोटी इमेज चुनें।",
+    "wrongType": "PNG, JPG या WebP इमेज इस्तेमाल करें।"
+  },
+  "account": {
+    "title": "आपका खाता",
+    "name": "नाम",
+    "email": "साइन-इन ईमेल",
+    "phone": "फ़ोन"
+  },
+  "legal": {
+    "title": "पंजीकरण",
+    "note": "आपकी कंपनी के सत्यापन के समय ये जाँचे गए थे। बदलने के लिए हमसे संपर्क करें।",
+    "registration": "पंजीकरण संख्या",
+    "gst": "GSTIN",
+    "pan": "PAN"
+  },
+  "documents": {
+    "registration_certificate": "पंजीकरण प्रमाणपत्र",
+    "gst_certificate": "GST प्रमाणपत्र",
+    "address_proof": "पते का प्रमाण",
+    "bank_proof": "बैंक प्रमाण"
+  },
+  "errors": {
+    "email": "hr@company.com जैसा ईमेल डालें।",
+    "address": "पूरा पता डालें।",
+    "industry": "उद्योग चुनें।",
+    "linkedin": "linkedin.com का लिंक डालें, या इसे खाली छोड़ें।",
+    "description": "500 अक्षरों के अंदर रखें।"
+  },
+  "save": "बदलाव सेव करें",
+  "saving": "सेव हो रहा है…",
+  "saved": "कंपनी की जानकारी सेव हुई",
+  "saveFailed": "यह सेव नहीं हुआ। आपके बदलाव यहीं हैं; फिर से कोशिश करें।"
+}

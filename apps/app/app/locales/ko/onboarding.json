@@ -1,0 +1,73 @@
+{
+  "title": "회사에 대해 알려 주세요",
+  "lead": "3단계로 약 5분 걸려요. 진행 상황은 이 기기에 저장되니 멈췄다가 다시 와도 돼요.",
+  "steps": {
+    "company": "회사 정보",
+    "legal": "등록과 세금",
+    "documents": "서류"
+  },
+  "fields": {
+    "companyName": "회사 이름",
+    "website": "웹사이트",
+    "officialEmail": "공식 이메일",
+    "officialEmailHint": "계정과 결제 관련 알림을 보내는 곳이에요.",
+    "industry": "업계",
+    "industryPlaceholder": "업계 선택",
+    "industryFailed": "업계 목록을 불러오지 못했어요. 새로고침하세요.",
+    "linkedin": "회사 LinkedIn 페이지",
+    "description": "회사는 어떤 일을 하나요?",
+    "descriptionCount": "{{count}} / 500",
+    "registration": "회사 등록 번호",
+    "registrationHint": "CIN 또는 등록 증명서 번호, 예: U72900TG2024PTC123456.",
+    "pan": "PAN",
+    "gst": "GSTIN",
+    "address": "등록 주소"
+  },
+  "documents": {
+    "lead": "선명한 스캔본이나 사진, 각 5 MB 이하. 후보자는 절대 볼 수 없어요.",
+    "company_logo": {
+      "label": "회사 로고",
+      "hint": "정사각형이 가장 좋아요"
+    },
+    "registration_certificate": {
+      "label": "등록 증명서",
+      "hint": "법인 설립 증명서"
+    },
+    "gst_certificate": {
+      "label": "GST 증명서",
+      "hint": "GST 등록"
+    },
+    "address_proof": {
+      "label": "주소 증빙",
+      "hint": "공과금 고지서나 임대 계약서"
+    }
+  },
+  "draftSaved": "이 기기에 임시 저장됨. 페이지를 나가면 서류를 다시 추가해야 해요.",
+  "submitting": "서류 업로드 중… {{percent}}%",
+  "submitFailed": "정보를 제출하지 못했어요. 입력한 내용은 그대로 있으니 다시 시도하세요.",
+  "validation": {
+    "nameMin": "회사 이름을 입력하세요",
+    "website": "https://example.com 같은 웹 주소를 입력하세요",
+    "email": "accounts@company.com 같은 이메일 주소를 입력하세요",
+    "industry": "업계를 선택하세요",
+    "linkedin": "https://www.linkedin.com/company/example 같은 웹 주소를 입력하세요",
+    "linkedinDomain": "회사의 linkedin.com 페이지를 사용하세요",
+    "description": "회사가 하는 일을 한 문장 이상 쓰세요",
+    "registration": "등록 번호를 입력하세요(5~50자)",
+    "pan": "PAN은 ABCDE1234F처럼 10자예요",
+    "gst": "GSTIN은 36ABCDE1234F1Z5처럼 15자예요",
+    "address": "등록 주소를 입력하세요",
+    "fileRequired": "이 서류를 추가하세요",
+    "fileInvalid": "허용되는 형식의 5 MB 이하 파일을 사용하세요"
+  },
+  "done": {
+    "title": "감사합니다. 정보를 받았어요",
+    "lead": "서류를 확인하는 동안에도 계정을 사용할 수 있어요.",
+    "nextHeading": "다음 단계",
+    "review": "저희 팀이 회사 정보와 서류를 검토해요.",
+    "contact": "빠진 게 있으면 {{email}}(으)로 연락드려요.",
+    "start": "그동안 공고를 올리고 후보자를 볼 수 있어요.",
+    "postJob": "첫 공고 올리기",
+    "dashboard": "대시보드로 이동"
+  }
+}

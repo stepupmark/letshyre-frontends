@@ -1,0 +1,38 @@
+{
+  "bands": {
+    "all": "전체",
+    "strong": "높음",
+    "partial": "부분",
+    "low": "낮음"
+  },
+  "columns": {
+    "candidate": "후보자",
+    "match": "매칭",
+    "experience": "경력",
+    "interviews": "인터뷰"
+  },
+  "years_other": "{{count}}년",
+  "unnamed": "이름 없는 후보자",
+  "sortedNote": "매칭 높은 순",
+  "peek": {
+    "why": "매칭 이유",
+    "whyNote": "AI 인터뷰와 이력서를 바탕으로 했어요. 결정하기 전에 평가표를 확인하세요.",
+    "noReason": "AI가 이 매칭의 이유를 알려 주지 않았어요.",
+    "role": "직무 적합도",
+    "skills": "역량 적합도",
+    "has": "보유",
+    "missing": "부족",
+    "noneMissing": "공고 목록에서 부족한 것이 없어요.",
+    "interviews": "AI 인터뷰",
+    "noInterviews": "아직 AI 인터뷰가 없어요.",
+    "experience_other": "경력 {{count}}년"
+  },
+  "applicants": {
+    "title": "지원자",
+    "lead_other": "{{count}}명 지원 · 매칭 높은 순",
+    "leadEmpty": "아직 지원한 사람이 없어요.",
+    "emptyTitle": "아직 지원자가 없어요",
+    "emptyBody": "AI 인터뷰를 마친 지원자가 여기에 표시돼요. 후보자 풀에서 찾아볼 수도 있어요.",
+    "pool": "후보자 풀 열기"
+  }
+}

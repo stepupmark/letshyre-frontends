@@ -1,17 +1,101 @@
 {
+  "appName": "LetsHyre",
   "nav": {
     "dashboard": "Dashboard"
   },
   "notFound": {
-    "title": "Kami tidak dapat menemukan halaman ini"
+    "title": "Kami tidak dapat menemukan halaman ini",
+    "body": "Tautannya mungkin sudah lama, atau halamannya sudah dipindahkan.",
+    "goHome": "Ke dasbor Anda"
   },
   "error": {
     "title": "Halaman ini tidak termuat",
-    "retry": "Coba lagi"
+    "body": "Ada masalah di pihak kami. Muat ulang untuk mencoba lagi, atau hubungi kami jika terus terjadi.",
+    "retry": "Coba lagi",
+    "goHome": "Ke dasbor Anda"
+  },
+  "table": {
+    "selectAll": "Pilih semua baris",
+    "selectRow": "Pilih {{name}}",
+    "selected_other": "{{count}} dipilih",
+    "clearSelection": "Hapus pilihan",
+    "columns": "Kolom",
+    "compact": "Baris rapat",
+    "sortBy": "Urutkan menurut {{column}}",
+    "previous": "Halaman sebelumnya",
+    "next": "Halaman berikutnya",
+    "pageOf": "Halaman {{page}} dari {{total}}",
+    "results_other": "{{count}} hasil",
+    "rowActions": "Tindakan untuk {{name}}",
+    "bulkActions": "Tindakan massal",
+    "navigateHint": "untuk berpindah,",
+    "openHint": "untuk membuka",
+    "enterKey": "Enter",
+    "pages": "Halaman"
+  },
+  "state": {
+    "error": "Tidak berhasil dimuat.",
+    "errorBody": "Tidak ada yang hilang. Periksa koneksi Anda lalu coba lagi.",
+    "retry": "Coba lagi",
+    "loading": "Memuat"
+  },
+  "empty": {
+    "filteredTitle": "Tidak ada yang cocok",
+    "filteredBody": "Coba pencarian lain atau hapus filternya.",
+    "clearFilters": "Hapus filter"
+  },
+  "upload": {
+    "drop": "Seret file ke sini, atau",
+    "browse": "pilih file",
+    "hint": "{{types}}, hingga {{size}}",
+    "tooLarge": "File itu berukuran {{size}}. Batasnya {{max}}.",
+    "wrongType": "Jenis file itu tidak diterima. Gunakan {{types}}.",
+    "uploading": "Mengunggah {{name}}",
+    "failed": "Unggahan gagal. File Anda masih ada, jadi Anda bisa mencoba lagi.",
+    "retry": "Coba lagi",
+    "remove": "Hapus {{name}}",
+    "done": "Terunggah"
+  },
+  "wizard": {
+    "step": "Langkah {{current}} dari {{total}}",
+    "back": "Kembali",
+    "next": "Lanjutkan",
+    "finish": "Selesai",
+    "draftSaved": "Draf disimpan di perangkat ini"
+  },
+  "confirm": {
+    "cancel": "Batal"
+  },
+  "undo": "Urungkan",
+  "copy": {
+    "copy": "Salin",
+    "copied": "Disalin"
+  },
+  "band": {
+    "strong": "Kecocokan tinggi",
+    "partial": "Kecocokan sebagian",
+    "low": "Kecocokan rendah"
+  },
+  "interviewBand": {
+    "strong": "Wawancara kuat",
+    "partial": "Wawancara cukup",
+    "low": "Wawancara lemah"
+  },
+  "detail": {
+    "previous": "Sebelumnya",
+    "next": "Berikutnya",
+    "position": "{{current}} dari {{total}}"
+  },
+  "releaseCheck": {
+    "title": "Pemeriksaan aplikasi baru",
+    "body": "Halaman ini disajikan oleh aplikasi baru. Jika Anda bisa membaca ini, rilis sudah diarahkan dengan benar."
   },
   "password": {
     "show": "Tampilkan kata sandi",
     "hide": "Sembunyikan kata sandi",
     "capsLock": "Caps Lock aktif"
+  },
+  "tip": {
+    "gotIt": "Mengerti"
   }
 }

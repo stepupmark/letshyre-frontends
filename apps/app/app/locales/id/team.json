@@ -1,0 +1,46 @@
+{
+  "title": "Tim",
+  "lead": "Orang yang bisa memasang lowongan dan meninjau kandidat bersama Anda.",
+  "count_other": "{{count}} orang bisa memasang lowongan dan meninjau kandidat.",
+  "add": "Tambah anggota",
+  "active": "Aktif",
+  "onHold": "Ditangguhkan",
+  "actions": "Tindakan untuk {{name}}",
+  "edit": "Edit",
+  "hold": "Tangguhkan",
+  "activate": "Aktifkan",
+  "remove": "Hapus",
+  "holdNote": "Anggota yang ditangguhkan tidak bisa masuk sampai Anda mengaktifkannya lagi. Lowongan mereka tetap seperti semula.",
+  "emptyTitle": "Baru Anda sendiri",
+  "emptyBody": "Tambahkan perekrut agar mereka bisa memasang lowongan dan meninjau kandidat di akun ini.",
+  "confirmTitle": "Hapus {{name}}?",
+  "confirmBody": "Akses langsung dicabut. Lowongan yang mereka pasang tetap milik perusahaan Anda. Ini tidak bisa dibatalkan.",
+  "dialog": {
+    "addTitle": "Tambah anggota tim",
+    "addLead": "Mereka bergabung sebagai perekrut. Atur kata sandi dan bagikan kepada mereka; mereka masuk dengan email masing-masing.",
+    "editTitle": "Edit anggota tim",
+    "editLead": "Perubahan berlaku saat mereka masuk berikutnya.",
+    "name": "Nama lengkap",
+    "email": "Email kantor",
+    "password": "Kata sandi",
+    "passwordHint": "Minimal 8 karakter. Bagikan secara pribadi.",
+    "generate": "Buat",
+    "add": "Tambah anggota",
+    "save": "Simpan perubahan"
+  },
+  "errors": {
+    "name": "Masukkan nama lengkap (2 sampai 100 karakter).",
+    "email": "Masukkan email seperti nama@perusahaan.com.",
+    "password": "Gunakan 8 sampai 50 karakter."
+  },
+  "toast": {
+    "added": "{{name}} ditambahkan",
+    "updated": "{{name}} diperbarui",
+    "held": "{{name}} ditangguhkan",
+    "activated": "{{name}} aktif",
+    "removed": "{{name}} dihapus",
+    "statusFailed": "Status tidak berubah. Coba lagi.",
+    "removeFailed": "Tidak berhasil dihapus. Coba lagi.",
+    "saveFailed": "Tidak tersimpan. Coba lagi."
+  }
+}

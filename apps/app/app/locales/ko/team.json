@@ -1,0 +1,46 @@
+{
+  "title": "팀",
+  "lead": "함께 공고를 올리고 후보자를 검토할 수 있는 사람들이에요.",
+  "count_other": "{{count}}명이 공고를 올리고 후보자를 검토할 수 있어요.",
+  "add": "멤버 추가",
+  "active": "활성",
+  "onHold": "보류",
+  "actions": "{{name}} 님 작업",
+  "edit": "편집",
+  "hold": "보류하기",
+  "activate": "활성화",
+  "remove": "삭제",
+  "holdNote": "보류된 멤버는 다시 활성화하기 전까지 로그인할 수 없어요. 올린 공고는 그대로 유지돼요.",
+  "emptyTitle": "아직은 혼자예요",
+  "emptyBody": "리크루터를 추가하면 이 계정에서 공고를 올리고 후보자를 검토할 수 있어요.",
+  "confirmTitle": "{{name}} 님을 삭제할까요?",
+  "confirmBody": "바로 접근 권한이 사라져요. 올린 공고는 회사에 남아요. 되돌릴 수 없어요.",
+  "dialog": {
+    "addTitle": "팀 멤버 추가",
+    "addLead": "리크루터로 합류해요. 비밀번호를 정해서 알려 주세요. 본인 이메일로 로그인해요.",
+    "editTitle": "팀 멤버 편집",
+    "editLead": "다음 로그인부터 변경 사항이 적용돼요.",
+    "name": "이름",
+    "email": "회사 이메일",
+    "password": "비밀번호",
+    "passwordHint": "8자 이상. 본인에게만 따로 알려 주세요.",
+    "generate": "생성",
+    "add": "멤버 추가",
+    "save": "변경 사항 저장"
+  },
+  "errors": {
+    "name": "이름을 입력하세요(2~100자).",
+    "email": "name@company.com 같은 이메일을 입력하세요.",
+    "password": "8~50자로 입력하세요."
+  },
+  "toast": {
+    "added": "{{name}} 님을 추가했어요",
+    "updated": "{{name}} 님 정보를 업데이트했어요",
+    "held": "{{name}} 님을 보류했어요",
+    "activated": "{{name}} 님을 활성화했어요",
+    "removed": "{{name}} 님을 삭제했어요",
+    "statusFailed": "상태를 바꾸지 못했어요. 다시 시도하세요.",
+    "removeFailed": "삭제하지 못했어요. 다시 시도하세요.",
+    "saveFailed": "저장되지 않았어요. 다시 시도하세요."
+  }
+}

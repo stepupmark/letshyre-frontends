@@ -1,0 +1,73 @@
+{
+  "title": "대시보드",
+  "postJob": "공고 올리기",
+  "attention": {
+    "heading": "확인이 필요해요",
+    "addCredits": "크레딧 추가",
+    "viewJobs": "공고 보기",
+    "postJob": "공고 올리기",
+    "creditsOut": {
+      "title": "크레딧이 다 떨어졌어요",
+      "body": "후보자 연락처를 잠금 해제하려면 크레딧을 추가하세요."
+    },
+    "creditsLow": {
+      "title": "크레딧이 얼마 남지 않았어요",
+      "body_other": "크레딧이 {{count}}개 남았어요. 잠금 해제할 때마다 1개를 써요."
+    },
+    "noOpenJobs": {
+      "title": "채용 중인 공고가 없어요",
+      "body_other": "공고 {{count}}개가 마감되었거나 임시 저장 상태예요. 지원을 계속 받으려면 다시 여세요."
+    },
+    "noJobs": {
+      "title": "첫 공고 올리기",
+      "body": "맞는 후보자는 내가 보기 전에 AI와 인터뷰해요."
+    },
+    "clear": {
+      "title": "모두 확인했어요.",
+      "body": "지금은 할 일이 없어요."
+    }
+  },
+  "stats": {
+    "heading": "채용",
+    "open": "채용 중인 공고",
+    "closed": "마감 또는 임시 저장",
+    "applications": "받은 지원"
+  },
+  "credits": {
+    "heading": "크레딧",
+    "low": "부족",
+    "explain": "크레딧 1개로 후보자 1명의 연락처, 녹화, 이력서를 잠금 해제해요.",
+    "used": "크레딧 {{percent}}% 사용",
+    "add": "크레딧 추가",
+    "invoices": "인보이스"
+  },
+  "setup": {
+    "title": "설정 마무리하기",
+    "progress": "{{total}}개 중 {{done}}개 완료",
+    "hide": "숨기기",
+    "isDone": "(완료)",
+    "isTodo": "(할 일)",
+    "account": {
+      "title": "계정 만들기",
+      "done": "완료",
+      "todo": "회사 이메일로 가입하세요."
+    },
+    "company": {
+      "title": "회사 정보와 서류 추가",
+      "done": "검토 요청함",
+      "todo": "회사 이름, 웹사이트, 등록 서류."
+    },
+    "job": {
+      "title": "첫 공고 올리기",
+      "done": "완료",
+      "todo": "직무 기술서를 올리면 양식을 채워 드려요.",
+      "action": "공고 올리기"
+    },
+    "team": {
+      "title": "팀 초대하기",
+      "done": "완료",
+      "todo": "동료를 추가해서 함께 후보자를 검토하세요.",
+      "action": "초대"
+    }
+  }
+}

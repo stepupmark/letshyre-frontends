@@ -1,0 +1,180 @@
+{
+  "profile": {
+    "title": "Profil kandidat",
+    "unnamed": "Kandidat",
+    "verified": "Terverifikasi",
+    "contact": "Kontak",
+    "email": "Email",
+    "phone": "Telepon",
+    "location": "Lokasi",
+    "experience": "Pengalaman",
+    "copy": "Salin",
+    "fresher": "Lulusan baru",
+    "years_other": "{{count}} tahun",
+    "empty": "Kandidat belum menambahkan latar belakangnya.",
+    "skills": "Keterampilan",
+    "work": "Pengalaman kerja",
+    "education": "Pendidikan",
+    "projects": "Proyek",
+    "untitled": "Proyek tanpa judul",
+    "awards": "Sertifikasi",
+    "pay": "Gaji",
+    "current": "Saat ini",
+    "expected": "Harapan",
+    "lpa": "₹{{value}} LPA",
+    "availability": "Ketersediaan",
+    "notSaid": "Masa pemberitahuan tidak disebutkan",
+    "immediate": "Bisa langsung bergabung",
+    "notice_other": "Pemberitahuan {{formatted}} hari",
+    "openTo": "Terbuka untuk {{places}}",
+    "industry": "Lebih suka {{industry}}",
+    "applied": "Melamar ke lowongan Anda",
+    "documents": "Dokumen",
+    "resume": "CV",
+    "noticeProof": "Bukti masa pemberitahuan",
+    "address": "Alamat",
+    "scorecard": "Kartu skor",
+    "back": "Kandidat terbuka"
+  },
+  "scorecard": {
+    "title": "Kartu skor",
+    "profile": "Profil"
+  },
+  "missing": {
+    "title": "Kami tidak menemukan kandidat ini",
+    "body": "Tautannya mungkin tidak lengkap, atau kandidat belum dibuka di akun ini.",
+    "scorecardTitle": "Belum ada kartu skor",
+    "scorecardBody": "Kartu skor siap beberapa menit setelah wawancara selesai. Jika sudah lebih lama, tautannya mungkin tidak lengkap.",
+    "back": "Kembali ke kandidat terbuka",
+    "backOwn": "Kembali ke kartu skor Anda"
+  },
+  "share": {
+    "button": "Bagikan",
+    "title": "Bagikan kartu skor {{name}}",
+    "lead": "Siapa pun yang punya tautan bisa melihat kartu skor dan profil, tanpa kontak, sampai tautan kedaluwarsa atau batas tayangannya habis.",
+    "job": "Untuk lowongan apa",
+    "chooseJob": "Pilih lowongan",
+    "days": "Kedaluwarsa setelah (hari)",
+    "daysHint": "Hingga {{max}} hari.",
+    "views": "Batas tayangan",
+    "viewsHint": "Setiap kali dibuka dihitung satu tayangan.",
+    "create": "Buat tautan",
+    "creating": "Membuat…",
+    "failed": "Tautan tidak dibuat. Coba lagi sebentar lagi.",
+    "errors": {
+      "job": "Pilih lowongan yang terkait dengan berbagi ini.",
+      "days": "Masukkan bilangan bulat dari 1 sampai {{max}}.",
+      "views": "Masukkan bilangan bulat 1 atau lebih."
+    },
+    "readyTitle": "Tautan siap",
+    "readyLead": "Kirim ke orang yang perlu melihat kartu skor {{name}}.",
+    "copy": "Salin tautan",
+    "expires": "Kedaluwarsa {{date}}",
+    "viewLimit_other": "{{count}} tayangan",
+    "noLink": "Tautan sudah dibuat, tetapi kembali dalam bentuk yang tidak bisa kami tampilkan. Temukan di Tautan yang dibagikan.",
+    "done": "Selesai"
+  },
+  "links": {
+    "title": "Tautan yang dibagikan",
+    "lead": "Kartu skor yang Anda bagikan ke luar tim. Cabut tautan agar langsung berhenti berfungsi.",
+    "columns": {
+      "candidate": "Kandidat",
+      "job": "Lowongan",
+      "views": "Tayangan",
+      "expires": "Kedaluwarsa",
+      "status": "Status"
+    },
+    "views": "{{count}} dari {{max}}",
+    "state": {
+      "active": "Aktif",
+      "revoked": "Dicabut",
+      "expired": "Kedaluwarsa",
+      "used": "Batas tayangan tercapai"
+    },
+    "actions": "Tindakan untuk tautan {{name}}",
+    "edit": "Ubah batas",
+    "revoke": "Cabut",
+    "restore": "Aktifkan lagi",
+    "delete": "Hapus",
+    "revoked": "Tautan ke kartu skor {{name}} dicabut",
+    "deleted": "Tautan dihapus",
+    "saved": "Tautan diperbarui",
+    "failed": "Tidak berhasil. Coba lagi.",
+    "deleteTitle": "Hapus tautan ini?",
+    "deleteBody": "Tautan ke kartu skor {{name}} tidak akan berfungsi lagi dan hilang dari daftar ini. Ini tidak bisa dibatalkan.",
+    "editTitle": "Ubah batas untuk {{name}}",
+    "editLead": "Beri tautan lebih banyak waktu atau tayangan. Siapa pun yang memilikinya tetap memakai tautan yang sama.",
+    "extend": "Tambah hari",
+    "extendHint": "0 mempertahankan tanggal saat ini. Hingga {{max}}.",
+    "viewsHint_other": "Sudah dipakai {{count}} kali.",
+    "save": "Simpan",
+    "errors": {
+      "days": "Masukkan bilangan bulat dari 0 sampai {{max}}.",
+      "views": "Masukkan bilangan bulat minimal {{min}}."
+    },
+    "emptyTitle": "Belum ada tautan yang dibagikan",
+    "emptyBody": "Bagikan kartu skor dari kandidat yang sudah dibuka, dan tautannya akan muncul di sini.",
+    "toUnlocked": "Buka kandidat terbuka"
+  },
+  "own": {
+    "title": "Profil Anda",
+    "fromResume": "Dari CV Anda. Pemberi kerja melihat ini saat AI kami mencocokkan Anda dengan lowongan.",
+    "emptyBackground": "Belum ada apa pun dari CV Anda.",
+    "completion": "Kelengkapan profil",
+    "interviews": "Wawancara AI",
+    "interviewsUsed": "{{used}} dari {{max}} terpakai",
+    "interviewsLeft_other": "(sisa {{count}})",
+    "edit": "Edit {{section}}",
+    "editShort": "Edit",
+    "save": "Simpan",
+    "saving": "Menyimpan…",
+    "saved": "Tersimpan",
+    "saveFailed": "Tidak tersimpan. Perubahan Anda masih ada; coba lagi.",
+    "contact": {
+      "title": "Kontak",
+      "city": "Kota tempat tinggal"
+    },
+    "work": {
+      "title": "Pekerjaan dan gaji",
+      "company": "Perusahaan saat ini atau terakhir",
+      "lastDay": "Hari kerja terakhir",
+      "currentLpa": "Gaji saat ini (LPA)",
+      "expectedLpa": "Gaji yang diharapkan (LPA)"
+    },
+    "preferences": {
+      "title": "Preferensi kerja",
+      "industry": "Industri",
+      "choose": "Pilih…",
+      "places": "Tempat Anda ingin bekerja",
+      "placesHint": "Pisahkan kota dengan koma."
+    },
+    "docs": {
+      "resume": "CV",
+      "experience_letter": "Surat pengalaman kerja",
+      "resignation_letter": "Surat pengunduran diri",
+      "notice_period_prof": "Bukti masa pemberitahuan",
+      "present_offer": "Tawaran kerja saat ini"
+    },
+    "errors": {
+      "city": "Masukkan kota Anda.",
+      "address": "Masukkan alamat lengkap, minimal 10 karakter.",
+      "company": "Masukkan nama perusahaan.",
+      "ctc": "Masukkan jumlah dalam lakh, misalnya 8.5.",
+      "expectedLow": "Gaji yang diharapkan tidak boleh lebih rendah dari gaji saat ini.",
+      "lastDay": "Masukkan tanggal.",
+      "industry": "Pilih industri.",
+      "places": "Tambahkan minimal satu kota."
+    }
+  },
+  "list": {
+    "title": "Kartu skor Anda",
+    "lead": "Hasil setiap wawancara AI. Pemberi kerja yang Anda lamar melihat yang terbaru.",
+    "interview": "Wawancara",
+    "open": "Buka kartu skor",
+    "more": "+{{count}} lagi",
+    "emptyTitle": "Belum ada kartu skor",
+    "emptyBody": "Ikuti wawancara AI di aplikasi desktop. Kartu skor Anda siap beberapa menit setelah selesai.",
+    "download": "Unduh aplikasinya",
+    "guide": "Cara kerjanya"
+  }
+}

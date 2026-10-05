@@ -1,0 +1,73 @@
+{
+  "title": "Dasbor",
+  "postJob": "Pasang lowongan",
+  "attention": {
+    "heading": "Perlu perhatian Anda",
+    "addCredits": "Tambah kredit",
+    "viewJobs": "Lihat lowongan",
+    "postJob": "Pasang lowongan",
+    "creditsOut": {
+      "title": "Kredit Anda habis",
+      "body": "Tambah kredit untuk membuka kontak kandidat."
+    },
+    "creditsLow": {
+      "title": "Kredit hampir habis",
+      "body_other": "Sisa kredit Anda {{count}}. Setiap pembukaan memakai satu."
+    },
+    "noOpenJobs": {
+      "title": "Tidak ada lowongan yang dibuka",
+      "body_other": "{{count}} lowongan ditutup atau masih draf. Buka lagi salah satunya agar tetap menerima pelamar."
+    },
+    "noJobs": {
+      "title": "Pasang lowongan pertama Anda",
+      "body": "Kandidat yang cocok diwawancarai AI kami sebelum Anda melihatnya."
+    },
+    "clear": {
+      "title": "Semua sudah beres.",
+      "body": "Tidak ada yang perlu Anda tangani sekarang."
+    }
+  },
+  "stats": {
+    "heading": "Rekrutmen",
+    "open": "Lowongan dibuka",
+    "closed": "Ditutup atau draf",
+    "applications": "Lamaran diterima"
+  },
+  "credits": {
+    "heading": "Kredit",
+    "low": "Rendah",
+    "explain": "Satu kredit membuka kontak, rekaman, dan CV satu kandidat.",
+    "used": "{{percent}}% kredit Anda terpakai",
+    "add": "Tambah kredit",
+    "invoices": "Faktur"
+  },
+  "setup": {
+    "title": "Selesaikan penyiapan",
+    "progress": "{{done}} dari {{total}} selesai",
+    "hide": "Sembunyikan",
+    "isDone": "(selesai)",
+    "isTodo": "(belum)",
+    "account": {
+      "title": "Buat akun Anda",
+      "done": "Selesai",
+      "todo": "Daftar dengan email kantor Anda."
+    },
+    "company": {
+      "title": "Tambahkan detail dan dokumen perusahaan",
+      "done": "Dikirim untuk ditinjau",
+      "todo": "Nama, situs web, dan dokumen registrasi perusahaan Anda."
+    },
+    "job": {
+      "title": "Pasang lowongan pertama Anda",
+      "done": "Selesai",
+      "todo": "Unggah deskripsi pekerjaan dan kami isi formulirnya.",
+      "action": "Pasang lowongan"
+    },
+    "team": {
+      "title": "Undang tim Anda",
+      "done": "Selesai",
+      "todo": "Tambahkan rekan agar bisa meninjau kandidat bersama Anda.",
+      "action": "Undang"
+    }
+  }
+}

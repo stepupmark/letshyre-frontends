@@ -1,0 +1,44 @@
+{
+  "title": "Asisten",
+  "lead": {
+    "employer": "Jawaban seputar merekrut di LetsHyre: lowongan, kecocokan, kartu skor, dan kredit.",
+    "candidate": "Jawaban seputar pencarian kerja Anda: melamar, wawancara, dan kartu skor Anda."
+  },
+  "log": "Percakapan",
+  "you": "Anda",
+  "assistant": "Asisten",
+  "greeting": "Halo, saya asisten LetsHyre.",
+  "hint": {
+    "employer": "Tanyakan apa saja tentang rekrutmen Anda. Pertanyaan ini sering muncul di halaman ini:",
+    "candidate": "Tanyakan apa saja tentang pencarian kerja Anda. Pertanyaan ini sering muncul di halaman ini:"
+  },
+  "input": "Ajukan pertanyaan",
+  "send": "Kirim",
+  "stop": "Hentikan jawaban",
+  "thinking": "Sedang berpikir…",
+  "stopped": "Anda menghentikan jawaban ini.",
+  "failed": "Tidak ada jawaban yang masuk.",
+  "retry": "Coba lagi",
+  "clear": "Hapus percakapan",
+  "prompts": {
+    "firstJob": "Bagaimana cara memasang lowongan pertama saya?",
+    "readScorecard": "Bagaimana cara membaca kartu skor kandidat?",
+    "credits": "Bagaimana cara kerja kredit?",
+    "betterJob": "Bagaimana menulis lowongan yang mendapat kecocokan lebih baik?",
+    "pauseJob": "Bagaimana cara menjeda atau menutup lowongan?",
+    "matchScore": "Bagaimana skor kecocokan dihitung?",
+    "unlockCost": "Berapa biaya membuka kandidat?",
+    "shareScorecard": "Bagaimana cara membagikan kartu skor ke tim saya?",
+    "gstInvoice": "Bisakah saya mendapat faktur dengan GST?",
+    "findFit": "Bagaimana menemukan lowongan yang cocok untuk saya?",
+    "howInterview": "Bagaimana wawancara AI berjalan?",
+    "afterApply": "Apa yang terjadi setelah saya melamar?",
+    "shortlist": "Bagaimana pemberi kerja memilih siapa yang masuk daftar pendek?",
+    "ownScore": "Bagaimana kartu skor saya dihitung?",
+    "retake": "Bisakah saya mengulang wawancara?",
+    "standOut": "Bagaimana membuat profil saya menonjol?",
+    "whoSees": "Siapa yang bisa melihat dokumen saya?",
+    "needForInterview": "Apa yang saya perlukan untuk wawancara?",
+    "connectionDrops": "Bagaimana jika internet saya putus saat wawancara?"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "profile": {
+    "title": "후보자 프로필",
+    "unnamed": "후보자",
+    "verified": "인증됨",
+    "contact": "연락처",
+    "email": "이메일",
+    "phone": "전화",
+    "location": "지역",
+    "experience": "경력",
+    "copy": "복사",
+    "fresher": "신입",
+    "years_other": "{{count}}년",
+    "empty": "후보자가 아직 경력을 추가하지 않았어요.",
+    "skills": "역량",
+    "work": "경력",
+    "education": "학력",
+    "projects": "프로젝트",
+    "untitled": "제목 없는 프로젝트",
+    "awards": "자격증",
+    "pay": "연봉",
+    "current": "현재",
+    "expected": "희망",
+    "lpa": "₹{{value}} LPA",
+    "availability": "입사 가능 시기",
+    "notSaid": "퇴직 통보 기간 미기재",
+    "immediate": "즉시 입사 가능",
+    "notice_other": "퇴직 통보 {{formatted}}일",
+    "openTo": "희망 근무지: {{places}}",
+    "industry": "선호 업계: {{industry}}",
+    "applied": "내 공고에 지원함",
+    "documents": "서류",
+    "resume": "이력서",
+    "noticeProof": "퇴직 통보 증빙",
+    "address": "주소",
+    "scorecard": "평가표",
+    "back": "잠금 해제한 후보자"
+  },
+  "scorecard": {
+    "title": "평가표",
+    "profile": "프로필"
+  },
+  "missing": {
+    "title": "이 후보자를 찾지 못했어요",
+    "body": "링크가 불완전하거나, 이 계정에서 잠금 해제하지 않은 후보자일 수 있어요.",
+    "scorecardTitle": "아직 평가표가 없어요",
+    "scorecardBody": "평가표는 인터뷰가 끝나고 몇 분 뒤에 준비돼요. 더 오래 지났다면 링크가 불완전할 수 있어요.",
+    "back": "잠금 해제한 후보자로 돌아가기",
+    "backOwn": "내 평가표로 돌아가기"
+  },
+  "share": {
+    "button": "공유",
+    "title": "{{name}} 님의 평가표 공유",
+    "lead": "링크가 있는 사람은 만료되거나 조회 수가 다 찰 때까지 연락처를 제외한 평가표와 프로필을 볼 수 있어요.",
+    "job": "어떤 공고를 위해",
+    "chooseJob": "공고 선택",
+    "days": "만료 기간(일)",
+    "daysHint": "최대 {{max}}일.",
+    "views": "조회 한도",
+    "viewsHint": "열 때마다 조회 1회로 계산해요.",
+    "create": "링크 만들기",
+    "creating": "만드는 중…",
+    "failed": "링크를 만들지 못했어요. 잠시 후 다시 시도하세요.",
+    "errors": {
+      "job": "공유할 공고를 선택하세요.",
+      "days": "1부터 {{max}}까지의 정수를 입력하세요.",
+      "views": "1 이상의 정수를 입력하세요."
+    },
+    "readyTitle": "링크가 준비되었어요",
+    "readyLead": "{{name}} 님의 평가표를 봐야 할 사람에게 보내세요.",
+    "copy": "링크 복사",
+    "expires": "{{date}} 만료",
+    "viewLimit_other": "{{count}}회",
+    "noLink": "링크는 만들어졌지만 표시할 수 없는 형식으로 돌아왔어요. 공유 링크에서 찾아보세요.",
+    "done": "완료"
+  },
+  "links": {
+    "title": "공유 링크",
+    "lead": "팀 밖으로 공유한 평가표예요. 링크를 철회하면 바로 사용할 수 없게 돼요.",
+    "columns": {
+      "candidate": "후보자",
+      "job": "공고",
+      "views": "조회 수",
+      "expires": "만료",
+      "status": "상태"
+    },
+    "views": "{{count}} / {{max}}",
+    "state": {
+      "active": "사용 중",
+      "revoked": "철회됨",
+      "expired": "만료됨",
+      "used": "조회 한도 도달"
+    },
+    "actions": "{{name}} 님 링크 작업",
+    "edit": "한도 변경",
+    "revoke": "철회",
+    "restore": "다시 사용",
+    "delete": "삭제",
+    "revoked": "{{name}} 님 평가표 링크를 철회했어요",
+    "deleted": "링크를 삭제했어요",
+    "saved": "링크를 업데이트했어요",
+    "failed": "처리하지 못했어요. 다시 시도하세요.",
+    "deleteTitle": "이 링크를 삭제할까요?",
+    "deleteBody": "{{name}} 님 평가표 링크가 더 이상 작동하지 않고 이 목록에서 사라져요. 되돌릴 수 없어요.",
+    "editTitle": "{{name}} 님 링크 한도 변경",
+    "editLead": "링크에 시간이나 조회 수를 더 주세요. 링크를 가진 사람은 같은 링크를 계속 써요.",
+    "extend": "일수 추가",
+    "extendHint": "0이면 현재 날짜를 유지해요. 최대 {{max}}.",
+    "viewsHint_other": "지금까지 {{count}}회 사용됨.",
+    "save": "저장",
+    "errors": {
+      "days": "0부터 {{max}}까지의 정수를 입력하세요.",
+      "views": "{{min}} 이상의 정수를 입력하세요."
+    },
+    "emptyTitle": "아직 공유 링크가 없어요",
+    "emptyBody": "잠금 해제한 후보자의 평가표를 공유하면 링크가 여기에 표시돼요.",
+    "toUnlocked": "잠금 해제한 후보자 열기"
+  },
+  "own": {
+    "title": "내 프로필",
+    "fromResume": "이력서에서 가져왔어요. AI가 나를 공고와 매칭하면 고용주에게 보여요.",
+    "emptyBackground": "이력서에서 가져온 내용이 아직 없어요.",
+    "completion": "프로필 완성도",
+    "interviews": "AI 인터뷰",
+    "interviewsUsed": "{{max}}회 중 {{used}}회 사용",
+    "interviewsLeft_other": "({{count}}회 남음)",
+    "edit": "{{section}} 편집",
+    "editShort": "편집",
+    "save": "저장",
+    "saving": "저장 중…",
+    "saved": "저장됨",
+    "saveFailed": "저장되지 않았어요. 변경 내용은 그대로 있어요. 다시 시도하세요.",
+    "contact": {
+      "title": "연락처",
+      "city": "거주 도시"
+    },
+    "work": {
+      "title": "직장과 연봉",
+      "company": "현재 또는 마지막 회사",
+      "lastDay": "마지막 근무일",
+      "currentLpa": "현재 연봉 (LPA)",
+      "expectedLpa": "희망 연봉 (LPA)"
+    },
+    "preferences": {
+      "title": "희망 조건",
+      "industry": "업계",
+      "choose": "선택…",
+      "places": "희망 근무지",
+      "placesHint": "도시는 쉼표로 구분하세요."
+    },
+    "docs": {
+      "resume": "이력서",
+      "experience_letter": "경력 증명서",
+      "resignation_letter": "사직서",
+      "notice_period_prof": "퇴직 통보 증빙",
+      "present_offer": "현재 받은 오퍼"
+    },
+    "errors": {
+      "city": "도시를 입력하세요.",
+      "address": "주소를 10자 이상 입력하세요.",
+      "company": "회사 이름을 입력하세요.",
+      "ctc": "라크 단위 금액을 입력하세요(예: 8.5).",
+      "expectedLow": "희망 연봉은 현재 연봉보다 낮을 수 없어요.",
+      "lastDay": "날짜를 입력하세요.",
+      "industry": "업계를 선택하세요.",
+      "places": "도시를 하나 이상 추가하세요."
+    }
+  },
+  "list": {
+    "title": "내 평가표",
+    "lead": "AI 인터뷰별 결과예요. 지원한 고용주는 가장 최근 평가표를 봐요.",
+    "interview": "인터뷰",
+    "open": "평가표 열기",
+    "more": "외 {{count}}개",
+    "emptyTitle": "아직 평가표가 없어요",
+    "emptyBody": "데스크톱 앱에서 AI 인터뷰를 보세요. 끝나고 몇 분 뒤 평가표가 준비돼요.",
+    "download": "앱 다운로드",
+    "guide": "이용 방법"
+  }
+}

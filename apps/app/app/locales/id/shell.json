@@ -1,0 +1,69 @@
+{
+  "skipToContent": "Langsung ke konten utama",
+  "loading": "Memuat halaman",
+  "toggleSidebar": "Tampilkan atau sembunyikan bilah samping",
+  "navigation": "Navigasi utama",
+  "groups": {
+    "hiring": "Rekrutmen",
+    "company": "Perusahaan",
+    "you": "Anda",
+    "help": "Bantuan"
+  },
+  "nav": {
+    "dashboard": "Dasbor",
+    "postJob": "Pasang lowongan",
+    "jobs": "Lowongan",
+    "candidatePool": "Kumpulan kandidat",
+    "unlocked": "Kandidat terbuka",
+    "team": "Tim",
+    "sharedLinks": "Tautan yang dibagikan",
+    "billing": "Penagihan",
+    "findJobs": "Cari lowongan",
+    "applications": "Lamaran saya",
+    "scorecards": "Kartu skor",
+    "profile": "Profil",
+    "interviewGuide": "Panduan wawancara",
+    "assistant": "Asisten"
+  },
+  "search": {
+    "button": "Cari atau lompat ke…",
+    "shortcut": "Ctrl K",
+    "title": "Cari",
+    "description": "Lompat ke halaman atau jalankan tindakan",
+    "empty": "Tidak ada yang cocok.",
+    "pages": "Halaman"
+  },
+  "credits": {
+    "label_other": "{{count}} kredit",
+    "add": "Tambah kredit"
+  },
+  "user": {
+    "menu": "Menu akun",
+    "profile": "Profil",
+    "language": "Bahasa",
+    "shortcuts": "Pintasan keyboard",
+    "signOut": "Keluar",
+    "tips": "Tampilkan tips lagi"
+  },
+  "shortcuts": {
+    "title": "Pintasan keyboard",
+    "search": "Cari dan lompat ke halaman",
+    "sidebar": "Tampilkan atau sembunyikan bilah samping",
+    "help": "Tampilkan daftar ini"
+  },
+  "tips": {
+    "search": {
+      "title": "Lompat ke mana saja",
+      "body": "Cari halaman atau tindakan. Tekan Ctrl K dari mana saja."
+    },
+    "credits": {
+      "title": "Saldo kredit Anda",
+      "body": "Kredit membuka kontak kandidat. Pilih ini untuk menambah atau melihat faktur."
+    }
+  },
+  "assistant": {
+    "open": "Tanya asisten",
+    "full": "Buka sebagai halaman penuh",
+    "lead": "Percakapan Anda tetap di sini saat Anda berpindah halaman."
+  }
+}

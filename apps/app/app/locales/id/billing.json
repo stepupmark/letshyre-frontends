@@ -1,0 +1,129 @@
+{
+  "title": "Beli kredit",
+  "lead": "Setiap kredit membuka satu wawancara AI: kontak kandidat, kartu skor lengkap, rekaman, dan CV. Kredit tidak pernah kedaluwarsa.",
+  "balance": "Saldo",
+  "invoices": "Faktur",
+  "buyCredits": "Beli kredit",
+  "plusGst": "{{price}} + GST",
+  "nextNote": "Setelah membayar, kami akan membawa Anda kembali ke kandidat yang tadi Anda lihat.",
+  "nextBack": "Kembali ke kandidat",
+  "plans": {
+    "title": "Paket",
+    "lead": "Bayar sekali, bukan langganan. GST ditambahkan saat pembayaran.",
+    "popular": "Paling populer",
+    "once": "+ GST, bayar sekali",
+    "credits_other": "{{count}} kredit",
+    "rate": "{{rate}} per kredit",
+    "seats_other": "{{count}} kursi tim",
+    "unlocks": "Kontak, kartu skor, dan rekaman",
+    "noExpiry": "Kredit tidak pernah kedaluwarsa",
+    "topUps": "Isi ulang kapan saja",
+    "buy": "Beli {{name}}"
+  },
+  "topUps": {
+    "title": "Isi ulang",
+    "lead": "Tambahkan kredit ke saldo Anda kapan pun dibutuhkan.",
+    "credits_other": "{{count}} kredit",
+    "buy": "Beli",
+    "buyLabel_other": "Beli {{count}} kredit"
+  },
+  "unavailable": {
+    "title": "Paket ini tidak tersedia",
+    "body": "Paket mungkin sudah berubah sejak tautan dibuat. Tutup ini dan pilih salah satu di bawah.",
+    "failedTitle": "Kami tidak bisa memuat paket ini",
+    "failedBody": "Periksa koneksi Anda lalu coba lagi. Tidak ada yang ditagih.",
+    "close": "Tutup"
+  },
+  "checkout": {
+    "planTitle": "Paket {{name}}",
+    "topUpTitle_other": "{{count}} kredit",
+    "summary_other": "{{count}} kredit, bayar sekali. Kredit tidak pernah kedaluwarsa.",
+    "credits_other": "{{count}} kredit × {{rate}}",
+    "couponLine": "Kupon {{code}}",
+    "discount": "Diskon",
+    "gst": "GST ({{percent}}%)",
+    "total": "Total",
+    "quoteError": "Kami tidak bisa menghitung total Anda. Tidak ada yang ditagih.",
+    "retry": "Coba lagi",
+    "coupon": {
+      "toggle": "Punya kode kupon?",
+      "label": "Kode kupon",
+      "apply": "Terapkan",
+      "applied": "{{code}} diterapkan",
+      "remove": "Hapus kupon {{code}}",
+      "required": "Masukkan kode kupon.",
+      "invalid": "Kode kupon hanya berisi huruf, angka, tanda hubung, dan garis bawah.",
+      "rejected": "Kode ini tidak berlaku untuk pembelian ini."
+    },
+    "pay": "Bayar {{amount}}",
+    "payPending": "Bayar",
+    "paying": "Memulai pembayaran…",
+    "secure": "Pembayaran diproses oleh Razorpay. Dengan membayar, Anda menyetujui <terms>syarat</terms> dan <refund>kebijakan pengembalian dana</refund> kami.",
+    "razorpay_other": "{{count}} kredit LetsHyre",
+    "notice": {
+      "cancelled": {
+        "title": "Pembayaran dibatalkan",
+        "body": "Tidak ada yang ditagih. Bayar lagi kapan pun Anda siap."
+      },
+      "failed": {
+        "title": "Pembayaran tidak berhasil",
+        "body": "Tidak ada yang ditagih. Coba lagi atau gunakan metode pembayaran lain."
+      },
+      "priceChanged": {
+        "title": "Total Anda berubah",
+        "body": "Harga diperbarui setelah Anda membuka ini, dan tidak ada yang ditagih. Periksa total baru sebelum membayar."
+      },
+      "blocked": {
+        "title": "Jendela pembayaran tidak termuat",
+        "body": "Tidak ada yang ditagih. Periksa koneksi Anda; jika memakai pemblokir iklan, izinkan checkout.razorpay.com."
+      },
+      "error": {
+        "title": "Kami tidak bisa memulai pembayaran",
+        "body": "Tidak ada yang ditagih. Coba lagi sebentar lagi."
+      }
+    },
+    "verifying": {
+      "title": "Mengonfirmasi pembayaran Anda",
+      "body": "Butuh beberapa detik. Biarkan jendela ini terbuka."
+    },
+    "paid": {
+      "title_other": "{{count}} kredit ditambahkan",
+      "body": "Kami menerima {{amount}}. Faktur Anda ada di halaman faktur.",
+      "balance": "Saldo Anda sekarang",
+      "primary": "Cari kandidat",
+      "back": "Kembali ke kandidat",
+      "invoices": "Lihat faktur"
+    },
+    "unconfirmed": {
+      "title": "Kami belum bisa mengonfirmasi pembayaran Anda",
+      "body": "Jika uang sudah keluar dari rekening Anda, kredit Anda tidak hilang. Coba lagi, atau hubungi kami dengan referensi pembayaran di bawah.",
+      "retry": "Coba lagi",
+      "contact": "Hubungi dukungan"
+    },
+    "reference": "Referensi pembayaran"
+  },
+  "invoiceList": {
+    "title": "Faktur",
+    "lead": "Setiap pembelian kredit, lengkap dengan tanda terimanya.",
+    "columns": {
+      "date": "Tanggal",
+      "purchase": "Pembelian",
+      "number": "Faktur",
+      "total": "Total"
+    },
+    "plan": "Paket {{name}}",
+    "topUp": "Isi ulang",
+    "preparing": "Sedang disiapkan",
+    "emptyTitle": "Belum ada faktur",
+    "emptyBody": "Pembelian pertama Anda akan muncul di sini dengan tanda terimanya."
+  },
+  "receipt": {
+    "title": "Tanda terima",
+    "subtotal": "Subtotal",
+    "gst": "GST",
+    "paidOn": "Dibayar pada",
+    "pdf": "PDF",
+    "print": "Cetak",
+    "noPdf": "Faktur PDF masih disiapkan. Periksa lagi dalam beberapa menit."
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "panel": {
+    "title": "Buka",
+    "lead": "Membuka menampilkan kontak, kartu skor lengkap, rekaman, dan CV. Setiap wawancara memakai satu kredit.",
+    "matched": "Posisi lowongan ini",
+    "unlocked": "Terbuka",
+    "button_other": "Buka · {{count}} kredit",
+    "pick": "Pilih minimal satu wawancara.",
+    "balance": "Saldo",
+    "short": "Ini butuh {{cost}} kredit dan Anda punya {{balance}}. Tambah kredit dan Anda akan kembali ke sini.",
+    "addCredits": "Tambah kredit",
+    "none": "Belum ada wawancara AI, jadi tidak ada yang bisa dibuka.",
+    "allUnlocked": "Semua untuk kandidat ini sudah terbuka.",
+    "openUnlocked": "Lihat kandidat terbuka",
+    "failed": "Pembukaan tidak berhasil. Periksa saldo Anda sebelum mencoba lagi."
+  },
+  "confirm": {
+    "title": "Buka {{name}}?",
+    "body_other": "Ini memakai {{count}} kredit dan tidak bisa dibatalkan. Sisa Anda {{left}}."
+  },
+  "done": "{{name}} terbuka",
+  "doneBody_other": "{{count}} kredit terpakai, sisa {{left}}.",
+  "pool": {
+    "title": "Kumpulan kandidat",
+    "lead": "Orang yang dicocokkan AI kami dengan lowongan Anda yang dibuka, kecocokan terbaik dulu.",
+    "job": "Lowongan",
+    "chooseJob": "Pilih lowongan",
+    "matched": "Dicocokkan AI",
+    "applied": "Melamar",
+    "noJobsTitle": "Tidak ada lowongan yang dibuka",
+    "noJobsBody": "Kecocokan berasal dari lowongan yang dibuka. Pasang satu, atau buka lagi lowongan yang dijeda.",
+    "postJob": "Pasang lowongan",
+    "emptyTitle": "Belum ada kecocokan",
+    "emptyBody": "AI kami terus mencocokkan saat kandidat menyelesaikan wawancara. Kembali lagi nanti.",
+    "emptyApplied": "Belum ada yang melamar lowongan ini.",
+    "summary": "{{matched}} dari {{total}} kandidat cocok"
+  },
+  "list": {
+    "title": "Kandidat terbuka",
+    "lead": "Semua orang yang sudah Anda buka, terbaru dulu.",
+    "sharedLinks": "Tautan yang dibagikan",
+    "columns": {
+      "candidate": "Kandidat",
+      "experience": "Pengalaman",
+      "place": "Lokasi",
+      "pay": "Gaji (LPA)",
+      "notice": "Pemberitahuan",
+      "interview": "Wawancara",
+      "unlocked": "Dibuka"
+    },
+    "years_other": "{{count}} thn",
+    "days_other": "{{count}} hari",
+    "verified": "Terverifikasi",
+    "profile": "Profil",
+    "scorecard": "Kartu skor",
+    "emptyTitle": "Belum ada yang dibuka",
+    "emptyBody": "Buka kandidat dari kumpulan atau daftar pelamar untuk melihat detailnya di sini.",
+    "toPool": "Buka kumpulan kandidat"
+  }
+}

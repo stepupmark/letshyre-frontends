@@ -1,0 +1,38 @@
+{
+  "bands": {
+    "all": "Semua",
+    "strong": "Tinggi",
+    "partial": "Sebagian",
+    "low": "Rendah"
+  },
+  "columns": {
+    "candidate": "Kandidat",
+    "match": "Kecocokan",
+    "experience": "Pengalaman",
+    "interviews": "Wawancara"
+  },
+  "years_other": "{{count}} thn",
+  "unnamed": "Kandidat tanpa nama",
+  "sortedNote": "Kecocokan terbaik dulu",
+  "peek": {
+    "why": "Alasan kecocokan",
+    "whyNote": "Dari wawancara AI dan CV. Periksa kartu skor sebelum memutuskan.",
+    "noReason": "AI tidak memberi alasan untuk yang ini.",
+    "role": "Kesesuaian posisi",
+    "skills": "Kesesuaian keterampilan",
+    "has": "Punya",
+    "missing": "Kurang",
+    "noneMissing": "Tidak ada yang kurang dari daftar lowongan.",
+    "interviews": "Wawancara AI",
+    "noInterviews": "Belum ada wawancara AI.",
+    "experience_other": "Pengalaman {{count}} tahun"
+  },
+  "applicants": {
+    "title": "Pelamar",
+    "lead_other": "{{count}} melamar · kecocokan terbaik dulu",
+    "leadEmpty": "Belum ada yang melamar.",
+    "emptyTitle": "Belum ada pelamar",
+    "emptyBody": "Pelamar muncul di sini setelah menyelesaikan wawancara AI. Anda juga bisa mencari di kumpulan kandidat.",
+    "pool": "Buka kumpulan kandidat"
+  }
+}

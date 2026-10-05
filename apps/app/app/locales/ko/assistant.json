@@ -1,0 +1,44 @@
+{
+  "title": "어시스턴트",
+  "lead": {
+    "employer": "LetsHyre 채용에 관한 답변: 채용 공고, 매칭, 평가표, 크레딧.",
+    "candidate": "구직 활동에 관한 답변: 지원, 인터뷰, 내 평가표."
+  },
+  "log": "대화",
+  "you": "나",
+  "assistant": "어시스턴트",
+  "greeting": "안녕하세요, LetsHyre 어시스턴트예요.",
+  "hint": {
+    "employer": "채용에 관해 무엇이든 물어보세요. 이 페이지에서 자주 나오는 질문이에요:",
+    "candidate": "구직 활동에 관해 무엇이든 물어보세요. 이 페이지에서 자주 나오는 질문이에요:"
+  },
+  "input": "질문하기",
+  "send": "보내기",
+  "stop": "답변 중지",
+  "thinking": "생각 중…",
+  "stopped": "이 답변을 중지했어요.",
+  "failed": "답변이 오지 않았어요.",
+  "retry": "다시 시도",
+  "clear": "대화 지우기",
+  "prompts": {
+    "firstJob": "첫 채용 공고는 어떻게 올리나요?",
+    "readScorecard": "후보자 평가표는 어떻게 읽나요?",
+    "credits": "크레딧은 어떻게 작동하나요?",
+    "betterJob": "더 좋은 매칭을 받는 공고는 어떻게 쓰나요?",
+    "pauseJob": "공고를 일시 중지하거나 마감하려면?",
+    "matchScore": "매칭 점수는 어떻게 계산되나요?",
+    "unlockCost": "후보자 잠금 해제 비용은 얼마인가요?",
+    "shareScorecard": "평가표를 팀과 공유하려면?",
+    "gstInvoice": "GST 인보이스를 받을 수 있나요?",
+    "findFit": "나에게 맞는 일자리는 어떻게 찾나요?",
+    "howInterview": "AI 인터뷰는 어떻게 진행되나요?",
+    "afterApply": "지원한 다음에는 어떻게 되나요?",
+    "shortlist": "고용주는 서류 통과자를 어떻게 정하나요?",
+    "ownScore": "내 평가표는 어떻게 계산되나요?",
+    "retake": "인터뷰를 다시 볼 수 있나요?",
+    "standOut": "프로필을 돋보이게 하려면?",
+    "whoSees": "내 서류는 누가 볼 수 있나요?",
+    "needForInterview": "인터뷰에 무엇이 필요한가요?",
+    "connectionDrops": "인터뷰 중에 인터넷이 끊기면요?"
+  }
+}

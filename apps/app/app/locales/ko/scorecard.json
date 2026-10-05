@@ -1,40 +1,130 @@
 {
+  "title": "인터뷰 평가표",
+  "print": "인쇄",
+  "provenance": {
+    "sharedBy": "{{company}}에서 비공개로 공유했어요. 링크에는 조회 한도와 만료일이 있으니 전달하지 마세요.",
+    "private": "비공개로 공유되었어요. 링크에는 조회 한도와 만료일이 있으니 전달하지 마세요."
+  },
   "header": {
     "unnamed": "후보자",
     "fresher": "신입",
+    "experience_other": "경력 {{count}}년",
     "matchedTo": "{{job}}에 매칭됨",
-    "experience_one": "경력 {{count}}년",
-    "experience_other": "경력 {{count}}년"
+    "yours": "내 인터뷰 평가표",
+    "taken": "{{date}} 인터뷰"
+  },
+  "summary": {
+    "heading": "요약",
+    "outOf": "/ 100",
+    "basedOn_other": "답변한 질문 {{count}}개 기준",
+    "howScored": "어떻게 채점하나요?",
+    "howScoredBody": "AI 면접관은 각 답변을 직무에 비추어 채점한 뒤 명확성, 관련성, 깊이를 확인해요. 점수는 결정의 출발점으로 쓰고, 결정을 대신하지는 마세요.",
+    "howScoredYours": "AI 면접관은 각 답변을 직무에 비추어 채점한 뒤 명확성, 관련성, 깊이를 확인해요. 고용주도 같은 점수를 보니 개선할 점부터 시작하면 좋아요."
+  },
+  "match": {
+    "heading": "공고 적합도",
+    "headingFor": "{{job}} 적합도",
+    "overall": "종합",
+    "role": "직무",
+    "skills": "역량",
+    "why": "매칭 이유"
   },
   "metrics": {
+    "heading": "의사소통",
     "clarity": "명확성",
     "relevance": "적합성",
-    "confidence": "자신감"
+    "confidence": "자신감",
+    "depth": "사고의 깊이",
+    "keyConcept": "다룬 핵심 개념"
   },
   "types": {
-    "coding": "코딩"
+    "heading": "질문 유형별",
+    "correct_other": "{{count}}개 중 {{correct}}개 정답",
+    "mcq": "객관식",
+    "pseudocode_mcq": "의사 코드",
+    "coding": "코딩",
+    "typing": "서술형",
+    "audio": "구술형"
   },
   "insights": {
+    "heading": "인사이트",
     "strengths": "강점",
+    "improve": "개선할 점",
     "recommendations": "추천 사항"
   },
+  "recording": {
+    "heading": "녹화",
+    "unsupported": "이 브라우저에서는 녹화를 재생할 수 없어요.",
+    "failed": "녹화를 불러오지 못했어요. 링크가 만료되었을 수 있어요.",
+    "retry": "다시 시도"
+  },
   "profile": {
+    "heading": "프로필",
+    "empty": "후보자가 아직 프로필 정보를 추가하지 않았어요.",
     "skills": "역량",
     "experience": "경력",
     "education": "학력",
     "projects": "프로젝트",
-    "resume": "이력서"
+    "awards": "자격증과 성과",
+    "links": "이력서와 링크",
+    "resume": "이력서",
+    "untitled": "제목 없는 프로젝트"
   },
   "answers": {
+    "heading": "답변",
+    "none": "이 인터뷰에는 답변한 질문이 없어요.",
     "expandAll": "모두 펼치기",
     "collapseAll": "모두 접기",
+    "number": "질문 {{number}}",
+    "noQuestion": "질문 내용을 볼 수 없어요",
+    "answer": "답변",
+    "assessment": "평가",
+    "correct": "정답",
+    "wrong": "오답",
+    "chosen": "선택한 답",
+    "correctAnswer": "정답",
+    "noAnswer": "답변 없음.",
+    "noCode": "제출한 코드 없음.",
+    "noAudio": "녹음된 음성 없음.",
+    "audioUnsupported": "이 브라우저에서는 이 음성을 재생할 수 없어요.",
     "types": {
-      "coding": "코딩"
-    }
+      "mcq": "객관식",
+      "mcq_pseudocode": "의사 코드",
+      "pseudocode_mcq": "의사 코드",
+      "coding": "코딩",
+      "typing": "서술형",
+      "audio": "구술형",
+      "other": "질문"
+    },
+    "yours": "내 답변"
   },
   "toc": {
+    "label": "이 페이지 목차",
+    "summary": "요약",
     "communication": "커뮤니케이션",
+    "types": "질문 유형별",
     "insights": "인사이트",
-    "profile": "프로필"
+    "recording": "녹화",
+    "profile": "프로필",
+    "answers": "답변"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "이 링크는 작동하지 않아요",
+      "body": "잘못 입력되었거나 삭제되었을 수 있어요. 공유한 사람에게 새 링크를 요청하세요."
+    },
+    "expired": {
+      "title": "만료된 링크예요",
+      "body": "공유된 평가표는 일정 기간만 볼 수 있어요. 공유한 사람에게 새 링크를 요청하세요."
+    },
+    "limit": {
+      "title": "이 링크의 조회 한도에 도달했어요",
+      "body": "공유한 사람에게 새 링크를 요청하세요."
+    },
+    "unavailable": {
+      "title": "평가표를 불러오지 못했어요",
+      "body": "저희 쪽에 문제가 생겼어요. 잠시 후 다시 시도하세요."
+    },
+    "retry": "다시 시도"
   }
 }

@@ -1,0 +1,62 @@
+{
+  "title": "Profil perusahaan",
+  "unnamed": "Perusahaan Anda",
+  "jobs_other": "{{open}} dibuka dari {{count}} lowongan yang dipasang",
+  "kyc": {
+    "approved": "Terverifikasi",
+    "verified": "Terverifikasi",
+    "pending": "Sedang ditinjau",
+    "rejected": "Perlu perbaikan"
+  },
+  "details": {
+    "title": "Detail perusahaan",
+    "edit": "Edit",
+    "email": "Email resmi",
+    "industry": "Industri",
+    "chooseIndustry": "Pilih industri",
+    "website": "Situs web",
+    "linkedin": "Halaman LinkedIn",
+    "linkedinOpen": "Buka di LinkedIn",
+    "address": "Alamat",
+    "description": "Tentang perusahaan",
+    "descriptionHint": "Kandidat membaca ini di lowongan Anda. Maksimal 500 karakter."
+  },
+  "logo": {
+    "label": "Logo",
+    "upload": "Unggah logo",
+    "replace": "Ganti logo",
+    "hint": "PNG, JPG, atau WebP persegi hingga 5 MB. Logo dipotong menjadi persegi seperti yang terlihat.",
+    "tooLarge": "Logo lebih dari 5 MB. Pilih gambar yang lebih kecil.",
+    "wrongType": "Gunakan gambar PNG, JPG, atau WebP."
+  },
+  "account": {
+    "title": "Akun Anda",
+    "name": "Nama",
+    "email": "Email untuk masuk",
+    "phone": "Telepon"
+  },
+  "legal": {
+    "title": "Registrasi",
+    "note": "Data ini diperiksa saat perusahaan Anda diverifikasi. Hubungi kami untuk mengubahnya.",
+    "registration": "Nomor registrasi",
+    "gst": "GSTIN",
+    "pan": "PAN"
+  },
+  "documents": {
+    "registration_certificate": "Sertifikat registrasi",
+    "gst_certificate": "Sertifikat GST",
+    "address_proof": "Bukti alamat",
+    "bank_proof": "Bukti bank"
+  },
+  "errors": {
+    "email": "Masukkan email seperti hr@perusahaan.com.",
+    "address": "Masukkan alamat lengkap.",
+    "industry": "Pilih industri.",
+    "linkedin": "Masukkan tautan linkedin.com, atau kosongkan.",
+    "description": "Batasi hingga 500 karakter."
+  },
+  "save": "Simpan perubahan",
+  "saving": "Menyimpan…",
+  "saved": "Detail perusahaan tersimpan",
+  "saveFailed": "Tidak tersimpan. Perubahan Anda masih ada; coba lagi."
+}

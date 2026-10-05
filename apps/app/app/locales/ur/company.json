@@ -1,0 +1,63 @@
+{
+  "title": "کمپنی پروفائل",
+  "unnamed": "آپ کی کمپنی",
+  "jobs_one": "{{count}} پوسٹ کی گئی ملازمت میں سے {{open}} کھلی",
+  "jobs_other": "{{count}} پوسٹ کی گئی ملازمتوں میں سے {{open}} کھلی",
+  "kyc": {
+    "approved": "تصدیق شدہ",
+    "verified": "تصدیق شدہ",
+    "pending": "جانچ میں",
+    "rejected": "تبدیلیاں درکار"
+  },
+  "details": {
+    "title": "کمپنی کی تفصیلات",
+    "edit": "ترمیم کریں",
+    "email": "سرکاری ای میل",
+    "industry": "صنعت",
+    "chooseIndustry": "صنعت چنیں",
+    "website": "ویب سائٹ",
+    "linkedin": "LinkedIn صفحہ",
+    "linkedinOpen": "LinkedIn پر کھولیں",
+    "address": "پتہ",
+    "description": "کمپنی کے بارے میں",
+    "descriptionHint": "امیدوار اسے آپ کی ملازمت کی پوسٹ پر پڑھتے ہیں۔ 500 حروف تک۔"
+  },
+  "logo": {
+    "label": "لوگو",
+    "upload": "لوگو اپ لوڈ کریں",
+    "replace": "لوگو بدلیں",
+    "hint": "5 MB تک کا مربع PNG، JPG یا WebP۔ اسے دکھائے گئے مطابق مربع کاٹا جاتا ہے۔",
+    "tooLarge": "لوگو 5 MB سے بڑا ہے۔ چھوٹی تصویر چنیں۔",
+    "wrongType": "PNG، JPG یا WebP تصویر استعمال کریں۔"
+  },
+  "account": {
+    "title": "آپ کا اکاؤنٹ",
+    "name": "نام",
+    "email": "سائن اِن ای میل",
+    "phone": "فون"
+  },
+  "legal": {
+    "title": "رجسٹریشن",
+    "note": "آپ کی کمپنی کی تصدیق کے وقت یہ جانچے گئے تھے۔ تبدیلی کے لیے ہم سے رابطہ کریں۔",
+    "registration": "رجسٹریشن نمبر",
+    "gst": "GSTIN",
+    "pan": "PAN"
+  },
+  "documents": {
+    "registration_certificate": "رجسٹریشن سرٹیفکیٹ",
+    "gst_certificate": "GST سرٹیفکیٹ",
+    "address_proof": "پتے کا ثبوت",
+    "bank_proof": "بینک کا ثبوت"
+  },
+  "errors": {
+    "email": "hr@company.com جیسی ای میل درج کریں۔",
+    "address": "پورا پتہ درج کریں۔",
+    "industry": "صنعت چنیں۔",
+    "linkedin": "linkedin.com کا لنک درج کریں، یا خالی چھوڑ دیں۔",
+    "description": "500 حروف کے اندر رکھیں۔"
+  },
+  "save": "تبدیلیاں محفوظ کریں",
+  "saving": "محفوظ ہو رہا ہے…",
+  "saved": "کمپنی کی تفصیلات محفوظ ہو گئیں",
+  "saveFailed": "یہ محفوظ نہیں ہوا۔ آپ کی تبدیلیاں یہیں ہیں؛ دوبارہ کوشش کریں۔"
+}

@@ -1,0 +1,73 @@
+{
+  "title": "Ceritakan tentang perusahaan Anda",
+  "lead": "Sekitar lima menit, dalam tiga langkah. Kami menyimpan progres Anda di perangkat ini, jadi Anda bisa berhenti dan kembali lagi.",
+  "steps": {
+    "company": "Detail perusahaan",
+    "legal": "Registrasi dan pajak",
+    "documents": "Dokumen"
+  },
+  "fields": {
+    "companyName": "Nama perusahaan",
+    "website": "Situs web",
+    "officialEmail": "Email resmi",
+    "officialEmailHint": "Tujuan kami mengirim pesan akun dan penagihan.",
+    "industry": "Industri",
+    "industryPlaceholder": "Pilih industri",
+    "industryFailed": "Daftar industri tidak termuat. Muat ulang untuk mencoba lagi.",
+    "linkedin": "Halaman LinkedIn perusahaan",
+    "description": "Apa yang dilakukan perusahaan Anda?",
+    "descriptionCount": "{{count}} / 500",
+    "registration": "Nomor registrasi perusahaan",
+    "registrationHint": "CIN atau nomor sertifikat registrasi Anda, mis. U72900TG2024PTC123456.",
+    "pan": "PAN",
+    "gst": "GSTIN",
+    "address": "Alamat terdaftar"
+  },
+  "documents": {
+    "lead": "Hasil pindai atau foto yang jelas, masing-masing hingga 5 MB. Kandidat tidak pernah melihatnya.",
+    "company_logo": {
+      "label": "Logo perusahaan",
+      "hint": "Persegi paling bagus"
+    },
+    "registration_certificate": {
+      "label": "Sertifikat registrasi",
+      "hint": "Akta pendirian"
+    },
+    "gst_certificate": {
+      "label": "Sertifikat GST",
+      "hint": "Registrasi GST Anda"
+    },
+    "address_proof": {
+      "label": "Bukti alamat",
+      "hint": "Tagihan utilitas atau perjanjian sewa"
+    }
+  },
+  "draftSaved": "Draf disimpan di perangkat ini. Dokumen perlu ditambahkan lagi jika Anda keluar.",
+  "submitting": "Mengunggah dokumen Anda… {{percent}}%",
+  "submitFailed": "Kami tidak bisa mengirim detail Anda. Semua yang Anda isi masih ada, jadi coba lagi.",
+  "validation": {
+    "nameMin": "Masukkan nama perusahaan Anda",
+    "website": "Masukkan alamat web seperti https://example.com",
+    "email": "Masukkan email seperti keuangan@perusahaan.com",
+    "industry": "Pilih industri",
+    "linkedin": "Masukkan alamat web seperti https://www.linkedin.com/company/example",
+    "linkedinDomain": "Gunakan halaman linkedin.com perusahaan Anda",
+    "description": "Tulis minimal satu kalimat tentang apa yang Anda lakukan",
+    "registration": "Masukkan nomor registrasi Anda (5 sampai 50 karakter)",
+    "pan": "PAN terdiri dari 10 karakter, seperti ABCDE1234F",
+    "gst": "GSTIN terdiri dari 15 karakter, seperti 36ABCDE1234F1Z5",
+    "address": "Masukkan alamat terdaftar Anda",
+    "fileRequired": "Tambahkan dokumen ini",
+    "fileInvalid": "Gunakan file dengan jenis yang diterima, hingga 5 MB"
+  },
+  "done": {
+    "title": "Terima kasih, detail Anda sudah masuk",
+    "lead": "Akun Anda sudah bisa dipakai selama kami memeriksa dokumen Anda.",
+    "nextHeading": "Apa selanjutnya",
+    "review": "Tim kami meninjau detail dan dokumen perusahaan Anda.",
+    "contact": "Jika ada yang kurang, kami akan mengirim email ke {{email}}.",
+    "start": "Sementara itu, Anda bisa memasang lowongan dan melihat kandidat.",
+    "postJob": "Pasang lowongan pertama Anda",
+    "dashboard": "Ke dasbor"
+  }
+}

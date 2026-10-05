@@ -1,0 +1,62 @@
+{
+  "title": "회사 프로필",
+  "unnamed": "내 회사",
+  "jobs_other": "공고 {{count}}개 중 {{open}}개 채용 중",
+  "kyc": {
+    "approved": "인증됨",
+    "verified": "인증됨",
+    "pending": "검토 중",
+    "rejected": "수정 필요"
+  },
+  "details": {
+    "title": "회사 정보",
+    "edit": "편집",
+    "email": "공식 이메일",
+    "industry": "업계",
+    "chooseIndustry": "업계 선택",
+    "website": "웹사이트",
+    "linkedin": "LinkedIn 페이지",
+    "linkedinOpen": "LinkedIn에서 열기",
+    "address": "주소",
+    "description": "회사 소개",
+    "descriptionHint": "후보자가 공고에서 읽어요. 최대 500자."
+  },
+  "logo": {
+    "label": "로고",
+    "upload": "로고 업로드",
+    "replace": "로고 교체",
+    "hint": "5 MB 이하의 정사각형 PNG, JPG, WebP. 보이는 대로 정사각형으로 잘려요.",
+    "tooLarge": "로고가 5 MB를 넘어요. 더 작은 이미지를 선택하세요.",
+    "wrongType": "PNG, JPG, WebP 이미지를 사용하세요."
+  },
+  "account": {
+    "title": "내 계정",
+    "name": "이름",
+    "email": "로그인 이메일",
+    "phone": "전화"
+  },
+  "legal": {
+    "title": "등록 정보",
+    "note": "회사 인증 때 확인한 정보예요. 바꾸려면 문의하세요.",
+    "registration": "등록 번호",
+    "gst": "GSTIN",
+    "pan": "PAN"
+  },
+  "documents": {
+    "registration_certificate": "등록 증명서",
+    "gst_certificate": "GST 증명서",
+    "address_proof": "주소 증빙",
+    "bank_proof": "은행 증빙"
+  },
+  "errors": {
+    "email": "hr@company.com 같은 이메일을 입력하세요.",
+    "address": "전체 주소를 입력하세요.",
+    "industry": "업계를 선택하세요.",
+    "linkedin": "linkedin.com 링크를 입력하거나 비워 두세요.",
+    "description": "500자 이내로 쓰세요."
+  },
+  "save": "변경 사항 저장",
+  "saving": "저장 중…",
+  "saved": "회사 정보를 저장했어요",
+  "saveFailed": "저장되지 않았어요. 변경 내용은 그대로 있어요. 다시 시도하세요."
+}

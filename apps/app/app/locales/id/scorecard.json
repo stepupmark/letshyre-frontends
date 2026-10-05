@@ -1,40 +1,130 @@
 {
+  "title": "Kartu skor wawancara",
+  "print": "Cetak",
+  "provenance": {
+    "sharedBy": "Dibagikan secara pribadi oleh {{company}}. Tautan ini punya batas tayangan dan tanggal kedaluwarsa, jadi mohon jangan diteruskan.",
+    "private": "Dibagikan secara pribadi. Tautan ini punya batas tayangan dan tanggal kedaluwarsa, jadi mohon jangan diteruskan."
+  },
   "header": {
     "unnamed": "Kandidat",
     "fresher": "Fresh Graduate",
+    "experience_other": "{{count}} tahun pengalaman",
     "matchedTo": "Cocok dengan {{job}}",
-    "experience_one": "{{count}} tahun pengalaman",
-    "experience_other": "{{count}} tahun pengalaman"
+    "yours": "Kartu skor wawancara Anda",
+    "taken": "Diwawancarai {{date}}"
+  },
+  "summary": {
+    "heading": "Ringkasan",
+    "outOf": "/ 100",
+    "basedOn_other": "Berdasarkan {{count}} pertanyaan yang dijawab",
+    "howScored": "Bagaimana penilaiannya?",
+    "howScoredBody": "Pewawancara AI menilai setiap jawaban terhadap posisi, lalu memeriksa kejelasan, relevansi, dan kedalamannya. Gunakan skor sebagai titik awal keputusan Anda, bukan pengganti keputusan.",
+    "howScoredYours": "Pewawancara AI menilai setiap jawaban terhadap posisi, lalu memeriksa kejelasan, relevansi, dan kedalamannya. Pemberi kerja melihat skor yang sama, jadi area yang perlu ditingkatkan adalah titik awal yang baik."
+  },
+  "match": {
+    "heading": "Kesesuaian dengan lowongan",
+    "headingFor": "Kesesuaian dengan {{job}}",
+    "overall": "Keseluruhan",
+    "role": "Posisi",
+    "skills": "Keterampilan",
+    "why": "Alasan kecocokan"
   },
   "metrics": {
+    "heading": "Komunikasi",
     "clarity": "Kejelasan",
     "relevance": "Relevansi",
-    "confidence": "Kepercayaan Diri"
+    "confidence": "Kepercayaan Diri",
+    "depth": "Kedalaman berpikir",
+    "keyConcept": "Konsep kunci yang dibahas"
   },
   "types": {
-    "coding": "Pemrograman"
+    "heading": "Menurut jenis pertanyaan",
+    "correct_other": "{{correct}} dari {{count}} benar",
+    "mcq": "Pilihan ganda",
+    "pseudocode_mcq": "Pseudokode",
+    "coding": "Pemrograman",
+    "typing": "Tertulis",
+    "audio": "Lisan"
   },
   "insights": {
+    "heading": "Wawasan",
     "strengths": "Kekuatan",
+    "improve": "Area yang perlu ditingkatkan",
     "recommendations": "Rekomendasi"
   },
+  "recording": {
+    "heading": "Rekaman",
+    "unsupported": "Browser Anda tidak bisa memutar rekaman ini.",
+    "failed": "Rekaman tidak termuat. Tautannya mungkin sudah kedaluwarsa.",
+    "retry": "Coba lagi"
+  },
   "profile": {
+    "heading": "Profil",
+    "empty": "Kandidat belum menambahkan detail profil.",
     "skills": "Keterampilan",
     "experience": "Pengalaman",
     "education": "Pendidikan",
     "projects": "Proyek",
-    "resume": "Resume"
+    "awards": "Sertifikasi dan pencapaian",
+    "links": "CV dan tautan",
+    "resume": "Resume",
+    "untitled": "Proyek tanpa judul"
   },
   "answers": {
+    "heading": "Jawaban",
+    "none": "Wawancara ini tidak memiliki pertanyaan yang dijawab.",
     "expandAll": "Perluas semua",
     "collapseAll": "Ciutkan semua",
+    "number": "Pertanyaan {{number}}",
+    "noQuestion": "Teks pertanyaan tidak tersedia",
+    "answer": "Jawaban",
+    "assessment": "Penilaian",
+    "correct": "Benar",
+    "wrong": "Salah",
+    "chosen": "Jawabannya",
+    "correctAnswer": "Jawaban yang benar",
+    "noAnswer": "Tidak ada jawaban.",
+    "noCode": "Tidak ada kode yang dikirim.",
+    "noAudio": "Tidak ada audio yang direkam.",
+    "audioUnsupported": "Browser Anda tidak bisa memutar audio ini.",
     "types": {
-      "coding": "Pemrograman"
-    }
+      "mcq": "Pilihan ganda",
+      "mcq_pseudocode": "Pseudokode",
+      "pseudocode_mcq": "Pseudokode",
+      "coding": "Pemrograman",
+      "typing": "Tertulis",
+      "audio": "Lisan",
+      "other": "Pertanyaan"
+    },
+    "yours": "Jawaban Anda"
   },
   "toc": {
+    "label": "Di halaman ini",
+    "summary": "Ringkasan",
     "communication": "Komunikasi",
+    "types": "Menurut jenis pertanyaan",
     "insights": "Wawasan",
-    "profile": "Profil"
+    "recording": "Rekaman",
+    "profile": "Profil",
+    "answers": "Jawaban"
+  },
+  "unavailable": {
+    "invalid": {
+      "title": "Tautan ini tidak berfungsi",
+      "body": "Mungkin salah ketik atau sudah dihapus. Minta tautan baru kepada orang yang membagikannya."
+    },
+    "expired": {
+      "title": "Tautan ini sudah kedaluwarsa",
+      "body": "Kartu skor yang dibagikan hanya tersedia untuk waktu terbatas. Minta tautan baru kepada orang yang membagikannya."
+    },
+    "limit": {
+      "title": "Tautan ini sudah mencapai batas tayangan",
+      "body": "Minta tautan baru kepada orang yang membagikannya."
+    },
+    "unavailable": {
+      "title": "Kartu skor ini tidak termuat",
+      "body": "Ada masalah di pihak kami. Coba lagi sebentar lagi."
+    },
+    "retry": "Coba lagi"
   }
 }

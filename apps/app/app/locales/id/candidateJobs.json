@@ -1,0 +1,99 @@
+{
+  "find": {
+    "title": "Cari lowongan",
+    "lead": "Posisi yang dibuka sekarang. Melamar cukup satu langkah, dan pemberi kerja melihat profil serta kartu skor Anda."
+  },
+  "applications": {
+    "title": "Lamaran saya",
+    "lead": "Posisi setiap lamaran dan apa yang terjadi selanjutnya."
+  },
+  "filters": {
+    "keyword": "Jabatan atau keterampilan",
+    "location": "Kota",
+    "search": "Cari",
+    "type": "Jenis pekerjaan",
+    "anyType": "Semua jenis pekerjaan",
+    "industry": "Industri",
+    "anyIndustry": "Semua industri",
+    "experience": "Pengalaman, mis. 2-5",
+    "years": "thn",
+    "salary": "Gaji, mis. 6-10",
+    "clear": "Hapus semua"
+  },
+  "saved": {
+    "save": "Simpan pencarian",
+    "saved": "Tersimpan",
+    "remove": "Hapus pencarian tersimpan {{search}}"
+  },
+  "types": {
+    "full_time": "Penuh waktu",
+    "part_time": "Paruh waktu",
+    "internship": "Magang",
+    "contract": "Kontrak",
+    "freelance": "Lepas"
+  },
+  "facts": {
+    "fresher": "Lulusan baru dipersilakan",
+    "years": "{{years}} thn"
+  },
+  "results_other": "{{count}} lowongan",
+  "searching": "Mencari…",
+  "empty": {
+    "title": "Belum ada lowongan yang dibuka",
+    "body": "Posisi baru dipasang setiap minggu. Kembali lagi nanti, atau perbarui kartu skor Anda agar pemberi kerja menemukan Anda.",
+    "Applied": {
+      "title": "Belum ada lamaran",
+      "body": "Lowongan yang Anda lamar muncul di sini, lengkap dengan statusnya."
+    },
+    "Shortlisted": {
+      "title": "Belum masuk daftar pendek",
+      "body": "Saat pemberi kerja memasukkan Anda ke daftar pendek, lowongan itu pindah ke sini."
+    },
+    "Selected": {
+      "title": "Belum ada tawaran",
+      "body": "Lowongan tempat pemberi kerja memilih Anda muncul di sini."
+    },
+    "Rejected": {
+      "title": "Tidak ada apa-apa di sini",
+      "body": "Lamaran yang tidak berhasil muncul di sini."
+    }
+  },
+  "company": "Perusahaan",
+  "untitled": "Posisi tanpa judul",
+  "moreSkills": "+{{count}} lagi",
+  "applied": "Sudah melamar",
+  "appliedWhen": "melamar {{when}}",
+  "detail": {
+    "skills": "Keterampilan yang dicari",
+    "about": "Tentang posisi",
+    "noDescription": "Pemberi kerja belum menambahkan deskripsi."
+  },
+  "apply": {
+    "button": "Lamar",
+    "sending": "Mengirim lamaran…",
+    "note": "Pemberi kerja melihat profil dan kartu skor terbaru Anda.",
+    "done": "Lamaran terkirim. Pemberi kerja kini bisa melihat profil Anda.",
+    "track": "Lihat lamaran saya",
+    "failed": "Lamaran Anda tidak terkirim. Coba lagi sebentar lagi."
+  },
+  "stages": {
+    "Applied": "Melamar",
+    "Shortlisted": "Daftar pendek",
+    "Selected": "Terpilih",
+    "Rejected": "Tidak terpilih"
+  },
+  "timeline": {
+    "label": "Perkembangan lamaran",
+    "notSelected": "Tidak terpilih",
+    "done": "(selesai)"
+  },
+  "next": {
+    "label": "Berikutnya:",
+    "Applied": "Pemberi kerja sedang meninjau pelamar. Wawancara AI terbaru untuk posisi ini membuat Anda naik di daftarnya.",
+    "Shortlisted": "Anda masuk daftar pendek. Pemberi kerja akan menghubungi lewat email atau telepon, jadi pastikan keduanya bisa dihubungi.",
+    "Selected": "Pemberi kerja memilih Anda. Tunggu kabar dari mereka tentang tawaran.",
+    "Rejected": "Kali ini belum berhasil. Ada posisi serupa yang sedang dibuka.",
+    "guide": "Cara wawancara berjalan",
+    "findJobs": "Cari lowongan"
+  }
+}
