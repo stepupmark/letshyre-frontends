@@ -34,10 +34,11 @@ import { AppLink } from "@/components/app-link"
 import { buttonLink } from "@/lib/button-link"
 import { creditsQuery } from "@/lib/credits"
 import { duration, ease } from "@/lib/motion"
+import { sitePage } from "@/lib/site"
 
 import type { Quote } from "./api"
 import type { CheckoutItem } from "./checkout"
-import { formatRupees, sitePage } from "./money"
+import { formatRupees } from "./money"
 import { useCheckout, type Checkout, type Notice } from "./use-checkout"
 
 const REVIEW = new Set(["review", "paying", "razorpay"])

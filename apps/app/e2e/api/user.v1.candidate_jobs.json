@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": {
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+      {
+        "id": "7d1c2b9e-2222-4c1a-9a51-2f3b4c5d6e02",
+        "title": "UI Engineer",
+        "employer": {
+          "company_name": "Kestrel Pay",
+          "kyc": { "company_logo": null }
+        },
+        "location": "Kochi",
+        "employment_type": "contract",
+        "experience_required": 2,
+        "salary_range": "6-9",
+        "skills_required": ["React", "Figma"],
+        "description": "Design system work across our payment apps.",
+        "created_at": "2026-09-30T09:00:00Z"
+      }
+    ]
+  }
+}

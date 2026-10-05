@@ -119,5 +119,67 @@
     "emptyTitle": "No shared links yet",
     "emptyBody": "Share a scorecard from an unlocked candidate, and the link shows up here.",
     "toUnlocked": "Open unlocked candidates"
+  },
+  "own": {
+    "title": "Your profile",
+    "fromResume": "From your resume. Employers see this when our AI matches you to a job.",
+    "emptyBackground": "Nothing from your resume yet.",
+    "completion": "Profile complete",
+    "interviews": "AI interviews",
+    "interviewsUsed": "{{used}} of {{max}} used",
+    "interviewsLeft_one": "({{count}} left)",
+    "interviewsLeft_other": "({{count}} left)",
+    "edit": "Edit {{section}}",
+    "editShort": "Edit",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "saveFailed": "That didn't save. Your changes are still here; try again.",
+    "contact": {
+      "title": "Contact",
+      "city": "City you live in"
+    },
+    "work": {
+      "title": "Work and pay",
+      "company": "Current or last company",
+      "lastDay": "Last working day",
+      "currentLpa": "Current pay (LPA)",
+      "expectedLpa": "Expected pay (LPA)"
+    },
+    "preferences": {
+      "title": "Job preferences",
+      "industry": "Industry",
+      "choose": "Choose…",
+      "places": "Where you'd like to work",
+      "placesHint": "Separate cities with commas."
+    },
+    "docs": {
+      "resume": "Resume",
+      "experience_letter": "Experience letter",
+      "resignation_letter": "Resignation letter",
+      "notice_period_prof": "Notice period proof",
+      "present_offer": "Current offer letter"
+    },
+    "errors": {
+      "city": "Enter your city.",
+      "address": "Enter your full address, at least 10 characters.",
+      "company": "Enter the company name.",
+      "ctc": "Enter an amount in lakhs, like 8.5.",
+      "expectedLow": "Expected pay can't be lower than your current pay.",
+      "lastDay": "Enter the date.",
+      "industry": "Choose an industry.",
+      "places": "Add at least one city."
+    }
+  },
+  "list": {
+    "title": "Your scorecards",
+    "lead": "How each AI interview went. Employers you apply to see the latest one.",
+    "interview": "Interview",
+    "open": "Open scorecard",
+    "more": "+{{count}} more",
+    "emptyTitle": "No scorecards yet",
+    "emptyBody": "Take an AI interview in the desktop app. Your scorecard is ready a few minutes after it ends.",
+    "download": "Download the app",
+    "guide": "How it works"
   }
 }

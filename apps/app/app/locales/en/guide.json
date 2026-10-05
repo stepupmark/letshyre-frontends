@@ -1,0 +1,54 @@
+{
+  "title": "Interview guide",
+  "lead": "Eight steps from download to your first question. Tick them off as you get ready.",
+  "progress": "{{done}} of {{total}} ready",
+  "progressLabel": "Steps ready",
+  "reset": "Start over",
+  "phases": {
+    "setup": "Set up",
+    "security": "Security checks",
+    "interview": "The interview"
+  },
+  "steps": {
+    "download": {
+      "title": "Install the desktop app",
+      "body": "Interviews run only in the LetsHyre desktop app, so the session stays secure.",
+      "link": "Download for your computer"
+    },
+    "signIn": {
+      "title": "Sign in to the app",
+      "body": "Use the same email and password as here. Your profile photo and results come with you."
+    },
+    "dashboard": {
+      "title": "Start from your dashboard",
+      "body": "Select Take interview. The app checks your computer before anything else opens."
+    },
+    "clearEnv": {
+      "title": "Close other apps",
+      "body": "Browsers, screen recorders, AI assistants and video-call apps must be closed before you can go on.",
+      "tip": "Close everything else before you select Take interview."
+    },
+    "permissions": {
+      "title": "Allow camera, microphone and screen",
+      "body": "All three are needed for proctoring. Allow each one when your computer asks."
+    },
+    "verifyId": {
+      "title": "Confirm it's you",
+      "body": "Read a short line aloud, then the camera takes a photo to compare with your profile photo.",
+      "tip": "Face the camera in a well-lit room."
+    },
+    "chooseRole": {
+      "title": "Choose the role",
+      "body": "Pick the role you're interviewing for. It starts with the one from your profile."
+    },
+    "begin": {
+      "title": "Begin",
+      "body": "The interview opens full screen with recording on. Answer each question within its time; you can move between questions until the timer ends."
+    }
+  },
+  "cta": {
+    "title": "Get the desktop app",
+    "body": "Sign in with your LetsHyre account and start when you're ready.",
+    "button": "Download the app"
+  }
+}

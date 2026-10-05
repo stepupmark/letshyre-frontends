@@ -1,3 +1,4 @@
+import { HttpError } from "@workspace/api"
 import { queryOptions } from "@tanstack/react-query"
 import { z } from "zod"
 
@@ -106,3 +107,92 @@ export const ownScorecardQuery = (id: string) =>
       ),
     staleTime: 60_000,
   })
+
+const listItem = z.looseObject({
+  id: z.union([z.string(), z.number()]).transform(String),
+  overall_score: num,
+  created_at: text,
+  candidate_skills: list(z.string()),
+  category_scores: z.looseObject({ candidate_role: text }).nullish(),
+})
+export type ScorecardItem = z.infer<typeof listItem>
+
+export const scorecardListSchema = z.preprocess(
+  (value) =>
+    Array.isArray(value)
+      ? value
+      : ((value as { results?: unknown } | null)?.results ?? []),
+  z.array(listItem)
+)
+
+/** Newest first. No interviews yet comes back as a 404. */
+export const ownScorecardsQuery = () =>
+  queryOptions({
+    queryKey: ["candidate", "scorecards"],
+    queryFn: async () => {
+      try {
+        const items = scorecardListSchema.parse(
+          dataOf(await api.get("user/v1/candidate_scorecard/"))
+        )
+        return items.toSorted((a, b) =>
+          (b.created_at ?? "").localeCompare(a.created_at ?? "")
+        )
+      } catch (error) {
+        if (error instanceof HttpError && error.status === 404) return []
+        throw error
+      }
+    },
+    staleTime: 60_000,
+  })
+
+export const ownProfileSchema = z.looseObject({
+  name: text,
+  email: text,
+  phone_number: z.union([z.string(), z.number()]).nullish(),
+  profile_photo: text,
+  is_verified: z.boolean().nullish(),
+  role: text,
+  location: text,
+  address: z.unknown(),
+  total_experience_years: num,
+  present_or_last_working_company: text,
+  last_day_of_working: text,
+  current_ctc: num,
+  expected_ctc: num,
+  preferred_industry: text,
+  preferred_locations: list(z.string()),
+  skills: list(named),
+  education: profileSchema.shape.candidate_education,
+  experience: profileSchema.shape.candidate_experience,
+  projects: profileSchema.shape.candidate_projects,
+  certifications: list(named),
+  resume: text,
+  experience_letter: text,
+  resignation_letter: text,
+  notice_period_prof: text,
+  present_offer: text,
+  profile_completion_score: num,
+  interview_attempts_used: num,
+  max_interviews_allowed: num,
+})
+export type OwnProfile = z.infer<typeof ownProfileSchema>
+
+const OWN_PROFILE = ["candidate", "profile"] as const
+
+/** The API reads the profile with a POST and no body. */
+export const ownProfileQuery = () =>
+  queryOptions({
+    queryKey: OWN_PROFILE,
+    queryFn: async () =>
+      ownProfileSchema.parse(
+        dataOf(await api.post("user/v1/candidate_profile/"))
+      ),
+    staleTime: 60_000,
+  })
+
+/** Same endpoint with a body saves; only the fields sent change. */
+export async function saveOwnProfile(fields: Record<string, string>) {
+  const form = new FormData()
+  for (const [key, value] of Object.entries(fields)) form.append(key, value)
+  await api.post("user/v1/candidate_profile/", form)
+}

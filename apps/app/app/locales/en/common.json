@@ -32,7 +32,8 @@
     "bulkActions": "Bulk actions",
     "navigateHint": "to move,",
     "openHint": "to open",
-    "enterKey": "Enter"
+    "enterKey": "Enter",
+    "pages": "Pages"
   },
   "state": {
     "error": "This didn't load.",

@@ -1,0 +1,100 @@
+{
+  "find": {
+    "title": "Find jobs",
+    "lead": "Roles open now. Applying takes one step, and the employer sees your profile and scorecard."
+  },
+  "applications": {
+    "title": "My applications",
+    "lead": "Where each application stands and what happens next."
+  },
+  "filters": {
+    "keyword": "Job title or skill",
+    "location": "City",
+    "search": "Search",
+    "type": "Job type",
+    "anyType": "Any job type",
+    "industry": "Industry",
+    "anyIndustry": "Any industry",
+    "experience": "Experience, e.g. 2-5",
+    "years": "yrs",
+    "salary": "Pay, e.g. 6-10",
+    "clear": "Clear all"
+  },
+  "saved": {
+    "save": "Save search",
+    "saved": "Saved",
+    "remove": "Remove saved search {{search}}"
+  },
+  "types": {
+    "full_time": "Full time",
+    "part_time": "Part time",
+    "internship": "Internship",
+    "contract": "Contract",
+    "freelance": "Freelance"
+  },
+  "facts": {
+    "fresher": "Freshers welcome",
+    "years": "{{years}} yrs"
+  },
+  "results_one": "{{count}} job",
+  "results_other": "{{count}} jobs",
+  "searching": "Searching…",
+  "empty": {
+    "title": "No open jobs right now",
+    "body": "New roles are posted every week. Check back soon, or keep your scorecard fresh so employers find you.",
+    "Applied": {
+      "title": "No applications yet",
+      "body": "Jobs you apply to show up here, with where each one stands."
+    },
+    "Shortlisted": {
+      "title": "No shortlists yet",
+      "body": "When an employer shortlists you, the job moves here."
+    },
+    "Selected": {
+      "title": "No offers yet",
+      "body": "Jobs where an employer selects you show up here."
+    },
+    "Rejected": {
+      "title": "Nothing here",
+      "body": "Applications that didn't work out show up here."
+    }
+  },
+  "company": "Company",
+  "untitled": "Untitled role",
+  "moreSkills": "+{{count}} more",
+  "applied": "Applied",
+  "appliedWhen": "applied {{when}}",
+  "detail": {
+    "skills": "Skills they're looking for",
+    "about": "About the role",
+    "noDescription": "The employer hasn't added a description."
+  },
+  "apply": {
+    "button": "Apply",
+    "sending": "Applying…",
+    "note": "The employer sees your profile and latest scorecard.",
+    "done": "Applied. The employer can see your profile now.",
+    "track": "See my applications",
+    "failed": "Your application didn't go through. Try again in a moment."
+  },
+  "stages": {
+    "Applied": "Applied",
+    "Shortlisted": "Shortlisted",
+    "Selected": "Selected",
+    "Rejected": "Not selected"
+  },
+  "timeline": {
+    "label": "Application progress",
+    "notSelected": "Not selected",
+    "done": "(done)"
+  },
+  "next": {
+    "label": "Next:",
+    "Applied": "The employer is reviewing applicants. A recent AI interview for this role moves you up their list.",
+    "Shortlisted": "You're on the shortlist. The employer contacts you by email or phone, so keep both reachable.",
+    "Selected": "The employer chose you. Expect them to contact you about the offer.",
+    "Rejected": "This one didn't work out. Similar roles are open now.",
+    "guide": "How the interview works",
+    "findJobs": "Find jobs"
+  }
+}

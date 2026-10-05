@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": 9,
+      "overall_score": 78.4,
+      "created_at": "2026-09-20T10:00:00Z",
+      "candidate_skills": ["React", "TypeScript", "CSS", "Testing"],
+      "ai_model_name": "LetsHyre AI",
+      "category_scores": { "candidate_role": "frontend developer" }
+    },
+    {
+      "id": 4,
+      "overall_score": "61",
+      "created_at": "2026-08-02T10:00:00Z",
+      "candidate_skills": [],
+      "category_scores": { "candidate_role": "UI engineer" }
+    }
+  ]
+}

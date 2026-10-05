@@ -695,6 +695,18 @@ Profile view and inline edit, find jobs (filters in the URL, saved searches), my
 status timeline with the next step, score cards list + detail, interview guide as a checklist, link to
 the desktop app download (marketing page).
 
+- **Done 2026-10-05:** find jobs at `/employee` (and `/employee/find-jobs`): keyword and city search,
+  job type, industry, experience and pay, all in the URL; saved searches as chips (kept on the
+  device); jobs open in the side panel with j/k and apply in one step, marked applied everywhere.
+  `/employee/my-applications`: tabs per status with counts, each card shows a progress line and
+  the next step. `/employee/score-cards-list` links to each scorecard and, when empty, to the app
+  download and the guide. `/employee/profile`: resume background read-only, contact, work and
+  pay, and preferences edited in place, one section at a time. `/employee/interview-guide`: eight
+  steps as a checklist kept on the device, with the download link.
+- **UAT checks:** a profile save sends only that section's fields to `candidate_profile/`; confirm
+  the API keeps the rest (if not, the backend needs a PATCH there). Confirm the experience and pay
+  filters accept ranges like "2-5".
+
 ### 6.12 Assistant
 
 Reuse marketing's assistant feature as a shared block (`@workspace/blocks` or a small package) in

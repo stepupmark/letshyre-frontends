@@ -1,0 +1,36 @@
+{
+  "success": true,
+  "data": {
+    "is_profile_complete": true,
+    "name": "Meera Iyer",
+    "email": "meera@example.com",
+    "phone_number": "9876501234",
+    "profile_photo": null,
+    "is_verified": true,
+    "role": "Frontend Developer",
+    "location": "Kochi",
+    "address": "12 Marine Drive, Kochi",
+    "total_experience_years": 2.5,
+    "present_or_last_working_company": "Finch",
+    "last_day_of_working": "2026-11-30",
+    "current_ctc": "12.00",
+    "expected_ctc": 16,
+    "preferred_industry": "Information technology",
+    "preferred_locations": "[\"Kochi\",\"Bengaluru\"]",
+    "skills": ["React", "Playwright"],
+    "experience": [
+      {
+        "role": "Frontend Developer",
+        "company": "Finch",
+        "duration": "2 years 6 months"
+      }
+    ],
+    "education": [],
+    "projects": [],
+    "certifications": [],
+    "resume": "https://cdn.letshyre.ai/resumes/meera.pdf",
+    "profile_completion_score": 100,
+    "interview_attempts_used": 1,
+    "max_interviews_allowed": 3
+  }
+}

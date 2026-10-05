@@ -201,7 +201,22 @@ function Item({
   )
 }
 
-function Background({ profile }: { profile: Profile }) {
+type BackgroundFields = Pick<
+  Profile,
+  | "candidate_skills"
+  | "candidate_experience"
+  | "candidate_education"
+  | "candidate_projects"
+  | "candidate_certifications"
+>
+
+export function Background({
+  profile,
+  empty: emptyText,
+}: {
+  profile: BackgroundFields
+  empty?: string
+}) {
   const { t } = useTranslation("candidate")
   const skills = (profile.candidate_skills ?? [])
     .map((skill) => titleOf(skill).title)
@@ -217,7 +232,11 @@ function Background({ profile }: { profile: Profile }) {
     awards.length === 0
 
   if (empty)
-    return <p className="text-sm text-muted-foreground">{t("profile.empty")}</p>
+    return (
+      <p className="text-sm text-muted-foreground">
+        {emptyText ?? t("profile.empty")}
+      </p>
+    )
 
   return (
     <>
@@ -424,7 +443,13 @@ function Facts({ profile }: { profile: Profile }) {
   )
 }
 
-function Group({ title, children }: { title: string; children: ReactNode }) {
+export function Group({
+  title,
+  children,
+}: {
+  title: string
+  children: ReactNode
+}) {
   return (
     <section className="flex flex-col gap-3">
       <h2 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">

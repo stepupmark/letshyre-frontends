@@ -8,7 +8,11 @@ import {
   unlockedPageSchema,
 } from "@/features/candidate-unlock/api"
 import { invoicesPageSchema, quoteSchema } from "@/features/billing/api"
-import { profileSchema } from "@/features/candidate/api"
+import {
+  ownProfileSchema,
+  profileSchema,
+  scorecardListSchema,
+} from "@/features/candidate/api"
 import { sharedLinksPageSchema } from "@/features/candidate/share"
 import { companySchema } from "@/features/company-profile/api"
 import { membersSchema } from "@/features/team/api"
@@ -16,6 +20,7 @@ import { scorecardSchema } from "@/features/candidate/scorecard-schema"
 import { cardsSchema, teamSchema } from "@/features/employer-dashboard/queries"
 import { jobSchema, jobsPageSchema } from "@/features/employer-jobs/api"
 import { matchesSchema } from "@/features/job-matches/api"
+import { jobsPageSchema as candidateJobsSchema } from "@/features/candidate-jobs/api"
 import { creditsSchema } from "@/lib/credits"
 import { industriesSchema } from "@/lib/industries"
 import { dataOf } from "@/lib/response"
@@ -39,6 +44,10 @@ const CONTRACTS: Record<string, z.ZodType | z.ZodType[]> = {
   "user.v1.candidate_scorecard.9": scorecardSchema,
   "user.v1.employer_shared_links": sharedLinksPageSchema,
   "user.v1.employer_profile": companySchema,
+  "user.v1.candidate_profile": ownProfileSchema,
+  "user.v1.candidate_scorecard": scorecardListSchema,
+  "user.v1.candidate_find_jobs": candidateJobsSchema,
+  "user.v1.candidate_jobs": candidateJobsSchema,
 }
 
 const fixture = (name: string): unknown =>

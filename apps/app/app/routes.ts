@@ -69,8 +69,13 @@ export default [
   ]),
   layout("layouts/employee-layout.tsx", [
     ...prefix("employee", [
-      index("routes/employee/find-jobs.tsx"),
+      index("routes/employee/find-jobs.tsx", { id: "candidate-home" }),
+      route("find-jobs", "routes/employee/find-jobs.tsx"),
+      route("my-applications", "routes/employee/applications.tsx"),
+      route("score-cards-list", "routes/employee/scorecards.tsx"),
       route("scorecard", "routes/employee/scorecard.tsx"),
+      route("profile", "routes/employee/profile.tsx"),
+      route("interview-guide", "routes/employee/interview-guide.tsx"),
     ]),
   ]),
   ...lab,
