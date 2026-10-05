@@ -57,7 +57,7 @@ export function CreditsCard({
           </div>
         )}
       </CardContent>
-      <CardFooter className="flex gap-2">
+      <CardFooter className="flex flex-wrap gap-2">
         <AppLink
           to="/employer/billing"
           className={buttonLink({ className: "flex-1" })}

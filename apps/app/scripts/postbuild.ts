@@ -77,7 +77,8 @@ if (!html.includes('name="robots" content="noindex, nofollow"')) {
 const js = initialScriptsOf(html)
   .map((src) => gzipSync(readFileSync(join(CLIENT, src))).length)
   .reduce((a, b) => a + b, 0)
-if (js > JS_BUDGET) {
+// a preview build carries every unreviewed locale's loaders and never reaches production
+if (js > JS_BUDGET && process.env.I18N_PREVIEW !== "1") {
   problems.push(`initial JS is ${kb(js)} gzip, budget ${kb(JS_BUDGET)}`)
 }
 

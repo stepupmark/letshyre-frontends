@@ -141,7 +141,7 @@ export default function CandidatePoolPage() {
                 choose(APPLIED, value === APPLIED ? "1" : null)
               }}
             >
-              <TabsList>
+              <TabsList className="max-w-full overflow-x-auto">
                 <TabsTrigger value={JOB}>{t("pool.matched")}</TabsTrigger>
                 <TabsTrigger value={APPLIED}>{t("pool.applied")}</TabsTrigger>
               </TabsList>

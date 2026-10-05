@@ -1,8 +1,8 @@
-// Writes a translation batch into the marketing catalogs.
+// Writes a translation batch into the marketing catalogs, or the app's with --app.
 // A batch is one JSON file per locale, named <locale>.json: { "<ns>": { "<dotted.key>": "text" } }.
 // Plural keys use the locale's own categories ("plans.credits_few"). Existing translations win,
 // and every catalog is rewritten in English key order.
-// usage: node tooling/i18n/apply.ts <batch-dir> [--dry-run]
+// usage: node tooling/i18n/apply.ts <batch-dir> [--app] [--dry-run]
 
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs"
 import { basename, dirname, join, resolve } from "node:path"
@@ -18,13 +18,20 @@ import {
 type Node = Catalog[string]
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..")
-const TARGET = join(ROOT, "apps/marketing/app/locales")
+const TARGET = join(
+  ROOT,
+  process.argv.includes("--app")
+    ? "apps/app/app/locales"
+    : "apps/marketing/app/locales"
+)
 const PLURAL = /_(zero|one|two|few|many|other)$/
 
 const [batchDir] = process.argv.slice(2).filter((a) => !a.startsWith("--"))
 const dryRun = process.argv.includes("--dry-run")
 if (!batchDir) {
-  console.error("usage: node tooling/i18n/apply.ts <batch-dir> [--dry-run]")
+  console.error(
+    "usage: node tooling/i18n/apply.ts <batch-dir> [--app] [--dry-run]"
+  )
   process.exit(1)
 }
 

@@ -721,13 +721,23 @@ suggested questions per page, links into the app.
   Stop cancels the request, and a stopped or failed question can be asked again. Answers render
   Markdown; app paths in them open in place and close the sheet, other links open in a new tab.
   **Needs B10** for replies that appear as they're written; the client takes the whole answer
-  until then. Marketing's new "Stop" strings are English-only until the 6.13 batch.
+  until then. Marketing's "Stop" strings came in with the 6.13 batch.
 
 ### 6.13 App translation batch
 
 Everything new or reworded since the key-map migration, through `pnpm i18n:apply`, reviewed by a
 native speaker per locale before the locale is switched on (§5.4). Each locale gets one visual pass
 for overflow (German, Tamil) and RTL (Arabic, Urdu).
+
+- **Done 2026-10-05:** all 18 locales have every app namespace, applied with
+  `pnpm i18n:apply:app` (machine translations in each locale's register). All pass readiness, but a
+  locale ships only once it's listed in `apps/app/app/locales/reviewed.json`, which holds just `en`
+  until native review signs each one off. `I18N_PREVIEW=1` builds every complete locale for
+  staging review; the JS budget doesn't apply to that build. The catalog loader now comes from a
+  Vite virtual module listing only the shipping locales, so unreviewed catalogs stay out of
+  production. The visual pass fixed the dashboard credits footer (wraps), wide tables widening the
+  page (shell `min-w-0`) and match-band and pool tabs running off narrow screens (they scroll).
+  Arabic and Urdu lay out RTL with nothing clipped.
 
 ---
 

@@ -21,6 +21,8 @@
         "applications": "Wie funktioniert es für Arbeitsuchende?",
         "interview": "Ist der Einstieg kostenlos?"
       }
-    }
+    },
+    "stop": "Antwort stoppen",
+    "stopped": "Sie haben diese Antwort gestoppt."
   }
 }

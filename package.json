@@ -20,6 +20,7 @@
     "ui:drift": "node tooling/ui-drift.ts",
     "i18n:migrate": "node tooling/i18n/migrate.ts",
     "i18n:apply": "node tooling/i18n/apply.ts",
+    "i18n:apply:app": "node tooling/i18n/apply.ts --app",
     "verify": "turbo run lint typecheck build && turbo run test --concurrency=1 && pnpm ui:drift && pnpm knip && turbo run test:e2e",
     "i18n:migrate:app": "node tooling/i18n/migrate.ts --app"
   },

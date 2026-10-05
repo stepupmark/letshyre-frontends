@@ -3,10 +3,10 @@ import {
   createCatalogLoader,
   readLocaleCookie,
   writeLocaleCookie,
-  type Catalog,
   type Locale,
 } from "@workspace/i18n"
 import type { MiddlewareFunction } from "react-router"
+import catalogs from "virtual:app-catalogs"
 
 import { env } from "../env"
 import { resolveLocale } from "./resolve"
@@ -25,9 +25,7 @@ export const locale: Locale =
         ready: APP_LOCALES,
       })
 
-const load = createCatalogLoader(
-  import.meta.glob<Catalog>("../../locales/*/*.json", { import: "default" })
-)
+const load = createCatalogLoader(catalogs)
 
 /** clientMiddleware that loads a route's namespaces before it renders. */
 export const namespaces =

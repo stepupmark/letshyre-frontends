@@ -72,7 +72,7 @@ export function DashboardShell({
           }}
         />
         {/* SidebarInset is the <main> landmark */}
-        <SidebarInset>
+        <SidebarInset className="min-w-0">
           <Topbar
             area={area}
             actions={actions}

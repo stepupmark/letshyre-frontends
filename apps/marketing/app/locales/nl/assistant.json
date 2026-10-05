@@ -21,6 +21,8 @@
         "applications": "Hoe werkt het voor werkzoekenden?",
         "interview": "Is het gratis om te beginnen?"
       }
-    }
+    },
+    "stop": "Antwoord stoppen",
+    "stopped": "U hebt dit antwoord gestopt."
   }
 }

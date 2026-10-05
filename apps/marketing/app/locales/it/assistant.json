@@ -21,6 +21,8 @@
         "applications": "Come funziona per chi cerca lavoro?",
         "interview": "È gratuito iniziare?"
       }
-    }
+    },
+    "stop": "Interrompi la risposta",
+    "stopped": "Hai interrotto questa risposta."
   }
 }

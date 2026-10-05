@@ -21,6 +21,8 @@
         "applications": "Como funciona para candidatos a emprego?",
         "interview": "É gratuito começar?"
       }
-    }
+    },
+    "stop": "Parar a resposta",
+    "stopped": "Você parou esta resposta."
   }
 }

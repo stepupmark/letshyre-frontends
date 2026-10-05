@@ -21,6 +21,8 @@
         "applications": "Bagaimana cara kerjanya untuk pencari kerja?",
         "interview": "Apakah gratis untuk memulai?"
       }
-    }
+    },
+    "stop": "Hentikan jawaban",
+    "stopped": "Anda menghentikan jawaban ini."
   }
 }

@@ -171,7 +171,7 @@ export function MatchList({
             setBand(value === "all" ? null : String(value))
           }}
         >
-          <TabsList>
+          <TabsList className="max-w-full overflow-x-auto">
             {BANDS.map((x) => (
               <TabsTrigger key={x} value={x}>
                 {t(`bands.${x}`)}
