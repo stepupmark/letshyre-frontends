@@ -1,8 +1,9 @@
 # URL & handoff contract (step 0.4)
 
 The URLs the migration must keep working, how they change, and every link from marketing into the
-dashboard app. Playwright (`e2e/handoff.spec.ts`, `e2e/seo.spec.ts`) and the nginx test (step 4.6)
-assert this file. Changing it needs a deliberate edit here first.
+dashboard app. Playwright (`e2e/url-contract.spec.ts`, `e2e/handoff.spec.ts`, `e2e/seo.spec.ts`)
+asserts this file against `e2e/serve.ts`, a local server that follows [§5](#5-host-requirements);
+the real host must meet §5 too. Changing it needs a deliberate edit here first.
 
 ## 1. Marketing URLs (letshyre.ai)
 
@@ -61,6 +62,17 @@ The language is carried across via the `lh_locale` cookie (`Domain=.letshyre.ai`
 The legacy dashboards link to `/en/pricing`, `/en/terms`, `/en/policy`, `/en/refund-policy`, `/en/contact`, `/en`.
 These are served by the new marketing build on the same origin, with no change needed.
 Exception: "Buy credits" (`CreditUsageCard`, `Invoice`) is repointed to `/employer/billing` in step 4.5.
+
+## 5. Host requirements
+
+The nginx config was removed and no host is chosen yet. Whatever serves `build/client` must:
+
+- `/` → 301 `/en`.
+- Trailing slash → 301 to the same path without it.
+- A page not ready in a locale → 302 `/en/...`.
+- Unknown paths → 404 with the prerendered `/404` page as the body.
+- Prerender writes `en/pricing/index.html`. Serve it at `/en/pricing` with 200, without redirecting to
+  `/en/pricing/` (many static hosts do this by default).
 
 ## Approved (Gate 1, 2026-10-03)
 

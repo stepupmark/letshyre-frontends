@@ -17,3 +17,4 @@ record that supersedes the old one; old records stay as written.
 | [0010](./0010-setup-checklist.md)        | Setup checklist and tips instead of a modal tour         | Accepted |
 | [0011](./0011-data-tables.md)            | `@tanstack/react-table` for every table                  | Accepted |
 | [0012](./0012-csp-hashes.md)             | Hash-based CSP, report-only until a clean week           | Accepted |
+| [0013](./0013-marketing-file-routes.md)  | File-based routing for marketing                         | Accepted |

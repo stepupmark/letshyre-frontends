@@ -27,8 +27,10 @@ app/features/<page>/
   <page>-page.tsx    composes the sections
   index.ts           the only import other code may use
   queries/ mutations/ schemas/ lib/ hooks/   only when the page needs them
-app/routes/<page>.tsx  loader, meta, default export from the feature index
+app/routes/_site.$lang.<slug>.tsx  loader, meta, default export from the feature index
 ```
+
+Routes are file-based (`flatRoutes()`, [ADR 0013](../../docs/adr/0013-marketing-file-routes.md)); the file name is the URL. A new page also needs its entry in `app/lib/pages.ts` and its namespace in `app/locales/en/`. Once its keys are complete in a locale, readiness adds it to the prerender list and the sitemap.
 
 Routes and layouts import features through `index.ts` only. Features never import other features. Shared pieces go in `app/components`, `app/hooks` or `app/lib`. ESLint enforces all of this.
 
