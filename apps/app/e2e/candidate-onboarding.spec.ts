@@ -74,7 +74,7 @@ test("a new candidate sets up their profile from photo to resume review", async 
       }),
   })
   await signInAs("candidate")
-  await page.goto("/employee")
+  await page.goto("/employee/jobs")
   await expect(page).toHaveURL("/employee/onboarding")
 
   await page.getByLabel("Gender").click()
@@ -137,7 +137,7 @@ test("a new candidate sets up their profile from photo to resume review", async 
 
   await expect(page.getByText("Frontend Developer, 2 skills")).toBeVisible()
   await page.getByRole("button", { name: "Finish" }).click()
-  await expect(page).toHaveURL("/employee")
+  await expect(page).toHaveURL("/employee/jobs")
 
   const field = (name: string) =>
     new RegExp(`name="${name}"\\r\\n\\r\\n([^\\r]*)`).exec(sent)?.[1]

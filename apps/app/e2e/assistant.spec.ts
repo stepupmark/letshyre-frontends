@@ -16,7 +16,7 @@ test("a candidate asks the assistant from a page and follows its link into the a
         data: {
           session_id: "chat-1",
           response:
-            "Applications move through **Applied**, then Shortlisted. See [your applications](/employee/my-applications).",
+            "Applications move through **Applied**, then Shortlisted. See [your applications](/employee/applications).",
         },
       })
     },
@@ -42,7 +42,7 @@ test("a candidate asks the assistant from a page and follows its link into the a
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
 
   await sheet.getByRole("link", { name: "Open as a full page" }).click()
-  await expect(page).toHaveURL("/employee/chatbot")
+  await expect(page).toHaveURL("/employee/assistant")
   await expect(
     page.getByRole("button", { name: "Ask the assistant" })
   ).toHaveCount(0)
@@ -55,5 +55,5 @@ test("a candidate asks the assistant from a page and follows its link into the a
   expect(sent[1]).toEqual({ message: "And then?", session_id: "chat-1" })
 
   await log.getByRole("link", { name: "your applications" }).first().click()
-  await expect(page).toHaveURL("/employee/my-applications")
+  await expect(page).toHaveURL("/employee/applications")
 })

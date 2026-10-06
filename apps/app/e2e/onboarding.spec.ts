@@ -25,7 +25,7 @@ test("a new employer completes company details and documents, then reaches the d
     },
   })
   await signInAs("employerNew")
-  await page.goto("/employer")
+  await page.goto("/employer/dashboard")
   await expect(page).toHaveURL("/employer/onboarding")
   await expect(page.getByLabel("Official email")).toHaveValue("new@test.in")
 
@@ -92,6 +92,6 @@ test("a new employer completes company details and documents, then reaches the d
     expect(sent).toContain(part)
 
   await page.getByRole("link", { name: "Go to the dashboard" }).click()
-  await expect(page).toHaveURL("/employer")
+  await expect(page).toHaveURL("/employer/dashboard")
   await expect(page.getByRole("heading", { name: "Dashboard" })).toBeVisible()
 })

@@ -41,7 +41,7 @@ test("an employer posts a job from their JD after checking what it filled", asyn
     },
   })
   await signInAs("employer")
-  await page.goto("/employer/post-job")
+  await page.goto("/employer/jobs/new")
 
   await page.getByRole("button", { name: "Fill the form from my JD" }).click()
   await expect(page.getByText("Choose your JD file first")).toBeVisible()
@@ -77,7 +77,7 @@ test("an employer posts a job from their JD after checking what it filled", asyn
   await page.keyboard.press("Escape")
 
   await page.getByRole("button", { name: "Post job" }).click()
-  await expect(page).toHaveURL("/employer/view-jobs/101")
+  await expect(page).toHaveURL("/employer/jobs/101")
   for (const part of [
     '"description":"We build hiring software."',
     '"city":"Secunderabad"',
@@ -108,7 +108,7 @@ test("jobs can be paused in bulk and the change undone", async ({
     },
   })
   await signInAs("employer")
-  await page.goto("/employer/view-jobs")
+  await page.goto("/employer/jobs")
 
   await expect(
     page.getByRole("row", { name: /Product Designer/ })
@@ -132,7 +132,7 @@ test("a job is edited in place", async ({ page, api, signInAs }) => {
     },
   })
   await signInAs("employer")
-  await page.goto("/employer/view-jobs/101")
+  await page.goto("/employer/jobs/101")
 
   await expect(
     page.getByRole("heading", { name: "Senior React Developer" })
@@ -143,7 +143,7 @@ test("a job is edited in place", async ({ page, api, signInAs }) => {
   await page.getByRole("button", { name: "Save changes" }).click()
 
   await expect(page.getByText("Changes saved")).toBeVisible()
-  await expect(page).toHaveURL("/employer/view-jobs/101")
+  await expect(page).toHaveURL("/employer/jobs/101")
   expect(sent).toMatchObject({
     number_of_openings: 3,
     industry_type: "it",
@@ -164,7 +164,7 @@ test("applicants are reviewed best match first, one after another", async ({
     "j/k review is a keyboard feature"
   )
   await signInAs("employer")
-  await page.goto("/employer/view-jobs/applicants/101")
+  await page.goto("/employer/jobs/101/applicants")
 
   await expect(page.getByText("3 applied · best match first")).toBeVisible()
   const rows = page.getByRole("row")

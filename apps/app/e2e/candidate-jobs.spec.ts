@@ -23,7 +23,7 @@ test("a candidate searches, saves the search, applies and follows the applicatio
     },
   })
   await signInAs("candidate")
-  await page.goto("/employee")
+  await page.goto("/employee/jobs")
 
   await expect(page.getByRole("heading", { name: "2 jobs" })).toBeVisible()
   await page
@@ -31,10 +31,12 @@ test("a candidate searches, saves the search, applies and follows the applicatio
     .fill("react")
   await page.getByRole("textbox", { name: "City" }).fill("Pune")
   await page.getByRole("button", { name: "Search", exact: true }).click()
-  await expect(page).toHaveURL("/employee?q=react&location=Pune")
+  await expect(page).toHaveURL("/employee/jobs?q=react&location=Pune")
   await page.getByRole("combobox", { name: "Job type" }).click()
   await page.getByRole("option", { name: "Full time" }).click()
-  await expect(page).toHaveURL("/employee?q=react&location=Pune&type=full_time")
+  await expect(page).toHaveURL(
+    "/employee/jobs?q=react&location=Pune&type=full_time"
+  )
   await expect
     .poll(() => searches.at(-1)?.get("employment_type"))
     .toBe("full_time")
@@ -42,11 +44,13 @@ test("a candidate searches, saves the search, applies and follows the applicatio
 
   await page.getByRole("button", { name: "Save search" }).click()
   await page.getByRole("button", { name: "Clear all" }).click()
-  await expect(page).toHaveURL("/employee")
+  await expect(page).toHaveURL("/employee/jobs")
   await page
     .getByRole("button", { name: "react · Pune · Full time", exact: true })
     .click()
-  await expect(page).toHaveURL("/employee?q=react&location=Pune&type=full_time")
+  await expect(page).toHaveURL(
+    "/employee/jobs?q=react&location=Pune&type=full_time"
+  )
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
 
   await page.getByRole("button", { name: "Frontend Developer" }).click()
@@ -58,7 +62,7 @@ test("a candidate searches, saves the search, applies and follows the applicatio
   await expect(sheet.getByText("Applied", { exact: true })).toBeVisible()
   await sheet.getByRole("link", { name: "See my applications" }).click()
 
-  await expect(page).toHaveURL("/employee/my-applications")
+  await expect(page).toHaveURL("/employee/applications")
   const card = page.getByRole("article").filter({ hasText: "UI Engineer" })
   await expect(
     card.getByRole("list", { name: "Application progress" })

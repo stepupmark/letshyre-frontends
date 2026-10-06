@@ -8,7 +8,7 @@ test("the employer shell renders under the production CSP", async ({
 }) => {
   const problems = watch(page)
   await signInAs("employer")
-  await page.goto("/employer")
+  await page.goto("/employer/dashboard")
 
   await expect(
     page.getByRole("heading", { level: 1, name: "Dashboard" })
@@ -23,7 +23,7 @@ test("the employer shell renders under the production CSP", async ({
 })
 
 test("an unknown path shows the not-found screen", async ({ page }) => {
-  await page.goto("/employer/nothing-here")
+  await page.goto("/nothing-here")
 
   await expect(
     page.getByRole("heading", { name: "We couldn't find this page" })
@@ -41,8 +41,8 @@ test("protected pages send visitors where they belong", async ({
   await expect(page.getByRole("heading", { name: "Sign in" })).toBeVisible()
 
   await signInAs("candidate")
-  await page.goto("/employer")
-  await expect(page).toHaveURL("/employee")
+  await page.goto("/employer/dashboard")
+  await expect(page).toHaveURL("/employee/jobs")
 })
 
 test("sign out ends the session on the server and here", async ({
@@ -58,7 +58,7 @@ test("sign out ends the session on the server and here", async ({
     },
   })
   await signInAs("employer")
-  await page.goto("/employer")
+  await page.goto("/employer/dashboard")
 
   if (test.info().project.name === "mobile") {
     await page.getByRole("button", { name: "Toggle sidebar" }).click()

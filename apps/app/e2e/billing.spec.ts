@@ -64,7 +64,7 @@ test("an employer tops up, pays through Razorpay and goes back to the candidate"
   })
   await fakeRazorpay(page, ["close", "pay"])
   await signInAs("employer")
-  const back = "/employer/candidate-pool?jobId=101&candidate=5"
+  const back = "/employer/candidates?jobId=101&candidate=5"
   await page.goto(`/employer/billing?next=${encodeURIComponent(back)}`)
 
   await expect(page.getByRole("heading", { name: "Business" })).toBeVisible()
@@ -128,7 +128,7 @@ test("invoices list paid purchases and open a receipt", async ({
   signInAs,
 }) => {
   await signInAs("employer")
-  await page.goto("/employer/invoice")
+  await page.goto("/employer/invoices")
 
   await page
     .getByRole("button", { name: /Business plan/ })

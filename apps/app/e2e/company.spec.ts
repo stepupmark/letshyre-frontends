@@ -26,7 +26,7 @@ test("an employer adds, holds with undo, and removes a team member", async ({
     },
   })
   await signInAs("employer")
-  await page.goto("/employer/your-team")
+  await page.goto("/employer/team")
   await expect(page.getByText("Meera Iyer")).toBeVisible()
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
 
@@ -117,7 +117,7 @@ test("an employer edits company details in place", async ({
     },
   })
   await signInAs("employer")
-  await page.goto("/employer/profile")
+  await page.goto("/employer/company")
   await expect(page.getByRole("heading", { name: "Acme Labs" })).toBeVisible()
   await expect(page.getByText("Information technology")).toBeVisible()
 

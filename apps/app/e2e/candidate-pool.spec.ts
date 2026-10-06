@@ -39,7 +39,7 @@ test("an employer unlocks a candidate after seeing the cost and the balance left
     },
   })
   await signInAs("employer")
-  await page.goto("/employer/candidate-pool")
+  await page.goto("/employer/candidates")
 
   await expect(page).toHaveURL(/jobId=101/)
   await expect(page.getByText("3 of 40 candidates match")).toBeVisible()
@@ -74,7 +74,7 @@ test("an employer unlocks a candidate after seeing the cost and the balance left
   expect(sent).toEqual({ candidate: 5, interview: [501, 502] })
 
   await panel.getByRole("link", { name: "See unlocked candidates" }).click()
-  await expect(page).toHaveURL("/employer/unlocked-candidates")
+  await expect(page).toHaveURL("/employer/candidates/unlocked")
   await expect(
     page.getByText("Priya Nair").filter({ visible: true })
   ).toBeVisible()
@@ -90,7 +90,7 @@ test("without enough credits, unlocking leads to a top-up that comes back here",
       reply(route, { data: { available_credits: 1 } }),
   })
   await signInAs("employer")
-  await page.goto("/employer/candidate-pool?jobId=101&candidate=5")
+  await page.goto("/employer/candidates?jobId=101&candidate=5")
 
   const panel = page.getByRole("dialog", { name: "Arjun Mehta" })
   await panel.getByRole("checkbox").nth(0).check()
@@ -104,7 +104,7 @@ test("without enough credits, unlocking leads to a top-up that comes back here",
     panel.getByRole("link", { name: "Add credits" })
   ).toHaveAttribute(
     "href",
-    `/employer/billing?next=${encodeURIComponent("/employer/candidate-pool?jobId=101&candidate=5")}`
+    `/employer/billing?next=${encodeURIComponent("/employer/candidates?jobId=101&candidate=5")}`
   )
   await expect(panel.getByRole("button", { name: /^Unlock ·/ })).toHaveCount(0)
 })

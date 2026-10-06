@@ -23,13 +23,13 @@ test("an employer reads an unlocked candidate and shares their scorecard", async
     },
   })
   await signInAs("employer")
-  await page.goto("/employer/unlocked-candidates")
+  await page.goto("/employer/candidates/unlocked")
   await page
     .getByRole("link", { name: "Profile" })
     .filter({ visible: true })
     .click()
 
-  await expect(page).toHaveURL("/employer/employee-profile?id=31")
+  await expect(page).toHaveURL("/employer/candidates/31")
   await expect(
     page.getByRole("heading", { level: 1, name: /Priya Nair/ })
   ).toBeVisible()
@@ -42,7 +42,7 @@ test("an employer reads an unlocked candidate and shares their scorecard", async
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
 
   await page.getByRole("link", { name: "Scorecard" }).click()
-  await expect(page).toHaveURL("/employer/employee-score-card?id=31")
+  await expect(page).toHaveURL("/employer/candidates/31/scorecard")
   await expect(page.getByRole("heading", { name: "Recording" })).toBeVisible()
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
 
@@ -81,7 +81,7 @@ test("a candidate reads their own scorecard in their own words", async ({
   signInAs,
 }) => {
   await signInAs("candidate")
-  await page.goto("/employee/scorecard?id=9")
+  await page.goto("/employee/scorecards/9")
 
   await expect(
     page.getByRole("heading", { level: 1, name: "Your interview scorecard" })

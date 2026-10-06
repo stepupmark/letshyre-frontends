@@ -7,7 +7,7 @@ test("a settled employer sees what needs them, their numbers and credits", async
   signInAs,
 }) => {
   await signInAs("employer")
-  await page.goto("/employer")
+  await page.goto("/employer/dashboard")
 
   await expect(page.getByText("You're all caught up.")).toBeVisible()
   await expect(
@@ -34,14 +34,14 @@ test("a new employer gets a setup checklist they can hide", async ({
       reply(route, { data: { available_credits: 2 } }),
   })
   await signInAs("employer")
-  await page.goto("/employer")
+  await page.goto("/employer/dashboard")
 
   await expect(page.getByText("2 of 4 done")).toBeVisible()
   await expect(page.getByText("Credits are running low")).toBeVisible()
   const attention = page.getByRole("region", { name: "Needs your attention" })
   await expect(
     attention.getByRole("link", { name: "Post a job" })
-  ).toHaveAttribute("href", "/employer/post-job")
+  ).toHaveAttribute("href", "/employer/jobs/new")
 
   await page.getByRole("button", { name: "Hide" }).click()
   await expect(page.getByText("Finish setting up")).toBeHidden()
@@ -59,7 +59,7 @@ test("tips show once each and can be brought back", async ({
     "the account menu sits in the collapsed sidebar"
   )
   await signInAs("employer", { tips: true })
-  await page.goto("/employer")
+  await page.goto("/employer/dashboard")
 
   const tip = page.getByRole("dialog", { name: "Jump anywhere" })
   await expect(tip).toBeVisible()

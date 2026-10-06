@@ -1,9 +1,9 @@
 import { expect, test, type USERS } from "./fixtures"
 
 const HOME: Record<keyof typeof USERS, { visit: string; lands: string }> = {
-  employer: { visit: "/employer", lands: "/employer" },
-  employerNew: { visit: "/employer", lands: "/employer/onboarding" },
-  candidate: { visit: "/employee", lands: "/employee" },
+  employer: { visit: "/employer/dashboard", lands: "/employer/dashboard" },
+  employerNew: { visit: "/employer/dashboard", lands: "/employer/onboarding" },
+  candidate: { visit: "/employee/jobs", lands: "/employee/jobs" },
 }
 
 for (const [who, { visit, lands }] of Object.entries(HOME)) {
