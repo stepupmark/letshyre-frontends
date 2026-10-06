@@ -8,7 +8,6 @@ pre-commit:
     format:
       glob: "*.{ts,tsx,js,mjs,cjs,json,css,md,yml,yaml}"
       exclude:
-        - "apps/legacy/**"
         - "docs/baseline/**"
       run: pnpm prettier --write --ignore-unknown {staged_files}
       stage_fixed: true

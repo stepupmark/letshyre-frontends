@@ -1,5 +1,0 @@
-{
-  "note": "Who has actually read a translated catalog, and what they read. A review is bound to a hash of the file, so editing a catalog after review drops it back to unreviewed rather than leaving a stale sign-off. Record one with: pnpm i18n:review <locale>/<file> \"<reviewer>\"",
-  "requireReviewed": [],
-  "reviews": {}
-}

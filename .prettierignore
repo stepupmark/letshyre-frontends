@@ -1,5 +1,3 @@
-apps/legacy
-infra/nginx/legacy
 docs/baseline
 pnpm-lock.yaml
 build
