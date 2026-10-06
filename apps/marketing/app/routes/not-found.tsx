@@ -4,7 +4,7 @@ import { RouteError } from "@/components/route-error"
 import common from "@/locales/en/common.json"
 import seo from "@/locales/en/seo.json"
 
-// prerendered to /404/index.html, which nginx serves for every unknown URL
+// prerendered to /404/index.html, which the server serves for every unknown URL
 export const meta = () => [
   { title: seo.notFound.title },
   { name: "description", content: seo.notFound.description },

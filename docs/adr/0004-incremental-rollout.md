@@ -10,10 +10,10 @@ forced re-login in one release.
 ## Decision
 
 The new app took over `letshyre.ai`'s dashboard paths (`/employer`, `/employee`, `/sign-in`,
-`/get-started`, `/forgot-password`, `/shared-scorecard`) one area at a time, with nginx routing each
+`/get-started`, `/forgot-password`, `/shared-scorecard`) one area at a time, with the server routing each
 path to legacy or the new app. Same origin and the same `localStorage` keys meant no re-login.
 
-With legacy removed, nginx sends those paths to the app permanently. Moving to `app.letshyre.ai`
+With legacy removed, the server sends those paths to the app permanently. Moving to `app.letshyre.ai`
 (plan step 7.1) is deferred until the backend offers an httpOnly refresh cookie on `.letshyre.ai`
 (B5), so the move doesn't sign everyone out.
 
@@ -21,6 +21,6 @@ With legacy removed, nginx sends those paths to the app permanently. Moving to `
 
 - Marketing and the app share an origin, so marketing's third-party scripts (Meta Pixel, after
   consent) run where the session tokens live. See [0005](./0005-session-storage.md).
-- `apps/app/app/lib/app-paths.ts` and the nginx `location` must list the same prefixes.
-- The move, when it happens, is a new server block plus 301s from these paths; app code doesn't
+- `apps/app/app/lib/app-paths.ts` and the host's routing must list the same prefixes.
+- The move, when it happens, is a new host entry plus 301s from these paths; app code doesn't
   change beyond `VITE_APP_URL`.

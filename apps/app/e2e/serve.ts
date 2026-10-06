@@ -1,4 +1,4 @@
-// Serves build/client like nginx will: files as they are, every other path gets the SPA shell.
+// Serves build/client like production will: files as they are, every other path gets the SPA shell.
 // usage: node e2e/serve.ts [port]
 
 import { createReadStream, existsSync, readFileSync, statSync } from "node:fs"

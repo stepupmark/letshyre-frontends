@@ -1,4 +1,4 @@
-// Serves build/client the way production nginx will (docs/baseline/url-contract.md).
+// Serves build/client the way production will (docs/baseline/url-contract.md).
 // usage: node e2e/serve.ts [port]
 
 import { createReadStream, existsSync, readFileSync, statSync } from "node:fs"
@@ -57,7 +57,7 @@ createServer((req, res) => {
       csp && type.startsWith("text/html")
         ? (csp.policies.get(path) ?? csp.fallback)
         : undefined
-    // like nginx gzip_types, so Lighthouse measures real transfer sizes
+    // like production gzip, so Lighthouse measures real transfer sizes
     const gzip =
       /^(text|application\/(json|xml|manifest))/.test(type) &&
       /\bgzip\b/.test(req.headers["accept-encoding"] ?? "")

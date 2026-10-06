@@ -33,7 +33,7 @@ export type Sources = Partial<
 
 /**
  * Policy for one page: inline scripts by hash plus the extra origins per directive.
- * frame-ancestors lives in the nginx header, since browsers ignore it in a meta tag.
+ * frame-ancestors belongs in a response header, since browsers ignore it in a meta tag.
  */
 export function pagePolicy(html: string, sources: Sources = {}): string {
   const hashes = [...new Set(inlineScriptsOf(html).map(sha256))]
@@ -62,7 +62,7 @@ export function injectMetaPolicy(html: string, policy: string): string {
   return html.replace(/<meta charSet="utf-8"\/>/, (charset) => charset + tag)
 }
 
-/** nginx `map` body: request path to its policy. */
+/** `map` body: request path to its policy. */
 export function nginxMap(
   policies: Map<string, string>,
   fallback: string

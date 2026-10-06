@@ -6,7 +6,7 @@ letshyre.ai: static, prerendered pages in 19 locales. React Router 8 (`ssr: fals
 cp .env.example .env
 pnpm dev            # http://localhost:5173/en
 pnpm build          # prerenders every ready /<lang>/<page>
-pnpm preview        # serves build/client like production nginx
+pnpm preview        # serves build/client like production
 pnpm test           # vitest
 pnpm test:e2e       # playwright + axe against the build
 ```

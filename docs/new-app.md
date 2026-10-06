@@ -37,9 +37,8 @@ motion tokens and rules ([ADR 0008](./adr/0008-motion.md)), and the ADRs in gene
 6. **Locales:** start `app/locales/en/` and `reviewed.json` as `["en"]`. Other locales come through
    `pnpm i18n:apply` once the copy settles ([ADR 0007](./adr/0007-i18n-readiness.md)).
 7. **Env:** add the app's `.env.example`, and its URL to the other apps' env if they link to it.
-8. **Hosting:** its own subdomain (`admin.letshyre.ai`): an nginx server block in
-   `infra/nginx/sites/` with the SPA fallback, `snippets/app-headers.conf`, the build's `csp.map`
-   and `noindex`; backend CORS for the origin. Add its build to `infra/nginx/test/run.sh`.
+8. **Hosting:** its own subdomain (`admin.letshyre.ai`) with the SPA fallback, the build's
+   `csp.map` policies and `noindex`; backend CORS for the origin.
 9. **Checks:** add it to `knip.json` if it needs entries, and to the commitlint scopes. CI picks it
    up through Turbo; give it its own JS budget in `postbuild.ts` from a first measurement.
 

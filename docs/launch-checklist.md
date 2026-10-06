@@ -9,7 +9,7 @@ scripts (step 4.7) are not written yet.
       in the sitemap; nothing ships in a locale until its namespaces are complete.
 - [ ] Production env set: `VITE_ENV=production`, `VITE_SITE_URL=https://letshyre.ai`,
       `VITE_APP_URL=https://letshyre.ai`, `VITE_META_PIXEL_ID`, `VITE_COOKIE_DOMAIN=.letshyre.ai`.
-- [ ] `pnpm verify` green, plus `bash infra/nginx/test/run.sh` and `pnpm --filter marketing lighthouse`.
+- [ ] `pnpm verify` green, plus `pnpm --filter marketing lighthouse`.
 
 ## Staging UAT
 
@@ -28,15 +28,14 @@ Android Chrome:
 
 ## Production
 
-- [ ] Deploy in a low-traffic window; reload nginx so it reads the new `csp.map`.
-- [ ] `node infra/nginx/test/assert.ts https://letshyre.ai` passes.
+- [ ] Deploy in a low-traffic window; the host must apply each build's `csp.map` policies.
+- [ ] Spot-check the URL contract (`docs/baseline/url-contract.md`) on the live site.
 - [ ] Resubmit `https://letshyre.ai/sitemap.xml` in Search Console.
 
 ## First 7 days
 
-- nginx 404 and 302 rates, Search Console coverage and hreflang errors, CWV field data, sign-up
+- 404 and 302 rates, Search Console coverage and hreflang errors, CWV field data, sign-up
   conversion.
 - After a clean week of report-only CSP: build with `CSP_ENFORCE=true` and drop the
-  report-only header (infra/nginx/README.md).
-- Roll back if indexed pages drop more than 10% or errors spike: point nginx back at
-  `infra/nginx/legacy/nginx.conf` (legacy marketing build kept for 30 days).
+  report-only header on the host.
+- Roll back if indexed pages drop more than 10% or errors spike: redeploy the previous build.

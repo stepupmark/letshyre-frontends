@@ -1,4 +1,4 @@
-// the same prefixes nginx sends to this app; everything else is the marketing site
+// the prefixes the server sends to this app; everything else is the marketing site
 const APP_PATH =
   /^\/(employer|employee|get-started|forgot-password|shared-scorecard|sign-in)(\/|$|[?#])/
 
