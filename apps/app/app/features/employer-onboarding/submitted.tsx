@@ -1,6 +1,7 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { CircleCheck } from "lucide-react"
 import * as m from "motion/react-m"
+import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { duration, ease } from "@/lib/motion"
@@ -42,10 +43,13 @@ export function Submitted({ email }: { email: string }) {
         </ol>
       </section>
       <div className="flex flex-wrap gap-2">
-        <AppLink to="/employer/post-job" className={buttonLink()}>
+        <AppLink to={href("/employer/jobs/new")} className={buttonLink()}>
           {t("done.postJob")}
         </AppLink>
-        <AppLink to="/employer" className={buttonLink({ variant: "outline" })}>
+        <AppLink
+          to={href("/employer/dashboard")}
+          className={buttonLink({ variant: "outline" })}
+        >
           {t("done.dashboard")}
         </AppLink>
       </div>

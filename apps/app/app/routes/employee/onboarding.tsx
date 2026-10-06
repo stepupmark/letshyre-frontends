@@ -1,6 +1,6 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { useQuery } from "@tanstack/react-query"
-import { Navigate, useNavigate } from "react-router"
+import { href, Navigate, useNavigate } from "react-router"
 import { toast } from "sonner"
 
 import { PageHeader } from "@/components/page-header"
@@ -9,7 +9,7 @@ import {
   myProfileQuery,
 } from "@/features/candidate-onboarding"
 
-const HOME = "/employee"
+const HOME = href("/employee/jobs")
 
 export default function CandidateOnboardingPage() {
   const { t } = useTranslation(["candidateOnboarding", "common"])

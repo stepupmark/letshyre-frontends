@@ -1,5 +1,6 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { useQuery } from "@tanstack/react-query"
+import { href, useMatch } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { EmptyState } from "@/components/empty-state"
@@ -18,19 +19,20 @@ export default function JobPage({ params }: Route.ComponentProps) {
   const valid = isJobId(params.jobId)
   const job = useQuery({ ...jobQuery(params.jobId), enabled: valid })
   const title = job.data?.title ?? t("list.title")
+  const editing = useMatch("/employer/jobs/:jobId/edit") !== null
 
   return (
     <>
       <title>{`${title} · ${t("common:appName")}`}</title>
       {valid ? (
-        <JobDetail jobId={params.jobId} />
+        <JobDetail jobId={params.jobId} editing={editing} />
       ) : (
         <EmptyState
           title={t("detail.notFoundTitle")}
           description={t("detail.notFoundBody")}
           action={
             <AppLink
-              to="/employer/view-jobs"
+              to={href("/employer/jobs")}
               className={buttonLink({ variant: "outline" })}
             >
               {t("detail.back")}

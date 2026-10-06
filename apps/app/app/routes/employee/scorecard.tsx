@@ -1,6 +1,6 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { useQuery } from "@tanstack/react-query"
-import { useSearchParams } from "react-router"
+import { href } from "react-router"
 
 import {
   isRecordId,
@@ -10,19 +10,18 @@ import {
 } from "@/features/candidate"
 import { namespaces } from "@/lib/i18n"
 
+import type { Route } from "./+types/scorecard"
+
 export const handle = { crumb: "scorecards" } as const
 
 export const clientMiddleware = [namespaces(["candidate", "scorecard"])]
 
-const OWN_LIST = "/employee/score-cards-list"
-
-export default function OwnScorecardPage() {
+export default function OwnScorecardPage({ params }: Route.ComponentProps) {
   const { t } = useTranslation(["candidate", "scorecard", "common"])
-  const [search] = useSearchParams()
-  const id = search.get("id")
+  const id = params.scorecardId
   const valid = isRecordId(id)
   const scorecard = useQuery({
-    ...ownScorecardQuery(id ?? ""),
+    ...ownScorecardQuery(id),
     enabled: valid,
   })
 
@@ -36,7 +35,7 @@ export default function OwnScorecardPage() {
           title: t("missing.scorecardTitle"),
           body: t("missing.scorecardBody"),
           back: t("missing.backOwn"),
-          to: OWN_LIST,
+          to: href("/employee/scorecards"),
         }}
       >
         {(data) => <ScorecardView report={data} viewer="candidate" />}

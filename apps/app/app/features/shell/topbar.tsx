@@ -12,7 +12,7 @@ import { SidebarTrigger } from "@workspace/ui/components/sidebar"
 import { useQuery } from "@tanstack/react-query"
 import { Coins, Search } from "lucide-react"
 import { useRef, type ReactNode, type Ref } from "react"
-import { useMatches } from "react-router"
+import { href, useMatches } from "react-router"
 
 import { AnimatedNumber } from "@/components/animated-number"
 import { AppLink } from "@/components/app-link"
@@ -115,7 +115,7 @@ function Credits({ ref }: { ref: Ref<HTMLAnchorElement> }) {
   return (
     <AppLink
       ref={ref}
-      to="/employer/billing"
+      to={href("/employer/billing")}
       className={buttonLink({ variant: "ghost", className: "gap-1.5" })}
       aria-label={
         count === undefined ? t("credits.add") : t("credits.label", { count })

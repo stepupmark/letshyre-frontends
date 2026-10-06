@@ -3,7 +3,7 @@ import { Button } from "@workspace/ui/components/button"
 import { keepPreviousData, useQuery } from "@tanstack/react-query"
 import { FileDown, Printer } from "lucide-react"
 import { useMemo } from "react"
-import { useSearchParams } from "react-router"
+import { href, useSearchParams } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { DataTable } from "@/components/data-table"
@@ -114,7 +114,7 @@ export function Invoices() {
             title={t("invoiceList.emptyTitle")}
             description={t("invoiceList.emptyBody")}
             action={
-              <AppLink to="/employer/billing" className={buttonLink()}>
+              <AppLink to={href("/employer/billing")} className={buttonLink()}>
                 {t("buyCredits")}
               </AppLink>
             }

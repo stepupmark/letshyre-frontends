@@ -1,7 +1,7 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { useQuery } from "@tanstack/react-query"
 import { ClipboardCheck } from "lucide-react"
-import { useSearchParams } from "react-router"
+import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import {
@@ -15,19 +15,18 @@ import { useJobOptions } from "@/features/employer-jobs"
 import { namespaces } from "@/lib/i18n"
 import { buttonLink } from "@/lib/button-link"
 
+import type { Route } from "./+types/candidate-profile"
+
 export const handle = { crumb: "unlocked" } as const
 
 export const clientMiddleware = [namespaces(["candidate"])]
 
-const UNLOCKED = "/employer/unlocked-candidates"
-
-export default function CandidateProfilePage() {
+export default function CandidateProfilePage({ params }: Route.ComponentProps) {
   const { t } = useTranslation(["candidate", "common"])
-  const [search] = useSearchParams()
-  const id = search.get("id")
+  const id = params.candidateId
   const valid = isRecordId(id)
   const profile = useQuery({
-    ...unlockedProfileQuery(id ?? ""),
+    ...unlockedProfileQuery(id),
     enabled: valid,
   })
   const jobs = useJobOptions()
@@ -43,7 +42,7 @@ export default function CandidateProfilePage() {
           title: t("missing.title"),
           body: t("missing.body"),
           back: t("missing.back"),
-          to: UNLOCKED,
+          to: href("/employer/candidates/unlocked"),
         }}
       >
         {(data) => (
@@ -57,7 +56,9 @@ export default function CandidateProfilePage() {
                   jobs={jobs}
                 />
                 <AppLink
-                  to={`/employer/employee-score-card?id=${encodeURIComponent(data.id)}`}
+                  to={href("/employer/candidates/:candidateId/scorecard", {
+                    candidateId: data.id,
+                  })}
                   className={buttonLink()}
                 >
                   <ClipboardCheck />

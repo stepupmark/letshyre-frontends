@@ -4,6 +4,7 @@ import { Skeleton } from "@workspace/ui/components/skeleton"
 import { useQuery } from "@tanstack/react-query"
 import { ArrowRight, Download } from "lucide-react"
 import * as m from "motion/react-m"
+import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { EmptyState } from "@/components/empty-state"
@@ -46,7 +47,7 @@ export function ScorecardList() {
                   {t("list.download")}
                 </a>
                 <AppLink
-                  to="/employee/interview-guide"
+                  to={href("/employee/interview-guide")}
                   className={buttonLink({ variant: "outline" })}
                 >
                   {t("list.guide")}
@@ -118,7 +119,9 @@ function Card({ item }: { item: ScorecardItem }) {
         </ul>
       )}
       <AppLink
-        to={`/employee/scorecard?id=${encodeURIComponent(item.id)}`}
+        to={href("/employee/scorecards/:scorecardId", {
+          scorecardId: item.id,
+        })}
         className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium outline-none after:absolute after:inset-0 after:rounded-lg"
       >
         {t("list.open")}{" "}

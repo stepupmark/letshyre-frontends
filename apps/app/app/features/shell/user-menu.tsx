@@ -30,6 +30,7 @@ import {
   LogOut,
   UserRound,
 } from "lucide-react"
+import { href } from "react-router"
 
 import { api } from "@/lib/api"
 import { APP_LOCALES, changeLocale, locale } from "@/lib/i18n"
@@ -68,7 +69,7 @@ export function UserMenu({
     .map((part) => part[0]?.toUpperCase())
     .join("")
   const profile =
-    area === "employer" ? "/employer/profile" : "/employee/profile"
+    area === "employer" ? href("/employer/company") : href("/employee/profile")
 
   const signOut = async () => {
     clearAssistantChats()

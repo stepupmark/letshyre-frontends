@@ -1,5 +1,6 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { Plus } from "lucide-react"
+import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { PageHeader } from "@/components/page-header"
@@ -20,7 +21,7 @@ export default function EmployerDashboardPage() {
       <PageHeader
         title={t("title")}
         actions={
-          <AppLink to="/employer/post-job" className={buttonLink()}>
+          <AppLink to={href("/employer/jobs/new")} className={buttonLink()}>
             <Plus />
             {t("postJob")}
           </AppLink>

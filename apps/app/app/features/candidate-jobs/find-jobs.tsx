@@ -18,7 +18,7 @@ import { cn } from "@workspace/ui/lib/utils"
 import { useQuery } from "@tanstack/react-query"
 import { Bookmark, BookmarkCheck, MapPin, Search, X } from "lucide-react"
 import { useState } from "react"
-import { useSearchParams } from "react-router"
+import { href, useSearchParams } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { DetailSheet } from "@/components/detail-sheet"
@@ -234,7 +234,7 @@ export function FindJobs() {
             <div className="flex w-full items-center justify-between gap-3">
               <StatusBadge tone="info">{t("applied")}</StatusBadge>
               <AppLink
-                to="/employee/my-applications"
+                to={href("/employee/applications")}
                 className="text-sm underline-offset-4 hover:underline"
               >
                 {t("apply.track")}

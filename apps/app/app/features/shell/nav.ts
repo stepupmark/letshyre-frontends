@@ -15,6 +15,9 @@ import {
   UsersRound,
   type LucideIcon,
 } from "lucide-react"
+import { href, matchPath } from "react-router"
+
+import type { RoutePattern } from "@/lib/app-paths"
 
 export interface NavItem {
   key:
@@ -34,8 +37,8 @@ export interface NavItem {
     | "assistant"
   to: string
   icon: LucideIcon
-  /** also active on these path prefixes */
-  match?: string[]
+  /** route patterns it is also active under */
+  match?: RoutePattern[]
 }
 
 export interface NavGroup {
@@ -43,7 +46,6 @@ export interface NavGroup {
   items: NavItem[]
 }
 
-// URLs match the legacy app so old links and bookmarks keep working
 export const NAV = {
   employer: [
     {
@@ -51,28 +53,32 @@ export const NAV = {
       items: [
         {
           key: "dashboard",
-          to: "/employer",
+          to: href("/employer/dashboard"),
           icon: LayoutDashboard,
-          match: ["/employer/dashboard"],
         },
-        { key: "postJob", to: "/employer/post-job", icon: FilePlus2 },
-        { key: "jobs", to: "/employer/view-jobs", icon: BriefcaseBusiness },
-        { key: "candidatePool", to: "/employer/candidate-pool", icon: Users },
+        { key: "postJob", to: href("/employer/jobs/new"), icon: FilePlus2 },
+        { key: "jobs", to: href("/employer/jobs"), icon: BriefcaseBusiness },
+        { key: "candidatePool", to: href("/employer/candidates"), icon: Users },
         {
           key: "unlocked",
-          to: "/employer/unlocked-candidates",
+          to: href("/employer/candidates/unlocked"),
           icon: UserRoundCheck,
+          match: ["/employer/candidates/:candidateId"],
         },
       ],
     },
     {
       key: "company",
       items: [
-        { key: "team", to: "/employer/your-team", icon: UsersRound },
-        { key: "sharedLinks", to: "/employer/shared-links", icon: Link2 },
+        { key: "team", to: href("/employer/team"), icon: UsersRound },
+        {
+          key: "sharedLinks",
+          to: href("/employer/shared-links"),
+          icon: Link2,
+        },
         {
           key: "billing",
-          to: "/employer/invoice",
+          to: href("/employer/invoices"),
           icon: CreditCard,
           match: ["/employer/billing"],
         },
@@ -83,7 +89,7 @@ export const NAV = {
       items: [
         {
           key: "assistant",
-          to: "/employer/chatbot",
+          to: href("/employer/assistant"),
           icon: MessageCircleQuestion,
         },
       ],
@@ -93,24 +99,14 @@ export const NAV = {
     {
       key: "you",
       items: [
-        {
-          key: "findJobs",
-          to: "/employee",
-          icon: Search,
-          match: ["/employee/find-jobs"],
-        },
+        { key: "findJobs", to: href("/employee/jobs"), icon: Search },
         {
           key: "applications",
-          to: "/employee/my-applications",
+          to: href("/employee/applications"),
           icon: ClipboardList,
         },
-        {
-          key: "scorecards",
-          to: "/employee/score-cards-list",
-          icon: Trophy,
-          match: ["/employee/scorecard"],
-        },
-        { key: "profile", to: "/employee/profile", icon: SquareUser },
+        { key: "scorecards", to: href("/employee/scorecards"), icon: Trophy },
+        { key: "profile", to: href("/employee/profile"), icon: SquareUser },
       ],
     },
     {
@@ -118,12 +114,12 @@ export const NAV = {
       items: [
         {
           key: "interviewGuide",
-          to: "/employee/interview-guide",
+          to: href("/employee/interview-guide"),
           icon: BookOpen,
         },
         {
           key: "assistant",
-          to: "/employee/chatbot",
+          to: href("/employee/assistant"),
           icon: MessageCircleQuestion,
         },
       ],
@@ -133,11 +129,20 @@ export const NAV = {
 
 export type Area = keyof typeof NAV
 
-export const isActive = (item: NavItem, pathname: string) =>
-  pathname === item.to ||
-  (item.to !== "/employer" &&
-    item.to !== "/employee" &&
-    pathname.startsWith(`${item.to}/`)) ||
-  (item.match ?? []).some(
-    (path) => pathname === path || pathname.startsWith(`${path}/`)
+const ITEMS = Object.values(NAV).flatMap((groups: NavGroup[]) =>
+  groups.flatMap((group) => group.items)
+)
+
+const depth = (item: NavItem, pathname: string) =>
+  Math.max(
+    0,
+    ...[item.to, ...(item.match ?? [])]
+      .filter((path) => matchPath({ path, end: false }, pathname))
+      .map((path) => path.length)
   )
+
+/** Active when no other item matches the pathname more specifically. */
+export const isActive = (item: NavItem, pathname: string) => {
+  const own = depth(item, pathname)
+  return own > 0 && ITEMS.every((other) => depth(other, pathname) <= own)
+}

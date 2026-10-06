@@ -30,7 +30,7 @@ import {
   Trash2,
 } from "lucide-react"
 import { useMemo, useState } from "react"
-import { useSearchParams } from "react-router"
+import { href, useSearchParams } from "react-router"
 import { toast } from "sonner"
 
 import { AppLink } from "@/components/app-link"
@@ -222,7 +222,7 @@ export function SharedLinks() {
             description={t("links.emptyBody")}
             action={
               <AppLink
-                to="/employer/unlocked-candidates"
+                to={href("/employer/candidates/unlocked")}
                 className={buttonLink({ variant: "outline" })}
               >
                 {t("links.toUnlocked")}

@@ -1,6 +1,7 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { Link2 } from "lucide-react"
 import { useCallback } from "react"
+import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { PageHeader } from "@/components/page-header"
@@ -36,7 +37,7 @@ export default function UnlockedPage() {
         description={t("list.lead")}
         actions={
           <AppLink
-            to="/employer/shared-links"
+            to={href("/employer/shared-links")}
             className={buttonLink({ variant: "outline" })}
           >
             <Link2 />

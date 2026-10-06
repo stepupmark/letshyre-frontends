@@ -12,7 +12,7 @@ import { Tabs, TabsList, TabsTrigger } from "@workspace/ui/components/tabs"
 import { useQuery } from "@tanstack/react-query"
 import { Plus } from "lucide-react"
 import { useEffect, useId } from "react"
-import { useSearchParams } from "react-router"
+import { href, useSearchParams } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { EmptyState } from "@/components/empty-state"
@@ -105,7 +105,7 @@ export default function CandidatePoolPage() {
           title={t("pool.noJobsTitle")}
           description={t("pool.noJobsBody")}
           action={
-            <AppLink to="/employer/post-job" className={buttonLink()}>
+            <AppLink to={href("/employer/jobs/new")} className={buttonLink()}>
               <Plus />
               {t("pool.postJob")}
             </AppLink>

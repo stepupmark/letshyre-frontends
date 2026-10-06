@@ -11,7 +11,7 @@ import {
 import { Spinner } from "@workspace/ui/components/spinner"
 import { Maximize2, Sparkles } from "lucide-react"
 import { lazy, Suspense, useState } from "react"
-import { useLocation } from "react-router"
+import { href, useLocation } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { locale } from "@/lib/i18n"
@@ -23,8 +23,8 @@ const AssistantPanel = lazy(() =>
 )
 
 const PAGE: Record<Side, string> = {
-  employer: "/employer/chatbot",
-  candidate: "/employee/chatbot",
+  employer: href("/employer/assistant"),
+  candidate: href("/employee/assistant"),
 }
 
 /** Topbar button that opens the assistant beside the current page. */

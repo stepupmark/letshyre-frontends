@@ -5,7 +5,7 @@ import { cn } from "@workspace/ui/lib/utils"
 import { useQueries, useQuery } from "@tanstack/react-query"
 import { Check, X } from "lucide-react"
 import { useState } from "react"
-import { useSearchParams } from "react-router"
+import { href, useSearchParams } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { DetailSheet } from "@/components/detail-sheet"
@@ -31,10 +31,10 @@ const NEXT_STEP: Record<
   Stage,
   { to: string; link: "guide" | "findJobs" } | null
 > = {
-  Applied: { to: "/employee/interview-guide", link: "guide" },
+  Applied: { to: href("/employee/interview-guide"), link: "guide" },
   Shortlisted: null,
   Selected: null,
-  Rejected: { to: "/employee", link: "findJobs" },
+  Rejected: { to: href("/employee/jobs"), link: "findJobs" },
 }
 
 const stageOf = (raw: string | null): Stage =>
@@ -117,7 +117,7 @@ export function Applications() {
           description={t(`empty.${stage}.body`)}
           action={
             stage === "Applied" ? (
-              <AppLink to="/employee" className={buttonLink()}>
+              <AppLink to={href("/employee/jobs")} className={buttonLink()}>
                 {t("next.findJobs")}
               </AppLink>
             ) : undefined

@@ -179,9 +179,9 @@ describe("guards", () => {
 
   it("keeps each role in its own area", () => {
     signIn({ role: "Candidate" })
-    expect(authRedirect(at("/employer"), { roles: ["Employer"] })).toBe(
-      "/employee"
-    )
+    expect(
+      authRedirect(at("/employer/dashboard"), { roles: ["Employer"] })
+    ).toBe("/employee/jobs")
   })
 
   it("holds employers on onboarding until their profile is complete", () => {
@@ -190,8 +190,8 @@ describe("guards", () => {
     expect(authRedirect(at("/employer/onboarding"))).toBeNull()
 
     signIn({ role: "Employer", is_profile_completed: true })
-    expect(authRedirect(at("/employer/onboarding"))).toBe("/employer")
-    expect(guestRedirect()).toBe("/employer")
+    expect(authRedirect(at("/employer/onboarding"))).toBe("/employer/dashboard")
+    expect(guestRedirect()).toBe("/employer/dashboard")
   })
 
   it("only follows same-site next paths", () => {

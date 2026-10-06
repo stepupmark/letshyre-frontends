@@ -1,3 +1,7 @@
+import { matchPath } from "react-router"
+
+import type { RoutePattern } from "@/lib/app-paths"
+
 export type Side = "employer" | "candidate"
 
 type Prompt =
@@ -22,27 +26,31 @@ type Prompt =
   | "connectionDrops"
 
 // first match wins, so the more specific paths come first
-const PAGES: Record<Side, [string, Prompt[]][]> = {
+const PAGES: Record<Side, [RoutePattern, Prompt[]][]> = {
   employer: [
-    ["/employer/view-jobs/applicants", ["matchScore", "unlockCost"]],
-    ["/employer/candidate-pool", ["matchScore", "unlockCost"]],
-    ["/employer/view-jobs", ["betterJob", "pauseJob"]],
-    ["/employer/post-job", ["betterJob", "matchScore"]],
-    ["/employer/unlocked-candidates", ["readScorecard", "shareScorecard"]],
-    ["/employer/employee-", ["readScorecard", "shareScorecard"]],
+    ["/employer/jobs/new", ["betterJob", "matchScore"]],
+    ["/employer/jobs/:jobId/applicants", ["matchScore", "unlockCost"]],
+    ["/employer/jobs", ["betterJob", "pauseJob"]],
+    ["/employer/candidates/unlocked", ["readScorecard", "shareScorecard"]],
+    ["/employer/candidates/:candidateId", ["readScorecard", "shareScorecard"]],
+    ["/employer/candidates", ["matchScore", "unlockCost"]],
     ["/employer/billing", ["credits", "gstInvoice"]],
-    ["/employer/invoice", ["gstInvoice", "credits"]],
-    ["", ["firstJob", "readScorecard", "credits"]],
+    ["/employer/invoices", ["gstInvoice", "credits"]],
   ],
   candidate: [
-    ["/employee/my-applications", ["afterApply", "shortlist"]],
-    ["/employee/score-cards-list", ["ownScore", "retake"]],
-    ["/employee/scorecard", ["ownScore", "retake"]],
+    ["/employee/applications", ["afterApply", "shortlist"]],
+    ["/employee/scorecards", ["ownScore", "retake"]],
     ["/employee/profile", ["standOut", "whoSees"]],
     ["/employee/interview-guide", ["needForInterview", "connectionDrops"]],
-    ["", ["findFit", "howInterview", "afterApply"]],
   ],
 }
 
+const FALLBACK: Record<Side, Prompt[]> = {
+  employer: ["firstJob", "readScorecard", "credits"],
+  candidate: ["findFit", "howInterview", "afterApply"],
+}
+
 export const promptsFor = (side: Side, pathname: string) =>
-  PAGES[side].find(([prefix]) => pathname.startsWith(prefix))?.[1] ?? []
+  PAGES[side].find(([path]) =>
+    matchPath({ path, end: false }, pathname)
+  )?.[1] ?? FALLBACK[side]

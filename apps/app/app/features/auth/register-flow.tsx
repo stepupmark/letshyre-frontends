@@ -15,7 +15,7 @@ import { useMutation } from "@tanstack/react-query"
 import { Check, Circle, CircleAlert } from "lucide-react"
 import { useId, useMemo, useState } from "react"
 import { Controller, useForm, useWatch } from "react-hook-form"
-import { Link } from "react-router"
+import { href, Link } from "react-router"
 import { z } from "zod"
 
 import { PasswordField, TextField } from "@/components/text-field"
@@ -131,7 +131,7 @@ export function RegisterFlow({
           <p className="text-sm text-muted-foreground">
             {t("register.haveAccount")}{" "}
             <Link
-              to="/sign-in"
+              to={href("/sign-in")}
               className="font-medium text-foreground underline underline-offset-4"
             >
               {t("register.signIn")}
@@ -327,7 +327,10 @@ function DetailsForm({
           error={errors.email?.message}
           hint={
             emailTaken ? (
-              <Link to="/sign-in" className="underline underline-offset-4">
+              <Link
+                to={href("/sign-in")}
+                className="underline underline-offset-4"
+              >
                 {t("register.signInInstead")}
               </Link>
             ) : (

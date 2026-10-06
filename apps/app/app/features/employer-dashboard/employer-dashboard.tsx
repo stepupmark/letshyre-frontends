@@ -1,6 +1,7 @@
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Skeleton } from "@workspace/ui/components/skeleton"
 import { useQuery } from "@tanstack/react-query"
+import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { LoadError } from "@/components/query-state"
@@ -111,7 +112,7 @@ function HiringStats({
         {stats.map((stat) => (
           <li key={stat.key}>
             <AppLink
-              to="/employer/view-jobs"
+              to={href("/employer/jobs")}
               className="flex flex-col gap-1 rounded-lg border p-4 transition-colors hover:bg-muted/50 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
             >
               <span className="text-2xl font-semibold tabular-nums">

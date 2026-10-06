@@ -47,8 +47,8 @@ it("converts rupees to paise without float drift", () => {
 })
 
 it("returns only to a page in the employer app after paying", () => {
-  expect(safeNext("/employer/candidate-pool?jobId=1&candidate=5")).toBe(
-    "/employer/candidate-pool?jobId=1&candidate=5"
+  expect(safeNext("/employer/candidates?jobId=1&candidate=5")).toBe(
+    "/employer/candidates?jobId=1&candidate=5"
   )
   expect(safeNext("https://evil.example/employer")).toBeNull()
   expect(safeNext("//evil.example/employer")).toBeNull()

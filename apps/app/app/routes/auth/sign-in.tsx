@@ -1,7 +1,7 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { Alert, AlertDescription } from "@workspace/ui/components/alert"
 import { CircleCheck } from "lucide-react"
-import { Link, useLocation, useSearchParams } from "react-router"
+import { href, Link, useLocation, useSearchParams } from "react-router"
 
 import { SignInForm } from "@/features/auth"
 import { useGo } from "@/lib/navigation"
@@ -46,7 +46,7 @@ export default function SignIn() {
       <p className="text-sm text-muted-foreground">
         {t("signIn.noAccount")}{" "}
         <Link
-          to="/get-started"
+          to={href("/get-started")}
           viewTransition
           className="font-medium text-foreground underline underline-offset-4"
         >

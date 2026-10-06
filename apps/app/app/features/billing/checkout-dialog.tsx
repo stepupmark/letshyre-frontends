@@ -28,6 +28,7 @@ import {
 } from "lucide-react"
 import * as m from "motion/react-m"
 import { useId, useState, type ReactNode } from "react"
+import { href } from "react-router"
 
 import { AnimatedNumber } from "@/components/animated-number"
 import { AppLink } from "@/components/app-link"
@@ -444,13 +445,13 @@ function Outcome({
       {reference}
       <DialogFooter className="flex-col gap-2 sm:flex-col">
         <AppLink
-          to={next ?? "/employer/candidate-pool"}
+          to={next ?? href("/employer/candidates")}
           className={buttonLink({ size: "lg" })}
         >
           {next ? t("checkout.paid.back") : t("checkout.paid.primary")}
         </AppLink>
         <AppLink
-          to="/employer/invoice"
+          to={href("/employer/invoices")}
           className={buttonLink({ variant: "outline", size: "lg" })}
         >
           {t("checkout.paid.invoices")}

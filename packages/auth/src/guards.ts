@@ -1,8 +1,8 @@
 import { readSession, ROLES, type Role, type Session } from "./session.ts"
 
 export const ROLE_HOME: Record<Role, string> = {
-  [ROLES.employer]: "/employer",
-  [ROLES.candidate]: "/employee",
+  [ROLES.employer]: "/employer/dashboard",
+  [ROLES.candidate]: "/employee/jobs",
 }
 
 /** The marketing site. */

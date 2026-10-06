@@ -23,7 +23,7 @@ import {
 } from "lucide-react"
 import * as m from "motion/react-m"
 import { useState } from "react"
-import { useSearchParams } from "react-router"
+import { href, useNavigate } from "react-router"
 import { toast } from "sonner"
 
 import { AppLink } from "@/components/app-link"
@@ -57,7 +57,13 @@ import { fromJob, toPayload, type JobValues } from "./values"
 
 const SETTABLE = ["open", "paused", "closed"] as const
 
-export function JobDetail({ jobId }: { jobId: string }) {
+export function JobDetail({
+  jobId,
+  editing,
+}: {
+  jobId: string
+  editing: boolean
+}) {
   const { t } = useTranslation("jobs")
   const job = useQuery(jobQuery(jobId))
 
@@ -68,7 +74,7 @@ export function JobDetail({ jobId }: { jobId: string }) {
         description={t("detail.notFoundBody")}
         action={
           <AppLink
-            to="/employer/view-jobs"
+            to={href("/employer/jobs")}
             className={buttonLink({ variant: "outline" })}
           >
             {t("detail.back")}
@@ -79,33 +85,27 @@ export function JobDetail({ jobId }: { jobId: string }) {
 
   return (
     <QueryState query={job} skeleton={<DetailSkeleton />}>
-      {(data) => <Loaded job={data} />}
+      {(data) => <Loaded job={data} editing={editing} />}
     </QueryState>
   )
 }
 
-function Loaded({ job }: { job: Job }) {
+function Loaded({ job, editing }: { job: Job; editing: boolean }) {
   const { t } = useTranslation(["jobs", "common"])
   const locale = useLocale()
   const queryClient = useQueryClient()
   const go = useGo()
-  const [search, setSearch] = useSearchParams()
+  const navigate = useNavigate()
   const [deleting, setDeleting] = useState(false)
   const industries = useQuery(industriesQuery()).data ?? []
-  const editing = search.get("edit") === "1"
   const status = statusOf(job)
   const key = jobQuery(job.id).queryKey
 
   const setEditing = (on: boolean) => {
-    setSearch(
-      (prev) => {
-        const next = new URLSearchParams(prev)
-        if (on) next.set("edit", "1")
-        else next.delete("edit")
-        return next
-      },
-      { preventScrollReset: true }
-    )
+    const to = on
+      ? href("/employer/jobs/:jobId/edit", { jobId: job.id })
+      : href("/employer/jobs/:jobId", { jobId: job.id })
+    void navigate(to, { preventScrollReset: true })
   }
 
   const changeStatus = useMutation({
@@ -136,7 +136,7 @@ function Loaded({ job }: { job: Job }) {
       queryClient.removeQueries({ queryKey: key })
       await queryClient.invalidateQueries({ queryKey: JOBS_KEY })
       toast.success(t("detail.deleted"))
-      go("/employer/view-jobs", { replace: true })
+      go(href("/employer/jobs"), { replace: true })
     },
     onError: () => {
       toast.error(t("detail.deleteFailed"))
@@ -149,7 +149,7 @@ function Loaded({ job }: { job: Job }) {
     <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-3">
         <AppLink
-          to="/employer/view-jobs"
+          to={href("/employer/jobs")}
           className="flex w-fit items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
         >
           <ArrowLeft className="size-4 rtl:-scale-x-100" />
@@ -180,7 +180,7 @@ function Loaded({ job }: { job: Job }) {
           actions={
             !editing && (
               <AppLink
-                to={`/employer/view-jobs/applicants/${job.id}`}
+                to={href("/employer/jobs/:jobId/applicants", { jobId: job.id })}
                 className={buttonLink()}
               >
                 <Users />

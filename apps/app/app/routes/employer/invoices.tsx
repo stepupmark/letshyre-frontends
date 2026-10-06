@@ -1,5 +1,6 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { Coins } from "lucide-react"
+import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { PageHeader } from "@/components/page-header"
@@ -20,7 +21,7 @@ export default function InvoicesPage() {
         title={t("invoiceList.title")}
         description={t("invoiceList.lead")}
         actions={
-          <AppLink to="/employer/billing" className={buttonLink()}>
+          <AppLink to={href("/employer/billing")} className={buttonLink()}>
             <Coins />
             {t("buyCredits")}
           </AppLink>

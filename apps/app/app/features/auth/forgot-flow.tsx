@@ -8,7 +8,7 @@ import { useMutation } from "@tanstack/react-query"
 import { CircleAlert } from "lucide-react"
 import { useMemo, useState } from "react"
 import { useForm } from "react-hook-form"
-import { Link } from "react-router"
+import { href, Link } from "react-router"
 import { z } from "zod"
 
 import { PasswordField, TextField } from "@/components/text-field"
@@ -84,7 +84,7 @@ export function ForgotFlow({ onDone }: { onDone: (email: string) => void }) {
             }}
           />
           <Link
-            to="/sign-in"
+            to={href("/sign-in")}
             className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
           >
             {t("forgot.backToSignIn")}

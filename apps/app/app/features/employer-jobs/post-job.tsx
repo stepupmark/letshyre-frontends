@@ -17,7 +17,7 @@ import { CircleAlert, Eye, Sparkles } from "lucide-react"
 import * as m from "motion/react-m"
 import { useEffect, useRef, useState } from "react"
 import { useWatch } from "react-hook-form"
-import { useSearchParams } from "react-router"
+import { href, useSearchParams } from "react-router"
 import { toast } from "sonner"
 
 import { FileDropzone } from "@/components/file-dropzone"
@@ -229,7 +229,11 @@ function Review({
       clearDraft(DRAFT)
       await queryClient.invalidateQueries({ queryKey: JOBS_KEY })
       toast.success(t("post.posted"), { description: t("post.postedBody") })
-      go(job.id ? `/employer/view-jobs/${job.id}` : "/employer/view-jobs")
+      go(
+        job.id
+          ? href("/employer/jobs/:jobId", { jobId: job.id })
+          : href("/employer/jobs")
+      )
     },
     onError: (error) => {
       showServerErrors(error)

@@ -20,6 +20,31 @@ const lab =
         ]),
       ])
 
+// URLs from before the 2026-10 cleanup; lib/moved.ts maps each to its new home
+const moved = [
+  "employer",
+  "employer/sign-in",
+  "employer/post-job",
+  "employer/view-jobs",
+  "employer/view-jobs/:jobId",
+  "employer/view-jobs/applicants/:jobId",
+  "employer/candidate-pool",
+  "employer/unlocked-candidates",
+  "employer/employee-profile",
+  "employer/employee-score-card",
+  "employer/invoice",
+  "employer/your-team",
+  "employer/profile",
+  "employer/chatbot",
+  "employee",
+  "employee/sign-in",
+  "employee/find-jobs",
+  "employee/my-applications",
+  "employee/score-cards-list",
+  "employee/scorecard",
+  "employee/chatbot",
+].map((path) => route(path, "routes/moved.tsx", { id: `moved:${path}` }))
+
 export default [
   layout("layouts/auth-layout.tsx", [
     route("sign-in", "routes/auth/sign-in.tsx"),
@@ -32,12 +57,6 @@ export default [
     }),
     route("forgot-password", "routes/auth/forgot-password.tsx"),
   ]),
-  route("employer/sign-in", "routes/auth/old-sign-in.tsx", {
-    id: "old-sign-in-employer",
-  }),
-  route("employee/sign-in", "routes/auth/old-sign-in.tsx", {
-    id: "old-sign-in-candidate",
-  }),
   layout("layouts/public-layout.tsx", [
     route("shared-scorecard/:shareId", "routes/shared-scorecard.tsx"),
   ]),
@@ -49,35 +68,42 @@ export default [
   ]),
   layout("layouts/employer-layout.tsx", [
     ...prefix("employer", [
-      index("routes/employer/dashboard.tsx", { id: "employer-home" }),
       route("dashboard", "routes/employer/dashboard.tsx"),
-      route("post-job", "routes/employer/post-job.tsx"),
-      route("view-jobs", "routes/employer/jobs.tsx"),
-      route("view-jobs/:jobId", "routes/employer/job.tsx"),
-      route("view-jobs/applicants/:jobId", "routes/employer/applicants.tsx"),
-      route("candidate-pool", "routes/employer/candidate-pool.tsx"),
-      route("unlocked-candidates", "routes/employer/unlocked.tsx"),
-      route("employee-profile", "routes/employer/candidate-profile.tsx"),
-      route("employee-score-card", "routes/employer/candidate-scorecard.tsx"),
+      route("jobs", "routes/employer/jobs.tsx"),
+      route("jobs/new", "routes/employer/post-job.tsx"),
+      route("jobs/:jobId", "routes/employer/job.tsx"),
+      route("jobs/:jobId/edit", "routes/employer/job.tsx", {
+        id: "job-edit",
+      }),
+      route("jobs/:jobId/applicants", "routes/employer/applicants.tsx"),
+      route("candidates", "routes/employer/candidate-pool.tsx"),
+      route("candidates/unlocked", "routes/employer/unlocked.tsx"),
+      route("candidates/:candidateId", "routes/employer/candidate-profile.tsx"),
+      route(
+        "candidates/:candidateId/scorecard",
+        "routes/employer/candidate-scorecard.tsx"
+      ),
       route("billing", "routes/employer/billing.tsx"),
-      route("invoice", "routes/employer/invoices.tsx"),
-      route("your-team", "routes/employer/team.tsx"),
+      route("invoices", "routes/employer/invoices.tsx"),
+      route("team", "routes/employer/team.tsx"),
       route("shared-links", "routes/employer/shared-links.tsx"),
-      route("profile", "routes/employer/company.tsx"),
-      route("chatbot", "routes/employer/assistant.tsx"),
+      route("company", "routes/employer/company.tsx"),
+      route("assistant", "routes/employer/assistant.tsx"),
+      route("*", "routes/not-found.tsx", { id: "employer-not-found" }),
     ]),
   ]),
   layout("layouts/employee-layout.tsx", [
     ...prefix("employee", [
-      index("routes/employee/find-jobs.tsx", { id: "candidate-home" }),
-      route("find-jobs", "routes/employee/find-jobs.tsx"),
-      route("my-applications", "routes/employee/applications.tsx"),
-      route("score-cards-list", "routes/employee/scorecards.tsx"),
-      route("scorecard", "routes/employee/scorecard.tsx"),
+      route("jobs", "routes/employee/find-jobs.tsx"),
+      route("applications", "routes/employee/applications.tsx"),
+      route("scorecards", "routes/employee/scorecards.tsx"),
+      route("scorecards/:scorecardId", "routes/employee/scorecard.tsx"),
       route("profile", "routes/employee/profile.tsx"),
       route("interview-guide", "routes/employee/interview-guide.tsx"),
-      route("chatbot", "routes/employee/assistant.tsx"),
+      route("assistant", "routes/employee/assistant.tsx"),
+      route("*", "routes/not-found.tsx", { id: "employee-not-found" }),
     ]),
   ]),
+  ...moved,
   ...lab,
 ] satisfies RouteConfig

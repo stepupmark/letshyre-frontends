@@ -9,6 +9,7 @@ import {
 } from "@workspace/ui/components/card"
 import { Progress } from "@workspace/ui/components/progress"
 import { Skeleton } from "@workspace/ui/components/skeleton"
+import { href } from "react-router"
 
 import { AnimatedNumber } from "@/components/animated-number"
 import { AppLink } from "@/components/app-link"
@@ -59,13 +60,13 @@ export function CreditsCard({
       </CardContent>
       <CardFooter className="flex flex-wrap gap-2">
         <AppLink
-          to="/employer/billing"
+          to={href("/employer/billing")}
           className={buttonLink({ className: "flex-1" })}
         >
           {t("credits.add")}
         </AppLink>
         <AppLink
-          to="/employer/invoice"
+          to={href("/employer/invoices")}
           className={buttonLink({ variant: "ghost" })}
         >
           {t("credits.invoices")}

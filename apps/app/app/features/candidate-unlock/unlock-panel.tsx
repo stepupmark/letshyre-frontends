@@ -7,7 +7,7 @@ import { CircleCheck, LockOpen } from "lucide-react"
 import { AnimatePresence } from "motion/react"
 import * as m from "motion/react-m"
 import { useState } from "react"
-import { useLocation } from "react-router"
+import { href, useLocation } from "react-router"
 import { toast } from "sonner"
 
 import { AnimatedNumber } from "@/components/animated-number"
@@ -122,7 +122,7 @@ export function UnlockPanel({
                 {t("panel.allUnlocked")}
               </p>
               <AppLink
-                to="/employer/unlocked-candidates"
+                to={href("/employer/candidates/unlocked")}
                 className={buttonLink({ variant: "outline", size: "sm" })}
               >
                 {t("panel.openUnlocked")}
@@ -179,7 +179,7 @@ export function UnlockPanel({
                     {t("panel.short", { cost, balance })}
                   </p>
                   <AppLink
-                    to={`/employer/billing?next=${encodeURIComponent(back)}`}
+                    to={`${href("/employer/billing")}?next=${encodeURIComponent(back)}`}
                     className={buttonLink()}
                   >
                     {t("panel.addCredits")}

@@ -1,10 +1,10 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { ArrowRight, BriefcaseBusiness, UserRound } from "lucide-react"
-import { Link } from "react-router"
+import { href, Link } from "react-router"
 
 const ROLES = [
-  { key: "employer", to: "/employer/register", icon: BriefcaseBusiness },
-  { key: "candidate", to: "/employee/register", icon: UserRound },
+  { key: "employer", to: href("/employer/register"), icon: BriefcaseBusiness },
+  { key: "candidate", to: href("/employee/register"), icon: UserRound },
 ] as const
 
 /** Two doors: hiring or job seeking. */

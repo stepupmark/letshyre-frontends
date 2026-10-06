@@ -1,6 +1,6 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { useNavigate } from "react-router"
+import { href, useNavigate } from "react-router"
 import { toast } from "sonner"
 
 import { applyForJob, type JobsPage } from "./api"
@@ -27,7 +27,7 @@ export function useApply() {
       toast.success(t("apply.done"), {
         action: {
           label: t("apply.track"),
-          onClick: () => void navigate("/employee/my-applications"),
+          onClick: () => void navigate(href("/employee/applications")),
         },
       })
       await queryClient.invalidateQueries({

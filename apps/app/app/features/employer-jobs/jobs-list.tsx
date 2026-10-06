@@ -9,7 +9,7 @@ import {
 } from "@tanstack/react-query"
 import { Plus } from "lucide-react"
 import { useCallback, useMemo } from "react"
-import { useSearchParams } from "react-router"
+import { href, useSearchParams } from "react-router"
 import { toast } from "sonner"
 
 import { AppLink } from "@/components/app-link"
@@ -83,7 +83,7 @@ export function JobsList() {
         cell: ({ row }) => (
           <div className="flex min-w-0 flex-col">
             <AppLink
-              to={`/employer/view-jobs/${row.original.id}`}
+              to={href("/employer/jobs/:jobId", { jobId: row.original.id })}
               data-row-open=""
               className="w-fit truncate font-medium outline-none hover:underline focus-visible:rounded-sm focus-visible:ring-[3px] focus-visible:ring-ring/50"
             >
@@ -232,7 +232,7 @@ export function JobsList() {
             title={t("list.emptyTitle")}
             description={t("list.emptyBody")}
             action={
-              <AppLink to="/employer/post-job" className={buttonLink()}>
+              <AppLink to={href("/employer/jobs/new")} className={buttonLink()}>
                 <Plus />
                 {t("list.postJob")}
               </AppLink>
@@ -258,7 +258,7 @@ export function JobsList() {
           const status = statusOf(job)
           return (
             <AppLink
-              to={`/employer/view-jobs/${job.id}`}
+              to={href("/employer/jobs/:jobId", { jobId: job.id })}
               className="flex flex-col gap-2 rounded-lg border p-4 transition-colors active:bg-muted"
             >
               <span className="flex items-start justify-between gap-3">

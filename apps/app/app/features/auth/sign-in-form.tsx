@@ -9,7 +9,7 @@ import { useMutation } from "@tanstack/react-query"
 import { CircleAlert } from "lucide-react"
 import { useMemo } from "react"
 import { useForm } from "react-hook-form"
-import { Link } from "react-router"
+import { href, Link } from "react-router"
 import { z } from "zod"
 
 import { Shake } from "@/components/motion/shake"
@@ -102,7 +102,7 @@ export function SignInForm({
           error={errors.password?.message}
           labelAside={
             <Link
-              to="/forgot-password"
+              to={href("/forgot-password")}
               className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
             >
               {t("signIn.forgot")}

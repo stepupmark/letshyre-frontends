@@ -1,6 +1,7 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { BriefcaseBusiness, Coins, FilePlus2 } from "lucide-react"
 import type { ReactNode } from "react"
+import { href } from "react-router"
 
 import { LOW_CREDITS } from "./queries"
 
@@ -39,7 +40,7 @@ export function useAttention({
           ? t("attention.creditsOut.body")
           : t("attention.creditsLow.body", { count: credits }),
       action: t("attention.addCredits"),
-      to: "/employer/billing",
+      to: href("/employer/billing"),
     })
   }
   if (openJobs === 0 && closedJobs > 0) {
@@ -49,7 +50,7 @@ export function useAttention({
       title: t("attention.noOpenJobs.title"),
       body: t("attention.noOpenJobs.body", { count: closedJobs }),
       action: t("attention.viewJobs"),
-      to: "/employer/view-jobs",
+      to: href("/employer/jobs"),
     })
   }
   if (openJobs === 0 && closedJobs === 0) {
@@ -59,7 +60,7 @@ export function useAttention({
       title: t("attention.noJobs.title"),
       body: t("attention.noJobs.body"),
       action: t("attention.postJob"),
-      to: "/employer/post-job",
+      to: href("/employer/jobs/new"),
     })
   }
   return items

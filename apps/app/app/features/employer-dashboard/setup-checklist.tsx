@@ -11,6 +11,7 @@ import {
 import { Progress } from "@workspace/ui/components/progress"
 import { Check, CircleDashed } from "lucide-react"
 import { useState } from "react"
+import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { buttonLink } from "@/lib/button-link"
@@ -45,8 +46,8 @@ export function SetupChecklist({
   const steps: Step[] = [
     { key: "account", done: true },
     { key: "company", done: true },
-    { key: "job", done: hasJobs, to: "/employer/post-job" },
-    { key: "team", done: hasTeam, to: "/employer/your-team" },
+    { key: "job", done: hasJobs, to: href("/employer/jobs/new") },
+    { key: "team", done: hasTeam, to: href("/employer/team") },
   ]
   const done = steps.filter((step) => step.done).length
   const next = steps.find((step) => !step.done)

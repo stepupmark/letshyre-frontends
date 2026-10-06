@@ -7,7 +7,7 @@ import {
 import { keepPreviousData, useQuery } from "@tanstack/react-query"
 import { BadgeCheck } from "lucide-react"
 import { useMemo, type ReactNode } from "react"
-import { useSearchParams } from "react-router"
+import { href, useSearchParams } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { DataTable } from "@/components/data-table"
@@ -170,7 +170,7 @@ export function UnlockedList({
           description={t("list.emptyBody")}
           action={
             <AppLink
-              to="/employer/candidate-pool"
+              to={href("/employer/candidates")}
               className={buttonLink({ variant: "outline" })}
             >
               {t("list.toPool")}
@@ -240,13 +240,15 @@ function Actions({
     <span className="flex gap-2">
       {share?.(row)}
       <AppLink
-        to={`/employer/employee-profile?id=${encodeURIComponent(row.id)}`}
+        to={href("/employer/candidates/:candidateId", { candidateId: row.id })}
         className={buttonLink({ variant: "outline", size: "sm" })}
       >
         {t("list.profile")}
       </AppLink>
       <AppLink
-        to={`/employer/employee-score-card?id=${encodeURIComponent(row.id)}`}
+        to={href("/employer/candidates/:candidateId/scorecard", {
+          candidateId: row.id,
+        })}
         className={buttonLink({ size: "sm" })}
       >
         {t("list.scorecard")}

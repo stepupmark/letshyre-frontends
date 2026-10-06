@@ -1,17 +1,21 @@
 import { ErrorScreen, NotFoundScreen } from "@workspace/blocks/error-screen"
 import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
-import { isRouteErrorResponse, Link } from "react-router"
+import { href, isRouteErrorResponse, Link, useLocation } from "react-router"
 
 import { errorId } from "./error-id"
 
 import { buttonLink } from "@/lib/button-link"
 
-const HOME = "/employer/dashboard"
+const homeFor = (pathname: string) =>
+  pathname.startsWith("/employee")
+    ? href("/employee/jobs")
+    : href("/employer/dashboard")
 
 /** Body of every ErrorBoundary. Needs an I18nProvider with `common` loaded. */
 export function RouteError({ error }: { error: unknown }) {
   const { t } = useTranslation("common")
+  const home = homeFor(useLocation().pathname)
 
   if (isRouteErrorResponse(error) && error.status === 404) {
     return (
@@ -21,7 +25,7 @@ export function RouteError({ error }: { error: unknown }) {
           title={t("notFound.title")}
           description={t("notFound.body")}
         >
-          <Link to={HOME} className={buttonLink({ size: "lg" })}>
+          <Link to={home} className={buttonLink({ size: "lg" })}>
             {t("notFound.goHome")}
           </Link>
         </NotFoundScreen>
@@ -56,7 +60,7 @@ export function RouteError({ error }: { error: unknown }) {
           {t("error.retry")}
         </Button>
         <Link
-          to={HOME}
+          to={home}
           className={buttonLink({ size: "lg", variant: "outline" })}
         >
           {t("error.goHome")}

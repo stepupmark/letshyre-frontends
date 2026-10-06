@@ -1,5 +1,5 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { Link } from "react-router"
+import { href, Link } from "react-router"
 
 import { RoleChoice } from "@/features/auth"
 
@@ -22,7 +22,7 @@ export default function GetStarted() {
       <p className="text-sm text-muted-foreground">
         {t("register.haveAccount")}{" "}
         <Link
-          to="/sign-in"
+          to={href("/sign-in")}
           viewTransition
           className="font-medium text-foreground underline underline-offset-4"
         >

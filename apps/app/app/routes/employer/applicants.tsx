@@ -1,6 +1,7 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { useQuery } from "@tanstack/react-query"
 import { ArrowLeft } from "lucide-react"
+import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { EmptyState } from "@/components/empty-state"
@@ -38,7 +39,7 @@ export default function ApplicantsPage({ params }: Route.ComponentProps) {
       <title>{`${t("applicants.title")} · ${job.data?.title ?? ""} · ${t("common:appName")}`}</title>
       <div className="flex flex-col gap-3">
         <AppLink
-          to={`/employer/view-jobs/${jobId}`}
+          to={href("/employer/jobs/:jobId", { jobId })}
           className="flex w-fit items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
         >
           <ArrowLeft className="size-4 rtl:-scale-x-100" />
@@ -71,7 +72,7 @@ export default function ApplicantsPage({ params }: Route.ComponentProps) {
             description={t("applicants.emptyBody")}
             action={
               <AppLink
-                to={`/employer/candidate-pool?jobId=${jobId}`}
+                to={`${href("/employer/candidates")}?jobId=${jobId}`}
                 className={buttonLink({ variant: "outline" })}
               >
                 {t("applicants.pool")}

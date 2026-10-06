@@ -15,7 +15,7 @@ import { Skeleton } from "@workspace/ui/components/skeleton"
 import { cn } from "@workspace/ui/lib/utils"
 import { useQuery } from "@tanstack/react-query"
 import { Check, Coins, Undo2 } from "lucide-react"
-import { useLocation, useNavigate, useSearchParams } from "react-router"
+import { href, useLocation, useNavigate, useSearchParams } from "react-router"
 
 import { AnimatedNumber } from "@/components/animated-number"
 import { AppLink } from "@/components/app-link"
@@ -114,7 +114,7 @@ export function Billing() {
             </p>
           )}
           <AppLink
-            to="/employer/invoice"
+            to={href("/employer/invoices")}
             className={buttonLink({ variant: "outline" })}
           >
             {t("invoices")}
