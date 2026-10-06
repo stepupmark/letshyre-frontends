@@ -6,7 +6,7 @@ import { pageMeta } from "@/lib/seo/page-meta"
 import { softwareApplicationSchema, webPageSchema } from "@/lib/seo/schema"
 import { absUrl } from "@/lib/seo/site"
 
-import type { Route } from "./+types/download"
+import type { Route } from "./+types/_site.$lang.download"
 
 export const loader = ({ params }: Route.LoaderArgs) =>
   pageData(params.lang, "download")

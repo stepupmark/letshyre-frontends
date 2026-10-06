@@ -1,16 +1,15 @@
-import { ContactPage } from "@/features/contact"
+import { InterviewPage } from "@/features/interview"
 import { pageData } from "@/lib/page-data.server"
 import { pageMeta } from "@/lib/seo/page-meta"
 import { webPageSchema } from "@/lib/seo/schema"
 
-import type { Route } from "./+types/contact"
+import type { Route } from "./+types/_site.$lang.how-it-works-interview"
 
 export const loader = ({ params }: Route.LoaderArgs) =>
-  pageData(params.lang, "contact")
+  pageData(params.lang, "interview")
 
-export const meta = pageMeta("contact", ({ lang, t, path }) => [
+export const meta = pageMeta("interview", ({ lang, t, path }) => [
   webPageSchema({
-    type: "ContactPage",
     lang,
     path,
     name: t("meta.name"),
@@ -18,4 +17,4 @@ export const meta = pageMeta("contact", ({ lang, t, path }) => [
   }),
 ])
 
-export default ContactPage
+export default InterviewPage

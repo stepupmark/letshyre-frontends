@@ -4,7 +4,7 @@ import { PAGES } from "@/lib/pages"
 import { pageMeta } from "@/lib/seo/page-meta"
 import { webPageSchema } from "@/lib/seo/schema"
 
-import type { Route } from "./+types/privacy"
+import type { Route } from "./+types/_site.$lang.policy"
 
 export const loader = ({ params }: Route.LoaderArgs) =>
   pageData(params.lang, "privacy")

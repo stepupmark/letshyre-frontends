@@ -3,7 +3,7 @@ import { HomePage, homeJsonLd } from "@/features/home"
 import { pageData } from "@/lib/page-data.server"
 import { pageMeta } from "@/lib/seo/page-meta"
 
-import type { Route } from "./+types/home"
+import type { Route } from "./+types/_site.$lang._index"
 
 export const loader = ({ params }: Route.LoaderArgs) =>
   pageData(params.lang, "home")

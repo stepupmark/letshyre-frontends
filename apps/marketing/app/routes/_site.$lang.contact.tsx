@@ -1,16 +1,16 @@
-import { AboutPage } from "@/features/about"
+import { ContactPage } from "@/features/contact"
 import { pageData } from "@/lib/page-data.server"
 import { pageMeta } from "@/lib/seo/page-meta"
 import { webPageSchema } from "@/lib/seo/schema"
 
-import type { Route } from "./+types/about"
+import type { Route } from "./+types/_site.$lang.contact"
 
 export const loader = ({ params }: Route.LoaderArgs) =>
-  pageData(params.lang, "about")
+  pageData(params.lang, "contact")
 
-export const meta = pageMeta("about", ({ lang, t, path }) => [
+export const meta = pageMeta("contact", ({ lang, t, path }) => [
   webPageSchema({
-    type: "AboutPage",
+    type: "ContactPage",
     lang,
     path,
     name: t("meta.name"),
@@ -18,4 +18,4 @@ export const meta = pageMeta("about", ({ lang, t, path }) => [
   }),
 ])
 
-export default AboutPage
+export default ContactPage

@@ -4,7 +4,7 @@ import { PAGES } from "@/lib/pages"
 import { pageMeta } from "@/lib/seo/page-meta"
 import { webPageSchema } from "@/lib/seo/schema"
 
-import type { Route } from "./+types/refund"
+import type { Route } from "./+types/_site.$lang.refund-policy"
 
 export const loader = ({ params }: Route.LoaderArgs) =>
   pageData(params.lang, "refund")

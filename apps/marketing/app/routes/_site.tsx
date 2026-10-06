@@ -10,12 +10,12 @@ import {
 
 import { ConsentGate } from "@/components/consent-gate"
 import { RouteError } from "@/components/route-error"
+import { SiteFooter } from "@/layouts/site-footer"
+import { SiteHeader } from "@/layouts/site-header"
 import { layoutData } from "@/lib/page-data.server"
 import { collectMessages } from "@/lib/seo/page-meta"
 
-import type { Route } from "./+types/site-layout"
-import { SiteFooter } from "./site-footer"
-import { SiteHeader } from "./site-header"
+import type { Route } from "./+types/_site"
 
 export const loader = ({ params }: Route.LoaderArgs) => layoutData(params.lang)
 
@@ -57,7 +57,7 @@ export default function SiteLayout({ loaderData }: Route.ComponentProps) {
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  const data = useRouteLoaderData<typeof loader>("layouts/site-layout")
+  const data = useRouteLoaderData<typeof loader>("routes/_site")
   if (!data) throw error
 
   return (

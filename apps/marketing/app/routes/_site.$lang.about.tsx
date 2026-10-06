@@ -1,15 +1,16 @@
-import { InterviewPage } from "@/features/interview"
+import { AboutPage } from "@/features/about"
 import { pageData } from "@/lib/page-data.server"
 import { pageMeta } from "@/lib/seo/page-meta"
 import { webPageSchema } from "@/lib/seo/schema"
 
-import type { Route } from "./+types/interview"
+import type { Route } from "./+types/_site.$lang.about"
 
 export const loader = ({ params }: Route.LoaderArgs) =>
-  pageData(params.lang, "interview")
+  pageData(params.lang, "about")
 
-export const meta = pageMeta("interview", ({ lang, t, path }) => [
+export const meta = pageMeta("about", ({ lang, t, path }) => [
   webPageSchema({
+    type: "AboutPage",
     lang,
     path,
     name: t("meta.name"),
@@ -17,4 +18,4 @@ export const meta = pageMeta("interview", ({ lang, t, path }) => [
   }),
 ])
 
-export default InterviewPage
+export default AboutPage
