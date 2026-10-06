@@ -259,7 +259,7 @@ export function Background({
                 <span
                   className={cn(
                     "absolute -inset-s-6.25 top-1.5 size-2 rounded-full",
-                    i === 0 ? "bg-primary" : "bg-border"
+                    i === 0 ? "bg-brand" : "bg-border"
                   )}
                   aria-hidden="true"
                 />

@@ -43,7 +43,7 @@ export function PlanCard({
   return (
     <Card
       data-featured={plan.featured || undefined}
-      className="row-span-4 grid grid-rows-subgrid gap-0 py-0 data-featured:ring-2 data-featured:ring-primary"
+      className="row-span-4 grid grid-rows-subgrid gap-0 py-0 data-featured:ring-2 data-featured:ring-brand"
     >
       <CardHeader className="gap-1 px-6 pt-6">
         <CardTitle>

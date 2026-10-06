@@ -40,7 +40,7 @@ export type Stage =
   | { name: "paying" | "razorpay" }
   | { name: "verifying" | "paid" | "unconfirmed"; payment: Payment }
 
-const BRAND = "#2563eb"
+const BRAND = "#266FFF"
 
 function prefill() {
   const session = readSession()

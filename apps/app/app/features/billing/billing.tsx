@@ -257,7 +257,7 @@ function PlanCard({ plan, onBuy }: { plan: Plan; onBuy: () => void }) {
     <article
       className={cn(
         "flex flex-col gap-5 rounded-xl border p-6",
-        plan.highlight && "border-primary ring-1 ring-primary"
+        plan.highlight && "border-brand ring-1 ring-brand"
       )}
     >
       <div className="flex items-start justify-between gap-3">

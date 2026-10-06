@@ -161,3 +161,28 @@
     --color-danger: var(--danger);
     --color-danger-muted: var(--danger-muted);
 }
+
+/* brand: #266FFF is under 4.5:1 with white text, so primary is a step darker */
+:root {
+    --brand: #266fff;
+    --primary: #2266f5;
+    --primary-foreground: oklch(1 0 0);
+    --ring: var(--brand);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-ring: var(--ring);
+}
+
+@theme inline {
+    --color-brand: var(--brand);
+}
+
+/* shadcn fades primary to 80% on hover, which drops white text below AA on blue */
+@layer utilities {
+    @media (hover: hover) {
+        [data-slot="button"].bg-primary:hover,
+        a[data-slot="badge"].bg-primary:hover {
+            background-color: color-mix(in oklab, var(--primary), black 12%);
+        }
+    }
+}

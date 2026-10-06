@@ -30,7 +30,7 @@ export function NavigationProgress({
     >
       {busy && late && (
         <>
-          <div className="h-0.5 w-full animate-pulse bg-primary motion-reduce:animate-none" />
+          <div className="h-0.5 w-full animate-pulse bg-brand motion-reduce:animate-none" />
           <span className="sr-only">{label}</span>
         </>
       )}

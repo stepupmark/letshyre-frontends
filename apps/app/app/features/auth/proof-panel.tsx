@@ -59,7 +59,7 @@ export function ProofPanel({ proof }: { proof: Proof }) {
               </span>
               <span className="h-1.5 overflow-hidden rounded-full bg-muted">
                 <span
-                  className="block h-full rounded-full bg-primary"
+                  className="block h-full rounded-full bg-brand"
                   style={{ width: `${value}%` }}
                 />
               </span>

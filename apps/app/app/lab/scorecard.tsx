@@ -124,7 +124,7 @@ function Summary() {
             <span className="text-muted-foreground">{metric.label}</span>
             <span className="h-1.5 overflow-hidden rounded-full bg-muted">
               <m.span
-                className="block h-full origin-left rounded-full bg-primary rtl:origin-right"
+                className="block h-full origin-left rounded-full bg-brand rtl:origin-right"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: metric.value / 100 }}
                 viewport={{ once: true }}

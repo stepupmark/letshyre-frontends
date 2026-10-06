@@ -19,7 +19,7 @@ export function Meter({
       <span className="h-1.5 overflow-hidden rounded-full bg-muted print:border">
         <span className="block h-full" style={{ width: `${clamped}%` }}>
           <m.span
-            className="block h-full origin-left rounded-full bg-primary rtl:origin-right print:transform-none!"
+            className="block h-full origin-left rounded-full bg-brand rtl:origin-right print:transform-none!"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
