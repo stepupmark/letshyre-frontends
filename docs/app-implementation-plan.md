@@ -79,15 +79,15 @@ Lessons from Phases 3–4 that become rules here:
 
 ### 1.3 Decisions needed
 
-| #   | Question                                                                                                                                                                                                                                                                               | Needed by |
-| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| D6  | ~~Incremental rollout~~ **Approved at 🔵 5:** incremental rollout on `letshyre.ai` (§1.1).                                                                                                                                                                                             | 🔵 5      |
-| D7  | **Taken in 6.2 (recommended option):** one sign-in page for both roles (`/sign-in`; the API returns the role)? Today there are two (`/employer/sign-in`, `/employee/sign-in`); both would redirect.                                                                                    | 6.2       |
-| D8  | **Taken in 6.3 (recommended option):** drop the modal tour (`react-joyride`) for a setup checklist on the dashboard plus one-time contextual tips on shadcn `Popover` (§2.4). Alternative: keep joyride, restyled.                                                                     | 6.3       |
-| D9  | ~~Data tables~~ **Settled in 5.6:** `@tanstack/react-table` v9 (shadcn's `data-table` pattern) for jobs, applicants, candidate pool, invoices, team?                                                                                                                                   | 5.6       |
-| D10 | ~~Numerals~~ **Settled in 5.0:** Outfit has tabular figures (`tnum`), measured in the lab; no second font.                                                                                                                                                                             | –         |
-| D11 | **Colour:** the shadcn neutral theme stays as is, no brand accent on `--primary`. Status colours are new tokens (`success`, `warning`, `info`, `danger`) added next to the shadcn ones, because lint blocks palette classes. Confirm?                                                  | 🔵 4      |
-| D12 | **Deferred to "later" in 6.2** (no events sent yet; needs a backend endpoint). **UX metrics:** a few first-party product events (task started/completed, step reached) sent to our own backend, so the UX targets in §2.6 can be measured. No third-party analytics. Yes / later / no? | 6.2       |
+| #   | Question                                                                                                                                                                                                                                                                                                                                      | Needed by |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| D6  | ~~Incremental rollout~~ **Approved at 🔵 5:** incremental rollout on `letshyre.ai` (§1.1).                                                                                                                                                                                                                                                    | 🔵 5      |
+| D7  | **Taken in 6.2 (recommended option):** one sign-in page for both roles (`/sign-in`; the API returns the role)? Today there are two (`/employer/sign-in`, `/employee/sign-in`); both would redirect.                                                                                                                                           | 6.2       |
+| D8  | **Taken in 6.3 (recommended option):** drop the modal tour (`react-joyride`) for a setup checklist on the dashboard plus one-time contextual tips on shadcn `Popover` (§2.4). Alternative: keep joyride, restyled.                                                                                                                            | 6.3       |
+| D9  | ~~Data tables~~ **Settled in 5.6:** `@tanstack/react-table` v9 (shadcn's `data-table` pattern) for jobs, applicants, candidate pool, invoices, team?                                                                                                                                                                                          | 5.6       |
+| D10 | ~~Numerals~~ **Settled in 5.0:** Outfit has tabular figures (`tnum`), measured in the lab; no second font.                                                                                                                                                                                                                                    | –         |
+| D11 | **Colour:** shadcn theme plus the brand blue: a `brand` token (`#266FFF`) for fills and rings, and `primary` at `#2266F5` for anything carrying text (AA with white; see `packages/ui/README.md`). Status colours are new tokens (`success`, `warning`, `info`, `danger`) added next to the shadcn ones, because lint blocks palette classes. | 🔵 4      |
+| D12 | **Deferred to "later" in 6.2** (no events sent yet; needs a backend endpoint). **UX metrics:** a few first-party product events (task started/completed, step reached) sent to our own backend, so the UX targets in §2.6 can be measured. No third-party analytics. Yes / later / no?                                                        | 6.2       |
 
 ### 1.4 What the backend needs to provide
 
@@ -121,8 +121,8 @@ process. Both need the same thing from the UI: clarity, speed and trust in what 
   is quiet: borders and whitespace, not shadows and fills.
 - **Typography carries hierarchy.** Few sizes, clear weights, tabular numbers (D10), real sentence-case
   headings. No gradient text, no all-caps labels.
-- **Colour means something.** Neutral shadcn theme (D11). Colour appears only for status, score bands
-  and warnings, always with a label or icon as well, never colour alone.
+- **Colour means something.** shadcn theme with one brand blue (D11). Beyond that, colour appears
+  only for status, score bands and warnings, always with a label or icon as well, never colour alone.
 - **Density where work happens.** Tables and lists are compact (40px rows, comfortable option);
   forms and onboarding are spacious and single-column.
 - **Light theme only.** `forcedTheme="light"` stays; a dark `prefers-color-scheme` doesn't switch the
@@ -336,7 +336,7 @@ Design is done in code, with real data shapes, not in mockups that drift from wh
 ### 5.1 `apps/app` skeleton
 
 - React Router 8, `ssr: false`, **no prerender** (SPA mode emits one `index.html`).
-  `routes.ts` is explicit (no `flatRoutes()`), like marketing.
+  `routes.ts` is explicit (no `flatRoutes()`; [ADR 0014](./adr/0014-app-route-config.md)).
 - Same toolchain as marketing: Tailwind 4 + `@workspace/ui`, ESLint `reactRouterApp` preset with
   boundaries, Vitest, Playwright (chromium, webkit, mobile), knip entry, `turbo.json` outputs.
 - `root.tsx`: `<html lang dir>` from the resolved locale, `ThemeProvider` (forced light),

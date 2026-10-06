@@ -45,6 +45,8 @@ motion tokens and rules ([ADR 0008](./adr/0008-motion.md)), and the ADRs in gene
 ## Rules that carry over
 
 - Features talk to each other only through their `index.ts`; lint enforces it.
+- Routes live in an explicit `routes.ts` ([ADR 0014](./adr/0014-app-route-config.md)); links use
+  `href()`, and each role layout ends with a `*` not-found route.
 - Every response is parsed with Zod; every visible string is a translation key.
 - Tests cover what's critical (money, session, data loss), not counts.
 - E2E mocks every API call; unknown calls fail the test.

@@ -18,3 +18,4 @@ record that supersedes the old one; old records stay as written.
 | [0011](./0011-data-tables.md)            | `@tanstack/react-table` for every table                  | Accepted |
 | [0012](./0012-csp-hashes.md)             | Hash-based CSP, report-only until a clean week           | Accepted |
 | [0013](./0013-marketing-file-routes.md)  | File-based routing for marketing                         | Accepted |
+| [0014](./0014-app-route-config.md)       | The app keeps its explicit `routes.ts`                   | Accepted |

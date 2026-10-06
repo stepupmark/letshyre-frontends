@@ -31,9 +31,9 @@ Locales: `en hi fr ja ar te ta es nl ru kn ml ur bn de pt it ko id`.
 |---|---|---|
 | `/get-started` | legacy | same path (kept as an alias of `/sign-in` role choice) |
 | `/forgot-password` | legacy | same path |
-| `/employer/sign-in`, `/employee/sign-in` | legacy | same paths (redirect to `/sign-in` if unified, step 6.1) |
+| `/employer/sign-in`, `/employee/sign-in` | legacy | redirect to `/sign-in` ([ADR 0009](../adr/0009-one-sign-in.md)) |
 | `/employer/register`, `/employee/register` | legacy | same paths |
-| `/employer/**`, `/employee/**` | legacy | same paths |
+| `/employer/**`, `/employee/**` | legacy | cleaned-up paths, old ones redirect ([§6](#6-app-urls-appsapp)) |
 | `/shared-scorecard/:shareId` | legacy | same path |
 
 From Phase 7: `letshyre.ai/<any app path>` → **301** `app.letshyre.ai/<same path + query>`. Links already
@@ -53,7 +53,7 @@ Interim `VITE_APP_URL=https://letshyre.ai`. Final `VITE_APP_URL=https://app.lets
 | Pricing: Free plan "Start free" | `/employer/register` | |
 | Pricing: buy plan / top-up | `/employer/billing?checkout=<key>` | `<key>` = plan id or `<n>-credits`, same as today's `?checkout=` values. Signed-out users sign in and return here. Needs the legacy patch (step 4.5) |
 | Pricing: Custom "Talk to sales" | marketing `/:lang/contact?topic=sales` | Stays on marketing |
-| Download page: "Sign in" mention | `/employee/sign-in` | |
+| Download page: "Sign in" mention | `/employee/sign-in` | Redirects to `/sign-in` in the new app |
 
 The language is carried across via the `lh_locale` cookie (`Domain=.letshyre.ai`), not the URL.
 
@@ -73,6 +73,54 @@ The nginx config was removed and no host is chosen yet. Whatever serves `build/c
 - Unknown paths → 404 with the prerendered `/404` page as the body.
 - Prerender writes `en/pricing/index.html`. Serve it at `/en/pricing` with 200, without redirecting to
   `/en/pricing/` (many static hosts do this by default).
+
+## 6. App URLs (`apps/app`)
+
+Cleaned up 2026-10 ([ADR 0014](../adr/0014-app-route-config.md)). `app/routes.ts` is the source;
+links are typed with `href()`.
+
+| Area | Paths |
+|---|---|
+| Auth | `/sign-in`, `/get-started`, `/forgot-password`, `/employer/register`, `/employee/register` |
+| Public | `/shared-scorecard/:shareId` |
+| Onboarding | `/employer/onboarding`, `/employee/onboarding` |
+| Employer | `/employer/dashboard`, `/employer/jobs`, `/employer/jobs/new`, `/employer/jobs/:jobId`, `/employer/jobs/:jobId/edit`, `/employer/jobs/:jobId/applicants`, `/employer/candidates`, `/employer/candidates/unlocked`, `/employer/candidates/:candidateId`, `/employer/candidates/:candidateId/scorecard`, `/employer/billing`, `/employer/invoices`, `/employer/team`, `/employer/shared-links`, `/employer/company`, `/employer/assistant` |
+| Employee | `/employee/jobs`, `/employee/applications`, `/employee/scorecards`, `/employee/scorecards/:scorecardId`, `/employee/profile`, `/employee/interview-guide`, `/employee/assistant` |
+
+Sign-in sends employers to `/employer/dashboard` and candidates to `/employee/jobs`. Any other
+`/employer/*` or `/employee/*` path is a 404 inside the dashboard shell.
+
+**Old URLs keep redirecting.** `routes/moved.tsx` redirects in the browser using the map in
+`app/lib/moved.ts`; the query string is kept. A host can add 301s from the same map later. Never
+remove an entry: these URLs are in bookmarks and sent emails.
+
+| Old | New |
+|---|---|
+| `/employer/sign-in`, `/employee/sign-in` | `/sign-in` |
+| `/employer` | `/employer/dashboard` |
+| `/employer/post-job` | `/employer/jobs/new` |
+| `/employer/view-jobs` | `/employer/jobs` |
+| `/employer/view-jobs/:jobId` | `/employer/jobs/:jobId` |
+| `/employer/view-jobs/:jobId?edit=1` | `/employer/jobs/:jobId/edit` |
+| `/employer/view-jobs/applicants/:jobId` | `/employer/jobs/:jobId/applicants` |
+| `/employer/candidate-pool` | `/employer/candidates` |
+| `/employer/unlocked-candidates` | `/employer/candidates/unlocked` |
+| `/employer/employee-profile?id=<id>` | `/employer/candidates/<id>` (no id: `/employer/candidates/unlocked`) |
+| `/employer/employee-score-card?id=<id>` | `/employer/candidates/<id>/scorecard` (no id: `/employer/candidates/unlocked`) |
+| `/employer/invoice` | `/employer/invoices` |
+| `/employer/your-team` | `/employer/team` |
+| `/employer/profile` | `/employer/company` |
+| `/employer/chatbot` | `/employer/assistant` |
+| `/employee`, `/employee/find-jobs` | `/employee/jobs` |
+| `/employee/my-applications` | `/employee/applications` |
+| `/employee/score-cards-list` | `/employee/scorecards` |
+| `/employee/scorecard?id=<id>` | `/employee/scorecards/<id>` (no id: `/employee/scorecards`) |
+| `/employee/chatbot` | `/employee/assistant` |
+
+Unchanged: `/employer/billing`, `/employer/shared-links`, `/employer/onboarding`, `/employer/register`,
+`/employee/profile`, `/employee/interview-guide`, `/employee/onboarding`, `/employee/register`.
+The `/employer` and `/employee` prefixes stay (`lib/app-paths.ts`, host routing); `/employee` is
+not renamed to `/candidate` because backend emails and host config use it.
 
 ## Approved (Gate 1, 2026-10-03)
 

@@ -109,9 +109,11 @@ existing e2e URL-contract and SEO specs guard the URLs from then on.
     `/en/pricing/`, the opposite of the canonical. The host must serve the folder index without the
     slash, or postbuild also writes `en/pricing.html`.
 
-## Appendix: app routing (deferred)
+## Appendix: app routing (done)
 
-Found during the audit, kept for when the app's turn comes:
+**Done 2026-10-06** ([ADR 0014](./adr/0014-app-route-config.md)): the app keeps `routes.ts`; the
+URLs below were cleaned up with redirects, links are typed with `href()` and each role layout has a
+not-found route. `lib/app-paths.ts` stays, since the prefixes didn't change. Original findings:
 
 - Record ids in the query string (`employee-profile?id=`, `employee-score-card?id=`,
   `scorecard?id=`) instead of path params.
