@@ -1,48 +1,53 @@
 {
-  "title": "Tutto quello che accade prima della tua prima domanda",
+  "title": "Tutto quello che accade prima della tua <hl>prima domanda</hl>",
   "intro": "Otto passaggi ti separano dal colloquio. Ecco esattamente cosa comporta ciascuno, così non ci saranno sorprese il giorno stesso.",
+  "phases": {
+    "setup": "Preparati",
+    "checks": "Supera i controlli",
+    "start": "Inizia il colloquio"
+  },
   "steps": {
     "download": {
-      "title": "Scarica l'App Desktop",
-      "desc": "Per garantire un ambiente di test sicuro, tutti i colloqui devono essere svolti sulla nostra applicazione desktop dedicata. <dl>Scarica e installa l'app LetsHyre</dl> per il tuo sistema operativo."
+      "title": "Scarica l'app desktop",
+      "desc": "I colloqui si svolgono nell'app desktop di LetsHyre, che protegge la sessione. <dl>Scarica l'app</dl> e installala sul tuo computer Windows."
     },
     "signIn": {
-      "title": "Accedi all'App",
-      "desc": "Avvia l'app desktop e accedi con le tue credenziali di candidato. Se non hai ancora un account, visita letshyre.ai per creare un profilo. Il tuo account contiene il tuo slot per il colloquio, la foto profilo e i risultati."
+      "title": "Accedi",
+      "desc": "Apri l'app e accedi con il tuo account candidato. Nuovo su LetsHyre? <reg>Crea prima un account</reg>. Contiene i tuoi slot di colloquio, la foto profilo e i risultati."
     },
     "dashboard": {
-      "title": "Parti dalla Tua Dashboard",
-      "desc": "Dopo l'accesso arriverai alla tua dashboard personale con il tuo profilo e gli slot per il colloquio disponibili. Clicca su Inizia Colloquio per cominciare: l'app esegue immediatamente un controllo di sicurezza in background prima di qualsiasi altra cosa."
+      "title": "Apri la tua dashboard",
+      "desc": "La dashboard mostra il tuo profilo e gli slot di colloquio disponibili per te. Quando clicchi su Inizia Colloquio, l'app esegue un rapido controllo di sicurezza prima di aprire qualsiasi altra cosa."
     },
     "clearEnv": {
-      "title": "Libera il Tuo Ambiente",
-      "desc": "Lo scanner di sicurezza verifica la presenza di applicazioni che potrebbero compromettere l'integrità dell'esame: browser web, software di registrazione schermo, assistenti IA e strumenti per videochiamate. Ogni app segnalata deve essere chiusa prima di poter procedere.",
-      "tip": "Suggerimento: chiudi tutte le altre app prima di cliccare su Inizia Colloquio"
+      "title": "Chiudi le altre app",
+      "desc": "Il controllo di sicurezza cerca le app che potrebbero compromettere un colloquio equo, come browser web, registratori dello schermo, assistenti IA e strumenti per videochiamate. Chiudi tutto ciò che segnala per continuare.",
+      "tip": "Chiudi tutte le altre app prima di cliccare su Inizia Colloquio."
     },
     "permissions": {
-      "title": "Concedi i Permessi del Dispositivo",
-      "desc": "Ti verrà chiesto di consentire l'accesso a microfono, fotocamera e schermo. Tutti e tre sono necessari per il proctoring in tempo reale. Concedi ogni permesso quando il sistema operativo lo richiede: il colloquio non può procedere senza di essi."
+      "title": "Consenti accesso a fotocamera, microfono e schermo",
+      "desc": "L'app chiede l'accesso a microfono, fotocamera e schermo. Servono tutti e tre per supervisionare il colloquio, quindi consenti ciascuno quando il computer lo chiede."
     },
     "verifyId": {
-      "title": "Verifica la Tua Identità",
-      "desc": "Leggi ad alta voce una breve dichiarazione per la registrazione vocale, quindi consenti alla fotocamera di scattare una foto dal vivo. La tua immagine in tempo reale viene confrontata con la foto profilo caricata in fase di creazione dell'account.",
-      "tip": "Suggerimento: guarda direttamente la fotocamera in una stanza ben illuminata"
+      "title": "Verifica la tua identità",
+      "desc": "Leggi ad alta voce una breve frase per registrare la tua voce, poi lascia che la fotocamera scatti una foto dal vivo. La confrontiamo con la foto profilo del tuo account.",
+      "tip": "Guarda dritto nella fotocamera in una stanza ben illuminata."
     },
     "chooseRole": {
-      "title": "Scegli il Ruolo per il Colloquio",
-      "desc": "Seleziona la posizione per cui stai sostenendo il colloquio. Puoi procedere con il ruolo assegnato durante l'onboarding, oppure scegliere uno slot diverso se disponibili più opzioni."
+      "title": "Scegli il ruolo",
+      "desc": "Seleziona la posizione per cui stai facendo il colloquio. Puoi mantenere quella assegnata durante l'onboarding o sceglierne un'altra se hai più slot disponibili."
     },
     "begin": {
-      "title": "Inizia il Tuo Colloquio",
-      "desc": "Sei pronto. La finestra del colloquio si apre a schermo intero con la registrazione dello schermo attiva. Rispondi a ogni domanda entro il tempo assegnato: puoi navigare tra le domande prima che il timer della sessione scada."
+      "title": "Inizia il colloquio",
+      "desc": "Il colloquio si apre a schermo intero con la registrazione dello schermo attiva. Rispondi a ogni domanda entro il tempo previsto. Puoi spostarti tra le domande finché il timer della sessione non scade."
     }
   },
+  "tip": "Suggerimento",
   "toc": {
-    "label": "In questa pagina",
-    "steps": "Passaggi"
+    "label": "In questa pagina"
   },
   "requirements": {
-    "title": "Cosa ti serve",
+    "title": "Prima di iniziare",
     "description": "Controlla questi punti prima del giorno del colloquio.",
     "items": {
       "computer": {
@@ -67,16 +72,22 @@
       }
     }
   },
+  "privacy": {
+    "title": "Cosa registriamo e perché",
+    "body": "Durante il colloquio registriamo fotocamera, microfono e schermo. Le aziende che sbloccano il tuo profilo possono guardare la registrazione insieme alla tua valutazione IA. La tua foto dal vivo viene confrontata con la foto profilo per confermare che sei tu. Leggi l'<pp>informativa sulla privacy</pp> per i dettagli."
+  },
   "cta": {
-    "title": "Pronto per iniziare?",
-    "desc": "Scarica l'app desktop, accedi al tuo account e clicca su Inizia Colloquio quando sei pronto.",
-    "button": "Scarica App"
+    "title": "Quando sei pronto",
+    "desc": "Scarica l'app desktop, accedi e clicca su Inizia Colloquio quando sei pronto.",
+    "button": "Scarica App",
+    "secondary": "Crea un account"
   },
   "meta": {
     "title": "Guida al colloquio IA per i candidati | letshyre.ai",
-    "description": "Cosa aspettarsi: installare l'app, accedere, verificare la propria identità, liberare lo spazio e rispondere alle domande del ruolo.",
+    "description": "Come funziona il colloquio IA di LetsHyre: cosa ti serve, come configurare l'app desktop, la verifica dell'identità e cosa succede all'inizio.",
     "name": "Guida al colloquio IA per i candidati",
     "schemaDescription": "Guida passo passo al processo di colloquio dei candidati LetsHyre.",
-    "crumb": "Guida al colloquio"
+    "crumb": "Guida al colloquio",
+    "audience": "Candidati"
   }
 }

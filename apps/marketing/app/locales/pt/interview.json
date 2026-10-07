@@ -1,48 +1,53 @@
 {
-  "title": "Tudo o que acontece antes da sua primeira pergunta",
+  "title": "Tudo o que acontece antes da sua <hl>primeira pergunta</hl>",
   "intro": "Oito passos separam-no da entrevista. Aqui está exatamente o que cada um envolve, para que não haja surpresas no dia.",
+  "phases": {
+    "setup": "Prepare-se",
+    "checks": "Passe nas verificações",
+    "start": "Comece a entrevista"
+  },
   "steps": {
     "download": {
-      "title": "Transferir a Aplicação de Ambiente de Trabalho",
-      "desc": "Para garantir um ambiente de teste seguro, todas as entrevistas devem ser realizadas na nossa aplicação de ambiente de trabalho dedicada. <dl>Transfira e instale a aplicação LetsHyre</dl> para o seu sistema operativo."
+      "title": "Transfira a aplicação de ambiente de trabalho",
+      "desc": "As entrevistas decorrem na aplicação de ambiente de trabalho da LetsHyre, que mantém a sessão segura. <dl>Transfira a aplicação</dl> e instale-a no seu computador Windows."
     },
     "signIn": {
-      "title": "Iniciar Sessão na Aplicação",
-      "desc": "Abra a aplicação de ambiente de trabalho e inicie sessão com as suas credenciais de candidato. Se ainda não tiver conta, visite letshyre.ai para criar um perfil. A sua conta guarda o seu horário de entrevista, fotografia de perfil e resultados."
+      "title": "Inicie sessão",
+      "desc": "Abra a aplicação e inicie sessão com a sua conta de candidato. É novo na LetsHyre? <reg>Crie primeiro uma conta</reg>. Nela ficam os seus horários de entrevista, a foto de perfil e os resultados."
     },
     "dashboard": {
-      "title": "Comece a Partir do Seu Painel",
-      "desc": "Após iniciar sessão, será direcionado para o seu painel pessoal, onde poderá ver o seu perfil e os horários de entrevista disponíveis. Clique em Iniciar Entrevista para começar — a aplicação executa imediatamente uma verificação de segurança em segundo plano antes de mais nada abrir."
+      "title": "Abra o seu painel",
+      "desc": "O seu painel mostra o seu perfil e os horários de entrevista disponíveis para si. Quando clica em Iniciar Entrevista, a aplicação faz uma verificação de segurança rápida antes de abrir qualquer outra coisa."
     },
     "clearEnv": {
-      "title": "Prepare o Seu Ambiente",
-      "desc": "O verificador de segurança procura aplicações que possam comprometer a integridade do exame — navegadores web, gravadores de ecrã, assistentes de IA e ferramentas de videochamada. Qualquer aplicação sinalizada tem de ser fechada antes de poder continuar.",
-      "tip": "Dica: feche todas as outras aplicações antes de clicar em Iniciar Entrevista"
+      "title": "Feche as outras aplicações",
+      "desc": "A verificação de segurança procura aplicações que possam prejudicar uma entrevista justa, como navegadores, gravadores de ecrã, assistentes de IA e ferramentas de videochamada. Feche tudo o que for assinalado para continuar.",
+      "tip": "Feche todas as outras aplicações antes de clicar em Iniciar Entrevista."
     },
     "permissions": {
-      "title": "Conceda Permissões do Dispositivo",
-      "desc": "Ser-lhe-á pedido que permita o acesso ao microfone, câmara e ecrã. Os três são necessários para a monitorização em direto. Conceda cada permissão quando o seu sistema operativo o solicitar — a entrevista não pode continuar sem elas."
+      "title": "Permita o acesso à câmara, ao microfone e ao ecrã",
+      "desc": "A aplicação pede acesso ao microfone, à câmara e ao ecrã. Precisa dos três para supervisionar a entrevista, por isso permita cada um quando o computador pedir."
     },
     "verifyId": {
-      "title": "Verifique a Sua Identidade",
-      "desc": "Leia uma breve declaração em voz alta para o registo de voz e, em seguida, permita que a câmara tire uma fotografia em direto. A sua imagem em direto é comparada com a fotografia de perfil que carregou ao criar a sua conta.",
-      "tip": "Dica: olhe diretamente para a câmara numa divisão bem iluminada"
+      "title": "Confirme a sua identidade",
+      "desc": "Leia em voz alta uma frase curta para registar a sua voz e deixe a câmara tirar uma foto ao vivo. Comparamo-la com a foto de perfil da sua conta.",
+      "tip": "Fique de frente para a câmara numa sala bem iluminada."
     },
     "chooseRole": {
-      "title": "Escolha a Sua Função para a Entrevista",
-      "desc": "Selecione a posição para a qual está a ser entrevistado. Pode prosseguir com a função atribuída durante o processo de integração ou escolher um horário diferente, se houver vários disponíveis."
+      "title": "Escolha a sua função",
+      "desc": "Selecione a função para a qual está a fazer a entrevista. Pode manter a função do registo inicial ou escolher outro horário, se tiver mais do que um disponível."
     },
     "begin": {
-      "title": "Inicie a Sua Entrevista",
-      "desc": "Está tudo pronto. A janela da entrevista abre em ecrã completo com a gravação de ecrã ativa. Responda a cada pergunta dentro do tempo atribuído — pode navegar entre perguntas antes de o temporizador da sessão terminar."
+      "title": "Comece a sua entrevista",
+      "desc": "A entrevista abre em ecrã inteiro com a gravação do ecrã ativa. Responda a cada pergunta dentro do tempo previsto. Pode navegar entre perguntas até o temporizador da sessão terminar."
     }
   },
+  "tip": "Dica",
   "toc": {
-    "label": "Nesta página",
-    "steps": "Etapas"
+    "label": "Nesta página"
   },
   "requirements": {
-    "title": "O que você precisa",
+    "title": "Antes de começar",
     "description": "Confira estes itens antes do dia da sua entrevista.",
     "items": {
       "computer": {
@@ -67,16 +72,22 @@
       }
     }
   },
+  "privacy": {
+    "title": "O que gravamos e porquê",
+    "body": "Durante a entrevista, gravamos a sua câmara, o microfone e o ecrã. As empresas que desbloqueiam o seu perfil podem ver a gravação com a sua avaliação de IA. A sua foto ao vivo é comparada com a foto de perfil para confirmar que é mesmo você. Leia a <pp>política de privacidade</pp> para mais detalhes."
+  },
   "cta": {
-    "title": "Pronto para começar?",
-    "desc": "Transfira a aplicação de ambiente de trabalho, inicie sessão na sua conta e clique em Iniciar Entrevista quando estiver preparado.",
-    "button": "Transferir Aplicação"
+    "title": "Quando estiver pronto",
+    "desc": "Transfira a aplicação de ambiente de trabalho, inicie sessão e clique em Iniciar Entrevista quando estiver preparado.",
+    "button": "Transferir Aplicação",
+    "secondary": "Criar conta"
   },
   "meta": {
     "title": "Guia da entrevista com IA para candidatos | letshyre.ai",
-    "description": "O que esperar: instalar a aplicação, iniciar sessão, verificar a identidade, preparar o espaço e responder às perguntas da função.",
+    "description": "Como funciona a entrevista com IA da LetsHyre: o que precisa, como preparar a aplicação, a verificação de identidade e o que acontece ao começar.",
     "name": "Guia da entrevista com IA para candidatos",
     "schemaDescription": "Guia passo a passo do processo de entrevista de candidatos da LetsHyre.",
-    "crumb": "Guia da entrevista"
+    "crumb": "Guia da entrevista",
+    "audience": "Candidatos a emprego"
   }
 }

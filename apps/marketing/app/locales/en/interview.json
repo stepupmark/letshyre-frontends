@@ -1,48 +1,53 @@
 {
-  "title": "Everything that happens before your first question",
+  "title": "Everything that happens before your <hl>first question</hl>",
   "intro": "Eight steps stand between you and the interview. Here's exactly what each one involves so there are no surprises on the day.",
+  "phases": {
+    "setup": "Get set up",
+    "checks": "Pass the checks",
+    "start": "Start your interview"
+  },
   "steps": {
     "download": {
-      "title": "Download the Desktop App",
-      "desc": "To ensure a secure testing environment, all interviews must be taken on our dedicated desktop application. <dl>Download and install the LetsHyre app</dl> for your operating system."
+      "title": "Download the desktop app",
+      "desc": "Interviews run in the LetsHyre desktop app, which keeps the session secure. <dl>Download the app</dl> and install it on your Windows computer."
     },
     "signIn": {
-      "title": "Sign In to the App",
-      "desc": "Launch the desktop app and log in with your candidate credentials. If you don't have an account yet, visit letshyre.ai to create a profile. Your account holds your interview slot, profile photo, and results."
+      "title": "Sign in",
+      "desc": "Open the app and sign in with your candidate account. New to LetsHyre? <reg>Create an account</reg> first. It holds your interview slots, profile photo and results."
     },
     "dashboard": {
-      "title": "Start from Your Dashboard",
-      "desc": "After signing in you'll land on your personal dashboard showing your profile and available interview slots. Click Take Interview to begin — the app immediately runs a background security check before anything else opens."
+      "title": "Open your dashboard",
+      "desc": "Your dashboard shows your profile and the interview slots open to you. When you click Take Interview, the app runs a quick security check before anything else opens."
     },
     "clearEnv": {
-      "title": "Clear Your Environment",
-      "desc": "The security scanner checks for applications that could compromise exam integrity — web browsers, screen recorders, AI assistants, and video-call tools. Any flagged app must be closed before you can proceed.",
-      "tip": "Tip: close all other apps before clicking Take Interview"
+      "title": "Close other apps",
+      "desc": "The security check looks for apps that could get in the way of a fair interview, such as web browsers, screen recorders, AI assistants and video-call tools. Close anything it flags to continue.",
+      "tip": "Close every other app before you click Take Interview."
     },
     "permissions": {
-      "title": "Grant Device Permissions",
-      "desc": "You'll be prompted to allow access to your microphone, camera, and screen. All three are required for live proctoring. Grant each permission when your operating system asks — the interview cannot proceed without them."
+      "title": "Allow camera, microphone and screen access",
+      "desc": "The app asks for your microphone, camera and screen. It needs all three to supervise the interview, so allow each one when your computer asks."
     },
     "verifyId": {
-      "title": "Verify Your Identity",
-      "desc": "Read a short statement aloud for voice registration, then allow the camera to take a live photo. Your live image is compared against the profile photo you uploaded when creating your account.",
-      "tip": "Tip: face the camera directly in a well-lit room"
+      "title": "Verify your identity",
+      "desc": "Read a short statement aloud to register your voice, then let the camera take a live photo. We compare it with the profile photo on your account.",
+      "tip": "Face the camera in a well-lit room."
     },
     "chooseRole": {
-      "title": "Choose Your Interview Role",
-      "desc": "Select the position you're interviewing for. You can proceed with the role assigned during onboarding, or choose a different slot if multiple are available to you."
+      "title": "Choose your role",
+      "desc": "Pick the position you're interviewing for. You can keep the role from your onboarding, or choose another slot if more than one is open to you."
     },
     "begin": {
-      "title": "Begin Your Interview",
-      "desc": "You're all set. The interview window opens in full-screen with screen recording active. Answer each question within the allocated time — you can navigate between questions before the session timer runs out."
+      "title": "Begin your interview",
+      "desc": "The interview opens full screen with screen recording on. Answer each question within its time limit. You can move between questions until the session timer runs out."
     }
   },
+  "tip": "Tip",
   "toc": {
-    "label": "On this page",
-    "steps": "Steps"
+    "label": "On this page"
   },
   "requirements": {
-    "title": "What you need",
+    "title": "Before you start",
     "description": "Check these before the day of your interview.",
     "items": {
       "computer": {
@@ -67,16 +72,22 @@
       }
     }
   },
+  "privacy": {
+    "title": "What we record and why",
+    "body": "During the interview we record your camera, microphone and screen. Employers who unlock your profile can watch the recording with your AI scorecard. Your live photo is compared with your profile photo to confirm it's you. The <pp>privacy policy</pp> has the details."
+  },
   "cta": {
-    "title": "Ready to get started?",
-    "desc": "Download the desktop app, sign in to your account, and click Take Interview when you're prepared.",
-    "button": "Download App"
+    "title": "Ready when you are",
+    "desc": "Download the desktop app, sign in, and click Take Interview when you're ready.",
+    "button": "Download the app",
+    "secondary": "Create an account"
   },
   "meta": {
     "title": "AI Interview Guide for Candidates | letshyre.ai",
-    "description": "What to expect: install the desktop app, sign in, verify your identity, clear your space, and answer role-specific questions.",
+    "description": "How the LetsHyre AI interview works: what you need, setting up the desktop app, the identity checks, and what happens when you begin.",
     "name": "AI Interview Guide for Candidates",
     "schemaDescription": "Step-by-step guide to the LetsHyre candidate interview process.",
-    "crumb": "Interview Guide"
+    "crumb": "Interview Guide",
+    "audience": "Job candidates"
   }
 }

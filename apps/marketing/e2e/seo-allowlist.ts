@@ -19,6 +19,11 @@ export const SEO_ALLOWLIST: {
   },
   {
     page: "/how-it-works-interview",
+    field: "description",
+    reason: "rewritten around what candidates search for",
+  },
+  {
+    page: "/how-it-works-interview",
     field: "ogImage",
     reason: "renamed to match the new /interview-guide URL",
   },

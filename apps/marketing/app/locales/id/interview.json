@@ -1,48 +1,53 @@
 {
-  "title": "Semua yang terjadi sebelum pertanyaan pertama Anda",
+  "title": "Semua yang terjadi sebelum <hl>pertanyaan pertama</hl> Anda",
   "intro": "Delapan langkah memisahkan Anda dari sesi wawancara. Berikut penjelasan lengkap setiap langkah agar tidak ada kejutan pada harinya.",
+  "phases": {
+    "setup": "Siapkan semuanya",
+    "checks": "Lewati pemeriksaan",
+    "start": "Mulai wawancara"
+  },
   "steps": {
     "download": {
-      "title": "Unduh Aplikasi Desktop",
-      "desc": "Untuk memastikan lingkungan tes yang aman, semua wawancara harus dilakukan melalui aplikasi desktop khusus kami. <dl>Unduh dan instal aplikasi LetsHyre</dl> untuk sistem operasi Anda."
+      "title": "Unduh aplikasi desktop",
+      "desc": "Wawancara berlangsung di aplikasi desktop LetsHyre, yang menjaga sesi tetap aman. <dl>Unduh aplikasinya</dl> dan pasang di komputer Windows Anda."
     },
     "signIn": {
-      "title": "Masuk ke Aplikasi",
-      "desc": "Buka aplikasi desktop dan masuk menggunakan kredensial kandidat Anda. Jika Anda belum memiliki akun, kunjungi letshyre.ai untuk membuat profil. Akun Anda menyimpan jadwal wawancara, foto profil, dan hasil Anda."
+      "title": "Masuk",
+      "desc": "Buka aplikasi dan masuk dengan akun kandidat Anda. Baru di LetsHyre? <reg>Buat akun</reg> terlebih dahulu. Akun ini menyimpan jadwal wawancara, foto profil, dan hasil Anda."
     },
     "dashboard": {
-      "title": "Mulai dari Dashboard Anda",
-      "desc": "Setelah masuk, Anda akan diarahkan ke dashboard pribadi yang menampilkan profil dan jadwal wawancara yang tersedia. Klik Mulai Wawancara untuk memulai — aplikasi akan langsung menjalankan pemeriksaan keamanan latar belakang sebelum hal lain terbuka."
+      "title": "Buka dasbor Anda",
+      "desc": "Dasbor menampilkan profil Anda dan jadwal wawancara yang tersedia untuk Anda. Saat Anda mengklik Mulai Wawancara, aplikasi menjalankan pemeriksaan keamanan singkat sebelum membuka apa pun."
     },
     "clearEnv": {
-      "title": "Bersihkan Lingkungan Anda",
-      "desc": "Pemindai keamanan memeriksa aplikasi yang dapat mengganggu integritas ujian — browser web, perekam layar, asisten AI, dan alat panggilan video. Aplikasi yang terdeteksi harus ditutup sebelum Anda dapat melanjutkan.",
-      "tip": "Tips: tutup semua aplikasi lain sebelum mengklik Mulai Wawancara"
+      "title": "Tutup aplikasi lain",
+      "desc": "Pemeriksaan keamanan mencari aplikasi yang dapat mengganggu wawancara yang adil, seperti browser web, perekam layar, asisten AI, dan alat panggilan video. Tutup semua yang ditandai untuk melanjutkan.",
+      "tip": "Tutup semua aplikasi lain sebelum mengklik Mulai Wawancara."
     },
     "permissions": {
-      "title": "Berikan Izin Perangkat",
-      "desc": "Anda akan diminta untuk mengizinkan akses ke mikrofon, kamera, dan layar Anda. Ketiganya diperlukan untuk pengawasan langsung. Berikan setiap izin saat diminta oleh sistem operasi Anda — wawancara tidak dapat dilanjutkan tanpa izin tersebut."
+      "title": "Izinkan akses kamera, mikrofon, dan layar",
+      "desc": "Aplikasi meminta akses ke mikrofon, kamera, dan layar Anda. Ketiganya diperlukan untuk mengawasi wawancara, jadi izinkan masing-masing saat komputer Anda memintanya."
     },
     "verifyId": {
-      "title": "Verifikasi Identitas Anda",
-      "desc": "Bacakan pernyataan singkat untuk pendaftaran suara, lalu izinkan kamera mengambil foto langsung. Gambar langsung Anda akan dibandingkan dengan foto profil yang Anda unggah saat membuat akun.",
-      "tip": "Tips: hadapkan wajah langsung ke kamera di ruangan dengan pencahayaan baik"
+      "title": "Verifikasi identitas Anda",
+      "desc": "Bacakan pernyataan singkat untuk mendaftarkan suara Anda, lalu biarkan kamera mengambil foto langsung. Kami mencocokkannya dengan foto profil di akun Anda.",
+      "tip": "Hadapkan wajah ke kamera di ruangan yang terang."
     },
     "chooseRole": {
-      "title": "Pilih Peran Wawancara Anda",
-      "desc": "Pilih posisi yang Anda lamar untuk wawancara. Anda dapat melanjutkan dengan peran yang ditetapkan saat onboarding, atau memilih jadwal lain jika tersedia lebih dari satu."
+      "title": "Pilih posisi Anda",
+      "desc": "Pilih posisi yang Anda lamar. Anda bisa tetap memakai posisi dari proses orientasi, atau memilih jadwal lain jika tersedia lebih dari satu."
     },
     "begin": {
-      "title": "Mulai Wawancara Anda",
-      "desc": "Anda sudah siap. Jendela wawancara akan terbuka dalam mode layar penuh dengan perekaman layar aktif. Jawab setiap pertanyaan dalam waktu yang ditentukan — Anda dapat berpindah antar pertanyaan sebelum waktu sesi habis."
+      "title": "Mulai wawancara Anda",
+      "desc": "Wawancara terbuka dalam layar penuh dengan perekaman layar aktif. Jawab setiap pertanyaan dalam batas waktunya. Anda bisa berpindah antarpertanyaan sampai timer sesi habis."
     }
   },
+  "tip": "Tips",
   "toc": {
-    "label": "Di halaman ini",
-    "steps": "Langkah"
+    "label": "Di halaman ini"
   },
   "requirements": {
-    "title": "Yang Anda perlukan",
+    "title": "Sebelum memulai",
     "description": "Periksa hal-hal ini sebelum hari wawancara Anda.",
     "items": {
       "computer": {
@@ -67,16 +72,22 @@
       }
     }
   },
+  "privacy": {
+    "title": "Apa yang kami rekam dan alasannya",
+    "body": "Selama wawancara, kami merekam kamera, mikrofon, dan layar Anda. Pemberi kerja yang membuka profil Anda dapat menonton rekamannya bersama kartu skor AI Anda. Foto langsung Anda dicocokkan dengan foto profil untuk memastikan itu memang Anda. Baca <pp>kebijakan privasi</pp> untuk detailnya."
+  },
   "cta": {
-    "title": "Siap untuk memulai?",
-    "desc": "Unduh aplikasi desktop, masuk ke akun Anda, dan klik Mulai Wawancara saat Anda sudah siap.",
-    "button": "Unduh Aplikasi"
+    "title": "Siap kapan pun Anda siap",
+    "desc": "Unduh aplikasi desktop, masuk, lalu klik Mulai Wawancara saat Anda sudah siap.",
+    "button": "Unduh Aplikasi",
+    "secondary": "Buat akun"
   },
   "meta": {
     "title": "Panduan Wawancara AI untuk Kandidat | letshyre.ai",
-    "description": "Yang perlu disiapkan: pasang aplikasi, masuk, verifikasi identitas, rapikan ruang, lalu jawab pertanyaan sesuai peran.",
+    "description": "Cara kerja wawancara AI LetsHyre: apa yang Anda perlukan, cara menyiapkan aplikasi desktop, verifikasi identitas, dan apa yang terjadi saat dimulai.",
     "name": "Panduan Wawancara AI untuk Kandidat",
     "schemaDescription": "Panduan langkah demi langkah proses wawancara kandidat LetsHyre.",
-    "crumb": "Panduan Wawancara"
+    "crumb": "Panduan Wawancara",
+    "audience": "Pencari kerja"
   }
 }

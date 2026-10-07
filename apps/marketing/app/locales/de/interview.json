@@ -1,48 +1,53 @@
 {
-  "title": "Alles, was vor Ihrer ersten Frage passiert",
+  "title": "Alles, was vor Ihrer <hl>ersten Frage</hl> passiert",
   "intro": "Acht Schritte trennen Sie vom Interview. Hier erfahren Sie genau, was jeder Schritt beinhaltet, damit es am Tag selbst keine Überraschungen gibt.",
+  "phases": {
+    "setup": "Einrichten",
+    "checks": "Prüfungen bestehen",
+    "start": "Interview starten"
+  },
   "steps": {
     "download": {
       "title": "Desktop-App herunterladen",
-      "desc": "Um eine sichere Testumgebung zu gewährleisten, müssen alle Interviews über unsere dedizierte Desktop-Anwendung durchgeführt werden. <dl>Laden Sie die LetsHyre-App herunter und installieren Sie sie</dl> für Ihr Betriebssystem."
+      "desc": "Interviews finden in der LetsHyre-Desktop-App statt, die die Sitzung absichert. <dl>Laden Sie die App herunter</dl> und installieren Sie sie auf Ihrem Windows-Computer."
     },
     "signIn": {
-      "title": "In der App anmelden",
-      "desc": "Starten Sie die Desktop-App und melden Sie sich mit Ihren Kandidatendaten an. Falls Sie noch kein Konto haben, besuchen Sie letshyre.ai, um ein Profil zu erstellen. In Ihrem Konto werden Ihr Interviewtermin, Ihr Profilfoto und Ihre Ergebnisse gespeichert."
+      "title": "Anmelden",
+      "desc": "Öffnen Sie die App und melden Sie sich mit Ihrem Bewerberkonto an. Neu bei LetsHyre? <reg>Erstellen Sie zuerst ein Konto</reg>. Dort liegen Ihre Interviewtermine, Ihr Profilfoto und Ihre Ergebnisse."
     },
     "dashboard": {
-      "title": "Starten Sie über Ihr Dashboard",
-      "desc": "Nach der Anmeldung gelangen Sie zu Ihrem persönlichen Dashboard mit Ihrem Profil und den verfügbaren Interviewterminen. Klicken Sie auf „Interview starten“, um zu beginnen – die App führt sofort eine Sicherheitsprüfung im Hintergrund durch, bevor irgendetwas anderes geöffnet wird."
+      "title": "Dashboard öffnen",
+      "desc": "Ihr Dashboard zeigt Ihr Profil und die für Sie offenen Interviewtermine. Wenn Sie auf „Interview starten“ klicken, führt die App eine kurze Sicherheitsprüfung durch, bevor sich etwas anderes öffnet."
     },
     "clearEnv": {
-      "title": "Bereinigen Sie Ihre Umgebung",
-      "desc": "Der Sicherheitsscanner prüft auf Anwendungen, die die Integrität der Prüfung gefährden könnten – Webbrowser, Bildschirmaufnahme-Tools, KI-Assistenten und Videoanruf-Tools. Jede markierte Anwendung muss geschlossen werden, bevor Sie fortfahren können.",
-      "tip": "Tipp: Schließen Sie alle anderen Anwendungen, bevor Sie auf „Interview starten“ klicken"
+      "title": "Andere Apps schließen",
+      "desc": "Die Sicherheitsprüfung sucht nach Apps, die ein faires Interview stören könnten, etwa Webbrowser, Bildschirmrekorder, KI-Assistenten und Videocall-Tools. Schließen Sie alles, was markiert wird, um fortzufahren.",
+      "tip": "Schließen Sie alle anderen Apps, bevor Sie auf „Interview starten“ klicken."
     },
     "permissions": {
-      "title": "Geräteberechtigungen erteilen",
-      "desc": "Sie werden aufgefordert, den Zugriff auf Mikrofon, Kamera und Bildschirm zu erlauben. Alle drei sind für die Live-Beaufsichtigung erforderlich. Erteilen Sie jede Berechtigung, sobald Ihr Betriebssystem danach fragt – das Interview kann ohne diese nicht fortgesetzt werden."
+      "title": "Kamera, Mikrofon und Bildschirm freigeben",
+      "desc": "Die App fragt nach Zugriff auf Mikrofon, Kamera und Bildschirm. Sie braucht alle drei, um das Interview zu beaufsichtigen. Erlauben Sie daher jeden Zugriff, wenn Ihr Computer danach fragt."
     },
     "verifyId": {
       "title": "Identität bestätigen",
-      "desc": "Lesen Sie eine kurze Aussage laut vor, um Ihre Stimme zu registrieren, und erlauben Sie anschließend der Kamera, ein Live-Foto aufzunehmen. Ihr Live-Bild wird mit dem Profilfoto verglichen, das Sie bei der Kontoerstellung hochgeladen haben.",
-      "tip": "Tipp: Schauen Sie in einem gut beleuchteten Raum direkt in die Kamera"
+      "desc": "Lesen Sie einen kurzen Satz laut vor, um Ihre Stimme zu registrieren, und lassen Sie dann die Kamera ein Live-Foto aufnehmen. Wir vergleichen es mit dem Profilfoto in Ihrem Konto.",
+      "tip": "Schauen Sie in einem gut beleuchteten Raum direkt in die Kamera."
     },
     "chooseRole": {
-      "title": "Wählen Sie Ihre Interviewrolle",
-      "desc": "Wählen Sie die Position aus, für die Sie sich bewerben. Sie können mit der beim Onboarding zugewiesenen Rolle fortfahren oder, falls mehrere verfügbar sind, einen anderen Termin auswählen."
+      "title": "Stelle auswählen",
+      "desc": "Wählen Sie die Stelle, für die Sie sich bewerben. Sie können die Stelle aus Ihrem Onboarding behalten oder einen anderen Termin wählen, wenn mehrere offen sind."
     },
     "begin": {
-      "title": "Beginnen Sie Ihr Interview",
-      "desc": "Sie sind bereit. Das Interviewfenster öffnet sich im Vollbildmodus mit aktiver Bildschirmaufnahme. Beantworten Sie jede Frage innerhalb der vorgesehenen Zeit – Sie können zwischen den Fragen navigieren, bevor der Sitzungstimer abläuft."
+      "title": "Interview beginnen",
+      "desc": "Das Interview öffnet sich im Vollbild, die Bildschirmaufnahme läuft. Beantworten Sie jede Frage innerhalb ihres Zeitlimits. Bis der Sitzungstimer abläuft, können Sie zwischen den Fragen wechseln."
     }
   },
+  "tip": "Tipp",
   "toc": {
-    "label": "Auf dieser Seite",
-    "steps": "Schritte"
+    "label": "Auf dieser Seite"
   },
   "requirements": {
-    "title": "Was Sie brauchen",
+    "title": "Bevor Sie beginnen",
     "description": "Prüfen Sie diese Punkte vor dem Tag Ihres Interviews.",
     "items": {
       "computer": {
@@ -67,16 +72,22 @@
       }
     }
   },
+  "privacy": {
+    "title": "Was wir aufzeichnen und warum",
+    "body": "Während des Interviews zeichnen wir Kamera, Mikrofon und Bildschirm auf. Arbeitgeber, die Ihr Profil freischalten, können die Aufzeichnung zusammen mit Ihrer KI-Bewertung ansehen. Ihr Live-Foto wird mit Ihrem Profilfoto verglichen, um zu bestätigen, dass Sie es sind. Details finden Sie in der <pp>Datenschutzerklärung</pp>."
+  },
   "cta": {
-    "title": "Bereit loszulegen?",
-    "desc": "Laden Sie die Desktop-App herunter, melden Sie sich bei Ihrem Konto an und klicken Sie auf „Interview starten“, sobald Sie vorbereitet sind.",
-    "button": "App herunterladen"
+    "title": "Bereit, wenn Sie es sind",
+    "desc": "Laden Sie die Desktop-App herunter, melden Sie sich an und klicken Sie auf „Interview starten“, sobald Sie bereit sind.",
+    "button": "App herunterladen",
+    "secondary": "Konto erstellen"
   },
   "meta": {
     "title": "KI-Interview-Leitfaden für Bewerber | letshyre.ai",
-    "description": "Was Sie erwartet: App installieren, anmelden, Identität prüfen, Umgebung freiräumen und rollenbezogene Fragen beantworten.",
+    "description": "So funktioniert das KI-Interview von LetsHyre: was Sie brauchen, die Einrichtung der Desktop-App, die Identitätsprüfung und was beim Start passiert.",
     "name": "KI-Interview-Leitfaden für Bewerber",
     "schemaDescription": "Schritt-für-Schritt-Anleitung für den LetsHyre-Kandidateninterviewprozess.",
-    "crumb": "Interview-Leitfaden"
+    "crumb": "Interview-Leitfaden",
+    "audience": "Bewerber"
   }
 }

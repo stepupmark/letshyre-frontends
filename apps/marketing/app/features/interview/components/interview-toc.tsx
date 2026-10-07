@@ -1,39 +1,102 @@
 import { useTranslation } from "@workspace/i18n/react"
+import { ChevronDownIcon } from "lucide-react"
 
-import { REQUIREMENTS_ANCHOR, STEPS, stepAnchor } from "../lib/sections"
+import { useActiveSection } from "../hooks/use-active-section"
+import {
+  PHASES,
+  PRIVACY_ANCHOR,
+  REQUIREMENTS_ANCHOR,
+  STEP_ANCHORS,
+} from "../lib/sections"
 
-export function InterviewToc() {
+const ANCHORS = [
+  REQUIREMENTS_ANCHOR,
+  ...PHASES.flatMap((phase) => phase.steps.map((id) => STEP_ANCHORS[id])),
+  PRIVACY_ANCHOR,
+]
+
+function TocLink({
+  anchor,
+  active,
+  children,
+}: {
+  anchor: string
+  active?: string
+  children: string
+}) {
+  return (
+    <a
+      href={`#${anchor}`}
+      aria-current={anchor === active ? "location" : undefined}
+      className="block rounded-md px-2 py-1 text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none aria-[current=location]:bg-brand/10 aria-[current=location]:font-medium aria-[current=location]:text-foreground"
+    >
+      {children}
+    </a>
+  )
+}
+
+function TocLinks({ active }: { active?: string }) {
   const { t } = useTranslation("interview")
 
   return (
-    <nav
-      aria-labelledby="interview-toc"
-      className="rounded-xl border p-5 lg:sticky lg:top-24 lg:self-start lg:border-0 lg:p-0"
-    >
-      <p id="interview-toc" className="text-sm font-medium">
-        {t("toc.label")}
-      </p>
-      <p className="mt-4 text-xs font-medium text-muted-foreground">
-        {t("toc.steps")}
-      </p>
-      <ol className="mt-2 flex list-inside list-decimal flex-col gap-2 text-sm text-muted-foreground">
-        {STEPS.map((id) => (
-          <li key={id}>
-            <a
-              href={`#${stepAnchor(id)}`}
-              className="rounded-sm hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
-            >
-              {t(`steps.${id}.title`)}
-            </a>
-          </li>
-        ))}
-      </ol>
-      <a
-        href={`#${REQUIREMENTS_ANCHOR}`}
-        className="mt-4 inline-block rounded-sm text-sm text-muted-foreground hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
-      >
-        {t("requirements.title")}
-      </a>
-    </nav>
+    <ul className="flex flex-col gap-0.5 text-sm">
+      <li>
+        <TocLink anchor={REQUIREMENTS_ANCHOR} active={active}>
+          {t("requirements.title")}
+        </TocLink>
+      </li>
+      {PHASES.map((phase) => (
+        <li key={phase.id} className="mt-3">
+          <p className="px-2 text-xs font-medium text-muted-foreground">
+            {t(`phases.${phase.id}`)}
+          </p>
+          <ul className="mt-1 flex flex-col gap-0.5">
+            {phase.steps.map((id) => (
+              <li key={id}>
+                <TocLink anchor={STEP_ANCHORS[id]} active={active}>
+                  {t(`steps.${id}.title`)}
+                </TocLink>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))}
+      <li className="mt-3">
+        <TocLink anchor={PRIVACY_ANCHOR} active={active}>
+          {t("privacy.title")}
+        </TocLink>
+      </li>
+    </ul>
+  )
+}
+
+export function InterviewToc() {
+  const { t } = useTranslation("interview")
+  const active = useActiveSection(ANCHORS)
+  const label = t("toc.label")
+
+  return (
+    <div className="lg:sticky lg:top-24 lg:self-start">
+      <nav aria-label={label} className="lg:hidden">
+        <details className="group rounded-xl border">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-2 rounded-xl p-4 text-sm font-medium focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none [&::-webkit-details-marker]:hidden">
+            {label}
+            <ChevronDownIcon
+              aria-hidden
+              className="size-4 text-muted-foreground transition-transform group-open:rotate-180"
+            />
+          </summary>
+          <div className="border-t p-2">
+            <TocLinks active={active} />
+          </div>
+        </details>
+      </nav>
+      <nav aria-label={label} className="hidden lg:block">
+        <p className="px-2 text-sm font-medium">{label}</p>
+        <div className="mt-3">
+          <TocLinks active={active} />
+        </div>
+      </nav>
+    </div>
   )
 }

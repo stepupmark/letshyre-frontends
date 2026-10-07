@@ -1,48 +1,53 @@
 {
-  "title": "Alles wat er gebeurt voor uw eerste vraag",
+  "title": "Alles wat er gebeurt voor uw <hl>eerste vraag</hl>",
   "intro": "Acht stappen staan tussen u en het sollicitatiegesprek. Hier is precies wat elke stap inhoudt, zodat er geen verrassingen zijn op de dag zelf.",
+  "phases": {
+    "setup": "Instellen",
+    "checks": "De controles doorlopen",
+    "start": "Uw interview starten"
+  },
   "steps": {
     "download": {
-      "title": "Download de desktop-app",
-      "desc": "Om een veilige testomgeving te garanderen, moeten alle interviews worden afgenomen in onze speciale desktopapplicatie. <dl>Download en installeer de LetsHyre-app</dl> voor uw besturingssysteem."
+      "title": "Download de desktopapp",
+      "desc": "Interviews vinden plaats in de LetsHyre-desktopapp, die de sessie beveiligt. <dl>Download de app</dl> en installeer hem op uw Windows-computer."
     },
     "signIn": {
-      "title": "Aanmelden bij de app",
-      "desc": "Start de desktopapp en log in met uw kandidaatsgegevens. Als u nog geen account heeft, bezoek dan letshyre.ai om een profiel aan te maken. Uw account bevat uw interviewplek, profielfoto en resultaten."
+      "title": "Log in",
+      "desc": "Open de app en log in met uw kandidaatsaccount. Nieuw bij LetsHyre? <reg>Maak eerst een account aan</reg>. Daarin staan uw interviewmomenten, profielfoto en resultaten."
     },
     "dashboard": {
-      "title": "Start vanuit uw dashboard",
-      "desc": "Na het inloggen komt u op uw persoonlijke dashboard terecht met uw profiel en beschikbare interviewplekken. Klik op Interview Nemen om te beginnen — de app voert onmiddellijk een beveiligingscontrole uit op de achtergrond voordat er iets anders opent."
+      "title": "Open uw dashboard",
+      "desc": "Uw dashboard toont uw profiel en de interviewmomenten die voor u openstaan. Als u op Interview Nemen klikt, voert de app een korte beveiligingscontrole uit voordat er iets anders opent."
     },
     "clearEnv": {
-      "title": "Maak uw omgeving vrij",
-      "desc": "De beveiligingsscanner controleert op applicaties die de examintegriteit kunnen compromitteren — webbrowsers, schermopnames, AI-assistenten en videobel-tools. Elke gemarkeerde app moet worden gesloten voordat u kunt doorgaan.",
-      "tip": "Tip: sluit alle andere apps voordat u op Interview Nemen klikt"
+      "title": "Sluit andere apps",
+      "desc": "De beveiligingscontrole zoekt naar apps die een eerlijk interview kunnen verstoren, zoals webbrowsers, schermrecorders, AI-assistenten en videobeltools. Sluit alles wat wordt gemarkeerd om verder te gaan.",
+      "tip": "Sluit alle andere apps voordat u op Interview Nemen klikt."
     },
     "permissions": {
-      "title": "Verleen apparaatmachtigingen",
-      "desc": "U wordt gevraagd toegang te verlenen tot uw microfoon, camera en scherm. Alle drie zijn vereist voor live toezicht. Verleen elke toestemming wanneer uw besturingssysteem dit vraagt — het interview kan niet doorgaan zonder hen."
+      "title": "Geef toegang tot camera, microfoon en scherm",
+      "desc": "De app vraagt toegang tot uw microfoon, camera en scherm. Alle drie zijn nodig om toezicht te houden op het interview, dus sta ze toe wanneer uw computer erom vraagt."
     },
     "verifyId": {
-      "title": "Verifieer uw identiteit",
-      "desc": "Lees een korte verklaring hardop voor stemregistratie, en laat de camera dan een live foto nemen. Uw live afbeelding wordt vergeleken met de profielfoto die u heeft geüpload bij het aanmaken van uw account.",
-      "tip": "Tip: kijk direct in de camera in een goed verlichte kamer"
+      "title": "Bevestig uw identiteit",
+      "desc": "Lees een korte zin hardop voor om uw stem te registreren en laat de camera daarna een livefoto maken. We vergelijken die met de profielfoto in uw account.",
+      "tip": "Kijk recht in de camera in een goed verlichte ruimte."
     },
     "chooseRole": {
-      "title": "Kies uw interviewrol",
-      "desc": "Selecteer de functie waarvoor u solliciteert. U kunt doorgaan met de rol die tijdens de onboarding is toegewezen, of een andere plek kiezen als er meerdere beschikbaar zijn."
+      "title": "Kies uw functie",
+      "desc": "Selecteer de functie waarvoor u solliciteert. U kunt de functie uit uw onboarding houden of een ander moment kiezen als er meerdere openstaan."
     },
     "begin": {
       "title": "Begin uw interview",
-      "desc": "U bent er klaar voor. Het interviewvenster opent op volledig scherm met actieve schermopname. Beantwoord elke vraag binnen de toegewezen tijd — u kunt navigeren tussen vragen voordat de sessietimer afloopt."
+      "desc": "Het interview opent schermvullend met schermopname aan. Beantwoord elke vraag binnen de tijdslimiet. U kunt tussen vragen wisselen tot de sessietimer afloopt."
     }
   },
+  "tip": "Tip",
   "toc": {
-    "label": "Op deze pagina",
-    "steps": "Stappen"
+    "label": "Op deze pagina"
   },
   "requirements": {
-    "title": "Wat u nodig hebt",
+    "title": "Voordat u begint",
     "description": "Controleer dit vóór de dag van uw interview.",
     "items": {
       "computer": {
@@ -67,16 +72,22 @@
       }
     }
   },
+  "privacy": {
+    "title": "Wat we opnemen en waarom",
+    "body": "Tijdens het interview nemen we uw camera, microfoon en scherm op. Werkgevers die uw profiel ontgrendelen, kunnen de opname bekijken samen met uw AI-scorekaart. Uw livefoto wordt vergeleken met uw profielfoto om te bevestigen dat u het bent. Lees het <pp>privacybeleid</pp> voor de details."
+  },
   "cta": {
-    "title": "Klaar om te beginnen?",
-    "desc": "Download de desktopapp, log in op uw account en klik op Interview Nemen wanneer u klaar bent.",
-    "button": "App downloaden"
+    "title": "Klaar wanneer u dat bent",
+    "desc": "Download de desktopapp, log in en klik op Interview Nemen wanneer u klaar bent.",
+    "button": "App downloaden",
+    "secondary": "Account aanmaken"
   },
   "meta": {
     "title": "AI-interviewgids voor kandidaten | letshyre.ai",
-    "description": "Wat je kunt verwachten: de app installeren, inloggen, je identiteit verifiëren, je ruimte opruimen en functievragen beantwoorden.",
+    "description": "Hoe het AI-interview van LetsHyre werkt: wat u nodig hebt, de desktopapp instellen, de identiteitscontrole en wat er gebeurt als u begint.",
     "name": "AI-interviewgids voor kandidaten",
     "schemaDescription": "Stapsgewijze handleiding voor het LetsHyre kandidaatsgesprekproces.",
-    "crumb": "Interviewgids"
+    "crumb": "Interviewgids",
+    "audience": "Sollicitanten"
   }
 }

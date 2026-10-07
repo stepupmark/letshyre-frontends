@@ -1,48 +1,53 @@
 {
-  "title": "Tout ce qui se passe avant votre première question",
+  "title": "Tout ce qui se passe avant votre <hl>première question</hl>",
   "intro": "Huit étapes vous séparent de l'entretien. Voici précisément ce que chacune implique, pour qu'il n'y ait aucune surprise le jour J.",
+  "phases": {
+    "setup": "Préparez-vous",
+    "checks": "Passez les vérifications",
+    "start": "Commencez l'entretien"
+  },
   "steps": {
     "download": {
-      "title": "Télécharger l'application de bureau",
-      "desc": "Pour garantir un environnement de test sécurisé, tous les entretiens doivent se dérouler sur notre application de bureau dédiée. <dl>Téléchargez et installez l'application LetsHyre</dl> pour votre système d'exploitation."
+      "title": "Téléchargez l'application de bureau",
+      "desc": "Les entretiens se déroulent dans l'application de bureau LetsHyre, qui sécurise la session. <dl>Téléchargez l'application</dl> et installez-la sur votre ordinateur Windows."
     },
     "signIn": {
-      "title": "Se connecter à l'application",
-      "desc": "Lancez l'application de bureau et connectez-vous avec vos identifiants de candidat. Si vous n'avez pas encore de compte, rendez-vous sur letshyre.ai pour créer un profil. Votre compte contient votre créneau d'entretien, votre photo de profil et vos résultats."
+      "title": "Connectez-vous",
+      "desc": "Ouvrez l'application et connectez-vous avec votre compte candidat. Nouveau sur LetsHyre ? <reg>Créez d'abord un compte</reg>. Il contient vos créneaux d'entretien, votre photo de profil et vos résultats."
     },
     "dashboard": {
-      "title": "Démarrer depuis votre tableau de bord",
-      "desc": "Après vous être connecté, vous arriverez sur votre tableau de bord personnel indiquant votre profil et vos créneaux d'entretien disponibles. Cliquez sur Passer l'entretien pour commencer — l'application lance immédiatement une vérification de sécurité en arrière-plan avant toute autre chose."
+      "title": "Ouvrez votre tableau de bord",
+      "desc": "Votre tableau de bord affiche votre profil et les créneaux d'entretien qui vous sont ouverts. Quand vous cliquez sur Passer l'entretien, l'application lance une rapide vérification de sécurité avant d'ouvrir quoi que ce soit."
     },
     "clearEnv": {
-      "title": "Préparer votre environnement",
-      "desc": "Le scanner de sécurité recherche les applications susceptibles de compromettre l'intégrité de l'examen — navigateurs web, enregistreurs d'écran, assistants IA et outils d'appel vidéo. Toute application signalée doit être fermée avant de continuer.",
-      "tip": "Astuce : fermez toutes les autres applications avant de cliquer sur Passer l'entretien"
+      "title": "Fermez les autres applications",
+      "desc": "La vérification de sécurité recherche les applications qui pourraient fausser l'entretien, comme les navigateurs web, les enregistreurs d'écran, les assistants IA et les outils d'appel vidéo. Fermez tout ce qu'elle signale pour continuer.",
+      "tip": "Fermez toutes les autres applications avant de cliquer sur Passer l'entretien."
     },
     "permissions": {
-      "title": "Accorder les autorisations de l'appareil",
-      "desc": "Vous serez invité à autoriser l'accès à votre microphone, votre caméra et votre écran. Les trois sont requis pour la surveillance en direct. Accordez chaque autorisation lorsque votre système d'exploitation le demande — l'entretien ne peut pas se dérouler sans elles."
+      "title": "Autorisez la caméra, le micro et l'écran",
+      "desc": "L'application demande l'accès à votre micro, votre caméra et votre écran. Les trois sont nécessaires pour surveiller l'entretien. Autorisez chacun lorsque votre ordinateur le demande."
     },
     "verifyId": {
-      "title": "Vérifier votre identité",
-      "desc": "Lisez une courte déclaration à voix haute pour l'enregistrement vocal, puis autorisez la caméra à prendre une photo en direct. Votre image en direct est comparée à la photo de profil que vous avez téléchargée lors de la création de votre compte.",
-      "tip": "Astuce : faites face à la caméra dans une pièce bien éclairée"
+      "title": "Vérifiez votre identité",
+      "desc": "Lisez une courte phrase à voix haute pour enregistrer votre voix, puis laissez la caméra prendre une photo en direct. Nous la comparons à la photo de profil de votre compte.",
+      "tip": "Placez-vous face à la caméra dans une pièce bien éclairée."
     },
     "chooseRole": {
-      "title": "Choisir votre poste d'entretien",
-      "desc": "Sélectionnez le poste pour lequel vous passez l'entretien. Vous pouvez continuer avec le rôle attribué lors de l'intégration, ou choisir un autre créneau si plusieurs vous sont proposés."
+      "title": "Choisissez votre poste",
+      "desc": "Sélectionnez le poste pour lequel vous passez l'entretien. Vous pouvez garder celui de votre inscription ou choisir un autre créneau si plusieurs vous sont ouverts."
     },
     "begin": {
-      "title": "Commencer votre entretien",
-      "desc": "Tout est prêt. La fenêtre d'entretien s'ouvre en plein écran avec l'enregistrement d'écran actif. Répondez à chaque question dans le temps imparti — vous pouvez naviguer entre les questions avant la fin du minuteur de session."
+      "title": "Commencez votre entretien",
+      "desc": "L'entretien s'ouvre en plein écran avec l'enregistrement de l'écran activé. Répondez à chaque question dans le temps imparti. Vous pouvez passer d'une question à l'autre jusqu'à la fin du minuteur de la session."
     }
   },
+  "tip": "Astuce",
   "toc": {
-    "label": "Sur cette page",
-    "steps": "Étapes"
+    "label": "Sur cette page"
   },
   "requirements": {
-    "title": "Ce qu'il vous faut",
+    "title": "Avant de commencer",
     "description": "Vérifiez ces points avant le jour de votre entretien.",
     "items": {
       "computer": {
@@ -67,16 +72,22 @@
       }
     }
   },
+  "privacy": {
+    "title": "Ce que nous enregistrons et pourquoi",
+    "body": "Pendant l'entretien, nous enregistrons votre caméra, votre micro et votre écran. Les employeurs qui débloquent votre profil peuvent regarder l'enregistrement avec votre évaluation IA. Votre photo en direct est comparée à votre photo de profil pour confirmer qu'il s'agit bien de vous. Consultez la <pp>politique de confidentialité</pp> pour en savoir plus."
+  },
   "cta": {
-    "title": "Prêt à commencer ?",
-    "desc": "Téléchargez l'application de bureau, connectez-vous à votre compte et cliquez sur Passer l'entretien lorsque vous êtes prêt.",
-    "button": "Télécharger l'application"
+    "title": "Quand vous serez prêt",
+    "desc": "Téléchargez l'application de bureau, connectez-vous et cliquez sur Passer l'entretien lorsque vous êtes prêt.",
+    "button": "Télécharger l'application",
+    "secondary": "Créer un compte"
   },
   "meta": {
     "title": "Guide de l'entretien IA pour les candidats | letshyre.ai",
-    "description": "Au programme : installer l'application, se connecter, vérifier son identité, dégager son espace et répondre aux questions du poste.",
+    "description": "Comment fonctionne l'entretien IA de LetsHyre : ce qu'il vous faut, l'installation de l'application, la vérification d'identité et ce qui se passe au démarrage.",
     "name": "Guide de l'entretien IA pour les candidats",
     "schemaDescription": "Guide étape par étape du processus d'entretien candidat LetsHyre.",
-    "crumb": "Guide de l'entretien"
+    "crumb": "Guide de l'entretien",
+    "audience": "Candidats à l'emploi"
   }
 }

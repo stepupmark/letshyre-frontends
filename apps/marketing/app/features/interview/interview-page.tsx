@@ -1,11 +1,13 @@
-import { useTranslation } from "@workspace/i18n/react"
+import { Trans, useTranslation } from "@workspace/i18n/react"
 
+import { HIGHLIGHT } from "@/components/highlight"
 import { Container, PageHeader } from "@/components/section"
 
+import { BeforeYouStart } from "./components/before-you-start"
 import { InterviewCta } from "./components/interview-cta"
+import { InterviewPrivacy } from "./components/interview-privacy"
 import { InterviewSteps } from "./components/interview-steps"
 import { InterviewToc } from "./components/interview-toc"
-import { SystemRequirements } from "./components/system-requirements"
 
 export function InterviewPage() {
   const { t } = useTranslation("interview")
@@ -14,17 +16,18 @@ export function InterviewPage() {
     <>
       <PageHeader
         eyebrow={t("meta.crumb")}
-        title={t("title")}
+        title={<Trans t={t} i18nKey="title" components={HIGHLIGHT} />}
         description={t("intro")}
       />
-      <Container className="grid gap-12 py-16 sm:py-24 lg:grid-cols-[13rem_minmax(0,1fr)] lg:gap-16">
+      <BeforeYouStart />
+      <Container className="grid gap-8 py-10 sm:py-14 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-14">
         <InterviewToc />
-        <div className="flex min-w-0 flex-col gap-16">
+        <div className="flex min-w-0 flex-col gap-12">
           <InterviewSteps />
-          <SystemRequirements />
-          <InterviewCta />
+          <InterviewPrivacy />
         </div>
       </Container>
+      <InterviewCta />
     </>
   )
 }
