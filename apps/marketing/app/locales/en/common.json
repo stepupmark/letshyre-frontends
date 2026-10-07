@@ -79,5 +79,13 @@
     "body": "We use cookies to measure how our ads perform. Nothing is shared unless you accept. <0>Privacy policy</0>",
     "accept": "Accept",
     "reject": "Reject"
+  },
+  "legal": {
+    "sectionLink": "Link to this section",
+    "questionsTitle": "Still have questions?",
+    "questionsBody": "Write to us and our support team will help.",
+    "contactPage": "Contact us",
+    "related": "Related documents",
+    "manageCookies": "Manage cookie preferences"
   }
 }

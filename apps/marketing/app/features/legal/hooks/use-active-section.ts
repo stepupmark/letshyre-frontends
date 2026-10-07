@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 
-/** Id of the last heading that has scrolled past the top band of the viewport. */
+/**
+ * Id of the last heading scrolled past the top third of the viewport. At the very bottom
+ * it's the last one, since short closing sections never reach that line.
+ */
 export function useActiveSection(ids: readonly string[]): string | undefined {
   const [active, setActive] = useState<string>()
   const key = ids.join("|")
@@ -12,23 +15,30 @@ export function useActiveSection(ids: readonly string[]): string | undefined {
       .filter((el): el is HTMLElement => el !== null)
     if (headings.length === 0) return
 
+    let frame = 0
     const update = () => {
-      let current: string | undefined
+      frame = 0
+      const atBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2
+      let current = headings[0]?.id
       for (const heading of headings) {
-        if (heading.getBoundingClientRect().top > window.innerHeight * 0.3)
-          break
+        if (heading.getBoundingClientRect().top > window.innerHeight / 3) break
         current = heading.id
       }
-      setActive(current ?? headings[0]?.id)
+      setActive(atBottom ? headings.at(-1)?.id : current)
+    }
+    const schedule = () => {
+      frame ||= requestAnimationFrame(update)
     }
 
-    const observer = new IntersectionObserver(update, {
-      rootMargin: "0px 0px -70% 0px",
-    })
-    for (const heading of headings) observer.observe(heading)
     update()
+    window.addEventListener("scroll", schedule, { passive: true })
+    window.addEventListener("resize", schedule)
     return () => {
-      observer.disconnect()
+      cancelAnimationFrame(frame)
+      window.removeEventListener("scroll", schedule)
+      window.removeEventListener("resize", schedule)
     }
   }, [key])
 

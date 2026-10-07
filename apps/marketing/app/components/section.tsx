@@ -71,9 +71,9 @@ export function PageHeader({
 }) {
   return (
     <header className="border-b">
-      <Container className="flex flex-col gap-4 py-16 sm:py-20">
+      <Container className="flex flex-col gap-3 py-10 sm:py-14">
         {eyebrow && (
-          <p className="text-sm font-medium text-muted-foreground">{eyebrow}</p>
+          <p className="text-sm font-semibold text-primary">{eyebrow}</p>
         )}
         <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
           {title}

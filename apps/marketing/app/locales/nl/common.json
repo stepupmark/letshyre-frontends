@@ -79,5 +79,13 @@
     "body": "We gebruiken cookies om te meten hoe onze advertenties presteren. Er wordt niets gedeeld zonder uw toestemming. <0>Privacybeleid</0>",
     "accept": "Accepteren",
     "reject": "Weigeren"
+  },
+  "legal": {
+    "sectionLink": "Link naar deze sectie",
+    "questionsTitle": "Nog vragen?",
+    "questionsBody": "Schrijf ons en ons supportteam helpt je verder.",
+    "contactPage": "Neem contact op",
+    "related": "Gerelateerde documenten",
+    "manageCookies": "Cookievoorkeuren beheren"
   }
 }

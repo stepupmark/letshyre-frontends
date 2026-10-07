@@ -1,3 +1,5 @@
+import { SITE } from "@/lib/seo/site"
+
 import { type LegalBlock, subheadingId } from "../lib/legal-doc"
 import { RichText } from "./rich-text"
 
@@ -24,7 +26,7 @@ export function LegalBlocks({
           <h3
             key={key}
             id={subheadingId(sectionId, subheadings++)}
-            className="scroll-mt-24 pt-2 text-base font-semibold text-foreground"
+            className="scroll-mt-24 pt-1 text-base font-semibold text-foreground"
           >
             {block.text}
           </h3>
@@ -33,7 +35,7 @@ export function LegalBlocks({
         return (
           <ul
             key={key}
-            className="flex list-disc flex-col gap-1.5 ps-5 marker:text-muted-foreground"
+            className="flex list-disc flex-col gap-1.5 ps-5 marker:text-brand"
           >
             {block.items.map((item, i) => (
               <li key={i}>
@@ -49,17 +51,15 @@ export function LegalBlocks({
             <p>
               {block.emailLabel}{" "}
               <a
-                href={`mailto:${block.email}`}
-                className="font-medium text-foreground underline underline-offset-4"
+                href={`mailto:${SITE.email}`}
+                className="font-medium text-primary underline underline-offset-4"
               >
-                {block.email}
+                {SITE.email}
               </a>
             </p>
             <p>{block.team}</p>
           </div>
         )
-      case "spacer":
-        return null
     }
   })
 }

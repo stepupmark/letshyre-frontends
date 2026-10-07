@@ -79,5 +79,13 @@
     "body": "Usiamo i cookie per misurare il rendimento dei nostri annunci. Non condividiamo nulla senza il tuo consenso. <0>Informativa sulla privacy</0>",
     "accept": "Accetta",
     "reject": "Rifiuta"
+  },
+  "legal": {
+    "sectionLink": "Link a questa sezione",
+    "questionsTitle": "Hai altre domande?",
+    "questionsBody": "Scrivici e il nostro team di supporto ti aiuterà.",
+    "contactPage": "Contattaci",
+    "related": "Documenti correlati",
+    "manageCookies": "Gestisci le preferenze sui cookie"
   }
 }

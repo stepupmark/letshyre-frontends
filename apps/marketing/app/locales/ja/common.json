@@ -79,5 +79,13 @@
     "body": "広告の効果測定のために Cookie を使用しています。同意がない限り、情報は共有されません。<0>プライバシーポリシー</0>",
     "accept": "同意する",
     "reject": "拒否する"
+  },
+  "legal": {
+    "sectionLink": "このセクションへのリンク",
+    "questionsTitle": "ご不明な点はありますか？",
+    "questionsBody": "お問い合わせいただければ、サポートチームが対応します。",
+    "contactPage": "お問い合わせ",
+    "related": "関連ドキュメント",
+    "manageCookies": "Cookie の設定を管理"
   }
 }

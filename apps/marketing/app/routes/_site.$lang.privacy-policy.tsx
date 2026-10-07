@@ -1,6 +1,5 @@
 import { LEGAL_DOCS, LegalPage } from "@/features/legal"
 import { pageData } from "@/lib/page-data.server"
-import { PAGES } from "@/lib/pages"
 import { pageMeta } from "@/lib/seo/page-meta"
 import { webPageSchema } from "@/lib/seo/schema"
 
@@ -20,5 +19,5 @@ export const meta = pageMeta("privacy", ({ lang, t, path }) => [
 ])
 
 export default function PrivacyRoute() {
-  return <LegalPage ns="legalPolicy" path={PAGES.privacy.path} />
+  return <LegalPage ns="legalPolicy" />
 }

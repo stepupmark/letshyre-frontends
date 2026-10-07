@@ -79,5 +79,13 @@
     "body": "Kami menggunakan cookie untuk mengukur kinerja iklan kami. Tidak ada yang dibagikan tanpa persetujuan Anda. <0>Kebijakan privasi</0>",
     "accept": "Terima",
     "reject": "Tolak"
+  },
+  "legal": {
+    "sectionLink": "Tautan ke bagian ini",
+    "questionsTitle": "Masih ada pertanyaan?",
+    "questionsBody": "Tulis kepada kami dan tim dukungan kami akan membantu.",
+    "contactPage": "Hubungi kami",
+    "related": "Dokumen terkait",
+    "manageCookies": "Kelola preferensi cookie"
   }
 }

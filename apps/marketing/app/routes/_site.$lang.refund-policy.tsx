@@ -1,6 +1,5 @@
 import { LEGAL_DOCS, LegalPage } from "@/features/legal"
 import { pageData } from "@/lib/page-data.server"
-import { PAGES } from "@/lib/pages"
 import { pageMeta } from "@/lib/seo/page-meta"
 import { webPageSchema } from "@/lib/seo/schema"
 
@@ -20,5 +19,5 @@ export const meta = pageMeta("refund", ({ lang, t, path }) => [
 ])
 
 export default function RefundRoute() {
-  return <LegalPage ns="legalRefund" path={PAGES.refund.path} />
+  return <LegalPage ns="legalRefund" />
 }
