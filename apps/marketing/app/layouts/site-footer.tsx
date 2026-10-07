@@ -5,6 +5,7 @@ import { Link } from "react-router"
 
 import { Container } from "@/components/section"
 import { NewsletterForm } from "@/features/newsletter"
+import { SITE } from "@/lib/seo/site"
 
 import { FOOTER_COLUMNS } from "./site-footer-links"
 import { SiteFooterSocial } from "./site-footer-social"
@@ -15,10 +16,10 @@ export function SiteFooter() {
   const lang = useLocale()
 
   return (
-    <footer className="border-t print:hidden">
-      <Container className="flex flex-col gap-12 py-12 sm:py-16">
-        <div className="grid gap-12 lg:grid-cols-5">
-          <div className="flex max-w-sm flex-col gap-6 lg:col-span-2">
+    <footer className="border-t bg-muted/40 print:hidden">
+      <Container className="flex flex-col gap-10 pt-12 pb-8 sm:pt-16">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+          <div className="flex max-w-sm flex-col gap-4 lg:col-span-4">
             <Link
               to={localePath(lang)}
               className="w-fit rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
@@ -28,10 +29,15 @@ export function SiteFooter() {
             <p className="text-sm text-pretty text-muted-foreground">
               {t("footer.tagline")}
             </p>
-            <NewsletterForm />
+            <a
+              href={`mailto:${SITE.email}`}
+              className="w-fit rounded-sm text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+            >
+              {SITE.email}
+            </a>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:col-span-3">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:col-span-8">
             {FOOTER_COLUMNS.map((column) => (
               <div key={column.id} className="flex flex-col gap-3">
                 <h2
@@ -42,29 +48,22 @@ export function SiteFooter() {
                 </h2>
                 <ul
                   aria-labelledby={`footer-${column.id}`}
-                  className="flex flex-col gap-2"
+                  className="flex flex-col gap-2.5"
                 >
-                  {column.links.map((link) => (
-                    <li key={link.label}>
-                      {"href" in link ? (
-                        <a
-                          href={link.href}
-                          className="rounded-sm text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
-                        >
-                          {t(link.label)}
-                        </a>
-                      ) : (
-                        <Link
-                          to={
-                            "hash" in link
-                              ? `${localePath(lang, link.path)}#${link.hash}`
-                              : localePath(lang, link.path)
-                          }
-                          className="rounded-sm text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
-                        >
-                          {t(link.label)}
-                        </Link>
-                      )}
+                  {column.links.map((item) => (
+                    <li key={item.label}>
+                      <Link
+                        to={
+                          "href" in item
+                            ? item.href
+                            : "hash" in item
+                              ? `${localePath(lang, item.path)}#${item.hash}`
+                              : localePath(lang, item.path)
+                        }
+                        className="rounded-sm text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+                      >
+                        {t(item.label)}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -73,12 +72,17 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 border-t pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="border-t pt-8">
+          <NewsletterForm />
+        </div>
+
+        <div className="flex flex-col-reverse gap-4 border-t pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-muted-foreground">
             {t("copyright", { year: new Date().getFullYear() })}
           </p>
-          <div className="flex flex-wrap items-center gap-2">
-            <SiteLanguageSwitcher />
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+            <SiteLanguageSwitcher side="top" className="-ms-2.5" />
+            <span aria-hidden className="hidden h-5 w-px bg-border sm:block" />
             <SiteFooterSocial />
           </div>
         </div>
