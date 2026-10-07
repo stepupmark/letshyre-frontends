@@ -6,7 +6,11 @@ import { mockApi } from "./mock-api.ts"
 const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
 
 const axe = async (page: Page) => {
-  const { violations } = await new AxeBuilder({ page }).withTags(WCAG).analyze()
+  // Base UI's focus guards are hidden tab sentinels, not content
+  const { violations } = await new AxeBuilder({ page })
+    .withTags(WCAG)
+    .exclude("[data-base-ui-focus-guard]")
+    .analyze()
   expect(violations).toEqual([])
 }
 
@@ -21,7 +25,7 @@ test.describe("desktop header", () => {
 
   test.use({ viewport: { width: 1280, height: 800 } })
 
-  test("tab order runs skip link, logo, nav, language, get started", async ({
+  test("tab order runs skip link, logo, product, nav, language, get started", async ({
     page,
   }) => {
     await page.goto("/en/pricing")
@@ -30,8 +34,7 @@ test.describe("desktop header", () => {
     const order = [
       page.getByRole("link", { name: "Skip to main content" }),
       banner.getByRole("link", { name: "LetsHyre logo" }),
-      nav.getByRole("link", { name: "How It Works" }),
-      nav.getByRole("link", { name: "AI Interview" }),
+      nav.getByRole("button", { name: "Product" }),
       nav.getByRole("link", { name: "Pricing" }),
       nav.getByRole("link", { name: "About" }),
       nav.getByRole("link", { name: "Contact" }),
@@ -46,6 +49,27 @@ test.describe("desktop header", () => {
       "aria-current",
       "page"
     )
+  })
+
+  test("product menu works from the keyboard", async ({ page }) => {
+    await page.goto("/en/pricing")
+    const trigger = page
+      .getByRole("navigation", { name: "Primary navigation" })
+      .getByRole("button", { name: "Product" })
+    await trigger.focus()
+    await page.keyboard.press("Enter")
+    const interview = page.getByRole("link", { name: /AI Interview/ })
+    await expect(interview).toBeVisible()
+    await axe(page)
+
+    await page.keyboard.press("Escape")
+    await expect(interview).toBeHidden()
+    await expect(trigger).toBeFocused()
+
+    await trigger.click()
+    await interview.click()
+    await expect(page).toHaveURL(/\/en\/how-it-works-interview$/)
+    await expect(trigger).toHaveAttribute("data-current")
   })
 
   test("collapses into the menu when the links stop fitting", async ({

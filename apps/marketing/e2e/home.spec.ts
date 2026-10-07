@@ -44,9 +44,13 @@ test("the How it works link scrolls to its section", async ({ page }) => {
   test.skip(test.info().project.name === "mobile", "link is in the menu")
   await page.setViewportSize({ width: 1280, height: 800 })
   await page.goto("/en")
-  await page
+  const product = page
     .getByRole("navigation", { name: "Primary navigation" })
-    .getByRole("link", { name: "How It Works" })
+    .getByRole("button", { name: "Product" })
+  await product.click()
+  await page
+    .locator("[data-slot=navigation-menu-content]")
+    .getByRole("link", { name: /How It Works/ })
     .click()
   await expect(page).toHaveURL(/\/en#how-it-works$/)
   await expect(
@@ -55,6 +59,7 @@ test("the How it works link scrolls to its section", async ({ page }) => {
   await expect(page.locator("#how-it-works").getByRole("listitem")).toHaveCount(
     3
   )
+  await expect(product).toHaveAttribute("data-current")
 })
 
 test("FAQ answers are prerendered and open on demand", async ({

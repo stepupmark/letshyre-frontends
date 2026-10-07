@@ -36,7 +36,7 @@ for (const { path, lang, alternates } of SITEMAP) {
 
     await page
       .getByRole("contentinfo")
-      .getByRole("button", { name: /language/i })
+      .locator("button:has(> span[lang])")
       .click()
     const items = page.getByRole("dialog").getByRole("link")
     await expect(items).toHaveCount(alternates.size)
