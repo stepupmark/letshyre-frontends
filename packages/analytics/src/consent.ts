@@ -67,6 +67,21 @@ export function setConsent(analytics: boolean) {
   for (const listener of listeners) listener()
 }
 
+/** Forgets the choice so the banner asks again. Tracking cookies go with it. */
+export function clearConsent() {
+  const { cookieDomain } = getConfig()
+  document.cookie = [
+    `${CONSENT_COOKIE}=`,
+    "Path=/",
+    "Max-Age=0",
+    cookieDomain && `Domain=${cookieDomain}`,
+  ]
+    .filter(Boolean)
+    .join("; ")
+  removeTrackingCookies(cookieDomain)
+  for (const listener of listeners) listener()
+}
+
 function removeTrackingCookies(domain?: string) {
   for (const name of ["_fbp", "_fbc"]) {
     document.cookie = `${name}=; Path=/; Max-Age=0`

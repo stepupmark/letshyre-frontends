@@ -1,6 +1,7 @@
 export type { EventParams, StandardEvent } from "./adapters/meta-pixel.ts"
 export { configureAnalytics, type AnalyticsConfig } from "./config.ts"
 export {
+  clearConsent,
   CONSENT_COOKIE,
   parseConsent,
   readConsent,

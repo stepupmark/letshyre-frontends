@@ -8,6 +8,7 @@ import {
   pageView,
   parseConsent,
   readConsent,
+  clearConsent,
   setConsent,
   track,
   useConsent,
@@ -129,6 +130,12 @@ describe("consent cookie", () => {
     setConsent(true)
     expect(readConsent()).toMatchObject({ v: 1, analytics: true })
     expect(readConsent()).toBe(readConsent())
+  })
+
+  it("can be withdrawn so the banner asks again", () => {
+    setConsent(true)
+    clearConsent()
+    expect(readConsent()).toBeNull()
   })
 
   it("ignores malformed values", () => {
