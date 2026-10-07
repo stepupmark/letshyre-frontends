@@ -18,6 +18,11 @@ export const SEO_ALLOWLIST: {
     reason: "renamed to Interview Guide along with its URL",
   },
   {
+    page: "/how-it-works-interview",
+    field: "ogImage",
+    reason: "renamed to match the new /interview-guide URL",
+  },
+  {
     page: "/policy",
     field: "ogImage",
     reason: "renamed with the page, which moved to /privacy-policy",

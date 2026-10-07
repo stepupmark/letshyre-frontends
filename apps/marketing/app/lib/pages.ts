@@ -12,7 +12,7 @@ export const PAGES = {
   interview: {
     path: "/interview-guide",
     namespaces: ["interview"],
-    og: "how-it-works-interview",
+    og: "interview-guide",
   },
   download: { path: "/download", namespaces: ["download"], og: "download" },
   contact: { path: "/contact", namespaces: ["contact"], og: "contact" },
