@@ -4,8 +4,7 @@ import { cn } from "@workspace/ui/lib/utils"
 import type { ComponentProps } from "react"
 
 import { SITE } from "@/lib/seo/site"
-
-import { type SocialNetwork, socialNetwork } from "./site-footer-links"
+import { type SocialNetwork, socialNetwork } from "@/lib/social"
 
 function SocialIcon({ network }: { network: SocialNetwork }) {
   const props: ComponentProps<"svg"> = {
@@ -53,11 +52,14 @@ function SocialIcon({ network }: { network: SocialNetwork }) {
   }
 }
 
-export function SiteFooterSocial() {
+export function SocialLinks({ className }: { className?: string }) {
   const { t } = useTranslation("common")
 
   return (
-    <ul aria-label={t("footer.social")} className="flex items-center gap-1">
+    <ul
+      aria-label={t("footer.social")}
+      className={cn("flex items-center gap-1", className)}
+    >
       {SITE.sameAs.map((url) => {
         const network = socialNetwork(url)
         if (!network) return null
@@ -68,13 +70,11 @@ export function SiteFooterSocial() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={t(`footer.socialLinks.${network}`)}
-              className={cn(
-                buttonVariants({
-                  variant: "ghost",
-                  size: "icon-lg",
-                  className: "text-muted-foreground",
-                })
-              )}
+              className={buttonVariants({
+                variant: "ghost",
+                size: "icon-lg",
+                className: "text-muted-foreground",
+              })}
             >
               <SocialIcon network={network} />
             </a>

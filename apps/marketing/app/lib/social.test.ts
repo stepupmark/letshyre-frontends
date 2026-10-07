@@ -1,8 +1,7 @@
 import { describe, expect, it } from "vitest"
 
-import { SITE } from "@/lib/seo/site"
-
-import { socialNetwork } from "./site-footer-links"
+import { SITE } from "./seo/site"
+import { socialNetwork } from "./social"
 
 describe("socialNetwork", () => {
   it("recognises every profile the site lists", () => {

@@ -4,11 +4,11 @@ import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Link } from "react-router"
 
 import { Container } from "@/components/section"
+import { SocialLinks } from "@/components/social-links"
 import { NewsletterForm } from "@/features/newsletter"
 import { SITE } from "@/lib/seo/site"
 
 import { FOOTER_COLUMNS } from "./site-footer-links"
-import { SiteFooterSocial } from "./site-footer-social"
 import { SiteLanguageSwitcher } from "./site-header-language"
 
 export function SiteFooter() {
@@ -83,7 +83,7 @@ export function SiteFooter() {
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
             <SiteLanguageSwitcher side="top" className="-ms-2.5" />
             <span aria-hidden className="hidden h-5 w-px bg-border sm:block" />
-            <SiteFooterSocial />
+            <SocialLinks />
           </div>
         </div>
       </Container>
