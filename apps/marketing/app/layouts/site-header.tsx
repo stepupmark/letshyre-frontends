@@ -2,7 +2,6 @@ import { Logo } from "@workspace/blocks/logo"
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { buttonVariants } from "@workspace/ui/components/button"
-import { cn } from "@workspace/ui/lib/utils"
 import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router"
 
@@ -44,56 +43,47 @@ export function SiteHeader() {
     <header
       data-compact={compact || undefined}
       data-scrolled={scrolled || undefined}
-      className="group/header sticky top-0 z-40 border-b border-transparent bg-background/95 transition-colors data-scrolled:border-border print:hidden"
+      className="group/header sticky top-0 z-40 border-b border-transparent bg-background transition-colors data-scrolled:border-border print:hidden"
     >
       <Container>
-        <div ref={rowRef} className="flex h-16 items-center gap-6">
-          <Link
-            to={localePath(lang)}
-            className="shrink-0 rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
-          >
-            <Logo label={t("nav.logoAlt")} />
-          </Link>
+        <div ref={rowRef} className="flex h-16 items-center gap-4 lg:gap-8">
+          <div className="flex flex-1 basis-0">
+            <Link
+              to={localePath(lang)}
+              className="shrink-0 rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+            >
+              <Logo label={t("nav.logoAlt")} />
+            </Link>
+          </div>
 
           <nav
             ref={navRef}
             aria-label={t("nav.primaryAria")}
-            className="hidden min-w-0 flex-1 items-center gap-1 overflow-hidden lg:flex lg:group-data-compact/header:hidden"
+            className="hidden min-w-0 self-stretch overflow-hidden lg:flex lg:group-data-compact/header:hidden"
           >
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.id}
                 to={navHref(lang, item)}
                 aria-current={isCurrent(item) ? "page" : undefined}
-                className="shrink-0 rounded-md px-3 py-2 text-sm font-medium whitespace-nowrap text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 aria-[current=page]:text-foreground"
+                className="group/link flex shrink-0 items-center border-y-2 border-transparent text-sm font-medium whitespace-nowrap text-muted-foreground outline-none hover:text-foreground aria-[current=page]:border-b-brand aria-[current=page]:text-foreground"
               >
-                {t(item.label)}
+                <span className="rounded-md px-3 py-1.5 transition-colors group-hover/link:bg-muted group-focus-visible/link:ring-3 group-focus-visible/link:ring-ring/50">
+                  {t(item.label)}
+                </span>
               </Link>
             ))}
           </nav>
 
-          <div className="ms-auto flex shrink-0 items-center gap-2">
-            <SiteLanguageSwitcher />
-            <a
-              href={APP_LINKS.logIn}
-              className={cn(
-                buttonVariants({
-                  variant: "ghost",
-                  className:
-                    "hidden lg:inline-flex lg:group-data-compact/header:hidden",
-                })
-              )}
-            >
-              {t("nav.logIn")}
-            </a>
+          <div className="flex flex-1 basis-0 items-center justify-end gap-1 sm:gap-2">
+            <SiteLanguageSwitcher
+              display="code"
+              className="hidden sm:inline-flex lg:hidden"
+            />
+            <SiteLanguageSwitcher className="hidden lg:inline-flex" />
             <a
               href={APP_LINKS.employerRegister}
-              className={cn(
-                buttonVariants({
-                  className:
-                    "hidden lg:inline-flex lg:group-data-compact/header:hidden",
-                })
-              )}
+              className={buttonVariants({ size: "lg" })}
             >
               {t("nav.getStarted")}
             </a>
