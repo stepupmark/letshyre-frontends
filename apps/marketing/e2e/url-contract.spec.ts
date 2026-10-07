@@ -20,6 +20,12 @@ test.describe("url contract", () => {
     expect(res.status()).toBe(200)
   })
 
+  test("the old privacy URL moves permanently", async ({ request }) => {
+    const res = await request.get("/hi/policy", { maxRedirects: 0 })
+    expect(res.status()).toBe(301)
+    expect(res.headers().location).toBe("/hi/privacy-policy")
+  })
+
   test("unknown pages are real 404s", async ({ request }) => {
     for (const path of [
       "/xx/nonsense",

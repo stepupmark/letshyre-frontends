@@ -18,13 +18,22 @@ export const PAGES = {
   contact: { path: "/contact", namespaces: ["contact"], og: "contact" },
   about: { path: "/about", namespaces: ["about"], og: "about" },
   terms: { path: "/terms", namespaces: ["legalTerms"], og: "terms" },
-  privacy: { path: "/policy", namespaces: ["legalPolicy"], og: "policy" },
+  privacy: {
+    path: "/privacy-policy",
+    namespaces: ["legalPolicy"],
+    og: "privacy-policy",
+  },
   refund: {
     path: "/refund-policy",
     namespaces: ["legalRefund"],
     og: "refund-policy",
   },
 } as const satisfies Record<string, PageDef>
+
+/** Old page paths and where they live now. Hosts answer these with a 301. */
+export const MOVED_PATHS: Readonly<Record<string, string>> = {
+  "/policy": "/privacy-policy",
+}
 
 export type PageId = keyof typeof PAGES
 

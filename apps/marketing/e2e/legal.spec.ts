@@ -5,7 +5,7 @@ const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
 
 const DOCS = [
   { url: "/en/terms", title: "Terms & Conditions", date: "2026-09-08" },
-  { url: "/en/policy", title: "Privacy Policy", date: "2026-07-31" },
+  { url: "/en/privacy-policy", title: "Privacy Policy", date: "2026-07-31" },
   { url: "/en/refund-policy", title: "Refund Policy", date: "2026-07-31" },
 ]
 
@@ -55,7 +55,7 @@ test("inline terms explain themselves on click", async ({ page }) => {
 })
 
 test("print hides the navigation", async ({ page }) => {
-  await page.goto("/en/policy")
+  await page.goto("/en/privacy-policy")
   await page.emulateMedia({ media: "print" })
   await expect(page.getByRole("navigation", { name: "Contents" })).toBeHidden()
   await expect(

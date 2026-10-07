@@ -570,7 +570,7 @@ function PasswordForm({
                       ),
                       privacy: (
                         <Link
-                          to="/en/policy"
+                          to="/en/privacy-policy"
                           reloadDocument
                           target="_blank"
                           className="underline underline-offset-4"

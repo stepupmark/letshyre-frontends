@@ -41,7 +41,7 @@ export const FOOTER_COLUMNS = [
     title: "footer.legal",
     links: [
       { label: "footer.links.terms", path: "/terms" },
-      { label: "footer.links.privacy", path: "/policy" },
+      { label: "footer.links.privacy", path: "/privacy-policy" },
       { label: "footer.links.refund", path: "/refund-policy" },
     ],
   },

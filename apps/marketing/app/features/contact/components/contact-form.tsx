@@ -15,6 +15,8 @@ import { useEffect, useId, useMemo, useRef, useSyncExternalStore } from "react"
 import { useForm } from "react-hook-form"
 import { Link, useSearchParams } from "react-router"
 
+import { PAGES } from "@/lib/pages"
+
 import { describeSendError } from "../lib/send-error"
 import { useSendContactMessage } from "../mutations/use-send-contact-message"
 import {
@@ -185,7 +187,9 @@ export function ContactForm() {
           <Trans
             t={t}
             i18nKey="form.privacy"
-            components={{ pp: <Link to={localePath(lang, "/policy")} /> }}
+            components={{
+              pp: <Link to={localePath(lang, PAGES.privacy.path)} />,
+            }}
           />
         </FieldDescription>
       </FieldGroup>

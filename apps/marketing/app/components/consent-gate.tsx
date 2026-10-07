@@ -6,6 +6,7 @@ import { useSyncExternalStore } from "react"
 import { Link } from "react-router"
 
 import { analyticsEnabled } from "@/lib/analytics"
+import { PAGES } from "@/lib/pages"
 
 const subscribe = () => () => undefined
 
@@ -37,7 +38,9 @@ export function ConsentGate() {
       <Trans
         t={t}
         i18nKey="consent.body"
-        components={[<Link key="policy" to={localePath(lang, "/policy")} />]}
+        components={[
+          <Link key="policy" to={localePath(lang, PAGES.privacy.path)} />,
+        ]}
       />
     </ConsentBanner>
   )

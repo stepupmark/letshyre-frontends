@@ -7,34 +7,35 @@ the real host must meet §5 too. Changing it needs a deliberate edit here first.
 
 ## 1. Marketing URLs (letshyre.ai)
 
-**The set of pages does not change:** 9 pages × 19 locales, same paths. Only the URL *form* is fixed.
+**The set of pages does not change:** 9 pages × 19 locales, same paths. Only the URL _form_ is fixed.
 
-| Request | Live today | After launch | Why |
-|---|---|---|---|
-| `/en/pricing` (canonical form) | 301 → `/en/pricing/` | **200** | Canonicals and sitemap already use this form (defect S1) |
-| `/en/pricing/` | 200 | 301 → `/en/pricing` | One URL per page |
-| `/en` | 301 → `/en/` | **200** | Same as above |
-| `/` | 200 app shell (`noindex`) | 301 → `/en` | Defect S4. Bots and first visits land on real content |
-| `/hi/pricing` (page not ready in `hi`) | 200 empty shell | 302 → `/en/pricing` | Defect S3. 302 because it becomes 200 once translated |
-| `/xx/anything`, `/en/does-not-exist` | 200 shell | **404** (prerendered 404 page) | Defect S2 |
-| `/assets/<missing>` | 200 shell | 404 | Defect S2 |
-| `/sitemap.xml`, `/robots.txt` | 200 | 200 (regenerated each build) | |
-| `/og/*.jpg`, favicons, `site.webmanifest` | 200 | 200 (same paths, new images) | Social cards and bookmarks keep working |
+| Request                                   | Live today                | After launch                   | Why                                                      |
+| ----------------------------------------- | ------------------------- | ------------------------------ | -------------------------------------------------------- |
+| `/en/pricing` (canonical form)            | 301 → `/en/pricing/`      | **200**                        | Canonicals and sitemap already use this form (defect S1) |
+| `/en/pricing/`                            | 200                       | 301 → `/en/pricing`            | One URL per page                                         |
+| `/en`                                     | 301 → `/en/`              | **200**                        | Same as above                                            |
+| `/`                                       | 200 app shell (`noindex`) | 301 → `/en`                    | Defect S4. Bots and first visits land on real content    |
+| `/hi/pricing` (page not ready in `hi`)    | 200 empty shell           | 302 → `/en/pricing`            | Defect S3. 302 because it becomes 200 once translated    |
+| `/xx/anything`, `/en/does-not-exist`      | 200 shell                 | **404** (prerendered 404 page) | Defect S2                                                |
+| `/assets/<missing>`                       | 200 shell                 | 404                            | Defect S2                                                |
+| `/sitemap.xml`, `/robots.txt`             | 200                       | 200 (regenerated each build)   |                                                          |
+| `/og/*.jpg`, favicons, `site.webmanifest` | 200                       | 200 (same paths, new images)   | Social cards and bookmarks keep working                  |
 
 Pages: `/:lang`, `/:lang/about`, `/:lang/contact`, `/:lang/download`, `/:lang/how-it-works-interview`,
-`/:lang/pricing`, `/:lang/terms`, `/:lang/policy`, `/:lang/refund-policy`.
+`/:lang/pricing`, `/:lang/terms`, `/:lang/privacy-policy`, `/:lang/refund-policy`.
+`/:lang/policy` moved to `/:lang/privacy-policy` (301).
 Locales: `en hi fr ja ar te ta es nl ru kn ml ur bn de pt it ko id`.
 
 ## 2. App routes (served by the legacy build until Phase 7)
 
-| Path | Interim (Phase 4 → 7) on `letshyre.ai` | Final on `app.letshyre.ai` |
-|---|---|---|
-| `/get-started` | legacy | same path (kept as an alias of `/sign-in` role choice) |
-| `/forgot-password` | legacy | same path |
-| `/employer/sign-in`, `/employee/sign-in` | legacy | redirect to `/sign-in` ([ADR 0009](../adr/0009-one-sign-in.md)) |
-| `/employer/register`, `/employee/register` | legacy | same paths |
-| `/employer/**`, `/employee/**` | legacy | cleaned-up paths, old ones redirect ([§6](#6-app-urls-appsapp)) |
-| `/shared-scorecard/:shareId` | legacy | same path |
+| Path                                       | Interim (Phase 4 → 7) on `letshyre.ai` | Final on `app.letshyre.ai`                                      |
+| ------------------------------------------ | -------------------------------------- | --------------------------------------------------------------- |
+| `/get-started`                             | legacy                                 | same path (kept as an alias of `/sign-in` role choice)          |
+| `/forgot-password`                         | legacy                                 | same path                                                       |
+| `/employer/sign-in`, `/employee/sign-in`   | legacy                                 | redirect to `/sign-in` ([ADR 0009](../adr/0009-one-sign-in.md)) |
+| `/employer/register`, `/employee/register` | legacy                                 | same paths                                                      |
+| `/employer/**`, `/employee/**`             | legacy                                 | cleaned-up paths, old ones redirect ([§6](#6-app-urls-appsapp)) |
+| `/shared-scorecard/:shareId`               | legacy                                 | same path                                                       |
 
 From Phase 7: `letshyre.ai/<any app path>` → **301** `app.letshyre.ai/<same path + query>`. Links already
 sent to people (shared scorecards, password-reset emails) keep working. All app paths keep
@@ -45,21 +46,21 @@ sent to people (shared scorecards, password-reset emails) keep working. All app 
 All come from one module (`apps/marketing/app/lib/app-links.ts`) built from `VITE_APP_URL`.
 Interim `VITE_APP_URL=https://letshyre.ai`. Final `VITE_APP_URL=https://app.letshyre.ai`.
 
-| Marketing CTA | Path on `VITE_APP_URL` | Notes |
-|---|---|---|
-| Log in (header) | `/get-started` | Role choice, then sign-in. Becomes `/sign-in` once the app has unified sign-in |
-| Get started (header), "I'm hiring", Start hiring | `/employer/register` | |
-| "I'm looking for a job", Apply | `/employee/register` | |
-| Pricing: Free plan "Start free" | `/employer/register` | |
-| Pricing: buy plan / top-up | `/employer/billing?checkout=<key>` | `<key>` = plan id or `<n>-credits`, same as today's `?checkout=` values. Signed-out users sign in and return here. Needs the legacy patch (step 4.5) |
-| Pricing: Custom "Talk to sales" | marketing `/:lang/contact?topic=sales` | Stays on marketing |
-| Download page: "Sign in" mention | `/employee/sign-in` | Redirects to `/sign-in` in the new app |
+| Marketing CTA                                    | Path on `VITE_APP_URL`                 | Notes                                                                                                                                                |
+| ------------------------------------------------ | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Log in (header)                                  | `/get-started`                         | Role choice, then sign-in. Becomes `/sign-in` once the app has unified sign-in                                                                       |
+| Get started (header), "I'm hiring", Start hiring | `/employer/register`                   |                                                                                                                                                      |
+| "I'm looking for a job", Apply                   | `/employee/register`                   |                                                                                                                                                      |
+| Pricing: Free plan "Start free"                  | `/employer/register`                   |                                                                                                                                                      |
+| Pricing: buy plan / top-up                       | `/employer/billing?checkout=<key>`     | `<key>` = plan id or `<n>-credits`, same as today's `?checkout=` values. Signed-out users sign in and return here. Needs the legacy patch (step 4.5) |
+| Pricing: Custom "Talk to sales"                  | marketing `/:lang/contact?topic=sales` | Stays on marketing                                                                                                                                   |
+| Download page: "Sign in" mention                 | `/employee/sign-in`                    | Redirects to `/sign-in` in the new app                                                                                                               |
 
 The language is carried across via the `lh_locale` cookie (`Domain=.letshyre.ai`), not the URL.
 
 ## 4. App → marketing links (legacy, interim)
 
-The legacy dashboards link to `/en/pricing`, `/en/terms`, `/en/policy`, `/en/refund-policy`, `/en/contact`, `/en`.
+The legacy dashboards link to `/en/pricing`, `/en/terms`, `/en/policy` (301 to `/en/privacy-policy`), `/en/refund-policy`, `/en/contact`, `/en`.
 These are served by the new marketing build on the same origin, with no change needed.
 Exception: "Buy credits" (`CreditUsageCard`, `Invoice`) is repointed to `/employer/billing` in step 4.5.
 
@@ -68,6 +69,7 @@ Exception: "Buy credits" (`CreditUsageCard`, `Invoice`) is repointed to `/employ
 The nginx config was removed and no host is chosen yet. Whatever serves `build/client` must:
 
 - `/` → 301 `/en`.
+- Moved pages → 301 to their new path. `build/redirects.map` lists them as nginx map lines.
 - Trailing slash → 301 to the same path without it.
 - A page not ready in a locale → 302 `/en/...`.
 - Unknown paths → 404 with the prerendered `/404` page as the body.
@@ -79,13 +81,13 @@ The nginx config was removed and no host is chosen yet. Whatever serves `build/c
 Cleaned up 2026-10 ([ADR 0014](../adr/0014-app-route-config.md)). `app/routes.ts` is the source;
 links are typed with `href()`.
 
-| Area | Paths |
-|---|---|
-| Auth | `/sign-in`, `/get-started`, `/forgot-password`, `/employer/register`, `/employee/register` |
-| Public | `/shared-scorecard/:shareId` |
-| Onboarding | `/employer/onboarding`, `/employee/onboarding` |
-| Employer | `/employer/dashboard`, `/employer/jobs`, `/employer/jobs/new`, `/employer/jobs/:jobId`, `/employer/jobs/:jobId/edit`, `/employer/jobs/:jobId/applicants`, `/employer/candidates`, `/employer/candidates/unlocked`, `/employer/candidates/:candidateId`, `/employer/candidates/:candidateId/scorecard`, `/employer/billing`, `/employer/invoices`, `/employer/team`, `/employer/shared-links`, `/employer/company`, `/employer/assistant` |
-| Employee | `/employee/jobs`, `/employee/applications`, `/employee/scorecards`, `/employee/scorecards/:scorecardId`, `/employee/profile`, `/employee/interview-guide`, `/employee/assistant` |
+| Area       | Paths                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Auth       | `/sign-in`, `/get-started`, `/forgot-password`, `/employer/register`, `/employee/register`                                                                                                                                                                                                                                                                                                                                               |
+| Public     | `/shared-scorecard/:shareId`                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Onboarding | `/employer/onboarding`, `/employee/onboarding`                                                                                                                                                                                                                                                                                                                                                                                           |
+| Employer   | `/employer/dashboard`, `/employer/jobs`, `/employer/jobs/new`, `/employer/jobs/:jobId`, `/employer/jobs/:jobId/edit`, `/employer/jobs/:jobId/applicants`, `/employer/candidates`, `/employer/candidates/unlocked`, `/employer/candidates/:candidateId`, `/employer/candidates/:candidateId/scorecard`, `/employer/billing`, `/employer/invoices`, `/employer/team`, `/employer/shared-links`, `/employer/company`, `/employer/assistant` |
+| Employee   | `/employee/jobs`, `/employee/applications`, `/employee/scorecards`, `/employee/scorecards/:scorecardId`, `/employee/profile`, `/employee/interview-guide`, `/employee/assistant`                                                                                                                                                                                                                                                         |
 
 Sign-in sends employers to `/employer/dashboard` and candidates to `/employee/jobs`. Any other
 `/employer/*` or `/employee/*` path is a 404 inside the dashboard shell.
@@ -94,28 +96,28 @@ Sign-in sends employers to `/employer/dashboard` and candidates to `/employee/jo
 `app/lib/moved.ts`; the query string is kept. A host can add 301s from the same map later. Never
 remove an entry: these URLs are in bookmarks and sent emails.
 
-| Old | New |
-|---|---|
-| `/employer/sign-in`, `/employee/sign-in` | `/sign-in` |
-| `/employer` | `/employer/dashboard` |
-| `/employer/post-job` | `/employer/jobs/new` |
-| `/employer/view-jobs` | `/employer/jobs` |
-| `/employer/view-jobs/:jobId` | `/employer/jobs/:jobId` |
-| `/employer/view-jobs/:jobId?edit=1` | `/employer/jobs/:jobId/edit` |
-| `/employer/view-jobs/applicants/:jobId` | `/employer/jobs/:jobId/applicants` |
-| `/employer/candidate-pool` | `/employer/candidates` |
-| `/employer/unlocked-candidates` | `/employer/candidates/unlocked` |
-| `/employer/employee-profile?id=<id>` | `/employer/candidates/<id>` (no id: `/employer/candidates/unlocked`) |
-| `/employer/employee-score-card?id=<id>` | `/employer/candidates/<id>/scorecard` (no id: `/employer/candidates/unlocked`) |
-| `/employer/invoice` | `/employer/invoices` |
-| `/employer/your-team` | `/employer/team` |
-| `/employer/profile` | `/employer/company` |
-| `/employer/chatbot` | `/employer/assistant` |
-| `/employee`, `/employee/find-jobs` | `/employee/jobs` |
-| `/employee/my-applications` | `/employee/applications` |
-| `/employee/score-cards-list` | `/employee/scorecards` |
-| `/employee/scorecard?id=<id>` | `/employee/scorecards/<id>` (no id: `/employee/scorecards`) |
-| `/employee/chatbot` | `/employee/assistant` |
+| Old                                      | New                                                                            |
+| ---------------------------------------- | ------------------------------------------------------------------------------ |
+| `/employer/sign-in`, `/employee/sign-in` | `/sign-in`                                                                     |
+| `/employer`                              | `/employer/dashboard`                                                          |
+| `/employer/post-job`                     | `/employer/jobs/new`                                                           |
+| `/employer/view-jobs`                    | `/employer/jobs`                                                               |
+| `/employer/view-jobs/:jobId`             | `/employer/jobs/:jobId`                                                        |
+| `/employer/view-jobs/:jobId?edit=1`      | `/employer/jobs/:jobId/edit`                                                   |
+| `/employer/view-jobs/applicants/:jobId`  | `/employer/jobs/:jobId/applicants`                                             |
+| `/employer/candidate-pool`               | `/employer/candidates`                                                         |
+| `/employer/unlocked-candidates`          | `/employer/candidates/unlocked`                                                |
+| `/employer/employee-profile?id=<id>`     | `/employer/candidates/<id>` (no id: `/employer/candidates/unlocked`)           |
+| `/employer/employee-score-card?id=<id>`  | `/employer/candidates/<id>/scorecard` (no id: `/employer/candidates/unlocked`) |
+| `/employer/invoice`                      | `/employer/invoices`                                                           |
+| `/employer/your-team`                    | `/employer/team`                                                               |
+| `/employer/profile`                      | `/employer/company`                                                            |
+| `/employer/chatbot`                      | `/employer/assistant`                                                          |
+| `/employee`, `/employee/find-jobs`       | `/employee/jobs`                                                               |
+| `/employee/my-applications`              | `/employee/applications`                                                       |
+| `/employee/score-cards-list`             | `/employee/scorecards`                                                         |
+| `/employee/scorecard?id=<id>`            | `/employee/scorecards/<id>` (no id: `/employee/scorecards`)                    |
+| `/employee/chatbot`                      | `/employee/assistant`                                                          |
 
 Unchanged: `/employer/billing`, `/employer/shared-links`, `/employer/onboarding`, `/employer/register`,
 `/employee/profile`, `/employee/interview-guide`, `/employee/onboarding`, `/employee/register`.

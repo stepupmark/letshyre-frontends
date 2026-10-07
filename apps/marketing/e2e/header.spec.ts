@@ -169,7 +169,7 @@ test("footer has its landmark, link columns and labelled social links", async ({
   ).toHaveAttribute("href", /linkedin\.com/)
   await expect(
     footer.getByRole("link", { name: "Privacy Policy" })
-  ).toHaveAttribute("href", "/en/policy")
+  ).toHaveAttribute("href", "/en/privacy-policy")
 })
 
 test("newsletter validates, then confirms inline", async ({ page }) => {

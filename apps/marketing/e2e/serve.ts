@@ -7,6 +7,7 @@ import { extname, join, normalize, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { createGzip } from "node:zlib"
 
+import { MOVED_PATHS } from "../app/lib/pages.ts"
 import { parseNginxMap } from "../../../tooling/csp.ts"
 
 const ROOT = resolve(fileURLToPath(new URL("../build/client", import.meta.url)))
@@ -81,6 +82,8 @@ createServer((req, res) => {
   if (asset) return send(200, asset)
 
   const page = LOCALE_PAGE.exec(path)
+  const moved = page?.[2] && MOVED_PATHS[page[2]]
+  if (page && moved) return redirect(301, `/${page[1]}${moved}`)
   if (page) {
     const html = fileAt(`${path}/index.html`)
     if (html) return send(200, html)

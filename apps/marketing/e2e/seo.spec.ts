@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs"
 
 import { expect, test } from "@playwright/test"
 
+import { MOVED_PATHS } from "../app/lib/pages.ts"
 import { jsonLdOf, metaOf, titleOf } from "../scripts/html.ts"
 import { SEO_ALLOWLIST } from "./seo-allowlist.ts"
 import { SITEMAP } from "./sitemap.ts"
@@ -32,12 +33,16 @@ const allowed = (path: string, field: string) =>
 test.describe("seo baseline", () => {
   test.skip(({ browserName }) => browserName !== "chromium", "static HTML")
 
-  for (const { path } of SITEMAP) {
+  for (const { path: url } of SITEMAP) {
+    const path = Object.entries(MOVED_PATHS).reduce(
+      (p, [from, to]) => p.replace(new RegExp(`${to}$`), from),
+      url
+    )
     const old = before.get(path)
     if (!old) continue
 
-    test(`${path} keeps its search appearance`, async ({ request }) => {
-      const html = await (await request.get(path)).text()
+    test(`${url} keeps its search appearance`, async ({ request }) => {
+      const html = await (await request.get(url)).text()
       const types = jsonLdOf(html)
         .map((block) => (JSON.parse(block) as { "@type": string })["@type"])
         .sort()

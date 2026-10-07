@@ -10,7 +10,7 @@ import { type Locale, localePath } from "@workspace/i18n"
 import { loadEnv } from "vite"
 
 import { parseEnv } from "../app/lib/env.schema.ts"
-import { PAGES, type PageId } from "../app/lib/pages.ts"
+import { MOVED_PATHS, PAGES, type PageId } from "../app/lib/pages.ts"
 import { readyLocales } from "../app/lib/readiness.ts"
 import {
   initialScriptsOf,
@@ -149,6 +149,16 @@ if (existsSync(notFound)) {
 }
 
 writeFileSync(join(ROOT, "build/csp.map"), nginxMap(policies, fallbackPolicy))
+// old URL -> new URL pairs for the host's 301s
+writeFileSync(
+  join(ROOT, "build/redirects.map"),
+  Object.entries(MOVED_PATHS)
+    .map(
+      ([from, to]) => `~^/([a-z]{2})${from}$ /$1${to};
+`
+    )
+    .join("")
+)
 
 if (problems.length) {
   console.error(problems.map((p) => `✖ ${p}`).join("\n"))
