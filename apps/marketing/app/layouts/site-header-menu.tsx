@@ -131,13 +131,7 @@ export function SiteHeaderMenu({ className }: { className?: string }) {
           </div>
         </div>
 
-        <SheetFooter className="grid grid-cols-2 border-t">
-          <a
-            href={APP_LINKS.logIn}
-            className={buttonVariants({ variant: "outline", size: "lg" })}
-          >
-            {t("nav.logIn")}
-          </a>
+        <SheetFooter className="border-t">
           <a
             href={APP_LINKS.employerRegister}
             className={buttonVariants({ size: "lg" })}

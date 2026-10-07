@@ -81,9 +81,6 @@ describe("SiteHeader", () => {
       name: "Mobile navigation",
     })
     expect(within(menu).getAllByRole("link")).toHaveLength(5)
-    expect(
-      within(dialog).getByRole("link", { name: "Log in" })
-    ).toHaveAttribute("href", expect.stringContaining("/get-started") as string)
 
     await user.click(within(menu).getByRole("link", { name: "About" }))
     await waitFor(() => {
