@@ -1,7 +1,9 @@
 {
   "refund": {
     "title": "Politique de Remboursement",
-    "intro": "Bienvenue chez LetsHyre. La présente Politique de Remboursement explique les conditions dans lesquelles des remboursements peuvent être accordés pour les paiements effectués sur la plateforme LetsHyre.",
+    "intro": [
+      "Bienvenue chez LetsHyre. La présente Politique de Remboursement explique les conditions dans lesquelles des remboursements peuvent être accordés pour les paiements effectués sur la plateforme LetsHyre."
+    ],
     "sections": [
       {
         "id": "service-model",
@@ -19,9 +21,6 @@
               "Les enregistrements d'entretien",
               "Les coordonnées des candidats"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -51,9 +50,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Toute demande de remboursement doit être soumise dans un délai de 7 jours à compter de la date de la transaction."
           }
@@ -79,9 +75,6 @@
               "Changements dans les besoins de recrutement après le déblocage d'un candidat.",
               "Issues d'embauche ou résultats de recrutement."
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -153,7 +146,6 @@
             "type": "contact",
             "intro": "Pour toute question relative à la facturation, aux paiements ou aux remboursements, veuillez contacter :",
             "emailLabel": "E-mail :",
-            "email": "support@letshyre.ai",
             "team": "Équipe Support LetsHyre"
           }
         ]

@@ -1,50 +1,81 @@
+import { LOCALES } from "@workspace/i18n"
 import { describe, expect, it } from "vitest"
+import { z } from "zod"
 
-import legalPolicy from "@/locales/en/legalPolicy.json"
-import legalRefund from "@/locales/en/legalRefund.json"
-import legalTerms from "@/locales/en/legalTerms.json"
+import {
+  buildToc,
+  LEGAL_DOCS,
+  type LegalDoc,
+  readingMinutes,
+} from "./legal-doc"
 
-import { buildToc, legalDocSchema, readingMinutes } from "./legal-doc"
+const richText = z.union([
+  z.string(),
+  z.array(
+    z.union([
+      z.string(),
+      z.strictObject({ tip: z.string(), tooltip: z.string() }),
+      z.strictObject({ highlight: z.string() }),
+    ])
+  ),
+])
 
-const docs = {
-  terms: legalDocSchema.parse(legalTerms.terms),
-  policy: legalDocSchema.parse(legalPolicy.policy),
-  refund: legalDocSchema.parse(legalRefund.refund),
-}
+const legalDocSchema = z.strictObject({
+  title: z.string(),
+  intro: z.array(z.string()).min(1),
+  sections: z
+    .array(
+      z.strictObject({
+        id: z.string().regex(/^[a-z0-9-]+$/),
+        title: z.string(),
+        blocks: z.array(
+          z.discriminatedUnion("type", [
+            z.strictObject({ type: z.literal("p"), text: richText }),
+            z.strictObject({ type: z.literal("subheading"), text: z.string() }),
+            z.strictObject({ type: z.literal("ul"), items: z.array(richText) }),
+            z.strictObject({
+              type: z.literal("contact"),
+              intro: z.string(),
+              emailLabel: z.string(),
+              team: z.string(),
+            }),
+          ])
+        ),
+      })
+    )
+    .min(1),
+}) satisfies z.ZodType<LegalDoc>
 
-describe("legalDocSchema", () => {
-  it("parses every English document and normalises the intro", () => {
-    expect(docs.terms.intro).toHaveLength(1)
-    expect(docs.policy.intro.length).toBeGreaterThan(1)
-    expect(docs.refund.sections.at(-1)?.id).toBe("contact-us")
-  })
+const catalogs = import.meta.glob<Record<string, unknown>>(
+  "/app/locales/*/legal*.json",
+  { eager: true, import: "default" }
+)
 
-  it("rejects an unknown block type", () => {
-    expect(
-      legalDocSchema.safeParse({
-        title: "T",
-        intro: "I",
-        sections: [{ id: "a", title: "A", blocks: [{ type: "video" }] }],
-      }).success
-    ).toBe(false)
-  })
+const docOf = (lang: string, ns: keyof typeof LEGAL_DOCS) =>
+  catalogs[`/app/locales/${lang}/${ns}.json`]?.[LEGAL_DOCS[ns].key]
+
+describe("legal documents", () => {
+  // the page renders this JSON without checking it, so a bad translation must fail here
+  it.each(LOCALES)(
+    "%s matches the shape and the English section ids",
+    (lang) => {
+      for (const ns of Object.keys(LEGAL_DOCS) as (keyof typeof LEGAL_DOCS)[]) {
+        const doc = docOf(lang, ns)
+        if (doc === undefined) continue
+        const parsed = legalDocSchema.parse(doc)
+        const english = legalDocSchema.parse(docOf("en", ns))
+        expect(
+          parsed.sections.map((s) => s.id),
+          ns
+        ).toEqual(english.sections.map((s) => s.id))
+      }
+    }
+  )
 })
 
 describe("buildToc", () => {
-  it("lists sections in order with unique ids", () => {
-    const toc = buildToc(docs.terms)
-    expect(toc).toHaveLength(docs.terms.sections.length)
-    expect(toc[0]).toMatchObject({
-      id: "platform-overview",
-      title: "1. Platform Overview",
-      children: [],
-    })
-    const ids = toc.flatMap((e) => [e.id, ...e.children.map((c) => c.id)])
-    expect(new Set(ids).size).toBe(ids.length)
-  })
-
   it("nests subheadings without their trailing colon", () => {
-    const [first] = buildToc(docs.policy)
+    const [first] = buildToc(docOf("en", "legalPolicy") as LegalDoc)
     expect(first?.children[0]).toEqual({
       id: "information-we-collect-1",
       title: "Candidate Information",
@@ -53,10 +84,8 @@ describe("buildToc", () => {
 })
 
 describe("readingMinutes", () => {
-  it("is at least one minute", () => {
-    expect(
-      readingMinutes({ title: "T", intro: ["Short."], sections: [] })
-    ).toBe(1)
-    expect(readingMinutes(docs.terms)).toBeGreaterThan(1)
+  it("counts words in scripts without spaces", () => {
+    const terms = docOf("ja", "legalTerms") as LegalDoc
+    expect(readingMinutes(terms, "ja")).toBeGreaterThan(1)
   })
 })

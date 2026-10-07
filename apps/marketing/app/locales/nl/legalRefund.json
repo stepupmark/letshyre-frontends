@@ -1,7 +1,9 @@
 {
   "refund": {
     "title": "Restitutiebeleid",
-    "intro": "Welkom bij LetsHyre. Dit Restitutiebeleid legt uit onder welke voorwaarden restituties kunnen worden verstrekt voor betalingen die op het platform van LetsHyre zijn gedaan.",
+    "intro": [
+      "Welkom bij LetsHyre. Dit Restitutiebeleid legt uit onder welke voorwaarden restituties kunnen worden verstrekt voor betalingen die op het platform van LetsHyre zijn gedaan."
+    ],
     "sections": [
       {
         "id": "service-model",
@@ -19,9 +21,6 @@
               "Interviewopnamen",
               "Contactgegevens van kandidaten"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -51,9 +50,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Alle restitutieverzoeken moeten binnen 7 dagen na de transactiedatum worden ingediend."
           }
@@ -79,9 +75,6 @@
               "Wijzigingen in wervingsvereisten nadat een kandidaat is ontgrendeld.",
               "Aanwervingsresultaten of wervingsresultaten."
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -153,7 +146,6 @@
             "type": "contact",
             "intro": "Voor vragen over facturering, betalingen of restituties kunt u contact opnemen met:",
             "emailLabel": "E-mail:",
-            "email": "support@letshyre.ai",
             "team": "LetsHyre Support Team"
           }
         ]

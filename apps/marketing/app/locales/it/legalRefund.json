@@ -1,7 +1,9 @@
 {
   "refund": {
     "title": "Politica di Rimborso",
-    "intro": "Benvenuto su LetsHyre. La presente Politica di Rimborso illustra le condizioni in base alle quali possono essere concessi rimborsi per i pagamenti effettuati sulla piattaforma LetsHyre.",
+    "intro": [
+      "Benvenuto su LetsHyre. La presente Politica di Rimborso illustra le condizioni in base alle quali possono essere concessi rimborsi per i pagamenti effettuati sulla piattaforma LetsHyre."
+    ],
     "sections": [
       {
         "id": "service-model",
@@ -19,9 +21,6 @@
               "Registrazioni del colloquio",
               "Informazioni di contatto dei candidati"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -51,9 +50,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Tutte le richieste di rimborso devono essere presentate entro 7 giorni dalla data della transazione."
           }
@@ -79,9 +75,6 @@
               "Modifiche ai requisiti di assunzione dopo lo sblocco di un candidato.",
               "Esiti di assunzione o risultati di reclutamento."
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -153,7 +146,6 @@
             "type": "contact",
             "intro": "Per richieste relative a fatturazione, pagamenti o rimborsi, contattaci a:",
             "emailLabel": "Email:",
-            "email": "support@letshyre.ai",
             "team": "Team di Supporto LetsHyre"
           }
         ]

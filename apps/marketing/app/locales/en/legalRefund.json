@@ -1,7 +1,9 @@
 {
   "refund": {
     "title": "Refund Policy",
-    "intro": "Welcome to LetsHyre. This Refund Policy explains the conditions under which refunds may be provided for payments made on the LetsHyre platform.",
+    "intro": [
+      "Welcome to LetsHyre. This Refund Policy explains the conditions under which refunds may be provided for payments made on the LetsHyre platform."
+    ],
     "sections": [
       {
         "id": "service-model",
@@ -19,9 +21,6 @@
               "Interview Recordings",
               "Candidate Contact Information"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -51,9 +50,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "All refund requests must be submitted within 7 days of the transaction date."
           }
@@ -79,9 +75,6 @@
               "Changes in hiring requirements after a candidate has been unlocked.",
               "Hiring outcomes or recruitment results."
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -153,7 +146,6 @@
             "type": "contact",
             "intro": "For billing, payment, or refund-related inquiries, please contact:",
             "emailLabel": "Email:",
-            "email": "support@letshyre.ai",
             "team": "LetsHyre Support Team"
           }
         ]

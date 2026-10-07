@@ -1,7 +1,9 @@
 {
   "refund": {
     "title": "Rückerstattungsrichtlinie",
-    "intro": "Willkommen bei LetsHyre. Diese Rückerstattungsrichtlinie erläutert die Bedingungen, unter denen Rückerstattungen für Zahlungen auf der LetsHyre-Plattform gewährt werden können.",
+    "intro": [
+      "Willkommen bei LetsHyre. Diese Rückerstattungsrichtlinie erläutert die Bedingungen, unter denen Rückerstattungen für Zahlungen auf der LetsHyre-Plattform gewährt werden können."
+    ],
     "sections": [
       {
         "id": "service-model",
@@ -19,9 +21,6 @@
               "Interviewaufzeichnungen",
               "Kontaktinformationen der Kandidaten"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -51,9 +50,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Alle Rückerstattungsanfragen müssen innerhalb von 7 Tagen nach dem Transaktionsdatum eingereicht werden."
           }
@@ -79,9 +75,6 @@
               "Änderungen der Einstellungsanforderungen, nachdem ein Kandidat freigeschaltet wurde.",
               "Einstellungsergebnisse oder Recruiting-Ergebnisse."
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -153,7 +146,6 @@
             "type": "contact",
             "intro": "Bei Fragen zu Abrechnung, Zahlung oder Rückerstattung wenden Sie sich bitte an:",
             "emailLabel": "E-Mail:",
-            "email": "support@letshyre.ai",
             "team": "LetsHyre Support-Team"
           }
         ]

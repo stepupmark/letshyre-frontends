@@ -1,7 +1,9 @@
 {
   "terms": {
     "title": "Allgemeine Geschäftsbedingungen",
-    "intro": "Durch den Zugriff auf oder die Nutzung von LetsHyre („LetsHyre“, „wir“, „unser“ oder „uns“) erklären Sie sich mit diesen Allgemeinen Geschäftsbedingungen einverstanden. Wenn Sie diesen Bedingungen nicht zustimmen, nutzen Sie die Plattform bitte nicht.",
+    "intro": [
+      "Durch den Zugriff auf oder die Nutzung von LetsHyre („LetsHyre“, „wir“, „unser“ oder „uns“) erklären Sie sich mit diesen Allgemeinen Geschäftsbedingungen einverstanden. Wenn Sie diesen Bedingungen nicht zustimmen, nutzen Sie die Plattform bitte nicht."
+    ],
     "sections": [
       {
         "id": "platform-overview",
@@ -20,9 +22,6 @@
               "Transparenz im Interviewprozess",
               "Kandidatenprüfung"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -52,18 +51,12 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Berufseinsteiger, Studierende, Praktikanten und Kandidaten ohne vorherige Berufserfahrung sind unter Umständen nicht berechtigt, bestimmte Kandidatendienste der Plattform zu nutzen."
           },
           {
             "type": "p",
             "text": "LetsHyre behält sich das Recht vor, Kandidatenprofile, die nicht dem beabsichtigten Zweck der Plattform entsprechen, zu überprüfen, einzuschränken, zu sperren oder zu entfernen."
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "subheading",
@@ -96,9 +89,6 @@
               "Alle während der Interviews bereitgestellten Informationen ihre tatsächliche Berufserfahrung und Fähigkeiten widerspiegeln.",
               "Sie keine mehrfachen irreführenden Profile erstellen oder betrügerische Handlungen begehen."
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -207,9 +197,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Sobald Kandidateninformationen erfolgreich freigeschaltet und dem Arbeitgeber zur Verfügung gestellt wurden, gilt die Transaktion als abgeschlossen."
           },
@@ -307,9 +294,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Solche Maßnahmen können ohne vorherige Ankündigung ergriffen werden, sofern dies zum Schutz der Plattform, ihrer Nutzer oder zur Erfüllung rechtlicher Verpflichtungen erforderlich ist."
           }
@@ -345,9 +329,6 @@
                 ", die aus der Nutzung der Plattform entstehen."
               ]
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -405,7 +386,6 @@
             "type": "contact",
             "intro": "Bei Fragen zu diesen Allgemeinen Geschäftsbedingungen wenden Sie sich bitte an:",
             "emailLabel": "E-Mail:",
-            "email": "support@letshyre.ai",
             "team": "LetsHyre Support-Team"
           }
         ]

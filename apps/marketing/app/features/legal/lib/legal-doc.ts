@@ -1,8 +1,3 @@
-import { z } from "zod"
-
-// parsed in the browser too; avoid the eval probe our CSP blocks (see @workspace/api envelope)
-z.config({ jitless: true })
-
 export type LegalNamespace = "legalTerms" | "legalPolicy" | "legalRefund"
 
 /** Catalog key of each document and when its English text last changed. */
@@ -12,46 +7,21 @@ export const LEGAL_DOCS = {
   legalRefund: { key: "refund", updated: "2026-07-31" },
 } as const satisfies Record<LegalNamespace, { key: string; updated: string }>
 
-// legal text can carry inline emphasis: a string, or runs mixing strings with terms
-const runSchema = z.union([
-  z.string(),
-  z.object({ tip: z.string(), tooltip: z.string() }),
-  z.object({ highlight: z.string() }),
-])
-const richTextSchema = z.union([z.string(), z.array(runSchema)])
+/** Plain text, or runs mixing text with highlighted and explained terms. */
+export type RichText =
+  string | (string | { tip: string; tooltip: string } | { highlight: string })[]
 
-export type RichText = z.output<typeof richTextSchema>
+export type LegalBlock =
+  | { type: "p"; text: RichText }
+  | { type: "subheading"; text: string }
+  | { type: "ul"; items: RichText[] }
+  | { type: "contact"; intro: string; emailLabel: string; team: string }
 
-const blockSchema = z.discriminatedUnion("type", [
-  z.object({ type: z.literal("p"), text: richTextSchema }),
-  z.object({ type: z.literal("subheading"), text: z.string() }),
-  z.object({ type: z.literal("ul"), items: z.array(richTextSchema) }),
-  z.object({ type: z.literal("spacer") }),
-  z.object({
-    type: z.literal("contact"),
-    intro: z.string(),
-    emailLabel: z.string(),
-    email: z.string(),
-    team: z.string(),
-  }),
-])
-
-export const legalDocSchema = z.object({
-  title: z.string(),
-  intro: z
-    .union([z.string(), z.array(z.string())])
-    .transform((intro) => (typeof intro === "string" ? [intro] : intro)),
-  sections: z.array(
-    z.object({
-      id: z.string(),
-      title: z.string(),
-      blocks: z.array(blockSchema),
-    })
-  ),
-})
-
-export type LegalDoc = z.output<typeof legalDocSchema>
-export type LegalBlock = z.output<typeof blockSchema>
+export interface LegalDoc {
+  title: string
+  intro: string[]
+  sections: { id: string; title: string; blocks: LegalBlock[] }[]
+}
 
 export interface TocEntry {
   id: string
@@ -95,17 +65,20 @@ function blockText(block: LegalBlock): string[] {
       return block.items.map(plainText)
     case "contact":
       return [block.intro, block.team]
-    case "spacer":
-      return []
   }
 }
 
-/** Rough reading time at 200 words a minute, never less than one. */
-export function readingMinutes(doc: LegalDoc): number {
+/** Reading time at 200 words a minute, never under one. Segmenter counts words in scripts without spaces too. */
+export function readingMinutes(doc: LegalDoc, lang: string): number {
   const text = [
     ...doc.intro,
     ...doc.sections.flatMap((s) => [s.title, ...s.blocks.flatMap(blockText)]),
   ].join(" ")
-  const words = text.split(/\s+/).filter(Boolean).length
+  let words = 0
+  for (const segment of new Intl.Segmenter(lang, {
+    granularity: "word",
+  }).segment(text)) {
+    if (segment.isWordLike) words++
+  }
   return Math.max(1, Math.round(words / 200))
 }

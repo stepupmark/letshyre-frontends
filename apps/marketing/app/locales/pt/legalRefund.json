@@ -1,7 +1,9 @@
 {
   "refund": {
     "title": "Política de Reembolso",
-    "intro": "Bem-vindo à LetsHyre. Esta Política de Reembolso explica as condições em que poderão ser concedidos reembolsos relativos a pagamentos efetuados na plataforma LetsHyre.",
+    "intro": [
+      "Bem-vindo à LetsHyre. Esta Política de Reembolso explica as condições em que poderão ser concedidos reembolsos relativos a pagamentos efetuados na plataforma LetsHyre."
+    ],
     "sections": [
       {
         "id": "service-model",
@@ -19,9 +21,6 @@
               "Gravações de Entrevistas",
               "Informações de Contacto dos Candidatos"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -51,9 +50,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Todos os pedidos de reembolso devem ser submetidos no prazo de 7 dias a contar da data da transação."
           }
@@ -79,9 +75,6 @@
               "Alterações nos requisitos de contratação após o desbloqueio de um candidato.",
               "Resultados de contratação ou resultados de recrutamento."
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -153,7 +146,6 @@
             "type": "contact",
             "intro": "Para questões relacionadas com faturação, pagamentos ou reembolsos, contacte-nos através de:",
             "emailLabel": "Email:",
-            "email": "support@letshyre.ai",
             "team": "Equipa de Suporte da LetsHyre"
           }
         ]

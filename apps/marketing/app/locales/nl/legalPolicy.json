@@ -34,9 +34,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "subheading",
             "text": "Informatie van werkgevers:"
           },
@@ -55,9 +52,6 @@
               "Functiebeschrijvingen",
               "Door werkgevers ingediende profielinformatie"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "subheading",
@@ -125,9 +119,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Wij kunnen het volgende verwerken:"
           },
@@ -138,9 +129,6 @@
               "Interviewopnamen",
               "Door AI gegenereerde interviewscorecards"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -164,9 +152,6 @@
               "Vertrouwde aanbieders van cloudhosting, analyse, communicatie, betalingsverwerking en AI-diensten",
               "Overheids- of wetshandhavingsinstanties wanneer dit vereist is door toepasselijke wetgeving"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -228,9 +213,6 @@
               "Verwijdering van hun account aanvragen",
               "Verwijdering van persoonsgegevens aanvragen waar wettelijk van toepassing"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -306,7 +288,6 @@
             "type": "contact",
             "intro": "Voor privacygerelateerde vragen, verzoeken of zorgen kunt u contact opnemen met:",
             "emailLabel": "E-mail:",
-            "email": "support@letshyre.ai",
             "team": "LetsHyre Support Team"
           }
         ]

@@ -1,7 +1,9 @@
 {
   "terms": {
     "title": "Syarat & Ketentuan",
-    "intro": "Dengan mengakses atau menggunakan LetsHyre (“LetsHyre”, “kami”), Anda setuju untuk terikat oleh Syarat & Ketentuan ini. Jika Anda tidak menyetujui Syarat ini, mohon untuk tidak menggunakan platform ini.",
+    "intro": [
+      "Dengan mengakses atau menggunakan LetsHyre (“LetsHyre”, “kami”), Anda setuju untuk terikat oleh Syarat & Ketentuan ini. Jika Anda tidak menyetujui Syarat ini, mohon untuk tidak menggunakan platform ini."
+    ],
     "sections": [
       {
         "id": "platform-overview",
@@ -20,9 +22,6 @@
               "Transparansi Wawancara",
               "Penyaringan Kandidat"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -52,18 +51,12 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Fresh graduate, pelajar, peserta magang, dan kandidat tanpa pengalaman kerja profesional sebelumnya mungkin tidak memenuhi syarat untuk menggunakan layanan kandidat tertentu yang tersedia di platform."
           },
           {
             "type": "p",
             "text": "LetsHyre berhak untuk meninjau, membatasi, menangguhkan, atau menghapus profil kandidat yang tidak sesuai dengan tujuan platform yang dimaksud."
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "subheading",
@@ -96,9 +89,6 @@
               "Setiap informasi yang diberikan selama wawancara mencerminkan pengalaman dan keterampilan profesional mereka yang sebenarnya.",
               "Mereka tidak akan membuat beberapa profil yang menyesatkan atau terlibat dalam aktivitas penipuan."
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -207,9 +197,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Setelah informasi kandidat berhasil dibuka aksesnya dan tersedia bagi pemberi kerja, transaksi tersebut dianggap selesai."
           },
@@ -307,9 +294,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Tindakan tersebut dapat diambil tanpa pemberitahuan terlebih dahulu apabila diperlukan untuk melindungi platform, penggunanya, atau kewajiban hukum."
           }
@@ -345,9 +329,6 @@
                 " yang timbul akibat penggunaan platform."
               ]
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -405,7 +386,6 @@
             "type": "contact",
             "intro": "Untuk pertanyaan mengenai Syarat & Ketentuan ini, silakan hubungi:",
             "emailLabel": "Email:",
-            "email": "support@letshyre.ai",
             "team": "Tim Dukungan LetsHyre"
           }
         ]

@@ -34,9 +34,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "subheading",
             "text": "Informazioni sui Datori di Lavoro:"
           },
@@ -55,9 +52,6 @@
               "Descrizioni delle posizioni lavorative",
               "Informazioni del profilo fornite dai datori di lavoro"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "subheading",
@@ -125,9 +119,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Potremmo trattare:"
           },
@@ -138,9 +129,6 @@
               "Registrazioni del colloquio",
               "Scorecard del colloquio generate dall'intelligenza artificiale"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -164,9 +152,6 @@
               "Fornitori affidabili di hosting cloud, analisi, comunicazione, elaborazione dei pagamenti e servizi di intelligenza artificiale",
               "Autorità governative o legali, quando richiesto dalla legge applicabile"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -228,9 +213,6 @@
               "Richiedere la cancellazione del proprio account",
               "Richiedere la rimozione delle informazioni personali ove legalmente applicabile"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -306,7 +288,6 @@
             "type": "contact",
             "intro": "Per domande, richieste o dubbi relativi alla privacy, contattaci a:",
             "emailLabel": "Email:",
-            "email": "support@letshyre.ai",
             "team": "Team di Supporto LetsHyre"
           }
         ]

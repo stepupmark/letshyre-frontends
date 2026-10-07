@@ -34,9 +34,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "subheading",
             "text": "Employer Information:"
           },
@@ -55,9 +52,6 @@
               "Job Descriptions",
               "Profile Information submitted by employers"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "subheading",
@@ -125,9 +119,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "We may process:"
           },
@@ -138,9 +129,6 @@
               "Interview Recordings",
               "AI-Generated Interview Scorecards"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -164,9 +152,6 @@
               "Trusted cloud hosting, analytics, communication, payment processing, and AI service providers",
               "Government or legal authorities when required by applicable law"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -228,9 +213,6 @@
               "Request deletion of their account",
               "Request removal of personal information where legally applicable"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -306,7 +288,6 @@
             "type": "contact",
             "intro": "For privacy-related questions, requests, or concerns, please contact:",
             "emailLabel": "Email:",
-            "email": "support@letshyre.ai",
             "team": "LetsHyre Support Team"
           }
         ]

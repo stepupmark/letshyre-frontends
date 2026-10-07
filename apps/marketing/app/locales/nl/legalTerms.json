@@ -1,7 +1,9 @@
 {
   "terms": {
     "title": "Algemene Voorwaarden",
-    "intro": "Door LetsHyre (\"LetsHyre\", \"wij\", \"ons\" of \"onze\") te openen of te gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Algemene Voorwaarden. Indien u niet akkoord gaat met deze Voorwaarden, verzoeken wij u het platform niet te gebruiken.",
+    "intro": [
+      "Door LetsHyre (\"LetsHyre\", \"wij\", \"ons\" of \"onze\") te openen of te gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Algemene Voorwaarden. Indien u niet akkoord gaat met deze Voorwaarden, verzoeken wij u het platform niet te gebruiken."
+    ],
     "sections": [
       {
         "id": "platform-overview",
@@ -20,9 +22,6 @@
               "Transparantie van interviews",
               "Screening van kandidaten"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -52,18 +51,12 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Starters, studenten, stagiairs en kandidaten zonder eerdere professionele werkervaring komen mogelijk niet in aanmerking voor bepaalde kandidaatdiensten die op het platform beschikbaar zijn."
           },
           {
             "type": "p",
             "text": "LetsHyre behoudt zich het recht voor om kandidaatprofielen die niet aansluiten bij het beoogde doel van het platform te beoordelen, te beperken, op te schorten of te verwijderen."
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "subheading",
@@ -96,9 +89,6 @@
               "Alle tijdens interviews verstrekte informatie hun daadwerkelijke professionele ervaring en vaardigheden weerspiegelt.",
               "Zij geen meerdere misleidende profielen zullen aanmaken of zich zullen bezighouden met frauduleuze activiteiten."
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -207,9 +197,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Zodra kandidaatinformatie succesvol is ontgrendeld en beschikbaar is gesteld aan de werkgever, wordt de transactie als voltooid beschouwd."
           },
@@ -307,9 +294,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Dergelijke maatregelen kunnen zonder voorafgaande kennisgeving worden genomen wanneer dit noodzakelijk is ter bescherming van het platform, de gebruikers ervan, of om te voldoen aan wettelijke verplichtingen."
           }
@@ -345,9 +329,6 @@
                 " voortvloeiend uit het gebruik van het platform."
               ]
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -405,7 +386,6 @@
             "type": "contact",
             "intro": "Voor vragen over deze Algemene Voorwaarden kunt u contact opnemen met:",
             "emailLabel": "E-mail:",
-            "email": "support@letshyre.ai",
             "team": "LetsHyre Support Team"
           }
         ]

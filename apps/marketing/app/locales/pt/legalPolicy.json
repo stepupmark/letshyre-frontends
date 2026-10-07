@@ -34,9 +34,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "subheading",
             "text": "Informações do Empregador:"
           },
@@ -55,9 +52,6 @@
               "Descrições de Funções",
               "Informações de Perfil submetidas pelos empregadores"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "subheading",
@@ -125,9 +119,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Poderemos tratar:"
           },
@@ -138,9 +129,6 @@
               "Gravações da Entrevista",
               "Fichas de Avaliação de Entrevistas Geradas por IA"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -164,9 +152,6 @@
               "Prestadores de serviços de confiança de alojamento em nuvem, análise, comunicação, processamento de pagamentos e IA",
               "Autoridades governamentais ou legais, quando exigido pela lei aplicável"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -228,9 +213,6 @@
               "Solicitar o encerramento da sua conta",
               "Solicitar a remoção de informações pessoais quando legalmente aplicável"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -306,7 +288,6 @@
             "type": "contact",
             "intro": "Para questões, pedidos ou preocupações relacionados com a privacidade, contacte-nos através de:",
             "emailLabel": "Email:",
-            "email": "support@letshyre.ai",
             "team": "Equipa de Suporte da LetsHyre"
           }
         ]

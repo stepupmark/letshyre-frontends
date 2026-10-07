@@ -1,7 +1,9 @@
 {
   "terms": {
     "title": "Términos y Condiciones",
-    "intro": "Al acceder o utilizar LetsHyre (“LetsHyre”, “nosotros”, “nuestro” o “nos”), usted acepta quedar sujeto a estos Términos y Condiciones. Si no está de acuerdo con estos Términos, por favor no utilice la plataforma.",
+    "intro": [
+      "Al acceder o utilizar LetsHyre (“LetsHyre”, “nosotros”, “nuestro” o “nos”), usted acepta quedar sujeto a estos Términos y Condiciones. Si no está de acuerdo con estos Términos, por favor no utilice la plataforma."
+    ],
     "sections": [
       {
         "id": "platform-overview",
@@ -20,9 +22,6 @@
               "Transparencia en las entrevistas",
               "Preselección de candidatos"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -52,18 +51,12 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Los recién graduados, estudiantes, pasantes y candidatos sin experiencia laboral profesional previa podrían no ser elegibles para determinados servicios de candidatos disponibles en la plataforma."
           },
           {
             "type": "p",
             "text": "LetsHyre se reserva el derecho de revisar, restringir, suspender o eliminar los perfiles de candidatos que no se ajusten al propósito previsto de la plataforma."
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "subheading",
@@ -96,9 +89,6 @@
               "La información proporcionada durante las entrevistas refleja su experiencia y habilidades profesionales reales.",
               "No crearán múltiples perfiles engañosos ni participarán en actividades fraudulentas."
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -207,9 +197,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Una vez que la información del candidato se ha desbloqueado con éxito y se ha puesto a disposición del empleador, la transacción se considera completada."
           },
@@ -307,9 +294,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Dichas acciones podrán tomarse sin previo aviso cuando sea necesario para proteger la plataforma, a sus usuarios o el cumplimiento de obligaciones legales."
           }
@@ -345,9 +329,6 @@
                 " que surjan del uso de la plataforma."
               ]
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -405,7 +386,6 @@
             "type": "contact",
             "intro": "Para preguntas relacionadas con estos Términos y Condiciones, por favor contacte a:",
             "emailLabel": "Correo electrónico:",
-            "email": "support@letshyre.ai",
             "team": "Equipo de Soporte de LetsHyre"
           }
         ]

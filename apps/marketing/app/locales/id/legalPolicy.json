@@ -34,9 +34,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "subheading",
             "text": "Informasi Pemberi Kerja:"
           },
@@ -55,9 +52,6 @@
               "Deskripsi Pekerjaan",
               "Informasi Profil yang disampaikan oleh pemberi kerja"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "subheading",
@@ -125,9 +119,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Kami dapat memproses:"
           },
@@ -138,9 +129,6 @@
               "Rekaman Wawancara",
               "Scorecard Wawancara yang Dihasilkan AI"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -164,9 +152,6 @@
               "Penyedia layanan hosting cloud, analitik, komunikasi, pemrosesan pembayaran, dan layanan AI yang tepercaya",
               "Otoritas pemerintah atau hukum apabila diwajibkan oleh undang-undang yang berlaku"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -228,9 +213,6 @@
               "Meminta penghapusan akun mereka",
               "Meminta penghapusan informasi pribadi apabila secara hukum berlaku"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -306,7 +288,6 @@
             "type": "contact",
             "intro": "Untuk pertanyaan, permintaan, atau kekhawatiran terkait privasi, silakan hubungi:",
             "emailLabel": "Email:",
-            "email": "support@letshyre.ai",
             "team": "Tim Dukungan LetsHyre"
           }
         ]

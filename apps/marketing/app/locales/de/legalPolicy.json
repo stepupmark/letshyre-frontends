@@ -34,9 +34,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "subheading",
             "text": "Arbeitgeberinformationen:"
           },
@@ -55,9 +52,6 @@
               "Stellenbeschreibungen",
               "Von Arbeitgebern übermittelte Profilinformationen"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "subheading",
@@ -125,9 +119,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Wir können Folgendes verarbeiten:"
           },
@@ -138,9 +129,6 @@
               "Interviewaufzeichnungen",
               "KI-generierte Interview-Auswertungsbögen"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -164,9 +152,6 @@
               "Vertrauenswürdige Anbieter von Cloud-Hosting, Analyse-, Kommunikations-, Zahlungsabwicklungs- und KI-Diensten",
               "Behörden oder Justizbehörden, sofern nach geltendem Recht erforderlich"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -228,9 +213,6 @@
               "Die Löschung ihres Kontos verlangen",
               "Die Entfernung personenbezogener Daten verlangen, soweit gesetzlich zulässig"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -306,7 +288,6 @@
             "type": "contact",
             "intro": "Bei datenschutzbezogenen Fragen, Anfragen oder Anliegen wenden Sie sich bitte an:",
             "emailLabel": "E-Mail:",
-            "email": "support@letshyre.ai",
             "team": "LetsHyre Support-Team"
           }
         ]

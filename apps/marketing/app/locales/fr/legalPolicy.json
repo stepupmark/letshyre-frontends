@@ -34,9 +34,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "subheading",
             "text": "Informations sur les Employeurs :"
           },
@@ -55,9 +52,6 @@
               "Descriptions de poste",
               "Informations de profil soumises par les employeurs"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "subheading",
@@ -125,9 +119,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Nous pouvons traiter :"
           },
@@ -138,9 +129,6 @@
               "Les enregistrements d'entretien",
               "Les grilles d'évaluation d'entretien générées par IA"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -164,9 +152,6 @@
               "Des fournisseurs de confiance en matière d'hébergement cloud, d'analyse, de communication, de traitement des paiements et de services d'IA",
               "Les autorités gouvernementales ou judiciaires lorsque la loi applicable l'exige"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -228,9 +213,6 @@
               "Demander la suppression de leur compte",
               "Demander le retrait de leurs informations personnelles lorsque la loi le permet"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -306,7 +288,6 @@
             "type": "contact",
             "intro": "Pour toute question, demande ou préoccupation relative à la confidentialité, veuillez contacter :",
             "emailLabel": "E-mail :",
-            "email": "support@letshyre.ai",
             "team": "Équipe Support LetsHyre"
           }
         ]

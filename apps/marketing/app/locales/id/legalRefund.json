@@ -1,7 +1,9 @@
 {
   "refund": {
     "title": "Kebijakan Pengembalian Dana",
-    "intro": "Selamat datang di LetsHyre. Kebijakan Pengembalian Dana ini menjelaskan ketentuan-ketentuan di mana pengembalian dana dapat diberikan untuk pembayaran yang dilakukan di platform LetsHyre.",
+    "intro": [
+      "Selamat datang di LetsHyre. Kebijakan Pengembalian Dana ini menjelaskan ketentuan-ketentuan di mana pengembalian dana dapat diberikan untuk pembayaran yang dilakukan di platform LetsHyre."
+    ],
     "sections": [
       {
         "id": "service-model",
@@ -19,9 +21,6 @@
               "Rekaman Wawancara",
               "Informasi Kontak Kandidat"
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -51,9 +50,6 @@
             ]
           },
           {
-            "type": "spacer"
-          },
-          {
             "type": "p",
             "text": "Seluruh permintaan pengembalian dana harus diajukan dalam waktu 7 hari sejak tanggal transaksi."
           }
@@ -79,9 +75,6 @@
               "Perubahan kebutuhan perekrutan setelah akses kandidat dibuka.",
               "Hasil perekrutan atau hasil rekrutmen."
             ]
-          },
-          {
-            "type": "spacer"
           },
           {
             "type": "p",
@@ -153,7 +146,6 @@
             "type": "contact",
             "intro": "Untuk pertanyaan mengenai penagihan, pembayaran, atau pengembalian dana, silakan hubungi:",
             "emailLabel": "Email:",
-            "email": "support@letshyre.ai",
             "team": "Tim Dukungan LetsHyre"
           }
         ]
