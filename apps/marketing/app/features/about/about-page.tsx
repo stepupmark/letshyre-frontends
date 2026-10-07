@@ -30,7 +30,10 @@ export function AboutPage() {
       <CtaBand
         title={t("cta.title")}
         description={t("cta.description")}
-        hireLabel={t("cta.startHiring")}
+        primary={{
+          label: t("cta.startHiring"),
+          href: APP_LINKS.employerRegister,
+        }}
         secondary={{
           label: t("cta.applyJob"),
           href: APP_LINKS.candidateRegister,

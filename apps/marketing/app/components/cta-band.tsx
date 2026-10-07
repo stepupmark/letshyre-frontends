@@ -2,30 +2,48 @@ import { buttonVariants } from "@workspace/ui/components/button"
 import { useId } from "react"
 import { Link } from "react-router"
 
-import { APP_LINKS } from "@/lib/app-links"
-
 import { Section, SectionHeader } from "./section"
 
-const primary = buttonVariants({ size: "lg", className: "h-10 px-4" })
-const outline = buttonVariants({
+/** An app link (`href`) or a page on this site (`to`). */
+export type CtaAction = { label: string } & ({ href: string } | { to: string })
+
+const primaryClass = buttonVariants({ size: "lg", className: "h-10 px-4" })
+const outlineClass = buttonVariants({
   variant: "outline",
   size: "lg",
   className: "h-10 px-4",
 })
 
-/** Employer sign-up plus one secondary action: an app link (`href`) or a page on this site (`to`). */
+function ActionLink({
+  action,
+  className,
+}: {
+  action: CtaAction
+  className: string
+}) {
+  return "to" in action ? (
+    <Link to={action.to} className={className}>
+      {action.label}
+    </Link>
+  ) : (
+    <a href={action.href} className={className}>
+      {action.label}
+    </a>
+  )
+}
+
 export function CtaBand({
   eyebrow,
   title,
   description,
-  hireLabel,
+  primary,
   secondary,
 }: {
   eyebrow?: string
   title: string
   description: string
-  hireLabel: string
-  secondary: { label: string; href: string } | { label: string; to: string }
+  primary: CtaAction
+  secondary: CtaAction
 }) {
   const titleId = useId()
 
@@ -42,18 +60,8 @@ export function CtaBand({
           description={description}
         />
         <div className="flex flex-wrap gap-3">
-          <a href={APP_LINKS.employerRegister} className={primary}>
-            {hireLabel}
-          </a>
-          {"to" in secondary ? (
-            <Link to={secondary.to} className={outline}>
-              {secondary.label}
-            </Link>
-          ) : (
-            <a href={secondary.href} className={outline}>
-              {secondary.label}
-            </a>
-          )}
+          <ActionLink action={primary} className={primaryClass} />
+          <ActionLink action={secondary} className={outlineClass} />
         </div>
       </div>
     </Section>

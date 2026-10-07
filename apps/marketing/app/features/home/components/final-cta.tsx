@@ -11,7 +11,10 @@ export function FinalCta() {
       eyebrow={t("hireCard.title")}
       title={`${t("hero.tagline.stop")} ${t("hero.tagline.start")}`}
       description={t("hireCard.description")}
-      hireLabel={t("hireCard.startHiring")}
+      primary={{
+        label: t("hireCard.startHiring"),
+        href: APP_LINKS.employerRegister,
+      }}
       secondary={{
         label: t("hireCard.applyJob"),
         href: APP_LINKS.candidateRegister,
