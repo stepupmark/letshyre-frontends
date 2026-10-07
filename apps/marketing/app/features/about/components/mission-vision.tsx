@@ -1,30 +1,36 @@
 import { useTranslation } from "@workspace/i18n/react"
+import { EyeIcon, TargetIcon } from "lucide-react"
+import { useId } from "react"
 
-import { Container } from "@/components/section"
+const ITEMS = [
+  { key: "mission", icon: TargetIcon },
+  { key: "vision", icon: EyeIcon },
+] as const
 
 export function MissionVision() {
   const { t } = useTranslation("about")
+  const id = useId()
 
   return (
-    <Container className="grid gap-4 md:grid-cols-2">
-      <section
-        aria-labelledby="about-mission"
-        className="flex flex-col gap-3 rounded-xl border p-6 sm:p-8"
-      >
-        <h2 id="about-mission" className="text-xl font-semibold tracking-tight">
-          {t("mission.title")}
-        </h2>
-        <p className="text-pretty text-muted-foreground">{t("mission.desc")}</p>
-      </section>
-      <section
-        aria-labelledby="about-vision"
-        className="flex flex-col gap-3 rounded-xl border p-6 sm:p-8"
-      >
-        <h2 id="about-vision" className="text-xl font-semibold tracking-tight">
-          {t("vision.title")}
-        </h2>
-        <p className="text-pretty text-muted-foreground">{t("vision.desc")}</p>
-      </section>
-    </Container>
+    <div className="flex flex-col gap-4">
+      {ITEMS.map(({ key, icon: Icon }) => (
+        <section
+          key={key}
+          aria-labelledby={`${id}-${key}`}
+          className="flex flex-col gap-2 rounded-xl border border-s-2 border-s-brand p-5 sm:p-6"
+        >
+          <h3
+            id={`${id}-${key}`}
+            className="flex items-center gap-2 text-lg font-semibold tracking-tight"
+          >
+            <Icon aria-hidden className="size-5 text-brand" />
+            {t(`${key}.title`)}
+          </h3>
+          <p className="text-pretty text-muted-foreground">
+            {t(`${key}.desc`)}
+          </p>
+        </section>
+      ))}
+    </div>
   )
 }

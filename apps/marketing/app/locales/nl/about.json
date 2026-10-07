@@ -17,18 +17,21 @@
     "desc": "De meest vertrouwde AI-aangedreven wervingsmarktplaats voor ervaren professionals worden, waardoor werkgevers betere aanwervingsbeslissingen kunnen nemen en kandidaten verbinding kunnen maken met betekenisvolle carrièremogelijkheden."
   },
   "whatWeDo": {
+    "title": "Voor wie LetsHyre is",
     "employersHeading": "Voor werkgevers",
+    "employersLink": "Begin met werven",
     "employerPoints": [
       "Toegang tot ervaren professionals die actief op zoek zijn naar mogelijkheden",
       "Ontdek directe toetreders en kandidaten met opzegtermijn",
       "Voer AI-aangedreven rolgebaseerde interviews uit",
       "Bekijk interview scorecards en inzichten",
-      "Interviewopnames",
+      "Bekijk interviewopnames",
       "Verminder wervingsinspanning en screeningstijd",
       "Toegang tot transparante kandidaatsinformatie",
       "Betaal alleen voor de kandidaatsprofielen die u kiest te ontgrendelen"
     ],
     "candidatesHeading": "Voor kandidaten",
+    "candidatesLink": "Maak je profiel",
     "candidatePoints": [
       "Maak een professioneel profiel aan",
       "Toon vaardigheden en ervaring",
@@ -61,6 +64,10 @@
         "title": "Interview transparantie",
         "desc": "Gestructureerde interview scorecards en inzichten ondersteunen geïnformeerde aanwervingsbeslissingen."
       }
+    },
+    "links": {
+      "pricing": "Bekijk prijzen",
+      "interview": "Zo werkt het interview"
     }
   },
   "profileDuration": {
@@ -68,12 +75,30 @@
     "p1": "Om een hoogwaardige en actief beschikbare talentenpool te onderhouden, blijven kandidaatsprofielen actief op het platform tot <b>90 dagen</b> vanaf de aanmaakdatum van het profiel.",
     "p2": "Kandidaten kunnen hun profielinformatie tijdens deze periode bijwerken.",
     "p3": "Na het verlopen van de 90-dagenperiode kunnen kandidaatsprofielen permanent worden verwijderd uit de actieve LetsHyre kandidaatspool.",
-    "p4": "Kandidaten die LetsHyre willen blijven gebruiken na profielverwijdering kunnen een nieuw profiel aanmaken, onderhevig aan het beleid en de vereisten van het platform."
+    "p4": "Kandidaten die LetsHyre willen blijven gebruiken na profielverwijdering kunnen een nieuw profiel aanmaken, onderhevig aan het beleid en de vereisten van het platform.",
+    "steps": {
+      "live": "Dag 1",
+      "update": "Tot dag 90",
+      "removed": "Na dag 90",
+      "again": "Op elk moment daarna"
+    }
   },
-  "commitment": {
+  "facts": {
+    "label": "LetsHyre in het kort",
+    "aiInterviews": "Rolgerichte AI-interviews",
+    "payPerUnlock": "Betaal alleen per ontgrendeling",
+    "activeProfiles": "Profielen 90 dagen actief",
+    "languages": "Beschikbaar in 19 talen"
+  },
+  "disclaimer": {
     "title": "Disclaimer",
-    "body": "LetsHyre biedt AI-ondersteunde interview- en kandidaatsscreeningdiensten. AI-gegenereerde scorecards en inzichten zijn bedoeld om aanwervingsbeslissingen te ondersteunen en mogen niet worden beschouwd als de enige basis voor aanwervingsbeslissingen. De eindverantwoordelijkheid voor aanwervingsbeslissingen blijft bij werkgevers.",
-    "contactUs": "Neem contact op"
+    "body": "LetsHyre biedt AI-ondersteunde interview- en kandidaatsscreeningdiensten. AI-gegenereerde scorecards en inzichten zijn bedoeld om aanwervingsbeslissingen te ondersteunen en mogen niet worden beschouwd als de enige basis voor aanwervingsbeslissingen. De eindverantwoordelijkheid voor aanwervingsbeslissingen blijft bij werkgevers."
+  },
+  "cta": {
+    "title": "Klaar om aan te nemen of aangenomen te worden?",
+    "description": "Plaats een vacature en ontvang beoordeelde kandidaten, of doe één interview en word gezien door werkgevers die nu aannemen.",
+    "startHiring": "Begin met aanwerven",
+    "applyJob": "Solliciteer op een baan"
   },
   "meta": {
     "title": "Over ons | letshyre.ai",

@@ -1,14 +1,14 @@
-import { useTranslation } from "@workspace/i18n/react"
+import { Trans, useTranslation } from "@workspace/i18n/react"
 
+import { CtaBand } from "@/components/cta-band"
+import { HIGHLIGHT } from "@/components/highlight"
 import { PageHeader } from "@/components/section"
 
+import { AboutFacts } from "./components/about-facts"
 import { AboutIntro } from "./components/about-intro"
 import { Audiences } from "./components/audiences"
-import { Disclaimer } from "./components/disclaimer"
-import { MissionVision } from "./components/mission-vision"
 import { ProfileDuration } from "./components/profile-duration"
 import { WhyLetsHyre } from "./components/why-letshyre"
-import { plainText } from "@/lib/plain-text"
 
 export function AboutPage() {
   const { t } = useTranslation("about")
@@ -17,15 +17,21 @@ export function AboutPage() {
     <>
       <PageHeader
         eyebrow={t("meta.crumb")}
-        title={plainText(t("hero.title"))}
+        title={<Trans t={t} i18nKey="hero.title" components={HIGHLIGHT} />}
         description={t("hero.description")}
-      />
+      >
+        <AboutFacts />
+      </PageHeader>
       <AboutIntro />
-      <MissionVision />
       <Audiences />
       <WhyLetsHyre />
       <ProfileDuration />
-      <Disclaimer />
+      <CtaBand
+        title={t("cta.title")}
+        description={t("cta.description")}
+        hireLabel={t("cta.startHiring")}
+        joinLabel={t("cta.applyJob")}
+      />
     </>
   )
 }

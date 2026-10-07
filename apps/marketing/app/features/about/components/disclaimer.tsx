@@ -1,36 +1,28 @@
-import { localePath } from "@workspace/i18n"
-import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { buttonVariants } from "@workspace/ui/components/button"
-import { Link } from "react-router"
-
-import { Container } from "@/components/section"
+import { useTranslation } from "@workspace/i18n/react"
+import { ShieldCheckIcon } from "lucide-react"
+import { useId } from "react"
 
 export function Disclaimer() {
   const { t } = useTranslation("about")
-  const lang = useLocale()
+  const headingId = useId()
 
   return (
-    <Container className="pb-16 sm:pb-24">
-      <section
-        aria-labelledby="about-disclaimer"
-        className="flex flex-col items-start gap-4 rounded-xl border bg-muted/40 p-6 sm:p-8"
-      >
-        <h2
-          id="about-disclaimer"
-          className="text-xl font-semibold tracking-tight"
-        >
-          {t("commitment.title")}
+    <section
+      aria-labelledby={headingId}
+      className="mt-10 flex gap-3 rounded-xl border bg-muted/40 p-5 sm:p-6"
+    >
+      <ShieldCheckIcon
+        aria-hidden
+        className="mt-0.5 size-5 shrink-0 text-brand"
+      />
+      <div className="flex flex-col gap-1">
+        <h2 id={headingId} className="font-semibold">
+          {t("disclaimer.title")}
         </h2>
-        <p className="max-w-3xl text-pretty text-muted-foreground">
-          {t("commitment.body")}
+        <p className="max-w-3xl text-sm text-pretty text-muted-foreground">
+          {t("disclaimer.body")}
         </p>
-        <Link
-          to={localePath(lang, "/contact")}
-          className={buttonVariants({ variant: "outline" })}
-        >
-          {t("commitment.contactUs")}
-        </Link>
-      </section>
-    </Container>
+      </div>
+    </section>
   )
 }

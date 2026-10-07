@@ -3,34 +3,52 @@ import { useId } from "react"
 
 import { Section } from "@/components/section"
 
+import { Disclaimer } from "./disclaimer"
+
+const STEPS = [
+  { id: "live", body: "p1" },
+  { id: "update", body: "p2" },
+  { id: "removed", body: "p3" },
+  { id: "again", body: "p4" },
+] as const
+
 export function ProfileDuration() {
   const { t } = useTranslation("about")
   const headingId = useId()
 
   return (
-    <Section aria-labelledby={headingId} className="border-t">
-      <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+    <Section aria-labelledby={headingId} className="border-t py-12 sm:py-16">
+      <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
         <h2
           id={headingId}
           className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl"
         >
           {t("profileDuration.title")}
         </h2>
-        <div className="flex flex-col gap-4 text-pretty text-muted-foreground">
-          <p className="text-lg">
-            <Trans
-              t={t}
-              i18nKey="profileDuration.p1"
-              components={{
-                b: <strong className="font-semibold text-foreground" />,
-              }}
-            />
-          </p>
-          <p>{t("profileDuration.p2")}</p>
-          <p>{t("profileDuration.p3")}</p>
-          <p>{t("profileDuration.p4")}</p>
-        </div>
+        <ol className="flex flex-col gap-6 border-s-2 border-brand/30 ps-6">
+          {STEPS.map(({ id, body }) => (
+            <li key={id} className="relative flex flex-col gap-1">
+              <span
+                aria-hidden
+                className="absolute inset-s-[-31px] top-1.5 size-3 rounded-full bg-brand ring-4 ring-background"
+              />
+              <p className="text-sm font-semibold text-primary">
+                {t(`profileDuration.steps.${id}`)}
+              </p>
+              <p className="text-pretty text-muted-foreground">
+                <Trans
+                  t={t}
+                  i18nKey={`profileDuration.${body}`}
+                  components={{
+                    b: <strong className="font-semibold text-foreground" />,
+                  }}
+                />
+              </p>
+            </li>
+          ))}
+        </ol>
       </div>
+      <Disclaimer />
     </Section>
   )
 }

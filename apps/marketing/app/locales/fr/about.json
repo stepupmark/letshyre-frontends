@@ -17,18 +17,21 @@
     "desc": "Devenir la place de marché de recrutement basée sur l'IA la plus fiable pour les professionnels expérimentés, permettant aux employeurs de prendre de meilleures décisions d'embauche et aidant les candidats à trouver des opportunités de carrière enrichissantes."
   },
   "whatWeDo": {
+    "title": "À qui s'adresse LetsHyre",
     "employersHeading": "Pour les employeurs",
+    "employersLink": "Commencer à recruter",
     "employerPoints": [
       "Accédez à des professionnels expérimentés à la recherche active d'opportunités",
       "Découvrez des candidats disponibles immédiatement et en préavis",
       "Menez des entretiens IA basés sur les rôles",
       "Consultez les évaluations et analyses d'entretien",
-      "Enregistrements d'entretien",
+      "Regardez les enregistrements d'entretien",
       "Réduisez l'effort de recrutement et le temps de tri",
       "Accédez à des informations transparentes sur les candidats",
       "Ne payez que pour les profils de candidats que vous choisissez de débloquer"
     ],
     "candidatesHeading": "Pour les candidats",
+    "candidatesLink": "Créer votre profil",
     "candidatePoints": [
       "Créez un profil professionnel",
       "Mettez en valeur vos compétences et votre expérience",
@@ -61,6 +64,10 @@
         "title": "Transparence des entretiens",
         "desc": "Des évaluations d'entretien structurées et des analyses soutiennent des décisions d'embauche éclairées."
       }
+    },
+    "links": {
+      "pricing": "Voir les tarifs",
+      "interview": "Comment se déroule l'entretien"
     }
   },
   "profileDuration": {
@@ -68,12 +75,30 @@
     "p1": "Pour maintenir un vivier de talents de qualité et activement disponible, les profils des candidats restent actifs sur la plateforme jusqu'à <b>90 jours</b> à compter de la date de création du profil.",
     "p2": "Les candidats peuvent mettre à jour les informations de leur profil pendant cette période.",
     "p3": "Après l'expiration de la période de 90 jours, les profils des candidats peuvent être définitivement retirés du vivier de candidats actifs de LetsHyre.",
-    "p4": "Les candidats qui souhaitent continuer à utiliser LetsHyre après la suppression de leur profil peuvent créer un nouveau profil, sous réserve des politiques et exigences de la plateforme."
+    "p4": "Les candidats qui souhaitent continuer à utiliser LetsHyre après la suppression de leur profil peuvent créer un nouveau profil, sous réserve des politiques et exigences de la plateforme.",
+    "steps": {
+      "live": "Jour 1",
+      "update": "Jusqu'au jour 90",
+      "removed": "Après le jour 90",
+      "again": "À tout moment ensuite"
+    }
   },
-  "commitment": {
+  "facts": {
+    "label": "LetsHyre en bref",
+    "aiInterviews": "Entretiens IA par poste",
+    "payPerUnlock": "Payez uniquement au déblocage",
+    "activeProfiles": "Profils actifs 90 jours",
+    "languages": "Disponible en 19 langues"
+  },
+  "disclaimer": {
     "title": "Avertissement",
-    "body": "LetsHyre fournit des services d'entretien et de tri de candidats assistés par IA. Les évaluations et analyses générées par l'IA sont destinées à soutenir les décisions d'embauche et ne doivent pas être considérées comme le seul fondement des décisions d'emploi. Les décisions finales d'embauche restent de la responsabilité des employeurs.",
-    "contactUs": "Contactez-nous"
+    "body": "LetsHyre fournit des services d'entretien et de tri de candidats assistés par IA. Les évaluations et analyses générées par l'IA sont destinées à soutenir les décisions d'embauche et ne doivent pas être considérées comme le seul fondement des décisions d'emploi. Les décisions finales d'embauche restent de la responsabilité des employeurs."
+  },
+  "cta": {
+    "title": "Prêt à recruter ou à être recruté ?",
+    "description": "Publiez un poste et recevez des candidats évalués, ou passez un entretien et soyez vu par des employeurs qui recrutent maintenant.",
+    "startHiring": "Commencer à recruter",
+    "applyJob": "Postuler à un emploi"
   },
   "meta": {
     "title": "À propos | letshyre.ai",

@@ -17,18 +17,21 @@
     "desc": "Convertirnos en el mercado de contratación con IA más confiable para profesionales experimentados, permitiendo a los empleadores tomar mejores decisiones de contratación y ayudando a los candidatos a conectarse con oportunidades profesionales significativas."
   },
   "whatWeDo": {
+    "title": "Para quién es LetsHyre",
     "employersHeading": "Para empleadores",
+    "employersLink": "Empieza a contratar",
     "employerPoints": [
       "Accede a profesionales experimentados que buscan activamente oportunidades",
       "Descubre incorporaciones inmediatas y candidatos en período de preaviso",
       "Realiza entrevistas basadas en roles con IA",
       "Revisa tarjetas de puntuación e información de entrevistas",
-      "Grabaciones de entrevistas",
+      "Mira las grabaciones de entrevistas",
       "Reduce el esfuerzo de contratación y el tiempo de selección",
       "Accede a información transparente sobre candidatos",
       "Paga solo por los perfiles de candidatos que elijas desbloquear"
     ],
     "candidatesHeading": "Para candidatos",
+    "candidatesLink": "Crea tu perfil",
     "candidatePoints": [
       "Crea un perfil profesional",
       "Muestra habilidades y experiencia",
@@ -61,6 +64,10 @@
         "title": "Transparencia en las entrevistas",
         "desc": "Las tarjetas de puntuación estructuradas e información de entrevistas apoyan decisiones de contratación informadas."
       }
+    },
+    "links": {
+      "pricing": "Ver precios",
+      "interview": "Cómo funciona la entrevista"
     }
   },
   "profileDuration": {
@@ -68,12 +75,30 @@
     "p1": "Para mantener un grupo de talento de alta calidad y activamente disponible, los perfiles de candidatos permanecen activos en la plataforma hasta <b>90 días</b> desde la fecha de creación del perfil.",
     "p2": "Los candidatos pueden actualizar su información de perfil durante este período.",
     "p3": "Después de que expire el período de 90 días, los perfiles de candidatos pueden ser eliminados permanentemente del grupo activo de candidatos de LetsHyre.",
-    "p4": "Los candidatos que deseen continuar usando LetsHyre después de la eliminación del perfil pueden crear un nuevo perfil, sujeto a las políticas y requisitos de la plataforma."
+    "p4": "Los candidatos que deseen continuar usando LetsHyre después de la eliminación del perfil pueden crear un nuevo perfil, sujeto a las políticas y requisitos de la plataforma.",
+    "steps": {
+      "live": "Día 1",
+      "update": "Hasta el día 90",
+      "removed": "Después del día 90",
+      "again": "En cualquier momento después"
+    }
   },
-  "commitment": {
+  "facts": {
+    "label": "LetsHyre de un vistazo",
+    "aiInterviews": "Entrevistas con IA por puesto",
+    "payPerUnlock": "Paga solo al desbloquear",
+    "activeProfiles": "Perfiles activos 90 días",
+    "languages": "Disponible en 19 idiomas"
+  },
+  "disclaimer": {
     "title": "Aviso legal",
-    "body": "LetsHyre proporciona servicios de entrevista asistida por IA y selección de candidatos. Las tarjetas de puntuación e información generadas por IA están destinadas a apoyar las decisiones de contratación y no deben considerarse la única base para las decisiones de empleo. Las decisiones finales de contratación siguen siendo responsabilidad de los empleadores.",
-    "contactUs": "Contáctanos"
+    "body": "LetsHyre proporciona servicios de entrevista asistida por IA y selección de candidatos. Las tarjetas de puntuación e información generadas por IA están destinadas a apoyar las decisiones de contratación y no deben considerarse la única base para las decisiones de empleo. Las decisiones finales de contratación siguen siendo responsabilidad de los empleadores."
+  },
+  "cta": {
+    "title": "¿Listo para contratar o ser contratado?",
+    "description": "Publica un puesto y recibe candidatos evaluados, o haz una entrevista y date a conocer ante empresas que contratan ahora.",
+    "startHiring": "Empezar a contratar",
+    "applyJob": "Solicitar empleo"
   },
   "meta": {
     "title": "Sobre nosotros | letshyre.ai",

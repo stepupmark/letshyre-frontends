@@ -17,18 +17,21 @@
     "desc": "To become the most trusted AI-powered hiring marketplace for experienced professionals, enabling employers to make better hiring decisions and helping candidates connect with meaningful career opportunities."
   },
   "whatWeDo": {
+    "title": "Who LetsHyre is for",
     "employersHeading": "For Employers",
+    "employersLink": "Start hiring",
     "employerPoints": [
       "Access experienced professionals actively seeking opportunities",
       "Discover immediate joiners and notice-period candidates",
       "Conduct AI-powered role-based interviews",
       "Review interview scorecards and insights",
-      "Interview Recordings",
+      "Watch interview recordings",
       "Reduce hiring effort and screening time",
       "Access transparent candidate information",
       "Pay only for the candidate profiles you choose to unlock"
     ],
     "candidatesHeading": "For Candidates",
+    "candidatesLink": "Create your profile",
     "candidatePoints": [
       "Create a professional profile",
       "Showcase skills and experience",
@@ -61,6 +64,10 @@
         "title": "Interview Transparency",
         "desc": "Structured interview scorecards and insights support informed hiring decisions."
       }
+    },
+    "links": {
+      "pricing": "See pricing",
+      "interview": "How the interview works"
     }
   },
   "profileDuration": {
@@ -68,12 +75,30 @@
     "p1": "To maintain a high-quality and actively available talent pool, candidate profiles remain active on the platform for up to <b>90 days</b> from the date of profile creation.",
     "p2": "Candidates may update their profile information during this period.",
     "p3": "After the 90-day period expires, candidate profiles may be permanently removed from the active LetsHyre candidate pool.",
-    "p4": "Candidates who wish to continue using LetsHyre after profile removal may create a new profile, subject to the platform's policies and requirements."
+    "p4": "Candidates who wish to continue using LetsHyre after profile removal may create a new profile, subject to the platform's policies and requirements.",
+    "steps": {
+      "live": "Day 1",
+      "update": "Up to day 90",
+      "removed": "After day 90",
+      "again": "Any time after"
+    }
   },
-  "commitment": {
+  "facts": {
+    "label": "LetsHyre at a glance",
+    "aiInterviews": "Role-based AI interviews",
+    "payPerUnlock": "Pay only per unlock",
+    "activeProfiles": "90-day active profiles",
+    "languages": "Available in 19 languages"
+  },
+  "disclaimer": {
     "title": "Disclaimer",
-    "body": "LetsHyre provides AI-assisted interview and candidate screening services. AI-generated scorecards and insights are intended to support hiring decisions and should not be considered the sole basis for employment decisions. Final hiring decisions remain the responsibility of employers.",
-    "contactUs": "Contact Us"
+    "body": "LetsHyre provides AI-assisted interview and candidate screening services. AI-generated scorecards and insights are intended to support hiring decisions and should not be considered the sole basis for employment decisions. Final hiring decisions remain the responsibility of employers."
+  },
+  "cta": {
+    "title": "Ready to Hire or Get Hired?",
+    "description": "Post a role and get scored candidates, or take one interview and get in front of employers who are hiring now.",
+    "startHiring": "Start Hiring",
+    "applyJob": "Apply for Job"
   },
   "meta": {
     "title": "About Us | letshyre.ai",
