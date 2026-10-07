@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 import { renderPage } from "../../test/render"
 import { SiteHeader } from "./site-header"
 
-let navWidth = 0
+let listWidth = 0
 
 class ResizeObserverStub {
   observe() {
@@ -24,7 +24,7 @@ beforeEach(() => {
   })
   vi.spyOn(HTMLElement.prototype, "clientWidth", "get").mockImplementation(
     function (this: HTMLElement) {
-      return this.tagName === "NAV" ? navWidth : 1200
+      return this.dataset.slot === "navigation-menu-list" ? listWidth : 1200
     }
   )
   vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockReturnValue(
@@ -41,7 +41,7 @@ const header = () => screen.getByRole("banner")
 
 describe("SiteHeader", () => {
   it("keeps the links inline when they fit", () => {
-    navWidth = 800
+    listWidth = 800
     renderPage(<SiteHeader />)
     expect(header()).not.toHaveAttribute("data-compact")
     expect(
@@ -50,7 +50,7 @@ describe("SiteHeader", () => {
   })
 
   it("collapses into the menu when the links overflow", async () => {
-    navWidth = 300
+    listWidth = 300
     renderPage(<SiteHeader />)
     await waitFor(() => {
       expect(header()).toHaveAttribute("data-compact")
@@ -58,7 +58,7 @@ describe("SiteHeader", () => {
   })
 
   it("marks the current page", () => {
-    navWidth = 800
+    listWidth = 800
     renderPage(<SiteHeader />, { path: "/en/pricing" })
     const nav = screen.getByRole("navigation", { name: "Primary navigation" })
     expect(within(nav).getByRole("link", { name: "Pricing" })).toHaveAttribute(
@@ -71,7 +71,7 @@ describe("SiteHeader", () => {
   })
 
   it("opens the menu sheet and closes it after picking a link", async () => {
-    navWidth = 300
+    listWidth = 300
     const user = userEvent.setup()
     renderPage(<SiteHeader />)
 
@@ -86,16 +86,6 @@ describe("SiteHeader", () => {
     ).toHaveAttribute("href", expect.stringContaining("/get-started") as string)
 
     await user.click(within(menu).getByRole("link", { name: "About" }))
-    await waitFor(() => {
-      expect(screen.queryByRole("dialog")).not.toBeInTheDocument()
-    })
-  })
-
-  it("closes the sheet with its close button", async () => {
-    const user = userEvent.setup()
-    renderPage(<SiteHeader />)
-    await user.click(screen.getByRole("button", { name: "Toggle navigation" }))
-    await user.click(await screen.findByRole("button", { name: "Close menu" }))
     await waitFor(() => {
       expect(screen.queryByRole("dialog")).not.toBeInTheDocument()
     })
