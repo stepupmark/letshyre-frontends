@@ -73,10 +73,10 @@
     "button": "Download App"
   },
   "meta": {
-    "title": "How the AI Interview Works | letshyre.ai",
+    "title": "AI Interview Guide for Candidates | letshyre.ai",
     "description": "What to expect: install the desktop app, sign in, verify your identity, clear your space, and answer role-specific questions.",
-    "name": "How the AI Interview Works",
+    "name": "AI Interview Guide for Candidates",
     "schemaDescription": "Step-by-step guide to the LetsHyre candidate interview process.",
-    "crumb": "Interview Process"
+    "crumb": "Interview Guide"
   }
 }

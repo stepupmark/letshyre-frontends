@@ -1,4 +1,5 @@
 import { APP_LINKS } from "@/lib/app-links"
+import { PAGES } from "@/lib/pages"
 
 export const FOOTER_COLUMNS = [
   {
@@ -17,10 +18,7 @@ export const FOOTER_COLUMNS = [
     id: "candidates",
     title: "footer.candidates",
     links: [
-      {
-        label: "footer.links.interviewProcess",
-        path: "/how-it-works-interview",
-      },
+      { label: "nav.interviewGuide", path: PAGES.interview.path },
       { label: "footer.links.downloadApp", path: "/download" },
       {
         label: "footer.links.candidateRegister",

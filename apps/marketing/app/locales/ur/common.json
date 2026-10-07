@@ -3,9 +3,9 @@
   "copyright": "LetsHyre © {{year}}",
   "nav": {
     "howItWorks": "یہ کیسے کام کرتا ہے",
-    "aiInterview": "اے آئی انٹرویو",
+    "interviewGuide": "انٹرویو گائیڈ",
     "howItWorksDesc": "عہدہ پوسٹ کریں، اے آئی سے جانچیں، اسکور کارڈ حاصل کریں",
-    "aiInterviewDesc": "اے آئی انٹرویو میں امیدواروں کا تجربہ",
+    "interviewGuideDesc": "اے آئی انٹرویو کیسے دیں، قدم بہ قدم",
     "pricing": "قیمتیں",
     "about": "ہمارے بارے میں",
     "contact": "رابطہ کریں",
@@ -36,7 +36,6 @@
       "youtube": "YouTube پر LetsHyre"
     },
     "links": {
-      "interviewProcess": "انٹرویو کا طریقہ کار",
       "downloadApp": "ایپلیکیشن ڈاؤن لوڈ کریں",
       "pricing": "قیمتیں",
       "about": "ہمارے بارے میں",

@@ -73,10 +73,10 @@
     "button": "App herunterladen"
   },
   "meta": {
-    "title": "So läuft das KI-Interview ab | letshyre.ai",
+    "title": "KI-Interview-Leitfaden für Bewerber | letshyre.ai",
     "description": "Was Sie erwartet: App installieren, anmelden, Identität prüfen, Umgebung freiräumen und rollenbezogene Fragen beantworten.",
-    "name": "So funktioniert das KI-Interview",
+    "name": "KI-Interview-Leitfaden für Bewerber",
     "schemaDescription": "Schritt-für-Schritt-Anleitung für den LetsHyre-Kandidateninterviewprozess.",
-    "crumb": "Interviewprozess"
+    "crumb": "Interview-Leitfaden"
   }
 }

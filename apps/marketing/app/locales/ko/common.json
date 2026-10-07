@@ -3,9 +3,9 @@
   "copyright": "LetsHyre © {{year}}",
   "nav": {
     "howItWorks": "이용 방법",
-    "aiInterview": "AI 인터뷰",
+    "interviewGuide": "면접 가이드",
     "howItWorksDesc": "채용 공고를 올리고, AI로 선별하고, 평가표를 받으세요",
-    "aiInterviewDesc": "AI 면접에서 지원자가 경험하는 과정",
+    "interviewGuideDesc": "AI 면접을 보는 방법을 단계별로 안내합니다",
     "pricing": "요금",
     "about": "회사 소개",
     "contact": "문의",
@@ -36,7 +36,6 @@
       "youtube": "YouTube의 LetsHyre"
     },
     "links": {
-      "interviewProcess": "인터뷰 프로세스",
       "downloadApp": "애플리케이션 다운로드",
       "pricing": "요금",
       "about": "회사 소개",

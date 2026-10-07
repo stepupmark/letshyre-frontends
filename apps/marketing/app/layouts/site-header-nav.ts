@@ -4,6 +4,8 @@ import { BotMessageSquareIcon, WorkflowIcon } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router"
 
+import { PAGES } from "@/lib/pages"
+
 export const PRODUCT_ITEMS = [
   {
     id: "howItWorks",
@@ -14,11 +16,11 @@ export const PRODUCT_ITEMS = [
     hash: "how-it-works",
   },
   {
-    id: "aiInterview",
-    label: "nav.aiInterview",
-    description: "nav.aiInterviewDesc",
+    id: "interviewGuide",
+    label: "nav.interviewGuide",
+    description: "nav.interviewGuideDesc",
     icon: BotMessageSquareIcon,
-    path: "/how-it-works-interview",
+    path: PAGES.interview.path,
   },
 ] as const
 

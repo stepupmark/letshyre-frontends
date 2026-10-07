@@ -3,9 +3,9 @@
   "copyright": "LetsHyre © {{year}}",
   "nav": {
     "howItWorks": "Как это работает",
-    "aiInterview": "ИИ-собеседование",
+    "interviewGuide": "Гид по собеседованию",
     "howItWorksDesc": "Разместите вакансию, проведите отбор с ИИ, получите оценки",
-    "aiInterviewDesc": "Как проходит ИИ-интервью для кандидатов",
+    "interviewGuideDesc": "Как пройти ИИ-собеседование, шаг за шагом",
     "pricing": "Цены",
     "about": "О нас",
     "contact": "Контакты",
@@ -36,7 +36,6 @@
       "youtube": "LetsHyre на YouTube"
     },
     "links": {
-      "interviewProcess": "Процесс собеседования",
       "downloadApp": "Скачать приложение",
       "pricing": "Цены",
       "about": "О нас",

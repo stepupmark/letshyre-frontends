@@ -3,9 +3,9 @@
   "copyright": "LetsHyre © {{year}}",
   "nav": {
     "howItWorks": "So funktioniert's",
-    "aiInterview": "KI-Interview",
+    "interviewGuide": "Interview-Leitfaden",
     "howItWorksDesc": "Stelle ausschreiben, mit KI prüfen, Scorecards erhalten",
-    "aiInterviewDesc": "Was Bewerber im KI-Interview erwartet",
+    "interviewGuideDesc": "So absolvieren Sie Ihr KI-Interview, Schritt für Schritt",
     "pricing": "Preise",
     "about": "Über uns",
     "contact": "Kontakt",
@@ -36,7 +36,6 @@
       "youtube": "LetsHyre auf YouTube"
     },
     "links": {
-      "interviewProcess": "Interviewprozess",
       "downloadApp": "Anwendung herunterladen",
       "pricing": "Preise",
       "about": "Über uns",

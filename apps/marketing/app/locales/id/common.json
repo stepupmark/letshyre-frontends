@@ -3,9 +3,9 @@
   "copyright": "LetsHyre © {{year}}",
   "nav": {
     "howItWorks": "Cara Kerja",
-    "aiInterview": "Wawancara AI",
+    "interviewGuide": "Panduan Wawancara",
     "howItWorksDesc": "Pasang lowongan, saring dengan AI, dapatkan scorecard",
-    "aiInterviewDesc": "Yang dialami kandidat dalam wawancara AI",
+    "interviewGuideDesc": "Cara mengikuti wawancara AI, langkah demi langkah",
     "pricing": "Harga",
     "about": "Tentang",
     "contact": "Kontak",
@@ -36,7 +36,6 @@
       "youtube": "LetsHyre di YouTube"
     },
     "links": {
-      "interviewProcess": "Proses Wawancara",
       "downloadApp": "Unduh Aplikasi",
       "pricing": "Harga",
       "about": "Tentang Kami",

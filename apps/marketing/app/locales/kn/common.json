@@ -3,9 +3,9 @@
   "copyright": "LetsHyre © {{year}}",
   "nav": {
     "howItWorks": "ಇದು ಹೇಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ",
-    "aiInterview": "AI ಸಂದರ್ಶನ",
+    "interviewGuide": "ಸಂದರ್ಶನ ಮಾರ್ಗದರ್ಶಿ",
     "howItWorksDesc": "ಹುದ್ದೆ ಪೋಸ್ಟ್ ಮಾಡಿ, ಎಐ ಮೂಲಕ ಪರಿಶೀಲಿಸಿ, ಸ್ಕೋರ್‌ಕಾರ್ಡ್ ಪಡೆಯಿರಿ",
-    "aiInterviewDesc": "ಎಐ ಸಂದರ್ಶನದಲ್ಲಿ ಅಭ್ಯರ್ಥಿಗಳ ಅನುಭವ",
+    "interviewGuideDesc": "AI ಸಂದರ್ಶನವನ್ನು ಹಂತ ಹಂತವಾಗಿ ಹೇಗೆ ಎದುರಿಸುವುದು",
     "pricing": "ಬೆಲೆಗಳು",
     "about": "ಬಗ್ಗೆ",
     "contact": "ಸಂಪರ್ಕಿಸಿ",
@@ -36,7 +36,6 @@
       "youtube": "YouTube ನಲ್ಲಿ LetsHyre"
     },
     "links": {
-      "interviewProcess": "ಸಂದರ್ಶನ ಪ್ರಕ್ರಿಯೆ",
       "downloadApp": "ಅಪ್ಲಿಕೇಶನ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
       "pricing": "ಬೆಲೆಗಳು",
       "about": "ನಮ್ಮ ಬಗ್ಗೆ",

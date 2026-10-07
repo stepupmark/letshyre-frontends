@@ -73,10 +73,10 @@
     "button": "Télécharger l'application"
   },
   "meta": {
-    "title": "Comment se déroule l'entretien IA | letshyre.ai",
+    "title": "Guide de l'entretien IA pour les candidats | letshyre.ai",
     "description": "Au programme : installer l'application, se connecter, vérifier son identité, dégager son espace et répondre aux questions du poste.",
-    "name": "Comment fonctionne l'entretien IA",
+    "name": "Guide de l'entretien IA pour les candidats",
     "schemaDescription": "Guide étape par étape du processus d'entretien candidat LetsHyre.",
-    "crumb": "Processus d'entretien"
+    "crumb": "Guide de l'entretien"
   }
 }

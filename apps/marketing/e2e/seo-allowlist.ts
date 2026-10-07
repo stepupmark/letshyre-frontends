@@ -13,6 +13,11 @@ export const SEO_ALLOWLIST: {
       "HowTo dropped: Google retired HowTo rich results in 2023, the steps stay as plain content (plan 3.5)",
   },
   {
+    page: "/how-it-works-interview",
+    field: "title",
+    reason: "renamed to Interview Guide along with its URL",
+  },
+  {
     page: "/policy",
     field: "ogImage",
     reason: "renamed with the page, which moved to /privacy-policy",

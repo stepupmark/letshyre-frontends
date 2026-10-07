@@ -73,10 +73,10 @@
     "button": "アプリをダウンロード"
   },
   "meta": {
-    "title": "AI面接の流れ | letshyre.ai",
+    "title": "候補者向けAI面接ガイド | letshyre.ai",
     "description": "デスクトップアプリのインストール、ログイン、本人確認、周囲の整理、そして職種別の質問への回答という流れです。",
-    "name": "AI面接の仕組み",
+    "name": "候補者向けAI面接ガイド",
     "schemaDescription": "LetsHyre候補者面接プロセスのステップバイステップガイド。",
-    "crumb": "面接プロセス"
+    "crumb": "面接ガイド"
   }
 }

@@ -3,9 +3,9 @@
   "copyright": "LetsHyre © {{year}}",
   "nav": {
     "howItWorks": "كيف تعمل",
-    "aiInterview": "مقابلة الذكاء الاصطناعي",
+    "interviewGuide": "دليل المقابلة",
     "howItWorksDesc": "انشر وظيفة، وافرز بالذكاء الاصطناعي، واحصل على بطاقات التقييم",
-    "aiInterviewDesc": "ما يمرّ به المرشحون في مقابلة الذكاء الاصطناعي",
+    "interviewGuideDesc": "كيف تجري مقابلة الذكاء الاصطناعي خطوة بخطوة",
     "pricing": "الأسعار",
     "about": "من نحن",
     "contact": "تواصل معنا",
@@ -36,7 +36,6 @@
       "youtube": "LetsHyre على YouTube"
     },
     "links": {
-      "interviewProcess": "عملية المقابلة",
       "downloadApp": "تنزيل التطبيق",
       "pricing": "الأسعار",
       "about": "من نحن",

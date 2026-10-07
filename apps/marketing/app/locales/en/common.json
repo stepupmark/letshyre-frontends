@@ -3,9 +3,9 @@
   "copyright": "LetsHyre © {{year}}",
   "nav": {
     "howItWorks": "How It Works",
-    "aiInterview": "AI Interview",
+    "interviewGuide": "Interview Guide",
     "howItWorksDesc": "Post a role, screen with AI, get scorecards",
-    "aiInterviewDesc": "What candidates go through in the AI interview",
+    "interviewGuideDesc": "How to take your AI interview, step by step",
     "pricing": "Pricing",
     "about": "About",
     "contact": "Contact",
@@ -36,7 +36,6 @@
       "youtube": "LetsHyre on YouTube"
     },
     "links": {
-      "interviewProcess": "Interview Process",
       "downloadApp": "Download Application",
       "pricing": "Pricing",
       "about": "About Us",

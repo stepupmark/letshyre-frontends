@@ -73,10 +73,10 @@
     "button": "앱 다운로드"
   },
   "meta": {
-    "title": "AI 면접 진행 방식 | letshyre.ai",
+    "title": "지원자를 위한 AI 면접 가이드 | letshyre.ai",
     "description": "앱 설치, 로그인, 신원 확인, 주변 정리, 직무별 질문 답변 순으로 진행됩니다.",
-    "name": "AI 인터뷰 진행 방식",
+    "name": "지원자를 위한 AI 면접 가이드",
     "schemaDescription": "LetsHyre 후보자 인터뷰 과정을 단계별로 안내합니다.",
-    "crumb": "인터뷰 프로세스"
+    "crumb": "면접 가이드"
   }
 }

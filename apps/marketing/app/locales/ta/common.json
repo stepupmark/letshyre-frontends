@@ -3,9 +3,9 @@
   "copyright": "LetsHyre © {{year}}",
   "nav": {
     "howItWorks": "இது எப்படி செயல்படுகிறது",
-    "aiInterview": "AI நேர்காணல்",
+    "interviewGuide": "நேர்காணல் வழிகாட்டி",
     "howItWorksDesc": "பணியை வெளியிடுங்கள், AI மூலம் தேர்வு செய்யுங்கள், மதிப்பெண் அட்டைகளைப் பெறுங்கள்",
-    "aiInterviewDesc": "AI நேர்காணலில் விண்ணப்பதாரர்களின் அனுபவம்",
+    "interviewGuideDesc": "AI நேர்காணலை படிப்படியாக எப்படி எதிர்கொள்வது",
     "pricing": "விலை நிர்ணயம்",
     "about": "பற்றி",
     "contact": "தொடர்பு கொள்ளுங்கள்",
@@ -36,7 +36,6 @@
       "youtube": "YouTube-இல் LetsHyre"
     },
     "links": {
-      "interviewProcess": "நேர்காணல் செயல்முறை",
       "downloadApp": "பயன்பாட்டை பதிவிறக்கவும்",
       "pricing": "விலை நிர்ணயம்",
       "about": "எங்களைப் பற்றி",

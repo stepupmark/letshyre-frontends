@@ -2,7 +2,7 @@ import AxeBuilder from "@axe-core/playwright"
 import { expect, test } from "@playwright/test"
 
 const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
-const URL = "/en/how-it-works-interview"
+const URL = "/en/interview-guide"
 
 test("lists the eight steps in order", async ({ page }) => {
   await page.goto(URL)

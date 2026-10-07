@@ -3,9 +3,9 @@
   "copyright": "LetsHyre © {{year}}",
   "nav": {
     "howItWorks": "എങ്ങനെ പ്രവർത്തിക്കുന്നു",
-    "aiInterview": "AI ഇന്റർവ്യൂ",
+    "interviewGuide": "ഇന്റർവ്യൂ ഗൈഡ്",
     "howItWorksDesc": "ജോലി പോസ്റ്റ് ചെയ്യുക, എഐ ഉപയോഗിച്ച് സ്ക്രീൻ ചെയ്യുക, സ്കോർകാർഡുകൾ നേടുക",
-    "aiInterviewDesc": "എഐ അഭിമുഖത്തിൽ ഉദ്യോഗാർത്ഥികളുടെ അനുഭവം",
+    "interviewGuideDesc": "AI ഇന്റർവ്യൂ എങ്ങനെ ചെയ്യാം, ഘട്ടം ഘട്ടമായി",
     "pricing": "നിരക്കുകൾ",
     "about": "കുറിച്ച്",
     "contact": "സമ്പർക്കം",
@@ -36,7 +36,6 @@
       "youtube": "YouTube-ൽ LetsHyre"
     },
     "links": {
-      "interviewProcess": "ഇന്റർവ്യൂ പ്രക്രിയ",
       "downloadApp": "ആപ്ലിക്കേഷൻ ഡൗൺലോഡ് ചെയ്യുക",
       "pricing": "നിരക്കുകൾ",
       "about": "ഞങ്ങളെ കുറിച്ച്",

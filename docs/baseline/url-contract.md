@@ -21,9 +21,10 @@ the real host must meet §5 too. Changing it needs a deliberate edit here first.
 | `/sitemap.xml`, `/robots.txt`             | 200                       | 200 (regenerated each build)   |                                                          |
 | `/og/*.jpg`, favicons, `site.webmanifest` | 200                       | 200 (same paths, new images)   | Social cards and bookmarks keep working                  |
 
-Pages: `/:lang`, `/:lang/about`, `/:lang/contact`, `/:lang/download`, `/:lang/how-it-works-interview`,
+Pages: `/:lang`, `/:lang/about`, `/:lang/contact`, `/:lang/download`, `/:lang/interview-guide`,
 `/:lang/pricing`, `/:lang/terms`, `/:lang/privacy-policy`, `/:lang/refund-policy`.
 `/:lang/policy` moved to `/:lang/privacy-policy` (301).
+`/:lang/how-it-works-interview` moved to `/:lang/interview-guide` (301).
 Locales: `en hi fr ja ar te ta es nl ru kn ml ur bn de pt it ko id`.
 
 ## 2. App routes (served by the legacy build until Phase 7)

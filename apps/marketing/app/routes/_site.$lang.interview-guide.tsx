@@ -3,7 +3,7 @@ import { pageData } from "@/lib/page-data.server"
 import { pageMeta } from "@/lib/seo/page-meta"
 import { webPageSchema } from "@/lib/seo/schema"
 
-import type { Route } from "./+types/_site.$lang.how-it-works-interview"
+import type { Route } from "./+types/_site.$lang.interview-guide"
 
 export const loader = ({ params }: Route.LoaderArgs) =>
   pageData(params.lang, "interview")

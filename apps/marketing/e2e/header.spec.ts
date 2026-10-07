@@ -58,7 +58,7 @@ test.describe("desktop header", () => {
       .getByRole("button", { name: "Product" })
     await trigger.focus()
     await page.keyboard.press("Enter")
-    const interview = page.getByRole("link", { name: /AI Interview/ })
+    const interview = page.getByRole("link", { name: /^Interview Guide / })
     await expect(interview).toBeVisible()
     await axe(page)
 
@@ -68,7 +68,7 @@ test.describe("desktop header", () => {
 
     await trigger.click()
     await interview.click()
-    await expect(page).toHaveURL(/\/en\/how-it-works-interview$/)
+    await expect(page).toHaveURL(/\/en\/interview-guide$/)
     await expect(trigger).toHaveAttribute("data-current")
   })
 

@@ -3,9 +3,9 @@
   "copyright": "LetsHyre © {{year}}",
   "nav": {
     "howItWorks": "Come Funziona",
-    "aiInterview": "Colloquio IA",
+    "interviewGuide": "Guida al colloquio",
     "howItWorksDesc": "Pubblica un ruolo, seleziona con l’IA, ricevi le valutazioni",
-    "aiInterviewDesc": "Cosa vivono i candidati nel colloquio con l’IA",
+    "interviewGuideDesc": "Come affrontare il colloquio con l'IA, passo dopo passo",
     "pricing": "Prezzi",
     "about": "Chi Siamo",
     "contact": "Contatti",
@@ -36,7 +36,6 @@
       "youtube": "LetsHyre su YouTube"
     },
     "links": {
-      "interviewProcess": "Processo di Colloquio",
       "downloadApp": "Scarica Applicazione",
       "pricing": "Prezzi",
       "about": "Chi Siamo",

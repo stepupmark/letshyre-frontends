@@ -3,9 +3,9 @@
   "copyright": "LetsHyre © {{year}}",
   "nav": {
     "howItWorks": "Hoe het werkt",
-    "aiInterview": "AI sollicitatiegesprek",
+    "interviewGuide": "Interviewgids",
     "howItWorksDesc": "Plaats een vacature, screen met AI, ontvang scorecards",
-    "aiInterviewDesc": "Wat kandidaten meemaken in het AI-interview",
+    "interviewGuideDesc": "Zo doe je je AI-interview, stap voor stap",
     "pricing": "Prijzen",
     "about": "Over ons",
     "contact": "Contact",
@@ -36,7 +36,6 @@
       "youtube": "LetsHyre op YouTube"
     },
     "links": {
-      "interviewProcess": "Sollicitatieproces",
       "downloadApp": "App downloaden",
       "pricing": "Prijzen",
       "about": "Over ons",

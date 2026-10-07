@@ -3,9 +3,9 @@
   "copyright": "LetsHyre © {{year}}",
   "nav": {
     "howItWorks": "ఇది ఎలా పని చేస్తుంది",
-    "aiInterview": "AI ఇంటర్వ్యూ",
+    "interviewGuide": "ఇంటర్వ్యూ గైడ్",
     "howItWorksDesc": "ఉద్యోగాన్ని పోస్ట్ చేయండి, AIతో స్క్రీన్ చేయండి, స్కోర్‌కార్డ్‌లు పొందండి",
-    "aiInterviewDesc": "AI ఇంటర్వ్యూలో అభ్యర్థుల అనుభవం",
+    "interviewGuideDesc": "AI ఇంటర్వ్యూ ఎలా ఇవ్వాలి, దశలవారీగా",
     "pricing": "ధరలు",
     "about": "గురించి",
     "contact": "సంప్రదింపులు",
@@ -36,7 +36,6 @@
       "youtube": "YouTubeలో LetsHyre"
     },
     "links": {
-      "interviewProcess": "ఇంటర్వ్యూ ప్రక్రియ",
       "downloadApp": "అప్లికేషన్ డౌన్‌లోడ్ చేయండి",
       "pricing": "ధరలు",
       "about": "మా గురించి",

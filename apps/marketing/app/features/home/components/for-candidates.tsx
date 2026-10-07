@@ -7,6 +7,7 @@ import { Link } from "react-router"
 
 import { Section, SectionHeader } from "@/components/section"
 import { APP_LINKS } from "@/lib/app-links"
+import { PAGES } from "@/lib/pages"
 
 const ITEMS = ["interview", "evaluation", "matching", "hired"] as const
 
@@ -39,7 +40,7 @@ export function ForCandidates() {
               {t("hero.ctaJob")}
             </a>
             <Link
-              to={localePath(lang, "/how-it-works-interview")}
+              to={localePath(lang, PAGES.interview.path)}
               className={cn(
                 buttonVariants({
                   variant: "outline",

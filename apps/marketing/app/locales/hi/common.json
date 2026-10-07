@@ -3,9 +3,9 @@
   "copyright": "LetsHyre © {{year}}",
   "nav": {
     "howItWorks": "यह कैसे काम करता है",
-    "aiInterview": "एआई इंटरव्यू",
+    "interviewGuide": "इंटरव्यू गाइड",
     "howItWorksDesc": "पद पोस्ट करें, एआई से स्क्रीन करें, स्कोरकार्ड पाएं",
-    "aiInterviewDesc": "एआई इंटरव्यू में उम्मीदवारों का अनुभव",
+    "interviewGuideDesc": "एआई इंटरव्यू कैसे दें, कदम दर कदम",
     "pricing": "मूल्य निर्धारण",
     "about": "हमारे बारे में",
     "contact": "संपर्क",
@@ -36,7 +36,6 @@
       "youtube": "YouTube पर LetsHyre"
     },
     "links": {
-      "interviewProcess": "इंटरव्यू प्रक्रिया",
       "downloadApp": "एप्लिकेशन डाउनलोड करें",
       "pricing": "मूल्य निर्धारण",
       "about": "हमारे बारे में",

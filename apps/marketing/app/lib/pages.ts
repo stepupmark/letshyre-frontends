@@ -10,7 +10,7 @@ export const PAGES = {
   home: { path: "", namespaces: ["home"], og: "home" },
   pricing: { path: "/pricing", namespaces: ["pricing"], og: "pricing" },
   interview: {
-    path: "/how-it-works-interview",
+    path: "/interview-guide",
     namespaces: ["interview"],
     og: "how-it-works-interview",
   },
@@ -33,6 +33,7 @@ export const PAGES = {
 /** Old page paths and where they live now. Hosts answer these with a 301. */
 export const MOVED_PATHS: Readonly<Record<string, string>> = {
   "/policy": "/privacy-policy",
+  "/how-it-works-interview": "/interview-guide",
 }
 
 export type PageId = keyof typeof PAGES
