@@ -10,6 +10,8 @@
     "logIn": "Войти",
     "getStarted": "Начать",
     "language": "Изменить язык",
+    "searchLanguage": "Поиск языка",
+    "noLanguage": "Язык не найден",
     "logoAlt": "Логотип LetsHyre",
     "toggle": "Переключить навигацию",
     "close": "Закрыть меню",
