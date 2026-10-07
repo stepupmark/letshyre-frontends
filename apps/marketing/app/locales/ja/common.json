@@ -4,6 +4,8 @@
   "nav": {
     "howItWorks": "仕組み",
     "aiInterview": "AI面接",
+    "howItWorksDesc": "求人を掲載し、AIで選考し、評価レポートを受け取る",
+    "aiInterviewDesc": "AI面接で候補者が体験すること",
     "pricing": "料金",
     "about": "会社概要",
     "contact": "お問い合わせ",

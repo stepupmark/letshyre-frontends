@@ -4,6 +4,8 @@
   "nav": {
     "howItWorks": "Comment ça marche",
     "aiInterview": "Entretien IA",
+    "howItWorksDesc": "Publiez un poste, présélectionnez avec l’IA, recevez des évaluations",
+    "aiInterviewDesc": "Ce que vivent les candidats lors de l’entretien IA",
     "pricing": "Tarifs",
     "about": "À propos",
     "contact": "Contact",
