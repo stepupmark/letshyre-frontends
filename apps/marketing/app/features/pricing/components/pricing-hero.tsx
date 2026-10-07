@@ -1,6 +1,7 @@
-import { useTranslation } from "@workspace/i18n/react"
+import { Trans, useTranslation } from "@workspace/i18n/react"
 import { CheckIcon } from "lucide-react"
 
+import { HIGHLIGHT } from "@/components/highlight"
 import { PageHeader } from "@/components/section"
 
 export function PricingHero() {
@@ -10,7 +11,7 @@ export function PricingHero() {
   return (
     <PageHeader
       eyebrow={t("hero.eyebrow")}
-      title={t("hero.title")}
+      title={<Trans t={t} i18nKey="hero.title" components={HIGHLIGHT} />}
       description={t("hero.body")}
     >
       <div className="mt-2 flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center md:gap-x-6">

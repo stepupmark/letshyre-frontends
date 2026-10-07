@@ -8,7 +8,7 @@
   },
   "hero": {
     "eyebrow": "Preise",
-    "title": "Zahlen Sie nur für die Kandidaten, die Sie freischalten.",
+    "title": "Zahlen Sie nur für die <hl>Kandidaten, die Sie freischalten</hl>.",
     "body": "Credits schalten Kandidaten frei, die bereits ein LetsHyre-KI-Interview abgeschlossen haben. Sie kaufen sie einmal, es gibt keine Monatsrechnung und sie verfallen nicht.",
     "includes": "Jede Freischaltung enthält",
     "items": [

@@ -8,7 +8,7 @@
   },
   "hero": {
     "eyebrow": "Precios",
-    "title": "Paga solo por los candidatos que desbloqueas.",
+    "title": "Paga solo por los <hl>candidatos que desbloqueas</hl>.",
     "body": "Los créditos desbloquean candidatos que ya han terminado una entrevista con IA de LetsHyre. Los compras una vez, no hay cuota mensual y no caducan.",
     "includes": "Cada desbloqueo incluye",
     "items": [

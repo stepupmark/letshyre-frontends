@@ -66,7 +66,7 @@ export function PlanComparisonTable() {
     <Section aria-labelledby={titleId} className="py-12 sm:py-16">
       <SectionHeader
         id={titleId}
-        title={t("compare.title")}
+        title={<span className="text-brand">{t("compare.title")}</span>}
         description={t("compare.body")}
       />
 

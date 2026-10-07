@@ -8,7 +8,7 @@
   },
   "hero": {
     "eyebrow": "Prezzi",
-    "title": "Paghi solo i candidati che sblocchi.",
+    "title": "Paghi solo i <hl>candidati che sblocchi</hl>.",
     "body": "I crediti sbloccano i candidati che hanno già completato un colloquio con IA di LetsHyre. Li acquisti una volta, senza canone mensile, e non scadono.",
     "includes": "Ogni sblocco include",
     "items": [

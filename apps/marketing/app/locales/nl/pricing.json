@@ -8,7 +8,7 @@
   },
   "hero": {
     "eyebrow": "Prijzen",
-    "title": "Betaal alleen voor de kandidaten die u ontgrendelt.",
+    "title": "Betaal alleen voor de <hl>kandidaten die u ontgrendelt</hl>.",
     "body": "Credits ontgrendelen kandidaten die al een LetsHyre AI-interview hebben afgerond. U koopt ze één keer, er is geen maandfactuur en ze verlopen niet.",
     "includes": "Elke ontgrendeling bevat",
     "items": [

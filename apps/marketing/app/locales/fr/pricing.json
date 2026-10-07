@@ -8,7 +8,7 @@
   },
   "hero": {
     "eyebrow": "Tarifs",
-    "title": "Ne payez que les candidats que vous débloquez.",
+    "title": "Ne payez que les <hl>candidats que vous débloquez</hl>.",
     "body": "Les crédits débloquent les candidats qui ont déjà terminé un entretien IA LetsHyre. Vous les achetez une fois, sans facture mensuelle, et ils n'expirent pas.",
     "includes": "Chaque déblocage comprend",
     "items": [

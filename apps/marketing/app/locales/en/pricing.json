@@ -8,7 +8,7 @@
   },
   "hero": {
     "eyebrow": "Pricing",
-    "title": "Pay only for the candidates you unlock.",
+    "title": "Pay only for the <hl>candidates you unlock</hl>.",
     "body": "Credits unlock candidates who have already finished a LetsHyre AI interview. You buy them once, there's no monthly bill, and they don't expire.",
     "includes": "Every unlock includes",
     "items": [

@@ -8,7 +8,7 @@
   },
   "hero": {
     "eyebrow": "Harga",
-    "title": "Bayar hanya untuk kandidat yang Anda buka.",
+    "title": "Bayar hanya untuk <hl>kandidat yang Anda buka</hl>.",
     "body": "Kredit membuka kandidat yang sudah menyelesaikan wawancara AI LetsHyre. Anda membelinya sekali, tanpa tagihan bulanan, dan kredit tidak kedaluwarsa.",
     "includes": "Setiap pembukaan mencakup",
     "items": [
