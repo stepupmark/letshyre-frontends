@@ -82,10 +82,12 @@
   },
   "legal": {
     "sectionLink": "이 섹션 링크",
-    "questionsTitle": "더 궁금한 점이 있으신가요?",
-    "questionsBody": "문의해 주시면 지원팀이 도와드립니다.",
-    "contactPage": "문의하기",
     "related": "관련 문서",
     "manageCookies": "쿠키 설정 관리"
+  },
+  "support": {
+    "title": "더 궁금한 점이 있으신가요?",
+    "body": "문의해 주시면 지원팀이 도와드립니다.",
+    "contact": "문의하기"
   }
 }

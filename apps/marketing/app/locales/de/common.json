@@ -82,10 +82,12 @@
   },
   "legal": {
     "sectionLink": "Link zu diesem Abschnitt",
-    "questionsTitle": "Noch Fragen?",
-    "questionsBody": "Schreiben Sie uns, unser Support-Team hilft Ihnen weiter.",
-    "contactPage": "Kontakt",
     "related": "Verwandte Dokumente",
     "manageCookies": "Cookie-Einstellungen verwalten"
+  },
+  "support": {
+    "title": "Noch Fragen?",
+    "body": "Schreiben Sie uns, unser Support-Team hilft Ihnen weiter.",
+    "contact": "Kontakt"
   }
 }

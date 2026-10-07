@@ -170,9 +170,9 @@ export function LegalPage({ ns }: { ns: LegalNamespace }) {
           <aside className="flex flex-col gap-4 rounded-xl border bg-muted/40 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6 print:hidden">
             <div className="flex flex-col gap-1">
               <h2 className="text-base font-semibold text-foreground">
-                {tc("legal.questionsTitle")}
+                {tc("support.title")}
               </h2>
-              <p className="text-sm">{tc("legal.questionsBody")}</p>
+              <p className="text-sm">{tc("support.body")}</p>
               <a
                 href={`mailto:${SITE.email}`}
                 className="inline-flex w-fit items-center gap-1.5 rounded-sm text-sm font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
@@ -185,7 +185,7 @@ export function LegalPage({ ns }: { ns: LegalNamespace }) {
               to={localePath(lang, PAGES.contact.path)}
               className={buttonVariants({ variant: "outline" })}
             >
-              {tc("legal.contactPage")}
+              {tc("support.contact")}
             </Link>
           </aside>
 
@@ -225,13 +225,13 @@ export function LegalPage({ ns }: { ns: LegalNamespace }) {
   )
 }
 
-/** Puts the leading "7." in brand blue. The heading still reads as one string. */
+/** Colours the leading "7.". The heading still reads as one string. */
 function SectionTitle({ title }: { title: string }) {
   const [, number, rest] = /^(\d+\.)\s*(.*)$/.exec(title) ?? []
   if (!number) return <span>{title}</span>
   return (
     <span>
-      <span className="text-brand tabular-nums">{number}</span> {rest}
+      <span className="text-primary tabular-nums">{number}</span> {rest}
     </span>
   )
 }

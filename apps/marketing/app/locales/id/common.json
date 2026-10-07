@@ -82,10 +82,12 @@
   },
   "legal": {
     "sectionLink": "Tautan ke bagian ini",
-    "questionsTitle": "Masih ada pertanyaan?",
-    "questionsBody": "Tulis kepada kami dan tim dukungan kami akan membantu.",
-    "contactPage": "Hubungi kami",
     "related": "Dokumen terkait",
     "manageCookies": "Kelola preferensi cookie"
+  },
+  "support": {
+    "title": "Masih ada pertanyaan?",
+    "body": "Tulis kepada kami dan tim dukungan kami akan membantu.",
+    "contact": "Hubungi kami"
   }
 }

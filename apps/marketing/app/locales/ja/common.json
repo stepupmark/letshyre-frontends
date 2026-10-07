@@ -82,10 +82,12 @@
   },
   "legal": {
     "sectionLink": "このセクションへのリンク",
-    "questionsTitle": "ご不明な点はありますか？",
-    "questionsBody": "お問い合わせいただければ、サポートチームが対応します。",
-    "contactPage": "お問い合わせ",
     "related": "関連ドキュメント",
     "manageCookies": "Cookie の設定を管理"
+  },
+  "support": {
+    "title": "ご不明な点はありますか？",
+    "body": "お問い合わせいただければ、サポートチームが対応します。",
+    "contact": "お問い合わせ"
   }
 }

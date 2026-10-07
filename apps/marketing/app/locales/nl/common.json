@@ -82,10 +82,12 @@
   },
   "legal": {
     "sectionLink": "Link naar deze sectie",
-    "questionsTitle": "Nog vragen?",
-    "questionsBody": "Schrijf ons en ons supportteam helpt je verder.",
-    "contactPage": "Neem contact op",
     "related": "Gerelateerde documenten",
     "manageCookies": "Cookievoorkeuren beheren"
+  },
+  "support": {
+    "title": "Nog vragen?",
+    "body": "Schrijf ons en ons supportteam helpt je verder.",
+    "contact": "Neem contact op"
   }
 }
