@@ -3,6 +3,7 @@ import { Trans, useTranslation } from "@workspace/i18n/react"
 import { CtaBand } from "@/components/cta-band"
 import { HIGHLIGHT } from "@/components/highlight"
 import { PageHeader } from "@/components/section"
+import { APP_LINKS } from "@/lib/app-links"
 
 import { AboutFacts } from "./components/about-facts"
 import { AboutIntro } from "./components/about-intro"
@@ -30,7 +31,10 @@ export function AboutPage() {
         title={t("cta.title")}
         description={t("cta.description")}
         hireLabel={t("cta.startHiring")}
-        joinLabel={t("cta.applyJob")}
+        secondary={{
+          label: t("cta.applyJob"),
+          href: APP_LINKS.candidateRegister,
+        }}
       />
     </>
   )
