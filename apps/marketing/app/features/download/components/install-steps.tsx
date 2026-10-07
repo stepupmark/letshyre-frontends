@@ -12,19 +12,22 @@ export function InstallSteps() {
   const titleId = useId()
 
   return (
-    <section aria-labelledby={titleId} className="flex flex-col gap-8">
+    <section aria-labelledby={titleId} className="flex flex-col gap-6">
       <h2
         id={titleId}
         className="text-2xl font-semibold tracking-tight sm:text-3xl"
       >
         {t("install.title")}
       </h2>
-      <ol className="grid gap-8 md:grid-cols-3">
+      <ol className="grid gap-6 md:grid-cols-3">
         {STEPS.map((id, index) => (
-          <li key={id} className="flex flex-col gap-3 border-t pt-6">
+          <li
+            key={id}
+            className="flex flex-col gap-2 border-t-2 pt-5 first:border-brand"
+          >
             <span
               aria-hidden
-              className="text-sm font-medium text-muted-foreground tabular-nums"
+              className="text-sm font-semibold text-primary tabular-nums"
             >
               {format.number(index + 1, { minimumIntegerDigits: 2 })}
             </span>
@@ -39,7 +42,7 @@ export function InstallSteps() {
                       <Link
                         to={APP_LINKS.candidateSignIn}
                         reloadDocument
-                        className="font-medium text-foreground underline underline-offset-4 hover:text-primary"
+                        className="font-medium text-primary underline underline-offset-4"
                       />
                     ),
                   }}

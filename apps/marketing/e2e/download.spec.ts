@@ -45,7 +45,7 @@ test("offers the Windows installer and marks macOS as coming soon", async ({
   await mockReleases(page)
   await page.goto("/en/download")
 
-  const windows = page.getByRole("region", { name: "Windows" })
+  const windows = page.getByRole("group", { name: "Windows" })
   const link = windows.getByRole("link", { name: "Download for Windows" })
   await expect(link).toHaveAttribute(
     "href",
@@ -53,7 +53,7 @@ test("offers the Windows installer and marks macOS as coming soon", async ({
   )
   await expect(windows.getByText("Version 1.4.4")).toBeVisible()
   await expect(
-    page.getByRole("region", { name: "macOS" }).getByText("Coming Soon")
+    page.getByRole("group", { name: "macOS" }).getByText("Coming Soon")
   ).toBeVisible()
 
   const { violations } = await new AxeBuilder({ page }).withTags(WCAG).analyze()
@@ -64,7 +64,7 @@ test("shows a retry when releases can't be loaded", async ({ page }) => {
   await mockReleases(page, "fail")
   await page.goto("/en/download")
 
-  const windows = page.getByRole("region", { name: "Windows" })
+  const windows = page.getByRole("group", { name: "Windows" })
   await expect(windows.getByRole("button", { name: "Retry" })).toBeVisible({
     timeout: 10_000,
   })

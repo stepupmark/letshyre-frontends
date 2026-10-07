@@ -46,23 +46,24 @@ export function ReleaseCard({
 
   return (
     <Card
+      role="group"
       aria-labelledby={titleId}
-      role="region"
       data-os={os}
-      className="gap-6 py-6"
+      data-recommended={recommended || undefined}
+      className="gap-5 py-5 data-recommended:ring-2 data-recommended:ring-brand"
     >
-      <CardHeader className="px-6">
-        <h2 id={titleId} className="text-lg font-semibold">
+      <CardHeader className="px-5">
+        <h3 id={titleId} className="text-lg font-semibold">
           {name}
-        </h2>
+        </h3>
         <CardDescription aria-live="polite">{statusText()}</CardDescription>
         {recommended && (
           <CardAction>
-            <Badge variant="secondary">{t("release.detected")}</Badge>
+            <Badge>{t("release.detected")}</Badge>
           </CardAction>
         )}
       </CardHeader>
-      <CardContent className="px-6">
+      <CardContent className="px-5">
         {status === "pending" && <Skeleton className="h-9 w-full" />}
         {status === "error" && (
           <Button
@@ -81,7 +82,6 @@ export function ReleaseCard({
           (ready ? (
             <a
               href={desktopDownloadUrl(env.VITE_API_BASE_URL, os)}
-              download={ready.filename ?? true}
               className={buttonVariants({ size: "lg", className: "w-full" })}
             >
               {t("downloadFor", { os: name })}

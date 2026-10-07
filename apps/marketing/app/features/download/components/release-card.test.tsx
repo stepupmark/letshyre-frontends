@@ -59,7 +59,6 @@ describe("ReleaseCard", () => {
       "href",
       "https://api.example.test/commonapp/v1/desktop_app/windows/download/"
     )
-    expect(link).toHaveAttribute("download", "LetsHyre-Setup-1.4.4.exe")
     expect(screen.getByText("Version 1.4.4")).toBeInTheDocument()
     expect(screen.getByText("Your computer")).toBeInTheDocument()
   })

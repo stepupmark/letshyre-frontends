@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 
-import { detectOs, orderForDevice } from "./detect-os"
+import { detectOs } from "./detect-os"
 
 const UA = {
   windows:
@@ -43,14 +43,5 @@ describe("detectOs", () => {
 
   it("treats an iPad asking for the desktop site as a tablet", () => {
     expect(detectOs({ userAgent: UA.mac, maxTouchPoints: 5 })).toBe("other")
-  })
-})
-
-describe("orderForDevice", () => {
-  it("puts the detected OS first and keeps Windows first otherwise", () => {
-    expect(orderForDevice("mac")).toEqual(["mac", "windows"])
-    expect(orderForDevice("windows")).toEqual(["windows", "mac"])
-    expect(orderForDevice(null)).toEqual(["windows", "mac"])
-    expect(orderForDevice("other")).toEqual(["windows", "mac"])
   })
 })

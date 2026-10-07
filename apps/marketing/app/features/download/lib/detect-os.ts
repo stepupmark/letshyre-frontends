@@ -1,7 +1,5 @@
 import type { DesktopOs } from "@workspace/api/public"
 
-const DESKTOP_OSES = ["windows", "mac"] as const satisfies DesktopOs[]
-
 export type DetectedOs = DesktopOs | "other"
 
 export interface NavigatorLike {
@@ -29,11 +27,4 @@ export function detectOs(nav: NavigatorLike): DetectedOs {
     return (nav.maxTouchPoints ?? 0) > 1 ? "other" : "mac"
   }
   return "other"
-}
-
-/** Detected OS first, so the visitor's own download leads. */
-export function orderForDevice(detected: DetectedOs | null): DesktopOs[] {
-  return [...DESKTOP_OSES].sort(
-    (a, b) => Number(b === detected) - Number(a === detected)
-  )
 }
