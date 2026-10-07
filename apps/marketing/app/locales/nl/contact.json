@@ -1,8 +1,7 @@
 {
   "info": {
     "title": "Neem contact op<br/><hl>met ons team</hl>",
-    "description": "Heeft u vragen over AI-interviews, kandidaatrapporten, wervingsplannen, tegoeden of technische problemen? Onze supportspecialisten helpen u graag.",
-    "emailLabel": "E-mail"
+    "description": "Heeft u vragen over AI-interviews, kandidaatrapporten, wervingsplannen, tegoeden of technische problemen? Onze supportspecialisten helpen u graag."
   },
   "form": {
     "title": "Stuur een bericht",
@@ -13,16 +12,19 @@
       "subject": "Onderwerp",
       "message": "Berichtdetails"
     },
-    "privacy": "Wij waarderen uw privacy. Door uw informatie in te dienen, gaat u akkoord met LetsHyre's <pp>Privacybeleid</pp>. Ons team reageert doorgaans binnen 2-4 uur.",
+    "privacy": "Wij waarderen uw privacy. Door uw informatie in te dienen, gaat u akkoord met LetsHyre's <pp>Privacybeleid</pp>.",
     "submit": "Bericht versturen",
     "sending": "Verzenden...",
     "successTitle": "Bericht Verstuurd!",
     "successBody": "Bedankt voor uw bericht. Ons supportteam heeft uw bericht ontvangen en neemt spoedig contact met u op.",
     "validation": {
       "nameMin": "Naam moet minimaal 2 tekens bevatten",
+      "nameMax": "Naam mag maximaal 100 tekens bevatten",
       "emailInvalid": "Voer een geldig e-mailadres in",
       "subjectMin": "Onderwerp moet minimaal 3 tekens bevatten",
-      "messageMin": "Bericht moet minimaal 10 tekens bevatten"
+      "subjectMax": "Onderwerp mag maximaal 200 tekens bevatten",
+      "messageMin": "Bericht moet minimaal 10 tekens bevatten",
+      "messageMax": "Bericht mag maximaal 1000 tekens bevatten"
     },
     "sendAnother": "Nog een bericht verzenden",
     "topics": {
@@ -32,18 +34,34 @@
       "generic": "We konden uw bericht niet verzenden. Probeer het zo opnieuw.",
       "network": "We konden onze server niet bereiken. Controleer uw verbinding en probeer het opnieuw.",
       "rateLimited": "U hebt in korte tijd meerdere berichten verzonden. Wacht een minuut en probeer het opnieuw."
-    }
+    },
+    "reason": {
+      "label": "Waarmee kunnen we helpen?",
+      "sales": "Verkoop en abonnementen",
+      "support": "Productondersteuning",
+      "candidate": "Hulp bij het interview",
+      "other": "Iets anders"
+    },
+    "charCount": "{{used}} / {{max}} tekens",
+    "successNext": "We antwoorden naar {{email}}."
   },
   "channels": {
     "title": "Andere manieren om ons te bereiken",
-    "candidates": {
-      "title": "Bereidt u zich voor op een interview?",
-      "link": "Lees de interviewgids"
+    "email": {
+      "title": "E-mailondersteuning",
+      "copy": "E-mailadres kopiëren",
+      "copied": "E-mailadres gekopieerd"
     },
     "employers": {
       "title": "Vergelijkt u abonnementen?",
       "link": "Bekijk prijzen"
-    }
+    },
+    "candidates": {
+      "title": "Bereidt u zich voor op een interview?",
+      "link": "Lees de interviewgids"
+    },
+    "replyTime": "Ons team reageert doorgaans binnen 2-4 uur.",
+    "social": "Volg LetsHyre"
   },
   "meta": {
     "title": "Contact | letshyre.ai",

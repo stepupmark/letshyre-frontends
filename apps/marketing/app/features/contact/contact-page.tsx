@@ -1,10 +1,9 @@
-import { useTranslation } from "@workspace/i18n/react"
+import { Trans, useTranslation } from "@workspace/i18n/react"
 
 import { Container, PageHeader } from "@/components/section"
 
 import { ContactChannels } from "./components/contact-channels"
 import { ContactForm } from "./components/contact-form"
-import { plainText } from "@/lib/plain-text"
 
 export function ContactPage() {
   const { t } = useTranslation("contact")
@@ -13,10 +12,19 @@ export function ContactPage() {
     <>
       <PageHeader
         eyebrow={t("meta.crumb")}
-        title={plainText(t("info.title"))}
+        title={
+          <Trans
+            t={t}
+            i18nKey="info.title"
+            components={{
+              br: <br />,
+              hl: <span className="text-brand" />,
+            }}
+          />
+        }
         description={t("info.description")}
       />
-      <Container className="grid gap-16 py-16 sm:py-24 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-24">
+      <Container className="grid gap-10 py-10 sm:py-14 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16">
         <ContactForm />
         <ContactChannels />
       </Container>

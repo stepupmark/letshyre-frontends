@@ -1,8 +1,7 @@
 {
   "info": {
     "title": "Nehmen Sie Kontakt auf<br/><hl>mit unserem Team</hl>",
-    "description": "Haben Sie Fragen zu KI-Interviews, Kandidatenberichten, Tarifen, Guthaben oder technischen Problemen? Unser Support-Team hilft Ihnen gerne weiter.",
-    "emailLabel": "E-Mail"
+    "description": "Haben Sie Fragen zu KI-Interviews, Kandidatenberichten, Tarifen, Guthaben oder technischen Problemen? Unser Support-Team hilft Ihnen gerne weiter."
   },
   "form": {
     "title": "Nachricht senden",
@@ -13,16 +12,19 @@
       "subject": "Betreff",
       "message": "Nachrichtendetails"
     },
-    "privacy": "Wir legen großen Wert auf Ihre Privatsphäre. Mit dem Absenden Ihrer Angaben stimmen Sie den <pp>Datenschutzbestimmungen</pp> von LetsHyre zu. Unser Team antwortet in der Regel innerhalb von 2–4 Stunden.",
+    "privacy": "Wir legen großen Wert auf Ihre Privatsphäre. Mit dem Absenden Ihrer Angaben stimmen Sie den <pp>Datenschutzbestimmungen</pp> von LetsHyre zu.",
     "submit": "Nachricht senden",
     "sending": "Wird gesendet...",
     "successTitle": "Nachricht gesendet!",
     "successBody": "Vielen Dank für Ihre Kontaktaufnahme. Unser Support-Team hat Ihre Nachricht erhalten und wird sich in Kürze bei Ihnen melden.",
     "validation": {
       "nameMin": "Der Name muss mindestens 2 Zeichen lang sein",
+      "nameMax": "Der Name darf höchstens 100 Zeichen lang sein",
       "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
       "subjectMin": "Der Betreff muss mindestens 3 Zeichen lang sein",
-      "messageMin": "Die Nachricht muss mindestens 10 Zeichen lang sein"
+      "subjectMax": "Der Betreff darf höchstens 200 Zeichen lang sein",
+      "messageMin": "Die Nachricht muss mindestens 10 Zeichen lang sein",
+      "messageMax": "Die Nachricht darf höchstens 1000 Zeichen lang sein"
     },
     "sendAnother": "Weitere Nachricht senden",
     "topics": {
@@ -32,18 +34,34 @@
       "generic": "Ihre Nachricht konnte nicht gesendet werden. Versuchen Sie es gleich noch einmal.",
       "network": "Unser Server ist nicht erreichbar. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
       "rateLimited": "Sie haben in kurzer Zeit mehrere Nachrichten gesendet. Warten Sie eine Minute und versuchen Sie es erneut."
-    }
+    },
+    "reason": {
+      "label": "Wobei können wir helfen?",
+      "sales": "Vertrieb und Tarife",
+      "support": "Produktsupport",
+      "candidate": "Hilfe zum Interview",
+      "other": "Etwas anderes"
+    },
+    "charCount": "{{used}} / {{max}} Zeichen",
+    "successNext": "Wir antworten an {{email}}."
   },
   "channels": {
     "title": "Weitere Kontaktmöglichkeiten",
-    "candidates": {
-      "title": "Bereiten Sie sich auf ein Interview vor?",
-      "link": "Interviewleitfaden lesen"
+    "email": {
+      "title": "E-Mail-Support",
+      "copy": "E-Mail-Adresse kopieren",
+      "copied": "E-Mail-Adresse kopiert"
     },
     "employers": {
       "title": "Vergleichen Sie Tarife?",
       "link": "Preise ansehen"
-    }
+    },
+    "candidates": {
+      "title": "Bereiten Sie sich auf ein Interview vor?",
+      "link": "Interviewleitfaden lesen"
+    },
+    "replyTime": "Unser Team antwortet in der Regel innerhalb von 2–4 Stunden.",
+    "social": "LetsHyre folgen"
   },
   "meta": {
     "title": "Kontakt | letshyre.ai",

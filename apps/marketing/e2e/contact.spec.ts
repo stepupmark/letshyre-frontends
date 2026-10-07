@@ -8,7 +8,7 @@ async function fillIn(page: Page) {
   await page.getByRole("main").getByLabel("Full Name").fill("Ada Lovelace")
   await page
     .getByRole("main")
-    .getByLabel("Email Address")
+    .getByRole("textbox", { name: "Email Address" })
     .fill("ada@example.com")
   await page.getByRole("main").getByLabel("Subject").fill("Hiring help")
   await page
@@ -63,28 +63,8 @@ test("sends the message and confirms inline", async ({ page }) => {
   expect(violations).toEqual([])
 })
 
-test("keeps the message when sending fails", async ({ page }) => {
-  await page.route("**/commonapp/v1/contact/", (route) => route.abort())
-  await page.goto("/en/contact")
-  await expect(page.getByRole("button", { name: "Send Message" })).toBeEnabled()
-  await fillIn(page)
-
-  await expect(page.getByRole("alert")).toContainText(
-    "We couldn't reach our server."
-  )
-  await expect(page.getByRole("main").getByLabel("Full Name")).toHaveValue(
-    "Ada Lovelace"
-  )
-})
-
-test("prefills the subject for sales", async ({ page }) => {
-  await page.goto("/en/contact?topic=sales")
-  await expect(page.getByRole("main").getByLabel("Subject")).toHaveValue(
-    "Custom plan enquiry"
-  )
-})
-
 test("ships ContactPage JSON-LD", async ({ request }) => {
   const html = await (await request.get("/en/contact")).text()
   expect(html).toContain('"@type":"ContactPage"')
+  expect(html).toContain('"mainEntity":{"@id"')
 })

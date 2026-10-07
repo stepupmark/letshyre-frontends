@@ -26,6 +26,7 @@ describe("makeContactSchema", () => {
     ["email", "not-an-email", "form.validation.emailInvalid"],
     ["subject", "Hi", "form.validation.subjectMin"],
     ["message", "Too short", "form.validation.messageMin"],
+    ["message", "x".repeat(1001), "form.validation.messageMax"],
   ] as const)("rejects %s with its own message", (field, value, key) => {
     expect(messageFor(field, value)).toBe(key)
   })

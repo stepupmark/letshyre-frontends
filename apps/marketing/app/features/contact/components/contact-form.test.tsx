@@ -55,6 +55,7 @@ async function fillIn() {
 describe("ContactForm", () => {
   beforeEach(() => {
     send.mockReset()
+    sessionStorage.clear()
   })
 
   it("shows translated errors and doesn't send an invalid form", async () => {
@@ -95,6 +96,31 @@ describe("ContactForm", () => {
     expect(screen.getByLabelText("Full Name")).toHaveValue("")
   })
 
+  it("tags the subject with the chosen topic", async () => {
+    send.mockResolvedValue({ message: "ok" })
+    renderForm()
+    await userEvent.click(screen.getByRole("button", { name: "Sales & plans" }))
+    await fillIn()
+
+    await screen.findByRole("heading", { name: "Message Sent!" })
+    expect(send).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.objectContaining({ subject: "[Sales] Hiring help" })
+    )
+  })
+
+  it("pretends to send when the bot trap is filled", async () => {
+    const { container } = renderForm()
+    const trap = container.querySelector<HTMLInputElement>('[name="website"]')
+    if (trap) trap.value = "https://spam.example"
+    await fillIn()
+
+    expect(
+      await screen.findByRole("heading", { name: "Message Sent!" })
+    ).toBeInTheDocument()
+    expect(send).not.toHaveBeenCalled()
+  })
+
   it("explains a network failure and keeps what was typed", async () => {
     send.mockRejectedValue(new NetworkError("offline"))
     renderForm()
@@ -123,5 +149,8 @@ describe("ContactForm", () => {
     expect(await screen.findByLabelText("Subject")).toHaveValue(
       "Custom plan enquiry"
     )
+    expect(
+      screen.getByRole("button", { name: "Sales & plans" })
+    ).toHaveAttribute("aria-pressed", "true")
   })
 })

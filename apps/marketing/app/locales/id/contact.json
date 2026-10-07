@@ -1,8 +1,7 @@
 {
   "info": {
     "title": "Hubungi<br/><hl>Tim Kami</hl>",
-    "description": "Punya pertanyaan seputar wawancara AI, laporan kandidat, paket perekrutan, kredit, atau masalah teknis? Tim spesialis dukungan kami siap membantu.",
-    "emailLabel": "Email"
+    "description": "Punya pertanyaan seputar wawancara AI, laporan kandidat, paket perekrutan, kredit, atau masalah teknis? Tim spesialis dukungan kami siap membantu."
   },
   "form": {
     "title": "Kirim Pesan",
@@ -13,16 +12,19 @@
       "subject": "Subjek",
       "message": "Detail Pesan"
     },
-    "privacy": "Kami menghargai privasi Anda. Dengan mengirimkan informasi Anda, Anda menyetujui <pp>Kebijakan Privasi</pp> LetsHyre. Tim kami biasanya merespons dalam waktu 2-4 jam.",
+    "privacy": "Kami menghargai privasi Anda. Dengan mengirimkan informasi Anda, Anda menyetujui <pp>Kebijakan Privasi</pp> LetsHyre.",
     "submit": "Kirim Pesan",
     "sending": "Mengirim...",
     "successTitle": "Pesan Terkirim!",
     "successBody": "Terima kasih telah menghubungi kami. Tim dukungan kami telah menerima pesan Anda dan akan segera merespons.",
     "validation": {
       "nameMin": "Nama harus terdiri dari minimal 2 karakter",
+      "nameMax": "Nama maksimal 100 karakter",
       "emailInvalid": "Silakan masukkan alamat email yang valid",
       "subjectMin": "Subjek harus terdiri dari minimal 3 karakter",
-      "messageMin": "Pesan harus terdiri dari minimal 10 karakter"
+      "subjectMax": "Subjek maksimal 200 karakter",
+      "messageMin": "Pesan harus terdiri dari minimal 10 karakter",
+      "messageMax": "Pesan maksimal 1000 karakter"
     },
     "sendAnother": "Kirim pesan lain",
     "topics": {
@@ -32,18 +34,34 @@
       "generic": "Kami tidak dapat mengirim pesan Anda. Coba lagi sebentar lagi.",
       "network": "Kami tidak dapat menjangkau server. Periksa koneksi Anda dan coba lagi.",
       "rateLimited": "Anda mengirim beberapa pesan dalam waktu singkat. Tunggu satu menit lalu coba lagi."
-    }
+    },
+    "reason": {
+      "label": "Apa yang bisa kami bantu?",
+      "sales": "Penjualan & paket",
+      "support": "Dukungan produk",
+      "candidate": "Bantuan wawancara",
+      "other": "Hal lain"
+    },
+    "charCount": "{{used}} / {{max}} karakter",
+    "successNext": "Kami akan membalas ke {{email}}."
   },
   "channels": {
     "title": "Cara lain menghubungi kami",
-    "candidates": {
-      "title": "Sedang bersiap untuk wawancara?",
-      "link": "Baca panduan wawancara"
+    "email": {
+      "title": "Dukungan email",
+      "copy": "Salin alamat email",
+      "copied": "Alamat email disalin"
     },
     "employers": {
       "title": "Sedang membandingkan paket?",
       "link": "Lihat harga"
-    }
+    },
+    "candidates": {
+      "title": "Sedang bersiap untuk wawancara?",
+      "link": "Baca panduan wawancara"
+    },
+    "replyTime": "Tim kami biasanya merespons dalam waktu 2-4 jam.",
+    "social": "Ikuti LetsHyre"
   },
   "meta": {
     "title": "Hubungi Kami | letshyre.ai",

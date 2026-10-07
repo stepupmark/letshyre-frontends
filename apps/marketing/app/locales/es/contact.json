@@ -1,8 +1,7 @@
 {
   "info": {
     "title": "Ponte en contacto<br/><hl>con nuestro equipo</hl>",
-    "description": "¿Tienes preguntas sobre entrevistas IA, informes de candidatos, planes de contratación, créditos o problemas técnicos? Nuestros especialistas de soporte están aquí para ayudarte.",
-    "emailLabel": "Correo electrónico"
+    "description": "¿Tienes preguntas sobre entrevistas IA, informes de candidatos, planes de contratación, créditos o problemas técnicos? Nuestros especialistas de soporte están aquí para ayudarte."
   },
   "form": {
     "title": "Enviar un mensaje",
@@ -13,16 +12,19 @@
       "subject": "Asunto",
       "message": "Detalles del mensaje"
     },
-    "privacy": "Valoramos tu privacidad. Al enviar tu información, aceptas la <pp>Política de Privacidad</pp> de LetsHyre. Nuestro equipo generalmente responde en 2-4 horas.",
+    "privacy": "Valoramos tu privacidad. Al enviar tu información, aceptas la <pp>Política de Privacidad</pp> de LetsHyre.",
     "submit": "Enviar mensaje",
     "sending": "Enviando...",
     "successTitle": "¡Mensaje Enviado!",
     "successBody": "Gracias por contactarnos. Nuestro equipo de soporte ha recibido tu mensaje y te responderá en breve.",
     "validation": {
       "nameMin": "El nombre debe tener al menos 2 caracteres",
+      "nameMax": "El nombre debe tener como máximo 100 caracteres",
       "emailInvalid": "Por favor ingresa una dirección de correo electrónico válida",
       "subjectMin": "El asunto debe tener al menos 3 caracteres",
-      "messageMin": "El mensaje debe tener al menos 10 caracteres"
+      "subjectMax": "El asunto debe tener como máximo 200 caracteres",
+      "messageMin": "El mensaje debe tener al menos 10 caracteres",
+      "messageMax": "El mensaje debe tener como máximo 1000 caracteres"
     },
     "sendAnother": "Enviar otro mensaje",
     "topics": {
@@ -32,18 +34,34 @@
       "generic": "No pudimos enviar tu mensaje. Inténtalo de nuevo en un momento.",
       "network": "No pudimos conectar con nuestro servidor. Revisa tu conexión e inténtalo de nuevo.",
       "rateLimited": "Has enviado varios mensajes en poco tiempo. Espera un minuto e inténtalo de nuevo."
-    }
+    },
+    "reason": {
+      "label": "¿En qué podemos ayudarte?",
+      "sales": "Ventas y planes",
+      "support": "Soporte del producto",
+      "candidate": "Ayuda con la entrevista",
+      "other": "Otra cosa"
+    },
+    "charCount": "{{used}} / {{max}} caracteres",
+    "successNext": "Te responderemos a {{email}}."
   },
   "channels": {
     "title": "Otras formas de contactarnos",
-    "candidates": {
-      "title": "¿Preparas una entrevista?",
-      "link": "Leer la guía de la entrevista"
+    "email": {
+      "title": "Soporte por correo",
+      "copy": "Copiar dirección de correo",
+      "copied": "Dirección de correo copiada"
     },
     "employers": {
       "title": "¿Comparando planes?",
       "link": "Ver precios"
-    }
+    },
+    "candidates": {
+      "title": "¿Preparas una entrevista?",
+      "link": "Leer la guía de la entrevista"
+    },
+    "replyTime": "Nuestro equipo generalmente responde en 2-4 horas.",
+    "social": "Sigue a LetsHyre"
   },
   "meta": {
     "title": "Contacto | letshyre.ai",
