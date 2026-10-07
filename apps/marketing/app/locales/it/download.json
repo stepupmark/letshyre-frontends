@@ -1,6 +1,9 @@
 {
   "title": "Scarica l'Applicazione",
   "subtitle": "Ottieni l'app desktop sicura per iniziare una sessione di colloquio stabile e senza distrazioni.",
+  "platforms": {
+    "title": "Scegli la tua piattaforma"
+  },
   "features": {
     "distractionFree": "Esegue il colloquio a schermo intero",
     "stable": "Controlla le app bloccate prima di iniziare",
@@ -15,7 +18,6 @@
     "install": "Installa",
     "interview": "Colloquio"
   },
-  "support": "Problemi? Consulta la guida all'installazione",
   "os": {
     "windows": "Windows",
     "mac": "macOS"
@@ -32,6 +34,23 @@
     "download": "Salva il programma di installazione da questa pagina. È un unico file.",
     "install": "Apri il file e segui le istruzioni. Windows potrebbe chiederti una conferma prima di avviarlo.",
     "interview": "Apri LetsHyre, <signIn>accedi</signIn> con il tuo account candidato e fai clic su Inizia colloquio."
+  },
+  "faq": {
+    "title": "Domande frequenti",
+    "items": [
+      {
+        "q": "Quali computer sono supportati?",
+        "a": "I computer Windows. La versione per macOS è in arrivo e questa pagina la offrirà appena sarà pronta."
+      },
+      {
+        "q": "Mi serve un account?",
+        "a": "Sì. Accedi con l’account candidato con cui ti sei candidato, poi fai clic su Take Interview."
+      },
+      {
+        "q": "Come disinstallo l’app?",
+        "a": "Apri Impostazioni, vai su App, trova LetsHyre nell’elenco e scegli Disinstalla."
+      }
+    ]
   },
   "meta": {
     "title": "Scarica l'app desktop | letshyre.ai",

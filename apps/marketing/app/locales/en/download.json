@@ -1,6 +1,9 @@
 {
   "title": "Download Application",
   "subtitle": "Get the secure desktop app to start your stable, distraction-free interview session.",
+  "platforms": {
+    "title": "Choose your platform"
+  },
   "features": {
     "distractionFree": "Runs the interview full screen",
     "stable": "Checks for blocked apps before you start",
@@ -15,7 +18,6 @@
     "install": "Install",
     "interview": "Interview"
   },
-  "support": "Having trouble? View installation guide",
   "os": {
     "windows": "Windows",
     "mac": "macOS"
@@ -32,6 +34,23 @@
     "download": "Save the installer from this page. It's a single file.",
     "install": "Open the file and follow the prompts. Windows may ask you to confirm before it runs.",
     "interview": "Open LetsHyre, <signIn>sign in</signIn> with your candidate account and click Take Interview."
+  },
+  "faq": {
+    "title": "Common questions",
+    "items": [
+      {
+        "q": "Which computers are supported?",
+        "a": "Windows computers. The macOS version is on the way, and this page will offer it as soon as it's ready."
+      },
+      {
+        "q": "Do I need an account?",
+        "a": "Yes. Sign in with the candidate account you applied with, then click Take Interview."
+      },
+      {
+        "q": "How do I uninstall the app?",
+        "a": "Open Settings, go to Apps, find LetsHyre in the list and choose Uninstall."
+      }
+    ]
   },
   "meta": {
     "title": "Download the Desktop App | letshyre.ai",

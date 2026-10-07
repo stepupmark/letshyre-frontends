@@ -1,6 +1,9 @@
 {
   "title": "Télécharger l'application",
   "subtitle": "Obtenez l'application de bureau sécurisée pour commencer votre session d'entretien stable et sans distraction.",
+  "platforms": {
+    "title": "Choisissez votre plateforme"
+  },
   "features": {
     "distractionFree": "Lance l'entretien en plein écran",
     "stable": "Vérifie les applications bloquées avant de commencer",
@@ -15,7 +18,6 @@
     "install": "Installer",
     "interview": "Entretien"
   },
-  "support": "Un problème ? Consultez le guide d'installation",
   "os": {
     "windows": "Windows",
     "mac": "macOS"
@@ -32,6 +34,23 @@
     "download": "Enregistrez le programme d'installation depuis cette page. C'est un seul fichier.",
     "install": "Ouvrez le fichier et suivez les instructions. Windows peut vous demander de confirmer avant de l'exécuter.",
     "interview": "Ouvrez LetsHyre, <signIn>connectez-vous</signIn> avec votre compte candidat et cliquez sur Passer l'entretien."
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "items": [
+      {
+        "q": "Quels ordinateurs sont pris en charge ?",
+        "a": "Les ordinateurs Windows. La version macOS arrive bientôt et cette page la proposera dès qu’elle sera prête."
+      },
+      {
+        "q": "Ai-je besoin d’un compte ?",
+        "a": "Oui. Connectez-vous avec le compte candidat utilisé pour postuler, puis cliquez sur Take Interview."
+      },
+      {
+        "q": "Comment désinstaller l’application ?",
+        "a": "Ouvrez Paramètres, allez dans Applications, trouvez LetsHyre dans la liste et choisissez Désinstaller."
+      }
+    ]
   },
   "meta": {
     "title": "Télécharger l'application de bureau | letshyre.ai",

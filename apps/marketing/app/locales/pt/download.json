@@ -1,6 +1,9 @@
 {
   "title": "Transferir Aplicação",
   "subtitle": "Obtenha a aplicação de ambiente de trabalho segura para iniciar a sua sessão de entrevista estável e sem distrações.",
+  "platforms": {
+    "title": "Escolha sua plataforma"
+  },
   "features": {
     "distractionFree": "Executa a entrevista em tela cheia",
     "stable": "Verifica aplicativos bloqueados antes de começar",
@@ -15,7 +18,6 @@
     "install": "Instalar",
     "interview": "Entrevista"
   },
-  "support": "Está com dificuldades? Consulte o guia de instalação",
   "os": {
     "windows": "Windows",
     "mac": "macOS"
@@ -32,6 +34,23 @@
     "download": "Salve o instalador nesta página. É um único arquivo.",
     "install": "Abra o arquivo e siga as instruções. O Windows pode pedir confirmação antes de executá-lo.",
     "interview": "Abra o LetsHyre, <signIn>entre</signIn> com sua conta de candidato e clique em Fazer entrevista."
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "items": [
+      {
+        "q": "Quais computadores são compatíveis?",
+        "a": "Computadores com Windows. A versão para macOS está a caminho, e esta página vai oferecê-la assim que estiver pronta."
+      },
+      {
+        "q": "Preciso de uma conta?",
+        "a": "Sim. Entre com a conta de candidato usada na candidatura e clique em Take Interview."
+      },
+      {
+        "q": "Como desinstalo o app?",
+        "a": "Abra Configurações, vá em Aplicativos, encontre o LetsHyre na lista e escolha Desinstalar."
+      }
+    ]
   },
   "meta": {
     "title": "Descarregar a aplicação | letshyre.ai",

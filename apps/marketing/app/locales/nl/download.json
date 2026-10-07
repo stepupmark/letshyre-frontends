@@ -1,6 +1,9 @@
 {
   "title": "Applicatie downloaden",
   "subtitle": "Haal de beveiligde desktop-app op om uw stabiele, afleidingsvrije interviewsessie te starten.",
+  "platforms": {
+    "title": "Kies je platform"
+  },
   "features": {
     "distractionFree": "Voert het interview schermvullend uit",
     "stable": "Controleert op geblokkeerde apps voordat u begint",
@@ -15,7 +18,6 @@
     "install": "Installeren",
     "interview": "Interview"
   },
-  "support": "Problemen? Bekijk de installatiehandleiding",
   "os": {
     "windows": "Windows",
     "mac": "macOS"
@@ -32,6 +34,23 @@
     "download": "Sla het installatieprogramma op vanaf deze pagina. Het is één bestand.",
     "install": "Open het bestand en volg de stappen. Windows kan om bevestiging vragen voordat het wordt uitgevoerd.",
     "interview": "Open LetsHyre, <signIn>log in</signIn> met uw kandidaataccount en klik op Interview starten."
+  },
+  "faq": {
+    "title": "Veelgestelde vragen",
+    "items": [
+      {
+        "q": "Welke computers worden ondersteund?",
+        "a": "Windows-computers. De macOS-versie komt eraan en deze pagina biedt hem aan zodra hij klaar is."
+      },
+      {
+        "q": "Heb ik een account nodig?",
+        "a": "Ja. Meld je aan met het kandidaataccount waarmee je hebt gesolliciteerd en klik op Take Interview."
+      },
+      {
+        "q": "Hoe verwijder ik de app?",
+        "a": "Open Instellingen, ga naar Apps, zoek LetsHyre in de lijst en kies Verwijderen."
+      }
+    ]
   },
   "meta": {
     "title": "Desktop-app downloaden | letshyre.ai",
