@@ -17,7 +17,7 @@ export function MissionVision() {
         <section
           key={key}
           aria-labelledby={`${id}-${key}`}
-          className="flex flex-col gap-2 rounded-xl border border-s-2 border-s-brand p-5 sm:p-6"
+          className="flex flex-col gap-2 rounded-xl border p-5 sm:p-6"
         >
           <h3
             id={`${id}-${key}`}

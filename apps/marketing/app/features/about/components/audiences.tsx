@@ -1,5 +1,4 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { cn } from "@workspace/ui/lib/utils"
 import {
   ArrowRightIcon,
   BriefcaseIcon,
@@ -18,24 +17,19 @@ function AudienceCard({
   points,
   href,
   linkLabel,
-  featured,
 }: {
   icon: LucideIcon
   heading: string
   points: string[]
   href: string
   linkLabel: string
-  featured?: boolean
 }) {
   const headingId = useId()
 
   return (
     <section
       aria-labelledby={headingId}
-      className={cn(
-        "flex flex-col gap-4 rounded-xl border p-5 sm:p-6",
-        featured && "border-t-2 border-t-brand"
-      )}
+      className="flex flex-col gap-4 rounded-xl border p-5 sm:p-6"
     >
       <h3
         id={headingId}
@@ -75,7 +69,6 @@ export function Audiences() {
       <SectionHeader id={titleId} title={t("whatWeDo.title")} />
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         <AudienceCard
-          featured
           icon={BriefcaseIcon}
           heading={t("whatWeDo.employersHeading")}
           points={t("whatWeDo.employerPoints", { returnObjects: true })}

@@ -21,10 +21,7 @@ export function InstallSteps() {
       </h2>
       <ol className="grid gap-6 md:grid-cols-3">
         {STEPS.map((id, index) => (
-          <li
-            key={id}
-            className="flex flex-col gap-2 border-t-2 pt-5 first:border-brand"
-          >
+          <li key={id} className="flex flex-col gap-2 border-t pt-5">
             <span
               aria-hidden
               className="text-sm font-semibold text-primary tabular-nums"

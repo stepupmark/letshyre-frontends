@@ -108,7 +108,7 @@ export function LegalPage({ ns }: { ns: LegalNamespace }) {
 
         <article className="flex max-w-3xl min-w-0 flex-col gap-8 leading-relaxed text-pretty text-muted-foreground print:max-w-none print:text-foreground">
           {lang !== "en" && (
-            <p className="rounded-e-lg border-s-2 border-brand bg-muted/50 px-4 py-3 text-sm print:hidden">
+            <p className="rounded-lg border bg-muted/50 px-4 py-3 text-sm print:hidden">
               <Trans
                 t={t}
                 i18nKey="chrome.translationNotice"
