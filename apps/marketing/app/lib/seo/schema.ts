@@ -1,4 +1,4 @@
-import { type Locale, localePath } from "@workspace/i18n"
+import { LOCALES, type Locale, localePath } from "@workspace/i18n"
 
 import { absUrl, SITE } from "./site"
 
@@ -17,6 +17,7 @@ export const organizationSchema = (): JsonLd => ({
     contactType: "Customer Support",
     email: SITE.email,
     url: absUrl("/en/contact"),
+    availableLanguage: LOCALES,
   },
 })
 
