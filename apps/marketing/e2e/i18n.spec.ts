@@ -36,13 +36,13 @@ for (const { path, lang, alternates } of SITEMAP) {
 
     await page
       .getByRole("contentinfo")
-      .locator('button[aria-haspopup="menu"]')
+      .getByRole("button", { name: /language/i })
       .click()
-    const items = page.getByRole("menuitem")
+    const items = page.getByRole("dialog").getByRole("link")
     await expect(items).toHaveCount(alternates.size)
     for (const [lang, href] of alternates) {
       await expect(
-        page.locator(`[role=menuitem][hreflang="${lang}"]`)
+        page.getByRole("dialog").locator(`a[hreflang="${lang}"]`)
       ).toHaveAttribute("href", href)
     }
   })
@@ -77,9 +77,9 @@ test("choosing a language remembers it in a cookie", async ({
   await page.goto("/en/about")
   await page
     .getByRole("contentinfo")
-    .locator('button[aria-haspopup="menu"]')
+    .getByRole("button", { name: /language/i })
     .click()
-  await page.getByRole("menuitem").first().click()
+  await page.getByRole("dialog").getByRole("link").first().click()
   const cookies = await context.cookies()
   expect(cookies.find((c) => c.name === "lh_locale")?.value).toMatch(
     /^[a-z]{2}$/

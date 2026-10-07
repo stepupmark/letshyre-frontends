@@ -33,6 +33,6 @@ test("language menu, open", async ({ page }) => {
     .getByRole("contentinfo")
     .getByRole("button", { name: /language/i })
     .click()
-  await expect(page.getByRole("menu")).toBeVisible()
+  await expect(page.getByRole("dialog")).toBeVisible()
   await axe(page)
 })

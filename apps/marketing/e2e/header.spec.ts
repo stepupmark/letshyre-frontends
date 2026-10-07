@@ -21,7 +21,7 @@ test.describe("desktop header", () => {
 
   test.use({ viewport: { width: 1280, height: 800 } })
 
-  test("tab order runs skip link, logo, nav, language, log in, get started", async ({
+  test("tab order runs skip link, logo, nav, language, get started", async ({
     page,
   }) => {
     await page.goto("/en/pricing")
@@ -36,7 +36,6 @@ test.describe("desktop header", () => {
       nav.getByRole("link", { name: "About" }),
       nav.getByRole("link", { name: "Contact" }),
       banner.getByRole("button", { name: /language/i }),
-      banner.getByRole("link", { name: "Log in" }),
       banner.getByRole("link", { name: "Get Started" }),
     ]
     for (const target of order) {
