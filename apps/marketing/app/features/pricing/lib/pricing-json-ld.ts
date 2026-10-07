@@ -2,6 +2,7 @@ import type { Locale } from "@workspace/i18n"
 
 import type { Translate } from "@/lib/seo/page-meta"
 import { faqSchema, type JsonLd, webPageSchema } from "@/lib/seo/schema"
+import { SITE } from "@/lib/seo/site"
 
 interface FaqItem {
   q: string
@@ -21,11 +22,14 @@ export function pricingJsonLd({
   const faq = t("faq.items", { returnObjects: true }) as unknown
   return [
     ...(Array.isArray(faq) ? [faqSchema(faq as FaqItem[])] : []),
-    webPageSchema({
-      lang,
-      path,
-      name: t("meta.title"),
-      description: t("meta.description"),
-    }),
+    {
+      ...webPageSchema({
+        lang,
+        path,
+        name: t("meta.name"),
+        description: t("meta.schemaDescription"),
+      }),
+      about: { "@id": `${SITE.url}/#organization` },
+    },
   ]
 }

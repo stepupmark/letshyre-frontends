@@ -63,6 +63,13 @@
         "Cualquier tamaño de equipo",
         "Soporte dedicado"
       ]
+    },
+    "trust": {
+      "label": "Por qué comprar es sencillo",
+      "oneTime": "Pago único",
+      "noRenewal": "Nada se renueva automáticamente",
+      "noExpiry": "Los créditos no caducan",
+      "razorpay": "Pago seguro con Razorpay"
     }
   },
   "compare": {
@@ -101,7 +108,8 @@
     "ctaLabel_other": "Comprar {{count}} créditos por {{price}}",
     "ctaLabelNoPrice_one": "Comprar {{count}} crédito",
     "ctaLabelNoPrice_many": "Comprar {{count}} de créditos",
-    "ctaLabelNoPrice_other": "Comprar {{count}} créditos"
+    "ctaLabelNoPrice_other": "Comprar {{count}} créditos",
+    "sameRate": "Cada crédito cuesta lo mismo que en cualquier plan."
   },
   "faq": {
     "title": "Preguntas sobre precios",

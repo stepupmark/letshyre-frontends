@@ -61,6 +61,13 @@
         "کسی بھی سائز کی ٹیم",
         "مخصوص سپورٹ"
       ]
+    },
+    "trust": {
+      "label": "خریدنا کیوں آسان ہے",
+      "oneTime": "ایک بار ادائیگی",
+      "noRenewal": "کچھ بھی خودبخود رینیو نہیں ہوتا",
+      "noExpiry": "کریڈٹس کبھی ختم نہیں ہوتے",
+      "razorpay": "Razorpay کے ساتھ محفوظ چیک آؤٹ"
     }
   },
   "compare": {
@@ -96,7 +103,8 @@
     "ctaLabel_one": "{{count}} کریڈٹ {{price}} میں خریدیں",
     "ctaLabel_other": "{{count}} کریڈٹس {{price}} میں خریدیں",
     "ctaLabelNoPrice_one": "{{count}} کریڈٹ خریدیں",
-    "ctaLabelNoPrice_other": "{{count}} کریڈٹس خریدیں"
+    "ctaLabelNoPrice_other": "{{count}} کریڈٹس خریدیں",
+    "sameRate": "ہر کریڈٹ کی قیمت کسی بھی پلان کے برابر ہے۔"
   },
   "faq": {
     "title": "قیمتوں کے بارے میں سوالات",

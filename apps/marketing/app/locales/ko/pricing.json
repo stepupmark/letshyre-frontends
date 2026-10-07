@@ -55,6 +55,13 @@
         "팀 규모 제한 없음",
         "전담 지원"
       ]
+    },
+    "trust": {
+      "label": "구매가 간단한 이유",
+      "oneTime": "일회성 결제",
+      "noRenewal": "자동 갱신 없음",
+      "noExpiry": "크레딧 만료 없음",
+      "razorpay": "Razorpay 안전 결제"
     }
   },
   "compare": {
@@ -87,7 +94,8 @@
     "priceNote": "GST 별도",
     "cta": "구매",
     "ctaLabel_other": "크레딧 {{count}}개를 {{price}}에 구매",
-    "ctaLabelNoPrice_other": "크레딧 {{count}}개 구매"
+    "ctaLabelNoPrice_other": "크레딧 {{count}}개 구매",
+    "sameRate": "크레딧 단가는 모든 요금제와 같습니다."
   },
   "faq": {
     "title": "요금 관련 질문",

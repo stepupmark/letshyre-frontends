@@ -9,6 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@workspace/ui/components/table"
+import { CheckIcon } from "lucide-react"
 import { useId, useState } from "react"
 
 import { Section, SectionHeader } from "@/components/section"
@@ -20,7 +21,6 @@ import {
   comparisonValue,
   type ComparisonValue,
 } from "../lib/plans"
-import { CheckIcon } from "lucide-react"
 
 const COL = "col"
 const ROW = "row"
@@ -32,7 +32,7 @@ function Value({ value }: { value: ComparisonValue }) {
   if (value === true) {
     return (
       <>
-        <CheckIcon className="mx-auto size-4" />
+        <CheckIcon aria-hidden className="mx-auto size-4 text-brand" />
         <span className="sr-only">{t("compare.values.included")}</span>
       </>
     )
@@ -63,7 +63,7 @@ export function PlanComparisonTable() {
     : (plans.find((plan) => plan.featured) ?? plans[0])?.id
 
   return (
-    <Section aria-labelledby={titleId}>
+    <Section aria-labelledby={titleId} className="py-12 sm:py-16">
       <SectionHeader
         id={titleId}
         title={t("compare.title")}
@@ -73,13 +73,14 @@ export function PlanComparisonTable() {
       <div
         role="group"
         aria-label={t("compare.picker")}
-        className="mt-8 grid grid-flow-col gap-1 rounded-lg border p-1 md:hidden"
+        className="mt-6 grid grid-flow-col gap-1 rounded-lg border p-1 md:hidden"
       >
         {plans.map((plan) => (
           <Button
             key={plan.id}
-            variant={plan.id === selected ? "secondary" : "ghost"}
+            variant="ghost"
             aria-pressed={plan.id === selected}
+            className="aria-pressed:bg-brand/10 aria-pressed:text-foreground"
             onClick={() => {
               setPicked(plan.id)
             }}
@@ -89,7 +90,7 @@ export function PlanComparisonTable() {
         ))}
       </div>
 
-      <div className="mt-4 overflow-hidden rounded-xl border md:mt-10">
+      <div className="mt-4 overflow-hidden rounded-xl border md:mt-8">
         <Table className="md:table-fixed">
           <TableCaption className="sr-only">
             {t("compare.caption")}
@@ -104,9 +105,13 @@ export function PlanComparisonTable() {
                   key={plan.id}
                   scope={COL}
                   data-selected={plan.id === selected || undefined}
-                  className="h-12 px-4 text-center max-md:not-data-selected:hidden"
+                  data-featured={plan.featured || undefined}
+                  className="h-12 px-4 text-center data-featured:bg-brand/10 max-md:not-data-selected:hidden"
                 >
                   {copy.name(plan)}
+                  {plan.featured && (
+                    <span className="sr-only"> ({t("plans.recommended")})</span>
+                  )}
                 </TableHead>
               ))}
             </TableRow>
@@ -116,7 +121,7 @@ export function PlanComparisonTable() {
               <TableRow key={row} className="hover:bg-transparent">
                 <TableHead
                   scope={ROW}
-                  className="h-auto px-4 py-3.5 font-normal whitespace-normal md:px-6"
+                  className="h-auto px-4 py-3 font-normal whitespace-normal md:px-6"
                 >
                   {t(`compare.rows.${row}`)}
                 </TableHead>
@@ -124,7 +129,8 @@ export function PlanComparisonTable() {
                   <TableCell
                     key={plan.id}
                     data-selected={plan.id === selected || undefined}
-                    className="px-4 py-3.5 text-center tabular-nums max-md:not-data-selected:hidden"
+                    data-featured={plan.featured || undefined}
+                    className="px-4 py-3 text-center tabular-nums data-featured:bg-brand/5 max-md:not-data-selected:hidden"
                   >
                     <Value value={comparisonValue(row, plan)} />
                   </TableCell>

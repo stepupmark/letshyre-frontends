@@ -1,8 +1,7 @@
 import { useTranslation } from "@workspace/i18n/react"
+import { CheckIcon } from "lucide-react"
 
 import { PageHeader } from "@/components/section"
-
-import { CheckIcon } from "lucide-react"
 
 export function PricingHero() {
   const { t } = useTranslation("pricing")
@@ -19,7 +18,7 @@ export function PricingHero() {
         <ul className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
           {items.map((item) => (
             <li key={item} className="flex items-center gap-2 text-sm">
-              <CheckIcon className="size-4 shrink-0 text-muted-foreground" />
+              <CheckIcon aria-hidden className="size-4 shrink-0 text-brand" />
               {item}
             </li>
           ))}

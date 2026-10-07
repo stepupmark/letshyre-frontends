@@ -10,6 +10,7 @@ import { useId } from "react"
 import { Link } from "react-router"
 
 import { Section, SectionHeader } from "@/components/section"
+import { PAGES } from "@/lib/pages"
 
 import { FaqAnswer } from "./faq-answer"
 
@@ -20,8 +21,8 @@ export function PricingFaq() {
   const items = t("faq.items", { returnObjects: true })
 
   return (
-    <Section aria-labelledby={titleId}>
-      <div className="grid gap-10 lg:grid-cols-3 lg:gap-16">
+    <Section aria-labelledby={titleId} className="border-t py-12 sm:py-16">
+      <div className="grid gap-8 lg:grid-cols-3 lg:gap-12">
         <SectionHeader
           id={titleId}
           title={t("faq.title")}
@@ -29,8 +30,8 @@ export function PricingFaq() {
             <>
               {t("faq.body")}{" "}
               <Link
-                to={localePath(lang, "/contact")}
-                className="font-medium text-foreground underline underline-offset-4"
+                to={localePath(lang, PAGES.contact.path)}
+                className="font-medium text-primary underline underline-offset-4"
               >
                 {t("faq.contact")}
               </Link>

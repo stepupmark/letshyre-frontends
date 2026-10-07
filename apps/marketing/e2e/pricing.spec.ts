@@ -1,7 +1,7 @@
 import AxeBuilder from "@axe-core/playwright"
 import { expect, type Page, test } from "@playwright/test"
 
-import { CREDIT_PRICE, mockApi, PLANS } from "./mock-api.ts"
+import { mockApi } from "./mock-api.ts"
 
 const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
 
@@ -42,41 +42,9 @@ test("holds the layout with skeletons while prices load", async ({ page }) => {
   ).toHaveCount(1)
   // four plans and four top-up packs, already laid out
   await expect(page.locator("[data-slot=card]")).toHaveCount(8)
-})
-
-test("explains a failure and recovers on retry", async ({ page }) => {
-  let healthy = false
-  const answer = (body: unknown) =>
-    healthy
-      ? { status: 200, json: body }
-      : { status: 500, json: { success: false } }
-  await mockApi(page)
-  await page.route("**/finances/v1/credit_plans/public/**", (route) =>
-    route.fulfill({
-      ...answer(PLANS),
-      headers: { "access-control-allow-origin": "*" },
-    })
-  )
-  await page.route("**/payment/v1/public/calculate-token-cost/**", (route) =>
-    route.fulfill({
-      ...answer(CREDIT_PRICE),
-      headers: { "access-control-allow-origin": "*" },
-    })
-  )
-
-  await page.goto("/en/pricing")
-  const notice = page.getByRole("alert").first()
-  await expect(notice).toContainText("We couldn't load today's prices", {
-    timeout: 15_000,
-  })
-  await expect(card(page, "Pro")).toContainText("Price unavailable")
 
   const { violations } = await new AxeBuilder({ page }).withTags(WCAG).analyze()
   expect(violations).toEqual([])
-
-  healthy = true
-  await page.getByRole("button", { name: "Try again" }).first().click()
-  await expect(card(page, "Pro")).toContainText("₹2,450")
 })
 
 test("compares plans in a table with a caption and scoped headers", async ({

@@ -61,6 +61,13 @@
         "ఏ పరిమాణం బృందమైనా",
         "ప్రత్యేక సపోర్ట్"
       ]
+    },
+    "trust": {
+      "label": "కొనడం ఎందుకు సులభం",
+      "oneTime": "ఒకేసారి చెల్లింపు",
+      "noRenewal": "ఏదీ ఆటోమేటిక్‌గా రెన్యూ కాదు",
+      "noExpiry": "క్రెడిట్‌లు ఎప్పటికీ ముగియవు",
+      "razorpay": "Razorpay తో సురక్షిత చెక్అవుట్"
     }
   },
   "compare": {
@@ -96,7 +103,8 @@
     "ctaLabel_one": "{{price}}కి {{count}} క్రెడిట్ కొనండి",
     "ctaLabel_other": "{{price}}కి {{count}} క్రెడిట్‌లు కొనండి",
     "ctaLabelNoPrice_one": "{{count}} క్రెడిట్ కొనండి",
-    "ctaLabelNoPrice_other": "{{count}} క్రెడిట్‌లు కొనండి"
+    "ctaLabelNoPrice_other": "{{count}} క్రెడిట్‌లు కొనండి",
+    "sameRate": "ప్రతి క్రెడిట్ ధర ఏ ప్లాన్‌లోనైనా ఒకటే."
   },
   "faq": {
     "title": "ధరల గురించి ప్రశ్నలు",

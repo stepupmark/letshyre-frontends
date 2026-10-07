@@ -65,6 +65,13 @@
         "Команда любого размера",
         "Персональная поддержка"
       ]
+    },
+    "trust": {
+      "label": "Почему покупать просто",
+      "oneTime": "Разовый платёж",
+      "noRenewal": "Без автопродления",
+      "noExpiry": "Кредиты не сгорают",
+      "razorpay": "Безопасная оплата через Razorpay"
     }
   },
   "compare": {
@@ -106,7 +113,8 @@
     "ctaLabelNoPrice_one": "Купить {{count}} кредит",
     "ctaLabelNoPrice_few": "Купить {{count}} кредита",
     "ctaLabelNoPrice_many": "Купить {{count}} кредитов",
-    "ctaLabelNoPrice_other": "Купить {{count}} кредита"
+    "ctaLabelNoPrice_other": "Купить {{count}} кредита",
+    "sameRate": "Каждый кредит стоит столько же, сколько в любом тарифе."
   },
   "faq": {
     "title": "Вопросы о ценах",

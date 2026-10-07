@@ -61,6 +61,13 @@
         "যেকোনো আকারের দল",
         "নিবেদিত সাপোর্ট"
       ]
+    },
+    "trust": {
+      "label": "কেনা কেন সহজ",
+      "oneTime": "এককালীন পেমেন্ট",
+      "noRenewal": "কিছুই স্বয়ংক্রিয়ভাবে রিনিউ হয় না",
+      "noExpiry": "ক্রেডিটের মেয়াদ কখনো শেষ হয় না",
+      "razorpay": "Razorpay-এর মাধ্যমে নিরাপদ চেকআউট"
     }
   },
   "compare": {
@@ -96,7 +103,8 @@
     "ctaLabel_one": "{{price}}-এ {{count}} ক্রেডিট কিনুন",
     "ctaLabel_other": "{{price}}-এ {{count}} ক্রেডিট কিনুন",
     "ctaLabelNoPrice_one": "{{count}} ক্রেডিট কিনুন",
-    "ctaLabelNoPrice_other": "{{count}} ক্রেডিট কিনুন"
+    "ctaLabelNoPrice_other": "{{count}} ক্রেডিট কিনুন",
+    "sameRate": "প্রতিটি ক্রেডিটের দাম যেকোনো প্ল্যানের সমান।"
   },
   "faq": {
     "title": "মূল্য নিয়ে প্রশ্ন",

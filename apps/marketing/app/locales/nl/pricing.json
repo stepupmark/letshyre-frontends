@@ -61,6 +61,13 @@
         "Elke teamgrootte",
         "Persoonlijke ondersteuning"
       ]
+    },
+    "trust": {
+      "label": "Waarom kopen eenvoudig is",
+      "oneTime": "Eenmalige betaling",
+      "noRenewal": "Niets wordt automatisch verlengd",
+      "noExpiry": "Credits verlopen nooit",
+      "razorpay": "Veilig afrekenen met Razorpay"
     }
   },
   "compare": {
@@ -96,7 +103,8 @@
     "ctaLabel_one": "{{count}} credit kopen voor {{price}}",
     "ctaLabel_other": "{{count}} credits kopen voor {{price}}",
     "ctaLabelNoPrice_one": "{{count}} credit kopen",
-    "ctaLabelNoPrice_other": "{{count}} credits kopen"
+    "ctaLabelNoPrice_other": "{{count}} credits kopen",
+    "sameRate": "Elke credit kost hetzelfde als in elk abonnement."
   },
   "faq": {
     "title": "Vragen over prijzen",

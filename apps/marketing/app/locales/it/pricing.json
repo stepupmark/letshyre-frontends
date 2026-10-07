@@ -63,6 +63,13 @@
         "Team di qualsiasi dimensione",
         "Supporto dedicato"
       ]
+    },
+    "trust": {
+      "label": "Perché acquistare è semplice",
+      "oneTime": "Pagamento una tantum",
+      "noRenewal": "Nessun rinnovo automatico",
+      "noExpiry": "I crediti non scadono mai",
+      "razorpay": "Pagamento sicuro con Razorpay"
     }
   },
   "compare": {
@@ -101,7 +108,8 @@
     "ctaLabel_other": "Acquista {{count}} crediti a {{price}}",
     "ctaLabelNoPrice_one": "Acquista {{count}} credito",
     "ctaLabelNoPrice_many": "Acquista {{count}} di crediti",
-    "ctaLabelNoPrice_other": "Acquista {{count}} crediti"
+    "ctaLabelNoPrice_other": "Acquista {{count}} crediti",
+    "sameRate": "Ogni credito costa quanto in qualsiasi piano."
   },
   "faq": {
     "title": "Domande sui prezzi",

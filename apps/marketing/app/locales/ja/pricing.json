@@ -59,6 +59,13 @@
         "チームの人数は無制限",
         "専任サポート"
       ]
+    },
+    "trust": {
+      "label": "購入がシンプルな理由",
+      "oneTime": "一回払い",
+      "noRenewal": "自動更新なし",
+      "noExpiry": "クレジットに有効期限なし",
+      "razorpay": "Razorpayによる安全な決済"
     }
   },
   "compare": {
@@ -91,7 +98,8 @@
     "priceNote": "GST 別",
     "cta": "購入",
     "ctaLabel_other": "{{count}} クレジットを {{price}} で購入",
-    "ctaLabelNoPrice_other": "{{count}} クレジットを購入"
+    "ctaLabelNoPrice_other": "{{count}} クレジットを購入",
+    "sameRate": "クレジット単価はどのプランとも同じです。"
   },
   "faq": {
     "title": "料金に関するご質問",

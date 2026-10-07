@@ -59,6 +59,13 @@
         "Tim berukuran berapa pun",
         "Dukungan khusus"
       ]
+    },
+    "trust": {
+      "label": "Mengapa membeli itu mudah",
+      "oneTime": "Pembayaran sekali",
+      "noRenewal": "Tidak ada perpanjangan otomatis",
+      "noExpiry": "Kredit tidak pernah kedaluwarsa",
+      "razorpay": "Checkout aman dengan Razorpay"
     }
   },
   "compare": {
@@ -91,7 +98,8 @@
     "priceNote": "belum termasuk GST",
     "cta": "Beli",
     "ctaLabel_other": "Beli {{count}} kredit seharga {{price}}",
-    "ctaLabelNoPrice_other": "Beli {{count}} kredit"
+    "ctaLabelNoPrice_other": "Beli {{count}} kredit",
+    "sameRate": "Harga setiap kredit sama seperti di paket mana pun."
   },
   "faq": {
     "title": "Pertanyaan seputar harga",

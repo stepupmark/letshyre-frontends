@@ -1,6 +1,5 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { buttonVariants } from "@workspace/ui/components/button"
-import { cn } from "@workspace/ui/lib/utils"
 import {
   Card,
   CardContent,
@@ -28,13 +27,13 @@ export function TopUpPacks() {
   const pending = isPricePending(status)
 
   return (
-    <Section aria-labelledby={titleId} className="pb-0 sm:pb-0">
+    <Section aria-labelledby={titleId} className="border-t py-12 sm:py-16">
       <SectionHeader
         id={titleId}
         title={t("topUps.title")}
-        description={t("topUps.body")}
+        description={`${t("topUps.body")} ${t("topUps.sameRate")}`}
       />
-      <div className="mt-8 flex flex-col gap-4">
+      <div className="mt-6 flex flex-col gap-4">
         <PriceNotice status={status} onRetry={retry} isRetrying={isRetrying} />
         <ul
           aria-busy={pending || undefined}
@@ -78,13 +77,11 @@ export function TopUpPacks() {
                               price: money(amount),
                             })
                       }
-                      className={cn(
-                        buttonVariants({
-                          variant: "outline",
-                          size: "lg",
-                          className: "h-10 w-full",
-                        })
-                      )}
+                      className={buttonVariants({
+                        variant: "outline",
+                        size: "lg",
+                        className: "h-10 w-full",
+                      })}
                     >
                       {t("topUps.cta")}
                     </a>

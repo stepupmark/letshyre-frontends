@@ -61,6 +61,13 @@
         "Jede Teamgröße",
         "Persönlicher Support"
       ]
+    },
+    "trust": {
+      "label": "Warum der Kauf einfach ist",
+      "oneTime": "Einmalzahlung",
+      "noRenewal": "Keine automatische Verlängerung",
+      "noExpiry": "Credits verfallen nie",
+      "razorpay": "Sicherer Checkout mit Razorpay"
     }
   },
   "compare": {
@@ -96,7 +103,8 @@
     "ctaLabel_one": "{{count}} Credit für {{price}} kaufen",
     "ctaLabel_other": "{{count}} Credits für {{price}} kaufen",
     "ctaLabelNoPrice_one": "{{count}} Credit kaufen",
-    "ctaLabelNoPrice_other": "{{count}} Credits kaufen"
+    "ctaLabelNoPrice_other": "{{count}} Credits kaufen",
+    "sameRate": "Jeder Credit kostet so viel wie in jedem Tarif."
   },
   "faq": {
     "title": "Fragen zu den Preisen",

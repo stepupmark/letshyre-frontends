@@ -63,6 +63,13 @@
         "Toute taille d'équipe",
         "Assistance dédiée"
       ]
+    },
+    "trust": {
+      "label": "Un achat simple",
+      "oneTime": "Paiement unique",
+      "noRenewal": "Aucun renouvellement automatique",
+      "noExpiry": "Les crédits n'expirent jamais",
+      "razorpay": "Paiement sécurisé avec Razorpay"
     }
   },
   "compare": {
@@ -101,7 +108,8 @@
     "ctaLabel_other": "Acheter {{count}} crédits pour {{price}}",
     "ctaLabelNoPrice_one": "Acheter {{count}} crédit",
     "ctaLabelNoPrice_many": "Acheter {{count}} de crédits",
-    "ctaLabelNoPrice_other": "Acheter {{count}} crédits"
+    "ctaLabelNoPrice_other": "Acheter {{count}} crédits",
+    "sameRate": "Chaque crédit coûte le même prix que dans n'importe quelle offre."
   },
   "faq": {
     "title": "Questions sur les tarifs",

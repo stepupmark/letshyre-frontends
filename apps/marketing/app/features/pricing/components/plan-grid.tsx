@@ -1,15 +1,28 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { Skeleton } from "@workspace/ui/components/skeleton"
+import {
+  InfinityIcon,
+  ReceiptIcon,
+  RefreshCwOffIcon,
+  ShieldCheckIcon,
+} from "lucide-react"
 import { useId } from "react"
 
 import { Container } from "@/components/section"
 
 import { useMoney } from "../hooks/use-money"
 import { usePlans } from "../hooks/use-plans"
-import { isPricePending } from "../lib/price-status"
 import { sharedRate } from "../lib/plans"
+import { isPricePending } from "../lib/price-status"
 import { PlanCard } from "./plan-card"
 import { PriceNotice } from "./price-notice"
+
+const TRUST = [
+  { id: "oneTime", icon: ReceiptIcon },
+  { id: "noRenewal", icon: RefreshCwOffIcon },
+  { id: "noExpiry", icon: InfinityIcon },
+  { id: "razorpay", icon: ShieldCheckIcon },
+] as const
 
 export function PlanGrid() {
   const { t } = useTranslation("pricing")
@@ -20,8 +33,8 @@ export function PlanGrid() {
   const rate = status === "ready" ? sharedRate(plans) : null
 
   return (
-    <section aria-labelledby={titleId} className="pt-12 sm:pt-16">
-      <Container className="flex flex-col gap-6">
+    <section aria-labelledby={titleId} className="pt-10 sm:pt-14">
+      <Container className="flex flex-col gap-5">
         <h2 id={titleId} className="sr-only">
           {t("plans.heading")}
         </h2>
@@ -37,9 +50,20 @@ export function PlanGrid() {
             <PlanCard key={plan.id} plan={plan} pending={pending} />
           ))}
         </div>
+        <ul
+          aria-label={t("plans.trust.label")}
+          className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium"
+        >
+          {TRUST.map(({ id, icon: Icon }) => (
+            <li key={id} className="flex items-center gap-2">
+              <Icon aria-hidden className="size-4 shrink-0 text-brand" />
+              {t(`plans.trust.${id}`)}
+            </li>
+          ))}
+        </ul>
         <div className="flex flex-col gap-1 text-sm text-muted-foreground">
           {rate !== null && (
-            <p className="font-medium text-foreground">
+            <p className="font-semibold text-primary">
               {t("plans.rate", { price: money(rate) })}
             </p>
           )}

@@ -61,6 +61,13 @@
         "Any team size",
         "Dedicated support"
       ]
+    },
+    "trust": {
+      "label": "Why buying is simple",
+      "oneTime": "One-time payment",
+      "noRenewal": "Nothing auto-renews",
+      "noExpiry": "Credits never expire",
+      "razorpay": "Secure checkout with Razorpay"
     }
   },
   "compare": {
@@ -96,7 +103,8 @@
     "ctaLabel_one": "Buy {{count}} credit for {{price}}",
     "ctaLabel_other": "Buy {{count}} credits for {{price}}",
     "ctaLabelNoPrice_one": "Buy {{count}} credit",
-    "ctaLabelNoPrice_other": "Buy {{count}} credits"
+    "ctaLabelNoPrice_other": "Buy {{count}} credits",
+    "sameRate": "Each credit costs the same as in any plan."
   },
   "faq": {
     "title": "Questions about pricing",

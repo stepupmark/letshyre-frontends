@@ -69,6 +69,13 @@
         "أي حجم فريق",
         "دعم مخصّص"
       ]
+    },
+    "trust": {
+      "label": "لماذا الشراء بسيط",
+      "oneTime": "دفعة لمرة واحدة",
+      "noRenewal": "لا يوجد تجديد تلقائي",
+      "noExpiry": "الرصيد لا تنتهي صلاحيته",
+      "razorpay": "دفع آمن عبر Razorpay"
     }
   },
   "compare": {
@@ -116,7 +123,8 @@
     "ctaLabelNoPrice_two": "شراء نقطتين",
     "ctaLabelNoPrice_few": "شراء {{count}} نقاط",
     "ctaLabelNoPrice_many": "شراء {{count}} نقطة",
-    "ctaLabelNoPrice_other": "شراء {{count}} نقطة"
+    "ctaLabelNoPrice_other": "شراء {{count}} نقطة",
+    "sameRate": "سعر الرصيد الواحد هو نفسه في أي خطة."
   },
   "faq": {
     "title": "أسئلة عن الأسعار",

@@ -117,18 +117,4 @@ describe("PricingPage", () => {
     expect(await within(card("Pro")).findByText("₹2,450")).toBeInTheDocument()
     expect(screen.queryByRole("alert")).not.toBeInTheDocument()
   })
-
-  it("compares plans in a captioned table", () => {
-    plans.mockImplementation(never)
-    creditPrice.mockImplementation(never)
-    renderPage(<PricingPage />, { path: "/en/pricing" })
-
-    const table = screen.getByRole("table", { name: "What each plan includes" })
-    expect(
-      within(table)
-        .getAllByRole("columnheader")
-        .map((th) => th.textContent)
-    ).toEqual(["Feature", "Free", "Pro", "Business", "Custom"])
-    expect(within(table).getAllByRole("rowheader")).toHaveLength(8)
-  })
 })

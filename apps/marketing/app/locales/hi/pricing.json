@@ -61,6 +61,13 @@
         "किसी भी आकार की टीम",
         "समर्पित सपोर्ट"
       ]
+    },
+    "trust": {
+      "label": "खरीदना क्यों आसान है",
+      "oneTime": "एक बार का भुगतान",
+      "noRenewal": "कुछ भी अपने आप रिन्यू नहीं होता",
+      "noExpiry": "क्रेडिट कभी खत्म नहीं होते",
+      "razorpay": "Razorpay के साथ सुरक्षित चेकआउट"
     }
   },
   "compare": {
@@ -96,7 +103,8 @@
     "ctaLabel_one": "{{price}} में {{count}} क्रेडिट खरीदें",
     "ctaLabel_other": "{{price}} में {{count}} क्रेडिट खरीदें",
     "ctaLabelNoPrice_one": "{{count}} क्रेडिट खरीदें",
-    "ctaLabelNoPrice_other": "{{count}} क्रेडिट खरीदें"
+    "ctaLabelNoPrice_other": "{{count}} क्रेडिट खरीदें",
+    "sameRate": "हर क्रेडिट की कीमत किसी भी प्लान जितनी ही है।"
   },
   "faq": {
     "title": "मूल्य से जुड़े सवाल",
