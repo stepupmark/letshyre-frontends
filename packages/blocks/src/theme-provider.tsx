@@ -1,15 +1,20 @@
 import { ThemeProvider as NextThemesProvider } from "next-themes"
 import type { ReactNode } from "react"
 
-// light only for now; a theme toggle just drops forcedTheme
-const FORCED_THEME = "light"
+const LIGHT = "light"
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
+/** Light only, unless the app ships a theme toggle (`switchable`). */
+export function ThemeProvider({
+  children,
+  switchable = false,
+}: {
+  children: ReactNode
+  switchable?: boolean
+}) {
   return (
     <NextThemesProvider
       attribute="class"
-      forcedTheme={FORCED_THEME}
-      enableSystem={false}
+      {...(switchable ? { enableSystem: true } : { forcedTheme: LIGHT })}
       disableTransitionOnChange
     >
       {children}
