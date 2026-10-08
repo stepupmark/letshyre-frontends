@@ -2,10 +2,17 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { Separator } from "@workspace/ui/components/separator"
 import { SidebarTrigger } from "@workspace/ui/components/sidebar"
 import { Breadcrumbs } from "./breadcrumbs"
+import type { ReactNode } from "react"
+import type { SearchSource } from "@/lib/search"
 import { CommandPalette } from "./command-palette"
-import { UserMenu } from "./user-menu"
 
-export function AppHeader() {
+export function AppHeader({
+  account,
+  searches,
+}: {
+  account: ReactNode
+  searches: SearchSource[]
+}) {
   return (
     <header className="sticky top-0 z-10 flex h-14 shrink-0 items-center gap-2 border-b bg-background/95 px-4 backdrop-blur-sm supports-backdrop-filter:bg-background/80">
       <SidebarTrigger className="-ms-1" />
@@ -15,9 +22,9 @@ export function AppHeader() {
       />
       <Breadcrumbs />
       <div className="ms-auto flex items-center gap-1">
-        <CommandPalette />
+        <CommandPalette sources={searches} />
         <ThemeToggle />
-        <UserMenu />
+        {account}
       </div>
     </header>
   )

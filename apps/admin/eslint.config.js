@@ -21,12 +21,8 @@ export default [
 
   // TODO(admin): the overrides below go as the migration replaces this code
   {
-    // shell becomes a feature, company KYC moves to shared, tables move to react-table v9
-    files: [
-      "app/components/layout/**",
-      "app/components/data-table/**",
-      "app/features/employers/**",
-    ],
+    // company KYC moves to shared, tables move to react-table v9
+    files: ["app/components/data-table/**", "app/features/employers/**"],
     rules: {
       "boundaries/dependencies": "off",
       "react-hooks/incompatible-library": "off",

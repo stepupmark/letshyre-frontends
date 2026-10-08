@@ -1,17 +1,24 @@
 import { useSession } from "@workspace/auth/react"
 import { NavigationProgress } from "@workspace/blocks/navigation-progress"
 import { SkipLink } from "@workspace/blocks/skip-link"
-import { useEffect } from "react"
+import { useEffect, type ReactNode } from "react"
 import { Outlet } from "react-router"
 import { SidebarInset, SidebarProvider } from "@workspace/ui/components/sidebar"
 import { useIdleTimeout } from "@/hooks/use-idle-timeout"
 import { endSession } from "@/lib/session"
+import type { SearchSource } from "@/lib/search"
 import { AppHeader } from "./app-header"
 import { AppSidebar } from "./app-sidebar"
 
 const IDLE_TIMEOUT_MS = 30 * 60_000
 
-export function AppShell() {
+export function AppShell({
+  account,
+  searches,
+}: {
+  account: ReactNode
+  searches: SearchSource[]
+}) {
   useIdleTimeout(IDLE_TIMEOUT_MS, () => {
     endSession("idle")
   })
@@ -27,7 +34,7 @@ export function AppShell() {
       <NavigationProgress label="Loading page" />
       <AppSidebar />
       <SidebarInset className="min-w-0">
-        <AppHeader />
+        <AppHeader account={account} searches={searches} />
         <main
           id="main"
           tabIndex={-1}

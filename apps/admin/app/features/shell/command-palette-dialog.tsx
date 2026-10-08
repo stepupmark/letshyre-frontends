@@ -1,14 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router"
-import { useQuery } from "@tanstack/react-query"
-import {
-  Briefcase,
-  CreditCard,
-  Moon,
-  Tag,
-  User,
-  type LucideIcon,
-} from "lucide-react"
+import { useQueries } from "@tanstack/react-query"
+import { CreditCard, Moon, Tag, type LucideIcon } from "lucide-react"
 import { useTheme } from "next-themes"
 import {
   Command,
@@ -20,8 +13,7 @@ import {
   CommandList,
 } from "@workspace/ui/components/command"
 import { navigation } from "@/lib/navigation"
-import { candidatesQueries } from "@/features/candidates"
-import { jobsQueries } from "@/features/jobs"
+import type { SearchSource } from "@/lib/search"
 import { useDebouncedValue } from "@/hooks/use-debounced-value"
 
 interface Entry {
@@ -68,11 +60,13 @@ const matches = (entry: Entry, query: string) =>
 interface CommandPaletteDialogProps {
   open: boolean
   onOpenChange: (open: boolean) => void
+  sources: SearchSource[]
 }
 
 export function CommandPaletteDialog({
   open,
   onOpenChange: setOpen,
+  sources,
 }: CommandPaletteDialogProps) {
   const navigate = useNavigate()
   const { resolvedTheme, setTheme } = useTheme()
@@ -81,15 +75,13 @@ export function CommandPaletteDialog({
   const search = useDebouncedValue(query.trim())
   const searching = search.length >= 2
 
-  const candidates = useQuery({
-    ...candidatesQueries.list({ page: 1, search }),
-    enabled: open && searching,
-    placeholderData: undefined,
-  })
-  const jobs = useQuery({
-    ...jobsQueries.list({ page: 1, search }),
-    enabled: open && searching,
-    placeholderData: undefined,
+  const results = useQueries({
+    queries: sources.map((source) => ({
+      queryKey: ["search", source.heading, search],
+      queryFn: ({ signal }: { signal: AbortSignal }) =>
+        source.search(search, signal),
+      enabled: open && searching,
+    })),
   })
 
   const go = (url: string) => {
@@ -104,15 +96,18 @@ export function CommandPaletteDialog({
 
   const pages = PAGES.filter((entry) => matches(entry, query))
   const create = CREATE.filter((entry) => matches(entry, query))
-  const people = searching ? (candidates.data?.results ?? []).slice(0, 5) : []
-  const jobResults = searching ? (jobs.data?.results ?? []).slice(0, 5) : []
-  const loading = searching && (candidates.isFetching || jobs.isFetching)
+  const groups = sources.map((source, index) => ({
+    source,
+    hits: searching ? (results[index]?.data ?? []) : [],
+  }))
+  const loading = searching && results.some((result) => result.isFetching)
   const showTheme = matches(THEME_ENTRY, query)
 
   // cmdk keeps a selection that no longer exists when results change, so fall back to the first item
   const values = [
-    ...people.map((candidate) => `candidate-${candidate.id}`),
-    ...jobResults.map((job) => `job-${job.id}`),
+    ...groups.flatMap(({ source, hits }) =>
+      hits.map((hit) => `${source.heading}-${hit.id}`)
+    ),
     ...pages.map((entry) => `page-${entry.url}`),
     ...create.map((entry) => `create-${entry.url}`),
     ...(showTheme ? ["toggle-theme"] : []),
@@ -136,47 +131,27 @@ export function CommandPaletteDialog({
           <CommandEmpty>
             {loading ? "Searching…" : "No results found."}
           </CommandEmpty>
-          {people.length > 0 && (
-            <CommandGroup heading="Candidates">
-              {people.map((candidate) => (
-                <CommandItem
-                  key={candidate.id}
-                  value={`candidate-${candidate.id}`}
-                  onSelect={() => {
-                    go(`/dashboard/candidates/${candidate.id}`)
-                  }}
-                >
-                  <User />
-                  <span className="truncate">
-                    {candidate.name || "Unnamed"}
-                  </span>
-                  <span className="ms-auto truncate text-xs text-muted-foreground">
-                    {candidate.email}
-                  </span>
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          )}
-          {jobResults.length > 0 && (
-            <CommandGroup heading="Jobs">
-              {jobResults.map((job) => (
-                <CommandItem
-                  key={job.id}
-                  value={`job-${job.id}`}
-                  onSelect={() => {
-                    go(`/dashboard/jobs/${job.id}`)
-                  }}
-                >
-                  <Briefcase />
-                  <span className="truncate">
-                    {job.title || "Untitled job"}
-                  </span>
-                  <span className="ms-auto truncate text-xs text-muted-foreground">
-                    {job.company_name}
-                  </span>
-                </CommandItem>
-              ))}
-            </CommandGroup>
+          {groups.map(
+            ({ source, hits }) =>
+              hits.length > 0 && (
+                <CommandGroup key={source.heading} heading={source.heading}>
+                  {hits.map((hit) => (
+                    <CommandItem
+                      key={hit.id}
+                      value={`${source.heading}-${hit.id}`}
+                      onSelect={() => {
+                        go(hit.url)
+                      }}
+                    >
+                      <source.icon />
+                      <span className="truncate">{hit.label}</span>
+                      <span className="ms-auto truncate text-xs text-muted-foreground">
+                        {hit.detail}
+                      </span>
+                    </CommandItem>
+                  ))}
+                </CommandGroup>
+              )
           )}
           {pages.length > 0 && (
             <CommandGroup heading="Pages">

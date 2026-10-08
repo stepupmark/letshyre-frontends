@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useQuery } from "@tanstack/react-query"
 import { Keyboard, KeyRound, LogOut } from "lucide-react"
-import { authQueries, ChangePasswordDialog, useLogout } from "@/features/auth"
+import { KeyboardShortcuts } from "@/components/keyboard-shortcuts"
 import { Avatar, AvatarFallback } from "@workspace/ui/components/avatar"
 import { Button } from "@workspace/ui/components/button"
 import {
@@ -16,7 +16,9 @@ import {
 } from "@workspace/ui/components/dropdown-menu"
 import { Skeleton } from "@workspace/ui/components/skeleton"
 import { initials } from "@/lib/format"
-import { KeyboardShortcuts } from "./keyboard-shortcuts"
+import { useLogout } from "../mutations/use-logout"
+import { authQueries } from "../queries/auth.queries"
+import { ChangePasswordDialog } from "./change-password-dialog"
 
 export function UserMenu() {
   const [changePasswordOpen, setChangePasswordOpen] = useState(false)

@@ -1,9 +1,15 @@
 import type { Route } from "./+types/dashboard"
-import { AppShell } from "@/components/layout/app-shell"
-import { requireAdmin } from "@/features/auth"
+import { requireAdmin, UserMenu } from "@/features/auth"
+import { candidateSearch } from "@/features/candidates"
+import { jobSearch } from "@/features/jobs"
+import { AppShell } from "@/features/shell"
 
 export const clientMiddleware: Route.ClientMiddlewareFunction[] = [requireAdmin]
 
 export const handle = { breadcrumb: "Dashboard" }
 
-export default AppShell
+const searches = [candidateSearch, jobSearch]
+
+export default function Dashboard() {
+  return <AppShell account={<UserMenu />} searches={searches} />
+}

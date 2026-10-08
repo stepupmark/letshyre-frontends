@@ -1,7 +1,5 @@
 export { AuthLayout } from "./components/auth-layout"
-export { ChangePasswordDialog } from "./components/change-password-dialog"
 export { ForgotPasswordFlow } from "./components/forgot-password-flow"
 export { SignInForm } from "./components/sign-in-form"
-export { useLogout } from "./mutations/use-logout"
-export { authQueries } from "./queries/auth.queries"
 export { requireAdmin, requireGuest } from "./session"
+export { UserMenu } from "./components/user-menu"

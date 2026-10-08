@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react"
 import { Search } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
+import type { SearchSource } from "@/lib/search"
 
 // the dialog pulls in cmdk and the search queries, so it loads on first open
 const CommandPaletteDialog = lazy(() =>
@@ -11,7 +12,7 @@ const CommandPaletteDialog = lazy(() =>
 
 const isMac = () => /Mac|iPhone|iPad/.test(navigator.platform)
 
-export function CommandPalette() {
+export function CommandPalette({ sources }: { sources: SearchSource[] }) {
   const [open, setOpen] = useState(false)
   const [loaded, setLoaded] = useState(false)
   const [shortcut] = useState(() => (isMac() ? "⌘K" : "Ctrl K"))
@@ -63,7 +64,11 @@ export function CommandPalette() {
       </Button>
       {loaded && (
         <Suspense fallback={null}>
-          <CommandPaletteDialog open={open} onOpenChange={show} />
+          <CommandPaletteDialog
+            open={open}
+            onOpenChange={show}
+            sources={sources}
+          />
         </Suspense>
       )}
     </>
