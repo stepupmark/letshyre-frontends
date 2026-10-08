@@ -4,10 +4,9 @@ export const PHASES = [
   { id: "start", steps: ["chooseRole", "begin"] },
 ] as const
 
-export type PhaseId = (typeof PHASES)[number]["id"]
 export type StepId = (typeof PHASES)[number]["steps"][number]
 
-export const TIP_STEPS = ["clearEnv", "verifyId"] as const
+const TIP_STEPS = ["clearEnv", "verifyId"] as const
 export type TipStepId = (typeof TIP_STEPS)[number]
 
 export const hasTip = (id: StepId): id is TipStepId =>

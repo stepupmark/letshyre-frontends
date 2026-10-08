@@ -10,7 +10,7 @@ const plan = (overrides: Record<string, unknown>) => ({
   ...overrides,
 })
 
-export const PLANS = {
+const PLANS = {
   success: true,
   data: {
     results: [
@@ -45,7 +45,7 @@ export const PLANS = {
   },
 }
 
-export const CREDIT_PRICE = { success: true, data: { cost_per_token: "49.00" } }
+const CREDIT_PRICE = { success: true, data: { cost_per_token: "49.00" } }
 
 const CORS = {
   "access-control-allow-origin": "*",
