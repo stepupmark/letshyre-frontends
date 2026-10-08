@@ -241,7 +241,7 @@ export function DataTable<TData extends RowData>({
                     key={row.id}
                     data-state={row.getIsSelected() ? "selected" : undefined}
                     data-active={index === activeRow || undefined}
-                    className="data-active:bg-muted data-active:shadow-[inset_2px_0_0_var(--primary)]"
+                    className="data-active:bg-brand-muted"
                   >
                     {row.getVisibleCells().map((cell) => (
                       <TableCell

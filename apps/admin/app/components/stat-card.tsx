@@ -31,14 +31,14 @@ export function StatCard({
   const card = (
     <Card
       className={
-        href ? "h-full transition-colors hover:bg-muted/40" : undefined
+        href ? "h-full transition-shadow hover:ring-brand/50" : undefined
       }
     >
       <CardHeader>
         <CardDescription>{label}</CardDescription>
         {Icon && (
           <CardAction>
-            <Icon className="size-4 text-muted-foreground" />
+            <Icon className="size-4 text-brand-text" />
           </CardAction>
         )}
         <CardTitle className="text-2xl font-semibold tabular-nums">

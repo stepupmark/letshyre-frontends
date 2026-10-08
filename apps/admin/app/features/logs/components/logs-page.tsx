@@ -110,8 +110,18 @@ export function LogsPage() {
         }}
       >
         <TabsList>
-          <TabsTrigger value="email">Email</TabsTrigger>
-          <TabsTrigger value="sms">SMS</TabsTrigger>
+          <TabsTrigger
+            value="email"
+            className="data-active:text-brand-text dark:data-active:text-brand-text"
+          >
+            Email
+          </TabsTrigger>
+          <TabsTrigger
+            value="sms"
+            className="data-active:text-brand-text dark:data-active:text-brand-text"
+          >
+            SMS
+          </TabsTrigger>
         </TabsList>
       </Tabs>
     ),

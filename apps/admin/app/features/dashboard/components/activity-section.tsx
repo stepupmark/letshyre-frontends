@@ -96,7 +96,11 @@ export function ActivitySection({
             >
               <TabsList>
                 {ACTIVITY_RANGES.map((range) => (
-                  <TabsTrigger key={range} value={range}>
+                  <TabsTrigger
+                    key={range}
+                    value={range}
+                    className="data-active:text-brand-text dark:data-active:text-brand-text"
+                  >
                     {range}d
                   </TabsTrigger>
                 ))}

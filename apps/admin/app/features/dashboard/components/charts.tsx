@@ -20,15 +20,15 @@ import {
 } from "@/lib/format"
 
 const revenueConfig = {
-  revenue: { label: "Revenue", color: "var(--chart-2)" },
+  revenue: { label: "Revenue", color: "var(--chart-1)" },
 } satisfies ChartConfig
 
 const activityConfig = {
-  active_count: { label: "Active candidates", color: "var(--chart-2)" },
+  active_count: { label: "Active candidates", color: "var(--chart-1)" },
 } satisfies ChartConfig
 
 const scoreConfig = {
-  avg_score: { label: "Average score", color: "var(--chart-2)" },
+  avg_score: { label: "Average score", color: "var(--chart-1)" },
 } satisfies ChartConfig
 
 export function RevenueChart({

@@ -103,7 +103,11 @@ export function KycListPage() {
           >
             <TabsList>
               {KYC_STATUSES.map((value) => (
-                <TabsTrigger key={value} value={value}>
+                <TabsTrigger
+                  key={value}
+                  value={value}
+                  className="data-active:text-brand-text dark:data-active:text-brand-text"
+                >
                   {value}
                 </TabsTrigger>
               ))}
