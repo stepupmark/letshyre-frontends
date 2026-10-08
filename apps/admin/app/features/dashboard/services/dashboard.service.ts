@@ -1,4 +1,6 @@
-import { http } from "@/lib/api/http-client"
+import type { Query } from "@workspace/api"
+
+import { api } from "@/lib/api"
 import {
   activitySummaryResponseSchema,
   dailyActivityResponseSchema,
@@ -10,10 +12,8 @@ import {
 } from "../schemas/dashboard.schema"
 import { toShares } from "../utils/shares"
 
-async function get(url: string, signal?: AbortSignal, params?: object) {
-  const { data } = await http.get<unknown>(url, { signal, params })
-  return data
-}
+const get = (url: string, signal?: AbortSignal, query?: Query) =>
+  api.get(url, { signal, query })
 
 export const dashboardService = {
   async revenueSummary(signal?: AbortSignal) {

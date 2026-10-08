@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { envelope, id, paginated } from "@/lib/api/schemas"
+import { envelope, id, paginated } from "@/lib/schemas"
 
 export const KYC_STATUSES = ["Pending", "Verified", "Rejected"] as const
 export type KycStatus = (typeof KYC_STATUSES)[number]

@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { id, paginated } from "@/lib/api/schemas"
+import { id, paginated } from "@/lib/schemas"
 
 const logBase = {
   id,

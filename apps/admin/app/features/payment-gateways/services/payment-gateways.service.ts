@@ -1,4 +1,4 @@
-import { http } from "@/lib/api/http-client"
+import { api } from "@/lib/api"
 import {
   gatewaysResponseSchema,
   type GatewayFormValues,
@@ -22,19 +22,19 @@ function toPayload(values: GatewayFormValues) {
 
 export const paymentGatewaysService = {
   async list(signal?: AbortSignal) {
-    const { data } = await http.get(LIST_URL, { signal })
+    const data = await api.get(LIST_URL, { signal })
     return gatewaysResponseSchema.parse(data).data
   },
 
   async create(values: GatewayFormValues) {
-    await http.post(LIST_URL, toPayload(values))
+    await api.post(LIST_URL, toPayload(values))
   },
 
   async update(id: string, values: GatewayFormValues) {
-    await http.put(detailUrl(id), toPayload(values))
+    await api.put(detailUrl(id), toPayload(values))
   },
 
   async remove(id: string) {
-    await http.delete(detailUrl(id))
+    await api.delete(detailUrl(id))
   },
 }

@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input"
 import { useSendOtp } from "../mutations/use-password-reset"
 import { requestOtpSchema } from "../schemas/auth.schema"
 import type { OtpSession, RequestOtpInput } from "../types"
-import { getErrorMessage } from "@/lib/api/api-error"
+import { getErrorMessage } from "@/lib/errors"
 
 export function RequestOtpForm({
   onSent,

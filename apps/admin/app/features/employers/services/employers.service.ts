@@ -1,4 +1,4 @@
-import { http } from "@/lib/api/http-client"
+import { api } from "@/lib/api"
 import {
   employerResponseSchema,
   employerSummaryResponseSchema,
@@ -7,15 +7,15 @@ import {
 
 export const employersService = {
   async list(page: number, signal?: AbortSignal) {
-    const { data } = await http.get("user/v1/admin/employers/", {
-      params: { page },
+    const data = await api.get("user/v1/admin/employers/", {
+      query: { page },
       signal,
     })
     return employersResponseSchema.parse(data).data
   },
 
   async detail(id: string, signal?: AbortSignal) {
-    const { data } = await http.get(
+    const data = await api.get(
       `user/v1/admin/employer_detail/${encodeURIComponent(id)}/`,
       { signal }
     )
@@ -23,7 +23,7 @@ export const employersService = {
   },
 
   async summary(signal?: AbortSignal) {
-    const { data } = await http.get("user/v1/admin/employer/cards/", {
+    const data = await api.get("user/v1/admin/employer/cards/", {
       signal,
     })
     return employerSummaryResponseSchema.parse(data).data

@@ -1,4 +1,4 @@
-import { http } from "@/lib/api/http-client"
+import { api } from "@/lib/api"
 import {
   couponsResponseSchema,
   type CouponPayload,
@@ -9,22 +9,22 @@ const detailUrl = (id: string) =>
 
 export const couponsService = {
   async list(page: number, signal?: AbortSignal) {
-    const { data } = await http.get("user/v1/admin/coupon/management/", {
-      params: { page },
+    const data = await api.get("user/v1/admin/coupon/management/", {
+      query: { page },
       signal,
     })
     return couponsResponseSchema.parse(data).data
   },
 
   async create(payload: CouponPayload) {
-    await http.post("user/v1/admin/coupon/management/", payload)
+    await api.post("user/v1/admin/coupon/management/", payload)
   },
 
   async update(id: string, payload: CouponPayload) {
-    await http.put(detailUrl(id), payload)
+    await api.put(detailUrl(id), payload)
   },
 
   async remove(id: string) {
-    await http.delete(detailUrl(id))
+    await api.delete(detailUrl(id))
   },
 }

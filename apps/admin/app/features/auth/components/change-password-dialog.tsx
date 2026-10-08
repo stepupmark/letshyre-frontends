@@ -23,7 +23,7 @@ import {
 import { useChangePassword } from "../mutations/use-change-password"
 import { changePasswordSchema } from "../schemas/auth.schema"
 import type { ChangePasswordInput } from "../types"
-import { getErrorMessage } from "@/lib/api/api-error"
+import { getErrorMessage } from "@/lib/errors"
 
 const EMPTY: ChangePasswordInput = {
   currentPassword: "",

@@ -1,8 +1,8 @@
+import { HttpError } from "@workspace/api"
 import { login, logout, ROLES } from "@workspace/auth"
 
 import { api } from "@/lib/api"
-import { ApiError } from "@/lib/api/api-error"
-import { envelope } from "@/lib/api/schemas"
+import { envelope } from "@/lib/schemas"
 
 import {
   adminProfileSchema,
@@ -18,7 +18,7 @@ function assertOk(
   fallback: string
 ) {
   if (result.status === false || result.success === false) {
-    throw new ApiError(result.message || fallback, 400)
+    throw new HttpError(200, { message: result.message || fallback })
   }
 }
 

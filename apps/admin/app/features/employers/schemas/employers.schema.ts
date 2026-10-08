@@ -1,6 +1,6 @@
 import { z } from "zod"
 import { companyKycSchema } from "@/features/kyc"
-import { envelope, id, paginated } from "@/lib/api/schemas"
+import { envelope, id, paginated } from "@/lib/schemas"
 
 const count = z
   .number()

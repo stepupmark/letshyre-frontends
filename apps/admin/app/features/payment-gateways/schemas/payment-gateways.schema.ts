@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { envelope, id } from "@/lib/api/schemas"
+import { envelope, id } from "@/lib/schemas"
 
 export const GATEWAY_PROVIDERS = {
   razorpay: "Razorpay",

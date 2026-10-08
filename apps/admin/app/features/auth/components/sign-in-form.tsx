@@ -5,7 +5,7 @@ import { Link, useSearchParams } from "react-router"
 import { LoaderCircle } from "lucide-react"
 import { PasswordInput } from "@/components/password-input"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { getErrorMessage } from "@/lib/api/api-error"
+import { getErrorMessage } from "@/lib/errors"
 import { Button } from "@/components/ui/button"
 import {
   Field,

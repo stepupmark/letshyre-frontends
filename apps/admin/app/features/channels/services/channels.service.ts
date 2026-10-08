@@ -1,4 +1,4 @@
-import { http } from "@/lib/api/http-client"
+import { api } from "@/lib/api"
 import {
   channelSettingsSchema,
   channelSettingsUpdateSchema,
@@ -9,12 +9,12 @@ const URL = "commonapp/v1/admin/settings/channels/"
 
 export const channelsService = {
   async get(signal?: AbortSignal) {
-    const { data } = await http.get(URL, { signal })
+    const data = await api.get(URL, { signal })
     return channelSettingsSchema.parse(data)
   },
 
   async update(payload: Partial<Record<ChannelKey, boolean>>) {
-    const { data } = await http.patch(URL, payload)
+    const data = await api.patch(URL, payload)
     return channelSettingsUpdateSchema.parse(data).data
   },
 }

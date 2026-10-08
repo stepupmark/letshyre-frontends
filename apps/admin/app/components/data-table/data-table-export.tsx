@@ -3,7 +3,7 @@ import type { Table } from "@tanstack/react-table"
 import { Download, LoaderCircle } from "lucide-react"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
-import { getErrorMessage } from "@/lib/api/api-error"
+import { getErrorMessage } from "@/lib/errors"
 import { downloadCsv, toCsv, type CsvCell } from "@/lib/csv"
 import { EXPORT_PAGE_LIMIT } from "@/lib/fetch-all-pages"
 

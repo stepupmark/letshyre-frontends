@@ -1,4 +1,4 @@
-import { http } from "@/lib/api/http-client"
+import { api } from "@/lib/api"
 import {
   kycDetailResponseSchema,
   kycListResponseSchema,
@@ -10,15 +10,15 @@ const detailUrl = (id: string) =>
 
 export const kycService = {
   async list(page: number, status: KycStatus, signal?: AbortSignal) {
-    const { data } = await http.get("user/v1/admin_kyc_management/", {
-      params: { page, kyc_status: status },
+    const data = await api.get("user/v1/admin_kyc_management/", {
+      query: { page, kyc_status: status },
       signal,
     })
     return kycListResponseSchema.parse(data).data
   },
 
   async detail(id: string, signal?: AbortSignal) {
-    const { data } = await http.get(detailUrl(id), { signal })
+    const data = await api.get(detailUrl(id), { signal })
     return kycDetailResponseSchema.parse(data).data
   },
 
@@ -28,7 +28,7 @@ export const kycService = {
     remarks = ""
   ) {
     // the old client always sent a space when there were no remarks, keep that
-    await http.patch(detailUrl(id), {
+    await api.patch(detailUrl(id), {
       kyc_status: status,
       verification_remarks: remarks || " ",
     })

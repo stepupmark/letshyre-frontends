@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { envelope, id, paginated } from "@/lib/api/schemas"
+import { envelope, id, paginated } from "@/lib/schemas"
 
 const text = z.string().nullish()
 const yearOrNumber = z.union([z.string(), z.number()]).nullish()

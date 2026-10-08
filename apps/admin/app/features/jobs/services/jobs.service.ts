@@ -1,4 +1,4 @@
-import { http } from "@/lib/api/http-client"
+import { api } from "@/lib/api"
 import {
   jobDetailResponseSchema,
   jobsResponseSchema,
@@ -9,15 +9,15 @@ import {
 
 export const jobsService = {
   async list(filters: JobsFilters, signal?: AbortSignal) {
-    const { data } = await http.get("user/v1/admin/jobs/", {
-      params: filters,
+    const data = await api.get("user/v1/admin/jobs/", {
+      query: { ...filters },
       signal,
     })
     return jobsResponseSchema.parse(data).data
   },
 
   async detail(id: string, signal?: AbortSignal) {
-    const { data } = await http.get(
+    const data = await api.get(
       `user/v1/admin/job-detail/${encodeURIComponent(id)}`,
       { signal }
     )
@@ -25,13 +25,13 @@ export const jobsService = {
   },
 
   async summary(signal?: AbortSignal) {
-    const { data } = await http.get("user/v1/admin/jobs/dashboard/cards/", {
+    const data = await api.get("user/v1/admin/jobs/dashboard/cards/", {
       signal,
     })
     return jobsSummaryResponseSchema.parse(data).data
   },
 
   async act(payload: JobsAction) {
-    await http.post("user/v1/admin/bulk_approvals/job/", payload)
+    await api.post("user/v1/admin/bulk_approvals/job/", payload)
   },
 }

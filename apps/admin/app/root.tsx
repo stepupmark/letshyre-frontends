@@ -9,6 +9,7 @@ import {
   ScrollRestoration,
 } from "react-router"
 import { QueryClientProvider } from "@tanstack/react-query"
+import { ApiError } from "@workspace/api"
 import { NuqsAdapter } from "nuqs/adapters/react-router/v8"
 import { LoaderCircle } from "lucide-react"
 import type { Route } from "./+types/root"
@@ -16,6 +17,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Button } from "@/components/ui/button"
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
+import { getErrorMessage } from "@/lib/errors"
 import { queryClient } from "@/lib/query/query-client"
 import "./app.css"
 
@@ -92,8 +94,8 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       error.status === 404
         ? "The page you're looking for doesn't exist."
         : error.statusText || details
-  } else if (error instanceof Error && error.name === "ApiError") {
-    details = error.message
+  } else if (error instanceof ApiError) {
+    details = getErrorMessage(error)
   } else if (import.meta.env.DEV && error instanceof Error) {
     details = error.message
     stack = error.stack

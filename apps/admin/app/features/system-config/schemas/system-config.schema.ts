@@ -1,6 +1,6 @@
 import { z } from "zod"
 import { formatNumber } from "@/lib/format"
-import { envelope, id } from "@/lib/api/schemas"
+import { envelope, id } from "@/lib/schemas"
 
 const systemConfigSchema = z.object({
   id,

@@ -14,7 +14,7 @@ import {
 import { useResetPassword } from "../mutations/use-password-reset"
 import { resetPasswordSchema } from "../schemas/auth.schema"
 import type { OtpSession, ResetPasswordInput } from "../types"
-import { getErrorMessage } from "@/lib/api/api-error"
+import { getErrorMessage } from "@/lib/errors"
 
 export function ResetPasswordForm({
   session,

@@ -1,4 +1,4 @@
-import { http } from "@/lib/api/http-client"
+import { api } from "@/lib/api"
 import {
   unlockedProfilesResponseSchema,
   unlocksOverviewResponseSchema,
@@ -7,17 +7,17 @@ import {
 
 export const unlocksService = {
   async overview(signal?: AbortSignal) {
-    const { data } = await http.get("user/v1/admin/unlocked_profiles/cards/", {
+    const data = await api.get("user/v1/admin/unlocked_profiles/cards/", {
       signal,
     })
     return unlocksOverviewResponseSchema.parse(data).data
   },
 
   async list(filters: UnlockedProfilesFilters, signal?: AbortSignal) {
-    const { data } = await http.get(
-      "user/v1/admin/employer/unlocked-profiles/",
-      { params: filters, signal }
-    )
+    const data = await api.get("user/v1/admin/employer/unlocked-profiles/", {
+      query: { ...filters },
+      signal,
+    })
     return unlockedProfilesResponseSchema.parse(data).data
   },
 }

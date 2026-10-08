@@ -19,7 +19,7 @@ import {
 import { useSendOtp, useVerifyOtp } from "../mutations/use-password-reset"
 import { verifyOtpSchema } from "../schemas/auth.schema"
 import type { OtpSession, VerifyOtpInput } from "../types"
-import { getErrorMessage } from "@/lib/api/api-error"
+import { getErrorMessage } from "@/lib/errors"
 
 const RESEND_AFTER_SECONDS = 60
 

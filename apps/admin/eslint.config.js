@@ -22,12 +22,9 @@ export default [
   // TODO(admin): the overrides below go as the migration replaces this code
   { ignores: ["app/components/ui/**"] },
   {
-    // axios and radix until @workspace/api and @workspace/ui
+    // radix until @workspace/ui
     files: ["app/**"],
-    rules: {
-      "no-restricted-imports": "off",
-      "@typescript-eslint/no-unsafe-assignment": "off",
-    },
+    rules: { "no-restricted-imports": "off" },
   },
   {
     // replaced by @workspace/blocks and the shared theme
