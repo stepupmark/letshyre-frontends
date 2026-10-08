@@ -10,7 +10,6 @@ import {
   Unlock,
   X,
 } from "lucide-react"
-import { useQueryStates } from "nuqs"
 import { DataTable } from "@/components/data-table/data-table"
 import { DateRangeFilter } from "@/components/date-range-filter"
 import { ExternalLink } from "@/components/external-link"
@@ -28,7 +27,8 @@ import { useDebouncedValue } from "@/hooks/use-debounced-value"
 import { formatNumber } from "@/lib/format"
 import { unlocksQueries } from "../queries/unlocks.queries"
 import type { UnlockedProfile } from "../schemas/unlocks.schema"
-import { toUnlocksFilters, unlocksSearchParams } from "../search-params"
+import { useSearchState } from "@/lib/search-params"
+import { toUnlocksFilters, readUnlocksParams } from "../search-params"
 
 function growthHint(value: number | null | undefined, period: string) {
   if (value === null || value === undefined) return undefined
@@ -198,7 +198,7 @@ function Overview() {
 }
 
 export function UnlocksPage() {
-  const [params, setParams] = useQueryStates(unlocksSearchParams)
+  const [params, setParams] = useSearchState(readUnlocksParams)
   const search = useDebouncedValue(params.q)
   const filters = toUnlocksFilters({ ...params, q: search })
   const profiles = useQuery(unlocksQueries.list(filters))
@@ -221,21 +221,28 @@ export function UnlocksPage() {
             <SearchInput
               value={params.q}
               placeholder="Search candidates"
-              onChange={(q) => void setParams({ q: q || null, page: null })}
+              onChange={(q) => {
+                setParams({ q: q || null, page: null })
+              }}
             />
             <DateRangeFilter
               from={params.from}
               to={params.to}
-              onChange={({ from, to }) =>
-                void setParams({
+              onChange={({ from, to }) => {
+                setParams({
                   from: from || null,
                   to: to || null,
                   page: null,
                 })
-              }
+              }}
             />
             {hasFilters && (
-              <Button variant="ghost" onClick={() => void setParams(null)}>
+              <Button
+                variant="ghost"
+                onClick={() => {
+                  setParams(null)
+                }}
+              >
                 <X /> Clear
               </Button>
             )}
@@ -246,7 +253,9 @@ export function UnlocksPage() {
         page={params.page}
         pageCount={profiles.data?.total_pages ?? 1}
         totalCount={profiles.data?.count}
-        onPageChange={(page) => void setParams({ page })}
+        onPageChange={(page) => {
+          setParams({ page })
+        }}
         isLoading={profiles.isPending}
         error={profiles.error}
         onRetry={() => void profiles.refetch()}
@@ -256,7 +265,9 @@ export function UnlocksPage() {
             icon={Unlock}
             description="Profiles appear here when employers unlock candidates."
             filtered={hasFilters}
-            onClearFilters={() => void setParams(null)}
+            onClearFilters={() => {
+              setParams(null)
+            }}
           />
         }
       />

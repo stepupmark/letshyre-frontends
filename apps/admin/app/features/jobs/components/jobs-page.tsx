@@ -15,7 +15,6 @@ import {
   Rows3,
   X,
 } from "lucide-react"
-import { useQueryStates } from "nuqs"
 import { DataTable } from "@/components/data-table/data-table"
 import { DateRangeFilter } from "@/components/date-range-filter"
 import { FilterSelect } from "@/components/filter-select"
@@ -32,7 +31,8 @@ import { useDebouncedValue } from "@/hooks/use-debounced-value"
 import { formatNumber } from "@/lib/format"
 import { jobsQueries } from "../queries/jobs.queries"
 import type { Job } from "../schemas/jobs.schema"
-import { jobsSearchParams, toJobsFilters } from "../search-params"
+import { useSearchState } from "@/lib/search-params"
+import { readJobsParams, toJobsFilters } from "../search-params"
 import { ApprovalBadge, JobStatusBadge } from "./job-badges"
 import { JobReview } from "./job-review"
 
@@ -191,7 +191,7 @@ function Summary() {
 }
 
 export function JobsPage() {
-  const [params, setParams] = useQueryStates(jobsSearchParams)
+  const [params, setParams] = useSearchState(readJobsParams)
   const q = useDebouncedValue(params.q)
   const filters = toJobsFilters({ ...params, q })
   const jobs = useQuery(jobsQueries.list(filters))
@@ -261,9 +261,9 @@ export function JobsPage() {
             <SearchInput
               value={params.q}
               placeholder="Search title or company"
-              onChange={(value) =>
-                void setParams({ q: value || null, page: null })
-              }
+              onChange={(value) => {
+                setParams({ q: value || null, page: null })
+              }}
             />
             <FilterSelect
               label="Review"
@@ -274,7 +274,9 @@ export function JobsPage() {
                 { value: "approved", label: "Approved" },
                 { value: "rejected", label: "Rejected" },
               ]}
-              onChange={(approval) => void setParams({ approval, page: null })}
+              onChange={(approval) => {
+                setParams({ approval, page: null })
+              }}
             />
             <FilterSelect
               label="Status"
@@ -285,22 +287,29 @@ export function JobsPage() {
                 { value: "paused", label: "Paused" },
                 { value: "closed", label: "Closed" },
               ]}
-              onChange={(status) => void setParams({ status, page: null })}
+              onChange={(status) => {
+                setParams({ status, page: null })
+              }}
               className="w-36"
             />
             <DateRangeFilter
               from={params.from}
               to={params.to}
-              onChange={({ from, to }) =>
-                void setParams({
+              onChange={({ from, to }) => {
+                setParams({
                   from: from || null,
                   to: to || null,
                   page: null,
                 })
-              }
+              }}
             />
             {hasFilters && (
-              <Button variant="ghost" onClick={() => void setParams(null)}>
+              <Button
+                variant="ghost"
+                onClick={() => {
+                  setParams(null)
+                }}
+              >
                 <X /> Clear
               </Button>
             )}
@@ -312,7 +321,9 @@ export function JobsPage() {
         page={params.page}
         pageCount={jobs.data?.total_pages ?? 1}
         totalCount={jobs.data?.count}
-        onPageChange={(page) => void setParams({ page })}
+        onPageChange={(page) => {
+          setParams({ page })
+        }}
         isLoading={jobs.isPending}
         error={jobs.error}
         onRetry={() => void jobs.refetch()}
@@ -324,7 +335,9 @@ export function JobsPage() {
             icon={Rows3}
             description="Jobs appear here when employers post them."
             filtered={hasFilters}
-            onClearFilters={() => void setParams(null)}
+            onClearFilters={() => {
+              setParams(null)
+            }}
           />
         }
       />

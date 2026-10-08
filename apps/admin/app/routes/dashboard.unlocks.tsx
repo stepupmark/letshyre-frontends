@@ -1,14 +1,15 @@
 import type { Route } from "./+types/dashboard.unlocks"
 import {
-  loadUnlocksSearchParams,
+  readUnlocksParams,
   toUnlocksFilters,
   UnlocksPage,
   unlocksQueries,
 } from "@/features/unlocks"
 import { prefetch } from "@/lib/query/query-client"
+import { searchOf } from "@/lib/search-params"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
-  const filters = toUnlocksFilters(loadUnlocksSearchParams(request))
+  const filters = toUnlocksFilters(readUnlocksParams(searchOf(request)))
   prefetch(unlocksQueries.overview())
   prefetch(unlocksQueries.list(filters))
   return null
@@ -23,3 +24,5 @@ export const handle = { breadcrumb: "Unlocks" }
 export { RouteErrorBoundary as ErrorBoundary } from "@/components/feedback/route-error-boundary"
 
 export default UnlocksPage
+
+export { shouldRevalidate } from "@/lib/search-params"

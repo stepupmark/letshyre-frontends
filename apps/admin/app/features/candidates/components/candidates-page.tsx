@@ -9,7 +9,6 @@ import {
   Users,
   X,
 } from "lucide-react"
-import { useQueryStates } from "nuqs"
 import { DataTable } from "@/components/data-table/data-table"
 import { FilterSelect } from "@/components/filter-select"
 import { ListEmptyState } from "@/components/feedback/list-empty-state"
@@ -30,7 +29,8 @@ import {
   INDUSTRIES,
   type Candidate,
 } from "../schemas/candidates.schema"
-import { candidatesSearchParams, toCandidateFilters } from "../search-params"
+import { useSearchState } from "@/lib/search-params"
+import { readCandidatesParams, toCandidateFilters } from "../search-params"
 
 const columns: ColumnDef<Candidate>[] = [
   {
@@ -156,7 +156,7 @@ function Summary() {
 }
 
 export function CandidatesPage() {
-  const [params, setParams] = useQueryStates(candidatesSearchParams)
+  const [params, setParams] = useSearchState(readCandidatesParams)
   const q = useDebouncedValue(params.q)
   const filters = toCandidateFilters({ ...params, q })
   const candidates = useQuery(candidatesQueries.list(filters))
@@ -182,16 +182,18 @@ export function CandidatesPage() {
             <SearchInput
               value={params.q}
               placeholder="Search name, email or phone"
-              onChange={(value) =>
-                void setParams({ q: value || null, page: null })
-              }
+              onChange={(value) => {
+                setParams({ q: value || null, page: null })
+              }}
             />
             <FilterSelect
               label="Gender"
               allLabel="All genders"
               value={params.gender}
               options={GENDERS}
-              onChange={(gender) => void setParams({ gender, page: null })}
+              onChange={(gender) => {
+                setParams({ gender, page: null })
+              }}
               className="w-36"
             />
             <FilterSelect
@@ -199,7 +201,9 @@ export function CandidatesPage() {
               allLabel="All industries"
               value={params.industry}
               options={INDUSTRIES}
-              onChange={(industry) => void setParams({ industry, page: null })}
+              onChange={(industry) => {
+                setParams({ industry, page: null })
+              }}
               className="w-52"
             />
             <FilterSelect
@@ -210,7 +214,9 @@ export function CandidatesPage() {
                 { value: "verified", label: "Verified" },
                 { value: "unverified", label: "Unverified" },
               ]}
-              onChange={(kyc) => void setParams({ kyc, page: null })}
+              onChange={(kyc) => {
+                setParams({ kyc, page: null })
+              }}
               className="w-36"
             />
             <FilterSelect
@@ -221,11 +227,18 @@ export function CandidatesPage() {
                 { value: "complete", label: "Complete" },
                 { value: "incomplete", label: "Incomplete" },
               ]}
-              onChange={(profile) => void setParams({ profile, page: null })}
+              onChange={(profile) => {
+                setParams({ profile, page: null })
+              }}
               className="w-36"
             />
             {hasFilters && (
-              <Button variant="ghost" onClick={() => void setParams(null)}>
+              <Button
+                variant="ghost"
+                onClick={() => {
+                  setParams(null)
+                }}
+              >
                 <X /> Clear
               </Button>
             )}
@@ -237,7 +250,9 @@ export function CandidatesPage() {
         page={params.page}
         pageCount={candidates.data?.total_pages ?? 1}
         totalCount={candidates.data?.count}
-        onPageChange={(page) => void setParams({ page })}
+        onPageChange={(page) => {
+          setParams({ page })
+        }}
         isLoading={candidates.isPending}
         error={candidates.error}
         onRetry={() => void candidates.refetch()}
@@ -247,7 +262,9 @@ export function CandidatesPage() {
             icon={Users}
             description="Candidates appear here after they sign up."
             filtered={hasFilters}
-            onClearFilters={() => void setParams(null)}
+            onClearFilters={() => {
+              setParams(null)
+            }}
           />
         }
       />

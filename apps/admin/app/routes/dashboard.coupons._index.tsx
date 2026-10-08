@@ -1,10 +1,10 @@
 import type { Route } from "./+types/dashboard.coupons._index"
 import { CouponsPage, couponsQueries } from "@/features/coupons"
 import { prefetch } from "@/lib/query/query-client"
-import { loadPageParam } from "@/lib/search-params"
+import { pageOf, searchOf } from "@/lib/search-params"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
-  prefetch(couponsQueries.list(loadPageParam(request).page))
+  prefetch(couponsQueries.list(pageOf(searchOf(request))))
   return null
 }
 
@@ -17,3 +17,5 @@ export const handle = { breadcrumb: "Coupons" }
 export { RouteErrorBoundary as ErrorBoundary } from "@/components/feedback/route-error-boundary"
 
 export default CouponsPage
+
+export { shouldRevalidate } from "@/lib/search-params"

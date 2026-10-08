@@ -11,7 +11,6 @@ import {
   SlidersHorizontal,
   X,
 } from "lucide-react"
-import { useQueryStates, type inferParserType } from "nuqs"
 import { DataTable } from "@/components/data-table/data-table"
 import { DateRangeFilter } from "@/components/date-range-filter"
 import { ListEmptyState } from "@/components/feedback/list-empty-state"
@@ -43,12 +42,12 @@ import { useDebouncedValue } from "@/hooks/use-debounced-value"
 import { formatCurrency, formatNumber } from "@/lib/format"
 import { paymentsQueries } from "../queries/payments.queries"
 import { PAYMENT_STATUSES, type Payment } from "../schemas/payments.schema"
-import { paymentsSearchParams, toPaymentFilters } from "../search-params"
+import { useSearchState } from "@/lib/search-params"
+import { readPaymentsParams, toPaymentFilters } from "../search-params"
 
-type ParamsUpdate = {
-  [K in keyof inferParserType<typeof paymentsSearchParams>]?:
-    inferParserType<typeof paymentsSearchParams>[K] | null
-}
+type ParamsUpdate = Partial<
+  Record<keyof ReturnType<typeof readPaymentsParams>, string | null>
+>
 
 const statusTone: Record<string, StatusTone> = {
   success: "success",
@@ -186,7 +185,7 @@ function Summary() {
 }
 
 export function PaymentsPage() {
-  const [params, setParams] = useQueryStates(paymentsSearchParams)
+  const [params, setParams] = useSearchState(readPaymentsParams)
   const q = useDebouncedValue(params.q)
   const company = useDebouncedValue(params.company)
   const min = useDebouncedValue(params.min)
@@ -201,19 +200,13 @@ export function PaymentsPage() {
   ].filter(Boolean).length
   const hasFilters = Boolean(params.q || params.status || extraFilters)
 
-  const clearFilters = () =>
-    void setParams({
-      q: null,
-      status: null,
-      company: null,
-      min: null,
-      max: null,
-      from: null,
-      to: null,
-      page: null,
-    })
+  const clearFilters = () => {
+    setParams(null)
+  }
 
-  const update = (next: ParamsUpdate) => void setParams({ ...next, page: null })
+  const update = (next: ParamsUpdate) => {
+    setParams({ ...next, page: null })
+  }
 
   return (
     <>
@@ -245,10 +238,7 @@ export function PaymentsPage() {
               }}
               onValueChange={(value) => {
                 update({
-                  status:
-                    value === "all"
-                      ? null
-                      : (value as (typeof PAYMENT_STATUSES)[number]),
+                  status: value === "all" ? null : value,
                 })
               }}
             >
@@ -335,7 +325,9 @@ export function PaymentsPage() {
         page={params.page}
         pageCount={payments.data?.total_pages ?? 1}
         totalCount={payments.data?.count}
-        onPageChange={(page) => void setParams({ page })}
+        onPageChange={(page) => {
+          setParams({ page })
+        }}
         isLoading={payments.isPending}
         error={payments.error}
         onRetry={() => void payments.refetch()}

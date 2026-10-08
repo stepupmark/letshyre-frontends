@@ -2,7 +2,6 @@ import { Link } from "react-router"
 import { useQuery } from "@tanstack/react-query"
 import type { ColumnDef } from "@tanstack/react-table"
 import { BadgeCheck } from "lucide-react"
-import { useQueryStates } from "nuqs"
 import { DataTable } from "@/components/data-table/data-table"
 import { ListEmptyState } from "@/components/feedback/list-empty-state"
 import { PageHeader } from "@/components/page-header"
@@ -17,7 +16,8 @@ import {
   type CompanyKyc,
   type KycStatus,
 } from "@/lib/company-kyc"
-import { kycSearchParams } from "../search-params"
+import { useSearchState } from "@/lib/search-params"
+import { readKycParams } from "../search-params"
 import { CompanyAvatar, KycStatusBadge } from "@/components/kyc-status-badge"
 
 const columns: ColumnDef<CompanyKyc>[] = [
@@ -80,7 +80,7 @@ const columns: ColumnDef<CompanyKyc>[] = [
 ]
 
 export function KycListPage() {
-  const [{ status, page }, setParams] = useQueryStates(kycSearchParams)
+  const [{ status, page }, setParams] = useSearchState(readKycParams)
   const kyc = useQuery(kycQueries.list(page, status))
 
   return (
@@ -97,9 +97,9 @@ export function KycListPage() {
         filters={
           <Tabs
             value={status}
-            onValueChange={(value) =>
-              void setParams({ status: value as KycStatus, page: null })
-            }
+            onValueChange={(value) => {
+              setParams({ status: value as KycStatus, page: null })
+            }}
           >
             <TabsList>
               {KYC_STATUSES.map((value) => (
@@ -116,7 +116,9 @@ export function KycListPage() {
         page={page}
         pageCount={kyc.data?.total_pages ?? 1}
         totalCount={kyc.data?.count}
-        onPageChange={(next) => void setParams({ page: next })}
+        onPageChange={(next) => {
+          setParams({ page: next })
+        }}
         isLoading={kyc.isPending}
         error={kyc.error}
         onRetry={() => void kyc.refetch()}

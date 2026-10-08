@@ -1,32 +1,24 @@
-import { createLoader, parseAsStringLiteral } from "nuqs"
-import { compactParams, pageParser, textParser } from "@/lib/search-params"
+import { compactParams, oneOf, pageOf, textOf } from "@/lib/search-params"
 import {
   APPROVAL_STATUSES,
   JOB_STATUSES,
   type JobsFilters,
 } from "./schemas/jobs.schema"
 
-export const jobsSearchParams = {
-  page: pageParser,
-  q: textParser,
-  status: parseAsStringLiteral(JOB_STATUSES),
-  approval: parseAsStringLiteral(APPROVAL_STATUSES),
-  from: textParser,
-  to: textParser,
+export function readJobsParams(params: URLSearchParams) {
+  return {
+    page: pageOf(params),
+    q: textOf(params, "q"),
+    status: oneOf(params.get("status"), JOB_STATUSES),
+    approval: oneOf(params.get("approval"), APPROVAL_STATUSES),
+    from: textOf(params, "from"),
+    to: textOf(params, "to"),
+  }
 }
 
-export const loadJobsSearchParams = createLoader(jobsSearchParams)
-
-interface Params {
-  page: number
-  q: string
-  status: string | null
-  approval: string | null
-  from: string
-  to: string
-}
-
-export function toJobsFilters(params: Params): JobsFilters {
+export function toJobsFilters(
+  params: ReturnType<typeof readJobsParams>
+): JobsFilters {
   return {
     page: params.page,
     ...compactParams({

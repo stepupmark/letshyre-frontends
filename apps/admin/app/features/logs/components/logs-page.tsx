@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import type { ColumnDef } from "@tanstack/react-table"
 import { MessageSquare } from "lucide-react"
-import { useQueryStates } from "nuqs"
 import { DataTable } from "@/components/data-table/data-table"
 import { ListEmptyState } from "@/components/feedback/list-empty-state"
 import { PageHeader } from "@/components/page-header"
@@ -11,7 +10,8 @@ import { logsService } from "../services/logs.service"
 import { fetchAllPages } from "@/lib/fetch-all-pages"
 import { logsQueries } from "../queries/logs.queries"
 import type { EmailLog, SmsLog } from "../schemas/logs.schema"
-import { logsSearchParams } from "../search-params"
+import { useSearchState } from "@/lib/search-params"
+import { readLogsParams } from "../search-params"
 import { OtpStatusBadge, VerifiedBadge } from "./otp-status-badge"
 
 function statusColumns<T extends EmailLog | SmsLog>(): ColumnDef<T>[] {
@@ -74,7 +74,7 @@ const smsColumns: ColumnDef<SmsLog>[] = [
 ]
 
 export function LogsPage() {
-  const [{ channel, page }, setParams] = useQueryStates(logsSearchParams)
+  const [{ channel, page }, setParams] = useSearchState(readLogsParams)
   const email = useQuery({
     ...logsQueries.email(page),
     enabled: channel === "email",
@@ -89,7 +89,9 @@ export function LogsPage() {
     page,
     pageCount: logs.data?.total_pages ?? 1,
     totalCount: logs.data?.count,
-    onPageChange: (next: number) => void setParams({ page: next }),
+    onPageChange: (next: number) => {
+      setParams({ page: next })
+    },
     isLoading: logs.isPending,
     error: logs.error,
     onRetry: () => void logs.refetch(),
@@ -103,9 +105,9 @@ export function LogsPage() {
     filters: (
       <Tabs
         value={channel}
-        onValueChange={(value) =>
-          void setParams({ channel: value as typeof channel, page: null })
-        }
+        onValueChange={(value) => {
+          setParams({ channel: value as typeof channel, page: null })
+        }}
       >
         <TabsList>
           <TabsTrigger value="email">Email</TabsTrigger>

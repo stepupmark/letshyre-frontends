@@ -1,9 +1,8 @@
-import { createLoader, parseAsStringLiteral } from "nuqs"
-import { pageParser } from "@/lib/search-params"
+import { oneOf, pageOf } from "@/lib/search-params"
 
-export const logsSearchParams = {
-  channel: parseAsStringLiteral(["email", "sms"]).withDefault("email"),
-  page: pageParser,
+export function readLogsParams(params: URLSearchParams) {
+  return {
+    channel: oneOf(params.get("channel"), ["email", "sms"]) ?? "email",
+    page: pageOf(params),
+  }
 }
-
-export const loadLogsSearchParams = createLoader(logsSearchParams)

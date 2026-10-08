@@ -10,7 +10,6 @@ import {
   Tag,
   Trash2,
 } from "lucide-react"
-import { useQueryState } from "nuqs"
 import { DataTable } from "@/components/data-table/data-table"
 import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
 import { ListEmptyState } from "@/components/feedback/list-empty-state"
@@ -35,7 +34,7 @@ import {
 import { couponsService } from "../services/coupons.service"
 import { fetchAllPages } from "@/lib/fetch-all-pages"
 import { formatCurrency, formatDateTime, formatNumber } from "@/lib/format"
-import { pageParser } from "@/lib/search-params"
+import { pageOf, useSearchState } from "@/lib/search-params"
 import {
   useDeleteCoupon,
   useUpdateCoupon,
@@ -165,7 +164,7 @@ function buildColumns({ onEdit, onDelete }: RowActions): ColumnDef<Coupon>[] {
 }
 
 export function CouponsPage() {
-  const [page, setPage] = useQueryState("page", pageParser)
+  const [page, setPage] = useSearchState(pageOf)
   const coupons = useQuery(couponsQueries.list(page))
   const update = useUpdateCoupon()
   const remove = useDeleteCoupon()
@@ -209,7 +208,9 @@ export function CouponsPage() {
         page={page}
         pageCount={coupons.data?.total_pages ?? 1}
         totalCount={coupons.data?.count}
-        onPageChange={(next) => void setPage(next)}
+        onPageChange={(next) => {
+          setPage({ page: next })
+        }}
         isLoading={coupons.isPending}
         error={coupons.error}
         onRetry={() => void coupons.refetch()}

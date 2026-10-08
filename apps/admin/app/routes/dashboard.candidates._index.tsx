@@ -2,13 +2,14 @@ import type { Route } from "./+types/dashboard.candidates._index"
 import {
   CandidatesPage,
   candidatesQueries,
-  loadCandidatesSearchParams,
+  readCandidatesParams,
   toCandidateFilters,
 } from "@/features/candidates"
 import { prefetch } from "@/lib/query/query-client"
+import { searchOf } from "@/lib/search-params"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
-  const filters = toCandidateFilters(loadCandidatesSearchParams(request))
+  const filters = toCandidateFilters(readCandidatesParams(searchOf(request)))
   prefetch(candidatesQueries.summary())
   prefetch(candidatesQueries.list(filters))
   return null
@@ -23,3 +24,5 @@ export const handle = { breadcrumb: "Candidates" }
 export { RouteErrorBoundary as ErrorBoundary } from "@/components/feedback/route-error-boundary"
 
 export default CandidatesPage
+
+export { shouldRevalidate } from "@/lib/search-params"

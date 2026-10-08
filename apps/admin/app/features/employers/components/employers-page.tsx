@@ -8,7 +8,6 @@ import {
   Clock,
   FileWarning,
 } from "lucide-react"
-import { useQueryState } from "nuqs"
 import { DataTable } from "@/components/data-table/data-table"
 import { ListEmptyState } from "@/components/feedback/list-empty-state"
 import { PageHeader } from "@/components/page-header"
@@ -18,7 +17,7 @@ import { CompanyAvatar, KycStatusBadge } from "@/components/kyc-status-badge"
 import { employersService } from "../services/employers.service"
 import { fetchAllPages } from "@/lib/fetch-all-pages"
 import { formatNumber } from "@/lib/format"
-import { pageParser } from "@/lib/search-params"
+import { pageOf, useSearchState } from "@/lib/search-params"
 import { employersQueries } from "../queries/employers.queries"
 import type { Employer } from "../schemas/employers.schema"
 
@@ -156,7 +155,7 @@ function Summary() {
 }
 
 export function EmployersPage() {
-  const [page, setPage] = useQueryState("page", pageParser)
+  const [page, setPage] = useSearchState(pageOf)
   const employers = useQuery(employersQueries.list(page))
 
   return (
@@ -175,7 +174,9 @@ export function EmployersPage() {
         page={page}
         pageCount={employers.data?.total_pages ?? 1}
         totalCount={employers.data?.count}
-        onPageChange={(next) => void setPage(next)}
+        onPageChange={(next) => {
+          setPage({ page: next })
+        }}
         isLoading={employers.isPending}
         error={employers.error}
         onRetry={() => void employers.refetch()}

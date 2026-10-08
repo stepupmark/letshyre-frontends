@@ -1,35 +1,25 @@
-import { createLoader, parseAsStringLiteral } from "nuqs"
-import { compactParams, pageParser, textParser } from "@/lib/search-params"
+import { compactParams, oneOf, pageOf, textOf } from "@/lib/search-params"
 import {
   PAYMENT_STATUSES,
   type PaymentFilters,
 } from "./schemas/payments.schema"
 
-export const paymentsSearchParams = {
-  page: pageParser,
-  q: textParser,
-  status: parseAsStringLiteral(PAYMENT_STATUSES),
-  company: textParser,
-  min: textParser,
-  max: textParser,
-  from: textParser,
-  to: textParser,
+export function readPaymentsParams(params: URLSearchParams) {
+  return {
+    page: pageOf(params),
+    q: textOf(params, "q"),
+    status: oneOf(params.get("status"), PAYMENT_STATUSES),
+    company: textOf(params, "company"),
+    min: textOf(params, "min"),
+    max: textOf(params, "max"),
+    from: textOf(params, "from"),
+    to: textOf(params, "to"),
+  }
 }
 
-export const loadPaymentsSearchParams = createLoader(paymentsSearchParams)
-
-interface Params {
-  page: number
-  q: string
-  status: string | null
-  company: string
-  min: string
-  max: string
-  from: string
-  to: string
-}
-
-export function toPaymentFilters(params: Params): PaymentFilters {
+export function toPaymentFilters(
+  params: ReturnType<typeof readPaymentsParams>
+): PaymentFilters {
   return {
     page: params.page,
     ...compactParams({

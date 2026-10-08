@@ -1,22 +1,18 @@
-import { createLoader } from "nuqs"
-import { compactParams, pageParser, textParser } from "@/lib/search-params"
+import { compactParams, pageOf, textOf } from "@/lib/search-params"
 import type { UnlockedProfilesFilters } from "./schemas/unlocks.schema"
 
-export const unlocksSearchParams = {
-  page: pageParser,
-  q: textParser,
-  from: textParser,
-  to: textParser,
+export function readUnlocksParams(params: URLSearchParams) {
+  return {
+    page: pageOf(params),
+    q: textOf(params, "q"),
+    from: textOf(params, "from"),
+    to: textOf(params, "to"),
+  }
 }
 
-export const loadUnlocksSearchParams = createLoader(unlocksSearchParams)
-
-export function toUnlocksFilters(params: {
-  page: number
-  q: string
-  from: string
-  to: string
-}): UnlockedProfilesFilters {
+export function toUnlocksFilters(
+  params: ReturnType<typeof readUnlocksParams>
+): UnlockedProfilesFilters {
   return {
     page: params.page,
     ...compactParams({

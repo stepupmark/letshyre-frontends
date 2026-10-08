@@ -1,32 +1,24 @@
-import { createLoader, parseAsStringLiteral } from "nuqs"
-import { compactParams, pageParser, textParser } from "@/lib/search-params"
+import { compactParams, oneOf, pageOf, textOf } from "@/lib/search-params"
 import {
   GENDERS,
   INDUSTRIES,
   type CandidateFilters,
 } from "./schemas/candidates.schema"
 
-export const candidatesSearchParams = {
-  page: pageParser,
-  q: textParser,
-  gender: parseAsStringLiteral(GENDERS),
-  industry: parseAsStringLiteral(INDUSTRIES),
-  kyc: parseAsStringLiteral(["verified", "unverified"]),
-  profile: parseAsStringLiteral(["complete", "incomplete"]),
+export function readCandidatesParams(params: URLSearchParams) {
+  return {
+    page: pageOf(params),
+    q: textOf(params, "q"),
+    gender: oneOf(params.get("gender"), GENDERS),
+    industry: oneOf(params.get("industry"), INDUSTRIES),
+    kyc: oneOf(params.get("kyc"), ["verified", "unverified"]),
+    profile: oneOf(params.get("profile"), ["complete", "incomplete"]),
+  }
 }
 
-export const loadCandidatesSearchParams = createLoader(candidatesSearchParams)
-
-interface Params {
-  page: number
-  q: string
-  gender: string | null
-  industry: string | null
-  kyc: string | null
-  profile: string | null
-}
-
-export function toCandidateFilters(params: Params): CandidateFilters {
+export function toCandidateFilters(
+  params: ReturnType<typeof readCandidatesParams>
+): CandidateFilters {
   return {
     page: params.page,
     ...compactParams({

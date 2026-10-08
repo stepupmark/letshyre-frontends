@@ -13,7 +13,6 @@ import { QueryClientProvider } from "@tanstack/react-query"
 import { ApiError } from "@workspace/api"
 import { ErrorScreen } from "@workspace/blocks/error-screen"
 import { ThemeProvider } from "@workspace/blocks/theme-provider"
-import { NuqsAdapter } from "nuqs/adapters/react-router/v8"
 import { LoaderCircle } from "lucide-react"
 import type { Route } from "./+types/root"
 import { Button } from "@workspace/ui/components/button"
@@ -68,14 +67,12 @@ export function Layout({ children }: { children: ReactNode }) {
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <NuqsAdapter>
-        <ThemeProvider switchable>
-          <TooltipProvider>
-            <Outlet />
-            <Toaster position="top-right" richColors />
-          </TooltipProvider>
-        </ThemeProvider>
-      </NuqsAdapter>
+      <ThemeProvider switchable>
+        <TooltipProvider>
+          <Outlet />
+          <Toaster position="top-right" richColors />
+        </TooltipProvider>
+      </ThemeProvider>
       <Suspense>
         <ReactQueryDevtools buttonPosition="bottom-left" />
       </Suspense>

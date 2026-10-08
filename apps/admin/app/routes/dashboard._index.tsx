@@ -2,12 +2,13 @@ import type { Route } from "./+types/dashboard._index"
 import {
   DashboardPage,
   dashboardQueries,
-  loadDashboardSearchParams,
+  readDashboardParams,
 } from "@/features/dashboard"
 import { prefetch } from "@/lib/query/query-client"
+import { searchOf } from "@/lib/search-params"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
-  const { year, days } = loadDashboardSearchParams(request)
+  const { year, days } = readDashboardParams(searchOf(request))
   prefetch(dashboardQueries.revenueSummary())
   prefetch(dashboardQueries.monthlyRevenue(year))
   prefetch(dashboardQueries.activitySummary())
@@ -22,3 +23,5 @@ export const meta: Route.MetaFunction = () => [
 export { RouteErrorBoundary as ErrorBoundary } from "@/components/feedback/route-error-boundary"
 
 export default DashboardPage
+
+export { shouldRevalidate } from "@/lib/search-params"
