@@ -5,7 +5,7 @@ import { useForm, useWatch } from "react-hook-form"
 import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
 import { ErrorState } from "@/components/feedback/error-state"
 import { PageHeader } from "@/components/page-header"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import {
   Card,
   CardContent,
@@ -13,20 +13,20 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@workspace/ui/components/card"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldLabel,
-} from "@/components/ui/field"
+} from "@workspace/ui/components/field"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
   InputGroupText,
-} from "@/components/ui/input-group"
-import { Skeleton } from "@/components/ui/skeleton"
+} from "@workspace/ui/components/input-group"
+import { Skeleton } from "@workspace/ui/components/skeleton"
 import { UnsavedChangesGuard } from "@/components/unsaved-changes-guard"
 import { formatCurrency } from "@/lib/format"
 import { useUpdateCreditPrice } from "../mutations/use-update-credit-price"

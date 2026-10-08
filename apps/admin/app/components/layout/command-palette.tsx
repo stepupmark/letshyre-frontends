@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react"
 import { Search } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 
 // the dialog pulls in cmdk and the search queries, so it loads on first open
 const CommandPaletteDialog = lazy(() =>

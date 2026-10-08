@@ -2,7 +2,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@workspace/ui/components/tooltip"
 import {
   formatDate,
   formatDateTime,

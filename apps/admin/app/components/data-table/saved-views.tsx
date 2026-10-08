@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useLocation, useNavigate } from "react-router"
 import { Bookmark, Check, Plus, X } from "lucide-react"
 import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import {
   Dialog,
   DialogContent,
@@ -10,16 +10,17 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
+} from "@workspace/ui/components/dialog"
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
+} from "@workspace/ui/components/dropdown-menu"
+import { Input } from "@workspace/ui/components/input"
 import { useStoredState } from "@/hooks/use-stored-state"
 
 interface SavedView {
@@ -62,49 +63,49 @@ export function SavedViews() {
   return (
     <>
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline">
-            <Bookmark /> Views
-          </Button>
+        <DropdownMenuTrigger render={<Button variant="outline" />}>
+          <Bookmark /> Views
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-56">
           {views.length > 0 && (
             <>
-              <DropdownMenuLabel>Saved views</DropdownMenuLabel>
-              {views.map((view) => (
-                <DropdownMenuItem
-                  key={view.name}
-                  onSelect={() => void navigate(`${pathname}${view.search}`)}
-                  className="group/view"
-                >
-                  <Check
-                    className={
-                      view.search === current ? "opacity-100" : "opacity-0"
-                    }
-                  />
-                  <span className="flex-1 truncate">{view.name}</span>
-                  <button
-                    type="button"
-                    aria-label={`Delete ${view.name}`}
-                    className="rounded-sm p-0.5 text-muted-foreground opacity-0 group-hover/view:opacity-100 group-focus/view:opacity-100 hover:text-foreground"
-                    onClick={(event) => {
-                      event.stopPropagation()
-                      setViews(views.filter((item) => item !== view))
-                    }}
-                    onPointerDown={(event) => {
-                      event.stopPropagation()
-                    }}
+              <DropdownMenuGroup>
+                <DropdownMenuLabel>Saved views</DropdownMenuLabel>
+                {views.map((view) => (
+                  <DropdownMenuItem
+                    key={view.name}
+                    onClick={() => void navigate(`${pathname}${view.search}`)}
+                    className="group/view"
                   >
-                    <X className="size-3.5" />
-                  </button>
-                </DropdownMenuItem>
-              ))}
+                    <Check
+                      className={
+                        view.search === current ? "opacity-100" : "opacity-0"
+                      }
+                    />
+                    <span className="flex-1 truncate">{view.name}</span>
+                    <button
+                      type="button"
+                      aria-label={`Delete ${view.name}`}
+                      className="rounded-sm p-0.5 text-muted-foreground opacity-0 group-hover/view:opacity-100 group-focus/view:opacity-100 hover:text-foreground"
+                      onClick={(event) => {
+                        event.stopPropagation()
+                        setViews(views.filter((item) => item !== view))
+                      }}
+                      onPointerDown={(event) => {
+                        event.stopPropagation()
+                      }}
+                    >
+                      <X className="size-3.5" />
+                    </button>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuGroup>
               <DropdownMenuSeparator />
             </>
           )}
           <DropdownMenuItem
             disabled={!current}
-            onSelect={() => {
+            onClick={() => {
               setSaving(true)
             }}
           >

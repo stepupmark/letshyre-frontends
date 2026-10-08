@@ -23,8 +23,8 @@ import { ListEmptyState } from "@/components/feedback/list-empty-state"
 import { PageHeader } from "@/components/page-header"
 import { SearchInput } from "@/components/search-input"
 import { StatCard } from "@/components/stat-card"
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Button } from "@workspace/ui/components/button"
+import { Checkbox } from "@workspace/ui/components/checkbox"
 import { RelativeTime } from "@/components/relative-time"
 import { jobsService } from "../services/jobs.service"
 import { fetchAllPages } from "@/lib/fetch-all-pages"
@@ -43,12 +43,12 @@ const columns: ColumnDef<Job>[] = [
     header: ({ table }) => (
       <Checkbox
         aria-label="Select all on this page"
-        checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
+        checked={table.getIsAllPageRowsSelected()}
+        indeterminate={
+          !table.getIsAllPageRowsSelected() && table.getIsSomePageRowsSelected()
         }
         onCheckedChange={(checked) => {
-          table.toggleAllPageRowsSelected(checked === true)
+          table.toggleAllPageRowsSelected(checked)
         }}
       />
     ),
@@ -57,7 +57,7 @@ const columns: ColumnDef<Job>[] = [
         aria-label={`Select ${row.original.title ?? "job"}`}
         checked={row.getIsSelected()}
         onCheckedChange={(checked) => {
-          row.toggleSelected(checked === true)
+          row.toggleSelected(checked)
         }}
       />
     ),

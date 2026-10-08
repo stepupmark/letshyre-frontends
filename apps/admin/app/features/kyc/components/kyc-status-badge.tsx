@@ -1,5 +1,9 @@
 import { StatusBadge, type StatusTone } from "@/components/status-badge"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@workspace/ui/components/avatar"
 import { initials } from "@/lib/format"
 import { safeExternalUrl } from "@/lib/safe-url"
 

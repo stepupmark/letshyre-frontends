@@ -1,8 +1,8 @@
 import { useEffect, useState, type ReactNode } from "react"
 import { Check, Copy } from "lucide-react"
 import { toast } from "sonner"
-import { cn } from "cn"
-import { Button } from "@/components/ui/button"
+import { cn } from "@workspace/ui/lib/utils"
+import { Button } from "@workspace/ui/components/button"
 
 interface CopyableProps {
   value: string | null | undefined

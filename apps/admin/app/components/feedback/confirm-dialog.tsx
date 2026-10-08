@@ -9,7 +9,7 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/components/ui/alert-dialog"
+} from "@workspace/ui/components/alert-dialog"
 
 interface ConfirmDialogProps {
   open: boolean
@@ -55,10 +55,7 @@ export function ConfirmDialog({
           <AlertDialogAction
             variant={destructive ? "destructive" : "default"}
             disabled={pending}
-            onClick={(event) => {
-              event.preventDefault()
-              onConfirm()
-            }}
+            onClick={onConfirm}
           >
             {pending && <LoaderCircle className="animate-spin" />}
             {confirmLabel}

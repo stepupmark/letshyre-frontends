@@ -5,10 +5,15 @@ import { ArrowLeft, FileText } from "lucide-react"
 import { DetailList } from "@/components/detail-list"
 import { ExternalLink } from "@/components/external-link"
 import { ErrorState } from "@/components/feedback/error-state"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Skeleton } from "@/components/ui/skeleton"
+import { Badge } from "@workspace/ui/components/badge"
+import { Button } from "@workspace/ui/components/button"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@workspace/ui/components/card"
+import { Skeleton } from "@workspace/ui/components/skeleton"
 import { useDocumentTitle } from "@/hooks/use-document-title"
 import { formatDate } from "@/lib/format"
 import { jobsQueries } from "../queries/jobs.queries"
@@ -62,17 +67,22 @@ function Details({ job }: { job: JobDetail }) {
             {job.description || "No description."}
           </p>
           {job.jd_file_url && (
-            <Button variant="outline" size="sm" className="mt-4" asChild>
-              <ExternalLink
-                href={job.jd_file_url}
-                fallback={
-                  <span className="text-xs text-muted-foreground">
-                    Invalid JD link
-                  </span>
-                }
-              >
-                <FileText /> Job description file
-              </ExternalLink>
+            <Button
+              variant="outline"
+              size="sm"
+              className="mt-4"
+              render={
+                <ExternalLink
+                  href={job.jd_file_url}
+                  fallback={
+                    <span className="text-xs text-muted-foreground">
+                      Invalid JD link
+                    </span>
+                  }
+                />
+              }
+            >
+              <FileText /> Job description file
             </Button>
           )}
         </Section>
@@ -164,10 +174,14 @@ export function JobDetailPage() {
   useDocumentTitle(job.data && `${job.data.title || "Untitled job"} · Jobs`)
 
   const back = (
-    <Button variant="ghost" size="sm" className="-ms-2 mb-4" asChild>
-      <Link to="/dashboard/jobs">
-        <ArrowLeft /> Jobs
-      </Link>
+    <Button
+      variant="ghost"
+      size="sm"
+      className="-ms-2 mb-4"
+      nativeButton={false}
+      render={<Link to="/dashboard/jobs" />}
+    >
+      <ArrowLeft /> Jobs
     </Button>
   )
 

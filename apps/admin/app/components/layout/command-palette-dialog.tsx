@@ -9,7 +9,7 @@ import {
   User,
   type LucideIcon,
 } from "lucide-react"
-import { useTheme } from "@/components/theme-provider"
+import { useTheme } from "next-themes"
 import {
   Command,
   CommandDialog,
@@ -18,7 +18,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command"
+} from "@workspace/ui/components/command"
 import { navigation } from "@/lib/navigation"
 import { candidatesQueries } from "@/features/candidates"
 import { jobsQueries } from "@/features/jobs"
@@ -75,7 +75,7 @@ export function CommandPaletteDialog({
   onOpenChange: setOpen,
 }: CommandPaletteDialogProps) {
   const navigate = useNavigate()
-  const { toggleTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   const [query, setQuery] = useState("")
   const [selected, setSelected] = useState("")
   const search = useDebouncedValue(query.trim())
@@ -217,7 +217,7 @@ export function CommandPaletteDialog({
                 <CommandItem
                   value="toggle-theme"
                   onSelect={() => {
-                    toggleTheme()
+                    setTheme(resolvedTheme === "dark" ? "light" : "dark")
                     setOpen(false)
                   }}
                 >

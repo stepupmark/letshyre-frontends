@@ -1,3 +1,4 @@
+import outfitLatin from "@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2?url"
 import { lazy, Suspense, type ReactNode } from "react"
 import {
   isRouteErrorResponse,
@@ -10,13 +11,14 @@ import {
 } from "react-router"
 import { QueryClientProvider } from "@tanstack/react-query"
 import { ApiError } from "@workspace/api"
+import { ErrorScreen } from "@workspace/blocks/error-screen"
+import { ThemeProvider } from "@workspace/blocks/theme-provider"
 import { NuqsAdapter } from "nuqs/adapters/react-router/v8"
 import { LoaderCircle } from "lucide-react"
 import type { Route } from "./+types/root"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Button } from "@/components/ui/button"
-import { Toaster } from "@/components/ui/sonner"
-import { TooltipProvider } from "@/components/ui/tooltip"
+import { Button } from "@workspace/ui/components/button"
+import { Toaster } from "@workspace/ui/components/sonner"
+import { TooltipProvider } from "@workspace/ui/components/tooltip"
 import { getErrorMessage } from "@/lib/errors"
 import { queryClient } from "@/lib/query/query-client"
 import "./app.css"
@@ -29,8 +31,17 @@ const ReactQueryDevtools = import.meta.env.DEV
     )
   : () => null
 
-// runs before first paint so dark mode users don't see a light flash
-const themeScript = `try{var t=localStorage.getItem("theme");var d=t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.classList.toggle("dark",d)}catch(e){}`
+export const links: Route.LinksFunction = () => [
+  {
+    rel: "preload",
+    href: outfitLatin,
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+  },
+  { rel: "icon", type: "image/png", href: "/favicon.png" },
+  { rel: "apple-touch-icon", href: "/icon.png" },
+]
 
 export const meta: Route.MetaFunction = () => [
   { name: "robots", content: "noindex, nofollow" },
@@ -42,9 +53,6 @@ export function Layout({ children }: { children: ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="apple-touch-icon" href="/icon.png" />
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <Meta />
         <Links />
       </head>
@@ -61,7 +69,7 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <NuqsAdapter>
-        <ThemeProvider>
+        <ThemeProvider switchable>
           <TooltipProvider>
             <Outlet />
             <Toaster position="top-right" richColors />
@@ -85,32 +93,29 @@ export function HydrateFallback() {
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let title = "Something went wrong"
-  let details = "An unexpected error occurred. Please try again."
-  let stack: string | undefined
+  let description = "An unexpected error occurred. Please try again."
+  let details: string | undefined
 
   if (isRouteErrorResponse(error)) {
-    title = error.status === 404 ? "Page not found" : `Error ${error.status}`
-    details =
+    title = error.status === 404 ? "Page not found" : title
+    description =
       error.status === 404
         ? "The page you're looking for doesn't exist."
-        : error.statusText || details
+        : error.statusText || description
   } else if (error instanceof ApiError) {
-    details = getErrorMessage(error)
+    description = getErrorMessage(error)
   } else if (import.meta.env.DEV && error instanceof Error) {
-    details = error.message
-    stack = error.stack
+    details = error.stack ?? error.message
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-4 p-6 text-center">
-      <h1 className="text-2xl font-semibold">{title}</h1>
-      <p className="max-w-md text-sm text-muted-foreground">{details}</p>
-      {stack && (
-        <pre className="max-w-3xl overflow-x-auto rounded-lg bg-muted p-4 text-start text-xs">
-          <code>{stack}</code>
-        </pre>
-      )}
-      <div className="flex gap-2">
+    <main id="main">
+      <ErrorScreen
+        code={isRouteErrorResponse(error) ? error.status : undefined}
+        title={title}
+        description={description}
+        details={details}
+      >
         <Button
           variant="outline"
           onClick={() => {
@@ -119,10 +124,10 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
         >
           Try again
         </Button>
-        <Button asChild>
-          <Link to="/dashboard">Back to dashboard</Link>
+        <Button nativeButton={false} render={<Link to="/dashboard" />}>
+          Back to dashboard
         </Button>
-      </div>
+      </ErrorScreen>
     </main>
   )
 }

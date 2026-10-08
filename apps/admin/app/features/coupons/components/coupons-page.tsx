@@ -16,7 +16,7 @@ import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
 import { ListEmptyState } from "@/components/feedback/list-empty-state"
 import { PageHeader } from "@/components/page-header"
 import { StatusBadge, type StatusTone } from "@/components/status-badge"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import {
   Dialog,
   DialogClose,
@@ -25,13 +25,13 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
+} from "@workspace/ui/components/dialog"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@workspace/ui/components/dropdown-menu"
 import { couponsService } from "../services/coupons.service"
 import { fetchAllPages } from "@/lib/fetch-all-pages"
 import { formatCurrency, formatDateTime, formatNumber } from "@/lib/format"
@@ -130,18 +130,20 @@ function buildColumns({ onEdit, onDelete }: RowActions): ColumnDef<Coupon>[] {
       size: 48,
       cell: ({ row }) => (
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="ghost"
-              size="icon-sm"
-              aria-label={`Actions for ${row.original.code}`}
-            >
-              <MoreHorizontal />
-            </Button>
+          <DropdownMenuTrigger
+            render={
+              <Button
+                variant="ghost"
+                size="icon-sm"
+                aria-label={`Actions for ${row.original.code}`}
+              />
+            }
+          >
+            <MoreHorizontal />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem
-              onSelect={() => {
+              onClick={() => {
                 onEdit(row.original)
               }}
             >
@@ -149,7 +151,7 @@ function buildColumns({ onEdit, onDelete }: RowActions): ColumnDef<Coupon>[] {
             </DropdownMenuItem>
             <DropdownMenuItem
               variant="destructive"
-              onSelect={() => {
+              onClick={() => {
                 onDelete(row.original)
               }}
             >
@@ -190,10 +192,11 @@ export function CouponsPage() {
         title="Coupons"
         description="Discount codes employers can apply at checkout."
         actions={
-          <Button asChild>
-            <Link to="/dashboard/coupons/new">
-              <Plus /> New coupon
-            </Link>
+          <Button
+            nativeButton={false}
+            render={<Link to="/dashboard/coupons/new" />}
+          >
+            <Plus /> New coupon
           </Button>
         }
       />
@@ -216,10 +219,11 @@ export function CouponsPage() {
             icon={Tag}
             description="Create one to offer a discount at checkout."
             action={
-              <Button asChild>
-                <Link to="/dashboard/coupons/new">
-                  <Plus /> New coupon
-                </Link>
+              <Button
+                nativeButton={false}
+                render={<Link to="/dashboard/coupons/new" />}
+              >
+                <Plus /> New coupon
               </Button>
             }
           />
@@ -251,10 +255,10 @@ export function CouponsPage() {
               }}
               footer={
                 <DialogFooter className="mt-6">
-                  <DialogClose asChild>
-                    <Button type="button" variant="outline">
-                      Cancel
-                    </Button>
+                  <DialogClose
+                    render={<Button type="button" variant="outline" />}
+                  >
+                    Cancel
                   </DialogClose>
                   <Button type="submit" disabled={update.isPending}>
                     {update.isPending && (

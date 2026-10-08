@@ -6,7 +6,7 @@ import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
 import { EmptyState } from "@/components/feedback/empty-state"
 import { ErrorState } from "@/components/feedback/error-state"
 import { PageHeader } from "@/components/page-header"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import {
   Dialog,
   DialogClose,
@@ -15,8 +15,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
-import { Skeleton } from "@/components/ui/skeleton"
+} from "@workspace/ui/components/dialog"
+import { Skeleton } from "@workspace/ui/components/skeleton"
 import {
   useDeleteGateway,
   useUpdateGateway,
@@ -28,10 +28,11 @@ import { GatewayCard } from "./gateway-card"
 import { GatewayForm } from "./gateway-form"
 
 const addButton = (
-  <Button asChild>
-    <Link to="/dashboard/payment-gateways/new">
-      <Plus /> Add gateway
-    </Link>
+  <Button
+    nativeButton={false}
+    render={<Link to="/dashboard/payment-gateways/new" />}
+  >
+    <Plus /> Add gateway
   </Button>
 )
 
@@ -115,10 +116,10 @@ export function PaymentGatewaysPage() {
               }}
               footer={
                 <DialogFooter className="mt-6">
-                  <DialogClose asChild>
-                    <Button type="button" variant="outline">
-                      Cancel
-                    </Button>
+                  <DialogClose
+                    render={<Button type="button" variant="outline" />}
+                  >
+                    Cancel
                   </DialogClose>
                   <Button type="submit" disabled={update.isPending}>
                     {update.isPending && (

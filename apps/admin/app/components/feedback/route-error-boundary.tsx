@@ -1,6 +1,6 @@
 import { isRouteErrorResponse, Link, useRouteError } from "react-router"
 import { FileQuestion, TriangleAlert } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import { EmptyState } from "./empty-state"
 
 export function RouteErrorBoundary() {
@@ -14,8 +14,8 @@ export function RouteErrorBoundary() {
         description="The page you're looking for doesn't exist or was moved."
         className="min-h-[60vh]"
         action={
-          <Button asChild>
-            <Link to="/dashboard">Back to dashboard</Link>
+          <Button nativeButton={false} render={<Link to="/dashboard" />}>
+            Back to dashboard
           </Button>
         }
       />

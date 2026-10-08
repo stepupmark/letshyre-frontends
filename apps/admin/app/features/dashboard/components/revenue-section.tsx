@@ -19,15 +19,15 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@workspace/ui/components/card"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Skeleton } from "@/components/ui/skeleton"
+} from "@workspace/ui/components/select"
+import { Skeleton } from "@workspace/ui/components/skeleton"
 import { formatCurrency, formatNumber, percentChange } from "@/lib/format"
 import { dashboardQueries } from "../queries/dashboard.queries"
 import { currentYear } from "../search-params"

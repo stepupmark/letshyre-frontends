@@ -2,15 +2,15 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 import { LoaderCircle } from "lucide-react"
 import { PasswordInput } from "@/components/password-input"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Button } from "@/components/ui/button"
+import { Alert, AlertDescription } from "@workspace/ui/components/alert"
+import { Button } from "@workspace/ui/components/button"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "@/components/ui/field"
+} from "@workspace/ui/components/field"
 import { useResetPassword } from "../mutations/use-password-reset"
 import { resetPasswordSchema } from "../schemas/auth.schema"
 import type { OtpSession, ResetPasswordInput } from "../types"

@@ -7,9 +7,9 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
-import { Skeleton } from "@/components/ui/skeleton"
+} from "@workspace/ui/components/card"
+import { Progress } from "@workspace/ui/components/progress"
+import { Skeleton } from "@workspace/ui/components/skeleton"
 import { formatNumber } from "@/lib/format"
 import { dashboardQueries } from "../queries/dashboard.queries"
 import type { Share } from "../schemas/dashboard.schema"

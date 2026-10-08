@@ -1,11 +1,11 @@
 import { Search, X } from "lucide-react"
-import { cn } from "cn"
+import { cn } from "@workspace/ui/lib/utils"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/components/ui/input-group"
+} from "@workspace/ui/components/input-group"
 
 interface SearchInputProps {
   value: string

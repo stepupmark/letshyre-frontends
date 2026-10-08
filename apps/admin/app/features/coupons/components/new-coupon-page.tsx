@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router"
 import { LoaderCircle } from "lucide-react"
 import { PageHeader } from "@/components/page-header"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@workspace/ui/components/button"
+import { Card, CardContent } from "@workspace/ui/components/card"
 import { useCreateCoupon } from "../mutations/use-coupon-mutations"
 import { CouponForm } from "./coupon-form"
 
@@ -29,8 +29,12 @@ export function NewCouponPage() {
             }}
             footer={
               <div className="mt-6 flex justify-end gap-2 border-t pt-4">
-                <Button variant="outline" asChild>
-                  <Link to="/dashboard/coupons">Cancel</Link>
+                <Button
+                  variant="outline"
+                  nativeButton={false}
+                  render={<Link to="/dashboard/coupons" />}
+                >
+                  Cancel
                 </Button>
                 <Button type="submit" disabled={create.isPending}>
                   {create.isPending && (

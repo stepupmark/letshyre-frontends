@@ -20,27 +20,6 @@ export default [
   },
 
   // TODO(admin): the overrides below go as the migration replaces this code
-  { ignores: ["app/components/ui/**"] },
-  {
-    // radix until @workspace/ui
-    files: ["app/**"],
-    rules: { "no-restricted-imports": "off" },
-  },
-  {
-    // replaced by @workspace/blocks and the shared theme
-    files: [
-      "app/components/theme-provider.tsx",
-      "app/components/trend.tsx",
-      "app/components/layout/navigation-progress.tsx",
-      "app/hooks/use-mobile.ts",
-    ],
-    rules: {
-      "react-refresh/only-export-components": "off",
-      "react-hooks/set-state-in-effect": "off",
-      "better-tailwindcss/no-unknown-classes": "off",
-      "better-tailwindcss/no-restricted-classes": "off",
-    },
-  },
   {
     // shell becomes a feature, company KYC moves to shared, tables move to react-table v9
     files: [

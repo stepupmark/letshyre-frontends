@@ -1,3 +1,4 @@
+import { Logo } from "@workspace/blocks/logo"
 import { Link, NavLink, useLocation } from "react-router"
 import { ChevronRight } from "lucide-react"
 import { navigation, type NavItem } from "@/lib/navigation"
@@ -5,7 +6,7 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+} from "@workspace/ui/components/collapsible"
 import {
   Sidebar,
   SidebarContent,
@@ -19,7 +20,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from "@workspace/ui/components/sidebar"
 
 function isActive(pathname: string, url: string, exact: boolean) {
   return exact
@@ -34,14 +35,12 @@ function NavEntry({ item }: { item: NavItem }) {
     return (
       <SidebarMenuItem>
         <SidebarMenuButton
-          asChild
           tooltip={item.title}
           isActive={isActive(pathname, item.url, item.url === "/dashboard")}
+          render={<NavLink to={item.url} end={item.url === "/dashboard"} />}
         >
-          <NavLink to={item.url} end={item.url === "/dashboard"}>
-            <item.icon />
-            <span>{item.title}</span>
-          </NavLink>
+          <item.icon />
+          <span>{item.title}</span>
         </SidebarMenuButton>
       </SidebarMenuItem>
     )
@@ -49,35 +48,36 @@ function NavEntry({ item }: { item: NavItem }) {
 
   return (
     <Collapsible
-      asChild
       defaultOpen={isActive(pathname, item.url, false)}
       className="group/collapsible"
+      render={<SidebarMenuItem />}
     >
-      <SidebarMenuItem>
-        <CollapsibleTrigger asChild>
+      <CollapsibleTrigger
+        render={
           <SidebarMenuButton
             tooltip={item.title}
             isActive={isActive(pathname, item.url, false)}
-          >
-            <item.icon />
-            <span>{item.title}</span>
-            <ChevronRight className="ms-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-          </SidebarMenuButton>
-        </CollapsibleTrigger>
-        <CollapsibleContent>
-          <SidebarMenuSub>
-            {item.items.map((sub) => (
-              <SidebarMenuSubItem key={sub.url}>
-                <SidebarMenuSubButton asChild isActive={pathname === sub.url}>
-                  <NavLink to={sub.url} end>
-                    <span>{sub.title}</span>
-                  </NavLink>
-                </SidebarMenuSubButton>
-              </SidebarMenuSubItem>
-            ))}
-          </SidebarMenuSub>
-        </CollapsibleContent>
-      </SidebarMenuItem>
+          />
+        }
+      >
+        <item.icon />
+        <span>{item.title}</span>
+        <ChevronRight className="ms-auto transition-transform duration-200 group-data-open/collapsible:rotate-90" />
+      </CollapsibleTrigger>
+      <CollapsibleContent>
+        <SidebarMenuSub>
+          {item.items.map((sub) => (
+            <SidebarMenuSubItem key={sub.url}>
+              <SidebarMenuSubButton
+                isActive={pathname === sub.url}
+                render={<NavLink to={sub.url} end />}
+              >
+                <span>{sub.title}</span>
+              </SidebarMenuSubButton>
+            </SidebarMenuSubItem>
+          ))}
+        </SidebarMenuSub>
+      </CollapsibleContent>
     </Collapsible>
   )
 }
@@ -88,19 +88,16 @@ export function AppSidebar() {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
-              <Link to="/dashboard" aria-label="LetsHyre dashboard">
-                <img
-                  src="/letshyre.png"
-                  alt=""
-                  className="h-6 w-auto group-data-[collapsible=icon]:hidden"
-                />
-                <img
-                  src="/icon.png"
-                  alt=""
-                  className="hidden size-8 rounded-md group-data-[collapsible=icon]:block"
-                />
-              </Link>
+            <SidebarMenuButton
+              size="lg"
+              render={<Link to="/dashboard" aria-label="LetsHyre dashboard" />}
+            >
+              <Logo label="" className="group-data-[collapsible=icon]:hidden" />
+              <img
+                src="/icon.png"
+                alt=""
+                className="hidden size-8 rounded-md group-data-[collapsible=icon]:block"
+              />
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

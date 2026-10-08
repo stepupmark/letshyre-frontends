@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Copy, Eye, EyeOff, MoreHorizontal, Pencil, Trash2 } from "lucide-react"
 import { toast } from "sonner"
 import { StatusBadge } from "@/components/status-badge"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import {
   Card,
   CardAction,
@@ -10,13 +10,13 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@workspace/ui/components/card"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@workspace/ui/components/dropdown-menu"
 import { maskId } from "@/lib/format"
 import type { Gateway } from "../schemas/payment-gateways.schema"
 import { providerLabel } from "../utils/gateway-values"
@@ -95,20 +95,22 @@ export function GatewayCard({ gateway, onEdit, onDelete }: GatewayCardProps) {
         <CardDescription>{providerLabel(gateway.provider)}</CardDescription>
         <CardAction>
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon-sm"
-                aria-label={`Actions for ${gateway.displayName}`}
-              >
-                <MoreHorizontal />
-              </Button>
+            <DropdownMenuTrigger
+              render={
+                <Button
+                  variant="ghost"
+                  size="icon-sm"
+                  aria-label={`Actions for ${gateway.displayName}`}
+                />
+              }
+            >
+              <MoreHorizontal />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onSelect={onEdit}>
+              <DropdownMenuItem onClick={onEdit}>
                 <Pencil /> Edit
               </DropdownMenuItem>
-              <DropdownMenuItem variant="destructive" onSelect={onDelete}>
+              <DropdownMenuItem variant="destructive" onClick={onDelete}>
                 <Trash2 /> Delete
               </DropdownMenuItem>
             </DropdownMenuContent>

@@ -7,15 +7,15 @@ import {
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
+} from "@workspace/ui/components/field"
+import { Input } from "@workspace/ui/components/input"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@workspace/ui/components/select"
 import { UnsavedChangesGuard } from "@/components/unsaved-changes-guard"
 import {
   couponFormSchema,
@@ -23,6 +23,11 @@ import {
   type CouponPayload,
 } from "../schemas/coupons.schema"
 import { EMPTY_COUPON, toCouponPayload } from "../utils/coupon-values"
+
+const DISCOUNT_TYPES = {
+  flat: "Flat amount (₹)",
+  percentage: "Percentage (%)",
+}
 
 interface CouponFormProps {
   id: string
@@ -98,13 +103,20 @@ export function CouponForm({
             control={form.control}
             name="discount_type"
             render={({ field }) => (
-              <Select value={field.value} onValueChange={field.onChange}>
+              <Select
+                value={field.value}
+                onValueChange={field.onChange}
+                items={DISCOUNT_TYPES}
+              >
                 <SelectTrigger id={`${id}-type`} className="w-full">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="flat">Flat amount (₹)</SelectItem>
-                  <SelectItem value="percentage">Percentage (%)</SelectItem>
+                  {Object.entries(DISCOUNT_TYPES).map(([value, label]) => (
+                    <SelectItem key={value} value={value}>
+                      {label}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             )}

@@ -5,7 +5,7 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/components/ui/input-group"
+} from "@workspace/ui/components/input-group"
 
 export function PasswordInput(
   props: Omit<ComponentProps<typeof InputGroupInput>, "type">

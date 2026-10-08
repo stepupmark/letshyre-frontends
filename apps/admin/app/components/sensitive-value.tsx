@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Eye, EyeOff } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import { maskId } from "@/lib/format"
 
 /** Masked by default; the admin reveals it on purpose. */

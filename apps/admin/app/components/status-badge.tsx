@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@workspace/ui/components/badge"
 
 export type StatusTone = "success" | "warning" | "danger" | "info" | "neutral"
 

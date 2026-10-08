@@ -8,9 +8,13 @@ import {
 } from "@/components/document-viewer"
 import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
 import { ErrorState } from "@/components/feedback/error-state"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { Button } from "@/components/ui/button"
-import { Skeleton } from "@/components/ui/skeleton"
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from "@workspace/ui/components/alert"
+import { Button } from "@workspace/ui/components/button"
+import { Skeleton } from "@workspace/ui/components/skeleton"
 import { useDocumentTitle } from "@/hooks/use-document-title"
 import { formatDate } from "@/lib/format"
 import { kycDocuments } from "../documents"
@@ -33,10 +37,14 @@ export function KycReviewPage() {
   const [expanded, setExpanded] = useState<number | null>(null)
 
   const back = (
-    <Button variant="ghost" size="sm" className="-ms-2 mb-4" asChild>
-      <Link to="/dashboard/kyc">
-        <ArrowLeft /> KYC requests
-      </Link>
+    <Button
+      variant="ghost"
+      size="sm"
+      className="-ms-2 mb-4"
+      nativeButton={false}
+      render={<Link to="/dashboard/kyc" />}
+    >
+      <ArrowLeft /> KYC requests
     </Button>
   )
 

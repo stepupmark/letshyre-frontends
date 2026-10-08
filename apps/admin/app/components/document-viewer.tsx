@@ -10,21 +10,21 @@ import {
   ZoomIn,
   ZoomOut,
 } from "lucide-react"
-import { cn } from "cn"
-import { Button } from "@/components/ui/button"
+import { cn } from "@workspace/ui/lib/utils"
+import { Button, buttonVariants } from "@workspace/ui/components/button"
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogTitle,
-} from "@/components/ui/dialog"
+} from "@workspace/ui/components/dialog"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@workspace/ui/components/select"
 import { safeExternalUrl } from "@/lib/safe-url"
 
 export interface ViewerDocument {
@@ -63,11 +63,14 @@ function Preview({ url, label }: { url: string; label: string }) {
       <div className="flex size-full flex-col items-center justify-center gap-3 p-6 text-center text-sm text-muted-foreground">
         <FileX className="size-8" />
         This file can&apos;t be previewed here.
-        <Button variant="outline" size="sm" asChild>
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            Open in new tab
-          </a>
-        </Button>
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+        >
+          Open in new tab
+        </a>
       </div>
     )
 
@@ -186,6 +189,10 @@ export function DocumentViewer({
         </Button>
         <Select
           value={String(index)}
+          items={documents.map((doc, position) => ({
+            value: String(position),
+            label: doc.label,
+          }))}
           onValueChange={(value) => {
             onIndexChange(Number(value))
           }}
@@ -223,16 +230,17 @@ export function DocumentViewer({
           <ChevronRight />
         </Button>
         {url ? (
-          <Button
-            variant="ghost"
-            size="icon-sm"
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Open in new tab"
-            asChild
+            className={cn(
+              buttonVariants({ variant: "ghost", size: "icon-sm" })
+            )}
           >
-            <a href={url} target="_blank" rel="noopener noreferrer">
-              <ExternalLinkIcon />
-            </a>
-          </Button>
+            <ExternalLinkIcon />
+          </a>
         ) : (
           <Button
             variant="ghost"

@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Check, X } from "lucide-react"
 import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
 import { StatusBadge } from "@/components/status-badge"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import { useCandidateDecision } from "../mutations/use-candidate-decision"
 import type {
   CandidateDecision as Decision,

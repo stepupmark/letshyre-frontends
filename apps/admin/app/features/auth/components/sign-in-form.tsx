@@ -4,16 +4,16 @@ import { Controller, useForm } from "react-hook-form"
 import { Link, useSearchParams } from "react-router"
 import { LoaderCircle } from "lucide-react"
 import { PasswordInput } from "@/components/password-input"
-import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Alert, AlertDescription } from "@workspace/ui/components/alert"
 import { getErrorMessage } from "@/lib/errors"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
+} from "@workspace/ui/components/field"
+import { Input } from "@workspace/ui/components/input"
 import { useLogin } from "../mutations/use-login"
 import { loginSchema } from "../schemas/auth.schema"
 import type { LoginInput } from "../types"

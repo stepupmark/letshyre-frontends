@@ -1,6 +1,6 @@
 import { ThemeToggle } from "@/components/theme-toggle"
-import { Separator } from "@/components/ui/separator"
-import { SidebarTrigger } from "@/components/ui/sidebar"
+import { Separator } from "@workspace/ui/components/separator"
+import { SidebarTrigger } from "@workspace/ui/components/sidebar"
 import { Breadcrumbs } from "./breadcrumbs"
 import { CommandPalette } from "./command-palette"
 import { UserMenu } from "./user-menu"
@@ -11,7 +11,7 @@ export function AppHeader() {
       <SidebarTrigger className="-ms-1" />
       <Separator
         orientation="vertical"
-        className="me-2 data-[orientation=vertical]:h-4"
+        className="me-2 data-vertical:h-4 data-vertical:self-center"
       />
       <Breadcrumbs />
       <div className="ms-auto flex items-center gap-1">

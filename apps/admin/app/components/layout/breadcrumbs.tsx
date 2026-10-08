@@ -7,7 +7,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+} from "@workspace/ui/components/breadcrumb"
 
 interface RouteHandle {
   breadcrumb?: string
@@ -42,8 +42,8 @@ export function Breadcrumbs() {
               }
             >
               {index < crumbs.length - 1 ? (
-                <BreadcrumbLink asChild>
-                  <Link to={crumb.path}>{crumb.label}</Link>
+                <BreadcrumbLink render={<Link to={crumb.path} />}>
+                  {crumb.label}
                 </BreadcrumbLink>
               ) : (
                 <BreadcrumbPage>{crumb.label}</BreadcrumbPage>

@@ -1,30 +1,32 @@
 import { Monitor, Moon, Sun } from "lucide-react"
-import { useTheme } from "@/components/theme-provider"
-import { Button } from "@/components/ui/button"
+import { useTheme } from "next-themes"
+import { Button } from "@workspace/ui/components/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@workspace/ui/components/dropdown-menu"
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" aria-label="Change theme">
-          <Sun className="dark:hidden" />
-          <Moon className="hidden dark:block" />
-        </Button>
+      <DropdownMenuTrigger
+        render={
+          <Button variant="ghost" size="icon" aria-label="Change theme" />
+        }
+      >
+        <Sun className="dark:hidden" />
+        <Moon className="hidden dark:block" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuRadioGroup
           value={theme}
           onValueChange={(value) => {
-            setTheme(value as typeof theme)
+            setTheme(String(value))
           }}
         >
           <DropdownMenuRadioItem value="light">

@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router"
 import type { Route } from "./+types/$"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import { AuthLayout } from "@/features/auth"
 
 export const meta: Route.MetaFunction = () => [
@@ -21,8 +21,8 @@ export default function NotFound() {
         the address, or head back.
       </p>
       <div className="mt-8 flex gap-2">
-        <Button asChild>
-          <Link to="/dashboard">Go to dashboard</Link>
+        <Button nativeButton={false} render={<Link to="/dashboard" />}>
+          Go to dashboard
         </Button>
         <Button variant="outline" onClick={() => void navigate(-1)}>
           Go back

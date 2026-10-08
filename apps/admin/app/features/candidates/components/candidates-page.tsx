@@ -17,8 +17,8 @@ import { PageHeader } from "@/components/page-header"
 import { SearchInput } from "@/components/search-input"
 import { StatCard } from "@/components/stat-card"
 import { StatusBadge } from "@/components/status-badge"
-import { Button } from "@/components/ui/button"
-import { Progress } from "@/components/ui/progress"
+import { Button } from "@workspace/ui/components/button"
+import { Progress } from "@workspace/ui/components/progress"
 import { RelativeTime } from "@/components/relative-time"
 import { candidatesService } from "../services/candidates.service"
 import { fetchAllPages } from "@/lib/fetch-all-pages"
@@ -101,8 +101,13 @@ const columns: ColumnDef<Candidate>[] = [
     id: "actions",
     header: () => <span className="sr-only">Profile</span>,
     cell: ({ row }) => (
-      <Button variant="outline" size="sm" asChild>
-        <Link to={`/dashboard/candidates/${row.original.id}`}>View</Link>
+      <Button
+        variant="outline"
+        size="sm"
+        nativeButton={false}
+        render={<Link to={`/dashboard/candidates/${row.original.id}`} />}
+      >
+        View
       </Button>
     ),
   },

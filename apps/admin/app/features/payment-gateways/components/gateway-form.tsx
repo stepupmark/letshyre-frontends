@@ -10,17 +10,20 @@ import {
   FieldLabel,
   FieldLegend,
   FieldSet,
-} from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+} from "@workspace/ui/components/field"
+import { Input } from "@workspace/ui/components/input"
+import { Label } from "@workspace/ui/components/label"
+import {
+  RadioGroup,
+  RadioGroupItem,
+} from "@workspace/ui/components/radio-group"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@workspace/ui/components/select"
 import { UnsavedChangesGuard } from "@/components/unsaved-changes-guard"
 import {
   GATEWAY_PROVIDERS,
@@ -67,7 +70,11 @@ export function GatewayForm({
               control={form.control}
               name="provider"
               render={({ field }) => (
-                <Select value={field.value} onValueChange={field.onChange}>
+                <Select
+                  value={field.value}
+                  onValueChange={field.onChange}
+                  items={GATEWAY_PROVIDERS}
+                >
                   <SelectTrigger id={`${id}-provider`} className="w-full">
                     <SelectValue />
                   </SelectTrigger>

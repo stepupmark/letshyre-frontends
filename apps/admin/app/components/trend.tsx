@@ -1,5 +1,5 @@
 import { ArrowDownRight, ArrowUpRight } from "lucide-react"
-import { cn } from "cn"
+import { cn } from "@workspace/ui/lib/utils"
 
 export function Trend({
   change,
@@ -19,7 +19,7 @@ export function Trend({
       <span
         className={cn(
           "inline-flex items-center font-medium tabular-nums",
-          up ? "text-emerald-600 dark:text-emerald-400" : "text-destructive"
+          up ? "text-success" : "text-destructive"
         )}
       >
         <Icon className="size-3.5" aria-hidden />

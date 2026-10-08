@@ -1,16 +1,17 @@
 import type { Table } from "@tanstack/react-table"
 import { Settings2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@workspace/ui/components/dropdown-menu"
 import { columnLabel } from "./column-label"
 
 export type Density = "comfortable" | "compact"
@@ -32,46 +33,47 @@ export function DataTableViewOptions<TData>({
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">
-          <Settings2 /> View
-        </Button>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>
+        <Settings2 /> View
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48">
-        <DropdownMenuLabel>Density</DropdownMenuLabel>
-        <DropdownMenuRadioGroup
-          value={density}
-          onValueChange={(value) => {
-            onDensityChange(value as Density)
-          }}
-        >
-          <DropdownMenuRadioItem value="comfortable">
-            Comfortable
-          </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="compact">Compact</DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
+        <DropdownMenuGroup>
+          <DropdownMenuLabel>Density</DropdownMenuLabel>
+          <DropdownMenuRadioGroup
+            value={density}
+            onValueChange={(value) => {
+              onDensityChange(value as Density)
+            }}
+          >
+            <DropdownMenuRadioItem value="comfortable">
+              Comfortable
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="compact">
+              Compact
+            </DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+        </DropdownMenuGroup>
         {columns.length > 1 && (
           <>
             <DropdownMenuSeparator />
-            <DropdownMenuLabel>Columns</DropdownMenuLabel>
-            {columns.map((column) => (
-              <DropdownMenuCheckboxItem
-                key={column.id}
-                checked={column.getIsVisible()}
-                disabled={
-                  column.getIsVisible() &&
-                  table.getVisibleLeafColumns().length === 1
-                }
-                onCheckedChange={(visible) => {
-                  column.toggleVisibility(visible)
-                }}
-                onSelect={(event) => {
-                  event.preventDefault()
-                }}
-              >
-                {columnLabel(column)}
-              </DropdownMenuCheckboxItem>
-            ))}
+            <DropdownMenuGroup>
+              <DropdownMenuLabel>Columns</DropdownMenuLabel>
+              {columns.map((column) => (
+                <DropdownMenuCheckboxItem
+                  key={column.id}
+                  checked={column.getIsVisible()}
+                  disabled={
+                    column.getIsVisible() &&
+                    table.getVisibleLeafColumns().length === 1
+                  }
+                  onCheckedChange={(visible) => {
+                    column.toggleVisibility(visible)
+                  }}
+                >
+                  {columnLabel(column)}
+                </DropdownMenuCheckboxItem>
+              ))}
+            </DropdownMenuGroup>
           </>
         )}
       </DropdownMenuContent>

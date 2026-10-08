@@ -11,9 +11,9 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Skeleton } from "@/components/ui/skeleton"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+} from "@workspace/ui/components/card"
+import { Skeleton } from "@workspace/ui/components/skeleton"
+import { Tabs, TabsList, TabsTrigger } from "@workspace/ui/components/tabs"
 import { formatNumber, percentChange } from "@/lib/format"
 import { dashboardQueries } from "../queries/dashboard.queries"
 import {

@@ -10,11 +10,11 @@ import {
   type RowSelectionState,
   type VisibilityState,
 } from "@tanstack/react-table"
-import { cn } from "cn"
+import { cn } from "@workspace/ui/lib/utils"
 import type { CsvCell } from "@/lib/csv"
 import { EmptyState } from "@/components/feedback/empty-state"
 import { ErrorState } from "@/components/feedback/error-state"
-import { Skeleton } from "@/components/ui/skeleton"
+import { Skeleton } from "@workspace/ui/components/skeleton"
 import {
   Table,
   TableBody,
@@ -22,9 +22,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@workspace/ui/components/table"
 import { useHotkey } from "@/hooks/use-hotkey"
-import { useIsMobile } from "@/hooks/use-mobile"
+import { useIsMobile } from "@workspace/ui/hooks/use-mobile"
 import { useStoredState } from "@/hooks/use-stored-state"
 import { DataTableCards } from "./data-table-cards"
 import { DataTableExport, type ExportRows } from "./data-table-export"

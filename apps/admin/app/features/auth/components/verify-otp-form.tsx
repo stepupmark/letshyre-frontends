@@ -3,19 +3,19 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 import { LoaderCircle } from "lucide-react"
 import { toast } from "sonner"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Button } from "@/components/ui/button"
+import { Alert, AlertDescription } from "@workspace/ui/components/alert"
+import { Button } from "@workspace/ui/components/button"
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "@/components/ui/field"
+} from "@workspace/ui/components/field"
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "@/components/ui/input-otp"
+} from "@workspace/ui/components/input-otp"
 import { useSendOtp, useVerifyOtp } from "../mutations/use-password-reset"
 import { verifyOtpSchema } from "../schemas/auth.schema"
 import type { OtpSession, VerifyOtpInput } from "../types"

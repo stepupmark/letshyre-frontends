@@ -7,12 +7,21 @@ import { DocumentList } from "@/components/document-viewer"
 import { ExternalLink } from "@/components/external-link"
 import { ErrorState } from "@/components/feedback/error-state"
 import { SensitiveValue } from "@/components/sensitive-value"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
-import { Skeleton } from "@/components/ui/skeleton"
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@workspace/ui/components/avatar"
+import { Badge } from "@workspace/ui/components/badge"
+import { Button } from "@workspace/ui/components/button"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@workspace/ui/components/card"
+import { Separator } from "@workspace/ui/components/separator"
+import { Skeleton } from "@workspace/ui/components/skeleton"
 import { Copyable } from "@/components/copyable"
 import { useDocumentTitle } from "@/hooks/use-document-title"
 import { formatCurrency, formatDate, initials } from "@/lib/format"
@@ -253,10 +262,14 @@ export function CandidateProfilePage() {
   )
 
   const back = (
-    <Button variant="ghost" size="sm" className="-ms-2 mb-4" asChild>
-      <Link to="/dashboard/candidates">
-        <ArrowLeft /> Candidates
-      </Link>
+    <Button
+      variant="ghost"
+      size="sm"
+      className="-ms-2 mb-4"
+      nativeButton={false}
+      render={<Link to="/dashboard/candidates" />}
+    >
+      <ArrowLeft /> Candidates
     </Button>
   )
 

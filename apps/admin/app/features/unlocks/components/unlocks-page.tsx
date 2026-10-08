@@ -20,7 +20,7 @@ import { PageHeader } from "@/components/page-header"
 import { SearchInput } from "@/components/search-input"
 import { StatCard } from "@/components/stat-card"
 import { StatusBadge } from "@/components/status-badge"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import { RelativeTime } from "@/components/relative-time"
 import { unlocksService } from "../services/unlocks.service"
 import { fetchAllPages } from "@/lib/fetch-all-pages"
@@ -92,15 +92,19 @@ const columns: ColumnDef<UnlockedProfile>[] = [
     id: "resume",
     header: () => <span className="sr-only">Resume</span>,
     cell: ({ row }) => (
-      <Button variant="outline" size="sm" asChild>
-        <ExternalLink
-          href={row.original.candidate_resume}
-          fallback={
-            <span className="text-xs text-muted-foreground">No resume</span>
-          }
-        >
-          <FileText /> Resume
-        </ExternalLink>
+      <Button
+        variant="outline"
+        size="sm"
+        render={
+          <ExternalLink
+            href={row.original.candidate_resume}
+            fallback={
+              <span className="text-xs text-muted-foreground">No resume</span>
+            }
+          />
+        }
+      >
+        <FileText /> Resume
       </Button>
     ),
   },

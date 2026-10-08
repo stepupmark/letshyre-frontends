@@ -19,22 +19,22 @@ import { PageHeader } from "@/components/page-header"
 import { SearchInput } from "@/components/search-input"
 import { StatCard } from "@/components/stat-card"
 import { StatusBadge, type StatusTone } from "@/components/status-badge"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
+import { Badge } from "@workspace/ui/components/badge"
+import { Button } from "@workspace/ui/components/button"
+import { Field, FieldGroup, FieldLabel } from "@workspace/ui/components/field"
+import { Input } from "@workspace/ui/components/input"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@workspace/ui/components/popover"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@workspace/ui/components/select"
 import { Copyable } from "@/components/copyable"
 import { RelativeTime } from "@/components/relative-time"
 import { paymentsService } from "../services/payments.service"
@@ -129,10 +129,15 @@ const columns: ColumnDef<Payment>[] = [
     header: () => <span className="sr-only">Employer profile</span>,
     cell: ({ row }) =>
       row.original.employeer_id ? (
-        <Button variant="ghost" size="sm" asChild>
-          <Link to={`/dashboard/employers/${row.original.employeer_id}`}>
-            View employer
-          </Link>
+        <Button
+          variant="ghost"
+          size="sm"
+          nativeButton={false}
+          render={
+            <Link to={`/dashboard/employers/${row.original.employeer_id}`} />
+          }
+        >
+          View employer
         </Button>
       ) : null,
   },
@@ -234,6 +239,10 @@ export function PaymentsPage() {
             />
             <Select
               value={params.status ?? "all"}
+              items={{
+                all: "All statuses",
+                ...Object.fromEntries(PAYMENT_STATUSES.map((s) => [s, s])),
+              }}
               onValueChange={(value) => {
                 update({
                   status:
@@ -256,13 +265,11 @@ export function PaymentsPage() {
               </SelectContent>
             </Select>
             <Popover>
-              <PopoverTrigger asChild>
-                <Button variant="outline">
-                  <SlidersHorizontal /> Filters
-                  {extraFilters > 0 && (
-                    <Badge variant="secondary">{extraFilters}</Badge>
-                  )}
-                </Button>
+              <PopoverTrigger render={<Button variant="outline" />}>
+                <SlidersHorizontal /> Filters
+                {extraFilters > 0 && (
+                  <Badge variant="secondary">{extraFilters}</Badge>
+                )}
               </PopoverTrigger>
               <PopoverContent align="start" className="w-80">
                 <FieldGroup className="gap-4">

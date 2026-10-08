@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { LoaderCircle } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import {
   Dialog,
   DialogClose,
@@ -10,14 +10,14 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
+} from "@workspace/ui/components/dialog"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldLabel,
-} from "@/components/ui/field"
-import { Textarea } from "@/components/ui/textarea"
+} from "@workspace/ui/components/field"
+import { Textarea } from "@workspace/ui/components/textarea"
 import { useRejectKyc } from "../mutations/use-review-kyc"
 import { rejectKycSchema, type RejectKycInput } from "../schemas/kyc.schema"
 
@@ -89,14 +89,16 @@ export function RejectKycDialog({
             )}
           </Field>
           <DialogFooter>
-            <DialogClose asChild>
-              <Button
-                type="button"
-                variant="outline"
-                disabled={reject.isPending}
-              >
-                Cancel
-              </Button>
+            <DialogClose
+              render={
+                <Button
+                  type="button"
+                  variant="outline"
+                  disabled={reject.isPending}
+                />
+              }
+            >
+              Cancel
             </DialogClose>
             <Button
               type="submit"

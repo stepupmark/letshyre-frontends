@@ -1,15 +1,15 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 import { LoaderCircle } from "lucide-react"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Button } from "@/components/ui/button"
+import { Alert, AlertDescription } from "@workspace/ui/components/alert"
+import { Button } from "@workspace/ui/components/button"
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
+} from "@workspace/ui/components/field"
+import { Input } from "@workspace/ui/components/input"
 import { useSendOtp } from "../mutations/use-password-reset"
 import { requestOtpSchema } from "../schemas/auth.schema"
 import type { OtpSession, RequestOtpInput } from "../types"

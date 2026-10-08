@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 import type { LucideIcon } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import { EmptyState } from "./empty-state"
 
 interface ListEmptyStateProps {

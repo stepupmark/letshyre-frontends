@@ -1,11 +1,11 @@
-import { cn } from "cn"
+import { cn } from "@workspace/ui/lib/utils"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@workspace/ui/components/select"
 
 const ALL = "__all"
 
@@ -27,9 +27,17 @@ export function FilterSelect<T extends string>({
   onChange,
   className,
 }: FilterSelectProps<T>) {
+  const items = [
+    { value: ALL, label: allLabel },
+    ...options.map((option) =>
+      typeof option === "string" ? { value: option, label: option } : option
+    ),
+  ]
+
   return (
     <Select
       value={value ?? ALL}
+      items={items}
       onValueChange={(next) => {
         onChange(next === ALL ? null : (next as T))
       }}
@@ -38,18 +46,11 @@ export function FilterSelect<T extends string>({
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value={ALL}>{allLabel}</SelectItem>
-        {options.map((option) => {
-          const item =
-            typeof option === "string"
-              ? { value: option, label: option }
-              : option
-          return (
-            <SelectItem key={item.value} value={item.value}>
-              {item.label}
-            </SelectItem>
-          )
-        })}
+        {items.map((item) => (
+          <SelectItem key={item.value} value={item.value}>
+            {item.label}
+          </SelectItem>
+        ))}
       </SelectContent>
     </Select>
   )

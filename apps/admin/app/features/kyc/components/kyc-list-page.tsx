@@ -6,8 +6,8 @@ import { useQueryStates } from "nuqs"
 import { DataTable } from "@/components/data-table/data-table"
 import { ListEmptyState } from "@/components/feedback/list-empty-state"
 import { PageHeader } from "@/components/page-header"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@workspace/ui/components/button"
+import { Tabs, TabsList, TabsTrigger } from "@workspace/ui/components/tabs"
 import { RelativeTime } from "@/components/relative-time"
 import { kycService } from "../services/kyc.service"
 import { fetchAllPages } from "@/lib/fetch-all-pages"
@@ -67,8 +67,13 @@ const columns: ColumnDef<CompanyKyc>[] = [
     id: "actions",
     header: () => <span className="sr-only">Review</span>,
     cell: ({ row }) => (
-      <Button variant="outline" size="sm" asChild>
-        <Link to={`/dashboard/kyc/${row.original.id}`}>Review</Link>
+      <Button
+        variant="outline"
+        size="sm"
+        nativeButton={false}
+        render={<Link to={`/dashboard/kyc/${row.original.id}`} />}
+      >
+        Review
       </Button>
     ),
   },

@@ -9,7 +9,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@workspace/ui/components/card"
 import {
   Field,
   FieldContent,
@@ -17,9 +17,9 @@ import {
   FieldGroup,
   FieldLabel,
   FieldSeparator,
-} from "@/components/ui/field"
-import { Skeleton } from "@/components/ui/skeleton"
-import { Switch } from "@/components/ui/switch"
+} from "@workspace/ui/components/field"
+import { Skeleton } from "@workspace/ui/components/skeleton"
+import { Switch } from "@workspace/ui/components/switch"
 import { formatDateTime } from "@/lib/format"
 import { useUpdateSystemConfig } from "../mutations/use-update-system-config"
 import { systemConfigQueries } from "../queries/system-config.queries"

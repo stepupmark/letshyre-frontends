@@ -4,9 +4,14 @@ import { ArrowLeft } from "lucide-react"
 import { DetailList } from "@/components/detail-list"
 import { EmptyState } from "@/components/feedback/empty-state"
 import { ErrorState } from "@/components/feedback/error-state"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Skeleton } from "@/components/ui/skeleton"
+import { Button } from "@workspace/ui/components/button"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@workspace/ui/components/card"
+import { Skeleton } from "@workspace/ui/components/skeleton"
 import {
   CompanyAvatar,
   CompanyKycDetails,
@@ -26,10 +31,14 @@ export function EmployerProfilePage() {
   )
 
   const back = (
-    <Button variant="ghost" size="sm" className="-ms-2 mb-4" asChild>
-      <Link to="/dashboard/employers">
-        <ArrowLeft /> Employers
-      </Link>
+    <Button
+      variant="ghost"
+      size="sm"
+      className="-ms-2 mb-4"
+      nativeButton={false}
+      render={<Link to="/dashboard/employers" />}
+    >
+      <ArrowLeft /> Employers
     </Button>
   )
 
@@ -81,8 +90,12 @@ export function EmployerProfilePage() {
           </div>
         </div>
         {kyc && kyc.kyc_status !== "Verified" && (
-          <Button variant="outline" asChild>
-            <Link to={`/dashboard/kyc/${kyc.id}`}>Review KYC</Link>
+          <Button
+            variant="outline"
+            nativeButton={false}
+            render={<Link to={`/dashboard/kyc/${kyc.id}`} />}
+          >
+            Review KYC
           </Button>
         )}
       </div>

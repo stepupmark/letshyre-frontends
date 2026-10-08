@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { Check, LoaderCircle, X } from "lucide-react"
 import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
-import { Button } from "@/components/ui/button"
+import { Button } from "@workspace/ui/components/button"
 import {
   Dialog,
   DialogClose,
@@ -12,14 +12,14 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
+} from "@workspace/ui/components/dialog"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldLabel,
-} from "@/components/ui/field"
-import { Textarea } from "@/components/ui/textarea"
+} from "@workspace/ui/components/field"
+import { Textarea } from "@workspace/ui/components/textarea"
 import { useJobAction } from "../mutations/use-job-action"
 import {
   rejectJobsSchema,
@@ -96,14 +96,16 @@ function RejectDialog({
             )}
           </Field>
           <DialogFooter>
-            <DialogClose asChild>
-              <Button
-                type="button"
-                variant="outline"
-                disabled={action.isPending}
-              >
-                Cancel
-              </Button>
+            <DialogClose
+              render={
+                <Button
+                  type="button"
+                  variant="outline"
+                  disabled={action.isPending}
+                />
+              }
+            >
+              Cancel
             </DialogClose>
             <Button
               type="submit"
