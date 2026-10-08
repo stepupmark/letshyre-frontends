@@ -9,10 +9,11 @@
     },
     "packages/eslint-config": {
       "entry": ["src/*.js", "test/*.test.js"],
-      "ignoreDependencies": ["eslint-import-resolver-typescript", "valibot"]
+      "ignoreDependencies": ["eslint-import-resolver-typescript", "valibot"],
+      "ignore": ["test/fixtures/**"]
     },
     "apps/marketing": {
-      "entry": ["test/setup.ts", "lighthouserc.cjs"],
+      "entry": ["lighthouserc.cjs"],
       "ignoreDependencies": ["tailwindcss"]
     },
     "apps/app": {
