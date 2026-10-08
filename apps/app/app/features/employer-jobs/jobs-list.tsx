@@ -17,7 +17,7 @@ import { DataTable } from "@/components/data-table"
 import { EmptyState } from "@/components/empty-state"
 import { StatusBadge } from "@/components/status-badge"
 import type { DataTableColumn } from "@/lib/data-table-features"
-import { readTableParams, writeTableParams } from "@/lib/table-params"
+import { readTableParams, writeTableParams } from "@workspace/api/table-params"
 import { undoToast } from "@/lib/undo-toast"
 import { buttonLink } from "@/lib/button-link"
 

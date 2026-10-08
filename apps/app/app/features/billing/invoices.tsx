@@ -12,7 +12,7 @@ import { EmptyState } from "@/components/empty-state"
 import { useDetailParam } from "@/hooks/use-detail-param"
 import { buttonLink } from "@/lib/button-link"
 import type { DataTableColumn } from "@/lib/data-table-features"
-import { readTableParams, writeTableParams } from "@/lib/table-params"
+import { readTableParams, writeTableParams } from "@workspace/api/table-params"
 
 import { invoicesQuery, type Invoice } from "./api"
 import { formatRupees } from "./money"

@@ -1,6 +1,6 @@
 import { expect, test } from "vitest"
 
-import { readTableParams, writeTableParams } from "./table-params"
+import { readTableParams, writeTableParams } from "../src/table-params"
 
 const sortable = ["created_at", "score"]
 

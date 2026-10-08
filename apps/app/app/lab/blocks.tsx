@@ -31,7 +31,7 @@ import {
   PAGE_SIZE,
   readTableParams,
   writeTableParams,
-} from "@/lib/table-params"
+} from "@workspace/api/table-params"
 import { undoToast } from "@/lib/undo-toast"
 
 import { applicants, type Applicant } from "./fixtures"

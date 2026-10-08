@@ -42,7 +42,7 @@ import { StatusBadge, type Tone } from "@/components/status-badge"
 import { TextField } from "@/components/text-field"
 import { buttonLink } from "@/lib/button-link"
 import type { DataTableColumn } from "@/lib/data-table-features"
-import { readTableParams, writeTableParams } from "@/lib/table-params"
+import { readTableParams, writeTableParams } from "@workspace/api/table-params"
 import { undoToast } from "@/lib/undo-toast"
 
 import {

@@ -15,7 +15,7 @@ import { EmptyState } from "@/components/empty-state"
 import { ScoreBand } from "@/components/score-band"
 import type { DataTableColumn } from "@/lib/data-table-features"
 import { safeUrl } from "@/lib/safe-url"
-import { readTableParams, writeTableParams } from "@/lib/table-params"
+import { readTableParams, writeTableParams } from "@workspace/api/table-params"
 import { buttonLink } from "@/lib/button-link"
 
 import { unlockedQuery, type Unlocked } from "./api"

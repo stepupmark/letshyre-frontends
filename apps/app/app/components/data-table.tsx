@@ -46,7 +46,7 @@ import {
   type DataTableColumn,
 } from "@/lib/data-table-features"
 import { duration, ease } from "@/lib/motion"
-import { PAGE_SIZE, type TableParams } from "@/lib/table-params"
+import { PAGE_SIZE, type TableParams } from "@workspace/api/table-params"
 
 import { NoMatches } from "./empty-state"
 import { LoadError } from "./query-state"
