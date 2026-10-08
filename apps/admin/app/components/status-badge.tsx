@@ -4,10 +4,10 @@ import { Badge } from "@workspace/ui/components/badge"
 export type StatusTone = "success" | "warning" | "danger" | "info" | "neutral"
 
 const dotClass: Record<StatusTone, string> = {
-  success: "bg-emerald-500",
-  warning: "bg-amber-500",
-  danger: "bg-destructive",
-  info: "bg-sky-500",
+  success: "bg-success",
+  warning: "bg-warning",
+  danger: "bg-danger",
+  info: "bg-brand",
   neutral: "bg-muted-foreground",
 }
 

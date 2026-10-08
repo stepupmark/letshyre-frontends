@@ -90,7 +90,7 @@ export function SignInForm() {
                   <FieldLabel htmlFor="password">Password</FieldLabel>
                   <Link
                     to="/forgot-password"
-                    className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+                    className="text-sm text-brand-text underline-offset-4 hover:underline"
                   >
                     Forgot password?
                   </Link>

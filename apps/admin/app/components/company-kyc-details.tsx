@@ -17,7 +17,7 @@ function WebLink({ href }: { href: string | null | undefined }) {
   return (
     <ExternalLink
       href={href}
-      className="text-primary underline-offset-4 hover:underline"
+      className="text-brand-text underline-offset-4 hover:underline"
       fallback={
         href ? (
           <span className="text-muted-foreground">Invalid link</span>

@@ -135,13 +135,13 @@ function Profile({ profile }: { profile: CandidateProfile }) {
                     {project.tech_stack.join(", ")}
                     <ExternalLink
                       href={project.live_url}
-                      className="text-primary underline-offset-4 hover:underline"
+                      className="text-brand-text underline-offset-4 hover:underline"
                     >
                       Live
                     </ExternalLink>
                     <ExternalLink
                       href={project.github_url}
-                      className="text-primary underline-offset-4 hover:underline"
+                      className="text-brand-text underline-offset-4 hover:underline"
                     >
                       Source
                     </ExternalLink>

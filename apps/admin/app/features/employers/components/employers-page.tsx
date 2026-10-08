@@ -138,7 +138,10 @@ function Summary() {
         value={formatNumber(data?.pending_kycs)}
         hint={
           data?.pending_kycs ? (
-            <Link to="/dashboard/kyc" className="underline underline-offset-4">
+            <Link
+              to="/dashboard/kyc"
+              className="text-brand-text underline underline-offset-4"
+            >
               Review requests
             </Link>
           ) : undefined
