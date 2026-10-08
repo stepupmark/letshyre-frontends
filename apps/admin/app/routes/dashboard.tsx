@@ -1,10 +1,8 @@
 import type { Route } from "./+types/dashboard"
 import { AppShell } from "@/components/layout/app-shell"
-import { requireSession } from "@/features/auth"
+import { requireAdmin } from "@/features/auth"
 
-export const clientMiddleware: Route.ClientMiddlewareFunction[] = [
-  requireSession,
-]
+export const clientMiddleware: Route.ClientMiddlewareFunction[] = [requireAdmin]
 
 export const handle = { breadcrumb: "Dashboard" }
 

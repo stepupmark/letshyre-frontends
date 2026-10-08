@@ -1,3 +1,4 @@
+import { SIGN_IN } from "@workspace/auth"
 import { useState } from "react"
 import { Link, useNavigate } from "react-router"
 import { ArrowLeft } from "lucide-react"
@@ -52,7 +53,7 @@ export function ForgotPasswordFlow() {
     <>
       <div className="mb-10 flex items-center justify-between text-sm">
         <Link
-          to="/login"
+          to={SIGN_IN}
           className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground"
         >
           <ArrowLeft className="size-4" />
@@ -85,7 +86,7 @@ export function ForgotPasswordFlow() {
         <ResetPasswordForm
           session={step.session}
           onDone={() => {
-            void navigate("/login", { replace: true })
+            void navigate(SIGN_IN, { replace: true })
           }}
         />
       )}

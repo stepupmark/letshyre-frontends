@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input"
 import { useSendOtp } from "../mutations/use-password-reset"
 import { requestOtpSchema } from "../schemas/auth.schema"
 import type { OtpSession, RequestOtpInput } from "../types"
+import { getErrorMessage } from "@/lib/api/api-error"
 
 export function RequestOtpForm({
   onSent,
@@ -37,7 +38,9 @@ export function RequestOtpForm({
       <FieldGroup>
         {sendOtp.error && (
           <Alert variant="destructive">
-            <AlertDescription>{sendOtp.error.message}</AlertDescription>
+            <AlertDescription>
+              {getErrorMessage(sendOtp.error)}
+            </AlertDescription>
           </Alert>
         )}
         <Controller

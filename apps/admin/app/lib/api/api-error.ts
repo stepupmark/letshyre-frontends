@@ -1,3 +1,4 @@
+import { HttpError, NetworkError, TimeoutError } from "@workspace/api"
 import axios from "axios"
 
 const FALLBACK_MESSAGE = "Something went wrong. Please try again."
@@ -96,5 +97,8 @@ export function getErrorMessage(
   error: unknown,
   fallback = FALLBACK_MESSAGE
 ): string {
+  if (error instanceof HttpError) return error.backendMessage ?? fallback
+  if (error instanceof NetworkError || error instanceof TimeoutError)
+    return NETWORK_MESSAGE
   return error instanceof Error && error.message ? error.message : fallback
 }

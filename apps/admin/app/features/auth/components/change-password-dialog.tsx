@@ -23,6 +23,7 @@ import {
 import { useChangePassword } from "../mutations/use-change-password"
 import { changePasswordSchema } from "../schemas/auth.schema"
 import type { ChangePasswordInput } from "../types"
+import { getErrorMessage } from "@/lib/api/api-error"
 
 const EMPTY: ChangePasswordInput = {
   currentPassword: "",
@@ -97,7 +98,7 @@ export function ChangePasswordDialog({
             {changePassword.error && (
               <Alert variant="destructive">
                 <AlertDescription>
-                  {changePassword.error.message}
+                  {getErrorMessage(changePassword.error)}
                 </AlertDescription>
               </Alert>
             )}

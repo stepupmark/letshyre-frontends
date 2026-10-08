@@ -1,19 +1,26 @@
+import { createRefresher } from "@workspace/auth"
 import axios from "axios"
+
+import { api } from "@/lib/api"
 import { env } from "@/lib/env"
-import { refreshAccessToken } from "@/lib/auth/refresh"
-import { endSession } from "@/lib/auth/session"
-import { tokenStore } from "@/lib/auth/token-store"
+import { endSession } from "@/lib/session"
+
 import { toApiError } from "./api-error"
 
 declare module "axios" {
   interface AxiosRequestConfig {
-    /** Public endpoints (login, OTP): no bearer token and no refresh on 401. */
-    skipAuth?: boolean
-    /** Sends the token but never tries to refresh it (logout). */
-    skipRefresh?: boolean
     _retry?: boolean
   }
 }
+
+// TODO(admin): goes when every service calls `api`; borrows its session until then
+const refresh = createRefresher({
+  baseUrl: env.VITE_API_BASE_URL,
+  onExpired: () => {
+    endSession("expired")
+  },
+})
+const authHeader = () => api.prepare("").headers.Authorization
 
 export const http = axios.create({
   baseURL: env.VITE_API_BASE_URL,
@@ -22,23 +29,19 @@ export const http = axios.create({
 })
 
 http.interceptors.request.use((config) => {
-  const token = tokenStore.getAccessToken()
-  if (token && !config.skipAuth)
-    config.headers.Authorization = `Bearer ${token}`
+  const auth = authHeader()
+  if (auth) config.headers.Authorization = auth
   return config
 })
 
 http.interceptors.response.use(undefined, async (error: unknown) => {
   if (axios.isAxiosError(error) && error.response?.status === 401) {
     const config = error.config
-    if (config && !config.skipAuth && !config.skipRefresh && !config._retry) {
+    if (config && !config._retry) {
       config._retry = true
-      const failedToken =
-        String(config.headers.Authorization ?? "").replace(/^Bearer /, "") ||
-        null
-      const token = await refreshAccessToken(failedToken)
-      if (token) return http(config)
-      endSession("expired")
+      const now = authHeader()
+      const rotated = now && now !== config.headers.Authorization
+      if (rotated || (await refresh())) return http(config)
     }
   }
   throw toApiError(error)

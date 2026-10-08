@@ -1,9 +1,11 @@
 import { zodResolver } from "@hookform/resolvers/zod"
+import { AccountInactiveError, RoleNotAllowedError } from "@workspace/auth"
 import { Controller, useForm } from "react-hook-form"
 import { Link, useSearchParams } from "react-router"
 import { LoaderCircle } from "lucide-react"
 import { PasswordInput } from "@/components/password-input"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import { getErrorMessage } from "@/lib/api/api-error"
 import { Button } from "@/components/ui/button"
 import {
   Field,
@@ -21,6 +23,13 @@ const REASON_MESSAGES: Record<string, string> = {
   expired: "Your session expired. Please sign in again.",
   idle: "You were signed out after a period of inactivity.",
   forbidden: "This account doesn't have admin access.",
+}
+
+function signInError(error: Error) {
+  if (error instanceof RoleNotAllowedError) return REASON_MESSAGES.forbidden
+  if (error instanceof AccountInactiveError)
+    return "This account is inactive. Contact another admin."
+  return getErrorMessage(error, "Couldn't sign you in. Please try again.")
 }
 
 export function SignInForm() {
@@ -50,7 +59,7 @@ export function SignInForm() {
           {(login.error ?? reason) && (
             <Alert variant={login.error ? "destructive" : "default"}>
               <AlertDescription>
-                {login.error?.message ?? reason}
+                {login.error ? signInError(login.error) : reason}
               </AlertDescription>
             </Alert>
           )}

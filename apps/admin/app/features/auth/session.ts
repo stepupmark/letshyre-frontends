@@ -1,33 +1,34 @@
-import { redirect } from "react-router"
-import { ApiError } from "@/lib/api/api-error"
-import { tokenStore } from "@/lib/auth/token-store"
-import { queryClient } from "@/lib/query/query-client"
-import { authQueries } from "./queries/auth.queries"
-import type { AdminProfile } from "./types"
+import { HttpError } from "@workspace/api"
+import { authRedirect, guestRedirect, ROLES } from "@workspace/auth"
+import {
+  redirect,
+  type DataStrategyResult,
+  type MiddlewareFunction,
+} from "react-router"
 
-async function getAdmin(): Promise<AdminProfile | null> {
-  if (!tokenStore.getAccessToken()) return null
+import { queryClient } from "@/lib/query/query-client"
+import { endSession } from "@/lib/session"
+
+import { authQueries } from "./queries/auth.queries"
+
+type ClientMiddleware = MiddlewareFunction<Record<string, DataStrategyResult>>
+
+export const requireAdmin: ClientMiddleware = async ({ request }, next) => {
+  const to = authRedirect(new URL(request.url), { roles: [ROLES.admin] })
+  if (to) throw redirect(to)
   try {
-    return await queryClient.query({ ...authQueries.me(), staleTime: "static" })
+    await queryClient.query({ ...authQueries.me(), staleTime: "static" })
   } catch (error) {
-    if (error instanceof ApiError && error.status === 401) return null
-    // a valid token that isn't an admin's
-    if (error instanceof ApiError && error.status === 403) {
-      tokenStore.clear()
-      queryClient.clear()
-      throw redirect("/login?reason=forbidden")
-    }
+    // the token is fine but admin access was taken away
+    if (error instanceof HttpError && error.status === 403)
+      endSession("forbidden")
     throw error
   }
+  return next()
 }
 
-export async function requireSession({ request }: { request: Request }) {
-  if (!(await getAdmin())) {
-    const { pathname, search } = new URL(request.url)
-    throw redirect(`/login?redirectTo=${encodeURIComponent(pathname + search)}`)
-  }
-}
-
-export function requireGuest() {
-  if (tokenStore.getAccessToken()) throw redirect("/dashboard")
+export const requireGuest: ClientMiddleware = async (_, next) => {
+  const to = guestRedirect()
+  if (to) throw redirect(to)
+  return next()
 }

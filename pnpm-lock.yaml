@@ -121,6 +121,12 @@ importers:
       '@tanstack/react-table':
         specifier: ^8.21.3
         version: 8.21.3(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@workspace/api':
+        specifier: workspace:*
+        version: link:../../packages/api
+      '@workspace/auth':
+        specifier: workspace:*
+        version: link:../../packages/auth
       axios:
         specifier: ^1.15.0
         version: 1.20.0

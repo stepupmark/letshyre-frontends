@@ -44,11 +44,6 @@ export const changePasswordSchema = z
     path: ["newPassword"],
   })
 
-export const loginResultSchema = z.looseObject({
-  access_token: z.string().min(1),
-  refresh_token: z.string().min(1),
-})
-
 export const adminProfileSchema = z.object({
   id: z.union([z.string(), z.number()]).transform(String),
   name: z.string().nullish(),

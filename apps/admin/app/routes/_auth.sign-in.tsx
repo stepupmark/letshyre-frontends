@@ -1,4 +1,4 @@
-import type { Route } from "./+types/_auth.login"
+import type { Route } from "./+types/_auth.sign-in"
 import { SignInForm } from "@/features/auth"
 
 export const meta: Route.MetaFunction = () => [

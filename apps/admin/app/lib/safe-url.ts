@@ -15,13 +15,3 @@ export function safeExternalUrl(
     return undefined
   }
 }
-
-/** Only allows same-origin paths, so `?redirectTo=` can't send users to another site. */
-export function safeRedirect(
-  to: string | null | undefined,
-  fallback = "/dashboard"
-): string {
-  if (!to || !to.startsWith("/") || to.startsWith("//") || to.startsWith("/\\"))
-    return fallback
-  return to
-}

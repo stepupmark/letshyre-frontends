@@ -1,7 +1,7 @@
+import { ROLE_HOME, ROLES, safeNext } from "@workspace/auth"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useNavigate, useSearchParams } from "react-router"
-import { tokenStore } from "@/lib/auth/token-store"
-import { safeRedirect } from "@/lib/safe-url"
+
 import { authKeys } from "../queries/auth.queries"
 import { authService } from "../services/auth.service"
 import type { LoginInput } from "../types"
@@ -14,15 +14,10 @@ export function useLogin() {
   return useMutation({
     mutationFn: (input: LoginInput) => authService.login(input),
     meta: { errorMessage: false },
-    onSuccess: (result) => {
-      tokenStore.setTokens({
-        accessToken: result.access_token,
-        refreshToken: result.refresh_token,
-      })
+    onSuccess: () => {
       queryClient.removeQueries({ queryKey: authKeys.all })
-      void navigate(safeRedirect(searchParams.get("redirectTo")), {
-        replace: true,
-      })
+      const next = safeNext(searchParams.get("next"))
+      void navigate(next ?? ROLE_HOME[ROLES.admin], { replace: true })
     },
   })
 }
