@@ -47,7 +47,7 @@ export function CommandPalette({ sources }: { sources: SearchSource[] }) {
       >
         <Search />
         <span className="flex-1 text-start">Search…</span>
-        <kbd className="rounded-sm border bg-muted px-1.5 font-sans text-[11px] font-medium">
+        <kbd className="rounded-sm border bg-muted px-1.5 font-sans text-[11px] font-medium text-foreground">
           {shortcut}
         </kbd>
       </Button>

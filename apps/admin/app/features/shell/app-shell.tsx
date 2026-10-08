@@ -35,15 +35,16 @@ export function AppShell({
         <SkipLink>Skip to content</SkipLink>
         <NavigationProgress label="Loading page" />
         <AppSidebar />
+        {/* SidebarInset is the <main> landmark */}
         <SidebarInset className="min-w-0">
           <AppHeader account={account} searches={searches} />
-          <main
+          <div
             id="main"
             tabIndex={-1}
-            className="mx-auto w-full max-w-screen-2xl flex-1 p-4 md:p-6"
+            className="mx-auto w-full max-w-screen-2xl flex-1 p-4 outline-none md:p-6"
           >
             <Outlet />
-          </main>
+          </div>
         </SidebarInset>
       </SidebarProvider>
     </TooltipProvider>

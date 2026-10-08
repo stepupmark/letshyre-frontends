@@ -40,7 +40,7 @@ export function UserMenu() {
           }
         >
           <Avatar className="size-7">
-            <AvatarFallback className="text-xs">
+            <AvatarFallback className="text-xs text-foreground">
               {initials(user?.name, "A")}
             </AvatarFallback>
           </Avatar>

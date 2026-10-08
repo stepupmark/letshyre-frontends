@@ -84,7 +84,7 @@ function NavEntry({ item }: { item: NavItem }) {
 
 export function AppSidebar() {
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="icon" role="navigation" aria-label="Main navigation">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
