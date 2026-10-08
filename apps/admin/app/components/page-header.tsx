@@ -1,10 +1,10 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from "react"
 
 type PageHeaderProps = {
-  title: string;
-  description?: ReactNode;
-  actions?: ReactNode;
-};
+  title: string
+  description?: ReactNode
+  actions?: ReactNode
+}
 
 export function PageHeader({ title, description, actions }: PageHeaderProps) {
   return (
@@ -17,5 +17,5 @@ export function PageHeader({ title, description, actions }: PageHeaderProps) {
       </div>
       {actions && <div className="flex flex-wrap gap-2">{actions}</div>}
     </div>
-  );
+  )
 }

@@ -1,17 +1,17 @@
-import type { ReactNode } from "react";
-import type { LucideIcon } from "lucide-react";
-import { Button } from "~/components/ui/button";
-import { EmptyState } from "./empty-state";
+import type { ReactNode } from "react"
+import type { LucideIcon } from "lucide-react"
+import { Button } from "~/components/ui/button"
+import { EmptyState } from "./empty-state"
 
 type ListEmptyStateProps = {
   /** Plural, lower case, e.g. "candidates". */
-  noun: string;
-  icon?: LucideIcon;
-  description: string;
-  action?: ReactNode;
-  filtered?: boolean;
-  onClearFilters?: () => void;
-};
+  noun: string
+  icon?: LucideIcon
+  description: string
+  action?: ReactNode
+  filtered?: boolean
+  onClearFilters?: () => void
+}
 
 export function ListEmptyState({
   noun,
@@ -35,7 +35,7 @@ export function ListEmptyState({
           )
         }
       />
-    );
+    )
 
   return (
     <EmptyState
@@ -44,5 +44,5 @@ export function ListEmptyState({
       description={description}
       action={action}
     />
-  );
+  )
 }

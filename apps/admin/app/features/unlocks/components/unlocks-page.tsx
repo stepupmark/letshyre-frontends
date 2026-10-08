@@ -1,5 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
-import type { ColumnDef } from "@tanstack/react-table";
+import { useQuery } from "@tanstack/react-query"
+import type { ColumnDef } from "@tanstack/react-table"
 import {
   CalendarCheck,
   CalendarDays,
@@ -9,39 +9,39 @@ import {
   Trophy,
   Unlock,
   X,
-} from "lucide-react";
-import { useQueryStates } from "nuqs";
-import { DataTable } from "~/components/data-table/data-table";
-import { DateRangeFilter } from "~/components/date-range-filter";
-import { ExternalLink } from "~/components/external-link";
-import { ErrorState } from "~/components/feedback/error-state";
-import { ListEmptyState } from "~/components/feedback/list-empty-state";
-import { PageHeader } from "~/components/page-header";
-import { SearchInput } from "~/components/search-input";
-import { StatCard } from "~/components/stat-card";
-import { StatusBadge } from "~/components/status-badge";
-import { Button } from "~/components/ui/button";
-import { RelativeTime } from "~/components/relative-time";
-import { unlocksService } from "../services/unlocks.service";
-import { fetchAllPages } from "~/lib/fetch-all-pages";
-import { useDebouncedValue } from "~/hooks/use-debounced-value";
-import { formatNumber } from "~/lib/format";
-import { unlocksQueries } from "../queries/unlocks.queries";
-import type { UnlockedProfile } from "../schemas/unlocks.schema";
-import { toUnlocksFilters, unlocksSearchParams } from "../search-params";
+} from "lucide-react"
+import { useQueryStates } from "nuqs"
+import { DataTable } from "~/components/data-table/data-table"
+import { DateRangeFilter } from "~/components/date-range-filter"
+import { ExternalLink } from "~/components/external-link"
+import { ErrorState } from "~/components/feedback/error-state"
+import { ListEmptyState } from "~/components/feedback/list-empty-state"
+import { PageHeader } from "~/components/page-header"
+import { SearchInput } from "~/components/search-input"
+import { StatCard } from "~/components/stat-card"
+import { StatusBadge } from "~/components/status-badge"
+import { Button } from "~/components/ui/button"
+import { RelativeTime } from "~/components/relative-time"
+import { unlocksService } from "../services/unlocks.service"
+import { fetchAllPages } from "~/lib/fetch-all-pages"
+import { useDebouncedValue } from "~/hooks/use-debounced-value"
+import { formatNumber } from "~/lib/format"
+import { unlocksQueries } from "../queries/unlocks.queries"
+import type { UnlockedProfile } from "../schemas/unlocks.schema"
+import { toUnlocksFilters, unlocksSearchParams } from "../search-params"
 
 function growthHint(value: number | null | undefined, period: string) {
-  if (value === null || value === undefined) return undefined;
-  const sign = value > 0 ? "+" : "";
-  return `${sign}${value}% vs ${period}`;
+  if (value === null || value === undefined) return undefined
+  const sign = value > 0 ? "+" : ""
+  return `${sign}${value}% vs ${period}`
 }
 
 function ScoreBadge({ score }: { score: number | string | null | undefined }) {
-  const value = Number(score);
+  const value = Number(score)
   if (score === null || score === undefined || Number.isNaN(value))
-    return <span className="text-muted-foreground">—</span>;
-  const tone = value >= 80 ? "success" : value >= 60 ? "warning" : "danger";
-  return <StatusBadge tone={tone}>{Math.round(value)}</StatusBadge>;
+    return <span className="text-muted-foreground">—</span>
+  const tone = value >= 80 ? "success" : value >= 60 ? "warning" : "danger"
+  return <StatusBadge tone={tone}>{Math.round(value)}</StatusBadge>
 }
 
 const columns: ColumnDef<UnlockedProfile, unknown>[] = [
@@ -104,10 +104,10 @@ const columns: ColumnDef<UnlockedProfile, unknown>[] = [
       </Button>
     ),
   },
-];
+]
 
 function Overview() {
-  const overview = useQuery(unlocksQueries.overview());
+  const overview = useQuery(unlocksQueries.overview())
 
   if (overview.isError)
     return (
@@ -116,11 +116,11 @@ function Overview() {
         onRetry={() => void overview.refetch()}
         className="mb-6 rounded-xl border"
       />
-    );
+    )
 
-  const data = overview.data;
-  const loading = overview.isPending;
-  const top = data?.top_performer?.top_employer;
+  const data = overview.data
+  const loading = overview.isPending
+  const top = data?.top_performer?.top_employer
 
   return (
     <div className="mb-6 space-y-4">
@@ -190,15 +190,15 @@ function Overview() {
         />
       </div>
     </div>
-  );
+  )
 }
 
 export function UnlocksPage() {
-  const [params, setParams] = useQueryStates(unlocksSearchParams);
-  const search = useDebouncedValue(params.q);
-  const filters = toUnlocksFilters({ ...params, q: search });
-  const profiles = useQuery(unlocksQueries.list(filters));
-  const hasFilters = Boolean(params.q || params.from || params.to);
+  const [params, setParams] = useQueryStates(unlocksSearchParams)
+  const search = useDebouncedValue(params.q)
+  const filters = toUnlocksFilters({ ...params, q: search })
+  const profiles = useQuery(unlocksQueries.list(filters))
+  const hasFilters = Boolean(params.q || params.from || params.to)
 
   return (
     <>
@@ -257,5 +257,5 @@ export function UnlocksPage() {
         }
       />
     </>
-  );
+  )
 }

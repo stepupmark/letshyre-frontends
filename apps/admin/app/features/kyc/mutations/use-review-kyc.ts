@@ -1,12 +1,12 @@
-import { useMutation } from "@tanstack/react-query";
-import { patchQueries } from "~/lib/query/optimistic";
-import { kycKeys } from "../queries/kyc.queries";
-import { kycService } from "../services/kyc.service";
+import { useMutation } from "@tanstack/react-query"
+import { patchQueries } from "~/lib/query/optimistic"
+import { kycKeys } from "../queries/kyc.queries"
+import { kycService } from "../services/kyc.service"
 
 // employer rows embed their KYC, so their cache goes stale too
-const invalidates = [kycKeys.all, ["employers"]];
+const invalidates = [kycKeys.all, ["employers"]]
 
-type KycDetail = Awaited<ReturnType<typeof kycService.detail>>;
+type KycDetail = Awaited<ReturnType<typeof kycService.detail>>
 
 export function useApproveKyc() {
   return useMutation({
@@ -19,7 +19,7 @@ export function useApproveKyc() {
     }),
     onError: (_error, _variables, context) => context?.rollback(),
     meta: { successMessage: "KYC approved", invalidates },
-  });
+  })
 }
 
 export function useRejectKyc() {
@@ -35,5 +35,5 @@ export function useRejectKyc() {
     }),
     onError: (_error, _variables, context) => context?.rollback(),
     meta: { successMessage: "KYC rejected", invalidates },
-  });
+  })
 }

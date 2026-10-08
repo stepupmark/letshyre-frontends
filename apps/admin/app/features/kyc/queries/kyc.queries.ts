@@ -1,13 +1,13 @@
-import { keepPreviousData, queryOptions } from "@tanstack/react-query";
-import type { KycStatus } from "../schemas/kyc.schema";
-import { kycService } from "../services/kyc.service";
+import { keepPreviousData, queryOptions } from "@tanstack/react-query"
+import type { KycStatus } from "../schemas/kyc.schema"
+import { kycService } from "../services/kyc.service"
 
 export const kycKeys = {
   all: ["kyc"] as const,
   list: (page: number, status: KycStatus) =>
     [...kycKeys.all, "list", { page, status }] as const,
   detail: (id: string) => [...kycKeys.all, "detail", id] as const,
-};
+}
 
 export const kycQueries = {
   list: (page: number, status: KycStatus) =>
@@ -21,4 +21,4 @@ export const kycQueries = {
       queryKey: kycKeys.detail(id),
       queryFn: ({ signal }) => kycService.detail(id, signal),
     }),
-};
+}

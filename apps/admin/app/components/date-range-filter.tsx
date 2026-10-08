@@ -1,10 +1,10 @@
-import { Input } from "~/components/ui/input";
+import { Input } from "~/components/ui/input"
 
 type DateRangeFilterProps = {
-  from: string;
-  to: string;
-  onChange: (range: { from: string; to: string }) => void;
-};
+  from: string
+  to: string
+  onChange: (range: { from: string; to: string }) => void
+}
 
 export function DateRangeFilter({ from, to, onChange }: DateRangeFilterProps) {
   return (
@@ -27,5 +27,5 @@ export function DateRangeFilter({ from, to, onChange }: DateRangeFilterProps) {
         onChange={(event) => onChange({ from, to: event.target.value })}
       />
     </div>
-  );
+  )
 }

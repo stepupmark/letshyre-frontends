@@ -1,37 +1,37 @@
-import { lazy, Suspense, useEffect, useState } from "react";
-import { Search } from "lucide-react";
-import { Button } from "~/components/ui/button";
+import { lazy, Suspense, useEffect, useState } from "react"
+import { Search } from "lucide-react"
+import { Button } from "~/components/ui/button"
 
 // the dialog pulls in cmdk and the search queries, so it loads on first open
 const CommandPaletteDialog = lazy(() =>
   import("./command-palette-dialog").then((module) => ({
     default: module.CommandPaletteDialog,
-  })),
-);
+  }))
+)
 
-const isMac = () => /Mac|iPhone|iPad/.test(navigator.platform);
+const isMac = () => /Mac|iPhone|iPad/.test(navigator.platform)
 
 export function CommandPalette() {
-  const [open, setOpen] = useState(false);
-  const [loaded, setLoaded] = useState(false);
-  const [shortcut] = useState(() => (isMac() ? "⌘K" : "Ctrl K"));
+  const [open, setOpen] = useState(false)
+  const [loaded, setLoaded] = useState(false)
+  const [shortcut] = useState(() => (isMac() ? "⌘K" : "Ctrl K"))
 
   const show = (next: boolean) => {
-    if (next) setLoaded(true);
-    setOpen(next);
-  };
+    if (next) setLoaded(true)
+    setOpen(next)
+  }
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key.toLowerCase() !== "k") return;
-      if (!(event.metaKey || event.ctrlKey) || event.altKey) return;
-      event.preventDefault();
-      setLoaded(true);
-      setOpen((value) => !value);
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+      if (event.key.toLowerCase() !== "k") return
+      if (!(event.metaKey || event.ctrlKey) || event.altKey) return
+      event.preventDefault()
+      setLoaded(true)
+      setOpen((value) => !value)
+    }
+    window.addEventListener("keydown", onKeyDown)
+    return () => window.removeEventListener("keydown", onKeyDown)
+  }, [])
 
   return (
     <>
@@ -61,5 +61,5 @@ export function CommandPalette() {
         </Suspense>
       )}
     </>
-  );
+  )
 }

@@ -1,29 +1,29 @@
-import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Mail, MessageSquare, Smartphone, type LucideIcon } from "lucide-react";
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog";
-import { ErrorState } from "~/components/feedback/error-state";
-import { PageHeader } from "~/components/page-header";
+import { useState } from "react"
+import { useQuery } from "@tanstack/react-query"
+import { Mail, MessageSquare, Smartphone, type LucideIcon } from "lucide-react"
+import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
+import { ErrorState } from "~/components/feedback/error-state"
+import { PageHeader } from "~/components/page-header"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card";
-import { Skeleton } from "~/components/ui/skeleton";
-import { Switch } from "~/components/ui/switch";
-import { formatDateTime } from "~/lib/format";
-import { useUpdateChannel } from "../mutations/use-update-channel";
-import { channelsQueries } from "../queries/channels.queries";
-import type { ChannelKey } from "../schemas/channels.schema";
+} from "~/components/ui/card"
+import { Skeleton } from "~/components/ui/skeleton"
+import { Switch } from "~/components/ui/switch"
+import { formatDateTime } from "~/lib/format"
+import { useUpdateChannel } from "../mutations/use-update-channel"
+import { channelsQueries } from "../queries/channels.queries"
+import type { ChannelKey } from "../schemas/channels.schema"
 
 type Channel = {
-  key: ChannelKey;
-  icon: LucideIcon;
-  label: string;
-  description: string;
-};
+  key: ChannelKey
+  icon: LucideIcon
+  label: string
+  description: string
+}
 
 const CHANNELS: Channel[] = [
   {
@@ -45,19 +45,19 @@ const CHANNELS: Channel[] = [
     label: "Push",
     description: "In-app and device push notifications.",
   },
-];
+]
 
 export function ChannelsPage() {
-  const settings = useQuery(channelsQueries.settings());
-  const update = useUpdateChannel();
-  const [confirmOpen, setConfirmOpen] = useState(false);
-  const [disabling, setDisabling] = useState<Channel>(CHANNELS[0]);
+  const settings = useQuery(channelsQueries.settings())
+  const update = useUpdateChannel()
+  const [confirmOpen, setConfirmOpen] = useState(false)
+  const [disabling, setDisabling] = useState<Channel>(CHANNELS[0])
 
   const toggle = (channel: Channel, enabled: boolean) => {
-    if (enabled) return update.mutate({ key: channel.key, enabled });
-    setDisabling(channel);
-    setConfirmOpen(true);
-  };
+    if (enabled) return update.mutate({ key: channel.key, enabled })
+    setDisabling(channel)
+    setConfirmOpen(true)
+  }
 
   return (
     <>
@@ -78,7 +78,7 @@ export function ChannelsPage() {
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {CHANNELS.map((channel) => {
-            const { key, icon: Icon, label, description } = channel;
+            const { key, icon: Icon, label, description } = channel
             return (
               <Card key={key}>
                 <CardHeader>
@@ -110,7 +110,7 @@ export function ChannelsPage() {
                     : "Loading…"}
                 </CardContent>
               </Card>
-            );
+            )
           })}
         </div>
       )}
@@ -124,10 +124,10 @@ export function ChannelsPage() {
         destructive
         pending={update.isPending}
         onConfirm={() => {
-          update.mutate({ key: disabling.key, enabled: false });
-          setConfirmOpen(false);
+          update.mutate({ key: disabling.key, enabled: false })
+          setConfirmOpen(false)
         }}
       />
     </>
-  );
+  )
 }

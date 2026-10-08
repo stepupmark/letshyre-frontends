@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { Check, LoaderCircle, X } from "lucide-react";
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog";
-import { Button } from "~/components/ui/button";
+import { useState } from "react"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { Check, LoaderCircle, X } from "lucide-react"
+import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
+import { Button } from "~/components/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -12,20 +12,20 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "~/components/ui/dialog";
+} from "~/components/ui/dialog"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldLabel,
-} from "~/components/ui/field";
-import { Textarea } from "~/components/ui/textarea";
-import { useJobAction } from "../mutations/use-job-action";
+} from "~/components/ui/field"
+import { Textarea } from "~/components/ui/textarea"
+import { useJobAction } from "../mutations/use-job-action"
 import {
   rejectJobsSchema,
   type ApprovalStatus,
   type RejectJobsInput,
-} from "../schemas/jobs.schema";
+} from "../schemas/jobs.schema"
 
 function RejectDialog({
   jobIds,
@@ -33,24 +33,24 @@ function RejectDialog({
   onOpenChange,
   onDone,
 }: {
-  jobIds: string[];
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-  onDone?: () => void;
+  jobIds: string[]
+  open: boolean
+  onOpenChange: (open: boolean) => void
+  onDone?: () => void
 }) {
-  const action = useJobAction();
+  const action = useJobAction()
   const form = useForm<RejectJobsInput>({
     resolver: zodResolver(rejectJobsSchema),
     defaultValues: { reason: "" },
-  });
-  const error = form.formState.errors.reason;
-  const plural = jobIds.length > 1;
+  })
+  const error = form.formState.errors.reason
+  const plural = jobIds.length > 1
 
   const handleOpenChange = (next: boolean) => {
-    if (action.isPending) return;
-    if (!next) form.reset();
-    onOpenChange(next);
-  };
+    if (action.isPending) return
+    if (!next) form.reset()
+    onOpenChange(next)
+  }
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
@@ -62,11 +62,11 @@ function RejectDialog({
               { action: "reject", job_ids: jobIds, reason },
               {
                 onSuccess: () => {
-                  handleOpenChange(false);
-                  onDone?.();
+                  handleOpenChange(false)
+                  onDone?.()
                 },
-              },
-            ),
+              }
+            )
           )}
         >
           <DialogHeader>
@@ -115,16 +115,16 @@ function RejectDialog({
         </form>
       </DialogContent>
     </Dialog>
-  );
+  )
 }
 
 type JobReviewProps = {
-  jobIds: string[];
+  jobIds: string[]
   /** Hides actions that don't apply; bulk selections pass nothing. */
-  approval?: ApprovalStatus;
-  size?: "sm" | "default";
-  onDone?: () => void;
-};
+  approval?: ApprovalStatus
+  size?: "sm" | "default"
+  onDone?: () => void
+}
 
 export function JobReview({
   jobIds,
@@ -132,12 +132,12 @@ export function JobReview({
   size = "default",
   onDone,
 }: JobReviewProps) {
-  const action = useJobAction();
-  const [approveOpen, setApproveOpen] = useState(false);
-  const [rejectOpen, setRejectOpen] = useState(false);
-  const plural = jobIds.length > 1;
+  const action = useJobAction()
+  const [approveOpen, setApproveOpen] = useState(false)
+  const [rejectOpen, setRejectOpen] = useState(false)
+  const plural = jobIds.length > 1
 
-  if (approval === "approved") return null;
+  if (approval === "approved") return null
 
   return (
     <div className="flex gap-2">
@@ -162,9 +162,9 @@ export function JobReview({
         confirmLabel="Approve"
         pending={action.isPending}
         onConfirm={() => {
-          action.mutate({ action: "approve", job_ids: jobIds });
-          setApproveOpen(false);
-          onDone?.();
+          action.mutate({ action: "approve", job_ids: jobIds })
+          setApproveOpen(false)
+          onDone?.()
         }}
       />
       <RejectDialog
@@ -174,5 +174,5 @@ export function JobReview({
         onDone={onDone}
       />
     </div>
-  );
+  )
 }

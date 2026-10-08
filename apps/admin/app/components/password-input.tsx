@@ -1,16 +1,16 @@
-import { useState, type ComponentProps } from "react";
-import { Eye, EyeOff } from "lucide-react";
+import { useState, type ComponentProps } from "react"
+import { Eye, EyeOff } from "lucide-react"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "~/components/ui/input-group";
+} from "~/components/ui/input-group"
 
 export function PasswordInput(
-  props: Omit<ComponentProps<typeof InputGroupInput>, "type">,
+  props: Omit<ComponentProps<typeof InputGroupInput>, "type">
 ) {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false)
 
   return (
     <InputGroup>
@@ -25,5 +25,5 @@ export function PasswordInput(
         </InputGroupButton>
       </InputGroupAddon>
     </InputGroup>
-  );
+  )
 }

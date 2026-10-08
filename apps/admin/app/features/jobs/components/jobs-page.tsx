@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { Link } from "react-router";
-import { useQuery } from "@tanstack/react-query";
+import { useState } from "react"
+import { Link } from "react-router"
+import { useQuery } from "@tanstack/react-query"
 import type {
   ColumnDef,
   OnChangeFn,
   RowSelectionState,
-} from "@tanstack/react-table";
+} from "@tanstack/react-table"
 import {
   BriefcaseBusiness,
   CalendarPlus,
@@ -14,27 +14,27 @@ import {
   Clock,
   Rows3,
   X,
-} from "lucide-react";
-import { useQueryStates } from "nuqs";
-import { DataTable } from "~/components/data-table/data-table";
-import { DateRangeFilter } from "~/components/date-range-filter";
-import { FilterSelect } from "~/components/filter-select";
-import { ListEmptyState } from "~/components/feedback/list-empty-state";
-import { PageHeader } from "~/components/page-header";
-import { SearchInput } from "~/components/search-input";
-import { StatCard } from "~/components/stat-card";
-import { Button } from "~/components/ui/button";
-import { Checkbox } from "~/components/ui/checkbox";
-import { RelativeTime } from "~/components/relative-time";
-import { jobsService } from "../services/jobs.service";
-import { fetchAllPages } from "~/lib/fetch-all-pages";
-import { useDebouncedValue } from "~/hooks/use-debounced-value";
-import { formatNumber } from "~/lib/format";
-import { jobsQueries } from "../queries/jobs.queries";
-import type { Job } from "../schemas/jobs.schema";
-import { jobsSearchParams, toJobsFilters } from "../search-params";
-import { ApprovalBadge, JobStatusBadge } from "./job-badges";
-import { JobReview } from "./job-review";
+} from "lucide-react"
+import { useQueryStates } from "nuqs"
+import { DataTable } from "~/components/data-table/data-table"
+import { DateRangeFilter } from "~/components/date-range-filter"
+import { FilterSelect } from "~/components/filter-select"
+import { ListEmptyState } from "~/components/feedback/list-empty-state"
+import { PageHeader } from "~/components/page-header"
+import { SearchInput } from "~/components/search-input"
+import { StatCard } from "~/components/stat-card"
+import { Button } from "~/components/ui/button"
+import { Checkbox } from "~/components/ui/checkbox"
+import { RelativeTime } from "~/components/relative-time"
+import { jobsService } from "../services/jobs.service"
+import { fetchAllPages } from "~/lib/fetch-all-pages"
+import { useDebouncedValue } from "~/hooks/use-debounced-value"
+import { formatNumber } from "~/lib/format"
+import { jobsQueries } from "../queries/jobs.queries"
+import type { Job } from "../schemas/jobs.schema"
+import { jobsSearchParams, toJobsFilters } from "../search-params"
+import { ApprovalBadge, JobStatusBadge } from "./job-badges"
+import { JobReview } from "./job-review"
 
 const columns: ColumnDef<Job>[] = [
   {
@@ -144,13 +144,13 @@ const columns: ColumnDef<Job>[] = [
       />
     ),
   },
-];
+]
 
 function Summary() {
-  const summary = useQuery(jobsQueries.summary());
-  if (summary.isError) return null;
-  const data = summary.data;
-  const loading = summary.isPending;
+  const summary = useQuery(jobsQueries.summary())
+  if (summary.isError) return null
+  const data = summary.data
+  const loading = summary.isPending
 
   return (
     <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -185,38 +185,38 @@ function Summary() {
         value={formatNumber(data?.rejected_jobs)}
       />
     </div>
-  );
+  )
 }
 
 export function JobsPage() {
-  const [params, setParams] = useQueryStates(jobsSearchParams);
-  const q = useDebouncedValue(params.q);
-  const filters = toJobsFilters({ ...params, q });
-  const jobs = useQuery(jobsQueries.list(filters));
+  const [params, setParams] = useQueryStates(jobsSearchParams)
+  const q = useDebouncedValue(params.q)
+  const filters = toJobsFilters({ ...params, q })
+  const jobs = useQuery(jobsQueries.list(filters))
 
   // selection belongs to the rows on screen, so it resets when filters or page change
-  const selectionKey = JSON.stringify(filters);
+  const selectionKey = JSON.stringify(filters)
   const [selection, setSelection] = useState({
     key: selectionKey,
     rows: {} as RowSelectionState,
-  });
-  const rowSelection = selection.key === selectionKey ? selection.rows : {};
+  })
+  const rowSelection = selection.key === selectionKey ? selection.rows : {}
   const onRowSelectionChange: OnChangeFn<RowSelectionState> = (updater) =>
     setSelection((previous) => {
-      const current = previous.key === selectionKey ? previous.rows : {};
+      const current = previous.key === selectionKey ? previous.rows : {}
       return {
         key: selectionKey,
         rows: typeof updater === "function" ? updater(current) : updater,
-      };
-    });
+      }
+    })
   const selectedIds = (jobs.data?.results ?? [])
     .map((job) => job.id)
-    .filter((id) => rowSelection[id]);
-  const clearSelection = () => setSelection({ key: selectionKey, rows: {} });
+    .filter((id) => rowSelection[id])
+  const clearSelection = () => setSelection({ key: selectionKey, rows: {} })
 
   const hasFilters = Boolean(
-    params.q || params.status || params.approval || params.from || params.to,
-  );
+    params.q || params.status || params.approval || params.from || params.to
+  )
 
   return (
     <>
@@ -321,5 +321,5 @@ export function JobsPage() {
         }
       />
     </>
-  );
+  )
 }

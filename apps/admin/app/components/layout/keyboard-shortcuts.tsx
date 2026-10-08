@@ -4,8 +4,8 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "~/components/ui/dialog";
-import { useHotkey } from "~/hooks/use-hotkey";
+} from "~/components/ui/dialog"
+import { useHotkey } from "~/hooks/use-hotkey"
 
 const SHORTCUTS: { keys: string[]; action: string }[] = [
   { keys: ["Ctrl / ⌘", "K"], action: "Open the command palette" },
@@ -16,26 +16,26 @@ const SHORTCUTS: { keys: string[]; action: string }[] = [
   { keys: ["Ctrl", "B"], action: "Toggle the sidebar" },
   { keys: ["Esc"], action: "Close a dialog or menu" },
   { keys: ["?"], action: "Show keyboard shortcuts" },
-];
+]
 
 type KeyboardShortcutsProps = {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-};
+  open: boolean
+  onOpenChange: (open: boolean) => void
+}
 
 export function KeyboardShortcuts({
   open,
   onOpenChange,
 }: KeyboardShortcutsProps) {
-  useHotkey(["?"], () => onOpenChange(true));
+  useHotkey(["?"], () => onOpenChange(true))
   useHotkey(["/"], (event) => {
     const search =
-      document.querySelector<HTMLInputElement>("[data-page-search]");
-    if (!search) return;
-    event.preventDefault();
-    search.focus();
-    search.select();
-  });
+      document.querySelector<HTMLInputElement>("[data-page-search]")
+    if (!search) return
+    event.preventDefault()
+    search.focus()
+    search.select()
+  })
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -68,5 +68,5 @@ export function KeyboardShortcuts({
         </dl>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

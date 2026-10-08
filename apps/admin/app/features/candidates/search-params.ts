@@ -1,10 +1,10 @@
-import { createLoader, parseAsStringLiteral } from "nuqs";
-import { compactParams, pageParser, textParser } from "~/lib/search-params";
+import { createLoader, parseAsStringLiteral } from "nuqs"
+import { compactParams, pageParser, textParser } from "~/lib/search-params"
 import {
   GENDERS,
   INDUSTRIES,
   type CandidateFilters,
-} from "./schemas/candidates.schema";
+} from "./schemas/candidates.schema"
 
 export const candidatesSearchParams = {
   page: pageParser,
@@ -13,18 +13,18 @@ export const candidatesSearchParams = {
   industry: parseAsStringLiteral(INDUSTRIES),
   kyc: parseAsStringLiteral(["verified", "unverified"]),
   profile: parseAsStringLiteral(["complete", "incomplete"]),
-};
+}
 
-export const loadCandidatesSearchParams = createLoader(candidatesSearchParams);
+export const loadCandidatesSearchParams = createLoader(candidatesSearchParams)
 
 type Params = {
-  page: number;
-  q: string;
-  gender: string | null;
-  industry: string | null;
-  kyc: string | null;
-  profile: string | null;
-};
+  page: number
+  q: string
+  gender: string | null
+  industry: string | null
+  kyc: string | null
+  profile: string | null
+}
 
 export function toCandidateFilters(params: Params): CandidateFilters {
   return {
@@ -38,5 +38,5 @@ export function toCandidateFilters(params: Params): CandidateFilters {
         ? params.profile === "complete"
         : null,
     }),
-  };
+  }
 }

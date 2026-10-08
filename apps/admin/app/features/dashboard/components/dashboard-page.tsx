@@ -1,13 +1,13 @@
-import { useQueryStates } from "nuqs";
-import { PageHeader } from "~/components/page-header";
-import { dashboardSearchParams } from "../search-params";
-import { ActivitySection } from "./activity-section";
-import { DistributionSection } from "./distribution-section";
-import { InterviewSection } from "./interview-section";
-import { RevenueSection } from "./revenue-section";
+import { useQueryStates } from "nuqs"
+import { PageHeader } from "~/components/page-header"
+import { dashboardSearchParams } from "../search-params"
+import { ActivitySection } from "./activity-section"
+import { DistributionSection } from "./distribution-section"
+import { InterviewSection } from "./interview-section"
+import { RevenueSection } from "./revenue-section"
 
 export function DashboardPage() {
-  const [{ year, days }, setParams] = useQueryStates(dashboardSearchParams);
+  const [{ year, days }, setParams] = useQueryStates(dashboardSearchParams)
 
   return (
     <>
@@ -25,5 +25,5 @@ export function DashboardPage() {
         <InterviewSection />
       </div>
     </>
-  );
+  )
 }

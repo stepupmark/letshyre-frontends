@@ -1,13 +1,13 @@
-import { keepPreviousData, queryOptions } from "@tanstack/react-query";
-import type { UnlockedProfilesFilters } from "../schemas/unlocks.schema";
-import { unlocksService } from "../services/unlocks.service";
+import { keepPreviousData, queryOptions } from "@tanstack/react-query"
+import type { UnlockedProfilesFilters } from "../schemas/unlocks.schema"
+import { unlocksService } from "../services/unlocks.service"
 
 const unlocksKeys = {
   all: ["unlocks"] as const,
   overview: () => [...unlocksKeys.all, "overview"] as const,
   list: (filters: UnlockedProfilesFilters) =>
     [...unlocksKeys.all, "list", filters] as const,
-};
+}
 
 export const unlocksQueries = {
   overview: () =>
@@ -22,4 +22,4 @@ export const unlocksQueries = {
       queryFn: ({ signal }) => unlocksService.list(filters, signal),
       placeholderData: keepPreviousData,
     }),
-};
+}

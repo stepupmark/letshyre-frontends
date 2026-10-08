@@ -1,14 +1,14 @@
-import { Link, useNavigate } from "react-router";
-import { LoaderCircle } from "lucide-react";
-import { PageHeader } from "~/components/page-header";
-import { Button } from "~/components/ui/button";
-import { Card, CardContent } from "~/components/ui/card";
-import { useCreateCoupon } from "../mutations/use-coupon-mutations";
-import { CouponForm } from "./coupon-form";
+import { Link, useNavigate } from "react-router"
+import { LoaderCircle } from "lucide-react"
+import { PageHeader } from "~/components/page-header"
+import { Button } from "~/components/ui/button"
+import { Card, CardContent } from "~/components/ui/card"
+import { useCreateCoupon } from "../mutations/use-coupon-mutations"
+import { CouponForm } from "./coupon-form"
 
 export function NewCouponPage() {
-  const navigate = useNavigate();
-  const create = useCreateCoupon();
+  const navigate = useNavigate()
+  const create = useCreateCoupon()
 
   return (
     <>
@@ -42,5 +42,5 @@ export function NewCouponPage() {
         </CardContent>
       </Card>
     </>
-  );
+  )
 }

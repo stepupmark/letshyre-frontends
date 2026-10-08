@@ -1,38 +1,38 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
-import { LoaderCircle } from "lucide-react";
-import { PasswordInput } from "~/components/password-input";
-import { Alert, AlertDescription } from "~/components/ui/alert";
-import { Button } from "~/components/ui/button";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Controller, useForm } from "react-hook-form"
+import { LoaderCircle } from "lucide-react"
+import { PasswordInput } from "~/components/password-input"
+import { Alert, AlertDescription } from "~/components/ui/alert"
+import { Button } from "~/components/ui/button"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "~/components/ui/field";
-import { useResetPassword } from "../mutations/use-password-reset";
-import { resetPasswordSchema } from "../schemas/auth.schema";
-import type { OtpSession, ResetPasswordInput } from "../types";
+} from "~/components/ui/field"
+import { useResetPassword } from "../mutations/use-password-reset"
+import { resetPasswordSchema } from "../schemas/auth.schema"
+import type { OtpSession, ResetPasswordInput } from "../types"
 
 export function ResetPasswordForm({
   session,
   onDone,
 }: {
-  session: OtpSession;
-  onDone: () => void;
+  session: OtpSession
+  onDone: () => void
 }) {
-  const resetPassword = useResetPassword();
+  const resetPassword = useResetPassword()
   const form = useForm<ResetPasswordInput>({
     resolver: zodResolver(resetPasswordSchema),
     defaultValues: { password: "", confirmPassword: "" },
-  });
+  })
 
   return (
     <form
       noValidate
       onSubmit={form.handleSubmit(({ password }) =>
-        resetPassword.mutate({ session, password }, { onSuccess: onDone }),
+        resetPassword.mutate({ session, password }, { onSuccess: onDone })
       )}
     >
       <FieldGroup>
@@ -85,5 +85,5 @@ export function ResetPasswordForm({
         </Button>
       </FieldGroup>
     </form>
-  );
+  )
 }

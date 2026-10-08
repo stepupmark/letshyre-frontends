@@ -1,10 +1,10 @@
-import { z } from "zod";
-import { envelope, id, paginated } from "~/lib/api/schemas";
+import { z } from "zod"
+import { envelope, id, paginated } from "~/lib/api/schemas"
 
-export const KYC_STATUSES = ["Pending", "Verified", "Rejected"] as const;
-export type KycStatus = (typeof KYC_STATUSES)[number];
+export const KYC_STATUSES = ["Pending", "Verified", "Rejected"] as const
+export type KycStatus = (typeof KYC_STATUSES)[number]
 
-const text = z.string().nullish();
+const text = z.string().nullish()
 
 export const companyKycSchema = z.object({
   id,
@@ -30,10 +30,10 @@ export const companyKycSchema = z.object({
   address_proof: text,
   authorized_id_proof: text,
   bank_proof: text,
-});
+})
 
-export const kycListResponseSchema = envelope(paginated(companyKycSchema));
-export const kycDetailResponseSchema = envelope(companyKycSchema);
+export const kycListResponseSchema = envelope(paginated(companyKycSchema))
+export const kycDetailResponseSchema = envelope(companyKycSchema)
 
 export const rejectKycSchema = z.object({
   remarks: z
@@ -42,7 +42,7 @@ export const rejectKycSchema = z.object({
     .min(10, "At least 10 characters")
     .max(500, "At most 500 characters")
     .refine((value) => !/<[^>]*>/.test(value), "HTML isn't allowed"),
-});
+})
 
-export type CompanyKyc = z.infer<typeof companyKycSchema>;
-export type RejectKycInput = z.infer<typeof rejectKycSchema>;
+export type CompanyKyc = z.infer<typeof companyKycSchema>
+export type RejectKycInput = z.infer<typeof rejectKycSchema>

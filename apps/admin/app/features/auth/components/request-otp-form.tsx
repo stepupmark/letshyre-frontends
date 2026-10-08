@@ -1,35 +1,35 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
-import { LoaderCircle } from "lucide-react";
-import { Alert, AlertDescription } from "~/components/ui/alert";
-import { Button } from "~/components/ui/button";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Controller, useForm } from "react-hook-form"
+import { LoaderCircle } from "lucide-react"
+import { Alert, AlertDescription } from "~/components/ui/alert"
+import { Button } from "~/components/ui/button"
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "~/components/ui/field";
-import { Input } from "~/components/ui/input";
-import { useSendOtp } from "../mutations/use-password-reset";
-import { requestOtpSchema } from "../schemas/auth.schema";
-import type { OtpSession, RequestOtpInput } from "../types";
+} from "~/components/ui/field"
+import { Input } from "~/components/ui/input"
+import { useSendOtp } from "../mutations/use-password-reset"
+import { requestOtpSchema } from "../schemas/auth.schema"
+import type { OtpSession, RequestOtpInput } from "../types"
 
 export function RequestOtpForm({
   onSent,
 }: {
-  onSent: (session: OtpSession) => void;
+  onSent: (session: OtpSession) => void
 }) {
-  const sendOtp = useSendOtp();
+  const sendOtp = useSendOtp()
   const form = useForm<RequestOtpInput>({
     resolver: zodResolver(requestOtpSchema),
     defaultValues: { email: "" },
-  });
+  })
 
   return (
     <form
       noValidate
       onSubmit={form.handleSubmit(({ email }) =>
-        sendOtp.mutate(email, { onSuccess: onSent }),
+        sendOtp.mutate(email, { onSuccess: onSent })
       )}
     >
       <FieldGroup>
@@ -62,5 +62,5 @@ export function RequestOtpForm({
         </Button>
       </FieldGroup>
     </form>
-  );
+  )
 }

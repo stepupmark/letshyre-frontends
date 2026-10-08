@@ -1,10 +1,10 @@
-import { z } from "zod";
-import { envelope, paginated } from "~/lib/api/schemas";
+import { z } from "zod"
+import { envelope, paginated } from "~/lib/api/schemas"
 
 const count = z
   .number()
   .nullish()
-  .transform((value) => value ?? 0);
+  .transform((value) => value ?? 0)
 
 const unlocksOverviewSchema = z.object({
   summary: z.object({
@@ -35,7 +35,7 @@ const unlocksOverviewSchema = z.object({
         .nullish(),
     })
     .nullish(),
-});
+})
 
 const unlockedProfileSchema = z.object({
   employer: z.string().nullish(),
@@ -47,17 +47,17 @@ const unlockedProfileSchema = z.object({
   interview: z.string().nullish(),
   ai_overall_score: z.union([z.string(), z.number()]).nullish(),
   unlocked_date: z.string(),
-});
+})
 
-export const unlocksOverviewResponseSchema = envelope(unlocksOverviewSchema);
+export const unlocksOverviewResponseSchema = envelope(unlocksOverviewSchema)
 export const unlockedProfilesResponseSchema = envelope(
-  paginated(unlockedProfileSchema),
-);
+  paginated(unlockedProfileSchema)
+)
 
-export type UnlockedProfile = z.infer<typeof unlockedProfileSchema>;
+export type UnlockedProfile = z.infer<typeof unlockedProfileSchema>
 export type UnlockedProfilesFilters = {
-  page: number;
-  search?: string;
-  start_date?: string;
-  end_date?: string;
-};
+  page: number
+  search?: string
+  start_date?: string
+  end_date?: string
+}

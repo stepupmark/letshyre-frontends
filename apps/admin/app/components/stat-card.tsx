@@ -1,24 +1,24 @@
-import type { ReactNode } from "react";
-import { Link } from "react-router";
-import type { LucideIcon } from "lucide-react";
+import type { ReactNode } from "react"
+import { Link } from "react-router"
+import type { LucideIcon } from "lucide-react"
 import {
   Card,
   CardAction,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card";
-import { Skeleton } from "~/components/ui/skeleton";
+} from "~/components/ui/card"
+import { Skeleton } from "~/components/ui/skeleton"
 
 type StatCardProps = {
-  label: string;
-  value: ReactNode;
-  icon?: LucideIcon;
-  hint?: ReactNode;
-  loading?: boolean;
+  label: string
+  value: ReactNode
+  icon?: LucideIcon
+  hint?: ReactNode
+  loading?: boolean
   /** Makes the whole card a link, e.g. to the filtered list behind the number. */
-  href?: string;
-};
+  href?: string
+}
 
 export function StatCard({
   label,
@@ -49,7 +49,7 @@ export function StatCard({
         )}
       </CardHeader>
     </Card>
-  );
+  )
 
   return href ? (
     <Link
@@ -60,5 +60,5 @@ export function StatCard({
     </Link>
   ) : (
     card
-  );
+  )
 }

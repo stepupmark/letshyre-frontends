@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from "react"
 
 export function DashboardSection({
   title,
@@ -6,10 +6,10 @@ export function DashboardSection({
   actions,
   children,
 }: {
-  title: string;
-  description?: string;
-  actions?: ReactNode;
-  children: ReactNode;
+  title: string
+  description?: string
+  actions?: ReactNode
+  children: ReactNode
 }) {
   return (
     <section className="space-y-4">
@@ -24,5 +24,5 @@ export function DashboardSection({
       </div>
       {children}
     </section>
-  );
+  )
 }

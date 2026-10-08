@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
-import { Inbox, type LucideIcon } from "lucide-react";
+import type { ReactNode } from "react"
+import { Inbox, type LucideIcon } from "lucide-react"
 import {
   Empty,
   EmptyContent,
@@ -7,15 +7,15 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "~/components/ui/empty";
+} from "~/components/ui/empty"
 
 type EmptyStateProps = {
-  title: string;
-  description?: string;
-  icon?: LucideIcon;
-  action?: ReactNode;
-  className?: string;
-};
+  title: string
+  description?: string
+  icon?: LucideIcon
+  action?: ReactNode
+  className?: string
+}
 
 export function EmptyState({
   title,
@@ -35,5 +35,5 @@ export function EmptyState({
       </EmptyHeader>
       {action && <EmptyContent>{action}</EmptyContent>}
     </Empty>
-  );
+  )
 }

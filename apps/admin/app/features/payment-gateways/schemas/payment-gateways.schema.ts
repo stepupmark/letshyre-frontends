@@ -1,13 +1,13 @@
-import { z } from "zod";
-import { envelope, id } from "~/lib/api/schemas";
+import { z } from "zod"
+import { envelope, id } from "~/lib/api/schemas"
 
 export const GATEWAY_PROVIDERS = {
   razorpay: "Razorpay",
   stripe: "Stripe",
   paypal: "PayPal",
-} as const;
+} as const
 
-export type GatewayProvider = keyof typeof GATEWAY_PROVIDERS;
+export type GatewayProvider = keyof typeof GATEWAY_PROVIDERS
 
 const gatewaySchema = z
   .object({
@@ -29,9 +29,9 @@ const gatewaySchema = z
     clientId: gateway.config.credentials.client_id ?? "",
     clientSecret: gateway.config.credentials.client_secret ?? "",
     sandbox: gateway.config.is_sandbox ?? false,
-  }));
+  }))
 
-export const gatewaysResponseSchema = envelope(z.array(gatewaySchema));
+export const gatewaysResponseSchema = envelope(z.array(gatewaySchema))
 
 export const gatewayFormSchema = z.object({
   provider: z.enum(["razorpay", "stripe", "paypal"]),
@@ -39,7 +39,7 @@ export const gatewayFormSchema = z.object({
   environment: z.enum(["sandbox", "live"]),
   clientId: z.string().trim().min(4, "Enter the client ID"),
   clientSecret: z.string().trim().min(6, "Enter the client secret"),
-});
+})
 
-export type Gateway = z.infer<typeof gatewaySchema>;
-export type GatewayFormValues = z.infer<typeof gatewayFormSchema>;
+export type Gateway = z.infer<typeof gatewaySchema>
+export type GatewayFormValues = z.infer<typeof gatewayFormSchema>

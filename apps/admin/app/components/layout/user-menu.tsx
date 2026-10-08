@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { Keyboard, KeyRound, LogOut } from "lucide-react";
-import { authQueries, ChangePasswordDialog, useLogout } from "~/features/auth";
-import { Avatar, AvatarFallback } from "~/components/ui/avatar";
-import { Button } from "~/components/ui/button";
+import { useState } from "react"
+import { useQuery } from "@tanstack/react-query"
+import { Keyboard, KeyRound, LogOut } from "lucide-react"
+import { authQueries, ChangePasswordDialog, useLogout } from "~/features/auth"
+import { Avatar, AvatarFallback } from "~/components/ui/avatar"
+import { Button } from "~/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,17 +12,17 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu";
-import { Skeleton } from "~/components/ui/skeleton";
-import { initials } from "~/lib/format";
-import { KeyboardShortcuts } from "./keyboard-shortcuts";
+} from "~/components/ui/dropdown-menu"
+import { Skeleton } from "~/components/ui/skeleton"
+import { initials } from "~/lib/format"
+import { KeyboardShortcuts } from "./keyboard-shortcuts"
 
 export function UserMenu() {
-  const [changePasswordOpen, setChangePasswordOpen] = useState(false);
-  const [shortcutsOpen, setShortcutsOpen] = useState(false);
-  const profile = useQuery(authQueries.me());
-  const logout = useLogout();
-  const user = profile.data;
+  const [changePasswordOpen, setChangePasswordOpen] = useState(false)
+  const [shortcutsOpen, setShortcutsOpen] = useState(false)
+  const profile = useQuery(authQueries.me())
+  const logout = useLogout()
+  const user = profile.data
 
   return (
     <>
@@ -82,5 +82,5 @@ export function UserMenu() {
       />
       <KeyboardShortcuts open={shortcutsOpen} onOpenChange={setShortcutsOpen} />
     </>
-  );
+  )
 }

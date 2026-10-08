@@ -1,26 +1,26 @@
-import { Link } from "react-router";
-import { useQuery } from "@tanstack/react-query";
-import type { ColumnDef } from "@tanstack/react-table";
+import { Link } from "react-router"
+import { useQuery } from "@tanstack/react-query"
+import type { ColumnDef } from "@tanstack/react-table"
 import {
   BadgeCheck,
   Building2,
   CalendarPlus,
   Clock,
   FileWarning,
-} from "lucide-react";
-import { useQueryState } from "nuqs";
-import { DataTable } from "~/components/data-table/data-table";
-import { ListEmptyState } from "~/components/feedback/list-empty-state";
-import { PageHeader } from "~/components/page-header";
-import { StatCard } from "~/components/stat-card";
-import { Button } from "~/components/ui/button";
-import { CompanyAvatar, KycStatusBadge } from "~/features/kyc";
-import { employersService } from "../services/employers.service";
-import { fetchAllPages } from "~/lib/fetch-all-pages";
-import { formatNumber } from "~/lib/format";
-import { pageParser } from "~/lib/search-params";
-import { employersQueries } from "../queries/employers.queries";
-import type { Employer } from "../schemas/employers.schema";
+} from "lucide-react"
+import { useQueryState } from "nuqs"
+import { DataTable } from "~/components/data-table/data-table"
+import { ListEmptyState } from "~/components/feedback/list-empty-state"
+import { PageHeader } from "~/components/page-header"
+import { StatCard } from "~/components/stat-card"
+import { Button } from "~/components/ui/button"
+import { CompanyAvatar, KycStatusBadge } from "~/features/kyc"
+import { employersService } from "../services/employers.service"
+import { fetchAllPages } from "~/lib/fetch-all-pages"
+import { formatNumber } from "~/lib/format"
+import { pageParser } from "~/lib/search-params"
+import { employersQueries } from "../queries/employers.queries"
+import type { Employer } from "../schemas/employers.schema"
 
 const columns: ColumnDef<Employer>[] = [
   {
@@ -33,7 +33,7 @@ const columns: ColumnDef<Employer>[] = [
     },
     header: "Company",
     cell: ({ row }) => {
-      const kyc = row.original.employer_kyc;
+      const kyc = row.original.employer_kyc
       return (
         <div className="flex items-center gap-3">
           <CompanyAvatar
@@ -50,7 +50,7 @@ const columns: ColumnDef<Employer>[] = [
             </span>
           </div>
         </div>
-      );
+      )
     },
   },
   {
@@ -99,13 +99,13 @@ const columns: ColumnDef<Employer>[] = [
       </Button>
     ),
   },
-];
+]
 
 function Summary() {
-  const summary = useQuery(employersQueries.summary());
-  if (summary.isError) return null;
-  const data = summary.data;
-  const loading = summary.isPending;
+  const summary = useQuery(employersQueries.summary())
+  if (summary.isError) return null
+  const data = summary.data
+  const loading = summary.isPending
 
   return (
     <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -147,12 +147,12 @@ function Summary() {
         value={formatNumber(data?.in_completed_kycs)}
       />
     </div>
-  );
+  )
 }
 
 export function EmployersPage() {
-  const [page, setPage] = useQueryState("page", pageParser);
-  const employers = useQuery(employersQueries.list(page));
+  const [page, setPage] = useQueryState("page", pageParser)
+  const employers = useQuery(employersQueries.list(page))
 
   return (
     <>
@@ -183,5 +183,5 @@ export function EmployersPage() {
         }
       />
     </>
-  );
+  )
 }

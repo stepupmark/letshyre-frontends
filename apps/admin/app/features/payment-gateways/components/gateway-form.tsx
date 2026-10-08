@@ -1,7 +1,7 @@
-import type { ReactNode } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
-import { PasswordInput } from "~/components/password-input";
+import type { ReactNode } from "react"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Controller, useForm } from "react-hook-form"
+import { PasswordInput } from "~/components/password-input"
 import {
   Field,
   FieldDescription,
@@ -10,31 +10,31 @@ import {
   FieldLabel,
   FieldLegend,
   FieldSet,
-} from "~/components/ui/field";
-import { Input } from "~/components/ui/input";
-import { Label } from "~/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
+} from "~/components/ui/field"
+import { Input } from "~/components/ui/input"
+import { Label } from "~/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "~/components/ui/select";
-import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard";
+} from "~/components/ui/select"
+import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard"
 import {
   GATEWAY_PROVIDERS,
   gatewayFormSchema,
   type GatewayFormValues,
-} from "../schemas/payment-gateways.schema";
-import { EMPTY_GATEWAY } from "../utils/gateway-values";
+} from "../schemas/payment-gateways.schema"
+import { EMPTY_GATEWAY } from "../utils/gateway-values"
 
 type GatewayFormProps = {
-  id: string;
-  defaultValues?: GatewayFormValues;
-  onSubmit: (values: GatewayFormValues) => void;
-  footer: ReactNode;
-};
+  id: string
+  defaultValues?: GatewayFormValues
+  onSubmit: (values: GatewayFormValues) => void
+  footer: ReactNode
+}
 
 export function GatewayForm({
   id,
@@ -45,8 +45,8 @@ export function GatewayForm({
   const form = useForm<GatewayFormValues>({
     resolver: zodResolver(gatewayFormSchema),
     defaultValues,
-  });
-  const { errors } = form.formState;
+  })
+  const { errors } = form.formState
 
   return (
     <form id={id} noValidate onSubmit={form.handleSubmit(onSubmit)}>
@@ -142,5 +142,5 @@ export function GatewayForm({
       </FieldGroup>
       {footer}
     </form>
-  );
+  )
 }

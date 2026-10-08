@@ -1,24 +1,24 @@
-import { Link } from "react-router";
-import { useQuery } from "@tanstack/react-query";
-import type { ColumnDef } from "@tanstack/react-table";
-import { BadgeCheck } from "lucide-react";
-import { useQueryStates } from "nuqs";
-import { DataTable } from "~/components/data-table/data-table";
-import { ListEmptyState } from "~/components/feedback/list-empty-state";
-import { PageHeader } from "~/components/page-header";
-import { Button } from "~/components/ui/button";
-import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
-import { RelativeTime } from "~/components/relative-time";
-import { kycService } from "../services/kyc.service";
-import { fetchAllPages } from "~/lib/fetch-all-pages";
-import { kycQueries } from "../queries/kyc.queries";
+import { Link } from "react-router"
+import { useQuery } from "@tanstack/react-query"
+import type { ColumnDef } from "@tanstack/react-table"
+import { BadgeCheck } from "lucide-react"
+import { useQueryStates } from "nuqs"
+import { DataTable } from "~/components/data-table/data-table"
+import { ListEmptyState } from "~/components/feedback/list-empty-state"
+import { PageHeader } from "~/components/page-header"
+import { Button } from "~/components/ui/button"
+import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs"
+import { RelativeTime } from "~/components/relative-time"
+import { kycService } from "../services/kyc.service"
+import { fetchAllPages } from "~/lib/fetch-all-pages"
+import { kycQueries } from "../queries/kyc.queries"
 import {
   KYC_STATUSES,
   type CompanyKyc,
   type KycStatus,
-} from "../schemas/kyc.schema";
-import { kycSearchParams } from "../search-params";
-import { CompanyAvatar, KycStatusBadge } from "./kyc-status-badge";
+} from "../schemas/kyc.schema"
+import { kycSearchParams } from "../search-params"
+import { CompanyAvatar, KycStatusBadge } from "./kyc-status-badge"
 
 const columns: ColumnDef<CompanyKyc>[] = [
   {
@@ -72,11 +72,11 @@ const columns: ColumnDef<CompanyKyc>[] = [
       </Button>
     ),
   },
-];
+]
 
 export function KycListPage() {
-  const [{ status, page }, setParams] = useQueryStates(kycSearchParams);
-  const kyc = useQuery(kycQueries.list(page, status));
+  const [{ status, page }, setParams] = useQueryStates(kycSearchParams)
+  const kyc = useQuery(kycQueries.list(page, status))
 
   return (
     <>
@@ -128,5 +128,5 @@ export function KycListPage() {
         }
       />
     </>
-  );
+  )
 }

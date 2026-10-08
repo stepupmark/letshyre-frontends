@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { Link } from "react-router";
-import { useQuery } from "@tanstack/react-query";
-import { CreditCard, LoaderCircle, Plus } from "lucide-react";
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog";
-import { EmptyState } from "~/components/feedback/empty-state";
-import { ErrorState } from "~/components/feedback/error-state";
-import { PageHeader } from "~/components/page-header";
-import { Button } from "~/components/ui/button";
+import { useState } from "react"
+import { Link } from "react-router"
+import { useQuery } from "@tanstack/react-query"
+import { CreditCard, LoaderCircle, Plus } from "lucide-react"
+import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
+import { EmptyState } from "~/components/feedback/empty-state"
+import { ErrorState } from "~/components/feedback/error-state"
+import { PageHeader } from "~/components/page-header"
+import { Button } from "~/components/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -15,17 +15,17 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "~/components/ui/dialog";
-import { Skeleton } from "~/components/ui/skeleton";
+} from "~/components/ui/dialog"
+import { Skeleton } from "~/components/ui/skeleton"
 import {
   useDeleteGateway,
   useUpdateGateway,
-} from "../mutations/use-gateway-mutations";
-import { paymentGatewaysQueries } from "../queries/payment-gateways.queries";
-import type { Gateway } from "../schemas/payment-gateways.schema";
-import { toGatewayFormValues } from "../utils/gateway-values";
-import { GatewayCard } from "./gateway-card";
-import { GatewayForm } from "./gateway-form";
+} from "../mutations/use-gateway-mutations"
+import { paymentGatewaysQueries } from "../queries/payment-gateways.queries"
+import type { Gateway } from "../schemas/payment-gateways.schema"
+import { toGatewayFormValues } from "../utils/gateway-values"
+import { GatewayCard } from "./gateway-card"
+import { GatewayForm } from "./gateway-form"
 
 const addButton = (
   <Button asChild>
@@ -33,29 +33,29 @@ const addButton = (
       <Plus /> Add gateway
     </Link>
   </Button>
-);
+)
 
 export function PaymentGatewaysPage() {
-  const gateways = useQuery(paymentGatewaysQueries.list());
-  const update = useUpdateGateway();
-  const remove = useDeleteGateway();
+  const gateways = useQuery(paymentGatewaysQueries.list())
+  const update = useUpdateGateway()
+  const remove = useDeleteGateway()
 
-  const [selected, setSelected] = useState<Gateway | null>(null);
-  const [editOpen, setEditOpen] = useState(false);
-  const [deleteOpen, setDeleteOpen] = useState(false);
+  const [selected, setSelected] = useState<Gateway | null>(null)
+  const [editOpen, setEditOpen] = useState(false)
+  const [deleteOpen, setDeleteOpen] = useState(false)
 
-  let content;
+  let content
   if (gateways.isError)
     content = (
       <ErrorState
         error={gateways.error}
         onRetry={() => void gateways.refetch()}
       />
-    );
+    )
   else if (!gateways.data)
     content = Array.from({ length: 2 }, (_, index) => (
       <Skeleton key={index} className="h-40 w-full rounded-xl" />
-    ));
+    ))
   else if (!gateways.data.length)
     content = (
       <EmptyState
@@ -64,22 +64,22 @@ export function PaymentGatewaysPage() {
         description="Add one so employers can buy credits."
         action={addButton}
       />
-    );
+    )
   else
     content = gateways.data.map((gateway) => (
       <GatewayCard
         key={gateway.id}
         gateway={gateway}
         onEdit={() => {
-          setSelected(gateway);
-          setEditOpen(true);
+          setSelected(gateway)
+          setEditOpen(true)
         }}
         onDelete={() => {
-          setSelected(gateway);
-          setDeleteOpen(true);
+          setSelected(gateway)
+          setDeleteOpen(true)
         }}
       />
-    ));
+    ))
 
   return (
     <>
@@ -106,7 +106,7 @@ export function PaymentGatewaysPage() {
               onSubmit={(values) =>
                 update.mutate(
                   { id: selected.id, values },
-                  { onSuccess: () => setEditOpen(false) },
+                  { onSuccess: () => setEditOpen(false) }
                 )
               }
               footer={
@@ -138,10 +138,10 @@ export function PaymentGatewaysPage() {
         destructive
         pending={remove.isPending}
         onConfirm={() => {
-          if (selected) remove.mutate(selected.id);
-          setDeleteOpen(false);
+          if (selected) remove.mutate(selected.id)
+          setDeleteOpen(false)
         }}
       />
     </>
-  );
+  )
 }

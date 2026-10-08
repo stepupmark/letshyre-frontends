@@ -1,6 +1,6 @@
-import { Link } from "react-router";
-import { useQuery } from "@tanstack/react-query";
-import type { ColumnDef } from "@tanstack/react-table";
+import { Link } from "react-router"
+import { useQuery } from "@tanstack/react-query"
+import type { ColumnDef } from "@tanstack/react-table"
 import {
   BadgeCheck,
   CalendarPlus,
@@ -8,29 +8,29 @@ import {
   CircleDashed,
   Users,
   X,
-} from "lucide-react";
-import { useQueryStates } from "nuqs";
-import { DataTable } from "~/components/data-table/data-table";
-import { FilterSelect } from "~/components/filter-select";
-import { ListEmptyState } from "~/components/feedback/list-empty-state";
-import { PageHeader } from "~/components/page-header";
-import { SearchInput } from "~/components/search-input";
-import { StatCard } from "~/components/stat-card";
-import { StatusBadge } from "~/components/status-badge";
-import { Button } from "~/components/ui/button";
-import { Progress } from "~/components/ui/progress";
-import { RelativeTime } from "~/components/relative-time";
-import { candidatesService } from "../services/candidates.service";
-import { fetchAllPages } from "~/lib/fetch-all-pages";
-import { useDebouncedValue } from "~/hooks/use-debounced-value";
-import { formatNumber } from "~/lib/format";
-import { candidatesQueries } from "../queries/candidates.queries";
+} from "lucide-react"
+import { useQueryStates } from "nuqs"
+import { DataTable } from "~/components/data-table/data-table"
+import { FilterSelect } from "~/components/filter-select"
+import { ListEmptyState } from "~/components/feedback/list-empty-state"
+import { PageHeader } from "~/components/page-header"
+import { SearchInput } from "~/components/search-input"
+import { StatCard } from "~/components/stat-card"
+import { StatusBadge } from "~/components/status-badge"
+import { Button } from "~/components/ui/button"
+import { Progress } from "~/components/ui/progress"
+import { RelativeTime } from "~/components/relative-time"
+import { candidatesService } from "../services/candidates.service"
+import { fetchAllPages } from "~/lib/fetch-all-pages"
+import { useDebouncedValue } from "~/hooks/use-debounced-value"
+import { formatNumber } from "~/lib/format"
+import { candidatesQueries } from "../queries/candidates.queries"
 import {
   GENDERS,
   INDUSTRIES,
   type Candidate,
-} from "../schemas/candidates.schema";
-import { candidatesSearchParams, toCandidateFilters } from "../search-params";
+} from "../schemas/candidates.schema"
+import { candidatesSearchParams, toCandidateFilters } from "../search-params"
 
 const columns: ColumnDef<Candidate>[] = [
   {
@@ -106,13 +106,13 @@ const columns: ColumnDef<Candidate>[] = [
       </Button>
     ),
   },
-];
+]
 
 function Summary() {
-  const summary = useQuery(candidatesQueries.summary());
-  if (summary.isError) return null;
-  const data = summary.data;
-  const loading = summary.isPending;
+  const summary = useQuery(candidatesQueries.summary())
+  if (summary.isError) return null
+  const data = summary.data
+  const loading = summary.isPending
 
   return (
     <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -147,21 +147,17 @@ function Summary() {
         value={formatNumber(data?.verified_candidates)}
       />
     </div>
-  );
+  )
 }
 
 export function CandidatesPage() {
-  const [params, setParams] = useQueryStates(candidatesSearchParams);
-  const q = useDebouncedValue(params.q);
-  const filters = toCandidateFilters({ ...params, q });
-  const candidates = useQuery(candidatesQueries.list(filters));
+  const [params, setParams] = useQueryStates(candidatesSearchParams)
+  const q = useDebouncedValue(params.q)
+  const filters = toCandidateFilters({ ...params, q })
+  const candidates = useQuery(candidatesQueries.list(filters))
   const hasFilters = Boolean(
-    params.q ||
-    params.gender ||
-    params.industry ||
-    params.kyc ||
-    params.profile,
-  );
+    params.q || params.gender || params.industry || params.kyc || params.profile
+  )
 
   return (
     <>
@@ -251,5 +247,5 @@ export function CandidatesPage() {
         }
       />
     </>
-  );
+  )
 }

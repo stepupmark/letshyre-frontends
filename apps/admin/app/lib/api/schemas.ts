@@ -1,11 +1,11 @@
-import { z } from "zod";
+import { z } from "zod"
 
 export const envelope = <T extends z.ZodType>(data: T) =>
   z.object({
     success: z.boolean().optional(),
     message: z.string().optional(),
     data,
-  });
+  })
 
 export const paginated = <T extends z.ZodType>(item: T) =>
   z.object({
@@ -16,6 +16,6 @@ export const paginated = <T extends z.ZodType>(item: T) =>
     next: z.string().nullish(),
     previous: z.string().nullish(),
     results: z.array(item),
-  });
+  })
 
-export const id = z.union([z.string(), z.number()]).transform(String);
+export const id = z.union([z.string(), z.number()]).transform(String)

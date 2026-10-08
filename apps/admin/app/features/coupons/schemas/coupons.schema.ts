@@ -1,5 +1,5 @@
-import { z } from "zod";
-import { envelope, id, paginated } from "~/lib/api/schemas";
+import { z } from "zod"
+import { envelope, id, paginated } from "~/lib/api/schemas"
 
 const couponSchema = z.object({
   id,
@@ -14,9 +14,9 @@ const couponSchema = z.object({
   start_date: z.string(),
   end_date: z.string(),
   created_at: z.string().nullish(),
-});
+})
 
-export const couponsResponseSchema = envelope(paginated(couponSchema));
+export const couponsResponseSchema = envelope(paginated(couponSchema))
 
 const positiveNumber = (label: string) =>
   z
@@ -24,7 +24,7 @@ const positiveNumber = (label: string) =>
     .trim()
     .min(1, `Enter ${label}`)
     .refine((value) => !Number.isNaN(Number(value)), "Enter a number")
-    .refine((value) => Number(value) > 0, "Must be more than 0");
+    .refine((value) => Number(value) > 0, "Must be more than 0")
 
 export const couponFormSchema = z
   .object({
@@ -38,7 +38,7 @@ export const couponFormSchema = z
     discount_value: positiveNumber("a discount"),
     usage_limit: positiveNumber("a usage limit").refine(
       (value) => Number.isInteger(Number(value)),
-      "Use a whole number",
+      "Use a whole number"
     ),
     start_date: z.string().min(1, "Pick a start date"),
     end_date: z.string().min(1, "Pick an end date"),
@@ -46,23 +46,23 @@ export const couponFormSchema = z
   .refine(
     (data) =>
       data.discount_type !== "percentage" || Number(data.discount_value) <= 99,
-    { message: "At most 99%", path: ["discount_value"] },
+    { message: "At most 99%", path: ["discount_value"] }
   )
   .refine(
     (data) =>
       !data.start_date ||
       !data.end_date ||
       new Date(data.end_date) > new Date(data.start_date),
-    { message: "Must be after the start date", path: ["end_date"] },
-  );
+    { message: "Must be after the start date", path: ["end_date"] }
+  )
 
-export type Coupon = z.infer<typeof couponSchema>;
-export type CouponFormValues = z.infer<typeof couponFormSchema>;
+export type Coupon = z.infer<typeof couponSchema>
+export type CouponFormValues = z.infer<typeof couponFormSchema>
 export type CouponPayload = {
-  code: string;
-  discount_type: "flat" | "percentage";
-  discount_value: string;
-  usage_limit: number;
-  start_date: string;
-  end_date: string;
-};
+  code: string
+  discount_type: "flat" | "percentage"
+  discount_value: string
+  usage_limit: number
+  start_date: string
+  end_date: string
+}

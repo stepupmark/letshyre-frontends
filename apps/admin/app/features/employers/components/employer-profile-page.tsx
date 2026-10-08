@@ -1,29 +1,29 @@
-import { Link, useParams } from "react-router";
-import { useQuery } from "@tanstack/react-query";
-import { ArrowLeft } from "lucide-react";
-import { DetailList } from "~/components/detail-list";
-import { EmptyState } from "~/components/feedback/empty-state";
-import { ErrorState } from "~/components/feedback/error-state";
-import { Button } from "~/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
-import { Skeleton } from "~/components/ui/skeleton";
+import { Link, useParams } from "react-router"
+import { useQuery } from "@tanstack/react-query"
+import { ArrowLeft } from "lucide-react"
+import { DetailList } from "~/components/detail-list"
+import { EmptyState } from "~/components/feedback/empty-state"
+import { ErrorState } from "~/components/feedback/error-state"
+import { Button } from "~/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card"
+import { Skeleton } from "~/components/ui/skeleton"
 import {
   CompanyAvatar,
   CompanyKycDetails,
   KycStatusBadge,
-} from "~/features/kyc";
-import { Copyable } from "~/components/copyable";
-import { useDocumentTitle } from "~/hooks/use-document-title";
-import { formatDate, formatNumber } from "~/lib/format";
-import { employersQueries } from "../queries/employers.queries";
+} from "~/features/kyc"
+import { Copyable } from "~/components/copyable"
+import { useDocumentTitle } from "~/hooks/use-document-title"
+import { formatDate, formatNumber } from "~/lib/format"
+import { employersQueries } from "../queries/employers.queries"
 
 export function EmployerProfilePage() {
-  const { id = "" } = useParams();
-  const employer = useQuery(employersQueries.detail(id));
+  const { id = "" } = useParams()
+  const employer = useQuery(employersQueries.detail(id))
   useDocumentTitle(
     employer.data &&
-      `${employer.data.employer_kyc?.company_name || employer.data.user_name || "Employer"} · Employers`,
-  );
+      `${employer.data.employer_kyc?.company_name || employer.data.user_name || "Employer"} · Employers`
+  )
 
   const back = (
     <Button variant="ghost" size="sm" className="mb-4 -ml-2" asChild>
@@ -31,7 +31,7 @@ export function EmployerProfilePage() {
         <ArrowLeft /> Employers
       </Link>
     </Button>
-  );
+  )
 
   if (employer.isError)
     return (
@@ -42,7 +42,7 @@ export function EmployerProfilePage() {
           onRetry={() => void employer.refetch()}
         />
       </>
-    );
+    )
 
   if (!employer.data)
     return (
@@ -53,10 +53,10 @@ export function EmployerProfilePage() {
           <Skeleton className="h-64 w-full rounded-xl" />
         </div>
       </>
-    );
+    )
 
-  const data = employer.data;
-  const kyc = data.employer_kyc;
+  const data = employer.data
+  const kyc = data.employer_kyc
 
   return (
     <>
@@ -128,5 +128,5 @@ export function EmployerProfilePage() {
         </Card>
       </div>
     </>
-  );
+  )
 }

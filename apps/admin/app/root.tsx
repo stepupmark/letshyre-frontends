@@ -1,4 +1,4 @@
-import { lazy, Suspense, type ReactNode } from "react";
+import { lazy, Suspense, type ReactNode } from "react"
 import {
   isRouteErrorResponse,
   Link,
@@ -7,32 +7,32 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "react-router";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { NuqsAdapter } from "nuqs/adapters/react-router/v8";
-import { LoaderCircle } from "lucide-react";
-import type { Route } from "./+types/root";
-import { ThemeProvider } from "~/components/theme-provider";
-import { Button } from "~/components/ui/button";
-import { Toaster } from "~/components/ui/sonner";
-import { TooltipProvider } from "~/components/ui/tooltip";
-import { queryClient } from "~/lib/query/query-client";
-import "./app.css";
+} from "react-router"
+import { QueryClientProvider } from "@tanstack/react-query"
+import { NuqsAdapter } from "nuqs/adapters/react-router/v8"
+import { LoaderCircle } from "lucide-react"
+import type { Route } from "./+types/root"
+import { ThemeProvider } from "~/components/theme-provider"
+import { Button } from "~/components/ui/button"
+import { Toaster } from "~/components/ui/sonner"
+import { TooltipProvider } from "~/components/ui/tooltip"
+import { queryClient } from "~/lib/query/query-client"
+import "./app.css"
 
 const ReactQueryDevtools = import.meta.env.DEV
   ? lazy(() =>
       import("@tanstack/react-query-devtools").then((m) => ({
         default: m.ReactQueryDevtools,
-      })),
+      }))
     )
-  : () => null;
+  : () => null
 
 // runs before first paint so dark mode users don't see a light flash
-const themeScript = `try{var t=localStorage.getItem("theme");var d=t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.classList.toggle("dark",d)}catch(e){}`;
+const themeScript = `try{var t=localStorage.getItem("theme");var d=t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.classList.toggle("dark",d)}catch(e){}`
 
 export const meta: Route.MetaFunction = () => [
   { name: "robots", content: "noindex, nofollow" },
-];
+]
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
@@ -52,7 +52,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <Scripts />
       </body>
     </html>
-  );
+  )
 }
 
 export default function App() {
@@ -70,7 +70,7 @@ export default function App() {
         <ReactQueryDevtools buttonPosition="bottom-left" />
       </Suspense>
     </QueryClientProvider>
-  );
+  )
 }
 
 export function HydrateFallback() {
@@ -78,25 +78,25 @@ export function HydrateFallback() {
     <div className="flex h-screen items-center justify-center">
       <LoaderCircle className="size-6 animate-spin text-muted-foreground" />
     </div>
-  );
+  )
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let title = "Something went wrong";
-  let details = "An unexpected error occurred. Please try again.";
-  let stack: string | undefined;
+  let title = "Something went wrong"
+  let details = "An unexpected error occurred. Please try again."
+  let stack: string | undefined
 
   if (isRouteErrorResponse(error)) {
-    title = error.status === 404 ? "Page not found" : `Error ${error.status}`;
+    title = error.status === 404 ? "Page not found" : `Error ${error.status}`
     details =
       error.status === 404
         ? "The page you're looking for doesn't exist."
-        : error.statusText || details;
+        : error.statusText || details
   } else if (error instanceof Error && error.name === "ApiError") {
-    details = error.message;
+    details = error.message
   } else if (import.meta.env.DEV && error instanceof Error) {
-    details = error.message;
-    stack = error.stack;
+    details = error.message
+    stack = error.stack
   }
 
   return (
@@ -117,5 +117,5 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
         </Button>
       </div>
     </main>
-  );
+  )
 }

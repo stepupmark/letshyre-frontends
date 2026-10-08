@@ -1,9 +1,9 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
-import { LoaderCircle } from "lucide-react";
-import { PasswordInput } from "~/components/password-input";
-import { Alert, AlertDescription } from "~/components/ui/alert";
-import { Button } from "~/components/ui/button";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Controller, useForm } from "react-hook-form"
+import { LoaderCircle } from "lucide-react"
+import { PasswordInput } from "~/components/password-input"
+import { Alert, AlertDescription } from "~/components/ui/alert"
+import { Button } from "~/components/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -12,23 +12,23 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "~/components/ui/dialog";
+} from "~/components/ui/dialog"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "~/components/ui/field";
-import { useChangePassword } from "../mutations/use-change-password";
-import { changePasswordSchema } from "../schemas/auth.schema";
-import type { ChangePasswordInput } from "../types";
+} from "~/components/ui/field"
+import { useChangePassword } from "../mutations/use-change-password"
+import { changePasswordSchema } from "../schemas/auth.schema"
+import type { ChangePasswordInput } from "../types"
 
 const EMPTY: ChangePasswordInput = {
   currentPassword: "",
   newPassword: "",
   confirmPassword: "",
-};
+}
 
 const FIELDS = [
   {
@@ -42,37 +42,37 @@ const FIELDS = [
     label: "Confirm new password",
     autoComplete: "new-password",
   },
-] as const;
+] as const
 
 type ChangePasswordDialogProps = {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-};
+  open: boolean
+  onOpenChange: (open: boolean) => void
+}
 
 export function ChangePasswordDialog({
   open,
   onOpenChange,
 }: ChangePasswordDialogProps) {
-  const changePassword = useChangePassword();
+  const changePassword = useChangePassword()
   const form = useForm<ChangePasswordInput>({
     resolver: zodResolver(changePasswordSchema),
     defaultValues: EMPTY,
-  });
+  })
 
   const handleOpenChange = (next: boolean) => {
     if (!next) {
-      form.reset(EMPTY);
-      changePassword.reset();
+      form.reset(EMPTY)
+      changePassword.reset()
     }
-    onOpenChange(next);
-  };
+    onOpenChange(next)
+  }
 
   const submit = form.handleSubmit(({ currentPassword, newPassword }) =>
     changePassword.mutate(
       { currentPassword, newPassword },
-      { onSuccess: () => handleOpenChange(false) },
-    ),
-  );
+      { onSuccess: () => handleOpenChange(false) }
+    )
+  )
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
@@ -133,5 +133,5 @@ export function ChangePasswordDialog({
         </form>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

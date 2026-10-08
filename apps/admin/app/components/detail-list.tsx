@@ -1,9 +1,9 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from "react"
 
 export function DetailList({
   items,
 }: {
-  items: { label: string; value: ReactNode }[];
+  items: { label: string; value: ReactNode }[]
 }) {
   return (
     <dl className="grid gap-x-6 gap-y-4 sm:grid-cols-2">
@@ -16,5 +16,5 @@ export function DetailList({
         </div>
       ))}
     </dl>
-  );
+  )
 }

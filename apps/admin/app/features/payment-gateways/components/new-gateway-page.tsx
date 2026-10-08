@@ -1,14 +1,14 @@
-import { Link, useNavigate } from "react-router";
-import { LoaderCircle } from "lucide-react";
-import { PageHeader } from "~/components/page-header";
-import { Button } from "~/components/ui/button";
-import { Card, CardContent } from "~/components/ui/card";
-import { useCreateGateway } from "../mutations/use-gateway-mutations";
-import { GatewayForm } from "./gateway-form";
+import { Link, useNavigate } from "react-router"
+import { LoaderCircle } from "lucide-react"
+import { PageHeader } from "~/components/page-header"
+import { Button } from "~/components/ui/button"
+import { Card, CardContent } from "~/components/ui/card"
+import { useCreateGateway } from "../mutations/use-gateway-mutations"
+import { GatewayForm } from "./gateway-form"
 
 export function NewGatewayPage() {
-  const navigate = useNavigate();
-  const create = useCreateGateway();
+  const navigate = useNavigate()
+  const create = useCreateGateway()
 
   return (
     <>
@@ -42,5 +42,5 @@ export function NewGatewayPage() {
         </CardContent>
       </Card>
     </>
-  );
+  )
 }

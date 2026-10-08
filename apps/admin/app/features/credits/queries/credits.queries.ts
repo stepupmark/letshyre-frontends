@@ -1,9 +1,9 @@
-import { queryOptions } from "@tanstack/react-query";
-import { creditsService } from "../services/credits.service";
+import { queryOptions } from "@tanstack/react-query"
+import { creditsService } from "../services/credits.service"
 
 export const creditsKeys = {
   all: ["credits"] as const,
-};
+}
 
 export const creditsQueries = {
   detail: () =>
@@ -11,4 +11,4 @@ export const creditsQueries = {
       queryKey: creditsKeys.all,
       queryFn: ({ signal }) => creditsService.get(signal),
     }),
-};
+}

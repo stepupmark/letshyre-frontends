@@ -1,36 +1,36 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
-import { Link, useSearchParams } from "react-router";
-import { LoaderCircle } from "lucide-react";
-import { PasswordInput } from "~/components/password-input";
-import { Alert, AlertDescription } from "~/components/ui/alert";
-import { Button } from "~/components/ui/button";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Controller, useForm } from "react-hook-form"
+import { Link, useSearchParams } from "react-router"
+import { LoaderCircle } from "lucide-react"
+import { PasswordInput } from "~/components/password-input"
+import { Alert, AlertDescription } from "~/components/ui/alert"
+import { Button } from "~/components/ui/button"
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "~/components/ui/field";
-import { Input } from "~/components/ui/input";
-import { useLogin } from "../mutations/use-login";
-import { loginSchema } from "../schemas/auth.schema";
-import type { LoginInput } from "../types";
-import { AuthHeading } from "./auth-layout";
+} from "~/components/ui/field"
+import { Input } from "~/components/ui/input"
+import { useLogin } from "../mutations/use-login"
+import { loginSchema } from "../schemas/auth.schema"
+import type { LoginInput } from "../types"
+import { AuthHeading } from "./auth-layout"
 
 const REASON_MESSAGES: Record<string, string> = {
   expired: "Your session expired. Please sign in again.",
   idle: "You were signed out after a period of inactivity.",
   forbidden: "This account doesn't have admin access.",
-};
+}
 
 export function SignInForm() {
-  const [searchParams] = useSearchParams();
-  const reason = REASON_MESSAGES[searchParams.get("reason") ?? ""];
-  const login = useLogin();
+  const [searchParams] = useSearchParams()
+  const reason = REASON_MESSAGES[searchParams.get("reason") ?? ""]
+  const login = useLogin()
   const form = useForm<LoginInput>({
     resolver: zodResolver(loginSchema),
     defaultValues: { email: "", password: "" },
-  });
+  })
 
   return (
     <>
@@ -99,5 +99,5 @@ export function SignInForm() {
         </FieldGroup>
       </form>
     </>
-  );
+  )
 }

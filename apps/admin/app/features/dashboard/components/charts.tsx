@@ -6,37 +6,37 @@ import {
   CartesianGrid,
   XAxis,
   YAxis,
-} from "recharts";
+} from "recharts"
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
   type ChartConfig,
-} from "~/components/ui/chart";
+} from "~/components/ui/chart"
 import {
   formatCompactCurrency,
   formatCurrency,
   formatShortDate,
-} from "~/lib/format";
+} from "~/lib/format"
 
 const revenueConfig = {
   revenue: { label: "Revenue", color: "var(--chart-2)" },
-} satisfies ChartConfig;
+} satisfies ChartConfig
 
 const activityConfig = {
   active_count: { label: "Active candidates", color: "var(--chart-2)" },
-} satisfies ChartConfig;
+} satisfies ChartConfig
 
 const scoreConfig = {
   avg_score: { label: "Average score", color: "var(--chart-2)" },
-} satisfies ChartConfig;
+} satisfies ChartConfig
 
 export function RevenueChart({
   data,
   onMonthClick,
 }: {
-  data: { month: string; revenue: number }[];
-  onMonthClick?: (month: number) => void;
+  data: { month: string; revenue: number }[]
+  onMonthClick?: (month: number) => void
 }) {
   return (
     <ChartContainer config={revenueConfig} className="aspect-[3/1] w-full">
@@ -70,13 +70,13 @@ export function RevenueChart({
         />
       </BarChart>
     </ChartContainer>
-  );
+  )
 }
 
 export function ActivityChart({
   data,
 }: {
-  data: { date: string; active_count: number }[];
+  data: { date: string; active_count: number }[]
 }) {
   return (
     <ChartContainer config={activityConfig} className="aspect-[3/1] w-full">
@@ -111,13 +111,13 @@ export function ActivityChart({
         />
       </AreaChart>
     </ChartContainer>
-  );
+  )
 }
 
 export function RoleScoreChart({
   data,
 }: {
-  data: { role: string; avg_score: number }[];
+  data: { role: string; avg_score: number }[]
 }) {
   return (
     <ChartContainer config={scoreConfig} className="aspect-[2/1] w-full">
@@ -135,5 +135,5 @@ export function RoleScoreChart({
         <Bar dataKey="avg_score" fill="var(--color-avg_score)" radius={4} />
       </BarChart>
     </ChartContainer>
-  );
+  )
 }

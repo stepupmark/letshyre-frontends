@@ -1,13 +1,13 @@
-import type { AnchorHTMLAttributes, ReactNode } from "react";
-import { safeExternalUrl } from "~/lib/safe-url";
+import type { AnchorHTMLAttributes, ReactNode } from "react"
+import { safeExternalUrl } from "~/lib/safe-url"
 
 type ExternalLinkProps = Omit<
   AnchorHTMLAttributes<HTMLAnchorElement>,
   "href" | "target" | "rel"
 > & {
-  href: string | null | undefined;
-  fallback?: ReactNode;
-};
+  href: string | null | undefined
+  fallback?: ReactNode
+}
 
 export function ExternalLink({
   href,
@@ -15,11 +15,11 @@ export function ExternalLink({
   children,
   ...props
 }: ExternalLinkProps) {
-  const url = safeExternalUrl(href);
-  if (!url) return <>{fallback}</>;
+  const url = safeExternalUrl(href)
+  if (!url) return <>{fallback}</>
   return (
     <a href={url} target="_blank" rel="noopener noreferrer" {...props}>
       {children}
     </a>
-  );
+  )
 }

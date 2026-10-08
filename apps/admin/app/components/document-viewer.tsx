@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 import {
   ChevronLeft,
   ChevronRight,
@@ -9,44 +9,44 @@ import {
   RotateCw,
   ZoomIn,
   ZoomOut,
-} from "lucide-react";
-import { cn } from "cn";
-import { Button } from "~/components/ui/button";
+} from "lucide-react"
+import { cn } from "cn"
+import { Button } from "~/components/ui/button"
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogTitle,
-} from "~/components/ui/dialog";
+} from "~/components/ui/dialog"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "~/components/ui/select";
-import { safeExternalUrl } from "~/lib/safe-url";
+} from "~/components/ui/select"
+import { safeExternalUrl } from "~/lib/safe-url"
 
 export type ViewerDocument = {
-  label: string;
-  url: string | null | undefined;
-};
+  label: string
+  url: string | null | undefined
+}
 
-const ZOOM_STEPS = [0.5, 0.75, 1, 1.25, 1.5, 2, 3];
+const ZOOM_STEPS = [0.5, 0.75, 1, 1.25, 1.5, 2, 3]
 
 function kindOf(url: string) {
-  const path = new URL(url).pathname.toLowerCase();
-  if (path.endsWith(".pdf")) return "pdf";
-  if (/\.(png|jpe?g|webp|gif|avif|bmp)$/.test(path)) return "image";
-  return "unknown";
+  const path = new URL(url).pathname.toLowerCase()
+  if (path.endsWith(".pdf")) return "pdf"
+  if (/\.(png|jpe?g|webp|gif|avif|bmp)$/.test(path)) return "image"
+  return "unknown"
 }
 
 function Preview({ url, label }: { url: string; label: string }) {
-  const [zoom, setZoom] = useState(1);
-  const [rotation, setRotation] = useState(0);
-  const [failed, setFailed] = useState(false);
-  const kind = kindOf(url);
-  const zoomIndex = ZOOM_STEPS.indexOf(zoom);
+  const [zoom, setZoom] = useState(1)
+  const [rotation, setRotation] = useState(0)
+  const [failed, setFailed] = useState(false)
+  const kind = kindOf(url)
+  const zoomIndex = ZOOM_STEPS.indexOf(zoom)
 
   if (kind === "pdf")
     return (
@@ -56,7 +56,7 @@ function Preview({ url, label }: { url: string; label: string }) {
         className="size-full bg-muted"
         referrerPolicy="no-referrer"
       />
-    );
+    )
 
   if (failed)
     return (
@@ -69,7 +69,7 @@ function Preview({ url, label }: { url: string; label: string }) {
           </a>
         </Button>
       </div>
-    );
+    )
 
   return (
     <div className="relative size-full">
@@ -77,7 +77,7 @@ function Preview({ url, label }: { url: string; label: string }) {
         <div
           className={cn(
             "flex min-h-full p-4",
-            zoom <= 1 && "items-center justify-center",
+            zoom <= 1 && "items-center justify-center"
           )}
         >
           <img
@@ -109,8 +109,8 @@ function Preview({ url, label }: { url: string; label: string }) {
           type="button"
           className="w-12 text-center text-xs tabular-nums"
           onClick={() => {
-            setZoom(1);
-            setRotation(0);
+            setZoom(1)
+            setRotation(0)
           }}
           aria-label="Reset zoom and rotation"
         >
@@ -135,16 +135,16 @@ function Preview({ url, label }: { url: string; label: string }) {
         </Button>
       </div>
     </div>
-  );
+  )
 }
 
 type DocumentViewerProps = {
-  documents: ViewerDocument[];
-  index: number;
-  onIndexChange: (index: number) => void;
-  onExpand?: () => void;
-  className?: string;
-};
+  documents: ViewerDocument[]
+  index: number
+  onIndexChange: (index: number) => void
+  onExpand?: () => void
+  className?: string
+}
 
 export function DocumentViewer({
   documents,
@@ -153,15 +153,15 @@ export function DocumentViewer({
   onExpand,
   className,
 }: DocumentViewerProps) {
-  const current = documents[index];
-  const url = safeExternalUrl(current?.url);
-  const last = documents.length - 1;
+  const current = documents[index]
+  const url = safeExternalUrl(current?.url)
+  const last = documents.length - 1
 
   return (
     <div
       className={cn(
         "flex flex-col overflow-hidden rounded-xl border bg-card",
-        className,
+        className
       )}
     >
       <div className="flex items-center gap-1 border-b p-2">
@@ -253,37 +253,37 @@ export function DocumentViewer({
         )}
       </div>
     </div>
-  );
+  )
 }
 
 type DocumentViewerDialogProps = {
-  documents: ViewerDocument[];
-  index: number | null;
-  onIndexChange: (index: number | null) => void;
-};
+  documents: ViewerDocument[]
+  index: number | null
+  onIndexChange: (index: number | null) => void
+}
 
 export function DocumentViewerDialog({
   documents,
   index,
   onIndexChange,
 }: DocumentViewerDialogProps) {
-  const open = index !== null;
+  const open = index !== null
 
   useEffect(() => {
-    if (index === null) return;
+    if (index === null) return
     const onKeyDown = (event: KeyboardEvent) => {
       if (
         event.target instanceof Element &&
         event.target.closest("[role=listbox]")
       )
-        return;
-      if (event.key === "ArrowLeft" && index > 0) onIndexChange(index - 1);
+        return
+      if (event.key === "ArrowLeft" && index > 0) onIndexChange(index - 1)
       if (event.key === "ArrowRight" && index < documents.length - 1)
-        onIndexChange(index + 1);
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [index, documents.length, onIndexChange]);
+        onIndexChange(index + 1)
+    }
+    window.addEventListener("keydown", onKeyDown)
+    return () => window.removeEventListener("keydown", onKeyDown)
+  }, [index, documents.length, onIndexChange])
 
   return (
     <Dialog open={open} onOpenChange={(next) => !next && onIndexChange(null)}>
@@ -302,16 +302,16 @@ export function DocumentViewerDialog({
         )}
       </DialogContent>
     </Dialog>
-  );
+  )
 }
 
 type DocumentListProps = {
-  documents: ViewerDocument[];
-  className?: string;
-};
+  documents: ViewerDocument[]
+  className?: string
+}
 
 export function DocumentList({ documents, className }: DocumentListProps) {
-  const [viewing, setViewing] = useState<number | null>(null);
+  const [viewing, setViewing] = useState<number | null>(null)
 
   return (
     <>
@@ -347,5 +347,5 @@ export function DocumentList({ documents, className }: DocumentListProps) {
         onIndexChange={setViewing}
       />
     </>
-  );
+  )
 }

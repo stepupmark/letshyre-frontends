@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router";
-import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router"
+import { useQuery } from "@tanstack/react-query"
 import {
   CalendarDays,
   CalendarRange,
@@ -7,11 +7,11 @@ import {
   IndianRupee,
   Receipt,
   ShoppingCart,
-} from "lucide-react";
-import { Suspense } from "react";
-import { ErrorState } from "~/components/feedback/error-state";
-import { StatCard } from "~/components/stat-card";
-import { Trend } from "~/components/trend";
+} from "lucide-react"
+import { Suspense } from "react"
+import { ErrorState } from "~/components/feedback/error-state"
+import { StatCard } from "~/components/stat-card"
+import { Trend } from "~/components/trend"
 import {
   Card,
   CardAction,
@@ -19,46 +19,46 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card";
+} from "~/components/ui/card"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "~/components/ui/select";
-import { Skeleton } from "~/components/ui/skeleton";
-import { formatCurrency, formatNumber, percentChange } from "~/lib/format";
-import { dashboardQueries } from "../queries/dashboard.queries";
-import { currentYear } from "../search-params";
-import { monthRange, paymentsUrl, startOfWeek } from "../utils/periods";
-import { RevenueChart } from "./lazy-charts";
-import { DashboardSection } from "./section";
+} from "~/components/ui/select"
+import { Skeleton } from "~/components/ui/skeleton"
+import { formatCurrency, formatNumber, percentChange } from "~/lib/format"
+import { dashboardQueries } from "../queries/dashboard.queries"
+import { currentYear } from "../search-params"
+import { monthRange, paymentsUrl, startOfWeek } from "../utils/periods"
+import { RevenueChart } from "./lazy-charts"
+import { DashboardSection } from "./section"
 
 export function RevenueSection({
   year,
   onYearChange,
 }: {
-  year: number;
-  onYearChange: (year: number) => void;
+  year: number
+  onYearChange: (year: number) => void
 }) {
-  const navigate = useNavigate();
-  const summary = useQuery(dashboardQueries.revenueSummary());
-  const monthly = useQuery(dashboardQueries.monthlyRevenue(year));
-  const previous = useQuery(dashboardQueries.monthlyRevenue(year - 1));
-  const data = summary.data;
-  const loading = summary.isPending;
-  const years = Array.from({ length: 5 }, (_, index) => currentYear() - index);
-  const today = new Date();
+  const navigate = useNavigate()
+  const summary = useQuery(dashboardQueries.revenueSummary())
+  const monthly = useQuery(dashboardQueries.monthlyRevenue(year))
+  const previous = useQuery(dashboardQueries.monthlyRevenue(year - 1))
+  const data = summary.data
+  const loading = summary.isPending
+  const years = Array.from({ length: 5 }, (_, index) => currentYear() - index)
+  const today = new Date()
 
   // the current year is compared with the same months of last year, not all of it
-  const months = year === today.getFullYear() ? today.getMonth() + 1 : 12;
+  const months = year === today.getFullYear() ? today.getMonth() + 1 : 12
   const total = (rows: { revenue: number }[] | undefined) =>
-    (rows ?? []).slice(0, months).reduce((sum, row) => sum + row.revenue, 0);
-  const yearTotal = total(monthly.data);
+    (rows ?? []).slice(0, months).reduce((sum, row) => sum + row.revenue, 0)
+  const yearTotal = total(monthly.data)
   const change = previous.data
     ? percentChange(yearTotal, total(previous.data))
-    : null;
+    : null
 
   return (
     <DashboardSection
@@ -95,7 +95,7 @@ export function RevenueSection({
             value={formatCurrency(data?.monthly_revenue)}
             href={paymentsUrl(
               new Date(today.getFullYear(), today.getMonth(), 1),
-              today,
+              today
             )}
           />
           <StatCard
@@ -177,8 +177,8 @@ export function RevenueSection({
               <RevenueChart
                 data={monthly.data}
                 onMonthClick={(month) => {
-                  const { from, to } = monthRange(year, month);
-                  void navigate(paymentsUrl(from, to));
+                  const { from, to } = monthRange(year, month)
+                  void navigate(paymentsUrl(from, to))
                 }}
               />
             </Suspense>
@@ -186,5 +186,5 @@ export function RevenueSection({
         </CardContent>
       </Card>
     </DashboardSection>
-  );
+  )
 }

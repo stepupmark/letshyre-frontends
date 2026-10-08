@@ -1,10 +1,10 @@
-import { queryOptions } from "@tanstack/react-query";
-import { channelsService } from "../services/channels.service";
+import { queryOptions } from "@tanstack/react-query"
+import { channelsService } from "../services/channels.service"
 
 export const channelsKeys = {
   all: ["channels"] as const,
   settings: () => [...channelsKeys.all, "settings"] as const,
-};
+}
 
 export const channelsQueries = {
   settings: () =>
@@ -13,4 +13,4 @@ export const channelsQueries = {
       queryFn: ({ signal }) => channelsService.get(signal),
       staleTime: 5 * 60_000,
     }),
-};
+}

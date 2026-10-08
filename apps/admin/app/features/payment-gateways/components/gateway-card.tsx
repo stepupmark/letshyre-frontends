@@ -1,15 +1,8 @@
-import { useState } from "react";
-import {
-  Copy,
-  Eye,
-  EyeOff,
-  MoreHorizontal,
-  Pencil,
-  Trash2,
-} from "lucide-react";
-import { toast } from "sonner";
-import { StatusBadge } from "~/components/status-badge";
-import { Button } from "~/components/ui/button";
+import { useState } from "react"
+import { Copy, Eye, EyeOff, MoreHorizontal, Pencil, Trash2 } from "lucide-react"
+import { toast } from "sonner"
+import { StatusBadge } from "~/components/status-badge"
+import { Button } from "~/components/ui/button"
 import {
   Card,
   CardAction,
@@ -17,23 +10,23 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card";
+} from "~/components/ui/card"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu";
-import { maskId } from "~/lib/format";
-import type { Gateway } from "../schemas/payment-gateways.schema";
-import { providerLabel } from "../utils/gateway-values";
+} from "~/components/ui/dropdown-menu"
+import { maskId } from "~/lib/format"
+import type { Gateway } from "../schemas/payment-gateways.schema"
+import { providerLabel } from "../utils/gateway-values"
 
 async function copy(value: string, label: string) {
   try {
-    await navigator.clipboard.writeText(value);
-    toast.success(`${label} copied`);
+    await navigator.clipboard.writeText(value)
+    toast.success(`${label} copied`)
   } catch {
-    toast.error("Couldn't copy to the clipboard");
+    toast.error("Couldn't copy to the clipboard")
   }
 }
 
@@ -42,11 +35,11 @@ function CredentialRow({
   value,
   secret = false,
 }: {
-  label: string;
-  value: string;
-  secret?: boolean;
+  label: string
+  value: string
+  secret?: boolean
 }) {
-  const [visible, setVisible] = useState(!secret);
+  const [visible, setVisible] = useState(!secret)
 
   return (
     <div className="flex items-center justify-between gap-3 rounded-lg border px-3 py-2">
@@ -78,14 +71,14 @@ function CredentialRow({
         </Button>
       </div>
     </div>
-  );
+  )
 }
 
 type GatewayCardProps = {
-  gateway: Gateway;
-  onEdit: () => void;
-  onDelete: () => void;
-};
+  gateway: Gateway
+  onEdit: () => void
+  onDelete: () => void
+}
 
 export function GatewayCard({ gateway, onEdit, onDelete }: GatewayCardProps) {
   return (
@@ -129,5 +122,5 @@ export function GatewayCard({ gateway, onEdit, onDelete }: GatewayCardProps) {
         />
       </CardContent>
     </Card>
-  );
+  )
 }

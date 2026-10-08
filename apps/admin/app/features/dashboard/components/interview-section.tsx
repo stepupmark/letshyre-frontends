@@ -1,25 +1,25 @@
-import { useQuery } from "@tanstack/react-query";
-import { Suspense } from "react";
-import { EmptyState } from "~/components/feedback/empty-state";
-import { ErrorState } from "~/components/feedback/error-state";
+import { useQuery } from "@tanstack/react-query"
+import { Suspense } from "react"
+import { EmptyState } from "~/components/feedback/empty-state"
+import { ErrorState } from "~/components/feedback/error-state"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card";
-import { Progress } from "~/components/ui/progress";
-import { Skeleton } from "~/components/ui/skeleton";
-import { formatNumber } from "~/lib/format";
-import { dashboardQueries } from "../queries/dashboard.queries";
-import { RoleScoreChart } from "./lazy-charts";
-import { DashboardSection } from "./section";
+} from "~/components/ui/card"
+import { Progress } from "~/components/ui/progress"
+import { Skeleton } from "~/components/ui/skeleton"
+import { formatNumber } from "~/lib/format"
+import { dashboardQueries } from "../queries/dashboard.queries"
+import { RoleScoreChart } from "./lazy-charts"
+import { DashboardSection } from "./section"
 
 export function InterviewSection() {
-  const insights = useQuery(dashboardQueries.interview());
+  const insights = useQuery(dashboardQueries.interview())
 
-  let content;
+  let content
   if (insights.isError)
     content = (
       <ErrorState
@@ -27,17 +27,17 @@ export function InterviewSection() {
         onRetry={() => void insights.refetch()}
         className="rounded-xl border"
       />
-    );
+    )
   else if (!insights.data)
     content = (
       <div className="grid gap-4 lg:grid-cols-3">
         <Skeleton className="h-72 rounded-xl lg:col-span-2" />
         <Skeleton className="h-72 rounded-xl" />
       </div>
-    );
+    )
   else {
     const { role_wise_performance: roles, pass_fail_ratio: ratio } =
-      insights.data;
+      insights.data
     content = (
       <div className="grid gap-4 lg:grid-cols-3">
         <Card className="lg:col-span-2">
@@ -96,7 +96,7 @@ export function InterviewSection() {
           </CardContent>
         </Card>
       </div>
-    );
+    )
   }
 
   return (
@@ -106,5 +106,5 @@ export function InterviewSection() {
     >
       {content}
     </DashboardSection>
-  );
+  )
 }

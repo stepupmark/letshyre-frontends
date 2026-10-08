@@ -1,9 +1,9 @@
-import { ThemeToggle } from "~/components/theme-toggle";
-import { Separator } from "~/components/ui/separator";
-import { SidebarTrigger } from "~/components/ui/sidebar";
-import { Breadcrumbs } from "./breadcrumbs";
-import { CommandPalette } from "./command-palette";
-import { UserMenu } from "./user-menu";
+import { ThemeToggle } from "~/components/theme-toggle"
+import { Separator } from "~/components/ui/separator"
+import { SidebarTrigger } from "~/components/ui/sidebar"
+import { Breadcrumbs } from "./breadcrumbs"
+import { CommandPalette } from "./command-palette"
+import { UserMenu } from "./user-menu"
 
 export function AppHeader() {
   return (
@@ -20,5 +20,5 @@ export function AppHeader() {
         <UserMenu />
       </div>
     </header>
-  );
+  )
 }

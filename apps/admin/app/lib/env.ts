@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "zod"
 
 const envSchema = z.object({
   VITE_API_BASE_URL: z
@@ -7,6 +7,6 @@ const envSchema = z.object({
       message: "VITE_API_BASE_URL must use https outside development",
     })
     .transform((url) => (url.endsWith("/") ? url : `${url}/`)),
-});
+})
 
-export const env = envSchema.parse(import.meta.env);
+export const env = envSchema.parse(import.meta.env)

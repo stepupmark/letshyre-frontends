@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Link } from "react-router";
-import { useQuery } from "@tanstack/react-query";
-import type { ColumnDef } from "@tanstack/react-table";
+import { useState } from "react"
+import { Link } from "react-router"
+import { useQuery } from "@tanstack/react-query"
+import type { ColumnDef } from "@tanstack/react-table"
 import {
   LoaderCircle,
   MoreHorizontal,
@@ -9,14 +9,14 @@ import {
   Plus,
   Tag,
   Trash2,
-} from "lucide-react";
-import { useQueryState } from "nuqs";
-import { DataTable } from "~/components/data-table/data-table";
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog";
-import { ListEmptyState } from "~/components/feedback/list-empty-state";
-import { PageHeader } from "~/components/page-header";
-import { StatusBadge, type StatusTone } from "~/components/status-badge";
-import { Button } from "~/components/ui/button";
+} from "lucide-react"
+import { useQueryState } from "nuqs"
+import { DataTable } from "~/components/data-table/data-table"
+import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
+import { ListEmptyState } from "~/components/feedback/list-empty-state"
+import { PageHeader } from "~/components/page-header"
+import { StatusBadge, type StatusTone } from "~/components/status-badge"
+import { Button } from "~/components/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -25,47 +25,47 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "~/components/ui/dialog";
+} from "~/components/ui/dialog"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu";
-import { couponsService } from "../services/coupons.service";
-import { fetchAllPages } from "~/lib/fetch-all-pages";
-import { formatCurrency, formatDateTime, formatNumber } from "~/lib/format";
-import { pageParser } from "~/lib/search-params";
+} from "~/components/ui/dropdown-menu"
+import { couponsService } from "../services/coupons.service"
+import { fetchAllPages } from "~/lib/fetch-all-pages"
+import { formatCurrency, formatDateTime, formatNumber } from "~/lib/format"
+import { pageParser } from "~/lib/search-params"
 import {
   useDeleteCoupon,
   useUpdateCoupon,
-} from "../mutations/use-coupon-mutations";
-import { couponsQueries } from "../queries/coupons.queries";
-import type { Coupon } from "../schemas/coupons.schema";
-import { toCouponFormValues } from "../utils/coupon-values";
-import { CouponForm } from "./coupon-form";
+} from "../mutations/use-coupon-mutations"
+import { couponsQueries } from "../queries/coupons.queries"
+import type { Coupon } from "../schemas/coupons.schema"
+import { toCouponFormValues } from "../utils/coupon-values"
+import { CouponForm } from "./coupon-form"
 
 function couponStatus(coupon: Coupon): { label: string; tone: StatusTone } {
-  const now = Date.now();
+  const now = Date.now()
   if (now < new Date(coupon.start_date).getTime())
-    return { label: "Scheduled", tone: "info" };
+    return { label: "Scheduled", tone: "info" }
   if (now > new Date(coupon.end_date).getTime())
-    return { label: "Expired", tone: "neutral" };
+    return { label: "Expired", tone: "neutral" }
   if (coupon.used_count >= coupon.usage_limit)
-    return { label: "Used up", tone: "warning" };
-  return { label: "Active", tone: "success" };
+    return { label: "Used up", tone: "warning" }
+  return { label: "Active", tone: "success" }
 }
 
 function discountLabel(coupon: Coupon) {
   return coupon.discount_type === "percentage"
     ? `${Number(coupon.discount_value)}% off`
-    : `${formatCurrency(coupon.discount_value)} off`;
+    : `${formatCurrency(coupon.discount_value)} off`
 }
 
 type RowActions = {
-  onEdit: (coupon: Coupon) => void;
-  onDelete: (coupon: Coupon) => void;
-};
+  onEdit: (coupon: Coupon) => void
+  onDelete: (coupon: Coupon) => void
+}
 
 function buildColumns({ onEdit, onDelete }: RowActions): ColumnDef<Coupon>[] {
   return [
@@ -120,8 +120,8 @@ function buildColumns({ onEdit, onDelete }: RowActions): ColumnDef<Coupon>[] {
       meta: { csv: (row) => ({ Status: couponStatus(row).label }) },
       header: "Status",
       cell: ({ row }) => {
-        const status = couponStatus(row.original);
-        return <StatusBadge tone={status.tone}>{status.label}</StatusBadge>;
+        const status = couponStatus(row.original)
+        return <StatusBadge tone={status.tone}>{status.label}</StatusBadge>
       },
     },
     {
@@ -153,30 +153,30 @@ function buildColumns({ onEdit, onDelete }: RowActions): ColumnDef<Coupon>[] {
         </DropdownMenu>
       ),
     },
-  ];
+  ]
 }
 
 export function CouponsPage() {
-  const [page, setPage] = useQueryState("page", pageParser);
-  const coupons = useQuery(couponsQueries.list(page));
-  const update = useUpdateCoupon();
-  const remove = useDeleteCoupon();
+  const [page, setPage] = useQueryState("page", pageParser)
+  const coupons = useQuery(couponsQueries.list(page))
+  const update = useUpdateCoupon()
+  const remove = useDeleteCoupon()
 
-  const [editing, setEditing] = useState<Coupon | null>(null);
-  const [editOpen, setEditOpen] = useState(false);
-  const [deleting, setDeleting] = useState<Coupon | null>(null);
-  const [deleteOpen, setDeleteOpen] = useState(false);
+  const [editing, setEditing] = useState<Coupon | null>(null)
+  const [editOpen, setEditOpen] = useState(false)
+  const [deleting, setDeleting] = useState<Coupon | null>(null)
+  const [deleteOpen, setDeleteOpen] = useState(false)
 
   const columns = buildColumns({
     onEdit: (coupon) => {
-      setEditing(coupon);
-      setEditOpen(true);
+      setEditing(coupon)
+      setEditOpen(true)
     },
     onDelete: (coupon) => {
-      setDeleting(coupon);
-      setDeleteOpen(true);
+      setDeleting(coupon)
+      setDeleteOpen(true)
     },
-  });
+  })
 
   return (
     <>
@@ -236,7 +236,7 @@ export function CouponsPage() {
               onSubmit={(payload) =>
                 update.mutate(
                   { id: editing.id, payload },
-                  { onSuccess: () => setEditOpen(false) },
+                  { onSuccess: () => setEditOpen(false) }
                 )
               }
               footer={
@@ -268,10 +268,10 @@ export function CouponsPage() {
         destructive
         pending={remove.isPending}
         onConfirm={() => {
-          if (deleting) remove.mutate(deleting.id);
-          setDeleteOpen(false);
+          if (deleting) remove.mutate(deleting.id)
+          setDeleteOpen(false)
         }}
       />
     </>
-  );
+  )
 }

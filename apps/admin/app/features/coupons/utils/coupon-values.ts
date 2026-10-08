@@ -1,9 +1,9 @@
-import { toDateTimeLocal } from "~/lib/format";
+import { toDateTimeLocal } from "~/lib/format"
 import type {
   Coupon,
   CouponFormValues,
   CouponPayload,
-} from "../schemas/coupons.schema";
+} from "../schemas/coupons.schema"
 
 export const EMPTY_COUPON: CouponFormValues = {
   code: "",
@@ -12,7 +12,7 @@ export const EMPTY_COUPON: CouponFormValues = {
   usage_limit: "",
   start_date: "",
   end_date: "",
-};
+}
 
 export function toCouponFormValues(coupon: Coupon): CouponFormValues {
   return {
@@ -22,7 +22,7 @@ export function toCouponFormValues(coupon: Coupon): CouponFormValues {
     usage_limit: String(coupon.usage_limit),
     start_date: toDateTimeLocal(coupon.start_date),
     end_date: toDateTimeLocal(coupon.end_date),
-  };
+  }
 }
 
 export function toCouponPayload(values: CouponFormValues): CouponPayload {
@@ -33,5 +33,5 @@ export function toCouponPayload(values: CouponFormValues): CouponPayload {
     usage_limit: Number(values.usage_limit),
     start_date: new Date(values.start_date).toISOString(),
     end_date: new Date(values.end_date).toISOString(),
-  };
+  }
 }

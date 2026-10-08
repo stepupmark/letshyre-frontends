@@ -1,6 +1,6 @@
-import { useMutation } from "@tanstack/react-query";
-import { creditsKeys } from "../queries/credits.queries";
-import { creditsService } from "../services/credits.service";
+import { useMutation } from "@tanstack/react-query"
+import { creditsKeys } from "../queries/credits.queries"
+import { creditsService } from "../services/credits.service"
 
 export function useUpdateCreditPrice() {
   return useMutation({
@@ -10,5 +10,5 @@ export function useUpdateCreditPrice() {
       successMessage: "Credit price updated",
       invalidates: [creditsKeys.all],
     },
-  });
+  })
 }

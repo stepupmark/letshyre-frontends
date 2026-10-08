@@ -1,7 +1,7 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { LoaderCircle } from "lucide-react";
-import { Button } from "~/components/ui/button";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { LoaderCircle } from "lucide-react"
+import { Button } from "~/components/ui/button"
 import {
   Card,
   CardContent,
@@ -9,33 +9,33 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card";
+} from "~/components/ui/card"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "~/components/ui/field";
+} from "~/components/ui/field"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
   InputGroupText,
-} from "~/components/ui/input-group";
-import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard";
-import { useUpdateSystemConfig } from "../mutations/use-update-system-config";
+} from "~/components/ui/input-group"
+import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard"
+import { useUpdateSystemConfig } from "../mutations/use-update-system-config"
 import {
   limitsSchema,
   type LimitsInput,
   type SystemConfig,
-} from "../schemas/system-config.schema";
+} from "../schemas/system-config.schema"
 
 const FIELDS: {
-  name: keyof LimitsInput;
-  label: string;
-  description: string;
-  unit: string;
+  name: keyof LimitsInput
+  label: string
+  description: string
+  unit: string
 }[] = [
   {
     name: "max_file_upload_size_mb",
@@ -55,10 +55,10 @@ const FIELDS: {
     description: "Recorded videos are deleted after this period.",
     unit: "days",
   },
-];
+]
 
 export function LimitsForm({ config }: { config: SystemConfig }) {
-  const update = useUpdateSystemConfig();
+  const update = useUpdateSystemConfig()
   const form = useForm<LimitsInput>({
     resolver: zodResolver(limitsSchema),
     values: {
@@ -66,16 +66,16 @@ export function LimitsForm({ config }: { config: SystemConfig }) {
       api_rate_limit_per_min: config.api_rate_limit_per_min,
       default_video_retention_days: config.default_video_retention_days,
     },
-  });
+  })
 
   const submit = form.handleSubmit((values) => {
     const dirty = Object.fromEntries(
       Object.entries(values).filter(
-        ([key]) => form.formState.dirtyFields[key as keyof LimitsInput],
-      ),
-    );
-    update.mutate(dirty);
-  });
+        ([key]) => form.formState.dirtyFields[key as keyof LimitsInput]
+      )
+    )
+    update.mutate(dirty)
+  })
 
   return (
     <Card>
@@ -90,7 +90,7 @@ export function LimitsForm({ config }: { config: SystemConfig }) {
         <CardContent className="py-4">
           <FieldGroup className="grid gap-6 md:grid-cols-3">
             {FIELDS.map(({ name, label, description, unit }) => {
-              const error = form.formState.errors[name];
+              const error = form.formState.errors[name]
               return (
                 <Field key={name} data-invalid={Boolean(error)}>
                   <FieldLabel htmlFor={name}>{label}</FieldLabel>
@@ -112,7 +112,7 @@ export function LimitsForm({ config }: { config: SystemConfig }) {
                     <FieldDescription>{description}</FieldDescription>
                   )}
                 </Field>
-              );
+              )
             })}
           </FieldGroup>
         </CardContent>
@@ -135,5 +135,5 @@ export function LimitsForm({ config }: { config: SystemConfig }) {
         </CardFooter>
       </form>
     </Card>
-  );
+  )
 }

@@ -1,31 +1,31 @@
-import { useQuery, type UseQueryResult } from "@tanstack/react-query";
-import { EmptyState } from "~/components/feedback/empty-state";
-import { ErrorState } from "~/components/feedback/error-state";
+import { useQuery, type UseQueryResult } from "@tanstack/react-query"
+import { EmptyState } from "~/components/feedback/empty-state"
+import { ErrorState } from "~/components/feedback/error-state"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card";
-import { Progress } from "~/components/ui/progress";
-import { Skeleton } from "~/components/ui/skeleton";
-import { formatNumber } from "~/lib/format";
-import { dashboardQueries } from "../queries/dashboard.queries";
-import type { Share } from "../schemas/dashboard.schema";
-import { DashboardSection } from "./section";
+} from "~/components/ui/card"
+import { Progress } from "~/components/ui/progress"
+import { Skeleton } from "~/components/ui/skeleton"
+import { formatNumber } from "~/lib/format"
+import { dashboardQueries } from "../queries/dashboard.queries"
+import type { Share } from "../schemas/dashboard.schema"
+import { DashboardSection } from "./section"
 
-const TOP = 8;
+const TOP = 8
 
 function ShareCard({
   title,
   query,
 }: {
-  title: string;
-  query: UseQueryResult<Share[]>;
+  title: string
+  query: UseQueryResult<Share[]>
 }) {
-  const shares = query.data ?? [];
-  const top = shares[0];
+  const shares = query.data ?? []
+  const top = shares[0]
 
   return (
     <Card>
@@ -71,12 +71,12 @@ function ShareCard({
         )}
       </CardContent>
     </Card>
-  );
+  )
 }
 
 export function DistributionSection() {
-  const skills = useQuery(dashboardQueries.skills());
-  const technologies = useQuery(dashboardQueries.technologies());
+  const skills = useQuery(dashboardQueries.skills())
+  const technologies = useQuery(dashboardQueries.technologies())
 
   return (
     <DashboardSection
@@ -88,5 +88,5 @@ export function DistributionSection() {
         <ShareCard title="Top technologies" query={technologies} />
       </div>
     </DashboardSection>
-  );
+  )
 }

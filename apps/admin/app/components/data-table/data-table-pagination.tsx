@@ -3,32 +3,32 @@ import {
   ChevronRight,
   ChevronsLeft,
   ChevronsRight,
-} from "lucide-react";
-import { Button } from "~/components/ui/button";
-import { formatNumber } from "~/lib/format";
+} from "lucide-react"
+import { Button } from "~/components/ui/button"
+import { formatNumber } from "~/lib/format"
 
 // page size isn't passed in, so it's inferred from a full page; the last page counts back from the total
 function rangeLabel(
   page: number,
   lastPage: number,
   rowCount: number,
-  totalCount: number | undefined,
+  totalCount: number | undefined
 ) {
-  if (totalCount === undefined) return `Page ${page} of ${lastPage}`;
-  if (!rowCount) return `${formatNumber(totalCount)} results`;
-  const end = page >= lastPage ? totalCount : (page - 1) * rowCount + rowCount;
+  if (totalCount === undefined) return `Page ${page} of ${lastPage}`
+  if (!rowCount) return `${formatNumber(totalCount)} results`
+  const end = page >= lastPage ? totalCount : (page - 1) * rowCount + rowCount
   const start =
-    page >= lastPage ? totalCount - rowCount + 1 : end - rowCount + 1;
-  return `Showing ${formatNumber(start)}–${formatNumber(end)} of ${formatNumber(totalCount)}`;
+    page >= lastPage ? totalCount - rowCount + 1 : end - rowCount + 1
+  return `Showing ${formatNumber(start)}–${formatNumber(end)} of ${formatNumber(totalCount)}`
 }
 
 type DataTablePaginationProps = {
-  page: number;
-  pageCount: number;
-  totalCount?: number;
-  rowCount: number;
-  onPageChange: (page: number) => void;
-};
+  page: number
+  pageCount: number
+  totalCount?: number
+  rowCount: number
+  onPageChange: (page: number) => void
+}
 
 export function DataTablePagination({
   page,
@@ -37,9 +37,9 @@ export function DataTablePagination({
   rowCount,
   onPageChange,
 }: DataTablePaginationProps) {
-  const lastPage = Math.max(pageCount, 1);
-  const canGoBack = page > 1;
-  const canGoForward = page < lastPage;
+  const lastPage = Math.max(pageCount, 1)
+  const canGoBack = page > 1
+  const canGoForward = page < lastPage
 
   return (
     <div className="flex items-center justify-between gap-4 text-sm">
@@ -88,5 +88,5 @@ export function DataTablePagination({
         </Button>
       </div>
     </div>
-  );
+  )
 }

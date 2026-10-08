@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import { Link, useMatches } from "react-router";
+import { Fragment } from "react"
+import { Link, useMatches } from "react-router"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,25 +7,25 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "~/components/ui/breadcrumb";
+} from "~/components/ui/breadcrumb"
 
 type RouteHandle = {
-  breadcrumb?: string;
+  breadcrumb?: string
   /** For flat detail routes whose list page isn't a parent match. */
-  parent?: { label: string; path: string };
-};
+  parent?: { label: string; path: string }
+}
 
-type Crumb = { label: string; path: string };
+type Crumb = { label: string; path: string }
 
 export function Breadcrumbs() {
   const crumbs = useMatches().flatMap((match): Crumb[] => {
-    const handle = match.handle as RouteHandle | undefined;
-    if (!handle?.breadcrumb) return [];
-    const own = { label: handle.breadcrumb, path: match.pathname };
-    return handle.parent ? [handle.parent, own] : [own];
-  });
+    const handle = match.handle as RouteHandle | undefined
+    if (!handle?.breadcrumb) return []
+    const own = { label: handle.breadcrumb, path: match.pathname }
+    return handle.parent ? [handle.parent, own] : [own]
+  })
 
-  if (!crumbs.length) return null;
+  if (!crumbs.length) return null
 
   return (
     <Breadcrumb>
@@ -50,5 +50,5 @@ export function Breadcrumbs() {
         ))}
       </BreadcrumbList>
     </Breadcrumb>
-  );
+  )
 }

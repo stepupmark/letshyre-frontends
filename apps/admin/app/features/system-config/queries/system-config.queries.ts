@@ -1,9 +1,9 @@
-import { queryOptions } from "@tanstack/react-query";
-import { systemConfigService } from "../services/system-config.service";
+import { queryOptions } from "@tanstack/react-query"
+import { systemConfigService } from "../services/system-config.service"
 
 export const systemConfigKeys = {
   all: ["system-config"] as const,
-};
+}
 
 export const systemConfigQueries = {
   detail: () =>
@@ -12,4 +12,4 @@ export const systemConfigQueries = {
       queryFn: ({ signal }) => systemConfigService.get(signal),
       staleTime: 5 * 60_000,
     }),
-};
+}

@@ -1,6 +1,6 @@
-import type { Table } from "@tanstack/react-table";
-import { Settings2 } from "lucide-react";
-import { Button } from "~/components/ui/button";
+import type { Table } from "@tanstack/react-table"
+import { Settings2 } from "lucide-react"
+import { Button } from "~/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -10,16 +10,16 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu";
-import { columnLabel } from "./column-label";
+} from "~/components/ui/dropdown-menu"
+import { columnLabel } from "./column-label"
 
-export type Density = "comfortable" | "compact";
+export type Density = "comfortable" | "compact"
 
 type DataTableViewOptionsProps<TData> = {
-  table: Table<TData>;
-  density: Density;
-  onDensityChange: (density: Density) => void;
-};
+  table: Table<TData>
+  density: Density
+  onDensityChange: (density: Density) => void
+}
 
 export function DataTableViewOptions<TData>({
   table,
@@ -28,7 +28,7 @@ export function DataTableViewOptions<TData>({
 }: DataTableViewOptionsProps<TData>) {
   const columns = table
     .getAllLeafColumns()
-    .filter((column) => column.getCanHide() && columnLabel(column));
+    .filter((column) => column.getCanHide() && columnLabel(column))
 
   return (
     <DropdownMenu>
@@ -70,5 +70,5 @@ export function DataTableViewOptions<TData>({
         )}
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

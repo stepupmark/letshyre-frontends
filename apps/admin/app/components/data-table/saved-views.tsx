@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { useLocation, useNavigate } from "react-router";
-import { Bookmark, Check, Plus, X } from "lucide-react";
-import { toast } from "sonner";
-import { Button } from "~/components/ui/button";
+import { useState } from "react"
+import { useLocation, useNavigate } from "react-router"
+import { Bookmark, Check, Plus, X } from "lucide-react"
+import { toast } from "sonner"
+import { Button } from "~/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -10,7 +10,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "~/components/ui/dialog";
+} from "~/components/ui/dialog"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,43 +18,43 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu";
-import { Input } from "~/components/ui/input";
-import { useStoredState } from "~/hooks/use-stored-state";
+} from "~/components/ui/dropdown-menu"
+import { Input } from "~/components/ui/input"
+import { useStoredState } from "~/hooks/use-stored-state"
 
-type SavedView = { name: string; search: string };
+type SavedView = { name: string; search: string }
 
 // the page number isn't part of a view
 function viewSearch(search: string) {
-  const params = new URLSearchParams(search);
-  params.delete("page");
-  params.sort();
-  const query = params.toString();
-  return query ? `?${query}` : "";
+  const params = new URLSearchParams(search)
+  params.delete("page")
+  params.sort()
+  const query = params.toString()
+  return query ? `?${query}` : ""
 }
 
 export function SavedViews() {
-  const { pathname, search } = useLocation();
-  const navigate = useNavigate();
+  const { pathname, search } = useLocation()
+  const navigate = useNavigate()
   const [views, setViews] = useStoredState<SavedView[]>(
     `saved-views:${pathname}`,
-    [],
-  );
-  const [saving, setSaving] = useState(false);
-  const [name, setName] = useState("");
-  const current = viewSearch(search);
+    []
+  )
+  const [saving, setSaving] = useState(false)
+  const [name, setName] = useState("")
+  const current = viewSearch(search)
 
   const save = () => {
-    const trimmed = name.trim();
-    if (!trimmed) return;
+    const trimmed = name.trim()
+    if (!trimmed) return
     setViews([
       ...views.filter((view) => view.name !== trimmed),
       { name: trimmed, search: current },
-    ]);
-    setSaving(false);
-    setName("");
-    toast.success(`Saved "${trimmed}"`);
-  };
+    ])
+    setSaving(false)
+    setName("")
+    toast.success(`Saved "${trimmed}"`)
+  }
 
   return (
     <>
@@ -85,8 +85,8 @@ export function SavedViews() {
                     aria-label={`Delete ${view.name}`}
                     className="rounded-sm p-0.5 text-muted-foreground opacity-0 group-hover/view:opacity-100 group-focus/view:opacity-100 hover:text-foreground"
                     onClick={(event) => {
-                      event.stopPropagation();
-                      setViews(views.filter((item) => item !== view));
+                      event.stopPropagation()
+                      setViews(views.filter((item) => item !== view))
                     }}
                     onPointerDown={(event) => event.stopPropagation()}
                   >
@@ -115,8 +115,8 @@ export function SavedViews() {
         <DialogContent className="sm:max-w-sm">
           <form
             onSubmit={(event) => {
-              event.preventDefault();
-              save();
+              event.preventDefault()
+              save()
             }}
           >
             <DialogHeader>
@@ -150,5 +150,5 @@ export function SavedViews() {
         </DialogContent>
       </Dialog>
     </>
-  );
+  )
 }

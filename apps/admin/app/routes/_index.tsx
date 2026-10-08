@@ -1,9 +1,9 @@
-import { redirect } from "react-router";
+import { redirect } from "react-router"
 
 export function clientLoader() {
-  return redirect("/dashboard");
+  return redirect("/dashboard")
 }
 
 export default function Index() {
-  return null;
+  return null
 }

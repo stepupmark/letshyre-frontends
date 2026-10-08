@@ -1,20 +1,20 @@
-import type { ReactNode } from "react";
-import { Link, useParams } from "react-router";
-import { useQuery } from "@tanstack/react-query";
-import { ArrowLeft, FileText } from "lucide-react";
-import { DetailList } from "~/components/detail-list";
-import { ExternalLink } from "~/components/external-link";
-import { ErrorState } from "~/components/feedback/error-state";
-import { Badge } from "~/components/ui/badge";
-import { Button } from "~/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
-import { Skeleton } from "~/components/ui/skeleton";
-import { useDocumentTitle } from "~/hooks/use-document-title";
-import { formatDate } from "~/lib/format";
-import { jobsQueries } from "../queries/jobs.queries";
-import type { JobDetail } from "../schemas/jobs.schema";
-import { ApprovalBadge, JobStatusBadge } from "./job-badges";
-import { JobReview } from "./job-review";
+import type { ReactNode } from "react"
+import { Link, useParams } from "react-router"
+import { useQuery } from "@tanstack/react-query"
+import { ArrowLeft, FileText } from "lucide-react"
+import { DetailList } from "~/components/detail-list"
+import { ExternalLink } from "~/components/external-link"
+import { ErrorState } from "~/components/feedback/error-state"
+import { Badge } from "~/components/ui/badge"
+import { Button } from "~/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card"
+import { Skeleton } from "~/components/ui/skeleton"
+import { useDocumentTitle } from "~/hooks/use-document-title"
+import { formatDate } from "~/lib/format"
+import { jobsQueries } from "../queries/jobs.queries"
+import type { JobDetail } from "../schemas/jobs.schema"
+import { ApprovalBadge, JobStatusBadge } from "./job-badges"
+import { JobReview } from "./job-review"
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -24,17 +24,17 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
       </CardHeader>
       <CardContent>{children}</CardContent>
     </Card>
-  );
+  )
 }
 
 function between(
   min: number | null | undefined,
   max: number | null | undefined,
-  unit: string,
+  unit: string
 ) {
-  if (min == null && max == null) return null;
-  if (min != null && max != null) return `${min}–${max} ${unit}`;
-  return `${min ?? max} ${unit}`;
+  if (min == null && max == null) return null
+  if (min != null && max != null) return `${min}–${max} ${unit}`
+  return `${min ?? max} ${unit}`
 }
 
 function Tags({ items }: { items: string[] }) {
@@ -46,13 +46,13 @@ function Tags({ items }: { items: string[] }) {
         </Badge>
       ))}
     </div>
-  );
+  )
 }
 
 function Details({ job }: { job: JobDetail }) {
   const place =
     [job.city, job.state, job.country].filter(Boolean).join(", ") ||
-    job.location;
+    job.location
 
   return (
     <div className="grid gap-4 xl:grid-cols-3">
@@ -128,7 +128,7 @@ function Details({ job }: { job: JobDetail }) {
                   between(
                     job.experience_min_years,
                     job.experience_max_years,
-                    "years",
+                    "years"
                   ) ?? job.experience_required,
               },
               { label: "Openings", value: job.number_of_openings },
@@ -155,13 +155,13 @@ function Details({ job }: { job: JobDetail }) {
         )}
       </div>
     </div>
-  );
+  )
 }
 
 export function JobDetailPage() {
-  const { id = "" } = useParams();
-  const job = useQuery(jobsQueries.detail(id));
-  useDocumentTitle(job.data && `${job.data.title || "Untitled job"} · Jobs`);
+  const { id = "" } = useParams()
+  const job = useQuery(jobsQueries.detail(id))
+  useDocumentTitle(job.data && `${job.data.title || "Untitled job"} · Jobs`)
 
   const back = (
     <Button variant="ghost" size="sm" className="mb-4 -ml-2" asChild>
@@ -169,7 +169,7 @@ export function JobDetailPage() {
         <ArrowLeft /> Jobs
       </Link>
     </Button>
-  );
+  )
 
   if (job.isError)
     return (
@@ -177,7 +177,7 @@ export function JobDetailPage() {
         {back}
         <ErrorState error={job.error} onRetry={() => void job.refetch()} />
       </>
-    );
+    )
 
   if (!job.data)
     return (
@@ -188,9 +188,9 @@ export function JobDetailPage() {
           <Skeleton className="h-96 w-full rounded-xl" />
         </div>
       </>
-    );
+    )
 
-  const data = job.data;
+  const data = job.data
 
   return (
     <>
@@ -212,5 +212,5 @@ export function JobDetailPage() {
       </div>
       <Details job={data} />
     </>
-  );
+  )
 }

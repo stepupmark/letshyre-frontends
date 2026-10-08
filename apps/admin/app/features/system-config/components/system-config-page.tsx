@@ -1,15 +1,15 @@
-import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog";
-import { ErrorState } from "~/components/feedback/error-state";
-import { PageHeader } from "~/components/page-header";
+import { useState } from "react"
+import { useQuery } from "@tanstack/react-query"
+import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
+import { ErrorState } from "~/components/feedback/error-state"
+import { PageHeader } from "~/components/page-header"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card";
+} from "~/components/ui/card"
 import {
   Field,
   FieldContent,
@@ -17,18 +17,18 @@ import {
   FieldGroup,
   FieldLabel,
   FieldSeparator,
-} from "~/components/ui/field";
-import { Skeleton } from "~/components/ui/skeleton";
-import { Switch } from "~/components/ui/switch";
-import { formatDateTime } from "~/lib/format";
-import { useUpdateSystemConfig } from "../mutations/use-update-system-config";
-import { systemConfigQueries } from "../queries/system-config.queries";
-import { LimitsForm } from "./limits-form";
+} from "~/components/ui/field"
+import { Skeleton } from "~/components/ui/skeleton"
+import { Switch } from "~/components/ui/switch"
+import { formatDateTime } from "~/lib/format"
+import { useUpdateSystemConfig } from "../mutations/use-update-system-config"
+import { systemConfigQueries } from "../queries/system-config.queries"
+import { LimitsForm } from "./limits-form"
 
 export function SystemConfigPage() {
-  const config = useQuery(systemConfigQueries.detail());
-  const update = useUpdateSystemConfig();
-  const [confirmMaintenance, setConfirmMaintenance] = useState(false);
+  const config = useQuery(systemConfigQueries.detail())
+  const update = useUpdateSystemConfig()
+  const [confirmMaintenance, setConfirmMaintenance] = useState(false)
 
   const header = (
     <PageHeader
@@ -39,7 +39,7 @@ export function SystemConfigPage() {
           : "Platform-wide settings."
       }
     />
-  );
+  )
 
   if (config.isError)
     return (
@@ -50,7 +50,7 @@ export function SystemConfigPage() {
           onRetry={() => void config.refetch()}
         />
       </>
-    );
+    )
 
   if (!config.data)
     return (
@@ -61,9 +61,9 @@ export function SystemConfigPage() {
           <Skeleton className="h-60 w-full rounded-xl" />
         </div>
       </>
-    );
+    )
 
-  const settings = config.data;
+  const settings = config.data
 
   return (
     <>
@@ -145,10 +145,10 @@ export function SystemConfigPage() {
         onConfirm={() =>
           update.mutate(
             { maintenance_mode: true },
-            { onSuccess: () => setConfirmMaintenance(false) },
+            { onSuccess: () => setConfirmMaintenance(false) }
           )
         }
       />
     </>
-  );
+  )
 }

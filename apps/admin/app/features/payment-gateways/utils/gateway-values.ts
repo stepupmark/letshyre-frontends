@@ -3,7 +3,7 @@ import {
   type Gateway,
   type GatewayFormValues,
   type GatewayProvider,
-} from "../schemas/payment-gateways.schema";
+} from "../schemas/payment-gateways.schema"
 
 export const EMPTY_GATEWAY: GatewayFormValues = {
   provider: "razorpay",
@@ -11,14 +11,14 @@ export const EMPTY_GATEWAY: GatewayFormValues = {
   environment: "sandbox",
   clientId: "",
   clientSecret: "",
-};
+}
 
 function isProvider(value: string): value is GatewayProvider {
-  return value in GATEWAY_PROVIDERS;
+  return value in GATEWAY_PROVIDERS
 }
 
 export function providerLabel(value: string) {
-  return isProvider(value) ? GATEWAY_PROVIDERS[value] : value;
+  return isProvider(value) ? GATEWAY_PROVIDERS[value] : value
 }
 
 export function toGatewayFormValues(gateway: Gateway): GatewayFormValues {
@@ -28,5 +28,5 @@ export function toGatewayFormValues(gateway: Gateway): GatewayFormValues {
     environment: gateway.sandbox ? "sandbox" : "live",
     clientId: gateway.clientId,
     clientSecret: gateway.clientSecret,
-  };
+  }
 }

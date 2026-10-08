@@ -1,36 +1,36 @@
-import { useState } from "react";
-import { Link, useParams } from "react-router";
-import { useQuery } from "@tanstack/react-query";
-import { ArrowLeft, Check, X } from "lucide-react";
+import { useState } from "react"
+import { Link, useParams } from "react-router"
+import { useQuery } from "@tanstack/react-query"
+import { ArrowLeft, Check, X } from "lucide-react"
 import {
   DocumentViewer,
   DocumentViewerDialog,
-} from "~/components/document-viewer";
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog";
-import { ErrorState } from "~/components/feedback/error-state";
-import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
-import { Button } from "~/components/ui/button";
-import { Skeleton } from "~/components/ui/skeleton";
-import { useDocumentTitle } from "~/hooks/use-document-title";
-import { formatDate } from "~/lib/format";
-import { kycDocuments } from "../documents";
-import { useApproveKyc } from "../mutations/use-review-kyc";
-import { kycQueries } from "../queries/kyc.queries";
-import { CompanyKycDetails } from "./company-kyc-details";
-import { CompanyAvatar, KycStatusBadge } from "./kyc-status-badge";
-import { RejectKycDialog } from "./reject-kyc-dialog";
+} from "~/components/document-viewer"
+import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
+import { ErrorState } from "~/components/feedback/error-state"
+import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert"
+import { Button } from "~/components/ui/button"
+import { Skeleton } from "~/components/ui/skeleton"
+import { useDocumentTitle } from "~/hooks/use-document-title"
+import { formatDate } from "~/lib/format"
+import { kycDocuments } from "../documents"
+import { useApproveKyc } from "../mutations/use-review-kyc"
+import { kycQueries } from "../queries/kyc.queries"
+import { CompanyKycDetails } from "./company-kyc-details"
+import { CompanyAvatar, KycStatusBadge } from "./kyc-status-badge"
+import { RejectKycDialog } from "./reject-kyc-dialog"
 
 export function KycReviewPage() {
-  const { id = "" } = useParams();
-  const kyc = useQuery(kycQueries.detail(id));
+  const { id = "" } = useParams()
+  const kyc = useQuery(kycQueries.detail(id))
   useDocumentTitle(
-    kyc.data && `${kyc.data.company_name || "Unnamed company"} · KYC`,
-  );
-  const approve = useApproveKyc();
-  const [approveOpen, setApproveOpen] = useState(false);
-  const [rejectOpen, setRejectOpen] = useState(false);
-  const [documentIndex, setDocumentIndex] = useState(0);
-  const [expanded, setExpanded] = useState<number | null>(null);
+    kyc.data && `${kyc.data.company_name || "Unnamed company"} · KYC`
+  )
+  const approve = useApproveKyc()
+  const [approveOpen, setApproveOpen] = useState(false)
+  const [rejectOpen, setRejectOpen] = useState(false)
+  const [documentIndex, setDocumentIndex] = useState(0)
+  const [expanded, setExpanded] = useState<number | null>(null)
 
   const back = (
     <Button variant="ghost" size="sm" className="mb-4 -ml-2" asChild>
@@ -38,7 +38,7 @@ export function KycReviewPage() {
         <ArrowLeft /> KYC requests
       </Link>
     </Button>
-  );
+  )
 
   if (kyc.isError)
     return (
@@ -46,7 +46,7 @@ export function KycReviewPage() {
         {back}
         <ErrorState error={kyc.error} onRetry={() => void kyc.refetch()} />
       </>
-    );
+    )
 
   if (!kyc.data)
     return (
@@ -57,12 +57,12 @@ export function KycReviewPage() {
           <Skeleton className="h-64 w-full rounded-xl" />
         </div>
       </>
-    );
+    )
 
-  const record = kyc.data;
-  const name = record.company_name || "this company";
-  const status = record.kyc_status ?? "Pending";
-  const documents = kycDocuments(record);
+  const record = kyc.data
+  const name = record.company_name || "this company"
+  const status = record.kyc_status ?? "Pending"
+  const documents = kycDocuments(record)
 
   return (
     <>
@@ -121,8 +121,8 @@ export function KycReviewPage() {
         documents={documents}
         index={expanded}
         onIndexChange={(index) => {
-          setExpanded(index);
-          if (index !== null) setDocumentIndex(index);
+          setExpanded(index)
+          if (index !== null) setDocumentIndex(index)
         }}
       />
 
@@ -134,8 +134,8 @@ export function KycReviewPage() {
         confirmLabel="Approve"
         pending={approve.isPending}
         onConfirm={() => {
-          approve.mutate(record.id);
-          setApproveOpen(false);
+          approve.mutate(record.id)
+          setApproveOpen(false)
         }}
       />
       <RejectKycDialog
@@ -145,5 +145,5 @@ export function KycReviewPage() {
         onOpenChange={setRejectOpen}
       />
     </>
-  );
+  )
 }

@@ -1,18 +1,18 @@
-import { Search, X } from "lucide-react";
-import { cn } from "cn";
+import { Search, X } from "lucide-react"
+import { cn } from "cn"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "~/components/ui/input-group";
+} from "~/components/ui/input-group"
 
 type SearchInputProps = {
-  value: string;
-  onChange: (value: string) => void;
-  placeholder?: string;
-  className?: string;
-};
+  value: string
+  onChange: (value: string) => void
+  placeholder?: string
+  className?: string
+}
 
 export function SearchInput({
   value,
@@ -45,5 +45,5 @@ export function SearchInput({
         </InputGroupAddon>
       )}
     </InputGroup>
-  );
+  )
 }

@@ -1,36 +1,36 @@
-import type { ReactNode } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
+import type { ReactNode } from "react"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Controller, useForm } from "react-hook-form"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "~/components/ui/field";
-import { Input } from "~/components/ui/input";
+} from "~/components/ui/field"
+import { Input } from "~/components/ui/input"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "~/components/ui/select";
-import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard";
+} from "~/components/ui/select"
+import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard"
 import {
   couponFormSchema,
   type CouponFormValues,
   type CouponPayload,
-} from "../schemas/coupons.schema";
-import { EMPTY_COUPON, toCouponPayload } from "../utils/coupon-values";
+} from "../schemas/coupons.schema"
+import { EMPTY_COUPON, toCouponPayload } from "../utils/coupon-values"
 
 type CouponFormProps = {
-  id: string;
-  defaultValues?: CouponFormValues;
-  onSubmit: (payload: CouponPayload) => void;
+  id: string
+  defaultValues?: CouponFormValues
+  onSubmit: (payload: CouponPayload) => void
   /** Rendered after the fields, usually the submit buttons. */
-  footer: ReactNode;
-};
+  footer: ReactNode
+}
 
 export function CouponForm({
   id,
@@ -41,16 +41,16 @@ export function CouponForm({
   const form = useForm<CouponFormValues>({
     resolver: zodResolver(couponFormSchema),
     defaultValues,
-  });
-  const discountType = form.watch("discount_type");
-  const { errors } = form.formState;
+  })
+  const discountType = form.watch("discount_type")
+  const { errors } = form.formState
 
   return (
     <form
       id={id}
       noValidate
       onSubmit={form.handleSubmit((values) =>
-        onSubmit(toCouponPayload(values)),
+        onSubmit(toCouponPayload(values))
       )}
     >
       <UnsavedChangesGuard
@@ -146,5 +146,5 @@ export function CouponForm({
       </FieldGroup>
       {footer}
     </form>
-  );
+  )
 }

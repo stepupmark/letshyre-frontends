@@ -11,22 +11,22 @@ import {
   Unlock,
   Users,
   type LucideIcon,
-} from "lucide-react";
+} from "lucide-react"
 
 type NavLink = {
-  title: string;
-  url: string;
-};
+  title: string
+  url: string
+}
 
 export type NavItem = NavLink & {
-  icon: LucideIcon;
-  items?: NavLink[];
-};
+  icon: LucideIcon
+  items?: NavLink[]
+}
 
 export type NavGroup = {
-  label: string;
-  items: NavItem[];
-};
+  label: string
+  items: NavItem[]
+}
 
 export const navigation: NavGroup[] = [
   {
@@ -74,4 +74,4 @@ export const navigation: NavGroup[] = [
       },
     ],
   },
-];
+]

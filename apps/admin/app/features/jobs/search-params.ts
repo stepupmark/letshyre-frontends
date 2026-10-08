@@ -1,10 +1,10 @@
-import { createLoader, parseAsStringLiteral } from "nuqs";
-import { compactParams, pageParser, textParser } from "~/lib/search-params";
+import { createLoader, parseAsStringLiteral } from "nuqs"
+import { compactParams, pageParser, textParser } from "~/lib/search-params"
 import {
   APPROVAL_STATUSES,
   JOB_STATUSES,
   type JobsFilters,
-} from "./schemas/jobs.schema";
+} from "./schemas/jobs.schema"
 
 export const jobsSearchParams = {
   page: pageParser,
@@ -13,18 +13,18 @@ export const jobsSearchParams = {
   approval: parseAsStringLiteral(APPROVAL_STATUSES),
   from: textParser,
   to: textParser,
-};
+}
 
-export const loadJobsSearchParams = createLoader(jobsSearchParams);
+export const loadJobsSearchParams = createLoader(jobsSearchParams)
 
 type Params = {
-  page: number;
-  q: string;
-  status: string | null;
-  approval: string | null;
-  from: string;
-  to: string;
-};
+  page: number
+  q: string
+  status: string | null
+  approval: string | null
+  from: string
+  to: string
+}
 
 export function toJobsFilters(params: Params): JobsFilters {
   return {
@@ -41,5 +41,5 @@ export function toJobsFilters(params: Params): JobsFilters {
       from_date: params.from,
       end_date: params.to,
     }),
-  };
+  }
 }

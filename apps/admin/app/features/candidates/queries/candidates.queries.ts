@@ -1,6 +1,6 @@
-import { keepPreviousData, queryOptions } from "@tanstack/react-query";
-import type { CandidateFilters } from "../schemas/candidates.schema";
-import { candidatesService } from "../services/candidates.service";
+import { keepPreviousData, queryOptions } from "@tanstack/react-query"
+import type { CandidateFilters } from "../schemas/candidates.schema"
+import { candidatesService } from "../services/candidates.service"
 
 export const candidatesKeys = {
   all: ["candidates"] as const,
@@ -8,7 +8,7 @@ export const candidatesKeys = {
     [...candidatesKeys.all, "list", filters] as const,
   profile: (id: string) => [...candidatesKeys.all, "profile", id] as const,
   summary: () => [...candidatesKeys.all, "summary"] as const,
-};
+}
 
 export const candidatesQueries = {
   list: (filters: CandidateFilters) =>
@@ -31,4 +31,4 @@ export const candidatesQueries = {
       queryFn: ({ signal }) => candidatesService.summary(signal),
       staleTime: 30_000,
     }),
-};
+}

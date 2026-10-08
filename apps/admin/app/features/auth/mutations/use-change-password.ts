@@ -1,5 +1,5 @@
-import { useMutation } from "@tanstack/react-query";
-import { authService } from "../services/auth.service";
+import { useMutation } from "@tanstack/react-query"
+import { authService } from "../services/auth.service"
 
 export function useChangePassword() {
   return useMutation({
@@ -7,9 +7,9 @@ export function useChangePassword() {
       currentPassword,
       newPassword,
     }: {
-      currentPassword: string;
-      newPassword: string;
+      currentPassword: string
+      newPassword: string
     }) => authService.changePassword(currentPassword, newPassword),
     meta: { successMessage: "Password updated", errorMessage: false },
-  });
+  })
 }

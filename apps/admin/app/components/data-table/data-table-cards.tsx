@@ -1,19 +1,19 @@
-import { flexRender, type Row } from "@tanstack/react-table";
-import { columnLabel } from "./column-label";
+import { flexRender, type Row } from "@tanstack/react-table"
+import { columnLabel } from "./column-label"
 
 export function DataTableCards<TData>({ rows }: { rows: Row<TData>[] }) {
   return (
     <ul className="divide-y">
       {rows.map((row) => {
-        const cells = row.getVisibleCells();
-        const select = cells.find((cell) => cell.column.id === "select");
-        const labelled = cells.filter((cell) => columnLabel(cell.column));
-        const [primary, ...fields] = labelled;
+        const cells = row.getVisibleCells()
+        const select = cells.find((cell) => cell.column.id === "select")
+        const labelled = cells.filter((cell) => columnLabel(cell.column))
+        const [primary, ...fields] = labelled
         const actions = cells.filter(
-          (cell) => cell !== select && !columnLabel(cell.column),
-        );
+          (cell) => cell !== select && !columnLabel(cell.column)
+        )
         const render = (cell: (typeof cells)[number]) =>
-          flexRender(cell.column.columnDef.cell, cell.getContext());
+          flexRender(cell.column.columnDef.cell, cell.getContext())
 
         return (
           <li
@@ -47,8 +47,8 @@ export function DataTableCards<TData>({ rows }: { rows: Row<TData>[] }) {
               </div>
             )}
           </li>
-        );
+        )
       })}
     </ul>
-  );
+  )
 }

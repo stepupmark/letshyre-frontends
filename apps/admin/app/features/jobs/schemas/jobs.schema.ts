@@ -1,29 +1,29 @@
-import { z } from "zod";
-import { envelope, id, paginated } from "~/lib/api/schemas";
+import { z } from "zod"
+import { envelope, id, paginated } from "~/lib/api/schemas"
 
-const text = z.string().nullish();
-const num = z.number().nullish();
+const text = z.string().nullish()
+const num = z.number().nullish()
 const list = <T extends z.ZodType>(item: T) =>
   z
     .array(item)
     .nullish()
-    .transform((value) => value ?? []);
+    .transform((value) => value ?? [])
 const count = z
   .number()
   .nullish()
-  .transform((value) => value ?? 0);
+  .transform((value) => value ?? 0)
 
-export const JOB_STATUSES = ["open", "paused", "closed"] as const;
-export const APPROVAL_STATUSES = ["pending", "approved", "rejected"] as const;
-export type ApprovalStatus = (typeof APPROVAL_STATUSES)[number];
+export const JOB_STATUSES = ["open", "paused", "closed"] as const
+export const APPROVAL_STATUSES = ["pending", "approved", "rejected"] as const
+export type ApprovalStatus = (typeof APPROVAL_STATUSES)[number]
 
 function approvalOf(job: {
-  is_approved?: boolean | null;
-  is_rejected?: boolean | null;
+  is_approved?: boolean | null
+  is_rejected?: boolean | null
 }): ApprovalStatus {
-  if (job.is_approved) return "approved";
-  if (job.is_rejected) return "rejected";
-  return "pending";
+  if (job.is_approved) return "approved"
+  if (job.is_rejected) return "rejected"
+  return "pending"
 }
 
 const jobSchema = z
@@ -40,7 +40,7 @@ const jobSchema = z
     is_approved: z.boolean().nullish(),
     is_rejected: z.boolean().nullish(),
   })
-  .transform((job) => ({ ...job, approval: approvalOf(job) }));
+  .transform((job) => ({ ...job, approval: approvalOf(job) }))
 
 const jobDetailSchema = z
   .object({
@@ -79,7 +79,7 @@ const jobDetailSchema = z
   .transform((job) => ({
     ...job,
     approval: (job.job_status?.toLowerCase() ?? "pending") as ApprovalStatus,
-  }));
+  }))
 
 const jobsSummarySchema = z.object({
   total_post_jobs: count,
@@ -87,11 +87,11 @@ const jobsSummarySchema = z.object({
   approved_jobs: count,
   rejected_jobs: count,
   pending_approvals: count,
-});
+})
 
-export const jobsResponseSchema = envelope(paginated(jobSchema));
-export const jobDetailResponseSchema = envelope(jobDetailSchema);
-export const jobsSummaryResponseSchema = envelope(jobsSummarySchema);
+export const jobsResponseSchema = envelope(paginated(jobSchema))
+export const jobDetailResponseSchema = envelope(jobDetailSchema)
+export const jobsSummaryResponseSchema = envelope(jobsSummarySchema)
 
 export const rejectJobsSchema = z.object({
   reason: z
@@ -100,21 +100,21 @@ export const rejectJobsSchema = z.object({
     .min(10, "At least 10 characters")
     .max(500, "At most 500 characters")
     .refine((value) => !/<[^>]*>/.test(value), "HTML isn't allowed"),
-});
+})
 
-export type Job = z.infer<typeof jobSchema>;
-export type JobDetail = z.infer<typeof jobDetailSchema>;
-export type RejectJobsInput = z.infer<typeof rejectJobsSchema>;
+export type Job = z.infer<typeof jobSchema>
+export type JobDetail = z.infer<typeof jobDetailSchema>
+export type RejectJobsInput = z.infer<typeof rejectJobsSchema>
 export type JobsFilters = {
-  page: number;
-  search?: string;
-  status?: string;
-  is_pending?: boolean;
-  is_approved?: boolean;
-  is_rejected?: boolean;
-  from_date?: string;
-  end_date?: string;
-};
+  page: number
+  search?: string
+  status?: string
+  is_pending?: boolean
+  is_approved?: boolean
+  is_rejected?: boolean
+  from_date?: string
+  end_date?: string
+}
 export type JobsAction =
   | { action: "approve"; job_ids: string[] }
-  | { action: "reject"; job_ids: string[]; reason: string };
+  | { action: "reject"; job_ids: string[]; reason: string }

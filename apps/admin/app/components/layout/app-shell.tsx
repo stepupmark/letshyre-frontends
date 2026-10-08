@@ -1,17 +1,17 @@
-import { useEffect } from "react";
-import { Outlet } from "react-router";
-import { SidebarInset, SidebarProvider } from "~/components/ui/sidebar";
-import { useIdleTimeout } from "~/hooks/use-idle-timeout";
-import { endSession, listenForRemoteSessionEnd } from "~/lib/auth/session";
-import { AppHeader } from "./app-header";
-import { AppSidebar } from "./app-sidebar";
-import { NavigationProgress } from "./navigation-progress";
+import { useEffect } from "react"
+import { Outlet } from "react-router"
+import { SidebarInset, SidebarProvider } from "~/components/ui/sidebar"
+import { useIdleTimeout } from "~/hooks/use-idle-timeout"
+import { endSession, listenForRemoteSessionEnd } from "~/lib/auth/session"
+import { AppHeader } from "./app-header"
+import { AppSidebar } from "./app-sidebar"
+import { NavigationProgress } from "./navigation-progress"
 
-const IDLE_TIMEOUT_MS = 30 * 60_000;
+const IDLE_TIMEOUT_MS = 30 * 60_000
 
 export function AppShell() {
-  useIdleTimeout(IDLE_TIMEOUT_MS, () => endSession("idle"));
-  useEffect(() => listenForRemoteSessionEnd(), []);
+  useIdleTimeout(IDLE_TIMEOUT_MS, () => endSession("idle"))
+  useEffect(() => listenForRemoteSessionEnd(), [])
 
   return (
     <SidebarProvider>
@@ -24,5 +24,5 @@ export function AppShell() {
         </main>
       </SidebarInset>
     </SidebarProvider>
-  );
+  )
 }

@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { Check, X } from "lucide-react";
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog";
-import { StatusBadge } from "~/components/status-badge";
-import { Button } from "~/components/ui/button";
-import { useCandidateDecision } from "../mutations/use-candidate-decision";
+import { useState } from "react"
+import { Check, X } from "lucide-react"
+import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
+import { StatusBadge } from "~/components/status-badge"
+import { Button } from "~/components/ui/button"
+import { useCandidateDecision } from "../mutations/use-candidate-decision"
 import type {
   CandidateDecision as Decision,
   CandidateProfile,
-} from "../schemas/candidates.schema";
+} from "../schemas/candidates.schema"
 
 const COPY: Record<
   Decision,
@@ -24,17 +24,17 @@ const COPY: Record<
       "Their profile is hidden from employers. You can approve it later.",
     confirm: "Reject",
   },
-};
+}
 
 export function CandidateDecision({ profile }: { profile: CandidateProfile }) {
-  const decide = useCandidateDecision(profile.id);
-  const [pending, setPending] = useState<Decision>("approve");
-  const [open, setOpen] = useState(false);
+  const decide = useCandidateDecision(profile.id)
+  const [pending, setPending] = useState<Decision>("approve")
+  const [open, setOpen] = useState(false)
 
   const ask = (decision: Decision) => {
-    setPending(decision);
-    setOpen(true);
-  };
+    setPending(decision)
+    setOpen(true)
+  }
 
   return (
     <div className="flex flex-wrap items-center gap-2">
@@ -71,5 +71,5 @@ export function CandidateDecision({ profile }: { profile: CandidateProfile }) {
         }
       />
     </div>
-  );
+  )
 }

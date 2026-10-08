@@ -1,10 +1,10 @@
-import { isRouteErrorResponse, Link, useRouteError } from "react-router";
-import { FileQuestion, TriangleAlert } from "lucide-react";
-import { Button } from "~/components/ui/button";
-import { EmptyState } from "./empty-state";
+import { isRouteErrorResponse, Link, useRouteError } from "react-router"
+import { FileQuestion, TriangleAlert } from "lucide-react"
+import { Button } from "~/components/ui/button"
+import { EmptyState } from "./empty-state"
 
 export function RouteErrorBoundary() {
-  const error = useRouteError();
+  const error = useRouteError()
 
   if (isRouteErrorResponse(error) && error.status === 404) {
     return (
@@ -19,11 +19,11 @@ export function RouteErrorBoundary() {
           </Button>
         }
       />
-    );
+    )
   }
 
   const details =
-    import.meta.env.DEV && error instanceof Error ? error.message : undefined;
+    import.meta.env.DEV && error instanceof Error ? error.message : undefined
 
   return (
     <EmptyState
@@ -40,5 +40,5 @@ export function RouteErrorBoundary() {
         </Button>
       }
     />
-  );
+  )
 }

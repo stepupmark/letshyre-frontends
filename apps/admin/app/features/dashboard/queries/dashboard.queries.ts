@@ -1,7 +1,7 @@
-import { keepPreviousData, queryOptions } from "@tanstack/react-query";
-import { dashboardService } from "../services/dashboard.service";
+import { keepPreviousData, queryOptions } from "@tanstack/react-query"
+import { dashboardService } from "../services/dashboard.service"
 
-const FIVE_MINUTES = 5 * 60_000;
+const FIVE_MINUTES = 5 * 60_000
 
 const dashboardKeys = {
   all: ["dashboard"] as const,
@@ -14,7 +14,7 @@ const dashboardKeys = {
   activitySummary: () => [...dashboardKeys.all, "activity"] as const,
   dailyActivity: (days: number) =>
     [...dashboardKeys.all, "activity", days] as const,
-};
+}
 
 export const dashboardQueries = {
   revenueSummary: () =>
@@ -61,4 +61,4 @@ export const dashboardQueries = {
       staleTime: FIVE_MINUTES,
       placeholderData: keepPreviousData,
     }),
-};
+}

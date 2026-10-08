@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
-import { LoaderCircle } from "lucide-react";
+import type { ReactNode } from "react"
+import { LoaderCircle } from "lucide-react"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -9,19 +9,19 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "~/components/ui/alert-dialog";
+} from "~/components/ui/alert-dialog"
 
 type ConfirmDialogProps = {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-  title: string;
-  description?: ReactNode;
-  confirmLabel?: string;
-  destructive?: boolean;
-  pending?: boolean;
-  onConfirm: () => void;
-  children?: ReactNode;
-};
+  open: boolean
+  onOpenChange: (open: boolean) => void
+  title: string
+  description?: ReactNode
+  confirmLabel?: string
+  destructive?: boolean
+  pending?: boolean
+  onConfirm: () => void
+  children?: ReactNode
+}
 
 /** Stays open while `pending`; close it from the mutation's onSuccess. */
 export function ConfirmDialog({
@@ -54,8 +54,8 @@ export function ConfirmDialog({
             variant={destructive ? "destructive" : "default"}
             disabled={pending}
             onClick={(event) => {
-              event.preventDefault();
-              onConfirm();
+              event.preventDefault()
+              onConfirm()
             }}
           >
             {pending && <LoaderCircle className="animate-spin" />}
@@ -64,5 +64,5 @@ export function ConfirmDialog({
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-  );
+  )
 }

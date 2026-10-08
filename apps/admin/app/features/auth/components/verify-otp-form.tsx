@@ -1,54 +1,54 @@
-import { useEffect, useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
-import { LoaderCircle } from "lucide-react";
-import { toast } from "sonner";
-import { Alert, AlertDescription } from "~/components/ui/alert";
-import { Button } from "~/components/ui/button";
+import { useEffect, useState } from "react"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Controller, useForm } from "react-hook-form"
+import { LoaderCircle } from "lucide-react"
+import { toast } from "sonner"
+import { Alert, AlertDescription } from "~/components/ui/alert"
+import { Button } from "~/components/ui/button"
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "~/components/ui/field";
+} from "~/components/ui/field"
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "~/components/ui/input-otp";
-import { useSendOtp, useVerifyOtp } from "../mutations/use-password-reset";
-import { verifyOtpSchema } from "../schemas/auth.schema";
-import type { OtpSession, VerifyOtpInput } from "../types";
+} from "~/components/ui/input-otp"
+import { useSendOtp, useVerifyOtp } from "../mutations/use-password-reset"
+import { verifyOtpSchema } from "../schemas/auth.schema"
+import type { OtpSession, VerifyOtpInput } from "../types"
 
-const RESEND_AFTER_SECONDS = 60;
+const RESEND_AFTER_SECONDS = 60
 
 type VerifyOtpFormProps = {
-  session: OtpSession;
-  onResent: (session: OtpSession) => void;
-  onVerified: () => void;
-};
+  session: OtpSession
+  onResent: (session: OtpSession) => void
+  onVerified: () => void
+}
 
 export function VerifyOtpForm({
   session,
   onResent,
   onVerified,
 }: VerifyOtpFormProps) {
-  const [secondsLeft, setSecondsLeft] = useState(RESEND_AFTER_SECONDS);
-  const verifyOtp = useVerifyOtp();
-  const sendOtp = useSendOtp();
+  const [secondsLeft, setSecondsLeft] = useState(RESEND_AFTER_SECONDS)
+  const verifyOtp = useVerifyOtp()
+  const sendOtp = useSendOtp()
   const form = useForm<VerifyOtpInput>({
     resolver: zodResolver(verifyOtpSchema),
     defaultValues: { otp: "" },
-  });
+  })
 
   useEffect(() => {
-    if (secondsLeft <= 0) return;
+    if (secondsLeft <= 0) return
     const timer = window.setTimeout(
       () => setSecondsLeft((value) => value - 1),
-      1000,
-    );
-    return () => window.clearTimeout(timer);
-  }, [secondsLeft]);
+      1000
+    )
+    return () => window.clearTimeout(timer)
+  }, [secondsLeft])
 
   const submit = form.handleSubmit(({ otp }) =>
     verifyOtp.mutate(
@@ -56,22 +56,22 @@ export function VerifyOtpForm({
       {
         onSuccess: onVerified,
         onError: () => form.resetField("otp"),
-      },
-    ),
-  );
+      }
+    )
+  )
 
   const resend = () =>
     sendOtp.mutate(session.email, {
       onSuccess: (next) => {
-        onResent(next);
-        verifyOtp.reset();
-        form.resetField("otp");
-        setSecondsLeft(RESEND_AFTER_SECONDS);
-        toast.success("We sent you a new code");
+        onResent(next)
+        verifyOtp.reset()
+        form.resetField("otp")
+        setSecondsLeft(RESEND_AFTER_SECONDS)
+        toast.success("We sent you a new code")
       },
-    });
+    })
 
-  const error = verifyOtp.error ?? sendOtp.error;
+  const error = verifyOtp.error ?? sendOtp.error
 
   return (
     <form noValidate onSubmit={submit}>
@@ -133,5 +133,5 @@ export function VerifyOtpForm({
         </p>
       </FieldGroup>
     </form>
-  );
+  )
 }

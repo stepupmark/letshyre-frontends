@@ -1,9 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
-import { CalendarCheck, CalendarDays, CalendarRange } from "lucide-react";
-import { Suspense } from "react";
-import { ErrorState } from "~/components/feedback/error-state";
-import { StatCard } from "~/components/stat-card";
-import { Trend } from "~/components/trend";
+import { useQuery } from "@tanstack/react-query"
+import { CalendarCheck, CalendarDays, CalendarRange } from "lucide-react"
+import { Suspense } from "react"
+import { ErrorState } from "~/components/feedback/error-state"
+import { StatCard } from "~/components/stat-card"
+import { Trend } from "~/components/trend"
 import {
   Card,
   CardAction,
@@ -11,39 +11,39 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card";
-import { Skeleton } from "~/components/ui/skeleton";
-import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
-import { formatNumber, percentChange } from "~/lib/format";
-import { dashboardQueries } from "../queries/dashboard.queries";
+} from "~/components/ui/card"
+import { Skeleton } from "~/components/ui/skeleton"
+import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs"
+import { formatNumber, percentChange } from "~/lib/format"
+import { dashboardQueries } from "../queries/dashboard.queries"
 import {
   ACTIVITY_RANGES,
   type ActivityRange,
-} from "../schemas/dashboard.schema";
-import { ActivityChart } from "./lazy-charts";
-import { DashboardSection } from "./section";
+} from "../schemas/dashboard.schema"
+import { ActivityChart } from "./lazy-charts"
+import { DashboardSection } from "./section"
 
 export function ActivitySection({
   days,
   onDaysChange,
 }: {
-  days: ActivityRange;
-  onDaysChange: (days: ActivityRange) => void;
+  days: ActivityRange
+  onDaysChange: (days: ActivityRange) => void
 }) {
-  const summary = useQuery(dashboardQueries.activitySummary());
-  const range = Number(days);
-  const daily = useQuery(dashboardQueries.dailyActivity(range));
-  const comparison = useQuery(dashboardQueries.dailyActivity(range * 2));
-  const loading = summary.isPending;
+  const summary = useQuery(dashboardQueries.activitySummary())
+  const range = Number(days)
+  const daily = useQuery(dashboardQueries.dailyActivity(range))
+  const comparison = useQuery(dashboardQueries.dailyActivity(range * 2))
+  const loading = summary.isPending
 
   // fetching twice the range gives the previous period to compare against
-  const counts = comparison.data?.map((day) => day.active_count) ?? [];
-  const sum = (values: number[]) => values.reduce((total, n) => total + n, 0);
-  const current = sum(counts.slice(range));
+  const counts = comparison.data?.map((day) => day.active_count) ?? []
+  const sum = (values: number[]) => values.reduce((total, n) => total + n, 0)
+  const current = sum(counts.slice(range))
   const change =
     counts.length === range * 2
       ? percentChange(current, sum(counts.slice(0, range)))
-      : null;
+      : null
 
   return (
     <DashboardSection
@@ -118,5 +118,5 @@ export function ActivitySection({
         </CardContent>
       </Card>
     </DashboardSection>
-  );
+  )
 }

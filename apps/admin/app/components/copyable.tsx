@@ -1,36 +1,36 @@
-import { useEffect, useState, type ReactNode } from "react";
-import { Check, Copy } from "lucide-react";
-import { toast } from "sonner";
-import { cn } from "cn";
-import { Button } from "~/components/ui/button";
+import { useEffect, useState, type ReactNode } from "react"
+import { Check, Copy } from "lucide-react"
+import { toast } from "sonner"
+import { cn } from "cn"
+import { Button } from "~/components/ui/button"
 
 type CopyableProps = {
-  value: string | null | undefined;
-  label: string;
-  children?: ReactNode;
-  className?: string;
-};
+  value: string | null | undefined
+  label: string
+  children?: ReactNode
+  className?: string
+}
 
 export function Copyable({ value, label, children, className }: CopyableProps) {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false)
 
   useEffect(() => {
-    if (!copied) return;
-    const timer = window.setTimeout(() => setCopied(false), 1500);
-    return () => window.clearTimeout(timer);
-  }, [copied]);
+    if (!copied) return
+    const timer = window.setTimeout(() => setCopied(false), 1500)
+    return () => window.clearTimeout(timer)
+  }, [copied])
 
-  if (!value) return <span className="text-muted-foreground">—</span>;
+  if (!value) return <span className="text-muted-foreground">—</span>
 
   const copy = async () => {
     try {
-      await navigator.clipboard.writeText(value);
-      setCopied(true);
-      toast.success(`${label} copied`);
+      await navigator.clipboard.writeText(value)
+      setCopied(true)
+      toast.success(`${label} copied`)
     } catch {
-      toast.error(`Couldn't copy the ${label.toLowerCase()}`);
+      toast.error(`Couldn't copy the ${label.toLowerCase()}`)
     }
-  };
+  }
 
   return (
     <span
@@ -48,5 +48,5 @@ export function Copyable({ value, label, children, className }: CopyableProps) {
         {copied ? <Check /> : <Copy />}
       </Button>
     </span>
-  );
+  )
 }

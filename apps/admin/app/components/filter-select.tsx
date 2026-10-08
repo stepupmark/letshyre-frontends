@@ -1,22 +1,22 @@
-import { cn } from "cn";
+import { cn } from "cn"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "~/components/ui/select";
+} from "~/components/ui/select"
 
-const ALL = "__all";
+const ALL = "__all"
 
 type FilterSelectProps<T extends string> = {
-  label: string;
-  allLabel: string;
-  value: T | null;
-  options: readonly (T | { value: T; label: string })[];
-  onChange: (value: T | null) => void;
-  className?: string;
-};
+  label: string
+  allLabel: string
+  value: T | null
+  options: readonly (T | { value: T; label: string })[]
+  onChange: (value: T | null) => void
+  className?: string
+}
 
 /** A select whose first option clears the filter. */
 export function FilterSelect<T extends string>({
@@ -41,14 +41,14 @@ export function FilterSelect<T extends string>({
           const item =
             typeof option === "string"
               ? { value: option, label: option }
-              : option;
+              : option
           return (
             <SelectItem key={item.value} value={item.value}>
               {item.label}
             </SelectItem>
-          );
+          )
         })}
       </SelectContent>
     </Select>
-  );
+  )
 }

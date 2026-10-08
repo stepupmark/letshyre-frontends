@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useQuery } from "@tanstack/react-query";
-import { useForm } from "react-hook-form";
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog";
-import { ErrorState } from "~/components/feedback/error-state";
-import { PageHeader } from "~/components/page-header";
-import { Button } from "~/components/ui/button";
+import { useState } from "react"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useQuery } from "@tanstack/react-query"
+import { useForm } from "react-hook-form"
+import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
+import { ErrorState } from "~/components/feedback/error-state"
+import { PageHeader } from "~/components/page-header"
+import { Button } from "~/components/ui/button"
 import {
   Card,
   CardContent,
@@ -13,50 +13,50 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card";
+} from "~/components/ui/card"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldLabel,
-} from "~/components/ui/field";
+} from "~/components/ui/field"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
   InputGroupText,
-} from "~/components/ui/input-group";
-import { Skeleton } from "~/components/ui/skeleton";
-import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard";
-import { formatCurrency } from "~/lib/format";
-import { useUpdateCreditPrice } from "../mutations/use-update-credit-price";
-import { creditsQueries } from "../queries/credits.queries";
+} from "~/components/ui/input-group"
+import { Skeleton } from "~/components/ui/skeleton"
+import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard"
+import { formatCurrency } from "~/lib/format"
+import { useUpdateCreditPrice } from "../mutations/use-update-credit-price"
+import { creditsQueries } from "../queries/credits.queries"
 import {
   creditPriceSchema,
   type Credit,
   type CreditPriceInput,
-} from "../schemas/credits.schema";
+} from "../schemas/credits.schema"
 
-const PREVIEW_PACKS = [10, 50, 100];
+const PREVIEW_PACKS = [10, 50, 100]
 
 function PriceForm({ credit }: { credit: Credit }) {
-  const update = useUpdateCreditPrice();
-  const [confirmOpen, setConfirmOpen] = useState(false);
-  const [change, setChange] = useState({ from: credit.price, to: "" });
+  const update = useUpdateCreditPrice()
+  const [confirmOpen, setConfirmOpen] = useState(false)
+  const [change, setChange] = useState({ from: credit.price, to: "" })
   const form = useForm<CreditPriceInput>({
     resolver: zodResolver(creditPriceSchema),
     values: { price: credit.price },
-  });
-  const draft = form.watch("price");
-  const draftValid = !form.formState.errors.price && Number(draft) > 0;
+  })
+  const draft = form.watch("price")
+  const draftValid = !form.formState.errors.price && Number(draft) > 0
 
   return (
     <Card>
       <form
         noValidate
         onSubmit={form.handleSubmit(({ price }) => {
-          setChange({ from: credit.price, to: price });
-          setConfirmOpen(true);
+          setChange({ from: credit.price, to: price })
+          setConfirmOpen(true)
         })}
       >
         <UnsavedChangesGuard when={form.formState.isDirty} />
@@ -133,16 +133,16 @@ function PriceForm({ credit }: { credit: Credit }) {
         onConfirm={() =>
           update.mutate(
             { id: credit.id, price: change.to },
-            { onSuccess: () => setConfirmOpen(false) },
+            { onSuccess: () => setConfirmOpen(false) }
           )
         }
       />
     </Card>
-  );
+  )
 }
 
 export function CreditsPage() {
-  const credit = useQuery(creditsQueries.detail());
+  const credit = useQuery(creditsQueries.detail())
 
   return (
     <>
@@ -163,5 +163,5 @@ export function CreditsPage() {
         )}
       </div>
     </>
-  );
+  )
 }

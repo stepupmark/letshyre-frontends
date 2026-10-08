@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { useNavigate } from "react-router";
-import { useQuery } from "@tanstack/react-query";
+import { useState } from "react"
+import { useNavigate } from "react-router"
+import { useQuery } from "@tanstack/react-query"
 import {
   Briefcase,
   CreditCard,
@@ -8,8 +8,8 @@ import {
   Tag,
   User,
   type LucideIcon,
-} from "lucide-react";
-import { useTheme } from "~/components/theme-provider";
+} from "lucide-react"
+import { useTheme } from "~/components/theme-provider"
 import {
   Command,
   CommandDialog,
@@ -18,13 +18,13 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "~/components/ui/command";
-import { navigation } from "~/config/navigation";
-import { candidatesQueries } from "~/features/candidates";
-import { jobsQueries } from "~/features/jobs";
-import { useDebouncedValue } from "~/hooks/use-debounced-value";
+} from "~/components/ui/command"
+import { navigation } from "~/config/navigation"
+import { candidatesQueries } from "~/features/candidates"
+import { jobsQueries } from "~/features/jobs"
+import { useDebouncedValue } from "~/hooks/use-debounced-value"
 
-type Entry = { label: string; url: string; icon: LucideIcon; hint?: string };
+type Entry = { label: string; url: string; icon: LucideIcon; hint?: string }
 
 const PAGES: Entry[] = navigation.flatMap((group) =>
   group.items.flatMap((item) =>
@@ -35,9 +35,9 @@ const PAGES: Entry[] = navigation.flatMap((group) =>
           icon: item.icon,
           hint: item.title,
         }))
-      : [{ label: item.title, url: item.url, icon: item.icon }],
-  ),
-);
+      : [{ label: item.title, url: item.url, icon: item.icon }]
+  )
+)
 
 const CREATE: Entry[] = [
   { label: "New coupon", url: "/dashboard/coupons/new", icon: Tag },
@@ -46,63 +46,63 @@ const CREATE: Entry[] = [
     url: "/dashboard/payment-gateways/new",
     icon: CreditCard,
   },
-];
+]
 
 const THEME_ENTRY: Entry = {
   label: "Toggle dark mode",
   url: "",
   icon: Moon,
   hint: "theme",
-};
+}
 
 const matches = (entry: Entry, query: string) =>
   `${entry.label} ${entry.hint ?? ""}`
     .toLowerCase()
-    .includes(query.toLowerCase());
+    .includes(query.toLowerCase())
 
 type CommandPaletteDialogProps = {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-};
+  open: boolean
+  onOpenChange: (open: boolean) => void
+}
 
 export function CommandPaletteDialog({
   open,
   onOpenChange: setOpen,
 }: CommandPaletteDialogProps) {
-  const navigate = useNavigate();
-  const { toggleTheme } = useTheme();
-  const [query, setQuery] = useState("");
-  const [selected, setSelected] = useState("");
-  const search = useDebouncedValue(query.trim());
-  const searching = search.length >= 2;
+  const navigate = useNavigate()
+  const { toggleTheme } = useTheme()
+  const [query, setQuery] = useState("")
+  const [selected, setSelected] = useState("")
+  const search = useDebouncedValue(query.trim())
+  const searching = search.length >= 2
 
   const candidates = useQuery({
     ...candidatesQueries.list({ page: 1, search }),
     enabled: open && searching,
     placeholderData: undefined,
-  });
+  })
   const jobs = useQuery({
     ...jobsQueries.list({ page: 1, search }),
     enabled: open && searching,
     placeholderData: undefined,
-  });
+  })
 
   const go = (url: string) => {
-    setOpen(false);
-    void navigate(url);
-  };
+    setOpen(false)
+    void navigate(url)
+  }
 
   const onOpenChange = (next: boolean) => {
-    setOpen(next);
-    if (!next) setQuery("");
-  };
+    setOpen(next)
+    if (!next) setQuery("")
+  }
 
-  const pages = PAGES.filter((entry) => matches(entry, query));
-  const create = CREATE.filter((entry) => matches(entry, query));
-  const people = searching ? (candidates.data?.results ?? []).slice(0, 5) : [];
-  const jobResults = searching ? (jobs.data?.results ?? []).slice(0, 5) : [];
-  const loading = searching && (candidates.isFetching || jobs.isFetching);
-  const showTheme = matches(THEME_ENTRY, query);
+  const pages = PAGES.filter((entry) => matches(entry, query))
+  const create = CREATE.filter((entry) => matches(entry, query))
+  const people = searching ? (candidates.data?.results ?? []).slice(0, 5) : []
+  const jobResults = searching ? (jobs.data?.results ?? []).slice(0, 5) : []
+  const loading = searching && (candidates.isFetching || jobs.isFetching)
+  const showTheme = matches(THEME_ENTRY, query)
 
   // cmdk keeps a selection that no longer exists when results change, so fall back to the first item
   const values = [
@@ -111,8 +111,8 @@ export function CommandPaletteDialog({
     ...pages.map((entry) => `page-${entry.url}`),
     ...create.map((entry) => `create-${entry.url}`),
     ...(showTheme ? ["toggle-theme"] : []),
-  ];
-  const active = values.includes(selected) ? selected : (values[0] ?? "");
+  ]
+  const active = values.includes(selected) ? selected : (values[0] ?? "")
 
   return (
     <CommandDialog
@@ -204,8 +204,8 @@ export function CommandPaletteDialog({
                 <CommandItem
                   value="toggle-theme"
                   onSelect={() => {
-                    toggleTheme();
-                    setOpen(false);
+                    toggleTheme()
+                    setOpen(false)
                   }}
                 >
                   <Moon />
@@ -217,5 +217,5 @@ export function CommandPaletteDialog({
         </CommandList>
       </Command>
     </CommandDialog>
-  );
+  )
 }

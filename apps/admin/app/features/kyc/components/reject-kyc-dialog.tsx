@@ -1,7 +1,7 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { LoaderCircle } from "lucide-react";
-import { Button } from "~/components/ui/button";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { LoaderCircle } from "lucide-react"
+import { Button } from "~/components/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -10,23 +10,23 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "~/components/ui/dialog";
+} from "~/components/ui/dialog"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldLabel,
-} from "~/components/ui/field";
-import { Textarea } from "~/components/ui/textarea";
-import { useRejectKyc } from "../mutations/use-review-kyc";
-import { rejectKycSchema, type RejectKycInput } from "../schemas/kyc.schema";
+} from "~/components/ui/field"
+import { Textarea } from "~/components/ui/textarea"
+import { useRejectKyc } from "../mutations/use-review-kyc"
+import { rejectKycSchema, type RejectKycInput } from "../schemas/kyc.schema"
 
 type RejectKycDialogProps = {
-  kycId: string;
-  companyName: string;
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-};
+  kycId: string
+  companyName: string
+  open: boolean
+  onOpenChange: (open: boolean) => void
+}
 
 export function RejectKycDialog({
   kycId,
@@ -34,18 +34,18 @@ export function RejectKycDialog({
   open,
   onOpenChange,
 }: RejectKycDialogProps) {
-  const reject = useRejectKyc();
+  const reject = useRejectKyc()
   const form = useForm<RejectKycInput>({
     resolver: zodResolver(rejectKycSchema),
     defaultValues: { remarks: "" },
-  });
-  const error = form.formState.errors.remarks;
+  })
+  const error = form.formState.errors.remarks
 
   const handleOpenChange = (next: boolean) => {
-    if (reject.isPending) return;
-    if (!next) form.reset();
-    onOpenChange(next);
-  };
+    if (reject.isPending) return
+    if (!next) form.reset()
+    onOpenChange(next)
+  }
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
@@ -55,8 +55,8 @@ export function RejectKycDialog({
           onSubmit={form.handleSubmit(({ remarks }) =>
             reject.mutate(
               { id: kycId, remarks },
-              { onSuccess: () => handleOpenChange(false) },
-            ),
+              { onSuccess: () => handleOpenChange(false) }
+            )
           )}
         >
           <DialogHeader>
@@ -104,5 +104,5 @@ export function RejectKycDialog({
         </form>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

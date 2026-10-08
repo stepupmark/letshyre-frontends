@@ -1,25 +1,25 @@
-import type { ReactNode } from "react";
-import { Link, useParams } from "react-router";
-import { useQuery } from "@tanstack/react-query";
-import { ArrowLeft } from "lucide-react";
-import { DetailList } from "~/components/detail-list";
-import { DocumentList } from "~/components/document-viewer";
-import { ExternalLink } from "~/components/external-link";
-import { ErrorState } from "~/components/feedback/error-state";
-import { SensitiveValue } from "~/components/sensitive-value";
-import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
-import { Badge } from "~/components/ui/badge";
-import { Button } from "~/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
-import { Separator } from "~/components/ui/separator";
-import { Skeleton } from "~/components/ui/skeleton";
-import { Copyable } from "~/components/copyable";
-import { useDocumentTitle } from "~/hooks/use-document-title";
-import { formatCurrency, formatDate, initials } from "~/lib/format";
-import { safeExternalUrl } from "~/lib/safe-url";
-import { candidatesQueries } from "../queries/candidates.queries";
-import type { CandidateProfile } from "../schemas/candidates.schema";
-import { CandidateDecision } from "./candidate-decision";
+import type { ReactNode } from "react"
+import { Link, useParams } from "react-router"
+import { useQuery } from "@tanstack/react-query"
+import { ArrowLeft } from "lucide-react"
+import { DetailList } from "~/components/detail-list"
+import { DocumentList } from "~/components/document-viewer"
+import { ExternalLink } from "~/components/external-link"
+import { ErrorState } from "~/components/feedback/error-state"
+import { SensitiveValue } from "~/components/sensitive-value"
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
+import { Badge } from "~/components/ui/badge"
+import { Button } from "~/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card"
+import { Separator } from "~/components/ui/separator"
+import { Skeleton } from "~/components/ui/skeleton"
+import { Copyable } from "~/components/copyable"
+import { useDocumentTitle } from "~/hooks/use-document-title"
+import { formatCurrency, formatDate, initials } from "~/lib/format"
+import { safeExternalUrl } from "~/lib/safe-url"
+import { candidatesQueries } from "../queries/candidates.queries"
+import type { CandidateProfile } from "../schemas/candidates.schema"
+import { CandidateDecision } from "./candidate-decision"
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -29,17 +29,17 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
       </CardHeader>
       <CardContent>{children}</CardContent>
     </Card>
-  );
+  )
 }
 
 function Empty({ children }: { children: ReactNode }) {
-  return <p className="text-sm text-muted-foreground">{children}</p>;
+  return <p className="text-sm text-muted-foreground">{children}</p>
 }
 
 function Timeline({
   items,
 }: {
-  items: { key: string; title: ReactNode; meta: ReactNode; body?: ReactNode }[];
+  items: { key: string; title: ReactNode; meta: ReactNode; body?: ReactNode }[]
 }) {
   return (
     <div className="space-y-4">
@@ -56,11 +56,11 @@ function Timeline({
         </div>
       ))}
     </div>
-  );
+  )
 }
 
 function range(start: unknown, end: unknown) {
-  return [start, end || "Present"].filter(Boolean).join(" – ");
+  return [start, end || "Present"].filter(Boolean).join(" – ")
 }
 
 function Profile({ profile }: { profile: CandidateProfile }) {
@@ -70,7 +70,7 @@ function Profile({ profile }: { profile: CandidateProfile }) {
     { label: "Experience letter", url: profile.experience_letter },
     { label: "Current offer letter", url: profile.present_offer },
     { label: "Notice period proof", url: profile.notice_period_prof },
-  ];
+  ]
 
   return (
     <div className="grid gap-4 xl:grid-cols-3">
@@ -83,7 +83,7 @@ function Profile({ profile }: { profile: CandidateProfile }) {
                 title: [job.role, job.company].filter(Boolean).join(" at "),
                 meta: range(
                   job.start_date && formatDate(job.start_date),
-                  job.end_date && formatDate(job.end_date),
+                  job.end_date && formatDate(job.end_date)
                 ),
                 body: job.description,
               }))}
@@ -242,15 +242,15 @@ function Profile({ profile }: { profile: CandidateProfile }) {
         </Section>
       </div>
     </div>
-  );
+  )
 }
 
 export function CandidateProfilePage() {
-  const { id = "" } = useParams();
-  const profile = useQuery(candidatesQueries.profile(id));
+  const { id = "" } = useParams()
+  const profile = useQuery(candidatesQueries.profile(id))
   useDocumentTitle(
-    profile.data && `${profile.data.name || "Unnamed candidate"} · Candidates`,
-  );
+    profile.data && `${profile.data.name || "Unnamed candidate"} · Candidates`
+  )
 
   const back = (
     <Button variant="ghost" size="sm" className="mb-4 -ml-2" asChild>
@@ -258,7 +258,7 @@ export function CandidateProfilePage() {
         <ArrowLeft /> Candidates
       </Link>
     </Button>
-  );
+  )
 
   if (profile.isError)
     return (
@@ -269,7 +269,7 @@ export function CandidateProfilePage() {
           onRetry={() => void profile.refetch()}
         />
       </>
-    );
+    )
 
   if (!profile.data)
     return (
@@ -280,9 +280,9 @@ export function CandidateProfilePage() {
           <Skeleton className="h-96 w-full rounded-xl" />
         </div>
       </>
-    );
+    )
 
-  const data = profile.data;
+  const data = profile.data
 
   return (
     <>
@@ -308,5 +308,5 @@ export function CandidateProfilePage() {
       </div>
       <Profile profile={data} />
     </>
-  );
+  )
 }

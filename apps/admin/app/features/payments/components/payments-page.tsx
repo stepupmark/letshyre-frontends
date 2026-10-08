@@ -1,6 +1,6 @@
-import { Link } from "react-router";
-import { useQuery } from "@tanstack/react-query";
-import type { ColumnDef } from "@tanstack/react-table";
+import { Link } from "react-router"
+import { useQuery } from "@tanstack/react-query"
+import type { ColumnDef } from "@tanstack/react-table"
 import {
   CircleCheck,
   CircleX,
@@ -10,52 +10,52 @@ import {
   Repeat,
   SlidersHorizontal,
   X,
-} from "lucide-react";
-import { useQueryStates, type inferParserType } from "nuqs";
-import { DataTable } from "~/components/data-table/data-table";
-import { DateRangeFilter } from "~/components/date-range-filter";
-import { ListEmptyState } from "~/components/feedback/list-empty-state";
-import { PageHeader } from "~/components/page-header";
-import { SearchInput } from "~/components/search-input";
-import { StatCard } from "~/components/stat-card";
-import { StatusBadge, type StatusTone } from "~/components/status-badge";
-import { Badge } from "~/components/ui/badge";
-import { Button } from "~/components/ui/button";
-import { Field, FieldGroup, FieldLabel } from "~/components/ui/field";
-import { Input } from "~/components/ui/input";
+} from "lucide-react"
+import { useQueryStates, type inferParserType } from "nuqs"
+import { DataTable } from "~/components/data-table/data-table"
+import { DateRangeFilter } from "~/components/date-range-filter"
+import { ListEmptyState } from "~/components/feedback/list-empty-state"
+import { PageHeader } from "~/components/page-header"
+import { SearchInput } from "~/components/search-input"
+import { StatCard } from "~/components/stat-card"
+import { StatusBadge, type StatusTone } from "~/components/status-badge"
+import { Badge } from "~/components/ui/badge"
+import { Button } from "~/components/ui/button"
+import { Field, FieldGroup, FieldLabel } from "~/components/ui/field"
+import { Input } from "~/components/ui/input"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "~/components/ui/popover";
+} from "~/components/ui/popover"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "~/components/ui/select";
-import { Copyable } from "~/components/copyable";
-import { RelativeTime } from "~/components/relative-time";
-import { paymentsService } from "../services/payments.service";
-import { fetchAllPages } from "~/lib/fetch-all-pages";
-import { useDebouncedValue } from "~/hooks/use-debounced-value";
-import { formatCurrency, formatNumber } from "~/lib/format";
-import { paymentsQueries } from "../queries/payments.queries";
-import { PAYMENT_STATUSES, type Payment } from "../schemas/payments.schema";
-import { paymentsSearchParams, toPaymentFilters } from "../search-params";
+} from "~/components/ui/select"
+import { Copyable } from "~/components/copyable"
+import { RelativeTime } from "~/components/relative-time"
+import { paymentsService } from "../services/payments.service"
+import { fetchAllPages } from "~/lib/fetch-all-pages"
+import { useDebouncedValue } from "~/hooks/use-debounced-value"
+import { formatCurrency, formatNumber } from "~/lib/format"
+import { paymentsQueries } from "../queries/payments.queries"
+import { PAYMENT_STATUSES, type Payment } from "../schemas/payments.schema"
+import { paymentsSearchParams, toPaymentFilters } from "../search-params"
 
 type ParamsUpdate = {
   [K in keyof inferParserType<typeof paymentsSearchParams>]?:
-    inferParserType<typeof paymentsSearchParams>[K] | null;
-};
+    inferParserType<typeof paymentsSearchParams>[K] | null
+}
 
 const statusTone: Record<string, StatusTone> = {
   success: "success",
   pending: "warning",
   created: "warning",
   failed: "danger",
-};
+}
 
 const columns: ColumnDef<Payment>[] = [
   {
@@ -136,13 +136,13 @@ const columns: ColumnDef<Payment>[] = [
         </Button>
       ) : null,
   },
-];
+]
 
 function Summary() {
-  const summary = useQuery(paymentsQueries.summary());
-  const data = summary.data;
-  const loading = summary.isPending;
-  if (summary.isError) return null;
+  const summary = useQuery(paymentsQueries.summary())
+  const data = summary.data
+  const loading = summary.isPending
+  if (summary.isError) return null
 
   return (
     <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -177,24 +177,24 @@ function Summary() {
         value={formatNumber(data?.repeated_customers)}
       />
     </div>
-  );
+  )
 }
 
 export function PaymentsPage() {
-  const [params, setParams] = useQueryStates(paymentsSearchParams);
-  const q = useDebouncedValue(params.q);
-  const company = useDebouncedValue(params.company);
-  const min = useDebouncedValue(params.min);
-  const max = useDebouncedValue(params.max);
-  const filters = toPaymentFilters({ ...params, q, company, min, max });
-  const payments = useQuery(paymentsQueries.list(filters));
+  const [params, setParams] = useQueryStates(paymentsSearchParams)
+  const q = useDebouncedValue(params.q)
+  const company = useDebouncedValue(params.company)
+  const min = useDebouncedValue(params.min)
+  const max = useDebouncedValue(params.max)
+  const filters = toPaymentFilters({ ...params, q, company, min, max })
+  const payments = useQuery(paymentsQueries.list(filters))
 
   const extraFilters = [
     params.company,
     params.min || params.max,
     params.from || params.to,
-  ].filter(Boolean).length;
-  const hasFilters = Boolean(params.q || params.status || extraFilters);
+  ].filter(Boolean).length
+  const hasFilters = Boolean(params.q || params.status || extraFilters)
 
   const clearFilters = () =>
     void setParams({
@@ -206,10 +206,9 @@ export function PaymentsPage() {
       from: null,
       to: null,
       page: null,
-    });
+    })
 
-  const update = (next: ParamsUpdate) =>
-    void setParams({ ...next, page: null });
+  const update = (next: ParamsUpdate) => void setParams({ ...next, page: null })
 
   return (
     <>
@@ -342,5 +341,5 @@ export function PaymentsPage() {
         }
       />
     </>
-  );
+  )
 }

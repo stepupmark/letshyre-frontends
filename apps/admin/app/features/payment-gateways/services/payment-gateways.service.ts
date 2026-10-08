@@ -1,12 +1,12 @@
-import { http } from "~/lib/api/http-client";
+import { http } from "~/lib/api/http-client"
 import {
   gatewaysResponseSchema,
   type GatewayFormValues,
-} from "../schemas/payment-gateways.schema";
+} from "../schemas/payment-gateways.schema"
 
-const LIST_URL = "finances/v1/payment_gateway_managment/";
+const LIST_URL = "finances/v1/payment_gateway_managment/"
 const detailUrl = (id: string) =>
-  `finances/v1/payment_gateway_managment_detail/${encodeURIComponent(id)}/`;
+  `finances/v1/payment_gateway_managment_detail/${encodeURIComponent(id)}/`
 
 function toPayload(values: GatewayFormValues) {
   return {
@@ -17,24 +17,24 @@ function toPayload(values: GatewayFormValues) {
       client_id: values.clientId,
       client_secret: values.clientSecret,
     },
-  };
+  }
 }
 
 export const paymentGatewaysService = {
   async list(signal?: AbortSignal) {
-    const { data } = await http.get(LIST_URL, { signal });
-    return gatewaysResponseSchema.parse(data).data;
+    const { data } = await http.get(LIST_URL, { signal })
+    return gatewaysResponseSchema.parse(data).data
   },
 
   async create(values: GatewayFormValues) {
-    await http.post(LIST_URL, toPayload(values));
+    await http.post(LIST_URL, toPayload(values))
   },
 
   async update(id: string, values: GatewayFormValues) {
-    await http.put(detailUrl(id), toPayload(values));
+    await http.put(detailUrl(id), toPayload(values))
   },
 
   async remove(id: string) {
-    await http.delete(detailUrl(id));
+    await http.delete(detailUrl(id))
   },
-};
+}

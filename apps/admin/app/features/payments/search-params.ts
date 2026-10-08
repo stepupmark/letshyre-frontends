@@ -1,9 +1,9 @@
-import { createLoader, parseAsStringLiteral } from "nuqs";
-import { compactParams, pageParser, textParser } from "~/lib/search-params";
+import { createLoader, parseAsStringLiteral } from "nuqs"
+import { compactParams, pageParser, textParser } from "~/lib/search-params"
 import {
   PAYMENT_STATUSES,
   type PaymentFilters,
-} from "./schemas/payments.schema";
+} from "./schemas/payments.schema"
 
 export const paymentsSearchParams = {
   page: pageParser,
@@ -14,20 +14,20 @@ export const paymentsSearchParams = {
   max: textParser,
   from: textParser,
   to: textParser,
-};
+}
 
-export const loadPaymentsSearchParams = createLoader(paymentsSearchParams);
+export const loadPaymentsSearchParams = createLoader(paymentsSearchParams)
 
 type Params = {
-  page: number;
-  q: string;
-  status: string | null;
-  company: string;
-  min: string;
-  max: string;
-  from: string;
-  to: string;
-};
+  page: number
+  q: string
+  status: string | null
+  company: string
+  min: string
+  max: string
+  from: string
+  to: string
+}
 
 export function toPaymentFilters(params: Params): PaymentFilters {
   return {
@@ -41,5 +41,5 @@ export function toPaymentFilters(params: Params): PaymentFilters {
       start_date: params.from,
       end_date: params.to,
     }),
-  };
+  }
 }
