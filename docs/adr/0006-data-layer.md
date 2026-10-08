@@ -4,7 +4,7 @@ Accepted 2026-10-03.
 
 ## Context
 
-The API has no OpenAPI schema (B2) and its envelopes vary (`{ success, data }` on most calls, bare
+The API has no OpenAPI schema and its envelopes vary (`{ success, data }` on most calls, bare
 bodies on some). Legacy read fields loosely with axios and broke quietly when shapes changed.
 
 ## Decision

@@ -14,8 +14,8 @@ The new app took over `letshyre.ai`'s dashboard paths (`/employer`, `/employee`,
 path to legacy or the new app. Same origin and the same `localStorage` keys meant no re-login.
 
 With legacy removed, the server sends those paths to the app permanently. Moving to `app.letshyre.ai`
-(plan step 7.1) is deferred until the backend offers an httpOnly refresh cookie on `.letshyre.ai`
-(B5), so the move doesn't sign everyone out.
+is deferred until the backend offers an httpOnly refresh cookie on `.letshyre.ai`,
+so the move doesn't sign everyone out.
 
 ## Consequences
 

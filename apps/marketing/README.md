@@ -41,7 +41,6 @@ Routes and layouts import features through `index.ts` only. Features never impor
 - Theme tokens only (`bg-muted`, `text-muted-foreground`, `border`), no palette colors or hex values.
 - Logical properties for the inline axis (`ms-4`, `ps-2`, `text-start`, `end-0`) so Arabic and Urdu mirror.
 - No literal text in JSX. Every string is a catalog key, typed through `app/types/i18next.d.ts`.
-- Reuse legacy key paths for copy marked **keep** in `docs/baseline/content-inventory.md`, so existing translations carry over.
 - Links into the dashboard come from `app/lib/app-links.ts`.
 
 ## Design

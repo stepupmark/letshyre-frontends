@@ -1,11 +1,10 @@
-# Marketing launch checklist (step 4.8)
+# Marketing launch checklist
 
-Everything here runs after hosting is decided (O5) and a staging host exists. Deployment
-scripts (step 4.7) are not written yet.
+Everything here runs once hosting is decided and a staging host exists.
 
 ## Before staging
 
-- [ ] Translation batch done (O4). `pnpm --filter marketing build` lists the pages per locale
+- [ ] Translation batch done. `pnpm --filter marketing build` lists the pages per locale
       in the sitemap; nothing ships in a locale until its namespaces are complete.
 - [ ] Production env set: `VITE_ENV=production`, `VITE_SITE_URL=https://letshyre.ai`,
       `VITE_APP_URL=https://letshyre.ai`, `VITE_META_PIXEL_ID`, `VITE_COOKIE_DOMAIN=.letshyre.ai`.

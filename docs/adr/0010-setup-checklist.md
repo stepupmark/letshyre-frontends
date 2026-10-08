@@ -1,6 +1,6 @@
 # 0010 · Setup checklist and tips instead of a modal tour
 
-Accepted in step 6.3 (D8).
+Accepted.
 
 ## Context
 
@@ -16,4 +16,4 @@ remembered per browser and resettable from the user menu.
 ## Consequences
 
 - No tour dependency, nothing modal on first load.
-- The checklist reads existing endpoints; dedicated counts (B6) would make it one request.
+- The checklist reads existing endpoints; dedicated counts endpoint would make it one request.

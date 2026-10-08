@@ -1,6 +1,6 @@
 # 0009 · One sign-in page for both roles
 
-Accepted in step 6.2 (D7).
+Accepted.
 
 ## Context
 

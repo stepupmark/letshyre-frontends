@@ -1,6 +1,6 @@
 # 0014 · The app keeps its explicit route config
 
-Accepted 2026-10-06. Closes the app appendix of [routing-plan.md](../routing-plan.md).
+Accepted 2026-10-06.
 
 ## Context
 

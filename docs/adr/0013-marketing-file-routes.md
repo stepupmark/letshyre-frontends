@@ -1,10 +1,10 @@
 # 0013 · File-based routing for marketing
 
-Accepted 2026-10-06. Supersedes migration-plan A8 for `apps/marketing` only.
+Accepted 2026-10-06. Applies to `apps/marketing` only.
 
 ## Context
 
-A8 chose an explicit `routes.ts` everywhere. In marketing that file only mapped one layout and ten
+The monorepo started with an explicit `routes.ts` in every app. In marketing that file only mapped one layout and ten
 small pages, and file names had drifted from their URLs (`privacy.tsx` served `/policy`,
 `interview.tsx` served `/how-it-works-interview`).
 
@@ -15,8 +15,8 @@ layout, pages are `routes/_site.$lang.<slug>.tsx` (home is `_site.$lang._index.t
 `routes/404.tsx` is the not-found page. File names match URLs. The prerender list still comes from
 translation readiness, not from the route files.
 
-The app keeps its explicit `routes.ts` until its URL cleanup (see the appendix of
-[routing-plan.md](../routing-plan.md)); moving it first would bake today's URLs into file names.
+The app keeps its explicit `routes.ts` until its URL cleanup
+([ADR 0014](./0014-app-route-config.md)); moving it first would bake today's URLs into file names.
 
 ## Consequences
 

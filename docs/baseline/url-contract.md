@@ -1,4 +1,4 @@
-# URL & handoff contract (step 0.4)
+# URL & handoff contract
 
 The URLs the migration must keep working, how they change, and every link from marketing into the
 dashboard app. Playwright (`e2e/url-contract.spec.ts`, `e2e/handoff.spec.ts`, `e2e/seo.spec.ts`)
@@ -53,7 +53,7 @@ Interim `VITE_APP_URL=https://letshyre.ai`. Final `VITE_APP_URL=https://app.lets
 | Get started (header), "I'm hiring", Start hiring | `/employer/register`                   |                                                                                                                                                      |
 | "I'm looking for a job", Apply                   | `/employee/register`                   |                                                                                                                                                      |
 | Pricing: Free plan "Start free"                  | `/employer/register`                   |                                                                                                                                                      |
-| Pricing: buy plan / top-up                       | `/employer/billing?checkout=<key>`     | `<key>` = plan id or `<n>-credits`, same as today's `?checkout=` values. Signed-out users sign in and return here. Needs the legacy patch (step 4.5) |
+| Pricing: buy plan / top-up                       | `/employer/billing?checkout=<key>`     | `<key>` = plan id or `<n>-credits`, same as today's `?checkout=` values. Signed-out users sign in and return here. |
 | Pricing: Custom "Talk to sales"                  | marketing `/:lang/contact?topic=sales` | Stays on marketing                                                                                                                                   |
 | Download page: "Sign in" mention                 | `/employee/sign-in`                    | Redirects to `/sign-in` in the new app                                                                                                               |
 
@@ -63,7 +63,7 @@ The language is carried across via the `lh_locale` cookie (`Domain=.letshyre.ai`
 
 The legacy dashboards link to `/en/pricing`, `/en/terms`, `/en/policy` (301 to `/en/privacy-policy`), `/en/refund-policy`, `/en/contact`, `/en`.
 These are served by the new marketing build on the same origin, with no change needed.
-Exception: "Buy credits" (`CreditUsageCard`, `Invoice`) is repointed to `/employer/billing` in step 4.5.
+Exception: "Buy credits" (`CreditUsageCard`, `Invoice`) points to `/employer/billing`.
 
 ## 5. Host requirements
 
@@ -129,4 +129,3 @@ not renamed to `/candidate` because backend emails and host config use it.
 
 - No-slash URLs are canonical and served with 200. The trailing-slash form 301s to them.
 - "Log in" goes to `/get-started` until the app has a unified sign-in.
-- All content decisions in [content-inventory.md](./content-inventory.md) are approved as proposed.

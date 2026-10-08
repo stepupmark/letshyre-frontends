@@ -1,7 +1,7 @@
 # Production baseline (captured 2026-10-03)
 
 What `https://letshyre.ai` serves **before** the migration. The new marketing build is diffed against
-these files (implementation plan step 4.2). Re-capture with:
+these files. Re-capture with:
 
 ```bash
 node tooling/baseline/capture-seo.ts          # → seo-baseline.json
@@ -12,8 +12,7 @@ node tooling/baseline/capture-lighthouse.ts   # → lighthouse.json (needs Chrom
 |---|---|
 | [seo-baseline.json](./seo-baseline.json) | 153 sitemap URLs (title, description, robots, canonical, hreflang, OG/Twitter, JSON-LD types, FAQ count, `h1` count, `lang`/`dir`) + 15 redirect/fallback probes |
 | [lighthouse.json](./lighthouse.json) | Lighthouse 13, mobile preset, 11 pages |
-| [content-inventory.md](./content-inventory.md) | Every marketing copy key with a keep/rewrite/drop proposal (step 0.3) |
-| [url-contract.md](./url-contract.md) | URLs that must keep working, and marketing → app handoff links (step 0.4) |
+| [url-contract.md](./url-contract.md) | URLs that must keep working, and marketing → app handoff links |
 
 ## SEO: what's good (must be preserved)
 
@@ -51,6 +50,6 @@ Note: production nginx (`nginx/1.28.3 (Ubuntu)`) does **not** match `deploy/ngin
 
 Findings:
 - **Performance is the main gap.** LCP is 5–7 s on every page, and even text-only legal pages ship 950+ KB.
-- **Best Practices = 77 everywhere** comes from one cause: Meta Pixel sets third-party cookies on load, without consent (`third-party-cookies`, `inspector-issues`). A consent-gated pixel (open decision O2) fixes this.
+- **Best Practices = 77 everywhere** comes from one cause: Meta Pixel sets third-party cookies on load, without consent (`third-party-cookies`, `inspector-issues`). The consent-gated pixel fixes this.
 - **A11y:** only `/en/` fails one audit (`color-contrast`). Lighthouse covers a subset of WCAG, so the manual pass in Phase 4 still applies.
 - Single runs; expect ±5 points of noise on Performance.

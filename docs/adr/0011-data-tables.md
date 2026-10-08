@@ -1,6 +1,6 @@
 # 0011 · `@tanstack/react-table` for every table
 
-Accepted in step 5.6 (D9).
+Accepted.
 
 ## Context
 
