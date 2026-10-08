@@ -17,7 +17,7 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "i18next": "^26.4.2",
+    "i18next": "catalog:",
     "react-i18next": "^17.0.15"
   },
   "peerDependencies": {

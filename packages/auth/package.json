@@ -26,7 +26,7 @@
     "@workspace/typescript-config": "workspace:*",
     "eslint": "catalog:",
     "jsdom": "catalog:",
-    "msw": "^2.15.0",
+    "msw": "catalog:",
     "react": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"

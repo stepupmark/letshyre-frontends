@@ -22,7 +22,7 @@
     "@workspace/eslint-config": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
     "eslint": "catalog:",
-    "msw": "^2.15.0",
+    "msw": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
   }
