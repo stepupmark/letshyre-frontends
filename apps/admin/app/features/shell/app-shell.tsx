@@ -4,6 +4,7 @@ import { SkipLink } from "@workspace/blocks/skip-link"
 import { useEffect, type ReactNode } from "react"
 import { Outlet } from "react-router"
 import { SidebarInset, SidebarProvider } from "@workspace/ui/components/sidebar"
+import { TooltipProvider } from "@workspace/ui/components/tooltip"
 import { useIdleTimeout } from "@/hooks/use-idle-timeout"
 import { endSession } from "@/lib/session"
 import type { SearchSource } from "@/lib/search"
@@ -29,20 +30,22 @@ export function AppShell({
   }, [signedOut])
 
   return (
-    <SidebarProvider>
-      <SkipLink>Skip to content</SkipLink>
-      <NavigationProgress label="Loading page" />
-      <AppSidebar />
-      <SidebarInset className="min-w-0">
-        <AppHeader account={account} searches={searches} />
-        <main
-          id="main"
-          tabIndex={-1}
-          className="mx-auto w-full max-w-screen-2xl flex-1 p-4 md:p-6"
-        >
-          <Outlet />
-        </main>
-      </SidebarInset>
-    </SidebarProvider>
+    <TooltipProvider>
+      <SidebarProvider>
+        <SkipLink>Skip to content</SkipLink>
+        <NavigationProgress label="Loading page" />
+        <AppSidebar />
+        <SidebarInset className="min-w-0">
+          <AppHeader account={account} searches={searches} />
+          <main
+            id="main"
+            tabIndex={-1}
+            className="mx-auto w-full max-w-screen-2xl flex-1 p-4 md:p-6"
+          >
+            <Outlet />
+          </main>
+        </SidebarInset>
+      </SidebarProvider>
+    </TooltipProvider>
   )
 }

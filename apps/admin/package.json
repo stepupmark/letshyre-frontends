@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "react-router dev",
-    "build": "react-router build && node scripts/security-headers.mjs",
-    "preview": "node scripts/preview.mjs",
-    "size": "node scripts/check-bundle.mjs",
+    "build": "react-router build && node scripts/postbuild.ts",
+    "preview": "vite preview",
     "typecheck": "react-router typegen && tsc",
     "lint": "eslint ."
   },
@@ -43,7 +42,6 @@
     "@workspace/eslint-config": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
     "eslint": "catalog:",
-    "sirv": "^3.0.2",
     "tailwindcss": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:"

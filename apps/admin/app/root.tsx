@@ -17,7 +17,6 @@ import { LoaderCircle } from "lucide-react"
 import type { Route } from "./+types/root"
 import { Button } from "@workspace/ui/components/button"
 import { Toaster } from "@workspace/ui/components/sonner"
-import { TooltipProvider } from "@workspace/ui/components/tooltip"
 import { getErrorMessage } from "@/lib/errors"
 import { queryClient } from "@/lib/query/query-client"
 import "./app.css"
@@ -29,6 +28,9 @@ const ReactQueryDevtools = import.meta.env.DEV
       }))
     )
   : () => null
+
+// next-themes only sets the class after JS loads; this stops dark mode flashing light first
+const themeScript = `try{var t=localStorage.getItem("theme");document.documentElement.classList.toggle("dark",t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme: dark)").matches))}catch(e){}`
 
 export const links: Route.LinksFunction = () => [
   {
@@ -42,16 +44,14 @@ export const links: Route.LinksFunction = () => [
   { rel: "apple-touch-icon", href: "/icon.png" },
 ]
 
-export const meta: Route.MetaFunction = () => [
-  { name: "robots", content: "noindex, nofollow" },
-]
-
 export function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex, nofollow" />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <Meta />
         <Links />
       </head>
@@ -68,10 +68,8 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider switchable>
-        <TooltipProvider>
-          <Outlet />
-          <Toaster position="top-right" richColors />
-        </TooltipProvider>
+        <Outlet />
+        <Toaster position="top-right" richColors />
       </ThemeProvider>
       <Suspense>
         <ReactQueryDevtools buttonPosition="bottom-left" />
