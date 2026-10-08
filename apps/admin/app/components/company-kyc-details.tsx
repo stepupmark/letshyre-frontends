@@ -11,8 +11,7 @@ import {
 } from "@workspace/ui/components/card"
 import { Copyable } from "@/components/copyable"
 import { safeExternalUrl } from "@/lib/safe-url"
-import { kycDocuments } from "../documents"
-import type { CompanyKyc } from "../schemas/kyc.schema"
+import { kycDocuments, type CompanyKyc } from "@/lib/company-kyc"
 
 function WebLink({ href }: { href: string | null | undefined }) {
   return (

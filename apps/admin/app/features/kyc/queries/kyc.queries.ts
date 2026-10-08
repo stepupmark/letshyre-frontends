@@ -1,5 +1,5 @@
 import { keepPreviousData, queryOptions } from "@tanstack/react-query"
-import type { KycStatus } from "../schemas/kyc.schema"
+import type { KycStatus } from "@/lib/company-kyc"
 import { kycService } from "../services/kyc.service"
 
 export const kycKeys = {

@@ -21,8 +21,8 @@ export default [
 
   // TODO(admin): the overrides below go as the migration replaces this code
   {
-    // company KYC moves to shared, tables move to react-table v9
-    files: ["app/components/data-table/**", "app/features/employers/**"],
+    // tables move to react-table v9
+    files: ["app/components/data-table/**"],
     rules: {
       "boundaries/dependencies": "off",
       "react-hooks/incompatible-library": "off",

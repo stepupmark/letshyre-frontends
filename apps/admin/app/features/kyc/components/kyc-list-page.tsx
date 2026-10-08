@@ -16,9 +16,9 @@ import {
   KYC_STATUSES,
   type CompanyKyc,
   type KycStatus,
-} from "../schemas/kyc.schema"
+} from "@/lib/company-kyc"
 import { kycSearchParams } from "../search-params"
-import { CompanyAvatar, KycStatusBadge } from "./kyc-status-badge"
+import { CompanyAvatar, KycStatusBadge } from "@/components/kyc-status-badge"
 
 const columns: ColumnDef<CompanyKyc>[] = [
   {

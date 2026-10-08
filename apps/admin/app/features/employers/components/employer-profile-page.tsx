@@ -12,11 +12,8 @@ import {
   CardTitle,
 } from "@workspace/ui/components/card"
 import { Skeleton } from "@workspace/ui/components/skeleton"
-import {
-  CompanyAvatar,
-  CompanyKycDetails,
-  KycStatusBadge,
-} from "@/features/kyc"
+import { CompanyKycDetails } from "@/components/company-kyc-details"
+import { CompanyAvatar, KycStatusBadge } from "@/components/kyc-status-badge"
 import { Copyable } from "@/components/copyable"
 import { useDocumentTitle } from "@/hooks/use-document-title"
 import { formatDate, formatNumber } from "@/lib/format"
