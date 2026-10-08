@@ -1,7 +1,12 @@
-import { flexRender, type Row } from "@tanstack/react-table"
+import { FlexRender, type RowData } from "@tanstack/react-table"
 import { columnLabel } from "./column-label"
+import type { DataTableRow } from "./features"
 
-export function DataTableCards<TData>({ rows }: { rows: Row<TData>[] }) {
+export function DataTableCards<TData extends RowData>({
+  rows,
+}: {
+  rows: DataTableRow<TData>[]
+}) {
   return (
     <ul className="divide-y">
       {rows.map((row) => {
@@ -12,8 +17,9 @@ export function DataTableCards<TData>({ rows }: { rows: Row<TData>[] }) {
         const actions = cells.filter(
           (cell) => cell !== select && !columnLabel(cell.column)
         )
-        const render = (cell: (typeof cells)[number]) =>
-          flexRender(cell.column.columnDef.cell, cell.getContext())
+        const render = (cell: (typeof cells)[number]) => (
+          <FlexRender cell={cell} />
+        )
 
         return (
           <li

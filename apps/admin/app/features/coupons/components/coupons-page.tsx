@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router"
 import { useQuery } from "@tanstack/react-query"
-import type { ColumnDef } from "@tanstack/react-table"
+import type { DataTableColumn } from "@/components/data-table/features"
 import {
   LoaderCircle,
   MoreHorizontal,
@@ -66,7 +66,10 @@ interface RowActions {
   onDelete: (coupon: Coupon) => void
 }
 
-function buildColumns({ onEdit, onDelete }: RowActions): ColumnDef<Coupon>[] {
+function buildColumns({
+  onEdit,
+  onDelete,
+}: RowActions): DataTableColumn<Coupon>[] {
   return [
     {
       id: "code",
@@ -126,7 +129,7 @@ function buildColumns({ onEdit, onDelete }: RowActions): ColumnDef<Coupon>[] {
     {
       id: "actions",
       header: () => <span className="sr-only">Actions</span>,
-      size: 48,
+      meta: { width: 48 },
       cell: ({ row }) => (
         <DropdownMenu>
           <DropdownMenuTrigger

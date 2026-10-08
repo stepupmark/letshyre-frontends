@@ -1,17 +1,15 @@
 import { useEffect, useRef, useState, type ReactNode } from "react"
 import { useLocation } from "react-router"
 import {
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-  type ColumnDef,
+  FlexRender,
+  functionalUpdate,
+  useTable,
   type OnChangeFn,
   type RowData,
   type RowSelectionState,
-  type VisibilityState,
+  type ColumnVisibilityState,
 } from "@tanstack/react-table"
 import { cn } from "@workspace/ui/lib/utils"
-import type { CsvCell } from "@/lib/csv"
 import { EmptyState } from "@/components/feedback/empty-state"
 import { ErrorState } from "@/components/feedback/error-state"
 import { Skeleton } from "@workspace/ui/components/skeleton"
@@ -30,21 +28,11 @@ import { DataTableCards } from "./data-table-cards"
 import { DataTableExport, type ExportRows } from "./data-table-export"
 import { DataTablePagination } from "./data-table-pagination"
 import { DataTableViewOptions, type Density } from "./data-table-view-options"
+import { dataTableFeatures, type DataTableColumn } from "./features"
 import { SavedViews } from "./saved-views"
 
-declare module "@tanstack/react-table" {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- must match the library's signature
-  interface ColumnMeta<TData extends RowData, TValue> {
-    align?: "right"
-    /** Column name for the view menu and CSV header when `header` isn't text. */
-    label?: string
-    /** CSV fields for this column, keyed by header; columns without it are left out. */
-    csv?: (row: TData) => Record<string, CsvCell>
-  }
-}
-
-interface DataTableProps<TData> {
-  columns: ColumnDef<TData>[]
+interface DataTableProps<TData extends RowData> {
+  columns: DataTableColumn<TData>[]
   data: TData[] | undefined
   getRowId?: (row: TData) => string
   /** 1-based, matches the API. */
@@ -73,7 +61,9 @@ const SKELETON_ROWS = 8
 const alignClass = (meta?: { align?: "right" }) =>
   meta?.align === "right" ? "text-right tabular-nums" : undefined
 
-export function DataTable<TData>({
+const EMPTY: never[] = []
+
+export function DataTable<TData extends RowData>({
   columns,
   data,
   getRowId,
@@ -96,37 +86,32 @@ export function DataTable<TData>({
   const isMobile = useIsMobile()
   const storageKey = `table:${pathname}:${columns.map((column) => column.id).join(",")}`
   const [columnVisibility, setColumnVisibility] =
-    useStoredState<VisibilityState>(`${storageKey}:columns`, {})
+    useStoredState<ColumnVisibilityState>(`${storageKey}:columns`, {})
   const [density, setDensity] = useStoredState<Density>(
     `${storageKey}:density`,
     "comfortable"
   )
 
-  const table = useReactTable({
-    data: data ?? [],
+  const table = useTable({
+    features: dataTableFeatures,
+    data: data ?? EMPTY,
     columns,
-    getRowId,
-    getCoreRowModel: getCoreRowModel(),
-    manualPagination: true,
-    pageCount,
+    ...(getRowId && { getRowId }),
     enableRowSelection: Boolean(onRowSelectionChange),
     state: { rowSelection: rowSelection ?? {}, columnVisibility },
-    onRowSelectionChange,
+    ...(onRowSelectionChange && { onRowSelectionChange }),
     onColumnVisibilityChange: (updater) => {
-      setColumnVisibility(
-        typeof updater === "function" ? updater(columnVisibility) : updater
-      )
+      setColumnVisibility(functionalUpdate(updater, columnVisibility))
     },
   })
 
   const columnCount = table.getVisibleLeafColumns().length
   const rows = table.getRowModel().rows
   const bodyRef = useRef<HTMLTableSectionElement>(null)
-  const [activeRow, setActiveRow] = useState(-1)
+  // the j/k cursor belongs to one set of rows
+  const [cursor, setCursor] = useState({ data, index: -1 })
+  const activeRow = cursor.data === data ? cursor.index : -1
 
-  useEffect(() => {
-    setActiveRow(-1)
-  }, [data])
   useEffect(() => {
     bodyRef.current?.rows[activeRow]?.scrollIntoView({ block: "nearest" })
   }, [activeRow])
@@ -144,9 +129,10 @@ export function DataTable<TData>({
       }
       event.preventDefault()
       const step = event.key === "j" ? 1 : -1
-      setActiveRow((index) =>
-        Math.min(Math.max(index + step, 0), rows.length - 1)
-      )
+      setCursor({
+        data,
+        index: Math.min(Math.max(activeRow + step, 0), rows.length - 1),
+      })
     },
     rows.length > 0 && !isMobile
   )
@@ -227,15 +213,12 @@ export function DataTable<TData>({
                   {group.headers.map((header) => (
                     <TableHead
                       key={header.id}
-                      style={{ width: header.column.columnDef.size }}
+                      style={{ width: header.column.columnDef.meta?.width }}
                       className={alignClass(header.column.columnDef.meta)}
                     >
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
+                      {header.isPlaceholder ? null : (
+                        <FlexRender header={header} />
+                      )}
                     </TableHead>
                   ))}
                 </TableRow>
@@ -265,10 +248,7 @@ export function DataTable<TData>({
                         key={cell.id}
                         className={alignClass(cell.column.columnDef.meta)}
                       >
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext()
-                        )}
+                        <FlexRender cell={cell} />
                       </TableCell>
                     ))}
                   </TableRow>

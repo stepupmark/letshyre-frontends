@@ -18,14 +18,4 @@ export default [
     files: ["app/features/auth/**"],
     rules: { "jsx-a11y/no-autofocus": "off" },
   },
-
-  // TODO(admin): the overrides below go as the migration replaces this code
-  {
-    // tables move to react-table v9
-    files: ["app/components/data-table/**"],
-    rules: {
-      "boundaries/dependencies": "off",
-      "react-hooks/incompatible-library": "off",
-    },
-  },
 ]

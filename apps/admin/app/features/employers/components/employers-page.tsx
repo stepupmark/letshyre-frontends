@@ -1,6 +1,6 @@
 import { Link } from "react-router"
 import { useQuery } from "@tanstack/react-query"
-import type { ColumnDef } from "@tanstack/react-table"
+import type { DataTableColumn } from "@/components/data-table/features"
 import {
   BadgeCheck,
   Building2,
@@ -21,7 +21,7 @@ import { pageOf, useSearchState } from "@/lib/search-params"
 import { employersQueries } from "../queries/employers.queries"
 import type { Employer } from "../schemas/employers.schema"
 
-const columns: ColumnDef<Employer>[] = [
+const columns: DataTableColumn<Employer>[] = [
   {
     id: "company",
     meta: {

@@ -1,6 +1,6 @@
 import { Link } from "react-router"
 import { useQuery } from "@tanstack/react-query"
-import type { ColumnDef } from "@tanstack/react-table"
+import type { DataTableColumn } from "@/components/data-table/features"
 import {
   BadgeCheck,
   CalendarPlus,
@@ -32,7 +32,7 @@ import {
 import { useSearchState } from "@/lib/search-params"
 import { readCandidatesParams, toCandidateFilters } from "../search-params"
 
-const columns: ColumnDef<Candidate>[] = [
+const columns: DataTableColumn<Candidate>[] = [
   {
     id: "candidate",
     meta: {

@@ -1,6 +1,6 @@
 import { Link } from "react-router"
 import { useQuery } from "@tanstack/react-query"
-import type { ColumnDef } from "@tanstack/react-table"
+import type { DataTableColumn } from "@/components/data-table/features"
 import { BadgeCheck } from "lucide-react"
 import { DataTable } from "@/components/data-table/data-table"
 import { ListEmptyState } from "@/components/feedback/list-empty-state"
@@ -20,7 +20,7 @@ import { useSearchState } from "@/lib/search-params"
 import { readKycParams } from "../search-params"
 import { CompanyAvatar, KycStatusBadge } from "@/components/kyc-status-badge"
 
-const columns: ColumnDef<CompanyKyc>[] = [
+const columns: DataTableColumn<CompanyKyc>[] = [
   {
     id: "company",
     meta: {

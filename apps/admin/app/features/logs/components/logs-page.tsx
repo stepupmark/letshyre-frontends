@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import type { ColumnDef } from "@tanstack/react-table"
+import type { DataTableColumn } from "@/components/data-table/features"
 import { MessageSquare } from "lucide-react"
 import { DataTable } from "@/components/data-table/data-table"
 import { ListEmptyState } from "@/components/feedback/list-empty-state"
@@ -14,7 +14,7 @@ import { useSearchState } from "@/lib/search-params"
 import { readLogsParams } from "../search-params"
 import { OtpStatusBadge, VerifiedBadge } from "./otp-status-badge"
 
-function statusColumns<T extends EmailLog | SmsLog>(): ColumnDef<T>[] {
+function statusColumns<T extends EmailLog | SmsLog>(): DataTableColumn<T>[] {
   return [
     {
       id: "status",
@@ -41,7 +41,7 @@ function statusColumns<T extends EmailLog | SmsLog>(): ColumnDef<T>[] {
   ]
 }
 
-const emailColumns: ColumnDef<EmailLog>[] = [
+const emailColumns: DataTableColumn<EmailLog>[] = [
   {
     id: "recipient",
     meta: { csv: (row) => ({ Email: row.email }) },
@@ -59,7 +59,7 @@ const emailColumns: ColumnDef<EmailLog>[] = [
   ...statusColumns<EmailLog>(),
 ]
 
-const smsColumns: ColumnDef<SmsLog>[] = [
+const smsColumns: DataTableColumn<SmsLog>[] = [
   {
     id: "phone",
     meta: { csv: (row) => ({ Phone: row.phone_number }) },

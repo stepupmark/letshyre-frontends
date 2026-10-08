@@ -1,6 +1,6 @@
 import { Link } from "react-router"
 import { useQuery } from "@tanstack/react-query"
-import type { ColumnDef } from "@tanstack/react-table"
+import type { DataTableColumn } from "@/components/data-table/features"
 import {
   CircleCheck,
   CircleX,
@@ -56,7 +56,7 @@ const statusTone: Record<string, StatusTone> = {
   failed: "danger",
 }
 
-const columns: ColumnDef<Payment>[] = [
+const columns: DataTableColumn<Payment>[] = [
   {
     id: "employer",
     meta: { csv: (row) => ({ Employer: row.employeer, Company: row.company }) },

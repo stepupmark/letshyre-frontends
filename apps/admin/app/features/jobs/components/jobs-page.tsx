@@ -1,11 +1,8 @@
 import { useState } from "react"
 import { Link } from "react-router"
 import { useQuery } from "@tanstack/react-query"
-import type {
-  ColumnDef,
-  OnChangeFn,
-  RowSelectionState,
-} from "@tanstack/react-table"
+import type { OnChangeFn, RowSelectionState } from "@tanstack/react-table"
+import type { DataTableColumn } from "@/components/data-table/features"
 import {
   BriefcaseBusiness,
   CalendarPlus,
@@ -36,10 +33,10 @@ import { readJobsParams, toJobsFilters } from "../search-params"
 import { ApprovalBadge, JobStatusBadge } from "./job-badges"
 import { JobReview } from "./job-review"
 
-const columns: ColumnDef<Job>[] = [
+const columns: DataTableColumn<Job>[] = [
   {
     id: "select",
-    size: 40,
+    meta: { width: 40 },
     header: ({ table }) => (
       <Checkbox
         aria-label="Select all on this page"

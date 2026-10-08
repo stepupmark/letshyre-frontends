@@ -1,4 +1,4 @@
-import type { Table } from "@tanstack/react-table"
+import type { RowData } from "@tanstack/react-table"
 import { Settings2 } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
 import {
@@ -12,17 +12,18 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@workspace/ui/components/dropdown-menu"
+import type { DataTableInstance } from "./features"
 import { columnLabel } from "./column-label"
 
 export type Density = "comfortable" | "compact"
 
-interface DataTableViewOptionsProps<TData> {
-  table: Table<TData>
+interface DataTableViewOptionsProps<TData extends RowData> {
+  table: DataTableInstance<TData>
   density: Density
   onDensityChange: (density: Density) => void
 }
 
-export function DataTableViewOptions<TData>({
+export function DataTableViewOptions<TData extends RowData>({
   table,
   density,
   onDensityChange,

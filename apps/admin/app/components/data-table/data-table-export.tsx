@@ -1,24 +1,25 @@
 import { useState } from "react"
-import type { Table } from "@tanstack/react-table"
+import type { RowData } from "@tanstack/react-table"
 import { Download, LoaderCircle } from "lucide-react"
 import { toast } from "sonner"
 import { Button } from "@workspace/ui/components/button"
 import { getErrorMessage } from "@/lib/errors"
 import { downloadCsv, toCsv, type CsvCell } from "@/lib/csv"
 import { EXPORT_PAGE_LIMIT } from "@/lib/fetch-all-pages"
+import type { DataTableInstance } from "./features"
 
 export type ExportRows<TData> = () => Promise<{
   rows: TData[]
   truncated: boolean
 }>
 
-interface DataTableExportProps<TData> {
-  table: Table<TData>
+interface DataTableExportProps<TData extends RowData> {
+  table: DataTableInstance<TData>
   filename: string
   exportRows?: ExportRows<TData>
 }
 
-export function DataTableExport<TData>({
+export function DataTableExport<TData extends RowData>({
   table,
   filename,
   exportRows,

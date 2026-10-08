@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import type { ColumnDef } from "@tanstack/react-table"
+import type { DataTableColumn } from "@/components/data-table/features"
 import {
   CalendarCheck,
   CalendarDays,
@@ -44,7 +44,7 @@ function ScoreBadge({ score }: { score: number | string | null | undefined }) {
   return <StatusBadge tone={tone}>{Math.round(value)}</StatusBadge>
 }
 
-const columns: ColumnDef<UnlockedProfile>[] = [
+const columns: DataTableColumn<UnlockedProfile>[] = [
   {
     id: "employer",
     meta: { csv: (row) => ({ Employer: row.employer }) },
