@@ -137,6 +137,7 @@ export function CommandPaletteDialog({
                 <CommandGroup key={source.heading} heading={source.heading}>
                   {hits.map((hit) => (
                     <CommandItem
+                      className="data-selected:bg-brand-muted data-selected:text-brand-text data-selected:*:[svg]:text-brand-text"
                       key={hit.id}
                       value={`${source.heading}-${hit.id}`}
                       onSelect={() => {
@@ -157,6 +158,7 @@ export function CommandPaletteDialog({
             <CommandGroup heading="Pages">
               {pages.map((entry) => (
                 <CommandItem
+                  className="data-selected:bg-brand-muted data-selected:text-brand-text data-selected:*:[svg]:text-brand-text"
                   key={entry.url}
                   value={`page-${entry.url}`}
                   onSelect={() => {
@@ -178,6 +180,7 @@ export function CommandPaletteDialog({
             <CommandGroup heading="Actions">
               {create.map((entry) => (
                 <CommandItem
+                  className="data-selected:bg-brand-muted data-selected:text-brand-text data-selected:*:[svg]:text-brand-text"
                   key={entry.url}
                   value={`create-${entry.url}`}
                   onSelect={() => {
@@ -190,6 +193,7 @@ export function CommandPaletteDialog({
               ))}
               {showTheme && (
                 <CommandItem
+                  className="data-selected:bg-brand-muted data-selected:text-brand-text data-selected:*:[svg]:text-brand-text"
                   value="toggle-theme"
                   onSelect={() => {
                     setTheme(resolvedTheme === "dark" ? "light" : "dark")

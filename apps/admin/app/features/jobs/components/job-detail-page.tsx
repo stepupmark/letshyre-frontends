@@ -211,7 +211,7 @@ export function JobDetailPage() {
       {back}
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <div className="space-y-1">
-          <h1 className="text-2xl font-semibold tracking-tight">
+          <h1 className="text-2xl font-semibold tracking-tight text-brand-text">
             {data.title || "Untitled job"}
           </h1>
           <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">

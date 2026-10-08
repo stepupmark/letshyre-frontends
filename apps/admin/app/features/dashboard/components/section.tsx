@@ -15,7 +15,9 @@ export function DashboardSection({
     <section className="space-y-4">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
+          <h2 className="text-lg font-semibold tracking-tight text-brand-text">
+            {title}
+          </h2>
           {description && (
             <p className="text-sm text-muted-foreground">{description}</p>
           )}

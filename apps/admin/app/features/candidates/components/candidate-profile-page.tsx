@@ -307,7 +307,7 @@ export function CandidateProfilePage() {
             <AvatarFallback>{initials(data.name)}</AvatarFallback>
           </Avatar>
           <div>
-            <h1 className="text-2xl font-semibold tracking-tight">
+            <h1 className="text-2xl font-semibold tracking-tight text-brand-text">
               {data.name || "Unnamed candidate"}
             </h1>
             <p className="text-sm text-muted-foreground">

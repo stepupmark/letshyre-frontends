@@ -75,7 +75,7 @@ export function EmployerProfilePage() {
             className="size-14"
           />
           <div>
-            <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight">
+            <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight text-brand-text">
               {kyc?.company_name || data.user_name || "Employer"}
               <KycStatusBadge status={kyc?.kyc_status} />
             </h1>

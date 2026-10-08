@@ -83,7 +83,7 @@ export function KycReviewPage() {
             className="size-14"
           />
           <div>
-            <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight">
+            <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight text-brand-text">
               {record.company_name || "Unnamed company"}
               <KycStatusBadge status={status} />
             </h1>

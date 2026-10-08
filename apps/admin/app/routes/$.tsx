@@ -12,8 +12,10 @@ export default function NotFound() {
 
   return (
     <AuthLayout>
-      <p className="text-sm font-medium text-primary tabular-nums">404</p>
-      <h1 className="mt-2 text-2xl font-semibold tracking-tight">
+      <p className="text-sm font-medium text-muted-foreground tabular-nums">
+        404
+      </p>
+      <h1 className="mt-2 text-2xl font-semibold tracking-tight text-brand-text">
         Page not found
       </h1>
       <p className="mt-2 text-sm text-muted-foreground">

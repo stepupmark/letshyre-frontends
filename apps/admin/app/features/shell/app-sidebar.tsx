@@ -37,6 +37,7 @@ function NavEntry({ item }: { item: NavItem }) {
         <SidebarMenuButton
           tooltip={item.title}
           isActive={isActive(pathname, item.url, item.url === "/dashboard")}
+          className="data-active:bg-brand-muted data-active:text-brand-text"
           render={<NavLink to={item.url} end={item.url === "/dashboard"} />}
         >
           <item.icon />
@@ -57,6 +58,7 @@ function NavEntry({ item }: { item: NavItem }) {
           <SidebarMenuButton
             tooltip={item.title}
             isActive={isActive(pathname, item.url, false)}
+            className="data-active:bg-transparent data-active:text-brand-text group-data-[collapsible=icon]:data-active:bg-brand-muted"
           />
         }
       >
@@ -70,6 +72,7 @@ function NavEntry({ item }: { item: NavItem }) {
             <SidebarMenuSubItem key={sub.url}>
               <SidebarMenuSubButton
                 isActive={pathname === sub.url}
+                className="data-active:bg-brand-muted data-active:text-brand-text"
                 render={<NavLink to={sub.url} end />}
               >
                 <span>{sub.title}</span>
