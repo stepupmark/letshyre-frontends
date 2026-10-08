@@ -1,7 +1,8 @@
-# Starting a new app (e.g. `apps/admin`)
+# Starting a new app
 
 A new dashboard app starts as a copy of `apps/app`'s frame, not of its features. It shares every
-package, has its own routes, role guard and address, and is held to the same checks.
+package, has its own routes, role guard and address, and is held to the same checks. `apps/admin`
+was the first ([ADR 0015](./adr/0015-admin-app.md)); where it differs, it is noted below.
 
 ## What it shares
 
@@ -10,7 +11,7 @@ package, has its own routes, role guard and address, and is held to the same che
 | `@workspace/ui`                | shadcn components, theme CSS, status tokens (never edited)        |
 | `@workspace/blocks`            | Logo, skip link, theme provider, error screen, assistant, consent |
 | `@workspace/i18n`              | Catalog loader, readiness checks, locale cookie, typed keys       |
-| `@workspace/api`               | The typed `ky` client, uploads, downloads, error copy             |
+| `@workspace/api`               | The fetch client, uploads, error types, `table-params`            |
 | `@workspace/auth`              | Session keys, refresh, guards, `safeNext`                         |
 | `@workspace/eslint-config`     | `react-router-app` preset with feature boundaries and a11y rules  |
 | `@workspace/typescript-config` | `react-router-app.json`                                           |
@@ -29,18 +30,22 @@ motion tokens and rules ([ADR 0008](./adr/0008-motion.md)), and the ADRs in gene
    `playwright.config.ts`, so it runs next to the other apps.
 3. **Role:** add the role to `ROLES` and `ROLE_HOME` in `packages/auth/src`, and wrap the app's
    layout in `guard([ROLES.admin])`. Sign-in can stay on the main app and send the role home, or the
-   new app gets its own `/sign-in` built from `features/auth`.
+   new app gets its own `/sign-in` built from `features/auth`; then pass
+   `login(api, creds, { roles: [ROLES.admin] })` so other roles are refused before a session is saved.
 4. **Paths:** set `app-paths.ts` to the prefixes this app serves; everything else is a full page
    load to another app.
 5. **Shell:** start `features/shell` from the main app's (sidebar, topbar, command palette, user
    menu) with this app's `nav.ts`. Copy, don't import across apps.
 6. **Locales:** start `app/locales/en/` and `reviewed.json` as `["en"]`. Other locales come through
-   `pnpm i18n:apply` once the copy settles ([ADR 0007](./adr/0007-i18n-readiness.md)).
+   `pnpm i18n:apply` once the copy settles ([ADR 0007](./adr/0007-i18n-readiness.md)). An internal,
+   English-only app (the admin) skips this and turns off `i18next/no-literal-string` instead.
 7. **Env:** add the app's `.env.example`, and its URL to the other apps' env if they link to it.
 8. **Hosting:** its own subdomain (`admin.letshyre.ai`) with the SPA fallback, the build's
    `csp.map` policies and `noindex`; backend CORS for the origin.
 9. **Checks:** add it to `knip.json` if it needs entries, and to the commitlint scopes. CI picks it
-   up through Turbo; give it its own JS budget in `postbuild.ts` from a first measurement.
+   up through Turbo; give it its own JS budget in `postbuild.ts` from a first measurement, and add
+   its `playwright-report` to the CI artifact list. Keep tooltips and other shell-only providers
+   out of `root.tsx`; they belong in the shell, not the first load.
 
 ## Rules that carry over
 

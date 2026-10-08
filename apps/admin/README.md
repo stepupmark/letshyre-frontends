@@ -1,110 +1,59 @@
-# LetsHyre Admin
+# admin
 
-The internal admin panel for LetsHyre. Admins use it to review candidates, employers, KYC and job posts, manage payments, credits and coupons, and configure the platform.
-
-It is a client-only single-page app (React Router SPA mode). All data comes from the LetsHyre API.
-
-## Stack
-
-- React 19, TypeScript 6, Vite 8
-- React Router 8 in framework mode (`ssr: false`), file-based routes
-- TanStack Query 5 for server state, nuqs for URL state
-- Tailwind CSS 4 and shadcn/ui (Radix), lucide icons, sonner toasts
-- react-hook-form and zod 4
-- recharts, only on the dashboard and loaded lazily
-
-## Getting started
-
-Requires Node 22+ and pnpm 11 (`corepack enable` picks up the version from `package.json`).
+The internal LetsHyre admin panel: candidates, employers, KYC, jobs, payments, credits, coupons and
+platform settings. A client-only SPA (React Router 8, `ssr: false`) on the shared `@workspace/*`
+packages, English only and never indexed. Background in [ADR 0015](../../docs/adr/0015-admin-app.md).
 
 ```bash
-pnpm install
 cp .env.example .env
-pnpm dev
+pnpm dev            # http://localhost:5176
+pnpm build          # build/client, then postbuild checks
+pnpm preview        # serves the build with its CSP as a header
+pnpm test:e2e       # playwright + axe against the build
 ```
 
-The dev server runs on http://localhost:5173.
+| Variable             | Notes                                                                        |
+| -------------------- | ---------------------------------------------------------------------------- |
+| `VITE_API_BASE_URL`  | API root, `https://api.letshyre.ai/`. Must be https in production builds.    |
+| `VITE_MEDIA_ORIGINS` | Space-separated hosts for photos, logos and KYC documents; added to the CSP. |
 
-### Environment
+## How a page works
 
-| Variable            | Required | Notes                                                                                                                 |
-| ------------------- | -------- | --------------------------------------------------------------------------------------------------------------------- |
-| `VITE_API_BASE_URL` | yes      | API root, e.g. `https://api.letshyre.com/`. Must be `https` for production builds.                                    |
-| `MEDIA_ORIGINS`     | no       | Build time only. Hosts allowed in the CSP `img-src` and `frame-src` (images and PDFs); defaults to any `https:` host. |
-
-## Scripts
-
-| Script         | What it does                                                           |
-| -------------- | ---------------------------------------------------------------------- |
-| `pnpm dev`     | Dev server with HMR                                                    |
-| `pnpm build`   | Production build to `build/client`, plus `_headers` and `_redirects`   |
-| `pnpm preview` | Serves the build with the production security headers                  |
-| `pnpm size`    | Checks each route against the bundle budget (run after a build)        |
-| `pnpm check`   | Typecheck, lint, format check and knip, the same gate as the git hooks |
-| `pnpm format`  | Formats everything with Prettier                                       |
-
-## Project structure
-
-```text
-app/
-├── root.tsx              document shell, providers, root error boundary
-├── routes/               one file per URL (flat routes); thin, they wire loaders to features
-├── features/<name>/      everything for one area of the admin
-│   ├── components/
-│   ├── queries/          query key factory + queryOptions
-│   ├── mutations/        useMutation hooks with toast and invalidation meta
-│   ├── services/         API calls, validated with zod
-│   ├── schemas/          zod schemas and inferred types
-│   ├── search-params.ts  URL filters (nuqs parsers)
-│   └── index.ts          the feature's public API
-├── components/
-│   ├── ui/               shadcn components, kept close to upstream
-│   ├── layout/           sidebar, header, breadcrumbs
-│   ├── feedback/         empty, error, confirm and coming-soon states
-│   └── data-table/       TanStack Table wrapper with server pagination
-├── lib/
-│   ├── api/              axios client, ApiError, shared response schemas
-│   ├── auth/             token store, single-flight refresh, cross-tab sign-out
-│   └── query/            QueryClient with global toasts and invalidation
-└── config/navigation.ts  sidebar items
-scripts/                  build-time headers, preview server, bundle budget
-docs/adr/                 architecture decisions
+```
+app/features/<name>/
+  components/        the page and its parts
+  services/          API calls through `@/lib/api`, every response parsed with Zod
+  queries/ mutations/ schemas/
+  search-params.ts   reads the page's filters from the URL
+  index.ts           the only import other code may use
+app/routes/dashboard.<name>.tsx   clientLoader prefetch, meta, handle.breadcrumb
 ```
 
-Routes import only from a feature's `index.ts`. Features don't import from each other, except through that index.
+- Routes are flat files; the file name is the URL. A list route re-exports `shouldRevalidate` from
+  `@/lib/search-params` so typing in a filter doesn't rerun its loader.
+- Features never import each other. The shell (`features/shell`) gets the account menu and the
+  palette searches as props from `routes/dashboard.tsx`; shared pieces go in `app/components`,
+  `app/hooks` or `app/lib`. ESLint enforces this.
+- Mutations set `meta.successMessage` and `meta.invalidates`; destructive actions go through
+  `ConfirmDialog`.
+- Tables use `DataTable` with columns typed as `DataTableColumn<T>`.
+- Add sidebar entries in `app/lib/navigation.ts`.
 
-## How data flows
+## Rules
 
-1. A route's `clientLoader` prefetches its queries and returns `null`, so the page renders straight away with skeletons.
-2. Components read data with `useQuery(featureQueries.something(filters))`.
-3. Services call the API through `http` (`lib/api/http-client.ts`) and parse every response with zod, so a changed backend shape fails loudly in one place.
-4. Mutations declare `meta.successMessage` and `meta.invalidates`; the shared `QueryClient` shows the toast and refetches.
-5. Filters, search and paging live in the URL, so every list view can be shared and survives a reload.
+- UI comes from `@workspace/ui/components/*`, never edited. Use design tokens so dark mode works.
+- User links go through `<ExternalLink>` / `safeExternalUrl()`; personal identifiers through
+  `<SensitiveValue>`.
+- No new inline scripts: the CSP only allows the hashed ones in `index.html`.
+- E2E covers access, session, money and the CSP smoke. Every API call is mocked; an unknown call
+  fails the test.
 
-## Authentication
+## Hosting
 
-- The access and refresh tokens are kept in `localStorage`, behind `lib/auth/token-store.ts`. Moving the refresh token to an `HttpOnly` cookie needs backend work and is tracked separately.
-- A 401 triggers one refresh, shared across tabs with the Web Locks API, because the backend rotates refresh tokens.
-- Signing out, an expired session or 30 minutes of inactivity signs out every open tab.
-- A token that gets a 403 from the admin profile endpoint is treated as a non-admin and signed out.
+Not chosen yet, so the build is host-neutral. Wherever it goes, it needs:
 
-## Security
-
-- `pnpm build` writes a strict Content-Security-Policy with a `sha256` hash for each inline script, plus HSTS, `nosniff`, `frame-ancestors 'none'`, `Referrer-Policy` and `Permissions-Policy`.
-- The generated `_headers` and `_redirects` files work as-is on Netlify and Cloudflare Pages. On another host, copy the headers from `scripts/security-headers.mjs` and serve `index.html` for unknown paths.
-- Hashed files under `/assets` are cached for a year; `index.html` is never cached.
-- Links from user data go through `safeExternalUrl()` / `<ExternalLink>`, which only allow `http` and `https`.
-- Personal data (Aadhaar, PAN, GST numbers, gateway secrets) is masked until an admin reveals it.
-- The panel is marked `noindex` and `robots.txt` disallows crawling.
-
-## Deployment
-
-There is no CI pipeline. Build with the production API URL and upload `build/client` to a static host:
-
-```bash
-VITE_API_BASE_URL=https://api.letshyre.com/ pnpm build
-```
-
-Check the output with `pnpm preview` first; CSP violations show up in the browser console.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for conventions.
+- `index.html` for every unknown path; `/assets/*` cached for a year, `index.html` never cached.
+- The policy from `build/csp.map` as `Content-Security-Policy-Report-Only`, enforced after a clean
+  week ([ADR 0012](../../docs/adr/0012-csp-hashes.md)), plus `frame-ancestors 'none'`.
+- `Strict-Transport-Security`, `X-Content-Type-Options: nosniff`, `X-Robots-Tag: noindex`.
+- The admin origin allowed in the API's CORS settings.
