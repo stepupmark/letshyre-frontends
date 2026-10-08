@@ -70,4 +70,5 @@ jobs:
           path: |
             apps/marketing/playwright-report
             apps/app/playwright-report
+            apps/admin/playwright-report
           retention-days: 7
