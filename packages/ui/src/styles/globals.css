@@ -173,8 +173,21 @@
     --sidebar-ring: var(--ring);
 }
 
+/* brand text and tints, AA on their backgrounds in both themes */
+:root {
+    --brand-text: #1d5ce0;
+    --brand-muted: color-mix(in oklab, var(--brand) 10%, white);
+}
+
+.dark {
+    --brand-text: #6b9bff;
+    --brand-muted: color-mix(in oklab, var(--brand) 18%, oklch(0.205 0 0));
+}
+
 @theme inline {
     --color-brand: var(--brand);
+    --color-brand-text: var(--brand-text);
+    --color-brand-muted: var(--brand-muted);
 }
 
 /* shadcn fades primary to 80% on hover, which drops white text below AA on blue */
