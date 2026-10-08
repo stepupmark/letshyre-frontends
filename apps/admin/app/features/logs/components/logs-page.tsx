@@ -1,20 +1,20 @@
-import { useQuery } from "@tanstack/react-query";
-import type { ColumnDef } from "@tanstack/react-table";
-import { MessageSquare } from "lucide-react";
-import { useQueryStates } from "nuqs";
-import { DataTable } from "~/components/data-table/data-table";
-import { ListEmptyState } from "~/components/feedback/list-empty-state";
-import { PageHeader } from "~/components/page-header";
-import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs";
-import { RelativeTime } from "~/components/relative-time";
-import { logsService } from "../services/logs.service";
-import { fetchAllPages } from "~/lib/fetch-all-pages";
-import { logsQueries } from "../queries/logs.queries";
-import type { EmailLog, SmsLog } from "../schemas/logs.schema";
-import { logsSearchParams } from "../search-params";
-import { OtpStatusBadge, VerifiedBadge } from "./otp-status-badge";
+import { useQuery } from "@tanstack/react-query"
+import type { ColumnDef } from "@tanstack/react-table"
+import { MessageSquare } from "lucide-react"
+import { useQueryStates } from "nuqs"
+import { DataTable } from "@/components/data-table/data-table"
+import { ListEmptyState } from "@/components/feedback/list-empty-state"
+import { PageHeader } from "@/components/page-header"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { RelativeTime } from "@/components/relative-time"
+import { logsService } from "../services/logs.service"
+import { fetchAllPages } from "@/lib/fetch-all-pages"
+import { logsQueries } from "../queries/logs.queries"
+import type { EmailLog, SmsLog } from "../schemas/logs.schema"
+import { logsSearchParams } from "../search-params"
+import { OtpStatusBadge, VerifiedBadge } from "./otp-status-badge"
 
-function statusColumns<T extends EmailLog | SmsLog>(): ColumnDef<T, unknown>[] {
+function statusColumns<T extends EmailLog | SmsLog>(): ColumnDef<T>[] {
   return [
     {
       id: "status",
@@ -38,10 +38,10 @@ function statusColumns<T extends EmailLog | SmsLog>(): ColumnDef<T, unknown>[] {
         </span>
       ),
     },
-  ];
+  ]
 }
 
-const emailColumns: ColumnDef<EmailLog, unknown>[] = [
+const emailColumns: ColumnDef<EmailLog>[] = [
   {
     id: "recipient",
     meta: { csv: (row) => ({ Email: row.email }) },
@@ -57,9 +57,9 @@ const emailColumns: ColumnDef<EmailLog, unknown>[] = [
     cell: ({ row }) => row.original.otp_type ?? "—",
   },
   ...statusColumns<EmailLog>(),
-];
+]
 
-const smsColumns: ColumnDef<SmsLog, unknown>[] = [
+const smsColumns: ColumnDef<SmsLog>[] = [
   {
     id: "phone",
     meta: { csv: (row) => ({ Phone: row.phone_number }) },
@@ -71,19 +71,19 @@ const smsColumns: ColumnDef<SmsLog, unknown>[] = [
     ),
   },
   ...statusColumns<SmsLog>(),
-];
+]
 
 export function LogsPage() {
-  const [{ channel, page }, setParams] = useQueryStates(logsSearchParams);
+  const [{ channel, page }, setParams] = useQueryStates(logsSearchParams)
   const email = useQuery({
     ...logsQueries.email(page),
     enabled: channel === "email",
-  });
+  })
   const sms = useQuery({
     ...logsQueries.sms(page),
     enabled: channel === "sms",
-  });
-  const logs = channel === "email" ? email : sms;
+  })
+  const logs = channel === "email" ? email : sms
 
   const tableProps = {
     page,
@@ -113,7 +113,7 @@ export function LogsPage() {
         </TabsList>
       </Tabs>
     ),
-  };
+  }
 
   return (
     <>
@@ -141,5 +141,5 @@ export function LogsPage() {
         />
       )}
     </>
-  );
+  )
 }

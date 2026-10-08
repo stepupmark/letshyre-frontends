@@ -1,12 +1,7 @@
-import { z } from "zod"
+// validated in vite.config.ts
+const raw = import.meta.env as unknown as Record<string, string | undefined>
+const api = raw.VITE_API_BASE_URL ?? ""
 
-const envSchema = z.object({
-  VITE_API_BASE_URL: z
-    .url()
-    .refine((url) => import.meta.env.DEV || url.startsWith("https://"), {
-      message: "VITE_API_BASE_URL must use https outside development",
-    })
-    .transform((url) => (url.endsWith("/") ? url : `${url}/`)),
-})
-
-export const env = envSchema.parse(import.meta.env)
+export const env = {
+  VITE_API_BASE_URL: api.endsWith("/") ? api : `${api}/`,
+}

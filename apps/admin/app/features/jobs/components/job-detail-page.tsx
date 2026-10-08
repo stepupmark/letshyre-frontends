@@ -2,15 +2,15 @@ import type { ReactNode } from "react"
 import { Link, useParams } from "react-router"
 import { useQuery } from "@tanstack/react-query"
 import { ArrowLeft, FileText } from "lucide-react"
-import { DetailList } from "~/components/detail-list"
-import { ExternalLink } from "~/components/external-link"
-import { ErrorState } from "~/components/feedback/error-state"
-import { Badge } from "~/components/ui/badge"
-import { Button } from "~/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card"
-import { Skeleton } from "~/components/ui/skeleton"
-import { useDocumentTitle } from "~/hooks/use-document-title"
-import { formatDate } from "~/lib/format"
+import { DetailList } from "@/components/detail-list"
+import { ExternalLink } from "@/components/external-link"
+import { ErrorState } from "@/components/feedback/error-state"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Skeleton } from "@/components/ui/skeleton"
+import { useDocumentTitle } from "@/hooks/use-document-title"
+import { formatDate } from "@/lib/format"
 import { jobsQueries } from "../queries/jobs.queries"
 import type { JobDetail } from "../schemas/jobs.schema"
 import { ApprovalBadge, JobStatusBadge } from "./job-badges"
@@ -78,7 +78,7 @@ function Details({ job }: { job: JobDetail }) {
         </Section>
         {job.responsibilities.length > 0 && (
           <Section title="Responsibilities">
-            <ul className="list-disc space-y-1 pl-5 text-sm">
+            <ul className="list-disc space-y-1 ps-5 text-sm">
               {job.responsibilities.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -87,7 +87,7 @@ function Details({ job }: { job: JobDetail }) {
         )}
         {job.questions.length > 0 && (
           <Section title="Screening questions">
-            <ol className="list-decimal space-y-1 pl-5 text-sm">
+            <ol className="list-decimal space-y-1 ps-5 text-sm">
               {job.questions.map((question) => (
                 <li key={question}>{question}</li>
               ))}
@@ -164,7 +164,7 @@ export function JobDetailPage() {
   useDocumentTitle(job.data && `${job.data.title || "Untitled job"} · Jobs`)
 
   const back = (
-    <Button variant="ghost" size="sm" className="mb-4 -ml-2" asChild>
+    <Button variant="ghost" size="sm" className="-ms-2 mb-4" asChild>
       <Link to="/dashboard/jobs">
         <ArrowLeft /> Jobs
       </Link>

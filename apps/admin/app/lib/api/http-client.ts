@@ -1,8 +1,8 @@
 import axios from "axios"
-import { env } from "~/lib/env"
-import { refreshAccessToken } from "~/lib/auth/refresh"
-import { endSession } from "~/lib/auth/session"
-import { tokenStore } from "~/lib/auth/token-store"
+import { env } from "@/lib/env"
+import { refreshAccessToken } from "@/lib/auth/refresh"
+import { endSession } from "@/lib/auth/session"
+import { tokenStore } from "@/lib/auth/token-store"
 import { toApiError } from "./api-error"
 
 declare module "axios" {

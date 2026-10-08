@@ -2,21 +2,21 @@ import type { ReactNode } from "react"
 import { Link, useParams } from "react-router"
 import { useQuery } from "@tanstack/react-query"
 import { ArrowLeft } from "lucide-react"
-import { DetailList } from "~/components/detail-list"
-import { DocumentList } from "~/components/document-viewer"
-import { ExternalLink } from "~/components/external-link"
-import { ErrorState } from "~/components/feedback/error-state"
-import { SensitiveValue } from "~/components/sensitive-value"
-import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
-import { Badge } from "~/components/ui/badge"
-import { Button } from "~/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card"
-import { Separator } from "~/components/ui/separator"
-import { Skeleton } from "~/components/ui/skeleton"
-import { Copyable } from "~/components/copyable"
-import { useDocumentTitle } from "~/hooks/use-document-title"
-import { formatCurrency, formatDate, initials } from "~/lib/format"
-import { safeExternalUrl } from "~/lib/safe-url"
+import { DetailList } from "@/components/detail-list"
+import { DocumentList } from "@/components/document-viewer"
+import { ExternalLink } from "@/components/external-link"
+import { ErrorState } from "@/components/feedback/error-state"
+import { SensitiveValue } from "@/components/sensitive-value"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Separator } from "@/components/ui/separator"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Copyable } from "@/components/copyable"
+import { useDocumentTitle } from "@/hooks/use-document-title"
+import { formatCurrency, formatDate, initials } from "@/lib/format"
+import { safeExternalUrl } from "@/lib/safe-url"
 import { candidatesQueries } from "../queries/candidates.queries"
 import type { CandidateProfile } from "../schemas/candidates.schema"
 import { CandidateDecision } from "./candidate-decision"
@@ -253,7 +253,7 @@ export function CandidateProfilePage() {
   )
 
   const back = (
-    <Button variant="ghost" size="sm" className="mb-4 -ml-2" asChild>
+    <Button variant="ghost" size="sm" className="-ms-2 mb-4" asChild>
       <Link to="/dashboard/candidates">
         <ArrowLeft /> Candidates
       </Link>

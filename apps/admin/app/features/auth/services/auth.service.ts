@@ -1,6 +1,6 @@
-import { ApiError } from "~/lib/api/api-error"
-import { http } from "~/lib/api/http-client"
-import { envelope } from "~/lib/api/schemas"
+import { ApiError } from "@/lib/api/api-error"
+import { http } from "@/lib/api/http-client"
+import { envelope } from "@/lib/api/schemas"
 import {
   adminProfileSchema,
   loginResultSchema,

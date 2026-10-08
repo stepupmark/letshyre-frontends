@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query"
-import { endSession } from "~/lib/auth/session"
-import { tokenStore } from "~/lib/auth/token-store"
+import { endSession } from "@/lib/auth/session"
+import { tokenStore } from "@/lib/auth/token-store"
 import { authService } from "../services/auth.service"
 
 export function useLogout() {

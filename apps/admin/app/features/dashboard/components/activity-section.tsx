@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query"
 import { CalendarCheck, CalendarDays, CalendarRange } from "lucide-react"
 import { Suspense } from "react"
-import { ErrorState } from "~/components/feedback/error-state"
-import { StatCard } from "~/components/stat-card"
-import { Trend } from "~/components/trend"
+import { ErrorState } from "@/components/feedback/error-state"
+import { StatCard } from "@/components/stat-card"
+import { Trend } from "@/components/trend"
 import {
   Card,
   CardAction,
@@ -11,10 +11,10 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card"
-import { Skeleton } from "~/components/ui/skeleton"
-import { Tabs, TabsList, TabsTrigger } from "~/components/ui/tabs"
-import { formatNumber, percentChange } from "~/lib/format"
+} from "@/components/ui/card"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { formatNumber, percentChange } from "@/lib/format"
 import { dashboardQueries } from "../queries/dashboard.queries"
 import {
   ACTIVITY_RANGES,
@@ -90,7 +90,9 @@ export function ActivitySection({
           <CardAction>
             <Tabs
               value={days}
-              onValueChange={(value) => onDaysChange(value as ActivityRange)}
+              onValueChange={(value) => {
+                onDaysChange(value as ActivityRange)
+              }}
             >
               <TabsList>
                 {ACTIVITY_RANGES.map((range) => (
@@ -109,9 +111,9 @@ export function ActivitySection({
               onRetry={() => void daily.refetch()}
             />
           ) : !daily.data ? (
-            <Skeleton className="aspect-[3/1] w-full" />
+            <Skeleton className="aspect-3/1 w-full" />
           ) : (
-            <Suspense fallback={<Skeleton className="aspect-[3/1] w-full" />}>
+            <Suspense fallback={<Skeleton className="aspect-3/1 w-full" />}>
               <ActivityChart data={daily.data} />
             </Suspense>
           )}

@@ -12,12 +12,12 @@ import {
   ChartTooltip,
   ChartTooltipContent,
   type ChartConfig,
-} from "~/components/ui/chart"
+} from "@/components/ui/chart"
 import {
   formatCompactCurrency,
   formatCurrency,
   formatShortDate,
-} from "~/lib/format"
+} from "@/lib/format"
 
 const revenueConfig = {
   revenue: { label: "Revenue", color: "var(--chart-2)" },
@@ -39,7 +39,7 @@ export function RevenueChart({
   onMonthClick?: (month: number) => void
 }) {
   return (
-    <ChartContainer config={revenueConfig} className="aspect-[3/1] w-full">
+    <ChartContainer config={revenueConfig} className="aspect-3/1 w-full">
       <BarChart data={data} margin={{ left: 8 }}>
         <CartesianGrid vertical={false} />
         <XAxis
@@ -79,7 +79,7 @@ export function ActivityChart({
   data: { date: string; active_count: number }[]
 }) {
   return (
-    <ChartContainer config={activityConfig} className="aspect-[3/1] w-full">
+    <ChartContainer config={activityConfig} className="aspect-3/1 w-full">
       <AreaChart data={data} margin={{ left: 8, right: 8 }}>
         <CartesianGrid vertical={false} />
         <XAxis
@@ -98,7 +98,9 @@ export function ActivityChart({
         <ChartTooltip
           content={
             <ChartTooltipContent
-              labelFormatter={(date) => formatShortDate(String(date))}
+              labelFormatter={(date) =>
+                typeof date === "string" ? formatShortDate(date) : date
+              }
             />
           }
         />
@@ -120,7 +122,7 @@ export function RoleScoreChart({
   data: { role: string; avg_score: number }[]
 }) {
   return (
-    <ChartContainer config={scoreConfig} className="aspect-[2/1] w-full">
+    <ChartContainer config={scoreConfig} className="aspect-2/1 w-full">
       <BarChart data={data} layout="vertical" margin={{ left: 8 }}>
         <CartesianGrid horizontal={false} />
         <XAxis type="number" domain={[0, 100]} hide />

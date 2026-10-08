@@ -1,7 +1,7 @@
 import type { ReactNode } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
-import { PasswordInput } from "~/components/password-input"
+import { PasswordInput } from "@/components/password-input"
 import {
   Field,
   FieldDescription,
@@ -10,18 +10,18 @@ import {
   FieldLabel,
   FieldLegend,
   FieldSet,
-} from "~/components/ui/field"
-import { Input } from "~/components/ui/input"
-import { Label } from "~/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group"
+} from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "~/components/ui/select"
-import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard"
+} from "@/components/ui/select"
+import { UnsavedChangesGuard } from "@/components/unsaved-changes-guard"
 import {
   GATEWAY_PROVIDERS,
   gatewayFormSchema,
@@ -29,7 +29,7 @@ import {
 } from "../schemas/payment-gateways.schema"
 import { EMPTY_GATEWAY } from "../utils/gateway-values"
 
-type GatewayFormProps = {
+interface GatewayFormProps {
   id: string
   defaultValues?: GatewayFormValues
   onSubmit: (values: GatewayFormValues) => void
@@ -49,7 +49,13 @@ export function GatewayForm({
   const { errors } = form.formState
 
   return (
-    <form id={id} noValidate onSubmit={form.handleSubmit(onSubmit)}>
+    <form
+      id={id}
+      noValidate
+      onSubmit={(event) => {
+        void form.handleSubmit(onSubmit)(event)
+      }}
+    >
       <UnsavedChangesGuard
         when={form.formState.isDirty && !form.formState.isSubmitSuccessful}
       />

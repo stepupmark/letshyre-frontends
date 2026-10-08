@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { envelope, id, paginated } from "~/lib/api/schemas"
+import { envelope, id, paginated } from "@/lib/api/schemas"
 
 const text = z.string().nullish()
 const yearOrNumber = z.union([z.string(), z.number()]).nullish()
@@ -118,7 +118,7 @@ export const candidateSummaryResponseSchema = envelope(candidateSummarySchema)
 
 export type Candidate = z.infer<typeof candidateSchema>
 export type CandidateProfile = z.infer<typeof candidateProfileSchema>
-export type CandidateFilters = {
+export interface CandidateFilters {
   page: number
   search?: string
   gender?: string

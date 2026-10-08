@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router"
 import { LoaderCircle } from "lucide-react"
-import { PageHeader } from "~/components/page-header"
-import { Button } from "~/components/ui/button"
-import { Card, CardContent } from "~/components/ui/card"
+import { PageHeader } from "@/components/page-header"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 import { useCreateGateway } from "../mutations/use-gateway-mutations"
 import { GatewayForm } from "./gateway-form"
 
@@ -20,11 +20,13 @@ export function NewGatewayPage() {
         <CardContent>
           <GatewayForm
             id="new-gateway"
-            onSubmit={(values) =>
+            onSubmit={(values) => {
               create.mutate(values, {
-                onSuccess: () => navigate("/dashboard/payment-gateways"),
+                onSuccess: () => {
+                  void navigate("/dashboard/payment-gateways")
+                },
               })
-            }
+            }}
             footer={
               <div className="mt-6 flex justify-end gap-2 border-t pt-4">
                 <Button variant="outline" asChild>

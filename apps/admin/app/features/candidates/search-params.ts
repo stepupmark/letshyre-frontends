@@ -1,5 +1,5 @@
 import { createLoader, parseAsStringLiteral } from "nuqs"
-import { compactParams, pageParser, textParser } from "~/lib/search-params"
+import { compactParams, pageParser, textParser } from "@/lib/search-params"
 import {
   GENDERS,
   INDUSTRIES,
@@ -17,7 +17,7 @@ export const candidatesSearchParams = {
 
 export const loadCandidatesSearchParams = createLoader(candidatesSearchParams)
 
-type Params = {
+interface Params {
   page: number
   q: string
   gender: string | null

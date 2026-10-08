@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useEffectEvent } from "react"
 
 const ACTIVITY_KEY = "last_activity"
 const EVENTS = ["pointerdown", "keydown", "scroll", "visibilitychange"] as const
@@ -21,8 +21,7 @@ function markActivity() {
 
 /** Calls onIdle after `timeoutMs` without activity in any open tab. */
 export function useIdleTimeout(timeoutMs: number, onIdle: () => void) {
-  const onIdleRef = useRef(onIdle)
-  onIdleRef.current = onIdle
+  const idle = useEffectEvent(onIdle)
 
   useEffect(() => {
     markActivity()
@@ -35,15 +34,17 @@ export function useIdleTimeout(timeoutMs: number, onIdle: () => void) {
       }
     }
 
-    EVENTS.forEach((event) =>
+    EVENTS.forEach((event) => {
       window.addEventListener(event, onActivity, { passive: true })
-    )
+    })
     const timer = window.setInterval(() => {
-      if (Date.now() - readLastActivity() >= timeoutMs) onIdleRef.current()
+      if (Date.now() - readLastActivity() >= timeoutMs) idle()
     }, 30_000)
 
     return () => {
-      EVENTS.forEach((event) => window.removeEventListener(event, onActivity))
+      EVENTS.forEach((event) => {
+        window.removeEventListener(event, onActivity)
+      })
       window.clearInterval(timer)
     }
   }, [timeoutMs])

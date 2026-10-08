@@ -1,11 +1,11 @@
 import { Link, NavLink, useLocation } from "react-router"
 import { ChevronRight } from "lucide-react"
-import { navigation, type NavItem } from "~/config/navigation"
+import { navigation, type NavItem } from "@/lib/navigation"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "~/components/ui/collapsible"
+} from "@/components/ui/collapsible"
 import {
   Sidebar,
   SidebarContent,
@@ -19,7 +19,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarRail,
-} from "~/components/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 function isActive(pathname: string, url: string, exact: boolean) {
   return exact
@@ -61,7 +61,7 @@ function NavEntry({ item }: { item: NavItem }) {
           >
             <item.icon />
             <span>{item.title}</span>
-            <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+            <ChevronRight className="ms-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
           </SidebarMenuButton>
         </CollapsibleTrigger>
         <CollapsibleContent>

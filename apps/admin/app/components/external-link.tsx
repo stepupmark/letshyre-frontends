@@ -1,5 +1,5 @@
 import type { AnchorHTMLAttributes, ReactNode } from "react"
-import { safeExternalUrl } from "~/lib/safe-url"
+import { safeExternalUrl } from "@/lib/safe-url"
 
 type ExternalLinkProps = Omit<
   AnchorHTMLAttributes<HTMLAnchorElement>,

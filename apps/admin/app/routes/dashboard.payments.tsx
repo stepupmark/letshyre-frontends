@@ -4,13 +4,13 @@ import {
   PaymentsPage,
   paymentsQueries,
   toPaymentFilters,
-} from "~/features/payments"
-import { queryClient } from "~/lib/query/query-client"
+} from "@/features/payments"
+import { prefetch } from "@/lib/query/query-client"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
   const filters = toPaymentFilters(loadPaymentsSearchParams(request))
-  void queryClient.prefetchQuery(paymentsQueries.summary())
-  void queryClient.prefetchQuery(paymentsQueries.list(filters))
+  prefetch(paymentsQueries.summary())
+  prefetch(paymentsQueries.list(filters))
   return null
 }
 
@@ -20,6 +20,6 @@ export const meta: Route.MetaFunction = () => [
 
 export const handle = { breadcrumb: "Payments history" }
 
-export { RouteErrorBoundary as ErrorBoundary } from "~/components/feedback/route-error-boundary"
+export { RouteErrorBoundary as ErrorBoundary } from "@/components/feedback/route-error-boundary"
 
 export default PaymentsPage

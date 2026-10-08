@@ -2,11 +2,11 @@ import { useState } from "react"
 import { Link } from "react-router"
 import { useQuery } from "@tanstack/react-query"
 import { CreditCard, LoaderCircle, Plus } from "lucide-react"
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
-import { EmptyState } from "~/components/feedback/empty-state"
-import { ErrorState } from "~/components/feedback/error-state"
-import { PageHeader } from "~/components/page-header"
-import { Button } from "~/components/ui/button"
+import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
+import { EmptyState } from "@/components/feedback/empty-state"
+import { ErrorState } from "@/components/feedback/error-state"
+import { PageHeader } from "@/components/page-header"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -15,8 +15,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "~/components/ui/dialog"
-import { Skeleton } from "~/components/ui/skeleton"
+} from "@/components/ui/dialog"
+import { Skeleton } from "@/components/ui/skeleton"
 import {
   useDeleteGateway,
   useUpdateGateway,
@@ -103,12 +103,16 @@ export function PaymentGatewaysPage() {
               key={selected.id}
               id="edit-gateway"
               defaultValues={toGatewayFormValues(selected)}
-              onSubmit={(values) =>
+              onSubmit={(values) => {
                 update.mutate(
                   { id: selected.id, values },
-                  { onSuccess: () => setEditOpen(false) }
+                  {
+                    onSuccess: () => {
+                      setEditOpen(false)
+                    },
+                  }
                 )
-              }
+              }}
               footer={
                 <DialogFooter className="mt-6">
                   <DialogClose asChild>

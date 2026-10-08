@@ -11,21 +11,21 @@ import {
   X,
 } from "lucide-react"
 import { useQueryStates } from "nuqs"
-import { DataTable } from "~/components/data-table/data-table"
-import { DateRangeFilter } from "~/components/date-range-filter"
-import { ExternalLink } from "~/components/external-link"
-import { ErrorState } from "~/components/feedback/error-state"
-import { ListEmptyState } from "~/components/feedback/list-empty-state"
-import { PageHeader } from "~/components/page-header"
-import { SearchInput } from "~/components/search-input"
-import { StatCard } from "~/components/stat-card"
-import { StatusBadge } from "~/components/status-badge"
-import { Button } from "~/components/ui/button"
-import { RelativeTime } from "~/components/relative-time"
+import { DataTable } from "@/components/data-table/data-table"
+import { DateRangeFilter } from "@/components/date-range-filter"
+import { ExternalLink } from "@/components/external-link"
+import { ErrorState } from "@/components/feedback/error-state"
+import { ListEmptyState } from "@/components/feedback/list-empty-state"
+import { PageHeader } from "@/components/page-header"
+import { SearchInput } from "@/components/search-input"
+import { StatCard } from "@/components/stat-card"
+import { StatusBadge } from "@/components/status-badge"
+import { Button } from "@/components/ui/button"
+import { RelativeTime } from "@/components/relative-time"
 import { unlocksService } from "../services/unlocks.service"
-import { fetchAllPages } from "~/lib/fetch-all-pages"
-import { useDebouncedValue } from "~/hooks/use-debounced-value"
-import { formatNumber } from "~/lib/format"
+import { fetchAllPages } from "@/lib/fetch-all-pages"
+import { useDebouncedValue } from "@/hooks/use-debounced-value"
+import { formatNumber } from "@/lib/format"
 import { unlocksQueries } from "../queries/unlocks.queries"
 import type { UnlockedProfile } from "../schemas/unlocks.schema"
 import { toUnlocksFilters, unlocksSearchParams } from "../search-params"
@@ -44,7 +44,7 @@ function ScoreBadge({ score }: { score: number | string | null | undefined }) {
   return <StatusBadge tone={tone}>{Math.round(value)}</StatusBadge>
 }
 
-const columns: ColumnDef<UnlockedProfile, unknown>[] = [
+const columns: ColumnDef<UnlockedProfile>[] = [
   {
     id: "employer",
     meta: { csv: (row) => ({ Employer: row.employer }) },

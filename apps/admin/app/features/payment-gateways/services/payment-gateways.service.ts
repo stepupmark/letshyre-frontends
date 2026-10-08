@@ -1,4 +1,4 @@
-import { http } from "~/lib/api/http-client"
+import { http } from "@/lib/api/http-client"
 import {
   gatewaysResponseSchema,
   type GatewayFormValues,

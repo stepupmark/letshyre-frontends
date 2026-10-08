@@ -1,17 +1,17 @@
 import { useQuery } from "@tanstack/react-query"
 import { Suspense } from "react"
-import { EmptyState } from "~/components/feedback/empty-state"
-import { ErrorState } from "~/components/feedback/error-state"
+import { EmptyState } from "@/components/feedback/empty-state"
+import { ErrorState } from "@/components/feedback/error-state"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card"
-import { Progress } from "~/components/ui/progress"
-import { Skeleton } from "~/components/ui/skeleton"
-import { formatNumber } from "~/lib/format"
+} from "@/components/ui/card"
+import { Progress } from "@/components/ui/progress"
+import { Skeleton } from "@/components/ui/skeleton"
+import { formatNumber } from "@/lib/format"
 import { dashboardQueries } from "../queries/dashboard.queries"
 import { RoleScoreChart } from "./lazy-charts"
 import { DashboardSection } from "./section"
@@ -49,7 +49,7 @@ export function InterviewSection() {
           </CardHeader>
           <CardContent>
             {roles.length ? (
-              <Suspense fallback={<Skeleton className="aspect-[2/1] w-full" />}>
+              <Suspense fallback={<Skeleton className="aspect-2/1 w-full" />}>
                 <RoleScoreChart data={roles} />
               </Suspense>
             ) : (

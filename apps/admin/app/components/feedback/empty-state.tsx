@@ -7,9 +7,9 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "~/components/ui/empty"
+} from "@/components/ui/empty"
 
-type EmptyStateProps = {
+interface EmptyStateProps {
   title: string
   description?: string
   icon?: LucideIcon

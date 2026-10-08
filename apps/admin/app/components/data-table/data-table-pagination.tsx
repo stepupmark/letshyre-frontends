@@ -4,8 +4,8 @@ import {
   ChevronsLeft,
   ChevronsRight,
 } from "lucide-react"
-import { Button } from "~/components/ui/button"
-import { formatNumber } from "~/lib/format"
+import { Button } from "@/components/ui/button"
+import { formatNumber } from "@/lib/format"
 
 // page size isn't passed in, so it's inferred from a full page; the last page counts back from the total
 function rangeLabel(
@@ -22,7 +22,7 @@ function rangeLabel(
   return `Showing ${formatNumber(start)}–${formatNumber(end)} of ${formatNumber(totalCount)}`
 }
 
-type DataTablePaginationProps = {
+interface DataTablePaginationProps {
   page: number
   pageCount: number
   totalCount?: number
@@ -47,7 +47,7 @@ export function DataTablePagination({
         {rangeLabel(page, lastPage, rowCount, totalCount)}
       </p>
       <div className="flex items-center gap-1">
-        <span className="mr-2 hidden text-muted-foreground tabular-nums sm:inline">
+        <span className="me-2 hidden text-muted-foreground tabular-nums sm:inline">
           Page {page} of {lastPage}
         </span>
         <Button
@@ -55,7 +55,9 @@ export function DataTablePagination({
           size="icon-sm"
           aria-label="First page"
           disabled={!canGoBack}
-          onClick={() => onPageChange(1)}
+          onClick={() => {
+            onPageChange(1)
+          }}
         >
           <ChevronsLeft />
         </Button>
@@ -64,7 +66,9 @@ export function DataTablePagination({
           size="icon-sm"
           aria-label="Previous page"
           disabled={!canGoBack}
-          onClick={() => onPageChange(page - 1)}
+          onClick={() => {
+            onPageChange(page - 1)
+          }}
         >
           <ChevronLeft />
         </Button>
@@ -73,7 +77,9 @@ export function DataTablePagination({
           size="icon-sm"
           aria-label="Next page"
           disabled={!canGoForward}
-          onClick={() => onPageChange(page + 1)}
+          onClick={() => {
+            onPageChange(page + 1)
+          }}
         >
           <ChevronRight />
         </Button>
@@ -82,7 +88,9 @@ export function DataTablePagination({
           size="icon-sm"
           aria-label="Last page"
           disabled={!canGoForward}
-          onClick={() => onPageChange(lastPage)}
+          onClick={() => {
+            onPageChange(lastPage)
+          }}
         >
           <ChevronsRight />
         </Button>

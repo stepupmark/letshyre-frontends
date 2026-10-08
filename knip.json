@@ -18,6 +18,9 @@
     "apps/app": {
       "ignoreDependencies": ["tailwindcss"]
     },
+    "apps/admin": {
+      "ignore": ["app/components/ui/**", "app/lib/utils.ts"]
+    },
     "packages/i18n": {
       "entry": ["test/**/*.test.{ts,tsx}"]
     },

@@ -9,7 +9,7 @@ import {
   User,
   type LucideIcon,
 } from "lucide-react"
-import { useTheme } from "~/components/theme-provider"
+import { useTheme } from "@/components/theme-provider"
 import {
   Command,
   CommandDialog,
@@ -18,13 +18,18 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "~/components/ui/command"
-import { navigation } from "~/config/navigation"
-import { candidatesQueries } from "~/features/candidates"
-import { jobsQueries } from "~/features/jobs"
-import { useDebouncedValue } from "~/hooks/use-debounced-value"
+} from "@/components/ui/command"
+import { navigation } from "@/lib/navigation"
+import { candidatesQueries } from "@/features/candidates"
+import { jobsQueries } from "@/features/jobs"
+import { useDebouncedValue } from "@/hooks/use-debounced-value"
 
-type Entry = { label: string; url: string; icon: LucideIcon; hint?: string }
+interface Entry {
+  label: string
+  url: string
+  icon: LucideIcon
+  hint?: string
+}
 
 const PAGES: Entry[] = navigation.flatMap((group) =>
   group.items.flatMap((item) =>
@@ -60,7 +65,7 @@ const matches = (entry: Entry, query: string) =>
     .toLowerCase()
     .includes(query.toLowerCase())
 
-type CommandPaletteDialogProps = {
+interface CommandPaletteDialogProps {
   open: boolean
   onOpenChange: (open: boolean) => void
 }
@@ -137,13 +142,15 @@ export function CommandPaletteDialog({
                 <CommandItem
                   key={candidate.id}
                   value={`candidate-${candidate.id}`}
-                  onSelect={() => go(`/dashboard/candidates/${candidate.id}`)}
+                  onSelect={() => {
+                    go(`/dashboard/candidates/${candidate.id}`)
+                  }}
                 >
                   <User />
                   <span className="truncate">
                     {candidate.name || "Unnamed"}
                   </span>
-                  <span className="ml-auto truncate text-xs text-muted-foreground">
+                  <span className="ms-auto truncate text-xs text-muted-foreground">
                     {candidate.email}
                   </span>
                 </CommandItem>
@@ -156,13 +163,15 @@ export function CommandPaletteDialog({
                 <CommandItem
                   key={job.id}
                   value={`job-${job.id}`}
-                  onSelect={() => go(`/dashboard/jobs/${job.id}`)}
+                  onSelect={() => {
+                    go(`/dashboard/jobs/${job.id}`)
+                  }}
                 >
                   <Briefcase />
                   <span className="truncate">
                     {job.title || "Untitled job"}
                   </span>
-                  <span className="ml-auto truncate text-xs text-muted-foreground">
+                  <span className="ms-auto truncate text-xs text-muted-foreground">
                     {job.company_name}
                   </span>
                 </CommandItem>
@@ -175,12 +184,14 @@ export function CommandPaletteDialog({
                 <CommandItem
                   key={entry.url}
                   value={`page-${entry.url}`}
-                  onSelect={() => go(entry.url)}
+                  onSelect={() => {
+                    go(entry.url)
+                  }}
                 >
                   <entry.icon />
                   {entry.label}
                   {entry.hint && (
-                    <span className="ml-auto text-xs text-muted-foreground">
+                    <span className="ms-auto text-xs text-muted-foreground">
                       {entry.hint}
                     </span>
                   )}
@@ -194,7 +205,9 @@ export function CommandPaletteDialog({
                 <CommandItem
                   key={entry.url}
                   value={`create-${entry.url}`}
-                  onSelect={() => go(entry.url)}
+                  onSelect={() => {
+                    go(entry.url)
+                  }}
                 >
                   <entry.icon />
                   {entry.label}

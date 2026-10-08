@@ -4,8 +4,8 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "~/components/ui/dialog"
-import { useHotkey } from "~/hooks/use-hotkey"
+} from "@/components/ui/dialog"
+import { useHotkey } from "@/hooks/use-hotkey"
 
 const SHORTCUTS: { keys: string[]; action: string }[] = [
   { keys: ["Ctrl / ⌘", "K"], action: "Open the command palette" },
@@ -18,7 +18,7 @@ const SHORTCUTS: { keys: string[]; action: string }[] = [
   { keys: ["?"], action: "Show keyboard shortcuts" },
 ]
 
-type KeyboardShortcutsProps = {
+interface KeyboardShortcutsProps {
   open: boolean
   onOpenChange: (open: boolean) => void
 }
@@ -27,7 +27,9 @@ export function KeyboardShortcuts({
   open,
   onOpenChange,
 }: KeyboardShortcutsProps) {
-  useHotkey(["?"], () => onOpenChange(true))
+  useHotkey(["?"], () => {
+    onOpenChange(true)
+  })
   useHotkey(["/"], (event) => {
     const search =
       document.querySelector<HTMLInputElement>("[data-page-search]")
@@ -57,7 +59,7 @@ export function KeyboardShortcuts({
                 {keys.map((key) => (
                   <kbd
                     key={key}
-                    className="min-w-6 rounded border bg-muted px-1.5 py-0.5 text-center font-sans text-xs font-medium"
+                    className="min-w-6 rounded-sm border bg-muted px-1.5 py-0.5 text-center font-sans text-xs font-medium"
                   >
                     {key}
                   </kbd>

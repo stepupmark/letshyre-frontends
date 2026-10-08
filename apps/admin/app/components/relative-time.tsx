@@ -2,13 +2,13 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "~/components/ui/tooltip"
+} from "@/components/ui/tooltip"
 import {
   formatDate,
   formatDateTime,
   formatRelative,
   isDateOnly,
-} from "~/lib/format"
+} from "@/lib/format"
 
 export function RelativeTime({ value }: { value: string | null | undefined }) {
   const relative = formatRelative(value)
@@ -16,10 +16,8 @@ export function RelativeTime({ value }: { value: string | null | undefined }) {
 
   return (
     <Tooltip>
-      <TooltipTrigger asChild>
-        <time dateTime={value} tabIndex={0} className="whitespace-nowrap">
-          {relative}
-        </time>
+      <TooltipTrigger className="whitespace-nowrap">
+        <time dateTime={value}>{relative}</time>
       </TooltipTrigger>
       <TooltipContent>
         {isDateOnly(value) ? formatDate(value) : formatDateTime(value)}

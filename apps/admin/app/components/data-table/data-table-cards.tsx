@@ -34,7 +34,7 @@ export function DataTableCards<TData>({ rows }: { rows: Row<TData>[] }) {
                     <dt className="text-xs text-muted-foreground">
                       {columnLabel(cell.column)}
                     </dt>
-                    <dd className="mt-0.5 break-words">{render(cell)}</dd>
+                    <dd className="mt-0.5 wrap-break-word">{render(cell)}</dd>
                   </div>
                 ))}
               </dl>

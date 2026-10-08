@@ -11,12 +11,12 @@ import {
   Trash2,
 } from "lucide-react"
 import { useQueryState } from "nuqs"
-import { DataTable } from "~/components/data-table/data-table"
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
-import { ListEmptyState } from "~/components/feedback/list-empty-state"
-import { PageHeader } from "~/components/page-header"
-import { StatusBadge, type StatusTone } from "~/components/status-badge"
-import { Button } from "~/components/ui/button"
+import { DataTable } from "@/components/data-table/data-table"
+import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
+import { ListEmptyState } from "@/components/feedback/list-empty-state"
+import { PageHeader } from "@/components/page-header"
+import { StatusBadge, type StatusTone } from "@/components/status-badge"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -25,17 +25,17 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "~/components/ui/dialog"
+} from "@/components/ui/dialog"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 import { couponsService } from "../services/coupons.service"
-import { fetchAllPages } from "~/lib/fetch-all-pages"
-import { formatCurrency, formatDateTime, formatNumber } from "~/lib/format"
-import { pageParser } from "~/lib/search-params"
+import { fetchAllPages } from "@/lib/fetch-all-pages"
+import { formatCurrency, formatDateTime, formatNumber } from "@/lib/format"
+import { pageParser } from "@/lib/search-params"
 import {
   useDeleteCoupon,
   useUpdateCoupon,
@@ -62,7 +62,7 @@ function discountLabel(coupon: Coupon) {
     : `${formatCurrency(coupon.discount_value)} off`
 }
 
-type RowActions = {
+interface RowActions {
   onEdit: (coupon: Coupon) => void
   onDelete: (coupon: Coupon) => void
 }
@@ -140,12 +140,18 @@ function buildColumns({ onEdit, onDelete }: RowActions): ColumnDef<Coupon>[] {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem onSelect={() => onEdit(row.original)}>
+            <DropdownMenuItem
+              onSelect={() => {
+                onEdit(row.original)
+              }}
+            >
               <Pencil /> Edit
             </DropdownMenuItem>
             <DropdownMenuItem
               variant="destructive"
-              onSelect={() => onDelete(row.original)}
+              onSelect={() => {
+                onDelete(row.original)
+              }}
             >
               <Trash2 /> Delete
             </DropdownMenuItem>
@@ -233,12 +239,16 @@ export function CouponsPage() {
               key={editing.id}
               id="edit-coupon"
               defaultValues={toCouponFormValues(editing)}
-              onSubmit={(payload) =>
+              onSubmit={(payload) => {
                 update.mutate(
                   { id: editing.id, payload },
-                  { onSuccess: () => setEditOpen(false) }
+                  {
+                    onSuccess: () => {
+                      setEditOpen(false)
+                    },
+                  }
                 )
-              }
+              }}
               footer={
                 <DialogFooter className="mt-6">
                   <DialogClose asChild>

@@ -1,9 +1,9 @@
 import { RotateCw, TriangleAlert } from "lucide-react"
-import { Button } from "~/components/ui/button"
-import { getErrorMessage } from "~/lib/api/api-error"
+import { Button } from "@/components/ui/button"
+import { getErrorMessage } from "@/lib/api/api-error"
 import { EmptyState } from "./empty-state"
 
-type ErrorStateProps = {
+interface ErrorStateProps {
   title?: string
   error?: unknown
   onRetry?: () => void

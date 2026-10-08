@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { patchQueries } from "~/lib/query/optimistic"
+import { patchQueries } from "@/lib/query/optimistic"
 import { channelsKeys } from "../queries/channels.queries"
 import type { ChannelKey, ChannelSettings } from "../schemas/channels.schema"
 import { channelsService } from "../services/channels.service"

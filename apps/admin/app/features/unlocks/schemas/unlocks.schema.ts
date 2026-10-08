@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { envelope, paginated } from "~/lib/api/schemas"
+import { envelope, paginated } from "@/lib/api/schemas"
 
 const count = z
   .number()
@@ -55,7 +55,7 @@ export const unlockedProfilesResponseSchema = envelope(
 )
 
 export type UnlockedProfile = z.infer<typeof unlockedProfileSchema>
-export type UnlockedProfilesFilters = {
+export interface UnlockedProfilesFilters {
   page: number
   search?: string
   start_date?: string

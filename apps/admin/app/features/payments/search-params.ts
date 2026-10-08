@@ -1,5 +1,5 @@
 import { createLoader, parseAsStringLiteral } from "nuqs"
-import { compactParams, pageParser, textParser } from "~/lib/search-params"
+import { compactParams, pageParser, textParser } from "@/lib/search-params"
 import {
   PAYMENT_STATUSES,
   type PaymentFilters,
@@ -18,7 +18,7 @@ export const paymentsSearchParams = {
 
 export const loadPaymentsSearchParams = createLoader(paymentsSearchParams)
 
-type Params = {
+interface Params {
   page: number
   q: string
   status: string | null

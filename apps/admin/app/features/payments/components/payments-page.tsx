@@ -12,35 +12,35 @@ import {
   X,
 } from "lucide-react"
 import { useQueryStates, type inferParserType } from "nuqs"
-import { DataTable } from "~/components/data-table/data-table"
-import { DateRangeFilter } from "~/components/date-range-filter"
-import { ListEmptyState } from "~/components/feedback/list-empty-state"
-import { PageHeader } from "~/components/page-header"
-import { SearchInput } from "~/components/search-input"
-import { StatCard } from "~/components/stat-card"
-import { StatusBadge, type StatusTone } from "~/components/status-badge"
-import { Badge } from "~/components/ui/badge"
-import { Button } from "~/components/ui/button"
-import { Field, FieldGroup, FieldLabel } from "~/components/ui/field"
-import { Input } from "~/components/ui/input"
+import { DataTable } from "@/components/data-table/data-table"
+import { DateRangeFilter } from "@/components/date-range-filter"
+import { ListEmptyState } from "@/components/feedback/list-empty-state"
+import { PageHeader } from "@/components/page-header"
+import { SearchInput } from "@/components/search-input"
+import { StatCard } from "@/components/stat-card"
+import { StatusBadge, type StatusTone } from "@/components/status-badge"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "~/components/ui/popover"
+} from "@/components/ui/popover"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "~/components/ui/select"
-import { Copyable } from "~/components/copyable"
-import { RelativeTime } from "~/components/relative-time"
+} from "@/components/ui/select"
+import { Copyable } from "@/components/copyable"
+import { RelativeTime } from "@/components/relative-time"
 import { paymentsService } from "../services/payments.service"
-import { fetchAllPages } from "~/lib/fetch-all-pages"
-import { useDebouncedValue } from "~/hooks/use-debounced-value"
-import { formatCurrency, formatNumber } from "~/lib/format"
+import { fetchAllPages } from "@/lib/fetch-all-pages"
+import { useDebouncedValue } from "@/hooks/use-debounced-value"
+import { formatCurrency, formatNumber } from "@/lib/format"
 import { paymentsQueries } from "../queries/payments.queries"
 import { PAYMENT_STATUSES, type Payment } from "../schemas/payments.schema"
 import { paymentsSearchParams, toPaymentFilters } from "../search-params"
@@ -228,18 +228,20 @@ export function PaymentsPage() {
             <SearchInput
               value={params.q}
               placeholder="Search order ID or keyword"
-              onChange={(value) => update({ q: value || null })}
+              onChange={(value) => {
+                update({ q: value || null })
+              }}
             />
             <Select
               value={params.status ?? "all"}
-              onValueChange={(value) =>
+              onValueChange={(value) => {
                 update({
                   status:
                     value === "all"
                       ? null
                       : (value as (typeof PAYMENT_STATUSES)[number]),
                 })
-              }
+              }}
             >
               <SelectTrigger className="w-36" aria-label="Payment status">
                 <SelectValue />
@@ -269,9 +271,9 @@ export function PaymentsPage() {
                     <Input
                       id="company"
                       value={params.company}
-                      onChange={(event) =>
+                      onChange={(event) => {
                         update({ company: event.target.value || null })
-                      }
+                      }}
                     />
                   </Field>
                   <Field>
@@ -283,9 +285,9 @@ export function PaymentsPage() {
                         min={0}
                         placeholder="Min"
                         value={params.min}
-                        onChange={(event) =>
+                        onChange={(event) => {
                           update({ min: event.target.value || null })
-                        }
+                        }}
                       />
                       <span className="text-sm text-muted-foreground">to</span>
                       <Input
@@ -294,9 +296,9 @@ export function PaymentsPage() {
                         placeholder="Max"
                         aria-label="Maximum amount"
                         value={params.max}
-                        onChange={(event) =>
+                        onChange={(event) => {
                           update({ max: event.target.value || null })
-                        }
+                        }}
                       />
                     </div>
                   </Field>
@@ -305,9 +307,9 @@ export function PaymentsPage() {
                     <DateRangeFilter
                       from={params.from}
                       to={params.to}
-                      onChange={({ from, to }) =>
+                      onChange={({ from, to }) => {
                         update({ from: from || null, to: to || null })
-                      }
+                      }}
                     />
                   </Field>
                 </FieldGroup>

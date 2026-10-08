@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { Copy, Eye, EyeOff, MoreHorizontal, Pencil, Trash2 } from "lucide-react"
 import { toast } from "sonner"
-import { StatusBadge } from "~/components/status-badge"
-import { Button } from "~/components/ui/button"
+import { StatusBadge } from "@/components/status-badge"
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardAction,
@@ -10,14 +10,14 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card"
+} from "@/components/ui/card"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu"
-import { maskId } from "~/lib/format"
+} from "@/components/ui/dropdown-menu"
+import { maskId } from "@/lib/format"
 import type { Gateway } from "../schemas/payment-gateways.schema"
 import { providerLabel } from "../utils/gateway-values"
 
@@ -55,7 +55,9 @@ function CredentialRow({
             variant="ghost"
             size="icon-sm"
             aria-label={visible ? `Hide ${label}` : `Show ${label}`}
-            onClick={() => setVisible((current) => !current)}
+            onClick={() => {
+              setVisible((current) => !current)
+            }}
           >
             {visible ? <EyeOff /> : <Eye />}
           </Button>
@@ -74,7 +76,7 @@ function CredentialRow({
   )
 }
 
-type GatewayCardProps = {
+interface GatewayCardProps {
   gateway: Gateway
   onEdit: () => void
   onDelete: () => void

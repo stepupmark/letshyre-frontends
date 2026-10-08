@@ -2,10 +2,11 @@ import {
   MutationCache,
   QueryCache,
   QueryClient,
+  type QueryExecuteOptions,
   type QueryKey,
 } from "@tanstack/react-query"
 import { toast } from "sonner"
-import { ApiError, getErrorMessage } from "~/lib/api/api-error"
+import { ApiError, getErrorMessage } from "@/lib/api/api-error"
 
 declare module "@tanstack/react-query" {
   interface Register {
@@ -66,3 +67,21 @@ export const queryClient: QueryClient = new QueryClient({
     },
   },
 })
+
+/** Starts a fetch for a loader without waiting; errors surface in the component. */
+export function prefetch<
+  TQueryFnData,
+  TError,
+  TData,
+  TQueryKey extends QueryKey,
+>(
+  options: QueryExecuteOptions<
+    TQueryFnData,
+    TError,
+    TData,
+    TQueryFnData,
+    TQueryKey
+  >
+) {
+  queryClient.query(options).catch(() => undefined)
+}

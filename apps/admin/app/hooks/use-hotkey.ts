@@ -25,6 +25,8 @@ export function useHotkey(
       handlerRef.current(event)
     }
     window.addEventListener("keydown", onKeyDown)
-    return () => window.removeEventListener("keydown", onKeyDown)
+    return () => {
+      window.removeEventListener("keydown", onKeyDown)
+    }
   }, [keyList, enabled])
 }

@@ -2,8 +2,8 @@ import { useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { Check, LoaderCircle, X } from "lucide-react"
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
-import { Button } from "~/components/ui/button"
+import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -12,14 +12,14 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "~/components/ui/dialog"
+} from "@/components/ui/dialog"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldLabel,
-} from "~/components/ui/field"
-import { Textarea } from "~/components/ui/textarea"
+} from "@/components/ui/field"
+import { Textarea } from "@/components/ui/textarea"
 import { useJobAction } from "../mutations/use-job-action"
 import {
   rejectJobsSchema,
@@ -57,17 +57,19 @@ function RejectDialog({
       <DialogContent>
         <form
           noValidate
-          onSubmit={form.handleSubmit(({ reason }) =>
-            action.mutate(
-              { action: "reject", job_ids: jobIds, reason },
-              {
-                onSuccess: () => {
-                  handleOpenChange(false)
-                  onDone?.()
-                },
-              }
-            )
-          )}
+          onSubmit={(event) => {
+            void form.handleSubmit(({ reason }) => {
+              action.mutate(
+                { action: "reject", job_ids: jobIds, reason },
+                {
+                  onSuccess: () => {
+                    handleOpenChange(false)
+                    onDone?.()
+                  },
+                }
+              )
+            })(event)
+          }}
         >
           <DialogHeader>
             <DialogTitle>
@@ -118,7 +120,7 @@ function RejectDialog({
   )
 }
 
-type JobReviewProps = {
+interface JobReviewProps {
   jobIds: string[]
   /** Hides actions that don't apply; bulk selections pass nothing. */
   approval?: ApprovalStatus
@@ -145,12 +147,19 @@ export function JobReview({
         <Button
           variant="outline"
           size={size}
-          onClick={() => setRejectOpen(true)}
+          onClick={() => {
+            setRejectOpen(true)
+          }}
         >
           <X /> Reject
         </Button>
       )}
-      <Button size={size} onClick={() => setApproveOpen(true)}>
+      <Button
+        size={size}
+        onClick={() => {
+          setApproveOpen(true)
+        }}
+      >
         <Check /> Approve
       </Button>
 

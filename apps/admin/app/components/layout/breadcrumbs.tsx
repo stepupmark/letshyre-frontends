@@ -7,15 +7,18 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "~/components/ui/breadcrumb"
+} from "@/components/ui/breadcrumb"
 
-type RouteHandle = {
+interface RouteHandle {
   breadcrumb?: string
   /** For flat detail routes whose list page isn't a parent match. */
   parent?: { label: string; path: string }
 }
 
-type Crumb = { label: string; path: string }
+interface Crumb {
+  label: string
+  path: string
+}
 
 export function Breadcrumbs() {
   const crumbs = useMatches().flatMap((match): Crumb[] => {

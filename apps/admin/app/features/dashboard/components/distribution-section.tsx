@@ -1,16 +1,16 @@
 import { useQuery, type UseQueryResult } from "@tanstack/react-query"
-import { EmptyState } from "~/components/feedback/empty-state"
-import { ErrorState } from "~/components/feedback/error-state"
+import { EmptyState } from "@/components/feedback/empty-state"
+import { ErrorState } from "@/components/feedback/error-state"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card"
-import { Progress } from "~/components/ui/progress"
-import { Skeleton } from "~/components/ui/skeleton"
-import { formatNumber } from "~/lib/format"
+} from "@/components/ui/card"
+import { Progress } from "@/components/ui/progress"
+import { Skeleton } from "@/components/ui/skeleton"
+import { formatNumber } from "@/lib/format"
 import { dashboardQueries } from "../queries/dashboard.queries"
 import type { Share } from "../schemas/dashboard.schema"
 import { DashboardSection } from "./section"

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Eye, EyeOff } from "lucide-react"
-import { Button } from "~/components/ui/button"
-import { maskId } from "~/lib/format"
+import { Button } from "@/components/ui/button"
+import { maskId } from "@/lib/format"
 
 /** Masked by default; the admin reveals it on purpose. */
 export function SensitiveValue({
@@ -21,7 +21,9 @@ export function SensitiveValue({
         variant="ghost"
         size="icon-xs"
         aria-label={visible ? `Hide ${label}` : `Show ${label}`}
-        onClick={() => setVisible((current) => !current)}
+        onClick={() => {
+          setVisible((current) => !current)
+        }}
       >
         {visible ? <EyeOff /> : <Eye />}
       </Button>

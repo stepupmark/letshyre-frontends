@@ -1,15 +1,15 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 import { LoaderCircle } from "lucide-react"
-import { Alert, AlertDescription } from "~/components/ui/alert"
-import { Button } from "~/components/ui/button"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Button } from "@/components/ui/button"
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "~/components/ui/field"
-import { Input } from "~/components/ui/input"
+} from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import { useSendOtp } from "../mutations/use-password-reset"
 import { requestOtpSchema } from "../schemas/auth.schema"
 import type { OtpSession, RequestOtpInput } from "../types"
@@ -28,9 +28,11 @@ export function RequestOtpForm({
   return (
     <form
       noValidate
-      onSubmit={form.handleSubmit(({ email }) =>
-        sendOtp.mutate(email, { onSuccess: onSent })
-      )}
+      onSubmit={(event) => {
+        void form.handleSubmit(({ email }) => {
+          sendOtp.mutate(email, { onSuccess: onSent })
+        })(event)
+      }}
     >
       <FieldGroup>
         {sendOtp.error && (

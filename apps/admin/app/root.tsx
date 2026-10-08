@@ -12,11 +12,11 @@ import { QueryClientProvider } from "@tanstack/react-query"
 import { NuqsAdapter } from "nuqs/adapters/react-router/v8"
 import { LoaderCircle } from "lucide-react"
 import type { Route } from "./+types/root"
-import { ThemeProvider } from "~/components/theme-provider"
-import { Button } from "~/components/ui/button"
-import { Toaster } from "~/components/ui/sonner"
-import { TooltipProvider } from "~/components/ui/tooltip"
-import { queryClient } from "~/lib/query/query-client"
+import { ThemeProvider } from "@/components/theme-provider"
+import { Button } from "@/components/ui/button"
+import { Toaster } from "@/components/ui/sonner"
+import { TooltipProvider } from "@/components/ui/tooltip"
+import { queryClient } from "@/lib/query/query-client"
 import "./app.css"
 
 const ReactQueryDevtools = import.meta.env.DEV
@@ -104,12 +104,17 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       <h1 className="text-2xl font-semibold">{title}</h1>
       <p className="max-w-md text-sm text-muted-foreground">{details}</p>
       {stack && (
-        <pre className="max-w-3xl overflow-x-auto rounded-lg bg-muted p-4 text-left text-xs">
+        <pre className="max-w-3xl overflow-x-auto rounded-lg bg-muted p-4 text-start text-xs">
           <code>{stack}</code>
         </pre>
       )}
       <div className="flex gap-2">
-        <Button variant="outline" onClick={() => window.location.reload()}>
+        <Button
+          variant="outline"
+          onClick={() => {
+            window.location.reload()
+          }}
+        >
           Try again
         </Button>
         <Button asChild>

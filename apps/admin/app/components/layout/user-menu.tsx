@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { useQuery } from "@tanstack/react-query"
 import { Keyboard, KeyRound, LogOut } from "lucide-react"
-import { authQueries, ChangePasswordDialog, useLogout } from "~/features/auth"
-import { Avatar, AvatarFallback } from "~/components/ui/avatar"
-import { Button } from "~/components/ui/button"
+import { authQueries, ChangePasswordDialog, useLogout } from "@/features/auth"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,9 +12,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu"
-import { Skeleton } from "~/components/ui/skeleton"
-import { initials } from "~/lib/format"
+} from "@/components/ui/dropdown-menu"
+import { Skeleton } from "@/components/ui/skeleton"
+import { initials } from "@/lib/format"
 import { KeyboardShortcuts } from "./keyboard-shortcuts"
 
 export function UserMenu() {
@@ -59,10 +59,18 @@ export function UserMenu() {
             </p>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem onSelect={() => setChangePasswordOpen(true)}>
+          <DropdownMenuItem
+            onSelect={() => {
+              setChangePasswordOpen(true)
+            }}
+          >
             <KeyRound /> Change password
           </DropdownMenuItem>
-          <DropdownMenuItem onSelect={() => setShortcutsOpen(true)}>
+          <DropdownMenuItem
+            onSelect={() => {
+              setShortcutsOpen(true)
+            }}
+          >
             <Keyboard /> Keyboard shortcuts
             <DropdownMenuShortcut>?</DropdownMenuShortcut>
           </DropdownMenuItem>
@@ -70,7 +78,9 @@ export function UserMenu() {
           <DropdownMenuItem
             variant="destructive"
             disabled={logout.isPending}
-            onSelect={() => logout.mutate()}
+            onSelect={() => {
+              logout.mutate()
+            }}
           >
             <LogOut /> Sign out
           </DropdownMenuItem>

@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { envelope, id, paginated } from "~/lib/api/schemas"
+import { envelope, id, paginated } from "@/lib/api/schemas"
 
 const text = z.string().nullish()
 const num = z.number().nullish()
@@ -105,7 +105,7 @@ export const rejectJobsSchema = z.object({
 export type Job = z.infer<typeof jobSchema>
 export type JobDetail = z.infer<typeof jobDetailSchema>
 export type RejectJobsInput = z.infer<typeof rejectJobsSchema>
-export type JobsFilters = {
+export interface JobsFilters {
   page: number
   search?: string
   status?: string

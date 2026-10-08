@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react"
 import { Search } from "lucide-react"
-import { Button } from "~/components/ui/button"
+import { Button } from "@/components/ui/button"
 
 // the dialog pulls in cmdk and the search queries, so it loads on first open
 const CommandPaletteDialog = lazy(() =>
@@ -30,7 +30,9 @@ export function CommandPalette() {
       setOpen((value) => !value)
     }
     window.addEventListener("keydown", onKeyDown)
-    return () => window.removeEventListener("keydown", onKeyDown)
+    return () => {
+      window.removeEventListener("keydown", onKeyDown)
+    }
   }, [])
 
   return (
@@ -38,11 +40,13 @@ export function CommandPalette() {
       <Button
         variant="outline"
         className="hidden h-8 w-56 justify-start gap-2 px-2.5 font-normal text-muted-foreground md:flex"
-        onClick={() => show(true)}
+        onClick={() => {
+          show(true)
+        }}
       >
         <Search />
-        <span className="flex-1 text-left">Search…</span>
-        <kbd className="rounded border bg-muted px-1.5 font-sans text-[11px] font-medium">
+        <span className="flex-1 text-start">Search…</span>
+        <kbd className="rounded-sm border bg-muted px-1.5 font-sans text-[11px] font-medium">
           {shortcut}
         </kbd>
       </Button>
@@ -51,7 +55,9 @@ export function CommandPalette() {
         size="icon"
         aria-label="Search"
         className="md:hidden"
-        onClick={() => show(true)}
+        onClick={() => {
+          show(true)
+        }}
       >
         <Search />
       </Button>

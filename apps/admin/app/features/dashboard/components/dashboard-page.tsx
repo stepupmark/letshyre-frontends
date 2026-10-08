@@ -1,5 +1,5 @@
 import { useQueryStates } from "nuqs"
-import { PageHeader } from "~/components/page-header"
+import { PageHeader } from "@/components/page-header"
 import { dashboardSearchParams } from "../search-params"
 import { ActivitySection } from "./activity-section"
 import { DistributionSection } from "./distribution-section"

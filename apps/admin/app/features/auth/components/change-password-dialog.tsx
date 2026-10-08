@@ -1,9 +1,9 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 import { LoaderCircle } from "lucide-react"
-import { PasswordInput } from "~/components/password-input"
-import { Alert, AlertDescription } from "~/components/ui/alert"
-import { Button } from "~/components/ui/button"
+import { PasswordInput } from "@/components/password-input"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -12,14 +12,14 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "~/components/ui/dialog"
+} from "@/components/ui/dialog"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "~/components/ui/field"
+} from "@/components/ui/field"
 import { useChangePassword } from "../mutations/use-change-password"
 import { changePasswordSchema } from "../schemas/auth.schema"
 import type { ChangePasswordInput } from "../types"
@@ -44,7 +44,7 @@ const FIELDS = [
   },
 ] as const
 
-type ChangePasswordDialogProps = {
+interface ChangePasswordDialogProps {
   open: boolean
   onOpenChange: (open: boolean) => void
 }
@@ -67,17 +67,26 @@ export function ChangePasswordDialog({
     onOpenChange(next)
   }
 
-  const submit = form.handleSubmit(({ currentPassword, newPassword }) =>
+  const submit = form.handleSubmit(({ currentPassword, newPassword }) => {
     changePassword.mutate(
       { currentPassword, newPassword },
-      { onSuccess: () => handleOpenChange(false) }
+      {
+        onSuccess: () => {
+          handleOpenChange(false)
+        },
+      }
     )
-  )
+  })
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-md">
-        <form noValidate onSubmit={submit}>
+        <form
+          noValidate
+          onSubmit={(event) => {
+            void submit(event)
+          }}
+        >
           <DialogHeader>
             <DialogTitle>Change password</DialogTitle>
             <DialogDescription>

@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { Check, X } from "lucide-react"
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
-import { StatusBadge } from "~/components/status-badge"
-import { Button } from "~/components/ui/button"
+import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
+import { StatusBadge } from "@/components/status-badge"
+import { Button } from "@/components/ui/button"
 import { useCandidateDecision } from "../mutations/use-candidate-decision"
 import type {
   CandidateDecision as Decision,
@@ -43,16 +43,31 @@ export function CandidateDecision({ profile }: { profile: CandidateProfile }) {
       ) : profile.is_rejected ? (
         <>
           <StatusBadge tone="danger">Rejected</StatusBadge>
-          <Button variant="outline" size="sm" onClick={() => ask("approve")}>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              ask("approve")
+            }}
+          >
             <Check /> Approve instead
           </Button>
         </>
       ) : (
         <>
-          <Button variant="outline" onClick={() => ask("reject")}>
+          <Button
+            variant="outline"
+            onClick={() => {
+              ask("reject")
+            }}
+          >
             <X /> Reject
           </Button>
-          <Button onClick={() => ask("approve")}>
+          <Button
+            onClick={() => {
+              ask("approve")
+            }}
+          >
             <Check /> Approve
           </Button>
         </>
@@ -66,9 +81,13 @@ export function CandidateDecision({ profile }: { profile: CandidateProfile }) {
         confirmLabel={COPY[pending].confirm}
         destructive={pending === "reject"}
         pending={decide.isPending}
-        onConfirm={() =>
-          decide.mutate(pending, { onSuccess: () => setOpen(false) })
-        }
+        onConfirm={() => {
+          decide.mutate(pending, {
+            onSuccess: () => {
+              setOpen(false)
+            },
+          })
+        }}
       />
     </div>
   )

@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { envelope, id } from "~/lib/api/schemas"
+import { envelope, id } from "@/lib/api/schemas"
 
 const creditSchema = z
   .object({

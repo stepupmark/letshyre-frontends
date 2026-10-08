@@ -5,14 +5,14 @@ import { ArrowLeft, Check, X } from "lucide-react"
 import {
   DocumentViewer,
   DocumentViewerDialog,
-} from "~/components/document-viewer"
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
-import { ErrorState } from "~/components/feedback/error-state"
-import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert"
-import { Button } from "~/components/ui/button"
-import { Skeleton } from "~/components/ui/skeleton"
-import { useDocumentTitle } from "~/hooks/use-document-title"
-import { formatDate } from "~/lib/format"
+} from "@/components/document-viewer"
+import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
+import { ErrorState } from "@/components/feedback/error-state"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Button } from "@/components/ui/button"
+import { Skeleton } from "@/components/ui/skeleton"
+import { useDocumentTitle } from "@/hooks/use-document-title"
+import { formatDate } from "@/lib/format"
 import { kycDocuments } from "../documents"
 import { useApproveKyc } from "../mutations/use-review-kyc"
 import { kycQueries } from "../queries/kyc.queries"
@@ -33,7 +33,7 @@ export function KycReviewPage() {
   const [expanded, setExpanded] = useState<number | null>(null)
 
   const back = (
-    <Button variant="ghost" size="sm" className="mb-4 -ml-2" asChild>
+    <Button variant="ghost" size="sm" className="-ms-2 mb-4" asChild>
       <Link to="/dashboard/kyc">
         <ArrowLeft /> KYC requests
       </Link>
@@ -87,11 +87,20 @@ export function KycReviewPage() {
         {status !== "Verified" && (
           <div className="flex gap-2">
             {status === "Pending" && (
-              <Button variant="outline" onClick={() => setRejectOpen(true)}>
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setRejectOpen(true)
+                }}
+              >
                 <X /> Reject
               </Button>
             )}
-            <Button onClick={() => setApproveOpen(true)}>
+            <Button
+              onClick={() => {
+                setApproveOpen(true)
+              }}
+            >
               <Check /> Approve
             </Button>
           </div>
@@ -113,7 +122,9 @@ export function KycReviewPage() {
           documents={documents}
           index={documentIndex}
           onIndexChange={setDocumentIndex}
-          onExpand={() => setExpanded(documentIndex)}
+          onExpand={() => {
+            setExpanded(documentIndex)
+          }}
           className="h-[70svh] lg:sticky lg:top-20 lg:h-[calc(100svh-7rem)]"
         />
       </div>

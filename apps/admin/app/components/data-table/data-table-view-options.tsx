@@ -1,6 +1,6 @@
 import type { Table } from "@tanstack/react-table"
 import { Settings2 } from "lucide-react"
-import { Button } from "~/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -10,12 +10,12 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 import { columnLabel } from "./column-label"
 
 export type Density = "comfortable" | "compact"
 
-type DataTableViewOptionsProps<TData> = {
+interface DataTableViewOptionsProps<TData> {
   table: Table<TData>
   density: Density
   onDensityChange: (density: Density) => void
@@ -41,7 +41,9 @@ export function DataTableViewOptions<TData>({
         <DropdownMenuLabel>Density</DropdownMenuLabel>
         <DropdownMenuRadioGroup
           value={density}
-          onValueChange={(value) => onDensityChange(value as Density)}
+          onValueChange={(value) => {
+            onDensityChange(value as Density)
+          }}
         >
           <DropdownMenuRadioItem value="comfortable">
             Comfortable
@@ -60,8 +62,12 @@ export function DataTableViewOptions<TData>({
                   column.getIsVisible() &&
                   table.getVisibleLeafColumns().length === 1
                 }
-                onCheckedChange={(visible) => column.toggleVisibility(visible)}
-                onSelect={(event) => event.preventDefault()}
+                onCheckedChange={(visible) => {
+                  column.toggleVisibility(visible)
+                }}
+                onSelect={(event) => {
+                  event.preventDefault()
+                }}
               >
                 {columnLabel(column)}
               </DropdownMenuCheckboxItem>

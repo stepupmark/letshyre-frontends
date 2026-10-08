@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router"
 import { LoaderCircle } from "lucide-react"
-import { PageHeader } from "~/components/page-header"
-import { Button } from "~/components/ui/button"
-import { Card, CardContent } from "~/components/ui/card"
+import { PageHeader } from "@/components/page-header"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 import { useCreateCoupon } from "../mutations/use-coupon-mutations"
 import { CouponForm } from "./coupon-form"
 
@@ -20,11 +20,13 @@ export function NewCouponPage() {
         <CardContent>
           <CouponForm
             id="new-coupon"
-            onSubmit={(payload) =>
+            onSubmit={(payload) => {
               create.mutate(payload, {
-                onSuccess: () => navigate("/dashboard/coupons"),
+                onSuccess: () => {
+                  void navigate("/dashboard/coupons")
+                },
               })
-            }
+            }}
             footer={
               <div className="mt-6 flex justify-end gap-2 border-t pt-4">
                 <Button variant="outline" asChild>

@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query"
-import { patchQueries } from "~/lib/query/optimistic"
+import { patchQueries } from "@/lib/query/optimistic"
 import { jobsKeys } from "../queries/jobs.queries"
 import type { Job, JobDetail, JobsAction } from "../schemas/jobs.schema"
 import { jobsService } from "../services/jobs.service"
@@ -26,7 +26,13 @@ export function useJobAction() {
           }))
         ),
       ])
-      return { rollback: () => rollbacks.forEach((undo) => undo()) }
+      return {
+        rollback: () => {
+          rollbacks.forEach((undo) => {
+            undo()
+          })
+        },
+      }
     },
     onError: (_error, _variables, context) => context?.rollback(),
     meta: { successMessage: "Jobs updated", invalidates: [jobsKeys.all] },

@@ -13,7 +13,7 @@ import {
   type LucideIcon,
 } from "lucide-react"
 
-type NavLink = {
+interface NavLink {
   title: string
   url: string
 }
@@ -23,7 +23,7 @@ export type NavItem = NavLink & {
   items?: NavLink[]
 }
 
-export type NavGroup = {
+export interface NavGroup {
   label: string
   items: NavItem[]
 }

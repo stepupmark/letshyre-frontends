@@ -1,4 +1,7 @@
-type Page<T> = { results: T[]; total_pages: number }
+interface Page<T> {
+  results: T[]
+  total_pages: number
+}
 
 export const EXPORT_PAGE_LIMIT = 50
 

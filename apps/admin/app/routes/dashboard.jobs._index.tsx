@@ -4,13 +4,13 @@ import {
   jobsQueries,
   loadJobsSearchParams,
   toJobsFilters,
-} from "~/features/jobs"
-import { queryClient } from "~/lib/query/query-client"
+} from "@/features/jobs"
+import { prefetch } from "@/lib/query/query-client"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
   const filters = toJobsFilters(loadJobsSearchParams(request))
-  void queryClient.prefetchQuery(jobsQueries.summary())
-  void queryClient.prefetchQuery(jobsQueries.list(filters))
+  prefetch(jobsQueries.summary())
+  prefetch(jobsQueries.list(filters))
   return null
 }
 
@@ -20,6 +20,6 @@ export const meta: Route.MetaFunction = () => [
 
 export const handle = { breadcrumb: "Jobs" }
 
-export { RouteErrorBoundary as ErrorBoundary } from "~/components/feedback/route-error-boundary"
+export { RouteErrorBoundary as ErrorBoundary } from "@/components/feedback/route-error-boundary"
 
 export default JobsPage

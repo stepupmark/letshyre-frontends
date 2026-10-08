@@ -1,4 +1,4 @@
-import { queryClient } from "~/lib/query/query-client"
+import { queryClient } from "@/lib/query/query-client"
 import { tokenStore } from "./token-store"
 
 export type SessionEndReason = "logout" | "expired" | "idle"
@@ -29,8 +29,12 @@ export function endSession(reason: SessionEndReason) {
 /** Signs this tab out when another tab ends the session. */
 export function listenForRemoteSessionEnd() {
   const ch = getChannel()
-  if (!ch) return () => {}
-  const onMessage = (event: MessageEvent<SessionEndReason>) => leave(event.data)
+  if (!ch) return () => undefined
+  const onMessage = (event: MessageEvent<SessionEndReason>) => {
+    leave(event.data)
+  }
   ch.addEventListener("message", onMessage)
-  return () => ch.removeEventListener("message", onMessage)
+  return () => {
+    ch.removeEventListener("message", onMessage)
+  }
 }

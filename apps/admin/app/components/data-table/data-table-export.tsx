@@ -2,17 +2,17 @@ import { useState } from "react"
 import type { Table } from "@tanstack/react-table"
 import { Download, LoaderCircle } from "lucide-react"
 import { toast } from "sonner"
-import { Button } from "~/components/ui/button"
-import { getErrorMessage } from "~/lib/api/api-error"
-import { downloadCsv, toCsv, type CsvCell } from "~/lib/csv"
-import { EXPORT_PAGE_LIMIT } from "~/lib/fetch-all-pages"
+import { Button } from "@/components/ui/button"
+import { getErrorMessage } from "@/lib/api/api-error"
+import { downloadCsv, toCsv, type CsvCell } from "@/lib/csv"
+import { EXPORT_PAGE_LIMIT } from "@/lib/fetch-all-pages"
 
 export type ExportRows<TData> = () => Promise<{
   rows: TData[]
   truncated: boolean
 }>
 
-type DataTableExportProps<TData> = {
+interface DataTableExportProps<TData> {
   table: Table<TData>
   filename: string
   exportRows?: ExportRows<TData>

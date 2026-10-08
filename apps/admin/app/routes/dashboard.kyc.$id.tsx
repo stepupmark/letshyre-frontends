@@ -1,9 +1,9 @@
 import type { Route } from "./+types/dashboard.kyc.$id"
-import { KycReviewPage, kycQueries } from "~/features/kyc"
-import { queryClient } from "~/lib/query/query-client"
+import { KycReviewPage, kycQueries } from "@/features/kyc"
+import { prefetch } from "@/lib/query/query-client"
 
 export function clientLoader({ params }: Route.ClientLoaderArgs) {
-  void queryClient.prefetchQuery(kycQueries.detail(params.id))
+  prefetch(kycQueries.detail(params.id))
   return null
 }
 
@@ -16,6 +16,6 @@ export const handle = {
   parent: { label: "KYC verification", path: "/dashboard/kyc" },
 }
 
-export { RouteErrorBoundary as ErrorBoundary } from "~/components/feedback/route-error-boundary"
+export { RouteErrorBoundary as ErrorBoundary } from "@/components/feedback/route-error-boundary"
 
 export default KycReviewPage

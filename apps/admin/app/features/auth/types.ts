@@ -15,7 +15,7 @@ export type ResetPasswordInput = z.infer<typeof resetPasswordSchema>
 export type ChangePasswordInput = z.infer<typeof changePasswordSchema>
 export type AdminProfile = z.infer<typeof adminProfileSchema>
 
-export type OtpSession = {
+export interface OtpSession {
   email: string
   otpSessionKey: string
 }

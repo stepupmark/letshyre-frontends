@@ -1,7 +1,7 @@
-import { StatusBadge, type StatusTone } from "~/components/status-badge"
-import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
-import { initials } from "~/lib/format"
-import { safeExternalUrl } from "~/lib/safe-url"
+import { StatusBadge, type StatusTone } from "@/components/status-badge"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { initials } from "@/lib/format"
+import { safeExternalUrl } from "@/lib/safe-url"
 
 const tones: Record<string, StatusTone> = {
   verified: "success",

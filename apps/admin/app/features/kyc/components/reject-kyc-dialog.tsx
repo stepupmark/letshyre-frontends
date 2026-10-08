@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { LoaderCircle } from "lucide-react"
-import { Button } from "~/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -10,18 +10,18 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "~/components/ui/dialog"
+} from "@/components/ui/dialog"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldLabel,
-} from "~/components/ui/field"
-import { Textarea } from "~/components/ui/textarea"
+} from "@/components/ui/field"
+import { Textarea } from "@/components/ui/textarea"
 import { useRejectKyc } from "../mutations/use-review-kyc"
 import { rejectKycSchema, type RejectKycInput } from "../schemas/kyc.schema"
 
-type RejectKycDialogProps = {
+interface RejectKycDialogProps {
   kycId: string
   companyName: string
   open: boolean
@@ -52,12 +52,18 @@ export function RejectKycDialog({
       <DialogContent>
         <form
           noValidate
-          onSubmit={form.handleSubmit(({ remarks }) =>
-            reject.mutate(
-              { id: kycId, remarks },
-              { onSuccess: () => handleOpenChange(false) }
-            )
-          )}
+          onSubmit={(event) => {
+            void form.handleSubmit(({ remarks }) => {
+              reject.mutate(
+                { id: kycId, remarks },
+                {
+                  onSuccess: () => {
+                    handleOpenChange(false)
+                  },
+                }
+              )
+            })(event)
+          }}
         >
           <DialogHeader>
             <DialogTitle>Reject {companyName}?</DialogTitle>

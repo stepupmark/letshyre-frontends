@@ -1,9 +1,9 @@
 import type { Route } from "./+types/dashboard.candidates.$id"
-import { CandidateProfilePage, candidatesQueries } from "~/features/candidates"
-import { queryClient } from "~/lib/query/query-client"
+import { CandidateProfilePage, candidatesQueries } from "@/features/candidates"
+import { prefetch } from "@/lib/query/query-client"
 
 export function clientLoader({ params }: Route.ClientLoaderArgs) {
-  void queryClient.prefetchQuery(candidatesQueries.profile(params.id))
+  prefetch(candidatesQueries.profile(params.id))
   return null
 }
 
@@ -16,6 +16,6 @@ export const handle = {
   parent: { label: "Candidates", path: "/dashboard/candidates" },
 }
 
-export { RouteErrorBoundary as ErrorBoundary } from "~/components/feedback/route-error-boundary"
+export { RouteErrorBoundary as ErrorBoundary } from "@/components/feedback/route-error-boundary"
 
 export default CandidateProfilePage

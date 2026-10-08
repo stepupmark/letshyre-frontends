@@ -1,22 +1,22 @@
 import type { ReactNode } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Controller, useForm } from "react-hook-form"
+import { Controller, useForm, useWatch } from "react-hook-form"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "~/components/ui/field"
-import { Input } from "~/components/ui/input"
+} from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "~/components/ui/select"
-import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard"
+} from "@/components/ui/select"
+import { UnsavedChangesGuard } from "@/components/unsaved-changes-guard"
 import {
   couponFormSchema,
   type CouponFormValues,
@@ -24,7 +24,7 @@ import {
 } from "../schemas/coupons.schema"
 import { EMPTY_COUPON, toCouponPayload } from "../utils/coupon-values"
 
-type CouponFormProps = {
+interface CouponFormProps {
   id: string
   defaultValues?: CouponFormValues
   onSubmit: (payload: CouponPayload) => void
@@ -42,16 +42,21 @@ export function CouponForm({
     resolver: zodResolver(couponFormSchema),
     defaultValues,
   })
-  const discountType = form.watch("discount_type")
+  const discountType = useWatch({
+    control: form.control,
+    name: "discount_type",
+  })
   const { errors } = form.formState
 
   return (
     <form
       id={id}
       noValidate
-      onSubmit={form.handleSubmit((values) =>
-        onSubmit(toCouponPayload(values))
-      )}
+      onSubmit={(event) => {
+        void form.handleSubmit((values) => {
+          onSubmit(toCouponPayload(values))
+        })(event)
+      }}
     >
       <UnsavedChangesGuard
         when={form.formState.isDirty && !form.formState.isSubmitSuccessful}

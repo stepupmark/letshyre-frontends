@@ -4,13 +4,13 @@ import {
   toUnlocksFilters,
   UnlocksPage,
   unlocksQueries,
-} from "~/features/unlocks"
-import { queryClient } from "~/lib/query/query-client"
+} from "@/features/unlocks"
+import { prefetch } from "@/lib/query/query-client"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
   const filters = toUnlocksFilters(loadUnlocksSearchParams(request))
-  void queryClient.prefetchQuery(unlocksQueries.overview())
-  void queryClient.prefetchQuery(unlocksQueries.list(filters))
+  prefetch(unlocksQueries.overview())
+  prefetch(unlocksQueries.list(filters))
   return null
 }
 
@@ -20,6 +20,6 @@ export const meta: Route.MetaFunction = () => [
 
 export const handle = { breadcrumb: "Unlocks" }
 
-export { RouteErrorBoundary as ErrorBoundary } from "~/components/feedback/route-error-boundary"
+export { RouteErrorBoundary as ErrorBoundary } from "@/components/feedback/route-error-boundary"
 
 export default UnlocksPage

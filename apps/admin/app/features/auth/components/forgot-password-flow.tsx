@@ -65,20 +65,28 @@ export function ForgotPasswordFlow() {
       <AuthHeading {...heading(step)} />
       {step.name === "request" && (
         <RequestOtpForm
-          onSent={(session) => setStep({ name: "verify", session })}
+          onSent={(session) => {
+            setStep({ name: "verify", session })
+          }}
         />
       )}
       {step.name === "verify" && (
         <VerifyOtpForm
           session={step.session}
-          onResent={(session) => setStep({ name: "verify", session })}
-          onVerified={() => setStep({ name: "reset", session: step.session })}
+          onResent={(session) => {
+            setStep({ name: "verify", session })
+          }}
+          onVerified={() => {
+            setStep({ name: "reset", session: step.session })
+          }}
         />
       )}
       {step.name === "reset" && (
         <ResetPasswordForm
           session={step.session}
-          onDone={() => navigate("/login", { replace: true })}
+          onDone={() => {
+            void navigate("/login", { replace: true })
+          }}
         />
       )}
     </>

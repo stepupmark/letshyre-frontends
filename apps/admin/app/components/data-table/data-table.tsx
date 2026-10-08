@@ -11,10 +11,10 @@ import {
   type VisibilityState,
 } from "@tanstack/react-table"
 import { cn } from "cn"
-import type { CsvCell } from "~/lib/csv"
-import { EmptyState } from "~/components/feedback/empty-state"
-import { ErrorState } from "~/components/feedback/error-state"
-import { Skeleton } from "~/components/ui/skeleton"
+import type { CsvCell } from "@/lib/csv"
+import { EmptyState } from "@/components/feedback/empty-state"
+import { ErrorState } from "@/components/feedback/error-state"
+import { Skeleton } from "@/components/ui/skeleton"
 import {
   Table,
   TableBody,
@@ -22,10 +22,10 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "~/components/ui/table"
-import { useHotkey } from "~/hooks/use-hotkey"
-import { useIsMobile } from "~/hooks/use-mobile"
-import { useStoredState } from "~/hooks/use-stored-state"
+} from "@/components/ui/table"
+import { useHotkey } from "@/hooks/use-hotkey"
+import { useIsMobile } from "@/hooks/use-mobile"
+import { useStoredState } from "@/hooks/use-stored-state"
 import { DataTableCards } from "./data-table-cards"
 import { DataTableExport, type ExportRows } from "./data-table-export"
 import { DataTablePagination } from "./data-table-pagination"
@@ -43,8 +43,8 @@ declare module "@tanstack/react-table" {
   }
 }
 
-type DataTableProps<TData> = {
-  columns: ColumnDef<TData, unknown>[]
+interface DataTableProps<TData> {
+  columns: ColumnDef<TData>[]
   data: TData[] | undefined
   getRowId?: (row: TData) => string
   /** 1-based, matches the API. */
@@ -112,10 +112,11 @@ export function DataTable<TData>({
     enableRowSelection: Boolean(onRowSelectionChange),
     state: { rowSelection: rowSelection ?? {}, columnVisibility },
     onRowSelectionChange,
-    onColumnVisibilityChange: (updater) =>
+    onColumnVisibilityChange: (updater) => {
       setColumnVisibility(
         typeof updater === "function" ? updater(columnVisibility) : updater
-      ),
+      )
+    },
   })
 
   const columnCount = table.getVisibleLeafColumns().length
@@ -123,7 +124,9 @@ export function DataTable<TData>({
   const bodyRef = useRef<HTMLTableSectionElement>(null)
   const [activeRow, setActiveRow] = useState(-1)
 
-  useEffect(() => setActiveRow(-1), [data])
+  useEffect(() => {
+    setActiveRow(-1)
+  }, [data])
   useEffect(() => {
     bodyRef.current?.rows[activeRow]?.scrollIntoView({ block: "nearest" })
   }, [activeRow])
@@ -151,7 +154,7 @@ export function DataTable<TData>({
   const toolbar = (
     <div className="flex flex-wrap items-center gap-2">
       {filters}
-      <div className="ml-auto flex items-center gap-2">
+      <div className="ms-auto flex items-center gap-2">
         {filters && <SavedViews />}
         {exportName && (
           <DataTableExport

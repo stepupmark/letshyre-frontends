@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useLocation, useNavigate } from "react-router"
 import { Bookmark, Check, Plus, X } from "lucide-react"
 import { toast } from "sonner"
-import { Button } from "~/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -10,7 +10,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "~/components/ui/dialog"
+} from "@/components/ui/dialog"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,11 +18,14 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu"
-import { Input } from "~/components/ui/input"
-import { useStoredState } from "~/hooks/use-stored-state"
+} from "@/components/ui/dropdown-menu"
+import { Input } from "@/components/ui/input"
+import { useStoredState } from "@/hooks/use-stored-state"
 
-type SavedView = { name: string; search: string }
+interface SavedView {
+  name: string
+  search: string
+}
 
 // the page number isn't part of a view
 function viewSearch(search: string) {
@@ -88,7 +91,9 @@ export function SavedViews() {
                       event.stopPropagation()
                       setViews(views.filter((item) => item !== view))
                     }}
-                    onPointerDown={(event) => event.stopPropagation()}
+                    onPointerDown={(event) => {
+                      event.stopPropagation()
+                    }}
                   >
                     <X className="size-3.5" />
                   </button>
@@ -99,7 +104,9 @@ export function SavedViews() {
           )}
           <DropdownMenuItem
             disabled={!current}
-            onSelect={() => setSaving(true)}
+            onSelect={() => {
+              setSaving(true)
+            }}
           >
             <Plus /> Save current filters
           </DropdownMenuItem>
@@ -126,19 +133,22 @@ export function SavedViews() {
               </DialogDescription>
             </DialogHeader>
             <Input
-              autoFocus
               aria-label="View name"
               placeholder="e.g. Pending this week"
               value={name}
               maxLength={40}
-              onChange={(event) => setName(event.target.value)}
+              onChange={(event) => {
+                setName(event.target.value)
+              }}
               className="my-4"
             />
             <DialogFooter>
               <Button
                 type="button"
                 variant="outline"
-                onClick={() => setSaving(false)}
+                onClick={() => {
+                  setSaving(false)
+                }}
               >
                 Cancel
               </Button>

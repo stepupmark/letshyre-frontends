@@ -1,5 +1,5 @@
 import { createLoader, parseAsStringLiteral } from "nuqs"
-import { pageParser } from "~/lib/search-params"
+import { pageParser } from "@/lib/search-params"
 import { KYC_STATUSES } from "./schemas/kyc.schema"
 
 export const kycSearchParams = {

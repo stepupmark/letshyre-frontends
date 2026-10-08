@@ -9,9 +9,9 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "~/components/ui/alert-dialog"
+} from "@/components/ui/alert-dialog"
 
-type ConfirmDialogProps = {
+interface ConfirmDialogProps {
   open: boolean
   onOpenChange: (open: boolean) => void
   title: string
@@ -38,7 +38,9 @@ export function ConfirmDialog({
   return (
     <AlertDialog
       open={open}
-      onOpenChange={(next) => !pending && onOpenChange(next)}
+      onOpenChange={(next) => {
+        if (!pending) onOpenChange(next)
+      }}
     >
       <AlertDialogContent>
         <AlertDialogHeader>

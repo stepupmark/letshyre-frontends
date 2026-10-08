@@ -11,23 +11,23 @@ import {
   ZoomOut,
 } from "lucide-react"
 import { cn } from "cn"
-import { Button } from "~/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogTitle,
-} from "~/components/ui/dialog"
+} from "@/components/ui/dialog"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "~/components/ui/select"
-import { safeExternalUrl } from "~/lib/safe-url"
+} from "@/components/ui/select"
+import { safeExternalUrl } from "@/lib/safe-url"
 
-export type ViewerDocument = {
+export interface ViewerDocument {
   label: string
   url: string | null | undefined
 }
@@ -84,7 +84,9 @@ function Preview({ url, label }: { url: string; label: string }) {
             src={url}
             alt={label}
             referrerPolicy="no-referrer"
-            onError={() => setFailed(true)}
+            onError={() => {
+              setFailed(true)
+            }}
             className="max-w-none object-contain transition-transform"
             style={{
               width: zoom <= 1 ? undefined : `${zoom * 100}%`,
@@ -95,13 +97,15 @@ function Preview({ url, label }: { url: string; label: string }) {
           />
         </div>
       </div>
-      <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-lg border bg-background/95 p-1 shadow-sm">
+      <div className="absolute inset-s-1/2 bottom-3 flex -translate-x-1/2 items-center gap-1 rounded-lg border bg-background/95 p-1 shadow-sm">
         <Button
           variant="ghost"
           size="icon-sm"
           aria-label="Zoom out"
           disabled={zoomIndex <= 0}
-          onClick={() => setZoom(ZOOM_STEPS[zoomIndex - 1] ?? zoom)}
+          onClick={() => {
+            setZoom(ZOOM_STEPS[zoomIndex - 1] ?? zoom)
+          }}
         >
           <ZoomOut />
         </Button>
@@ -121,7 +125,9 @@ function Preview({ url, label }: { url: string; label: string }) {
           size="icon-sm"
           aria-label="Zoom in"
           disabled={zoomIndex >= ZOOM_STEPS.length - 1}
-          onClick={() => setZoom(ZOOM_STEPS[zoomIndex + 1] ?? zoom)}
+          onClick={() => {
+            setZoom(ZOOM_STEPS[zoomIndex + 1] ?? zoom)
+          }}
         >
           <ZoomIn />
         </Button>
@@ -129,7 +135,9 @@ function Preview({ url, label }: { url: string; label: string }) {
           variant="ghost"
           size="icon-sm"
           aria-label="Rotate"
-          onClick={() => setRotation((value) => (value + 90) % 360)}
+          onClick={() => {
+            setRotation((value) => (value + 90) % 360)
+          }}
         >
           <RotateCw />
         </Button>
@@ -138,7 +146,7 @@ function Preview({ url, label }: { url: string; label: string }) {
   )
 }
 
-type DocumentViewerProps = {
+interface DocumentViewerProps {
   documents: ViewerDocument[]
   index: number
   onIndexChange: (index: number) => void
@@ -170,13 +178,17 @@ export function DocumentViewer({
           size="icon-sm"
           aria-label="Previous document"
           disabled={index <= 0}
-          onClick={() => onIndexChange(index - 1)}
+          onClick={() => {
+            onIndexChange(index - 1)
+          }}
         >
           <ChevronLeft />
         </Button>
         <Select
           value={String(index)}
-          onValueChange={(value) => onIndexChange(Number(value))}
+          onValueChange={(value) => {
+            onIndexChange(Number(value))
+          }}
         >
           <SelectTrigger
             size="sm"
@@ -204,7 +216,9 @@ export function DocumentViewer({
           size="icon-sm"
           aria-label="Next document"
           disabled={index >= last}
-          onClick={() => onIndexChange(index + 1)}
+          onClick={() => {
+            onIndexChange(index + 1)
+          }}
         >
           <ChevronRight />
         </Button>
@@ -256,7 +270,7 @@ export function DocumentViewer({
   )
 }
 
-type DocumentViewerDialogProps = {
+interface DocumentViewerDialogProps {
   documents: ViewerDocument[]
   index: number | null
   onIndexChange: (index: number | null) => void
@@ -282,11 +296,18 @@ export function DocumentViewerDialog({
         onIndexChange(index + 1)
     }
     window.addEventListener("keydown", onKeyDown)
-    return () => window.removeEventListener("keydown", onKeyDown)
+    return () => {
+      window.removeEventListener("keydown", onKeyDown)
+    }
   }, [index, documents.length, onIndexChange])
 
   return (
-    <Dialog open={open} onOpenChange={(next) => !next && onIndexChange(null)}>
+    <Dialog
+      open={open}
+      onOpenChange={(next) => {
+        if (!next) onIndexChange(null)
+      }}
+    >
       <DialogContent className="flex h-[90svh] max-w-[calc(100%-2rem)] flex-col gap-0 p-0 sm:max-w-6xl">
         <DialogTitle className="sr-only">Documents</DialogTitle>
         <DialogDescription className="sr-only">
@@ -297,7 +318,7 @@ export function DocumentViewerDialog({
             documents={documents}
             index={index}
             onIndexChange={onIndexChange}
-            className="min-h-0 flex-1 rounded-none border-0 [&>div:first-child]:pr-12"
+            className="min-h-0 flex-1 rounded-none border-0 [&>div:first-child]:pe-12"
           />
         )}
       </DialogContent>
@@ -305,7 +326,7 @@ export function DocumentViewerDialog({
   )
 }
 
-type DocumentListProps = {
+interface DocumentListProps {
   documents: ViewerDocument[]
   className?: string
 }
@@ -329,7 +350,9 @@ export function DocumentList({ documents, className }: DocumentListProps) {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => setViewing(index)}
+                onClick={() => {
+                  setViewing(index)
+                }}
               >
                 View
               </Button>

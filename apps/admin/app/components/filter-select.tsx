@@ -5,11 +5,11 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "~/components/ui/select"
+} from "@/components/ui/select"
 
 const ALL = "__all"
 
-type FilterSelectProps<T extends string> = {
+interface FilterSelectProps<T extends string> {
   label: string
   allLabel: string
   value: T | null
@@ -30,7 +30,9 @@ export function FilterSelect<T extends string>({
   return (
     <Select
       value={value ?? ALL}
-      onValueChange={(next) => onChange(next === ALL ? null : (next as T))}
+      onValueChange={(next) => {
+        onChange(next === ALL ? null : (next as T))
+      }}
     >
       <SelectTrigger aria-label={label} className={cn("w-40", className)}>
         <SelectValue />

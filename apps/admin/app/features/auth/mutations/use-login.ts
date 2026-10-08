@@ -1,9 +1,10 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useNavigate, useSearchParams } from "react-router"
-import { tokenStore } from "~/lib/auth/token-store"
-import { safeRedirect } from "~/lib/safe-url"
+import { tokenStore } from "@/lib/auth/token-store"
+import { safeRedirect } from "@/lib/safe-url"
 import { authKeys } from "../queries/auth.queries"
 import { authService } from "../services/auth.service"
+import type { LoginInput } from "../types"
 
 export function useLogin() {
   const navigate = useNavigate()
@@ -11,7 +12,7 @@ export function useLogin() {
   const [searchParams] = useSearchParams()
 
   return useMutation({
-    mutationFn: authService.login,
+    mutationFn: (input: LoginInput) => authService.login(input),
     meta: { errorMessage: false },
     onSuccess: (result) => {
       tokenStore.setTokens({
@@ -19,7 +20,9 @@ export function useLogin() {
         refreshToken: result.refresh_token,
       })
       queryClient.removeQueries({ queryKey: authKeys.all })
-      navigate(safeRedirect(searchParams.get("redirectTo")), { replace: true })
+      void navigate(safeRedirect(searchParams.get("redirectTo")), {
+        replace: true,
+      })
     },
   })
 }

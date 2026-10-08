@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { envelope } from "~/lib/api/schemas"
+import { envelope } from "@/lib/api/schemas"
 
 const amount = z.coerce.number().catch(0)
 
@@ -71,4 +71,8 @@ export const dailyActivityResponseSchema = envelope(
 export const ACTIVITY_RANGES = ["7", "14", "30"] as const
 export type ActivityRange = (typeof ACTIVITY_RANGES)[number]
 
-export type Share = { label: string; count: number; percentage: number }
+export interface Share {
+  label: string
+  count: number
+  percentage: number
+}

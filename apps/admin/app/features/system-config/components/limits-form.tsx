@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { LoaderCircle } from "lucide-react"
-import { Button } from "~/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -9,21 +9,21 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card"
+} from "@/components/ui/card"
 import {
   Field,
   FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "~/components/ui/field"
+} from "@/components/ui/field"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
   InputGroupText,
-} from "~/components/ui/input-group"
-import { UnsavedChangesGuard } from "~/components/unsaved-changes-guard"
+} from "@/components/ui/input-group"
+import { UnsavedChangesGuard } from "@/components/unsaved-changes-guard"
 import { useUpdateSystemConfig } from "../mutations/use-update-system-config"
 import {
   limitsSchema,
@@ -79,7 +79,12 @@ export function LimitsForm({ config }: { config: SystemConfig }) {
 
   return (
     <Card>
-      <form noValidate onSubmit={submit}>
+      <form
+        noValidate
+        onSubmit={(event) => {
+          void submit(event)
+        }}
+      >
         <UnsavedChangesGuard when={form.formState.isDirty} />
         <CardHeader>
           <CardTitle>Resource limits</CardTitle>
@@ -121,7 +126,9 @@ export function LimitsForm({ config }: { config: SystemConfig }) {
             type="button"
             variant="outline"
             disabled={!form.formState.isDirty || update.isPending}
-            onClick={() => form.reset()}
+            onClick={() => {
+              form.reset()
+            }}
           >
             Discard
           </Button>

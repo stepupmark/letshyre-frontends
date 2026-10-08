@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { envelope, id, paginated } from "~/lib/api/schemas"
+import { envelope, id, paginated } from "@/lib/api/schemas"
 
 const couponSchema = z.object({
   id,
@@ -58,7 +58,7 @@ export const couponFormSchema = z
 
 export type Coupon = z.infer<typeof couponSchema>
 export type CouponFormValues = z.infer<typeof couponFormSchema>
-export type CouponPayload = {
+export interface CouponPayload {
   code: string
   discount_type: "flat" | "percentage"
   discount_value: string

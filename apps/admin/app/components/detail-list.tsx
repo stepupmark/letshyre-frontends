@@ -10,7 +10,7 @@ export function DetailList({
       {items.map((item) => (
         <div key={item.label} className="min-w-0">
           <dt className="text-xs text-muted-foreground">{item.label}</dt>
-          <dd className="mt-0.5 text-sm break-words">
+          <dd className="mt-0.5 text-sm wrap-break-word">
             {item.value || <span className="text-muted-foreground">—</span>}
           </dd>
         </div>

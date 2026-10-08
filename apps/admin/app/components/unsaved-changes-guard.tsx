@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useBlocker } from "react-router"
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
+import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
 
 export function UnsavedChangesGuard({ when }: { when: boolean }) {
   const blocker = useBlocker(
@@ -10,9 +10,13 @@ export function UnsavedChangesGuard({ when }: { when: boolean }) {
 
   useEffect(() => {
     if (!when) return
-    const onBeforeUnload = (event: BeforeUnloadEvent) => event.preventDefault()
+    const onBeforeUnload = (event: BeforeUnloadEvent) => {
+      event.preventDefault()
+    }
     window.addEventListener("beforeunload", onBeforeUnload)
-    return () => window.removeEventListener("beforeunload", onBeforeUnload)
+    return () => {
+      window.removeEventListener("beforeunload", onBeforeUnload)
+    }
   }, [when])
 
   return (

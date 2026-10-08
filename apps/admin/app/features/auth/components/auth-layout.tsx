@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import { ThemeToggle } from "~/components/theme-toggle"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function AuthLayout({ children }: { children: ReactNode }) {
   return (
@@ -7,7 +7,7 @@ export function AuthLayout({ children }: { children: ReactNode }) {
       <header className="flex h-16 items-center justify-between px-6">
         <div className="flex items-center gap-3">
           <img src="/letshyre.png" alt="LetsHyre" className="h-5 w-auto" />
-          <span className="border-l pl-3 text-sm font-medium text-muted-foreground">
+          <span className="border-s ps-3 text-sm font-medium text-muted-foreground">
             Admin
           </span>
         </div>

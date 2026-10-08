@@ -1,5 +1,5 @@
 import { z } from "zod"
-import { envelope, id, paginated } from "~/lib/api/schemas"
+import { envelope, id, paginated } from "@/lib/api/schemas"
 
 const count = z
   .number()
@@ -37,7 +37,7 @@ export const paymentsResponseSchema = envelope(paginated(paymentSchema))
 export const PAYMENT_STATUSES = ["Success", "Pending", "Failed"] as const
 
 export type Payment = z.infer<typeof paymentSchema>
-export type PaymentFilters = {
+export interface PaymentFilters {
   page: number
   search?: string
   payment_status?: string

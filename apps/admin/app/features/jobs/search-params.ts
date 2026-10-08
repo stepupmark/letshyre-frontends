@@ -1,5 +1,5 @@
 import { createLoader, parseAsStringLiteral } from "nuqs"
-import { compactParams, pageParser, textParser } from "~/lib/search-params"
+import { compactParams, pageParser, textParser } from "@/lib/search-params"
 import {
   APPROVAL_STATUSES,
   JOB_STATUSES,
@@ -17,7 +17,7 @@ export const jobsSearchParams = {
 
 export const loadJobsSearchParams = createLoader(jobsSearchParams)
 
-type Params = {
+interface Params {
   page: number
   q: string
   status: string | null
@@ -33,7 +33,7 @@ export function toJobsFilters(params: Params): JobsFilters {
       search: params.q.trim(),
       // the API expects "Open", "Paused", "Closed"
       status: params.status
-        ? params.status[0].toUpperCase() + params.status.slice(1)
+        ? params.status.charAt(0).toUpperCase() + params.status.slice(1)
         : null,
       is_pending: params.approval === "pending" || null,
       is_approved: params.approval === "approved" || null,

@@ -9,9 +9,9 @@ import {
   ShoppingCart,
 } from "lucide-react"
 import { Suspense } from "react"
-import { ErrorState } from "~/components/feedback/error-state"
-import { StatCard } from "~/components/stat-card"
-import { Trend } from "~/components/trend"
+import { ErrorState } from "@/components/feedback/error-state"
+import { StatCard } from "@/components/stat-card"
+import { Trend } from "@/components/trend"
 import {
   Card,
   CardAction,
@@ -19,16 +19,16 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card"
+} from "@/components/ui/card"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "~/components/ui/select"
-import { Skeleton } from "~/components/ui/skeleton"
-import { formatCurrency, formatNumber, percentChange } from "~/lib/format"
+} from "@/components/ui/select"
+import { Skeleton } from "@/components/ui/skeleton"
+import { formatCurrency, formatNumber, percentChange } from "@/lib/format"
 import { dashboardQueries } from "../queries/dashboard.queries"
 import { currentYear } from "../search-params"
 import { monthRange, paymentsUrl, startOfWeek } from "../utils/periods"
@@ -149,7 +149,9 @@ export function RevenueSection({
           <CardAction>
             <Select
               value={String(year)}
-              onValueChange={(value) => onYearChange(Number(value))}
+              onValueChange={(value) => {
+                onYearChange(Number(value))
+              }}
             >
               <SelectTrigger aria-label="Year" className="w-28">
                 <SelectValue />
@@ -171,9 +173,9 @@ export function RevenueSection({
               onRetry={() => void monthly.refetch()}
             />
           ) : !monthly.data ? (
-            <Skeleton className="aspect-[3/1] w-full" />
+            <Skeleton className="aspect-3/1 w-full" />
           ) : (
-            <Suspense fallback={<Skeleton className="aspect-[3/1] w-full" />}>
+            <Suspense fallback={<Skeleton className="aspect-3/1 w-full" />}>
               <RevenueChart
                 data={monthly.data}
                 onMonthClick={(month) => {

@@ -1,20 +1,20 @@
 import { Link, useParams } from "react-router"
 import { useQuery } from "@tanstack/react-query"
 import { ArrowLeft } from "lucide-react"
-import { DetailList } from "~/components/detail-list"
-import { EmptyState } from "~/components/feedback/empty-state"
-import { ErrorState } from "~/components/feedback/error-state"
-import { Button } from "~/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card"
-import { Skeleton } from "~/components/ui/skeleton"
+import { DetailList } from "@/components/detail-list"
+import { EmptyState } from "@/components/feedback/empty-state"
+import { ErrorState } from "@/components/feedback/error-state"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Skeleton } from "@/components/ui/skeleton"
 import {
   CompanyAvatar,
   CompanyKycDetails,
   KycStatusBadge,
-} from "~/features/kyc"
-import { Copyable } from "~/components/copyable"
-import { useDocumentTitle } from "~/hooks/use-document-title"
-import { formatDate, formatNumber } from "~/lib/format"
+} from "@/features/kyc"
+import { Copyable } from "@/components/copyable"
+import { useDocumentTitle } from "@/hooks/use-document-title"
+import { formatDate, formatNumber } from "@/lib/format"
 import { employersQueries } from "../queries/employers.queries"
 
 export function EmployerProfilePage() {
@@ -26,7 +26,7 @@ export function EmployerProfilePage() {
   )
 
   const back = (
-    <Button variant="ghost" size="sm" className="mb-4 -ml-2" asChild>
+    <Button variant="ghost" size="sm" className="-ms-2 mb-4" asChild>
       <Link to="/dashboard/employers">
         <ArrowLeft /> Employers
       </Link>

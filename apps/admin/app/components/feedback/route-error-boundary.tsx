@@ -1,6 +1,6 @@
 import { isRouteErrorResponse, Link, useRouteError } from "react-router"
 import { FileQuestion, TriangleAlert } from "lucide-react"
-import { Button } from "~/components/ui/button"
+import { Button } from "@/components/ui/button"
 import { EmptyState } from "./empty-state"
 
 export function RouteErrorBoundary() {
@@ -35,7 +35,12 @@ export function RouteErrorBoundary() {
       }
       className="min-h-[60vh]"
       action={
-        <Button variant="outline" onClick={() => window.location.reload()}>
+        <Button
+          variant="outline"
+          onClick={() => {
+            window.location.reload()
+          }}
+        >
           Reload page
         </Button>
       }

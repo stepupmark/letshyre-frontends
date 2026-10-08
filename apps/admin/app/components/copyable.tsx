@@ -2,9 +2,9 @@ import { useEffect, useState, type ReactNode } from "react"
 import { Check, Copy } from "lucide-react"
 import { toast } from "sonner"
 import { cn } from "cn"
-import { Button } from "~/components/ui/button"
+import { Button } from "@/components/ui/button"
 
-type CopyableProps = {
+interface CopyableProps {
   value: string | null | undefined
   label: string
   children?: ReactNode
@@ -16,8 +16,12 @@ export function Copyable({ value, label, children, className }: CopyableProps) {
 
   useEffect(() => {
     if (!copied) return
-    const timer = window.setTimeout(() => setCopied(false), 1500)
-    return () => window.clearTimeout(timer)
+    const timer = window.setTimeout(() => {
+      setCopied(false)
+    }, 1500)
+    return () => {
+      window.clearTimeout(timer)
+    }
   }, [copied])
 
   if (!value) return <span className="text-muted-foreground">—</span>
@@ -42,7 +46,9 @@ export function Copyable({ value, label, children, className }: CopyableProps) {
         variant="ghost"
         size="icon-xs"
         aria-label={`Copy ${label.toLowerCase()}`}
-        onClick={copy}
+        onClick={() => {
+          void copy()
+        }}
         className="shrink-0 text-muted-foreground opacity-0 group-hover/copy:opacity-100 focus-visible:opacity-100 pointer-coarse:opacity-100"
       >
         {copied ? <Check /> : <Copy />}

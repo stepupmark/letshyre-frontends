@@ -5,9 +5,9 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "~/components/ui/input-group"
+} from "@/components/ui/input-group"
 
-type SearchInputProps = {
+interface SearchInputProps {
   value: string
   onChange: (value: string) => void
   placeholder?: string
@@ -31,14 +31,18 @@ export function SearchInput({
         value={value}
         placeholder={placeholder}
         aria-label={placeholder}
-        onChange={(event) => onChange(event.target.value)}
+        onChange={(event) => {
+          onChange(event.target.value)
+        }}
       />
       {value && (
         <InputGroupAddon align="inline-end">
           <InputGroupButton
             size="icon-xs"
             aria-label="Clear search"
-            onClick={() => onChange("")}
+            onClick={() => {
+              onChange("")
+            }}
           >
             <X />
           </InputGroupButton>

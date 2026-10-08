@@ -4,13 +4,13 @@ import {
   candidatesQueries,
   loadCandidatesSearchParams,
   toCandidateFilters,
-} from "~/features/candidates"
-import { queryClient } from "~/lib/query/query-client"
+} from "@/features/candidates"
+import { prefetch } from "@/lib/query/query-client"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
   const filters = toCandidateFilters(loadCandidatesSearchParams(request))
-  void queryClient.prefetchQuery(candidatesQueries.summary())
-  void queryClient.prefetchQuery(candidatesQueries.list(filters))
+  prefetch(candidatesQueries.summary())
+  prefetch(candidatesQueries.list(filters))
   return null
 }
 
@@ -20,6 +20,6 @@ export const meta: Route.MetaFunction = () => [
 
 export const handle = { breadcrumb: "Candidates" }
 
-export { RouteErrorBoundary as ErrorBoundary } from "~/components/feedback/route-error-boundary"
+export { RouteErrorBoundary as ErrorBoundary } from "@/components/feedback/route-error-boundary"
 
 export default CandidatesPage

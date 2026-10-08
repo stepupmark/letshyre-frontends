@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 
-type PageHeaderProps = {
+interface PageHeaderProps {
   title: string
   description?: ReactNode
   actions?: ReactNode

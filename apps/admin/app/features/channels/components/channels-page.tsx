@@ -1,31 +1,31 @@
 import { useState } from "react"
 import { useQuery } from "@tanstack/react-query"
 import { Mail, MessageSquare, Smartphone, type LucideIcon } from "lucide-react"
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
-import { ErrorState } from "~/components/feedback/error-state"
-import { PageHeader } from "~/components/page-header"
+import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
+import { ErrorState } from "@/components/feedback/error-state"
+import { PageHeader } from "@/components/page-header"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card"
-import { Skeleton } from "~/components/ui/skeleton"
-import { Switch } from "~/components/ui/switch"
-import { formatDateTime } from "~/lib/format"
+} from "@/components/ui/card"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Switch } from "@/components/ui/switch"
+import { formatDateTime } from "@/lib/format"
 import { useUpdateChannel } from "../mutations/use-update-channel"
 import { channelsQueries } from "../queries/channels.queries"
 import type { ChannelKey } from "../schemas/channels.schema"
 
-type Channel = {
+interface Channel {
   key: ChannelKey
   icon: LucideIcon
   label: string
   description: string
 }
 
-const CHANNELS: Channel[] = [
+const CHANNELS = [
   {
     key: "email_enabled",
     icon: Mail,
@@ -45,7 +45,7 @@ const CHANNELS: Channel[] = [
     label: "Push",
     description: "In-app and device push notifications.",
   },
-]
+] as const satisfies readonly Channel[]
 
 export function ChannelsPage() {
   const settings = useQuery(channelsQueries.settings())
@@ -54,7 +54,10 @@ export function ChannelsPage() {
   const [disabling, setDisabling] = useState<Channel>(CHANNELS[0])
 
   const toggle = (channel: Channel, enabled: boolean) => {
-    if (enabled) return update.mutate({ key: channel.key, enabled })
+    if (enabled) {
+      update.mutate({ key: channel.key, enabled })
+      return
+    }
     setDisabling(channel)
     setConfirmOpen(true)
   }
@@ -93,7 +96,9 @@ export function ChannelsPage() {
                         disabled={
                           update.isPending && update.variables.key === key
                         }
-                        onCheckedChange={(checked) => toggle(channel, checked)}
+                        onCheckedChange={(checked) => {
+                          toggle(channel, checked)
+                        }}
                       />
                     ) : (
                       <Skeleton className="h-5 w-8 rounded-full" />

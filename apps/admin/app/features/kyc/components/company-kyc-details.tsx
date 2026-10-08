@@ -1,16 +1,16 @@
-import { DetailList } from "~/components/detail-list"
-import { DocumentList } from "~/components/document-viewer"
-import { ExternalLink } from "~/components/external-link"
-import { SensitiveValue } from "~/components/sensitive-value"
+import { DetailList } from "@/components/detail-list"
+import { DocumentList } from "@/components/document-viewer"
+import { ExternalLink } from "@/components/external-link"
+import { SensitiveValue } from "@/components/sensitive-value"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card"
-import { Copyable } from "~/components/copyable"
-import { safeExternalUrl } from "~/lib/safe-url"
+} from "@/components/ui/card"
+import { Copyable } from "@/components/copyable"
+import { safeExternalUrl } from "@/lib/safe-url"
 import { kycDocuments } from "../documents"
 import type { CompanyKyc } from "../schemas/kyc.schema"
 

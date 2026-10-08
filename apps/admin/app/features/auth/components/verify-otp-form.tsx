@@ -3,26 +3,26 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 import { LoaderCircle } from "lucide-react"
 import { toast } from "sonner"
-import { Alert, AlertDescription } from "~/components/ui/alert"
-import { Button } from "~/components/ui/button"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Button } from "@/components/ui/button"
 import {
   Field,
   FieldError,
   FieldGroup,
   FieldLabel,
-} from "~/components/ui/field"
+} from "@/components/ui/field"
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "~/components/ui/input-otp"
+} from "@/components/ui/input-otp"
 import { useSendOtp, useVerifyOtp } from "../mutations/use-password-reset"
 import { verifyOtpSchema } from "../schemas/auth.schema"
 import type { OtpSession, VerifyOtpInput } from "../types"
 
 const RESEND_AFTER_SECONDS = 60
 
-type VerifyOtpFormProps = {
+interface VerifyOtpFormProps {
   session: OtpSession
   onResent: (session: OtpSession) => void
   onVerified: () => void
@@ -43,24 +43,27 @@ export function VerifyOtpForm({
 
   useEffect(() => {
     if (secondsLeft <= 0) return
-    const timer = window.setTimeout(
-      () => setSecondsLeft((value) => value - 1),
-      1000
-    )
-    return () => window.clearTimeout(timer)
+    const timer = window.setTimeout(() => {
+      setSecondsLeft((value) => value - 1)
+    }, 1000)
+    return () => {
+      window.clearTimeout(timer)
+    }
   }, [secondsLeft])
 
-  const submit = form.handleSubmit(({ otp }) =>
+  const submit = form.handleSubmit(({ otp }) => {
     verifyOtp.mutate(
       { session, otp },
       {
         onSuccess: onVerified,
-        onError: () => form.resetField("otp"),
+        onError: () => {
+          form.resetField("otp")
+        },
       }
     )
-  )
+  })
 
-  const resend = () =>
+  const resend = () => {
     sendOtp.mutate(session.email, {
       onSuccess: (next) => {
         onResent(next)
@@ -70,11 +73,17 @@ export function VerifyOtpForm({
         toast.success("We sent you a new code")
       },
     })
+  }
 
   const error = verifyOtp.error ?? sendOtp.error
 
   return (
-    <form noValidate onSubmit={submit}>
+    <form
+      noValidate
+      onSubmit={(event) => {
+        void submit(event)
+      }}
+    >
       <FieldGroup>
         {error && (
           <Alert variant="destructive">

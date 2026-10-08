@@ -1,4 +1,4 @@
-import type { ViewerDocument } from "~/components/document-viewer"
+import type { ViewerDocument } from "@/components/document-viewer"
 import type { CompanyKyc } from "./schemas/kyc.schema"
 
 export function kycDocuments(kyc: CompanyKyc): ViewerDocument[] {

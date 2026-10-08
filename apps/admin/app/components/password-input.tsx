@@ -5,7 +5,7 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "~/components/ui/input-group"
+} from "@/components/ui/input-group"
 
 export function PasswordInput(
   props: Omit<ComponentProps<typeof InputGroupInput>, "type">
@@ -19,7 +19,9 @@ export function PasswordInput(
         <InputGroupButton
           size="icon-xs"
           aria-label={visible ? "Hide password" : "Show password"}
-          onClick={() => setVisible((value) => !value)}
+          onClick={() => {
+            setVisible((value) => !value)
+          }}
         >
           {visible ? <EyeOff /> : <Eye />}
         </InputGroupButton>

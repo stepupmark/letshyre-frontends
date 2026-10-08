@@ -8,7 +8,7 @@ import {
 
 type Theme = "dark" | "light" | "system"
 
-type ThemeContextValue = {
+interface ThemeContextValue {
   theme: Theme
   resolvedTheme: "dark" | "light"
   setTheme: (theme: Theme) => void
@@ -40,9 +40,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-color-scheme: dark)")
-    const onChange = () => setSystem(systemTheme())
+    const onChange = () => {
+      setSystem(systemTheme())
+    }
     media.addEventListener("change", onChange)
-    return () => media.removeEventListener("change", onChange)
+    return () => {
+      media.removeEventListener("change", onChange)
+    }
   }, [])
 
   useEffect(() => {
@@ -59,8 +63,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setThemeState(next)
   }
 
-  const toggleTheme = () =>
+  const toggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark")
+  }
 
   return (
     <ThemeContext.Provider

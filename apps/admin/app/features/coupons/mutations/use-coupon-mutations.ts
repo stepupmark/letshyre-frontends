@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query"
-import { patchQueries } from "~/lib/query/optimistic"
+import { patchQueries } from "@/lib/query/optimistic"
 import { couponsKeys } from "../queries/coupons.queries"
 import type { CouponPayload } from "../schemas/coupons.schema"
 import { couponsService } from "../services/coupons.service"

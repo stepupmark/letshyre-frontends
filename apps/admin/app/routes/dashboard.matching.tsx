@@ -1,5 +1,5 @@
 import type { Route } from "./+types/dashboard.matching"
-import { ComingSoon } from "~/components/feedback/coming-soon"
+import { ComingSoon } from "@/components/feedback/coming-soon"
 
 export const meta: Route.MetaFunction = () => [
   { title: "Matching · LetsHyre Admin" },

@@ -1,6 +1,6 @@
-import { Input } from "~/components/ui/input"
+import { Input } from "@/components/ui/input"
 
-type DateRangeFilterProps = {
+interface DateRangeFilterProps {
   from: string
   to: string
   onChange: (range: { from: string; to: string }) => void
@@ -15,7 +15,9 @@ export function DateRangeFilter({ from, to, onChange }: DateRangeFilterProps) {
         className="w-auto"
         value={from}
         max={to || undefined}
-        onChange={(event) => onChange({ from: event.target.value, to })}
+        onChange={(event) => {
+          onChange({ from: event.target.value, to })
+        }}
       />
       <span className="text-sm text-muted-foreground">to</span>
       <Input
@@ -24,7 +26,9 @@ export function DateRangeFilter({ from, to, onChange }: DateRangeFilterProps) {
         className="w-auto"
         value={to}
         min={from || undefined}
-        onChange={(event) => onChange({ from, to: event.target.value })}
+        onChange={(event) => {
+          onChange({ from, to: event.target.value })
+        }}
       />
     </div>
   )

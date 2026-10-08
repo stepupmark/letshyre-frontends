@@ -1,9 +1,9 @@
 import type { Route } from "./+types/dashboard.employers.$id"
-import { EmployerProfilePage, employersQueries } from "~/features/employers"
-import { queryClient } from "~/lib/query/query-client"
+import { EmployerProfilePage, employersQueries } from "@/features/employers"
+import { prefetch } from "@/lib/query/query-client"
 
 export function clientLoader({ params }: Route.ClientLoaderArgs) {
-  void queryClient.prefetchQuery(employersQueries.detail(params.id))
+  prefetch(employersQueries.detail(params.id))
   return null
 }
 
@@ -16,6 +16,6 @@ export const handle = {
   parent: { label: "Employers", path: "/dashboard/employers" },
 }
 
-export { RouteErrorBoundary as ErrorBoundary } from "~/components/feedback/route-error-boundary"
+export { RouteErrorBoundary as ErrorBoundary } from "@/components/feedback/route-error-boundary"
 
 export default EmployerProfilePage

@@ -1,8 +1,8 @@
 import axios from "axios"
-import { env } from "~/lib/env"
+import { env } from "@/lib/env"
 import { tokenStore } from "./token-store"
 
-type RefreshResponse = {
+interface RefreshResponse {
   access_token?: string
   refresh_token?: string
 }
@@ -10,7 +10,7 @@ type RefreshResponse = {
 let pending: Promise<string | null> | null = null
 
 function withTabLock<T>(fn: () => Promise<T>): Promise<T> {
-  if (typeof navigator !== "undefined" && navigator.locks) {
+  if (typeof navigator !== "undefined" && "locks" in navigator) {
     return navigator.locks.request("letshyre:token-refresh", fn)
   }
   return fn()

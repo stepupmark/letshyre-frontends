@@ -1,15 +1,15 @@
 import { useState } from "react"
 import { useQuery } from "@tanstack/react-query"
-import { ConfirmDialog } from "~/components/feedback/confirm-dialog"
-import { ErrorState } from "~/components/feedback/error-state"
-import { PageHeader } from "~/components/page-header"
+import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
+import { ErrorState } from "@/components/feedback/error-state"
+import { PageHeader } from "@/components/page-header"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card"
+} from "@/components/ui/card"
 import {
   Field,
   FieldContent,
@@ -17,10 +17,10 @@ import {
   FieldGroup,
   FieldLabel,
   FieldSeparator,
-} from "~/components/ui/field"
-import { Skeleton } from "~/components/ui/skeleton"
-import { Switch } from "~/components/ui/switch"
-import { formatDateTime } from "~/lib/format"
+} from "@/components/ui/field"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Switch } from "@/components/ui/switch"
+import { formatDateTime } from "@/lib/format"
 import { useUpdateSystemConfig } from "../mutations/use-update-system-config"
 import { systemConfigQueries } from "../queries/system-config.queries"
 import { LimitsForm } from "./limits-form"
@@ -91,11 +91,10 @@ export function SystemConfigPage() {
                   id="maintenance_mode"
                   checked={settings.maintenance_mode}
                   disabled={update.isPending}
-                  onCheckedChange={(checked) =>
-                    checked
-                      ? setConfirmMaintenance(true)
-                      : update.mutate({ maintenance_mode: false })
-                  }
+                  onCheckedChange={(checked) => {
+                    if (checked) setConfirmMaintenance(true)
+                    else update.mutate({ maintenance_mode: false })
+                  }}
                 />
               </Field>
               <FieldSeparator />
@@ -112,9 +111,9 @@ export function SystemConfigPage() {
                   id="mfa_required_for_admins"
                   checked={settings.mfa_required_for_admins}
                   disabled={update.isPending}
-                  onCheckedChange={(checked) =>
+                  onCheckedChange={(checked) => {
                     update.mutate({ mfa_required_for_admins: checked })
-                  }
+                  }}
                 />
               </Field>
             </FieldGroup>
@@ -126,7 +125,7 @@ export function SystemConfigPage() {
         {settings.celery_task_default_queue && (
           <p className="text-sm text-muted-foreground">
             Background tasks run on the{" "}
-            <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-xs">
+            <code className="rounded-sm bg-muted px-1.5 py-0.5 font-mono text-xs">
               {settings.celery_task_default_queue}
             </code>{" "}
             queue.
@@ -142,12 +141,16 @@ export function SystemConfigPage() {
         confirmLabel="Turn on"
         destructive
         pending={update.isPending}
-        onConfirm={() =>
+        onConfirm={() => {
           update.mutate(
             { maintenance_mode: true },
-            { onSuccess: () => setConfirmMaintenance(false) }
+            {
+              onSuccess: () => {
+                setConfirmMaintenance(false)
+              },
+            }
           )
-        }
+        }}
       />
     </>
   )

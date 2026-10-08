@@ -1,4 +1,4 @@
-import { toDateTimeLocal } from "~/lib/format"
+import { toDateTimeLocal } from "@/lib/format"
 import type {
   Coupon,
   CouponFormValues,

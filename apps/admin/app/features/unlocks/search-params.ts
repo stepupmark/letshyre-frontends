@@ -1,5 +1,5 @@
 import { createLoader } from "nuqs"
-import { compactParams, pageParser, textParser } from "~/lib/search-params"
+import { compactParams, pageParser, textParser } from "@/lib/search-params"
 import type { UnlockedProfilesFilters } from "./schemas/unlocks.schema"
 
 export const unlocksSearchParams = {
