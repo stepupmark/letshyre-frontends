@@ -14,7 +14,12 @@ import {
 
 import { createAuthedClient } from "../src/client.ts"
 import { authRedirect, guestRedirect, safeNext } from "../src/guards.ts"
-import { AccountInactiveError, login, logout } from "../src/service.ts"
+import {
+  AccountInactiveError,
+  login,
+  logout,
+  RoleNotAllowedError,
+} from "../src/service.ts"
 import { readSession, subscribe } from "../src/session.ts"
 
 const BASE = "https://api.test/"
@@ -26,6 +31,7 @@ beforeAll(() => {
 })
 afterEach(() => {
   server.resetHandlers()
+  vi.unstubAllGlobals()
 })
 afterAll(() => {
   server.close()
@@ -99,6 +105,37 @@ describe("token refresh", () => {
     expect(localStorage.getItem("refreshToken")).toBeNull()
   })
 
+  it("reuses a token another tab rotated instead of spending the refresh token", async () => {
+    signIn()
+    let refreshes = 0
+    server.use(
+      http.get(url("jobs/"), ({ request }) =>
+        request.headers.get("authorization") === "Bearer other-tab"
+          ? HttpResponse.json({ ok: true })
+          : HttpResponse.json({}, { status: 401 })
+      ),
+      http.post(url("user/v1/login_refresh/"), () => {
+        refreshes++
+        return HttpResponse.json({}, { status: 401 })
+      })
+    )
+    vi.stubGlobal("navigator", {
+      locks: {
+        request: (_name: string, run: () => Promise<unknown>) => {
+          localStorage.setItem("accessToken", "other-tab")
+          return run()
+        },
+      },
+    })
+    const client = createAuthedClient({
+      baseUrl: BASE,
+      onSessionExpired: vi.fn(),
+    })
+
+    await expect(client.get("/jobs/")).resolves.toEqual({ ok: true })
+    expect(refreshes).toBe(0)
+  })
+
   it("lets a guest's 401 through without refreshing or expiring", async () => {
     server.use(
       http.get(url("public/"), () => HttpResponse.json({}, { status: 401 }))
@@ -149,6 +186,23 @@ describe("login and logout", () => {
       login(client, { email: "a@b.in", password: "x" })
     ).rejects.toBeInstanceOf(AccountInactiveError)
     expect(localStorage.getItem("accessToken")).toBeNull()
+  })
+
+  it("refuses a role the app doesn't serve without storing anything", async () => {
+    server.use(
+      http.post(url("user/v1/login/"), () =>
+        HttpResponse.json({ role: "Admin", access_token: "acc" })
+      )
+    )
+    const credentials = { email: "a@b.in", password: "x" }
+
+    await expect(login(client, credentials)).rejects.toBeInstanceOf(
+      RoleNotAllowedError
+    )
+    expect(localStorage.getItem("accessToken")).toBeNull()
+    await expect(
+      login(client, credentials, { roles: ["Admin"] })
+    ).resolves.toMatchObject({ role: "Admin" })
   })
 
   it("clears the session even when the server can't revoke it", async () => {

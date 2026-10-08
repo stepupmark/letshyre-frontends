@@ -8,7 +8,11 @@ const KEYS = {
 const CHAT_PREFIX = "chat:v1:"
 const PUBLIC_CHAT = `${CHAT_PREFIX}public`
 
-export const ROLES = { employer: "Employer", candidate: "Candidate" } as const
+export const ROLES = {
+  employer: "Employer",
+  candidate: "Candidate",
+  admin: "Admin",
+} as const
 export type Role = (typeof ROLES)[keyof typeof ROLES]
 
 export interface User {
@@ -22,7 +26,7 @@ export type Session =
 
 const GUEST: Session = { status: "guest" }
 const isRole = (value: unknown): value is Role =>
-  value === ROLES.employer || value === ROLES.candidate
+  (Object.values(ROLES) as unknown[]).includes(value)
 
 function store(): Storage | null {
   try {

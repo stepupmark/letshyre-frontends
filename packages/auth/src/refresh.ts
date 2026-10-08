@@ -1,4 +1,9 @@
-import { clearSession, getRefreshToken, saveTokens } from "./session.ts"
+import {
+  clearSession,
+  getAccessToken,
+  getRefreshToken,
+  saveTokens,
+} from "./session.ts"
 
 export interface RefresherOptions {
   baseUrl: string
@@ -6,6 +11,13 @@ export interface RefresherOptions {
   /** Called once when a signed-in session could not be refreshed. */
   onExpired?: () => void
   fetch?: typeof fetch
+}
+
+// the backend rotates refresh tokens and rejects the old one, so tabs take turns
+function withTabLock<T>(run: () => Promise<T>): Promise<T> {
+  return typeof navigator !== "undefined" && "locks" in navigator
+    ? navigator.locks.request("letshyre:token-refresh", run)
+    : run()
 }
 
 /** Concurrent 401s share one refresh call; the rotated refresh token is saved. */
@@ -19,7 +31,10 @@ export function createRefresher({
   const endpoint = new URL("user/v1/login_refresh/", root)
   let inflight: Promise<boolean> | null = null
 
-  async function run() {
+  async function run(failedAccess: string | null) {
+    // another tab refreshed while this one waited for the lock
+    const current = getAccessToken()
+    if (current && current !== failedAccess) return true
     const refresh = getRefreshToken()
     if (!refresh) return false
     try {
@@ -49,7 +64,8 @@ export function createRefresher({
   }
 
   return () => {
-    inflight ??= run().finally(() => {
+    const failedAccess = getAccessToken()
+    inflight ??= withTabLock(() => run(failedAccess)).finally(() => {
       inflight = null
     })
     return inflight

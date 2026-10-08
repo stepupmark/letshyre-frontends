@@ -6,11 +6,18 @@ import {
   readSession,
   saveTokens,
   saveUser,
+  ROLES,
+  type Role,
   type User,
 } from "./session.ts"
 
 export class AccountInactiveError extends Error {
   override name = "AccountInactiveError"
+}
+
+/** A valid account whose role doesn't belong in this app. */
+export class RoleNotAllowedError extends Error {
+  override name = "RoleNotAllowedError"
 }
 
 const record = (value: unknown): Record<string, unknown> =>
@@ -21,7 +28,8 @@ const record = (value: unknown): Record<string, unknown> =>
 /** Signs in and stores the session. The returned role decides where to go. */
 export async function login(
   client: HttpClient,
-  credentials: { email: string; password: string }
+  credentials: { email: string; password: string },
+  { roles = [ROLES.employer, ROLES.candidate] }: { roles?: Role[] } = {}
 ): Promise<User> {
   const json = record(
     await client.post("user/v1/login/", credentials, { auth: false })
@@ -43,6 +51,10 @@ export async function login(
   if (session.status !== "signed-in") {
     clearSession()
     throw new ResponseShapeError("Login returned an unknown role")
+  }
+  if (!roles.includes(session.role)) {
+    clearSession()
+    throw new RoleNotAllowedError(`${session.role} can't sign in here`)
   }
   return session.user
 }
