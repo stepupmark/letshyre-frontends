@@ -2,7 +2,7 @@ import AxeBuilder from "@axe-core/playwright"
 
 import { CREDIT, expect, test, watch } from "./fixtures"
 
-test("the shell renders under the production CSP and stays out of search", async ({
+test("the shell renders under the production CSP, in both themes, and stays out of search", async ({
   page,
   api,
   signIn,
@@ -23,6 +23,10 @@ test("the shell renders under the production CSP and stays out of search", async
   expect(await (await page.request.get("/robots.txt")).text()).toContain(
     "Disallow: /"
   )
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+
+  await page.emulateMedia({ colorScheme: "dark" })
+  await expect(page.locator("html")).toHaveClass(/dark/)
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
   expect(problems).toEqual([])
 })
