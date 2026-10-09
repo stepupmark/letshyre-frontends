@@ -88,5 +88,8 @@
     "title": "Still have questions?",
     "body": "Write to us and our support team will help.",
     "contact": "Contact us"
+  },
+  "theme": {
+    "toggle": "Switch between light and dark theme"
   }
 }

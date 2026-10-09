@@ -88,5 +88,8 @@
     "title": "Ainda tem dúvidas?",
     "body": "Escreva para nós e nossa equipe de suporte vai ajudar.",
     "contact": "Fale conosco"
+  },
+  "theme": {
+    "toggle": "Alternar entre tema claro e escuro"
   }
 }

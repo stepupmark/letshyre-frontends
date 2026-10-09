@@ -88,5 +88,8 @@
     "title": "Hai altre domande?",
     "body": "Scrivici e il nostro team di supporto ti aiuterà.",
     "contact": "Contattaci"
+  },
+  "theme": {
+    "toggle": "Passa dal tema chiaro a quello scuro"
   }
 }

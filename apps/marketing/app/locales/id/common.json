@@ -88,5 +88,8 @@
     "title": "Masih ada pertanyaan?",
     "body": "Tulis kepada kami dan tim dukungan kami akan membantu.",
     "contact": "Hubungi kami"
+  },
+  "theme": {
+    "toggle": "Beralih antara tema terang dan gelap"
   }
 }

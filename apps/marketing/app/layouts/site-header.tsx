@@ -19,6 +19,7 @@ import { APP_LINKS } from "@/lib/app-links"
 import { useCompactNav } from "./site-header-compact"
 import { SiteLanguageSwitcher } from "./site-header-language"
 import { SiteHeaderMenu } from "./site-header-menu"
+import { SiteThemeToggle } from "./site-header-theme"
 import {
   NAV_ITEMS,
   PRODUCT_ITEMS,
@@ -139,9 +140,13 @@ export function SiteHeader() {
               className="hidden sm:inline-flex lg:hidden"
             />
             <SiteLanguageSwitcher className="hidden lg:inline-flex" />
+            <SiteThemeToggle className="cursor-pointer" />
             <a
               href={APP_LINKS.employerRegister}
-              className={buttonVariants({ size: "lg" })}
+              className={buttonVariants({
+                size: "lg",
+                className: "max-sm:hidden",
+              })}
             >
               {t("nav.getStarted")}
             </a>

@@ -40,7 +40,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const lang = toLocale(useParams().lang)
 
   return (
-    <html lang={lang} dir={dirFor(lang)}>
+    <html lang={lang} dir={dirFor(lang)} suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -64,7 +64,7 @@ export default function App() {
   usePageViews()
 
   return (
-    <ThemeProvider>
+    <ThemeProvider switchable>
       <QueryClientProvider client={queryClient}>
         <Outlet />
         <Toaster />

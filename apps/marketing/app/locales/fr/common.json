@@ -88,5 +88,8 @@
     "title": "Vous avez encore des questions ?",
     "body": "Écrivez-nous, notre équipe d’assistance vous aidera.",
     "contact": "Nous contacter"
+  },
+  "theme": {
+    "toggle": "Basculer entre le thème clair et le thème sombre"
   }
 }

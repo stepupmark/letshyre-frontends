@@ -88,5 +88,8 @@
     "title": "Nog vragen?",
     "body": "Schrijf ons en ons supportteam helpt je verder.",
     "contact": "Neem contact op"
+  },
+  "theme": {
+    "toggle": "Wisselen tussen licht en donker thema"
   }
 }
