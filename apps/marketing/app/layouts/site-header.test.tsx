@@ -27,8 +27,12 @@ beforeEach(() => {
       return this.dataset.slot === "navigation-menu-list" ? listWidth : 1200
     }
   )
-  vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockReturnValue(
-    new DOMRect(0, 0, 100, 36)
+  vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockImplementation(
+    function (this: HTMLElement) {
+      const width =
+        this.dataset.slot === "navigation-menu-list" ? listWidth : 100
+      return new DOMRect(0, 0, width, 36)
+    }
   )
 })
 
@@ -55,6 +59,12 @@ describe("SiteHeader", () => {
     await waitFor(() => {
       expect(header()).toHaveAttribute("data-compact")
     })
+  })
+
+  it("ignores sub-pixel overflow from rounding", () => {
+    listWidth = 399.5
+    renderPage(<SiteHeader />)
+    expect(header()).not.toHaveAttribute("data-compact")
   })
 
   it("marks the current page", () => {

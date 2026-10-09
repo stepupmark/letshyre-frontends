@@ -32,8 +32,9 @@ export function useCompactNav(
         (sum, link) => sum + link.getBoundingClientRect().width,
         gap * (links.length - 1)
       )
-      const overflow = content - nav.clientWidth
-      if (overflow > 0) {
+      const overflow = content - nav.getBoundingClientRect().width
+      // the list hugs its links, so sub-pixel differences aren't overflow
+      if (overflow > 1) {
         needed.current = row.clientWidth + Math.ceil(overflow) + 1
         setCompactFor(key)
       }
