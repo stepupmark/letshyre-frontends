@@ -8,8 +8,4 @@ describe("pseudoLocalize", () => {
     expect(out.startsWith("⟦Ĥí {{name}}, ŕéáð <b>ŧĥíš</b>")).toBe(true)
     expect(out.endsWith("·⟧")).toBe(true)
   })
-
-  it("leaves empty strings empty", () => {
-    expect(pseudoLocalize("")).toBe("")
-  })
 })

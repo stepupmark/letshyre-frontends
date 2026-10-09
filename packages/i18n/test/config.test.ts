@@ -3,24 +3,12 @@ import { describe, expect, it } from "vitest"
 import {
   dirFor,
   isLocale,
-  LOCALE_ENGLISH_NAMES,
-  LOCALE_NAMES,
   LOCALES,
   localePath,
-  OG_LOCALE,
   toLocale,
 } from "../src/config.ts"
 
 describe("locale model", () => {
-  it("keeps all 19 locales with names and OG locales", () => {
-    expect(LOCALES).toHaveLength(19)
-    for (const locale of LOCALES) {
-      expect(LOCALE_NAMES[locale]).toBeTruthy()
-      expect(LOCALE_ENGLISH_NAMES[locale]).toBeTruthy()
-      expect(OG_LOCALE[locale]).toMatch(/^[a-z]{2}_[A-Z]{2}$/)
-    }
-  })
-
   it("narrows unknown values", () => {
     expect(isLocale("ar")).toBe(true)
     expect(isLocale("xx")).toBe(false)

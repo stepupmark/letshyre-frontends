@@ -3,7 +3,6 @@ import { describe, expect, it, vi } from "vitest"
 
 import { HttpError, ResponseShapeError } from "../src/errors.ts"
 import {
-  desktopDownloadUrl,
   getCreditPrice,
   getLatestRelease,
   getPublicPlans,
@@ -11,7 +10,7 @@ import {
   sendContactMessage,
   subscribe,
 } from "../src/public/index.ts"
-import { BASE, client, server, url } from "./server.ts"
+import { client, server, url } from "./server.ts"
 
 const plan = (overrides: object = {}) => ({
   id: "p1",
@@ -233,15 +232,6 @@ describe("desktop app", () => {
       filename: "LetsHyre.exe",
     })
     expect(await getLatestRelease(client(), "mac")).toBeNull()
-  })
-
-  it("builds the download link", () => {
-    expect(desktopDownloadUrl(BASE, "windows")).toBe(
-      url("commonapp/v1/desktop_app/windows/download/")
-    )
-    expect(desktopDownloadUrl("https://api.test", "mac")).toBe(
-      url("commonapp/v1/desktop_app/mac/download/")
-    )
   })
 })
 

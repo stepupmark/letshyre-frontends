@@ -5,7 +5,7 @@ import { PAGES } from "@/lib/pages"
 
 import type { PricingPlan } from "./plans"
 
-export const topUpKey = (credits: number) => `${credits}-credits`
+const topUpKey = (credits: number) => `${credits}-credits`
 
 export const salesContactPath = (lang: Locale) =>
   `${localePath(lang, PAGES.contact.path)}?topic=sales`

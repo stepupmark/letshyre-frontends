@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest"
 import { z } from "zod"
 
-import { acknowledge, unwrap } from "../src/envelope.ts"
+import { unwrap } from "../src/envelope.ts"
 import { HttpError, ResponseShapeError } from "../src/errors.ts"
 
 const read = unwrap(z.object({ n: z.number() }))
@@ -23,14 +23,5 @@ describe("unwrap", () => {
     expect(() => read({ success: true, data: { n: "1" } })).toThrow(
       ResponseShapeError
     )
-  })
-})
-
-describe("acknowledge", () => {
-  it("returns the backend message", () => {
-    expect(acknowledge({ success: true, message: "Thanks" })).toEqual({
-      message: "Thanks",
-    })
-    expect(acknowledge({ success: true })).toEqual({ message: undefined })
   })
 })

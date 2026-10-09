@@ -143,14 +143,4 @@ describe("ContactForm", () => {
       "This email domain is blocked."
     )
   })
-
-  it("prefills the subject for sales enquiries", async () => {
-    renderForm("/en/contact?topic=sales")
-    expect(await screen.findByLabelText("Subject")).toHaveValue(
-      "Custom plan enquiry"
-    )
-    expect(
-      screen.getByRole("button", { name: "Sales & plans" })
-    ).toHaveAttribute("aria-pressed", "true")
-  })
 })

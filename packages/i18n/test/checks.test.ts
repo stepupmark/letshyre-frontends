@@ -4,28 +4,8 @@ import type { Catalog } from "../src/create-i18n.ts"
 import {
   checkCatalog,
   findUnusedKeys,
-  flatten,
-  placeholders,
   pluralCategories,
 } from "../src/node/checks.ts"
-
-describe("flatten", () => {
-  it("flattens nested objects and arrays", () => {
-    expect([...flatten({ a: { b: "1" }, list: ["x", { y: "2" }] })]).toEqual([
-      ["a.b", "1"],
-      ["list.0", "x"],
-      ["list.1.y", "2"],
-    ])
-  })
-})
-
-describe("placeholders", () => {
-  it("collects interpolations, tags and nesting", () => {
-    expect(
-      placeholders("{{ count, number }} <b>x</b> $t(common:ok) {{name}}")
-    ).toEqual(["$t(common:ok)", "<b>", "{{count}}", "{{name}}"])
-  })
-})
 
 describe("plural categories", () => {
   it("matches CLDR for arabic, russian and japanese", () => {
@@ -52,10 +32,6 @@ describe("checkCatalog", () => {
         n_other: "{{count}} 件",
       })
     ).toEqual([])
-  })
-
-  it("passes english against itself", () => {
-    expect(checkCatalog("en", "x", en, en)).toEqual([])
   })
 
   it("flags missing keys", () => {

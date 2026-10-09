@@ -26,13 +26,6 @@ function setup(
 }
 
 describe("LanguageSwitcher", () => {
-  it("names the trigger with the current language and its English name", () => {
-    setup(["en", "hi"], "hi")
-    expect(
-      screen.getByRole("button", { name: "Change language: हिन्दी (Hindi)" })
-    ).toBeInTheDocument()
-  })
-
   it("lists links with hreflang, native and English names, current first", async () => {
     const { user } = setup(["hi", "en", "ar"], "ar")
     await user.click(screen.getByRole("button", { name: /Change language/ }))

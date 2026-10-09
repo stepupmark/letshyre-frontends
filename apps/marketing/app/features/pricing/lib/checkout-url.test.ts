@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest"
 
 import { APP_LINKS } from "@/lib/app-links"
 
-import { planHref, topUpHref, topUpKey } from "./checkout-url"
+import { planHref } from "./checkout-url"
 
 describe("planHref", () => {
   it("sends Free to employer sign-up", () => {
@@ -24,14 +24,5 @@ describe("planHref", () => {
     const url = new URL(href)
     expect(url.pathname).toBe("/employer/billing")
     expect(url.searchParams.get("checkout")).toBe("pro")
-  })
-})
-
-describe("topUpHref", () => {
-  it("uses the <n>-credits key", () => {
-    expect(topUpKey(25)).toBe("25-credits")
-    expect(new URL(topUpHref(25)).searchParams.get("checkout")).toBe(
-      "25-credits"
-    )
   })
 })

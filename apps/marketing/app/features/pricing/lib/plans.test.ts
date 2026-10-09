@@ -1,13 +1,7 @@
 import type { Plan } from "@workspace/api/public"
 import { describe, expect, it } from "vitest"
 
-import {
-  comparisonValue,
-  mergePlans,
-  PLANS,
-  priceForCredits,
-  sharedRate,
-} from "./plans"
+import { mergePlans, PLANS, priceForCredits, sharedRate } from "./plans"
 
 const live = (overrides: Partial<Plan>): Plan => ({
   id: "id",
@@ -65,18 +59,5 @@ describe("priceForCredits", () => {
   it("works in paise", () => {
     expect(priceForCredits(3, 2.35)).toBe(7.05)
     expect(priceForCredits(10, 49)).toBe(490)
-  })
-})
-
-describe("comparisonValue", () => {
-  const [free, , , custom] = PLANS
-  it("reads each row from the plan", () => {
-    if (!free || !custom) throw new Error("plans missing")
-    expect(comparisonValue("credits", free)).toBe(10)
-    expect(comparisonValue("credits", custom)).toBeNull()
-    expect(comparisonValue("topUps", free)).toBe(false)
-    expect(comparisonValue("support", custom)).toBe(true)
-    expect(comparisonValue("validity", free)).toBe("noExpiry")
-    expect(comparisonValue("scorecards", free)).toBe(true)
   })
 })

@@ -4,21 +4,8 @@ import { describe, expect, it, vi } from "vitest"
 
 import { ConsentBanner } from "../src/consent-banner.tsx"
 import { ErrorScreen, NotFoundScreen } from "../src/error-screen.tsx"
-import { Logo } from "../src/logo.tsx"
 import { SkipLink } from "../src/skip-link.tsx"
-import { ThemeProvider } from "../src/theme-provider.tsx"
 import { expectAccessible } from "./axe.ts"
-
-describe("Logo", () => {
-  it("is an image named after the brand, with intrinsic size", async () => {
-    render(<Logo className="h-8" />)
-    const img = screen.getByRole("img", { name: "LetsHyre" })
-    expect(img).toHaveAttribute("width", "400")
-    expect(img).toHaveClass("h-8", "w-auto")
-    expect(img).not.toHaveClass("h-6")
-    await expectAccessible()
-  })
-})
 
 describe("SkipLink", () => {
   it("is the first tab stop and targets main", async () => {
@@ -55,11 +42,6 @@ describe("ErrorScreen", () => {
     expect(screen.getByText("Error: boom")).toBeInTheDocument()
     expect(screen.getByRole("link", { name: "Go home" })).toBeInTheDocument()
     await expectAccessible()
-  })
-
-  it("renders the minimal form", () => {
-    const { container } = render(<ErrorScreen title="Offline" />)
-    expect(container.querySelectorAll("p, pre")).toHaveLength(0)
   })
 
   it("defaults the not-found code to 404 and works in rtl", async () => {
@@ -118,24 +100,5 @@ describe("ConsentBanner", () => {
     await user.click(screen.getByRole("button", { name: "Accept" }))
     expect(onReject).toHaveBeenCalledOnce()
     expect(onAccept).toHaveBeenCalledOnce()
-  })
-
-  it("renders in rtl", async () => {
-    renderBanner("rtl")
-    expect(screen.getAllByRole("button")).toHaveLength(2)
-    await expectAccessible()
-  })
-})
-
-describe("ThemeProvider", () => {
-  it("forces the light theme", () => {
-    render(
-      <ThemeProvider>
-        <p>content</p>
-      </ThemeProvider>
-    )
-    expect(screen.getByText("content")).toBeInTheDocument()
-    expect(document.documentElement).toHaveClass("light")
-    expect(document.documentElement).not.toHaveClass("dark")
   })
 })

@@ -3,7 +3,7 @@ import { afterAll, afterEach, beforeAll } from "vitest"
 
 import { createHttpClient, type HttpClientOptions } from "../src/http.ts"
 
-export const BASE = "https://api.test/"
+const BASE = "https://api.test/"
 
 export const server = setupServer()
 

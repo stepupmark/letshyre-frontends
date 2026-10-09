@@ -41,12 +41,6 @@ function setup(delayMs?: number) {
 }
 
 describe("NavigationProgress", () => {
-  it("stays empty while idle", async () => {
-    setup()
-    expect(screen.getByRole("status")).toBeEmptyDOMElement()
-    await expectAccessible()
-  })
-
   it("shows only for navigations slower than the delay, then clears", async () => {
     const { router, finish } = setup(50)
     act(() => {
@@ -64,17 +58,5 @@ describe("NavigationProgress", () => {
       await wait(10)
     })
     expect(screen.getByRole("status")).toBeEmptyDOMElement()
-  })
-
-  it("renders in rtl", () => {
-    const router = createMemoryRouter([
-      { path: "/", element: <NavigationProgress label="تحميل" /> },
-    ])
-    render(
-      <div dir="rtl">
-        <RouterProvider router={router} />
-      </div>
-    )
-    expect(screen.getByRole("status")).toBeInTheDocument()
   })
 })

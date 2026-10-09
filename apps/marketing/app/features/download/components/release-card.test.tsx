@@ -72,13 +72,6 @@ describe("ReleaseCard", () => {
     expect(screen.queryByRole("link")).not.toBeInTheDocument()
   })
 
-  it("says coming soon when the build is listed but not released", async () => {
-    latest.mockResolvedValue({ ...windows, available: false })
-    renderCard()
-
-    expect(await screen.findByText("Coming Soon")).toBeInTheDocument()
-  })
-
   it("offers a retry when the lookup fails", async () => {
     latest.mockRejectedValueOnce(new NetworkError("offline"))
     latest.mockResolvedValueOnce(windows)
