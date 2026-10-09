@@ -5,7 +5,7 @@ import { mockApi } from "./mock-api.ts"
 import { otherEngine, SITEMAP } from "./sitemap.ts"
 
 // Open states are covered next to their feature: mobile menu and newsletter in
-// header.spec, FAQ in home.spec, form errors in contact.spec, chat in assistant.spec.
+// header.spec, form errors in contact.spec, chat in assistant.spec.
 
 const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22a", "wcag22aa"]
 

@@ -1,5 +1,33 @@
 @import "@workspace/ui/globals.css";
+@import "@fontsource/instrument-serif/latin-400.css";
+@import "@fontsource/ms-madi/latin-400.css";
 @source "../../../../packages/blocks/src";
+
+/* keeps the headline from jumping when the serif swaps in */
+@font-face {
+  font-family: "Instrument Serif Fallback";
+  src: local("Times New Roman");
+  size-adjust: 92%;
+}
+
+@theme {
+  --font-display: "Instrument Serif", "Instrument Serif Fallback", serif;
+  --font-script: "Ms Madi", cursive;
+}
+
+@utility ink {
+  stroke-dasharray: 1;
+  @media (prefers-reduced-motion: no-preference) {
+    stroke-dashoffset: 1;
+    animation: ink 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.4s forwards;
+  }
+}
+
+@keyframes ink {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 
 /* legal pages: reading progress, only where scroll timelines exist */
 @utility read-progress {
