@@ -1,11 +1,13 @@
-import { ErrorScreen, NotFoundScreen } from "@workspace/blocks/error-screen"
+import {
+  ErrorScreen,
+  errorDetails,
+  NotFoundScreen,
+} from "@workspace/blocks/error-screen"
 import { LOCALE_NAMES, LOCALES, localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Button, buttonVariants } from "@workspace/ui/components/button"
 import { useId } from "react"
 import { isRouteErrorResponse, Link } from "react-router"
-
-import { errorId } from "./error-id"
 
 function LocaleHomes() {
   const { t } = useTranslation("common")
@@ -55,21 +57,14 @@ export function RouteError({ error }: { error: unknown }) {
     )
   }
 
-  const id = import.meta.env.DEV ? errorId(error) : undefined
-  if (id) console.error(`[error ${id}]`, error)
+  const details = import.meta.env.DEV ? errorDetails(error) : undefined
 
   return (
     <ErrorScreen
       code={isRouteErrorResponse(error) ? error.status : undefined}
       title={t("error.title")}
       description={t("error.body")}
-      details={
-        id
-          ? [id, error instanceof Error ? error.stack : JSON.stringify(error)]
-              .filter(Boolean)
-              .join("\n\n")
-          : undefined
-      }
+      details={details}
     >
       <Button
         size="lg"

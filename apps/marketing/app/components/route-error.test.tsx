@@ -6,7 +6,6 @@ import { describe, expect, it, vi } from "vitest"
 
 import common from "@/locales/en/common.json"
 
-import { errorId } from "./error-id"
 import { RouteError } from "./route-error"
 
 function renderError(error: unknown) {
@@ -45,16 +44,6 @@ describe("RouteError", () => {
 
     expect(screen.getByRole("button", { name: "Try again" })).toBeVisible()
     expect(screen.getByRole("link", { name: "Go Home" })).toBeVisible()
-    expect(
-      screen.getByText(errorId(new Error("boom")), { exact: false })
-    ).toBeInTheDocument()
-  })
-})
-
-describe("errorId", () => {
-  it("is stable for the same error and differs between errors", () => {
-    expect(errorId(new Error("a"))).toBe(errorId(new Error("a")))
-    expect(errorId(new Error("a"))).not.toBe(errorId(new Error("b")))
-    expect(errorId(new Error("a"))).toMatch(/^[0-9a-f]{8}$/)
+    expect(screen.getByText(/Error: boom/)).toBeInTheDocument()
   })
 })

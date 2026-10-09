@@ -50,3 +50,26 @@ export function NotFoundScreen(
 ) {
   return <ErrorScreen code={404} {...props} />
 }
+
+// short stable id so a dev can match the screen to the console
+function errorId(error: unknown) {
+  const text =
+    error instanceof Error
+      ? `${error.name}:${error.message}`
+      : JSON.stringify(error)
+  let hash = 0x811c9dc5
+  for (let i = 0; i < text.length; i++) {
+    hash ^= text.charCodeAt(i)
+    hash = Math.imul(hash, 0x01000193)
+  }
+  return (hash >>> 0).toString(16).padStart(8, "0")
+}
+
+/** Logs the error and returns the text for `details`. Development only. */
+export function errorDetails(error: unknown) {
+  const id = errorId(error)
+  console.error(`[error ${id}]`, error)
+  return [id, error instanceof Error ? error.stack : JSON.stringify(error)]
+    .filter(Boolean)
+    .join("\n\n")
+}

@@ -1,9 +1,11 @@
-import { ErrorScreen, NotFoundScreen } from "@workspace/blocks/error-screen"
+import {
+  ErrorScreen,
+  errorDetails,
+  NotFoundScreen,
+} from "@workspace/blocks/error-screen"
 import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import { href, isRouteErrorResponse, Link, useLocation } from "react-router"
-
-import { errorId } from "./error-id"
 
 import { buttonLink } from "@/lib/button-link"
 
@@ -33,8 +35,7 @@ export function RouteError({ error }: { error: unknown }) {
     )
   }
 
-  const id = import.meta.env.DEV ? errorId(error) : undefined
-  if (id) console.error(`[error ${id}]`, error)
+  const details = import.meta.env.DEV ? errorDetails(error) : undefined
 
   return (
     <>
@@ -43,13 +44,7 @@ export function RouteError({ error }: { error: unknown }) {
         code={isRouteErrorResponse(error) ? error.status : undefined}
         title={t("error.title")}
         description={t("error.body")}
-        details={
-          id
-            ? [id, error instanceof Error ? error.stack : JSON.stringify(error)]
-                .filter(Boolean)
-                .join("\n\n")
-            : undefined
-        }
+        details={details}
       >
         <Button
           size="lg"
