@@ -45,7 +45,7 @@
         "status": "Shortlisted"
       }
     ],
-    "candidate_resume": "https://cdn.letshyre.ai/resumes/31.pdf",
+    "candidate_resume": "https://api.letshyre.ai/resumes/31.pdf",
     "candidate_interview_scores": [
       {
         "role": "Frontend Developer",

@@ -102,6 +102,6 @@
       "https://github.com/example",
       "javascript:alert(1)"
     ],
-    "candidate_resume": "https://cdn.letshyre.ai/resumes/example.pdf"
+    "candidate_resume": "https://api.letshyre.ai/resumes/example.pdf"
   }
 }

@@ -23,8 +23,8 @@ const JS_BUDGET = 175 * 1024
 
 const env = parseEnv(loadEnv("production", ROOT, "VITE_"))
 const api = new URL(env.VITE_API_BASE_URL).origin
-// photos, logos and KYC documents
-const media = [api, "https://cdn.letshyre.ai"]
+// photos, logos and KYC documents are served by the API
+const media = [api]
 
 const kb = (bytes: number) => `${(bytes / 1024).toFixed(1)} kB`
 const problems: string[] = []

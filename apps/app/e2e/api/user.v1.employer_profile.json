@@ -19,7 +19,7 @@
       "pan_number": "ABCDE1234F",
       "kyc_status": "Approved",
       "company_logo": null,
-      "registration_certificate": "https://cdn.letshyre.ai/kyc/reg.pdf",
+      "registration_certificate": "https://api.letshyre.ai/kyc/reg.pdf",
       "gst_certificate": null,
       "address_proof": null,
       "bank_proof": null
