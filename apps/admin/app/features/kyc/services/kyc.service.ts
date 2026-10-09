@@ -27,7 +27,7 @@ export const kycService = {
     status: Exclude<KycStatus, "Pending">,
     remarks = ""
   ) {
-    // the old client always sent a space when there were no remarks, keep that
+    // empty remarks go as a space, which the API has always been sent
     await api.patch(detailUrl(id), {
       kyc_status: status,
       verification_remarks: remarks || " ",

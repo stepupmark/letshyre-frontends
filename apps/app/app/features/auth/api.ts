@@ -63,7 +63,7 @@ export const verifyMobileCode = (input: {
     otp: input.code,
   })
 
-// field names as the legacy app sent them, camelCase keys included
+// field names the API expects, camelCase keys included
 export const register = (input: {
   role: Role
   name: string

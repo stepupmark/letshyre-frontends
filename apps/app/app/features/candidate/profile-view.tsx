@@ -35,7 +35,7 @@ const titleOf = (
     ? { title: item, issuer: null }
     : { title: item.name ?? item.title ?? "", issuer: item.issuer ?? null }
 
-// numbers without a country code are Indian, as legacy assumed
+// numbers without a country code are Indian
 const phoneOf = (raw: string | number | null | undefined) => {
   const digits = String(raw ?? "").trim()
   if (!digits) return null

@@ -4,7 +4,7 @@ import { api } from "@/lib/api"
 
 import type { Values } from "./schema"
 
-/** Everything in one multipart PATCH, as the legacy form sent it. */
+/** Everything in one multipart PATCH. */
 export function submitKyc(
   values: Values,
   onProgress: (fraction: number) => void

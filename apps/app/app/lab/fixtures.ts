@@ -1,4 +1,4 @@
-// Shapes follow the legacy API responses; names and numbers are made up.
+// Shapes follow the API responses; names and numbers are made up.
 
 export const dashboard = {
   active_jobs: 4,

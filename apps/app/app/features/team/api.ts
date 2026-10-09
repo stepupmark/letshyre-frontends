@@ -40,7 +40,7 @@ export interface NewMember {
   password: string
 }
 
-// everyone added here joins as a recruiter, as in legacy
+// everyone added here joins as a recruiter
 export const addMember = (values: NewMember) =>
   api.post("user/v1/employer_team_members/", { ...values, title: "Recruiter" })
 

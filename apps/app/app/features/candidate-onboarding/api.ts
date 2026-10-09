@@ -142,7 +142,7 @@ export interface Resume {
   review: Review
 }
 
-/** "2 years 6 months" → 2.5; legacy summed every job this way. */
+/** "2 years 6 months" → 2.5, summed across every job. */
 const yearsOf = (experience: Review["experience"]) =>
   experience.reduce((sum, job) => {
     const years = /(\d+)\s*year/i.exec(job.duration)?.[1]
@@ -150,7 +150,7 @@ const yearsOf = (experience: Review["experience"]) =>
     return sum + Number(years ?? 0) + Number(months ?? 0) / 12
   }, 0)
 
-/** The multipart body legacy sent, field for field (the API spells "prof" its own way). */
+/** The multipart body the API expects; it spells "prof" its own way. */
 export function profileForm(values: Values, files: Documents, resume: Resume) {
   const form = new FormData()
   const put = (key: string, value: string | Blob | null) => {

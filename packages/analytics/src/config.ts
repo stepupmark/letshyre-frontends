@@ -1,7 +1,7 @@
 export interface AnalyticsConfig {
   /** Only production should send anything. */
   enabled: boolean
-  /** Turn off only if the consent decision (O2) says no banner is needed. */
+  /** Turn off only if no consent banner is needed. */
   requireConsent: boolean
   metaPixelId?: string
   /** Shared by both apps, e.g. `.letshyre.ai`. Omit on localhost. */

@@ -18,7 +18,6 @@ import { parseEnv } from "../app/lib/env.schema.ts"
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)))
 const CLIENT = join(ROOT, "build/client")
 const INDEX = join(CLIENT, "index.html")
-// 161 kB at 5.1, 195 kB at 5.5, 171 kB at 6.2 once tooltips moved into the shell;
 // a ratchet, raise it only on purpose
 const JS_BUDGET = 180 * 1024
 
