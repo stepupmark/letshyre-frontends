@@ -10,7 +10,7 @@ export function Hero() {
 
   return (
     <section aria-labelledby="hero-title" className="overflow-x-clip">
-      <Container className="grid items-center gap-16 pt-6 pb-14 sm:pt-8 lg:grid-cols-[1.15fr_1fr] lg:gap-12 lg:pt-16 lg:pb-20">
+      <Container className="grid grid-cols-1 items-center gap-6 pt-6 pb-12 sm:gap-10 sm:pt-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-12 lg:pt-16 lg:pb-20">
         <div className="flex flex-col items-start">
           <h1 id="hero-title" className="flex flex-col">
             <span className="mb-6 text-sm font-medium tracking-wide text-brand-text">

@@ -12,13 +12,13 @@ export function CandidateFile() {
   const { t } = useTranslation("home")
 
   return (
-    <figure className="relative mx-auto w-full max-w-md px-6 pt-10 pb-4 sm:px-10 lg:me-0">
+    <figure className="relative mx-auto w-full max-w-md px-2 pt-10 pb-4 sm:px-10 lg:me-0">
       <div
         aria-hidden
         className="absolute inset-x-10 top-12 bottom-10 rotate-3 rounded-2xl border bg-muted/60 sm:inset-x-14"
       />
 
-      <div className="relative -rotate-1 rounded-2xl border bg-card p-6 shadow-[0_1px_2px_rgb(0_0_0/0.04),0_24px_48px_-24px_rgb(0_0_0/0.18)] sm:p-7 dark:shadow-[0_24px_48px_-20px_rgb(0_0_0/0.6)]">
+      <div className="relative -rotate-1 rounded-2xl border bg-card p-5 shadow-[0_1px_2px_rgb(0_0_0/0.04),0_24px_48px_-24px_rgb(0_0_0/0.18)] sm:p-7 dark:shadow-[0_24px_48px_-20px_rgb(0_0_0/0.6)]">
         <div className="flex items-center gap-3">
           <span
             aria-hidden
@@ -91,10 +91,10 @@ export function CandidateFile() {
         </p>
       </div>
 
-      <p className="font-script absolute inset-s-0 top-0 -rotate-6 text-3xl text-brand-text sm:-inset-s-2">
+      <p className="font-script absolute inset-s-1 top-0 -rotate-6 text-3xl text-brand-text sm:-inset-s-2">
         {t("hero.file.notes.interviews")}
       </p>
-      <p className="font-script absolute -inset-e-2 top-[61%] rotate-6 text-3xl text-brand-text max-sm:hidden lg:-inset-e-16">
+      <p className="font-script absolute inset-e-2 top-0 rotate-3 text-3xl text-brand-text max-sm:hidden">
         {t("hero.file.notes.skills")}
       </p>
       <p className="font-script absolute inset-e-6 bottom-12 -rotate-3 text-4xl text-brand-text sm:inset-e-2">

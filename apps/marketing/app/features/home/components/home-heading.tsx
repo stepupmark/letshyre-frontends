@@ -7,6 +7,7 @@ export function HomeHeading({
   title,
   accent,
   description,
+  center,
   className,
 }: {
   id: string
@@ -14,10 +15,17 @@ export function HomeHeading({
   title: ReactNode
   accent: ReactNode
   description?: ReactNode
+  center?: boolean
   className?: string
 }) {
   return (
-    <div className={cn("flex max-w-2xl flex-col", className)}>
+    <div
+      className={cn(
+        "flex max-w-2xl flex-col",
+        center && "mx-auto items-center text-center",
+        className
+      )}
+    >
       {eyebrow && (
         <p className="mb-4 text-sm font-medium tracking-wide text-brand-text">
           {eyebrow}
@@ -32,7 +40,12 @@ export function HomeHeading({
         </span>
       </h2>
       {description && (
-        <p className="mt-4 text-lg text-pretty text-muted-foreground">
+        <p
+          className={cn(
+            "mt-4 text-lg text-pretty text-muted-foreground",
+            center && "max-w-md"
+          )}
+        >
           {description}
         </p>
       )}

@@ -20,9 +20,9 @@ import {
   VideoIcon,
 } from "lucide-react"
 
-import { Container } from "@/components/section"
-
+import { twoDigit } from "../lib/format"
 import { HomeHeading } from "./home-heading"
+import { HomeSection } from "./home-section"
 
 interface Step {
   title: string
@@ -61,58 +61,50 @@ export function HowItWorks() {
   ]
 
   return (
-    <section
-      id="how-it-works"
-      aria-labelledby="how-title"
-      className="scroll-mt-20 bg-muted/40 py-14 sm:py-20"
-    >
-      <Container>
-        <Tabs defaultValue={tracks[0]?.value} className="gap-12">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <HomeHeading
-              id="how-title"
-              eyebrow={t("how.eyebrow")}
-              title={t("how.title")}
-              accent={t("how.accent")}
-              className="reveal"
-            />
-            <TabsList
-              aria-label={t("how.tabsLabel")}
-              className="h-12! shrink-0 rounded-full border bg-background p-1"
-            >
-              {tracks.map((track) => (
-                <TabsTrigger
-                  key={track.value}
-                  value={track.value}
-                  className="rounded-full px-5 data-active:bg-primary data-active:text-primary-foreground data-active:shadow-none"
-                >
-                  {track.label}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-          </div>
+    <HomeSection id="how-it-works" muted>
+      <Tabs defaultValue={tracks[0]?.value} className="gap-8">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <HomeHeading
+            id="how-it-works-title"
+            eyebrow={t("how.eyebrow")}
+            title={t("how.title")}
+            accent={t("how.accent")}
+            className="reveal"
+          />
+          <TabsList
+            aria-label={t("how.tabsLabel")}
+            className="h-12! shrink-0 rounded-full border bg-background p-1"
+          >
+            {tracks.map((track) => (
+              <TabsTrigger
+                key={track.value}
+                value={track.value}
+                className="rounded-full px-5 data-active:bg-primary data-active:text-primary-foreground data-active:shadow-none"
+              >
+                {track.label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </div>
 
-          {tracks.map((track) => (
-            <TabsContent key={track.value} value={track.value} keepMounted>
-              <ol className="grid gap-4 pt-6 sm:grid-cols-2 lg:grid-cols-5">
-                {track.steps.map((step, index) => (
-                  <StepCard
-                    key={step.title}
-                    step={step}
-                    index={index}
-                    icon={track.icons[index] ?? FileTextIcon}
-                    last={index === track.steps.length - 1}
-                    note={
-                      index === track.note.step ? track.note.text : undefined
-                    }
-                  />
-                ))}
-              </ol>
-            </TabsContent>
-          ))}
-        </Tabs>
-      </Container>
-    </section>
+        {tracks.map((track) => (
+          <TabsContent key={track.value} value={track.value} keepMounted>
+            <ol className="grid gap-4 md:grid-cols-6 xl:grid-cols-5 xl:pt-6">
+              {track.steps.map((step, index) => (
+                <StepCard
+                  key={step.title}
+                  step={step}
+                  index={index}
+                  icon={track.icons[index] ?? FileTextIcon}
+                  last={index === track.steps.length - 1}
+                  note={index === track.note.step ? track.note.text : undefined}
+                />
+              ))}
+            </ol>
+          </TabsContent>
+        ))}
+      </Tabs>
+    </HomeSection>
   )
 }
 
@@ -132,15 +124,15 @@ function StepCard({
   return (
     <li
       className={cn(
-        "reveal relative flex flex-col rounded-2xl border p-6",
-        last ? "border-primary bg-primary text-primary-foreground" : "bg-card",
-        note && "max-lg:mt-8"
+        "reveal relative flex flex-col rounded-2xl border p-5 sm:p-6 xl:col-span-1",
+        index < 3 ? "md:col-span-2" : "md:col-span-3",
+        last ? "border-primary bg-primary text-primary-foreground" : "bg-card"
       )}
     >
       {note && (
         <p
           aria-hidden
-          className="font-script absolute inset-s-4 -top-9 -rotate-3 text-3xl whitespace-nowrap text-brand-text"
+          className="font-script mb-3 -rotate-2 text-3xl text-brand-text xl:absolute xl:inset-s-4 xl:-top-9 xl:mb-0 xl:-rotate-3 xl:whitespace-nowrap"
         >
           {note}
         </p>
@@ -161,10 +153,10 @@ function StepCard({
             last ? "text-primary-foreground" : "text-muted-foreground"
           )}
         >
-          {String(index + 1).padStart(2, "0")}
+          {twoDigit(index + 1)}
         </span>
       </div>
-      <h3 className="mt-8 text-base font-semibold">{step.title}</h3>
+      <h3 className="mt-5 text-base font-semibold xl:mt-8">{step.title}</h3>
       <p
         className={cn(
           "mt-2 text-sm text-pretty",

@@ -5,18 +5,17 @@ import { ArrowRightIcon } from "lucide-react"
 
 import { APP_LINKS } from "@/lib/app-links"
 
+import { CtaLink } from "./home-links"
+
 export function AudienceCtas({ className }: { className?: string }) {
   const { t } = useTranslation("home")
 
   return (
     <div className={cn("flex flex-wrap items-center gap-3", className)}>
-      <a
-        href={APP_LINKS.employerRegister}
-        className={cn(buttonVariants({ size: "lg" }), "h-12 px-6")}
-      >
+      <CtaLink href={APP_LINKS.employerRegister}>
         {t("hero.ctaHiring")}
         <ArrowRightIcon aria-hidden />
-      </a>
+      </CtaLink>
       <a
         href={APP_LINKS.candidateRegister}
         className={cn(
