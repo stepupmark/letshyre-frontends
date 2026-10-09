@@ -31,6 +31,235 @@
       }
     }
   },
+  "tension": {
+    "eyebrow": "The problem with resumes",
+    "title": "A resume tells you what someone claims.",
+    "accent": "An interview shows you.",
+    "employer": {
+      "label": "If you hire",
+      "body": "You read hundreds of resumes that look alike, then spend weeks on calls to find the few who can do the job."
+    },
+    "candidate": {
+      "label": "If you're being hired",
+      "body": "Your experience gets flattened into keywords, and you repeat the same screening call for every company."
+    },
+    "claim": "5 years of React, strong problem solver",
+    "correction": "84/100 in a React interview"
+  },
+  "how": {
+    "eyebrow": "Two sides, one process",
+    "title": "How LetsHyre works,",
+    "accent": "for both sides.",
+    "tabsLabel": "Choose your side",
+    "employers": "For employers",
+    "professionals": "For professionals",
+    "employerSteps": [
+      {
+        "title": "Post your job description",
+        "body": "Add the role, skills and experience you need. LetsHyre reads the requirements."
+      },
+      {
+        "title": "Get ranked candidates",
+        "body": "AI ranks the people who applied and recommends matching profiles from the talent pool."
+      },
+      {
+        "title": "Review the evidence",
+        "body": "Compare LetsHyre score, job match, skill match, interview score, experience and notice period."
+      },
+      {
+        "title": "Unlock who's worth it",
+        "body": "See the resume, contact details, documents, scorecard and full interview recording."
+      },
+      {
+        "title": "Hire your way",
+        "body": "Contact the candidate and continue the hiring process outside LetsHyre."
+      }
+    ],
+    "professionalSteps": [
+      {
+        "title": "Create your profile",
+        "body": "Add your experience, current and expected CTC, and notice period."
+      },
+      {
+        "title": "Upload your resume",
+        "body": "AI analyses it and suggests roles that fit, or you add your own."
+      },
+      {
+        "title": "Take up to 3 AI interviews",
+        "body": "Role-based interviews in the LetsHyre desktop app, whenever it suits you."
+      },
+      {
+        "title": "Get your scorecards",
+        "body": "Each interview produces a skill scorecard that builds your verified profile."
+      },
+      {
+        "title": "Get matched and apply",
+        "body": "Employers hiring for your roles find you, and you can apply to their jobs."
+      }
+    ],
+    "employerNote": "you only pay here",
+    "professionalNote": "free, start to finish"
+  },
+  "evidence": {
+    "eyebrow": "Inside a candidate file",
+    "title": "What you see",
+    "accent": "before you call.",
+    "description": "Every profile carries the same layers of evidence, so you compare candidates like for like and only unlock the ones worth meeting.",
+    "open": {
+      "title": "Visible before you unlock",
+      "items": [
+        "LetsHyre score",
+        "Job match %",
+        "Skill match %",
+        "AI interview score",
+        "Experience",
+        "Notice period"
+      ]
+    },
+    "locked": {
+      "title": "Included when you unlock",
+      "items": [
+        "Resume",
+        "Contact details",
+        "Documents",
+        "AI skill scorecard",
+        "Full interview recording"
+      ]
+    },
+    "notes": {
+      "compare": "compare like for like",
+      "full": "the full picture"
+    }
+  },
+  "professionals": {
+    "eyebrow": "For experienced professionals",
+    "title": "Go beyond",
+    "accent": "your resume.",
+    "description": "Show what you can do, not only what you've written. LetsHyre is free for professionals.",
+    "interviews": [
+      {
+        "label": "Interview 1",
+        "role": "Your main role"
+      },
+      {
+        "label": "Interview 2",
+        "role": "Another role, or a retake"
+      },
+      {
+        "label": "Interview 3",
+        "role": "More evidence for your profile"
+      }
+    ],
+    "scorecard": "Scorecard",
+    "points": [
+      "Interview from the desktop app, at a time that suits you",
+      "Every interview produces a skill scorecard",
+      "Your verified profile is matched to relevant jobs",
+      "Apply to jobs from employers hiring now"
+    ],
+    "cta": "Create your profile",
+    "guide": "Read the interview guide",
+    "download": "Download the app"
+  },
+  "fresh": {
+    "eyebrow": "Fresh by design",
+    "days": "days",
+    "title": "A talent pool that's",
+    "accent": "always current.",
+    "employer": {
+      "label": "For employers",
+      "body": "You see people who are looking now, not a database of profiles from years ago."
+    },
+    "candidate": {
+      "label": "For professionals",
+      "body": "Your profile stays in front of employers for 90 days after your interview."
+    },
+    "start": "Day 0",
+    "end": "Day 90"
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "title": "Pay only for the people",
+    "accent": "you want to meet.",
+    "description": "Start free. When a candidate looks right, unlock their full file. That's the only thing you pay for.",
+    "ctaStart": "Start with 10 free credits",
+    "cta": "See pricing",
+    "receipt": "Receipt",
+    "rows": [
+      {
+        "label": "On sign-up",
+        "value": "10 free credits"
+      },
+      {
+        "label": "Subscription",
+        "value": "None"
+      },
+      {
+        "label": "Credits",
+        "value": "Never expire"
+      },
+      {
+        "label": "Professionals",
+        "value": "Always free"
+      }
+    ],
+    "total": {
+      "label": "You pay for",
+      "value": "Unlocks only"
+    },
+    "stamp": "free to start",
+    "note": "start here"
+  },
+  "faq": {
+    "title": "Questions,",
+    "accent": "answered.",
+    "description": "Straight answers about how LetsHyre works for employers and professionals.",
+    "contact": {
+      "title": "Still have a question?",
+      "body": "Send it to us and the team will get back to you.",
+      "cta": "Contact us",
+      "note": "we read every one"
+    },
+    "items": [
+      {
+        "q": "What is LetsHyre?",
+        "a": "LetsHyre is an AI hiring platform for experienced professionals. Candidates are verified through AI resume analysis, role-based AI interviews and skill scorecards, and employers find them through AI matching."
+      },
+      {
+        "q": "Who is LetsHyre for?",
+        "a": "Employers and HR teams hiring experienced people, and experienced professionals, including those serving a notice period, who want more than a resume to speak for them."
+      },
+      {
+        "q": "What does an employer get when they unlock a candidate?",
+        "a": "The resume, contact details, documents, the AI skill scorecard and the full AI interview recording. You then contact the candidate and continue hiring outside LetsHyre."
+      },
+      {
+        "q": "How are candidates scored?",
+        "a": "Each candidate takes role-based AI interviews, and every interview produces a skill scorecard. LetsHyre combines it with the resume analysis to show a LetsHyre score, job match and skill match for each role."
+      },
+      {
+        "q": "How many interviews can a candidate take?",
+        "a": "Up to three, for three different roles or more than one attempt at the same role."
+      },
+      {
+        "q": "Why do profiles last 90 days?",
+        "a": "So employers see people who are actively looking. A profile stays in the talent pool for 90 days after the interview."
+      },
+      {
+        "q": "Does LetsHyre cost anything for professionals?",
+        "a": "No. LetsHyre is free for professionals. Employers pay with credits only when they unlock a candidate."
+      },
+      {
+        "q": "Is every feature live?",
+        "a": "LetsHyre is in early access and new features are being added. If something you need isn't there yet, contact us and tell us what you need."
+      }
+    ]
+  },
+  "final": {
+    "title": "Start with relevant candidates,",
+    "accent": "not a pile of resumes.",
+    "description": "And if you're the one being hired, go beyond your resume."
+  },
   "chatbot": {
     "title": "LetsHyre Assistant",
     "launcherAria": "Open chat assistant"

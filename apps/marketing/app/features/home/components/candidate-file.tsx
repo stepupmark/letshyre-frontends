@@ -18,7 +18,7 @@ export function CandidateFile() {
         className="absolute inset-x-10 top-12 bottom-10 rotate-3 rounded-2xl border bg-muted/60 sm:inset-x-14"
       />
 
-      <div className="relative -rotate-1 rounded-2xl border bg-card p-6 shadow-[0_1px_2px_rgb(0_0_0/0.04),0_24px_48px_-24px_rgb(0_0_0/0.18)] sm:p-7">
+      <div className="relative -rotate-1 rounded-2xl border bg-card p-6 shadow-[0_1px_2px_rgb(0_0_0/0.04),0_24px_48px_-24px_rgb(0_0_0/0.18)] sm:p-7 dark:shadow-[0_24px_48px_-20px_rgb(0_0_0/0.6)]">
         <div className="flex items-center gap-3">
           <span
             aria-hidden
