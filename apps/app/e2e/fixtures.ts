@@ -82,7 +82,12 @@ export const test = base.extend<{
   ) => Promise<void>
 }>({
   api: [
-    async ({ page }, use) => {
+    async ({ page, browserName }, use) => {
+      // Playwright's WebKit build crashes on the list-to-detail view transition
+      if (browserName === "webkit")
+        await page.addInitScript(() => {
+          Reflect.deleteProperty(Document.prototype, "startViewTransition")
+        })
       const unhandled: string[] = []
       await mockApi(page, {}, unhandled)
       await use((overrides) => mockApi(page, overrides, unhandled))

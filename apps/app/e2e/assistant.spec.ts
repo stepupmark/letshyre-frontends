@@ -43,6 +43,7 @@ test("a candidate asks the assistant from a page and follows its link into the a
 
   await sheet.getByRole("link", { name: "Open as a full page" }).click()
   await expect(page).toHaveURL("/employee/assistant")
+  await expect(sheet).toBeHidden()
   await expect(
     page.getByRole("button", { name: "Ask the assistant" })
   ).toHaveCount(0)
