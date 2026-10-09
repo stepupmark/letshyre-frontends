@@ -1,4 +1,4 @@
-// Enough copy to check German length and Arabic RTL; real catalogs come in 5.4.
+// Enough copy to check German length and Arabic RTL.
 
 const en = {
   "nav.hiring": "Hiring",

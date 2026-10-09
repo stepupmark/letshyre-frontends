@@ -21,7 +21,7 @@ const at = (choices: Choice[], i: number) => {
   return choice
 }
 
-// ported from the legacy UnlockProfileModal tests: unlock spends credits
+// unlock spends credits, so the choices must never charge twice
 describe("unlock choices", () => {
   it("puts the matched role's interview first, once", () => {
     const choices = unlockChoices([extra, primary, primary], "backend engineer")

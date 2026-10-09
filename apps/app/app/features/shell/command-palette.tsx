@@ -14,7 +14,7 @@ import { isAppPath } from "@/lib/app-paths"
 
 import { NAV, type Area } from "./nav"
 
-/** Ctrl K / ⌘K. Pages for now; each feature adds its own results as it ships. */
+/** Ctrl K / ⌘K: jumps to any page in the current area. */
 export function CommandPalette({
   area,
   open,
