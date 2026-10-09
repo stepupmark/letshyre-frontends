@@ -40,8 +40,14 @@ test("holds the layout with skeletons while prices load", async ({ page }) => {
   await expect(
     page.getByRole("status").filter({ hasText: "Loading current prices" })
   ).toHaveCount(1)
-  // four plans and four top-up packs, already laid out
-  await expect(page.locator("[data-slot=card]")).toHaveCount(8)
+  // every plan and top-up pack is already laid out
+  for (const name of ["Free", "Pro", "Business", "Custom"])
+    await expect(card(page, name)).toBeVisible()
+  await expect(
+    page
+      .getByRole("region", { name: "Need more credits?" })
+      .locator("[data-slot=card]")
+  ).toHaveCount(4)
 
   const { violations } = await new AxeBuilder({ page }).withTags(WCAG).analyze()
   expect(violations).toEqual([])
