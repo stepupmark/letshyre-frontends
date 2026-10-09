@@ -12,10 +12,9 @@ pnpm preview        # serves the build with its CSP as a header
 pnpm test:e2e       # playwright + axe against the build
 ```
 
-| Variable             | Notes                                                                        |
-| -------------------- | ---------------------------------------------------------------------------- |
-| `VITE_API_BASE_URL`  | API root, `https://api.letshyre.ai/`. Must be https in production builds.    |
-| `VITE_MEDIA_ORIGINS` | Space-separated hosts for photos, logos and KYC documents; added to the CSP. |
+| Variable            | Notes                                                                     |
+| ------------------- | ------------------------------------------------------------------------- |
+| `VITE_API_BASE_URL` | API root, `https://api.letshyre.ai/`. Must be https in production builds. |
 
 ## How a page works
 

@@ -23,7 +23,8 @@ const JS_BUDGET = 180 * 1024
 
 const env = parseEnv(loadEnv("production", ROOT, "VITE_"))
 const api = new URL(env.VITE_API_BASE_URL).origin
-const media = env.VITE_MEDIA_ORIGINS.map((url) => new URL(url).origin)
+// uploaded photos, resumes and recordings
+const media = [api, "https://cdn.letshyre.ai"]
 
 const kb = (bytes: number) => `${(bytes / 1024).toFixed(1)} kB`
 const problems: string[] = []

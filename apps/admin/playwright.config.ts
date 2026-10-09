@@ -5,6 +5,8 @@ const PORT = Number(process.env.E2E_PORT ?? 4181)
 export default defineConfig({
   testDir: "e2e",
   fullyParallel: true,
+  // more than two starve the preview server on slower machines and redirects time out
+  workers: 2,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 2 : 0,
   reporter: process.env.CI ? [["html", { open: "never" }], ["list"]] : "list",

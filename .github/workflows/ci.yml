@@ -12,7 +12,7 @@ concurrency:
 env:
   VITE_ENV: development
   VITE_SITE_URL: http://localhost:4173
-  VITE_APP_URL: http://localhost:5180
+  VITE_APP_URL: http://localhost:5175
   VITE_API_BASE_URL: https://api.letshyre.ai
 
 jobs:
@@ -39,9 +39,10 @@ jobs:
           key: turbo-${{ runner.os }}-${{ github.sha }}
           restore-keys: turbo-${{ runner.os }}-
 
-      - run: pnpm turbo run lint typecheck build --cache-dir=.turbo/cache
+      - run: pnpm turbo run lint typecheck --cache-dir=.turbo/cache
 
-      - run: pnpm turbo run test --concurrency=1 --cache-dir=.turbo/cache
+      # one at a time: parallel prerenders hit React Router's fixed 10 s timeout
+      - run: pnpm turbo run build test --concurrency=1 --cache-dir=.turbo/cache
 
       - run: pnpm ui:drift
 
@@ -50,7 +51,7 @@ jobs:
       - name: Playwright browsers
         run: pnpm --filter marketing exec playwright install --with-deps chromium webkit
 
-      - run: pnpm turbo run test:e2e --cache-dir=.turbo/cache
+      - run: pnpm turbo run test:e2e --concurrency=1 --cache-dir=.turbo/cache
 
       - name: Lighthouse
         run: pnpm --filter marketing lighthouse
