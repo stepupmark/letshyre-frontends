@@ -12,7 +12,7 @@ const enterCode = async (page: Page) => {
   await page.getByLabel("6-digit code").fill("123456")
 }
 
-test("one sign-in page for both roles that returns to the page asked for", async ({
+test("an employer page asks employers to sign in and returns to it", async ({
   page,
   api,
 }) => {
@@ -27,15 +27,16 @@ test("one sign-in page for both roles that returns to the page asked for", async
     },
   })
 
-  // the old per-role page forwards, keeping the return path
-  await page.goto(
+  await page.goto("/employer/dashboard")
+  await expect(page).toHaveURL(
     `/employer/sign-in?next=${encodeURIComponent("/employer/dashboard")}`
   )
-  await expect(page).toHaveURL(/\/sign-in\?next=/)
-  await expect(page.getByRole("heading", { name: "Sign in" })).toBeVisible()
+  await expect(
+    page.getByRole("heading", { name: "Welcome back, hiring team" })
+  ).toBeVisible()
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
 
-  await page.getByLabel("Email").fill("employer@test.in")
+  await page.getByLabel("Work email").fill("employer@test.in")
   await page.getByLabel("Password", { exact: true }).fill("wrong")
   await page.getByRole("button", { name: "Sign in" }).click()
   await expect(page.getByRole("alert")).toContainText(
@@ -46,6 +47,31 @@ test("one sign-in page for both roles that returns to the page asked for", async
   await page.getByLabel("Password", { exact: true }).fill("right-password")
   await page.getByRole("button", { name: "Sign in" }).click()
   await expect(page).toHaveURL("/employer/dashboard")
+})
+
+test("a job seeker on the employer page is turned away and sent to their own", async ({
+  page,
+  api,
+}) => {
+  await api({
+    "POST /user/v1/login/": (route) => reply(route, signedIn(USERS.candidate)),
+  })
+
+  await page.goto("/employer/sign-in")
+  await page.getByLabel("Work email").fill("candidate@test.in")
+  await page.getByLabel("Password", { exact: true }).fill("password")
+  await page.getByRole("button", { name: "Sign in" }).click()
+
+  await expect(page.getByRole("alert")).toContainText(
+    "This is a job seeker account"
+  )
+  expect(
+    await page.evaluate(() => localStorage.getItem("accessToken"))
+  ).toBeNull()
+
+  await page.getByRole("link", { name: "Go to job seeker sign in" }).click()
+  await expect(page).toHaveURL("/employee/sign-in")
+  await expect(page.getByLabel("Email")).toHaveValue("candidate@test.in")
 })
 
 test("an employer registers, verifies email and mobile, and lands on onboarding", async ({
@@ -132,7 +158,7 @@ test("a forgotten password is reset with an email code", async ({
     },
   })
 
-  await page.goto("/sign-in")
+  await page.goto("/employee/sign-in")
   await page.getByRole("link", { name: "Forgot password?" }).click()
   await page.getByLabel("Email").fill("asha@test.in")
   await page.getByRole("button", { name: "Send code" }).click()
@@ -141,7 +167,7 @@ test("a forgotten password is reset with an email code", async ({
   await page.getByLabel("Confirm password").fill("new-password-1")
   await page.getByRole("button", { name: "Save password" }).click()
 
-  await expect(page).toHaveURL("/sign-in")
+  await expect(page).toHaveURL("/employee/sign-in")
   await expect(page.getByText("Your password is changed.")).toBeVisible()
   await expect(page.getByLabel("Email")).toHaveValue("asha@test.in")
   expect(reset).toMatchObject({

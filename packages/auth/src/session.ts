@@ -25,7 +25,7 @@ export type Session =
   { status: "guest" } | { status: "signed-in"; role: Role; user: User }
 
 const GUEST: Session = { status: "guest" }
-const isRole = (value: unknown): value is Role =>
+export const isRole = (value: unknown): value is Role =>
   (Object.values(ROLES) as unknown[]).includes(value)
 
 function store(): Storage | null {

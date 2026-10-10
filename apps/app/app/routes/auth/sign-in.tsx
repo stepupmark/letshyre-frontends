@@ -1,47 +1,29 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { Alert, AlertDescription } from "@workspace/ui/components/alert"
-import { CircleCheck } from "lucide-react"
-import { href, Link, useLocation, useSearchParams } from "react-router"
+import { useState } from "react"
+import { href, Link, useLocation } from "react-router"
 
-import { SignInForm } from "@/features/auth"
-import { useGo } from "@/lib/navigation"
-
-interface Arrival {
-  email?: string
-  notice?: "passwordChanged" | "accountCreated"
-}
+import {
+  ArrivalNotice,
+  AuthHeading,
+  lastAudience,
+  RoleChoice,
+} from "@/features/auth"
 
 export default function SignIn() {
   const { t } = useTranslation(["auth", "common"])
-  const [params] = useSearchParams()
-  const arrival = (useLocation().state ?? {}) as Arrival
-  const go = useGo()
-  const next = params.get("next")
+  const location = useLocation()
+  const [last] = useState(lastAudience)
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-8">
       <title>{`${t("signIn.title")} · ${t("common:appName")}`}</title>
-      <div className="flex flex-col gap-1.5">
-        <h1
-          tabIndex={-1}
-          className="text-2xl font-semibold tracking-tight outline-none"
-        >
-          {t("signIn.title")}
-        </h1>
-        <p className="text-sm text-muted-foreground">{t("signIn.lead")}</p>
-      </div>
-      {arrival.notice && (
-        <Alert>
-          <CircleCheck />
-          <AlertDescription>{t(`signIn.${arrival.notice}`)}</AlertDescription>
-        </Alert>
-      )}
-      <SignInForm
-        email={arrival.email}
-        next={next}
-        onSignedIn={(to) => {
-          go(to, { replace: true })
-        }}
+      <AuthHeading title={t("signIn.title")} lead={t("signIn.chooseLead")} />
+      <ArrivalNotice />
+      <RoleChoice
+        intent="signIn"
+        last={last}
+        search={location.search}
+        state={location.state as unknown}
       />
       <p className="text-sm text-muted-foreground">
         {t("signIn.noAccount")}{" "}

@@ -6,6 +6,8 @@ import type { ReactNode } from "react"
 
 import { StepTransition } from "@/components/motion/step-transition"
 
+import { AuthHeading } from "./auth-heading"
+
 /** Heading, step count and back for one screen of an auth flow. */
 export function StepFrame({
   stepKey,
@@ -51,19 +53,7 @@ export function StepFrame({
       )}
       <StepTransition step={stepKey} direction={direction} dir={dir}>
         <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-1.5">
-            <h1
-              tabIndex={-1}
-              className="text-2xl font-semibold tracking-tight text-balance outline-none"
-            >
-              {title}
-            </h1>
-            {description && (
-              <p className="text-sm text-pretty text-muted-foreground">
-                {description}
-              </p>
-            )}
-          </div>
+          <AuthHeading title={title} lead={description} />
           {children}
         </div>
       </StepTransition>

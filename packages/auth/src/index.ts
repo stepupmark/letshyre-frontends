@@ -6,6 +6,7 @@ export {
   ONBOARDING,
   PUBLIC_HOME,
   ROLE_HOME,
+  ROLE_SIGN_IN,
   safeNext,
   SIGN_IN,
 } from "./guards.ts"

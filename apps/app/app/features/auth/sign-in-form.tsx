@@ -1,12 +1,18 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { homeFor, login, readSession, safeNext } from "@workspace/auth"
+import {
+  homeFor,
+  login,
+  readSession,
+  RoleNotAllowedError,
+  safeNext,
+} from "@workspace/auth"
 import { useTranslation } from "@workspace/i18n/react"
 import { Alert, AlertDescription } from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
 import { FieldGroup } from "@workspace/ui/components/field"
 import { Spinner } from "@workspace/ui/components/spinner"
 import { useMutation } from "@tanstack/react-query"
-import { CircleAlert } from "lucide-react"
+import { ArrowRight, CircleAlert } from "lucide-react"
 import { useMemo } from "react"
 import { useForm } from "react-hook-form"
 import { href, Link } from "react-router"
@@ -17,6 +23,7 @@ import { PasswordField, TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
 import { api } from "@/lib/api"
 
+import { audienceOf, ROLE_OF, signInPath, type Audience } from "./audience"
 import { authErrorKey } from "./errors"
 
 const schema = (
@@ -28,14 +35,16 @@ const schema = (
   })
 
 /**
- * Email and password for both roles. Calls `onSignedIn` with where to go next:
- * the page they came for when it's safe, otherwise their home.
+ * Email and password. With an `audience` only that side gets in; without one
+ * (the session dialog) either does. Calls `onSignedIn` with where to go next.
  */
 export function SignInForm({
+  audience,
   email = "",
   next,
   onSignedIn,
 }: {
+  audience?: Audience
   email?: string
   next?: string | null
   onSignedIn: (to: string) => void
@@ -50,21 +59,30 @@ export function SignInForm({
 
   const signIn = useMutation({
     mutationFn: (values: { email: string; password: string }) =>
-      login(api, values),
+      login(api, values, audience ? { roles: [ROLE_OF[audience]] } : {}),
     onSuccess: () => {
       const session = readSession()
       if (session.status !== "signed-in") return
       onSignedIn(safeNext(next) ?? homeFor(session))
     },
-    onError: () => {
+    onError: (error) => {
       form.setValue("password", "")
-      form.setFocus("password")
+      if (!(error instanceof RoleNotAllowedError)) form.setFocus("password")
     },
   })
 
-  const failure = signIn.isError
-    ? t(authErrorKey(signIn.error, "errors.signInFailed"))
-    : undefined
+  const wrongSide =
+    signIn.error instanceof RoleNotAllowedError
+      ? audienceOf(signIn.error.role)
+      : undefined
+  const failure =
+    wrongSide !== undefined
+      ? t(
+          wrongSide ? `signIn.wrongSide.${wrongSide}` : "signIn.wrongSide.other"
+        )
+      : signIn.isError
+        ? t(authErrorKey(signIn.error, "errors.signInFailed"))
+        : undefined
   const busy = signIn.isPending || signIn.isSuccess
 
   return (
@@ -81,13 +99,28 @@ export function SignInForm({
         <Shake error={failure}>
           <Alert variant="destructive">
             <CircleAlert />
-            <AlertDescription>{failure}</AlertDescription>
+            <AlertDescription>
+              {failure}
+              {wrongSide && (
+                <Link
+                  to={signInPath(wrongSide)}
+                  state={{ email: form.getValues("email") }}
+                  viewTransition
+                  className="mt-1 flex w-fit items-center gap-1 font-medium text-foreground underline underline-offset-4"
+                >
+                  {t(`signIn.goTo.${wrongSide}`)}
+                  <ArrowRight className="size-3.5 rtl:-scale-x-100" />
+                </Link>
+              )}
+            </AlertDescription>
           </Alert>
         </Shake>
       )}
       <FieldGroup>
         <TextField
-          label={t("fields.email")}
+          label={t(
+            audience === "employer" ? "fields.workEmail" : "fields.email"
+          )}
           type="email"
           autoComplete="username"
           inputMode="email"
@@ -102,7 +135,11 @@ export function SignInForm({
           error={errors.password?.message}
           labelAside={
             <Link
-              to={href("/forgot-password")}
+              to={
+                audience
+                  ? `${href("/forgot-password")}?as=${audience}`
+                  : href("/forgot-password")
+              }
               className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
             >
               {t("signIn.forgot")}

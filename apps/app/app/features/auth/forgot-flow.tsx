@@ -8,7 +8,7 @@ import { useMutation } from "@tanstack/react-query"
 import { CircleAlert } from "lucide-react"
 import { useMemo, useState } from "react"
 import { useForm } from "react-hook-form"
-import { href, Link } from "react-router"
+import { Link } from "react-router"
 import { z } from "zod"
 
 import { PasswordField, TextField } from "@/components/text-field"
@@ -42,7 +42,14 @@ const reachable = (step: Step, d: Partial<Answers>) =>
     password: Boolean(d.key && d.verified),
   })[step]
 
-export function ForgotFlow({ onDone }: { onDone: (email: string) => void }) {
+export function ForgotFlow({
+  signIn,
+  onDone,
+}: {
+  /** the sign-in page they came from */
+  signIn: string
+  onDone: (email: string) => void
+}) {
   const { t } = useTranslation("auth")
   const flow = useFlow<Step, Answers>("forgot", STEPS, reachable)
   const { step, data } = flow
@@ -84,8 +91,8 @@ export function ForgotFlow({ onDone }: { onDone: (email: string) => void }) {
             }}
           />
           <Link
-            to={href("/sign-in")}
-            className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+            to={signIn}
+            className="w-fit text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
           >
             {t("forgot.backToSignIn")}
           </Link>

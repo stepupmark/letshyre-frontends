@@ -1,12 +1,12 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { useLocation } from "react-router"
 
-import { RegisterFlow } from "@/features/auth"
+import { audienceFromPath, RegisterFlow } from "@/features/auth"
 import { useGo } from "@/lib/navigation"
 
 export default function Register() {
   const { t } = useTranslation(["auth", "common"])
-  const employer = useLocation().pathname.startsWith("/employer")
+  const employer = audienceFromPath(useLocation().pathname) === "employer"
   const go = useGo()
 
   return (

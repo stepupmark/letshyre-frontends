@@ -36,9 +36,8 @@ test("protected pages send visitors where they belong", async ({
 }) => {
   await page.goto("/employer/dashboard?tab=x")
   await expect(page).toHaveURL(
-    `/sign-in?next=${encodeURIComponent("/employer/dashboard?tab=x")}`
+    `/employer/sign-in?next=${encodeURIComponent("/employer/dashboard?tab=x")}`
   )
-  await expect(page.getByRole("heading", { name: "Sign in" })).toBeVisible()
 
   await signInAs("candidate")
   await page.goto("/employer/dashboard")

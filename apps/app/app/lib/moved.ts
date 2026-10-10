@@ -1,6 +1,4 @@
 const MOVED: Record<string, string> = {
-  "/employer/sign-in": "/sign-in",
-  "/employee/sign-in": "/sign-in",
   "/employer": "/employer/dashboard",
   "/employer/post-job": "/employer/jobs/new",
   "/employer/view-jobs": "/employer/jobs",

@@ -9,8 +9,19 @@ export const ROLE_HOME: Record<Role, string> = {
 /** The marketing site. */
 export const PUBLIC_HOME = "/"
 
-/** One sign-in page for both roles; the API says which role signed in. */
 export const SIGN_IN = "/sign-in"
+
+export const ROLE_SIGN_IN: Record<Role, string> = {
+  [ROLES.employer]: "/employer/sign-in",
+  [ROLES.candidate]: "/employee/sign-in",
+  [ROLES.admin]: SIGN_IN,
+}
+
+/** A page open to one role signs in on that role's page; anything else asks. */
+function signInFor(roles: Role[]) {
+  const [only] = roles
+  return only && roles.length === 1 ? ROLE_SIGN_IN[only] : SIGN_IN
+}
 
 export const ONBOARDING = "/employer/onboarding"
 
@@ -42,7 +53,7 @@ export function authRedirect(
 
   if (session.status !== "signed-in") {
     const next = new URLSearchParams({ next: url.pathname + url.search })
-    return `${SIGN_IN}?${next.toString()}`
+    return `${signInFor(roles)}?${next.toString()}`
   }
 
   if (roles.length > 0 && !roles.includes(session.role)) return homeFor(session)

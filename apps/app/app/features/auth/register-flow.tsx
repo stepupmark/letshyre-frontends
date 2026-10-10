@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { homeFor, login, readSession, SIGN_IN } from "@workspace/auth"
+import { homeFor, login, readSession } from "@workspace/auth"
 import { Trans, useTranslation } from "@workspace/i18n/react"
 import { Alert, AlertDescription } from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
@@ -15,7 +15,7 @@ import { useMutation } from "@tanstack/react-query"
 import { Check, Circle, CircleAlert } from "lucide-react"
 import { useId, useMemo, useState } from "react"
 import { Controller, useForm, useWatch } from "react-hook-form"
-import { href, Link } from "react-router"
+import { Link } from "react-router"
 import { z } from "zod"
 
 import { PasswordField, TextField } from "@/components/text-field"
@@ -30,6 +30,7 @@ import {
   verifyMobileCode,
   type Role,
 } from "./api"
+import { signInPath } from "./audience"
 import { CodeStep } from "./code-step"
 import {
   authErrorKey,
@@ -82,6 +83,7 @@ export function RegisterFlow({
   const { step, data } = flow
   const [restartReason, setRestartReason] = useState<AuthErrorKey | null>(null)
   const employer = role === "Employer"
+  const signIn = signInPath(employer ? "employer" : "candidate")
 
   const restart = (key: AuthErrorKey) => {
     flow.update({
@@ -121,6 +123,7 @@ export function RegisterFlow({
           )}
           <DetailsForm
             employer={employer}
+            signIn={signIn}
             defaults={{ name: data.name ?? "", email: data.email ?? "" }}
             onSent={(values) => {
               setRestartReason(null)
@@ -131,7 +134,7 @@ export function RegisterFlow({
           <p className="text-sm text-muted-foreground">
             {t("register.haveAccount")}{" "}
             <Link
-              to={href("/sign-in")}
+              to={signIn}
               className="font-medium text-foreground underline underline-offset-4"
             >
               {t("register.signIn")}
@@ -244,7 +247,7 @@ export function RegisterFlow({
               }
             }}
             onCreated={(to) => {
-              onDone(to ?? SIGN_IN)
+              onDone(to ?? signIn)
             }}
             onLost={restart}
           />
@@ -255,10 +258,12 @@ export function RegisterFlow({
 
 function DetailsForm({
   employer,
+  signIn,
   defaults,
   onSent,
 }: {
   employer: boolean
+  signIn: string
   defaults: { name: string; email: string }
   onSent: (values: { name: string; email: string; emailKey: string }) => void
 }) {
@@ -327,10 +332,7 @@ function DetailsForm({
           error={errors.email?.message}
           hint={
             emailTaken ? (
-              <Link
-                to={href("/sign-in")}
-                className="underline underline-offset-4"
-              >
+              <Link to={signIn} className="underline underline-offset-4">
                 {t("register.signInInstead")}
               </Link>
             ) : (

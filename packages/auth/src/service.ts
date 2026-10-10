@@ -3,6 +3,7 @@ import { HttpError, ResponseShapeError, type HttpClient } from "@workspace/api"
 import {
   clearSession,
   getRefreshToken,
+  isRole,
   readSession,
   saveTokens,
   saveUser,
@@ -18,6 +19,11 @@ export class AccountInactiveError extends Error {
 /** A valid account whose role doesn't belong in this app. */
 export class RoleNotAllowedError extends Error {
   override name = "RoleNotAllowedError"
+  readonly role: Role
+  constructor(role: Role) {
+    super(`${role} can't sign in here`)
+    this.role = role
+  }
 }
 
 const record = (value: unknown): Record<string, unknown> =>
@@ -43,6 +49,11 @@ export async function login(
   if (data.is_active === false)
     throw new AccountInactiveError("Account inactive")
 
+  // checked before anything is stored, so other tabs never see a stray session
+  if (!isRole(data.role))
+    throw new ResponseShapeError("Login returned an unknown role")
+  if (!roles.includes(data.role)) throw new RoleNotAllowedError(data.role)
+
   const refresh = data.refresh_token ?? data.refresh
   saveTokens(access, typeof refresh === "string" ? refresh : undefined)
   saveUser(data)
@@ -50,11 +61,7 @@ export async function login(
   const session = readSession()
   if (session.status !== "signed-in") {
     clearSession()
-    throw new ResponseShapeError("Login returned an unknown role")
-  }
-  if (!roles.includes(session.role)) {
-    clearSession()
-    throw new RoleNotAllowedError(`${session.role} can't sign in here`)
+    throw new ResponseShapeError("Login didn't save a session")
   }
   return session.user
 }

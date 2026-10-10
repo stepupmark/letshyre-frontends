@@ -188,21 +188,26 @@ describe("login and logout", () => {
     expect(localStorage.getItem("accessToken")).toBeNull()
   })
 
-  it("refuses a role the app doesn't serve without storing anything", async () => {
+  it("refuses a role this page doesn't serve before storing anything", async () => {
     server.use(
       http.post(url("user/v1/login/"), () =>
-        HttpResponse.json({ role: "Admin", access_token: "acc" })
+        HttpResponse.json({ role: "Employer", access_token: "acc" })
       )
     )
     const credentials = { email: "a@b.in", password: "x" }
+    const listener = vi.fn()
+    const stop = subscribe(listener)
 
-    await expect(login(client, credentials)).rejects.toBeInstanceOf(
-      RoleNotAllowedError
-    )
+    const refused = login(client, credentials, { roles: ["Candidate"] })
+
+    await expect(refused).rejects.toBeInstanceOf(RoleNotAllowedError)
+    await expect(refused).rejects.toMatchObject({ role: "Employer" })
+    expect(listener).not.toHaveBeenCalled()
     expect(localStorage.getItem("accessToken")).toBeNull()
-    await expect(
-      login(client, credentials, { roles: ["Admin"] })
-    ).resolves.toMatchObject({ role: "Admin" })
+    stop()
+    await expect(login(client, credentials)).resolves.toMatchObject({
+      role: "Employer",
+    })
   })
 
   it("clears the session even when the server can't revoke it", async () => {
@@ -225,10 +230,13 @@ describe("login and logout", () => {
 describe("guards", () => {
   const at = (path: string) => new URL(`https://letshyre.ai${path}`)
 
-  it("sends signed-out visitors to sign in and back to the page they asked for", () => {
-    expect(authRedirect(at("/employer/billing?checkout=pro"))).toBe(
-      "/sign-in?next=%2Femployer%2Fbilling%3Fcheckout%3Dpro"
-    )
+  it("sends signed-out visitors to their role's sign-in and back to the page they asked for", () => {
+    expect(
+      authRedirect(at("/employer/billing?checkout=pro"), {
+        roles: ["Employer"],
+      })
+    ).toBe("/employer/sign-in?next=%2Femployer%2Fbilling%3Fcheckout%3Dpro")
+    expect(authRedirect(at("/shared"))).toBe("/sign-in?next=%2Fshared")
   })
 
   it("keeps each role in its own area", () => {
