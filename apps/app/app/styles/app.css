@@ -72,3 +72,16 @@
     }
   }
 }
+
+@utility stamp {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: stamp 0.35s cubic-bezier(0.3, 0, 0.2, 1.4) both;
+  }
+}
+
+@keyframes stamp {
+  from {
+    opacity: 0;
+    scale: 1.8;
+  }
+}

@@ -11,36 +11,26 @@ import { useForm } from "react-hook-form"
 import { Link } from "react-router"
 import { z } from "zod"
 
-import { PasswordField, TextField } from "@/components/text-field"
+import { TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
 
 import { resetPassword, sendEmailCode, verifyEmailCode } from "./api"
-import { CodeStep } from "./code-step"
+import { CodeTicket } from "./code-ticket"
+import { authErrorKey, isVerificationLost, type AuthErrorKey } from "./errors"
 import {
-  authErrorKey,
-  FIELD_OF,
-  isVerificationLost,
-  type AuthErrorKey,
-} from "./errors"
+  FORGOT_FLOW,
+  FORGOT_STEPS,
+  forgotReachable,
+  type ForgotAnswers,
+  type ForgotStep,
+} from "./forgot-answers"
+import { FormAlert } from "./form-alert"
 import { maskEmail } from "./mask"
+import { NewPasswordFields } from "./new-password-fields"
+import { newPasswordShape, passwordsMatch } from "./password-schema"
 import { StepFrame } from "./step-frame"
 import { useFlow } from "./use-flow"
-
-const STEPS = ["email", "code", "password"] as const
-type Step = (typeof STEPS)[number]
-
-interface Answers {
-  email: string
-  key: string
-  verified: boolean
-}
-
-const reachable = (step: Step, d: Partial<Answers>) =>
-  ({
-    email: true,
-    code: Boolean(d.key),
-    password: Boolean(d.key && d.verified),
-  })[step]
+import { useSendCode } from "./use-send-code"
 
 export function ForgotFlow({
   signIn,
@@ -51,9 +41,14 @@ export function ForgotFlow({
   onDone: (email: string) => void
 }) {
   const { t } = useTranslation("auth")
-  const flow = useFlow<Step, Answers>("forgot", STEPS, reachable)
+  const flow = useFlow<ForgotStep, ForgotAnswers>(
+    FORGOT_FLOW,
+    FORGOT_STEPS,
+    forgotReachable
+  )
   const { step, data } = flow
   const [restartReason, setRestartReason] = useState<AuthErrorKey | null>(null)
+  const email = data.email ?? ""
 
   const restart = (key: AuthErrorKey) => {
     flow.update({ key: "", verified: false })
@@ -64,7 +59,8 @@ export function ForgotFlow({
   const frame = {
     stepKey: step,
     direction: flow.direction,
-    progress: { current: flow.index + 1, total: STEPS.length },
+    stages: [t("fields.email"), t("forgot.codeStage"), t("fields.newPassword")],
+    current: flow.index,
     onBack: flow.index > 0 ? flow.back : undefined,
   }
 
@@ -83,7 +79,7 @@ export function ForgotFlow({
             </Alert>
           )}
           <EmailForm
-            defaultEmail={data.email ?? ""}
+            defaultEmail={email}
             onSent={(values) => {
               setRestartReason(null)
               flow.update({ ...values, verified: false })
@@ -102,15 +98,17 @@ export function ForgotFlow({
     case "code":
       return (
         <StepFrame {...frame} title={t("forgot.codeTitle")}>
-          <CodeStep
-            destination={maskEmail(data.email ?? "")}
+          <CodeTicket
+            destination={maskEmail(email)}
+            email={email}
+            sentAt={data.sentAt}
             hint={t("code.spamHint")}
             onChangeDestination={() => {
               flow.go("email")
             }}
             verify={(code) =>
               verifyEmailCode({
-                email: data.email ?? "",
+                email,
                 key: data.key ?? "",
                 code,
                 purpose: "Forgot Password",
@@ -118,7 +116,8 @@ export function ForgotFlow({
             }
             resend={async () => {
               flow.update({
-                key: await sendEmailCode(data.email ?? "", "Forgot Password"),
+                key: await sendEmailCode(email, "Forgot Password"),
+                sentAt: Date.now(),
               })
             }}
             onVerified={() => {
@@ -139,15 +138,11 @@ export function ForgotFlow({
         >
           <NewPasswordForm
             onSave={async (password) => {
-              await resetPassword({
-                email: data.email ?? "",
-                key: data.key ?? "",
-                password,
-              })
-              flow.forget()
+              await resetPassword({ email, key: data.key ?? "", password })
             }}
             onSaved={() => {
-              onDone(data.email ?? "")
+              flow.forget()
+              onDone(email)
             }}
             onLost={restart}
           />
@@ -161,7 +156,7 @@ function EmailForm({
   onSent,
 }: {
   defaultEmail: string
-  onSent: (values: { email: string; key: string }) => void
+  onSent: (values: { email: string; key: string; sentAt: number }) => void
 }) {
   const { t } = useTranslation("auth")
   const form = useForm({
@@ -174,23 +169,16 @@ function EmailForm({
     defaultValues: { email: defaultEmail },
     mode: "onSubmit",
   })
-  const { errors } = form.formState
-
-  const send = useMutation({
-    mutationFn: async ({ email }: { email: string }) => ({
+  const { send, sending, formError } = useSendCode({
+    form,
+    field: "email",
+    send: async ({ email }) => ({
       email,
       key: await sendEmailCode(email, "Forgot Password"),
+      sentAt: Date.now(),
     }),
-    onSuccess: onSent,
-    onError: (error) => {
-      const key = authErrorKey(error, "errors.sendFailed")
-      if (FIELD_OF[key] === "email")
-        form.setError("email", { message: t(key) }, { shouldFocus: true })
-    },
+    onSent,
   })
-  const key = send.isError
-    ? authErrorKey(send.error, "errors.sendFailed")
-    : null
 
   return (
     <form
@@ -198,28 +186,23 @@ function EmailForm({
       className="flex flex-col gap-6"
       onSubmit={(event) => {
         void form.handleSubmit((values) => {
-          send.mutate(values)
+          send(values)
         })(event)
       }}
     >
-      {key && !FIELD_OF[key] && (
-        <Alert variant="destructive">
-          <CircleAlert />
-          <AlertDescription>{t(key)}</AlertDescription>
-        </Alert>
-      )}
+      {formError && <FormAlert message={formError} />}
       <TextField
         label={t("fields.email")}
         type="email"
         autoComplete="email"
         inputMode="email"
         autoFocus
-        error={errors.email?.message}
+        error={form.formState.errors.email?.message}
         {...checkOnBlur(form, "email")}
       />
-      <Button type="submit" size="lg" disabled={send.isPending}>
-        {send.isPending && <Spinner />}
-        {send.isPending ? t("register.sending") : t("forgot.sendCode")}
+      <Button type="submit" size="lg" disabled={sending}>
+        {sending && <Spinner />}
+        {sending ? t("register.sending") : t("forgot.sendCode")}
       </Button>
     </form>
   )
@@ -238,23 +221,13 @@ function NewPasswordForm({
   const form = useForm({
     resolver: zodResolver(
       useMemo(
-        () =>
-          z
-            .object({
-              password: z.string().min(8, t("validation.passwordMin")),
-              confirm: z.string(),
-            })
-            .refine((v) => v.password === v.confirm, {
-              message: t("validation.passwordsDiffer"),
-              path: ["confirm"],
-            }),
+        () => z.object(newPasswordShape(t)).refine(...passwordsMatch(t)),
         [t]
       )
     ),
     defaultValues: { password: "", confirm: "" },
     mode: "onSubmit",
   })
-  const { errors } = form.formState
 
   const save = useMutation({
     mutationFn: onSave,
@@ -276,28 +249,12 @@ function NewPasswordForm({
       }}
     >
       {save.isError && (
-        <Alert variant="destructive">
-          <CircleAlert />
-          <AlertDescription>
-            {t(authErrorKey(save.error, "errors.resetFailed"))}
-          </AlertDescription>
-        </Alert>
+        <FormAlert
+          message={t(authErrorKey(save.error, "errors.resetFailed"))}
+        />
       )}
       <FieldGroup>
-        <PasswordField
-          label={t("fields.newPassword")}
-          autoComplete="new-password"
-          autoFocus
-          hint={t("register.ruleLength")}
-          error={errors.password?.message}
-          {...checkOnBlur(form, "password")}
-        />
-        <PasswordField
-          label={t("fields.confirmPassword")}
-          autoComplete="new-password"
-          error={errors.confirm?.message}
-          {...checkOnBlur(form, "confirm")}
-        />
+        <NewPasswordFields form={form} label={t("fields.newPassword")} />
       </FieldGroup>
       <Button type="submit" size="lg" disabled={save.isPending}>
         {save.isPending && <Spinner />}

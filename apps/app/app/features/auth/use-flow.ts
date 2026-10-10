@@ -1,30 +1,67 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useSyncExternalStore } from "react"
 import { useSearchParams } from "react-router"
 
 const PREFIX = "flow:v1:"
+const EMPTY = {}
 
-function load<D>(name: string): Partial<D> {
+const listeners = new Set<() => void>()
+const snapshots = new Map<string, { raw: string | null; data: object }>()
+
+function readRaw(name: string) {
   try {
-    const raw = sessionStorage.getItem(PREFIX + name)
-    return raw ? (JSON.parse(raw) as Partial<D>) : {}
+    return sessionStorage.getItem(PREFIX + name)
   } catch {
-    return {}
+    return null
   }
 }
 
-function store(name: string, data: unknown) {
+function snapshot(name: string): object {
+  const raw = readRaw(name)
+  const cached = snapshots.get(name)
+  if (cached?.raw === raw) return cached.data
+  // forgotten answers stay on screen until the flow unmounts
+  if (cached && raw === null) return cached.data
+
+  let data: object = EMPTY
   try {
-    sessionStorage.setItem(PREFIX + name, JSON.stringify(data))
+    if (raw) data = JSON.parse(raw) as object
   } catch {
-    /* a refresh will start the flow over */
+    /* corrupt answers start the flow over */
+  }
+  snapshots.set(name, { raw, data })
+  return data
+}
+
+function subscribe(listener: () => void) {
+  listeners.add(listener)
+  return () => {
+    listeners.delete(listener)
   }
 }
+
+function save(name: string, data: object) {
+  let raw: string | null = JSON.stringify(data)
+  try {
+    sessionStorage.setItem(PREFIX + name, raw)
+  } catch {
+    raw = null
+  }
+  snapshots.set(name, { raw, data })
+  for (const listener of listeners) listener()
+}
+
+/** A flow's saved answers, for anything that wants to follow along, like the side panel. */
+export const useFlowData = <D extends object>(name: string) =>
+  useSyncExternalStore(
+    subscribe,
+    () => snapshot(name),
+    () => EMPTY
+  ) as Partial<D>
 
 /**
  * A multi-step flow whose step is in the URL (back and refresh work) and whose
  * answers live in this tab's sessionStorage. Passwords never go in `data`.
- * A step that isn't reachable yet, e.g. a code step after a refresh lost the
- * code, falls back to the last one that is.
+ * A step that isn't reachable yet falls back to the last one that is.
  */
 export function useFlow<S extends string, D extends object>(
   name: string,
@@ -32,7 +69,7 @@ export function useFlow<S extends string, D extends object>(
   reachable: (step: S, data: Partial<D>) => boolean
 ) {
   const [params, setParams] = useSearchParams()
-  const [data, setData] = useState<Partial<D>>(() => load<D>(name))
+  const data = useFlowData<D>(name)
   const [direction, setDirection] = useState<1 | -1>(1)
 
   const requested = steps.indexOf(params.get("step") as S)
@@ -58,12 +95,15 @@ export function useFlow<S extends string, D extends object>(
     }
   }, [urlStep, step, setParams])
 
+  useEffect(
+    () => () => {
+      if (readRaw(name) === null) snapshots.delete(name)
+    },
+    [name]
+  )
+
   const update = (patch: Partial<D>) => {
-    setData((current) => {
-      const next = { ...current, ...patch }
-      store(name, next)
-      return next
-    })
+    save(name, { ...snapshot(name), ...patch })
   }
 
   const go = (target: S, { replace = false } = {}) => {
@@ -82,7 +122,6 @@ export function useFlow<S extends string, D extends object>(
     go(steps[index - 1] ?? steps[0])
   }
 
-  /** Drops the saved answers; the screen keeps its state until it unmounts. */
   const forget = () => {
     try {
       sessionStorage.removeItem(PREFIX + name)
@@ -91,14 +130,5 @@ export function useFlow<S extends string, D extends object>(
     }
   }
 
-  return {
-    step,
-    index,
-    direction,
-    data,
-    update,
-    go,
-    back,
-    forget,
-  }
+  return { step, index, direction, data, update, go, back, forget }
 }

@@ -160,6 +160,9 @@ test("a forgotten password is reset with an email code", async ({
 
   await page.goto("/employee/sign-in")
   await page.getByRole("link", { name: "Forgot password?" }).click()
+  await expect(
+    page.getByRole("heading", { name: "Reset your password" })
+  ).toBeVisible()
   await page.getByLabel("Email").fill("asha@test.in")
   await page.getByRole("button", { name: "Send code" }).click()
   await enterCode(page)

@@ -60,7 +60,7 @@ function EmployerStack() {
       <ScoreCard
         person={third}
         score={SCORES[2]}
-        className="settle short:-translate-y-8 translate-x-10 -translate-y-12 rotate-6 opacity-70 rtl:-translate-x-10 rtl:-rotate-6"
+        className="settle short:-translate-y-8 translate-x-10 -translate-y-12 rotate-6 rtl:-translate-x-10 rtl:-rotate-6"
       />
       <ScoreCard
         person={second}

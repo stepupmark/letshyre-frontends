@@ -9,8 +9,8 @@ import { Link, Outlet, useLocation } from "react-router"
 
 import {
   audienceFromPath,
-  AuthArt,
-  AuthStrip,
+  AuthBand,
+  AuthPanel,
   signInPath,
 } from "@/features/auth"
 import { guestOnly } from "@/lib/guard"
@@ -34,7 +34,6 @@ export default function AuthLayout() {
   const { t } = useTranslation(["shell", "common", "auth"])
   const { pathname, search } = useLocation()
   const audience = audienceFromPath(pathname)
-  const side = audience ?? "general"
   const other = audience === "employer" ? "candidate" : "employer"
   const onSignIn = audience !== null && pathname === signInPath(audience)
 
@@ -67,13 +66,13 @@ export default function AuthLayout() {
             className="short:py-6 mx-auto flex w-full max-w-md flex-1 flex-col justify-center py-8 outline-none min-[1440px]:max-w-104 sm:py-12 lg:max-w-sm"
           >
             <div className="flex flex-col gap-8 sm:rounded-3xl sm:border sm:bg-card sm:p-8 sm:shadow-xl lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none">
-              <AuthStrip side={side} />
+              <AuthBand pathname={pathname} />
               <Outlet />
             </div>
           </main>
         </div>
         <aside className="short:py-8 hidden items-center justify-center bg-muted/40 p-10 min-[1440px]:p-20 lg:flex xl:p-16">
-          <AuthArt key={side} side={side} />
+          <AuthPanel pathname={pathname} />
         </aside>
       </div>
     </div>
