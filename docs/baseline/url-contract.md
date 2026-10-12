@@ -32,6 +32,7 @@ Locales: `en hi fr ja ar te ta es nl ru kn ml ur bn de pt it ko id`.
 | Path                                       | Interim (Phase 4 → 7) on `letshyre.ai` | Final on `app.letshyre.ai`                                      |
 | ------------------------------------------ | -------------------------------------- | --------------------------------------------------------------- |
 | `/get-started`                             | legacy                                 | same path (kept as an alias of `/sign-in` role choice)          |
+| `/` (app root)                             | marketing                              | role choice, same page as `/get-started`; sign-out lands here   |
 | `/forgot-password`                         | legacy                                 | same path                                                       |
 | `/employer/sign-in`, `/employee/sign-in`   | legacy                                 | redirect to `/sign-in` ([ADR 0009](../adr/0009-one-sign-in.md)) |
 | `/employer/register`, `/employee/register` | legacy                                 | same paths                                                      |

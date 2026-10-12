@@ -52,7 +52,11 @@ export default [
     route("employee/sign-in", "routes/auth/role-sign-in.tsx", {
       id: "sign-in-candidate",
     }),
-    route("get-started", "routes/auth/get-started.tsx"),
+    index("routes/auth/get-started.tsx"),
+    // marketing's "Log in" still links here
+    route("get-started", "routes/auth/get-started.tsx", {
+      id: "get-started-alias",
+    }),
     route("employer/register", "routes/auth/register.tsx", {
       id: "register-employer",
     }),

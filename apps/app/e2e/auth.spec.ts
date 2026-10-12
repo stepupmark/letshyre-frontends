@@ -96,7 +96,7 @@ test("an employer registers, verifies email and mobile, and lands on onboarding"
       reply(route, signedIn(USERS.employerNew)),
   })
 
-  await page.goto("/get-started")
+  await page.goto("/")
   await page.getByRole("link", { name: /I'm hiring/ }).click()
   await expect(page).toHaveURL("/employer/register")
 

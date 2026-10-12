@@ -66,6 +66,7 @@ test("sign out ends the session on the server and here", async ({
   await page.getByRole("menuitem", { name: "Sign out" }).click()
 
   await expect(page).toHaveURL("/")
+  await expect(page.getByRole("link", { name: /I'm hiring/ })).toBeVisible()
   expect(revoked).toEqual({ refresh_token: "e2e-refresh" })
   expect(await page.evaluate(() => localStorage.getItem("user"))).toBeNull()
 })

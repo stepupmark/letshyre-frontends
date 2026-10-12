@@ -133,7 +133,7 @@ export function SiteHeaderMenu({ className }: { className?: string }) {
 
         <SheetFooter className="border-t">
           <a
-            href={APP_LINKS.employerRegister}
+            href={APP_LINKS.getStarted}
             className={buttonVariants({ size: "lg" })}
           >
             {t("nav.getStarted")}

@@ -142,7 +142,7 @@ export function SiteHeader() {
             <SiteLanguageSwitcher className="hidden lg:inline-flex" />
             <SiteThemeToggle className="cursor-pointer" />
             <a
-              href={APP_LINKS.employerRegister}
+              href={APP_LINKS.getStarted}
               className={buttonVariants({
                 size: "lg",
                 className: "max-sm:hidden",
