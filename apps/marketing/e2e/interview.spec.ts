@@ -10,8 +10,9 @@ test("walks through the eight steps in three phases", async ({ page }) => {
   await expect(
     main.getByRole("heading", { level: 2, name: "Before you start" })
   ).toBeVisible()
-  await expect(main.locator("ol > li")).toHaveCount(8)
-  await expect(main.getByRole("heading", { level: 3 }).nth(5)).toHaveText(
+  const steps = main.locator("ol > li")
+  await expect(steps).toHaveCount(8)
+  await expect(steps.first().getByRole("heading", { level: 3 })).toHaveText(
     "Download the desktop app"
   )
 })

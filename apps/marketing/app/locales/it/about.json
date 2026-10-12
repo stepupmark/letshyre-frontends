@@ -1,10 +1,10 @@
 {
   "hero": {
-    "title": "Ridefinire le Assunzioni con<br/><hl>Colloqui Basati sull'IA</hl>",
+    "title": "Ridefinire le Assunzioni con <hl>Colloqui Basati sull'IA</hl>",
     "description": "LetsHyre è una piattaforma di assunzione basata sull'intelligenza artificiale, progettata per aiutare i datori di lavoro a scoprire, valutare e connettersi con professionisti esperti attivamente alla ricerca di nuove opportunità di carriera."
   },
   "intro": {
-    "title": "La Sfida<br/><hl>e la Nostra Soluzione</hl>",
+    "title": "La Sfida <hl>e la Nostra Soluzione</hl>",
     "p1": "I processi di assunzione tradizionali richiedono spesso tempo ed impegno considerevoli per selezionare i curriculum, condurre colloqui e individuare i candidati giusti. LetsHyre semplifica questo processo attraverso una selezione intelligente dei candidati, colloqui basati sull'IA specifici per ruolo, scorecard dei colloqui e una valutazione trasparente dei candidati.",
     "p2": "La nostra piattaforma consente ai datori di lavoro di sbloccare profili dei candidati, scorecard dei colloqui, registrazioni dei colloqui e informazioni di contatto attraverso un semplice modello Paga-per-Sblocco."
   },
@@ -22,21 +22,15 @@
     "employersLink": "Inizia ad assumere",
     "employerPoints": [
       "Accedi a professionisti esperti attivamente alla ricerca di opportunità",
-      "Scopri candidati disponibili subito e in preavviso",
       "Conduci colloqui basati sull'IA specifici per ruolo",
       "Consulta scorecard e insight dei colloqui",
-      "Guarda le registrazioni dei colloqui",
-      "Riduci l'impegno e i tempi di selezione",
-      "Accedi a informazioni trasparenti sui candidati",
       "Paga solo per i profili dei candidati che scegli di sbloccare"
     ],
     "candidatesHeading": "Per i Candidati",
     "candidatesLink": "Crea il tuo profilo",
     "candidatePoints": [
       "Crea un profilo professionale",
-      "Metti in mostra competenze ed esperienza",
       "Partecipa a colloqui basati sull'IA specifici per ruolo",
-      "Migliora la visibilità del profilo",
       "Aumenta le opportunità di essere scoperto dai datori di lavoro",
       "Connettiti con aziende che assumono professionisti esperti"
     ]
@@ -72,15 +66,23 @@
   },
   "profileDuration": {
     "title": "Durata di Attività del Profilo",
-    "p1": "Per mantenere un bacino di talenti di alta qualità e attivamente disponibile, i profili dei candidati rimangono attivi sulla piattaforma per un massimo di <b>90 giorni</b> dalla data di creazione del profilo.",
-    "p2": "I candidati possono aggiornare le informazioni del proprio profilo durante questo periodo.",
-    "p3": "Alla scadenza del periodo di 90 giorni, i profili dei candidati potrebbero essere rimossi definitivamente dal bacino di candidati attivi di LetsHyre.",
-    "p4": "I candidati che desiderano continuare a utilizzare LetsHyre dopo la rimozione del profilo possono creare un nuovo profilo, soggetto alle policy e ai requisiti della piattaforma.",
-    "steps": {
-      "live": "Giorno 1",
-      "update": "Fino al giorno 90",
-      "removed": "Dopo il giorno 90",
-      "again": "In qualsiasi momento dopo"
+    "stages": {
+      "live": {
+        "when": "Giorno 1",
+        "body": "Per mantenere un bacino di talenti di alta qualità e attivamente disponibile, i profili dei candidati rimangono attivi sulla piattaforma per un massimo di <b>90 giorni</b> dalla data di creazione del profilo."
+      },
+      "update": {
+        "when": "Fino al giorno 90",
+        "body": "I candidati possono aggiornare le informazioni del proprio profilo durante questo periodo."
+      },
+      "removed": {
+        "when": "Dopo il giorno 90",
+        "body": "Alla scadenza del periodo di 90 giorni, i profili dei candidati potrebbero essere rimossi definitivamente dal bacino di candidati attivi di LetsHyre."
+      },
+      "again": {
+        "when": "In qualsiasi momento dopo",
+        "body": "I candidati che desiderano continuare a utilizzare LetsHyre dopo la rimozione del profilo possono creare un nuovo profilo, soggetto alle policy e ai requisiti della piattaforma."
+      }
     }
   },
   "facts": {
@@ -88,7 +90,7 @@
     "aiInterviews": "Colloqui IA per ruolo",
     "payPerUnlock": "Paghi solo allo sblocco",
     "activeProfiles": "Profili attivi per 90 giorni",
-    "languages": "Disponibile in 19 lingue"
+    "languages": "Disponibile in {{total}} lingue"
   },
   "disclaimer": {
     "title": "Disclaimer",
@@ -97,8 +99,7 @@
   "cta": {
     "title": "Pronto ad Assumere o a Essere Assunto?",
     "description": "Pubblica un ruolo e ricevi candidati valutati, oppure sostieni un colloquio e fatti notare dalle aziende che assumono ora.",
-    "startHiring": "Inizia ad Assumere",
-    "applyJob": "Candidati per un Lavoro"
+    "startHiring": "Inizia ad Assumere"
   },
   "meta": {
     "title": "Chi siamo | letshyre.ai",

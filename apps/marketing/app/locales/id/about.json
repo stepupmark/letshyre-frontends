@@ -1,10 +1,10 @@
 {
   "hero": {
-    "title": "Mendefinisikan Ulang Perekrutan dengan<br/><hl>Wawancara Bertenaga AI</hl>",
+    "title": "Mendefinisikan Ulang Perekrutan dengan <hl>Wawancara Bertenaga AI</hl>",
     "description": "LetsHyre adalah platform perekrutan bertenaga AI yang dirancang untuk membantu perusahaan menemukan, mengevaluasi, dan terhubung dengan para profesional berpengalaman yang sedang aktif mencari peluang karier baru."
   },
   "intro": {
-    "title": "Tantangan<br/><hl>& Solusi Kami</hl>",
+    "title": "Tantangan <hl>& Solusi Kami</hl>",
     "p1": "Proses perekrutan tradisional sering kali membutuhkan banyak waktu dan tenaga untuk menyaring resume, melakukan wawancara, dan menemukan kandidat yang tepat. LetsHyre menyederhanakan proses ini melalui penyaringan kandidat cerdas, wawancara berbasis peran bertenaga AI, scorecard wawancara, dan evaluasi kandidat yang transparan.",
     "p2": "Platform kami memungkinkan perusahaan membuka profil kandidat, scorecard wawancara, rekaman wawancara, dan informasi kontak melalui model Bayar-Per-Buka yang sederhana."
   },
@@ -22,21 +22,15 @@
     "employersLink": "Mulai merekrut",
     "employerPoints": [
       "Akses ke profesional berpengalaman yang aktif mencari peluang",
-      "Temukan kandidat yang siap bergabung segera maupun yang masih dalam masa notice period",
       "Lakukan wawancara berbasis peran bertenaga AI",
       "Tinjau scorecard dan wawasan wawancara",
-      "Tonton rekaman wawancara",
-      "Kurangi upaya perekrutan dan waktu penyaringan",
-      "Akses informasi kandidat secara transparan",
       "Bayar hanya untuk profil kandidat yang Anda pilih untuk dibuka"
     ],
     "candidatesHeading": "Untuk Kandidat",
     "candidatesLink": "Buat profil Anda",
     "candidatePoints": [
       "Buat profil profesional",
-      "Tampilkan keterampilan dan pengalaman Anda",
       "Ikuti wawancara berbasis peran bertenaga AI",
-      "Tingkatkan visibilitas profil Anda",
       "Perbesar peluang untuk ditemukan oleh perusahaan",
       "Terhubung dengan perusahaan yang merekrut profesional berpengalaman"
     ]
@@ -72,15 +66,23 @@
   },
   "profileDuration": {
     "title": "Durasi Aktivitas Profil",
-    "p1": "Untuk menjaga kualitas dan ketersediaan aktif talenta, profil kandidat tetap aktif di platform selama maksimal <b>90 hari</b> sejak tanggal profil dibuat.",
-    "p2": "Kandidat dapat memperbarui informasi profil mereka selama periode ini.",
-    "p3": "Setelah periode 90 hari berakhir, profil kandidat dapat dihapus secara permanen dari pool kandidat aktif LetsHyre.",
-    "p4": "Kandidat yang ingin terus menggunakan LetsHyre setelah profil mereka dihapus dapat membuat profil baru, sesuai dengan kebijakan dan ketentuan platform.",
-    "steps": {
-      "live": "Hari 1",
-      "update": "Hingga hari 90",
-      "removed": "Setelah hari 90",
-      "again": "Kapan saja setelahnya"
+    "stages": {
+      "live": {
+        "when": "Hari 1",
+        "body": "Untuk menjaga kualitas dan ketersediaan aktif talenta, profil kandidat tetap aktif di platform selama maksimal <b>90 hari</b> sejak tanggal profil dibuat."
+      },
+      "update": {
+        "when": "Hingga hari 90",
+        "body": "Kandidat dapat memperbarui informasi profil mereka selama periode ini."
+      },
+      "removed": {
+        "when": "Setelah hari 90",
+        "body": "Setelah periode 90 hari berakhir, profil kandidat dapat dihapus secara permanen dari pool kandidat aktif LetsHyre."
+      },
+      "again": {
+        "when": "Kapan saja setelahnya",
+        "body": "Kandidat yang ingin terus menggunakan LetsHyre setelah profil mereka dihapus dapat membuat profil baru, sesuai dengan kebijakan dan ketentuan platform."
+      }
     }
   },
   "facts": {
@@ -88,7 +90,7 @@
     "aiInterviews": "Wawancara AI berbasis peran",
     "payPerUnlock": "Bayar hanya saat membuka",
     "activeProfiles": "Profil aktif 90 hari",
-    "languages": "Tersedia dalam 19 bahasa"
+    "languages": "Tersedia dalam {{total}} bahasa"
   },
   "disclaimer": {
     "title": "Sangkalan",
@@ -97,8 +99,7 @@
   "cta": {
     "title": "Siap untuk Merekrut atau Direkrut?",
     "description": "Pasang lowongan dan dapatkan kandidat yang sudah dinilai, atau ikuti satu wawancara dan tampil di depan perusahaan yang sedang merekrut.",
-    "startHiring": "Mulai Merekrut",
-    "applyJob": "Lamar Pekerjaan"
+    "startHiring": "Mulai Merekrut"
   },
   "meta": {
     "title": "Tentang Kami | letshyre.ai",

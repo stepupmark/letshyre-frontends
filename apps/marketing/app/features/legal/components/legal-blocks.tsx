@@ -50,10 +50,7 @@ export function LegalBlocks({
             <p>{block.intro}</p>
             <p>
               {block.emailLabel}{" "}
-              <a
-                href={`mailto:${SITE.email}`}
-                className="font-medium text-primary underline underline-offset-4"
-              >
+              <a href={`mailto:${SITE.email}`} className="text-link">
                 {SITE.email}
               </a>
             </p>

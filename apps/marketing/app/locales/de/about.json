@@ -1,10 +1,10 @@
 {
   "hero": {
-    "title": "Recruiting neu definiert mit<br/><hl>KI-gestützten Interviews</hl>",
+    "title": "Recruiting neu definiert mit <hl>KI-gestützten Interviews</hl>",
     "description": "LetsHyre ist eine KI-gestützte Recruiting-Plattform, die Arbeitgebern hilft, erfahrene Fachkräfte, die aktiv nach neuen Karrierechancen suchen, zu entdecken, zu bewerten und mit ihnen in Kontakt zu treten."
   },
   "intro": {
-    "title": "Die Herausforderung<br/><hl>& unsere Lösung</hl>",
+    "title": "Die Herausforderung <hl>& unsere Lösung</hl>",
     "p1": "Traditionelle Einstellungsprozesse erfordern oft erheblichen Zeit- und Arbeitsaufwand, um Lebensläufe zu prüfen, Interviews zu führen und die passenden Kandidaten zu identifizieren. LetsHyre optimiert diesen Prozess durch intelligentes Kandidaten-Screening, KI-gestützte rollenbasierte Interviews, Interview-Scorecards und transparente Kandidatenbewertung.",
     "p2": "Unsere Plattform ermöglicht es Arbeitgebern, Kandidatenprofile, Interview-Scorecards, Interviewaufzeichnungen und Kontaktinformationen über ein einfaches Pay-per-Unlock-Modell freizuschalten."
   },
@@ -22,21 +22,15 @@
     "employersLink": "Mit dem Recruiting beginnen",
     "employerPoints": [
       "Zugang zu erfahrenen Fachkräften, die aktiv nach Möglichkeiten suchen",
-      "Sofort verfügbare Kandidaten und Kandidaten in der Kündigungsfrist entdecken",
       "KI-gestützte rollenbasierte Interviews durchführen",
       "Interview-Scorecards und Erkenntnisse einsehen",
-      "Interviewaufzeichnungen ansehen",
-      "Aufwand und Zeit für das Screening reduzieren",
-      "Zugang zu transparenten Kandidateninformationen",
       "Nur für die Kandidatenprofile bezahlen, die Sie freischalten möchten"
     ],
     "candidatesHeading": "Für Kandidaten",
     "candidatesLink": "Profil erstellen",
     "candidatePoints": [
       "Ein professionelles Profil erstellen",
-      "Fähigkeiten und Erfahrungen präsentieren",
       "An KI-gestützten rollenbasierten Interviews teilnehmen",
-      "Profilsichtbarkeit verbessern",
       "Chancen erhöhen, von Arbeitgebern entdeckt zu werden",
       "Mit Unternehmen in Kontakt treten, die erfahrene Fachkräfte suchen"
     ]
@@ -72,15 +66,23 @@
   },
   "profileDuration": {
     "title": "Dauer der Profilaktivität",
-    "p1": "Um einen hochwertigen und aktiv verfügbaren Talentpool zu erhalten, bleiben Kandidatenprofile ab dem Datum der Profilerstellung bis zu <b>90 Tage</b> auf der Plattform aktiv.",
-    "p2": "Kandidaten können ihre Profilinformationen innerhalb dieses Zeitraums aktualisieren.",
-    "p3": "Nach Ablauf der 90-Tage-Frist können Kandidatenprofile dauerhaft aus dem aktiven LetsHyre-Kandidatenpool entfernt werden.",
-    "p4": "Kandidaten, die LetsHyre nach der Profilentfernung weiterhin nutzen möchten, können ein neues Profil erstellen, vorbehaltlich der Richtlinien und Anforderungen der Plattform.",
-    "steps": {
-      "live": "Tag 1",
-      "update": "Bis Tag 90",
-      "removed": "Nach Tag 90",
-      "again": "Jederzeit danach"
+    "stages": {
+      "live": {
+        "when": "Tag 1",
+        "body": "Um einen hochwertigen und aktiv verfügbaren Talentpool zu erhalten, bleiben Kandidatenprofile ab dem Datum der Profilerstellung bis zu <b>90 Tage</b> auf der Plattform aktiv."
+      },
+      "update": {
+        "when": "Bis Tag 90",
+        "body": "Kandidaten können ihre Profilinformationen innerhalb dieses Zeitraums aktualisieren."
+      },
+      "removed": {
+        "when": "Nach Tag 90",
+        "body": "Nach Ablauf der 90-Tage-Frist können Kandidatenprofile dauerhaft aus dem aktiven LetsHyre-Kandidatenpool entfernt werden."
+      },
+      "again": {
+        "when": "Jederzeit danach",
+        "body": "Kandidaten, die LetsHyre nach der Profilentfernung weiterhin nutzen möchten, können ein neues Profil erstellen, vorbehaltlich der Richtlinien und Anforderungen der Plattform."
+      }
     }
   },
   "facts": {
@@ -88,7 +90,7 @@
     "aiInterviews": "Rollenbasierte KI-Interviews",
     "payPerUnlock": "Zahlung nur pro Freischaltung",
     "activeProfiles": "Profile 90 Tage aktiv",
-    "languages": "In 19 Sprachen verfügbar"
+    "languages": "In {{total}} Sprachen verfügbar"
   },
   "disclaimer": {
     "title": "Haftungsausschluss",
@@ -97,8 +99,7 @@
   "cta": {
     "title": "Bereit einzustellen oder eingestellt zu werden?",
     "description": "Schreiben Sie eine Stelle aus und erhalten Sie bewertete Kandidaten, oder führen Sie ein Interview und werden Sie von Arbeitgebern gesehen, die jetzt einstellen.",
-    "startHiring": "Jetzt einstellen",
-    "applyJob": "Auf Job bewerben"
+    "startHiring": "Jetzt einstellen"
   },
   "meta": {
     "title": "Über uns | letshyre.ai",

@@ -1,42 +1,36 @@
 {
   "hero": {
-    "title": "Redefining Hiring with<br/><hl>AI-Powered Interviews</hl>",
+    "title": "Redefining hiring with <hl>AI-powered interviews</hl>",
     "description": "LetsHyre is an AI-powered hiring platform designed to help employers discover, evaluate, and connect with experienced professionals who are actively seeking new career opportunities."
   },
   "intro": {
-    "title": "The Challenge<br/><hl>& Our Solution</hl>",
+    "title": "The challenge <hl>and our solution</hl>",
     "p1": "Traditional hiring processes often require significant time and effort to screen resumes, conduct interviews, and identify the right candidates. LetsHyre streamlines this process through intelligent candidate screening, AI-powered role-based interviews, interview scorecards, and transparent candidate evaluation.",
     "p2": "Our platform enables employers to unlock candidate profiles, interview scorecards, interview recordings, and contact information through a simple Pay-Per-Unlock model."
   },
   "mission": {
-    "title": "Our Mission",
+    "title": "Our mission",
     "desc": "To simplify hiring by combining artificial intelligence with transparent candidate evaluation, helping employers discover qualified talent efficiently while providing experienced professionals with fair opportunities to showcase their capabilities."
   },
   "vision": {
-    "title": "Our Vision",
+    "title": "Our vision",
     "desc": "To become the most trusted AI-powered hiring marketplace for experienced professionals, enabling employers to make better hiring decisions and helping candidates connect with meaningful career opportunities."
   },
   "whatWeDo": {
     "title": "Who LetsHyre is for",
-    "employersHeading": "For Employers",
+    "employersHeading": "For employers",
     "employersLink": "Start hiring",
     "employerPoints": [
       "Access experienced professionals actively seeking opportunities",
-      "Discover immediate joiners and notice-period candidates",
       "Conduct AI-powered role-based interviews",
       "Review interview scorecards and insights",
-      "Watch interview recordings",
-      "Reduce hiring effort and screening time",
-      "Access transparent candidate information",
       "Pay only for the candidate profiles you choose to unlock"
     ],
-    "candidatesHeading": "For Candidates",
+    "candidatesHeading": "For candidates",
     "candidatesLink": "Create your profile",
     "candidatePoints": [
       "Create a professional profile",
-      "Showcase skills and experience",
       "Participate in AI-powered role-based interviews",
-      "Improve profile visibility",
       "Increase opportunities to be discovered by employers",
       "Connect with companies hiring experienced professionals"
     ]
@@ -45,23 +39,23 @@
     "heading": "Why LetsHyre?",
     "cards": {
       "aiPowered": {
-        "title": "AI-Powered Hiring",
+        "title": "AI-powered hiring",
         "desc": "Role-based AI interviews help employers evaluate candidates more efficiently."
       },
       "faster": {
-        "title": "Faster Hiring",
+        "title": "Faster hiring",
         "desc": "Reduce manual screening effort and accelerate hiring decisions."
       },
       "network": {
-        "title": "Experienced Talent Network",
+        "title": "Experienced talent network",
         "desc": "Connect with immediate joiners, notice-period professionals, and experienced candidates actively seeking opportunities."
       },
       "payPerUnlock": {
-        "title": "Pay-Per-Unlock Model",
+        "title": "Pay per unlock",
         "desc": "Pay only when you choose to unlock candidate information relevant to your hiring needs."
       },
       "transparency": {
-        "title": "Interview Transparency",
+        "title": "Interview transparency",
         "desc": "Structured interview scorecards and insights support informed hiring decisions."
       }
     },
@@ -71,16 +65,24 @@
     }
   },
   "profileDuration": {
-    "title": "Profile Activity Duration",
-    "p1": "To maintain a high-quality and actively available talent pool, candidate profiles remain active on the platform for up to <b>90 days</b> from the date of profile creation.",
-    "p2": "Candidates may update their profile information during this period.",
-    "p3": "After the 90-day period expires, candidate profiles may be permanently removed from the active LetsHyre candidate pool.",
-    "p4": "Candidates who wish to continue using LetsHyre after profile removal may create a new profile, subject to the platform's policies and requirements.",
-    "steps": {
-      "live": "Day 1",
-      "update": "Up to day 90",
-      "removed": "After day 90",
-      "again": "Any time after"
+    "title": "How long a profile stays active",
+    "stages": {
+      "live": {
+        "when": "Day 1",
+        "body": "To maintain a high-quality and actively available talent pool, candidate profiles remain active on the platform for up to <b>90 days</b> from the date of profile creation."
+      },
+      "update": {
+        "when": "Up to day 90",
+        "body": "Candidates may update their profile information during this period."
+      },
+      "removed": {
+        "when": "After day 90",
+        "body": "After the 90-day period expires, candidate profiles may be permanently removed from the active LetsHyre candidate pool."
+      },
+      "again": {
+        "when": "Any time after",
+        "body": "Candidates who wish to continue using LetsHyre after profile removal may create a new profile, subject to the platform's policies and requirements."
+      }
     }
   },
   "facts": {
@@ -88,20 +90,19 @@
     "aiInterviews": "Role-based AI interviews",
     "payPerUnlock": "Pay only per unlock",
     "activeProfiles": "90-day active profiles",
-    "languages": "Available in 19 languages"
+    "languages": "Available in {{total}} languages"
   },
   "disclaimer": {
     "title": "Disclaimer",
     "body": "LetsHyre provides AI-assisted interview and candidate screening services. AI-generated scorecards and insights are intended to support hiring decisions and should not be considered the sole basis for employment decisions. Final hiring decisions remain the responsibility of employers."
   },
   "cta": {
-    "title": "Ready to Hire or Get Hired?",
+    "title": "Ready to hire or get hired?",
     "description": "Post a role and get scored candidates, or take one interview and get in front of employers who are hiring now.",
-    "startHiring": "Start Hiring",
-    "applyJob": "Apply for Job"
+    "startHiring": "Start hiring"
   },
   "meta": {
-    "title": "About Us | letshyre.ai",
+    "title": "About LetsHyre: AI interviews for hiring | letshyre.ai",
     "description": "How LetsHyre approaches AI interviewing: automated screening, role-based questions, and verified scorecards for hiring teams.",
     "name": "About LetsHyre",
     "schemaDescription": "How LetsHyre uses AI to automate screening, interviews, and candidate verification.",

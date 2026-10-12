@@ -1,25 +1,21 @@
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import {
-  BrainCircuitIcon,
-  ClipboardCheckIcon,
-  LockOpenIcon,
-  TimerIcon,
-  UsersIcon,
-} from "lucide-react"
+import { cn } from "@workspace/ui/lib/utils"
 import { useId } from "react"
 import { Link } from "react-router"
 
 import { Section, SectionHeader } from "@/components/section"
 import { PAGES } from "@/lib/pages"
 
-const REASONS = [
-  { id: "aiPowered", icon: BrainCircuitIcon, link: "interview" },
-  { id: "faster", icon: TimerIcon },
-  { id: "network", icon: UsersIcon },
-  { id: "payPerUnlock", icon: LockOpenIcon, link: "pricing" },
-  { id: "transparency", icon: ClipboardCheckIcon },
-] as const
+import { type ReasonId, WhyArt } from "./art/why-art"
+
+const REASONS: { id: ReasonId; link?: "interview" | "pricing" }[] = [
+  { id: "aiPowered", link: "interview" },
+  { id: "faster" },
+  { id: "network" },
+  { id: "payPerUnlock", link: "pricing" },
+  { id: "transparency" },
+]
 
 export function WhyLetsHyre() {
   const { t } = useTranslation("about")
@@ -27,29 +23,33 @@ export function WhyLetsHyre() {
   const headingId = useId()
 
   return (
-    <Section aria-labelledby={headingId} className="border-t py-12 sm:py-16">
+    <Section aria-labelledby={headingId} className="border-t py-14 sm:py-20">
       <SectionHeader id={headingId} title={t("why.heading")} />
-      <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {REASONS.map((reason) => (
+      <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-6">
+        {REASONS.map(({ id, link }, i) => (
           <li
-            key={reason.id}
-            className="flex flex-col gap-2 rounded-xl border p-5 sm:p-6 sm:first:col-span-2"
+            key={id}
+            className={cn(
+              "group/reason reveal flex flex-col gap-2 rounded-2xl border p-5 transition-colors duration-300 hover:border-brand/40 sm:p-6",
+              i < 3 ? "lg:col-span-2" : "lg:col-span-3",
+              i === 0 && "max-lg:sm:col-span-2"
+            )}
           >
-            <span className="mb-1 flex size-9 items-center justify-center rounded-lg bg-brand/10 text-brand">
-              <reason.icon aria-hidden className="size-5" />
-            </span>
-            <h3 className="text-lg font-semibold">
-              {t(`why.cards.${reason.id}.title`)}
+            <div className="mb-3">
+              <WhyArt id={id} />
+            </div>
+            <h3 className="text-lg font-semibold tracking-tight">
+              {t(`why.cards.${id}.title`)}
             </h3>
             <p className="text-pretty text-muted-foreground">
-              {t(`why.cards.${reason.id}.desc`)}
+              {t(`why.cards.${id}.desc`)}
             </p>
-            {"link" in reason && (
+            {link && (
               <Link
-                to={localePath(lang, PAGES[reason.link].path)}
-                className="mt-auto w-fit rounded-sm pt-1 text-sm font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
+                to={localePath(lang, PAGES[link].path)}
+                className="more-link mt-auto w-fit pt-2 text-sm"
               >
-                {t(`why.links.${reason.link}`)}
+                {t(`why.links.${link}`)}
               </Link>
             )}
           </li>

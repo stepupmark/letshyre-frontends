@@ -7,6 +7,7 @@ import { APP_LINKS } from "@/lib/app-links"
 
 import { AboutFacts } from "./components/about-facts"
 import { AboutIntro } from "./components/about-intro"
+import { HireFlow } from "./components/art/hire-flow"
 import { Audiences } from "./components/audiences"
 import { ProfileDuration } from "./components/profile-duration"
 import { WhyLetsHyre } from "./components/why-letshyre"
@@ -20,6 +21,7 @@ export function AboutPage() {
         eyebrow={t("meta.crumb")}
         title={<Trans t={t} i18nKey="hero.title" components={HIGHLIGHT} />}
         description={t("hero.description")}
+        art={<HireFlow />}
       >
         <AboutFacts />
       </PageHeader>
@@ -35,7 +37,7 @@ export function AboutPage() {
           href: APP_LINKS.employerRegister,
         }}
         secondary={{
-          label: t("cta.applyJob"),
+          label: t("whatWeDo.candidatesLink"),
           href: APP_LINKS.candidateRegister,
         }}
       />

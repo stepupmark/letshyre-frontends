@@ -1,19 +1,12 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { ChevronDownIcon } from "lucide-react"
 
-import { useActiveSection } from "../hooks/use-active-section"
 import {
   PHASES,
   PRIVACY_ANCHOR,
   REQUIREMENTS_ANCHOR,
   STEP_ANCHORS,
 } from "../lib/sections"
-
-const ANCHORS = [
-  REQUIREMENTS_ANCHOR,
-  ...PHASES.flatMap((phase) => phase.steps.map((id) => STEP_ANCHORS[id])),
-  PRIVACY_ANCHOR,
-]
 
 function TocLink({
   anchor,
@@ -70,9 +63,8 @@ function TocLinks({ active }: { active?: string }) {
   )
 }
 
-export function InterviewToc() {
+export function InterviewToc({ active }: { active?: string }) {
   const { t } = useTranslation("interview")
-  const active = useActiveSection(ANCHORS)
   const label = t("toc.label")
 
   return (

@@ -62,10 +62,7 @@ export function NextStep() {
   return (
     <p className="rise text-sm text-muted-foreground">
       {t("next.body")}{" "}
-      <a
-        href="#install"
-        className="font-medium text-primary underline underline-offset-4"
-      >
+      <a href="#install" className="text-link">
         {t("next.link")}
       </a>
     </p>

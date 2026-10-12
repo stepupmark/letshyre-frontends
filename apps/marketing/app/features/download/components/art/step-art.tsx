@@ -1,7 +1,7 @@
 import { cn } from "@workspace/ui/lib/utils"
 import { ArrowDown, FileDown, MousePointer2 } from "lucide-react"
 
-import { Line, Tick } from "./svg"
+import { Line, Tick } from "@/components/art/svg"
 
 export type StepId = "download" | "install" | "interview"
 

@@ -1,7 +1,7 @@
 import { Camera, Mic, MonitorUp, ShieldCheck } from "lucide-react"
 
-import { wait } from "./delay"
-import { IconDot, Line, Tick } from "./svg"
+import { wait } from "@/components/art/delay"
+import { IconDot, Line, Tick } from "@/components/art/svg"
 
 const CHECKS = [Camera, Mic, MonitorUp, ShieldCheck]
 const LEVELS = [10, 20, 14, 24, 12]

@@ -64,17 +64,18 @@ export function Tick({
   cy,
   r,
   delay,
-  className,
+  className = "pop",
 }: {
   cx: number
   cy: number
   r: number
   delay?: number
+  /** `pop` on load by default; pass `pop-in` to pop as it scrolls into view. */
   className?: string
 }) {
   const size = r * 1.1
   return (
-    <g className={cn("pop", className)} style={wait(delay)}>
+    <g className={className} style={wait(delay)}>
       <circle cx={cx} cy={cy} r={r} className="fill-primary" />
       <Check
         x={cx - size / 2}

@@ -1,10 +1,10 @@
 {
   "hero": {
-    "title": "Werving opnieuw definiëren met<br/><hl>AI-aangedreven sollicitatiegesprekken</hl>",
+    "title": "Werving opnieuw definiëren met <hl>AI-aangedreven sollicitatiegesprekken</hl>",
     "description": "LetsHyre is een AI-aangedreven wervingsplatform ontworpen om werkgevers te helpen ervaren professionals te ontdekken, evalueren en verbinden die actief op zoek zijn naar nieuwe carrièremogelijkheden."
   },
   "intro": {
-    "title": "De uitdaging<br/><hl>& onze oplossing</hl>",
+    "title": "De uitdaging <hl>& onze oplossing</hl>",
     "p1": "Traditionele wervingsprocessen vereisen vaak aanzienlijke tijd en moeite om cv's te screenen, interviews te houden en de juiste kandidaten te identificeren. LetsHyre stroomlijnt dit proces via intelligente kandidaatsscreening, AI-aangedreven rolgebaseerde interviews, interview scorecards en transparante kandidaatsevaluatie.",
     "p2": "Ons platform stelt werkgevers in staat kandidaatsprofielen, interview scorecards, interviewopnames en contactinformatie te ontgrendelen via een eenvoudig Pay-Per-Unlock model."
   },
@@ -22,21 +22,15 @@
     "employersLink": "Begin met werven",
     "employerPoints": [
       "Toegang tot ervaren professionals die actief op zoek zijn naar mogelijkheden",
-      "Ontdek directe toetreders en kandidaten met opzegtermijn",
       "Voer AI-aangedreven rolgebaseerde interviews uit",
       "Bekijk interview scorecards en inzichten",
-      "Bekijk interviewopnames",
-      "Verminder wervingsinspanning en screeningstijd",
-      "Toegang tot transparante kandidaatsinformatie",
       "Betaal alleen voor de kandidaatsprofielen die u kiest te ontgrendelen"
     ],
     "candidatesHeading": "Voor kandidaten",
     "candidatesLink": "Maak je profiel",
     "candidatePoints": [
       "Maak een professioneel profiel aan",
-      "Toon vaardigheden en ervaring",
       "Neem deel aan AI-aangedreven rolgebaseerde interviews",
-      "Verbeter profielzichtbaarheid",
       "Vergroot kansen om ontdekt te worden door werkgevers",
       "Verbind met bedrijven die ervaren professionals inhuren"
     ]
@@ -72,15 +66,23 @@
   },
   "profileDuration": {
     "title": "Duur profielactiviteit",
-    "p1": "Om een hoogwaardige en actief beschikbare talentenpool te onderhouden, blijven kandidaatsprofielen actief op het platform tot <b>90 dagen</b> vanaf de aanmaakdatum van het profiel.",
-    "p2": "Kandidaten kunnen hun profielinformatie tijdens deze periode bijwerken.",
-    "p3": "Na het verlopen van de 90-dagenperiode kunnen kandidaatsprofielen permanent worden verwijderd uit de actieve LetsHyre kandidaatspool.",
-    "p4": "Kandidaten die LetsHyre willen blijven gebruiken na profielverwijdering kunnen een nieuw profiel aanmaken, onderhevig aan het beleid en de vereisten van het platform.",
-    "steps": {
-      "live": "Dag 1",
-      "update": "Tot dag 90",
-      "removed": "Na dag 90",
-      "again": "Op elk moment daarna"
+    "stages": {
+      "live": {
+        "when": "Dag 1",
+        "body": "Om een hoogwaardige en actief beschikbare talentenpool te onderhouden, blijven kandidaatsprofielen actief op het platform tot <b>90 dagen</b> vanaf de aanmaakdatum van het profiel."
+      },
+      "update": {
+        "when": "Tot dag 90",
+        "body": "Kandidaten kunnen hun profielinformatie tijdens deze periode bijwerken."
+      },
+      "removed": {
+        "when": "Na dag 90",
+        "body": "Na het verlopen van de 90-dagenperiode kunnen kandidaatsprofielen permanent worden verwijderd uit de actieve LetsHyre kandidaatspool."
+      },
+      "again": {
+        "when": "Op elk moment daarna",
+        "body": "Kandidaten die LetsHyre willen blijven gebruiken na profielverwijdering kunnen een nieuw profiel aanmaken, onderhevig aan het beleid en de vereisten van het platform."
+      }
     }
   },
   "facts": {
@@ -88,7 +90,7 @@
     "aiInterviews": "Rolgerichte AI-interviews",
     "payPerUnlock": "Betaal alleen per ontgrendeling",
     "activeProfiles": "Profielen 90 dagen actief",
-    "languages": "Beschikbaar in 19 talen"
+    "languages": "Beschikbaar in {{total}} talen"
   },
   "disclaimer": {
     "title": "Disclaimer",
@@ -97,8 +99,7 @@
   "cta": {
     "title": "Klaar om aan te nemen of aangenomen te worden?",
     "description": "Plaats een vacature en ontvang beoordeelde kandidaten, of doe één interview en word gezien door werkgevers die nu aannemen.",
-    "startHiring": "Begin met aanwerven",
-    "applyJob": "Solliciteer op een baan"
+    "startHiring": "Begin met aanwerven"
   },
   "meta": {
     "title": "Over ons | letshyre.ai",

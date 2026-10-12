@@ -34,3 +34,10 @@ export const REQUIREMENTS = [
 
 export const REQUIREMENTS_ANCHOR = "before-you-start"
 export const PRIVACY_ANCHOR = "what-we-record"
+
+/** Everything the table of contents tracks, in page order. */
+export const ANCHORS = [
+  REQUIREMENTS_ANCHOR,
+  ...PHASES.flatMap((phase) => phase.steps.map((id) => STEP_ANCHORS[id])),
+  PRIVACY_ANCHOR,
+]

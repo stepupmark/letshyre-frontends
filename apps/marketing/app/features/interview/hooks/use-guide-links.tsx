@@ -11,17 +11,11 @@ export function useGuideLinks() {
   const lang = useLocale()
   return {
     dl: (
-      <Link
-        to={localePath(lang, PAGES.download.path)}
-        className="font-medium text-primary underline underline-offset-4"
-      />
+      <Link to={localePath(lang, PAGES.download.path)} className="text-link" />
     ),
     reg: <RegisterLink />,
     pp: (
-      <Link
-        to={localePath(lang, PAGES.privacy.path)}
-        className="font-medium text-primary underline underline-offset-4"
-      />
+      <Link to={localePath(lang, PAGES.privacy.path)} className="text-link" />
     ),
   }
 }

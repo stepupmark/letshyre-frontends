@@ -1,118 +1,135 @@
 import { Trans, useFormat, useTranslation } from "@workspace/i18n/react"
-import {
-  BriefcaseIcon,
-  DownloadIcon,
-  KeyRoundIcon,
-  LayoutDashboardIcon,
-  LightbulbIcon,
-  LogInIcon,
-  PlayIcon,
-  ScanFaceIcon,
-  ShieldCheckIcon,
-} from "lucide-react"
+import { cn } from "@workspace/ui/lib/utils"
+import { LightbulbIcon } from "lucide-react"
 
 import { useGuideLinks } from "../hooks/use-guide-links"
 import {
   hasTip,
   PHASES,
+  PRIVACY_ANCHOR,
   STEP_ANCHORS,
   type StepId,
   type TipStepId,
 } from "../lib/sections"
+import { StepScreen } from "./art/step-screens"
 
-const ICONS = {
-  download: DownloadIcon,
-  signIn: LogInIcon,
-  dashboard: LayoutDashboardIcon,
-  clearEnv: ShieldCheckIcon,
-  permissions: KeyRoundIcon,
-  verifyId: ScanFaceIcon,
-  chooseRole: BriefcaseIcon,
-  begin: PlayIcon,
-} as const satisfies Record<StepId, unknown>
+const STEPS = PHASES.flatMap((phase) => phase.steps)
 
 // numbering runs on across phases
 const PHASE_START = PHASES.map((_, i) =>
-  PHASES.slice(0, i).reduce((count, phase) => count + phase.steps.length, 1)
+  PHASES.slice(0, i).reduce((count, phase) => count + phase.steps.length, 0)
 )
+
+/** Index of the step being read; past the last one once the reader reaches the privacy note. */
+function readingIndex(active?: string) {
+  if (active === PRIVACY_ANCHOR) return STEPS.length
+  return STEPS.findIndex((id) => STEP_ANCHORS[id] === active)
+}
 
 function Tip({ id }: { id: TipStepId }) {
   const { t } = useTranslation("interview")
 
   return (
-    <div className="flex max-w-2xl items-start gap-3 rounded-lg bg-brand/10 px-4 py-3 text-sm">
+    <div className="flex max-w-xl items-start gap-3 rounded-xl bg-brand-muted/60 px-4 py-3 text-sm">
       <LightbulbIcon
         aria-hidden
-        className="mt-0.5 size-4 shrink-0 text-brand"
+        className="mt-0.5 size-4 shrink-0 text-brand-text"
       />
       <p>
-        <strong className="block font-semibold">{t("tip")}</strong>
+        <strong className="me-1.5 font-semibold">{t("tip")}</strong>
         {t(`steps.${id}.tip`)}
       </p>
     </div>
   )
 }
 
-export function InterviewSteps() {
+export function InterviewSteps({ active }: { active?: string }) {
   const { t } = useTranslation("interview")
   const format = useFormat()
   const links = useGuideLinks()
+  const reading = readingIndex(active)
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-14">
       {PHASES.map((phase, p) => {
-        const start = PHASE_START[p] ?? 1
+        const start = PHASE_START[p] ?? 0
         const steps: readonly StepId[] = phase.steps
 
         return (
           <section key={phase.id} aria-labelledby={`phase-${phase.id}`}>
             <h2
               id={`phase-${phase.id}`}
-              className="text-2xl font-semibold tracking-tight text-brand"
+              className="text-2xl font-semibold tracking-tight"
             >
               {t(`phases.${phase.id}`)}
             </h2>
-            <ol start={start} className="mt-6 flex flex-col">
+            <ol start={start + 1} className="mt-8 flex flex-col">
               {steps.map((id, i) => {
-                const Icon = ICONS[id]
+                const index = start + i
+                const done = index < reading
+                const current = index === reading
                 const last = i === steps.length - 1
 
                 return (
                   <li
                     key={id}
                     id={STEP_ANCHORS[id]}
-                    className="flex scroll-mt-24 gap-4 sm:gap-5"
+                    className="group/step flex scroll-mt-24 gap-4 sm:gap-6"
                   >
                     <div aria-hidden className="flex flex-col items-center">
-                      <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground tabular-nums">
-                        {format.number(start + i)}
+                      <span
+                        className={cn(
+                          "grid size-9 shrink-0 place-items-center rounded-full border text-sm font-semibold tabular-nums transition-colors duration-300",
+                          current &&
+                            "border-transparent bg-primary text-primary-foreground ring-4 ring-brand/15",
+                          done &&
+                            "border-transparent bg-brand-muted text-brand-text"
+                        )}
+                      >
+                        {format.number(index + 1)}
                       </span>
                       {!last && (
-                        <span className="mt-2 w-px flex-1 bg-brand/25" />
+                        <span className="relative mt-2 w-px flex-1 bg-border">
+                          <span
+                            className={cn(
+                              "absolute inset-0 origin-top bg-brand/60 transition-[scale] duration-500 ease-out motion-reduce:transition-none",
+                              done ? "scale-y-100" : "scale-y-0"
+                            )}
+                          />
+                        </span>
                       )}
                     </div>
                     <div
-                      className={
-                        last
-                          ? "flex min-w-0 flex-col gap-2"
-                          : "flex min-w-0 flex-col gap-2 pb-8"
-                      }
+                      className={cn(
+                        "grid min-w-0 flex-1 gap-5 md:grid-cols-[minmax(0,1fr)_15rem] md:gap-8",
+                        !last && "pb-12"
+                      )}
                     >
-                      <h3 className="flex items-center gap-2 pt-0.5 text-lg font-semibold tracking-tight">
-                        <Icon
-                          aria-hidden
-                          className="size-5 shrink-0 text-brand"
-                        />
-                        {t(`steps.${id}.title`)}
-                      </h3>
-                      <p className="max-w-2xl text-pretty text-muted-foreground">
-                        <Trans
-                          t={t}
-                          i18nKey={`steps.${id}.desc`}
-                          components={links}
-                        />
-                      </p>
-                      {hasTip(id) && <Tip id={id} />}
+                      <div className="flex flex-col gap-2 pt-1">
+                        <h3 className="text-lg font-semibold tracking-tight">
+                          {t(`steps.${id}.title`)}
+                        </h3>
+                        <p className="max-w-xl text-pretty text-muted-foreground">
+                          <Trans
+                            t={t}
+                            i18nKey={`steps.${id}.desc`}
+                            components={links}
+                          />
+                        </p>
+                        {hasTip(id) && (
+                          <div className="mt-2">
+                            <Tip id={id} />
+                          </div>
+                        )}
+                      </div>
+                      <div
+                        className={cn(
+                          "max-w-80 self-start rounded-2xl border bg-muted/40 p-3 transition-colors duration-300 group-hover/step:border-brand/40",
+                          current && "border-brand/40"
+                        )}
+                      >
+                        <StepScreen step={id} />
+                      </div>
                     </div>
                   </li>
                 )

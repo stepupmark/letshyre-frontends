@@ -29,7 +29,7 @@ import { SITE } from "@/lib/seo/site"
 
 import { LegalBlocks } from "./components/legal-blocks"
 import { LegalToc } from "./components/legal-toc"
-import { useActiveSection } from "./hooks/use-active-section"
+import { useActiveSection } from "@/hooks/use-active-section"
 import {
   buildToc,
   LEGAL_DOCS,
@@ -118,7 +118,7 @@ export function LegalPage({ ns }: { ns: LegalNamespace }) {
                       to={localePath("en", path)}
                       lang="en"
                       hrefLang="en"
-                      className="font-medium text-primary underline underline-offset-4"
+                      className="text-link"
                     />
                   ),
                 }}
@@ -175,7 +175,7 @@ export function LegalPage({ ns }: { ns: LegalNamespace }) {
               <p className="text-sm">{tc("support.body")}</p>
               <a
                 href={`mailto:${SITE.email}`}
-                className="inline-flex w-fit items-center gap-1.5 rounded-sm text-sm font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
+                className="more-link inline-flex w-fit items-center gap-1.5 text-sm"
               >
                 <MailIcon aria-hidden className="size-4" />
                 {SITE.email}
@@ -204,7 +204,7 @@ export function LegalPage({ ns }: { ns: LegalNamespace }) {
                 <li key={r.ns}>
                   <Link
                     to={localePath(lang, r.page.path)}
-                    className="rounded-sm font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
+                    className="more-link"
                   >
                     {tc(r.label)}
                   </Link>

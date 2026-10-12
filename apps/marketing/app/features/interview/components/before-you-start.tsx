@@ -1,7 +1,8 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { Card } from "@workspace/ui/components/card"
+import { cn } from "@workspace/ui/lib/utils"
 import {
   CameraIcon,
+  CheckIcon,
   LampDeskIcon,
   LaptopIcon,
   MicIcon,
@@ -29,31 +30,42 @@ export function BeforeYouStart() {
     <Section
       id={REQUIREMENTS_ANCHOR}
       aria-labelledby={titleId}
-      className="scroll-mt-16 border-b py-10 sm:py-12"
+      className="scroll-mt-24 border-b py-12 sm:py-16"
     >
       <SectionHeader
         id={titleId}
-        title={<span className="text-brand">{t("requirements.title")}</span>}
+        title={t("requirements.title")}
         description={t("requirements.description")}
       />
-      <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-        {REQUIREMENTS.map((id) => {
+      <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+        {REQUIREMENTS.map((id, i) => {
           const Icon = ICONS[id]
           return (
-            <li key={id}>
-              <Card className="h-full flex-row items-start gap-3 p-4 sm:flex-col">
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-brand/10 text-brand">
-                  <Icon aria-hidden className="size-5" />
+            <li
+              key={id}
+              className={cn(
+                "reveal flex gap-4 rounded-2xl border p-5",
+                i < 3 ? "lg:col-span-2" : "lg:col-span-3",
+                i === REQUIREMENTS.length - 1 && "sm:max-lg:col-span-2"
+              )}
+            >
+              <span className="relative grid size-10 shrink-0 place-items-center rounded-xl bg-brand-muted text-brand-text">
+                <Icon aria-hidden className="size-5" />
+                <span
+                  aria-hidden
+                  className="pop-in absolute -inset-e-1.5 -top-1.5 grid size-5 place-items-center rounded-full bg-primary text-primary-foreground ring-2 ring-background"
+                >
+                  <CheckIcon className="size-3" strokeWidth={3} />
                 </span>
-                <div className="flex flex-col gap-1 sm:gap-2">
-                  <h3 className="font-semibold">
-                    {t(`requirements.items.${id}.title`)}
-                  </h3>
-                  <p className="text-sm text-pretty text-muted-foreground">
-                    {t(`requirements.items.${id}.desc`)}
-                  </p>
-                </div>
-              </Card>
+              </span>
+              <div className="flex flex-col gap-1">
+                <h3 className="font-semibold tracking-tight">
+                  {t(`requirements.items.${id}.title`)}
+                </h3>
+                <p className="text-sm text-pretty text-muted-foreground">
+                  {t(`requirements.items.${id}.desc`)}
+                </p>
+              </div>
             </li>
           )
         })}

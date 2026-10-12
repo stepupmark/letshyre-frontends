@@ -87,7 +87,7 @@ export function InstallSteps() {
                           <Link
                             to={APP_LINKS.candidateSignIn}
                             reloadDocument
-                            className="font-medium text-primary underline underline-offset-4"
+                            className="text-link"
                           />
                         ),
                       }}
