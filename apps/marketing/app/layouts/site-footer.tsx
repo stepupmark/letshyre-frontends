@@ -86,6 +86,11 @@ export function SiteFooter() {
             <SocialLinks />
           </div>
         </div>
+
+        <div
+          aria-hidden
+          className="reveal aspect-1223/300 w-full bg-linear-to-b from-brand/80 to-brand/35 mask-[url(/footer-logo.webp)] mask-contain mask-center mask-no-repeat max-sm:-mt-4 dark:from-brand-text/75 dark:to-brand-text/30"
+        />
       </Container>
     </footer>
   )
