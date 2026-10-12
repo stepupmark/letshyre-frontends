@@ -1,2 +1,2 @@
-export { Applications } from "./applications"
-export { FindJobs } from "./find-jobs"
+export { Applications } from "./components/applications"
+export { FindJobs } from "./components/find-jobs"

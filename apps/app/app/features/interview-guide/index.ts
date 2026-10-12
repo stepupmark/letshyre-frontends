@@ -1,1 +1,1 @@
-export { InterviewGuide } from "./interview-guide"
+export { InterviewGuide } from "./components/interview-guide"

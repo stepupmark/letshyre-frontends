@@ -1,2 +1,2 @@
-export { matchesQuery } from "./api"
-export { MatchList } from "./match-list"
+export { MatchList } from "./components/match-list"
+export { matchesQuery } from "./queries/job-matches.queries"

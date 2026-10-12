@@ -2,6 +2,33 @@ import { fileURLToPath } from "node:url"
 
 import { reactRouterApp } from "@workspace/eslint-config/react-router-app"
 
+const MOTION = [
+  {
+    name: "framer-motion",
+    message: "Use motion/react-m inside LazyMotion.",
+  },
+  {
+    name: "motion/react",
+    importNames: ["motion"],
+    message: "Use m from motion/react-m; motion skips LazyMotion.",
+  },
+]
+
+// inside a feature, data and pure code never reach up into React
+const layer = (blocked) => [
+  "error",
+  {
+    paths: MOTION,
+    patterns: [
+      {
+        group: blocked.flatMap((dir) => [`../${dir}/*`, `../../${dir}/*`]),
+        message:
+          "Feature layers import downwards: components → hooks → queries/mutations → services → schemas/lib/types.",
+      },
+    ],
+  },
+]
+
 export default [
   ...reactRouterApp({
     tsconfigRootDir: import.meta.dirname,
@@ -10,23 +37,24 @@ export default [
     ),
   }),
   {
+    rules: { "no-restricted-imports": ["error", { paths: MOTION }] },
+  },
+  {
+    files: ["app/features/*/{queries,mutations}/**"],
+    rules: { "no-restricted-imports": layer(["components", "hooks"]) },
+  },
+  {
+    files: [
+      "app/features/*/{services,schemas,lib}/**",
+      "app/features/*/types.ts",
+    ],
     rules: {
-      "no-restricted-imports": [
-        "error",
-        {
-          paths: [
-            {
-              name: "framer-motion",
-              message: "Use motion/react-m inside LazyMotion.",
-            },
-            {
-              name: "motion/react",
-              importNames: ["motion"],
-              message: "Use m from motion/react-m; motion skips LazyMotion.",
-            },
-          ],
-        },
-      ],
+      "no-restricted-imports": layer([
+        "components",
+        "hooks",
+        "queries",
+        "mutations",
+      ]),
     },
   },
   {

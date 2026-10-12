@@ -1,2 +1,2 @@
-export { AssistantLauncher } from "./assistant-launcher"
-export { AssistantPanel } from "./assistant-panel"
+export { AssistantLauncher } from "./components/assistant-launcher"
+export { AssistantPanel } from "./components/assistant-panel"

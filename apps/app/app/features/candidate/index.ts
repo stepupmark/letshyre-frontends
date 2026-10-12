@@ -1,16 +1,17 @@
+export { LinkUnavailable } from "./components/link-unavailable"
+export { OwnProfile } from "./components/own-profile"
+export { CandidateProfileView } from "./components/profile-view"
+export { RecordState } from "./components/record-state"
+export { ReportSkeleton } from "./components/report-skeleton"
+export { ScorecardList } from "./components/scorecard-list"
+export { ScorecardView } from "./components/scorecard-view"
+export { ShareDialog } from "./components/share-dialog"
+export { SharedLinks } from "./components/shared-links"
+export { isRecordId } from "./lib/candidate"
+export { isShareId, shareProblem } from "./lib/shared-scorecard"
 export {
-  isRecordId,
   ownScorecardQuery,
   unlockedProfileQuery,
   unlockedScorecardQuery,
-} from "./api"
-export { LinkUnavailable } from "./link-unavailable"
-export { OwnProfile } from "./own-profile"
-export { CandidateProfileView } from "./profile-view"
-export { RecordState } from "./record-state"
-export { ReportSkeleton } from "./report-skeleton"
-export { ScorecardList } from "./scorecard-list"
-export { ScorecardView } from "./scorecard-view"
-export { ShareDialog } from "./share-dialog"
-export { SharedLinks } from "./shared-links"
-export { isShareId, sharedScorecardQuery, shareProblem } from "./shared-query"
+} from "./queries/candidate.queries"
+export { sharedScorecardQuery } from "./queries/shared-scorecard.queries"

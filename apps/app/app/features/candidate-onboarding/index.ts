@@ -1,2 +1,2 @@
-export { myProfileQuery } from "./api"
-export { CandidateOnboarding } from "./onboarding-form"
+export { CandidateOnboarding } from "./components/onboarding-form"
+export { myProfileQuery } from "./queries/candidate-onboarding.queries"

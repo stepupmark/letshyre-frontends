@@ -6,21 +6,30 @@ import type { z } from "zod"
 import {
   interviewsSchema,
   unlockedPageSchema,
-} from "@/features/candidate-unlock/api"
-import { invoicesPageSchema, quoteSchema } from "@/features/billing/api"
+} from "@/features/candidate-unlock/schemas/candidate-unlock.schema"
+import {
+  invoicesPageSchema,
+  quoteSchema,
+} from "@/features/billing/schemas/billing.schema"
 import {
   ownProfileSchema,
   profileSchema,
   scorecardListSchema,
-} from "@/features/candidate/api"
-import { sharedLinksPageSchema } from "@/features/candidate/share"
-import { companySchema } from "@/features/company-profile/api"
-import { membersSchema } from "@/features/team/api"
-import { scorecardSchema } from "@/features/candidate/scorecard-schema"
-import { cardsSchema, teamSchema } from "@/features/employer-dashboard/queries"
-import { jobSchema, jobsPageSchema } from "@/features/employer-jobs/api"
-import { matchesSchema } from "@/features/job-matches/api"
-import { jobsPageSchema as candidateJobsSchema } from "@/features/candidate-jobs/api"
+} from "@/features/candidate/schemas/candidate.schema"
+import { sharedLinksPageSchema } from "@/features/candidate/schemas/share.schema"
+import { companySchema } from "@/features/company-profile/schemas/company-profile.schema"
+import { membersSchema } from "@/features/team/schemas/team.schema"
+import { scorecardSchema } from "@/features/candidate/schemas/scorecard.schema"
+import {
+  cardsSchema,
+  teamSchema,
+} from "@/features/employer-dashboard/schemas/employer-dashboard.schema"
+import {
+  jobSchema,
+  jobsPageSchema,
+} from "@/features/employer-jobs/schemas/employer-jobs.schema"
+import { matchesSchema } from "@/features/job-matches/schemas/job-matches.schema"
+import { jobsPageSchema as candidateJobsSchema } from "@/features/candidate-jobs/schemas/candidate-jobs.schema"
 import { creditsSchema } from "@/lib/credits"
 import { industriesSchema } from "@/lib/industries"
 import { dataOf } from "@/lib/response"

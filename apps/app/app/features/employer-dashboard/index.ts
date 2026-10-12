@@ -1,1 +1,1 @@
-export { EmployerDashboard } from "./employer-dashboard"
+export { EmployerDashboard } from "./components/employer-dashboard"

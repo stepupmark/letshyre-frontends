@@ -1,2 +1,2 @@
-export { OnboardingForm } from "./onboarding-form"
-export { Submitted } from "./submitted"
+export { OnboardingForm } from "./components/onboarding-form"
+export { Submitted } from "./components/submitted"

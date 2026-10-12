@@ -1,1 +1,1 @@
-export { CompanyProfile } from "./company-profile"
+export { CompanyProfile } from "./components/company-profile"
