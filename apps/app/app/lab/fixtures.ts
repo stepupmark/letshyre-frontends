@@ -68,7 +68,7 @@ const daysAgo = (days: number) =>
 export const applicants: Applicant[] = [
   {
     id: 1,
-    name: "Ananya Rao",
+    name: "Vyshnavi Rao",
     role_applied: "Frontend Engineer at Finlytics",
     created_at: daysAgo(0.2),
     status: "new",
@@ -197,7 +197,7 @@ export const applicants: Applicant[] = [
 ]
 
 export const scorecard = {
-  candidate_name: "Ananya Rao",
+  candidate_name: "Vyshnavi Rao",
   candidate_role: "Senior React Developer",
   overall_score: 82,
   created_at: daysAgo(2),
