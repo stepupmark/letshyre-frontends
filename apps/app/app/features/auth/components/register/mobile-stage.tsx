@@ -21,7 +21,7 @@ import { z } from "zod"
 import { checkOnBlur } from "@/lib/forms"
 
 import { sendMobileCode, verifyMobileCode } from "../../services/auth.service"
-import { CodeTicket } from "../shared/code-ticket"
+import { CodeStep } from "../shared/code-step"
 import type { AuthErrorKey } from "../../lib/errors"
 import { FormAlert } from "../shared/form-alert"
 import { maskPhone } from "../../lib/mask"
@@ -136,7 +136,7 @@ export function MobileStage({
       </form>
 
       {sent && (
-        <CodeTicket
+        <CodeStep
           destination={maskPhone(phone)}
           sentAt={sentAt}
           onChangeDestination={onChangeNumber}

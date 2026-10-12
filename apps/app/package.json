@@ -16,8 +16,6 @@
   "dependencies": {
     "@base-ui/react": "catalog:",
     "@fontsource-variable/outfit": "catalog:",
-    "@fontsource/instrument-serif": "catalog:",
-    "@fontsource/ms-madi": "catalog:",
     "@hookform/resolvers": "catalog:",
     "@react-router/node": "catalog:",
     "@tanstack/react-query": "catalog:",
@@ -27,6 +25,7 @@
     "@workspace/blocks": "workspace:*",
     "@workspace/i18n": "workspace:*",
     "@workspace/ui": "workspace:*",
+    "input-otp": "^1.5.0",
     "isbot": "catalog:",
     "lucide-react": "catalog:",
     "motion": "^14.0.0",

@@ -42,6 +42,8 @@
     "menu": "Accountmenu",
     "profile": "Profiel",
     "language": "Taal",
+    "searchLanguage": "Taal zoeken",
+    "noLanguage": "Geen taal gevonden",
     "shortcuts": "Sneltoetsen",
     "signOut": "Uitloggen",
     "tips": "Tips opnieuw tonen"

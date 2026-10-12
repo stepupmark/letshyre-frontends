@@ -43,6 +43,8 @@
     "menu": "Menu da conta",
     "profile": "Perfil",
     "language": "Idioma",
+    "searchLanguage": "Pesquisar idioma",
+    "noLanguage": "Nenhum idioma encontrado",
     "shortcuts": "Atalhos de teclado",
     "signOut": "Sair",
     "tips": "Mostrar dicas de novo"

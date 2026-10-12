@@ -3,6 +3,7 @@ import { SkipLink } from "@workspace/blocks/skip-link"
 import { useTranslation } from "@workspace/i18n/react"
 import { Outlet } from "react-router"
 
+import { LanguagePicker } from "@/components/language-picker"
 import { namespaces } from "@/lib/i18n"
 
 export const clientMiddleware = [namespaces(["shell"])]
@@ -15,11 +16,12 @@ export default function PublicLayout() {
     <div className="flex min-h-svh flex-col">
       <SkipLink>{t("shell:skipToContent")}</SkipLink>
       <header className="border-b print:hidden">
-        <div className="mx-auto flex h-14 max-w-6xl items-center px-4 sm:px-6">
+        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
           {/* the marketing site, so a full page load */}
           <a href="/" className="rounded-sm">
             <Logo label={t("common:appName")} />
           </a>
+          <LanguagePicker />
         </div>
       </header>
       <main

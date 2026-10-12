@@ -41,6 +41,8 @@
     "menu": "계정 메뉴",
     "profile": "프로필",
     "language": "언어",
+    "searchLanguage": "언어 검색",
+    "noLanguage": "찾는 언어가 없습니다",
     "shortcuts": "키보드 단축키",
     "signOut": "로그아웃",
     "tips": "도움말 다시 보기"

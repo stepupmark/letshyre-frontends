@@ -41,6 +41,8 @@
     "menu": "Menu akun",
     "profile": "Profil",
     "language": "Bahasa",
+    "searchLanguage": "Cari bahasa",
+    "noLanguage": "Bahasa tidak ditemukan",
     "shortcuts": "Pintasan keyboard",
     "signOut": "Keluar",
     "tips": "Tampilkan tips lagi"

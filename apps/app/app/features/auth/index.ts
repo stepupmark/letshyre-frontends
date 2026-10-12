@@ -1,4 +1,4 @@
-export { AuthBand, AuthPanel } from "./components/art/auth-panels"
+export { AuthPanel } from "./components/art/auth-panels"
 export { ForgotFlow } from "./components/forgot/forgot-flow"
 export { RegisterFlow } from "./components/register/register-flow"
 export { ArrivalNotice } from "./components/shared/arrival-notice"

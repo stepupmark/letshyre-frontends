@@ -43,6 +43,8 @@
     "menu": "Menu du compte",
     "profile": "Profil",
     "language": "Langue",
+    "searchLanguage": "Rechercher une langue",
+    "noLanguage": "Aucune langue trouvée",
     "shortcuts": "Raccourcis clavier",
     "signOut": "Se déconnecter",
     "tips": "Revoir les astuces"

@@ -42,6 +42,8 @@
     "menu": "Kontomenü",
     "profile": "Profil",
     "language": "Sprache",
+    "searchLanguage": "Sprache suchen",
+    "noLanguage": "Keine Sprache gefunden",
     "shortcuts": "Tastenkürzel",
     "signOut": "Abmelden",
     "tips": "Tipps erneut anzeigen"

@@ -30,23 +30,44 @@ function readyLocales() {
 }
 
 // like import.meta.glob over the locales, but only the ones that ship, so
-// unreviewed catalogs stay out of the build and the loader map stays small
+// unreviewed catalogs stay out of the build; each locale's loaders sit in their
+// own chunk, so the initial bundle carries one import per locale, not per file
 function catalogs(locales: string[]): Plugin {
   const id = "virtual:app-catalogs"
+  const filesOf = (locale: string) =>
+    readdirSync(join(LOCALES_DIR, locale)).filter((file) =>
+      file.endsWith(".json")
+    )
+  const localeModule = (locale: string) => {
+    const entries = filesOf(locale).map((file) => {
+      const path = join(LOCALES_DIR, locale, file).replaceAll("\\", "/")
+      return `"${file}": () => import(${JSON.stringify(path)}).then((m) => m.default)`
+    })
+    return `export default {${entries.join(",")}}`
+  }
   return {
     name: "app-catalogs",
-    resolveId: (source) => (source === id ? `\0${id}` : undefined),
+    resolveId: (source) =>
+      source === id || source.startsWith(`${id}/`) ? `\0${source}` : undefined,
     load(resolved) {
+      if (resolved.startsWith(`\0${id}/`)) {
+        const locale = resolved.slice(id.length + 2)
+        return locales.includes(locale) ? localeModule(locale) : undefined
+      }
       if (resolved !== `\0${id}`) return
-      const entries = locales.flatMap((locale) =>
-        readdirSync(join(LOCALES_DIR, locale))
-          .filter((file) => file.endsWith(".json"))
-          .map((file) => {
-            const path = join(LOCALES_DIR, locale, file).replaceAll("\\", "/")
-            return `"${locale}/${file}": () => import(${JSON.stringify(path)}).then((m) => m.default)`
-          })
+      const loaders = locales.map(
+        (locale) => `"${locale}": () => import("${id}/${locale}")`
       )
-      return `export default {${entries.join(",")}}`
+      const files = locales.map(
+        (locale) => `"${locale}": ${JSON.stringify(filesOf(locale))}`
+      )
+      return `const loaders = {${loaders.join(",")}}
+const files = {${files.join(",")}}
+const map = {}
+for (const locale in loaders)
+  for (const file of files[locale])
+    map[locale + "/" + file] = () => loaders[locale]().then((m) => m.default[file]())
+export default map`
     },
   }
 }

@@ -104,7 +104,7 @@ function Stage({
             "absolute inset-s-[calc(-50%+1.25rem)] inset-e-[calc(50%+1.25rem)] top-3.5",
             state === "next"
               ? "border-t border-dashed border-border"
-              : "h-0.5 -translate-y-px rounded-full bg-brand"
+              : "grow-x h-0.5 -translate-y-px rounded-full bg-brand rtl:origin-right"
           )}
         />
       )}
@@ -113,12 +113,12 @@ function Stage({
           "flex size-7 items-center justify-center rounded-full text-xs font-medium tabular-nums transition-colors duration-300 motion-reduce:transition-none",
           state === "done" && "bg-primary text-primary-foreground",
           state === "current" &&
-            "bg-brand-muted text-brand-text ring-2 ring-brand",
+            "ring-once bg-brand-muted text-brand-text ring-2 ring-brand",
           state === "next" && "border bg-background text-muted-foreground"
         )}
       >
         {state === "done" ? (
-          <Check className="size-3.5" aria-hidden="true" />
+          <Check className="pop size-3.5" strokeWidth={3} aria-hidden="true" />
         ) : (
           number
         )}

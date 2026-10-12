@@ -41,6 +41,8 @@
     "menu": "アカウントメニュー",
     "profile": "プロフィール",
     "language": "言語",
+    "searchLanguage": "言語を検索",
+    "noLanguage": "該当する言語がありません",
     "shortcuts": "キーボードショートカット",
     "signOut": "ログアウト",
     "tips": "ヒントを再表示"

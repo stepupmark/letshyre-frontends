@@ -13,19 +13,17 @@ export function AuthHeading({
     <div className="flex flex-col gap-2">
       <h1
         tabIndex={-1}
-        className="font-display short:sm:text-[2.75rem] text-[2.5rem] leading-[1.05] tracking-tight text-balance outline-none sm:text-5xl"
+        className="text-[1.75rem]/tight font-semibold tracking-tight text-balance outline-none sm:text-[2rem]/tight"
       >
         {title}
         {accent && (
           <>
             {" "}
-            <em className="text-brand-text">{accent}</em>
+            <span className="text-brand-text">{accent}</span>
           </>
         )}
       </h1>
-      {lead && (
-        <p className="text-pretty text-muted-foreground sm:text-lg">{lead}</p>
-      )}
+      {lead && <p className="text-pretty text-muted-foreground">{lead}</p>}
     </div>
   )
 }

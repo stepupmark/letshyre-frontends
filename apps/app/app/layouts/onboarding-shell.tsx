@@ -5,6 +5,7 @@ import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import { Outlet } from "react-router"
 
+import { LanguagePicker } from "@/components/language-picker"
 import { SessionGate } from "@/features/auth"
 import { api } from "@/lib/api"
 
@@ -19,17 +20,20 @@ export function OnboardingShell() {
         <header className="border-b">
           <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-4 sm:px-6">
             <Logo label={t("common:appName")} />
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => {
-                void logout(api).then(() => {
-                  window.location.assign(PUBLIC_HOME)
-                })
-              }}
-            >
-              {t("shell:user.signOut")}
-            </Button>
+            <div className="flex items-center gap-1">
+              <LanguagePicker />
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => {
+                  void logout(api).then(() => {
+                    window.location.assign(PUBLIC_HOME)
+                  })
+                }}
+              >
+                {t("shell:user.signOut")}
+              </Button>
+            </div>
           </div>
         </header>
         <main

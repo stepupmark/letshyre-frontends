@@ -42,6 +42,8 @@
     "menu": "Account menu",
     "profile": "Profile",
     "language": "Language",
+    "searchLanguage": "Search languages",
+    "noLanguage": "No language found",
     "shortcuts": "Keyboard shortcuts",
     "signOut": "Sign out",
     "tips": "Show tips again"

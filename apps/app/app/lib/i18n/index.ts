@@ -47,8 +47,13 @@ export function loadCopy(ns: string) {
   return promise
 }
 
-/** Saves the choice for both apps and reloads, so every loaded namespace switches. */
-export function changeLocale(next: Locale) {
+/** Saves the choice for both apps. */
+export function rememberLocale(next: Locale) {
   writeLocaleCookie(next, { domain: env.VITE_COOKIE_DOMAIN })
+}
+
+/** Saves the choice and reloads, so every loaded namespace switches. */
+export function changeLocale(next: Locale) {
+  rememberLocale(next)
   window.location.reload()
 }

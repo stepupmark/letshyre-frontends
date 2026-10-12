@@ -36,9 +36,9 @@ export function RoleChoice({
             }
             state={state}
             viewTransition
-            className="group flex items-center gap-4 rounded-2xl border bg-card p-4 transition-colors hover:border-foreground/20 hover:bg-muted/50 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none sm:p-5"
+            className="group flex items-center gap-4 rounded-2xl border bg-card p-4 shadow-xs transition-[translate,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-5"
           >
-            <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-muted text-brand-text">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-muted text-brand-text transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none">
               <Icon className="size-5" aria-hidden="true" />
             </span>
             <span className="flex min-w-0 flex-1 flex-col gap-0.5">
@@ -63,7 +63,7 @@ export function RoleChoice({
               </span>
             </span>
             <ArrowRight
-              className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5"
+              className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground motion-reduce:transition-none rtl:-scale-x-100 rtl:group-hover:-translate-x-0.5"
               aria-hidden="true"
             />
           </Link>

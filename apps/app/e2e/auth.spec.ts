@@ -105,6 +105,7 @@ test("an employer registers, verifies email and mobile, and lands on onboarding"
   await page.getByRole("button", { name: "Continue" }).click()
 
   await expect(page.getByText("We sent it to p••••@acme.in.")).toBeVisible()
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
   await enterCode(page)
 
   await expect(
@@ -214,4 +215,15 @@ test("when the session ends, signing in again keeps the open page", async ({
   await expect(dialog).toBeHidden()
   await expect(page).toHaveURL("/employer/dashboard")
   await expect(page.getByRole("link", { name: "12 credits" })).toBeVisible()
+})
+
+test("the language picker switches the auth pages", async ({ page }) => {
+  await page.goto("/employer/sign-in")
+  await page.getByRole("button", { name: "Language: English" }).click()
+  await page.getByRole("link", { name: /Deutsch/ }).click()
+
+  await expect(
+    page.getByRole("heading", { name: "Willkommen zurück, Recruiting-Team" })
+  ).toBeVisible()
+  await expect(page).toHaveURL("/employer/sign-in")
 })

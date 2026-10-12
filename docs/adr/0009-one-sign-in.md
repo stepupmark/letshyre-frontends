@@ -1,6 +1,6 @@
 # 0009 · One sign-in page for both roles
 
-Accepted.
+Superseded by [0017](./0017-auth-screens.md).
 
 ## Context
 

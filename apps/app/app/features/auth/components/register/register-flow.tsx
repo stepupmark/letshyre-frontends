@@ -15,7 +15,7 @@ import {
 } from "../../services/auth.service"
 import { type Role } from "../../types"
 import { signInPath } from "../../lib/audience"
-import { CodeTicket } from "../shared/code-ticket"
+import { CodeStep } from "../shared/code-step"
 import type { AuthErrorKey } from "../../lib/errors"
 import { maskEmail } from "../../lib/mask"
 import { StepFrame } from "../shared/step-frame"
@@ -112,7 +112,7 @@ export function RegisterFlow({
     case "email":
       return (
         <StepFrame {...frame} title={t("register.emailCodeTitle")}>
-          <CodeTicket
+          <CodeStep
             destination={maskEmail(email)}
             email={email}
             sentAt={data.emailSentAt}

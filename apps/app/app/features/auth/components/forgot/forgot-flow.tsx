@@ -19,7 +19,7 @@ import {
   sendEmailCode,
   verifyEmailCode,
 } from "../../services/auth.service"
-import { CodeTicket } from "../shared/code-ticket"
+import { CodeStep } from "../shared/code-step"
 import {
   authErrorKey,
   isVerificationLost,
@@ -101,7 +101,7 @@ export function ForgotFlow({
     case "code":
       return (
         <StepFrame {...frame} title={t("forgot.codeTitle")}>
-          <CodeTicket
+          <CodeStep
             destination={maskEmail(email)}
             email={email}
             sentAt={data.sentAt}
