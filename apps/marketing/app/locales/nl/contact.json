@@ -1,11 +1,10 @@
 {
   "info": {
-    "title": "Neem contact op<br/><hl>met ons team</hl>",
+    "title": "Neem contact op <hl>met ons team</hl>",
     "description": "Heeft u vragen over AI-interviews, kandidaatrapporten, wervingsplannen, tegoeden of technische problemen? Onze supportspecialisten helpen u graag."
   },
   "form": {
     "title": "Stuur een bericht",
-    "subtitle": "Vul onderstaand formulier in en ons team neemt spoedig contact met u op.",
     "fields": {
       "name": "Volledige naam",
       "email": "E-mailadres",
@@ -18,6 +17,10 @@
     "successTitle": "Bericht Verstuurd!",
     "successBody": "Bedankt voor uw bericht. Ons supportteam heeft uw bericht ontvangen en neemt spoedig contact met u op.",
     "validation": {
+      "nameRequired": "Vul je naam in",
+      "emailRequired": "Vul je e-mailadres in",
+      "subjectRequired": "Voeg een onderwerp toe",
+      "messageRequired": "Schrijf een bericht",
       "nameMin": "Naam moet minimaal 2 tekens bevatten",
       "nameMax": "Naam mag maximaal 100 tekens bevatten",
       "emailInvalid": "Voer een geldig e-mailadres in",
@@ -35,15 +38,19 @@
       "network": "We konden onze server niet bereiken. Controleer uw verbinding en probeer het opnieuw.",
       "rateLimited": "U hebt in korte tijd meerdere berichten verzonden. Wacht een minuut en probeer het opnieuw."
     },
-    "reason": {
-      "label": "Waarmee kunnen we helpen?",
-      "sales": "Verkoop en abonnementen",
-      "support": "Productondersteuning",
-      "candidate": "Hulp bij het interview",
-      "other": "Iets anders"
-    },
     "charCount": "{{used}} / {{max}} tekens",
-    "successNext": "We antwoorden naar {{email}}."
+    "successNext": "We antwoorden naar {{email}}.",
+    "placeholders": {
+      "name": "Je volledige naam",
+      "email": "you@company.com",
+      "subject": "Een korte samenvatting",
+      "message": "Vertel ons waarmee we je kunnen helpen"
+    },
+    "next": {
+      "received": "We hebben je bericht ontvangen",
+      "routed": "Het gaat naar het juiste team",
+      "reply": "We antwoorden per e-mail"
+    }
   },
   "channels": {
     "title": "Andere manieren om ons te bereiken",
@@ -60,8 +67,7 @@
       "title": "Bereidt u zich voor op een interview?",
       "link": "Lees de interviewgids"
     },
-    "replyTime": "Ons team reageert doorgaans binnen 2-4 uur.",
-    "social": "Volg LetsHyre"
+    "replyTime": "Ons team reageert doorgaans binnen 2–4 uur."
   },
   "meta": {
     "title": "Contact | letshyre.ai",
@@ -69,5 +75,8 @@
     "name": "Contact LetsHyre",
     "schemaDescription": "Bereik LetsHyre ondersteuning en verkoop.",
     "crumb": "Contact"
+  },
+  "next": {
+    "title": "Wat er daarna gebeurt"
   }
 }

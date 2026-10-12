@@ -5,27 +5,26 @@ const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
 const CORS = { "access-control-allow-origin": "*" }
 
 async function fillIn(page: Page) {
-  await page.getByRole("main").getByLabel("Full Name").fill("Ada Lovelace")
+  await page.getByRole("main").getByLabel("Full name").fill("Ada Lovelace")
   await page
     .getByRole("main")
-    .getByRole("textbox", { name: "Email Address" })
+    .getByRole("textbox", { name: "Email address" })
     .fill("ada@example.com")
   await page.getByRole("main").getByLabel("Subject").fill("Hiring help")
   await page
-    .getByLabel("Message Details")
+    .getByRole("main")
+    .getByRole("textbox", { name: "Message", exact: true })
     .fill("We would like to try LetsHyre for three roles.")
-  await page.getByRole("button", { name: "Send Message" }).click()
+  await page.getByRole("button", { name: "Send message" }).click()
 }
 
 test("validation errors are announced and accessible", async ({ page }) => {
   await page.goto("/en/contact")
-  await expect(page.getByRole("button", { name: "Send Message" })).toBeEnabled()
-  await page.getByRole("button", { name: "Send Message" }).click()
+  await expect(page.getByRole("button", { name: "Send message" })).toBeEnabled()
+  await page.getByRole("button", { name: "Send message" }).click()
 
-  await expect(
-    page.getByText("Name must be at least 2 characters")
-  ).toBeVisible()
-  await expect(page.getByRole("main").getByLabel("Full Name")).toHaveAttribute(
+  await expect(page.getByText("Enter your name")).toBeVisible()
+  await expect(page.getByRole("main").getByLabel("Full name")).toHaveAttribute(
     "aria-invalid",
     "true"
   )
@@ -52,11 +51,11 @@ test("sends the message and confirms inline", async ({ page }) => {
     })
   })
   await page.goto("/en/contact")
-  await expect(page.getByRole("button", { name: "Send Message" })).toBeEnabled()
+  await expect(page.getByRole("button", { name: "Send message" })).toBeEnabled()
   await fillIn(page)
 
   await expect(
-    page.getByRole("heading", { name: "Message Sent!" })
+    page.getByRole("heading", { name: "Message sent" })
   ).toBeFocused()
   expect(body).toMatchObject({ name: "Ada Lovelace", email: "ada@example.com" })
   const { violations } = await new AxeBuilder({ page }).withTags(WCAG).analyze()

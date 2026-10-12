@@ -2,7 +2,9 @@ import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import { useQuery } from "@tanstack/react-query"
 import { CheckIcon, LinkIcon } from "lucide-react"
-import { useId, useState } from "react"
+import { useId } from "react"
+
+import { useCopy } from "@/hooks/use-copy"
 
 import { useDetectedOs } from "../hooks/use-detected-os"
 import { releaseQuery } from "../queries/releases.queries"
@@ -37,8 +39,7 @@ export function DetectedDownload() {
 /** Phones, tablets and Linux: no build here, so help them get the page onto a computer. */
 function ElsewhereNote() {
   const { t } = useTranslation("download")
-  const [copied, setCopied] = useState(false)
-  const canCopy = typeof navigator !== "undefined" && "clipboard" in navigator
+  const { canCopy, copied, copy } = useCopy()
 
   return (
     <div className="rise flex flex-col items-start gap-3">
@@ -51,11 +52,7 @@ function ElsewhereNote() {
           size="lg"
           className="h-10 px-4"
           onClick={() => {
-            void navigator.clipboard
-              .writeText(window.location.href)
-              .then(() => {
-                setCopied(true)
-              })
+            copy(window.location.href)
           }}
         >
           {copied ? (

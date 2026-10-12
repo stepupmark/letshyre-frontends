@@ -7,85 +7,95 @@ import {
   AlertTitle,
 } from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
-import {
-  Field,
-  FieldDescription,
-  FieldError,
-  FieldGroup,
-  FieldLabel,
-} from "@workspace/ui/components/field"
-import { Input } from "@workspace/ui/components/input"
 import { Spinner } from "@workspace/ui/components/spinner"
-import { Textarea } from "@workspace/ui/components/textarea"
+import { cn } from "@workspace/ui/lib/utils"
+import { CircleAlertIcon, SendIcon } from "lucide-react"
 import {
-  ToggleGroup,
-  ToggleGroupItem,
-} from "@workspace/ui/components/toggle-group"
-import { CircleAlertIcon, CircleCheckIcon } from "lucide-react"
-import {
+  type ReactNode,
   useEffect,
   useId,
   useMemo,
   useRef,
   useState,
-  useSyncExternalStore,
 } from "react"
 import { useForm, useWatch } from "react-hook-form"
-import { Link, useSearchParams } from "react-router"
+import { Link } from "react-router"
 
+import { useHydrated } from "@/hooks/use-hydrated"
 import { PAGES } from "@/lib/pages"
 
+import { clearDraft, useContactDraft } from "../hooks/use-contact-draft"
 import { describeSendError } from "../lib/send-error"
+import { type Reason, tagSubject } from "../lib/topics"
 import { useSendContactMessage } from "../mutations/use-send-contact-message"
 import {
   type ContactValues,
   LIMITS,
   makeContactSchema,
 } from "../schemas/contact.schema"
+import { ContactSuccess } from "./contact-success"
 
-const subscribe = () => () => undefined
-
+const MOD_KEY = { mac: "⌘", other: "Ctrl" } as const
 const EMPTY: ContactValues = { name: "", email: "", subject: "", message: "" }
-const DRAFT_KEY = "contact-draft"
 
-const REASONS = ["sales", "support", "candidate", "other"] as const
-type Reason = (typeof REASONS)[number]
-
-// the backend has no topic field, so support sees it in the subject
-const SUBJECT_TAGS: Partial<Record<Reason, string>> = {
-  sales: "Sales",
-  support: "Support",
-  candidate: "Candidate",
+/** A field cell of the compose window: label on top, then the field and its error. */
+function ComposeField({
+  htmlFor,
+  label,
+  error,
+  errorId,
+  className,
+  children,
+}: {
+  htmlFor: string
+  label: string
+  error?: string
+  errorId: string
+  className?: string
+  children: ReactNode
+}) {
+  return (
+    <div
+      data-invalid={error ? true : undefined}
+      className={cn(
+        "flex min-w-0 flex-col gap-1 px-5 py-3.5 transition-colors duration-200 ring-inset data-invalid:ring-1 data-invalid:ring-destructive/40 sm:px-6",
+        className
+      )}
+    >
+      <label
+        htmlFor={htmlFor}
+        className="text-xs font-medium text-muted-foreground in-data-invalid:text-destructive"
+      >
+        {label}
+      </label>
+      {children}
+      {error && (
+        <p id={errorId} className="text-sm text-destructive">
+          {error}
+        </p>
+      )}
+    </div>
+  )
 }
 
-const readDraft = (): Partial<ContactValues> | null => {
-  try {
-    const raw = sessionStorage.getItem(DRAFT_KEY)
-    return raw ? (JSON.parse(raw) as Partial<ContactValues>) : null
-  } catch {
-    return null
-  }
-}
-
-const writeDraft = (values: Partial<ContactValues> | null) => {
-  try {
-    if (values) sessionStorage.setItem(DRAFT_KEY, JSON.stringify(values))
-    else sessionStorage.removeItem(DRAFT_KEY)
-  } catch {
-    // storage blocked: the draft just isn't kept
-  }
-}
-
-export function ContactForm() {
+export function ContactForm({
+  reason,
+  presetSubject,
+  onSentChange,
+}: {
+  reason: Reason | null
+  /** Filled into an empty subject, e.g. when arriving from a pricing link. */
+  presetSubject?: string
+  onSentChange?: (sent: boolean) => void
+}) {
   const { t } = useTranslation("contact")
   const lang = useLocale()
   const id = useId()
-  const [params] = useSearchParams()
-  const topic = params.get("topic")
-  const successRef = useRef<HTMLHeadingElement>(null)
   const trapRef = useRef<HTMLInputElement>(null)
-  const [picked, setPicked] = useState<Reason | null>()
   const [trapped, setTrapped] = useState(false)
+  // a submit before hydration would put the message in the URL
+  const hydrated = useHydrated()
+  const mac = hydrated && /Mac|iPhone|iPad/.test(navigator.userAgent)
 
   const schema = useMemo(() => makeContactSchema(t), [t])
   const form = useForm({
@@ -96,81 +106,42 @@ export function ContactForm() {
   const { errors } = form.formState
   const message = useWatch({ control: form.control, name: "message" })
   const send = useSendContactMessage()
-  // a submit before hydration would put the message in the URL
-  const hydrated = useSyncExternalStore(
-    subscribe,
-    () => true,
-    () => false
-  )
-  // the page is prerendered without a query string, so read it after hydration
-  const fromSales = hydrated && topic === "sales"
-  const reason = picked === undefined ? (fromSales ? "sales" : null) : picked
-  const sent = send.isSuccess || trapped
+  useContactDraft(form, EMPTY)
 
   useEffect(() => {
-    const draft = readDraft()
-    if (draft) form.reset({ ...EMPTY, ...draft })
-    return form.subscribe({
-      formState: { values: true },
-      callback: ({ values }) => {
-        writeDraft(values)
-      },
-    })
-  }, [form])
-
-  useEffect(() => {
-    if (fromSales && !form.getValues("subject")) {
-      form.setValue("subject", t("form.topics.sales"))
+    if (presetSubject && !form.getValues("subject")) {
+      form.setValue("subject", presetSubject)
     }
-  }, [fromSales, form, t])
+  }, [presetSubject, form])
 
-  useEffect(() => {
-    if (sent) successRef.current?.focus()
-  }, [sent])
-
-  if (sent) {
+  if (send.isSuccess || trapped) {
     return (
-      <div
-        role="status"
-        className="flex flex-col items-start gap-3 rounded-xl border bg-muted/40 p-6 sm:p-8"
-      >
-        <CircleCheckIcon aria-hidden className="size-8 text-brand" />
-        <h2
-          ref={successRef}
-          tabIndex={-1}
-          className="text-xl font-semibold tracking-tight outline-none"
-        >
-          {t("form.successTitle")}
-        </h2>
-        <p className="text-pretty text-muted-foreground">
-          {t("form.successBody")}{" "}
-          {t("form.successNext", {
-            email: send.variables?.email ?? form.getValues("email"),
-          })}
-        </p>
-        <Button
-          variant="outline"
-          className="mt-2"
-          onClick={() => {
-            form.reset(EMPTY)
-            send.reset()
-            setTrapped(false)
-            setPicked(null)
-          }}
-        >
-          {t("form.sendAnother")}
-        </Button>
-      </div>
+      <ContactSuccess
+        email={send.variables?.email ?? form.getValues("email")}
+        onReset={() => {
+          form.reset(EMPTY)
+          send.reset()
+          setTrapped(false)
+          onSentChange?.(false)
+        }}
+      />
     )
   }
 
   const failure = send.isError ? describeSendError(send.error) : null
   const fieldId = (name: keyof ContactValues) => `${id}-${name}`
   const errorId = (name: keyof ContactValues) => `${id}-${name}-error`
-  const invalid = (name: keyof ContactValues) => Boolean(errors[name])
   const describedBy = (name: keyof ContactValues, ...extra: string[]) =>
     [errors[name] && errorId(name), ...extra].filter(Boolean).join(" ") ||
     undefined
+  const field = (name: keyof ContactValues) => ({
+    id: fieldId(name),
+    required: true,
+    placeholder: t(`form.placeholders.${name}`),
+    "aria-invalid": Boolean(errors[name]),
+    "aria-describedby": describedBy(name),
+    ...form.register(name),
+  })
   const counterId = `${id}-message-count`
   const showCounter = message.length >= LIMITS.message * 0.8
 
@@ -178,183 +149,175 @@ export function ContactForm() {
     <form
       noValidate
       method="post"
-      aria-labelledby={`${id}-title`}
+      aria-label={t("form.title")}
       onSubmit={(event) => {
         void form.handleSubmit((values) => {
+          // bots get a success they can't tell apart from the real thing
           if (trapRef.current?.value) {
             setTrapped(true)
+            onSentChange?.(true)
             return
           }
-          const tag = reason && SUBJECT_TAGS[reason]
+          const subject = tagSubject(values.subject, reason)
           send.mutate(
-            {
-              ...values,
-              subject: tag ? `[${tag}] ${values.subject}` : values.subject,
-            },
+            { ...values, subject },
             {
               onSuccess: () => {
-                writeDraft(null)
+                clearDraft()
+                onSentChange?.(true)
               },
             }
           )
         })(event)
       }}
-      className="flex flex-col gap-6"
+      className="group/form flex flex-col"
     >
-      <div className="flex flex-col gap-1">
-        <h2
-          id={`${id}-title`}
-          className="text-2xl font-semibold tracking-tight"
+      <div className="grid border-b sm:grid-cols-2 sm:divide-x rtl:sm:divide-x-reverse">
+        <ComposeField
+          htmlFor={fieldId("name")}
+          label={t("form.fields.name")}
+          error={errors.name?.message}
+          errorId={errorId("name")}
+          className="max-sm:border-b"
         >
-          {t("form.title")}
-        </h2>
-        <p className="text-muted-foreground">{t("form.subtitle")}</p>
+          <input
+            autoComplete="name"
+            className="bare-input h-8"
+            {...field("name")}
+          />
+        </ComposeField>
+        <ComposeField
+          htmlFor={fieldId("email")}
+          label={t("form.fields.email")}
+          error={errors.email?.message}
+          errorId={errorId("email")}
+        >
+          <input
+            type="email"
+            autoComplete="email"
+            className="bare-input h-8"
+            {...field("email")}
+          />
+        </ComposeField>
+      </div>
+      <ComposeField
+        htmlFor={fieldId("subject")}
+        label={t("form.fields.subject")}
+        error={errors.subject?.message}
+        errorId={errorId("subject")}
+        className="border-b"
+      >
+        <input className="bare-input h-8" {...field("subject")} />
+      </ComposeField>
+
+      <div
+        data-invalid={errors.message ? true : undefined}
+        className="flex flex-col gap-1 px-5 pt-4 pb-3 transition-colors duration-200 ring-inset data-invalid:ring-1 data-invalid:ring-destructive/40 sm:px-6"
+      >
+        <label
+          htmlFor={fieldId("message")}
+          className="text-xs font-medium text-muted-foreground in-data-invalid:text-destructive"
+        >
+          {t("form.fields.message")}
+        </label>
+        {errors.message && (
+          <p id={errorId("message")} className="text-sm text-destructive">
+            {errors.message.message}
+          </p>
+        )}
+        <textarea
+          rows={7}
+          className="bare-input field-sizing-content max-h-96 min-h-40 resize-none"
+          {...field("message")}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
+              event.currentTarget.form?.requestSubmit()
+            }
+          }}
+          aria-describedby={describedBy(
+            "message",
+            showCounter ? counterId : ""
+          )}
+        />
+        {showCounter && (
+          <p
+            id={counterId}
+            data-over={message.length > LIMITS.message || undefined}
+            className="self-end text-xs text-muted-foreground tabular-nums data-over:text-destructive"
+          >
+            {t("form.charCount", {
+              used: message.length,
+              max: LIMITS.message,
+            })}
+          </p>
+        )}
       </div>
 
-      <FieldGroup>
-        <div className="flex flex-col gap-2">
-          <p id={`${id}-reason`} className="text-sm font-medium">
-            {t("form.reason.label")}
-          </p>
-          <ToggleGroup
-            aria-labelledby={`${id}-reason`}
-            variant="outline"
-            className="flex-wrap"
-            value={reason ? [reason] : []}
-            onValueChange={(value) => {
-              setPicked((value[0] as Reason | undefined) ?? null)
-            }}
-          >
-            {REASONS.map((value) => (
-              <ToggleGroupItem
-                key={value}
-                value={value}
-                className="aria-pressed:border-brand aria-pressed:bg-brand/10"
-              >
-                {t(`form.reason.${value}`)}
-              </ToggleGroupItem>
-            ))}
-          </ToggleGroup>
-        </div>
-        <div className="grid gap-5 sm:grid-cols-2">
-          <Field data-invalid={invalid("name")}>
-            <FieldLabel htmlFor={fieldId("name")}>
-              {t("form.fields.name")}
-            </FieldLabel>
-            <Input
-              id={fieldId("name")}
-              required
-              autoComplete="name"
-              aria-invalid={invalid("name")}
-              aria-describedby={describedBy("name")}
-              {...form.register("name")}
-            />
-            <FieldError id={errorId("name")}>{errors.name?.message}</FieldError>
-          </Field>
-          <Field data-invalid={invalid("email")}>
-            <FieldLabel htmlFor={fieldId("email")}>
-              {t("form.fields.email")}
-            </FieldLabel>
-            <Input
-              id={fieldId("email")}
-              type="email"
-              required
-              autoComplete="email"
-              aria-invalid={invalid("email")}
-              aria-describedby={describedBy("email")}
-              {...form.register("email")}
-            />
-            <FieldError id={errorId("email")}>
-              {errors.email?.message}
-            </FieldError>
-          </Field>
-        </div>
-        <Field data-invalid={invalid("subject")}>
-          <FieldLabel htmlFor={fieldId("subject")}>
-            {t("form.fields.subject")}
-          </FieldLabel>
-          <Input
-            id={fieldId("subject")}
-            required
-            aria-invalid={invalid("subject")}
-            aria-describedby={describedBy("subject")}
-            {...form.register("subject")}
-          />
-          <FieldError id={errorId("subject")}>
-            {errors.subject?.message}
-          </FieldError>
-        </Field>
-        <Field data-invalid={invalid("message")}>
-          <FieldLabel htmlFor={fieldId("message")}>
-            {t("form.fields.message")}
-          </FieldLabel>
-          <Textarea
-            id={fieldId("message")}
-            required
-            rows={6}
-            className="min-h-36"
-            aria-invalid={invalid("message")}
-            aria-describedby={describedBy(
-              "message",
-              showCounter ? counterId : ""
+      <div aria-hidden className="sr-only">
+        <input
+          ref={trapRef}
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
+      {failure && (
+        <div className="px-5 pb-4 sm:px-6">
+          <Alert variant="destructive">
+            <CircleAlertIcon aria-hidden />
+            <AlertTitle>{t(`form.errors.${failure.kind}`)}</AlertTitle>
+            {failure.detail && (
+              <AlertDescription>{failure.detail}</AlertDescription>
             )}
-            {...form.register("message")}
-          />
-          {showCounter && (
-            <p
-              id={counterId}
-              data-over={message.length > LIMITS.message || undefined}
-              className="text-end text-xs text-muted-foreground tabular-nums data-over:text-destructive"
-            >
-              {t("form.charCount", {
-                used: message.length,
-                max: LIMITS.message,
-              })}
-            </p>
-          )}
-          <FieldError id={errorId("message")}>
-            {errors.message?.message}
-          </FieldError>
-        </Field>
-        <div aria-hidden className="sr-only">
-          <input
-            ref={trapRef}
-            type="text"
-            name="website"
-            tabIndex={-1}
-            autoComplete="off"
-          />
+          </Alert>
         </div>
-        <FieldDescription>
+      )}
+
+      <div className="flex flex-col-reverse gap-3 border-t bg-muted/40 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <p className="max-w-xs text-xs text-pretty text-muted-foreground">
           <Trans
             t={t}
             i18nKey="form.privacy"
             components={{
-              pp: <Link to={localePath(lang, PAGES.privacy.path)} />,
+              pp: (
+                <Link
+                  to={localePath(lang, PAGES.privacy.path)}
+                  className="text-link font-normal text-muted-foreground hover:text-foreground"
+                />
+              ),
             }}
           />
-        </FieldDescription>
-      </FieldGroup>
-
-      {failure && (
-        <Alert variant="destructive">
-          <CircleAlertIcon aria-hidden />
-          <AlertTitle>{t(`form.errors.${failure.kind}`)}</AlertTitle>
-          {failure.detail && (
-            <AlertDescription>{failure.detail}</AlertDescription>
+        </p>
+        <div className="flex items-center gap-3">
+          {hydrated && (
+            <kbd
+              aria-hidden
+              className="rise hidden rounded-md border bg-background px-2 py-1 font-sans text-xs text-muted-foreground sm:group-has-[textarea:focus]/form:inline-block"
+            >
+              {mac ? MOD_KEY.mac : MOD_KEY.other} ↵
+            </kbd>
           )}
-        </Alert>
-      )}
-
-      <Button
-        type="submit"
-        size="lg"
-        className="self-start"
-        disabled={!hydrated || send.isPending}
-      >
-        {send.isPending && <Spinner aria-hidden data-icon="inline-start" />}
-        {send.isPending ? t("form.sending") : t("form.submit")}
-      </Button>
+          <Button
+            type="submit"
+            size="lg"
+            className="group/submit h-10 shrink-0 px-5 max-sm:flex-1"
+            disabled={!hydrated || send.isPending}
+          >
+            {send.isPending ? t("form.sending") : t("form.submit")}
+            {send.isPending ? (
+              <Spinner aria-hidden data-icon="inline-end" />
+            ) : (
+              <SendIcon
+                aria-hidden
+                data-icon="inline-end"
+                className="transition-transform duration-200 group-hover/submit:translate-x-0.5 group-hover/submit:-translate-y-0.5 motion-reduce:transition-none rtl:-scale-x-100"
+              />
+            )}
+          </Button>
+        </div>
+      </div>
     </form>
   )
 }

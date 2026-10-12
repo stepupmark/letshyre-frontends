@@ -1,23 +1,26 @@
 {
   "info": {
-    "title": "Get in Touch<br/><hl>With Our Team</hl>",
+    "title": "Talk to the <hl>LetsHyre team</hl>",
     "description": "Have questions about AI interviews, candidate reports, hiring plans, credits, or technical issues? Our support specialists are here to help."
   },
   "form": {
-    "title": "Send a Message",
-    "subtitle": "Fill out the form below and our team will get back to you.",
+    "title": "Send a message",
     "fields": {
-      "name": "Full Name",
-      "email": "Email Address",
+      "name": "Full name",
+      "email": "Email address",
       "subject": "Subject",
-      "message": "Message Details"
+      "message": "Message"
     },
     "privacy": "We value your privacy. By submitting your information, you agree to LetsHyre's <pp>Privacy Policy</pp>.",
-    "submit": "Send Message",
-    "sending": "Sending...",
-    "successTitle": "Message Sent!",
+    "submit": "Send message",
+    "sending": "Sending…",
+    "successTitle": "Message sent",
     "successBody": "Thank you for reaching out. Our support team has received your message and will get back to you shortly.",
     "validation": {
+      "nameRequired": "Enter your name",
+      "emailRequired": "Enter your email address",
+      "subjectRequired": "Add a subject",
+      "messageRequired": "Write a message",
       "nameMin": "Name must be at least 2 characters",
       "nameMax": "Name must be at most 100 characters",
       "emailInvalid": "Please enter a valid email address",
@@ -35,15 +38,19 @@
       "network": "We couldn't reach our server. Check your connection and try again.",
       "rateLimited": "You've sent several messages in a short time. Wait a minute and try again."
     },
-    "reason": {
-      "label": "What can we help with?",
-      "sales": "Sales & plans",
-      "support": "Product support",
-      "candidate": "Interview help",
-      "other": "Something else"
-    },
     "charCount": "{{used}} / {{max}} characters",
-    "successNext": "We'll reply to {{email}}."
+    "successNext": "We'll reply to {{email}}.",
+    "placeholders": {
+      "name": "Your full name",
+      "email": "you@company.com",
+      "subject": "A short summary",
+      "message": "Tell us what you need help with"
+    },
+    "next": {
+      "received": "We've got your message",
+      "routed": "It goes to the right team",
+      "reply": "We reply to your email"
+    }
   },
   "channels": {
     "title": "Other ways to reach us",
@@ -60,14 +67,16 @@
       "title": "Preparing for an interview?",
       "link": "Read the interview guide"
     },
-    "replyTime": "Our team typically responds within 2-4 hours.",
-    "social": "Follow LetsHyre"
+    "replyTime": "Our team typically responds within 2–4 hours."
   },
   "meta": {
-    "title": "Contact Us | letshyre.ai",
+    "title": "Contact LetsHyre sales and support | letshyre.ai",
     "description": "Questions about AI interviews, scorecards, plans, or credits? Reach the LetsHyre team and we will get back to you.",
     "name": "Contact LetsHyre",
     "schemaDescription": "Reach LetsHyre support and sales.",
     "crumb": "Contact"
+  },
+  "next": {
+    "title": "What happens next"
   }
 }

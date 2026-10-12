@@ -1,11 +1,10 @@
 {
   "info": {
-    "title": "私たちのチームに<br/><hl>お問い合わせください</hl>",
+    "title": "私たちのチームに<hl>お問い合わせください</hl>",
     "description": "AI面接、候補者レポート、採用プラン、クレジット、技術的な問題についてご質問はありますか？サポート担当者がお手伝いします。"
   },
   "form": {
     "title": "メッセージを送信",
-    "subtitle": "以下のフォームにご記入いただければ、担当チームよりご連絡いたします。",
     "fields": {
       "name": "氏名",
       "email": "メールアドレス",
@@ -18,6 +17,10 @@
     "successTitle": "メッセージを送信しました！",
     "successBody": "お問い合わせいただきありがとうございます。サポートチームがメッセージを受け取りました。まもなくご連絡いたします。",
     "validation": {
+      "nameRequired": "お名前を入力してください",
+      "emailRequired": "メールアドレスを入力してください",
+      "subjectRequired": "件名を入力してください",
+      "messageRequired": "メッセージを入力してください",
       "nameMin": "名前は2文字以上である必要があります",
       "nameMax": "お名前は100文字以内で入力してください",
       "emailInvalid": "有効なメールアドレスを入力してください",
@@ -35,15 +38,19 @@
       "network": "サーバーに接続できませんでした。接続を確認して、もう一度お試しください。",
       "rateLimited": "短時間に複数のメッセージが送信されました。1 分ほど待ってからもう一度お試しください。"
     },
-    "reason": {
-      "label": "どのようなご用件ですか？",
-      "sales": "営業・プラン",
-      "support": "製品サポート",
-      "candidate": "面接について",
-      "other": "その他"
-    },
     "charCount": "{{used}} / {{max}} 文字",
-    "successNext": "{{email}} 宛てにご返信します。"
+    "successNext": "{{email}} 宛てにご返信します。",
+    "placeholders": {
+      "name": "氏名",
+      "email": "you@company.com",
+      "subject": "簡単な概要",
+      "message": "ご相談内容をお書きください"
+    },
+    "next": {
+      "received": "メッセージを受け付けました",
+      "routed": "担当チームに届きます",
+      "reply": "メールで返信します"
+    }
   },
   "channels": {
     "title": "その他のお問い合わせ方法",
@@ -60,8 +67,7 @@
       "title": "面接の準備中ですか？",
       "link": "面接ガイドを読む"
     },
-    "replyTime": "通常2〜4時間以内に返信いたします。",
-    "social": "LetsHyreをフォロー"
+    "replyTime": "通常2〜4時間以内に返信いたします。"
   },
   "meta": {
     "title": "お問い合わせ | letshyre.ai",
@@ -69,5 +75,8 @@
     "name": "LetsHyreへのお問い合わせ",
     "schemaDescription": "LetsHyreのサポートと営業にご連絡ください。",
     "crumb": "お問い合わせ"
+  },
+  "next": {
+    "title": "送信後の流れ"
   }
 }

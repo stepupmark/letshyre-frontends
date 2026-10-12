@@ -2,43 +2,30 @@ import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import {
-  Item,
-  ItemActions,
-  ItemContent,
-  ItemDescription,
-  ItemGroup,
-  ItemMedia,
-  ItemTitle,
-} from "@workspace/ui/components/item"
-import {
+  ArrowRightIcon,
   BriefcaseIcon,
   CheckIcon,
-  ChevronRightIcon,
-  ClockIcon,
   CopyIcon,
   GraduationCapIcon,
   MailIcon,
 } from "lucide-react"
-import { useEffect, useId, useState } from "react"
+import { useId } from "react"
 import { Link } from "react-router"
 
-import { SocialLinks } from "@/components/social-links"
+import { Section } from "@/components/section"
+import { useCopy } from "@/hooks/use-copy"
 import { PAGES } from "@/lib/pages"
 import { SITE } from "@/lib/seo/site"
 
+const LINKS = [
+  { id: "employers", icon: BriefcaseIcon, page: "pricing" },
+  { id: "candidates", icon: GraduationCapIcon, page: "interview" },
+] as const
+
 function CopyEmail() {
   const { t } = useTranslation("contact")
-  const [copied, setCopied] = useState(false)
-
-  useEffect(() => {
-    if (!copied) return
-    const timer = setTimeout(() => {
-      setCopied(false)
-    }, 2000)
-    return () => {
-      clearTimeout(timer)
-    }
-  }, [copied])
+  const { canCopy, copied, copy } = useCopy()
+  if (!canCopy) return null
 
   return (
     <>
@@ -47,24 +34,27 @@ function CopyEmail() {
         size="icon-sm"
         aria-label={t("channels.email.copy")}
         onClick={() => {
-          navigator.clipboard.writeText(SITE.email).then(
-            () => {
-              setCopied(true)
-            },
-            () => undefined
-          )
+          copy(SITE.email)
         }}
       >
         {copied ? (
-          <CheckIcon aria-hidden className="text-brand" />
+          <CheckIcon aria-hidden className="pop text-brand-text" />
         ) : (
           <CopyIcon aria-hidden />
         )}
       </Button>
       <span role="status" className="sr-only">
-        {copied && t("channels.email.copied")}
+        {copied ? t("channels.email.copied") : ""}
       </span>
     </>
+  )
+}
+
+function ChannelIcon({ icon: Icon }: { icon: typeof MailIcon }) {
+  return (
+    <span className="grid size-10 place-items-center rounded-xl bg-brand-muted text-brand-text transition-transform duration-300 group-hover/channel:-translate-y-0.5 motion-reduce:transition-none">
+      <Icon aria-hidden className="size-5" />
+    </span>
   )
 }
 
@@ -72,80 +62,53 @@ export function ContactChannels() {
   const { t } = useTranslation("contact")
   const lang = useLocale()
   const titleId = useId()
-  const links = [
-    {
-      id: "employers",
-      icon: BriefcaseIcon,
-      path: PAGES.pricing.path,
-    },
-    {
-      id: "candidates",
-      icon: GraduationCapIcon,
-      path: PAGES.interview.path,
-    },
-  ] as const
 
   return (
-    <aside
-      aria-labelledby={titleId}
-      className="flex flex-col gap-4 lg:sticky lg:top-24 lg:self-start"
-    >
-      <h2 id={titleId} className="text-lg font-semibold">
+    <Section aria-labelledby={titleId} className="py-10 sm:py-14">
+      <h2 id={titleId} className="text-2xl font-semibold tracking-tight">
         {t("channels.title")}
       </h2>
-      <ItemGroup className="gap-2">
-        <Item variant="outline" role="listitem">
-          <ItemMedia variant="icon">
-            <MailIcon aria-hidden className="text-brand" />
-          </ItemMedia>
-          <ItemContent>
-            <ItemTitle>{t("channels.email.title")}</ItemTitle>
-            <ItemDescription>
-              <a
-                href={`mailto:${SITE.email}`}
-                className="font-medium text-primary underline-offset-4 hover:underline"
-              >
-                {SITE.email}
-              </a>
-            </ItemDescription>
-          </ItemContent>
-          <ItemActions>
+      <ul className="mt-6 grid gap-4 md:grid-cols-3">
+        <li className="group/channel flex flex-col gap-4 rounded-2xl border p-5 transition-colors duration-300 hover:border-brand/40">
+          <div className="flex items-start justify-between gap-2">
+            <ChannelIcon icon={MailIcon} />
             <CopyEmail />
-          </ItemActions>
-        </Item>
-        {links.map(({ id, icon: Icon, path }) => (
-          <div key={id} role="listitem">
-            <Item
-              variant="outline"
-              render={<Link to={localePath(lang, path)} />}
-            >
-              <ItemMedia variant="icon">
-                <Icon aria-hidden className="text-brand" />
-              </ItemMedia>
-              <ItemContent>
-                <ItemTitle>{t(`channels.${id}.title`)}</ItemTitle>
-                <ItemDescription className="text-primary">
-                  {t(`channels.${id}.link`)}
-                </ItemDescription>
-              </ItemContent>
-              <ItemActions>
-                <ChevronRightIcon
-                  aria-hidden
-                  className="size-4 text-muted-foreground rtl:rotate-180"
-                />
-              </ItemActions>
-            </Item>
           </div>
+          <div className="flex flex-col gap-1">
+            <h3 className="font-semibold tracking-tight">
+              {t("channels.email.title")}
+            </h3>
+            <a
+              href={`mailto:${SITE.email}`}
+              className="more-link w-fit text-sm"
+            >
+              {SITE.email}
+            </a>
+          </div>
+        </li>
+        {LINKS.map(({ id, icon, page }) => (
+          <li key={id}>
+            <Link
+              to={localePath(lang, PAGES[page].path)}
+              className="group/channel flex h-full flex-col gap-4 rounded-2xl border p-5 transition-colors duration-300 outline-none hover:border-brand/40 focus-visible:ring-3 focus-visible:ring-ring/50"
+            >
+              <ChannelIcon icon={icon} />
+              <div className="flex flex-col gap-1">
+                <h3 className="font-semibold tracking-tight">
+                  {t(`channels.${id}.title`)}
+                </h3>
+                <span className="flex items-center gap-1.5 text-sm font-medium text-primary">
+                  {t(`channels.${id}.link`)}
+                  <ArrowRightIcon
+                    aria-hidden
+                    className="size-4 transition-transform duration-300 group-hover/channel:translate-x-0.5 motion-reduce:transition-none rtl:rotate-180 rtl:group-hover/channel:-translate-x-0.5"
+                  />
+                </span>
+              </div>
+            </Link>
+          </li>
         ))}
-      </ItemGroup>
-      <p className="flex items-center gap-2 text-sm text-muted-foreground">
-        <ClockIcon aria-hidden className="size-4 shrink-0 text-brand" />
-        {t("channels.replyTime")}
-      </p>
-      <div className="flex flex-col gap-1">
-        <p className="text-sm font-medium">{t("channels.social")}</p>
-        <SocialLinks className="-ms-2" />
-      </div>
-    </aside>
+      </ul>
+    </Section>
   )
 }

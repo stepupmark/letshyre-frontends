@@ -1,11 +1,10 @@
 {
   "info": {
-    "title": "Ponte en contacto<br/><hl>con nuestro equipo</hl>",
+    "title": "Ponte en contacto <hl>con nuestro equipo</hl>",
     "description": "¿Tienes preguntas sobre entrevistas IA, informes de candidatos, planes de contratación, créditos o problemas técnicos? Nuestros especialistas de soporte están aquí para ayudarte."
   },
   "form": {
     "title": "Enviar un mensaje",
-    "subtitle": "Completa el formulario a continuación y nuestro equipo te responderá.",
     "fields": {
       "name": "Nombre completo",
       "email": "Dirección de correo",
@@ -18,6 +17,10 @@
     "successTitle": "¡Mensaje Enviado!",
     "successBody": "Gracias por contactarnos. Nuestro equipo de soporte ha recibido tu mensaje y te responderá en breve.",
     "validation": {
+      "nameRequired": "Escribe tu nombre",
+      "emailRequired": "Escribe tu correo electrónico",
+      "subjectRequired": "Añade un asunto",
+      "messageRequired": "Escribe un mensaje",
       "nameMin": "El nombre debe tener al menos 2 caracteres",
       "nameMax": "El nombre debe tener como máximo 100 caracteres",
       "emailInvalid": "Por favor ingresa una dirección de correo electrónico válida",
@@ -35,15 +38,19 @@
       "network": "No pudimos conectar con nuestro servidor. Revisa tu conexión e inténtalo de nuevo.",
       "rateLimited": "Has enviado varios mensajes en poco tiempo. Espera un minuto e inténtalo de nuevo."
     },
-    "reason": {
-      "label": "¿En qué podemos ayudarte?",
-      "sales": "Ventas y planes",
-      "support": "Soporte del producto",
-      "candidate": "Ayuda con la entrevista",
-      "other": "Otra cosa"
-    },
     "charCount": "{{used}} / {{max}} caracteres",
-    "successNext": "Te responderemos a {{email}}."
+    "successNext": "Te responderemos a {{email}}.",
+    "placeholders": {
+      "name": "Tu nombre completo",
+      "email": "you@company.com",
+      "subject": "Un breve resumen",
+      "message": "Cuéntanos en qué necesitas ayuda"
+    },
+    "next": {
+      "received": "Recibimos tu mensaje",
+      "routed": "Llega al equipo adecuado",
+      "reply": "Te respondemos por correo"
+    }
   },
   "channels": {
     "title": "Otras formas de contactarnos",
@@ -60,8 +67,7 @@
       "title": "¿Preparas una entrevista?",
       "link": "Leer la guía de la entrevista"
     },
-    "replyTime": "Nuestro equipo generalmente responde en 2-4 horas.",
-    "social": "Sigue a LetsHyre"
+    "replyTime": "Nuestro equipo generalmente responde en 2–4 horas."
   },
   "meta": {
     "title": "Contacto | letshyre.ai",
@@ -69,5 +75,8 @@
     "name": "Contactar LetsHyre",
     "schemaDescription": "Contacta al soporte y ventas de LetsHyre.",
     "crumb": "Contacto"
+  },
+  "next": {
+    "title": "Qué pasa después"
   }
 }

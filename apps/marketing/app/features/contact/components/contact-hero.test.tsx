@@ -10,10 +10,13 @@ import { beforeEach, describe, expect, it, vi } from "vitest"
 
 import contact from "@/locales/en/contact.json"
 
-import { ContactForm } from "./contact-form"
+import { ContactHero } from "./contact-hero"
 
 vi.mock("@/lib/env", () => ({
-  env: { VITE_API_BASE_URL: "https://api.example.test/" },
+  env: {
+    VITE_API_BASE_URL: "https://api.example.test/",
+    VITE_SITE_URL: "https://site.example.test",
+  },
 }))
 
 vi.mock("@workspace/api/public", async (importOriginal) => ({
@@ -31,7 +34,7 @@ function renderForm(url = "/en/contact") {
       Component: () => (
         <I18nProvider lang="en" messages={{ en: { contact } }}>
           <QueryClientProvider client={client}>
-            <ContactForm />
+            <ContactHero />
           </QueryClientProvider>
         </I18nProvider>
       ),
@@ -42,17 +45,26 @@ function renderForm(url = "/en/contact") {
 
 async function fillIn() {
   const user = userEvent.setup()
-  await user.type(screen.getByLabelText("Full Name"), "Ada Lovelace")
-  await user.type(screen.getByLabelText("Email Address"), "ada@example.com")
-  await user.type(screen.getByLabelText("Subject"), "Hiring help")
   await user.type(
-    screen.getByLabelText("Message Details"),
+    screen.getByRole("textbox", { name: "Full name" }),
+    "Ada Lovelace"
+  )
+  await user.type(
+    screen.getByRole("textbox", { name: "Email address" }),
+    "ada@example.com"
+  )
+  await user.type(
+    screen.getByRole("textbox", { name: "Subject" }),
+    "Hiring help"
+  )
+  await user.type(
+    screen.getByRole("textbox", { name: "Message" }),
     "We would like to try LetsHyre for three roles."
   )
-  await user.click(screen.getByRole("button", { name: "Send Message" }))
+  await user.click(screen.getByRole("button", { name: "Send message" }))
 }
 
-describe("ContactForm", () => {
+describe("contact form", () => {
   beforeEach(() => {
     send.mockReset()
     sessionStorage.clear()
@@ -60,15 +72,11 @@ describe("ContactForm", () => {
 
   it("shows translated errors and doesn't send an invalid form", async () => {
     renderForm()
-    await userEvent.click(screen.getByRole("button", { name: "Send Message" }))
+    await userEvent.click(screen.getByRole("button", { name: "Send message" }))
 
-    expect(
-      await screen.findByText("Name must be at least 2 characters")
-    ).toBeInTheDocument()
-    expect(
-      screen.getByText("Please enter a valid email address")
-    ).toBeInTheDocument()
-    expect(screen.getByLabelText("Full Name")).toHaveAttribute(
+    expect(await screen.findByText("Enter your name")).toBeInTheDocument()
+    expect(screen.getByText("Enter your email address")).toBeInTheDocument()
+    expect(screen.getByRole("textbox", { name: "Full name" })).toHaveAttribute(
       "aria-invalid",
       "true"
     )
@@ -81,7 +89,7 @@ describe("ContactForm", () => {
     await fillIn()
 
     expect(
-      await screen.findByRole("heading", { name: "Message Sent!" })
+      await screen.findByRole("heading", { name: "Message sent" })
     ).toHaveFocus()
     expect(send).toHaveBeenCalledWith(expect.anything(), {
       name: "Ada Lovelace",
@@ -93,20 +101,16 @@ describe("ContactForm", () => {
     await userEvent.click(
       screen.getByRole("button", { name: "Send another message" })
     )
-    expect(screen.getByLabelText("Full Name")).toHaveValue("")
+    expect(screen.getByRole("textbox", { name: "Full name" })).toHaveValue("")
   })
 
   it("tags the subject with the chosen topic", async () => {
     send.mockResolvedValue({ message: "ok" })
-    renderForm()
-    await userEvent.click(screen.getByRole("button", { name: "Sales & plans" }))
+    renderForm("/en/contact?topic=sales")
     await fillIn()
 
-    await screen.findByRole("heading", { name: "Message Sent!" })
-    expect(send).toHaveBeenCalledWith(
-      expect.anything(),
-      expect.objectContaining({ subject: "[Sales] Hiring help" })
-    )
+    await screen.findByRole("heading", { name: "Message sent" })
+    expect(send.mock.calls[0]?.[1].subject).toMatch(/^\[Sales\] /)
   })
 
   it("pretends to send when the bot trap is filled", async () => {
@@ -116,7 +120,7 @@ describe("ContactForm", () => {
     await fillIn()
 
     expect(
-      await screen.findByRole("heading", { name: "Message Sent!" })
+      await screen.findByRole("heading", { name: "Message sent" })
     ).toBeInTheDocument()
     expect(send).not.toHaveBeenCalled()
   })
@@ -129,7 +133,9 @@ describe("ContactForm", () => {
     expect(await screen.findByRole("alert")).toHaveTextContent(
       "We couldn't reach our server."
     )
-    expect(screen.getByLabelText("Full Name")).toHaveValue("Ada Lovelace")
+    expect(screen.getByRole("textbox", { name: "Full name" })).toHaveValue(
+      "Ada Lovelace"
+    )
   })
 
   it("shows the backend's reason for a rejected message", async () => {

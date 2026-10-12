@@ -25,6 +25,16 @@
   @apply rounded-sm font-medium text-primary underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50;
 }
 
+/* a borderless field; keeps Chrome's autofill tint off */
+@utility bare-input {
+  @apply w-full bg-transparent text-base outline-none placeholder:text-muted-foreground/70;
+  &:-webkit-autofill {
+    box-shadow: inset 0 0 0 100vmax var(--color-card);
+    -webkit-text-fill-color: var(--color-foreground);
+    caret-color: var(--color-foreground);
+  }
+}
+
 @utility ink {
   stroke-dasharray: 1;
   @media (prefers-reduced-motion: no-preference) {
