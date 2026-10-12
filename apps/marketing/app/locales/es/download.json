@@ -1,5 +1,5 @@
 {
-  "title": "Descargar aplicación",
+  "title": "Descarga la app de entrevistas de LetsHyre",
   "subtitle": "Obtén la aplicación de escritorio segura para iniciar tu sesión de entrevista estable y sin distracciones.",
   "platforms": {
     "title": "Elige tu plataforma"
@@ -9,9 +9,16 @@
     "stable": "Comprueba si hay aplicaciones bloqueadas antes de empezar",
     "secure": "Supervisada con cámara, micrófono y pantalla"
   },
-  "loading": "Cargando versiones...",
+  "loading": "Buscando la última versión…",
   "comingSoon": "Próximamente",
   "retry": "Reintentar",
+  "copyLink": "Copiar el enlace de esta página",
+  "copied": "Enlace copiado",
+  "next": {
+    "body": "La descarga ha empezado. Ahora abre el instalador desde tus descargas.",
+    "link": "Ver los pasos",
+    "badge": "Siguiente"
+  },
   "downloadFor": "Descargar para {{os}}",
   "steps": {
     "download": "Descargar",
@@ -27,7 +34,8 @@
     "version": "Versión {{version}}",
     "notYet": "Aún no disponible",
     "error": "No pudimos comprobar la última versión.",
-    "unsupported": "La aplicación de entrevistas funciona en un ordenador con Windows. Abre esta página allí para descargarla."
+    "unsupported": "La aplicación de entrevistas funciona en un ordenador con Windows. Abre esta página allí para descargarla.",
+    "installer": "Instalador {{type}}"
   },
   "install": {
     "title": "De la descarga a la entrevista",
@@ -41,6 +49,10 @@
       {
         "q": "¿Qué ordenadores son compatibles?",
         "a": "Los ordenadores con Windows. La versión para macOS está en camino y esta página la ofrecerá en cuanto esté lista."
+      },
+      {
+        "q": "¿Qué usa la app durante la entrevista?",
+        "a": "Tu cámara, tu micrófono y tu pantalla, para que la entrevista pueda supervisarse. Antes de empezar, también comprueba que no haya apps bloqueadas abiertas."
       },
       {
         "q": "¿Necesito una cuenta?",

@@ -1,5 +1,5 @@
 {
-  "title": "Unduh Aplikasi",
+  "title": "Unduh aplikasi wawancara LetsHyre",
   "subtitle": "Dapatkan aplikasi desktop yang aman untuk memulai sesi wawancara yang stabil dan bebas gangguan.",
   "platforms": {
     "title": "Pilih platform Anda"
@@ -9,9 +9,16 @@
     "stable": "Memeriksa aplikasi yang diblokir sebelum mulai",
     "secure": "Diawasi lewat kamera, mikrofon, dan layar"
   },
-  "loading": "Memuat rilis...",
+  "loading": "Memeriksa versi terbaru…",
   "comingSoon": "Segera Hadir",
   "retry": "Coba Lagi",
+  "copyLink": "Salin tautan halaman ini",
+  "copied": "Tautan disalin",
+  "next": {
+    "body": "Unduhan dimulai. Selanjutnya, buka penginstal dari folder unduhan Anda.",
+    "link": "Lihat langkahnya",
+    "badge": "Berikutnya"
+  },
   "downloadFor": "Unduh untuk {{os}}",
   "steps": {
     "download": "Unduh",
@@ -27,7 +34,8 @@
     "version": "Versi {{version}}",
     "notYet": "Belum tersedia",
     "error": "Kami tidak dapat memeriksa versi terbaru.",
-    "unsupported": "Aplikasi wawancara berjalan di komputer Windows. Buka halaman ini di sana untuk mengunduhnya."
+    "unsupported": "Aplikasi wawancara berjalan di komputer Windows. Buka halaman ini di sana untuk mengunduhnya.",
+    "installer": "Penginstal {{type}}"
   },
   "install": {
     "title": "Dari unduhan ke wawancara",
@@ -41,6 +49,10 @@
       {
         "q": "Komputer apa yang didukung?",
         "a": "Komputer Windows. Versi macOS sedang disiapkan, dan halaman ini akan menyediakannya begitu siap."
+      },
+      {
+        "q": "Apa saja yang digunakan aplikasi selama wawancara?",
+        "a": "Kamera, mikrofon, dan layar Anda, agar wawancara bisa diawasi. Sebelum Anda mulai, aplikasi juga memeriksa bahwa tidak ada aplikasi terblokir yang berjalan."
       },
       {
         "q": "Apakah saya perlu akun?",

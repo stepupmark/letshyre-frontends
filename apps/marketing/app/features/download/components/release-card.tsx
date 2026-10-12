@@ -1,21 +1,15 @@
-import { desktopDownloadUrl, type DesktopOs } from "@workspace/api/public"
+import type { DesktopOs } from "@workspace/api/public"
 import { useTranslation } from "@workspace/i18n/react"
 import { Badge } from "@workspace/ui/components/badge"
-import { Button, buttonVariants } from "@workspace/ui/components/button"
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardHeader,
-} from "@workspace/ui/components/card"
+import { Button } from "@workspace/ui/components/button"
+import { Card } from "@workspace/ui/components/card"
 import { Skeleton } from "@workspace/ui/components/skeleton"
 import { useQuery } from "@tanstack/react-query"
-import { useId } from "react"
-
-import { env } from "@/lib/env"
+import { useEffect, useId, useRef } from "react"
 
 import { releaseQuery } from "../queries/releases.queries"
+import { Device } from "./art/device"
+import { DownloadLink, NextStep, ReleaseMeta } from "./download-link"
 
 export function ReleaseCard({
   os,
@@ -26,6 +20,7 @@ export function ReleaseCard({
 }) {
   const { t } = useTranslation("download")
   const titleId = useId()
+  const statusId = useId()
   const {
     data: release,
     status,
@@ -35,61 +30,82 @@ export function ReleaseCard({
   const name = t(`os.${os}`)
   const ready = status === "success" && release?.available ? release : null
 
-  function statusText() {
-    if (status === "pending") return t("loading")
-    if (status === "error") return t("release.error")
-    if (!ready) return t("release.notYet")
-    return ready.version
-      ? t("release.version", { version: ready.version })
-      : null
+  // the retry button goes away while it loads, so hand focus to whatever replaces it
+  const retried = useRef(false)
+  const action = useRef<HTMLElement | null>(null)
+  const card = useRef<HTMLDivElement>(null)
+  const setAction = (el: HTMLElement | null) => {
+    action.current = el
   }
+  useEffect(() => {
+    if (!retried.current || isFetching) return
+    retried.current = false
+    ;(action.current ?? card.current)?.focus()
+  }, [isFetching])
 
   return (
     <Card
+      ref={card}
+      tabIndex={-1}
       role="group"
       aria-labelledby={titleId}
       data-os={os}
       data-recommended={recommended || undefined}
-      className="gap-5 py-5 data-recommended:ring-2 data-recommended:ring-brand"
+      className="group/release flex-col gap-5 p-5 transition-[box-shadow,translate] duration-300 outline-none hover:-translate-y-0.5 hover:shadow-lg hover:shadow-foreground/5 data-recommended:ring-2 data-recommended:ring-brand motion-reduce:transition-none sm:flex-row sm:items-center sm:gap-6 sm:p-6"
     >
-      <CardHeader className="px-5">
-        <h3 id={titleId} className="text-lg font-semibold">
-          {name}
-        </h3>
-        <CardDescription aria-live="polite">{statusText()}</CardDescription>
-        {recommended && (
-          <CardAction>
-            <Badge>{t("release.detected")}</Badge>
-          </CardAction>
+      <Device os={os} ready={ready !== null} />
+      <div className="flex min-w-0 flex-1 flex-col gap-1">
+        <div className="flex flex-wrap items-center gap-2">
+          <h3 id={titleId} className="text-lg/7 font-semibold tracking-tight">
+            {name}
+          </h3>
+          {recommended && (
+            <Badge className="rise">{t("release.detected")}</Badge>
+          )}
+        </div>
+        {ready ? (
+          <ReleaseMeta id={statusId} release={ready} />
+        ) : (
+          <p id={statusId} className="text-sm text-muted-foreground">
+            {status === "pending" && t("loading")}
+            {status === "error" && t("release.error")}
+            {status === "success" && t("release.notYet")}
+          </p>
         )}
-      </CardHeader>
-      <CardContent className="px-5">
-        {status === "pending" && <Skeleton className="h-9 w-full" />}
+        {ready && <NextStep />}
+      </div>
+      <div className="flex shrink-0 sm:w-56 sm:justify-end">
+        {status === "pending" && <Skeleton className="h-10 w-full" />}
         {status === "error" && (
           <Button
+            ref={setAction}
             variant="outline"
             size="lg"
-            className="w-full"
+            className="h-10 w-full px-4"
+            aria-describedby={statusId}
             disabled={isFetching}
             onClick={() => {
+              retried.current = true
               void refetch()
             }}
           >
-            {t("retry")}
+            {t("retry")} <span className="sr-only">{name}</span>
           </Button>
         )}
         {status === "success" &&
           (ready ? (
-            <a
-              href={desktopDownloadUrl(env.VITE_API_BASE_URL, os)}
-              className={buttonVariants({ size: "lg", className: "w-full" })}
-            >
-              {t("downloadFor", { os: name })}
-            </a>
+            <DownloadLink
+              ref={setAction}
+              os={os}
+              describedBy={statusId}
+              className="w-full"
+            />
           ) : (
-            <Badge variant="outline">{t("comingSoon")}</Badge>
+            <Badge variant="outline" className="h-7 px-3">
+              {t("comingSoon")}
+            </Badge>
           ))}
-      </CardContent>
+      </div>
     </Card>
   )
 }

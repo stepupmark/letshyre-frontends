@@ -1,5 +1,5 @@
 {
-  "title": "Télécharger l'application",
+  "title": "Téléchargez l'application d'entretien LetsHyre",
   "subtitle": "Obtenez l'application de bureau sécurisée pour commencer votre session d'entretien stable et sans distraction.",
   "platforms": {
     "title": "Choisissez votre plateforme"
@@ -9,9 +9,16 @@
     "stable": "Vérifie les applications bloquées avant de commencer",
     "secure": "Surveillé par caméra, micro et écran"
   },
-  "loading": "Chargement des versions...",
+  "loading": "Recherche de la dernière version…",
   "comingSoon": "Bientôt disponible",
   "retry": "Réessayer",
+  "copyLink": "Copier le lien de cette page",
+  "copied": "Lien copié",
+  "next": {
+    "body": "Le téléchargement a commencé. Ouvrez ensuite le programme d'installation depuis vos téléchargements.",
+    "link": "Voir les étapes",
+    "badge": "Étape suivante"
+  },
   "downloadFor": "Télécharger pour {{os}}",
   "steps": {
     "download": "Télécharger",
@@ -27,7 +34,8 @@
     "version": "Version {{version}}",
     "notYet": "Pas encore disponible",
     "error": "Impossible de vérifier la dernière version.",
-    "unsupported": "L'application d'entretien fonctionne sur un ordinateur Windows. Ouvrez cette page sur celui-ci pour la télécharger."
+    "unsupported": "L'application d'entretien fonctionne sur un ordinateur Windows. Ouvrez cette page sur celui-ci pour la télécharger.",
+    "installer": "Programme d'installation {{type}}"
   },
   "install": {
     "title": "Du téléchargement à l'entretien",
@@ -41,6 +49,10 @@
       {
         "q": "Quels ordinateurs sont pris en charge ?",
         "a": "Les ordinateurs Windows. La version macOS arrive bientôt et cette page la proposera dès qu’elle sera prête."
+      },
+      {
+        "q": "Qu'utilise l'application pendant l'entretien ?",
+        "a": "Votre caméra, votre micro et votre écran, pour que l'entretien puisse être surveillé. Avant de commencer, elle vérifie aussi qu'aucune application bloquée n'est ouverte."
       },
       {
         "q": "Ai-je besoin d’un compte ?",

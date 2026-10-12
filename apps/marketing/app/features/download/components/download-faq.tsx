@@ -7,19 +7,16 @@ import {
 } from "@workspace/ui/components/accordion"
 import { useId } from "react"
 
+import { SectionHeader } from "@/components/section"
+
 export function DownloadFaq() {
   const { t } = useTranslation("download")
   const titleId = useId()
   const items = t("faq.items", { returnObjects: true })
 
   return (
-    <section aria-labelledby={titleId} className="flex flex-col gap-4">
-      <h2
-        id={titleId}
-        className="text-2xl font-semibold tracking-tight sm:text-3xl"
-      >
-        {t("faq.title")}
-      </h2>
+    <section aria-labelledby={titleId} className="flex flex-col gap-6">
+      <SectionHeader id={titleId} title={t("faq.title")} />
       <Accordion className="border-t">
         {items.map((item) => (
           <AccordionItem key={item.q} className="border-b">
@@ -28,7 +25,7 @@ export function DownloadFaq() {
             </AccordionTrigger>
             <AccordionContent
               keepMounted
-              className="max-w-prose pb-4 text-base text-pretty text-muted-foreground"
+              className="max-w-prose pb-4 text-base/6 text-pretty text-muted-foreground"
             >
               {item.a}
             </AccordionContent>

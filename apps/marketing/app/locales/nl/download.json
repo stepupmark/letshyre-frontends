@@ -1,5 +1,5 @@
 {
-  "title": "Applicatie downloaden",
+  "title": "Download de LetsHyre-interviewapp",
   "subtitle": "Haal de beveiligde desktop-app op om uw stabiele, afleidingsvrije interviewsessie te starten.",
   "platforms": {
     "title": "Kies je platform"
@@ -9,9 +9,16 @@
     "stable": "Controleert op geblokkeerde apps voordat u begint",
     "secure": "Bewaakt via camera, microfoon en scherm"
   },
-  "loading": "Releases laden...",
+  "loading": "Nieuwste versie controleren…",
   "comingSoon": "Binnenkort beschikbaar",
   "retry": "Opnieuw proberen",
+  "copyLink": "Link naar deze pagina kopiëren",
+  "copied": "Link gekopieerd",
+  "next": {
+    "body": "De download is gestart. Open daarna het installatiebestand uit je downloads.",
+    "link": "Bekijk de stappen",
+    "badge": "Volgende"
+  },
   "downloadFor": "Downloaden voor {{os}}",
   "steps": {
     "download": "Downloaden",
@@ -27,7 +34,8 @@
     "version": "Versie {{version}}",
     "notYet": "Nog niet beschikbaar",
     "error": "We konden de nieuwste versie niet controleren.",
-    "unsupported": "De interviewapp werkt op een Windows-computer. Open deze pagina daar om hem te downloaden."
+    "unsupported": "De interviewapp werkt op een Windows-computer. Open deze pagina daar om hem te downloaden.",
+    "installer": "{{type}}-installatiebestand"
   },
   "install": {
     "title": "Van download tot interview",
@@ -41,6 +49,10 @@
       {
         "q": "Welke computers worden ondersteund?",
         "a": "Windows-computers. De macOS-versie komt eraan en deze pagina biedt hem aan zodra hij klaar is."
+      },
+      {
+        "q": "Wat gebruikt de app tijdens het interview?",
+        "a": "Je camera, microfoon en scherm, zodat er toezicht op het interview kan zijn. Voordat je begint, controleert de app ook of er geen geblokkeerde apps draaien."
       },
       {
         "q": "Heb ik een account nodig?",

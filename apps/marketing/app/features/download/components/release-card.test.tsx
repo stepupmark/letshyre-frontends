@@ -51,7 +51,9 @@ describe("ReleaseCard", () => {
     latest.mockResolvedValue(windows)
     renderCard()
 
-    expect(screen.getByText("Loading releases...")).toBeInTheDocument()
+    expect(
+      screen.getByText("Checking for the latest version…")
+    ).toBeInTheDocument()
     const link = await screen.findByRole("link", {
       name: "Download for Windows",
     })
@@ -59,7 +61,9 @@ describe("ReleaseCard", () => {
       "href",
       "https://api.example.test/commonapp/v1/desktop_app/windows/download/"
     )
-    expect(screen.getByText("Version 1.4.4")).toBeInTheDocument()
+    expect(
+      screen.getByText("Version 1.4.4 · EXE installer")
+    ).toBeInTheDocument()
     expect(screen.getByText("Your computer")).toBeInTheDocument()
   })
 
@@ -67,7 +71,7 @@ describe("ReleaseCard", () => {
     latest.mockRejectedValue(new HttpError(404))
     renderCard("mac")
 
-    expect(await screen.findByText("Coming Soon")).toBeInTheDocument()
+    expect(await screen.findByText("Coming soon")).toBeInTheDocument()
     expect(screen.getByText("Not available yet")).toBeInTheDocument()
     expect(screen.queryByRole("link")).not.toBeInTheDocument()
   })
@@ -77,7 +81,9 @@ describe("ReleaseCard", () => {
     latest.mockResolvedValueOnce(windows)
     renderCard()
 
-    await userEvent.click(await screen.findByRole("button", { name: "Retry" }))
+    await userEvent.click(
+      await screen.findByRole("button", { name: "Retry Windows" })
+    )
     expect(
       await screen.findByRole("link", { name: "Download for Windows" })
     ).toBeInTheDocument()

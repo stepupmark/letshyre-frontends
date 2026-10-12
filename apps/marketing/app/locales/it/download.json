@@ -1,5 +1,5 @@
 {
-  "title": "Scarica l'Applicazione",
+  "title": "Scarica l'app per i colloqui di LetsHyre",
   "subtitle": "Ottieni l'app desktop sicura per iniziare una sessione di colloquio stabile e senza distrazioni.",
   "platforms": {
     "title": "Scegli la tua piattaforma"
@@ -9,9 +9,16 @@
     "stable": "Controlla le app bloccate prima di iniziare",
     "secure": "Supervisionato con fotocamera, microfono e schermo"
   },
-  "loading": "Caricamento versioni in corso...",
+  "loading": "Verifica dell'ultima versione…",
   "comingSoon": "Prossimamente",
   "retry": "Riprova",
+  "copyLink": "Copia il link a questa pagina",
+  "copied": "Link copiato",
+  "next": {
+    "body": "Il download è iniziato. Ora apri il programma di installazione dai tuoi download.",
+    "link": "Vedi i passaggi",
+    "badge": "Prossimo passo"
+  },
   "downloadFor": "Scarica per {{os}}",
   "steps": {
     "download": "Scarica",
@@ -27,7 +34,8 @@
     "version": "Versione {{version}}",
     "notYet": "Non ancora disponibile",
     "error": "Non siamo riusciti a verificare l'ultima versione.",
-    "unsupported": "L'app per i colloqui funziona su un computer Windows. Apri questa pagina lì per scaricarla."
+    "unsupported": "L'app per i colloqui funziona su un computer Windows. Apri questa pagina lì per scaricarla.",
+    "installer": "Programma di installazione {{type}}"
   },
   "install": {
     "title": "Dal download al colloquio",
@@ -41,6 +49,10 @@
       {
         "q": "Quali computer sono supportati?",
         "a": "I computer Windows. La versione per macOS è in arrivo e questa pagina la offrirà appena sarà pronta."
+      },
+      {
+        "q": "Cosa usa l'app durante il colloquio?",
+        "a": "La fotocamera, il microfono e lo schermo, così il colloquio può essere supervisionato. Prima di iniziare, controlla anche che non ci siano app bloccate in esecuzione."
       },
       {
         "q": "Mi serve un account?",

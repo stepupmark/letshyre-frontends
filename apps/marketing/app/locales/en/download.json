@@ -1,5 +1,5 @@
 {
-  "title": "Download Application",
+  "title": "Download the LetsHyre interview app",
   "subtitle": "Get the secure desktop app to start your stable, distraction-free interview session.",
   "platforms": {
     "title": "Choose your platform"
@@ -9,9 +9,16 @@
     "stable": "Checks for blocked apps before you start",
     "secure": "Proctored with camera, microphone and screen"
   },
-  "loading": "Loading releases...",
-  "comingSoon": "Coming Soon",
+  "loading": "Checking for the latest version…",
+  "comingSoon": "Coming soon",
   "retry": "Retry",
+  "copyLink": "Copy link to this page",
+  "copied": "Link copied",
+  "next": {
+    "body": "Download started. Next, open the installer from your downloads.",
+    "link": "See the steps",
+    "badge": "Up next"
+  },
   "downloadFor": "Download for {{os}}",
   "steps": {
     "download": "Download",
@@ -27,7 +34,8 @@
     "version": "Version {{version}}",
     "notYet": "Not available yet",
     "error": "We couldn't check for the latest version.",
-    "unsupported": "The interview app runs on a Windows computer. Open this page there to download it."
+    "unsupported": "The interview app runs on a Windows computer. Open this page there to download it.",
+    "installer": "{{type}} installer"
   },
   "install": {
     "title": "From download to interview",
@@ -41,6 +49,10 @@
       {
         "q": "Which computers are supported?",
         "a": "Windows computers. The macOS version is on the way, and this page will offer it as soon as it's ready."
+      },
+      {
+        "q": "What does the app use during the interview?",
+        "a": "Your camera, microphone and screen, so the interview can be proctored. Before you start, it also checks that no blocked apps are running."
       },
       {
         "q": "Do I need an account?",

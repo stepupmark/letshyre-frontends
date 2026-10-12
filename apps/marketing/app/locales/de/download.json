@@ -1,5 +1,5 @@
 {
-  "title": "Anwendung herunterladen",
+  "title": "Die LetsHyre-Interview-App herunterladen",
   "subtitle": "Laden Sie die sichere Desktop-App herunter, um Ihre stabile, ablenkungsfreie Interviewsitzung zu starten.",
   "platforms": {
     "title": "Wählen Sie Ihre Plattform"
@@ -9,9 +9,16 @@
     "stable": "Prüft vor dem Start auf blockierte Apps",
     "secure": "Beaufsichtigt per Kamera, Mikrofon und Bildschirm"
   },
-  "loading": "Versionen werden geladen...",
+  "loading": "Neueste Version wird gesucht…",
   "comingSoon": "Demnächst verfügbar",
   "retry": "Erneut versuchen",
+  "copyLink": "Link zu dieser Seite kopieren",
+  "copied": "Link kopiert",
+  "next": {
+    "body": "Der Download hat begonnen. Öffnen Sie als Nächstes das Installationsprogramm in Ihren Downloads.",
+    "link": "Zu den Schritten",
+    "badge": "Als Nächstes"
+  },
   "downloadFor": "Für {{os}} herunterladen",
   "steps": {
     "download": "Herunterladen",
@@ -27,7 +34,8 @@
     "version": "Version {{version}}",
     "notYet": "Noch nicht verfügbar",
     "error": "Die neueste Version konnte nicht abgerufen werden.",
-    "unsupported": "Die Interview-App läuft auf einem Windows-Computer. Öffnen Sie diese Seite dort, um sie herunterzuladen."
+    "unsupported": "Die Interview-App läuft auf einem Windows-Computer. Öffnen Sie diese Seite dort, um sie herunterzuladen.",
+    "installer": "{{type}}-Installationsprogramm"
   },
   "install": {
     "title": "Vom Download zum Interview",
@@ -41,6 +49,10 @@
       {
         "q": "Welche Computer werden unterstützt?",
         "a": "Windows-Computer. Die macOS-Version ist in Arbeit, diese Seite bietet sie an, sobald sie fertig ist."
+      },
+      {
+        "q": "Worauf greift die App während des Interviews zu?",
+        "a": "Auf Ihre Kamera, Ihr Mikrofon und Ihren Bildschirm, damit das Interview beaufsichtigt werden kann. Vor dem Start prüft sie außerdem, dass keine gesperrten Apps laufen."
       },
       {
         "q": "Brauche ich ein Konto?",

@@ -93,11 +93,13 @@ export const softwareApplicationSchema = ({
   description,
   os,
   url,
+  downloadUrl,
 }: {
   name: string
   description: string
   os: string
   url: string
+  downloadUrl?: string
 }): JsonLd => ({
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -106,6 +108,7 @@ export const softwareApplicationSchema = ({
   operatingSystem: os,
   applicationCategory: "BusinessApplication",
   url,
+  ...(downloadUrl && { downloadUrl }),
   offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
   publisher: { "@id": `${SITE.url}/#organization` },
 })

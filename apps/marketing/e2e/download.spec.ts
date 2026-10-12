@@ -65,7 +65,9 @@ test("shows a retry when releases can't be loaded", async ({ page }) => {
   await page.goto("/en/download")
 
   const windows = page.getByRole("group", { name: "Windows" })
-  await expect(windows.getByRole("button", { name: "Retry" })).toBeVisible({
+  await expect(
+    windows.getByRole("button", { name: "Retry Windows" })
+  ).toBeVisible({
     timeout: 10_000,
   })
 })
@@ -79,8 +81,9 @@ test("links sign in to the candidate app", async ({ page }) => {
   )
 })
 
-test("ships SoftwareApplication JSON-LD", async ({ request }) => {
+test("ships SoftwareApplication and FAQ JSON-LD", async ({ request }) => {
   const html = await (await request.get("/en/download")).text()
   expect(html).toContain('"@type":"SoftwareApplication"')
   expect(html).toContain('"operatingSystem":"Windows"')
+  expect(html).toContain('"@type":"FAQPage"')
 })

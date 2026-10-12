@@ -2,6 +2,8 @@ import type { DesktopOs } from "@workspace/api/public"
 import { useTranslation } from "@workspace/i18n/react"
 import { useId } from "react"
 
+import { SectionHeader } from "@/components/section"
+
 import { useDetectedOs } from "../hooks/use-detected-os"
 import { ReleaseCard } from "./release-card"
 
@@ -14,18 +16,19 @@ export function ReleaseList() {
   const titleId = useId()
 
   return (
-    <section aria-labelledby={titleId} className="flex flex-col gap-4">
-      <h2
-        id={titleId}
-        className="text-2xl font-semibold tracking-tight sm:text-3xl"
-      >
-        {t("platforms.title")}
-      </h2>
-      <div className="grid gap-4 sm:grid-cols-2">
+    <section
+      id="platforms"
+      aria-labelledby={titleId}
+      className="flex scroll-mt-24 flex-col gap-6"
+    >
+      <SectionHeader id={titleId} title={t("platforms.title")} />
+      <ul className="flex flex-col gap-4">
         {PLATFORMS.map((os) => (
-          <ReleaseCard key={os} os={os} recommended={os === detected} />
+          <li key={os}>
+            <ReleaseCard os={os} recommended={os === detected} />
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   )
 }
