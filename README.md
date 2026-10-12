@@ -5,8 +5,8 @@ pnpm + Turborepo monorepo for letshyre.ai. Node 24, pnpm 10.
 | App                                  | What it is                                              | Dev                     |
 | ------------------------------------ | ------------------------------------------------------- | ----------------------- |
 | [`apps/marketing`](apps/marketing)   | Public site, prerendered in 19 locales                  | `http://localhost:5173` |
-| [`apps/app`](apps/app)               | Employer and candidate dashboards, sign-in and register | `http://localhost:5175` |
-| [`apps/admin`](apps/admin/README.md) | Internal admin panel, English only, never indexed       | `http://localhost:5176` |
+| [`apps/app`](apps/app)               | Employer and candidate dashboards, sign-in and register | `http://localhost:5174` |
+| [`apps/admin`](apps/admin/README.md) | Internal admin panel, English only, never indexed       | `http://localhost:5175` |
 
 Shared packages live in `packages/`: `ui` (shadcn, never edited), `blocks`, `api`, `auth`, `i18n`,
 `analytics`, `eslint-config` and `typescript-config`.

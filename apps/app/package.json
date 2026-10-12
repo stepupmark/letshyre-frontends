@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "react-router dev --port 5175",
+    "dev": "react-router dev --port 5174",
     "build": "react-router build && node scripts/postbuild.ts",
     "preview": "node e2e/serve.ts",
     "typecheck": "react-router typegen && tsc",
