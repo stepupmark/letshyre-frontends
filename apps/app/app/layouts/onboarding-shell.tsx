@@ -27,7 +27,7 @@ export function OnboardingShell({ wide = false }: { wide?: boolean }) {
           >
             <Logo label={t("common:appName")} />
             <div className="flex items-center gap-1">
-              <LanguagePicker />
+              <LanguagePicker display="name" />
               <Button
                 variant="ghost"
                 size="sm"
@@ -46,7 +46,7 @@ export function OnboardingShell({ wide = false }: { wide?: boolean }) {
           id="main"
           tabIndex={-1}
           className={cn(
-            "mx-auto w-full flex-1 px-4 py-8 outline-none sm:px-6 sm:py-12",
+            "mx-auto w-full flex-1 px-(--gutter) py-8 outline-none [--gutter:--spacing(4)] sm:py-12 sm:[--gutter:--spacing(6)]",
             wide ? "max-w-6xl" : "max-w-3xl"
           )}
         >

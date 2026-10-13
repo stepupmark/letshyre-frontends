@@ -1,5 +1,6 @@
 import { z } from "zod"
 
+import { GSTIN, isLinkedIn, PAN, PIN_CODE } from "@/lib/company-ids"
 import type { FileRules } from "@/lib/file-rules"
 import { checkFile } from "@/lib/file-rules"
 
@@ -27,7 +28,10 @@ export const STEPS = {
     "company_registration_number",
     "pan_number",
     "gst_number",
-    "company_address",
+    "address_line",
+    "address_city",
+    "address_state",
+    "address_pin",
   ],
   documents: [
     "company_logo",
@@ -48,15 +52,6 @@ export const DOCUMENTS: { name: FileField; rules: FileRules }[] = [
   { name: "address_proof", rules: DOCUMENT },
 ]
 
-// country hosts too, like in.linkedin.com
-const isLinkedIn = (value: string) => {
-  try {
-    return /(^|\.)linkedin\.com$/i.test(new URL(value).hostname)
-  } catch {
-    return false
-  }
-}
-
 type Messages = Record<
   | "nameMin"
   | "website"
@@ -69,6 +64,9 @@ type Messages = Record<
   | "pan"
   | "gst"
   | "address"
+  | "city"
+  | "state"
+  | "pin"
   | "fileRequired"
   | "fileInvalid",
   string
@@ -92,11 +90,12 @@ export const makeSchema = (m: Messages) => {
       .trim()
       .min(5, m.registration)
       .max(50, m.registration),
-    pan_number: z.string().regex(/^[A-Z]{5}[0-9]{4}[A-Z]$/, m.pan),
-    gst_number: z
-      .string()
-      .regex(/^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z][1-9A-Z]Z[0-9A-Z]$/, m.gst),
-    company_address: z.string().trim().min(5, m.address),
+    pan_number: z.string().regex(PAN, m.pan),
+    gst_number: z.string().regex(GSTIN, m.gst),
+    address_line: z.string().trim().min(5, m.address),
+    address_city: z.string().trim().min(2, m.city),
+    address_state: z.string().trim().min(2, m.state),
+    address_pin: z.string().trim().regex(PIN_CODE, m.pin),
     company_logo: file(IMAGE),
     registration_certificate: file(DOCUMENT),
     gst_certificate: file(DOCUMENT),
@@ -104,5 +103,24 @@ export const makeSchema = (m: Messages) => {
   })
 }
 
-export type Values = z.infer<ReturnType<typeof makeSchema>>
+export type Schema = ReturnType<typeof makeSchema>
+export type Values = z.infer<Schema>
 export type Draft = Pick<Values, TextField>
+
+/** The part of the schema one step covers. */
+export const stepSchema = (schema: Schema, step: StepId) => {
+  const mask: Partial<Record<keyof Values, true>> = {}
+  for (const key of STEPS[step]) mask[key] = true
+  return schema.pick(mask)
+}
+
+/** The API takes the address as one line. */
+export const joinAddress = (values: Partial<Values>) =>
+  [
+    values.address_line,
+    values.address_city,
+    [values.address_state, values.address_pin].filter(Boolean).join(" "),
+  ]
+    .map((part) => part?.trim())
+    .filter(Boolean)
+    .join(", ")

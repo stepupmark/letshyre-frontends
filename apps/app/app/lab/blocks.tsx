@@ -35,6 +35,11 @@ import {
 import { undoToast } from "@/lib/undo-toast"
 
 import { applicants, type Applicant } from "./fixtures"
+import {
+  OnboardingPreviewDemo,
+  StepperDemo,
+  UploadRowsDemo,
+} from "./onboarding-demos"
 import { useLab } from "./use-lab"
 
 export function meta() {
@@ -270,7 +275,12 @@ export default function Blocks() {
         />
       </section>
 
-      <WizardDemo />
+      <UploadRowsDemo />
+      <StepperDemo />
+      <div className="[--gutter:--spacing(4)]">
+        <WizardDemo />
+      </div>
+      <OnboardingPreviewDemo />
 
       <section className="flex flex-col gap-3">
         <h2 className="text-base font-medium">Smaller pieces</h2>

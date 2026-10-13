@@ -25,11 +25,15 @@
     "panHint": "10 tekens, zoals ABCDE1234F",
     "gst": "GSTIN",
     "gstHint": "15 tekens, zoals 36ABCDE1234F1Z5",
-    "address": "Statutair adres"
+    "address": "Statutair adres",
+    "addressLine": "Straat en huisnummer",
+    "city": "Plaats",
+    "state": "Staat",
+    "pin": "PIN-code"
   },
   "documents": {
     "lead": "Duidelijke scans of foto's, tot 5 MB per stuk. Kandidaten zien deze nooit.",
-    "keepWarning": "Bestanden blijven niet bewaard als je deze pagina verlaat, dus voeg alle vier toe voordat je afrondt.",
+    "keepWarning": "Bestanden blijven op dit apparaat tot je verstuurt, dus je kunt weggaan en terugkomen.",
     "count": "{{count}} van {{total}} toegevoegd",
     "company_logo": {
       "label": "Bedrijfslogo",
@@ -46,7 +50,8 @@
     "address_proof": {
       "label": "Adresbewijs",
       "hint": "Een energierekening of huurcontract"
-    }
+    },
+    "logoNotSquare": "Dit logo is {{width}} × {{height}}. Een vierkant logo werkt het best, want we tonen het in een vierkant."
   },
   "draftSaved": "Concept opgeslagen op dit apparaat",
   "submitting": "Uw documenten worden geüpload… {{percent}}%",
@@ -62,7 +67,10 @@
     "registration": "Vul uw registratienummer in (5 tot 50 tekens)",
     "pan": "Een PAN heeft 10 tekens, zoals ABCDE1234F",
     "gst": "Een GSTIN heeft 15 tekens, zoals 36ABCDE1234F1Z5",
-    "address": "Vul uw statutaire adres in",
+    "address": "Vul je straat en huisnummer in",
+    "city": "Vul een plaats in",
+    "state": "Vul een staat in",
+    "pin": "Een PIN-code heeft 6 cijfers, zoals 500081",
     "fileRequired": "Voeg dit document toe",
     "fileInvalid": "Gebruik een bestand van een toegestaan type, tot 5 MB"
   },
@@ -84,8 +92,13 @@
       "verified": {
         "title": "Geverifieerd",
         "body": "We mailen je zodra het klaar is. Tot dan kun je vacatures plaatsen en kandidaten bekijken."
+      },
+      "rejected": {
+        "title": "Aanpassing nodig",
+        "body": "Sommige gegevens moeten opnieuw bekeken worden. We mailen {{email}} wat er moet worden aangepast."
       }
-    }
+    },
+    "fixDetails": "Bedrijfsgegevens bijwerken"
   },
   "groups": {
     "about": "Over het bedrijf",
@@ -100,6 +113,8 @@
     "editLabel": "{{section}} bewerken"
   },
   "preview": {
+    "show": "Voorbeeld tonen",
+    "hide": "Voorbeeld verbergen",
     "company": {
       "caption": "Zo zien kandidaten je bedrijf"
     },

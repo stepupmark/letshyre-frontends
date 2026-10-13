@@ -25,11 +25,15 @@
     "panHint": "10 Zeichen, z. B. ABCDE1234F",
     "gst": "GSTIN",
     "gstHint": "15 Zeichen, z. B. 36ABCDE1234F1Z5",
-    "address": "Eingetragene Adresse"
+    "address": "Eingetragene Adresse",
+    "addressLine": "Straße und Hausnummer",
+    "city": "Stadt",
+    "state": "Bundesstaat",
+    "pin": "PIN-Code"
   },
   "documents": {
     "lead": "Klare Scans oder Fotos, je bis 5 MB. Kandidaten sehen diese nie.",
-    "keepWarning": "Dateien bleiben nicht erhalten, wenn Sie die Seite verlassen. Fügen Sie also alle vier vor dem Abschluss hinzu.",
+    "keepWarning": "Dateien bleiben bis zum Absenden auf diesem Gerät, Sie können also gehen und später weitermachen.",
     "count": "{{count}} von {{total}} hinzugefügt",
     "company_logo": {
       "label": "Firmenlogo",
@@ -46,7 +50,8 @@
     "address_proof": {
       "label": "Adressnachweis",
       "hint": "Eine Versorgerrechnung oder ein Mietvertrag"
-    }
+    },
+    "logoNotSquare": "Dieses Logo ist {{width}} × {{height}}. Quadratisch wirkt es am besten, da wir es quadratisch zeigen."
   },
   "draftSaved": "Entwurf auf diesem Gerät gespeichert",
   "submitting": "Ihre Dokumente werden hochgeladen… {{percent}} %",
@@ -62,7 +67,10 @@
     "registration": "Geben Sie Ihre Registrierungsnummer ein (5 bis 50 Zeichen)",
     "pan": "Eine PAN hat 10 Zeichen, z. B. ABCDE1234F",
     "gst": "Eine GSTIN hat 15 Zeichen, z. B. 36ABCDE1234F1Z5",
-    "address": "Geben Sie Ihre eingetragene Adresse ein",
+    "address": "Geben Sie Straße und Hausnummer ein",
+    "city": "Geben Sie eine Stadt ein",
+    "state": "Geben Sie einen Bundesstaat ein",
+    "pin": "Ein PIN-Code hat 6 Ziffern, z. B. 500081",
     "fileRequired": "Fügen Sie dieses Dokument hinzu",
     "fileInvalid": "Verwenden Sie eine Datei eines akzeptierten Typs bis 5 MB"
   },
@@ -84,8 +92,13 @@
       "verified": {
         "title": "Verifiziert",
         "body": "Wir schreiben Ihnen, sobald alles fertig ist. Bis dahin können Sie Stellen ausschreiben und Bewerbende ansehen."
+      },
+      "rejected": {
+        "title": "Änderungen nötig",
+        "body": "Einige Angaben müssen nochmals geprüft werden. Wir schreiben an {{email}}, was zu korrigieren ist."
       }
-    }
+    },
+    "fixDetails": "Unternehmensdaten aktualisieren"
   },
   "groups": {
     "about": "Über das Unternehmen",
@@ -100,6 +113,8 @@
     "editLabel": "{{section}} bearbeiten"
   },
   "preview": {
+    "show": "Vorschau zeigen",
+    "hide": "Vorschau ausblenden",
     "company": {
       "caption": "So sehen Bewerbende Ihr Unternehmen"
     },

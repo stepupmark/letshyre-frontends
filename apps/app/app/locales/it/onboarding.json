@@ -25,11 +25,15 @@
     "panHint": "10 caratteri, ad es. ABCDE1234F",
     "gst": "GSTIN",
     "gstHint": "15 caratteri, ad es. 36ABCDE1234F1Z5",
-    "address": "Sede legale"
+    "address": "Sede legale",
+    "addressLine": "Indirizzo",
+    "city": "Città",
+    "state": "Stato",
+    "pin": "Codice PIN"
   },
   "documents": {
     "lead": "Scansioni o foto nitide, fino a 5 MB ciascuna. I candidati non le vedono mai.",
-    "keepWarning": "I file non vengono conservati se lasci questa pagina, quindi aggiungi tutti e quattro prima di finire.",
+    "keepWarning": "I file restano su questo dispositivo fino all'invio, quindi puoi uscire e tornare.",
     "count": "{{count}} di {{total}} aggiunti",
     "company_logo": {
       "label": "Logo aziendale",
@@ -46,7 +50,8 @@
     "address_proof": {
       "label": "Prova dell'indirizzo",
       "hint": "Una bolletta o un contratto d'affitto"
-    }
+    },
+    "logoNotSquare": "Questo logo è {{width}} × {{height}}. Uno quadrato rende meglio, perché lo mostriamo in un quadrato."
   },
   "draftSaved": "Bozza salvata su questo dispositivo",
   "submitting": "Caricamento dei documenti… {{percent}}%",
@@ -62,7 +67,10 @@
     "registration": "Inserisci il numero di registrazione (da 5 a 50 caratteri)",
     "pan": "Un PAN ha 10 caratteri, come ABCDE1234F",
     "gst": "Un GSTIN ha 15 caratteri, come 36ABCDE1234F1Z5",
-    "address": "Inserisci la sede legale",
+    "address": "Inserisci l'indirizzo",
+    "city": "Inserisci una città",
+    "state": "Inserisci uno stato",
+    "pin": "Un codice PIN ha 6 cifre, ad es. 500081",
     "fileRequired": "Aggiungi questo documento",
     "fileInvalid": "Usa un file di un tipo accettato, fino a 5 MB"
   },
@@ -84,8 +92,13 @@
       "verified": {
         "title": "Verificata",
         "body": "Ti scriveremo a verifica conclusa. Nel frattempo puoi pubblicare offerte e vedere i candidati."
+      },
+      "rejected": {
+        "title": "Servono modifiche",
+        "body": "Alcuni dati vanno ricontrollati. Scriveremo a {{email}} cosa correggere."
       }
-    }
+    },
+    "fixDetails": "Aggiorna i dati aziendali"
   },
   "groups": {
     "about": "Informazioni sull'azienda",
@@ -100,6 +113,8 @@
     "editLabel": "Modifica {{section}}"
   },
   "preview": {
+    "show": "Mostra anteprima",
+    "hide": "Nascondi anteprima",
     "company": {
       "caption": "Come i candidati vedranno la tua azienda"
     },

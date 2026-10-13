@@ -25,11 +25,15 @@
     "panHint": "10 caracteres, como ABCDE1234F",
     "gst": "GSTIN",
     "gstHint": "15 caracteres, como 36ABCDE1234F1Z5",
-    "address": "Endereço registrado"
+    "address": "Endereço registrado",
+    "addressLine": "Endereço",
+    "city": "Cidade",
+    "state": "Estado",
+    "pin": "Código PIN"
   },
   "documents": {
     "lead": "Digitalizações ou fotos nítidas, até 5 MB cada. Os candidatos nunca veem estes documentos.",
-    "keepWarning": "Os arquivos não ficam salvos se você sair desta página, então adicione os quatro antes de concluir.",
+    "keepWarning": "Os arquivos ficam neste dispositivo até o envio, então você pode sair e voltar.",
     "count": "{{count}} de {{total}} adicionados",
     "company_logo": {
       "label": "Logotipo da empresa",
@@ -46,7 +50,8 @@
     "address_proof": {
       "label": "Comprovante de endereço",
       "hint": "Uma conta de consumo ou contrato de aluguel"
-    }
+    },
+    "logoNotSquare": "Este logo tem {{width}} × {{height}}. Um quadrado fica melhor, pois o exibimos em um quadrado."
   },
   "draftSaved": "Rascunho salvo neste dispositivo",
   "submitting": "Enviando seus documentos… {{percent}}%",
@@ -62,7 +67,10 @@
     "registration": "Digite seu número de registro (5 a 50 caracteres)",
     "pan": "Um PAN tem 10 caracteres, como ABCDE1234F",
     "gst": "Um GSTIN tem 15 caracteres, como 36ABCDE1234F1Z5",
-    "address": "Digite seu endereço registrado",
+    "address": "Digite seu endereço",
+    "city": "Digite uma cidade",
+    "state": "Digite um estado",
+    "pin": "O código PIN tem 6 dígitos, como 500081",
     "fileRequired": "Adicione este documento",
     "fileInvalid": "Use um arquivo de um tipo aceito, até 5 MB"
   },
@@ -84,8 +92,13 @@
       "verified": {
         "title": "Verificada",
         "body": "Avisaremos por e-mail quando terminar. Enquanto isso, você pode publicar vagas e ver candidatos."
+      },
+      "rejected": {
+        "title": "Precisa de ajustes",
+        "body": "Alguns dados precisam de revisão. Enviaremos um e-mail para {{email}} dizendo o que corrigir."
       }
-    }
+    },
+    "fixDetails": "Atualizar dados da empresa"
   },
   "groups": {
     "about": "Sobre a empresa",
@@ -100,6 +113,8 @@
     "editLabel": "Editar {{section}}"
   },
   "preview": {
+    "show": "Mostrar prévia",
+    "hide": "Ocultar prévia",
     "company": {
       "caption": "Como os candidatos verão sua empresa"
     },

@@ -1,5 +1,9 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { FieldGroup } from "@workspace/ui/components/field"
+import {
+  FieldGroup,
+  FieldLegend,
+  FieldSet,
+} from "@workspace/ui/components/field"
 import type { UseFormReturn } from "react-hook-form"
 
 import { TextField } from "@/components/text-field"
@@ -58,13 +62,44 @@ export function LegalStep({ form }: { form: UseFormReturn<Values> }) {
           {...upperField("gst_number")}
         />
       </div>
-      <TextField
-        label={t("fields.address")}
-        autoComplete="street-address"
-        valid={isValid("company_address")}
-        error={errors.company_address?.message}
-        {...checkOnBlur(form, "company_address")}
-      />
+      <FieldSet>
+        <FieldLegend>{t("fields.address")}</FieldLegend>
+        <FieldGroup className="gap-4">
+          <TextField
+            label={t("fields.addressLine")}
+            autoComplete="address-line1"
+            valid={isValid("address_line")}
+            error={errors.address_line?.message}
+            {...checkOnBlur(form, "address_line")}
+          />
+          <TextField
+            label={t("fields.city")}
+            autoComplete="address-level2"
+            valid={isValid("address_city")}
+            error={errors.address_city?.message}
+            {...checkOnBlur(form, "address_city")}
+          />
+          <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_10rem]">
+            <TextField
+              label={t("fields.state")}
+              autoComplete="address-level1"
+              valid={isValid("address_state")}
+              error={errors.address_state?.message}
+              {...checkOnBlur(form, "address_state")}
+            />
+            <TextField
+              label={t("fields.pin")}
+              autoComplete="postal-code"
+              inputMode="numeric"
+              maxLength={6}
+              className="tabular-nums"
+              valid={isValid("address_pin")}
+              error={errors.address_pin?.message}
+              {...checkOnBlur(form, "address_pin")}
+            />
+          </div>
+        </FieldGroup>
+      </FieldSet>
     </FieldGroup>
   )
 }

@@ -3,6 +3,7 @@ import { useWatch, type UseFormReturn } from "react-hook-form"
 
 import { clearDraft, loadDraft, saveDraft } from "@/lib/draft"
 
+import { clearFiles, loadFiles } from "../lib/file-store"
 import {
   STEPS,
   type Draft,
@@ -24,23 +25,36 @@ const EMPTY: Draft = {
   company_registration_number: "",
   pan_number: "",
   gst_number: "",
-  company_address: "",
+  address_line: "",
+  address_city: "",
+  address_state: "",
+  address_pin: "",
 }
 
+// drafts from before the address was split keep it all on the first line
+type Saved = Partial<Draft> & { company_address?: string }
+
 export function startingDraft(email: string): Draft {
-  let legacy: Partial<Draft> | null = null
+  let legacy: Saved | null = null
   try {
     const raw = localStorage.getItem(LEGACY_DRAFT)
-    legacy = raw ? (JSON.parse(raw) as Partial<Draft>) : null
+    legacy = raw ? (JSON.parse(raw) as Saved) : null
   } catch {
     /* empty */
   }
-  const saved = loadDraft<Draft>(DRAFT) ?? legacy ?? {}
-  return { ...EMPTY, official_email: email, ...saved }
+  const { company_address, ...saved }: Saved =
+    loadDraft<Saved>(DRAFT) ?? legacy ?? {}
+  return {
+    ...EMPTY,
+    official_email: email,
+    address_line: company_address ?? "",
+    ...saved,
+  }
 }
 
 export function discardDraft() {
   clearDraft(DRAFT)
+  void clearFiles()
   try {
     localStorage.removeItem(LEGACY_DRAFT)
   } catch {
@@ -48,7 +62,7 @@ export function discardDraft() {
   }
 }
 
-/** Saves the text fields a moment after typing stops; files can't be stored. Returns a save count. */
+/** Saves the text fields a moment after typing stops. Returns a save count. */
 export function useDraftAutosave(form: UseFormReturn<Values>) {
   const [saves, setSaves] = useState(0)
   const text = useWatch({ control: form.control, name: TEXT_FIELDS })
@@ -74,4 +88,24 @@ export function useDraftAutosave(form: UseFormReturn<Values>) {
   }, [json, form])
 
   return saves
+}
+
+/** Puts back documents picked before a refresh. True once that's done. */
+export function useStoredFiles(form: UseFormReturn<Values>) {
+  const [restored, setRestored] = useState(false)
+
+  useEffect(() => {
+    let live = true
+    void loadFiles(STEPS.documents).then((files) => {
+      if (!live) return
+      for (const [name, file] of Object.entries(files))
+        form.setValue(name as keyof Values, file)
+      setRestored(true)
+    })
+    return () => {
+      live = false
+    }
+  }, [form])
+
+  return restored
 }

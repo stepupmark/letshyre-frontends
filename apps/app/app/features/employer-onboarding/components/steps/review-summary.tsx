@@ -6,7 +6,11 @@ import { useWatch, type UseFormReturn } from "react-hook-form"
 
 import { industriesQuery } from "@/lib/industries"
 
-import type { StepId, Values } from "../../schemas/onboarding-form.schema"
+import {
+  joinAddress,
+  type StepId,
+  type Values,
+} from "../../schemas/onboarding-form.schema"
 
 /** What's about to be sent, with a way back to each part. */
 export function ReviewSummary({
@@ -45,7 +49,7 @@ export function ReviewSummary({
         [t("fields.registration"), values.company_registration_number],
         [t("fields.pan"), values.pan_number],
         [t("fields.gst"), values.gst_number],
-        [t("fields.address"), values.company_address],
+        [t("fields.address"), joinAddress(values)],
       ],
     },
   ]

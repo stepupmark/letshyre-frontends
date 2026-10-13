@@ -37,6 +37,7 @@ import { StatusBadge, type Tone } from "@/components/status-badge"
 import { TextField } from "@/components/text-field"
 import { useDelayed } from "@/hooks/use-delayed"
 import { checkFile, type FileRules } from "@/lib/file-rules"
+import { isLinkedIn } from "@/lib/company-ids"
 import { checkOnBlur } from "@/lib/forms"
 import { industriesQuery } from "@/lib/industries"
 import { duration, ease } from "@/lib/motion"
@@ -56,14 +57,6 @@ const KYC_TONE: Record<string, Tone> = {
   verified: "success",
   pending: "warning",
   rejected: "danger",
-}
-
-const isLinkedIn = (value: string) => {
-  try {
-    return /(^|\.)linkedin\.com$/i.test(new URL(value).hostname)
-  } catch {
-    return false
-  }
 }
 
 const makeSchema = (

@@ -20,6 +20,8 @@ import {
   type StepId,
   type Values,
 } from "../../schemas/onboarding-form.schema"
+import { storeFile } from "../../lib/file-store"
+import { LogoNote } from "./logo-note"
 import { ReviewSummary } from "./review-summary"
 
 const ICONS: Record<FileField, LucideIcon> = {
@@ -81,6 +83,7 @@ export function DocumentsStep({
                   error={errors[name]?.message}
                   onSelect={(file) => {
                     field.onChange(file ?? undefined)
+                    void storeFile(name, file)
                     if (file) form.clearErrors(name)
                   }}
                 />
@@ -88,6 +91,7 @@ export function DocumentsStep({
             />
           ))}
         </div>
+        <LogoNote file={files[0]} />
       </div>
 
       <ReviewSummary form={form} onEdit={onEdit} />

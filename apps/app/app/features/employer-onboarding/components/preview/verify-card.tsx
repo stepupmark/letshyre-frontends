@@ -4,7 +4,7 @@ import { Check } from "lucide-react"
 import { useWatch, type UseFormReturn } from "react-hook-form"
 
 import { useFieldValid } from "../../hooks/use-field-valid"
-import { mask } from "../../lib/mask"
+import { mask } from "@/lib/company-ids"
 import type { Values } from "../../schemas/onboarding-form.schema"
 
 /** A certificate that collects a check for each number that passes. */
@@ -111,18 +111,20 @@ function CertificateArt({ passed, total }: { passed: number; total: number }) {
             done ? "fill-success/15" : "fill-brand-muted"
           )}
         />
-        <circle
-          r={30}
-          pathLength={1}
-          strokeWidth={3}
-          strokeLinecap="round"
-          strokeDasharray={`${passed / total} 1`}
-          transform="rotate(-90)"
-          className={cn(
-            "fill-none transition-[stroke-dasharray,stroke] duration-500 ease-out",
-            done ? "stroke-success" : "stroke-brand"
-          )}
-        />
+        {passed > 0 && (
+          <circle
+            r={30}
+            pathLength={1}
+            strokeWidth={3}
+            strokeLinecap="round"
+            strokeDasharray={`${passed / total} 1`}
+            transform="rotate(-90)"
+            className={cn(
+              "fill-none transition-[stroke-dasharray,stroke] duration-500 ease-out",
+              done ? "stroke-success" : "stroke-brand"
+            )}
+          />
+        )}
         <path
           key={String(done)}
           d="M-10 0 L-3 7 L11 -8"

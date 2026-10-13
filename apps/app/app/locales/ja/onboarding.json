@@ -25,11 +25,15 @@
     "panHint": "10文字（例：ABCDE1234F）",
     "gst": "GSTIN",
     "gstHint": "15文字（例：36ABCDE1234F1Z5）",
-    "address": "登記上の住所"
+    "address": "登記上の住所",
+    "addressLine": "番地",
+    "city": "市区町村",
+    "state": "州",
+    "pin": "PINコード"
   },
   "documents": {
     "lead": "鮮明なスキャンか写真、各 5 MB まで。候補者には表示されません。",
-    "keepWarning": "このページを離れるとファイルは保持されません。完了する前に4つすべて追加してください。",
+    "keepWarning": "ファイルは送信するまでこの端末に保存されるので、途中で離れても戻ってこられます。",
     "count": "{{total}}件中{{count}}件追加済み",
     "company_logo": {
       "label": "会社ロゴ",
@@ -46,7 +50,8 @@
     "address_proof": {
       "label": "住所証明",
       "hint": "公共料金の請求書または賃貸契約書"
-    }
+    },
+    "logoNotSquare": "このロゴは {{width}} × {{height}} です。正方形で表示するため、正方形のロゴがおすすめです。"
   },
   "draftSaved": "下書きをこの端末に保存しました",
   "submitting": "書類をアップロード中… {{percent}}%",
@@ -62,7 +67,10 @@
     "registration": "登録番号を入力してください（5〜50文字）",
     "pan": "PAN は ABCDE1234F のような10文字です",
     "gst": "GSTIN は 36ABCDE1234F1Z5 のような15文字です",
-    "address": "登記上の住所を入力してください",
+    "address": "番地を入力してください",
+    "city": "市区町村を入力してください",
+    "state": "州を入力してください",
+    "pin": "PINコードは6桁です（例：500081）",
     "fileRequired": "この書類を追加してください",
     "fileInvalid": "対応している形式で 5 MB までのファイルを使ってください"
   },
@@ -84,8 +92,13 @@
       "verified": {
         "title": "確認済み",
         "body": "完了したらメールでお知らせします。それまでの間も求人の掲載や候補者の閲覧ができます。"
+      },
+      "rejected": {
+        "title": "修正が必要",
+        "body": "いくつかの情報を見直す必要があります。修正内容は {{email}} にメールでお知らせします。"
       }
-    }
+    },
+    "fixDetails": "会社情報を更新"
   },
   "groups": {
     "about": "会社について",
@@ -100,6 +113,8 @@
     "editLabel": "{{section}}を編集"
   },
   "preview": {
+    "show": "プレビューを表示",
+    "hide": "プレビューを隠す",
     "company": {
       "caption": "候補者に表示される会社情報"
     },

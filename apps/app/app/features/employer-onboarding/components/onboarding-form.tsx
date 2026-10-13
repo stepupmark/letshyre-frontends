@@ -3,8 +3,7 @@ import { HttpError } from "@workspace/api"
 import { updateUser } from "@workspace/auth"
 import { useTranslation } from "@workspace/i18n/react"
 import { useMutation } from "@tanstack/react-query"
-import { Check } from "lucide-react"
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { useForm } from "react-hook-form"
 import { useSearchParams } from "react-router"
 
@@ -14,22 +13,30 @@ import {
   discardDraft,
   startingDraft,
   useDraftAutosave,
+  useStoredFiles,
 } from "../hooks/use-onboarding-draft"
 import {
   makeSchema,
   STEPS,
+  stepSchema,
   type StepId,
   type Values,
 } from "../schemas/onboarding-form.schema"
 import { submitKyc } from "../services/employer-onboarding.service"
+import { DraftSaved } from "./draft-saved"
+import { MobilePreview } from "./preview/mobile-preview"
 import { OnboardingPreview } from "./preview/onboarding-preview"
 import { CompanyStep } from "./steps/company-step"
 import { DocumentsStep } from "./steps/documents-step"
 import { LegalStep } from "./steps/legal-step"
 
+// the API reports the address under the single field it stores
+const fieldOf = (name: string) =>
+  name === "company_address" ? "address_line" : name
+
 const stepOf = (name: string) =>
   (Object.keys(STEPS) as StepId[]).find((id) =>
-    (STEPS[id] as readonly string[]).includes(name)
+    (STEPS[id] as readonly string[]).includes(fieldOf(name))
   )
 
 export function OnboardingForm({
@@ -58,6 +65,9 @@ export function OnboardingForm({
         pan: t("validation.pan"),
         gst: t("validation.gst"),
         address: t("validation.address"),
+        city: t("validation.city"),
+        state: t("validation.state"),
+        pin: t("validation.pin"),
         fileRequired: t("validation.fileRequired"),
         fileInvalid: t("validation.fileInvalid"),
       }),
@@ -69,6 +79,7 @@ export function OnboardingForm({
     mode: "onSubmit",
   })
   const saves = useDraftAutosave(form)
+  const restored = useStoredFiles(form)
 
   const goTo = (step: StepId) => {
     setParams(
@@ -95,7 +106,7 @@ export function OnboardingForm({
         stepOf(name)
       )
       for (const [name, message] of known)
-        form.setError(name as keyof Values, { message })
+        form.setError(fieldOf(name) as keyof Values, { message })
       const step = known[0] && stepOf(known[0][0])
       if (step) goTo(step)
     },
@@ -105,14 +116,19 @@ export function OnboardingForm({
     form.trigger([...STEPS[step]], { shouldFocus: true })
 
   const isComplete = (step: StepId) => () =>
-    schema
-      .pick(
-        Object.fromEntries(STEPS[step].map((key) => [key, true])) as Record<
-          (typeof STEPS)[typeof step][number],
-          true
-        >
-      )
-      .safeParse(form.getValues()).success
+    stepSchema(schema, step).safeParse(form.getValues()).success
+
+  // the upload can't resume, so leaving mid-way needs a second thought
+  useEffect(() => {
+    if (!submit.isPending) return
+    const warn = (event: BeforeUnloadEvent) => {
+      event.preventDefault()
+    }
+    window.addEventListener("beforeunload", warn)
+    return () => {
+      window.removeEventListener("beforeunload", warn)
+    }
+  }, [submit.isPending])
 
   const steps: WizardStep[] = [
     {
@@ -135,6 +151,7 @@ export function OnboardingForm({
       validate: validate("documents"),
       content: (
         <DocumentsStep
+          key={String(restored)}
           form={form}
           pending={submit.isPending}
           progress={progress}
@@ -148,6 +165,7 @@ export function OnboardingForm({
   return (
     <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_22rem] xl:gap-20">
       <div className="flex flex-col gap-4">
+        <MobilePreview form={form} step={current} />
         <Wizard
           steps={steps}
           pending={submit.isPending}
@@ -164,18 +182,7 @@ export function OnboardingForm({
             )()
           }
         />
-        <p className="flex h-5 items-center gap-1.5 text-xs text-muted-foreground">
-          {saves > 0 && (
-            <span className="flex items-center gap-1.5">
-              <Check
-                key={saves}
-                className="pop size-3.5 text-success"
-                strokeWidth={2.5}
-              />
-              {t("draftSaved")}
-            </span>
-          )}
-        </p>
+        <DraftSaved saves={saves} />
       </div>
       <div className="sticky top-24 hidden lg:block">
         <OnboardingPreview form={form} step={current} />

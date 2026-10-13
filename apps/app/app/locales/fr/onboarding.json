@@ -25,11 +25,15 @@
     "panHint": "10 caractères, par ex. ABCDE1234F",
     "gst": "GSTIN",
     "gstHint": "15 caractères, par ex. 36ABCDE1234F1Z5",
-    "address": "Adresse du siège"
+    "address": "Adresse du siège",
+    "addressLine": "Adresse",
+    "city": "Ville",
+    "state": "État",
+    "pin": "Code PIN"
   },
   "documents": {
     "lead": "Scans ou photos nets, jusqu'à 5 Mo chacun. Les candidats ne les voient jamais.",
-    "keepWarning": "Les fichiers ne sont pas conservés si vous quittez cette page : ajoutez les quatre avant de terminer.",
+    "keepWarning": "Les fichiers restent sur cet appareil jusqu'à l'envoi : vous pouvez partir et revenir.",
     "count": "{{count}} sur {{total}} ajoutés",
     "company_logo": {
       "label": "Logo de l'entreprise",
@@ -46,7 +50,8 @@
     "address_proof": {
       "label": "Justificatif d'adresse",
       "hint": "Une facture ou un bail"
-    }
+    },
+    "logoNotSquare": "Ce logo mesure {{width}} × {{height}}. Un logo carré rend mieux, car nous l'affichons dans un carré."
   },
   "draftSaved": "Brouillon enregistré sur cet appareil",
   "submitting": "Import de vos documents… {{percent}} %",
@@ -62,7 +67,10 @@
     "registration": "Saisissez votre numéro d'immatriculation (5 à 50 caractères)",
     "pan": "Un PAN comporte 10 caractères, comme ABCDE1234F",
     "gst": "Un GSTIN comporte 15 caractères, comme 36ABCDE1234F1Z5",
-    "address": "Saisissez l'adresse de votre siège",
+    "address": "Saisissez votre adresse",
+    "city": "Saisissez une ville",
+    "state": "Saisissez un État",
+    "pin": "Un code PIN compte 6 chiffres, par ex. 500081",
     "fileRequired": "Ajoutez ce document",
     "fileInvalid": "Utilisez un fichier d'un type accepté, jusqu'à 5 Mo"
   },
@@ -84,8 +92,13 @@
       "verified": {
         "title": "Vérifiée",
         "body": "Nous vous écrirons une fois terminé. En attendant, vous pouvez publier des offres et voir les candidats."
+      },
+      "rejected": {
+        "title": "Modifications requises",
+        "body": "Certaines informations sont à revoir. Nous écrirons à {{email}} pour indiquer quoi corriger."
       }
-    }
+    },
+    "fixDetails": "Mettre à jour l'entreprise"
   },
   "groups": {
     "about": "À propos de l'entreprise",
@@ -100,6 +113,8 @@
     "editLabel": "Modifier {{section}}"
   },
   "preview": {
+    "show": "Afficher l'aperçu",
+    "hide": "Masquer l'aperçu",
     "company": {
       "caption": "Ce que les candidats verront de votre entreprise"
     },

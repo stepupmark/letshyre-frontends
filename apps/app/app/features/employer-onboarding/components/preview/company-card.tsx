@@ -28,7 +28,7 @@ const initials = (name: string) =>
 export function CompanyCard({ control }: { control: Control<Values> }) {
   const { t } = useTranslation("onboarding")
   const industries = useQuery(industriesQuery())
-  const [name, industry, description, website, linkedin, address, logo] =
+  const [name, industry, description, website, linkedin, city, state, logo] =
     useWatch({
       control,
       name: [
@@ -37,7 +37,8 @@ export function CompanyCard({ control }: { control: Control<Values> }) {
         "company_description",
         "company_website",
         "linkedin_url",
-        "company_address",
+        "address_city",
+        "address_state",
         "company_logo",
       ],
     })
@@ -89,7 +90,10 @@ export function CompanyCard({ control }: { control: Control<Values> }) {
       <ul className="flex flex-col gap-2 border-t pt-4 text-sm">
         <Detail icon={Globe} value={website && host(website)} />
         <Detail icon={Link2} value={linkedin && host(linkedin)} />
-        <Detail icon={MapPin} value={address} />
+        <Detail
+          icon={MapPin}
+          value={[city, state].filter((part) => part.trim()).join(", ")}
+        />
       </ul>
       <p className="text-xs text-muted-foreground">
         {t("preview.company.caption")}

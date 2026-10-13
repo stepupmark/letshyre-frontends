@@ -25,11 +25,15 @@
     "panHint": "10 karakter, seperti ABCDE1234F",
     "gst": "GSTIN",
     "gstHint": "15 karakter, seperti 36ABCDE1234F1Z5",
-    "address": "Alamat terdaftar"
+    "address": "Alamat terdaftar",
+    "addressLine": "Alamat jalan",
+    "city": "Kota",
+    "state": "Negara bagian",
+    "pin": "Kode PIN"
   },
   "documents": {
     "lead": "Hasil pindai atau foto yang jelas, masing-masing hingga 5 MB. Kandidat tidak pernah melihatnya.",
-    "keepWarning": "File tidak tersimpan jika Anda meninggalkan halaman ini, jadi tambahkan keempatnya sebelum selesai.",
+    "keepWarning": "File tetap di perangkat ini sampai Anda kirim, jadi Anda bisa pergi dan kembali.",
     "count": "{{count}} dari {{total}} ditambahkan",
     "company_logo": {
       "label": "Logo perusahaan",
@@ -46,7 +50,8 @@
     "address_proof": {
       "label": "Bukti alamat",
       "hint": "Tagihan utilitas atau perjanjian sewa"
-    }
+    },
+    "logoNotSquare": "Logo ini {{width}} × {{height}}. Logo persegi terlihat paling baik karena kami menampilkannya dalam persegi."
   },
   "draftSaved": "Draf tersimpan di perangkat ini",
   "submitting": "Mengunggah dokumen Anda… {{percent}}%",
@@ -62,7 +67,10 @@
     "registration": "Masukkan nomor registrasi Anda (5 sampai 50 karakter)",
     "pan": "PAN terdiri dari 10 karakter, seperti ABCDE1234F",
     "gst": "GSTIN terdiri dari 15 karakter, seperti 36ABCDE1234F1Z5",
-    "address": "Masukkan alamat terdaftar Anda",
+    "address": "Masukkan alamat jalan",
+    "city": "Masukkan kota",
+    "state": "Masukkan negara bagian",
+    "pin": "Kode PIN terdiri dari 6 angka, seperti 500081",
     "fileRequired": "Tambahkan dokumen ini",
     "fileInvalid": "Gunakan file dengan jenis yang diterima, hingga 5 MB"
   },
@@ -84,8 +92,13 @@
       "verified": {
         "title": "Terverifikasi",
         "body": "Kami akan mengirim email setelah selesai. Sementara itu, Anda bisa memasang lowongan dan melihat kandidat."
+      },
+      "rejected": {
+        "title": "Perlu perubahan",
+        "body": "Beberapa data perlu ditinjau ulang. Kami akan mengirim email ke {{email}} tentang yang perlu diperbaiki."
       }
-    }
+    },
+    "fixDetails": "Perbarui data perusahaan"
   },
   "groups": {
     "about": "Tentang perusahaan",
@@ -100,6 +113,8 @@
     "editLabel": "Ubah {{section}}"
   },
   "preview": {
+    "show": "Tampilkan pratinjau",
+    "hide": "Sembunyikan pratinjau",
     "company": {
       "caption": "Tampilan perusahaan Anda bagi kandidat"
     },

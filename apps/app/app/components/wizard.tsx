@@ -115,7 +115,8 @@ export function Wizard({
         </div>
       </StepTransition>
 
-      <div className="sticky bottom-0 -mx-4 flex gap-2 border-t bg-background px-4 py-3 sm:static sm:mx-0 sm:border-0 sm:p-0">
+      {/* --gutter is the page's side padding, set by the shell */}
+      <div className="sticky bottom-0 -mx-(--gutter) flex gap-2 border-t bg-background px-(--gutter) py-3 sm:static sm:mx-0 sm:border-0 sm:p-0">
         {index > 0 && (
           <Button
             variant="outline"

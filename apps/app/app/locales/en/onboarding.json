@@ -25,11 +25,15 @@
     "panHint": "10 characters, like ABCDE1234F",
     "gst": "GSTIN",
     "gstHint": "15 characters, like 36ABCDE1234F1Z5",
-    "address": "Registered address"
+    "address": "Registered address",
+    "addressLine": "Street address",
+    "city": "City",
+    "state": "State",
+    "pin": "PIN code"
   },
   "documents": {
     "lead": "Clear scans or photos, up to 5 MB each. Candidates never see these.",
-    "keepWarning": "Files aren't kept if you leave this page, so add all four before you finish.",
+    "keepWarning": "Files stay on this device until you submit, so you can leave and come back.",
     "count": "{{count}} of {{total}} added",
     "company_logo": {
       "label": "Company logo",
@@ -46,7 +50,8 @@
     "address_proof": {
       "label": "Address proof",
       "hint": "A utility bill or lease agreement"
-    }
+    },
+    "logoNotSquare": "This logo is {{width}} × {{height}}. A square one looks best, since we show it in a square."
   },
   "draftSaved": "Draft saved on this device",
   "submitting": "Uploading your documents… {{percent}}%",
@@ -62,7 +67,10 @@
     "registration": "Enter your registration number (5 to 50 characters)",
     "pan": "A PAN has 10 characters, like ABCDE1234F",
     "gst": "A GSTIN has 15 characters, like 36ABCDE1234F1Z5",
-    "address": "Enter your registered address",
+    "address": "Enter your street address",
+    "city": "Enter a city",
+    "state": "Enter a state",
+    "pin": "A PIN code has 6 digits, like 500081",
     "fileRequired": "Add this document",
     "fileInvalid": "Use a file of an accepted type, up to 5 MB"
   },
@@ -84,8 +92,13 @@
       "verified": {
         "title": "Verified",
         "body": "We'll email you when it's done. Until then, you can post jobs and see candidates."
+      },
+      "rejected": {
+        "title": "Needs changes",
+        "body": "Some details need another look. We'll email {{email}} with what to fix."
       }
-    }
+    },
+    "fixDetails": "Update company details"
   },
   "groups": {
     "about": "About the company",
@@ -100,6 +113,8 @@
     "editLabel": "Edit {{section}}"
   },
   "preview": {
+    "show": "Show preview",
+    "hide": "Hide preview",
     "company": {
       "caption": "How candidates will see your company"
     },
