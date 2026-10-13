@@ -47,6 +47,7 @@
   "upload": {
     "drop": "파일을 여기로 끌어오거나",
     "browse": "선택하세요",
+    "choose": "파일 선택",
     "hint": "{{types}}, 최대 {{size}}",
     "tooLarge": "파일 크기가 {{size}}예요. 최대 {{max}}까지 가능해요.",
     "wrongType": "이 파일 형식은 사용할 수 없어요. {{types}}을(를) 사용하세요.",
@@ -57,7 +58,9 @@
     "done": "업로드됨"
   },
   "wizard": {
-    "step": "{{total}}단계 중 {{current}}단계",
+    "progress": "진행 상황",
+    "item": "{{total}}단계 중 {{current}}단계: {{title}}",
+    "itemDone": "{{total}}단계 중 {{current}}단계: {{title}}, 완료",
     "back": "뒤로",
     "next": "계속",
     "finish": "완료",

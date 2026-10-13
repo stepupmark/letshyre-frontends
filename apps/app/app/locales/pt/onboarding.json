@@ -1,4 +1,5 @@
 {
+  "eyebrow": "Configuração da empresa",
   "title": "Conte sobre sua empresa",
   "lead": "Cerca de cinco minutos, em três etapas. Salvamos seu progresso neste dispositivo, então você pode parar e voltar.",
   "steps": {
@@ -16,15 +17,20 @@
     "industryFailed": "Os setores não carregaram. Recarregue para tentar de novo.",
     "linkedin": "Página da empresa no LinkedIn",
     "description": "O que sua empresa faz?",
+    "descriptionHint": "Uma ou duas frases que os candidatos vão ler.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Número de registro da empresa",
     "registrationHint": "O CIN ou o número do seu certificado de registro, ex. U72900TG2024PTC123456.",
     "pan": "PAN",
+    "panHint": "10 caracteres, como ABCDE1234F",
     "gst": "GSTIN",
+    "gstHint": "15 caracteres, como 36ABCDE1234F1Z5",
     "address": "Endereço registrado"
   },
   "documents": {
     "lead": "Digitalizações ou fotos nítidas, até 5 MB cada. Os candidatos nunca veem estes documentos.",
+    "keepWarning": "Os arquivos não ficam salvos se você sair desta página, então adicione os quatro antes de concluir.",
+    "count": "{{count}} de {{total}} adicionados",
     "company_logo": {
       "label": "Logotipo da empresa",
       "hint": "Quadrado funciona melhor"
@@ -42,7 +48,7 @@
       "hint": "Uma conta de consumo ou contrato de aluguel"
     }
   },
-  "draftSaved": "Rascunho salvo neste dispositivo. Se você sair, será preciso adicionar os documentos de novo.",
+  "draftSaved": "Rascunho salvo neste dispositivo",
   "submitting": "Enviando seus documentos… {{percent}}%",
   "submitFailed": "Não conseguimos enviar seus dados. Tudo o que você digitou continua aqui, então tente de novo.",
   "validation": {
@@ -64,10 +70,44 @@
     "title": "Obrigado, recebemos seus dados",
     "lead": "Sua conta já pode ser usada enquanto conferimos seus documentos.",
     "nextHeading": "O que acontece agora",
-    "review": "Nossa equipe analisa os dados e documentos da sua empresa.",
-    "contact": "Se faltar algo, escreveremos para {{email}}.",
-    "start": "Enquanto isso, você pode publicar vagas e ver candidatos.",
     "postJob": "Publique sua primeira vaga",
-    "dashboard": "Ir para o painel"
+    "dashboard": "Ir para o painel",
+    "timeline": {
+      "submitted": {
+        "title": "Dados enviados",
+        "body": "Recebemos os dados e documentos da sua empresa."
+      },
+      "review": {
+        "title": "Em análise",
+        "body": "Nossa equipe confere seus documentos. Se faltar algo, enviaremos um e-mail para {{email}}."
+      },
+      "verified": {
+        "title": "Verificada",
+        "body": "Avisaremos por e-mail quando terminar. Enquanto isso, você pode publicar vagas e ver candidatos."
+      }
+    }
+  },
+  "groups": {
+    "about": "Sobre a empresa",
+    "presence": "Onde as pessoas encontram você"
+  },
+  "legal": {
+    "lead": "Usamos estes dados uma única vez para verificar sua empresa. Os candidatos nunca os veem."
+  },
+  "review": {
+    "heading": "Confira seus dados",
+    "edit": "Editar",
+    "editLabel": "Editar {{section}}"
+  },
+  "preview": {
+    "company": {
+      "caption": "Como os candidatos verão sua empresa"
+    },
+    "legal": {
+      "caption": "Verificado uma vez pela nossa equipe e mantido privado"
+    },
+    "documents": {
+      "caption": "{{count}} de {{total}} documentos adicionados"
+    }
   }
 }

@@ -2,7 +2,7 @@ import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import { Progress } from "@workspace/ui/components/progress"
 import { cn } from "@workspace/ui/lib/utils"
-import { FileUp, RotateCw, X } from "lucide-react"
+import { Check, FileUp, RotateCw, X, type LucideIcon } from "lucide-react"
 import { useCallback, useEffect, useId, useRef, useState } from "react"
 
 import {
@@ -36,6 +36,9 @@ export interface FileDropzoneProps {
   ) => Promise<unknown>
   onUploaded?: (result: unknown, file: File) => void
   onRemove?: () => void
+  /** "row" is a compact line for stacking several in one list */
+  layout?: "box" | "row"
+  icon?: LucideIcon
 }
 
 /**
@@ -53,6 +56,8 @@ export function FileDropzone({
   upload,
   onUploaded,
   onRemove,
+  layout = "box",
+  icon: Icon = FileUp,
 }: FileDropzoneProps) {
   const { t } = useTranslation("common")
   const locale = useLocale()
@@ -129,6 +134,140 @@ export function FileDropzone({
     }
   }, [])
 
+  const remove = () => {
+    setState({ status: "idle" })
+    onSelect?.(null)
+    onRemove?.()
+  }
+  const problem =
+    state.status === "invalid"
+      ? state.problem.kind === "wrongType"
+        ? t("upload.wrongType", { types })
+        : t("upload.tooLarge", {
+            size: formatBytes(state.problem.size, locale),
+            max,
+          })
+      : error
+
+  if (layout === "row") {
+    if (state.status !== "idle" && state.status !== "invalid") {
+      const { file } = state
+      return (
+        <div className="flex flex-col gap-2 px-4 py-3.5">
+          <div className="flex items-center gap-3.5">
+            <div className="relative shrink-0">
+              {file.type.startsWith("image/") ? (
+                <ImagePreview file={file} />
+              ) : (
+                <span className="grid size-10 place-items-center rounded-lg bg-brand-muted text-brand-text">
+                  <Icon className="size-4.5" />
+                </span>
+              )}
+              {state.status !== "uploading" && state.status !== "failed" && (
+                <span className="pop absolute -inset-e-1 -bottom-1 grid size-4.5 place-items-center rounded-full bg-success text-background ring-2 ring-background">
+                  <Check className="size-3" strokeWidth={3} />
+                </span>
+              )}
+            </div>
+            <div className="flex min-w-0 flex-1 flex-col">
+              <p className="text-sm font-medium">{label}</p>
+              <p className="flex min-w-0 gap-1.5 text-xs text-muted-foreground">
+                <span className="truncate">{file.name}</span>
+                <span aria-hidden="true">·</span>
+                <span className="shrink-0 tabular-nums">
+                  {formatBytes(file.size, locale)}
+                </span>
+              </p>
+            </div>
+            {state.status !== "uploading" && (
+              <Button
+                variant="ghost"
+                size="icon-sm"
+                aria-label={t("upload.remove", { name: file.name })}
+                onClick={remove}
+              >
+                <X />
+              </Button>
+            )}
+          </div>
+          {state.status === "uploading" && (
+            <Progress
+              value={Math.round(state.progress * 100)}
+              aria-label={t("upload.uploading", { name: file.name })}
+            />
+          )}
+          {state.status === "failed" && (
+            <div
+              role="alert"
+              className="flex items-center justify-between gap-3 text-sm"
+            >
+              <p className="text-danger">{t("upload.failed")}</p>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => void start(file)}
+              >
+                <RotateCw />
+                {t("upload.retry")}
+              </Button>
+            </div>
+          )}
+        </div>
+      )
+    }
+
+    return (
+      <div>
+        <label
+          htmlFor={id}
+          ref={zone}
+          className={cn(
+            "group flex cursor-pointer items-center gap-3.5 px-4 py-3.5 transition-colors outline-none hover:bg-muted/40 has-focus-visible:bg-muted/40 has-focus-visible:ring-3 has-focus-visible:ring-ring/50 has-focus-visible:ring-inset",
+            dragging && "bg-brand-muted/50"
+          )}
+        >
+          <span
+            className={cn(
+              "grid size-10 shrink-0 place-items-center rounded-lg border border-dashed text-muted-foreground transition-colors",
+              dragging && "border-brand text-brand-text"
+            )}
+          >
+            <Icon className="size-4.5" />
+          </span>
+          <span className="flex min-w-0 flex-1 flex-col">
+            <span className="text-sm font-medium">{label}</span>
+            <span className="text-xs text-muted-foreground">
+              {description ? `${description} · ` : ""}
+              {t("upload.hint", { types, size: max })}
+            </span>
+          </span>
+          <span
+            aria-hidden="true"
+            className="inline-flex h-8 shrink-0 items-center rounded-lg border bg-background px-3 text-sm font-medium shadow-xs transition-colors group-hover:bg-muted"
+          >
+            {t("upload.choose")}
+          </span>
+          <input
+            id={id}
+            type="file"
+            accept={rules.accept.join(",")}
+            className="sr-only"
+            onChange={(event) => {
+              const file = event.target.files?.[0]
+              event.target.value = ""
+              if (file) void start(file)
+            }}
+          />
+        </label>
+        {problem && (
+          <p role="alert" className="ps-17.5 pe-4 pb-3.5 text-sm text-danger">
+            {problem}
+          </p>
+        )}
+      </div>
+    )
+  }
+
   if (state.status !== "idle" && state.status !== "invalid") {
     return (
       <div className="flex flex-col gap-2 rounded-lg border p-4 text-sm">
@@ -151,11 +290,7 @@ export function FileDropzone({
               variant="ghost"
               size="icon-sm"
               aria-label={t("upload.remove", { name: state.file.name })}
-              onClick={() => {
-                setState({ status: "idle" })
-                onSelect?.(null)
-                onRemove?.()
-              }}
+              onClick={remove}
             >
               <X />
             </Button>
@@ -221,19 +356,9 @@ export function FileDropzone({
           }}
         />
       </label>
-      {error && state.status !== "invalid" && (
+      {problem && (
         <p role="alert" className="text-sm text-danger">
-          {error}
-        </p>
-      )}
-      {state.status === "invalid" && (
-        <p role="alert" className="text-sm text-danger">
-          {state.problem.kind === "wrongType"
-            ? t("upload.wrongType", { types })
-            : t("upload.tooLarge", {
-                size: formatBytes(state.problem.size, locale),
-                max,
-              })}
+          {problem}
         </p>
       )}
     </div>

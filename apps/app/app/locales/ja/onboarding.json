@@ -1,4 +1,5 @@
 {
+  "eyebrow": "会社の設定",
   "title": "会社について教えてください",
   "lead": "3ステップで約5分です。進み具合はこの端末に保存されるので、中断して後で戻れます。",
   "steps": {
@@ -16,15 +17,20 @@
     "industryFailed": "業界を読み込めませんでした。再読み込みしてください。",
     "linkedin": "会社の LinkedIn ページ",
     "description": "どんな事業をしていますか？",
+    "descriptionHint": "候補者が読む、1〜2文の紹介です。",
     "descriptionCount": "{{count}} / 500",
     "registration": "会社の登録番号",
     "registrationHint": "CIN または登記証明書の番号。例：U72900TG2024PTC123456。",
     "pan": "PAN",
+    "panHint": "10文字（例：ABCDE1234F）",
     "gst": "GSTIN",
+    "gstHint": "15文字（例：36ABCDE1234F1Z5）",
     "address": "登記上の住所"
   },
   "documents": {
     "lead": "鮮明なスキャンか写真、各 5 MB まで。候補者には表示されません。",
+    "keepWarning": "このページを離れるとファイルは保持されません。完了する前に4つすべて追加してください。",
+    "count": "{{total}}件中{{count}}件追加済み",
     "company_logo": {
       "label": "会社ロゴ",
       "hint": "正方形がおすすめです"
@@ -42,7 +48,7 @@
       "hint": "公共料金の請求書または賃貸契約書"
     }
   },
-  "draftSaved": "この端末に下書きを保存しました。ページを離れると、書類は再度追加が必要です。",
+  "draftSaved": "下書きをこの端末に保存しました",
   "submitting": "書類をアップロード中… {{percent}}%",
   "submitFailed": "情報を送信できませんでした。入力内容は残っているので、もう一度お試しください。",
   "validation": {
@@ -64,10 +70,44 @@
     "title": "ありがとうございます。情報を受け取りました",
     "lead": "書類の確認中も、アカウントはご利用いただけます。",
     "nextHeading": "このあとの流れ",
-    "review": "チームが会社情報と書類を確認します。",
-    "contact": "不足があれば {{email}} にご連絡します。",
-    "start": "その間に、求人の掲載や候補者の確認ができます。",
     "postJob": "最初の求人を掲載",
-    "dashboard": "ダッシュボードへ"
+    "dashboard": "ダッシュボードへ",
+    "timeline": {
+      "submitted": {
+        "title": "情報を送信しました",
+        "body": "会社情報と書類を受け取りました。"
+      },
+      "review": {
+        "title": "確認中",
+        "body": "チームが書類を確認します。不足があれば {{email}} にメールします。"
+      },
+      "verified": {
+        "title": "確認済み",
+        "body": "完了したらメールでお知らせします。それまでの間も求人の掲載や候補者の閲覧ができます。"
+      }
+    }
+  },
+  "groups": {
+    "about": "会社について",
+    "presence": "会社の情報が見られる場所"
+  },
+  "legal": {
+    "lead": "会社の確認に一度だけ使います。候補者には表示されません。"
+  },
+  "review": {
+    "heading": "入力内容の確認",
+    "edit": "編集",
+    "editLabel": "{{section}}を編集"
+  },
+  "preview": {
+    "company": {
+      "caption": "候補者に表示される会社情報"
+    },
+    "legal": {
+      "caption": "チームが一度だけ確認し、非公開で保管します"
+    },
+    "documents": {
+      "caption": "{{total}}件中{{count}}件の書類を追加済み"
+    }
   }
 }

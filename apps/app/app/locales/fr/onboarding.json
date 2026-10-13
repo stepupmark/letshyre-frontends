@@ -1,4 +1,5 @@
 {
+  "eyebrow": "Configuration de l'entreprise",
   "title": "Parlez-nous de votre entreprise",
   "lead": "Environ cinq minutes, en trois étapes. Nous enregistrons votre progression sur cet appareil, vous pouvez donc vous arrêter et revenir.",
   "steps": {
@@ -16,15 +17,20 @@
     "industryFailed": "Les secteurs ne se sont pas chargés. Rechargez pour réessayer.",
     "linkedin": "Page LinkedIn de l'entreprise",
     "description": "Que fait votre entreprise ?",
+    "descriptionHint": "Une ou deux phrases que les candidats liront.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Numéro d'immatriculation de l'entreprise",
     "registrationHint": "Le CIN ou le numéro de votre certificat d'immatriculation, ex. U72900TG2024PTC123456.",
     "pan": "PAN",
+    "panHint": "10 caractères, par ex. ABCDE1234F",
     "gst": "GSTIN",
+    "gstHint": "15 caractères, par ex. 36ABCDE1234F1Z5",
     "address": "Adresse du siège"
   },
   "documents": {
     "lead": "Scans ou photos nets, jusqu'à 5 Mo chacun. Les candidats ne les voient jamais.",
+    "keepWarning": "Les fichiers ne sont pas conservés si vous quittez cette page : ajoutez les quatre avant de terminer.",
+    "count": "{{count}} sur {{total}} ajoutés",
     "company_logo": {
       "label": "Logo de l'entreprise",
       "hint": "Un format carré fonctionne le mieux"
@@ -42,7 +48,7 @@
       "hint": "Une facture ou un bail"
     }
   },
-  "draftSaved": "Brouillon enregistré sur cet appareil. Les documents devront être rajoutés si vous partez.",
+  "draftSaved": "Brouillon enregistré sur cet appareil",
   "submitting": "Import de vos documents… {{percent}} %",
   "submitFailed": "Nous n'avons pas pu envoyer vos informations. Tout ce que vous avez saisi est conservé, réessayez.",
   "validation": {
@@ -64,10 +70,44 @@
     "title": "Merci, vos informations sont enregistrées",
     "lead": "Votre compte est utilisable pendant que nous vérifions vos documents.",
     "nextHeading": "La suite",
-    "review": "Notre équipe examine les informations et documents de votre entreprise.",
-    "contact": "S'il manque quelque chose, nous écrirons à {{email}}.",
-    "start": "En attendant, vous pouvez publier des offres et voir des candidats.",
     "postJob": "Publier votre première offre",
-    "dashboard": "Aller au tableau de bord"
+    "dashboard": "Aller au tableau de bord",
+    "timeline": {
+      "submitted": {
+        "title": "Informations envoyées",
+        "body": "Nous avons bien reçu les informations et documents de votre entreprise."
+      },
+      "review": {
+        "title": "En cours de vérification",
+        "body": "Notre équipe vérifie vos documents. S'il manque quelque chose, nous écrirons à {{email}}."
+      },
+      "verified": {
+        "title": "Vérifiée",
+        "body": "Nous vous écrirons une fois terminé. En attendant, vous pouvez publier des offres et voir les candidats."
+      }
+    }
+  },
+  "groups": {
+    "about": "À propos de l'entreprise",
+    "presence": "Où vous trouver"
+  },
+  "legal": {
+    "lead": "Nous les utilisons une seule fois pour vérifier votre entreprise. Les candidats ne les voient jamais."
+  },
+  "review": {
+    "heading": "Vérifiez vos informations",
+    "edit": "Modifier",
+    "editLabel": "Modifier {{section}}"
+  },
+  "preview": {
+    "company": {
+      "caption": "Ce que les candidats verront de votre entreprise"
+    },
+    "legal": {
+      "caption": "Vérifié une fois par notre équipe, et gardé privé"
+    },
+    "documents": {
+      "caption": "Documents ajoutés : {{count}} sur {{total}}"
+    }
   }
 }

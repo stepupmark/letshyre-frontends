@@ -49,6 +49,7 @@
   "upload": {
     "drop": "फ़ाइल यहाँ खींचकर लाएँ, या",
     "browse": "एक चुनें",
+    "choose": "फ़ाइल चुनें",
     "hint": "{{types}}, {{size}} तक",
     "tooLarge": "यह फ़ाइल {{size}} की है। सीमा {{max}} है।",
     "wrongType": "यह फ़ाइल प्रकार स्वीकार नहीं है। {{types}} इस्तेमाल करें।",
@@ -59,7 +60,9 @@
     "done": "अपलोड हो गया"
   },
   "wizard": {
-    "step": "चरण {{current}} / {{total}}",
+    "progress": "प्रगति",
+    "item": "चरण {{current}} / {{total}}: {{title}}",
+    "itemDone": "चरण {{current}} / {{total}}: {{title}}, पूरा",
     "back": "पीछे",
     "next": "आगे बढ़ें",
     "finish": "पूरा करें",

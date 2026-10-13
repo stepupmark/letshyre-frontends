@@ -1,4 +1,5 @@
 {
+  "eyebrow": "회사 설정",
   "title": "회사에 대해 알려 주세요",
   "lead": "3단계로 약 5분 걸려요. 진행 상황은 이 기기에 저장되니 멈췄다가 다시 와도 돼요.",
   "steps": {
@@ -16,15 +17,20 @@
     "industryFailed": "업계 목록을 불러오지 못했어요. 새로고침하세요.",
     "linkedin": "회사 LinkedIn 페이지",
     "description": "회사는 어떤 일을 하나요?",
+    "descriptionHint": "지원자가 읽을 한두 문장.",
     "descriptionCount": "{{count}} / 500",
     "registration": "회사 등록 번호",
     "registrationHint": "CIN 또는 등록 증명서 번호, 예: U72900TG2024PTC123456.",
     "pan": "PAN",
+    "panHint": "10자, 예: ABCDE1234F",
     "gst": "GSTIN",
+    "gstHint": "15자, 예: 36ABCDE1234F1Z5",
     "address": "등록 주소"
   },
   "documents": {
     "lead": "선명한 스캔본이나 사진, 각 5 MB 이하. 후보자는 절대 볼 수 없어요.",
+    "keepWarning": "이 페이지를 떠나면 파일이 유지되지 않으니, 완료하기 전에 네 개를 모두 추가하세요.",
+    "count": "{{total}}개 중 {{count}}개 추가됨",
     "company_logo": {
       "label": "회사 로고",
       "hint": "정사각형이 가장 좋아요"
@@ -42,7 +48,7 @@
       "hint": "공과금 고지서나 임대 계약서"
     }
   },
-  "draftSaved": "이 기기에 임시 저장됨. 페이지를 나가면 서류를 다시 추가해야 해요.",
+  "draftSaved": "이 기기에 임시 저장됨",
   "submitting": "서류 업로드 중… {{percent}}%",
   "submitFailed": "정보를 제출하지 못했어요. 입력한 내용은 그대로 있으니 다시 시도하세요.",
   "validation": {
@@ -64,10 +70,44 @@
     "title": "감사합니다. 정보를 받았어요",
     "lead": "서류를 확인하는 동안에도 계정을 사용할 수 있어요.",
     "nextHeading": "다음 단계",
-    "review": "저희 팀이 회사 정보와 서류를 검토해요.",
-    "contact": "빠진 게 있으면 {{email}}(으)로 연락드려요.",
-    "start": "그동안 공고를 올리고 후보자를 볼 수 있어요.",
     "postJob": "첫 공고 올리기",
-    "dashboard": "대시보드로 이동"
+    "dashboard": "대시보드로 이동",
+    "timeline": {
+      "submitted": {
+        "title": "정보 제출 완료",
+        "body": "회사 정보와 서류를 받았습니다."
+      },
+      "review": {
+        "title": "검토 중",
+        "body": "팀이 서류를 확인합니다. 빠진 것이 있으면 {{email}}(으)로 메일을 드립니다."
+      },
+      "verified": {
+        "title": "확인 완료",
+        "body": "완료되면 메일로 알려 드립니다. 그동안에도 채용 공고를 올리고 지원자를 볼 수 있습니다."
+      }
+    }
+  },
+  "groups": {
+    "about": "회사 소개",
+    "presence": "회사를 찾을 수 있는 곳"
+  },
+  "legal": {
+    "lead": "회사 확인에 한 번만 사용합니다. 지원자에게는 보이지 않습니다."
+  },
+  "review": {
+    "heading": "입력 내용 확인",
+    "edit": "수정",
+    "editLabel": "{{section}} 수정"
+  },
+  "preview": {
+    "company": {
+      "caption": "지원자에게 보이는 회사 모습"
+    },
+    "legal": {
+      "caption": "팀이 한 번 확인하고 비공개로 보관합니다"
+    },
+    "documents": {
+      "caption": "서류 {{total}}개 중 {{count}}개 추가됨"
+    }
   }
 }

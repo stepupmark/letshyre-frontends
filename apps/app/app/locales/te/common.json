@@ -49,6 +49,7 @@
   "upload": {
     "drop": "ఫైల్‌ను ఇక్కడికి లాగండి, లేదా",
     "browse": "ఒకటి ఎంచుకోండి",
+    "choose": "ఫైల్ ఎంచుకోండి",
     "hint": "{{types}}, {{size}} వరకు",
     "tooLarge": "ఆ ఫైల్ {{size}}. పరిమితి {{max}}.",
     "wrongType": "ఆ ఫైల్ రకం అంగీకరించబడదు. {{types}} ఉపయోగించండి.",
@@ -59,7 +60,9 @@
     "done": "అప్‌లోడ్ అయింది"
   },
   "wizard": {
-    "step": "దశ {{current}} / {{total}}",
+    "progress": "పురోగతి",
+    "item": "దశ {{current}}/{{total}}: {{title}}",
+    "itemDone": "దశ {{current}}/{{total}}: {{title}}, పూర్తయింది",
     "back": "వెనుకకు",
     "next": "కొనసాగించండి",
     "finish": "ముగించండి",

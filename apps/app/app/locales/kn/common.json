@@ -49,6 +49,7 @@
   "upload": {
     "drop": "ಫೈಲ್ ಅನ್ನು ಇಲ್ಲಿಗೆ ಎಳೆಯಿರಿ, ಅಥವಾ",
     "browse": "ಒಂದನ್ನು ಆರಿಸಿ",
+    "choose": "ಫೈಲ್ ಆಯ್ಕೆಮಾಡಿ",
     "hint": "{{types}}, {{size}} ವರೆಗೆ",
     "tooLarge": "ಆ ಫೈಲ್ {{size}} ಇದೆ. ಮಿತಿ {{max}}.",
     "wrongType": "ಆ ಫೈಲ್ ಪ್ರಕಾರ ಸ್ವೀಕಾರಾರ್ಹವಲ್ಲ. {{types}} ಬಳಸಿ.",
@@ -59,7 +60,9 @@
     "done": "ಅಪ್‌ಲೋಡ್ ಆಗಿದೆ"
   },
   "wizard": {
-    "step": "ಹಂತ {{current}} / {{total}}",
+    "progress": "ಪ್ರಗತಿ",
+    "item": "ಹಂತ {{current}}/{{total}}: {{title}}",
+    "itemDone": "ಹಂತ {{current}}/{{total}}: {{title}}, ಪೂರ್ಣಗೊಂಡಿದೆ",
     "back": "ಹಿಂದೆ",
     "next": "ಮುಂದುವರಿಸಿ",
     "finish": "ಮುಗಿಸಿ",

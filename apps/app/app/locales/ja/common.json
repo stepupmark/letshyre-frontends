@@ -47,6 +47,7 @@
   "upload": {
     "drop": "ここにファイルをドラッグするか、",
     "browse": "選択してください",
+    "choose": "ファイルを選択",
     "hint": "{{types}}、最大 {{size}}",
     "tooLarge": "ファイルのサイズは {{size}} です。上限は {{max}} です。",
     "wrongType": "このファイル形式は使えません。{{types}} を使ってください。",
@@ -57,7 +58,9 @@
     "done": "アップロード済み"
   },
   "wizard": {
-    "step": "ステップ {{current}}/{{total}}",
+    "progress": "進捗",
+    "item": "ステップ {{current}}/{{total}}：{{title}}",
+    "itemDone": "ステップ {{current}}/{{total}}：{{title}}（完了）",
     "back": "戻る",
     "next": "続ける",
     "finish": "完了",

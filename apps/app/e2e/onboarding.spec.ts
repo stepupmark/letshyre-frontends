@@ -1,11 +1,26 @@
 import AxeBuilder from "@axe-core/playwright"
 
+import type { Page } from "@playwright/test"
+
 import { expect, reply, test } from "./fixtures"
 
 const PNG = Buffer.from(
   "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",
   "base64"
 )
+const axe = async (page: Page) => {
+  // a step mid-fade reads as low contrast
+  await page.waitForFunction(() =>
+    document
+      .getAnimations()
+      .every(
+        (a) =>
+          a.playState !== "running" ||
+          a.effect?.getTiming().iterations === Infinity
+      )
+  )
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+}
 const pdf = (name: string) => ({
   name,
   mimeType: "application/pdf",
@@ -29,6 +44,12 @@ test("a new employer completes company details and documents, then reaches the d
   await expect(page).toHaveURL("/employer/onboarding")
   await expect(page.getByLabel("Official email")).toHaveValue("new@test.in")
 
+  // a link past unfinished steps lands on the first one
+  await page.goto("/employer/onboarding?step=documents")
+  await expect(
+    page.getByRole("heading", { name: "Company details" })
+  ).toBeVisible()
+
   await page.getByLabel("Company name").fill("Acme Labs")
   await page.getByLabel("Website").fill("acme.in")
   await page.getByLabel("Website").blur()
@@ -41,7 +62,7 @@ test("a new employer completes company details and documents, then reaches the d
   await page
     .getByLabel("What does your company do?")
     .fill("We build hiring software for small teams.")
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
   await page.getByRole("button", { name: "Continue" }).click()
 
   await page
@@ -53,6 +74,7 @@ test("a new employer completes company details and documents, then reaches the d
   )
   await page.getByLabel("GSTIN", { exact: true }).fill("36ABCDE1234F1Z")
   await page.getByLabel("Registered address").fill("1 Hitech City, Hyderabad")
+  await axe(page)
   await page.getByRole("button", { name: "Continue" }).click()
   await expect(page.getByText("A GSTIN has 15 characters")).toBeVisible()
   await page.getByLabel("GSTIN", { exact: true }).fill("36ABCDE1234F1Z5")
@@ -75,6 +97,7 @@ test("a new employer completes company details and documents, then reaches the d
   await files.nth(0).setInputFiles(pdf("gst.pdf"))
   await page.getByRole("button", { name: "Finish" }).click()
   await expect(page.getByText("Add this document")).toBeVisible()
+  await axe(page)
   await files.nth(0).setInputFiles(pdf("lease.pdf"))
   await page.getByRole("button", { name: "Finish" }).click()
 

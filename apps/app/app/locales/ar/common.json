@@ -57,6 +57,7 @@
   "upload": {
     "drop": "اسحب ملفًا إلى هنا، أو",
     "browse": "اختر ملفًا",
+    "choose": "اختر ملفًا",
     "hint": "{{types}}، حتى {{size}}",
     "tooLarge": "حجم هذا الملف {{size}}. الحد الأقصى {{max}}.",
     "wrongType": "نوع الملف هذا غير مقبول. استخدم {{types}}.",
@@ -67,7 +68,9 @@
     "done": "تم الرفع"
   },
   "wizard": {
-    "step": "الخطوة {{current}} من {{total}}",
+    "progress": "التقدم",
+    "item": "الخطوة {{current}} من {{total}}: {{title}}",
+    "itemDone": "الخطوة {{current}} من {{total}}: {{title}}، مكتملة",
     "back": "رجوع",
     "next": "متابعة",
     "finish": "إنهاء",

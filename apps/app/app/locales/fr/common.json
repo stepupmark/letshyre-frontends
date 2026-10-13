@@ -51,6 +51,7 @@
   "upload": {
     "drop": "Glissez un fichier ici, ou",
     "browse": "choisissez-en un",
+    "choose": "Choisir un fichier",
     "hint": "{{types}}, jusqu'à {{size}}",
     "tooLarge": "Ce fichier fait {{size}}. La limite est de {{max}}.",
     "wrongType": "Ce type de fichier n'est pas accepté. Utilisez {{types}}.",
@@ -61,7 +62,9 @@
     "done": "Importé"
   },
   "wizard": {
-    "step": "Étape {{current}} sur {{total}}",
+    "progress": "Progression",
+    "item": "Étape {{current}} sur {{total}} : {{title}}",
+    "itemDone": "Étape {{current}} sur {{total}} : {{title}}, terminée",
     "back": "Retour",
     "next": "Continuer",
     "finish": "Terminer",

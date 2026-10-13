@@ -10,4 +10,6 @@ export const clientMiddleware = [
   namespaces(["shell", "auth", "onboarding"]),
 ]
 
-export default OnboardingShell
+export default function EmployerOnboardingLayout() {
+  return <OnboardingShell wide />
+}

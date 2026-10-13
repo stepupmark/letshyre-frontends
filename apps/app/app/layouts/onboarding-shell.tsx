@@ -3,6 +3,7 @@ import { Logo } from "@workspace/blocks/logo"
 import { SkipLink } from "@workspace/blocks/skip-link"
 import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
+import { cn } from "@workspace/ui/lib/utils"
 import { Outlet } from "react-router"
 
 import { LanguagePicker } from "@/components/language-picker"
@@ -10,7 +11,7 @@ import { SessionGate } from "@/features/auth"
 import { api } from "@/lib/api"
 
 /** Before the dashboard exists for them: just the task, and a way out. */
-export function OnboardingShell() {
+export function OnboardingShell({ wide = false }: { wide?: boolean }) {
   const { t } = useTranslation(["shell", "common"])
 
   return (
@@ -18,7 +19,12 @@ export function OnboardingShell() {
       <div className="flex min-h-svh flex-col">
         <SkipLink>{t("shell:skipToContent")}</SkipLink>
         <header className="border-b">
-          <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-4 sm:px-6">
+          <div
+            className={cn(
+              "mx-auto flex h-14 items-center justify-between px-4 sm:px-6",
+              wide ? "max-w-6xl" : "max-w-3xl"
+            )}
+          >
             <Logo label={t("common:appName")} />
             <div className="flex items-center gap-1">
               <LanguagePicker />
@@ -39,7 +45,10 @@ export function OnboardingShell() {
         <main
           id="main"
           tabIndex={-1}
-          className="mx-auto w-full max-w-3xl flex-1 px-4 py-8 outline-none sm:px-6 sm:py-12"
+          className={cn(
+            "mx-auto w-full flex-1 px-4 py-8 outline-none sm:px-6 sm:py-12",
+            wide ? "max-w-6xl" : "max-w-3xl"
+          )}
         >
           <Outlet />
         </main>

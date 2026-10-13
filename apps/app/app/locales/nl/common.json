@@ -49,6 +49,7 @@
   "upload": {
     "drop": "Sleep een bestand hierheen, of",
     "browse": "kies er een",
+    "choose": "Bestand kiezen",
     "hint": "{{types}}, tot {{size}}",
     "tooLarge": "Dat bestand is {{size}}. De limiet is {{max}}.",
     "wrongType": "Dat bestandstype wordt niet geaccepteerd. Gebruik {{types}}.",
@@ -59,7 +60,9 @@
     "done": "Geüpload"
   },
   "wizard": {
-    "step": "Stap {{current}} van {{total}}",
+    "progress": "Voortgang",
+    "item": "Stap {{current}} van {{total}}: {{title}}",
+    "itemDone": "Stap {{current}} van {{total}}: {{title}}, voltooid",
     "back": "Terug",
     "next": "Doorgaan",
     "finish": "Afronden",

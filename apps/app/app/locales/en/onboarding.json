@@ -1,4 +1,5 @@
 {
+  "eyebrow": "Company setup",
   "title": "Tell us about your company",
   "lead": "About five minutes, in three steps. We save your progress on this device, so you can stop and come back.",
   "steps": {
@@ -16,15 +17,20 @@
     "industryFailed": "Industries didn't load. Reload to try again.",
     "linkedin": "Company LinkedIn page",
     "description": "What does your company do?",
+    "descriptionHint": "A sentence or two that candidates will read.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Company registration number",
     "registrationHint": "The CIN or your registration certificate's number, e.g. U72900TG2024PTC123456.",
     "pan": "PAN",
+    "panHint": "10 characters, like ABCDE1234F",
     "gst": "GSTIN",
+    "gstHint": "15 characters, like 36ABCDE1234F1Z5",
     "address": "Registered address"
   },
   "documents": {
     "lead": "Clear scans or photos, up to 5 MB each. Candidates never see these.",
+    "keepWarning": "Files aren't kept if you leave this page, so add all four before you finish.",
+    "count": "{{count}} of {{total}} added",
     "company_logo": {
       "label": "Company logo",
       "hint": "Square works best"
@@ -42,7 +48,7 @@
       "hint": "A utility bill or lease agreement"
     }
   },
-  "draftSaved": "Draft saved on this device. Documents need adding again if you leave.",
+  "draftSaved": "Draft saved on this device",
   "submitting": "Uploading your documents… {{percent}}%",
   "submitFailed": "We couldn't submit your details. Everything you entered is still here, so try again.",
   "validation": {
@@ -64,10 +70,44 @@
     "title": "Thanks, your details are in",
     "lead": "Your account is ready to use while we check your documents.",
     "nextHeading": "What happens next",
-    "review": "Our team reviews your company details and documents.",
-    "contact": "If anything is missing, we'll email {{email}}.",
-    "start": "Meanwhile, you can post jobs and see candidates.",
     "postJob": "Post your first job",
-    "dashboard": "Go to the dashboard"
+    "dashboard": "Go to the dashboard",
+    "timeline": {
+      "submitted": {
+        "title": "Details submitted",
+        "body": "Your company details and documents are with us."
+      },
+      "review": {
+        "title": "Under review",
+        "body": "Our team checks your documents. If anything is missing, we'll email {{email}}."
+      },
+      "verified": {
+        "title": "Verified",
+        "body": "We'll email you when it's done. Until then, you can post jobs and see candidates."
+      }
+    }
+  },
+  "groups": {
+    "about": "About the company",
+    "presence": "Where people find you"
+  },
+  "legal": {
+    "lead": "We use these once to verify your company. Candidates never see them."
+  },
+  "review": {
+    "heading": "Check your details",
+    "edit": "Edit",
+    "editLabel": "Edit {{section}}"
+  },
+  "preview": {
+    "company": {
+      "caption": "How candidates will see your company"
+    },
+    "legal": {
+      "caption": "Checked once by our team and kept private"
+    },
+    "documents": {
+      "caption": "{{count}} of {{total}} documents added"
+    }
   }
 }

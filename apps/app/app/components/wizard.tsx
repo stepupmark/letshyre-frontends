@@ -1,11 +1,11 @@
 import { dirFor } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
-import { Progress } from "@workspace/ui/components/progress"
-import { useRef, useState, type ReactNode } from "react"
+import { useEffect, useRef, useState, type ReactNode } from "react"
 import { useSearchParams } from "react-router"
 
 import { StepTransition } from "./motion/step-transition"
+import { Stepper } from "./stepper"
 
 export interface WizardStep {
   id: string
@@ -13,6 +13,8 @@ export interface WizardStep {
   content: ReactNode
   /** Runs on Continue; return false to stay (show the errors in the step). */
   validate?: () => boolean | Promise<boolean>
+  /** Without errors shown; a link to a later step lands on the first incomplete one. */
+  isComplete?: () => boolean
 }
 
 /**
@@ -23,10 +25,12 @@ export function Wizard({
   steps,
   onFinish,
   pending = false,
+  onStepChange,
 }: {
   steps: WizardStep[]
   onFinish: () => void | Promise<void>
   pending?: boolean
+  onStepChange?: (id: string) => void
 }) {
   const { t } = useTranslation("common")
   const dir = dirFor(useLocale())
@@ -34,12 +38,35 @@ export function Wizard({
   const [direction, setDirection] = useState<1 | -1>(1)
   const moved = useRef(false)
 
-  const index = Math.max(
+  const requested = Math.max(
     0,
     steps.findIndex((s) => s.id === params.get("step"))
   )
+  const blocked = steps.findIndex(
+    (s, i) => i < requested && s.isComplete?.() === false
+  )
+  const index = blocked === -1 ? requested : blocked
   const step = steps[index]
   const last = index === steps.length - 1
+
+  const stepId = step?.id
+  useEffect(() => {
+    if (stepId) onStepChange?.(stepId)
+  }, [stepId, onStepChange])
+
+  // keep the URL on the step actually shown, so a refresh doesn't skip ahead
+  const redirected = blocked !== -1 && stepId !== params.get("step")
+  useEffect(() => {
+    if (!redirected || !stepId) return
+    setParams(
+      (prev) => {
+        const search = new URLSearchParams(prev)
+        search.set("step", stepId)
+        return search
+      },
+      { replace: true, preventScrollReset: true }
+    )
+  }, [redirected, stepId, setParams])
 
   if (!step) return null
 
@@ -66,18 +93,11 @@ export function Wizard({
 
   return (
     <div className="flex max-w-xl flex-col gap-6">
-      <div className="flex flex-col gap-2">
-        <p className="text-sm text-muted-foreground tabular-nums">
-          {t("wizard.step", { current: index + 1, total: steps.length })}
-        </p>
-        <Progress
-          value={((index + 1) / steps.length) * 100}
-          aria-label={t("wizard.step", {
-            current: index + 1,
-            total: steps.length,
-          })}
-        />
-      </div>
+      <Stepper
+        titles={steps.map((s) => s.title)}
+        current={index}
+        onSelect={goTo}
+      />
 
       <StepTransition step={step.id} direction={direction} dir={dir}>
         <div className="flex flex-col gap-6">
@@ -87,7 +107,7 @@ export function Wizard({
               if (el && moved.current) el.focus()
             }}
             tabIndex={-1}
-            className="text-lg font-semibold outline-none"
+            className="text-xl font-semibold tracking-tight outline-none"
           >
             {step.title}
           </h2>

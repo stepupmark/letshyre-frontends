@@ -47,6 +47,7 @@
   "upload": {
     "drop": "Seret file ke sini, atau",
     "browse": "pilih file",
+    "choose": "Pilih file",
     "hint": "{{types}}, hingga {{size}}",
     "tooLarge": "File itu berukuran {{size}}. Batasnya {{max}}.",
     "wrongType": "Jenis file itu tidak diterima. Gunakan {{types}}.",
@@ -57,7 +58,9 @@
     "done": "Terunggah"
   },
   "wizard": {
-    "step": "Langkah {{current}} dari {{total}}",
+    "progress": "Kemajuan",
+    "item": "Langkah {{current}} dari {{total}}: {{title}}",
+    "itemDone": "Langkah {{current}} dari {{total}}: {{title}}, selesai",
     "back": "Kembali",
     "next": "Lanjutkan",
     "finish": "Selesai",

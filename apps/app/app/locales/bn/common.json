@@ -49,6 +49,7 @@
   "upload": {
     "drop": "ফাইল এখানে টেনে আনুন, অথবা",
     "browse": "একটা বেছে নিন",
+    "choose": "ফাইল বেছে নিন",
     "hint": "{{types}}, {{size}} পর্যন্ত",
     "tooLarge": "ফাইলটা {{size}}। সীমা {{max}}।",
     "wrongType": "এই ধরনের ফাইল গ্রহণ করা হয় না। {{types}} ব্যবহার করুন।",
@@ -59,7 +60,9 @@
     "done": "আপলোড হয়েছে"
   },
   "wizard": {
-    "step": "ধাপ {{current}} / {{total}}",
+    "progress": "অগ্রগতি",
+    "item": "ধাপ {{current}}/{{total}}: {{title}}",
+    "itemDone": "ধাপ {{current}}/{{total}}: {{title}}, সম্পন্ন",
     "back": "পেছনে",
     "next": "চালিয়ে যান",
     "finish": "শেষ করুন",

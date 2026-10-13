@@ -1,4 +1,5 @@
 {
+  "eyebrow": "Unternehmen einrichten",
   "title": "Erzählen Sie uns von Ihrem Unternehmen",
   "lead": "Etwa fünf Minuten in drei Schritten. Wir speichern Ihren Fortschritt auf diesem Gerät, Sie können also pausieren und später weitermachen.",
   "steps": {
@@ -16,15 +17,20 @@
     "industryFailed": "Die Branchen wurden nicht geladen. Laden Sie neu, um es erneut zu versuchen.",
     "linkedin": "LinkedIn-Seite des Unternehmens",
     "description": "Was macht Ihr Unternehmen?",
+    "descriptionHint": "Ein, zwei Sätze, die Bewerbende lesen.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Registrierungsnummer des Unternehmens",
     "registrationHint": "Die CIN oder die Nummer Ihrer Registrierungsurkunde, z. B. U72900TG2024PTC123456.",
     "pan": "PAN",
+    "panHint": "10 Zeichen, z. B. ABCDE1234F",
     "gst": "GSTIN",
+    "gstHint": "15 Zeichen, z. B. 36ABCDE1234F1Z5",
     "address": "Eingetragene Adresse"
   },
   "documents": {
     "lead": "Klare Scans oder Fotos, je bis 5 MB. Kandidaten sehen diese nie.",
+    "keepWarning": "Dateien bleiben nicht erhalten, wenn Sie die Seite verlassen. Fügen Sie also alle vier vor dem Abschluss hinzu.",
+    "count": "{{count}} von {{total}} hinzugefügt",
     "company_logo": {
       "label": "Firmenlogo",
       "hint": "Quadratisch eignet sich am besten"
@@ -42,7 +48,7 @@
       "hint": "Eine Versorgerrechnung oder ein Mietvertrag"
     }
   },
-  "draftSaved": "Entwurf auf diesem Gerät gespeichert. Dokumente müssen erneut hinzugefügt werden, wenn Sie die Seite verlassen.",
+  "draftSaved": "Entwurf auf diesem Gerät gespeichert",
   "submitting": "Ihre Dokumente werden hochgeladen… {{percent}} %",
   "submitFailed": "Wir konnten Ihre Angaben nicht übermitteln. Alle Eingaben sind noch da, versuchen Sie es erneut.",
   "validation": {
@@ -64,10 +70,44 @@
     "title": "Danke, Ihre Angaben sind da",
     "lead": "Ihr Konto ist nutzbar, während wir Ihre Dokumente prüfen.",
     "nextHeading": "Wie es weitergeht",
-    "review": "Unser Team prüft Ihre Unternehmensdaten und Dokumente.",
-    "contact": "Falls etwas fehlt, schreiben wir an {{email}}.",
-    "start": "In der Zwischenzeit können Sie Stellen veröffentlichen und Kandidaten sehen.",
     "postJob": "Erste Stelle veröffentlichen",
-    "dashboard": "Zum Dashboard"
+    "dashboard": "Zum Dashboard",
+    "timeline": {
+      "submitted": {
+        "title": "Angaben gesendet",
+        "body": "Wir haben die Angaben und Dokumente Ihres Unternehmens erhalten."
+      },
+      "review": {
+        "title": "In Prüfung",
+        "body": "Unser Team prüft Ihre Dokumente. Fehlt etwas, schreiben wir an {{email}}."
+      },
+      "verified": {
+        "title": "Verifiziert",
+        "body": "Wir schreiben Ihnen, sobald alles fertig ist. Bis dahin können Sie Stellen ausschreiben und Bewerbende ansehen."
+      }
+    }
+  },
+  "groups": {
+    "about": "Über das Unternehmen",
+    "presence": "Wo man Sie findet"
+  },
+  "legal": {
+    "lead": "Wir nutzen diese Angaben einmal, um Ihr Unternehmen zu prüfen. Bewerbende sehen sie nie."
+  },
+  "review": {
+    "heading": "Angaben prüfen",
+    "edit": "Bearbeiten",
+    "editLabel": "{{section}} bearbeiten"
+  },
+  "preview": {
+    "company": {
+      "caption": "So sehen Bewerbende Ihr Unternehmen"
+    },
+    "legal": {
+      "caption": "Einmal von unserem Team geprüft und vertraulich behandelt"
+    },
+    "documents": {
+      "caption": "{{count}} von {{total}} Dokumenten hinzugefügt"
+    }
   }
 }

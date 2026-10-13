@@ -49,6 +49,7 @@
   "upload": {
     "drop": "فائل یہاں گھسیٹ کر لائیں، یا",
     "browse": "ایک چنیں",
+    "choose": "فائل منتخب کریں",
     "hint": "{{types}}، {{size}} تک",
     "tooLarge": "یہ فائل {{size}} کی ہے۔ حد {{max}} ہے۔",
     "wrongType": "یہ فائل کی قسم قبول نہیں۔ {{types}} استعمال کریں۔",
@@ -59,7 +60,9 @@
     "done": "اپ لوڈ ہو گیا"
   },
   "wizard": {
-    "step": "مرحلہ {{current}} از {{total}}",
+    "progress": "پیش رفت",
+    "item": "مرحلہ {{current}} از {{total}}: {{title}}",
+    "itemDone": "مرحلہ {{current}} از {{total}}: {{title}}، مکمل",
     "back": "پیچھے",
     "next": "آگے بڑھیں",
     "finish": "مکمل کریں",

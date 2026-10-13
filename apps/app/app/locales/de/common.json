@@ -49,6 +49,7 @@
   "upload": {
     "drop": "Datei hierher ziehen oder",
     "browse": "eine auswählen",
+    "choose": "Datei auswählen",
     "hint": "{{types}}, bis {{size}}",
     "tooLarge": "Diese Datei hat {{size}}. Das Limit ist {{max}}.",
     "wrongType": "Dieser Dateityp wird nicht akzeptiert. Verwenden Sie {{types}}.",
@@ -59,7 +60,9 @@
     "done": "Hochgeladen"
   },
   "wizard": {
-    "step": "Schritt {{current}} von {{total}}",
+    "progress": "Fortschritt",
+    "item": "Schritt {{current}} von {{total}}: {{title}}",
+    "itemDone": "Schritt {{current}} von {{total}}: {{title}}, erledigt",
     "back": "Zurück",
     "next": "Weiter",
     "finish": "Abschließen",

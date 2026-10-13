@@ -1,4 +1,5 @@
 {
+  "eyebrow": "Penyiapan perusahaan",
   "title": "Ceritakan tentang perusahaan Anda",
   "lead": "Sekitar lima menit, dalam tiga langkah. Kami menyimpan progres Anda di perangkat ini, jadi Anda bisa berhenti dan kembali lagi.",
   "steps": {
@@ -16,15 +17,20 @@
     "industryFailed": "Daftar industri tidak termuat. Muat ulang untuk mencoba lagi.",
     "linkedin": "Halaman LinkedIn perusahaan",
     "description": "Apa yang dilakukan perusahaan Anda?",
+    "descriptionHint": "Satu atau dua kalimat yang akan dibaca kandidat.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Nomor registrasi perusahaan",
     "registrationHint": "CIN atau nomor sertifikat registrasi Anda, mis. U72900TG2024PTC123456.",
     "pan": "PAN",
+    "panHint": "10 karakter, seperti ABCDE1234F",
     "gst": "GSTIN",
+    "gstHint": "15 karakter, seperti 36ABCDE1234F1Z5",
     "address": "Alamat terdaftar"
   },
   "documents": {
     "lead": "Hasil pindai atau foto yang jelas, masing-masing hingga 5 MB. Kandidat tidak pernah melihatnya.",
+    "keepWarning": "File tidak tersimpan jika Anda meninggalkan halaman ini, jadi tambahkan keempatnya sebelum selesai.",
+    "count": "{{count}} dari {{total}} ditambahkan",
     "company_logo": {
       "label": "Logo perusahaan",
       "hint": "Persegi paling bagus"
@@ -42,7 +48,7 @@
       "hint": "Tagihan utilitas atau perjanjian sewa"
     }
   },
-  "draftSaved": "Draf disimpan di perangkat ini. Dokumen perlu ditambahkan lagi jika Anda keluar.",
+  "draftSaved": "Draf tersimpan di perangkat ini",
   "submitting": "Mengunggah dokumen Anda… {{percent}}%",
   "submitFailed": "Kami tidak bisa mengirim detail Anda. Semua yang Anda isi masih ada, jadi coba lagi.",
   "validation": {
@@ -64,10 +70,44 @@
     "title": "Terima kasih, detail Anda sudah masuk",
     "lead": "Akun Anda sudah bisa dipakai selama kami memeriksa dokumen Anda.",
     "nextHeading": "Apa selanjutnya",
-    "review": "Tim kami meninjau detail dan dokumen perusahaan Anda.",
-    "contact": "Jika ada yang kurang, kami akan mengirim email ke {{email}}.",
-    "start": "Sementara itu, Anda bisa memasang lowongan dan melihat kandidat.",
     "postJob": "Pasang lowongan pertama Anda",
-    "dashboard": "Ke dasbor"
+    "dashboard": "Ke dasbor",
+    "timeline": {
+      "submitted": {
+        "title": "Data terkirim",
+        "body": "Data dan dokumen perusahaan Anda sudah kami terima."
+      },
+      "review": {
+        "title": "Sedang ditinjau",
+        "body": "Tim kami memeriksa dokumen Anda. Jika ada yang kurang, kami akan mengirim email ke {{email}}."
+      },
+      "verified": {
+        "title": "Terverifikasi",
+        "body": "Kami akan mengirim email setelah selesai. Sementara itu, Anda bisa memasang lowongan dan melihat kandidat."
+      }
+    }
+  },
+  "groups": {
+    "about": "Tentang perusahaan",
+    "presence": "Tempat orang menemukan Anda"
+  },
+  "legal": {
+    "lead": "Kami menggunakannya sekali untuk memverifikasi perusahaan Anda. Kandidat tidak pernah melihatnya."
+  },
+  "review": {
+    "heading": "Periksa data Anda",
+    "edit": "Ubah",
+    "editLabel": "Ubah {{section}}"
+  },
+  "preview": {
+    "company": {
+      "caption": "Tampilan perusahaan Anda bagi kandidat"
+    },
+    "legal": {
+      "caption": "Diperiksa sekali oleh tim kami dan dijaga kerahasiaannya"
+    },
+    "documents": {
+      "caption": "{{count}} dari {{total}} dokumen ditambahkan"
+    }
   }
 }

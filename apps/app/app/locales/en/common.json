@@ -49,6 +49,7 @@
   "upload": {
     "drop": "Drag a file here, or",
     "browse": "choose one",
+    "choose": "Choose file",
     "hint": "{{types}}, up to {{size}}",
     "tooLarge": "That file is {{size}}. The limit is {{max}}.",
     "wrongType": "That file type isn't accepted. Use {{types}}.",
@@ -59,7 +60,9 @@
     "done": "Uploaded"
   },
   "wizard": {
-    "step": "Step {{current}} of {{total}}",
+    "progress": "Progress",
+    "item": "Step {{current}} of {{total}}: {{title}}",
+    "itemDone": "Step {{current}} of {{total}}: {{title}}, completed",
     "back": "Back",
     "next": "Continue",
     "finish": "Finish",

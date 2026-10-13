@@ -1,4 +1,5 @@
 {
+  "eyebrow": "Bedrijf instellen",
   "title": "Vertel ons over uw bedrijf",
   "lead": "Ongeveer vijf minuten, in drie stappen. We bewaren uw voortgang op dit apparaat, dus u kunt stoppen en later terugkomen.",
   "steps": {
@@ -16,15 +17,20 @@
     "industryFailed": "De sectoren zijn niet geladen. Laad de pagina opnieuw.",
     "linkedin": "LinkedIn-pagina van het bedrijf",
     "description": "Wat doet uw bedrijf?",
+    "descriptionHint": "Een of twee zinnen die kandidaten lezen.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Registratienummer van het bedrijf",
     "registrationHint": "Het CIN of het nummer van uw registratiebewijs, bijv. U72900TG2024PTC123456.",
     "pan": "PAN",
+    "panHint": "10 tekens, zoals ABCDE1234F",
     "gst": "GSTIN",
+    "gstHint": "15 tekens, zoals 36ABCDE1234F1Z5",
     "address": "Statutair adres"
   },
   "documents": {
     "lead": "Duidelijke scans of foto's, tot 5 MB per stuk. Kandidaten zien deze nooit.",
+    "keepWarning": "Bestanden blijven niet bewaard als je deze pagina verlaat, dus voeg alle vier toe voordat je afrondt.",
+    "count": "{{count}} van {{total}} toegevoegd",
     "company_logo": {
       "label": "Bedrijfslogo",
       "hint": "Vierkant werkt het best"
@@ -42,7 +48,7 @@
       "hint": "Een energierekening of huurcontract"
     }
   },
-  "draftSaved": "Concept opgeslagen op dit apparaat. Als u weggaat, moet u de documenten opnieuw toevoegen.",
+  "draftSaved": "Concept opgeslagen op dit apparaat",
   "submitting": "Uw documenten worden geüpload… {{percent}}%",
   "submitFailed": "We konden uw gegevens niet versturen. Alles wat u invulde staat er nog, dus probeer het opnieuw.",
   "validation": {
@@ -64,10 +70,44 @@
     "title": "Bedankt, uw gegevens zijn binnen",
     "lead": "U kunt uw account gebruiken terwijl wij uw documenten controleren.",
     "nextHeading": "Wat er nu gebeurt",
-    "review": "Ons team bekijkt uw bedrijfsgegevens en documenten.",
-    "contact": "Als er iets ontbreekt, mailen we naar {{email}}.",
-    "start": "Intussen kunt u vacatures plaatsen en kandidaten bekijken.",
     "postJob": "Plaats uw eerste vacature",
-    "dashboard": "Naar het dashboard"
+    "dashboard": "Naar het dashboard",
+    "timeline": {
+      "submitted": {
+        "title": "Gegevens verstuurd",
+        "body": "We hebben de gegevens en documenten van je bedrijf ontvangen."
+      },
+      "review": {
+        "title": "Wordt gecontroleerd",
+        "body": "Ons team controleert je documenten. Ontbreekt er iets, dan mailen we {{email}}."
+      },
+      "verified": {
+        "title": "Geverifieerd",
+        "body": "We mailen je zodra het klaar is. Tot dan kun je vacatures plaatsen en kandidaten bekijken."
+      }
+    }
+  },
+  "groups": {
+    "about": "Over het bedrijf",
+    "presence": "Waar mensen je vinden"
+  },
+  "legal": {
+    "lead": "We gebruiken deze één keer om je bedrijf te verifiëren. Kandidaten zien ze nooit."
+  },
+  "review": {
+    "heading": "Controleer je gegevens",
+    "edit": "Bewerken",
+    "editLabel": "{{section}} bewerken"
+  },
+  "preview": {
+    "company": {
+      "caption": "Zo zien kandidaten je bedrijf"
+    },
+    "legal": {
+      "caption": "Eén keer gecontroleerd door ons team en privé gehouden"
+    },
+    "documents": {
+      "caption": "{{count}} van {{total}} documenten toegevoegd"
+    }
   }
 }

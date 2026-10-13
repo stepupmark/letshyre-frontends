@@ -53,6 +53,7 @@
   "upload": {
     "drop": "Перетащите файл сюда или",
     "browse": "выберите его",
+    "choose": "Выбрать файл",
     "hint": "{{types}}, до {{size}}",
     "tooLarge": "Размер файла {{size}}. Максимум {{max}}.",
     "wrongType": "Этот тип файла не поддерживается. Используйте {{types}}.",
@@ -63,7 +64,9 @@
     "done": "Загружено"
   },
   "wizard": {
-    "step": "Шаг {{current}} из {{total}}",
+    "progress": "Прогресс",
+    "item": "Шаг {{current}} из {{total}}: {{title}}",
+    "itemDone": "Шаг {{current}} из {{total}}: {{title}}, выполнен",
     "back": "Назад",
     "next": "Продолжить",
     "finish": "Завершить",

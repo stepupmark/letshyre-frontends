@@ -12,7 +12,8 @@ import {
   InputGroupInput,
 } from "@workspace/ui/components/input-group"
 import { useTranslation } from "@workspace/i18n/react"
-import { Eye, EyeOff } from "lucide-react"
+import { cn } from "@workspace/ui/lib/utils"
+import { Check, Eye, EyeOff } from "lucide-react"
 import { useId, useState, type ComponentProps, type ReactNode } from "react"
 
 type InputProps = Omit<ComponentProps<"input">, "id">
@@ -31,18 +32,30 @@ export function TextField({
   error,
   hint,
   labelAside,
+  valid = false,
+  className,
   ...input
-}: FieldProps & InputProps) {
+}: FieldProps & InputProps & { valid?: boolean }) {
   const id = useId()
   return (
     <Field data-invalid={Boolean(error)}>
       <FieldRow id={id} label={label} aside={labelAside} />
-      <Input
-        id={id}
-        aria-invalid={Boolean(error)}
-        aria-describedby={describedBy(id, error, hint)}
-        {...input}
-      />
+      <div className="relative">
+        <Input
+          id={id}
+          aria-invalid={Boolean(error)}
+          aria-describedby={describedBy(id, error, hint)}
+          className={cn(valid && "pe-9", className)}
+          {...input}
+        />
+        {valid && (
+          <Check
+            aria-hidden="true"
+            strokeWidth={2.5}
+            className="pop pointer-events-none absolute inset-e-3 top-1/2 size-4 -translate-y-1/2 text-success"
+          />
+        )}
+      </div>
       <FieldFooter id={id} error={error} hint={hint} />
     </Field>
   )
