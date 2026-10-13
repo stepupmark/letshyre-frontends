@@ -52,9 +52,20 @@ export async function login(
   // checked before anything is stored, so other tabs never see a stray session
   if (!isRole(data.role))
     throw new ResponseShapeError("Login returned an unknown role")
-  if (!roles.includes(data.role)) throw new RoleNotAllowedError(data.role)
-
   const refresh = data.refresh_token ?? data.refresh
+  if (!roles.includes(data.role)) {
+    // the server already opened a session, so close it before refusing
+    if (typeof refresh === "string")
+      await client
+        .post(
+          "user/v1/logout/",
+          { refresh_token: refresh },
+          { auth: false, headers: { Authorization: `Bearer ${access}` } }
+        )
+        .catch(() => undefined)
+    throw new RoleNotAllowedError(data.role)
+  }
+
   saveTokens(access, typeof refresh === "string" ? refresh : undefined)
   saveUser(data)
 

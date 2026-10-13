@@ -3,6 +3,15 @@
 
 @custom-variant short (@media (max-height: 820px));
 
+/* keep autofill from tinting just the inner input of grouped fields */
+@layer base {
+  input:autofill {
+    -webkit-text-fill-color: var(--foreground);
+    caret-color: var(--foreground);
+    transition: background-color 600000s 0s;
+  }
+}
+
 @utility settle {
   @media (prefers-reduced-motion: no-preference) {
     transition:

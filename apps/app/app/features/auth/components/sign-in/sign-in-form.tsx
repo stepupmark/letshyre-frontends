@@ -12,7 +12,7 @@ import { Button } from "@workspace/ui/components/button"
 import { FieldGroup } from "@workspace/ui/components/field"
 import { Spinner } from "@workspace/ui/components/spinner"
 import { useMutation } from "@tanstack/react-query"
-import { ArrowRight, CircleAlert } from "lucide-react"
+import { CircleAlert } from "lucide-react"
 import { useMemo } from "react"
 import { useForm } from "react-hook-form"
 import { href, Link } from "react-router"
@@ -23,12 +23,7 @@ import { PasswordField, TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
 import { api } from "@/lib/api"
 
-import {
-  audienceOf,
-  ROLE_OF,
-  signInPath,
-  type Audience,
-} from "../../lib/audience"
+import { ROLE_OF, type Audience } from "../../lib/audience"
 import { authErrorKey } from "../../lib/errors"
 
 const schema = (
@@ -70,24 +65,17 @@ export function SignInForm({
       if (session.status !== "signed-in") return
       onSignedIn(safeNext(next) ?? homeFor(session))
     },
-    onError: (error) => {
-      form.setValue("password", "")
-      if (!(error instanceof RoleNotAllowedError)) form.setFocus("password")
+    onError: () => {
+      form.setFocus("password")
     },
   })
 
-  const wrongSide =
-    signIn.error instanceof RoleNotAllowedError
-      ? audienceOf(signIn.error.role)
-      : undefined
-  const failure =
-    wrongSide !== undefined
-      ? t(
-          wrongSide ? `signIn.wrongSide.${wrongSide}` : "signIn.wrongSide.other"
-        )
-      : signIn.isError
-        ? t(authErrorKey(signIn.error, "errors.signInFailed"))
-        : undefined
+  // the wrong side reads as a plain mismatch so it doesn't confirm the account
+  const failure = !signIn.isError
+    ? undefined
+    : signIn.error instanceof RoleNotAllowedError
+      ? t("errors.invalidCredentials")
+      : t(authErrorKey(signIn.error, "errors.signInFailed"))
   const busy = signIn.isPending || signIn.isSuccess
 
   return (
@@ -104,20 +92,7 @@ export function SignInForm({
         <Shake error={failure}>
           <Alert variant="destructive">
             <CircleAlert />
-            <AlertDescription>
-              {failure}
-              {wrongSide && (
-                <Link
-                  to={signInPath(wrongSide)}
-                  state={{ email: form.getValues("email") }}
-                  viewTransition
-                  className="mt-1 flex w-fit items-center gap-1 font-medium text-foreground underline underline-offset-4"
-                >
-                  {t(`signIn.goTo.${wrongSide}`)}
-                  <ArrowRight className="size-3.5 rtl:-scale-x-100" />
-                </Link>
-              )}
-            </AlertDescription>
+            <AlertDescription>{failure}</AlertDescription>
           </Alert>
         </Shake>
       )}

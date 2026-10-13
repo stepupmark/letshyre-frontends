@@ -16,13 +16,6 @@ export const audienceFromPath = (pathname: string): Audience | null =>
       ? "candidate"
       : null
 
-export const audienceOf = (role: Role): Audience | null =>
-  role === ROLES.employer
-    ? "employer"
-    : role === ROLES.candidate
-      ? "candidate"
-      : null
-
 export const signInPath = (audience: Audience | null) =>
   audience ? ROLE_SIGN_IN[ROLE_OF[audience]] : SIGN_IN
 

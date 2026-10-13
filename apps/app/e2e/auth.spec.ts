@@ -49,12 +49,13 @@ test("an employer page asks employers to sign in and returns to it", async ({
   await expect(page).toHaveURL("/employer/dashboard")
 })
 
-test("a job seeker on the employer page is turned away and sent to their own", async ({
+test("a job seeker on the employer page gets the same error as a wrong password", async ({
   page,
   api,
 }) => {
   await api({
     "POST /user/v1/login/": (route) => reply(route, signedIn(USERS.candidate)),
+    "POST /user/v1/logout/": (route) => reply(route, {}),
   })
 
   await page.goto("/employer/sign-in")
@@ -63,15 +64,12 @@ test("a job seeker on the employer page is turned away and sent to their own", a
   await page.getByRole("button", { name: "Sign in" }).click()
 
   await expect(page.getByRole("alert")).toContainText(
-    "This is a job seeker account"
+    "That email and password don't match"
   )
+  await expect(page.getByLabel("Password", { exact: true })).toBeFocused()
   expect(
     await page.evaluate(() => localStorage.getItem("accessToken"))
   ).toBeNull()
-
-  await page.getByRole("link", { name: "Go to job seeker sign in" }).click()
-  await expect(page).toHaveURL("/employee/sign-in")
-  await expect(page.getByLabel("Email")).toHaveValue("candidate@test.in")
 })
 
 test("an employer registers, verifies email and mobile, and lands on onboarding", async ({
@@ -179,6 +177,39 @@ test("a forgotten password is reset with an email code", async ({
     otp_session_key: "reset-key",
     new_password: "new-password-1",
   })
+})
+
+test("an unknown email on forgot password looks like a sent code", async ({
+  page,
+  api,
+}) => {
+  let verified = false
+  await api({
+    "POST /commonapp/v1/send_otp/": (route) =>
+      reply(
+        route,
+        {
+          success: false,
+          message: "No account found with this email address.",
+        },
+        400
+      ),
+    "POST /commonapp/v1/verify_otp/": async (route) => {
+      verified = true
+      await reply(route, { success: true })
+    },
+  })
+
+  await page.goto("/forgot-password")
+  await page.getByLabel("Email").fill("nobody@test.in")
+  await page.getByRole("button", { name: "Send code" }).click()
+
+  await expect(
+    page.getByRole("heading", { name: "Check your email" })
+  ).toBeVisible()
+  await enterCode(page)
+  await expect(page.getByRole("alert")).toContainText("That code isn't right")
+  expect(verified).toBe(false)
 })
 
 test("when the session ends, signing in again keeps the open page", async ({

@@ -35,6 +35,20 @@ import { StepFrame } from "../shared/step-frame"
 import { useFlow } from "../../hooks/use-flow"
 import { useSendCode } from "../../mutations/use-send-code"
 
+// an unknown email still gets a code step, so this page can't be used to
+// check who has an account
+const NO_ACCOUNT = "no-account"
+
+async function sendResetCode(email: string) {
+  try {
+    return await sendEmailCode(email, "Forgot Password")
+  } catch (error) {
+    if (authErrorKey(error, "errors.sendFailed") === "errors.emailNotFound")
+      return NO_ACCOUNT
+    throw error
+  }
+}
+
 export function ForgotFlow({
   signIn,
   onDone,
@@ -110,16 +124,18 @@ export function ForgotFlow({
               flow.go("email")
             }}
             verify={(code) =>
-              verifyEmailCode({
-                email,
-                key: data.key ?? "",
-                code,
-                purpose: "Forgot Password",
-              })
+              data.key === NO_ACCOUNT
+                ? Promise.reject(new Error(NO_ACCOUNT))
+                : verifyEmailCode({
+                    email,
+                    key: data.key ?? "",
+                    code,
+                    purpose: "Forgot Password",
+                  })
             }
             resend={async () => {
               flow.update({
-                key: await sendEmailCode(email, "Forgot Password"),
+                key: await sendResetCode(email),
                 sentAt: Date.now(),
               })
             }}
@@ -177,7 +193,7 @@ function EmailForm({
     field: "email",
     send: async ({ email }) => ({
       email,
-      key: await sendEmailCode(email, "Forgot Password"),
+      key: await sendResetCode(email),
       sentAt: Date.now(),
     }),
     onSent,

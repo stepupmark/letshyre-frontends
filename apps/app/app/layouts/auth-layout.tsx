@@ -45,7 +45,7 @@ export default function AuthLayout() {
                 />
               </Link>
             )}
-            <LanguagePicker />
+            <LanguagePicker display="name" />
           </div>
         </header>
         <main

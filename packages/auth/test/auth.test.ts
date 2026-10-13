@@ -188,11 +188,20 @@ describe("login and logout", () => {
     expect(localStorage.getItem("accessToken")).toBeNull()
   })
 
-  it("refuses a role this page doesn't serve before storing anything", async () => {
+  it("refuses a role this page doesn't serve and revokes its session", async () => {
+    const revoked = vi.fn()
     server.use(
       http.post(url("user/v1/login/"), () =>
-        HttpResponse.json({ role: "Employer", access_token: "acc" })
-      )
+        HttpResponse.json({
+          role: "Employer",
+          access_token: "acc",
+          refresh_token: "ref",
+        })
+      ),
+      http.post(url("user/v1/logout/"), async ({ request }) => {
+        revoked(await request.json(), request.headers.get("Authorization"))
+        return HttpResponse.json({})
+      })
     )
     const credentials = { email: "a@b.in", password: "x" }
     const listener = vi.fn()
@@ -202,6 +211,7 @@ describe("login and logout", () => {
 
     await expect(refused).rejects.toBeInstanceOf(RoleNotAllowedError)
     await expect(refused).rejects.toMatchObject({ role: "Employer" })
+    expect(revoked).toHaveBeenCalledWith({ refresh_token: "ref" }, "Bearer acc")
     expect(listener).not.toHaveBeenCalled()
     expect(localStorage.getItem("accessToken")).toBeNull()
     stop()
