@@ -75,10 +75,15 @@
     "reportSubject": "Enlace roto en letshyre.ai"
   },
   "error": {
+    "label": "Error",
     "title": "Esta página no se ha cargado",
     "body": "Algo ha fallado por nuestra parte. Recarga la página para intentarlo de nuevo o contáctanos si el problema continúa.",
     "retry": "Reintentar",
-    "goHome": "Ir al inicio"
+    "goHome": "Ir al inicio",
+    "report": "¿Sigue sin funcionar? <report>Avísanos</report>.",
+    "reportSubject": "Error de página en letshyre.ai",
+    "reference": "ID del error {{id}}",
+    "details": "Detalles técnicos"
   },
   "consent": {
     "label": "Preferencias de cookies",

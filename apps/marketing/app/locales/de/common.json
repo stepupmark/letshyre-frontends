@@ -75,10 +75,15 @@
     "reportSubject": "Defekter Link auf letshyre.ai"
   },
   "error": {
+    "label": "Fehler",
     "title": "Diese Seite wurde nicht geladen",
     "body": "Bei uns ist etwas schiefgelaufen. Lade die Seite neu, um es erneut zu versuchen, oder kontaktiere uns, wenn das Problem bleibt.",
     "retry": "Erneut versuchen",
-    "goHome": "Zur Startseite"
+    "goHome": "Zur Startseite",
+    "report": "Klappt es immer noch nicht? <report>Sag uns Bescheid</report>.",
+    "reportSubject": "Seitenfehler auf letshyre.ai",
+    "reference": "Fehler-ID {{id}}",
+    "details": "Technische Details"
   },
   "consent": {
     "label": "Cookie-Einstellungen",

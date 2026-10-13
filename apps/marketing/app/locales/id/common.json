@@ -75,10 +75,15 @@
     "reportSubject": "Tautan rusak di letshyre.ai"
   },
   "error": {
+    "label": "Kesalahan",
     "title": "Halaman ini tidak termuat",
     "body": "Terjadi kesalahan di pihak kami. Muat ulang halaman untuk mencoba lagi, atau hubungi kami jika masalah berlanjut.",
     "retry": "Coba lagi",
-    "goHome": "Ke Beranda"
+    "goHome": "Ke beranda",
+    "report": "Masih belum berhasil? <report>Beri tahu kami</report>.",
+    "reportSubject": "Kesalahan halaman di letshyre.ai",
+    "reference": "ID kesalahan {{id}}",
+    "details": "Detail teknis"
   },
   "consent": {
     "label": "Preferensi cookie",

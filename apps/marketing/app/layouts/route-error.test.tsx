@@ -1,3 +1,4 @@
+import { errorId } from "@workspace/blocks/error-screen"
 import { I18nProvider } from "@workspace/i18n/react"
 import { render, screen } from "@testing-library/react"
 import { createRoutesStub } from "react-router"
@@ -22,12 +23,16 @@ function renderError(error: unknown) {
 }
 
 describe("RouteError", () => {
-  it("offers a retry and a way home for other errors", () => {
+  it("offers a retry, a way home and a report carrying the error id", () => {
     vi.spyOn(console, "error").mockImplementation(() => undefined)
-    renderError(new Error("boom"))
+    const error = new Error("boom")
+    renderError(error)
 
     expect(screen.getByRole("button", { name: "Try again" })).toBeVisible()
-    expect(screen.getByRole("link", { name: "Go Home" })).toBeVisible()
-    expect(screen.getByText(/Error: boom/)).toBeInTheDocument()
+    expect(screen.getByRole("link", { name: "Go to home" })).toBeVisible()
+    expect(screen.getByRole("link", { name: "Tell us" })).toHaveAttribute(
+      "href",
+      expect.stringContaining(errorId(error)) as string
+    )
   })
 })

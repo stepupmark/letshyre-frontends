@@ -75,10 +75,15 @@
     "reportSubject": "Ligação quebrada em letshyre.ai"
   },
   "error": {
+    "label": "Erro",
     "title": "Esta página não carregou",
     "body": "Algo correu mal do nosso lado. Recarregue a página para tentar novamente ou contacte-nos se o problema persistir.",
     "retry": "Tentar novamente",
-    "goHome": "Ir para o início"
+    "goHome": "Ir para o início",
+    "report": "Ainda não funciona? <report>Avise-nos</report>.",
+    "reportSubject": "Erro de página em letshyre.ai",
+    "reference": "ID do erro {{id}}",
+    "details": "Detalhes técnicos"
   },
   "consent": {
     "label": "Preferências de cookies",

@@ -75,10 +75,15 @@
     "reportSubject": "Kapotte link op letshyre.ai"
   },
   "error": {
+    "label": "Fout",
     "title": "Deze pagina is niet geladen",
     "body": "Er ging iets mis aan onze kant. Laad de pagina opnieuw om het nog eens te proberen, of neem contact met ons op als het blijft gebeuren.",
     "retry": "Opnieuw proberen",
-    "goHome": "Naar home"
+    "goHome": "Naar de homepage",
+    "report": "Werkt het nog steeds niet? <report>Laat het ons weten</report>.",
+    "reportSubject": "Paginafout op letshyre.ai",
+    "reference": "Fout-ID {{id}}",
+    "details": "Technische details"
   },
   "consent": {
     "label": "Cookievoorkeuren",

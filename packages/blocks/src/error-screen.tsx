@@ -52,7 +52,7 @@ export function NotFoundScreen(
 }
 
 // short stable id so a dev can match the screen to the console
-function errorId(error: unknown) {
+export function errorId(error: unknown) {
   const text =
     error instanceof Error
       ? `${error.name}:${error.message}`

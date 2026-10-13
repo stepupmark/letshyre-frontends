@@ -75,10 +75,15 @@
     "reportSubject": "Broken link on letshyre.ai"
   },
   "error": {
+    "label": "Error",
     "title": "This page didn't load",
     "body": "Something went wrong on our side. Reload to try again, or contact us if it keeps happening.",
     "retry": "Try again",
-    "goHome": "Go Home"
+    "goHome": "Go to home",
+    "report": "Still not working? <report>Tell us</report>.",
+    "reportSubject": "Page error on letshyre.ai",
+    "reference": "Error ID {{id}}",
+    "details": "Technical details"
   },
   "consent": {
     "label": "Cookie preferences",

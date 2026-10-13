@@ -75,10 +75,15 @@
     "reportSubject": "letshyre.ai의 깨진 링크"
   },
   "error": {
+    "label": "오류",
     "title": "페이지를 불러오지 못했습니다",
     "body": "저희 쪽에서 문제가 발생했습니다. 페이지를 새로고침해 다시 시도하시고, 문제가 계속되면 문의해 주세요.",
     "retry": "다시 시도",
-    "goHome": "홈으로"
+    "goHome": "홈으로 가기",
+    "report": "여전히 안 되나요? <report>알려 주세요</report>.",
+    "reportSubject": "letshyre.ai 페이지 오류",
+    "reference": "오류 ID {{id}}",
+    "details": "기술 세부 정보"
   },
   "consent": {
     "label": "쿠키 설정",

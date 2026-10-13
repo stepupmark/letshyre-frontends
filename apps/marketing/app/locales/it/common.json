@@ -75,10 +75,15 @@
     "reportSubject": "Link non funzionante su letshyre.ai"
   },
   "error": {
+    "label": "Errore",
     "title": "Questa pagina non si è caricata",
     "body": "Qualcosa è andato storto da parte nostra. Ricarica la pagina per riprovare o contattaci se il problema persiste.",
     "retry": "Riprova",
-    "goHome": "Vai alla home"
+    "goHome": "Vai alla home",
+    "report": "Ancora non funziona? <report>Faccelo sapere</report>.",
+    "reportSubject": "Errore di pagina su letshyre.ai",
+    "reference": "ID errore {{id}}",
+    "details": "Dettagli tecnici"
   },
   "consent": {
     "label": "Preferenze sui cookie",
