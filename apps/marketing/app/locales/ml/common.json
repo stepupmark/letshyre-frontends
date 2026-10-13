@@ -1,6 +1,6 @@
 {
   "skipToContent": "പ്രധാന ഉള്ളടക്കത്തിലേക്ക് പോകുക",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.",
   "nav": {
     "howItWorks": "എങ്ങനെ പ്രവർത്തിക്കുന്നു",
     "interviewGuide": "ഇന്റർവ്യൂ ഗൈഡ്",
@@ -27,7 +27,7 @@
     "company": "കമ്പനി",
     "legal": "നിയമപരം",
     "stayUpdated": "അപ്ഡേറ്റ് ആയിരിക്കുക",
-    "newsletterDesc": "LetsHyre-ൽ നിന്നുള്ള ഏറ്റവും പുതിയ വാർത്തകളും അപ്ഡേറ്റുകളും നേടുക",
+    "newsletterDesc": "ഉൽപ്പന്ന വാർത്തകളും നിയമന നുറുങ്ങുകളും, ഏകദേശം മാസത്തിലൊരിക്കൽ.",
     "social": "സോഷ്യൽ മീഡിയയിൽ LetsHyre",
     "socialLinks": {
       "linkedin": "LinkedIn-ൽ LetsHyre",
@@ -36,6 +36,8 @@
       "youtube": "YouTube-ൽ LetsHyre"
     },
     "links": {
+      "howItWorks": "എങ്ങനെ പ്രവർത്തിക്കുന്നു",
+      "interviewGuide": "ഇന്റർവ്യൂ ഗൈഡ്",
       "downloadApp": "ആപ്ലിക്കേഷൻ ഡൗൺലോഡ് ചെയ്യുക",
       "pricing": "നിരക്കുകൾ",
       "about": "ഞങ്ങളെ കുറിച്ച്",
@@ -45,17 +47,20 @@
       "contact": "സമ്പർക്കം",
       "employerRegister": "തൊഴിലുടമ അക്കൗണ്ട് സൃഷ്ടിക്കുക",
       "candidateRegister": "ഉദ്യോഗാർഥി പ്രൊഫൈൽ സൃഷ്ടിക്കുക"
-    }
+    },
+    "nav": "ഫൂട്ടർ",
+    "opensApp": "(LetsHyre ആപ്പ് തുറക്കുന്നു)"
   },
   "newsletter": {
-    "emailPlaceholder": "നിങ്ങളുടെ ഇമെയിൽ",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "ഇമെയിൽ വിലാസം",
     "subscribe": "സബ്‌സ്ക്രൈബ് ചെയ്യുക",
-    "subscribing": "സബ്‌സ്‌ക്രൈബ് ചെയ്യുന്നു",
+    "subscribing": "സബ്‌സ്‌ക്രൈബ് ചെയ്യുന്നു…",
     "subscribed": "സബ്‌സ്ക്രിപ്ഷൻ വിജയകരമായി സംരക്ഷിച്ചു.",
     "subscribeFailed": "സബ്‌സ്ക്രൈബ് ചെയ്യാൻ കഴിഞ്ഞില്ല. വീണ്ടും ശ്രമിക്കുക.",
     "emailRequired": "നിങ്ങളുടെ ഇമെയിൽ വിലാസം നൽകുക.",
-    "emailInvalid": "name@company.com പോലുള്ള സാധുവായ ഇമെയിൽ വിലാസം നൽകുക."
+    "emailInvalid": "name@company.com പോലുള്ള സാധുവായ ഇമെയിൽ വിലാസം നൽകുക.",
+    "privacy": "എപ്പോൾ വേണമെങ്കിലും അൺസബ്‌സ്‌ക്രൈബ് ചെയ്യാം. ഞങ്ങളുടെ <pp>സ്വകാര്യതാ നയം</pp> വായിക്കുക."
   },
   "pageState": {
     "loading": "പേജ് ലോഡ് ചെയ്യുന്നു"

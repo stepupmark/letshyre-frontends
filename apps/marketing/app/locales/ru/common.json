@@ -1,6 +1,6 @@
 {
   "skipToContent": "Перейти к основному содержимому",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. Все права защищены.",
   "nav": {
     "howItWorks": "Как это работает",
     "interviewGuide": "Гид по собеседованию",
@@ -27,7 +27,7 @@
     "company": "Компания",
     "legal": "Правовая информация",
     "stayUpdated": "Будьте в курсе",
-    "newsletterDesc": "Получайте последние новости и обновления от LetsHyre",
+    "newsletterDesc": "Новости продукта и советы по найму — примерно раз в месяц.",
     "social": "LetsHyre в соцсетях",
     "socialLinks": {
       "linkedin": "LetsHyre в LinkedIn",
@@ -36,6 +36,8 @@
       "youtube": "LetsHyre на YouTube"
     },
     "links": {
+      "howItWorks": "Как это работает",
+      "interviewGuide": "Гид по собеседованию",
       "downloadApp": "Скачать приложение",
       "pricing": "Цены",
       "about": "О нас",
@@ -45,17 +47,20 @@
       "contact": "Контакты",
       "employerRegister": "Создать аккаунт работодателя",
       "candidateRegister": "Создать профиль кандидата"
-    }
+    },
+    "nav": "Подвал сайта",
+    "opensApp": "(откроется приложение LetsHyre)"
   },
   "newsletter": {
-    "emailPlaceholder": "Ваш Email",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "Адрес электронной почты",
     "subscribe": "Подписаться",
-    "subscribing": "Оформляем подписку",
+    "subscribing": "Оформляем подписку…",
     "subscribed": "Подписка успешно сохранена.",
     "subscribeFailed": "Не удалось оформить подписку. Попробуйте ещё раз.",
     "emailRequired": "Введите адрес электронной почты.",
-    "emailInvalid": "Введите корректный адрес, например name@company.com."
+    "emailInvalid": "Введите корректный адрес, например name@company.com.",
+    "privacy": "Отписаться можно в любой момент. Прочитайте нашу <pp>политику конфиденциальности</pp>."
   },
   "pageState": {
     "loading": "Загрузка страницы"

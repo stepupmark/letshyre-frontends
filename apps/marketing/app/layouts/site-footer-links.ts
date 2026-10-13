@@ -6,7 +6,7 @@ export const FOOTER_COLUMNS = [
     id: "product",
     title: "footer.product",
     links: [
-      { label: "nav.howItWorks", path: "", hash: "how-it-works" },
+      { label: "footer.links.howItWorks", path: "", hash: "how-it-works" },
       { label: "footer.links.pricing", path: "/pricing" },
       {
         label: "footer.links.employerRegister",
@@ -18,7 +18,7 @@ export const FOOTER_COLUMNS = [
     id: "candidates",
     title: "footer.candidates",
     links: [
-      { label: "nav.interviewGuide", path: PAGES.interview.path },
+      { label: "footer.links.interviewGuide", path: PAGES.interview.path },
       { label: "footer.links.downloadApp", path: "/download" },
       {
         label: "footer.links.candidateRegister",

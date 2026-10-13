@@ -1,6 +1,6 @@
 {
   "skipToContent": "Ga naar hoofdinhoud",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. Alle rechten voorbehouden.",
   "nav": {
     "howItWorks": "Hoe het werkt",
     "interviewGuide": "Interviewgids",
@@ -27,7 +27,7 @@
     "company": "Bedrijf",
     "legal": "Juridisch",
     "stayUpdated": "Blijf op de hoogte",
-    "newsletterDesc": "Ontvang het laatste nieuws en updates van LetsHyre",
+    "newsletterDesc": "Productnieuws en wervingstips, ongeveer één keer per maand.",
     "social": "LetsHyre op sociale media",
     "socialLinks": {
       "linkedin": "LetsHyre op LinkedIn",
@@ -36,6 +36,8 @@
       "youtube": "LetsHyre op YouTube"
     },
     "links": {
+      "howItWorks": "Hoe het werkt",
+      "interviewGuide": "Interviewgids",
       "downloadApp": "App downloaden",
       "pricing": "Prijzen",
       "about": "Over ons",
@@ -45,17 +47,20 @@
       "contact": "Contact",
       "employerRegister": "Werkgeversaccount aanmaken",
       "candidateRegister": "Kandidaatprofiel aanmaken"
-    }
+    },
+    "nav": "Voettekst",
+    "opensApp": "(opent de LetsHyre-app)"
   },
   "newsletter": {
-    "emailPlaceholder": "Uw e-mail",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "E-mailadres",
     "subscribe": "Abonneren",
-    "subscribing": "Bezig met aanmelden",
+    "subscribing": "Bezig met aanmelden…",
     "subscribed": "Abonnement succesvol opgeslagen.",
     "subscribeFailed": "Abonneren mislukt. Probeer het opnieuw.",
     "emailRequired": "Voer uw e-mailadres in.",
-    "emailInvalid": "Voer een geldig e-mailadres in, zoals naam@bedrijf.nl."
+    "emailInvalid": "Voer een geldig e-mailadres in, zoals naam@bedrijf.nl.",
+    "privacy": "Je kunt je altijd afmelden. Lees ons <pp>privacybeleid</pp>."
   },
   "pageState": {
     "loading": "Pagina wordt geladen"

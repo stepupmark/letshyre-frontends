@@ -169,7 +169,7 @@ test("footer has its landmark, link columns and labelled social links", async ({
     footer.getByRole("link", { name: "LetsHyre on LinkedIn" })
   ).toHaveAttribute("href", /linkedin\.com/)
   await expect(
-    footer.getByRole("link", { name: "Privacy Policy" })
+    footer.getByRole("link", { name: "Privacy policy", exact: true })
   ).toHaveAttribute("href", "/en/privacy-policy")
 })
 

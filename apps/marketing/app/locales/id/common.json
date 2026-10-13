@@ -1,6 +1,6 @@
 {
   "skipToContent": "Lewati ke konten utama",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. Hak cipta dilindungi.",
   "nav": {
     "howItWorks": "Cara Kerja",
     "interviewGuide": "Panduan Wawancara",
@@ -26,8 +26,8 @@
     "candidates": "Kandidat",
     "company": "Perusahaan",
     "legal": "Hukum",
-    "stayUpdated": "Tetap Terkini",
-    "newsletterDesc": "Dapatkan berita dan pembaruan terbaru dari LetsHyre",
+    "stayUpdated": "Tetap terkini",
+    "newsletterDesc": "Berita produk dan tips rekrutmen, sekitar sebulan sekali.",
     "social": "LetsHyre di media sosial",
     "socialLinks": {
       "linkedin": "LetsHyre di LinkedIn",
@@ -36,26 +36,31 @@
       "youtube": "LetsHyre di YouTube"
     },
     "links": {
-      "downloadApp": "Unduh Aplikasi",
+      "howItWorks": "Cara kerja",
+      "interviewGuide": "Panduan wawancara",
+      "downloadApp": "Unduh aplikasi",
       "pricing": "Harga",
-      "about": "Tentang Kami",
-      "terms": "Syarat & Ketentuan",
-      "privacy": "Kebijakan Privasi",
-      "refund": "Kebijakan Pengembalian Dana",
+      "about": "Tentang kami",
+      "terms": "Syarat & ketentuan",
+      "privacy": "Kebijakan privasi",
+      "refund": "Kebijakan pengembalian dana",
       "contact": "Kontak",
       "employerRegister": "Buat akun perusahaan",
       "candidateRegister": "Buat profil kandidat"
-    }
+    },
+    "nav": "Footer",
+    "opensApp": "(membuka aplikasi LetsHyre)"
   },
   "newsletter": {
-    "emailPlaceholder": "Email Anda",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "Alamat email",
     "subscribe": "Berlangganan",
-    "subscribing": "Sedang berlangganan",
+    "subscribing": "Sedang berlangganan…",
     "subscribed": "Langganan berhasil disimpan.",
     "subscribeFailed": "Gagal berlangganan. Silakan coba lagi.",
     "emailRequired": "Masukkan alamat email Anda.",
-    "emailInvalid": "Masukkan alamat email yang valid, seperti nama@perusahaan.com."
+    "emailInvalid": "Masukkan alamat email yang valid, seperti nama@perusahaan.com.",
+    "privacy": "Berhenti berlangganan kapan saja. Baca <pp>kebijakan privasi</pp> kami."
   },
   "pageState": {
     "loading": "Memuat halaman"

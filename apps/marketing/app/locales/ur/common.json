@@ -1,6 +1,6 @@
 {
   "skipToContent": "مرکزی مواد پر جائیں",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. جملہ حقوق محفوظ ہیں۔",
   "nav": {
     "howItWorks": "یہ کیسے کام کرتا ہے",
     "interviewGuide": "انٹرویو گائیڈ",
@@ -27,7 +27,7 @@
     "company": "کمپنی",
     "legal": "قانونی",
     "stayUpdated": "تازہ معلومات حاصل کریں",
-    "newsletterDesc": "LetsHyre کی تازہ ترین خبریں اور اپڈیٹس حاصل کریں",
+    "newsletterDesc": "پروڈکٹ کی خبریں اور بھرتی کے مشورے، تقریباً مہینے میں ایک بار۔",
     "social": "سوشل میڈیا پر LetsHyre",
     "socialLinks": {
       "linkedin": "LinkedIn پر LetsHyre",
@@ -36,6 +36,8 @@
       "youtube": "YouTube پر LetsHyre"
     },
     "links": {
+      "howItWorks": "یہ کیسے کام کرتا ہے",
+      "interviewGuide": "انٹرویو گائیڈ",
       "downloadApp": "ایپلیکیشن ڈاؤن لوڈ کریں",
       "pricing": "قیمتیں",
       "about": "ہمارے بارے میں",
@@ -45,17 +47,20 @@
       "contact": "رابطہ کریں",
       "employerRegister": "آجر اکاؤنٹ بنائیں",
       "candidateRegister": "امیدوار پروفائل بنائیں"
-    }
+    },
+    "nav": "فوٹر",
+    "opensApp": "(LetsHyre ایپ کھلتی ہے)"
   },
   "newsletter": {
-    "emailPlaceholder": "آپ کا ای میل",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "ای میل ایڈریس",
     "subscribe": "سبسکرائب کریں",
-    "subscribing": "سبسکرائب ہو رہا ہے",
+    "subscribing": "سبسکرائب ہو رہا ہے…",
     "subscribed": "سبسکرپشن کامیابی سے محفوظ ہو گئی۔",
     "subscribeFailed": "سبسکرائب کرنے میں ناکامی۔ براہِ کرم دوبارہ کوشش کریں۔",
     "emailRequired": "اپنا ای میل پتہ درج کریں۔",
-    "emailInvalid": "درست ای میل پتہ درج کریں، جیسے name@company.com۔"
+    "emailInvalid": "درست ای میل پتہ درج کریں، جیسے name@company.com۔",
+    "privacy": "کسی بھی وقت سبسکرپشن ختم کریں۔ ہماری <pp>رازداری کی پالیسی</pp> پڑھیں۔"
   },
   "pageState": {
     "loading": "صفحہ لوڈ ہو رہا ہے"

@@ -1,6 +1,6 @@
 {
   "skipToContent": "Saltar al contenido principal",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. Todos los derechos reservados.",
   "nav": {
     "howItWorks": "Cómo funciona",
     "interviewGuide": "Guía de la entrevista",
@@ -27,7 +27,7 @@
     "company": "Empresa",
     "legal": "Legal",
     "stayUpdated": "Mantente actualizado",
-    "newsletterDesc": "Obtén las últimas noticias y actualizaciones de LetsHyre",
+    "newsletterDesc": "Novedades del producto y consejos de contratación, más o menos una vez al mes.",
     "social": "LetsHyre en redes sociales",
     "socialLinks": {
       "linkedin": "LetsHyre en LinkedIn",
@@ -36,6 +36,8 @@
       "youtube": "LetsHyre en YouTube"
     },
     "links": {
+      "howItWorks": "Cómo funciona",
+      "interviewGuide": "Guía de la entrevista",
       "downloadApp": "Descargar aplicación",
       "pricing": "Precios",
       "about": "Sobre nosotros",
@@ -45,17 +47,20 @@
       "contact": "Contacto",
       "employerRegister": "Crear cuenta de empresa",
       "candidateRegister": "Crear perfil de candidato"
-    }
+    },
+    "nav": "Pie de página",
+    "opensApp": "(abre la app de LetsHyre)"
   },
   "newsletter": {
-    "emailPlaceholder": "Tu correo",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "Dirección de correo electrónico",
     "subscribe": "Suscribirse",
-    "subscribing": "Suscribiendo",
+    "subscribing": "Suscribiendo…",
     "subscribed": "Suscripción guardada correctamente.",
     "subscribeFailed": "Error al suscribirse. Por favor, inténtelo de nuevo.",
     "emailRequired": "Introduce tu correo electrónico.",
-    "emailInvalid": "Introduce un correo válido, como nombre@empresa.com."
+    "emailInvalid": "Introduce un correo válido, como nombre@empresa.com.",
+    "privacy": "Puedes darte de baja cuando quieras. Lee nuestra <pp>política de privacidad</pp>."
   },
   "pageState": {
     "loading": "Cargando la página"

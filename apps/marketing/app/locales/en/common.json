@@ -1,6 +1,6 @@
 {
   "skipToContent": "Skip to main content",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. All rights reserved.",
   "nav": {
     "howItWorks": "How It Works",
     "interviewGuide": "Interview Guide",
@@ -26,8 +26,8 @@
     "candidates": "Candidates",
     "company": "Company",
     "legal": "Legal",
-    "stayUpdated": "Stay Updated",
-    "newsletterDesc": "Get the latest news and updates from LetsHyre",
+    "stayUpdated": "Stay updated",
+    "newsletterDesc": "Product news and hiring tips, about once a month.",
     "social": "LetsHyre on social media",
     "socialLinks": {
       "linkedin": "LetsHyre on LinkedIn",
@@ -36,26 +36,31 @@
       "youtube": "LetsHyre on YouTube"
     },
     "links": {
-      "downloadApp": "Download Application",
+      "howItWorks": "How it works",
+      "interviewGuide": "Interview guide",
+      "downloadApp": "Download the app",
       "pricing": "Pricing",
-      "about": "About Us",
-      "terms": "Terms & Conditions",
-      "privacy": "Privacy Policy",
-      "refund": "Refund Policy",
+      "about": "About us",
+      "terms": "Terms and conditions",
+      "privacy": "Privacy policy",
+      "refund": "Refund policy",
       "contact": "Contact",
       "employerRegister": "Create employer account",
       "candidateRegister": "Create candidate profile"
-    }
+    },
+    "nav": "Footer",
+    "opensApp": "(opens the LetsHyre app)"
   },
   "newsletter": {
-    "emailPlaceholder": "Your Email",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "Email address",
     "subscribe": "Subscribe",
-    "subscribing": "Subscribing",
+    "subscribing": "Subscribing…",
     "subscribed": "Subscription saved successfully.",
     "subscribeFailed": "Failed to subscribe. Please try again.",
     "emailRequired": "Enter your email address.",
-    "emailInvalid": "Enter a valid email address, like name@company.com."
+    "emailInvalid": "Enter a valid email address, like name@company.com.",
+    "privacy": "Unsubscribe anytime. Read our <pp>privacy policy</pp>."
   },
   "pageState": {
     "loading": "Loading page"

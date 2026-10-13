@@ -1,6 +1,6 @@
 {
   "skipToContent": "Aller au contenu principal",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. Tous droits réservés.",
   "nav": {
     "howItWorks": "Comment ça marche",
     "interviewGuide": "Guide de l'entretien",
@@ -27,7 +27,7 @@
     "company": "Entreprise",
     "legal": "Mentions légales",
     "stayUpdated": "Restez informé",
-    "newsletterDesc": "Recevez les dernières nouvelles et mises à jour de LetsHyre",
+    "newsletterDesc": "Actualités produit et conseils de recrutement, environ une fois par mois.",
     "social": "LetsHyre sur les réseaux sociaux",
     "socialLinks": {
       "linkedin": "LetsHyre sur LinkedIn",
@@ -36,6 +36,8 @@
       "youtube": "LetsHyre sur YouTube"
     },
     "links": {
+      "howItWorks": "Comment ça marche",
+      "interviewGuide": "Guide de l'entretien",
       "downloadApp": "Télécharger l'application",
       "pricing": "Tarifs",
       "about": "À propos",
@@ -45,17 +47,20 @@
       "contact": "Contact",
       "employerRegister": "Créer un compte employeur",
       "candidateRegister": "Créer un profil candidat"
-    }
+    },
+    "nav": "Pied de page",
+    "opensApp": "(ouvre l'application LetsHyre)"
   },
   "newsletter": {
-    "emailPlaceholder": "Votre e-mail",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "Adresse e-mail",
     "subscribe": "S'abonner",
-    "subscribing": "Inscription en cours",
+    "subscribing": "Inscription en cours…",
     "subscribed": "Abonnement enregistré avec succès.",
     "subscribeFailed": "Échec de l'abonnement. Veuillez réessayer.",
     "emailRequired": "Saisissez votre adresse e-mail.",
-    "emailInvalid": "Saisissez une adresse e-mail valide, par exemple nom@entreprise.com."
+    "emailInvalid": "Saisissez une adresse e-mail valide, par exemple nom@entreprise.com.",
+    "privacy": "Désabonnement possible à tout moment. Consultez notre <pp>politique de confidentialité</pp>."
   },
   "pageState": {
     "loading": "Chargement de la page"

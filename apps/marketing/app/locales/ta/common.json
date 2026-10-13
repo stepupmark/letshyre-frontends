@@ -1,6 +1,6 @@
 {
   "skipToContent": "முக்கிய உள்ளடக்கத்திற்கு செல்லுங்கள்",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
   "nav": {
     "howItWorks": "இது எப்படி செயல்படுகிறது",
     "interviewGuide": "நேர்காணல் வழிகாட்டி",
@@ -27,7 +27,7 @@
     "company": "நிறுவனம்",
     "legal": "சட்டம்",
     "stayUpdated": "புதுப்பிக்கப்பட்டிருங்கள்",
-    "newsletterDesc": "LetsHyre இல் இருந்து சமீபத்திய செய்திகள் மற்றும் புதுப்பிப்புகளைப் பெறுங்கள்",
+    "newsletterDesc": "தயாரிப்புச் செய்திகளும் பணியமர்த்தல் குறிப்புகளும், ஏறக்குறைய மாதம் ஒருமுறை.",
     "social": "சமூக ஊடகங்களில் LetsHyre",
     "socialLinks": {
       "linkedin": "LinkedIn-இல் LetsHyre",
@@ -36,6 +36,8 @@
       "youtube": "YouTube-இல் LetsHyre"
     },
     "links": {
+      "howItWorks": "இது எப்படி செயல்படுகிறது",
+      "interviewGuide": "நேர்காணல் வழிகாட்டி",
       "downloadApp": "பயன்பாட்டை பதிவிறக்கவும்",
       "pricing": "விலை நிர்ணயம்",
       "about": "எங்களைப் பற்றி",
@@ -45,17 +47,20 @@
       "contact": "தொடர்பு கொள்ளுங்கள்",
       "employerRegister": "நிறுவனக் கணக்கை உருவாக்கவும்",
       "candidateRegister": "விண்ணப்பதாரர் சுயவிவரத்தை உருவாக்கவும்"
-    }
+    },
+    "nav": "அடிக்குறிப்பு",
+    "opensApp": "(LetsHyre செயலியைத் திறக்கும்)"
   },
   "newsletter": {
-    "emailPlaceholder": "உங்கள் மின்னஞ்சல்",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "மின்னஞ்சல் முகவரி",
     "subscribe": "சந்தா செலுத்துங்கள்",
-    "subscribing": "சந்தா செய்யப்படுகிறது",
+    "subscribing": "சந்தா செய்யப்படுகிறது…",
     "subscribed": "சந்தா வெற்றிகரமாக சேமிக்கப்பட்டது.",
     "subscribeFailed": "சந்தா செலுத்துவதில் தோல்வி. மீண்டும் முயற்சிக்கவும்.",
     "emailRequired": "உங்கள் மின்னஞ்சல் முகவரியை உள்ளிடவும்.",
-    "emailInvalid": "name@company.com போன்ற சரியான மின்னஞ்சல் முகவரியை உள்ளிடவும்."
+    "emailInvalid": "name@company.com போன்ற சரியான மின்னஞ்சல் முகவரியை உள்ளிடவும்.",
+    "privacy": "எப்போது வேண்டுமானாலும் குழுவிலகலாம். எங்கள் <pp>தனியுரிமைக் கொள்கையைப்</pp> படியுங்கள்."
   },
   "pageState": {
     "loading": "பக்கம் ஏற்றப்படுகிறது"

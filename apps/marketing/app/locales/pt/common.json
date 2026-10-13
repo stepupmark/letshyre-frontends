@@ -1,6 +1,6 @@
 {
   "skipToContent": "Saltar para o conteúdo principal",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. Todos os direitos reservados.",
   "nav": {
     "howItWorks": "Como Funciona",
     "interviewGuide": "Guia da entrevista",
@@ -26,8 +26,8 @@
     "candidates": "Candidatos",
     "company": "Empresa",
     "legal": "Jurídico",
-    "stayUpdated": "Mantenha-se Atualizado",
-    "newsletterDesc": "Receba as últimas notícias e novidades da LetsHyre",
+    "stayUpdated": "Mantenha-se atualizado",
+    "newsletterDesc": "Novidades do produto e dicas de recrutamento, cerca de uma vez por mês.",
     "social": "LetsHyre nas redes sociais",
     "socialLinks": {
       "linkedin": "LetsHyre no LinkedIn",
@@ -36,26 +36,31 @@
       "youtube": "LetsHyre no YouTube"
     },
     "links": {
-      "downloadApp": "Transferir Aplicação",
+      "howItWorks": "Como funciona",
+      "interviewGuide": "Guia da entrevista",
+      "downloadApp": "Transferir aplicação",
       "pricing": "Preços",
-      "about": "Sobre Nós",
-      "terms": "Termos e Condições",
-      "privacy": "Política de Privacidade",
-      "refund": "Política de Reembolso",
+      "about": "Sobre nós",
+      "terms": "Termos e condições",
+      "privacy": "Política de privacidade",
+      "refund": "Política de reembolso",
       "contact": "Contacto",
       "employerRegister": "Criar conta de empresa",
       "candidateRegister": "Criar perfil de candidato"
-    }
+    },
+    "nav": "Rodapé",
+    "opensApp": "(abre a aplicação LetsHyre)"
   },
   "newsletter": {
-    "emailPlaceholder": "O seu Email",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "Endereço de email",
     "subscribe": "Subscrever",
-    "subscribing": "Inscrevendo",
+    "subscribing": "Inscrevendo…",
     "subscribed": "Subscrição guardada com sucesso.",
     "subscribeFailed": "Falha ao subscrever. Tente novamente.",
     "emailRequired": "Digite seu endereço de e-mail.",
-    "emailInvalid": "Digite um e-mail válido, como nome@empresa.com."
+    "emailInvalid": "Digite um e-mail válido, como nome@empresa.com.",
+    "privacy": "Cancele a subscrição quando quiser. Leia a nossa <pp>política de privacidade</pp>."
   },
   "pageState": {
     "loading": "A carregar a página"

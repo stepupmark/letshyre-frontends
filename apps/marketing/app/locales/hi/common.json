@@ -1,6 +1,6 @@
 {
   "skipToContent": "मुख्य सामग्री पर जाएं",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. सर्वाधिकार सुरक्षित।",
   "nav": {
     "howItWorks": "यह कैसे काम करता है",
     "interviewGuide": "इंटरव्यू गाइड",
@@ -27,7 +27,7 @@
     "company": "कंपनी",
     "legal": "कानूनी",
     "stayUpdated": "अपडेट रहें",
-    "newsletterDesc": "LetsHyre से नवीनतम समाचार और अपडेट प्राप्त करें",
+    "newsletterDesc": "प्रोडक्ट से जुड़ी खबरें और हायरिंग टिप्स, लगभग महीने में एक बार।",
     "social": "सोशल मीडिया पर LetsHyre",
     "socialLinks": {
       "linkedin": "LinkedIn पर LetsHyre",
@@ -36,6 +36,8 @@
       "youtube": "YouTube पर LetsHyre"
     },
     "links": {
+      "howItWorks": "यह कैसे काम करता है",
+      "interviewGuide": "इंटरव्यू गाइड",
       "downloadApp": "एप्लिकेशन डाउनलोड करें",
       "pricing": "मूल्य निर्धारण",
       "about": "हमारे बारे में",
@@ -45,17 +47,20 @@
       "contact": "संपर्क",
       "employerRegister": "नियोक्ता खाता बनाएँ",
       "candidateRegister": "उम्मीदवार प्रोफ़ाइल बनाएँ"
-    }
+    },
+    "nav": "फ़ुटर",
+    "opensApp": "(LetsHyre ऐप खुलता है)"
   },
   "newsletter": {
-    "emailPlaceholder": "आपका ईमेल",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "ईमेल पता",
     "subscribe": "सदस्यता लें",
-    "subscribing": "सदस्यता ली जा रही है",
+    "subscribing": "सदस्यता ली जा रही है…",
     "subscribed": "सदस्यता सफलतापूर्वक सहेजी गई।",
     "subscribeFailed": "सदस्यता लेने में विफल। कृपया पुनः प्रयास करें।",
     "emailRequired": "अपना ईमेल पता दर्ज करें।",
-    "emailInvalid": "मान्य ईमेल पता दर्ज करें, जैसे name@company.com।"
+    "emailInvalid": "मान्य ईमेल पता दर्ज करें, जैसे name@company.com।",
+    "privacy": "कभी भी सदस्यता छोड़ें। हमारी <pp>गोपनीयता नीति</pp> पढ़ें।"
   },
   "pageState": {
     "loading": "पेज लोड हो रहा है"

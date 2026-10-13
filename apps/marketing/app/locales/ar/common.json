@@ -1,6 +1,6 @@
 {
   "skipToContent": "تخطَّ إلى المحتوى الرئيسي",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. جميع الحقوق محفوظة.",
   "nav": {
     "howItWorks": "كيف تعمل",
     "interviewGuide": "دليل المقابلة",
@@ -27,7 +27,7 @@
     "company": "الشركة",
     "legal": "قانوني",
     "stayUpdated": "ابقَ على اطلاع",
-    "newsletterDesc": "احصل على آخر الأخبار والتحديثات من LetsHyre",
+    "newsletterDesc": "أخبار المنتج ونصائح التوظيف، مرة واحدة في الشهر تقريبًا.",
     "social": "LetsHyre على وسائل التواصل الاجتماعي",
     "socialLinks": {
       "linkedin": "LetsHyre على LinkedIn",
@@ -36,6 +36,8 @@
       "youtube": "LetsHyre على YouTube"
     },
     "links": {
+      "howItWorks": "كيف تعمل",
+      "interviewGuide": "دليل المقابلة",
       "downloadApp": "تنزيل التطبيق",
       "pricing": "الأسعار",
       "about": "من نحن",
@@ -45,17 +47,20 @@
       "contact": "تواصل معنا",
       "employerRegister": "إنشاء حساب صاحب عمل",
       "candidateRegister": "إنشاء ملف مرشح"
-    }
+    },
+    "nav": "تذييل الصفحة",
+    "opensApp": "(يفتح تطبيق LetsHyre)"
   },
   "newsletter": {
-    "emailPlaceholder": "بريدك الإلكتروني",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "عنوان البريد الإلكتروني",
     "subscribe": "اشترك",
-    "subscribing": "جارٍ الاشتراك",
+    "subscribing": "جارٍ الاشتراك…",
     "subscribed": "تم حفظ الاشتراك بنجاح.",
     "subscribeFailed": "فشل الاشتراك. يُرجى المحاولة مرة أخرى.",
     "emailRequired": "أدخل بريدك الإلكتروني.",
-    "emailInvalid": "أدخل بريدًا إلكترونيًا صالحًا، مثل name@company.com."
+    "emailInvalid": "أدخل بريدًا إلكترونيًا صالحًا، مثل name@company.com.",
+    "privacy": "يمكنك إلغاء الاشتراك في أي وقت. اقرأ <pp>سياسة الخصوصية</pp>."
   },
   "pageState": {
     "loading": "جارٍ تحميل الصفحة"

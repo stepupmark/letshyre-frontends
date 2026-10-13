@@ -1,10 +1,15 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useTranslation } from "@workspace/i18n/react"
+import { localePath } from "@workspace/i18n"
+import { Trans, useLocale, useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import { Field, FieldError, FieldLabel } from "@workspace/ui/components/field"
 import { Input } from "@workspace/ui/components/input"
+import { Spinner } from "@workspace/ui/components/spinner"
 import { useId } from "react"
 import { useForm } from "react-hook-form"
+import { Link } from "react-router"
+
+import { PAGES } from "@/lib/pages"
 
 import { useSubscribe } from "../mutations/use-subscribe"
 import {
@@ -14,6 +19,7 @@ import {
 
 export function NewsletterForm() {
   const { t } = useTranslation("common")
+  const lang = useLocale()
   const id = useId()
   const subscription = useSubscribe()
   const { register, handleSubmit, formState } = useForm({
@@ -25,7 +31,7 @@ export function NewsletterForm() {
   const error = isNewsletterError(message) ? t(message) : undefined
 
   return (
-    <div className="grid gap-4 md:grid-cols-2 md:items-center md:gap-8">
+    <div className="grid gap-4 rounded-2xl border bg-background p-5 sm:p-6 md:grid-cols-2 md:items-center md:gap-8">
       <div className="flex flex-col gap-1">
         <h2 id={`${id}-title`} className="text-sm font-semibold">
           {t("footer.stayUpdated")}
@@ -64,12 +70,27 @@ export function NewsletterForm() {
                 {...register("email")}
               />
               <Button type="submit" size="lg" disabled={subscription.isPending}>
+                {subscription.isPending && <Spinner aria-hidden />}
                 {subscription.isPending
                   ? t("newsletter.subscribing")
                   : t("newsletter.subscribe")}
               </Button>
             </div>
             {error && <FieldError id={`${id}-error`}>{error}</FieldError>}
+            <p className="text-xs text-muted-foreground">
+              <Trans
+                t={t}
+                i18nKey="newsletter.privacy"
+                components={{
+                  pp: (
+                    <Link
+                      to={localePath(lang, PAGES.privacy.path)}
+                      className="underline underline-offset-4 hover:text-foreground"
+                    />
+                  ),
+                }}
+              />
+            </p>
           </Field>
         </form>
       )}

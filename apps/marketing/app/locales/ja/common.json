@@ -1,6 +1,6 @@
 {
   "skipToContent": "メインコンテンツへスキップ",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. All rights reserved.",
   "nav": {
     "howItWorks": "仕組み",
     "interviewGuide": "面接ガイド",
@@ -27,7 +27,7 @@
     "company": "会社",
     "legal": "法的情報",
     "stayUpdated": "最新情報を受け取る",
-    "newsletterDesc": "LetsHyreの最新ニュースとアップデートをお届けします",
+    "newsletterDesc": "製品ニュースと採用のヒントを月1回ほどお届けします。",
     "social": "LetsHyre のソーシャルメディア",
     "socialLinks": {
       "linkedin": "LinkedIn の LetsHyre",
@@ -36,6 +36,8 @@
       "youtube": "YouTube の LetsHyre"
     },
     "links": {
+      "howItWorks": "仕組み",
+      "interviewGuide": "面接ガイド",
       "downloadApp": "アプリをダウンロード",
       "pricing": "料金",
       "about": "会社概要",
@@ -45,17 +47,20 @@
       "contact": "お問い合わせ",
       "employerRegister": "企業アカウントを作成",
       "candidateRegister": "候補者プロフィールを作成"
-    }
+    },
+    "nav": "フッター",
+    "opensApp": "（LetsHyreアプリが開きます）"
   },
   "newsletter": {
-    "emailPlaceholder": "メールアドレス",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "メールアドレス",
     "subscribe": "登録する",
-    "subscribing": "登録中",
+    "subscribing": "登録中…",
     "subscribed": "登録が完了しました。",
     "subscribeFailed": "登録に失敗しました。もう一度お試しください。",
     "emailRequired": "メールアドレスを入力してください。",
-    "emailInvalid": "name@company.com のような有効なメールアドレスを入力してください。"
+    "emailInvalid": "name@company.com のような有効なメールアドレスを入力してください。",
+    "privacy": "配信はいつでも停止できます。<pp>プライバシーポリシー</pp>をご確認ください。"
   },
   "pageState": {
     "loading": "ページを読み込んでいます"

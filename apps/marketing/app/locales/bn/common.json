@@ -1,6 +1,6 @@
 {
   "skipToContent": "মূল কনটেন্টে যান",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. সর্বস্বত্ব সংরক্ষিত।",
   "nav": {
     "howItWorks": "কীভাবে কাজ করে",
     "interviewGuide": "ইন্টারভিউ গাইড",
@@ -27,7 +27,7 @@
     "company": "কোম্পানি",
     "legal": "আইনি",
     "stayUpdated": "আপডেট থাকুন",
-    "newsletterDesc": "LetsHyre-এর সর্বশেষ খবর ও আপডেট পান",
+    "newsletterDesc": "পণ্যের খবর ও নিয়োগের টিপস, মাসে প্রায় একবার।",
     "social": "সোশ্যাল মিডিয়ায় LetsHyre",
     "socialLinks": {
       "linkedin": "LinkedIn-এ LetsHyre",
@@ -36,6 +36,8 @@
       "youtube": "YouTube-এ LetsHyre"
     },
     "links": {
+      "howItWorks": "কীভাবে কাজ করে",
+      "interviewGuide": "ইন্টারভিউ গাইড",
       "downloadApp": "অ্যাপ্লিকেশন ডাউনলোড করুন",
       "pricing": "মূল্য",
       "about": "আমাদের সম্পর্কে",
@@ -45,17 +47,20 @@
       "contact": "যোগাযোগ",
       "employerRegister": "নিয়োগকর্তা অ্যাকাউন্ট তৈরি করুন",
       "candidateRegister": "প্রার্থী প্রোফাইল তৈরি করুন"
-    }
+    },
+    "nav": "ফুটার",
+    "opensApp": "(LetsHyre অ্যাপ খোলে)"
   },
   "newsletter": {
-    "emailPlaceholder": "আপনার ইমেইল",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "ইমেইল ঠিকানা",
     "subscribe": "সাবস্ক্রাইব করুন",
-    "subscribing": "সাবস্ক্রাইব করা হচ্ছে",
+    "subscribing": "সাবস্ক্রাইব করা হচ্ছে…",
     "subscribed": "সাবস্ক্রিপশন সফলভাবে সংরক্ষণ করা হয়েছে।",
     "subscribeFailed": "সাবস্ক্রাইব করতে ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।",
     "emailRequired": "আপনার ইমেল ঠিকানা লিখুন।",
-    "emailInvalid": "একটি বৈধ ইমেল ঠিকানা লিখুন, যেমন name@company.com।"
+    "emailInvalid": "একটি বৈধ ইমেল ঠিকানা লিখুন, যেমন name@company.com।",
+    "privacy": "যেকোনো সময় আনসাবস্ক্রাইব করুন। আমাদের <pp>গোপনীয়তা নীতি</pp> পড়ুন।"
   },
   "pageState": {
     "loading": "পৃষ্ঠা লোড হচ্ছে"

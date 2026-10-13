@@ -1,6 +1,6 @@
 {
   "skipToContent": "Vai al contenuto principale",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. Tutti i diritti riservati.",
   "nav": {
     "howItWorks": "Come Funziona",
     "interviewGuide": "Guida al colloquio",
@@ -26,8 +26,8 @@
     "candidates": "Candidati",
     "company": "Azienda",
     "legal": "Note legali",
-    "stayUpdated": "Resta Aggiornato",
-    "newsletterDesc": "Ricevi le ultime notizie e aggiornamenti da LetsHyre",
+    "stayUpdated": "Resta aggiornato",
+    "newsletterDesc": "Novità sul prodotto e consigli per le assunzioni, circa una volta al mese.",
     "social": "LetsHyre sui social",
     "socialLinks": {
       "linkedin": "LetsHyre su LinkedIn",
@@ -36,26 +36,31 @@
       "youtube": "LetsHyre su YouTube"
     },
     "links": {
-      "downloadApp": "Scarica Applicazione",
+      "howItWorks": "Come funziona",
+      "interviewGuide": "Guida al colloquio",
+      "downloadApp": "Scarica applicazione",
       "pricing": "Prezzi",
-      "about": "Chi Siamo",
-      "terms": "Termini e Condizioni",
-      "privacy": "Informativa sulla Privacy",
-      "refund": "Politica di Rimborso",
+      "about": "Chi siamo",
+      "terms": "Termini e condizioni",
+      "privacy": "Informativa sulla privacy",
+      "refund": "Politica di rimborso",
       "contact": "Contatti",
       "employerRegister": "Crea account aziendale",
       "candidateRegister": "Crea profilo candidato"
-    }
+    },
+    "nav": "Piè di pagina",
+    "opensApp": "(apre l'app LetsHyre)"
   },
   "newsletter": {
-    "emailPlaceholder": "La tua email",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "Indirizzo email",
     "subscribe": "Iscriviti",
-    "subscribing": "Iscrizione in corso",
+    "subscribing": "Iscrizione in corso…",
     "subscribed": "Iscrizione salvata con successo.",
     "subscribeFailed": "Impossibile completare l'iscrizione. Riprova.",
     "emailRequired": "Inserisci il tuo indirizzo email.",
-    "emailInvalid": "Inserisci un indirizzo email valido, ad esempio nome@azienda.com."
+    "emailInvalid": "Inserisci un indirizzo email valido, ad esempio nome@azienda.com.",
+    "privacy": "Puoi annullare l'iscrizione quando vuoi. Leggi la nostra <pp>informativa sulla privacy</pp>."
   },
   "pageState": {
     "loading": "Caricamento della pagina"

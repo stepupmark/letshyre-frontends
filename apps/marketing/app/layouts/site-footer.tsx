@@ -1,6 +1,7 @@
 import { Logo } from "@workspace/blocks/logo"
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
+import { ArrowUpRightIcon } from "lucide-react"
 import { Link } from "react-router"
 
 import { Container } from "@/components/section"
@@ -17,7 +18,7 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t bg-muted/40 print:hidden">
-      <Container className="flex flex-col gap-10 pt-12 pb-8 sm:pt-16">
+      <Container className="flex flex-col gap-10 pt-12 pb-10 sm:pt-16 sm:pb-14">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="flex max-w-sm flex-col gap-4 lg:col-span-4">
             <Link
@@ -37,7 +38,10 @@ export function SiteFooter() {
             </a>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:col-span-8">
+          <nav
+            aria-label={t("footer.nav")}
+            className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:col-span-8"
+          >
             {FOOTER_COLUMNS.map((column) => (
               <div key={column.id} className="flex flex-col gap-3">
                 <h2
@@ -48,7 +52,7 @@ export function SiteFooter() {
                 </h2>
                 <ul
                   aria-labelledby={`footer-${column.id}`}
-                  className="flex flex-col gap-2.5"
+                  className="flex flex-col gap-1"
                 >
                   {column.links.map((item) => (
                     <li key={item.label}>
@@ -60,21 +64,30 @@ export function SiteFooter() {
                               ? `${localePath(lang, item.path)}#${item.hash}`
                               : localePath(lang, item.path)
                         }
-                        className="rounded-sm text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+                        className="group/link inline-flex items-center gap-1 rounded-sm py-1 text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
                       >
                         {t(item.label)}
+                        {"href" in item && (
+                          <>
+                            <ArrowUpRightIcon
+                              aria-hidden
+                              className="size-3.5 opacity-60 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 motion-reduce:transition-none rtl:-scale-x-100"
+                            />
+                            <span className="sr-only">
+                              {t("footer.opensApp")}
+                            </span>
+                          </>
+                        )}
                       </Link>
                     </li>
                   ))}
                 </ul>
               </div>
             ))}
-          </div>
+          </nav>
         </div>
 
-        <div className="border-t pt-8">
-          <NewsletterForm />
-        </div>
+        <NewsletterForm />
 
         <div className="flex flex-col-reverse gap-4 border-t pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-muted-foreground">
@@ -89,7 +102,7 @@ export function SiteFooter() {
 
         <div
           aria-hidden
-          className="reveal aspect-1223/300 w-full bg-linear-to-b from-brand/80 to-brand/35 mask-[url(/footer-logo.webp)] mask-contain mask-center mask-no-repeat max-sm:-mt-4 dark:from-brand-text/75 dark:to-brand-text/30"
+          className="reveal aspect-1223/300 w-full bg-linear-to-b from-brand/55 to-brand/10 mask-[url(/footer-logo.webp)] mask-contain mask-center mask-no-repeat max-sm:-mt-4 dark:from-brand-text/45 dark:to-brand-text/10"
         />
       </Container>
     </footer>

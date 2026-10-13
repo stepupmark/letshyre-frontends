@@ -1,6 +1,6 @@
 {
   "skipToContent": "본문 바로가기",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. All rights reserved.",
   "nav": {
     "howItWorks": "이용 방법",
     "interviewGuide": "면접 가이드",
@@ -27,7 +27,7 @@
     "company": "회사",
     "legal": "법적 고지",
     "stayUpdated": "최신 소식 받기",
-    "newsletterDesc": "LetsHyre의 최신 소식과 업데이트를 받아보세요",
+    "newsletterDesc": "제품 소식과 채용 팁을 한 달에 한 번 정도 보내드려요.",
     "social": "소셜 미디어의 LetsHyre",
     "socialLinks": {
       "linkedin": "LinkedIn의 LetsHyre",
@@ -36,6 +36,8 @@
       "youtube": "YouTube의 LetsHyre"
     },
     "links": {
+      "howItWorks": "이용 방법",
+      "interviewGuide": "면접 가이드",
       "downloadApp": "애플리케이션 다운로드",
       "pricing": "요금",
       "about": "회사 소개",
@@ -45,17 +47,20 @@
       "contact": "문의",
       "employerRegister": "기업 계정 만들기",
       "candidateRegister": "지원자 프로필 만들기"
-    }
+    },
+    "nav": "바닥글",
+    "opensApp": "(LetsHyre 앱이 열립니다)"
   },
   "newsletter": {
-    "emailPlaceholder": "이메일 주소",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "이메일 주소",
     "subscribe": "구독하기",
-    "subscribing": "구독 중",
+    "subscribing": "구독 중…",
     "subscribed": "구독이 저장되었습니다.",
     "subscribeFailed": "구독에 실패했습니다. 다시 시도해 주세요.",
     "emailRequired": "이메일 주소를 입력하세요.",
-    "emailInvalid": "name@company.com처럼 올바른 이메일 주소를 입력하세요."
+    "emailInvalid": "name@company.com처럼 올바른 이메일 주소를 입력하세요.",
+    "privacy": "언제든지 구독을 취소할 수 있어요. <pp>개인정보 처리방침</pp>을 확인하세요."
   },
   "pageState": {
     "loading": "페이지를 불러오는 중"

@@ -1,6 +1,6 @@
 {
   "skipToContent": "ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ",
-  "copyright": "LetsHyre © {{year}}",
+  "copyright": "© {{year}} LetsHyre. ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
   "nav": {
     "howItWorks": "ಇದು ಹೇಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ",
     "interviewGuide": "ಸಂದರ್ಶನ ಮಾರ್ಗದರ್ಶಿ",
@@ -27,7 +27,7 @@
     "company": "ಕಂಪನಿ",
     "legal": "ಕಾನೂನು",
     "stayUpdated": "ಮಾಹಿತಿ ಪಡೆಯುತ್ತಿರಿ",
-    "newsletterDesc": "LetsHyre ಯಿಂದ ಇತ್ತೀಚಿನ ಸುದ್ದಿ ಮತ್ತು ಅಪ್‌ಡೇಟ್‌ಗಳನ್ನು ಪಡೆಯಿರಿ",
+    "newsletterDesc": "ಉತ್ಪನ್ನ ಸುದ್ದಿ ಮತ್ತು ನೇಮಕಾತಿ ಸಲಹೆಗಳು, ಸುಮಾರು ತಿಂಗಳಿಗೊಮ್ಮೆ.",
     "social": "ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮದಲ್ಲಿ LetsHyre",
     "socialLinks": {
       "linkedin": "LinkedIn ನಲ್ಲಿ LetsHyre",
@@ -36,6 +36,8 @@
       "youtube": "YouTube ನಲ್ಲಿ LetsHyre"
     },
     "links": {
+      "howItWorks": "ಇದು ಹೇಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ",
+      "interviewGuide": "ಸಂದರ್ಶನ ಮಾರ್ಗದರ್ಶಿ",
       "downloadApp": "ಅಪ್ಲಿಕೇಶನ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
       "pricing": "ಬೆಲೆಗಳು",
       "about": "ನಮ್ಮ ಬಗ್ಗೆ",
@@ -45,17 +47,20 @@
       "contact": "ಸಂಪರ್ಕಿಸಿ",
       "employerRegister": "ಉದ್ಯೋಗದಾತ ಖಾತೆ ರಚಿಸಿ",
       "candidateRegister": "ಅಭ್ಯರ್ಥಿ ಪ್ರೊಫೈಲ್ ರಚಿಸಿ"
-    }
+    },
+    "nav": "ಅಡಿಟಿಪ್ಪಣಿ",
+    "opensApp": "(LetsHyre ಆ್ಯಪ್ ತೆರೆಯುತ್ತದೆ)"
   },
   "newsletter": {
-    "emailPlaceholder": "ನಿಮ್ಮ ಇಮೇಲ್",
+    "emailPlaceholder": "name@company.com",
     "emailLabel": "ಇಮೇಲ್ ವಿಳಾಸ",
     "subscribe": "ಚಂದಾದಾರರಾಗಿ",
-    "subscribing": "ಚಂದಾದಾರರಾಗುತ್ತಿದೆ",
+    "subscribing": "ಚಂದಾದಾರರಾಗುತ್ತಿದೆ…",
     "subscribed": "ಚಂದಾದಾರಿಕೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಉಳಿಸಲಾಗಿದೆ.",
     "subscribeFailed": "ಚಂದಾದಾರರಾಗಲು ವಿಫಲವಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
     "emailRequired": "ನಿಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸ ನಮೂದಿಸಿ.",
-    "emailInvalid": "name@company.com ನಂತಹ ಮಾನ್ಯ ಇಮೇಲ್ ವಿಳಾಸ ನಮೂದಿಸಿ."
+    "emailInvalid": "name@company.com ನಂತಹ ಮಾನ್ಯ ಇಮೇಲ್ ವಿಳಾಸ ನಮೂದಿಸಿ.",
+    "privacy": "ಯಾವಾಗ ಬೇಕಾದರೂ ಚಂದಾದಾರಿಕೆ ರದ್ದುಗೊಳಿಸಿ. ನಮ್ಮ <pp>ಗೌಪ್ಯತಾ ನೀತಿ</pp> ಓದಿ."
   },
   "pageState": {
     "loading": "ಪುಟ ಲೋಡ್ ಆಗುತ್ತಿದೆ"
