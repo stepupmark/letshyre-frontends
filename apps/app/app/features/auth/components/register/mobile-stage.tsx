@@ -59,7 +59,10 @@ export function MobileStage({
       useMemo(
         () =>
           z.object({
-            phone: z.string().regex(/^\d{10}$/, t("validation.mobileInvalid")),
+            // Indian mobiles start with 6 to 9
+            phone: z
+              .string()
+              .regex(/^[6-9]\d{9}$/, t("validation.mobileInvalid")),
           }),
         [t]
       )

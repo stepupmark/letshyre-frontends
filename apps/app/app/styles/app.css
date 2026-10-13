@@ -3,12 +3,25 @@
 
 @custom-variant short (@media (max-height: 820px));
 
-/* keep autofill from tinting just the inner input of grouped fields */
+/* Chrome tints only the <input>, so a grouped field (+91 | number) looks split;
+   tint the whole group the same colour instead */
+:root {
+  --autofill: #e8f0fe;
+}
+.dark {
+  --autofill: color-mix(in oklab, rgb(70 90 126) 40%, var(--background));
+}
+
 @layer base {
   input:autofill {
     -webkit-text-fill-color: var(--foreground);
     caret-color: var(--foreground);
-    transition: background-color 600000s 0s;
+  }
+  [data-slot="input-group"]:has(input:autofill) {
+    background-color: var(--autofill);
+  }
+  [data-slot="input-group"] input:autofill {
+    box-shadow: inset 0 0 0 100vmax var(--autofill);
   }
 }
 

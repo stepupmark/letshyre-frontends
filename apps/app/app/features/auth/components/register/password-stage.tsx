@@ -15,6 +15,8 @@ import { Controller, useForm } from "react-hook-form"
 import { Link } from "react-router"
 import { z } from "zod"
 
+import { locale } from "@/lib/i18n"
+
 import {
   authErrorKey,
   isVerificationLost,
@@ -106,7 +108,7 @@ export function PasswordStage({
                     components={{
                       terms: (
                         <Link
-                          to="/en/terms"
+                          to={`/${locale}/terms`}
                           reloadDocument
                           target="_blank"
                           className="underline underline-offset-4"
@@ -114,7 +116,7 @@ export function PasswordStage({
                       ),
                       privacy: (
                         <Link
-                          to="/en/privacy-policy"
+                          to={`/${locale}/privacy-policy`}
                           reloadDocument
                           target="_blank"
                           className="underline underline-offset-4"
