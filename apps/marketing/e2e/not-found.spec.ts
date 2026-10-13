@@ -4,7 +4,7 @@ import { expect, test } from "@playwright/test"
 const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
 
 for (const url of ["/404", "/en/does-not-exist", "/xx/nonsense"]) {
-  test(`${url}: English 404 with a home link for every locale`, async ({
+  test(`${url}: English 404 inside the site, with a way home`, async ({
     page,
   }) => {
     const errors: string[] = []
@@ -15,17 +15,12 @@ for (const url of ["/404", "/en/does-not-exist", "/xx/nonsense"]) {
     await page.goto(url)
 
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-      "We couldn't find this page"
+      "This page doesn't exist"
     )
-    await expect(page.getByRole("link", { name: "Go Home" })).toHaveAttribute(
-      "href",
-      "/en"
-    )
-    const homes = page.getByRole("navigation", { name: "Change language" })
-    await expect(homes.getByRole("link")).toHaveCount(19)
-    const hindi = homes.getByRole("link", { name: "हिन्दी" })
-    await expect(hindi).toHaveAttribute("href", "/hi")
-    await expect(hindi).toHaveAttribute("lang", "hi")
+    await expect(page.getByRole("banner")).toBeVisible()
+    await expect(
+      page.getByRole("link", { name: "Go to home" })
+    ).toHaveAttribute("href", "/en")
 
     const { violations } = await new AxeBuilder({ page })
       .withTags(WCAG)
@@ -34,6 +29,18 @@ for (const url of ["/404", "/en/does-not-exist", "/xx/nonsense"]) {
     expect(errors).toEqual([])
   })
 }
+
+test("a 404 under a locale switches to that language", async ({ page }) => {
+  await page.goto("/hi/does-not-exist")
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "यह पेज मौजूद नहीं है"
+  )
+  await expect(page.locator("html")).toHaveAttribute("lang", "hi")
+  await expect(page.getByRole("link", { name: "होम पर जाएं" })).toHaveAttribute(
+    "href",
+    "/hi"
+  )
+})
 
 test("the 404 page is not indexed", async ({ request }) => {
   const html = await (await request.get("/404")).text()

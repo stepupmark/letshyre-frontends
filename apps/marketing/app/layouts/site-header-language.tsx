@@ -1,5 +1,5 @@
 import { LanguageSwitcher } from "@workspace/blocks/language-switcher"
-import { localePath, writeLocaleCookie } from "@workspace/i18n"
+import { LOCALES, localePath, writeLocaleCookie } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import type { ComponentProps } from "react"
 
@@ -11,7 +11,7 @@ type Props = Pick<
   "display" | "side" | "className"
 >
 
-/** Lists only the locales this page is published in. Used by the header and footer. */
+/** Lists the locales this page is published in, or every home when there's no page (the 404). */
 export function SiteLanguageSwitcher(props: Props) {
   const { t } = useTranslation("common")
   const lang = useLocale()
@@ -21,7 +21,7 @@ export function SiteLanguageSwitcher(props: Props) {
     <LanguageSwitcher
       {...props}
       current={lang}
-      locales={locales.length ? locales : [lang]}
+      locales={locales.length ? locales : LOCALES}
       label={t("nav.language")}
       searchLabel={t("nav.searchLanguage")}
       emptyLabel={t("nav.noLanguage")}

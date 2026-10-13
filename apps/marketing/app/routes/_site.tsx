@@ -1,6 +1,4 @@
-import { NavigationProgress } from "@workspace/blocks/navigation-progress"
-import { SkipLink } from "@workspace/blocks/skip-link"
-import { I18nProvider, useTranslation } from "@workspace/i18n/react"
+import { I18nProvider } from "@workspace/i18n/react"
 import {
   Outlet,
   type ShouldRevalidateFunctionArgs,
@@ -8,10 +6,8 @@ import {
   useRouteLoaderData,
 } from "react-router"
 
-import { ConsentGate } from "@/components/consent-gate"
-import { RouteError } from "@/components/route-error"
-import { SiteFooter } from "@/layouts/site-footer"
-import { SiteHeader } from "@/layouts/site-header"
+import { RouteError } from "@/layouts/route-error"
+import { SiteChrome } from "@/layouts/site-chrome"
 import { layoutData } from "@/lib/page-data.server"
 import { collectMessages } from "@/lib/seo/page-meta"
 
@@ -26,32 +22,15 @@ export const shouldRevalidate = ({
 }: ShouldRevalidateFunctionArgs) =>
   currentParams.lang !== nextParams.lang && defaultShouldRevalidate
 
-function Chrome({ children }: { children: React.ReactNode }) {
-  const { t } = useTranslation("common")
-
-  return (
-    <>
-      <SkipLink>{t("skipToContent")}</SkipLink>
-      <NavigationProgress label={t("pageState.loading")} />
-      <SiteHeader />
-      <main id="main" tabIndex={-1} className="outline-none">
-        {children}
-      </main>
-      <SiteFooter />
-      <ConsentGate />
-    </>
-  )
-}
-
 export default function SiteLayout({ loaderData }: Route.ComponentProps) {
   // layout copy plus whatever the matched page loaded
   const messages = collectMessages(useMatches())
 
   return (
     <I18nProvider lang={loaderData.lang} messages={messages}>
-      <Chrome>
+      <SiteChrome>
         <Outlet />
-      </Chrome>
+      </SiteChrome>
     </I18nProvider>
   )
 }
@@ -62,9 +41,9 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 
   return (
     <I18nProvider lang={data.lang} messages={data.messages}>
-      <Chrome>
+      <SiteChrome>
         <RouteError error={error} />
-      </Chrome>
+      </SiteChrome>
     </I18nProvider>
   )
 }

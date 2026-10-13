@@ -66,11 +66,13 @@
     "loading": "Chargement de la page"
   },
   "notFound": {
-    "badge": "404 Page introuvable",
-    "title": "Nous n'avons pas trouvé cette page",
-    "body": "La page que vous cherchez n'existe pas ou a peut-être été déplacée. Reprenons depuis le début.",
-    "goHome": "Accueil",
-    "goBack": "Retour"
+    "label": "Erreur 404",
+    "title": "Cette page n'existe pas",
+    "body": "Le lien est peut-être cassé ou la page a été déplacée. Vérifiez l'adresse et réessayez.",
+    "goHome": "Aller à l'accueil",
+    "goBack": "Retour",
+    "report": "Ce lien devrait fonctionner ? <report>Dites-le-nous</report>.",
+    "reportSubject": "Lien cassé sur letshyre.ai"
   },
   "error": {
     "title": "Cette page ne s'est pas chargée",

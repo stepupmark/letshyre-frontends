@@ -66,11 +66,13 @@
     "loading": "Pagina wordt geladen"
   },
   "notFound": {
-    "badge": "404 Niet gevonden",
-    "title": "We konden deze pagina niet vinden",
-    "body": "De pagina die je zoekt bestaat niet of is mogelijk verplaatst. We helpen je weer op weg.",
-    "goHome": "Naar home",
-    "goBack": "Terug"
+    "label": "Fout 404",
+    "title": "Deze pagina bestaat niet",
+    "body": "De link werkt misschien niet meer of de pagina is verplaatst. Controleer het adres en probeer het opnieuw.",
+    "goHome": "Naar de homepage",
+    "goBack": "Terug",
+    "report": "Zou deze link moeten werken? <report>Laat het ons weten</report>.",
+    "reportSubject": "Kapotte link op letshyre.ai"
   },
   "error": {
     "title": "Deze pagina is niet geladen",

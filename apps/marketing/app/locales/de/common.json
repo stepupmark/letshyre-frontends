@@ -66,11 +66,13 @@
     "loading": "Seite wird geladen"
   },
   "notFound": {
-    "badge": "404 Seite nicht gefunden",
-    "title": "Wir konnten diese Seite nicht finden",
-    "body": "Die gesuchte Seite existiert nicht oder wurde möglicherweise verschoben. Wir bringen Sie zurück auf den richtigen Weg.",
+    "label": "Fehler 404",
+    "title": "Diese Seite gibt es nicht",
+    "body": "Der Link ist vielleicht defekt oder die Seite wurde verschoben. Prüfen Sie die Adresse und versuchen Sie es erneut.",
     "goHome": "Zur Startseite",
-    "goBack": "Zurück"
+    "goBack": "Zurück",
+    "report": "Sollte dieser Link funktionieren? <report>Sagen Sie es uns</report>.",
+    "reportSubject": "Defekter Link auf letshyre.ai"
   },
   "error": {
     "title": "Diese Seite wurde nicht geladen",

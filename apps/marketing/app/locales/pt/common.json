@@ -66,11 +66,13 @@
     "loading": "A carregar a página"
   },
   "notFound": {
-    "badge": "404 Página não encontrada",
-    "title": "Não encontramos esta página",
-    "body": "A página que você procura não existe ou pode ter sido movida. Vamos colocá-lo de volta no caminho certo.",
+    "label": "Erro 404",
+    "title": "Esta página não existe",
+    "body": "A ligação pode estar quebrada ou a página pode ter mudado de sítio. Verifique o endereço e tente novamente.",
     "goHome": "Ir para o início",
-    "goBack": "Voltar"
+    "goBack": "Voltar",
+    "report": "Acha que esta ligação devia funcionar? <report>Diga-nos</report>.",
+    "reportSubject": "Ligação quebrada em letshyre.ai"
   },
   "error": {
     "title": "Esta página não carregou",

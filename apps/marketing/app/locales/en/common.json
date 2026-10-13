@@ -66,11 +66,13 @@
     "loading": "Loading page"
   },
   "notFound": {
-    "badge": "404 Not Found",
-    "title": "We couldn't find this page",
-    "body": "The page you're looking for doesn't exist or might have been moved. Let's get you back on track.",
-    "goHome": "Go Home",
-    "goBack": "Go Back"
+    "label": "Error 404",
+    "title": "This page doesn't exist",
+    "body": "The link may be broken or the page may have moved. Check the address and try again.",
+    "goHome": "Go to home",
+    "goBack": "Go back",
+    "report": "Think this link should work? <report>Tell us</report>.",
+    "reportSubject": "Broken link on letshyre.ai"
   },
   "error": {
     "title": "This page didn't load",

@@ -10,12 +10,14 @@ import {
   Meta,
   Outlet,
   Scripts,
+  isRouteErrorResponse,
   ScrollRestoration,
   useParams,
 } from "react-router"
 
 import type { Route } from "./+types/root"
-import { RouteError } from "./components/route-error"
+import { RouteError } from "./layouts/route-error"
+import { NotFoundPage } from "./layouts/not-found-page"
 import { usePageViews } from "./hooks/use-page-views"
 import { env } from "./lib/env"
 import { createQueryClient } from "./lib/query-client"
@@ -59,22 +61,38 @@ export function Layout({ children }: { children: React.ReactNode }) {
   )
 }
 
-export default function App() {
+function Providers({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(createQueryClient)
-  usePageViews()
 
   return (
     <ThemeProvider switchable>
       <QueryClientProvider client={queryClient}>
-        <Outlet />
+        {children}
         <Toaster />
       </QueryClientProvider>
     </ThemeProvider>
   )
 }
 
+export default function App() {
+  usePageViews()
+
+  return (
+    <Providers>
+      <Outlet />
+    </Providers>
+  )
+}
+
 // outside every layout, e.g. a URL no route matches; English is always available
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+  if (isRouteErrorResponse(error) && error.status === 404)
+    return (
+      <Providers>
+        <NotFoundPage />
+      </Providers>
+    )
+
   return (
     <I18nProvider lang="en" messages={{ en: { common } }}>
       <main id="main">

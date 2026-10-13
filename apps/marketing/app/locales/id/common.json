@@ -66,11 +66,13 @@
     "loading": "Memuat halaman"
   },
   "notFound": {
-    "badge": "404 Tidak Ditemukan",
-    "title": "Kami tidak dapat menemukan halaman ini",
-    "body": "Halaman yang Anda cari tidak ada atau mungkin telah dipindahkan. Mari kembali ke jalur yang benar.",
-    "goHome": "Ke Beranda",
-    "goBack": "Kembali"
+    "label": "Galat 404",
+    "title": "Halaman ini tidak ada",
+    "body": "Tautannya mungkin rusak atau halamannya sudah dipindahkan. Periksa alamatnya lalu coba lagi.",
+    "goHome": "Ke beranda",
+    "goBack": "Kembali",
+    "report": "Menurut Anda tautan ini seharusnya berfungsi? <report>Beri tahu kami</report>.",
+    "reportSubject": "Tautan rusak di letshyre.ai"
   },
   "error": {
     "title": "Halaman ini tidak termuat",
