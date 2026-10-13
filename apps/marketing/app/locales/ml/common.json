@@ -85,9 +85,11 @@
     "reject": "നിരസിക്കുക"
   },
   "legal": {
-    "sectionLink": "ഈ വിഭാഗത്തിലേക്കുള്ള ലിങ്ക്",
     "related": "ബന്ധപ്പെട്ട രേഖകൾ",
-    "manageCookies": "കുക്കി മുൻഗണനകൾ നിയന്ത്രിക്കുക"
+    "manageCookies": "കുക്കി മുൻഗണനകൾ നിയന്ത്രിക്കുക",
+    "copyLink": "{{title}} ലിങ്ക് പകർത്തുക",
+    "linkCopied": "ലിങ്ക് പകർത്തി",
+    "progress": "{{current}} / {{total}}"
   },
   "support": {
     "title": "ഇനിയും ചോദ്യങ്ങളുണ്ടോ?",

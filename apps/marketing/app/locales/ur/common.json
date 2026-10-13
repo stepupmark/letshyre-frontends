@@ -85,9 +85,11 @@
     "reject": "مسترد کریں"
   },
   "legal": {
-    "sectionLink": "اس حصے کا لنک",
     "related": "متعلقہ دستاویزات",
-    "manageCookies": "کوکی ترجیحات کا انتظام کریں"
+    "manageCookies": "کوکی ترجیحات کا انتظام کریں",
+    "copyLink": "{{title}} کا لنک کاپی کریں",
+    "linkCopied": "لنک کاپی ہو گیا",
+    "progress": "{{current}} / {{total}}"
   },
   "support": {
     "title": "کوئی اور سوال ہے؟",

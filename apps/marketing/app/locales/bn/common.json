@@ -85,9 +85,11 @@
     "reject": "প্রত্যাখ্যান করুন"
   },
   "legal": {
-    "sectionLink": "এই অংশের লিংক",
     "related": "সম্পর্কিত নথি",
-    "manageCookies": "কুকি পছন্দ পরিচালনা করুন"
+    "manageCookies": "কুকি পছন্দ পরিচালনা করুন",
+    "copyLink": "{{title}}-এর লিংক কপি করুন",
+    "linkCopied": "লিংক কপি হয়েছে",
+    "progress": "{{current}} / {{total}}"
   },
   "support": {
     "title": "আরও প্রশ্ন আছে?",

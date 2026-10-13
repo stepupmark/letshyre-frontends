@@ -4,9 +4,9 @@ import { expect, test } from "@playwright/test"
 const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
 
 const DOCS = [
-  { url: "/en/terms", title: "Terms & Conditions", date: "2026-09-08" },
-  { url: "/en/privacy-policy", title: "Privacy Policy", date: "2026-07-31" },
-  { url: "/en/refund-policy", title: "Refund Policy", date: "2026-07-31" },
+  { url: "/en/terms", title: "Terms and conditions", date: "2026-09-08" },
+  { url: "/en/privacy-policy", title: "Privacy policy", date: "2026-07-31" },
+  { url: "/en/refund-policy", title: "Refund policy", date: "2026-07-31" },
 ]
 
 for (const doc of DOCS) {
@@ -36,13 +36,18 @@ test("contents link jumps to the section and marks it current", async ({
   const toc = page.getByRole("navigation", { name: "Contents" })
   if (isMobile) await toc.getByRole("button", { name: "Contents" }).click()
 
-  await toc
-    .getByRole("link", { name: "7. Payment and Candidate Unlocks" })
-    .click()
+  const link = toc.getByRole("link", {
+    name: "7. Payment and Candidate Unlocks",
+  })
+  await link.click()
   await expect(page).toHaveURL(/#payment-and-candidate-unlocks$/)
-  await expect(
-    toc.getByRole("link", { name: "7. Payment and Candidate Unlocks" })
-  ).toHaveAttribute("aria-current", "location")
+  if (isMobile) {
+    await expect(toc.getByRole("button")).toContainText(
+      "Payment and Candidate Unlocks"
+    )
+  } else {
+    await expect(link).toHaveAttribute("aria-current", "location")
+  }
 
   const { violations } = await new AxeBuilder({ page }).withTags(WCAG).analyze()
   expect(violations).toEqual([])

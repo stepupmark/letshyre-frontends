@@ -85,9 +85,11 @@
     "reject": "رفض"
   },
   "legal": {
-    "sectionLink": "رابط إلى هذا القسم",
     "related": "مستندات ذات صلة",
-    "manageCookies": "إدارة تفضيلات ملفات تعريف الارتباط"
+    "manageCookies": "إدارة تفضيلات ملفات تعريف الارتباط",
+    "copyLink": "نسخ رابط {{title}}",
+    "linkCopied": "تم نسخ الرابط",
+    "progress": "{{current}} / {{total}}"
   },
   "support": {
     "title": "هل لديك أسئلة أخرى؟",

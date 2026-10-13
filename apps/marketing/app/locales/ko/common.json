@@ -85,9 +85,11 @@
     "reject": "거부"
   },
   "legal": {
-    "sectionLink": "이 섹션 링크",
     "related": "관련 문서",
-    "manageCookies": "쿠키 설정 관리"
+    "manageCookies": "쿠키 설정 관리",
+    "copyLink": "{{title}} 링크 복사",
+    "linkCopied": "링크를 복사했습니다",
+    "progress": "{{current}} / {{total}}"
   },
   "support": {
     "title": "더 궁금한 점이 있으신가요?",

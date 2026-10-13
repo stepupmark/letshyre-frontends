@@ -85,9 +85,11 @@
     "reject": "తిరస్కరించండి"
   },
   "legal": {
-    "sectionLink": "ఈ విభాగానికి లింక్",
     "related": "సంబంధిత పత్రాలు",
-    "manageCookies": "కుకీ ప్రాధాన్యతలను నిర్వహించండి"
+    "manageCookies": "కుకీ ప్రాధాన్యతలను నిర్వహించండి",
+    "copyLink": "{{title}} లింక్‌ను కాపీ చేయండి",
+    "linkCopied": "లింక్ కాపీ అయింది",
+    "progress": "{{current}} / {{total}}"
   },
   "support": {
     "title": "ఇంకా ప్రశ్నలు ఉన్నాయా?",

@@ -85,9 +85,11 @@
     "reject": "Reject"
   },
   "legal": {
-    "sectionLink": "Link to this section",
     "related": "Related documents",
-    "manageCookies": "Manage cookie preferences"
+    "manageCookies": "Manage cookie preferences",
+    "copyLink": "Copy link to {{title}}",
+    "linkCopied": "Link copied",
+    "progress": "{{current}} / {{total}}"
   },
   "support": {
     "title": "Still have questions?",

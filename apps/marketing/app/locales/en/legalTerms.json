@@ -1,6 +1,6 @@
 {
   "terms": {
-    "title": "Terms & Conditions",
+    "title": "Terms and conditions",
     "intro": [
       "By accessing or using LetsHyre (“LetsHyre”, “we”, “our”, or “us”), you agree to be bound by these Terms & Conditions. If you do not agree to these Terms, please do not use the platform."
     ],
@@ -400,10 +400,10 @@
     "lastUpdated": "Last updated {{date}}"
   },
   "meta": {
-    "title": "Terms & Conditions | letshyre.ai",
+    "title": "Terms and conditions | letshyre.ai",
     "description": "The terms governing your use of LetsHyre, covering accounts, interviews, payments, and acceptable use.",
-    "name": "Terms & Conditions",
+    "name": "Terms and conditions",
     "schemaDescription": "Terms governing use of the LetsHyre platform.",
-    "crumb": "Terms & Conditions"
+    "crumb": "Terms and conditions"
   }
 }

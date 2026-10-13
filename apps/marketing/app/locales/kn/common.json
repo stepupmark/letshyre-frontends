@@ -85,9 +85,11 @@
     "reject": "ತಿರಸ್ಕರಿಸಿ"
   },
   "legal": {
-    "sectionLink": "ಈ ವಿಭಾಗಕ್ಕೆ ಲಿಂಕ್",
     "related": "ಸಂಬಂಧಿತ ದಾಖಲೆಗಳು",
-    "manageCookies": "ಕುಕೀ ಆದ್ಯತೆಗಳನ್ನು ನಿರ್ವಹಿಸಿ"
+    "manageCookies": "ಕುಕೀ ಆದ್ಯತೆಗಳನ್ನು ನಿರ್ವಹಿಸಿ",
+    "copyLink": "{{title}} ಲಿಂಕ್ ನಕಲಿಸಿ",
+    "linkCopied": "ಲಿಂಕ್ ನಕಲಿಸಲಾಗಿದೆ",
+    "progress": "{{current}} / {{total}}"
   },
   "support": {
     "title": "ಇನ್ನೂ ಪ್ರಶ್ನೆಗಳಿವೆಯೇ?",

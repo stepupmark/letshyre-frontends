@@ -85,9 +85,11 @@
     "reject": "Ablehnen"
   },
   "legal": {
-    "sectionLink": "Link zu diesem Abschnitt",
     "related": "Verwandte Dokumente",
-    "manageCookies": "Cookie-Einstellungen verwalten"
+    "manageCookies": "Cookie-Einstellungen verwalten",
+    "copyLink": "Link zu „{{title}}“ kopieren",
+    "linkCopied": "Link kopiert",
+    "progress": "{{current}} / {{total}}"
   },
   "support": {
     "title": "Noch Fragen?",

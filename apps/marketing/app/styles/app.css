@@ -89,6 +89,36 @@
   }
 }
 
+/* like reveal, but movement only, so text never sits at low contrast */
+@utility slide-in {
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: slide-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 50%;
+    }
+  }
+}
+
+@keyframes slide-in {
+  from {
+    translate: 0 0.75rem;
+  }
+}
+
+/* marks the section a link just jumped to */
+@utility flash {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: flash 1.6s ease-out;
+  }
+}
+
+@keyframes flash {
+  from {
+    background-color: var(--color-brand-muted);
+  }
+}
+
 /* torn paper edge along the bottom */
 @utility receipt-edge {
   mask:

@@ -1,6 +1,6 @@
 import { SITE } from "@/lib/seo/site"
 
-import { type LegalBlock, subheadingId } from "../lib/legal-doc"
+import { type LegalBlock, subheadingIds } from "../lib/legal-doc"
 import { RichText } from "./rich-text"
 
 export function LegalBlocks({
@@ -10,7 +10,7 @@ export function LegalBlocks({
   sectionId: string
   blocks: LegalBlock[]
 }) {
-  let subheadings = 0
+  const ids = subheadingIds(sectionId, blocks)
 
   return blocks.map((block, index) => {
     const key = `${block.type}-${index}`
@@ -25,20 +25,20 @@ export function LegalBlocks({
         return (
           <h3
             key={key}
-            id={subheadingId(sectionId, subheadings++)}
-            className="scroll-mt-24 pt-1 text-base font-semibold text-foreground"
+            id={ids.get(index)}
+            className="target:flash -mx-1.5 scroll-mt-32 rounded-md px-1.5 pt-3 text-[1.0625rem]/snug font-semibold text-foreground lg:scroll-mt-24"
           >
             {block.text}
           </h3>
         )
       case "ul":
         return (
-          <ul
-            key={key}
-            className="flex list-disc flex-col gap-1.5 ps-5 marker:text-brand"
-          >
+          <ul key={key} className="flex flex-col gap-2 ps-5 leading-normal">
             {block.items.map((item, i) => (
-              <li key={i}>
+              <li
+                key={i}
+                className="relative before:absolute before:-inset-s-4 before:top-[0.6em] before:size-1.5 before:rounded-full before:bg-brand"
+              >
                 <RichText value={item} />
               </li>
             ))}

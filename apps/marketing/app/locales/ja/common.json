@@ -85,9 +85,11 @@
     "reject": "拒否する"
   },
   "legal": {
-    "sectionLink": "このセクションへのリンク",
     "related": "関連ドキュメント",
-    "manageCookies": "Cookie の設定を管理"
+    "manageCookies": "Cookie の設定を管理",
+    "copyLink": "{{title}}へのリンクをコピー",
+    "linkCopied": "リンクをコピーしました",
+    "progress": "{{current}} / {{total}}"
   },
   "support": {
     "title": "ご不明な点はありますか？",

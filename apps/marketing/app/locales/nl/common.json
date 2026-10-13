@@ -85,9 +85,11 @@
     "reject": "Weigeren"
   },
   "legal": {
-    "sectionLink": "Link naar deze sectie",
     "related": "Gerelateerde documenten",
-    "manageCookies": "Cookievoorkeuren beheren"
+    "manageCookies": "Cookievoorkeuren beheren",
+    "copyLink": "Link naar {{title}} kopiëren",
+    "linkCopied": "Link gekopieerd",
+    "progress": "{{current}} / {{total}}"
   },
   "support": {
     "title": "Nog vragen?",

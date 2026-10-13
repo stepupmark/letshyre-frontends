@@ -85,9 +85,11 @@
     "reject": "अस्वीकार करें"
   },
   "legal": {
-    "sectionLink": "इस अनुभाग का लिंक",
     "related": "संबंधित दस्तावेज़",
-    "manageCookies": "कुकी प्राथमिकताएँ प्रबंधित करें"
+    "manageCookies": "कुकी प्राथमिकताएँ प्रबंधित करें",
+    "copyLink": "{{title}} का लिंक कॉपी करें",
+    "linkCopied": "लिंक कॉपी हो गया",
+    "progress": "{{current}} / {{total}}"
   },
   "support": {
     "title": "अब भी कोई सवाल है?",

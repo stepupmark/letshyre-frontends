@@ -85,9 +85,11 @@
     "reject": "Отклонить"
   },
   "legal": {
-    "sectionLink": "Ссылка на этот раздел",
     "related": "Связанные документы",
-    "manageCookies": "Настроить файлы cookie"
+    "manageCookies": "Настроить файлы cookie",
+    "copyLink": "Скопировать ссылку на «{{title}}»",
+    "linkCopied": "Ссылка скопирована",
+    "progress": "{{current}} / {{total}}"
   },
   "support": {
     "title": "Остались вопросы?",

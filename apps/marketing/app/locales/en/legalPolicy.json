@@ -1,6 +1,6 @@
 {
   "policy": {
-    "title": "Privacy Policy",
+    "title": "Privacy policy",
     "intro": [
       "Welcome to LetsHyre (\"LetsHyre\", \"we\", \"our\", or \"us\"). We are committed to protecting your privacy and ensuring the security of your personal information.",
       "By using the LetsHyre platform, you consent to the collection, use, storage, and processing of your information as described in this Privacy Policy."
@@ -302,10 +302,10 @@
     "lastUpdated": "Last updated {{date}}"
   },
   "meta": {
-    "title": "Privacy Policy | letshyre.ai",
+    "title": "Privacy policy | letshyre.ai",
     "description": "How LetsHyre collects, uses, stores, and protects candidate and employer data across the platform.",
-    "name": "Privacy Policy",
+    "name": "Privacy policy",
     "schemaDescription": "How LetsHyre handles and protects your data.",
-    "crumb": "Privacy Policy"
+    "crumb": "Privacy policy"
   }
 }

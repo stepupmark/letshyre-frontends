@@ -85,9 +85,11 @@
     "reject": "Tolak"
   },
   "legal": {
-    "sectionLink": "Tautan ke bagian ini",
     "related": "Dokumen terkait",
-    "manageCookies": "Kelola preferensi cookie"
+    "manageCookies": "Kelola preferensi cookie",
+    "copyLink": "Salin tautan ke {{title}}",
+    "linkCopied": "Tautan disalin",
+    "progress": "{{current}} / {{total}}"
   },
   "support": {
     "title": "Masih ada pertanyaan?",

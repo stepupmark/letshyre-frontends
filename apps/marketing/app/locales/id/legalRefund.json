@@ -1,6 +1,6 @@
 {
   "refund": {
-    "title": "Kebijakan Pengembalian Dana",
+    "title": "Kebijakan pengembalian dana",
     "intro": [
       "Selamat datang di LetsHyre. Kebijakan Pengembalian Dana ini menjelaskan ketentuan-ketentuan di mana pengembalian dana dapat diberikan untuk pembayaran yang dilakukan di platform LetsHyre."
     ],
@@ -160,10 +160,10 @@
     "lastUpdated": "Terakhir diperbarui {{date}}"
   },
   "meta": {
-    "title": "Kebijakan Pengembalian Dana | letshyre.ai",
+    "title": "Kebijakan pengembalian dana | letshyre.ai",
     "description": "Kapan kredit dan langganan LetsHyre memenuhi syarat pengembalian dana, berapa lama prosesnya, dan cara mengajukannya.",
-    "name": "Kebijakan Pengembalian Dana",
+    "name": "Kebijakan pengembalian dana",
     "schemaDescription": "Kelayakan dan proses pengembalian dana untuk pembelian LetsHyre.",
-    "crumb": "Kebijakan Pengembalian Dana"
+    "crumb": "Kebijakan pengembalian dana"
   }
 }

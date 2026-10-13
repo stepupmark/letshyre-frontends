@@ -1,6 +1,6 @@
 {
   "policy": {
-    "title": "Kebijakan Privasi",
+    "title": "Kebijakan privasi",
     "intro": [
       "Selamat datang di LetsHyre (\"LetsHyre\", \"kami\"). Kami berkomitmen untuk melindungi privasi Anda dan memastikan keamanan informasi pribadi Anda.",
       "Dengan menggunakan platform LetsHyre, Anda menyetujui pengumpulan, penggunaan, penyimpanan, dan pemrosesan informasi Anda sebagaimana dijelaskan dalam Kebijakan Privasi ini."
@@ -302,10 +302,10 @@
     "lastUpdated": "Terakhir diperbarui {{date}}"
   },
   "meta": {
-    "title": "Kebijakan Privasi | letshyre.ai",
+    "title": "Kebijakan privasi | letshyre.ai",
     "description": "Bagaimana LetsHyre mengumpulkan, menggunakan, menyimpan, dan melindungi data kandidat serta perekrut di platform.",
-    "name": "Kebijakan Privasi",
+    "name": "Kebijakan privasi",
     "schemaDescription": "Bagaimana LetsHyre menangani dan melindungi data Anda.",
-    "crumb": "Kebijakan Privasi"
+    "crumb": "Kebijakan privasi"
   }
 }

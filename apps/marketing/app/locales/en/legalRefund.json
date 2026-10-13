@@ -1,6 +1,6 @@
 {
   "refund": {
-    "title": "Refund Policy",
+    "title": "Refund policy",
     "intro": [
       "Welcome to LetsHyre. This Refund Policy explains the conditions under which refunds may be provided for payments made on the LetsHyre platform."
     ],
@@ -160,10 +160,10 @@
     "lastUpdated": "Last updated {{date}}"
   },
   "meta": {
-    "title": "Refund Policy | letshyre.ai",
+    "title": "Refund policy | letshyre.ai",
     "description": "When LetsHyre credits and subscriptions qualify for a refund, the timelines involved, and how to raise a request.",
-    "name": "Refund Policy",
+    "name": "Refund policy",
     "schemaDescription": "Refund eligibility and process for LetsHyre purchases.",
-    "crumb": "Refund Policy"
+    "crumb": "Refund policy"
   }
 }

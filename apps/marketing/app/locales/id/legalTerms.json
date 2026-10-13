@@ -1,6 +1,6 @@
 {
   "terms": {
-    "title": "Syarat & Ketentuan",
+    "title": "Syarat dan ketentuan",
     "intro": [
       "Dengan mengakses atau menggunakan LetsHyre (“LetsHyre”, “kami”), Anda setuju untuk terikat oleh Syarat & Ketentuan ini. Jika Anda tidak menyetujui Syarat ini, mohon untuk tidak menggunakan platform ini."
     ],
@@ -400,10 +400,10 @@
     "lastUpdated": "Terakhir diperbarui {{date}}"
   },
   "meta": {
-    "title": "Syarat dan Ketentuan | letshyre.ai",
+    "title": "Syarat dan ketentuan | letshyre.ai",
     "description": "Ketentuan yang mengatur penggunaan LetsHyre, mencakup akun, wawancara, pembayaran, dan penggunaan yang wajar.",
-    "name": "Syarat & Ketentuan",
+    "name": "Syarat dan ketentuan",
     "schemaDescription": "Ketentuan yang mengatur penggunaan platform LetsHyre.",
-    "crumb": "Syarat & Ketentuan"
+    "crumb": "Syarat dan ketentuan"
   }
 }

@@ -1,6 +1,6 @@
 {
   "policy": {
-    "title": "Informativa sulla Privacy",
+    "title": "Informativa sulla privacy",
     "intro": [
       "Benvenuto su LetsHyre (\"LetsHyre\", \"noi\", \"nostro\" o \"ci\"). Ci impegniamo a proteggere la tua privacy e a garantire la sicurezza delle tue informazioni personali.",
       "Utilizzando la piattaforma LetsHyre, acconsenti alla raccolta, all'uso, alla conservazione e al trattamento delle tue informazioni come descritto nella presente Informativa sulla Privacy."
@@ -304,8 +304,8 @@
   "meta": {
     "title": "Informativa sulla privacy | letshyre.ai",
     "description": "Come LetsHyre raccoglie, usa, conserva e protegge i dati di candidati e aziende sulla piattaforma.",
-    "name": "Informativa sulla Privacy",
+    "name": "Informativa sulla privacy",
     "schemaDescription": "Come LetsHyre gestisce e protegge i tuoi dati.",
-    "crumb": "Informativa sulla Privacy"
+    "crumb": "Informativa sulla privacy"
   }
 }

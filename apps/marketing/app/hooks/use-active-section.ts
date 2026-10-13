@@ -15,9 +15,7 @@ export function useActiveSection(ids: readonly string[]): string | undefined {
       .filter((el): el is HTMLElement => el !== null)
     if (headings.length === 0) return
 
-    let frame = 0
     const update = () => {
-      frame = 0
       const atBottom =
         window.innerHeight + window.scrollY >=
         document.documentElement.scrollHeight - 2
@@ -28,17 +26,24 @@ export function useActiveSection(ids: readonly string[]): string | undefined {
       }
       setActive(atBottom ? headings.at(-1)?.id : current)
     }
-    const schedule = () => {
-      frame ||= requestAnimationFrame(update)
-    }
 
-    update()
-    window.addEventListener("scroll", schedule, { passive: true })
-    window.addEventListener("resize", schedule)
+    // the answer only changes when a heading crosses the line or the page bottoms out
+    const line = new IntersectionObserver(update, {
+      rootMargin: "0px 0px -66% 0px",
+    })
+    headings.forEach((heading) => {
+      line.observe(heading)
+    })
+    const end = document.createElement("div")
+    end.setAttribute("aria-hidden", "true")
+    document.body.append(end)
+    const bottom = new IntersectionObserver(update)
+    bottom.observe(end)
+
     return () => {
-      cancelAnimationFrame(frame)
-      window.removeEventListener("scroll", schedule)
-      window.removeEventListener("resize", schedule)
+      line.disconnect()
+      bottom.disconnect()
+      end.remove()
     }
   }, [key])
 
