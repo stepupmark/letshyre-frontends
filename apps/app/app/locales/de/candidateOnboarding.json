@@ -6,6 +6,7 @@
     "you": "Über Sie",
     "photo": "Ihr Foto",
     "work": "Arbeit und Wünsche",
+    "documents": "Dokumente",
     "resume": "Ihr Lebenslauf",
     "review": "Prüfen und abschließen"
   },
@@ -75,7 +76,11 @@
       "Relieving Letter": "Aufhebungsschreiben",
       "Offer Letter": "Angebotsschreiben"
     },
-    "count": "{{added}} von {{total}} hinzugefügt"
+    "count": "{{added}} von {{total}} hinzugefügt",
+    "currentJob": "Dein aktueller Job",
+    "pay": "Gehalt",
+    "looking": "Was du suchst",
+    "addPlace": "{{place}} hinzufügen"
   },
   "resume": {
     "lead": "Unsere KI liest Ihren Lebenslauf, schlägt passende Rollen vor und füllt Ihren Werdegang aus. Sie prüfen alles, bevor es gespeichert wird.",
@@ -99,6 +104,7 @@
     "replace": "Andere Datei verwenden",
     "roleTitle": "Die gewünschte Rolle",
     "roleLead": "Vorgeschlagen anhand Ihres Lebenslaufs. Ihr KI-Interview ist für diese Rolle.",
+    "bestMatch": "Beste Übereinstimmung",
     "noRoles": "Wir konnten aus Ihrem Lebenslauf keine Rolle vorschlagen. Sagen Sie uns, welche Sie möchten.",
     "otherRole": "Etwas anderes",
     "customRole": "Rolle",
@@ -107,6 +113,7 @@
     "reasonPlaceholder": "Ein, zwei Sätze zu Ihrer Erfahrung damit.",
     "clarify": "Das ist recht allgemein. Was kommt dem am nächsten?",
     "roleSkills": "Ihr Interview für {{role}} umfasst:",
+    "onResume": "{{count}} von {{total}} in deinem Lebenslauf",
     "skills": "Fähigkeiten",
     "addSkill": "Fähigkeit hinzufügen",
     "removeSkill": "{{skill}} entfernen",

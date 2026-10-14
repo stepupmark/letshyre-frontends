@@ -111,13 +111,15 @@ test("a new candidate sets up their profile from photo to resume review", async 
   await page.getByRole("option", { name: "Information technology" }).click()
   await page.getByLabel("Where you'd like to work").fill("Kochi, Bengaluru")
   await page.getByLabel("Where you'd like to work").press("Enter")
-  await page.getByLabel("Notice period proof", { exact: true }).click()
-  await page.getByRole("option", { name: "Relieving letter" }).click()
   await page.getByRole("button", { name: "Continue" }).click()
   await expect(
     page.getByText("Expected pay can't be lower than your current pay.")
   ).toBeVisible()
   await page.getByLabel("Expected pay (LPA)").fill("16")
+  await page.getByRole("button", { name: "Continue" }).click()
+
+  await page.getByLabel("Notice period proof", { exact: true }).click()
+  await page.getByRole("option", { name: "Relieving letter" }).click()
   const files = page.locator('input[type="file"]')
   await files.nth(0).setInputFiles(pdf("resignation.pdf"))
   await files.nth(0).setInputFiles(pdf("experience.pdf"))
@@ -147,7 +149,6 @@ test("a new candidate sets up their profile from photo to resume review", async 
   await page.waitForTimeout(800)
   await page.reload()
   await expect(page.getByText("relieving.pdf")).toBeVisible()
-  await expect(page.getByLabel("Expected pay (LPA)")).toHaveValue("16")
   await page.getByRole("button", { name: "Continue" }).click()
 
   await expect(page.getByRole("heading", { name: "Your resume" })).toBeVisible()

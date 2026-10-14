@@ -6,6 +6,7 @@
     "you": "あなたについて",
     "photo": "写真",
     "work": "仕事と希望",
+    "documents": "書類",
     "resume": "履歴書",
     "review": "確認して完了"
   },
@@ -75,7 +76,11 @@
       "Relieving Letter": "退職証明書",
       "Offer Letter": "内定通知書"
     },
-    "count": "{{total}}件中{{added}}件追加済み"
+    "count": "{{total}}件中{{added}}件追加済み",
+    "currentJob": "現在の仕事",
+    "pay": "給与",
+    "looking": "希望する条件",
+    "addPlace": "{{place}}を追加"
   },
   "resume": {
     "lead": "AI が履歴書を読み、合う職種を提案し、経歴を入力します。保存する前にすべて確認できます。",
@@ -99,6 +104,7 @@
     "replace": "別のファイルを使う",
     "roleTitle": "希望の職種",
     "roleLead": "履歴書から提案しています。AI 面接はこの職種で行います。",
+    "bestMatch": "最適",
     "noRoles": "履歴書から職種を提案できませんでした。希望の職種を教えてください。",
     "otherRole": "その他",
     "customRole": "職種",
@@ -107,6 +113,7 @@
     "reasonPlaceholder": "その仕事での経験を1〜2行で。",
     "clarify": "範囲が広すぎます。いちばん近いものはどれですか？",
     "roleSkills": "{{role}} の面接で扱う内容：",
+    "onResume": "{{total}}件中{{count}}件が履歴書にあります",
     "skills": "スキル",
     "addSkill": "スキルを追加",
     "removeSkill": "{{skill}} を削除",

@@ -6,6 +6,7 @@
     "you": "Tentang Anda",
     "photo": "Foto Anda",
     "work": "Pekerjaan dan preferensi",
+    "documents": "Dokumen",
     "resume": "CV Anda",
     "review": "Periksa dan selesaikan"
   },
@@ -75,7 +76,11 @@
       "Relieving Letter": "Surat pelepasan",
       "Offer Letter": "Surat tawaran"
     },
-    "count": "{{added}} dari {{total}} ditambahkan"
+    "count": "{{added}} dari {{total}} ditambahkan",
+    "currentJob": "Pekerjaan Anda saat ini",
+    "pay": "Gaji",
+    "looking": "Yang Anda cari",
+    "addPlace": "Tambahkan {{place}}"
   },
   "resume": {
     "lead": "AI kami membaca CV Anda, menyarankan posisi yang cocok, dan mengisi latar belakang Anda. Anda memeriksa semuanya sebelum disimpan.",
@@ -99,6 +104,7 @@
     "replace": "Gunakan file lain",
     "roleTitle": "Posisi yang Anda inginkan",
     "roleLead": "Disarankan dari CV Anda. Wawancara AI Anda untuk posisi ini.",
+    "bestMatch": "Paling cocok",
     "noRoles": "Kami tidak bisa menyarankan posisi dari CV Anda. Beri tahu posisi yang Anda inginkan.",
     "otherRole": "Lainnya",
     "customRole": "Posisi",
@@ -107,6 +113,7 @@
     "reasonPlaceholder": "Satu atau dua kalimat tentang pengalaman Anda di bidang ini.",
     "clarify": "Itu terlalu luas. Mana yang paling mendekati?",
     "roleSkills": "Wawancara Anda untuk {{role}} mencakup:",
+    "onResume": "{{count}} dari {{total}} ada di CV Anda",
     "skills": "Keterampilan",
     "addSkill": "Tambah keterampilan",
     "removeSkill": "Hapus {{skill}}",

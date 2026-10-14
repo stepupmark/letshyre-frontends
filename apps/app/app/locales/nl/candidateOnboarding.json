@@ -6,6 +6,7 @@
     "you": "Over u",
     "photo": "Uw foto",
     "work": "Werk en voorkeuren",
+    "documents": "Documenten",
     "resume": "Uw cv",
     "review": "Controleren en afronden"
   },
@@ -75,7 +76,11 @@
       "Relieving Letter": "Ontslagbevestiging",
       "Offer Letter": "Aanbiedingsbrief"
     },
-    "count": "{{added}} van {{total}} toegevoegd"
+    "count": "{{added}} van {{total}} toegevoegd",
+    "currentJob": "Je huidige baan",
+    "pay": "Salaris",
+    "looking": "Wat je zoekt",
+    "addPlace": "{{place}} toevoegen"
   },
   "resume": {
     "lead": "Onze AI leest uw cv, stelt passende functies voor en vult uw achtergrond in. U controleert alles voordat het wordt opgeslagen.",
@@ -99,6 +104,7 @@
     "replace": "Ander bestand gebruiken",
     "roleTitle": "De functie die u wilt",
     "roleLead": "Voorgesteld op basis van uw cv. Uw AI-interview is voor deze functie.",
+    "bestMatch": "Beste match",
     "noRoles": "We konden geen functie voorstellen op basis van uw cv. Vertel ons welke u wilt.",
     "otherRole": "Iets anders",
     "customRole": "Functie",
@@ -107,6 +113,7 @@
     "reasonPlaceholder": "Een of twee regels over uw ervaring ermee.",
     "clarify": "Dat is breed. Welke van deze komt het dichtst in de buurt?",
     "roleSkills": "Uw interview voor {{role}} gaat over:",
+    "onResume": "{{count}} van {{total}} op je cv",
     "skills": "Vaardigheden",
     "addSkill": "Vaardigheid toevoegen",
     "removeSkill": "{{skill}} verwijderen",

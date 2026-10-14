@@ -2,195 +2,149 @@ import { useTranslation } from "@workspace/i18n/react"
 import { Badge } from "@workspace/ui/components/badge"
 import {
   Field,
+  FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
+  FieldLegend,
+  FieldSet,
 } from "@workspace/ui/components/field"
 import { Input } from "@workspace/ui/components/input"
 import { useQuery } from "@tanstack/react-query"
-import {
-  FileBadge,
-  FileCheck,
-  FileSignature,
-  FileText,
-  X,
-  type LucideIcon,
-} from "lucide-react"
+import { Plus, X } from "lucide-react"
 import { useId, useState } from "react"
 import { Controller, useWatch, type UseFormReturn } from "react-hook-form"
 
-import { FileDropzone } from "@/components/file-dropzone"
 import { TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
 import { industriesQuery } from "@/lib/industries"
 import { useFieldValid } from "@/lib/use-field-valid"
 
-import { draftFiles } from "../../hooks/use-onboarding-draft"
-import {
-  DOCUMENT,
-  DOCUMENTS,
-  PROOF_TYPES,
-  REQUIRED_DOCUMENTS,
-  type DocumentField,
-  type Values,
-} from "../../schemas/onboarding-form.schema"
+import type { Values } from "../../schemas/onboarding-form.schema"
 import { ChoiceField } from "./choice-field"
 
-const ICONS: Record<DocumentField, LucideIcon> = {
-  resignation_letter: FileSignature,
-  experience_letter: FileBadge,
-  notice_period_proof: FileCheck,
-  present_offer: FileText,
-}
-
 export function WorkStep({ form }: { form: UseFormReturn<Values> }) {
-  const { t } = useTranslation("candidateOnboarding")
+  const { t, i18n } = useTranslation("candidateOnboarding")
   const industries = useQuery(industriesQuery())
   const isValid = useFieldValid(form)
   const { errors } = form.formState
-  const files = useWatch({ control: form.control, name: REQUIRED_DOCUMENTS })
-  const added = files.filter((file) => file instanceof File).length
+  const [now, next, home] = useWatch({
+    control: form.control,
+    name: ["current_ctc", "expected_ctc", "address_city"],
+  })
+  const raise =
+    isValid("current_ctc") && isValid("expected_ctc") && Number(now) > 0
+      ? Number(next) / Number(now) - 1
+      : 0
 
   return (
     <FieldGroup>
-      <div className="grid gap-6 sm:grid-cols-2">
-        <TextField
-          label={t("work.company")}
-          autoComplete="organization"
-          valid={isValid("present_or_last_working_company")}
-          error={errors.present_or_last_working_company?.message}
-          {...checkOnBlur(form, "present_or_last_working_company")}
-        />
-        <TextField
-          label={t("work.lastDay")}
-          hint={t("work.lastDayHint")}
-          type="date"
-          valid={isValid("last_day_of_working")}
-          error={errors.last_day_of_working?.message}
-          {...checkOnBlur(form, "last_day_of_working")}
-        />
-        <TextField
-          label={t("work.current")}
-          hint={t("work.lpaHint")}
-          inputMode="decimal"
-          className="tabular-nums"
-          valid={isValid("current_ctc")}
-          error={errors.current_ctc?.message}
-          {...checkOnBlur(form, "current_ctc")}
-        />
-        <TextField
-          label={t("work.expected")}
-          hint={t("work.lpaHint")}
-          inputMode="decimal"
-          className="tabular-nums"
-          valid={isValid("expected_ctc")}
-          error={errors.expected_ctc?.message}
-          {...checkOnBlur(form, "expected_ctc")}
-        />
-      </div>
-      <ChoiceField
-        form={form}
-        name="preferred_industry"
-        label={t("work.industry")}
-        disabled={!industries.data}
-        items={(industries.data ?? []).map((item) => ({
-          value: item.label,
-          label: item.label,
-        }))}
-      />
-      <Controller
-        control={form.control}
-        name="preferred_locations"
-        render={({ field }) => (
-          <Places
-            value={field.value}
-            error={errors.preferred_locations?.message}
-            onChange={(next) => {
-              field.onChange(next)
-              if (errors.preferred_locations)
-                void form.trigger("preferred_locations")
-            }}
+      <FieldSet>
+        <FieldLegend>{t("work.currentJob")}</FieldLegend>
+        <div className="grid gap-6 sm:grid-cols-2">
+          <TextField
+            label={t("work.company")}
+            autoComplete="organization"
+            valid={isValid("present_or_last_working_company")}
+            error={errors.present_or_last_working_company?.message}
+            {...checkOnBlur(form, "present_or_last_working_company")}
           />
-        )}
-      />
-      <ChoiceField
-        form={form}
-        name="notice_period_proof_type"
-        label={t("work.proofType")}
-        items={PROOF_TYPES.map((p) => ({
-          value: p,
-          label: t(`work.proofTypes.${p}`),
-        }))}
-      />
+          <TextField
+            label={t("work.lastDay")}
+            hint={t("work.lastDayHint")}
+            type="date"
+            valid={isValid("last_day_of_working")}
+            error={errors.last_day_of_working?.message}
+            {...checkOnBlur(form, "last_day_of_working")}
+          />
+        </div>
+      </FieldSet>
 
-      <section
-        aria-labelledby="documents"
-        className="overflow-hidden rounded-xl border"
-      >
-        <div className="flex items-center justify-between gap-4 border-b bg-muted/30 px-4 py-3">
-          <div className="flex flex-col gap-0.5">
-            <h3 id="documents" className="text-sm font-medium">
-              {t("work.documents")}
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              {t("work.documentsLead")}
-            </p>
-          </div>
-          <p className="shrink-0 text-xs font-medium tabular-nums">
-            {t("work.count", {
-              added,
-              total: REQUIRED_DOCUMENTS.length,
-            })}
-          </p>
+      <FieldSet>
+        <FieldLegend>{t("work.pay")}</FieldLegend>
+        <div className="grid gap-6 sm:grid-cols-2">
+          <TextField
+            label={t("work.current")}
+            lead="₹"
+            inputMode="decimal"
+            className="tabular-nums"
+            valid={isValid("current_ctc")}
+            error={errors.current_ctc?.message}
+            {...checkOnBlur(form, "current_ctc")}
+          />
+          <TextField
+            label={t("work.expected")}
+            lead="₹"
+            inputMode="decimal"
+            className="tabular-nums"
+            valid={isValid("expected_ctc")}
+            error={errors.expected_ctc?.message}
+            {...checkOnBlur(form, "expected_ctc")}
+          />
         </div>
-        <div className="divide-y">
-          {DOCUMENTS.map((name) => (
-            <Controller
-              key={name}
-              control={form.control}
-              name={name}
-              render={({ field }) => (
-                <FileDropzone
-                  label={
-                    name === "present_offer"
-                      ? t("work.optional", { label: t(`work.docs.${name}`) })
-                      : t(`work.docs.${name}`)
-                  }
-                  description={t(`work.docHints.${name}`)}
-                  rules={DOCUMENT}
-                  layout="row"
-                  icon={ICONS[name]}
-                  value={field.value ?? null}
-                  error={errors[name]?.message}
-                  onSelect={(file) => {
-                    field.onChange(file ?? undefined)
-                    void draftFiles.save(name, file)
-                    if (file) form.clearErrors(name)
-                  }}
-                />
-              )}
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <FieldDescription>{t("work.lpaHint")}</FieldDescription>
+          {raise > 0 && (
+            <span className="pop rounded-full bg-success/12 px-2 py-0.5 text-xs font-semibold text-success tabular-nums">
+              {new Intl.NumberFormat(i18n.language, {
+                style: "percent",
+                signDisplay: "exceptZero",
+              }).format(raise)}
+            </span>
+          )}
+        </div>
+      </FieldSet>
+
+      <FieldSet>
+        <FieldLegend>{t("work.looking")}</FieldLegend>
+        <ChoiceField
+          form={form}
+          name="preferred_industry"
+          label={t("work.industry")}
+          disabled={!industries.data}
+          items={(industries.data ?? []).map((item) => ({
+            value: item.label,
+            label: item.label,
+          }))}
+        />
+        <Controller
+          control={form.control}
+          name="preferred_locations"
+          render={({ field }) => (
+            <Places
+              value={field.value}
+              suggest={home.trim()}
+              error={errors.preferred_locations?.message}
+              onChange={(next) => {
+                field.onChange(next)
+                if (errors.preferred_locations)
+                  void form.trigger("preferred_locations")
+              }}
             />
-          ))}
-        </div>
-      </section>
+          )}
+        />
+      </FieldSet>
     </FieldGroup>
   )
 }
 
 function Places({
   value,
+  suggest,
   error,
   onChange,
 }: {
   value: string[]
+  /** offered as a one-tap chip until it's added */
+  suggest: string
   error?: string
   onChange: (value: string[]) => void
 }) {
   const { t } = useTranslation("candidateOnboarding")
   const id = useId()
   const [draft, setDraft] = useState("")
-  const add = () => {
-    const parts = draft
+  const addPlaces = (text: string) => {
+    const parts = text
       .split(",")
       .map((p) => p.trim())
       .filter(Boolean)
@@ -200,8 +154,13 @@ function Places({
       if (!next.some((p) => p.toLowerCase() === part.toLowerCase()))
         next.push(part)
     onChange(next)
+  }
+  const add = () => {
+    addPlaces(draft)
     setDraft("")
   }
+  const offer =
+    suggest && !value.some((p) => p.toLowerCase() === suggest.toLowerCase())
   return (
     <Field data-invalid={Boolean(error)}>
       <FieldLabel htmlFor={id}>{t("work.places")}</FieldLabel>
@@ -242,6 +201,19 @@ function Places({
         }}
         onBlur={add}
       />
+      {offer && (
+        <button
+          type="button"
+          aria-label={t("work.addPlace", { place: suggest })}
+          onClick={() => {
+            addPlaces(suggest)
+          }}
+          className="flex w-fit items-center gap-1 rounded-full border border-dashed px-2.5 py-0.5 text-xs font-medium text-muted-foreground transition-colors outline-none hover:border-brand hover:text-brand-text focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:transition-none"
+        >
+          <Plus className="size-3" aria-hidden="true" />
+          {suggest}
+        </button>
+      )}
       <FieldError>{error}</FieldError>
     </Field>
   )

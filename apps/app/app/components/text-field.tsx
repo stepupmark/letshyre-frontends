@@ -33,19 +33,33 @@ export function TextField({
   hint,
   labelAside,
   valid = false,
+  lead,
   className,
   ...input
-}: FieldProps & InputProps & { valid?: boolean }) {
+}: FieldProps &
+  InputProps & {
+    valid?: boolean
+    /** a short mark inside the start of the input, like a currency sign */
+    lead?: string
+  }) {
   const id = useId()
   return (
     <Field data-invalid={Boolean(error)}>
       <FieldRow id={id} label={label} aside={labelAside} />
       <div className="relative">
+        {lead && (
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-s-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground"
+          >
+            {lead}
+          </span>
+        )}
         <Input
           id={id}
           aria-invalid={Boolean(error)}
           aria-describedby={describedBy(id, error, hint)}
-          className={cn(valid && "pe-9", className)}
+          className={cn(valid && "pe-9", lead && "ps-7", className)}
           {...input}
         />
         {valid && (

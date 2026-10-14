@@ -30,6 +30,7 @@ import { ProfilePreview } from "./preview/profile-preview"
 import { PhotoStep } from "./steps/photo-step"
 import { ResumeStep } from "./steps/resume-step"
 import { ReviewStep } from "./steps/review-step"
+import { DocumentsStep } from "./steps/documents-step"
 import { WorkStep } from "./steps/work-step"
 import { YouStep } from "./steps/you-step"
 
@@ -214,6 +215,7 @@ export function CandidateOnboarding({
       />
     ),
     fieldsStep("work", <WorkStep form={form} />),
+    fieldsStep("documents", <DocumentsStep form={form} />),
     {
       id: "resume",
       title: t("steps.resume"),

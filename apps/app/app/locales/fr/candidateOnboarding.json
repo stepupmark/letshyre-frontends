@@ -6,6 +6,7 @@
     "you": "À propos de vous",
     "photo": "Votre photo",
     "work": "Travail et préférences",
+    "documents": "Documents",
     "resume": "Votre CV",
     "review": "Vérifier et terminer"
   },
@@ -75,7 +76,11 @@
       "Relieving Letter": "Lettre de fin de contrat",
       "Offer Letter": "Lettre d'offre"
     },
-    "count": "{{added}} sur {{total}} ajoutés"
+    "count": "{{added}} sur {{total}} ajoutés",
+    "currentJob": "Votre poste actuel",
+    "pay": "Salaire",
+    "looking": "Ce que vous recherchez",
+    "addPlace": "Ajouter {{place}}"
   },
   "resume": {
     "lead": "Notre IA lit votre CV, suggère les postes qui vous correspondent et remplit votre parcours. Vous vérifiez tout avant l'enregistrement.",
@@ -99,6 +104,7 @@
     "replace": "Utiliser un autre fichier",
     "roleTitle": "Le poste que vous voulez",
     "roleLead": "Suggéré d'après votre CV. Votre entretien IA porte sur ce poste.",
+    "bestMatch": "Meilleure correspondance",
     "noRoles": "Nous n'avons pas pu suggérer de poste d'après votre CV. Dites-nous lequel vous voulez.",
     "otherRole": "Autre chose",
     "customRole": "Poste",
@@ -107,6 +113,7 @@
     "reasonPlaceholder": "Une ligne ou deux sur votre expérience dans ce domaine.",
     "clarify": "C'est assez large. Lequel de ces postes s'en rapproche le plus ?",
     "roleSkills": "Votre entretien pour {{role}} couvre :",
+    "onResume": "{{count}} sur {{total}} dans votre CV",
     "skills": "Compétences",
     "addSkill": "Ajouter une compétence",
     "removeSkill": "Retirer {{skill}}",

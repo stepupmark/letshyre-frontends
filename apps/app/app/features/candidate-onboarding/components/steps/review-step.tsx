@@ -65,10 +65,14 @@ export function ReviewStep({
               next: values.expected_ctc,
             }),
           values.preferred_locations.join(", "),
-          t("work.count", { added: docs, total: REQUIRED_DOCUMENTS.length }),
         ]
           .filter(Boolean)
           .join(" · ") || missing,
+    },
+    {
+      step: "documents",
+      title: t("steps.documents"),
+      body: t("work.count", { added: docs, total: REQUIRED_DOCUMENTS.length }),
     },
     {
       step: "resume",

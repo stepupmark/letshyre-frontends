@@ -13,6 +13,8 @@ export function Stepper({
   onSelect: (index: number) => void
 }) {
   const { t } = useTranslation("common")
+  // with many steps only the current title fits, the rest would truncate to "A…"
+  const roomy = titles.length <= 4
 
   return (
     <ol aria-label={t("wizard.progress")} className="flex items-center gap-2">
@@ -41,15 +43,19 @@ export function Stepper({
                 i + 1
               )}
             </span>
-            <span
-              aria-hidden="true"
-              className={cn(
-                "truncate text-sm",
-                active ? "font-medium" : "text-muted-foreground max-sm:hidden"
-              )}
-            >
-              {title}
-            </span>
+            {(active || roomy) && (
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "text-sm",
+                  active
+                    ? "font-medium whitespace-nowrap"
+                    : "truncate text-muted-foreground max-sm:hidden"
+                )}
+              >
+                {title}
+              </span>
+            )}
             <span className="sr-only">{label}</span>
           </>
         )
@@ -58,7 +64,11 @@ export function Stepper({
           <li
             key={title}
             aria-current={active ? "step" : undefined}
-            className="flex min-w-0 items-center gap-2 not-last:flex-1"
+            title={roomy || active ? undefined : title}
+            className={cn(
+              "flex items-center gap-2 not-last:flex-1",
+              roomy || !active ? "min-w-0" : "shrink-0"
+            )}
           >
             {done ? (
               <button

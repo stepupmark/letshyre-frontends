@@ -111,6 +111,7 @@ const CANDIDATE_STEPS: CandidateStep[] = [
   "you",
   "photo",
   "work",
+  "documents",
   "resume",
   "review",
 ]

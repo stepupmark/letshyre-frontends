@@ -6,6 +6,7 @@
     "you": "Sobre você",
     "photo": "Sua foto",
     "work": "Trabalho e preferências",
+    "documents": "Documentos",
     "resume": "Seu currículo",
     "review": "Revisar e concluir"
   },
@@ -75,7 +76,11 @@
       "Relieving Letter": "Carta de desligamento",
       "Offer Letter": "Carta de proposta"
     },
-    "count": "{{added}} de {{total}} adicionados"
+    "count": "{{added}} de {{total}} adicionados",
+    "currentJob": "Seu emprego atual",
+    "pay": "Salário",
+    "looking": "O que você procura",
+    "addPlace": "Adicionar {{place}}"
   },
   "resume": {
     "lead": "Nossa IA lê seu currículo, sugere as vagas que combinam com você e preenche sua trajetória. Você confere tudo antes de salvar.",
@@ -99,6 +104,7 @@
     "replace": "Usar outro arquivo",
     "roleTitle": "A vaga que você quer",
     "roleLead": "Sugerida a partir do seu currículo. Sua entrevista com IA é para esta vaga.",
+    "bestMatch": "Melhor opção",
     "noRoles": "Não conseguimos sugerir uma vaga a partir do seu currículo. Diga qual você quer.",
     "otherRole": "Outra",
     "customRole": "Vaga",
@@ -107,6 +113,7 @@
     "reasonPlaceholder": "Uma ou duas linhas sobre sua experiência com ela.",
     "clarify": "É bem amplo. Qual destas chega mais perto?",
     "roleSkills": "Sua entrevista para {{role}} cobre:",
+    "onResume": "{{count}} de {{total}} no seu currículo",
     "skills": "Habilidades",
     "addSkill": "Adicionar uma habilidade",
     "removeSkill": "Remover {{skill}}",

@@ -6,6 +6,7 @@
     "you": "Sobre usted",
     "photo": "Su foto",
     "work": "Trabajo y preferencias",
+    "documents": "Documentos",
     "resume": "Su currículum",
     "review": "Revisar y terminar"
   },
@@ -75,7 +76,11 @@
       "Relieving Letter": "Carta de baja",
       "Offer Letter": "Carta de oferta"
     },
-    "count": "{{added}} de {{total}} añadidos"
+    "count": "{{added}} de {{total}} añadidos",
+    "currentJob": "Tu trabajo actual",
+    "pay": "Sueldo",
+    "looking": "Lo que buscas",
+    "addPlace": "Añadir {{place}}"
   },
   "resume": {
     "lead": "Nuestra IA lee su currículum, sugiere los puestos que le encajan y rellena su trayectoria. Usted lo revisa todo antes de guardarlo.",
@@ -99,6 +104,7 @@
     "replace": "Usar otro archivo",
     "roleTitle": "El puesto que quiere",
     "roleLead": "Sugerido a partir de su currículum. Su entrevista con IA es para este puesto.",
+    "bestMatch": "Mejor opción",
     "noRoles": "No hemos podido sugerir un puesto a partir de su currículum. Díganos cuál quiere.",
     "otherRole": "Otro",
     "customRole": "Puesto",
@@ -107,6 +113,7 @@
     "reasonPlaceholder": "Una o dos líneas sobre su experiencia en ello.",
     "clarify": "Es muy amplio. ¿Cuál de estos se acerca más?",
     "roleSkills": "Su entrevista para {{role}} cubre:",
+    "onResume": "{{count}} de {{total}} en tu currículum",
     "skills": "Habilidades",
     "addSkill": "Añadir una habilidad",
     "removeSkill": "Quitar {{skill}}",

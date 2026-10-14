@@ -6,6 +6,7 @@
     "you": "Su di te",
     "photo": "La tua foto",
     "work": "Lavoro e preferenze",
+    "documents": "Documenti",
     "resume": "Il tuo curriculum",
     "review": "Controlla e concludi"
   },
@@ -75,7 +76,11 @@
       "Relieving Letter": "Lettera di fine rapporto",
       "Offer Letter": "Lettera di offerta"
     },
-    "count": "{{added}} di {{total}} aggiunti"
+    "count": "{{added}} di {{total}} aggiunti",
+    "currentJob": "Il tuo lavoro attuale",
+    "pay": "Retribuzione",
+    "looking": "Cosa cerchi",
+    "addPlace": "Aggiungi {{place}}"
   },
   "resume": {
     "lead": "La nostra IA legge il tuo curriculum, suggerisce i ruoli adatti e compila il tuo percorso. Controlli tutto prima di salvare.",
@@ -99,6 +104,7 @@
     "replace": "Usa un altro file",
     "roleTitle": "Il ruolo che vuoi",
     "roleLead": "Suggerito dal tuo curriculum. Il colloquio con IA è per questo ruolo.",
+    "bestMatch": "Più adatto",
     "noRoles": "Non siamo riusciti a suggerire un ruolo dal tuo curriculum. Dicci quale vuoi.",
     "otherRole": "Altro",
     "customRole": "Ruolo",
@@ -107,6 +113,7 @@
     "reasonPlaceholder": "Una o due righe sulla tua esperienza.",
     "clarify": "È piuttosto ampio. Quale di questi si avvicina di più?",
     "roleSkills": "Il colloquio per {{role}} copre:",
+    "onResume": "{{count}} su {{total}} nel tuo curriculum",
     "skills": "Competenze",
     "addSkill": "Aggiungi una competenza",
     "removeSkill": "Rimuovi {{skill}}",

@@ -85,6 +85,8 @@ export const STEPS = {
     "expected_ctc",
     "preferred_industry",
     "preferred_locations",
+  ],
+  documents: [
     "resignation_letter",
     "experience_letter",
     "notice_period_proof_type",

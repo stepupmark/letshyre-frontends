@@ -6,6 +6,7 @@
     "you": "내 정보",
     "photo": "사진",
     "work": "직장과 희망 조건",
+    "documents": "서류",
     "resume": "이력서",
     "review": "확인하고 마치기"
   },
@@ -75,7 +76,11 @@
       "Relieving Letter": "퇴직 확인서",
       "Offer Letter": "오퍼 레터"
     },
-    "count": "{{total}}개 중 {{added}}개 추가됨"
+    "count": "{{total}}개 중 {{added}}개 추가됨",
+    "currentJob": "현재 직장",
+    "pay": "급여",
+    "looking": "찾고 있는 조건",
+    "addPlace": "{{place}} 추가"
   },
   "resume": {
     "lead": "AI가 이력서를 읽고 맞는 직무를 제안하며 경력을 채워요. 저장 전에 모두 확인할 수 있어요.",
@@ -99,6 +104,7 @@
     "replace": "다른 파일 사용",
     "roleTitle": "원하는 직무",
     "roleLead": "이력서를 바탕으로 제안했어요. AI 인터뷰는 이 직무로 진행돼요.",
+    "bestMatch": "가장 잘 맞음",
     "noRoles": "이력서로 직무를 제안하지 못했어요. 원하는 직무를 알려 주세요.",
     "otherRole": "기타",
     "customRole": "직무",
@@ -107,6 +113,7 @@
     "reasonPlaceholder": "이 직무와 관련된 경험을 한두 줄로.",
     "clarify": "범위가 넓어요. 가장 가까운 것은 무엇인가요?",
     "roleSkills": "{{role}} 인터뷰에서 다루는 내용:",
+    "onResume": "{{total}}개 중 {{count}}개가 이력서에 있음",
     "skills": "역량",
     "addSkill": "역량 추가",
     "removeSkill": "{{skill}} 삭제",

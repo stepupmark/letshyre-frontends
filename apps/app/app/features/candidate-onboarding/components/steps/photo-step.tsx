@@ -6,7 +6,7 @@ import {
 } from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
 import { FieldError } from "@workspace/ui/components/field"
-import { Camera, CameraOff, ImageUp, RotateCcw } from "lucide-react"
+import { Camera, CameraOff, ImageUp, RotateCcw, X } from "lucide-react"
 import { useCallback, useEffect, useId, useRef, useState } from "react"
 
 import { checkFile } from "@/lib/file-rules"
@@ -112,7 +112,7 @@ export function PhotoStep({
     <div className="flex flex-col gap-5">
       <p className="text-sm text-muted-foreground">{t("photo.lead")}</p>
 
-      <div className="relative mx-auto aspect-square w-full max-w-72 overflow-hidden rounded-2xl bg-muted">
+      <div className="relative mx-auto aspect-square w-full max-w-72 overflow-hidden rounded-3xl bg-muted shadow-[0_12px_32px_-12px_rgb(15_23_42/0.25)]">
         {photo && !live ? (
           <Preview file={photo} />
         ) : live ? (
@@ -129,42 +129,28 @@ export function PhotoStep({
               aria-label={t("photo.viewfinder")}
               className="size-full -scale-x-100 object-cover"
             />
-            {/* framing guide: head inside the oval, eyes on the line */}
-            <svg
-              viewBox="0 0 100 100"
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 size-full"
+            <Viewfinder />
+            <Button
+              variant="ghost"
+              size="icon-sm"
+              aria-label={t("photo.cancel")}
+              onClick={stop}
+              className="absolute end-3 top-3 rounded-full bg-black/40 text-white backdrop-blur-sm hover:bg-black/60 hover:text-white"
             >
-              <defs>
-                <mask id="frame">
-                  <rect width="100" height="100" fill="white" />
-                  <ellipse cx="50" cy="44" rx="25" ry="32" fill="black" />
-                </mask>
-              </defs>
-              <rect
-                width="100"
-                height="100"
-                fill="black"
-                opacity="0.35"
-                mask="url(#frame)"
-              />
-              <ellipse
-                cx="50"
-                cy="44"
-                rx="25"
-                ry="32"
-                fill="none"
-                stroke="white"
-                strokeWidth="0.6"
-                strokeDasharray="2 1.5"
-              />
-            </svg>
+              <X />
+            </Button>
+            <button
+              type="button"
+              aria-label={t("photo.take")}
+              onClick={capture}
+              disabled={camera !== "live"}
+              className="group absolute bottom-4 left-1/2 grid size-14 -translate-x-1/2 place-items-center rounded-full border-[3px] border-white/90 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50"
+            >
+              <span className="size-10 rounded-full bg-white transition-transform duration-150 group-hover:scale-95 group-active:scale-85 motion-reduce:transition-none" />
+            </button>
           </>
         ) : (
-          <div className="flex size-full flex-col items-center justify-center gap-2 p-6 text-center text-sm text-muted-foreground">
-            <Camera className="size-8" aria-hidden="true" />
-            {t("photo.empty")}
-          </div>
+          <EmptyPhoto>{t("photo.empty")}</EmptyPhoto>
         )}
       </div>
 
@@ -184,17 +170,7 @@ export function PhotoStep({
       )}
 
       <div className="flex flex-wrap justify-center gap-2">
-        {live ? (
-          <>
-            <Button onClick={capture} disabled={camera !== "live"}>
-              <Camera />
-              {t("photo.take")}
-            </Button>
-            <Button variant="outline" onClick={stop}>
-              {t("photo.cancel")}
-            </Button>
-          </>
-        ) : (
+        {!live && (
           <>
             <Button
               variant={photo ? "outline" : "default"}
@@ -255,10 +231,103 @@ function Preview({ file }: { file: File }) {
     [file]
   )
   return (
-    <img
-      ref={attach}
-      alt={t("photo.previewAlt")}
-      className="size-full object-cover"
-    />
+    <>
+      <img
+        ref={attach}
+        alt={t("photo.previewAlt")}
+        className="size-full object-cover motion-safe:animate-in motion-safe:duration-500 motion-safe:fade-in motion-safe:zoom-in-105"
+      />
+      {/* how it shows up as an avatar */}
+      <span
+        aria-hidden="true"
+        className="absolute end-3 bottom-3 size-14 overflow-hidden rounded-full border-[3px] border-white shadow-lg"
+      >
+        <img ref={attach} alt="" className="size-full object-cover" />
+      </span>
+    </>
+  )
+}
+
+/** Corner marks and a faint thirds grid, like a camera screen. */
+function Viewfinder() {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 size-full text-white"
+    >
+      <g stroke="currentColor" strokeOpacity={0.18} strokeWidth={0.3}>
+        <line x1={33.3} y1={0} x2={33.3} y2={100} />
+        <line x1={66.6} y1={0} x2={66.6} y2={100} />
+        <line x1={0} y1={33.3} x2={100} y2={33.3} />
+        <line x1={0} y1={66.6} x2={100} y2={66.6} />
+      </g>
+      <g
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M22 12 H14 Q12 12 12 14 V22" />
+        <path d="M78 12 H86 Q88 12 88 14 V22" />
+        <path d="M22 88 H14 Q12 88 12 86 V78" />
+        <path d="M78 88 H86 Q88 88 88 86 V78" />
+      </g>
+      <circle cx={16} cy={18} r={1.4} className="fill-red-500">
+        <animate
+          attributeName="opacity"
+          values="1;0.25;1"
+          dur="1.6s"
+          repeatCount="indefinite"
+        />
+      </circle>
+    </svg>
+  )
+}
+
+/** Before any photo: a portrait outline with a camera badge. */
+function EmptyPhoto({ children }: { children: string }) {
+  return (
+    <div className="flex size-full flex-col items-center justify-center gap-4 rounded-3xl border-2 border-dashed border-muted-foreground/20 bg-[radial-gradient(circle_at_50%_40%,var(--brand-muted),transparent_70%)] p-6 text-center text-sm text-muted-foreground">
+      <svg viewBox="0 0 96 96" aria-hidden="true" className="size-24">
+        <circle
+          cx={48}
+          cy={48}
+          r={44}
+          className="fill-card stroke-brand/25"
+          strokeWidth={2}
+          strokeDasharray="5 5"
+        />
+        <circle cx={48} cy={38} r={14} className="fill-brand/20" />
+        <path
+          d="M22 80 C24 62 36 56 48 56 C60 56 72 62 74 80 A44 44 0 0 1 22 80 Z"
+          className="fill-brand/20"
+        />
+        <g transform="translate(66 64)">
+          <circle
+            cx={10}
+            cy={10}
+            r={12}
+            className="fill-brand stroke-card"
+            strokeWidth={3}
+          />
+          <path
+            d="M4.5 7.5 h3 l1.5 -2 h2 l1.5 2 h3 v8 h-11 z"
+            className="fill-none stroke-white"
+            strokeWidth={1.5}
+            strokeLinejoin="round"
+          />
+          <circle
+            cx={10}
+            cy={11.5}
+            r={2.2}
+            className="fill-none stroke-white"
+            strokeWidth={1.5}
+          />
+        </g>
+      </svg>
+      <p className="max-w-52 text-pretty">{children}</p>
+    </div>
   )
 }

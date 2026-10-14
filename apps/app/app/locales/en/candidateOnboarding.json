@@ -6,6 +6,7 @@
     "you": "About you",
     "photo": "Your photo",
     "work": "Work and preferences",
+    "documents": "Documents",
     "resume": "Your resume",
     "review": "Check and finish"
   },
@@ -75,7 +76,11 @@
       "Relieving Letter": "Relieving letter",
       "Offer Letter": "Offer letter"
     },
-    "count": "{{added}} of {{total}} added"
+    "count": "{{added}} of {{total}} added",
+    "currentJob": "Your current job",
+    "pay": "Pay",
+    "looking": "What you're looking for",
+    "addPlace": "Add {{place}}"
   },
   "resume": {
     "lead": "Our AI reads your resume, suggests the roles that fit you, and fills in your background. You check everything before it's saved.",
@@ -99,6 +104,7 @@
     "replace": "Use another file",
     "roleTitle": "The role you want",
     "roleLead": "Suggested from your resume. Your AI interview is for this role.",
+    "bestMatch": "Best match",
     "noRoles": "We couldn't suggest a role from your resume. Tell us which one you want.",
     "otherRole": "Something else",
     "customRole": "Role",
@@ -107,6 +113,7 @@
     "reasonPlaceholder": "A line or two about your experience with it.",
     "clarify": "That's broad. Which of these is closest?",
     "roleSkills": "Your interview for {{role}} covers:",
+    "onResume": "{{count}} of {{total}} on your resume",
     "skills": "Skills",
     "addSkill": "Add a skill",
     "removeSkill": "Remove {{skill}}",
