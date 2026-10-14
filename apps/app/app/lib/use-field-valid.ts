@@ -1,11 +1,9 @@
-import type { FieldPath, UseFormReturn } from "react-hook-form"
-
-import type { Values } from "../schemas/onboarding-form.schema"
+import type { FieldPath, FieldValues, UseFormReturn } from "react-hook-form"
 
 /** True once a filled field has been left and passed its check. */
-export function useFieldValid(form: UseFormReturn<Values>) {
+export function useFieldValid<T extends FieldValues>(form: UseFormReturn<T>) {
   const { formState } = form
-  return (name: FieldPath<Values>) => {
+  return (name: FieldPath<T>) => {
     const state = form.getFieldState(name, formState)
     return (
       state.isTouched &&

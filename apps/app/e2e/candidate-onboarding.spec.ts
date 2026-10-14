@@ -81,8 +81,10 @@ test("a new candidate sets up their profile from photo to resume review", async 
   await page.getByRole("option", { name: "Female" }).click()
   await page.getByLabel("Date of birth").fill("1999-04-12")
   await page.getByLabel("Aadhaar number").fill("2345 6789 0125")
-  await page.getByLabel("City you live in").fill("Kochi")
-  await page.getByLabel("Full address").fill("12 Marine Drive, Kochi")
+  await page.getByLabel("Street address").fill("12 Marine Drive")
+  await page.getByLabel("City", { exact: true }).fill("Kochi")
+  await page.getByLabel("State", { exact: true }).fill("Kerala")
+  await page.getByLabel("PIN code").fill("682031")
   await page.getByRole("button", { name: "Continue" }).click()
   await expect(
     page.getByText("That isn't a valid Aadhaar number. Check the 12 digits.")
@@ -120,6 +122,32 @@ test("a new candidate sets up their profile from photo to resume review", async 
   await files.nth(0).setInputFiles(pdf("resignation.pdf"))
   await files.nth(0).setInputFiles(pdf("experience.pdf"))
   await files.nth(0).setInputFiles(pdf("relieving.pdf"))
+
+  // the photo and letters survive a refresh, once they're in IndexedDB
+  await expect
+    .poll(() =>
+      page.evaluate(
+        () =>
+          new Promise<number>((resolve) => {
+            const open = indexedDB.open("letshyre-drafts")
+            open.onsuccess = () => {
+              const count = open.result
+                .transaction("candidate-onboarding-files")
+                .objectStore("candidate-onboarding-files")
+                .count()
+              count.onsuccess = () => {
+                resolve(count.result)
+                open.result.close()
+              }
+            }
+          })
+      )
+    )
+    .toBe(4)
+  await page.waitForTimeout(800)
+  await page.reload()
+  await expect(page.getByText("relieving.pdf")).toBeVisible()
+  await expect(page.getByLabel("Expected pay (LPA)")).toHaveValue("16")
   await page.getByRole("button", { name: "Continue" }).click()
 
   await expect(page.getByRole("heading", { name: "Your resume" })).toBeVisible()
@@ -137,12 +165,16 @@ test("a new candidate sets up their profile from photo to resume review", async 
 
   await expect(page.getByText("Frontend Developer, 2 skills")).toBeVisible()
   await page.getByRole("button", { name: "Finish" }).click()
-  await expect(page).toHaveURL("/employee/jobs")
+  await expect(
+    page.getByRole("heading", { name: "You're all set" })
+  ).toBeVisible()
 
   const field = (name: string) =>
     new RegExp(`name="${name}"\\r\\n\\r\\n([^\\r]*)`).exec(sent)?.[1]
   expect(field("aadhar_number")).toBe("234567890124")
   expect(field("gender")).toBe("Female")
+  expect(field("location")).toBe("Kochi")
+  expect(field("address")).toBe("12 Marine Drive, Kochi, Kerala 682031")
   expect(field("preferred_industry")).toBe("Information technology")
   expect(field("preferred_locations")).toBe('["Kochi","Bengaluru"]')
   expect(field("notice_period_prof_type")).toBe("Relieving Letter")

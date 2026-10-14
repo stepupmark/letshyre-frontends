@@ -6,6 +6,12 @@ import { useForm } from "react-hook-form"
 import { FileDropzone } from "@/components/file-dropzone"
 import { Stepper } from "@/components/stepper"
 import {
+  EMPTY_RESUME,
+  ProfilePreview,
+  type CandidateStep,
+  type CandidateValues,
+} from "@/features/candidate-onboarding"
+import {
   OnboardingPreview,
   type OnboardingStep,
   type OnboardingValues,
@@ -96,6 +102,68 @@ export function OnboardingPreviewDemo() {
       </div>
       <div className="max-w-sm">
         <OnboardingPreview form={form} step={step} />
+      </div>
+    </section>
+  )
+}
+
+const CANDIDATE_STEPS: CandidateStep[] = [
+  "you",
+  "photo",
+  "work",
+  "resume",
+  "review",
+]
+
+export function CandidatePreviewDemo() {
+  const [step, setStep] = useState<CandidateStep>("you")
+  const form = useForm<CandidateValues>({
+    defaultValues: {
+      aadhar_number: "2345 6789 0124",
+      address_city: "Kochi",
+      address_state: "Kerala",
+      current_ctc: "12",
+      expected_ctc: "16",
+      preferred_industry: "Information technology",
+      preferred_locations: ["Kochi", "Bengaluru"],
+    },
+  })
+  const resume = {
+    ...EMPTY_RESUME,
+    role: "Frontend Developer",
+    review: {
+      skills: ["React", "TypeScript", "CSS", "Accessibility"],
+      experience: [],
+      education: [],
+      projects: [],
+      certifications: [],
+    },
+  }
+
+  return (
+    <section className="flex flex-col gap-3">
+      <h2 className="text-base font-medium">Candidate onboarding preview</h2>
+      <div className="flex flex-wrap gap-2">
+        {CANDIDATE_STEPS.map((id) => (
+          <Button
+            key={id}
+            size="sm"
+            variant={id === step ? "default" : "outline"}
+            onClick={() => {
+              setStep(id)
+            }}
+          >
+            {id}
+          </Button>
+        ))}
+      </div>
+      <div className="max-w-sm">
+        <ProfilePreview
+          control={form.control}
+          resume={resume}
+          name="Asha Menon"
+          step={step}
+        />
       </div>
     </section>
   )

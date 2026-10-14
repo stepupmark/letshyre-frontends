@@ -53,7 +53,6 @@
     },
     "logoNotSquare": "This logo is {{width}} × {{height}}. A square one looks best, since we show it in a square."
   },
-  "draftSaved": "Draft saved on this device",
   "submitting": "Uploading your documents… {{percent}}%",
   "submitFailed": "We couldn't submit your details. Everything you entered is still here, so try again.",
   "validation": {
@@ -113,8 +112,6 @@
     "editLabel": "Edit {{section}}"
   },
   "preview": {
-    "show": "Show preview",
-    "hide": "Hide preview",
     "company": {
       "caption": "How candidates will see your company"
     },

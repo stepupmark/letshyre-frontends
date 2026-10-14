@@ -2,11 +2,11 @@ import { useTranslation } from "@workspace/i18n/react"
 import { Check } from "lucide-react"
 import { useEffect, useState } from "react"
 
-const ANNOUNCED = "employer-onboarding:draft-announced"
+const ANNOUNCED = "draft-announced"
 
 /** Shown on every save; read out once a session so it doesn't interrupt typing. */
 export function DraftSaved({ saves }: { saves: number }) {
-  const { t } = useTranslation("onboarding")
+  const { t } = useTranslation("common")
   const [heardBefore] = useState(() => {
     try {
       return sessionStorage.getItem(ANNOUNCED) !== null
@@ -38,12 +38,12 @@ export function DraftSaved({ saves }: { saves: number }) {
               className="pop size-3.5 text-success"
               strokeWidth={2.5}
             />
-            {t("draftSaved")}
+            {t("wizard.draftSaved")}
           </>
         )}
       </p>
       <p role="status" className="sr-only">
-        {announce ? t("draftSaved") : ""}
+        {announce ? t("wizard.draftSaved") : ""}
       </p>
     </>
   )

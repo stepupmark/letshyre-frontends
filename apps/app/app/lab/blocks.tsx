@@ -36,6 +36,7 @@ import { undoToast } from "@/lib/undo-toast"
 
 import { applicants, type Applicant } from "./fixtures"
 import {
+  CandidatePreviewDemo,
   OnboardingPreviewDemo,
   StepperDemo,
   UploadRowsDemo,
@@ -281,6 +282,7 @@ export default function Blocks() {
         <WizardDemo />
       </div>
       <OnboardingPreviewDemo />
+      <CandidatePreviewDemo />
 
       <section className="flex flex-col gap-3">
         <h2 className="text-base font-medium">Smaller pieces</h2>

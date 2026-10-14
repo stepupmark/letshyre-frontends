@@ -53,7 +53,6 @@
     },
     "logoNotSquare": "Questo logo è {{width}} × {{height}}. Uno quadrato rende meglio, perché lo mostriamo in un quadrato."
   },
-  "draftSaved": "Bozza salvata su questo dispositivo",
   "submitting": "Caricamento dei documenti… {{percent}}%",
   "submitFailed": "Non siamo riusciti a inviare i tuoi dati. Tutto ciò che hai inserito è ancora qui, quindi riprova.",
   "validation": {
@@ -113,8 +112,6 @@
     "editLabel": "Modifica {{section}}"
   },
   "preview": {
-    "show": "Mostra anteprima",
-    "hide": "Nascondi anteprima",
     "company": {
       "caption": "Come i candidati vedranno la tua azienda"
     },

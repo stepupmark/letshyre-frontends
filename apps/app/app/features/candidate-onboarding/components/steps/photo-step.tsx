@@ -9,12 +9,10 @@ import { FieldError } from "@workspace/ui/components/field"
 import { Camera, CameraOff, ImageUp, RotateCcw } from "lucide-react"
 import { useCallback, useEffect, useId, useRef, useState } from "react"
 
-import { checkFile, type FileRules } from "@/lib/file-rules"
+import { checkFile } from "@/lib/file-rules"
 
-const PHOTO: FileRules = {
-  accept: [".jpg", ".jpeg", ".png", ".webp"],
-  maxBytes: 10 * 1024 * 1024,
-}
+import { PHOTO } from "../../schemas/onboarding-form.schema"
+
 // captured photos are square, which is how every avatar shows them
 const SIZE = 720
 
@@ -27,7 +25,7 @@ export function PhotoStep({
 }: {
   photo: File | null
   error?: string
-  onChange: (file: File | null) => void
+  onChange: (file: File) => void
 }) {
   const { t } = useTranslation("candidateOnboarding")
   const inputId = useId()

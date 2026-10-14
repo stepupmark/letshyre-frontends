@@ -53,7 +53,6 @@
     },
     "logoNotSquare": "Dit logo is {{width}} × {{height}}. Een vierkant logo werkt het best, want we tonen het in een vierkant."
   },
-  "draftSaved": "Concept opgeslagen op dit apparaat",
   "submitting": "Uw documenten worden geüpload… {{percent}}%",
   "submitFailed": "We konden uw gegevens niet versturen. Alles wat u invulde staat er nog, dus probeer het opnieuw.",
   "validation": {
@@ -113,8 +112,6 @@
     "editLabel": "{{section}} bewerken"
   },
   "preview": {
-    "show": "Voorbeeld tonen",
-    "hide": "Voorbeeld verbergen",
     "company": {
       "caption": "Zo zien kandidaten je bedrijf"
     },

@@ -1,5 +1,6 @@
 import { z } from "zod"
 
+import { joinAddress as join } from "@/lib/address"
 import { GSTIN, isLinkedIn, PAN, PIN_CODE } from "@/lib/company-ids"
 import type { FileRules } from "@/lib/file-rules"
 import { checkFile } from "@/lib/file-rules"
@@ -114,13 +115,10 @@ export const stepSchema = (schema: Schema, step: StepId) => {
   return schema.pick(mask)
 }
 
-/** The API takes the address as one line. */
 export const joinAddress = (values: Partial<Values>) =>
-  [
-    values.address_line,
-    values.address_city,
-    [values.address_state, values.address_pin].filter(Boolean).join(" "),
-  ]
-    .map((part) => part?.trim())
-    .filter(Boolean)
-    .join(", ")
+  join({
+    line: values.address_line,
+    city: values.address_city,
+    state: values.address_state,
+    pin: values.address_pin,
+  })

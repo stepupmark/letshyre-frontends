@@ -32,10 +32,10 @@ import {
   resumeStatusQuery,
   reviewQuery,
   skillsQuery,
-} from "../queries/candidate-onboarding.queries"
-import { uploadResume } from "../services/candidate-onboarding.service"
-import { type Review } from "../schemas/candidate-onboarding.schema"
-import { EMPTY_RESUME, type ResumeState } from "../lib/resume-state"
+} from "../../queries/candidate-onboarding.queries"
+import { uploadResume } from "../../services/candidate-onboarding.service"
+import { type Review } from "../../schemas/candidate-onboarding.schema"
+import { EMPTY_RESUME, type ResumeState } from "../../lib/resume-state"
 
 const RESUME: FileRules = {
   accept: [".pdf", ".doc", ".docx"],

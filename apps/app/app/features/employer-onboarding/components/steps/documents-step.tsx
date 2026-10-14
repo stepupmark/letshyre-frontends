@@ -20,7 +20,7 @@ import {
   type StepId,
   type Values,
 } from "../../schemas/onboarding-form.schema"
-import { storeFile } from "../../lib/file-store"
+import { draftFiles } from "../../hooks/use-onboarding-draft"
 import { LogoNote } from "./logo-note"
 import { ReviewSummary } from "./review-summary"
 
@@ -83,7 +83,7 @@ export function DocumentsStep({
                   error={errors[name]?.message}
                   onSelect={(file) => {
                     field.onChange(file ?? undefined)
-                    void storeFile(name, file)
+                    void draftFiles.save(name, file)
                     if (file) form.clearErrors(name)
                   }}
                 />

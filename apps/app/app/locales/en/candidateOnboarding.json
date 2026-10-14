@@ -1,6 +1,7 @@
 {
+  "eyebrow": "Candidate profile",
   "title": "Set up your profile",
-  "lead": "About 8 minutes. Employers see this when our AI matches you to a job. Your answers are saved on this device as you go.",
+  "lead": "About 8 minutes. Your answers are saved on this device as you go.",
   "steps": {
     "you": "About you",
     "photo": "Your photo",
@@ -20,9 +21,11 @@
     "dob": "Date of birth",
     "aadhaar": "Aadhaar number",
     "aadhaarHint": "12 digits, as on your card.",
-    "location": "City you live in",
-    "locationHint": "For example, Pune or Kochi.",
-    "address": "Full address"
+    "address": "Full address",
+    "addressLine": "Street address",
+    "city": "City",
+    "state": "State",
+    "pin": "PIN code"
   },
   "photo": {
     "lead": "A clear, recent photo of your face. Employers see it next to your scorecard.",
@@ -71,7 +74,8 @@
     "proofTypes": {
       "Relieving Letter": "Relieving letter",
       "Offer Letter": "Offer letter"
-    }
+    },
+    "count": "{{added}} of {{total}} added"
   },
   "resume": {
     "lead": "Our AI reads your resume, suggests the roles that fit you, and fills in your background. You check everything before it's saved.",
@@ -136,8 +140,10 @@
     "dob": "Enter your date of birth.",
     "adult": "You need to be 18 or older to apply for jobs.",
     "aadhaar": "That isn't a valid Aadhaar number. Check the 12 digits.",
-    "location": "Enter your city.",
-    "address": "Enter your full address, at least 10 characters.",
+    "address": "Enter your street address",
+    "city": "Enter a city",
+    "state": "Enter a state",
+    "pin": "A PIN code has 6 digits, like 500081",
     "company": "Enter the company name.",
     "lastDay": "Enter the date.",
     "ctc": "Enter an amount in lakhs, like 8.5.",
@@ -146,6 +152,7 @@
     "locations": "Add at least one city.",
     "proofType": "Choose which letter you'll upload.",
     "file": "Upload this document.",
+    "fileInvalid": "Use a file of an accepted type, up to 5 MB",
     "photo": "Add a photo to continue.",
     "resume": "Upload your resume to continue.",
     "role": "Choose a role to continue.",
@@ -153,5 +160,35 @@
   },
   "submitting": "Saving your profile… {{percent}}%",
   "submitFailed": "Your profile wasn't saved. Your answers are still here; try again.",
-  "done": "Profile saved. Welcome to LetsHyre."
+  "preview": {
+    "caption": "How employers see you",
+    "you": "Your name",
+    "pay": "Pay",
+    "industry": "Industry",
+    "skills": "Top skills",
+    "aadhaar": "Aadhaar added",
+    "photo": "Photo added",
+    "private": "Your Aadhaar and documents stay private."
+  },
+  "done": {
+    "title": "You're all set",
+    "lead": "Your profile is saved. Our AI is already looking for jobs that fit you.",
+    "matches": "See your job matches",
+    "profile": "View your profile",
+    "nextHeading": "What happens next",
+    "timeline": {
+      "saved": {
+        "title": "Profile saved",
+        "body": "Employers find you when our AI matches you to a job."
+      },
+      "matching": {
+        "title": "Matching you to jobs",
+        "body": "We match you to open roles as they're posted, usually within a day."
+      },
+      "interview": {
+        "title": "AI interview",
+        "body": "Take a short interview for {{role}} so employers see your scorecard."
+      }
+    }
+  }
 }

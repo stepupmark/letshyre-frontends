@@ -1,6 +1,7 @@
 {
+  "eyebrow": "Bewerberprofil",
   "title": "Profil einrichten",
-  "lead": "Etwa 8 Minuten. Arbeitgeber sehen dies, wenn unsere KI Sie zu einer Stelle matcht. Ihre Antworten werden laufend auf diesem Gerät gespeichert.",
+  "lead": "Etwa 8 Minuten. Deine Antworten werden laufend auf diesem Gerät gespeichert.",
   "steps": {
     "you": "Über Sie",
     "photo": "Ihr Foto",
@@ -20,9 +21,11 @@
     "dob": "Geburtsdatum",
     "aadhaar": "Aadhaar-Nummer",
     "aadhaarHint": "12 Ziffern, wie auf Ihrer Karte.",
-    "location": "Ihr Wohnort",
-    "locationHint": "Zum Beispiel Pune oder Kochi.",
-    "address": "Vollständige Adresse"
+    "address": "Vollständige Adresse",
+    "addressLine": "Straße und Hausnummer",
+    "city": "Stadt",
+    "state": "Bundesstaat",
+    "pin": "PIN-Code"
   },
   "photo": {
     "lead": "Ein klares, aktuelles Foto Ihres Gesichts. Arbeitgeber sehen es neben Ihrer Scorecard.",
@@ -71,7 +74,8 @@
     "proofTypes": {
       "Relieving Letter": "Aufhebungsschreiben",
       "Offer Letter": "Angebotsschreiben"
-    }
+    },
+    "count": "{{added}} von {{total}} hinzugefügt"
   },
   "resume": {
     "lead": "Unsere KI liest Ihren Lebenslauf, schlägt passende Rollen vor und füllt Ihren Werdegang aus. Sie prüfen alles, bevor es gespeichert wird.",
@@ -136,8 +140,10 @@
     "dob": "Geben Sie Ihr Geburtsdatum ein.",
     "adult": "Sie müssen mindestens 18 Jahre alt sein, um sich auf Jobs zu bewerben.",
     "aadhaar": "Das ist keine gültige Aadhaar-Nummer. Prüfen Sie die 12 Ziffern.",
-    "location": "Geben Sie Ihren Wohnort ein.",
-    "address": "Geben Sie Ihre vollständige Adresse ein, mindestens 10 Zeichen.",
+    "address": "Geben Sie Straße und Hausnummer ein",
+    "city": "Geben Sie eine Stadt ein",
+    "state": "Geben Sie einen Bundesstaat ein",
+    "pin": "Ein PIN-Code hat 6 Ziffern, z. B. 500081",
     "company": "Geben Sie den Firmennamen ein.",
     "lastDay": "Geben Sie das Datum ein.",
     "ctc": "Geben Sie einen Betrag in Lakhs ein, z. B. 8.5.",
@@ -146,6 +152,7 @@
     "locations": "Fügen Sie mindestens eine Stadt hinzu.",
     "proofType": "Wählen Sie, welches Schreiben Sie hochladen.",
     "file": "Laden Sie dieses Dokument hoch.",
+    "fileInvalid": "Verwenden Sie eine Datei eines akzeptierten Typs bis 5 MB",
     "photo": "Fügen Sie ein Foto hinzu, um fortzufahren.",
     "resume": "Laden Sie Ihren Lebenslauf hoch, um fortzufahren.",
     "role": "Wählen Sie eine Rolle, um fortzufahren.",
@@ -153,5 +160,35 @@
   },
   "submitting": "Ihr Profil wird gespeichert… {{percent}} %",
   "submitFailed": "Ihr Profil wurde nicht gespeichert. Ihre Antworten sind noch da; versuchen Sie es erneut.",
-  "done": "Profil gespeichert. Willkommen bei LetsHyre."
+  "preview": {
+    "caption": "So sehen dich Arbeitgeber",
+    "you": "Dein Name",
+    "pay": "Gehalt",
+    "industry": "Branche",
+    "skills": "Top-Fähigkeiten",
+    "aadhaar": "Aadhaar hinzugefügt",
+    "photo": "Foto hinzugefügt",
+    "private": "Deine Aadhaar-Nummer und Dokumente bleiben privat."
+  },
+  "done": {
+    "title": "Alles erledigt",
+    "lead": "Dein Profil ist gespeichert. Unsere KI sucht bereits nach passenden Jobs.",
+    "matches": "Passende Jobs ansehen",
+    "profile": "Profil ansehen",
+    "nextHeading": "Wie es weitergeht",
+    "timeline": {
+      "saved": {
+        "title": "Profil gespeichert",
+        "body": "Arbeitgeber finden dich, sobald unsere KI dich einem Job zuordnet."
+      },
+      "matching": {
+        "title": "Abgleich mit Jobs",
+        "body": "Wir gleichen dich mit neuen Stellen ab, sobald sie erscheinen, meist innerhalb eines Tages."
+      },
+      "interview": {
+        "title": "KI-Interview",
+        "body": "Mach ein kurzes Interview für {{role}}, damit Arbeitgeber deine Bewertung sehen."
+      }
+    }
+  }
 }

@@ -23,8 +23,7 @@ import {
   type Values,
 } from "../schemas/onboarding-form.schema"
 import { submitKyc } from "../services/employer-onboarding.service"
-import { DraftSaved } from "./draft-saved"
-import { MobilePreview } from "./preview/mobile-preview"
+import { DraftSaved } from "@/components/draft-saved"
 import { OnboardingPreview } from "./preview/onboarding-preview"
 import { CompanyStep } from "./steps/company-step"
 import { DocumentsStep } from "./steps/documents-step"
@@ -165,7 +164,6 @@ export function OnboardingForm({
   return (
     <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_22rem] xl:gap-20">
       <div className="flex flex-col gap-4">
-        <MobilePreview form={form} step={current} />
         <Wizard
           steps={steps}
           pending={submit.isPending}

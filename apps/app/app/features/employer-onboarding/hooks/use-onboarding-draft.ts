@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react"
 import { useWatch, type UseFormReturn } from "react-hook-form"
 
 import { clearDraft, loadDraft, saveDraft } from "@/lib/draft"
+import { fileStore } from "@/lib/file-store"
 
-import { clearFiles, loadFiles } from "../lib/file-store"
 import {
   STEPS,
   type Draft,
@@ -14,6 +14,8 @@ const DRAFT = "employer-onboarding"
 // the old form's draft, read once so nobody types it all again; drop after 2027-04
 const LEGACY_DRAFT = "employer_onboarding_draft"
 const TEXT_FIELDS = [...STEPS.company, ...STEPS.legal]
+
+export const draftFiles = fileStore("employer-onboarding-files")
 
 const EMPTY: Draft = {
   company_name: "",
@@ -54,7 +56,7 @@ export function startingDraft(email: string): Draft {
 
 export function discardDraft() {
   clearDraft(DRAFT)
-  void clearFiles()
+  void draftFiles.clear()
   try {
     localStorage.removeItem(LEGACY_DRAFT)
   } catch {
@@ -96,7 +98,7 @@ export function useStoredFiles(form: UseFormReturn<Values>) {
 
   useEffect(() => {
     let live = true
-    void loadFiles(STEPS.documents).then((files) => {
+    void draftFiles.load(STEPS.documents).then((files) => {
       if (!live) return
       for (const [name, file] of Object.entries(files))
         form.setValue(name as keyof Values, file)

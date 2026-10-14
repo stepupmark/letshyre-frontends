@@ -53,7 +53,6 @@
     },
     "logoNotSquare": "Dieses Logo ist {{width}} × {{height}}. Quadratisch wirkt es am besten, da wir es quadratisch zeigen."
   },
-  "draftSaved": "Entwurf auf diesem Gerät gespeichert",
   "submitting": "Ihre Dokumente werden hochgeladen… {{percent}} %",
   "submitFailed": "Wir konnten Ihre Angaben nicht übermitteln. Alle Eingaben sind noch da, versuchen Sie es erneut.",
   "validation": {
@@ -113,8 +112,6 @@
     "editLabel": "{{section}} bearbeiten"
   },
   "preview": {
-    "show": "Vorschau zeigen",
-    "hide": "Vorschau ausblenden",
     "company": {
       "caption": "So sehen Bewerbende Ihr Unternehmen"
     },

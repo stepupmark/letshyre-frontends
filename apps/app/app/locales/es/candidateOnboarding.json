@@ -1,6 +1,7 @@
 {
+  "eyebrow": "Perfil de candidato",
   "title": "Configure su perfil",
-  "lead": "Unos 8 minutos. Los empleadores ven esto cuando nuestra IA le relaciona con una oferta. Sus respuestas se guardan en este dispositivo a medida que avanza.",
+  "lead": "Unos 8 minutos. Tus respuestas se guardan en este dispositivo mientras avanzas.",
   "steps": {
     "you": "Sobre usted",
     "photo": "Su foto",
@@ -20,9 +21,11 @@
     "dob": "Fecha de nacimiento",
     "aadhaar": "Número Aadhaar",
     "aadhaarHint": "12 dígitos, como en su tarjeta.",
-    "location": "Ciudad donde vive",
-    "locationHint": "Por ejemplo, Pune o Kochi.",
-    "address": "Dirección completa"
+    "address": "Dirección completa",
+    "addressLine": "Dirección",
+    "city": "Ciudad",
+    "state": "Estado",
+    "pin": "Código PIN"
   },
   "photo": {
     "lead": "Una foto clara y reciente de su cara. Los empleadores la ven junto a su ficha de evaluación.",
@@ -71,7 +74,8 @@
     "proofTypes": {
       "Relieving Letter": "Carta de baja",
       "Offer Letter": "Carta de oferta"
-    }
+    },
+    "count": "{{added}} de {{total}} añadidos"
   },
   "resume": {
     "lead": "Nuestra IA lee su currículum, sugiere los puestos que le encajan y rellena su trayectoria. Usted lo revisa todo antes de guardarlo.",
@@ -138,8 +142,10 @@
     "dob": "Introduzca su fecha de nacimiento.",
     "adult": "Debe tener 18 años o más para postularse a empleos.",
     "aadhaar": "No es un número Aadhaar válido. Revise los 12 dígitos.",
-    "location": "Introduzca su ciudad.",
-    "address": "Introduzca su dirección completa, al menos 10 caracteres.",
+    "address": "Escribe tu dirección",
+    "city": "Escribe una ciudad",
+    "state": "Escribe un estado",
+    "pin": "Un código PIN tiene 6 dígitos, como 500081",
     "company": "Introduzca el nombre de la empresa.",
     "lastDay": "Introduzca la fecha.",
     "ctc": "Introduzca un importe en lakhs, por ejemplo 8.5.",
@@ -148,6 +154,7 @@
     "locations": "Añada al menos una ciudad.",
     "proofType": "Elija qué carta va a subir.",
     "file": "Suba este documento.",
+    "fileInvalid": "Use un archivo de un tipo aceptado, de hasta 5 MB",
     "photo": "Añada una foto para continuar.",
     "resume": "Suba su currículum para continuar.",
     "role": "Elija un puesto para continuar.",
@@ -155,5 +162,35 @@
   },
   "submitting": "Guardando su perfil… {{percent}} %",
   "submitFailed": "Su perfil no se ha guardado. Sus respuestas siguen aquí; inténtelo de nuevo.",
-  "done": "Perfil guardado. Bienvenido a LetsHyre."
+  "preview": {
+    "caption": "Cómo te ven las empresas",
+    "you": "Tu nombre",
+    "pay": "Salario",
+    "industry": "Sector",
+    "skills": "Habilidades principales",
+    "aadhaar": "Aadhaar añadido",
+    "photo": "Foto añadida",
+    "private": "Tu Aadhaar y tus documentos son privados."
+  },
+  "done": {
+    "title": "Todo listo",
+    "lead": "Tu perfil está guardado. Nuestra IA ya busca empleos que encajan contigo.",
+    "matches": "Ver tus empleos compatibles",
+    "profile": "Ver tu perfil",
+    "nextHeading": "Qué pasa ahora",
+    "timeline": {
+      "saved": {
+        "title": "Perfil guardado",
+        "body": "Las empresas te encuentran cuando nuestra IA te asocia a un empleo."
+      },
+      "matching": {
+        "title": "Buscando empleos para ti",
+        "body": "Te asociamos a las vacantes en cuanto se publican, normalmente en un día."
+      },
+      "interview": {
+        "title": "Entrevista con IA",
+        "body": "Haz una entrevista breve para {{role}} y las empresas verán tu evaluación."
+      }
+    }
+  }
 }

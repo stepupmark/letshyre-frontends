@@ -24,7 +24,7 @@ import { TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
 import { industriesQuery } from "@/lib/industries"
 
-import { useFieldValid } from "../../hooks/use-field-valid"
+import { useFieldValid } from "@/lib/use-field-valid"
 import { withScheme } from "@/lib/company-ids"
 import type { Values } from "../../schemas/onboarding-form.schema"
 

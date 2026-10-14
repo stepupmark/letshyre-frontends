@@ -1,6 +1,7 @@
 {
+  "eyebrow": "Kandidaatprofiel",
   "title": "Stel uw profiel in",
-  "lead": "Ongeveer 8 minuten. Werkgevers zien dit wanneer onze AI u aan een vacature koppelt. Uw antwoorden worden onderweg op dit apparaat opgeslagen.",
+  "lead": "Ongeveer 8 minuten. Je antwoorden worden tussendoor op dit apparaat bewaard.",
   "steps": {
     "you": "Over u",
     "photo": "Uw foto",
@@ -20,9 +21,11 @@
     "dob": "Geboortedatum",
     "aadhaar": "Aadhaar-nummer",
     "aadhaarHint": "12 cijfers, zoals op uw kaart.",
-    "location": "Woonplaats",
-    "locationHint": "Bijvoorbeeld Pune of Kochi.",
-    "address": "Volledig adres"
+    "address": "Volledig adres",
+    "addressLine": "Straat en huisnummer",
+    "city": "Plaats",
+    "state": "Staat",
+    "pin": "PIN-code"
   },
   "photo": {
     "lead": "Een duidelijke, recente foto van uw gezicht. Werkgevers zien hem naast uw scorekaart.",
@@ -71,7 +74,8 @@
     "proofTypes": {
       "Relieving Letter": "Ontslagbevestiging",
       "Offer Letter": "Aanbiedingsbrief"
-    }
+    },
+    "count": "{{added}} van {{total}} toegevoegd"
   },
   "resume": {
     "lead": "Onze AI leest uw cv, stelt passende functies voor en vult uw achtergrond in. U controleert alles voordat het wordt opgeslagen.",
@@ -136,8 +140,10 @@
     "dob": "Vul uw geboortedatum in.",
     "adult": "U moet 18 jaar of ouder zijn om te solliciteren.",
     "aadhaar": "Dat is geen geldig Aadhaar-nummer. Controleer de 12 cijfers.",
-    "location": "Vul uw woonplaats in.",
-    "address": "Vul uw volledige adres in, minstens 10 tekens.",
+    "address": "Vul je straat en huisnummer in",
+    "city": "Vul een plaats in",
+    "state": "Vul een staat in",
+    "pin": "Een PIN-code heeft 6 cijfers, zoals 500081",
     "company": "Vul de bedrijfsnaam in.",
     "lastDay": "Vul de datum in.",
     "ctc": "Vul een bedrag in lakhs in, bijvoorbeeld 8.5.",
@@ -146,6 +152,7 @@
     "locations": "Voeg minstens één stad toe.",
     "proofType": "Kies welke brief u uploadt.",
     "file": "Upload dit document.",
+    "fileInvalid": "Gebruik een bestand van een toegestaan type, tot 5 MB",
     "photo": "Voeg een foto toe om verder te gaan.",
     "resume": "Upload uw cv om verder te gaan.",
     "role": "Kies een functie om verder te gaan.",
@@ -153,5 +160,35 @@
   },
   "submitting": "Uw profiel wordt opgeslagen… {{percent}}%",
   "submitFailed": "Uw profiel is niet opgeslagen. Uw antwoorden staan er nog; probeer het opnieuw.",
-  "done": "Profiel opgeslagen. Welkom bij LetsHyre."
+  "preview": {
+    "caption": "Zo zien werkgevers je",
+    "you": "Je naam",
+    "pay": "Salaris",
+    "industry": "Branche",
+    "skills": "Belangrijkste vaardigheden",
+    "aadhaar": "Aadhaar toegevoegd",
+    "photo": "Foto toegevoegd",
+    "private": "Je Aadhaar en documenten blijven privé."
+  },
+  "done": {
+    "title": "Alles klaar",
+    "lead": "Je profiel is opgeslagen. Onze AI zoekt al naar banen die bij je passen.",
+    "matches": "Bekijk je matches",
+    "profile": "Bekijk je profiel",
+    "nextHeading": "Wat er nu gebeurt",
+    "timeline": {
+      "saved": {
+        "title": "Profiel opgeslagen",
+        "body": "Werkgevers vinden je zodra onze AI je aan een baan koppelt."
+      },
+      "matching": {
+        "title": "Koppelen aan banen",
+        "body": "We koppelen je aan vacatures zodra ze verschijnen, meestal binnen een dag."
+      },
+      "interview": {
+        "title": "AI-interview",
+        "body": "Doe een kort interview voor {{role}} zodat werkgevers je scorekaart zien."
+      }
+    }
+  }
 }

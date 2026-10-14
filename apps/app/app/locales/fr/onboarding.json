@@ -53,7 +53,6 @@
     },
     "logoNotSquare": "Ce logo mesure {{width}} × {{height}}. Un logo carré rend mieux, car nous l'affichons dans un carré."
   },
-  "draftSaved": "Brouillon enregistré sur cet appareil",
   "submitting": "Import de vos documents… {{percent}} %",
   "submitFailed": "Nous n'avons pas pu envoyer vos informations. Tout ce que vous avez saisi est conservé, réessayez.",
   "validation": {
@@ -113,8 +112,6 @@
     "editLabel": "Modifier {{section}}"
   },
   "preview": {
-    "show": "Afficher l'aperçu",
-    "hide": "Masquer l'aperçu",
     "company": {
       "caption": "Ce que les candidats verront de votre entreprise"
     },

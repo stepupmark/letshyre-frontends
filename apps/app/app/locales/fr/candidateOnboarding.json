@@ -1,6 +1,7 @@
 {
+  "eyebrow": "Profil candidat",
   "title": "Configurer votre profil",
-  "lead": "Environ 8 minutes. Les employeurs voient ceci quand notre IA vous associe à une offre. Vos réponses sont enregistrées sur cet appareil au fur et à mesure.",
+  "lead": "Environ 8 minutes. Vos réponses sont enregistrées sur cet appareil au fur et à mesure.",
   "steps": {
     "you": "À propos de vous",
     "photo": "Votre photo",
@@ -20,9 +21,11 @@
     "dob": "Date de naissance",
     "aadhaar": "Numéro Aadhaar",
     "aadhaarHint": "12 chiffres, comme sur votre carte.",
-    "location": "Votre ville",
-    "locationHint": "Par exemple, Pune ou Kochi.",
-    "address": "Adresse complète"
+    "address": "Adresse complète",
+    "addressLine": "Adresse",
+    "city": "Ville",
+    "state": "État",
+    "pin": "Code PIN"
   },
   "photo": {
     "lead": "Une photo nette et récente de votre visage. Les employeurs la voient à côté de votre grille.",
@@ -71,7 +74,8 @@
     "proofTypes": {
       "Relieving Letter": "Lettre de fin de contrat",
       "Offer Letter": "Lettre d'offre"
-    }
+    },
+    "count": "{{added}} sur {{total}} ajoutés"
   },
   "resume": {
     "lead": "Notre IA lit votre CV, suggère les postes qui vous correspondent et remplit votre parcours. Vous vérifiez tout avant l'enregistrement.",
@@ -138,8 +142,10 @@
     "dob": "Saisissez votre date de naissance.",
     "adult": "Vous devez avoir 18 ans ou plus pour postuler.",
     "aadhaar": "Ce n'est pas un numéro Aadhaar valide. Vérifiez les 12 chiffres.",
-    "location": "Saisissez votre ville.",
-    "address": "Saisissez votre adresse complète, au moins 10 caractères.",
+    "address": "Saisissez votre adresse",
+    "city": "Saisissez une ville",
+    "state": "Saisissez un État",
+    "pin": "Un code PIN compte 6 chiffres, par ex. 500081",
     "company": "Saisissez le nom de l'entreprise.",
     "lastDay": "Saisissez la date.",
     "ctc": "Saisissez un montant en lakhs, par exemple 8.5.",
@@ -148,6 +154,7 @@
     "locations": "Ajoutez au moins une ville.",
     "proofType": "Choisissez la lettre que vous allez importer.",
     "file": "Importez ce document.",
+    "fileInvalid": "Utilisez un fichier d'un type accepté, jusqu'à 5 Mo",
     "photo": "Ajoutez une photo pour continuer.",
     "resume": "Importez votre CV pour continuer.",
     "role": "Choisissez un poste pour continuer.",
@@ -155,5 +162,35 @@
   },
   "submitting": "Enregistrement de votre profil… {{percent}} %",
   "submitFailed": "Votre profil n'a pas été enregistré. Vos réponses sont conservées ; réessayez.",
-  "done": "Profil enregistré. Bienvenue sur LetsHyre."
+  "preview": {
+    "caption": "Ce que voient les recruteurs",
+    "you": "Votre nom",
+    "pay": "Salaire",
+    "industry": "Secteur",
+    "skills": "Compétences clés",
+    "aadhaar": "Aadhaar ajouté",
+    "photo": "Photo ajoutée",
+    "private": "Votre Aadhaar et vos documents restent privés."
+  },
+  "done": {
+    "title": "Tout est prêt",
+    "lead": "Votre profil est enregistré. Notre IA cherche déjà des offres qui vous correspondent.",
+    "matches": "Voir vos offres",
+    "profile": "Voir votre profil",
+    "nextHeading": "La suite",
+    "timeline": {
+      "saved": {
+        "title": "Profil enregistré",
+        "body": "Les recruteurs vous trouvent quand notre IA vous associe à une offre."
+      },
+      "matching": {
+        "title": "Recherche d'offres",
+        "body": "Nous vous associons aux postes dès leur publication, en général sous un jour."
+      },
+      "interview": {
+        "title": "Entretien IA",
+        "body": "Passez un court entretien pour {{role}} afin que les recruteurs voient votre évaluation."
+      }
+    }
+  }
 }

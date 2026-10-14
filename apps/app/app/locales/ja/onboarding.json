@@ -53,7 +53,6 @@
     },
     "logoNotSquare": "このロゴは {{width}} × {{height}} です。正方形で表示するため、正方形のロゴがおすすめです。"
   },
-  "draftSaved": "下書きをこの端末に保存しました",
   "submitting": "書類をアップロード中… {{percent}}%",
   "submitFailed": "情報を送信できませんでした。入力内容は残っているので、もう一度お試しください。",
   "validation": {
@@ -113,8 +112,6 @@
     "editLabel": "{{section}}を編集"
   },
   "preview": {
-    "show": "プレビューを表示",
-    "hide": "プレビューを隠す",
     "company": {
       "caption": "候補者に表示される会社情報"
     },

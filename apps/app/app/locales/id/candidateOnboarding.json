@@ -1,6 +1,7 @@
 {
+  "eyebrow": "Profil kandidat",
   "title": "Siapkan profil Anda",
-  "lead": "Sekitar 8 menit. Pemberi kerja melihat ini saat AI kami mencocokkan Anda dengan lowongan. Jawaban Anda disimpan di perangkat ini selama mengisi.",
+  "lead": "Sekitar 8 menit. Jawaban Anda tersimpan di perangkat ini selama mengisi.",
   "steps": {
     "you": "Tentang Anda",
     "photo": "Foto Anda",
@@ -20,9 +21,11 @@
     "dob": "Tanggal lahir",
     "aadhaar": "Nomor Aadhaar",
     "aadhaarHint": "12 digit, sesuai kartu Anda.",
-    "location": "Kota tempat tinggal",
-    "locationHint": "Misalnya Pune atau Kochi.",
-    "address": "Alamat lengkap"
+    "address": "Alamat lengkap",
+    "addressLine": "Alamat jalan",
+    "city": "Kota",
+    "state": "Negara bagian",
+    "pin": "Kode PIN"
   },
   "photo": {
     "lead": "Foto wajah yang jelas dan terbaru. Pemberi kerja melihatnya di samping kartu skor Anda.",
@@ -71,7 +74,8 @@
     "proofTypes": {
       "Relieving Letter": "Surat pelepasan",
       "Offer Letter": "Surat tawaran"
-    }
+    },
+    "count": "{{added}} dari {{total}} ditambahkan"
   },
   "resume": {
     "lead": "AI kami membaca CV Anda, menyarankan posisi yang cocok, dan mengisi latar belakang Anda. Anda memeriksa semuanya sebelum disimpan.",
@@ -134,8 +138,10 @@
     "dob": "Masukkan tanggal lahir Anda.",
     "adult": "Anda harus berusia 18 tahun atau lebih untuk melamar.",
     "aadhaar": "Itu bukan nomor Aadhaar yang valid. Periksa 12 digitnya.",
-    "location": "Masukkan kota Anda.",
-    "address": "Masukkan alamat lengkap, minimal 10 karakter.",
+    "address": "Masukkan alamat jalan",
+    "city": "Masukkan kota",
+    "state": "Masukkan negara bagian",
+    "pin": "Kode PIN terdiri dari 6 angka, seperti 500081",
     "company": "Masukkan nama perusahaan.",
     "lastDay": "Masukkan tanggal.",
     "ctc": "Masukkan jumlah dalam lakh, misalnya 8.5.",
@@ -144,6 +150,7 @@
     "locations": "Tambahkan minimal satu kota.",
     "proofType": "Pilih surat yang akan Anda unggah.",
     "file": "Unggah dokumen ini.",
+    "fileInvalid": "Gunakan file dengan jenis yang diterima, hingga 5 MB",
     "photo": "Tambahkan foto untuk melanjutkan.",
     "resume": "Unggah CV Anda untuk melanjutkan.",
     "role": "Pilih posisi untuk melanjutkan.",
@@ -151,5 +158,35 @@
   },
   "submitting": "Menyimpan profil Anda… {{percent}}%",
   "submitFailed": "Profil Anda tidak tersimpan. Jawaban Anda masih ada; coba lagi.",
-  "done": "Profil tersimpan. Selamat datang di LetsHyre."
+  "preview": {
+    "caption": "Cara perusahaan melihat Anda",
+    "you": "Nama Anda",
+    "pay": "Gaji",
+    "industry": "Industri",
+    "skills": "Keahlian utama",
+    "aadhaar": "Aadhaar ditambahkan",
+    "photo": "Foto ditambahkan",
+    "private": "Aadhaar dan dokumen Anda tetap pribadi."
+  },
+  "done": {
+    "title": "Semua siap",
+    "lead": "Profil Anda tersimpan. AI kami sudah mencari pekerjaan yang cocok untuk Anda.",
+    "matches": "Lihat pekerjaan yang cocok",
+    "profile": "Lihat profil Anda",
+    "nextHeading": "Apa selanjutnya",
+    "timeline": {
+      "saved": {
+        "title": "Profil tersimpan",
+        "body": "Perusahaan menemukan Anda saat AI kami mencocokkan Anda dengan pekerjaan."
+      },
+      "matching": {
+        "title": "Mencocokkan dengan pekerjaan",
+        "body": "Kami mencocokkan Anda dengan lowongan begitu diunggah, biasanya dalam sehari."
+      },
+      "interview": {
+        "title": "Wawancara AI",
+        "body": "Ikuti wawancara singkat untuk {{role}} agar perusahaan melihat kartu skor Anda."
+      }
+    }
+  }
 }

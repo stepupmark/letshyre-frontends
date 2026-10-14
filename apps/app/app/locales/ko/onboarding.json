@@ -53,7 +53,6 @@
     },
     "logoNotSquare": "이 로고는 {{width}} × {{height}}입니다. 정사각형으로 보여 주므로 정사각형 로고가 가장 좋습니다."
   },
-  "draftSaved": "이 기기에 임시 저장됨",
   "submitting": "서류 업로드 중… {{percent}}%",
   "submitFailed": "정보를 제출하지 못했어요. 입력한 내용은 그대로 있으니 다시 시도하세요.",
   "validation": {
@@ -113,8 +112,6 @@
     "editLabel": "{{section}} 수정"
   },
   "preview": {
-    "show": "미리 보기 표시",
-    "hide": "미리 보기 숨기기",
     "company": {
       "caption": "지원자에게 보이는 회사 모습"
     },
