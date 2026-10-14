@@ -1,9 +1,10 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { useQuery } from "@tanstack/react-query"
 import { BadgeCheck, Globe, Link2, MapPin } from "lucide-react"
-import { useCallback } from "react"
 import { useWatch, type Control } from "react-hook-form"
 
+import { FileImage } from "@/components/file-image"
+import { initialsOf } from "@/lib/format"
 import { industriesQuery } from "@/lib/industries"
 
 import type { Values } from "../../schemas/onboarding-form.schema"
@@ -15,14 +16,6 @@ const host = (url: string) => {
     return url
   }
 }
-
-const initials = (name: string) =>
-  name
-    .trim()
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((word) => word[0]?.toUpperCase())
-    .join("")
 
 /** The company as candidates will see it, filling in while the form is typed. */
 export function CompanyCard({ control }: { control: Control<Values> }) {
@@ -51,9 +44,11 @@ export function CompanyCard({ control }: { control: Control<Values> }) {
       <div className="flex items-center gap-3">
         <div className="grid size-12 shrink-0 place-items-center overflow-hidden rounded-xl bg-brand-muted text-base font-semibold text-brand-text">
           {logo instanceof File && logo.type.startsWith("image/") ? (
-            <LogoImage file={logo} />
+            <FileImage file={logo} className="pop size-full object-cover" />
           ) : (
-            initials(name) || <span className="size-5 rounded-sm bg-brand/25" />
+            initialsOf(name) || (
+              <span className="size-5 rounded-sm bg-brand/25" />
+            )
           )}
         </div>
         <div className="flex min-w-0 flex-1 flex-col gap-1">
@@ -115,19 +110,4 @@ function Detail({ icon: Icon, value }: { icon: typeof Globe; value: string }) {
       )}
     </li>
   )
-}
-
-function LogoImage({ file }: { file: File }) {
-  const attach = useCallback(
-    (img: HTMLImageElement | null) => {
-      if (!img) return
-      const url = URL.createObjectURL(file)
-      img.src = url
-      return () => {
-        URL.revokeObjectURL(url)
-      }
-    },
-    [file]
-  )
-  return <img ref={attach} alt="" className="pop size-full object-cover" />
 }

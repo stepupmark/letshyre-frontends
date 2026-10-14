@@ -96,5 +96,14 @@
   },
   "tip": {
     "gotIt": "확인"
+  },
+  "date": {
+    "day": "일",
+    "month": "월",
+    "year": "연도",
+    "dayShort": "일",
+    "monthShort": "월",
+    "yearShort": "연도",
+    "open": "달력에서 선택"
   }
 }

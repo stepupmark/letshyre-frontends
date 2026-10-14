@@ -22,8 +22,7 @@
     "dob": "Tanggal lahir",
     "aadhaar": "Nomor Aadhaar",
     "aadhaarHint": "12 digit, sesuai kartu Anda.",
-    "address": "Alamat lengkap",
-    "addressLine": "Alamat jalan",
+    "addressLine": "Alamat",
     "city": "Kota",
     "state": "Negara bagian",
     "pin": "Kode PIN"
@@ -48,10 +47,8 @@
   "work": {
     "company": "Perusahaan saat ini atau terakhir",
     "lastDay": "Hari kerja terakhir",
-    "lastDayHint": "Perkiraan hari terakhir jika Anda sedang menjalani masa pemberitahuan.",
     "current": "Gaji saat ini (LPA)",
     "expected": "Gaji yang diharapkan (LPA)",
-    "lpaHint": "Dalam lakh per tahun, misalnya 8.5.",
     "industry": "Industri yang Anda inginkan",
     "places": "Tempat Anda ingin bekerja",
     "placesPlaceholder": "Ketik kota lalu tekan Enter",
@@ -77,9 +74,6 @@
       "Offer Letter": "Surat tawaran"
     },
     "count": "{{added}} dari {{total}} ditambahkan",
-    "currentJob": "Pekerjaan Anda saat ini",
-    "pay": "Gaji",
-    "looking": "Yang Anda cari",
     "addPlace": "Tambahkan {{place}}"
   },
   "resume": {
@@ -161,7 +155,11 @@
     "photo": "Tambahkan foto untuk melanjutkan.",
     "resume": "Unggah CV Anda untuk melanjutkan.",
     "role": "Pilih posisi untuk melanjutkan.",
-    "reason": "Jelaskan singkat mengapa posisi ini."
+    "reason": "Jelaskan singkat mengapa posisi ini.",
+    "dateInvalid": "Tanggal itu tidak ada. Periksa hari dan bulannya.",
+    "dobFuture": "Tanggal lahir Anda tidak boleh di masa depan.",
+    "dobOld": "Periksa tahunnya. Itu lebih dari 100 tahun lalu.",
+    "lastDayRange": "Pilih hari dalam 5 tahun terakhir atau 6 bulan ke depan."
   },
   "submitting": "Menyimpan profil Anda… {{percent}}%",
   "submitFailed": "Profil Anda tidak tersimpan. Jawaban Anda masih ada; coba lagi.",

@@ -98,5 +98,14 @@
   },
   "tip": {
     "gotIt": "മനസ്സിലായി"
+  },
+  "date": {
+    "day": "ദിവസം",
+    "month": "മാസം",
+    "year": "വർഷം",
+    "dayShort": "DD",
+    "monthShort": "MM",
+    "yearShort": "YYYY",
+    "open": "കലണ്ടറിൽ നിന്ന് തിരഞ്ഞെടുക്കുക"
   }
 }

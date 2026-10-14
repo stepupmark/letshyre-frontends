@@ -1,11 +1,15 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { cn } from "@workspace/ui/lib/utils"
 import { BadgeCheck, Camera, FileText, ShieldCheck } from "lucide-react"
-import { useCallback, type ReactNode } from "react"
+import type { ReactNode } from "react"
 import { useWatch, type Control } from "react-hook-form"
+
+import { FileImage } from "@/components/file-image"
+import { formatPercent, initialsOf } from "@/lib/format"
 
 import type { ResumeState } from "../../lib/resume-state"
 import {
+  payRaise,
   REQUIRED_DOCUMENTS,
   type StepId,
   type Values,
@@ -19,14 +23,6 @@ const STOPS = [
   { x: 288, y: 26 },
 ]
 const ROUTE = `M-20 80 Q64 62 ${STOPS.map((s) => `${s.x} ${s.y}`).join(" T ")} T 360 40`
-
-const initials = (name: string) =>
-  name
-    .trim()
-    .split(/[\s@]+/)
-    .slice(0, 2)
-    .map((word) => word[0]?.toUpperCase())
-    .join("")
 
 /** The candidate as employers will see them, filling in while the form is typed. */
 export function ProfileCard({
@@ -71,12 +67,7 @@ export function ProfileCard({
     skills.length > 0,
   ]
   const done = parts.filter(Boolean).length / parts.length
-  const raise = Number(now) > 0 ? Number(next) / Number(now) - 1 : 0
-  const percent = (value: number, sign = false) =>
-    new Intl.NumberFormat(i18n.language, {
-      style: "percent",
-      signDisplay: sign ? "exceptZero" : "auto",
-    }).format(value)
+  const raise = payRaise({ current_ctc: now, expected_ctc: next })
 
   return (
     <div className="flex flex-col gap-3">
@@ -99,13 +90,13 @@ export function ProfileCard({
             <div className="-mt-12 flex items-end gap-3">
               <Avatar
                 done={done}
-                label={percent(done)}
+                label={formatPercent(done, i18n.language)}
                 highlight={step === "photo"}
               >
                 {hasPhoto ? (
-                  <Photo file={photo} />
+                  <FileImage file={photo} className="size-full object-cover" />
                 ) : (
-                  initials(name) || (
+                  initialsOf(name) || (
                     <span className="size-6 rounded-full bg-brand/25" />
                   )
                 )}
@@ -137,10 +128,14 @@ export function ProfileCard({
                 <dd className="flex flex-wrap items-center gap-1.5 font-medium tabular-nums">
                   {now.trim() ? (
                     <>
-                      {t("review.pay", { now, next: next.trim() || "–" })}
+                      {t("review.pay", {
+                        now,
+                        next: next.trim() || "–",
+                        count: Number(next) || 0,
+                      })}
                       {raise > 0 && (
                         <span className="pop rounded-full bg-success/12 px-1.5 py-px text-[0.6875rem] font-semibold text-success">
-                          {percent(raise, true)}
+                          {formatPercent(raise, i18n.language, true)}
                         </span>
                       )}
                     </>
@@ -221,8 +216,12 @@ function Route({
   places: string[]
   active: boolean
 }) {
-  const stops = [home, ...places.filter((p) => p !== home)].slice(0, 4)
-  const extra = places.length + (home ? 1 : 0) - stops.length
+  const all = [
+    home,
+    ...places.filter((p) => p.toLowerCase() !== home.toLowerCase()),
+  ].filter(Boolean)
+  const stops = all.slice(0, STOPS.length)
+  const extra = all.length - stops.length
 
   return (
     <div
@@ -261,9 +260,9 @@ function Route({
             <span
               className={cn(
                 "grid place-items-center rounded-full border-2 border-dashed border-brand/30 bg-card",
-                i === 0 ? "size-4" : "size-3",
+                i === 0 && home ? "size-4" : "size-3",
                 label && "pop border-solid border-brand",
-                label && i === 0 && "bg-brand"
+                label && i === 0 && home && "bg-brand"
               )}
             />
             {label && (
@@ -391,20 +390,4 @@ function Bar({ className }: { className?: string }) {
       )}
     />
   )
-}
-
-function Photo({ file }: { file: File }) {
-  // the object URL lives exactly as long as the img
-  const attach = useCallback(
-    (img: HTMLImageElement | null) => {
-      if (!img) return
-      const url = URL.createObjectURL(file)
-      img.src = url
-      return () => {
-        URL.revokeObjectURL(url)
-      }
-    },
-    [file]
-  )
-  return <img ref={attach} alt="" className="size-full object-cover" />
 }

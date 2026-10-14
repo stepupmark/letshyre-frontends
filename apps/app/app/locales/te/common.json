@@ -98,5 +98,14 @@
   },
   "tip": {
     "gotIt": "అర్థమైంది"
+  },
+  "date": {
+    "day": "రోజు",
+    "month": "నెల",
+    "year": "సంవత్సరం",
+    "dayShort": "DD",
+    "monthShort": "MM",
+    "yearShort": "YYYY",
+    "open": "క్యాలెండర్ నుండి ఎంచుకోండి"
   }
 }

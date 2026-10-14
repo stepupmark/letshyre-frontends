@@ -63,6 +63,7 @@ export function ReviewStep({
             t("review.pay", {
               now: values.current_ctc,
               next: values.expected_ctc,
+              count: Number(values.expected_ctc) || 0,
             }),
           values.preferred_locations.join(", "),
         ]
@@ -72,7 +73,10 @@ export function ReviewStep({
     {
       step: "documents",
       title: t("steps.documents"),
-      body: t("work.count", { added: docs, total: REQUIRED_DOCUMENTS.length }),
+      body:
+        docs > 0
+          ? t("work.count", { added: docs, total: REQUIRED_DOCUMENTS.length })
+          : missing,
     },
     {
       step: "resume",

@@ -22,8 +22,7 @@
     "dob": "生年月日",
     "aadhaar": "アーダール番号",
     "aadhaarHint": "カードに記載の12桁。",
-    "address": "住所",
-    "addressLine": "番地",
+    "addressLine": "住所",
     "city": "市区町村",
     "state": "州",
     "pin": "PINコード"
@@ -48,10 +47,8 @@
   "work": {
     "company": "現在または直近の会社",
     "lastDay": "最終出勤日",
-    "lastDayHint": "退職予告期間中の場合は、予定している最終日。",
     "current": "現在の給与（LPA）",
     "expected": "希望給与（LPA）",
-    "lpaHint": "年額、ラク単位。例：8.5。",
     "industry": "希望する業界",
     "places": "希望勤務地",
     "placesPlaceholder": "都市を入力して Enter を押す",
@@ -77,9 +74,6 @@
       "Offer Letter": "内定通知書"
     },
     "count": "{{total}}件中{{added}}件追加済み",
-    "currentJob": "現在の仕事",
-    "pay": "給与",
-    "looking": "希望する条件",
     "addPlace": "{{place}}を追加"
   },
   "resume": {
@@ -161,7 +155,11 @@
     "photo": "続けるには写真を追加してください。",
     "resume": "続けるには履歴書をアップロードしてください。",
     "role": "続けるには職種を選んでください。",
-    "reason": "この職種を選んだ理由を簡単に教えてください。"
+    "reason": "この職種を選んだ理由を簡単に教えてください。",
+    "dateInvalid": "存在しない日付です。日と月を確認してください。",
+    "dobFuture": "生年月日を未来の日付にすることはできません。",
+    "dobOld": "年を確認してください。100 年以上前の日付です。",
+    "lastDayRange": "過去 5 年から今後 6 か月までの日付を選んでください。"
   },
   "submitting": "プロフィールを保存中… {{percent}}%",
   "submitFailed": "プロフィールを保存できませんでした。回答は残っています。もう一度お試しください。",

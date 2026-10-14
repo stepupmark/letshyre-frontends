@@ -98,5 +98,14 @@
   },
   "tip": {
     "gotIt": "ತಿಳಿಯಿತು"
+  },
+  "date": {
+    "day": "ದಿನ",
+    "month": "ತಿಂಗಳು",
+    "year": "ವರ್ಷ",
+    "dayShort": "DD",
+    "monthShort": "MM",
+    "yearShort": "YYYY",
+    "open": "ಕ್ಯಾಲೆಂಡರ್‌ನಿಂದ ಆಯ್ಕೆಮಾಡಿ"
   }
 }

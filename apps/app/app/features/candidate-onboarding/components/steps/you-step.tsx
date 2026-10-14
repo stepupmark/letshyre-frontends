@@ -1,12 +1,10 @@
 import { useTranslation } from "@workspace/i18n/react"
-import {
-  FieldGroup,
-  FieldLegend,
-  FieldSet,
-} from "@workspace/ui/components/field"
-import type { UseFormReturn } from "react-hook-form"
+import { FieldGroup } from "@workspace/ui/components/field"
+import { Controller, type UseFormReturn } from "react-hook-form"
 
+import { DateField } from "@/components/date-field"
 import { TextField } from "@/components/text-field"
+import { parseIsoDate, startOfToday, yearsBetween } from "@/lib/date"
 import { checkOnBlur } from "@/lib/forms"
 import { useFieldValid } from "@/lib/use-field-valid"
 
@@ -20,9 +18,20 @@ const formatAadhaar = (value: string) =>
     .replace(/(\d{4})(?=\d)/g, "$1 ")
 
 export function YouStep({ form }: { form: UseFormReturn<Values> }) {
-  const { t } = useTranslation("candidateOnboarding")
+  const { t, i18n } = useTranslation("candidateOnboarding")
   const isValid = useFieldValid(form)
   const { errors } = form.formState
+  const ageNote = (dob: string) => {
+    const born = parseIsoDate(dob)
+    const age = born && yearsBetween(born, startOfToday())
+    return age !== null && age >= 0 && age < 100
+      ? new Intl.NumberFormat(i18n.language, {
+          style: "unit",
+          unit: "year",
+          unitDisplay: "long",
+        }).format(age)
+      : undefined
+  }
 
   return (
     <FieldGroup>
@@ -37,14 +46,25 @@ export function YouStep({ form }: { form: UseFormReturn<Values> }) {
             label: t(`you.genders.${g}`),
           }))}
         />
-        <TextField
-          label={t("you.dob")}
-          type="date"
-          autoComplete="bday"
-          max={new Date().toISOString().slice(0, 10)}
-          valid={isValid("dob")}
-          error={errors.dob?.message}
-          {...checkOnBlur(form, "dob")}
+        <Controller
+          control={form.control}
+          name="dob"
+          render={({ field }) => (
+            <DateField
+              label={t("you.dob")}
+              autoComplete="bday"
+              note={ageNote(field.value)}
+              value={field.value}
+              valid={isValid("dob")}
+              error={errors.dob?.message}
+              inputRef={field.ref}
+              onChange={field.onChange}
+              onBlur={() => {
+                field.onBlur()
+                if (form.getValues("dob")) void form.trigger("dob")
+              }}
+            />
+          )}
         />
       </div>
       <TextField
@@ -64,44 +84,41 @@ export function YouStep({ form }: { form: UseFormReturn<Values> }) {
           })
         }}
       />
-      <FieldSet>
-        <FieldLegend>{t("you.address")}</FieldLegend>
-        <FieldGroup className="gap-4">
+      <FieldGroup className="gap-4">
+        <TextField
+          label={t("you.addressLine")}
+          autoComplete="address-line1"
+          valid={isValid("address_line")}
+          error={errors.address_line?.message}
+          {...checkOnBlur(form, "address_line")}
+        />
+        <TextField
+          label={t("you.city")}
+          autoComplete="address-level2"
+          valid={isValid("address_city")}
+          error={errors.address_city?.message}
+          {...checkOnBlur(form, "address_city")}
+        />
+        <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_10rem]">
           <TextField
-            label={t("you.addressLine")}
-            autoComplete="address-line1"
-            valid={isValid("address_line")}
-            error={errors.address_line?.message}
-            {...checkOnBlur(form, "address_line")}
+            label={t("you.state")}
+            autoComplete="address-level1"
+            valid={isValid("address_state")}
+            error={errors.address_state?.message}
+            {...checkOnBlur(form, "address_state")}
           />
           <TextField
-            label={t("you.city")}
-            autoComplete="address-level2"
-            valid={isValid("address_city")}
-            error={errors.address_city?.message}
-            {...checkOnBlur(form, "address_city")}
+            label={t("you.pin")}
+            autoComplete="postal-code"
+            inputMode="numeric"
+            maxLength={6}
+            className="tabular-nums"
+            valid={isValid("address_pin")}
+            error={errors.address_pin?.message}
+            {...checkOnBlur(form, "address_pin")}
           />
-          <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_10rem]">
-            <TextField
-              label={t("you.state")}
-              autoComplete="address-level1"
-              valid={isValid("address_state")}
-              error={errors.address_state?.message}
-              {...checkOnBlur(form, "address_state")}
-            />
-            <TextField
-              label={t("you.pin")}
-              autoComplete="postal-code"
-              inputMode="numeric"
-              maxLength={6}
-              className="tabular-nums"
-              valid={isValid("address_pin")}
-              error={errors.address_pin?.message}
-              {...checkOnBlur(form, "address_pin")}
-            />
-          </div>
-        </FieldGroup>
-      </FieldSet>
+        </div>
+      </FieldGroup>
     </FieldGroup>
   )
 }

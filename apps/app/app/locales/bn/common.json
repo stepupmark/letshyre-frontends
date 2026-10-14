@@ -98,5 +98,14 @@
   },
   "tip": {
     "gotIt": "বুঝেছি"
+  },
+  "date": {
+    "day": "দিন",
+    "month": "মাস",
+    "year": "বছর",
+    "dayShort": "DD",
+    "monthShort": "MM",
+    "yearShort": "YYYY",
+    "open": "ক্যালেন্ডার থেকে বেছে নিন"
   }
 }

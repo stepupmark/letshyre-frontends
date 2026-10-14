@@ -22,7 +22,6 @@
     "dob": "Date de naissance",
     "aadhaar": "Numéro Aadhaar",
     "aadhaarHint": "12 chiffres, comme sur votre carte.",
-    "address": "Adresse complète",
     "addressLine": "Adresse",
     "city": "Ville",
     "state": "État",
@@ -48,10 +47,8 @@
   "work": {
     "company": "Entreprise actuelle ou précédente",
     "lastDay": "Dernier jour de travail",
-    "lastDayHint": "Votre dernier jour prévu si vous effectuez un préavis.",
     "current": "Rémunération actuelle (LPA)",
     "expected": "Rémunération souhaitée (LPA)",
-    "lpaHint": "En lakhs par an, par exemple 8.5.",
     "industry": "Secteur dans lequel vous voulez travailler",
     "places": "Où vous aimeriez travailler",
     "placesPlaceholder": "Saisissez une ville et appuyez sur Entrée",
@@ -77,9 +74,6 @@
       "Offer Letter": "Lettre d'offre"
     },
     "count": "{{added}} sur {{total}} ajoutés",
-    "currentJob": "Votre poste actuel",
-    "pay": "Salaire",
-    "looking": "Ce que vous recherchez",
     "addPlace": "Ajouter {{place}}"
   },
   "resume": {
@@ -165,7 +159,11 @@
     "photo": "Ajoutez une photo pour continuer.",
     "resume": "Importez votre CV pour continuer.",
     "role": "Choisissez un poste pour continuer.",
-    "reason": "Expliquez brièvement pourquoi ce poste."
+    "reason": "Expliquez brièvement pourquoi ce poste.",
+    "dateInvalid": "Cette date n'existe pas. Vérifiez le jour et le mois.",
+    "dobFuture": "Votre date de naissance ne peut pas être dans le futur.",
+    "dobOld": "Vérifiez l'année. C'était il y a plus de 100 ans.",
+    "lastDayRange": "Choisissez un jour dans les 5 dernières années ou les 6 prochains mois."
   },
   "submitting": "Enregistrement de votre profil… {{percent}} %",
   "submitFailed": "Votre profil n'a pas été enregistré. Vos réponses sont conservées ; réessayez.",

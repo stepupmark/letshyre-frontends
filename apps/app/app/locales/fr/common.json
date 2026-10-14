@@ -100,5 +100,14 @@
   },
   "tip": {
     "gotIt": "Compris"
+  },
+  "date": {
+    "day": "Jour",
+    "month": "Mois",
+    "year": "Année",
+    "dayShort": "JJ",
+    "monthShort": "MM",
+    "yearShort": "AAAA",
+    "open": "Choisir dans le calendrier"
   }
 }

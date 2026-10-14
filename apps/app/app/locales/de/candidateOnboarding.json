@@ -22,8 +22,7 @@
     "dob": "Geburtsdatum",
     "aadhaar": "Aadhaar-Nummer",
     "aadhaarHint": "12 Ziffern, wie auf Ihrer Karte.",
-    "address": "Vollständige Adresse",
-    "addressLine": "Straße und Hausnummer",
+    "addressLine": "Adresse",
     "city": "Stadt",
     "state": "Bundesstaat",
     "pin": "PIN-Code"
@@ -48,10 +47,8 @@
   "work": {
     "company": "Aktuelles oder letztes Unternehmen",
     "lastDay": "Letzter Arbeitstag",
-    "lastDayHint": "Ihr voraussichtlich letzter Tag, falls Sie in der Kündigungsfrist sind.",
     "current": "Aktuelles Gehalt (LPA)",
     "expected": "Gehaltswunsch (LPA)",
-    "lpaHint": "In Lakhs pro Jahr, zum Beispiel 8.5.",
     "industry": "Branche, in der Sie arbeiten möchten",
     "places": "Wo Sie arbeiten möchten",
     "placesPlaceholder": "Stadt eingeben und Enter drücken",
@@ -77,9 +74,6 @@
       "Offer Letter": "Angebotsschreiben"
     },
     "count": "{{added}} von {{total}} hinzugefügt",
-    "currentJob": "Dein aktueller Job",
-    "pay": "Gehalt",
-    "looking": "Was du suchst",
     "addPlace": "{{place}} hinzufügen"
   },
   "resume": {
@@ -163,7 +157,11 @@
     "photo": "Fügen Sie ein Foto hinzu, um fortzufahren.",
     "resume": "Laden Sie Ihren Lebenslauf hoch, um fortzufahren.",
     "role": "Wählen Sie eine Rolle, um fortzufahren.",
-    "reason": "Sagen Sie uns kurz, warum diese Rolle."
+    "reason": "Sagen Sie uns kurz, warum diese Rolle.",
+    "dateInvalid": "Dieses Datum gibt es nicht. Prüfe Tag und Monat.",
+    "dobFuture": "Dein Geburtsdatum kann nicht in der Zukunft liegen.",
+    "dobOld": "Prüfe das Jahr. Das ist über 100 Jahre her.",
+    "lastDayRange": "Wähle einen Tag in den letzten 5 Jahren oder den nächsten 6 Monaten."
   },
   "submitting": "Ihr Profil wird gespeichert… {{percent}} %",
   "submitFailed": "Ihr Profil wurde nicht gespeichert. Ihre Antworten sind noch da; versuchen Sie es erneut.",

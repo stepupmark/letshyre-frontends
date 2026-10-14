@@ -22,8 +22,7 @@
     "dob": "Date of birth",
     "aadhaar": "Aadhaar number",
     "aadhaarHint": "12 digits, as on your card.",
-    "address": "Full address",
-    "addressLine": "Street address",
+    "addressLine": "Address",
     "city": "City",
     "state": "State",
     "pin": "PIN code"
@@ -48,10 +47,8 @@
   "work": {
     "company": "Current or last company",
     "lastDay": "Last working day",
-    "lastDayHint": "Your expected last day if you're serving notice.",
     "current": "Current pay (LPA)",
     "expected": "Expected pay (LPA)",
-    "lpaHint": "In lakhs a year, for example 8.5.",
     "industry": "Industry you want to work in",
     "places": "Where you'd like to work",
     "placesPlaceholder": "Type a city and press Enter",
@@ -77,9 +74,6 @@
       "Offer Letter": "Offer letter"
     },
     "count": "{{added}} of {{total}} added",
-    "currentJob": "Your current job",
-    "pay": "Pay",
-    "looking": "What you're looking for",
     "addPlace": "Add {{place}}"
   },
   "resume": {
@@ -163,7 +157,11 @@
     "photo": "Add a photo to continue.",
     "resume": "Upload your resume to continue.",
     "role": "Choose a role to continue.",
-    "reason": "Tell us briefly why this role."
+    "reason": "Tell us briefly why this role.",
+    "dateInvalid": "That date doesn't exist. Check the day and month.",
+    "dobFuture": "Your date of birth can't be in the future.",
+    "dobOld": "Check the year. That's over 100 years ago.",
+    "lastDayRange": "Pick a day within the last 5 years or the next 6 months."
   },
   "submitting": "Saving your profile… {{percent}}%",
   "submitFailed": "Your profile wasn't saved. Your answers are still here; try again.",

@@ -22,8 +22,7 @@
     "dob": "Geboortedatum",
     "aadhaar": "Aadhaar-nummer",
     "aadhaarHint": "12 cijfers, zoals op uw kaart.",
-    "address": "Volledig adres",
-    "addressLine": "Straat en huisnummer",
+    "addressLine": "Adres",
     "city": "Plaats",
     "state": "Staat",
     "pin": "PIN-code"
@@ -48,10 +47,8 @@
   "work": {
     "company": "Huidig of laatste bedrijf",
     "lastDay": "Laatste werkdag",
-    "lastDayHint": "Uw verwachte laatste dag als u in uw opzegtermijn zit.",
     "current": "Huidig salaris (LPA)",
     "expected": "Gewenst salaris (LPA)",
-    "lpaHint": "In lakhs per jaar, bijvoorbeeld 8.5.",
     "industry": "Sector waarin u wilt werken",
     "places": "Waar u wilt werken",
     "placesPlaceholder": "Typ een stad en druk op Enter",
@@ -77,9 +74,6 @@
       "Offer Letter": "Aanbiedingsbrief"
     },
     "count": "{{added}} van {{total}} toegevoegd",
-    "currentJob": "Je huidige baan",
-    "pay": "Salaris",
-    "looking": "Wat je zoekt",
     "addPlace": "{{place}} toevoegen"
   },
   "resume": {
@@ -163,7 +157,11 @@
     "photo": "Voeg een foto toe om verder te gaan.",
     "resume": "Upload uw cv om verder te gaan.",
     "role": "Kies een functie om verder te gaan.",
-    "reason": "Vertel kort waarom deze functie."
+    "reason": "Vertel kort waarom deze functie.",
+    "dateInvalid": "Die datum bestaat niet. Controleer dag en maand.",
+    "dobFuture": "Je geboortedatum kan niet in de toekomst liggen.",
+    "dobOld": "Controleer het jaar. Dat is meer dan 100 jaar geleden.",
+    "lastDayRange": "Kies een dag in de afgelopen 5 jaar of de komende 6 maanden."
   },
   "submitting": "Uw profiel wordt opgeslagen… {{percent}}%",
   "submitFailed": "Uw profiel is niet opgeslagen. Uw antwoorden staan er nog; probeer het opnieuw.",

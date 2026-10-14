@@ -30,11 +30,3 @@ export function companyFromEmail(email: string) {
   if (!name || FREE_MAIL.test(name)) return null
   return name.charAt(0).toUpperCase() + name.slice(1)
 }
-
-export const initialsOf = (name: string) =>
-  name
-    .trim()
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((part) => part.charAt(0).toUpperCase())
-    .join("")

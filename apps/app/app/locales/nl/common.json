@@ -98,5 +98,14 @@
   },
   "tip": {
     "gotIt": "Begrepen"
+  },
+  "date": {
+    "day": "Dag",
+    "month": "Maand",
+    "year": "Jaar",
+    "dayShort": "DD",
+    "monthShort": "MM",
+    "yearShort": "JJJJ",
+    "open": "Kies in de kalender"
   }
 }

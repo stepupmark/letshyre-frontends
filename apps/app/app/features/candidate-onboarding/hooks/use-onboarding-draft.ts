@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react"
 import { useWatch, type UseFormReturn } from "react-hook-form"
 
 import { clearDraft, loadDraft, saveDraft } from "@/lib/draft"
 import { fileStore } from "@/lib/file-store"
+import { useAutosave, useRestoredFiles } from "@/lib/use-draft"
 
 import { EMPTY_RESUME, type ResumeState } from "../lib/resume-state"
 import {
@@ -87,56 +87,26 @@ export function useDraftAutosave(
   form: UseFormReturn<Values>,
   resume: ResumeState
 ) {
-  const [saves, setSaves] = useState(0)
   const text = useWatch({ control: form.control, name: TEXT_FIELDS })
-  const json = JSON.stringify([text, { ...resume, file: null }])
-  const first = useRef(true)
-
-  useEffect(() => {
-    if (first.current) {
-      first.current = false
-      return
-    }
-    const timer = setTimeout(() => {
-      const values = form.getValues()
-      saveDraft(DRAFT, {
-        values: Object.fromEntries(
-          TEXT_FIELDS.map((key) => [key, values[key]])
-        ),
-        resume: { ...resume, file: null },
-      })
-      setSaves((n) => n + 1)
-    }, 600)
-    return () => {
-      clearTimeout(timer)
-    }
-  }, [json, form, resume])
-
-  return saves
+  const kept = { ...resume, file: null }
+  return useAutosave([text, kept], () => {
+    const values = form.getValues()
+    saveDraft(DRAFT, {
+      values: Object.fromEntries(TEXT_FIELDS.map((key) => [key, values[key]])),
+      resume: kept,
+    })
+  })
 }
+
+const STORED = [...FILE_FIELDS, "resume"] as const
 
 /** Puts back files picked before a refresh. True once that's done. */
-export function useStoredFiles(
+export const useStoredFiles = (
   form: UseFormReturn<Values>,
   onResume: (file: File) => void
-) {
-  const [restored, setRestored] = useState(false)
-  const restore = useRef(onResume)
-
-  useEffect(() => {
-    let live = true
-    void draftFiles.load([...FILE_FIELDS, "resume"]).then((files) => {
-      if (!live) return
-      const { resume, ...rest } = files
-      for (const [name, file] of Object.entries(rest))
-        form.setValue(name as (typeof FILE_FIELDS)[number], file)
-      if (resume) restore.current(resume)
-      setRestored(true)
-    })
-    return () => {
-      live = false
-    }
-  }, [form])
-
-  return restored
-}
+) =>
+  useRestoredFiles(draftFiles, STORED, ({ resume, ...rest }) => {
+    for (const [name, file] of Object.entries(rest))
+      form.setValue(name as (typeof FILE_FIELDS)[number], file)
+    if (resume) onResume(resume)
+  })

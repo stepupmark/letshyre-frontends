@@ -98,5 +98,14 @@
   },
   "tip": {
     "gotIt": "புரிந்தது"
+  },
+  "date": {
+    "day": "நாள்",
+    "month": "மாதம்",
+    "year": "ஆண்டு",
+    "dayShort": "DD",
+    "monthShort": "MM",
+    "yearShort": "YYYY",
+    "open": "நாள்காட்டியில் தேர்ந்தெடுக்கவும்"
   }
 }

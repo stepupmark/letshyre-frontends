@@ -80,6 +80,9 @@ export function CandidateOnboarding({
       makeSchema({
         gender: t("errors.gender"),
         dob: t("errors.dob"),
+        dateInvalid: t("errors.dateInvalid"),
+        dobFuture: t("errors.dobFuture"),
+        dobOld: t("errors.dobOld"),
         adult: t("errors.adult"),
         aadhaar: t("errors.aadhaar"),
         address: t("errors.address"),
@@ -89,6 +92,7 @@ export function CandidateOnboarding({
         photo: t("errors.photo"),
         company: t("errors.company"),
         lastDay: t("errors.lastDay"),
+        lastDayRange: t("errors.lastDayRange"),
         ctc: t("errors.ctc"),
         expectedLow: t("errors.expectedLow"),
         industry: t("errors.industry"),
@@ -284,7 +288,7 @@ export function CandidateOnboarding({
         )}
         <DraftSaved saves={saves} />
       </div>
-      <div className="sticky top-24 hidden lg:block">
+      <div className="sticky top-24 -mt-20 hidden lg:block">
         <ProfilePreview {...preview} />
       </div>
     </div>

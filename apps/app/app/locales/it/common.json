@@ -100,5 +100,14 @@
   },
   "tip": {
     "gotIt": "Capito"
+  },
+  "date": {
+    "day": "Giorno",
+    "month": "Mese",
+    "year": "Anno",
+    "dayShort": "GG",
+    "monthShort": "MM",
+    "yearShort": "AAAA",
+    "open": "Scegli dal calendario"
   }
 }

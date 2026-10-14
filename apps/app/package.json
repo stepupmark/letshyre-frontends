@@ -30,6 +30,7 @@
     "lucide-react": "catalog:",
     "motion": "^14.0.0",
     "react": "catalog:",
+    "react-day-picker": "^10.0.2",
     "react-dom": "catalog:",
     "react-hook-form": "catalog:",
     "react-router": "catalog:",

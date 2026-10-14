@@ -31,19 +31,24 @@ function open() {
 export function fileStore(name: (typeof STORES)[number]) {
   async function run<T>(
     mode: IDBTransactionMode,
-    work: (store: IDBObjectStore) => IDBRequest<T>
+    work: (store: IDBObjectStore) => IDBRequest<T>[]
   ) {
     const db = await open()
     try {
-      return await new Promise<T>((resolve, reject) => {
-        const request = work(db.transaction(name, mode).objectStore(name))
-        request.onsuccess = () => {
-          resolve(request.result)
-        }
-        request.onerror = () => {
-          reject(request.error ?? new Error("indexedDB request failed"))
-        }
-      })
+      const store = db.transaction(name, mode).objectStore(name)
+      return await Promise.all(
+        work(store).map(
+          (request) =>
+            new Promise<T>((resolve, reject) => {
+              request.onsuccess = () => {
+                resolve(request.result)
+              }
+              request.onerror = () => {
+                reject(request.error ?? new Error("indexedDB request failed"))
+              }
+            })
+        )
+      )
     } finally {
       db.close()
     }
@@ -53,7 +58,7 @@ export function fileStore(name: (typeof STORES)[number]) {
     async save(key: string, file: File | null) {
       try {
         if (!file) {
-          await run("readwrite", (store) => store.delete(key))
+          await run("readwrite", (store) => [store.delete(key)])
           return
         }
         const value: Stored = {
@@ -62,7 +67,7 @@ export function fileStore(name: (typeof STORES)[number]) {
           lastModified: file.lastModified,
           blob: file,
         }
-        await run("readwrite", (store) => store.put(value, key))
+        await run("readwrite", (store) => [store.put(value, key)])
       } catch {
         /* empty */
       }
@@ -71,15 +76,17 @@ export function fileStore(name: (typeof STORES)[number]) {
     async load(keys: readonly string[]) {
       const files: Record<string, File> = {}
       try {
-        for (const key of keys) {
-          const value = (await run("readonly", (store) => store.get(key))) as
-            Stored | undefined
-          if (value)
+        const values = (await run("readonly", (store) =>
+          keys.map((key) => store.get(key))
+        )) as (Stored | undefined)[]
+        values.forEach((value, i) => {
+          const key = keys[i]
+          if (value && key)
             files[key] = new File([value.blob], value.name, {
               type: value.type,
               lastModified: value.lastModified,
             })
-        }
+        })
       } catch {
         /* empty */
       }
@@ -88,7 +95,7 @@ export function fileStore(name: (typeof STORES)[number]) {
 
     async clear() {
       try {
-        await run("readwrite", (store) => store.clear())
+        await run("readwrite", (store) => [store.clear()])
       } catch {
         /* empty */
       }

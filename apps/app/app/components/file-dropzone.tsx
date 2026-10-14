@@ -12,6 +12,8 @@ import {
   type FileRules,
 } from "@/lib/file-rules"
 
+import { FileImage } from "./file-image"
+
 type State =
   | { status: "idle" }
   | { status: "selected"; file: File }
@@ -157,7 +159,10 @@ export function FileDropzone({
           <div className="flex items-center gap-3.5">
             <div className="relative shrink-0">
               {file.type.startsWith("image/") ? (
-                <ImagePreview file={file} />
+                <FileImage
+                  file={file}
+                  className="size-10 shrink-0 rounded-md border object-cover"
+                />
               ) : (
                 <span className="grid size-10 place-items-center rounded-lg bg-brand-muted text-brand-text">
                   <Icon className="size-4.5" />
@@ -275,7 +280,10 @@ export function FileDropzone({
         <div className="flex items-center gap-3">
           {state.status === "selected" &&
           state.file.type.startsWith("image/") ? (
-            <ImagePreview file={state.file} />
+            <FileImage
+              file={state.file}
+              className="size-10 shrink-0 rounded-md border object-cover"
+            />
           ) : (
             <FileUp className="size-4 shrink-0 text-muted-foreground" />
           )}
@@ -362,27 +370,5 @@ export function FileDropzone({
         </p>
       )}
     </div>
-  )
-}
-
-function ImagePreview({ file }: { file: File }) {
-  // a ref with cleanup, so the object URL lives exactly as long as the img
-  const attach = useCallback(
-    (img: HTMLImageElement | null) => {
-      if (!img) return
-      const url = URL.createObjectURL(file)
-      img.src = url
-      return () => {
-        URL.revokeObjectURL(url)
-      }
-    },
-    [file]
-  )
-  return (
-    <img
-      ref={attach}
-      alt=""
-      className="size-10 shrink-0 rounded-md border object-cover"
-    />
   )
 }

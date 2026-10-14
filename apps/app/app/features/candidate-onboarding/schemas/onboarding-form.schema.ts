@@ -2,6 +2,13 @@ import { z } from "zod"
 
 import { joinAddress as join } from "@/lib/address"
 import { PIN_CODE } from "@/lib/company-ids"
+import {
+  addMonths,
+  parseIsoDate,
+  startOfToday,
+  toIsoDate,
+  yearsBetween,
+} from "@/lib/date"
 import { checkFile, type FileRules } from "@/lib/file-rules"
 
 const D = [
@@ -39,18 +46,21 @@ export function isAadhaar(value: string) {
   return c === 0
 }
 
-/** 18 or older on `today`. Dates are yyyy-mm-dd, as from a date input. */
-export function isAdult(dob: string, today = new Date()) {
-  const [y, m, d] = dob.split("-").map(Number)
-  if (!y || !m || !d) return false
-  const age =
-    today.getFullYear() -
-    y -
-    (today.getMonth() + 1 < m ||
-    (today.getMonth() + 1 === m && today.getDate() < d)
-      ? 1
-      : 0)
-  return age >= 18 && age < 100
+/** 18 or older on `today`. */
+export function isAdult(dob: string, today = startOfToday()) {
+  const born = parseIsoDate(dob)
+  return born !== null && yearsBetween(born, today) >= 18
+}
+
+/** Serving notice or already left, within a sensible window. */
+export const lastDayRange = (today = startOfToday()) => ({
+  min: addMonths(today, -60),
+  max: addMonths(today, 6),
+})
+
+const inRange = (value: string, min: Date, max: Date) => {
+  const date = parseIsoDate(value)
+  return date !== null && date >= min && date <= max
 }
 
 const oneOf = (list: readonly string[], value: string) => list.includes(value)
@@ -114,6 +124,9 @@ export const FILE_FIELDS = ["profile_photo", ...DOCUMENTS] as const
 type Messages = Record<
   | "gender"
   | "dob"
+  | "dateInvalid"
+  | "dobFuture"
+  | "dobOld"
   | "adult"
   | "aadhaar"
   | "address"
@@ -123,6 +136,7 @@ type Messages = Record<
   | "photo"
   | "company"
   | "lastDay"
+  | "lastDayRange"
   | "ctc"
   | "expectedLow"
   | "industry"
@@ -139,21 +153,43 @@ const ctc = (message: string) =>
     .trim()
     .regex(/^\d{1,3}(\.\d{1,2})?$/, message)
 
+/** 12 → 16 is 0.33; 0 when there's no current pay to compare with. */
+export const payRaise = (v: { current_ctc: string; expected_ctc: string }) =>
+  Number(v.current_ctc) > 0
+    ? Number(v.expected_ctc) / Number(v.current_ctc) - 1
+    : 0
+
 const payOk = (v: { current_ctc: string; expected_ctc: string }) =>
   Number(v.expected_ctc) >= Number(v.current_ctc)
 
 export const makeSchema = (m: Messages) => {
   const file = (rules: FileRules, message: string) =>
     z
-      .instanceof(File, { message })
-      .refine((value) => checkFile(value, rules) === null, m.fileInvalid)
+      // abort: false so a missing file doesn't skip the pay check
+      .custom<File>((value) => value instanceof File, { message, abort: false })
+      .refine(
+        (value) => !(value instanceof File) || checkFile(value, rules) === null,
+        m.fileInvalid
+      )
 
   const base = z.object({
     gender: z.string().refine((v) => oneOf(GENDERS, v), m.gender),
     dob: z
       .string()
-      .min(1, m.dob)
-      .refine((v) => isAdult(v), m.adult),
+      .min(1, { message: m.dob, abort: true })
+      .refine((v) => parseIsoDate(v) !== null, {
+        message: m.dateInvalid,
+        abort: true,
+      })
+      .refine((v) => v <= toIsoDate(startOfToday()), {
+        message: m.dobFuture,
+        abort: true,
+      })
+      .refine((v) => isAdult(v), { message: m.adult, abort: true })
+      .refine(
+        (v) => inRange(v, addMonths(startOfToday(), -1200), startOfToday()),
+        m.dobOld
+      ),
     aadhar_number: z.string().refine(isAadhaar, m.aadhaar),
     address_line: z.string().trim().min(5, m.address),
     address_city: z.string().trim().min(2, m.city),
@@ -161,7 +197,17 @@ export const makeSchema = (m: Messages) => {
     address_pin: z.string().trim().regex(PIN_CODE, m.pin),
     profile_photo: file(PHOTO, m.photo),
     present_or_last_working_company: z.string().trim().min(2, m.company),
-    last_day_of_working: z.string().min(1, m.lastDay),
+    last_day_of_working: z
+      .string()
+      .min(1, { message: m.lastDay, abort: true })
+      .refine((v) => parseIsoDate(v) !== null, {
+        message: m.dateInvalid,
+        abort: true,
+      })
+      .refine((v) => {
+        const { min, max } = lastDayRange()
+        return inRange(v, min, max)
+      }, m.lastDayRange),
     current_ctc: ctc(m.ctc),
     expected_ctc: ctc(m.ctc),
     preferred_industry: z.string().min(1, m.industry),
@@ -178,7 +224,6 @@ export const makeSchema = (m: Messages) => {
     schema: base.refine(payOk, {
       path: ["expected_ctc"],
       message: m.expectedLow,
-      // check pay even while other fields, like the letters, are still missing
       when: ({ issues }) =>
         !issues.some((issue) => String(issue.path?.[0]).endsWith("_ctc")),
     }),

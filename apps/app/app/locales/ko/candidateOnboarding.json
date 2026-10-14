@@ -22,8 +22,7 @@
     "dob": "생년월일",
     "aadhaar": "아다르 번호",
     "aadhaarHint": "카드에 적힌 12자리.",
-    "address": "전체 주소",
-    "addressLine": "도로명 주소",
+    "addressLine": "주소",
     "city": "도시",
     "state": "주",
     "pin": "PIN 코드"
@@ -48,10 +47,8 @@
   "work": {
     "company": "현재 또는 마지막 회사",
     "lastDay": "마지막 근무일",
-    "lastDayHint": "퇴직 통보 기간 중이라면 예상 마지막 근무일.",
     "current": "현재 연봉 (LPA)",
     "expected": "희망 연봉 (LPA)",
-    "lpaHint": "연간 라크 단위, 예: 8.5.",
     "industry": "일하고 싶은 업계",
     "places": "희망 근무지",
     "placesPlaceholder": "도시를 입력하고 Enter를 누르세요",
@@ -77,9 +74,6 @@
       "Offer Letter": "오퍼 레터"
     },
     "count": "{{total}}개 중 {{added}}개 추가됨",
-    "currentJob": "현재 직장",
-    "pay": "급여",
-    "looking": "찾고 있는 조건",
     "addPlace": "{{place}} 추가"
   },
   "resume": {
@@ -161,7 +155,11 @@
     "photo": "계속하려면 사진을 추가하세요.",
     "resume": "계속하려면 이력서를 업로드하세요.",
     "role": "계속하려면 직무를 선택하세요.",
-    "reason": "이 직무를 고른 이유를 짧게 적어 주세요."
+    "reason": "이 직무를 고른 이유를 짧게 적어 주세요.",
+    "dateInvalid": "존재하지 않는 날짜예요. 일과 월을 확인하세요.",
+    "dobFuture": "생년월일은 미래일 수 없어요.",
+    "dobOld": "연도를 확인하세요. 100년도 더 전이에요.",
+    "lastDayRange": "지난 5년 또는 앞으로 6개월 안의 날짜를 고르세요."
   },
   "submitting": "프로필 저장 중… {{percent}}%",
   "submitFailed": "프로필이 저장되지 않았어요. 답변은 그대로 있어요. 다시 시도하세요.",

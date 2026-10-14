@@ -98,5 +98,14 @@
   },
   "tip": {
     "gotIt": "Got it"
+  },
+  "date": {
+    "day": "Day",
+    "month": "Month",
+    "year": "Year",
+    "dayShort": "DD",
+    "monthShort": "MM",
+    "yearShort": "YYYY",
+    "open": "Choose from a calendar"
   }
 }

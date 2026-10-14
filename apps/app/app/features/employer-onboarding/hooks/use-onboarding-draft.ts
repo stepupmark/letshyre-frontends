@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react"
 import { useWatch, type UseFormReturn } from "react-hook-form"
 
 import { clearDraft, loadDraft, saveDraft } from "@/lib/draft"
 import { fileStore } from "@/lib/file-store"
+import { useAutosave, useRestoredFiles } from "@/lib/use-draft"
 
 import {
   STEPS,
@@ -66,48 +66,19 @@ export function discardDraft() {
 
 /** Saves the text fields a moment after typing stops. Returns a save count. */
 export function useDraftAutosave(form: UseFormReturn<Values>) {
-  const [saves, setSaves] = useState(0)
   const text = useWatch({ control: form.control, name: TEXT_FIELDS })
-  const json = JSON.stringify(text)
-  const first = useRef(true)
-
-  useEffect(() => {
-    if (first.current) {
-      first.current = false
-      return
-    }
-    const timer = setTimeout(() => {
-      const values = form.getValues()
-      saveDraft(
-        DRAFT,
-        Object.fromEntries(TEXT_FIELDS.map((key) => [key, values[key]]))
-      )
-      setSaves((n) => n + 1)
-    }, 600)
-    return () => {
-      clearTimeout(timer)
-    }
-  }, [json, form])
-
-  return saves
+  return useAutosave(text, () => {
+    const values = form.getValues()
+    saveDraft(
+      DRAFT,
+      Object.fromEntries(TEXT_FIELDS.map((key) => [key, values[key]]))
+    )
+  })
 }
 
 /** Puts back documents picked before a refresh. True once that's done. */
-export function useStoredFiles(form: UseFormReturn<Values>) {
-  const [restored, setRestored] = useState(false)
-
-  useEffect(() => {
-    let live = true
-    void draftFiles.load(STEPS.documents).then((files) => {
-      if (!live) return
-      for (const [name, file] of Object.entries(files))
-        form.setValue(name as keyof Values, file)
-      setRestored(true)
-    })
-    return () => {
-      live = false
-    }
-  }, [form])
-
-  return restored
-}
+export const useStoredFiles = (form: UseFormReturn<Values>) =>
+  useRestoredFiles(draftFiles, STEPS.documents, (files) => {
+    for (const [name, file] of Object.entries(files))
+      form.setValue(name as keyof Values, file)
+  })

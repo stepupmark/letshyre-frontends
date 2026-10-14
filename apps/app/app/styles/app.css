@@ -3,6 +3,12 @@
 
 @custom-variant short (@media (max-height: 820px));
 
+/* camera controls sit on live video, so they stay light in both themes */
+@theme {
+  --color-on-media: #fff;
+  --color-scrim: rgb(0 0 0 / 0.4);
+}
+
 /* Chrome tints only the <input>, so a grouped field (+91 | number) looks split;
    tint the whole group the same colour instead */
 :root {

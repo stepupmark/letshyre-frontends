@@ -96,5 +96,14 @@
   },
   "tip": {
     "gotIt": "Mengerti"
+  },
+  "date": {
+    "day": "Hari",
+    "month": "Bulan",
+    "year": "Tahun",
+    "dayShort": "HH",
+    "monthShort": "BB",
+    "yearShort": "TTTT",
+    "open": "Pilih dari kalender"
   }
 }

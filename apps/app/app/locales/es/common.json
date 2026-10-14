@@ -100,5 +100,14 @@
   },
   "tip": {
     "gotIt": "Entendido"
+  },
+  "date": {
+    "day": "Día",
+    "month": "Mes",
+    "year": "Año",
+    "dayShort": "DD",
+    "monthShort": "MM",
+    "yearShort": "AAAA",
+    "open": "Elegir en el calendario"
   }
 }

@@ -98,5 +98,14 @@
   },
   "tip": {
     "gotIt": "سمجھ گیا"
+  },
+  "date": {
+    "day": "دن",
+    "month": "مہینہ",
+    "year": "سال",
+    "dayShort": "DD",
+    "monthShort": "MM",
+    "yearShort": "YYYY",
+    "open": "کیلنڈر سے منتخب کریں"
   }
 }

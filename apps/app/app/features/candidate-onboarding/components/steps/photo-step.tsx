@@ -7,8 +7,9 @@ import {
 import { Button } from "@workspace/ui/components/button"
 import { FieldError } from "@workspace/ui/components/field"
 import { Camera, CameraOff, ImageUp, RotateCcw, X } from "lucide-react"
-import { useCallback, useEffect, useId, useRef, useState } from "react"
+import { useEffect, useId, useRef, useState } from "react"
 
+import { FileImage } from "@/components/file-image"
 import { checkFile } from "@/lib/file-rules"
 
 import { PHOTO } from "../../schemas/onboarding-form.schema"
@@ -135,7 +136,7 @@ export function PhotoStep({
               size="icon-sm"
               aria-label={t("photo.cancel")}
               onClick={stop}
-              className="absolute end-3 top-3 rounded-full bg-black/40 text-white backdrop-blur-sm hover:bg-black/60 hover:text-white"
+              className="bg-scrim text-on-media hover:bg-scrim hover:text-on-media absolute inset-e-3 top-3 rounded-full backdrop-blur-sm"
             >
               <X />
             </Button>
@@ -144,9 +145,9 @@ export function PhotoStep({
               aria-label={t("photo.take")}
               onClick={capture}
               disabled={camera !== "live"}
-              className="group absolute bottom-4 left-1/2 grid size-14 -translate-x-1/2 place-items-center rounded-full border-[3px] border-white/90 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50"
+              className="group border-on-media/90 absolute inset-x-0 bottom-4 mx-auto grid size-14 place-items-center rounded-full border-[3px] outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50"
             >
-              <span className="size-10 rounded-full bg-white transition-transform duration-150 group-hover:scale-95 group-active:scale-85 motion-reduce:transition-none" />
+              <span className="bg-on-media size-10 rounded-full transition-transform duration-150 group-hover:scale-95 group-active:scale-85 motion-reduce:transition-none" />
             </button>
           </>
         ) : (
@@ -218,31 +219,19 @@ export function PhotoStep({
 
 function Preview({ file }: { file: File }) {
   const { t } = useTranslation("candidateOnboarding")
-  // the object URL lives exactly as long as the img
-  const attach = useCallback(
-    (img: HTMLImageElement | null) => {
-      if (!img) return
-      const url = URL.createObjectURL(file)
-      img.src = url
-      return () => {
-        URL.revokeObjectURL(url)
-      }
-    },
-    [file]
-  )
   return (
     <>
-      <img
-        ref={attach}
+      <FileImage
+        file={file}
         alt={t("photo.previewAlt")}
         className="size-full object-cover motion-safe:animate-in motion-safe:duration-500 motion-safe:fade-in motion-safe:zoom-in-105"
       />
       {/* how it shows up as an avatar */}
       <span
         aria-hidden="true"
-        className="absolute end-3 bottom-3 size-14 overflow-hidden rounded-full border-[3px] border-white shadow-lg"
+        className="border-on-media absolute inset-e-3 bottom-3 size-14 overflow-hidden rounded-full border-[3px] shadow-lg"
       >
-        <img ref={attach} alt="" className="size-full object-cover" />
+        <FileImage file={file} className="size-full object-cover" />
       </span>
     </>
   )
@@ -254,7 +243,7 @@ function Viewfinder() {
     <svg
       viewBox="0 0 100 100"
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 size-full text-white"
+      className="text-on-media pointer-events-none absolute inset-0 size-full"
     >
       <g stroke="currentColor" strokeOpacity={0.18} strokeWidth={0.3}>
         <line x1={33.3} y1={0} x2={33.3} y2={100} />
@@ -274,14 +263,12 @@ function Viewfinder() {
         <path d="M22 88 H14 Q12 88 12 86 V78" />
         <path d="M78 88 H86 Q88 88 88 86 V78" />
       </g>
-      <circle cx={16} cy={18} r={1.4} className="fill-red-500">
-        <animate
-          attributeName="opacity"
-          values="1;0.25;1"
-          dur="1.6s"
-          repeatCount="indefinite"
-        />
-      </circle>
+      <circle
+        cx={16}
+        cy={18}
+        r={1.4}
+        className="animate-pulse fill-destructive motion-reduce:animate-none"
+      />
     </svg>
   )
 }
@@ -314,7 +301,7 @@ function EmptyPhoto({ children }: { children: string }) {
           />
           <path
             d="M4.5 7.5 h3 l1.5 -2 h2 l1.5 2 h3 v8 h-11 z"
-            className="fill-none stroke-white"
+            className="stroke-on-media fill-none"
             strokeWidth={1.5}
             strokeLinejoin="round"
           />
@@ -322,7 +309,7 @@ function EmptyPhoto({ children }: { children: string }) {
             cx={10}
             cy={11.5}
             r={2.2}
-            className="fill-none stroke-white"
+            className="stroke-on-media fill-none"
             strokeWidth={1.5}
           />
         </g>

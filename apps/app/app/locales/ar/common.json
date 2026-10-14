@@ -106,5 +106,14 @@
   },
   "tip": {
     "gotIt": "فهمت"
+  },
+  "date": {
+    "day": "اليوم",
+    "month": "الشهر",
+    "year": "السنة",
+    "dayShort": "DD",
+    "monthShort": "MM",
+    "yearShort": "YYYY",
+    "open": "اختر من التقويم"
   }
 }

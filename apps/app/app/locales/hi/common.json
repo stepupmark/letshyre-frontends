@@ -98,5 +98,14 @@
   },
   "tip": {
     "gotIt": "समझ गए"
+  },
+  "date": {
+    "day": "दिन",
+    "month": "महीना",
+    "year": "साल",
+    "dayShort": "DD",
+    "monthShort": "MM",
+    "yearShort": "YYYY",
+    "open": "कैलेंडर से चुनें"
   }
 }

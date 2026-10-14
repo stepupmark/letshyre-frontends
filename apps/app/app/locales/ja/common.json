@@ -96,5 +96,14 @@
   },
   "tip": {
     "gotIt": "わかりました"
+  },
+  "date": {
+    "day": "日",
+    "month": "月",
+    "year": "年",
+    "dayShort": "日",
+    "monthShort": "月",
+    "yearShort": "年",
+    "open": "カレンダーから選ぶ"
   }
 }

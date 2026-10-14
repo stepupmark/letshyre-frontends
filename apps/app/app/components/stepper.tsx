@@ -48,9 +48,8 @@ export function Stepper({
                 aria-hidden="true"
                 className={cn(
                   "text-sm",
-                  active
-                    ? "font-medium whitespace-nowrap"
-                    : "truncate text-muted-foreground max-sm:hidden"
+                  "truncate",
+                  active ? "font-medium" : "text-muted-foreground max-sm:hidden"
                 )}
               >
                 {title}
@@ -66,8 +65,9 @@ export function Stepper({
             aria-current={active ? "step" : undefined}
             title={roomy || active ? undefined : title}
             className={cn(
-              "flex items-center gap-2 not-last:flex-1",
-              roomy || !active ? "min-w-0" : "shrink-0"
+              "flex min-w-0 items-center gap-2",
+              // the current title takes the room it needs, then truncates
+              roomy || !active ? "not-last:flex-1" : "flex-auto"
             )}
           >
             {done ? (
