@@ -1,9 +1,15 @@
 {
   "title": "Guida al colloquio",
-  "lead": "Otto passaggi dal download alla prima domanda. Spuntali mentre ti prepari.",
-  "progress": "{{done}} di {{total}} pronti",
-  "progressLabel": "Passaggi pronti",
-  "reset": "Ricomincia",
+  "lead": "Dal download alla prima domanda: ecco cosa succede, passo dopo passo.",
+  "tip": "Consiglio:",
+  "needTitle": "Cosa ti serve",
+  "needs": {
+    "camera": "Una fotocamera funzionante",
+    "mic": "Un microfono",
+    "screen": "Condivisione schermo",
+    "room": "Una stanza tranquilla e luminosa"
+  },
+  "mobileNote": "I colloqui si svolgono su un computer. Apri questa pagina lì per scaricare l'app.",
   "phases": {
     "setup": "Preparazione",
     "security": "Controlli di sicurezza",
@@ -12,8 +18,7 @@
   "steps": {
     "download": {
       "title": "Installa l'app desktop",
-      "body": "I colloqui si svolgono solo nell'app desktop di LetsHyre, così la sessione resta sicura.",
-      "link": "Scarica per il tuo computer"
+      "body": "I colloqui si svolgono solo nell'app desktop di LetsHyre, così la sessione resta sicura."
     },
     "signIn": {
       "title": "Accedi all'app",
@@ -26,7 +31,7 @@
     "clearEnv": {
       "title": "Chiudi le altre app",
       "body": "Browser, registratori dello schermo, assistenti IA e app per videochiamate devono essere chiusi per proseguire.",
-      "tip": "Chiudi tutto il resto prima di selezionare Fai il colloquio."
+      "tip": "Chiudile anche dalla barra dei menu o dall'area di notifica, non solo le finestre."
     },
     "permissions": {
       "title": "Consenti fotocamera, microfono e schermo",
@@ -46,9 +51,29 @@
       "body": "Il colloquio si apre a schermo intero con la registrazione attiva. Rispondi a ogni domanda nel suo tempo; puoi spostarti tra le domande finché il timer non scade."
     }
   },
+  "scene": {
+    "app": "LetsHyre",
+    "signIn": "Accedi",
+    "takeInterview": "Fai il colloquio",
+    "clear": "Tutto pronto",
+    "camera": "Fotocamera",
+    "mic": "Microfono",
+    "screen": "Schermo",
+    "matched": "Verificato",
+    "roles": {
+      "a": "Sviluppatore frontend",
+      "b": "Analista dati",
+      "c": "Product designer"
+    },
+    "fromProfile": "Profilo",
+    "recording": "Registrazione",
+    "timer": "Mancano 1:30",
+    "question": "Domanda 1",
+    "next": "Avanti"
+  },
   "cta": {
-    "title": "Scarica l'app desktop",
-    "body": "Accedi con il tuo account LetsHyre e inizia quando sei pronto.",
-    "button": "Scarica l'app"
+    "button": "Scarica l'app",
+    "forOs": "Scarica per {{os}}",
+    "body": "Apre il sito LetsHyre"
   }
 }

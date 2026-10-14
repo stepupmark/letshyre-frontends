@@ -1,9 +1,15 @@
 {
   "title": "Panduan wawancara",
-  "lead": "Delapan langkah dari unduhan sampai pertanyaan pertama. Centang satu per satu saat Anda bersiap.",
-  "progress": "{{done}} dari {{total}} siap",
-  "progressLabel": "Langkah yang siap",
-  "reset": "Mulai dari awal",
+  "lead": "Dari unduhan sampai pertanyaan pertama: inilah yang terjadi, langkah demi langkah.",
+  "tip": "Tips:",
+  "needTitle": "Yang Anda butuhkan",
+  "needs": {
+    "camera": "Kamera yang berfungsi",
+    "mic": "Mikrofon",
+    "screen": "Berbagi layar",
+    "room": "Ruangan tenang dan terang"
+  },
+  "mobileNote": "Wawancara berjalan di komputer. Buka halaman ini di sana untuk mengunduh aplikasinya.",
   "phases": {
     "setup": "Persiapan",
     "security": "Pemeriksaan keamanan",
@@ -12,8 +18,7 @@
   "steps": {
     "download": {
       "title": "Pasang aplikasi desktop",
-      "body": "Wawancara hanya berjalan di aplikasi desktop LetsHyre agar sesi tetap aman.",
-      "link": "Unduh untuk komputer Anda"
+      "body": "Wawancara hanya berjalan di aplikasi desktop LetsHyre agar sesi tetap aman."
     },
     "signIn": {
       "title": "Masuk ke aplikasi",
@@ -26,7 +31,7 @@
     "clearEnv": {
       "title": "Tutup aplikasi lain",
       "body": "Browser, perekam layar, asisten AI, dan aplikasi panggilan video harus ditutup sebelum Anda bisa lanjut.",
-      "tip": "Tutup semua yang lain sebelum memilih Ikuti wawancara."
+      "tip": "Tutup juga dari bilah menu atau baki sistem, bukan hanya jendelanya."
     },
     "permissions": {
       "title": "Izinkan kamera, mikrofon, dan layar",
@@ -46,9 +51,29 @@
       "body": "Wawancara terbuka dalam layar penuh dengan perekaman aktif. Jawab setiap pertanyaan dalam waktunya; Anda bisa berpindah antarpertanyaan sampai pengatur waktu habis."
     }
   },
+  "scene": {
+    "app": "LetsHyre",
+    "signIn": "Masuk",
+    "takeInterview": "Mulai wawancara",
+    "clear": "Semua siap",
+    "camera": "Kamera",
+    "mic": "Mikrofon",
+    "screen": "Layar",
+    "matched": "Cocok",
+    "roles": {
+      "a": "Frontend developer",
+      "b": "Analis data",
+      "c": "Desainer produk"
+    },
+    "fromProfile": "Profil",
+    "recording": "Merekam",
+    "timer": "Sisa 1:30",
+    "question": "Pertanyaan 1",
+    "next": "Lanjut"
+  },
   "cta": {
-    "title": "Dapatkan aplikasi desktop",
-    "body": "Masuk dengan akun LetsHyre Anda dan mulai saat Anda siap.",
-    "button": "Unduh aplikasinya"
+    "button": "Unduh aplikasinya",
+    "forOs": "Unduh untuk {{os}}",
+    "body": "Membuka situs LetsHyre"
   }
 }

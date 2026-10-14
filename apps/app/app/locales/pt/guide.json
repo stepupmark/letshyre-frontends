@@ -1,9 +1,15 @@
 {
   "title": "Guia da entrevista",
-  "lead": "Oito etapas do download até sua primeira pergunta. Marque cada uma enquanto se prepara.",
-  "progress": "{{done}} de {{total}} prontas",
-  "progressLabel": "Etapas prontas",
-  "reset": "Recomeçar",
+  "lead": "Do download à sua primeira pergunta: veja o que acontece, passo a passo.",
+  "tip": "Dica:",
+  "needTitle": "O que você vai precisar",
+  "needs": {
+    "camera": "Uma câmera funcionando",
+    "mic": "Um microfone",
+    "screen": "Compartilhamento de tela",
+    "room": "Um lugar silencioso e bem iluminado"
+  },
+  "mobileNote": "As entrevistas acontecem em um computador. Abra esta página nele para baixar o app.",
   "phases": {
     "setup": "Preparação",
     "security": "Verificações de segurança",
@@ -12,8 +18,7 @@
   "steps": {
     "download": {
       "title": "Instale o aplicativo para computador",
-      "body": "As entrevistas acontecem só no aplicativo para computador da LetsHyre, para a sessão ficar segura.",
-      "link": "Baixar para o seu computador"
+      "body": "As entrevistas acontecem só no aplicativo para computador da LetsHyre, para a sessão ficar segura."
     },
     "signIn": {
       "title": "Entre no aplicativo",
@@ -26,7 +31,7 @@
     "clearEnv": {
       "title": "Feche os outros aplicativos",
       "body": "Navegadores, gravadores de tela, assistentes de IA e aplicativos de videochamada precisam estar fechados para continuar.",
-      "tip": "Feche todo o resto antes de selecionar Fazer entrevista."
+      "tip": "Feche-os também pela barra de menus ou bandeja do sistema, não só as janelas."
     },
     "permissions": {
       "title": "Permita câmera, microfone e tela",
@@ -46,9 +51,29 @@
       "body": "A entrevista abre em tela cheia com a gravação ligada. Responda cada pergunta no tempo dela; você pode navegar entre as perguntas até o cronômetro acabar."
     }
   },
+  "scene": {
+    "app": "LetsHyre",
+    "signIn": "Entrar",
+    "takeInterview": "Fazer entrevista",
+    "clear": "Tudo certo",
+    "camera": "Câmera",
+    "mic": "Microfone",
+    "screen": "Tela",
+    "matched": "Confirmado",
+    "roles": {
+      "a": "Desenvolvedor frontend",
+      "b": "Analista de dados",
+      "c": "Designer de produto"
+    },
+    "fromProfile": "Perfil",
+    "recording": "Gravando",
+    "timer": "Faltam 1:30",
+    "question": "Pergunta 1",
+    "next": "Próxima"
+  },
   "cta": {
-    "title": "Baixe o aplicativo para computador",
-    "body": "Entre com sua conta LetsHyre e comece quando estiver pronto.",
-    "button": "Baixar o aplicativo"
+    "button": "Baixar o aplicativo",
+    "forOs": "Baixar para {{os}}",
+    "body": "Abre o site da LetsHyre"
   }
 }

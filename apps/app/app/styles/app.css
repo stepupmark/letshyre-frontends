@@ -7,6 +7,7 @@
 @theme {
   --color-on-media: #fff;
   --color-scrim: rgb(0 0 0 / 0.4);
+  --color-stage: oklch(0.22 0.03 262);
 }
 
 /* Chrome tints only the <input>, so a grouped field (+91 | number) looks split;
@@ -90,6 +91,19 @@
 @utility ring-once {
   @media (prefers-reduced-motion: no-preference) {
     animation: ring-once 1.2s ease-out 1;
+  }
+}
+
+@utility scan {
+  top: 0.75rem;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: scan 0.9s ease-in-out 0.2s 2 alternate both;
+  }
+}
+
+@keyframes scan {
+  to {
+    top: calc(100% - 0.875rem);
   }
 }
 

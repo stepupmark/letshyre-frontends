@@ -1,9 +1,15 @@
 {
   "title": "Interview-Leitfaden",
-  "lead": "Acht Schritte vom Download bis zur ersten Frage. Haken Sie sie ab, während Sie sich vorbereiten.",
-  "progress": "{{done}} von {{total}} bereit",
-  "progressLabel": "Bereite Schritte",
-  "reset": "Von vorn beginnen",
+  "lead": "Vom Download bis zur ersten Frage: So läuft es Schritt für Schritt ab.",
+  "tip": "Tipp:",
+  "needTitle": "Das brauchst du",
+  "needs": {
+    "camera": "Eine funktionierende Kamera",
+    "mic": "Ein Mikrofon",
+    "screen": "Bildschirmfreigabe",
+    "room": "Einen ruhigen, hellen Raum"
+  },
+  "mobileNote": "Interviews laufen auf einem Computer. Öffne diese Seite dort, um die App zu laden.",
   "phases": {
     "setup": "Einrichten",
     "security": "Sicherheitsprüfungen",
@@ -12,8 +18,7 @@
   "steps": {
     "download": {
       "title": "Desktop-App installieren",
-      "body": "Interviews laufen nur in der LetsHyre-Desktop-App, damit die Sitzung sicher bleibt.",
-      "link": "Für Ihren Computer herunterladen"
+      "body": "Interviews laufen nur in der LetsHyre-Desktop-App, damit die Sitzung sicher bleibt."
     },
     "signIn": {
       "title": "In der App anmelden",
@@ -26,7 +31,7 @@
     "clearEnv": {
       "title": "Andere Apps schließen",
       "body": "Browser, Bildschirmrekorder, KI-Assistenten und Videoanruf-Apps müssen geschlossen sein, bevor es weitergeht.",
-      "tip": "Schließen Sie alles andere, bevor Sie „Interview starten“ wählen."
+      "tip": "Beende sie auch über die Menüleiste oder den Infobereich, nicht nur ihre Fenster."
     },
     "permissions": {
       "title": "Kamera, Mikrofon und Bildschirm erlauben",
@@ -46,9 +51,29 @@
       "body": "Das Interview öffnet sich im Vollbild mit laufender Aufzeichnung. Beantworten Sie jede Frage in ihrer Zeit; Sie können zwischen Fragen wechseln, bis der Timer abläuft."
     }
   },
+  "scene": {
+    "app": "LetsHyre",
+    "signIn": "Anmelden",
+    "takeInterview": "Interview starten",
+    "clear": "Alles bereit",
+    "camera": "Kamera",
+    "mic": "Mikrofon",
+    "screen": "Bildschirm",
+    "matched": "Bestätigt",
+    "roles": {
+      "a": "Frontend-Entwickler",
+      "b": "Datenanalyst",
+      "c": "Produktdesigner"
+    },
+    "fromProfile": "Profil",
+    "recording": "Aufnahme",
+    "timer": "Noch 1:30",
+    "question": "Frage 1",
+    "next": "Weiter"
+  },
   "cta": {
-    "title": "Desktop-App holen",
-    "body": "Melden Sie sich mit Ihrem LetsHyre-Konto an und starten Sie, wenn Sie bereit sind.",
-    "button": "App herunterladen"
+    "button": "App herunterladen",
+    "forOs": "Für {{os}} herunterladen",
+    "body": "Öffnet die LetsHyre-Website"
   }
 }

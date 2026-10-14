@@ -1,9 +1,15 @@
 {
   "title": "Interview guide",
-  "lead": "Eight steps from download to your first question. Tick them off as you get ready.",
-  "progress": "{{done}} of {{total}} ready",
-  "progressLabel": "Steps ready",
-  "reset": "Start over",
+  "lead": "From download to your first question: here's what happens, step by step.",
+  "tip": "Tip:",
+  "needTitle": "What you'll need",
+  "needs": {
+    "camera": "A working camera",
+    "mic": "A microphone",
+    "screen": "Screen sharing",
+    "room": "A quiet, well-lit room"
+  },
+  "mobileNote": "Interviews run on a computer. Open this page there to get the desktop app.",
   "phases": {
     "setup": "Set up",
     "security": "Security checks",
@@ -12,8 +18,7 @@
   "steps": {
     "download": {
       "title": "Install the desktop app",
-      "body": "Interviews run only in the LetsHyre desktop app, so the session stays secure.",
-      "link": "Download for your computer"
+      "body": "Interviews run only in the LetsHyre desktop app, so the session stays secure."
     },
     "signIn": {
       "title": "Sign in to the app",
@@ -26,7 +31,7 @@
     "clearEnv": {
       "title": "Close other apps",
       "body": "Browsers, screen recorders, AI assistants and video-call apps must be closed before you can go on.",
-      "tip": "Close everything else before you select Take interview."
+      "tip": "Quit them from the menu bar or system tray too, not just their windows."
     },
     "permissions": {
       "title": "Allow camera, microphone and screen",
@@ -46,9 +51,29 @@
       "body": "The interview opens full screen with recording on. Answer each question within its time; you can move between questions until the timer ends."
     }
   },
+  "scene": {
+    "app": "LetsHyre",
+    "signIn": "Sign in",
+    "takeInterview": "Take interview",
+    "clear": "All clear",
+    "camera": "Camera",
+    "mic": "Microphone",
+    "screen": "Screen",
+    "matched": "Matched",
+    "roles": {
+      "a": "Frontend developer",
+      "b": "Data analyst",
+      "c": "Product designer"
+    },
+    "fromProfile": "Profile",
+    "recording": "Recording",
+    "timer": "1:30 left",
+    "question": "Question 1",
+    "next": "Next"
+  },
   "cta": {
-    "title": "Get the desktop app",
-    "body": "Sign in with your LetsHyre account and start when you're ready.",
-    "button": "Download the app"
+    "button": "Download the app",
+    "forOs": "Download for {{os}}",
+    "body": "Opens the LetsHyre website"
   }
 }

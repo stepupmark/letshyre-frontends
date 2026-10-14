@@ -1,9 +1,15 @@
 {
   "title": "Guide de l'entretien",
-  "lead": "Huit étapes du téléchargement à votre première question. Cochez-les au fur et à mesure de votre préparation.",
-  "progress": "{{done}} sur {{total}} prêtes",
-  "progressLabel": "Étapes prêtes",
-  "reset": "Recommencer",
+  "lead": "Du téléchargement à votre première question : voici le déroulé, étape par étape.",
+  "tip": "Astuce :",
+  "needTitle": "Ce qu'il vous faut",
+  "needs": {
+    "camera": "Une caméra qui fonctionne",
+    "mic": "Un micro",
+    "screen": "Le partage d'écran",
+    "room": "Une pièce calme et bien éclairée"
+  },
+  "mobileNote": "Les entretiens se passent sur un ordinateur. Ouvrez cette page dessus pour obtenir l'application.",
   "phases": {
     "setup": "Installation",
     "security": "Contrôles de sécurité",
@@ -12,8 +18,7 @@
   "steps": {
     "download": {
       "title": "Installer l'application de bureau",
-      "body": "Les entretiens se déroulent uniquement dans l'application de bureau LetsHyre, pour que la session reste sécurisée.",
-      "link": "Télécharger pour votre ordinateur"
+      "body": "Les entretiens se déroulent uniquement dans l'application de bureau LetsHyre, pour que la session reste sécurisée."
     },
     "signIn": {
       "title": "Se connecter à l'application",
@@ -26,7 +31,7 @@
     "clearEnv": {
       "title": "Fermer les autres applications",
       "body": "Navigateurs, enregistreurs d'écran, assistants IA et applications d'appel vidéo doivent être fermés avant de continuer.",
-      "tip": "Fermez tout le reste avant de sélectionner Passer l'entretien."
+      "tip": "Quittez-les aussi depuis la barre des menus ou la zone de notification, pas seulement leurs fenêtres."
     },
     "permissions": {
       "title": "Autoriser la caméra, le micro et l'écran",
@@ -46,9 +51,29 @@
       "body": "L'entretien s'ouvre en plein écran avec l'enregistrement actif. Répondez à chaque question dans le temps imparti ; vous pouvez passer d'une question à l'autre jusqu'à la fin du minuteur."
     }
   },
+  "scene": {
+    "app": "LetsHyre",
+    "signIn": "Se connecter",
+    "takeInterview": "Passer l'entretien",
+    "clear": "Tout est prêt",
+    "camera": "Caméra",
+    "mic": "Micro",
+    "screen": "Écran",
+    "matched": "Vérifié",
+    "roles": {
+      "a": "Développeur frontend",
+      "b": "Analyste de données",
+      "c": "Designer produit"
+    },
+    "fromProfile": "Profil",
+    "recording": "Enregistrement",
+    "timer": "Reste 1:30",
+    "question": "Question 1",
+    "next": "Suivant"
+  },
   "cta": {
-    "title": "Obtenir l'application de bureau",
-    "body": "Connectez-vous avec votre compte LetsHyre et commencez quand vous êtes prêt.",
-    "button": "Télécharger l'application"
+    "button": "Télécharger l'application",
+    "forOs": "Télécharger pour {{os}}",
+    "body": "Ouvre le site LetsHyre"
   }
 }

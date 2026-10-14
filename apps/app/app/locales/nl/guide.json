@@ -1,9 +1,15 @@
 {
   "title": "Interviewgids",
-  "lead": "Acht stappen van download tot uw eerste vraag. Vink ze af terwijl u zich voorbereidt.",
-  "progress": "{{done}} van {{total}} klaar",
-  "progressLabel": "Stappen klaar",
-  "reset": "Opnieuw beginnen",
+  "lead": "Van download tot je eerste vraag: zo gaat het, stap voor stap.",
+  "tip": "Tip:",
+  "needTitle": "Wat je nodig hebt",
+  "needs": {
+    "camera": "Een werkende camera",
+    "mic": "Een microfoon",
+    "screen": "Scherm delen",
+    "room": "Een rustige, lichte ruimte"
+  },
+  "mobileNote": "Interviews gaan via een computer. Open deze pagina daar om de app te downloaden.",
   "phases": {
     "setup": "Installeren",
     "security": "Veiligheidscontroles",
@@ -12,8 +18,7 @@
   "steps": {
     "download": {
       "title": "Installeer de desktop-app",
-      "body": "Interviews lopen alleen in de LetsHyre-desktop-app, zodat de sessie veilig blijft.",
-      "link": "Downloaden voor uw computer"
+      "body": "Interviews lopen alleen in de LetsHyre-desktop-app, zodat de sessie veilig blijft."
     },
     "signIn": {
       "title": "Log in op de app",
@@ -26,7 +31,7 @@
     "clearEnv": {
       "title": "Sluit andere apps",
       "body": "Browsers, schermrecorders, AI-assistenten en videobel-apps moeten gesloten zijn voordat u verder kunt.",
-      "tip": "Sluit al het andere voordat u Interview starten kiest."
+      "tip": "Sluit ze ook af via de menubalk of het systeemvak, niet alleen hun vensters."
     },
     "permissions": {
       "title": "Sta camera, microfoon en scherm toe",
@@ -46,9 +51,29 @@
       "body": "Het interview opent op volledig scherm met de opname aan. Beantwoord elke vraag binnen de tijd; u kunt tussen vragen wisselen tot de timer afloopt."
     }
   },
+  "scene": {
+    "app": "LetsHyre",
+    "signIn": "Inloggen",
+    "takeInterview": "Interview starten",
+    "clear": "Alles klaar",
+    "camera": "Camera",
+    "mic": "Microfoon",
+    "screen": "Scherm",
+    "matched": "Herkend",
+    "roles": {
+      "a": "Frontend-developer",
+      "b": "Data-analist",
+      "c": "Productontwerper"
+    },
+    "fromProfile": "Profiel",
+    "recording": "Opname",
+    "timer": "Nog 1:30",
+    "question": "Vraag 1",
+    "next": "Volgende"
+  },
   "cta": {
-    "title": "Haal de desktop-app",
-    "body": "Log in met uw LetsHyre-account en begin wanneer u klaar bent.",
-    "button": "App downloaden"
+    "button": "App downloaden",
+    "forOs": "Downloaden voor {{os}}",
+    "body": "Opent de LetsHyre-website"
   }
 }
