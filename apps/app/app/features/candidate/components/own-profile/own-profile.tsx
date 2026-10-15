@@ -89,7 +89,7 @@ function Loaded({ profile }: { profile: Profile }) {
           docs={documentsOf(profile, (key) => t(`own.docs.${key}`))}
           empty={t("own.emptyBackground")}
         />
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-1 lg:grid-rows-2">
+        <div className="grid grid-cols-2 gap-3 self-start lg:grid-cols-1">
           <StatCard
             icon={Wallet}
             label={t("profile.currentPay")}
