@@ -6,7 +6,7 @@ packages, English only and never indexed. Background in [ADR 0015](../../docs/ad
 
 ```bash
 cp .env.example .env
-pnpm dev            # http://localhost:5176
+pnpm dev            # http://localhost:5175
 pnpm build          # build/client, then postbuild checks
 pnpm preview        # serves the build with its CSP as a header
 pnpm test:e2e       # playwright + axe against the build

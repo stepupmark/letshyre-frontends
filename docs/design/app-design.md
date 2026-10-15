@@ -1,7 +1,7 @@
 # App design standard
 
 The checklist every app screen is reviewed against, from the UX brief to the release. The patterns
-are in the design lab (`pnpm --filter app dev`, then `http://localhost:5175/_lab`).
+are in the design lab (`pnpm --filter app dev`, then `http://localhost:5174/_lab`).
 
 ## Foundations
 

@@ -23,3 +23,5 @@ lighthouse-report/
 !.vscode/extensions.json
 .idea
 .claude/
+
+CLAUDE.local.md
