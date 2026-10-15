@@ -39,3 +39,15 @@ export function clearDraft(key: string) {
     /* empty */
   }
 }
+
+export function clearAllDrafts() {
+  try {
+    const keys = Array.from({ length: localStorage.length }, (_, i) =>
+      localStorage.key(i)
+    )
+    for (const key of keys)
+      if (key?.startsWith(PREFIX)) localStorage.removeItem(key)
+  } catch {
+    /* empty */
+  }
+}

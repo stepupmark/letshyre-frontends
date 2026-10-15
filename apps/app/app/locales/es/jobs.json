@@ -66,6 +66,22 @@
   "post": {
     "title": "Publicar una oferta",
     "lead": "Suba la descripción del puesto y rellenaremos el formulario. Usted lo revisa y luego publica.",
+    "steps": {
+      "label": "Publicar un empleo",
+      "upload": "Subir descripción",
+      "read": "La IA la lee",
+      "review": "Revisar y publicar"
+    },
+    "upload": {
+      "title": "Empiece con su descripción del puesto",
+      "body": "Suba la descripción que enviaría a un reclutador. Rellenamos todos los campos que podemos y no se publica nada hasta que usted lo revise."
+    },
+    "how": {
+      "title": "Cómo funciona",
+      "upload": "Suba la descripción que ya tiene",
+      "read": "Nuestra IA identifica el puesto, las habilidades, el salario y la ubicación",
+      "check": "Revise cada campo, cambie lo que quiera y publique"
+    },
     "jdLabel": "Descripción del puesto",
     "jdHint": "El documento que enviaría a un reclutador",
     "titleLabel": "Título del puesto",
@@ -73,16 +89,27 @@
     "read": "Rellenar el formulario con mi descripción",
     "reading": "Leyendo su descripción…",
     "readingHint": "Suele tardar menos de un minuto. Mantenga esta pestaña abierta.",
-    "manual": "Rellenarlo yo",
+    "stages": {
+      "uploading": "Subiendo su archivo",
+      "reading": "Identificando los detalles"
+    },
+    "lookingFor": "Buscamos",
+    "found": {
+      "role": "Puesto",
+      "skills": "Habilidades",
+      "pay": "Salario",
+      "place": "Ubicación"
+    },
+    "cancel": "Cancelar",
     "needFile": "Elija primero el archivo de la descripción",
     "needTitle": "Introduzca el título del puesto",
-    "readFailed": "No hemos podido leer ese archivo. Pruebe con un PDF o un Word, o rellene el formulario usted mismo.",
-    "filledBanner_one": "Hemos rellenado {{count}} campo con su descripción. Revise los marcados antes de publicar.",
-    "filledBanner_many": "Hemos rellenado {{count}} campos con su descripción. Revise los marcados antes de publicar.",
-    "filledBanner_other": "Hemos rellenado {{count}} campos con su descripción. Revise los marcados antes de publicar.",
-    "restored": "Hemos conservado su borrador de la última vez.",
+    "needFileToPost": "Adjunte su descripción para publicar este empleo",
+    "readFailed": "No pudimos leer ese archivo. Pruebe con otro archivo PDF o Word.",
+    "reattach": {
+      "title": "Adjunte su descripción de nuevo",
+      "body": "Su borrador está aquí, pero el archivo no se guardó en este dispositivo. La descripción se publica con el empleo."
+    },
     "startOver": "Empezar de nuevo",
-    "draftSaved": "Borrador guardado en este dispositivo",
     "preview": "Vista previa",
     "submit": "Publicar oferta",
     "submitting": "Publicando…",
@@ -97,6 +124,12 @@
       "people": "A quién busca",
       "pay": "Salario y ubicación",
       "description": "Descripción"
+    },
+    "sectionHints": {
+      "role": "Título, tipo y cuántas personas necesita",
+      "people": "Habilidades, experiencia y formación",
+      "pay": "Salario y lugar de trabajo",
+      "description": "En qué consiste el puesto y qué hará la persona"
     },
     "title": "Título del puesto",
     "workMode": "Modalidad de trabajo",
@@ -160,6 +193,9 @@
     "edit": "Editar",
     "delete": "Eliminar",
     "statusLabel": "Estado de la oferta",
+    "manage": "Gestionar este empleo",
+    "pendingTitle": "Pendiente de aprobación",
+    "pendingBody": "Revisamos los empleos nuevos antes de que los vean los candidatos, normalmente en un día laborable. Aún puede editarlo.",
     "aiJd": "Rellenado con la descripción",
     "overview": "Resumen",
     "facts": {

@@ -5,6 +5,7 @@ import {
   EmptyContent,
   EmptyDescription,
   EmptyHeader,
+  EmptyMedia,
   EmptyTitle,
 } from "@workspace/ui/components/empty"
 import type { ReactNode } from "react"
@@ -14,14 +15,18 @@ export function EmptyState({
   title,
   description,
   action,
+  art,
 }: {
   title: string
   description: string
   action?: ReactNode
+  /** a drawn illustration above the title */
+  art?: ReactNode
 }) {
   return (
     <Empty className="border">
       <EmptyHeader>
+        {art && <EmptyMedia>{art}</EmptyMedia>}
         <EmptyTitle>{title}</EmptyTitle>
         <EmptyDescription>{description}</EmptyDescription>
       </EmptyHeader>

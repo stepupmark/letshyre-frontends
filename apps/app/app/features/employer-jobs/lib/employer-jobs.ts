@@ -1,3 +1,5 @@
+import type { FileRules } from "@/lib/file-rules"
+
 import type { Job } from "../schemas/employer-jobs.schema"
 import type { JobStatus } from "../types"
 
@@ -17,3 +19,8 @@ export const capitalised = (word: string) =>
   word.charAt(0).toUpperCase() + word.slice(1)
 
 export const JOB_TABS = ["all", "open", "paused", "closed", "pending"] as const
+
+export const JD_RULES: FileRules = {
+  accept: [".pdf", ".doc", ".docx"],
+  maxBytes: 5 * 1024 * 1024,
+}

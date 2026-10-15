@@ -34,6 +34,8 @@ import { useState } from "react"
 import { href } from "react-router"
 
 import { api } from "@/lib/api"
+import { clearAllDrafts } from "@/lib/draft"
+import { clearStoredFiles } from "@/lib/file-store"
 import { APP_LOCALES, changeLocale, locale } from "@/lib/i18n"
 import { useGo } from "@/lib/navigation"
 import { displayName, initials } from "@/lib/user-name"
@@ -64,6 +66,8 @@ export function UserMenu({
   const signOut = async () => {
     setLeaving(true)
     clearAssistantChats()
+    clearAllDrafts()
+    clearStoredFiles()
     try {
       await logout(api)
     } finally {

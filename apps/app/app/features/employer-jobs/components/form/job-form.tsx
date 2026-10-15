@@ -1,21 +1,6 @@
 import { useTranslation } from "@workspace/i18n/react"
-import {
-  Field,
-  FieldDescription,
-  FieldError,
-  FieldGroup,
-  FieldLabel,
-} from "@workspace/ui/components/field"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@workspace/ui/components/select"
-import { Textarea } from "@workspace/ui/components/textarea"
-import { Sparkles } from "lucide-react"
-import { useId, type ComponentProps, type ReactNode } from "react"
+import { Banknote, BriefcaseBusiness, FileText, UsersRound } from "lucide-react"
+import type { ComponentProps } from "react"
 import {
   Controller,
   useWatch,
@@ -26,7 +11,6 @@ import {
 import { TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
 
-import { SkillsField } from "./skills-field"
 import {
   EMPLOYMENT_TYPES,
   experienceText,
@@ -35,7 +19,9 @@ import {
   WORK_MODES,
   type Industry,
   type JobValues,
-} from "../lib/job-values"
+} from "../../lib/job-values"
+import { Choice, FormSection, Labelled, LongText, Range } from "./fields"
+import { SkillsField } from "./skills-field"
 
 type Name = FieldPath<JobValues>
 
@@ -68,8 +54,7 @@ export function JobForm({
     return still ? (
       <>
         {text}
-        <span className="inline-flex items-center gap-1 rounded-sm bg-info-muted px-1.5 py-0.5 text-xs font-normal text-info">
-          <Sparkles className="size-3" aria-hidden="true" />
+        <span className="pop inline-flex items-center rounded-md bg-brand-muted px-1.5 py-0.5 text-xs font-medium text-brand-text">
           {t("form.fromJd")}
         </span>
       </>
@@ -103,8 +88,12 @@ export function JobForm({
   )
 
   return (
-    <div className="flex flex-col gap-10">
-      <Section title={t("form.sections.role")}>
+    <div className="flex flex-col gap-5">
+      <FormSection
+        title={t("form.sections.role")}
+        hint={t("form.sectionHints.role")}
+        icon={BriefcaseBusiness}
+      >
         {text("title", t("form.title"), { autoComplete: "off" })}
         <div className="grid gap-6 sm:grid-cols-2">
           <Choice
@@ -136,9 +125,14 @@ export function JobForm({
           />
           {text("openings", t("form.openings"), NUMBER)}
         </div>
-      </Section>
+      </FormSection>
 
-      <Section title={t("form.sections.people")}>
+      <FormSection
+        title={t("form.sections.people")}
+        hint={t("form.sectionHints.people")}
+        icon={UsersRound}
+        delay={60}
+      >
         <Controller
           control={form.control}
           name="skills"
@@ -180,9 +174,14 @@ export function JobForm({
             hint: t("form.optional"),
           })}
         </div>
-      </Section>
+      </FormSection>
 
-      <Section title={t("form.sections.pay")}>
+      <FormSection
+        title={t("form.sections.pay")}
+        hint={t("form.sectionHints.pay")}
+        icon={Banknote}
+        delay={120}
+      >
         <Range legend={t("form.salary")} preview={salary || t("notDisclosed")}>
           {text("salary_min", t("form.min"), DECIMAL)}
           {text("salary_max", t("form.max"), DECIMAL)}
@@ -195,9 +194,14 @@ export function JobForm({
           })}
         </div>
         {text("location", t("form.location"), { hint: t("form.locationHint") })}
-      </Section>
+      </FormSection>
 
-      <Section title={t("form.sections.description")}>
+      <FormSection
+        title={t("form.sections.description")}
+        hint={t("form.sectionHints.description")}
+        icon={FileText}
+        delay={180}
+      >
         <LongText
           form={form}
           name="overview"
@@ -218,149 +222,7 @@ export function JobForm({
             max: "9999-12-31",
           })}
         </div>
-      </Section>
+      </FormSection>
     </div>
-  )
-}
-
-function Section({ title, children }: { title: string; children: ReactNode }) {
-  const id = useId()
-  return (
-    <section aria-labelledby={id} className="flex flex-col gap-6">
-      <h2 id={id} className="text-base font-semibold">
-        {title}
-      </h2>
-      <FieldGroup>{children}</FieldGroup>
-    </section>
-  )
-}
-
-function Range({
-  legend,
-  preview,
-  children,
-}: {
-  legend: string
-  preview: string
-  children: ReactNode
-}) {
-  const { t } = useTranslation("jobs")
-  return (
-    <fieldset className="flex flex-col gap-3">
-      <legend className="mb-3 text-sm font-medium">{legend}</legend>
-      <div className="grid grid-cols-2 gap-4">{children}</div>
-      <p className="text-xs text-muted-foreground" aria-live="polite">
-        {t("form.candidatesSee", { value: preview })}
-      </p>
-    </fieldset>
-  )
-}
-
-function Labelled({
-  label,
-  hint,
-  error,
-  children,
-}: {
-  label: ReactNode
-  hint?: string
-  error?: string
-  children: (id: string, describedBy: string | undefined) => ReactNode
-}) {
-  const id = useId()
-  const describedBy =
-    [hint && `${id}-hint`, error && `${id}-error`].filter(Boolean).join(" ") ||
-    undefined
-  return (
-    <Field data-invalid={Boolean(error)}>
-      <FieldLabel htmlFor={id}>{label}</FieldLabel>
-      {children(id, describedBy)}
-      {hint && <FieldDescription id={`${id}-hint`}>{hint}</FieldDescription>}
-      <FieldError id={`${id}-error`}>{error}</FieldError>
-    </Field>
-  )
-}
-
-function Choice({
-  form,
-  name,
-  label,
-  placeholder,
-  items,
-}: {
-  form: UseFormReturn<JobValues>
-  name: "work_mode" | "employment_type" | "industry"
-  label: ReactNode
-  placeholder: string
-  items: { value: string; label: string }[]
-}) {
-  const error = form.formState.errors[name]?.message
-  return (
-    <Controller
-      control={form.control}
-      name={name}
-      render={({ field }) => (
-        <Labelled label={label} error={error}>
-          {(id, describedBy) => (
-            <Select
-              items={items}
-              value={field.value || null}
-              onValueChange={(value) => {
-                field.onChange(value ?? "")
-                if (error) void form.trigger(name)
-              }}
-            >
-              <SelectTrigger
-                id={id}
-                ref={field.ref}
-                className="w-full"
-                aria-invalid={Boolean(error)}
-                aria-describedby={describedBy}
-                onBlur={field.onBlur}
-              >
-                <SelectValue placeholder={placeholder} />
-              </SelectTrigger>
-              <SelectContent>
-                {items.map((item) => (
-                  <SelectItem key={item.value} value={item.value}>
-                    {item.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          )}
-        </Labelled>
-      )}
-    />
-  )
-}
-
-function LongText({
-  form,
-  name,
-  label,
-  hint,
-  rows,
-}: {
-  form: UseFormReturn<JobValues>
-  name: "overview" | "responsibilities"
-  label: ReactNode
-  hint?: string
-  rows: number
-}) {
-  const error = form.formState.errors[name]?.message
-  return (
-    <Labelled label={label} hint={hint} error={error}>
-      {(id, describedBy) => (
-        <Textarea
-          id={id}
-          rows={rows}
-          className="field-sizing-content min-h-28"
-          aria-invalid={Boolean(error)}
-          aria-describedby={describedBy}
-          {...checkOnBlur(form, name)}
-        />
-      )}
-    </Labelled>
   )
 }

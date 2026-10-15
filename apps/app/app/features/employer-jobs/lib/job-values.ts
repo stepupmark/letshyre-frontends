@@ -345,7 +345,7 @@ export function toPayload(values: JobValues) {
 }
 
 /** Create goes as multipart: the job as JSON in `file`, the JD beside it. */
-export function toCreateForm(values: JobValues, jd: File | null) {
+export function toCreateForm(values: JobValues, jd: File) {
   const form = new FormData()
   form.append("title", values.title.trim())
   form.append(
@@ -357,6 +357,6 @@ export function toCreateForm(values: JobValues, jd: File | null) {
       is_active: true,
     })
   )
-  if (jd) form.append("jd_file", jd)
+  form.append("jd_file", jd)
   return form
 }

@@ -133,6 +133,19 @@
   }
 }
 
+/* a scan band moving down a page and back while something is read */
+@utility sweep {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: sweep 1.6s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes sweep {
+  to {
+    translate: 0 150px;
+  }
+}
+
 @keyframes scan {
   to {
     top: calc(100% - 0.875rem);

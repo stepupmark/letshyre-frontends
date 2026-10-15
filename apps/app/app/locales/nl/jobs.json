@@ -63,6 +63,22 @@
   "post": {
     "title": "Vacature plaatsen",
     "lead": "Upload uw functieomschrijving en wij vullen het formulier in. U controleert het en plaatst het daarna.",
+    "steps": {
+      "label": "Vacature plaatsen",
+      "upload": "Omschrijving uploaden",
+      "read": "AI leest mee",
+      "review": "Controleren en plaatsen"
+    },
+    "upload": {
+      "title": "Begin met uw functieomschrijving",
+      "body": "Upload de omschrijving die u ook naar een recruiter zou sturen. We vullen elk veld in dat we kunnen, en niets wordt geplaatst voordat u het hebt gecontroleerd."
+    },
+    "how": {
+      "title": "Zo werkt het",
+      "upload": "Upload de omschrijving die u al hebt",
+      "read": "Onze AI haalt de functie, vaardigheden, het salaris en de locatie eruit",
+      "check": "Controleer elk veld, pas aan wat u wilt en plaats de vacature"
+    },
     "jdLabel": "Functieomschrijving",
     "jdHint": "Het document dat u naar een recruiter zou sturen",
     "titleLabel": "Functietitel",
@@ -70,15 +86,27 @@
     "read": "Formulier vullen vanuit mijn omschrijving",
     "reading": "Uw omschrijving wordt gelezen…",
     "readingHint": "Dit duurt meestal minder dan een minuut. Houd dit tabblad open.",
-    "manual": "Zelf invullen",
+    "stages": {
+      "uploading": "Uw bestand wordt geüpload",
+      "reading": "De details worden eruit gehaald"
+    },
+    "lookingFor": "We zoeken naar",
+    "found": {
+      "role": "Functie",
+      "skills": "Vaardigheden",
+      "pay": "Salaris",
+      "place": "Locatie"
+    },
+    "cancel": "Annuleren",
     "needFile": "Kies eerst uw omschrijvingsbestand",
     "needTitle": "Vul de functietitel in",
-    "readFailed": "We konden dat bestand niet lezen. Probeer een pdf- of Word-bestand, of vul het formulier zelf in.",
-    "filledBanner_one": "We hebben {{count}} veld ingevuld vanuit uw omschrijving. Controleer de gemarkeerde velden voordat u plaatst.",
-    "filledBanner_other": "We hebben {{count}} velden ingevuld vanuit uw omschrijving. Controleer de gemarkeerde velden voordat u plaatst.",
-    "restored": "We hebben uw concept van de vorige keer bewaard.",
+    "needFileToPost": "Voeg uw omschrijving toe om deze vacature te plaatsen",
+    "readFailed": "We konden dat bestand niet lezen. Probeer een ander PDF- of Word-bestand.",
+    "reattach": {
+      "title": "Voeg uw omschrijving opnieuw toe",
+      "body": "Uw concept is er nog, maar het bestand is niet op dit apparaat bewaard. De omschrijving wordt met de vacature geplaatst."
+    },
     "startOver": "Opnieuw beginnen",
-    "draftSaved": "Concept opgeslagen op dit apparaat",
     "preview": "Voorbeeld",
     "submit": "Vacature plaatsen",
     "submitting": "Bezig met plaatsen…",
@@ -93,6 +121,12 @@
       "people": "Wie u zoekt",
       "pay": "Salaris en locatie",
       "description": "Omschrijving"
+    },
+    "sectionHints": {
+      "role": "Titel, soort en hoeveel mensen u zoekt",
+      "people": "Vaardigheden, ervaring en opleiding",
+      "pay": "Salaris en werkplek",
+      "description": "Wat de functie inhoudt en wat iemand gaat doen"
     },
     "title": "Functietitel",
     "workMode": "Werkvorm",
@@ -156,6 +190,9 @@
     "edit": "Bewerken",
     "delete": "Verwijderen",
     "statusLabel": "Status van de vacature",
+    "manage": "Deze vacature beheren",
+    "pendingTitle": "Wacht op goedkeuring",
+    "pendingBody": "We controleren nieuwe vacatures voordat kandidaten ze zien, meestal binnen een werkdag. U kunt hem nog steeds bewerken.",
     "aiJd": "Ingevuld vanuit omschrijving",
     "overview": "Overzicht",
     "facts": {

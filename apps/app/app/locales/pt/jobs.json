@@ -66,6 +66,22 @@
   "post": {
     "title": "Publicar uma vaga",
     "lead": "Envie a descrição da vaga e nós preenchemos o formulário. Você confere e depois publica.",
+    "steps": {
+      "label": "Publicar uma vaga",
+      "upload": "Enviar descrição",
+      "read": "A IA lê",
+      "review": "Revisar e publicar"
+    },
+    "upload": {
+      "title": "Comece pela descrição da vaga",
+      "body": "Envie a descrição que você mandaria a um recrutador. Preenchemos todos os campos possíveis, e nada é publicado antes da sua revisão."
+    },
+    "how": {
+      "title": "Como funciona",
+      "upload": "Envie a descrição que você já tem",
+      "read": "Nossa IA identifica o cargo, as habilidades, o salário e o local",
+      "check": "Revise cada campo, altere o que quiser e publique"
+    },
     "jdLabel": "Descrição da vaga",
     "jdHint": "O documento que você mandaria para um recrutador",
     "titleLabel": "Título da vaga",
@@ -73,16 +89,27 @@
     "read": "Preencher o formulário com minha descrição",
     "reading": "Lendo sua descrição…",
     "readingHint": "Costuma levar menos de um minuto. Mantenha esta aba aberta.",
-    "manual": "Preencher eu mesmo",
+    "stages": {
+      "uploading": "Enviando seu arquivo",
+      "reading": "Identificando os detalhes"
+    },
+    "lookingFor": "Procuramos",
+    "found": {
+      "role": "Cargo",
+      "skills": "Habilidades",
+      "pay": "Salário",
+      "place": "Local"
+    },
+    "cancel": "Cancelar",
     "needFile": "Escolha primeiro o arquivo da descrição",
     "needTitle": "Digite o título da vaga",
-    "readFailed": "Não conseguimos ler esse arquivo. Tente um PDF ou Word, ou preencha o formulário você mesmo.",
-    "filledBanner_one": "Preenchemos {{count}} campo com sua descrição. Confira os marcados antes de publicar.",
-    "filledBanner_many": "Preenchemos {{count}} campos com sua descrição. Confira os marcados antes de publicar.",
-    "filledBanner_other": "Preenchemos {{count}} campos com sua descrição. Confira os marcados antes de publicar.",
-    "restored": "Mantivemos seu rascunho da última vez.",
+    "needFileToPost": "Anexe sua descrição para publicar esta vaga",
+    "readFailed": "Não conseguimos ler esse arquivo. Tente outro arquivo PDF ou Word.",
+    "reattach": {
+      "title": "Anexe sua descrição novamente",
+      "body": "Seu rascunho está aqui, mas o arquivo não foi guardado neste dispositivo. A descrição é publicada com a vaga."
+    },
     "startOver": "Recomeçar",
-    "draftSaved": "Rascunho salvo neste dispositivo",
     "preview": "Prévia",
     "submit": "Publicar vaga",
     "submitting": "Publicando…",
@@ -97,6 +124,12 @@
       "people": "Quem você procura",
       "pay": "Salário e local",
       "description": "Descrição"
+    },
+    "sectionHints": {
+      "role": "Título, tipo e quantas pessoas você precisa",
+      "people": "Habilidades, experiência e formação",
+      "pay": "Salário e local de trabalho",
+      "description": "Do que se trata a vaga e o que a pessoa vai fazer"
     },
     "title": "Título da vaga",
     "workMode": "Modelo de trabalho",
@@ -160,6 +193,9 @@
     "edit": "Editar",
     "delete": "Excluir",
     "statusLabel": "Status da vaga",
+    "manage": "Gerenciar esta vaga",
+    "pendingTitle": "Aguardando aprovação",
+    "pendingBody": "Revisamos as vagas novas antes que os candidatos as vejam, geralmente em um dia útil. Você ainda pode editá-la.",
     "aiJd": "Preenchido pela descrição",
     "overview": "Visão geral",
     "facts": {

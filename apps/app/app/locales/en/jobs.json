@@ -63,6 +63,22 @@
   "post": {
     "title": "Post a job",
     "lead": "Upload your job description and we'll fill in the form. You check it, then post.",
+    "steps": {
+      "label": "Posting a job",
+      "upload": "Upload JD",
+      "read": "AI reads it",
+      "review": "Check and post"
+    },
+    "upload": {
+      "title": "Start with your job description",
+      "body": "Upload the JD you'd send a recruiter. We fill in every field we can, and nothing is posted until you check it."
+    },
+    "how": {
+      "title": "How it works",
+      "upload": "Upload the JD you already have",
+      "read": "Our AI picks out the role, skills, pay and place",
+      "check": "Check each field, change anything, then post"
+    },
     "jdLabel": "Job description",
     "jdHint": "The document you'd send a recruiter",
     "titleLabel": "Job title",
@@ -70,15 +86,27 @@
     "read": "Fill the form from my JD",
     "reading": "Reading your JD…",
     "readingHint": "This usually takes under a minute. Keep this tab open.",
-    "manual": "Fill it in myself",
+    "stages": {
+      "uploading": "Uploading your file",
+      "reading": "Picking out the details"
+    },
+    "lookingFor": "Looking for",
+    "found": {
+      "role": "Role",
+      "skills": "Skills",
+      "pay": "Pay",
+      "place": "Place"
+    },
+    "cancel": "Cancel",
     "needFile": "Choose your JD file first",
     "needTitle": "Enter the job title",
-    "readFailed": "We couldn't read that file. Try a PDF or Word file, or fill in the form yourself.",
-    "filledBanner_one": "We filled {{count}} field from your JD. Check the marked ones before you post.",
-    "filledBanner_other": "We filled {{count}} fields from your JD. Check the marked ones before you post.",
-    "restored": "We kept your draft from last time.",
+    "needFileToPost": "Attach your JD to post this job",
+    "readFailed": "We couldn't read that file. Try another PDF or Word file.",
+    "reattach": {
+      "title": "Attach your JD again",
+      "body": "Your draft is here, but the file wasn't kept on this device. The JD is posted with the job."
+    },
     "startOver": "Start over",
-    "draftSaved": "Draft saved on this device",
     "preview": "Preview",
     "submit": "Post job",
     "submitting": "Posting…",
@@ -93,6 +121,12 @@
       "people": "Who you're looking for",
       "pay": "Pay and place",
       "description": "Description"
+    },
+    "sectionHints": {
+      "role": "Title, type and how many people you need",
+      "people": "Skills, experience and education",
+      "pay": "Salary and where the work happens",
+      "description": "What the job is and what they'll do"
     },
     "title": "Job title",
     "workMode": "Work mode",
@@ -156,6 +190,9 @@
     "edit": "Edit",
     "delete": "Delete",
     "statusLabel": "Job status",
+    "manage": "Manage this job",
+    "pendingTitle": "Waiting for approval",
+    "pendingBody": "We check new jobs before candidates see them, usually within a working day. You can still edit it.",
     "aiJd": "Filled from JD",
     "overview": "Overview",
     "facts": {

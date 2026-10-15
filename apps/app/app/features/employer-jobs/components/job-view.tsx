@@ -6,15 +6,22 @@ import {
   BriefcaseBusiness,
   CalendarClock,
   Clock,
+  FileText,
   GraduationCap,
+  ListChecks,
   MapPin,
   Users,
+  Wrench,
+  type LucideIcon,
 } from "lucide-react"
+import { useId, type ReactNode } from "react"
 
 import { dateLabel } from "../lib/format"
 import {
+  EMPLOYMENT_TYPES,
   experienceText,
   salaryText,
+  WORK_MODES,
   type Industry,
   type JobValues,
 } from "../lib/job-values"
@@ -40,7 +47,8 @@ export function JobView({
     .split("\n")
     .map((line) => line.trim())
     .filter(Boolean)
-  const deadline = dateLabel(values.deadline, locale)
+  const mode = WORK_MODES.find((m) => m === values.work_mode)
+  const employment = EMPLOYMENT_TYPES.find((e) => e === values.employment_type)
 
   const facts = [
     {
@@ -60,16 +68,12 @@ export function JobView({
     {
       icon: Clock,
       label: t("detail.facts.workMode"),
-      value: values.work_mode
-        ? [
-            t(`workMode.${values.work_mode as "remote"}`),
-            values.employment_type
-              ? t(`employment.${values.employment_type as "full_time"}`)
-              : "",
-          ]
-            .filter(Boolean)
-            .join(" · ")
-        : "",
+      value: [
+        mode && t(`workMode.${mode}`),
+        employment && t(`employment.${employment}`),
+      ]
+        .filter(Boolean)
+        .join(" · "),
     },
     { icon: Building2, label: t("detail.facts.industry"), value: industry },
     {
@@ -85,49 +89,54 @@ export function JobView({
     {
       icon: CalendarClock,
       label: t("detail.facts.applyBy"),
-      value: deadline ?? "",
+      value: dateLabel(values.deadline, locale) ?? "",
     },
   ].filter((fact) => fact.value)
 
   return (
     <article className="flex flex-col gap-8 text-sm">
-      <dl className="grid gap-x-6 gap-y-4 sm:grid-cols-2">
-        {facts.map(({ icon: Icon, label, value }) => (
-          <div key={label} className="flex items-start gap-3">
-            <Icon
-              className="mt-0.5 size-4 shrink-0 text-muted-foreground"
-              aria-hidden="true"
-            />
-            <div className="min-w-0">
-              <dt className="text-xs text-muted-foreground">{label}</dt>
-              <dd className="font-medium wrap-anywhere">{value}</dd>
-            </div>
+      <dl className="grid gap-3 sm:grid-cols-2">
+        {facts.map(({ icon: Icon, label, value }, i) => (
+          <div
+            key={label}
+            style={{ transitionDelay: `${i * 40}ms` }}
+            className="settle relative flex min-h-15 flex-col justify-center gap-0.5 rounded-xl border p-3 ps-15"
+          >
+            <dt className="text-xs text-muted-foreground">
+              <span
+                aria-hidden="true"
+                className="absolute inset-s-3 top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-lg bg-brand-muted text-brand-text [&_svg]:size-4"
+              >
+                <Icon />
+              </span>
+              {label}
+            </dt>
+            <dd className="font-medium wrap-anywhere tabular-nums">{value}</dd>
           </div>
         ))}
       </dl>
 
-      <section className="flex flex-col gap-2">
-        <h3 className="font-medium">{t("detail.about")}</h3>
-        <p className="leading-relaxed whitespace-pre-line text-muted-foreground">
+      <Part title={t("detail.about")} icon={FileText}>
+        <p className="text-pretty whitespace-pre-line text-muted-foreground">
           {values.overview.trim() || t("detail.none")}
         </p>
-      </section>
+      </Part>
 
-      <section className="flex flex-col gap-2">
-        <h3 className="font-medium">{t("detail.responsibilities")}</h3>
+      <Part title={t("detail.responsibilities")} icon={ListChecks}>
         {responsibilities.length ? (
-          <ul className="flex list-disc flex-col gap-1.5 ps-5 leading-relaxed text-muted-foreground marker:text-foreground/40">
+          <ul className="flex list-disc flex-col gap-2 ps-5 text-muted-foreground marker:text-brand">
             {responsibilities.map((line, i) => (
-              <li key={i}>{line}</li>
+              <li key={i} className="text-pretty">
+                {line}
+              </li>
             ))}
           </ul>
         ) : (
           <p className="text-muted-foreground">{t("detail.none")}</p>
         )}
-      </section>
+      </Part>
 
-      <section className="flex flex-col gap-2">
-        <h3 className="font-medium">{t("detail.skills")}</h3>
+      <Part title={t("detail.skills")} icon={Wrench}>
         {values.skills.length ? (
           <ul className="flex flex-wrap gap-1.5">
             {values.skills.map((skill) => (
@@ -139,7 +148,31 @@ export function JobView({
         ) : (
           <p className="text-muted-foreground">{t("detail.none")}</p>
         )}
-      </section>
+      </Part>
     </article>
+  )
+}
+
+function Part({
+  title,
+  icon: Icon,
+  children,
+}: {
+  title: string
+  icon: LucideIcon
+  children: ReactNode
+}) {
+  const id = useId()
+  return (
+    <section aria-labelledby={id} className="flex flex-col gap-3">
+      <h2
+        id={id}
+        className="flex items-center gap-2 text-base font-semibold text-brand-text"
+      >
+        <Icon aria-hidden="true" className="size-4 shrink-0" />
+        {title}
+      </h2>
+      {children}
+    </section>
   )
 }

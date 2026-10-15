@@ -41,19 +41,23 @@ test("an employer posts a job from their JD after checking what it filled", asyn
     },
   })
   await signInAs("employer")
-  await page.goto("/employer/jobs/new")
+  // every job starts from a JD, so the review can't be opened directly
+  await page.goto("/employer/jobs/new?step=review")
+  await expect(
+    page.getByRole("heading", { name: "Start with your job description" })
+  ).toBeVisible()
+  await expect(
+    page.getByRole("button", { name: "Fill it in myself" })
+  ).toHaveCount(0)
 
-  await page.getByRole("button", { name: "Fill the form from my JD" }).click()
-  await expect(page.getByText("Choose your JD file first")).toBeVisible()
+  await page.getByLabel("Job title").fill("React Developer")
   await page.locator('input[type="file"]').setInputFiles({
     name: "jd.pdf",
     mimeType: "application/pdf",
     buffer: Buffer.from("%PDF-1.4 jd"),
   })
-  await page.getByLabel("Job title").fill("React Developer")
   await page.getByRole("button", { name: "Fill the form from my JD" }).click()
 
-  await expect(page.getByText(/We filled 15 fields from your JD/)).toBeVisible()
   await expect(page.getByLabel("Job title")).toHaveValue(
     "Senior React Developer"
   )
@@ -64,11 +68,40 @@ test("an employer posts a job from their JD after checking what it filled", asyn
   await expect(marks).toHaveCount(14)
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
 
-  // a refresh keeps the draft
-  await expect(page.getByText("Draft saved on this device")).toBeVisible()
+  // a refresh keeps the draft and the JD
+  await expect(
+    page.getByText("Draft saved on this device").first()
+  ).toBeVisible()
+  await expect
+    .poll(() =>
+      page.evaluate(
+        () =>
+          new Promise<number>((resolve) => {
+            const open = indexedDB.open("letshyre-drafts")
+            open.onsuccess = () => {
+              // the app may not have created the store yet
+              if (!open.result.objectStoreNames.contains("post-job-files")) {
+                open.result.close()
+                resolve(0)
+                return
+              }
+              const count = open.result
+                .transaction("post-job-files")
+                .objectStore("post-job-files")
+                .count()
+              count.onsuccess = () => {
+                resolve(count.result)
+                open.result.close()
+              }
+            }
+          })
+      )
+    )
+    .toBe(1)
   await page.reload()
   await expect(page.getByLabel("City")).toHaveValue("Secunderabad")
   await expect(marks).toHaveCount(14)
+  await expect(page.getByText("Attach your JD again")).toHaveCount(0)
 
   await page.getByRole("button", { name: "Preview" }).click()
   const preview = page.getByRole("dialog", { name: "Senior React Developer" })
@@ -84,11 +117,14 @@ test("an employer posts a job from their JD after checking what it filled", asyn
     '"work_mode":"hybrid"',
     '"skills_required":["React","TypeScript"]',
     '"application_deadline":"2099-12-31"',
+    'name="jd_file"; filename="jd.pdf"',
   ])
     expect(posted).toContain(part)
   expect(
-    await page.evaluate(() => localStorage.getItem("draft:v1:post-job"))
-  ).toBeNull()
+    await page.evaluate(() =>
+      Object.keys(localStorage).filter((key) => key.startsWith("draft:"))
+    )
+  ).toEqual([])
 })
 
 test("jobs can be paused in bulk and the change undone", async ({
@@ -138,6 +174,7 @@ test("a job is edited in place", async ({ page, api, signInAs }) => {
     page.getByRole("heading", { name: "Senior React Developer" })
   ).toBeVisible()
   await expect(page.getByText("Mentor two developers")).toBeVisible()
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
   await page.getByRole("button", { name: "Edit" }).click()
   await page.getByLabel("Openings").fill("3")
   await page.getByRole("button", { name: "Save changes" }).click()

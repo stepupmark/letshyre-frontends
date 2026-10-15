@@ -66,6 +66,22 @@
   "post": {
     "title": "Pubblica un'offerta",
     "lead": "Carica la descrizione del ruolo e compiliamo noi il modulo. Tu controlli, poi pubblichi.",
+    "steps": {
+      "label": "Pubblicare un annuncio",
+      "upload": "Carica descrizione",
+      "read": "L'IA la legge",
+      "review": "Controlla e pubblica"
+    },
+    "upload": {
+      "title": "Parti dalla descrizione del ruolo",
+      "body": "Carica la descrizione che invieresti a un recruiter. Compiliamo tutti i campi possibili e nulla viene pubblicato finché non lo controlli."
+    },
+    "how": {
+      "title": "Come funziona",
+      "upload": "Carica la descrizione che hai già",
+      "read": "La nostra IA individua ruolo, competenze, stipendio e sede",
+      "check": "Controlla ogni campo, modifica ciò che vuoi, poi pubblica"
+    },
     "jdLabel": "Descrizione del ruolo",
     "jdHint": "Il documento che invieresti a un recruiter",
     "titleLabel": "Titolo del ruolo",
@@ -73,16 +89,27 @@
     "read": "Compila il modulo dalla mia descrizione",
     "reading": "Lettura della descrizione…",
     "readingHint": "Di solito ci vuole meno di un minuto. Tieni aperta questa scheda.",
-    "manual": "Lo compilo io",
+    "stages": {
+      "uploading": "Caricamento del file",
+      "reading": "Individuazione dei dettagli"
+    },
+    "lookingFor": "Cerchiamo",
+    "found": {
+      "role": "Ruolo",
+      "skills": "Competenze",
+      "pay": "Stipendio",
+      "place": "Sede"
+    },
+    "cancel": "Annulla",
     "needFile": "Scegli prima il file della descrizione",
     "needTitle": "Inserisci il titolo del ruolo",
-    "readFailed": "Non siamo riusciti a leggere il file. Prova un PDF o un file Word, oppure compila il modulo tu.",
-    "filledBanner_one": "Abbiamo compilato {{count}} campo dalla tua descrizione. Controlla quelli segnati prima di pubblicare.",
-    "filledBanner_many": "Abbiamo compilato {{count}} campi dalla tua descrizione. Controlla quelli segnati prima di pubblicare.",
-    "filledBanner_other": "Abbiamo compilato {{count}} campi dalla tua descrizione. Controlla quelli segnati prima di pubblicare.",
-    "restored": "Abbiamo tenuto la tua bozza dell'ultima volta.",
+    "needFileToPost": "Allega la descrizione per pubblicare questo annuncio",
+    "readFailed": "Non siamo riusciti a leggere il file. Prova con un altro PDF o file Word.",
+    "reattach": {
+      "title": "Allega di nuovo la descrizione",
+      "body": "La bozza c'è, ma il file non è stato salvato su questo dispositivo. La descrizione viene pubblicata con l'annuncio."
+    },
     "startOver": "Ricomincia",
-    "draftSaved": "Bozza salvata su questo dispositivo",
     "preview": "Anteprima",
     "submit": "Pubblica offerta",
     "submitting": "Pubblicazione…",
@@ -97,6 +124,12 @@
       "people": "Chi cerchi",
       "pay": "Retribuzione e sede",
       "description": "Descrizione"
+    },
+    "sectionHints": {
+      "role": "Titolo, tipo e quante persone ti servono",
+      "people": "Competenze, esperienza e formazione",
+      "pay": "Stipendio e luogo di lavoro",
+      "description": "Di cosa si tratta e cosa farà la persona"
     },
     "title": "Titolo del ruolo",
     "workMode": "Modalità di lavoro",
@@ -160,6 +193,9 @@
     "edit": "Modifica",
     "delete": "Elimina",
     "statusLabel": "Stato dell'offerta",
+    "manage": "Gestisci questo annuncio",
+    "pendingTitle": "In attesa di approvazione",
+    "pendingBody": "Controlliamo i nuovi annunci prima che li vedano i candidati, di solito entro un giorno lavorativo. Puoi ancora modificarlo.",
     "aiJd": "Compilato dalla descrizione",
     "overview": "Panoramica",
     "facts": {

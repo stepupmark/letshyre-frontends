@@ -1,6 +1,6 @@
-export { JobDetail } from "./components/job-detail"
+export { JobDetail } from "./components/job-detail/job-detail"
 export { JobsList } from "./components/jobs-list"
-export { PostJob } from "./components/post-job"
+export { PostJob } from "./components/post-job/post-job"
 export { isJobId } from "./lib/employer-jobs"
 export { jobQuery, jobsQuery } from "./queries/employer-jobs.queries"
 export { useJobOptions } from "./queries/use-job-options"

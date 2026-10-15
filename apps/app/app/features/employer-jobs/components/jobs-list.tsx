@@ -1,12 +1,7 @@
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import { Tabs, TabsList, TabsTrigger } from "@workspace/ui/components/tabs"
-import {
-  keepPreviousData,
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from "@tanstack/react-query"
+import { keepPreviousData, useQuery } from "@tanstack/react-query"
 import { Plus } from "lucide-react"
 import { useCallback, useMemo } from "react"
 import { href, useSearchParams } from "react-router"
@@ -22,11 +17,12 @@ import { undoToast } from "@/lib/undo-toast"
 import { buttonLink } from "@/lib/button-link"
 
 import { JOB_TABS, statusOf } from "../lib/employer-jobs"
-import { JOBS_KEY, jobsQuery } from "../queries/employer-jobs.queries"
-import { setJobStatus } from "../services/employer-jobs.service"
+import { dateLabel, experienceOf, placeOf, statusTone } from "../lib/format"
+import { useSetJobsStatus } from "../mutations/use-job-changes"
+import { jobsQuery } from "../queries/employer-jobs.queries"
 import { type Job } from "../schemas/employer-jobs.schema"
 import { type JobStatus, type JobTab } from "../types"
-import { dateLabel, experienceOf, placeOf, statusTone } from "../lib/format"
+import { EmptyJobsArt } from "./art/jd-art"
 
 const BULK = [
   { status: "open", label: "list.bulk.open" },
@@ -46,7 +42,6 @@ const ownStatus = (job: Job): JobStatus => {
 export function JobsList() {
   const { t } = useTranslation(["jobs", "common"])
   const locale = useLocale()
-  const queryClient = useQueryClient()
   const [search, setSearch] = useSearchParams()
   const table = readTableParams(search, { sortable: [] })
   const raw = search.get("status")?.toLowerCase()
@@ -80,7 +75,7 @@ export function JobsList() {
             <AppLink
               to={href("/employer/jobs/:jobId", { jobId: row.original.id })}
               data-row-open=""
-              className="w-fit truncate font-medium outline-none hover:underline focus-visible:rounded-sm focus-visible:ring-[3px] focus-visible:ring-ring/50"
+              className="w-fit truncate font-medium outline-none hover:underline focus-visible:rounded-sm focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               {row.original.title}
             </AppLink>
@@ -124,28 +119,14 @@ export function JobsList() {
     [t, locale, years]
   )
 
-  const change = useMutation({
-    mutationFn: async ({
-      ids,
-      status,
-    }: {
-      ids: string[]
-      status: JobStatus
-    }) => {
-      const results = await Promise.allSettled(
-        ids.map((id) => setJobStatus(id, status))
-      )
-      return ids.filter((_, i) => results[i]?.status === "fulfilled")
-    },
-    onSettled: () => queryClient.invalidateQueries({ queryKey: JOBS_KEY }),
-  })
+  const change = useSetJobsStatus()
 
   const apply = (ids: string[], status: JobStatus, clear: () => void) => {
     const before = new Map(
       (rows ?? []).map((job) => [job.id, ownStatus(job)] as const)
     )
     change.mutate(
-      { ids, status },
+      ids.map((id) => ({ id, status })),
       {
         onSuccess: (done) => {
           clear()
@@ -159,12 +140,14 @@ export function JobsList() {
             }),
             t("common:undo"),
             () => {
-              void Promise.allSettled(
-                done.map((id) => setJobStatus(id, before.get(id) ?? "open"))
-              ).then(async () => {
-                await queryClient.invalidateQueries({ queryKey: JOBS_KEY })
-                toast(t("list.undone"))
-              })
+              change.mutate(
+                done.map((id) => ({ id, status: before.get(id) ?? "open" })),
+                {
+                  onSuccess: () => {
+                    toast(t("list.undone"))
+                  },
+                }
+              )
             }
           )
         },
@@ -224,6 +207,7 @@ export function JobsList() {
         onOpen={() => undefined}
         empty={
           <EmptyState
+            art={<EmptyJobsArt />}
             title={t("list.emptyTitle")}
             description={t("list.emptyBody")}
             action={
@@ -254,10 +238,10 @@ export function JobsList() {
           return (
             <AppLink
               to={href("/employer/jobs/:jobId", { jobId: job.id })}
-              className="flex flex-col gap-2 rounded-lg border p-4 transition-colors active:bg-muted"
+              className="flex flex-col gap-2 rounded-xl border p-4 transition-colors active:bg-muted"
             >
               <span className="flex items-start justify-between gap-3">
-                <span className="min-w-0 truncate font-medium">
+                <span className="min-w-0 truncate font-medium text-brand-text">
                   {job.title}
                 </span>
                 <StatusBadge tone={statusTone[status]}>

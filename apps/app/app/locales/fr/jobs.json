@@ -66,6 +66,22 @@
   "post": {
     "title": "Publier une offre",
     "lead": "Importez votre fiche de poste et nous remplirons le formulaire. Vous vérifiez, puis vous publiez.",
+    "steps": {
+      "label": "Publier une offre",
+      "upload": "Importer la fiche",
+      "read": "L'IA la lit",
+      "review": "Vérifier et publier"
+    },
+    "upload": {
+      "title": "Commencez par votre fiche de poste",
+      "body": "Importez la fiche que vous enverriez à un recruteur. Nous remplissons tous les champs possibles, et rien n'est publié avant votre vérification."
+    },
+    "how": {
+      "title": "Comment ça marche",
+      "upload": "Importez la fiche que vous avez déjà",
+      "read": "Notre IA repère le poste, les compétences, le salaire et le lieu",
+      "check": "Vérifiez chaque champ, modifiez ce que vous voulez, puis publiez"
+    },
     "jdLabel": "Fiche de poste",
     "jdHint": "Le document que vous enverriez à un recruteur",
     "titleLabel": "Intitulé du poste",
@@ -73,16 +89,27 @@
     "read": "Remplir le formulaire depuis ma fiche",
     "reading": "Lecture de votre fiche…",
     "readingHint": "Cela prend généralement moins d'une minute. Gardez cet onglet ouvert.",
-    "manual": "Le remplir moi-même",
+    "stages": {
+      "uploading": "Import de votre fichier",
+      "reading": "Repérage des informations"
+    },
+    "lookingFor": "Nous cherchons",
+    "found": {
+      "role": "Poste",
+      "skills": "Compétences",
+      "pay": "Salaire",
+      "place": "Lieu"
+    },
+    "cancel": "Annuler",
     "needFile": "Choisissez d'abord votre fiche de poste",
     "needTitle": "Saisissez l'intitulé du poste",
-    "readFailed": "Nous n'avons pas pu lire ce fichier. Essayez un PDF ou un fichier Word, ou remplissez le formulaire vous-même.",
-    "filledBanner_one": "Nous avons rempli {{count}} champ depuis votre fiche. Vérifiez les champs marqués avant de publier.",
-    "filledBanner_many": "Nous avons rempli {{count}} champs depuis votre fiche. Vérifiez les champs marqués avant de publier.",
-    "filledBanner_other": "Nous avons rempli {{count}} champs depuis votre fiche. Vérifiez les champs marqués avant de publier.",
-    "restored": "Nous avons conservé votre brouillon de la dernière fois.",
+    "needFileToPost": "Joignez votre fiche pour publier cette offre",
+    "readFailed": "Nous n'avons pas pu lire ce fichier. Essayez un autre fichier PDF ou Word.",
+    "reattach": {
+      "title": "Joignez à nouveau votre fiche",
+      "body": "Votre brouillon est là, mais le fichier n'a pas été conservé sur cet appareil. La fiche est publiée avec l'offre."
+    },
     "startOver": "Recommencer",
-    "draftSaved": "Brouillon enregistré sur cet appareil",
     "preview": "Aperçu",
     "submit": "Publier l'offre",
     "submitting": "Publication…",
@@ -97,6 +124,12 @@
       "people": "Qui vous recherchez",
       "pay": "Rémunération et lieu",
       "description": "Description"
+    },
+    "sectionHints": {
+      "role": "Intitulé, type de contrat et nombre de postes",
+      "people": "Compétences, expérience et formation",
+      "pay": "Salaire et lieu de travail",
+      "description": "Le poste et les missions"
     },
     "title": "Intitulé du poste",
     "workMode": "Mode de travail",
@@ -160,6 +193,9 @@
     "edit": "Modifier",
     "delete": "Supprimer",
     "statusLabel": "Statut de l'offre",
+    "manage": "Gérer cette offre",
+    "pendingTitle": "En attente de validation",
+    "pendingBody": "Nous vérifions les nouvelles offres avant que les candidats les voient, en général sous un jour ouvré. Vous pouvez toujours la modifier.",
     "aiJd": "Rempli depuis la fiche",
     "overview": "Aperçu",
     "facts": {

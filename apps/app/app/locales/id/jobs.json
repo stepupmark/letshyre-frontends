@@ -60,6 +60,22 @@
   "post": {
     "title": "Pasang lowongan",
     "lead": "Unggah deskripsi pekerjaan Anda dan kami isi formulirnya. Anda memeriksa, lalu memasang.",
+    "steps": {
+      "label": "Memasang lowongan",
+      "upload": "Unggah deskripsi",
+      "read": "AI membacanya",
+      "review": "Periksa dan pasang"
+    },
+    "upload": {
+      "title": "Mulai dari deskripsi pekerjaan Anda",
+      "body": "Unggah deskripsi yang biasa Anda kirim ke perekrut. Kami mengisi semua kolom yang bisa, dan tidak ada yang dipasang sebelum Anda memeriksanya."
+    },
+    "how": {
+      "title": "Cara kerjanya",
+      "upload": "Unggah deskripsi yang sudah Anda punya",
+      "read": "AI kami mengenali posisi, keahlian, gaji, dan lokasi",
+      "check": "Periksa setiap kolom, ubah apa saja, lalu pasang"
+    },
     "jdLabel": "Deskripsi pekerjaan",
     "jdHint": "Dokumen yang akan Anda kirim ke perekrut",
     "titleLabel": "Jabatan",
@@ -67,14 +83,27 @@
     "read": "Isi formulir dari deskripsi saya",
     "reading": "Membaca deskripsi Anda…",
     "readingHint": "Biasanya kurang dari satu menit. Biarkan tab ini terbuka.",
-    "manual": "Isi sendiri",
+    "stages": {
+      "uploading": "Mengunggah file Anda",
+      "reading": "Mengenali detailnya"
+    },
+    "lookingFor": "Yang kami cari",
+    "found": {
+      "role": "Posisi",
+      "skills": "Keahlian",
+      "pay": "Gaji",
+      "place": "Lokasi"
+    },
+    "cancel": "Batal",
     "needFile": "Pilih file deskripsi Anda dulu",
     "needTitle": "Masukkan jabatan",
-    "readFailed": "Kami tidak bisa membaca file itu. Coba file PDF atau Word, atau isi formulirnya sendiri.",
-    "filledBanner_other": "Kami mengisi {{count}} kolom dari deskripsi Anda. Periksa yang ditandai sebelum memasang.",
-    "restored": "Kami menyimpan draf Anda dari terakhir kali.",
+    "needFileToPost": "Lampirkan deskripsi Anda untuk memasang lowongan ini",
+    "readFailed": "Kami tidak bisa membaca file itu. Coba file PDF atau Word lain.",
+    "reattach": {
+      "title": "Lampirkan deskripsi Anda lagi",
+      "body": "Draf Anda masih ada, tetapi filenya tidak disimpan di perangkat ini. Deskripsi dipasang bersama lowongan."
+    },
     "startOver": "Mulai dari awal",
-    "draftSaved": "Draf disimpan di perangkat ini",
     "preview": "Pratinjau",
     "submit": "Pasang lowongan",
     "submitting": "Memasang…",
@@ -89,6 +118,12 @@
       "people": "Siapa yang Anda cari",
       "pay": "Gaji dan lokasi",
       "description": "Deskripsi"
+    },
+    "sectionHints": {
+      "role": "Judul, jenis, dan jumlah orang yang Anda butuhkan",
+      "people": "Keahlian, pengalaman, dan pendidikan",
+      "pay": "Gaji dan lokasi kerja",
+      "description": "Isi pekerjaan dan tugas yang dikerjakan"
     },
     "title": "Jabatan",
     "workMode": "Mode kerja",
@@ -152,6 +187,9 @@
     "edit": "Edit",
     "delete": "Hapus",
     "statusLabel": "Status lowongan",
+    "manage": "Kelola lowongan ini",
+    "pendingTitle": "Menunggu persetujuan",
+    "pendingBody": "Kami memeriksa lowongan baru sebelum kandidat melihatnya, biasanya dalam satu hari kerja. Anda masih bisa mengeditnya.",
     "aiJd": "Diisi dari deskripsi",
     "overview": "Ringkasan",
     "facts": {

@@ -2,7 +2,11 @@
 // Every call fails quietly: without storage the form still works, it just forgets.
 
 const DB = "letshyre-drafts"
-const STORES = ["employer-onboarding-files", "candidate-onboarding-files"]
+const STORES = [
+  "employer-onboarding-files",
+  "candidate-onboarding-files",
+  "post-job-files",
+]
 
 interface Stored {
   name: string
@@ -13,7 +17,7 @@ interface Stored {
 
 function open() {
   return new Promise<IDBDatabase>((resolve, reject) => {
-    const request = indexedDB.open(DB, 2)
+    const request = indexedDB.open(DB, 3)
     request.onupgradeneeded = () => {
       for (const name of STORES)
         if (!request.result.objectStoreNames.contains(name))
@@ -100,5 +104,14 @@ export function fileStore(name: (typeof STORES)[number]) {
         /* empty */
       }
     },
+  }
+}
+
+/** Drops every kept file, e.g. on sign-out so the next person can't see them. */
+export function clearStoredFiles() {
+  try {
+    indexedDB.deleteDatabase(DB)
+  } catch {
+    /* empty */
   }
 }

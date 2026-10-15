@@ -26,12 +26,16 @@ export const createJob = async (form: FormData) =>
     .parse(dataOf(await xhrUpload(api, "user/v1/employer_jobs/", form)))
 
 // AI parsing can take longer than the fetch timeout; uploads have none
-export async function parseJd(file: File, title: string) {
+export async function parseJd(
+  file: File,
+  title: string,
+  options: { onProgress: (fraction: number) => void; signal: AbortSignal }
+) {
   const form = new FormData()
   form.append("file", file)
   form.append("title", title)
   const body = dataOf(
-    await xhrUpload(api, "user/v1/employer_job_jd_ai/parse/", form)
+    await xhrUpload(api, "user/v1/employer_job_jd_ai/parse/", form, options)
   ) as { parse_response?: { flat?: unknown }; parsed_fields?: unknown } | null
   return parsedJdSchema.parse(
     body?.parse_response?.flat ?? body?.parsed_fields ?? {}

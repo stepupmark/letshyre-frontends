@@ -63,6 +63,22 @@
   "post": {
     "title": "Stelle veröffentlichen",
     "lead": "Laden Sie Ihre Stellenbeschreibung hoch, und wir füllen das Formular aus. Sie prüfen es und veröffentlichen dann.",
+    "steps": {
+      "label": "Stelle veröffentlichen",
+      "upload": "Beschreibung hochladen",
+      "read": "KI liest sie",
+      "review": "Prüfen und veröffentlichen"
+    },
+    "upload": {
+      "title": "Beginnen Sie mit Ihrer Stellenbeschreibung",
+      "body": "Laden Sie die Beschreibung hoch, die Sie auch einem Recruiter schicken würden. Wir füllen jedes Feld, das wir können, und nichts wird veröffentlicht, bevor Sie es geprüft haben."
+    },
+    "how": {
+      "title": "So funktioniert es",
+      "upload": "Laden Sie Ihre vorhandene Beschreibung hoch",
+      "read": "Unsere KI erkennt Rolle, Fähigkeiten, Gehalt und Ort",
+      "check": "Prüfen Sie jedes Feld, ändern Sie, was Sie möchten, und veröffentlichen Sie"
+    },
     "jdLabel": "Stellenbeschreibung",
     "jdHint": "Das Dokument, das Sie einem Recruiter schicken würden",
     "titleLabel": "Jobtitel",
@@ -70,15 +86,27 @@
     "read": "Formular aus meiner Beschreibung füllen",
     "reading": "Ihre Beschreibung wird gelesen…",
     "readingHint": "Das dauert meist weniger als eine Minute. Lassen Sie diesen Tab geöffnet.",
-    "manual": "Selbst ausfüllen",
+    "stages": {
+      "uploading": "Datei wird hochgeladen",
+      "reading": "Details werden erkannt"
+    },
+    "lookingFor": "Wir suchen nach",
+    "found": {
+      "role": "Rolle",
+      "skills": "Fähigkeiten",
+      "pay": "Gehalt",
+      "place": "Ort"
+    },
+    "cancel": "Abbrechen",
     "needFile": "Wählen Sie zuerst Ihre Beschreibungsdatei",
     "needTitle": "Geben Sie den Jobtitel ein",
-    "readFailed": "Wir konnten diese Datei nicht lesen. Versuchen Sie eine PDF- oder Word-Datei oder füllen Sie das Formular selbst aus.",
-    "filledBanner_one": "Wir haben {{count}} Feld aus Ihrer Beschreibung gefüllt. Prüfen Sie die markierten Felder vor dem Veröffentlichen.",
-    "filledBanner_other": "Wir haben {{count}} Felder aus Ihrer Beschreibung gefüllt. Prüfen Sie die markierten Felder vor dem Veröffentlichen.",
-    "restored": "Wir haben Ihren Entwurf vom letzten Mal behalten.",
+    "needFileToPost": "Fügen Sie Ihre Beschreibung hinzu, um diese Stelle zu veröffentlichen",
+    "readFailed": "Wir konnten diese Datei nicht lesen. Versuchen Sie eine andere PDF- oder Word-Datei.",
+    "reattach": {
+      "title": "Beschreibung erneut anhängen",
+      "body": "Ihr Entwurf ist da, aber die Datei wurde auf diesem Gerät nicht gespeichert. Die Beschreibung wird mit der Stelle veröffentlicht."
+    },
     "startOver": "Von vorn beginnen",
-    "draftSaved": "Entwurf auf diesem Gerät gespeichert",
     "preview": "Vorschau",
     "submit": "Stelle veröffentlichen",
     "submitting": "Wird veröffentlicht…",
@@ -93,6 +121,12 @@
       "people": "Wen Sie suchen",
       "pay": "Gehalt und Ort",
       "description": "Beschreibung"
+    },
+    "sectionHints": {
+      "role": "Titel, Art und wie viele Personen Sie brauchen",
+      "people": "Fähigkeiten, Erfahrung und Ausbildung",
+      "pay": "Gehalt und Arbeitsort",
+      "description": "Worum es in der Stelle geht und welche Aufgaben anfallen"
     },
     "title": "Jobtitel",
     "workMode": "Arbeitsmodell",
@@ -156,6 +190,9 @@
     "edit": "Bearbeiten",
     "delete": "Löschen",
     "statusLabel": "Stellenstatus",
+    "manage": "Diese Stelle verwalten",
+    "pendingTitle": "Wartet auf Freigabe",
+    "pendingBody": "Wir prüfen neue Stellen, bevor Kandidaten sie sehen, meist innerhalb eines Werktags. Sie können sie weiterhin bearbeiten.",
     "aiJd": "Aus der Beschreibung gefüllt",
     "overview": "Überblick",
     "facts": {
