@@ -13,6 +13,7 @@ export {
 export { createRefresher, type RefresherOptions } from "./refresh.ts"
 export {
   AccountInactiveError,
+  isSigningOut,
   login,
   logout,
   RoleNotAllowedError,

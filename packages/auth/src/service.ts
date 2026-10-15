@@ -78,7 +78,13 @@ export async function login(
 }
 
 /** Revokes the refresh token on the server, then clears the session regardless. */
+let signingOut = false
+
+/** True once this tab chose to sign out, so the expired-session prompt stays shut. */
+export const isSigningOut = () => signingOut
+
 export async function logout(client: HttpClient) {
+  signingOut = true
   const refresh = getRefreshToken()
   try {
     if (refresh)

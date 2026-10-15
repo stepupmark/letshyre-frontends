@@ -30,6 +30,7 @@ import {
   LogOut,
   UserRound,
 } from "lucide-react"
+import { useState } from "react"
 import { href } from "react-router"
 
 import { api } from "@/lib/api"
@@ -50,6 +51,7 @@ export function UserMenu({
   const { t } = useTranslation("shell")
   const session = useSession()
   const go = useGo()
+  const [leaving, setLeaving] = useState(false)
   if (session.status !== "signed-in") return null
 
   const { user } = session
@@ -60,9 +62,13 @@ export function UserMenu({
     area === "employer" ? href("/employer/company") : href("/employee/profile")
 
   const signOut = async () => {
+    setLeaving(true)
     clearAssistantChats()
-    await logout(api)
-    window.location.assign(PUBLIC_HOME)
+    try {
+      await logout(api)
+    } finally {
+      window.location.assign(PUBLIC_HOME)
+    }
   }
 
   return (
@@ -152,9 +158,13 @@ export function UserMenu({
               {t("user.tips")}
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => void signOut()}>
+            <DropdownMenuItem
+              closeOnClick={false}
+              disabled={leaving}
+              onClick={() => void signOut()}
+            >
               <LogOut />
-              {t("user.signOut")}
+              {leaving ? t("user.signingOut") : t("user.signOut")}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

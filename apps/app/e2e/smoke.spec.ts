@@ -58,6 +58,22 @@ test("sign out ends the session on the server and here", async ({
   })
   await signInAs("employer")
   await page.goto("/employer/dashboard")
+  let prompted = false
+  await page.exposeFunction("sawPrompt", () => (prompted = true))
+  await page.evaluate(() => {
+    const seen = window as unknown as { sawPrompt: () => Promise<boolean> }
+    new MutationObserver(() => {
+      if (document.querySelector('[role="dialog"]')) void seen.sawPrompt()
+    }).observe(document.body, { childList: true, subtree: true })
+  })
+  // A slow home page is when the old dashboard used to show the prompt.
+  await page.route(
+    (url) => url.pathname === "/",
+    async (route) => {
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+      await route.continue()
+    }
+  )
 
   if (test.info().project.name === "mobile") {
     await page.getByRole("button", { name: "Toggle sidebar" }).click()
@@ -66,6 +82,7 @@ test("sign out ends the session on the server and here", async ({
   await page.getByRole("menuitem", { name: "Sign out" }).click()
 
   await expect(page).toHaveURL("/")
+  expect(prompted).toBe(false)
   await expect(page.getByRole("link", { name: /I'm hiring/ })).toBeVisible()
   expect(revoked).toEqual({ refresh_token: "e2e-refresh" })
   expect(await page.evaluate(() => localStorage.getItem("user"))).toBeNull()

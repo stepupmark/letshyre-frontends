@@ -1,4 +1,4 @@
-import { readSession, type User } from "@workspace/auth"
+import { isSigningOut, readSession, type User } from "@workspace/auth"
 import { useSession } from "@workspace/auth/react"
 import { useTranslation } from "@workspace/i18n/react"
 import {
@@ -26,7 +26,7 @@ export function SessionGate({ children }: { children: ReactNode }) {
   if (session.status === "signed-in" && session.user !== last)
     setLast(session.user)
 
-  const open = last !== null && session.status === "guest"
+  const open = last !== null && session.status === "guest" && !isSigningOut()
 
   return (
     <>
