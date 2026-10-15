@@ -1,6 +1,8 @@
 import { Popover } from "@base-ui/react/popover"
 import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
+import { Kbd, KbdGroup } from "@workspace/ui/components/kbd"
+import { Lightbulb } from "lucide-react"
 import type { RefObject } from "react"
 
 /**
@@ -12,12 +14,15 @@ export function Tip({
   open,
   title,
   body,
+  keys,
   onDismiss,
 }: {
   anchor: RefObject<Element | null>
   open: boolean
   title: string
   body: string
+  /** The shortcut that does the same thing, shown as keycaps. */
+  keys?: string[]
   onDismiss: () => void
 }) {
   const { t } = useTranslation("common")
@@ -38,15 +43,37 @@ export function Tip({
         >
           <Popover.Popup
             initialFocus={false}
-            className="flex w-72 origin-(--transform-origin) flex-col gap-2 rounded-lg bg-popover p-3 text-sm text-popover-foreground shadow-md ring-1 ring-foreground/10 outline-hidden duration-100 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0"
+            className="flex w-80 origin-(--transform-origin) gap-3 rounded-xl border bg-popover p-4 text-sm text-popover-foreground shadow-lg outline-hidden duration-200 motion-reduce:animate-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0"
           >
-            <Popover.Title className="font-medium">{title}</Popover.Title>
-            <Popover.Description className="text-muted-foreground">
-              {body}
-            </Popover.Description>
-            <Button size="sm" className="self-end" onClick={onDismiss}>
-              {t("tip.gotIt")}
-            </Button>
+            <span
+              aria-hidden="true"
+              className="grid size-8 shrink-0 place-items-center rounded-full bg-primary/10 text-primary [&_svg]:size-4"
+            >
+              <Lightbulb />
+            </span>
+            <div className="flex min-w-0 flex-1 flex-col gap-1">
+              <Popover.Title className="font-semibold">{title}</Popover.Title>
+              <Popover.Description className="text-pretty text-muted-foreground">
+                {body}
+              </Popover.Description>
+              <div className="mt-2 flex items-center gap-2">
+                {keys && (
+                  <KbdGroup>
+                    {keys.map((key) => (
+                      <Kbd
+                        key={key}
+                        className="h-6 min-w-6 border bg-background px-1.5 text-foreground"
+                      >
+                        {key}
+                      </Kbd>
+                    ))}
+                  </KbdGroup>
+                )}
+                <Button size="sm" className="ms-auto" onClick={onDismiss}>
+                  {t("tip.gotIt")}
+                </Button>
+              </div>
+            </div>
           </Popover.Popup>
         </Popover.Positioner>
       </Popover.Portal>

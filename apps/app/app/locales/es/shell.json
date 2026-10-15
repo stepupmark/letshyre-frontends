@@ -47,10 +47,15 @@
     "noLanguage": "No se encontró ningún idioma",
     "shortcuts": "Atajos de teclado",
     "signOut": "Cerrar sesión",
-    "tips": "Volver a mostrar consejos"
+    "tips": "Volver a mostrar consejos",
+    "role": {
+      "employer": "Empleador",
+      "candidate": "Candidato"
+    }
   },
   "shortcuts": {
     "title": "Atajos de teclado",
+    "description": "Trabaja más rápido desde cualquier parte de tu panel.",
     "search": "Buscar e ir a páginas",
     "sidebar": "Mostrar u ocultar la barra lateral",
     "help": "Mostrar esta lista"
@@ -58,7 +63,7 @@
   "tips": {
     "search": {
       "title": "Vaya a cualquier sitio",
-      "body": "Busque una página o una acción. Pulse Ctrl K desde cualquier lugar."
+      "body": "Encuentra cualquier página o acción sin dejar lo que estás haciendo."
     },
     "credits": {
       "title": "Su saldo de créditos",
@@ -69,5 +74,6 @@
     "open": "Preguntar al asistente",
     "full": "Abrir a página completa",
     "lead": "Su conversación se mantiene aquí mientras cambia de página."
-  }
+  },
+  "closeMenu": "Cerrar menú"
 }

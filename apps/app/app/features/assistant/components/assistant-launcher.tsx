@@ -9,6 +9,11 @@ import {
   SheetTitle,
 } from "@workspace/ui/components/sheet"
 import { Spinner } from "@workspace/ui/components/spinner"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@workspace/ui/components/tooltip"
 import { Maximize2, Sparkles } from "lucide-react"
 import { lazy, Suspense, useState } from "react"
 import { href, useLocation } from "react-router"
@@ -44,18 +49,25 @@ export function AssistantLauncher({ side }: { side: Side }) {
 
   return (
     <>
-      <Button
-        variant="ghost"
-        size="icon"
-        aria-label={t("assistant.open")}
-        aria-haspopup="dialog"
-        onClick={() => {
-          setFrom(pathname)
-          setOpen(true)
-        }}
-      >
-        <Sparkles />
-      </Button>
+      <Tooltip>
+        <TooltipTrigger
+          render={
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label={t("assistant.open")}
+              aria-haspopup="dialog"
+              onClick={() => {
+                setFrom(pathname)
+                setOpen(true)
+              }}
+            />
+          }
+        >
+          <Sparkles />
+        </TooltipTrigger>
+        <TooltipContent>{t("assistant.open")}</TooltipContent>
+      </Tooltip>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent
           side={dirFor(locale) === "rtl" ? "left" : "right"}

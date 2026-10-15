@@ -46,10 +46,15 @@
     "noLanguage": "Keine Sprache gefunden",
     "shortcuts": "Tastenkürzel",
     "signOut": "Abmelden",
-    "tips": "Tipps erneut anzeigen"
+    "tips": "Tipps erneut anzeigen",
+    "role": {
+      "employer": "Arbeitgeber",
+      "candidate": "Bewerber"
+    }
   },
   "shortcuts": {
     "title": "Tastenkürzel",
+    "description": "Arbeiten Sie überall in Ihrem Dashboard schneller.",
     "search": "Suchen und zu Seiten springen",
     "sidebar": "Seitenleiste ein- oder ausblenden",
     "help": "Diese Liste anzeigen"
@@ -57,7 +62,7 @@
   "tips": {
     "search": {
       "title": "Überall hinspringen",
-      "body": "Suchen Sie nach einer Seite oder Aktion. Drücken Sie überall Strg K."
+      "body": "Finden Sie jede Seite oder Aktion, ohne Ihre aktuelle Arbeit zu verlassen."
     },
     "credits": {
       "title": "Ihr Credit-Guthaben",
@@ -68,5 +73,6 @@
     "open": "Assistenten fragen",
     "full": "Als ganze Seite öffnen",
     "lead": "Ihre Unterhaltung bleibt hier, während Sie zwischen Seiten wechseln."
-  }
+  },
+  "closeMenu": "Menü schließen"
 }

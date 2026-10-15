@@ -4,20 +4,22 @@ import { dirFor } from "@workspace/i18n"
 import { useTranslation } from "@workspace/i18n/react"
 import { SidebarInset, SidebarProvider } from "@workspace/ui/components/sidebar"
 import { TooltipProvider } from "@workspace/ui/components/tooltip"
-import { useEffect, useRef, useState, type ReactNode } from "react"
-import { Outlet, useLocation } from "react-router"
+import { useState, type ReactNode } from "react"
+import { Outlet } from "react-router"
 
 import { locale } from "@/lib/i18n"
 
+import { useRouteFocus } from "../hooks/use-route-focus"
+import { useShellShortcuts } from "../hooks/use-shell-shortcuts"
+import type { Area } from "../lib/nav"
 import { AppSidebar } from "./app-sidebar"
 import { CommandPalette } from "./command-palette"
-import type { Area } from "../lib/nav"
 import { ShortcutsDialog } from "./shortcuts-dialog"
 import { Topbar } from "./topbar"
 
-const typing = (target: EventTarget | null) =>
-  target instanceof HTMLElement &&
-  (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))
+// shadcn writes this cookie on toggle but only reads it during SSR, which this app doesn't do
+const sidebarWasOpen = () =>
+  !document.cookie.split("; ").includes("sidebar_state=false")
 
 export function DashboardShell({
   area,
@@ -28,40 +30,15 @@ export function DashboardShell({
   actions?: ReactNode
 }) {
   const { t } = useTranslation("shell")
+  const [defaultOpen] = useState(sidebarWasOpen)
   const [searchOpen, setSearchOpen] = useState(false)
   const [shortcutsOpen, setShortcutsOpen] = useState(false)
-  const { pathname } = useLocation()
-  const firstRender = useRef(true)
-
-  useEffect(() => {
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "k" && (event.metaKey || event.ctrlKey)) {
-        event.preventDefault()
-        setSearchOpen((open) => !open)
-      } else if (event.key === "?" && !typing(event.target)) {
-        setShortcutsOpen(true)
-      }
-    }
-    document.addEventListener("keydown", onKey)
-    return () => {
-      document.removeEventListener("keydown", onKey)
-    }
-  }, [])
-
-  // after a client navigation, screen readers and keyboard users start at the new page's title
-  useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false
-      return
-    }
-    document
-      .querySelector<HTMLElement>("#main h1")
-      ?.focus({ preventScroll: true })
-  }, [pathname])
+  useShellShortcuts(setSearchOpen, setShortcutsOpen)
+  useRouteFocus()
 
   return (
     <TooltipProvider>
-      <SidebarProvider>
+      <SidebarProvider defaultOpen={defaultOpen}>
         <SkipLink>{t("skipToContent")}</SkipLink>
         <NavigationProgress label={t("loading")} />
         <AppSidebar

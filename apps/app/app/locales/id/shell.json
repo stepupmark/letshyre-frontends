@@ -45,10 +45,15 @@
     "noLanguage": "Bahasa tidak ditemukan",
     "shortcuts": "Pintasan keyboard",
     "signOut": "Keluar",
-    "tips": "Tampilkan tips lagi"
+    "tips": "Tampilkan tips lagi",
+    "role": {
+      "employer": "Pemberi kerja",
+      "candidate": "Kandidat"
+    }
   },
   "shortcuts": {
     "title": "Pintasan keyboard",
+    "description": "Bekerja lebih cepat dari mana saja di dasbor Anda.",
     "search": "Cari dan lompat ke halaman",
     "sidebar": "Tampilkan atau sembunyikan bilah samping",
     "help": "Tampilkan daftar ini"
@@ -56,7 +61,7 @@
   "tips": {
     "search": {
       "title": "Lompat ke mana saja",
-      "body": "Cari halaman atau tindakan. Tekan Ctrl K dari mana saja."
+      "body": "Temukan halaman atau tindakan apa pun tanpa meninggalkan pekerjaan Anda."
     },
     "credits": {
       "title": "Saldo kredit Anda",
@@ -67,5 +72,6 @@
     "open": "Tanya asisten",
     "full": "Buka sebagai halaman penuh",
     "lead": "Percakapan Anda tetap di sini saat Anda berpindah halaman."
-  }
+  },
+  "closeMenu": "Tutup menu"
 }

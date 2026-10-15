@@ -146,3 +146,17 @@ export const isActive = (item: NavItem, pathname: string) => {
   const own = depth(item, pathname)
   return own > 0 && ITEMS.every((other) => depth(other, pathname) <= own)
 }
+
+export const homeOf = (area: Area) => NAV[area][0]?.items[0]?.to ?? "/"
+
+/** Set on a route as `handle: { crumb: "jobs" }`. */
+export interface Crumb {
+  crumb?: NavItem["key"]
+}
+
+export function findNav(area: Area, key: NavItem["key"]) {
+  for (const group of NAV[area] as NavGroup[]) {
+    const item = group.items.find((i) => i.key === key)
+    if (item) return { group, item }
+  }
+}

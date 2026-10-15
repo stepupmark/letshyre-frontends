@@ -46,10 +46,15 @@
     "noLanguage": "Geen taal gevonden",
     "shortcuts": "Sneltoetsen",
     "signOut": "Uitloggen",
-    "tips": "Tips opnieuw tonen"
+    "tips": "Tips opnieuw tonen",
+    "role": {
+      "employer": "Werkgever",
+      "candidate": "Kandidaat"
+    }
   },
   "shortcuts": {
     "title": "Sneltoetsen",
+    "description": "Werk sneller vanaf elke plek in je dashboard.",
     "search": "Zoeken en naar pagina's springen",
     "sidebar": "Zijbalk tonen of verbergen",
     "help": "Deze lijst tonen"
@@ -57,7 +62,7 @@
   "tips": {
     "search": {
       "title": "Overal heen springen",
-      "body": "Zoek een pagina of actie. Druk overal op Ctrl K."
+      "body": "Vind elke pagina of actie zonder te stoppen met waar je mee bezig bent."
     },
     "credits": {
       "title": "Uw creditsaldo",
@@ -68,5 +73,6 @@
     "open": "Vraag de assistent",
     "full": "Openen als volledige pagina",
     "lead": "Uw gesprek blijft hier terwijl u tussen pagina's wisselt."
-  }
+  },
+  "closeMenu": "Menu sluiten"
 }

@@ -20,6 +20,17 @@
 }
 
 @layer base {
+  /* rem-based, so text, spacing and the sidebar grow together on laptops and large screens */
+  @media (width >= 80rem) {
+    html {
+      font-size: 106.25%;
+    }
+  }
+  @media (width >= 120rem) {
+    html {
+      font-size: 112.5%;
+    }
+  }
   input:autofill {
     -webkit-text-fill-color: var(--foreground);
     caret-color: var(--foreground);

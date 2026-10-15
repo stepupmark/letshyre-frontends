@@ -47,10 +47,15 @@
     "noLanguage": "Nessuna lingua trovata",
     "shortcuts": "Scorciatoie da tastiera",
     "signOut": "Esci",
-    "tips": "Mostra di nuovo i suggerimenti"
+    "tips": "Mostra di nuovo i suggerimenti",
+    "role": {
+      "employer": "Datore di lavoro",
+      "candidate": "Candidato"
+    }
   },
   "shortcuts": {
     "title": "Scorciatoie da tastiera",
+    "description": "Lavora più velocemente da qualsiasi punto della dashboard.",
     "search": "Cerca e vai alle pagine",
     "sidebar": "Mostra o nascondi la barra laterale",
     "help": "Mostra questo elenco"
@@ -58,7 +63,7 @@
   "tips": {
     "search": {
       "title": "Vai ovunque",
-      "body": "Cerca una pagina o un'azione. Premi Ctrl K da qualsiasi punto."
+      "body": "Trova qualsiasi pagina o azione senza lasciare quello che stai facendo."
     },
     "credits": {
       "title": "Il tuo saldo crediti",
@@ -69,5 +74,6 @@
     "open": "Chiedi all'assistente",
     "full": "Apri a pagina intera",
     "lead": "La conversazione resta qui mentre cambi pagina."
-  }
+  },
+  "closeMenu": "Chiudi menu"
 }

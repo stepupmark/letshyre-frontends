@@ -47,10 +47,15 @@
     "noLanguage": "Aucune langue trouvée",
     "shortcuts": "Raccourcis clavier",
     "signOut": "Se déconnecter",
-    "tips": "Revoir les astuces"
+    "tips": "Revoir les astuces",
+    "role": {
+      "employer": "Employeur",
+      "candidate": "Candidat"
+    }
   },
   "shortcuts": {
     "title": "Raccourcis clavier",
+    "description": "Travaillez plus vite depuis n'importe où dans votre tableau de bord.",
     "search": "Rechercher et aller aux pages",
     "sidebar": "Afficher ou masquer la barre latérale",
     "help": "Afficher cette liste"
@@ -58,7 +63,7 @@
   "tips": {
     "search": {
       "title": "Allez partout",
-      "body": "Cherchez une page ou une action. Appuyez sur Ctrl K de n'importe où."
+      "body": "Trouvez une page ou une action sans quitter ce que vous faites."
     },
     "credits": {
       "title": "Votre solde de crédits",
@@ -69,5 +74,6 @@
     "open": "Demander à l'assistant",
     "full": "Ouvrir en pleine page",
     "lead": "Votre conversation reste ici pendant que vous changez de page."
-  }
+  },
+  "closeMenu": "Fermer le menu"
 }

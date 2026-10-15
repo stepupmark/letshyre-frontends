@@ -46,10 +46,15 @@
     "noLanguage": "No language found",
     "shortcuts": "Keyboard shortcuts",
     "signOut": "Sign out",
-    "tips": "Show tips again"
+    "tips": "Show tips again",
+    "role": {
+      "employer": "Employer",
+      "candidate": "Candidate"
+    }
   },
   "shortcuts": {
     "title": "Keyboard shortcuts",
+    "description": "Work faster from anywhere in your dashboard.",
     "search": "Search and jump to pages",
     "sidebar": "Show or hide the sidebar",
     "help": "Show this list"
@@ -57,7 +62,7 @@
   "tips": {
     "search": {
       "title": "Jump anywhere",
-      "body": "Search for a page or an action. Press Ctrl K from anywhere."
+      "body": "Find any page or action without leaving what you're doing."
     },
     "credits": {
       "title": "Your credit balance",
@@ -68,5 +73,6 @@
     "open": "Ask the assistant",
     "full": "Open as a full page",
     "lead": "Your conversation stays here while you move between pages."
-  }
+  },
+  "closeMenu": "Close menu"
 }

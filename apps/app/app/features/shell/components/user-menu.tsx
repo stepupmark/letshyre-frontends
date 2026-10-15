@@ -1,7 +1,7 @@
 import { logout, PUBLIC_HOME } from "@workspace/auth"
 import { clearAll as clearAssistantChats } from "@workspace/blocks/assistant-store"
 import { useSession } from "@workspace/auth/react"
-import { LOCALE_NAMES } from "@workspace/i18n"
+import { LOCALE_ENGLISH_NAMES, LOCALE_NAMES } from "@workspace/i18n"
 import { useTranslation } from "@workspace/i18n/react"
 import {
   DropdownMenu,
@@ -35,12 +35,10 @@ import { href } from "react-router"
 import { api } from "@/lib/api"
 import { APP_LOCALES, changeLocale, locale } from "@/lib/i18n"
 import { useGo } from "@/lib/navigation"
+import { displayName, initials } from "@/lib/user-name"
 
 import type { Area } from "../lib/nav"
 import { restartTips } from "../lib/tips"
-
-const text = (value: unknown) =>
-  typeof value === "string" && value ? value : undefined
 
 export function UserMenu({
   area,
@@ -55,19 +53,9 @@ export function UserMenu({
   if (session.status !== "signed-in") return null
 
   const { user } = session
-  const email = text(user.email)
-  const name =
-    text(user.name) ??
-    text(
-      [text(user.first_name), text(user.last_name)].filter(Boolean).join(" ")
-    ) ??
-    email ??
-    ""
-  const initials = name
-    .split(/[\s@]+/)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase())
-    .join("")
+  const email = typeof user.email === "string" ? user.email : undefined
+  const name = displayName(user)
+  const languages = [locale, ...APP_LOCALES.filter((l) => l !== locale)]
   const profile =
     area === "employer" ? href("/employer/company") : href("/employee/profile")
 
@@ -86,29 +74,29 @@ export function UserMenu({
           >
             <span
               aria-hidden="true"
-              className="flex size-8 shrink-0 items-center justify-center rounded-md bg-muted text-xs font-medium"
+              className="flex size-8 shrink-0 items-center justify-center rounded-md bg-primary/10 text-xs font-semibold text-primary"
             >
-              {initials}
+              {initials(name)}
             </span>
-            <span className="grid min-w-0 flex-1 text-start leading-tight">
+            <span className="grid min-w-0 flex-1 text-start">
               <span className="truncate text-sm font-medium">{name}</span>
-              {email && email !== name && (
-                <span className="truncate text-xs text-muted-foreground">
-                  {email}
-                </span>
-              )}
+              <span className="truncate text-xs text-muted-foreground">
+                {t(`user.role.${area}`)}
+              </span>
             </span>
-            <ChevronsUpDown className="ms-auto size-4" />
+            <ChevronsUpDown className="ms-auto size-4 text-muted-foreground" />
           </DropdownMenuTrigger>
           <DropdownMenuContent side="top" align="start" className="w-60">
             {email && (
-              <DropdownMenuGroup>
-                <DropdownMenuLabel className="truncate">
-                  {email}
-                </DropdownMenuLabel>
-              </DropdownMenuGroup>
+              <>
+                <DropdownMenuGroup>
+                  <DropdownMenuLabel className="truncate">
+                    {email}
+                  </DropdownMenuLabel>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator />
+              </>
             )}
-            <DropdownMenuSeparator />
             <DropdownMenuItem
               onClick={() => {
                 go(profile)
@@ -122,8 +110,14 @@ export function UserMenu({
                 <DropdownMenuSubTrigger>
                   <Languages />
                   {t("user.language")}
+                  <span
+                    lang={locale}
+                    className="ms-auto truncate text-xs text-muted-foreground"
+                  >
+                    {LOCALE_NAMES[locale]}
+                  </span>
                 </DropdownMenuSubTrigger>
-                <DropdownMenuSubContent>
+                <DropdownMenuSubContent className="max-h-80 w-56 overflow-y-auto overscroll-contain">
                   <DropdownMenuRadioGroup
                     value={locale}
                     onValueChange={(value) => {
@@ -131,9 +125,18 @@ export function UserMenu({
                       if (next && next !== locale) changeLocale(next)
                     }}
                   >
-                    {APP_LOCALES.map((l) => (
-                      <DropdownMenuRadioItem key={l} value={l} lang={l}>
-                        {LOCALE_NAMES[l]}
+                    {languages.map((l) => (
+                      <DropdownMenuRadioItem key={l} value={l}>
+                        <span className="flex min-w-0 flex-col">
+                          <span lang={l} className="truncate font-medium">
+                            {LOCALE_NAMES[l]}
+                          </span>
+                          {l !== "en" && (
+                            <span className="truncate text-xs text-muted-foreground">
+                              {LOCALE_ENGLISH_NAMES[l]}
+                            </span>
+                          )}
+                        </span>
                       </DropdownMenuRadioItem>
                     ))}
                   </DropdownMenuRadioGroup>
