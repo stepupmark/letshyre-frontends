@@ -1,25 +1,44 @@
 {
   "title": "Assistant",
-  "lead": {
-    "employer": "Des réponses sur le recrutement avec LetsHyre : offres, correspondances, grilles et crédits.",
-    "candidate": "Des réponses sur votre recherche d'emploi : candidatures, entretiens et votre grille."
-  },
   "log": "Conversation",
   "you": "Vous",
   "assistant": "Assistant",
   "greeting": "Bonjour, je suis l'assistant LetsHyre.",
+  "ask": "Comment puis-je vous aider ?",
+  "askName": "Bonjour {{name}}, comment puis-je vous aider ?",
   "hint": {
     "employer": "Posez n'importe quelle question sur votre recrutement. Celles-ci reviennent souvent sur cette page :",
     "candidate": "Posez n'importe quelle question sur votre recherche d'emploi. Celles-ci reviennent souvent sur cette page :"
   },
+  "intro": {
+    "employer": "Posez vos questions sur les offres, les candidats ou les crédits, ou commencez par une question ci-dessous.",
+    "candidate": "Posez vos questions sur les candidatures, l'entretien ou votre profil, ou commencez par une question ci-dessous."
+  },
   "input": "Poser une question",
+  "try": "Essayez « {{question}} »",
+  "enterHint": "Entrée pour envoyer · Maj + Entrée pour aller à la ligne",
   "send": "Envoyer",
   "stop": "Arrêter la réponse",
   "thinking": "Réflexion…",
+  "slow": "J'y travaille encore…",
   "stopped": "Vous avez arrêté cette réponse.",
   "failed": "Aucune réponse n'est arrivée.",
   "retry": "Réessayer",
   "clear": "Effacer la conversation",
+  "newChat": "Nouvelle conversation",
+  "cleared": "Conversation effacée.",
+  "copy": "Copier la réponse",
+  "copied": "Copié",
+  "latest": "Nouvelle réponse",
+  "askNext": "Question suivante",
+  "topics": {
+    "jobs": "Offres",
+    "candidates": "Candidats",
+    "billing": "Crédits et facturation",
+    "applying": "Postuler",
+    "interview": "L'entretien IA",
+    "profile": "Profil et scorecard"
+  },
   "prompts": {
     "firstJob": "Comment publier ma première offre ?",
     "readScorecard": "Comment lire la grille d'un candidat ?",

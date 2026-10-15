@@ -1,25 +1,44 @@
 {
   "title": "Asistente",
-  "lead": {
-    "employer": "Respuestas sobre cómo contratar con LetsHyre: ofertas, coincidencias, fichas de evaluación y créditos.",
-    "candidate": "Respuestas sobre su búsqueda de empleo: candidaturas, entrevistas y su ficha de evaluación."
-  },
   "log": "Conversación",
   "you": "Usted",
   "assistant": "Asistente",
   "greeting": "Hola, soy el asistente de LetsHyre.",
+  "ask": "¿En qué puedo ayudarte?",
+  "askName": "Hola {{name}}, ¿en qué puedo ayudarte?",
   "hint": {
     "employer": "Pregunte lo que quiera sobre sus contrataciones. Estas preguntas son habituales en esta página:",
     "candidate": "Pregunte lo que quiera sobre su búsqueda de empleo. Estas preguntas son habituales en esta página:"
   },
+  "intro": {
+    "employer": "Pregunta con tus palabras sobre empleos, candidatos o créditos, o empieza con una pregunta de abajo.",
+    "candidate": "Pregunta con tus palabras sobre postulaciones, la entrevista o tu perfil, o empieza con una pregunta de abajo."
+  },
   "input": "Haga una pregunta",
+  "try": "Prueba «{{question}}»",
+  "enterHint": "Enter para enviar · Shift + Enter para una nueva línea",
   "send": "Enviar",
   "stop": "Detener la respuesta",
   "thinking": "Pensando…",
+  "slow": "Sigo trabajando en ello…",
   "stopped": "Ha detenido esta respuesta.",
   "failed": "No llegó ninguna respuesta.",
   "retry": "Reintentar",
   "clear": "Borrar el chat",
+  "newChat": "Nuevo chat",
+  "cleared": "Chat borrado.",
+  "copy": "Copiar respuesta",
+  "copied": "Copiado",
+  "latest": "Nueva respuesta",
+  "askNext": "Pregunta después",
+  "topics": {
+    "jobs": "Empleos",
+    "candidates": "Candidatos",
+    "billing": "Créditos y facturación",
+    "applying": "Postular",
+    "interview": "La entrevista con IA",
+    "profile": "Perfil y scorecard"
+  },
   "prompts": {
     "firstJob": "¿Cómo publico mi primera oferta?",
     "readScorecard": "¿Cómo leo la ficha de evaluación de un candidato?",

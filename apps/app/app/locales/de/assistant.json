@@ -1,25 +1,44 @@
 {
   "title": "Assistent",
-  "lead": {
-    "employer": "Antworten rund ums Einstellen mit LetsHyre: Stellen, Matches, Scorecards und Credits.",
-    "candidate": "Antworten rund um Ihre Jobsuche: Bewerbungen, Interviews und Ihre Scorecard."
-  },
   "log": "Unterhaltung",
   "you": "Sie",
   "assistant": "Assistent",
   "greeting": "Hallo, ich bin der LetsHyre-Assistent.",
+  "ask": "Wobei kann ich helfen?",
+  "askName": "Hallo {{name}}, wobei kann ich helfen?",
   "hint": {
     "employer": "Fragen Sie alles rund um Ihre Einstellungen. Diese Fragen kommen auf dieser Seite oft:",
     "candidate": "Fragen Sie alles rund um Ihre Jobsuche. Diese Fragen kommen auf dieser Seite oft:"
   },
+  "intro": {
+    "employer": "Frag in deinen eigenen Worten nach Stellen, Kandidaten oder Credits oder starte mit einer Frage unten.",
+    "candidate": "Frag in deinen eigenen Worten nach Bewerbung, Interview oder Profil oder starte mit einer Frage unten."
+  },
   "input": "Frage stellen",
+  "try": "Probier „{{question}}“",
+  "enterHint": "Enter zum Senden · Shift + Enter für eine neue Zeile",
   "send": "Senden",
   "stop": "Antwort stoppen",
   "thinking": "Denkt nach…",
+  "slow": "Einen Moment noch…",
   "stopped": "Sie haben diese Antwort gestoppt.",
   "failed": "Es kam keine Antwort.",
   "retry": "Erneut versuchen",
   "clear": "Chat löschen",
+  "newChat": "Neuer Chat",
+  "cleared": "Chat gelöscht.",
+  "copy": "Antwort kopieren",
+  "copied": "Kopiert",
+  "latest": "Neue Antwort",
+  "askNext": "Als Nächstes fragen",
+  "topics": {
+    "jobs": "Stellen",
+    "candidates": "Kandidaten",
+    "billing": "Credits und Abrechnung",
+    "applying": "Bewerben",
+    "interview": "Das KI-Interview",
+    "profile": "Profil und Scorecard"
+  },
   "prompts": {
     "firstJob": "Wie veröffentliche ich meine erste Stelle?",
     "readScorecard": "Wie lese ich die Scorecard eines Kandidaten?",

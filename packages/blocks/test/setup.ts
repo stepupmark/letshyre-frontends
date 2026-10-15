@@ -13,3 +13,10 @@ Object.defineProperty(window, "matchMedia", {
     removeListener: () => undefined,
   }),
 })
+
+// jsdom has no layout; the assistant follows new messages with these
+window.IntersectionObserver = class {
+  observe = () => undefined
+  disconnect = () => undefined
+} as unknown as typeof IntersectionObserver
+Element.prototype.scrollIntoView = () => undefined

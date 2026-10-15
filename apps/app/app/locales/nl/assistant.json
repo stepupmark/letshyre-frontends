@@ -1,25 +1,44 @@
 {
   "title": "Assistent",
-  "lead": {
-    "employer": "Antwoorden over werven met LetsHyre: vacatures, matches, scorekaarten en credits.",
-    "candidate": "Antwoorden over uw zoektocht naar werk: solliciteren, interviews en uw scorekaart."
-  },
   "log": "Gesprek",
   "you": "U",
   "assistant": "Assistent",
   "greeting": "Hallo, ik ben de assistent van LetsHyre.",
+  "ask": "Waarmee kan ik helpen?",
+  "askName": "Hoi {{name}}, waarmee kan ik helpen?",
   "hint": {
     "employer": "Vraag alles over uw werving. Deze vragen komen op deze pagina vaak voor:",
     "candidate": "Vraag alles over uw zoektocht naar werk. Deze vragen komen op deze pagina vaak voor:"
   },
+  "intro": {
+    "employer": "Vraag in je eigen woorden naar vacatures, kandidaten of credits, of begin met een vraag hieronder.",
+    "candidate": "Vraag in je eigen woorden naar solliciteren, het interview of je profiel, of begin met een vraag hieronder."
+  },
   "input": "Stel een vraag",
+  "try": "Probeer “{{question}}”",
+  "enterHint": "Enter om te versturen · Shift + Enter voor een nieuwe regel",
   "send": "Versturen",
   "stop": "Antwoord stoppen",
   "thinking": "Bezig met nadenken…",
+  "slow": "Nog even bezig…",
   "stopped": "U hebt dit antwoord gestopt.",
   "failed": "Er kwam geen antwoord.",
   "retry": "Opnieuw proberen",
   "clear": "Chat wissen",
+  "newChat": "Nieuwe chat",
+  "cleared": "Chat gewist.",
+  "copy": "Antwoord kopiëren",
+  "copied": "Gekopieerd",
+  "latest": "Nieuw antwoord",
+  "askNext": "Vraag hierna",
+  "topics": {
+    "jobs": "Vacatures",
+    "candidates": "Kandidaten",
+    "billing": "Credits en facturatie",
+    "applying": "Solliciteren",
+    "interview": "Het AI-interview",
+    "profile": "Profiel en scorecard"
+  },
   "prompts": {
     "firstJob": "Hoe plaats ik mijn eerste vacature?",
     "readScorecard": "Hoe lees ik de scorekaart van een kandidaat?",

@@ -21,6 +21,8 @@ test("a candidate asks the assistant from a page and follows its link into the a
       })
     },
   })
+  // axe would otherwise sample text mid fade-in
+  await page.emulateMedia({ reducedMotion: "reduce" })
   await signInAs("candidate")
   await page.goto("/employee/profile")
 
@@ -50,10 +52,20 @@ test("a candidate asks the assistant from a page and follows its link into the a
   const log = page.getByRole("log", { name: "Conversation" })
   await expect(log.getByText("What happens after I apply?")).toBeVisible()
 
-  await page.getByRole("textbox", { name: "Ask a question" }).fill("And then?")
+  await page
+    .getByRole("textbox", { name: "Ask a question" })
+    .fill("How do employers decide who to shortlist?")
   await page.getByRole("button", { name: "Send" }).click()
   await expect.poll(() => sent.length).toBe(2)
-  expect(sent[1]).toEqual({ message: "And then?", session_id: "chat-1" })
+  expect(sent[1]).toEqual({
+    message: "How do employers decide who to shortlist?",
+    session_id: "chat-1",
+  })
+
+  await log
+    .getByRole("button", { name: "How do I find jobs that fit me?" })
+    .click()
+  await expect.poll(() => sent.length).toBe(3)
 
   await log.getByRole("link", { name: "your applications" }).first().click()
   await expect(page).toHaveURL("/employee/applications")

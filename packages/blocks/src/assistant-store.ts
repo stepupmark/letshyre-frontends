@@ -163,10 +163,16 @@ export function stop(key: string) {
   if (last) markUser(key, last.id, "stopped")
 }
 
-/** Forgets the conversation, including the server's session for it. */
+/** Forgets the conversation and returns a way to bring it back. */
 export function clear(key: string) {
-  chatFor(key).controller?.abort()
+  const chat = chatFor(key)
+  chat.controller?.abort()
+  const { messages, sessionId } = chat.state
   update(key, { messages: [], sessionId: undefined, pending: false })
+  return () => {
+    if (chatFor(key).state.messages.length === 0)
+      update(key, { messages, sessionId })
+  }
 }
 
 /** On sign-out, so the next person on this tab starts clean. */

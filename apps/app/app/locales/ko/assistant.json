@@ -1,25 +1,44 @@
 {
   "title": "어시스턴트",
-  "lead": {
-    "employer": "LetsHyre 채용에 관한 답변: 채용 공고, 매칭, 평가표, 크레딧.",
-    "candidate": "구직 활동에 관한 답변: 지원, 인터뷰, 내 평가표."
-  },
   "log": "대화",
   "you": "나",
   "assistant": "어시스턴트",
   "greeting": "안녕하세요, LetsHyre 어시스턴트예요.",
+  "ask": "무엇을 도와드릴까요?",
+  "askName": "{{name}}님, 무엇을 도와드릴까요?",
   "hint": {
     "employer": "채용에 관해 무엇이든 물어보세요. 이 페이지에서 자주 나오는 질문이에요:",
     "candidate": "구직 활동에 관해 무엇이든 물어보세요. 이 페이지에서 자주 나오는 질문이에요:"
   },
+  "intro": {
+    "employer": "채용 공고, 후보자, 크레딧에 대해 자유롭게 묻거나 아래 질문으로 시작하세요.",
+    "candidate": "지원, 면접, 프로필에 대해 자유롭게 묻거나 아래 질문으로 시작하세요."
+  },
   "input": "질문하기",
+  "try": "“{{question}}”라고 물어보세요",
+  "enterHint": "Enter로 보내기 · Shift + Enter로 줄바꿈",
   "send": "보내기",
   "stop": "답변 중지",
   "thinking": "생각 중…",
+  "slow": "아직 답변을 준비하고 있어요…",
   "stopped": "이 답변을 중지했어요.",
   "failed": "답변이 오지 않았어요.",
   "retry": "다시 시도",
   "clear": "대화 지우기",
+  "newChat": "새 채팅",
+  "cleared": "대화를 지웠습니다.",
+  "copy": "답변 복사",
+  "copied": "복사됨",
+  "latest": "새 답변",
+  "askNext": "다음 질문",
+  "topics": {
+    "jobs": "채용 공고",
+    "candidates": "후보자",
+    "billing": "크레딧 및 결제",
+    "applying": "지원하기",
+    "interview": "AI 면접",
+    "profile": "프로필 및 스코어카드"
+  },
   "prompts": {
     "firstJob": "첫 채용 공고는 어떻게 올리나요?",
     "readScorecard": "후보자 평가표는 어떻게 읽나요?",

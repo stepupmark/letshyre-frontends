@@ -1,25 +1,44 @@
 {
   "title": "Assistente",
-  "lead": {
-    "employer": "Risposte su come assumere con LetsHyre: offerte, corrispondenze, schede di valutazione e crediti.",
-    "candidate": "Risposte sulla tua ricerca di lavoro: candidature, colloqui e la tua scheda di valutazione."
-  },
   "log": "Conversazione",
   "you": "Tu",
   "assistant": "Assistente",
   "greeting": "Ciao, sono l'assistente di LetsHyre.",
+  "ask": "Come posso aiutarti?",
+  "askName": "Ciao {{name}}, come posso aiutarti?",
   "hint": {
     "employer": "Chiedi qualsiasi cosa sulle tue assunzioni. Queste domande sono frequenti in questa pagina:",
     "candidate": "Chiedi qualsiasi cosa sulla tua ricerca di lavoro. Queste domande sono frequenti in questa pagina:"
   },
+  "intro": {
+    "employer": "Chiedi con parole tue di annunci, candidati o crediti, oppure parti da una domanda qui sotto.",
+    "candidate": "Chiedi con parole tue di candidature, colloquio o profilo, oppure parti da una domanda qui sotto."
+  },
   "input": "Fai una domanda",
+  "try": "Prova «{{question}}»",
+  "enterHint": "Invio per inviare · Maiusc + Invio per andare a capo",
   "send": "Invia",
   "stop": "Interrompi la risposta",
   "thinking": "Sto pensando…",
+  "slow": "Ci sto ancora lavorando…",
   "stopped": "Hai interrotto questa risposta.",
   "failed": "Non è arrivata nessuna risposta.",
   "retry": "Riprova",
   "clear": "Cancella la chat",
+  "newChat": "Nuova chat",
+  "cleared": "Chat cancellata.",
+  "copy": "Copia risposta",
+  "copied": "Copiato",
+  "latest": "Nuova risposta",
+  "askNext": "Chiedi ancora",
+  "topics": {
+    "jobs": "Annunci",
+    "candidates": "Candidati",
+    "billing": "Crediti e fatturazione",
+    "applying": "Candidarsi",
+    "interview": "Il colloquio con l'IA",
+    "profile": "Profilo e scorecard"
+  },
   "prompts": {
     "firstJob": "Come pubblico la mia prima offerta?",
     "readScorecard": "Come leggo la scheda di valutazione di un candidato?",

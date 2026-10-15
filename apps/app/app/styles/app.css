@@ -32,6 +32,20 @@
   }
 }
 
+/* the height left under the topbar inside #main's padding (h-14, then py-6 or md:p-8) */
+@utility min-h-main {
+  min-height: calc(100svh - --spacing(26));
+  @variant md {
+    min-height: calc(100svh - --spacing(30));
+  }
+}
+
+/* the assistant's input gliding between the centre and the bottom */
+::view-transition-group(assistant-composer) {
+  animation-duration: 0.32s;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
 @utility settle {
   @media (prefers-reduced-motion: no-preference) {
     transition:

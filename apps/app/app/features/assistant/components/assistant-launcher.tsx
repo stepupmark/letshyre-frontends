@@ -32,7 +32,6 @@ export function AssistantLauncher({ side }: { side: Side }) {
   const { t } = useTranslation("shell")
   const { pathname } = useLocation()
   const [open, setOpen] = useState(false)
-  // the page asked from, kept while the sheet is open
   const [from, setFrom] = useState(pathname)
   const [seen, setSeen] = useState(pathname)
   // a link in an answer went somewhere: show that page
@@ -83,7 +82,7 @@ export function AssistantLauncher({ side }: { side: Side }) {
                 </div>
               }
             >
-              <AssistantPanel side={side} from={from} focusOnOpen />
+              <AssistantPanel side={side} from={from} />
             </Suspense>
           )}
         </SheetContent>

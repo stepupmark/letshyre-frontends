@@ -1,25 +1,44 @@
 {
   "title": "Assistant",
-  "lead": {
-    "employer": "Answers about hiring on LetsHyre: jobs, matches, scorecards and credits.",
-    "candidate": "Answers about your job search: applying, interviews and your scorecard."
-  },
   "log": "Conversation",
   "you": "You",
   "assistant": "Assistant",
   "greeting": "Hi, I'm the LetsHyre assistant.",
+  "ask": "What can I help you with?",
+  "askName": "Hi {{name}}, what can I help you with?",
   "hint": {
     "employer": "Ask about anything in your hiring. These come up a lot on this page:",
     "candidate": "Ask about anything in your job search. These come up a lot on this page:"
   },
+  "intro": {
+    "employer": "Ask about jobs, candidates or credits in your own words, or start with a question below.",
+    "candidate": "Ask about applying, the interview or your profile in your own words, or start with a question below."
+  },
   "input": "Ask a question",
+  "try": "Try “{{question}}”",
+  "enterHint": "Enter to send · Shift + Enter for a new line",
   "send": "Send",
   "stop": "Stop answering",
   "thinking": "Thinking…",
+  "slow": "Still working on it…",
   "stopped": "You stopped this answer.",
   "failed": "No answer came back.",
   "retry": "Try again",
   "clear": "Clear chat",
+  "newChat": "New chat",
+  "cleared": "Chat cleared.",
+  "copy": "Copy answer",
+  "copied": "Copied",
+  "latest": "New answer",
+  "askNext": "Ask next",
+  "topics": {
+    "jobs": "Jobs",
+    "candidates": "Candidates",
+    "billing": "Credits and billing",
+    "applying": "Applying",
+    "interview": "The AI interview",
+    "profile": "Profile and scorecard"
+  },
   "prompts": {
     "firstJob": "How do I post my first job?",
     "readScorecard": "How do I read a candidate's scorecard?",

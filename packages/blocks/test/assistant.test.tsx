@@ -1,10 +1,11 @@
-import { render, screen } from "@testing-library/react"
+import { act, render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { createMemoryRouter, RouterProvider } from "react-router"
 import { beforeEach, describe, expect, it, vi } from "vitest"
 
 import {
   AssistantChat,
+  AssistantPrompts,
   useAssistant,
   type AssistantSend,
 } from "../src/assistant.tsx"
@@ -15,22 +16,37 @@ const LABELS = {
   log: "Conversation",
   you: "You",
   assistant: "Assistant",
-  greeting: "Hi",
-  hint: "Ask anything",
   input: "Ask a question",
   send: "Send",
   stop: "Stop",
   thinking: "Thinking",
+  slow: "Still working on it",
   stopped: "You stopped this answer.",
   failed: "No answer came back.",
   retry: "Try again",
   clear: "Clear chat",
+  copy: "Copy answer",
+  copied: "Copied",
+  latest: "New answer",
 }
 
 function Chat({ send }: { send: AssistantSend }) {
   const chat = useAssistant("test", send)
-  return <AssistantChat chat={chat} labels={LABELS} prompts={["What is it?"]} />
+  return (
+    <AssistantChat
+      chat={chat}
+      labels={LABELS}
+      welcome={(ask) => (
+        <AssistantPrompts prompts={["What is it?"]} onPick={ask} />
+      )}
+      onClear={(undo) => {
+        undone = undo
+      }}
+    />
+  )
 }
+
+let undone: () => void = () => undefined
 
 function setup(send: AssistantSend) {
   const router = createMemoryRouter([
@@ -117,6 +133,25 @@ describe("AssistantChat", { timeout: 15_000 }, () => {
 })
 
 describe("assistant transcript", () => {
+  it("comes back when a clear is undone", async () => {
+    const send = vi
+      .fn<AssistantSend>()
+      .mockResolvedValue({ sessionId: "s3", response: "Answer." })
+    const { user } = setup(send)
+
+    await user.click(screen.getByRole("button", { name: "What is it?" }))
+    await user.click(await screen.findByRole("button", { name: "Clear chat" }))
+    expect(screen.queryByText("Answer.")).not.toBeInTheDocument()
+
+    act(undone)
+    expect(await screen.findByText("Answer.")).toBeInTheDocument()
+    await user.type(
+      screen.getByRole("textbox", { name: "Ask a question" }),
+      "More{Enter}"
+    )
+    expect(send).toHaveBeenLastCalledWith("More", "s3", expect.any(AbortSignal))
+  })
+
   it("comes back after a reload within the hour, and not after", async () => {
     const message = { id: "m1", role: "user", text: "Saved question" }
     const save = (at: number) => {

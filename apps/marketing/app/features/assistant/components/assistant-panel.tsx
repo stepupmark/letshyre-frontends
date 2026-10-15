@@ -1,4 +1,8 @@
-import { AssistantChat, useAssistant } from "@workspace/blocks/assistant"
+import {
+  AssistantChat,
+  AssistantSuggestions,
+  useAssistant,
+} from "@workspace/blocks/assistant"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { sendAssistantMessage } from "@workspace/api/public"
 import { use } from "react"
@@ -24,21 +28,30 @@ export function AssistantPanel() {
     <AssistantChat
       chat={chat}
       focusOnOpen
-      prompts={PROMPTS.map((key) => t(`chatbot.empty.prompts.${key}`))}
+      welcome={(ask) => (
+        <AssistantSuggestions
+          greeting={t("chatbot.empty.greeting")}
+          hint={t("chatbot.empty.hint")}
+          prompts={PROMPTS.map((key) => t(`chatbot.empty.prompts.${key}`))}
+          onPick={ask}
+        />
+      )}
       labels={{
         log: t("chatbot.messagesLabel"),
         you: t("chatbot.you"),
         assistant: t("chatbot.assistant"),
-        greeting: t("chatbot.empty.greeting"),
-        hint: t("chatbot.empty.hint"),
         input: t("chatbot.inputPlaceholder"),
         send: t("chatbot.sendAria"),
         stop: t("chatbot.stop"),
         thinking: t("chatbot.thinking"),
+        slow: t("chatbot.slow"),
         stopped: t("chatbot.stopped"),
         failed: t("chatbot.errorMessage"),
         retry: t("chatbot.retry"),
         clear: t("chatbot.clear"),
+        copy: t("chatbot.copy"),
+        copied: t("chatbot.copied"),
+        latest: t("chatbot.latest"),
       }}
     />
   )

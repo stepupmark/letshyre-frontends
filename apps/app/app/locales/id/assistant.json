@@ -1,25 +1,44 @@
 {
   "title": "Asisten",
-  "lead": {
-    "employer": "Jawaban seputar merekrut di LetsHyre: lowongan, kecocokan, kartu skor, dan kredit.",
-    "candidate": "Jawaban seputar pencarian kerja Anda: melamar, wawancara, dan kartu skor Anda."
-  },
   "log": "Percakapan",
   "you": "Anda",
   "assistant": "Asisten",
   "greeting": "Halo, saya asisten LetsHyre.",
+  "ask": "Ada yang bisa saya bantu?",
+  "askName": "Hai {{name}}, ada yang bisa saya bantu?",
   "hint": {
     "employer": "Tanyakan apa saja tentang rekrutmen Anda. Pertanyaan ini sering muncul di halaman ini:",
     "candidate": "Tanyakan apa saja tentang pencarian kerja Anda. Pertanyaan ini sering muncul di halaman ini:"
   },
+  "intro": {
+    "employer": "Tanyakan soal lowongan, kandidat, atau kredit dengan kata-kata Anda, atau mulai dengan pertanyaan di bawah.",
+    "candidate": "Tanyakan soal melamar, wawancara, atau profil Anda dengan kata-kata Anda, atau mulai dengan pertanyaan di bawah."
+  },
   "input": "Ajukan pertanyaan",
+  "try": "Coba “{{question}}”",
+  "enterHint": "Enter untuk kirim · Shift + Enter untuk baris baru",
   "send": "Kirim",
   "stop": "Hentikan jawaban",
   "thinking": "Sedang berpikir…",
+  "slow": "Masih memproses…",
   "stopped": "Anda menghentikan jawaban ini.",
   "failed": "Tidak ada jawaban yang masuk.",
   "retry": "Coba lagi",
   "clear": "Hapus percakapan",
+  "newChat": "Obrolan baru",
+  "cleared": "Obrolan dihapus.",
+  "copy": "Salin jawaban",
+  "copied": "Disalin",
+  "latest": "Jawaban baru",
+  "askNext": "Tanya berikutnya",
+  "topics": {
+    "jobs": "Lowongan",
+    "candidates": "Kandidat",
+    "billing": "Kredit dan tagihan",
+    "applying": "Melamar",
+    "interview": "Wawancara AI",
+    "profile": "Profil dan scorecard"
+  },
   "prompts": {
     "firstJob": "Bagaimana cara memasang lowongan pertama saya?",
     "readScorecard": "Bagaimana cara membaca kartu skor kandidat?",
