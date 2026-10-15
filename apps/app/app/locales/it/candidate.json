@@ -38,7 +38,19 @@
     "noticeProof": "Prova del preavviso",
     "address": "Indirizzo",
     "scorecard": "Scheda di valutazione",
-    "back": "Candidati sbloccati"
+    "back": "Candidati sbloccati",
+    "newTab": "(si apre in una nuova scheda)",
+    "status": {
+      "applied": "Candidato",
+      "shortlisted": "Preselezionato",
+      "interviewed": "Colloquio fatto",
+      "selected": "Selezionato",
+      "hired": "Assunto",
+      "rejected": "Rifiutato"
+    },
+    "background": "Percorso",
+    "currentPay": "Retribuzione attuale",
+    "expectedPay": "Retribuzione attesa"
   },
   "scorecard": {
     "title": "Scheda di valutazione",
@@ -127,19 +139,11 @@
   "own": {
     "title": "Il tuo profilo",
     "fromResume": "Dal tuo curriculum. I datori di lavoro lo vedono quando la nostra IA ti abbina a un'offerta.",
-    "emptyBackground": "Ancora niente dal tuo curriculum.",
     "completion": "Profilo completato",
-    "interviews": "Colloqui con IA",
     "interviewsUsed": "{{used}} di {{max}} usati",
     "interviewsLeft_one": "(ne resta {{count}})",
     "interviewsLeft_many": "(ne restano {{count}})",
     "interviewsLeft_other": "(ne restano {{count}})",
-    "edit": "Modifica {{section}}",
-    "editShort": "Modifica",
-    "save": "Salva",
-    "saving": "Salvataggio…",
-    "saved": "Salvato",
-    "saveFailed": "Non è stato salvato. Le modifiche sono ancora qui; riprova.",
     "contact": {
       "title": "Contatti",
       "city": "Città in cui vivi"
@@ -147,16 +151,12 @@
     "work": {
       "title": "Lavoro e retribuzione",
       "company": "Azienda attuale o ultima",
-      "lastDay": "Ultimo giorno di lavoro",
-      "currentLpa": "Retribuzione attuale (LPA)",
-      "expectedLpa": "Retribuzione desiderata (LPA)"
+      "lastDay": "Ultimo giorno di lavoro"
     },
     "preferences": {
       "title": "Preferenze di lavoro",
       "industry": "Settore",
-      "choose": "Scegli…",
-      "places": "Dove vorresti lavorare",
-      "placesHint": "Separa le città con virgole."
+      "places": "Dove vorresti lavorare"
     },
     "docs": {
       "resume": "Curriculum",
@@ -165,16 +165,8 @@
       "notice_period_prof": "Prova del preavviso",
       "present_offer": "Offerta attuale"
     },
-    "errors": {
-      "city": "Inserisci la tua città.",
-      "address": "Inserisci l'indirizzo completo, almeno 10 caratteri.",
-      "company": "Inserisci il nome dell'azienda.",
-      "ctc": "Inserisci un importo in lakh, per esempio 8.5.",
-      "expectedLow": "La retribuzione desiderata non può essere inferiore a quella attuale.",
-      "lastDay": "Inserisci la data.",
-      "industry": "Scegli un settore.",
-      "places": "Aggiungi almeno una città."
-    }
+    "completionScore": "Profilo completo al {{score}}%",
+    "emptyBackground": "Ancora niente dal tuo curriculum."
   },
   "list": {
     "title": "Le tue schede di valutazione",

@@ -34,7 +34,19 @@
     "noticeProof": "퇴직 통보 증빙",
     "address": "주소",
     "scorecard": "평가표",
-    "back": "잠금 해제한 후보자"
+    "back": "잠금 해제한 후보자",
+    "newTab": "(새 탭에서 열림)",
+    "status": {
+      "applied": "지원함",
+      "shortlisted": "서류 통과",
+      "interviewed": "면접 완료",
+      "selected": "합격",
+      "hired": "채용",
+      "rejected": "불합격"
+    },
+    "background": "경력 사항",
+    "currentPay": "현재 연봉",
+    "expectedPay": "희망 연봉"
   },
   "scorecard": {
     "title": "평가표",
@@ -119,17 +131,9 @@
   "own": {
     "title": "내 프로필",
     "fromResume": "이력서에서 가져왔어요. AI가 나를 공고와 매칭하면 고용주에게 보여요.",
-    "emptyBackground": "이력서에서 가져온 내용이 아직 없어요.",
     "completion": "프로필 완성도",
-    "interviews": "AI 인터뷰",
     "interviewsUsed": "{{max}}회 중 {{used}}회 사용",
     "interviewsLeft_other": "({{count}}회 남음)",
-    "edit": "{{section}} 편집",
-    "editShort": "편집",
-    "save": "저장",
-    "saving": "저장 중…",
-    "saved": "저장됨",
-    "saveFailed": "저장되지 않았어요. 변경 내용은 그대로 있어요. 다시 시도하세요.",
     "contact": {
       "title": "연락처",
       "city": "거주 도시"
@@ -137,16 +141,12 @@
     "work": {
       "title": "직장과 연봉",
       "company": "현재 또는 마지막 회사",
-      "lastDay": "마지막 근무일",
-      "currentLpa": "현재 연봉 (LPA)",
-      "expectedLpa": "희망 연봉 (LPA)"
+      "lastDay": "마지막 근무일"
     },
     "preferences": {
       "title": "희망 조건",
       "industry": "업계",
-      "choose": "선택…",
-      "places": "희망 근무지",
-      "placesHint": "도시는 쉼표로 구분하세요."
+      "places": "희망 근무지"
     },
     "docs": {
       "resume": "이력서",
@@ -155,16 +155,8 @@
       "notice_period_prof": "퇴직 통보 증빙",
       "present_offer": "현재 받은 오퍼"
     },
-    "errors": {
-      "city": "도시를 입력하세요.",
-      "address": "주소를 10자 이상 입력하세요.",
-      "company": "회사 이름을 입력하세요.",
-      "ctc": "라크 단위 금액을 입력하세요(예: 8.5).",
-      "expectedLow": "희망 연봉은 현재 연봉보다 낮을 수 없어요.",
-      "lastDay": "날짜를 입력하세요.",
-      "industry": "업계를 선택하세요.",
-      "places": "도시를 하나 이상 추가하세요."
-    }
+    "completionScore": "프로필 {{score}}% 완성",
+    "emptyBackground": "이력서에서 가져온 내용이 아직 없어요."
   },
   "list": {
     "title": "내 평가표",

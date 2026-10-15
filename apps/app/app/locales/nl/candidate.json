@@ -36,7 +36,19 @@
     "noticeProof": "Bewijs van opzegtermijn",
     "address": "Adres",
     "scorecard": "Scorekaart",
-    "back": "Ontgrendelde kandidaten"
+    "back": "Ontgrendelde kandidaten",
+    "newTab": "(opent in een nieuw tabblad)",
+    "status": {
+      "applied": "Gesolliciteerd",
+      "shortlisted": "Op de shortlist",
+      "interviewed": "Gesprek gehad",
+      "selected": "Geselecteerd",
+      "hired": "Aangenomen",
+      "rejected": "Afgewezen"
+    },
+    "background": "Achtergrond",
+    "currentPay": "Huidig salaris",
+    "expectedPay": "Gewenst salaris"
   },
   "scorecard": {
     "title": "Scorekaart",
@@ -123,18 +135,10 @@
   "own": {
     "title": "Uw profiel",
     "fromResume": "Uit uw cv. Werkgevers zien dit wanneer onze AI u aan een vacature koppelt.",
-    "emptyBackground": "Nog niets uit uw cv.",
     "completion": "Profiel compleet",
-    "interviews": "AI-interviews",
     "interviewsUsed": "{{used}} van {{max}} gebruikt",
     "interviewsLeft_one": "(nog {{count}})",
     "interviewsLeft_other": "(nog {{count}})",
-    "edit": "{{section}} bewerken",
-    "editShort": "Bewerken",
-    "save": "Opslaan",
-    "saving": "Bezig met opslaan…",
-    "saved": "Opgeslagen",
-    "saveFailed": "Dat is niet opgeslagen. Uw wijzigingen staan er nog; probeer het opnieuw.",
     "contact": {
       "title": "Contact",
       "city": "Woonplaats"
@@ -142,16 +146,12 @@
     "work": {
       "title": "Werk en salaris",
       "company": "Huidig of laatste bedrijf",
-      "lastDay": "Laatste werkdag",
-      "currentLpa": "Huidig salaris (LPA)",
-      "expectedLpa": "Gewenst salaris (LPA)"
+      "lastDay": "Laatste werkdag"
     },
     "preferences": {
       "title": "Werkvoorkeuren",
       "industry": "Sector",
-      "choose": "Kies…",
-      "places": "Waar u wilt werken",
-      "placesHint": "Scheid steden met komma's."
+      "places": "Waar u wilt werken"
     },
     "docs": {
       "resume": "Cv",
@@ -160,16 +160,8 @@
       "notice_period_prof": "Bewijs van opzegtermijn",
       "present_offer": "Huidig aanbod"
     },
-    "errors": {
-      "city": "Vul uw woonplaats in.",
-      "address": "Vul uw volledige adres in, minstens 10 tekens.",
-      "company": "Vul de bedrijfsnaam in.",
-      "ctc": "Vul een bedrag in lakhs in, bijvoorbeeld 8.5.",
-      "expectedLow": "Het gewenste salaris mag niet lager zijn dan uw huidige salaris.",
-      "lastDay": "Vul de datum in.",
-      "industry": "Kies een sector.",
-      "places": "Voeg minstens één stad toe."
-    }
+    "completionScore": "Profiel {{score}}% compleet",
+    "emptyBackground": "Nog niets uit uw cv."
   },
   "list": {
     "title": "Uw scorekaarten",

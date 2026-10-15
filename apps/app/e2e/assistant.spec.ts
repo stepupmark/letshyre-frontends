@@ -21,8 +21,6 @@ test("a candidate asks the assistant from a page and follows its link into the a
       })
     },
   })
-  // axe would otherwise sample text mid fade-in
-  await page.emulateMedia({ reducedMotion: "reduce" })
   await signInAs("candidate")
   await page.goto("/employee/profile")
 

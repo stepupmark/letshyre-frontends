@@ -38,7 +38,19 @@
     "noticeProof": "Comprovante de aviso prévio",
     "address": "Endereço",
     "scorecard": "Avaliação",
-    "back": "Candidatos desbloqueados"
+    "back": "Candidatos desbloqueados",
+    "newTab": "(abre numa nova aba)",
+    "status": {
+      "applied": "Candidatado",
+      "shortlisted": "Pré-selecionado",
+      "interviewed": "Entrevistado",
+      "selected": "Selecionado",
+      "hired": "Contratado",
+      "rejected": "Recusado"
+    },
+    "background": "Trajetória",
+    "currentPay": "Salário atual",
+    "expectedPay": "Salário esperado"
   },
   "scorecard": {
     "title": "Avaliação",
@@ -127,19 +139,11 @@
   "own": {
     "title": "Seu perfil",
     "fromResume": "Do seu currículo. Os empregadores veem isto quando nossa IA liga você a uma vaga.",
-    "emptyBackground": "Ainda nada do seu currículo.",
     "completion": "Perfil completo",
-    "interviews": "Entrevistas com IA",
     "interviewsUsed": "{{used}} de {{max}} usadas",
     "interviewsLeft_one": "(resta {{count}})",
     "interviewsLeft_many": "(restam {{count}})",
     "interviewsLeft_other": "(restam {{count}})",
-    "edit": "Editar {{section}}",
-    "editShort": "Editar",
-    "save": "Salvar",
-    "saving": "Salvando…",
-    "saved": "Salvo",
-    "saveFailed": "Não foi salvo. Suas alterações continuam aqui; tente de novo.",
     "contact": {
       "title": "Contato",
       "city": "Cidade onde mora"
@@ -147,16 +151,12 @@
     "work": {
       "title": "Trabalho e salário",
       "company": "Empresa atual ou anterior",
-      "lastDay": "Último dia de trabalho",
-      "currentLpa": "Salário atual (LPA)",
-      "expectedLpa": "Salário pretendido (LPA)"
+      "lastDay": "Último dia de trabalho"
     },
     "preferences": {
       "title": "Preferências de trabalho",
       "industry": "Setor",
-      "choose": "Escolha…",
-      "places": "Onde você gostaria de trabalhar",
-      "placesHint": "Separe as cidades com vírgulas."
+      "places": "Onde você gostaria de trabalhar"
     },
     "docs": {
       "resume": "Currículo",
@@ -165,16 +165,8 @@
       "notice_period_prof": "Comprovante de aviso prévio",
       "present_offer": "Proposta atual"
     },
-    "errors": {
-      "city": "Digite sua cidade.",
-      "address": "Digite seu endereço completo, com pelo menos 10 caracteres.",
-      "company": "Digite o nome da empresa.",
-      "ctc": "Digite um valor em lakhs, como 8.5.",
-      "expectedLow": "O salário pretendido não pode ser menor que o atual.",
-      "lastDay": "Digite a data.",
-      "industry": "Escolha um setor.",
-      "places": "Adicione pelo menos uma cidade."
-    }
+    "completionScore": "Perfil {{score}}% completo",
+    "emptyBackground": "Ainda nada do seu currículo."
   },
   "list": {
     "title": "Suas avaliações",

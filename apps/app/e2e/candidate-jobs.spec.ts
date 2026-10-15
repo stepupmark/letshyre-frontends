@@ -74,47 +74,18 @@ test("a candidate searches, saves the search, applies and follows the applicatio
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
 })
 
-test("a candidate edits one profile section in place and only it is sent", async ({
+test("a candidate reads their profile as employers see it, without editing", async ({
   page,
-  api,
   signInAs,
 }) => {
-  const profile = fixture("user.v1.candidate_profile.json")
-  let sent = ""
-  await api({
-    "POST /user/v1/candidate_profile/": async (route) => {
-      const body = route.request().postData()
-      if (body) sent = body
-      await reply(route, profile)
-    },
-  })
   await signInAs("candidate")
   await page.goto("/employee/profile")
 
   await expect(
     page.getByRole("heading", { level: 1, name: /Meera Iyer/ })
   ).toBeVisible()
-  await expect(page.getByText("Kochi, Bengaluru")).toBeVisible()
+  await expect(page.getByText("Bengaluru", { exact: true })).toBeVisible()
+  await expect(page.getByRole("tab", { name: /Work/ })).toBeVisible()
+  await expect(page.getByRole("button", { name: /Edit|Add/ })).toHaveCount(0)
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
-
-  await page.getByRole("button", { name: "Edit Work and pay" }).click()
-  await page.getByLabel("Expected pay (LPA)").fill("10")
-  await page.getByRole("button", { name: "Save" }).click()
-  await expect(
-    page.getByText("Expected pay can't be lower than your current pay.")
-  ).toBeVisible()
-  expect(sent).toBe("")
-
-  await page.getByLabel("Expected pay (LPA)").fill("18.5")
-  await expect(
-    page.getByText("Expected pay can't be lower than your current pay.")
-  ).toBeHidden()
-  await page.getByRole("button", { name: "Save" }).click()
-  await expect(page.getByText("Saved")).toBeVisible()
-  expect(sent).toContain('name="expected_ctc"\r\n\r\n18.5')
-  expect(sent).toContain('name="current_ctc"\r\n\r\n12')
-  expect(sent).not.toContain('name="address"')
-  await expect(
-    page.getByRole("button", { name: "Edit Work and pay" })
-  ).toBeVisible()
 })

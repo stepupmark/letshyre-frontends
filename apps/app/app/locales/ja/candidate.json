@@ -34,7 +34,19 @@
     "noticeProof": "退職予告期間の証明",
     "address": "住所",
     "scorecard": "スコアカード",
-    "back": "アンロック済みの候補者"
+    "back": "アンロック済みの候補者",
+    "newTab": "（新しいタブで開きます）",
+    "status": {
+      "applied": "応募済み",
+      "shortlisted": "選考中",
+      "interviewed": "面接済み",
+      "selected": "選考通過",
+      "hired": "採用",
+      "rejected": "不採用"
+    },
+    "background": "経歴",
+    "currentPay": "現在の年収",
+    "expectedPay": "希望年収"
   },
   "scorecard": {
     "title": "スコアカード",
@@ -119,17 +131,9 @@
   "own": {
     "title": "あなたのプロフィール",
     "fromResume": "履歴書からの情報です。AI が求人とマッチさせると、雇用主に表示されます。",
-    "emptyBackground": "履歴書からの情報はまだありません。",
     "completion": "プロフィールの完成度",
-    "interviews": "AI 面接",
     "interviewsUsed": "{{max}} 回中 {{used}} 回使用",
     "interviewsLeft_other": "（残り {{count}} 回）",
-    "edit": "{{section}}を編集",
-    "editShort": "編集",
-    "save": "保存",
-    "saving": "保存中…",
-    "saved": "保存しました",
-    "saveFailed": "保存できませんでした。変更内容は残っています。もう一度お試しください。",
     "contact": {
       "title": "連絡先",
       "city": "お住まいの都市"
@@ -137,16 +141,12 @@
     "work": {
       "title": "仕事と給与",
       "company": "現在または直近の会社",
-      "lastDay": "最終出勤日",
-      "currentLpa": "現在の給与（LPA）",
-      "expectedLpa": "希望給与（LPA）"
+      "lastDay": "最終出勤日"
     },
     "preferences": {
       "title": "希望条件",
       "industry": "業界",
-      "choose": "選択…",
-      "places": "希望勤務地",
-      "placesHint": "都市はカンマで区切ってください。"
+      "places": "希望勤務地"
     },
     "docs": {
       "resume": "履歴書",
@@ -155,16 +155,8 @@
       "notice_period_prof": "退職予告期間の証明",
       "present_offer": "現在の内定通知"
     },
-    "errors": {
-      "city": "都市を入力してください。",
-      "address": "住所を10文字以上で入力してください。",
-      "company": "会社名を入力してください。",
-      "ctc": "ラク単位で金額を入力してください（例：8.5）。",
-      "expectedLow": "希望給与は現在の給与より低くできません。",
-      "lastDay": "日付を入力してください。",
-      "industry": "業界を選んでください。",
-      "places": "都市を1つ以上追加してください。"
-    }
+    "completionScore": "プロフィール {{score}}% 完了",
+    "emptyBackground": "履歴書からの情報はまだありません。"
   },
   "list": {
     "title": "あなたのスコアカード",

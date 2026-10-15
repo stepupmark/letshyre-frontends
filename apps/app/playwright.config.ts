@@ -13,6 +13,8 @@ export default defineConfig({
   use: {
     baseURL: `http://localhost:${PORT}`,
     trace: "retain-on-failure",
+    // axe would otherwise sample text colours mid fade-in
+    contextOptions: { reducedMotion: "reduce" },
   },
   projects: [
     { name: "chromium", use: { ...devices["Desktop Chrome"] } },

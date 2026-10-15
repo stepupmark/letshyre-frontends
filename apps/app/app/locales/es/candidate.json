@@ -38,7 +38,19 @@
     "noticeProof": "Justificante de preaviso",
     "address": "Dirección",
     "scorecard": "Ficha de evaluación",
-    "back": "Candidatos desbloqueados"
+    "back": "Candidatos desbloqueados",
+    "newTab": "(se abre en una pestaña nueva)",
+    "status": {
+      "applied": "Postulado",
+      "shortlisted": "Preseleccionado",
+      "interviewed": "Entrevistado",
+      "selected": "Seleccionado",
+      "hired": "Contratado",
+      "rejected": "Rechazado"
+    },
+    "background": "Trayectoria",
+    "currentPay": "Salario actual",
+    "expectedPay": "Salario esperado"
   },
   "scorecard": {
     "title": "Ficha de evaluación",
@@ -127,19 +139,11 @@
   "own": {
     "title": "Su perfil",
     "fromResume": "De su currículum. Los empleadores lo ven cuando nuestra IA le relaciona con una oferta.",
-    "emptyBackground": "Aún no hay nada de su currículum.",
     "completion": "Perfil completado",
-    "interviews": "Entrevistas con IA",
     "interviewsUsed": "{{used}} de {{max}} usadas",
     "interviewsLeft_one": "(queda {{count}})",
     "interviewsLeft_many": "(quedan {{count}})",
     "interviewsLeft_other": "(quedan {{count}})",
-    "edit": "Editar {{section}}",
-    "editShort": "Editar",
-    "save": "Guardar",
-    "saving": "Guardando…",
-    "saved": "Guardado",
-    "saveFailed": "No se ha guardado. Sus cambios siguen aquí; inténtelo de nuevo.",
     "contact": {
       "title": "Contacto",
       "city": "Ciudad donde vive"
@@ -147,16 +151,12 @@
     "work": {
       "title": "Trabajo y salario",
       "company": "Empresa actual o última",
-      "lastDay": "Último día de trabajo",
-      "currentLpa": "Salario actual (LPA)",
-      "expectedLpa": "Salario esperado (LPA)"
+      "lastDay": "Último día de trabajo"
     },
     "preferences": {
       "title": "Preferencias de empleo",
       "industry": "Sector",
-      "choose": "Elija…",
-      "places": "Dónde le gustaría trabajar",
-      "placesHint": "Separe las ciudades con comas."
+      "places": "Dónde le gustaría trabajar"
     },
     "docs": {
       "resume": "Currículum",
@@ -165,16 +165,8 @@
       "notice_period_prof": "Justificante de preaviso",
       "present_offer": "Oferta actual"
     },
-    "errors": {
-      "city": "Introduzca su ciudad.",
-      "address": "Introduzca su dirección completa, al menos 10 caracteres.",
-      "company": "Introduzca el nombre de la empresa.",
-      "ctc": "Introduzca un importe en lakhs, por ejemplo 8.5.",
-      "expectedLow": "El salario esperado no puede ser inferior al actual.",
-      "lastDay": "Introduzca la fecha.",
-      "industry": "Elija un sector.",
-      "places": "Añada al menos una ciudad."
-    }
+    "completionScore": "Perfil completo al {{score}} %",
+    "emptyBackground": "Aún no hay nada de su currículum."
   },
   "list": {
     "title": "Sus fichas de evaluación",

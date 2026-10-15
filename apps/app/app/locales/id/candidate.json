@@ -34,7 +34,19 @@
     "noticeProof": "Bukti masa pemberitahuan",
     "address": "Alamat",
     "scorecard": "Kartu skor",
-    "back": "Kandidat terbuka"
+    "back": "Kandidat terbuka",
+    "newTab": "(terbuka di tab baru)",
+    "status": {
+      "applied": "Sudah melamar",
+      "shortlisted": "Masuk daftar pendek",
+      "interviewed": "Sudah wawancara",
+      "selected": "Terpilih",
+      "hired": "Diterima",
+      "rejected": "Ditolak"
+    },
+    "background": "Latar belakang",
+    "currentPay": "Gaji saat ini",
+    "expectedPay": "Gaji yang diharapkan"
   },
   "scorecard": {
     "title": "Kartu skor",
@@ -119,17 +131,9 @@
   "own": {
     "title": "Profil Anda",
     "fromResume": "Dari CV Anda. Pemberi kerja melihat ini saat AI kami mencocokkan Anda dengan lowongan.",
-    "emptyBackground": "Belum ada apa pun dari CV Anda.",
     "completion": "Kelengkapan profil",
-    "interviews": "Wawancara AI",
     "interviewsUsed": "{{used}} dari {{max}} terpakai",
     "interviewsLeft_other": "(sisa {{count}})",
-    "edit": "Edit {{section}}",
-    "editShort": "Edit",
-    "save": "Simpan",
-    "saving": "Menyimpan…",
-    "saved": "Tersimpan",
-    "saveFailed": "Tidak tersimpan. Perubahan Anda masih ada; coba lagi.",
     "contact": {
       "title": "Kontak",
       "city": "Kota tempat tinggal"
@@ -137,16 +141,12 @@
     "work": {
       "title": "Pekerjaan dan gaji",
       "company": "Perusahaan saat ini atau terakhir",
-      "lastDay": "Hari kerja terakhir",
-      "currentLpa": "Gaji saat ini (LPA)",
-      "expectedLpa": "Gaji yang diharapkan (LPA)"
+      "lastDay": "Hari kerja terakhir"
     },
     "preferences": {
       "title": "Preferensi kerja",
       "industry": "Industri",
-      "choose": "Pilih…",
-      "places": "Tempat Anda ingin bekerja",
-      "placesHint": "Pisahkan kota dengan koma."
+      "places": "Tempat Anda ingin bekerja"
     },
     "docs": {
       "resume": "CV",
@@ -155,16 +155,8 @@
       "notice_period_prof": "Bukti masa pemberitahuan",
       "present_offer": "Tawaran kerja saat ini"
     },
-    "errors": {
-      "city": "Masukkan kota Anda.",
-      "address": "Masukkan alamat lengkap, minimal 10 karakter.",
-      "company": "Masukkan nama perusahaan.",
-      "ctc": "Masukkan jumlah dalam lakh, misalnya 8.5.",
-      "expectedLow": "Gaji yang diharapkan tidak boleh lebih rendah dari gaji saat ini.",
-      "lastDay": "Masukkan tanggal.",
-      "industry": "Pilih industri.",
-      "places": "Tambahkan minimal satu kota."
-    }
+    "completionScore": "Profil {{score}}% lengkap",
+    "emptyBackground": "Belum ada apa pun dari CV Anda."
   },
   "list": {
     "title": "Kartu skor Anda",

@@ -1,6 +1,6 @@
 export { LinkUnavailable } from "./components/link-unavailable"
-export { OwnProfile } from "./components/own-profile"
-export { CandidateProfileView } from "./components/profile-view"
+export { OwnProfile } from "./components/own-profile/own-profile"
+export { CandidateProfileView } from "./components/profile/profile-view"
 export { RecordState } from "./components/record-state"
 export { ReportSkeleton } from "./components/report-skeleton"
 export { ScorecardList } from "./components/scorecard-list"

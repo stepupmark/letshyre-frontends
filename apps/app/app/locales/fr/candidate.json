@@ -38,7 +38,19 @@
     "noticeProof": "Justificatif de préavis",
     "address": "Adresse",
     "scorecard": "Grille",
-    "back": "Candidats débloqués"
+    "back": "Candidats débloqués",
+    "newTab": "(s'ouvre dans un nouvel onglet)",
+    "status": {
+      "applied": "Candidature envoyée",
+      "shortlisted": "Présélectionné",
+      "interviewed": "Entretien passé",
+      "selected": "Sélectionné",
+      "hired": "Embauché",
+      "rejected": "Refusé"
+    },
+    "background": "Parcours",
+    "currentPay": "Salaire actuel",
+    "expectedPay": "Salaire souhaité"
   },
   "scorecard": {
     "title": "Grille",
@@ -127,19 +139,11 @@
   "own": {
     "title": "Votre profil",
     "fromResume": "Issu de votre CV. Les employeurs le voient quand notre IA vous associe à une offre.",
-    "emptyBackground": "Rien de votre CV pour l'instant.",
     "completion": "Profil complété",
-    "interviews": "Entretiens IA",
     "interviewsUsed": "{{used}} sur {{max}} utilisés",
     "interviewsLeft_one": "({{count}} restant)",
     "interviewsLeft_many": "({{count}} restants)",
     "interviewsLeft_other": "({{count}} restants)",
-    "edit": "Modifier {{section}}",
-    "editShort": "Modifier",
-    "save": "Enregistrer",
-    "saving": "Enregistrement…",
-    "saved": "Enregistré",
-    "saveFailed": "Cela n'a pas été enregistré. Vos modifications sont conservées ; réessayez.",
     "contact": {
       "title": "Contact",
       "city": "Votre ville"
@@ -147,16 +151,12 @@
     "work": {
       "title": "Travail et rémunération",
       "company": "Entreprise actuelle ou précédente",
-      "lastDay": "Dernier jour de travail",
-      "currentLpa": "Rémunération actuelle (LPA)",
-      "expectedLpa": "Rémunération souhaitée (LPA)"
+      "lastDay": "Dernier jour de travail"
     },
     "preferences": {
       "title": "Préférences d'emploi",
       "industry": "Secteur",
-      "choose": "Choisir…",
-      "places": "Où vous aimeriez travailler",
-      "placesHint": "Séparez les villes par des virgules."
+      "places": "Où vous aimeriez travailler"
     },
     "docs": {
       "resume": "CV",
@@ -165,16 +165,8 @@
       "notice_period_prof": "Justificatif de préavis",
       "present_offer": "Offre d'emploi actuelle"
     },
-    "errors": {
-      "city": "Saisissez votre ville.",
-      "address": "Saisissez votre adresse complète, au moins 10 caractères.",
-      "company": "Saisissez le nom de l'entreprise.",
-      "ctc": "Saisissez un montant en lakhs, par exemple 8.5.",
-      "expectedLow": "La rémunération souhaitée ne peut pas être inférieure à la rémunération actuelle.",
-      "lastDay": "Saisissez la date.",
-      "industry": "Choisissez un secteur.",
-      "places": "Ajoutez au moins une ville."
-    }
+    "completionScore": "Profil complet à {{score}} %",
+    "emptyBackground": "Rien de votre CV pour l'instant."
   },
   "list": {
     "title": "Vos grilles",

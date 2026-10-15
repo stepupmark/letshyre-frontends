@@ -36,7 +36,19 @@
     "noticeProof": "Nachweis der Kündigungsfrist",
     "address": "Adresse",
     "scorecard": "Scorecard",
-    "back": "Freigeschaltete Kandidaten"
+    "back": "Freigeschaltete Kandidaten",
+    "newTab": "(öffnet in neuem Tab)",
+    "status": {
+      "applied": "Beworben",
+      "shortlisted": "In der engeren Wahl",
+      "interviewed": "Interviewt",
+      "selected": "Ausgewählt",
+      "hired": "Eingestellt",
+      "rejected": "Abgelehnt"
+    },
+    "background": "Werdegang",
+    "currentPay": "Aktuelles Gehalt",
+    "expectedPay": "Gehaltswunsch"
   },
   "scorecard": {
     "title": "Scorecard",
@@ -123,18 +135,10 @@
   "own": {
     "title": "Ihr Profil",
     "fromResume": "Aus Ihrem Lebenslauf. Arbeitgeber sehen dies, wenn unsere KI Sie zu einer Stelle matcht.",
-    "emptyBackground": "Noch nichts aus Ihrem Lebenslauf.",
     "completion": "Profil vollständig",
-    "interviews": "KI-Interviews",
     "interviewsUsed": "{{used}} von {{max}} genutzt",
     "interviewsLeft_one": "(noch {{count}})",
     "interviewsLeft_other": "(noch {{count}})",
-    "edit": "{{section}} bearbeiten",
-    "editShort": "Bearbeiten",
-    "save": "Speichern",
-    "saving": "Wird gespeichert…",
-    "saved": "Gespeichert",
-    "saveFailed": "Das wurde nicht gespeichert. Ihre Änderungen sind noch da; versuchen Sie es erneut.",
     "contact": {
       "title": "Kontakt",
       "city": "Ihr Wohnort"
@@ -142,16 +146,12 @@
     "work": {
       "title": "Arbeit und Gehalt",
       "company": "Aktuelles oder letztes Unternehmen",
-      "lastDay": "Letzter Arbeitstag",
-      "currentLpa": "Aktuelles Gehalt (LPA)",
-      "expectedLpa": "Gehaltswunsch (LPA)"
+      "lastDay": "Letzter Arbeitstag"
     },
     "preferences": {
       "title": "Jobwünsche",
       "industry": "Branche",
-      "choose": "Auswählen…",
-      "places": "Wo Sie arbeiten möchten",
-      "placesHint": "Städte mit Kommas trennen."
+      "places": "Wo Sie arbeiten möchten"
     },
     "docs": {
       "resume": "Lebenslauf",
@@ -160,16 +160,8 @@
       "notice_period_prof": "Nachweis der Kündigungsfrist",
       "present_offer": "Aktuelles Angebotsschreiben"
     },
-    "errors": {
-      "city": "Geben Sie Ihren Wohnort ein.",
-      "address": "Geben Sie Ihre vollständige Adresse ein, mindestens 10 Zeichen.",
-      "company": "Geben Sie den Firmennamen ein.",
-      "ctc": "Geben Sie einen Betrag in Lakhs ein, z. B. 8.5.",
-      "expectedLow": "Der Gehaltswunsch darf nicht unter dem aktuellen Gehalt liegen.",
-      "lastDay": "Geben Sie das Datum ein.",
-      "industry": "Wählen Sie eine Branche.",
-      "places": "Fügen Sie mindestens eine Stadt hinzu."
-    }
+    "completionScore": "Profil zu {{score}} % vollständig",
+    "emptyBackground": "Noch nichts aus Ihrem Lebenslauf."
   },
   "list": {
     "title": "Ihre Scorecards",

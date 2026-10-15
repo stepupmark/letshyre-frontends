@@ -44,7 +44,19 @@
     "noticeProof": "إثبات فترة الإشعار",
     "address": "العنوان",
     "scorecard": "بطاقة التقييم",
-    "back": "المرشحون المفتوحون"
+    "back": "المرشحون المفتوحون",
+    "newTab": "(يفتح في علامة تبويب جديدة)",
+    "status": {
+      "applied": "تم التقديم",
+      "shortlisted": "في القائمة المختصرة",
+      "interviewed": "تمت المقابلة",
+      "selected": "تم الاختيار",
+      "hired": "تم التعيين",
+      "rejected": "مرفوض"
+    },
+    "background": "الخلفية",
+    "currentPay": "الراتب الحالي",
+    "expectedPay": "الراتب المتوقع"
   },
   "scorecard": {
     "title": "بطاقة التقييم",
@@ -139,9 +151,7 @@
   "own": {
     "title": "ملفك الشخصي",
     "fromResume": "من سيرتك الذاتية. يرى أصحاب العمل ذلك عندما يطابقك ذكاؤنا الاصطناعي مع وظيفة.",
-    "emptyBackground": "لا شيء من سيرتك الذاتية بعد.",
     "completion": "اكتمال الملف",
-    "interviews": "المقابلات بالذكاء الاصطناعي",
     "interviewsUsed": "استُخدمت {{used}} من {{max}}",
     "interviewsLeft_zero": "(لم يتبقَّ شيء)",
     "interviewsLeft_one": "(تبقّت واحدة)",
@@ -149,12 +159,6 @@
     "interviewsLeft_few": "(تبقّت {{count}})",
     "interviewsLeft_many": "(تبقّت {{count}})",
     "interviewsLeft_other": "(تبقّت {{count}})",
-    "edit": "تعديل {{section}}",
-    "editShort": "تعديل",
-    "save": "حفظ",
-    "saving": "جارٍ الحفظ…",
-    "saved": "تم الحفظ",
-    "saveFailed": "لم يُحفظ. ما زالت تعديلاتك هنا؛ حاول مجددًا.",
     "contact": {
       "title": "التواصل",
       "city": "المدينة التي تعيش فيها"
@@ -162,16 +166,12 @@
     "work": {
       "title": "العمل والأجر",
       "company": "الشركة الحالية أو الأخيرة",
-      "lastDay": "آخر يوم عمل",
-      "currentLpa": "الأجر الحالي (LPA)",
-      "expectedLpa": "الأجر المتوقع (LPA)"
+      "lastDay": "آخر يوم عمل"
     },
     "preferences": {
       "title": "تفضيلات العمل",
       "industry": "القطاع",
-      "choose": "اختر…",
-      "places": "أين تودّ أن تعمل",
-      "placesHint": "افصل بين المدن بفواصل."
+      "places": "أين تودّ أن تعمل"
     },
     "docs": {
       "resume": "السيرة الذاتية",
@@ -180,16 +180,8 @@
       "notice_period_prof": "إثبات فترة الإشعار",
       "present_offer": "العرض الحالي"
     },
-    "errors": {
-      "city": "أدخل مدينتك.",
-      "address": "أدخل عنوانك الكامل، 10 أحرف على الأقل.",
-      "company": "أدخل اسم الشركة.",
-      "ctc": "أدخل مبلغًا باللاكه، مثل 8.5.",
-      "expectedLow": "لا يمكن أن يكون الأجر المتوقع أقل من الأجر الحالي.",
-      "lastDay": "أدخل التاريخ.",
-      "industry": "اختر قطاعًا.",
-      "places": "أضف مدينة واحدة على الأقل."
-    }
+    "completionScore": "الملف مكتمل بنسبة {{score}}%",
+    "emptyBackground": "لا شيء من سيرتك الذاتية بعد."
   },
   "list": {
     "title": "بطاقات تقييمك",

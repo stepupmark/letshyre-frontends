@@ -38,7 +38,7 @@ test("an employer reads an unlocked candidate and shares their scorecard", async
   ).toHaveAttribute("href", "mailto:priya@example.com")
   await expect(page.getByRole("link", { name: "+91 9876543210" })).toBeVisible()
   // stored as a JSON string by older profiles
-  await expect(page.getByText("Finch Labs · 2022 – now")).toBeVisible()
+  await expect(page.getByText("2022 – now")).toBeVisible()
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
 
   await page.getByRole("link", { name: "Scorecard" }).click()
