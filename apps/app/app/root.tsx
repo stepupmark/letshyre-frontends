@@ -4,7 +4,7 @@ import { ThemeProvider } from "@workspace/blocks/theme-provider"
 import { dirFor } from "@workspace/i18n"
 import { I18nProvider } from "@workspace/i18n/react"
 import { Toaster } from "@workspace/ui/components/sonner"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useSyncExternalStore } from "react"
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router"
 
 import type { Route } from "./+types/root"
@@ -17,6 +17,22 @@ import "./styles/app.css"
 
 // English common is bundled so the error screen works before anything loads
 const messages = { en: { common } }
+
+// Sonner's own mobile breakpoint; below it toasts go on top so they never cover a sticky composer
+const narrow = "(max-width: 600px)"
+
+function useNarrow() {
+  return useSyncExternalStore(
+    (change) => {
+      const query = matchMedia(narrow)
+      query.addEventListener("change", change)
+      return () => {
+        query.removeEventListener("change", change)
+      }
+    },
+    () => matchMedia(narrow).matches
+  )
+}
 
 export const clientMiddleware = [namespaces(["common"])]
 
@@ -52,6 +68,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   const [queryClient] = useState(createQueryClient)
+  const isNarrow = useNarrow()
 
   useEffect(() => {
     document.documentElement.lang = locale
@@ -64,7 +81,7 @@ export default function App() {
         <QueryClientProvider client={queryClient}>
           <MotionProvider>
             <Outlet />
-            <Toaster position="bottom-center" />
+            <Toaster position={isNarrow ? "top-center" : "bottom-center"} />
           </MotionProvider>
         </QueryClientProvider>
       </I18nProvider>
