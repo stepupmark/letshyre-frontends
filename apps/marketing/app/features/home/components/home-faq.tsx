@@ -1,10 +1,10 @@
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { ArrowRightIcon, PlusIcon } from "lucide-react"
-import { Link } from "react-router"
+import { PlusIcon } from "lucide-react"
 
 import { twoDigit } from "../lib/format"
 import { HomeHeading } from "./home-heading"
+import { TextLink } from "./home-links"
 import { HomeSection } from "./home-section"
 
 interface Item {
@@ -20,36 +20,30 @@ export function HomeFaq() {
   return (
     <HomeSection
       id="faq"
-      className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16"
+      className="grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20"
     >
       <div className="contents lg:sticky lg:top-28 lg:flex lg:flex-col lg:gap-10 lg:self-start">
         <HomeHeading
-          className="reveal"
+          className="slide-in"
           id="faq-title"
           title={t("faq.title")}
           accent={t("faq.accent")}
           description={t("faq.description")}
         />
 
-        <div className="reveal relative max-w-sm rounded-2xl border bg-muted/40 p-6 max-lg:order-last">
-          <p className="font-display text-2xl">{t("faq.contact.title")}</p>
+        <div className="slide-in max-w-sm rounded-2xl border bg-muted/40 p-6 max-lg:order-last">
+          <p className="text-lg font-semibold">{t("faq.contact.title")}</p>
           <p className="mt-2 text-sm text-pretty text-muted-foreground">
             {t("faq.contact.body")}
           </p>
-          <Link
-            to={localePath(lang, "/contact")}
-            prefetch="intent"
-            className="mt-5 inline-flex items-center gap-1.5 rounded-md text-sm font-medium text-brand-text outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
-          >
-            {t("faq.contact.cta")}
-            <ArrowRightIcon aria-hidden className="size-4" />
-          </Link>
-          <p
-            aria-hidden
-            className="font-script absolute inset-e-4 -bottom-5 -rotate-6 text-3xl text-brand-text"
-          >
-            {t("faq.contact.note")}
-          </p>
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-x-4">
+            <TextLink to={localePath(lang, "/contact")}>
+              {t("faq.contact.cta")}
+            </TextLink>
+            <p className="text-xs text-muted-foreground">
+              {t("faq.contact.note")}
+            </p>
+          </div>
         </div>
       </div>
 
@@ -60,7 +54,7 @@ export function HomeFaq() {
               <summary className="flex cursor-pointer list-none items-center gap-5 rounded-2xl p-5 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 [&::-webkit-details-marker]:hidden">
                 <span
                   aria-hidden
-                  className="font-display w-7 shrink-0 text-xl text-muted-foreground tabular-nums group-open:text-brand-text"
+                  className="w-6 shrink-0 text-sm font-semibold text-muted-foreground tabular-nums group-open:text-brand-text"
                 >
                   {twoDigit(index + 1)}
                 </span>
@@ -72,7 +66,7 @@ export function HomeFaq() {
                   />
                 </span>
               </summary>
-              <p className="ps-17 pe-14 pb-6 text-pretty text-muted-foreground">
+              <p className="rise ps-16 pe-14 pb-6 text-pretty text-muted-foreground">
                 {item.a}
               </p>
             </details>

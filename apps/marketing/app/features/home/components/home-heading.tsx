@@ -27,23 +27,19 @@ export function HomeHeading({
       )}
     >
       {eyebrow && (
-        <p className="mb-4 text-sm font-medium tracking-wide text-brand-text">
-          {eyebrow}
-        </p>
+        <p className="mb-3 text-sm font-semibold text-brand-text">{eyebrow}</p>
       )}
-      <h2 id={id} className="flex flex-col">
-        <span className="font-display text-4xl leading-none tracking-tight text-balance sm:text-5xl">
-          {title}
-        </span>
-        <span className="font-script text-5xl leading-[1.2] text-brand-text sm:text-6xl">
-          {accent}
-        </span>
+      <h2
+        id={id}
+        className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+      >
+        {title} <span className="text-brand-text">{accent}</span>
       </h2>
       {description && (
         <p
           className={cn(
-            "mt-4 text-lg text-pretty text-muted-foreground",
-            center && "max-w-md"
+            "mt-5 text-lg text-pretty text-muted-foreground",
+            center && "max-w-xl"
           )}
         >
           {description}

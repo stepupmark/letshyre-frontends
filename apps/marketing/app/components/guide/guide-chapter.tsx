@@ -40,7 +40,7 @@ export function GuideChapter({
       <div className="slide-in flex items-start gap-4 sm:gap-6">
         <span
           aria-hidden
-          className="font-display text-5xl text-brand tabular-nums sm:text-6xl"
+          className="text-5xl font-semibold tracking-tight text-brand tabular-nums sm:text-6xl"
         >
           {String(number).padStart(2, "0")}
         </span>

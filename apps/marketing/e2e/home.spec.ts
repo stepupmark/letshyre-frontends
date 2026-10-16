@@ -1,12 +1,17 @@
+import AxeBuilder from "@axe-core/playwright"
 import { expect, test } from "@playwright/test"
 
 import { mockApi } from "./mock-api.ts"
+
+const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
 
 test.beforeEach(async ({ page }) => {
   await mockApi(page)
 })
 
-test("hero has one h1 and both sign-up paths", async ({ page }) => {
+test("hero has one h1, both sign-up paths and passes axe in both themes", async ({
+  page,
+}) => {
   await page.goto("/en")
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     /Hire on evidence,\s*not on hope\./
@@ -19,6 +24,15 @@ test("hero has one h1 and both sign-up paths", async ({ page }) => {
   await expect(
     hero.getByRole("link", { name: "I'm looking for a role" })
   ).toHaveAttribute("href", /\/employee\/register$/)
+
+  for (const colorScheme of ["light", "dark"] as const) {
+    await page.emulateMedia({ colorScheme, reducedMotion: "reduce" })
+    await page.goto("/en")
+    const { violations } = await new AxeBuilder({ page })
+      .withTags(WCAG)
+      .analyze()
+    expect(violations, colorScheme).toEqual([])
+  }
 })
 
 test("FAQ answers are prerendered and open on demand", async ({

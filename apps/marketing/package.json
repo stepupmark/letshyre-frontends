@@ -15,8 +15,6 @@
   },
   "dependencies": {
     "@fontsource-variable/outfit": "catalog:",
-    "@fontsource/instrument-serif": "catalog:",
-    "@fontsource/ms-madi": "catalog:",
     "@hookform/resolvers": "catalog:",
     "@react-router/node": "catalog:",
     "@tanstack/react-query": "catalog:",

@@ -1,7 +1,6 @@
 import { Evidence } from "./components/evidence"
 import { FinalCta } from "./components/final-cta"
 import { ForProfessionals } from "./components/for-professionals"
-import { FreshPool } from "./components/fresh-pool"
 import { Hero } from "./components/hero"
 import { HomeFaq } from "./components/home-faq"
 import { HowItWorks } from "./components/how-it-works"
@@ -16,7 +15,6 @@ export function HomePage() {
       <HowItWorks />
       <Evidence />
       <ForProfessionals />
-      <FreshPool />
       <PricingNote />
       <HomeFaq />
       <FinalCta />
