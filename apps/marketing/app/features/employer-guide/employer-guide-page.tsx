@@ -5,7 +5,7 @@ import type { ReactNode } from "react"
 import { Link } from "react-router"
 
 import { CtaBand } from "@/components/cta-band"
-import { GuideToc } from "@/components/guide-toc"
+import { GuideToc } from "@/components/guide/guide-toc"
 import { HIGHLIGHT } from "@/components/highlight"
 import { Container, PageHeader } from "@/components/section"
 import { useActiveSection } from "@/hooks/use-active-section"

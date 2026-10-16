@@ -2,12 +2,12 @@
   "skipToContent": "メインコンテンツへスキップ",
   "copyright": "© {{year}} LetsHyre. All rights reserved.",
   "nav": {
-    "howItWorks": "仕組み",
     "interviewGuide": "面接ガイド",
     "employerGuide": "採用担当者ガイド",
-    "howItWorksDesc": "求人を掲載し、AIで選考し、評価レポートを受け取る",
+    "candidateGuide": "候補者ガイド",
     "interviewGuideDesc": "AI面接の受け方をステップごとに解説",
     "employerGuideDesc": "LetsHyreでの採用の流れを、登録から候補者の絞り込みまで解説",
+    "candidateGuideDesc": "登録から面接当日まで、LetsHyreの使い方を解説",
     "pricing": "料金",
     "about": "会社概要",
     "contact": "お問い合わせ",
@@ -38,9 +38,9 @@
       "youtube": "YouTube の LetsHyre"
     },
     "links": {
-      "howItWorks": "仕組み",
       "interviewGuide": "面接ガイド",
       "employerGuide": "採用担当者ガイド",
+      "candidateGuide": "候補者ガイド",
       "downloadApp": "アプリをダウンロード",
       "pricing": "料金",
       "about": "会社概要",

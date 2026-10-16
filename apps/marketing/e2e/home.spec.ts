@@ -21,28 +21,6 @@ test("hero has one h1 and both sign-up paths", async ({ page }) => {
   ).toHaveAttribute("href", /\/employee\/register$/)
 })
 
-test("the How it works link lands on both tracks", async ({ page }) => {
-  test.skip(test.info().project.name === "mobile", "link is in the menu")
-  await page.setViewportSize({ width: 1280, height: 800 })
-  await page.goto("/en")
-  await page
-    .getByRole("navigation", { name: "Primary navigation" })
-    .getByRole("button", { name: "Product" })
-    .click()
-  await page
-    .locator("[data-slot=navigation-menu-content]")
-    .getByRole("link", { name: /How It Works/ })
-    .click()
-  await expect(page).toHaveURL(/\/en#how-it-works$/)
-
-  const section = page.locator("#how-it-works")
-  await expect(section).toBeInViewport()
-  await section.getByRole("tab", { name: "For professionals" }).click()
-  await expect(
-    section.getByRole("heading", { name: "Take up to 3 AI interviews" })
-  ).toBeVisible()
-})
-
 test("FAQ answers are prerendered and open on demand", async ({
   page,
   request,

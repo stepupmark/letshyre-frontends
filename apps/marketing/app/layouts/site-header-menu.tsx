@@ -29,7 +29,6 @@ import { SiteLanguageSwitcher } from "./site-header-language"
 import {
   NAV_ITEMS,
   type NavItem,
-  navHref,
   useCurrent,
   useProductItems,
 } from "./site-header-nav"
@@ -62,7 +61,7 @@ export function SiteHeaderMenu({ className }: { className?: string }) {
   const navLink = (item: NavItem) => (
     <MenuLink
       key={item.id}
-      to={navHref(lang, item)}
+      to={localePath(lang, item.path)}
       aria-current={current(item)}
       onClick={close}
       data-current={current(item) ? "" : undefined}

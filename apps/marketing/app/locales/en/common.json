@@ -2,12 +2,12 @@
   "skipToContent": "Skip to main content",
   "copyright": "© {{year}} LetsHyre. All rights reserved.",
   "nav": {
-    "howItWorks": "How It Works",
     "interviewGuide": "Interview Guide",
     "employerGuide": "Employer Guide",
-    "howItWorksDesc": "Post a role, screen with AI, get scorecards",
+    "candidateGuide": "Candidate Guide",
     "interviewGuideDesc": "How to take your AI interview, step by step",
     "employerGuideDesc": "How hiring on LetsHyre works, from sign-up to shortlist",
+    "candidateGuideDesc": "How LetsHyre works for you, from sign-up to interview day",
     "pricing": "Pricing",
     "about": "About",
     "contact": "Contact",
@@ -38,9 +38,9 @@
       "youtube": "LetsHyre on YouTube"
     },
     "links": {
-      "howItWorks": "How it works",
       "interviewGuide": "Interview guide",
       "employerGuide": "Employer guide",
+      "candidateGuide": "Candidate guide",
       "downloadApp": "Download the app",
       "pricing": "Pricing",
       "about": "About us",

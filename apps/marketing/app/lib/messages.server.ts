@@ -1,7 +1,7 @@
 import { type Catalog, type Locale, type Messages } from "@workspace/i18n"
 import { type Catalogs, readinessFrom } from "@workspace/i18n/node"
 
-import { PAGES, type PageId, pageNamespaces } from "./pages"
+import { PAGES, type PageId, pageNamespaces, withoutReplaced } from "./pages"
 
 const files = import.meta.glob<Catalog>("../locales/*/*.json", {
   eager: true,
@@ -16,11 +16,13 @@ for (const [path, catalog] of Object.entries(files)) {
   catalogs.set(lang as Locale, byNs)
 }
 
-const readiness = readinessFrom(
-  catalogs,
-  Object.fromEntries(
-    Object.keys(PAGES).map((id) => [id, pageNamespaces(id as PageId)])
-  )
+const readiness = withoutReplaced(
+  readinessFrom(
+    catalogs,
+    Object.fromEntries(
+      Object.keys(PAGES).map((id) => [id, pageNamespaces(id as PageId)])
+    )
+  ) as Map<PageId, Locale[]>
 )
 
 export function loadMessages(

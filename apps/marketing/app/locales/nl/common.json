@@ -2,12 +2,12 @@
   "skipToContent": "Ga naar hoofdinhoud",
   "copyright": "© {{year}} LetsHyre. Alle rechten voorbehouden.",
   "nav": {
-    "howItWorks": "Hoe het werkt",
     "interviewGuide": "Interviewgids",
     "employerGuide": "Gids voor werkgevers",
-    "howItWorksDesc": "Plaats een vacature, screen met AI, ontvang scorecards",
+    "candidateGuide": "Gids voor kandidaten",
     "interviewGuideDesc": "Zo doe je je AI-interview, stap voor stap",
     "employerGuideDesc": "Zo werkt werven op LetsHyre, van aanmelden tot shortlist",
+    "candidateGuideDesc": "Zo werkt LetsHyre voor jou, van aanmelden tot de dag van je interview",
     "pricing": "Prijzen",
     "about": "Over ons",
     "contact": "Contact",
@@ -38,9 +38,9 @@
       "youtube": "LetsHyre op YouTube"
     },
     "links": {
-      "howItWorks": "Hoe het werkt",
       "interviewGuide": "Interviewgids",
       "employerGuide": "Gids voor werkgevers",
+      "candidateGuide": "Gids voor kandidaten",
       "downloadApp": "App downloaden",
       "pricing": "Prijzen",
       "about": "Over ons",

@@ -2,12 +2,12 @@
   "skipToContent": "പ്രധാന ഉള്ളടക്കത്തിലേക്ക് പോകുക",
   "copyright": "© {{year}} LetsHyre. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.",
   "nav": {
-    "howItWorks": "എങ്ങനെ പ്രവർത്തിക്കുന്നു",
     "interviewGuide": "ഇന്റർവ്യൂ ഗൈഡ്",
     "employerGuide": "തൊഴിലുടമ ഗൈഡ്",
-    "howItWorksDesc": "ജോലി പോസ്റ്റ് ചെയ്യുക, എഐ ഉപയോഗിച്ച് സ്ക്രീൻ ചെയ്യുക, സ്കോർകാർഡുകൾ നേടുക",
+    "candidateGuide": "ഉദ്യോഗാർത്ഥി ഗൈഡ്",
     "interviewGuideDesc": "AI ഇന്റർവ്യൂ എങ്ങനെ ചെയ്യാം, ഘട്ടം ഘട്ടമായി",
     "employerGuideDesc": "LetsHyre-ൽ നിയമനം എങ്ങനെ നടക്കുന്നു, സൈൻ-അപ്പ് മുതൽ ഷോർട്ട്‌ലിസ്റ്റ് വരെ",
+    "candidateGuideDesc": "സൈൻ-അപ്പ് മുതൽ അഭിമുഖ ദിവസം വരെ, LetsHyre നിങ്ങൾക്കായി എങ്ങനെ പ്രവർത്തിക്കുന്നു",
     "pricing": "നിരക്കുകൾ",
     "about": "കുറിച്ച്",
     "contact": "സമ്പർക്കം",
@@ -38,9 +38,9 @@
       "youtube": "YouTube-ൽ LetsHyre"
     },
     "links": {
-      "howItWorks": "എങ്ങനെ പ്രവർത്തിക്കുന്നു",
       "interviewGuide": "ഇന്റർവ്യൂ ഗൈഡ്",
       "employerGuide": "തൊഴിലുടമ ഗൈഡ്",
+      "candidateGuide": "ഉദ്യോഗാർത്ഥി ഗൈഡ്",
       "downloadApp": "ആപ്ലിക്കേഷൻ ഡൗൺലോഡ് ചെയ്യുക",
       "pricing": "നിരക്കുകൾ",
       "about": "ഞങ്ങളെ കുറിച്ച്",

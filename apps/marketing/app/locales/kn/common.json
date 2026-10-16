@@ -2,12 +2,12 @@
   "skipToContent": "ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ",
   "copyright": "© {{year}} LetsHyre. ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
   "nav": {
-    "howItWorks": "ಇದು ಹೇಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ",
     "interviewGuide": "ಸಂದರ್ಶನ ಮಾರ್ಗದರ್ಶಿ",
     "employerGuide": "ಉದ್ಯೋಗದಾತ ಮಾರ್ಗದರ್ಶಿ",
-    "howItWorksDesc": "ಹುದ್ದೆ ಪೋಸ್ಟ್ ಮಾಡಿ, ಎಐ ಮೂಲಕ ಪರಿಶೀಲಿಸಿ, ಸ್ಕೋರ್‌ಕಾರ್ಡ್ ಪಡೆಯಿರಿ",
+    "candidateGuide": "ಅಭ್ಯರ್ಥಿ ಮಾರ್ಗದರ್ಶಿ",
     "interviewGuideDesc": "AI ಸಂದರ್ಶನವನ್ನು ಹಂತ ಹಂತವಾಗಿ ಹೇಗೆ ಎದುರಿಸುವುದು",
     "employerGuideDesc": "LetsHyre ನಲ್ಲಿ ನೇಮಕಾತಿ ಹೇಗೆ ನಡೆಯುತ್ತದೆ, ಸೈನ್-ಅಪ್‌ನಿಂದ ಶಾರ್ಟ್‌ಲಿಸ್ಟ್‌ವರೆಗೆ",
+    "candidateGuideDesc": "ಸೈನ್-ಅಪ್‌ನಿಂದ ಸಂದರ್ಶನದ ದಿನದವರೆಗೆ, LetsHyre ನಿಮಗಾಗಿ ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ",
     "pricing": "ಬೆಲೆಗಳು",
     "about": "ಬಗ್ಗೆ",
     "contact": "ಸಂಪರ್ಕಿಸಿ",
@@ -38,9 +38,9 @@
       "youtube": "YouTube ನಲ್ಲಿ LetsHyre"
     },
     "links": {
-      "howItWorks": "ಇದು ಹೇಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ",
       "interviewGuide": "ಸಂದರ್ಶನ ಮಾರ್ಗದರ್ಶಿ",
       "employerGuide": "ಉದ್ಯೋಗದಾತ ಮಾರ್ಗದರ್ಶಿ",
+      "candidateGuide": "ಅಭ್ಯರ್ಥಿ ಮಾರ್ಗದರ್ಶಿ",
       "downloadApp": "ಅಪ್ಲಿಕೇಶನ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
       "pricing": "ಬೆಲೆಗಳು",
       "about": "ನಮ್ಮ ಬಗ್ಗೆ",

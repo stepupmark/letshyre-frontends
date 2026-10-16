@@ -89,7 +89,8 @@ export function checkPage(
   const expected = new Map(
     locales.map((l) => [l, site + localePath(l, path)] as const)
   )
-  expected.set("x-default" as Locale, site + localePath(DEFAULT_LOCALE, path))
+  if (locales.includes(DEFAULT_LOCALE))
+    expected.set("x-default" as Locale, site + localePath(DEFAULT_LOCALE, path))
   const actual = alternatesOf(html)
   fail(
     actual.size === expected.size &&

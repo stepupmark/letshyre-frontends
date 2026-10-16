@@ -3,6 +3,7 @@ import "i18next"
 import type about from "../locales/en/about.json"
 import type assistant from "../locales/en/assistant.json"
 import type common from "../locales/en/common.json"
+import type candidateGuide from "../locales/en/candidateGuide.json"
 import type contact from "../locales/en/contact.json"
 import type download from "../locales/en/download.json"
 import type employerGuide from "../locales/en/employerGuide.json"
@@ -21,6 +22,7 @@ declare module "i18next" {
       about: typeof about
       assistant: typeof assistant
       common: typeof common
+      candidateGuide: typeof candidateGuide
       contact: typeof contact
       download: typeof download
       employerGuide: typeof employerGuide

@@ -64,9 +64,7 @@ export function SiteFooter() {
                           to={
                             "href" in item
                               ? item.href
-                              : "hash" in item
-                                ? `${localePath(lang, item.path)}#${item.hash}`
-                                : localePath(lang, item.path)
+                              : localePath(lang, item.path)
                           }
                           className="group/link inline-flex items-center gap-1 rounded-sm py-1 text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
                         >

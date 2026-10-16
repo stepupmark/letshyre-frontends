@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query"
 import { useEffect, useRef, useState } from "react"
 import { href, Navigate } from "react-router"
 
+import { GuideLink } from "@/components/guide-link"
 import {
   CandidateOnboarding,
   myProfileQuery,
@@ -54,6 +55,9 @@ export default function CandidateOnboardingPage() {
         <p className="text-base text-pretty text-muted-foreground">
           {t("lead")}
         </p>
+        <div>
+          <GuideLink chapter="prepare" />
+        </div>
       </header>
       <CandidateOnboarding name={name} onDone={setRole} />
     </div>

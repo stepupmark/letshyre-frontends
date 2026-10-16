@@ -2,12 +2,12 @@
   "skipToContent": "مرکزی مواد پر جائیں",
   "copyright": "© {{year}} LetsHyre. جملہ حقوق محفوظ ہیں۔",
   "nav": {
-    "howItWorks": "یہ کیسے کام کرتا ہے",
     "interviewGuide": "انٹرویو گائیڈ",
     "employerGuide": "آجر گائیڈ",
-    "howItWorksDesc": "عہدہ پوسٹ کریں، اے آئی سے جانچیں، اسکور کارڈ حاصل کریں",
+    "candidateGuide": "امیدوار گائیڈ",
     "interviewGuideDesc": "اے آئی انٹرویو کیسے دیں، قدم بہ قدم",
     "employerGuideDesc": "LetsHyre پر بھرتی کیسے ہوتی ہے، سائن اپ سے شارٹ لسٹ تک",
+    "candidateGuideDesc": "سائن اپ سے انٹرویو کے دن تک، LetsHyre آپ کے لیے کیسے کام کرتا ہے",
     "pricing": "قیمتیں",
     "about": "ہمارے بارے میں",
     "contact": "رابطہ کریں",
@@ -38,9 +38,9 @@
       "youtube": "YouTube پر LetsHyre"
     },
     "links": {
-      "howItWorks": "یہ کیسے کام کرتا ہے",
       "interviewGuide": "انٹرویو گائیڈ",
       "employerGuide": "آجر گائیڈ",
+      "candidateGuide": "امیدوار گائیڈ",
       "downloadApp": "ایپلیکیشن ڈاؤن لوڈ کریں",
       "pricing": "قیمتیں",
       "about": "ہمارے بارے میں",

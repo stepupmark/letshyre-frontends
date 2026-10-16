@@ -1,6 +1,6 @@
 import { useTranslation } from "@workspace/i18n/react"
 
-import { GuideToc } from "@/components/guide-toc"
+import { GuideToc } from "@/components/guide/guide-toc"
 
 import {
   PHASES,

@@ -22,10 +22,12 @@ the real host must meet §5 too. Changing it needs a deliberate edit here first.
 | `/og/*.jpg`, favicons, `site.webmanifest` | 200                       | 200 (same paths, new images)   | Social cards and bookmarks keep working                  |
 
 Pages: `/:lang`, `/:lang/about`, `/:lang/contact`, `/:lang/download`, `/:lang/interview-guide`,
-`/:lang/employer-guide` (English only for now), `/:lang/pricing`, `/:lang/terms`, `/:lang/privacy-policy`,
-`/:lang/refund-policy`.
+`/:lang/employer-guide` and `/:lang/candidate-guide` (English only for now), `/:lang/pricing`,
+`/:lang/terms`, `/:lang/privacy-policy`, `/:lang/refund-policy`.
 `/:lang/policy` moved to `/:lang/privacy-policy` (301).
 `/:lang/how-it-works-interview` moved to `/:lang/interview-guide` (301).
+`/:lang/interview-guide` moves to `/:lang/candidate-guide` (301) in each locale the candidate guide
+ships in; today that's `en` only (`REPLACED_BY` in `app/lib/pages.ts`).
 Locales: `en hi fr ja ar te ta es nl ru kn ml ur bn de pt it ko id`.
 
 ## 2. App routes (served by the legacy build until Phase 7)
@@ -49,15 +51,15 @@ sent to people (shared scorecards, password-reset emails) keep working. All app 
 All come from one module (`apps/marketing/app/lib/app-links.ts`) built from `VITE_APP_URL`.
 Interim `VITE_APP_URL=https://letshyre.ai`. Final `VITE_APP_URL=https://app.letshyre.ai`.
 
-| Marketing CTA                                    | Path on `VITE_APP_URL`                 | Notes                                                                                                                                                |
-| ------------------------------------------------ | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Log in (header)                                  | `/get-started`                         | Role choice, then sign-in. Becomes `/sign-in` once the app has unified sign-in                                                                       |
-| Get started (header), "I'm hiring", Start hiring | `/employer/register`                   |                                                                                                                                                      |
-| "I'm looking for a job", Apply                   | `/employee/register`                   |                                                                                                                                                      |
-| Pricing: Free plan "Start free"                  | `/employer/register`                   |                                                                                                                                                      |
+| Marketing CTA                                    | Path on `VITE_APP_URL`                 | Notes                                                                                                              |
+| ------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Log in (header)                                  | `/get-started`                         | Role choice, then sign-in. Becomes `/sign-in` once the app has unified sign-in                                     |
+| Get started (header), "I'm hiring", Start hiring | `/employer/register`                   |                                                                                                                    |
+| "I'm looking for a job", Apply                   | `/employee/register`                   |                                                                                                                    |
+| Pricing: Free plan "Start free"                  | `/employer/register`                   |                                                                                                                    |
 | Pricing: buy plan / top-up                       | `/employer/billing?checkout=<key>`     | `<key>` = plan id or `<n>-credits`, same as today's `?checkout=` values. Signed-out users sign in and return here. |
-| Pricing: Custom "Talk to sales"                  | marketing `/:lang/contact?topic=sales` | Stays on marketing                                                                                                                                   |
-| Download page: "Sign in" mention                 | `/employee/sign-in`                    | Redirects to `/sign-in` in the new app                                                                                                               |
+| Pricing: Custom "Talk to sales"                  | marketing `/:lang/contact?topic=sales` | Stays on marketing                                                                                                 |
+| Download page: "Sign in" mention                 | `/employee/sign-in`                    | Redirects to `/sign-in` in the new app                                                                             |
 
 The language is carried across via the `lh_locale` cookie (`Domain=.letshyre.ai`), not the URL.
 
@@ -72,7 +74,8 @@ Exception: "Buy credits" (`CreditUsageCard`, `Invoice`) points to `/employer/bil
 The nginx config was removed and no host is chosen yet. Whatever serves `build/client` must:
 
 - `/` → 301 `/en`.
-- Moved pages → 301 to their new path. `build/redirects.map` lists them as nginx map lines.
+- Moved and replaced pages → 301 to their new path. `build/redirects.map` lists them as nginx map
+  lines.
 - Trailing slash → 301 to the same path without it.
 - A page not ready in a locale → 302 `/en/...`.
 - Unknown paths → 404 with the prerendered `/404` page as the body.

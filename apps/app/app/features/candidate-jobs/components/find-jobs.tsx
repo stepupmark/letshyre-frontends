@@ -23,6 +23,7 @@ import { href, useSearchParams } from "react-router"
 import { AppLink } from "@/components/app-link"
 import { DetailSheet } from "@/components/detail-sheet"
 import { EmptyState, NoMatches } from "@/components/empty-state"
+import { GuideLink } from "@/components/guide-link"
 import { AnimatedList } from "@/components/motion/animated-list"
 import { LoadError } from "@/components/query-state"
 import { StatusBadge } from "@/components/status-badge"
@@ -171,6 +172,7 @@ export function FindJobs() {
             <EmptyState
               title={t("empty.title")}
               description={t("empty.body")}
+              action={<GuideLink chapter="afterInterview" />}
             />
           )
         ) : (

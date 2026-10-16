@@ -2,12 +2,12 @@
   "skipToContent": "মূল কনটেন্টে যান",
   "copyright": "© {{year}} LetsHyre. সর্বস্বত্ব সংরক্ষিত।",
   "nav": {
-    "howItWorks": "কীভাবে কাজ করে",
     "interviewGuide": "ইন্টারভিউ গাইড",
     "employerGuide": "নিয়োগকর্তা গাইড",
-    "howItWorksDesc": "পদ পোস্ট করুন, এআই দিয়ে বাছাই করুন, স্কোরকার্ড পান",
+    "candidateGuide": "প্রার্থী গাইড",
     "interviewGuideDesc": "ধাপে ধাপে কীভাবে এআই ইন্টারভিউ দেবেন",
     "employerGuideDesc": "LetsHyre-এ নিয়োগ কীভাবে হয়, সাইন-আপ থেকে শর্টলিস্ট পর্যন্ত",
+    "candidateGuideDesc": "সাইন-আপ থেকে ইন্টারভিউয়ের দিন পর্যন্ত, LetsHyre আপনার জন্য কীভাবে কাজ করে",
     "pricing": "মূল্য",
     "about": "সম্পর্কে",
     "contact": "যোগাযোগ",
@@ -38,9 +38,9 @@
       "youtube": "YouTube-এ LetsHyre"
     },
     "links": {
-      "howItWorks": "কীভাবে কাজ করে",
       "interviewGuide": "ইন্টারভিউ গাইড",
       "employerGuide": "নিয়োগকর্তা গাইড",
+      "candidateGuide": "প্রার্থী গাইড",
       "downloadApp": "অ্যাপ্লিকেশন ডাউনলোড করুন",
       "pricing": "মূল্য",
       "about": "আমাদের সম্পর্কে",

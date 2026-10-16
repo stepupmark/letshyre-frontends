@@ -19,6 +19,11 @@ export const PAGES = {
     namespaces: ["employerGuide"],
     og: "employer-guide",
   },
+  candidateGuide: {
+    path: "/candidate-guide",
+    namespaces: ["candidateGuide"],
+    og: "candidate-guide",
+  },
   download: { path: "/download", namespaces: ["download"], og: "download" },
   contact: { path: "/contact", namespaces: ["contact"], og: "contact" },
   about: { path: "/about", namespaces: ["about"], og: "about" },
@@ -42,6 +47,22 @@ export const MOVED_PATHS: Readonly<Record<string, string>> = {
 }
 
 export type PageId = keyof typeof PAGES
+
+/** A retiring page and its successor. Each locale moves over (301) once the successor ships there. */
+export const REPLACED_BY: Partial<Record<PageId, PageId>> = {
+  interview: "candidateGuide",
+}
+
+/** Drops each retiring page from the locales its successor already ships in. */
+export function withoutReplaced<L>(ready: Map<PageId, L[]>): Map<PageId, L[]> {
+  return new Map(
+    [...ready].map(([id, locales]) => {
+      const next = REPLACED_BY[id]
+      const taken = next ? (ready.get(next) ?? []) : []
+      return [id, locales.filter((lang) => !taken.includes(lang))]
+    })
+  )
+}
 
 export const LAYOUT_NAMESPACES = ["common", "seo"] as const
 

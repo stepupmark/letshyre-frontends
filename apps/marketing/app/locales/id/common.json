@@ -2,12 +2,12 @@
   "skipToContent": "Lewati ke konten utama",
   "copyright": "© {{year}} LetsHyre. Hak cipta dilindungi.",
   "nav": {
-    "howItWorks": "Cara Kerja",
     "interviewGuide": "Panduan Wawancara",
     "employerGuide": "Panduan pemberi kerja",
-    "howItWorksDesc": "Pasang lowongan, saring dengan AI, dapatkan scorecard",
+    "candidateGuide": "Panduan kandidat",
     "interviewGuideDesc": "Cara mengikuti wawancara AI, langkah demi langkah",
     "employerGuideDesc": "Cara merekrut di LetsHyre, dari pendaftaran hingga daftar pendek",
+    "candidateGuideDesc": "Cara LetsHyre bekerja untuk Anda, dari pendaftaran hingga hari wawancara",
     "pricing": "Harga",
     "about": "Tentang",
     "contact": "Kontak",
@@ -38,9 +38,9 @@
       "youtube": "LetsHyre di YouTube"
     },
     "links": {
-      "howItWorks": "Cara kerja",
       "interviewGuide": "Panduan wawancara",
       "employerGuide": "Panduan pemberi kerja",
+      "candidateGuide": "Panduan kandidat",
       "downloadApp": "Unduh aplikasi",
       "pricing": "Harga",
       "about": "Tentang kami",

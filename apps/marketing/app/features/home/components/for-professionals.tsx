@@ -3,7 +3,9 @@ import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { cn } from "@workspace/ui/lib/utils"
 import { CheckIcon } from "lucide-react"
 
+import { usePublished } from "@/hooks/use-published"
 import { APP_LINKS } from "@/lib/app-links"
+import { PAGES } from "@/lib/pages"
 
 import { HomeHeading } from "./home-heading"
 import { CtaLink, TextLink } from "./home-links"
@@ -19,6 +21,11 @@ const TILTS = ["-rotate-3", "rotate-1", "rotate-3"]
 export function ForProfessionals() {
   const { t } = useTranslation("home")
   const lang = useLocale()
+  const published = usePublished()
+  const guide = localePath(
+    lang,
+    (published("candidateGuide") ? PAGES.candidateGuide : PAGES.interview).path
+  )
   const interviews = t("professionals.interviews", {
     returnObjects: true,
   }) as Interview[]
@@ -53,9 +60,7 @@ export function ForProfessionals() {
           <CtaLink href={APP_LINKS.candidateRegister}>
             {t("professionals.cta")}
           </CtaLink>
-          <TextLink to={localePath(lang, "/interview-guide")}>
-            {t("professionals.guide")}
-          </TextLink>
+          <TextLink to={guide}>{t("professionals.guide")}</TextLink>
           <TextLink to={localePath(lang, "/download")}>
             {t("professionals.download")}
           </TextLink>

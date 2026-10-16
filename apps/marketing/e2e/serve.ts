@@ -7,7 +7,7 @@ import { extname, join, normalize, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { createGzip } from "node:zlib"
 
-import { MOVED_PATHS } from "../app/lib/pages.ts"
+import { MOVED_PATHS, PAGES, REPLACED_BY } from "../app/lib/pages.ts"
 import { parseNginxMap } from "../../../tooling/csp.ts"
 
 const ROOT = resolve(fileURLToPath(new URL("../build/client", import.meta.url)))
@@ -20,6 +20,12 @@ const csp = existsSync(CSP_MAP)
 
 const LOCALES = "en|hi|fr|ja|ar|te|ta|es|nl|ru|kn|ml|ur|bn|de|pt|it|ko|id"
 const LOCALE_PAGE = new RegExp(`^/(${LOCALES})(/[a-z-]+)?$`)
+const SUCCESSOR = new Map(
+  Object.entries(REPLACED_BY).map(([from, to]) => [
+    PAGES[from as keyof typeof PAGES].path as string,
+    PAGES[to].path,
+  ])
+)
 
 const TYPES: Record<string, string> = {
   ".html": "text/html; charset=utf-8",
@@ -84,6 +90,9 @@ createServer((req, res) => {
   const page = LOCALE_PAGE.exec(path)
   const moved = page?.[2] && MOVED_PATHS[page[2]]
   if (page && moved) return redirect(301, `/${page[1]}${moved}`)
+  const next = page?.[2] && SUCCESSOR.get(page[2])
+  if (page && next && fileAt(`/${page[1]}${next}/index.html`))
+    return redirect(301, `/${page[1]}${next}`)
   if (page) {
     const html = fileAt(`${path}/index.html`)
     if (html) return send(200, html)

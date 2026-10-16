@@ -1,0 +1,360 @@
+{
+  "meta": {
+    "title": "Candidate Guide: How to Get Hired on LetsHyre | letshyre.ai",
+    "description": "How LetsHyre works for candidates: sign up, build your profile, add documents, set up the desktop app, pass the checks and take your AI interview.",
+    "name": "Candidate Guide to Getting Hired on LetsHyre",
+    "schemaDescription": "Step-by-step guide for candidates: registration, profile onboarding, documents, the desktop app, interview checks, proctoring rules and what happens after.",
+    "crumb": "Candidate Guide",
+    "audience": "Job candidates"
+  },
+  "title": "One interview between you and <hl>your next job</hl>",
+  "intro": "This guide walks you through LetsHyre from sign-up to your first call from an employer: creating your account, building your profile, setting up the desktop app, passing the checks and taking your AI interview. Read it once and nothing on the day will catch you off guard.",
+  "readTime": "8 chapters · about 12 minutes to read",
+  "register": "Create candidate account",
+  "download": "Download the app",
+  "toc": {
+    "label": "In this guide",
+    "faq": "Questions"
+  },
+  "phases": {
+    "join": "Join LetsHyre",
+    "prepare": "Get ready",
+    "interview": "Interview and after"
+  },
+  "map": {
+    "account": "Sign up",
+    "profile": "Profile",
+    "documents": "Documents",
+    "app": "Desktop app",
+    "checks": "Checks",
+    "role": "Role",
+    "interview": "Interview",
+    "after": "Get hired"
+  },
+  "ready": {
+    "title": "What to keep ready",
+    "description": "Have these to hand and you'll finish sign-up and your profile in one sitting, in about ten minutes.",
+    "items": {
+      "contact": {
+        "title": "Your email and mobile",
+        "desc": "An email you check and a 10-digit Indian mobile number. We send a code to each to confirm it's yours."
+      },
+      "aadhaar": {
+        "title": "Your Aadhaar number",
+        "desc": "The 12 digits on your card. We use it to confirm you're a real person, and employers never see it."
+      },
+      "photo": {
+        "title": "A clear photo of your face",
+        "desc": "Take one with your camera, or upload a recent, well-lit JPG, PNG or WebP up to 10 MB."
+      },
+      "letters": {
+        "title": "Your work letters",
+        "desc": "Resignation letter, experience letter and a relieving or offer letter as notice period proof. Up to 5 MB each."
+      },
+      "resume": {
+        "title": "Your latest resume",
+        "desc": "A PDF exported from Word or Google Docs reads best. Scans and password-protected files often fail."
+      },
+      "computer": {
+        "title": "A Windows computer",
+        "desc": "For interview day, with a camera, a microphone and a steady connection. <reqs>See the full checklist</reqs>."
+      }
+    }
+  },
+  "chapter": "Chapter {{number}}",
+  "goodToKnow": "Good to know",
+  "chapters": {
+    "account": {
+      "title": "Create your candidate account",
+      "lead": "Sign-up takes about two minutes. We confirm that your email and mobile number are really yours, because that's where employers and LetsHyre will reach you.",
+      "note": "The email and password you set here are the ones you'll use in the desktop app on interview day, so keep them somewhere safe."
+    },
+    "profile": {
+      "title": "Build your profile",
+      "lead": "Your profile is what employers see next to your interview scorecard. Setup takes about eight minutes in six short steps, and this chapter covers the first three.",
+      "note": "Your answers are saved on this device as you go, so you can stop and come back. Your Aadhaar number stays private; employers never see it."
+    },
+    "documents": {
+      "title": "Add your documents and resume",
+      "lead": "The second half of setup proves your work history and tells our AI which role you're after. Only employers who unlock you can open your documents.",
+      "note": "Scanned images and password-protected resumes often can't be read. If the upload fails, try a PDF exported from Word or Google Docs."
+    },
+    "app": {
+      "title": "Get the desktop app",
+      "lead": "Interviews don't run in a browser. They run in the LetsHyre desktop app, which keeps the session secure and supervised from the first question to the last.",
+      "note": "You can take up to 3 interviews in total, and every attempt counts. Start one when you have time, a quiet room and a steady connection."
+    },
+    "checks": {
+      "title": "Pass the checks",
+      "lead": "Clicking Take Interview starts four quick checks. They make sure the interview is fair and that the person answering is you.",
+      "note": "Record your voice sample in the same room, with the same microphone, that you'll answer in. A noisy room or a different headset can make your answers harder to match."
+    },
+    "role": {
+      "title": "Choose your role",
+      "lead": "Each interview is for one role. Before you start, you decide which one.",
+      "note": "Every interview counts toward your three, whichever role it's for, so start with the role you most want to be hired for."
+    },
+    "interview": {
+      "title": "Take your interview",
+      "lead": "This is where you show what you know. The interview opens full screen and is proctored through your camera and screen from start to finish.",
+      "note": "Stay in the interview window the whole time. Leaving it, switching tabs or exiting full screen counts as a strike. <rules>See every rule</rules>."
+    },
+    "after": {
+      "title": "After your interview",
+      "lead": "Your scorecard now works for you. Employers find you through it, and you can apply to open roles yourself.",
+      "note": "We don't notify you yet when an employer unlocks you. They contact you directly, so keep your phone on and check your email."
+    }
+  },
+  "steps": {
+    "start": {
+      "title": "Enter your name and email",
+      "body": "Open <reg>candidate registration</reg> and enter your full name and the email you check most. We send a 6-digit code to it; type it in to confirm the address."
+    },
+    "mobile": {
+      "title": "Confirm your mobile number",
+      "body": "Add your 10-digit Indian mobile number and enter the code we text you. We use it only for important account messages."
+    },
+    "password": {
+      "title": "Set a password",
+      "body": "Choose a password and agree to the terms and privacy policy. That's it: your account is created."
+    },
+    "onboard": {
+      "title": "Go straight to your profile",
+      "body": "Once you're in, profile setup opens. Finish it before interview day: the app checks your face against the photo you add there."
+    },
+    "about": {
+      "title": "Tell us about you",
+      "body": "Your gender, date of birth and Aadhaar number, then your address, city, state and 6-digit PIN code. You need to be 18 or older to apply for jobs."
+    },
+    "photo": {
+      "title": "Add a clear photo of your face",
+      "body": "Take one with your camera or upload a JPG, PNG or WebP up to 10 MB. Employers see it next to your scorecard, and on interview day the app compares a live photo of you with it."
+    },
+    "work": {
+      "title": "Your work and pay",
+      "body": "Your current or last company and your last working day. Then your current and expected pay in lakhs per year (LPA); expected pay can't be lower than current."
+    },
+    "places": {
+      "title": "Where you want to work",
+      "body": "The industry you want to work in and the cities you'd like to work from. Type a city and press Enter to add it; add as many as you like."
+    },
+    "letters": {
+      "title": "Upload your resignation and experience letters",
+      "body": "Your resignation letter, or your accepted resignation email saved as a PDF, and an experience letter from your current or last employer. Each file can be up to 5 MB."
+    },
+    "proof": {
+      "title": "Add your notice period proof",
+      "body": "Choose which letter you have, a relieving letter or an offer letter, and upload it. Already holding an offer elsewhere? Add it too; that one is optional."
+    },
+    "resume": {
+      "title": "Upload your resume",
+      "body": "Our AI reads it, fills in your skills, experience and education, and suggests the roles that fit you. It usually takes under a minute. Fix anything it got wrong."
+    },
+    "pick": {
+      "title": "Pick the role you want",
+      "body": "Choose a suggested role or type your own with a line on why it fits. Your AI interview is for this role, and you'll see which skills it covers."
+    },
+    "review": {
+      "title": "Check and finish",
+      "body": "One last look, then save. You can change anything later from your profile."
+    },
+    "computer": {
+      "title": "Use a Windows computer",
+      "body": "The app runs on Windows today, with a Mac version planned. Interviews can't be taken on a phone or tablet."
+    },
+    "download": {
+      "title": "Download and install",
+      "body": "<dl>Download the installer</dl>, open it and follow the prompts. Windows may ask you to confirm before it runs."
+    },
+    "signIn": {
+      "title": "Sign in",
+      "body": "Open LetsHyre and sign in with the email and password from chapter 1. Your dashboard shows your profile and how many interviews you have left."
+    },
+    "take": {
+      "title": "Click Take Interview",
+      "body": "When you're ready, click Take Interview on your dashboard. The checks in the next chapter start straight away."
+    },
+    "security": {
+      "title": "Close other apps",
+      "body": "The security check looks for apps that could get in the way of a fair interview, such as web browsers, screen recorders, AI assistants and video-call tools. Close anything it flags to continue."
+    },
+    "permissions": {
+      "title": "Allow camera, microphone and screen",
+      "body": "The app needs all three to supervise the interview. Allow each one when Windows asks."
+    },
+    "face": {
+      "title": "Match your face to your photo",
+      "body": "The camera takes a live photo and compares it with your profile photo. Face the camera in good light so it sees you clearly."
+    },
+    "voice": {
+      "title": "Record your voice sample",
+      "body": "Read a short statement aloud. That recording is your voice sample, and your spoken answers are checked against it. If an answer doesn't match your voice, you can't move on to the next question."
+    },
+    "keep": {
+      "title": "Keep your onboarding role",
+      "body": "The role you picked during onboarding is already selected. If it's still the job you want, continue with it."
+    },
+    "change": {
+      "title": "Or choose another",
+      "body": "Want to interview for something else? Pick a different role before you start."
+    },
+    "commit": {
+      "title": "Start for that role",
+      "body": "Your scorecard is for the role you interview for. Employers you apply to see your latest one."
+    },
+    "rules": {
+      "title": "Read the rules",
+      "body": "A Before you begin screen lists what the proctoring looks for. Read it, tick I have read and understand these rules, and click Start Interview."
+    },
+    "timer": {
+      "title": "The clock starts straight away",
+      "body": "Your interview timer starts as soon as the interview opens. It runs full screen, with your camera, microphone and screen recorded."
+    },
+    "answer": {
+      "title": "Answer each question",
+      "body": "Each question has its own time limit. You can move between questions until the session timer runs out."
+    },
+    "finish": {
+      "title": "Finish and submit",
+      "body": "Submit when you've answered. Your answers and recording upload as you go, so a steady connection matters right to the end."
+    },
+    "scorecard": {
+      "title": "Your scorecard is ready",
+      "body": "A few minutes after the interview ends, your AI scorecard appears in your dashboard under Scorecards."
+    },
+    "matched": {
+      "title": "Our AI matches you to jobs",
+      "body": "We match you to open roles as they're posted, usually within a day. Employers hiring for them find you in their candidate pool."
+    },
+    "apply": {
+      "title": "Apply in one step",
+      "body": "Find jobs shows roles open now. Applying takes one step, and you can follow each application from Applied to Shortlisted and Selected."
+    },
+    "unlocked": {
+      "title": "An employer unlocks you",
+      "body": "When an employer wants to talk, they unlock your profile. That gives them your contact details, documents and interview recording, so they can reach you directly."
+    }
+  },
+  "rules": {
+    "title": "What can end an interview",
+    "lead": "The same rules appear on the Before you begin screen. Knowing them now means none of them comes as a surprise.",
+    "strikes": "These count as a strike",
+    "strikeItems": [
+      "Leaving the interview window, switching tabs or exiting full screen",
+      "Someone else in view, or nobody in view",
+      "A phone or another prohibited device in view",
+      "Apps, screen sharing or extra displays the desktop app blocks"
+    ],
+    "warnings": "These only give you a warning",
+    "warningItems": [
+      "Your face briefly leaving the frame",
+      "Poor lighting or an unclear view of your face",
+      "Your camera pausing for a moment"
+    ],
+    "meter": "Three strikes and the interview ends",
+    "strike": "Strike {{number}}",
+    "ends": "Interview ends",
+    "limits": "The limits",
+    "limitItems": {
+      "strikes": "After 3 strikes the interview ends and your answers are submitted.",
+      "repeat": "A device left in view, or a camera left off, costs another strike every 30 seconds.",
+      "face": "If your face doesn't match your photo 2 times in a row, or 3 times in all, the interview ends.",
+      "internet": "If your internet drops 3 times, the interview is submitted. Drops are not strikes."
+    }
+  },
+  "requirements": {
+    "title": "What you need on the day",
+    "items": [
+      "A Windows computer, not a phone or tablet",
+      "A working camera and microphone",
+      "A steady internet connection",
+      "A quiet, well-lit room to yourself",
+      "No phone or second screen within view"
+    ]
+  },
+  "scenes": {
+    "checkEmail": "Check your email",
+    "sms": "SMS code",
+    "create": "Create account",
+    "aadhaar": "Aadhaar",
+    "masked": "•••• •••• 4821",
+    "adult": "18+",
+    "saved": "Saved as you go",
+    "resignation": "Resignation",
+    "experience": "Experience",
+    "notice": "Notice proof",
+    "private": "Private until unlocked",
+    "roleA": "Data Analyst",
+    "roleB": "BI Analyst",
+    "takeInterview": "Take Interview",
+    "left": "3 interviews",
+    "camera": "Camera",
+    "mic": "Mic",
+    "screen": "Screen",
+    "face": "Face",
+    "voice": "Voice",
+    "fromOnboarding": "From onboarding",
+    "question": "Question 2",
+    "rec": "REC",
+    "timer": "24:10",
+    "strikes": "Strikes",
+    "scorecard": "Scorecard",
+    "score": "82",
+    "unlocked": "Unlocked"
+  },
+  "faq": {
+    "title": "Questions candidates ask",
+    "items": {
+      "age": {
+        "q": "Is there an age limit?",
+        "a": "You need to be 18 or older to apply for jobs. We check your date of birth during onboarding."
+      },
+      "aadhaar": {
+        "q": "Who sees my Aadhaar number?",
+        "a": "No employer does. We use it to confirm you're a real person, and it stays private on your account."
+      },
+      "documents": {
+        "q": "Who can open my documents?",
+        "a": "Only employers who unlock your profile. Until then they see your photo, pay, industry, skills and scorecard, but not your letters."
+      },
+      "attempts": {
+        "q": "How many interviews can I take?",
+        "a": "Up to 3 in total, and every attempt counts, whichever role it's for. Take each one when you're ready for it."
+      },
+      "device": {
+        "q": "Can I take the interview on a Mac or my phone?",
+        "a": "Not yet. Interviews run in the desktop app, which is Windows only for now. A Mac version is planned. Phones and tablets aren't supported."
+      },
+      "voice": {
+        "q": "What happens if my voice doesn't match my sample?",
+        "a": "Your spoken answers are checked against the voice sample you record before the interview. If an answer doesn't match, you can't move on to the next question. Record the sample yourself, in the room you'll answer in."
+      },
+      "strikes": {
+        "q": "What's the difference between a strike and a warning?",
+        "a": "A warning, like your face briefly leaving the frame, asks you to fix something. Strikes come from things like leaving the interview window or someone else in view, and 3 strikes end the interview. <rules>See every rule</rules>."
+      },
+      "internet": {
+        "q": "What if my internet drops during the interview?",
+        "a": "A drop isn't a strike. If your connection drops 3 times, the interview is submitted, so use the steadiest connection you have."
+      },
+      "role": {
+        "q": "Can I change the role I interview for?",
+        "a": "Yes. Before each interview you can keep the role from onboarding or choose another."
+      },
+      "edit": {
+        "q": "Can I change my profile later?",
+        "a": "Yes. Everything you entered during onboarding can be changed later from your profile."
+      },
+      "unlock": {
+        "q": "Will I know when an employer unlocks me?",
+        "a": "Not yet. Employers who unlock you contact you directly by phone or email, so keep both handy. The <pp>privacy policy</pp> explains what they can see."
+      }
+    }
+  },
+  "cta": {
+    "title": "Your next job starts with one interview",
+    "desc": "Create your account, set up your profile and take your AI interview in the desktop app. Employers see what you can do, not just your resume.",
+    "button": "Create candidate account",
+    "secondary": "Download the app"
+  }
+}

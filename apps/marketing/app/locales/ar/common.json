@@ -2,12 +2,12 @@
   "skipToContent": "تخطَّ إلى المحتوى الرئيسي",
   "copyright": "© {{year}} LetsHyre. جميع الحقوق محفوظة.",
   "nav": {
-    "howItWorks": "كيف تعمل",
     "interviewGuide": "دليل المقابلة",
     "employerGuide": "دليل صاحب العمل",
-    "howItWorksDesc": "انشر وظيفة، وافرز بالذكاء الاصطناعي، واحصل على بطاقات التقييم",
+    "candidateGuide": "دليل المرشح",
     "interviewGuideDesc": "كيف تجري مقابلة الذكاء الاصطناعي خطوة بخطوة",
     "employerGuideDesc": "كيف يعمل التوظيف على LetsHyre، من التسجيل إلى القائمة المختصرة",
+    "candidateGuideDesc": "كيف يعمل LetsHyre لك، من التسجيل إلى يوم المقابلة",
     "pricing": "الأسعار",
     "about": "من نحن",
     "contact": "تواصل معنا",
@@ -38,9 +38,9 @@
       "youtube": "LetsHyre على YouTube"
     },
     "links": {
-      "howItWorks": "كيف تعمل",
       "interviewGuide": "دليل المقابلة",
       "employerGuide": "دليل صاحب العمل",
+      "candidateGuide": "دليل المرشح",
       "downloadApp": "تنزيل التطبيق",
       "pricing": "الأسعار",
       "about": "من نحن",

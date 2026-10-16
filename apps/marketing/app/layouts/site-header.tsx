@@ -20,12 +20,7 @@ import { useCompactNav } from "./site-header-compact"
 import { SiteLanguageSwitcher } from "./site-header-language"
 import { SiteHeaderMenu } from "./site-header-menu"
 import { SiteThemeToggle } from "./site-header-theme"
-import {
-  NAV_ITEMS,
-  navHref,
-  useCurrent,
-  useProductItems,
-} from "./site-header-nav"
+import { NAV_ITEMS, useCurrent, useProductItems } from "./site-header-nav"
 
 function useScrolled() {
   const [scrolled, setScrolled] = useState(false)
@@ -97,7 +92,10 @@ export function SiteHeader() {
                       <li key={item.id}>
                         <NavigationMenuLink
                           render={
-                            <Link to={navHref(lang, item)} prefetch="intent" />
+                            <Link
+                              to={localePath(lang, item.path)}
+                              prefetch="intent"
+                            />
                           }
                           active={current(item) === "page"}
                           closeOnClick
@@ -122,7 +120,7 @@ export function SiteHeader() {
               {NAV_ITEMS.map((item) => (
                 <NavigationMenuItem key={item.id} className="shrink-0">
                   <Link
-                    to={navHref(lang, item)}
+                    to={localePath(lang, item.path)}
                     prefetch="intent"
                     aria-current={current(item)}
                     data-current={current(item) ? "" : undefined}

@@ -2,12 +2,12 @@
   "skipToContent": "Zum Hauptinhalt springen",
   "copyright": "© {{year}} LetsHyre. Alle Rechte vorbehalten.",
   "nav": {
-    "howItWorks": "So funktioniert's",
     "interviewGuide": "Interview-Leitfaden",
     "employerGuide": "Leitfaden für Arbeitgeber",
-    "howItWorksDesc": "Stelle ausschreiben, mit KI prüfen, Scorecards erhalten",
+    "candidateGuide": "Leitfaden für Bewerber",
     "interviewGuideDesc": "So absolvieren Sie Ihr KI-Interview, Schritt für Schritt",
     "employerGuideDesc": "So funktioniert Einstellen bei LetsHyre, von der Registrierung bis zur Shortlist",
+    "candidateGuideDesc": "So funktioniert LetsHyre für dich, von der Registrierung bis zum Interviewtag",
     "pricing": "Preise",
     "about": "Über uns",
     "contact": "Kontakt",
@@ -38,9 +38,9 @@
       "youtube": "LetsHyre auf YouTube"
     },
     "links": {
-      "howItWorks": "So funktioniert's",
       "interviewGuide": "Interview-Leitfaden",
       "employerGuide": "Leitfaden für Arbeitgeber",
+      "candidateGuide": "Leitfaden für Bewerber",
       "downloadApp": "Anwendung herunterladen",
       "pricing": "Preise",
       "about": "Über uns",

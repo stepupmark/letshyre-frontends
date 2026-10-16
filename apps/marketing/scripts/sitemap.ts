@@ -19,7 +19,11 @@ export function renderSitemap(site: string, pages: SitemapPage[]): string {
         (l) =>
           `    <xhtml:link rel="alternate" hreflang="${l}" href="${url(l, path)}"/>`
       ),
-      `    <xhtml:link rel="alternate" hreflang="x-default" href="${url(DEFAULT_LOCALE, path)}"/>`,
+      ...(locales.includes(DEFAULT_LOCALE)
+        ? [
+            `    <xhtml:link rel="alternate" hreflang="x-default" href="${url(DEFAULT_LOCALE, path)}"/>`,
+          ]
+        : []),
     ]
     return locales.map((lang) =>
       [

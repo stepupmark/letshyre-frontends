@@ -10,7 +10,12 @@ import { type Locale, localePath } from "@workspace/i18n"
 import { loadEnv } from "vite"
 
 import { parseEnv } from "../app/lib/env.schema.ts"
-import { MOVED_PATHS, PAGES, type PageId } from "../app/lib/pages.ts"
+import {
+  MOVED_PATHS,
+  PAGES,
+  type PageId,
+  REPLACED_BY,
+} from "../app/lib/pages.ts"
 import { readyLocales } from "../app/lib/readiness.ts"
 import {
   initialScriptsOf,
@@ -37,6 +42,8 @@ const FEATURE: Partial<Record<PageId, string>> = {
   terms: "legal",
   privacy: "legal",
   refund: "legal",
+  employerGuide: "employer-guide",
+  candidateGuide: "candidate-guide",
 }
 
 const gitDates = new Map<string, string>()
@@ -150,14 +157,22 @@ if (existsSync(notFound)) {
 
 writeFileSync(join(ROOT, "build/csp.map"), nginxMap(policies, fallbackPolicy))
 // old URL -> new URL pairs for the host's 301s
+const replaced = Object.entries(REPLACED_BY).flatMap(([from, to]) =>
+  (ready.get(to) ?? []).map(
+    (lang) =>
+      `~^/${lang}${PAGES[from as PageId].path}$ /${lang}${PAGES[to].path};
+`
+  )
+)
 writeFileSync(
   join(ROOT, "build/redirects.map"),
-  Object.entries(MOVED_PATHS)
-    .map(
+  [
+    ...Object.entries(MOVED_PATHS).map(
       ([from, to]) => `~^/([a-z]{2})${from}$ /$1${to};
 `
-    )
-    .join("")
+    ),
+    ...replaced,
+  ].join("")
 )
 
 if (problems.length) {

@@ -2,12 +2,12 @@
   "skipToContent": "Перейти к основному содержимому",
   "copyright": "© {{year}} LetsHyre. Все права защищены.",
   "nav": {
-    "howItWorks": "Как это работает",
     "interviewGuide": "Гид по собеседованию",
     "employerGuide": "Руководство для работодателей",
-    "howItWorksDesc": "Разместите вакансию, проведите отбор с ИИ, получите оценки",
+    "candidateGuide": "Руководство для кандидатов",
     "interviewGuideDesc": "Как пройти ИИ-собеседование, шаг за шагом",
     "employerGuideDesc": "Как нанимать на LetsHyre: от регистрации до шорт-листа",
+    "candidateGuideDesc": "Как LetsHyre работает для вас: от регистрации до дня интервью",
     "pricing": "Цены",
     "about": "О нас",
     "contact": "Контакты",
@@ -38,9 +38,9 @@
       "youtube": "LetsHyre на YouTube"
     },
     "links": {
-      "howItWorks": "Как это работает",
       "interviewGuide": "Гид по собеседованию",
       "employerGuide": "Руководство для работодателей",
+      "candidateGuide": "Руководство для кандидатов",
       "downloadApp": "Скачать приложение",
       "pricing": "Цены",
       "about": "О нас",

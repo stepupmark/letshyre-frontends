@@ -2,12 +2,12 @@
   "skipToContent": "Saltar al contenido principal",
   "copyright": "© {{year}} LetsHyre. Todos los derechos reservados.",
   "nav": {
-    "howItWorks": "Cómo funciona",
     "interviewGuide": "Guía de la entrevista",
     "employerGuide": "Guía para empresas",
-    "howItWorksDesc": "Publica un puesto, filtra con IA y recibe evaluaciones",
+    "candidateGuide": "Guía para candidatos",
     "interviewGuideDesc": "Cómo hacer tu entrevista con IA, paso a paso",
     "employerGuideDesc": "Cómo se contrata en LetsHyre, del registro a la preselección",
+    "candidateGuideDesc": "Cómo funciona LetsHyre para ti, del registro al día de la entrevista",
     "pricing": "Precios",
     "about": "Sobre nosotros",
     "contact": "Contacto",
@@ -38,9 +38,9 @@
       "youtube": "LetsHyre en YouTube"
     },
     "links": {
-      "howItWorks": "Cómo funciona",
       "interviewGuide": "Guía de la entrevista",
       "employerGuide": "Guía para empresas",
+      "candidateGuide": "Guía para candidatos",
       "downloadApp": "Descargar aplicación",
       "pricing": "Precios",
       "about": "Sobre nosotros",

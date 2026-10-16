@@ -3,7 +3,7 @@ import { Clock, Mail } from "lucide-react"
 
 import { IconDot, Line, Tick } from "@/components/art/svg"
 
-import { Label } from "./label"
+import { Label } from "@/components/art/label"
 
 export function AccountScene() {
   const { t } = useTranslation("employerGuide")

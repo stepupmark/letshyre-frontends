@@ -50,12 +50,16 @@ export function buildMeta({
       hrefLang: l,
       href: absUrl(localePath(l, path)),
     })),
-    {
-      tagName: "link",
-      rel: "alternate",
-      hrefLang: "x-default",
-      href: absUrl(localePath(DEFAULT_LOCALE, path)),
-    },
+    ...(locales.includes(DEFAULT_LOCALE)
+      ? [
+          {
+            tagName: "link",
+            rel: "alternate",
+            hrefLang: "x-default",
+            href: absUrl(localePath(DEFAULT_LOCALE, path)),
+          },
+        ]
+      : []),
 
     { property: "og:type", content: "website" },
     { property: "og:site_name", content: SITE.name },
