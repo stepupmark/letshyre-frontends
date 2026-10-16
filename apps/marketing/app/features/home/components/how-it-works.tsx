@@ -1,4 +1,5 @@
-import { useTranslation } from "@workspace/i18n/react"
+import { localePath } from "@workspace/i18n"
+import { useLocale, useTranslation } from "@workspace/i18n/react"
 import {
   Tabs,
   TabsContent,
@@ -7,6 +8,7 @@ import {
 } from "@workspace/ui/components/tabs"
 import { cn } from "@workspace/ui/lib/utils"
 import {
+  ArrowRightIcon,
   BriefcaseIcon,
   ClipboardCheckIcon,
   FileTextIcon,
@@ -19,6 +21,10 @@ import {
   UserRoundIcon,
   VideoIcon,
 } from "lucide-react"
+import { Link } from "react-router"
+
+import { usePublished } from "@/hooks/use-published"
+import { PAGES } from "@/lib/pages"
 
 import { twoDigit } from "../lib/format"
 import { HomeHeading } from "./home-heading"
@@ -31,6 +37,8 @@ interface Step {
 
 export function HowItWorks() {
   const { t } = useTranslation("home")
+  const lang = useLocale()
+  const published = usePublished()
   const tracks = [
     {
       value: "employers",
@@ -101,6 +109,19 @@ export function HowItWorks() {
                 />
               ))}
             </ol>
+            {track.value === "employers" && published("employerGuide") && (
+              <Link
+                to={localePath(lang, PAGES.employerGuide.path)}
+                prefetch="intent"
+                className="more-link group/link mt-6 inline-flex items-center gap-1.5 text-sm"
+              >
+                {t("how.employerGuide")}
+                <ArrowRightIcon
+                  aria-hidden
+                  className="size-4 transition-transform group-hover/link:translate-x-0.5 motion-reduce:transition-none rtl:-scale-x-100"
+                />
+              </Link>
+            )}
           </TabsContent>
         ))}
       </Tabs>

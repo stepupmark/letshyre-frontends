@@ -5,6 +5,7 @@ import { ArrowUpRightIcon } from "lucide-react"
 import { Link } from "react-router"
 
 import { Container } from "@/components/section"
+import { usePublished } from "@/hooks/use-published"
 import { SocialLinks } from "@/components/social-links"
 import { NewsletterForm } from "@/features/newsletter"
 import { SITE } from "@/lib/seo/site"
@@ -15,6 +16,7 @@ import { SiteLanguageSwitcher } from "./site-header-language"
 export function SiteFooter() {
   const { t } = useTranslation("common")
   const lang = useLocale()
+  const published = usePublished()
 
   return (
     <footer className="border-t bg-muted/40 print:hidden">
@@ -54,33 +56,35 @@ export function SiteFooter() {
                   aria-labelledby={`footer-${column.id}`}
                   className="flex flex-col gap-1"
                 >
-                  {column.links.map((item) => (
-                    <li key={item.label}>
-                      <Link
-                        to={
-                          "href" in item
-                            ? item.href
-                            : "hash" in item
-                              ? `${localePath(lang, item.path)}#${item.hash}`
-                              : localePath(lang, item.path)
-                        }
-                        className="group/link inline-flex items-center gap-1 rounded-sm py-1 text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
-                      >
-                        {t(item.label)}
-                        {"href" in item && (
-                          <>
-                            <ArrowUpRightIcon
-                              aria-hidden
-                              className="size-3.5 opacity-60 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 motion-reduce:transition-none rtl:-scale-x-100"
-                            />
-                            <span className="sr-only">
-                              {t("footer.opensApp")}
-                            </span>
-                          </>
-                        )}
-                      </Link>
-                    </li>
-                  ))}
+                  {column.links
+                    .filter((item) => !("page" in item) || published(item.page))
+                    .map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          to={
+                            "href" in item
+                              ? item.href
+                              : "hash" in item
+                                ? `${localePath(lang, item.path)}#${item.hash}`
+                                : localePath(lang, item.path)
+                          }
+                          className="group/link inline-flex items-center gap-1 rounded-sm py-1 text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+                        >
+                          {t(item.label)}
+                          {"href" in item && (
+                            <>
+                              <ArrowUpRightIcon
+                                aria-hidden
+                                className="size-3.5 opacity-60 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 motion-reduce:transition-none rtl:-scale-x-100"
+                              />
+                              <span className="sr-only">
+                                {t("footer.opensApp")}
+                              </span>
+                            </>
+                          )}
+                        </Link>
+                      </li>
+                    ))}
                 </ul>
               </div>
             ))}

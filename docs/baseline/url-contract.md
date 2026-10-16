@@ -22,7 +22,8 @@ the real host must meet §5 too. Changing it needs a deliberate edit here first.
 | `/og/*.jpg`, favicons, `site.webmanifest` | 200                       | 200 (same paths, new images)   | Social cards and bookmarks keep working                  |
 
 Pages: `/:lang`, `/:lang/about`, `/:lang/contact`, `/:lang/download`, `/:lang/interview-guide`,
-`/:lang/pricing`, `/:lang/terms`, `/:lang/privacy-policy`, `/:lang/refund-policy`.
+`/:lang/employer-guide` (English only for now), `/:lang/pricing`, `/:lang/terms`, `/:lang/privacy-policy`,
+`/:lang/refund-policy`.
 `/:lang/policy` moved to `/:lang/privacy-policy` (301).
 `/:lang/how-it-works-interview` moved to `/:lang/interview-guide` (301).
 Locales: `en hi fr ja ar te ta es nl ru kn ml ur bn de pt it ko id`.

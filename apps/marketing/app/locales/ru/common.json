@@ -4,8 +4,10 @@
   "nav": {
     "howItWorks": "Как это работает",
     "interviewGuide": "Гид по собеседованию",
+    "employerGuide": "Руководство для работодателей",
     "howItWorksDesc": "Разместите вакансию, проведите отбор с ИИ, получите оценки",
     "interviewGuideDesc": "Как пройти ИИ-собеседование, шаг за шагом",
+    "employerGuideDesc": "Как нанимать на LetsHyre: от регистрации до шорт-листа",
     "pricing": "Цены",
     "about": "О нас",
     "contact": "Контакты",
@@ -38,6 +40,7 @@
     "links": {
       "howItWorks": "Как это работает",
       "interviewGuide": "Гид по собеседованию",
+      "employerGuide": "Руководство для работодателей",
       "downloadApp": "Скачать приложение",
       "pricing": "Цены",
       "about": "О нас",

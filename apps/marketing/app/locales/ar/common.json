@@ -4,8 +4,10 @@
   "nav": {
     "howItWorks": "كيف تعمل",
     "interviewGuide": "دليل المقابلة",
+    "employerGuide": "دليل صاحب العمل",
     "howItWorksDesc": "انشر وظيفة، وافرز بالذكاء الاصطناعي، واحصل على بطاقات التقييم",
     "interviewGuideDesc": "كيف تجري مقابلة الذكاء الاصطناعي خطوة بخطوة",
+    "employerGuideDesc": "كيف يعمل التوظيف على LetsHyre، من التسجيل إلى القائمة المختصرة",
     "pricing": "الأسعار",
     "about": "من نحن",
     "contact": "تواصل معنا",
@@ -38,6 +40,7 @@
     "links": {
       "howItWorks": "كيف تعمل",
       "interviewGuide": "دليل المقابلة",
+      "employerGuide": "دليل صاحب العمل",
       "downloadApp": "تنزيل التطبيق",
       "pricing": "الأسعار",
       "about": "من نحن",

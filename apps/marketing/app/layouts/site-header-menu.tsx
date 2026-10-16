@@ -29,9 +29,9 @@ import { SiteLanguageSwitcher } from "./site-header-language"
 import {
   NAV_ITEMS,
   type NavItem,
-  PRODUCT_ITEMS,
   navHref,
   useCurrent,
+  useProductItems,
 } from "./site-header-nav"
 
 const CANDIDATE_LINKS = FOOTER_COLUMNS[1].links
@@ -40,6 +40,7 @@ export function SiteHeaderMenu({ className }: { className?: string }) {
   const { t } = useTranslation("common")
   const lang = useLocale()
   const current = useCurrent()
+  const productItems = useProductItems()
   const [open, setOpen] = useState(false)
   const triggerRef = useRef<HTMLButtonElement>(null)
   const close = () => {
@@ -104,7 +105,7 @@ export function SiteHeaderMenu({ className }: { className?: string }) {
         <div className="flex flex-1 flex-col gap-6 overflow-y-auto p-3">
           <nav aria-label={t("nav.mobileAria")} className="flex flex-col gap-6">
             <MenuGroup title={t("footer.product")}>
-              {PRODUCT_ITEMS.map(navLink)}
+              {productItems.map(navLink)}
             </MenuGroup>
             <MenuGroup title={t("footer.company")}>
               {NAV_ITEMS.map(navLink)}

@@ -4,8 +4,10 @@
   "nav": {
     "howItWorks": "Come Funziona",
     "interviewGuide": "Guida al colloquio",
+    "employerGuide": "Guida per le aziende",
     "howItWorksDesc": "Pubblica un ruolo, seleziona con l’IA, ricevi le valutazioni",
     "interviewGuideDesc": "Come affrontare il colloquio con l'IA, passo dopo passo",
+    "employerGuideDesc": "Come si assume su LetsHyre, dalla registrazione alla shortlist",
     "pricing": "Prezzi",
     "about": "Chi Siamo",
     "contact": "Contatti",
@@ -38,6 +40,7 @@
     "links": {
       "howItWorks": "Come funziona",
       "interviewGuide": "Guida al colloquio",
+      "employerGuide": "Guida per le aziende",
       "downloadApp": "Scarica applicazione",
       "pricing": "Prezzi",
       "about": "Chi siamo",

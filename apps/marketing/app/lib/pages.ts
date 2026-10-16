@@ -14,6 +14,11 @@ export const PAGES = {
     namespaces: ["interview"],
     og: "interview-guide",
   },
+  employerGuide: {
+    path: "/employer-guide",
+    namespaces: ["employerGuide"],
+    og: "employer-guide",
+  },
   download: { path: "/download", namespaces: ["download"], og: "download" },
   contact: { path: "/contact", namespaces: ["contact"], og: "contact" },
   about: { path: "/about", namespaces: ["about"], og: "about" },

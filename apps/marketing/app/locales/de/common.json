@@ -4,8 +4,10 @@
   "nav": {
     "howItWorks": "So funktioniert's",
     "interviewGuide": "Interview-Leitfaden",
+    "employerGuide": "Leitfaden für Arbeitgeber",
     "howItWorksDesc": "Stelle ausschreiben, mit KI prüfen, Scorecards erhalten",
     "interviewGuideDesc": "So absolvieren Sie Ihr KI-Interview, Schritt für Schritt",
+    "employerGuideDesc": "So funktioniert Einstellen bei LetsHyre, von der Registrierung bis zur Shortlist",
     "pricing": "Preise",
     "about": "Über uns",
     "contact": "Kontakt",
@@ -38,6 +40,7 @@
     "links": {
       "howItWorks": "So funktioniert's",
       "interviewGuide": "Interview-Leitfaden",
+      "employerGuide": "Leitfaden für Arbeitgeber",
       "downloadApp": "Anwendung herunterladen",
       "pricing": "Preise",
       "about": "Über uns",

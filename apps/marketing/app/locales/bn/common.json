@@ -4,8 +4,10 @@
   "nav": {
     "howItWorks": "কীভাবে কাজ করে",
     "interviewGuide": "ইন্টারভিউ গাইড",
+    "employerGuide": "নিয়োগকর্তা গাইড",
     "howItWorksDesc": "পদ পোস্ট করুন, এআই দিয়ে বাছাই করুন, স্কোরকার্ড পান",
     "interviewGuideDesc": "ধাপে ধাপে কীভাবে এআই ইন্টারভিউ দেবেন",
+    "employerGuideDesc": "LetsHyre-এ নিয়োগ কীভাবে হয়, সাইন-আপ থেকে শর্টলিস্ট পর্যন্ত",
     "pricing": "মূল্য",
     "about": "সম্পর্কে",
     "contact": "যোগাযোগ",
@@ -38,6 +40,7 @@
     "links": {
       "howItWorks": "কীভাবে কাজ করে",
       "interviewGuide": "ইন্টারভিউ গাইড",
+      "employerGuide": "নিয়োগকর্তা গাইড",
       "downloadApp": "অ্যাপ্লিকেশন ডাউনলোড করুন",
       "pricing": "মূল্য",
       "about": "আমাদের সম্পর্কে",

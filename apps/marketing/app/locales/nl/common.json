@@ -4,8 +4,10 @@
   "nav": {
     "howItWorks": "Hoe het werkt",
     "interviewGuide": "Interviewgids",
+    "employerGuide": "Gids voor werkgevers",
     "howItWorksDesc": "Plaats een vacature, screen met AI, ontvang scorecards",
     "interviewGuideDesc": "Zo doe je je AI-interview, stap voor stap",
+    "employerGuideDesc": "Zo werkt werven op LetsHyre, van aanmelden tot shortlist",
     "pricing": "Prijzen",
     "about": "Over ons",
     "contact": "Contact",
@@ -38,6 +40,7 @@
     "links": {
       "howItWorks": "Hoe het werkt",
       "interviewGuide": "Interviewgids",
+      "employerGuide": "Gids voor werkgevers",
       "downloadApp": "App downloaden",
       "pricing": "Prijzen",
       "about": "Over ons",

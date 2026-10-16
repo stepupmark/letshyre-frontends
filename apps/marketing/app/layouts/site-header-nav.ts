@@ -1,12 +1,17 @@
 import { type Locale, localePath } from "@workspace/i18n"
 import { useLocale } from "@workspace/i18n/react"
-import { BotMessageSquareIcon, WorkflowIcon } from "lucide-react"
+import {
+  BookOpenCheckIcon,
+  BotMessageSquareIcon,
+  WorkflowIcon,
+} from "lucide-react"
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router"
 
+import { usePublished } from "@/hooks/use-published"
 import { PAGES } from "@/lib/pages"
 
-export const PRODUCT_ITEMS = [
+const PRODUCT_ITEMS = [
   {
     id: "howItWorks",
     label: "nav.howItWorks",
@@ -22,7 +27,23 @@ export const PRODUCT_ITEMS = [
     icon: BotMessageSquareIcon,
     path: PAGES.interview.path,
   },
+  {
+    id: "employerGuide",
+    label: "nav.employerGuide",
+    description: "nav.employerGuideDesc",
+    icon: BookOpenCheckIcon,
+    path: PAGES.employerGuide.path,
+    page: "employerGuide",
+  },
 ] as const
+
+/** Product links, minus pages not published in this locale. */
+export function useProductItems() {
+  const published = usePublished()
+  return PRODUCT_ITEMS.filter(
+    (item) => !("page" in item) || published(item.page)
+  )
+}
 
 export const NAV_ITEMS = [
   { id: "pricing", label: "nav.pricing", path: "/pricing" },

@@ -9,6 +9,11 @@ export const FOOTER_COLUMNS = [
       { label: "footer.links.howItWorks", path: "", hash: "how-it-works" },
       { label: "footer.links.pricing", path: "/pricing" },
       {
+        label: "footer.links.employerGuide",
+        path: PAGES.employerGuide.path,
+        page: "employerGuide",
+      },
+      {
         label: "footer.links.employerRegister",
         href: APP_LINKS.employerRegister,
       },

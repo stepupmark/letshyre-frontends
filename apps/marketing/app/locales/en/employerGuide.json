@@ -1,0 +1,412 @@
+{
+  "meta": {
+    "title": "Employer Guide: How to Hire on LetsHyre | letshyre.ai",
+    "description": "How hiring on LetsHyre works: sign up, verify your company, post a job from your JD, find interviewed candidates, unlock them and share scorecards.",
+    "name": "Employer Guide to Hiring on LetsHyre",
+    "schemaDescription": "Step-by-step guide for employers: registration, company verification, posting jobs, the candidate pool, credits, scorecards and team sharing.",
+    "crumb": "Employer Guide",
+    "audience": "Employers and recruiters"
+  },
+  "title": "Hire from people who've <hl>already interviewed</hl>",
+  "intro": "This guide walks you through LetsHyre from sign-up to your first shortlist: verifying your company, posting a job from your JD, finding candidates in the pool, unlocking the right ones and bringing your team in.",
+  "readTime": "7 chapters · about 10 minutes to read",
+  "register": "Create employer account",
+  "pricing": "See pricing",
+  "toc": {
+    "label": "In this guide",
+    "chapters": "Chapters",
+    "faq": "Questions"
+  },
+  "map": {
+    "account": "Sign up",
+    "company": "Verify",
+    "post": "Post a job",
+    "pool": "Pool",
+    "unlock": "Unlock",
+    "review": "Review",
+    "team": "Team"
+  },
+  "ready": {
+    "title": "What to keep ready",
+    "description": "Have these to hand and you'll go from sign-up to a submitted company in one sitting.",
+    "items": {
+      "email": {
+        "title": "A work email",
+        "desc": "The address you hire from. You'll sign in with it, and we send a 6-digit code to confirm it's yours."
+      },
+      "mobile": {
+        "title": "An Indian mobile number",
+        "desc": "Ten digits. We text a code to confirm it and use it only for important account messages."
+      },
+      "numbers": {
+        "title": "CIN, PAN and GSTIN",
+        "desc": "Your company registration number, the 10-character PAN and the 15-character GSTIN, plus your registered address."
+      },
+      "documents": {
+        "title": "Three documents",
+        "desc": "Your registration certificate, GST certificate and an address proof such as a utility bill or lease agreement."
+      },
+      "logo": {
+        "title": "A square logo",
+        "desc": "Candidates see it beside your jobs. Logos, scans and photos can be up to 5 MB each."
+      },
+      "jd": {
+        "title": "A JD for your first job",
+        "desc": "A PDF or Word file, up to 5 MB. <jd>See what it should contain</jd>."
+      }
+    }
+  },
+  "chapter": "Chapter {{number}}",
+  "goodToKnow": "Good to know",
+  "chapters": {
+    "account": {
+      "title": "Create your employer account",
+      "lead": "Sign-up takes about two minutes. We confirm two things, that the email is yours and that the mobile number reaches you, because every job, unlock and invoice belongs to this account.",
+      "note": "Hiring with colleagues? Only one person signs up. Everyone else joins from the Team page later, as <team>chapter 7</team> explains."
+    },
+    "company": {
+      "title": "Set up and verify your company",
+      "lead": "Before candidates see your jobs, we check that your company is real. Setup is three short steps and takes about five minutes with your documents to hand. Progress is saved on your device as you go, so you can stop and come back.",
+      "note": "Candidates never see your registration numbers or documents. They see your name, logo, industry, website and description."
+    },
+    "post": {
+      "title": "Post a job from your JD",
+      "lead": "Every job on LetsHyre starts from a job description file. You upload it, our AI reads it and fills in the job form, and you check the result before it goes live. You never type a job from scratch, and nothing is posted until you've reviewed it.",
+      "note": "Your draft and JD are saved on this device as you work, so a closed tab or a dropped connection doesn't cost you the form."
+    },
+    "pool": {
+      "title": "Find candidates in the pool",
+      "lead": "The candidate pool is where you meet people. Everyone in it has already taken an AI interview, so you start from evidence instead of a stack of resumes.",
+      "note": "The pool grows on its own. Our AI keeps matching as candidates finish interviews, so a job with few matches today can look different next week."
+    },
+    "unlock": {
+      "title": "Unlock the candidates you want",
+      "lead": "Unlocking takes you from a promising card to a real conversation. It's the only thing on LetsHyre that uses credits.",
+      "note": "Short on credits? Add some from the unlock panel. Once you've paid, we bring you back to the candidate you were looking at."
+    },
+    "review": {
+      "title": "Review an unlocked candidate",
+      "lead": "Each unlocked candidate has two pages: the interview scorecard, which shows how they did, and the profile, which shows who they are. Together they cover what you'd usually learn in a first-round call.",
+      "profileTitle": "On the profile",
+      "profile": [
+        "Name, email and phone",
+        "Location and address",
+        "Years of experience",
+        "Current and expected pay",
+        "Notice period",
+        "Education",
+        "Skills",
+        "Projects",
+        "Previous roles",
+        "Certifications",
+        "Preferred locations",
+        "Resume and experience documents"
+      ],
+      "note": "Scorecards print cleanly, which helps when your hiring panel prefers paper."
+    },
+    "team": {
+      "title": "Bring your team in",
+      "lead": "Hiring is rarely a one-person job. There are two ways to involve others: add them to your account, or send them a single scorecard.",
+      "note": "Anyone who has a shared link can open it until it runs out, so send it only to the person who needs it."
+    }
+  },
+  "steps": {
+    "email": {
+      "title": "Start with your work email",
+      "body": "Open <reg>employer registration</reg> and enter the address you hire from, like name@yourcompany.com. We send a 6-digit code to it; type it in to show the inbox is yours."
+    },
+    "mobile": {
+      "title": "Confirm your mobile number",
+      "body": "Add a 10-digit Indian mobile number and enter the code we text to it. We use the number only for important account messages."
+    },
+    "password": {
+      "title": "Set a password",
+      "body": "Choose a password and accept the terms. From then on you sign in with your work email and this password, on any device."
+    },
+    "dashboard": {
+      "title": "Land on your dashboard",
+      "body": "You're signed in straight away, and the dashboard asks for your company's details first. That's the next chapter."
+    },
+    "details": {
+      "title": "Company details",
+      "body": "Your company's name, website, industry, LinkedIn page and an official email for account and billing messages. Add a sentence or two about what you do, up to 500 characters. Candidates read it beside your jobs, so write it for them."
+    },
+    "legal": {
+      "title": "Registration and tax",
+      "body": "Your registration number (the CIN, like U72900TG2024PTC123456), PAN (like ABCDE1234F), GSTIN (like 36ABCDE1234F1Z5) and registered address. Our team checks these once and keeps them private."
+    },
+    "documents": {
+      "title": "Documents",
+      "body": "Upload your registration certificate, GST certificate and an address proof, plus your company logo. Clear scans or photos are fine, up to 5 MB each. A square logo looks best, because we show it in a square."
+    },
+    "submit": {
+      "title": "Check and submit",
+      "body": "Everything comes together on one page, with a preview of how candidates will see your company. Edit any section, then submit."
+    },
+    "verification": {
+      "title": "We review your documents",
+      "body": "Our team checks your details against the documents. If anything is missing or unclear, we email your official address with what to fix."
+    },
+    "upload": {
+      "title": "Upload the JD and name the role",
+      "body": "Drop in your JD as a .pdf, .doc or .docx file, up to 5 MB, and type the role you're hiring for, like Senior frontend developer."
+    },
+    "read": {
+      "title": "Let the AI read it",
+      "body": "The file uploads, then the AI maps what it finds onto the form: the role, work mode, skills, experience, pay, location and description. You can cancel at any point and choose another file."
+    },
+    "check": {
+      "title": "Check what it filled",
+      "body": "Every field the AI filled is marked From your JD until you change it, so you can see at a glance what came from the document and what still needs you. Fill the gaps, correct anything it misread and preview the job as candidates will see it."
+    },
+    "publish": {
+      "title": "Post it",
+      "body": "Press Post job. We check new jobs before candidates see them, usually within a working day, and you can still edit the job while it waits."
+    },
+    "manage": {
+      "title": "Keep it current",
+      "body": "Once approved, the job is open. Pause it and it leaves the candidate pool until you reopen it, close it when the role is filled, and edit it whenever the details change."
+    },
+    "pickJob": {
+      "title": "Pick a job",
+      "body": "The pool works one job at a time and lists your open jobs. It opens on your first job; switch to any other from the job menu."
+    },
+    "mode": {
+      "title": "Choose AI matched or Applied",
+      "body": "AI matched searches every interviewed candidate on LetsHyre and suggests the people who fit this job best. Applied looks only at those who applied to it and ranks them the same way. The pool starts on AI matched."
+    },
+    "list": {
+      "title": "Read the list",
+      "body": "Candidates are sorted best match first. Filter by match strength, Strong, Partial or Low, to focus where it counts."
+    },
+    "peek": {
+      "title": "Look closer before you spend",
+      "body": "Open a candidate to see why the AI matched them: role fit, the job's skills they have and the ones they're missing, their experience and their AI interviews. Contact details, recordings and the full scorecard stay locked until you unlock them."
+    },
+    "choose": {
+      "title": "Choose the interviews",
+      "body": "On a candidate, pick which of their AI interviews to unlock. Each interview costs 1 credit, and the one closest to your job's role is marked so you can start there."
+    },
+    "confirm": {
+      "title": "Confirm",
+      "body": "We show the cost and what your balance will be afterwards. An unlock can't be undone, so this is the moment to be sure."
+    },
+    "unlocked": {
+      "title": "See everything",
+      "body": "You get the candidate's contact details, the full scorecard, the interview recording and their resume. What you unlock stays unlocked on your account."
+    },
+    "findAgain": {
+      "title": "Find them again",
+      "body": "Everyone you've unlocked is under Unlocked candidates, newest first, with their experience, location, pay, notice period and interview."
+    },
+    "summary": {
+      "title": "Start with the summary",
+      "body": "The scorecard opens with the candidate's name, the role and date of the interview, and a score out of 100 with the number of answers it's based on. Fit for the job shows the overall match, role and skills fit, and why the AI matched them."
+    },
+    "communication": {
+      "title": "Check how they communicate",
+      "body": "Communication is scored for clarity, relevance, confidence, depth of thought and the key concepts covered, so you can tell a correct answer from a convincing one."
+    },
+    "recording": {
+      "title": "Watch the recording",
+      "body": "The full interview recording sits on the scorecard. Jump to the questions that matter to you and judge for yourself."
+    },
+    "answers": {
+      "title": "Read every answer",
+      "body": "Each question is listed with the candidate's answer and the AI's assessment, with results by type: multiple choice, pseudocode, coding, written and spoken. Strengths, areas to improve and recommendations sum it up."
+    },
+    "addMembers": {
+      "title": "Add recruiters to your account",
+      "body": "From Team, add a colleague with their name and work email, and set a password to share with them privately. They join as a recruiter and can post jobs and review candidates with you. Your plan sets how many seats you have."
+    },
+    "access": {
+      "title": "Pause or remove access",
+      "body": "Put a member on hold and they can't sign in until you make them active again. Remove them and they lose access straight away; the jobs they posted stay with your company."
+    },
+    "share": {
+      "title": "Share one scorecard",
+      "body": "For a hiring manager or interviewer who doesn't need an account, share the scorecard instead. Choose the job it's for, how many days the link lasts (up to 30) and how many times it can be opened."
+    },
+    "links": {
+      "title": "Keep track of links",
+      "body": "A shared link shows the scorecard and profile without contact details, and stops working when it expires or runs out of views. Every link you've made is listed under Shared links."
+    }
+  },
+  "jd": {
+    "title": "What a good JD contains",
+    "lead": "The AI can only fill in what the document says. A JD with these details comes back almost complete; anything missing, you add yourself.",
+    "file": "senior-frontend-developer.pdf",
+    "groups": {
+      "role": {
+        "title": "The role",
+        "items": [
+          "Job title",
+          "Work type: onsite, hybrid or remote",
+          "Employment type: full time, part time or contract",
+          "Number of openings"
+        ]
+      },
+      "person": {
+        "title": "The person",
+        "items": [
+          "Skills, as a list",
+          "Experience required, in years",
+          "Minimum education, like B.Tech or MBA",
+          "Specialisation, like CSE or ECE"
+        ]
+      },
+      "place": {
+        "title": "Pay and place",
+        "items": [
+          "Salary range",
+          "Country, state and city",
+          "Campus or office location"
+        ]
+      },
+      "work": {
+        "title": "The work",
+        "items": [
+          "A short overview of the job",
+          "Responsibilities, one per line",
+          "An application deadline, if there is one"
+        ]
+      }
+    },
+    "tip": "Plain, well-structured text reads best. Tables, text inside images and two-column layouts are harder to read reliably."
+  },
+  "score": {
+    "title": "How to read a candidate",
+    "lead": "Each number answers a different question. Read them together, not one at a time.",
+    "sample": {
+      "name": "Sample candidate",
+      "role": "Frontend developer",
+      "band": "Strong",
+      "experience": "6 yrs",
+      "interview": "82",
+      "match": "91%",
+      "roleFit": "Strong",
+      "skills": "7 of 8",
+      "interviews": "3"
+    },
+    "items": {
+      "experience": {
+        "term": "Experience",
+        "body": "Years of work from the candidate's profile. People without work experience show as freshers."
+      },
+      "interview": {
+        "term": "Interview score",
+        "body": "Out of 100, from the AI interview. Each answer is scored against the role, then checked for clarity, relevance and depth. It measures how they performed, not how well they fit your job."
+      },
+      "match": {
+        "term": "Match",
+        "body": "How well the candidate fits this job overall, from the interview and their resume. The list is sorted by it."
+      },
+      "roleFit": {
+        "term": "Role fit",
+        "body": "Whether the role they interviewed for and their background line up with yours."
+      },
+      "skills": {
+        "term": "Skills fit",
+        "body": "Which of your job's skills they have, and which they're missing."
+      },
+      "interviews": {
+        "term": "Interviews",
+        "body": "How many AI interviews they've taken. More interviews mean more evidence, and you unlock each one separately."
+      }
+    },
+    "note": "A strong match with a modest interview score usually means the right background on a weaker day. Read the scorecard before you decide."
+  },
+  "credits": {
+    "title": "How credits work",
+    "lead": "Credits are bought once, not by subscription, and every credit costs the same whichever plan you choose.",
+    "ledger": "A sample balance",
+    "rows": [
+      {
+        "label": "Free credits when you sign up",
+        "value": "+10"
+      },
+      {
+        "label": "Unlock one interview for Priya",
+        "value": "−1"
+      },
+      {
+        "label": "Unlock two interviews for Arjun",
+        "value": "−2"
+      },
+      {
+        "label": "Unlock one interview for Meera",
+        "value": "−1"
+      }
+    ],
+    "balance": "Balance",
+    "balanceValue": "6",
+    "points": [
+      "Credits never expire.",
+      "Top up whenever you run low.",
+      "GST is added at checkout, and every purchase has an invoice."
+    ],
+    "link": "See plans and prices"
+  },
+  "scenes": {
+    "code": "Check your email",
+    "verify": "Verify",
+    "details": "Details",
+    "legal": "Legal",
+    "documents": "Documents",
+    "review": "Under review",
+    "fromJd": "From your JD",
+    "matched": "AI matched",
+    "applied": "Applied",
+    "strong": "Strong",
+    "unlock": "Unlock · 1 credit",
+    "balance": "Balance",
+    "score": "82",
+    "outOf": "/ 100",
+    "recruiter": "Recruiter",
+    "expires": "7 days",
+    "views": "3 views"
+  },
+  "faq": {
+    "title": "Questions employers ask",
+    "items": {
+      "documents": {
+        "q": "What happens after I submit my company documents?",
+        "a": "Our team checks your details against the documents. If anything is missing or unclear, we email your official address with what to fix."
+      },
+      "jd": {
+        "q": "Why does every job need a JD file?",
+        "a": "The JD is the source of truth for the job. The AI fills the form from it, so jobs are complete and consistent, and candidates are matched against what you actually wrote."
+      },
+      "live": {
+        "q": "How long until my job is live?",
+        "a": "We check new jobs before candidates see them, usually within a working day. You can edit the job while it waits."
+      },
+      "modes": {
+        "q": "What's the difference between AI matched and Applied?",
+        "a": "AI matched suggests the best-fitting people from every interviewed candidate on LetsHyre. Applied ranks only the people who applied to your job."
+      },
+      "beforeUnlock": {
+        "q": "What can I see before I unlock a candidate?",
+        "a": "Their match, role and skills fit, experience and AI interviews, enough to judge the fit. Contact details, the recording, the full scorecard and the resume unlock with credits."
+      },
+      "expiry": {
+        "q": "Do credits expire?",
+        "a": "No. Credits are bought once and never expire. New accounts start with 10 free credits, and GST is added at checkout."
+      },
+      "refund": {
+        "q": "Can I get a refund on credits?",
+        "a": "Refunds follow our <refund>refund policy</refund>, which explains what's eligible and how to ask."
+      },
+      "sharing": {
+        "q": "Can someone outside my company see a scorecard?",
+        "a": "Only if you share it. A shared link shows the scorecard and profile without contact details, and stops working when it expires or runs out of views."
+      }
+    }
+  },
+  "cta": {
+    "title": "Your next hire has already interviewed",
+    "desc": "Create your employer account, verify your company and post your first job from its JD. New accounts start with 10 free credits.",
+    "button": "Create employer account",
+    "secondary": "See pricing"
+  }
+}

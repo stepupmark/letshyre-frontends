@@ -9,7 +9,10 @@ const notFound = () => data(null, { status: 404 })
 /** Loader for the site layout. Runs at build time only. */
 export function layoutData(lang: string | undefined) {
   if (!isLocale(lang)) throw notFound()
-  return { lang, messages: loadMessages(lang, LAYOUT_NAMESPACES) }
+  const published = (Object.keys(PAGES) as PageId[]).filter((id) =>
+    readyLocales(id).includes(lang)
+  )
+  return { lang, messages: loadMessages(lang, LAYOUT_NAMESPACES), published }
 }
 
 /** Loader for a page route: its copy and the locales it's published in. */

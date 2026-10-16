@@ -4,8 +4,10 @@
   "nav": {
     "howItWorks": "仕組み",
     "interviewGuide": "面接ガイド",
+    "employerGuide": "採用担当者ガイド",
     "howItWorksDesc": "求人を掲載し、AIで選考し、評価レポートを受け取る",
     "interviewGuideDesc": "AI面接の受け方をステップごとに解説",
+    "employerGuideDesc": "LetsHyreでの採用の流れを、登録から候補者の絞り込みまで解説",
     "pricing": "料金",
     "about": "会社概要",
     "contact": "お問い合わせ",
@@ -38,6 +40,7 @@
     "links": {
       "howItWorks": "仕組み",
       "interviewGuide": "面接ガイド",
+      "employerGuide": "採用担当者ガイド",
       "downloadApp": "アプリをダウンロード",
       "pricing": "料金",
       "about": "会社概要",

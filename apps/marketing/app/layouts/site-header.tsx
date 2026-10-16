@@ -22,9 +22,9 @@ import { SiteHeaderMenu } from "./site-header-menu"
 import { SiteThemeToggle } from "./site-header-theme"
 import {
   NAV_ITEMS,
-  PRODUCT_ITEMS,
   navHref,
   useCurrent,
+  useProductItems,
 } from "./site-header-nav"
 
 function useScrolled() {
@@ -48,11 +48,12 @@ export function SiteHeader() {
   const { t } = useTranslation("common")
   const lang = useLocale()
   const current = useCurrent()
+  const productItems = useProductItems()
   const rowRef = useRef<HTMLDivElement>(null)
   const listRef = useRef<HTMLUListElement>(null)
   const compact = useCompactNav(rowRef, listRef, lang)
   const scrolled = useScrolled()
-  const productCurrent = PRODUCT_ITEMS.some((item) => current(item))
+  const productCurrent = productItems.some((item) => current(item))
 
   return (
     <header
@@ -92,7 +93,7 @@ export function SiteHeader() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="w-88 p-1.5">
                   <ul className="flex flex-col gap-0.5">
-                    {PRODUCT_ITEMS.map((item) => (
+                    {productItems.map((item) => (
                       <li key={item.id}>
                         <NavigationMenuLink
                           render={

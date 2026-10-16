@@ -4,8 +4,10 @@
   "nav": {
     "howItWorks": "यह कैसे काम करता है",
     "interviewGuide": "इंटरव्यू गाइड",
+    "employerGuide": "एम्प्लॉयर गाइड",
     "howItWorksDesc": "पद पोस्ट करें, एआई से स्क्रीन करें, स्कोरकार्ड पाएं",
     "interviewGuideDesc": "एआई इंटरव्यू कैसे दें, कदम दर कदम",
+    "employerGuideDesc": "LetsHyre पर हायरिंग कैसे होती है, साइन-अप से शॉर्टलिस्ट तक",
     "pricing": "मूल्य निर्धारण",
     "about": "हमारे बारे में",
     "contact": "संपर्क",
@@ -38,6 +40,7 @@
     "links": {
       "howItWorks": "यह कैसे काम करता है",
       "interviewGuide": "इंटरव्यू गाइड",
+      "employerGuide": "एम्प्लॉयर गाइड",
       "downloadApp": "एप्लिकेशन डाउनलोड करें",
       "pricing": "मूल्य निर्धारण",
       "about": "हमारे बारे में",

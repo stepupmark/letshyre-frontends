@@ -4,8 +4,10 @@
   "nav": {
     "howItWorks": "How It Works",
     "interviewGuide": "Interview Guide",
+    "employerGuide": "Employer Guide",
     "howItWorksDesc": "Post a role, screen with AI, get scorecards",
     "interviewGuideDesc": "How to take your AI interview, step by step",
+    "employerGuideDesc": "How hiring on LetsHyre works, from sign-up to shortlist",
     "pricing": "Pricing",
     "about": "About",
     "contact": "Contact",
@@ -38,6 +40,7 @@
     "links": {
       "howItWorks": "How it works",
       "interviewGuide": "Interview guide",
+      "employerGuide": "Employer guide",
       "downloadApp": "Download the app",
       "pricing": "Pricing",
       "about": "About us",

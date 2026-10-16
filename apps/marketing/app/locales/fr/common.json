@@ -4,8 +4,10 @@
   "nav": {
     "howItWorks": "Comment ça marche",
     "interviewGuide": "Guide de l'entretien",
+    "employerGuide": "Guide employeur",
     "howItWorksDesc": "Publiez un poste, présélectionnez avec l’IA, recevez des évaluations",
     "interviewGuideDesc": "Comment passer votre entretien IA, étape par étape",
+    "employerGuideDesc": "Comment recruter sur LetsHyre, de l’inscription à la présélection",
     "pricing": "Tarifs",
     "about": "À propos",
     "contact": "Contact",
@@ -38,6 +40,7 @@
     "links": {
       "howItWorks": "Comment ça marche",
       "interviewGuide": "Guide de l'entretien",
+      "employerGuide": "Guide employeur",
       "downloadApp": "Télécharger l'application",
       "pricing": "Tarifs",
       "about": "À propos",

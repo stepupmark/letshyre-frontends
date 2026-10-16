@@ -4,8 +4,10 @@
   "nav": {
     "howItWorks": "Cara Kerja",
     "interviewGuide": "Panduan Wawancara",
+    "employerGuide": "Panduan pemberi kerja",
     "howItWorksDesc": "Pasang lowongan, saring dengan AI, dapatkan scorecard",
     "interviewGuideDesc": "Cara mengikuti wawancara AI, langkah demi langkah",
+    "employerGuideDesc": "Cara merekrut di LetsHyre, dari pendaftaran hingga daftar pendek",
     "pricing": "Harga",
     "about": "Tentang",
     "contact": "Kontak",
@@ -38,6 +40,7 @@
     "links": {
       "howItWorks": "Cara kerja",
       "interviewGuide": "Panduan wawancara",
+      "employerGuide": "Panduan pemberi kerja",
       "downloadApp": "Unduh aplikasi",
       "pricing": "Harga",
       "about": "Tentang kami",
