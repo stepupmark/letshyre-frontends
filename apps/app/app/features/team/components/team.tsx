@@ -37,6 +37,7 @@ import { toast } from "sonner"
 
 import { ConfirmDialog } from "@/components/confirm-dialog"
 import { EmptyState } from "@/components/empty-state"
+import { GuideLink } from "@/components/guide-link"
 import { PageHeader } from "@/components/page-header"
 import { LoadError } from "@/components/query-state"
 import { StatusBadge } from "@/components/status-badge"
@@ -150,7 +151,12 @@ export function Team() {
         <EmptyState
           title={t("emptyTitle")}
           description={t("emptyBody")}
-          action={add}
+          action={
+            <div className="flex flex-col items-center gap-3">
+              {add}
+              <GuideLink chapter="team" />
+            </div>
+          }
         />
       ) : (
         <ul className="divide-y rounded-lg border">

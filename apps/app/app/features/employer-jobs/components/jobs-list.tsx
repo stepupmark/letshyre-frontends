@@ -10,6 +10,7 @@ import { toast } from "sonner"
 import { AppLink } from "@/components/app-link"
 import { DataTable } from "@/components/data-table"
 import { EmptyState } from "@/components/empty-state"
+import { GuideLink } from "@/components/guide-link"
 import { StatusBadge } from "@/components/status-badge"
 import type { DataTableColumn } from "@/lib/data-table-features"
 import { readTableParams, writeTableParams } from "@workspace/api/table-params"
@@ -211,10 +212,16 @@ export function JobsList() {
             title={t("list.emptyTitle")}
             description={t("list.emptyBody")}
             action={
-              <AppLink to={href("/employer/jobs/new")} className={buttonLink()}>
-                <Plus />
-                {t("list.postJob")}
-              </AppLink>
+              <div className="flex flex-col items-center gap-3">
+                <AppLink
+                  to={href("/employer/jobs/new")}
+                  className={buttonLink()}
+                >
+                  <Plus />
+                  {t("list.postJob")}
+                </AppLink>
+                <GuideLink chapter="post" />
+              </div>
             }
           />
         }

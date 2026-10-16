@@ -42,7 +42,9 @@
   "empty": {
     "filteredTitle": "일치하는 항목이 없어요",
     "filteredBody": "다른 검색어를 쓰거나 필터를 지워 보세요.",
-    "clearFilters": "필터 지우기"
+    "clearFilters": "필터 지우기",
+    "guide": "이용 방법",
+    "newTab": "(새 탭에서 열림)"
   },
   "upload": {
     "drop": "파일을 여기로 끌어오거나",

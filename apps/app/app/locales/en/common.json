@@ -44,7 +44,9 @@
   "empty": {
     "filteredTitle": "Nothing matches",
     "filteredBody": "Try a different search or clear the filters.",
-    "clearFilters": "Clear filters"
+    "clearFilters": "Clear filters",
+    "guide": "How this works",
+    "newTab": "(opens in a new tab)"
   },
   "upload": {
     "drop": "Drag a file here, or",

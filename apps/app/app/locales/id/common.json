@@ -42,7 +42,9 @@
   "empty": {
     "filteredTitle": "Tidak ada yang cocok",
     "filteredBody": "Coba pencarian lain atau hapus filternya.",
-    "clearFilters": "Hapus filter"
+    "clearFilters": "Hapus filter",
+    "guide": "Cara kerjanya",
+    "newTab": "(terbuka di tab baru)"
   },
   "upload": {
     "drop": "Seret file ke sini, atau",

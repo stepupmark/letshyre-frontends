@@ -44,7 +44,9 @@
   "empty": {
     "filteredTitle": "Geen resultaten",
     "filteredBody": "Probeer een andere zoekopdracht of wis de filters.",
-    "clearFilters": "Filters wissen"
+    "clearFilters": "Filters wissen",
+    "guide": "Zo werkt het",
+    "newTab": "(opent in een nieuw tabblad)"
   },
   "upload": {
     "drop": "Sleep een bestand hierheen, of",

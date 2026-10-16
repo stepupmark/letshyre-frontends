@@ -46,7 +46,9 @@
   "empty": {
     "filteredTitle": "Sin resultados",
     "filteredBody": "Pruebe otra búsqueda o quite los filtros.",
-    "clearFilters": "Quitar filtros"
+    "clearFilters": "Quitar filtros",
+    "guide": "Cómo funciona",
+    "newTab": "(se abre en una pestaña nueva)"
   },
   "upload": {
     "drop": "Arrastre un archivo aquí o",

@@ -12,6 +12,7 @@ import { href, useSearchParams } from "react-router"
 import { AppLink } from "@/components/app-link"
 import { DataTable } from "@/components/data-table"
 import { EmptyState } from "@/components/empty-state"
+import { GuideLink } from "@/components/guide-link"
 import { ScoreBand } from "@/components/score-band"
 import type { DataTableColumn } from "@/lib/data-table-features"
 import { safeUrl } from "@/lib/safe-url"
@@ -170,12 +171,15 @@ export function UnlockedList({
           title={t("list.emptyTitle")}
           description={t("list.emptyBody")}
           action={
-            <AppLink
-              to={href("/employer/candidates")}
-              className={buttonLink({ variant: "outline" })}
-            >
-              {t("list.toPool")}
-            </AppLink>
+            <div className="flex flex-col items-center gap-3">
+              <AppLink
+                to={href("/employer/candidates")}
+                className={buttonLink({ variant: "outline" })}
+              >
+                {t("list.toPool")}
+              </AppLink>
+              <GuideLink chapter="unlock" />
+            </div>
           }
         />
       }

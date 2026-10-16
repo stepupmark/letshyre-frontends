@@ -42,7 +42,9 @@
   "empty": {
     "filteredTitle": "一致するものがありません",
     "filteredBody": "検索を変えるか、フィルターをクリアしてください。",
-    "clearFilters": "フィルターをクリア"
+    "clearFilters": "フィルターをクリア",
+    "guide": "使い方を見る",
+    "newTab": "（新しいタブで開きます）"
   },
   "upload": {
     "drop": "ここにファイルをドラッグするか、",

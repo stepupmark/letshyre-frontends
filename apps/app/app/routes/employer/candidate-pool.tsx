@@ -16,6 +16,7 @@ import { href, useSearchParams } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { EmptyState } from "@/components/empty-state"
+import { GuideLink } from "@/components/guide-link"
 import { PageHeader } from "@/components/page-header"
 import { LoadError } from "@/components/query-state"
 import { UnlockPanel } from "@/features/candidate-unlock"
@@ -105,10 +106,13 @@ export default function CandidatePoolPage() {
           title={t("pool.noJobsTitle")}
           description={t("pool.noJobsBody")}
           action={
-            <AppLink to={href("/employer/jobs/new")} className={buttonLink()}>
-              <Plus />
-              {t("pool.postJob")}
-            </AppLink>
+            <div className="flex flex-col items-center gap-3">
+              <AppLink to={href("/employer/jobs/new")} className={buttonLink()}>
+                <Plus />
+                {t("pool.postJob")}
+              </AppLink>
+              <GuideLink chapter="post" />
+            </div>
           }
         />
       ) : (
@@ -176,6 +180,7 @@ export default function CandidatePoolPage() {
                   description={
                     applied ? t("pool.emptyApplied") : t("pool.emptyBody")
                   }
+                  action={<GuideLink chapter="pool" />}
                 />
               }
             />
