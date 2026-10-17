@@ -60,6 +60,8 @@
     "scorecard": "Scorecard",
     "emptyTitle": "Noch niemand freigeschaltet",
     "emptyBody": "Schalten Sie einen Kandidaten im Pool oder in einer Bewerberliste frei, um seine Daten hier zu sehen.",
-    "toPool": "Kandidatenpool öffnen"
+    "toPool": "Kandidatenpool öffnen",
+    "compare": "Vergleichen",
+    "compareLimit": "2 bis {{max}} zum Vergleichen wählen"
   }
 }

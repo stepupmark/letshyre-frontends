@@ -25,6 +25,32 @@
     "howScoredBody": "El entrevistador de IA puntúa cada respuesta según el puesto y luego comprueba su claridad, relevancia y profundidad. Use la puntuación como punto de partida para su decisión, no como sustituto.",
     "howScoredYours": "El entrevistador de IA puntúa cada respuesta según el puesto y luego comprueba su claridad, relevancia y profundidad. Los empleadores ven las mismas puntuaciones, así que las áreas de mejora son un buen punto de partida."
   },
+  "ring": {
+    "label": "Puntuación general {{score}} de 100, {{band}}"
+  },
+  "takeaways": {
+    "heading": "De un vistazo",
+    "strength": "Mayor fortaleza",
+    "probe": "Vale la pena indagar",
+    "improve": "Para mejorar",
+    "match": "Encaje con el puesto",
+    "seeWrong": "Ver respuestas incorrectas"
+  },
+  "chapters": {
+    "match": "Cuánto encajan el perfil y las respuestas con este puesto.",
+    "communication": "Con qué claridad y seguridad explicó su razonamiento.",
+    "types": "Puntuaciones por cada tipo de pregunta respondida.",
+    "insights": "Qué destacó y dónde conviene profundizar.",
+    "recording": "Mira la entrevista para escucharlo con sus propias palabras.",
+    "profile": "Experiencia, formación y enlaces de su perfil.",
+    "answers": "Cada pregunta, su respuesta y cómo se evaluó."
+  },
+  "footer": {
+    "sharedBy": "{{company}} compartió esta evaluación contigo",
+    "shared": "Se compartió esta evaluación contigo",
+    "body": "Todos los candidatos hacen la misma entrevista estructurada con IA, así que las puntuaciones son comparables.",
+    "about": "¿Qué es {{app}}?"
+  },
   "match": {
     "heading": "Encaje con la oferta",
     "headingFor": "Encaje con {{job}}",
@@ -102,7 +128,12 @@
       "audio": "Oral",
       "other": "Pregunta"
     },
-    "yours": "Su respuesta"
+    "yours": "Su respuesta",
+    "filter": {
+      "label": "Filtrar respuestas",
+      "all": "Todas",
+      "wrong": "Incorrectas"
+    }
   },
   "toc": {
     "label": "En esta página",
@@ -132,5 +163,22 @@
       "body": "Algo ha fallado por nuestra parte. Inténtelo de nuevo en un momento."
     },
     "retry": "Reintentar"
+  },
+  "breakdown": {
+    "title": "Qué compone esta puntuación",
+    "share": "Preguntas: {{count}} de {{total}}",
+    "note": "El peso de cada parte depende del puesto, así que estas puntuaciones no suman por sí solas la puntuación general."
+  },
+  "compare": {
+    "title": "Comparar candidatos",
+    "lead": "Puntuaciones de la entrevista lado a lado. La más alta de cada fila aparece resaltada.",
+    "criteria": "Criterio",
+    "summary": "Resumen",
+    "overall": "Puntuación general",
+    "open": "Evaluación completa",
+    "highest": "Más alta",
+    "tooFewTitle": "Elige al menos dos candidatos",
+    "tooFewBody": "Selecciona dos o tres candidatos desbloqueados para comparar sus evaluaciones lado a lado.",
+    "back": "Volver a candidatos desbloqueados"
   }
 }

@@ -44,8 +44,10 @@ const lpa = (n: number) =>
 
 export function UnlockedList({
   share,
+  bulkActions,
 }: {
   share?: (row: Unlocked) => ReactNode
+  bulkActions?: (selectedIds: string[], clear: () => void) => ReactNode
 }) {
   const { t } = useTranslation("unlock")
   const locale = useLocale()
@@ -155,6 +157,7 @@ export function UnlockedList({
       pageCount={query.data?.total_pages ?? undefined}
       getRowId={rowId}
       rowLabel={rowLabel}
+      bulkActions={bulkActions}
       params={table}
       onParams={(next) => {
         setSearch((prev) => writeTableParams(prev, next), {

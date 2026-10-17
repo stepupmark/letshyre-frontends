@@ -23,6 +23,32 @@
     "howScoredBody": "The AI interviewer scores each answer against the role, then checks it for clarity, relevance and depth. Use the score as a starting point for your decision, not a replacement for it.",
     "howScoredYours": "The AI interviewer scores each answer against the role, then checks it for clarity, relevance and depth. Employers see the same scores, so the areas to improve are a good place to start."
   },
+  "ring": {
+    "label": "Overall score {{score}} out of 100, {{band}}"
+  },
+  "takeaways": {
+    "heading": "At a glance",
+    "strength": "Top strength",
+    "probe": "Worth probing",
+    "improve": "To work on",
+    "match": "Job match",
+    "seeWrong": "See incorrect answers"
+  },
+  "chapters": {
+    "match": "How closely their profile and answers fit this role.",
+    "communication": "How clearly and confidently they explained their thinking.",
+    "types": "Scores for each kind of question they answered.",
+    "insights": "What stood out, and where to dig deeper.",
+    "recording": "Watch the interview to hear it in their own words.",
+    "profile": "Experience, education and links from their profile.",
+    "answers": "Every question, their answer and how it was assessed."
+  },
+  "footer": {
+    "sharedBy": "{{company}} shared this scorecard with you",
+    "shared": "This scorecard was shared with you",
+    "body": "Every candidate gets the same structured AI interview, so scores are comparable.",
+    "about": "What is {{app}}?"
+  },
   "match": {
     "heading": "Fit for the job",
     "headingFor": "Fit for {{job}}",
@@ -99,7 +125,12 @@
       "audio": "Spoken",
       "other": "Question"
     },
-    "yours": "Your answer"
+    "yours": "Your answer",
+    "filter": {
+      "label": "Filter answers",
+      "all": "All",
+      "wrong": "Incorrect"
+    }
   },
   "toc": {
     "label": "On this page",
@@ -129,5 +160,22 @@
       "body": "Something went wrong on our side. Try again in a moment."
     },
     "retry": "Try again"
+  },
+  "breakdown": {
+    "title": "What went into this score",
+    "share": "Questions: {{count}} of {{total}}",
+    "note": "How much each part counts depends on the role, so these scores won’t add up to the overall score on their own."
+  },
+  "compare": {
+    "title": "Compare candidates",
+    "lead": "Interview scores side by side. The highest score in each row is highlighted.",
+    "criteria": "Criteria",
+    "summary": "Summary",
+    "overall": "Overall score",
+    "open": "Full scorecard",
+    "highest": "Highest",
+    "tooFewTitle": "Pick at least two candidates",
+    "tooFewBody": "Select two or three unlocked candidates to compare their scorecards side by side.",
+    "back": "Back to unlocked candidates"
   }
 }

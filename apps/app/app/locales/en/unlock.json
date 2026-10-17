@@ -60,6 +60,8 @@
     "scorecard": "Scorecard",
     "emptyTitle": "No one unlocked yet",
     "emptyBody": "Unlock a candidate from the pool or an applicant list to see their details here.",
-    "toPool": "Open the candidate pool"
+    "toPool": "Open the candidate pool",
+    "compare": "Compare",
+    "compareLimit": "Pick 2 to {{max}} to compare"
   }
 }

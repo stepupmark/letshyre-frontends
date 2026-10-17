@@ -25,6 +25,32 @@
     "howScoredBody": "L'intervistatore IA valuta ogni risposta in base al ruolo, poi ne controlla chiarezza, pertinenza e profondità. Usa il punteggio come punto di partenza per la tua decisione, non come sostituto.",
     "howScoredYours": "L'intervistatore IA valuta ogni risposta in base al ruolo, poi ne controlla chiarezza, pertinenza e profondità. I datori di lavoro vedono gli stessi punteggi, quindi le aree da migliorare sono un buon punto di partenza."
   },
+  "ring": {
+    "label": "Punteggio complessivo {{score}} su 100, {{band}}"
+  },
+  "takeaways": {
+    "heading": "In sintesi",
+    "strength": "Punto di forza principale",
+    "probe": "Da approfondire",
+    "improve": "Su cui lavorare",
+    "match": "Corrispondenza con il ruolo",
+    "seeWrong": "Vedi le risposte errate"
+  },
+  "chapters": {
+    "match": "Quanto profilo e risposte corrispondono a questo ruolo.",
+    "communication": "Con quanta chiarezza e sicurezza ha spiegato il proprio ragionamento.",
+    "types": "I punteggi per ogni tipo di domanda.",
+    "insights": "Cosa è emerso e dove conviene approfondire.",
+    "recording": "Guarda il colloquio per sentirlo con parole sue.",
+    "profile": "Esperienza, formazione e link dal profilo.",
+    "answers": "Ogni domanda, la risposta e come è stata valutata."
+  },
+  "footer": {
+    "sharedBy": "{{company}} ha condiviso con te questa scheda di valutazione",
+    "shared": "Questa scheda di valutazione è stata condivisa con te",
+    "body": "Ogni candidato affronta lo stesso colloquio strutturato con l’IA, quindi i punteggi sono confrontabili.",
+    "about": "Che cos’è {{app}}?"
+  },
   "match": {
     "heading": "Adeguatezza all'offerta",
     "headingFor": "Adeguatezza a {{job}}",
@@ -102,7 +128,12 @@
       "audio": "Orale",
       "other": "Domanda"
     },
-    "yours": "La tua risposta"
+    "yours": "La tua risposta",
+    "filter": {
+      "label": "Filtra le risposte",
+      "all": "Tutte",
+      "wrong": "Errate"
+    }
   },
   "toc": {
     "label": "In questa pagina",
@@ -132,5 +163,22 @@
       "body": "Qualcosa è andato storto da parte nostra. Riprova tra poco."
     },
     "retry": "Riprova"
+  },
+  "breakdown": {
+    "title": "Da cosa è composto questo punteggio",
+    "share": "Domande: {{count}} su {{total}}",
+    "note": "Il peso di ogni parte dipende dal ruolo, quindi questi punteggi non si sommano da soli nel punteggio complessivo."
+  },
+  "compare": {
+    "title": "Confronta candidati",
+    "lead": "I punteggi del colloquio affiancati. Il più alto di ogni riga è evidenziato.",
+    "criteria": "Criterio",
+    "summary": "Riepilogo",
+    "overall": "Punteggio complessivo",
+    "open": "Scheda completa",
+    "highest": "Il più alto",
+    "tooFewTitle": "Scegli almeno due candidati",
+    "tooFewBody": "Seleziona due o tre candidati sbloccati per confrontare le loro schede affiancate.",
+    "back": "Torna ai candidati sbloccati"
   }
 }

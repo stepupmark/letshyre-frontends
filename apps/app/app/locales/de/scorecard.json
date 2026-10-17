@@ -23,6 +23,32 @@
     "howScoredBody": "Der KI-Interviewer bewertet jede Antwort im Hinblick auf die Rolle und prüft sie dann auf Klarheit, Relevanz und Tiefe. Nutzen Sie die Bewertung als Ausgangspunkt für Ihre Entscheidung, nicht als Ersatz dafür.",
     "howScoredYours": "Der KI-Interviewer bewertet jede Antwort im Hinblick auf die Rolle und prüft sie dann auf Klarheit, Relevanz und Tiefe. Arbeitgeber sehen dieselben Bewertungen, die Verbesserungsbereiche sind also ein guter Startpunkt."
   },
+  "ring": {
+    "label": "Gesamtergebnis {{score}} von 100, {{band}}"
+  },
+  "takeaways": {
+    "heading": "Auf einen Blick",
+    "strength": "Größte Stärke",
+    "probe": "Nachfragen lohnt sich",
+    "improve": "Daran arbeiten",
+    "match": "Passung zur Stelle",
+    "seeWrong": "Falsche Antworten ansehen"
+  },
+  "chapters": {
+    "match": "Wie gut Profil und Antworten zu dieser Rolle passen.",
+    "communication": "Wie klar und sicher die eigenen Gedanken erklärt wurden.",
+    "types": "Ergebnisse für jede Art von beantworteter Frage.",
+    "insights": "Was aufgefallen ist und wo sich genaueres Nachfragen lohnt.",
+    "recording": "Sehen Sie sich das Interview an und hören Sie es in eigenen Worten.",
+    "profile": "Erfahrung, Ausbildung und Links aus dem Profil.",
+    "answers": "Jede Frage, die Antwort und wie sie bewertet wurde."
+  },
+  "footer": {
+    "sharedBy": "{{company}} hat diese Bewertung mit Ihnen geteilt",
+    "shared": "Diese Bewertung wurde mit Ihnen geteilt",
+    "body": "Alle Kandidaten durchlaufen dasselbe strukturierte KI-Interview, daher sind die Ergebnisse vergleichbar.",
+    "about": "Was ist {{app}}?"
+  },
   "match": {
     "heading": "Passung zur Stelle",
     "headingFor": "Passung zu {{job}}",
@@ -99,7 +125,12 @@
       "audio": "Mündlich",
       "other": "Frage"
     },
-    "yours": "Ihre Antwort"
+    "yours": "Ihre Antwort",
+    "filter": {
+      "label": "Antworten filtern",
+      "all": "Alle",
+      "wrong": "Falsch"
+    }
   },
   "toc": {
     "label": "Auf dieser Seite",
@@ -129,5 +160,22 @@
       "body": "Bei uns ist etwas schiefgelaufen. Versuchen Sie es gleich noch einmal."
     },
     "retry": "Erneut versuchen"
+  },
+  "breakdown": {
+    "title": "Woraus sich dieses Ergebnis zusammensetzt",
+    "share": "Fragen: {{count}} von {{total}}",
+    "note": "Wie stark jeder Teil zählt, hängt von der Rolle ab. Diese Ergebnisse ergeben zusammen also nicht direkt das Gesamtergebnis."
+  },
+  "compare": {
+    "title": "Kandidaten vergleichen",
+    "lead": "Interviewergebnisse nebeneinander. Das höchste Ergebnis jeder Zeile ist hervorgehoben.",
+    "criteria": "Kriterium",
+    "summary": "Überblick",
+    "overall": "Gesamtergebnis",
+    "open": "Vollständige Bewertung",
+    "highest": "Höchster Wert",
+    "tooFewTitle": "Wählen Sie mindestens zwei Kandidaten",
+    "tooFewBody": "Wählen Sie zwei oder drei freigeschaltete Kandidaten, um ihre Bewertungen nebeneinander zu vergleichen.",
+    "back": "Zurück zu freigeschalteten Kandidaten"
   }
 }

@@ -21,6 +21,32 @@
     "howScoredBody": "Pewawancara AI menilai setiap jawaban terhadap posisi, lalu memeriksa kejelasan, relevansi, dan kedalamannya. Gunakan skor sebagai titik awal keputusan Anda, bukan pengganti keputusan.",
     "howScoredYours": "Pewawancara AI menilai setiap jawaban terhadap posisi, lalu memeriksa kejelasan, relevansi, dan kedalamannya. Pemberi kerja melihat skor yang sama, jadi area yang perlu ditingkatkan adalah titik awal yang baik."
   },
+  "ring": {
+    "label": "Skor keseluruhan {{score}} dari 100, {{band}}"
+  },
+  "takeaways": {
+    "heading": "Sekilas",
+    "strength": "Kekuatan utama",
+    "probe": "Perlu digali",
+    "improve": "Perlu ditingkatkan",
+    "match": "Kecocokan pekerjaan",
+    "seeWrong": "Lihat jawaban yang salah"
+  },
+  "chapters": {
+    "match": "Seberapa cocok profil dan jawaban dengan peran ini.",
+    "communication": "Seberapa jelas dan yakin pemikirannya dijelaskan.",
+    "types": "Skor untuk setiap jenis pertanyaan yang dijawab.",
+    "insights": "Apa yang menonjol, dan di mana perlu digali lebih dalam.",
+    "recording": "Tonton wawancaranya untuk mendengarnya dengan kata-kata mereka sendiri.",
+    "profile": "Pengalaman, pendidikan, dan tautan dari profil.",
+    "answers": "Setiap pertanyaan, jawabannya, dan cara penilaiannya."
+  },
+  "footer": {
+    "sharedBy": "{{company}} membagikan kartu skor ini kepada Anda",
+    "shared": "Kartu skor ini dibagikan kepada Anda",
+    "body": "Setiap kandidat menjalani wawancara AI terstruktur yang sama, sehingga skornya bisa dibandingkan.",
+    "about": "Apa itu {{app}}?"
+  },
   "match": {
     "heading": "Kesesuaian dengan lowongan",
     "headingFor": "Kesesuaian dengan {{job}}",
@@ -96,7 +122,12 @@
       "audio": "Lisan",
       "other": "Pertanyaan"
     },
-    "yours": "Jawaban Anda"
+    "yours": "Jawaban Anda",
+    "filter": {
+      "label": "Filter jawaban",
+      "all": "Semua",
+      "wrong": "Salah"
+    }
   },
   "toc": {
     "label": "Di halaman ini",
@@ -126,5 +157,22 @@
       "body": "Ada masalah di pihak kami. Coba lagi sebentar lagi."
     },
     "retry": "Coba lagi"
+  },
+  "breakdown": {
+    "title": "Apa saja yang membentuk skor ini",
+    "share": "Pertanyaan: {{count}} dari {{total}}",
+    "note": "Bobot setiap bagian bergantung pada peran, jadi skor-skor ini tidak langsung berjumlah sama dengan skor keseluruhan."
+  },
+  "compare": {
+    "title": "Bandingkan kandidat",
+    "lead": "Skor wawancara berdampingan. Skor tertinggi di setiap baris disorot.",
+    "criteria": "Kriteria",
+    "summary": "Ringkasan",
+    "overall": "Skor keseluruhan",
+    "open": "Kartu skor lengkap",
+    "highest": "Tertinggi",
+    "tooFewTitle": "Pilih minimal dua kandidat",
+    "tooFewBody": "Pilih dua atau tiga kandidat yang sudah dibuka untuk membandingkan kartu skor mereka berdampingan.",
+    "back": "Kembali ke kandidat yang dibuka"
   }
 }

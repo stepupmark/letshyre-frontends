@@ -60,6 +60,8 @@
     "scorecard": "Scorekaart",
     "emptyTitle": "Nog niemand ontgrendeld",
     "emptyBody": "Ontgrendel een kandidaat uit de pool of een sollicitantenlijst om de gegevens hier te zien.",
-    "toPool": "Kandidatenpool openen"
+    "toPool": "Kandidatenpool openen",
+    "compare": "Vergelijken",
+    "compareLimit": "Kies 2 tot {{max}} om te vergelijken"
   }
 }

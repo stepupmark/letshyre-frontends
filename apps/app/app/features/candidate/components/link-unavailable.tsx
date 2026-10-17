@@ -8,22 +8,10 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@workspace/ui/components/empty"
-import {
-  EyeOff,
-  Link2Off,
-  RotateCw,
-  TimerOff,
-  TriangleAlert,
-} from "lucide-react"
+import { RotateCw } from "lucide-react"
 
 import type { ShareProblem } from "../types"
-
-const ICON = {
-  invalid: Link2Off,
-  expired: TimerOff,
-  limit: EyeOff,
-  unavailable: TriangleAlert,
-}
+import { LinkScene } from "./art/link-scenes"
 
 export function LinkUnavailable({
   problem,
@@ -35,16 +23,15 @@ export function LinkUnavailable({
   retrying?: boolean
 }) {
   const { t } = useTranslation("scorecard")
-  const Icon = ICON[problem]
 
   return (
     <Empty className="mx-auto max-w-md">
       <EmptyHeader>
-        <EmptyMedia variant="icon">
-          <Icon />
+        <EmptyMedia>
+          <LinkScene problem={problem} />
         </EmptyMedia>
         <EmptyTitle>
-          <h1 tabIndex={-1} className="outline-none">
+          <h1 tabIndex={-1} className="text-xl text-brand-text outline-none">
             {t(`unavailable.${problem}.title`)}
           </h1>
         </EmptyTitle>

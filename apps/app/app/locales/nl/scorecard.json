@@ -23,6 +23,32 @@
     "howScoredBody": "De AI-interviewer scoort elk antwoord tegen de functie en controleert het daarna op helderheid, relevantie en diepgang. Gebruik de score als startpunt voor uw beslissing, niet als vervanging ervan.",
     "howScoredYours": "De AI-interviewer scoort elk antwoord tegen de functie en controleert het daarna op helderheid, relevantie en diepgang. Werkgevers zien dezelfde scores, dus de verbeterpunten zijn een goed startpunt."
   },
+  "ring": {
+    "label": "Totaalscore {{score}} van 100, {{band}}"
+  },
+  "takeaways": {
+    "heading": "In één oogopslag",
+    "strength": "Grootste kracht",
+    "probe": "Doorvragen waard",
+    "improve": "Om aan te werken",
+    "match": "Match met de functie",
+    "seeWrong": "Foute antwoorden bekijken"
+  },
+  "chapters": {
+    "match": "Hoe goed profiel en antwoorden bij deze functie passen.",
+    "communication": "Hoe duidelijk en zelfverzekerd de gedachtegang werd uitgelegd.",
+    "types": "Scores per soort beantwoorde vraag.",
+    "insights": "Wat opviel, en waar je verder op kunt ingaan.",
+    "recording": "Bekijk het interview en hoor het in hun eigen woorden.",
+    "profile": "Ervaring, opleiding en links uit het profiel.",
+    "answers": "Elke vraag, het antwoord en hoe het is beoordeeld."
+  },
+  "footer": {
+    "sharedBy": "{{company}} heeft deze scorekaart met je gedeeld",
+    "shared": "Deze scorekaart is met je gedeeld",
+    "body": "Elke kandidaat doet hetzelfde gestructureerde AI-interview, dus de scores zijn vergelijkbaar.",
+    "about": "Wat is {{app}}?"
+  },
   "match": {
     "heading": "Match met de vacature",
     "headingFor": "Match met {{job}}",
@@ -99,7 +125,12 @@
       "audio": "Mondeling",
       "other": "Vraag"
     },
-    "yours": "Uw antwoord"
+    "yours": "Uw antwoord",
+    "filter": {
+      "label": "Antwoorden filteren",
+      "all": "Alle",
+      "wrong": "Fout"
+    }
   },
   "toc": {
     "label": "Op deze pagina",
@@ -129,5 +160,22 @@
       "body": "Er ging iets mis bij ons. Probeer het zo opnieuw."
     },
     "retry": "Opnieuw proberen"
+  },
+  "breakdown": {
+    "title": "Waar deze score uit bestaat",
+    "share": "Vragen: {{count}} van {{total}}",
+    "note": "Hoe zwaar elk onderdeel telt, hangt af van de functie. Samen tellen deze scores dus niet direct op tot de totaalscore."
+  },
+  "compare": {
+    "title": "Kandidaten vergelijken",
+    "lead": "Interviewscores naast elkaar. De hoogste score in elke rij is gemarkeerd.",
+    "criteria": "Criterium",
+    "summary": "Overzicht",
+    "overall": "Totaalscore",
+    "open": "Volledige scorekaart",
+    "highest": "Hoogste",
+    "tooFewTitle": "Kies minstens twee kandidaten",
+    "tooFewBody": "Selecteer twee of drie ontgrendelde kandidaten om hun scorekaarten naast elkaar te vergelijken.",
+    "back": "Terug naar ontgrendelde kandidaten"
   }
 }

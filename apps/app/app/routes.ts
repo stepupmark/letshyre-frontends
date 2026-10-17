@@ -86,6 +86,7 @@ export default [
       route("jobs/:jobId/applicants", "routes/employer/applicants.tsx"),
       route("candidates", "routes/employer/candidate-pool.tsx"),
       route("candidates/unlocked", "routes/employer/unlocked.tsx"),
+      route("candidates/compare", "routes/employer/compare.tsx"),
       route("candidates/:candidateId", "routes/employer/candidate-profile.tsx"),
       route(
         "candidates/:candidateId/scorecard",

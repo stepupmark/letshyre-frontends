@@ -65,6 +65,8 @@
     "scorecard": "Avaliação",
     "emptyTitle": "Ninguém desbloqueado ainda",
     "emptyBody": "Desbloqueie um candidato no banco ou numa lista de candidaturas para ver os dados dele aqui.",
-    "toPool": "Abrir o banco de candidatos"
+    "toPool": "Abrir o banco de candidatos",
+    "compare": "Comparar",
+    "compareLimit": "Escolha de 2 a {{max}} para comparar"
   }
 }

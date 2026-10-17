@@ -65,6 +65,8 @@
     "scorecard": "Ficha",
     "emptyTitle": "Aún no ha desbloqueado a nadie",
     "emptyBody": "Desbloquee a un candidato desde la reserva o una lista de candidatos para ver sus datos aquí.",
-    "toPool": "Abrir la reserva de candidatos"
+    "toPool": "Abrir la reserva de candidatos",
+    "compare": "Comparar",
+    "compareLimit": "Elige de 2 a {{max}} para comparar"
   }
 }

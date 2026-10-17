@@ -25,6 +25,32 @@
     "howScoredBody": "L'intervieweur IA note chaque réponse au regard du poste, puis vérifie sa clarté, sa pertinence et sa profondeur. Utilisez le score comme point de départ de votre décision, pas comme un substitut.",
     "howScoredYours": "L'intervieweur IA note chaque réponse au regard du poste, puis vérifie sa clarté, sa pertinence et sa profondeur. Les employeurs voient les mêmes scores ; les axes d'amélioration sont donc un bon point de départ."
   },
+  "ring": {
+    "label": "Score global {{score}} sur 100, {{band}}"
+  },
+  "takeaways": {
+    "heading": "En un coup d’œil",
+    "strength": "Point fort principal",
+    "probe": "À approfondir",
+    "improve": "À travailler",
+    "match": "Adéquation au poste",
+    "seeWrong": "Voir les réponses incorrectes"
+  },
+  "chapters": {
+    "match": "Dans quelle mesure le profil et les réponses correspondent à ce poste.",
+    "communication": "Avec quelle clarté et quelle assurance le raisonnement a été expliqué.",
+    "types": "Les scores pour chaque type de question traité.",
+    "insights": "Ce qui ressort, et ce qui mérite d’être creusé.",
+    "recording": "Regardez l’entretien pour l’entendre dans ses propres mots.",
+    "profile": "Expérience, formation et liens issus du profil.",
+    "answers": "Chaque question, la réponse donnée et son évaluation."
+  },
+  "footer": {
+    "sharedBy": "{{company}} a partagé cette fiche d’évaluation avec vous",
+    "shared": "Cette fiche d’évaluation a été partagée avec vous",
+    "body": "Chaque candidat passe le même entretien structuré par IA, les scores sont donc comparables.",
+    "about": "Qu’est-ce que {{app}} ?"
+  },
   "match": {
     "heading": "Adéquation au poste",
     "headingFor": "Adéquation à {{job}}",
@@ -102,7 +128,12 @@
       "audio": "Oral",
       "other": "Question"
     },
-    "yours": "Votre réponse"
+    "yours": "Votre réponse",
+    "filter": {
+      "label": "Filtrer les réponses",
+      "all": "Toutes",
+      "wrong": "Incorrectes"
+    }
   },
   "toc": {
     "label": "Sur cette page",
@@ -132,5 +163,22 @@
       "body": "Un problème est survenu de notre côté. Réessayez dans un instant."
     },
     "retry": "Réessayer"
+  },
+  "breakdown": {
+    "title": "Ce qui compose ce score",
+    "share": "Questions : {{count}} sur {{total}}",
+    "note": "Le poids de chaque partie dépend du poste : ces scores ne s’additionnent donc pas directement pour donner le score global."
+  },
+  "compare": {
+    "title": "Comparer des candidats",
+    "lead": "Les scores d’entretien côte à côte. Le score le plus élevé de chaque ligne est mis en avant.",
+    "criteria": "Critère",
+    "summary": "Synthèse",
+    "overall": "Score global",
+    "open": "Fiche complète",
+    "highest": "Le plus élevé",
+    "tooFewTitle": "Choisissez au moins deux candidats",
+    "tooFewBody": "Sélectionnez deux ou trois candidats débloqués pour comparer leurs fiches côte à côte.",
+    "back": "Retour aux candidats débloqués"
   }
 }

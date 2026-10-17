@@ -55,6 +55,8 @@
     "scorecard": "Kartu skor",
     "emptyTitle": "Belum ada yang dibuka",
     "emptyBody": "Buka kandidat dari kumpulan atau daftar pelamar untuk melihat detailnya di sini.",
-    "toPool": "Buka kumpulan kandidat"
+    "toPool": "Buka kumpulan kandidat",
+    "compare": "Bandingkan",
+    "compareLimit": "Pilih 2 sampai {{max}} untuk dibandingkan"
   }
 }

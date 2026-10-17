@@ -25,6 +25,32 @@
     "howScoredBody": "O entrevistador de IA pontua cada resposta em relação à vaga e depois confere clareza, relevância e profundidade. Use a nota como ponto de partida para sua decisão, não como substituta.",
     "howScoredYours": "O entrevistador de IA pontua cada resposta em relação à vaga e depois confere clareza, relevância e profundidade. Os empregadores veem as mesmas notas, então os pontos a melhorar são um bom começo."
   },
+  "ring": {
+    "label": "Pontuação geral {{score}} de 100, {{band}}"
+  },
+  "takeaways": {
+    "heading": "Em resumo",
+    "strength": "Maior ponto forte",
+    "probe": "Vale aprofundar",
+    "improve": "Para melhorar",
+    "match": "Compatibilidade com a vaga",
+    "seeWrong": "Ver respostas incorretas"
+  },
+  "chapters": {
+    "match": "O quanto o perfil e as respostas se encaixam nesta vaga.",
+    "communication": "Com que clareza e confiança o raciocínio foi explicado.",
+    "types": "Pontuações para cada tipo de pergunta respondida.",
+    "insights": "O que se destacou e onde vale aprofundar.",
+    "recording": "Assista à entrevista para ouvir nas palavras da própria pessoa.",
+    "profile": "Experiência, formação e links do perfil.",
+    "answers": "Cada pergunta, a resposta e como foi avaliada."
+  },
+  "footer": {
+    "sharedBy": "{{company}} compartilhou esta avaliação com você",
+    "shared": "Esta avaliação foi compartilhada com você",
+    "body": "Todos os candidatos fazem a mesma entrevista estruturada com IA, então as pontuações são comparáveis.",
+    "about": "O que é a {{app}}?"
+  },
   "match": {
     "heading": "Aderência à vaga",
     "headingFor": "Aderência a {{job}}",
@@ -102,7 +128,12 @@
       "audio": "Falada",
       "other": "Pergunta"
     },
-    "yours": "Sua resposta"
+    "yours": "Sua resposta",
+    "filter": {
+      "label": "Filtrar respostas",
+      "all": "Todas",
+      "wrong": "Incorretas"
+    }
   },
   "toc": {
     "label": "Nesta página",
@@ -132,5 +163,22 @@
       "body": "Algo deu errado do nosso lado. Tente de novo em instantes."
     },
     "retry": "Tentar de novo"
+  },
+  "breakdown": {
+    "title": "O que compõe esta pontuação",
+    "share": "Perguntas: {{count}} de {{total}}",
+    "note": "O peso de cada parte depende da vaga, então essas pontuações não somam diretamente a pontuação geral."
+  },
+  "compare": {
+    "title": "Comparar candidatos",
+    "lead": "Pontuações da entrevista lado a lado. A maior de cada linha fica em destaque.",
+    "criteria": "Critério",
+    "summary": "Resumo",
+    "overall": "Pontuação geral",
+    "open": "Avaliação completa",
+    "highest": "Maior",
+    "tooFewTitle": "Escolha pelo menos dois candidatos",
+    "tooFewBody": "Selecione dois ou três candidatos desbloqueados para comparar as avaliações lado a lado.",
+    "back": "Voltar para candidatos desbloqueados"
   }
 }

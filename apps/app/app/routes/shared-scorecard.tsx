@@ -8,6 +8,7 @@ import {
   LinkUnavailable,
   ReportSkeleton,
   ScorecardView,
+  SharedByFooter,
   sharedScorecardQuery,
   shareProblem,
 } from "@/features/candidate"
@@ -33,10 +34,10 @@ export default function SharedScorecard({ params }: Route.ComponentProps) {
       {!valid ? (
         <LinkUnavailable problem="invalid" />
       ) : report ? (
-        <div className="flex flex-col gap-8">
-          <p className="flex items-start gap-2 rounded-lg border px-4 py-3 text-sm text-muted-foreground print:border-0 print:p-0">
+        <div className="flex flex-col gap-6">
+          <p className="flex items-start gap-2 text-sm text-pretty text-muted-foreground">
             <ShieldCheck
-              className="mt-0.5 size-4 shrink-0"
+              className="mt-0.5 size-4 shrink-0 text-brand-text"
               aria-hidden="true"
             />
             {report.shared_by_company_name
@@ -46,6 +47,7 @@ export default function SharedScorecard({ params }: Route.ComponentProps) {
               : t("provenance.private")}
           </p>
           <ScorecardView report={report} />
+          <SharedByFooter company={report.shared_by_company_name} />
         </div>
       ) : query.isError ? (
         <LinkUnavailable

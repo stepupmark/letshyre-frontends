@@ -1,11 +1,12 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { Link2 } from "lucide-react"
+import { Button } from "@workspace/ui/components/button"
+import { Columns3, Link2 } from "lucide-react"
 import { useCallback } from "react"
 import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { PageHeader } from "@/components/page-header"
-import { ShareDialog } from "@/features/candidate"
+import { MAX_COMPARE, ShareDialog } from "@/features/candidate"
 import { UnlockedList, type Unlocked } from "@/features/candidate-unlock"
 import { useJobOptions } from "@/features/employer-jobs"
 import { namespaces } from "@/lib/i18n"
@@ -45,7 +46,24 @@ export default function UnlockedPage() {
           </AppLink>
         }
       />
-      <UnlockedList share={share} />
+      <UnlockedList
+        share={share}
+        bulkActions={(ids) =>
+          ids.length >= 2 && ids.length <= MAX_COMPARE ? (
+            <AppLink
+              to={`${href("/employer/candidates/compare")}?ids=${ids.map(encodeURIComponent).join(",")}`}
+              className={buttonLink({ size: "sm" })}
+            >
+              <Columns3 />
+              {t("list.compare")}
+            </AppLink>
+          ) : (
+            <Button size="sm" disabled>
+              {t("list.compareLimit", { max: MAX_COMPARE })}
+            </Button>
+          )
+        }
+      />
     </div>
   )
 }

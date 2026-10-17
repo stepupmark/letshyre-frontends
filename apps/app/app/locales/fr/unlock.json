@@ -65,6 +65,8 @@
     "scorecard": "Grille",
     "emptyTitle": "Personne n'est encore débloqué",
     "emptyBody": "Débloquez un candidat depuis le vivier ou une liste de candidatures pour voir ses informations ici.",
-    "toPool": "Ouvrir le vivier de candidats"
+    "toPool": "Ouvrir le vivier de candidats",
+    "compare": "Comparer",
+    "compareLimit": "Choisissez de 2 à {{max}} pour comparer"
   }
 }
