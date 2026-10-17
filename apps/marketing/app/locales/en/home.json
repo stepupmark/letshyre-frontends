@@ -99,7 +99,11 @@
     ],
     "employerNote": "you only pay here",
     "employerGuide": "Read the full employer guide",
-    "professionalNote": "free, start to finish"
+    "professionalNote": "free, start to finish",
+    "bridge": {
+      "employers": "See how professionals earn this scorecard",
+      "professionals": "See what employers see"
+    }
   },
   "evidence": {
     "eyebrow": "Inside a candidate file",
