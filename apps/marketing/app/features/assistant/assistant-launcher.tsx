@@ -34,7 +34,7 @@ export function AssistantLauncher() {
 
   return (
     <Sheet open={open} onOpenChange={changeOpen}>
-      <div className="fixed inset-e-4 bottom-4 z-40 flex items-end gap-2 sm:inset-e-6 sm:bottom-6 print:hidden">
+      <div className="fixed inset-e-4 bottom-4 z-40 flex flex-col items-end gap-2 sm:inset-e-6 sm:bottom-6 sm:flex-row print:hidden">
         {launcher.greeting && !open && (
           <LauncherGreeting
             onOpen={() => {

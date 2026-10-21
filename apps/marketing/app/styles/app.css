@@ -276,6 +276,20 @@
   &:is(:hover, :focus-visible, [data-popup-open]) * {
     animation-play-state: paused;
   }
+  @media (prefers-reduced-motion: no-preference) {
+    &[data-popup-open] {
+      animation: launcher-squash 320ms ease-out;
+    }
+  }
+}
+
+@keyframes launcher-squash {
+  35% {
+    scale: 1.12 0.88;
+  }
+  70% {
+    scale: 0.96 1.04;
+  }
 }
 
 @utility launcher-blink {

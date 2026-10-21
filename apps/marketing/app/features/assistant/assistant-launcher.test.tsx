@@ -85,6 +85,16 @@ describe("launcher greeting", () => {
     expect(greeting()).not.toBeInTheDocument()
   })
 
+  it("closes on Escape", async () => {
+    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime })
+    renderPage(<AssistantLauncher />)
+    await wait(4000)
+    expect(greeting()).toBeInTheDocument()
+
+    await user.keyboard("{Escape}")
+    expect(greeting()).not.toBeInTheDocument()
+  })
+
   it("stays through a small scroll and goes once the reader moves on", async () => {
     renderPage(<AssistantLauncher />)
     await wait(4000)

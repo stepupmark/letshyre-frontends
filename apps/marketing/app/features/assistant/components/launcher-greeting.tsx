@@ -15,7 +15,7 @@ export function LauncherGreeting({
   return (
     <div
       role="status"
-      className="pop mb-3 flex items-center gap-1 rounded-2xl rounded-ee-sm border bg-card py-1 ps-3.5 pe-1 text-sm font-medium"
+      className="pop flex max-w-64 items-center gap-1 rounded-2xl rounded-ee-sm border bg-card py-1 ps-3.5 pe-1 text-sm font-medium sm:mb-3 sm:max-w-none"
     >
       <button
         type="button"

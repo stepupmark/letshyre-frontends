@@ -14,3 +14,18 @@ class NoIntersections {
   takeRecords = () => []
 }
 vi.stubGlobal("IntersectionObserver", NoIntersections)
+
+// jsdom has no media queries; nothing matches, as on a touch screen with no preferences set
+vi.stubGlobal(
+  "matchMedia",
+  vi.fn((query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  }))
+)

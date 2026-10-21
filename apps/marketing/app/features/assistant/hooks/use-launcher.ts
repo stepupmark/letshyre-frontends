@@ -67,6 +67,17 @@ export function useLauncher() {
     }
   }, [])
 
+  useEffect(() => {
+    if (!greeting) return
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setGreeting(false)
+    }
+    document.addEventListener("keydown", onKey)
+    return () => {
+      document.removeEventListener("keydown", onKey)
+    }
+  }, [greeting])
+
   return {
     quiet: openedBefore || openedNow,
     greeting,
