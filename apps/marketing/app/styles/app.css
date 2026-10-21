@@ -401,6 +401,42 @@
   }
 }
 
+/* pricing art: the stage's view timeline spends one credit as it scrolls through; without it, the
+   art rests on the spent state */
+@utility unlock-stage {
+  view-timeline-name: --unlock;
+}
+
+@utility unlock-in {
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: lit linear both;
+      animation-timeline: --unlock;
+      animation-range: cover 35% cover 45%;
+    }
+  }
+}
+
+/* pair with opacity-0: shown until the credit is spent */
+@utility unlock-out {
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: unlit linear both;
+      animation-timeline: --unlock;
+      animation-range: cover 35% cover 45%;
+    }
+  }
+}
+
+@keyframes unlit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 /* a scan line that sweeps its frame twice; keep it at opacity-0 so it hides afterwards */
 @utility sweep {
   @media (prefers-reduced-motion: no-preference) {

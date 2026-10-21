@@ -15,7 +15,7 @@
     "reassurance": "Free for professionals. Employers pay only to unlock.",
     "file": {
       "caption": "Sample candidate file, for illustration",
-      "name": "Vyshnavi Rao",
+      "name": "Prathyusha",
       "role": "Frontend engineer · 7 years",
       "outOf": "/100",
       "jobMatch": "Job match",
@@ -201,31 +201,20 @@
     "description": "Start free. When a candidate looks right, unlock their full file. That's the only thing you pay for.",
     "ctaStart": "Start with 10 free credits",
     "cta": "See pricing",
-    "receipt": "Receipt",
-    "rows": [
-      {
-        "label": "On sign-up",
-        "value": "10 free credits"
-      },
-      {
-        "label": "Subscription",
-        "value": "None"
-      },
-      {
-        "label": "Credits",
-        "value": "Never expire"
-      },
-      {
-        "label": "Professionals",
-        "value": "Always free"
-      }
-    ],
-    "total": {
-      "label": "You pay for",
-      "value": "Unlocks only"
+    "art": {
+      "example": "Example",
+      "free": "10 free credits",
+      "left": "{{n}} left",
+      "role": "Product designer · 6 years",
+      "interview": "Frontend interview",
+      "unlocks": ["Contact", "Resume", "Recording"],
+      "cost": "−1 credit"
     },
-    "stamp": "free to start",
-    "note": "start here"
+    "facts": [
+      "No subscription",
+      "Credits never expire",
+      "Free for professionals"
+    ]
   },
   "faq": {
     "title": "Questions,",
