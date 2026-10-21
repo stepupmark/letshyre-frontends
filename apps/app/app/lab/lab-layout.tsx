@@ -357,7 +357,7 @@ function Crumbs() {
           { label: "Senior React Developer" },
         ]
       : pathname === "/_lab/scorecard"
-        ? [{ label: t("nav.unlocked") }, { label: "Vyshnavi Rao" }]
+        ? [{ label: t("nav.unlocked") }, { label: "Prathyusha" }]
         : pathname === "/_lab/dashboard"
           ? [{ label: t("nav.dashboard") }]
           : [{ label: "Design lab" }]
