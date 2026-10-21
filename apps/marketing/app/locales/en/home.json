@@ -16,19 +16,23 @@
     "file": {
       "caption": "Sample candidate file, for illustration",
       "name": "Vyshnavi Rao",
-      "role": "Senior frontend engineer · 7 years",
-      "notice": "Notice period: 30 days",
-      "score": "LetsHyre score",
+      "role": "Frontend engineer · 7 years",
       "outOf": "/100",
       "jobMatch": "Job match",
       "skillMatch": "Skill match",
       "interview": "AI interview",
-      "locked": "Unlock for contact details, documents and the recording",
-      "notes": {
-        "interviews": "3 interviews done",
-        "skills": "strong on React",
-        "verdict": "worth a call"
-      }
+      "skills": ["React", "TypeScript", "Testing"],
+      "verified": "Verified"
+    },
+    "scene": {
+      "description": "A pile of resume claims goes through an AI interview and comes out as a scored, verified candidate file.",
+      "hope": "Hope",
+      "evidence": "Evidence",
+      "claims": ["Expert in React", "10x engineer", "Great team player"],
+      "interview": "AI interview",
+      "duration": "24:10",
+      "question": "Frontend, question 5 of 8",
+      "verdict": "Worth a call"
     }
   },
   "tension": {

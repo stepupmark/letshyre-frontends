@@ -2,7 +2,7 @@ import { useTranslation } from "@workspace/i18n/react"
 
 import { Container } from "@/components/section"
 
-import { CandidateFile } from "./art/candidate-file"
+import { HeroScene } from "./art/hero-scene"
 import { AudienceCtas } from "./audience-ctas"
 
 export function Hero() {
@@ -10,8 +10,8 @@ export function Hero() {
 
   return (
     <section aria-labelledby="hero-title" className="overflow-x-clip">
-      <Container className="grid grid-cols-1 items-center gap-12 pt-10 pb-16 sm:pt-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16 lg:pt-20 lg:pb-24">
-        <div className="flex flex-col items-start">
+      <Container className="grid grid-cols-1 items-center gap-12 pt-10 pb-16 sm:pt-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16 lg:pt-6 lg:pb-24">
+        <div className="flex flex-col items-start lg:pb-20">
           <h1 id="hero-title" className="flex flex-col items-start gap-6">
             <span className="inline-flex items-center gap-2 rounded-full border bg-brand-muted px-3 py-1 text-sm font-medium text-brand-text">
               <span aria-hidden className="size-1.5 rounded-full bg-brand" />
@@ -51,7 +51,7 @@ export function Hero() {
           </p>
         </div>
 
-        <CandidateFile />
+        <HeroScene />
       </Container>
     </section>
   )

@@ -271,6 +271,24 @@
   }
 }
 
+/* a scan line that sweeps its frame twice; keep it at opacity-0 so it hides afterwards */
+@utility sweep {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: sweep 1.2s ease-in-out 2 alternate;
+  }
+}
+
+@keyframes sweep {
+  from {
+    opacity: 0.6;
+    translate: 0 -2.5rem;
+  }
+  to {
+    opacity: 0.6;
+    translate: 0 2.5rem;
+  }
+}
+
 @keyframes scan {
   from {
     translate: 0 -34px;
