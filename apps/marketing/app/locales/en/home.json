@@ -47,8 +47,16 @@
       "label": "If you're being hired",
       "body": "Your experience gets flattened into keywords, and you repeat the same screening call for every company."
     },
-    "claim": "5 years of React, strong problem solver",
-    "correction": "84/100 in a React interview"
+    "scene": {
+      "resumes": "247 resumes this week",
+      "alike": "All look alike",
+      "week": "This week",
+      "days": ["Mon", "Tue", "Wed", "Thu"],
+      "call": "Intro call",
+      "length": "30 min",
+      "question": "So, tell me about yourself.",
+      "asked": "Asked 4 times"
+    }
   },
   "how": {
     "eyebrow": "Two sides, one process",
