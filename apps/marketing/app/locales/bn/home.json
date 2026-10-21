@@ -1,6 +1,8 @@
 {
   "chatbot": {
     "title": "LetsHyre সহায়ক",
-    "launcherAria": "চ্যাট সহায়ক খুলুন"
+    "launcherAria": "চ্যাট সহায়ক খুলুন",
+    "greeting": "নিয়োগ নিয়ে প্রশ্ন আছে? আমাকে জিজ্ঞাসা করুন।",
+    "dismiss": "বন্ধ করুন"
   }
 }

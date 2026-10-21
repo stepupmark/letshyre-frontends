@@ -271,6 +271,122 @@
   }
 }
 
+/* chat launcher (ADR 0018): one 8s idle loop the face parts share, and a 2.5s ripple */
+@utility launcher {
+  &:is(:hover, :focus-visible, [data-popup-open]) * {
+    animation-play-state: paused;
+  }
+}
+
+@utility launcher-blink {
+  transform-box: fill-box;
+  transform-origin: center;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: launcher-blink 8s ease-in-out infinite;
+  }
+}
+
+@utility launcher-glance {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: launcher-glance 8s ease-in-out infinite;
+  }
+}
+
+@utility launcher-eyes {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: launcher-eyes 8s ease-in-out infinite;
+  }
+}
+
+@utility launcher-dots {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: launcher-dots 8s ease-in-out infinite;
+  }
+}
+
+@utility launcher-ripple {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: launcher-ripple 2.5s ease-out infinite;
+  }
+}
+
+@utility launcher-bob {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: launcher-bob 4s ease-in-out infinite;
+  }
+}
+
+@keyframes launcher-blink {
+  0%,
+  3%,
+  60%,
+  63%,
+  100% {
+    scale: 1 1;
+  }
+  1.5%,
+  61.5% {
+    scale: 1 0.1;
+  }
+}
+
+@keyframes launcher-glance {
+  0%,
+  20%,
+  34%,
+  100% {
+    translate: 0 0;
+  }
+  23%,
+  31% {
+    translate: -3px 0;
+  }
+}
+
+@keyframes launcher-eyes {
+  0%,
+  43%,
+  57%,
+  100% {
+    opacity: 1;
+  }
+  45%,
+  55% {
+    opacity: 0;
+  }
+}
+
+@keyframes launcher-dots {
+  0%,
+  43%,
+  57%,
+  100% {
+    opacity: 0;
+  }
+  45%,
+  55% {
+    opacity: 1;
+  }
+}
+
+@keyframes launcher-ripple {
+  0% {
+    opacity: 0.5;
+    scale: 1;
+  }
+  70%,
+  100% {
+    opacity: 0;
+    scale: 1.6;
+  }
+}
+
+@keyframes launcher-bob {
+  50% {
+    translate: 0 -2px;
+  }
+}
+
 /* a scan line that sweeps its frame twice; keep it at opacity-0 so it hides afterwards */
 @utility sweep {
   @media (prefers-reduced-motion: no-preference) {

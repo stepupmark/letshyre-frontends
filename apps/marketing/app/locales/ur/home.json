@@ -1,6 +1,8 @@
 {
   "chatbot": {
     "title": "LetsHyre اسسٹنٹ",
-    "launcherAria": "چیٹ اسسٹنٹ کھولیں"
+    "launcherAria": "چیٹ اسسٹنٹ کھولیں",
+    "greeting": "بھرتی کے بارے میں سوالات ہیں؟ مجھ سے پوچھیں۔",
+    "dismiss": "بند کریں"
   }
 }

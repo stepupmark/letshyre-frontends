@@ -1,6 +1,8 @@
 {
   "chatbot": {
     "title": "LetsHyre assistent",
-    "launcherAria": "Chatassistent openen"
+    "launcherAria": "Chatassistent openen",
+    "greeting": "Vragen over werving? Vraag het mij.",
+    "dismiss": "Sluiten"
   }
 }

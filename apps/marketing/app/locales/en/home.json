@@ -271,6 +271,8 @@
   },
   "chatbot": {
     "title": "LetsHyre Assistant",
-    "launcherAria": "Open chat assistant"
+    "launcherAria": "Open chat assistant",
+    "greeting": "Questions about hiring? Ask me.",
+    "dismiss": "Dismiss"
   }
 }

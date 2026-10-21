@@ -1,6 +1,8 @@
 {
   "chatbot": {
     "title": "Asisten LetsHyre",
-    "launcherAria": "Buka asisten obrolan"
+    "launcherAria": "Buka asisten obrolan",
+    "greeting": "Ada pertanyaan soal rekrutmen? Tanya saya.",
+    "dismiss": "Tutup"
   }
 }

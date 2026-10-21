@@ -22,3 +22,4 @@ record that supersedes the old one; old records stay as written.
 | [0015](./0015-admin-app.md)              | The admin panel joins the monorepo as `apps/admin`          | Accepted                                     |
 | [0016](./0016-feature-folders.md)        | Features are split into layer folders                       | Accepted                                     |
 | [0017](./0017-auth-screens.md)           | Auth screens: role pages, one typeface, drawn illustrations | Accepted                                     |
+| [0018](./0018-launcher-idle-loop.md)     | The marketing chat launcher may loop                        | Accepted                                     |

@@ -1,6 +1,8 @@
 {
   "chatbot": {
     "title": "LetsHyre 어시스턴트",
-    "launcherAria": "채팅 어시스턴트 열기"
+    "launcherAria": "채팅 어시스턴트 열기",
+    "greeting": "채용에 대해 궁금한 점이 있나요? 물어보세요.",
+    "dismiss": "닫기"
   }
 }

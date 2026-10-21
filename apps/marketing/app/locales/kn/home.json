@@ -1,6 +1,8 @@
 {
   "chatbot": {
     "title": "LetsHyre ಸಹಾಯಕ",
-    "launcherAria": "ಚಾಟ್ ಸಹಾಯಕ ತೆರೆಯಿರಿ"
+    "launcherAria": "ಚಾಟ್ ಸಹಾಯಕ ತೆರೆಯಿರಿ",
+    "greeting": "ನೇಮಕಾತಿ ಬಗ್ಗೆ ಪ್ರಶ್ನೆಗಳಿವೆಯೇ? ನನ್ನನ್ನು ಕೇಳಿ.",
+    "dismiss": "ಮುಚ್ಚಿ"
   }
 }
