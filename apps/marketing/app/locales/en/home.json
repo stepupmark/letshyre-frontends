@@ -113,8 +113,124 @@
     "employerGuide": "Read the full employer guide",
     "professionalNote": "free, start to finish",
     "bridge": {
-      "employers": "See how professionals earn this scorecard",
+      "employers": "This scorecard comes from the professional's interview",
       "professionals": "See what employers see"
+    },
+    "strip": {
+      "professionals": "Professionals",
+      "employers": "Employers",
+      "crossing": "Their scorecard is your evidence",
+      "hired": "Hired"
+    },
+    "nav": {
+      "step": "Step {{n}} of {{total}}",
+      "back": "Back",
+      "next": "Next",
+      "progress": "Progress"
+    },
+    "preview": {
+      "employers": {
+        "post": {
+          "title": "Senior frontend engineer",
+          "found": "4 requirements found",
+          "chips": ["React", "TypeScript", "5+ years", "Remote"]
+        },
+        "ranked": {
+          "summary": "24 applied · 3 from the pool",
+          "pool": "From pool",
+          "people": ["Vyshnavi Rao", "Arjun Mehta", "Meera Shah"]
+        },
+        "review": {
+          "score": "LetsHyre score",
+          "match": "Job match",
+          "interview": "AI interview",
+          "people": ["Vyshnavi Rao", "Arjun Mehta"]
+        },
+        "unlock": {
+          "locked": "Locked",
+          "name": "Vyshnavi Rao",
+          "includes": "Contact · Resume · Recording",
+          "cost": "1 credit"
+        },
+        "hire": {
+          "name": "Vyshnavi Rao",
+          "role": "Frontend engineer · 7 years",
+          "email": "vyshnavi@example.com",
+          "phone": "+91 98765 43210",
+          "reach": "Reach out"
+        }
+      },
+      "professionals": {
+        "profile": {
+          "fields": [
+            {
+              "label": "Role",
+              "value": "Frontend engineer"
+            },
+            {
+              "label": "Experience",
+              "value": "7 years"
+            },
+            {
+              "label": "Current CTC",
+              "value": "₹24 LPA"
+            },
+            {
+              "label": "Expected CTC",
+              "value": "₹32 LPA"
+            },
+            {
+              "label": "Notice period",
+              "value": "30 days"
+            }
+          ]
+        },
+        "resume": {
+          "file": "vyshnavi-rao-resume.pdf",
+          "analysed": "Analysed",
+          "suggested": "Suggested roles",
+          "roles": ["Frontend engineer", "React developer", "UI engineer"]
+        },
+        "interview": {
+          "title": "AI interview",
+          "role": "Frontend engineer",
+          "question": "Question 5 of 8",
+          "duration": "24:10"
+        },
+        "scorecard": {
+          "title": "Skill scorecard",
+          "overall": "Overall",
+          "skills": [
+            {
+              "label": "React",
+              "value": 88
+            },
+            {
+              "label": "TypeScript",
+              "value": 82
+            },
+            {
+              "label": "System design",
+              "value": 76
+            }
+          ]
+        },
+        "match": {
+          "apply": "Apply",
+          "jobs": [
+            {
+              "title": "Senior frontend engineer",
+              "company": "Finlytics",
+              "match": "92% match"
+            },
+            {
+              "title": "React developer",
+              "company": "Northwind",
+              "match": "88% match"
+            }
+          ]
+        }
+      }
     }
   },
   "evidence": {

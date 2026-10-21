@@ -14,43 +14,39 @@ import { PAGES } from "@/lib/pages"
 import { BandHeading } from "@/components/band-heading"
 import { TextLink } from "@/components/cta-links"
 import { Band } from "@/components/band"
-import { type Step, StepStory } from "./step-story"
 
-type Side = "employers" | "professionals"
+import { JourneyStrip } from "./art/journey-strip"
+import { type Side, type Step, StepExplorer } from "./step-explorer"
 
-/** Switches side and lands on the matching step, so both halves of the process read as one. */
-function useSideJump() {
+// where the two journeys meet: the employer's review (step 3) reads the professional's scorecard (step 4)
+const MEETING = { employers: 2, professionals: 3 }
+
+/** The chosen side and each side's step; following the bridge lands on the other side's matching step. */
+function useExplorer() {
   const [side, setSide] = useState<Side>("employers")
+  const [steps, setSteps] = useState({ employers: 0, professionals: 0 })
 
-  const jump = (to: Side, step: number) => {
-    setSide(to)
-    const from = document.querySelector(`[id^="how-${side}-"]`)
-    const target = document.getElementById(`how-${to}-${step}`)
-    if (!from || !target) return
-
-    // the old panel stays laid out for a frame or two; scrolling before it hides overshoots
-    const land = (frames: number) => {
-      if (from.checkVisibility() && frames > 0) {
-        requestAnimationFrame(() => {
-          land(frames - 1)
-        })
-        return
-      }
-      const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches
-      target.scrollIntoView({ behavior: reduce ? "auto" : "smooth" })
-      target.focus({ preventScroll: true })
-    }
-    land(10)
+  const setStep = (of: Side, step: number) => {
+    setSteps((current) => ({ ...current, [of]: step }))
   }
 
-  return { side, setSide, jump }
+  const cross = (from: Side) => {
+    const to = from === "employers" ? "professionals" : "employers"
+    setStep(to, MEETING[to])
+    setSide(to)
+    requestAnimationFrame(() => {
+      document.getElementById(`how-${to}-step-${MEETING[to] + 1}`)?.focus()
+    })
+  }
+
+  return { side, setSide, steps, setStep, cross }
 }
 
 export function HowItWorks() {
   const { t } = useTranslation("home")
   const lang = useLocale()
   const published = usePublished()
-  const { side, setSide, jump } = useSideJump()
+  const explorer = useExplorer()
   const candidateGuide = published("candidateGuide")
     ? PAGES.candidateGuide
     : PAGES.interview
@@ -60,13 +56,7 @@ export function HowItWorks() {
       label: t("how.employers"),
       steps: t("how.employerSteps", { returnObjects: true }) as Step[],
       note: { text: t("how.employerNote"), step: 3 },
-      bridge: {
-        step: 2,
-        label: t("how.bridge.employers"),
-        onFollow: () => {
-          jump("professionals", 4)
-        },
-      },
+      bridge: { step: MEETING.employers, label: t("how.bridge.employers") },
       guide: published("employerGuide") && {
         to: localePath(lang, PAGES.employerGuide.path),
         label: t("how.employerGuide"),
@@ -78,11 +68,8 @@ export function HowItWorks() {
       steps: t("how.professionalSteps", { returnObjects: true }) as Step[],
       note: { text: t("how.professionalNote"), step: 0 },
       bridge: {
-        step: 3,
+        step: MEETING.professionals,
         label: t("how.bridge.professionals"),
-        onFollow: () => {
-          jump("employers", 3)
-        },
       },
       guide: {
         to: localePath(lang, candidateGuide.path),
@@ -93,52 +80,65 @@ export function HowItWorks() {
 
   return (
     <Band id="how-it-works">
+      <BandHeading
+        id="how-it-works-title"
+        eyebrow={t("how.eyebrow")}
+        title={t("how.title")}
+        accent={t("how.accent")}
+        className="slide-in"
+      />
+
+      <div className="mt-8">
+        <JourneyStrip />
+      </div>
+
       <Tabs
-        value={side}
+        value={explorer.side}
         onValueChange={(value) => {
-          setSide(value as Side)
+          explorer.setSide(value as Side)
         }}
-        className="gap-0"
+        className="mt-8 gap-0"
       >
-        <BandHeading
-          id="how-it-works-title"
-          eyebrow={t("how.eyebrow")}
-          title={t("how.title")}
-          accent={t("how.accent")}
-          className="slide-in"
-        />
-        <div className="sticky top-16 z-10 -mx-4 mt-8 bg-background/95 px-4 py-3 backdrop-blur-sm sm:-mx-6 sm:px-6 lg:top-18 lg:-mx-8 lg:px-8">
-          <TabsList
-            aria-label={t("how.tabsLabel")}
-            className="h-12! rounded-full border bg-muted/60 p-1"
-          >
-            {tracks.map((track) => (
-              <TabsTrigger
-                key={track.value}
-                value={track.value}
-                className="rounded-full px-5 data-active:bg-primary data-active:text-primary-foreground data-active:shadow-none"
-              >
-                {track.label}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-        </div>
+        <TabsList
+          aria-label={t("how.tabsLabel")}
+          className="h-12! rounded-full border bg-muted/60 p-1"
+        >
+          {tracks.map((track) => (
+            <TabsTrigger
+              key={track.value}
+              value={track.value}
+              className="rounded-full px-5 data-active:bg-primary data-active:text-primary-foreground data-active:shadow-none"
+            >
+              {track.label}
+            </TabsTrigger>
+          ))}
+        </TabsList>
 
         {tracks.map((track) => (
           <TabsContent
             key={track.value}
             value={track.value}
             keepMounted
-            className="mt-8"
+            className="mt-6"
           >
-            <StepStory
+            <StepExplorer
               side={track.value}
+              label={track.label}
               steps={track.steps}
               note={track.note}
-              bridge={track.bridge}
+              bridge={{
+                ...track.bridge,
+                onFollow: () => {
+                  explorer.cross(track.value)
+                },
+              }}
+              active={explorer.steps[track.value]}
+              onActive={(step) => {
+                explorer.setStep(track.value, step)
+              }}
             />
             {track.guide && (
-              <TextLink to={track.guide.to} className="mt-10">
+              <TextLink to={track.guide.to} className="mt-8">
                 {track.guide.label}
               </TextLink>
             )}
