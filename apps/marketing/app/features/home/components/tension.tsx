@@ -1,8 +1,8 @@
 import { useTranslation } from "@workspace/i18n/react"
 
 import { ClaimVsEvidence } from "./art/claim-vs-evidence"
-import { HomeHeading } from "./home-heading"
-import { HomeSection } from "./home-section"
+import { BandHeading } from "@/components/band-heading"
+import { Band } from "@/components/band"
 import { type Side, SideBySide } from "./side-by-side"
 
 export function Tension() {
@@ -13,13 +13,13 @@ export function Tension() {
   ] as Side[]
 
   return (
-    <HomeSection
+    <Band
       id="tension"
       muted
       className="grid gap-12 md:grid-cols-2 md:items-center lg:gap-20"
     >
       <div className="slide-in">
-        <HomeHeading
+        <BandHeading
           id="tension-title"
           eyebrow={t("tension.eyebrow")}
           title={t("tension.title")}
@@ -29,6 +29,6 @@ export function Tension() {
       </div>
 
       <ClaimVsEvidence />
-    </HomeSection>
+    </Band>
   )
 }

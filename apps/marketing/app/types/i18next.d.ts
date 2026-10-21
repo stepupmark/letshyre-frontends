@@ -3,10 +3,12 @@ import "i18next"
 import type about from "../locales/en/about.json"
 import type assistant from "../locales/en/assistant.json"
 import type common from "../locales/en/common.json"
+import type candidates from "../locales/en/candidates.json"
 import type candidateGuide from "../locales/en/candidateGuide.json"
 import type contact from "../locales/en/contact.json"
 import type download from "../locales/en/download.json"
 import type employerGuide from "../locales/en/employerGuide.json"
+import type employers from "../locales/en/employers.json"
 import type home from "../locales/en/home.json"
 import type interview from "../locales/en/interview.json"
 import type legalPolicy from "../locales/en/legalPolicy.json"
@@ -22,10 +24,12 @@ declare module "i18next" {
       about: typeof about
       assistant: typeof assistant
       common: typeof common
+      candidates: typeof candidates
       candidateGuide: typeof candidateGuide
       contact: typeof contact
       download: typeof download
       employerGuide: typeof employerGuide
+      employers: typeof employers
       home: typeof home
       interview: typeof interview
       legalPolicy: typeof legalPolicy

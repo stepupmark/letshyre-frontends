@@ -4,9 +4,9 @@ import { ArrowDownIcon, ArrowRightIcon } from "lucide-react"
 
 import { APP_LINKS } from "@/lib/app-links"
 
-import { HomeHeading } from "./home-heading"
-import { CtaLink, TextLink } from "./home-links"
-import { HomeSection } from "./home-section"
+import { BandHeading } from "@/components/band-heading"
+import { CtaLink, TextLink } from "@/components/cta-links"
+import { Band } from "@/components/band"
 
 interface Row {
   label: string
@@ -19,13 +19,13 @@ export function PricingNote() {
   const rows = t("pricing.rows", { returnObjects: true }) as Row[]
 
   return (
-    <HomeSection
+    <Band
       id="pricing"
       muted
       className="grid gap-12 md:grid-cols-2 md:items-center lg:gap-20"
     >
       <div className="slide-in">
-        <HomeHeading
+        <BandHeading
           id="pricing-title"
           eyebrow={t("pricing.eyebrow")}
           title={t("pricing.title")}
@@ -86,6 +86,6 @@ export function PricingNote() {
           {t("pricing.stamp")}
         </p>
       </div>
-    </HomeSection>
+    </Band>
   )
 }

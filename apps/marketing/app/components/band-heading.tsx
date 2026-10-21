@@ -1,7 +1,7 @@
 import { cn } from "@workspace/ui/lib/utils"
 import type { ReactNode } from "react"
 
-export function HomeHeading({
+export function BandHeading({
   id,
   eyebrow,
   title,

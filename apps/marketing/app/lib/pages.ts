@@ -8,6 +8,16 @@ export interface PageDef {
 
 export const PAGES = {
   home: { path: "", namespaces: ["home"], og: "home" },
+  employers: {
+    path: "/employers",
+    namespaces: ["employers"],
+    og: "employer-guide",
+  },
+  candidates: {
+    path: "/candidates",
+    namespaces: ["candidates"],
+    og: "candidate-guide",
+  },
   pricing: { path: "/pricing", namespaces: ["pricing"], og: "pricing" },
   interview: {
     path: "/interview-guide",

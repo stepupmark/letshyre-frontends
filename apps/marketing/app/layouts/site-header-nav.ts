@@ -41,11 +41,28 @@ export function useProductItems() {
   )
 }
 
-export const NAV_ITEMS = [
+const NAV_ITEMS = [
+  {
+    id: "employers",
+    label: "nav.employers",
+    path: PAGES.employers.path,
+    page: "employers",
+  },
+  {
+    id: "candidates",
+    label: "nav.candidates",
+    path: PAGES.candidates.path,
+    page: "candidates",
+  },
   { id: "pricing", label: "nav.pricing", path: "/pricing" },
   { id: "about", label: "nav.about", path: "/about" },
   { id: "contact", label: "nav.contact", path: "/contact" },
 ] as const
+
+export function useNavItems() {
+  const published = usePublished()
+  return NAV_ITEMS.filter((item) => !("page" in item) || published(item.page))
+}
 
 export type NavItem =
   (typeof PRODUCT_ITEMS)[number] | (typeof NAV_ITEMS)[number]

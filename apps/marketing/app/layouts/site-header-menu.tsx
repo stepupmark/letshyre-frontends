@@ -27,9 +27,9 @@ import { MenuIcon, XIcon } from "lucide-react"
 import { FOOTER_COLUMNS } from "./site-footer-links"
 import { SiteLanguageSwitcher } from "./site-header-language"
 import {
-  NAV_ITEMS,
   type NavItem,
   useCurrent,
+  useNavItems,
   useProductItems,
 } from "./site-header-nav"
 
@@ -40,6 +40,7 @@ export function SiteHeaderMenu({ className }: { className?: string }) {
   const lang = useLocale()
   const current = useCurrent()
   const productItems = useProductItems()
+  const navItems = useNavItems()
   const [open, setOpen] = useState(false)
   const triggerRef = useRef<HTMLButtonElement>(null)
   const close = () => {
@@ -107,7 +108,7 @@ export function SiteHeaderMenu({ className }: { className?: string }) {
               {productItems.map(navLink)}
             </MenuGroup>
             <MenuGroup title={t("footer.company")}>
-              {NAV_ITEMS.map(navLink)}
+              {navItems.map(navLink)}
             </MenuGroup>
           </nav>
 

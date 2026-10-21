@@ -1,0 +1,175 @@
+{
+  "meta": {
+    "title": "For Professionals: Get Hired on Your Interview | letshyre.ai",
+    "description": "Take a role-based AI interview, get a skill scorecard and get matched to employers hiring for your role. LetsHyre is free for professionals.",
+    "name": "LetsHyre for Professionals",
+    "schemaDescription": "How experienced professionals use LetsHyre to take role-based AI interviews, earn skill scorecards and get matched to employers.",
+    "crumb": "For candidates",
+    "audience": "Experienced professionals"
+  },
+  "hero": {
+    "eyebrow": "For professionals",
+    "title": "Let your answers",
+    "accent": "speak first.",
+    "description": "Take a role-based AI interview from the desktop app, get a scorecard and get matched to employers hiring for your role.",
+    "cta": "Create your profile",
+    "guide": "How the interview works",
+    "reassurance": "Free, start to finish. Up to 3 interviews.",
+    "card": {
+      "name": "Rahul Verma",
+      "role": "Product Designer · 5 years",
+      "score": "Your interview score",
+      "outOf": "/ 100",
+      "attempt": "Interview 1 of 3",
+      "clarity": "Clarity",
+      "depth": "Depth of thought",
+      "strength": "Top strength",
+      "strengthValue": "User research",
+      "match": "New match",
+      "matchValue": "Senior Product Designer",
+      "caption": "Sample scorecard, for illustration"
+    }
+  },
+  "fair": {
+    "eyebrow": "A fairer first round",
+    "title": "Everyone answers",
+    "accent": "the same interview.",
+    "description": "Every professional interviewing for a role gets the same structured AI interview, so scores are comparable and your experience isn't flattened into keywords.",
+    "points": [
+      "Interview from the desktop app, at a time that suits you",
+      "Scored on clarity, relevance, confidence and depth",
+      "Retake it or try another role, up to 3 interviews"
+    ],
+    "question": "Question 4 of 9",
+    "candidates": ["You", "Candidate B", "Candidate C"]
+  },
+  "build": {
+    "eyebrow": "Your profile, layer by layer",
+    "title": "How your file",
+    "accent": "comes together.",
+    "description": "Four steps, all free. Each one adds evidence employers can trust.",
+    "caption": "Sample profile, for illustration",
+    "steps": [
+      {
+        "title": "Create your profile",
+        "body": "Add your experience, current and expected CTC, and notice period."
+      },
+      {
+        "title": "Upload your resume",
+        "body": "AI analyses it and suggests roles that fit, or you add your own."
+      },
+      {
+        "title": "Take up to 3 AI interviews",
+        "body": "Role-based interviews in the LetsHyre desktop app, whenever it suits you."
+      },
+      {
+        "title": "Get your scorecard and get found",
+        "body": "Every interview produces a skill scorecard, and employers hiring for your roles can find you for 90 days."
+      }
+    ],
+    "layers": {
+      "experience": "Experience",
+      "experienceValue": "5 years",
+      "notice": "Notice period",
+      "noticeValue": "45 days",
+      "roles": "Suggested roles",
+      "roleItems": ["Product Designer", "UX Researcher", "Design Lead"],
+      "interviews": "Interviews",
+      "attempts": ["Interview 1", "Interview 2", "Interview 3"],
+      "score": "Scorecard",
+      "visible": "Visible to employers",
+      "days": "90 days"
+    }
+  },
+  "prepare": {
+    "eyebrow": "Know what's coming",
+    "title": "Four kinds",
+    "accent": "of question.",
+    "description": "Interviews mix these depending on the role. Read the guide before you start, so nothing on the day is new.",
+    "types": [
+      {
+        "title": "Multiple choice",
+        "body": "Pick the best answer. Some questions use pseudocode."
+      },
+      {
+        "title": "Coding",
+        "body": "Solve a problem in the code editor, for technical roles."
+      },
+      {
+        "title": "Written",
+        "body": "Type a short answer that explains your thinking."
+      },
+      {
+        "title": "Spoken",
+        "body": "Answer out loud, as you would in a real interview."
+      }
+    ],
+    "guide": "Read the interview guide"
+  },
+  "seen": {
+    "eyebrow": "No surprises",
+    "title": "You see",
+    "accent": "what employers see.",
+    "description": "Your scorecard carries the same scores employers read, with your strengths and the areas to improve.",
+    "before": {
+      "title": "Before an employer unlocks you",
+      "items": [
+        "LetsHyre score",
+        "Job match %",
+        "Skill match %",
+        "AI interview score",
+        "Experience",
+        "Notice period"
+      ]
+    },
+    "after": {
+      "title": "After they unlock you",
+      "items": [
+        "Resume",
+        "Contact details",
+        "Documents",
+        "Scorecard",
+        "Interview recording"
+      ]
+    },
+    "timeline": {
+      "title": "In front of employers for 90 days",
+      "body": "Your profile stays in the talent pool for 90 days after your interview, so the people who find you are hiring now.",
+      "start": "Interview",
+      "end": "Day 90"
+    }
+  },
+  "faq": {
+    "title": "Questions from",
+    "accent": "professionals.",
+    "items": [
+      {
+        "q": "Does LetsHyre cost anything for professionals?",
+        "a": "No. LetsHyre is free for professionals. Employers pay with credits only when they unlock a candidate."
+      },
+      {
+        "q": "How many interviews can I take?",
+        "a": "Up to three, for three different roles or more than one attempt at the same role."
+      },
+      {
+        "q": "Where do I take the interview?",
+        "a": "In the LetsHyre desktop app, at a time that suits you. Download it before you start."
+      },
+      {
+        "q": "What do employers see about me?",
+        "a": "Your scores, job match, skill match, experience and notice period. Your resume, contact details, documents, scorecard and recording are shared only when an employer unlocks your profile."
+      },
+      {
+        "q": "Why does my profile last 90 days?",
+        "a": "So employers see people who are actively looking. Your profile stays in the talent pool for 90 days after your interview."
+      }
+    ]
+  },
+  "final": {
+    "title": "Show what you can do,",
+    "accent": "not just what you wrote.",
+    "description": "Create your profile, take your first AI interview and let employers hiring for your role find you.",
+    "cta": "Create your profile",
+    "download": "Download the app"
+  }
+}

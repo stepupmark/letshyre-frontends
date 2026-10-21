@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "title": "For Employers: Shortlist on Interview Evidence | letshyre.ai",
+    "description": "Every LetsHyre candidate arrives with an AI resume analysis, a role-based AI interview and a scorecard. Read the evidence free, then unlock who's worth a call.",
+    "name": "LetsHyre for Employers",
+    "schemaDescription": "How employers use LetsHyre to review AI-interviewed candidates, unlock full candidate files and compare scorecards side by side.",
+    "crumb": "For employers",
+    "audience": "Employers and HR teams"
+  },
+  "hero": {
+    "eyebrow": "For employers",
+    "title": "Shortlist on evidence,",
+    "accent": "not on resumes.",
+    "description": "Every candidate arrives with an AI resume analysis, a role-based AI interview and a scorecard. Read the evidence first, then unlock the people worth a call.",
+    "cta": "Start with 10 free credits",
+    "pricing": "See pricing",
+    "reassurance": "No subscription. Credits never expire.",
+    "file": {
+      "name": "Priya Nair",
+      "role": "Senior Backend Engineer · 6 years",
+      "resume": "Resume analysis",
+      "jobMatch": "Job match",
+      "interview": "AI interview",
+      "questions": "Role-based · 9 questions",
+      "score": "Interview score",
+      "outOf": "/ 100",
+      "band": "Strong",
+      "ready": "Ready to unlock",
+      "caption": "Sample candidate, for illustration"
+    }
+  },
+  "problem": {
+    "eyebrow": "Why evidence",
+    "title": "Resumes all",
+    "accent": "read the same.",
+    "description": "Keywords tell you who wrote the right words. A scored interview tells you who can do the work, before you spend a week on calls.",
+    "claimed": "What the resume says",
+    "shown": "What LetsHyre shows",
+    "rows": [
+      {
+        "claim": "5 years of Node.js",
+        "proof": "86/100 in a backend interview"
+      },
+      {
+        "claim": "Clear communicator",
+        "proof": "Clarity 82 across 9 answers"
+      },
+      {
+        "claim": "Strong problem solver",
+        "proof": "The full recording, to watch"
+      }
+    ],
+    "caption": "Sample scores, for illustration"
+  },
+  "build": {
+    "eyebrow": "Inside a candidate file",
+    "title": "Every file is built",
+    "accent": "in the same four layers.",
+    "description": "So you compare people like for like, and only pay for the ones worth meeting.",
+    "caption": "Sample candidate file, for illustration",
+    "steps": [
+      {
+        "title": "Profile and resume analysis",
+        "body": "Experience and notice period, with AI matching the resume to the skills in your job description."
+      },
+      {
+        "title": "A role-based AI interview",
+        "body": "Candidates answer multiple choice, coding, written and spoken questions picked for the role."
+      },
+      {
+        "title": "A scorecard you can check",
+        "body": "Scores for clarity, relevance and depth, a score per question type, and the strengths and gaps to probe."
+      },
+      {
+        "title": "Unlock, compare, decide",
+        "body": "Unlock the full file, then put two or three candidates side by side before you pick up the phone."
+      }
+    ],
+    "layers": {
+      "experience": "Experience",
+      "experienceValue": "6 years",
+      "notice": "Notice period",
+      "noticeValue": "30 days",
+      "jobMatch": "Job match",
+      "skillMatch": "Skill match",
+      "interview": "AI interview",
+      "types": ["Multiple choice", "Coding", "Written", "Spoken"],
+      "score": "Interview score",
+      "clarity": "Clarity",
+      "depth": "Depth of thought",
+      "strength": "Top strength",
+      "strengthValue": "API design",
+      "unlocked": "Unlocked",
+      "contents": "Resume, contact details and recording",
+      "compare": "Compare"
+    }
+  },
+  "unlock": {
+    "eyebrow": "What you pay for",
+    "title": "Read the evidence free.",
+    "accent": "Unlock the person.",
+    "description": "Scores are open on every profile. Credits are only spent when you want to meet someone.",
+    "free": {
+      "title": "Free on every profile",
+      "items": [
+        "LetsHyre score",
+        "Job match %",
+        "Skill match %",
+        "AI interview score",
+        "Experience",
+        "Notice period"
+      ]
+    },
+    "paid": {
+      "title": "Included when you unlock",
+      "items": [
+        {
+          "label": "Resume",
+          "body": "The candidate's own resume, as uploaded."
+        },
+        {
+          "label": "Contact details",
+          "body": "Reach out directly, on your own terms."
+        },
+        {
+          "label": "Documents",
+          "body": "Certificates and anything else they've added."
+        },
+        {
+          "label": "AI skill scorecard",
+          "body": "Every answer, how it was assessed and why."
+        },
+        {
+          "label": "Interview recording",
+          "body": "Watch the full interview in their own words."
+        }
+      ]
+    }
+  },
+  "compare": {
+    "eyebrow": "Compare candidates",
+    "title": "Two or three files,",
+    "accent": "read row by row.",
+    "description": "Pick unlocked candidates in your dashboard and see their scores side by side. The highest score in each row is highlighted, so the trade-offs are easy to spot.",
+    "caption": "Sample comparison, for illustration",
+    "criteria": "Criteria",
+    "highest": "Highest",
+    "rows": [
+      "Overall score",
+      "Job match",
+      "Clarity",
+      "Depth of thought",
+      "Coding"
+    ],
+    "people": ["Priya Nair", "Arjun Mehta", "Sara Khan"]
+  },
+  "pricing": {
+    "title": "You only pay",
+    "accent": "to unlock.",
+    "rows": [
+      {
+        "label": "On sign-up",
+        "value": "10 free credits"
+      },
+      {
+        "label": "Subscription",
+        "value": "None"
+      },
+      {
+        "label": "Credits",
+        "value": "Never expire"
+      }
+    ],
+    "cta": "See pricing",
+    "guide": "Read the employer guide"
+  },
+  "faq": {
+    "title": "Questions from",
+    "accent": "hiring teams.",
+    "items": [
+      {
+        "q": "What can I see before I unlock a candidate?",
+        "a": "The LetsHyre score, job match, skill match, AI interview score, experience and notice period. That's enough to decide who is worth unlocking."
+      },
+      {
+        "q": "What do I get when I unlock a candidate?",
+        "a": "The resume, contact details, documents, the AI skill scorecard and the full AI interview recording. You then contact the candidate and continue hiring outside LetsHyre."
+      },
+      {
+        "q": "How are candidates scored?",
+        "a": "Each candidate takes role-based AI interviews, and every interview produces a skill scorecard. LetsHyre combines it with the resume analysis to show a LetsHyre score, job match and skill match for each role."
+      },
+      {
+        "q": "Can I compare candidates?",
+        "a": "Yes. Select two or three unlocked candidates in your dashboard to see their scores side by side, with the highest score in each row highlighted."
+      },
+      {
+        "q": "Do credits expire?",
+        "a": "No. There's no subscription and credits never expire. Every new employer account starts with 10 free credits."
+      },
+      {
+        "q": "How current is the talent pool?",
+        "a": "A profile stays in the pool for 90 days after the candidate's interview, so you see people who are looking now."
+      }
+    ]
+  },
+  "final": {
+    "title": "Your next hire has",
+    "accent": "already interviewed.",
+    "description": "Create an employer account, post a role and see ranked candidates with scorecards today.",
+    "cta": "Start with 10 free credits",
+    "contact": "Talk to us"
+  }
+}

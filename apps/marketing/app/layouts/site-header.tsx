@@ -20,7 +20,7 @@ import { useCompactNav } from "./site-header-compact"
 import { SiteLanguageSwitcher } from "./site-header-language"
 import { SiteHeaderMenu } from "./site-header-menu"
 import { SiteThemeToggle } from "./site-header-theme"
-import { NAV_ITEMS, useCurrent, useProductItems } from "./site-header-nav"
+import { useCurrent, useNavItems, useProductItems } from "./site-header-nav"
 
 function useScrolled() {
   const [scrolled, setScrolled] = useState(false)
@@ -44,6 +44,7 @@ export function SiteHeader() {
   const lang = useLocale()
   const current = useCurrent()
   const productItems = useProductItems()
+  const navItems = useNavItems()
   const rowRef = useRef<HTMLDivElement>(null)
   const listRef = useRef<HTMLUListElement>(null)
   const compact = useCompactNav(rowRef, listRef, lang)
@@ -117,7 +118,7 @@ export function SiteHeader() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              {NAV_ITEMS.map((item) => (
+              {navItems.map((item) => (
                 <NavigationMenuItem key={item.id} className="shrink-0">
                   <Link
                     to={localePath(lang, item.path)}

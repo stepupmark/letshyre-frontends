@@ -230,6 +230,40 @@
   }
 }
 
+/* a file layer builds in as its step (--at) scrolls in */
+@utility build-in {
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: build linear both;
+      animation-timeline: var(--at);
+      animation-range: entry 80% cover 45%;
+    }
+  }
+}
+
+/* dims a built layer once the next step (--next) arrives; an overlay, so text contrast stays intact */
+@utility settle-shade {
+  opacity: 0;
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: shade linear both;
+      animation-timeline: var(--next);
+      animation-range: entry 80% cover 45%;
+    }
+  }
+}
+
+/* lights a progress dot while its step (--at) scrolls in */
+@utility lit-in {
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: lit linear both;
+      animation-timeline: var(--at);
+      animation-range: entry 80% cover 45%;
+    }
+  }
+}
+
 /* face scan line, a few passes */
 @utility scan {
   @media (prefers-reduced-motion: no-preference) {
@@ -308,5 +342,18 @@
 @keyframes grow-in {
   from {
     scale: 0 1;
+  }
+}
+
+@keyframes build {
+  from {
+    opacity: 0;
+    translate: 0 0.75rem;
+  }
+}
+
+@keyframes lit {
+  from {
+    opacity: 0;
   }
 }

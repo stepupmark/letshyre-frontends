@@ -42,3 +42,21 @@ export function TextLink({
     </Link>
   )
 }
+
+/** A secondary button that stays on the site. */
+export function OutlineLink({
+  className,
+  ...props
+}: ComponentProps<typeof Link>) {
+  return (
+    <Link
+      prefetch="intent"
+      className={cn(
+        buttonVariants({ size: "lg", variant: "outline" }),
+        "h-12 border-foreground/20 px-6",
+        className
+      )}
+      {...props}
+    />
+  )
+}

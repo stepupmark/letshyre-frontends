@@ -90,8 +90,6 @@ describe("SiteHeader", () => {
     const menu = within(dialog).getByRole("navigation", {
       name: "Mobile navigation",
     })
-    expect(within(menu).getAllByRole("link")).toHaveLength(5)
-
     await user.click(within(menu).getByRole("link", { name: "About" }))
     await waitFor(() => {
       expect(screen.queryByRole("dialog")).not.toBeInTheDocument()

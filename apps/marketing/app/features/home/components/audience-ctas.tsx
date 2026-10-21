@@ -5,7 +5,7 @@ import { ArrowRightIcon } from "lucide-react"
 
 import { APP_LINKS } from "@/lib/app-links"
 
-import { CtaLink } from "./home-links"
+import { CtaLink } from "@/components/cta-links"
 
 export function AudienceCtas({ className }: { className?: string }) {
   const { t } = useTranslation("home")

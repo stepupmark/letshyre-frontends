@@ -4,7 +4,7 @@ import type { ReactNode } from "react"
 import { Container } from "@/components/section"
 
 /** The band is labelled by the heading with id `${id}-title`. */
-export function HomeSection({
+export function Band({
   id,
   muted,
   flushTop,

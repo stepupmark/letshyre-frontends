@@ -11,9 +11,9 @@ import { useState } from "react"
 import { usePublished } from "@/hooks/use-published"
 import { PAGES } from "@/lib/pages"
 
-import { HomeHeading } from "./home-heading"
-import { TextLink } from "./home-links"
-import { HomeSection } from "./home-section"
+import { BandHeading } from "@/components/band-heading"
+import { TextLink } from "@/components/cta-links"
+import { Band } from "@/components/band"
 import { type Step, StepStory } from "./step-story"
 
 type Side = "employers" | "professionals"
@@ -92,7 +92,7 @@ export function HowItWorks() {
   ]
 
   return (
-    <HomeSection id="how-it-works">
+    <Band id="how-it-works">
       <Tabs
         value={side}
         onValueChange={(value) => {
@@ -100,7 +100,7 @@ export function HowItWorks() {
         }}
         className="gap-0"
       >
-        <HomeHeading
+        <BandHeading
           id="how-it-works-title"
           eyebrow={t("how.eyebrow")}
           title={t("how.title")}
@@ -145,6 +145,6 @@ export function HowItWorks() {
           </TabsContent>
         ))}
       </Tabs>
-    </HomeSection>
+    </Band>
   )
 }

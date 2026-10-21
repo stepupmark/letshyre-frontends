@@ -1,19 +1,15 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { CheckIcon, HandshakeIcon, LockIcon, VideoIcon } from "lucide-react"
 
+import { Avatar } from "@/components/art/avatar"
+import { Meter } from "@/components/art/meter"
+import { ScoreRing } from "@/components/art/score-ring"
+
 const SCORES = [
   { key: "jobMatch", value: 92, text: "92%" },
   { key: "skillMatch", value: 88, text: "88%" },
   { key: "interview", value: 84, text: "84/100" },
 ] as const
-
-const initials = (name: string) =>
-  name
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((word) => Array.from(word)[0] ?? "")
-    .join("")
-    .toUpperCase()
 
 /** A sample candidate file sitting on a pile: the evidence an employer sees before unlocking. */
 export function CandidateFile() {
@@ -34,12 +30,7 @@ export function CandidateFile() {
 
         <div className="rise relative rounded-2xl border bg-card p-5 sm:p-7">
           <div className="flex items-center gap-3">
-            <span
-              aria-hidden
-              className="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-muted text-sm font-semibold text-brand-text"
-            >
-              {initials(name)}
-            </span>
+            <Avatar name={name} />
             <div className="min-w-0">
               <p className="font-semibold">{name}</p>
               <p className="truncate text-sm text-muted-foreground">
@@ -49,36 +40,7 @@ export function CandidateFile() {
           </div>
 
           <div className="mt-6 flex items-center gap-5 rounded-xl border bg-muted/40 p-4">
-            <div className="relative size-20 shrink-0">
-              <svg
-                aria-hidden
-                viewBox="0 0 64 64"
-                fill="none"
-                className="size-full"
-              >
-                <circle
-                  cx="32"
-                  cy="32"
-                  r="28"
-                  strokeWidth="6"
-                  className="stroke-muted"
-                />
-                <path
-                  pathLength={1}
-                  d="M32 4A28 28 0 1 1 10.43 14.15"
-                  stroke="currentColor"
-                  strokeWidth="6"
-                  strokeLinecap="round"
-                  className="ink text-brand"
-                />
-              </svg>
-              <span className="absolute inset-0 flex flex-col items-center justify-center tabular-nums">
-                <span className="text-2xl/none font-semibold">86</span>
-                <span className="text-xs text-muted-foreground">
-                  {t("hero.file.outOf")}
-                </span>
-              </span>
-            </div>
+            <ScoreRing score={86} caption={t("hero.file.outOf")} />
             <div className="min-w-0">
               <p className="text-sm text-muted-foreground">
                 {t("hero.file.score")}
@@ -89,41 +51,17 @@ export function CandidateFile() {
             </div>
           </div>
 
-          <dl className="mt-6 flex flex-col gap-4">
+          <div className="mt-6 flex flex-col gap-4">
             {SCORES.map((score) => (
-              <div
+              <Meter
                 key={score.key}
-                className="flex flex-wrap items-baseline justify-between gap-x-4"
-              >
-                <dt className="text-sm text-muted-foreground">
-                  {t(`hero.file.${score.key}`)}
-                </dt>
-                <dd className="text-sm font-semibold tabular-nums">
-                  {score.text}
-                </dd>
-                <dd aria-hidden className="mt-2 basis-full">
-                  <svg
-                    viewBox="0 0 100 4"
-                    preserveAspectRatio="none"
-                    className="block h-1.5 w-full rtl:-scale-x-100"
-                  >
-                    <rect
-                      width="100"
-                      height="4"
-                      rx="2"
-                      className="fill-muted"
-                    />
-                    <rect
-                      width={score.value}
-                      height="4"
-                      rx="2"
-                      className="bar-in fill-brand [animation-delay:400ms]"
-                    />
-                  </svg>
-                </dd>
-              </div>
+                label={t(`hero.file.${score.key}`)}
+                value={score.value}
+                text={score.text}
+                animate
+              />
             ))}
-          </dl>
+          </div>
 
           <p className="mt-6 flex items-center gap-2.5 rounded-lg bg-muted px-3 py-2.5 text-sm text-foreground/80">
             <LockIcon aria-hidden className="size-4 shrink-0" />

@@ -8,9 +8,9 @@ import { PAGES } from "@/lib/pages"
 
 import { AttemptTracker } from "./art/attempt-tracker"
 import { FreshPool } from "./fresh-pool"
-import { HomeHeading } from "./home-heading"
-import { CtaLink, TextLink } from "./home-links"
-import { HomeSection } from "./home-section"
+import { BandHeading } from "@/components/band-heading"
+import { CtaLink, TextLink } from "@/components/cta-links"
+import { Band } from "@/components/band"
 
 export function ForProfessionals() {
   const { t } = useTranslation("home")
@@ -23,13 +23,10 @@ export function ForProfessionals() {
   const points = t("professionals.points", { returnObjects: true })
 
   return (
-    <HomeSection
-      id="for-professionals"
-      className="flex flex-col gap-16 sm:gap-20"
-    >
+    <Band id="for-professionals" className="flex flex-col gap-16 sm:gap-20">
       <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
         <div className="slide-in">
-          <HomeHeading
+          <BandHeading
             id="for-professionals-title"
             eyebrow={t("professionals.eyebrow")}
             title={t("professionals.title")}
@@ -61,6 +58,6 @@ export function ForProfessionals() {
       </div>
 
       <FreshPool />
-    </HomeSection>
+    </Band>
   )
 }
