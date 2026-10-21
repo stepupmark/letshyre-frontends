@@ -78,7 +78,8 @@ export function InterviewLens({
       <div className="flex justify-between gap-3 px-3 py-2 text-xs text-muted-foreground">
         <span className="truncate">{t("hero.scene.question")}</span>
         <span className="font-semibold text-foreground tabular-nums">
-          {`${84}${t("hero.file.outOf")}`}
+          {84}
+          {t("hero.file.outOf")}
         </span>
       </div>
     </div>
