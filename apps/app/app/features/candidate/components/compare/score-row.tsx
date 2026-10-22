@@ -75,7 +75,7 @@ function RowLabel({ children }: { children: string }) {
   return (
     <th
       scope="row"
-      className="sticky inset-s-0 z-10 bg-card p-4 text-start align-top font-normal text-balance text-muted-foreground"
+      className="sticky inset-s-0 z-1 bg-card p-4 text-start align-top font-normal text-balance text-muted-foreground"
     >
       {children}
     </th>

@@ -86,14 +86,14 @@ export function CompareView({ items }: { items: Compared[] }) {
   const removable = items.length > 2
 
   return (
-    <div className="overflow-x-auto rounded-lg border bg-card lg:overflow-clip">
+    <div className="isolate overflow-x-auto rounded-lg border bg-card lg:overflow-clip">
       <table className="w-full min-w-2xl table-fixed border-collapse text-sm">
         <caption className="sr-only">{t("compare.title")}</caption>
-        <thead className="lg:sticky lg:top-14 lg:z-20">
+        <thead className="lg:sticky lg:top-14 lg:z-2">
           <tr className="border-b bg-card">
             <th
               scope="col"
-              className="sticky inset-s-0 z-10 w-36 bg-card p-4 text-start sm:w-44"
+              className="sticky inset-s-0 z-1 w-36 bg-card p-4 text-start sm:w-44"
             >
               <span className="sr-only">{t("compare.criteria")}</span>
             </th>
