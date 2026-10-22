@@ -1,9 +1,6 @@
 {
   "title": "Team",
   "lead": "Le persone che possono pubblicare offerte e valutare candidati con te.",
-  "count_one": "{{count}} persona può pubblicare offerte e valutare candidati.",
-  "count_many": "{{count}} persone possono pubblicare offerte e valutare candidati.",
-  "count_other": "{{count}} persone possono pubblicare offerte e valutare candidati.",
   "add": "Aggiungi membro",
   "active": "Attivo",
   "onHold": "In pausa",
@@ -28,7 +25,11 @@
     "passwordHint": "Almeno 8 caratteri. Condividila in privato.",
     "generate": "Genera",
     "add": "Aggiungi membro",
-    "save": "Salva le modifiche"
+    "save": "Salva le modifiche",
+    "adding": "Aggiunta…",
+    "saving": "Salvataggio…",
+    "emailChange": "D'ora in poi accederà con la nuova email.",
+    "copy": "Copia password"
   },
   "errors": {
     "name": "Inserisci nome e cognome (da 2 a 100 caratteri).",
@@ -44,5 +45,14 @@
     "statusFailed": "Lo stato non è cambiato. Riprova.",
     "removeFailed": "La rimozione non è riuscita. Riprova.",
     "saveFailed": "Non è stato salvato. Riprova."
-  }
+  },
+  "unnamed": "Membro senza nome",
+  "errorTitle": "Il tuo team non si è caricato.",
+  "errorBody": "Tutti mantengono l'accesso. Controlla la connessione e riprova.",
+  "summary_one": "{{count}} membro",
+  "summary_many": "{{count}} membri",
+  "summary_other": "{{count}} membri",
+  "onHoldCount_one": "{{count}} in pausa",
+  "onHoldCount_many": "{{count}} in pausa",
+  "onHoldCount_other": "{{count}} in pausa"
 }

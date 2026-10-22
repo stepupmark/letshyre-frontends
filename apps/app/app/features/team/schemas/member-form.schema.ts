@@ -12,11 +12,3 @@ export const makeMemberSchema = (
       : z.string(),
   })
 export type MemberValues = z.infer<ReturnType<typeof makeMemberSchema>>
-
-const LETTERS = "abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789"
-
-/** A 14-character password without look-alike characters, for the admin to pass on. */
-export function generatePassword() {
-  const bytes = crypto.getRandomValues(new Uint8Array(14))
-  return Array.from(bytes, (b) => LETTERS[b % LETTERS.length]).join("")
-}

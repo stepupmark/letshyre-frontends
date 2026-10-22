@@ -1,9 +1,6 @@
 {
   "title": "Equipo",
   "lead": "Personas que pueden publicar ofertas y revisar candidatos con usted.",
-  "count_one": "{{count}} persona puede publicar ofertas y revisar candidatos.",
-  "count_many": "{{count}} personas pueden publicar ofertas y revisar candidatos.",
-  "count_other": "{{count}} personas pueden publicar ofertas y revisar candidatos.",
   "add": "Añadir miembro",
   "active": "Activo",
   "onHold": "En pausa",
@@ -28,7 +25,11 @@
     "passwordHint": "Al menos 8 caracteres. Compártala en privado.",
     "generate": "Generar",
     "add": "Añadir miembro",
-    "save": "Guardar cambios"
+    "save": "Guardar cambios",
+    "adding": "Añadiendo…",
+    "saving": "Guardando…",
+    "emailChange": "A partir de ahora iniciará sesión con el nuevo correo.",
+    "copy": "Copiar contraseña"
   },
   "errors": {
     "name": "Introduzca su nombre completo (de 2 a 100 caracteres).",
@@ -44,5 +45,14 @@
     "statusFailed": "El estado no ha cambiado. Inténtelo de nuevo.",
     "removeFailed": "No se ha quitado. Inténtelo de nuevo.",
     "saveFailed": "No se ha guardado. Inténtelo de nuevo."
-  }
+  },
+  "unnamed": "Miembro sin nombre",
+  "errorTitle": "Tu equipo no se cargó.",
+  "errorBody": "Todos siguen teniendo acceso. Revisa tu conexión e inténtalo de nuevo.",
+  "summary_one": "{{count}} miembro",
+  "summary_many": "{{count}} miembros",
+  "summary_other": "{{count}} miembros",
+  "onHoldCount_one": "{{count}} en pausa",
+  "onHoldCount_many": "{{count}} en pausa",
+  "onHoldCount_other": "{{count}} en pausa"
 }

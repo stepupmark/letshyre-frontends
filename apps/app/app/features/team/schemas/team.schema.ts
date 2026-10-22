@@ -17,5 +17,16 @@ export const membersSchema = z.preprocess(
     const data = dataOf(json)
     return Array.isArray(data) ? { results: data } : data
   },
-  z.looseObject({ results: z.array(memberSchema).catch([]) })
+  z.looseObject({
+    // one malformed row shouldn't make the team look empty
+    results: z
+      .array(z.unknown())
+      .catch([])
+      .transform((rows) =>
+        rows.flatMap((row) => {
+          const parsed = memberSchema.safeParse(row)
+          return parsed.success ? [parsed.data] : []
+        })
+      ),
+  })
 )

@@ -39,7 +39,8 @@ are in the design lab (`pnpm --filter app dev`, then `http://localhost:5174/_lab
   done state (Apply → Applied), the active-stage underline sliding between stages, an
   application stepper filling once on first view, the interview band scale and history bars filling
   once on first view, a row's chevron nudging toward its target on hover or focus, table rows
-  rising in on their first load, and picked candidates' avatars popping into the compare bar.
+  rising in on their first load, picked candidates' avatars popping into the compare bar, and a
+  newly added team member's row tinting once so you can see where they landed.
 - Reduced motion: values jump, only fades remain (`MotionConfig reducedMotion="user"`).
 - Cost: ~10 kB gzip with the first paint, the `domMax` features (~29 kB) load after it.
 

@@ -1,8 +1,6 @@
 {
   "title": "Team",
   "lead": "Personen, die mit Ihnen Stellen veröffentlichen und Kandidaten prüfen können.",
-  "count_one": "{{count}} Person kann Stellen veröffentlichen und Kandidaten prüfen.",
-  "count_other": "{{count}} Personen können Stellen veröffentlichen und Kandidaten prüfen.",
   "add": "Mitglied hinzufügen",
   "active": "Aktiv",
   "onHold": "Pausiert",
@@ -27,7 +25,11 @@
     "passwordHint": "Mindestens 8 Zeichen. Teilen Sie es vertraulich.",
     "generate": "Erzeugen",
     "add": "Mitglied hinzufügen",
-    "save": "Änderungen speichern"
+    "save": "Änderungen speichern",
+    "adding": "Wird hinzugefügt…",
+    "saving": "Wird gespeichert…",
+    "emailChange": "Die Anmeldung erfolgt ab jetzt mit der neuen E-Mail-Adresse.",
+    "copy": "Passwort kopieren"
   },
   "errors": {
     "name": "Geben Sie den vollständigen Namen ein (2 bis 100 Zeichen).",
@@ -43,5 +45,12 @@
     "statusFailed": "Der Status wurde nicht geändert. Versuchen Sie es erneut.",
     "removeFailed": "Die Person wurde nicht entfernt. Versuchen Sie es erneut.",
     "saveFailed": "Das wurde nicht gespeichert. Versuchen Sie es erneut."
-  }
+  },
+  "unnamed": "Unbenanntes Mitglied",
+  "errorTitle": "Ihr Team wurde nicht geladen.",
+  "errorBody": "Alle haben weiterhin Zugriff. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+  "summary_one": "{{count}} Mitglied",
+  "summary_other": "{{count}} Mitglieder",
+  "onHoldCount_one": "{{count}} pausiert",
+  "onHoldCount_other": "{{count}} pausiert"
 }

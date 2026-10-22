@@ -1,9 +1,6 @@
 {
   "title": "Équipe",
   "lead": "Les personnes qui peuvent publier des offres et examiner des candidats avec vous.",
-  "count_one": "{{count}} personne peut publier des offres et examiner des candidats.",
-  "count_many": "{{count}} personnes peuvent publier des offres et examiner des candidats.",
-  "count_other": "{{count}} personnes peuvent publier des offres et examiner des candidats.",
   "add": "Ajouter un membre",
   "active": "Actif",
   "onHold": "Suspendu",
@@ -28,7 +25,11 @@
     "passwordHint": "Au moins 8 caractères. Partagez-le en privé.",
     "generate": "Générer",
     "add": "Ajouter le membre",
-    "save": "Enregistrer les modifications"
+    "save": "Enregistrer les modifications",
+    "adding": "Ajout…",
+    "saving": "Enregistrement…",
+    "emailChange": "Cette personne se connectera désormais avec la nouvelle adresse.",
+    "copy": "Copier le mot de passe"
   },
   "errors": {
     "name": "Saisissez son nom complet (2 à 100 caractères).",
@@ -44,5 +45,14 @@
     "statusFailed": "Le statut n'a pas changé. Réessayez.",
     "removeFailed": "La personne n'a pas été retirée. Réessayez.",
     "saveFailed": "Cela n'a pas été enregistré. Réessayez."
-  }
+  },
+  "unnamed": "Membre sans nom",
+  "errorTitle": "Votre équipe ne s'est pas chargée.",
+  "errorBody": "Tout le monde garde son accès. Vérifiez votre connexion et réessayez.",
+  "summary_one": "{{count}} membre",
+  "summary_many": "{{count}} membres",
+  "summary_other": "{{count}} membres",
+  "onHoldCount_one": "{{count}} en pause",
+  "onHoldCount_many": "{{count}} en pause",
+  "onHoldCount_other": "{{count}} en pause"
 }

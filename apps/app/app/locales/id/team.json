@@ -1,7 +1,6 @@
 {
   "title": "Tim",
   "lead": "Orang yang bisa memasang lowongan dan meninjau kandidat bersama Anda.",
-  "count_other": "{{count}} orang bisa memasang lowongan dan meninjau kandidat.",
   "add": "Tambah anggota",
   "active": "Aktif",
   "onHold": "Ditangguhkan",
@@ -26,7 +25,11 @@
     "passwordHint": "Minimal 8 karakter. Bagikan secara pribadi.",
     "generate": "Buat",
     "add": "Tambah anggota",
-    "save": "Simpan perubahan"
+    "save": "Simpan perubahan",
+    "adding": "Menambahkan…",
+    "saving": "Menyimpan…",
+    "emailChange": "Mulai sekarang mereka masuk dengan email baru.",
+    "copy": "Salin kata sandi"
   },
   "errors": {
     "name": "Masukkan nama lengkap (2 sampai 100 karakter).",
@@ -42,5 +45,10 @@
     "statusFailed": "Status tidak berubah. Coba lagi.",
     "removeFailed": "Tidak berhasil dihapus. Coba lagi.",
     "saveFailed": "Tidak tersimpan. Coba lagi."
-  }
+  },
+  "unnamed": "Anggota tanpa nama",
+  "errorTitle": "Tim Anda gagal dimuat.",
+  "errorBody": "Semua orang tetap punya akses. Periksa koneksi lalu coba lagi.",
+  "summary_other": "{{count}} anggota",
+  "onHoldCount_other": "{{count}} ditangguhkan"
 }

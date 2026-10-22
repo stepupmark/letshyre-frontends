@@ -1,7 +1,6 @@
 {
   "title": "팀",
   "lead": "함께 공고를 올리고 후보자를 검토할 수 있는 사람들이에요.",
-  "count_other": "{{count}}명이 공고를 올리고 후보자를 검토할 수 있어요.",
   "add": "멤버 추가",
   "active": "활성",
   "onHold": "보류",
@@ -26,7 +25,11 @@
     "passwordHint": "8자 이상. 본인에게만 따로 알려 주세요.",
     "generate": "생성",
     "add": "멤버 추가",
-    "save": "변경 사항 저장"
+    "save": "변경 사항 저장",
+    "adding": "추가하는 중…",
+    "saving": "저장하는 중…",
+    "emailChange": "이제부터 새 이메일로 로그인합니다.",
+    "copy": "비밀번호 복사"
   },
   "errors": {
     "name": "이름을 입력하세요(2~100자).",
@@ -42,5 +45,10 @@
     "statusFailed": "상태를 바꾸지 못했어요. 다시 시도하세요.",
     "removeFailed": "삭제하지 못했어요. 다시 시도하세요.",
     "saveFailed": "저장되지 않았어요. 다시 시도하세요."
-  }
+  },
+  "unnamed": "이름 없는 멤버",
+  "errorTitle": "팀을 불러오지 못했습니다.",
+  "errorBody": "모두 계속 접근할 수 있습니다. 연결을 확인하고 다시 시도하세요.",
+  "summary_other": "멤버 {{count}}명",
+  "onHoldCount_other": "{{count}}명 보류 중"
 }

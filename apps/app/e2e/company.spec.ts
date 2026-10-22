@@ -1,8 +1,6 @@
 import { readFileSync } from "node:fs"
 
-import AxeBuilder from "@axe-core/playwright"
-
-import { expect, reply, test } from "./fixtures"
+import { axe, expect, reply, test } from "./fixtures"
 
 test("an employer adds, holds with undo, and removes a team member", async ({
   page,
@@ -28,7 +26,10 @@ test("an employer adds, holds with undo, and removes a team member", async ({
   await signInAs("employer")
   await page.goto("/employer/team")
   await expect(page.getByText("Meera Iyer")).toBeVisible()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await expect(
+    page.getByRole("heading", { name: /^2 members\s*1 on hold$/ })
+  ).toBeVisible()
+  await axe(page)
 
   await page.getByRole("button", { name: "Add member" }).click()
   const dialog = page.getByRole("dialog", { name: "Add a team member" })
@@ -38,6 +39,13 @@ test("an employer adds, holds with undo, and removes a team member", async ({
   await dialog.getByRole("button", { name: "Add member" }).click()
   await expect(dialog.getByText("Use 8 to 50 characters.")).toBeVisible()
   expect(sent).toEqual([])
+  await expect(
+    dialog.getByRole("button", { name: "Copy password" })
+  ).toHaveCount(0)
+  await dialog.getByRole("button", { name: "Generate" }).click()
+  await expect(
+    dialog.getByRole("button", { name: "Copy password" })
+  ).toBeVisible()
   await dialog.getByLabel("Password", { exact: true }).fill("e2e-pass-123")
   await dialog.getByRole("button", { name: "Add member" }).click()
   await expect(page.getByText("Sana Khan added")).toBeVisible()
@@ -54,6 +62,7 @@ test("an employer adds, holds with undo, and removes a team member", async ({
   await expect
     .poll(() => sent.slice(1))
     .toEqual([{ status: "Hold" }, { status: "Active" }])
+  await expect(page.getByText("Meera Iyer is active")).toHaveCount(0)
 
   await page.getByRole("button", { name: "Actions for Rahul Verma" }).click()
   await page.getByRole("menuitem", { name: "Remove" }).click()

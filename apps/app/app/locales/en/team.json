@@ -1,8 +1,6 @@
 {
   "title": "Team",
   "lead": "People who can post jobs and review candidates with you.",
-  "count_one": "{{count}} person can post jobs and review candidates.",
-  "count_other": "{{count}} people can post jobs and review candidates.",
   "add": "Add member",
   "active": "Active",
   "onHold": "On hold",
@@ -27,7 +25,11 @@
     "passwordHint": "At least 8 characters. Share it privately.",
     "generate": "Generate",
     "add": "Add member",
-    "save": "Save changes"
+    "save": "Save changes",
+    "adding": "Adding…",
+    "saving": "Saving…",
+    "emailChange": "They'll sign in with the new email from now on.",
+    "copy": "Copy password"
   },
   "errors": {
     "name": "Enter their full name (2 to 100 characters).",
@@ -43,5 +45,12 @@
     "statusFailed": "The status didn't change. Try again.",
     "removeFailed": "They weren't removed. Try again.",
     "saveFailed": "That didn't save. Try again."
-  }
+  },
+  "unnamed": "Unnamed member",
+  "errorTitle": "Your team didn't load.",
+  "errorBody": "Everyone still has access. Check your connection and try again.",
+  "summary_one": "{{count}} member",
+  "summary_other": "{{count}} members",
+  "onHoldCount_one": "{{count}} on hold",
+  "onHoldCount_other": "{{count}} on hold"
 }

@@ -1,9 +1,6 @@
 {
   "title": "Equipe",
   "lead": "Pessoas que podem publicar vagas e avaliar candidatos com você.",
-  "count_one": "{{count}} pessoa pode publicar vagas e avaliar candidatos.",
-  "count_many": "{{count}} pessoas podem publicar vagas e avaliar candidatos.",
-  "count_other": "{{count}} pessoas podem publicar vagas e avaliar candidatos.",
   "add": "Adicionar membro",
   "active": "Ativo",
   "onHold": "Pausado",
@@ -28,7 +25,11 @@
     "passwordHint": "Pelo menos 8 caracteres. Compartilhe em particular.",
     "generate": "Gerar",
     "add": "Adicionar membro",
-    "save": "Salvar alterações"
+    "save": "Salvar alterações",
+    "adding": "Adicionando…",
+    "saving": "Salvando…",
+    "emailChange": "A partir de agora, a pessoa entra com o novo e-mail.",
+    "copy": "Copiar senha"
   },
   "errors": {
     "name": "Digite o nome completo (2 a 100 caracteres).",
@@ -44,5 +45,14 @@
     "statusFailed": "O status não mudou. Tente de novo.",
     "removeFailed": "A pessoa não foi removida. Tente de novo.",
     "saveFailed": "Não foi salvo. Tente de novo."
-  }
+  },
+  "unnamed": "Membro sem nome",
+  "errorTitle": "Sua equipe não carregou.",
+  "errorBody": "Todos continuam com acesso. Verifique a conexão e tente de novo.",
+  "summary_one": "{{count}} membro",
+  "summary_many": "{{count}} membros",
+  "summary_other": "{{count}} membros",
+  "onHoldCount_one": "{{count}} em espera",
+  "onHoldCount_many": "{{count}} em espera",
+  "onHoldCount_other": "{{count}} em espera"
 }

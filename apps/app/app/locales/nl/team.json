@@ -1,8 +1,6 @@
 {
   "title": "Team",
   "lead": "Mensen die samen met u vacatures kunnen plaatsen en kandidaten beoordelen.",
-  "count_one": "{{count}} persoon kan vacatures plaatsen en kandidaten beoordelen.",
-  "count_other": "{{count}} mensen kunnen vacatures plaatsen en kandidaten beoordelen.",
   "add": "Lid toevoegen",
   "active": "Actief",
   "onHold": "Gepauzeerd",
@@ -27,7 +25,11 @@
     "passwordHint": "Minstens 8 tekens. Deel het privé.",
     "generate": "Genereren",
     "add": "Lid toevoegen",
-    "save": "Wijzigingen opslaan"
+    "save": "Wijzigingen opslaan",
+    "adding": "Toevoegen…",
+    "saving": "Opslaan…",
+    "emailChange": "Vanaf nu logt deze persoon in met het nieuwe e-mailadres.",
+    "copy": "Wachtwoord kopiëren"
   },
   "errors": {
     "name": "Vul de volledige naam in (2 tot 100 tekens).",
@@ -43,5 +45,12 @@
     "statusFailed": "De status is niet gewijzigd. Probeer het opnieuw.",
     "removeFailed": "Verwijderen is niet gelukt. Probeer het opnieuw.",
     "saveFailed": "Dat is niet opgeslagen. Probeer het opnieuw."
-  }
+  },
+  "unnamed": "Naamloos lid",
+  "errorTitle": "Je team is niet geladen.",
+  "errorBody": "Iedereen houdt toegang. Controleer je verbinding en probeer het opnieuw.",
+  "summary_one": "{{count}} lid",
+  "summary_other": "{{count}} leden",
+  "onHoldCount_one": "{{count}} gepauzeerd",
+  "onHoldCount_other": "{{count}} gepauzeerd"
 }
