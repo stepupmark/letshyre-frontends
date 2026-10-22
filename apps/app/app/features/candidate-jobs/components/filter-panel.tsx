@@ -39,7 +39,7 @@ export function FilterRail({
       className="hidden w-64 shrink-0 flex-col gap-4 lg:sticky lg:top-20 lg:flex lg:max-h-[calc(100svh-6rem)] lg:overflow-y-auto"
     >
       <div className="flex flex-col gap-4 rounded-lg border bg-card p-4">
-        <div className="flex min-h-7 flex-wrap items-center justify-between gap-x-2">
+        <div className="sticky top-0 z-10 -mx-4 -mt-4 flex min-h-7 flex-wrap items-center justify-between gap-x-2 rounded-t-lg border-b bg-card px-4 py-3">
           <h2
             id={id}
             className="flex items-center gap-2 text-base font-semibold tracking-tight whitespace-nowrap"

@@ -11,7 +11,7 @@
     "lead": "Posisi setiap lamaran dan apa yang terjadi selanjutnya."
   },
   "filters": {
-    "keyword": "Jabatan atau keterampilan",
+    "keyword": "Jabatan, keahlian, atau kata kunci",
     "location": "Kota",
     "search": "Cari",
     "title": "Filter",
@@ -32,7 +32,17 @@
     "hideApplied": "Sembunyikan lowongan yang sudah saya lamar",
     "remove": "Hapus {{filter}}",
     "clearFilters": "Hapus filter",
-    "clear": "Hapus semua"
+    "clear": "Hapus semua",
+    "clearField": "Hapus {{field}}",
+    "recent": "Pencarian terbaru",
+    "editSearch": "Ubah pencarian",
+    "fresher": "Lulusan baru",
+    "experienceHintAny": "Geser untuk menyesuaikan dengan pengalaman Anda",
+    "experienceHint": "Lowongan yang rentangnya mencakup pengalaman Anda",
+    "reset": "Atur ulang",
+    "salaryUnit": "LPA",
+    "salaryChip": "{{amount}}+",
+    "salaryHint": "Lowongan dengan gaji minimal ini"
   },
   "sort": {
     "label": "Urutkan",

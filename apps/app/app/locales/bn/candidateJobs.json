@@ -11,7 +11,7 @@
     "lead": "প্রতিটি আবেদন কোথায় আছে আর এরপর কী হবে।"
   },
   "filters": {
-    "keyword": "পদ বা দক্ষতা",
+    "keyword": "পদ, দক্ষতা বা কীওয়ার্ড",
     "location": "শহর",
     "search": "খুঁজুন",
     "title": "ফিল্টার",
@@ -34,7 +34,17 @@
     "hideApplied": "যেসব চাকরিতে আবেদন করেছি সেগুলো লুকান",
     "remove": "{{filter}} সরান",
     "clearFilters": "ফিল্টার মুছুন",
-    "clear": "সব মুছুন"
+    "clear": "সব মুছুন",
+    "clearField": "{{field}} মুছুন",
+    "recent": "সাম্প্রতিক খোঁজ",
+    "editSearch": "খোঁজ সম্পাদনা করুন",
+    "fresher": "ফ্রেশার",
+    "experienceHintAny": "আপনার অভিজ্ঞতার সাথে মেলাতে টানুন",
+    "experienceHint": "যেসব চাকরির পরিসরে আপনার অভিজ্ঞতা পড়ে",
+    "reset": "রিসেট",
+    "salaryUnit": "LPA",
+    "salaryChip": "{{amount}}+",
+    "salaryHint": "যেসব চাকরিতে অন্তত এই বেতন"
   },
   "sort": {
     "label": "সাজান",

@@ -11,7 +11,7 @@
     "lead": "各応募の進み具合と次に起こること。"
   },
   "filters": {
-    "keyword": "職種またはスキル",
+    "keyword": "職種・スキル・キーワード",
     "location": "都市",
     "search": "検索",
     "title": "絞り込み",
@@ -32,7 +32,17 @@
     "hideApplied": "応募済みの求人を非表示",
     "remove": "{{filter}}を解除",
     "clearFilters": "絞り込みを解除",
-    "clear": "すべてクリア"
+    "clear": "すべてクリア",
+    "clearField": "{{field}}をクリア",
+    "recent": "最近の検索",
+    "editSearch": "検索を編集",
+    "fresher": "未経験",
+    "experienceHintAny": "ドラッグして経験年数に合う求人を探す",
+    "experienceHint": "あなたの経験年数を含む求人",
+    "reset": "リセット",
+    "salaryUnit": "LPA",
+    "salaryChip": "{{amount}}+",
+    "salaryHint": "この金額以上の求人"
   },
   "sort": {
     "label": "並べ替え",

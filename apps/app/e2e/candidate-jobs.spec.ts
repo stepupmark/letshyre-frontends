@@ -31,7 +31,7 @@ test("a candidate searches, saves the search, applies and follows the applicatio
 
   await expect(page.getByRole("heading", { name: "2 jobs" })).toBeVisible()
   await page
-    .getByRole("searchbox", { name: "Job title or skill" })
+    .getByRole("combobox", { name: "Title, skill or keyword" })
     .fill("react")
   await page.getByRole("textbox", { name: "City" }).fill("Pune")
   await page.getByRole("button", { name: "Search", exact: true }).click()
@@ -40,7 +40,7 @@ test("a candidate searches, saves the search, applies and follows the applicatio
   const filters = page.getByRole("complementary", { name: /Filters/ })
   await filters.getByRole("checkbox", { name: "Full time" }).click()
   await filters.getByRole("checkbox", { name: "Remote" }).click()
-  await filters.getByRole("radio", { name: "6+ LPA" }).click()
+  await filters.getByRole("button", { name: "6+", exact: true }).click()
   await expect(page).toHaveURL(
     "/employee/jobs?q=react&location=Pune&type=full_time&type=remote&pay=6"
   )

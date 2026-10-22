@@ -1,16 +1,10 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { Button } from "@workspace/ui/components/button"
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupInput,
-} from "@workspace/ui/components/input-group"
-import { Kbd } from "@workspace/ui/components/kbd"
-import { Spinner } from "@workspace/ui/components/spinner"
-import { MapPin, Search } from "lucide-react"
-import { useEffect, useRef } from "react"
+import { PencilLine, Search } from "lucide-react"
+import { useEffect, useEffectEvent, useRef, useState } from "react"
+import { flushSync } from "react-dom"
 
 import type { JobSearch } from "../types"
+import { SearchForm } from "./search-form"
 
 const typing = (target: EventTarget | null) =>
   target instanceof HTMLElement &&
@@ -28,77 +22,67 @@ export function SearchBar({
 }) {
   const { t } = useTranslation("candidateJobs")
   const keyword = useRef<HTMLInputElement>(null)
+  const [editing, setEditing] = useState(false)
+  const collapsed = !editing && Boolean(search.q || search.location)
+
+  const edit = () => {
+    flushSync(() => {
+      setEditing(true)
+    })
+    keyword.current?.focus()
+    keyword.current?.select()
+  }
+
+  const onKey = useEffectEvent((event: KeyboardEvent) => {
+    if (event.key !== "/" || event.metaKey || event.ctrlKey) return
+    if (typing(event.target) || document.querySelector("[role=dialog]")) return
+    event.preventDefault()
+    edit()
+  })
 
   useEffect(() => {
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key !== "/" || event.metaKey || event.ctrlKey) return
-      if (typing(event.target) || document.querySelector("[role=dialog]"))
-        return
-      event.preventDefault()
-      keyword.current?.focus()
-      keyword.current?.select()
+    const listener = (event: KeyboardEvent) => {
+      onKey(event)
     }
-    document.addEventListener("keydown", onKey)
+    document.addEventListener("keydown", listener)
     return () => {
-      document.removeEventListener("keydown", onKey)
+      document.removeEventListener("keydown", listener)
     }
   }, [])
 
   return (
-    <form
-      role="search"
-      key={`${search.q}|${search.location}`}
-      onSubmit={(event) => {
-        event.preventDefault()
-        const data = new FormData(event.currentTarget)
-        const read = (name: string) => {
-          const value = data.get(name)
-          return typeof value === "string" ? value.trim() : ""
-        }
-        onSearch({ q: read("q"), location: read("location") })
-      }}
-      className="flex flex-col gap-2 rounded-xl border bg-card p-2 sm:flex-row"
-    >
-      <InputGroup className="h-10 max-sm:h-11 sm:flex-2 sm:border-transparent sm:dark:bg-transparent">
-        <InputGroupAddon>
-          <Search />
-        </InputGroupAddon>
-        <InputGroupInput
-          ref={keyword}
-          name="q"
-          type="search"
-          aria-label={t("filters.keyword")}
-          aria-keyshortcuts="/"
-          placeholder={t("filters.keyword")}
-          defaultValue={search.q}
-          enterKeyHint="search"
-        />
-        <InputGroupAddon
-          align="inline-end"
-          aria-hidden="true"
-          className="max-lg:hidden"
+    <>
+      {collapsed && (
+        <button
+          type="button"
+          onClick={edit}
+          className="flex h-11 min-w-0 items-center gap-2.5 rounded-xl border bg-card px-3 text-start text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50 sm:hidden"
         >
-          <Kbd>/</Kbd>
-        </InputGroupAddon>
-      </InputGroup>
-      <span aria-hidden="true" className="my-2 w-px bg-border max-sm:hidden" />
-      <InputGroup className="h-10 max-sm:h-11 sm:flex-1 sm:border-transparent sm:dark:bg-transparent">
-        <InputGroupAddon>
-          <MapPin />
-        </InputGroupAddon>
-        <InputGroupInput
-          name="location"
-          aria-label={t("filters.location")}
-          placeholder={t("filters.location")}
-          defaultValue={search.location}
-          autoComplete="address-level2"
-          enterKeyHint="search"
-        />
-      </InputGroup>
-      <Button type="submit" className="h-10 px-5 max-sm:h-11">
-        {busy ? <Spinner /> : <Search className="sm:hidden" />}
-        {t("filters.search")}
-      </Button>
-    </form>
+          <Search
+            aria-hidden="true"
+            className="size-4 shrink-0 text-muted-foreground"
+          />
+          <span className="sr-only">{t("filters.editSearch")}: </span>
+          <bdi className="min-w-0 flex-1 truncate font-medium">
+            {[search.q, search.location].filter(Boolean).join(" · ")}
+          </bdi>
+          <PencilLine
+            aria-hidden="true"
+            className="size-4 shrink-0 text-muted-foreground"
+          />
+        </button>
+      )}
+      <SearchForm
+        key={`${search.q}|${search.location}`}
+        search={search}
+        busy={busy}
+        keywordRef={keyword}
+        className={collapsed ? "max-sm:hidden" : undefined}
+        onSearch={(change) => {
+          setEditing(false)
+          onSearch(change)
+        }}
+      />
+    </>
   )
 }

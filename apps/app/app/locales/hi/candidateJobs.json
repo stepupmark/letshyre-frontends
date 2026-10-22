@@ -11,7 +11,7 @@
     "lead": "हर आवेदन कहाँ तक पहुँचा और आगे क्या होगा।"
   },
   "filters": {
-    "keyword": "पद या कौशल",
+    "keyword": "पद, कौशल या कीवर्ड",
     "location": "शहर",
     "search": "खोजें",
     "title": "फ़िल्टर",
@@ -34,7 +34,17 @@
     "hideApplied": "जिन नौकरियों में आवेदन किया है उन्हें छिपाएं",
     "remove": "{{filter}} हटाएं",
     "clearFilters": "फ़िल्टर हटाएं",
-    "clear": "सब साफ़ करें"
+    "clear": "सब साफ़ करें",
+    "clearField": "{{field}} साफ़ करें",
+    "recent": "हाल की खोजें",
+    "editSearch": "खोज बदलें",
+    "fresher": "फ़्रेशर",
+    "experienceHintAny": "अपने अनुभव से मिलाने के लिए खींचें",
+    "experienceHint": "वे नौकरियां जिनकी सीमा में आपका अनुभव आता है",
+    "reset": "रीसेट",
+    "salaryUnit": "LPA",
+    "salaryChip": "{{amount}}+",
+    "salaryHint": "वे नौकरियां जो कम से कम इतना देती हैं"
   },
   "sort": {
     "label": "क्रम",

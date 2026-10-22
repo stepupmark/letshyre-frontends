@@ -11,7 +11,7 @@
     "lead": "Où en est chaque candidature et ce qui se passe ensuite."
   },
   "filters": {
-    "keyword": "Intitulé ou compétence",
+    "keyword": "Intitulé, compétence ou mot-clé",
     "location": "Ville",
     "search": "Rechercher",
     "title": "Filtres",
@@ -36,7 +36,17 @@
     "hideApplied": "Masquer les offres auxquelles j'ai postulé",
     "remove": "Retirer {{filter}}",
     "clearFilters": "Effacer les filtres",
-    "clear": "Tout effacer"
+    "clear": "Tout effacer",
+    "clearField": "Effacer {{field}}",
+    "recent": "Recherches récentes",
+    "editSearch": "Modifier la recherche",
+    "fresher": "Débutant",
+    "experienceHintAny": "Faites glisser selon vos années",
+    "experienceHint": "Offres dont la fourchette inclut vos années",
+    "reset": "Réinitialiser",
+    "salaryUnit": "LPA",
+    "salaryChip": "{{amount}}+",
+    "salaryHint": "Offres qui paient au moins ce montant"
   },
   "sort": {
     "label": "Trier par",

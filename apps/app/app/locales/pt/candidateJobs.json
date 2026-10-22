@@ -11,7 +11,7 @@
     "lead": "Em que pé está cada candidatura e o que vem depois."
   },
   "filters": {
-    "keyword": "Cargo ou habilidade",
+    "keyword": "Cargo, habilidade ou palavra-chave",
     "location": "Cidade",
     "search": "Buscar",
     "title": "Filtros",
@@ -36,7 +36,17 @@
     "hideApplied": "Ocultar vagas em que já me candidatei",
     "remove": "Remover {{filter}}",
     "clearFilters": "Limpar filtros",
-    "clear": "Limpar tudo"
+    "clear": "Limpar tudo",
+    "clearField": "Limpar {{field}}",
+    "recent": "Buscas recentes",
+    "editSearch": "Editar busca",
+    "fresher": "Sem experiência",
+    "experienceHintAny": "Arraste para combinar com seus anos",
+    "experienceHint": "Vagas cuja faixa inclui seus anos",
+    "reset": "Redefinir",
+    "salaryUnit": "LPA",
+    "salaryChip": "{{amount}}+",
+    "salaryHint": "Vagas que pagam pelo menos isso"
   },
   "sort": {
     "label": "Ordenar por",

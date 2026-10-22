@@ -11,7 +11,7 @@
     "lead": "각 지원의 진행 상황과 다음 단계예요."
   },
   "filters": {
-    "keyword": "직무 또는 역량",
+    "keyword": "직무, 기술 또는 키워드",
     "location": "도시",
     "search": "검색",
     "title": "필터",
@@ -32,7 +32,17 @@
     "hideApplied": "지원한 공고 숨기기",
     "remove": "{{filter}} 해제",
     "clearFilters": "필터 초기화",
-    "clear": "모두 지우기"
+    "clear": "모두 지우기",
+    "clearField": "{{field}} 지우기",
+    "recent": "최근 검색",
+    "editSearch": "검색 수정",
+    "fresher": "신입",
+    "experienceHintAny": "드래그해서 내 경력에 맞는 공고 찾기",
+    "experienceHint": "내 경력이 범위에 포함되는 공고",
+    "reset": "초기화",
+    "salaryUnit": "LPA",
+    "salaryChip": "{{amount}}+",
+    "salaryHint": "최소 이 금액을 주는 공고"
   },
   "sort": {
     "label": "정렬",

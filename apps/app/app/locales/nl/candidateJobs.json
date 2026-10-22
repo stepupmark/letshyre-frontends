@@ -11,7 +11,7 @@
     "lead": "Waar elke sollicitatie staat en wat er hierna gebeurt."
   },
   "filters": {
-    "keyword": "Functie of vaardigheid",
+    "keyword": "Functie, vaardigheid of trefwoord",
     "location": "Stad",
     "search": "Zoeken",
     "title": "Filters",
@@ -34,7 +34,17 @@
     "hideApplied": "Vacatures verbergen waarop ik heb gesolliciteerd",
     "remove": "{{filter}} verwijderen",
     "clearFilters": "Filters wissen",
-    "clear": "Alles wissen"
+    "clear": "Alles wissen",
+    "clearField": "{{field}} wissen",
+    "recent": "Recente zoekopdrachten",
+    "editSearch": "Zoekopdracht aanpassen",
+    "fresher": "Starter",
+    "experienceHintAny": "Sleep om vacatures bij je jaren te vinden",
+    "experienceHint": "Vacatures waarvan de range je jaren omvat",
+    "reset": "Herstellen",
+    "salaryUnit": "LPA",
+    "salaryChip": "{{amount}}+",
+    "salaryHint": "Vacatures die minstens dit betalen"
   },
   "sort": {
     "label": "Sorteren op",

@@ -11,7 +11,7 @@
     "lead": "Where each application stands and what happens next."
   },
   "filters": {
-    "keyword": "Job title or skill",
+    "keyword": "Title, skill or keyword",
     "location": "City",
     "search": "Search",
     "title": "Filters",
@@ -34,7 +34,17 @@
     "hideApplied": "Hide jobs I've applied to",
     "remove": "Remove {{filter}}",
     "clearFilters": "Clear filters",
-    "clear": "Clear all"
+    "clear": "Clear all",
+    "clearField": "Clear {{field}}",
+    "recent": "Recent searches",
+    "editSearch": "Edit search",
+    "fresher": "Fresher",
+    "experienceHintAny": "Drag to match jobs to your years",
+    "experienceHint": "Jobs whose range includes your years",
+    "reset": "Reset",
+    "salaryUnit": "LPA",
+    "salaryChip": "{{amount}}+",
+    "salaryHint": "Jobs that pay at least this"
   },
   "sort": {
     "label": "Sort by",

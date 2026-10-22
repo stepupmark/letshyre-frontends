@@ -11,7 +11,7 @@
     "lead": "A che punto è ogni candidatura e cosa succede dopo."
   },
   "filters": {
-    "keyword": "Ruolo o competenza",
+    "keyword": "Ruolo, competenza o parola chiave",
     "location": "Città",
     "search": "Cerca",
     "title": "Filtri",
@@ -36,7 +36,17 @@
     "hideApplied": "Nascondi le offerte a cui mi sono candidato",
     "remove": "Rimuovi {{filter}}",
     "clearFilters": "Cancella filtri",
-    "clear": "Cancella tutto"
+    "clear": "Cancella tutto",
+    "clearField": "Cancella {{field}}",
+    "recent": "Ricerche recenti",
+    "editSearch": "Modifica ricerca",
+    "fresher": "Neolaureato",
+    "experienceHintAny": "Trascina per trovare offerte adatte ai tuoi anni",
+    "experienceHint": "Offerte il cui intervallo include i tuoi anni",
+    "reset": "Reimposta",
+    "salaryUnit": "LPA",
+    "salaryChip": "{{amount}}+",
+    "salaryHint": "Offerte che pagano almeno questo"
   },
   "sort": {
     "label": "Ordina per",

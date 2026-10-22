@@ -11,7 +11,7 @@
     "lead": "Wo jede Bewerbung steht und was als Nächstes passiert."
   },
   "filters": {
-    "keyword": "Jobtitel oder Fähigkeit",
+    "keyword": "Titel, Skill oder Stichwort",
     "location": "Stadt",
     "search": "Suchen",
     "title": "Filter",
@@ -34,7 +34,17 @@
     "hideApplied": "Jobs ausblenden, auf die ich mich beworben habe",
     "remove": "{{filter}} entfernen",
     "clearFilters": "Filter zurücksetzen",
-    "clear": "Alle löschen"
+    "clear": "Alle löschen",
+    "clearField": "{{field}} leeren",
+    "recent": "Letzte Suchen",
+    "editSearch": "Suche bearbeiten",
+    "fresher": "Berufseinstieg",
+    "experienceHintAny": "Ziehen, um Jobs zu deinen Jahren zu finden",
+    "experienceHint": "Jobs, deren Spanne deine Jahre einschließt",
+    "reset": "Zurücksetzen",
+    "salaryUnit": "LPA",
+    "salaryChip": "{{amount}}+",
+    "salaryHint": "Jobs, die mindestens so viel zahlen"
   },
   "sort": {
     "label": "Sortieren nach",

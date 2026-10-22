@@ -131,6 +131,51 @@ export function loadSaved(): string[] {
   }
 }
 
+export interface RecentSearch {
+  q: string
+  location: string
+}
+
+const RECENT = "recent-searches:v1"
+const MAX_RECENT = 5
+
+const sameSearch = (a: RecentSearch, b: RecentSearch) =>
+  a.q.toLowerCase() === b.q.toLowerCase() &&
+  a.location.toLowerCase() === b.location.toLowerCase()
+
+export function loadRecent(): RecentSearch[] {
+  try {
+    const raw: unknown = JSON.parse(localStorage.getItem(RECENT) ?? "[]")
+    if (!Array.isArray(raw)) return []
+    return raw
+      .filter(
+        (item): item is RecentSearch =>
+          typeof item === "object" &&
+          item !== null &&
+          typeof (item as RecentSearch).q === "string" &&
+          typeof (item as RecentSearch).location === "string"
+      )
+      .slice(0, MAX_RECENT)
+  } catch {
+    return []
+  }
+}
+
+export function rememberSearch(entry: RecentSearch) {
+  const list = loadRecent()
+  if (!entry.q && !entry.location) return list
+  const next = [
+    entry,
+    ...list.filter((item) => !sameSearch(item, entry)),
+  ].slice(0, MAX_RECENT)
+  try {
+    localStorage.setItem(RECENT, JSON.stringify(next))
+  } catch {
+    // private mode: recent searches last until reload
+  }
+  return next
+}
+
 export function storeSaved(list: string[]) {
   try {
     localStorage.setItem(STORE, JSON.stringify(list.slice(0, MAX_SAVED)))

@@ -41,7 +41,15 @@ export function IndustryFilter({
     : [...picked, ...rest].slice(0, Math.max(INDUSTRIES_SHOWN, picked.length))
 
   return (
-    <Group title={t("filters.industry")}>
+    <Group
+      title={t("filters.industry")}
+      defaultOpen={search.industries.length > 0}
+      summary={
+        search.industries.length > 0
+          ? t("common:table.selected", { count: search.industries.length })
+          : null
+      }
+    >
       {industries.isPending ? (
         <div className="flex flex-col gap-2.5 py-1">
           {[0, 1, 2, 3].map((i) => (

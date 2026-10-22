@@ -11,7 +11,7 @@
     "lead": "En qué punto está cada candidatura y qué pasa después."
   },
   "filters": {
-    "keyword": "Puesto o habilidad",
+    "keyword": "Puesto, habilidad o palabra clave",
     "location": "Ciudad",
     "search": "Buscar",
     "title": "Filtros",
@@ -36,7 +36,17 @@
     "hideApplied": "Ocultar empleos a los que ya me postulé",
     "remove": "Quitar {{filter}}",
     "clearFilters": "Borrar filtros",
-    "clear": "Borrar todo"
+    "clear": "Borrar todo",
+    "clearField": "Borrar {{field}}",
+    "recent": "Búsquedas recientes",
+    "editSearch": "Editar búsqueda",
+    "fresher": "Sin experiencia",
+    "experienceHintAny": "Arrastra para ajustar a tus años",
+    "experienceHint": "Empleos cuyo rango incluye tus años",
+    "reset": "Restablecer",
+    "salaryUnit": "LPA",
+    "salaryChip": "{{amount}}+",
+    "salaryHint": "Empleos que pagan al menos esto"
   },
   "sort": {
     "label": "Ordenar por",
