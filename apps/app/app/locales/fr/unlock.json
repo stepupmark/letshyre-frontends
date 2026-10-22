@@ -52,7 +52,8 @@
       "pay": "Rémunération (LPA)",
       "notice": "Préavis",
       "interview": "Entretien",
-      "unlocked": "Débloqué"
+      "unlocked": "Débloqué",
+      "actions": "Actions"
     },
     "years_one": "{{count}} an",
     "years_many": "{{count}} ans",
@@ -61,12 +62,22 @@
     "days_many": "{{count}} jours",
     "days_other": "{{count}} jours",
     "verified": "Vérifié",
-    "profile": "Profil",
     "scorecard": "Grille",
     "emptyTitle": "Personne n'est encore débloqué",
     "emptyBody": "Débloquez un candidat depuis le vivier ou une liste de candidatures pour voir ses informations ici.",
     "toPool": "Ouvrir le vivier de candidats",
-    "compare": "Comparer",
-    "compareLimit": "Choisissez de 2 à {{max}} pour comparer"
+    "underYear": "Moins d'1 an",
+    "payRead": "Salaire actuel {{now}}, attendu {{next}}, en lakh par an",
+    "notShared": "non indiqué",
+    "payShort": "{{now}} → {{next}} LPA",
+    "unlockedOn": "Débloqué le {{date}}",
+    "band": {
+      "low": "Faible",
+      "partial": "Mitigé",
+      "strong": "Solide"
+    },
+    "compareHint": "Sélectionnez 2 à {{max}} candidats pour les comparer",
+    "errorTitle": "Les candidats débloqués ne se sont pas chargés.",
+    "errorBody": "Vos déblocages restent sur votre compte. Vérifiez votre connexion et réessayez."
   }
 }

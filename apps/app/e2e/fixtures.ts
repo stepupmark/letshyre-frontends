@@ -1,3 +1,4 @@
+import AxeBuilder from "@axe-core/playwright"
 import { readdirSync, readFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 
@@ -128,4 +129,18 @@ export function watch(page: Page) {
     })
   })
   return problems
+}
+
+export const axe = async (page: Page) => {
+  // a step mid-fade reads as low contrast
+  await page.waitForFunction(() =>
+    document
+      .getAnimations()
+      .every(
+        (a) =>
+          a.playState !== "running" ||
+          a.effect?.getTiming().iterations === Infinity
+      )
+  )
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
 }

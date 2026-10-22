@@ -172,10 +172,17 @@
     "criteria": "Criteria",
     "summary": "Summary",
     "overall": "Overall score",
-    "open": "Full scorecard",
     "highest": "Highest",
     "tooFewTitle": "Pick at least two candidates",
     "tooFewBody": "Select two or three unlocked candidates to compare their scorecards side by side.",
-    "back": "Back to unlocked candidates"
+    "back": "Back to unlocked candidates",
+    "go": "Compare",
+    "pickMore": "Pick one more",
+    "tooMany": "Up to {{max}} at a time",
+    "interviewedFor": "Interviewed for {{role}}",
+    "remove": "Remove {{name}} from the comparison",
+    "failed": "This scorecard didn't load.",
+    "errorTitle": "These scorecards didn't load.",
+    "errorBody": "Check your connection and try again."
   }
 }

@@ -46,17 +46,28 @@
       "pay": "연봉 (LPA)",
       "notice": "퇴직 통보",
       "interview": "인터뷰",
-      "unlocked": "잠금 해제일"
+      "unlocked": "잠금 해제일",
+      "actions": "작업"
     },
     "years_other": "{{count}}년",
     "days_other": "{{count}}일",
     "verified": "인증됨",
-    "profile": "프로필",
     "scorecard": "평가표",
     "emptyTitle": "아직 잠금 해제한 사람이 없어요",
     "emptyBody": "후보자 풀이나 지원자 목록에서 후보자를 잠금 해제하면 여기에 정보가 표시돼요.",
     "toPool": "후보자 풀 열기",
-    "compare": "비교",
-    "compareLimit": "비교하려면 2~{{max}}명 선택"
+    "underYear": "1년 미만",
+    "payRead": "현재 연봉 {{now}}, 희망 {{next}}, 연간 락 단위",
+    "notShared": "공개 안 함",
+    "payShort": "{{now}} → {{next}} LPA",
+    "unlockedOn": "{{date}} 열람",
+    "band": {
+      "low": "약함",
+      "partial": "보통",
+      "strong": "강함"
+    },
+    "compareHint": "2~{{max}}명을 선택하면 나란히 비교할 수 있습니다",
+    "errorTitle": "열람한 후보자를 불러오지 못했습니다.",
+    "errorBody": "열람 기록은 계정에 그대로 있습니다. 연결을 확인하고 다시 시도하세요."
   }
 }

@@ -105,8 +105,6 @@ export function Invoices() {
         pending={query.isFetching}
         error={query.isError}
         onRetry={() => void query.refetch()}
-        filtered={false}
-        onClearFilters={() => undefined}
         onOpen={(row) => {
           setOpenId(row.id)
         }}

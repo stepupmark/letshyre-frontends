@@ -175,10 +175,17 @@
     "criteria": "Criterio",
     "summary": "Riepilogo",
     "overall": "Punteggio complessivo",
-    "open": "Scheda completa",
     "highest": "Il più alto",
     "tooFewTitle": "Scegli almeno due candidati",
     "tooFewBody": "Seleziona due o tre candidati sbloccati per confrontare le loro schede affiancate.",
-    "back": "Torna ai candidati sbloccati"
+    "back": "Torna ai candidati sbloccati",
+    "go": "Confronta",
+    "pickMore": "Scegline un altro",
+    "tooMany": "Fino a {{max}} alla volta",
+    "interviewedFor": "Colloquio per {{role}}",
+    "remove": "Rimuovi {{name}} dal confronto",
+    "failed": "Questa scorecard non si è caricata.",
+    "errorTitle": "Queste scorecard non si sono caricate.",
+    "errorBody": "Controlla la connessione e riprova."
   }
 }

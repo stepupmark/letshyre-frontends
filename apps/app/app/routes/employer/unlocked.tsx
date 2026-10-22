@@ -1,31 +1,34 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { Button } from "@workspace/ui/components/button"
-import { Columns3, Link2 } from "lucide-react"
+import { Link2 } from "lucide-react"
 import { useCallback } from "react"
 import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { PageHeader } from "@/components/page-header"
-import { MAX_COMPARE, ShareDialog } from "@/features/candidate"
+import { CompareAction, MAX_COMPARE, ShareDialog } from "@/features/candidate"
 import { UnlockedList, type Unlocked } from "@/features/candidate-unlock"
 import { useJobOptions } from "@/features/employer-jobs"
-import { namespaces } from "@/lib/i18n"
 import { buttonLink } from "@/lib/button-link"
+import { namespaces } from "@/lib/i18n"
 
 export const handle = { crumb: "unlocked" } as const
 
-export const clientMiddleware = [namespaces(["unlock", "candidate"])]
+export const clientMiddleware = [
+  namespaces(["unlock", "candidate", "scorecard"]),
+]
 
 export default function UnlockedPage() {
   const { t } = useTranslation(["unlock", "common"])
   const jobs = useJobOptions()
+  // a new function each render would rebuild the table's columns
   const share = useCallback(
     (row: Unlocked) => (
       <ShareDialog
         unlockId={row.id}
         name={row.candidate_name ?? ""}
         jobs={jobs}
-        size="sm"
+        size="icon-sm"
+        className="max-md:size-11"
       />
     ),
     [jobs]
@@ -48,21 +51,20 @@ export default function UnlockedPage() {
       />
       <UnlockedList
         share={share}
-        bulkActions={(ids) =>
-          ids.length >= 2 && ids.length <= MAX_COMPARE ? (
-            <AppLink
-              to={`${href("/employer/candidates/compare")}?ids=${ids.map(encodeURIComponent).join(",")}`}
-              className={buttonLink({ size: "sm" })}
-            >
-              <Columns3 />
-              {t("list.compare")}
-            </AppLink>
-          ) : (
-            <Button size="sm" disabled>
-              {t("list.compareLimit", { max: MAX_COMPARE })}
-            </Button>
-          )
+        note={
+          <span className="text-xs">
+            {t("list.compareHint", { max: MAX_COMPARE })}
+          </span>
         }
+        selected={(rows) => (
+          <CompareAction
+            people={rows.map((row) => ({
+              id: row.id,
+              name: row.candidate_name ?? "",
+              photo: row.candidate_profile_photo,
+            }))}
+          />
+        )}
       />
     </div>
   )

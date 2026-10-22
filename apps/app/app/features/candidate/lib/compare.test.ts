@@ -1,11 +1,19 @@
 import { describe, expect, it } from "vitest"
 
-import { compareIds, leaders } from "./compare"
+import { compareHref, compareIds, leaders } from "./compare"
 
 describe("compareIds", () => {
   it("drops bad and repeated ids and caps the list", () => {
     expect(compareIds("a, b,a,../x,c,d")).toEqual(["a", "b", "c"])
     expect(compareIds(null)).toEqual([])
+  })
+})
+
+describe("compareHref", () => {
+  it("round-trips through compareIds", () => {
+    const url = new URL(compareHref(["12", "a-b"]), "https://app.test")
+    expect(url.pathname).toBe("/employer/candidates/compare")
+    expect(compareIds(url.searchParams.get("ids"))).toEqual(["12", "a-b"])
   })
 })
 

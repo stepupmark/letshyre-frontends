@@ -1,26 +1,9 @@
-import AxeBuilder from "@axe-core/playwright"
-
-import type { Page } from "@playwright/test"
-
-import { expect, reply, test } from "./fixtures"
+import { axe, expect, reply, test } from "./fixtures"
 
 const PNG = Buffer.from(
   "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",
   "base64"
 )
-const axe = async (page: Page) => {
-  // a step mid-fade reads as low contrast
-  await page.waitForFunction(() =>
-    document
-      .getAnimations()
-      .every(
-        (a) =>
-          a.playState !== "running" ||
-          a.effect?.getTiming().iterations === Infinity
-      )
-  )
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
-}
 const pdf = (name: string) => ({
   name,
   mimeType: "application/pdf",

@@ -49,19 +49,30 @@
       "pay": "Salaris (LPA)",
       "notice": "Opzegtermijn",
       "interview": "Interview",
-      "unlocked": "Ontgrendeld"
+      "unlocked": "Ontgrendeld",
+      "actions": "Acties"
     },
     "years_one": "{{count}} jr",
     "years_other": "{{count}} jr",
     "days_one": "{{count}} dag",
     "days_other": "{{count}} dagen",
     "verified": "Geverifieerd",
-    "profile": "Profiel",
     "scorecard": "Scorekaart",
     "emptyTitle": "Nog niemand ontgrendeld",
     "emptyBody": "Ontgrendel een kandidaat uit de pool of een sollicitantenlijst om de gegevens hier te zien.",
     "toPool": "Kandidatenpool openen",
-    "compare": "Vergelijken",
-    "compareLimit": "Kies 2 tot {{max}} om te vergelijken"
+    "underYear": "Minder dan 1 jr",
+    "payRead": "Huidig salaris {{now}}, verwacht {{next}}, in lakh per jaar",
+    "notShared": "niet gedeeld",
+    "payShort": "{{now}} → {{next}} LPA",
+    "unlockedOn": "Ontgrendeld op {{date}}",
+    "band": {
+      "low": "Zwak",
+      "partial": "Wisselend",
+      "strong": "Sterk"
+    },
+    "compareHint": "Kies er 2 tot {{max}} om naast elkaar te vergelijken",
+    "errorTitle": "Ontgrendelde kandidaten zijn niet geladen.",
+    "errorBody": "Je ontgrendelingen staan nog in je account. Controleer je verbinding en probeer het opnieuw."
   }
 }

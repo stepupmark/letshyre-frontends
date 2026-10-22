@@ -208,8 +208,6 @@ export function SharedLinks() {
         pending={query.isFetching}
         error={query.isError}
         onRetry={() => void query.refetch()}
-        filtered={false}
-        onClearFilters={() => undefined}
         empty={
           <EmptyState
             title={t("links.emptyTitle")}

@@ -169,10 +169,17 @@
     "criteria": "Kriteria",
     "summary": "Ringkasan",
     "overall": "Skor keseluruhan",
-    "open": "Kartu skor lengkap",
     "highest": "Tertinggi",
     "tooFewTitle": "Pilih minimal dua kandidat",
     "tooFewBody": "Pilih dua atau tiga kandidat yang sudah dibuka untuk membandingkan kartu skor mereka berdampingan.",
-    "back": "Kembali ke kandidat yang dibuka"
+    "back": "Kembali ke kandidat yang dibuka",
+    "go": "Bandingkan",
+    "pickMore": "Pilih satu lagi",
+    "tooMany": "Maksimal {{max}} sekaligus",
+    "interviewedFor": "Wawancara untuk {{role}}",
+    "remove": "Hapus {{name}} dari perbandingan",
+    "failed": "Scorecard ini gagal dimuat.",
+    "errorTitle": "Scorecard ini gagal dimuat.",
+    "errorBody": "Periksa koneksi lalu coba lagi."
   }
 }

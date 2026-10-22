@@ -175,10 +175,17 @@
     "criteria": "Criterio",
     "summary": "Resumen",
     "overall": "Puntuación general",
-    "open": "Evaluación completa",
     "highest": "Más alta",
     "tooFewTitle": "Elige al menos dos candidatos",
     "tooFewBody": "Selecciona dos o tres candidatos desbloqueados para comparar sus evaluaciones lado a lado.",
-    "back": "Volver a candidatos desbloqueados"
+    "back": "Volver a candidatos desbloqueados",
+    "go": "Comparar",
+    "pickMore": "Elige uno más",
+    "tooMany": "Hasta {{max}} a la vez",
+    "interviewedFor": "Entrevista para {{role}}",
+    "remove": "Quitar a {{name}} de la comparación",
+    "failed": "Esta scorecard no se cargó.",
+    "errorTitle": "Estas scorecards no se cargaron.",
+    "errorBody": "Revisa tu conexión e inténtalo de nuevo."
   }
 }

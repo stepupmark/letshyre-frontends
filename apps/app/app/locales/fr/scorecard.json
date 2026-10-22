@@ -175,10 +175,17 @@
     "criteria": "Critère",
     "summary": "Synthèse",
     "overall": "Score global",
-    "open": "Fiche complète",
     "highest": "Le plus élevé",
     "tooFewTitle": "Choisissez au moins deux candidats",
     "tooFewBody": "Sélectionnez deux ou trois candidats débloqués pour comparer leurs fiches côte à côte.",
-    "back": "Retour aux candidats débloqués"
+    "back": "Retour aux candidats débloqués",
+    "go": "Comparer",
+    "pickMore": "Choisissez-en un de plus",
+    "tooMany": "Jusqu'à {{max}} à la fois",
+    "interviewedFor": "Entretien pour {{role}}",
+    "remove": "Retirer {{name}} de la comparaison",
+    "failed": "Cette scorecard ne s'est pas chargée.",
+    "errorTitle": "Ces scorecards ne se sont pas chargées.",
+    "errorBody": "Vérifiez votre connexion et réessayez."
   }
 }

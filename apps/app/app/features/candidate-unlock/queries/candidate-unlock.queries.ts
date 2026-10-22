@@ -8,6 +8,8 @@ import {
   unlockedPageSchema,
 } from "../schemas/candidate-unlock.schema"
 
+export const UNLOCKED_KEY = ["employer", "unlocked"] as const
+
 export const interviewsQuery = (candidateId: string) =>
   queryOptions({
     queryKey: ["employer", "candidate-interviews", candidateId],
@@ -21,12 +23,10 @@ export const interviewsQuery = (candidateId: string) =>
 
 export const unlockedQuery = (page: number) =>
   queryOptions({
-    queryKey: ["employer", "unlocked", page],
+    queryKey: [...UNLOCKED_KEY, page],
     queryFn: async () =>
       unlockedPageSchema.parse(
         await api.get("user/v1/employer_unlock_candidate/", { query: { page } })
       ),
     staleTime: 30_000,
   })
-
-export const UNLOCKED_KEY = ["employer", "unlocked"] as const

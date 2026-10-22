@@ -1,5 +1,7 @@
 export { LinkUnavailable } from "./components/link-unavailable"
 export { OwnProfile } from "./components/own-profile/own-profile"
+export { CompareAction } from "./components/compare/compare-action"
+export { CompareSkeleton } from "./components/compare/compare-skeleton"
 export { CompareView } from "./components/compare/compare-view"
 export { CandidateProfileView } from "./components/profile/profile-view"
 export { RecordState } from "./components/record-state"

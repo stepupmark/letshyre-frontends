@@ -38,7 +38,8 @@ are in the design lab (`pnpm --filter app dev`, then `http://localhost:5174/_lab
   on the first six), the loading bar over stale results, and an action's button turning into its
   done state (Apply → Applied), the active-stage underline sliding between stages, an
   application stepper filling once on first view, the interview band scale and history bars filling
-  once on first view, and a row's chevron nudging toward its target on hover or focus.
+  once on first view, a row's chevron nudging toward its target on hover or focus, table rows
+  rising in on their first load, and picked candidates' avatars popping into the compare bar.
 - Reduced motion: values jump, only fades remain (`MotionConfig reducedMotion="user"`).
 - Cost: ~10 kB gzip with the first paint, the `domMax` features (~29 kB) load after it.
 

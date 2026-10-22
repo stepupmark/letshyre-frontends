@@ -172,10 +172,17 @@
     "criteria": "Criterium",
     "summary": "Overzicht",
     "overall": "Totaalscore",
-    "open": "Volledige scorekaart",
     "highest": "Hoogste",
     "tooFewTitle": "Kies minstens twee kandidaten",
     "tooFewBody": "Selecteer twee of drie ontgrendelde kandidaten om hun scorekaarten naast elkaar te vergelijken.",
-    "back": "Terug naar ontgrendelde kandidaten"
+    "back": "Terug naar ontgrendelde kandidaten",
+    "go": "Vergelijken",
+    "pickMore": "Kies er nog één",
+    "tooMany": "Maximaal {{max}} tegelijk",
+    "interviewedFor": "Interview voor {{role}}",
+    "remove": "{{name}} uit de vergelijking halen",
+    "failed": "Deze scorecard is niet geladen.",
+    "errorTitle": "Deze scorecards zijn niet geladen.",
+    "errorBody": "Controleer je verbinding en probeer het opnieuw."
   }
 }

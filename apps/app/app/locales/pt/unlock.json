@@ -52,7 +52,8 @@
       "pay": "Salário (LPA)",
       "notice": "Aviso prévio",
       "interview": "Entrevista",
-      "unlocked": "Desbloqueado"
+      "unlocked": "Desbloqueado",
+      "actions": "Ações"
     },
     "years_one": "{{count}} ano",
     "years_many": "{{count}} anos",
@@ -61,12 +62,22 @@
     "days_many": "{{count}} dias",
     "days_other": "{{count}} dias",
     "verified": "Verificado",
-    "profile": "Perfil",
     "scorecard": "Avaliação",
     "emptyTitle": "Ninguém desbloqueado ainda",
     "emptyBody": "Desbloqueie um candidato no banco ou numa lista de candidaturas para ver os dados dele aqui.",
     "toPool": "Abrir o banco de candidatos",
-    "compare": "Comparar",
-    "compareLimit": "Escolha de 2 a {{max}} para comparar"
+    "underYear": "Menos de 1 ano",
+    "payRead": "Salário atual {{now}}, esperado {{next}}, em lakh por ano",
+    "notShared": "não informado",
+    "payShort": "{{now}} → {{next}} LPA",
+    "unlockedOn": "Desbloqueado em {{date}}",
+    "band": {
+      "low": "Fraca",
+      "partial": "Irregular",
+      "strong": "Forte"
+    },
+    "compareHint": "Selecione de 2 a {{max}} para comparar lado a lado",
+    "errorTitle": "Os candidatos desbloqueados não carregaram.",
+    "errorBody": "Seus desbloqueios continuam na sua conta. Verifique a conexão e tente de novo."
   }
 }

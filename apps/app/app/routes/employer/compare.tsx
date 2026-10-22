@@ -1,6 +1,6 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { Skeleton } from "@workspace/ui/components/skeleton"
 import { useQueries } from "@tanstack/react-query"
+import { ArrowLeft } from "lucide-react"
 import { href, useSearchParams } from "react-router"
 
 import { AppLink } from "@/components/app-link"
@@ -9,6 +9,7 @@ import { PageHeader } from "@/components/page-header"
 import { LoadError } from "@/components/query-state"
 import {
   compareIds,
+  CompareSkeleton,
   CompareView,
   unlockedScorecardQuery,
 } from "@/features/candidate"
@@ -33,41 +34,51 @@ export default function ComparePage() {
   })
   const pending = enough && queries.some((q) => q.isPending)
   const skeleton = useDelayed(pending)
-  const failed = queries.some((q) => q.isError)
+  const failed = queries.length > 0 && queries.every((q) => q.isError)
+  const back = (
+    <AppLink
+      to={href("/employer/candidates/unlocked")}
+      className={buttonLink({ variant: "outline" })}
+    >
+      <ArrowLeft className="rtl:-scale-x-100" />
+      {t("compare.back")}
+    </AppLink>
+  )
 
   return (
     <div className="flex flex-col gap-6">
       <title>{`${t("compare.title")} · ${t("common:appName")}`}</title>
-      <PageHeader title={t("compare.title")} description={t("compare.lead")} />
+      <PageHeader
+        title={t("compare.title")}
+        description={t("compare.lead")}
+        actions={enough && back}
+      />
 
       {!enough ? (
         <EmptyState
           title={t("compare.tooFewTitle")}
           description={t("compare.tooFewBody")}
-          action={
-            <AppLink
-              to={href("/employer/candidates/unlocked")}
-              className={buttonLink({ variant: "outline" })}
-            >
-              {t("compare.back")}
-            </AppLink>
-          }
+          action={back}
         />
       ) : failed ? (
         <LoadError
+          title={t("compare.errorTitle")}
+          body={t("compare.errorBody")}
           onRetry={() => {
-            for (const q of queries) if (q.isError) void q.refetch()
+            for (const q of queries) void q.refetch()
           }}
-          retrying={queries.some((q) => q.isRefetching)}
+          retrying={queries.some((q) => q.isFetching)}
         />
       ) : pending ? (
-        skeleton && <Skeleton className="h-96 w-full rounded-2xl" />
+        skeleton && <CompareSkeleton count={ids.length} />
       ) : (
         <CompareView
-          items={ids.flatMap((id, i) => {
-            const report = queries[i]?.data
-            return report ? [{ id, report }] : []
-          })}
+          items={ids.map((id, i) => ({
+            id,
+            report: queries[i]?.data,
+            retry: () => void queries[i]?.refetch(),
+            retrying: queries[i]?.isFetching ?? false,
+          }))}
         />
       )}
     </div>

@@ -49,7 +49,7 @@ import { duration, ease } from "@/lib/motion"
 import { PAGE_SIZE, type TableParams } from "@workspace/api/table-params"
 
 import { NoMatches } from "./empty-state"
-import { LoadError } from "./query-state"
+import { LoadError, RefreshNote } from "./query-state"
 
 const typing = (target: EventTarget | null) =>
   target instanceof HTMLElement &&
@@ -59,28 +59,30 @@ export interface DataTableProps<T extends RowData> {
   columns: DataTableColumn<T>[]
   data: T[] | undefined
   total: number
-  /** when the API pages differently from PAGE_SIZE, or not at all */
+  // when the API pages differently from PAGE_SIZE, or not at all
   pageCount?: number
   getRowId: (row: T) => string
-  /** Accessible name of a row, e.g. the candidate's name. */
   rowLabel: (row: T) => string
   params: TableParams
   onParams: (change: { page?: number; sort?: TableParams["sort"] }) => void
   pending: boolean
   error: boolean
   onRetry: () => void
-  /** Shown when there is no data at all; filtered-to-nothing has its own message. */
+  loadError?: { title: string; body: string }
   empty: ReactNode
-  filtered: boolean
-  onClearFilters: () => void
-  /** The row's main action; also reachable with j/k and Enter. */
+  filtered?: boolean
+  onClearFilters?: () => void
+  // also reachable with j/k and Enter
   onOpen?: (row: T) => void
   bulkActions?: (selectedIds: string[], clear: () => void) => ReactNode
-  /** Card layout below the md breakpoint. */
-  mobileRow: (row: T) => ReactNode
+  note?: ReactNode
+  // cards below md; select is the row's checkbox when there are bulk actions
+  mobileRow: (row: T, select: ReactNode) => ReactNode
 }
 
 const EMPTY: never[] = []
+
+const stagger = (i: number) => `${Math.min(i, 6) * 30}ms`
 
 export function DataTable<T extends RowData>({
   columns,
@@ -94,11 +96,13 @@ export function DataTable<T extends RowData>({
   pending,
   error,
   onRetry,
+  loadError,
   empty,
-  filtered,
+  filtered = false,
   onClearFilters,
   onOpen,
   bulkActions,
+  note,
   mobileRow,
 }: DataTableProps<T>) {
   const { t } = useTranslation("common")
@@ -117,6 +121,8 @@ export function DataTable<T extends RowData>({
   const [compact, setCompact] = useState(false)
   const body = useRef<HTMLTableSectionElement>(null)
   const showSkeleton = useDelayed(pending && !data)
+  // rows rise in when they first arrive, not when cached data comes back
+  const [enter] = useState(!data)
 
   const sorting = useMemo<SortingState>(
     () => (params.sort ? [{ id: params.sort.id, desc: params.sort.desc }] : []),
@@ -200,10 +206,25 @@ export function DataTable<T extends RowData>({
     }
   }, [onOpen])
 
-  if (error && !data) return <LoadError onRetry={onRetry} />
-  if (!data) return showSkeleton ? <TableSkeleton /> : null
+  if (error && !data)
+    return (
+      <LoadError
+        onRetry={onRetry}
+        retrying={pending}
+        title={loadError?.title}
+        body={loadError?.body}
+      />
+    )
+  if (!data)
+    return showSkeleton ? (
+      <TableSkeleton columns={table.getVisibleLeafColumns().length} />
+    ) : null
   if (data.length === 0)
-    return filtered ? <NoMatches onClear={onClearFilters} /> : empty
+    return filtered && onClearFilters ? (
+      <NoMatches onClear={onClearFilters} />
+    ) : (
+      empty
+    )
 
   const pages = pageCount ?? Math.max(1, Math.ceil(total / PAGE_SIZE))
   const selected = Object.keys(rowSelection).filter((id) => rowSelection[id])
@@ -214,12 +235,18 @@ export function DataTable<T extends RowData>({
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="hidden items-center justify-between gap-2 md:flex">
-        <p className="text-sm text-muted-foreground tabular-nums">
+      {error && <RefreshNote onRetry={onRetry} retrying={pending} />}
+      <div className="flex min-h-7 items-center justify-between gap-2">
+        <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground tabular-nums">
           {t("table.results", { count: total })}
+          {note}
         </p>
         <DropdownMenu>
-          <DropdownMenuTrigger render={<Button variant="outline" size="sm" />}>
+          <DropdownMenuTrigger
+            render={
+              <Button variant="outline" size="sm" className="max-md:hidden" />
+            }
+          >
             <Settings2 />
             {t("table.columns")}
           </DropdownMenuTrigger>
@@ -307,11 +334,15 @@ export function DataTable<T extends RowData>({
             ))}
           </TableHeader>
           <TableBody ref={body}>
-            {table.getRowModel().rows.map((row) => (
+            {table.getRowModel().rows.map((row, i) => (
               <TableRow
                 key={row.id}
                 data-state={row.getIsSelected() ? "selected" : undefined}
-                className="has-focus-visible:bg-muted/50"
+                className={cn(
+                  "has-focus-visible:bg-muted/50 data-[state=selected]:bg-muted/50",
+                  enter && "settle"
+                )}
+                style={enter ? { transitionDelay: stagger(i) } : undefined}
               >
                 {row.getVisibleCells().map((cell) => (
                   <TableCell
@@ -328,8 +359,27 @@ export function DataTable<T extends RowData>({
       </div>
 
       <ul className="flex flex-col gap-2 md:hidden">
-        {data.map((row) => (
-          <li key={getRowId(row)}>{mobileRow(row)}</li>
+        {table.getRowModel().rows.map((row, i) => (
+          <li
+            key={row.id}
+            className={enter ? "settle" : undefined}
+            style={enter ? { transitionDelay: stagger(i) } : undefined}
+          >
+            {mobileRow(
+              row.original,
+              bulkActions && (
+                <Checkbox
+                  aria-label={t("table.selectRow", {
+                    name: rowLabel(row.original),
+                  })}
+                  checked={row.getIsSelected()}
+                  onCheckedChange={(checked) => {
+                    row.toggleSelected(checked)
+                  }}
+                />
+              )
+            )}
+          </li>
         ))}
       </ul>
 
@@ -404,24 +454,54 @@ export function DataTable<T extends RowData>({
   )
 }
 
-function TableSkeleton() {
+function TableSkeleton({ columns }: { columns: number }) {
   const { t } = useTranslation("common")
+  const cells = Array.from({ length: Math.max(columns - 2, 0) }, (_, i) => i)
   return (
     <div
       role="status"
       aria-label={t("state.loading")}
-      className="flex flex-col divide-y rounded-lg border"
+      className="flex flex-col gap-3"
     >
-      {[0, 1, 2, 3, 4, 5].map((i) => (
-        <div key={i} className="flex items-center gap-3 p-3">
-          <Skeleton className="size-8 rounded-full" />
-          <div className="flex flex-1 flex-col gap-1.5">
-            <Skeleton className="h-4 w-40" />
-            <Skeleton className="h-3 w-56" />
-          </div>
-          <Skeleton className="hidden h-5 w-24 md:block" />
+      <Skeleton className="my-1.5 h-4 w-24" />
+      <div className="hidden divide-y rounded-lg border md:block">
+        <div className="flex h-10 items-center gap-6 px-3">
+          <Skeleton className="h-3 w-20" />
+          {cells.map((i) => (
+            <Skeleton key={i} className="h-3 max-w-16 flex-1" />
+          ))}
         </div>
-      ))}
+        {[0, 1, 2, 3, 4, 5].map((row) => (
+          <div key={row} className="flex items-center gap-6 px-3 py-3.5">
+            <div className="flex w-48 shrink-0 items-center gap-3">
+              <Skeleton className="size-8 rounded-full" />
+              <div className="flex flex-1 flex-col gap-1.5">
+                <Skeleton className="h-3.5 w-28" />
+                <Skeleton className="h-3 w-20" />
+              </div>
+            </div>
+            {cells.map((i) => (
+              <Skeleton key={i} className="h-3.5 max-w-20 flex-1" />
+            ))}
+            <Skeleton className="ms-auto h-7 w-24" />
+          </div>
+        ))}
+      </div>
+      <ul className="flex flex-col gap-2 md:hidden">
+        {[0, 1, 2].map((row) => (
+          <li key={row} className="flex flex-col gap-3 rounded-lg border p-4">
+            <div className="flex items-center gap-3">
+              <Skeleton className="size-10 rounded-full" />
+              <div className="flex flex-1 flex-col gap-1.5">
+                <Skeleton className="h-3.5 w-32" />
+                <Skeleton className="h-3 w-24" />
+              </div>
+            </div>
+            <Skeleton className="h-3 w-3/4" />
+            <Skeleton className="h-11 w-full" />
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

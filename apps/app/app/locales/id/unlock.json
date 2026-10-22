@@ -46,17 +46,28 @@
       "pay": "Gaji (LPA)",
       "notice": "Pemberitahuan",
       "interview": "Wawancara",
-      "unlocked": "Dibuka"
+      "unlocked": "Dibuka",
+      "actions": "Tindakan"
     },
     "years_other": "{{count}} thn",
     "days_other": "{{count}} hari",
     "verified": "Terverifikasi",
-    "profile": "Profil",
     "scorecard": "Kartu skor",
     "emptyTitle": "Belum ada yang dibuka",
     "emptyBody": "Buka kandidat dari kumpulan atau daftar pelamar untuk melihat detailnya di sini.",
     "toPool": "Buka kumpulan kandidat",
-    "compare": "Bandingkan",
-    "compareLimit": "Pilih 2 sampai {{max}} untuk dibandingkan"
+    "underYear": "Kurang dari 1 thn",
+    "payRead": "Gaji saat ini {{now}}, harapan {{next}}, dalam lakh per tahun",
+    "notShared": "tidak dicantumkan",
+    "payShort": "{{now}} → {{next}} LPA",
+    "unlockedOn": "Dibuka {{date}}",
+    "band": {
+      "low": "Lemah",
+      "partial": "Campuran",
+      "strong": "Kuat"
+    },
+    "compareHint": "Pilih 2 sampai {{max}} untuk dibandingkan",
+    "errorTitle": "Kandidat yang dibuka gagal dimuat.",
+    "errorBody": "Kandidat yang Anda buka tetap ada di akun Anda. Periksa koneksi lalu coba lagi."
   }
 }

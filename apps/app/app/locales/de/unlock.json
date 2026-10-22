@@ -49,19 +49,30 @@
       "pay": "Gehalt (LPA)",
       "notice": "Kündigungsfrist",
       "interview": "Interview",
-      "unlocked": "Freigeschaltet"
+      "unlocked": "Freigeschaltet",
+      "actions": "Aktionen"
     },
     "years_one": "{{count}} J.",
     "years_other": "{{count}} J.",
     "days_one": "{{count}} Tag",
     "days_other": "{{count}} Tage",
     "verified": "Verifiziert",
-    "profile": "Profil",
     "scorecard": "Scorecard",
     "emptyTitle": "Noch niemand freigeschaltet",
     "emptyBody": "Schalten Sie einen Kandidaten im Pool oder in einer Bewerberliste frei, um seine Daten hier zu sehen.",
     "toPool": "Kandidatenpool öffnen",
-    "compare": "Vergleichen",
-    "compareLimit": "2 bis {{max}} zum Vergleichen wählen"
+    "underYear": "Unter 1 J.",
+    "payRead": "Aktuelles Gehalt {{now}}, erwartet {{next}}, in Lakh pro Jahr",
+    "notShared": "nicht angegeben",
+    "payShort": "{{now}} → {{next}} LPA",
+    "unlockedOn": "Freigeschaltet am {{date}}",
+    "band": {
+      "low": "Schwach",
+      "partial": "Gemischt",
+      "strong": "Stark"
+    },
+    "compareHint": "Wählen Sie 2 bis {{max}} für den direkten Vergleich",
+    "errorTitle": "Freigeschaltete Kandidaten wurden nicht geladen.",
+    "errorBody": "Ihre Freischaltungen bleiben in Ihrem Konto. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut."
   }
 }

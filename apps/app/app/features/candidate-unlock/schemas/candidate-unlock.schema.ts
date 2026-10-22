@@ -54,7 +54,16 @@ export const unlockedPageSchema = z.preprocess(
       : data
   },
   z.looseObject({
-    results: z.array(unlockedSchema).catch([]),
+    // one malformed row shouldn't make the whole list look empty
+    results: z
+      .array(z.unknown())
+      .catch([])
+      .transform((rows) =>
+        rows.flatMap((row) => {
+          const parsed = unlockedSchema.safeParse(row)
+          return parsed.success ? [parsed.data] : []
+        })
+      ),
     count: z.number().nullish(),
     total_pages: z.number().nullish(),
   })

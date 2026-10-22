@@ -49,19 +49,30 @@
       "pay": "Pay (LPA)",
       "notice": "Notice",
       "interview": "Interview",
-      "unlocked": "Unlocked"
+      "unlocked": "Unlocked",
+      "actions": "Actions"
     },
     "years_one": "{{count}} yr",
     "years_other": "{{count}} yrs",
     "days_one": "{{count}} day",
     "days_other": "{{count}} days",
     "verified": "Verified",
-    "profile": "Profile",
     "scorecard": "Scorecard",
     "emptyTitle": "No one unlocked yet",
     "emptyBody": "Unlock a candidate from the pool or an applicant list to see their details here.",
     "toPool": "Open the candidate pool",
-    "compare": "Compare",
-    "compareLimit": "Pick 2 to {{max}} to compare"
+    "underYear": "Under 1 yr",
+    "payRead": "Current pay {{now}}, expected {{next}}, in lakh per year",
+    "notShared": "not shared",
+    "payShort": "{{now}} → {{next}} LPA",
+    "unlockedOn": "Unlocked {{date}}",
+    "band": {
+      "low": "Weak",
+      "partial": "Mixed",
+      "strong": "Strong"
+    },
+    "compareHint": "Select 2 to {{max}} to compare side by side",
+    "errorTitle": "Unlocked candidates didn't load.",
+    "errorBody": "Your unlocks are still on your account. Check your connection and try again."
   }
 }

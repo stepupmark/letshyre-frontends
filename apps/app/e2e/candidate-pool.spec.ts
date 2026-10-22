@@ -76,7 +76,9 @@ test("an employer unlocks a candidate after seeing the cost and the balance left
   await panel.getByRole("link", { name: "See unlocked candidates" }).click()
   await expect(page).toHaveURL("/employer/candidates/unlocked")
   await expect(
-    page.getByText("Priya Nair").filter({ visible: true })
+    page
+      .getByRole("link", { name: "Priya Nair", exact: true })
+      .filter({ visible: true })
   ).toBeVisible()
 })
 

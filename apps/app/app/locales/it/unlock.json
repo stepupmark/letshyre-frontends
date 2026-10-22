@@ -52,7 +52,8 @@
       "pay": "Retribuzione (LPA)",
       "notice": "Preavviso",
       "interview": "Colloquio",
-      "unlocked": "Sbloccato"
+      "unlocked": "Sbloccato",
+      "actions": "Azioni"
     },
     "years_one": "{{count}} anno",
     "years_many": "{{count}} anni",
@@ -61,12 +62,22 @@
     "days_many": "{{count}} giorni",
     "days_other": "{{count}} giorni",
     "verified": "Verificato",
-    "profile": "Profilo",
     "scorecard": "Scheda",
     "emptyTitle": "Nessuno sbloccato per ora",
     "emptyBody": "Sblocca un candidato dal bacino o da un elenco di candidature per vederne i dati qui.",
     "toPool": "Apri il bacino di candidati",
-    "compare": "Confronta",
-    "compareLimit": "Scegline da 2 a {{max}} da confrontare"
+    "underYear": "Meno di 1 anno",
+    "payRead": "Retribuzione attuale {{now}}, attesa {{next}}, in lakh all'anno",
+    "notShared": "non indicato",
+    "payShort": "{{now}} → {{next}} LPA",
+    "unlockedOn": "Sbloccato il {{date}}",
+    "band": {
+      "low": "Debole",
+      "partial": "Altalenante",
+      "strong": "Solido"
+    },
+    "compareHint": "Seleziona da 2 a {{max}} candidati da confrontare",
+    "errorTitle": "I candidati sbloccati non si sono caricati.",
+    "errorBody": "I tuoi sblocchi restano nel tuo account. Controlla la connessione e riprova."
   }
 }

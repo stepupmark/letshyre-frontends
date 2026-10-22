@@ -172,10 +172,17 @@
     "criteria": "Kriterium",
     "summary": "Überblick",
     "overall": "Gesamtergebnis",
-    "open": "Vollständige Bewertung",
     "highest": "Höchster Wert",
     "tooFewTitle": "Wählen Sie mindestens zwei Kandidaten",
     "tooFewBody": "Wählen Sie zwei oder drei freigeschaltete Kandidaten, um ihre Bewertungen nebeneinander zu vergleichen.",
-    "back": "Zurück zu freigeschalteten Kandidaten"
+    "back": "Zurück zu freigeschalteten Kandidaten",
+    "go": "Vergleichen",
+    "pickMore": "Noch eine Person wählen",
+    "tooMany": "Bis zu {{max}} auf einmal",
+    "interviewedFor": "Interview für {{role}}",
+    "remove": "{{name}} aus dem Vergleich entfernen",
+    "failed": "Diese Scorecard wurde nicht geladen.",
+    "errorTitle": "Diese Scorecards wurden nicht geladen.",
+    "errorBody": "Prüfen Sie Ihre Verbindung und versuchen Sie es erneut."
   }
 }

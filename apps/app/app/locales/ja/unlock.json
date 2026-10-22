@@ -46,17 +46,28 @@
       "pay": "給与（LPA）",
       "notice": "退職予告",
       "interview": "面接",
-      "unlocked": "アンロック日"
+      "unlocked": "アンロック日",
+      "actions": "操作"
     },
     "years_other": "{{count}} 年",
     "days_other": "{{count}} 日",
     "verified": "確認済み",
-    "profile": "プロフィール",
     "scorecard": "スコアカード",
     "emptyTitle": "まだ誰もアンロックしていません",
     "emptyBody": "候補者プールや応募者一覧から候補者をアンロックすると、ここに詳細が表示されます。",
     "toPool": "候補者プールを開く",
-    "compare": "比較",
-    "compareLimit": "比較するには2〜{{max}}人を選択"
+    "underYear": "1年未満",
+    "payRead": "現在の年収 {{now}}、希望 {{next}}（ラク／年）",
+    "notShared": "非公開",
+    "payShort": "{{now}} → {{next}} LPA",
+    "unlockedOn": "{{date}}に開示",
+    "band": {
+      "low": "弱い",
+      "partial": "ばらつきあり",
+      "strong": "強い"
+    },
+    "compareHint": "2〜{{max}}人を選ぶと並べて比較できます",
+    "errorTitle": "開示済みの候補者を読み込めませんでした。",
+    "errorBody": "開示した候補者はアカウントに残っています。接続を確認してもう一度お試しください。"
   }
 }

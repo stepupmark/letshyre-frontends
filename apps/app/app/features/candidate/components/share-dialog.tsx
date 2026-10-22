@@ -19,6 +19,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@workspace/ui/components/select"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@workspace/ui/components/tooltip"
 import { useMutation } from "@tanstack/react-query"
 import { CalendarClock, Eye, Share2 } from "lucide-react"
 import { useId, useMemo, useState } from "react"
@@ -54,15 +59,21 @@ export function ShareDialog({
   name,
   jobs,
   size = "default",
+  className,
 }: {
   unlockId: string
   name: string
   jobs: JobOption[] | undefined
-  size?: "default" | "sm"
+  size?: "default" | "sm" | "icon-sm"
+  className?: string
 }) {
   const { t } = useTranslation("candidate")
   const [open, setOpen] = useState(false)
   const [link, setLink] = useState<ShareLink | null>(null)
+  const start = () => {
+    setLink(null)
+    setOpen(true)
+  }
 
   return (
     <Dialog
@@ -72,17 +83,34 @@ export function ShareDialog({
         if (next) setLink(null)
       }}
     >
-      <Button
-        variant="outline"
-        size={size}
-        onClick={() => {
-          setLink(null)
-          setOpen(true)
-        }}
-      >
-        <Share2 />
-        {t("share.button")}
-      </Button>
+      {size === "icon-sm" ? (
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <Button
+                variant="outline"
+                size="icon-sm"
+                className={className}
+                aria-label={t("share.title", { name })}
+                onClick={start}
+              />
+            }
+          >
+            <Share2 />
+          </TooltipTrigger>
+          <TooltipContent>{t("share.button")}</TooltipContent>
+        </Tooltip>
+      ) : (
+        <Button
+          variant="outline"
+          size={size}
+          className={className}
+          onClick={start}
+        >
+          <Share2 />
+          {t("share.button")}
+        </Button>
+      )}
       <DialogContent>
         {link ? (
           <Created link={link} name={name} />

@@ -1,6 +1,4 @@
-import AxeBuilder from "@axe-core/playwright"
-
-import { expect, fixture, reply, test } from "./fixtures"
+import { axe, expect, fixture, reply, test } from "./fixtures"
 
 test("an employer reads an unlocked candidate and shares their scorecard", async ({
   page,
@@ -25,7 +23,7 @@ test("an employer reads an unlocked candidate and shares their scorecard", async
   await signInAs("employer")
   await page.goto("/employer/candidates/unlocked")
   await page
-    .getByRole("link", { name: "Profile" })
+    .getByRole("link", { name: "Priya Nair", exact: true })
     .filter({ visible: true })
     .click()
 
@@ -39,12 +37,12 @@ test("an employer reads an unlocked candidate and shares their scorecard", async
   await expect(page.getByRole("link", { name: "+91 9876543210" })).toBeVisible()
   // stored as a JSON string by older profiles
   await expect(page.getByText("2022 – now")).toBeVisible()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 
   await page.getByRole("link", { name: "Scorecard" }).click()
   await expect(page).toHaveURL("/employer/candidates/31/scorecard")
   await expect(page.getByRole("heading", { name: "Recording" })).toBeVisible()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 
   await page.getByRole("button", { name: "Share" }).click()
   const dialog = page.getByRole("dialog", {
@@ -74,6 +72,76 @@ test("an employer reads an unlocked candidate and shares their scorecard", async
     max_views: 5,
     match_engine: "v1",
   })
+})
+
+test("an employer picks three unlocked candidates, compares them and drops one", async ({
+  page,
+  api,
+  signInAs,
+}) => {
+  const list = fixture("user.v1.employer_unlock_candidate.json")
+  const report = fixture("user.v1.employer_unlock_candidate.31.scorecard.json")
+  const data = list.data as { results: Record<string, unknown>[] }
+  const people = [
+    { id: 31, candidate_name: "Priya Nair", ai_overall_score: 78 },
+    { id: 32, candidate_name: "Rahul Verma", ai_overall_score: 52 },
+    { id: 33, candidate_name: "Meera Iyer", ai_overall_score: 31 },
+  ]
+  const scorecard = (name: string, overall: number) => ({
+    ...report,
+    data: {
+      ...(report.data as object),
+      candidate_name: name,
+      overall_score: overall,
+    },
+  })
+  await api({
+    "GET /user/v1/employer_unlock_candidate/": {
+      ...list,
+      data: {
+        ...data,
+        count: 3,
+        results: people.map((p) => ({ ...data.results[0], ...p })),
+      },
+    },
+    "GET /user/v1/employer_unlock_candidate/32/scorecard/": scorecard(
+      "Rahul Verma",
+      52
+    ),
+    "GET /user/v1/employer_unlock_candidate/33/scorecard/": scorecard(
+      "Meera Iyer",
+      31
+    ),
+  })
+  await signInAs("employer")
+  await page.goto("/employer/candidates/unlocked")
+
+  const bar = page.getByRole("toolbar", { name: "Bulk actions" })
+  for (const p of people) {
+    await page
+      .getByRole("checkbox", { name: `Select ${p.candidate_name}` })
+      .filter({ visible: true })
+      .check()
+    if (p.id === 31) await expect(bar.getByText("Pick one more")).toBeVisible()
+  }
+  await axe(page)
+  await bar.getByRole("link", { name: "Compare" }).click()
+
+  await expect(page).toHaveURL("/employer/candidates/compare?ids=31,32,33")
+  const table = page.getByRole("table", { name: "Compare candidates" })
+  await expect(
+    table.getByRole("link", { name: "Rahul Verma", exact: true })
+  ).toBeVisible()
+  const overall = table.getByRole("row", { name: /^Overall score/ })
+  await expect(overall.getByRole("cell").first()).toContainText("78Highest")
+  await axe(page)
+
+  await table
+    .getByRole("link", { name: "Remove Meera Iyer from the comparison" })
+    .click()
+  await expect(page).toHaveURL("/employer/candidates/compare?ids=31,32")
+  await expect(table.getByRole("link", { name: "Meera Iyer" })).toHaveCount(0)
+  await expect(table.getByRole("link", { name: /^Remove/ })).toHaveCount(0)
 })
 
 test("a candidate reads their own scorecard in their own words", async ({
@@ -116,7 +184,7 @@ test("a candidate sees which scorecard employers get and opens an earlier one", 
   const earlier = page.getByRole("region", { name: "Earlier interviews" })
   await expect(earlier.getByRole("link")).toHaveCount(2)
   await expect(earlier.getByText("Not scored")).toBeVisible()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 
   await earlier.getByRole("link", { name: /UI engineer/ }).click()
   await expect(page).toHaveURL("/employee/scorecards/4")
