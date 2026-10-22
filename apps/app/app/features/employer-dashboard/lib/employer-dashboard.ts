@@ -21,8 +21,8 @@ export function attentionOf({
   return items
 }
 
-export type StepKey = "account" | "company" | "job" | "team"
-export type StepState = "done" | "waiting" | "todo" | "fix"
+type StepKey = "account" | "company" | "job" | "team"
+type StepState = "done" | "waiting" | "todo" | "fix"
 
 export interface Step {
   key: StepKey

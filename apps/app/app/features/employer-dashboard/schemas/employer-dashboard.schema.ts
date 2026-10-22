@@ -9,6 +9,4 @@ export const cardsSchema = z.looseObject({
   credits: z.looseObject({ usage_percent: count, available: count }).nullish(),
 })
 
-export type Cards = z.infer<typeof cardsSchema>
-
 export const teamSchema = z.looseObject({ count })
