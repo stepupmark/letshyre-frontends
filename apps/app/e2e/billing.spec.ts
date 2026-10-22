@@ -1,7 +1,6 @@
-import AxeBuilder from "@axe-core/playwright"
 import type { Page } from "@playwright/test"
 
-import { expect, reply, test } from "./fixtures"
+import { axe, expect, reply, test } from "./fixtures"
 
 const ORDER = {
   razorpay_key: "rzp_test_key",
@@ -68,8 +67,13 @@ test("an employer tops up, pays through Razorpay and goes back to the candidate"
   await page.goto(`/employer/billing?next=${encodeURIComponent(back)}`)
 
   await expect(page.getByRole("heading", { name: "Business" })).toBeVisible()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
-  await page.getByRole("button", { name: "Buy 25 credits" }).click()
+  await axe(page)
+  await page.getByRole("radio", { name: /^10 credits/ }).check()
+  await expect(
+    page.getByRole("button", { name: /^Buy 10 credits/ })
+  ).toContainText("₹490 + GST")
+  await page.getByRole("radio", { name: /^25 credits/ }).check()
+  await page.getByRole("button", { name: /^Buy 25 credits/ }).click()
 
   const dialog = page.getByRole("dialog", { name: "25 credits" })
   await expect(dialog.getByText("₹1,445.50", { exact: true })).toBeVisible()
@@ -123,12 +127,44 @@ test("a changed price stops the payment before Razorpay opens", async ({
   ).toEqual([])
 })
 
+test("buying pauses with a retry when prices don't load", async ({
+  page,
+  api,
+  signInAs,
+}) => {
+  let fail = true
+  await api({
+    "GET /payment/v1/public/calculate-token-cost/": (route) =>
+      fail
+        ? reply(route, { success: false }, 500)
+        : reply(route, { success: true, data: { cost_per_token: "49.00" } }),
+  })
+  await signInAs("employer")
+  await page.goto("/employer/billing")
+
+  await expect(
+    page.getByText("Prices didn't load, so buying is paused.")
+  ).toBeVisible()
+  await expect(
+    page.getByRole("button", { name: /^Buy \d+ credits/ })
+  ).toHaveCount(0)
+  fail = false
+  await page.getByRole("button", { name: "Try again" }).click()
+  await expect(
+    page.getByRole("button", { name: /^Buy 25 credits/ })
+  ).toContainText("₹1,225 + GST")
+})
+
 test("invoices list paid purchases and open a receipt", async ({
   page,
   signInAs,
 }) => {
   await signInAs("employer")
   await page.goto("/employer/invoices")
+  await expect(page.getByText("2 results")).toBeVisible()
+  await expect(
+    page.getByText("₹5,782.00 spent · 110 credits bought")
+  ).toBeVisible()
 
   await page
     .getByRole("button", { name: /Business plan/ })
@@ -141,5 +177,5 @@ test("invoices list paid purchases and open a receipt", async ({
     "href",
     /^https?:\/\/[^/]+\/media\/invoices\/LH-2026-0042\.pdf$/
   )
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 })

@@ -14,18 +14,21 @@
     "once": "+ GST, 일회 결제",
     "credits_other": "크레딧 {{count}}개",
     "rate": "크레딧당 {{rate}}",
-    "seats_other": "팀 좌석 {{count}}개",
     "unlocks": "연락처, 평가표, 녹화",
     "noExpiry": "크레딧 만료 없음",
     "topUps": "언제든 충전",
-    "buy": "{{name}} 구매"
+    "buy": "{{name}} 구매",
+    "errorTitle": "요금제를 불러오지 못했습니다.",
+    "errorBody": "아래 충전은 그대로 이용할 수 있습니다. 연결을 확인하고 다시 시도하세요.",
+    "loading": "요금제를 불러오는 중",
+    "save": "충전보다 {{percent}}% 저렴"
   },
   "topUps": {
     "title": "충전",
     "lead": "필요할 때마다 잔액에 크레딧을 추가하세요.",
     "credits_other": "크레딧 {{count}}개",
-    "buy": "구매",
-    "buyLabel_other": "크레딧 {{count}}개 구매"
+    "buyLabel_other": "크레딧 {{count}}개 구매",
+    "priceError": "가격을 불러오지 못해 구매가 일시 중지되었습니다."
   },
   "unavailable": {
     "title": "이 플랜은 이용할 수 없어요",
@@ -109,13 +112,18 @@
       "date": "날짜",
       "purchase": "구매",
       "number": "인보이스",
-      "total": "합계"
+      "total": "합계",
+      "pdf": "PDF"
     },
     "plan": "{{name}} 플랜",
     "topUp": "충전",
     "preparing": "준비 중",
     "emptyTitle": "아직 인보이스가 없어요",
-    "emptyBody": "첫 구매가 영수증과 함께 여기에 표시돼요."
+    "emptyBody": "첫 구매가 영수증과 함께 여기에 표시돼요.",
+    "spent": "{{amount}} 결제",
+    "errorTitle": "인보이스를 불러오지 못했습니다.",
+    "errorBody": "구매 내역과 크레딧은 안전합니다. 연결을 확인하고 다시 시도하세요.",
+    "creditsBought_other": "크레딧 {{count}}개 구매"
   },
   "receipt": {
     "title": "영수증",

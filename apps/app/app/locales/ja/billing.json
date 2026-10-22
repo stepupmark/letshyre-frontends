@@ -14,18 +14,21 @@
     "once": "+ GST、一括払い",
     "credits_other": "{{count}} クレジット",
     "rate": "1クレジットあたり {{rate}}",
-    "seats_other": "チーム {{count}} 席",
     "unlocks": "連絡先、スコアカード、録画",
     "noExpiry": "クレジットに有効期限なし",
     "topUps": "いつでも追加購入",
-    "buy": "{{name}} を購入"
+    "buy": "{{name}} を購入",
+    "errorTitle": "プランを読み込めませんでした。",
+    "errorBody": "下のチャージは引き続き使えます。接続を確認してもう一度お試しください。",
+    "loading": "プランを読み込み中",
+    "save": "チャージより{{percent}}%お得"
   },
   "topUps": {
     "title": "追加購入",
     "lead": "必要なときにいつでも残高にクレジットを追加できます。",
     "credits_other": "{{count}} クレジット",
-    "buy": "購入",
-    "buyLabel_other": "{{count}} クレジットを購入"
+    "buyLabel_other": "{{count}} クレジットを購入",
+    "priceError": "価格を読み込めなかったため、購入を一時停止しています。"
   },
   "unavailable": {
     "title": "このプランは利用できません",
@@ -109,13 +112,18 @@
       "date": "日付",
       "purchase": "購入内容",
       "number": "請求書",
-      "total": "合計"
+      "total": "合計",
+      "pdf": "PDF"
     },
     "plan": "{{name}} プラン",
     "topUp": "追加購入",
     "preparing": "作成中",
     "emptyTitle": "請求書はまだありません",
-    "emptyBody": "初めての購入が、領収書と一緒にここに表示されます。"
+    "emptyBody": "初めての購入が、領収書と一緒にここに表示されます。",
+    "spent": "{{amount}}を支払い済み",
+    "errorTitle": "請求書を読み込めませんでした。",
+    "errorBody": "購入履歴とクレジットは安全です。接続を確認してもう一度お試しください。",
+    "creditsBought_other": "{{count}}クレジット購入"
   },
   "receipt": {
     "title": "領収書",

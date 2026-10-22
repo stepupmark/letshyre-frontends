@@ -15,21 +15,23 @@
     "credits_one": "{{count}} Credit",
     "credits_other": "{{count}} Credits",
     "rate": "{{rate}} pro Credit",
-    "seats_one": "{{count}} Teamplatz",
-    "seats_other": "{{count}} Teamplätze",
     "unlocks": "Kontaktdaten, Scorecards und Aufzeichnungen",
     "noExpiry": "Credits verfallen nie",
     "topUps": "Jederzeit aufladen",
-    "buy": "{{name}} kaufen"
+    "buy": "{{name}} kaufen",
+    "errorTitle": "Die Tarife wurden nicht geladen.",
+    "errorBody": "Aufladungen unten funktionieren weiterhin. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "loading": "Tarife werden geladen",
+    "save": "{{percent}} % günstiger als Aufladungen"
   },
   "topUps": {
     "title": "Aufladen",
     "lead": "Fügen Sie Ihrem Guthaben Credits hinzu, wann immer Sie mehr brauchen.",
     "credits_one": "{{count}} Credit",
     "credits_other": "{{count}} Credits",
-    "buy": "Kaufen",
     "buyLabel_one": "{{count}} Credit kaufen",
-    "buyLabel_other": "{{count}} Credits kaufen"
+    "buyLabel_other": "{{count}} Credits kaufen",
+    "priceError": "Die Preise wurden nicht geladen, daher ist der Kauf pausiert."
   },
   "unavailable": {
     "title": "Dieses Paket ist nicht verfügbar",
@@ -118,13 +120,19 @@
       "date": "Datum",
       "purchase": "Kauf",
       "number": "Rechnung",
-      "total": "Gesamt"
+      "total": "Gesamt",
+      "pdf": "PDF"
     },
     "plan": "Paket {{name}}",
     "topUp": "Aufladung",
     "preparing": "Wird erstellt",
     "emptyTitle": "Noch keine Rechnungen",
-    "emptyBody": "Ihr erster Kauf erscheint hier mit seinem Beleg."
+    "emptyBody": "Ihr erster Kauf erscheint hier mit seinem Beleg.",
+    "spent": "{{amount}} ausgegeben",
+    "errorTitle": "Ihre Rechnungen wurden nicht geladen.",
+    "errorBody": "Ihre Käufe und Credits sind sicher. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "creditsBought_one": "{{count}} Credit gekauft",
+    "creditsBought_other": "{{count}} Credits gekauft"
   },
   "receipt": {
     "title": "Beleg",

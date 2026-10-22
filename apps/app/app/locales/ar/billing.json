@@ -19,16 +19,14 @@
     "credits_many": "{{count}} وحدة",
     "credits_other": "{{count}} وحدة",
     "rate": "{{rate}} لكل وحدة",
-    "seats_zero": "لا مقاعد للفريق",
-    "seats_one": "مقعد واحد للفريق",
-    "seats_two": "مقعدان للفريق",
-    "seats_few": "{{count}} مقاعد للفريق",
-    "seats_many": "{{count}} مقعدًا للفريق",
-    "seats_other": "{{count}} مقعد للفريق",
     "unlocks": "بيانات الاتصال وبطاقات التقييم والتسجيلات",
     "noExpiry": "لا تنتهي صلاحية الرصيد",
     "topUps": "اشحن في أي وقت",
-    "buy": "شراء {{name}}"
+    "buy": "شراء {{name}}",
+    "errorTitle": "لم يتم تحميل الخطط.",
+    "errorBody": "لا تزال الشحنات الإضافية أدناه تعمل. تحقق من اتصالك وحاول مرة أخرى.",
+    "loading": "جارٍ تحميل الخطط",
+    "save": "وفّر {{percent}}٪ مقارنةً بالشحن"
   },
   "topUps": {
     "title": "شحن الرصيد",
@@ -39,13 +37,13 @@
     "credits_few": "{{count}} وحدات",
     "credits_many": "{{count}} وحدة",
     "credits_other": "{{count}} وحدة",
-    "buy": "شراء",
     "buyLabel_zero": "شراء {{count}} وحدة",
     "buyLabel_one": "شراء وحدة واحدة",
     "buyLabel_two": "شراء وحدتين",
     "buyLabel_few": "شراء {{count}} وحدات",
     "buyLabel_many": "شراء {{count}} وحدة",
-    "buyLabel_other": "شراء {{count}} وحدة"
+    "buyLabel_other": "شراء {{count}} وحدة",
+    "priceError": "لم يتم تحميل الأسعار، لذا توقف الشراء مؤقتًا."
   },
   "unavailable": {
     "title": "هذه الباقة غير متاحة",
@@ -154,13 +152,23 @@
       "date": "التاريخ",
       "purchase": "الشراء",
       "number": "الفاتورة",
-      "total": "الإجمالي"
+      "total": "الإجمالي",
+      "pdf": "PDF"
     },
     "plan": "باقة {{name}}",
     "topUp": "شحن",
     "preparing": "قيد الإعداد",
     "emptyTitle": "لا فواتير بعد",
-    "emptyBody": "ستظهر أول عملية شراء هنا مع إيصالها."
+    "emptyBody": "ستظهر أول عملية شراء هنا مع إيصالها.",
+    "spent": "أُنفق {{amount}}",
+    "errorTitle": "لم يتم تحميل فواتيرك.",
+    "errorBody": "مشترياتك ورصيدك بأمان. تحقق من اتصالك وحاول مرة أخرى.",
+    "creditsBought_zero": "لم تُشترَ أي رصيد",
+    "creditsBought_one": "رصيد واحد مُشترى",
+    "creditsBought_two": "رصيدان مُشتريان",
+    "creditsBought_few": "{{count}} أرصدة مُشتراة",
+    "creditsBought_many": "{{count}} رصيدًا مُشترى",
+    "creditsBought_other": "{{count}} رصيد مُشترى"
   },
   "receipt": {
     "title": "الإيصال",

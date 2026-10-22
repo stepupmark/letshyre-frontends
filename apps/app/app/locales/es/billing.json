@@ -16,13 +16,14 @@
     "credits_many": "{{count}} créditos",
     "credits_other": "{{count}} créditos",
     "rate": "{{rate}} por crédito",
-    "seats_one": "{{count}} plaza de equipo",
-    "seats_many": "{{count}} plazas de equipo",
-    "seats_other": "{{count}} plazas de equipo",
     "unlocks": "Datos de contacto, fichas y grabaciones",
     "noExpiry": "Los créditos no caducan",
     "topUps": "Recargue cuando quiera",
-    "buy": "Comprar {{name}}"
+    "buy": "Comprar {{name}}",
+    "errorTitle": "Los planes no se cargaron.",
+    "errorBody": "Las recargas de abajo siguen funcionando. Revisa tu conexión e inténtalo de nuevo.",
+    "loading": "Cargando planes",
+    "save": "ahorra un {{percent}} % frente a recargas"
   },
   "topUps": {
     "title": "Recargar",
@@ -30,10 +31,10 @@
     "credits_one": "{{count}} crédito",
     "credits_many": "{{count}} créditos",
     "credits_other": "{{count}} créditos",
-    "buy": "Comprar",
     "buyLabel_one": "Comprar {{count}} crédito",
     "buyLabel_many": "Comprar {{count}} créditos",
-    "buyLabel_other": "Comprar {{count}} créditos"
+    "buyLabel_other": "Comprar {{count}} créditos",
+    "priceError": "Los precios no se cargaron, así que la compra está en pausa."
   },
   "unavailable": {
     "title": "Este plan no está disponible",
@@ -127,13 +128,20 @@
       "date": "Fecha",
       "purchase": "Compra",
       "number": "Factura",
-      "total": "Total"
+      "total": "Total",
+      "pdf": "PDF"
     },
     "plan": "Plan {{name}}",
     "topUp": "Recarga",
     "preparing": "En preparación",
     "emptyTitle": "Aún no hay facturas",
-    "emptyBody": "Su primera compra aparecerá aquí con su recibo."
+    "emptyBody": "Su primera compra aparecerá aquí con su recibo.",
+    "spent": "{{amount}} gastados",
+    "errorTitle": "Tus facturas no se cargaron.",
+    "errorBody": "Tus compras y créditos están a salvo. Revisa tu conexión e inténtalo de nuevo.",
+    "creditsBought_one": "{{count}} crédito comprado",
+    "creditsBought_many": "{{count}} créditos comprados",
+    "creditsBought_other": "{{count}} créditos comprados"
   },
   "receipt": {
     "title": "Recibo",

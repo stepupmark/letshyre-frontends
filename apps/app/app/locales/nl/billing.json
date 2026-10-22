@@ -15,21 +15,23 @@
     "credits_one": "{{count}} credit",
     "credits_other": "{{count}} credits",
     "rate": "{{rate}} per credit",
-    "seats_one": "{{count}} teamplek",
-    "seats_other": "{{count}} teamplekken",
     "unlocks": "Contactgegevens, scorekaarten en opnames",
     "noExpiry": "Credits verlopen nooit",
     "topUps": "Altijd bij te kopen",
-    "buy": "{{name}} kopen"
+    "buy": "{{name}} kopen",
+    "errorTitle": "De abonnementen zijn niet geladen.",
+    "errorBody": "Opwaarderen hieronder werkt nog. Controleer je verbinding en probeer het opnieuw.",
+    "loading": "Abonnementen laden",
+    "save": "{{percent}}% voordeliger dan opwaarderen"
   },
   "topUps": {
     "title": "Bijkopen",
     "lead": "Voeg credits toe aan uw saldo wanneer u er meer nodig hebt.",
     "credits_one": "{{count}} credit",
     "credits_other": "{{count}} credits",
-    "buy": "Kopen",
     "buyLabel_one": "{{count}} credit kopen",
-    "buyLabel_other": "{{count}} credits kopen"
+    "buyLabel_other": "{{count}} credits kopen",
+    "priceError": "De prijzen zijn niet geladen, dus kopen staat op pauze."
   },
   "unavailable": {
     "title": "Dit pakket is niet beschikbaar",
@@ -118,13 +120,19 @@
       "date": "Datum",
       "purchase": "Aankoop",
       "number": "Factuur",
-      "total": "Totaal"
+      "total": "Totaal",
+      "pdf": "PDF"
     },
     "plan": "Pakket {{name}}",
     "topUp": "Bijkoop",
     "preparing": "Wordt gemaakt",
     "emptyTitle": "Nog geen facturen",
-    "emptyBody": "Uw eerste aankoop verschijnt hier met de bon."
+    "emptyBody": "Uw eerste aankoop verschijnt hier met de bon.",
+    "spent": "{{amount}} uitgegeven",
+    "errorTitle": "Je facturen zijn niet geladen.",
+    "errorBody": "Je aankopen en credits zijn veilig. Controleer je verbinding en probeer het opnieuw.",
+    "creditsBought_one": "{{count}} credit gekocht",
+    "creditsBought_other": "{{count}} credits gekocht"
   },
   "receipt": {
     "title": "Bon",

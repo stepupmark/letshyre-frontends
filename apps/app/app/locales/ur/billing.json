@@ -15,21 +15,23 @@
     "credits_one": "{{count}} کریڈٹ",
     "credits_other": "{{count}} کریڈٹ",
     "rate": "{{rate}} فی کریڈٹ",
-    "seats_one": "{{count}} ٹیم سیٹ",
-    "seats_other": "{{count}} ٹیم سیٹیں",
     "unlocks": "رابطے، اسکور کارڈ اور ریکارڈنگ",
     "noExpiry": "کریڈٹ کبھی ختم نہیں ہوتے",
     "topUps": "کسی بھی وقت ٹاپ اَپ کریں",
-    "buy": "{{name}} خریدیں"
+    "buy": "{{name}} خریدیں",
+    "errorTitle": "پلان لوڈ نہیں ہوئے۔",
+    "errorBody": "نیچے ٹاپ اپ اب بھی کام کرتے ہیں۔ کنکشن چیک کر کے دوبارہ کوشش کریں۔",
+    "loading": "پلان لوڈ ہو رہے ہیں",
+    "save": "ٹاپ اپ کے مقابلے میں {{percent}}% بچت"
   },
   "topUps": {
     "title": "ٹاپ اَپ",
     "lead": "جب بھی ضرورت ہو، اپنے بیلنس میں کریڈٹ شامل کریں۔",
     "credits_one": "{{count}} کریڈٹ",
     "credits_other": "{{count}} کریڈٹ",
-    "buy": "خریدیں",
     "buyLabel_one": "{{count}} کریڈٹ خریدیں",
-    "buyLabel_other": "{{count}} کریڈٹ خریدیں"
+    "buyLabel_other": "{{count}} کریڈٹ خریدیں",
+    "priceError": "قیمتیں لوڈ نہیں ہوئیں، اس لیے خریداری روک دی گئی ہے۔"
   },
   "unavailable": {
     "title": "یہ پلان دستیاب نہیں",
@@ -118,13 +120,19 @@
       "date": "تاریخ",
       "purchase": "خریداری",
       "number": "انوائس",
-      "total": "کل"
+      "total": "کل",
+      "pdf": "PDF"
     },
     "plan": "{{name}} پلان",
     "topUp": "ٹاپ اَپ",
     "preparing": "تیار ہو رہی ہے",
     "emptyTitle": "ابھی کوئی انوائس نہیں",
-    "emptyBody": "آپ کی پہلی خریداری اس کی رسید کے ساتھ یہاں دکھے گی۔"
+    "emptyBody": "آپ کی پہلی خریداری اس کی رسید کے ساتھ یہاں دکھے گی۔",
+    "spent": "{{amount}} خرچ",
+    "errorTitle": "آپ کے انوائس لوڈ نہیں ہوئے۔",
+    "errorBody": "آپ کی خریداریاں اور کریڈٹ محفوظ ہیں۔ کنکشن چیک کر کے دوبارہ کوشش کریں۔",
+    "creditsBought_one": "{{count}} کریڈٹ خریدا",
+    "creditsBought_other": "{{count}} کریڈٹ خریدے"
   },
   "receipt": {
     "title": "رسید",

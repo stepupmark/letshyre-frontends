@@ -15,21 +15,23 @@
     "credits_one": "{{count}} credit",
     "credits_other": "{{count}} credits",
     "rate": "{{rate}} per credit",
-    "seats_one": "{{count}} team seat",
-    "seats_other": "{{count}} team seats",
     "unlocks": "Contact details, scorecards and recordings",
     "noExpiry": "Credits never expire",
     "topUps": "Top up any time",
-    "buy": "Buy {{name}}"
+    "buy": "Buy {{name}}",
+    "errorTitle": "Plans didn't load.",
+    "errorBody": "Top-ups below still work. Check your connection and try again.",
+    "loading": "Loading plans",
+    "save": "save {{percent}}% vs top-ups"
   },
   "topUps": {
     "title": "Top up",
     "lead": "Add credits to your balance whenever you need more.",
     "credits_one": "{{count}} credit",
     "credits_other": "{{count}} credits",
-    "buy": "Buy",
     "buyLabel_one": "Buy {{count}} credit",
-    "buyLabel_other": "Buy {{count}} credits"
+    "buyLabel_other": "Buy {{count}} credits",
+    "priceError": "Prices didn't load, so buying is paused."
   },
   "unavailable": {
     "title": "This plan isn't available",
@@ -118,13 +120,19 @@
       "date": "Date",
       "purchase": "Purchase",
       "number": "Invoice",
-      "total": "Total"
+      "total": "Total",
+      "pdf": "PDF"
     },
     "plan": "{{name}} plan",
     "topUp": "Top-up",
     "preparing": "Being prepared",
     "emptyTitle": "No invoices yet",
-    "emptyBody": "Your first purchase will show up here with its receipt."
+    "emptyBody": "Your first purchase will show up here with its receipt.",
+    "spent": "{{amount}} spent",
+    "errorTitle": "Your invoices didn't load.",
+    "errorBody": "Your purchases and credits are safe. Check your connection and try again.",
+    "creditsBought_one": "{{count}} credit bought",
+    "creditsBought_other": "{{count}} credits bought"
   },
   "receipt": {
     "title": "Receipt",

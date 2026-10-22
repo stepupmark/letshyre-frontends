@@ -14,18 +14,21 @@
     "once": "+ GST, bayar sekali",
     "credits_other": "{{count}} kredit",
     "rate": "{{rate}} per kredit",
-    "seats_other": "{{count}} kursi tim",
     "unlocks": "Kontak, kartu skor, dan rekaman",
     "noExpiry": "Kredit tidak pernah kedaluwarsa",
     "topUps": "Isi ulang kapan saja",
-    "buy": "Beli {{name}}"
+    "buy": "Beli {{name}}",
+    "errorTitle": "Paket gagal dimuat.",
+    "errorBody": "Isi ulang di bawah tetap berfungsi. Periksa koneksi lalu coba lagi.",
+    "loading": "Memuat paket",
+    "save": "hemat {{percent}}% dibanding isi ulang"
   },
   "topUps": {
     "title": "Isi ulang",
     "lead": "Tambahkan kredit ke saldo Anda kapan pun dibutuhkan.",
     "credits_other": "{{count}} kredit",
-    "buy": "Beli",
-    "buyLabel_other": "Beli {{count}} kredit"
+    "buyLabel_other": "Beli {{count}} kredit",
+    "priceError": "Harga gagal dimuat, jadi pembelian dijeda."
   },
   "unavailable": {
     "title": "Paket ini tidak tersedia",
@@ -109,13 +112,18 @@
       "date": "Tanggal",
       "purchase": "Pembelian",
       "number": "Faktur",
-      "total": "Total"
+      "total": "Total",
+      "pdf": "PDF"
     },
     "plan": "Paket {{name}}",
     "topUp": "Isi ulang",
     "preparing": "Sedang disiapkan",
     "emptyTitle": "Belum ada faktur",
-    "emptyBody": "Pembelian pertama Anda akan muncul di sini dengan tanda terimanya."
+    "emptyBody": "Pembelian pertama Anda akan muncul di sini dengan tanda terimanya.",
+    "spent": "{{amount}} dibelanjakan",
+    "errorTitle": "Faktur Anda gagal dimuat.",
+    "errorBody": "Pembelian dan kredit Anda aman. Periksa koneksi lalu coba lagi.",
+    "creditsBought_other": "{{count}} kredit dibeli"
   },
   "receipt": {
     "title": "Tanda terima",

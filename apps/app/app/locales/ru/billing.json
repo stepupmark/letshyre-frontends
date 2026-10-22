@@ -17,14 +17,14 @@
     "credits_many": "{{count}} кредитов",
     "credits_other": "{{count}} кредита",
     "rate": "{{rate}} за кредит",
-    "seats_one": "{{count}} место в команде",
-    "seats_few": "{{count}} места в команде",
-    "seats_many": "{{count}} мест в команде",
-    "seats_other": "{{count}} места в команде",
     "unlocks": "Контакты, оценочные листы и записи",
     "noExpiry": "Кредиты не сгорают",
     "topUps": "Пополняйте в любое время",
-    "buy": "Купить {{name}}"
+    "buy": "Купить {{name}}",
+    "errorTitle": "Не удалось загрузить тарифы.",
+    "errorBody": "Пополнения ниже по-прежнему работают. Проверьте подключение и попробуйте снова.",
+    "loading": "Загружаем тарифы",
+    "save": "на {{percent}}% выгоднее пополнений"
   },
   "topUps": {
     "title": "Пополнение",
@@ -33,11 +33,11 @@
     "credits_few": "{{count}} кредита",
     "credits_many": "{{count}} кредитов",
     "credits_other": "{{count}} кредита",
-    "buy": "Купить",
     "buyLabel_one": "Купить {{count}} кредит",
     "buyLabel_few": "Купить {{count}} кредита",
     "buyLabel_many": "Купить {{count}} кредитов",
-    "buyLabel_other": "Купить {{count}} кредита"
+    "buyLabel_other": "Купить {{count}} кредита",
+    "priceError": "Цены не загрузились, поэтому покупка приостановлена."
   },
   "unavailable": {
     "title": "Этот тариф недоступен",
@@ -136,13 +136,21 @@
       "date": "Дата",
       "purchase": "Покупка",
       "number": "Счёт",
-      "total": "Итого"
+      "total": "Итого",
+      "pdf": "PDF"
     },
     "plan": "Тариф {{name}}",
     "topUp": "Пополнение",
     "preparing": "Готовится",
     "emptyTitle": "Счетов пока нет",
-    "emptyBody": "Первая покупка появится здесь вместе с чеком."
+    "emptyBody": "Первая покупка появится здесь вместе с чеком.",
+    "spent": "Потрачено {{amount}}",
+    "errorTitle": "Не удалось загрузить счета.",
+    "errorBody": "Ваши покупки и кредиты в сохранности. Проверьте подключение и попробуйте снова.",
+    "creditsBought_one": "куплен {{count}} кредит",
+    "creditsBought_few": "куплено {{count}} кредита",
+    "creditsBought_many": "куплено {{count}} кредитов",
+    "creditsBought_other": "куплено {{count}} кредита"
   },
   "receipt": {
     "title": "Чек",
