@@ -10,20 +10,18 @@ export function Group({
   title,
   aside,
   summary,
-  defaultOpen = true,
   children,
 }: {
   id?: string
   title: string
   aside?: ReactNode
   summary?: string | null
-  defaultOpen?: boolean
   children: ReactNode
 }) {
   const ownId = useId()
   const bodyId = useId()
   const titleId = id ?? ownId
-  const [open, setOpen] = useState(defaultOpen)
+  const [open, setOpen] = useState(false)
   return (
     <div
       role="group"

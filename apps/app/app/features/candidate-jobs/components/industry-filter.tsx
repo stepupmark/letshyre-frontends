@@ -43,7 +43,6 @@ export function IndustryFilter({
   return (
     <Group
       title={t("filters.industry")}
-      defaultOpen={search.industries.length > 0}
       summary={
         search.industries.length > 0
           ? t("common:table.selected", { count: search.industries.length })

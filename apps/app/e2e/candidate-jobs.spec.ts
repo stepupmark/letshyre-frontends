@@ -38,6 +38,8 @@ test("a candidate searches, saves the search, applies and follows the applicatio
   await expect(page).toHaveURL("/employee/jobs?q=react&location=Pune")
 
   const filters = page.getByRole("complementary", { name: /Filters/ })
+  await filters.getByRole("button", { name: "Job type" }).click()
+  await filters.getByRole("button", { name: "Minimum salary" }).click()
   await filters.getByRole("checkbox", { name: "Full time" }).click()
   await filters.getByRole("checkbox", { name: "Remote" }).click()
   await filters.getByRole("button", { name: "6+", exact: true }).click()
@@ -109,6 +111,7 @@ test("on a phone, filters open in a sheet and apply as they change", async ({
 
   await page.getByRole("button", { name: "Filters", exact: true }).click()
   const sheet = page.getByRole("dialog", { name: "Filters" })
+  await sheet.getByRole("button", { name: "Job type" }).click()
   await sheet.getByRole("checkbox", { name: "Internship" }).click()
   await sheet.getByRole("switch", { name: "Hide jobs I've applied to" }).click()
   await expect.poll(() => searches.at(-1)?.get("job_type")).toBe("not_applied")
