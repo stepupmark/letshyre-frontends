@@ -13,7 +13,7 @@ export function StatCard({
 }) {
   return (
     <div
-      className="settle flex h-full flex-col items-start gap-3 rounded-2xl border bg-card p-4 sm:flex-row sm:items-center sm:gap-4 sm:p-5"
+      className="settle flex h-full flex-col items-start gap-3 rounded-lg border bg-card p-4 sm:flex-row sm:items-center sm:gap-4 sm:p-5"
       style={{ transitionDelay: `${delay}ms` }}
     >
       <span

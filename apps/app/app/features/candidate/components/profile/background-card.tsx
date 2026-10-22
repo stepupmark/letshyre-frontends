@@ -89,7 +89,7 @@ export function BackgroundCard({
 
   if (tabs.length === 0)
     return (
-      <p className="rounded-2xl border p-6 text-sm text-muted-foreground">
+      <p className="rounded-lg border p-6 text-sm text-muted-foreground">
         {empty}
       </p>
     )

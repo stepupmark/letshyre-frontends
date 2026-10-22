@@ -69,6 +69,13 @@
   }
 }
 
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @utility pop {
   transform-box: fill-box;
   transform-origin: center;

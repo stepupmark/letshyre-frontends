@@ -26,7 +26,7 @@ export function Section({
       style={{ transitionDelay: `${delay}ms` }}
       className={cn(
         "settle flex flex-col gap-4",
-        boxed && "rounded-xl border p-4 sm:p-5"
+        boxed && "rounded-lg border p-4 sm:p-5"
       )}
     >
       <div className="flex min-h-8 items-center justify-between gap-3">

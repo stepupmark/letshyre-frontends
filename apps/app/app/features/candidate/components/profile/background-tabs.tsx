@@ -6,7 +6,7 @@ import {
   TabsTrigger,
 } from "@workspace/ui/components/tabs"
 import type { LucideIcon } from "lucide-react"
-import type { ReactNode } from "react"
+import type { FocusEvent, MouseEvent, ReactNode } from "react"
 
 export interface BackgroundTab {
   key: string
@@ -16,7 +16,10 @@ export interface BackgroundTab {
   content: ReactNode
 }
 
-/** The candidate's background as one card, a tab per kind. */
+const reveal = (event: FocusEvent<HTMLElement> | MouseEvent<HTMLElement>) => {
+  event.currentTarget.scrollIntoView({ block: "nearest", inline: "nearest" })
+}
+
 export function BackgroundTabs({
   label,
   tabs,
@@ -27,19 +30,21 @@ export function BackgroundTabs({
   return (
     <Tabs
       defaultValue={tabs[0]?.key}
-      className="settle min-w-0 gap-0 rounded-2xl border bg-card delay-100"
+      className="settle min-w-0 gap-0 rounded-lg border bg-card delay-100"
     >
-      <div className="no-scrollbar overflow-x-auto border-b px-2 sm:px-4">
+      <div className="no-scrollbar overflow-x-auto overflow-y-hidden overscroll-x-contain border-b px-2 sm:px-4">
         <TabsList
           variant="line"
           aria-label={label}
-          className="relative h-auto gap-0"
+          className="relative gap-0 p-0 group-data-horizontal/tabs:h-12"
         >
           {tabs.map((tab) => (
             <TabsTrigger
               key={tab.key}
               value={tab.key}
-              className="h-12 flex-none gap-2 px-3 text-sm after:hidden sm:px-4 data-active:text-brand-text"
+              onClick={reveal}
+              onFocus={reveal}
+              className="h-full flex-none gap-2 px-3 text-sm after:hidden sm:px-4 data-active:text-brand-text"
             >
               <tab.icon aria-hidden="true" />
               {tab.label}

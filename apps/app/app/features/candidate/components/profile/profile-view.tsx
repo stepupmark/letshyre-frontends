@@ -124,7 +124,7 @@ function Contact({ profile }: { profile: Profile }) {
 
   return (
     <section aria-label={t("profile.contact")} className="settle delay-75">
-      <dl className="grid gap-5 rounded-xl border p-4 sm:grid-cols-2 sm:p-5 lg:grid-cols-3">
+      <dl className="grid gap-5 rounded-lg border p-4 sm:grid-cols-2 sm:p-5 lg:grid-cols-3">
         <FactRow icon={Mail} label={t("profile.email")}>
           {email && (
             <span className="flex min-w-0 items-center gap-2">
