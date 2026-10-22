@@ -8,7 +8,16 @@
   },
   "applications": {
     "title": "내 지원 현황",
-    "lead": "각 지원의 진행 상황과 다음 단계예요."
+    "lead": "각 지원의 진행 상황과 다음 단계예요.",
+    "stages": "지원 단계",
+    "countFailed": "개수를 불러오지 못했습니다",
+    "find": "이 페이지에서 찾기",
+    "noMatch": "이 페이지에 “{{q}}”와 일치하는 항목이 없습니다.",
+    "clearFind": "검색 지우기",
+    "refreshFailed": "목록을 새로고침하지 못해 최신이 아닐 수 있습니다.",
+    "appliedOn": "{{date}} 지원",
+    "viewJob": "공고 보기",
+    "count_other": "지원 {{count}}건"
   },
   "filters": {
     "keyword": "직무, 기술 또는 키워드",
@@ -107,7 +116,6 @@
   "company": "회사",
   "untitled": "제목 없는 직무",
   "moreSkills": "외 {{count}}개",
-  "appliedWhen": "{{when}} 지원",
   "status": {
     "Applied": "지원",
     "Shortlisted": "서류 통과",
@@ -137,15 +145,8 @@
     "track": "내 지원 현황 보기",
     "failed": "지원이 완료되지 않았어요. 잠시 후 다시 시도하세요."
   },
-  "stages": {
-    "Applied": "지원",
-    "Shortlisted": "서류 통과",
-    "Selected": "합격",
-    "Rejected": "불합격"
-  },
   "timeline": {
     "label": "지원 진행 상황",
-    "notSelected": "불합격",
     "done": "(완료)"
   },
   "next": {

@@ -49,6 +49,7 @@ const jobSchema = z.looseObject({
   deadline: text,
   description: text,
   created_at: text,
+  applied_at: text,
   // the candidate's application stage, null until they apply
   status: text,
 })

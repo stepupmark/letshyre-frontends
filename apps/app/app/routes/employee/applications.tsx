@@ -9,10 +9,9 @@ export const handle = { crumb: "applications" } as const
 export const clientMiddleware = [namespaces(["candidateJobs"])]
 
 export default function ApplicationsPage() {
-  const { t } = useTranslation(["candidateJobs", "common"])
+  const { t } = useTranslation("candidateJobs")
   return (
     <div className="flex flex-col gap-6">
-      <title>{`${t("applications.title")} · ${t("common:appName")}`}</title>
       <PageHeader
         title={t("applications.title")}
         description={t("applications.lead")}

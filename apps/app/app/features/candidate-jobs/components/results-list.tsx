@@ -67,7 +67,7 @@ export function ResultsList({
   )
 }
 
-function LoadingBar({ active }: { active: boolean }) {
+export function LoadingBar({ active }: { active: boolean }) {
   const shown = useDelayed(active, 150)
   return (
     <AnimatePresence>

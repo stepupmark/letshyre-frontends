@@ -8,7 +8,17 @@
   },
   "applications": {
     "title": "My applications",
-    "lead": "Where each application stands and what happens next."
+    "lead": "Where each application stands and what happens next.",
+    "stages": "Application stages",
+    "countFailed": "Count didn't load",
+    "find": "Find on this page",
+    "noMatch": "Nothing on this page matches “{{q}}”.",
+    "clearFind": "Clear search",
+    "refreshFailed": "This list didn't refresh, so it may be out of date.",
+    "appliedOn": "Applied {{date}}",
+    "viewJob": "View job",
+    "count_one": "{{count}} application",
+    "count_other": "{{count}} applications"
   },
   "filters": {
     "keyword": "Title, skill or keyword",
@@ -113,7 +123,6 @@
   "company": "Company",
   "untitled": "Untitled role",
   "moreSkills": "+{{count}} more",
-  "appliedWhen": "applied {{when}}",
   "status": {
     "Applied": "Applied",
     "Shortlisted": "Shortlisted",
@@ -143,15 +152,8 @@
     "track": "See my applications",
     "failed": "Your application didn't go through. Try again in a moment."
   },
-  "stages": {
-    "Applied": "Applied",
-    "Shortlisted": "Shortlisted",
-    "Selected": "Selected",
-    "Rejected": "Not selected"
-  },
   "timeline": {
     "label": "Application progress",
-    "notSelected": "Not selected",
     "done": "(done)"
   },
   "next": {

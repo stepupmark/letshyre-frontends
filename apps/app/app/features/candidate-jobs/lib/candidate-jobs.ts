@@ -13,10 +13,3 @@ export const logoOf = (job: Job) =>
     : null) ??
   job.company_logo ??
   null
-
-export const STAGES = [
-  "Applied",
-  "Shortlisted",
-  "Selected",
-  "Rejected",
-] as const

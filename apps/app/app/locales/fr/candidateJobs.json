@@ -8,7 +8,18 @@
   },
   "applications": {
     "title": "Mes candidatures",
-    "lead": "Où en est chaque candidature et ce qui se passe ensuite."
+    "lead": "Où en est chaque candidature et ce qui se passe ensuite.",
+    "stages": "Étapes de la candidature",
+    "countFailed": "Nombre non chargé",
+    "find": "Chercher sur cette page",
+    "noMatch": "Rien sur cette page ne correspond à « {{q}} ».",
+    "clearFind": "Effacer la recherche",
+    "refreshFailed": "Cette liste ne s'est pas actualisée, elle peut être dépassée.",
+    "appliedOn": "Candidature le {{date}}",
+    "viewJob": "Voir l'offre",
+    "count_one": "{{count}} candidature",
+    "count_many": "{{count}} candidatures",
+    "count_other": "{{count}} candidatures"
   },
   "filters": {
     "keyword": "Intitulé, compétence ou mot-clé",
@@ -119,7 +130,6 @@
   "company": "Entreprise",
   "untitled": "Poste sans titre",
   "moreSkills": "+{{count}} de plus",
-  "appliedWhen": "postulé {{when}}",
   "status": {
     "Applied": "Postulé",
     "Shortlisted": "Présélectionné",
@@ -149,15 +159,8 @@
     "track": "Voir mes candidatures",
     "failed": "Votre candidature n'est pas passée. Réessayez dans un instant."
   },
-  "stages": {
-    "Applied": "Postulé",
-    "Shortlisted": "Présélectionné",
-    "Selected": "Retenu",
-    "Rejected": "Non retenu"
-  },
   "timeline": {
     "label": "Avancement de la candidature",
-    "notSelected": "Non retenu",
     "done": "(fait)"
   },
   "next": {

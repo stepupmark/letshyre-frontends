@@ -8,7 +8,18 @@
   },
   "applications": {
     "title": "Le mie candidature",
-    "lead": "A che punto è ogni candidatura e cosa succede dopo."
+    "lead": "A che punto è ogni candidatura e cosa succede dopo.",
+    "stages": "Fasi della candidatura",
+    "countFailed": "Numero non caricato",
+    "find": "Cerca in questa pagina",
+    "noMatch": "Niente in questa pagina corrisponde a «{{q}}».",
+    "clearFind": "Cancella ricerca",
+    "refreshFailed": "L'elenco non si è aggiornato, potrebbe non essere attuale.",
+    "appliedOn": "Candidatura del {{date}}",
+    "viewJob": "Vedi offerta",
+    "count_one": "{{count}} candidatura",
+    "count_many": "{{count}} candidature",
+    "count_other": "{{count}} candidature"
   },
   "filters": {
     "keyword": "Ruolo, competenza o parola chiave",
@@ -119,7 +130,6 @@
   "company": "Azienda",
   "untitled": "Ruolo senza titolo",
   "moreSkills": "+{{count}} altre",
-  "appliedWhen": "candidatura {{when}}",
   "status": {
     "Applied": "Candidato",
     "Shortlisted": "In rosa",
@@ -149,15 +159,8 @@
     "track": "Vedi le mie candidature",
     "failed": "La candidatura non è andata a buon fine. Riprova tra poco."
   },
-  "stages": {
-    "Applied": "Candidato",
-    "Shortlisted": "In rosa",
-    "Selected": "Scelto",
-    "Rejected": "Non scelto"
-  },
   "timeline": {
     "label": "Avanzamento della candidatura",
-    "notSelected": "Non scelto",
     "done": "(fatto)"
   },
   "next": {

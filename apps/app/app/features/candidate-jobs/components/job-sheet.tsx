@@ -4,11 +4,11 @@ import { Spinner } from "@workspace/ui/components/spinner"
 import { CircleCheck } from "lucide-react"
 import { AnimatePresence } from "motion/react"
 import * as m from "motion/react-m"
-import { useState } from "react"
 import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { DetailSheet } from "@/components/detail-sheet"
+import { useLastDefined } from "@/hooks/use-last-defined"
 import { duration, ease } from "@/lib/motion"
 
 import { companyOf } from "../lib/candidate-jobs"
@@ -32,10 +32,7 @@ export function JobSheet({
   const apply = useApply()
   const index = jobs?.findIndex((job) => job.id === openId) ?? -1
   const open = index >= 0 ? jobs?.[index] : undefined
-  // keeps the panel filled while it animates closed
-  const [last, setLast] = useState(open)
-  if (open && open !== last) setLast(open)
-  const shown = open ?? last
+  const shown = useLastDefined(open)
 
   return (
     <DetailSheet

@@ -86,7 +86,11 @@ test("a candidate searches, saves the search, applies and follows the applicatio
   await expect(
     card.getByRole("list", { name: "Application progress" })
   ).toBeVisible()
-  await expect(card.getByText("Kestrel Pay · applied")).toBeVisible()
+  await expect(card.getByText("Kestrel Pay", { exact: true })).toBeVisible()
+  await expect(card.getByText("Applied Oct 12, 2026")).toBeVisible()
+  await expect(
+    page.getByRole("navigation", { name: "Application stages" })
+  ).toBeVisible()
   await expect(
     card.getByRole("link", { name: "How the interview works" })
   ).toBeVisible()

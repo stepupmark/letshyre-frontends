@@ -8,7 +8,21 @@
   },
   "applications": {
     "title": "طلباتي",
-    "lead": "أين وصل كل طلب وماذا يحدث بعد ذلك."
+    "lead": "أين وصل كل طلب وماذا يحدث بعد ذلك.",
+    "stages": "مراحل الطلب",
+    "countFailed": "لم يتم تحميل العدد",
+    "find": "ابحث في هذه الصفحة",
+    "noMatch": "لا شيء في هذه الصفحة يطابق «{{q}}».",
+    "clearFind": "مسح البحث",
+    "refreshFailed": "لم يتم تحديث هذه القائمة، لذا قد تكون قديمة.",
+    "appliedOn": "تم التقديم في {{date}}",
+    "viewJob": "عرض الوظيفة",
+    "count_zero": "لا طلبات",
+    "count_one": "طلب واحد",
+    "count_two": "طلبان",
+    "count_few": "{{count}} طلبات",
+    "count_many": "{{count}} طلبًا",
+    "count_other": "{{count}} طلب"
   },
   "filters": {
     "keyword": "المسمى أو المهارة أو كلمة مفتاحية",
@@ -137,7 +151,6 @@
   "company": "الشركة",
   "untitled": "دور بلا عنوان",
   "moreSkills": "+{{count}} أخرى",
-  "appliedWhen": "تم التقديم {{when}}",
   "status": {
     "Applied": "تم التقديم",
     "Shortlisted": "القائمة المختصرة",
@@ -167,15 +180,8 @@
     "track": "عرض طلباتي",
     "failed": "لم يُرسل طلبك. حاول مجددًا بعد قليل."
   },
-  "stages": {
-    "Applied": "تم التقديم",
-    "Shortlisted": "القائمة المختصرة",
-    "Selected": "مقبول",
-    "Rejected": "غير مقبول"
-  },
   "timeline": {
     "label": "تقدّم الطلب",
-    "notSelected": "غير مقبول",
     "done": "(تم)"
   },
   "next": {

@@ -8,7 +8,16 @@
   },
   "applications": {
     "title": "応募状況",
-    "lead": "各応募の進み具合と次に起こること。"
+    "lead": "各応募の進み具合と次に起こること。",
+    "stages": "応募の段階",
+    "countFailed": "件数を読み込めませんでした",
+    "find": "このページ内を検索",
+    "noMatch": "このページに「{{q}}」に一致するものはありません。",
+    "clearFind": "検索をクリア",
+    "refreshFailed": "一覧を更新できなかったため、古い可能性があります。",
+    "appliedOn": "{{date}}に応募",
+    "viewJob": "求人を見る",
+    "count_other": "{{count}}件の応募"
   },
   "filters": {
     "keyword": "職種・スキル・キーワード",
@@ -107,7 +116,6 @@
   "company": "会社",
   "untitled": "無題の求人",
   "moreSkills": "ほか {{count}} 件",
-  "appliedWhen": "{{when}}に応募",
   "status": {
     "Applied": "応募済み",
     "Shortlisted": "選考中",
@@ -137,15 +145,8 @@
     "track": "応募状況を見る",
     "failed": "応募できませんでした。少ししてからもう一度お試しください。"
   },
-  "stages": {
-    "Applied": "応募済み",
-    "Shortlisted": "選考中",
-    "Selected": "採用",
-    "Rejected": "見送り"
-  },
   "timeline": {
     "label": "応募の進み具合",
-    "notSelected": "見送り",
     "done": "（完了）"
   },
   "next": {

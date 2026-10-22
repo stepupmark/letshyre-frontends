@@ -8,7 +8,17 @@
   },
   "applications": {
     "title": "Meine Bewerbungen",
-    "lead": "Wo jede Bewerbung steht und was als Nächstes passiert."
+    "lead": "Wo jede Bewerbung steht und was als Nächstes passiert.",
+    "stages": "Bewerbungsphasen",
+    "countFailed": "Anzahl nicht geladen",
+    "find": "Auf dieser Seite suchen",
+    "noMatch": "Nichts auf dieser Seite passt zu „{{q}}“.",
+    "clearFind": "Suche löschen",
+    "refreshFailed": "Diese Liste wurde nicht aktualisiert und ist vielleicht veraltet.",
+    "appliedOn": "Beworben am {{date}}",
+    "viewJob": "Job ansehen",
+    "count_one": "{{count}} Bewerbung",
+    "count_other": "{{count}} Bewerbungen"
   },
   "filters": {
     "keyword": "Titel, Skill oder Stichwort",
@@ -113,7 +123,6 @@
   "company": "Unternehmen",
   "untitled": "Rolle ohne Titel",
   "moreSkills": "+{{count}} weitere",
-  "appliedWhen": "beworben {{when}}",
   "status": {
     "Applied": "Beworben",
     "Shortlisted": "Engere Wahl",
@@ -143,15 +152,8 @@
     "track": "Meine Bewerbungen ansehen",
     "failed": "Ihre Bewerbung ist nicht durchgegangen. Versuchen Sie es gleich noch einmal."
   },
-  "stages": {
-    "Applied": "Beworben",
-    "Shortlisted": "Engere Wahl",
-    "Selected": "Ausgewählt",
-    "Rejected": "Nicht ausgewählt"
-  },
   "timeline": {
     "label": "Bewerbungsstand",
-    "notSelected": "Nicht ausgewählt",
     "done": "(erledigt)"
   },
   "next": {

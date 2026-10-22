@@ -8,7 +8,16 @@
   },
   "applications": {
     "title": "Lamaran saya",
-    "lead": "Posisi setiap lamaran dan apa yang terjadi selanjutnya."
+    "lead": "Posisi setiap lamaran dan apa yang terjadi selanjutnya.",
+    "stages": "Tahap lamaran",
+    "countFailed": "Jumlah tidak termuat",
+    "find": "Cari di halaman ini",
+    "noMatch": "Tidak ada yang cocok dengan “{{q}}” di halaman ini.",
+    "clearFind": "Hapus pencarian",
+    "refreshFailed": "Daftar ini gagal diperbarui, jadi mungkin sudah usang.",
+    "appliedOn": "Dilamar {{date}}",
+    "viewJob": "Lihat lowongan",
+    "count_other": "{{count}} lamaran"
   },
   "filters": {
     "keyword": "Jabatan, keahlian, atau kata kunci",
@@ -107,7 +116,6 @@
   "company": "Perusahaan",
   "untitled": "Posisi tanpa judul",
   "moreSkills": "+{{count}} lagi",
-  "appliedWhen": "melamar {{when}}",
   "status": {
     "Applied": "Melamar",
     "Shortlisted": "Daftar pendek",
@@ -137,15 +145,8 @@
     "track": "Lihat lamaran saya",
     "failed": "Lamaran Anda tidak terkirim. Coba lagi sebentar lagi."
   },
-  "stages": {
-    "Applied": "Melamar",
-    "Shortlisted": "Daftar pendek",
-    "Selected": "Terpilih",
-    "Rejected": "Tidak terpilih"
-  },
   "timeline": {
     "label": "Perkembangan lamaran",
-    "notSelected": "Tidak terpilih",
     "done": "(selesai)"
   },
   "next": {

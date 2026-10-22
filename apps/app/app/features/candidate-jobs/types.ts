@@ -1,4 +1,3 @@
-import type { STAGES } from "./lib/candidate-jobs"
 import type { EmploymentType, Sort } from "./lib/search"
 import type { Job } from "./schemas/candidate-jobs.schema"
 
@@ -20,4 +19,4 @@ export interface JobsPage {
   pages: number
 }
 
-export type Stage = (typeof STAGES)[number]
+export type { Stage } from "./lib/applications"

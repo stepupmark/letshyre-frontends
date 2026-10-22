@@ -219,9 +219,9 @@ function RecentList({
       <p id={titleId} className="px-2 py-1.5 text-xs text-muted-foreground">
         {t("filters.recent")}
       </p>
-      <ul id={id} role="listbox" aria-labelledby={titleId}>
+      <div id={id} role="listbox" aria-labelledby={titleId}>
         {recent.map((entry, i) => (
-          <li
+          <div
             key={labelOf(entry)}
             id={`${id}-${String(i)}`}
             role="option"
@@ -249,9 +249,9 @@ function RecentList({
               className="size-4 shrink-0 text-muted-foreground"
             />
             <bdi className="truncate">{labelOf(entry)}</bdi>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }

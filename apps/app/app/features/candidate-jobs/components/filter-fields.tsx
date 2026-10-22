@@ -137,9 +137,9 @@ function ExperienceFilter({
           onChange({ experience: pick(value) })
         }}
         className={cn(
-          "py-3 [&_[data-slot=slider-thumb]]:size-5 [&_[data-slot=slider-thumb]]:border-2 [&_[data-slot=slider-thumb]]:border-primary [&_[data-slot=slider-thumb]]:bg-background [&_[data-slot=slider-track]]:h-1.5 [&_[data-slot=slider-track]]:bg-border",
+          "py-3 **:data-[slot=slider-thumb]:size-5 **:data-[slot=slider-thumb]:border-2 **:data-[slot=slider-thumb]:border-primary **:data-[slot=slider-thumb]:bg-background **:data-[slot=slider-track]:h-1.5 **:data-[slot=slider-track]:bg-border",
           unset &&
-            "[&_[data-slot=slider-range]]:opacity-0 [&_[data-slot=slider-thumb]]:border-muted-foreground"
+            "**:data-[slot=slider-range]:opacity-0 **:data-[slot=slider-thumb]:border-muted-foreground"
         )}
       />
       <div className="flex justify-between text-xs text-muted-foreground tabular-nums">

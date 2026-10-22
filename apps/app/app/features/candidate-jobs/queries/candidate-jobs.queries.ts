@@ -3,6 +3,7 @@ import { keepPreviousData, queryOptions } from "@tanstack/react-query"
 import { api } from "@/lib/api"
 import { dataOf } from "@/lib/response"
 
+import { APPLICATIONS_PAGE } from "../lib/applications"
 import { toApiQuery } from "../lib/search"
 import { jobsPageSchema } from "../schemas/candidate-jobs.schema"
 import type { JobSearch, JobsPage, Stage } from "../types"
@@ -33,29 +34,39 @@ export const findJobsQuery = (search: JobSearch) =>
     staleTime: 60_000,
   })
 
-const APPLICATIONS_PAGE = 10
+const applicationsPage = async (stage: Stage, page: number, limit: number) =>
+  jobsPageSchema.parse(
+    dataOf(
+      await api.get("user/v1/candidate_jobs/", {
+        query: { application_status: stage, page, limit },
+      })
+    )
+  )
 
-export const applicationsQuery = (stage: Stage, pageNumber: number) =>
+export const applicationsQuery = (stage: Stage, page: number) =>
   queryOptions({
-    queryKey: [...candidateJobsKeys.applications, stage, pageNumber],
-    queryFn: async () => {
-      const data = jobsPageSchema.parse(
-        dataOf(
-          await api.get("user/v1/candidate_jobs/", {
-            query: {
-              application_status: stage,
-              page: pageNumber,
-              limit: APPLICATIONS_PAGE,
-            },
-          })
-        )
-      )
+    queryKey: [...candidateJobsKeys.applications, stage, page],
+    queryFn: async (): Promise<JobsPage> => {
+      const data = await applicationsPage(stage, page, APPLICATIONS_PAGE)
+      const total = data.count ?? data.results.length
       return {
         jobs: data.results,
-        total: data.count ?? data.results.length,
-        hasNext: Boolean(data.next),
+        total,
+        pages: Math.max(1, Math.ceil(total / APPLICATIONS_PAGE)),
       }
     },
-    placeholderData: keepPreviousData,
+    // keep the last page on screen while paging, but not across stages
+    placeholderData: (previous, previousQuery) =>
+      previousQuery?.queryKey[2] === stage ? previous : undefined,
+    staleTime: 30_000,
+  })
+
+export const applicationCountQuery = (stage: Stage) =>
+  queryOptions({
+    queryKey: [...candidateJobsKeys.applications, "count", stage],
+    queryFn: async () => {
+      const data = await applicationsPage(stage, 1, 1)
+      return data.count ?? data.results.length
+    },
     staleTime: 30_000,
   })

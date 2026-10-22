@@ -8,7 +8,17 @@
   },
   "applications": {
     "title": "Mijn sollicitaties",
-    "lead": "Waar elke sollicitatie staat en wat er hierna gebeurt."
+    "lead": "Waar elke sollicitatie staat en wat er hierna gebeurt.",
+    "stages": "Sollicitatiefasen",
+    "countFailed": "Aantal niet geladen",
+    "find": "Zoeken op deze pagina",
+    "noMatch": "Niets op deze pagina past bij ‘{{q}}’.",
+    "clearFind": "Zoekopdracht wissen",
+    "refreshFailed": "Deze lijst is niet vernieuwd en kan verouderd zijn.",
+    "appliedOn": "Gesolliciteerd op {{date}}",
+    "viewJob": "Vacature bekijken",
+    "count_one": "{{count}} sollicitatie",
+    "count_other": "{{count}} sollicitaties"
   },
   "filters": {
     "keyword": "Functie, vaardigheid of trefwoord",
@@ -113,7 +123,6 @@
   "company": "Bedrijf",
   "untitled": "Functie zonder titel",
   "moreSkills": "+{{count}} meer",
-  "appliedWhen": "gesolliciteerd {{when}}",
   "status": {
     "Applied": "Gesolliciteerd",
     "Shortlisted": "Op de shortlist",
@@ -143,15 +152,8 @@
     "track": "Mijn sollicitaties bekijken",
     "failed": "Uw sollicitatie is niet doorgekomen. Probeer het zo opnieuw."
   },
-  "stages": {
-    "Applied": "Gesolliciteerd",
-    "Shortlisted": "Op de shortlist",
-    "Selected": "Gekozen",
-    "Rejected": "Niet gekozen"
-  },
   "timeline": {
     "label": "Voortgang van de sollicitatie",
-    "notSelected": "Niet gekozen",
     "done": "(klaar)"
   },
   "next": {

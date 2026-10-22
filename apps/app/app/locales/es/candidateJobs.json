@@ -8,7 +8,18 @@
   },
   "applications": {
     "title": "Mis candidaturas",
-    "lead": "En qué punto está cada candidatura y qué pasa después."
+    "lead": "En qué punto está cada candidatura y qué pasa después.",
+    "stages": "Etapas de la postulación",
+    "countFailed": "No se cargó el número",
+    "find": "Buscar en esta página",
+    "noMatch": "Nada en esta página coincide con «{{q}}».",
+    "clearFind": "Borrar búsqueda",
+    "refreshFailed": "Esta lista no se actualizó, así que puede estar desactualizada.",
+    "appliedOn": "Postulado el {{date}}",
+    "viewJob": "Ver empleo",
+    "count_one": "{{count}} postulación",
+    "count_many": "{{count}} postulaciones",
+    "count_other": "{{count}} postulaciones"
   },
   "filters": {
     "keyword": "Puesto, habilidad o palabra clave",
@@ -119,7 +130,6 @@
   "company": "Empresa",
   "untitled": "Puesto sin título",
   "moreSkills": "+{{count}} más",
-  "appliedWhen": "postulado {{when}}",
   "status": {
     "Applied": "Postulado",
     "Shortlisted": "Preseleccionado",
@@ -149,15 +159,8 @@
     "track": "Ver mis candidaturas",
     "failed": "Su candidatura no se ha enviado. Inténtelo de nuevo en un momento."
   },
-  "stages": {
-    "Applied": "Postulado",
-    "Shortlisted": "Preseleccionado",
-    "Selected": "Seleccionado",
-    "Rejected": "No seleccionado"
-  },
   "timeline": {
     "label": "Progreso de la candidatura",
-    "notSelected": "No seleccionado",
     "done": "(hecho)"
   },
   "next": {
