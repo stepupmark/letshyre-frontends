@@ -6,10 +6,11 @@ import type { ReactNode } from "react"
 
 import { useDelayed } from "@/hooks/use-delayed"
 
-// a failed refetch keeps showing the last good data
+// a failed refetch keeps showing the last good data, with a note to retry
 export function QueryState<T>({
   query,
   skeleton,
+  error,
   children,
 }: {
   query: Pick<
@@ -17,16 +18,30 @@ export function QueryState<T>({
     "data" | "isPending" | "isError" | "refetch" | "isRefetching"
   >
   skeleton: ReactNode
+  error?: { title: string; body: string }
   children: (data: T) => ReactNode
 }) {
   const showSkeleton = useDelayed(query.isPending)
 
-  if (query.data !== undefined) return children(query.data)
+  if (query.data !== undefined)
+    return query.isError ? (
+      <div className="flex flex-col gap-4">
+        <RefreshNote
+          onRetry={() => void query.refetch()}
+          retrying={query.isRefetching}
+        />
+        {children(query.data)}
+      </div>
+    ) : (
+      children(query.data)
+    )
   if (query.isError) {
     return (
       <LoadError
         onRetry={() => void query.refetch()}
         retrying={query.isRefetching}
+        title={error?.title}
+        body={error?.body}
       />
     )
   }

@@ -40,5 +40,10 @@
     "emptyTitle": "Ancora nessun candidato",
     "emptyBody": "I candidati compaiono qui dopo aver concluso il colloquio con IA. Puoi anche cercare nel bacino di candidati.",
     "pool": "Apri il bacino di candidati"
-  }
+  },
+  "errorTitle": "I candidati non si sono caricati.",
+  "errorBody": "Controlla la connessione e riprova.",
+  "interviewsTaken_one": "{{count}} svolto",
+  "interviewsTaken_many": "{{count}} svolti",
+  "interviewsTaken_other": "{{count}} svolti"
 }

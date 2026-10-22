@@ -1,10 +1,11 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { useQuery } from "@tanstack/react-query"
+import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { href, useMatch } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { EmptyState } from "@/components/empty-state"
 import { isJobId, JobDetail, jobQuery } from "@/features/employer-jobs"
+import { matchesQuery } from "@/features/job-matches"
 import { namespaces } from "@/lib/i18n"
 import { buttonLink } from "@/lib/button-link"
 
@@ -20,12 +21,21 @@ export default function JobPage({ params }: Route.ComponentProps) {
   const job = useQuery({ ...jobQuery(params.jobId), enabled: valid })
   const title = job.data?.title ?? t("list.title")
   const editing = useMatch("/employer/jobs/:jobId/edit") !== null
+  const client = useQueryClient()
 
   return (
     <>
       <title>{`${title} · ${t("common:appName")}`}</title>
       {valid ? (
-        <JobDetail jobId={params.jobId} editing={editing} />
+        <JobDetail
+          jobId={params.jobId}
+          editing={editing}
+          onApplicantsIntent={() => {
+            client
+              .query(matchesQuery(params.jobId, true))
+              .catch(() => undefined)
+          }}
+        />
       ) : (
         <EmptyState
           title={t("detail.notFoundTitle")}

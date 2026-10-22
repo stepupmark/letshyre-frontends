@@ -245,6 +245,9 @@
     "saveFailed": "Não conseguimos salvar suas alterações. Elas continuam aqui, então tente de novo.",
     "discardTitle": "Descartar as alterações?",
     "discardBody": "Você editou esta vaga. Sair agora perde essas alterações.",
-    "discard": "Descartar"
+    "discard": "Descartar",
+    "errorTitle": "Esta vaga não carregou.",
+    "errorBody": "Nada mudou nela. Verifique a conexão e tente de novo.",
+    "pendingStatus": "Você pode abrir, pausar ou encerrar esta vaga depois que ela for aprovada."
   }
 }

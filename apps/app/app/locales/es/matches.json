@@ -40,5 +40,10 @@
     "emptyTitle": "Aún no hay candidatos",
     "emptyBody": "Los candidatos aparecen aquí cuando terminan la entrevista con IA. También puede buscar en la reserva de candidatos.",
     "pool": "Abrir la reserva de candidatos"
-  }
+  },
+  "errorTitle": "Los candidatos no se cargaron.",
+  "errorBody": "Revisa tu conexión e inténtalo de nuevo.",
+  "interviewsTaken_one": "{{count}} hecha",
+  "interviewsTaken_many": "{{count}} hechas",
+  "interviewsTaken_other": "{{count}} hechas"
 }

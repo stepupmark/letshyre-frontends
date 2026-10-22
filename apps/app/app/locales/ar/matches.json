@@ -49,5 +49,13 @@
     "emptyTitle": "لا متقدمين بعد",
     "emptyBody": "يظهر المتقدمون هنا بعد إنهاء المقابلة بالذكاء الاصطناعي. يمكنك أيضًا البحث في مجموعة المرشحين.",
     "pool": "فتح مجموعة المرشحين"
-  }
+  },
+  "errorTitle": "لم يتم تحميل المتقدمين.",
+  "errorBody": "تحقق من اتصالك وحاول مرة أخرى.",
+  "interviewsTaken_zero": "لم تُجرَ أي مقابلة",
+  "interviewsTaken_one": "مقابلة واحدة",
+  "interviewsTaken_two": "مقابلتان",
+  "interviewsTaken_few": "{{count}} مقابلات",
+  "interviewsTaken_many": "{{count}} مقابلة",
+  "interviewsTaken_other": "{{count}} مقابلة"
 }

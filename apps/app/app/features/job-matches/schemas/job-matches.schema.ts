@@ -42,7 +42,16 @@ const matchSchema = z.looseObject({
 export type Match = z.infer<typeof matchSchema>
 
 export const matchesSchema = z.looseObject({
-  matches: z.array(matchSchema).catch([]),
+  // one malformed match shouldn't make the whole list look empty
+  matches: z
+    .array(z.unknown())
+    .catch([])
+    .transform((rows) =>
+      rows.flatMap((row) => {
+        const parsed = matchSchema.safeParse(row)
+        return parsed.success ? [parsed.data] : []
+      })
+    ),
   total_candidates: z.number().nullish(),
   matched_candidates_count: z.number().nullish(),
 })

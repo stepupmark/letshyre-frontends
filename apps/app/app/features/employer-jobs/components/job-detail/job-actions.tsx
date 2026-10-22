@@ -16,7 +16,7 @@ import { buttonLink } from "@/lib/button-link"
 import { safeUrl } from "@/lib/safe-url"
 import { undoToast } from "@/lib/undo-toast"
 
-import { statusOf } from "../../lib/employer-jobs"
+import { ownStatus, statusOf } from "../../lib/employer-jobs"
 import { useSetJobStatus } from "../../mutations/use-job-changes"
 import type { Job } from "../../schemas/employer-jobs.schema"
 import type { JobStatus } from "../../types"
@@ -39,7 +39,7 @@ export function JobActions({
   const jdFile = safeUrl(job.jd_file_url)
 
   const setStatus = (next: JobStatus) => {
-    const before = (job.status ?? "open").toLowerCase() as JobStatus
+    const before = ownStatus(job)
     changeStatus.mutate(next, {
       onError: () => {
         toast.error(t("detail.statusFailed"))
@@ -49,7 +49,11 @@ export function JobActions({
           t("detail.statusChanged", { status: t(`statusWord.${next}`) }),
           t("common:undo"),
           () => {
-            changeStatus.mutate(before)
+            changeStatus.mutate(before, {
+              onError: () => {
+                toast.error(t("detail.statusFailed"))
+              },
+            })
           }
         )
       },
@@ -59,12 +63,16 @@ export function JobActions({
   return (
     <aside
       aria-labelledby={id}
-      className="settle flex flex-col gap-4 rounded-2xl border bg-card p-4 lg:sticky lg:top-20"
+      className="settle flex flex-col gap-4 rounded-lg border bg-card p-4 lg:sticky lg:top-20"
     >
-      <h2 id={id} className="text-sm font-semibold text-brand-text">
+      <h2 id={id} className="text-sm font-semibold">
         {t("detail.manage")}
       </h2>
-      {status !== "pending" && (
+      {status === "pending" ? (
+        <p className="border-b pb-4 text-sm text-pretty text-muted-foreground">
+          {t("detail.pendingStatus")}
+        </p>
+      ) : (
         <Field className="border-b pb-4">
           <FieldLabel htmlFor={`${id}-status`}>
             {t("detail.statusLabel")}

@@ -43,5 +43,11 @@
     "emptyTitle": "Кандидатов пока нет",
     "emptyBody": "Кандидаты появляются здесь после ИИ-интервью. Ещё можно поискать в базе кандидатов.",
     "pool": "Открыть базу кандидатов"
-  }
+  },
+  "errorTitle": "Не удалось загрузить кандидатов.",
+  "errorBody": "Проверьте подключение и попробуйте снова.",
+  "interviewsTaken_one": "пройдено: {{count}}",
+  "interviewsTaken_few": "пройдено: {{count}}",
+  "interviewsTaken_many": "пройдено: {{count}}",
+  "interviewsTaken_other": "пройдено: {{count}}"
 }

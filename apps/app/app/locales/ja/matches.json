@@ -34,5 +34,8 @@
     "emptyTitle": "応募者はまだいません",
     "emptyBody": "応募者は AI 面接を終えるとここに表示されます。候補者プールから探すこともできます。",
     "pool": "候補者プールを開く"
-  }
+  },
+  "errorTitle": "応募者を読み込めませんでした。",
+  "errorBody": "接続を確認してもう一度お試しください。",
+  "interviewsTaken_other": "{{count}}回受験"
 }

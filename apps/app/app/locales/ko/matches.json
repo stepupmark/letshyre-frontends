@@ -34,5 +34,8 @@
     "emptyTitle": "아직 지원자가 없어요",
     "emptyBody": "AI 인터뷰를 마친 지원자가 여기에 표시돼요. 후보자 풀에서 찾아볼 수도 있어요.",
     "pool": "후보자 풀 열기"
-  }
+  },
+  "errorTitle": "지원자를 불러오지 못했습니다.",
+  "errorBody": "연결을 확인하고 다시 시도하세요.",
+  "interviewsTaken_other": "{{count}}회 응시"
 }

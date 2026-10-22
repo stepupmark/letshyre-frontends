@@ -1,4 +1,4 @@
-import { axe, expect, reply, test } from "./fixtures"
+import { axe, expect, fixture, reply, test } from "./fixtures"
 
 const PARSED = {
   success: true,
@@ -192,6 +192,38 @@ test("a job is edited in place", async ({ page, api, signInAs }) => {
       "Mentor two developers",
     ],
   })
+})
+
+test("a job waiting for approval explains why its status can't change yet", async ({
+  page,
+  api,
+  signInAs,
+}) => {
+  const job = fixture("user.v1.employer_job_detail.101.json")
+  await api({
+    "GET /user/v1/employer_job_detail/103/": {
+      ...job,
+      data: {
+        ...(job.data as object),
+        id: 103,
+        title: "Product Designer",
+        job_status: "pending",
+      },
+    },
+  })
+  await signInAs("employer")
+  await page.goto("/employer/jobs/103")
+
+  await expect(
+    page.getByRole("heading", { level: 1, name: "Product Designer" })
+  ).toBeVisible()
+  await expect(
+    page.getByText("You can open, pause or close this job once it's approved.")
+  ).toBeVisible()
+  await expect(page.getByRole("combobox", { name: "Job status" })).toHaveCount(
+    0
+  )
+  await axe(page)
 })
 
 test("applicants are reviewed best match first, one after another", async ({

@@ -240,6 +240,9 @@
     "saveFailed": "Wir konnten Ihre Änderungen nicht speichern. Sie sind noch da, versuchen Sie es erneut.",
     "discardTitle": "Änderungen verwerfen?",
     "discardBody": "Sie haben diese Stelle bearbeitet. Wenn Sie jetzt gehen, gehen diese Änderungen verloren.",
-    "discard": "Verwerfen"
+    "discard": "Verwerfen",
+    "errorTitle": "Diese Stelle wurde nicht geladen.",
+    "errorBody": "An ihr hat sich nichts geändert. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "pendingStatus": "Nach der Freigabe können Sie diese Stelle öffnen, pausieren oder schließen."
   }
 }

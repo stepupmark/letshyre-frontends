@@ -245,6 +245,9 @@
     "saveFailed": "Non siamo riusciti a salvare le modifiche. Sono ancora qui, quindi riprova.",
     "discardTitle": "Scartare le modifiche?",
     "discardBody": "Hai modificato questa offerta. Se esci ora perdi queste modifiche.",
-    "discard": "Scarta"
+    "discard": "Scarta",
+    "errorTitle": "Questa offerta non si è caricata.",
+    "errorBody": "Non è cambiato nulla. Controlla la connessione e riprova.",
+    "pendingStatus": "Potrai aprire, sospendere o chiudere questa offerta dopo l'approvazione."
   }
 }

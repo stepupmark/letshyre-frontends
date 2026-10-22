@@ -42,7 +42,8 @@ are in the design lab (`pnpm --filter app dev`, then `http://localhost:5174/_lab
   rising in on their first load, picked candidates' avatars popping into the compare bar, and a
   newly added team member's row tinting once so you can see where they landed, and the top-up
   selection sliding between packs while the Buy button's price rolls, and a job's status badge
-  crossfading after a bulk change.
+  crossfading after a bulk change, a job's facts settling in once, and the applicant panel's fit
+  bars filling as each candidate opens.
 - Reduced motion: values jump, only fades remain (`MotionConfig reducedMotion="user"`).
 - Cost: ~10 kB gzip with the first paint, the `domMax` features (~29 kB) load after it.
 

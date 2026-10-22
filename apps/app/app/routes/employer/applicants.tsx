@@ -1,11 +1,10 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { useQuery } from "@tanstack/react-query"
-import { ArrowLeft } from "lucide-react"
 import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
+import { BackLink } from "@/components/back-link"
 import { EmptyState } from "@/components/empty-state"
-import { PageHeader } from "@/components/page-header"
 import { UnlockPanel } from "@/features/candidate-unlock"
 import { isJobId, jobQuery } from "@/features/employer-jobs"
 import { MatchList, matchesQuery } from "@/features/job-matches"
@@ -38,23 +37,24 @@ export default function ApplicantsPage({ params }: Route.ComponentProps) {
     <div className="flex flex-col gap-6">
       <title>{`${t("applicants.title")} · ${job.data?.title ?? ""} · ${t("common:appName")}`}</title>
       <div className="flex flex-col gap-3">
-        <AppLink
-          to={href("/employer/jobs/:jobId", { jobId })}
-          className="flex w-fit items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
-        >
-          <ArrowLeft className="size-4 rtl:-scale-x-100" />
+        <BackLink to={href("/employer/jobs/:jobId", { jobId })}>
           {job.data?.title ?? t("jobs:detail.back")}
-        </AppLink>
-        <PageHeader
-          title={t("applicants.title")}
-          description={
-            count === undefined
-              ? undefined
+        </BackLink>
+        <div className="flex flex-col gap-1">
+          <h1
+            tabIndex={-1}
+            className="text-2xl font-semibold tracking-tight text-balance outline-none"
+          >
+            {t("applicants.title")}
+          </h1>
+          <p className="min-h-5 text-sm text-muted-foreground tabular-nums">
+            {count === undefined
+              ? null
               : count
                 ? t("applicants.lead", { count })
-                : t("applicants.leadEmpty")
-          }
-        />
+                : t("applicants.leadEmpty")}
+          </p>
+        </div>
       </div>
       <MatchList
         jobId={jobId}

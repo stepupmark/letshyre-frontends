@@ -235,6 +235,9 @@
     "saveFailed": "Kami tidak bisa menyimpan perubahan Anda. Perubahan masih ada, jadi coba lagi.",
     "discardTitle": "Buang perubahan?",
     "discardBody": "Anda sudah mengedit lowongan ini. Keluar sekarang akan menghilangkan perubahan itu.",
-    "discard": "Buang"
+    "discard": "Buang",
+    "errorTitle": "Lowongan ini gagal dimuat.",
+    "errorBody": "Tidak ada yang berubah. Periksa koneksi lalu coba lagi.",
+    "pendingStatus": "Anda bisa membuka, menjeda, atau menutup lowongan ini setelah disetujui."
   }
 }

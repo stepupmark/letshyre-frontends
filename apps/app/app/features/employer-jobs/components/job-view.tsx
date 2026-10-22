@@ -1,20 +1,9 @@
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Badge } from "@workspace/ui/components/badge"
-import {
-  Banknote,
-  Building2,
-  BriefcaseBusiness,
-  CalendarClock,
-  Clock,
-  FileText,
-  GraduationCap,
-  ListChecks,
-  MapPin,
-  Users,
-  Wrench,
-  type LucideIcon,
-} from "lucide-react"
+import * as m from "motion/react-m"
 import { useId, type ReactNode } from "react"
+
+import { duration, ease } from "@/lib/motion"
 
 import { dateLabel } from "../lib/format"
 import {
@@ -26,7 +15,7 @@ import {
   type JobValues,
 } from "../lib/job-values"
 
-/** The job as candidates read it; the post preview and the detail page share it. */
+// the job as candidates read it; the post preview and the detail page share it
 export function JobView({
   values,
   industries,
@@ -52,21 +41,18 @@ export function JobView({
 
   const facts = [
     {
-      icon: BriefcaseBusiness,
       label: t("detail.facts.experience"),
       value:
         experienceText(values.experience_min, values.experience_max) ||
         t("notGiven"),
     },
     {
-      icon: Banknote,
       label: t("detail.facts.salary"),
       value:
         salaryText(values.salary_min, values.salary_max) || t("notDisclosed"),
     },
-    { icon: MapPin, label: t("detail.facts.place"), value: place },
+    { label: t("detail.facts.place"), value: place },
     {
-      icon: Clock,
       label: t("detail.facts.workMode"),
       value: [
         mode && t(`workMode.${mode}`),
@@ -75,19 +61,16 @@ export function JobView({
         .filter(Boolean)
         .join(" · "),
     },
-    { icon: Building2, label: t("detail.facts.industry"), value: industry },
+    { label: t("detail.facts.industry"), value: industry },
     {
-      icon: GraduationCap,
       label: t("detail.facts.education"),
       value: values.education,
     },
     {
-      icon: Users,
       label: t("detail.facts.openings"),
       value: Number(values.openings) > 0 ? values.openings : "",
     },
     {
-      icon: CalendarClock,
       label: t("detail.facts.applyBy"),
       value: dateLabel(values.deadline, locale) ?? "",
     },
@@ -95,36 +78,34 @@ export function JobView({
 
   return (
     <article className="flex flex-col gap-8 text-sm">
-      <dl className="grid gap-3 sm:grid-cols-2">
-        {facts.map(({ icon: Icon, label, value }, i) => (
-          <div
+      <dl className="grid gap-x-8 border-t sm:grid-cols-2">
+        {facts.map(({ label, value }, i) => (
+          <m.div
             key={label}
-            style={{ transitionDelay: `${i * 40}ms` }}
-            className="settle relative flex min-h-15 flex-col justify-center gap-0.5 rounded-xl border p-3 ps-15"
+            initial={{ opacity: 0, y: 4 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: duration.base,
+              ease,
+              delay: Math.min(i, 7) * 0.03,
+            }}
+            className="flex flex-col gap-0.5 border-b py-3"
           >
-            <dt className="text-xs text-muted-foreground">
-              <span
-                aria-hidden="true"
-                className="absolute inset-s-3 top-1/2 grid size-9 -translate-y-1/2 place-items-center rounded-lg bg-brand-muted text-brand-text [&_svg]:size-4"
-              >
-                <Icon />
-              </span>
-              {label}
-            </dt>
+            <dt className="text-xs text-muted-foreground">{label}</dt>
             <dd className="font-medium wrap-anywhere tabular-nums">{value}</dd>
-          </div>
+          </m.div>
         ))}
       </dl>
 
-      <Part title={t("detail.about")} icon={FileText}>
-        <p className="text-pretty whitespace-pre-line text-muted-foreground">
+      <Part title={t("detail.about")}>
+        <p className="max-w-prose text-pretty whitespace-pre-line">
           {values.overview.trim() || t("detail.none")}
         </p>
       </Part>
 
-      <Part title={t("detail.responsibilities")} icon={ListChecks}>
+      <Part title={t("detail.responsibilities")}>
         {responsibilities.length ? (
-          <ul className="flex list-disc flex-col gap-2 ps-5 text-muted-foreground marker:text-brand">
+          <ul className="flex max-w-prose list-disc flex-col gap-2 ps-5 marker:text-muted-foreground">
             {responsibilities.map((line, i) => (
               <li key={i} className="text-pretty">
                 {line}
@@ -136,7 +117,7 @@ export function JobView({
         )}
       </Part>
 
-      <Part title={t("detail.skills")} icon={Wrench}>
+      <Part title={t("detail.skills")}>
         {values.skills.length ? (
           <ul className="flex flex-wrap gap-1.5">
             {values.skills.map((skill) => (
@@ -153,23 +134,11 @@ export function JobView({
   )
 }
 
-function Part({
-  title,
-  icon: Icon,
-  children,
-}: {
-  title: string
-  icon: LucideIcon
-  children: ReactNode
-}) {
+function Part({ title, children }: { title: string; children: ReactNode }) {
   const id = useId()
   return (
     <section aria-labelledby={id} className="flex flex-col gap-3">
-      <h2
-        id={id}
-        className="flex items-center gap-2 text-base font-semibold text-brand-text"
-      >
-        <Icon aria-hidden="true" className="size-4 shrink-0" />
+      <h2 id={id} className="text-base font-semibold tracking-tight">
         {title}
       </h2>
       {children}

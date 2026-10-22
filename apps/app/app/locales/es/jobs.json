@@ -245,6 +245,9 @@
     "saveFailed": "No hemos podido guardar sus cambios. Siguen aquí, así que inténtelo de nuevo.",
     "discardTitle": "¿Descartar los cambios?",
     "discardBody": "Ha editado esta oferta. Si sale ahora, perderá esos cambios.",
-    "discard": "Descartar"
+    "discard": "Descartar",
+    "errorTitle": "Este empleo no se cargó.",
+    "errorBody": "No ha cambiado nada en él. Revisa tu conexión e inténtalo de nuevo.",
+    "pendingStatus": "Podrás abrir, pausar o cerrar este empleo cuando se apruebe."
   }
 }

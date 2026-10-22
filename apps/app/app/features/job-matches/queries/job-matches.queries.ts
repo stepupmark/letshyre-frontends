@@ -6,7 +6,7 @@ import { dataOf } from "@/lib/response"
 import { matchScore } from "../lib/job-matches"
 import { matchesSchema } from "../schemas/job-matches.schema"
 
-/** Best match first; the API doesn't promise an order. */
+// best match first; the API doesn't promise an order
 export const matchesQuery = (jobId: string, appliedOnly: boolean) =>
   queryOptions({
     queryKey: ["employer", "matches", jobId, { appliedOnly }],

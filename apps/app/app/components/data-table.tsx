@@ -63,8 +63,9 @@ export interface DataTableProps<T extends RowData> {
   pageCount?: number
   getRowId: (row: T) => string
   rowLabel: (row: T) => string
-  params: TableParams
-  onParams: (change: { page?: number; sort?: TableParams["sort"] }) => void
+  // left out for a list that arrives whole: one page, no sorting
+  params?: TableParams
+  onParams?: (change: { page?: number; sort?: TableParams["sort"] }) => void
   pending: boolean
   error: boolean
   onRetry: () => void
@@ -81,6 +82,8 @@ export interface DataTableProps<T extends RowData> {
 }
 
 const EMPTY: never[] = []
+const WHOLE: TableParams = { page: 1, sort: null, q: "" }
+const ignore = () => undefined
 
 const stagger = (i: number) => `${Math.min(i, 6) * 30}ms`
 
@@ -91,8 +94,8 @@ export function DataTable<T extends RowData>({
   pageCount,
   getRowId,
   rowLabel,
-  params,
-  onParams,
+  params = WHOLE,
+  onParams = ignore,
   pending,
   error,
   onRetry,

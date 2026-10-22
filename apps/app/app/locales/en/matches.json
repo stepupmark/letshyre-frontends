@@ -37,5 +37,9 @@
     "emptyTitle": "No applicants yet",
     "emptyBody": "Applicants show up here once they finish the AI interview. You can also find people in the candidate pool.",
     "pool": "Open the candidate pool"
-  }
+  },
+  "errorTitle": "Applicants didn't load.",
+  "errorBody": "Check your connection and try again.",
+  "interviewsTaken_one": "{{count}} taken",
+  "interviewsTaken_other": "{{count}} taken"
 }

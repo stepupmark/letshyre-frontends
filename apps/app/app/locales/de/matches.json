@@ -37,5 +37,9 @@
     "emptyTitle": "Noch keine Bewerber",
     "emptyBody": "Bewerber erscheinen hier, sobald sie das KI-Interview abgeschlossen haben. Sie können auch im Kandidatenpool suchen.",
     "pool": "Kandidatenpool öffnen"
-  }
+  },
+  "errorTitle": "Die Bewerbungen wurden nicht geladen.",
+  "errorBody": "Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+  "interviewsTaken_one": "{{count}} absolviert",
+  "interviewsTaken_other": "{{count}} absolviert"
 }

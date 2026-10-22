@@ -240,6 +240,9 @@
     "saveFailed": "We couldn't save your changes. They're still here, so try again.",
     "discardTitle": "Discard your changes?",
     "discardBody": "You've edited this job. Leaving now loses those edits.",
-    "discard": "Discard"
+    "discard": "Discard",
+    "errorTitle": "This job didn't load.",
+    "errorBody": "Nothing changed on it. Check your connection and try again.",
+    "pendingStatus": "You can open, pause or close this job once it's approved."
   }
 }

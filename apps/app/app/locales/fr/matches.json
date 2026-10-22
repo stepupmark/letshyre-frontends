@@ -40,5 +40,10 @@
     "emptyTitle": "Aucun candidat pour l'instant",
     "emptyBody": "Les candidats apparaissent ici une fois leur entretien IA terminé. Vous pouvez aussi chercher dans le vivier de candidats.",
     "pool": "Ouvrir le vivier de candidats"
-  }
+  },
+  "errorTitle": "Les candidatures ne se sont pas chargées.",
+  "errorBody": "Vérifiez votre connexion et réessayez.",
+  "interviewsTaken_one": "{{count}} passé",
+  "interviewsTaken_many": "{{count}} passés",
+  "interviewsTaken_other": "{{count}} passés"
 }

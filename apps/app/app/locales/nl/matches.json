@@ -37,5 +37,9 @@
     "emptyTitle": "Nog geen sollicitanten",
     "emptyBody": "Sollicitanten verschijnen hier zodra ze het AI-interview hebben afgerond. U kunt ook mensen vinden in de kandidatenpool.",
     "pool": "Kandidatenpool openen"
-  }
+  },
+  "errorTitle": "De sollicitanten zijn niet geladen.",
+  "errorBody": "Controleer je verbinding en probeer het opnieuw.",
+  "interviewsTaken_one": "{{count}} gedaan",
+  "interviewsTaken_other": "{{count}} gedaan"
 }

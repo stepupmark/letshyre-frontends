@@ -245,6 +245,9 @@
     "saveFailed": "Nous n'avons pas pu enregistrer vos modifications. Elles sont conservées, réessayez.",
     "discardTitle": "Abandonner vos modifications ?",
     "discardBody": "Vous avez modifié cette offre. Partir maintenant fera perdre ces modifications.",
-    "discard": "Abandonner"
+    "discard": "Abandonner",
+    "errorTitle": "Cette offre ne s'est pas chargée.",
+    "errorBody": "Rien n'a changé. Vérifiez votre connexion et réessayez.",
+    "pendingStatus": "Vous pourrez ouvrir, suspendre ou fermer cette offre une fois validée."
   }
 }

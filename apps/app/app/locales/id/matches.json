@@ -34,5 +34,8 @@
     "emptyTitle": "Belum ada pelamar",
     "emptyBody": "Pelamar muncul di sini setelah menyelesaikan wawancara AI. Anda juga bisa mencari di kumpulan kandidat.",
     "pool": "Buka kumpulan kandidat"
-  }
+  },
+  "errorTitle": "Pelamar gagal dimuat.",
+  "errorBody": "Periksa koneksi lalu coba lagi.",
+  "interviewsTaken_other": "{{count}} diikuti"
 }
