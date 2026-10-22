@@ -2,6 +2,11 @@ import { z } from "zod"
 
 const text = z.string().nullish()
 
+const amount = z.preprocess(
+  (value) => (typeof value === "string" ? Number.parseFloat(value) : value),
+  z.number().nullish().catch(null)
+)
+
 const skills = z.preprocess(
   (value) =>
     typeof value === "string"
@@ -29,14 +34,22 @@ const jobSchema = z.looseObject({
     ])
     .nullish(),
   location: text,
+  city: text,
+  work_mode: text,
   employment_type: text,
   industry_type: text,
   experience_required: z.union([z.string(), z.number()]).nullish(),
+  experience_min_years: amount,
+  experience_max_years: amount,
   salary_range: text,
+  salary_min_lpa: amount,
+  salary_max_lpa: amount,
   skills_required: skills,
+  number_of_openings: amount,
+  deadline: text,
   description: text,
   created_at: text,
-  // set once the candidate has applied
+  // the candidate's application stage, null until they apply
   status: text,
 })
 

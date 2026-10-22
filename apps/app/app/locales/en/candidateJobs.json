@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "Find jobs",
+    "titleFor": "{{q}} jobs",
+    "titleIn": "{{q}} jobs in {{location}}",
+    "titleWhere": "Jobs in {{location}}",
     "lead": "Roles open now. Applying takes one step, and the employer sees your profile and scorecard."
   },
   "applications": {
@@ -11,16 +14,36 @@
     "keyword": "Job title or skill",
     "location": "City",
     "search": "Search",
+    "title": "Filters",
+    "applied_one": "{{count}} filter applied",
+    "applied_other": "{{count}} filters applied",
+    "done": "Show jobs",
+    "doneCount_one": "Show {{count}} job",
+    "doneCount_other": "Show {{count}} jobs",
     "type": "Job type",
-    "anyType": "Any job type",
     "industry": "Industry",
-    "anyIndustry": "Any industry",
-    "experience": "Experience, e.g. 2-5",
-    "years": "yrs",
-    "salary": "Pay, e.g. 6-10",
+    "experienceTitle": "Your experience",
+    "experienceAny": "Any",
+    "salaryTitle": "Minimum salary",
+    "salaryAny": "Any",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "Show all {{total}}",
+    "fewerIndustries": "Show fewer",
+    "findIndustry": "Find an industry",
+    "noIndustry": "No industry matches",
+    "hideApplied": "Hide jobs I've applied to",
+    "remove": "Remove {{filter}}",
+    "clearFilters": "Clear filters",
     "clear": "Clear all"
   },
+  "sort": {
+    "label": "Sort by",
+    "newest": "Newest",
+    "salary": "Highest salary",
+    "experience": "Least experience"
+  },
   "saved": {
+    "title": "Saved searches",
     "save": "Save search",
     "saved": "Saved",
     "remove": "Remove saved search {{search}}"
@@ -30,18 +53,36 @@
     "part_time": "Part time",
     "internship": "Internship",
     "contract": "Contract",
-    "freelance": "Freelance"
+    "remote": "Remote"
+  },
+  "workModes": {
+    "onsite": "On-site",
+    "remote": "Remote",
+    "hybrid": "Hybrid"
   },
   "facts": {
     "fresher": "Freshers welcome",
-    "years": "{{years}} yrs"
+    "years": "{{years}} yrs",
+    "salary": "₹{{amount}} LPA",
+    "openings_one": "{{count}} opening",
+    "openings_other": "{{count}} openings"
   },
-  "results_one": "{{count}} job",
-  "results_other": "{{count}} jobs",
+  "results_one": "<n>{{count}}</n> job",
+  "results_other": "<n>{{count}}</n> jobs",
+  "found_one": "{{count}} job found",
+  "found_other": "{{count}} jobs found",
+  "showing": "Showing {{from}}–{{to}}",
   "searching": "Searching…",
+  "page": "Page {{page}}",
+  "new": "New",
+  "closesToday": "Closes today",
+  "closesIn_one": "Closes in {{count}} day",
+  "closesIn_other": "Closes in {{count}} days",
   "empty": {
     "title": "No open jobs right now",
     "body": "New roles are posted every week. Check back soon, or keep your scorecard fresh so employers find you.",
+    "filteredTitle": "No jobs match these filters",
+    "filteredBody": "Remove one of them, or clear them all.",
     "Applied": {
       "title": "No applications yet",
       "body": "Jobs you apply to show up here, with where each one stands."
@@ -62,9 +103,24 @@
   "company": "Company",
   "untitled": "Untitled role",
   "moreSkills": "+{{count}} more",
-  "applied": "Applied",
   "appliedWhen": "applied {{when}}",
+  "status": {
+    "Applied": "Applied",
+    "Shortlisted": "Shortlisted",
+    "Reserved": "On hold",
+    "Selected": "Selected",
+    "Hired": "Hired",
+    "Rejected": "Not selected"
+  },
   "detail": {
+    "facts": "Job details",
+    "experience": "Experience",
+    "salary": "Salary",
+    "location": "Location",
+    "type": "Job type",
+    "industry": "Industry",
+    "openings": "Openings",
+    "deadline": "Apply by",
     "skills": "Skills they're looking for",
     "about": "About the role",
     "noDescription": "The employer hasn't added a description."

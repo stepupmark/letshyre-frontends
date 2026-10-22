@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "Cari lowongan",
+    "titleFor": "Lowongan {{q}}",
+    "titleIn": "Lowongan {{q}} di {{location}}",
+    "titleWhere": "Lowongan di {{location}}",
     "lead": "Posisi yang dibuka sekarang. Melamar cukup satu langkah, dan pemberi kerja melihat profil serta kartu skor Anda."
   },
   "applications": {
@@ -11,16 +14,34 @@
     "keyword": "Jabatan atau keterampilan",
     "location": "Kota",
     "search": "Cari",
+    "title": "Filter",
+    "applied_other": "{{count}} filter diterapkan",
+    "done": "Lihat lowongan",
+    "doneCount_other": "Lihat {{count}} lowongan",
     "type": "Jenis pekerjaan",
-    "anyType": "Semua jenis pekerjaan",
     "industry": "Industri",
-    "anyIndustry": "Semua industri",
-    "experience": "Pengalaman, mis. 2-5",
-    "years": "thn",
-    "salary": "Gaji, mis. 6-10",
+    "experienceTitle": "Pengalaman Anda",
+    "experienceAny": "Semua",
+    "salaryTitle": "Gaji minimum",
+    "salaryAny": "Semua",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "Tampilkan semua {{total}}",
+    "fewerIndustries": "Tampilkan lebih sedikit",
+    "findIndustry": "Cari industri",
+    "noIndustry": "Tidak ada industri yang cocok",
+    "hideApplied": "Sembunyikan lowongan yang sudah saya lamar",
+    "remove": "Hapus {{filter}}",
+    "clearFilters": "Hapus filter",
     "clear": "Hapus semua"
   },
+  "sort": {
+    "label": "Urutkan",
+    "newest": "Terbaru",
+    "salary": "Gaji tertinggi",
+    "experience": "Pengalaman paling sedikit"
+  },
   "saved": {
+    "title": "Pencarian tersimpan",
     "save": "Simpan pencarian",
     "saved": "Tersimpan",
     "remove": "Hapus pencarian tersimpan {{search}}"
@@ -30,17 +51,32 @@
     "part_time": "Paruh waktu",
     "internship": "Magang",
     "contract": "Kontrak",
-    "freelance": "Lepas"
+    "remote": "Jarak jauh"
+  },
+  "workModes": {
+    "onsite": "Di kantor",
+    "remote": "Jarak jauh",
+    "hybrid": "Hibrida"
   },
   "facts": {
     "fresher": "Lulusan baru dipersilakan",
-    "years": "{{years}} thn"
+    "years": "{{years}} thn",
+    "salary": "₹{{amount}} LPA",
+    "openings_other": "{{count}} posisi"
   },
-  "results_other": "{{count}} lowongan",
+  "results_other": "<n>{{count}}</n> lowongan",
+  "found_other": "{{count}} lowongan ditemukan",
+  "showing": "Menampilkan {{from}}–{{to}}",
   "searching": "Mencari…",
+  "page": "Halaman {{page}}",
+  "new": "Baru",
+  "closesToday": "Ditutup hari ini",
+  "closesIn_other": "Ditutup dalam {{count}} hari",
   "empty": {
     "title": "Belum ada lowongan yang dibuka",
     "body": "Posisi baru dipasang setiap minggu. Kembali lagi nanti, atau perbarui kartu skor Anda agar pemberi kerja menemukan Anda.",
+    "filteredTitle": "Tidak ada lowongan yang cocok dengan filter ini",
+    "filteredBody": "Hapus salah satunya, atau hapus semuanya.",
     "Applied": {
       "title": "Belum ada lamaran",
       "body": "Lowongan yang Anda lamar muncul di sini, lengkap dengan statusnya."
@@ -61,9 +97,24 @@
   "company": "Perusahaan",
   "untitled": "Posisi tanpa judul",
   "moreSkills": "+{{count}} lagi",
-  "applied": "Sudah melamar",
   "appliedWhen": "melamar {{when}}",
+  "status": {
+    "Applied": "Melamar",
+    "Shortlisted": "Daftar pendek",
+    "Reserved": "Ditunda",
+    "Selected": "Terpilih",
+    "Hired": "Diterima kerja",
+    "Rejected": "Tidak terpilih"
+  },
   "detail": {
+    "facts": "Detail lowongan",
+    "experience": "Pengalaman",
+    "salary": "Gaji",
+    "location": "Lokasi",
+    "type": "Jenis pekerjaan",
+    "industry": "Industri",
+    "openings": "Posisi tersedia",
+    "deadline": "Lamar sebelum",
     "skills": "Keterampilan yang dicari",
     "about": "Tentang posisi",
     "noDescription": "Pemberi kerja belum menambahkan deskripsi."

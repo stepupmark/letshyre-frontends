@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "Encontrar vagas",
+    "titleFor": "Vagas de {{q}}",
+    "titleIn": "Vagas de {{q}} em {{location}}",
+    "titleWhere": "Vagas em {{location}}",
     "lead": "Vagas abertas agora. A candidatura leva um passo, e o empregador vê seu perfil e sua avaliação."
   },
   "applications": {
@@ -11,16 +14,38 @@
     "keyword": "Cargo ou habilidade",
     "location": "Cidade",
     "search": "Buscar",
+    "title": "Filtros",
+    "applied_one": "{{count}} filtro aplicado",
+    "applied_many": "{{count}} filtros aplicados",
+    "applied_other": "{{count}} filtros aplicados",
+    "done": "Ver vagas",
+    "doneCount_one": "Ver {{count}} vaga",
+    "doneCount_many": "Ver {{count}} vagas",
+    "doneCount_other": "Ver {{count}} vagas",
     "type": "Tipo de vaga",
-    "anyType": "Qualquer tipo de vaga",
     "industry": "Setor",
-    "anyIndustry": "Qualquer setor",
-    "experience": "Experiência, ex. 2-5",
-    "years": "anos",
-    "salary": "Salário, ex. 6-10",
+    "experienceTitle": "Sua experiência",
+    "experienceAny": "Qualquer",
+    "salaryTitle": "Salário mínimo",
+    "salaryAny": "Qualquer",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "Ver todos ({{total}})",
+    "fewerIndustries": "Ver menos",
+    "findIndustry": "Buscar um setor",
+    "noIndustry": "Nenhum setor corresponde",
+    "hideApplied": "Ocultar vagas em que já me candidatei",
+    "remove": "Remover {{filter}}",
+    "clearFilters": "Limpar filtros",
     "clear": "Limpar tudo"
   },
+  "sort": {
+    "label": "Ordenar por",
+    "newest": "Mais recentes",
+    "salary": "Maior salário",
+    "experience": "Menor experiência"
+  },
   "saved": {
+    "title": "Buscas salvas",
     "save": "Salvar busca",
     "saved": "Salva",
     "remove": "Remover a busca salva {{search}}"
@@ -30,19 +55,40 @@
     "part_time": "Meio período",
     "internship": "Estágio",
     "contract": "Contrato",
-    "freelance": "Freelance"
+    "remote": "Remoto"
+  },
+  "workModes": {
+    "onsite": "Presencial",
+    "remote": "Remoto",
+    "hybrid": "Híbrido"
   },
   "facts": {
     "fresher": "Aceita sem experiência",
-    "years": "{{years}} anos"
+    "years": "{{years}} anos",
+    "salary": "₹{{amount}} LPA",
+    "openings_one": "{{count}} vaga aberta",
+    "openings_many": "{{count}} vagas abertas",
+    "openings_other": "{{count}} vagas abertas"
   },
-  "results_one": "{{count}} vaga",
-  "results_many": "{{count}} vagas",
-  "results_other": "{{count}} vagas",
+  "results_one": "<n>{{count}}</n> vaga",
+  "results_many": "<n>{{count}}</n> vagas",
+  "results_other": "<n>{{count}}</n> vagas",
+  "found_one": "{{count}} vaga encontrada",
+  "found_many": "{{count}} vagas encontradas",
+  "found_other": "{{count}} vagas encontradas",
+  "showing": "Mostrando {{from}}–{{to}}",
   "searching": "Buscando…",
+  "page": "Página {{page}}",
+  "new": "Nova",
+  "closesToday": "Encerra hoje",
+  "closesIn_one": "Encerra em {{count}} dia",
+  "closesIn_many": "Encerra em {{count}} dias",
+  "closesIn_other": "Encerra em {{count}} dias",
   "empty": {
     "title": "Nenhuma vaga aberta agora",
     "body": "Novas vagas são publicadas toda semana. Volte em breve, ou mantenha sua avaliação atualizada para os empregadores encontrarem você.",
+    "filteredTitle": "Nenhuma vaga corresponde a estes filtros",
+    "filteredBody": "Remova um deles, ou limpe todos.",
     "Applied": {
       "title": "Ainda não há candidaturas",
       "body": "As vagas em que você se candidata aparecem aqui, com o andamento de cada uma."
@@ -63,9 +109,24 @@
   "company": "Empresa",
   "untitled": "Vaga sem título",
   "moreSkills": "+{{count}} mais",
-  "applied": "Candidatado",
   "appliedWhen": "candidatura {{when}}",
+  "status": {
+    "Applied": "Candidatado",
+    "Shortlisted": "Pré-selecionado",
+    "Reserved": "Em espera",
+    "Selected": "Selecionado",
+    "Hired": "Contratado",
+    "Rejected": "Não selecionado"
+  },
   "detail": {
+    "facts": "Detalhes da vaga",
+    "experience": "Experiência",
+    "salary": "Salário",
+    "location": "Local",
+    "type": "Tipo de vaga",
+    "industry": "Setor",
+    "openings": "Vagas abertas",
+    "deadline": "Candidate-se até",
     "skills": "Habilidades procuradas",
     "about": "Sobre a vaga",
     "noDescription": "O empregador não adicionou uma descrição."

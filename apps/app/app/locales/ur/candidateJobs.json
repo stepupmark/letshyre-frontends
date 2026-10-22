@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "ملازمتیں تلاش کریں",
+    "titleFor": "{{q}} کی ملازمتیں",
+    "titleIn": "{{location}} میں {{q}} کی ملازمتیں",
+    "titleWhere": "{{location}} میں ملازمتیں",
     "lead": "ابھی کھلے عہدے۔ درخواست ایک قدم میں ہوتی ہے، اور آجر آپ کی پروفائل اور اسکور کارڈ دیکھتا ہے۔"
   },
   "applications": {
@@ -11,16 +14,36 @@
     "keyword": "عہدہ یا مہارت",
     "location": "شہر",
     "search": "تلاش کریں",
+    "title": "فلٹرز",
+    "applied_one": "{{count}} فلٹر لگے ہیں",
+    "applied_other": "{{count}} فلٹر لگے ہیں",
+    "done": "ملازمتیں دکھائیں",
+    "doneCount_one": "{{count}} ملازمتیں دکھائیں",
+    "doneCount_other": "{{count}} ملازمتیں دکھائیں",
     "type": "ملازمت کی قسم",
-    "anyType": "کوئی بھی قسم",
     "industry": "صنعت",
-    "anyIndustry": "کوئی بھی صنعت",
-    "experience": "تجربہ، مثلاً 2-5",
-    "years": "سال",
-    "salary": "تنخواہ، مثلاً 6-10",
+    "experienceTitle": "آپ کا تجربہ",
+    "experienceAny": "کوئی بھی",
+    "salaryTitle": "کم از کم تنخواہ",
+    "salaryAny": "کوئی بھی",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "سب دکھائیں ({{total}})",
+    "fewerIndustries": "کم دکھائیں",
+    "findIndustry": "صنعت تلاش کریں",
+    "noIndustry": "کوئی صنعت میل نہیں کھاتی",
+    "hideApplied": "جن ملازمتوں پر درخواست دی ہے انہیں چھپائیں",
+    "remove": "{{filter}} ہٹائیں",
+    "clearFilters": "فلٹرز صاف کریں",
     "clear": "سب صاف کریں"
   },
+  "sort": {
+    "label": "ترتیب",
+    "newest": "تازہ ترین",
+    "salary": "سب سے زیادہ تنخواہ",
+    "experience": "سب سے کم تجربہ"
+  },
   "saved": {
+    "title": "محفوظ کردہ تلاشیں",
     "save": "تلاش محفوظ کریں",
     "saved": "محفوظ ہو گئی",
     "remove": "محفوظ تلاش {{search}} ہٹائیں"
@@ -30,18 +53,36 @@
     "part_time": "پارٹ ٹائم",
     "internship": "انٹرن شپ",
     "contract": "کنٹریکٹ",
-    "freelance": "فری لانس"
+    "remote": "ریموٹ"
+  },
+  "workModes": {
+    "onsite": "دفتر میں",
+    "remote": "ریموٹ",
+    "hybrid": "ہائبرڈ"
   },
   "facts": {
     "fresher": "فریشرز بھی درخواست دیں",
-    "years": "{{years}} سال"
+    "years": "{{years}} سال",
+    "salary": "₹{{amount}} LPA",
+    "openings_one": "{{count}} آسامیاں",
+    "openings_other": "{{count}} آسامیاں"
   },
-  "results_one": "{{count}} ملازمت",
-  "results_other": "{{count}} ملازمتیں",
+  "results_one": "<n>{{count}}</n> ملازمت",
+  "results_other": "<n>{{count}}</n> ملازمتیں",
+  "found_one": "{{count}} ملازمتیں ملیں",
+  "found_other": "{{count}} ملازمتیں ملیں",
+  "showing": "{{from}}–{{to}} دکھائی جا رہی ہیں",
   "searching": "تلاش جاری ہے…",
+  "page": "صفحہ {{page}}",
+  "new": "نئی",
+  "closesToday": "آج بند ہو رہی ہے",
+  "closesIn_one": "{{count}} دن میں بند ہو گی",
+  "closesIn_other": "{{count}} دن میں بند ہو گی",
   "empty": {
     "title": "ابھی کوئی کھلی ملازمت نہیں",
     "body": "ہر ہفتے نئے عہدے آتے ہیں۔ جلد دوبارہ دیکھیں، یا اپنا اسکور کارڈ تازہ رکھیں تاکہ آجر آپ کو ڈھونڈ سکیں۔",
+    "filteredTitle": "ان فلٹرز سے کوئی ملازمت میل نہیں کھاتی",
+    "filteredBody": "ان میں سے ایک ہٹائیں، یا سب صاف کر دیں۔",
     "Applied": {
       "title": "ابھی کوئی درخواست نہیں",
       "body": "جن ملازمتوں پر آپ درخواست دیں گے وہ اپنی حیثیت کے ساتھ یہاں دکھیں گی۔"
@@ -62,9 +103,24 @@
   "company": "کمپنی",
   "untitled": "بغیر نام کا عہدہ",
   "moreSkills": "+{{count}} مزید",
-  "applied": "درخواست دی",
   "appliedWhen": "{{when}} درخواست دی",
+  "status": {
+    "Applied": "درخواست دی",
+    "Shortlisted": "شارٹ لسٹ",
+    "Reserved": "زیرِ التوا",
+    "Selected": "منتخب",
+    "Hired": "ملازمت مل گئی",
+    "Rejected": "منتخب نہیں"
+  },
   "detail": {
+    "facts": "ملازمت کی تفصیلات",
+    "experience": "تجربہ",
+    "salary": "تنخواہ",
+    "location": "مقام",
+    "type": "ملازمت کی قسم",
+    "industry": "صنعت",
+    "openings": "آسامیاں",
+    "deadline": "درخواست کی آخری تاریخ",
     "skills": "مطلوبہ مہارتیں",
     "about": "عہدے کے بارے میں",
     "noDescription": "آجر نے کوئی تفصیل شامل نہیں کی۔"

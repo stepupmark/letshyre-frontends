@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "Vacatures zoeken",
+    "titleFor": "{{q}}-vacatures",
+    "titleIn": "{{q}}-vacatures in {{location}}",
+    "titleWhere": "Vacatures in {{location}}",
     "lead": "Nu open functies. Solliciteren is één stap, en de werkgever ziet uw profiel en scorekaart."
   },
   "applications": {
@@ -11,16 +14,36 @@
     "keyword": "Functie of vaardigheid",
     "location": "Stad",
     "search": "Zoeken",
+    "title": "Filters",
+    "applied_one": "{{count}} filter actief",
+    "applied_other": "{{count}} filters actief",
+    "done": "Vacatures tonen",
+    "doneCount_one": "{{count}} vacature tonen",
+    "doneCount_other": "{{count}} vacatures tonen",
     "type": "Soort dienstverband",
-    "anyType": "Elk dienstverband",
     "industry": "Sector",
-    "anyIndustry": "Elke sector",
-    "experience": "Ervaring, bijv. 2-5",
-    "years": "jr",
-    "salary": "Salaris, bijv. 6-10",
+    "experienceTitle": "Je ervaring",
+    "experienceAny": "Alle",
+    "salaryTitle": "Minimumsalaris",
+    "salaryAny": "Alle",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "Alle {{total}} tonen",
+    "fewerIndustries": "Minder tonen",
+    "findIndustry": "Branche zoeken",
+    "noIndustry": "Geen branche gevonden",
+    "hideApplied": "Vacatures verbergen waarop ik heb gesolliciteerd",
+    "remove": "{{filter}} verwijderen",
+    "clearFilters": "Filters wissen",
     "clear": "Alles wissen"
   },
+  "sort": {
+    "label": "Sorteren op",
+    "newest": "Nieuwste",
+    "salary": "Hoogste salaris",
+    "experience": "Minste ervaring"
+  },
   "saved": {
+    "title": "Opgeslagen zoekopdrachten",
     "save": "Zoekopdracht opslaan",
     "saved": "Opgeslagen",
     "remove": "Opgeslagen zoekopdracht {{search}} verwijderen"
@@ -30,18 +53,36 @@
     "part_time": "Deeltijd",
     "internship": "Stage",
     "contract": "Tijdelijk",
-    "freelance": "Freelance"
+    "remote": "Op afstand"
+  },
+  "workModes": {
+    "onsite": "Op locatie",
+    "remote": "Op afstand",
+    "hybrid": "Hybride"
   },
   "facts": {
     "fresher": "Starters welkom",
-    "years": "{{years}} jr"
+    "years": "{{years}} jr",
+    "salary": "₹{{amount}} LPA",
+    "openings_one": "{{count}} plek",
+    "openings_other": "{{count}} plekken"
   },
-  "results_one": "{{count}} vacature",
-  "results_other": "{{count}} vacatures",
+  "results_one": "<n>{{count}}</n> vacature",
+  "results_other": "<n>{{count}}</n> vacatures",
+  "found_one": "{{count}} vacature gevonden",
+  "found_other": "{{count}} vacatures gevonden",
+  "showing": "{{from}}–{{to}} worden getoond",
   "searching": "Bezig met zoeken…",
+  "page": "Pagina {{page}}",
+  "new": "Nieuw",
+  "closesToday": "Sluit vandaag",
+  "closesIn_one": "Sluit over {{count}} dag",
+  "closesIn_other": "Sluit over {{count}} dagen",
   "empty": {
     "title": "Nu geen open vacatures",
     "body": "Elke week komen er nieuwe functies bij. Kijk binnenkort opnieuw, of houd uw scorekaart actueel zodat werkgevers u vinden.",
+    "filteredTitle": "Geen vacatures passen bij deze filters",
+    "filteredBody": "Verwijder er één, of wis ze allemaal.",
     "Applied": {
       "title": "Nog geen sollicitaties",
       "body": "Vacatures waarop u solliciteert, verschijnen hier met hun stand van zaken."
@@ -62,9 +103,24 @@
   "company": "Bedrijf",
   "untitled": "Functie zonder titel",
   "moreSkills": "+{{count}} meer",
-  "applied": "Gesolliciteerd",
   "appliedWhen": "gesolliciteerd {{when}}",
+  "status": {
+    "Applied": "Gesolliciteerd",
+    "Shortlisted": "Op de shortlist",
+    "Reserved": "In de wacht",
+    "Selected": "Gekozen",
+    "Hired": "Aangenomen",
+    "Rejected": "Niet gekozen"
+  },
   "detail": {
+    "facts": "Vacaturegegevens",
+    "experience": "Ervaring",
+    "salary": "Salaris",
+    "location": "Locatie",
+    "type": "Soort baan",
+    "industry": "Branche",
+    "openings": "Openstaande plekken",
+    "deadline": "Solliciteren vóór",
     "skills": "Gezochte vaardigheden",
     "about": "Over de functie",
     "noDescription": "De werkgever heeft geen beschrijving toegevoegd."

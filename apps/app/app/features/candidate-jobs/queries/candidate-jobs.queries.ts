@@ -3,25 +3,23 @@ import { keepPreviousData, queryOptions } from "@tanstack/react-query"
 import { api } from "@/lib/api"
 import { dataOf } from "@/lib/response"
 
+import { toApiQuery } from "../lib/search"
 import { jobsPageSchema } from "../schemas/candidate-jobs.schema"
 import type { JobSearch, JobsPage, Stage } from "../types"
 
+export const candidateJobsKeys = {
+  find: ["candidate", "find-jobs"] as const,
+  applications: ["candidate", "applications"] as const,
+}
+
 export const findJobsQuery = (search: JobSearch) =>
   queryOptions({
-    queryKey: ["candidate", "find-jobs", search],
+    queryKey: [...candidateJobsKeys.find, search],
     queryFn: async (): Promise<JobsPage> => {
       const data = jobsPageSchema.parse(
         dataOf(
           await api.get("user/v1/candidate_find_jobs/", {
-            query: {
-              job_search: search.q || undefined,
-              location: search.location || undefined,
-              employment_type: search.type || undefined,
-              industry_type: search.industry || undefined,
-              experience_required: search.experience || undefined,
-              salary_range: search.salary || undefined,
-              page: search.page,
-            },
+            query: toApiQuery(search),
           })
         )
       )
@@ -39,7 +37,7 @@ const APPLICATIONS_PAGE = 10
 
 export const applicationsQuery = (stage: Stage, pageNumber: number) =>
   queryOptions({
-    queryKey: ["candidate", "applications", stage, pageNumber],
+    queryKey: [...candidateJobsKeys.applications, stage, pageNumber],
     queryFn: async () => {
       const data = jobsPageSchema.parse(
         dataOf(

@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "Jobs finden",
+    "titleFor": "{{q}}-Jobs",
+    "titleIn": "{{q}}-Jobs in {{location}}",
+    "titleWhere": "Jobs in {{location}}",
     "lead": "Jetzt offene Rollen. Die Bewerbung ist ein Schritt, und der Arbeitgeber sieht Ihr Profil und Ihre Scorecard."
   },
   "applications": {
@@ -11,16 +14,36 @@
     "keyword": "Jobtitel oder Fähigkeit",
     "location": "Stadt",
     "search": "Suchen",
+    "title": "Filter",
+    "applied_one": "{{count}} Filter aktiv",
+    "applied_other": "{{count}} Filter aktiv",
+    "done": "Jobs anzeigen",
+    "doneCount_one": "{{count}} Job anzeigen",
+    "doneCount_other": "{{count}} Jobs anzeigen",
     "type": "Anstellungsart",
-    "anyType": "Jede Anstellungsart",
     "industry": "Branche",
-    "anyIndustry": "Jede Branche",
-    "experience": "Erfahrung, z. B. 2-5",
-    "years": "J.",
-    "salary": "Gehalt, z. B. 6-10",
+    "experienceTitle": "Deine Erfahrung",
+    "experienceAny": "Beliebig",
+    "salaryTitle": "Mindestgehalt",
+    "salaryAny": "Beliebig",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "Alle {{total}} anzeigen",
+    "fewerIndustries": "Weniger anzeigen",
+    "findIndustry": "Branche suchen",
+    "noIndustry": "Keine Branche gefunden",
+    "hideApplied": "Jobs ausblenden, auf die ich mich beworben habe",
+    "remove": "{{filter}} entfernen",
+    "clearFilters": "Filter zurücksetzen",
     "clear": "Alle löschen"
   },
+  "sort": {
+    "label": "Sortieren nach",
+    "newest": "Neueste",
+    "salary": "Höchstes Gehalt",
+    "experience": "Wenigste Erfahrung"
+  },
   "saved": {
+    "title": "Gespeicherte Suchen",
     "save": "Suche speichern",
     "saved": "Gespeichert",
     "remove": "Gespeicherte Suche {{search}} entfernen"
@@ -30,18 +53,36 @@
     "part_time": "Teilzeit",
     "internship": "Praktikum",
     "contract": "Befristet",
-    "freelance": "Freiberuflich"
+    "remote": "Remote"
+  },
+  "workModes": {
+    "onsite": "Vor Ort",
+    "remote": "Remote",
+    "hybrid": "Hybrid"
   },
   "facts": {
     "fresher": "Berufseinsteiger willkommen",
-    "years": "{{years}} J."
+    "years": "{{years}} J.",
+    "salary": "₹{{amount}} LPA",
+    "openings_one": "{{count}} offene Stelle",
+    "openings_other": "{{count}} offene Stellen"
   },
-  "results_one": "{{count}} Job",
-  "results_other": "{{count}} Jobs",
+  "results_one": "<n>{{count}}</n> Job",
+  "results_other": "<n>{{count}}</n> Jobs",
+  "found_one": "{{count}} Job gefunden",
+  "found_other": "{{count}} Jobs gefunden",
+  "showing": "{{from}}–{{to}} werden angezeigt",
   "searching": "Suche läuft…",
+  "page": "Seite {{page}}",
+  "new": "Neu",
+  "closesToday": "Endet heute",
+  "closesIn_one": "Endet in {{count}} Tag",
+  "closesIn_other": "Endet in {{count}} Tagen",
   "empty": {
     "title": "Gerade keine offenen Jobs",
     "body": "Jede Woche kommen neue Rollen hinzu. Schauen Sie bald wieder vorbei oder halten Sie Ihre Scorecard aktuell, damit Arbeitgeber Sie finden.",
+    "filteredTitle": "Keine Jobs passen zu diesen Filtern",
+    "filteredBody": "Entferne einen davon oder setze alle zurück.",
     "Applied": {
       "title": "Noch keine Bewerbungen",
       "body": "Jobs, auf die Sie sich bewerben, erscheinen hier mit ihrem aktuellen Stand."
@@ -62,9 +103,24 @@
   "company": "Unternehmen",
   "untitled": "Rolle ohne Titel",
   "moreSkills": "+{{count}} weitere",
-  "applied": "Beworben",
   "appliedWhen": "beworben {{when}}",
+  "status": {
+    "Applied": "Beworben",
+    "Shortlisted": "Engere Wahl",
+    "Reserved": "Zurückgestellt",
+    "Selected": "Ausgewählt",
+    "Hired": "Eingestellt",
+    "Rejected": "Nicht ausgewählt"
+  },
   "detail": {
+    "facts": "Jobdetails",
+    "experience": "Erfahrung",
+    "salary": "Gehalt",
+    "location": "Ort",
+    "type": "Jobart",
+    "industry": "Branche",
+    "openings": "Offene Stellen",
+    "deadline": "Bewerben bis",
     "skills": "Gesuchte Fähigkeiten",
     "about": "Über die Rolle",
     "noDescription": "Der Arbeitgeber hat keine Beschreibung hinzugefügt."

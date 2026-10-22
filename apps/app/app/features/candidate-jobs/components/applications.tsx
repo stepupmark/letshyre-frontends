@@ -21,7 +21,8 @@ import { applicationsQuery } from "../queries/candidate-jobs.queries"
 import { companyOf, STAGES } from "../lib/candidate-jobs"
 import { type Job } from "../schemas/candidate-jobs.schema"
 import { type Stage } from "../types"
-import { CompanyLogo, JobDetail, JobFacts } from "./job-parts"
+import { JobDetail } from "./job-detail"
+import { CompanyLogo, JobFacts } from "./job-parts"
 import { Pager } from "./pager"
 
 const NEXT_STEP: Record<
@@ -233,7 +234,6 @@ function ApplicationCard({
   )
 }
 
-/** Where the application is: done steps, the current one, and what's left. */
 function Timeline({ stage }: { stage: Stage }) {
   const { t } = useTranslation("candidateJobs")
   const steps: {

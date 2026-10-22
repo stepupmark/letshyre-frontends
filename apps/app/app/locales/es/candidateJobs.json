@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "Buscar empleo",
+    "titleFor": "Empleos de {{q}}",
+    "titleIn": "Empleos de {{q}} en {{location}}",
+    "titleWhere": "Empleos en {{location}}",
     "lead": "Puestos abiertos ahora. Postularse lleva un paso, y el empleador ve su perfil y su ficha de evaluación."
   },
   "applications": {
@@ -11,16 +14,38 @@
     "keyword": "Puesto o habilidad",
     "location": "Ciudad",
     "search": "Buscar",
+    "title": "Filtros",
+    "applied_one": "{{count}} filtro aplicado",
+    "applied_many": "{{count}} filtros aplicados",
+    "applied_other": "{{count}} filtros aplicados",
+    "done": "Ver empleos",
+    "doneCount_one": "Ver {{count}} empleo",
+    "doneCount_many": "Ver {{count}} empleos",
+    "doneCount_other": "Ver {{count}} empleos",
     "type": "Tipo de empleo",
-    "anyType": "Cualquier tipo de empleo",
     "industry": "Sector",
-    "anyIndustry": "Cualquier sector",
-    "experience": "Experiencia, p. ej. 2-5",
-    "years": "años",
-    "salary": "Salario, p. ej. 6-10",
+    "experienceTitle": "Tu experiencia",
+    "experienceAny": "Cualquiera",
+    "salaryTitle": "Salario mínimo",
+    "salaryAny": "Cualquiera",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "Ver los {{total}}",
+    "fewerIndustries": "Ver menos",
+    "findIndustry": "Buscar un sector",
+    "noIndustry": "Ningún sector coincide",
+    "hideApplied": "Ocultar empleos a los que ya me postulé",
+    "remove": "Quitar {{filter}}",
+    "clearFilters": "Borrar filtros",
     "clear": "Borrar todo"
   },
+  "sort": {
+    "label": "Ordenar por",
+    "newest": "Más recientes",
+    "salary": "Mayor salario",
+    "experience": "Menor experiencia"
+  },
   "saved": {
+    "title": "Búsquedas guardadas",
     "save": "Guardar búsqueda",
     "saved": "Guardada",
     "remove": "Quitar la búsqueda guardada {{search}}"
@@ -30,19 +55,40 @@
     "part_time": "Media jornada",
     "internship": "Prácticas",
     "contract": "Temporal",
-    "freelance": "Autónomo"
+    "remote": "Remoto"
+  },
+  "workModes": {
+    "onsite": "Presencial",
+    "remote": "Remoto",
+    "hybrid": "Híbrido"
   },
   "facts": {
     "fresher": "Se aceptan sin experiencia",
-    "years": "{{years}} años"
+    "years": "{{years}} años",
+    "salary": "₹{{amount}} LPA",
+    "openings_one": "{{count}} vacante",
+    "openings_many": "{{count}} vacantes",
+    "openings_other": "{{count}} vacantes"
   },
-  "results_one": "{{count}} empleo",
-  "results_many": "{{count}} empleos",
-  "results_other": "{{count}} empleos",
+  "results_one": "<n>{{count}}</n> empleo",
+  "results_many": "<n>{{count}}</n> empleos",
+  "results_other": "<n>{{count}}</n> empleos",
+  "found_one": "{{count}} empleo encontrado",
+  "found_many": "{{count}} empleos encontrados",
+  "found_other": "{{count}} empleos encontrados",
+  "showing": "Mostrando {{from}}–{{to}}",
   "searching": "Buscando…",
+  "page": "Página {{page}}",
+  "new": "Nuevo",
+  "closesToday": "Cierra hoy",
+  "closesIn_one": "Cierra en {{count}} día",
+  "closesIn_many": "Cierra en {{count}} días",
+  "closesIn_other": "Cierra en {{count}} días",
   "empty": {
     "title": "No hay ofertas abiertas ahora mismo",
     "body": "Cada semana se publican puestos nuevos. Vuelva pronto, o mantenga su ficha al día para que los empleadores le encuentren.",
+    "filteredTitle": "Ningún empleo coincide con estos filtros",
+    "filteredBody": "Quita uno, o bórralos todos.",
     "Applied": {
       "title": "Aún no hay candidaturas",
       "body": "Las ofertas a las que se postule aparecen aquí, con el punto en que está cada una."
@@ -63,9 +109,24 @@
   "company": "Empresa",
   "untitled": "Puesto sin título",
   "moreSkills": "+{{count}} más",
-  "applied": "Postulado",
   "appliedWhen": "postulado {{when}}",
+  "status": {
+    "Applied": "Postulado",
+    "Shortlisted": "Preseleccionado",
+    "Reserved": "En espera",
+    "Selected": "Seleccionado",
+    "Hired": "Contratado",
+    "Rejected": "No seleccionado"
+  },
   "detail": {
+    "facts": "Detalles del empleo",
+    "experience": "Experiencia",
+    "salary": "Salario",
+    "location": "Ubicación",
+    "type": "Tipo de empleo",
+    "industry": "Sector",
+    "openings": "Vacantes",
+    "deadline": "Postúlate antes del",
     "skills": "Habilidades que buscan",
     "about": "Sobre el puesto",
     "noDescription": "El empleador no ha añadido una descripción."

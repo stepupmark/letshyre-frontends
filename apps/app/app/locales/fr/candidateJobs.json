@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "Trouver des offres",
+    "titleFor": "Offres {{q}}",
+    "titleIn": "Offres {{q}} à {{location}}",
+    "titleWhere": "Offres à {{location}}",
     "lead": "Postes ouverts maintenant. Postuler se fait en une étape, et l'employeur voit votre profil et votre grille."
   },
   "applications": {
@@ -11,16 +14,38 @@
     "keyword": "Intitulé ou compétence",
     "location": "Ville",
     "search": "Rechercher",
+    "title": "Filtres",
+    "applied_one": "{{count}} filtre appliqué",
+    "applied_many": "{{count}} filtres appliqués",
+    "applied_other": "{{count}} filtres appliqués",
+    "done": "Voir les offres",
+    "doneCount_one": "Voir {{count}} offre",
+    "doneCount_many": "Voir {{count}} offres",
+    "doneCount_other": "Voir {{count}} offres",
     "type": "Type de contrat",
-    "anyType": "Tous types de contrat",
     "industry": "Secteur",
-    "anyIndustry": "Tous secteurs",
-    "experience": "Expérience, ex. 2-5",
-    "years": "ans",
-    "salary": "Salaire, ex. 6-10",
+    "experienceTitle": "Votre expérience",
+    "experienceAny": "Indifférent",
+    "salaryTitle": "Salaire minimum",
+    "salaryAny": "Indifférent",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "Tout afficher ({{total}})",
+    "fewerIndustries": "Afficher moins",
+    "findIndustry": "Chercher un secteur",
+    "noIndustry": "Aucun secteur ne correspond",
+    "hideApplied": "Masquer les offres auxquelles j'ai postulé",
+    "remove": "Retirer {{filter}}",
+    "clearFilters": "Effacer les filtres",
     "clear": "Tout effacer"
   },
+  "sort": {
+    "label": "Trier par",
+    "newest": "Plus récentes",
+    "salary": "Salaire le plus élevé",
+    "experience": "Moins d'expérience"
+  },
   "saved": {
+    "title": "Recherches enregistrées",
     "save": "Enregistrer la recherche",
     "saved": "Enregistrée",
     "remove": "Supprimer la recherche enregistrée {{search}}"
@@ -30,19 +55,40 @@
     "part_time": "Temps partiel",
     "internship": "Stage",
     "contract": "CDD",
-    "freelance": "Freelance"
+    "remote": "Télétravail"
+  },
+  "workModes": {
+    "onsite": "Sur site",
+    "remote": "Télétravail",
+    "hybrid": "Hybride"
   },
   "facts": {
     "fresher": "Débutants bienvenus",
-    "years": "{{years}} ans"
+    "years": "{{years}} ans",
+    "salary": "₹{{amount}} LPA",
+    "openings_one": "{{count}} poste",
+    "openings_many": "{{count}} postes",
+    "openings_other": "{{count}} postes"
   },
-  "results_one": "{{count}} offre",
-  "results_many": "{{count}} offres",
-  "results_other": "{{count}} offres",
+  "results_one": "<n>{{count}}</n> offre",
+  "results_many": "<n>{{count}}</n> offres",
+  "results_other": "<n>{{count}}</n> offres",
+  "found_one": "{{count}} offre trouvée",
+  "found_many": "{{count}} offres trouvées",
+  "found_other": "{{count}} offres trouvées",
+  "showing": "Affichage de {{from}} à {{to}}",
   "searching": "Recherche…",
+  "page": "Page {{page}}",
+  "new": "Nouveau",
+  "closesToday": "Se termine aujourd'hui",
+  "closesIn_one": "Se termine dans {{count}} jour",
+  "closesIn_many": "Se termine dans {{count}} jours",
+  "closesIn_other": "Se termine dans {{count}} jours",
   "empty": {
     "title": "Aucune offre ouverte pour le moment",
     "body": "De nouveaux postes sont publiés chaque semaine. Revenez bientôt, ou gardez votre grille à jour pour que les employeurs vous trouvent.",
+    "filteredTitle": "Aucune offre ne correspond à ces filtres",
+    "filteredBody": "Retirez-en un, ou effacez-les tous.",
     "Applied": {
       "title": "Aucune candidature pour l'instant",
       "body": "Les offres auxquelles vous postulez apparaissent ici, avec leur avancement."
@@ -63,9 +109,24 @@
   "company": "Entreprise",
   "untitled": "Poste sans titre",
   "moreSkills": "+{{count}} de plus",
-  "applied": "Postulé",
   "appliedWhen": "postulé {{when}}",
+  "status": {
+    "Applied": "Postulé",
+    "Shortlisted": "Présélectionné",
+    "Reserved": "En attente",
+    "Selected": "Retenu",
+    "Hired": "Embauché",
+    "Rejected": "Non retenu"
+  },
   "detail": {
+    "facts": "Détails de l'offre",
+    "experience": "Expérience",
+    "salary": "Salaire",
+    "location": "Lieu",
+    "type": "Type de poste",
+    "industry": "Secteur",
+    "openings": "Postes ouverts",
+    "deadline": "Postuler avant le",
     "skills": "Compétences recherchées",
     "about": "À propos du poste",
     "noDescription": "L'employeur n'a pas ajouté de description."

@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "Trova lavoro",
+    "titleFor": "Offerte {{q}}",
+    "titleIn": "Offerte {{q}} a {{location}}",
+    "titleWhere": "Offerte a {{location}}",
     "lead": "Ruoli aperti ora. Candidarsi richiede un passaggio, e il datore di lavoro vede il tuo profilo e la tua scheda."
   },
   "applications": {
@@ -11,16 +14,38 @@
     "keyword": "Ruolo o competenza",
     "location": "Città",
     "search": "Cerca",
+    "title": "Filtri",
+    "applied_one": "{{count}} filtro attivo",
+    "applied_many": "{{count}} filtri attivi",
+    "applied_other": "{{count}} filtri attivi",
+    "done": "Mostra offerte",
+    "doneCount_one": "Mostra {{count}} offerta",
+    "doneCount_many": "Mostra {{count}} offerte",
+    "doneCount_other": "Mostra {{count}} offerte",
     "type": "Tipo di contratto",
-    "anyType": "Qualsiasi contratto",
     "industry": "Settore",
-    "anyIndustry": "Qualsiasi settore",
-    "experience": "Esperienza, es. 2-5",
-    "years": "anni",
-    "salary": "Retribuzione, es. 6-10",
+    "experienceTitle": "La tua esperienza",
+    "experienceAny": "Qualsiasi",
+    "salaryTitle": "Stipendio minimo",
+    "salaryAny": "Qualsiasi",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "Mostra tutti ({{total}})",
+    "fewerIndustries": "Mostra meno",
+    "findIndustry": "Cerca un settore",
+    "noIndustry": "Nessun settore corrisponde",
+    "hideApplied": "Nascondi le offerte a cui mi sono candidato",
+    "remove": "Rimuovi {{filter}}",
+    "clearFilters": "Cancella filtri",
     "clear": "Cancella tutto"
   },
+  "sort": {
+    "label": "Ordina per",
+    "newest": "Più recenti",
+    "salary": "Stipendio più alto",
+    "experience": "Meno esperienza"
+  },
   "saved": {
+    "title": "Ricerche salvate",
     "save": "Salva ricerca",
     "saved": "Salvata",
     "remove": "Rimuovi la ricerca salvata {{search}}"
@@ -30,19 +55,40 @@
     "part_time": "Part-time",
     "internship": "Tirocinio",
     "contract": "A tempo determinato",
-    "freelance": "Freelance"
+    "remote": "Da remoto"
+  },
+  "workModes": {
+    "onsite": "In sede",
+    "remote": "Da remoto",
+    "hybrid": "Ibrido"
   },
   "facts": {
     "fresher": "Aperto a neolaureati",
-    "years": "{{years}} anni"
+    "years": "{{years}} anni",
+    "salary": "₹{{amount}} LPA",
+    "openings_one": "{{count}} posizione",
+    "openings_many": "{{count}} posizioni",
+    "openings_other": "{{count}} posizioni"
   },
-  "results_one": "{{count}} offerta",
-  "results_many": "{{count}} offerte",
-  "results_other": "{{count}} offerte",
+  "results_one": "<n>{{count}}</n> offerta",
+  "results_many": "<n>{{count}}</n> offerte",
+  "results_other": "<n>{{count}}</n> offerte",
+  "found_one": "{{count}} offerta trovata",
+  "found_many": "{{count}} offerte trovate",
+  "found_other": "{{count}} offerte trovate",
+  "showing": "Risultati {{from}}–{{to}}",
   "searching": "Ricerca…",
+  "page": "Pagina {{page}}",
+  "new": "Nuova",
+  "closesToday": "Scade oggi",
+  "closesIn_one": "Scade tra {{count}} giorno",
+  "closesIn_many": "Scade tra {{count}} giorni",
+  "closesIn_other": "Scade tra {{count}} giorni",
   "empty": {
     "title": "Nessuna offerta aperta al momento",
     "body": "Ogni settimana arrivano nuovi ruoli. Torna presto, oppure tieni aggiornata la tua scheda così i datori di lavoro ti trovano.",
+    "filteredTitle": "Nessuna offerta corrisponde a questi filtri",
+    "filteredBody": "Rimuovine uno, o cancellali tutti.",
     "Applied": {
       "title": "Ancora nessuna candidatura",
       "body": "Le offerte a cui ti candidi compaiono qui, con lo stato di ciascuna."
@@ -63,9 +109,24 @@
   "company": "Azienda",
   "untitled": "Ruolo senza titolo",
   "moreSkills": "+{{count}} altre",
-  "applied": "Candidato",
   "appliedWhen": "candidatura {{when}}",
+  "status": {
+    "Applied": "Candidato",
+    "Shortlisted": "In rosa",
+    "Reserved": "In attesa",
+    "Selected": "Scelto",
+    "Hired": "Assunto",
+    "Rejected": "Non scelto"
+  },
   "detail": {
+    "facts": "Dettagli dell'offerta",
+    "experience": "Esperienza",
+    "salary": "Stipendio",
+    "location": "Sede",
+    "type": "Tipo di lavoro",
+    "industry": "Settore",
+    "openings": "Posizioni aperte",
+    "deadline": "Candidati entro il",
     "skills": "Competenze richieste",
     "about": "Il ruolo",
     "noDescription": "Il datore di lavoro non ha aggiunto una descrizione."

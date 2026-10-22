@@ -3,10 +3,10 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { href, useNavigate } from "react-router"
 import { toast } from "sonner"
 
+import { candidateJobsKeys } from "../queries/candidate-jobs.queries"
 import { applyForJob } from "../services/candidate-jobs.service"
 import { type JobsPage } from "../types"
 
-/** Marks the job applied everywhere it's listed, then refreshes applications. */
 export function useApply() {
   const { t } = useTranslation("candidateJobs")
   const queryClient = useQueryClient()
@@ -16,7 +16,7 @@ export function useApply() {
     mutationFn: applyForJob,
     onSuccess: async (_, jobId) => {
       queryClient.setQueriesData<JobsPage>(
-        { queryKey: ["candidate", "find-jobs"] },
+        { queryKey: candidateJobsKeys.find },
         (page) =>
           page && {
             ...page,
@@ -32,7 +32,7 @@ export function useApply() {
         },
       })
       await queryClient.invalidateQueries({
-        queryKey: ["candidate", "applications"],
+        queryKey: candidateJobsKeys.applications,
       })
     },
     onError: () => {

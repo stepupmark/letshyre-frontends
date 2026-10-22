@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "求人を探す",
+    "titleFor": "{{q}}の求人",
+    "titleIn": "{{location}}の{{q}}の求人",
+    "titleWhere": "{{location}}の求人",
     "lead": "いま募集中の求人です。応募は1ステップで、雇用主にはあなたのプロフィールとスコアカードが届きます。"
   },
   "applications": {
@@ -11,16 +14,34 @@
     "keyword": "職種またはスキル",
     "location": "都市",
     "search": "検索",
+    "title": "絞り込み",
+    "applied_other": "{{count}}件の条件を適用中",
+    "done": "求人を表示",
+    "doneCount_other": "{{count}}件の求人を表示",
     "type": "雇用形態",
-    "anyType": "すべての雇用形態",
     "industry": "業界",
-    "anyIndustry": "すべての業界",
-    "experience": "経験（例：2-5）",
-    "years": "年",
-    "salary": "給与（例：6-10）",
+    "experienceTitle": "あなたの経験年数",
+    "experienceAny": "指定なし",
+    "salaryTitle": "最低年収",
+    "salaryAny": "指定なし",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "すべて表示（{{total}}）",
+    "fewerIndustries": "表示を減らす",
+    "findIndustry": "業界を検索",
+    "noIndustry": "一致する業界はありません",
+    "hideApplied": "応募済みの求人を非表示",
+    "remove": "{{filter}}を解除",
+    "clearFilters": "絞り込みを解除",
     "clear": "すべてクリア"
   },
+  "sort": {
+    "label": "並べ替え",
+    "newest": "新着順",
+    "salary": "年収が高い順",
+    "experience": "経験年数が少ない順"
+  },
   "saved": {
+    "title": "保存した検索",
     "save": "検索を保存",
     "saved": "保存済み",
     "remove": "保存した検索 {{search}} を削除"
@@ -30,17 +51,32 @@
     "part_time": "パートタイム",
     "internship": "インターン",
     "contract": "契約",
-    "freelance": "フリーランス"
+    "remote": "リモート"
+  },
+  "workModes": {
+    "onsite": "出社",
+    "remote": "リモート",
+    "hybrid": "ハイブリッド"
   },
   "facts": {
     "fresher": "未経験歓迎",
-    "years": "{{years}} 年"
+    "years": "{{years}} 年",
+    "salary": "₹{{amount}} LPA",
+    "openings_other": "募集{{count}}名"
   },
-  "results_other": "{{count}} 件",
+  "results_other": "<n>{{count}}</n> 件",
+  "found_other": "{{count}}件の求人が見つかりました",
+  "showing": "{{from}}–{{to}}件を表示",
   "searching": "検索中…",
+  "page": "{{page}}ページ",
+  "new": "新着",
+  "closesToday": "本日締め切り",
+  "closesIn_other": "あと{{count}}日で締め切り",
   "empty": {
     "title": "現在募集中の求人はありません",
     "body": "新しい求人は毎週掲載されます。また後で確認するか、雇用主に見つけてもらえるようスコアカードを最新にしておきましょう。",
+    "filteredTitle": "この条件に一致する求人はありません",
+    "filteredBody": "条件を1つ外すか、すべて解除してください。",
     "Applied": {
       "title": "まだ応募していません",
       "body": "応募した求人が、それぞれの状況とともにここに表示されます。"
@@ -61,9 +97,24 @@
   "company": "会社",
   "untitled": "無題の求人",
   "moreSkills": "ほか {{count}} 件",
-  "applied": "応募済み",
   "appliedWhen": "{{when}}に応募",
+  "status": {
+    "Applied": "応募済み",
+    "Shortlisted": "選考中",
+    "Reserved": "保留中",
+    "Selected": "採用",
+    "Hired": "採用",
+    "Rejected": "見送り"
+  },
   "detail": {
+    "facts": "求人の詳細",
+    "experience": "経験",
+    "salary": "年収",
+    "location": "勤務地",
+    "type": "雇用形態",
+    "industry": "業界",
+    "openings": "募集人数",
+    "deadline": "応募締め切り",
     "skills": "求めるスキル",
     "about": "仕事内容",
     "noDescription": "雇用主は説明を追加していません。"

@@ -1,13 +1,16 @@
 import type { STAGES } from "./lib/candidate-jobs"
+import type { EmploymentType, Sort } from "./lib/search"
 import type { Job } from "./schemas/candidate-jobs.schema"
 
 export interface JobSearch {
   q: string
   location: string
-  type: string
-  industry: string
-  experience: string
-  salary: string
+  types: EmploymentType[]
+  industries: string[]
+  experience: number | null
+  pay: number | null
+  hideApplied: boolean
+  sort: Sort
   page: number
 }
 

@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "नौकरियाँ खोजें",
+    "titleFor": "{{q}} नौकरियां",
+    "titleIn": "{{location}} में {{q}} नौकरियां",
+    "titleWhere": "{{location}} में नौकरियां",
     "lead": "अभी खुली भूमिकाएँ। आवेदन एक कदम में होता है, और नियोक्ता आपकी प्रोफ़ाइल व स्कोरकार्ड देखता है।"
   },
   "applications": {
@@ -11,16 +14,36 @@
     "keyword": "पद या कौशल",
     "location": "शहर",
     "search": "खोजें",
+    "title": "फ़िल्टर",
+    "applied_one": "{{count}} फ़िल्टर लगे हैं",
+    "applied_other": "{{count}} फ़िल्टर लगे हैं",
+    "done": "नौकरियां देखें",
+    "doneCount_one": "{{count}} नौकरियां देखें",
+    "doneCount_other": "{{count}} नौकरियां देखें",
     "type": "नौकरी का प्रकार",
-    "anyType": "कोई भी प्रकार",
     "industry": "उद्योग",
-    "anyIndustry": "कोई भी उद्योग",
-    "experience": "अनुभव, जैसे 2-5",
-    "years": "साल",
-    "salary": "वेतन, जैसे 6-10",
+    "experienceTitle": "आपका अनुभव",
+    "experienceAny": "कोई भी",
+    "salaryTitle": "न्यूनतम वेतन",
+    "salaryAny": "कोई भी",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "सभी {{total}} देखें",
+    "fewerIndustries": "कम देखें",
+    "findIndustry": "उद्योग खोजें",
+    "noIndustry": "कोई उद्योग नहीं मिला",
+    "hideApplied": "जिन नौकरियों में आवेदन किया है उन्हें छिपाएं",
+    "remove": "{{filter}} हटाएं",
+    "clearFilters": "फ़िल्टर हटाएं",
     "clear": "सब साफ़ करें"
   },
+  "sort": {
+    "label": "क्रम",
+    "newest": "सबसे नई",
+    "salary": "सबसे ज़्यादा वेतन",
+    "experience": "सबसे कम अनुभव"
+  },
   "saved": {
+    "title": "सहेजी गई खोजें",
     "save": "खोज सेव करें",
     "saved": "सेव हो गई",
     "remove": "सेव की गई खोज {{search}} हटाएँ"
@@ -30,18 +53,36 @@
     "part_time": "पार्ट टाइम",
     "internship": "इंटर्नशिप",
     "contract": "कॉन्ट्रैक्ट",
-    "freelance": "फ़्रीलांस"
+    "remote": "रिमोट"
+  },
+  "workModes": {
+    "onsite": "ऑफ़िस से",
+    "remote": "रिमोट",
+    "hybrid": "हाइब्रिड"
   },
   "facts": {
     "fresher": "फ़्रेशर भी आवेदन करें",
-    "years": "{{years}} साल"
+    "years": "{{years}} साल",
+    "salary": "₹{{amount}} LPA",
+    "openings_one": "{{count}} पद",
+    "openings_other": "{{count}} पद"
   },
-  "results_one": "{{count}} नौकरी",
-  "results_other": "{{count}} नौकरियाँ",
+  "results_one": "<n>{{count}}</n> नौकरी",
+  "results_other": "<n>{{count}}</n> नौकरियाँ",
+  "found_one": "{{count}} नौकरियां मिलीं",
+  "found_other": "{{count}} नौकरियां मिलीं",
+  "showing": "{{from}}–{{to}} दिखाई जा रही हैं",
   "searching": "खोज रहे हैं…",
+  "page": "पेज {{page}}",
+  "new": "नई",
+  "closesToday": "आज बंद होगी",
+  "closesIn_one": "{{count}} दिन में बंद होगी",
+  "closesIn_other": "{{count}} दिन में बंद होगी",
   "empty": {
     "title": "अभी कोई खुली नौकरी नहीं",
     "body": "हर हफ़्ते नई भूमिकाएँ आती हैं। जल्द फिर देखें, या अपना स्कोरकार्ड ताज़ा रखें ताकि नियोक्ता आपको ढूँढ सकें।",
+    "filteredTitle": "इन फ़िल्टर से कोई नौकरी मेल नहीं खाती",
+    "filteredBody": "इनमें से एक हटाएं, या सभी हटा दें।",
     "Applied": {
       "title": "अभी कोई आवेदन नहीं",
       "body": "जिन नौकरियों पर आप आवेदन करेंगे, वे अपनी स्थिति के साथ यहाँ दिखेंगी।"
@@ -62,9 +103,24 @@
   "company": "कंपनी",
   "untitled": "बिना नाम की भूमिका",
   "moreSkills": "+{{count}} और",
-  "applied": "आवेदन किया",
   "appliedWhen": "{{when}} आवेदन किया",
+  "status": {
+    "Applied": "आवेदन किया",
+    "Shortlisted": "शॉर्टलिस्ट",
+    "Reserved": "होल्ड पर",
+    "Selected": "चुने गए",
+    "Hired": "नियुक्त",
+    "Rejected": "नहीं चुने गए"
+  },
   "detail": {
+    "facts": "नौकरी का विवरण",
+    "experience": "अनुभव",
+    "salary": "वेतन",
+    "location": "स्थान",
+    "type": "नौकरी का प्रकार",
+    "industry": "उद्योग",
+    "openings": "पद",
+    "deadline": "आवेदन की अंतिम तिथि",
     "skills": "ज़रूरी कौशल",
     "about": "भूमिका के बारे में",
     "noDescription": "नियोक्ता ने कोई विवरण नहीं जोड़ा है।"

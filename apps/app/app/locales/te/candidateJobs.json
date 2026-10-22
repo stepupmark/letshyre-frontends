@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "ఉద్యోగాలు వెతకండి",
+    "titleFor": "{{q}} ఉద్యోగాలు",
+    "titleIn": "{{location}}లో {{q}} ఉద్యోగాలు",
+    "titleWhere": "{{location}}లో ఉద్యోగాలు",
     "lead": "ఇప్పుడు తెరిచి ఉన్న పాత్రలు. దరఖాస్తు ఒక్క అడుగే, యజమాని మీ ప్రొఫైల్, స్కోర్‌కార్డ్ చూస్తారు."
   },
   "applications": {
@@ -11,16 +14,36 @@
     "keyword": "హోదా లేదా నైపుణ్యం",
     "location": "నగరం",
     "search": "వెతకండి",
+    "title": "ఫిల్టర్‌లు",
+    "applied_one": "{{count}} ఫిల్టర్‌లు వర్తింపజేశారు",
+    "applied_other": "{{count}} ఫిల్టర్‌లు వర్తింపజేశారు",
+    "done": "ఉద్యోగాలు చూపించు",
+    "doneCount_one": "{{count}} ఉద్యోగాలు చూపించు",
+    "doneCount_other": "{{count}} ఉద్యోగాలు చూపించు",
     "type": "ఉద్యోగ రకం",
-    "anyType": "ఏ ఉద్యోగ రకమైనా",
     "industry": "రంగం",
-    "anyIndustry": "ఏ రంగమైనా",
-    "experience": "అనుభవం, ఉదా. 2-5",
-    "years": "సం.",
-    "salary": "జీతం, ఉదా. 6-10",
+    "experienceTitle": "మీ అనుభవం",
+    "experienceAny": "ఏదైనా",
+    "salaryTitle": "కనీస జీతం",
+    "salaryAny": "ఏదైనా",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "అన్నీ చూపించు ({{total}})",
+    "fewerIndustries": "తక్కువ చూపించు",
+    "findIndustry": "పరిశ్రమను వెతకండి",
+    "noIndustry": "సరిపోలే పరిశ్రమ లేదు",
+    "hideApplied": "నేను దరఖాస్తు చేసిన ఉద్యోగాలను దాచు",
+    "remove": "{{filter}} తీసివేయి",
+    "clearFilters": "ఫిల్టర్‌లను క్లియర్ చేయి",
     "clear": "అన్నీ తొలగించండి"
   },
+  "sort": {
+    "label": "క్రమబద్ధీకరించు",
+    "newest": "కొత్తవి",
+    "salary": "అత్యధిక జీతం",
+    "experience": "తక్కువ అనుభవం"
+  },
   "saved": {
+    "title": "సేవ్ చేసిన శోధనలు",
     "save": "వెతుకులాట సేవ్ చేయండి",
     "saved": "సేవ్ అయింది",
     "remove": "సేవ్ చేసిన వెతుకులాట {{search}} తీసివేయండి"
@@ -30,18 +53,36 @@
     "part_time": "పార్ట్ టైమ్",
     "internship": "ఇంటర్న్‌షిప్",
     "contract": "కాంట్రాక్ట్",
-    "freelance": "ఫ్రీలాన్స్"
+    "remote": "రిమోట్"
+  },
+  "workModes": {
+    "onsite": "ఆఫీసులో",
+    "remote": "రిమోట్",
+    "hybrid": "హైబ్రిడ్"
   },
   "facts": {
     "fresher": "ఫ్రెషర్లకు స్వాగతం",
-    "years": "{{years}} సం."
+    "years": "{{years}} సం.",
+    "salary": "₹{{amount}} LPA",
+    "openings_one": "{{count}} ఖాళీలు",
+    "openings_other": "{{count}} ఖాళీలు"
   },
-  "results_one": "{{count}} ఉద్యోగం",
-  "results_other": "{{count}} ఉద్యోగాలు",
+  "results_one": "<n>{{count}}</n> ఉద్యోగం",
+  "results_other": "<n>{{count}}</n> ఉద్యోగాలు",
+  "found_one": "{{count}} ఉద్యోగాలు దొరికాయి",
+  "found_other": "{{count}} ఉద్యోగాలు దొరికాయి",
+  "showing": "{{from}}–{{to}} చూపిస్తున్నాం",
   "searching": "వెతుకుతోంది…",
+  "page": "పేజీ {{page}}",
+  "new": "కొత్తది",
+  "closesToday": "ఈరోజు ముగుస్తుంది",
+  "closesIn_one": "{{count}} రోజుల్లో ముగుస్తుంది",
+  "closesIn_other": "{{count}} రోజుల్లో ముగుస్తుంది",
   "empty": {
     "title": "ప్రస్తుతం తెరిచి ఉన్న ఉద్యోగాలు లేవు",
     "body": "ప్రతి వారం కొత్త పాత్రలు వస్తాయి. త్వరలో మళ్లీ చూడండి, లేదా యజమానులు మిమ్మల్ని కనుగొనేలా మీ స్కోర్‌కార్డ్‌ను తాజాగా ఉంచండి.",
+    "filteredTitle": "ఈ ఫిల్టర్‌లకు సరిపోలే ఉద్యోగాలు లేవు",
+    "filteredBody": "వాటిలో ఒకదాన్ని తీసివేయండి, లేదా అన్నింటినీ క్లియర్ చేయండి.",
     "Applied": {
       "title": "ఇంకా దరఖాస్తులు లేవు",
       "body": "మీరు దరఖాస్తు చేసిన ఉద్యోగాలు వాటి స్థితితో ఇక్కడ కనిపిస్తాయి."
@@ -62,9 +103,24 @@
   "company": "కంపెనీ",
   "untitled": "పేరులేని పాత్ర",
   "moreSkills": "+మరో {{count}}",
-  "applied": "దరఖాస్తు చేశారు",
   "appliedWhen": "{{when}} దరఖాస్తు చేశారు",
+  "status": {
+    "Applied": "దరఖాస్తు చేశారు",
+    "Shortlisted": "షార్ట్‌లిస్ట్",
+    "Reserved": "నిలిపి ఉంచారు",
+    "Selected": "ఎంపికయ్యారు",
+    "Hired": "నియమించారు",
+    "Rejected": "ఎంపిక కాలేదు"
+  },
   "detail": {
+    "facts": "ఉద్యోగ వివరాలు",
+    "experience": "అనుభవం",
+    "salary": "జీతం",
+    "location": "ప్రదేశం",
+    "type": "ఉద్యోగ రకం",
+    "industry": "పరిశ్రమ",
+    "openings": "ఖాళీలు",
+    "deadline": "దరఖాస్తుకు చివరి తేదీ",
     "skills": "కావాల్సిన నైపుణ్యాలు",
     "about": "పాత్ర గురించి",
     "noDescription": "యజమాని వివరణ జోడించలేదు."

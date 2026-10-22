@@ -33,7 +33,10 @@ are in the design lab (`pnpm --filter app dev`, then `http://localhost:5174/_lab
   no bounce. Nothing over 400 ms.
 - Animate `transform` and `opacity` (a short blur on the unlock reveal is the one exception).
 - Allowed moments: list add/remove/reorder, bulk bar in/out, balance change, unlock reveal, wizard
-  step, score bars once on first view, field error shake, route crossfade (View Transitions).
+  step, score bars once on first view, field error shake, route crossfade (View Transitions),
+  result count change, filter chips in/out, a new page of results (fade and 6px rise, 30 ms stagger
+  on the first six), the loading bar over stale results, and an action's button turning into its
+  done state (Apply → Applied).
 - Reduced motion: values jump, only fades remain (`MotionConfig reducedMotion="user"`).
 - Cost: ~10 kB gzip with the first paint, the `domMax` features (~29 kB) load after it.
 

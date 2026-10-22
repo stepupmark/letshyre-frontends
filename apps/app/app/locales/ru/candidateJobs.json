@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "Поиск работы",
+    "titleFor": "Вакансии: {{q}}",
+    "titleIn": "Вакансии: {{q}}, {{location}}",
+    "titleWhere": "Вакансии: {{location}}",
     "lead": "Открытые сейчас вакансии. Откликнуться можно в один шаг, и работодатель увидит ваш профиль и оценочный лист."
   },
   "applications": {
@@ -11,16 +14,40 @@
     "keyword": "Должность или навык",
     "location": "Город",
     "search": "Найти",
+    "title": "Фильтры",
+    "applied_one": "Применён {{count}} фильтр",
+    "applied_few": "Применено {{count}} фильтра",
+    "applied_many": "Применено {{count}} фильтров",
+    "applied_other": "Применено {{count}} фильтра",
+    "done": "Показать вакансии",
+    "doneCount_one": "Показать {{count}} вакансию",
+    "doneCount_few": "Показать {{count}} вакансии",
+    "doneCount_many": "Показать {{count}} вакансий",
+    "doneCount_other": "Показать {{count}} вакансии",
     "type": "Тип занятости",
-    "anyType": "Любой тип занятости",
     "industry": "Отрасль",
-    "anyIndustry": "Любая отрасль",
-    "experience": "Опыт, напр. 2-5",
-    "years": "лет",
-    "salary": "Зарплата, напр. 6-10",
+    "experienceTitle": "Ваш опыт",
+    "experienceAny": "Любой",
+    "salaryTitle": "Минимальная зарплата",
+    "salaryAny": "Любая",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "Показать все ({{total}})",
+    "fewerIndustries": "Свернуть",
+    "findIndustry": "Найти отрасль",
+    "noIndustry": "Нет подходящей отрасли",
+    "hideApplied": "Скрыть вакансии, на которые я откликнулся",
+    "remove": "Убрать «{{filter}}»",
+    "clearFilters": "Сбросить фильтры",
     "clear": "Сбросить всё"
   },
+  "sort": {
+    "label": "Сортировка",
+    "newest": "Сначала новые",
+    "salary": "Самая высокая зарплата",
+    "experience": "Меньше всего опыта"
+  },
   "saved": {
+    "title": "Сохранённые поиски",
     "save": "Сохранить поиск",
     "saved": "Сохранено",
     "remove": "Удалить сохранённый поиск {{search}}"
@@ -30,20 +57,44 @@
     "part_time": "Частичная занятость",
     "internship": "Стажировка",
     "contract": "По договору",
-    "freelance": "Фриланс"
+    "remote": "Удалённо"
+  },
+  "workModes": {
+    "onsite": "В офисе",
+    "remote": "Удалённо",
+    "hybrid": "Гибрид"
   },
   "facts": {
     "fresher": "Можно без опыта",
-    "years": "{{years}} лет"
+    "years": "{{years}} лет",
+    "salary": "₹{{amount}} LPA",
+    "openings_one": "{{count}} место",
+    "openings_few": "{{count}} места",
+    "openings_many": "{{count}} мест",
+    "openings_other": "{{count}} места"
   },
-  "results_one": "{{count}} вакансия",
-  "results_few": "{{count}} вакансии",
-  "results_many": "{{count}} вакансий",
-  "results_other": "{{count}} вакансии",
+  "results_one": "<n>{{count}}</n> вакансия",
+  "results_few": "<n>{{count}}</n> вакансии",
+  "results_many": "<n>{{count}}</n> вакансий",
+  "results_other": "<n>{{count}}</n> вакансии",
+  "found_one": "Найдена {{count}} вакансия",
+  "found_few": "Найдено {{count}} вакансии",
+  "found_many": "Найдено {{count}} вакансий",
+  "found_other": "Найдено {{count}} вакансии",
+  "showing": "Показаны {{from}}–{{to}}",
   "searching": "Ищем…",
+  "page": "Страница {{page}}",
+  "new": "Новая",
+  "closesToday": "Закрывается сегодня",
+  "closesIn_one": "Закроется через {{count}} день",
+  "closesIn_few": "Закроется через {{count}} дня",
+  "closesIn_many": "Закроется через {{count}} дней",
+  "closesIn_other": "Закроется через {{count}} дня",
   "empty": {
     "title": "Сейчас нет открытых вакансий",
     "body": "Новые вакансии появляются каждую неделю. Загляните позже или держите оценочный лист свежим, чтобы работодатели вас находили.",
+    "filteredTitle": "Нет вакансий по этим фильтрам",
+    "filteredBody": "Уберите один из них или сбросьте все.",
     "Applied": {
       "title": "Откликов пока нет",
       "body": "Вакансии, на которые вы откликнетесь, появятся здесь вместе с их статусом."
@@ -64,9 +115,24 @@
   "company": "Компания",
   "untitled": "Вакансия без названия",
   "moreSkills": "+{{count}} ещё",
-  "applied": "Отклик отправлен",
   "appliedWhen": "отклик {{when}}",
+  "status": {
+    "Applied": "Отклик",
+    "Shortlisted": "Шорт-лист",
+    "Reserved": "В резерве",
+    "Selected": "Выбраны",
+    "Hired": "Принят",
+    "Rejected": "Не выбраны"
+  },
   "detail": {
+    "facts": "О вакансии",
+    "experience": "Опыт",
+    "salary": "Зарплата",
+    "location": "Место",
+    "type": "Тип занятости",
+    "industry": "Отрасль",
+    "openings": "Вакантных мест",
+    "deadline": "Откликнуться до",
     "skills": "Нужные навыки",
     "about": "О роли",
     "noDescription": "Работодатель не добавил описание."

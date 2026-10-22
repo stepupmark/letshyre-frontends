@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "চাকরি খুঁজুন",
+    "titleFor": "{{q}} চাকরি",
+    "titleIn": "{{location}}-এ {{q}} চাকরি",
+    "titleWhere": "{{location}}-এ চাকরি",
     "lead": "এখন খোলা পদ। আবেদন এক ধাপে হয়, আর নিয়োগকর্তা আপনার প্রোফাইল ও স্কোরকার্ড দেখেন।"
   },
   "applications": {
@@ -11,16 +14,36 @@
     "keyword": "পদ বা দক্ষতা",
     "location": "শহর",
     "search": "খুঁজুন",
+    "title": "ফিল্টার",
+    "applied_one": "{{count}}টি ফিল্টার প্রয়োগ করা হয়েছে",
+    "applied_other": "{{count}}টি ফিল্টার প্রয়োগ করা হয়েছে",
+    "done": "চাকরি দেখুন",
+    "doneCount_one": "{{count}}টি চাকরি দেখুন",
+    "doneCount_other": "{{count}}টি চাকরি দেখুন",
     "type": "চাকরির ধরন",
-    "anyType": "যেকোনো ধরন",
     "industry": "শিল্প",
-    "anyIndustry": "যেকোনো শিল্প",
-    "experience": "অভিজ্ঞতা, যেমন 2-5",
-    "years": "বছর",
-    "salary": "বেতন, যেমন 6-10",
+    "experienceTitle": "আপনার অভিজ্ঞতা",
+    "experienceAny": "যেকোনো",
+    "salaryTitle": "ন্যূনতম বেতন",
+    "salaryAny": "যেকোনো",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "সব দেখুন ({{total}})",
+    "fewerIndustries": "কম দেখুন",
+    "findIndustry": "শিল্পক্ষেত্র খুঁজুন",
+    "noIndustry": "কোনো শিল্পক্ষেত্র মেলেনি",
+    "hideApplied": "যেসব চাকরিতে আবেদন করেছি সেগুলো লুকান",
+    "remove": "{{filter}} সরান",
+    "clearFilters": "ফিল্টার মুছুন",
     "clear": "সব মুছুন"
   },
+  "sort": {
+    "label": "সাজান",
+    "newest": "নতুনতম",
+    "salary": "সর্বোচ্চ বেতন",
+    "experience": "সবচেয়ে কম অভিজ্ঞতা"
+  },
   "saved": {
+    "title": "সংরক্ষিত খোঁজ",
     "save": "খোঁজ সেভ করুন",
     "saved": "সেভ হয়েছে",
     "remove": "সেভ করা খোঁজ {{search}} সরান"
@@ -30,18 +53,36 @@
     "part_time": "পার্ট টাইম",
     "internship": "ইন্টার্নশিপ",
     "contract": "চুক্তিভিত্তিক",
-    "freelance": "ফ্রিল্যান্স"
+    "remote": "রিমোট"
+  },
+  "workModes": {
+    "onsite": "অফিসে",
+    "remote": "রিমোট",
+    "hybrid": "হাইব্রিড"
   },
   "facts": {
     "fresher": "ফ্রেশাররাও আবেদন করতে পারেন",
-    "years": "{{years}} বছর"
+    "years": "{{years}} বছর",
+    "salary": "₹{{amount}} LPA",
+    "openings_one": "{{count}}টি পদ",
+    "openings_other": "{{count}}টি পদ"
   },
-  "results_one": "{{count}}টি চাকরি",
-  "results_other": "{{count}}টি চাকরি",
+  "results_one": "<n>{{count}}</n>টি চাকরি",
+  "results_other": "<n>{{count}}</n>টি চাকরি",
+  "found_one": "{{count}}টি চাকরি পাওয়া গেছে",
+  "found_other": "{{count}}টি চাকরি পাওয়া গেছে",
+  "showing": "{{from}}–{{to}} দেখানো হচ্ছে",
   "searching": "খোঁজা হচ্ছে…",
+  "page": "পৃষ্ঠা {{page}}",
+  "new": "নতুন",
+  "closesToday": "আজ বন্ধ হবে",
+  "closesIn_one": "{{count}} দিনে বন্ধ হবে",
+  "closesIn_other": "{{count}} দিনে বন্ধ হবে",
   "empty": {
     "title": "এখন কোনো খোলা চাকরি নেই",
     "body": "প্রতি সপ্তাহে নতুন পদ আসে। শিগগির আবার দেখুন, অথবা স্কোরকার্ড হালনাগাদ রাখুন যাতে নিয়োগকর্তারা আপনাকে খুঁজে পান।",
+    "filteredTitle": "এই ফিল্টারগুলোর সাথে কোনো চাকরি মেলেনি",
+    "filteredBody": "এর একটি সরান, অথবা সবগুলো মুছে দিন।",
     "Applied": {
       "title": "এখনো কোনো আবেদন নেই",
       "body": "যে চাকরিতে আবেদন করবেন সেগুলো তাদের অবস্থাসহ এখানে দেখা যাবে।"
@@ -62,9 +103,24 @@
   "company": "কোম্পানি",
   "untitled": "নামহীন পদ",
   "moreSkills": "+আরও {{count}}টি",
-  "applied": "আবেদন করা হয়েছে",
   "appliedWhen": "{{when}} আবেদন করেছেন",
+  "status": {
+    "Applied": "আবেদন করেছেন",
+    "Shortlisted": "শর্টলিস্টেড",
+    "Reserved": "অপেক্ষমাণ",
+    "Selected": "নির্বাচিত",
+    "Hired": "নিয়োগপ্রাপ্ত",
+    "Rejected": "নির্বাচিত হননি"
+  },
   "detail": {
+    "facts": "চাকরির বিবরণ",
+    "experience": "অভিজ্ঞতা",
+    "salary": "বেতন",
+    "location": "অবস্থান",
+    "type": "চাকরির ধরন",
+    "industry": "শিল্পক্ষেত্র",
+    "openings": "পদসংখ্যা",
+    "deadline": "আবেদনের শেষ তারিখ",
     "skills": "যে দক্ষতা খোঁজা হচ্ছে",
     "about": "পদ সম্পর্কে",
     "noDescription": "নিয়োগকর্তা কোনো বিবরণ যোগ করেননি।"

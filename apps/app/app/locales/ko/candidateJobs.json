@@ -1,6 +1,9 @@
 {
   "find": {
     "title": "일자리 찾기",
+    "titleFor": "{{q}} 채용",
+    "titleIn": "{{location}} {{q}} 채용",
+    "titleWhere": "{{location}} 채용",
     "lead": "지금 채용 중인 직무예요. 지원은 한 번이면 되고, 고용주는 내 프로필과 평가표를 봐요."
   },
   "applications": {
@@ -11,16 +14,34 @@
     "keyword": "직무 또는 역량",
     "location": "도시",
     "search": "검색",
+    "title": "필터",
+    "applied_other": "필터 {{count}}개 적용됨",
+    "done": "채용 공고 보기",
+    "doneCount_other": "공고 {{count}}개 보기",
     "type": "고용 형태",
-    "anyType": "모든 고용 형태",
     "industry": "업계",
-    "anyIndustry": "모든 업계",
-    "experience": "경력, 예: 2-5",
-    "years": "년",
-    "salary": "연봉, 예: 6-10",
+    "experienceTitle": "내 경력",
+    "experienceAny": "전체",
+    "salaryTitle": "최소 연봉",
+    "salaryAny": "전체",
+    "salaryStep": "{{amount}}+ LPA",
+    "allIndustries": "모두 보기({{total}})",
+    "fewerIndustries": "간단히 보기",
+    "findIndustry": "업종 찾기",
+    "noIndustry": "일치하는 업종이 없습니다",
+    "hideApplied": "지원한 공고 숨기기",
+    "remove": "{{filter}} 해제",
+    "clearFilters": "필터 초기화",
     "clear": "모두 지우기"
   },
+  "sort": {
+    "label": "정렬",
+    "newest": "최신순",
+    "salary": "연봉 높은순",
+    "experience": "경력 적은순"
+  },
   "saved": {
+    "title": "저장한 검색",
     "save": "검색 저장",
     "saved": "저장됨",
     "remove": "저장한 검색 {{search}} 삭제"
@@ -30,17 +51,32 @@
     "part_time": "파트타임",
     "internship": "인턴십",
     "contract": "계약직",
-    "freelance": "프리랜서"
+    "remote": "원격"
+  },
+  "workModes": {
+    "onsite": "사무실 근무",
+    "remote": "원격",
+    "hybrid": "하이브리드"
   },
   "facts": {
     "fresher": "신입 환영",
-    "years": "{{years}}년"
+    "years": "{{years}}년",
+    "salary": "₹{{amount}} LPA",
+    "openings_other": "{{count}}명 모집"
   },
-  "results_other": "일자리 {{count}}개",
+  "results_other": "일자리 <n>{{count}}</n>개",
+  "found_other": "공고 {{count}}개를 찾았습니다",
+  "showing": "{{from}}–{{to}}개 표시 중",
   "searching": "검색 중…",
+  "page": "{{page}}페이지",
+  "new": "신규",
+  "closesToday": "오늘 마감",
+  "closesIn_other": "{{count}}일 후 마감",
   "empty": {
     "title": "지금은 채용 중인 일자리가 없어요",
     "body": "새 직무가 매주 올라와요. 곧 다시 확인하거나, 고용주가 찾을 수 있게 평가표를 최신으로 유지하세요.",
+    "filteredTitle": "이 필터에 맞는 공고가 없습니다",
+    "filteredBody": "필터를 하나 해제하거나 모두 초기화하세요.",
     "Applied": {
       "title": "아직 지원한 곳이 없어요",
       "body": "지원한 일자리가 진행 상황과 함께 여기에 표시돼요."
@@ -61,9 +97,24 @@
   "company": "회사",
   "untitled": "제목 없는 직무",
   "moreSkills": "외 {{count}}개",
-  "applied": "지원함",
   "appliedWhen": "{{when}} 지원",
+  "status": {
+    "Applied": "지원",
+    "Shortlisted": "서류 통과",
+    "Reserved": "보류",
+    "Selected": "합격",
+    "Hired": "채용됨",
+    "Rejected": "불합격"
+  },
   "detail": {
+    "facts": "공고 상세",
+    "experience": "경력",
+    "salary": "연봉",
+    "location": "근무지",
+    "type": "고용 형태",
+    "industry": "업종",
+    "openings": "모집 인원",
+    "deadline": "지원 마감일",
     "skills": "찾는 역량",
     "about": "직무 소개",
     "noDescription": "고용주가 설명을 추가하지 않았어요."
