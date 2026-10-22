@@ -15,7 +15,8 @@
       "status": "Status",
       "place": "Ort",
       "experience": "Erfahrung",
-      "posted": "Veröffentlicht"
+      "posted": "Veröffentlicht",
+      "salary": "Gehalt"
     },
     "emptyTitle": "Noch keine Stellen",
     "emptyBody": "Laden Sie eine Stellenbeschreibung hoch, und wir füllen das Formular für Sie aus. Passende Kandidaten erscheinen, sobald sie freigegeben ist.",
@@ -28,7 +29,18 @@
     "changed_other": "{{count}} Stellen sind jetzt {{status}}",
     "changeFailed_one": "{{count}} Stelle konnte nicht geändert werden. Versuchen Sie es erneut.",
     "changeFailed_other": "{{count}} Stellen konnten nicht geändert werden. Versuchen Sie es erneut.",
-    "undone": "Änderungen rückgängig gemacht"
+    "undone": "Änderungen rückgängig gemacht",
+    "salary": "{{min}}–{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "Bis {{max}} LPA",
+    "salaryFrom": "Ab {{min}} LPA",
+    "undoFailed": "Rückgängig machen hat nicht geklappt. Versuchen Sie es erneut.",
+    "errorTitle": "Ihre Stellen wurden nicht geladen.",
+    "errorBody": "An ihnen hat sich nichts geändert. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "openings_one": "{{count}} offene Stelle",
+    "openings_other": "{{count}} offene Stellen",
+    "pendingSkipped_one": "{{count}} wartet auf Freigabe und bleibt unverändert",
+    "pendingSkipped_other": "{{count}} warten auf Freigabe und bleiben unverändert"
   },
   "status": {
     "open": "Offen",

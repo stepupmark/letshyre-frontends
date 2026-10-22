@@ -15,7 +15,8 @@
       "status": "অবস্থা",
       "place": "অবস্থান",
       "experience": "অভিজ্ঞতা",
-      "posted": "পোস্ট করা হয়েছে"
+      "posted": "পোস্ট করা হয়েছে",
+      "salary": "বেতন"
     },
     "emptyTitle": "এখনো কোনো চাকরি নেই",
     "emptyBody": "জব ডেসক্রিপশন আপলোড করুন, আমরা আপনার হয়ে ফর্ম পূরণ করে দেব। অনুমোদন পেলেই ম্যাচ করা প্রার্থী দেখা যাবে।",
@@ -28,7 +29,18 @@
     "changed_other": "{{count}}টি চাকরি এখন {{status}}",
     "changeFailed_one": "{{count}}টি চাকরি বদলানো যায়নি। আবার চেষ্টা করুন।",
     "changeFailed_other": "{{count}}টি চাকরি বদলানো যায়নি। আবার চেষ্টা করুন।",
-    "undone": "পরিবর্তন ফিরিয়ে নেওয়া হয়েছে"
+    "undone": "পরিবর্তন ফিরিয়ে নেওয়া হয়েছে",
+    "salary": "{{min}}–{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "{{max}} LPA পর্যন্ত",
+    "salaryFrom": "{{min}} LPA থেকে",
+    "undoFailed": "আগের অবস্থায় ফেরানো যায়নি। আবার চেষ্টা করুন।",
+    "errorTitle": "আপনার চাকরিগুলো লোড হয়নি।",
+    "errorBody": "এগুলোতে কিছু বদলায়নি। সংযোগ দেখে আবার চেষ্টা করুন।",
+    "openings_one": "{{count}}টি পদ",
+    "openings_other": "{{count}}টি পদ",
+    "pendingSkipped_one": "অনুমোদনের অপেক্ষায় থাকা {{count}}টি বদলাবে না",
+    "pendingSkipped_other": "অনুমোদনের অপেক্ষায় থাকা {{count}}টি বদলাবে না"
   },
   "status": {
     "open": "খোলা",

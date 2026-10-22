@@ -15,7 +15,8 @@
       "status": "상태",
       "place": "지역",
       "experience": "경력",
-      "posted": "게시일"
+      "posted": "게시일",
+      "salary": "급여"
     },
     "emptyTitle": "아직 공고가 없어요",
     "emptyBody": "직무 기술서를 올리면 양식을 대신 채워 드려요. 승인되면 바로 맞는 후보자가 보여요.",
@@ -26,7 +27,16 @@
     },
     "changed_other": "공고 {{count}}개가 이제 {{status}} 상태예요",
     "changeFailed_other": "공고 {{count}}개를 변경하지 못했어요. 다시 시도하세요.",
-    "undone": "변경을 취소했어요"
+    "undone": "변경을 취소했어요",
+    "salary": "{{min}}–{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "최대 {{max}} LPA",
+    "salaryFrom": "{{min}} LPA부터",
+    "undoFailed": "되돌리지 못했습니다. 다시 시도하세요.",
+    "errorTitle": "채용 공고를 불러오지 못했습니다.",
+    "errorBody": "공고에는 아무것도 바뀌지 않았습니다. 연결을 확인하고 다시 시도하세요.",
+    "openings_other": "{{count}}명 채용",
+    "pendingSkipped_other": "승인 대기 중인 {{count}}개는 바뀌지 않습니다"
   },
   "status": {
     "open": "채용 중",

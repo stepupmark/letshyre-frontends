@@ -74,9 +74,7 @@ export function Invoices() {
           title: t("invoiceList.errorTitle"),
           body: t("invoiceList.errorBody"),
         }}
-        onOpen={(row) => {
-          setOpenId(row.id)
-        }}
+        keyboard
         empty={
           <EmptyState
             title={t("invoiceList.emptyTitle")}

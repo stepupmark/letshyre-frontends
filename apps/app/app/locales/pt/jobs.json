@@ -15,7 +15,8 @@
       "status": "Status",
       "place": "Local",
       "experience": "Experiência",
-      "posted": "Publicada"
+      "posted": "Publicada",
+      "salary": "Salário"
     },
     "emptyTitle": "Ainda não há vagas",
     "emptyBody": "Envie a descrição da vaga e nós preenchemos o formulário para você. Os candidatos que combinam aparecem assim que ela for aprovada.",
@@ -30,7 +31,20 @@
     "changeFailed_one": "Não foi possível alterar {{count}} vaga. Tente de novo.",
     "changeFailed_many": "Não foi possível alterar {{count}} vagas. Tente de novo.",
     "changeFailed_other": "Não foi possível alterar {{count}} vagas. Tente de novo.",
-    "undone": "Alterações desfeitas"
+    "undone": "Alterações desfeitas",
+    "salary": "{{min}}–{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "Até {{max}} LPA",
+    "salaryFrom": "A partir de {{min}} LPA",
+    "undoFailed": "Não foi possível desfazer. Tente de novo.",
+    "errorTitle": "Suas vagas não carregaram.",
+    "errorBody": "Nada mudou nelas. Verifique a conexão e tente de novo.",
+    "openings_one": "{{count}} vaga",
+    "openings_many": "{{count}} vagas",
+    "openings_other": "{{count}} vagas",
+    "pendingSkipped_one": "{{count}} aguardando aprovação não vai mudar",
+    "pendingSkipped_many": "{{count}} aguardando aprovação não vão mudar",
+    "pendingSkipped_other": "{{count}} aguardando aprovação não vão mudar"
   },
   "status": {
     "open": "Aberta",

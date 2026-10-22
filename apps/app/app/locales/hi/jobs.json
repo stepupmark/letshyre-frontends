@@ -15,7 +15,8 @@
       "status": "स्थिति",
       "place": "स्थान",
       "experience": "अनुभव",
-      "posted": "पोस्ट की गई"
+      "posted": "पोस्ट की गई",
+      "salary": "वेतन"
     },
     "emptyTitle": "अभी कोई नौकरी नहीं",
     "emptyBody": "जॉब डिस्क्रिप्शन अपलोड करें, हम आपके लिए फ़ॉर्म भर देंगे। मंज़ूरी मिलते ही मैच करने वाले उम्मीदवार दिखने लगते हैं।",
@@ -28,7 +29,18 @@
     "changed_other": "{{count}} नौकरियाँ अब {{status}} हैं",
     "changeFailed_one": "{{count}} नौकरी नहीं बदली जा सकी। फिर से कोशिश करें।",
     "changeFailed_other": "{{count}} नौकरियाँ नहीं बदली जा सकीं। फिर से कोशिश करें।",
-    "undone": "बदलाव वापस लिए गए"
+    "undone": "बदलाव वापस लिए गए",
+    "salary": "{{min}}–{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "{{max}} LPA तक",
+    "salaryFrom": "{{min}} LPA से",
+    "undoFailed": "पूर्ववत नहीं हो सका। फिर से कोशिश करें।",
+    "errorTitle": "आपकी नौकरियां लोड नहीं हुईं।",
+    "errorBody": "इनमें कुछ नहीं बदला है। कनेक्शन जांचें और फिर से कोशिश करें।",
+    "openings_one": "{{count}} पद",
+    "openings_other": "{{count}} पद",
+    "pendingSkipped_one": "मंज़ूरी के इंतज़ार वाली {{count}} नहीं बदलेगी",
+    "pendingSkipped_other": "मंज़ूरी के इंतज़ार वाली {{count}} नहीं बदलेंगी"
   },
   "status": {
     "open": "खुली",

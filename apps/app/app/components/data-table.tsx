@@ -72,8 +72,8 @@ export interface DataTableProps<T extends RowData> {
   empty: ReactNode
   filtered?: boolean
   onClearFilters?: () => void
-  // also reachable with j/k and Enter
-  onOpen?: (row: T) => void
+  // j/k move between rows' [data-row-open] targets, Enter follows them
+  keyboard?: boolean
   bulkActions?: (selectedIds: string[], clear: () => void) => ReactNode
   note?: ReactNode
   // cards below md; select is the row's checkbox when there are bulk actions
@@ -100,7 +100,7 @@ export function DataTable<T extends RowData>({
   empty,
   filtered = false,
   onClearFilters,
-  onOpen,
+  keyboard = false,
   bulkActions,
   note,
   mobileRow,
@@ -181,7 +181,7 @@ export function DataTable<T extends RowData>({
   })
 
   useEffect(() => {
-    if (!onOpen) return
+    if (!keyboard) return
     const onKey = (event: KeyboardEvent) => {
       if (typing(event.target) || event.metaKey || event.ctrlKey) return
       if (event.key !== "j" && event.key !== "k") return
@@ -204,7 +204,7 @@ export function DataTable<T extends RowData>({
     return () => {
       document.removeEventListener("keydown", onKey)
     }
-  }, [onOpen])
+  }, [keyboard])
 
   if (error && !data)
     return (
@@ -384,7 +384,7 @@ export function DataTable<T extends RowData>({
       </ul>
 
       <div className="flex items-center justify-between gap-3">
-        {onOpen ? (
+        {keyboard ? (
           <p className="hidden items-center gap-1.5 text-xs text-muted-foreground md:flex">
             <Kbd className="text-foreground">J</Kbd>
             <Kbd className="text-foreground">K</Kbd>

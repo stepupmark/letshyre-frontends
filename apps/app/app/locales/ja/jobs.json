@@ -15,7 +15,8 @@
       "status": "状態",
       "place": "勤務地",
       "experience": "経験",
-      "posted": "掲載日"
+      "posted": "掲載日",
+      "salary": "給与"
     },
     "emptyTitle": "求人はまだありません",
     "emptyBody": "求人票をアップロードすれば、フォームを代わりに入力します。承認されるとすぐにマッチする候補者が表示されます。",
@@ -26,7 +27,16 @@
     },
     "changed_other": "{{count}} 件の求人が{{status}}になりました",
     "changeFailed_other": "{{count}} 件の求人を変更できませんでした。もう一度お試しください。",
-    "undone": "変更を元に戻しました"
+    "undone": "変更を元に戻しました",
+    "salary": "{{min}}〜{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "最大{{max}} LPA",
+    "salaryFrom": "{{min}} LPA以上",
+    "undoFailed": "元に戻せませんでした。もう一度お試しください。",
+    "errorTitle": "求人を読み込めませんでした。",
+    "errorBody": "求人には何も変更はありません。接続を確認してもう一度お試しください。",
+    "openings_other": "募集{{count}}名",
+    "pendingSkipped_other": "承認待ちの{{count}}件は変更されません"
   },
   "status": {
     "open": "募集中",

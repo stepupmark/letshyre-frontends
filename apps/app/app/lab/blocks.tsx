@@ -163,9 +163,7 @@ export default function Blocks() {
           onClearFilters={() => {
             setSearch({}, { replace: true })
           }}
-          onOpen={(r) => {
-            setOpen(String(r.id))
-          }}
+          keyboard
           bulkActions={(ids, clear) => (
             <Button
               size="sm"

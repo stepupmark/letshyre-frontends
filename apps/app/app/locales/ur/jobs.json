@@ -15,7 +15,8 @@
       "status": "حیثیت",
       "place": "مقام",
       "experience": "تجربہ",
-      "posted": "پوسٹ کی گئی"
+      "posted": "پوسٹ کی گئی",
+      "salary": "تنخواہ"
     },
     "emptyTitle": "ابھی کوئی ملازمت نہیں",
     "emptyBody": "جاب ڈسکرپشن اپ لوڈ کریں، ہم آپ کے لیے فارم بھر دیں گے۔ منظوری ملتے ہی میچ کرنے والے امیدوار دکھنے لگتے ہیں۔",
@@ -28,7 +29,18 @@
     "changed_other": "{{count}} ملازمتیں اب {{status}} ہیں",
     "changeFailed_one": "{{count}} ملازمت نہیں بدلی جا سکی۔ دوبارہ کوشش کریں۔",
     "changeFailed_other": "{{count}} ملازمتیں نہیں بدلی جا سکیں۔ دوبارہ کوشش کریں۔",
-    "undone": "تبدیلیاں واپس لے لی گئیں"
+    "undone": "تبدیلیاں واپس لے لی گئیں",
+    "salary": "{{min}}–{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "{{max}} LPA تک",
+    "salaryFrom": "{{min}} LPA سے",
+    "undoFailed": "واپس نہیں ہو سکا۔ دوبارہ کوشش کریں۔",
+    "errorTitle": "آپ کی ملازمتیں لوڈ نہیں ہوئیں۔",
+    "errorBody": "ان میں کچھ نہیں بدلا۔ کنکشن چیک کر کے دوبارہ کوشش کریں۔",
+    "openings_one": "{{count}} آسامی",
+    "openings_other": "{{count}} آسامیاں",
+    "pendingSkipped_one": "منظوری کی منتظر {{count}} نہیں بدلے گی",
+    "pendingSkipped_other": "منظوری کی منتظر {{count}} نہیں بدلیں گی"
   },
   "status": {
     "open": "کھلی",

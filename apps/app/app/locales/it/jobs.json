@@ -15,7 +15,8 @@
       "status": "Stato",
       "place": "Località",
       "experience": "Esperienza",
-      "posted": "Pubblicata"
+      "posted": "Pubblicata",
+      "salary": "Stipendio"
     },
     "emptyTitle": "Ancora nessuna offerta",
     "emptyBody": "Carica una descrizione del ruolo e compiliamo noi il modulo. I candidati adatti compaiono appena viene approvata.",
@@ -30,7 +31,20 @@
     "changeFailed_one": "Non è stato possibile modificare {{count}} offerta. Riprova.",
     "changeFailed_many": "Non è stato possibile modificare {{count}} offerte. Riprova.",
     "changeFailed_other": "Non è stato possibile modificare {{count}} offerte. Riprova.",
-    "undone": "Modifiche annullate"
+    "undone": "Modifiche annullate",
+    "salary": "{{min}}–{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "Fino a {{max}} LPA",
+    "salaryFrom": "Da {{min}} LPA",
+    "undoFailed": "Impossibile annullare. Riprova.",
+    "errorTitle": "Le tue offerte non si sono caricate.",
+    "errorBody": "Non è cambiato nulla. Controlla la connessione e riprova.",
+    "openings_one": "{{count}} posizione",
+    "openings_many": "{{count}} posizioni",
+    "openings_other": "{{count}} posizioni",
+    "pendingSkipped_one": "{{count}} in attesa di approvazione non cambierà",
+    "pendingSkipped_many": "{{count}} in attesa di approvazione non cambieranno",
+    "pendingSkipped_other": "{{count}} in attesa di approvazione non cambieranno"
   },
   "status": {
     "open": "Aperta",

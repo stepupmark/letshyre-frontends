@@ -203,9 +203,7 @@ export function MatchList({
         onClearFilters={() => {
           setBand(null)
         }}
-        onOpen={(match) => {
-          setOpenId(match.candidate_id)
-        }}
+        keyboard
         mobileRow={(match) => (
           <button
             type="button"

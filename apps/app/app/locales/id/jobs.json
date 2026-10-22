@@ -15,7 +15,8 @@
       "status": "Status",
       "place": "Lokasi",
       "experience": "Pengalaman",
-      "posted": "Dipasang"
+      "posted": "Dipasang",
+      "salary": "Gaji"
     },
     "emptyTitle": "Belum ada lowongan",
     "emptyBody": "Unggah deskripsi pekerjaan dan kami isi formulirnya untuk Anda. Kandidat yang cocok muncul segera setelah disetujui.",
@@ -26,7 +27,16 @@
     },
     "changed_other": "{{count}} lowongan kini {{status}}",
     "changeFailed_other": "{{count}} lowongan tidak bisa diubah. Coba lagi.",
-    "undone": "Perubahan dibatalkan"
+    "undone": "Perubahan dibatalkan",
+    "salary": "{{min}}–{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "Hingga {{max}} LPA",
+    "salaryFrom": "Mulai {{min}} LPA",
+    "undoFailed": "Tidak bisa dibatalkan. Coba lagi.",
+    "errorTitle": "Lowongan Anda gagal dimuat.",
+    "errorBody": "Tidak ada yang berubah. Periksa koneksi lalu coba lagi.",
+    "openings_other": "{{count}} posisi",
+    "pendingSkipped_other": "{{count}} yang menunggu persetujuan tidak berubah"
   },
   "status": {
     "open": "Dibuka",

@@ -15,7 +15,8 @@
       "status": "الحالة",
       "place": "الموقع",
       "experience": "الخبرة",
-      "posted": "تاريخ النشر"
+      "posted": "تاريخ النشر",
+      "salary": "الراتب"
     },
     "emptyTitle": "لا وظائف بعد",
     "emptyBody": "ارفع وصفًا وظيفيًا وسنملأ النموذج نيابة عنك. يظهر المرشحون المطابقون فور الموافقة عليها.",
@@ -36,7 +37,26 @@
     "changeFailed_few": "تعذّر تغيير {{count}} وظائف. حاول مجددًا.",
     "changeFailed_many": "تعذّر تغيير {{count}} وظيفة. حاول مجددًا.",
     "changeFailed_other": "تعذّر تغيير {{count}} وظيفة. حاول مجددًا.",
-    "undone": "تم التراجع عن التغييرات"
+    "undone": "تم التراجع عن التغييرات",
+    "salary": "{{min}}–{{max}} لاك سنويًا",
+    "salaryExact": "{{value}} لاك سنويًا",
+    "salaryUpTo": "حتى {{max}} لاك سنويًا",
+    "salaryFrom": "من {{min}} لاك سنويًا",
+    "undoFailed": "تعذّر التراجع. حاول مرة أخرى.",
+    "errorTitle": "لم يتم تحميل وظائفك.",
+    "errorBody": "لم يتغير شيء فيها. تحقق من اتصالك وحاول مرة أخرى.",
+    "openings_zero": "لا وظائف شاغرة",
+    "openings_one": "وظيفة شاغرة واحدة",
+    "openings_two": "وظيفتان شاغرتان",
+    "openings_few": "{{count}} وظائف شاغرة",
+    "openings_many": "{{count}} وظيفة شاغرة",
+    "openings_other": "{{count}} وظيفة شاغرة",
+    "pendingSkipped_zero": "لا شيء بانتظار الموافقة",
+    "pendingSkipped_one": "واحدة بانتظار الموافقة لن تتغير",
+    "pendingSkipped_two": "اثنتان بانتظار الموافقة لن تتغيرا",
+    "pendingSkipped_few": "{{count}} بانتظار الموافقة لن تتغير",
+    "pendingSkipped_many": "{{count}} بانتظار الموافقة لن تتغير",
+    "pendingSkipped_other": "{{count}} بانتظار الموافقة لن تتغير"
   },
   "status": {
     "open": "مفتوحة",

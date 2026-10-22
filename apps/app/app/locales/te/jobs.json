@@ -15,7 +15,8 @@
       "status": "స్థితి",
       "place": "ప్రదేశం",
       "experience": "అనుభవం",
-      "posted": "పోస్ట్ చేసింది"
+      "posted": "పోస్ట్ చేసింది",
+      "salary": "జీతం"
     },
     "emptyTitle": "ఇంకా ఉద్యోగాలు లేవు",
     "emptyBody": "జాబ్ డిస్క్రిప్షన్ అప్‌లోడ్ చేయండి, మీ కోసం ఫారం నింపుతాం. ఆమోదం రాగానే సరిపోయే అభ్యర్థులు కనిపిస్తారు.",
@@ -28,7 +29,18 @@
     "changed_other": "{{count}} ఉద్యోగాలు ఇప్పుడు {{status}}",
     "changeFailed_one": "{{count}} ఉద్యోగాన్ని మార్చలేకపోయాం. మళ్లీ ప్రయత్నించండి.",
     "changeFailed_other": "{{count}} ఉద్యోగాలను మార్చలేకపోయాం. మళ్లీ ప్రయత్నించండి.",
-    "undone": "మార్పులు రద్దు చేయబడ్డాయి"
+    "undone": "మార్పులు రద్దు చేయబడ్డాయి",
+    "salary": "{{min}}–{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "{{max}} LPA వరకు",
+    "salaryFrom": "{{min}} LPA నుండి",
+    "undoFailed": "రద్దు చేయలేకపోయాం. మళ్లీ ప్రయత్నించండి.",
+    "errorTitle": "మీ ఉద్యోగాలు లోడ్ కాలేదు.",
+    "errorBody": "వాటిలో ఏమీ మారలేదు. కనెక్షన్ చూసి మళ్లీ ప్రయత్నించండి.",
+    "openings_one": "{{count}} ఖాళీ",
+    "openings_other": "{{count}} ఖాళీలు",
+    "pendingSkipped_one": "ఆమోదం కోసం వేచి ఉన్న {{count}} మారదు",
+    "pendingSkipped_other": "ఆమోదం కోసం వేచి ఉన్న {{count}} మారవు"
   },
   "status": {
     "open": "తెరిచి ఉంది",

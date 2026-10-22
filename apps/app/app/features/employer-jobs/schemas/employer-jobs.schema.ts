@@ -67,7 +67,16 @@ export const jobSchema = z.looseObject({
 export type Job = z.infer<typeof jobSchema>
 
 export const jobsPageSchema = z.looseObject({
-  results: z.array(jobSchema).catch([]),
+  // one malformed job shouldn't make the whole list look empty
+  results: z
+    .array(z.unknown())
+    .catch([])
+    .transform((rows) =>
+      rows.flatMap((row) => {
+        const parsed = jobSchema.safeParse(row)
+        return parsed.success ? [parsed.data] : []
+      })
+    ),
   count: z.number().nullish(),
   total_pages: z.number().nullish(),
 })

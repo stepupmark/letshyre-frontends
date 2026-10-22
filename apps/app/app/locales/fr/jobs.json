@@ -15,7 +15,8 @@
       "status": "Statut",
       "place": "Lieu",
       "experience": "Expérience",
-      "posted": "Publiée"
+      "posted": "Publiée",
+      "salary": "Salaire"
     },
     "emptyTitle": "Aucune offre pour l'instant",
     "emptyBody": "Importez une fiche de poste et nous remplirons le formulaire pour vous. Les candidats correspondants apparaissent dès sa validation.",
@@ -30,7 +31,20 @@
     "changeFailed_one": "{{count}} offre n'a pas pu être modifiée. Réessayez.",
     "changeFailed_many": "{{count}} offres n'ont pas pu être modifiées. Réessayez.",
     "changeFailed_other": "{{count}} offres n'ont pas pu être modifiées. Réessayez.",
-    "undone": "Modifications annulées"
+    "undone": "Modifications annulées",
+    "salary": "{{min}}–{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "Jusqu'à {{max}} LPA",
+    "salaryFrom": "À partir de {{min}} LPA",
+    "undoFailed": "Impossible d'annuler. Réessayez.",
+    "errorTitle": "Vos offres ne se sont pas chargées.",
+    "errorBody": "Rien n'a changé pour elles. Vérifiez votre connexion et réessayez.",
+    "openings_one": "{{count}} poste",
+    "openings_many": "{{count}} postes",
+    "openings_other": "{{count}} postes",
+    "pendingSkipped_one": "{{count}} en attente de validation ne changera pas",
+    "pendingSkipped_many": "{{count}} en attente de validation ne changeront pas",
+    "pendingSkipped_other": "{{count}} en attente de validation ne changeront pas"
   },
   "status": {
     "open": "Ouverte",

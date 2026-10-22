@@ -15,7 +15,8 @@
       "status": "Статус",
       "place": "Город",
       "experience": "Опыт",
-      "posted": "Размещена"
+      "posted": "Размещена",
+      "salary": "Зарплата"
     },
     "emptyTitle": "Вакансий пока нет",
     "emptyBody": "Загрузите описание вакансии, и мы заполним форму за вас. Подходящие кандидаты появятся сразу после одобрения.",
@@ -32,7 +33,22 @@
     "changeFailed_few": "Не удалось изменить {{count}} вакансии. Попробуйте снова.",
     "changeFailed_many": "Не удалось изменить {{count}} вакансий. Попробуйте снова.",
     "changeFailed_other": "Не удалось изменить {{count}} вакансии. Попробуйте снова.",
-    "undone": "Изменения отменены"
+    "undone": "Изменения отменены",
+    "salary": "{{min}}–{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "До {{max}} LPA",
+    "salaryFrom": "От {{min}} LPA",
+    "undoFailed": "Не удалось отменить. Попробуйте снова.",
+    "errorTitle": "Не удалось загрузить вакансии.",
+    "errorBody": "В них ничего не изменилось. Проверьте подключение и попробуйте снова.",
+    "openings_one": "{{count}} вакансия",
+    "openings_few": "{{count}} вакансии",
+    "openings_many": "{{count}} вакансий",
+    "openings_other": "{{count}} вакансии",
+    "pendingSkipped_one": "{{count}} на проверке не изменится",
+    "pendingSkipped_few": "{{count}} на проверке не изменятся",
+    "pendingSkipped_many": "{{count}} на проверке не изменятся",
+    "pendingSkipped_other": "{{count}} на проверке не изменятся"
   },
   "status": {
     "open": "Открыта",

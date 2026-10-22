@@ -15,7 +15,8 @@
       "status": "Status",
       "place": "Locatie",
       "experience": "Ervaring",
-      "posted": "Geplaatst"
+      "posted": "Geplaatst",
+      "salary": "Salaris"
     },
     "emptyTitle": "Nog geen vacatures",
     "emptyBody": "Upload een functieomschrijving en wij vullen het formulier voor u in. Passende kandidaten verschijnen zodra hij is goedgekeurd.",
@@ -28,7 +29,18 @@
     "changed_other": "{{count}} vacatures zijn nu {{status}}",
     "changeFailed_one": "{{count}} vacature kon niet worden gewijzigd. Probeer het opnieuw.",
     "changeFailed_other": "{{count}} vacatures konden niet worden gewijzigd. Probeer het opnieuw.",
-    "undone": "Wijzigingen ongedaan gemaakt"
+    "undone": "Wijzigingen ongedaan gemaakt",
+    "salary": "{{min}}–{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "Tot {{max}} LPA",
+    "salaryFrom": "Vanaf {{min}} LPA",
+    "undoFailed": "Ongedaan maken lukte niet. Probeer het opnieuw.",
+    "errorTitle": "Je vacatures zijn niet geladen.",
+    "errorBody": "Er is niets aan veranderd. Controleer je verbinding en probeer het opnieuw.",
+    "openings_one": "{{count}} vacature",
+    "openings_other": "{{count}} vacatures",
+    "pendingSkipped_one": "{{count}} wacht op goedkeuring en verandert niet",
+    "pendingSkipped_other": "{{count}} wachten op goedkeuring en veranderen niet"
   },
   "status": {
     "open": "Open",

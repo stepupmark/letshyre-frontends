@@ -1,5 +1,5 @@
 export { JobDetail } from "./components/job-detail/job-detail"
-export { JobsList } from "./components/jobs-list"
+export { JobsList } from "./components/jobs-list/jobs-list"
 export { PostJob } from "./components/post-job/post-job"
 export { isJobId } from "./lib/employer-jobs"
 export { jobQuery, jobsQuery } from "./queries/employer-jobs.queries"

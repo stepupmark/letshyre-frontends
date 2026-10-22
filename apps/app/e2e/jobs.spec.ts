@@ -1,6 +1,4 @@
-import AxeBuilder from "@axe-core/playwright"
-
-import { expect, reply, test } from "./fixtures"
+import { axe, expect, reply, test } from "./fixtures"
 
 const PARSED = {
   success: true,
@@ -66,7 +64,7 @@ test("an employer posts a job from their JD after checking what it filled", asyn
   // a field the employer changes is theirs now
   await page.getByLabel("City").fill("Secunderabad")
   await expect(marks).toHaveCount(14)
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 
   // a refresh keeps the draft and the JD
   await expect(
@@ -132,10 +130,6 @@ test("jobs can be paused in bulk and the change undone", async ({
   api,
   signInAs,
 }) => {
-  test.skip(
-    test.info().project.name === "mobile",
-    "bulk selection is in the desktop table"
-  )
   const sent: string[] = []
   await api({
     "PATCH /user/v1/employer_job_detail/101/": async (route) => {
@@ -146,13 +140,21 @@ test("jobs can be paused in bulk and the change undone", async ({
   await signInAs("employer")
   await page.goto("/employer/jobs")
 
-  await expect(
-    page.getByRole("row", { name: /Product Designer/ })
-  ).toContainText("Waiting for approval")
   await page
     .getByRole("checkbox", { name: "Select Senior React Developer" })
+    .filter({ visible: true })
     .check()
-  await page.getByRole("toolbar").getByRole("button", { name: "Pause" }).click()
+  await page
+    .getByRole("checkbox", { name: "Select Product Designer" })
+    .filter({ visible: true })
+    .check()
+  const bar = page.getByRole("toolbar")
+  await expect(
+    bar.getByText("1 waiting for approval won't change")
+  ).toBeVisible()
+  await expect(bar.getByRole("button", { name: "Reopen" })).toHaveCount(0)
+  await axe(page)
+  await bar.getByRole("button", { name: "Pause" }).click()
   await expect(page.getByText("1 job is now paused")).toBeVisible()
   await page.getByRole("button", { name: "Undo" }).click()
   await expect(page.getByText("Changes undone")).toBeVisible()
@@ -174,7 +176,7 @@ test("a job is edited in place", async ({ page, api, signInAs }) => {
     page.getByRole("heading", { name: "Senior React Developer" })
   ).toBeVisible()
   await expect(page.getByText("Mentor two developers")).toBeVisible()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
   await page.getByRole("button", { name: "Edit" }).click()
   await page.getByLabel("Openings").fill("3")
   await page.getByRole("button", { name: "Save changes" }).click()
@@ -208,7 +210,7 @@ test("applicants are reviewed best match first, one after another", async ({
   await expect(rows.nth(1)).toContainText("Arjun Mehta")
   await expect(rows.nth(1)).toContainText("Strong match")
   await expect(rows.nth(3)).toContainText("Meera Iyer")
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 
   await page.keyboard.press("j")
   await page.keyboard.press("Enter")

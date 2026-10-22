@@ -15,7 +15,8 @@
       "status": "Estado",
       "place": "Ubicación",
       "experience": "Experiencia",
-      "posted": "Publicada"
+      "posted": "Publicada",
+      "salary": "Salario"
     },
     "emptyTitle": "Aún no hay ofertas",
     "emptyBody": "Suba una descripción del puesto y le rellenaremos el formulario. Los candidatos que encajen aparecerán en cuanto se apruebe.",
@@ -30,7 +31,20 @@
     "changeFailed_one": "No se pudo cambiar {{count}} oferta. Inténtelo de nuevo.",
     "changeFailed_many": "No se pudieron cambiar {{count}} ofertas. Inténtelo de nuevo.",
     "changeFailed_other": "No se pudieron cambiar {{count}} ofertas. Inténtelo de nuevo.",
-    "undone": "Cambios deshechos"
+    "undone": "Cambios deshechos",
+    "salary": "{{min}}–{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "Hasta {{max}} LPA",
+    "salaryFrom": "Desde {{min}} LPA",
+    "undoFailed": "No se pudo deshacer. Inténtalo de nuevo.",
+    "errorTitle": "Tus empleos no se cargaron.",
+    "errorBody": "No ha cambiado nada en ellos. Revisa tu conexión e inténtalo de nuevo.",
+    "openings_one": "{{count}} vacante",
+    "openings_many": "{{count}} vacantes",
+    "openings_other": "{{count}} vacantes",
+    "pendingSkipped_one": "{{count}} pendiente de aprobación no cambiará",
+    "pendingSkipped_many": "{{count}} pendientes de aprobación no cambiarán",
+    "pendingSkipped_other": "{{count}} pendientes de aprobación no cambiarán"
   },
   "status": {
     "open": "Abierta",

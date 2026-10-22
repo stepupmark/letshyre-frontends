@@ -15,7 +15,8 @@
       "status": "Status",
       "place": "Location",
       "experience": "Experience",
-      "posted": "Posted"
+      "posted": "Posted",
+      "salary": "Salary"
     },
     "emptyTitle": "No jobs yet",
     "emptyBody": "Upload a job description and we'll fill in the form for you. Matching candidates show up as soon as it's approved.",
@@ -28,7 +29,18 @@
     "changed_other": "{{count}} jobs are now {{status}}",
     "changeFailed_one": "{{count}} job couldn't be changed. Try again.",
     "changeFailed_other": "{{count}} jobs couldn't be changed. Try again.",
-    "undone": "Changes undone"
+    "undone": "Changes undone",
+    "salary": "{{min}}–{{max}} LPA",
+    "salaryExact": "{{value}} LPA",
+    "salaryUpTo": "Up to {{max}} LPA",
+    "salaryFrom": "From {{min}} LPA",
+    "undoFailed": "Couldn't undo that. Try again.",
+    "errorTitle": "Your jobs didn't load.",
+    "errorBody": "Nothing has changed on them. Check your connection and try again.",
+    "openings_one": "{{count}} opening",
+    "openings_other": "{{count}} openings",
+    "pendingSkipped_one": "{{count}} waiting for approval won't change",
+    "pendingSkipped_other": "{{count}} waiting for approval won't change"
   },
   "status": {
     "open": "Open",
