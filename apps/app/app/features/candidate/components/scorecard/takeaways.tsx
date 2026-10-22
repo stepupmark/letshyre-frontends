@@ -86,7 +86,7 @@ export function Takeaways({
               ease,
               delay: 0.2 + i * 0.04,
             }}
-            className="flex flex-col gap-2 rounded-xl bg-muted/60 p-4 print:transform-none! print:opacity-100!"
+            className="flex flex-col gap-2 rounded-lg border p-4 print:transform-none! print:opacity-100!"
           >
             <span className="flex items-center gap-2 text-xs font-medium text-muted-foreground [&_svg]:size-4 [&_svg]:shrink-0">
               {tile.icon}

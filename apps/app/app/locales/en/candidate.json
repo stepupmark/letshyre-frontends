@@ -172,6 +172,21 @@
     "emptyTitle": "No scorecards yet",
     "emptyBody": "Take an AI interview in the desktop app. Your scorecard is ready a few minutes after it ends.",
     "download": "Download the app",
-    "guide": "How it works"
+    "guide": "How it works",
+    "latest": "Latest interview",
+    "shared": "Employers you apply to see this one.",
+    "earlier": "Earlier interviews",
+    "history": "Your interviews over time",
+    "historyItem": "{{date}}: {{band}}",
+    "scale": {
+      "low": "Weak",
+      "partial": "Mixed",
+      "strong": "Strong"
+    },
+    "notScored": "Not scored",
+    "noDate": "Date unknown",
+    "errorTitle": "Your scorecards didn't load.",
+    "errorBody": "They're still saved to your account. Check your connection and try again.",
+    "attempts": "{{used}} of {{max}} interviews used"
   }
 }

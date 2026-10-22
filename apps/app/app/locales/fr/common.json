@@ -41,7 +41,8 @@
     "error": "Le chargement a échoué.",
     "errorBody": "Rien n'est perdu. Vérifiez votre connexion et réessayez.",
     "retry": "Réessayer",
-    "loading": "Chargement"
+    "loading": "Chargement",
+    "refreshFailed": "Cette liste ne s'est pas actualisée, elle peut être dépassée."
   },
   "empty": {
     "filteredTitle": "Aucun résultat",

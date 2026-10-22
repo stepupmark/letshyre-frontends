@@ -6,10 +6,7 @@ import type { ReactNode } from "react"
 
 import { useDelayed } from "@/hooks/use-delayed"
 
-/**
- * Loading, error and data for one query. The skeleton waits 300 ms so fast
- * answers don't flash; a failed refetch keeps showing the last good data.
- */
+// a failed refetch keeps showing the last good data
 export function QueryState<T>({
   query,
   skeleton,
@@ -39,9 +36,13 @@ export function QueryState<T>({
 export function LoadError({
   onRetry,
   retrying = false,
+  title,
+  body,
 }: {
   onRetry: () => void
   retrying?: boolean
+  title?: string
+  body?: string
 }) {
   const { t } = useTranslation("common")
   return (
@@ -50,9 +51,9 @@ export function LoadError({
       className="flex flex-col items-start gap-3 rounded-lg border p-6"
     >
       <div>
-        <p className="font-medium">{t("state.error")}</p>
+        <p className="font-medium">{title ?? t("state.error")}</p>
         <p className="mt-1 text-sm text-muted-foreground">
-          {t("state.errorBody")}
+          {body ?? t("state.errorBody")}
         </p>
       </div>
       <Button variant="outline" size="sm" onClick={onRetry} disabled={retrying}>
@@ -64,5 +65,31 @@ export function LoadError({
         {t("state.retry")}
       </Button>
     </div>
+  )
+}
+
+export function RefreshNote({
+  onRetry,
+  retrying,
+}: {
+  onRetry: () => void
+  retrying: boolean
+}) {
+  const { t } = useTranslation("common")
+  return (
+    <p
+      role="status"
+      className="flex flex-wrap items-center justify-between gap-2 rounded-lg border px-3 py-2 text-sm text-muted-foreground"
+    >
+      {t("state.refreshFailed")}
+      <Button variant="ghost" size="sm" disabled={retrying} onClick={onRetry}>
+        <RotateCw
+          className={
+            retrying ? "animate-spin motion-reduce:animate-none" : undefined
+          }
+        />
+        {t("state.retry")}
+      </Button>
+    </p>
   )
 }

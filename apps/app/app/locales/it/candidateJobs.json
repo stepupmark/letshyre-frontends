@@ -14,7 +14,6 @@
     "find": "Cerca in questa pagina",
     "noMatch": "Niente in questa pagina corrisponde a «{{q}}».",
     "clearFind": "Cancella ricerca",
-    "refreshFailed": "L'elenco non si è aggiornato, potrebbe non essere attuale.",
     "appliedOn": "Candidatura del {{date}}",
     "viewJob": "Vedi offerta",
     "count_one": "{{count}} candidatura",

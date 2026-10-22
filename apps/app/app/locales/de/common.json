@@ -39,7 +39,8 @@
     "error": "Das wurde nicht geladen.",
     "errorBody": "Es ist nichts verloren. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
     "retry": "Erneut versuchen",
-    "loading": "Wird geladen"
+    "loading": "Wird geladen",
+    "refreshFailed": "Diese Liste wurde nicht aktualisiert und ist vielleicht veraltet."
   },
   "empty": {
     "filteredTitle": "Keine Treffer",

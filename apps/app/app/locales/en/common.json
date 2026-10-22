@@ -39,7 +39,8 @@
     "error": "This didn't load.",
     "errorBody": "Nothing was lost. Check your connection and try again.",
     "retry": "Try again",
-    "loading": "Loading"
+    "loading": "Loading",
+    "refreshFailed": "This list didn't refresh, so it may be out of date."
   },
   "empty": {
     "filteredTitle": "Nothing matches",

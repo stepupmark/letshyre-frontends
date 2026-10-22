@@ -39,7 +39,8 @@
     "error": "Dit is niet geladen.",
     "errorBody": "Er is niets verloren. Controleer uw verbinding en probeer het opnieuw.",
     "retry": "Opnieuw proberen",
-    "loading": "Laden"
+    "loading": "Laden",
+    "refreshFailed": "Deze lijst is niet vernieuwd en kan verouderd zijn."
   },
   "empty": {
     "filteredTitle": "Geen resultaten",

@@ -14,7 +14,6 @@
     "find": "Cari di halaman ini",
     "noMatch": "Tidak ada yang cocok dengan “{{q}}” di halaman ini.",
     "clearFind": "Hapus pencarian",
-    "refreshFailed": "Daftar ini gagal diperbarui, jadi mungkin sudah usang.",
     "appliedOn": "Dilamar {{date}}",
     "viewJob": "Lihat lowongan",
     "count_other": "{{count}} lamaran"

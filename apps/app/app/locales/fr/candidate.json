@@ -177,6 +177,21 @@
     "emptyTitle": "Pas encore de grille",
     "emptyBody": "Passez un entretien IA dans l'application de bureau. Votre grille est prête quelques minutes après la fin.",
     "download": "Télécharger l'application",
-    "guide": "Comment ça marche"
+    "guide": "Comment ça marche",
+    "latest": "Dernier entretien",
+    "shared": "Les employeurs auxquels vous postulez voient celui-ci.",
+    "earlier": "Entretiens précédents",
+    "history": "Vos entretiens dans le temps",
+    "historyItem": "{{date}} : {{band}}",
+    "scale": {
+      "low": "Faible",
+      "partial": "Mitigé",
+      "strong": "Solide"
+    },
+    "notScored": "Non noté",
+    "noDate": "Date inconnue",
+    "errorTitle": "Vos scorecards ne se sont pas chargées.",
+    "errorBody": "Elles restent enregistrées dans votre compte. Vérifiez votre connexion et réessayez.",
+    "attempts": "{{used}} entretiens utilisés sur {{max}}"
   }
 }

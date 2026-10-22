@@ -177,6 +177,21 @@
     "emptyTitle": "Ainda não há avaliações",
     "emptyBody": "Faça uma entrevista com IA no aplicativo para computador. Sua avaliação fica pronta alguns minutos depois.",
     "download": "Baixar o aplicativo",
-    "guide": "Como funciona"
+    "guide": "Como funciona",
+    "latest": "Última entrevista",
+    "shared": "As empresas para as quais você se candidata veem esta.",
+    "earlier": "Entrevistas anteriores",
+    "history": "Suas entrevistas ao longo do tempo",
+    "historyItem": "{{date}}: {{band}}",
+    "scale": {
+      "low": "Fraca",
+      "partial": "Irregular",
+      "strong": "Forte"
+    },
+    "notScored": "Sem nota",
+    "noDate": "Data desconhecida",
+    "errorTitle": "Seus scorecards não carregaram.",
+    "errorBody": "Eles continuam salvos na sua conta. Verifique a conexão e tente de novo.",
+    "attempts": "{{used}} de {{max}} entrevistas usadas"
   }
 }

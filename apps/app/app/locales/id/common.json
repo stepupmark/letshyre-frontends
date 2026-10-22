@@ -37,7 +37,8 @@
     "error": "Tidak berhasil dimuat.",
     "errorBody": "Tidak ada yang hilang. Periksa koneksi Anda lalu coba lagi.",
     "retry": "Coba lagi",
-    "loading": "Memuat"
+    "loading": "Memuat",
+    "refreshFailed": "Daftar ini gagal diperbarui, jadi mungkin sudah usang."
   },
   "empty": {
     "filteredTitle": "Tidak ada yang cocok",

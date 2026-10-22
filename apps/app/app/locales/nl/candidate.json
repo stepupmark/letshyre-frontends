@@ -172,6 +172,21 @@
     "emptyTitle": "Nog geen scorekaarten",
     "emptyBody": "Doe een AI-interview in de desktop-app. Uw scorekaart is een paar minuten na afloop klaar.",
     "download": "App downloaden",
-    "guide": "Hoe het werkt"
+    "guide": "Hoe het werkt",
+    "latest": "Laatste interview",
+    "shared": "Werkgevers bij wie je solliciteert, zien dit interview.",
+    "earlier": "Eerdere interviews",
+    "history": "Je interviews door de tijd",
+    "historyItem": "{{date}}: {{band}}",
+    "scale": {
+      "low": "Zwak",
+      "partial": "Wisselend",
+      "strong": "Sterk"
+    },
+    "notScored": "Geen score",
+    "noDate": "Datum onbekend",
+    "errorTitle": "Je scorecards zijn niet geladen.",
+    "errorBody": "Ze staan nog in je account. Controleer je verbinding en probeer het opnieuw.",
+    "attempts": "{{used}} van {{max}} interviews gebruikt"
   }
 }

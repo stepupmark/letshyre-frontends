@@ -177,6 +177,21 @@
     "emptyTitle": "Ancora nessuna scheda",
     "emptyBody": "Fai un colloquio con IA nell'app desktop. La tua scheda è pronta pochi minuti dopo la fine.",
     "download": "Scarica l'app",
-    "guide": "Come funziona"
+    "guide": "Come funziona",
+    "latest": "Ultimo colloquio",
+    "shared": "I datori di lavoro a cui ti candidi vedono questo.",
+    "earlier": "Colloqui precedenti",
+    "history": "I tuoi colloqui nel tempo",
+    "historyItem": "{{date}}: {{band}}",
+    "scale": {
+      "low": "Debole",
+      "partial": "Altalenante",
+      "strong": "Solido"
+    },
+    "notScored": "Senza punteggio",
+    "noDate": "Data sconosciuta",
+    "errorTitle": "Le tue scorecard non si sono caricate.",
+    "errorBody": "Restano salvate nel tuo account. Controlla la connessione e riprova.",
+    "attempts": "{{used}} colloqui usati su {{max}}"
   }
 }

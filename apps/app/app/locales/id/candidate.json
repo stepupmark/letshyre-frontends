@@ -167,6 +167,21 @@
     "emptyTitle": "Belum ada kartu skor",
     "emptyBody": "Ikuti wawancara AI di aplikasi desktop. Kartu skor Anda siap beberapa menit setelah selesai.",
     "download": "Unduh aplikasinya",
-    "guide": "Cara kerjanya"
+    "guide": "Cara kerjanya",
+    "latest": "Wawancara terbaru",
+    "shared": "Pemberi kerja yang Anda lamar melihat yang ini.",
+    "earlier": "Wawancara sebelumnya",
+    "history": "Wawancara Anda dari waktu ke waktu",
+    "historyItem": "{{date}}: {{band}}",
+    "scale": {
+      "low": "Lemah",
+      "partial": "Campuran",
+      "strong": "Kuat"
+    },
+    "notScored": "Belum dinilai",
+    "noDate": "Tanggal tidak diketahui",
+    "errorTitle": "Scorecard Anda gagal dimuat.",
+    "errorBody": "Semuanya tetap tersimpan di akun Anda. Periksa koneksi lalu coba lagi.",
+    "attempts": "{{used}} dari {{max}} wawancara terpakai"
   }
 }

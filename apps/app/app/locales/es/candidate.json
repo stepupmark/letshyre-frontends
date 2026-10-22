@@ -177,6 +177,21 @@
     "emptyTitle": "Aún no hay fichas de evaluación",
     "emptyBody": "Haga una entrevista con IA en la aplicación de escritorio. Su ficha estará lista unos minutos después de terminar.",
     "download": "Descargar la aplicación",
-    "guide": "Cómo funciona"
+    "guide": "Cómo funciona",
+    "latest": "Última entrevista",
+    "shared": "Las empresas a las que te postulas ven esta.",
+    "earlier": "Entrevistas anteriores",
+    "history": "Tus entrevistas a lo largo del tiempo",
+    "historyItem": "{{date}}: {{band}}",
+    "scale": {
+      "low": "Débil",
+      "partial": "Irregular",
+      "strong": "Sólida"
+    },
+    "notScored": "Sin puntuar",
+    "noDate": "Fecha desconocida",
+    "errorTitle": "Tus scorecards no se cargaron.",
+    "errorBody": "Siguen guardadas en tu cuenta. Revisa tu conexión e inténtalo de nuevo.",
+    "attempts": "{{used}} de {{max}} entrevistas usadas"
   }
 }

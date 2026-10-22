@@ -41,7 +41,8 @@
     "error": "Il caricamento non è riuscito.",
     "errorBody": "Non si è perso nulla. Controlla la connessione e riprova.",
     "retry": "Riprova",
-    "loading": "Caricamento"
+    "loading": "Caricamento",
+    "refreshFailed": "L'elenco non si è aggiornato, potrebbe non essere attuale."
   },
   "empty": {
     "filteredTitle": "Nessun risultato",

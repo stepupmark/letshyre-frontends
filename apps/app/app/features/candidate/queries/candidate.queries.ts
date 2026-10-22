@@ -4,6 +4,7 @@ import { HttpError } from "@workspace/api"
 import { api } from "@/lib/api"
 import { dataOf } from "@/lib/response"
 
+import { newestFirst } from "../lib/scorecards"
 import {
   ownProfileSchema,
   profileSchema,
@@ -43,17 +44,16 @@ export const ownScorecardQuery = (id: string) =>
     staleTime: 60_000,
   })
 
-/** Newest first. No interviews yet comes back as a 404. */
+// no interviews yet comes back as a 404
 export const ownScorecardsQuery = () =>
   queryOptions({
     queryKey: ["candidate", "scorecards"],
     queryFn: async () => {
       try {
-        const items = scorecardListSchema.parse(
-          dataOf(await api.get("user/v1/candidate_scorecard/"))
-        )
-        return items.toSorted((a, b) =>
-          (b.created_at ?? "").localeCompare(a.created_at ?? "")
+        return newestFirst(
+          scorecardListSchema.parse(
+            dataOf(await api.get("user/v1/candidate_scorecard/"))
+          )
         )
       } catch (error) {
         if (error instanceof HttpError && error.status === 404) return []
@@ -65,7 +65,7 @@ export const ownScorecardsQuery = () =>
 
 const OWN_PROFILE = ["candidate", "profile"] as const
 
-/** The API reads the profile with a POST and no body. */
+// the API reads the profile with a POST and no body
 export const ownProfileQuery = () =>
   queryOptions({
     queryKey: OWN_PROFILE,

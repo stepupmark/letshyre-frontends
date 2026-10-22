@@ -167,6 +167,21 @@
     "emptyTitle": "スコアカードはまだありません",
     "emptyBody": "デスクトップアプリで AI 面接を受けてください。終了から数分でスコアカードができあがります。",
     "download": "アプリをダウンロード",
-    "guide": "使い方"
+    "guide": "使い方",
+    "latest": "最新の面接",
+    "shared": "応募先の企業にはこの結果が表示されます。",
+    "earlier": "過去の面接",
+    "history": "面接の推移",
+    "historyItem": "{{date}}：{{band}}",
+    "scale": {
+      "low": "弱い",
+      "partial": "ばらつきあり",
+      "strong": "強い"
+    },
+    "notScored": "未採点",
+    "noDate": "日付不明",
+    "errorTitle": "スコアカードを読み込めませんでした。",
+    "errorBody": "データはアカウントに保存されています。接続を確認してもう一度お試しください。",
+    "attempts": "{{max}}回中{{used}}回の面接を使用"
   }
 }

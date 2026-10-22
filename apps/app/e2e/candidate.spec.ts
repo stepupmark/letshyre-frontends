@@ -1,6 +1,6 @@
 import AxeBuilder from "@axe-core/playwright"
 
-import { expect, reply, test } from "./fixtures"
+import { expect, fixture, reply, test } from "./fixtures"
 
 test("an employer reads an unlocked candidate and shares their scorecard", async ({
   page,
@@ -89,4 +89,35 @@ test("a candidate reads their own scorecard in their own words", async ({
   await expect(page.getByRole("heading", { name: "Recording" })).toHaveCount(0)
   await expect(page.getByRole("heading", { name: "Profile" })).toHaveCount(0)
   await expect(page.getByText("Recommendations")).toHaveCount(0)
+})
+
+test("a candidate sees which scorecard employers get and opens an earlier one", async ({
+  page,
+  api,
+  signInAs,
+}) => {
+  await api({
+    "GET /user/v1/candidate_scorecard/4/": fixture(
+      "user.v1.candidate_scorecard.9.json"
+    ),
+  })
+  await signInAs("candidate")
+  await page.goto("/employee/scorecards")
+
+  const latest = page.getByRole("region", { name: "frontend developer" })
+  await expect(
+    latest.getByText("Strong interview", { exact: true })
+  ).toBeVisible()
+  await expect(
+    latest.getByText("Employers you apply to see this one.")
+  ).toBeVisible()
+  await expect(page.getByText("1 of 3 interviews used (2 left)")).toBeVisible()
+
+  const earlier = page.getByRole("region", { name: "Earlier interviews" })
+  await expect(earlier.getByRole("link")).toHaveCount(2)
+  await expect(earlier.getByText("Not scored")).toBeVisible()
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+
+  await earlier.getByRole("link", { name: /UI engineer/ }).click()
+  await expect(page).toHaveURL("/employee/scorecards/4")
 })

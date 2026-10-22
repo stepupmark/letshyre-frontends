@@ -14,7 +14,6 @@
     "find": "Find on this page",
     "noMatch": "Nothing on this page matches “{{q}}”.",
     "clearFind": "Clear search",
-    "refreshFailed": "This list didn't refresh, so it may be out of date.",
     "appliedOn": "Applied {{date}}",
     "viewJob": "View job",
     "count_one": "{{count}} application",

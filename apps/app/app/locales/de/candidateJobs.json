@@ -14,7 +14,6 @@
     "find": "Auf dieser Seite suchen",
     "noMatch": "Nichts auf dieser Seite passt zu „{{q}}“.",
     "clearFind": "Suche löschen",
-    "refreshFailed": "Diese Liste wurde nicht aktualisiert und ist vielleicht veraltet.",
     "appliedOn": "Beworben am {{date}}",
     "viewJob": "Job ansehen",
     "count_one": "{{count}} Bewerbung",

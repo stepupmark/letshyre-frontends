@@ -167,6 +167,21 @@
     "emptyTitle": "아직 평가표가 없어요",
     "emptyBody": "데스크톱 앱에서 AI 인터뷰를 보세요. 끝나고 몇 분 뒤 평가표가 준비돼요.",
     "download": "앱 다운로드",
-    "guide": "이용 방법"
+    "guide": "이용 방법",
+    "latest": "최근 면접",
+    "shared": "지원한 기업은 이 결과를 봅니다.",
+    "earlier": "이전 면접",
+    "history": "면접 결과 추이",
+    "historyItem": "{{date}}: {{band}}",
+    "scale": {
+      "low": "약함",
+      "partial": "보통",
+      "strong": "강함"
+    },
+    "notScored": "미채점",
+    "noDate": "날짜 없음",
+    "errorTitle": "스코어카드를 불러오지 못했습니다.",
+    "errorBody": "계정에는 그대로 저장되어 있습니다. 연결을 확인하고 다시 시도하세요.",
+    "attempts": "면접 {{max}}회 중 {{used}}회 사용"
   }
 }

@@ -7,14 +7,14 @@ import {
   InputGroupInput,
 } from "@workspace/ui/components/input-group"
 import { useQueries, useQuery } from "@tanstack/react-query"
-import { RotateCw, Search, X } from "lucide-react"
+import { Search, X } from "lucide-react"
 import { useReducedMotion } from "motion/react"
 import { useId, useRef, useState } from "react"
 import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { EmptyState } from "@/components/empty-state"
-import { LoadError } from "@/components/query-state"
+import { LoadError, RefreshNote } from "@/components/query-state"
 import { useDelayed } from "@/hooks/use-delayed"
 import { useDetailParam } from "@/hooks/use-detail-param"
 import { buttonLink } from "@/lib/button-link"
@@ -86,27 +86,10 @@ export function Applications() {
         </p>
 
         {query.isRefetchError && (
-          <p
-            role="status"
-            className="flex flex-wrap items-center justify-between gap-2 rounded-lg border px-3 py-2 text-sm text-muted-foreground"
-          >
-            {t("applications.refreshFailed")}
-            <Button
-              variant="ghost"
-              size="sm"
-              disabled={query.isRefetching}
-              onClick={() => void query.refetch()}
-            >
-              <RotateCw
-                className={
-                  query.isRefetching
-                    ? "animate-spin motion-reduce:animate-none"
-                    : undefined
-                }
-              />
-              {t("common:state.retry")}
-            </Button>
-          </p>
+          <RefreshNote
+            onRetry={() => void query.refetch()}
+            retrying={query.isRefetching}
+          />
         )}
 
         {query.isError && !query.data ? (

@@ -14,7 +14,6 @@
     "find": "Buscar nesta página",
     "noMatch": "Nada nesta página corresponde a “{{q}}”.",
     "clearFind": "Limpar busca",
-    "refreshFailed": "Esta lista não foi atualizada, então pode estar desatualizada.",
     "appliedOn": "Candidatou-se em {{date}}",
     "viewJob": "Ver vaga",
     "count_one": "{{count}} candidatura",

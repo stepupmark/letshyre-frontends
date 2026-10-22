@@ -14,7 +14,6 @@
     "find": "Zoeken op deze pagina",
     "noMatch": "Niets op deze pagina past bij ‘{{q}}’.",
     "clearFind": "Zoekopdracht wissen",
-    "refreshFailed": "Deze lijst is niet vernieuwd en kan verouderd zijn.",
     "appliedOn": "Gesolliciteerd op {{date}}",
     "viewJob": "Vacature bekijken",
     "count_one": "{{count}} sollicitatie",

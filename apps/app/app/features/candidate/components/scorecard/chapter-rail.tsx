@@ -50,7 +50,7 @@ export function ChapterRail({
                     : "text-muted-foreground"
                 )}
               >
-                <span className="text-xs tabular-nums opacity-70">
+                <span className="text-xs tabular-nums">
                   {String(i).padStart(2, "0")}
                 </span>
                 {item.label}

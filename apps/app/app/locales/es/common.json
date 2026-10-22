@@ -41,7 +41,8 @@
     "error": "No se ha cargado.",
     "errorBody": "No se ha perdido nada. Revise su conexión e inténtelo de nuevo.",
     "retry": "Reintentar",
-    "loading": "Cargando"
+    "loading": "Cargando",
+    "refreshFailed": "Esta lista no se actualizó, así que puede estar desactualizada."
   },
   "empty": {
     "filteredTitle": "Sin resultados",

@@ -14,7 +14,6 @@
     "find": "このページ内を検索",
     "noMatch": "このページに「{{q}}」に一致するものはありません。",
     "clearFind": "検索をクリア",
-    "refreshFailed": "一覧を更新できなかったため、古い可能性があります。",
     "appliedOn": "{{date}}に応募",
     "viewJob": "求人を見る",
     "count_other": "{{count}}件の応募"

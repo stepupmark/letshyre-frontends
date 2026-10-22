@@ -172,6 +172,21 @@
     "emptyTitle": "Noch keine Scorecards",
     "emptyBody": "Führen Sie ein KI-Interview in der Desktop-App. Ihre Scorecard ist ein paar Minuten nach dem Ende fertig.",
     "download": "App herunterladen",
-    "guide": "So funktioniert es"
+    "guide": "So funktioniert es",
+    "latest": "Letztes Interview",
+    "shared": "Arbeitgeber, bei denen Sie sich bewerben, sehen dieses.",
+    "earlier": "Frühere Interviews",
+    "history": "Ihre Interviews im Verlauf",
+    "historyItem": "{{date}}: {{band}}",
+    "scale": {
+      "low": "Schwach",
+      "partial": "Gemischt",
+      "strong": "Stark"
+    },
+    "notScored": "Nicht bewertet",
+    "noDate": "Datum unbekannt",
+    "errorTitle": "Ihre Scorecards wurden nicht geladen.",
+    "errorBody": "Sie sind weiter in Ihrem Konto gespeichert. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "attempts": "{{used}} von {{max}} Interviews genutzt"
   }
 }
