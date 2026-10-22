@@ -244,5 +244,9 @@
     "errorTitle": "This job didn't load.",
     "errorBody": "Nothing changed on it. Check your connection and try again.",
     "pendingStatus": "You can open, pause or close this job once it's approved."
+  },
+  "recent": {
+    "heading": "Recent jobs",
+    "all": "All jobs"
   }
 }

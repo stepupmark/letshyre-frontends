@@ -31,7 +31,9 @@
     "heading": "Rekrutmen",
     "open": "Lowongan dibuka",
     "closed": "Ditutup atau draf",
-    "applications": "Lamaran diterima"
+    "applications": "Lamaran diterima",
+    "errorTitle": "Angka rekrutmen gagal dimuat.",
+    "errorBody": "Kredit tetap berfungsi. Periksa koneksi lalu coba lagi."
   },
   "credits": {
     "heading": "Kredit",
@@ -39,23 +41,24 @@
     "explain": "Satu kredit membuka kontak, rekaman, dan CV satu kandidat.",
     "used": "{{percent}}% kredit Anda terpakai",
     "add": "Tambah kredit",
-    "invoices": "Faktur"
+    "invoices": "Faktur",
+    "usedLabel": "Terpakai sejauh ini",
+    "error": "Saldo Anda gagal dimuat."
   },
   "setup": {
     "title": "Selesaikan penyiapan",
     "progress": "{{done}} dari {{total}} selesai",
     "hide": "Sembunyikan",
-    "isDone": "(selesai)",
-    "isTodo": "(belum)",
     "account": {
       "title": "Buat akun Anda",
-      "done": "Selesai",
-      "todo": "Daftar dengan email kantor Anda."
+      "done": "Selesai"
     },
     "company": {
       "title": "Tambahkan detail dan dokumen perusahaan",
-      "done": "Dikirim untuk ditinjau",
-      "todo": "Nama, situs web, dan dokumen registrasi perusahaan Anda."
+      "verified": "Terverifikasi",
+      "waiting": "Sedang ditinjau. Kami akan mengirim email setelah selesai.",
+      "fix": "Perlu perubahan sebelum kandidat bisa melihat lowongan Anda.",
+      "action": "Tinjau detail"
     },
     "job": {
       "title": "Pasang lowongan pertama Anda",
@@ -68,6 +71,13 @@
       "done": "Selesai",
       "todo": "Tambahkan rekan agar bisa meninjau kandidat bersama Anda.",
       "action": "Undang"
+    },
+    "is": {
+      "done": "(selesai)",
+      "waiting": "(ditinjau)",
+      "todo": "(belum)",
+      "fix": "(perlu perubahan)"
     }
-  }
+  },
+  "lead": "Rekrutmen Anda sekilas."
 }

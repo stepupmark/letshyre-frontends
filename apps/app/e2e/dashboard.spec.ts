@@ -1,6 +1,4 @@
-import AxeBuilder from "@axe-core/playwright"
-
-import { expect, reply, test } from "./fixtures"
+import { axe, expect, fixture, reply, test } from "./fixtures"
 
 test("a settled employer sees what needs them, their numbers and credits", async ({
   page,
@@ -13,9 +11,17 @@ test("a settled employer sees what needs them, their numbers and credits", async
   await expect(
     page.getByRole("link", { name: /48\s*Applications received/ })
   ).toBeVisible()
-  await expect(page.getByText("40% of your credits used")).toBeVisible()
+  await expect(
+    page.getByRole("progressbar", { name: "40% of your credits used" })
+  ).toBeVisible()
+  await expect(
+    page.getByRole("link", { name: /3\s*Open jobs/ })
+  ).toHaveAttribute("href", "/employer/jobs?status=open")
+  await expect(
+    page.getByRole("region", { name: "Recent jobs" }).getByRole("link")
+  ).toHaveCount(4)
   await expect(page.getByText("Finish setting up")).toBeHidden()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 })
 
 test("a new employer gets a setup checklist they can hide", async ({
@@ -48,6 +54,54 @@ test("a new employer gets a setup checklist they can hide", async ({
   await page.reload()
   await expect(page.getByText("Credits are running low")).toBeVisible()
   await expect(page.getByText("Finish setting up")).toBeHidden()
+})
+
+test("the checklist shows a company still under review, not done", async ({
+  page,
+  api,
+  signInAs,
+}) => {
+  const profile = fixture("user.v1.employer_profile.json")
+  const data = profile.data as { kyc: object }
+  await api({
+    "GET /user/v1/employer_profile/": {
+      ...profile,
+      data: { ...data, kyc: { ...data.kyc, kyc_status: "Pending" } },
+    },
+    "GET /user/v1/employer_team_members/": (route) =>
+      reply(route, { data: { count: 0 } }),
+  })
+  await signInAs("employer")
+  await page.goto("/employer/dashboard")
+
+  await expect(page.getByText("2 of 4 done")).toBeVisible()
+  await expect(
+    page.getByText("Under review. We'll email you when it's checked.")
+  ).toBeVisible()
+  await axe(page)
+})
+
+test("a balance that fails to load keeps Add credits working", async ({
+  page,
+  api,
+  signInAs,
+}) => {
+  await api({
+    "GET /payment/v1/employer_credits/": (route) =>
+      reply(route, { success: false }, 500),
+  })
+  await signInAs("employer")
+  await page.goto("/employer/dashboard")
+
+  await expect(page.getByText("Your balance didn't load.")).toBeVisible()
+  await expect(
+    page
+      .getByRole("region", { name: "Credits" })
+      .getByRole("link", { name: "Add credits" })
+  ).toHaveAttribute("href", "/employer/billing")
+  await expect(
+    page.getByRole("link", { name: /48\s*Applications received/ })
+  ).toBeVisible()
 })
 
 test("tips show once each and can be brought back", async ({

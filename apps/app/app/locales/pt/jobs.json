@@ -249,5 +249,9 @@
     "errorTitle": "Esta vaga não carregou.",
     "errorBody": "Nada mudou nela. Verifique a conexão e tente de novo.",
     "pendingStatus": "Você pode abrir, pausar ou encerrar esta vaga depois que ela for aprovada."
+  },
+  "recent": {
+    "heading": "Vagas recentes",
+    "all": "Todas as vagas"
   }
 }

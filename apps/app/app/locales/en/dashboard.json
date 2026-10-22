@@ -33,7 +33,9 @@
     "heading": "Hiring",
     "open": "Open jobs",
     "closed": "Closed or draft",
-    "applications": "Applications received"
+    "applications": "Applications received",
+    "errorTitle": "Your hiring numbers didn't load.",
+    "errorBody": "Credits still work. Check your connection and try again."
   },
   "credits": {
     "heading": "Credits",
@@ -41,23 +43,24 @@
     "explain": "One credit unlocks one candidate's contact details, recording and resume.",
     "used": "{{percent}}% of your credits used",
     "add": "Add credits",
-    "invoices": "Invoices"
+    "invoices": "Invoices",
+    "usedLabel": "Used so far",
+    "error": "Your balance didn't load."
   },
   "setup": {
     "title": "Finish setting up",
     "progress": "{{done}} of {{total}} done",
     "hide": "Hide",
-    "isDone": "(done)",
-    "isTodo": "(to do)",
     "account": {
       "title": "Create your account",
-      "done": "Done",
-      "todo": "Sign up with your work email."
+      "done": "Done"
     },
     "company": {
       "title": "Add company details and documents",
-      "done": "Submitted for review",
-      "todo": "Your company's name, website and registration documents."
+      "verified": "Verified",
+      "waiting": "Under review. We'll email you when it's checked.",
+      "fix": "Needs changes before candidates can see your jobs.",
+      "action": "Review details"
     },
     "job": {
       "title": "Post your first job",
@@ -70,6 +73,13 @@
       "done": "Done",
       "todo": "Add colleagues so they can review candidates with you.",
       "action": "Invite"
+    },
+    "is": {
+      "done": "(done)",
+      "waiting": "(in review)",
+      "todo": "(to do)",
+      "fix": "(needs changes)"
     }
-  }
+  },
+  "lead": "Your hiring at a glance."
 }

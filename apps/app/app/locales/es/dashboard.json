@@ -35,7 +35,9 @@
     "heading": "Contratación",
     "open": "Ofertas abiertas",
     "closed": "Cerradas o en borrador",
-    "applications": "Candidaturas recibidas"
+    "applications": "Candidaturas recibidas",
+    "errorTitle": "Las cifras de contratación no se cargaron.",
+    "errorBody": "Los créditos siguen funcionando. Revisa tu conexión e inténtalo de nuevo."
   },
   "credits": {
     "heading": "Créditos",
@@ -43,23 +45,24 @@
     "explain": "Un crédito desbloquea los datos de contacto, la grabación y el currículum de un candidato.",
     "used": "{{percent}} % de sus créditos usados",
     "add": "Añadir créditos",
-    "invoices": "Facturas"
+    "invoices": "Facturas",
+    "usedLabel": "Usado hasta ahora",
+    "error": "Tu saldo no se cargó."
   },
   "setup": {
     "title": "Termine la configuración",
     "progress": "{{done}} de {{total}} hechos",
     "hide": "Ocultar",
-    "isDone": "(hecho)",
-    "isTodo": "(pendiente)",
     "account": {
       "title": "Cree su cuenta",
-      "done": "Hecho",
-      "todo": "Regístrese con su correo del trabajo."
+      "done": "Hecho"
     },
     "company": {
       "title": "Añada datos y documentos de la empresa",
-      "done": "Enviado a revisión",
-      "todo": "El nombre, el sitio web y los documentos de registro de su empresa."
+      "verified": "Verificada",
+      "waiting": "En revisión. Te escribiremos cuando esté lista.",
+      "fix": "Necesita cambios antes de que los candidatos vean tus empleos.",
+      "action": "Revisar datos"
     },
     "job": {
       "title": "Publique su primera oferta",
@@ -72,6 +75,13 @@
       "done": "Hecho",
       "todo": "Añada compañeros para que revisen candidatos con usted.",
       "action": "Invitar"
+    },
+    "is": {
+      "done": "(hecho)",
+      "waiting": "(en revisión)",
+      "todo": "(pendiente)",
+      "fix": "(necesita cambios)"
     }
-  }
+  },
+  "lead": "Tu contratación de un vistazo."
 }

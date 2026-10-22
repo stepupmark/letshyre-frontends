@@ -244,5 +244,9 @@
     "errorTitle": "Deze vacature is niet geladen.",
     "errorBody": "Er is niets aan veranderd. Controleer je verbinding en probeer het opnieuw.",
     "pendingStatus": "Na goedkeuring kun je deze vacature openen, pauzeren of sluiten."
+  },
+  "recent": {
+    "heading": "Recente vacatures",
+    "all": "Alle vacatures"
   }
 }

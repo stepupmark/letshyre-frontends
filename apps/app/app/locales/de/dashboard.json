@@ -33,7 +33,9 @@
     "heading": "Einstellungen",
     "open": "Offene Stellen",
     "closed": "Geschlossen oder Entwurf",
-    "applications": "Erhaltene Bewerbungen"
+    "applications": "Erhaltene Bewerbungen",
+    "errorTitle": "Ihre Recruiting-Zahlen wurden nicht geladen.",
+    "errorBody": "Credits funktionieren weiterhin. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut."
   },
   "credits": {
     "heading": "Credits",
@@ -41,23 +43,24 @@
     "explain": "Ein Credit schaltet Kontaktdaten, Aufzeichnung und Lebenslauf eines Kandidaten frei.",
     "used": "{{percent}} % Ihrer Credits genutzt",
     "add": "Credits hinzufügen",
-    "invoices": "Rechnungen"
+    "invoices": "Rechnungen",
+    "usedLabel": "Bisher genutzt",
+    "error": "Ihr Guthaben wurde nicht geladen."
   },
   "setup": {
     "title": "Einrichtung abschließen",
     "progress": "{{done}} von {{total}} erledigt",
     "hide": "Ausblenden",
-    "isDone": "(erledigt)",
-    "isTodo": "(offen)",
     "account": {
       "title": "Konto erstellen",
-      "done": "Erledigt",
-      "todo": "Registrieren Sie sich mit Ihrer geschäftlichen E-Mail."
+      "done": "Erledigt"
     },
     "company": {
       "title": "Unternehmensdaten und Dokumente hinzufügen",
-      "done": "Zur Prüfung eingereicht",
-      "todo": "Name, Website und Registrierungsdokumente Ihres Unternehmens."
+      "verified": "Verifiziert",
+      "waiting": "Wird geprüft. Wir schreiben Ihnen, sobald es fertig ist.",
+      "fix": "Braucht Änderungen, bevor Kandidaten Ihre Stellen sehen.",
+      "action": "Angaben prüfen"
     },
     "job": {
       "title": "Erste Stelle veröffentlichen",
@@ -70,6 +73,13 @@
       "done": "Erledigt",
       "todo": "Fügen Sie Kollegen hinzu, damit sie Kandidaten mit Ihnen prüfen können.",
       "action": "Einladen"
+    },
+    "is": {
+      "done": "(erledigt)",
+      "waiting": "(in Prüfung)",
+      "todo": "(offen)",
+      "fix": "(braucht Änderungen)"
     }
-  }
+  },
+  "lead": "Ihr Recruiting auf einen Blick."
 }

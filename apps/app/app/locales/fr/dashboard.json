@@ -35,7 +35,9 @@
     "heading": "Recrutement",
     "open": "Offres ouvertes",
     "closed": "Fermées ou en brouillon",
-    "applications": "Candidatures reçues"
+    "applications": "Candidatures reçues",
+    "errorTitle": "Vos chiffres de recrutement ne se sont pas chargés.",
+    "errorBody": "Les crédits fonctionnent toujours. Vérifiez votre connexion et réessayez."
   },
   "credits": {
     "heading": "Crédits",
@@ -43,23 +45,24 @@
     "explain": "Un crédit débloque les coordonnées, l'enregistrement et le CV d'un candidat.",
     "used": "{{percent}} % de vos crédits utilisés",
     "add": "Ajouter des crédits",
-    "invoices": "Factures"
+    "invoices": "Factures",
+    "usedLabel": "Utilisé jusqu'ici",
+    "error": "Votre solde ne s'est pas chargé."
   },
   "setup": {
     "title": "Terminez la configuration",
     "progress": "{{done}} sur {{total}} terminées",
     "hide": "Masquer",
-    "isDone": "(fait)",
-    "isTodo": "(à faire)",
     "account": {
       "title": "Créer votre compte",
-      "done": "Fait",
-      "todo": "Inscrivez-vous avec votre e-mail professionnel."
+      "done": "Fait"
     },
     "company": {
       "title": "Ajouter les informations et documents de l'entreprise",
-      "done": "Envoyé pour examen",
-      "todo": "Le nom, le site web et les documents d'immatriculation de votre entreprise."
+      "verified": "Vérifiée",
+      "waiting": "En cours de vérification. Nous vous écrirons une fois terminé.",
+      "fix": "À corriger avant que les candidats voient vos offres.",
+      "action": "Revoir les infos"
     },
     "job": {
       "title": "Publiez votre première offre",
@@ -72,6 +75,13 @@
       "done": "Fait",
       "todo": "Ajoutez des collègues pour qu'ils examinent les candidats avec vous.",
       "action": "Inviter"
+    },
+    "is": {
+      "done": "(fait)",
+      "waiting": "(en vérification)",
+      "todo": "(à faire)",
+      "fix": "(à corriger)"
     }
-  }
+  },
+  "lead": "Votre recrutement en un coup d'œil."
 }

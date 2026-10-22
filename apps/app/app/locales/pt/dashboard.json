@@ -35,7 +35,9 @@
     "heading": "Contratação",
     "open": "Vagas abertas",
     "closed": "Encerradas ou em rascunho",
-    "applications": "Candidaturas recebidas"
+    "applications": "Candidaturas recebidas",
+    "errorTitle": "Os números de contratação não carregaram.",
+    "errorBody": "Os créditos continuam funcionando. Verifique a conexão e tente de novo."
   },
   "credits": {
     "heading": "Créditos",
@@ -43,23 +45,24 @@
     "explain": "Um crédito desbloqueia os contatos, a gravação e o currículo de um candidato.",
     "used": "{{percent}}% dos seus créditos usados",
     "add": "Adicionar créditos",
-    "invoices": "Notas fiscais"
+    "invoices": "Notas fiscais",
+    "usedLabel": "Usado até agora",
+    "error": "Seu saldo não carregou."
   },
   "setup": {
     "title": "Termine a configuração",
     "progress": "{{done}} de {{total}} feitos",
     "hide": "Ocultar",
-    "isDone": "(feito)",
-    "isTodo": "(a fazer)",
     "account": {
       "title": "Crie sua conta",
-      "done": "Feito",
-      "todo": "Cadastre-se com seu e-mail corporativo."
+      "done": "Feito"
     },
     "company": {
       "title": "Adicione dados e documentos da empresa",
-      "done": "Enviado para análise",
-      "todo": "Nome, site e documentos de registro da sua empresa."
+      "verified": "Verificada",
+      "waiting": "Em análise. Avisaremos por e-mail quando terminar.",
+      "fix": "Precisa de ajustes antes que candidatos vejam suas vagas.",
+      "action": "Revisar dados"
     },
     "job": {
       "title": "Publique sua primeira vaga",
@@ -72,6 +75,13 @@
       "done": "Feito",
       "todo": "Adicione colegas para avaliarem candidatos com você.",
       "action": "Convidar"
+    },
+    "is": {
+      "done": "(feito)",
+      "waiting": "(em análise)",
+      "todo": "(a fazer)",
+      "fix": "(precisa de ajustes)"
     }
-  }
+  },
+  "lead": "Suas contratações em resumo."
 }

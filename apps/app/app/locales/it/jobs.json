@@ -249,5 +249,9 @@
     "errorTitle": "Questa offerta non si è caricata.",
     "errorBody": "Non è cambiato nulla. Controlla la connessione e riprova.",
     "pendingStatus": "Potrai aprire, sospendere o chiudere questa offerta dopo l'approvazione."
+  },
+  "recent": {
+    "heading": "Offerte recenti",
+    "all": "Tutte le offerte"
   }
 }

@@ -35,7 +35,9 @@
     "heading": "Assunzioni",
     "open": "Offerte aperte",
     "closed": "Chiuse o in bozza",
-    "applications": "Candidature ricevute"
+    "applications": "Candidature ricevute",
+    "errorTitle": "I numeri delle assunzioni non si sono caricati.",
+    "errorBody": "I crediti funzionano ancora. Controlla la connessione e riprova."
   },
   "credits": {
     "heading": "Crediti",
@@ -43,23 +45,24 @@
     "explain": "Un credito sblocca contatti, registrazione e curriculum di un candidato.",
     "used": "{{percent}}% dei crediti usati",
     "add": "Aggiungi crediti",
-    "invoices": "Fatture"
+    "invoices": "Fatture",
+    "usedLabel": "Usati finora",
+    "error": "Il tuo saldo non si è caricato."
   },
   "setup": {
     "title": "Completa la configurazione",
     "progress": "{{done}} di {{total}} fatti",
     "hide": "Nascondi",
-    "isDone": "(fatto)",
-    "isTodo": "(da fare)",
     "account": {
       "title": "Crea il tuo account",
-      "done": "Fatto",
-      "todo": "Registrati con la tua email di lavoro."
+      "done": "Fatto"
     },
     "company": {
       "title": "Aggiungi dati e documenti aziendali",
-      "done": "Inviato per la revisione",
-      "todo": "Nome, sito web e documenti di registrazione della tua azienda."
+      "verified": "Verificata",
+      "waiting": "In revisione. Ti scriveremo quando è pronta.",
+      "fix": "Servono modifiche prima che i candidati vedano le tue offerte.",
+      "action": "Rivedi i dati"
     },
     "job": {
       "title": "Pubblica la tua prima offerta",
@@ -72,6 +75,13 @@
       "done": "Fatto",
       "todo": "Aggiungi colleghi perché valutino i candidati con te.",
       "action": "Invita"
+    },
+    "is": {
+      "done": "(fatto)",
+      "waiting": "(in revisione)",
+      "todo": "(da fare)",
+      "fix": "(servono modifiche)"
     }
-  }
+  },
+  "lead": "Le tue assunzioni in breve."
 }

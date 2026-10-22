@@ -12,12 +12,15 @@ import { duration, ease } from "@/lib/motion"
 export function AnimatedNumber({
   value,
   locale = "en",
+  from,
 }: {
   value: number
   locale?: string
+  // start the first count here, e.g. 0 so a figure rolls up as it arrives
+  from?: number
 }) {
   const reduce = useReducedMotion()
-  const current = useMotionValue(value)
+  const current = useMotionValue(from ?? value)
   const text = useTransform(current, (v) =>
     new Intl.NumberFormat(locale).format(Math.round(v))
   )

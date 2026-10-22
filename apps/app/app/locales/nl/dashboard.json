@@ -33,7 +33,9 @@
     "heading": "Werving",
     "open": "Open vacatures",
     "closed": "Gesloten of concept",
-    "applications": "Ontvangen sollicitaties"
+    "applications": "Ontvangen sollicitaties",
+    "errorTitle": "Je wervingscijfers zijn niet geladen.",
+    "errorBody": "Credits werken nog. Controleer je verbinding en probeer het opnieuw."
   },
   "credits": {
     "heading": "Credits",
@@ -41,23 +43,24 @@
     "explain": "Eén credit ontgrendelt de contactgegevens, opname en het cv van één kandidaat.",
     "used": "{{percent}}% van uw credits gebruikt",
     "add": "Credits toevoegen",
-    "invoices": "Facturen"
+    "invoices": "Facturen",
+    "usedLabel": "Tot nu toe gebruikt",
+    "error": "Je saldo is niet geladen."
   },
   "setup": {
     "title": "Rond de inrichting af",
     "progress": "{{done}} van {{total}} klaar",
     "hide": "Verbergen",
-    "isDone": "(klaar)",
-    "isTodo": "(te doen)",
     "account": {
       "title": "Maak uw account aan",
-      "done": "Klaar",
-      "todo": "Registreer met uw zakelijke e-mailadres."
+      "done": "Klaar"
     },
     "company": {
       "title": "Voeg bedrijfsgegevens en documenten toe",
-      "done": "Ingediend ter beoordeling",
-      "todo": "De naam, website en registratiedocumenten van uw bedrijf."
+      "verified": "Geverifieerd",
+      "waiting": "Wordt beoordeeld. We mailen je zodra het klaar is.",
+      "fix": "Heeft wijzigingen nodig voordat kandidaten je vacatures zien.",
+      "action": "Gegevens bekijken"
     },
     "job": {
       "title": "Plaats uw eerste vacature",
@@ -70,6 +73,13 @@
       "done": "Klaar",
       "todo": "Voeg collega's toe zodat ze samen met u kandidaten beoordelen.",
       "action": "Uitnodigen"
+    },
+    "is": {
+      "done": "(klaar)",
+      "waiting": "(in beoordeling)",
+      "todo": "(te doen)",
+      "fix": "(wijzigingen nodig)"
     }
-  }
+  },
+  "lead": "Je werving in één oogopslag."
 }

@@ -249,5 +249,9 @@
     "errorTitle": "Este empleo no se cargó.",
     "errorBody": "No ha cambiado nada en él. Revisa tu conexión e inténtalo de nuevo.",
     "pendingStatus": "Podrás abrir, pausar o cerrar este empleo cuando se apruebe."
+  },
+  "recent": {
+    "heading": "Empleos recientes",
+    "all": "Todos los empleos"
   }
 }

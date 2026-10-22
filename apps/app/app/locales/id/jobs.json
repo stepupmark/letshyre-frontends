@@ -239,5 +239,9 @@
     "errorTitle": "Lowongan ini gagal dimuat.",
     "errorBody": "Tidak ada yang berubah. Periksa koneksi lalu coba lagi.",
     "pendingStatus": "Anda bisa membuka, menjeda, atau menutup lowongan ini setelah disetujui."
+  },
+  "recent": {
+    "heading": "Lowongan terbaru",
+    "all": "Semua lowongan"
   }
 }
