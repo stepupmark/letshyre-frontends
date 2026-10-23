@@ -90,7 +90,8 @@
     "viewLimit_many": "{{count}} visitas",
     "viewLimit_other": "{{count}} visitas",
     "noLink": "El enlace se creó, pero volvió en un formato que no podemos mostrar. Búsquelo en Enlaces compartidos.",
-    "done": "Listo"
+    "done": "Listo",
+    "summary": "Deja de funcionar el {{date}}, o antes si se agotan las vistas."
   },
   "links": {
     "title": "Enlaces compartidos",

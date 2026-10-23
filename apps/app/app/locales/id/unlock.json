@@ -68,6 +68,7 @@
     },
     "compareHint": "Pilih 2 sampai {{max}} untuk dibandingkan",
     "errorTitle": "Kandidat yang dibuka gagal dimuat.",
-    "errorBody": "Kandidat yang Anda buka tetap ada di akun Anda. Periksa koneksi lalu coba lagi."
+    "errorBody": "Kandidat yang Anda buka tetap ada di akun Anda. Periksa koneksi lalu coba lagi.",
+    "profile": "Profil"
   }
 }

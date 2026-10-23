@@ -87,7 +87,8 @@
     "viewLimit_one": "{{count}} view",
     "viewLimit_other": "{{count}} views",
     "noLink": "The link was created, but it came back in a form we can't show. Find it under Shared links.",
-    "done": "Done"
+    "done": "Done",
+    "summary": "Stops working on {{date}}, or sooner if it runs out of views."
   },
   "links": {
     "title": "Shared links",

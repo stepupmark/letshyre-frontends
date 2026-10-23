@@ -78,6 +78,7 @@
     },
     "compareHint": "Selecione de 2 a {{max}} para comparar lado a lado",
     "errorTitle": "Os candidatos desbloqueados não carregaram.",
-    "errorBody": "Seus desbloqueios continuam na sua conta. Verifique a conexão e tente de novo."
+    "errorBody": "Seus desbloqueios continuam na sua conta. Verifique a conexão e tente de novo.",
+    "profile": "Perfil"
   }
 }

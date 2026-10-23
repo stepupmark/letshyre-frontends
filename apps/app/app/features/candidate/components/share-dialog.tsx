@@ -25,7 +25,8 @@ import {
   TooltipTrigger,
 } from "@workspace/ui/components/tooltip"
 import { useMutation } from "@tanstack/react-query"
-import { CalendarClock, Eye, Share2 } from "lucide-react"
+import { CalendarClock, Check, Eye, Share2 } from "lucide-react"
+import * as m from "motion/react-m"
 import { useId, useMemo, useState } from "react"
 import { Controller, useForm, type FieldPath } from "react-hook-form"
 import { toast } from "sonner"
@@ -33,6 +34,7 @@ import { toast } from "sonner"
 import { CopyButton } from "@/components/copy-button"
 import { TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
+import { duration, ease } from "@/lib/motion"
 
 import { createShareLink } from "../services/share.service"
 import {
@@ -111,9 +113,17 @@ export function ShareDialog({
           {t("share.button")}
         </Button>
       )}
-      <DialogContent>
+      <DialogContent className="gap-6 sm:max-w-lg sm:p-6">
         {link ? (
-          <Created link={link} name={name} />
+          <m.div
+            key="created"
+            className="flex flex-col gap-6"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: duration.base, ease }}
+          >
+            <Created link={link} name={name} />
+          </m.div>
         ) : (
           <ShareForm
             unlockId={unlockId}
@@ -155,6 +165,20 @@ function ShareForm({
     mode: "onSubmit",
   })
   const errors = form.formState.errors
+  const locale = useLocale()
+  const days = Number(form.watch("expires_in_days"))
+  const views = Number(form.watch("max_views"))
+  const valid =
+    Number.isInteger(days) &&
+    days >= 1 &&
+    days <= MAX_SHARE_DAYS &&
+    Number.isInteger(views) &&
+    views >= 1
+  const until = valid
+    ? new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
+        Date.now() + days * 86_400_000
+      )
+    : null
 
   const create = useMutation({
     mutationFn: (values: ShareValues) => createShareLink(unlockId, values),
@@ -182,9 +206,18 @@ function ShareForm({
         })(event)
       }}
     >
-      <DialogHeader>
-        <DialogTitle>{t("share.title", { name })}</DialogTitle>
-        <DialogDescription>{t("share.lead")}</DialogDescription>
+      <DialogHeader className="flex-row items-start gap-4">
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-muted text-brand-text">
+          <Share2 className="size-5" aria-hidden="true" />
+        </span>
+        <span className="flex min-w-0 flex-col gap-1.5">
+          <DialogTitle className="text-lg text-balance">
+            {t("share.title", { name })}
+          </DialogTitle>
+          <DialogDescription className="text-pretty">
+            {t("share.lead")}
+          </DialogDescription>
+        </span>
       </DialogHeader>
 
       <div className="flex flex-col gap-5">
@@ -247,6 +280,12 @@ function ShareForm({
             {...checkOnBlur(form, "max_views")}
           />
         </div>
+        {until && (
+          <p className="flex items-center gap-2 rounded-lg bg-muted px-3 py-2 text-sm text-muted-foreground tabular-nums">
+            <CalendarClock className="size-4 shrink-0" aria-hidden="true" />
+            {t("share.summary", { date: until })}
+          </p>
+        )}
       </div>
 
       <DialogFooter>
@@ -269,18 +308,37 @@ function Created({ link, name }: { link: ShareLink; name: string }) {
 
   return (
     <>
-      <DialogHeader>
-        <DialogTitle>{t("share.readyTitle")}</DialogTitle>
-        <DialogDescription>{t("share.readyLead", { name })}</DialogDescription>
+      <DialogHeader className="flex-row items-start gap-4">
+        <m.span
+          className="flex size-10 shrink-0 items-center justify-center rounded-full bg-success/10 text-success"
+          initial={{ scale: 0.6, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: duration.slow, ease }}
+        >
+          <Check className="size-5" aria-hidden="true" />
+        </m.span>
+        <span className="flex min-w-0 flex-col gap-1.5">
+          <DialogTitle className="text-lg">{t("share.readyTitle")}</DialogTitle>
+          <DialogDescription className="text-pretty">
+            {t("share.readyLead", { name })}
+          </DialogDescription>
+        </span>
       </DialogHeader>
       {url ? (
-        <div className="flex min-w-0 flex-col gap-3 rounded-lg border p-4">
-          <p className="truncate font-mono text-sm" dir="ltr" title={url}>
-            {url}
-          </p>
-          <p className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
+        <div className="flex min-w-0 flex-col gap-3">
+          <div className="flex min-w-0 items-center gap-2 rounded-lg border bg-brand-muted/40 py-1.5 ps-3 pe-1.5">
+            <p
+              className="min-w-0 flex-1 truncate font-mono text-sm text-brand-text"
+              dir="ltr"
+              title={url}
+            >
+              {url}
+            </p>
+            <CopyButton value={url} label={t("share.copy")} />
+          </div>
+          <p className="flex flex-wrap gap-2 text-xs text-muted-foreground">
             {expires && !Number.isNaN(expires.getTime()) && (
-              <span className="inline-flex items-center gap-1.5">
+              <span className="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 tabular-nums">
                 <CalendarClock className="size-3.5" aria-hidden="true" />
                 {t("share.expires", {
                   date: new Intl.DateTimeFormat(locale, {
@@ -290,13 +348,12 @@ function Created({ link, name }: { link: ShareLink; name: string }) {
               </span>
             )}
             {link.max_views != null && (
-              <span className="inline-flex items-center gap-1.5">
+              <span className="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 tabular-nums">
                 <Eye className="size-3.5" aria-hidden="true" />
                 {t("share.viewLimit", { count: link.max_views })}
               </span>
             )}
           </p>
-          <CopyButton value={url} label={t("share.copy")} />
         </div>
       ) : (
         <p className="text-sm text-muted-foreground">{t("share.noLink")}</p>

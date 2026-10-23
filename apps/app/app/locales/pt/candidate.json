@@ -90,7 +90,8 @@
     "viewLimit_many": "{{count}} visualizações",
     "viewLimit_other": "{{count}} visualizações",
     "noLink": "O link foi criado, mas voltou num formato que não conseguimos mostrar. Ele está em Links compartilhados.",
-    "done": "Pronto"
+    "done": "Pronto",
+    "summary": "Deixa de funcionar em {{date}}, ou antes se as visualizações acabarem."
   },
   "links": {
     "title": "Links compartilhados",

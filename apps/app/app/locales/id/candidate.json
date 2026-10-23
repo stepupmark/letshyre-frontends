@@ -84,7 +84,8 @@
     "expires": "Kedaluwarsa {{date}}",
     "viewLimit_other": "{{count}} tayangan",
     "noLink": "Tautan sudah dibuat, tetapi kembali dalam bentuk yang tidak bisa kami tampilkan. Temukan di Tautan yang dibagikan.",
-    "done": "Selesai"
+    "done": "Selesai",
+    "summary": "Berhenti berfungsi pada {{date}}, atau lebih cepat jika batas tayangan habis."
   },
   "links": {
     "title": "Tautan yang dibagikan",

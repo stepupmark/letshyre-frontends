@@ -87,7 +87,8 @@
     "viewLimit_one": "{{count}} weergave",
     "viewLimit_other": "{{count}} weergaven",
     "noLink": "De link is gemaakt, maar kwam terug in een vorm die we niet kunnen tonen. U vindt hem onder Gedeelde links.",
-    "done": "Klaar"
+    "done": "Klaar",
+    "summary": "Werkt tot {{date}}, of korter als de weergaven op zijn."
   },
   "links": {
     "title": "Gedeelde links",

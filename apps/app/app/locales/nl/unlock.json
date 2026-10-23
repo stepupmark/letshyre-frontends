@@ -73,6 +73,7 @@
     },
     "compareHint": "Kies er 2 tot {{max}} om naast elkaar te vergelijken",
     "errorTitle": "Ontgrendelde kandidaten zijn niet geladen.",
-    "errorBody": "Je ontgrendelingen staan nog in je account. Controleer je verbinding en probeer het opnieuw."
+    "errorBody": "Je ontgrendelingen staan nog in je account. Controleer je verbinding en probeer het opnieuw.",
+    "profile": "Profiel"
   }
 }

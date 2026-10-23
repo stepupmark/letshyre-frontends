@@ -78,6 +78,7 @@
     },
     "compareHint": "Seleziona da 2 a {{max}} candidati da confrontare",
     "errorTitle": "I candidati sbloccati non si sono caricati.",
-    "errorBody": "I tuoi sblocchi restano nel tuo account. Controlla la connessione e riprova."
+    "errorBody": "I tuoi sblocchi restano nel tuo account. Controlla la connessione e riprova.",
+    "profile": "Profilo"
   }
 }

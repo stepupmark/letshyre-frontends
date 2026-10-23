@@ -90,7 +90,8 @@
     "viewLimit_many": "{{count}} visualizzazioni",
     "viewLimit_other": "{{count}} visualizzazioni",
     "noLink": "Il link è stato creato, ma è tornato in un formato che non possiamo mostrare. Lo trovi in Link condivisi.",
-    "done": "Fatto"
+    "done": "Fatto",
+    "summary": "Smette di funzionare il {{date}}, o prima se le visualizzazioni finiscono."
   },
   "links": {
     "title": "Link condivisi",

@@ -73,6 +73,7 @@
     },
     "compareHint": "Wählen Sie 2 bis {{max}} für den direkten Vergleich",
     "errorTitle": "Freigeschaltete Kandidaten wurden nicht geladen.",
-    "errorBody": "Ihre Freischaltungen bleiben in Ihrem Konto. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut."
+    "errorBody": "Ihre Freischaltungen bleiben in Ihrem Konto. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "profile": "Profil"
   }
 }

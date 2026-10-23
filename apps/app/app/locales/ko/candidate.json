@@ -84,7 +84,8 @@
     "expires": "{{date}} 만료",
     "viewLimit_other": "{{count}}회",
     "noLink": "링크는 만들어졌지만 표시할 수 없는 형식으로 돌아왔어요. 공유 링크에서 찾아보세요.",
-    "done": "완료"
+    "done": "완료",
+    "summary": "{{date}}에 만료되며, 조회 수가 소진되면 더 일찍 만료됩니다."
   },
   "links": {
     "title": "공유 링크",

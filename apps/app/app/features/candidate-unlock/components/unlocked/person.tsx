@@ -33,7 +33,7 @@ export function Person({ row }: { row: Unlocked }) {
             to={href("/employer/candidates/:candidateId", {
               candidateId: row.id,
             })}
-            className="truncate rounded-sm font-medium underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="truncate rounded-sm font-medium text-brand-text underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
           >
             {name}
           </AppLink>

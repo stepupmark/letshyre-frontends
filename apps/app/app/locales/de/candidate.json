@@ -87,7 +87,8 @@
     "viewLimit_one": "{{count}} Aufruf",
     "viewLimit_other": "{{count}} Aufrufe",
     "noLink": "Der Link wurde erstellt, kam aber in einer Form zurück, die wir nicht anzeigen können. Sie finden ihn unter „Geteilte Links“.",
-    "done": "Fertig"
+    "done": "Fertig",
+    "summary": "Funktioniert bis {{date}} oder kürzer, wenn die Aufrufe aufgebraucht sind."
   },
   "links": {
     "title": "Geteilte Links",

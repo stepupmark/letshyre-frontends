@@ -1,5 +1,5 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, UserRound } from "lucide-react"
 import type { ReactNode } from "react"
 import { href } from "react-router"
 
@@ -20,13 +20,29 @@ export function UnlockedActions({
     <span className="flex items-center justify-end gap-2">
       {share?.(row)}
       <AppLink
+        to={href("/employer/candidates/:candidateId", {
+          candidateId: row.id,
+        })}
+        className={buttonLink({
+          variant: "outline",
+          size: "sm",
+          className: "text-brand-text max-md:h-11 max-md:flex-1",
+        })}
+      >
+        <UserRound />
+        {t("list.profile")}
+        {row.candidate_name && (
+          <span className="sr-only">{row.candidate_name}</span>
+        )}
+      </AppLink>
+      <AppLink
         to={href("/employer/candidates/:candidateId/scorecard", {
           candidateId: row.id,
         })}
         className={buttonLink({
           variant: "outline",
           size: "sm",
-          className: "group max-md:h-11 max-md:flex-1",
+          className: "group text-brand-text max-md:h-11 max-md:flex-1",
         })}
       >
         {t("list.scorecard")}

@@ -90,7 +90,8 @@
     "viewLimit_many": "{{count}} vues",
     "viewLimit_other": "{{count}} vues",
     "noLink": "Le lien a été créé, mais il nous est revenu sous une forme que nous ne pouvons pas afficher. Retrouvez-le dans Liens partagés.",
-    "done": "Terminé"
+    "done": "Terminé",
+    "summary": "Cesse de fonctionner le {{date}}, ou avant si les vues sont épuisées."
   },
   "links": {
     "title": "Liens partagés",
