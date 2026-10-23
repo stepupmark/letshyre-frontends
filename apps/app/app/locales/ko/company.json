@@ -3,23 +3,21 @@
   "unnamed": "내 회사",
   "jobs_other": "공고 {{count}}개 중 {{open}}개 채용 중",
   "kyc": {
-    "approved": "인증됨",
     "verified": "인증됨",
     "pending": "검토 중",
     "rejected": "수정 필요"
   },
   "details": {
-    "title": "회사 정보",
-    "edit": "편집",
     "email": "공식 이메일",
     "industry": "업계",
     "chooseIndustry": "업계 선택",
-    "website": "웹사이트",
     "linkedin": "LinkedIn 페이지",
-    "linkedinOpen": "LinkedIn에서 열기",
     "address": "주소",
     "description": "회사 소개",
-    "descriptionHint": "후보자가 공고에서 읽어요. 최대 500자."
+    "descriptionHint": "후보자가 공고에서 읽어요. 최대 500자.",
+    "linkedinShort": "LinkedIn",
+    "linkedinPlaceholder": "https://www.linkedin.com/company/…",
+    "counter": "{{count}} / {{max}}"
   },
   "logo": {
     "label": "로고",
@@ -40,13 +38,18 @@
     "note": "회사 인증 때 확인한 정보예요. 바꾸려면 문의하세요.",
     "registration": "등록 번호",
     "gst": "GSTIN",
-    "pan": "PAN"
+    "pan": "PAN",
+    "show": "{{label}} 보기",
+    "hide": "{{label}} 숨기기",
+    "copy": "{{label}} 복사"
   },
   "documents": {
     "registration_certificate": "등록 증명서",
     "gst_certificate": "GST 증명서",
     "address_proof": "주소 증빙",
-    "bank_proof": "은행 증빙"
+    "bank_proof": "은행 증빙",
+    "title": "서류",
+    "none": "등록된 서류가 없습니다."
   },
   "errors": {
     "email": "hr@company.com 같은 이메일을 입력하세요.",
@@ -58,5 +61,39 @@
   "save": "변경 사항 저장",
   "saving": "저장 중…",
   "saved": "회사 정보를 저장했어요",
-  "saveFailed": "저장되지 않았어요. 변경 내용은 그대로 있어요. 다시 시도하세요."
+  "saveFailed": "저장되지 않았어요. 변경 내용은 그대로 있어요. 다시 시도하세요.",
+  "editCompany": "회사 정보 수정",
+  "back": "회사 프로필로 돌아가기",
+  "loadFailed": "회사 프로필을 불러오지 못했습니다",
+  "industriesFailed": "업종을 불러오지 못했습니다.",
+  "unsaved": "저장하지 않은 변경 사항",
+  "noChanges": "아직 변경 사항이 없습니다",
+  "about": {
+    "title": "회사 소개",
+    "empty": "회사가 하는 일을 후보자에게 알려 주세요."
+  },
+  "contact": {
+    "title": "연락처"
+  },
+  "add": {
+    "description": "설명 추가",
+    "industry": "업종 선택",
+    "email": "공식 이메일 추가",
+    "address": "주소 추가",
+    "linkedin": "LinkedIn 페이지 추가"
+  },
+  "verification": {
+    "verified": "후보자는 채용 공고에서 인증 배지를 볼 수 있습니다.",
+    "pending": "정보를 확인하고 있습니다. 보통 영업일 기준 하루가 걸립니다.",
+    "rejected": "일치하지 않는 정보가 있습니다. 수정하려면 지원팀에 문의하세요."
+  },
+  "edit": {
+    "title": "회사 정보 수정",
+    "lead": "변경 사항은 채용 공고에 바로 반영됩니다."
+  },
+  "leave": {
+    "title": "저장하지 않고 나갈까요?",
+    "body": "회사 정보에 대한 변경 사항이 사라집니다.",
+    "confirm": "변경 사항 버리기"
+  }
 }

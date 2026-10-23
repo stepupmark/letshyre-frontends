@@ -4,23 +4,21 @@
   "jobs_one": "{{open}} open van {{count}} geplaatste vacature",
   "jobs_other": "{{open}} open van {{count}} geplaatste vacatures",
   "kyc": {
-    "approved": "Geverifieerd",
     "verified": "Geverifieerd",
     "pending": "Wordt beoordeeld",
     "rejected": "Aanpassing nodig"
   },
   "details": {
-    "title": "Bedrijfsgegevens",
-    "edit": "Bewerken",
     "email": "Officieel e-mailadres",
     "industry": "Sector",
     "chooseIndustry": "Kies een sector",
-    "website": "Website",
     "linkedin": "LinkedIn-pagina",
-    "linkedinOpen": "Openen op LinkedIn",
     "address": "Adres",
     "description": "Over het bedrijf",
-    "descriptionHint": "Kandidaten lezen dit bij uw vacatures. Maximaal 500 tekens."
+    "descriptionHint": "Kandidaten lezen dit bij uw vacatures. Maximaal 500 tekens.",
+    "linkedinShort": "LinkedIn",
+    "linkedinPlaceholder": "https://www.linkedin.com/company/…",
+    "counter": "{{count}} / {{max}}"
   },
   "logo": {
     "label": "Logo",
@@ -41,13 +39,18 @@
     "note": "Deze zijn gecontroleerd toen uw bedrijf werd geverifieerd. Neem contact op om ze te wijzigen.",
     "registration": "Registratienummer",
     "gst": "GSTIN",
-    "pan": "PAN"
+    "pan": "PAN",
+    "show": "{{label}} tonen",
+    "hide": "{{label}} verbergen",
+    "copy": "{{label}} kopiëren"
   },
   "documents": {
     "registration_certificate": "Registratiebewijs",
     "gst_certificate": "GST-certificaat",
     "address_proof": "Adresbewijs",
-    "bank_proof": "Bankbewijs"
+    "bank_proof": "Bankbewijs",
+    "title": "Documenten",
+    "none": "Geen documenten bekend."
   },
   "errors": {
     "email": "Vul een e-mailadres in zoals hr@bedrijf.nl.",
@@ -59,5 +62,39 @@
   "save": "Wijzigingen opslaan",
   "saving": "Bezig met opslaan…",
   "saved": "Bedrijfsgegevens opgeslagen",
-  "saveFailed": "Dat is niet opgeslagen. Uw wijzigingen staan er nog; probeer het opnieuw."
+  "saveFailed": "Dat is niet opgeslagen. Uw wijzigingen staan er nog; probeer het opnieuw.",
+  "editCompany": "Bedrijf bewerken",
+  "back": "Terug naar bedrijfsprofiel",
+  "loadFailed": "Bedrijfsprofiel is niet geladen",
+  "industriesFailed": "Branches zijn niet geladen.",
+  "unsaved": "Niet-opgeslagen wijzigingen",
+  "noChanges": "Nog geen wijzigingen",
+  "about": {
+    "title": "Over ons",
+    "empty": "Vertel kandidaten wat je bedrijf doet."
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "add": {
+    "description": "Beschrijving toevoegen",
+    "industry": "Kies een branche",
+    "email": "Officieel e-mailadres toevoegen",
+    "address": "Adres toevoegen",
+    "linkedin": "Je LinkedIn-pagina toevoegen"
+  },
+  "verification": {
+    "verified": "Kandidaten zien een geverifieerd-badge bij je vacatures.",
+    "pending": "We controleren je gegevens. Dat duurt meestal één werkdag.",
+    "rejected": "Er klopte iets niet. Neem contact op met support om je gegevens te corrigeren."
+  },
+  "edit": {
+    "title": "Bedrijf bewerken",
+    "lead": "Wijzigingen staan direct in je vacatures."
+  },
+  "leave": {
+    "title": "Weggaan zonder opslaan?",
+    "body": "Je wijzigingen in de bedrijfsgegevens gaan verloren.",
+    "confirm": "Wijzigingen weggooien"
+  }
 }

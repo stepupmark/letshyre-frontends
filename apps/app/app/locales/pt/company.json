@@ -5,23 +5,21 @@
   "jobs_many": "{{open}} abertas de {{count}} vagas publicadas",
   "jobs_other": "{{open}} abertas de {{count}} vagas publicadas",
   "kyc": {
-    "approved": "Verificada",
     "verified": "Verificada",
     "pending": "Em análise",
     "rejected": "Precisa de ajustes"
   },
   "details": {
-    "title": "Dados da empresa",
-    "edit": "Editar",
     "email": "E-mail oficial",
     "industry": "Setor",
     "chooseIndustry": "Escolha um setor",
-    "website": "Site",
     "linkedin": "Página no LinkedIn",
-    "linkedinOpen": "Abrir no LinkedIn",
     "address": "Endereço",
     "description": "Sobre a empresa",
-    "descriptionHint": "Os candidatos leem isto nas suas vagas. Até 500 caracteres."
+    "descriptionHint": "Os candidatos leem isto nas suas vagas. Até 500 caracteres.",
+    "linkedinShort": "LinkedIn",
+    "linkedinPlaceholder": "https://www.linkedin.com/company/…",
+    "counter": "{{count}} / {{max}}"
   },
   "logo": {
     "label": "Logotipo",
@@ -42,13 +40,18 @@
     "note": "Estes dados foram conferidos quando sua empresa foi verificada. Fale conosco para alterá-los.",
     "registration": "Número de registro",
     "gst": "GSTIN",
-    "pan": "PAN"
+    "pan": "PAN",
+    "show": "Mostrar {{label}}",
+    "hide": "Ocultar {{label}}",
+    "copy": "Copiar {{label}}"
   },
   "documents": {
     "registration_certificate": "Certificado de registro",
     "gst_certificate": "Certificado de GST",
     "address_proof": "Comprovante de endereço",
-    "bank_proof": "Comprovante bancário"
+    "bank_proof": "Comprovante bancário",
+    "title": "Documentos",
+    "none": "Nenhum documento registrado."
   },
   "errors": {
     "email": "Digite um e-mail como rh@empresa.com.",
@@ -60,5 +63,39 @@
   "save": "Salvar alterações",
   "saving": "Salvando…",
   "saved": "Dados da empresa salvos",
-  "saveFailed": "Não foi salvo. Suas alterações continuam aqui; tente de novo."
+  "saveFailed": "Não foi salvo. Suas alterações continuam aqui; tente de novo.",
+  "editCompany": "Editar empresa",
+  "back": "Voltar ao perfil da empresa",
+  "loadFailed": "O perfil da empresa não carregou",
+  "industriesFailed": "Os setores não carregaram.",
+  "unsaved": "Alterações não salvas",
+  "noChanges": "Nenhuma alteração ainda",
+  "about": {
+    "title": "Sobre",
+    "empty": "Conte aos candidatos o que sua empresa faz."
+  },
+  "contact": {
+    "title": "Contato"
+  },
+  "add": {
+    "description": "Adicionar descrição",
+    "industry": "Escolher um setor",
+    "email": "Adicionar e-mail oficial",
+    "address": "Adicionar endereço",
+    "linkedin": "Adicionar sua página do LinkedIn"
+  },
+  "verification": {
+    "verified": "Os candidatos veem um selo de verificação nas suas vagas.",
+    "pending": "Estamos conferindo seus dados. Costuma levar um dia útil.",
+    "rejected": "Algo não bateu. Fale com o suporte para corrigir seus dados."
+  },
+  "edit": {
+    "title": "Editar empresa",
+    "lead": "As alterações aparecem nas suas vagas na hora."
+  },
+  "leave": {
+    "title": "Sair sem salvar?",
+    "body": "Suas alterações nos dados da empresa serão perdidas.",
+    "confirm": "Descartar alterações"
+  }
 }

@@ -3,23 +3,21 @@
   "unnamed": "あなたの会社",
   "jobs_other": "掲載 {{count}} 件中 {{open}} 件募集中",
   "kyc": {
-    "approved": "確認済み",
     "verified": "確認済み",
     "pending": "確認中",
     "rejected": "修正が必要"
   },
   "details": {
-    "title": "会社情報",
-    "edit": "編集",
     "email": "公式メールアドレス",
     "industry": "業界",
     "chooseIndustry": "業界を選択",
-    "website": "ウェブサイト",
     "linkedin": "LinkedIn ページ",
-    "linkedinOpen": "LinkedIn で開く",
     "address": "住所",
     "description": "会社について",
-    "descriptionHint": "求人ページで候補者が読みます。500文字まで。"
+    "descriptionHint": "求人ページで候補者が読みます。500文字まで。",
+    "linkedinShort": "LinkedIn",
+    "linkedinPlaceholder": "https://www.linkedin.com/company/…",
+    "counter": "{{count}} / {{max}}"
   },
   "logo": {
     "label": "ロゴ",
@@ -40,13 +38,18 @@
     "note": "会社の確認時に照合済みです。変更する場合はお問い合わせください。",
     "registration": "登録番号",
     "gst": "GSTIN",
-    "pan": "PAN"
+    "pan": "PAN",
+    "show": "{{label}}を表示",
+    "hide": "{{label}}を隠す",
+    "copy": "{{label}}をコピー"
   },
   "documents": {
     "registration_certificate": "登記証明書",
     "gst_certificate": "GST 証明書",
     "address_proof": "住所証明",
-    "bank_proof": "銀行証明"
+    "bank_proof": "銀行証明",
+    "title": "書類",
+    "none": "登録された書類はありません。"
   },
   "errors": {
     "email": "hr@company.com のようなメールアドレスを入力してください。",
@@ -58,5 +61,39 @@
   "save": "変更を保存",
   "saving": "保存中…",
   "saved": "会社情報を保存しました",
-  "saveFailed": "保存できませんでした。変更内容は残っています。もう一度お試しください。"
+  "saveFailed": "保存できませんでした。変更内容は残っています。もう一度お試しください。",
+  "editCompany": "会社を編集",
+  "back": "会社プロフィールに戻る",
+  "loadFailed": "会社プロフィールを読み込めませんでした",
+  "industriesFailed": "業種を読み込めませんでした。",
+  "unsaved": "未保存の変更があります",
+  "noChanges": "まだ変更はありません",
+  "about": {
+    "title": "会社について",
+    "empty": "どんな会社かを候補者に伝えましょう。"
+  },
+  "contact": {
+    "title": "連絡先"
+  },
+  "add": {
+    "description": "説明を追加",
+    "industry": "業種を選択",
+    "email": "公式メールを追加",
+    "address": "住所を追加",
+    "linkedin": "LinkedIn ページを追加"
+  },
+  "verification": {
+    "verified": "候補者には求人に認証済みバッジが表示されます。",
+    "pending": "情報を確認しています。通常 1 営業日ほどかかります。",
+    "rejected": "一致しない情報がありました。修正するにはサポートにご連絡ください。"
+  },
+  "edit": {
+    "title": "会社を編集",
+    "lead": "変更はすぐに求人に反映されます。"
+  },
+  "leave": {
+    "title": "保存せずに移動しますか？",
+    "body": "会社情報の変更は失われます。",
+    "confirm": "変更を破棄"
+  }
 }

@@ -97,6 +97,7 @@ export default [
       route("team", "routes/employer/team.tsx"),
       route("shared-links", "routes/employer/shared-links.tsx"),
       route("company", "routes/employer/company.tsx"),
+      route("company/edit", "routes/employer/company-edit.tsx"),
       route("assistant", "routes/employer/assistant.tsx"),
       route("*", "routes/not-found.tsx", { id: "employer-not-found" }),
     ]),

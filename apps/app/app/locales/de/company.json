@@ -4,23 +4,21 @@
   "jobs_one": "{{open}} offen von {{count}} veröffentlichten Stelle",
   "jobs_other": "{{open}} offen von {{count}} veröffentlichten Stellen",
   "kyc": {
-    "approved": "Verifiziert",
     "verified": "Verifiziert",
     "pending": "In Prüfung",
     "rejected": "Änderungen nötig"
   },
   "details": {
-    "title": "Unternehmensdaten",
-    "edit": "Bearbeiten",
     "email": "Offizielle E-Mail",
     "industry": "Branche",
     "chooseIndustry": "Branche wählen",
-    "website": "Website",
     "linkedin": "LinkedIn-Seite",
-    "linkedinOpen": "Auf LinkedIn öffnen",
     "address": "Adresse",
     "description": "Über das Unternehmen",
-    "descriptionHint": "Kandidaten lesen dies in Ihren Stellenanzeigen. Bis zu 500 Zeichen."
+    "descriptionHint": "Kandidaten lesen dies in Ihren Stellenanzeigen. Bis zu 500 Zeichen.",
+    "linkedinShort": "LinkedIn",
+    "linkedinPlaceholder": "https://www.linkedin.com/company/…",
+    "counter": "{{count}} / {{max}}"
   },
   "logo": {
     "label": "Logo",
@@ -41,13 +39,18 @@
     "note": "Diese Angaben wurden bei der Verifizierung Ihres Unternehmens geprüft. Kontaktieren Sie uns, um sie zu ändern.",
     "registration": "Registrierungsnummer",
     "gst": "GSTIN",
-    "pan": "PAN"
+    "pan": "PAN",
+    "show": "{{label}} anzeigen",
+    "hide": "{{label}} ausblenden",
+    "copy": "{{label}} kopieren"
   },
   "documents": {
     "registration_certificate": "Registrierungsurkunde",
     "gst_certificate": "GST-Bescheinigung",
     "address_proof": "Adressnachweis",
-    "bank_proof": "Banknachweis"
+    "bank_proof": "Banknachweis",
+    "title": "Dokumente",
+    "none": "Keine Dokumente hinterlegt."
   },
   "errors": {
     "email": "Geben Sie eine E-Mail wie hr@firma.de ein.",
@@ -59,5 +62,39 @@
   "save": "Änderungen speichern",
   "saving": "Wird gespeichert…",
   "saved": "Unternehmensdaten gespeichert",
-  "saveFailed": "Das wurde nicht gespeichert. Ihre Änderungen sind noch da; versuchen Sie es erneut."
+  "saveFailed": "Das wurde nicht gespeichert. Ihre Änderungen sind noch da; versuchen Sie es erneut.",
+  "editCompany": "Unternehmen bearbeiten",
+  "back": "Zurück zum Unternehmensprofil",
+  "loadFailed": "Unternehmensprofil wurde nicht geladen",
+  "industriesFailed": "Branchen wurden nicht geladen.",
+  "unsaved": "Ungespeicherte Änderungen",
+  "noChanges": "Noch keine Änderungen",
+  "about": {
+    "title": "Über uns",
+    "empty": "Erzähl Bewerbenden, was dein Unternehmen macht."
+  },
+  "contact": {
+    "title": "Kontakt"
+  },
+  "add": {
+    "description": "Beschreibung hinzufügen",
+    "industry": "Branche wählen",
+    "email": "Offizielle E-Mail hinzufügen",
+    "address": "Adresse hinzufügen",
+    "linkedin": "LinkedIn-Seite hinzufügen"
+  },
+  "verification": {
+    "verified": "Bewerbende sehen ein Verifiziert-Abzeichen an deinen Stellen.",
+    "pending": "Wir prüfen deine Angaben. Das dauert meist einen Werktag.",
+    "rejected": "Etwas passte nicht. Wende dich an den Support, um deine Angaben zu korrigieren."
+  },
+  "edit": {
+    "title": "Unternehmen bearbeiten",
+    "lead": "Änderungen erscheinen sofort in deinen Stellenanzeigen."
+  },
+  "leave": {
+    "title": "Ohne Speichern verlassen?",
+    "body": "Deine Änderungen an den Unternehmensdaten gehen verloren.",
+    "confirm": "Änderungen verwerfen"
+  }
 }

@@ -5,23 +5,21 @@
   "jobs_many": "{{open}} abiertas de {{count}} ofertas publicadas",
   "jobs_other": "{{open}} abiertas de {{count}} ofertas publicadas",
   "kyc": {
-    "approved": "Verificada",
     "verified": "Verificada",
     "pending": "En revisión",
     "rejected": "Necesita cambios"
   },
   "details": {
-    "title": "Datos de la empresa",
-    "edit": "Editar",
     "email": "Correo oficial",
     "industry": "Sector",
     "chooseIndustry": "Elija un sector",
-    "website": "Sitio web",
     "linkedin": "Página de LinkedIn",
-    "linkedinOpen": "Abrir en LinkedIn",
     "address": "Dirección",
     "description": "Sobre la empresa",
-    "descriptionHint": "Los candidatos lo leen en sus ofertas. Hasta 500 caracteres."
+    "descriptionHint": "Los candidatos lo leen en sus ofertas. Hasta 500 caracteres.",
+    "linkedinShort": "LinkedIn",
+    "linkedinPlaceholder": "https://www.linkedin.com/company/…",
+    "counter": "{{count}} / {{max}}"
   },
   "logo": {
     "label": "Logotipo",
@@ -42,13 +40,18 @@
     "note": "Se comprobaron al verificar su empresa. Contáctenos para cambiarlos.",
     "registration": "Número de registro",
     "gst": "GSTIN",
-    "pan": "PAN"
+    "pan": "PAN",
+    "show": "Mostrar {{label}}",
+    "hide": "Ocultar {{label}}",
+    "copy": "Copiar {{label}}"
   },
   "documents": {
     "registration_certificate": "Certificado de registro",
     "gst_certificate": "Certificado de GST",
     "address_proof": "Justificante de domicilio",
-    "bank_proof": "Justificante bancario"
+    "bank_proof": "Justificante bancario",
+    "title": "Documentos",
+    "none": "No hay documentos registrados."
   },
   "errors": {
     "email": "Introduzca un correo como rrhh@empresa.com.",
@@ -60,5 +63,39 @@
   "save": "Guardar cambios",
   "saving": "Guardando…",
   "saved": "Datos de la empresa guardados",
-  "saveFailed": "No se ha guardado. Sus cambios siguen aquí; inténtelo de nuevo."
+  "saveFailed": "No se ha guardado. Sus cambios siguen aquí; inténtelo de nuevo.",
+  "editCompany": "Editar empresa",
+  "back": "Volver al perfil de la empresa",
+  "loadFailed": "No se cargó el perfil de la empresa",
+  "industriesFailed": "No se cargaron los sectores.",
+  "unsaved": "Cambios sin guardar",
+  "noChanges": "Aún no hay cambios",
+  "about": {
+    "title": "Acerca de",
+    "empty": "Cuenta a los candidatos qué hace tu empresa."
+  },
+  "contact": {
+    "title": "Contacto"
+  },
+  "add": {
+    "description": "Añadir una descripción",
+    "industry": "Elegir un sector",
+    "email": "Añadir un correo oficial",
+    "address": "Añadir una dirección",
+    "linkedin": "Añadir tu página de LinkedIn"
+  },
+  "verification": {
+    "verified": "Los candidatos ven una insignia de verificación en tus ofertas.",
+    "pending": "Estamos revisando tus datos. Suele tardar un día hábil.",
+    "rejected": "Algo no coincidía. Contacta con soporte para corregir tus datos."
+  },
+  "edit": {
+    "title": "Editar empresa",
+    "lead": "Los cambios aparecen en tus ofertas al instante."
+  },
+  "leave": {
+    "title": "¿Salir sin guardar?",
+    "body": "Se perderán los cambios en los datos de la empresa.",
+    "confirm": "Descartar cambios"
+  }
 }

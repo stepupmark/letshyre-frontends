@@ -5,23 +5,21 @@
   "jobs_many": "{{open}} ouvertes sur {{count}} offres publiées",
   "jobs_other": "{{open}} ouvertes sur {{count}} offres publiées",
   "kyc": {
-    "approved": "Vérifiée",
     "verified": "Vérifiée",
     "pending": "En cours d'examen",
     "rejected": "Modifications nécessaires"
   },
   "details": {
-    "title": "Informations sur l'entreprise",
-    "edit": "Modifier",
     "email": "E-mail officiel",
     "industry": "Secteur",
     "chooseIndustry": "Choisir un secteur",
-    "website": "Site web",
     "linkedin": "Page LinkedIn",
-    "linkedinOpen": "Ouvrir sur LinkedIn",
     "address": "Adresse",
     "description": "À propos de l'entreprise",
-    "descriptionHint": "Les candidats le lisent sur vos offres. Jusqu'à 500 caractères."
+    "descriptionHint": "Les candidats le lisent sur vos offres. Jusqu'à 500 caractères.",
+    "linkedinShort": "LinkedIn",
+    "linkedinPlaceholder": "https://www.linkedin.com/company/…",
+    "counter": "{{count}} / {{max}}"
   },
   "logo": {
     "label": "Logo",
@@ -42,13 +40,18 @@
     "note": "Ces informations ont été vérifiées lors de la validation de votre entreprise. Contactez-nous pour les modifier.",
     "registration": "Numéro d'immatriculation",
     "gst": "GSTIN",
-    "pan": "PAN"
+    "pan": "PAN",
+    "show": "Afficher {{label}}",
+    "hide": "Masquer {{label}}",
+    "copy": "Copier {{label}}"
   },
   "documents": {
     "registration_certificate": "Certificat d'immatriculation",
     "gst_certificate": "Certificat GST",
     "address_proof": "Justificatif d'adresse",
-    "bank_proof": "Justificatif bancaire"
+    "bank_proof": "Justificatif bancaire",
+    "title": "Documents",
+    "none": "Aucun document enregistré."
   },
   "errors": {
     "email": "Saisissez un e-mail comme rh@entreprise.com.",
@@ -60,5 +63,39 @@
   "save": "Enregistrer les modifications",
   "saving": "Enregistrement…",
   "saved": "Informations de l'entreprise enregistrées",
-  "saveFailed": "Cela n'a pas été enregistré. Vos modifications sont conservées ; réessayez."
+  "saveFailed": "Cela n'a pas été enregistré. Vos modifications sont conservées ; réessayez.",
+  "editCompany": "Modifier l'entreprise",
+  "back": "Retour au profil de l'entreprise",
+  "loadFailed": "Le profil de l'entreprise n'a pas pu être chargé",
+  "industriesFailed": "Les secteurs n'ont pas pu être chargés.",
+  "unsaved": "Modifications non enregistrées",
+  "noChanges": "Aucune modification pour l'instant",
+  "about": {
+    "title": "À propos",
+    "empty": "Dites aux candidats ce que fait votre entreprise."
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "add": {
+    "description": "Ajouter une description",
+    "industry": "Choisir un secteur",
+    "email": "Ajouter un e-mail officiel",
+    "address": "Ajouter une adresse",
+    "linkedin": "Ajouter votre page LinkedIn"
+  },
+  "verification": {
+    "verified": "Les candidats voient un badge vérifié sur vos offres.",
+    "pending": "Nous vérifions vos informations. Cela prend généralement un jour ouvré.",
+    "rejected": "Quelque chose ne correspondait pas. Contactez le support pour corriger vos informations."
+  },
+  "edit": {
+    "title": "Modifier l'entreprise",
+    "lead": "Les modifications apparaissent tout de suite sur vos offres."
+  },
+  "leave": {
+    "title": "Quitter sans enregistrer ?",
+    "body": "Vos modifications des informations de l'entreprise seront perdues.",
+    "confirm": "Abandonner les modifications"
+  }
 }

@@ -4,23 +4,21 @@
   "jobs_one": "{{open}} open of {{count}} job posted",
   "jobs_other": "{{open}} open of {{count}} jobs posted",
   "kyc": {
-    "approved": "Verified",
     "verified": "Verified",
     "pending": "Under review",
     "rejected": "Needs changes"
   },
   "details": {
-    "title": "Company details",
-    "edit": "Edit",
     "email": "Official email",
     "industry": "Industry",
     "chooseIndustry": "Choose an industry",
-    "website": "Website",
     "linkedin": "LinkedIn page",
-    "linkedinOpen": "Open on LinkedIn",
     "address": "Address",
     "description": "About the company",
-    "descriptionHint": "Candidates read this on your job posts. Up to 500 characters."
+    "descriptionHint": "Candidates read this on your job posts. Up to 500 characters.",
+    "linkedinShort": "LinkedIn",
+    "linkedinPlaceholder": "https://www.linkedin.com/company/…",
+    "counter": "{{count}} / {{max}}"
   },
   "logo": {
     "label": "Logo",
@@ -41,13 +39,18 @@
     "note": "These were checked when your company was verified. Contact us to change them.",
     "registration": "Registration number",
     "gst": "GSTIN",
-    "pan": "PAN"
+    "pan": "PAN",
+    "show": "Show {{label}}",
+    "hide": "Hide {{label}}",
+    "copy": "Copy {{label}}"
   },
   "documents": {
     "registration_certificate": "Registration certificate",
     "gst_certificate": "GST certificate",
     "address_proof": "Address proof",
-    "bank_proof": "Bank proof"
+    "bank_proof": "Bank proof",
+    "title": "Documents",
+    "none": "No documents on file."
   },
   "errors": {
     "email": "Enter an email like hr@company.com.",
@@ -59,5 +62,39 @@
   "save": "Save changes",
   "saving": "Saving…",
   "saved": "Company details saved",
-  "saveFailed": "That didn't save. Your changes are still here; try again."
+  "saveFailed": "That didn't save. Your changes are still here; try again.",
+  "editCompany": "Edit company",
+  "back": "Back to company profile",
+  "loadFailed": "Company profile didn't load",
+  "industriesFailed": "Industries didn't load.",
+  "unsaved": "Unsaved changes",
+  "noChanges": "No changes yet",
+  "about": {
+    "title": "About",
+    "empty": "Tell candidates what your company does."
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "add": {
+    "description": "Add a description",
+    "industry": "Choose an industry",
+    "email": "Add an official email",
+    "address": "Add an address",
+    "linkedin": "Add your LinkedIn page"
+  },
+  "verification": {
+    "verified": "Candidates see a verified badge on your job posts.",
+    "pending": "We're checking your details. This usually takes a working day.",
+    "rejected": "Something didn't match. Contact support to fix your details."
+  },
+  "edit": {
+    "title": "Edit company",
+    "lead": "Changes show on your job posts straight away."
+  },
+  "leave": {
+    "title": "Leave without saving?",
+    "body": "Your changes to the company details will be lost.",
+    "confirm": "Discard changes"
+  }
 }

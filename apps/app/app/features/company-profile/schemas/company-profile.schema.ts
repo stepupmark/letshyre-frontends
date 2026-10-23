@@ -2,11 +2,17 @@ import { z } from "zod"
 
 const text = z.string().nullish()
 
-export const companySchema = z.looseObject({
+const person = {
   name: text,
   full_name: text,
+  user_name: text,
   email: text,
   phone_number: text,
+}
+
+export const companySchema = z.looseObject({
+  ...person,
+  user: z.looseObject(person).nullish(),
   open_jobs_posted: z.coerce.number().catch(0),
   total_jobs_posted: z.coerce.number().catch(0),
   kyc: z

@@ -8,23 +8,21 @@
   "jobs_many": "{{open}} مفتوحة من {{count}} وظيفة منشورة",
   "jobs_other": "{{open}} مفتوحة من {{count}} وظيفة منشورة",
   "kyc": {
-    "approved": "موثّقة",
     "verified": "موثّقة",
     "pending": "قيد المراجعة",
     "rejected": "تحتاج إلى تعديلات"
   },
   "details": {
-    "title": "بيانات الشركة",
-    "edit": "تعديل",
     "email": "البريد الرسمي",
     "industry": "القطاع",
     "chooseIndustry": "اختر قطاعًا",
-    "website": "الموقع الإلكتروني",
     "linkedin": "صفحة LinkedIn",
-    "linkedinOpen": "الفتح في LinkedIn",
     "address": "العنوان",
     "description": "عن الشركة",
-    "descriptionHint": "يقرأ المرشحون هذا في إعلانات وظائفك. حتى 500 حرف."
+    "descriptionHint": "يقرأ المرشحون هذا في إعلانات وظائفك. حتى 500 حرف.",
+    "linkedinShort": "LinkedIn",
+    "linkedinPlaceholder": "https://www.linkedin.com/company/…",
+    "counter": "{{count}} / {{max}}"
   },
   "logo": {
     "label": "الشعار",
@@ -45,13 +43,18 @@
     "note": "تم التحقق من هذه البيانات عند توثيق شركتك. تواصل معنا لتغييرها.",
     "registration": "رقم التسجيل",
     "gst": "GSTIN",
-    "pan": "PAN"
+    "pan": "PAN",
+    "show": "إظهار {{label}}",
+    "hide": "إخفاء {{label}}",
+    "copy": "نسخ {{label}}"
   },
   "documents": {
     "registration_certificate": "شهادة التسجيل",
     "gst_certificate": "شهادة GST",
     "address_proof": "إثبات العنوان",
-    "bank_proof": "إثبات بنكي"
+    "bank_proof": "إثبات بنكي",
+    "title": "المستندات",
+    "none": "لا توجد مستندات مسجّلة."
   },
   "errors": {
     "email": "أدخل بريدًا مثل hr@company.com.",
@@ -63,5 +66,39 @@
   "save": "حفظ التغييرات",
   "saving": "جارٍ الحفظ…",
   "saved": "حُفظت بيانات الشركة",
-  "saveFailed": "لم يُحفظ. ما زالت تعديلاتك هنا؛ حاول مجددًا."
+  "saveFailed": "لم يُحفظ. ما زالت تعديلاتك هنا؛ حاول مجددًا.",
+  "editCompany": "تعديل الشركة",
+  "back": "العودة إلى ملف الشركة",
+  "loadFailed": "تعذّر تحميل ملف الشركة",
+  "industriesFailed": "تعذّر تحميل المجالات.",
+  "unsaved": "تغييرات غير محفوظة",
+  "noChanges": "لا توجد تغييرات بعد",
+  "about": {
+    "title": "نبذة",
+    "empty": "أخبر المرشحين بما تقوم به شركتك."
+  },
+  "contact": {
+    "title": "التواصل"
+  },
+  "add": {
+    "description": "أضف وصفًا",
+    "industry": "اختر مجالًا",
+    "email": "أضف بريدًا رسميًا",
+    "address": "أضف عنوانًا",
+    "linkedin": "أضف صفحة LinkedIn"
+  },
+  "verification": {
+    "verified": "يرى المرشحون شارة التوثيق على وظائفك.",
+    "pending": "نراجع بياناتك. يستغرق ذلك عادةً يوم عمل.",
+    "rejected": "هناك ما لا يتطابق. تواصل مع الدعم لتصحيح بياناتك."
+  },
+  "edit": {
+    "title": "تعديل الشركة",
+    "lead": "تظهر التغييرات على وظائفك فورًا."
+  },
+  "leave": {
+    "title": "المغادرة دون حفظ؟",
+    "body": "ستفقد التغييرات التي أجريتها على بيانات الشركة.",
+    "confirm": "تجاهل التغييرات"
+  }
 }

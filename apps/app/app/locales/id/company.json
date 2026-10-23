@@ -3,23 +3,21 @@
   "unnamed": "Perusahaan Anda",
   "jobs_other": "{{open}} dibuka dari {{count}} lowongan yang dipasang",
   "kyc": {
-    "approved": "Terverifikasi",
     "verified": "Terverifikasi",
     "pending": "Sedang ditinjau",
     "rejected": "Perlu perbaikan"
   },
   "details": {
-    "title": "Detail perusahaan",
-    "edit": "Edit",
     "email": "Email resmi",
     "industry": "Industri",
     "chooseIndustry": "Pilih industri",
-    "website": "Situs web",
     "linkedin": "Halaman LinkedIn",
-    "linkedinOpen": "Buka di LinkedIn",
     "address": "Alamat",
     "description": "Tentang perusahaan",
-    "descriptionHint": "Kandidat membaca ini di lowongan Anda. Maksimal 500 karakter."
+    "descriptionHint": "Kandidat membaca ini di lowongan Anda. Maksimal 500 karakter.",
+    "linkedinShort": "LinkedIn",
+    "linkedinPlaceholder": "https://www.linkedin.com/company/…",
+    "counter": "{{count}} / {{max}}"
   },
   "logo": {
     "label": "Logo",
@@ -40,13 +38,18 @@
     "note": "Data ini diperiksa saat perusahaan Anda diverifikasi. Hubungi kami untuk mengubahnya.",
     "registration": "Nomor registrasi",
     "gst": "GSTIN",
-    "pan": "PAN"
+    "pan": "PAN",
+    "show": "Tampilkan {{label}}",
+    "hide": "Sembunyikan {{label}}",
+    "copy": "Salin {{label}}"
   },
   "documents": {
     "registration_certificate": "Sertifikat registrasi",
     "gst_certificate": "Sertifikat GST",
     "address_proof": "Bukti alamat",
-    "bank_proof": "Bukti bank"
+    "bank_proof": "Bukti bank",
+    "title": "Dokumen",
+    "none": "Belum ada dokumen."
   },
   "errors": {
     "email": "Masukkan email seperti hr@perusahaan.com.",
@@ -58,5 +61,39 @@
   "save": "Simpan perubahan",
   "saving": "Menyimpan…",
   "saved": "Detail perusahaan tersimpan",
-  "saveFailed": "Tidak tersimpan. Perubahan Anda masih ada; coba lagi."
+  "saveFailed": "Tidak tersimpan. Perubahan Anda masih ada; coba lagi.",
+  "editCompany": "Edit perusahaan",
+  "back": "Kembali ke profil perusahaan",
+  "loadFailed": "Profil perusahaan tidak termuat",
+  "industriesFailed": "Daftar industri tidak termuat.",
+  "unsaved": "Perubahan belum disimpan",
+  "noChanges": "Belum ada perubahan",
+  "about": {
+    "title": "Tentang",
+    "empty": "Ceritakan kepada kandidat apa yang dikerjakan perusahaan Anda."
+  },
+  "contact": {
+    "title": "Kontak"
+  },
+  "add": {
+    "description": "Tambahkan deskripsi",
+    "industry": "Pilih industri",
+    "email": "Tambahkan email resmi",
+    "address": "Tambahkan alamat",
+    "linkedin": "Tambahkan halaman LinkedIn Anda"
+  },
+  "verification": {
+    "verified": "Kandidat melihat lencana terverifikasi di lowongan Anda.",
+    "pending": "Kami sedang memeriksa data Anda. Biasanya butuh satu hari kerja.",
+    "rejected": "Ada yang tidak cocok. Hubungi dukungan untuk memperbaiki data Anda."
+  },
+  "edit": {
+    "title": "Edit perusahaan",
+    "lead": "Perubahan langsung tampil di lowongan Anda."
+  },
+  "leave": {
+    "title": "Keluar tanpa menyimpan?",
+    "body": "Perubahan pada data perusahaan akan hilang.",
+    "confirm": "Buang perubahan"
+  }
 }
