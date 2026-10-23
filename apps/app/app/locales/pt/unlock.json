@@ -14,7 +14,10 @@
     "none": "Ainda sem entrevistas com IA, então não há nada para desbloquear.",
     "allUnlocked": "Tudo deste candidato está desbloqueado.",
     "openUnlocked": "Ver candidatos desbloqueados",
-    "failed": "O desbloqueio não foi concluído. Confira seu saldo antes de tentar de novo."
+    "failed": "O desbloqueio não foi concluído. Confira seu saldo antes de tentar de novo.",
+    "balanceFailed": "O saldo não carregou.",
+    "retry": "Tentar de novo",
+    "needBalance": "Seu saldo precisa carregar antes de desbloquear."
   },
   "confirm": {
     "title": "Desbloquear {{name}}?",
@@ -31,15 +34,16 @@
     "lead": "Pessoas que nossa IA ligou às suas vagas abertas, melhor correspondência primeiro.",
     "job": "Vaga",
     "chooseJob": "Escolha uma vaga",
-    "matched": "Ligados pela IA",
-    "applied": "Candidatados",
     "noJobsTitle": "Nenhuma vaga aberta",
     "noJobsBody": "As correspondências vêm das suas vagas abertas. Publique uma ou reabra uma pausada.",
     "postJob": "Publicar uma vaga",
     "emptyTitle": "Ainda não há correspondências",
     "emptyBody": "Nossa IA continua buscando correspondências à medida que os candidatos terminam as entrevistas. Volte em breve.",
     "emptyApplied": "Ninguém se candidatou a esta vaga ainda.",
-    "summary": "{{matched}} de {{total}} candidatos combinam"
+    "jobsFailed": "Suas vagas não carregaram.",
+    "missingTitle": "Esta vaga não está mais aberta",
+    "missingBody": "Ela pode ter sido fechada ou removida. As correspondências vêm só de vagas abertas.",
+    "firstOpen": "Ver uma vaga aberta"
   },
   "list": {
     "title": "Candidatos desbloqueados",

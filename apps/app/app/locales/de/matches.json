@@ -3,7 +3,8 @@
     "all": "Alle",
     "strong": "Stark",
     "partial": "Teilweise",
-    "low": "Schwach"
+    "low": "Schwach",
+    "label": "Nach Treffer filtern"
   },
   "columns": {
     "candidate": "Kandidat",
@@ -24,10 +25,9 @@
     "has": "Hat",
     "missing": "Fehlt",
     "noneMissing": "Nichts aus der Liste der Stelle.",
-    "interviews": "KI-Interviews",
-    "noInterviews": "Noch keine KI-Interviews.",
     "experience_one": "{{count}} Jahr Erfahrung",
-    "experience_other": "{{count}} Jahre Erfahrung"
+    "experience_other": "{{count}} Jahre Erfahrung",
+    "taken": "KI-Interviews: {{n}}"
   },
   "applicants": {
     "title": "Bewerber",
@@ -41,5 +41,16 @@
   "errorTitle": "Die Bewerbungen wurden nicht geladen.",
   "errorBody": "Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
   "interviewsTaken_one": "{{count}} absolviert",
-  "interviewsTaken_other": "{{count}} absolviert"
+  "interviewsTaken_other": "{{count}} absolviert",
+  "scope": {
+    "label": "Anzeigen",
+    "matched": "Von der KI gematcht",
+    "applied": "Beworben"
+  },
+  "overview": {
+    "matched": "Von der KI gefundene Kandidaten",
+    "applied": "Passende Bewerber",
+    "ofTotal": "von {{total}} im Pool",
+    "summary": "{{matched}} von {{total}} Kandidaten passen"
+  }
 }

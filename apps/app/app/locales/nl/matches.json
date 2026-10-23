@@ -3,7 +3,8 @@
     "all": "Alle",
     "strong": "Sterk",
     "partial": "Gedeeltelijk",
-    "low": "Zwak"
+    "low": "Zwak",
+    "label": "Filter op match"
   },
   "columns": {
     "candidate": "Kandidaat",
@@ -24,10 +25,9 @@
     "has": "Heeft",
     "missing": "Mist",
     "noneMissing": "Niets van de lijst van de vacature.",
-    "interviews": "AI-interviews",
-    "noInterviews": "Nog geen AI-interviews.",
     "experience_one": "{{count}} jaar ervaring",
-    "experience_other": "{{count}} jaar ervaring"
+    "experience_other": "{{count}} jaar ervaring",
+    "taken": "AI-interviews: {{n}}"
   },
   "applicants": {
     "title": "Sollicitanten",
@@ -41,5 +41,16 @@
   "errorTitle": "De sollicitanten zijn niet geladen.",
   "errorBody": "Controleer je verbinding en probeer het opnieuw.",
   "interviewsTaken_one": "{{count}} gedaan",
-  "interviewsTaken_other": "{{count}} gedaan"
+  "interviewsTaken_other": "{{count}} gedaan",
+  "scope": {
+    "label": "Toon",
+    "matched": "Door AI gematcht",
+    "applied": "Gesolliciteerd"
+  },
+  "overview": {
+    "matched": "Door AI gematchte kandidaten",
+    "applied": "Sollicitanten die matchen",
+    "ofTotal": "van {{total}} in de pool",
+    "summary": "{{matched}} van {{total}} kandidaten passen"
+  }
 }

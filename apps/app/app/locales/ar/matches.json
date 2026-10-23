@@ -3,7 +3,8 @@
     "all": "الكل",
     "strong": "قوي",
     "partial": "جزئي",
-    "low": "ضعيف"
+    "low": "ضعيف",
+    "label": "التصفية حسب المطابقة"
   },
   "columns": {
     "candidate": "المرشح",
@@ -28,14 +29,13 @@
     "has": "لديه",
     "missing": "ينقصه",
     "noneMissing": "لا ينقصه شيء من قائمة الوظيفة.",
-    "interviews": "المقابلات بالذكاء الاصطناعي",
-    "noInterviews": "لا مقابلات بالذكاء الاصطناعي بعد.",
     "experience_zero": "خبرة أقل من سنة",
     "experience_one": "خبرة سنة واحدة",
     "experience_two": "خبرة سنتين",
     "experience_few": "خبرة {{count}} سنوات",
     "experience_many": "خبرة {{count}} سنة",
-    "experience_other": "خبرة {{count}} سنة"
+    "experience_other": "خبرة {{count}} سنة",
+    "taken": "مقابلات الذكاء الاصطناعي: {{n}}"
   },
   "applicants": {
     "title": "المتقدمون",
@@ -57,5 +57,16 @@
   "interviewsTaken_two": "مقابلتان",
   "interviewsTaken_few": "{{count}} مقابلات",
   "interviewsTaken_many": "{{count}} مقابلة",
-  "interviewsTaken_other": "{{count}} مقابلة"
+  "interviewsTaken_other": "{{count}} مقابلة",
+  "scope": {
+    "label": "عرض",
+    "matched": "مطابقة الذكاء الاصطناعي",
+    "applied": "المتقدمون"
+  },
+  "overview": {
+    "matched": "مرشحون طابقهم الذكاء الاصطناعي",
+    "applied": "متقدمون مطابقون",
+    "ofTotal": "من {{total}} في المجموعة",
+    "summary": "{{matched}} من {{total}} مرشح متطابقون"
+  }
 }

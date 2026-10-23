@@ -1,29 +1,31 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { useQuery } from "@tanstack/react-query"
-import { ChevronRight } from "lucide-react"
 import { useMemo, useState, type ReactNode } from "react"
 import { useSearchParams } from "react-router"
 
 import { DataTable } from "@/components/data-table"
 import { DetailSheet } from "@/components/detail-sheet"
-import { ScoreBand } from "@/components/score-band"
 import { useDetailParam } from "@/hooks/use-detail-param"
 import { bandOf } from "@/lib/score-band"
 
-import { BANDS, matchScore, type BandFilter } from "../lib/job-matches"
+import {
+  BANDS,
+  bandCounts,
+  matchScore,
+  type BandFilter,
+} from "../lib/job-matches"
 import { matchesQuery } from "../queries/job-matches.queries"
 import type { Match } from "../schemas/job-matches.schema"
 import { BandTabs } from "./band-tabs"
+import { MatchCard } from "./match-card"
 import { useMatchColumns } from "./match-columns"
 import { MatchPeek } from "./match-peek"
-import { MatchPerson } from "./match-person"
 
 const BAND_PARAM = "band"
 
 const rowId = (match: Match) => match.candidate_id
 const rowLabel = (match: Match) => match.candidate_name ?? match.candidate_id
 
-// AI-matched candidates for one job, reviewed with j/k in a side panel
 export function MatchList({
   jobId,
   appliedOnly,
@@ -33,7 +35,7 @@ export function MatchList({
   jobId: string
   appliedOnly: boolean
   empty: ReactNode
-  actions?: (match: Match) => ReactNode
+  actions: (match: Match) => ReactNode
 }) {
   const { t } = useTranslation("matches")
   const [search, setSearch] = useSearchParams()
@@ -44,19 +46,7 @@ export function MatchList({
   const raw = search.get(BAND_PARAM)
   const band: BandFilter = BANDS.find((x) => x === raw) ?? "all"
 
-  const counts = useMemo(() => {
-    const result: Record<BandFilter, number> = {
-      all: 0,
-      strong: 0,
-      partial: 0,
-      low: 0,
-    }
-    for (const match of all ?? []) {
-      result.all += 1
-      result[bandOf(matchScore(match))] += 1
-    }
-    return result
-  }, [all])
+  const counts = useMemo(() => bandCounts(all ?? []), [all])
 
   const rows = useMemo(
     () =>
@@ -111,31 +101,12 @@ export function MatchList({
         }}
         keyboard
         mobileRow={(match) => (
-          <button
-            type="button"
-            onClick={() => {
+          <MatchCard
+            match={match}
+            onOpen={() => {
               setOpenId(match.candidate_id)
             }}
-            className="group flex w-full flex-col gap-2 rounded-lg border bg-card p-4 text-start transition-colors active:bg-muted"
-          >
-            <span className="flex w-full items-start justify-between gap-3">
-              <span className="flex min-w-0 items-center gap-3">
-                <MatchPerson match={match} />
-              </span>
-              <span className="flex shrink-0 items-center gap-2">
-                <ScoreBand score={matchScore(match)} />
-                <ChevronRight
-                  aria-hidden="true"
-                  className="size-4 text-muted-foreground rtl:-scale-x-100"
-                />
-              </span>
-            </span>
-            {match.ai_match?.rationale && (
-              <span className="line-clamp-2 text-xs text-pretty text-muted-foreground">
-                {match.ai_match.rationale}
-              </span>
-            )}
-          </button>
+          />
         )}
       />
 

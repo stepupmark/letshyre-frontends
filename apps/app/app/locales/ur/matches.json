@@ -3,7 +3,8 @@
     "all": "سب",
     "strong": "مضبوط",
     "partial": "جزوی",
-    "low": "کم"
+    "low": "کم",
+    "label": "میچ کے لحاظ سے فلٹر"
   },
   "columns": {
     "candidate": "امیدوار",
@@ -24,10 +25,9 @@
     "has": "ہے",
     "missing": "کمی",
     "noneMissing": "ملازمت کی فہرست میں سے کچھ کم نہیں۔",
-    "interviews": "AI انٹرویو",
-    "noInterviews": "ابھی کوئی AI انٹرویو نہیں۔",
     "experience_one": "{{count}} سال کا تجربہ",
-    "experience_other": "{{count}} سال کا تجربہ"
+    "experience_other": "{{count}} سال کا تجربہ",
+    "taken": "AI انٹرویوز: {{n}}"
   },
   "applicants": {
     "title": "درخواست گزار",
@@ -41,5 +41,16 @@
   "errorTitle": "درخواست دہندگان لوڈ نہیں ہوئے۔",
   "errorBody": "کنکشن چیک کر کے دوبارہ کوشش کریں۔",
   "interviewsTaken_one": "{{count}} دیا",
-  "interviewsTaken_other": "{{count}} دیے"
+  "interviewsTaken_other": "{{count}} دیے",
+  "scope": {
+    "label": "دکھائیں",
+    "matched": "AI سے میچ",
+    "applied": "درخواست دی"
+  },
+  "overview": {
+    "matched": "AI کے میچ کیے گئے امیدوار",
+    "applied": "میچ ہونے والے درخواست دہندگان",
+    "ofTotal": "پول کے {{total}} میں سے",
+    "summary": "{{total}} میں سے {{matched}} امیدوار میچ کرتے ہیں"
+  }
 }

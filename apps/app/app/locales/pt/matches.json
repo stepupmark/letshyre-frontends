@@ -3,7 +3,8 @@
     "all": "Todas",
     "strong": "Fortes",
     "partial": "Parciais",
-    "low": "Fracas"
+    "low": "Fracas",
+    "label": "Filtrar por correspondência"
   },
   "columns": {
     "candidate": "Candidato",
@@ -25,11 +26,10 @@
     "has": "Tem",
     "missing": "Falta",
     "noneMissing": "Nada da lista da vaga.",
-    "interviews": "Entrevistas com IA",
-    "noInterviews": "Ainda sem entrevistas com IA.",
     "experience_one": "{{count}} ano de experiência",
     "experience_many": "{{count}} anos de experiência",
-    "experience_other": "{{count}} anos de experiência"
+    "experience_other": "{{count}} anos de experiência",
+    "taken": "Entrevistas com IA: {{n}}"
   },
   "applicants": {
     "title": "Candidatos",
@@ -45,5 +45,16 @@
   "errorBody": "Verifique a conexão e tente de novo.",
   "interviewsTaken_one": "{{count}} feita",
   "interviewsTaken_many": "{{count}} feitas",
-  "interviewsTaken_other": "{{count}} feitas"
+  "interviewsTaken_other": "{{count}} feitas",
+  "scope": {
+    "label": "Mostrar",
+    "matched": "Ligados pela IA",
+    "applied": "Candidatados"
+  },
+  "overview": {
+    "matched": "Candidatos encontrados pela IA",
+    "applied": "Candidatos inscritos que correspondem",
+    "ofTotal": "de {{total}} no banco",
+    "summary": "{{matched}} de {{total}} candidatos combinam"
+  }
 }

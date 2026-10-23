@@ -14,7 +14,10 @@
     "none": "Aún no hay entrevistas con IA, así que no hay nada que desbloquear.",
     "allUnlocked": "Todo está desbloqueado para este candidato.",
     "openUnlocked": "Ver candidatos desbloqueados",
-    "failed": "El desbloqueo no se ha completado. Revise su saldo antes de volver a intentarlo."
+    "failed": "El desbloqueo no se ha completado. Revise su saldo antes de volver a intentarlo.",
+    "balanceFailed": "El saldo no se cargó.",
+    "retry": "Reintentar",
+    "needBalance": "Tu saldo debe cargarse antes de poder desbloquear."
   },
   "confirm": {
     "title": "¿Desbloquear a {{name}}?",
@@ -31,15 +34,16 @@
     "lead": "Personas que nuestra IA relacionó con sus ofertas abiertas, mejor coincidencia primero.",
     "job": "Oferta",
     "chooseJob": "Elija una oferta",
-    "matched": "Coincidencias de la IA",
-    "applied": "Postulados",
     "noJobsTitle": "No hay ofertas abiertas",
     "noJobsBody": "Las coincidencias salen de sus ofertas abiertas. Publique una o reabra una en pausa.",
     "postJob": "Publicar una oferta",
     "emptyTitle": "Aún no hay coincidencias",
     "emptyBody": "Nuestra IA sigue buscando coincidencias a medida que los candidatos terminan entrevistas. Vuelva pronto.",
     "emptyApplied": "Aún no se ha postulado nadie a esta oferta.",
-    "summary": "{{matched}} de {{total}} candidatos coinciden"
+    "jobsFailed": "Tus empleos no se cargaron.",
+    "missingTitle": "Este empleo ya no está abierto",
+    "missingBody": "Puede que se haya cerrado o eliminado. Las coincidencias solo salen de empleos abiertos.",
+    "firstOpen": "Ver un empleo abierto"
   },
   "list": {
     "title": "Candidatos desbloqueados",

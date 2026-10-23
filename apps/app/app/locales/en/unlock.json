@@ -13,7 +13,10 @@
     "none": "No AI interviews yet, so there's nothing to unlock.",
     "allUnlocked": "Everything for this candidate is unlocked.",
     "openUnlocked": "See unlocked candidates",
-    "failed": "The unlock didn't go through. Check your balance before trying again."
+    "failed": "The unlock didn't go through. Check your balance before trying again.",
+    "balanceFailed": "Balance didn't load.",
+    "retry": "Try again",
+    "needBalance": "Your balance needs to load before you can unlock."
   },
   "confirm": {
     "title": "Unlock {{name}}?",
@@ -28,15 +31,16 @@
     "lead": "People our AI matched to your open jobs, best match first.",
     "job": "Job",
     "chooseJob": "Choose a job",
-    "matched": "AI matched",
-    "applied": "Applied",
     "noJobsTitle": "No open jobs",
     "noJobsBody": "Matches come from your open jobs. Post one, or reopen a paused job.",
     "postJob": "Post a job",
     "emptyTitle": "No matches yet",
     "emptyBody": "Our AI keeps matching as candidates finish interviews. Check back soon.",
     "emptyApplied": "No one has applied to this job yet.",
-    "summary": "{{matched}} of {{total}} candidates match"
+    "jobsFailed": "Your jobs didn't load.",
+    "missingTitle": "This job isn't open any more",
+    "missingBody": "It may have been closed or removed. Matches only come from open jobs.",
+    "firstOpen": "View an open job"
   },
   "list": {
     "title": "Unlocked candidates",

@@ -30,7 +30,6 @@ import { costOf, toggle, unlockChoices } from "../lib/choices"
 const BLURRED = { opacity: 0, filter: "blur(4px)" }
 const SHARP = { opacity: 1, filter: "blur(0px)" }
 
-/** Spends credits: cost on the button, balance after in the confirm, result in place. */
 export function UnlockPanel({
   candidateId,
   name,
@@ -88,11 +87,26 @@ export function UnlockPanel({
     <section className="flex flex-col gap-3 rounded-lg border p-4">
       <div className="flex items-baseline justify-between gap-3">
         <h3 className="font-medium">{t("panel.title")}</h3>
-        {balance !== undefined && (
-          <span className="text-xs text-muted-foreground tabular-nums">
-            {t("panel.balance")}{" "}
-            <AnimatedNumber value={balance} locale={locale} />
+        {credits.isError ? (
+          <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+            {t("panel.balanceFailed")}
+            <Button
+              variant="link"
+              size="xs"
+              className="h-auto p-0"
+              disabled={credits.isRefetching}
+              onClick={() => void credits.refetch()}
+            >
+              {t("panel.retry")}
+            </Button>
           </span>
+        ) : (
+          balance !== undefined && (
+            <span className="text-xs text-muted-foreground tabular-nums">
+              {t("panel.balance")}{" "}
+              <AnimatedNumber value={balance} locale={locale} />
+            </span>
+          )
         )}
       </div>
 
@@ -202,9 +216,9 @@ export function UnlockPanel({
                     <LockOpen />
                     {t("panel.button", { count: cost })}
                   </Button>
-                  {cost === 0 && (
+                  {(cost === 0 || credits.isError) && (
                     <p className="text-xs text-muted-foreground">
-                      {t("panel.pick")}
+                      {cost === 0 ? t("panel.pick") : t("panel.needBalance")}
                     </p>
                   )}
                 </div>

@@ -6,11 +6,11 @@ import type { DataTableColumn } from "@/lib/data-table-features"
 
 import { bestInterview, matchScore } from "../lib/job-matches"
 import type { Match } from "../schemas/job-matches.schema"
+import { MatchMeter } from "./match-meter"
 import { MatchPerson } from "./match-person"
 
 export function useMatchColumns(open: (id: string) => void) {
   const { t } = useTranslation("matches")
-  // the table needs stable columns, or it rebuilds every row on each render
   return useMemo<DataTableColumn<Match>[]>(
     () => [
       {
@@ -35,8 +35,11 @@ export function useMatchColumns(open: (id: string) => void) {
         header: t("columns.match"),
         enableHiding: false,
         cell: ({ row }) => (
-          <div className="flex max-w-md flex-col items-start gap-1">
-            <ScoreBand score={matchScore(row.original)} />
+          <div className="flex max-w-md flex-col items-start gap-1.5">
+            <span className="flex items-center gap-2.5">
+              <ScoreBand score={matchScore(row.original)} />
+              <MatchMeter score={matchScore(row.original)} className="w-16" />
+            </span>
             {row.original.ai_match?.rationale && (
               <p className="line-clamp-2 text-xs text-pretty whitespace-normal text-muted-foreground">
                 {row.original.ai_match.rationale}

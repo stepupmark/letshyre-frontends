@@ -23,6 +23,7 @@ export function BandTabs({
     >
       <div className="-mx-4 no-scrollbar overflow-x-auto overflow-y-hidden px-4">
         <TabsList
+          aria-label={t("bands.label")}
           variant="line"
           className="relative gap-0 border-b p-0 group-data-horizontal/tabs:h-10"
         >

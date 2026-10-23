@@ -3,7 +3,8 @@
     "all": "ಎಲ್ಲಾ",
     "strong": "ಉತ್ತಮ",
     "partial": "ಭಾಗಶಃ",
-    "low": "ಕಡಿಮೆ"
+    "low": "ಕಡಿಮೆ",
+    "label": "ಹೊಂದಾಣಿಕೆಯಿಂದ ಫಿಲ್ಟರ್"
   },
   "columns": {
     "candidate": "ಅಭ್ಯರ್ಥಿ",
@@ -24,10 +25,9 @@
     "has": "ಇದೆ",
     "missing": "ಇಲ್ಲ",
     "noneMissing": "ಉದ್ಯೋಗದ ಪಟ್ಟಿಯಿಂದ ಏನೂ ಕಾಣೆಯಾಗಿಲ್ಲ.",
-    "interviews": "AI ಸಂದರ್ಶನಗಳು",
-    "noInterviews": "ಇನ್ನೂ AI ಸಂದರ್ಶನಗಳಿಲ್ಲ.",
     "experience_one": "{{count}} ವರ್ಷದ ಅನುಭವ",
-    "experience_other": "{{count}} ವರ್ಷಗಳ ಅನುಭವ"
+    "experience_other": "{{count}} ವರ್ಷಗಳ ಅನುಭವ",
+    "taken": "AI ಸಂದರ್ಶನಗಳು: {{n}}"
   },
   "applicants": {
     "title": "ಅರ್ಜಿದಾರರು",
@@ -41,5 +41,16 @@
   "errorTitle": "ಅರ್ಜಿದಾರರು ಲೋಡ್ ಆಗಲಿಲ್ಲ.",
   "errorBody": "ಸಂಪರ್ಕ ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
   "interviewsTaken_one": "{{count}} ತೆಗೆದುಕೊಂಡಿದ್ದಾರೆ",
-  "interviewsTaken_other": "{{count}} ತೆಗೆದುಕೊಂಡಿದ್ದಾರೆ"
+  "interviewsTaken_other": "{{count}} ತೆಗೆದುಕೊಂಡಿದ್ದಾರೆ",
+  "scope": {
+    "label": "ತೋರಿಸಿ",
+    "matched": "AI ಹೊಂದಿಸಿದವರು",
+    "applied": "ಅರ್ಜಿ ಸಲ್ಲಿಸಿದವರು"
+  },
+  "overview": {
+    "matched": "AI ಹೊಂದಿಸಿದ ಅಭ್ಯರ್ಥಿಗಳು",
+    "applied": "ಹೊಂದುವ ಅರ್ಜಿದಾರರು",
+    "ofTotal": "ಪೂಲ್‌ನ {{total}} ರಲ್ಲಿ",
+    "summary": "{{total}} ಅಭ್ಯರ್ಥಿಗಳಲ್ಲಿ {{matched}} ಹೊಂದುತ್ತಾರೆ"
+  }
 }

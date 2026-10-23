@@ -3,7 +3,8 @@
     "all": "అన్నీ",
     "strong": "బలమైనవి",
     "partial": "పాక్షికం",
-    "low": "తక్కువ"
+    "low": "తక్కువ",
+    "label": "సరిపోలిక ప్రకారం ఫిల్టర్"
   },
   "columns": {
     "candidate": "అభ్యర్థి",
@@ -24,10 +25,9 @@
     "has": "ఉన్నవి",
     "missing": "లేనివి",
     "noneMissing": "ఉద్యోగ జాబితాలోంచి ఏదీ తక్కువ లేదు.",
-    "interviews": "AI ఇంటర్వ్యూలు",
-    "noInterviews": "ఇంకా AI ఇంటర్వ్యూలు లేవు.",
     "experience_one": "{{count}} సంవత్సరం అనుభవం",
-    "experience_other": "{{count}} సంవత్సరాల అనుభవం"
+    "experience_other": "{{count}} సంవత్సరాల అనుభవం",
+    "taken": "AI ఇంటర్వ్యూలు: {{n}}"
   },
   "applicants": {
     "title": "దరఖాస్తుదారులు",
@@ -41,5 +41,16 @@
   "errorTitle": "దరఖాస్తుదారులు లోడ్ కాలేదు.",
   "errorBody": "కనెక్షన్ చూసి మళ్లీ ప్రయత్నించండి.",
   "interviewsTaken_one": "{{count}} చేశారు",
-  "interviewsTaken_other": "{{count}} చేశారు"
+  "interviewsTaken_other": "{{count}} చేశారు",
+  "scope": {
+    "label": "చూపించు",
+    "matched": "AI మ్యాచ్ చేసినవారు",
+    "applied": "దరఖాస్తు చేసినవారు"
+  },
+  "overview": {
+    "matched": "AI సరిపోల్చిన అభ్యర్థులు",
+    "applied": "సరిపోలే దరఖాస్తుదారులు",
+    "ofTotal": "పూల్‌లోని {{total}} మందిలో",
+    "summary": "{{total}} అభ్యర్థుల్లో {{matched}} మంది సరిపోతున్నారు"
+  }
 }

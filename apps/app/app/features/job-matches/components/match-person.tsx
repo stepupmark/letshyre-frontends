@@ -31,7 +31,7 @@ export function MatchPerson({ match }: { match: Match }) {
         </AvatarFallback>
       </Avatar>
       <span className="flex min-w-0 flex-col gap-0.5">
-        <span className="truncate font-medium underline-offset-4 group-hover:underline">
+        <span className="truncate font-medium text-brand-text underline-offset-4 group-hover:underline">
           {name}
         </span>
         {match.ai_match?.role_applied && (

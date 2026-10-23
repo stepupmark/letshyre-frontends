@@ -3,7 +3,8 @@
     "all": "அனைத்தும்",
     "strong": "வலுவானவை",
     "partial": "பகுதி",
-    "low": "குறைவு"
+    "low": "குறைவு",
+    "label": "பொருத்தத்தின்படி வடிகட்டு"
   },
   "columns": {
     "candidate": "வேட்பாளர்",
@@ -24,10 +25,9 @@
     "has": "உள்ளது",
     "missing": "இல்லாதவை",
     "noneMissing": "வேலைப் பட்டியலில் இருந்து எதுவும் குறையவில்லை.",
-    "interviews": "AI நேர்காணல்கள்",
-    "noInterviews": "இன்னும் AI நேர்காணல்கள் இல்லை.",
     "experience_one": "{{count}} ஆண்டு அனுபவம்",
-    "experience_other": "{{count}} ஆண்டுகள் அனுபவம்"
+    "experience_other": "{{count}} ஆண்டுகள் அனுபவம்",
+    "taken": "AI நேர்காணல்கள்: {{n}}"
   },
   "applicants": {
     "title": "விண்ணப்பதாரர்கள்",
@@ -41,5 +41,16 @@
   "errorTitle": "விண்ணப்பதாரர்கள் ஏற்றப்படவில்லை.",
   "errorBody": "இணைப்பைச் சரிபார்த்து மீண்டும் முயலவும்.",
   "interviewsTaken_one": "{{count}} எடுத்தார்",
-  "interviewsTaken_other": "{{count}} எடுத்தார்"
+  "interviewsTaken_other": "{{count}} எடுத்தார்",
+  "scope": {
+    "label": "காட்டு",
+    "matched": "AI பொருத்தியவை",
+    "applied": "விண்ணப்பித்தவர்கள்"
+  },
+  "overview": {
+    "matched": "AI பொருத்திய வேட்பாளர்கள்",
+    "applied": "பொருந்தும் விண்ணப்பதாரர்கள்",
+    "ofTotal": "தொகுப்பின் {{total}} பேரில்",
+    "summary": "{{total}} வேட்பாளர்களில் {{matched}} பேர் பொருந்துகிறார்கள்"
+  }
 }

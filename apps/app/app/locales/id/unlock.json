@@ -12,7 +12,10 @@
     "none": "Belum ada wawancara AI, jadi tidak ada yang bisa dibuka.",
     "allUnlocked": "Semua untuk kandidat ini sudah terbuka.",
     "openUnlocked": "Lihat kandidat terbuka",
-    "failed": "Pembukaan tidak berhasil. Periksa saldo Anda sebelum mencoba lagi."
+    "failed": "Pembukaan tidak berhasil. Periksa saldo Anda sebelum mencoba lagi.",
+    "balanceFailed": "Saldo gagal dimuat.",
+    "retry": "Coba lagi",
+    "needBalance": "Saldo Anda perlu dimuat sebelum bisa membuka."
   },
   "confirm": {
     "title": "Buka {{name}}?",
@@ -25,15 +28,16 @@
     "lead": "Orang yang dicocokkan AI kami dengan lowongan Anda yang dibuka, kecocokan terbaik dulu.",
     "job": "Lowongan",
     "chooseJob": "Pilih lowongan",
-    "matched": "Dicocokkan AI",
-    "applied": "Melamar",
     "noJobsTitle": "Tidak ada lowongan yang dibuka",
     "noJobsBody": "Kecocokan berasal dari lowongan yang dibuka. Pasang satu, atau buka lagi lowongan yang dijeda.",
     "postJob": "Pasang lowongan",
     "emptyTitle": "Belum ada kecocokan",
     "emptyBody": "AI kami terus mencocokkan saat kandidat menyelesaikan wawancara. Kembali lagi nanti.",
     "emptyApplied": "Belum ada yang melamar lowongan ini.",
-    "summary": "{{matched}} dari {{total}} kandidat cocok"
+    "jobsFailed": "Lowongan Anda gagal dimuat.",
+    "missingTitle": "Lowongan ini sudah tidak dibuka",
+    "missingBody": "Mungkin sudah ditutup atau dihapus. Kecocokan hanya berasal dari lowongan yang dibuka.",
+    "firstOpen": "Lihat lowongan yang dibuka"
   },
   "list": {
     "title": "Kandidat terbuka",

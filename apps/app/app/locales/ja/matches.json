@@ -3,7 +3,8 @@
     "all": "すべて",
     "strong": "高",
     "partial": "中",
-    "low": "低"
+    "low": "低",
+    "label": "マッチ度で絞り込む"
   },
   "columns": {
     "candidate": "候補者",
@@ -23,9 +24,8 @@
     "has": "あり",
     "missing": "不足",
     "noneMissing": "求人の条件はすべて満たしています。",
-    "interviews": "AI 面接",
-    "noInterviews": "AI 面接はまだありません。",
-    "experience_other": "経験 {{count}} 年"
+    "experience_other": "経験 {{count}} 年",
+    "taken": "AI面接: {{n}}"
   },
   "applicants": {
     "title": "応募者",
@@ -37,5 +37,16 @@
   },
   "errorTitle": "応募者を読み込めませんでした。",
   "errorBody": "接続を確認してもう一度お試しください。",
-  "interviewsTaken_other": "{{count}}回受験"
+  "interviewsTaken_other": "{{count}}回受験",
+  "scope": {
+    "label": "表示",
+    "matched": "AI のマッチ",
+    "applied": "応募者"
+  },
+  "overview": {
+    "matched": "AIがマッチした候補者",
+    "applied": "マッチした応募者",
+    "ofTotal": "候補者プール {{total}} 人中",
+    "summary": "{{total}} 人中 {{matched}} 人がマッチ"
+  }
 }

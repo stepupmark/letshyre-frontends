@@ -3,7 +3,8 @@
     "all": "Toutes",
     "strong": "Fortes",
     "partial": "Partielles",
-    "low": "Faibles"
+    "low": "Faibles",
+    "label": "Filtrer par correspondance"
   },
   "columns": {
     "candidate": "Candidat",
@@ -25,11 +26,10 @@
     "has": "Possède",
     "missing": "Manque",
     "noneMissing": "Rien de la liste de l'offre.",
-    "interviews": "Entretiens IA",
-    "noInterviews": "Aucun entretien IA pour l'instant.",
     "experience_one": "{{count}} an d'expérience",
     "experience_many": "{{count}} ans d'expérience",
-    "experience_other": "{{count}} ans d'expérience"
+    "experience_other": "{{count}} ans d'expérience",
+    "taken": "Entretiens IA : {{n}}"
   },
   "applicants": {
     "title": "Candidats",
@@ -45,5 +45,16 @@
   "errorBody": "Vérifiez votre connexion et réessayez.",
   "interviewsTaken_one": "{{count}} passé",
   "interviewsTaken_many": "{{count}} passés",
-  "interviewsTaken_other": "{{count}} passés"
+  "interviewsTaken_other": "{{count}} passés",
+  "scope": {
+    "label": "Afficher",
+    "matched": "Associés par l'IA",
+    "applied": "Ont postulé"
+  },
+  "overview": {
+    "matched": "Candidats trouvés par l’IA",
+    "applied": "Candidats qui correspondent",
+    "ofTotal": "sur {{total}} dans le vivier",
+    "summary": "{{matched}} candidats sur {{total}} correspondent"
+  }
 }

@@ -1,6 +1,4 @@
-import AxeBuilder from "@axe-core/playwright"
-
-import { expect, reply, test } from "./fixtures"
+import { axe, expect, reply, test } from "./fixtures"
 
 const INTERVIEWS = "GET /user/v1/employer_candidate_interviews/5/"
 
@@ -42,7 +40,9 @@ test("an employer unlocks a candidate after seeing the cost and the balance left
   await page.goto("/employer/candidates")
 
   await expect(page).toHaveURL(/jobId=101/)
-  await expect(page.getByText("3 of 40 candidates match")).toBeVisible()
+  const overview = page.getByRole("region", { name: "AI matched candidates" })
+  await expect(overview).toContainText("3")
+  await expect(overview).toContainText("of 40 in the pool")
   await page
     .getByRole("button", { name: /Arjun Mehta/ })
     .filter({ visible: true })
@@ -52,7 +52,7 @@ test("an employer unlocks a candidate after seeing the cost and the balance left
   const unlock = panel.getByRole("button", { name: /^Unlock ·/ })
   await expect(unlock).toHaveText("Unlock · 0 credits")
   await expect(unlock).toBeDisabled()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 
   await panel.getByRole("checkbox").nth(0).check()
   await panel.getByRole("checkbox").nth(1).check()
@@ -109,4 +109,54 @@ test("without enough credits, unlocking leads to a top-up that comes back here",
     `/employer/billing?next=${encodeURIComponent("/employer/candidates?jobId=101&candidate=5")}`
   )
   await expect(panel.getByRole("button", { name: /^Unlock ·/ })).toHaveCount(0)
+})
+
+test("a link to a job that isn't open says so and offers an open one", async ({
+  page,
+  api,
+  signInAs,
+}) => {
+  await api({
+    "GET /user/v1/employer_job_detail/300/": (route) =>
+      reply(route, { detail: "Not found." }, 404),
+  })
+  await signInAs("employer")
+  await page.goto("/employer/candidates?jobId=300")
+
+  await expect(page.getByText("This job isn't open any more")).toBeVisible()
+  await axe(page)
+  await page.getByRole("button", { name: "View an open job" }).click()
+  await expect(page).toHaveURL(/jobId=101/)
+  await expect(
+    page.getByRole("region", { name: "AI matched candidates" })
+  ).toBeVisible()
+})
+
+test("when the balance fails, the unlock panel says why and can retry", async ({
+  page,
+  api,
+  signInAs,
+}) => {
+  let fail = true
+  await api({
+    "GET /payment/v1/employer_credits/": (route) =>
+      fail
+        ? reply(route, { detail: "Server error" }, 500)
+        : reply(route, { data: { available_credits: 4 } }),
+  })
+  await signInAs("employer")
+  await page.goto("/employer/candidates?jobId=101&candidate=5")
+
+  const panel = page.getByRole("dialog", { name: "Arjun Mehta" })
+  await expect(panel.getByText("Balance didn't load.")).toBeVisible()
+  await panel.getByRole("checkbox").nth(0).check()
+  await expect(
+    panel.getByText("Your balance needs to load before you can unlock.")
+  ).toBeVisible()
+  await expect(panel.getByRole("button", { name: /^Unlock ·/ })).toBeDisabled()
+
+  fail = false
+  await panel.getByRole("button", { name: "Try again" }).click()
+  await expect(panel.getByText("Balance 4")).toBeVisible()
+  await expect(panel.getByRole("button", { name: /^Unlock ·/ })).toBeEnabled()
 })

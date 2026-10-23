@@ -3,7 +3,8 @@
     "all": "Tutte",
     "strong": "Forti",
     "partial": "Parziali",
-    "low": "Deboli"
+    "low": "Deboli",
+    "label": "Filtra per corrispondenza"
   },
   "columns": {
     "candidate": "Candidato",
@@ -25,11 +26,10 @@
     "has": "Ha",
     "missing": "Mancano",
     "noneMissing": "Niente dall'elenco dell'offerta.",
-    "interviews": "Colloqui con IA",
-    "noInterviews": "Ancora nessun colloquio con IA.",
     "experience_one": "{{count}} anno di esperienza",
     "experience_many": "{{count}} anni di esperienza",
-    "experience_other": "{{count}} anni di esperienza"
+    "experience_other": "{{count}} anni di esperienza",
+    "taken": "Colloqui IA: {{n}}"
   },
   "applicants": {
     "title": "Candidati",
@@ -45,5 +45,16 @@
   "errorBody": "Controlla la connessione e riprova.",
   "interviewsTaken_one": "{{count}} svolto",
   "interviewsTaken_many": "{{count}} svolti",
-  "interviewsTaken_other": "{{count}} svolti"
+  "interviewsTaken_other": "{{count}} svolti",
+  "scope": {
+    "label": "Mostra",
+    "matched": "Abbinati dall'IA",
+    "applied": "Candidati"
+  },
+  "overview": {
+    "matched": "Candidati trovati dall’IA",
+    "applied": "Candidati che corrispondono",
+    "ofTotal": "su {{total}} nel bacino",
+    "summary": "{{matched}} candidati su {{total}} corrispondono"
+  }
 }

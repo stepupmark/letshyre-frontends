@@ -13,7 +13,10 @@
     "none": "Nog geen AI-interviews, dus er is niets te ontgrendelen.",
     "allUnlocked": "Alles van deze kandidaat is ontgrendeld.",
     "openUnlocked": "Ontgrendelde kandidaten bekijken",
-    "failed": "Het ontgrendelen is niet gelukt. Controleer uw saldo voordat u het opnieuw probeert."
+    "failed": "Het ontgrendelen is niet gelukt. Controleer uw saldo voordat u het opnieuw probeert.",
+    "balanceFailed": "Saldo niet geladen.",
+    "retry": "Opnieuw proberen",
+    "needBalance": "Je saldo moet geladen zijn voordat je kunt ontgrendelen."
   },
   "confirm": {
     "title": "{{name}} ontgrendelen?",
@@ -28,15 +31,16 @@
     "lead": "Mensen die onze AI aan uw open vacatures koppelde, beste match eerst.",
     "job": "Vacature",
     "chooseJob": "Kies een vacature",
-    "matched": "Door AI gematcht",
-    "applied": "Gesolliciteerd",
     "noJobsTitle": "Geen open vacatures",
     "noJobsBody": "Matches komen uit uw open vacatures. Plaats er een of heropen een gepauzeerde.",
     "postJob": "Vacature plaatsen",
     "emptyTitle": "Nog geen matches",
     "emptyBody": "Onze AI blijft matchen terwijl kandidaten interviews afronden. Kijk binnenkort opnieuw.",
     "emptyApplied": "Er heeft nog niemand op deze vacature gesolliciteerd.",
-    "summary": "{{matched}} van {{total}} kandidaten passen"
+    "jobsFailed": "Je vacatures zijn niet geladen.",
+    "missingTitle": "Deze vacature is niet meer open",
+    "missingBody": "Ze is misschien gesloten of verwijderd. Matches komen alleen uit open vacatures.",
+    "firstOpen": "Bekijk een open vacature"
   },
   "list": {
     "title": "Ontgrendelde kandidaten",

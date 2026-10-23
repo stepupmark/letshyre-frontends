@@ -3,7 +3,8 @@
     "all": "সব",
     "strong": "জোরালো",
     "partial": "আংশিক",
-    "low": "কম"
+    "low": "কম",
+    "label": "মিল অনুযায়ী ফিল্টার"
   },
   "columns": {
     "candidate": "প্রার্থী",
@@ -24,10 +25,9 @@
     "has": "আছে",
     "missing": "ঘাটতি",
     "noneMissing": "চাকরির তালিকা থেকে কিছু কম নেই।",
-    "interviews": "AI ইন্টারভিউ",
-    "noInterviews": "এখনো কোনো AI ইন্টারভিউ নেই।",
     "experience_one": "{{count}} বছরের অভিজ্ঞতা",
-    "experience_other": "{{count}} বছরের অভিজ্ঞতা"
+    "experience_other": "{{count}} বছরের অভিজ্ঞতা",
+    "taken": "AI ইন্টারভিউ: {{n}}"
   },
   "applicants": {
     "title": "আবেদনকারী",
@@ -41,5 +41,16 @@
   "errorTitle": "আবেদনকারীরা লোড হয়নি।",
   "errorBody": "সংযোগ দেখে আবার চেষ্টা করুন।",
   "interviewsTaken_one": "{{count}}টি দিয়েছেন",
-  "interviewsTaken_other": "{{count}}টি দিয়েছেন"
+  "interviewsTaken_other": "{{count}}টি দিয়েছেন",
+  "scope": {
+    "label": "দেখান",
+    "matched": "AI-এর ম্যাচ",
+    "applied": "আবেদন করেছেন"
+  },
+  "overview": {
+    "matched": "AI-মিলানো প্রার্থী",
+    "applied": "মিলে যাওয়া আবেদনকারী",
+    "ofTotal": "পুলের {{total}} জনের মধ্যে",
+    "summary": "{{total}} জন প্রার্থীর মধ্যে {{matched}} জন মিলছেন"
+  }
 }

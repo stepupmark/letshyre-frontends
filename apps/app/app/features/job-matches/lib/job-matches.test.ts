@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest"
 
 import { matchesSchema } from "../schemas/job-matches.schema"
-import { bestInterview } from "./job-matches"
+import { bandCounts, bestInterview } from "./job-matches"
 
 describe("matchesSchema", () => {
   it("drops a broken match instead of emptying the list", () => {
@@ -27,5 +27,24 @@ describe("bestInterview", () => {
       ],
     }).matches
     expect(match && bestInterview(match)).toBe(72)
+  })
+})
+
+describe("bandCounts", () => {
+  it("bands by the rounded AI score, then the plain score", () => {
+    const { matches } = matchesSchema.parse({
+      matches: [
+        { candidate_id: 1, ai_match: { ai_matching_score: 86 } },
+        { candidate_id: 2, score: "70" },
+        { candidate_id: 3, score: 69.4 },
+        { candidate_id: 4 },
+      ],
+    })
+    expect(bandCounts(matches)).toEqual({
+      all: 4,
+      strong: 2,
+      partial: 1,
+      low: 1,
+    })
   })
 })

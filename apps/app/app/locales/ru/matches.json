@@ -3,7 +3,8 @@
     "all": "Все",
     "strong": "Сильные",
     "partial": "Частичные",
-    "low": "Слабые"
+    "low": "Слабые",
+    "label": "Фильтр по совпадению"
   },
   "columns": {
     "candidate": "Кандидат",
@@ -26,12 +27,11 @@
     "has": "Есть",
     "missing": "Не хватает",
     "noneMissing": "Всё из списка вакансии есть.",
-    "interviews": "ИИ-интервью",
-    "noInterviews": "ИИ-интервью пока нет.",
     "experience_one": "{{count}} год опыта",
     "experience_few": "{{count}} года опыта",
     "experience_many": "{{count}} лет опыта",
-    "experience_other": "{{count}} года опыта"
+    "experience_other": "{{count}} года опыта",
+    "taken": "ИИ-интервью: {{n}}"
   },
   "applicants": {
     "title": "Кандидаты",
@@ -49,5 +49,16 @@
   "interviewsTaken_one": "пройдено: {{count}}",
   "interviewsTaken_few": "пройдено: {{count}}",
   "interviewsTaken_many": "пройдено: {{count}}",
-  "interviewsTaken_other": "пройдено: {{count}}"
+  "interviewsTaken_other": "пройдено: {{count}}",
+  "scope": {
+    "label": "Показать",
+    "matched": "Подобраны ИИ",
+    "applied": "Откликнулись"
+  },
+  "overview": {
+    "matched": "Кандидаты, подобранные ИИ",
+    "applied": "Подходящие отклики",
+    "ofTotal": "из {{total}} в базе",
+    "summary": "Подходят {{matched}} из {{total}} кандидатов"
+  }
 }

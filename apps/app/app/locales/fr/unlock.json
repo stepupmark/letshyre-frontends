@@ -14,7 +14,10 @@
     "none": "Aucun entretien IA pour l'instant, il n'y a donc rien à débloquer.",
     "allUnlocked": "Tout est débloqué pour ce candidat.",
     "openUnlocked": "Voir les candidats débloqués",
-    "failed": "Le déblocage n'est pas passé. Vérifiez votre solde avant de réessayer."
+    "failed": "Le déblocage n'est pas passé. Vérifiez votre solde avant de réessayer.",
+    "balanceFailed": "Le solde ne s’est pas chargé.",
+    "retry": "Réessayer",
+    "needBalance": "Votre solde doit se charger avant de pouvoir débloquer."
   },
   "confirm": {
     "title": "Débloquer {{name}} ?",
@@ -31,15 +34,16 @@
     "lead": "Les personnes que notre IA a associées à vos offres ouvertes, meilleure correspondance en premier.",
     "job": "Offre",
     "chooseJob": "Choisir une offre",
-    "matched": "Associés par l'IA",
-    "applied": "Ont postulé",
     "noJobsTitle": "Aucune offre ouverte",
     "noJobsBody": "Les correspondances viennent de vos offres ouvertes. Publiez-en une, ou rouvrez une offre suspendue.",
     "postJob": "Publier une offre",
     "emptyTitle": "Pas encore de correspondances",
     "emptyBody": "Notre IA continue d'associer des candidats à mesure qu'ils terminent leurs entretiens. Revenez bientôt.",
     "emptyApplied": "Personne n'a encore postulé à cette offre.",
-    "summary": "{{matched}} candidats sur {{total}} correspondent"
+    "jobsFailed": "Vos offres ne se sont pas chargées.",
+    "missingTitle": "Cette offre n’est plus ouverte",
+    "missingBody": "Elle a peut-être été fermée ou supprimée. Les correspondances viennent uniquement des offres ouvertes.",
+    "firstOpen": "Voir une offre ouverte"
   },
   "list": {
     "title": "Candidats débloqués",

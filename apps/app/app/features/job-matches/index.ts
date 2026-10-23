@@ -1,2 +1,6 @@
 export { MatchList } from "./components/match-list"
+export { NoMatchesArt } from "./components/no-matches-art"
+export { PoolOverview } from "./components/pool-overview"
+export { PoolSkeleton } from "./components/pool-skeleton"
+export { ScopeTabs } from "./components/scope-tabs"
 export { matchesQuery } from "./queries/job-matches.queries"

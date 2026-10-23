@@ -3,7 +3,8 @@
     "all": "सभी",
     "strong": "मज़बूत",
     "partial": "आंशिक",
-    "low": "कम"
+    "low": "कम",
+    "label": "मैच के अनुसार फ़िल्टर करें"
   },
   "columns": {
     "candidate": "उम्मीदवार",
@@ -24,10 +25,9 @@
     "has": "है",
     "missing": "कमी",
     "noneMissing": "नौकरी की सूची में से कुछ भी कम नहीं।",
-    "interviews": "AI इंटरव्यू",
-    "noInterviews": "अभी कोई AI इंटरव्यू नहीं।",
     "experience_one": "{{count}} साल का अनुभव",
-    "experience_other": "{{count}} साल का अनुभव"
+    "experience_other": "{{count}} साल का अनुभव",
+    "taken": "AI इंटरव्यू: {{n}}"
   },
   "applicants": {
     "title": "आवेदक",
@@ -41,5 +41,16 @@
   "errorTitle": "आवेदक लोड नहीं हुए।",
   "errorBody": "कनेक्शन जांचें और फिर से कोशिश करें।",
   "interviewsTaken_one": "{{count}} दिया",
-  "interviewsTaken_other": "{{count}} दिए"
+  "interviewsTaken_other": "{{count}} दिए",
+  "scope": {
+    "label": "दिखाएं",
+    "matched": "AI से मैच",
+    "applied": "आवेदन किया"
+  },
+  "overview": {
+    "matched": "AI द्वारा मैच किए गए उम्मीदवार",
+    "applied": "मैच होने वाले आवेदक",
+    "ofTotal": "पूल के {{total}} में से",
+    "summary": "{{total}} में से {{matched}} उम्मीदवार मैच करते हैं"
+  }
 }

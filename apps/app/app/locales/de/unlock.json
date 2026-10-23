@@ -13,7 +13,10 @@
     "none": "Noch keine KI-Interviews, es gibt also nichts freizuschalten.",
     "allUnlocked": "Für diesen Kandidaten ist alles freigeschaltet.",
     "openUnlocked": "Freigeschaltete Kandidaten ansehen",
-    "failed": "Das Freischalten ist nicht durchgegangen. Prüfen Sie Ihr Guthaben, bevor Sie es erneut versuchen."
+    "failed": "Das Freischalten ist nicht durchgegangen. Prüfen Sie Ihr Guthaben, bevor Sie es erneut versuchen.",
+    "balanceFailed": "Guthaben nicht geladen.",
+    "retry": "Erneut versuchen",
+    "needBalance": "Ihr Guthaben muss geladen sein, bevor Sie freischalten können."
   },
   "confirm": {
     "title": "{{name}} freischalten?",
@@ -28,15 +31,16 @@
     "lead": "Personen, die unsere KI zu Ihren offenen Stellen gematcht hat, bester Match zuerst.",
     "job": "Stelle",
     "chooseJob": "Stelle wählen",
-    "matched": "Von der KI gematcht",
-    "applied": "Beworben",
     "noJobsTitle": "Keine offenen Stellen",
     "noJobsBody": "Matches kommen aus Ihren offenen Stellen. Veröffentlichen Sie eine oder öffnen Sie eine pausierte wieder.",
     "postJob": "Stelle veröffentlichen",
     "emptyTitle": "Noch keine Matches",
     "emptyBody": "Unsere KI matcht laufend weiter, während Kandidaten Interviews abschließen. Schauen Sie bald wieder vorbei.",
     "emptyApplied": "Auf diese Stelle hat sich noch niemand beworben.",
-    "summary": "{{matched}} von {{total}} Kandidaten passen"
+    "jobsFailed": "Ihre Stellen wurden nicht geladen.",
+    "missingTitle": "Diese Stelle ist nicht mehr offen",
+    "missingBody": "Sie wurde vielleicht geschlossen oder entfernt. Treffer kommen nur aus offenen Stellen.",
+    "firstOpen": "Offene Stelle ansehen"
   },
   "list": {
     "title": "Freigeschaltete Kandidaten",

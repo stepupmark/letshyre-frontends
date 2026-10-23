@@ -3,7 +3,8 @@
     "all": "Semua",
     "strong": "Tinggi",
     "partial": "Sebagian",
-    "low": "Rendah"
+    "low": "Rendah",
+    "label": "Filter menurut kecocokan"
   },
   "columns": {
     "candidate": "Kandidat",
@@ -23,9 +24,8 @@
     "has": "Punya",
     "missing": "Kurang",
     "noneMissing": "Tidak ada yang kurang dari daftar lowongan.",
-    "interviews": "Wawancara AI",
-    "noInterviews": "Belum ada wawancara AI.",
-    "experience_other": "Pengalaman {{count}} tahun"
+    "experience_other": "Pengalaman {{count}} tahun",
+    "taken": "Wawancara AI: {{n}}"
   },
   "applicants": {
     "title": "Pelamar",
@@ -37,5 +37,16 @@
   },
   "errorTitle": "Pelamar gagal dimuat.",
   "errorBody": "Periksa koneksi lalu coba lagi.",
-  "interviewsTaken_other": "{{count}} diikuti"
+  "interviewsTaken_other": "{{count}} diikuti",
+  "scope": {
+    "label": "Tampilkan",
+    "matched": "Dicocokkan AI",
+    "applied": "Melamar"
+  },
+  "overview": {
+    "matched": "Kandidat yang dicocokkan AI",
+    "applied": "Pelamar yang cocok",
+    "ofTotal": "dari {{total}} di kumpulan",
+    "summary": "{{matched}} dari {{total}} kandidat cocok"
+  }
 }
