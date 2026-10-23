@@ -43,7 +43,7 @@ export default function ApplicantsPage({ params }: Route.ComponentProps) {
         <div className="flex flex-col gap-1">
           <h1
             tabIndex={-1}
-            className="text-2xl font-semibold tracking-tight text-balance outline-none"
+            className="text-2xl font-semibold tracking-tight text-balance text-brand-text outline-none"
           >
             {t("applicants.title")}
           </h1>

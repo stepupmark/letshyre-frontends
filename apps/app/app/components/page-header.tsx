@@ -14,7 +14,7 @@ export function PageHeader({
       <div className="min-w-0">
         <h1
           tabIndex={-1}
-          className="text-2xl font-semibold tracking-tight text-balance outline-none"
+          className="text-2xl font-semibold tracking-tight text-balance text-brand-text outline-none"
         >
           {title}
         </h1>
