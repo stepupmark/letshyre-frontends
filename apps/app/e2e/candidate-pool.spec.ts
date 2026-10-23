@@ -49,8 +49,8 @@ test("an employer unlocks a candidate after seeing the cost and the balance left
     .click()
   const panel = page.getByRole("dialog", { name: "Arjun Mehta" })
   await expect(panel.getByText("This job's role")).toBeVisible()
-  const unlock = panel.getByRole("button", { name: /^Unlock ·/ })
-  await expect(unlock).toHaveText("Unlock · 0 credits")
+  const unlock = panel.getByRole("button", { name: /^Unlock( ·|$)/ })
+  await expect(unlock).toHaveText("Unlock")
   await expect(unlock).toBeDisabled()
   await axe(page)
 
@@ -108,7 +108,9 @@ test("without enough credits, unlocking leads to a top-up that comes back here",
     "href",
     `/employer/billing?next=${encodeURIComponent("/employer/candidates?jobId=101&candidate=5")}`
   )
-  await expect(panel.getByRole("button", { name: /^Unlock ·/ })).toHaveCount(0)
+  await expect(
+    panel.getByRole("button", { name: /^Unlock( ·|$)/ })
+  ).toHaveCount(0)
 })
 
 test("a link to a job that isn't open says so and offers an open one", async ({

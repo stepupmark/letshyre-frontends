@@ -8,6 +8,7 @@ import { bestInterview, matchScore } from "../lib/job-matches"
 import type { Match } from "../schemas/job-matches.schema"
 import { MatchMeter } from "./match-meter"
 import { MatchPerson } from "./match-person"
+import { MatchScores } from "./match-scores"
 
 export function useMatchColumns(open: (id: string) => void) {
   const { t } = useTranslation("matches")
@@ -40,6 +41,7 @@ export function useMatchColumns(open: (id: string) => void) {
               <ScoreBand score={matchScore(row.original)} />
               <MatchMeter score={matchScore(row.original)} className="w-16" />
             </span>
+            <MatchScores match={row.original} />
             {row.original.ai_match?.rationale && (
               <p className="line-clamp-2 text-xs text-pretty whitespace-normal text-muted-foreground">
                 {row.original.ai_match.rationale}

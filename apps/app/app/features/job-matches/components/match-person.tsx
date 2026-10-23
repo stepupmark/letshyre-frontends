@@ -18,6 +18,19 @@ const initials = (name: string) =>
     .join("")
     .toUpperCase()
 
+export function MatchAvatar({ match }: { match: Match }) {
+  const { t } = useTranslation("matches")
+  const photo = safeUrl(match.profile_photo_url)
+  return (
+    <Avatar className="size-11 ring-2 ring-background">
+      {photo && <AvatarImage src={photo} alt="" />}
+      <AvatarFallback className="bg-brand-muted text-sm font-semibold text-brand-text">
+        {initials(match.candidate_name ?? t("unnamed"))}
+      </AvatarFallback>
+    </Avatar>
+  )
+}
+
 export function MatchPerson({ match }: { match: Match }) {
   const { t } = useTranslation("matches")
   const name = match.candidate_name ?? t("unnamed")

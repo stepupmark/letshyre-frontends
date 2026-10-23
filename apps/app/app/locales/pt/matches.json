@@ -21,15 +21,14 @@
     "why": "Por que combina",
     "whyNote": "Com base na entrevista com IA e no currículo. Confira a avaliação antes de decidir.",
     "noReason": "A IA não deu um motivo para esta.",
-    "role": "Aderência à vaga",
-    "skills": "Aderência de habilidades",
     "has": "Tem",
     "missing": "Falta",
     "noneMissing": "Nada da lista da vaga.",
     "experience_one": "{{count}} ano de experiência",
     "experience_many": "{{count}} anos de experiência",
     "experience_other": "{{count}} anos de experiência",
-    "taken": "Entrevistas com IA: {{n}}"
+    "taken": "Entrevistas com IA: {{n}}",
+    "noSkills": "Ainda não há dados de habilidades deste candidato."
   },
   "applicants": {
     "title": "Candidatos",
@@ -56,5 +55,11 @@
     "applied": "Candidatos inscritos que correspondem",
     "ofTotal": "de {{total}} no banco",
     "summary": "{{matched}} de {{total}} candidatos combinam"
+  },
+  "scores": {
+    "ai": "Compatibilidade IA",
+    "role": "Cargo",
+    "skills": "Habilidades",
+    "interview": "Entrevista"
   }
 }

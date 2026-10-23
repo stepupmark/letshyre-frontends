@@ -21,15 +21,14 @@
     "why": "Perché corrisponde",
     "whyNote": "Dal colloquio con IA e dal curriculum. Controlla la scheda prima di decidere.",
     "noReason": "L'IA non ha indicato un motivo per questa.",
-    "role": "Adeguatezza al ruolo",
-    "skills": "Adeguatezza delle competenze",
     "has": "Ha",
     "missing": "Mancano",
     "noneMissing": "Niente dall'elenco dell'offerta.",
     "experience_one": "{{count}} anno di esperienza",
     "experience_many": "{{count}} anni di esperienza",
     "experience_other": "{{count}} anni di esperienza",
-    "taken": "Colloqui IA: {{n}}"
+    "taken": "Colloqui IA: {{n}}",
+    "noSkills": "Ancora nessun dato sulle competenze di questo candidato."
   },
   "applicants": {
     "title": "Candidati",
@@ -56,5 +55,11 @@
     "applied": "Candidati che corrispondono",
     "ofTotal": "su {{total}} nel bacino",
     "summary": "{{matched}} candidati su {{total}} corrispondono"
+  },
+  "scores": {
+    "ai": "Match IA",
+    "role": "Ruolo",
+    "skills": "Competenze",
+    "interview": "Colloquio"
   }
 }

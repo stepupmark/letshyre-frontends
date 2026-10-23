@@ -21,15 +21,14 @@
     "why": "Por qué coincide",
     "whyNote": "Según la entrevista con IA y el currículum. Revise la ficha antes de decidir.",
     "noReason": "La IA no dio un motivo para esta.",
-    "role": "Encaje con el puesto",
-    "skills": "Encaje de habilidades",
     "has": "Tiene",
     "missing": "Le falta",
     "noneMissing": "Nada de la lista de la oferta.",
     "experience_one": "{{count}} año de experiencia",
     "experience_many": "{{count}} años de experiencia",
     "experience_other": "{{count}} años de experiencia",
-    "taken": "Entrevistas con IA: {{n}}"
+    "taken": "Entrevistas con IA: {{n}}",
+    "noSkills": "Aún no hay datos de habilidades de este candidato."
   },
   "applicants": {
     "title": "Candidatos",
@@ -56,5 +55,11 @@
     "applied": "Postulantes que coinciden",
     "ofTotal": "de {{total}} en el grupo",
     "summary": "{{matched}} de {{total}} candidatos coinciden"
+  },
+  "scores": {
+    "ai": "Coincidencia IA",
+    "role": "Puesto",
+    "skills": "Habilidades",
+    "interview": "Entrevista"
   }
 }

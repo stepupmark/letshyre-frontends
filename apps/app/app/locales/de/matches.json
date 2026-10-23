@@ -20,14 +20,13 @@
     "why": "Warum dieser Match",
     "whyNote": "Aus dem KI-Interview und dem Lebenslauf. Prüfen Sie die Scorecard, bevor Sie entscheiden.",
     "noReason": "Die KI hat hierfür keinen Grund genannt.",
-    "role": "Rollenpassung",
-    "skills": "Fähigkeitspassung",
     "has": "Hat",
     "missing": "Fehlt",
     "noneMissing": "Nichts aus der Liste der Stelle.",
     "experience_one": "{{count}} Jahr Erfahrung",
     "experience_other": "{{count}} Jahre Erfahrung",
-    "taken": "KI-Interviews: {{n}}"
+    "taken": "KI-Interviews: {{n}}",
+    "noSkills": "Für diese Person gibt es noch keine Skill-Daten."
   },
   "applicants": {
     "title": "Bewerber",
@@ -52,5 +51,11 @@
     "applied": "Passende Bewerber",
     "ofTotal": "von {{total}} im Pool",
     "summary": "{{matched}} von {{total}} Kandidaten passen"
+  },
+  "scores": {
+    "ai": "KI-Match",
+    "role": "Rolle",
+    "skills": "Skills",
+    "interview": "Interview"
   }
 }

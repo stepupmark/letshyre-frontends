@@ -21,15 +21,14 @@
     "why": "Pourquoi cette correspondance",
     "whyNote": "D'après l'entretien IA et le CV. Consultez la grille avant de décider.",
     "noReason": "L'IA n'a pas donné de raison pour celle-ci.",
-    "role": "Adéquation au poste",
-    "skills": "Adéquation des compétences",
     "has": "Possède",
     "missing": "Manque",
     "noneMissing": "Rien de la liste de l'offre.",
     "experience_one": "{{count}} an d'expérience",
     "experience_many": "{{count}} ans d'expérience",
     "experience_other": "{{count}} ans d'expérience",
-    "taken": "Entretiens IA : {{n}}"
+    "taken": "Entretiens IA : {{n}}",
+    "noSkills": "Pas encore de données de compétences pour ce candidat."
   },
   "applicants": {
     "title": "Candidats",
@@ -56,5 +55,11 @@
     "applied": "Candidats qui correspondent",
     "ofTotal": "sur {{total}} dans le vivier",
     "summary": "{{matched}} candidats sur {{total}} correspondent"
+  },
+  "scores": {
+    "ai": "Score IA",
+    "role": "Poste",
+    "skills": "Compétences",
+    "interview": "Entretien"
   }
 }

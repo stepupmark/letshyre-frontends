@@ -19,13 +19,12 @@
     "why": "Alasan kecocokan",
     "whyNote": "Dari wawancara AI dan CV. Periksa kartu skor sebelum memutuskan.",
     "noReason": "AI tidak memberi alasan untuk yang ini.",
-    "role": "Kesesuaian posisi",
-    "skills": "Kesesuaian keterampilan",
     "has": "Punya",
     "missing": "Kurang",
     "noneMissing": "Tidak ada yang kurang dari daftar lowongan.",
     "experience_other": "Pengalaman {{count}} tahun",
-    "taken": "Wawancara AI: {{n}}"
+    "taken": "Wawancara AI: {{n}}",
+    "noSkills": "Belum ada data keahlian untuk kandidat ini."
   },
   "applicants": {
     "title": "Pelamar",
@@ -48,5 +47,11 @@
     "applied": "Pelamar yang cocok",
     "ofTotal": "dari {{total}} di kumpulan",
     "summary": "{{matched}} dari {{total}} kandidat cocok"
+  },
+  "scores": {
+    "ai": "Kecocokan AI",
+    "role": "Peran",
+    "skills": "Keahlian",
+    "interview": "Wawancara"
   }
 }

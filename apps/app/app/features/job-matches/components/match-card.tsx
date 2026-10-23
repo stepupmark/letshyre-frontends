@@ -7,6 +7,7 @@ import { matchScore } from "../lib/job-matches"
 import type { Match } from "../schemas/job-matches.schema"
 import { MatchMeter } from "./match-meter"
 import { MatchPerson } from "./match-person"
+import { MatchScores } from "./match-scores"
 
 export function MatchCard({
   match,
@@ -39,6 +40,7 @@ export function MatchCard({
         <ScoreBand score={score} />
         <MatchMeter score={score} className="flex-1" />
       </span>
+      <MatchScores match={match} />
       {reason && (
         <span
           id={`${id}-reason`}

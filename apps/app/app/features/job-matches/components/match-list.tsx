@@ -4,7 +4,6 @@ import { useMemo, useState, type ReactNode } from "react"
 import { useSearchParams } from "react-router"
 
 import { DataTable } from "@/components/data-table"
-import { DetailSheet } from "@/components/detail-sheet"
 import { useDetailParam } from "@/hooks/use-detail-param"
 import { bandOf } from "@/lib/score-band"
 
@@ -19,7 +18,7 @@ import type { Match } from "../schemas/job-matches.schema"
 import { BandTabs } from "./band-tabs"
 import { MatchCard } from "./match-card"
 import { useMatchColumns } from "./match-columns"
-import { MatchPeek } from "./match-peek"
+import { MatchDialog } from "./match-dialog"
 
 const BAND_PARAM = "band"
 
@@ -110,13 +109,13 @@ export function MatchList({
         )}
       />
 
-      <DetailSheet
+      <MatchDialog
+        match={shown}
         open={Boolean(open)}
         onClose={() => {
           setOpenId(null)
         }}
-        title={shown ? (shown.candidate_name ?? t("unnamed")) : ""}
-        description={shown?.ai_match?.role_applied}
+        actions={actions}
         position={
           rows && index >= 0
             ? { current: index + 1, total: rows.length }
@@ -136,9 +135,7 @@ export function MatchList({
               }
             : undefined
         }
-      >
-        {shown && <MatchPeek match={shown} actions={actions} />}
-      </DetailSheet>
+      />
     </div>
   )
 }

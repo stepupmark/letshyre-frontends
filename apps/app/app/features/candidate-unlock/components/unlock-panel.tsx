@@ -214,7 +214,9 @@ export function UnlockPanel({
                     }}
                   >
                     <LockOpen />
-                    {t("panel.button", { count: cost })}
+                    {cost === 0
+                      ? t("panel.title")
+                      : t("panel.button", { count: cost })}
                   </Button>
                   {(cost === 0 || credits.isError) && (
                     <p className="text-xs text-muted-foreground">

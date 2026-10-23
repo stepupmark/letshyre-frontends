@@ -20,14 +20,13 @@
     "why": "Waarom deze match",
     "whyNote": "Uit het AI-interview en het cv. Bekijk de scorekaart voordat u beslist.",
     "noReason": "De AI gaf hiervoor geen reden.",
-    "role": "Functiematch",
-    "skills": "Vaardighedenmatch",
     "has": "Heeft",
     "missing": "Mist",
     "noneMissing": "Niets van de lijst van de vacature.",
     "experience_one": "{{count}} jaar ervaring",
     "experience_other": "{{count}} jaar ervaring",
-    "taken": "AI-interviews: {{n}}"
+    "taken": "AI-interviews: {{n}}",
+    "noSkills": "Nog geen vaardigheidsgegevens voor deze kandidaat."
   },
   "applicants": {
     "title": "Sollicitanten",
@@ -52,5 +51,11 @@
     "applied": "Sollicitanten die matchen",
     "ofTotal": "van {{total}} in de pool",
     "summary": "{{matched}} van {{total}} kandidaten passen"
+  },
+  "scores": {
+    "ai": "AI-match",
+    "role": "Functie",
+    "skills": "Vaardigheden",
+    "interview": "Interview"
   }
 }

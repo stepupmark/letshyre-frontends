@@ -20,14 +20,13 @@
     "why": "Why this match",
     "whyNote": "From the AI interview and resume. Check the scorecard before deciding.",
     "noReason": "The AI didn't give a reason for this one.",
-    "role": "Role fit",
-    "skills": "Skills fit",
     "has": "Has",
     "missing": "Missing",
     "noneMissing": "Nothing from the job's list.",
     "experience_one": "{{count}} year of experience",
     "experience_other": "{{count}} years of experience",
-    "taken": "AI interviews: {{n}}"
+    "taken": "AI interviews: {{n}}",
+    "noSkills": "No skills data for this candidate yet."
   },
   "applicants": {
     "title": "Applicants",
@@ -52,5 +51,11 @@
     "applied": "Applicants who match",
     "ofTotal": "of {{total}} in the pool",
     "summary": "{{matched}} of {{total}} candidates match"
+  },
+  "scores": {
+    "ai": "AI match",
+    "role": "Role",
+    "skills": "Skills",
+    "interview": "Interview"
   }
 }

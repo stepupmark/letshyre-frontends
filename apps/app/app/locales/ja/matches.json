@@ -19,13 +19,12 @@
     "why": "マッチの理由",
     "whyNote": "AI 面接と履歴書に基づいています。判断する前にスコアカードを確認してください。",
     "noReason": "AI はこのマッチの理由を示していません。",
-    "role": "職種への適合",
-    "skills": "スキルの適合",
     "has": "あり",
     "missing": "不足",
     "noneMissing": "求人の条件はすべて満たしています。",
     "experience_other": "経験 {{count}} 年",
-    "taken": "AI面接: {{n}}"
+    "taken": "AI面接: {{n}}",
+    "noSkills": "この候補者のスキル情報はまだありません。"
   },
   "applicants": {
     "title": "応募者",
@@ -48,5 +47,11 @@
     "applied": "マッチした応募者",
     "ofTotal": "候補者プール {{total}} 人中",
     "summary": "{{total}} 人中 {{matched}} 人がマッチ"
+  },
+  "scores": {
+    "ai": "AI マッチ",
+    "role": "職種",
+    "skills": "スキル",
+    "interview": "面接"
   }
 }
