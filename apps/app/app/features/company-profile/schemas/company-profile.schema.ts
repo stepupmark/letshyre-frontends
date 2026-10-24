@@ -1,18 +1,9 @@
 import { z } from "zod"
 
-const text = z.string().nullish()
-
-const person = {
-  name: text,
-  full_name: text,
-  user_name: text,
-  email: text,
-  phone_number: text,
-}
+// one odd field shows as empty instead of failing the whole page
+const text = z.string().nullish().catch(null)
 
 export const companySchema = z.looseObject({
-  ...person,
-  user: z.looseObject(person).nullish(),
   open_jobs_posted: z.coerce.number().catch(0),
   total_jobs_posted: z.coerce.number().catch(0),
   kyc: z
@@ -34,7 +25,8 @@ export const companySchema = z.looseObject({
       address_proof: text,
       bank_proof: text,
     })
-    .nullish(),
+    .nullish()
+    .catch(null),
 })
 
 export type Company = z.infer<typeof companySchema>

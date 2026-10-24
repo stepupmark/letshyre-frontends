@@ -17,7 +17,9 @@ test("an employer reviews their company and edits it, with a guard on leaving", 
 
   await expect(page.getByRole("heading", { name: "Acme Labs" })).toBeVisible()
   await expect(page.getByText("Verified").first()).toBeVisible()
-  await expect(page.getByText("Neha Kapoor")).toBeVisible()
+  await expect(
+    page.getByRole("main").getByText("employer@test.in")
+  ).toBeVisible()
   await expect(page.getByText("•••• 234F")).toBeVisible()
   await page.getByRole("button", { name: "Show PAN" }).click()
   await expect(page.getByText("ABCDE1234F")).toBeVisible()
@@ -56,6 +58,8 @@ test("an employer reviews their company and edits it, with a guard on leaving", 
   await expect(page.getByText("Company details saved")).toBeVisible()
   await expect(page).toHaveURL(/\/employer\/company$/)
   expect(sent).toContain("acme-labs")
+  expect(sent).toContain('name="company_industry"\r\n\r\nit')
+  expect(sent).not.toContain("company_logo")
 })
 
 test("an empty field links straight to its input in the edit form", async ({
@@ -67,7 +71,7 @@ test("an empty field links straight to its input in the edit form", async ({
     "GET /user/v1/employer_profile/": (route) =>
       reply(route, {
         data: {
-          name: "Neha Kapoor",
+          user: "f6b4e989-32a1-47d3-ada8-5898587bc17b",
           kyc: { company_name: "Acme Labs", kyc_status: "pending" },
         },
       }),

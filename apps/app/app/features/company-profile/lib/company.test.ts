@@ -15,16 +15,39 @@ describe("verificationOf", () => {
 })
 
 describe("accountOf", () => {
-  it("falls back to the nested user when the top level is empty", () => {
+  it("joins first and last names when there is no full name", () => {
+    expect(
+      accountOf({
+        first_name: "Neha",
+        last_name: " Kapoor ",
+        email: "neha@acme.test",
+      })
+    ).toEqual({ name: "Neha Kapoor", email: "neha@acme.test", phone: null })
+  })
+})
+
+describe("companySchema", () => {
+  it("reads the profile in the shape the API sends", () => {
     const company = companySchema.parse({
-      name: "",
-      user: { user_name: "Neha", email: "neha@acme.test" },
+      id: "f75db61e",
+      user: "f6b4e989-32a1-47d3-ada8-5898587bc17b",
+      is_verified: false,
+      open_jobs_posted: 3,
+      total_jobs_posted: "5",
+      kyc: {
+        company_name: "Acme Labs",
+        kyc_status: "Verified",
+        reference: null,
+      },
     })
-    expect(accountOf(company)).toEqual({
-      name: "Neha",
-      email: "neha@acme.test",
-      phone: null,
-    })
+    expect(company.kyc?.company_name).toBe("Acme Labs")
+    expect(company.total_jobs_posted).toBe(5)
+  })
+
+  it("empties an odd field instead of failing the page", () => {
+    const company = companySchema.parse({ kyc: { company_name: 42 } })
+    expect(company.kyc?.company_name).toBeNull()
+    expect(companySchema.parse({ kyc: [] }).kyc).toBeNull()
   })
 })
 

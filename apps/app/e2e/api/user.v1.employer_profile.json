@@ -1,12 +1,15 @@
 {
   "success": true,
+  "status": 200,
+  "message": "Employer profile fetched successfully.",
   "data": {
-    "name": "Neha Kapoor",
-    "email": "employer@test.in",
-    "phone_number": "9812345678",
-    "open_jobs_posted": 3,
-    "total_jobs_posted": 8,
+    "id": "f75db61e-f52c-4ccf-962f-acf9a1781dff",
+    "user": "f6b4e989-32a1-47d3-ada8-5898587bc17b",
+    "is_verified": false,
+    "is_subscribed": false,
     "kyc": {
+      "id": "5fd33443-c86a-4cfa-846c-28134e348d02",
+      "employer": "f75db61e-f52c-4ccf-962f-acf9a1781dff",
       "company_name": "Acme Labs",
       "company_website": "https://acme.test",
       "official_email": "hr@acme.test",
@@ -22,7 +25,18 @@
       "registration_certificate": "https://api.letshyre.ai/kyc/reg.pdf",
       "gst_certificate": null,
       "address_proof": null,
-      "bank_proof": null
-    }
+      "bank_proof": null,
+      "reference": null,
+      "website_url": null,
+      "is_profile_complete": false,
+      "verification_remarks": "",
+      "authorized_id_proof": null,
+      "created_at": "2026-09-17T10:46:14.829347+05:30",
+      "updated_at": "2026-09-29T18:31:42.248519+05:30"
+    },
+    "total_jobs_posted": 8,
+    "open_jobs_posted": 3,
+    "created_at": "2026-09-17T10:46:14.826013+05:30",
+    "updated_at": "2026-09-18T15:48:42.929048+05:30"
   }
 }

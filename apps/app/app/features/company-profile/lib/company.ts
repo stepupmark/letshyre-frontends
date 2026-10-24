@@ -1,5 +1,3 @@
-import type { Company } from "../schemas/company-profile.schema"
-
 export type Verification = "verified" | "pending" | "rejected"
 
 export const verificationOf = (status: string | null | undefined) => {
@@ -10,24 +8,19 @@ export const verificationOf = (status: string | null | undefined) => {
   return "pending"
 }
 
-const first = (...values: (string | null | undefined)[]) =>
-  values.find((value) => value?.trim())?.trim() ?? null
+const text = (value: unknown) =>
+  typeof value === "string" && value.trim() ? value.trim() : null
 
-export const accountOf = (company: Company) => {
-  const user = company.user
-  return {
-    name: first(
-      company.full_name,
-      company.name,
-      company.user_name,
-      user?.full_name,
-      user?.name,
-      user?.user_name
+// the profile endpoint has no personal details, so they come from the signed-in user
+export const accountOf = (user: Record<string, unknown>) => ({
+  name:
+    text(user.name) ??
+    text(
+      [text(user.first_name), text(user.last_name)].filter(Boolean).join(" ")
     ),
-    email: first(company.email, user?.email),
-    phone: first(company.phone_number, user?.phone_number),
-  }
-}
+  email: text(user.email),
+  phone: text(user.phone_number),
+})
 
 export const masked = (value: string) =>
   value.length <= 4 ? value : `•••• ${value.slice(-4)}`

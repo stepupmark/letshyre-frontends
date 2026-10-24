@@ -112,37 +112,3 @@ test("a revoked shared link can be turned back on with Undo", async ({
     .poll(() => sent)
     .toEqual([{ is_active: false }, { is_active: true }])
 })
-
-test("an employer edits company details in place", async ({
-  page,
-  api,
-  signInAs,
-}) => {
-  let body = ""
-  await api({
-    "PATCH /user/v1/employer_kyc/": async (route) => {
-      body = route.request().postData() ?? ""
-      await reply(route, { success: true })
-    },
-  })
-  await signInAs("employer")
-  await page.goto("/employer/company")
-  await expect(page.getByRole("heading", { name: "Acme Labs" })).toBeVisible()
-  await expect(page.getByText("Information technology")).toBeVisible()
-
-  await page.getByRole("button", { name: "Edit" }).click()
-  await page.getByLabel("LinkedIn page").fill("https://example.com/acme")
-  await page.getByRole("button", { name: "Save changes" }).click()
-  await expect(
-    page.getByText("Enter a linkedin.com link, or leave it empty.")
-  ).toBeVisible()
-  await page.getByLabel("LinkedIn page").fill("")
-  await page.getByLabel("About the company").fill("We build calm hiring tools.")
-  await page.getByRole("button", { name: "Save changes" }).click()
-
-  await expect(page.getByText("Company details saved")).toBeVisible()
-  expect(body).toContain('name="company_description"')
-  expect(body).toContain("We build calm hiring tools.")
-  expect(body).toContain('name="company_industry"\r\n\r\nit')
-  expect(body).not.toContain("company_logo")
-})

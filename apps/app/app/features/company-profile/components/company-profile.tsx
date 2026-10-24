@@ -45,7 +45,7 @@ export function CompanyProfile() {
         </div>
         <div className="flex min-w-0 flex-col gap-6">
           <VerificationPanel company={company} />
-          <AccountPanel company={company} />
+          <AccountPanel />
         </div>
       </div>
     </div>

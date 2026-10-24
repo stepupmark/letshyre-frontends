@@ -1,12 +1,14 @@
+import { useSession } from "@workspace/auth/react"
 import { useTranslation } from "@workspace/i18n/react"
 
 import { accountOf } from "../lib/company"
-import type { Company } from "../schemas/company-profile.schema"
 import { Fact, Panel } from "./parts"
 
-export function AccountPanel({ company }: { company: Company }) {
+export function AccountPanel() {
   const { t } = useTranslation("company")
-  const account = accountOf(company)
+  const session = useSession()
+  if (session.status !== "signed-in") return null
+  const account = accountOf(session.user)
   const facts = [
     [t("account.name"), account.name],
     [t("account.email"), account.email],
