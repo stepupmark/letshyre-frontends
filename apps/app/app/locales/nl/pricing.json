@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "description": "Begin met 10 gratis credits en koop alleen bij wanneer nodig, zonder abonnement. Elke ontgrendeling bevat profiel, scorecard en opname."
+  },
+  "hero": {
+    "eyebrow": "Prijzen",
+    "title": "Betaal alleen voor de <hl>kandidaten die u ontgrendelt</hl>.",
+    "body": "Credits ontgrendelen kandidaten die al een LetsHyre AI-interview hebben afgerond. U koopt ze één keer, er is geen maandfactuur en ze verlopen niet.",
+    "includes": "Elke ontgrendeling bevat",
+    "items": [
+      "Kandidaatprofiel en cv",
+      "Scorecard van het AI-interview",
+      "Interviewopname"
+    ]
+  },
+  "plans": {
+    "heading": "Pakketten",
+    "note": "Prijzen zijn in Indiase roepies, exclusief GST, die bij het afrekenen wordt toegevoegd.",
+    "credits_one": "{{count}} credit",
+    "credits_other": "{{count}} credits",
+    "rate": "Elke credit kost {{price}}, welk pakket u ook kiest.",
+    "unavailable": "Prijs niet beschikbaar",
+    "seats_one": "Resultaten delen met {{count}} teamlid",
+    "seats_other": "Resultaten delen met {{count}} teamleden",
+    "topUps": "Opwaarderen wanneer u wilt",
+    "noExpiry": "Credits verlopen nooit",
+    "buy": "{{name}} kopen",
+    "recommended": "Aanbevolen",
+    "free": {
+      "name": "Free",
+      "audience": "Probeer het op een echte vacature",
+      "priceNote": "bij aanmelding",
+      "cta": "Gratis beginnen"
+    },
+    "pro": {
+      "name": "Pro",
+      "audience": "Voor teams die af en toe aannemen",
+      "priceNote": "excl. GST, eenmalig",
+      "cta": "Pro kopen"
+    },
+    "business": {
+      "name": "Business",
+      "audience": "Voor teams die elke maand aannemen",
+      "priceNote": "excl. GST, eenmalig",
+      "badge": "Meeste credits",
+      "cta": "Business kopen"
+    },
+    "custom": {
+      "name": "Maatwerk",
+      "audience": "Voor hoge volumes en recruitmentbureaus",
+      "price": "Laten we praten",
+      "priceNote": "Prijs op basis van volume",
+      "cta": "Praat met sales",
+      "features": [
+        "Alles uit Business",
+        "Credits afgestemd op uw werving",
+        "Elke teamgrootte",
+        "Persoonlijke ondersteuning"
+      ]
+    },
+    "trust": {
+      "label": "Waarom kopen eenvoudig is",
+      "oneTime": "Eenmalige betaling",
+      "noRenewal": "Niets wordt automatisch verlengd",
+      "noExpiry": "Credits verlopen nooit",
+      "razorpay": "Veilig afrekenen met Razorpay"
+    }
+  },
+  "compare": {
+    "title": "Pakketten vergelijken",
+    "body": "Elk pakket ontgrendelt dezelfde kandidaatgegevens. Wat verschilt is het aantal credits, wie in uw team resultaten ziet en de ondersteuning.",
+    "caption": "Wat elk pakket bevat",
+    "feature": "Functie",
+    "picker": "Pakket om te vergelijken",
+    "rows": {
+      "credits": "Inbegrepen credits",
+      "profiles": "Kandidaatprofiel en cv",
+      "scorecards": "Scorecard van het AI-interview",
+      "recordings": "Interviewopname",
+      "seats": "Teamleden die resultaten zien",
+      "topUps": "Extra credits kopen",
+      "validity": "Geldigheid van credits",
+      "support": "Persoonlijke ondersteuning"
+    },
+    "values": {
+      "included": "Inbegrepen",
+      "notIncluded": "Niet inbegrepen",
+      "custom": "Maatwerk",
+      "noExpiry": "Nooit"
+    }
+  },
+  "topUps": {
+    "title": "Meer credits nodig?",
+    "body": "Met Pro of Business kunt u altijd opwaarderen. Opgewaardeerde credits verlopen nooit, net als die uit uw pakket.",
+    "credits_one": "{{count}} credit",
+    "credits_other": "{{count}} credits",
+    "priceNote": "excl. GST",
+    "cta": "Kopen",
+    "ctaLabel_one": "{{count}} credit kopen voor {{price}}",
+    "ctaLabel_other": "{{count}} credits kopen voor {{price}}",
+    "ctaLabelNoPrice_one": "{{count}} credit kopen",
+    "ctaLabelNoPrice_other": "{{count}} credits kopen",
+    "sameRate": "Elke credit kost hetzelfde als in elk abonnement."
+  },
+  "faq": {
+    "title": "Vragen over prijzen",
+    "body": "Niet gevonden wat u zoekt?",
+    "contact": "Neem contact op",
+    "items": [
+      {
+        "q": "Wat krijg ik voor een credit?",
+        "a": "Credits ontgrendelen kandidaten die een LetsHyre AI-interview hebben afgerond. Een ontgrendelde kandidaat toont u het volledige profiel, cv, AI-scorecard en de interviewopname. U ziet hoeveel credits een ontgrendeling kost voordat u bevestigt."
+      },
+      {
+        "q": "Verlopen credits?",
+        "a": "Nee. Credits blijven op uw account tot u ze gebruikt, of ze nu uit uw pakket komen of uit een opwaardering."
+      },
+      {
+        "q": "Is dit een abonnement?",
+        "a": "Nee. Elke aankoop is een eenmalige betaling. Er wordt niets verlengd en er wordt nooit automatisch afgeschreven."
+      },
+      {
+        "q": "Wie in mijn team kan resultaten zien?",
+        "a": "Met Free deelt u resultaten met 1 teamlid, met Pro met 5 en met Business met 25. Hebt u meer plekken nodig, dan dekt een maatwerkpakket elke teamgrootte."
+      },
+      {
+        "q": "Hoe betaal ik?",
+        "a": "Betalingen lopen via Razorpay, dus u kunt UPI, een kaart of internetbankieren gebruiken. Prijzen zijn in Indiase roepies en eventuele belasting ziet u bij het afrekenen, vóór u betaalt."
+      },
+      {
+        "q": "Kan ik mijn geld terugkrijgen?",
+        "a": "We beoordelen terugbetalingsverzoeken binnen 7 dagen bij dubbele betalingen, factuurfouten of een probleem met het platform waardoor u niet kreeg waarvoor u betaalde. Al ontgrendelde profielen worden niet terugbetaald. Het <refund>terugbetalingsbeleid</refund> geeft alle details."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Begin met gratis credits.",
+    "body": "Maak een werkgeversaccount, plaats een vacature en ontgrendel uw eerste kandidaten zonder iets te betalen.",
+    "primary": "Gratis account aanmaken",
+    "secondary": "Praat met sales"
+  },
+  "prices": {
+    "loading": "Huidige prijzen laden",
+    "slow": "De prijzen van vandaag worden nog opgehaald. Dit duurt langer dan normaal.",
+    "retry": "Opnieuw proberen",
+    "retrying": "Opnieuw bezig",
+    "error": {
+      "title": "We konden de prijzen van vandaag niet laden",
+      "body": "Alle pakketten en functies staan hier. Probeer het opnieuw om de huidige prijzen te zien."
+    },
+    "offline": {
+      "title": "U bent offline",
+      "body": "De prijzen laden zodra u weer online bent."
+    }
+  }
+}

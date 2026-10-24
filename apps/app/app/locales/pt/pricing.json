@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "description": "Comece com 10 créditos grátis e compre mais só quando precisar, sem assinatura. Cada desbloqueio inclui perfil, avaliação e gravação do candidato."
+  },
+  "hero": {
+    "eyebrow": "Preços",
+    "title": "Pague só pelos <hl>candidatos que você desbloqueia</hl>.",
+    "body": "Os créditos desbloqueiam candidatos que já concluíram uma entrevista com IA do LetsHyre. Você os compra uma vez, não há mensalidade e eles não expiram.",
+    "includes": "Cada desbloqueio inclui",
+    "items": [
+      "Perfil e currículo do candidato",
+      "Avaliação da entrevista com IA",
+      "Gravação da entrevista"
+    ]
+  },
+  "plans": {
+    "heading": "Planos",
+    "note": "Os preços estão em rúpias indianas e não incluem o GST, adicionado no checkout.",
+    "credits_one": "{{count}} crédito",
+    "credits_many": "{{count}} de créditos",
+    "credits_other": "{{count}} créditos",
+    "rate": "Cada crédito custa {{price}}, seja qual for o plano.",
+    "unavailable": "Preço indisponível",
+    "seats_one": "Compartilhe resultados com {{count}} colega",
+    "seats_many": "Compartilhe resultados com {{count}} de colegas",
+    "seats_other": "Compartilhe resultados com {{count}} colegas",
+    "topUps": "Recarregue quando quiser",
+    "noExpiry": "Os créditos nunca expiram",
+    "buy": "Comprar {{name}}",
+    "recommended": "Recomendado",
+    "free": {
+      "name": "Free",
+      "audience": "Teste com uma vaga real",
+      "priceNote": "no cadastro",
+      "cta": "Começar grátis"
+    },
+    "pro": {
+      "name": "Pro",
+      "audience": "Para equipes que contratam de vez em quando",
+      "priceNote": "mais GST, pagamento único",
+      "cta": "Comprar Pro"
+    },
+    "business": {
+      "name": "Business",
+      "audience": "Para equipes que contratam todo mês",
+      "priceNote": "mais GST, pagamento único",
+      "badge": "Mais créditos",
+      "cta": "Comprar Business"
+    },
+    "custom": {
+      "name": "Personalizado",
+      "audience": "Para alto volume e agências de recrutamento",
+      "price": "Vamos conversar",
+      "priceNote": "Preço por volume",
+      "cta": "Falar com vendas",
+      "features": [
+        "Tudo do Business",
+        "Créditos na medida das suas contratações",
+        "Qualquer tamanho de equipe",
+        "Suporte dedicado"
+      ]
+    },
+    "trust": {
+      "label": "Porque comprar é simples",
+      "oneTime": "Pagamento único",
+      "noRenewal": "Nada é renovado automaticamente",
+      "noExpiry": "Os créditos nunca expiram",
+      "razorpay": "Pagamento seguro com Razorpay"
+    }
+  },
+  "compare": {
+    "title": "Comparar planos",
+    "body": "Todos os planos desbloqueiam as mesmas informações do candidato. O que muda é quantos créditos você recebe, quem da equipe vê os resultados e o suporte.",
+    "caption": "O que cada plano inclui",
+    "feature": "Recurso",
+    "picker": "Plano para comparar",
+    "rows": {
+      "credits": "Créditos incluídos",
+      "profiles": "Perfil e currículo do candidato",
+      "scorecards": "Avaliação da entrevista com IA",
+      "recordings": "Gravação da entrevista",
+      "seats": "Colegas que veem os resultados",
+      "topUps": "Comprar créditos extras",
+      "validity": "Validade dos créditos",
+      "support": "Suporte dedicado"
+    },
+    "values": {
+      "included": "Incluído",
+      "notIncluded": "Não incluído",
+      "custom": "Personalizado",
+      "noExpiry": "Nunca"
+    }
+  },
+  "topUps": {
+    "title": "Precisa de mais créditos?",
+    "body": "No Pro ou no Business você pode recarregar a qualquer momento. Créditos de recarga nunca expiram, como os do seu plano.",
+    "credits_one": "{{count}} crédito",
+    "credits_many": "{{count}} de créditos",
+    "credits_other": "{{count}} créditos",
+    "priceNote": "mais GST",
+    "cta": "Comprar",
+    "ctaLabel_one": "Comprar {{count}} crédito por {{price}}",
+    "ctaLabel_many": "Comprar {{count}} de créditos por {{price}}",
+    "ctaLabel_other": "Comprar {{count}} créditos por {{price}}",
+    "ctaLabelNoPrice_one": "Comprar {{count}} crédito",
+    "ctaLabelNoPrice_many": "Comprar {{count}} de créditos",
+    "ctaLabelNoPrice_other": "Comprar {{count}} créditos",
+    "sameRate": "Cada crédito custa o mesmo que em qualquer plano."
+  },
+  "faq": {
+    "title": "Dúvidas sobre preços",
+    "body": "Não encontrou o que precisa?",
+    "contact": "Fale conosco",
+    "items": [
+      {
+        "q": "O que um crédito me dá?",
+        "a": "Os créditos desbloqueiam candidatos que concluíram uma entrevista com IA do LetsHyre. Um candidato desbloqueado mostra o perfil completo, o currículo, a avaliação de IA e a gravação da entrevista. Você vê quantos créditos o desbloqueio exige antes de confirmar."
+      },
+      {
+        "q": "Os créditos expiram?",
+        "a": "Não. Os créditos ficam na sua conta até você usá-los, venham do seu plano ou de uma recarga."
+      },
+      {
+        "q": "Isso é uma assinatura?",
+        "a": "Não. Cada compra é um pagamento único. Nada é renovado e você nunca é cobrado automaticamente."
+      },
+      {
+        "q": "Quem da minha equipe pode ver os resultados?",
+        "a": "O Free permite compartilhar resultados com 1 colega, o Pro com 5 e o Business com 25. Se precisar de mais lugares, um plano personalizado atende qualquer tamanho de equipe."
+      },
+      {
+        "q": "Como pago?",
+        "a": "Os pagamentos são feitos pela Razorpay, então você pode usar UPI, cartão ou internet banking. Os preços estão em rúpias indianas e os impostos aplicáveis aparecem no checkout antes de pagar."
+      },
+      {
+        "q": "Posso pedir reembolso?",
+        "a": "Analisamos pedidos de reembolso feitos em até 7 dias por pagamentos duplicados, erros de cobrança ou um problema da plataforma que impediu você de receber o que pagou. Perfis já desbloqueados não são reembolsados. A <refund>política de reembolso</refund> traz todos os detalhes."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Comece com créditos grátis.",
+    "body": "Crie uma conta de empresa, publique uma vaga e desbloqueie seus primeiros candidatos sem pagar nada.",
+    "primary": "Criar conta grátis",
+    "secondary": "Falar com vendas"
+  },
+  "prices": {
+    "loading": "Carregando preços atuais",
+    "slow": "Ainda buscando os preços de hoje. Está demorando mais que o normal.",
+    "retry": "Tentar novamente",
+    "retrying": "Tentando novamente",
+    "error": {
+      "title": "Não conseguimos carregar os preços de hoje",
+      "body": "Planos e recursos estão todos aqui. Tente de novo para ver quanto custam agora."
+    },
+    "offline": {
+      "title": "Você está offline",
+      "body": "Os preços vão carregar assim que você voltar a ficar online."
+    }
+  }
+}

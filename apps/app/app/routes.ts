@@ -68,6 +68,9 @@ export default [
   layout("layouts/public-layout.tsx", [
     route("shared-scorecard/:shareId", "routes/shared-scorecard.tsx"),
   ]),
+  layout("layouts/pricing-layout.tsx", [
+    route("employer/pricing", "routes/employer/pricing.tsx"),
+  ]),
   layout("layouts/onboarding-layout.tsx", [
     route("employer/onboarding", "routes/employer/onboarding.tsx"),
   ]),

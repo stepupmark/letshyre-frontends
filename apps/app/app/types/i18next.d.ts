@@ -13,6 +13,7 @@ import type guide from "../locales/en/guide.json"
 import type jobs from "../locales/en/jobs.json"
 import type matches from "../locales/en/matches.json"
 import type onboarding from "../locales/en/onboarding.json"
+import type pricing from "../locales/en/pricing.json"
 import type scorecard from "../locales/en/scorecard.json"
 import type shell from "../locales/en/shell.json"
 import type team from "../locales/en/team.json"
@@ -35,6 +36,7 @@ declare module "i18next" {
       jobs: typeof jobs
       matches: typeof matches
       onboarding: typeof onboarding
+      pricing: typeof pricing
       scorecard: typeof scorecard
       shell: typeof shell
       team: typeof team

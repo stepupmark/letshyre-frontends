@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "description": "Starten Sie mit 10 kostenlosen Credits und kaufen Sie nur bei Bedarf nach, ohne Abo. Jede Freischaltung enthält Profil, Scorecard und Aufzeichnung."
+  },
+  "hero": {
+    "eyebrow": "Preise",
+    "title": "Zahlen Sie nur für die <hl>Kandidaten, die Sie freischalten</hl>.",
+    "body": "Credits schalten Kandidaten frei, die bereits ein LetsHyre-KI-Interview abgeschlossen haben. Sie kaufen sie einmal, es gibt keine Monatsrechnung und sie verfallen nicht.",
+    "includes": "Jede Freischaltung enthält",
+    "items": [
+      "Kandidatenprofil und Lebenslauf",
+      "KI-Interview-Scorecard",
+      "Interviewaufzeichnung"
+    ]
+  },
+  "plans": {
+    "heading": "Tarife",
+    "note": "Preise in indischen Rupien, ohne GST, die im Checkout hinzukommt.",
+    "credits_one": "{{count}} Credit",
+    "credits_other": "{{count}} Credits",
+    "rate": "Jeder Credit kostet {{price}}, egal welchen Tarif Sie wählen.",
+    "unavailable": "Preis nicht verfügbar",
+    "seats_one": "Ergebnisse mit {{count}} Teammitglied teilen",
+    "seats_other": "Ergebnisse mit {{count}} Teammitgliedern teilen",
+    "topUps": "Jederzeit aufladen",
+    "noExpiry": "Credits verfallen nie",
+    "buy": "{{name}} kaufen",
+    "recommended": "Empfohlen",
+    "free": {
+      "name": "Free",
+      "audience": "Testen Sie es an einer echten Stelle",
+      "priceNote": "bei Registrierung",
+      "cta": "Kostenlos starten"
+    },
+    "pro": {
+      "name": "Pro",
+      "audience": "Für Teams, die gelegentlich einstellen",
+      "priceNote": "zzgl. GST, einmalig",
+      "cta": "Pro kaufen"
+    },
+    "business": {
+      "name": "Business",
+      "audience": "Für Teams, die jeden Monat einstellen",
+      "priceNote": "zzgl. GST, einmalig",
+      "badge": "Die meisten Credits",
+      "cta": "Business kaufen"
+    },
+    "custom": {
+      "name": "Individuell",
+      "audience": "Für hohes Volumen und Personalagenturen",
+      "price": "Sprechen wir",
+      "priceNote": "Preis nach Volumen",
+      "cta": "Mit dem Vertrieb sprechen",
+      "features": [
+        "Alles aus Business",
+        "Credits passend zu Ihrem Bedarf",
+        "Jede Teamgröße",
+        "Persönlicher Support"
+      ]
+    },
+    "trust": {
+      "label": "Warum der Kauf einfach ist",
+      "oneTime": "Einmalzahlung",
+      "noRenewal": "Keine automatische Verlängerung",
+      "noExpiry": "Credits verfallen nie",
+      "razorpay": "Sicherer Checkout mit Razorpay"
+    }
+  },
+  "compare": {
+    "title": "Tarife vergleichen",
+    "body": "Jeder Tarif schaltet dieselben Kandidateninformationen frei. Unterschiede gibt es bei der Zahl der Credits, wer im Team Ergebnisse sieht, und beim Support.",
+    "caption": "Was jeder Tarif enthält",
+    "feature": "Funktion",
+    "picker": "Tarif zum Vergleich",
+    "rows": {
+      "credits": "Enthaltene Credits",
+      "profiles": "Kandidatenprofil und Lebenslauf",
+      "scorecards": "KI-Interview-Scorecard",
+      "recordings": "Interviewaufzeichnung",
+      "seats": "Teammitglieder, die Ergebnisse sehen",
+      "topUps": "Zusätzliche Credits kaufen",
+      "validity": "Ablauf der Credits",
+      "support": "Persönlicher Support"
+    },
+    "values": {
+      "included": "Enthalten",
+      "notIncluded": "Nicht enthalten",
+      "custom": "Individuell",
+      "noExpiry": "Nie"
+    }
+  },
+  "topUps": {
+    "title": "Brauchen Sie mehr Credits?",
+    "body": "Mit Pro oder Business können Sie jederzeit aufladen. Aufgeladene Credits verfallen nie, genau wie die aus Ihrem Tarif.",
+    "credits_one": "{{count}} Credit",
+    "credits_other": "{{count}} Credits",
+    "priceNote": "zzgl. GST",
+    "cta": "Kaufen",
+    "ctaLabel_one": "{{count}} Credit für {{price}} kaufen",
+    "ctaLabel_other": "{{count}} Credits für {{price}} kaufen",
+    "ctaLabelNoPrice_one": "{{count}} Credit kaufen",
+    "ctaLabelNoPrice_other": "{{count}} Credits kaufen",
+    "sameRate": "Jeder Credit kostet so viel wie in jedem Tarif."
+  },
+  "faq": {
+    "title": "Fragen zu den Preisen",
+    "body": "Nicht gefunden, was Sie suchen?",
+    "contact": "Kontakt aufnehmen",
+    "items": [
+      {
+        "q": "Was bekomme ich für einen Credit?",
+        "a": "Credits schalten Kandidaten frei, die ein LetsHyre-KI-Interview abgeschlossen haben. Ein freigeschalteter Kandidat zeigt Ihnen sein vollständiges Profil, den Lebenslauf, die KI-Scorecard und die Interviewaufzeichnung. Wie viele Credits eine Freischaltung kostet, sehen Sie vor der Bestätigung."
+      },
+      {
+        "q": "Verfallen Credits?",
+        "a": "Nein. Credits bleiben in Ihrem Konto, bis Sie sie nutzen, egal ob sie aus Ihrem Tarif oder einer Aufladung stammen."
+      },
+      {
+        "q": "Ist das ein Abonnement?",
+        "a": "Nein. Jeder Kauf ist eine Einmalzahlung. Nichts verlängert sich und es wird nie automatisch abgebucht."
+      },
+      {
+        "q": "Wer in meinem Team sieht die Ergebnisse?",
+        "a": "Mit Free teilen Sie Ergebnisse mit 1 Teammitglied, mit Pro mit 5 und mit Business mit 25. Brauchen Sie mehr Plätze, deckt ein individueller Tarif jede Teamgröße ab."
+      },
+      {
+        "q": "Wie bezahle ich?",
+        "a": "Zahlungen laufen über Razorpay, Sie können also UPI, Karte oder Netbanking nutzen. Die Preise sind in indischen Rupien, anfallende Steuern sehen Sie vor der Zahlung im Checkout."
+      },
+      {
+        "q": "Kann ich eine Rückerstattung erhalten?",
+        "a": "Wir prüfen Rückerstattungsanträge innerhalb von 7 Tagen bei doppelten Zahlungen, Abrechnungsfehlern oder einem Plattformproblem, durch das Sie nicht erhalten haben, wofür Sie bezahlt haben. Bereits freigeschaltete Profile können nicht erstattet werden. Alle Details stehen in der <refund>Rückerstattungsrichtlinie</refund>."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Starten Sie mit kostenlosen Credits.",
+    "body": "Erstellen Sie ein Arbeitgeberkonto, schreiben Sie eine Stelle aus und schalten Sie Ihre ersten Kandidaten frei, ohne etwas zu bezahlen.",
+    "primary": "Kostenloses Konto erstellen",
+    "secondary": "Mit dem Vertrieb sprechen"
+  },
+  "prices": {
+    "loading": "Aktuelle Preise werden geladen",
+    "slow": "Die heutigen Preise werden noch abgerufen. Das dauert länger als üblich.",
+    "retry": "Erneut versuchen",
+    "retrying": "Wird erneut versucht",
+    "error": {
+      "title": "Die heutigen Preise konnten nicht geladen werden",
+      "body": "Tarife und Funktionen sind alle hier. Versuchen Sie es erneut, um die aktuellen Preise zu sehen."
+    },
+    "offline": {
+      "title": "Sie sind offline",
+      "body": "Die Preise werden geladen, sobald Sie wieder online sind."
+    }
+  }
+}

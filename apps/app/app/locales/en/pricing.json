@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "description": "Start with 10 free credits and buy more only when you need them, with no subscription. Each unlock includes the candidate's profile, scorecard and recording."
+  },
+  "hero": {
+    "eyebrow": "Pricing",
+    "title": "Pay only for the <hl>candidates you unlock</hl>.",
+    "body": "Credits unlock candidates who have already finished a LetsHyre AI interview. You buy them once, there's no monthly bill, and they don't expire.",
+    "includes": "Every unlock includes",
+    "items": [
+      "Candidate profile and resume",
+      "AI interview scorecard",
+      "Interview recording"
+    ]
+  },
+  "plans": {
+    "heading": "Plans",
+    "note": "Prices are in Indian rupees and don't include GST, which is added at checkout.",
+    "credits_one": "{{count}} credit",
+    "credits_other": "{{count}} credits",
+    "rate": "Every credit costs {{price}}, whichever plan you choose.",
+    "unavailable": "Price unavailable",
+    "seats_one": "Share results with {{count}} teammate",
+    "seats_other": "Share results with {{count}} teammates",
+    "topUps": "Top up whenever you need",
+    "noExpiry": "Credits never expire",
+    "buy": "Buy {{name}}",
+    "recommended": "Recommended",
+    "free": {
+      "name": "Free",
+      "audience": "Try it on a real role",
+      "priceNote": "on sign-up",
+      "cta": "Start free"
+    },
+    "pro": {
+      "name": "Pro",
+      "audience": "For teams that hire now and then",
+      "priceNote": "plus GST, one-time",
+      "cta": "Buy Pro"
+    },
+    "business": {
+      "name": "Business",
+      "audience": "For teams hiring every month",
+      "priceNote": "plus GST, one-time",
+      "badge": "Most credits",
+      "cta": "Buy Business"
+    },
+    "custom": {
+      "name": "Custom",
+      "audience": "For high-volume and agency hiring",
+      "price": "Let's talk",
+      "priceNote": "Priced on volume",
+      "cta": "Talk to sales",
+      "features": [
+        "Everything in Business",
+        "Credits sized to your hiring",
+        "Any team size",
+        "Dedicated support"
+      ]
+    },
+    "trust": {
+      "label": "Why buying is simple",
+      "oneTime": "One-time payment",
+      "noRenewal": "Nothing auto-renews",
+      "noExpiry": "Credits never expire",
+      "razorpay": "Secure checkout with Razorpay"
+    }
+  },
+  "compare": {
+    "title": "Compare plans",
+    "body": "Every plan unlocks the same candidate information. What changes is how many credits you get, who on your team can see results, and the support you get.",
+    "caption": "What each plan includes",
+    "feature": "Feature",
+    "picker": "Plan to compare",
+    "rows": {
+      "credits": "Credits included",
+      "profiles": "Candidate profile and resume",
+      "scorecards": "AI interview scorecard",
+      "recordings": "Interview recording",
+      "seats": "Teammates who can view results",
+      "topUps": "Buy extra credits",
+      "validity": "Credit expiry",
+      "support": "Dedicated support"
+    },
+    "values": {
+      "included": "Included",
+      "notIncluded": "Not included",
+      "custom": "Custom",
+      "noExpiry": "Never"
+    }
+  },
+  "topUps": {
+    "title": "Need more credits?",
+    "body": "On Pro or Business you can top up at any time. Top-up credits never expire, just like the ones in your plan.",
+    "credits_one": "{{count}} credit",
+    "credits_other": "{{count}} credits",
+    "priceNote": "plus GST",
+    "cta": "Buy",
+    "ctaLabel_one": "Buy {{count}} credit for {{price}}",
+    "ctaLabel_other": "Buy {{count}} credits for {{price}}",
+    "ctaLabelNoPrice_one": "Buy {{count}} credit",
+    "ctaLabelNoPrice_other": "Buy {{count}} credits",
+    "sameRate": "Each credit costs the same as in any plan."
+  },
+  "faq": {
+    "title": "Questions about pricing",
+    "body": "Can't find what you need?",
+    "contact": "Get in touch",
+    "items": [
+      {
+        "q": "What does a credit get me?",
+        "a": "Credits unlock candidates who have finished a LetsHyre AI interview. An unlocked candidate shows you their full profile, resume, AI scorecard and interview recording. You'll see how many credits an unlock needs before you confirm it."
+      },
+      {
+        "q": "Do credits expire?",
+        "a": "No. Credits stay in your account until you use them, whether they came with your plan or from a top-up."
+      },
+      {
+        "q": "Is this a subscription?",
+        "a": "No. Every purchase is a one-time payment. Nothing renews and you're never charged automatically."
+      },
+      {
+        "q": "Who on my team can see results?",
+        "a": "Free lets you share results with 1 teammate, Pro with 5 and Business with 25. If you need more seats than that, a custom plan covers any team size."
+      },
+      {
+        "q": "How do I pay?",
+        "a": "Payments go through Razorpay, so you can use UPI, a card or net banking. Prices are in Indian rupees, and any applicable tax is shown at checkout before you pay."
+      },
+      {
+        "q": "Can I get a refund?",
+        "a": "We review refund requests made within 7 days for duplicate payments, billing errors, or a platform problem that stopped you getting what you paid for. Profiles you've already unlocked can't be refunded. The <refund>refund policy</refund> has the full details."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Start with free credits.",
+    "body": "Create an employer account, post a role and unlock your first candidates without paying anything.",
+    "primary": "Create free account",
+    "secondary": "Talk to sales"
+  },
+  "prices": {
+    "loading": "Loading current prices",
+    "slow": "Still fetching today's prices. This is taking longer than usual.",
+    "retry": "Try again",
+    "retrying": "Trying again",
+    "error": {
+      "title": "We couldn't load today's prices",
+      "body": "Plans and features are all here. Try again to see what they cost right now."
+    },
+    "offline": {
+      "title": "You're offline",
+      "body": "Prices will load as soon as you're back online."
+    }
+  }
+}

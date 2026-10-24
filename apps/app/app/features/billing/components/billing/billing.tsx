@@ -13,6 +13,7 @@ import { LoadError } from "@/components/query-state"
 import { useDelayed } from "@/hooks/use-delayed"
 import { buttonLink } from "@/lib/button-link"
 import { creditsQuery } from "@/lib/credits"
+import { creditPriceQuery, plansQuery } from "@/lib/pricing"
 
 import {
   CHECKOUT,
@@ -22,7 +23,6 @@ import {
   safeNext,
   topUpKey,
 } from "../../lib/checkout"
-import { creditPriceQuery, plansQuery } from "../../queries/billing.queries"
 import { CheckoutDialog } from "../checkout/checkout-dialog"
 import { PlanCard, PlanSkeleton } from "./plan-card"
 import { TopUpPicker } from "./top-up-picker"

@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "description": "Commencez avec 10 crédits gratuits et achetez-en seulement si besoin, sans abonnement. Chaque déblocage inclut le profil, la grille et l'enregistrement."
+  },
+  "hero": {
+    "eyebrow": "Tarifs",
+    "title": "Ne payez que les <hl>candidats que vous débloquez</hl>.",
+    "body": "Les crédits débloquent les candidats qui ont déjà terminé un entretien IA LetsHyre. Vous les achetez une fois, sans facture mensuelle, et ils n'expirent pas.",
+    "includes": "Chaque déblocage comprend",
+    "items": [
+      "Profil et CV du candidat",
+      "Grille d'évaluation de l'entretien IA",
+      "Enregistrement de l'entretien"
+    ]
+  },
+  "plans": {
+    "heading": "Offres",
+    "note": "Les prix sont en roupies indiennes, hors GST ajoutée au paiement.",
+    "credits_one": "{{count}} crédit",
+    "credits_many": "{{count}} de crédits",
+    "credits_other": "{{count}} crédits",
+    "rate": "Chaque crédit coûte {{price}}, quelle que soit l'offre choisie.",
+    "unavailable": "Prix indisponible",
+    "seats_one": "Partager les résultats avec {{count}} collègue",
+    "seats_many": "Partager les résultats avec {{count}} de collègues",
+    "seats_other": "Partager les résultats avec {{count}} collègues",
+    "topUps": "Rechargez quand vous voulez",
+    "noExpiry": "Les crédits n'expirent jamais",
+    "buy": "Acheter {{name}}",
+    "recommended": "Recommandé",
+    "free": {
+      "name": "Free",
+      "audience": "Essayez-le sur un vrai poste",
+      "priceNote": "à l'inscription",
+      "cta": "Commencer gratuitement"
+    },
+    "pro": {
+      "name": "Pro",
+      "audience": "Pour les équipes qui recrutent de temps en temps",
+      "priceNote": "plus GST, paiement unique",
+      "cta": "Acheter Pro"
+    },
+    "business": {
+      "name": "Business",
+      "audience": "Pour les équipes qui recrutent chaque mois",
+      "priceNote": "plus GST, paiement unique",
+      "badge": "Le plus de crédits",
+      "cta": "Acheter Business"
+    },
+    "custom": {
+      "name": "Sur mesure",
+      "audience": "Pour les gros volumes et les cabinets de recrutement",
+      "price": "Parlons-en",
+      "priceNote": "Prix selon le volume",
+      "cta": "Parler à l'équipe commerciale",
+      "features": [
+        "Tout ce qu'inclut Business",
+        "Crédits adaptés à vos recrutements",
+        "Toute taille d'équipe",
+        "Assistance dédiée"
+      ]
+    },
+    "trust": {
+      "label": "Un achat simple",
+      "oneTime": "Paiement unique",
+      "noRenewal": "Aucun renouvellement automatique",
+      "noExpiry": "Les crédits n'expirent jamais",
+      "razorpay": "Paiement sécurisé avec Razorpay"
+    }
+  },
+  "compare": {
+    "title": "Comparer les offres",
+    "body": "Chaque offre débloque les mêmes informations sur les candidats. Ce qui change : le nombre de crédits, qui dans votre équipe voit les résultats et l'assistance.",
+    "caption": "Ce que comprend chaque offre",
+    "feature": "Fonctionnalité",
+    "picker": "Offre à comparer",
+    "rows": {
+      "credits": "Crédits inclus",
+      "profiles": "Profil et CV du candidat",
+      "scorecards": "Grille d'évaluation de l'entretien IA",
+      "recordings": "Enregistrement de l'entretien",
+      "seats": "Collègues pouvant voir les résultats",
+      "topUps": "Acheter des crédits supplémentaires",
+      "validity": "Expiration des crédits",
+      "support": "Assistance dédiée"
+    },
+    "values": {
+      "included": "Inclus",
+      "notIncluded": "Non inclus",
+      "custom": "Sur mesure",
+      "noExpiry": "Jamais"
+    }
+  },
+  "topUps": {
+    "title": "Besoin de plus de crédits ?",
+    "body": "Avec Pro ou Business, vous pouvez recharger à tout moment. Les crédits rechargés n'expirent jamais, comme ceux de votre offre.",
+    "credits_one": "{{count}} crédit",
+    "credits_many": "{{count}} de crédits",
+    "credits_other": "{{count}} crédits",
+    "priceNote": "plus GST",
+    "cta": "Acheter",
+    "ctaLabel_one": "Acheter {{count}} crédit pour {{price}}",
+    "ctaLabel_many": "Acheter {{count}} de crédits pour {{price}}",
+    "ctaLabel_other": "Acheter {{count}} crédits pour {{price}}",
+    "ctaLabelNoPrice_one": "Acheter {{count}} crédit",
+    "ctaLabelNoPrice_many": "Acheter {{count}} de crédits",
+    "ctaLabelNoPrice_other": "Acheter {{count}} crédits",
+    "sameRate": "Chaque crédit coûte le même prix que dans n'importe quelle offre."
+  },
+  "faq": {
+    "title": "Questions sur les tarifs",
+    "body": "Vous ne trouvez pas ce qu'il vous faut ?",
+    "contact": "Nous contacter",
+    "items": [
+      {
+        "q": "Que m'apporte un crédit ?",
+        "a": "Les crédits débloquent les candidats qui ont terminé un entretien IA LetsHyre. Un candidat débloqué vous montre son profil complet, son CV, sa grille IA et l'enregistrement de l'entretien. Vous voyez combien de crédits il faut avant de confirmer."
+      },
+      {
+        "q": "Les crédits expirent-ils ?",
+        "a": "Non. Les crédits restent sur votre compte jusqu'à leur utilisation, qu'ils viennent de votre offre ou d'une recharge."
+      },
+      {
+        "q": "Est-ce un abonnement ?",
+        "a": "Non. Chaque achat est un paiement unique. Rien ne se renouvelle et vous n'êtes jamais débité automatiquement."
+      },
+      {
+        "q": "Qui dans mon équipe peut voir les résultats ?",
+        "a": "Free permet de partager les résultats avec 1 collègue, Pro avec 5 et Business avec 25. S'il vous faut plus de places, une offre sur mesure couvre toute taille d'équipe."
+      },
+      {
+        "q": "Comment payer ?",
+        "a": "Les paiements passent par Razorpay : UPI, carte ou virement bancaire en ligne. Les prix sont en roupies indiennes et les taxes applicables s'affichent au paiement, avant de régler."
+      },
+      {
+        "q": "Puis-je être remboursé ?",
+        "a": "Nous examinons les demandes de remboursement faites sous 7 jours en cas de double paiement, d'erreur de facturation ou d'un problème de la plateforme qui vous a privé de ce que vous avez payé. Les profils déjà débloqués ne sont pas remboursables. La <refund>politique de remboursement</refund> donne tous les détails."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Commencez avec des crédits gratuits.",
+    "body": "Créez un compte employeur, publiez un poste et débloquez vos premiers candidats sans rien payer.",
+    "primary": "Créer un compte gratuit",
+    "secondary": "Parler à l'équipe commerciale"
+  },
+  "prices": {
+    "loading": "Chargement des prix actuels",
+    "slow": "Récupération des prix du jour en cours. Cela prend plus de temps que d'habitude.",
+    "retry": "Réessayer",
+    "retrying": "Nouvel essai",
+    "error": {
+      "title": "Impossible de charger les prix du jour",
+      "body": "Les offres et fonctionnalités sont toutes là. Réessayez pour voir leur prix actuel."
+    },
+    "offline": {
+      "title": "Vous êtes hors ligne",
+      "body": "Les prix se chargeront dès votre retour en ligne."
+    }
+  }
+}
