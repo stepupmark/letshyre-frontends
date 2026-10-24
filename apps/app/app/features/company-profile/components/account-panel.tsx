@@ -18,7 +18,7 @@ export function AccountPanel() {
 
   return (
     <Panel title={t("account.title")}>
-      <dl className="flex flex-col gap-4">
+      <dl className="grid gap-5 sm:grid-cols-3">
         {facts.map(([label, value]) => (
           <Fact key={label} label={label}>
             {value}

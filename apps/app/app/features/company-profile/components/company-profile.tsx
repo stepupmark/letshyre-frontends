@@ -6,6 +6,7 @@ import { useDelayed } from "@/hooks/use-delayed"
 
 import { companyQuery } from "../queries/company-profile.queries"
 import { AccountPanel } from "./account-panel"
+import { DocumentsPanel } from "./documents-panel"
 import { AboutPanel, ContactPanel } from "./company-details"
 import { CompanyHeader } from "./company-header"
 import { ProfileSkeleton } from "./profile-skeleton"
@@ -42,10 +43,11 @@ export function CompanyProfile() {
         <div className="flex min-w-0 flex-col gap-6">
           <AboutPanel company={company} />
           <ContactPanel company={company} />
-        </div>
-        <div className="flex min-w-0 flex-col gap-6">
-          <VerificationPanel company={company} />
+          <DocumentsPanel company={company} />
           <AccountPanel />
+        </div>
+        <div className="min-w-0 max-lg:order-first lg:self-stretch">
+          <VerificationPanel company={company} />
         </div>
       </div>
     </div>

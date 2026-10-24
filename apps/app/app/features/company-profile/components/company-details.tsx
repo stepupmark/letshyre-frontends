@@ -73,7 +73,7 @@ export function ContactPanel({ company }: { company: Company }) {
       <dl className="grid gap-5 sm:grid-cols-2">
         <Fact label={t("details.email")}>
           {kyc.official_email ? (
-            <span className="flex items-center justify-between gap-2">
+            <span className="flex min-w-0 items-center gap-2">
               <a
                 href={`mailto:${kyc.official_email}`}
                 className="truncate rounded-sm underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"

@@ -1,21 +1,12 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { BadgeCheck, CircleAlert, Clock, FileText } from "lucide-react"
-
-import { safeUrl } from "@/lib/safe-url"
+import { BadgeCheck, CircleAlert, Clock } from "lucide-react"
 
 import { verificationOf, type Verification } from "../lib/company"
 import type { Company } from "../schemas/company-profile.schema"
 import { MaskedId } from "./masked-id"
-import { Fact, Outbound, Panel } from "./parts"
+import { Fact, Panel } from "./parts"
 
 const ICON = { verified: BadgeCheck, pending: Clock, rejected: CircleAlert }
-
-const DOCUMENTS = [
-  "registration_certificate",
-  "gst_certificate",
-  "address_proof",
-  "bank_proof",
-] as const
 
 export function VerificationPanel({ company }: { company: Company }) {
   const { t } = useTranslation("company")
@@ -27,13 +18,12 @@ export function VerificationPanel({ company }: { company: Company }) {
     [t("legal.gst"), kyc.gst_number],
     [t("legal.pan"), kyc.pan_number],
   ] as const
-  const documents = DOCUMENTS.flatMap((key) => {
-    const link = safeUrl(kyc[key])
-    return link ? [{ key, link }] : []
-  })
-
   return (
-    <Panel title={t("legal.title")} note={t("legal.note")}>
+    <Panel
+      title={t("legal.title")}
+      note={t("legal.note")}
+      className="lg:sticky lg:top-20"
+    >
       <p
         data-state={state}
         className="flex items-start gap-2.5 rounded-lg bg-muted px-3 py-2.5 data-[state=rejected]:bg-destructive/10 data-[state=verified]:bg-success/10"
@@ -62,27 +52,6 @@ export function VerificationPanel({ company }: { company: Company }) {
           </Fact>
         ))}
       </dl>
-
-      <div className="flex flex-col gap-2 border-t pt-4">
-        <h3 className="text-xs text-muted-foreground">
-          {t("documents.title")}
-        </h3>
-        {documents.length ? (
-          <ul className="flex flex-col gap-1">
-            {documents.map(({ key, link }) => (
-              <li key={key} className="flex items-center gap-2">
-                <FileText
-                  aria-hidden="true"
-                  className="size-4 shrink-0 text-muted-foreground"
-                />
-                <Outbound href={link}>{t(`documents.${key}`)}</Outbound>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-muted-foreground">{t("documents.none")}</p>
-        )}
-      </div>
     </Panel>
   )
 }
