@@ -1,4 +1,4 @@
-import { screen } from "@testing-library/react"
+import { screen, waitFor } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { subscribe } from "@workspace/api/public"
 import { beforeEach, describe, expect, it, vi } from "vitest"
@@ -14,9 +14,13 @@ beforeEach(() => {
   subscribeMock.mockReset()
 })
 
-const setup = () => {
+const setup = async () => {
   const user = userEvent.setup()
   renderPage(<NewsletterForm />)
+  // the button stays disabled until the lazy form logic has loaded
+  await waitFor(() => {
+    expect(screen.getByRole("button", { name: "Subscribe" })).toBeEnabled()
+  })
   return {
     user,
     email: screen.getByLabelText("Email address"),
@@ -26,7 +30,7 @@ const setup = () => {
 
 describe("NewsletterForm", () => {
   it("asks for an email before sending anything", async () => {
-    const { user, email, submit } = setup()
+    const { user, email, submit } = await setup()
     await user.click(submit)
     expect(await screen.findByRole("alert")).toHaveTextContent(
       "Enter your email address."
@@ -43,7 +47,7 @@ describe("NewsletterForm", () => {
 
   it("subscribes the trimmed email and confirms inline", async () => {
     subscribeMock.mockResolvedValue({ message: "ok" })
-    const { user, email, submit } = setup()
+    const { user, email, submit } = await setup()
     await user.type(email, " me@company.com ")
     await user.click(submit)
 
@@ -59,7 +63,7 @@ describe("NewsletterForm", () => {
 
   it("keeps the form and explains when the request fails", async () => {
     subscribeMock.mockRejectedValue(new Error("boom"))
-    const { user, email, submit } = setup()
+    const { user, email, submit } = await setup()
     await user.type(email, "me@company.com")
     await user.click(submit)
 

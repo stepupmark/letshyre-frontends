@@ -1,34 +1,19 @@
-import { zodResolver } from "@hookform/resolvers/zod"
-import { localePath } from "@workspace/i18n"
-import { Trans, useLocale, useTranslation } from "@workspace/i18n/react"
-import { Button } from "@workspace/ui/components/button"
-import { Field, FieldError, FieldLabel } from "@workspace/ui/components/field"
-import { Input } from "@workspace/ui/components/input"
-import { Spinner } from "@workspace/ui/components/spinner"
-import { useId } from "react"
-import { useForm } from "react-hook-form"
-import { Link } from "react-router"
+import { useTranslation } from "@workspace/i18n/react"
+import { lazy, Suspense, useId } from "react"
 
-import { PAGES } from "@/lib/pages"
+import { useHydrated } from "@/hooks/use-hydrated"
 
-import { useSubscribe } from "../mutations/use-subscribe"
-import {
-  isNewsletterError,
-  newsletterSchema,
-} from "../schemas/newsletter.schema"
+import { NewsletterFields } from "./newsletter-fields"
+
+// keeps react-hook-form, zod and the API client out of every page's initial JS; a prerendered
+// Suspense needs inline scripts the CSP blocks, so it loads after hydration
+const SubscribeForm = lazy(() => import("./subscribe-form"))
 
 export function NewsletterForm() {
   const { t } = useTranslation("common")
-  const lang = useLocale()
   const id = useId()
-  const subscription = useSubscribe()
-  const { register, handleSubmit, formState } = useForm({
-    resolver: zodResolver(newsletterSchema),
-    defaultValues: { email: "" },
-  })
-
-  const message = formState.errors.email?.message
-  const error = isNewsletterError(message) ? t(message) : undefined
+  const hydrated = useHydrated()
+  const placeholder = <NewsletterFields id={id} />
 
   return (
     <div className="grid gap-4 rounded-2xl border bg-background p-5 sm:p-6 md:grid-cols-2 md:items-center md:gap-8">
@@ -41,67 +26,12 @@ export function NewsletterForm() {
         </p>
       </div>
 
-      {!subscription.isSuccess && (
-        <form
-          noValidate
-          className="w-full md:max-w-md md:justify-self-end"
-          aria-labelledby={`${id}-title`}
-          aria-describedby={`${id}-desc`}
-          onSubmit={(event) => {
-            void handleSubmit(({ email }) => {
-              subscription.mutate(email)
-            })(event)
-          }}
-        >
-          <Field data-invalid={error ? true : undefined}>
-            <FieldLabel htmlFor={`${id}-email`} className="sr-only">
-              {t("newsletter.emailLabel")}
-            </FieldLabel>
-            <div className="flex flex-col gap-2 sm:flex-row">
-              <Input
-                id={`${id}-email`}
-                type="email"
-                autoComplete="email"
-                inputMode="email"
-                placeholder={t("newsletter.emailPlaceholder")}
-                aria-invalid={error ? true : undefined}
-                aria-describedby={error ? `${id}-error` : undefined}
-                className="h-9 bg-background sm:flex-1"
-                {...register("email")}
-              />
-              <Button type="submit" size="lg" disabled={subscription.isPending}>
-                {subscription.isPending && <Spinner aria-hidden />}
-                {subscription.isPending
-                  ? t("newsletter.subscribing")
-                  : t("newsletter.subscribe")}
-              </Button>
-            </div>
-            {error && <FieldError id={`${id}-error`}>{error}</FieldError>}
-            <p className="text-xs text-muted-foreground">
-              <Trans
-                t={t}
-                i18nKey="newsletter.privacy"
-                components={{
-                  pp: (
-                    <Link
-                      to={localePath(lang, PAGES.privacy.path)}
-                      className="underline underline-offset-4 hover:text-foreground"
-                    />
-                  ),
-                }}
-              />
-            </p>
-          </Field>
-        </form>
-      )}
-
-      <p role="status" className="text-sm empty:hidden md:col-start-2">
-        {subscription.isSuccess ? t("newsletter.subscribed") : null}
-      </p>
-      {subscription.isError && (
-        <p role="alert" className="text-sm text-destructive md:col-start-2">
-          {t("newsletter.subscribeFailed")}
-        </p>
+      {hydrated ? (
+        <Suspense fallback={placeholder}>
+          <SubscribeForm id={id} />
+        </Suspense>
+      ) : (
+        placeholder
       )}
     </div>
   )
