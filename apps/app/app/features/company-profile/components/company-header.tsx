@@ -50,7 +50,7 @@ export function CompanyHeader({ company }: { company: Company }) {
       <div className="flex min-w-0 flex-1 flex-col gap-1">
         <h1
           tabIndex={-1}
-          className="text-2xl font-semibold tracking-tight text-balance text-brand-text outline-none"
+          className="text-center text-2xl font-semibold tracking-tight text-balance text-brand-text outline-none sm:text-start"
         >
           {kyc.company_name?.trim() ? kyc.company_name : t("unnamed")}
         </h1>
