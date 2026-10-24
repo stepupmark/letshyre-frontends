@@ -1,3 +1,5 @@
+import type { Company } from "../schemas/company-profile.schema"
+
 export type Verification = "verified" | "pending" | "rejected"
 
 export const verificationOf = (status: string | null | undefined) => {
@@ -21,6 +23,18 @@ export const accountOf = (user: Record<string, unknown>) => ({
   email: text(user.email),
   phone: text(user.phone_number),
 })
+
+const PROFILE_FIELDS = [
+  "company_logo",
+  "company_description",
+  "company_industry",
+  "official_email",
+  "company_address",
+  "linkedin_url",
+] as const
+
+export const missingOf = (kyc: NonNullable<Company["kyc"]>) =>
+  PROFILE_FIELDS.filter((field) => !kyc[field]?.trim())
 
 export const masked = (value: string) =>
   value.length <= 4 ? value : `•••• ${value.slice(-4)}`

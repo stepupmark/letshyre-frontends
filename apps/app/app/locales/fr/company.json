@@ -4,6 +4,9 @@
   "jobs_one": "{{open}} ouverte sur {{count}} offre publiée",
   "jobs_many": "{{open}} ouvertes sur {{count}} offres publiées",
   "jobs_other": "{{open}} ouvertes sur {{count}} offres publiées",
+  "missing_one": "{{count}} information manquante",
+  "missing_many": "{{count}} d'informations manquantes",
+  "missing_other": "{{count}} informations manquantes",
   "kyc": {
     "verified": "Vérifiée",
     "pending": "En cours d'examen",
@@ -25,7 +28,7 @@
     "label": "Logo",
     "upload": "Importer un logo",
     "replace": "Remplacer le logo",
-    "hint": "Un PNG, JPG ou WebP carré jusqu'à 5 Mo. Il est recadré en carré, comme affiché.",
+    "hint": "Un PNG, JPG ou WebP de 5 Mo maximum. Il est affiché en entier : un logo carré convient le mieux.",
     "tooLarge": "Le logo dépasse 5 Mo. Choisissez une image plus petite.",
     "wrongType": "Utilisez une image PNG, JPG ou WebP."
   },

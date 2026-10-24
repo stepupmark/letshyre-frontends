@@ -3,6 +3,8 @@
   "unnamed": "Uw bedrijf",
   "jobs_one": "{{open}} open van {{count}} geplaatste vacature",
   "jobs_other": "{{open}} open van {{count}} geplaatste vacatures",
+  "missing_one": "{{count}} gegeven ontbreekt",
+  "missing_other": "{{count}} gegevens ontbreken",
   "kyc": {
     "verified": "Geverifieerd",
     "pending": "Wordt beoordeeld",
@@ -24,7 +26,7 @@
     "label": "Logo",
     "upload": "Logo uploaden",
     "replace": "Logo vervangen",
-    "hint": "Een vierkante PNG, JPG of WebP tot 5 MB. Het wordt vierkant bijgesneden, zoals getoond.",
+    "hint": "Een PNG, JPG of WebP tot 5 MB. Het wordt helemaal getoond, dus een vierkant logo past het best.",
     "tooLarge": "Het logo is groter dan 5 MB. Kies een kleinere afbeelding.",
     "wrongType": "Gebruik een PNG-, JPG- of WebP-afbeelding."
   },

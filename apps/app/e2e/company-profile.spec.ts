@@ -20,6 +20,15 @@ test("an employer reviews their company and edits it, with a guard on leaving", 
   await expect(
     page.getByRole("main").getByText("employer@test.in")
   ).toBeVisible()
+  await expect(
+    page.getByText("Information technology · 5th floor")
+  ).toBeVisible()
+  await expect(
+    page.getByRole("link", { name: "3 open of 8 jobs posted" })
+  ).toHaveAttribute("href", "/employer/jobs?status=open")
+  await expect(
+    page.getByRole("link", { name: "1 detail missing" })
+  ).toBeVisible()
   await expect(page.getByText("•••• 234F")).toBeVisible()
   await page.getByRole("button", { name: "Show PAN" }).click()
   await expect(page.getByText("ABCDE1234F")).toBeVisible()

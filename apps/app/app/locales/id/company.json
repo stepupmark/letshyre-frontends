@@ -2,6 +2,7 @@
   "title": "Profil perusahaan",
   "unnamed": "Perusahaan Anda",
   "jobs_other": "{{open}} dibuka dari {{count}} lowongan yang dipasang",
+  "missing_other": "{{count}} detail belum diisi",
   "kyc": {
     "verified": "Terverifikasi",
     "pending": "Sedang ditinjau",
@@ -23,7 +24,7 @@
     "label": "Logo",
     "upload": "Unggah logo",
     "replace": "Ganti logo",
-    "hint": "PNG, JPG, atau WebP persegi hingga 5 MB. Logo dipotong menjadi persegi seperti yang terlihat.",
+    "hint": "PNG, JPG, atau WebP hingga 5 MB. Ditampilkan utuh, jadi logo persegi paling pas.",
     "tooLarge": "Logo lebih dari 5 MB. Pilih gambar yang lebih kecil.",
     "wrongType": "Gunakan gambar PNG, JPG, atau WebP."
   },

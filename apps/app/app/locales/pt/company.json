@@ -4,6 +4,9 @@
   "jobs_one": "{{open}} abertas de {{count}} vaga publicada",
   "jobs_many": "{{open}} abertas de {{count}} vagas publicadas",
   "jobs_other": "{{open}} abertas de {{count}} vagas publicadas",
+  "missing_one": "Falta {{count}} informação",
+  "missing_many": "Faltam {{count}} de informações",
+  "missing_other": "Faltam {{count}} informações",
   "kyc": {
     "verified": "Verificada",
     "pending": "Em análise",
@@ -25,7 +28,7 @@
     "label": "Logotipo",
     "upload": "Enviar logotipo",
     "replace": "Trocar logotipo",
-    "hint": "Um PNG, JPG ou WebP quadrado de até 5 MB. Ele é cortado em quadrado, como mostrado.",
+    "hint": "Um PNG, JPG ou WebP de até 5 MB. É exibido inteiro, então um logo quadrado fica melhor.",
     "tooLarge": "O logotipo passa de 5 MB. Escolha uma imagem menor.",
     "wrongType": "Use uma imagem PNG, JPG ou WebP."
   },

@@ -2,6 +2,7 @@
   "title": "会社プロフィール",
   "unnamed": "あなたの会社",
   "jobs_other": "掲載 {{count}} 件中 {{open}} 件募集中",
+  "missing_other": "未入力の項目が{{count}}件あります",
   "kyc": {
     "verified": "確認済み",
     "pending": "確認中",
@@ -23,7 +24,7 @@
     "label": "ロゴ",
     "upload": "ロゴをアップロード",
     "replace": "ロゴを差し替える",
-    "hint": "5 MB までの正方形の PNG、JPG、WebP。表示のとおり正方形に切り取られます。",
+    "hint": "5 MBまでのPNG、JPG、WebP。全体が表示されるため、正方形のロゴが最適です。",
     "tooLarge": "ロゴが 5 MB を超えています。小さい画像を選んでください。",
     "wrongType": "PNG、JPG、WebP の画像を使ってください。"
   },

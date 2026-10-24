@@ -2,6 +2,7 @@
   "title": "회사 프로필",
   "unnamed": "내 회사",
   "jobs_other": "공고 {{count}}개 중 {{open}}개 채용 중",
+  "missing_other": "빠진 정보 {{count}}개",
   "kyc": {
     "verified": "인증됨",
     "pending": "검토 중",
@@ -23,7 +24,7 @@
     "label": "로고",
     "upload": "로고 업로드",
     "replace": "로고 교체",
-    "hint": "5 MB 이하의 정사각형 PNG, JPG, WebP. 보이는 대로 정사각형으로 잘려요.",
+    "hint": "5MB 이하의 PNG, JPG 또는 WebP. 전체가 표시되므로 정사각형 로고가 가장 잘 맞습니다.",
     "tooLarge": "로고가 5 MB를 넘어요. 더 작은 이미지를 선택하세요.",
     "wrongType": "PNG, JPG, WebP 이미지를 사용하세요."
   },

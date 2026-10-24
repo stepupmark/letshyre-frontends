@@ -3,6 +3,8 @@
   "unnamed": "Your company",
   "jobs_one": "{{open}} open of {{count}} job posted",
   "jobs_other": "{{open}} open of {{count}} jobs posted",
+  "missing_one": "{{count}} detail missing",
+  "missing_other": "{{count}} details missing",
   "kyc": {
     "verified": "Verified",
     "pending": "Under review",
@@ -24,7 +26,7 @@
     "label": "Logo",
     "upload": "Upload logo",
     "replace": "Replace logo",
-    "hint": "A square PNG, JPG or WebP up to 5 MB. It's cropped to a square, as shown.",
+    "hint": "A PNG, JPG or WebP up to 5 MB. It's shown whole, so a square logo fits best.",
     "tooLarge": "The logo is over 5 MB. Choose a smaller image.",
     "wrongType": "Use a PNG, JPG or WebP image."
   },

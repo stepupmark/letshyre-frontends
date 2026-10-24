@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest"
 
 import { companySchema } from "../schemas/company-profile.schema"
-import { accountOf, masked, verificationOf } from "./company"
+import { accountOf, masked, missingOf, verificationOf } from "./company"
 
 describe("verificationOf", () => {
   it("reads the review states the API sends", () => {
@@ -48,6 +48,22 @@ describe("companySchema", () => {
     const company = companySchema.parse({ kyc: { company_name: 42 } })
     expect(company.kyc?.company_name).toBeNull()
     expect(companySchema.parse({ kyc: [] }).kyc).toBeNull()
+  })
+})
+
+describe("missingOf", () => {
+  it("lists the editable details that are empty or blank", () => {
+    expect(
+      missingOf({
+        company_logo: null,
+        company_description: "  ",
+        company_industry: "it",
+        official_email: "hr@acme.test",
+        company_address: "MG Road",
+        company_website: null,
+        linkedin_url: "",
+      })
+    ).toEqual(["company_logo", "company_description", "linkedin_url"])
   })
 })
 

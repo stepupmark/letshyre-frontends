@@ -1,6 +1,6 @@
 import { cn } from "@workspace/ui/lib/utils"
 import { Building2, ExternalLink } from "lucide-react"
-import { useCallback, useId, type ReactNode } from "react"
+import { useCallback, useId, useState, type ReactNode } from "react"
 
 export function Panel({
   title,
@@ -92,6 +92,8 @@ export function CompanyLogo({
   file?: File | null
   className?: string
 }) {
+  // signed logo links expire after an hour, so a long-open tab falls back to the icon
+  const [broken, setBroken] = useState<string | null>(null)
   // the object URL lives exactly as long as the img
   const attach = useCallback(
     (img: HTMLImageElement | null) => {
@@ -107,7 +109,7 @@ export function CompanyLogo({
   return (
     <span
       className={cn(
-        "flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-muted",
+        "flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-background",
         className
       )}
     >
@@ -116,15 +118,24 @@ export function CompanyLogo({
           key={file.name + String(file.lastModified)}
           ref={attach}
           alt=""
-          className="pop size-full object-cover"
+          className="pop size-full object-contain p-1.5"
         />
-      ) : src ? (
-        <img src={src} alt="" className="size-full object-cover" />
+      ) : src && broken !== src ? (
+        <img
+          src={src}
+          alt=""
+          onError={() => {
+            setBroken(src)
+          }}
+          className="size-full object-contain p-1.5"
+        />
       ) : (
-        <Building2
-          aria-hidden="true"
-          className="size-1/2 text-muted-foreground"
-        />
+        <span className="flex size-full items-center justify-center bg-muted">
+          <Building2
+            aria-hidden="true"
+            className="size-1/2 text-muted-foreground"
+          />
+        </span>
       )}
     </span>
   )
