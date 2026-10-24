@@ -2,6 +2,7 @@ import {
   BookOpen,
   BriefcaseBusiness,
   ClipboardList,
+  Building2,
   CreditCard,
   FilePlus2,
   LayoutDashboard,
@@ -26,6 +27,7 @@ export interface NavItem {
     | "jobs"
     | "candidatePool"
     | "unlocked"
+    | "companyProfile"
     | "team"
     | "sharedLinks"
     | "billing"
@@ -39,6 +41,8 @@ export interface NavItem {
   icon: LucideIcon
   /** route patterns it is also active under */
   match?: RoutePattern[]
+  /** an action, shown as a button above the list */
+  primary?: boolean
 }
 
 export interface NavGroup {
@@ -56,9 +60,22 @@ export const NAV = {
           to: href("/employer/dashboard"),
           icon: LayoutDashboard,
         },
-        { key: "postJob", to: href("/employer/jobs/new"), icon: FilePlus2 },
-        { key: "jobs", to: href("/employer/jobs"), icon: BriefcaseBusiness },
-        { key: "candidatePool", to: href("/employer/candidates"), icon: Users },
+        {
+          key: "postJob",
+          to: href("/employer/jobs/new"),
+          icon: FilePlus2,
+          primary: true,
+        },
+        {
+          key: "jobs",
+          to: href("/employer/jobs"),
+          icon: BriefcaseBusiness,
+        },
+        {
+          key: "candidatePool",
+          to: href("/employer/candidates"),
+          icon: Users,
+        },
         {
           key: "unlocked",
           to: href("/employer/candidates/unlocked"),
@@ -70,7 +87,16 @@ export const NAV = {
     {
       key: "company",
       items: [
-        { key: "team", to: href("/employer/team"), icon: UsersRound },
+        {
+          key: "companyProfile",
+          to: href("/employer/company"),
+          icon: Building2,
+        },
+        {
+          key: "team",
+          to: href("/employer/team"),
+          icon: UsersRound,
+        },
         {
           key: "sharedLinks",
           to: href("/employer/shared-links"),
@@ -105,7 +131,11 @@ export const NAV = {
           to: href("/employee/applications"),
           icon: ClipboardList,
         },
-        { key: "scorecards", to: href("/employee/scorecards"), icon: Trophy },
+        {
+          key: "scorecards",
+          to: href("/employee/scorecards"),
+          icon: Trophy,
+        },
         { key: "profile", to: href("/employee/profile"), icon: SquareUser },
       ],
     },

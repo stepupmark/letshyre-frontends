@@ -15,6 +15,7 @@
     "jobs": "Stellen",
     "candidatePool": "Kandidatenpool",
     "unlocked": "Freigeschaltete Kandidaten",
+    "companyProfile": "Unternehmensprofil",
     "team": "Team",
     "sharedLinks": "Geteilte Links",
     "billing": "Abrechnung",
@@ -26,17 +27,37 @@
     "assistant": "Assistent"
   },
   "search": {
-    "button": "Suchen oder springen…",
+    "button": "Seiten und Aktionen suchen…",
     "shortcut": "Strg K",
     "title": "Suche",
     "description": "Zu einer Seite springen oder eine Aktion ausführen",
     "empty": "Keine Treffer.",
-    "pages": "Seiten"
+    "actions": "Aktionen",
+    "buyCredits": "Credits kaufen",
+    "keywords": {
+      "dashboard": "Start Übersicht Zusammenfassung",
+      "postJob": "neu erstellen einstellen Stelle",
+      "jobs": "Stellen Anzeigen Bewerbende Rollen",
+      "candidatePool": "Talente Treffer Kandidaten",
+      "unlocked": "Kontakte Auswahl vergleichen",
+      "companyProfile": "Unternehmen Verifizierung Logo Angaben",
+      "team": "Mitglieder Kollegen einladen",
+      "sharedLinks": "teilen Scorecards Links",
+      "billing": "Rechnungen Credits Zahlungen Belege",
+      "findJobs": "suchen Rollen Stellen Arbeit",
+      "applications": "beworben Status Fortschritt",
+      "scorecards": "Ergebnisse Interviews Bewertungen",
+      "profile": "Lebenslauf Angaben Konto",
+      "interviewGuide": "Übung Tipps Vorbereitung",
+      "assistant": "Hilfe Chat Fragen"
+    }
   },
   "credits": {
     "label_one": "{{count}} Credit",
     "label_other": "{{count}} Credits",
-    "add": "Credits hinzufügen"
+    "add": "Credits hinzufügen",
+    "loading": "Credits werden geladen",
+    "low": "Fast aufgebraucht: {{balance}}"
   },
   "user": {
     "menu": "Kontomenü",
@@ -75,5 +96,6 @@
     "full": "Als ganze Seite öffnen",
     "lead": "Ihre Unterhaltung bleibt hier, während Sie zwischen Seiten wechseln."
   },
-  "closeMenu": "Menü schließen"
+  "closeMenu": "Menü schließen",
+  "backTo": "Zurück zu {{page}}"
 }

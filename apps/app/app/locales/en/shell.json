@@ -15,6 +15,7 @@
     "jobs": "Jobs",
     "candidatePool": "Candidate pool",
     "unlocked": "Unlocked candidates",
+    "companyProfile": "Company profile",
     "team": "Team",
     "sharedLinks": "Shared links",
     "billing": "Billing",
@@ -26,17 +27,37 @@
     "assistant": "Assistant"
   },
   "search": {
-    "button": "Search or jump to…",
+    "button": "Search pages and actions…",
     "shortcut": "Ctrl K",
     "title": "Search",
     "description": "Jump to a page or run an action",
     "empty": "Nothing matches.",
-    "pages": "Pages"
+    "actions": "Actions",
+    "buyCredits": "Buy credits",
+    "keywords": {
+      "dashboard": "home overview summary",
+      "postJob": "new create hire opening",
+      "jobs": "openings postings applicants roles",
+      "candidatePool": "talent matches candidates",
+      "unlocked": "contacts shortlist compare",
+      "companyProfile": "company verification logo details",
+      "team": "members colleagues invite",
+      "sharedLinks": "share scorecards links",
+      "billing": "invoices credits payments receipts",
+      "findJobs": "search roles openings work",
+      "applications": "applied status progress",
+      "scorecards": "results interviews scores",
+      "profile": "resume details account",
+      "interviewGuide": "practice tips preparation",
+      "assistant": "help chat questions"
+    }
   },
   "credits": {
     "label_one": "{{count}} credit",
     "label_other": "{{count}} credits",
-    "add": "Add credits"
+    "add": "Add credits",
+    "loading": "Loading credits",
+    "low": "Running low: {{balance}}"
   },
   "user": {
     "menu": "Account menu",
@@ -75,5 +96,6 @@
     "full": "Open as a full page",
     "lead": "Your conversation stays here while you move between pages."
   },
-  "closeMenu": "Close menu"
+  "closeMenu": "Close menu",
+  "backTo": "Back to {{page}}"
 }

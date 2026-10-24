@@ -55,6 +55,7 @@ export function AssistantLauncher({ side }: { side: Side }) {
             <Button
               variant="ghost"
               size="icon"
+              className="max-md:size-10"
               aria-label={t("assistant.open")}
               aria-haspopup="dialog"
               onClick={() => {

@@ -26,7 +26,6 @@ export function DashboardShell({
   actions,
 }: {
   area: Area
-  /** Extra topbar buttons, e.g. the assistant. */
   actions?: ReactNode
 }) {
   const { t } = useTranslation("shell")
@@ -35,6 +34,9 @@ export function DashboardShell({
   const [shortcutsOpen, setShortcutsOpen] = useState(false)
   useShellShortcuts(setSearchOpen, setShortcutsOpen)
   useRouteFocus()
+  const openShortcuts = () => {
+    setShortcutsOpen(true)
+  }
 
   return (
     <TooltipProvider>
@@ -44,9 +46,7 @@ export function DashboardShell({
         <AppSidebar
           area={area}
           side={dirFor(locale) === "rtl" ? "right" : "left"}
-          onOpenShortcuts={() => {
-            setShortcutsOpen(true)
-          }}
+          onOpenShortcuts={openShortcuts}
         />
         {/* SidebarInset is the <main> landmark */}
         <SidebarInset className="min-w-0">
@@ -69,6 +69,7 @@ export function DashboardShell({
           area={area}
           open={searchOpen}
           onOpenChange={setSearchOpen}
+          onOpenShortcuts={openShortcuts}
         />
         <ShortcutsDialog open={shortcutsOpen} onOpenChange={setShortcutsOpen} />
       </SidebarProvider>

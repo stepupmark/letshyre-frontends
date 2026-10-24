@@ -1,5 +1,4 @@
-// one unlock costs one credit; at or below this the dashboard warns
-export const LOW_CREDITS = 3
+import { LOW_CREDITS } from "@/lib/credits"
 
 export type Review = "pending" | "verified" | "rejected"
 

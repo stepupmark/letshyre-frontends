@@ -15,6 +15,7 @@
     "jobs": "Lowongan",
     "candidatePool": "Kumpulan kandidat",
     "unlocked": "Kandidat terbuka",
+    "companyProfile": "Profil perusahaan",
     "team": "Tim",
     "sharedLinks": "Tautan yang dibagikan",
     "billing": "Penagihan",
@@ -26,16 +27,36 @@
     "assistant": "Asisten"
   },
   "search": {
-    "button": "Cari atau lompat ke…",
+    "button": "Cari halaman dan tindakan…",
     "shortcut": "Ctrl K",
     "title": "Cari",
     "description": "Lompat ke halaman atau jalankan tindakan",
     "empty": "Tidak ada yang cocok.",
-    "pages": "Halaman"
+    "actions": "Tindakan",
+    "buyCredits": "Beli kredit",
+    "keywords": {
+      "dashboard": "beranda ringkasan ikhtisar",
+      "postJob": "baru buat rekrut lowongan",
+      "jobs": "lowongan iklan pelamar posisi",
+      "candidatePool": "talenta kecocokan kandidat",
+      "unlocked": "kontak daftar bandingkan",
+      "companyProfile": "perusahaan verifikasi logo detail",
+      "team": "anggota rekan undang",
+      "sharedLinks": "bagikan kartu-skor tautan",
+      "billing": "faktur kredit pembayaran kuitansi",
+      "findJobs": "cari posisi lowongan kerja",
+      "applications": "dilamar status kemajuan",
+      "scorecards": "hasil wawancara skor",
+      "profile": "CV detail akun",
+      "interviewGuide": "latihan tips persiapan",
+      "assistant": "bantuan obrolan pertanyaan"
+    }
   },
   "credits": {
     "label_other": "{{count}} kredit",
-    "add": "Tambah kredit"
+    "add": "Tambah kredit",
+    "loading": "Memuat kredit",
+    "low": "Hampir habis: {{balance}}"
   },
   "user": {
     "menu": "Menu akun",
@@ -74,5 +95,6 @@
     "full": "Buka sebagai halaman penuh",
     "lead": "Percakapan Anda tetap di sini saat Anda berpindah halaman."
   },
-  "closeMenu": "Tutup menu"
+  "closeMenu": "Tutup menu",
+  "backTo": "Kembali ke {{page}}"
 }

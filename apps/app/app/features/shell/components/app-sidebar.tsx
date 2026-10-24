@@ -12,6 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
+  SidebarSeparator,
   useSidebar,
 } from "@workspace/ui/components/sidebar"
 import * as m from "motion/react-m"
@@ -21,7 +22,7 @@ import { useLocation } from "react-router"
 import { AppLink } from "@/components/app-link"
 import { spring } from "@/lib/motion"
 
-import { homeOf, isActive, NAV, type Area } from "../lib/nav"
+import { homeOf, isActive, NAV, type Area, type NavGroup } from "../lib/nav"
 import { UserMenu } from "./user-menu"
 
 export function AppSidebar({
@@ -39,6 +40,10 @@ export function AppSidebar({
   const close = () => {
     setOpenMobile(false)
   }
+  const groups: NavGroup[] = NAV[area]
+  const primary = groups
+    .flatMap((group) => group.items)
+    .find((item) => item.primary)
 
   return (
     <Sidebar collapsible="icon" side={side}>
@@ -67,34 +72,63 @@ export function AppSidebar({
           )}
         </SidebarHeader>
         <SidebarContent>
-          {NAV[area].map((group) => (
-            <SidebarGroup key={group.key}>
+          {primary && (
+            <SidebarGroup className="pb-0">
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton
+                    tooltip={t(`nav.${primary.key}`)}
+                    aria-current={
+                      isActive(primary, pathname) ? "page" : undefined
+                    }
+                    className="h-9 justify-center bg-primary font-medium text-primary-foreground transition-[background-color,scale] hover:bg-primary/90 hover:text-primary-foreground active:scale-98 active:bg-primary/90 active:text-primary-foreground motion-reduce:transition-none max-md:h-10"
+                    render={<AppLink to={primary.to} onClick={close} />}
+                  >
+                    <primary.icon />
+                    <span>{t(`nav.${primary.key}`)}</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroup>
+          )}
+          {groups.map((group, index) => (
+            <SidebarGroup
+              key={group.key}
+              className="group-data-[collapsible=icon]:py-1 data-[last=true]:mt-auto"
+              data-last={index > 0 && index === groups.length - 1}
+            >
+              {index > 0 && (
+                <SidebarSeparator className="mb-2 hidden group-data-[collapsible=icon]:block" />
+              )}
               <SidebarGroupLabel>{t(`groups.${group.key}`)}</SidebarGroupLabel>
               <SidebarMenu className="gap-0.5">
-                {group.items.map((item) => {
-                  const active = isActive(item, pathname)
-                  return (
-                    <SidebarMenuItem key={item.key}>
-                      <SidebarMenuButton
-                        tooltip={t(`nav.${item.key}`)}
-                        isActive={active}
-                        className="relative isolate h-9 transition-colors max-md:h-10 data-active:bg-transparent data-active:text-primary data-active:hover:bg-transparent data-active:hover:text-primary [&_svg]:transition-transform [&_svg]:duration-150 hover:[&_svg]:scale-110 motion-reduce:[&_svg]:transition-none data-active:[&_svg]:text-primary"
-                        render={<AppLink to={item.to} onClick={close} />}
-                      >
-                        {active && (
-                          <m.span
-                            layoutId={`nav-active-${area}`}
-                            transition={spring}
-                            aria-hidden="true"
-                            className="absolute inset-0 -z-10 rounded-md border bg-background"
-                          />
-                        )}
-                        <item.icon />
-                        <span>{t(`nav.${item.key}`)}</span>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  )
-                })}
+                {group.items
+                  .filter((item) => !item.primary)
+                  .map((item) => {
+                    const active = isActive(item, pathname)
+                    return (
+                      <SidebarMenuItem key={item.key}>
+                        <SidebarMenuButton
+                          tooltip={t(`nav.${item.key}`)}
+                          isActive={active}
+                          aria-current={active ? "page" : undefined}
+                          className="relative isolate h-9 transition-colors hover:bg-sidebar-accent/70 max-md:h-10 data-active:bg-transparent data-active:text-primary data-active:hover:bg-transparent data-active:hover:text-primary [&_svg]:transition-transform [&_svg]:duration-150 hover:[&_svg]:scale-110 motion-reduce:[&_svg]:transition-none data-active:[&_svg]:text-primary"
+                          render={<AppLink to={item.to} onClick={close} />}
+                        >
+                          {active && (
+                            <m.span
+                              layoutId={`nav-active-${area}`}
+                              transition={spring}
+                              aria-hidden="true"
+                              className="absolute inset-0 -z-10 rounded-md border bg-background"
+                            />
+                          )}
+                          <item.icon />
+                          <span>{t(`nav.${item.key}`)}</span>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    )
+                  })}
               </SidebarMenu>
             </SidebarGroup>
           ))}

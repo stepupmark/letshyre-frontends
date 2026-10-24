@@ -15,6 +15,7 @@
     "jobs": "Offerte",
     "candidatePool": "Bacino di candidati",
     "unlocked": "Candidati sbloccati",
+    "companyProfile": "Profilo aziendale",
     "team": "Team",
     "sharedLinks": "Link condivisi",
     "billing": "Fatturazione",
@@ -26,18 +27,38 @@
     "assistant": "Assistente"
   },
   "search": {
-    "button": "Cerca o vai a…",
+    "button": "Cerca pagine e azioni…",
     "shortcut": "Ctrl K",
     "title": "Cerca",
     "description": "Vai a una pagina o esegui un'azione",
     "empty": "Nessun risultato.",
-    "pages": "Pagine"
+    "actions": "Azioni",
+    "buyCredits": "Acquista crediti",
+    "keywords": {
+      "dashboard": "home panoramica riepilogo",
+      "postJob": "nuova crea assumi posizione",
+      "jobs": "offerte annunci candidati ruoli",
+      "candidatePool": "talenti corrispondenze candidati",
+      "unlocked": "contatti selezione confronta",
+      "companyProfile": "azienda verifica logo dati",
+      "team": "membri colleghi invita",
+      "sharedLinks": "condividi schede link",
+      "billing": "fatture crediti pagamenti ricevute",
+      "findJobs": "cerca ruoli offerte lavoro",
+      "applications": "candidatura stato avanzamento",
+      "scorecards": "risultati colloqui punteggi",
+      "profile": "curriculum dati account",
+      "interviewGuide": "pratica consigli preparazione",
+      "assistant": "aiuto chat domande"
+    }
   },
   "credits": {
     "label_one": "{{count}} credito",
     "label_many": "{{count}} crediti",
     "label_other": "{{count}} crediti",
-    "add": "Aggiungi crediti"
+    "add": "Aggiungi crediti",
+    "loading": "Caricamento crediti",
+    "low": "Quasi esauriti: {{balance}}"
   },
   "user": {
     "menu": "Menu dell'account",
@@ -76,5 +97,6 @@
     "full": "Apri a pagina intera",
     "lead": "La conversazione resta qui mentre cambi pagina."
   },
-  "closeMenu": "Chiudi menu"
+  "closeMenu": "Chiudi menu",
+  "backTo": "Torna a {{page}}"
 }

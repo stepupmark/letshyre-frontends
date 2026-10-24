@@ -15,6 +15,7 @@
     "jobs": "Offres",
     "candidatePool": "Vivier de candidats",
     "unlocked": "Candidats débloqués",
+    "companyProfile": "Profil de l'entreprise",
     "team": "Équipe",
     "sharedLinks": "Liens partagés",
     "billing": "Facturation",
@@ -26,18 +27,38 @@
     "assistant": "Assistant"
   },
   "search": {
-    "button": "Rechercher ou aller à…",
+    "button": "Rechercher pages et actions…",
     "shortcut": "Ctrl K",
     "title": "Recherche",
     "description": "Aller à une page ou lancer une action",
     "empty": "Aucun résultat.",
-    "pages": "Pages"
+    "actions": "Actions",
+    "buyCredits": "Acheter des crédits",
+    "keywords": {
+      "dashboard": "accueil aperçu résumé",
+      "postJob": "nouvelle créer recruter poste",
+      "jobs": "offres annonces candidats postes",
+      "candidatePool": "talents correspondances candidats",
+      "unlocked": "contacts sélection comparer",
+      "companyProfile": "entreprise vérification logo informations",
+      "team": "membres collègues inviter",
+      "sharedLinks": "partager évaluations liens",
+      "billing": "factures crédits paiements reçus",
+      "findJobs": "chercher postes offres travail",
+      "applications": "candidature statut progression",
+      "scorecards": "résultats entretiens scores",
+      "profile": "CV informations compte",
+      "interviewGuide": "entraînement conseils préparation",
+      "assistant": "aide chat questions"
+    }
   },
   "credits": {
     "label_one": "{{count}} crédit",
     "label_many": "{{count}} crédits",
     "label_other": "{{count}} crédits",
-    "add": "Ajouter des crédits"
+    "add": "Ajouter des crédits",
+    "loading": "Chargement des crédits",
+    "low": "Bientôt épuisé : {{balance}}"
   },
   "user": {
     "menu": "Menu du compte",
@@ -76,5 +97,6 @@
     "full": "Ouvrir en pleine page",
     "lead": "Votre conversation reste ici pendant que vous changez de page."
   },
-  "closeMenu": "Fermer le menu"
+  "closeMenu": "Fermer le menu",
+  "backTo": "Retour à {{page}}"
 }

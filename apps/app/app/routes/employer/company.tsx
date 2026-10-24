@@ -3,7 +3,7 @@ import { useTranslation } from "@workspace/i18n/react"
 import { CompanyProfile } from "@/features/company-profile"
 import { namespaces } from "@/lib/i18n"
 
-export const handle = { crumb: "profile" } as const
+export const handle = { crumb: "companyProfile" } as const
 
 export const clientMiddleware = [namespaces(["company"])]
 

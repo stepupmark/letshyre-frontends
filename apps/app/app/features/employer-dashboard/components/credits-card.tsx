@@ -11,7 +11,7 @@ import { AppLink } from "@/components/app-link"
 import { StatusBadge } from "@/components/status-badge"
 import { buttonLink } from "@/lib/button-link"
 
-import { LOW_CREDITS } from "../lib/employer-dashboard"
+import { LOW_CREDITS } from "@/lib/credits"
 import { Meter } from "./meter"
 
 export function CreditsCard({

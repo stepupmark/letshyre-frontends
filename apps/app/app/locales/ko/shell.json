@@ -15,6 +15,7 @@
     "jobs": "공고",
     "candidatePool": "후보자 풀",
     "unlocked": "잠금 해제한 후보자",
+    "companyProfile": "회사 프로필",
     "team": "팀",
     "sharedLinks": "공유 링크",
     "billing": "결제",
@@ -26,16 +27,36 @@
     "assistant": "어시스턴트"
   },
   "search": {
-    "button": "검색 또는 이동…",
+    "button": "페이지와 작업 검색…",
     "shortcut": "Ctrl K",
     "title": "검색",
     "description": "페이지로 이동하거나 작업 실행",
     "empty": "일치하는 항목이 없어요.",
-    "pages": "페이지"
+    "actions": "작업",
+    "buyCredits": "크레딧 구매",
+    "keywords": {
+      "dashboard": "홈 개요 요약",
+      "postJob": "새 공고 작성 채용",
+      "jobs": "채용공고 게시 지원자 직무",
+      "candidatePool": "인재 매칭 후보자",
+      "unlocked": "연락처 후보 비교",
+      "companyProfile": "회사 인증 로고 정보",
+      "team": "멤버 동료 초대",
+      "sharedLinks": "공유 스코어카드 링크",
+      "billing": "청구서 크레딧 결제 영수증",
+      "findJobs": "검색 직무 채용 일자리",
+      "applications": "지원 상태 진행",
+      "scorecards": "결과 면접 점수",
+      "profile": "이력서 정보 계정",
+      "interviewGuide": "연습 팁 준비",
+      "assistant": "도움말 채팅 질문"
+    }
   },
   "credits": {
     "label_other": "크레딧 {{count}}개",
-    "add": "크레딧 추가"
+    "add": "크레딧 추가",
+    "loading": "크레딧 불러오는 중",
+    "low": "잔액 부족: {{balance}}"
   },
   "user": {
     "menu": "계정 메뉴",
@@ -74,5 +95,6 @@
     "full": "전체 페이지로 열기",
     "lead": "페이지를 옮겨 다녀도 대화가 여기에 남아 있어요."
   },
-  "closeMenu": "메뉴 닫기"
+  "closeMenu": "메뉴 닫기",
+  "backTo": "{{page}}(으)로 돌아가기"
 }

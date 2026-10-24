@@ -15,6 +15,7 @@
     "jobs": "Vacatures",
     "candidatePool": "Kandidatenpool",
     "unlocked": "Ontgrendelde kandidaten",
+    "companyProfile": "Bedrijfsprofiel",
     "team": "Team",
     "sharedLinks": "Gedeelde links",
     "billing": "Facturering",
@@ -26,17 +27,37 @@
     "assistant": "Assistent"
   },
   "search": {
-    "button": "Zoeken of springen naar…",
+    "button": "Zoek pagina's en acties…",
     "shortcut": "Ctrl K",
     "title": "Zoeken",
     "description": "Naar een pagina springen of een actie uitvoeren",
     "empty": "Geen resultaten.",
-    "pages": "Pagina's"
+    "actions": "Acties",
+    "buyCredits": "Credits kopen",
+    "keywords": {
+      "dashboard": "start overzicht samenvatting",
+      "postJob": "nieuw maken aannemen vacature",
+      "jobs": "vacatures advertenties sollicitanten functies",
+      "candidatePool": "talent matches kandidaten",
+      "unlocked": "contacten selectie vergelijken",
+      "companyProfile": "bedrijf verificatie logo gegevens",
+      "team": "leden collega's uitnodigen",
+      "sharedLinks": "delen scorecards links",
+      "billing": "facturen credits betalingen bonnen",
+      "findJobs": "zoeken functies vacatures werk",
+      "applications": "gesolliciteerd status voortgang",
+      "scorecards": "resultaten gesprekken scores",
+      "profile": "cv gegevens account",
+      "interviewGuide": "oefenen tips voorbereiding",
+      "assistant": "hulp chat vragen"
+    }
   },
   "credits": {
     "label_one": "{{count}} credit",
     "label_other": "{{count}} credits",
-    "add": "Credits toevoegen"
+    "add": "Credits toevoegen",
+    "loading": "Credits laden",
+    "low": "Bijna op: {{balance}}"
   },
   "user": {
     "menu": "Accountmenu",
@@ -75,5 +96,6 @@
     "full": "Openen als volledige pagina",
     "lead": "Uw gesprek blijft hier terwijl u tussen pagina's wisselt."
   },
-  "closeMenu": "Menu sluiten"
+  "closeMenu": "Menu sluiten",
+  "backTo": "Terug naar {{page}}"
 }

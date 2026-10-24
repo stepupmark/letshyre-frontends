@@ -1,5 +1,3 @@
-import { logout, PUBLIC_HOME } from "@workspace/auth"
-import { clearAll as clearAssistantChats } from "@workspace/blocks/assistant-store"
 import { useSession } from "@workspace/auth/react"
 import { LOCALE_ENGLISH_NAMES, LOCALE_NAMES } from "@workspace/i18n"
 import { useTranslation } from "@workspace/i18n/react"
@@ -30,16 +28,13 @@ import {
   LogOut,
   UserRound,
 } from "lucide-react"
-import { useState } from "react"
 import { href } from "react-router"
 
-import { api } from "@/lib/api"
-import { clearAllDrafts } from "@/lib/draft"
-import { clearStoredFiles } from "@/lib/file-store"
 import { APP_LOCALES, changeLocale, locale } from "@/lib/i18n"
 import { useGo } from "@/lib/navigation"
 import { displayName, initials } from "@/lib/user-name"
 
+import { useSignOut } from "../hooks/use-sign-out"
 import type { Area } from "../lib/nav"
 import { restartTips } from "../lib/tips"
 
@@ -53,27 +48,17 @@ export function UserMenu({
   const { t } = useTranslation("shell")
   const session = useSession()
   const go = useGo()
-  const [leaving, setLeaving] = useState(false)
+  const { leaving, signOut } = useSignOut()
   if (session.status !== "signed-in") return null
 
   const { user } = session
   const email = typeof user.email === "string" ? user.email : undefined
   const name = displayName(user)
   const languages = [locale, ...APP_LOCALES.filter((l) => l !== locale)]
-  const profile =
-    area === "employer" ? href("/employer/company") : href("/employee/profile")
-
-  const signOut = async () => {
-    setLeaving(true)
-    clearAssistantChats()
-    clearAllDrafts()
-    clearStoredFiles()
-    try {
-      await logout(api)
-    } finally {
-      window.location.assign(PUBLIC_HOME)
-    }
-  }
+  const employer = area === "employer"
+  const profile = employer
+    ? href("/employer/company")
+    : href("/employee/profile")
 
   return (
     <SidebarMenu>
@@ -94,7 +79,10 @@ export function UserMenu({
                 {t(`user.role.${area}`)}
               </span>
             </span>
-            <ChevronsUpDown className="ms-auto size-4 text-muted-foreground" />
+            <ChevronsUpDown
+              aria-hidden="true"
+              className="ms-auto size-4 text-muted-foreground transition-opacity group-data-popup-open/menu-button:opacity-60 motion-reduce:transition-none"
+            />
           </DropdownMenuTrigger>
           <DropdownMenuContent side="top" align="start" className="w-60">
             {email && (
@@ -113,7 +101,7 @@ export function UserMenu({
               }}
             >
               <UserRound />
-              {t("user.profile")}
+              {employer ? t("nav.companyProfile") : t("user.profile")}
             </DropdownMenuItem>
             {APP_LOCALES.length > 1 && (
               <DropdownMenuSub>

@@ -43,7 +43,9 @@ test("an employer reviews their company and edits it, with a guard on leaving", 
   await expect(linkedin).toBeFocused()
   await axe(page)
 
-  await page.getByRole("link", { name: "Back to company profile" }).click()
+  await page
+    .getByRole("link", { name: "Back to company profile", exact: true })
+    .click()
   const leave = page.getByRole("dialog", { name: "Leave without saving?" })
   await leave.getByRole("button", { name: "Cancel" }).click()
   await expect(leave).toBeHidden()

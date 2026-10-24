@@ -36,7 +36,6 @@ export function dismissTip(id: TipId) {
   write([...new Set([...read().split(","), id])].filter(Boolean).join(","))
 }
 
-/** From the user menu: show the tips again. */
 export const restartTips = () => {
   write("")
 }

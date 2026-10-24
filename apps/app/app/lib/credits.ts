@@ -4,6 +4,9 @@ import { z } from "zod"
 import { api } from "./api"
 import { dataOf } from "./response"
 
+// one unlock costs one credit; at or below this the app warns
+export const LOW_CREDITS = 3
+
 export const creditsSchema = z.looseObject({ available_credits: z.number() })
 
 export const creditsQuery = () =>

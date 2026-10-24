@@ -3,8 +3,13 @@ import { QueryClientProvider } from "@tanstack/react-query"
 import { ThemeProvider } from "@workspace/blocks/theme-provider"
 import { dirFor } from "@workspace/i18n"
 import { I18nProvider } from "@workspace/i18n/react"
-import { Toaster } from "@workspace/ui/components/sonner"
-import { useEffect, useState, useSyncExternalStore } from "react"
+import {
+  lazy,
+  Suspense,
+  useEffect,
+  useState,
+  useSyncExternalStore,
+} from "react"
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router"
 
 import type { Route } from "./+types/root"
@@ -14,6 +19,13 @@ import { locale, namespaces } from "./lib/i18n"
 import { createQueryClient } from "./lib/query-client"
 import common from "./locales/en/common.json"
 import "./styles/app.css"
+
+// sonner replays toasts made before it mounts, so it can load after first paint
+const Toaster = lazy(() =>
+  import("@workspace/ui/components/sonner").then((m) => ({
+    default: m.Toaster,
+  }))
+)
 
 // English common is bundled so the error screen works before anything loads
 const messages = { en: { common } }
@@ -81,7 +93,9 @@ export default function App() {
         <QueryClientProvider client={queryClient}>
           <MotionProvider>
             <Outlet />
-            <Toaster position={isNarrow ? "top-center" : "bottom-center"} />
+            <Suspense>
+              <Toaster position={isNarrow ? "top-center" : "bottom-center"} />
+            </Suspense>
           </MotionProvider>
         </QueryClientProvider>
       </I18nProvider>

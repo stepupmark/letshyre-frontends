@@ -15,6 +15,7 @@
     "jobs": "求人",
     "candidatePool": "候補者プール",
     "unlocked": "アンロック済みの候補者",
+    "companyProfile": "会社プロフィール",
     "team": "チーム",
     "sharedLinks": "共有リンク",
     "billing": "お支払い",
@@ -26,16 +27,36 @@
     "assistant": "アシスタント"
   },
   "search": {
-    "button": "検索または移動…",
+    "button": "ページと操作を検索…",
     "shortcut": "Ctrl K",
     "title": "検索",
     "description": "ページへ移動するか、操作を実行",
     "empty": "一致するものがありません。",
-    "pages": "ページ"
+    "actions": "操作",
+    "buyCredits": "クレジットを購入",
+    "keywords": {
+      "dashboard": "ホーム 概要 サマリー",
+      "postJob": "新規 作成 採用 求人",
+      "jobs": "求人 掲載 応募者 職種",
+      "candidatePool": "人材 マッチ 候補者",
+      "unlocked": "連絡先 候補 比較",
+      "companyProfile": "会社 認証 ロゴ 詳細",
+      "team": "メンバー 同僚 招待",
+      "sharedLinks": "共有 スコアカード リンク",
+      "billing": "請求書 クレジット 支払い 領収書",
+      "findJobs": "検索 職種 求人 仕事",
+      "applications": "応募 状況 進捗",
+      "scorecards": "結果 面接 スコア",
+      "profile": "履歴書 詳細 アカウント",
+      "interviewGuide": "練習 コツ 準備",
+      "assistant": "ヘルプ チャット 質問"
+    }
   },
   "credits": {
     "label_other": "{{count}} クレジット",
-    "add": "クレジットを追加"
+    "add": "クレジットを追加",
+    "loading": "クレジットを読み込み中",
+    "low": "残りわずか: {{balance}}"
   },
   "user": {
     "menu": "アカウントメニュー",
@@ -74,5 +95,6 @@
     "full": "全画面で開く",
     "lead": "ページを移動しても会話はここに残ります。"
   },
-  "closeMenu": "メニューを閉じる"
+  "closeMenu": "メニューを閉じる",
+  "backTo": "{{page}}に戻る"
 }
