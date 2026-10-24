@@ -43,7 +43,10 @@ export function CompanyHeader({ company }: { company: Company }) {
 
   return (
     <header className="flex flex-col gap-5 sm:flex-row sm:items-start">
-      <CompanyLogo src={safeUrl(kyc.company_logo)} className="pop" />
+      <CompanyLogo
+        src={safeUrl(kyc.company_logo)}
+        className="pop size-28 self-center rounded-2xl sm:size-24 sm:self-start"
+      />
       <div className="flex min-w-0 flex-1 flex-col gap-1">
         <h1
           tabIndex={-1}

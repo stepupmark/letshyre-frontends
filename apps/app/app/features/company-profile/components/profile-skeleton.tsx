@@ -4,7 +4,7 @@ export function ProfileSkeleton() {
   return (
     <div aria-hidden="true" className="flex flex-col gap-8">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-        <Skeleton className="size-16 rounded-xl" />
+        <Skeleton className="size-28 self-center rounded-2xl sm:size-24 sm:self-start" />
         <div className="flex flex-1 flex-col gap-2.5">
           <Skeleton className="h-7 w-56" />
           <Skeleton className="h-5 w-80 max-w-full" />
