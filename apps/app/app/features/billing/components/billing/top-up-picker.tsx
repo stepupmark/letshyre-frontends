@@ -7,7 +7,6 @@ import {
 import { Skeleton } from "@workspace/ui/components/skeleton"
 import type { UseQueryResult } from "@tanstack/react-query"
 import { RotateCw } from "lucide-react"
-import { AnimatePresence } from "motion/react"
 import * as m from "motion/react-m"
 import { useId, useState } from "react"
 
@@ -15,14 +14,17 @@ import { duration, ease } from "@/lib/motion"
 
 import { TOP_UPS } from "../../lib/checkout"
 import { formatRupees, priceFor } from "../../lib/money"
+import { TopUpSummary } from "./top-up-summary"
 
 export function TopUpPicker({
   labelledBy,
   price,
+  balance,
   onBuy,
 }: {
   labelledBy: string
   price: UseQueryResult<{ costPerCredit: number }>
+  balance: number | undefined
   onBuy: (credits: number) => void
 }) {
   const { t } = useTranslation(["billing", "common"])
@@ -34,7 +36,6 @@ export function TopUpPicker({
     rate === undefined
       ? null
       : formatRupees(locale, priceFor(count, rate), true)
-  const chosen = amountOf(credits)
 
   return (
     <div className="flex flex-col gap-4">
@@ -44,14 +45,14 @@ export function TopUpPicker({
         onValueChange={(value) => {
           setCredits(Number(value))
         }}
-        className="grid-cols-2 gap-3 lg:grid-cols-4"
+        className="grid-cols-2 gap-3 sm:grid-cols-4"
       >
         {TOP_UPS.map((count) => {
           const amount = amountOf(count)
           return (
             <label
               key={count}
-              className="relative flex cursor-pointer items-start justify-between gap-3 rounded-lg border p-4 transition-colors hover:bg-muted/50 has-focus-visible:ring-3 has-focus-visible:ring-ring/50 has-data-checked:border-transparent"
+              className="group relative flex cursor-pointer flex-col gap-0.5 rounded-lg border p-4 transition-colors hover:bg-muted/50 has-focus-visible:ring-3 has-focus-visible:ring-ring/50 has-data-checked:border-transparent motion-reduce:transition-none"
             >
               {count === credits && (
                 <m.span
@@ -61,15 +62,13 @@ export function TopUpPicker({
                   className="pointer-events-none absolute -inset-px rounded-lg border-2 border-brand"
                 />
               )}
-              <span className="flex flex-col gap-0.5">
-                <span className="text-base font-semibold tabular-nums">
-                  {t("topUps.credits", { count })}
-                </span>
-                <span className="text-sm text-muted-foreground tabular-nums">
-                  {amount ?? <Skeleton className="mt-1 h-3.5 w-16" />}
-                </span>
+              <RadioGroupItem value={count} className="sr-only" />
+              <span className="text-lg font-semibold tabular-nums group-has-data-checked:text-brand-text">
+                {t("topUps.credits", { count })}
               </span>
-              <RadioGroupItem value={count} className="mt-1" />
+              <span className="text-sm text-muted-foreground tabular-nums">
+                {amount ?? <Skeleton className="mt-1 h-3.5 w-16" />}
+              </span>
             </label>
           )
         })}
@@ -98,32 +97,14 @@ export function TopUpPicker({
           </Button>
         </p>
       ) : (
-        <Button
-          size="lg"
-          className="self-start max-sm:w-full"
-          disabled={chosen === null}
-          onClick={() => {
+        <TopUpSummary
+          credits={credits}
+          price={amountOf(credits)}
+          balance={balance}
+          onBuy={() => {
             onBuy(credits)
           }}
-        >
-          {t("topUps.buyLabel", { count: credits })}
-          {chosen && (
-            <span className="relative inline-grid overflow-hidden font-normal">
-              <AnimatePresence initial={false} mode="popLayout">
-                <m.span
-                  key={chosen}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: duration.fast, ease }}
-                  className="tabular-nums"
-                >
-                  {t("plusGst", { price: chosen })}
-                </m.span>
-              </AnimatePresence>
-            </span>
-          )}
-        </Button>
+        />
       )}
     </div>
   )

@@ -1,12 +1,26 @@
 {
   "title": "Buy credits",
-  "lead": "Each credit unlocks one AI interview: the candidate's contact details, full scorecard, recording and resume. Credits never expire.",
-  "balance": "Balance",
+  "intro": "Credits unlock candidates' AI interviews. Pay once, no subscription.",
+  "balancePanel": {
+    "label": "Your balance",
+    "unit_one": "credit",
+    "unit_other": "credits",
+    "body": "Each candidate you unlock uses one credit.",
+    "low": "You're running low. Top up before your next unlock.",
+    "error": "Your balance didn't load. It's still safe."
+  },
   "invoices": "Invoices",
   "buyCredits": "Buy credits",
   "plusGst": "{{price}} + GST",
   "nextNote": "Once you've paid, we'll take you back to the candidate you were looking at.",
   "nextBack": "Back to the candidate",
+  "includes": {
+    "title": "Every credit includes",
+    "contact": "Contact details",
+    "scorecard": "Full scorecard",
+    "recording": "Interview recording and resume",
+    "noExpiry": "No expiry"
+  },
   "plans": {
     "title": "Plans",
     "lead": "Paid once, not a subscription. GST is added at checkout.",
@@ -15,9 +29,6 @@
     "credits_one": "{{count}} credit",
     "credits_other": "{{count}} credits",
     "rate": "{{rate}} per credit",
-    "unlocks": "Contact details, scorecards and recordings",
-    "noExpiry": "Credits never expire",
-    "topUps": "Top up any time",
     "buy": "Buy {{name}}",
     "errorTitle": "Plans didn't load.",
     "errorBody": "Top-ups below still work. Check your connection and try again.",
@@ -25,13 +36,15 @@
     "save": "save {{percent}}% vs top-ups"
   },
   "topUps": {
-    "title": "Top up",
-    "lead": "Add credits to your balance whenever you need more.",
+    "heading": "Need a different amount?",
+    "body": "Pick a pack. It's added to your balance as soon as you pay.",
     "credits_one": "{{count}} credit",
     "credits_other": "{{count}} credits",
     "buyLabel_one": "Buy {{count}} credit",
     "buyLabel_other": "Buy {{count}} credits",
-    "priceError": "Prices didn't load, so buying is paused."
+    "priceError": "Prices didn't load, so buying is paused.",
+    "youPay": "You pay",
+    "after": "Balance after"
   },
   "unavailable": {
     "title": "This plan isn't available",

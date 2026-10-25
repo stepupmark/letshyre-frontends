@@ -82,7 +82,7 @@ function Review({
   return (
     <>
       <DialogHeader>
-        <DialogTitle>
+        <DialogTitle className="text-lg text-brand-text">
           {item.kind === "plan"
             ? t("checkout.planTitle", { name: item.plan.name })
             : t("checkout.topUpTitle", { count: item.credits })}

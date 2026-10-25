@@ -1,15 +1,30 @@
 import { toPaise } from "./checkout"
 
 // paise always shown, unless `whole` and the amount is whole
-export const formatRupees = (locale: string, value: number, whole = false) => {
+const rupees = (locale: string, value: number, whole: boolean) => {
   const digits = whole && Number.isInteger(value) ? 0 : 2
   return new Intl.NumberFormat(`${locale}-IN`, {
     style: "currency",
     currency: "INR",
     minimumFractionDigits: digits,
     maximumFractionDigits: digits,
-  }).format(value)
+  })
 }
+
+export const formatRupees = (locale: string, value: number, whole = false) =>
+  rupees(locale, value, whole).format(value)
+
+// the symbol split from the figure so it can be set smaller, wherever the locale puts it
+export const rupeeParts = (locale: string, value: number, whole = false) =>
+  rupees(locale, value, whole)
+    .formatToParts(value)
+    .reduce<{ symbol: boolean; text: string }[]>((parts, part) => {
+      const symbol = part.type === "currency"
+      const last = parts.at(-1)
+      if (last && !last.symbol && !symbol) last.text += part.value
+      else parts.push({ symbol, text: part.value })
+      return parts
+    }, [])
 
 export const priceFor = (credits: number, rate: number) =>
   (toPaise(rate) * credits) / 100

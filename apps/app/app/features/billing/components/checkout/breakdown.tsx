@@ -1,8 +1,12 @@
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Skeleton } from "@workspace/ui/components/skeleton"
+import * as m from "motion/react-m"
+
+import { duration, ease } from "@/lib/motion"
 
 import { formatRupees } from "../../lib/money"
 import type { Quote } from "../../schemas/billing.schema"
+import { RollingText } from "../rolling-text"
 
 export function Breakdown({
   quote,
@@ -40,6 +44,7 @@ export function Breakdown({
           }
           value={`−${money(quote.discount)}`}
           tone="success"
+          appear
         />
       )}
       <Line
@@ -48,7 +53,9 @@ export function Breakdown({
       />
       <div className="mt-1 flex items-baseline justify-between gap-4 border-t pt-3">
         <dt className="font-medium">{t("checkout.total")}</dt>
-        <dd className="text-lg font-semibold">{money(quote.total)}</dd>
+        <dd className="text-2xl font-semibold tracking-tight">
+          <RollingText text={money(quote.total)} />
+        </dd>
       </div>
     </dl>
   )
@@ -58,17 +65,24 @@ function Line({
   label,
   value,
   tone,
+  appear = false,
 }: {
   label: string
   value: string
   tone?: "success"
+  appear?: boolean
 }) {
   return (
-    <div className="flex items-baseline justify-between gap-4">
+    <m.div
+      initial={appear ? { opacity: 0, y: -4 } : false}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: duration.base, ease }}
+      className="flex items-baseline justify-between gap-4"
+    >
       <dt className="text-muted-foreground">{label}</dt>
       <dd className={tone === "success" ? "text-success" : undefined}>
         {value}
       </dd>
-    </div>
+    </m.div>
   )
 }

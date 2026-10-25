@@ -1,12 +1,25 @@
 {
   "title": "Beli kredit",
-  "lead": "Setiap kredit membuka satu wawancara AI: kontak kandidat, kartu skor lengkap, rekaman, dan CV. Kredit tidak pernah kedaluwarsa.",
-  "balance": "Saldo",
+  "intro": "Kredit membuka wawancara AI kandidat. Bayar sekali, tanpa langganan.",
+  "balancePanel": {
+    "label": "Saldo Anda",
+    "unit_other": "kredit",
+    "body": "Setiap kandidat yang Anda buka memakai satu kredit.",
+    "low": "Saldo Anda hampir habis. Isi ulang sebelum membuka kandidat berikutnya.",
+    "error": "Saldo Anda tidak termuat, tetapi tetap aman."
+  },
   "invoices": "Faktur",
   "buyCredits": "Beli kredit",
   "plusGst": "{{price}} + GST",
   "nextNote": "Setelah membayar, kami akan membawa Anda kembali ke kandidat yang tadi Anda lihat.",
   "nextBack": "Kembali ke kandidat",
+  "includes": {
+    "title": "Setiap kredit mencakup",
+    "contact": "Detail kontak",
+    "scorecard": "Kartu skor lengkap",
+    "recording": "Rekaman wawancara dan CV",
+    "noExpiry": "Tanpa masa berlaku"
+  },
   "plans": {
     "title": "Paket",
     "lead": "Bayar sekali, bukan langganan. GST ditambahkan saat pembayaran.",
@@ -14,9 +27,6 @@
     "once": "+ GST, bayar sekali",
     "credits_other": "{{count}} kredit",
     "rate": "{{rate}} per kredit",
-    "unlocks": "Kontak, kartu skor, dan rekaman",
-    "noExpiry": "Kredit tidak pernah kedaluwarsa",
-    "topUps": "Isi ulang kapan saja",
     "buy": "Beli {{name}}",
     "errorTitle": "Paket gagal dimuat.",
     "errorBody": "Isi ulang di bawah tetap berfungsi. Periksa koneksi lalu coba lagi.",
@@ -24,11 +34,13 @@
     "save": "hemat {{percent}}% dibanding isi ulang"
   },
   "topUps": {
-    "title": "Isi ulang",
-    "lead": "Tambahkan kredit ke saldo Anda kapan pun dibutuhkan.",
+    "heading": "Butuh jumlah lain?",
+    "body": "Pilih paket. Langsung masuk ke saldo Anda setelah membayar.",
     "credits_other": "{{count}} kredit",
     "buyLabel_other": "Beli {{count}} kredit",
-    "priceError": "Harga gagal dimuat, jadi pembelian dijeda."
+    "priceError": "Harga gagal dimuat, jadi pembelian dijeda.",
+    "youPay": "Anda membayar",
+    "after": "Saldo setelahnya"
   },
   "unavailable": {
     "title": "Paket ini tidak tersedia",

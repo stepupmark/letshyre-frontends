@@ -1,12 +1,27 @@
 {
   "title": "Acheter des crédits",
-  "lead": "Chaque crédit débloque un entretien IA : coordonnées du candidat, grille complète, enregistrement et CV. Les crédits n'expirent jamais.",
-  "balance": "Solde",
+  "intro": "Les crédits débloquent les entretiens IA des candidats. Paiement unique, sans abonnement.",
+  "balancePanel": {
+    "label": "Votre solde",
+    "unit_one": "crédit",
+    "unit_many": "crédits",
+    "unit_other": "crédits",
+    "body": "Chaque candidat débloqué utilise un crédit.",
+    "low": "Votre solde est bas. Rechargez avant le prochain déblocage.",
+    "error": "Votre solde n'a pas pu être chargé. Il reste intact."
+  },
   "invoices": "Factures",
   "buyCredits": "Acheter des crédits",
   "plusGst": "{{price}} + GST",
   "nextNote": "Une fois le paiement effectué, nous vous ramènerons au candidat que vous consultiez.",
   "nextBack": "Retour au candidat",
+  "includes": {
+    "title": "Chaque crédit comprend",
+    "contact": "Coordonnées",
+    "scorecard": "Évaluation complète",
+    "recording": "Enregistrement de l'entretien et CV",
+    "noExpiry": "Sans expiration"
+  },
   "plans": {
     "title": "Formules",
     "lead": "Paiement unique, pas d'abonnement. La GST est ajoutée au paiement.",
@@ -16,9 +31,6 @@
     "credits_many": "{{count}} crédits",
     "credits_other": "{{count}} crédits",
     "rate": "{{rate}} par crédit",
-    "unlocks": "Coordonnées, grilles et enregistrements",
-    "noExpiry": "Les crédits n'expirent jamais",
-    "topUps": "Rechargez à tout moment",
     "buy": "Acheter {{name}}",
     "errorTitle": "Les offres ne se sont pas chargées.",
     "errorBody": "Les recharges ci-dessous fonctionnent toujours. Vérifiez votre connexion et réessayez.",
@@ -26,15 +38,17 @@
     "save": "{{percent}} % d'économie par rapport aux recharges"
   },
   "topUps": {
-    "title": "Recharger",
-    "lead": "Ajoutez des crédits à votre solde dès que vous en avez besoin.",
+    "heading": "Besoin d'une autre quantité ?",
+    "body": "Choisissez un pack. Il s'ajoute à votre solde dès le paiement.",
     "credits_one": "{{count}} crédit",
     "credits_many": "{{count}} crédits",
     "credits_other": "{{count}} crédits",
     "buyLabel_one": "Acheter {{count}} crédit",
     "buyLabel_many": "Acheter {{count}} crédits",
     "buyLabel_other": "Acheter {{count}} crédits",
-    "priceError": "Les prix ne se sont pas chargés, l'achat est donc en pause."
+    "priceError": "Les prix ne se sont pas chargés, l'achat est donc en pause.",
+    "youPay": "Vous payez",
+    "after": "Solde après achat"
   },
   "unavailable": {
     "title": "Cette formule n'est pas disponible",

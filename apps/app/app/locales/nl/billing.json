@@ -1,12 +1,26 @@
 {
   "title": "Credits kopen",
-  "lead": "Elke credit ontgrendelt één AI-interview: de contactgegevens, volledige scorekaart, opname en het cv van de kandidaat. Credits verlopen nooit.",
-  "balance": "Saldo",
+  "intro": "Met credits ontgrendel je de AI-interviews van kandidaten. Eenmalig betalen, geen abonnement.",
+  "balancePanel": {
+    "label": "Je saldo",
+    "unit_one": "credit",
+    "unit_other": "credits",
+    "body": "Elke kandidaat die je ontgrendelt kost één credit.",
+    "low": "Je saldo raakt op. Waardeer op voor je volgende ontgrendeling.",
+    "error": "Je saldo is niet geladen, maar het is veilig."
+  },
   "invoices": "Facturen",
   "buyCredits": "Credits kopen",
   "plusGst": "{{price}} + GST",
   "nextNote": "Na de betaling brengen we u terug naar de kandidaat die u bekeek.",
   "nextBack": "Terug naar de kandidaat",
+  "includes": {
+    "title": "Elke credit bevat",
+    "contact": "Contactgegevens",
+    "scorecard": "Volledige beoordeling",
+    "recording": "Interviewopname en cv",
+    "noExpiry": "Verloopt nooit"
+  },
   "plans": {
     "title": "Pakketten",
     "lead": "Eenmalige betaling, geen abonnement. GST wordt bij het afrekenen toegevoegd.",
@@ -15,9 +29,6 @@
     "credits_one": "{{count}} credit",
     "credits_other": "{{count}} credits",
     "rate": "{{rate}} per credit",
-    "unlocks": "Contactgegevens, scorekaarten en opnames",
-    "noExpiry": "Credits verlopen nooit",
-    "topUps": "Altijd bij te kopen",
     "buy": "{{name}} kopen",
     "errorTitle": "De abonnementen zijn niet geladen.",
     "errorBody": "Opwaarderen hieronder werkt nog. Controleer je verbinding en probeer het opnieuw.",
@@ -25,13 +36,15 @@
     "save": "{{percent}}% voordeliger dan opwaarderen"
   },
   "topUps": {
-    "title": "Bijkopen",
-    "lead": "Voeg credits toe aan uw saldo wanneer u er meer nodig hebt.",
+    "heading": "Een ander aantal nodig?",
+    "body": "Kies een pakket. Het staat in je saldo zodra je betaalt.",
     "credits_one": "{{count}} credit",
     "credits_other": "{{count}} credits",
     "buyLabel_one": "{{count}} credit kopen",
     "buyLabel_other": "{{count}} credits kopen",
-    "priceError": "De prijzen zijn niet geladen, dus kopen staat op pauze."
+    "priceError": "De prijzen zijn niet geladen, dus kopen staat op pauze.",
+    "youPay": "Je betaalt",
+    "after": "Saldo daarna"
   },
   "unavailable": {
     "title": "Dit pakket is niet beschikbaar",

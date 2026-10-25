@@ -1,12 +1,27 @@
 {
   "title": "Comprar créditos",
-  "lead": "Cada crédito desbloquea una entrevista con IA: los datos de contacto del candidato, la ficha completa, la grabación y el currículum. Los créditos no caducan.",
-  "balance": "Saldo",
+  "intro": "Los créditos desbloquean las entrevistas con IA de los candidatos. Pagas una vez, sin suscripción.",
+  "balancePanel": {
+    "label": "Tu saldo",
+    "unit_one": "crédito",
+    "unit_many": "créditos",
+    "unit_other": "créditos",
+    "body": "Cada candidato que desbloqueas usa un crédito.",
+    "low": "Te quedan pocos créditos. Recarga antes del próximo desbloqueo.",
+    "error": "No se pudo cargar tu saldo. Sigue a salvo."
+  },
   "invoices": "Facturas",
   "buyCredits": "Comprar créditos",
   "plusGst": "{{price}} + GST",
   "nextNote": "Cuando haya pagado, le llevaremos de vuelta al candidato que estaba viendo.",
   "nextBack": "Volver al candidato",
+  "includes": {
+    "title": "Cada crédito incluye",
+    "contact": "Datos de contacto",
+    "scorecard": "Evaluación completa",
+    "recording": "Grabación de la entrevista y currículum",
+    "noExpiry": "No caducan"
+  },
   "plans": {
     "title": "Planes",
     "lead": "Pago único, no es una suscripción. El GST se añade al pagar.",
@@ -16,9 +31,6 @@
     "credits_many": "{{count}} créditos",
     "credits_other": "{{count}} créditos",
     "rate": "{{rate}} por crédito",
-    "unlocks": "Datos de contacto, fichas y grabaciones",
-    "noExpiry": "Los créditos no caducan",
-    "topUps": "Recargue cuando quiera",
     "buy": "Comprar {{name}}",
     "errorTitle": "Los planes no se cargaron.",
     "errorBody": "Las recargas de abajo siguen funcionando. Revisa tu conexión e inténtalo de nuevo.",
@@ -26,15 +38,17 @@
     "save": "ahorra un {{percent}} % frente a recargas"
   },
   "topUps": {
-    "title": "Recargar",
-    "lead": "Añada créditos a su saldo cuando necesite más.",
+    "heading": "¿Necesitas otra cantidad?",
+    "body": "Elige un paquete. Se suma a tu saldo en cuanto pagas.",
     "credits_one": "{{count}} crédito",
     "credits_many": "{{count}} créditos",
     "credits_other": "{{count}} créditos",
     "buyLabel_one": "Comprar {{count}} crédito",
     "buyLabel_many": "Comprar {{count}} créditos",
     "buyLabel_other": "Comprar {{count}} créditos",
-    "priceError": "Los precios no se cargaron, así que la compra está en pausa."
+    "priceError": "Los precios no se cargaron, así que la compra está en pausa.",
+    "youPay": "Pagas",
+    "after": "Saldo después"
   },
   "unavailable": {
     "title": "Este plan no está disponible",

@@ -110,9 +110,9 @@ export function Outcome({
         </DialogDescription>
       </DialogHeader>
       {credits.data && (
-        <p className="text-center text-sm">
+        <p className="flex items-baseline justify-center gap-2 rounded-lg bg-brand-muted px-4 py-3 text-sm">
           {t("checkout.paid.balance")}{" "}
-          <span className="font-semibold tabular-nums">
+          <span className="text-2xl font-semibold tracking-tight text-brand-text tabular-nums">
             <AnimatedNumber
               value={credits.data.available_credits}
               locale={locale}

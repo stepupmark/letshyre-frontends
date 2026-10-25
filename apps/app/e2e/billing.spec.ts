@@ -68,11 +68,11 @@ test("an employer tops up, pays through Razorpay and goes back to the candidate"
 
   await expect(page.getByRole("heading", { name: "Business" })).toBeVisible()
   await axe(page)
-  await page.getByRole("radio", { name: /^10 credits/ }).check()
-  await expect(
-    page.getByRole("button", { name: /^Buy 10 credits/ })
-  ).toContainText("₹490 + GST")
-  await page.getByRole("radio", { name: /^25 credits/ }).check()
+  await page.getByText("10 credits", { exact: true }).click()
+  await expect(page.getByRole("radio", { name: /^10 credits/ })).toBeChecked()
+  await expect(page.getByText("₹490 + GST", { exact: true })).toBeVisible()
+  await page.getByText("25 credits", { exact: true }).click()
+  await expect(page.getByRole("radio", { name: /^25 credits/ })).toBeChecked()
   await page.getByRole("button", { name: /^Buy 25 credits/ }).click()
 
   const dialog = page.getByRole("dialog", { name: "25 credits" })
@@ -151,8 +151,9 @@ test("buying pauses with a retry when prices don't load", async ({
   fail = false
   await page.getByRole("button", { name: "Try again" }).click()
   await expect(
-    page.getByRole("button", { name: /^Buy 25 credits/ })
-  ).toContainText("₹1,225 + GST")
+    page.getByRole("button", { name: "Buy 25 credits" })
+  ).toBeEnabled()
+  await expect(page.getByText("₹1,225 + GST", { exact: true })).toBeVisible()
 })
 
 test("invoices list paid purchases and open a receipt", async ({

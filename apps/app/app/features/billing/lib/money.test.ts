@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest"
 
 import type { Invoice } from "../schemas/billing.schema"
 import { invoiceCount, invoiceTotals } from "./invoices"
-import { priceFor, savingsVs } from "./money"
+import { formatRupees, priceFor, rupeeParts, savingsVs } from "./money"
 
 const invoice = (total: number, credits: number): Invoice => ({
   id: String(total),
@@ -23,6 +23,18 @@ describe("priceFor", () => {
   it("works in paise so rates like 2.35 don't drift", () => {
     expect(priceFor(3, 2.35)).toBe(7.05)
     expect(priceFor(25, 49)).toBe(1225)
+  })
+})
+
+describe("rupeeParts", () => {
+  it("splits out the symbol without changing the formatted amount", () => {
+    for (const locale of ["en", "de", "ar"]) {
+      const parts = rupeeParts(locale, 12500, true)
+      expect(parts.map((p) => p.text).join("")).toBe(
+        formatRupees(locale, 12500, true)
+      )
+      expect(parts.filter((p) => p.symbol)).toHaveLength(1)
+    }
   })
 })
 

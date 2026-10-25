@@ -1,12 +1,26 @@
 {
   "title": "Credits kaufen",
-  "lead": "Ein Credit schaltet ein KI-Interview frei: Kontaktdaten, vollständige Scorecard, Aufzeichnung und Lebenslauf des Kandidaten. Credits verfallen nie.",
-  "balance": "Guthaben",
+  "intro": "Mit Credits schalten Sie die KI-Interviews von Kandidaten frei. Einmal zahlen, kein Abo.",
+  "balancePanel": {
+    "label": "Ihr Guthaben",
+    "unit_one": "Credit",
+    "unit_other": "Credits",
+    "body": "Jeder freigeschaltete Kandidat kostet einen Credit.",
+    "low": "Ihr Guthaben wird knapp. Laden Sie vor der nächsten Freischaltung auf.",
+    "error": "Ihr Guthaben wurde nicht geladen. Es bleibt sicher erhalten."
+  },
   "invoices": "Rechnungen",
   "buyCredits": "Credits kaufen",
   "plusGst": "{{price}} + GST",
   "nextNote": "Nach der Zahlung bringen wir Sie zurück zu dem Kandidaten, den Sie angesehen haben.",
   "nextBack": "Zurück zum Kandidaten",
+  "includes": {
+    "title": "Jeder Credit enthält",
+    "contact": "Kontaktdaten",
+    "scorecard": "Vollständige Bewertung",
+    "recording": "Interviewaufzeichnung und Lebenslauf",
+    "noExpiry": "Kein Ablaufdatum"
+  },
   "plans": {
     "title": "Pakete",
     "lead": "Einmalige Zahlung, kein Abo. GST wird an der Kasse hinzugerechnet.",
@@ -15,9 +29,6 @@
     "credits_one": "{{count}} Credit",
     "credits_other": "{{count}} Credits",
     "rate": "{{rate}} pro Credit",
-    "unlocks": "Kontaktdaten, Scorecards und Aufzeichnungen",
-    "noExpiry": "Credits verfallen nie",
-    "topUps": "Jederzeit aufladen",
     "buy": "{{name}} kaufen",
     "errorTitle": "Die Tarife wurden nicht geladen.",
     "errorBody": "Aufladungen unten funktionieren weiterhin. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
@@ -25,13 +36,15 @@
     "save": "{{percent}} % günstiger als Aufladungen"
   },
   "topUps": {
-    "title": "Aufladen",
-    "lead": "Fügen Sie Ihrem Guthaben Credits hinzu, wann immer Sie mehr brauchen.",
+    "heading": "Andere Menge gewünscht?",
+    "body": "Wählen Sie ein Paket. Es wird Ihrem Guthaben direkt nach der Zahlung gutgeschrieben.",
     "credits_one": "{{count}} Credit",
     "credits_other": "{{count}} Credits",
     "buyLabel_one": "{{count}} Credit kaufen",
     "buyLabel_other": "{{count}} Credits kaufen",
-    "priceError": "Die Preise wurden nicht geladen, daher ist der Kauf pausiert."
+    "priceError": "Die Preise wurden nicht geladen, daher ist der Kauf pausiert.",
+    "youPay": "Sie zahlen",
+    "after": "Guthaben danach"
   },
   "unavailable": {
     "title": "Dieses Paket ist nicht verfügbar",

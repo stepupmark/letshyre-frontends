@@ -1,12 +1,25 @@
 {
   "title": "크레딧 구매",
-  "lead": "크레딧 1개로 AI 인터뷰 1건을 잠금 해제해요: 후보자 연락처, 전체 평가표, 녹화, 이력서. 크레딧은 만료되지 않아요.",
-  "balance": "잔액",
+  "intro": "크레딧으로 지원자의 AI 인터뷰를 열람할 수 있습니다. 한 번 결제하며 구독이 아닙니다.",
+  "balancePanel": {
+    "label": "현재 잔액",
+    "unit_other": "크레딧",
+    "body": "지원자 한 명을 열람할 때마다 크레딧 1개가 사용됩니다.",
+    "low": "잔액이 얼마 남지 않았습니다. 다음 열람 전에 충전하세요.",
+    "error": "잔액을 불러오지 못했지만 잔액은 그대로입니다."
+  },
   "invoices": "인보이스",
   "buyCredits": "크레딧 구매",
   "plusGst": "{{price}} + GST",
   "nextNote": "결제가 끝나면 보고 있던 후보자에게 다시 데려다 드려요.",
   "nextBack": "후보자로 돌아가기",
+  "includes": {
+    "title": "크레딧마다 포함된 항목",
+    "contact": "연락처",
+    "scorecard": "전체 평가표",
+    "recording": "인터뷰 녹화와 이력서",
+    "noExpiry": "만료 없음"
+  },
   "plans": {
     "title": "플랜",
     "lead": "구독이 아닌 일회 결제예요. GST는 결제할 때 추가돼요.",
@@ -14,9 +27,6 @@
     "once": "+ GST, 일회 결제",
     "credits_other": "크레딧 {{count}}개",
     "rate": "크레딧당 {{rate}}",
-    "unlocks": "연락처, 평가표, 녹화",
-    "noExpiry": "크레딧 만료 없음",
-    "topUps": "언제든 충전",
     "buy": "{{name}} 구매",
     "errorTitle": "요금제를 불러오지 못했습니다.",
     "errorBody": "아래 충전은 그대로 이용할 수 있습니다. 연결을 확인하고 다시 시도하세요.",
@@ -24,11 +34,13 @@
     "save": "충전보다 {{percent}}% 저렴"
   },
   "topUps": {
-    "title": "충전",
-    "lead": "필요할 때마다 잔액에 크레딧을 추가하세요.",
+    "heading": "다른 수량이 필요하신가요?",
+    "body": "팩을 선택하세요. 결제하면 바로 잔액에 추가됩니다.",
     "credits_other": "크레딧 {{count}}개",
     "buyLabel_other": "크레딧 {{count}}개 구매",
-    "priceError": "가격을 불러오지 못해 구매가 일시 중지되었습니다."
+    "priceError": "가격을 불러오지 못해 구매가 일시 중지되었습니다.",
+    "youPay": "결제 금액",
+    "after": "구매 후 잔액"
   },
   "unavailable": {
     "title": "이 플랜은 이용할 수 없어요",
