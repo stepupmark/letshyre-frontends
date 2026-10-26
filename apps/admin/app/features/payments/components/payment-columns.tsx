@@ -9,7 +9,7 @@ import { formatCurrency, formatNumber } from "@/lib/format"
 
 import { type Payment } from "../schemas/payments.schema"
 
-export const statusTone: Record<string, StatusTone> = {
+const statusTone: Record<string, StatusTone> = {
   success: "success",
   pending: "warning",
   created: "warning",

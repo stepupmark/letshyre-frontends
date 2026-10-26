@@ -98,7 +98,7 @@ export function Found({
   )
 }
 
-export function Skills({
+function Skills({
   skills,
   onChange,
 }: {
@@ -164,7 +164,7 @@ export function Skills({
   )
 }
 
-export function Entries<T extends Record<string, string>>({
+function Entries<T extends Record<string, string>>({
   title,
   empty,
   items,
