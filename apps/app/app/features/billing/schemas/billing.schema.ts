@@ -1,7 +1,7 @@
+import { safeUrl } from "@workspace/api"
 import { z } from "zod"
 
 import { env } from "@/lib/env"
-import { safeUrl } from "@/lib/safe-url"
 
 const amount = z.coerce.number().nonnegative()
 

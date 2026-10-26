@@ -1,3 +1,4 @@
+import { safeUrl } from "@workspace/api"
 import { useTranslation } from "@workspace/i18n/react"
 import { Skeleton } from "@workspace/ui/components/skeleton"
 import { useQuery } from "@tanstack/react-query"
@@ -14,7 +15,6 @@ import {
 
 import { LoadError } from "@/components/query-state"
 import { useDelayed } from "@/hooks/use-delayed"
-import { safeUrl } from "@/lib/safe-url"
 
 import { useYearsText } from "../../hooks/use-profile-text"
 import { lpaOf } from "../../lib/profile-format"

@@ -1,11 +1,10 @@
+import { safeUrl } from "@workspace/api"
 import { useTranslation } from "@workspace/i18n/react"
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
 } from "@workspace/ui/components/avatar"
-
-import { safeUrl } from "@/lib/safe-url"
 
 import type { Match } from "../schemas/job-matches.schema"
 

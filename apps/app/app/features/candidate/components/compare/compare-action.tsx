@@ -1,3 +1,4 @@
+import { safeUrl } from "@workspace/api"
 import { useTranslation } from "@workspace/i18n/react"
 import {
   Avatar,
@@ -11,7 +12,6 @@ import * as m from "motion/react-m"
 import { AppLink } from "@/components/app-link"
 import { buttonLink } from "@/lib/button-link"
 import { duration, ease } from "@/lib/motion"
-import { safeUrl } from "@/lib/safe-url"
 
 import { compareHref, MAX_COMPARE } from "../../lib/compare"
 

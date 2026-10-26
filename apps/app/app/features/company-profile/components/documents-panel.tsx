@@ -1,7 +1,6 @@
+import { safeUrl } from "@workspace/api"
 import { useTranslation } from "@workspace/i18n/react"
 import { FileText } from "lucide-react"
-
-import { safeUrl } from "@/lib/safe-url"
 
 import type { Company } from "../schemas/company-profile.schema"
 import { Outbound, Panel } from "./parts"

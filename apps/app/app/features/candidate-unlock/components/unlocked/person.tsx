@@ -1,3 +1,4 @@
+import { safeUrl } from "@workspace/api"
 import { useTranslation } from "@workspace/i18n/react"
 import {
   Avatar,
@@ -8,7 +9,6 @@ import { BadgeCheck } from "lucide-react"
 import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
-import { safeUrl } from "@/lib/safe-url"
 
 import { initials, roleOf } from "../../lib/unlocked"
 import type { Unlocked } from "../../schemas/candidate-unlock.schema"

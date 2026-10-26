@@ -1,3 +1,4 @@
+import { safeUrl } from "@workspace/api"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import {
   BriefcaseBusiness,
@@ -15,7 +16,6 @@ import type { ReactNode } from "react"
 
 import { CopyButton } from "@/components/copy-button"
 import { StatusBadge, type Tone } from "@/components/status-badge"
-import { safeUrl } from "@/lib/safe-url"
 
 import { useNoticeText, useYearsText } from "../../hooks/use-profile-text"
 import { addressOf, lpaOf, noticeOf, phoneOf } from "../../lib/profile-format"

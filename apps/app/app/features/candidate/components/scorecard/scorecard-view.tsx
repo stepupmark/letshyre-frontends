@@ -1,7 +1,6 @@
+import { safeUrl } from "@workspace/api"
 import { useTranslation } from "@workspace/i18n/react"
 import { useState, type ReactNode } from "react"
-
-import { safeUrl } from "@/lib/safe-url"
 
 import { useActiveChapter } from "../../hooks/use-active-chapter"
 import {

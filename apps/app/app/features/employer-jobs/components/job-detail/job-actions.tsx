@@ -1,3 +1,4 @@
+import { safeUrl } from "@workspace/api"
 import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import { Field, FieldLabel } from "@workspace/ui/components/field"
@@ -13,7 +14,6 @@ import { useId } from "react"
 import { toast } from "sonner"
 
 import { buttonLink } from "@/lib/button-link"
-import { safeUrl } from "@/lib/safe-url"
 import { undoToast } from "@/lib/undo-toast"
 
 import { ownStatus, statusOf } from "../../lib/employer-jobs"

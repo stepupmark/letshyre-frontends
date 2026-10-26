@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { HttpError } from "@workspace/api"
+import { HttpError, safeUrl } from "@workspace/api"
 import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import {
@@ -27,7 +27,6 @@ import { ConfirmDialog } from "@/components/confirm-dialog"
 import { TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
 import { industriesQuery } from "@/lib/industries"
-import { safeUrl } from "@/lib/safe-url"
 
 import { useLeaveGuard } from "../hooks/use-leave-guard"
 import { useSaveCompany } from "../mutations/use-save-company"

@@ -1,8 +1,7 @@
+import { safeUrl } from "@workspace/api"
 import { useTranslation } from "@workspace/i18n/react"
 import { cn } from "@workspace/ui/lib/utils"
 import { Check, X } from "lucide-react"
-
-import { safeUrl } from "@/lib/safe-url"
 
 import { MCQ } from "../../lib/scorecard"
 import type { Question } from "../../schemas/scorecard.schema"

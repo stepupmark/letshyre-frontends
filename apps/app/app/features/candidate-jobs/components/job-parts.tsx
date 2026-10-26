@@ -1,3 +1,4 @@
+import { safeUrl } from "@workspace/api"
 import { useTranslation } from "@workspace/i18n/react"
 import {
   Avatar,
@@ -14,7 +15,6 @@ import {
 } from "lucide-react"
 
 import { StatusBadge, type Tone } from "@/components/status-badge"
-import { safeUrl } from "@/lib/safe-url"
 
 import { useJobFacts } from "../hooks/use-job-facts"
 import { companyOf, logoOf } from "../lib/candidate-jobs"

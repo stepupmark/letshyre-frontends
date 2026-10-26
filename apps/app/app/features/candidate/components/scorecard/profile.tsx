@@ -1,10 +1,9 @@
+import { safeUrl } from "@workspace/api"
 import { useTranslation } from "@workspace/i18n/react"
 import { Badge } from "@workspace/ui/components/badge"
 import { cn } from "@workspace/ui/lib/utils"
 import { ExternalLink, FileText } from "lucide-react"
 import type { ReactNode } from "react"
-
-import { safeUrl } from "@/lib/safe-url"
 
 import { hasItems } from "../../lib/scorecard"
 import type { Scorecard } from "../../schemas/scorecard.schema"
@@ -26,7 +25,7 @@ const linkText = (href: string) => {
 export function Profile({ report }: { report: Scorecard }) {
   const { t } = useTranslation("scorecard")
   const links = (report.candidate_portfolio_links ?? [])
-    .map(safeUrl)
+    .map((link) => safeUrl(link))
     .filter((url): url is string => url !== null)
   const resume = safeUrl(report.candidate_resume)
   const awards = [

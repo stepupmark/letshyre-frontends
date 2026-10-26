@@ -1,3 +1,4 @@
+import { safeUrl } from "@workspace/api"
 import { useTranslation } from "@workspace/i18n/react"
 import {
   Avatar,
@@ -10,7 +11,6 @@ import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { buttonLink } from "@/lib/button-link"
-import { safeUrl } from "@/lib/safe-url"
 
 import type { Scorecard } from "../../schemas/scorecard.schema"
 

@@ -1,3 +1,4 @@
+import { safeUrl } from "@workspace/api"
 import { useQuery } from "@tanstack/react-query"
 import { useTranslation } from "@workspace/i18n/react"
 import { CircleAlert, Pencil } from "lucide-react"
@@ -7,7 +8,6 @@ import { AppLink } from "@/components/app-link"
 import { StatusBadge, type Tone } from "@/components/status-badge"
 import { buttonLink } from "@/lib/button-link"
 import { industriesQuery } from "@/lib/industries"
-import { safeUrl } from "@/lib/safe-url"
 
 import {
   hostOf,

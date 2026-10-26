@@ -1,3 +1,4 @@
+import { safeUrl } from "@workspace/api"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import {
   Avatar,
@@ -12,7 +13,6 @@ import type { ReactNode } from "react"
 import { AnimatedNumber } from "@/components/animated-number"
 import { ScoreBand } from "@/components/score-band"
 import { bandOf } from "@/lib/score-band"
-import { safeUrl } from "@/lib/safe-url"
 
 import type { Scorecard } from "../../schemas/scorecard.schema"
 import { ScoreRing } from "../art/score-ring"
