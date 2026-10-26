@@ -1,3 +1,4 @@
+import { safeUrl } from "@workspace/api"
 import { useEffect, useState } from "react"
 import {
   ChevronLeft,
@@ -25,7 +26,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@workspace/ui/components/select"
-import { safeExternalUrl } from "@/lib/safe-url"
 
 export interface ViewerDocument {
   label: string
@@ -165,7 +165,7 @@ export function DocumentViewer({
   className,
 }: DocumentViewerProps) {
   const current = documents[index]
-  const url = safeExternalUrl(current?.url)
+  const url = safeUrl(current?.url)
   const last = documents.length - 1
 
   return (
@@ -208,7 +208,7 @@ export function DocumentViewer({
             {documents.map((doc, position) => (
               <SelectItem key={doc.label} value={String(position)}>
                 {doc.label}
-                {!safeExternalUrl(doc.url) && (
+                {!safeUrl(doc.url) && (
                   <span className="text-muted-foreground">· missing</span>
                 )}
               </SelectItem>
@@ -354,7 +354,7 @@ export function DocumentList({ documents, className }: DocumentListProps) {
               <FileText className="size-4 text-muted-foreground" />
               {doc.label}
             </span>
-            {safeExternalUrl(doc.url) ? (
+            {safeUrl(doc.url) ? (
               <Button
                 variant="outline"
                 size="sm"

@@ -1,3 +1,4 @@
+import { safeUrl } from "@workspace/api"
 import { StatusBadge, type StatusTone } from "@/components/status-badge"
 import {
   Avatar,
@@ -5,7 +6,6 @@ import {
   AvatarImage,
 } from "@workspace/ui/components/avatar"
 import { initials } from "@/lib/format"
-import { safeExternalUrl } from "@/lib/safe-url"
 
 const tones: Record<string, StatusTone> = {
   verified: "success",
@@ -37,7 +37,7 @@ export function CompanyAvatar({
 }) {
   return (
     <Avatar className={className}>
-      <AvatarImage src={safeExternalUrl(logo)} alt="" />
+      <AvatarImage src={safeUrl(logo) ?? undefined} alt="" />
       <AvatarFallback className="text-xs">{initials(name)}</AvatarFallback>
     </Avatar>
   )

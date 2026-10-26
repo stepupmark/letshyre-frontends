@@ -1,3 +1,4 @@
+import { safeUrl } from "@workspace/api"
 import { DetailList } from "@/components/detail-list"
 import { DocumentList } from "@/components/document-viewer"
 import { ExternalLink } from "@/components/external-link"
@@ -10,7 +11,6 @@ import {
   CardTitle,
 } from "@workspace/ui/components/card"
 import { Copyable } from "@/components/copyable"
-import { safeExternalUrl } from "@/lib/safe-url"
 import { kycDocuments, type CompanyKyc } from "@/lib/company-kyc"
 
 function WebLink({ href }: { href: string | null | undefined }) {
@@ -24,7 +24,7 @@ function WebLink({ href }: { href: string | null | undefined }) {
         ) : null
       }
     >
-      {safeExternalUrl(href)
+      {safeUrl(href, { bareDomains: true })
         ?.replace(/^https?:\/\//, "")
         .replace(/\/$/, "")}
     </ExternalLink>

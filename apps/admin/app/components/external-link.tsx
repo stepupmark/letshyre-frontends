@@ -1,5 +1,5 @@
+import { safeUrl } from "@workspace/api"
 import type { AnchorHTMLAttributes, ReactNode } from "react"
-import { safeExternalUrl } from "@/lib/safe-url"
 
 type ExternalLinkProps = Omit<
   AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -15,7 +15,7 @@ export function ExternalLink({
   children,
   ...props
 }: ExternalLinkProps) {
-  const url = safeExternalUrl(href)
+  const url = safeUrl(href, { bareDomains: true })
   if (!url) return <>{fallback}</>
   return (
     <a href={url} target="_blank" rel="noopener noreferrer" {...props}>

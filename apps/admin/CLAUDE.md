@@ -18,7 +18,7 @@ too; README.md has the page walkthrough and hosting needs.
 - Mutations set `meta.successMessage` and `meta.invalidates`; destructive actions go through
   `ConfirmDialog`.
 - Tables use `DataTable` with columns typed as `DataTableColumn<T>`.
-- User links go through `<ExternalLink>` / `safeExternalUrl()`; personal identifiers through
+- User links go through `<ExternalLink>` / `safeUrl()` from `@workspace/api`; personal identifiers through
   `<SensitiveValue>`.
 - No new inline scripts: the CSP only allows the hashed ones in `index.html`.
 - E2E covers access, session, money and the CSP smoke. Every API call is mocked.

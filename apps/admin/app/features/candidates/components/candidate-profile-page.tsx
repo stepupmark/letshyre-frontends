@@ -1,3 +1,4 @@
+import { safeUrl } from "@workspace/api"
 import type { ReactNode } from "react"
 import { Link, useParams } from "react-router"
 import { useQuery } from "@tanstack/react-query"
@@ -25,7 +26,6 @@ import { Skeleton } from "@workspace/ui/components/skeleton"
 import { Copyable } from "@/components/copyable"
 import { useDocumentTitle } from "@/hooks/use-document-title"
 import { formatCurrency, formatDate, initials } from "@/lib/format"
-import { safeExternalUrl } from "@/lib/safe-url"
 import { candidatesQueries } from "../queries/candidates.queries"
 import type { CandidateProfile } from "../schemas/candidates.schema"
 import { CandidateDecision } from "./candidate-decision"
@@ -303,7 +303,10 @@ export function CandidateProfilePage() {
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           <Avatar className="size-14">
-            <AvatarImage src={safeExternalUrl(data.profile_photo)} alt="" />
+            <AvatarImage
+              src={safeUrl(data.profile_photo) ?? undefined}
+              alt=""
+            />
             <AvatarFallback>{initials(data.name)}</AvatarFallback>
           </Avatar>
           <div>

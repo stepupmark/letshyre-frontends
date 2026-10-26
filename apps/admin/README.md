@@ -41,7 +41,7 @@ app/routes/dashboard.<name>.tsx   clientLoader prefetch, meta, handle.breadcrumb
 ## Rules
 
 - UI comes from `@workspace/ui/components/*`, never edited. Use design tokens so dark mode works.
-- User links go through `<ExternalLink>` / `safeExternalUrl()`; personal identifiers through
+- User links go through `<ExternalLink>` / `safeUrl()` from `@workspace/api`; personal identifiers through
   `<SensitiveValue>`.
 - No new inline scripts: the CSP only allows the hashed ones in `index.html`.
 - E2E covers access, session, money and the CSP smoke. Every API call is mocked; an unknown call
