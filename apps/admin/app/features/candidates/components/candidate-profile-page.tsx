@@ -1,13 +1,7 @@
 import { safeUrl } from "@workspace/api"
-import type { ReactNode } from "react"
 import { Link, useParams } from "react-router"
 import { useQuery } from "@tanstack/react-query"
 import { ArrowLeft } from "lucide-react"
-import { DetailList } from "@/components/detail-list"
-import { DocumentList } from "@/components/document-viewer"
-import { ExternalLink } from "@/components/external-link"
-import { ErrorState } from "@/components/feedback/error-state"
-import { SensitiveValue } from "@/components/sensitive-value"
 import {
   Avatar,
   AvatarFallback,
@@ -15,58 +9,21 @@ import {
 } from "@workspace/ui/components/avatar"
 import { Badge } from "@workspace/ui/components/badge"
 import { Button } from "@workspace/ui/components/button"
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@workspace/ui/components/card"
-import { Separator } from "@workspace/ui/components/separator"
 import { Skeleton } from "@workspace/ui/components/skeleton"
+
+import { DetailList } from "@/components/detail-list"
+import { DocumentList } from "@/components/document-viewer"
+import { ExternalLink } from "@/components/external-link"
+import { ErrorState } from "@/components/feedback/error-state"
+import { SensitiveValue } from "@/components/sensitive-value"
 import { Copyable } from "@/components/copyable"
 import { useDocumentTitle } from "@/hooks/use-document-title"
 import { formatCurrency, formatDate, initials } from "@/lib/format"
+
 import { candidatesQueries } from "../queries/candidates.queries"
 import type { CandidateProfile } from "../schemas/candidates.schema"
 import { CandidateDecision } from "./candidate-decision"
-
-function Section({ title, children }: { title: string; children: ReactNode }) {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-      </CardHeader>
-      <CardContent>{children}</CardContent>
-    </Card>
-  )
-}
-
-function Empty({ children }: { children: ReactNode }) {
-  return <p className="text-sm text-muted-foreground">{children}</p>
-}
-
-function Timeline({
-  items,
-}: {
-  items: { key: string; title: ReactNode; meta: ReactNode; body?: ReactNode }[]
-}) {
-  return (
-    <div className="space-y-4">
-      {items.map((item, index) => (
-        <div key={item.key}>
-          {index > 0 && <Separator className="mb-4" />}
-          <p className="font-medium">{item.title}</p>
-          <p className="text-xs text-muted-foreground">{item.meta}</p>
-          {item.body && (
-            <div className="mt-2 text-sm whitespace-pre-line text-muted-foreground">
-              {item.body}
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  )
-}
+import { Empty, Section, Timeline } from "./profile-sections"
 
 function range(start: unknown, end: unknown) {
   return [start, end || "Present"].filter(Boolean).join(" – ")

@@ -1,8 +1,6 @@
 import { useState } from "react"
-import { Link } from "react-router"
 import { useQuery } from "@tanstack/react-query"
 import type { OnChangeFn, RowSelectionState } from "@tanstack/react-table"
-import type { DataTableColumn } from "@/components/data-table/features"
 import {
   BriefcaseBusiness,
   CalendarPlus,
@@ -12,6 +10,8 @@ import {
   Rows3,
   X,
 } from "lucide-react"
+import { Button } from "@workspace/ui/components/button"
+
 import { DataTable } from "@/components/data-table/data-table"
 import { DateRangeFilter } from "@/components/date-range-filter"
 import { FilterSelect } from "@/components/filter-select"
@@ -19,131 +19,16 @@ import { ListEmptyState } from "@/components/feedback/list-empty-state"
 import { PageHeader } from "@/components/page-header"
 import { SearchInput } from "@/components/search-input"
 import { StatCard } from "@/components/stat-card"
-import { Button } from "@workspace/ui/components/button"
-import { Checkbox } from "@workspace/ui/components/checkbox"
-import { RelativeTime } from "@/components/relative-time"
-import { jobsService } from "../services/jobs.service"
 import { fetchAllPages } from "@/lib/fetch-all-pages"
 import { useDebouncedValue } from "@/hooks/use-debounced-value"
 import { formatNumber } from "@/lib/format"
-import { jobsQueries } from "../queries/jobs.queries"
-import type { Job } from "../schemas/jobs.schema"
 import { useSearchState } from "@/lib/search-params"
-import { readJobsParams, toJobsFilters } from "../search-params"
-import { ApprovalBadge, JobStatusBadge } from "./job-badges"
-import { JobReview } from "./job-review"
 
-const columns: DataTableColumn<Job>[] = [
-  {
-    id: "select",
-    meta: { width: 40 },
-    header: ({ table }) => (
-      <Checkbox
-        aria-label="Select all on this page"
-        checked={table.getIsAllPageRowsSelected()}
-        indeterminate={
-          !table.getIsAllPageRowsSelected() && table.getIsSomePageRowsSelected()
-        }
-        onCheckedChange={(checked) => {
-          table.toggleAllPageRowsSelected(checked)
-        }}
-      />
-    ),
-    cell: ({ row }) => (
-      <Checkbox
-        aria-label={`Select ${row.original.title ?? "job"}`}
-        checked={row.getIsSelected()}
-        onCheckedChange={(checked) => {
-          row.toggleSelected(checked)
-        }}
-      />
-    ),
-  },
-  {
-    id: "job",
-    meta: {
-      csv: (row) => ({
-        Title: row.title,
-        Company: row.company_name,
-        Employer: row.employer_name,
-      }),
-    },
-    header: "Job",
-    cell: ({ row }) => (
-      <div className="flex flex-col">
-        <Link
-          to={`/dashboard/jobs/${row.original.id}`}
-          className="font-medium underline-offset-4 hover:underline"
-        >
-          {row.original.title || "Untitled job"}
-        </Link>
-        <span className="text-xs text-muted-foreground">
-          {[row.original.company_name, row.original.employer_name]
-            .filter(Boolean)
-            .join(" · ")}
-        </span>
-      </div>
-    ),
-  },
-  {
-    id: "type",
-    meta: {
-      csv: (row) => ({
-        "Employment type": row.employment_type,
-        Industry: row.industry_type,
-      }),
-    },
-    header: "Type",
-    cell: ({ row }) => (
-      <div className="flex flex-col text-xs">
-        <span className="capitalize">
-          {row.original.employment_type?.replace(/_/g, " ") || "—"}
-        </span>
-        <span className="text-muted-foreground">
-          {row.original.industry_type}
-        </span>
-      </div>
-    ),
-  },
-  {
-    id: "applications",
-    meta: {
-      align: "right",
-      csv: (row) => ({ Applicants: row.applications_count }),
-    },
-    header: "Applicants",
-    cell: ({ row }) => formatNumber(row.original.applications_count),
-  },
-  {
-    id: "status",
-    meta: { csv: (row) => ({ Status: row.status }) },
-    header: "Status",
-    cell: ({ row }) => <JobStatusBadge status={row.original.status} />,
-  },
-  {
-    id: "approval",
-    meta: { csv: (row) => ({ Review: row.approval }) },
-    header: "Review",
-    cell: ({ row }) => <ApprovalBadge status={row.original.approval} />,
-  },
-  {
-    id: "posted",
-    meta: { csv: (row) => ({ Posted: row.created_at }) },
-    header: "Posted",
-    cell: ({ row }) => <RelativeTime value={row.original.created_at} />,
-  },
-  {
-    id: "actions",
-    header: () => <span className="sr-only">Actions</span>,
-    cell: ({ row }) => (
-      <JobReview
-        jobIds={[row.original.id]}
-        approval={row.original.approval}
-        size="sm"
-      />
-    ),
-  },
-]
+import { jobsService } from "../services/jobs.service"
+import { jobsQueries } from "../queries/jobs.queries"
+import { readJobsParams, toJobsFilters } from "../search-params"
+import { JobReview } from "./job-review"
+import { columns } from "./job-columns"
 
 function Summary() {
   const summary = useQuery(jobsQueries.summary())
