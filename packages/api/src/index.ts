@@ -1,4 +1,4 @@
-export { acknowledge, paginated, unwrap } from "./envelope.ts"
+export { acknowledge, paginated, payloadOf, unwrap } from "./envelope.ts"
 export { errorKey, normalizeMessage, type ErrorKeyRules } from "./error-key.ts"
 export * from "./errors.ts"
 export { safeUrl } from "./safe-url.ts"

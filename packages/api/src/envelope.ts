@@ -33,6 +33,17 @@ export function unwrap<T extends z.ZodType>(schema: T) {
   }
 }
 
+/**
+ * For endpoints that send `{ success, data }` on some paths and the bare payload on others.
+ * `success: false` still becomes an HttpError.
+ */
+export function payloadOf(json: unknown): unknown {
+  if (typeof json !== "object" || json === null) return json
+  if ("success" in json && json.success === false)
+    throw new HttpError(200, json)
+  return "data" in json ? json.data : json
+}
+
 /** For endpoints whose only useful output is the backend's message. */
 export function acknowledge(json: unknown): { message: string | undefined } {
   return { message: open(json).message }
