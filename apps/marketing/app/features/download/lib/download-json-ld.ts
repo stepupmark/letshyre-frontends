@@ -35,8 +35,6 @@ export function downloadJsonLd({
       url: absUrl(localePath(lang, path)),
       downloadUrl: desktopDownloadUrl(env.VITE_API_BASE_URL, "windows"),
     }),
-    ...(Array.isArray(faq)
-      ? [faqSchema(faq as { q: string; a: string }[])]
-      : []),
+    ...(Array.isArray(faq) ? [faqSchema(faq)] : []),
   ]
 }

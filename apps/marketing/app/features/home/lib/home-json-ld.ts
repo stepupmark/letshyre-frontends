@@ -26,9 +26,7 @@ export function homeJsonLd({
       os: "Web",
       url: absUrl(localePath(lang, path)),
     }),
-    ...(Array.isArray(faq)
-      ? [faqSchema(faq as { q: string; a: string }[])]
-      : []),
+    ...(Array.isArray(faq) ? [faqSchema(faq)] : []),
     webPageSchema({
       lang,
       path,

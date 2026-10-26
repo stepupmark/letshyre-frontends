@@ -20,14 +20,7 @@ export const meta = pageMeta("candidateGuide", ({ lang, t, path }) => [
     about: { "@id": `${SITE.url}/#organization` },
     audience: { "@type": "Audience", audienceType: t("meta.audience") },
   },
-  faqSchema(
-    Object.values(
-      t("faq.items", { returnObjects: true }) as unknown as Record<
-        string,
-        { q: string; a: string }
-      >
-    )
-  ),
+  faqSchema(t("faq.items", { returnObjects: true })),
 ])
 
 export default CandidateGuidePage

@@ -1,4 +1,5 @@
 import { LOCALES, type Locale, localePath } from "@workspace/i18n"
+import { z } from "zod"
 
 import { absUrl, SITE } from "./site"
 
@@ -78,10 +79,17 @@ export const breadcrumbSchema = (
 
 const stripTags = (text: string) => text.replace(/<[^>]+>/g, "")
 
-export const faqSchema = (items: { q: string; a: string }[]): JsonLd => ({
+const faqItem = z.object({ q: z.string(), a: z.string() })
+const faqItems = z.union([
+  z.array(faqItem),
+  z.record(z.string(), faqItem).transform((items) => Object.values(items)),
+])
+
+/** Takes `faq.items` as i18next returns it, a list or a keyed object; fails the build if malformed. */
+export const faqSchema = (items: unknown): JsonLd => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: items.map((item) => ({
+  mainEntity: faqItems.parse(items).map((item) => ({
     "@type": "Question",
     name: stripTags(item.q),
     acceptedAnswer: { "@type": "Answer", text: stripTags(item.a) },

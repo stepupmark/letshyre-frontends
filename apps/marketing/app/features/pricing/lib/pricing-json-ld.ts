@@ -4,11 +4,6 @@ import type { Translate } from "@/lib/seo/page-meta"
 import { faqSchema, type JsonLd, webPageSchema } from "@/lib/seo/schema"
 import { SITE } from "@/lib/seo/site"
 
-interface FaqItem {
-  q: string
-  a: string
-}
-
 /** The breadcrumb comes from meta.crumb in pageMeta. */
 export function pricingJsonLd({
   lang,
@@ -21,7 +16,7 @@ export function pricingJsonLd({
 }): JsonLd[] {
   const faq = t("faq.items", { returnObjects: true }) as unknown
   return [
-    ...(Array.isArray(faq) ? [faqSchema(faq as FaqItem[])] : []),
+    ...(Array.isArray(faq) ? [faqSchema(faq)] : []),
     {
       ...webPageSchema({
         lang,

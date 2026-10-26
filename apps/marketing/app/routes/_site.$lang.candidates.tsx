@@ -1,6 +1,5 @@
 import { CandidatesPage } from "@/features/candidates"
 import { pageData } from "@/lib/page-data.server"
-import { type FaqItem } from "@/components/faq-list"
 import { pageMeta } from "@/lib/seo/page-meta"
 import { faqSchema, webPageSchema } from "@/lib/seo/schema"
 import { SITE } from "@/lib/seo/site"
@@ -21,7 +20,7 @@ export const meta = pageMeta("candidates", ({ lang, t, path }) => [
     about: { "@id": `${SITE.url}/#organization` },
     audience: { "@type": "Audience", audienceType: t("meta.audience") },
   },
-  faqSchema(t("faq.items", { returnObjects: true }) as unknown as FaqItem[]),
+  faqSchema(t("faq.items", { returnObjects: true })),
 ])
 
 export default CandidatesPage
