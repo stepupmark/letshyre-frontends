@@ -20,6 +20,8 @@ export interface HttpClientOptions {
   timeoutMs?: number
   /** Extra attempts for GETs that fail on the network, time out, or get a 429/5xx. */
   retries?: number
+  /** A GET gives up once its attempts and waits together pass this. */
+  deadlineMs?: number
   retryDelayMs?: (attempt: number) => number
   getAuthHeader?: () => string | null | undefined
   /** Called on a 401; resolve true once a new token is stored and the request is retried once. */
@@ -57,12 +59,15 @@ export interface HttpClient {
   ) => Promise<T>
 }
 
-const backoff = (attempt: number) => 300 * 2 ** attempt
+// jittered so tabs that failed together don't all retry at once
+const backoff = (attempt: number) =>
+  300 * 2 ** attempt * (0.5 + Math.random() / 2)
 
 export function createHttpClient({
   baseUrl,
-  timeoutMs = 15_000,
+  timeoutMs: defaultTimeout = 15_000,
   retries = 2,
+  deadlineMs = 20_000,
   retryDelayMs = backoff,
   getAuthHeader,
   refreshAuth,
@@ -93,7 +98,8 @@ export function createHttpClient({
     method: string,
     path: string,
     body: Body,
-    options: RequestOptions
+    options: RequestOptions,
+    timeoutMs = defaultTimeout
   ) {
     const { url: target, headers } = prepare(path, options)
     // FormData sets its own multipart content type with the boundary
@@ -125,7 +131,11 @@ export function createHttpClient({
     }
 
     if (!response.ok)
-      throw new HttpError(response.status, await readJson(response))
+      throw new HttpError(
+        response.status,
+        await readJson(response),
+        retryAfterMs(response.headers.get("Retry-After"))
+      )
     return response
   }
 
@@ -163,10 +173,11 @@ export function createHttpClient({
     method: string,
     path: string,
     body: Body,
-    options: RequestOptions
+    options: RequestOptions,
+    timeoutMs?: number
   ) {
     return withAuthRetry(async () => {
-      const response = await raw(method, path, body, options)
+      const response = await raw(method, path, body, options, timeoutMs)
       const text = await response.text()
       if (!text) return null
       try {
@@ -182,20 +193,32 @@ export function createHttpClient({
     }, options)
   }
 
-  async function withRetry<T>(run: () => Promise<T>, options: RequestOptions) {
+  async function withRetry<T>(
+    run: (timeoutMs: number) => Promise<T>,
+    options: RequestOptions
+  ) {
+    const deadline = Date.now() + deadlineMs
     for (let attempt = 0; ; attempt++) {
       try {
-        return await run()
+        return await run(Math.min(defaultTimeout, deadline - Date.now()))
       } catch (error) {
         if (attempt >= retries || !isRetryable(error)) throw error
-        await sleep(retryDelayMs(attempt), options.signal)
+        const wait = Math.max(
+          retryDelayMs(attempt),
+          error instanceof HttpError ? (error.retryAfterMs ?? 0) : 0
+        )
+        if (Date.now() + wait >= deadline) throw error
+        await sleep(wait, options.signal)
       }
     }
   }
 
   return {
     get: (path, options = {}) =>
-      withRetry(() => json("GET", path, undefined, options), options),
+      withRetry(
+        (timeoutMs) => json("GET", path, undefined, options, timeoutMs),
+        options
+      ),
     post: (path, body, options = {}) => json("POST", path, body, options),
     put: (path, body, options = {}) => json("PUT", path, body, options),
     patch: (path, body, options = {}) => json("PATCH", path, body, options),
@@ -208,6 +231,15 @@ export function createHttpClient({
     prepare,
     withAuthRetry,
   }
+}
+
+/** Retry-After is either seconds or an HTTP date. */
+function retryAfterMs(value: string | null): number | undefined {
+  if (!value) return undefined
+  const seconds = Number(value)
+  if (Number.isFinite(seconds)) return Math.max(0, seconds * 1000)
+  const date = Date.parse(value)
+  return Number.isNaN(date) ? undefined : Math.max(0, date - Date.now())
 }
 
 async function readJson(response: Response): Promise<unknown> {

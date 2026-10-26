@@ -143,8 +143,9 @@ describe("createHttpClient", () => {
     expect(calls).toBe(2)
   })
 
-  it("waits between retries with the default backoff", async () => {
+  it("waits between retries with the default jittered backoff", async () => {
     vi.useFakeTimers()
+    vi.spyOn(Math, "random").mockReturnValue(0)
     let calls = 0
     server.use(
       http.get(url("slow-retry/"), () => (calls++, HttpResponse.error()))
@@ -153,12 +154,58 @@ describe("createHttpClient", () => {
     const pending = client({ retryDelayMs: undefined, retries: 1 })
       .get("/slow-retry/")
       .catch((e: unknown) => e)
-    await vi.advanceTimersByTimeAsync(299)
+    await vi.advanceTimersByTimeAsync(149)
     expect(calls).toBe(1)
     await vi.advanceTimersByTimeAsync(1)
     expect(await pending).toBeInstanceOf(NetworkError)
     expect(calls).toBe(2)
+    vi.restoreAllMocks()
     vi.useRealTimers()
+  })
+
+  it("waits as long as Retry-After asks", async () => {
+    vi.useFakeTimers()
+    let calls = 0
+    server.use(
+      http.get(url("busy/"), () => {
+        calls++
+        return calls === 1
+          ? HttpResponse.json(
+              {},
+              { status: 429, headers: { "Retry-After": "2" } }
+            )
+          : HttpResponse.json({ ok: true })
+      })
+    )
+
+    const pending = client().get("/busy/")
+    await vi.advanceTimersByTimeAsync(1_999)
+    expect(calls).toBe(1)
+    await vi.advanceTimersByTimeAsync(1)
+    expect(await pending).toEqual({ ok: true })
+    vi.useRealTimers()
+  })
+
+  it("gives up when the next retry can't start before the deadline", async () => {
+    let calls = 0
+    server.use(
+      http.get(
+        url("later/"),
+        () => (
+          calls++,
+          HttpResponse.json(
+            {},
+            { status: 503, headers: { "Retry-After": "60" } }
+          )
+        )
+      )
+    )
+
+    await expect(client().get("/later/")).rejects.toMatchObject({
+      status: 503,
+      retryAfterMs: 60_000,
+    })
+    expect(calls).toBe(1)
   })
 
   it("reports network failures and timeouts as their own errors", async () => {

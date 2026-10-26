@@ -18,14 +18,17 @@ export class HttpError extends ApiError {
   readonly backendMessage: string | undefined
   /** DRF field errors as { field: "first message" }, for forms. */
   readonly fieldErrors: Record<string, string> | undefined
+  /** From the Retry-After header on a 429 or 503. */
+  readonly retryAfterMs: number | undefined
 
-  constructor(status: number, body?: unknown) {
+  constructor(status: number, body?: unknown, retryAfterMs?: number) {
     const { code, message } = readErrorBody(body)
     super(`HTTP ${status}${message ? `: ${message}` : ""}`)
     this.status = status
     this.code = code
     this.backendMessage = message
     this.fieldErrors = fieldErrorsOf(body)
+    this.retryAfterMs = retryAfterMs
   }
 }
 
