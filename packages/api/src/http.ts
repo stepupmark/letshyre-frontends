@@ -136,18 +136,26 @@ export function createHttpClient({
     try {
       return await run()
     } catch (error) {
-      if (!(error instanceof HttpError) || error.status !== 401) throw error
-      if (options.auth !== false && refreshAuth && (await refreshAuth())) {
-        try {
-          return await run()
-        } catch (retryError) {
-          if (retryError instanceof HttpError && retryError.status === 401)
-            onUnauthorized?.(retryError)
-          throw retryError
-        }
+      // a 401 on a request sent without a token is a wrong password, not an expired session
+      if (
+        !(error instanceof HttpError) ||
+        error.status !== 401 ||
+        options.auth === false
+      )
+        throw error
+      if (!refreshAuth) {
+        onUnauthorized?.(error)
+        throw error
       }
-      onUnauthorized?.(error)
-      throw error
+      // false: no session to refresh, or refreshAuth has already ended it
+      if (!(await refreshAuth())) throw error
+      try {
+        return await run()
+      } catch (retryError) {
+        if (retryError instanceof HttpError && retryError.status === 401)
+          onUnauthorized?.(retryError)
+        throw retryError
+      }
     }
   }
 

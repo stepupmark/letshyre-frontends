@@ -63,16 +63,18 @@ describe("401 refresh", () => {
       })
     )
     const refreshAuth = vi.fn(() => Promise.resolve(true))
+    const onUnauthorized = vi.fn()
 
     await expect(
-      client({ getAuthHeader: () => "Bearer t", refreshAuth }).post(
-        "/login/",
-        {},
-        { auth: false }
-      )
+      client({
+        getAuthHeader: () => "Bearer t",
+        refreshAuth,
+        onUnauthorized,
+      }).post("/login/", {}, { auth: false })
     ).rejects.toBeInstanceOf(HttpError)
     expect(auth).toBeNull()
     expect(refreshAuth).not.toHaveBeenCalled()
+    expect(onUnauthorized).not.toHaveBeenCalled()
   })
 })
 
