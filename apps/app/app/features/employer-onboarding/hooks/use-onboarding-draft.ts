@@ -2,7 +2,7 @@ import { useWatch, type UseFormReturn } from "react-hook-form"
 
 import { clearDraft, loadDraft, saveDraft } from "@/lib/draft"
 import { fileStore } from "@/lib/file-store"
-import { useAutosave, useRestoredFiles } from "@/lib/use-draft"
+import { useAutosave, useRestoredFiles } from "@/hooks/use-draft"
 
 import {
   STEPS,

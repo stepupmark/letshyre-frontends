@@ -1,5 +1,6 @@
 import outfitLatin from "@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2?url"
 import { QueryClientProvider } from "@tanstack/react-query"
+import { LogoMark } from "@workspace/blocks/logo"
 import { ThemeProvider } from "@workspace/blocks/theme-provider"
 import { dirFor } from "@workspace/i18n"
 import { I18nProvider } from "@workspace/i18n/react"
@@ -103,9 +104,13 @@ export default function App() {
   )
 }
 
-// SPA mode renders this into index.html; the page is blank until JS runs
+// prerendered into index.html, so it shows before any JS has loaded
 export function HydrateFallback() {
-  return null
+  return (
+    <div aria-busy="true" className="grid min-h-svh place-items-center">
+      <LogoMark label="" className="size-10" />
+    </div>
+  )
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

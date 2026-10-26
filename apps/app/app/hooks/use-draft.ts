@@ -1,6 +1,6 @@
 import { useEffect, useEffectEvent, useRef, useState } from "react"
 
-import type { fileStore } from "./file-store"
+import type { fileStore } from "@/lib/file-store"
 
 /** Calls `save` a moment after `watched` stops changing. Returns a save count. */
 export function useAutosave(watched: unknown, save: () => void) {

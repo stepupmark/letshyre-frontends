@@ -3,7 +3,7 @@ import { useState } from "react"
 
 import { clearDraft, loadDraft, saveDraft } from "@/lib/draft"
 import { fileStore } from "@/lib/file-store"
-import { useRestoredFiles } from "@/lib/use-draft"
+import { useRestoredFiles } from "@/hooks/use-draft"
 
 import type { JobValues } from "../lib/job-values"
 

@@ -6,7 +6,7 @@ import { DateField } from "@/components/date-field"
 import { TextField } from "@/components/text-field"
 import { parseIsoDate, startOfToday, yearsBetween } from "@/lib/date"
 import { checkOnBlur } from "@/lib/forms"
-import { useFieldValid } from "@/lib/use-field-valid"
+import { useFieldValid } from "@/hooks/use-field-valid"
 
 import { GENDERS, type Values } from "../../schemas/onboarding-form.schema"
 import { ChoiceField } from "./choice-field"

@@ -19,7 +19,7 @@ import { toast } from "sonner"
 import { DraftSaved } from "@/components/draft-saved"
 import { FileDropzone } from "@/components/file-dropzone"
 import { useGo } from "@/lib/navigation"
-import { useAutosave } from "@/lib/use-draft"
+import { useAutosave } from "@/hooks/use-draft"
 
 import type { useJobForm } from "../../hooks/use-job-form"
 import type { PostDraft } from "../../hooks/use-post-draft"

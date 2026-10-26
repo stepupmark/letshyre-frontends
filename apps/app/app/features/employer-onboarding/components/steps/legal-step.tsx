@@ -9,7 +9,7 @@ import type { UseFormReturn } from "react-hook-form"
 import { TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
 
-import { useFieldValid } from "@/lib/use-field-valid"
+import { useFieldValid } from "@/hooks/use-field-valid"
 import type { Values } from "../../schemas/onboarding-form.schema"
 
 export function LegalStep({ form }: { form: UseFormReturn<Values> }) {

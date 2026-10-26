@@ -18,7 +18,7 @@ import { parseIsoDate, relativeDay } from "@/lib/date"
 import { formatPercent } from "@/lib/format"
 import { checkOnBlur } from "@/lib/forms"
 import { industriesQuery } from "@/lib/industries"
-import { useFieldValid } from "@/lib/use-field-valid"
+import { useFieldValid } from "@/hooks/use-field-valid"
 
 import {
   lastDayRange,
