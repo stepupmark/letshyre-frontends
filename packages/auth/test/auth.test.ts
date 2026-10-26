@@ -20,7 +20,12 @@ import {
   logout,
   RoleNotAllowedError,
 } from "../src/service.ts"
-import { readSession, subscribe } from "../src/session.ts"
+import {
+  clearSession,
+  readSession,
+  subscribe,
+  updateUser,
+} from "../src/session.ts"
 
 const BASE = "https://api.test/"
 const url = (path: string) => new URL(path, BASE).href
@@ -350,6 +355,41 @@ describe("session store", () => {
     expect(readSession().status).toBe("guest")
     localStorage.setItem("user", JSON.stringify({ email: "a@b.in" }))
     expect(readSession().status).toBe("guest")
+  })
+
+  it("never exposes tokens kept in a legacy user record", () => {
+    localStorage.setItem(
+      "user",
+      JSON.stringify({ role: "Employer", refresh: "r", access_token: "a" })
+    )
+    const session = readSession()
+    expect(session.status === "signed-in" && session.user).toEqual({
+      role: "Employer",
+    })
+  })
+
+  it("merges profile changes without storing tokens", () => {
+    signIn({ role: "Employer", is_profile_completed: false })
+    updateUser({ is_profile_completed: true, refresh_token: "r" })
+    expect(JSON.parse(localStorage.getItem("user") ?? "")).toEqual({
+      role: "Employer",
+      is_profile_completed: true,
+    })
+  })
+
+  it("clears the session and signed-in chats, but keeps the public chat and drafts", () => {
+    signIn()
+    sessionStorage.setItem("chat:v1:employer", "[]")
+    sessionStorage.setItem("chat:v1:public", "[]")
+    localStorage.setItem("draft:post-job", "{}")
+
+    clearSession()
+
+    expect(readSession().status).toBe("guest")
+    expect(localStorage.getItem("accessToken")).toBeNull()
+    expect(sessionStorage.getItem("chat:v1:employer")).toBeNull()
+    expect(sessionStorage.getItem("chat:v1:public")).toBe("[]")
+    expect(localStorage.getItem("draft:post-job")).toBe("{}")
   })
 
   it("hears a sign-out from another tab", () => {
