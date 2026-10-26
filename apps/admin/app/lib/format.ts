@@ -121,7 +121,7 @@ export function formatNumber(value: number | string | null | undefined) {
     : numberFormat.format(n)
 }
 
-/** Keeps the last few characters visible, e.g. "XXXX XXXX 1234". */
+/** Keeps the last few characters visible, e.g. "••••••••1234". */
 export function maskId(value: string | null | undefined, visible = 4) {
   const clean = value?.replace(/\s+/g, "") ?? ""
   if (!clean) return "—"

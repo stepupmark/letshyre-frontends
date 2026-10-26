@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "typecheck": "react-router typegen && tsc",
     "lint": "eslint .",
+    "test": "vitest run",
     "test:e2e": "playwright test"
   },
   "dependencies": {
@@ -47,6 +48,7 @@
     "eslint": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:",
-    "vite": "catalog:"
+    "vite": "catalog:",
+    "vitest": "catalog:"
   }
 }
