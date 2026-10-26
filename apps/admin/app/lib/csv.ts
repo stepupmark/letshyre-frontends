@@ -22,5 +22,8 @@ export function downloadCsv(filename: string, csv: string) {
   link.href = url
   link.download = filename
   link.click()
-  URL.revokeObjectURL(url)
+  // revoking straight away can cancel the download in Firefox and Safari
+  setTimeout(() => {
+    URL.revokeObjectURL(url)
+  }, 0)
 }
