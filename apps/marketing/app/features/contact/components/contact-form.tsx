@@ -8,16 +8,8 @@ import {
 } from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
 import { Spinner } from "@workspace/ui/components/spinner"
-import { cn } from "@workspace/ui/lib/utils"
 import { CircleAlertIcon, SendIcon } from "lucide-react"
-import {
-  type ReactNode,
-  useEffect,
-  useId,
-  useMemo,
-  useRef,
-  useState,
-} from "react"
+import { useEffect, useId, useMemo, useRef, useState } from "react"
 import { useForm, useWatch } from "react-hook-form"
 import { Link } from "react-router"
 
@@ -34,49 +26,10 @@ import {
   makeContactSchema,
 } from "../schemas/contact.schema"
 import { ContactSuccess } from "./contact-success"
+import { ComposeField } from "./compose-field"
 
 const MOD_KEY = { mac: "⌘", other: "Ctrl" } as const
 const EMPTY: ContactValues = { name: "", email: "", subject: "", message: "" }
-
-/** A field cell of the compose window: label on top, then the field and its error. */
-function ComposeField({
-  htmlFor,
-  label,
-  error,
-  errorId,
-  className,
-  children,
-}: {
-  htmlFor: string
-  label: string
-  error?: string
-  errorId: string
-  className?: string
-  children: ReactNode
-}) {
-  return (
-    <div
-      data-invalid={error ? true : undefined}
-      className={cn(
-        "flex min-w-0 flex-col gap-1 px-5 py-3.5 transition-colors duration-200 ring-inset data-invalid:ring-1 data-invalid:ring-destructive/40 sm:px-6",
-        className
-      )}
-    >
-      <label
-        htmlFor={htmlFor}
-        className="text-xs font-medium text-muted-foreground in-data-invalid:text-destructive"
-      >
-        {label}
-      </label>
-      {children}
-      {error && (
-        <p id={errorId} className="text-sm text-destructive">
-          {error}
-        </p>
-      )}
-    </div>
-  )
-}
 
 export function ContactForm({
   reason,
