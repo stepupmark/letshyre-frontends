@@ -27,14 +27,14 @@ export const ONBOARDING = "/employer/onboarding"
 
 type SignedIn = Extract<Session, { status: "signed-in" }>
 
-/** A same-site path, or null. Blocks protocol-relative and backslash tricks. */
+const SELF = "https://self.invalid"
+
+/** A same-site path, or null. */
 export function safeNext(target: unknown): string | null {
-  return typeof target === "string" &&
-    target.startsWith("/") &&
-    !target.startsWith("//") &&
-    !target.startsWith("/\\")
-    ? target
-    : null
+  if (typeof target !== "string" || !target.startsWith("/")) return null
+  // resolve like a browser would: it strips tabs and newlines, so "/\t/x.com" is "//x.com"
+  const url = new URL(target, SELF)
+  return url.origin === SELF ? url.pathname + url.search + url.hash : null
 }
 
 export function homeFor(session: SignedIn) {

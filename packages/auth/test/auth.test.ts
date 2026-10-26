@@ -105,6 +105,60 @@ describe("token refresh", () => {
     expect(localStorage.getItem("refreshToken")).toBeNull()
   })
 
+  it.each([
+    ["offline", () => HttpResponse.error()],
+    ["down", () => HttpResponse.json({}, { status: 503 })],
+  ])(
+    "keeps the session when the refresh endpoint is %s, and refreshes on the next try",
+    async (_, failure) => {
+      signIn()
+      let attempts = 0
+      server.use(
+        http.get(url("jobs/"), ({ request }) =>
+          request.headers.get("authorization") === "Bearer new-access"
+            ? HttpResponse.json({ ok: true })
+            : HttpResponse.json({}, { status: 401 })
+        ),
+        http.post(url("user/v1/login_refresh/"), () => {
+          attempts++
+          return attempts === 1
+            ? failure()
+            : HttpResponse.json({ data: { access_token: "new-access" } })
+        })
+      )
+      const onSessionExpired = vi.fn()
+      const client = createAuthedClient({
+        baseUrl: BASE,
+        retries: 0,
+        onSessionExpired,
+      })
+
+      await expect(client.get("/jobs/")).rejects.toThrow()
+      expect(onSessionExpired).not.toHaveBeenCalled()
+      expect(readSession().status).toBe("signed-in")
+      expect(localStorage.getItem("refreshToken")).toBe("old-refresh")
+
+      await expect(client.get("/jobs/")).resolves.toEqual({ ok: true })
+    }
+  )
+
+  it("doesn't end the session when a sign-in is refused", async () => {
+    signIn()
+    server.use(
+      http.post(url("user/v1/login/"), () =>
+        HttpResponse.json({ message: "Invalid credentials" }, { status: 401 })
+      )
+    )
+    const onSessionExpired = vi.fn()
+    const client = createAuthedClient({ baseUrl: BASE, onSessionExpired })
+
+    await expect(
+      login(client, { email: "a@b.in", password: "wrong" })
+    ).rejects.toBeInstanceOf(HttpError)
+    expect(onSessionExpired).not.toHaveBeenCalled()
+    expect(localStorage.getItem("refreshToken")).toBe("old-refresh")
+  })
+
   it("reuses a token another tab rotated instead of spending the refresh token", async () => {
     signIn()
     let refreshes = 0
@@ -270,7 +324,21 @@ describe("guards", () => {
     expect(safeNext("/employer/billing?checkout=pro")).toBe(
       "/employer/billing?checkout=pro"
     )
-    for (const bad of ["//evil.com", "/\\evil.com", "https://evil.com", null]) {
+    expect(safeNext("/employer/jobs?page=2#applicants")).toBe(
+      "/employer/jobs?page=2#applicants"
+    )
+    for (const bad of [
+      "//evil.com",
+      "/\\evil.com",
+      "/\t/evil.com",
+      "/\n/evil.com",
+      "/\r\n/evil.com",
+      "\\/evil.com",
+      "https://evil.com",
+      "javascript:alert(1)",
+      "",
+      null,
+    ]) {
       expect(safeNext(bad)).toBeNull()
     }
   })

@@ -1,3 +1,5 @@
+import { HttpError, NetworkError } from "@workspace/api"
+
 import {
   clearSession,
   getAccessToken,
@@ -13,6 +15,9 @@ export interface RefresherOptions {
   fetch?: typeof fetch
 }
 
+const isTransient = (status: number) =>
+  status === 408 || status === 429 || status >= 500
+
 // the backend rotates refresh tokens and rejects the old one, so tabs take turns
 function withTabLock<T>(run: () => Promise<T>): Promise<T> {
   return typeof navigator !== "undefined" && "locks" in navigator
@@ -20,7 +25,11 @@ function withTabLock<T>(run: () => Promise<T>): Promise<T> {
     : run()
 }
 
-/** Concurrent 401s share one refresh call; the rotated refresh token is saved. */
+/**
+ * Concurrent 401s share one refresh call; the rotated refresh token is saved.
+ * Resolves false when the session is over; rejects, keeping the session, when the network or
+ * server failed.
+ */
 export function createRefresher({
   baseUrl,
   timeoutMs = 15_000,
@@ -37,8 +46,10 @@ export function createRefresher({
     if (current && current !== failedAccess) return true
     const refresh = getRefreshToken()
     if (!refresh) return false
+
+    let response: Response
     try {
-      const response = await fetchImpl(endpoint, {
+      response = await fetchImpl(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,6 +58,13 @@ export function createRefresher({
         body: JSON.stringify({ refresh_token: refresh }),
         signal: AbortSignal.timeout(timeoutMs),
       })
+    } catch (error) {
+      // offline or timed out: the refresh token may still be good, so keep the session
+      throw new NetworkError("Token refresh failed", { cause: error })
+    }
+    if (isTransient(response.status)) throw new HttpError(response.status)
+
+    try {
       if (!response.ok) throw new Error(`refresh returned ${response.status}`)
       const json = (await response.json()) as Record<string, unknown>
       const data = (json.data ?? json) as Record<string, unknown>
