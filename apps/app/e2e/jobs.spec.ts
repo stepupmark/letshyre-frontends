@@ -247,6 +247,7 @@ test("applicants are reviewed best match first, one after another", async ({
   await page.keyboard.press("j")
   await page.keyboard.press("Enter")
   const sheet = page.getByRole("dialog", { name: "Arjun Mehta" })
+  await sheet.getByRole("button", { name: "Why this match" }).click()
   await expect(sheet.getByText("Five years of React")).toBeVisible()
   await expect(sheet.getByText("1 of 3")).toBeVisible()
   await page.keyboard.press("j")
