@@ -1,5 +1,7 @@
 import { Briefcase } from "lucide-react"
+
 import type { SearchSource } from "@/lib/search"
+
 import { jobsService } from "./services/jobs.service"
 
 export const jobSearch: SearchSource = {

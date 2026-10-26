@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { Copy, Eye, EyeOff, MoreHorizontal, Pencil, Trash2 } from "lucide-react"
 import { toast } from "sonner"
-import { StatusBadge } from "@/components/status-badge"
 import { Button } from "@workspace/ui/components/button"
 import {
   Card,
@@ -17,7 +16,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@workspace/ui/components/dropdown-menu"
+
+import { StatusBadge } from "@/components/status-badge"
 import { maskId } from "@/lib/format"
+
 import type { Gateway } from "../schemas/payment-gateways.schema"
 import { providerLabel } from "../utils/gateway-values"
 

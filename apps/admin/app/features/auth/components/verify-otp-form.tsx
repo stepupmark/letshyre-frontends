@@ -16,10 +16,12 @@ import {
   InputOTPGroup,
   InputOTPSlot,
 } from "@workspace/ui/components/input-otp"
+
+import { getErrorMessage } from "@/lib/errors"
+
 import { useSendOtp, useVerifyOtp } from "../mutations/use-password-reset"
 import { verifyOtpSchema } from "../schemas/auth.schema"
 import type { OtpSession, VerifyOtpInput } from "../types"
-import { getErrorMessage } from "@/lib/errors"
 
 const RESEND_AFTER_SECONDS = 60
 

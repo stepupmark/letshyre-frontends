@@ -1,5 +1,4 @@
 import type { CSSProperties } from "react"
-
 import { useTranslation } from "@workspace/i18n/react"
 import { cn } from "@workspace/ui/lib/utils"
 

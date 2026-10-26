@@ -1,7 +1,9 @@
 import { Link, useNavigate } from "react-router"
-import type { Route } from "./+types/$"
 import { Button } from "@workspace/ui/components/button"
+
 import { AuthLayout } from "@/features/auth"
+
+import type { Route } from "./+types/$"
 
 export const meta: Route.MetaFunction = () => [
   { title: "Page not found · LetsHyre Admin" },

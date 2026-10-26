@@ -1,4 +1,5 @@
 import { keepPreviousData, queryOptions } from "@tanstack/react-query"
+
 import { dashboardService } from "../services/dashboard.service"
 
 const FIVE_MINUTES = 5 * 60_000

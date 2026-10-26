@@ -1,4 +1,5 @@
 import { queryOptions } from "@tanstack/react-query"
+
 import { authService } from "../services/auth.service"
 
 export const authKeys = {

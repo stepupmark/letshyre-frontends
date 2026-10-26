@@ -1,4 +1,5 @@
 import type { QueryKey } from "@tanstack/react-query"
+
 import { queryClient } from "./query-client"
 
 // patches every cached query under `queryKey` and returns a function that undoes it

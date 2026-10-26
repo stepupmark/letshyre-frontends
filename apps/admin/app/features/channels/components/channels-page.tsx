@@ -1,9 +1,6 @@
 import { useState } from "react"
 import { useQuery } from "@tanstack/react-query"
 import { Mail, MessageSquare, Smartphone, type LucideIcon } from "lucide-react"
-import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
-import { ErrorState } from "@/components/feedback/error-state"
-import { PageHeader } from "@/components/page-header"
 import {
   Card,
   CardContent,
@@ -13,7 +10,12 @@ import {
 } from "@workspace/ui/components/card"
 import { Skeleton } from "@workspace/ui/components/skeleton"
 import { Switch } from "@workspace/ui/components/switch"
+
+import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
+import { ErrorState } from "@/components/feedback/error-state"
+import { PageHeader } from "@/components/page-header"
 import { formatDateTime } from "@/lib/format"
+
 import { useUpdateChannel } from "../mutations/use-update-channel"
 import { channelsQueries } from "../queries/channels.queries"
 import type { ChannelKey } from "../schemas/channels.schema"

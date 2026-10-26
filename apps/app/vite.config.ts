@@ -1,6 +1,5 @@
 import { readdirSync, readFileSync } from "node:fs"
 import { join } from "node:path"
-
 import { reactRouter } from "@react-router/dev/vite"
 import tailwindcss from "@tailwindcss/vite"
 import { computeReadiness } from "@workspace/i18n/node"

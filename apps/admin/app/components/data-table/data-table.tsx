@@ -10,8 +10,6 @@ import {
   type ColumnVisibilityState,
 } from "@tanstack/react-table"
 import { cn } from "@workspace/ui/lib/utils"
-import { EmptyState } from "@/components/feedback/empty-state"
-import { ErrorState } from "@/components/feedback/error-state"
 import { Skeleton } from "@workspace/ui/components/skeleton"
 import {
   Table,
@@ -21,9 +19,13 @@ import {
   TableHeader,
   TableRow,
 } from "@workspace/ui/components/table"
-import { useHotkey } from "@/hooks/use-hotkey"
 import { useIsMobile } from "@workspace/ui/hooks/use-mobile"
+
+import { EmptyState } from "@/components/feedback/empty-state"
+import { ErrorState } from "@/components/feedback/error-state"
+import { useHotkey } from "@/hooks/use-hotkey"
 import { useStoredState } from "@/hooks/use-stored-state"
+
 import { DataTableCards } from "./data-table-cards"
 import { DataTableExport, type ExportRows } from "./data-table-export"
 import { DataTablePagination } from "./data-table-pagination"

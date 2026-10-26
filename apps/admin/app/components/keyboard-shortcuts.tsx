@@ -5,6 +5,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@workspace/ui/components/dialog"
+
 import { useHotkey } from "@/hooks/use-hotkey"
 
 const SHORTCUTS: { keys: string[]; action: string }[] = [

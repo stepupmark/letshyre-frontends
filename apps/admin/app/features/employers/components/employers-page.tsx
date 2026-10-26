@@ -1,6 +1,5 @@
 import { Link } from "react-router"
 import { useQuery } from "@tanstack/react-query"
-import type { DataTableColumn } from "@/components/data-table/features"
 import {
   BadgeCheck,
   Building2,
@@ -8,16 +7,19 @@ import {
   Clock,
   FileWarning,
 } from "lucide-react"
+import { Button } from "@workspace/ui/components/button"
+
+import type { DataTableColumn } from "@/components/data-table/features"
 import { DataTable } from "@/components/data-table/data-table"
 import { ListEmptyState } from "@/components/feedback/list-empty-state"
 import { PageHeader } from "@/components/page-header"
 import { StatCard } from "@/components/stat-card"
-import { Button } from "@workspace/ui/components/button"
 import { CompanyAvatar, KycStatusBadge } from "@/components/kyc-status-badge"
-import { employersService } from "../services/employers.service"
 import { fetchAllPages } from "@/lib/fetch-all-pages"
 import { formatNumber } from "@/lib/format"
 import { pageOf, useSearchState } from "@/lib/search-params"
+
+import { employersService } from "../services/employers.service"
 import { employersQueries } from "../queries/employers.queries"
 import type { Employer } from "../schemas/employers.schema"
 

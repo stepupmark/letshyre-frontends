@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router"
 import { useQuery } from "@tanstack/react-query"
-import type { DataTableColumn } from "@/components/data-table/features"
 import {
   LoaderCircle,
   MoreHorizontal,
@@ -10,11 +9,6 @@ import {
   Tag,
   Trash2,
 } from "lucide-react"
-import { DataTable } from "@/components/data-table/data-table"
-import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
-import { ListEmptyState } from "@/components/feedback/list-empty-state"
-import { PageHeader } from "@/components/page-header"
-import { StatusBadge, type StatusTone } from "@/components/status-badge"
 import { Button } from "@workspace/ui/components/button"
 import {
   Dialog,
@@ -31,10 +25,18 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@workspace/ui/components/dropdown-menu"
-import { couponsService } from "../services/coupons.service"
+
+import type { DataTableColumn } from "@/components/data-table/features"
+import { DataTable } from "@/components/data-table/data-table"
+import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
+import { ListEmptyState } from "@/components/feedback/list-empty-state"
+import { PageHeader } from "@/components/page-header"
+import { StatusBadge, type StatusTone } from "@/components/status-badge"
 import { fetchAllPages } from "@/lib/fetch-all-pages"
 import { formatCurrency, formatDateTime, formatNumber } from "@/lib/format"
 import { pageOf, useSearchState } from "@/lib/search-params"
+
+import { couponsService } from "../services/coupons.service"
 import {
   useDeleteCoupon,
   useUpdateCoupon,

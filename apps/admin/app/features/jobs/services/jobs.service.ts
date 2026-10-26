@@ -1,4 +1,5 @@
 import { api } from "@/lib/api"
+
 import {
   jobDetailResponseSchema,
   jobsResponseSchema,

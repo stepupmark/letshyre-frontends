@@ -1,6 +1,7 @@
 import js from "@eslint/js"
 import { defineConfig, globalIgnores } from "eslint/config"
 import globals from "globals"
+import importX from "eslint-plugin-import-x"
 import tseslint from "typescript-eslint"
 
 /** @param {{ tsconfigRootDir?: string }} [options] */
@@ -58,6 +59,28 @@ export function base({ tsconfigRootDir } = {}) {
                 message: "Import through the package's exports.",
               },
             ],
+          },
+        ],
+      },
+    },
+    {
+      plugins: { "import-x": importX },
+      rules: {
+        // packages, then @/ aliases, then relative paths, a blank line between
+        "import-x/order": [
+          "error",
+          {
+            groups: [
+              ["builtin", "external"],
+              "internal",
+              ["parent", "sibling", "index"],
+            ],
+            pathGroups: [
+              { pattern: "@workspace/**", group: "external" },
+              { pattern: "@/**", group: "internal" },
+            ],
+            pathGroupsExcludedImportTypes: ["builtin"],
+            "newlines-between": "always",
           },
         ],
       },

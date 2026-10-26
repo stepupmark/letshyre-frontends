@@ -1,7 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 import { LoaderCircle } from "lucide-react"
-import { PasswordInput } from "@/components/password-input"
 import { Alert, AlertDescription } from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
 import {
@@ -11,10 +10,13 @@ import {
   FieldGroup,
   FieldLabel,
 } from "@workspace/ui/components/field"
+
+import { PasswordInput } from "@/components/password-input"
+import { getErrorMessage } from "@/lib/errors"
+
 import { useResetPassword } from "../mutations/use-password-reset"
 import { resetPasswordSchema } from "../schemas/auth.schema"
 import type { OtpSession, ResetPasswordInput } from "../types"
-import { getErrorMessage } from "@/lib/errors"
 
 export function ResetPasswordForm({
   session,

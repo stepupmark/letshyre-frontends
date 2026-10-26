@@ -1,5 +1,4 @@
 import { readdirSync, readFileSync } from "node:fs"
-
 import { expect, test } from "@playwright/test"
 
 import { mockApi } from "./mock-api.ts"

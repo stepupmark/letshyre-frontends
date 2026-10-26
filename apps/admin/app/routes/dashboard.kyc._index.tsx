@@ -1,7 +1,8 @@
-import type { Route } from "./+types/dashboard.kyc._index"
 import { KycListPage, kycQueries, readKycParams } from "@/features/kyc"
 import { prefetch } from "@/lib/query/query-client"
 import { searchOf } from "@/lib/search-params"
+
+import type { Route } from "./+types/dashboard.kyc._index"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
   const { page, status } = readKycParams(searchOf(request))

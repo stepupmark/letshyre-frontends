@@ -12,6 +12,7 @@ import {
   CommandItem,
   CommandList,
 } from "@workspace/ui/components/command"
+
 import { navigation } from "@/lib/navigation"
 import type { SearchSource } from "@/lib/search"
 import { useDebouncedValue } from "@/hooks/use-debounced-value"

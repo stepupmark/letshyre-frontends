@@ -1,8 +1,9 @@
 import { useTranslation } from "@workspace/i18n/react"
 
-import { FileAnatomy } from "./art/file-anatomy"
 import { BandHeading } from "@/components/band-heading"
 import { Band } from "@/components/band"
+
+import { FileAnatomy } from "./art/file-anatomy"
 
 export function Evidence() {
   const { t } = useTranslation("home")

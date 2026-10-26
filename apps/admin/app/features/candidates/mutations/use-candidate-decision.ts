@@ -1,4 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
+
 import { candidatesKeys } from "../queries/candidates.queries"
 import type {
   CandidateDecision,

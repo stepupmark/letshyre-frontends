@@ -7,6 +7,7 @@ import {
 } from "@tanstack/react-query"
 import { HttpError } from "@workspace/api"
 import { toast } from "sonner"
+
 import { getErrorMessage } from "@/lib/errors"
 
 declare module "@tanstack/react-query" {

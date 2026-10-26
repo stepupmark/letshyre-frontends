@@ -1,6 +1,7 @@
 import { isRouteErrorResponse, Link, useRouteError } from "react-router"
 import { FileQuestion, TriangleAlert } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
+
 import { EmptyState } from "./empty-state"
 
 export function RouteErrorBoundary() {

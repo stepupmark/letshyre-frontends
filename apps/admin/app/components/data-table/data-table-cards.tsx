@@ -1,4 +1,5 @@
 import { FlexRender, type RowData } from "@tanstack/react-table"
+
 import { columnLabel } from "./column-label"
 import type { DataTableRow } from "./features"
 

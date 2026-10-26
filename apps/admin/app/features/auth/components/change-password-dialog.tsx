@@ -1,7 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 import { LoaderCircle } from "lucide-react"
-import { PasswordInput } from "@/components/password-input"
 import { Alert, AlertDescription } from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
 import {
@@ -20,10 +19,13 @@ import {
   FieldGroup,
   FieldLabel,
 } from "@workspace/ui/components/field"
-import { useChangePassword } from "../mutations/use-change-password"
-import { changePasswordSchema } from "../schemas/auth.schema"
-import type { ChangePasswordInput } from "../types"
+
+import { PasswordInput } from "@/components/password-input"
 import { getErrorMessage } from "@/lib/errors"
+
+import { useChangePassword } from "../mutations/use-change-password"
+import type { ChangePasswordInput } from "../types"
+import { changePasswordSchema } from "../schemas/auth.schema"
 
 const EMPTY: ChangePasswordInput = {
   currentPassword: "",

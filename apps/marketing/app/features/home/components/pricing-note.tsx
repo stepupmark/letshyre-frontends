@@ -4,7 +4,6 @@ import { ArrowRightIcon, CheckIcon } from "lucide-react"
 import { lazy, Suspense } from "react"
 
 import { APP_LINKS } from "@/lib/app-links"
-
 import { BandHeading } from "@/components/band-heading"
 import { CtaLink, TextLink } from "@/components/cta-links"
 import { Band } from "@/components/band"

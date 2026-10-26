@@ -1,4 +1,5 @@
 import { keepPreviousData, queryOptions } from "@tanstack/react-query"
+
 import type { JobsFilters } from "../schemas/jobs.schema"
 import { jobsService } from "../services/jobs.service"
 

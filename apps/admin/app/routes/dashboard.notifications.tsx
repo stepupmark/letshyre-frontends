@@ -1,5 +1,6 @@
-import type { Route } from "./+types/dashboard.notifications"
 import { ComingSoon } from "@/components/feedback/coming-soon"
+
+import type { Route } from "./+types/dashboard.notifications"
 
 export const meta: Route.MetaFunction = () => [
   { title: "Notification scheduler · LetsHyre Admin" },

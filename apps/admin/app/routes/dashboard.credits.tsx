@@ -1,6 +1,7 @@
-import type { Route } from "./+types/dashboard.credits"
 import { CreditsPage, creditsQueries } from "@/features/credits"
 import { prefetch } from "@/lib/query/query-client"
+
+import type { Route } from "./+types/dashboard.credits"
 
 export function clientLoader() {
   prefetch(creditsQueries.detail())

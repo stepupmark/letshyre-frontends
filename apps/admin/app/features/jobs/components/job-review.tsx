@@ -2,7 +2,6 @@ import { useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { Check, LoaderCircle, X } from "lucide-react"
-import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
 import { Button } from "@workspace/ui/components/button"
 import {
   Dialog,
@@ -20,6 +19,9 @@ import {
   FieldLabel,
 } from "@workspace/ui/components/field"
 import { Textarea } from "@workspace/ui/components/textarea"
+
+import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
+
 import { useJobAction } from "../mutations/use-job-action"
 import {
   rejectJobsSchema,

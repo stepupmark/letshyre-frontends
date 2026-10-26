@@ -13,6 +13,7 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "@workspace/ui/components/chart"
+
 import {
   formatCompactCurrency,
   formatCurrency,

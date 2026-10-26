@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react"
 import { Search } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
+
 import type { SearchSource } from "@/lib/search"
 
 // the dialog pulls in cmdk and the search queries, so it loads on first open

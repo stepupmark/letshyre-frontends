@@ -5,6 +5,7 @@ import { useWatch, type UseFormReturn } from "react-hook-form"
 
 import { useFieldValid } from "@/hooks/use-field-valid"
 import { mask } from "@/lib/company-ids"
+
 import type { Values } from "../../schemas/onboarding-form.schema"
 
 /** A certificate that collects a check for each number that passes. */

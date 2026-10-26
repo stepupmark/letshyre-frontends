@@ -1,4 +1,3 @@
-import type { Route } from "./+types/dashboard.payments"
 import {
   readPaymentsParams,
   PaymentsPage,
@@ -7,6 +6,8 @@ import {
 } from "@/features/payments"
 import { prefetch } from "@/lib/query/query-client"
 import { searchOf } from "@/lib/search-params"
+
+import type { Route } from "./+types/dashboard.payments"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
   const filters = toPaymentFilters(readPaymentsParams(searchOf(request)))

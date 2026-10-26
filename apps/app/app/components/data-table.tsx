@@ -16,6 +16,7 @@ import {
   type SortingState,
 } from "@tanstack/react-table"
 import { useMemo, useRef, useState, type ReactNode } from "react"
+import { PAGE_SIZE, type TableParams } from "@workspace/api/table-params"
 
 import { useDelayed } from "@/hooks/use-delayed"
 import { useRowKeys } from "@/hooks/use-row-keys"
@@ -23,7 +24,6 @@ import {
   dataTableFeatures,
   type DataTableColumn,
 } from "@/lib/data-table-features"
-import { PAGE_SIZE, type TableParams } from "@workspace/api/table-params"
 
 import {
   BulkBar,

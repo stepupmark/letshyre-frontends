@@ -4,7 +4,6 @@ import { readFileSync, writeFileSync } from "node:fs"
 import { join, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { gzipSync } from "node:zlib"
-
 import { loadEnv } from "vite"
 
 import {

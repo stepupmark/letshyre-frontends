@@ -5,9 +5,11 @@ import { useEffect, type ReactNode } from "react"
 import { Outlet } from "react-router"
 import { SidebarInset, SidebarProvider } from "@workspace/ui/components/sidebar"
 import { TooltipProvider } from "@workspace/ui/components/tooltip"
+
 import { useIdleTimeout } from "@/hooks/use-idle-timeout"
 import { endSession } from "@/lib/session"
 import type { SearchSource } from "@/lib/search"
+
 import { AppHeader } from "./app-header"
 import { AppSidebar } from "./app-sidebar"
 

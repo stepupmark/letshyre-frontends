@@ -4,8 +4,8 @@ import { Link } from "react-router"
 
 import { APP_LINKS } from "@/lib/app-links"
 import { PAGES } from "@/lib/pages"
-
 import { TextLink } from "@/components/guide/text-link"
+
 import { CHAPTER_ANCHORS, JD_ANCHOR } from "../lib/chapters"
 
 /** `<Trans>` components for the links the guide copy can contain. */

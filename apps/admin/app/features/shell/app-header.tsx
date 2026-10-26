@@ -1,9 +1,11 @@
-import { ThemeToggle } from "@/components/theme-toggle"
 import { Separator } from "@workspace/ui/components/separator"
 import { SidebarTrigger } from "@workspace/ui/components/sidebar"
-import { Breadcrumbs } from "./breadcrumbs"
 import type { ReactNode } from "react"
+
+import { ThemeToggle } from "@/components/theme-toggle"
 import type { SearchSource } from "@/lib/search"
+
+import { Breadcrumbs } from "./breadcrumbs"
 import { CommandPalette } from "./command-palette"
 
 export function AppHeader({

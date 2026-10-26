@@ -1,10 +1,11 @@
 import { safeUrl } from "@workspace/api"
-import { StatusBadge, type StatusTone } from "@/components/status-badge"
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
 } from "@workspace/ui/components/avatar"
+
+import { StatusBadge, type StatusTone } from "@/components/status-badge"
 import { initials } from "@/lib/format"
 
 const tones: Record<string, StatusTone> = {

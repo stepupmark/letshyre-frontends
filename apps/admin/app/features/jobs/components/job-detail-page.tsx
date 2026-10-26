@@ -2,9 +2,6 @@ import type { ReactNode } from "react"
 import { Link, useParams } from "react-router"
 import { useQuery } from "@tanstack/react-query"
 import { ArrowLeft, FileText } from "lucide-react"
-import { DetailList } from "@/components/detail-list"
-import { ExternalLink } from "@/components/external-link"
-import { ErrorState } from "@/components/feedback/error-state"
 import { Badge } from "@workspace/ui/components/badge"
 import { Button } from "@workspace/ui/components/button"
 import {
@@ -14,8 +11,13 @@ import {
   CardTitle,
 } from "@workspace/ui/components/card"
 import { Skeleton } from "@workspace/ui/components/skeleton"
+
+import { ErrorState } from "@/components/feedback/error-state"
+import { ExternalLink } from "@/components/external-link"
+import { DetailList } from "@/components/detail-list"
 import { useDocumentTitle } from "@/hooks/use-document-title"
 import { formatDate } from "@/lib/format"
+
 import { jobsQueries } from "../queries/jobs.queries"
 import type { JobDetail } from "../schemas/jobs.schema"
 import { ApprovalBadge, JobStatusBadge } from "./job-badges"

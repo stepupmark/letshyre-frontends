@@ -1,24 +1,26 @@
 import { Link } from "react-router"
 import { useQuery } from "@tanstack/react-query"
-import type { DataTableColumn } from "@/components/data-table/features"
 import { BadgeCheck } from "lucide-react"
+import { Button } from "@workspace/ui/components/button"
+import { Tabs, TabsList, TabsTrigger } from "@workspace/ui/components/tabs"
+
+import type { DataTableColumn } from "@/components/data-table/features"
 import { DataTable } from "@/components/data-table/data-table"
 import { ListEmptyState } from "@/components/feedback/list-empty-state"
 import { PageHeader } from "@/components/page-header"
-import { Button } from "@workspace/ui/components/button"
-import { Tabs, TabsList, TabsTrigger } from "@workspace/ui/components/tabs"
 import { RelativeTime } from "@/components/relative-time"
-import { kycService } from "../services/kyc.service"
 import { fetchAllPages } from "@/lib/fetch-all-pages"
-import { kycQueries } from "../queries/kyc.queries"
 import {
   KYC_STATUSES,
   type CompanyKyc,
   type KycStatus,
 } from "@/lib/company-kyc"
 import { useSearchState } from "@/lib/search-params"
-import { readKycParams } from "../search-params"
 import { CompanyAvatar, KycStatusBadge } from "@/components/kyc-status-badge"
+
+import { kycService } from "../services/kyc.service"
+import { kycQueries } from "../queries/kyc.queries"
+import { readKycParams } from "../search-params"
 
 const columns: DataTableColumn<CompanyKyc>[] = [
   {

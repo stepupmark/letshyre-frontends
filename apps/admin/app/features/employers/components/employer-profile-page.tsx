@@ -1,9 +1,6 @@
 import { Link, useParams } from "react-router"
 import { useQuery } from "@tanstack/react-query"
 import { ArrowLeft } from "lucide-react"
-import { DetailList } from "@/components/detail-list"
-import { EmptyState } from "@/components/feedback/empty-state"
-import { ErrorState } from "@/components/feedback/error-state"
 import { Button } from "@workspace/ui/components/button"
 import {
   Card,
@@ -12,11 +9,16 @@ import {
   CardTitle,
 } from "@workspace/ui/components/card"
 import { Skeleton } from "@workspace/ui/components/skeleton"
+
+import { DetailList } from "@/components/detail-list"
+import { EmptyState } from "@/components/feedback/empty-state"
+import { ErrorState } from "@/components/feedback/error-state"
 import { CompanyKycDetails } from "@/components/company-kyc-details"
 import { CompanyAvatar, KycStatusBadge } from "@/components/kyc-status-badge"
 import { Copyable } from "@/components/copyable"
 import { useDocumentTitle } from "@/hooks/use-document-title"
 import { formatDate, formatNumber } from "@/lib/format"
+
 import { employersQueries } from "../queries/employers.queries"
 
 export function EmployerProfilePage() {

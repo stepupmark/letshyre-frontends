@@ -1,7 +1,8 @@
-import type { Route } from "./+types/dashboard.settings.logs"
 import { LogsPage, readLogsParams, logsQueries } from "@/features/logs"
 import { prefetch } from "@/lib/query/query-client"
 import { searchOf } from "@/lib/search-params"
+
+import type { Route } from "./+types/dashboard.settings.logs"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
   const { channel, page } = readLogsParams(searchOf(request))

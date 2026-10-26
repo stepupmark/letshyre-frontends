@@ -10,10 +10,12 @@ import {
   FieldLabel,
 } from "@workspace/ui/components/field"
 import { Input } from "@workspace/ui/components/input"
+
+import { getErrorMessage } from "@/lib/errors"
+
 import { useSendOtp } from "../mutations/use-password-reset"
 import { requestOtpSchema } from "../schemas/auth.schema"
 import type { OtpSession, RequestOtpInput } from "../types"
-import { getErrorMessage } from "@/lib/errors"
 
 export function RequestOtpForm({
   onSent,

@@ -1,5 +1,6 @@
-import type { Route } from "./+types/dashboard.coupons.new"
 import { NewCouponPage } from "@/features/coupons"
+
+import type { Route } from "./+types/dashboard.coupons.new"
 
 export const meta: Route.MetaFunction = () => [
   { title: "New coupon · LetsHyre Admin" },

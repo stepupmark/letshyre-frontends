@@ -1,8 +1,9 @@
-import type { Route } from "./+types/dashboard"
 import { requireAdmin, UserMenu } from "@/features/auth"
 import { candidateSearch } from "@/features/candidates"
 import { jobSearch } from "@/features/jobs"
 import { AppShell } from "@/features/shell"
+
+import type { Route } from "./+types/dashboard"
 
 export const clientMiddleware: Route.ClientMiddlewareFunction[] = [requireAdmin]
 

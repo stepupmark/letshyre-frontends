@@ -1,4 +1,5 @@
 import { z } from "zod"
+
 import { id, paginated } from "@/lib/schemas"
 
 const logBase = {

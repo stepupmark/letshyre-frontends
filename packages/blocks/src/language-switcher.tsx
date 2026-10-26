@@ -5,7 +5,6 @@ import {
   SearchIcon,
 } from "lucide-react"
 import { type KeyboardEvent, useRef, useState } from "react"
-
 import {
   LOCALE_ENGLISH_NAMES,
   LOCALE_NAMES,

@@ -1,4 +1,5 @@
 import { queryOptions } from "@tanstack/react-query"
+
 import { systemConfigService } from "../services/system-config.service"
 
 export const systemConfigKeys = {

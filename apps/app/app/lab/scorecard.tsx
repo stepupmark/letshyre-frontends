@@ -15,13 +15,13 @@ import { ChevronDown, Link2, Play, Printer } from "lucide-react"
 import * as m from "motion/react-m"
 import { toast } from "sonner"
 
-import { LoadError } from "./load-error"
 import { PageHeader } from "@/components/page-header"
-import { ScoreBand } from "./score-band"
 import { StatusBadge } from "@/components/status-badge"
 import { useDelayed } from "@/hooks/use-delayed"
 import { duration, ease } from "@/lib/motion"
 
+import { ScoreBand } from "./score-band"
+import { LoadError } from "./load-error"
 import { scorecard } from "./fixtures"
 import { useLab } from "./use-lab"
 

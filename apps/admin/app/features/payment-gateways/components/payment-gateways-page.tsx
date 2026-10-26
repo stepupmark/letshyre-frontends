@@ -2,10 +2,6 @@ import { useState } from "react"
 import { Link } from "react-router"
 import { useQuery } from "@tanstack/react-query"
 import { CreditCard, LoaderCircle, Plus } from "lucide-react"
-import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
-import { EmptyState } from "@/components/feedback/empty-state"
-import { ErrorState } from "@/components/feedback/error-state"
-import { PageHeader } from "@/components/page-header"
 import { Button } from "@workspace/ui/components/button"
 import {
   Dialog,
@@ -17,6 +13,12 @@ import {
   DialogTitle,
 } from "@workspace/ui/components/dialog"
 import { Skeleton } from "@workspace/ui/components/skeleton"
+
+import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
+import { EmptyState } from "@/components/feedback/empty-state"
+import { ErrorState } from "@/components/feedback/error-state"
+import { PageHeader } from "@/components/page-header"
+
 import {
   useDeleteGateway,
   useUpdateGateway,

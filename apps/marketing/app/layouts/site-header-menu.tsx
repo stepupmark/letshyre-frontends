@@ -20,10 +20,10 @@ import {
   useState,
 } from "react"
 import { Link } from "react-router"
+import { MenuIcon, XIcon } from "lucide-react"
 
 import { APP_LINKS } from "@/lib/app-links"
 
-import { MenuIcon, XIcon } from "lucide-react"
 import { FOOTER_COLUMNS } from "./site-footer-links"
 import { SiteLanguageSwitcher } from "./site-header-language"
 import {

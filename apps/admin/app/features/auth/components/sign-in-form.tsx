@@ -3,9 +3,7 @@ import { AccountInactiveError, RoleNotAllowedError } from "@workspace/auth"
 import { Controller, useForm } from "react-hook-form"
 import { Link, useSearchParams } from "react-router"
 import { LoaderCircle } from "lucide-react"
-import { PasswordInput } from "@/components/password-input"
 import { Alert, AlertDescription } from "@workspace/ui/components/alert"
-import { getErrorMessage } from "@/lib/errors"
 import { Button } from "@workspace/ui/components/button"
 import {
   Field,
@@ -14,6 +12,10 @@ import {
   FieldLabel,
 } from "@workspace/ui/components/field"
 import { Input } from "@workspace/ui/components/input"
+
+import { getErrorMessage } from "@/lib/errors"
+import { PasswordInput } from "@/components/password-input"
+
 import { useLogin } from "../mutations/use-login"
 import { loginSchema } from "../schemas/auth.schema"
 import type { LoginInput } from "../types"

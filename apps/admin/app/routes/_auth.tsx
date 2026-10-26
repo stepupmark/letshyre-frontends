@@ -1,6 +1,8 @@
 import { Outlet } from "react-router"
-import type { Route } from "./+types/_auth"
+
 import { AuthLayout, requireGuest } from "@/features/auth"
+
+import type { Route } from "./+types/_auth"
 
 export const clientMiddleware: Route.ClientMiddlewareFunction[] = [requireGuest]
 

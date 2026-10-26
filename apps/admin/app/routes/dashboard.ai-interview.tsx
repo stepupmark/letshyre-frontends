@@ -1,5 +1,6 @@
-import type { Route } from "./+types/dashboard.ai-interview"
 import { ComingSoon } from "@/components/feedback/coming-soon"
+
+import type { Route } from "./+types/dashboard.ai-interview"
 
 export const meta: Route.MetaFunction = () => [
   { title: "AI interviews · LetsHyre Admin" },

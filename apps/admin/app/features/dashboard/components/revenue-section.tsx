@@ -9,9 +9,6 @@ import {
   ShoppingCart,
 } from "lucide-react"
 import { Suspense } from "react"
-import { ErrorState } from "@/components/feedback/error-state"
-import { StatCard } from "@/components/stat-card"
-import { Trend } from "@/components/trend"
 import {
   Card,
   CardAction,
@@ -28,7 +25,12 @@ import {
   SelectValue,
 } from "@workspace/ui/components/select"
 import { Skeleton } from "@workspace/ui/components/skeleton"
+
+import { ErrorState } from "@/components/feedback/error-state"
+import { StatCard } from "@/components/stat-card"
+import { Trend } from "@/components/trend"
 import { formatCurrency, formatNumber, percentChange } from "@/lib/format"
+
 import { dashboardQueries } from "../queries/dashboard.queries"
 import { currentYear } from "../search-params"
 import { monthRange, paymentsUrl, startOfWeek } from "../utils/periods"

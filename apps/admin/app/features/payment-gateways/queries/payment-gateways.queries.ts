@@ -1,4 +1,5 @@
 import { queryOptions } from "@tanstack/react-query"
+
 import { paymentGatewaysService } from "../services/payment-gateways.service"
 
 export const paymentGatewaysKeys = {

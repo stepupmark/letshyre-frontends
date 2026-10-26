@@ -1,4 +1,5 @@
 import { StatusBadge, type StatusTone } from "@/components/status-badge"
+
 import type { ApprovalStatus } from "../schemas/jobs.schema"
 
 const statusTone: Record<string, StatusTone> = {

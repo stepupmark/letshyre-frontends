@@ -1,7 +1,8 @@
-import type { Route } from "./+types/dashboard.employers._index"
 import { EmployersPage, employersQueries } from "@/features/employers"
 import { prefetch } from "@/lib/query/query-client"
 import { pageOf, searchOf } from "@/lib/search-params"
+
+import type { Route } from "./+types/dashboard.employers._index"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
   prefetch(employersQueries.summary())

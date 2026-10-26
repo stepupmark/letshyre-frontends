@@ -1,4 +1,5 @@
 import { compactParams, pageOf, textOf } from "@/lib/search-params"
+
 import type { UnlockedProfilesFilters } from "./schemas/unlocks.schema"
 
 export function readUnlocksParams(params: URLSearchParams) {

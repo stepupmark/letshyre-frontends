@@ -1,5 +1,7 @@
 import { User } from "lucide-react"
+
 import type { SearchSource } from "@/lib/search"
+
 import { candidatesService } from "./services/candidates.service"
 
 export const candidateSearch: SearchSource = {

@@ -1,4 +1,5 @@
 import { compactParams, oneOf, pageOf, textOf } from "@/lib/search-params"
+
 import {
   GENDERS,
   INDUSTRIES,

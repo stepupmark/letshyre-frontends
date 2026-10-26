@@ -1,7 +1,6 @@
 import type { ReactNode } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
-import { PasswordInput } from "@/components/password-input"
 import {
   Field,
   FieldDescription,
@@ -24,7 +23,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@workspace/ui/components/select"
+
+import { PasswordInput } from "@/components/password-input"
 import { UnsavedChangesGuard } from "@/components/unsaved-changes-guard"
+
 import {
   GATEWAY_PROVIDERS,
   gatewayFormSchema,

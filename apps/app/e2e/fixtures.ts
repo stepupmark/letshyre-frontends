@@ -1,7 +1,6 @@
 import AxeBuilder from "@axe-core/playwright"
 import { readdirSync, readFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
-
 import { test as base, expect, type Page, type Route } from "@playwright/test"
 import { loadEnv } from "vite"
 

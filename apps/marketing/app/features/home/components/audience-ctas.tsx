@@ -4,7 +4,6 @@ import { cn } from "@workspace/ui/lib/utils"
 import { ArrowRightIcon } from "lucide-react"
 
 import { APP_LINKS } from "@/lib/app-links"
-
 import { CtaLink } from "@/components/cta-links"
 
 export function AudienceCtas({ className }: { className?: string }) {

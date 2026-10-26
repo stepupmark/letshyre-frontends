@@ -1,6 +1,7 @@
-import type { Route } from "./+types/dashboard.settings._index"
 import { SystemConfigPage, systemConfigQueries } from "@/features/system-config"
 import { prefetch } from "@/lib/query/query-client"
+
+import type { Route } from "./+types/dashboard.settings._index"
 
 export function clientLoader() {
   prefetch(systemConfigQueries.detail())

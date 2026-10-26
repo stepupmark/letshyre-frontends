@@ -14,11 +14,13 @@ import { ApiError } from "@workspace/api"
 import { ErrorScreen } from "@workspace/blocks/error-screen"
 import { ThemeProvider } from "@workspace/blocks/theme-provider"
 import { LoaderCircle } from "lucide-react"
-import type { Route } from "./+types/root"
 import { Button } from "@workspace/ui/components/button"
 import { Toaster } from "@workspace/ui/components/sonner"
+
 import { getErrorMessage } from "@/lib/errors"
 import { queryClient } from "@/lib/query/query-client"
+
+import type { Route } from "./+types/root"
 import "./app.css"
 
 const ReactQueryDevtools = import.meta.env.DEV

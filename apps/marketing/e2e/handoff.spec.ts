@@ -1,5 +1,4 @@
 import { fileURLToPath } from "node:url"
-
 import { expect, test } from "@playwright/test"
 import { loadEnv } from "vite"
 

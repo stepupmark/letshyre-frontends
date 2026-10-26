@@ -1,5 +1,4 @@
 import type { Job, ParsedJd } from "../schemas/employer-jobs.schema"
-
 import {
   EMPTY,
   experienceText,

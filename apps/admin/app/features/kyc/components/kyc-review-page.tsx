@@ -3,25 +3,27 @@ import { Link, useParams } from "react-router"
 import { useQuery } from "@tanstack/react-query"
 import { ArrowLeft, Check, X } from "lucide-react"
 import {
-  DocumentViewer,
-  DocumentViewerDialog,
-} from "@/components/document-viewer"
-import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
-import { ErrorState } from "@/components/feedback/error-state"
-import {
   Alert,
   AlertDescription,
   AlertTitle,
 } from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
 import { Skeleton } from "@workspace/ui/components/skeleton"
+
+import {
+  DocumentViewer,
+  DocumentViewerDialog,
+} from "@/components/document-viewer"
+import { ConfirmDialog } from "@/components/feedback/confirm-dialog"
+import { ErrorState } from "@/components/feedback/error-state"
 import { useDocumentTitle } from "@/hooks/use-document-title"
 import { formatDate } from "@/lib/format"
 import { kycDocuments } from "@/lib/company-kyc"
-import { useApproveKyc } from "../mutations/use-review-kyc"
-import { kycQueries } from "../queries/kyc.queries"
 import { CompanyKycDetails } from "@/components/company-kyc-details"
 import { CompanyAvatar, KycStatusBadge } from "@/components/kyc-status-badge"
+
+import { useApproveKyc } from "../mutations/use-review-kyc"
+import { kycQueries } from "../queries/kyc.queries"
 import { RejectKycDialog } from "./reject-kyc-dialog"
 
 export function KycReviewPage() {

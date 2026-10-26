@@ -30,11 +30,11 @@ import {
 import { Link } from "react-router"
 
 import { AnimatedNumber } from "@/components/animated-number"
-import { LoadError } from "./load-error"
 import { PageHeader } from "@/components/page-header"
 import { StatusBadge } from "@/components/status-badge"
 import { useDelayed } from "@/hooks/use-delayed"
 
+import { LoadError } from "./load-error"
 import { dashboard, jobs, UNLOCK_COST } from "./fixtures"
 import { useLab } from "./use-lab"
 

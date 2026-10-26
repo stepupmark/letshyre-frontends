@@ -1,7 +1,6 @@
 import { Logo } from "@workspace/blocks/logo"
 import { Link, NavLink, useLocation } from "react-router"
 import { ChevronRight } from "lucide-react"
-import { navigation, type NavItem } from "@/lib/navigation"
 import {
   Collapsible,
   CollapsibleContent,
@@ -21,6 +20,8 @@ import {
   SidebarMenuSubItem,
   SidebarRail,
 } from "@workspace/ui/components/sidebar"
+
+import { navigation, type NavItem } from "@/lib/navigation"
 
 function isActive(pathname: string, url: string, exact: boolean) {
   return exact

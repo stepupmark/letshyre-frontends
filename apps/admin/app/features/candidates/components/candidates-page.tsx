@@ -1,6 +1,5 @@
 import { Link } from "react-router"
 import { useQuery } from "@tanstack/react-query"
-import type { DataTableColumn } from "@/components/data-table/features"
 import {
   BadgeCheck,
   CalendarPlus,
@@ -9,6 +8,10 @@ import {
   Users,
   X,
 } from "lucide-react"
+import { Button } from "@workspace/ui/components/button"
+import { Progress } from "@workspace/ui/components/progress"
+
+import type { DataTableColumn } from "@/components/data-table/features"
 import { DataTable } from "@/components/data-table/data-table"
 import { FilterSelect } from "@/components/filter-select"
 import { ListEmptyState } from "@/components/feedback/list-empty-state"
@@ -16,20 +19,19 @@ import { PageHeader } from "@/components/page-header"
 import { SearchInput } from "@/components/search-input"
 import { StatCard } from "@/components/stat-card"
 import { StatusBadge } from "@/components/status-badge"
-import { Button } from "@workspace/ui/components/button"
-import { Progress } from "@workspace/ui/components/progress"
 import { RelativeTime } from "@/components/relative-time"
-import { candidatesService } from "../services/candidates.service"
 import { fetchAllPages } from "@/lib/fetch-all-pages"
 import { useDebouncedValue } from "@/hooks/use-debounced-value"
 import { formatNumber } from "@/lib/format"
+import { useSearchState } from "@/lib/search-params"
+
+import { candidatesService } from "../services/candidates.service"
 import { candidatesQueries } from "../queries/candidates.queries"
 import {
   GENDERS,
   INDUSTRIES,
   type Candidate,
 } from "../schemas/candidates.schema"
-import { useSearchState } from "@/lib/search-params"
 import { readCandidatesParams, toCandidateFilters } from "../search-params"
 
 const columns: DataTableColumn<Candidate>[] = [

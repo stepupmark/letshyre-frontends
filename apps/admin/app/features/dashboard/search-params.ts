@@ -1,4 +1,5 @@
 import { oneOf } from "@/lib/search-params"
+
 import { ACTIVITY_RANGES } from "./schemas/dashboard.schema"
 
 export const currentYear = () => new Date().getFullYear()

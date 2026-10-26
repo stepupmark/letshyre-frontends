@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/page-header"
 import { useSearchState } from "@/lib/search-params"
+
 import { readDashboardParams } from "../search-params"
 import { ActivitySection } from "./activity-section"
 import { DistributionSection } from "./distribution-section"

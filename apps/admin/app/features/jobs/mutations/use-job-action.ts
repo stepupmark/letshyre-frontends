@@ -1,5 +1,7 @@
 import { useMutation } from "@tanstack/react-query"
+
 import { patchQueries } from "@/lib/query/optimistic"
+
 import { jobsKeys } from "../queries/jobs.queries"
 import type { Job, JobDetail, JobsAction } from "../schemas/jobs.schema"
 import { jobsService } from "../services/jobs.service"

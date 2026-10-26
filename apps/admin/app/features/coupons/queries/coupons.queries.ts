@@ -1,4 +1,5 @@
 import { keepPreviousData, queryOptions } from "@tanstack/react-query"
+
 import { couponsService } from "../services/coupons.service"
 
 export const couponsKeys = {

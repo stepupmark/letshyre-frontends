@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form"
 import { useSearchParams } from "react-router"
 
 import { Wizard, type WizardStep } from "@/components/wizard"
+import { DraftSaved } from "@/components/draft-saved"
 
 import {
   discardDraft,
@@ -23,7 +24,6 @@ import {
   type Values,
 } from "../schemas/onboarding-form.schema"
 import { submitKyc } from "../services/employer-onboarding.service"
-import { DraftSaved } from "@/components/draft-saved"
 import { OnboardingPreview } from "./preview/onboarding-preview"
 import { CompanyStep } from "./steps/company-step"
 import { DocumentsStep } from "./steps/documents-step"

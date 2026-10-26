@@ -1,6 +1,7 @@
-import type { Route } from "./+types/dashboard.settings.channels"
 import { ChannelsPage, channelsQueries } from "@/features/channels"
 import { prefetch } from "@/lib/query/query-client"
+
+import type { Route } from "./+types/dashboard.settings.channels"
 
 export function clientLoader() {
   prefetch(channelsQueries.settings())

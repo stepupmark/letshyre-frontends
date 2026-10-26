@@ -1,6 +1,7 @@
-import type { Route } from "./+types/dashboard.jobs.$id"
 import { JobDetailPage, jobsQueries } from "@/features/jobs"
 import { prefetch } from "@/lib/query/query-client"
+
+import type { Route } from "./+types/dashboard.jobs.$id"
 
 export function clientLoader({ params }: Route.ClientLoaderArgs) {
   prefetch(jobsQueries.detail(params.id))

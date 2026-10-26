@@ -1,9 +1,10 @@
 import { api } from "@/lib/api"
+import type { KycStatus } from "@/lib/company-kyc"
+
 import {
   kycDetailResponseSchema,
   kycListResponseSchema,
 } from "../schemas/kyc.schema"
-import type { KycStatus } from "@/lib/company-kyc"
 
 const detailUrl = (id: string) =>
   `user/v1/admin_kyc_management_detail/${encodeURIComponent(id)}/`

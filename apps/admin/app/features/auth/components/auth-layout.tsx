@@ -1,6 +1,7 @@
 import type { ReactNode } from "react"
 import { Logo } from "@workspace/blocks/logo"
 import { SkipLink } from "@workspace/blocks/skip-link"
+
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export function AuthLayout({ children }: { children: ReactNode }) {

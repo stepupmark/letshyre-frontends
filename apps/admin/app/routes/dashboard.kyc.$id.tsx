@@ -1,6 +1,7 @@
-import type { Route } from "./+types/dashboard.kyc.$id"
 import { KycReviewPage, kycQueries } from "@/features/kyc"
 import { prefetch } from "@/lib/query/query-client"
+
+import type { Route } from "./+types/dashboard.kyc.$id"
 
 export function clientLoader({ params }: Route.ClientLoaderArgs) {
   prefetch(kycQueries.detail(params.id))

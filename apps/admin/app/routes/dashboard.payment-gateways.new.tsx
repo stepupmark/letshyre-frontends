@@ -1,5 +1,6 @@
-import type { Route } from "./+types/dashboard.payment-gateways.new"
 import { NewGatewayPage } from "@/features/payment-gateways"
+
+import type { Route } from "./+types/dashboard.payment-gateways.new"
 
 export const meta: Route.MetaFunction = () => [
   { title: "Add gateway · LetsHyre Admin" },

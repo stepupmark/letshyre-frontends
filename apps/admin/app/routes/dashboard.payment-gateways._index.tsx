@@ -1,9 +1,10 @@
-import type { Route } from "./+types/dashboard.payment-gateways._index"
 import {
   PaymentGatewaysPage,
   paymentGatewaysQueries,
 } from "@/features/payment-gateways"
 import { prefetch } from "@/lib/query/query-client"
+
+import type { Route } from "./+types/dashboard.payment-gateways._index"
 
 export function clientLoader() {
   prefetch(paymentGatewaysQueries.list())

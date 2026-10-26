@@ -1,5 +1,6 @@
-import type { ViewerDocument } from "@/components/document-viewer"
 import { z } from "zod"
+
+import type { ViewerDocument } from "@/components/document-viewer"
 import { id } from "@/lib/schemas"
 
 export const KYC_STATUSES = ["Pending", "Verified", "Rejected"] as const

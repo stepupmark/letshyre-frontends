@@ -5,7 +5,6 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs"
 import { join, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { gzipSync } from "node:zlib"
-
 import { type Locale, localePath } from "@workspace/i18n"
 import { loadEnv } from "vite"
 

@@ -1,6 +1,7 @@
-import type { Route } from "./+types/dashboard.candidates.$id"
 import { CandidateProfilePage, candidatesQueries } from "@/features/candidates"
 import { prefetch } from "@/lib/query/query-client"
+
+import type { Route } from "./+types/dashboard.candidates.$id"
 
 export function clientLoader({ params }: Route.ClientLoaderArgs) {
   prefetch(candidatesQueries.profile(params.id))

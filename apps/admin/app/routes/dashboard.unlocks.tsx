@@ -1,4 +1,3 @@
-import type { Route } from "./+types/dashboard.unlocks"
 import {
   readUnlocksParams,
   toUnlocksFilters,
@@ -7,6 +6,8 @@ import {
 } from "@/features/unlocks"
 import { prefetch } from "@/lib/query/query-client"
 import { searchOf } from "@/lib/search-params"
+
+import type { Route } from "./+types/dashboard.unlocks"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
   const filters = toUnlocksFilters(readUnlocksParams(searchOf(request)))

@@ -5,12 +5,12 @@ import { CheckIcon } from "lucide-react"
 import { usePublished } from "@/hooks/use-published"
 import { APP_LINKS } from "@/lib/app-links"
 import { PAGES } from "@/lib/pages"
-
-import { AttemptTracker } from "./art/attempt-tracker"
-import { FreshPool } from "./fresh-pool"
 import { BandHeading } from "@/components/band-heading"
 import { CtaLink, TextLink } from "@/components/cta-links"
 import { Band } from "@/components/band"
+
+import { FreshPool } from "./fresh-pool"
+import { AttemptTracker } from "./art/attempt-tracker"
 
 export function ForProfessionals() {
   const { t } = useTranslation("home")

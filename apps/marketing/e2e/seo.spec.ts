@@ -1,5 +1,4 @@
 import { readFileSync } from "node:fs"
-
 import { expect, test } from "@playwright/test"
 
 import { MOVED_PATHS } from "../app/lib/pages.ts"

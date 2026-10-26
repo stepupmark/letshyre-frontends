@@ -1,7 +1,8 @@
-import type { Route } from "./+types/dashboard.coupons._index"
 import { CouponsPage, couponsQueries } from "@/features/coupons"
 import { prefetch } from "@/lib/query/query-client"
 import { pageOf, searchOf } from "@/lib/search-params"
+
+import type { Route } from "./+types/dashboard.coupons._index"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
   prefetch(couponsQueries.list(pageOf(searchOf(request))))

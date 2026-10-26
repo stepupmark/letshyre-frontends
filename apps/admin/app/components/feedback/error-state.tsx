@@ -1,6 +1,8 @@
 import { RotateCw, TriangleAlert } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
+
 import { getErrorMessage } from "@/lib/errors"
+
 import { EmptyState } from "./empty-state"
 
 interface ErrorStateProps {

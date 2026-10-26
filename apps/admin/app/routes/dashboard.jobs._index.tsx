@@ -1,4 +1,3 @@
-import type { Route } from "./+types/dashboard.jobs._index"
 import {
   JobsPage,
   jobsQueries,
@@ -7,6 +6,8 @@ import {
 } from "@/features/jobs"
 import { prefetch } from "@/lib/query/query-client"
 import { searchOf } from "@/lib/search-params"
+
+import type { Route } from "./+types/dashboard.jobs._index"
 
 export function clientLoader({ request }: Route.ClientLoaderArgs) {
   const filters = toJobsFilters(readJobsParams(searchOf(request)))

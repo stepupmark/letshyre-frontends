@@ -55,14 +55,14 @@ import { useEffect, useRef, useState } from "react"
 import { Link, useSearchParams } from "react-router"
 import { toast } from "sonner"
 
-import { LoadError } from "./load-error"
 import { PageHeader } from "@/components/page-header"
-import { ScoreBand } from "./score-band"
 import { StatusBadge, type Tone } from "@/components/status-badge"
 import { useDelayed } from "@/hooks/use-delayed"
 import { duration, ease, spring } from "@/lib/motion"
 import { relativeTime } from "@/lib/relative-time"
 
+import { ScoreBand } from "./score-band"
+import { LoadError } from "./load-error"
 import {
   applicants as initial,
   UNLOCK_COST,

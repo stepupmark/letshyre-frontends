@@ -1,4 +1,5 @@
 import { api } from "@/lib/api"
+
 import { emailLogsSchema, smsLogsSchema } from "../schemas/logs.schema"
 
 export const logsService = {

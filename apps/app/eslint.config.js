@@ -1,5 +1,4 @@
 import { fileURLToPath } from "node:url"
-
 import { reactRouterApp } from "@workspace/eslint-config/react-router-app"
 
 const MOTION = [

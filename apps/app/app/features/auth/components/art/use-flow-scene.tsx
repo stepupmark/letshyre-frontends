@@ -1,10 +1,10 @@
 import { useTranslation } from "@workspace/i18n/react"
 
+import { initialsOf } from "@/lib/format"
+
 import { useFlowData } from "../../hooks/use-flow"
 import { ROLE_OF, type Audience } from "../../lib/audience"
 import { FORGOT_FLOW } from "../../lib/forgot"
-import { initialsOf } from "@/lib/format"
-
 import { companyFromEmail } from "../../lib/identity"
 import { maskEmail, maskPhone } from "../../lib/mask"
 import { registerFlowName } from "../../lib/register"

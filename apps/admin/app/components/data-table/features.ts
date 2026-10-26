@@ -10,6 +10,7 @@ import {
   type Table,
   type TableFeatures,
 } from "@tanstack/react-table"
+
 import type { CsvCell } from "@/lib/csv"
 
 /* eslint-disable @typescript-eslint/no-unused-vars -- must match the library's signature */

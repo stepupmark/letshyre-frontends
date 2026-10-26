@@ -1,8 +1,4 @@
 import { safeUrl } from "@workspace/api"
-import { DetailList } from "@/components/detail-list"
-import { DocumentList } from "@/components/document-viewer"
-import { ExternalLink } from "@/components/external-link"
-import { SensitiveValue } from "@/components/sensitive-value"
 import {
   Card,
   CardContent,
@@ -10,6 +6,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@workspace/ui/components/card"
+
+import { DetailList } from "@/components/detail-list"
+import { DocumentList } from "@/components/document-viewer"
+import { ExternalLink } from "@/components/external-link"
+import { SensitiveValue } from "@/components/sensitive-value"
 import { Copyable } from "@/components/copyable"
 import { kycDocuments, type CompanyKyc } from "@/lib/company-kyc"
 

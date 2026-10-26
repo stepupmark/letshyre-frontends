@@ -1,7 +1,9 @@
 import { Link } from "react-router"
 import { Hourglass } from "lucide-react"
-import { PageHeader } from "@/components/page-header"
 import { Button } from "@workspace/ui/components/button"
+
+import { PageHeader } from "@/components/page-header"
+
 import { EmptyState } from "./empty-state"
 
 export function ComingSoon({

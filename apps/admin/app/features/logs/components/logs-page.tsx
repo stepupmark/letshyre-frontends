@@ -1,16 +1,18 @@
 import { useQuery } from "@tanstack/react-query"
-import type { DataTableColumn } from "@/components/data-table/features"
 import { MessageSquare } from "lucide-react"
+import { Tabs, TabsList, TabsTrigger } from "@workspace/ui/components/tabs"
+
+import type { DataTableColumn } from "@/components/data-table/features"
 import { DataTable } from "@/components/data-table/data-table"
 import { ListEmptyState } from "@/components/feedback/list-empty-state"
 import { PageHeader } from "@/components/page-header"
-import { Tabs, TabsList, TabsTrigger } from "@workspace/ui/components/tabs"
 import { RelativeTime } from "@/components/relative-time"
-import { logsService } from "../services/logs.service"
 import { fetchAllPages } from "@/lib/fetch-all-pages"
+import { useSearchState } from "@/lib/search-params"
+
+import { logsService } from "../services/logs.service"
 import { logsQueries } from "../queries/logs.queries"
 import type { EmailLog, SmsLog } from "../schemas/logs.schema"
-import { useSearchState } from "@/lib/search-params"
 import { readLogsParams } from "../search-params"
 import { OtpStatusBadge, VerifiedBadge } from "./otp-status-badge"
 
