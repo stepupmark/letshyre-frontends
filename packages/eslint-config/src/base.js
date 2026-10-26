@@ -63,6 +63,18 @@ export function base({ tsconfigRootDir } = {}) {
       },
     },
     {
+      files: ["**/*.{ts,tsx}"],
+      // the design lab, drawn illustrations and tests are long by nature
+      ignores: [
+        "**/*.test.{ts,tsx}",
+        "**/e2e/**",
+        "**/lab/**",
+        "**/art/**",
+        "**/components/ui/**",
+      ],
+      rules: { "max-lines": ["warn", { max: 300 }] },
+    },
+    {
       files: ["**/*.{js,mjs,cjs}"],
       extends: [tseslint.configs.disableTypeChecked],
     }
