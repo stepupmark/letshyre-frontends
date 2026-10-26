@@ -117,7 +117,7 @@ Motion explains a change; it doesn't decorate (ADR 0008).
   280 kB (plus 60 kB per HTML page), app 180 kB, admin 175 kB. Lazy-load anything a first screen
   doesn't need.
 - Tokens stay in `localStorage` under the legacy keys (ADR 0005, docs/security/token-storage.md).
-- User-supplied links go through the app's `lib/safe-url.ts`; redirect targets through `safeNext`.
+- User-supplied links go through `safeUrl` from `@workspace/api`; redirect targets through `safeNext`.
 
 ## Components and functions
 
