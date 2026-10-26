@@ -1,7 +1,7 @@
+import { payloadOf } from "@workspace/api"
 import { queryOptions } from "@tanstack/react-query"
 
 import { api } from "@/lib/api"
-import { dataOf } from "@/lib/response"
 
 import { isShareId } from "../lib/shared-scorecard"
 import { scorecardSchema, type Scorecard } from "../schemas/scorecard.schema"
@@ -33,7 +33,7 @@ export const sharedScorecardQuery = (id: string) =>
   queryOptions({
     queryKey: ["shared-scorecard", id],
     queryFn: async () => {
-      const body = dataOf(
+      const body = payloadOf(
         await api.get(`user/v1/public/shared-candidate/${id}`, { auth: false })
       )
       const report = scorecardSchema.parse(body)

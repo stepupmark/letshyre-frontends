@@ -1,8 +1,7 @@
-import { xhrUpload } from "@workspace/api"
+import { payloadOf, xhrUpload } from "@workspace/api"
 import { z } from "zod"
 
 import { api } from "@/lib/api"
-import { dataOf } from "@/lib/response"
 
 export async function uploadResume(
   file: File,
@@ -10,7 +9,7 @@ export async function uploadResume(
 ) {
   const form = new FormData()
   form.append("resume", file)
-  const body = dataOf(
+  const body = payloadOf(
     await xhrUpload(api, "user/v1/candidate_resume_ai/upload/", form, {
       onProgress,
     })

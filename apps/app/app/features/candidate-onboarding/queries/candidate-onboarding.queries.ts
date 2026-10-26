@@ -1,7 +1,7 @@
+import { payloadOf } from "@workspace/api"
 import { queryOptions } from "@tanstack/react-query"
 
 import { api } from "@/lib/api"
-import { dataOf } from "@/lib/response"
 
 import {
   meSchema,
@@ -15,7 +15,7 @@ export const resumeStatusQuery = (jobId: string) =>
     queryKey: ["candidate", "resume-ai", jobId],
     queryFn: async () => {
       const status = statusSchema.parse(
-        dataOf(await api.get(`user/v1/candidate_resume_ai/status/${jobId}/`))
+        payloadOf(await api.get(`user/v1/candidate_resume_ai/status/${jobId}/`))
       )
       const roles =
         status.suggested_roles?.suggested_roles ??
@@ -41,10 +41,10 @@ export const reviewQuery = (jobId: string) =>
   queryOptions({
     queryKey: ["candidate", "resume-review", jobId],
     queryFn: async () => {
-      const body = dataOf(
+      const body = payloadOf(
         await api.get(`user/v1/candidate_resume_ai/review_data/${jobId}/`)
       )
-      return reviewSchema.parse(dataOf(body) ?? {})
+      return reviewSchema.parse(payloadOf(body) ?? {})
     },
     staleTime: Infinity,
   })
@@ -54,7 +54,7 @@ export const skillsQuery = (role: string) =>
     queryKey: ["candidate", "skills-for-role", role.toLowerCase()],
     queryFn: async () => {
       const body = skillsSchema.parse(
-        dataOf(
+        payloadOf(
           await api.post("user/v1/candidate_resume_ai/skills_for_role/", {
             role,
           })
@@ -72,6 +72,6 @@ export const myProfileQuery = () =>
   queryOptions({
     queryKey: ["candidate", "me"],
     queryFn: async () =>
-      meSchema.parse(dataOf(await api.post("user/v1/candidate_profile/"))),
+      meSchema.parse(payloadOf(await api.post("user/v1/candidate_profile/"))),
     staleTime: 5 * 60_000,
   })

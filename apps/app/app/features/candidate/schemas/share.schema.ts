@@ -1,6 +1,5 @@
+import { payloadOf } from "@workspace/api"
 import { z } from "zod"
-
-import { dataOf } from "@/lib/response"
 
 import { MAX_SHARE_DAYS } from "../lib/share"
 
@@ -51,7 +50,7 @@ export type SharedLink = z.infer<typeof sharedLinkSchema>
 // a bare list today, a paginated envelope later
 export const sharedLinksPageSchema = z.preprocess(
   (json) => {
-    const data = dataOf(json)
+    const data = payloadOf(json)
     return Array.isArray(data)
       ? { results: data, count: data.length, total_pages: 1 }
       : data

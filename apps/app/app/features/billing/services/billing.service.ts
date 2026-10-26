@@ -1,5 +1,5 @@
+import { payloadOf } from "@workspace/api"
 import { api } from "@/lib/api"
-import { dataOf } from "@/lib/response"
 
 import type { Order } from "../schemas/billing.schema"
 import { orderSchema } from "../schemas/billing.schema"
@@ -7,7 +7,7 @@ import type { OrderRequest, RazorpayProof } from "../types"
 
 export const createOrder = async ({ planId, credits, coupon }: OrderRequest) =>
   orderSchema.parse(
-    dataOf(
+    payloadOf(
       await api.post("payment/v1/create_razorpay_order/", {
         tokens: credits,
         ...(planId && { plan_id: planId }),

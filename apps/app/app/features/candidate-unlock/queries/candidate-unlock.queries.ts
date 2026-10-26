@@ -1,7 +1,7 @@
+import { payloadOf } from "@workspace/api"
 import { queryOptions } from "@tanstack/react-query"
 
 import { api } from "@/lib/api"
-import { dataOf } from "@/lib/response"
 
 import {
   interviewsSchema,
@@ -15,7 +15,7 @@ export const interviewsQuery = (candidateId: string) =>
     queryKey: ["employer", "candidate-interviews", candidateId],
     queryFn: async () =>
       interviewsSchema.parse(
-        dataOf(
+        payloadOf(
           await api.get(`user/v1/employer_candidate_interviews/${candidateId}/`)
         ) ?? []
       ),

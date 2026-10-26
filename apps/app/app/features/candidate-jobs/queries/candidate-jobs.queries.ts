@@ -1,7 +1,7 @@
+import { payloadOf } from "@workspace/api"
 import { keepPreviousData, queryOptions } from "@tanstack/react-query"
 
 import { api } from "@/lib/api"
-import { dataOf } from "@/lib/response"
 
 import { APPLICATIONS_PAGE } from "../lib/applications"
 import { toApiQuery } from "../lib/search"
@@ -18,7 +18,7 @@ export const findJobsQuery = (search: JobSearch) =>
     queryKey: [...candidateJobsKeys.find, search],
     queryFn: async (): Promise<JobsPage> => {
       const data = jobsPageSchema.parse(
-        dataOf(
+        payloadOf(
           await api.get("user/v1/candidate_find_jobs/", {
             query: toApiQuery(search),
           })
@@ -36,7 +36,7 @@ export const findJobsQuery = (search: JobSearch) =>
 
 const applicationsPage = async (stage: Stage, page: number, limit: number) =>
   jobsPageSchema.parse(
-    dataOf(
+    payloadOf(
       await api.get("user/v1/candidate_jobs/", {
         query: { application_status: stage, page, limit },
       })

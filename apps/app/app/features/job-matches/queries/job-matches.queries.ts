@@ -1,7 +1,7 @@
+import { payloadOf } from "@workspace/api"
 import { queryOptions } from "@tanstack/react-query"
 
 import { api } from "@/lib/api"
-import { dataOf } from "@/lib/response"
 
 import { matchScore } from "../lib/job-matches"
 import { matchesSchema } from "../schemas/job-matches.schema"
@@ -12,7 +12,7 @@ export const matchesQuery = (jobId: string, appliedOnly: boolean) =>
     queryKey: ["employer", "matches", jobId, { appliedOnly }],
     queryFn: async () => {
       const data = matchesSchema.parse(
-        dataOf(
+        payloadOf(
           await api.get(`user/v1/employer_job_ai/matching/${jobId}/`, {
             query: { applied_only: appliedOnly, engine: "v2" },
           })

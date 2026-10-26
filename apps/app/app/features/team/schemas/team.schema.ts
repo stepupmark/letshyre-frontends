@@ -1,6 +1,5 @@
+import { payloadOf } from "@workspace/api"
 import { z } from "zod"
-
-import { dataOf } from "@/lib/response"
 
 const memberSchema = z.looseObject({
   id: z.union([z.string(), z.number()]).transform(String),
@@ -14,7 +13,7 @@ export type Member = z.infer<typeof memberSchema>
 
 export const membersSchema = z.preprocess(
   (json) => {
-    const data = dataOf(json)
+    const data = payloadOf(json)
     return Array.isArray(data) ? { results: data } : data
   },
   z.looseObject({

@@ -1,8 +1,7 @@
 import { queryOptions } from "@tanstack/react-query"
-import { HttpError } from "@workspace/api"
+import { HttpError, payloadOf } from "@workspace/api"
 
 import { api } from "@/lib/api"
-import { dataOf } from "@/lib/response"
 
 import { newestFirst } from "../lib/scorecards"
 import {
@@ -17,7 +16,7 @@ export const unlockedProfileQuery = (id: string) =>
     queryKey: ["employer", "unlocked", "profile", id],
     queryFn: async () =>
       profileSchema.parse(
-        dataOf(await api.get(`user/v1/employer_unlock_candidate/${id}/`))
+        payloadOf(await api.get(`user/v1/employer_unlock_candidate/${id}/`))
       ),
     staleTime: 5 * 60_000,
   })
@@ -27,7 +26,7 @@ export const unlockedScorecardQuery = (id: string) =>
     queryKey: ["employer", "unlocked", "scorecard", id],
     queryFn: async () =>
       scorecardSchema.parse(
-        dataOf(
+        payloadOf(
           await api.get(`user/v1/employer_unlock_candidate/${id}/scorecard/`)
         )
       ),
@@ -39,7 +38,7 @@ export const ownScorecardQuery = (id: string) =>
     queryKey: ["candidate", "scorecard", id],
     queryFn: async () =>
       scorecardSchema.parse(
-        dataOf(await api.get(`user/v1/candidate_scorecard/${id}/`))
+        payloadOf(await api.get(`user/v1/candidate_scorecard/${id}/`))
       ),
     staleTime: 60_000,
   })
@@ -52,7 +51,7 @@ export const ownScorecardsQuery = () =>
       try {
         return newestFirst(
           scorecardListSchema.parse(
-            dataOf(await api.get("user/v1/candidate_scorecard/"))
+            payloadOf(await api.get("user/v1/candidate_scorecard/"))
           )
         )
       } catch (error) {
@@ -71,7 +70,7 @@ export const ownProfileQuery = () =>
     queryKey: OWN_PROFILE,
     queryFn: async () =>
       ownProfileSchema.parse(
-        dataOf(await api.post("user/v1/candidate_profile/"))
+        payloadOf(await api.post("user/v1/candidate_profile/"))
       ),
     staleTime: 60_000,
   })

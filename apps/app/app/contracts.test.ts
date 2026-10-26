@@ -1,3 +1,4 @@
+import { payloadOf } from "@workspace/api"
 import { readFileSync } from "node:fs"
 
 import { expect, test } from "vitest"
@@ -32,7 +33,6 @@ import { matchesSchema } from "@/features/job-matches/schemas/job-matches.schema
 import { jobsPageSchema as candidateJobsSchema } from "@/features/candidate-jobs/schemas/candidate-jobs.schema"
 import { creditsSchema } from "@/lib/credits"
 import { industriesSchema } from "@/lib/industries"
-import { dataOf } from "@/lib/response"
 
 // every schema the app parses responses with, against its fixture in e2e/api
 const CONTRACTS: Record<string, z.ZodType | z.ZodType[]> = {
@@ -68,6 +68,6 @@ test.each(Object.entries(CONTRACTS))(
   "%s matches what the app expects",
   (name, schemas) => {
     for (const schema of [schemas].flat())
-      expect(() => schema.parse(dataOf(fixture(name)))).not.toThrow()
+      expect(() => schema.parse(payloadOf(fixture(name)))).not.toThrow()
   }
 )

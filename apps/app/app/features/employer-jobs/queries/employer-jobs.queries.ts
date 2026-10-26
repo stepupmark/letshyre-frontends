@@ -1,7 +1,7 @@
+import { payloadOf } from "@workspace/api"
 import { queryOptions } from "@tanstack/react-query"
 
 import { api } from "@/lib/api"
-import { dataOf } from "@/lib/response"
 
 import { capitalised } from "../lib/employer-jobs"
 import { jobSchema, jobsPageSchema } from "../schemas/employer-jobs.schema"
@@ -16,7 +16,7 @@ export const jobsQuery = (params: { page: number; tab: JobTab }) =>
       if (params.tab === "pending") search.approval_status = "pending"
       else if (params.tab !== "all") search.status = capitalised(params.tab)
       return jobsPageSchema.parse(
-        dataOf(await api.get("user/v1/employer_jobs/", { query: search }))
+        payloadOf(await api.get("user/v1/employer_jobs/", { query: search }))
       )
     },
     staleTime: 30_000,
@@ -27,7 +27,7 @@ export const jobQuery = (jobId: string) =>
     queryKey: ["employer", "jobs", "detail", jobId],
     queryFn: async () =>
       jobSchema.parse(
-        dataOf(await api.get(`user/v1/employer_job_detail/${jobId}/`))
+        payloadOf(await api.get(`user/v1/employer_job_detail/${jobId}/`))
       ),
     staleTime: 30_000,
   })

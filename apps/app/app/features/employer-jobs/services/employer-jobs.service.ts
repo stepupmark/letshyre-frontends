@@ -1,8 +1,7 @@
-import { xhrUpload } from "@workspace/api"
+import { payloadOf, xhrUpload } from "@workspace/api"
 import { z } from "zod"
 
 import { api } from "@/lib/api"
-import { dataOf } from "@/lib/response"
 
 import { capitalised } from "../lib/employer-jobs"
 import { id, parsedJdSchema } from "../schemas/employer-jobs.schema"
@@ -23,7 +22,7 @@ export const createJob = async (form: FormData) =>
   z
     .looseObject({ id: id.nullish() })
     .catch({ id: null })
-    .parse(dataOf(await xhrUpload(api, "user/v1/employer_jobs/", form)))
+    .parse(payloadOf(await xhrUpload(api, "user/v1/employer_jobs/", form)))
 
 // AI parsing can take longer than the fetch timeout; uploads have none
 export async function parseJd(
@@ -34,7 +33,7 @@ export async function parseJd(
   const form = new FormData()
   form.append("file", file)
   form.append("title", title)
-  const body = dataOf(
+  const body = payloadOf(
     await xhrUpload(api, "user/v1/employer_job_jd_ai/parse/", form, options)
   ) as { parse_response?: { flat?: unknown }; parsed_fields?: unknown } | null
   return parsedJdSchema.parse(

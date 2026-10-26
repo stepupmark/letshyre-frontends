@@ -1,6 +1,5 @@
+import { payloadOf } from "@workspace/api"
 import { z } from "zod"
-
-import { dataOf } from "@/lib/response"
 
 const text = z.string().nullish()
 
@@ -48,7 +47,7 @@ export type Unlocked = z.infer<typeof unlockedSchema>
 // paginated, or a bare list from older deployments
 export const unlockedPageSchema = z.preprocess(
   (json) => {
-    const data = dataOf(json)
+    const data = payloadOf(json)
     return Array.isArray(data)
       ? { results: data, count: data.length, total_pages: 1 }
       : data
