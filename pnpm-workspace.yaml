@@ -39,7 +39,7 @@ catalog:
   typescript: ~6.0.3
   vite: ^8.3.3
   vitest: ^5.0.3
-  zod: ^4.6.5
+  zod: ^4.6.6
 
 # don't install versions published in the last 24h
 minimumReleaseAge: 1440
@@ -62,3 +62,8 @@ packageExtensions:
     peerDependenciesMeta:
       vitest:
         optional: true
+
+# advisories in transitive deps; drop once eslint-plugin-boundaries and ajv ship the fixes
+overrides:
+  handlebars: "^4.7.10"
+  fast-uri: "^3.1.9"
