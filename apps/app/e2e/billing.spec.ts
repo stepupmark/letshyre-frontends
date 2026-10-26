@@ -104,6 +104,39 @@ test("an employer tops up, pays through Razorpay and goes back to the candidate"
   ).toHaveAttribute("href", back)
 })
 
+test("a payment that can't be confirmed keeps the reference and confirms on retry", async ({
+  page,
+  api,
+  signInAs,
+}) => {
+  let attempts = 0
+  await api({
+    "POST /payment/v1/create_razorpay_order/": (route) =>
+      reply(route, { success: true, data: ORDER }),
+    "POST /payment/v1/verify_razorpay_order/": (route) => {
+      attempts++
+      return attempts === 1
+        ? reply(route, { success: false }, 502)
+        : reply(route, { success: true })
+    },
+  })
+  await fakeRazorpay(page, ["pay"])
+  await signInAs("employer")
+  await page.goto("/employer/billing?checkout=25-credits")
+
+  const dialog = page.getByRole("dialog", { name: "25 credits" })
+  await dialog.getByRole("button", { name: "Pay ₹1,445.50" }).click()
+  await expect(
+    page.getByText("We couldn't confirm your payment yet")
+  ).toBeVisible()
+  await expect(page.getByText("pay_T1")).toBeVisible()
+  await axe(page)
+
+  await page.getByRole("button", { name: "Try again" }).click()
+  await expect(page.getByText("25 credits added")).toBeVisible()
+  expect(attempts).toBe(2)
+})
+
 test("a changed price stops the payment before Razorpay opens", async ({
   page,
   api,
