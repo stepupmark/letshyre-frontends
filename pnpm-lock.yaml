@@ -604,6 +604,9 @@ importers:
 
   packages/blocks:
     dependencies:
+      '@workspace/api':
+        specifier: workspace:*
+        version: link:../api
       '@workspace/i18n':
         specifier: workspace:*
         version: link:../i18n

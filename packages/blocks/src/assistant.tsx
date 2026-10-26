@@ -1,3 +1,4 @@
+import { safeUrl } from "@workspace/api"
 import { Button } from "@workspace/ui/components/button"
 import { cn } from "@workspace/ui/lib/utils"
 import {
@@ -668,13 +669,23 @@ function CopyAnswer({
   )
 }
 
-/** App paths stay in the app; anything else opens in a new tab. */
+/** App paths stay in the app, web links open in a new tab, anything else stays plain text. */
 function MarkdownLink({ href = "", children }: ComponentProps<"a">) {
-  if (href.startsWith("/") && !href.startsWith("//"))
-    return <Link to={href}>{children}</Link>
+  const path = appPath(href)
+  if (path) return <Link to={path}>{children}</Link>
+  const url = href.startsWith("mailto:") ? href : safeUrl(href)
+  if (!url) return <>{children}</>
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer nofollow">
+    <a href={url} target="_blank" rel="noopener noreferrer nofollow">
       {children}
     </a>
   )
+}
+
+const SELF = "https://self.invalid"
+
+function appPath(href: string) {
+  if (!href.startsWith("/")) return null
+  const url = new URL(href, SELF)
+  return url.origin === SELF ? url.pathname + url.search + url.hash : null
 }

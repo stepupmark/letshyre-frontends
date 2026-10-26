@@ -67,7 +67,8 @@ describe("AssistantChat", { timeout: 15_000 }, () => {
       .fn<AssistantSend>()
       .mockResolvedValueOnce({
         sessionId: "s1",
-        response: "See [your jobs](/jobs) or [help](https://help.example).",
+        response:
+          "See [your jobs](/jobs) or [help](https://help.example). [Files](ftp://files.example) stay text.",
       })
       .mockResolvedValueOnce({ sessionId: "s1", response: "Sure." })
     const { user, router } = setup(send)
@@ -78,6 +79,8 @@ describe("AssistantChat", { timeout: 15_000 }, () => {
       "target",
       "_blank"
     )
+    expect(screen.queryByRole("link", { name: "Files" })).toBeNull()
+    expect(screen.getByText(/Files stay text/)).toBeInTheDocument()
     await expectAccessible()
 
     await user.type(
