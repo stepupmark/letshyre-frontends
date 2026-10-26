@@ -33,7 +33,7 @@ export default function CreditUnlock() {
       </div>
 
       <ul className="divide-y">
-        <li className="flex items-center gap-4 px-5 py-5">
+        <li className="flex items-center gap-4 p-5">
           <LockedFace />
           <div className="min-w-0 flex-1">
             <span className="block h-3 w-32 rounded-full bg-foreground/15" />
@@ -47,7 +47,7 @@ export default function CreditUnlock() {
         </li>
 
         <li className="grid">
-          <div className="unlock-out col-start-1 row-start-1 flex items-center gap-4 px-5 py-5 opacity-0">
+          <div className="unlock-out col-start-1 row-start-1 flex items-center gap-4 p-5 opacity-0">
             <LockedFace />
             <div className="min-w-0 flex-1">
               <span className="block h-3 w-32 rounded-full bg-foreground/15" />
@@ -59,7 +59,7 @@ export default function CreditUnlock() {
               {86}
             </span>
           </div>
-          <div className="unlock-in col-start-1 row-start-1 flex items-start gap-4 bg-brand-muted/50 px-5 py-5">
+          <div className="unlock-in col-start-1 row-start-1 flex items-start gap-4 bg-brand-muted/50 p-5">
             <Avatar name={t("hero.file.name")} className="size-11 text-sm" />
             <div className="min-w-0 flex-1">
               <p className="flex items-center gap-1.5 font-semibold">

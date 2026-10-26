@@ -12,15 +12,12 @@ import { ScoreRing } from "@/components/art/score-ring"
 
 const LEVELS = [35, 70, 50, 90, 60, 80, 40, 75, 55, 85, 45, 65]
 const OVERALL = 84
+// one per label in how.preview.professionals.scorecard.skills
+const SKILL_SCORES = [88, 82, 76]
 
 interface Field {
   label: string
   value: string
-}
-
-interface Skill {
-  label: string
-  value: number
 }
 
 interface Job {
@@ -143,7 +140,7 @@ export function ScorecardPreview() {
   const { t } = useTranslation("home")
   const skills = t("how.preview.professionals.scorecard.skills", {
     returnObjects: true,
-  }) as Skill[]
+  })
 
   return (
     <div className="rounded-xl border bg-background p-4">
@@ -158,11 +155,11 @@ export function ScorecardPreview() {
           </span>
         </div>
         <div className="flex min-w-0 flex-1 flex-col gap-2.5">
-          {skills.map((skill) => (
+          {skills.map((skill, index) => (
             <Meter
-              key={skill.label}
-              label={skill.label}
-              value={skill.value}
+              key={skill}
+              label={skill}
+              value={SKILL_SCORES[index] ?? 0}
               animate
             />
           ))}

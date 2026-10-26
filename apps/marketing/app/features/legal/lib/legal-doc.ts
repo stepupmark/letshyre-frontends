@@ -49,7 +49,7 @@ export interface TocEntry {
   children: { id: string; title: string }[]
 }
 
-export const subheadingId = (sectionId: string, index: number) =>
+const subheadingId = (sectionId: string, index: number) =>
   `${sectionId}-${index + 1}`
 
 /** Block index to anchor id, for each subheading in a section. */

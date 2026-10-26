@@ -73,7 +73,7 @@ export function StepExplorer({
             key={step.title}
             value={index}
             id={`how-${side}-step-${index + 1}`}
-            className="group/step h-auto flex-none items-start gap-3 rounded-xl px-3 py-3 text-start text-base whitespace-normal text-muted-foreground max-lg:w-auto! max-lg:rounded-full max-lg:p-1 data-active:bg-brand-muted data-active:text-brand-text group-data-[variant=default]/tabs-list:data-active:shadow-none dark:data-active:border-transparent dark:data-active:bg-brand-muted dark:data-active:text-brand-text"
+            className="group/step h-auto flex-none items-start gap-3 rounded-xl p-3 text-start text-base whitespace-normal text-muted-foreground max-lg:w-auto! max-lg:rounded-full max-lg:p-1 data-active:bg-brand-muted data-active:text-brand-text group-data-[variant=default]/tabs-list:data-active:shadow-none dark:data-active:border-transparent dark:data-active:bg-brand-muted dark:data-active:text-brand-text"
           >
             <span className="flex size-8 shrink-0 items-center justify-center rounded-full border bg-background text-sm font-semibold tabular-nums group-data-active/step:border-primary group-data-active/step:bg-primary group-data-active/step:text-primary-foreground">
               {index + 1}

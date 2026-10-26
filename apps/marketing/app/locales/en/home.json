@@ -200,20 +200,7 @@
         "scorecard": {
           "title": "Skill scorecard",
           "overall": "Overall",
-          "skills": [
-            {
-              "label": "React",
-              "value": 88
-            },
-            {
-              "label": "TypeScript",
-              "value": 82
-            },
-            {
-              "label": "System design",
-              "value": 76
-            }
-          ]
+          "skills": ["React", "TypeScript", "System design"]
         },
         "match": {
           "apply": "Apply",
