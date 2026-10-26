@@ -12,6 +12,13 @@ too; README.md has the page walkthrough and hosting needs.
 - Filters live in the URL through each feature's `search-params.ts`.
 - The shell gets the account menu and palette searches as props from `routes/dashboard.tsx`.
   Sidebar entries go in `app/lib/navigation.ts`.
+- One module-level `queryClient` in `lib/query/query-client.ts`, not one per render as in the app.
+  Loaders prefetch into it and `endSession()` clears it, and both run outside React.
+- Toasts and invalidation come from mutation `meta` (`successMessage`, `errorMessage`,
+  `invalidates`) through the client's `MutationCache`, so a mutation hook stays a few lines.
+  `meta.invalidates` lists only the keys that mutation changed.
+
+These differences are deliberate. Everything else, including import order, follows the app.
 
 ## Rules
 

@@ -58,6 +58,8 @@ Inside an app, imports go `routes/layouts → features → components/hooks/lib`
 - Inside a feature, layers import downwards only:
   components → hooks → queries/mutations → services → schemas/lib/types (ADR 0016).
 - Reach across folders with the `@/` alias, not `../../`.
+- Imports come in three groups, a blank line apart: packages, `@/` aliases, relative paths
+  (`import-x/order`, autofixed).
 - Packages never read app config or create their own client; apps pass them in.
 
 ## Data
