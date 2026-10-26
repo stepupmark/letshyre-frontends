@@ -11,9 +11,9 @@ import {
   experienceText,
   salaryText,
   WORK_MODES,
-  type Industry,
   type JobValues,
 } from "../lib/job-values"
+import { type Industry } from "../lib/job-mapping"
 
 // the job as candidates read it; the post preview and the detail page share it
 export function JobView({

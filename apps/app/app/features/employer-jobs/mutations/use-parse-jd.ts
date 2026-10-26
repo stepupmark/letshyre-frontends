@@ -3,7 +3,7 @@ import { useRef, useState } from "react"
 
 import { industriesQuery } from "@/lib/industries"
 
-import { fromParsed } from "../lib/job-values"
+import { fromParsed } from "../lib/job-mapping"
 import { parseJd } from "../services/employer-jobs.service"
 
 export type ReadStage = "uploading" | "reading"

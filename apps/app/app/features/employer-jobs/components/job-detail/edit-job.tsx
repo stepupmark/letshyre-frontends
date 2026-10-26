@@ -9,7 +9,8 @@ import { toast } from "sonner"
 import { ConfirmDialog } from "@/components/confirm-dialog"
 
 import { useJobForm } from "../../hooks/use-job-form"
-import type { Industry, JobValues } from "../../lib/job-values"
+import type { JobValues } from "../../lib/job-values"
+import type { Industry } from "../../lib/job-mapping"
 import { useUpdateJob } from "../../mutations/use-job-changes"
 import { JobForm } from "../form/job-form"
 

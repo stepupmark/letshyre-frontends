@@ -1,4 +1,3 @@
-import { zodResolver } from "@hookform/resolvers/zod"
 import { HttpError, safeUrl } from "@workspace/api"
 import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
@@ -18,8 +17,8 @@ import {
 import { Spinner } from "@workspace/ui/components/spinner"
 import { Textarea } from "@workspace/ui/components/textarea"
 import { useQuery } from "@tanstack/react-query"
-import { useEffect, useId, useMemo, useRef, useState } from "react"
-import { Controller, useForm, useWatch } from "react-hook-form"
+import { useId, useRef, useState } from "react"
+import { Controller, useWatch } from "react-hook-form"
 import { href, useNavigate } from "react-router"
 import { toast } from "sonner"
 
@@ -28,22 +27,17 @@ import { TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
 import { industriesQuery } from "@/lib/industries"
 
+import { useCompanyForm } from "../hooks/use-company-form"
 import { useLeaveGuard } from "../hooks/use-leave-guard"
 import { useSaveCompany } from "../mutations/use-save-company"
 import {
   DESCRIPTION_MAX,
   FORM_FIELDS,
-  makeCompanyFormSchema,
   type CompanyFormValues,
 } from "../schemas/company-form.schema"
 import type { Company } from "../schemas/company-profile.schema"
 import { LogoPicker } from "./logo-picker"
 import { Panel } from "./parts"
-
-type FormField = (typeof FORM_FIELDS)[number]
-
-const isField = (value: string | null): value is FormField =>
-  FORM_FIELDS.some((field) => field === value)
 
 export function CompanyForm({
   company,
@@ -64,28 +58,7 @@ export function CompanyForm({
   const [logoError, setLogoError] = useState<string | null>(null)
   const [failed, setFailed] = useState(false)
 
-  const schema = useMemo(
-    () =>
-      makeCompanyFormSchema({
-        email: t("errors.email"),
-        address: t("errors.address"),
-        industry: t("errors.industry"),
-        linkedin: t("errors.linkedin"),
-        description: t("errors.description"),
-      }),
-    [t]
-  )
-  const form = useForm<CompanyFormValues>({
-    resolver: zodResolver(schema),
-    defaultValues: {
-      official_email: kyc.official_email ?? "",
-      company_address: kyc.company_address ?? "",
-      company_industry: kyc.company_industry ?? "",
-      linkedin_url: kyc.linkedin_url ?? "",
-      company_description: kyc.company_description ?? "",
-    },
-    mode: "onSubmit",
-  })
+  const form = useCompanyForm(kyc, focus)
   const errors = form.formState.errors
   const description = useWatch({
     control: form.control,
@@ -96,10 +69,6 @@ export function CompanyForm({
   const items = industries.data ?? []
   const profile = href("/employer/company")
   const count = description.length
-
-  useEffect(() => {
-    if (isField(focus)) form.setFocus(focus)
-  }, [focus, form])
 
   const onSubmit = (values: CompanyFormValues) => {
     if (logoError) {

@@ -17,9 +17,9 @@ import {
   salaryText,
   today,
   WORK_MODES,
-  type Industry,
   type JobValues,
 } from "../../lib/job-values"
+import { type Industry } from "../../lib/job-mapping"
 import { Choice, FormSection, Labelled, LongText, Range } from "./fields"
 import { SkillsField } from "./skills-field"
 

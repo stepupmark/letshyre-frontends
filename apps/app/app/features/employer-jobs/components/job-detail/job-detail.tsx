@@ -14,7 +14,7 @@ import { industriesQuery } from "@/lib/industries"
 import { useGo } from "@/lib/navigation"
 
 import { statusOf } from "../../lib/employer-jobs"
-import { fromJob } from "../../lib/job-values"
+import { fromJob } from "../../lib/job-mapping"
 import { useDeleteJob } from "../../mutations/use-job-changes"
 import { jobQuery } from "../../queries/employer-jobs.queries"
 import type { Job } from "../../schemas/employer-jobs.schema"

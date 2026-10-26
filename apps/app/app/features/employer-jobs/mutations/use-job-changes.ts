@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 
-import { toCreateForm, toPayload, type JobValues } from "../lib/job-values"
+import { type JobValues } from "../lib/job-values"
+import { toCreateForm, toPayload } from "../lib/job-mapping"
 import { jobQuery, JOBS_KEY } from "../queries/employer-jobs.queries"
 import type { Job } from "../schemas/employer-jobs.schema"
 import {

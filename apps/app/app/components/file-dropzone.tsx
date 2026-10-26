@@ -3,24 +3,12 @@ import { Button } from "@workspace/ui/components/button"
 import { Progress } from "@workspace/ui/components/progress"
 import { cn } from "@workspace/ui/lib/utils"
 import { Check, FileUp, RotateCw, X, type LucideIcon } from "lucide-react"
-import { useCallback, useEffect, useId, useRef, useState } from "react"
+import { useId } from "react"
 
-import {
-  checkFile,
-  formatBytes,
-  type FileProblem,
-  type FileRules,
-} from "@/lib/file-rules"
+import { useFileUpload } from "@/hooks/use-file-upload"
+import { formatBytes, type FileRules } from "@/lib/file-rules"
 
 import { FileImage } from "./file-image"
-
-type State =
-  | { status: "idle" }
-  | { status: "selected"; file: File }
-  | { status: "invalid"; problem: FileProblem }
-  | { status: "uploading"; file: File; progress: number }
-  | { status: "failed"; file: File }
-  | { status: "done"; file: File }
 
 export interface FileDropzoneProps {
   label: string
@@ -64,83 +52,17 @@ export function FileDropzone({
   const { t } = useTranslation("common")
   const locale = useLocale()
   const id = useId()
-  const controller = useRef<AbortController | null>(null)
-  const [state, setState] = useState<State>(
-    value ? { status: "selected", file: value } : { status: "idle" }
-  )
-  const [dragging, setDragging] = useState(false)
-
-  useEffect(() => () => controller.current?.abort(), [])
+  const { state, dragging, zone, start, remove } = useFileUpload({
+    rules,
+    value,
+    onSelect,
+    upload,
+    onUploaded,
+    onRemove,
+  })
 
   const types = rules.accept.join(", ").toUpperCase().replaceAll(".", "")
   const max = formatBytes(rules.maxBytes, locale)
-
-  const start = async (file: File) => {
-    const problem = checkFile(file, rules)
-    if (problem) {
-      setState({ status: "invalid", problem })
-      return
-    }
-    if (!upload) {
-      setState({ status: "selected", file })
-      onSelect?.(file)
-      return
-    }
-    controller.current?.abort()
-    controller.current = new AbortController()
-    setState({ status: "uploading", file, progress: 0 })
-    try {
-      const result = await upload(file, {
-        signal: controller.current.signal,
-        onProgress: (progress) => {
-          setState({ status: "uploading", file, progress })
-        },
-      })
-      setState({ status: "done", file })
-      onUploaded?.(result, file)
-    } catch (error) {
-      if (controller.current.signal.aborted) return
-      console.error(error)
-      setState({ status: "failed", file })
-    }
-  }
-
-  const latestStart = useRef(start)
-  useEffect(() => {
-    latestStart.current = start
-  })
-
-  // native listeners: the label stays a plain label for assistive tech
-  const zone = useCallback((label: HTMLLabelElement | null) => {
-    if (!label) return
-    const over = (event: DragEvent) => {
-      event.preventDefault()
-      setDragging(true)
-    }
-    const leave = () => {
-      setDragging(false)
-    }
-    const drop = (event: DragEvent) => {
-      event.preventDefault()
-      setDragging(false)
-      const file = event.dataTransfer?.files[0]
-      if (file) void latestStart.current(file)
-    }
-    label.addEventListener("dragover", over)
-    label.addEventListener("dragleave", leave)
-    label.addEventListener("drop", drop)
-    return () => {
-      label.removeEventListener("dragover", over)
-      label.removeEventListener("dragleave", leave)
-      label.removeEventListener("drop", drop)
-    }
-  }, [])
-
-  const remove = () => {
-    setState({ status: "idle" })
-    onSelect?.(null)
-    onRemove?.()
-  }
   const problem =
     state.status === "invalid"
       ? state.problem.kind === "wrongType"

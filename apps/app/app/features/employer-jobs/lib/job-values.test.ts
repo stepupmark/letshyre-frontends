@@ -1,14 +1,8 @@
 import { describe, expect, it } from "vitest"
 
 import { jobSchema, parsedJdSchema } from "../schemas/employer-jobs.schema"
-import {
-  EMPTY,
-  fromJob,
-  fromParsed,
-  makeJobSchema,
-  toCreateForm,
-  type JobValues,
-} from "./job-values"
+import { EMPTY, makeJobSchema, type JobValues } from "./job-values"
+import { fromJob, fromParsed, toCreateForm } from "./job-mapping"
 
 const industries = [{ value: "it", label: "Information technology" }]
 const messages = new Proxy({} as Parameters<typeof makeJobSchema>[0], {
