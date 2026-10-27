@@ -14,7 +14,6 @@
     "lighthouse": "lhci autorun"
   },
   "dependencies": {
-    "@base-ui/react": "catalog:",
     "@fontsource-variable/outfit": "catalog:",
     "@hookform/resolvers": "catalog:",
     "@react-router/node": "catalog:",

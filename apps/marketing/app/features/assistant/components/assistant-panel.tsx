@@ -9,7 +9,7 @@ import { api } from "@/lib/api"
 
 import { loadAssistantCopy } from "../lib/copy"
 import { FollowUps } from "./follow-ups"
-import { PanelHeader } from "./panel-header"
+import { PanelHeader, type PanelTitle } from "./panel-header"
 import { PanelNotice } from "./panel-notice"
 import { PanelWelcome } from "./panel-welcome"
 
@@ -19,7 +19,13 @@ const send = (
   signal: AbortSignal
 ) => sendAssistantMessage(api, { message, sessionId }, { signal })
 
-export function AssistantPanel() {
+export function AssistantPanel({
+  Title,
+  onClose,
+}: {
+  Title: PanelTitle
+  onClose: () => void
+}) {
   use(loadAssistantCopy(useLocale()))
   const { t } = useTranslation("assistant")
   const chat = useAssistant("public", send)
@@ -28,6 +34,8 @@ export function AssistantPanel() {
   return (
     <>
       <PanelHeader
+        Title={Title}
+        onClose={onClose}
         actions={
           chat.messages.length > 0 && (
             <Button
