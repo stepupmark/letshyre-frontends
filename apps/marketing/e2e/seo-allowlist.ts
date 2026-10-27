@@ -38,4 +38,44 @@ export const SEO_ALLOWLIST: {
     reason:
       "the Free plan gives 10 credits, not the 5 the old description said",
   },
+  {
+    page: "",
+    field: "title",
+    reason: "home copy rewritten around hiring experienced professionals",
+  },
+  {
+    page: "",
+    field: "description",
+    reason: "home copy rewritten around hiring experienced professionals",
+  },
+  {
+    page: "",
+    field: "faqQuestions",
+    reason: "the rewritten home FAQ has one more question",
+  },
+  {
+    page: "/about",
+    field: "title",
+    reason: "names the company and what it does instead of a generic About Us",
+  },
+  {
+    page: "/contact",
+    field: "title",
+    reason: "says who the page reaches instead of a generic Contact Us",
+  },
+  {
+    page: "/download",
+    field: "jsonLd",
+    reason: "the page now has an FAQ, published as FAQPage",
+  },
+  {
+    page: "/download",
+    field: "faqQuestions",
+    reason: "the page now has an FAQ, published as FAQPage",
+  },
+  ...(["/terms", "/policy", "/refund-policy"] as const).map((page) => ({
+    page,
+    field: "title" as const,
+    reason: "legal titles in sentence case, like every other heading",
+  })),
 ]
