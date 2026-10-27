@@ -1,6 +1,5 @@
 {
   "chatbot": {
-    "subtitle": "Fragen Sie uns alles",
     "inputPlaceholder": "Stellen Sie eine Frage…",
     "send": "Senden",
     "sendAria": "Nachricht senden",
@@ -10,22 +9,46 @@
     "assistant": "Assistent",
     "retry": "Erneut versuchen",
     "errorMessage": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
-    "clear": "Löschen",
+    "newChat": "Neuer Chat",
+    "cleared": "Chat gelöscht.",
+    "undo": "Rückgängig",
     "copy": "Antwort kopieren",
     "copied": "Kopiert",
     "latest": "Neue Antwort",
     "messagesLabel": "Chat-Nachrichten",
-    "closeAria": "Chat schließen",
-    "empty": {
-      "greeting": "Hallo! Ich bin der LetsHyre-Assistent.",
-      "hint": "Fragen Sie mich alles über LetsHyre. Probieren Sie es mit einer dieser Fragen:",
-      "prompts": {
-        "what": "Was ist LetsHyre?",
-        "scorecard": "Wie funktioniert es für Arbeitgeber?",
-        "applications": "Wie funktioniert es für Arbeitsuchende?",
-        "interview": "Ist der Einstieg kostenlos?"
+    "welcome": {
+      "title": "Was möchten Sie wissen?",
+      "hint": "Fragen Sie alles rund ums Einstellen oder die Jobsuche bei LetsHyre – oder beginnen Sie mit einer dieser Fragen."
+    },
+    "topics": {
+      "about": "Erste Schritte",
+      "employers": "Für Arbeitgeber",
+      "seekers": "Für Kandidaten"
+    },
+    "prompts": {
+      "what": "Was ist LetsHyre?",
+      "free": "Ist der Einstieg kostenlos?",
+      "employersHow": "Wie funktioniert es für Arbeitgeber?",
+      "employersCost": "Was kostet das Einstellen?",
+      "employersInterview": "Wie funktionieren KI-Interviews?",
+      "seekersHow": "Wie funktioniert es für Arbeitsuchende?",
+      "seekersInterview": "Wie bereite ich mich auf mein Interview vor?",
+      "seekersProfile": "Was sollte mein Profil enthalten?"
+    },
+    "askNext": "Als Nächstes fragen",
+    "signUp": {
+      "employers": {
+        "title": "Bereit einzustellen?",
+        "body": "Erstellen Sie ein Arbeitgeberkonto, um Ihre erste Stelle auszuschreiben.",
+        "cta": "Arbeitgeberkonto erstellen"
+      },
+      "seekers": {
+        "title": "Auf Jobsuche?",
+        "body": "Erstellen Sie Ihr Profil, um sich auf Stellen zu bewerben.",
+        "cta": "Bewerberprofil erstellen"
       }
     },
+    "notice": "KI-Antworten können falsch sein. Teilen Sie keine persönlichen Daten. <0>Datenschutzerklärung</0>",
     "stop": "Antwort stoppen",
     "stopped": "Sie haben diese Antwort gestoppt."
   }

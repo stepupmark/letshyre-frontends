@@ -1,6 +1,5 @@
 {
   "chatbot": {
-    "subtitle": "Posez-nous vos questions",
     "inputPlaceholder": "Posez une question…",
     "send": "Envoyer",
     "sendAria": "Envoyer le message",
@@ -10,22 +9,46 @@
     "assistant": "Assistant",
     "retry": "Réessayer",
     "errorMessage": "Une erreur s'est produite. Veuillez réessayer.",
-    "clear": "Effacer",
+    "newChat": "Nouvelle conversation",
+    "cleared": "Conversation effacée.",
+    "undo": "Annuler",
     "copy": "Copier la réponse",
     "copied": "Copié",
     "latest": "Nouvelle réponse",
     "messagesLabel": "Messages de la discussion",
-    "closeAria": "Fermer la discussion",
-    "empty": {
-      "greeting": "Bonjour ! Je suis l'assistant LetsHyre.",
-      "hint": "Posez-moi n'importe quelle question sur LetsHyre. Essayez l'une de celles-ci :",
-      "prompts": {
-        "what": "Qu'est-ce que LetsHyre ?",
-        "scorecard": "Comment ça marche pour les employeurs ?",
-        "applications": "Comment ça marche pour les candidats ?",
-        "interview": "Est-ce gratuit pour commencer ?"
+    "welcome": {
+      "title": "Que souhaitez-vous savoir ?",
+      "hint": "Posez toutes vos questions sur le recrutement ou la recherche d’emploi avec LetsHyre, ou commencez par l’une de celles-ci."
+    },
+    "topics": {
+      "about": "Pour commencer",
+      "employers": "Pour les employeurs",
+      "seekers": "Pour les candidats"
+    },
+    "prompts": {
+      "what": "Qu'est-ce que LetsHyre ?",
+      "free": "Est-ce gratuit pour commencer ?",
+      "employersHow": "Comment ça marche pour les employeurs ?",
+      "employersCost": "Combien coûte un recrutement ?",
+      "employersInterview": "Comment fonctionnent les entretiens par IA ?",
+      "seekersHow": "Comment ça marche pour les candidats ?",
+      "seekersInterview": "Comment préparer mon entretien ?",
+      "seekersProfile": "Que doit contenir mon profil ?"
+    },
+    "askNext": "Questions suivantes",
+    "signUp": {
+      "employers": {
+        "title": "Prêt à recruter ?",
+        "body": "Créez un compte employeur pour publier votre première offre.",
+        "cta": "Créer un compte employeur"
+      },
+      "seekers": {
+        "title": "Vous cherchez un emploi ?",
+        "body": "Créez votre profil pour commencer à postuler.",
+        "cta": "Créer un profil candidat"
       }
     },
+    "notice": "Les réponses de l’IA peuvent être inexactes. Ne partagez pas de données personnelles. <0>Politique de confidentialité</0>",
     "stop": "Arrêter la réponse",
     "stopped": "Vous avez arrêté cette réponse."
   }

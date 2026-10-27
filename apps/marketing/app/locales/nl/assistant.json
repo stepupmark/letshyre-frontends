@@ -1,6 +1,5 @@
 {
   "chatbot": {
-    "subtitle": "Stel ons alles",
     "inputPlaceholder": "Stel een vraag…",
     "send": "Versturen",
     "sendAria": "Bericht versturen",
@@ -10,22 +9,46 @@
     "assistant": "Assistent",
     "retry": "Opnieuw proberen",
     "errorMessage": "Er is iets misgegaan. Probeer het opnieuw.",
-    "clear": "Wissen",
+    "newChat": "Nieuwe chat",
+    "cleared": "Chat gewist.",
+    "undo": "Ongedaan maken",
     "copy": "Antwoord kopiëren",
     "copied": "Gekopieerd",
     "latest": "Nieuw antwoord",
     "messagesLabel": "Chatberichten",
-    "closeAria": "Chat sluiten",
-    "empty": {
-      "greeting": "Hallo! Ik ben de LetsHyre-assistent.",
-      "hint": "Stel mij alles over LetsHyre. Probeer een van deze:",
-      "prompts": {
-        "what": "Wat is LetsHyre?",
-        "scorecard": "Hoe werkt het voor werkgevers?",
-        "applications": "Hoe werkt het voor werkzoekenden?",
-        "interview": "Is het gratis om te beginnen?"
+    "welcome": {
+      "title": "Wat wil je weten?",
+      "hint": "Vraag alles over werven of werk vinden via LetsHyre, of begin met een van deze vragen."
+    },
+    "topics": {
+      "about": "Aan de slag",
+      "employers": "Voor werkgevers",
+      "seekers": "Voor kandidaten"
+    },
+    "prompts": {
+      "what": "Wat is LetsHyre?",
+      "free": "Is het gratis om te beginnen?",
+      "employersHow": "Hoe werkt het voor werkgevers?",
+      "employersCost": "Wat kost werven?",
+      "employersInterview": "Hoe werken AI-interviews?",
+      "seekersHow": "Hoe werkt het voor werkzoekenden?",
+      "seekersInterview": "Hoe bereid ik me voor op mijn interview?",
+      "seekersProfile": "Wat moet er in mijn profiel staan?"
+    },
+    "askNext": "Vraag ook",
+    "signUp": {
+      "employers": {
+        "title": "Klaar om te werven?",
+        "body": "Maak een werkgeversaccount aan om je eerste vacature te plaatsen.",
+        "cta": "Werkgeversaccount aanmaken"
+      },
+      "seekers": {
+        "title": "Op zoek naar werk?",
+        "body": "Maak je profiel aan om te solliciteren op vacatures.",
+        "cta": "Kandidaatprofiel aanmaken"
       }
     },
+    "notice": "AI-antwoorden kunnen onjuist zijn. Deel geen persoonlijke gegevens. <0>Privacybeleid</0>",
     "stop": "Antwoord stoppen",
     "stopped": "U hebt dit antwoord gestopt."
   }

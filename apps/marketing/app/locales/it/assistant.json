@@ -1,6 +1,5 @@
 {
   "chatbot": {
-    "subtitle": "Chiedici qualsiasi cosa",
     "inputPlaceholder": "Fai una domanda…",
     "send": "Invia",
     "sendAria": "Invia messaggio",
@@ -10,22 +9,46 @@
     "assistant": "Assistente",
     "retry": "Riprova",
     "errorMessage": "Qualcosa è andato storto. Riprova.",
-    "clear": "Cancella",
+    "newChat": "Nuova chat",
+    "cleared": "Chat cancellata.",
+    "undo": "Annulla",
     "copy": "Copia risposta",
     "copied": "Copiato",
     "latest": "Nuova risposta",
     "messagesLabel": "Messaggi della chat",
-    "closeAria": "Chiudi chat",
-    "empty": {
-      "greeting": "Ciao! Sono l'assistente LetsHyre.",
-      "hint": "Chiedimi qualsiasi cosa su LetsHyre. Prova una di queste:",
-      "prompts": {
-        "what": "Cos'è LetsHyre?",
-        "scorecard": "Come funziona per i datori di lavoro?",
-        "applications": "Come funziona per chi cerca lavoro?",
-        "interview": "È gratuito iniziare?"
+    "welcome": {
+      "title": "Cosa vorresti sapere?",
+      "hint": "Chiedi qualsiasi cosa su come assumere o trovare lavoro con LetsHyre, oppure inizia da una di queste."
+    },
+    "topics": {
+      "about": "Per iniziare",
+      "employers": "Per le aziende",
+      "seekers": "Per i candidati"
+    },
+    "prompts": {
+      "what": "Cos'è LetsHyre?",
+      "free": "È gratuito iniziare?",
+      "employersHow": "Come funziona per i datori di lavoro?",
+      "employersCost": "Quanto costa assumere?",
+      "employersInterview": "Come funzionano i colloqui con l’IA?",
+      "seekersHow": "Come funziona per chi cerca lavoro?",
+      "seekersInterview": "Come mi preparo al colloquio?",
+      "seekersProfile": "Cosa dovrebbe includere il mio profilo?"
+    },
+    "askNext": "Chiedi anche",
+    "signUp": {
+      "employers": {
+        "title": "Pronto ad assumere?",
+        "body": "Crea un account datore di lavoro per pubblicare il tuo primo annuncio.",
+        "cta": "Crea account aziendale"
+      },
+      "seekers": {
+        "title": "Cerchi lavoro?",
+        "body": "Crea il tuo profilo per iniziare a candidarti.",
+        "cta": "Crea profilo candidato"
       }
     },
+    "notice": "Le risposte dell’IA possono essere sbagliate. Non condividere dati personali. <0>Informativa sulla privacy</0>",
     "stop": "Interrompi la risposta",
     "stopped": "Hai interrotto questa risposta."
   }

@@ -1,8 +1,10 @@
 {
   "chatbot": {
     "title": "Assistente LetsHyre",
+    "subtitle": "Pergunte-nos o que quiser",
     "launcherAria": "Abrir assistente de chat",
     "greeting": "Dúvidas sobre contratação? Pergunte-me.",
-    "dismiss": "Fechar"
+    "dismiss": "Fechar",
+    "close": "Fechar chat"
   }
 }

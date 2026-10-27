@@ -1,8 +1,10 @@
 {
   "chatbot": {
     "title": "LetsHyre アシスタント",
+    "subtitle": "何でもお尋ねください",
     "launcherAria": "チャットアシスタントを開く",
     "greeting": "採用について質問がありますか？お気軽にどうぞ。",
-    "dismiss": "閉じる"
+    "dismiss": "閉じる",
+    "close": "チャットを閉じる"
   }
 }

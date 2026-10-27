@@ -1,6 +1,5 @@
 {
   "chatbot": {
-    "subtitle": "무엇이든 물어보세요",
     "inputPlaceholder": "질문을 입력하세요…",
     "send": "전송",
     "sendAria": "메시지 보내기",
@@ -10,22 +9,46 @@
     "assistant": "어시스턴트",
     "retry": "다시 시도",
     "errorMessage": "문제가 발생했습니다. 다시 시도해 주세요.",
-    "clear": "지우기",
+    "newChat": "새 채팅",
+    "cleared": "채팅을 지웠습니다.",
+    "undo": "실행 취소",
     "copy": "답변 복사",
     "copied": "복사됨",
     "latest": "새 답변",
     "messagesLabel": "채팅 메시지",
-    "closeAria": "채팅 닫기",
-    "empty": {
-      "greeting": "안녕하세요! 저는 LetsHyre 어시스턴트입니다.",
-      "hint": "LetsHyre에 대해 무엇이든 물어보세요. 아래 질문을 시도해 보세요:",
-      "prompts": {
-        "what": "LetsHyre는 무엇인가요?",
-        "scorecard": "기업 입장에서는 어떻게 작동하나요?",
-        "applications": "구직자 입장에서는 어떻게 작동하나요?",
-        "interview": "무료로 시작할 수 있나요?"
+    "welcome": {
+      "title": "무엇이 궁금하세요?",
+      "hint": "LetsHyre에서의 채용이나 구직에 대해 무엇이든 물어보거나, 아래 질문으로 시작해 보세요."
+    },
+    "topics": {
+      "about": "시작하기",
+      "employers": "기업용",
+      "seekers": "지원자용"
+    },
+    "prompts": {
+      "what": "LetsHyre는 무엇인가요?",
+      "free": "무료로 시작할 수 있나요?",
+      "employersHow": "기업 입장에서는 어떻게 작동하나요?",
+      "employersCost": "채용 비용은 얼마인가요?",
+      "employersInterview": "AI 면접은 어떻게 진행되나요?",
+      "seekersHow": "구직자 입장에서는 어떻게 작동하나요?",
+      "seekersInterview": "면접은 어떻게 준비하나요?",
+      "seekersProfile": "프로필에는 무엇을 넣어야 하나요?"
+    },
+    "askNext": "이어서 물어보기",
+    "signUp": {
+      "employers": {
+        "title": "채용을 시작할까요?",
+        "body": "기업 계정을 만들고 첫 채용 공고를 올려 보세요.",
+        "cta": "기업 계정 만들기"
+      },
+      "seekers": {
+        "title": "일자리를 찾고 계신가요?",
+        "body": "프로필을 만들고 지원을 시작해 보세요.",
+        "cta": "지원자 프로필 만들기"
       }
     },
+    "notice": "AI 답변은 틀릴 수 있습니다. 개인 정보는 공유하지 마세요. <0>개인정보 처리방침</0>",
     "stop": "답변 중지",
     "stopped": "이 답변을 중지했어요."
   }

@@ -1,6 +1,5 @@
 {
   "chatbot": {
-    "subtitle": "Pergunte-nos o que quiser",
     "inputPlaceholder": "Faça uma pergunta…",
     "send": "Enviar",
     "sendAria": "Enviar mensagem",
@@ -10,22 +9,46 @@
     "assistant": "Assistente",
     "retry": "Tentar novamente",
     "errorMessage": "Ocorreu um erro. Tente novamente.",
-    "clear": "Limpar",
+    "newChat": "Nova conversa",
+    "cleared": "Conversa apagada.",
+    "undo": "Desfazer",
     "copy": "Copiar resposta",
     "copied": "Copiado",
     "latest": "Nova resposta",
     "messagesLabel": "Mensagens do chat",
-    "closeAria": "Fechar chat",
-    "empty": {
-      "greeting": "Olá! Sou o assistente da LetsHyre.",
-      "hint": "Pergunte-me qualquer coisa sobre a LetsHyre. Experimente uma destas:",
-      "prompts": {
-        "what": "O que é a LetsHyre?",
-        "scorecard": "Como funciona para as empresas?",
-        "applications": "Como funciona para candidatos a emprego?",
-        "interview": "É gratuito começar?"
+    "welcome": {
+      "title": "O que você gostaria de saber?",
+      "hint": "Pergunte o que quiser sobre contratar ou encontrar emprego na LetsHyre, ou comece com uma destas."
+    },
+    "topics": {
+      "about": "Primeiros passos",
+      "employers": "Para empresas",
+      "seekers": "Para candidatos"
+    },
+    "prompts": {
+      "what": "O que é a LetsHyre?",
+      "free": "É gratuito começar?",
+      "employersHow": "Como funciona para as empresas?",
+      "employersCost": "Quanto custa contratar?",
+      "employersInterview": "Como funcionam as entrevistas com IA?",
+      "seekersHow": "Como funciona para candidatos a emprego?",
+      "seekersInterview": "Como me preparo para a entrevista?",
+      "seekersProfile": "O que meu perfil deve incluir?"
+    },
+    "askNext": "Pergunte também",
+    "signUp": {
+      "employers": {
+        "title": "Pronto para contratar?",
+        "body": "Crie uma conta de empregador para publicar sua primeira vaga.",
+        "cta": "Criar conta de empresa"
+      },
+      "seekers": {
+        "title": "Procurando trabalho?",
+        "body": "Crie seu perfil para começar a se candidatar a vagas.",
+        "cta": "Criar perfil de candidato"
       }
     },
+    "notice": "As respostas da IA podem estar erradas. Não compartilhe dados pessoais. <0>Política de privacidade</0>",
     "stop": "Parar a resposta",
     "stopped": "Você parou esta resposta."
   }
