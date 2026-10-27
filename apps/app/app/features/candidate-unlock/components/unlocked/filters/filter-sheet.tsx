@@ -11,7 +11,7 @@ import {
 } from "@workspace/ui/components/sheet"
 import { SlidersHorizontal } from "lucide-react"
 
-import type { UnlockedFilters } from "../../../types"
+import type { FilterChange, UnlockedFilters } from "../../../types"
 import { CountBadge } from "./count-badge"
 import { ExperienceFields } from "./experience-fields"
 import { SkillsFields } from "./skills-fields"
@@ -26,7 +26,7 @@ export function FilterSheet({
   filters: UnlockedFilters
   count: number
   total: number | null
-  onChange: (change: Partial<UnlockedFilters>) => void
+  onChange: (change: FilterChange) => void
   onClear: () => void
 }) {
   const { t } = useTranslation("unlock")
@@ -48,8 +48,8 @@ export function FilterSheet({
         <div className="flex flex-col gap-6 overflow-y-auto p-4">
           <SkillsFields
             skills={filters.skills}
-            onChange={(skills) => {
-              onChange({ skills })
+            onChange={(edit) => {
+              onChange((current) => ({ skills: edit(current.skills) }))
             }}
           />
           <ExperienceFields filters={filters} onChange={onChange} />

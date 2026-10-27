@@ -11,6 +11,10 @@ test("an employer filters unlocked candidates by skill and experience and pages 
   api,
   signInAs,
 }) => {
+  test.skip(
+    test.info().project.name === "mobile",
+    "drives the desktop popovers; the sheet holds the same fields"
+  )
   const asked: URLSearchParams[] = []
   await api({
     "GET /user/v1/employer_unlock_candidate/": async (route) => {

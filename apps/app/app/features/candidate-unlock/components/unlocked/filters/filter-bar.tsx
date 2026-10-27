@@ -13,7 +13,7 @@ import { FilterChips } from "@/components/filter-chips"
 
 import { useFilterLabels } from "../../../hooks/use-filter-labels"
 import { filterCount, hasExperience } from "../../../lib/filters"
-import type { UnlockedFilters } from "../../../types"
+import type { FilterChange, UnlockedFilters } from "../../../types"
 import { CountBadge } from "./count-badge"
 import { ExperienceFields } from "./experience-fields"
 import { FilterSheet } from "./filter-sheet"
@@ -27,7 +27,7 @@ export function FilterBar({
 }: {
   filters: UnlockedFilters
   total: number | null
-  onChange: (change: Partial<UnlockedFilters>) => void
+  onChange: (change: FilterChange) => void
   onClear: () => void
 }) {
   const { t } = useTranslation("unlock")
@@ -50,8 +50,8 @@ export function FilterBar({
       >
         <SkillsFields
           skills={filters.skills}
-          onChange={(skills) => {
-            onChange({ skills })
+          onChange={(edit) => {
+            onChange((current) => ({ skills: edit(current.skills) }))
           }}
         />
       </FilterPopover>

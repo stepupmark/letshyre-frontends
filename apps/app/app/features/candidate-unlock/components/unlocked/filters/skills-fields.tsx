@@ -11,7 +11,7 @@ export function SkillsFields({
   onChange,
 }: {
   skills: string[]
-  onChange: (skills: string[]) => void
+  onChange: (edit: (current: string[]) => string[]) => void
 }) {
   const { t } = useTranslation("unlock")
   const id = useId()
@@ -24,7 +24,17 @@ export function SkillsFields({
         placeholder={t("filters.skillsPlaceholder")}
         describedBy={`${id}-hint`}
         onChange={(next) => {
-          onChange(cleanSkills(next))
+          const lower = (list: string[]) => list.map((s) => s.toLowerCase())
+          const added = next.filter(
+            (s) => !lower(skills).includes(s.toLowerCase())
+          )
+          const removed = lower(skills).filter((s) => !lower(next).includes(s))
+          onChange((current) =>
+            cleanSkills([
+              ...current.filter((s) => !removed.includes(s.toLowerCase())),
+              ...added,
+            ])
+          )
         }}
       />
       <p
