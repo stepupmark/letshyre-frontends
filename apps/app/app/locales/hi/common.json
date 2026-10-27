@@ -33,7 +33,8 @@
     "navigateHint": "से आगे-पीछे,",
     "openHint": "से खोलें",
     "enterKey": "Enter",
-    "pages": "पेज"
+    "pages": "पेज",
+    "page": "पेज {{page}}"
   },
   "state": {
     "error": "यह लोड नहीं हुआ।",
@@ -110,5 +111,12 @@
     "monthShort": "MM",
     "yearShort": "YYYY",
     "open": "कैलेंडर से चुनें"
+  },
+  "filters": {
+    "remove": "{{filter}} हटाएं",
+    "clear": "सब साफ़ करें"
+  },
+  "skills": {
+    "remove": "{{skill}} हटाएँ"
   }
 }

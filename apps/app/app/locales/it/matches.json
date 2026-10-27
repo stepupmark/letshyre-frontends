@@ -61,5 +61,6 @@
     "role": "Ruolo",
     "skills": "Competenze",
     "interview": "Colloquio"
-  }
+  },
+  "tableLabel": "Candidati compatibili"
 }

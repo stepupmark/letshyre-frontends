@@ -148,7 +148,6 @@
     "openings": "Aantal plekken",
     "skills": "Vereiste vaardigheden",
     "skillsHint": "Druk na elke vaardigheid op Enter of komma.",
-    "removeSkill": "{{skill}} verwijderen",
     "experience": "Ervaring (jaren)",
     "salary": "Salaris (lakhs per jaar)",
     "min": "Minimum",

@@ -74,5 +74,33 @@
     "errorTitle": "開示済みの候補者を読み込めませんでした。",
     "errorBody": "開示した候補者はアカウントに残っています。接続を確認してもう一度お試しください。",
     "profile": "プロフィール"
+  },
+  "filters": {
+    "title": "絞り込み",
+    "skills": "スキル",
+    "skillsLabel": "対象のスキル",
+    "skillsPlaceholder": "例: React, Python",
+    "skillsHint": "いずれかのスキルを持つ候補者を表示します。入力ごとに Enter またはカンマを押してください。",
+    "experience": "経験",
+    "experienceLabel": "経験年数",
+    "any": "すべて",
+    "rangeShort": "{{min}}〜{{max}}",
+    "minShort": "{{min}}+",
+    "range": "{{min}}〜{{max}} 年",
+    "minYears": "{{min}} 年以上",
+    "upTo": "{{max}} 年まで",
+    "custom": "範囲を指定",
+    "min": "最小",
+    "max": "最大",
+    "apply": "適用",
+    "minOverMax": "最小は最大以下にしてください。",
+    "applied_other": "{{count}} 件の絞り込みを適用中",
+    "clear": "絞り込みを解除",
+    "done": "候補者を表示",
+    "doneCount_other": "{{count}} 人の候補者を表示",
+    "total_other": "アンロック済みの候補者 <n>{{count}}</n> 人",
+    "matching_other": "条件に合う候補者 <n>{{count}}</n> 人",
+    "noMatchesTitle": "条件に合うアンロック済みの候補者はいません",
+    "noMatchesBody": "スキルを減らすか、経験年数の範囲を広げてください。"
   }
 }

@@ -143,7 +143,6 @@
     "openings": "Jumlah posisi",
     "skills": "Keterampilan wajib",
     "skillsHint": "Tekan Enter atau koma setelah setiap keterampilan.",
-    "removeSkill": "Hapus {{skill}}",
     "experience": "Pengalaman (tahun)",
     "salary": "Gaji (lakh per tahun)",
     "min": "Minimum",

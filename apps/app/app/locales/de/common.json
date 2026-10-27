@@ -33,7 +33,8 @@
     "navigateHint": "zum Wechseln,",
     "openHint": "zum Öffnen",
     "enterKey": "Enter",
-    "pages": "Seiten"
+    "pages": "Seiten",
+    "page": "Seite {{page}}"
   },
   "state": {
     "error": "Das wurde nicht geladen.",
@@ -110,5 +111,12 @@
     "monthShort": "MM",
     "yearShort": "JJJJ",
     "open": "Im Kalender auswählen"
+  },
+  "filters": {
+    "remove": "{{filter}} entfernen",
+    "clear": "Alle löschen"
+  },
+  "skills": {
+    "remove": "{{skill}} entfernen"
   }
 }

@@ -31,7 +31,8 @@
     "navigateHint": "で移動、",
     "openHint": "で開く",
     "enterKey": "Enter",
-    "pages": "ページ"
+    "pages": "ページ",
+    "page": "{{page}}ページ"
   },
   "state": {
     "error": "読み込めませんでした。",
@@ -108,5 +109,12 @@
     "monthShort": "月",
     "yearShort": "年",
     "open": "カレンダーから選ぶ"
+  },
+  "filters": {
+    "remove": "{{filter}}を解除",
+    "clear": "すべてクリア"
+  },
+  "skills": {
+    "remove": "{{skill}} を削除"
   }
 }

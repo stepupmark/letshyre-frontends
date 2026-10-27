@@ -144,6 +144,7 @@ export default function Blocks() {
           total={view === "empty" ? 0 : sorted.length}
           getRowId={(r) => String(r.id)}
           rowLabel={(r) => r.name}
+          label="Applicants"
           params={params}
           onParams={(change) => {
             setSearch(writeTableParams(search, change))

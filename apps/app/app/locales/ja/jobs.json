@@ -143,7 +143,6 @@
     "openings": "募集人数",
     "skills": "必須スキル",
     "skillsHint": "スキルごとに Enter かカンマを押してください。",
-    "removeSkill": "{{skill}} を削除",
     "experience": "経験（年）",
     "salary": "給与（年額・ラク）",
     "min": "最小",

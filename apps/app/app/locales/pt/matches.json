@@ -61,5 +61,6 @@
     "role": "Cargo",
     "skills": "Habilidades",
     "interview": "Entrevista"
-  }
+  },
+  "tableLabel": "Candidatos compatíveis"
 }

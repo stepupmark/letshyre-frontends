@@ -37,7 +37,8 @@
     "navigateHint": "— перемещение,",
     "openHint": "— открыть",
     "enterKey": "Enter",
-    "pages": "Страницы"
+    "pages": "Страницы",
+    "page": "Страница {{page}}"
   },
   "state": {
     "error": "Не загрузилось.",
@@ -114,5 +115,12 @@
     "monthShort": "ММ",
     "yearShort": "ГГГГ",
     "open": "Выбрать в календаре"
+  },
+  "filters": {
+    "remove": "Убрать «{{filter}}»",
+    "clear": "Сбросить всё"
+  },
+  "skills": {
+    "remove": "Убрать {{skill}}"
   }
 }

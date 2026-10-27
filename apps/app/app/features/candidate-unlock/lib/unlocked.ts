@@ -14,10 +14,10 @@ export const initials = (name: string) =>
     .join("")
     .toUpperCase()
 
-// under a year rounds to 0, which reads as no experience at all
+// one decimal, so 4.6 never shows as "5 yrs" and slips past a 5+ filter
 export const experienceOf = (years: number | null) => {
   if (years == null || years <= 0) return null
-  return years < 1 ? ("under" as const) : Math.round(years)
+  return years < 1 ? ("under" as const) : Math.round(years * 10) / 10
 }
 
 const lpa = (n: number) =>

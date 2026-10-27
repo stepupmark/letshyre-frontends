@@ -33,7 +33,8 @@
     "navigateHint": "നീങ്ങാൻ,",
     "openHint": "തുറക്കാൻ",
     "enterKey": "Enter",
-    "pages": "പേജുകൾ"
+    "pages": "പേജുകൾ",
+    "page": "പേജ് {{page}}"
   },
   "state": {
     "error": "ഇത് ലോഡ് ആയില്ല.",
@@ -110,5 +111,12 @@
     "monthShort": "MM",
     "yearShort": "YYYY",
     "open": "കലണ്ടറിൽ നിന്ന് തിരഞ്ഞെടുക്കുക"
+  },
+  "filters": {
+    "remove": "{{filter}} നീക്കുക",
+    "clear": "എല്ലാം മായ്ക്കുക"
+  },
+  "skills": {
+    "remove": "{{skill}} നീക്കം ചെയ്യുക"
   }
 }

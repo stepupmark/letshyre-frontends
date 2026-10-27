@@ -12,13 +12,13 @@ import {
   functionalUpdate,
   useTable,
   type RowData,
-  type RowSelectionState,
   type SortingState,
 } from "@tanstack/react-table"
 import { useMemo, useRef, useState, type ReactNode } from "react"
 import { PAGE_SIZE, type TableParams } from "@workspace/api/table-params"
 
 import { useDelayed } from "@/hooks/use-delayed"
+import { useScopedSelection } from "@/hooks/use-scoped-selection"
 import { useRowKeys } from "@/hooks/use-row-keys"
 import {
   dataTableFeatures,
@@ -45,6 +45,7 @@ export interface DataTableProps<T extends RowData> {
   pageCount?: number
   getRowId: (row: T) => string
   rowLabel: (row: T) => string
+  label: string
   // left out for a list that arrives whole: one page, no sorting
   params?: TableParams
   onParams?: (change: { page?: number; sort?: TableParams["sort"] }) => void
@@ -55,10 +56,13 @@ export interface DataTableProps<T extends RowData> {
   empty: ReactNode
   filtered?: boolean
   onClearFilters?: () => void
+  // anything besides page and sort that changes which rows are shown
+  filterKey?: string
   // j/k move between rows' [data-row-open] targets, Enter follows them
   keyboard?: boolean
   bulkActions?: (selectedIds: string[], clear: () => void) => ReactNode
   note?: ReactNode
+  summary?: ReactNode
   // cards below md; select is the row's checkbox when there are bulk actions
   mobileRow: (row: T, select: ReactNode) => ReactNode
 }
@@ -76,6 +80,7 @@ export function DataTable<T extends RowData>({
   pageCount,
   getRowId,
   rowLabel,
+  label,
   params = WHOLE,
   onParams = ignore,
   pending,
@@ -85,29 +90,24 @@ export function DataTable<T extends RowData>({
   empty,
   filtered = false,
   onClearFilters,
+  filterKey = "",
   keyboard = false,
   bulkActions,
   note,
+  summary,
   mobileRow,
 }: DataTableProps<T>) {
   const { t } = useTranslation("common")
-  // selection belongs to one page and sort; a new set of rows starts empty
-  const scope = `${params.page}:${params.sort?.id ?? ""}:${String(params.sort?.desc)}`
-  const [selection, setSelection] = useState<{
-    scope: string
-    rows: RowSelectionState
-  }>({ scope, rows: {} })
-  const rowSelection = selection.scope === scope ? selection.rows : {}
-  const setRowSelection = (
-    updater: RowSelectionState | ((old: RowSelectionState) => RowSelectionState)
-  ) => {
-    setSelection({ scope, rows: functionalUpdate(updater, rowSelection) })
-  }
+  const scope = `${params.page}:${params.sort?.id ?? ""}:${String(params.sort?.desc)}:${filterKey}`
+  const [rowSelection, setRowSelection] = useScopedSelection(scope)
   const [compact, setCompact] = useState(false)
   const body = useRef<HTMLTableSectionElement>(null)
+  const top = useRef<HTMLDivElement>(null)
   const showSkeleton = useDelayed(pending && !data)
-  // rows rise in when they first arrive, not when cached data comes back
+  // rows rise in when new ones arrive, not when cached data is there on mount
   const [enter] = useState(!data)
+  const [firstScope] = useState(scope)
+  const rise = enter || scope !== firstScope
 
   const sorting = useMemo<SortingState>(
     () => (params.sort ? [{ id: params.sort.id, desc: params.sort.desc }] : []),
@@ -175,11 +175,17 @@ export function DataTable<T extends RowData>({
   const hideable = table.getAllLeafColumns().filter((c) => c.getCanHide())
 
   return (
-    <div className="flex flex-col gap-3">
+    <div
+      ref={top}
+      tabIndex={-1}
+      className="flex scroll-mt-20 flex-col gap-3 outline-none"
+    >
       {error && <RefreshNote onRetry={onRetry} retrying={pending} />}
       <div className="flex min-h-7 items-center justify-between gap-2">
         <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground tabular-nums">
-          {t("table.results", { count: total })}
+          <span aria-live="polite">
+            {summary ?? t("table.results", { count: total })}
+          </span>
           {note}
         </p>
         <ColumnsMenu
@@ -195,7 +201,7 @@ export function DataTable<T extends RowData>({
           pending && "opacity-60"
         )}
       >
-        <Table>
+        <Table aria-label={label}>
           <TableHeader>
             {table.getHeaderGroups().map((group) => (
               <TableRow key={group.id}>
@@ -234,9 +240,9 @@ export function DataTable<T extends RowData>({
                 data-state={row.getIsSelected() ? "selected" : undefined}
                 className={cn(
                   "has-focus-visible:bg-muted/50 data-[state=selected]:bg-muted/50",
-                  enter && "settle"
+                  rise && "settle"
                 )}
-                style={enter ? { transitionDelay: stagger(i) } : undefined}
+                style={rise ? { transitionDelay: stagger(i) } : undefined}
               >
                 {row.getVisibleCells().map((cell) => (
                   <TableCell
@@ -256,8 +262,8 @@ export function DataTable<T extends RowData>({
         {table.getRowModel().rows.map((row, i) => (
           <li
             key={row.id}
-            className={enter ? "settle" : undefined}
-            style={enter ? { transitionDelay: stagger(i) } : undefined}
+            className={rise ? "settle" : undefined}
+            style={rise ? { transitionDelay: stagger(i) } : undefined}
           >
             {mobileRow(
               row.original,
@@ -276,6 +282,7 @@ export function DataTable<T extends RowData>({
         keyboard={keyboard}
         page={params.page}
         pages={pages}
+        top={top}
         onPage={(page) => {
           onParams({ page })
         }}

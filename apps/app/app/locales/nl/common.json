@@ -33,7 +33,8 @@
     "navigateHint": "om te bewegen,",
     "openHint": "om te openen",
     "enterKey": "Enter",
-    "pages": "Pagina's"
+    "pages": "Pagina's",
+    "page": "Pagina {{page}}"
   },
   "state": {
     "error": "Dit is niet geladen.",
@@ -110,5 +111,12 @@
     "monthShort": "MM",
     "yearShort": "JJJJ",
     "open": "Kies in de kalender"
+  },
+  "filters": {
+    "remove": "{{filter}} verwijderen",
+    "clear": "Alles wissen"
+  },
+  "skills": {
+    "remove": "{{skill}} verwijderen"
   }
 }

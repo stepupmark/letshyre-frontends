@@ -53,5 +53,6 @@
     "role": "직무",
     "skills": "스킬",
     "interview": "인터뷰"
-  }
+  },
+  "tableLabel": "매칭된 후보자"
 }

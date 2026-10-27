@@ -61,5 +61,6 @@
     "role": "Poste",
     "skills": "Compétences",
     "interview": "Entretien"
-  }
+  },
+  "tableLabel": "Candidats correspondants"
 }

@@ -176,6 +176,7 @@ export function SharedLinks() {
         pageCount={query.data?.total_pages ?? undefined}
         getRowId={rowId}
         rowLabel={(row) => row.candidate_name ?? row.id}
+        label={t("links.title")}
         params={table}
         onParams={(next) => {
           setSearch((prev) => writeTableParams(prev, next), {

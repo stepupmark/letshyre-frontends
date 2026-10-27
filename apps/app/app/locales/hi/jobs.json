@@ -148,7 +148,6 @@
     "openings": "पद संख्या",
     "skills": "ज़रूरी कौशल",
     "skillsHint": "हर कौशल के बाद Enter या कॉमा दबाएँ।",
-    "removeSkill": "{{skill}} हटाएँ",
     "experience": "अनुभव (साल)",
     "salary": "वेतन (लाख प्रति साल)",
     "min": "न्यूनतम",

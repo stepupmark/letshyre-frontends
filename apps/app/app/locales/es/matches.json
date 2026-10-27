@@ -61,5 +61,6 @@
     "role": "Puesto",
     "skills": "Habilidades",
     "interview": "Entrevista"
-  }
+  },
+  "tableLabel": "Candidatos compatibles"
 }

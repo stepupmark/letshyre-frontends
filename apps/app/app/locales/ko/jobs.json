@@ -143,7 +143,6 @@
     "openings": "채용 인원",
     "skills": "필수 역량",
     "skillsHint": "역량마다 Enter나 쉼표를 누르세요.",
-    "removeSkill": "{{skill}} 삭제",
     "experience": "경력(년)",
     "salary": "연봉(연간 라크)",
     "min": "최소",

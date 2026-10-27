@@ -35,7 +35,8 @@
     "navigateHint": "pour se déplacer,",
     "openHint": "pour ouvrir",
     "enterKey": "Entrée",
-    "pages": "Pages"
+    "pages": "Pages",
+    "page": "Page {{page}}"
   },
   "state": {
     "error": "Le chargement a échoué.",
@@ -112,5 +113,12 @@
     "monthShort": "MM",
     "yearShort": "AAAA",
     "open": "Choisir dans le calendrier"
+  },
+  "filters": {
+    "remove": "Retirer {{filter}}",
+    "clear": "Tout effacer"
+  },
+  "skills": {
+    "remove": "Retirer {{skill}}"
   }
 }

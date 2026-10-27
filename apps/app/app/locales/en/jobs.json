@@ -148,7 +148,6 @@
     "openings": "Openings",
     "skills": "Must-have skills",
     "skillsHint": "Press Enter or comma after each skill.",
-    "removeSkill": "Remove {{skill}}",
     "experience": "Experience (years)",
     "salary": "Salary (lakhs per year)",
     "min": "Minimum",

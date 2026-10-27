@@ -1,12 +1,15 @@
 import { payloadOf } from "@workspace/api"
 import { queryOptions } from "@tanstack/react-query"
 
-import { api } from "@/lib/api"
-
 import {
   interviewsSchema,
   unlockedPageSchema,
 } from "../schemas/candidate-unlock.schema"
+import {
+  getInterviews,
+  getUnlocked,
+} from "../services/candidate-unlock.service"
+import type { UnlockedParams } from "../types"
 
 export const UNLOCKED_KEY = ["employer", "unlocked"] as const
 
@@ -14,19 +17,12 @@ export const interviewsQuery = (candidateId: string) =>
   queryOptions({
     queryKey: ["employer", "candidate-interviews", candidateId],
     queryFn: async () =>
-      interviewsSchema.parse(
-        payloadOf(
-          await api.get(`user/v1/employer_candidate_interviews/${candidateId}/`)
-        ) ?? []
-      ),
+      interviewsSchema.parse(payloadOf(await getInterviews(candidateId)) ?? []),
   })
 
-export const unlockedQuery = (page: number) =>
+export const unlockedQuery = (params: UnlockedParams) =>
   queryOptions({
-    queryKey: [...UNLOCKED_KEY, page],
-    queryFn: async () =>
-      unlockedPageSchema.parse(
-        await api.get("user/v1/employer_unlock_candidate/", { query: { page } })
-      ),
+    queryKey: [...UNLOCKED_KEY, params],
+    queryFn: async () => unlockedPageSchema.parse(await getUnlocked(params)),
     staleTime: 30_000,
   })

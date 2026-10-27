@@ -33,7 +33,8 @@
     "navigateHint": "తో కదలండి,",
     "openHint": "తో తెరవండి",
     "enterKey": "Enter",
-    "pages": "పేజీలు"
+    "pages": "పేజీలు",
+    "page": "పేజీ {{page}}"
   },
   "state": {
     "error": "ఇది లోడ్ కాలేదు.",
@@ -110,5 +111,12 @@
     "monthShort": "MM",
     "yearShort": "YYYY",
     "open": "క్యాలెండర్ నుండి ఎంచుకోండి"
+  },
+  "filters": {
+    "remove": "{{filter}} తీసివేయి",
+    "clear": "అన్నీ తొలగించండి"
+  },
+  "skills": {
+    "remove": "{{skill}} తీసివేయండి"
   }
 }

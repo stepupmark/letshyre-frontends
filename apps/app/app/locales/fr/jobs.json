@@ -153,7 +153,6 @@
     "openings": "Postes à pourvoir",
     "skills": "Compétences indispensables",
     "skillsHint": "Appuyez sur Entrée ou virgule après chaque compétence.",
-    "removeSkill": "Retirer {{skill}}",
     "experience": "Expérience (années)",
     "salary": "Salaire (lakhs par an)",
     "min": "Minimum",

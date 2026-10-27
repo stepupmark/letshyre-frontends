@@ -31,7 +31,8 @@
     "navigateHint": "untuk berpindah,",
     "openHint": "untuk membuka",
     "enterKey": "Enter",
-    "pages": "Halaman"
+    "pages": "Halaman",
+    "page": "Halaman {{page}}"
   },
   "state": {
     "error": "Tidak berhasil dimuat.",
@@ -108,5 +109,12 @@
     "monthShort": "BB",
     "yearShort": "TTTT",
     "open": "Pilih dari kalender"
+  },
+  "filters": {
+    "remove": "Hapus {{filter}}",
+    "clear": "Hapus semua"
+  },
+  "skills": {
+    "remove": "Hapus {{skill}}"
   }
 }
