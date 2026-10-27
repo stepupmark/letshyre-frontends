@@ -1,8 +1,9 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { cn } from "@workspace/ui/lib/utils"
 
-import { pageWindow } from "../lib/pages"
+import { pageWindow } from "@/lib/pages"
 
 export function Pager({
   page,
@@ -15,7 +16,7 @@ export function Pager({
   hasNext?: boolean
   onPage: (page: number) => void
 }) {
-  const { t } = useTranslation(["common", "candidateJobs"])
+  const { t } = useTranslation("common")
   if (page === 1 && !hasNext) return null
   return (
     <nav
@@ -41,9 +42,13 @@ export function Pager({
                 <Button
                   variant={item === page ? "secondary" : "ghost"}
                   size="icon"
-                  aria-label={t("candidateJobs:page", { page: item })}
+                  aria-label={t("table.page", { page: item })}
                   aria-current={item === page ? "page" : undefined}
-                  className="tabular-nums"
+                  className={cn(
+                    "tabular-nums",
+                    item === page &&
+                      "bg-brand-muted text-brand-text hover:bg-brand-muted"
+                  )}
                   onClick={() => {
                     if (item !== page) onPage(item)
                   }}

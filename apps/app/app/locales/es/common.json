@@ -35,7 +35,8 @@
     "navigateHint": "para moverse,",
     "openHint": "para abrir",
     "enterKey": "Intro",
-    "pages": "Páginas"
+    "pages": "Páginas",
+    "page": "Página {{page}}"
   },
   "state": {
     "error": "No se ha cargado.",
@@ -112,5 +113,12 @@
     "monthShort": "MM",
     "yearShort": "AAAA",
     "open": "Elegir en el calendario"
+  },
+  "filters": {
+    "remove": "Quitar {{filter}}",
+    "clear": "Borrar todo"
+  },
+  "skills": {
+    "remove": "Quitar {{skill}}"
   }
 }

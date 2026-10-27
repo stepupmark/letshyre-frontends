@@ -74,5 +74,33 @@
     "errorTitle": "Kandidat yang dibuka gagal dimuat.",
     "errorBody": "Kandidat yang Anda buka tetap ada di akun Anda. Periksa koneksi lalu coba lagi.",
     "profile": "Profil"
+  },
+  "filters": {
+    "title": "Filter",
+    "skills": "Keahlian",
+    "skillsLabel": "Keahlian yang dicari",
+    "skillsPlaceholder": "mis. React, Python",
+    "skillsHint": "Menampilkan kandidat dengan salah satunya. Tekan Enter atau koma setelah masing-masing.",
+    "experience": "Pengalaman",
+    "experienceLabel": "Tahun pengalaman",
+    "any": "Semua",
+    "rangeShort": "{{min}}–{{max}}",
+    "minShort": "{{min}}+",
+    "range": "{{min}}–{{max}} thn",
+    "minYears": "{{min}}+ thn",
+    "upTo": "Hingga {{max}} thn",
+    "custom": "Rentang khusus",
+    "min": "Minimal",
+    "max": "Maksimal",
+    "apply": "Terapkan",
+    "minOverMax": "Minimal tidak boleh lebih dari maksimal.",
+    "applied_other": "{{count}} filter diterapkan",
+    "clear": "Hapus filter",
+    "done": "Lihat kandidat",
+    "doneCount_other": "Lihat {{count}} kandidat",
+    "total_other": "<n>{{count}}</n> kandidat terbuka",
+    "matching_other": "<n>{{count}}</n> kandidat cocok",
+    "noMatchesTitle": "Tidak ada kandidat terbuka yang cocok",
+    "noMatchesBody": "Coba lebih sedikit keahlian atau rentang pengalaman yang lebih luas."
   }
 }

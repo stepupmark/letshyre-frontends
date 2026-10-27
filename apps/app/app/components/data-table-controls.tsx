@@ -11,19 +11,14 @@ import {
   DropdownMenuTrigger,
 } from "@workspace/ui/components/dropdown-menu"
 import { Kbd } from "@workspace/ui/components/kbd"
-import { AnimatePresence } from "motion/react"
+import { AnimatePresence, useReducedMotion } from "motion/react"
 import * as m from "motion/react-m"
-import {
-  ArrowDown,
-  ArrowUp,
-  ChevronLeft,
-  ChevronRight,
-  ChevronsUpDown,
-  Settings2,
-} from "lucide-react"
-import type { ReactNode } from "react"
+import { ArrowDown, ArrowUp, ChevronsUpDown, Settings2 } from "lucide-react"
+import type { ReactNode, RefObject } from "react"
 
 import { duration, ease } from "@/lib/motion"
+
+import { Pager } from "./pager"
 
 interface HideableColumn {
   id: string
@@ -103,58 +98,47 @@ export function TableFooter({
   keyboard,
   page,
   pages,
+  top,
   onPage,
 }: {
   keyboard: boolean
   page: number
   pages: number
+  // the table's top, where focus and scroll go after a page change
+  top: RefObject<HTMLElement | null>
   onPage: (page: number) => void
 }) {
   const { t } = useTranslation("common")
+  const reduceMotion = useReducedMotion()
   return (
-    <div className="flex items-center justify-between gap-3">
-      {keyboard ? (
-        <p className="hidden items-center gap-1.5 text-xs text-muted-foreground md:flex">
+    <div className="flex items-center gap-4">
+      {keyboard && (
+        <p className="hidden shrink-0 items-center gap-1.5 text-xs text-muted-foreground md:flex">
           <Kbd className="text-foreground">J</Kbd>
           <Kbd className="text-foreground">K</Kbd>
           {t("table.navigateHint")}
           <Kbd className="text-foreground">{t("table.enterKey")}</Kbd>
           {t("table.openHint")}
         </p>
-      ) : (
-        <span />
       )}
+      <div className="min-w-0 flex-1">
+        <Pager
+          page={page}
+          pages={pages}
+          onPage={(next) => {
+            onPage(next)
+            top.current?.focus({ preventScroll: true })
+            top.current?.scrollIntoView({
+              block: "start",
+              behavior: reduceMotion ? "auto" : "smooth",
+            })
+          }}
+        />
+      </div>
       {pages > 1 && (
-        <nav
-          aria-label={t("table.pageOf", { page: page, total: pages })}
-          className="flex items-center gap-2"
-        >
-          <span className="text-sm text-muted-foreground tabular-nums">
-            {t("table.pageOf", { page: page, total: pages })}
-          </span>
-          <Button
-            variant="outline"
-            size="icon-sm"
-            aria-label={t("table.previous")}
-            disabled={page <= 1}
-            onClick={() => {
-              onPage(page - 1)
-            }}
-          >
-            <ChevronLeft className="rtl:-scale-x-100" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon-sm"
-            aria-label={t("table.next")}
-            disabled={page >= pages}
-            onClick={() => {
-              onPage(page + 1)
-            }}
-          >
-            <ChevronRight className="rtl:-scale-x-100" />
-          </Button>
-        </nav>
+        <p aria-live="polite" className="sr-only">
+          {t("table.pageOf", { page, total: pages })}
+        </p>
       )}
     </div>
   )

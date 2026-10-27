@@ -153,7 +153,6 @@
     "openings": "Número de vagas",
     "skills": "Habilidades obrigatórias",
     "skillsHint": "Pressione Enter ou vírgula depois de cada habilidade.",
-    "removeSkill": "Remover {{skill}}",
     "experience": "Experiência (anos)",
     "salary": "Salário (lakhs por ano)",
     "min": "Mínimo",

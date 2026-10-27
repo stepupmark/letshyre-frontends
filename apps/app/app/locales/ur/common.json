@@ -33,7 +33,8 @@
     "navigateHint": "سے آگے پیچھے،",
     "openHint": "سے کھولیں",
     "enterKey": "Enter",
-    "pages": "صفحات"
+    "pages": "صفحات",
+    "page": "صفحہ {{page}}"
   },
   "state": {
     "error": "یہ لوڈ نہیں ہوا۔",
@@ -110,5 +111,12 @@
     "monthShort": "MM",
     "yearShort": "YYYY",
     "open": "کیلنڈر سے منتخب کریں"
+  },
+  "filters": {
+    "remove": "{{filter}} ہٹائیں",
+    "clear": "سب صاف کریں"
+  },
+  "skills": {
+    "remove": "{{skill}} ہٹائیں"
   }
 }

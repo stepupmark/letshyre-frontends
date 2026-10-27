@@ -9,15 +9,15 @@ import { GuideLink } from "@/components/guide-link"
 import { LoadError } from "@/components/query-state"
 import { useDelayed } from "@/hooks/use-delayed"
 import { useDetailParam } from "@/hooks/use-detail-param"
+import { FilterChips } from "@/components/filter-chips"
+import { Pager } from "@/components/pager"
 
 import { useFilterChips } from "../hooks/use-filter-chips"
 import { useJobSearch, useSavedSearches } from "../hooks/use-job-search"
 import { filterCount } from "../lib/search"
 import { findJobsQuery } from "../queries/candidate-jobs.queries"
-import { ActiveFilters } from "./active-filters"
 import { FilterRail, FilterSheet } from "./filter-panel"
 import { JobSheet } from "./job-sheet"
-import { Pager } from "./pager"
 import { ResultsHeader } from "./results-header"
 import { ResultsList, ResultsSkeleton } from "./results-list"
 import { SavedSearches } from "./saved-searches"
@@ -94,7 +94,13 @@ export function FindJobs() {
           />
 
           {chips.length > 0 && (
-            <ActiveFilters chips={chips} onChange={update} onClear={clearAll} />
+            <FilterChips
+              chips={chips}
+              onRemove={(chip) => {
+                update(chip.remove)
+              }}
+              onClear={clearAll}
+            />
           )}
 
           {query.isError && !query.data ? (

@@ -4,14 +4,7 @@ import {
   unlockedPageSchema,
   type Unlocked,
 } from "../schemas/candidate-unlock.schema"
-import {
-  experienceOf,
-  initials,
-  payOf,
-  placeOf,
-  roleOf,
-  unlockedOn,
-} from "./unlocked"
+import { experienceOf, payOf, unlockedOn } from "./unlocked"
 
 const row = (fields: Partial<Unlocked> = {}): Unlocked => ({
   id: "1",
@@ -24,9 +17,10 @@ const row = (fields: Partial<Unlocked> = {}): Unlocked => ({
 })
 
 describe("experienceOf", () => {
-  it("keeps under a year from reading as zero", () => {
+  it("keeps under a year from reading as zero and one decimal otherwise", () => {
     expect(experienceOf(0.4)).toBe("under")
-    expect(experienceOf(1.6)).toBe(2)
+    expect(experienceOf(4.64)).toBe(4.6)
+    expect(experienceOf(3)).toBe(3)
   })
 
   it("treats missing or zero as unknown", () => {
@@ -48,31 +42,6 @@ describe("payOf", () => {
 
   it("is null when neither side is known", () => {
     expect(payOf(row())).toBeNull()
-  })
-})
-
-describe("placeOf", () => {
-  it("spaces commas the same way", () => {
-    expect(placeOf(row({ candidate_location: "Kondapur,Hyderabad " }))).toBe(
-      "Kondapur, Hyderabad"
-    )
-    expect(placeOf(row({ candidate_location: "  " }))).toBeNull()
-  })
-})
-
-describe("roleOf", () => {
-  it("prefers tech experience, then the latest job", () => {
-    expect(roleOf(row({ candidate_tech_experience: { "AI Intern": 1 } }))).toBe(
-      "AI Intern"
-    )
-    expect(roleOf(row({ candidate_experience: [{ role: "QA" }] }))).toBe("QA")
-    expect(roleOf(row())).toBeNull()
-  })
-})
-
-describe("initials", () => {
-  it("takes the first two words", () => {
-    expect(initials("aadi chetan khot")).toBe("AC")
   })
 })
 

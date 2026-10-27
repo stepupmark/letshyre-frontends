@@ -33,7 +33,8 @@
     "navigateHint": "to move,",
     "openHint": "to open",
     "enterKey": "Enter",
-    "pages": "Pages"
+    "pages": "Pages",
+    "page": "Page {{page}}"
   },
   "state": {
     "error": "This didn't load.",
@@ -110,5 +111,12 @@
     "monthShort": "MM",
     "yearShort": "YYYY",
     "open": "Choose from a calendar"
+  },
+  "filters": {
+    "remove": "Remove {{filter}}",
+    "clear": "Clear all"
+  },
+  "skills": {
+    "remove": "Remove {{skill}}"
   }
 }

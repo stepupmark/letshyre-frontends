@@ -33,7 +33,8 @@
     "navigateHint": "দিয়ে সরুন,",
     "openHint": "দিয়ে খুলুন",
     "enterKey": "Enter",
-    "pages": "পেজ"
+    "pages": "পেজ",
+    "page": "পৃষ্ঠা {{page}}"
   },
   "state": {
     "error": "এটা লোড হয়নি।",
@@ -110,5 +111,12 @@
     "monthShort": "MM",
     "yearShort": "YYYY",
     "open": "ক্যালেন্ডার থেকে বেছে নিন"
+  },
+  "filters": {
+    "remove": "{{filter}} সরান",
+    "clear": "সব মুছুন"
+  },
+  "skills": {
+    "remove": "{{skill}} সরান"
   }
 }

@@ -57,6 +57,8 @@ export function JobsList() {
         pageCount={jobs.data?.total_pages ?? undefined}
         getRowId={rowId}
         rowLabel={rowLabel}
+        label={t("list.title")}
+        filterKey={tab}
         params={table}
         onParams={(next) => {
           setSearch((prev) => writeTableParams(prev, next), {

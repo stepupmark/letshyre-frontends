@@ -33,7 +33,8 @@
     "navigateHint": "ಸರಿಸಲು,",
     "openHint": "ತೆರೆಯಲು",
     "enterKey": "Enter",
-    "pages": "ಪುಟಗಳು"
+    "pages": "ಪುಟಗಳು",
+    "page": "ಪುಟ {{page}}"
   },
   "state": {
     "error": "ಇದು ಲೋಡ್ ಆಗಲಿಲ್ಲ.",
@@ -110,5 +111,12 @@
     "monthShort": "MM",
     "yearShort": "YYYY",
     "open": "ಕ್ಯಾಲೆಂಡರ್‌ನಿಂದ ಆಯ್ಕೆಮಾಡಿ"
+  },
+  "filters": {
+    "remove": "{{filter}} ತೆಗೆದುಹಾಕಿ",
+    "clear": "ಎಲ್ಲವನ್ನೂ ತೆರವುಗೊಳಿಸಿ"
+  },
+  "skills": {
+    "remove": "{{skill}} ತೆಗೆದುಹಾಕಿ"
   }
 }

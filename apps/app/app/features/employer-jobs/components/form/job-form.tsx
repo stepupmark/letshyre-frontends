@@ -10,6 +10,7 @@ import {
 
 import { TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
+import { SkillsInput } from "@/components/skills-input"
 
 import {
   EMPLOYMENT_TYPES,
@@ -21,7 +22,6 @@ import {
 } from "../../lib/job-values"
 import { type Industry } from "../../lib/job-mapping"
 import { Choice, FormSection, Labelled, LongText, Range } from "./fields"
-import { SkillsField } from "./skills-field"
 
 type Name = FieldPath<JobValues>
 
@@ -143,7 +143,7 @@ export function JobForm({
               error={errors.skills?.message}
             >
               {(id, describedBy) => (
-                <SkillsField
+                <SkillsInput
                   id={id}
                   ref={field.ref}
                   value={field.value}

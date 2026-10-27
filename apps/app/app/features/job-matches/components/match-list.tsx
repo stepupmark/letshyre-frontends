@@ -89,6 +89,8 @@ export function MatchList({
         pageCount={1}
         getRowId={rowId}
         rowLabel={rowLabel}
+        label={t("tableLabel")}
+        filterKey={band}
         pending={query.isFetching}
         error={query.isError}
         onRetry={() => void query.refetch()}

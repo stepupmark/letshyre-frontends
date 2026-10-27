@@ -57,5 +57,6 @@
     "role": "Rolle",
     "skills": "Skills",
     "interview": "Interview"
-  }
+  },
+  "tableLabel": "Passende Kandidaten"
 }

@@ -4,24 +4,26 @@ import { X } from "lucide-react"
 import { useState, type Ref } from "react"
 
 /** Skills as chips: Enter, comma or paste adds; Backspace on empty removes the last. */
-export function SkillsField({
+export function SkillsInput({
   id,
   value,
   onChange,
   onBlur,
-  invalid,
+  invalid = false,
   describedBy,
+  placeholder,
   ref,
 }: {
   id: string
   value: string[]
   onChange: (skills: string[]) => void
-  onBlur: () => void
-  invalid: boolean
+  onBlur?: () => void
+  invalid?: boolean
   describedBy?: string
+  placeholder?: string
   ref?: Ref<HTMLInputElement>
 }) {
-  const { t } = useTranslation("jobs")
+  const { t } = useTranslation("common")
   const [draft, setDraft] = useState("")
 
   const add = (text: string) => {
@@ -44,7 +46,7 @@ export function SkillsField({
           {skill}
           <button
             type="button"
-            aria-label={t("form.removeSkill", { skill })}
+            aria-label={t("skills.remove", { skill })}
             className="rounded-sm p-0.5 text-muted-foreground outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
             onClick={() => {
               onChange(value.filter((s) => s !== skill))
@@ -60,6 +62,7 @@ export function SkillsField({
         value={draft}
         aria-invalid={invalid}
         aria-describedby={describedBy}
+        placeholder={value.length ? undefined : placeholder}
         className="min-w-24 flex-1 bg-transparent px-1 outline-none placeholder:text-muted-foreground"
         onChange={(event) => {
           const text = event.target.value
@@ -76,7 +79,7 @@ export function SkillsField({
         }}
         onBlur={() => {
           add(draft)
-          onBlur()
+          onBlur?.()
         }}
       />
     </div>

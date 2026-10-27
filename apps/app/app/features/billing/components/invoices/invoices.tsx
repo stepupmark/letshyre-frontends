@@ -50,6 +50,7 @@ export function Invoices() {
         pageCount={page?.totalPages}
         getRowId={rowId}
         rowLabel={(row) => row.number ?? row.id}
+        label={t("invoiceList.title")}
         note={
           totals && (
             <span>

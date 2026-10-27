@@ -41,7 +41,8 @@
     "navigateHint": "للتنقل،",
     "openHint": "للفتح",
     "enterKey": "Enter",
-    "pages": "الصفحات"
+    "pages": "الصفحات",
+    "page": "الصفحة {{page}}"
   },
   "state": {
     "error": "لم يُحمَّل هذا.",
@@ -118,5 +119,12 @@
     "monthShort": "MM",
     "yearShort": "YYYY",
     "open": "اختر من التقويم"
+  },
+  "filters": {
+    "remove": "إزالة {{filter}}",
+    "clear": "مسح الكل"
+  },
+  "skills": {
+    "remove": "إزالة {{skill}}"
   }
 }

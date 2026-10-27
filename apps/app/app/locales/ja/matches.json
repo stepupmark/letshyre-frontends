@@ -53,5 +53,6 @@
     "role": "職種",
     "skills": "スキル",
     "interview": "面接"
-  }
+  },
+  "tableLabel": "マッチした候補者"
 }

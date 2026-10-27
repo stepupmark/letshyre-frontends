@@ -18,6 +18,7 @@ import { LoadError, RefreshNote } from "@/components/query-state"
 import { useDelayed } from "@/hooks/use-delayed"
 import { useDetailParam } from "@/hooks/use-detail-param"
 import { buttonLink } from "@/lib/button-link"
+import { Pager } from "@/components/pager"
 
 import { useApplicationsView } from "../hooks/use-applications-view"
 import { matchesApplication, STAGES, type Stage } from "../lib/applications"
@@ -27,7 +28,6 @@ import {
 } from "../queries/candidate-jobs.queries"
 import { ApplicationList, ApplicationsSkeleton } from "./application-list"
 import { ApplicationSheet } from "./application-sheet"
-import { Pager } from "./pager"
 import { StageNav } from "./stage-nav"
 
 export function Applications() {

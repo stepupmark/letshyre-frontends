@@ -53,5 +53,6 @@
     "role": "Peran",
     "skills": "Keahlian",
     "interview": "Wawancara"
-  }
+  },
+  "tableLabel": "Kandidat yang cocok"
 }

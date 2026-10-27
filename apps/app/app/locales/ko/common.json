@@ -31,7 +31,8 @@
     "navigateHint": "로 이동,",
     "openHint": "로 열기",
     "enterKey": "Enter",
-    "pages": "페이지"
+    "pages": "페이지",
+    "page": "{{page}}페이지"
   },
   "state": {
     "error": "불러오지 못했어요.",
@@ -108,5 +109,12 @@
     "monthShort": "월",
     "yearShort": "연도",
     "open": "달력에서 선택"
+  },
+  "filters": {
+    "remove": "{{filter}} 해제",
+    "clear": "모두 지우기"
+  },
+  "skills": {
+    "remove": "{{skill}} 삭제"
   }
 }

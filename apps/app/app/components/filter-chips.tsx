@@ -6,19 +6,16 @@ import * as m from "motion/react-m"
 
 import { duration, ease } from "@/lib/motion"
 
-import type { FilterChip } from "../hooks/use-filter-chips"
-import type { JobSearch } from "../types"
-
-export function ActiveFilters({
+export function FilterChips<T extends { key: string; label: string }>({
   chips,
-  onChange,
+  onRemove,
   onClear,
 }: {
-  chips: FilterChip[]
-  onChange: (change: Partial<JobSearch>) => void
+  chips: T[]
+  onRemove: (chip: T) => void
   onClear?: () => void
 }) {
-  const { t } = useTranslation("candidateJobs")
+  const { t } = useTranslation("common")
   return (
     <div className="flex flex-wrap items-center gap-2">
       <ul className="flex flex-wrap items-center gap-2">
@@ -40,7 +37,7 @@ export function ActiveFilters({
                 type="button"
                 aria-label={t("filters.remove", { filter: chip.label })}
                 onClick={() => {
-                  onChange(chip.remove)
+                  onRemove(chip)
                 }}
                 className="relative flex h-7 max-w-64 items-center gap-1 rounded-full border bg-background ps-3 pe-2 text-xs font-medium transition-colors outline-none after:absolute after:inset-x-0 after:-inset-y-2 hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50"
               >
