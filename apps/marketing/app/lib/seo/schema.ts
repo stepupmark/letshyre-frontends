@@ -3,6 +3,9 @@ import { z } from "zod"
 
 import { absUrl, SITE } from "./site"
 
+// parsed in the browser on every page; skip zod's new Function() probe, which the CSP reports
+z.config({ jitless: true })
+
 export type JsonLd = Record<string, unknown>
 
 export const organizationSchema = (): JsonLd => ({
