@@ -1,6 +1,5 @@
 {
   "chatbot": {
-    "subtitle": "何でもお尋ねください",
     "inputPlaceholder": "質問を入力…",
     "send": "送信",
     "sendAria": "メッセージを送信",
@@ -10,22 +9,46 @@
     "assistant": "アシスタント",
     "retry": "再試行",
     "errorMessage": "問題が発生しました。もう一度お試しください。",
-    "clear": "クリア",
+    "newChat": "新しいチャット",
+    "cleared": "チャットを消去しました。",
+    "undo": "元に戻す",
     "copy": "回答をコピー",
     "copied": "コピーしました",
     "latest": "新しい回答",
     "messagesLabel": "チャットメッセージ",
-    "closeAria": "チャットを閉じる",
-    "empty": {
-      "greeting": "こんにちは！LetsHyre アシスタントです。",
-      "hint": "LetsHyre についてなんでもお尋ねください。次のいずれかをお試しください:",
-      "prompts": {
-        "what": "LetsHyre とは何ですか？",
-        "scorecard": "雇用主にはどのように役立ちますか？",
-        "applications": "求職者にはどのように役立ちますか？",
-        "interview": "無料で始められますか？"
+    "welcome": {
+      "title": "何を知りたいですか?",
+      "hint": "LetsHyre での採用や仕事探しについてなんでもお尋ねください。次の質問から始めることもできます。"
+    },
+    "topics": {
+      "about": "はじめに",
+      "employers": "採用担当者の方へ",
+      "seekers": "求職者の方へ"
+    },
+    "prompts": {
+      "what": "LetsHyre とは何ですか？",
+      "free": "無料で始められますか？",
+      "employersHow": "雇用主にはどのように役立ちますか？",
+      "employersCost": "採用にかかる費用は?",
+      "employersInterview": "AI 面接はどのように行われますか?",
+      "seekersHow": "求職者にはどのように役立ちますか？",
+      "seekersInterview": "面接の準備はどうすればいいですか?",
+      "seekersProfile": "プロフィールには何を書けばいいですか?"
+    },
+    "askNext": "次に聞く",
+    "signUp": {
+      "employers": {
+        "title": "採用を始めますか?",
+        "body": "雇用主アカウントを作成して、最初の求人を掲載しましょう。",
+        "cta": "企業アカウントを作成"
+      },
+      "seekers": {
+        "title": "仕事をお探しですか?",
+        "body": "プロフィールを作成して、求人への応募を始めましょう。",
+        "cta": "候補者プロフィールを作成"
       }
     },
+    "notice": "AI の回答は誤っている場合があります。個人情報は入力しないでください。 <0>プライバシーポリシー</0>",
     "stop": "回答を止める",
     "stopped": "この回答を止めました。"
   }

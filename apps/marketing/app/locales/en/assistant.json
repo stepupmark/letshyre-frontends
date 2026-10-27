@@ -1,6 +1,5 @@
 {
   "chatbot": {
-    "subtitle": "Ask us anything",
     "inputPlaceholder": "Ask a question…",
     "send": "Send",
     "sendAria": "Send message",
@@ -10,22 +9,46 @@
     "assistant": "Assistant",
     "retry": "Retry",
     "errorMessage": "Something went wrong. Please try again.",
-    "clear": "Clear",
+    "newChat": "New chat",
+    "cleared": "Chat cleared.",
+    "undo": "Undo",
     "copy": "Copy answer",
     "copied": "Copied",
     "latest": "New answer",
     "messagesLabel": "Chat messages",
-    "closeAria": "Close chat",
-    "empty": {
-      "greeting": "Hi! I'm the LetsHyre assistant.",
-      "hint": "Ask me anything about LetsHyre. Try one of these:",
-      "prompts": {
-        "what": "What is LetsHyre?",
-        "scorecard": "How does it work for employers?",
-        "applications": "How does it work for job seekers?",
-        "interview": "Is it free to start?"
+    "welcome": {
+      "title": "What would you like to know?",
+      "hint": "Ask anything about hiring or finding a job on LetsHyre, or start with one of these."
+    },
+    "topics": {
+      "about": "Getting started",
+      "employers": "For employers",
+      "seekers": "For candidates"
+    },
+    "prompts": {
+      "what": "What is LetsHyre?",
+      "free": "Is it free to start?",
+      "employersHow": "How does it work for employers?",
+      "employersCost": "What does it cost to hire?",
+      "employersInterview": "How do AI interviews work?",
+      "seekersHow": "How does it work for job seekers?",
+      "seekersInterview": "How do I prepare for my interview?",
+      "seekersProfile": "What should my profile include?"
+    },
+    "askNext": "Ask next",
+    "signUp": {
+      "employers": {
+        "title": "Ready to hire?",
+        "body": "Create an employer account to post your first job.",
+        "cta": "Create employer account"
+      },
+      "seekers": {
+        "title": "Looking for work?",
+        "body": "Create your profile to start applying for jobs.",
+        "cta": "Create candidate profile"
       }
     },
+    "notice": "AI answers can be wrong. Don't share personal details. <0>Privacy policy</0>",
     "stop": "Stop answering",
     "stopped": "You stopped this answer."
   }

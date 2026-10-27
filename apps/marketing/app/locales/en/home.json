@@ -371,8 +371,10 @@
   },
   "chatbot": {
     "title": "LetsHyre Assistant",
+    "subtitle": "Ask us anything",
     "launcherAria": "Open chat assistant",
     "greeting": "Questions about hiring? Ask me.",
-    "dismiss": "Dismiss"
+    "dismiss": "Dismiss",
+    "close": "Close chat"
   }
 }

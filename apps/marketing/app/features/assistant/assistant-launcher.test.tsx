@@ -1,6 +1,7 @@
 import { act, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { sendAssistantMessage } from "@workspace/api/public"
+import { clearAll } from "@workspace/blocks/assistant-store"
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 
 import { renderPage } from "../../../test/render"
@@ -11,6 +12,7 @@ const send = vi.mocked(sendAssistantMessage)
 
 beforeEach(() => {
   send.mockReset()
+  clearAll()
 })
 
 async function open() {
@@ -20,7 +22,7 @@ async function open() {
     await screen.findByRole("button", { name: "Open chat assistant" })
   )
   // the panel, its copy and the markdown renderer are lazy chunks
-  await screen.findByText("Hi! I'm the LetsHyre assistant.", undefined, {
+  await screen.findByText("What would you like to know?", undefined, {
     timeout: 10_000,
   })
   return user
@@ -45,6 +47,25 @@ describe("AssistantLauncher", { timeout: 20_000 }, () => {
     const [, body, options] = send.mock.calls[0] ?? []
     expect(body).toEqual({ message: "What is LetsHyre?", sessionId: undefined })
     expect(options?.signal).toBeInstanceOf(AbortSignal)
+  })
+
+  it("starts a new chat and brings the old one back on undo", async () => {
+    send.mockResolvedValue({
+      sessionId: "s1",
+      response: "We run AI interviews.",
+    })
+    const user = await open()
+    await user.click(screen.getByRole("button", { name: "What is LetsHyre?" }))
+    await screen.findByText("We run AI interviews.")
+
+    await user.click(screen.getByRole("button", { name: "New chat" }))
+    expect(screen.queryByText("We run AI interviews.")).not.toBeInTheDocument()
+    expect(
+      screen.getByRole("textbox", { name: "Ask a question…" })
+    ).toHaveFocus()
+
+    await user.click(screen.getByRole("button", { name: "Undo" }))
+    expect(screen.getByText("We run AI interviews.")).toBeInTheDocument()
   })
 })
 

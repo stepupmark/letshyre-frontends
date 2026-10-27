@@ -1,8 +1,10 @@
 {
   "chatbot": {
     "title": "مساعد LetsHyre",
+    "subtitle": "اسألنا أي شيء",
     "launcherAria": "افتح مساعد المحادثة",
     "greeting": "أسئلة عن التوظيف؟ اسألني.",
-    "dismiss": "إغلاق"
+    "dismiss": "إغلاق",
+    "close": "إغلاق المحادثة"
   }
 }

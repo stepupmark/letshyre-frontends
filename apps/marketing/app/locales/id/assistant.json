@@ -1,6 +1,5 @@
 {
   "chatbot": {
-    "subtitle": "Tanyakan apa saja kepada kami",
     "inputPlaceholder": "Ajukan pertanyaan…",
     "send": "Kirim",
     "sendAria": "Kirim pesan",
@@ -10,22 +9,46 @@
     "assistant": "Asisten",
     "retry": "Coba Lagi",
     "errorMessage": "Terjadi kesalahan. Silakan coba lagi.",
-    "clear": "Hapus",
+    "newChat": "Obrolan baru",
+    "cleared": "Obrolan dihapus.",
+    "undo": "Urungkan",
     "copy": "Salin jawaban",
     "copied": "Disalin",
     "latest": "Jawaban baru",
     "messagesLabel": "Pesan obrolan",
-    "closeAria": "Tutup obrolan",
-    "empty": {
-      "greeting": "Hai! Saya asisten LetsHyre.",
-      "hint": "Tanyakan apa saja tentang LetsHyre. Coba salah satu ini:",
-      "prompts": {
-        "what": "Apa itu LetsHyre?",
-        "scorecard": "Bagaimana cara kerjanya untuk perusahaan?",
-        "applications": "Bagaimana cara kerjanya untuk pencari kerja?",
-        "interview": "Apakah gratis untuk memulai?"
+    "welcome": {
+      "title": "Apa yang ingin Anda ketahui?",
+      "hint": "Tanyakan apa saja tentang merekrut atau mencari kerja di LetsHyre, atau mulai dengan salah satu pertanyaan ini."
+    },
+    "topics": {
+      "about": "Memulai",
+      "employers": "Untuk pemberi kerja",
+      "seekers": "Untuk kandidat"
+    },
+    "prompts": {
+      "what": "Apa itu LetsHyre?",
+      "free": "Apakah gratis untuk memulai?",
+      "employersHow": "Bagaimana cara kerjanya untuk perusahaan?",
+      "employersCost": "Berapa biaya untuk merekrut?",
+      "employersInterview": "Bagaimana cara kerja wawancara AI?",
+      "seekersHow": "Bagaimana cara kerjanya untuk pencari kerja?",
+      "seekersInterview": "Bagaimana saya mempersiapkan wawancara?",
+      "seekersProfile": "Apa saja yang perlu ada di profil saya?"
+    },
+    "askNext": "Tanyakan berikutnya",
+    "signUp": {
+      "employers": {
+        "title": "Siap merekrut?",
+        "body": "Buat akun pemberi kerja untuk memasang lowongan pertama Anda.",
+        "cta": "Buat akun perusahaan"
+      },
+      "seekers": {
+        "title": "Sedang mencari kerja?",
+        "body": "Buat profil Anda untuk mulai melamar pekerjaan.",
+        "cta": "Buat profil kandidat"
       }
     },
+    "notice": "Jawaban AI bisa saja keliru. Jangan bagikan data pribadi. <0>Kebijakan privasi</0>",
     "stop": "Hentikan jawaban",
     "stopped": "Anda menghentikan jawaban ini."
   }

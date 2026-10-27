@@ -63,6 +63,7 @@ export function AssistantChat({
   onClear,
   tools,
   hint,
+  notice,
   placeholders,
   layout = "panel",
   focusOnOpen = false,
@@ -75,12 +76,14 @@ export function AssistantChat({
   suggestions?: (ask: Ask) => ReactNode
   /** Shown under the latest answer. */
   next?: (ask: Ask, messages: AssistantMessage[]) => ReactNode
-  /** Gets the undo after the inline Clear; a page brings its own through `tools`. */
+  /** Shows an inline Clear in a panel and gets its undo; without it the host clears the chat itself. */
   onClear?: (undo: () => void) => void
   /** At the start of the input once the conversation has begun. */
   tools?: ReactNode
   /** Under the input before the first message. */
   hint?: string
+  /** Under the input for the whole conversation. */
+  notice?: ReactNode
   /** Example questions the empty input cycles through. */
   placeholders?: string[]
   /** A panel scrolls inside itself; a page scrolls with the window. */
@@ -253,14 +256,15 @@ export function AssistantChat({
         {page && empty && hint && (
           <p className="text-center text-xs text-muted-foreground">{hint}</p>
         )}
-        {!page && !empty && !pending && (
+        {notice}
+        {!page && !empty && !pending && onClear && (
           <Button
             type="button"
             variant="ghost"
             size="xs"
             className="self-start text-muted-foreground"
             onClick={() => {
-              onClear?.(chat.clear())
+              onClear(chat.clear())
             }}
           >
             <Trash2 />

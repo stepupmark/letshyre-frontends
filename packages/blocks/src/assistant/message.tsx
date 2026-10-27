@@ -78,7 +78,7 @@ export function Message({
           page ? "scroll-mt-32" : "scroll-mt-4"
         )}
       >
-        <p className="max-w-[85%] min-w-12 rounded-2xl rounded-ee-md bg-primary px-3.5 py-2 text-center text-sm text-pretty whitespace-pre-wrap text-primary-foreground">
+        <p className="max-w-[85%] min-w-12 rounded-2xl rounded-ee-md bg-primary px-3.5 py-2 text-start text-sm text-pretty whitespace-pre-wrap text-primary-foreground">
           <span className="sr-only">{labels.you}: </span>
           {message.text}
         </p>
