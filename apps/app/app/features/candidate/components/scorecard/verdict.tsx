@@ -44,7 +44,7 @@ export function Verdict({
     <section
       id="summary"
       aria-labelledby="summary-title"
-      className="flex scroll-mt-20 flex-col gap-8 rounded-2xl border p-5 sm:p-8"
+      className="flex flex-col gap-8 rounded-2xl border p-5 sm:p-8"
     >
       <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
         <div className="flex min-w-0 flex-col gap-5">

@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync } from "node:fs"
-import { expect, test } from "@playwright/test"
 
+import { expect, test } from "./fixtures.ts"
 import { mockApi } from "./mock-api.ts"
 import { otherEngine, SITEMAP } from "./sitemap.ts"
 
@@ -19,6 +19,9 @@ const KEYS = readdirSync(EN).flatMap((file) =>
     .flatMap(([k, v]) => flatKeys(v, k))
     .filter((key) => key.includes("."))
 )
+
+// these end with the language menu open, which a11y.spec checks on its own
+test.use({ axeAtEnd: false })
 
 test.beforeEach(async ({ page }) => {
   await mockApi(page)

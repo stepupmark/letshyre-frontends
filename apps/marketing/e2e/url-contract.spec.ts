@@ -1,5 +1,4 @@
-import { expect, test } from "@playwright/test"
-
+import { expect, test } from "./fixtures.ts"
 import { MOVED_PATHS } from "../app/lib/pages.ts"
 
 test.describe("url contract", () => {

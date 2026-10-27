@@ -12,6 +12,7 @@ import {
 import { QueryClientProvider } from "@tanstack/react-query"
 import { ApiError } from "@workspace/api"
 import { ErrorScreen } from "@workspace/blocks/error-screen"
+import { useRouteFocus } from "@workspace/blocks/route-focus"
 import { ThemeProvider } from "@workspace/blocks/theme-provider"
 import { LoaderCircle } from "lucide-react"
 import { Button } from "@workspace/ui/components/button"
@@ -67,6 +68,8 @@ export function Layout({ children }: { children: ReactNode }) {
 }
 
 export default function App() {
+  useRouteFocus()
+
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider switchable>

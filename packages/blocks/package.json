@@ -5,6 +5,7 @@
   "type": "module",
   "exports": {
     "./assistant-store": "./src/assistant-store.ts",
+    "./route-focus": "./src/route-focus.ts",
     "./*": "./src/*.tsx"
   },
   "scripts": {

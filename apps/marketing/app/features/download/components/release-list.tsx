@@ -19,7 +19,7 @@ export function ReleaseList() {
     <section
       id="platforms"
       aria-labelledby={titleId}
-      className="flex scroll-mt-24 flex-col gap-6"
+      className="flex flex-col gap-6"
     >
       <SectionHeader id={titleId} title={t("platforms.title")} />
       <ul className="flex flex-col gap-4">

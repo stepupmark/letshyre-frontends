@@ -95,7 +95,8 @@
       "job": "공고",
       "views": "조회 수",
       "expires": "만료",
-      "status": "상태"
+      "status": "상태",
+      "actions": "작업"
     },
     "views": "{{count}} / {{max}}",
     "state": {

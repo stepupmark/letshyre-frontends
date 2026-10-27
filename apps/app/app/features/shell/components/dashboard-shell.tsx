@@ -9,7 +9,6 @@ import { Outlet } from "react-router"
 
 import { locale } from "@/lib/i18n"
 
-import { useRouteFocus } from "../hooks/use-route-focus"
 import { useShellShortcuts } from "../hooks/use-shell-shortcuts"
 import type { Area } from "../lib/nav"
 import { AppSidebar } from "./app-sidebar"
@@ -33,7 +32,6 @@ export function DashboardShell({
   const [searchOpen, setSearchOpen] = useState(false)
   const [shortcutsOpen, setShortcutsOpen] = useState(false)
   useShellShortcuts(setSearchOpen, setShortcutsOpen)
-  useRouteFocus()
   const openShortcuts = () => {
     setShortcutsOpen(true)
   }

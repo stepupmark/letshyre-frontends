@@ -49,7 +49,7 @@ export function ResultsHeader({
           ref={headingRef}
           id={headingId}
           tabIndex={-1}
-          className="scroll-mt-20 text-base font-semibold tracking-tight outline-none"
+          className="text-base font-semibold tracking-tight outline-none"
         >
           {total === null ? (
             t("searching")

@@ -175,7 +175,14 @@ export function Submitted({ email }: { email: string }) {
                 >
                   {t(`done.timeline.${key}.title`)}
                 </p>
-                <p className="text-sm text-pretty text-muted-foreground">
+                <p
+                  className={cn(
+                    "text-sm text-pretty",
+                    mark === "current"
+                      ? "text-foreground"
+                      : "text-muted-foreground"
+                  )}
+                >
                   <WithEmail
                     text={t(`done.timeline.${key}.body`, { email })}
                     email={email}

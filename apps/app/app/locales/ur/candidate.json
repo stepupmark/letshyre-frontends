@@ -98,7 +98,8 @@
       "job": "ملازمت",
       "views": "ویوز",
       "expires": "ختم ہوگا",
-      "status": "حیثیت"
+      "status": "حیثیت",
+      "actions": "اقدامات"
     },
     "views": "{{max}} میں سے {{count}}",
     "state": {

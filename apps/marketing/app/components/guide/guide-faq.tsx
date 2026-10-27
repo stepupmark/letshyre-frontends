@@ -20,7 +20,7 @@ export function GuideFaq({
     <section
       id={anchor}
       aria-labelledby={`${anchor}-title`}
-      className="scroll-mt-24 border-t pt-12"
+      className="border-t pt-12"
     >
       <h2
         id={`${anchor}-title`}

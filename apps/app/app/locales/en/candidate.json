@@ -98,7 +98,8 @@
       "job": "Job",
       "views": "Views",
       "expires": "Expires",
-      "status": "Status"
+      "status": "Status",
+      "actions": "Actions"
     },
     "views": "{{count}} of {{max}}",
     "state": {

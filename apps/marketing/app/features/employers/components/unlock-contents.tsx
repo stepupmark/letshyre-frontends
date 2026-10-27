@@ -67,7 +67,7 @@ export function UnlockContents() {
           <span className="h-px w-12 bg-border lg:h-12 lg:w-px" />
         </div>
 
-        <div className="reveal rounded-3xl border border-brand/25 bg-brand-muted/50 p-6 sm:p-7">
+        <div className="reveal rounded-3xl border border-brand/25 bg-brand-muted/30 p-6 sm:p-7">
           <h3 className="flex items-center gap-2 text-lg font-semibold text-brand-text">
             <LockOpenIcon aria-hidden className="size-5" />
             {t("unlock.paid.title")}

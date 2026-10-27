@@ -1,5 +1,6 @@
 import outfitLatin from "@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2?url"
 import { QueryClientProvider } from "@tanstack/react-query"
+import { useRouteFocus } from "@workspace/blocks/route-focus"
 import { ThemeProvider } from "@workspace/blocks/theme-provider"
 import { dirFor, toLocale } from "@workspace/i18n"
 import { I18nProvider } from "@workspace/i18n/react"
@@ -76,6 +77,7 @@ function Providers({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   usePageViews()
+  useRouteFocus()
 
   return (
     <Providers>

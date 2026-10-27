@@ -1,7 +1,6 @@
-import AxeBuilder from "@axe-core/playwright"
 import type { Page } from "@playwright/test"
 
-import { expect, reply, test, USERS } from "./fixtures"
+import { axe, expect, reply, test, USERS } from "./fixtures"
 
 const signedIn = (user: Record<string, unknown>) => ({
   success: true,
@@ -34,7 +33,7 @@ test("an employer page asks employers to sign in and returns to it", async ({
   await expect(
     page.getByRole("heading", { name: "Welcome back, hiring team" })
   ).toBeVisible()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 
   await page.getByLabel("Work email").fill("employer@test.in")
   await page.getByLabel("Password", { exact: true }).fill("wrong")
@@ -103,7 +102,7 @@ test("an employer registers, verifies email and mobile, and lands on onboarding"
   await page.getByRole("button", { name: "Continue" }).click()
 
   await expect(page.getByText("We sent it to p••••@acme.in.")).toBeVisible()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
   await enterCode(page)
 
   await expect(

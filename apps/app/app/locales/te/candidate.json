@@ -98,7 +98,8 @@
       "job": "ఉద్యోగం",
       "views": "వ్యూలు",
       "expires": "గడువు",
-      "status": "స్థితి"
+      "status": "స్థితి",
+      "actions": "చర్యలు"
     },
     "views": "{{max}}లో {{count}}",
     "state": {

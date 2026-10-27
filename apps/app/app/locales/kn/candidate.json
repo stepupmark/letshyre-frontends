@@ -98,7 +98,8 @@
       "job": "ಉದ್ಯೋಗ",
       "views": "ವೀಕ್ಷಣೆಗಳು",
       "expires": "ಅವಧಿ ಮುಕ್ತಾಯ",
-      "status": "ಸ್ಥಿತಿ"
+      "status": "ಸ್ಥಿತಿ",
+      "actions": "ಕ್ರಿಯೆಗಳು"
     },
     "views": "{{count}} / {{max}}",
     "state": {

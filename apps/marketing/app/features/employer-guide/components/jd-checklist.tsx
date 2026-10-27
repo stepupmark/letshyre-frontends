@@ -11,7 +11,7 @@ export function JdChecklist() {
   return (
     <div
       id={JD_ANCHOR}
-      className="mt-10 grid scroll-mt-24 gap-6 rounded-2xl border p-5 sm:p-6 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] lg:gap-8"
+      className="mt-10 grid gap-6 rounded-2xl border p-5 sm:p-6 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] lg:gap-8"
     >
       <div className="flex flex-col gap-2">
         <h3 className="text-lg font-semibold tracking-tight text-balance text-brand-text">

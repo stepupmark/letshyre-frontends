@@ -1,7 +1,4 @@
-import AxeBuilder from "@axe-core/playwright"
-import { expect, test } from "@playwright/test"
-
-const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
+import { axe, expect, test } from "./fixtures.ts"
 
 for (const url of ["/404", "/en/does-not-exist", "/xx/nonsense"]) {
   test(`${url}: English 404 inside the site, with a way home`, async ({
@@ -22,10 +19,7 @@ for (const url of ["/404", "/en/does-not-exist", "/xx/nonsense"]) {
       page.getByRole("link", { name: "Go to home" })
     ).toHaveAttribute("href", "/en")
 
-    const { violations } = await new AxeBuilder({ page })
-      .withTags(WCAG)
-      .analyze()
-    expect(violations).toEqual([])
+    await axe(page)
     expect(errors).toEqual([])
   })
 }

@@ -1,7 +1,5 @@
-import AxeBuilder from "@axe-core/playwright"
-import { expect, test } from "@playwright/test"
+import { axe, expect, test } from "./fixtures.ts"
 
-const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
 const PAGES = [
   { url: "/en/employers", nav: "For employers" },
   { url: "/en/candidates", nav: "For candidates" },
@@ -14,10 +12,7 @@ for (const { url, nav } of PAGES) {
   }) => {
     await page.goto(url)
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible()
-    const { violations } = await new AxeBuilder({ page })
-      .withTags(WCAG)
-      .analyze()
-    expect(violations).toEqual([])
+    await axe(page)
 
     const html = await (await request.get(url)).text()
     expect(html).toContain('"@type":"FAQPage"')

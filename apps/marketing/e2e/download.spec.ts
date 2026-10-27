@@ -1,7 +1,6 @@
-import AxeBuilder from "@axe-core/playwright"
-import { expect, type Page, test } from "@playwright/test"
+import type { Page } from "@playwright/test"
 
-const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
+import { axe, expect, test } from "./fixtures.ts"
 
 const envelope = (data: unknown) => ({
   status: 200,
@@ -56,8 +55,7 @@ test("offers the Windows installer and marks macOS as coming soon", async ({
     page.getByRole("group", { name: "macOS" }).getByText("Coming Soon")
   ).toBeVisible()
 
-  const { violations } = await new AxeBuilder({ page }).withTags(WCAG).analyze()
-  expect(violations).toEqual([])
+  await axe(page)
 })
 
 test("shows a retry when releases can't be loaded", async ({ page }) => {

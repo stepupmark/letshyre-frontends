@@ -98,7 +98,8 @@
       "job": "வேலை",
       "views": "பார்வைகள்",
       "expires": "காலாவதி",
-      "status": "நிலை"
+      "status": "நிலை",
+      "actions": "செயல்கள்"
     },
     "views": "{{max}}-இல் {{count}}",
     "state": {

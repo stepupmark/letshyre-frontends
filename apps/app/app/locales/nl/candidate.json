@@ -98,7 +98,8 @@
       "job": "Vacature",
       "views": "Weergaven",
       "expires": "Verloopt",
-      "status": "Status"
+      "status": "Status",
+      "actions": "Acties"
     },
     "views": "{{count}} van {{max}}",
     "state": {

@@ -98,7 +98,8 @@
       "job": "नौकरी",
       "views": "व्यू",
       "expires": "खत्म होगा",
-      "status": "स्थिति"
+      "status": "स्थिति",
+      "actions": "कार्रवाइयां"
     },
     "views": "{{max}} में से {{count}}",
     "state": {

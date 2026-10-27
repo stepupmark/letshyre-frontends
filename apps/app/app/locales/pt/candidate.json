@@ -101,7 +101,8 @@
       "job": "Vaga",
       "views": "Visualizações",
       "expires": "Expira",
-      "status": "Status"
+      "status": "Status",
+      "actions": "Ações"
     },
     "views": "{{count}} de {{max}}",
     "state": {

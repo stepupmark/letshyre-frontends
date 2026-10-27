@@ -74,7 +74,7 @@ export function InterviewSteps({ active }: { active?: string }) {
                   <li
                     key={id}
                     id={STEP_ANCHORS[id]}
-                    className="group/step flex scroll-mt-24 gap-4 sm:gap-6"
+                    className="group/step flex gap-4 sm:gap-6"
                   >
                     <div aria-hidden className="flex flex-col items-center">
                       <span

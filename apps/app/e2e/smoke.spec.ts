@@ -1,6 +1,4 @@
-import AxeBuilder from "@axe-core/playwright"
-
-import { expect, test, watch } from "./fixtures"
+import { axe, expect, test, watch } from "./fixtures"
 
 test("the employer shell renders under the production CSP", async ({
   page,
@@ -18,7 +16,7 @@ test("the employer shell renders under the production CSP", async ({
     "content",
     "noindex, nofollow"
   )
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
   expect(problems).toEqual([])
 })
 

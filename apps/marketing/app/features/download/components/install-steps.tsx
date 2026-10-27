@@ -22,7 +22,7 @@ export function InstallSteps() {
     <section
       id="install"
       aria-labelledby={titleId}
-      className="flex scroll-mt-24 flex-col gap-8"
+      className="flex flex-col gap-8"
     >
       <SectionHeader id={titleId} title={t("install.title")} />
       <ol className="relative grid gap-10 md:grid-cols-3 md:gap-8">

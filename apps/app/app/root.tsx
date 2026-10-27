@@ -1,6 +1,7 @@
 import outfitLatin from "@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2?url"
 import { QueryClientProvider } from "@tanstack/react-query"
 import { LogoMark } from "@workspace/blocks/logo"
+import { useRouteFocus } from "@workspace/blocks/route-focus"
 import { ThemeProvider } from "@workspace/blocks/theme-provider"
 import { dirFor } from "@workspace/i18n"
 import { I18nProvider } from "@workspace/i18n/react"
@@ -82,6 +83,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   const [queryClient] = useState(createQueryClient)
   const isNarrow = useNarrow()
+  useRouteFocus()
 
   useEffect(() => {
     document.documentElement.lang = locale

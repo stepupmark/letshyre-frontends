@@ -1,6 +1,4 @@
-import AxeBuilder from "@axe-core/playwright"
-
-import { expect, reply, test } from "./fixtures"
+import { axe, expect, reply, test } from "./fixtures"
 
 const PNG = Buffer.from(
   "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",
@@ -173,7 +171,7 @@ test("a new candidate sets up their profile from photo to resume review", async 
   await page.getByRole("button", { name: "Remove CSS" }).click()
   await page.getByLabel("Add a skill").first().fill("Playwright")
   await page.getByLabel("Add a skill").first().press("Enter")
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
   await page.getByRole("button", { name: "Continue" }).click()
 
   await expect(page.getByText("Frontend Developer, 2 skills")).toBeVisible()

@@ -1,9 +1,7 @@
-import AxeBuilder from "@axe-core/playwright"
-import { expect, type Page, test } from "@playwright/test"
+import type { Page } from "@playwright/test"
 
+import { axe, expect, test } from "./fixtures.ts"
 import { mockApi } from "./mock-api.ts"
-
-const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
 
 const card = (page: Page, name: string) =>
   page.locator("[data-slot=card]", {
@@ -29,8 +27,7 @@ test("shows live prices and hands off to the right place", async ({ page }) => {
     page.getByRole("link", { name: "Buy 100 credits for ₹4,900" })
   ).toHaveAttribute("href", /checkout=100-credits$/)
 
-  const { violations } = await new AxeBuilder({ page }).withTags(WCAG).analyze()
-  expect(violations).toEqual([])
+  await axe(page)
 })
 
 test("holds the layout with skeletons while prices load", async ({ page }) => {
@@ -49,8 +46,7 @@ test("holds the layout with skeletons while prices load", async ({ page }) => {
       .locator("[data-slot=card]")
   ).toHaveCount(4)
 
-  const { violations } = await new AxeBuilder({ page }).withTags(WCAG).analyze()
-  expect(violations).toEqual([])
+  await axe(page)
 })
 
 test("compares plans in a table with a caption and scoped headers", async ({

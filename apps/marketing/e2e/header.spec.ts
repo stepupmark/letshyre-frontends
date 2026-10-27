@@ -1,18 +1,5 @@
-import AxeBuilder from "@axe-core/playwright"
-import { expect, type Page, test } from "@playwright/test"
-
+import { axe, expect, test } from "./fixtures.ts"
 import { mockApi } from "./mock-api.ts"
-
-const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
-
-const axe = async (page: Page) => {
-  // Base UI's focus guards are hidden tab sentinels, not content
-  const { violations } = await new AxeBuilder({ page })
-    .withTags(WCAG)
-    .exclude("[data-base-ui-focus-guard]")
-    .analyze()
-  expect(violations).toEqual([])
-}
 
 test.beforeEach(async ({ page }) => {
   await mockApi(page)
@@ -35,6 +22,8 @@ test.describe("desktop header", () => {
       page.getByRole("link", { name: "Skip to main content" }),
       banner.getByRole("link", { name: "LetsHyre logo" }),
       nav.getByRole("button", { name: "Product" }),
+      nav.getByRole("link", { name: "For employers" }),
+      nav.getByRole("link", { name: "For candidates" }),
       nav.getByRole("link", { name: "Pricing" }),
       nav.getByRole("link", { name: "About" }),
       nav.getByRole("link", { name: "Contact" }),

@@ -1,7 +1,7 @@
 import { fileURLToPath } from "node:url"
-import { expect, test } from "@playwright/test"
 import { loadEnv } from "vite"
 
+import { expect, test } from "./fixtures.ts"
 import { mockApi } from "./mock-api.ts"
 import { SITEMAP } from "./sitemap.ts"
 

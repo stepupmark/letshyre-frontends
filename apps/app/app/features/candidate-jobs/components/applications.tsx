@@ -59,7 +59,7 @@ export function Applications() {
             ref={heading}
             id={headingId}
             tabIndex={-1}
-            className="scroll-mt-20 text-base font-semibold tracking-tight outline-none"
+            className="text-base font-semibold tracking-tight outline-none"
           >
             {stageLabel}
             {total !== null && (

@@ -28,7 +28,7 @@ export function Chapter({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: duration.base, ease }}
-      className="flex scroll-mt-20 break-inside-avoid-page flex-col gap-5 print:transform-none! print:opacity-100!"
+      className="flex break-inside-avoid-page flex-col gap-5 print:transform-none! print:opacity-100!"
     >
       <div className="flex items-start gap-3">
         <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand-muted">

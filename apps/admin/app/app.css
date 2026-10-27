@@ -17,3 +17,29 @@
   --chart-4: #c4d7ff;
   --chart-5: #1849b8;
 }
+
+/* route changes focus the heading for screen readers; a ring there reads as a selection */
+@layer base {
+  /* keeps focused elements and anchor targets out from under the sticky header (WCAG 2.4.11) */
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+
+  #main:focus,
+  #main h1[tabindex="-1"]:focus {
+    outline: none;
+  }
+}
+
+/* Sonner's own rich colours miss AA contrast; use the theme's status tokens */
+[data-sonner-toast][data-rich-colors="true"] {
+  --success-bg: var(--success-muted);
+  --success-border: color-mix(in oklab, var(--success) 25%, transparent);
+  --success-text: var(--success);
+  --warning-bg: var(--warning-muted);
+  --warning-border: color-mix(in oklab, var(--warning) 25%, transparent);
+  --warning-text: var(--warning);
+  --error-bg: var(--danger-muted);
+  --error-border: color-mix(in oklab, var(--danger) 25%, transparent);
+  --error-text: var(--danger);
+}

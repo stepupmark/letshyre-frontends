@@ -1,7 +1,5 @@
-import AxeBuilder from "@axe-core/playwright"
-import { expect, test } from "@playwright/test"
+import { axe, expect, test } from "./fixtures.ts"
 
-const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
 const URL = "/en/employer-guide"
 
 test("chapter list jumps to a chapter and marks it", async ({ page }) => {
@@ -20,8 +18,7 @@ test("chapter list jumps to a chapter and marks it", async ({ page }) => {
   ).toBeInViewport()
   await expect(link).toHaveAttribute("aria-current", "location")
 
-  const { violations } = await new AxeBuilder({ page }).withTags(WCAG).analyze()
-  expect(violations).toEqual([])
+  await axe(page)
 })
 
 test("ships FAQ JSON-LD and is published in English only", async ({

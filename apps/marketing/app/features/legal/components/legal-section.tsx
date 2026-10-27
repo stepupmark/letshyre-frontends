@@ -58,7 +58,7 @@ export function LegalSection({ section }: { section: Section }) {
         )}
         <h2
           id={section.id}
-          className="target:flash -mx-1.5 flex-1 scroll-mt-32 rounded-md px-1.5 text-xl/tight font-semibold tracking-tight text-foreground sm:text-2xl/tight lg:scroll-mt-24"
+          className="target:flash -mx-1.5 flex-1 scroll-mt-10 rounded-md px-1.5 text-xl/tight font-semibold tracking-tight text-foreground sm:text-2xl/tight lg:scroll-mt-0"
         >
           {number && <span className="sr-only">{number}. </span>}
           {rest}

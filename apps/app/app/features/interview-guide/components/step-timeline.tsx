@@ -119,8 +119,7 @@ function StepItem({
         </h3>
         <p
           className={cn(
-            "max-w-prose text-sm text-pretty text-muted-foreground transition-opacity duration-300 motion-reduce:transition-none",
-            !current && "lg:opacity-70"
+            "max-w-prose text-sm text-pretty text-muted-foreground"
           )}
         >
           {t(`steps.${step}.body`)}

@@ -101,7 +101,8 @@
       "job": "Offerta",
       "views": "Visualizzazioni",
       "expires": "Scadenza",
-      "status": "Stato"
+      "status": "Stato",
+      "actions": "Azioni"
     },
     "views": "{{count}} di {{max}}",
     "state": {

@@ -1,6 +1,4 @@
-import AxeBuilder from "@axe-core/playwright"
-
-import { expect, fixture, reply, test } from "./fixtures"
+import { axe, expect, fixture, reply, test } from "./fixtures"
 
 const FIND = "GET /user/v1/candidate_find_jobs/"
 
@@ -70,7 +68,7 @@ test("a candidate searches, saves the search, applies and follows the applicatio
   await expect(page).toHaveURL(
     "/employee/jobs?q=react&location=Pune&type=full_time&pay=6"
   )
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 
   await page.getByRole("button", { name: "Frontend Developer" }).click()
   const sheet = page.getByRole("dialog", { name: "Frontend Developer" })
@@ -94,7 +92,7 @@ test("a candidate searches, saves the search, applies and follows the applicatio
   await expect(
     card.getByRole("link", { name: "How the interview works" })
   ).toBeVisible()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 })
 
 test("on a phone, filters open in a sheet and apply as they change", async ({
@@ -120,12 +118,12 @@ test("on a phone, filters open in a sheet and apply as they change", async ({
   await sheet.getByRole("switch", { name: "Hide jobs I've applied to" }).click()
   await expect.poll(() => searches.at(-1)?.get("job_type")).toBe("not_applied")
   expect(searches.at(-1)?.get("employment_type")).toBe("internship")
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
   await sheet.getByRole("button", { name: "Show 2 jobs" }).click()
   await expect(
     page.getByRole("button", { name: /Filters\s*2 filters applied/ })
   ).toBeVisible()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 })
 
 test("a candidate reads their profile as employers see it, without editing", async ({
@@ -141,5 +139,5 @@ test("a candidate reads their profile as employers see it, without editing", asy
   await expect(page.getByText("Bengaluru", { exact: true })).toBeVisible()
   await expect(page.getByRole("tab", { name: /Work/ })).toBeVisible()
   await expect(page.getByRole("button", { name: /Edit|Add/ })).toHaveCount(0)
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 })

@@ -1,6 +1,4 @@
-import AxeBuilder from "@axe-core/playwright"
-
-import { expect, reply, test } from "./fixtures"
+import { axe, expect, reply, test } from "./fixtures"
 
 test("a candidate asks the assistant from a page and follows its link into the app", async ({
   page,
@@ -39,7 +37,7 @@ test("a candidate asks the assistant from a page and follows its link into the a
   await sheet.getByRole("textbox", { name: "Ask a question" }).press("Enter")
   await expect(sheet.getByText("Applied", { exact: true })).toBeVisible()
   expect(sent).toEqual([{ message: "What happens after I apply?" }])
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 
   await sheet.getByRole("link", { name: "Open as a full page" }).click()
   await expect(page).toHaveURL("/employee/assistant")

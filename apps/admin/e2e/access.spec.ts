@@ -1,6 +1,4 @@
-import AxeBuilder from "@axe-core/playwright"
-
-import { ADMIN, CREDIT, expect, reply, signedIn, test } from "./fixtures"
+import { ADMIN, axe, CREDIT, expect, reply, signedIn, test } from "./fixtures"
 
 test("only admins get in, and land on the page they asked for", async ({
   page,
@@ -28,7 +26,7 @@ test("only admins get in, and land on the page they asked for", async ({
   await expect(page).toHaveURL(
     `/sign-in?next=${encodeURIComponent("/dashboard/credits")}`
   )
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 
   await page.getByLabel("Email").fill("employer@acme.in")
   await page.getByLabel("Password", { exact: true }).fill("secret-123")

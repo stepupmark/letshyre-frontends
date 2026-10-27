@@ -1,9 +1,5 @@
-import AxeBuilder from "@axe-core/playwright"
-import { expect, test } from "@playwright/test"
-
+import { axe, expect, test } from "./fixtures.ts"
 import { mockApi } from "./mock-api.ts"
-
-const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
 
 test.beforeEach(async ({ page }) => {
   await mockApi(page)
@@ -28,10 +24,7 @@ test("hero has one h1, both sign-up paths and passes axe in both themes", async 
   for (const colorScheme of ["light", "dark"] as const) {
     await page.emulateMedia({ colorScheme, reducedMotion: "reduce" })
     await page.goto("/en")
-    const { violations } = await new AxeBuilder({ page })
-      .withTags(WCAG)
-      .analyze()
-    expect(violations, colorScheme).toEqual([])
+    await axe(page)
   }
 })
 

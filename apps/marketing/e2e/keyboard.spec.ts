@@ -1,5 +1,4 @@
-import { expect, test } from "@playwright/test"
-
+import { expect, test } from "./fixtures.ts"
 import { mockApi } from "./mock-api.ts"
 
 // Header tab order and the mobile sheet's focus trap live in header.spec.

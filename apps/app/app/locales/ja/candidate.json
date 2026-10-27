@@ -95,7 +95,8 @@
       "job": "求人",
       "views": "閲覧数",
       "expires": "有効期限",
-      "status": "状態"
+      "status": "状態",
+      "actions": "操作"
     },
     "views": "{{count}} / {{max}}",
     "state": {

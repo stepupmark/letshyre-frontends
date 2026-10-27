@@ -14,7 +14,7 @@ export function InterviewPrivacy() {
     <section
       id={PRIVACY_ANCHOR}
       aria-labelledby={titleId}
-      className="flex scroll-mt-24 flex-col gap-5 rounded-2xl border bg-muted/40 p-5 sm:flex-row sm:items-center sm:gap-8 sm:p-6"
+      className="flex flex-col gap-5 rounded-2xl border bg-muted/40 p-5 sm:flex-row sm:items-center sm:gap-8 sm:p-6"
     >
       <div className="flex flex-col gap-2">
         <h2 id={titleId} className="text-xl font-semibold tracking-tight">

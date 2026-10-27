@@ -98,7 +98,8 @@
       "job": "ജോലി",
       "views": "വ്യൂകൾ",
       "expires": "കാലാവധി",
-      "status": "നില"
+      "status": "നില",
+      "actions": "പ്രവർത്തനങ്ങൾ"
     },
     "views": "{{count}} / {{max}}",
     "state": {

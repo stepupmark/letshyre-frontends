@@ -62,7 +62,7 @@ export function ProctoringRules() {
   const warnings = t("rules.warningItems", { returnObjects: true })
 
   return (
-    <div id={RULES_ANCHOR} className="mt-10 flex scroll-mt-24 flex-col gap-6">
+    <div id={RULES_ANCHOR} className="mt-10 flex flex-col gap-6">
       <div className="flex max-w-2xl flex-col gap-2">
         <h3 className="text-lg font-semibold tracking-tight text-balance text-brand-text">
           {t("rules.title")}

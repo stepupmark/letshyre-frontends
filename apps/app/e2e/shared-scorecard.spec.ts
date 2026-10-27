@@ -1,7 +1,6 @@
 import { readFileSync } from "node:fs"
-import AxeBuilder from "@axe-core/playwright"
 
-import { expect, test, watch } from "./fixtures"
+import { axe, expect, test, watch } from "./fixtures"
 
 const ID = "a1b2c3d4e5f6"
 const ENDPOINT = `GET /user/v1/public/shared-candidate/${ID}`
@@ -42,7 +41,7 @@ test("a shared scorecard opens without a session and a refresh doesn't spend ano
     "content",
     "no-referrer"
   )
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 
   await page.reload()
   await expect(

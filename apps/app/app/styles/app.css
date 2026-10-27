@@ -223,3 +223,16 @@
     padding: 2rem;
   }
 }
+
+/* route changes focus the heading for screen readers; a ring there reads as a selection */
+@layer base {
+  /* keeps focused elements and anchor targets out from under the sticky topbar (WCAG 2.4.11) */
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+
+  #main:focus,
+  #main h1[tabindex="-1"]:focus {
+    outline: none;
+  }
+}

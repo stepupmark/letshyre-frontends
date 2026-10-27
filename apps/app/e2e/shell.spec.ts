@@ -1,6 +1,4 @@
-import AxeBuilder from "@axe-core/playwright"
-
-import { expect, reply, test } from "./fixtures"
+import { axe, expect, reply, test } from "./fixtures"
 
 test("on a phone the menu is a labelled navigation that closes after a tap", async ({
   page,
@@ -16,7 +14,7 @@ test("on a phone the menu is a labelled navigation that closes after a tap", asy
 
   await expect(page).toHaveURL("/employer/jobs")
   await expect(nav).toBeHidden()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 })
 
 test("a collapsed sidebar stays collapsed after a reload", async ({
@@ -78,7 +76,7 @@ test("the sidebar marks the current page and the palette finds pages by meaning"
   await expect(
     page.getByRole("dialog", { name: "Keyboard shortcuts" })
   ).toBeVisible()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 })
 
 test("the credit pill warns when the balance runs low", async ({
@@ -96,5 +94,5 @@ test("the credit pill warns when the balance runs low", async ({
   await expect(
     page.getByRole("link", { name: "Running low: 1 credit" })
   ).toBeVisible()
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  await axe(page)
 })

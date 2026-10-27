@@ -95,7 +95,8 @@
       "job": "Lowongan",
       "views": "Tayangan",
       "expires": "Kedaluwarsa",
-      "status": "Status"
+      "status": "Status",
+      "actions": "Tindakan"
     },
     "views": "{{count}} dari {{max}}",
     "state": {

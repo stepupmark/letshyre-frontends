@@ -1,7 +1,4 @@
-import AxeBuilder from "@axe-core/playwright"
-import { expect, test } from "@playwright/test"
-
-const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
+import { axe, expect, test } from "./fixtures.ts"
 
 const DOCS = [
   { url: "/en/terms", title: "Terms and conditions", date: "2026-09-08" },
@@ -49,8 +46,7 @@ test("contents link jumps to the section and marks it current", async ({
     await expect(link).toHaveAttribute("aria-current", "location")
   }
 
-  const { violations } = await new AxeBuilder({ page }).withTags(WCAG).analyze()
-  expect(violations).toEqual([])
+  await axe(page)
 })
 
 test("inline terms explain themselves on click", async ({ page }) => {

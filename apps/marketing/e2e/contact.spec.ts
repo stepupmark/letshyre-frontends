@@ -1,7 +1,7 @@
-import AxeBuilder from "@axe-core/playwright"
-import { expect, type Page, test } from "@playwright/test"
+import type { Page } from "@playwright/test"
 
-const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]
+import { axe, expect, test } from "./fixtures.ts"
+
 const CORS = { "access-control-allow-origin": "*" }
 
 async function fillIn(page: Page) {
@@ -28,8 +28,7 @@ test("validation errors are announced and accessible", async ({ page }) => {
     "aria-invalid",
     "true"
   )
-  const { violations } = await new AxeBuilder({ page }).withTags(WCAG).analyze()
-  expect(violations).toEqual([])
+  await axe(page)
 })
 
 test("sends the message and confirms inline", async ({ page }) => {
@@ -58,8 +57,7 @@ test("sends the message and confirms inline", async ({ page }) => {
     page.getByRole("heading", { name: "Message sent" })
   ).toBeFocused()
   expect(body).toMatchObject({ name: "Ada Lovelace", email: "ada@example.com" })
-  const { violations } = await new AxeBuilder({ page }).withTags(WCAG).analyze()
-  expect(violations).toEqual([])
+  await axe(page)
 })
 
 test("ships ContactPage JSON-LD", async ({ request }) => {

@@ -101,7 +101,8 @@
       "job": "Oferta",
       "views": "Visitas",
       "expires": "Caduca",
-      "status": "Estado"
+      "status": "Estado",
+      "actions": "Acciones"
     },
     "views": "{{count}} de {{max}}",
     "state": {

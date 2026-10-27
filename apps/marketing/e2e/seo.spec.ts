@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs"
-import { expect, test } from "@playwright/test"
 
+import { expect, test } from "./fixtures.ts"
 import { MOVED_PATHS } from "../app/lib/pages.ts"
 import { jsonLdOf, metaOf, titleOf } from "../scripts/html.ts"
 import { SEO_ALLOWLIST } from "./seo-allowlist.ts"

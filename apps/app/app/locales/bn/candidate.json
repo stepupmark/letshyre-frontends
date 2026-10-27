@@ -98,7 +98,8 @@
       "job": "চাকরি",
       "views": "ভিউ",
       "expires": "মেয়াদ শেষ",
-      "status": "অবস্থা"
+      "status": "অবস্থা",
+      "actions": "কাজ"
     },
     "views": "{{max}}-এর মধ্যে {{count}}",
     "state": {

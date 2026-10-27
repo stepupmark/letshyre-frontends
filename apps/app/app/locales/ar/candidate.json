@@ -110,7 +110,8 @@
       "job": "الوظيفة",
       "views": "المشاهدات",
       "expires": "ينتهي",
-      "status": "الحالة"
+      "status": "الحالة",
+      "actions": "الإجراءات"
     },
     "views": "{{count}} من {{max}}",
     "state": {

@@ -15,5 +15,6 @@ for (const [who, { visit, lands }] of Object.entries(HOME)) {
     await signInAs(who as keyof typeof USERS)
     await page.goto(visit)
     await expect(page).toHaveURL(lands)
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible()
   })
 }

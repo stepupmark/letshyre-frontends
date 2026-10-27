@@ -74,6 +74,9 @@ async function mockApi(page: Page, overrides: Handlers, unhandled: string[]) {
 }
 
 export const test = base.extend<{
+  /** set false where the last state is checked on purpose elsewhere */
+  axeAtEnd: boolean
+  checkAxe: undefined
   api: (overrides: Handlers) => Promise<void>
   /** `tips: true` leaves the one-time tips unseen */
   signInAs: (
@@ -81,6 +84,17 @@ export const test = base.extend<{
     options?: { tips?: boolean }
   ) => Promise<void>
 }>({
+  axeAtEnd: [true, { option: true }],
+  // every passing test also leaves the page it ends on clean under axe
+  checkAxe: [
+    async ({ page, axeAtEnd }, use, info) => {
+      await use(undefined)
+      if (!axeAtEnd || info.status !== info.expectedStatus) return
+      if (!page.url().startsWith("http") || page.isClosed()) return
+      await axe(page)
+    },
+    { auto: true },
+  ],
   api: [
     async ({ page, browserName }, use) => {
       // Playwright's WebKit build crashes on the list-to-detail view transition
@@ -131,6 +145,8 @@ export function watch(page: Page) {
 }
 
 export const axe = async (page: Page) => {
+  // a test can end while the page is still loading its data
+  await page.waitForLoadState("networkidle")
   // a step mid-fade reads as low contrast
   await page.waitForFunction(() =>
     document
@@ -141,5 +157,10 @@ export const axe = async (page: Page) => {
           a.effect?.getTiming().iterations === Infinity
       )
   )
-  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+  // a transition that starts after that check still settles within this window
+  await expect
+    .poll(async () => (await new AxeBuilder({ page }).analyze()).violations, {
+      timeout: 5000,
+    })
+    .toEqual([])
 }

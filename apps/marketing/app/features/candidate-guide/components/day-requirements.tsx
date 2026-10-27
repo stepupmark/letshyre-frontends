@@ -10,7 +10,7 @@ export function DayRequirements() {
   return (
     <div
       id={REQUIREMENTS_ANCHOR}
-      className="mt-10 flex scroll-mt-24 flex-col gap-4 rounded-2xl border p-5 sm:p-6"
+      className="mt-10 flex flex-col gap-4 rounded-2xl border p-5 sm:p-6"
     >
       <h3 className="text-lg font-semibold tracking-tight text-brand-text">
         {t("requirements.title")}

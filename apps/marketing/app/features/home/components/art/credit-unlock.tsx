@@ -59,7 +59,7 @@ export default function CreditUnlock() {
               {86}
             </span>
           </div>
-          <div className="unlock-in col-start-1 row-start-1 flex items-start gap-4 bg-brand-muted/50 p-5">
+          <div className="unlock-in col-start-1 row-start-1 flex items-start gap-4 bg-brand-muted/30 p-5">
             <Avatar name={t("hero.file.name")} className="size-11 text-sm" />
             <div className="min-w-0 flex-1">
               <p className="flex items-center gap-1.5 font-semibold">

@@ -1,21 +1,12 @@
-import AxeBuilder from "@axe-core/playwright"
-import { expect, type Page, test } from "@playwright/test"
-
+import { axe, expect, test } from "./fixtures.ts"
 import { mockApi } from "./mock-api.ts"
 import { otherEngine, SITEMAP } from "./sitemap.ts"
 
 // Open states are covered next to their feature: mobile menu and newsletter in
 // header.spec, form errors in contact.spec, chat in assistant.spec.
 
-const WCAG = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22a", "wcag22aa"]
-
-const axe = async (page: Page, scope = "body") => {
-  const { violations } = await new AxeBuilder({ page })
-    .include(scope)
-    .withTags(WCAG)
-    .analyze()
-  expect(violations).toEqual([])
-}
+// every test here runs axe itself, the menu one scoped to the open dialog
+test.use({ axeAtEnd: false })
 
 test.beforeEach(async ({ page }) => {
   await mockApi(page)

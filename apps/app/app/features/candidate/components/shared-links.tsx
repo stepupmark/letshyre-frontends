@@ -149,7 +149,9 @@ export function SharedLinks() {
       },
       {
         id: "actions",
-        header: "",
+        header: () => (
+          <span className="sr-only">{t("links.columns.actions")}</span>
+        ),
         enableHiding: false,
         cell: ({ row }) => (
           <Actions

@@ -30,7 +30,7 @@ export function BeforeYouStart() {
     <Section
       id={REQUIREMENTS_ANCHOR}
       aria-labelledby={titleId}
-      className="scroll-mt-24 border-b py-12 sm:py-16"
+      className="border-b py-12 sm:py-16"
     >
       <SectionHeader
         id={titleId}

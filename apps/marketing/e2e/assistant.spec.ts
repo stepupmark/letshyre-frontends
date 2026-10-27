@@ -1,6 +1,4 @@
-import AxeBuilder from "@axe-core/playwright"
-import { expect, test } from "@playwright/test"
-
+import { axe, expect, test } from "./fixtures.ts"
 import { mockApi } from "./mock-api.ts"
 
 test("the assistant opens from home, answers and passes axe", async ({
@@ -26,10 +24,7 @@ test("the assistant opens from home, answers and passes axe", async ({
     .click()
   await expect(dialog.getByText("post a job")).toBeVisible()
 
-  const { violations } = await new AxeBuilder({ page })
-    .include('[role="dialog"]')
-    .analyze()
-  expect(violations).toEqual([])
+  await axe(page, '[role="dialog"]')
 
   await page.keyboard.press("Escape")
   await expect(

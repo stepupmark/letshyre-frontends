@@ -35,7 +35,7 @@ export function GuideChapter({
     <section
       id={anchor}
       aria-labelledby={`${anchor}-title`}
-      className="scroll-mt-24 border-t pt-12 first:border-t-0 first:pt-0"
+      className="border-t pt-12 first:border-t-0 first:pt-0"
     >
       <div className="slide-in flex items-start gap-4 sm:gap-6">
         <span

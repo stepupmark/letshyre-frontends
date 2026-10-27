@@ -26,7 +26,7 @@ export function LegalBlocks({
           <h3
             key={key}
             id={ids.get(index)}
-            className="target:flash -mx-1.5 scroll-mt-32 rounded-md px-1.5 pt-3 text-[1.0625rem]/snug font-semibold text-foreground lg:scroll-mt-24"
+            className="target:flash -mx-1.5 scroll-mt-10 rounded-md px-1.5 pt-3 text-[1.0625rem]/snug font-semibold text-foreground lg:scroll-mt-0"
           >
             {block.text}
           </h3>
