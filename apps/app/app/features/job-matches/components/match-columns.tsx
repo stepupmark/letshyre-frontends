@@ -1,4 +1,6 @@
 import { useTranslation } from "@workspace/i18n/react"
+import { Button } from "@workspace/ui/components/button"
+import { LockOpen } from "lucide-react"
 import { useMemo } from "react"
 
 import type { DataTableColumn } from "@/lib/data-table-features"
@@ -56,6 +58,26 @@ export function useMatchColumns(open: (id: string) => void) {
             </span>
           )
         },
+      },
+      {
+        id: "unlock",
+        header: () => <span className="sr-only">{t("columns.unlock")}</span>,
+        enableHiding: false,
+        cell: ({ row }) => (
+          <Button
+            variant="outline"
+            size="sm"
+            aria-label={t("unlockFor", {
+              name: row.original.candidate_name ?? t("unnamed"),
+            })}
+            onClick={() => {
+              open(row.original.candidate_id)
+            }}
+          >
+            <LockOpen aria-hidden="true" />
+            {t("columns.unlock")}
+          </Button>
+        ),
       },
     ],
     [t, open]

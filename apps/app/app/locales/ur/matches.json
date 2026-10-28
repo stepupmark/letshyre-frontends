@@ -11,11 +11,13 @@
   "columns": {
     "candidate": "امیدوار",
     "match": "میچ",
+    "unlock": "اَن لاک کریں",
     "experience": "تجربہ"
   },
   "years_one": "{{count}} سال",
   "years_other": "{{count}} سال",
   "unnamed": "بغیر نام کا امیدوار",
+  "unlockFor": "{{name}} کو اَن لاک کریں",
   "sortedNote": "سب سے اچھا میچ پہلے",
   "peek": {
     "why": "یہ میچ کیوں",

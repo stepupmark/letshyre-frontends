@@ -11,12 +11,14 @@
   "columns": {
     "candidate": "Candidato",
     "match": "Corrispondenza",
+    "unlock": "Sblocca",
     "experience": "Esperienza"
   },
   "years_one": "{{count}} anno",
   "years_many": "{{count}} anni",
   "years_other": "{{count}} anni",
   "unnamed": "Candidato senza nome",
+  "unlockFor": "Sblocca {{name}}",
   "sortedNote": "Prima le corrispondenze migliori",
   "peek": {
     "why": "Perché corrisponde",

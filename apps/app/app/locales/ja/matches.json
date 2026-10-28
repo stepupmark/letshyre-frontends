@@ -11,10 +11,12 @@
   "columns": {
     "candidate": "候補者",
     "match": "マッチ",
+    "unlock": "アンロック",
     "experience": "経験"
   },
   "years_other": "{{count}} 年",
   "unnamed": "名前のない候補者",
+  "unlockFor": "{{name}} さんをアンロック",
   "sortedNote": "マッチ度の高い順",
   "peek": {
     "why": "マッチの理由",

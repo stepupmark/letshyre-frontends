@@ -11,11 +11,13 @@
   "columns": {
     "candidate": "Kandidaat",
     "match": "Match",
+    "unlock": "Ontgrendelen",
     "experience": "Ervaring"
   },
   "years_one": "{{count}} jr",
   "years_other": "{{count}} jr",
   "unnamed": "Kandidaat zonder naam",
+  "unlockFor": "{{name}} ontgrendelen",
   "sortedNote": "Beste match eerst",
   "peek": {
     "why": "Waarom deze match",

@@ -11,6 +11,7 @@
   "columns": {
     "candidate": "Кандидат",
     "match": "Совпадение",
+    "unlock": "Открыть",
     "experience": "Опыт"
   },
   "years_one": "{{count}} год",
@@ -18,6 +19,7 @@
   "years_many": "{{count}} лет",
   "years_other": "{{count}} года",
   "unnamed": "Кандидат без имени",
+  "unlockFor": "Открыть: {{name}}",
   "sortedNote": "Сначала лучшие совпадения",
   "peek": {
     "why": "Почему совпадение",

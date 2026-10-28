@@ -11,11 +11,13 @@
   "columns": {
     "candidate": "ಅಭ್ಯರ್ಥಿ",
     "match": "ಹೊಂದಾಣಿಕೆ",
+    "unlock": "ಅನ್‌ಲಾಕ್",
     "experience": "ಅನುಭವ"
   },
   "years_one": "{{count}} ವರ್ಷ",
   "years_other": "{{count}} ವರ್ಷ",
   "unnamed": "ಹೆಸರಿಲ್ಲದ ಅಭ್ಯರ್ಥಿ",
+  "unlockFor": "{{name}} ಅವರನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಿ",
   "sortedNote": "ಉತ್ತಮ ಹೊಂದಾಣಿಕೆ ಮೊದಲು",
   "peek": {
     "why": "ಈ ಹೊಂದಾಣಿಕೆ ಏಕೆ",

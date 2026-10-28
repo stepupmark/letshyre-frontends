@@ -11,10 +11,12 @@
   "columns": {
     "candidate": "Kandidat",
     "match": "Kecocokan",
+    "unlock": "Buka",
     "experience": "Pengalaman"
   },
   "years_other": "{{count}} thn",
   "unnamed": "Kandidat tanpa nama",
+  "unlockFor": "Buka {{name}}",
   "sortedNote": "Kecocokan terbaik dulu",
   "peek": {
     "why": "Alasan kecocokan",

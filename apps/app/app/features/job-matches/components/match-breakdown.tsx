@@ -30,7 +30,7 @@ export function MatchBreakdown({
     <div className={cn("flex w-full items-center gap-5", className)}>
       <p className="flex shrink-0 flex-col-reverse">
         <span className="text-xs text-muted-foreground">{t("scores.ai")}</span>
-        <span className="text-2xl font-semibold tracking-tight tabular-nums">
+        <span className="text-2xl font-semibold tracking-tight text-brand-text tabular-nums">
           {matchScore(match)}
         </span>
       </p>
@@ -64,14 +64,14 @@ function Part({
       <dt className="w-16 shrink-0 truncate text-muted-foreground">{label}</dt>
       <span
         aria-hidden="true"
-        className="block h-1.5 flex-1 overflow-hidden rounded-full bg-muted"
+        className="block h-1.5 flex-1 overflow-hidden rounded-full bg-brand-muted"
       >
         <span className="block h-full" style={{ width: `${n}%` }}>
           <m.span
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: duration.slow, ease, delay }}
-            className="block h-full origin-left rounded-full bg-foreground/70 rtl:origin-right"
+            className="block h-full origin-left rounded-full bg-brand rtl:origin-right"
           />
         </span>
       </span>

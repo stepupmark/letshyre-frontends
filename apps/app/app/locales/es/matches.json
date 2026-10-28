@@ -11,12 +11,14 @@
   "columns": {
     "candidate": "Candidato",
     "match": "Coincidencia",
+    "unlock": "Desbloquear",
     "experience": "Experiencia"
   },
   "years_one": "{{count}} año",
   "years_many": "{{count}} años",
   "years_other": "{{count}} años",
   "unnamed": "Candidato sin nombre",
+  "unlockFor": "Desbloquear a {{name}}",
   "sortedNote": "Mejor coincidencia primero",
   "peek": {
     "why": "Por qué coincide",

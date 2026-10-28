@@ -152,13 +152,20 @@ export function UnlockPanel({
               className="flex flex-col gap-3"
             >
               <p className="text-muted-foreground">{t("panel.lead")}</p>
-              <ul className="flex flex-col divide-y rounded-md border">
+              <ul className="flex flex-col divide-y overflow-hidden rounded-md border">
                 {choices.map((choice) => {
                   const key = String(choice.id)
                   return (
                     <li key={key}>
-                      <label className="flex cursor-pointer items-center gap-3 px-3 py-2.5 has-disabled:cursor-default">
+                      <label
+                        data-selected={
+                          (!choice.unlocked && selected.has(key)) || undefined
+                        }
+                        data-done={choice.unlocked || undefined}
+                        className="flex cursor-pointer items-center gap-3 px-3 py-2.5 transition-colors hover:bg-muted/60 has-disabled:cursor-default data-done:hover:bg-transparent motion-reduce:transition-none data-selected:bg-brand-muted data-selected:hover:bg-brand-muted"
+                      >
                         <Checkbox
+                          className="size-5 border-muted-foreground/60 bg-background"
                           checked={choice.unlocked || selected.has(key)}
                           disabled={choice.unlocked || unlock.isPending}
                           onCheckedChange={() => {

@@ -70,7 +70,7 @@ function Overview({
             {title}
           </h2>
           <p className="flex items-baseline gap-2">
-            <span className="text-3xl font-semibold tracking-tight">
+            <span className="text-3xl font-semibold tracking-tight text-brand-text">
               <AnimatedNumber value={matched} locale={locale} from={0} />
             </span>
             {total != null && (
@@ -86,7 +86,7 @@ function Overview({
               <span
                 aria-hidden="true"
                 data-band={band}
-                className="size-2 rounded-full bg-muted-foreground/40 data-[band=partial]:bg-muted-foreground data-[band=strong]:bg-foreground"
+                className="size-2 rounded-full bg-brand/25 data-[band=partial]:bg-brand/60 data-[band=strong]:bg-brand"
               />
               <span className="text-muted-foreground tabular-nums">
                 {t(`range.${band}`)}
@@ -108,7 +108,7 @@ function Overview({
               initial={{ scaleX: 0, opacity: 0 }}
               animate={{ scaleX: 1, opacity: 1 }}
               transition={{ duration: duration.slow, ease, delay: i * 0.08 }}
-              className="block h-full origin-left rounded-full bg-muted-foreground/40 data-[band=partial]:bg-muted-foreground data-[band=strong]:bg-foreground rtl:origin-right"
+              className="block h-full origin-left rounded-full bg-brand/25 data-[band=partial]:bg-brand/60 data-[band=strong]:bg-brand rtl:origin-right"
             />
           </span>
         ))}

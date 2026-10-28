@@ -11,11 +11,13 @@
   "columns": {
     "candidate": "ഉദ്യോഗാർത്ഥി",
     "match": "മാച്ച്",
+    "unlock": "അൺലോക്ക്",
     "experience": "പരിചയം"
   },
   "years_one": "{{count}} വർഷം",
   "years_other": "{{count}} വർഷം",
   "unnamed": "പേരില്ലാത്ത ഉദ്യോഗാർത്ഥി",
+  "unlockFor": "{{name}}-നെ അൺലോക്ക് ചെയ്യുക",
   "sortedNote": "മികച്ച മാച്ച് ആദ്യം",
   "peek": {
     "why": "എന്തുകൊണ്ട് ഈ മാച്ച്",

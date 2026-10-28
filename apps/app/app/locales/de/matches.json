@@ -11,11 +11,13 @@
   "columns": {
     "candidate": "Kandidat",
     "match": "Match",
+    "unlock": "Freischalten",
     "experience": "Erfahrung"
   },
   "years_one": "{{count}} J.",
   "years_other": "{{count}} J.",
   "unnamed": "Unbenannter Kandidat",
+  "unlockFor": "{{name}} freischalten",
   "sortedNote": "Bester Match zuerst",
   "peek": {
     "why": "Warum dieser Match",

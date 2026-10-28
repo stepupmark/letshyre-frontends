@@ -11,12 +11,14 @@
   "columns": {
     "candidate": "Candidat",
     "match": "Correspondance",
+    "unlock": "Débloquer",
     "experience": "Expérience"
   },
   "years_one": "{{count}} an",
   "years_many": "{{count}} ans",
   "years_other": "{{count}} ans",
   "unnamed": "Candidat sans nom",
+  "unlockFor": "Débloquer {{name}}",
   "sortedNote": "Meilleure correspondance en premier",
   "peek": {
     "why": "Pourquoi cette correspondance",

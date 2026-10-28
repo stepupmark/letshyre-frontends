@@ -11,11 +11,13 @@
   "columns": {
     "candidate": "வேட்பாளர்",
     "match": "பொருத்தம்",
+    "unlock": "திற",
     "experience": "அனுபவம்"
   },
   "years_one": "{{count}} ஆண்டு",
   "years_other": "{{count}} ஆண்டுகள்",
   "unnamed": "பெயரில்லாத வேட்பாளர்",
+  "unlockFor": "{{name}}-ஐத் திற",
   "sortedNote": "சிறந்த பொருத்தம் முதலில்",
   "peek": {
     "why": "ஏன் இந்தப் பொருத்தம்",

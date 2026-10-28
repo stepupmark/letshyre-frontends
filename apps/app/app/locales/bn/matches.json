@@ -11,11 +11,13 @@
   "columns": {
     "candidate": "প্রার্থী",
     "match": "ম্যাচ",
+    "unlock": "আনলক করুন",
     "experience": "অভিজ্ঞতা"
   },
   "years_one": "{{count}} বছর",
   "years_other": "{{count}} বছর",
   "unnamed": "নামহীন প্রার্থী",
+  "unlockFor": "{{name}}-কে আনলক করুন",
   "sortedNote": "সেরা ম্যাচ আগে",
   "peek": {
     "why": "কেন এই ম্যাচ",

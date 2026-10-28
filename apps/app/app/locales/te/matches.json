@@ -11,11 +11,13 @@
   "columns": {
     "candidate": "అభ్యర్థి",
     "match": "మ్యాచ్",
+    "unlock": "అన్‌లాక్",
     "experience": "అనుభవం"
   },
   "years_one": "{{count}} సం.",
   "years_other": "{{count}} సం.",
   "unnamed": "పేరులేని అభ్యర్థి",
+  "unlockFor": "{{name}}ని అన్‌లాక్ చేయండి",
   "sortedNote": "ఉత్తమ మ్యాచ్ ముందు",
   "peek": {
     "why": "ఈ మ్యాచ్ ఎందుకు",

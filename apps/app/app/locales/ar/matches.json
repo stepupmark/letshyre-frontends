@@ -11,6 +11,7 @@
   "columns": {
     "candidate": "المرشح",
     "match": "التطابق",
+    "unlock": "فتح الملف",
     "experience": "الخبرة"
   },
   "years_zero": "أقل من سنة",
@@ -20,6 +21,7 @@
   "years_many": "{{count}} سنة",
   "years_other": "{{count}} سنة",
   "unnamed": "مرشح بلا اسم",
+  "unlockFor": "فتح ملف {{name}}",
   "sortedNote": "الأفضل تطابقًا أولًا",
   "peek": {
     "why": "سبب التطابق",

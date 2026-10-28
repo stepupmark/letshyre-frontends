@@ -11,11 +11,13 @@
   "columns": {
     "candidate": "Candidate",
     "match": "Match",
+    "unlock": "Unlock",
     "experience": "Experience"
   },
   "years_one": "{{count}} yr",
   "years_other": "{{count}} yrs",
   "unnamed": "Unnamed candidate",
+  "unlockFor": "Unlock {{name}}",
   "sortedNote": "Best match first",
   "peek": {
     "why": "Why this match",

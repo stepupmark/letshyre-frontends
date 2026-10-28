@@ -11,10 +11,12 @@
   "columns": {
     "candidate": "후보자",
     "match": "매칭",
+    "unlock": "잠금 해제",
     "experience": "경력"
   },
   "years_other": "{{count}}년",
   "unnamed": "이름 없는 후보자",
+  "unlockFor": "{{name}} 님 잠금 해제",
   "sortedNote": "매칭 높은 순",
   "peek": {
     "why": "매칭 이유",
