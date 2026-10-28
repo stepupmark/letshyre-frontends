@@ -75,9 +75,9 @@ export function ChapterPills({
   return (
     <nav
       aria-label={t("toc.label")}
-      className="scrollbar-none overflow-x-auto xl:hidden print:hidden"
+      className="no-scrollbar overflow-x-auto mask-r-from-85% xl:hidden rtl:mask-r-from-100% rtl:mask-l-from-85% print:hidden"
     >
-      <ol className="flex w-max gap-1.5">
+      <ol className="flex w-max gap-1.5 pe-12">
         {items.map((item) => (
           <li key={item.id}>
             <a

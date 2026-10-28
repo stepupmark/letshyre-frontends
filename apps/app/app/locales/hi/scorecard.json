@@ -17,6 +17,7 @@
   "summary": {
     "heading": "सारांश",
     "outOf": "/ 100",
+    "notScored": "स्कोर नहीं हुआ",
     "basedOn_one": "{{count}} जवाब दिए गए सवाल पर आधारित",
     "basedOn_other": "{{count}} जवाब दिए गए सवालों पर आधारित",
     "howScored": "इसका स्कोर कैसे बनता है?",

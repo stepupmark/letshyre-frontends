@@ -69,7 +69,12 @@ export function BackgroundCard({
       label: t("profile.projects"),
       icon: FolderGit2,
       count: projects?.length ?? 0,
-      content: <ProjectList projects={projects ?? []} />,
+      content: (
+        <ProjectList
+          projects={projects ?? []}
+          untitled={t("profile.untitled")}
+        />
+      ),
     },
     {
       key: "awards",

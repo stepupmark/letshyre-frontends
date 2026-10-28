@@ -17,6 +17,7 @@
   "summary": {
     "heading": "خلاصہ",
     "outOf": "/ 100",
+    "notScored": "اسکور نہیں ہوا",
     "basedOn_one": "{{count}} جواب دیے گئے سوال پر مبنی",
     "basedOn_other": "{{count}} جواب دیے گئے سوالوں پر مبنی",
     "howScored": "اس کا اسکور کیسے بنتا ہے؟",

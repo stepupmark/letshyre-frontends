@@ -18,6 +18,7 @@
   "summary": {
     "heading": "Synthèse",
     "outOf": "/ 100",
+    "notScored": "Non noté",
     "basedOn_one": "Basé sur {{count}} question répondue",
     "basedOn_many": "Basé sur {{count}} questions répondues",
     "basedOn_other": "Basé sur {{count}} questions répondues",

@@ -7,7 +7,7 @@ import {
 } from "@workspace/ui/components/accordion"
 import { Button } from "@workspace/ui/components/button"
 import { Check, X } from "lucide-react"
-import { useEffect, useState } from "react"
+import { useEffect, useEffectEvent, useRef, useState } from "react"
 import { flushSync } from "react-dom"
 
 import { QuestionText } from "@/components/question-text"
@@ -41,19 +41,34 @@ export function Answers({
   const [open, setOpen] = useState<string[]>([])
   const allOpen = all.length > 0 && all.every((id) => open.includes(id))
 
-  // printing shows every answer, not just the ones left open
-  useEffect(() => {
-    const expand = () => {
-      flushSync(() => {
-        onFilter(false)
-        setOpen(questions.map((_, i) => String(i)))
-      })
+  // a print shows every answer, then the reader gets their filter and open items back
+  const restore = useRef<(() => void) | null>(null)
+  const expand = useEffectEvent(() => {
+    const before = { onlyWrong, open }
+    restore.current = () => {
+      onFilter(before.onlyWrong)
+      setOpen(before.open)
     }
-    window.addEventListener("beforeprint", expand)
-    return () => {
-      window.removeEventListener("beforeprint", expand)
-    }
+    flushSync(() => {
+      onFilter(false)
+      setOpen(questions.map((_, i) => String(i)))
+    })
   })
+  useEffect(() => {
+    const onBefore = () => {
+      expand()
+    }
+    const onAfter = () => {
+      restore.current?.()
+      restore.current = null
+    }
+    window.addEventListener("beforeprint", onBefore)
+    window.addEventListener("afterprint", onAfter)
+    return () => {
+      window.removeEventListener("beforeprint", onBefore)
+      window.removeEventListener("afterprint", onAfter)
+    }
+  }, [])
 
   return (
     <Chapter
@@ -174,16 +189,16 @@ export function Answers({
                     <QuestionText markdown={q.question_text} />
                   )}
                   <div className="flex flex-col gap-2">
-                    <h3 className="text-xs font-medium text-muted-foreground">
+                    <h4 className="text-xs font-medium text-muted-foreground">
                       {t("answers.answer")}
-                    </h3>
+                    </h4>
                     <Answer q={q} own={own} />
                   </div>
                   {q.feedback && (
                     <div className="flex flex-col gap-1.5 rounded-lg bg-muted/60 p-3">
-                      <h3 className="text-xs font-medium text-brand-text">
+                      <h4 className="text-xs font-medium text-brand-text">
                         {t("answers.assessment")}
-                      </h3>
+                      </h4>
                       <p className="max-w-prose text-pretty">{q.feedback}</p>
                     </div>
                   )}

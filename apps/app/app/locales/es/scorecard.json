@@ -18,6 +18,7 @@
   "summary": {
     "heading": "Resumen",
     "outOf": "/ 100",
+    "notScored": "Sin puntuar",
     "basedOn_one": "Basado en {{count}} pregunta respondida",
     "basedOn_many": "Basado en {{count}} preguntas respondidas",
     "basedOn_other": "Basado en {{count}} preguntas respondidas",

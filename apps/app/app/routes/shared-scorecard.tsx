@@ -46,8 +46,10 @@ export default function SharedScorecard({ params }: Route.ComponentProps) {
                 })
               : t("provenance.private")}
           </p>
-          <ScorecardView report={report} />
-          <SharedByFooter company={report.shared_by_company_name} />
+          <ScorecardView
+            report={report}
+            footer={<SharedByFooter company={report.shared_by_company_name} />}
+          />
         </div>
       ) : query.isError ? (
         <LinkUnavailable

@@ -44,7 +44,6 @@ type Named =
   | string
   | { name?: string | null; title?: string | null; issuer?: string | null }
 
-/** Skills and certifications arrive as plain names or as objects. */
 export const titleOf = (item: Named) =>
   typeof item === "string"
     ? { title: item, issuer: null }
@@ -56,3 +55,24 @@ export const skillsOf = (skills: Named[] | null | undefined) => [
     (skills ?? []).map((skill) => titleOf(skill).title).filter(Boolean)
   ),
 ]
+
+const YEARS = /^(\d+(?:\.\d+)?)\s*(?:years?|yrs?)$/i
+
+// resume parsing sends tenure as decimal years ("0.11 years"); anything else is the candidate's own words
+export function durationOf(raw: string | null | undefined, locale: string) {
+  const text = raw?.trim()
+  if (!text) return null
+  const match = YEARS.exec(text)
+  if (!match) return text
+  const years = Number(match[1])
+  const unit = (unit: "month" | "year", n: number) =>
+    new Intl.NumberFormat(locale, {
+      style: "unit",
+      unit,
+      unitDisplay: "long",
+      maximumFractionDigits: 1,
+    }).format(n)
+  return years < 1
+    ? unit("month", Math.max(1, Math.round(years * 12)))
+    : unit("year", Math.round(years * 10) / 10)
+}

@@ -17,6 +17,7 @@
   "summary": {
     "heading": "Samenvatting",
     "outOf": "/ 100",
+    "notScored": "Geen score",
     "basedOn_one": "Gebaseerd op {{count}} beantwoorde vraag",
     "basedOn_other": "Gebaseerd op {{count}} beantwoorde vragen",
     "howScored": "Hoe wordt dit gescoord?",

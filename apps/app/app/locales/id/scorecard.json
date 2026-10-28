@@ -16,6 +16,7 @@
   "summary": {
     "heading": "Ringkasan",
     "outOf": "/ 100",
+    "notScored": "Belum dinilai",
     "basedOn_other": "Berdasarkan {{count}} pertanyaan yang dijawab",
     "howScored": "Bagaimana penilaiannya?",
     "howScoredBody": "Pewawancara AI menilai setiap jawaban terhadap posisi, lalu memeriksa kejelasan, relevansi, dan kedalamannya. Gunakan skor sebagai titik awal keputusan Anda, bukan pengganti keputusan.",

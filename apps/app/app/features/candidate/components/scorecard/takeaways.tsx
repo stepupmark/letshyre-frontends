@@ -1,5 +1,5 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { ArrowDown, Check, Crosshair, Search } from "lucide-react"
+import { ArrowDown, Check, Crosshair, ScanEye, Search } from "lucide-react"
 import * as m from "motion/react-m"
 import type { ReactNode } from "react"
 
@@ -8,6 +8,15 @@ import { bandOf } from "@/lib/score-band"
 
 import { takeaways } from "../../lib/scorecard"
 import type { Scorecard } from "../../schemas/scorecard.schema"
+import { SubHeading } from "./sub-heading"
+
+interface Tile {
+  key: string
+  icon: ReactNode
+  label: string
+  body: ReactNode
+  action?: ReactNode
+}
 
 export function Takeaways({
   report,
@@ -21,14 +30,16 @@ export function Takeaways({
   const { t } = useTranslation(["scorecard", "common"])
   const { strength, gap, match } = takeaways(report)
 
-  const tiles = [
-    strength && {
+  const tiles: Tile[] = []
+  if (strength)
+    tiles.push({
       key: "strength",
       icon: <Check className="text-success" />,
       label: t("takeaways.strength"),
       body: strength,
-    },
-    gap && {
+    })
+  if (gap)
+    tiles.push({
       key: "gap",
       icon: <Search className="text-warning" />,
       label: own ? t("takeaways.improve") : t("takeaways.probe"),
@@ -46,8 +57,9 @@ export function Takeaways({
           />
         </button>
       ),
-    },
-    match !== null && {
+    })
+  if (match !== null)
+    tiles.push({
       key: "match",
       icon: <Crosshair className="text-brand-text" />,
       label: t("takeaways.match"),
@@ -59,42 +71,33 @@ export function Takeaways({
           {t(`common:band.${bandOf(match)}`)}
         </span>
       ),
-    },
-  ].filter(Boolean) as {
-    key: string
-    icon: ReactNode
-    label: string
-    body: ReactNode
-    action?: ReactNode
-  }[]
+    })
 
   if (tiles.length === 0) return null
 
   return (
     <div className="flex flex-col gap-3">
-      <h2 className="text-xs font-medium text-muted-foreground">
+      <SubHeading icon={ScanEye} as="h2">
         {t("takeaways.heading")}
-      </h2>
+      </SubHeading>
       <ul className="grid gap-3 sm:grid-cols-3">
         {tiles.map((tile, i) => (
           <m.li
             key={tile.key}
-            initial={{ opacity: 0, y: 4 }}
+            initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              duration: duration.base,
+              duration: duration.slow,
               ease,
-              delay: 0.2 + i * 0.04,
+              delay: 0.2 + i * 0.06,
             }}
-            className="flex flex-col gap-2 rounded-lg border p-4 print:transform-none! print:opacity-100!"
+            className="flex flex-col gap-2 rounded-lg border p-4 transition-[translate,border-color] hover:-translate-y-0.5 hover:border-brand/40 motion-reduce:transition-none motion-reduce:hover:translate-y-0 print:transform-none! print:opacity-100!"
           >
             <span className="flex items-center gap-2 text-xs font-medium text-muted-foreground [&_svg]:size-4 [&_svg]:shrink-0">
               {tile.icon}
               {tile.label}
             </span>
-            <span className="line-clamp-3 text-sm text-pretty">
-              {tile.body}
-            </span>
+            <span className="text-sm text-pretty">{tile.body}</span>
             {tile.action}
           </m.li>
         ))}

@@ -7,8 +7,9 @@ export function ReportSkeleton() {
     <div
       aria-busy="true"
       aria-label={t("state.loading")}
-      className="flex flex-col gap-14 xl:ps-60"
+      className="grid gap-14 xl:grid-cols-[12rem_minmax(0,1fr)] xl:gap-x-12"
     >
+      <div aria-hidden="true" className="hidden xl:row-span-2 xl:block" />
       <div className="flex flex-col gap-8 rounded-2xl border p-5 sm:p-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-4">

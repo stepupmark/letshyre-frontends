@@ -7,7 +7,7 @@ export function SharedByFooter({ company }: { company?: string | null }) {
   const { t } = useTranslation(["scorecard", "common"])
 
   return (
-    <aside className="mt-10 flex flex-col gap-5 rounded-2xl border p-5 sm:flex-row sm:items-center sm:p-6 xl:ms-60 print:hidden">
+    <aside className="flex flex-col gap-5 rounded-2xl border p-5 sm:flex-row sm:items-center sm:p-6 print:hidden">
       <Handover />
       <div className="flex min-w-0 flex-1 flex-col gap-1">
         <p className="font-semibold text-balance text-brand-text">

@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest"
 
-import { addressOf, lpaOf, noticeOf, phoneOf } from "./profile-format"
+import {
+  addressOf,
+  durationOf,
+  lpaOf,
+  noticeOf,
+  phoneOf,
+} from "./profile-format"
 
 describe("profile formatting", () => {
   it("adds India's code only to bare numbers", () => {
@@ -33,5 +39,13 @@ describe("profile formatting", () => {
       addressOf({ city: "Hyderabad, India", state: "Hyderabad, India" })
     ).toBe("Hyderabad, India")
     expect(addressOf("  ")).toBeNull()
+  })
+
+  it("turns decimal years into months or years and leaves real dates alone", () => {
+    expect(durationOf("0.11 years", "en")).toBe("1 month")
+    expect(durationOf("0.02 yrs", "en")).toBe("1 month")
+    expect(durationOf("2.46 Years", "en")).toBe("2.5 years")
+    expect(durationOf("Jan 2021 – Present", "en")).toBe("Jan 2021 – Present")
+    expect(durationOf("  ", "en")).toBeNull()
   })
 })

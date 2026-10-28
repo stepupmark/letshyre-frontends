@@ -25,10 +25,12 @@ export function ScorecardView({
   report,
   viewer = "employer",
   actions,
+  footer,
 }: {
   report: Scorecard
   viewer?: Viewer
   actions?: ReactNode
+  footer?: ReactNode
 }) {
   const own = viewer === "candidate"
   const { t } = useTranslation("scorecard")
@@ -131,6 +133,7 @@ export function ScorecardView({
           onlyWrong={onlyWrong}
           onFilter={setOnlyWrong}
         />
+        {footer}
       </article>
     </div>
   )

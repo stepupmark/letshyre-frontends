@@ -17,6 +17,7 @@
   "summary": {
     "heading": "Summary",
     "outOf": "/ 100",
+    "notScored": "Not scored",
     "basedOn_one": "Based on {{count}} answered question",
     "basedOn_other": "Based on {{count}} answered questions",
     "howScored": "How is this scored?",

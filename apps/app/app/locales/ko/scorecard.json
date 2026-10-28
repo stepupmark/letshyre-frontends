@@ -16,6 +16,7 @@
   "summary": {
     "heading": "요약",
     "outOf": "/ 100",
+    "notScored": "미채점",
     "basedOn_other": "답변한 질문 {{count}}개 기준",
     "howScored": "어떻게 채점하나요?",
     "howScoredBody": "AI 면접관은 각 답변을 직무에 비추어 채점한 뒤 명확성, 관련성, 깊이를 확인해요. 점수는 결정의 출발점으로 쓰고, 결정을 대신하지는 마세요.",

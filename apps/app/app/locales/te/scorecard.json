@@ -17,6 +17,7 @@
   "summary": {
     "heading": "సారాంశం",
     "outOf": "/ 100",
+    "notScored": "స్కోర్ కాలేదు",
     "basedOn_one": "జవాబిచ్చిన {{count}} ప్రశ్న ఆధారంగా",
     "basedOn_other": "జవాబిచ్చిన {{count}} ప్రశ్నల ఆధారంగా",
     "howScored": "దీనికి స్కోర్ ఎలా ఇస్తారు?",

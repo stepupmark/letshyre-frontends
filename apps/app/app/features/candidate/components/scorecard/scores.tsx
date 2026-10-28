@@ -1,4 +1,5 @@
 import { useTranslation } from "@workspace/i18n/react"
+import { MessageSquareQuote } from "lucide-react"
 import * as m from "motion/react-m"
 
 import { Meter } from "@/components/meter"
@@ -7,6 +8,7 @@ import { duration, ease } from "@/lib/motion"
 
 import { scoredSections } from "../../lib/scorecard"
 import type { Scorecard } from "../../schemas/scorecard.schema"
+import { SubHeading } from "./sub-heading"
 
 const METRICS = [
   ["clarity", "clarity"],
@@ -45,10 +47,8 @@ export function JobFit({ match }: { match: Match }) {
         </ul>
       </div>
       {match.rationale && (
-        <div className="flex flex-col gap-1.5 text-sm">
-          <h3 className="text-xs font-medium text-muted-foreground">
-            {t("match.why")}
-          </h3>
+        <div className="flex flex-col gap-3 text-sm">
+          <SubHeading icon={MessageSquareQuote}>{t("match.why")}</SubHeading>
           <p className="max-w-prose text-pretty">{match.rationale}</p>
         </div>
       )}
@@ -79,12 +79,15 @@ export function QuestionTypes({ report }: { report: Scorecard }) {
   const summary = report.category_scores?.section_summary
 
   return (
-    <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+    <ul className="grid grid-cols-2 gap-3 sm:grid-cols-[repeat(auto-fit,minmax(9rem,1fr))]">
       {scoredSections(report).map((key, i) => {
         const section = summary?.[key]
         const score = Math.min(100, Math.max(0, section?.section_score ?? 0))
         return (
-          <li key={key} className="flex flex-col gap-3 rounded-xl border p-4">
+          <li
+            key={key}
+            className="flex flex-col gap-3 rounded-xl border p-4 transition-[translate,border-color] hover:-translate-y-0.5 hover:border-brand/40 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+          >
             <span className="text-xs font-medium text-muted-foreground">
               {t(`types.${key}`)}
             </span>

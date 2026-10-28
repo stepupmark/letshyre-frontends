@@ -34,7 +34,7 @@ export function Verdict({
 }) {
   const { t } = useTranslation(["scorecard", "common"])
   const locale = useLocale()
-  const score = report.overall_score ?? 0
+  const score = report.overall_score
   const name = report.candidate_name?.trim()
     ? report.candidate_name.trim()
     : t("header.unnamed")
@@ -94,20 +94,32 @@ export function Verdict({
 
         <div className="flex flex-col items-center gap-3 md:pe-2">
           <ScoreRing
-            score={score}
-            label={t("ring.label", {
-              score,
-              band: t(`common:interviewBand.${bandOf(score)}`),
-            })}
+            score={score ?? 0}
+            label={
+              score === null
+                ? t("summary.notScored")
+                : t("ring.label", {
+                    score,
+                    band: t(`common:interviewBand.${bandOf(score)}`),
+                  })
+            }
           >
-            <span className="text-4xl font-semibold tracking-tight text-brand-text">
-              <AnimatedNumber value={score} locale={locale} />
-            </span>
-            <span className="text-xs text-muted-foreground">
-              {t("summary.outOf")}
-            </span>
+            {score === null ? (
+              <span className="text-sm font-medium text-muted-foreground">
+                {t("summary.notScored")}
+              </span>
+            ) : (
+              <>
+                <span className="text-4xl font-semibold tracking-tight text-brand-text">
+                  <AnimatedNumber value={score} locale={locale} from={0} />
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  {t("summary.outOf")}
+                </span>
+              </>
+            )}
           </ScoreRing>
-          <ScoreBand score={score} of="interview" />
+          {score !== null && <ScoreBand score={score} of="interview" />}
           <p className="text-xs text-muted-foreground">
             {t("summary.basedOn", { count: answeredCount })}
           </p>

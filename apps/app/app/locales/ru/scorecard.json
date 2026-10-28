@@ -19,6 +19,7 @@
   "summary": {
     "heading": "Итог",
     "outOf": "/ 100",
+    "notScored": "Без оценки",
     "basedOn_one": "На основе {{count}} отвеченного вопроса",
     "basedOn_few": "На основе {{count}} отвеченных вопросов",
     "basedOn_many": "На основе {{count}} отвеченных вопросов",
