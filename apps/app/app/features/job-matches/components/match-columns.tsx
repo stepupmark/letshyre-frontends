@@ -26,7 +26,7 @@ export function useMatchColumns(open: (id: string) => void) {
             onClick={() => {
               open(row.original.candidate_id)
             }}
-            className="group flex w-full max-w-64 items-center gap-3 rounded-sm text-start outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="group flex w-full max-w-72 min-w-56 items-center gap-4 rounded-sm text-start outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
           >
             <MatchPerson match={row.original} />
           </button>
