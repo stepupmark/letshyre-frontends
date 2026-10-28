@@ -1,6 +1,5 @@
 {
   "title": "Kartu skor wawancara",
-  "print": "Cetak",
   "provenance": {
     "sharedBy": "Dibagikan secara pribadi oleh {{company}}. Tautan ini punya batas tayangan dan tanggal kedaluwarsa, jadi mohon jangan diteruskan.",
     "private": "Dibagikan secara pribadi. Tautan ini punya batas tayangan dan tanggal kedaluwarsa, jadi mohon jangan diteruskan."
@@ -31,7 +30,8 @@
     "probe": "Perlu digali",
     "improve": "Perlu ditingkatkan",
     "match": "Kecocokan pekerjaan",
-    "seeWrong": "Lihat jawaban yang salah"
+    "seeWrong": "Lihat jawaban yang salah",
+    "viewFit": "Lihat kecocokan"
   },
   "chapters": {
     "match": "Seberapa cocok profil dan jawaban dengan peran ini.",
@@ -95,7 +95,10 @@
     "awards": "Sertifikasi dan pencapaian",
     "links": "CV dan tautan",
     "resume": "Resume",
-    "untitled": "Proyek tanpa judul"
+    "untitled": "Proyek tanpa judul",
+    "more": "+{{count}} lagi",
+    "showLess": "Tampilkan lebih sedikit",
+    "showAll": "tampilkan semua keahlian"
   },
   "answers": {
     "heading": "Jawaban",

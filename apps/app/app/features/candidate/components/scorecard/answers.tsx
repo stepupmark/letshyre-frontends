@@ -19,13 +19,11 @@ import { Answer } from "./answer"
 import { Chapter } from "./chapter"
 
 export function Answers({
-  number,
   questions,
   own,
   onlyWrong,
   onFilter,
 }: {
-  number: number
   questions: Question[]
   own: boolean
   onlyWrong: boolean
@@ -73,7 +71,6 @@ export function Answers({
   return (
     <Chapter
       id="answers"
-      number={number}
       title={t("answers.heading")}
       hint={t("chapters.answers")}
       action={

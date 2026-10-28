@@ -11,7 +11,7 @@ export function ReportSkeleton() {
     >
       <div aria-hidden="true" className="hidden xl:row-span-2 xl:block" />
       <div className="flex flex-col gap-8 rounded-2xl border p-5 sm:p-8">
-        <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <div className="flex items-center gap-4">
             <Skeleton className="size-16 rounded-full" />
             <div className="flex flex-col gap-2">
@@ -19,7 +19,13 @@ export function ReportSkeleton() {
               <Skeleton className="h-4 w-72 max-w-full" />
             </div>
           </div>
-          <Skeleton className="size-40 self-center rounded-full" />
+          <div className="flex items-center gap-4">
+            <Skeleton className="size-20 rounded-full sm:size-28" />
+            <div className="flex flex-col gap-2">
+              <Skeleton className="h-6 w-28" />
+              <Skeleton className="h-4 w-40" />
+            </div>
+          </div>
         </div>
         <div className="grid gap-3 sm:grid-cols-3">
           {[0, 1, 2].map((i) => (

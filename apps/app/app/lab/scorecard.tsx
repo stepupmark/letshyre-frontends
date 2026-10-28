@@ -11,7 +11,7 @@ import {
   CollapsibleTrigger,
 } from "@workspace/ui/components/collapsible"
 import { Skeleton } from "@workspace/ui/components/skeleton"
-import { ChevronDown, Link2, Play, Printer } from "lucide-react"
+import { ChevronDown, Link2, Play } from "lucide-react"
 import * as m from "motion/react-m"
 import { toast } from "sonner"
 
@@ -42,25 +42,13 @@ export default function Scorecard() {
         title={scorecard.candidate_name}
         description={`${t("scorecard.title")} · ${scorecard.candidate_role} · ${date} · ${scorecard.questions.length} questions · ${scorecard.duration_minutes} min`}
         actions={
-          <>
-            <Button
-              variant="outline"
-              onClick={() => toast("Share link copied. It expires in 14 days.")}
-            >
-              <Link2 />
-              Share
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              aria-label="Print"
-              onClick={() => {
-                window.print()
-              }}
-            >
-              <Printer />
-            </Button>
-          </>
+          <Button
+            variant="outline"
+            onClick={() => toast("Share link copied. It expires in 14 days.")}
+          >
+            <Link2 />
+            Share
+          </Button>
         }
       />
 

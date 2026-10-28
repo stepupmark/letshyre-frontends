@@ -1,4 +1,5 @@
 import { useLocale } from "@workspace/i18n/react"
+import { cn } from "@workspace/ui/lib/utils"
 import {
   Award,
   BriefcaseBusiness,
@@ -8,7 +9,7 @@ import {
   type LucideIcon,
 } from "lucide-react"
 import * as m from "motion/react-m"
-import type { ReactNode } from "react"
+import { useId, useState, type ReactNode } from "react"
 
 import { duration, ease } from "@/lib/motion"
 
@@ -114,7 +115,7 @@ export function JobList({ jobs }: { jobs: Job[] }) {
           meta={durationOf(job.duration, locale)}
         >
           {job.description && (
-            <p className="mt-2 max-w-prose text-sm text-pretty text-muted-foreground">
+            <p className="mt-2 text-sm text-pretty text-muted-foreground">
               {job.description}
             </p>
           )}
@@ -162,7 +163,7 @@ export function ProjectList({
             title={title ?? untitled}
           >
             {project.description && (
-              <p className="mt-1 max-w-prose text-sm text-pretty text-muted-foreground">
+              <p className="mt-1 text-sm text-pretty text-muted-foreground">
                 {project.description}
               </p>
             )}
@@ -189,9 +190,22 @@ export function AwardList({ awards }: { awards: Named[] }) {
   )
 }
 
-export function SkillList({ skills }: { skills: string[] }) {
+export function SkillList({
+  skills,
+  limit = Infinity,
+  labels,
+}: {
+  skills: string[]
+  limit?: number
+  labels?: { more: string; less: string; all: string }
+}) {
+  const id = useId()
+  const [expanded, setExpanded] = useState(false)
+  const hidden = skills.length - limit
+  const toggles = hidden > 0 && labels
+
   return (
-    <ul className="flex flex-wrap gap-2">
+    <ul id={id} className="flex flex-wrap gap-2">
       {skills.map((skill, i) => (
         <m.li
           key={skill}
@@ -201,15 +215,34 @@ export function SkillList({ skills }: { skills: string[] }) {
           transition={{
             duration: duration.base,
             ease,
-            delay: Math.min(i, 10) * 0.03,
+            delay: Math.min(i < limit ? i : i - limit, 10) * 0.03,
           }}
-          className="print:transform-none! print:opacity-100!"
+          className={cn(
+            "print:transform-none! print:opacity-100!",
+            toggles && i >= limit && !expanded && "hidden print:block"
+          )}
         >
           <span className="inline-flex items-center rounded-lg border bg-background px-3 py-1.5 text-sm font-medium transition-colors hover:border-brand hover:text-brand-text">
             {skill}
           </span>
         </m.li>
       ))}
+      {toggles && (
+        <li className="print:hidden">
+          <button
+            type="button"
+            aria-expanded={expanded}
+            aria-controls={id}
+            onClick={() => {
+              setExpanded(!expanded)
+            }}
+            className="inline-flex items-center rounded-lg border border-dashed border-brand/40 px-3 py-1.5 text-sm font-medium text-brand-text transition-colors outline-none hover:border-brand hover:bg-brand-muted focus-visible:ring-3 focus-visible:ring-ring/50"
+          >
+            {expanded ? labels.less : labels.more}
+            {!expanded && <span className="sr-only">, {labels.all}</span>}
+          </button>
+        </li>
+      )}
     </ul>
   )
 }

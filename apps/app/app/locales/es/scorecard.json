@@ -1,6 +1,5 @@
 {
   "title": "Ficha de evaluación de la entrevista",
-  "print": "Imprimir",
   "provenance": {
     "sharedBy": "Compartida en privado por {{company}}. El enlace tiene un límite de visitas y una fecha de caducidad, así que no lo reenvíe.",
     "private": "Compartida en privado. El enlace tiene un límite de visitas y una fecha de caducidad, así que no lo reenvíe."
@@ -35,7 +34,8 @@
     "probe": "Vale la pena indagar",
     "improve": "Para mejorar",
     "match": "Encaje con el puesto",
-    "seeWrong": "Ver respuestas incorrectas"
+    "seeWrong": "Ver respuestas incorrectas",
+    "viewFit": "Ver encaje"
   },
   "chapters": {
     "match": "Cuánto encajan el perfil y las respuestas con este puesto.",
@@ -101,7 +101,10 @@
     "awards": "Certificaciones y logros",
     "links": "Currículum y enlaces",
     "resume": "Currículum",
-    "untitled": "Proyecto sin título"
+    "untitled": "Proyecto sin título",
+    "more": "+{{count}} más",
+    "showLess": "Ver menos",
+    "showAll": "ver todas las habilidades"
   },
   "answers": {
     "heading": "Respuestas",

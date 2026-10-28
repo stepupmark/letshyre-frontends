@@ -1,6 +1,5 @@
 {
   "title": "Avaliação da entrevista",
-  "print": "Imprimir",
   "provenance": {
     "sharedBy": "Compartilhada em particular por {{company}}. O link tem limite de visualizações e data de expiração, então não o encaminhe.",
     "private": "Compartilhada em particular. O link tem limite de visualizações e data de expiração, então não o encaminhe."
@@ -35,7 +34,8 @@
     "probe": "Vale aprofundar",
     "improve": "Para melhorar",
     "match": "Compatibilidade com a vaga",
-    "seeWrong": "Ver respostas incorretas"
+    "seeWrong": "Ver respostas incorretas",
+    "viewFit": "Ver adequação"
   },
   "chapters": {
     "match": "O quanto o perfil e as respostas se encaixam nesta vaga.",
@@ -101,7 +101,10 @@
     "awards": "Certificações e conquistas",
     "links": "Currículo e links",
     "resume": "Currículo",
-    "untitled": "Projeto sem título"
+    "untitled": "Projeto sem título",
+    "more": "+{{count}} mais",
+    "showLess": "Mostrar menos",
+    "showAll": "mostrar todas as habilidades"
   },
   "answers": {
     "heading": "Respostas",

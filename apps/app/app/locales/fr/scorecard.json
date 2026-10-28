@@ -1,6 +1,5 @@
 {
   "title": "Grille d'entretien",
-  "print": "Imprimer",
   "provenance": {
     "sharedBy": "Partagée en privé par {{company}}. Le lien a une limite de vues et une date d'expiration, merci de ne pas le transférer.",
     "private": "Partagée en privé. Le lien a une limite de vues et une date d'expiration, merci de ne pas le transférer."
@@ -35,7 +34,8 @@
     "probe": "À approfondir",
     "improve": "À travailler",
     "match": "Adéquation au poste",
-    "seeWrong": "Voir les réponses incorrectes"
+    "seeWrong": "Voir les réponses incorrectes",
+    "viewFit": "Voir l’adéquation"
   },
   "chapters": {
     "match": "Dans quelle mesure le profil et les réponses correspondent à ce poste.",
@@ -101,7 +101,10 @@
     "awards": "Certifications et réalisations",
     "links": "CV et liens",
     "resume": "CV",
-    "untitled": "Projet sans titre"
+    "untitled": "Projet sans titre",
+    "more": "+{{count}} de plus",
+    "showLess": "Voir moins",
+    "showAll": "voir toutes les compétences"
   },
   "answers": {
     "heading": "Réponses",

@@ -29,7 +29,7 @@ export function ChapterRail({
         {t("toc.label")}
       </p>
       <ol className="flex flex-col border-s">
-        {items.map((item, i) => {
+        {items.map((item) => {
           const current = item.id === active
           return (
             <li key={item.id} className="relative">
@@ -44,15 +44,12 @@ export function ChapterRail({
                 href={`#${item.id}`}
                 aria-current={current ? "location" : undefined}
                 className={cn(
-                  "flex items-baseline gap-2 rounded-e-md py-1.5 ps-3 pe-2 text-sm transition-colors outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
+                  "flex rounded-e-md py-1.5 ps-3 pe-2 text-sm transition-colors outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50",
                   current
                     ? "font-medium text-brand-text"
                     : "text-muted-foreground"
                 )}
               >
-                <span className="text-xs tabular-nums">
-                  {String(i).padStart(2, "0")}
-                </span>
                 {item.label}
               </a>
             </li>

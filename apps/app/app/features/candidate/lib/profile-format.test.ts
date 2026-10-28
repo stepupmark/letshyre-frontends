@@ -6,6 +6,7 @@ import {
   lpaOf,
   noticeOf,
   phoneOf,
+  placeOf,
 } from "./profile-format"
 
 describe("profile formatting", () => {
@@ -47,5 +48,12 @@ describe("profile formatting", () => {
     expect(durationOf("2.46 Years", "en")).toBe("2.5 years")
     expect(durationOf("Jan 2021 – Present", "en")).toBe("Jan 2021 – Present")
     expect(durationOf("  ", "en")).toBeNull()
+  })
+
+  it("spaces out commas in a typed location", () => {
+    expect(placeOf("Kondapur,Hyderabad ,  Telangana")).toBe(
+      "Kondapur, Hyderabad, Telangana"
+    )
+    expect(placeOf(" ")).toBeNull()
   })
 })

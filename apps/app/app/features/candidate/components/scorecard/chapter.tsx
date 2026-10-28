@@ -7,14 +7,12 @@ import { ChapterGlyph, type ChapterId } from "../art/chapter-glyphs"
 
 export function Chapter({
   id,
-  number,
   title,
   hint,
   action,
   children,
 }: {
   id: ChapterId
-  number: number
   title: string
   hint?: string
   action?: ReactNode
@@ -38,11 +36,8 @@ export function Chapter({
           <h2
             id={`${id}-title`}
             tabIndex={-1}
-            className="flex items-baseline gap-2 text-lg font-semibold tracking-tight text-balance text-brand-text outline-none"
+            className="text-lg font-semibold tracking-tight text-balance text-brand-text outline-none"
           >
-            <span className="text-sm font-medium text-muted-foreground tabular-nums">
-              {String(number).padStart(2, "0")}
-            </span>
             {title}
           </h2>
           {hint && (

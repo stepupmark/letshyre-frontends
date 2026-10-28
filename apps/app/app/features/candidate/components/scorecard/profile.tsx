@@ -57,7 +57,15 @@ export function Profile({ report }: { report: Scorecard }) {
     <div className="flex flex-col divide-y rounded-2xl border">
       {skills.length > 0 && (
         <Group icon={Sparkles} title={t("profile.skills")}>
-          <SkillList skills={skills} />
+          <SkillList
+            skills={skills}
+            limit={12}
+            labels={{
+              more: t("profile.more", { count: skills.length - 12 }),
+              less: t("profile.showLess"),
+              all: t("profile.showAll"),
+            }}
+          />
         </Group>
       )}
       {hasItems(report.candidate_education) && (

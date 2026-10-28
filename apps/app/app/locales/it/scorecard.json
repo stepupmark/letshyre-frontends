@@ -1,6 +1,5 @@
 {
   "title": "Scheda di valutazione del colloquio",
-  "print": "Stampa",
   "provenance": {
     "sharedBy": "Condivisa privatamente da {{company}}. Il link ha un limite di visualizzazioni e una scadenza, quindi non inoltrarlo.",
     "private": "Condivisa privatamente. Il link ha un limite di visualizzazioni e una scadenza, quindi non inoltrarlo."
@@ -35,7 +34,8 @@
     "probe": "Da approfondire",
     "improve": "Su cui lavorare",
     "match": "Corrispondenza con il ruolo",
-    "seeWrong": "Vedi le risposte errate"
+    "seeWrong": "Vedi le risposte errate",
+    "viewFit": "Vedi idoneità"
   },
   "chapters": {
     "match": "Quanto profilo e risposte corrispondono a questo ruolo.",
@@ -101,7 +101,10 @@
     "awards": "Certificazioni e risultati",
     "links": "Curriculum e link",
     "resume": "Curriculum",
-    "untitled": "Progetto senza titolo"
+    "untitled": "Progetto senza titolo",
+    "more": "+{{count}} altre",
+    "showLess": "Mostra meno",
+    "showAll": "mostra tutte le competenze"
   },
   "answers": {
     "heading": "Risposte",

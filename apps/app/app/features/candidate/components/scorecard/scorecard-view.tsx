@@ -114,11 +114,10 @@ export function ScorecardView({
           <ChapterPills items={rail} active={active} />
         </div>
 
-        {chapters.map((chapter, i) => (
+        {chapters.map((chapter) => (
           <Chapter
             key={chapter.id}
             id={chapter.id}
-            number={i + 1}
             title={chapter.title}
             hint={t(`chapters.${chapter.id}`)}
           >
@@ -127,7 +126,6 @@ export function ScorecardView({
         ))}
 
         <Answers
-          number={chapters.length + 1}
           questions={questions}
           own={own}
           onlyWrong={onlyWrong}

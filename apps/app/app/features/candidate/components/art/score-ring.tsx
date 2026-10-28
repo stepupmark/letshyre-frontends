@@ -1,3 +1,4 @@
+import { cn } from "@workspace/ui/lib/utils"
 import type { CSSProperties, ReactNode } from "react"
 
 const R = 52
@@ -7,9 +8,13 @@ const TICKS = Array.from({ length: 10 }, (_, i) => i * 36)
 export function ScoreRing({
   score,
   label,
+  tone = "brand",
+  className,
   children,
 }: {
   score: number
+  tone?: "brand" | "success" | "warning" | "danger"
+  className?: string
   label: string
   children?: ReactNode
 }) {
@@ -17,7 +22,11 @@ export function ScoreRing({
   const dash = (clamped / 100) * C
 
   return (
-    <div role="img" aria-label={label} className="relative size-40 shrink-0">
+    <div
+      role="img"
+      aria-label={label}
+      className={cn("relative size-40 shrink-0", className)}
+    >
       <svg viewBox="0 0 120 120" aria-hidden className="size-full -rotate-90">
         <circle
           cx={60}
@@ -46,7 +55,8 @@ export function ScoreRing({
           strokeLinecap="round"
           strokeDasharray={`${dash} ${C}`}
           style={{ "--ring": dash } as CSSProperties}
-          className="ring-fill fill-none stroke-brand print:animate-none"
+          data-tone={tone}
+          className="ring-fill fill-none stroke-brand data-[tone=danger]:stroke-danger data-[tone=success]:stroke-success data-[tone=warning]:stroke-warning print:animate-none"
         />
       </svg>
       <div

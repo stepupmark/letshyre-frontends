@@ -1,5 +1,12 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { ArrowDown, Check, Crosshair, ScanEye, Search } from "lucide-react"
+import {
+  ArrowDown,
+  ArrowRight,
+  Check,
+  Crosshair,
+  ScanEye,
+  Search,
+} from "lucide-react"
 import * as m from "motion/react-m"
 import type { ReactNode } from "react"
 
@@ -70,6 +77,18 @@ export function Takeaways({
           </span>
           {t(`common:band.${bandOf(match)}`)}
         </span>
+      ),
+      action: report.ai_match && (
+        <a
+          href="#match"
+          className="group/fit mt-auto flex min-h-9 items-center gap-1.5 self-start rounded-md text-xs font-medium text-brand-text underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50 print:hidden"
+        >
+          {t("takeaways.viewFit")}
+          <ArrowRight
+            aria-hidden
+            className="size-3.5 transition-transform group-hover/fit:translate-x-0.5 motion-reduce:transition-none rtl:-scale-x-100 rtl:group-hover/fit:-translate-x-0.5"
+          />
+        </a>
       ),
     })
 

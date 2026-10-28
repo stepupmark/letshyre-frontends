@@ -1,6 +1,5 @@
 {
   "title": "Interview scorecard",
-  "print": "Print",
   "provenance": {
     "sharedBy": "Shared privately by {{company}}. The link has a view limit and an expiry date, so please don't forward it.",
     "private": "Shared privately. The link has a view limit and an expiry date, so please don't forward it."
@@ -33,7 +32,8 @@
     "probe": "Worth probing",
     "improve": "To work on",
     "match": "Job match",
-    "seeWrong": "See incorrect answers"
+    "seeWrong": "See incorrect answers",
+    "viewFit": "View fit"
   },
   "chapters": {
     "match": "How closely their profile and answers fit this role.",
@@ -98,7 +98,10 @@
     "awards": "Certifications and achievements",
     "links": "Resume and links",
     "resume": "Resume",
-    "untitled": "Untitled project"
+    "untitled": "Untitled project",
+    "more": "+{{count}} more",
+    "showLess": "Show less",
+    "showAll": "show all skills"
   },
   "answers": {
     "heading": "Answers",

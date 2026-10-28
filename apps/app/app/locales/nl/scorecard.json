@@ -1,6 +1,5 @@
 {
   "title": "Interviewscorekaart",
-  "print": "Afdrukken",
   "provenance": {
     "sharedBy": "Privé gedeeld door {{company}}. De link heeft een weergavelimiet en een vervaldatum, stuur hem dus niet door.",
     "private": "Privé gedeeld. De link heeft een weergavelimiet en een vervaldatum, stuur hem dus niet door."
@@ -33,7 +32,8 @@
     "probe": "Doorvragen waard",
     "improve": "Om aan te werken",
     "match": "Match met de functie",
-    "seeWrong": "Foute antwoorden bekijken"
+    "seeWrong": "Foute antwoorden bekijken",
+    "viewFit": "Bekijk de match"
   },
   "chapters": {
     "match": "Hoe goed profiel en antwoorden bij deze functie passen.",
@@ -98,7 +98,10 @@
     "awards": "Certificaten en prestaties",
     "links": "Cv en links",
     "resume": "Cv",
-    "untitled": "Project zonder titel"
+    "untitled": "Project zonder titel",
+    "more": "+{{count}} meer",
+    "showLess": "Minder tonen",
+    "showAll": "alle vaardigheden tonen"
   },
   "answers": {
     "heading": "Antwoorden",

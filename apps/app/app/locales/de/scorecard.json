@@ -1,6 +1,5 @@
 {
   "title": "Interview-Scorecard",
-  "print": "Drucken",
   "provenance": {
     "sharedBy": "Privat geteilt von {{company}}. Der Link hat ein Aufruflimit und ein Ablaufdatum, bitte leiten Sie ihn nicht weiter.",
     "private": "Privat geteilt. Der Link hat ein Aufruflimit und ein Ablaufdatum, bitte leiten Sie ihn nicht weiter."
@@ -33,7 +32,8 @@
     "probe": "Nachfragen lohnt sich",
     "improve": "Daran arbeiten",
     "match": "Passung zur Stelle",
-    "seeWrong": "Falsche Antworten ansehen"
+    "seeWrong": "Falsche Antworten ansehen",
+    "viewFit": "Passung ansehen"
   },
   "chapters": {
     "match": "Wie gut Profil und Antworten zu dieser Rolle passen.",
@@ -98,7 +98,10 @@
     "awards": "Zertifikate und Erfolge",
     "links": "Lebenslauf und Links",
     "resume": "Lebenslauf",
-    "untitled": "Projekt ohne Titel"
+    "untitled": "Projekt ohne Titel",
+    "more": "+{{count}} weitere",
+    "showLess": "Weniger anzeigen",
+    "showAll": "alle Fähigkeiten anzeigen"
   },
   "answers": {
     "heading": "Antworten",
