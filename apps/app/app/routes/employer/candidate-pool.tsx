@@ -1,5 +1,6 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
+import { useQueryClient } from "@tanstack/react-query"
 import { LockOpen, Plus } from "lucide-react"
 import { href, useSearchParams } from "react-router"
 
@@ -11,6 +12,7 @@ import { LoadError } from "@/components/query-state"
 import { UnlockPanel } from "@/features/candidate-unlock"
 import { EmptyJobsArt, JobPicker, useJobParam } from "@/features/employer-jobs"
 import {
+  MATCHES_KEY,
   MatchList,
   NoMatchesArt,
   PoolOverview,
@@ -30,6 +32,7 @@ const RESET = ["band", "candidate"]
 
 export default function CandidatePoolPage() {
   const { t } = useTranslation(["unlock", "common"])
+  const queryClient = useQueryClient()
   const [search, setSearch] = useSearchParams()
   const job = useJobParam(RESET)
   const applied = search.get(APPLIED) === "1"
@@ -129,6 +132,9 @@ export default function CandidatePoolPage() {
                       candidateId={match.candidate_id}
                       name={match.candidate_name ?? ""}
                       matchedRole={match.ai_match?.role_applied}
+                      onUnlocked={() =>
+                        queryClient.invalidateQueries({ queryKey: MATCHES_KEY })
+                      }
                     />
                   )}
                   empty={

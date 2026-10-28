@@ -12,6 +12,11 @@ export const bestInterview = (match: Match) => {
   return scores.length ? Math.max(...scores) : null
 }
 
+export const isUnlocked = (match: Match) => {
+  const attempts = match.interview_attempts ?? []
+  return attempts.length > 0 && attempts.every((a) => a.unlocked === true)
+}
+
 export const BANDS = ["all", "strong", "partial", "low"] as const
 export type BandFilter = (typeof BANDS)[number]
 

@@ -46,6 +46,7 @@ test("an employer unlocks a candidate after seeing the cost and the balance left
   await page
     .getByRole("button", { name: /Arjun Mehta/ })
     .filter({ visible: true })
+    .first()
     .click()
   const panel = page.getByRole("dialog", { name: "Arjun Mehta" })
   await expect(panel.getByText("This job's role")).toBeVisible()

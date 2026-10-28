@@ -17,6 +17,7 @@
   "years_other": "{{count}} thn",
   "unnamed": "Kandidat tanpa nama",
   "unlockFor": "Buka {{name}}",
+  "unlocked": "Terbuka",
   "sortedNote": "Kecocokan terbaik dulu",
   "peek": {
     "why": "Alasan kecocokan",
@@ -47,6 +48,7 @@
     "matched": "Kandidat yang dicocokkan AI",
     "applied": "Pelamar yang cocok",
     "ofTotal": "dari {{total}} di kumpulan",
+    "top": "Skor 70 atau lebih: <n>{{count}}</n>",
     "summary": "{{matched}} dari {{total}} kandidat cocok"
   },
   "scores": {

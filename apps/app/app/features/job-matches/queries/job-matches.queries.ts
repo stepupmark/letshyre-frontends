@@ -6,10 +6,12 @@ import { api } from "@/lib/api"
 import { matchScore } from "../lib/job-matches"
 import { matchesSchema } from "../schemas/job-matches.schema"
 
+export const MATCHES_KEY = ["employer", "matches"] as const
+
 // best match first; the API doesn't promise an order
 export const matchesQuery = (jobId: string, appliedOnly: boolean) =>
   queryOptions({
-    queryKey: ["employer", "matches", jobId, { appliedOnly }],
+    queryKey: [...MATCHES_KEY, jobId, { appliedOnly }],
     queryFn: async () => {
       const data = matchesSchema.parse(
         payloadOf(

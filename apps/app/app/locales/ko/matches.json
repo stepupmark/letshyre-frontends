@@ -17,6 +17,7 @@
   "years_other": "{{count}}년",
   "unnamed": "이름 없는 후보자",
   "unlockFor": "{{name}} 님 잠금 해제",
+  "unlocked": "잠금 해제됨",
   "sortedNote": "매칭 높은 순",
   "peek": {
     "why": "매칭 이유",
@@ -47,6 +48,7 @@
     "matched": "AI가 매칭한 후보자",
     "applied": "매칭된 지원자",
     "ofTotal": "풀의 {{total}}명 중",
+    "top": "70점 이상: <n>{{count}}</n>",
     "summary": "후보자 {{total}}명 중 {{matched}}명 매칭"
   },
   "scores": {

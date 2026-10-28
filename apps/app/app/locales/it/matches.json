@@ -19,6 +19,7 @@
   "years_other": "{{count}} anni",
   "unnamed": "Candidato senza nome",
   "unlockFor": "Sblocca {{name}}",
+  "unlocked": "Sbloccato",
   "sortedNote": "Prima le corrispondenze migliori",
   "peek": {
     "why": "Perché corrisponde",
@@ -53,6 +54,7 @@
     "matched": "Candidati trovati dall’IA",
     "applied": "Candidati che corrispondono",
     "ofTotal": "su {{total}} nel bacino",
+    "top": "Punteggio di 70 o più: <n>{{count}}</n>",
     "summary": "{{matched}} candidati su {{total}} corrispondono"
   },
   "scores": {

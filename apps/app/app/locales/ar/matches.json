@@ -22,6 +22,7 @@
   "years_other": "{{count}} سنة",
   "unnamed": "مرشح بلا اسم",
   "unlockFor": "فتح ملف {{name}}",
+  "unlocked": "مفتوح",
   "sortedNote": "الأفضل تطابقًا أولًا",
   "peek": {
     "why": "سبب التطابق",
@@ -62,6 +63,7 @@
     "matched": "مرشحون طابقهم الذكاء الاصطناعي",
     "applied": "متقدمون مطابقون",
     "ofTotal": "من {{total}} في المجموعة",
+    "top": "بدرجة 70 أو أكثر: <n>{{count}}</n>",
     "summary": "{{matched}} من {{total}} مرشح متطابقون"
   },
   "scores": {

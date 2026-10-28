@@ -19,6 +19,7 @@
   "years_other": "{{count}} anos",
   "unnamed": "Candidato sem nome",
   "unlockFor": "Desbloquear {{name}}",
+  "unlocked": "Desbloqueado",
   "sortedNote": "Melhor correspondência primeiro",
   "peek": {
     "why": "Por que combina",
@@ -53,6 +54,7 @@
     "matched": "Candidatos encontrados pela IA",
     "applied": "Candidatos inscritos que correspondem",
     "ofTotal": "de {{total}} no banco",
+    "top": "Com 70 ou mais: <n>{{count}}</n>",
     "summary": "{{matched}} de {{total}} candidatos combinam"
   },
   "scores": {

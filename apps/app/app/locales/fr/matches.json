@@ -19,6 +19,7 @@
   "years_other": "{{count}} ans",
   "unnamed": "Candidat sans nom",
   "unlockFor": "Débloquer {{name}}",
+  "unlocked": "Débloqué",
   "sortedNote": "Meilleure correspondance en premier",
   "peek": {
     "why": "Pourquoi cette correspondance",
@@ -53,6 +54,7 @@
     "matched": "Candidats trouvés par l’IA",
     "applied": "Candidats qui correspondent",
     "ofTotal": "sur {{total}} dans le vivier",
+    "top": "Score de 70 ou plus : <n>{{count}}</n>",
     "summary": "{{matched}} candidats sur {{total}} correspondent"
   },
   "scores": {

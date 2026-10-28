@@ -35,7 +35,13 @@ const matchSchema = z.looseObject({
     })
     .nullish(),
   interview_attempts: z
-    .array(z.looseObject({ role: text, overall_score: score }))
+    .array(
+      z.looseObject({
+        role: text,
+        overall_score: score,
+        unlocked: z.boolean().nullish(),
+      })
+    )
     .nullish(),
 })
 

@@ -33,10 +33,12 @@ export function UnlockPanel({
   candidateId,
   name,
   matchedRole,
+  onUnlocked,
 }: {
   candidateId: string
   name: string
   matchedRole?: string | null
+  onUnlocked?: () => Promise<unknown>
 }) {
   const { t } = useTranslation("unlock")
   const locale = useLocale()
@@ -72,6 +74,7 @@ export function UnlockPanel({
           queryKey: interviewsQuery(candidateId).queryKey,
         }),
         queryClient.invalidateQueries({ queryKey: UNLOCKED_KEY }),
+        onUnlocked?.(),
       ])
     },
     onError: () => {
@@ -162,7 +165,7 @@ export function UnlockPanel({
                           (!choice.unlocked && selected.has(key)) || undefined
                         }
                         data-done={choice.unlocked || undefined}
-                        className="flex cursor-pointer items-center gap-3 px-3 py-2.5 transition-colors hover:bg-muted/60 has-disabled:cursor-default data-done:hover:bg-transparent motion-reduce:transition-none data-selected:bg-brand-muted data-selected:hover:bg-brand-muted"
+                        className="group flex cursor-pointer items-center gap-3 px-3 py-2.5 transition-colors hover:bg-muted/60 has-disabled:cursor-default data-done:hover:bg-transparent motion-reduce:transition-none data-selected:bg-brand-muted data-selected:hover:bg-brand-muted"
                       >
                         <Checkbox
                           className="size-5 border-muted-foreground/60 bg-background"
@@ -177,7 +180,7 @@ export function UnlockPanel({
                             {choice.role}
                           </span>
                           {choice.primary && (
-                            <span className="block text-xs text-muted-foreground">
+                            <span className="block text-xs text-muted-foreground group-data-selected:text-brand-text">
                               {t("panel.matched")}
                             </span>
                           )}
@@ -188,7 +191,7 @@ export function UnlockPanel({
                           </StatusBadge>
                         ) : (
                           choice.score != null && (
-                            <span className="shrink-0 text-xs text-muted-foreground tabular-nums">
+                            <span className="shrink-0 text-xs text-muted-foreground tabular-nums group-data-selected:text-brand-text">
                               {t("panel.score", {
                                 score: Math.round(choice.score),
                               })}

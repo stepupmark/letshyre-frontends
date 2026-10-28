@@ -18,6 +18,7 @@
   "years_other": "{{count}} J.",
   "unnamed": "Unbenannter Kandidat",
   "unlockFor": "{{name}} freischalten",
+  "unlocked": "Freigeschaltet",
   "sortedNote": "Bester Match zuerst",
   "peek": {
     "why": "Warum dieser Match",
@@ -50,6 +51,7 @@
     "matched": "Von der KI gefundene Kandidaten",
     "applied": "Passende Bewerber",
     "ofTotal": "von {{total}} im Pool",
+    "top": "70 oder mehr Punkte: <n>{{count}}</n>",
     "summary": "{{matched}} von {{total}} Kandidaten passen"
   },
   "scores": {

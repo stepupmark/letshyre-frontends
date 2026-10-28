@@ -1,5 +1,5 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { useQuery } from "@tanstack/react-query"
+import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
@@ -7,7 +7,7 @@ import { BackLink } from "@/components/back-link"
 import { EmptyState } from "@/components/empty-state"
 import { UnlockPanel } from "@/features/candidate-unlock"
 import { isJobId, jobQuery } from "@/features/employer-jobs"
-import { MatchList, matchesQuery } from "@/features/job-matches"
+import { MATCHES_KEY, MatchList, matchesQuery } from "@/features/job-matches"
 import { namespaces } from "@/lib/i18n"
 import { buttonLink } from "@/lib/button-link"
 
@@ -19,6 +19,7 @@ export const clientMiddleware = [namespaces(["jobs", "matches", "unlock"])]
 
 export default function ApplicantsPage({ params }: Route.ComponentProps) {
   const { t } = useTranslation(["matches", "jobs", "common"])
+  const queryClient = useQueryClient()
   const { jobId } = params
   const valid = isJobId(jobId)
   const job = useQuery({ ...jobQuery(jobId), enabled: valid })
@@ -64,6 +65,9 @@ export default function ApplicantsPage({ params }: Route.ComponentProps) {
             candidateId={match.candidate_id}
             name={match.candidate_name ?? ""}
             matchedRole={match.ai_match?.role_applied}
+            onUnlocked={() =>
+              queryClient.invalidateQueries({ queryKey: MATCHES_KEY })
+            }
           />
         )}
         empty={

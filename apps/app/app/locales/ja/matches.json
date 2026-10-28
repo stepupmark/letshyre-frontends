@@ -17,6 +17,7 @@
   "years_other": "{{count}} 年",
   "unnamed": "名前のない候補者",
   "unlockFor": "{{name}} さんをアンロック",
+  "unlocked": "アンロック済み",
   "sortedNote": "マッチ度の高い順",
   "peek": {
     "why": "マッチの理由",
@@ -47,6 +48,7 @@
     "matched": "AIがマッチした候補者",
     "applied": "マッチした応募者",
     "ofTotal": "候補者プール {{total}} 人中",
+    "top": "スコア70以上: <n>{{count}}</n>",
     "summary": "{{total}} 人中 {{matched}} 人がマッチ"
   },
   "scores": {
