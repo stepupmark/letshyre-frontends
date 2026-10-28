@@ -1,15 +1,12 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { Button } from "@workspace/ui/components/button"
-import { LockOpen } from "lucide-react"
 import { useMemo } from "react"
 
-import { StatusBadge } from "@/components/status-badge"
 import type { DataTableColumn } from "@/lib/data-table-features"
 
-import { isUnlocked } from "../lib/job-matches"
 import type { Match } from "../schemas/job-matches.schema"
 import { MatchBreakdown } from "./match-breakdown"
 import { MatchPerson } from "./match-person"
+import { MatchUnlock } from "./match-unlock"
 
 export function useMatchColumns(open: (id: string) => void) {
   const { t } = useTranslation("matches")
@@ -65,24 +62,14 @@ export function useMatchColumns(open: (id: string) => void) {
         id: "unlock",
         header: () => <span className="sr-only">{t("columns.unlock")}</span>,
         enableHiding: false,
-        cell: ({ row }) =>
-          isUnlocked(row.original) ? (
-            <StatusBadge tone="success">{t("unlocked")}</StatusBadge>
-          ) : (
-            <Button
-              variant="outline"
-              size="sm"
-              aria-label={t("unlockFor", {
-                name: row.original.candidate_name ?? t("unnamed"),
-              })}
-              onClick={() => {
-                open(row.original.candidate_id)
-              }}
-            >
-              <LockOpen aria-hidden="true" />
-              {t("columns.unlock")}
-            </Button>
-          ),
+        cell: ({ row }) => (
+          <MatchUnlock
+            match={row.original}
+            onOpen={() => {
+              open(row.original.candidate_id)
+            }}
+          />
+        ),
       },
     ],
     [t, open]

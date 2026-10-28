@@ -23,6 +23,8 @@
   "unnamed": "مرشح بلا اسم",
   "unlockFor": "فتح ملف {{name}}",
   "unlocked": "مفتوح",
+  "partlyUnlocked": "تم فتح {{unlocked}} من {{total}}",
+  "noInterview": "لا توجد مقابلة بعد",
   "sortedNote": "الأفضل تطابقًا أولًا",
   "peek": {
     "why": "سبب التطابق",
@@ -64,6 +66,7 @@
     "applied": "متقدمون مطابقون",
     "ofTotal": "من {{total}} في المجموعة",
     "top": "بدرجة 70 أو أكثر: <n>{{count}}</n>",
+    "showing": "عرض {{shown}} من {{matched}}",
     "summary": "{{matched}} من {{total}} مرشح متطابقون"
   },
   "scores": {

@@ -35,6 +35,7 @@ export function PoolOverview({
           matched={matched}
           total={total}
           top={counts.strong}
+          shown={counts.all}
         />
       )}
     </>
@@ -46,11 +47,13 @@ function Overview({
   matched,
   total,
   top,
+  shown,
 }: {
   title: string
   matched: number
   total: number | null | undefined
   top: number
+  shown: number
 }) {
   const { t } = useTranslation("matches")
   const locale = useLocale()
@@ -74,6 +77,11 @@ function Overview({
             </span>
           )}
         </p>
+        {shown < matched && (
+          <p className="text-xs text-muted-foreground tabular-nums">
+            {t("overview.showing", { shown, matched })}
+          </p>
+        )}
       </div>
       <p className="text-sm text-muted-foreground">
         <Trans

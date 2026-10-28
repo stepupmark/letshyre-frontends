@@ -22,7 +22,6 @@ import { AnimatedList } from "@/components/motion/animated-list"
 import { Shake } from "@/components/motion/shake"
 import { PageHeader } from "@/components/page-header"
 import { QueryState } from "@/components/query-state"
-import { ScoreBand } from "@/components/score-band"
 import { StatusBadge } from "@/components/status-badge"
 import { Wizard } from "@/components/wizard"
 import { useDetailParam } from "@/hooks/use-detail-param"
@@ -35,6 +34,7 @@ import { relativeTime } from "@/lib/relative-time"
 import { undoToast } from "@/lib/undo-toast"
 
 import { applicants, type Applicant } from "./fixtures"
+import { MatchScore } from "./match-score"
 import {
   CandidatePreviewDemo,
   OnboardingPreviewDemo,
@@ -97,7 +97,7 @@ export default function Blocks() {
       help.accessor((r) => r.ai_match.ai_matching_score, {
         id: "score",
         header: "Match",
-        cell: ({ getValue }) => <ScoreBand score={getValue()} />,
+        cell: ({ getValue }) => <MatchScore score={getValue()} />,
       }) as DataTableColumn<Applicant>,
       help.accessor("created_at", {
         header: "Applied",
@@ -195,7 +195,7 @@ export default function Blocks() {
               }}
             >
               <span className="font-medium">{r.name}</span>
-              <ScoreBand score={r.ai_match.ai_matching_score} />
+              <MatchScore score={r.ai_match.ai_matching_score} />
             </button>
           )}
         />
@@ -290,9 +290,9 @@ export default function Blocks() {
             value="https://letshyre.ai/shared-scorecard/abc123"
             label="Copy link"
           />
-          <ScoreBand score={82} />
-          <ScoreBand score={55} />
-          <ScoreBand score={20} />
+          <MatchScore score={82} />
+          <MatchScore score={55} />
+          <MatchScore score={20} />
         </div>
         <AnimatedList
           items={rows.slice(0, 3)}

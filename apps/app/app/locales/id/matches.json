@@ -18,6 +18,8 @@
   "unnamed": "Kandidat tanpa nama",
   "unlockFor": "Buka {{name}}",
   "unlocked": "Terbuka",
+  "partlyUnlocked": "{{unlocked}} dari {{total}} dibuka",
+  "noInterview": "Belum ada wawancara",
   "sortedNote": "Kecocokan terbaik dulu",
   "peek": {
     "why": "Alasan kecocokan",
@@ -49,6 +51,7 @@
     "applied": "Pelamar yang cocok",
     "ofTotal": "dari {{total}} di kumpulan",
     "top": "Skor 70 atau lebih: <n>{{count}}</n>",
+    "showing": "Menampilkan {{shown}} dari {{matched}}",
     "summary": "{{matched}} dari {{total}} kandidat cocok"
   },
   "scores": {

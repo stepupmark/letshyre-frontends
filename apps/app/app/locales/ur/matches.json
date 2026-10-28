@@ -19,6 +19,8 @@
   "unnamed": "بغیر نام کا امیدوار",
   "unlockFor": "{{name}} کو اَن لاک کریں",
   "unlocked": "اَن لاک ہے",
+  "partlyUnlocked": "{{total}} میں سے {{unlocked}} اَن لاک",
+  "noInterview": "ابھی کوئی انٹرویو نہیں",
   "sortedNote": "سب سے اچھا میچ پہلے",
   "peek": {
     "why": "یہ میچ کیوں",
@@ -52,6 +54,7 @@
     "applied": "میچ ہونے والے درخواست دہندگان",
     "ofTotal": "پول کے {{total}} میں سے",
     "top": "70 یا اس سے زیادہ اسکور: <n>{{count}}</n>",
+    "showing": "{{matched}} میں سے {{shown}} دکھائے جا رہے ہیں",
     "summary": "{{total}} میں سے {{matched}} امیدوار میچ کرتے ہیں"
   },
   "scores": {

@@ -20,7 +20,6 @@ import { StatusBadge } from "@/components/status-badge"
 import { useDelayed } from "@/hooks/use-delayed"
 import { duration, ease } from "@/lib/motion"
 
-import { ScoreBand } from "./score-band"
 import { LoadError } from "./load-error"
 import { scorecard } from "./fixtures"
 import { useLab } from "./use-lab"
@@ -99,7 +98,6 @@ function Summary() {
             / 100
           </span>
         </p>
-        <ScoreBand score={scorecard.overall_score} />
       </div>
       <p className="max-w-prose text-pretty">{scorecard.summary}</p>
 

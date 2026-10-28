@@ -19,6 +19,8 @@
   "unnamed": "ಹೆಸರಿಲ್ಲದ ಅಭ್ಯರ್ಥಿ",
   "unlockFor": "{{name}} ಅವರನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಿ",
   "unlocked": "ಅನ್‌ಲಾಕ್ ಆಗಿದೆ",
+  "partlyUnlocked": "{{total}} ರಲ್ಲಿ {{unlocked}} ಅನ್‌ಲಾಕ್",
+  "noInterview": "ಇನ್ನೂ ಸಂದರ್ಶನ ಇಲ್ಲ",
   "sortedNote": "ಉತ್ತಮ ಹೊಂದಾಣಿಕೆ ಮೊದಲು",
   "peek": {
     "why": "ಈ ಹೊಂದಾಣಿಕೆ ಏಕೆ",
@@ -52,6 +54,7 @@
     "applied": "ಹೊಂದುವ ಅರ್ಜಿದಾರರು",
     "ofTotal": "ಪೂಲ್‌ನ {{total}} ರಲ್ಲಿ",
     "top": "70 ಅಥವಾ ಹೆಚ್ಚು ಸ್ಕೋರ್: <n>{{count}}</n>",
+    "showing": "{{matched}} ರಲ್ಲಿ {{shown}} ತೋರಿಸಲಾಗುತ್ತಿದೆ",
     "summary": "{{total}} ಅಭ್ಯರ್ಥಿಗಳಲ್ಲಿ {{matched}} ಹೊಂದುತ್ತಾರೆ"
   },
   "scores": {

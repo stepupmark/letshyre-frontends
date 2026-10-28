@@ -19,6 +19,8 @@
   "unnamed": "Unbenannter Kandidat",
   "unlockFor": "{{name}} freischalten",
   "unlocked": "Freigeschaltet",
+  "partlyUnlocked": "{{unlocked}} von {{total}} freigeschaltet",
+  "noInterview": "Noch kein Interview",
   "sortedNote": "Bester Match zuerst",
   "peek": {
     "why": "Warum dieser Match",
@@ -52,6 +54,7 @@
     "applied": "Passende Bewerber",
     "ofTotal": "von {{total}} im Pool",
     "top": "70 oder mehr Punkte: <n>{{count}}</n>",
+    "showing": "{{shown}} von {{matched}} angezeigt",
     "summary": "{{matched}} von {{total}} Kandidaten passen"
   },
   "scores": {

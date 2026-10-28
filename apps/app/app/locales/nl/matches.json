@@ -19,6 +19,8 @@
   "unnamed": "Kandidaat zonder naam",
   "unlockFor": "{{name}} ontgrendelen",
   "unlocked": "Ontgrendeld",
+  "partlyUnlocked": "{{unlocked}} van {{total}} ontgrendeld",
+  "noInterview": "Nog geen interview",
   "sortedNote": "Beste match eerst",
   "peek": {
     "why": "Waarom deze match",
@@ -52,6 +54,7 @@
     "applied": "Sollicitanten die matchen",
     "ofTotal": "van {{total}} in de pool",
     "top": "Score van 70 of hoger: <n>{{count}}</n>",
+    "showing": "{{shown}} van {{matched}} getoond",
     "summary": "{{matched}} van {{total}} kandidaten passen"
   },
   "scores": {

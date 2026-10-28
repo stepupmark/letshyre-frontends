@@ -21,6 +21,8 @@
   "unnamed": "Кандидат без имени",
   "unlockFor": "Открыть: {{name}}",
   "unlocked": "Открыто",
+  "partlyUnlocked": "Открыто {{unlocked}} из {{total}}",
+  "noInterview": "Интервью пока нет",
   "sortedNote": "Сначала лучшие совпадения",
   "peek": {
     "why": "Почему совпадение",
@@ -58,6 +60,7 @@
     "applied": "Подходящие отклики",
     "ofTotal": "из {{total}} в базе",
     "top": "70 баллов и выше: <n>{{count}}</n>",
+    "showing": "Показано {{shown}} из {{matched}}",
     "summary": "Подходят {{matched}} из {{total}} кандидатов"
   },
   "scores": {

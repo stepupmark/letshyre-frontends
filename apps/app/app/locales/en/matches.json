@@ -19,6 +19,8 @@
   "unnamed": "Unnamed candidate",
   "unlockFor": "Unlock {{name}}",
   "unlocked": "Unlocked",
+  "partlyUnlocked": "{{unlocked}} of {{total}} unlocked",
+  "noInterview": "No interview yet",
   "sortedNote": "Best match first",
   "peek": {
     "why": "Why this match",
@@ -52,6 +54,7 @@
     "applied": "Applicants who match",
     "ofTotal": "of {{total}} in the pool",
     "top": "Scoring 70 or more: <n>{{count}}</n>",
+    "showing": "Showing {{shown}} of {{matched}}",
     "summary": "{{matched}} of {{total}} candidates match"
   },
   "scores": {

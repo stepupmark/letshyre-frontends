@@ -19,6 +19,8 @@
   "unnamed": "নামহীন প্রার্থী",
   "unlockFor": "{{name}}-কে আনলক করুন",
   "unlocked": "আনলক করা",
+  "partlyUnlocked": "{{total}}টির মধ্যে {{unlocked}}টি আনলক",
+  "noInterview": "এখনও কোনো ইন্টারভিউ নেই",
   "sortedNote": "সেরা ম্যাচ আগে",
   "peek": {
     "why": "কেন এই ম্যাচ",
@@ -52,6 +54,7 @@
     "applied": "মিলে যাওয়া আবেদনকারী",
     "ofTotal": "পুলের {{total}} জনের মধ্যে",
     "top": "৭০ বা তার বেশি স্কোর: <n>{{count}}</n>",
+    "showing": "{{matched}}টির মধ্যে {{shown}}টি দেখানো হচ্ছে",
     "summary": "{{total}} জন প্রার্থীর মধ্যে {{matched}} জন মিলছেন"
   },
   "scores": {

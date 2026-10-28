@@ -18,6 +18,8 @@
   "unnamed": "이름 없는 후보자",
   "unlockFor": "{{name}} 님 잠금 해제",
   "unlocked": "잠금 해제됨",
+  "partlyUnlocked": "{{total}}개 중 {{unlocked}}개 잠금 해제됨",
+  "noInterview": "아직 인터뷰 없음",
   "sortedNote": "매칭 높은 순",
   "peek": {
     "why": "매칭 이유",
@@ -49,6 +51,7 @@
     "applied": "매칭된 지원자",
     "ofTotal": "풀의 {{total}}명 중",
     "top": "70점 이상: <n>{{count}}</n>",
+    "showing": "{{matched}}명 중 {{shown}}명 표시",
     "summary": "후보자 {{total}}명 중 {{matched}}명 매칭"
   },
   "scores": {

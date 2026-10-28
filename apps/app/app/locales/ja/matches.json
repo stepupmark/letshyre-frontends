@@ -18,6 +18,8 @@
   "unnamed": "名前のない候補者",
   "unlockFor": "{{name}} さんをアンロック",
   "unlocked": "アンロック済み",
+  "partlyUnlocked": "{{total}}件中{{unlocked}}件アンロック済み",
+  "noInterview": "面接はまだありません",
   "sortedNote": "マッチ度の高い順",
   "peek": {
     "why": "マッチの理由",
@@ -49,6 +51,7 @@
     "applied": "マッチした応募者",
     "ofTotal": "候補者プール {{total}} 人中",
     "top": "スコア70以上: <n>{{count}}</n>",
+    "showing": "{{matched}}件中{{shown}}件を表示",
     "summary": "{{total}} 人中 {{matched}} 人がマッチ"
   },
   "scores": {

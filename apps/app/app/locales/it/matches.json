@@ -20,6 +20,8 @@
   "unnamed": "Candidato senza nome",
   "unlockFor": "Sblocca {{name}}",
   "unlocked": "Sbloccato",
+  "partlyUnlocked": "{{unlocked}} su {{total}} sbloccati",
+  "noInterview": "Nessun colloquio ancora",
   "sortedNote": "Prima le corrispondenze migliori",
   "peek": {
     "why": "Perché corrisponde",
@@ -55,6 +57,7 @@
     "applied": "Candidati che corrispondono",
     "ofTotal": "su {{total}} nel bacino",
     "top": "Punteggio di 70 o più: <n>{{count}}</n>",
+    "showing": "{{shown}} di {{matched}} mostrati",
     "summary": "{{matched}} candidati su {{total}} corrispondono"
   },
   "scores": {

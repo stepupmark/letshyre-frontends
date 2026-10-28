@@ -20,6 +20,8 @@
   "unnamed": "Candidato sem nome",
   "unlockFor": "Desbloquear {{name}}",
   "unlocked": "Desbloqueado",
+  "partlyUnlocked": "{{unlocked}} de {{total}} desbloqueadas",
+  "noInterview": "Ainda sem entrevista",
   "sortedNote": "Melhor correspondência primeiro",
   "peek": {
     "why": "Por que combina",
@@ -55,6 +57,7 @@
     "applied": "Candidatos inscritos que correspondem",
     "ofTotal": "de {{total}} no banco",
     "top": "Com 70 ou mais: <n>{{count}}</n>",
+    "showing": "Mostrando {{shown}} de {{matched}}",
     "summary": "{{matched}} de {{total}} candidatos combinam"
   },
   "scores": {

@@ -12,9 +12,12 @@ export const bestInterview = (match: Match) => {
   return scores.length ? Math.max(...scores) : null
 }
 
-export const isUnlocked = (match: Match) => {
+export const unlockProgress = (match: Match) => {
   const attempts = match.interview_attempts ?? []
-  return attempts.length > 0 && attempts.every((a) => a.unlocked === true)
+  return {
+    unlocked: attempts.filter((a) => a.unlocked === true).length,
+    total: attempts.length,
+  }
 }
 
 export const BANDS = ["all", "strong", "partial", "low"] as const

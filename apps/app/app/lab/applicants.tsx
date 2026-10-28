@@ -61,7 +61,7 @@ import { useDelayed } from "@/hooks/use-delayed"
 import { duration, ease, spring } from "@/lib/motion"
 import { relativeTime } from "@/lib/relative-time"
 
-import { ScoreBand } from "./score-band"
+import { MatchScore } from "./match-score"
 import { LoadError } from "./load-error"
 import {
   applicants as initial,
@@ -368,7 +368,7 @@ export default function Applicants() {
                       </TableCell>
                       <TableCell>
                         <div className="flex flex-col items-start gap-1">
-                          <ScoreBand score={row.ai_match.ai_matching_score} />
+                          <MatchScore score={row.ai_match.ai_matching_score} />
                           <span className="text-xs text-muted-foreground tabular-nums">
                             {row.ai_match.matched_skills.length} of{" "}
                             {row.ai_match.matched_skills.length +
@@ -434,7 +434,7 @@ export default function Applicants() {
                       </StatusBadge>
                     </span>
                     <span className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <ScoreBand score={row.ai_match.ai_matching_score} />
+                      <MatchScore score={row.ai_match.ai_matching_score} />
                       <span className="tabular-nums">
                         {years(row.ai_match.years_experience)}
                       </span>
@@ -659,7 +659,7 @@ function Peek({
               className="flex flex-1 flex-col gap-6 overflow-y-auto p-4 text-sm"
             >
               <div className="flex flex-wrap items-center gap-2">
-                <ScoreBand score={shown.ai_match.ai_matching_score} />
+                <MatchScore score={shown.ai_match.ai_matching_score} />
                 <StatusBadge tone={statusTone[shown.status]}>
                   {statusLabel[shown.status]}
                 </StatusBadge>

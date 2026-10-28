@@ -19,6 +19,8 @@
   "unnamed": "बिना नाम का उम्मीदवार",
   "unlockFor": "{{name}} को अनलॉक करें",
   "unlocked": "अनलॉक है",
+  "partlyUnlocked": "{{total}} में से {{unlocked}} अनलॉक",
+  "noInterview": "अभी कोई इंटरव्यू नहीं",
   "sortedNote": "सबसे अच्छा मैच पहले",
   "peek": {
     "why": "यह मैच क्यों",
@@ -52,6 +54,7 @@
     "applied": "मैच होने वाले आवेदक",
     "ofTotal": "पूल के {{total}} में से",
     "top": "70 या उससे ज़्यादा स्कोर: <n>{{count}}</n>",
+    "showing": "{{matched}} में से {{shown}} दिखाए जा रहे हैं",
     "summary": "{{total}} में से {{matched}} उम्मीदवार मैच करते हैं"
   },
   "scores": {
