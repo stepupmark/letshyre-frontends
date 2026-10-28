@@ -20,12 +20,6 @@
     "retry": "Riprova",
     "needBalance": "Il saldo deve caricarsi prima di poter sbloccare."
   },
-  "confirm": {
-    "title": "Sbloccare {{name}}?",
-    "body_one": "Usa {{count}} credito ed è irreversibile. Te ne resteranno {{left}}.",
-    "body_many": "Usa {{count}} crediti ed è irreversibile. Te ne resteranno {{left}}.",
-    "body_other": "Usa {{count}} crediti ed è irreversibile. Te ne resteranno {{left}}."
-  },
   "done": "{{name}} sbloccato",
   "doneBody_one": "{{count}} credito usato, ne restano {{left}}.",
   "doneBody_many": "{{count}} crediti usati, ne restano {{left}}.",

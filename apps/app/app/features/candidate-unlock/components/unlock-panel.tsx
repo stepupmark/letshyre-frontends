@@ -12,7 +12,6 @@ import { toast } from "sonner"
 
 import { AnimatedNumber } from "@/components/animated-number"
 import { AppLink } from "@/components/app-link"
-import { ConfirmDialog } from "@/components/confirm-dialog"
 import { LoadError } from "@/components/query-state"
 import { StatusBadge } from "@/components/status-badge"
 import { creditsQuery } from "@/lib/credits"
@@ -47,7 +46,6 @@ export function UnlockPanel({
   const interviews = useQuery(interviewsQuery(candidateId))
   const credits = useQuery(creditsQuery())
   const [selected, setSelected] = useState<ReadonlySet<string>>(new Set())
-  const [confirming, setConfirming] = useState(false)
 
   const choices = unlockChoices(interviews.data ?? [], matchedRole)
   const cost = costOf(selected, choices)
@@ -63,10 +61,10 @@ export function UnlockPanel({
       ),
     onSuccess: async () => {
       const left = (balance ?? cost) - cost
-      setConfirming(false)
       setSelected(new Set())
       toast.success(t("done", { name }), {
         description: t("doneBody", { count: cost, left }),
+        position: "top-center",
       })
       await Promise.all([
         queryClient.invalidateQueries({ queryKey: creditsQuery().queryKey }),
@@ -78,7 +76,6 @@ export function UnlockPanel({
       ])
     },
     onError: () => {
-      setConfirming(false)
       void queryClient.invalidateQueries({ queryKey: creditsQuery().queryKey })
     },
   })
@@ -222,8 +219,9 @@ export function UnlockPanel({
                     disabled={
                       cost === 0 || balance === undefined || unlock.isPending
                     }
+                    aria-busy={unlock.isPending}
                     onClick={() => {
-                      setConfirming(true)
+                      unlock.mutate()
                     }}
                   >
                     <LockOpen />
@@ -247,21 +245,6 @@ export function UnlockPanel({
           )}
         </AnimatePresence>
       )}
-
-      <ConfirmDialog
-        open={confirming}
-        onOpenChange={setConfirming}
-        title={t("confirm.title", { name })}
-        description={t("confirm.body", {
-          count: cost,
-          left: (balance ?? 0) - cost,
-        })}
-        confirmLabel={t("panel.button", { count: cost })}
-        pending={unlock.isPending}
-        onConfirm={() => {
-          unlock.mutate()
-        }}
-      />
     </section>
   )
 }

@@ -19,11 +19,6 @@
     "retry": "Erneut versuchen",
     "needBalance": "Ihr Guthaben muss geladen sein, bevor Sie freischalten können."
   },
-  "confirm": {
-    "title": "{{name}} freischalten?",
-    "body_one": "Das kostet {{count}} Credit und lässt sich nicht rückgängig machen. Danach haben Sie noch {{left}}.",
-    "body_other": "Das kostet {{count}} Credits und lässt sich nicht rückgängig machen. Danach haben Sie noch {{left}}."
-  },
   "done": "{{name}} freigeschaltet",
   "doneBody_one": "{{count}} Credit genutzt, noch {{left}}.",
   "doneBody_other": "{{count}} Credits genutzt, noch {{left}}.",

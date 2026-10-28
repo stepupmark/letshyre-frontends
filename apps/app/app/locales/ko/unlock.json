@@ -18,10 +18,6 @@
     "retry": "다시 시도",
     "needBalance": "잠금 해제하려면 잔액을 먼저 불러와야 합니다."
   },
-  "confirm": {
-    "title": "{{name}} 님을 잠금 해제할까요?",
-    "body_other": "크레딧 {{count}}개를 쓰고 되돌릴 수 없어요. {{left}}개가 남아요."
-  },
   "done": "{{name}} 님을 잠금 해제했어요",
   "doneBody_other": "크레딧 {{count}}개 사용, {{left}}개 남음.",
   "pool": {

@@ -20,12 +20,6 @@
     "retry": "Réessayer",
     "needBalance": "Votre solde doit se charger avant de pouvoir débloquer."
   },
-  "confirm": {
-    "title": "Débloquer {{name}} ?",
-    "body_one": "Cela utilise {{count}} crédit et est irréversible. Il vous en restera {{left}}.",
-    "body_many": "Cela utilise {{count}} crédits et est irréversible. Il vous en restera {{left}}.",
-    "body_other": "Cela utilise {{count}} crédits et est irréversible. Il vous en restera {{left}}."
-  },
   "done": "{{name}} débloqué",
   "doneBody_one": "{{count}} crédit utilisé, {{left}} restants.",
   "doneBody_many": "{{count}} crédits utilisés, {{left}} restants.",

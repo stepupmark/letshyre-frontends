@@ -18,10 +18,6 @@
     "retry": "Coba lagi",
     "needBalance": "Saldo Anda perlu dimuat sebelum bisa membuka."
   },
-  "confirm": {
-    "title": "Buka {{name}}?",
-    "body_other": "Ini memakai {{count}} kredit dan tidak bisa dibatalkan. Sisa Anda {{left}}."
-  },
   "done": "{{name}} terbuka",
   "doneBody_other": "{{count}} kredit terpakai, sisa {{left}}.",
   "pool": {

@@ -2,7 +2,7 @@ import { axe, expect, reply, test } from "./fixtures"
 
 const INTERVIEWS = "GET /user/v1/employer_candidate_interviews/5/"
 
-test("an employer unlocks a candidate after seeing the cost and the balance left", async ({
+test("an employer unlocks a candidate after seeing the cost", async ({
   page,
   api,
   signInAs,
@@ -58,15 +58,8 @@ test("an employer unlocks a candidate after seeing the cost and the balance left
   await panel.getByRole("checkbox").nth(0).check()
   await panel.getByRole("checkbox").nth(1).check()
   await expect(panel.getByRole("checkbox").nth(2)).toBeDisabled()
+  await expect(unlock).toHaveText("Unlock · 2 credits")
   await unlock.click()
-
-  const confirm = page.getByRole("dialog", { name: "Unlock Arjun Mehta?" })
-  await expect(
-    confirm.getByText(
-      "This uses 2 credits and can't be undone. You'll have 10 left."
-    )
-  ).toBeVisible()
-  await confirm.getByRole("button", { name: "Unlock · 2 credits" }).click()
 
   await expect(page.getByText("Arjun Mehta unlocked")).toBeVisible()
   await expect(

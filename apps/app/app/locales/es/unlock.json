@@ -20,12 +20,6 @@
     "retry": "Reintentar",
     "needBalance": "Tu saldo debe cargarse antes de poder desbloquear."
   },
-  "confirm": {
-    "title": "¿Desbloquear a {{name}}?",
-    "body_one": "Usa {{count}} crédito y no se puede deshacer. Le quedarán {{left}}.",
-    "body_many": "Usa {{count}} créditos y no se puede deshacer. Le quedarán {{left}}.",
-    "body_other": "Usa {{count}} créditos y no se puede deshacer. Le quedarán {{left}}."
-  },
   "done": "{{name}} desbloqueado",
   "doneBody_one": "{{count}} crédito usado, quedan {{left}}.",
   "doneBody_many": "{{count}} créditos usados, quedan {{left}}.",

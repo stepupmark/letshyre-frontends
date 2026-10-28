@@ -18,10 +18,6 @@
     "retry": "再試行",
     "needBalance": "ロックを解除するには残高の読み込みが必要です。"
   },
-  "confirm": {
-    "title": "{{name}} さんをアンロックしますか？",
-    "body_other": "{{count}} クレジットを使います。元に戻せません。残りは {{left}} です。"
-  },
   "done": "{{name}} さんをアンロックしました",
   "doneBody_other": "{{count}} クレジット使用、残り {{left}}。",
   "pool": {

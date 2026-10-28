@@ -19,11 +19,6 @@
     "retry": "Opnieuw proberen",
     "needBalance": "Je saldo moet geladen zijn voordat je kunt ontgrendelen."
   },
-  "confirm": {
-    "title": "{{name}} ontgrendelen?",
-    "body_one": "Dit kost {{count}} credit en kan niet ongedaan worden gemaakt. U houdt er {{left}} over.",
-    "body_other": "Dit kost {{count}} credits en kan niet ongedaan worden gemaakt. U houdt er {{left}} over."
-  },
   "done": "{{name}} ontgrendeld",
   "doneBody_one": "{{count}} credit gebruikt, nog {{left}} over.",
   "doneBody_other": "{{count}} credits gebruikt, nog {{left}} over.",

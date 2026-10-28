@@ -19,11 +19,6 @@
     "retry": "Try again",
     "needBalance": "Your balance needs to load before you can unlock."
   },
-  "confirm": {
-    "title": "Unlock {{name}}?",
-    "body_one": "This uses {{count}} credit and can't be undone. You'll have {{left}} left.",
-    "body_other": "This uses {{count}} credits and can't be undone. You'll have {{left}} left."
-  },
   "done": "{{name}} unlocked",
   "doneBody_one": "{{count}} credit used, {{left}} left.",
   "doneBody_other": "{{count}} credits used, {{left}} left.",
