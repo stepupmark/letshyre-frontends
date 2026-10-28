@@ -77,5 +77,7 @@ export function durationOf(raw: string | null | undefined, locale: string) {
     : unit("year", Math.round(years * 10) / 10)
 }
 
-export const placeOf = (raw: string | null | undefined) =>
-  raw?.trim().replace(/\s*,\s*/g, ", ") || null
+export const placeOf = (raw: string | null | undefined) => {
+  const place = raw?.trim().replace(/\s*,\s*/g, ", ")
+  return place?.length ? place : null
+}
