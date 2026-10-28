@@ -31,26 +31,28 @@ Pages: `/:lang`, `/:lang/about`, `/:lang/contact`, `/:lang/download`, `/:lang/in
 ships in; today that's `en` only (`REPLACED_BY` in `app/lib/pages.ts`).
 Locales: `en hi fr ja ar te ta es nl ru kn ml ur bn de pt it ko id`.
 
-## 2. App routes (served by the legacy build until Phase 7)
+## 2. App routes
 
-| Path                                       | Interim (Phase 4 → 7) on `letshyre.ai` | Final on `app.letshyre.ai`                                      |
-| ------------------------------------------ | -------------------------------------- | --------------------------------------------------------------- |
-| `/get-started`                             | legacy                                 | same path (kept as an alias of `/sign-in` role choice)          |
-| `/` (app root)                             | marketing                              | role choice, same page as `/get-started`; sign-out lands here   |
-| `/forgot-password`                         | legacy                                 | same path                                                       |
-| `/employer/sign-in`, `/employee/sign-in`   | legacy                                 | redirect to `/sign-in` ([ADR 0009](../adr/0009-one-sign-in.md)) |
-| `/employer/register`, `/employee/register` | legacy                                 | same paths                                                      |
-| `/employer/**`, `/employee/**`             | legacy                                 | cleaned-up paths, old ones redirect ([§6](#6-app-urls-appsapp)) |
-| `/shared-scorecard/:shareId`               | legacy                                 | same path                                                       |
+The app serves these on `letshyre.ai`, the same origin as marketing
+([ADR 0004](../adr/0004-incremental-rollout.md)). The full list is in [§6](#6-app-urls-appsapp).
 
-From Phase 7: `letshyre.ai/<any app path>` → **301** `app.letshyre.ai/<same path + query>`. Links already
-sent to people (shared scorecards, password-reset emails) keep working. All app paths keep
-`X-Robots-Tag: noindex, nofollow`.
+| Path                                       | Behaviour                                                       |
+| ------------------------------------------ | --------------------------------------------------------------- |
+| `/` (app root)                             | role choice, same page as `/get-started`; sign-out lands here   |
+| `/get-started`                             | alias of the `/sign-in` role choice                             |
+| `/forgot-password`                         | same path                                                       |
+| `/employer/sign-in`, `/employee/sign-in`   | redirect to `/sign-in` ([ADR 0017](../adr/0017-auth-screens.md)) |
+| `/employer/register`, `/employee/register` | same paths                                                      |
+| `/employer/**`, `/employee/**`             | cleaned-up paths, old ones redirect ([§6](#6-app-urls-appsapp)) |
+| `/shared-scorecard/:shareId`               | same path                                                       |
+
+Links already sent to people (shared scorecards, password-reset emails) keep working. All app paths
+keep `X-Robots-Tag: noindex, nofollow`. A move to `app.letshyre.ai` is deferred.
 
 ## 3. Marketing → app handoff links
 
 All come from one module (`apps/marketing/app/lib/app-links.ts`) built from `VITE_APP_URL`.
-Interim `VITE_APP_URL=https://letshyre.ai`. Final `VITE_APP_URL=https://app.letshyre.ai`.
+`VITE_APP_URL` is `https://letshyre.ai` in production.
 
 | Marketing CTA                                    | Path on `VITE_APP_URL`                 | Notes                                                                                                              |
 | ------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -64,11 +66,10 @@ Interim `VITE_APP_URL=https://letshyre.ai`. Final `VITE_APP_URL=https://app.lets
 
 The language is carried across via the `lh_locale` cookie (`Domain=.letshyre.ai`), not the URL.
 
-## 4. App → marketing links (legacy, interim)
+## 4. App → marketing links
 
-The legacy dashboards link to `/en/pricing`, `/en/terms`, `/en/policy` (301 to `/en/privacy-policy`), `/en/refund-policy`, `/en/contact`, `/en`.
-These are served by the new marketing build on the same origin, with no change needed.
-Exception: "Buy credits" (`CreditUsageCard`, `Invoice`) points to `/employer/billing`.
+The dashboards link to `/en/pricing`, `/en/terms`, `/en/policy` (301 to `/en/privacy-policy`), `/en/refund-policy`, `/en/contact`, `/en`.
+These are served by the marketing build on the same origin.
 
 ## 5. Host requirements
 

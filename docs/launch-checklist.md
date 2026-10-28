@@ -21,7 +21,7 @@ Android Chrome:
 - [ ] Pricing → `/employer/billing?checkout=<key>`, signed in and signed out (sign-in returns to
       the open checkout). A Razorpay test-mode purchase completes and shows on Invoices.
 - [ ] Dashboard and Invoices "Buy credits" open billing.
-- [ ] Legacy dashboards unaffected: sign-in, interview (camera and mic prompt), scorecards.
+- [ ] App dashboards reachable from the handoff links: sign-in, interview (camera and mic prompt), scorecards.
 - [ ] Meta Pixel fires only after consent.
 - [ ] Browser console: no `Content-Security-Policy-Report-Only` violations.
 
