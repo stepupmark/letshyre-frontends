@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "すべて",
-    "strong": "高",
-    "partial": "中",
-    "low": "低",
     "label": "マッチ度で絞り込む"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "40未満"
   },
   "columns": {
     "candidate": "候補者",
     "match": "マッチ",
-    "experience": "経験",
-    "interviews": "面接"
+    "experience": "経験"
   },
   "years_other": "{{count}} 年",
   "unnamed": "名前のない候補者",
@@ -23,7 +24,6 @@
     "missing": "不足",
     "noneMissing": "求人の条件はすべて満たしています。",
     "experience_other": "経験 {{count}} 年",
-    "taken": "AI面接: {{n}}",
     "noSkills": "この候補者のスキル情報はまだありません。"
   },
   "applicants": {
@@ -36,7 +36,6 @@
   },
   "errorTitle": "応募者を読み込めませんでした。",
   "errorBody": "接続を確認してもう一度お試しください。",
-  "interviewsTaken_other": "{{count}}回受験",
   "scope": {
     "label": "表示",
     "matched": "AI のマッチ",

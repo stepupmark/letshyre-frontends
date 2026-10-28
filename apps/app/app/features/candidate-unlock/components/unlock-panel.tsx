@@ -14,7 +14,6 @@ import { AnimatedNumber } from "@/components/animated-number"
 import { AppLink } from "@/components/app-link"
 import { ConfirmDialog } from "@/components/confirm-dialog"
 import { LoadError } from "@/components/query-state"
-import { ScoreBand } from "@/components/score-band"
 import { StatusBadge } from "@/components/status-badge"
 import { creditsQuery } from "@/lib/credits"
 import { duration, ease } from "@/lib/motion"
@@ -182,7 +181,11 @@ export function UnlockPanel({
                           </StatusBadge>
                         ) : (
                           choice.score != null && (
-                            <ScoreBand score={choice.score} of="interview" />
+                            <span className="shrink-0 text-xs text-muted-foreground tabular-nums">
+                              {t("panel.score", {
+                                score: Math.round(choice.score),
+                              })}
+                            </span>
                           )
                         )}
                       </label>

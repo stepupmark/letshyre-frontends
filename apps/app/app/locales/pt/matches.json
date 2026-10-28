@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "Todas",
-    "strong": "Fortes",
-    "partial": "Parciais",
-    "low": "Fracas",
     "label": "Filtrar por correspondência"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "Abaixo de 40"
   },
   "columns": {
     "candidate": "Candidato",
     "match": "Correspondência",
-    "experience": "Experiência",
-    "interviews": "Entrevistas"
+    "experience": "Experiência"
   },
   "years_one": "{{count}} ano",
   "years_many": "{{count}} anos",
@@ -27,7 +28,6 @@
     "experience_one": "{{count}} ano de experiência",
     "experience_many": "{{count}} anos de experiência",
     "experience_other": "{{count}} anos de experiência",
-    "taken": "Entrevistas com IA: {{n}}",
     "noSkills": "Ainda não há dados de habilidades deste candidato."
   },
   "applicants": {
@@ -42,9 +42,6 @@
   },
   "errorTitle": "Os candidatos não carregaram.",
   "errorBody": "Verifique a conexão e tente de novo.",
-  "interviewsTaken_one": "{{count}} feita",
-  "interviewsTaken_many": "{{count}} feitas",
-  "interviewsTaken_other": "{{count}} feitas",
   "scope": {
     "label": "Mostrar",
     "matched": "Ligados pela IA",

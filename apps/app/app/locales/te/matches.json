@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "అన్నీ",
-    "strong": "బలమైనవి",
-    "partial": "పాక్షికం",
-    "low": "తక్కువ",
     "label": "సరిపోలిక ప్రకారం ఫిల్టర్"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "40 కంటే తక్కువ"
   },
   "columns": {
     "candidate": "అభ్యర్థి",
     "match": "మ్యాచ్",
-    "experience": "అనుభవం",
-    "interviews": "ఇంటర్వ్యూలు"
+    "experience": "అనుభవం"
   },
   "years_one": "{{count}} సం.",
   "years_other": "{{count}} సం.",
@@ -25,7 +26,6 @@
     "noneMissing": "ఉద్యోగ జాబితాలోంచి ఏదీ తక్కువ లేదు.",
     "experience_one": "{{count}} సంవత్సరం అనుభవం",
     "experience_other": "{{count}} సంవత్సరాల అనుభవం",
-    "taken": "AI ఇంటర్వ్యూలు: {{n}}",
     "noSkills": "ఈ అభ్యర్థి నైపుణ్యాల సమాచారం ఇంకా లేదు."
   },
   "applicants": {
@@ -39,8 +39,6 @@
   },
   "errorTitle": "దరఖాస్తుదారులు లోడ్ కాలేదు.",
   "errorBody": "కనెక్షన్ చూసి మళ్లీ ప్రయత్నించండి.",
-  "interviewsTaken_one": "{{count}} చేశారు",
-  "interviewsTaken_other": "{{count}} చేశారు",
   "scope": {
     "label": "చూపించు",
     "matched": "AI మ్యాచ్ చేసినవారు",

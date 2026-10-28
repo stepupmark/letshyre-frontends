@@ -4,6 +4,7 @@
     "lead": "Lo sblocco mostra contatti, scheda completa, registrazione e curriculum. Ogni colloquio costa un credito.",
     "matched": "Il ruolo di questa offerta",
     "unlocked": "Sbloccato",
+    "score": "Punteggio {{score}}",
     "button_one": "Sblocca · {{count}} credito",
     "button_many": "Sblocca · {{count}} crediti",
     "button_other": "Sblocca · {{count}} crediti",

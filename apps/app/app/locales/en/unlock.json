@@ -4,6 +4,7 @@
     "lead": "Unlocking shows contact details, the full scorecard, the recording and the resume. Each interview costs one credit.",
     "matched": "This job's role",
     "unlocked": "Unlocked",
+    "score": "Score {{score}}",
     "button_one": "Unlock · {{count}} credit",
     "button_other": "Unlock · {{count}} credits",
     "pick": "Choose at least one interview.",

@@ -4,6 +4,7 @@
     "lead": "Das Freischalten zeigt Kontaktdaten, die vollständige Scorecard, die Aufzeichnung und den Lebenslauf. Jedes Interview kostet einen Credit.",
     "matched": "Rolle dieser Stelle",
     "unlocked": "Freigeschaltet",
+    "score": "Punktzahl {{score}}",
     "button_one": "Freischalten · {{count}} Credit",
     "button_other": "Freischalten · {{count}} Credits",
     "pick": "Wählen Sie mindestens ein Interview.",

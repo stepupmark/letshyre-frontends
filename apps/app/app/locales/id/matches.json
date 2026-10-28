@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "Semua",
-    "strong": "Tinggi",
-    "partial": "Sebagian",
-    "low": "Rendah",
     "label": "Filter menurut kecocokan"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "Di bawah 40"
   },
   "columns": {
     "candidate": "Kandidat",
     "match": "Kecocokan",
-    "experience": "Pengalaman",
-    "interviews": "Wawancara"
+    "experience": "Pengalaman"
   },
   "years_other": "{{count}} thn",
   "unnamed": "Kandidat tanpa nama",
@@ -23,7 +24,6 @@
     "missing": "Kurang",
     "noneMissing": "Tidak ada yang kurang dari daftar lowongan.",
     "experience_other": "Pengalaman {{count}} tahun",
-    "taken": "Wawancara AI: {{n}}",
     "noSkills": "Belum ada data keahlian untuk kandidat ini."
   },
   "applicants": {
@@ -36,7 +36,6 @@
   },
   "errorTitle": "Pelamar gagal dimuat.",
   "errorBody": "Periksa koneksi lalu coba lagi.",
-  "interviewsTaken_other": "{{count}} diikuti",
   "scope": {
     "label": "Tampilkan",
     "matched": "Dicocokkan AI",

@@ -86,10 +86,10 @@ function Overview({
               <span
                 aria-hidden="true"
                 data-band={band}
-                className="size-2 rounded-full bg-muted-foreground/50 data-[band=partial]:bg-warning data-[band=strong]:bg-success"
+                className="size-2 rounded-full bg-muted-foreground/40 data-[band=partial]:bg-muted-foreground data-[band=strong]:bg-foreground"
               />
-              <span className="text-muted-foreground">
-                {t(`bands.${band}`)}
+              <span className="text-muted-foreground tabular-nums">
+                {t(`range.${band}`)}
               </span>
               <span className="font-medium tabular-nums">{counts[band]}</span>
             </li>
@@ -108,7 +108,7 @@ function Overview({
               initial={{ scaleX: 0, opacity: 0 }}
               animate={{ scaleX: 1, opacity: 1 }}
               transition={{ duration: duration.slow, ease, delay: i * 0.08 }}
-              className="block h-full origin-left rounded-full bg-muted-foreground/50 data-[band=partial]:bg-warning data-[band=strong]:bg-success rtl:origin-right"
+              className="block h-full origin-left rounded-full bg-muted-foreground/40 data-[band=partial]:bg-muted-foreground data-[band=strong]:bg-foreground rtl:origin-right"
             />
           </span>
         ))}

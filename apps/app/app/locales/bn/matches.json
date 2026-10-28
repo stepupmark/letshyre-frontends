@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "সব",
-    "strong": "জোরালো",
-    "partial": "আংশিক",
-    "low": "কম",
     "label": "মিল অনুযায়ী ফিল্টার"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "40-এর নিচে"
   },
   "columns": {
     "candidate": "প্রার্থী",
     "match": "ম্যাচ",
-    "experience": "অভিজ্ঞতা",
-    "interviews": "ইন্টারভিউ"
+    "experience": "অভিজ্ঞতা"
   },
   "years_one": "{{count}} বছর",
   "years_other": "{{count}} বছর",
@@ -25,7 +26,6 @@
     "noneMissing": "চাকরির তালিকা থেকে কিছু কম নেই।",
     "experience_one": "{{count}} বছরের অভিজ্ঞতা",
     "experience_other": "{{count}} বছরের অভিজ্ঞতা",
-    "taken": "AI ইন্টারভিউ: {{n}}",
     "noSkills": "এই প্রার্থীর দক্ষতার তথ্য এখনও নেই।"
   },
   "applicants": {
@@ -39,8 +39,6 @@
   },
   "errorTitle": "আবেদনকারীরা লোড হয়নি।",
   "errorBody": "সংযোগ দেখে আবার চেষ্টা করুন।",
-  "interviewsTaken_one": "{{count}}টি দিয়েছেন",
-  "interviewsTaken_other": "{{count}}টি দিয়েছেন",
   "scope": {
     "label": "দেখান",
     "matched": "AI-এর ম্যাচ",

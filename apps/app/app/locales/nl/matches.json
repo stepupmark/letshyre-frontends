@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "Alle",
-    "strong": "Sterk",
-    "partial": "Gedeeltelijk",
-    "low": "Zwak",
     "label": "Filter op match"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "Onder 40"
   },
   "columns": {
     "candidate": "Kandidaat",
     "match": "Match",
-    "experience": "Ervaring",
-    "interviews": "Interviews"
+    "experience": "Ervaring"
   },
   "years_one": "{{count}} jr",
   "years_other": "{{count}} jr",
@@ -25,7 +26,6 @@
     "noneMissing": "Niets van de lijst van de vacature.",
     "experience_one": "{{count}} jaar ervaring",
     "experience_other": "{{count}} jaar ervaring",
-    "taken": "AI-interviews: {{n}}",
     "noSkills": "Nog geen vaardigheidsgegevens voor deze kandidaat."
   },
   "applicants": {
@@ -39,8 +39,6 @@
   },
   "errorTitle": "De sollicitanten zijn niet geladen.",
   "errorBody": "Controleer je verbinding en probeer het opnieuw.",
-  "interviewsTaken_one": "{{count}} gedaan",
-  "interviewsTaken_other": "{{count}} gedaan",
   "scope": {
     "label": "Toon",
     "matched": "Door AI gematcht",

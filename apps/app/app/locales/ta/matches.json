@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "அனைத்தும்",
-    "strong": "வலுவானவை",
-    "partial": "பகுதி",
-    "low": "குறைவு",
     "label": "பொருத்தத்தின்படி வடிகட்டு"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "40-க்கு கீழ்"
   },
   "columns": {
     "candidate": "வேட்பாளர்",
     "match": "பொருத்தம்",
-    "experience": "அனுபவம்",
-    "interviews": "நேர்காணல்கள்"
+    "experience": "அனுபவம்"
   },
   "years_one": "{{count}} ஆண்டு",
   "years_other": "{{count}} ஆண்டுகள்",
@@ -25,7 +26,6 @@
     "noneMissing": "வேலைப் பட்டியலில் இருந்து எதுவும் குறையவில்லை.",
     "experience_one": "{{count}} ஆண்டு அனுபவம்",
     "experience_other": "{{count}} ஆண்டுகள் அனுபவம்",
-    "taken": "AI நேர்காணல்கள்: {{n}}",
     "noSkills": "இந்த விண்ணப்பதாரரின் திறன் தரவு இன்னும் இல்லை."
   },
   "applicants": {
@@ -39,8 +39,6 @@
   },
   "errorTitle": "விண்ணப்பதாரர்கள் ஏற்றப்படவில்லை.",
   "errorBody": "இணைப்பைச் சரிபார்த்து மீண்டும் முயலவும்.",
-  "interviewsTaken_one": "{{count}} எடுத்தார்",
-  "interviewsTaken_other": "{{count}} எடுத்தார்",
   "scope": {
     "label": "காட்டு",
     "matched": "AI பொருத்தியவை",

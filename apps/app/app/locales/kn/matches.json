@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "ಎಲ್ಲಾ",
-    "strong": "ಉತ್ತಮ",
-    "partial": "ಭಾಗಶಃ",
-    "low": "ಕಡಿಮೆ",
     "label": "ಹೊಂದಾಣಿಕೆಯಿಂದ ಫಿಲ್ಟರ್"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "40 ಕ್ಕಿಂತ ಕಡಿಮೆ"
   },
   "columns": {
     "candidate": "ಅಭ್ಯರ್ಥಿ",
     "match": "ಹೊಂದಾಣಿಕೆ",
-    "experience": "ಅನುಭವ",
-    "interviews": "ಸಂದರ್ಶನಗಳು"
+    "experience": "ಅನುಭವ"
   },
   "years_one": "{{count}} ವರ್ಷ",
   "years_other": "{{count}} ವರ್ಷ",
@@ -25,7 +26,6 @@
     "noneMissing": "ಉದ್ಯೋಗದ ಪಟ್ಟಿಯಿಂದ ಏನೂ ಕಾಣೆಯಾಗಿಲ್ಲ.",
     "experience_one": "{{count}} ವರ್ಷದ ಅನುಭವ",
     "experience_other": "{{count}} ವರ್ಷಗಳ ಅನುಭವ",
-    "taken": "AI ಸಂದರ್ಶನಗಳು: {{n}}",
     "noSkills": "ಈ ಅಭ್ಯರ್ಥಿಯ ಕೌಶಲ ಮಾಹಿತಿ ಇನ್ನೂ ಇಲ್ಲ."
   },
   "applicants": {
@@ -39,8 +39,6 @@
   },
   "errorTitle": "ಅರ್ಜಿದಾರರು ಲೋಡ್ ಆಗಲಿಲ್ಲ.",
   "errorBody": "ಸಂಪರ್ಕ ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
-  "interviewsTaken_one": "{{count}} ತೆಗೆದುಕೊಂಡಿದ್ದಾರೆ",
-  "interviewsTaken_other": "{{count}} ತೆಗೆದುಕೊಂಡಿದ್ದಾರೆ",
   "scope": {
     "label": "ತೋರಿಸಿ",
     "matched": "AI ಹೊಂದಿಸಿದವರು",

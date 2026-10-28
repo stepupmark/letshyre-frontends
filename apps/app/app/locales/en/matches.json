@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "All",
-    "strong": "Strong",
-    "partial": "Partial",
-    "low": "Low",
     "label": "Filter by match"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "Under 40"
   },
   "columns": {
     "candidate": "Candidate",
     "match": "Match",
-    "experience": "Experience",
-    "interviews": "Interviews"
+    "experience": "Experience"
   },
   "years_one": "{{count}} yr",
   "years_other": "{{count}} yrs",
@@ -25,7 +26,6 @@
     "noneMissing": "Nothing from the job's list.",
     "experience_one": "{{count}} year of experience",
     "experience_other": "{{count}} years of experience",
-    "taken": "AI interviews: {{n}}",
     "noSkills": "No skills data for this candidate yet."
   },
   "applicants": {
@@ -39,8 +39,6 @@
   },
   "errorTitle": "Applicants didn't load.",
   "errorBody": "Check your connection and try again.",
-  "interviewsTaken_one": "{{count}} taken",
-  "interviewsTaken_other": "{{count}} taken",
   "scope": {
     "label": "Show",
     "matched": "AI matched",

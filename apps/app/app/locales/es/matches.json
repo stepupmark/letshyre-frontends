@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "Todas",
-    "strong": "Altas",
-    "partial": "Parciales",
-    "low": "Bajas",
     "label": "Filtrar por coincidencia"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "Menos de 40"
   },
   "columns": {
     "candidate": "Candidato",
     "match": "Coincidencia",
-    "experience": "Experiencia",
-    "interviews": "Entrevistas"
+    "experience": "Experiencia"
   },
   "years_one": "{{count}} año",
   "years_many": "{{count}} años",
@@ -27,7 +28,6 @@
     "experience_one": "{{count}} año de experiencia",
     "experience_many": "{{count}} años de experiencia",
     "experience_other": "{{count}} años de experiencia",
-    "taken": "Entrevistas con IA: {{n}}",
     "noSkills": "Aún no hay datos de habilidades de este candidato."
   },
   "applicants": {
@@ -42,9 +42,6 @@
   },
   "errorTitle": "Los candidatos no se cargaron.",
   "errorBody": "Revisa tu conexión e inténtalo de nuevo.",
-  "interviewsTaken_one": "{{count}} hecha",
-  "interviewsTaken_many": "{{count}} hechas",
-  "interviewsTaken_other": "{{count}} hechas",
   "scope": {
     "label": "Mostrar",
     "matched": "Coincidencias de la IA",

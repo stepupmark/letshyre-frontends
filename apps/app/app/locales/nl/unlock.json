@@ -4,6 +4,7 @@
     "lead": "Ontgrendelen toont contactgegevens, de volledige scorekaart, de opname en het cv. Elk interview kost één credit.",
     "matched": "Functie van deze vacature",
     "unlocked": "Ontgrendeld",
+    "score": "Score {{score}}",
     "button_one": "Ontgrendelen · {{count}} credit",
     "button_other": "Ontgrendelen · {{count}} credits",
     "pick": "Kies minstens één interview.",

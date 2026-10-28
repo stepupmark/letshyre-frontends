@@ -33,7 +33,7 @@ export function BandTabs({
               value={band}
               className="h-full flex-none gap-1.5 px-3 after:hidden data-active:text-foreground"
             >
-              {t(`bands.${band}`)}
+              {band === "all" ? t("bands.all") : t(`range.${band}`)}
               <span className="text-xs text-muted-foreground tabular-nums">
                 {counts[band]}
               </span>

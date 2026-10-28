@@ -4,6 +4,7 @@
     "lead": "Le déblocage affiche les coordonnées, la grille complète, l'enregistrement et le CV. Chaque entretien coûte un crédit.",
     "matched": "Le poste de cette offre",
     "unlocked": "Débloqué",
+    "score": "Score {{score}}",
     "button_one": "Débloquer · {{count}} crédit",
     "button_many": "Débloquer · {{count}} crédits",
     "button_other": "Débloquer · {{count}} crédits",

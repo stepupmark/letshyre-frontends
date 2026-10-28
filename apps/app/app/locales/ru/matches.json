@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "Все",
-    "strong": "Сильные",
-    "partial": "Частичные",
-    "low": "Слабые",
     "label": "Фильтр по совпадению"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "Ниже 40"
   },
   "columns": {
     "candidate": "Кандидат",
     "match": "Совпадение",
-    "experience": "Опыт",
-    "interviews": "Интервью"
+    "experience": "Опыт"
   },
   "years_one": "{{count}} год",
   "years_few": "{{count}} года",
@@ -29,7 +30,6 @@
     "experience_few": "{{count}} года опыта",
     "experience_many": "{{count}} лет опыта",
     "experience_other": "{{count}} года опыта",
-    "taken": "ИИ-интервью: {{n}}",
     "noSkills": "Данных о навыках этого кандидата пока нет."
   },
   "applicants": {
@@ -45,10 +45,6 @@
   },
   "errorTitle": "Не удалось загрузить кандидатов.",
   "errorBody": "Проверьте подключение и попробуйте снова.",
-  "interviewsTaken_one": "пройдено: {{count}}",
-  "interviewsTaken_few": "пройдено: {{count}}",
-  "interviewsTaken_many": "пройдено: {{count}}",
-  "interviewsTaken_other": "пройдено: {{count}}",
   "scope": {
     "label": "Показать",
     "matched": "Подобраны ИИ",

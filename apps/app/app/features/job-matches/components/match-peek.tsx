@@ -8,12 +8,10 @@ import { Check, ChevronDown, Minus } from "lucide-react"
 import * as m from "motion/react-m"
 import type { ReactNode } from "react"
 
-import { ScoreBand } from "@/components/score-band"
 import { duration, ease } from "@/lib/motion"
 
-import { matchScore } from "../lib/job-matches"
 import type { Match } from "../schemas/job-matches.schema"
-import { MatchScores } from "./match-scores"
+import { MatchBreakdown } from "./match-breakdown"
 
 export function MatchPeek({
   match,
@@ -25,11 +23,6 @@ export function MatchPeek({
   const { t } = useTranslation("matches")
   const ai = match.ai_match
   const years = ai?.years_experience
-  const taken = match.interview_attempts?.length ?? 0
-  const facts = [
-    years != null && t("peek.experience", { count: Math.round(years) }),
-    taken > 0 && t("peek.taken", { n: taken }),
-  ].filter(Boolean)
 
   return (
     <m.div
@@ -41,15 +34,12 @@ export function MatchPeek({
     >
       <div className="flex min-w-0 flex-col gap-4 p-4">
         <section className="flex flex-col gap-3 rounded-lg border p-3">
-          <div className="flex flex-wrap items-center gap-2">
-            <ScoreBand score={matchScore(match)} />
-            {facts.length > 0 && (
-              <span className="ms-auto text-xs text-muted-foreground tabular-nums">
-                {facts.join(" · ")}
-              </span>
-            )}
-          </div>
-          <MatchScores match={match} className="justify-between gap-2" />
+          <MatchBreakdown match={match} />
+          {years != null && (
+            <p className="text-xs text-muted-foreground tabular-nums">
+              {t("peek.experience", { count: Math.round(years) })}
+            </p>
+          )}
         </section>
 
         <Collapsible className="flex flex-col gap-2">

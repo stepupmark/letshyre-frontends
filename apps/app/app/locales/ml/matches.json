@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "എല്ലാം",
-    "strong": "മികച്ചത്",
-    "partial": "ഭാഗികം",
-    "low": "കുറവ്",
     "label": "പൊരുത്തം അനുസരിച്ച് ഫിൽട്ടർ"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "40-ൽ താഴെ"
   },
   "columns": {
     "candidate": "ഉദ്യോഗാർത്ഥി",
     "match": "മാച്ച്",
-    "experience": "പരിചയം",
-    "interviews": "ഇന്റർവ്യൂകൾ"
+    "experience": "പരിചയം"
   },
   "years_one": "{{count}} വർഷം",
   "years_other": "{{count}} വർഷം",
@@ -25,7 +26,6 @@
     "noneMissing": "ജോലിയുടെ ലിസ്റ്റിൽ നിന്ന് ഒന്നും കുറവില്ല.",
     "experience_one": "{{count}} വർഷത്തെ പരിചയം",
     "experience_other": "{{count}} വർഷത്തെ പരിചയം",
-    "taken": "AI ഇന്റർവ്യൂകൾ: {{n}}",
     "noSkills": "ഈ ഉദ്യോഗാർത്ഥിയുടെ കഴിവുകളുടെ വിവരം ഇതുവരെ ഇല്ല."
   },
   "applicants": {
@@ -39,8 +39,6 @@
   },
   "errorTitle": "അപേക്ഷകർ ലോഡ് ആയില്ല.",
   "errorBody": "കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.",
-  "interviewsTaken_one": "{{count}} എടുത്തു",
-  "interviewsTaken_other": "{{count}} എടുത്തു",
   "scope": {
     "label": "കാണിക്കുക",
     "matched": "AI മാച്ച് ചെയ്തവർ",

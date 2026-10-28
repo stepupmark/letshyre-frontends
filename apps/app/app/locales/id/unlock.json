@@ -4,6 +4,7 @@
     "lead": "Membuka menampilkan kontak, kartu skor lengkap, rekaman, dan CV. Setiap wawancara memakai satu kredit.",
     "matched": "Posisi lowongan ini",
     "unlocked": "Terbuka",
+    "score": "Skor {{score}}",
     "button_other": "Buka · {{count}} kredit",
     "pick": "Pilih minimal satu wawancara.",
     "balance": "Saldo",

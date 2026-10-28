@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "सभी",
-    "strong": "मज़बूत",
-    "partial": "आंशिक",
-    "low": "कम",
     "label": "मैच के अनुसार फ़िल्टर करें"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "40 से कम"
   },
   "columns": {
     "candidate": "उम्मीदवार",
     "match": "मैच",
-    "experience": "अनुभव",
-    "interviews": "इंटरव्यू"
+    "experience": "अनुभव"
   },
   "years_one": "{{count}} साल",
   "years_other": "{{count}} साल",
@@ -25,7 +26,6 @@
     "noneMissing": "नौकरी की सूची में से कुछ भी कम नहीं।",
     "experience_one": "{{count}} साल का अनुभव",
     "experience_other": "{{count}} साल का अनुभव",
-    "taken": "AI इंटरव्यू: {{n}}",
     "noSkills": "इस उम्मीदवार के कौशल का डेटा अभी नहीं है।"
   },
   "applicants": {
@@ -39,8 +39,6 @@
   },
   "errorTitle": "आवेदक लोड नहीं हुए।",
   "errorBody": "कनेक्शन जांचें और फिर से कोशिश करें।",
-  "interviewsTaken_one": "{{count}} दिया",
-  "interviewsTaken_other": "{{count}} दिए",
   "scope": {
     "label": "दिखाएं",
     "matched": "AI से मैच",

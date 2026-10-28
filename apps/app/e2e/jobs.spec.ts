@@ -240,7 +240,7 @@ test("applicants are reviewed best match first, one after another", async ({
   await expect(page.getByText("3 applied · best match first")).toBeVisible()
   const rows = page.getByRole("row")
   await expect(rows.nth(1)).toContainText("Arjun Mehta")
-  await expect(rows.nth(1)).toContainText("Strong match")
+  await expect(rows.nth(1).getByText("86", { exact: true })).toBeVisible()
   await expect(rows.nth(3)).toContainText("Meera Iyer")
   await axe(page)
 
@@ -255,6 +255,6 @@ test("applicants are reviewed best match first, one after another", async ({
   await expect(page).toHaveURL(/candidate=7/)
 
   await page.keyboard.press("Escape")
-  await page.getByRole("tab", { name: /Low/ }).click()
+  await page.getByRole("tab", { name: /Under 40/ }).click()
   await expect(page.getByRole("row")).toHaveCount(2)
 })

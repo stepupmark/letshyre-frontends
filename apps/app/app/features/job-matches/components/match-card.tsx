@@ -1,13 +1,9 @@
 import { ChevronRight } from "lucide-react"
 import { useId } from "react"
 
-import { ScoreBand } from "@/components/score-band"
-
-import { matchScore } from "../lib/job-matches"
 import type { Match } from "../schemas/job-matches.schema"
-import { MatchMeter } from "./match-meter"
+import { MatchBreakdown } from "./match-breakdown"
 import { MatchPerson } from "./match-person"
-import { MatchScores } from "./match-scores"
 
 export function MatchCard({
   match,
@@ -17,7 +13,6 @@ export function MatchCard({
   onOpen: () => void
 }) {
   const id = useId()
-  const score = matchScore(match)
   const reason = match.ai_match?.rationale
   return (
     <button
@@ -36,11 +31,7 @@ export function MatchCard({
           className="size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-active:translate-x-0.5 motion-reduce:transition-none rtl:-scale-x-100"
         />
       </span>
-      <span className="flex items-center gap-2.5">
-        <ScoreBand score={score} />
-        <MatchMeter score={score} className="flex-1" />
-      </span>
-      <MatchScores match={match} />
+      <MatchBreakdown match={match} />
       {reason && (
         <span
           id={`${id}-reason`}

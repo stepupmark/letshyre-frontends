@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "Alle",
-    "strong": "Stark",
-    "partial": "Teilweise",
-    "low": "Schwach",
     "label": "Nach Treffer filtern"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "Unter 40"
   },
   "columns": {
     "candidate": "Kandidat",
     "match": "Match",
-    "experience": "Erfahrung",
-    "interviews": "Interviews"
+    "experience": "Erfahrung"
   },
   "years_one": "{{count}} J.",
   "years_other": "{{count}} J.",
@@ -25,7 +26,6 @@
     "noneMissing": "Nichts aus der Liste der Stelle.",
     "experience_one": "{{count}} Jahr Erfahrung",
     "experience_other": "{{count}} Jahre Erfahrung",
-    "taken": "KI-Interviews: {{n}}",
     "noSkills": "Für diese Person gibt es noch keine Skill-Daten."
   },
   "applicants": {
@@ -39,8 +39,6 @@
   },
   "errorTitle": "Die Bewerbungen wurden nicht geladen.",
   "errorBody": "Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
-  "interviewsTaken_one": "{{count}} absolviert",
-  "interviewsTaken_other": "{{count}} absolviert",
   "scope": {
     "label": "Anzeigen",
     "matched": "Von der KI gematcht",

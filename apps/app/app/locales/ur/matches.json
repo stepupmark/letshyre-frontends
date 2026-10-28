@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "سب",
-    "strong": "مضبوط",
-    "partial": "جزوی",
-    "low": "کم",
     "label": "میچ کے لحاظ سے فلٹر"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "40 سے کم"
   },
   "columns": {
     "candidate": "امیدوار",
     "match": "میچ",
-    "experience": "تجربہ",
-    "interviews": "انٹرویو"
+    "experience": "تجربہ"
   },
   "years_one": "{{count}} سال",
   "years_other": "{{count}} سال",
@@ -25,7 +26,6 @@
     "noneMissing": "ملازمت کی فہرست میں سے کچھ کم نہیں۔",
     "experience_one": "{{count}} سال کا تجربہ",
     "experience_other": "{{count}} سال کا تجربہ",
-    "taken": "AI انٹرویوز: {{n}}",
     "noSkills": "اس امیدوار کی مہارتوں کا ڈیٹا ابھی موجود نہیں۔"
   },
   "applicants": {
@@ -39,8 +39,6 @@
   },
   "errorTitle": "درخواست دہندگان لوڈ نہیں ہوئے۔",
   "errorBody": "کنکشن چیک کر کے دوبارہ کوشش کریں۔",
-  "interviewsTaken_one": "{{count}} دیا",
-  "interviewsTaken_other": "{{count}} دیے",
   "scope": {
     "label": "دکھائیں",
     "matched": "AI سے میچ",

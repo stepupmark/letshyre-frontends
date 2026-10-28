@@ -4,6 +4,7 @@
     "lead": "Al desbloquear verá los datos de contacto, la ficha completa, la grabación y el currículum. Cada entrevista cuesta un crédito.",
     "matched": "El puesto de esta oferta",
     "unlocked": "Desbloqueado",
+    "score": "Puntuación {{score}}",
     "button_one": "Desbloquear · {{count}} crédito",
     "button_many": "Desbloquear · {{count}} créditos",
     "button_other": "Desbloquear · {{count}} créditos",

@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "الكل",
-    "strong": "قوي",
-    "partial": "جزئي",
-    "low": "ضعيف",
     "label": "التصفية حسب المطابقة"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "أقل من 40"
   },
   "columns": {
     "candidate": "المرشح",
     "match": "التطابق",
-    "experience": "الخبرة",
-    "interviews": "المقابلات"
+    "experience": "الخبرة"
   },
   "years_zero": "أقل من سنة",
   "years_one": "سنة واحدة",
@@ -33,7 +34,6 @@
     "experience_few": "خبرة {{count}} سنوات",
     "experience_many": "خبرة {{count}} سنة",
     "experience_other": "خبرة {{count}} سنة",
-    "taken": "مقابلات الذكاء الاصطناعي: {{n}}",
     "noSkills": "لا توجد بيانات مهارات لهذا المرشح بعد."
   },
   "applicants": {
@@ -51,12 +51,6 @@
   },
   "errorTitle": "لم يتم تحميل المتقدمين.",
   "errorBody": "تحقق من اتصالك وحاول مرة أخرى.",
-  "interviewsTaken_zero": "لم تُجرَ أي مقابلة",
-  "interviewsTaken_one": "مقابلة واحدة",
-  "interviewsTaken_two": "مقابلتان",
-  "interviewsTaken_few": "{{count}} مقابلات",
-  "interviewsTaken_many": "{{count}} مقابلة",
-  "interviewsTaken_other": "{{count}} مقابلة",
   "scope": {
     "label": "عرض",
     "matched": "مطابقة الذكاء الاصطناعي",

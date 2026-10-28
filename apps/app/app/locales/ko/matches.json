@@ -1,16 +1,17 @@
 {
   "bands": {
     "all": "전체",
-    "strong": "높음",
-    "partial": "부분",
-    "low": "낮음",
     "label": "매칭으로 필터"
+  },
+  "range": {
+    "strong": "70+",
+    "partial": "40–69",
+    "low": "40 미만"
   },
   "columns": {
     "candidate": "후보자",
     "match": "매칭",
-    "experience": "경력",
-    "interviews": "인터뷰"
+    "experience": "경력"
   },
   "years_other": "{{count}}년",
   "unnamed": "이름 없는 후보자",
@@ -23,7 +24,6 @@
     "missing": "부족",
     "noneMissing": "공고 목록에서 부족한 것이 없어요.",
     "experience_other": "경력 {{count}}년",
-    "taken": "AI 인터뷰: {{n}}",
     "noSkills": "이 후보자의 스킬 정보가 아직 없습니다."
   },
   "applicants": {
@@ -36,7 +36,6 @@
   },
   "errorTitle": "지원자를 불러오지 못했습니다.",
   "errorBody": "연결을 확인하고 다시 시도하세요.",
-  "interviewsTaken_other": "{{count}}회 응시",
   "scope": {
     "label": "보기",
     "matched": "AI 매칭",
