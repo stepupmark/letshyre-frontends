@@ -77,7 +77,7 @@ export function ShareDialog({
         {link ? (
           <m.div
             key="created"
-            className="flex flex-col gap-6"
+            className="flex min-w-0 flex-col gap-6"
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: duration.base, ease }}
