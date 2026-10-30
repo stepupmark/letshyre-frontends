@@ -49,21 +49,18 @@ export function SearchBar({
   return (
     <form
       role="search"
-      className="flex flex-col gap-2"
+      className="min-w-0 flex-1"
       onSubmit={(event) => {
         event.preventDefault()
         send(text, 0)
       }}
     >
-      <label
-        htmlFor={id}
-        className="text-base font-semibold text-balance text-brand-text"
-      >
+      <label htmlFor={id} className="sr-only">
         {t("searchLabel")}
       </label>
-      <InputGroup className="h-14 rounded-xl bg-background has-[[data-slot=input-group-control]:focus-visible]:border-brand has-[[data-slot=input-group-control]:focus-visible]:ring-brand/15">
-        <InputGroupAddon className="ps-4">
-          <Search className="size-5 text-brand-text" aria-hidden="true" />
+      <InputGroup className="h-11 rounded-lg bg-background has-[[data-slot=input-group-control]:focus-visible]:border-brand has-[[data-slot=input-group-control]:focus-visible]:ring-brand/15 md:h-10">
+        <InputGroupAddon className="ps-3">
+          <Search className="size-4 text-brand-text" aria-hidden="true" />
         </InputGroupAddon>
         <InputGroupInput
           ref={input}
@@ -73,7 +70,7 @@ export function SearchBar({
           enterKeyHint="search"
           maxLength={80}
           placeholder={t("searchPlaceholder")}
-          className="text-base"
+          className="text-base md:text-sm"
           value={text}
           onChange={(event) => {
             setText(event.target.value)

@@ -1,30 +1,13 @@
 {
   "title": "Find candidates",
   "lead": "Search everyone who has finished an AI interview, then unlock the people worth a conversation.",
-  "panel": "Candidate search",
   "searchLabel": "Search by role or skill",
   "searchPlaceholder": "Try DevOps engineer, React or Data analyst",
   "clearSearch": "Clear search",
   "searching": "Searching",
-  "narrowBy": "Narrow by",
-  "idle": {
-    "title": "Who are you looking for?",
-    "body": "Type a role or a skill. Add filters to narrow the results."
-  },
-  "steps": {
-    "label": "How it works",
-    "search": {
-      "title": "Search",
-      "body": "Type a role or a skill to see everyone who interviewed for it."
-    },
-    "compare": {
-      "title": "Compare",
-      "body": "Weigh interview scores, experience, education and skills side by side."
-    },
-    "unlock": {
-      "title": "Unlock",
-      "body": "Use a credit per interview to see contact details, the scorecard, the recording and the resume."
-    }
+  "start": {
+    "title": "Search across every AI interview",
+    "body": "Type a role or a skill above. Matches appear as a list, with the full profile beside the one you pick."
   },
   "count_one": "<n>{{count}}</n> candidate matches “{{search}}”",
   "count_other": "<n>{{count}}</n> candidates match “{{search}}”",
@@ -41,16 +24,13 @@
     "interviews_one": "{{count}} interview",
     "interviews_other": "{{count}} interviews",
     "lastInterview": "last one {{when}}",
-    "moreSkills": "+{{count}}",
-    "unlock": "Unlock",
-    "unlockFor": "Unlock {{name}}",
-    "unlocked": "Unlocked",
-    "viewUnlocked": "See unlocked candidates",
-    "otherInterviews": "Other interviews",
-    "otherInterviewsFor": "Other interviews for {{name}}"
+    "unlocked": "Unlocked"
   },
-  "dialog": {
-    "interviewedFor": "Interviewed for {{role}}"
+  "preview": {
+    "interviewedFor": "Interviewed for {{role}}",
+    "interview": "Interview",
+    "education": "Education",
+    "skills": "Skills"
   },
   "filters": {
     "title": "Filters",

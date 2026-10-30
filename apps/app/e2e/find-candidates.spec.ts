@@ -7,6 +7,9 @@ const [unlockedRow, lockedRow] = (
   }
 ).results
 
+const interviews = (row: Record<string, unknown> | undefined) =>
+  `GET /user/v1/employer_candidate_interviews/${String(row?.candidate_id)}/`
+
 test("an employer searches interviewed candidates, filters, pages and unlocks one", async ({
   page,
   api,
@@ -36,18 +39,28 @@ test("an employer searches interviewed candidates, filters, pages and unlocks on
         },
       })
     },
-    [`GET /user/v1/employer_candidate_interviews/${String(lockedRow?.candidate_id)}/`]:
-      (route) =>
-        reply(route, {
-          data: [
-            {
-              interview_id: lockedRow?.interview_id,
-              role: "Devops Engineer",
-              score: 16.5,
-              unlocked: sent !== null,
-            },
-          ],
-        }),
+    [interviews(unlockedRow)]: (route) =>
+      reply(route, {
+        data: [
+          {
+            interview_id: unlockedRow?.interview_id,
+            role: "Devops Engineer",
+            score: 55,
+            unlocked: true,
+          },
+        ],
+      }),
+    [interviews(lockedRow)]: (route) =>
+      reply(route, {
+        data: [
+          {
+            interview_id: lockedRow?.interview_id,
+            role: "Devops Engineer",
+            score: 16.5,
+            unlocked: sent !== null,
+          },
+        ],
+      }),
     "POST /user/v1/employer_unlock_candidate/": async (route) => {
       sent = route.request().postDataJSON()
       await reply(route, { success: true })
@@ -57,7 +70,7 @@ test("an employer searches interviewed candidates, filters, pages and unlocks on
 
   await signInAs("employer")
   await page.goto("/employer/find-candidates")
-  await expect(page.getByText("Who are you looking for?")).toBeVisible()
+  await expect(page.getByText("Search across every AI interview")).toBeVisible()
   expect(asked, "no search before the box has text").toEqual([])
 
   await page.getByLabel("Search by role or skill").fill("devops")
@@ -91,11 +104,19 @@ test("an employer searches interviewed candidates, filters, pages and unlocks on
   await expect(page).not.toHaveURL(/location=|education=|experience_/)
   await expect(page.getByText("12 candidates match “devops”")).toBeVisible()
 
-  await page.getByRole("button", { name: "Unlock Meera Nair" }).click()
-  const dialog = page.getByRole("dialog", { name: "Meera Nair" })
-  await expect(dialog.getByText("This job's role")).toBeVisible()
-  await dialog.getByRole("checkbox").check()
-  await dialog.getByRole("button", { name: "Unlock · 1 credit" }).click()
+  const preview = page.getByRole("complementary")
+  await expect(
+    preview.getByRole("heading", { name: "Ravi Kumar" })
+  ).toBeVisible()
+  await page.getByRole("button", { name: /Meera Nair/ }).click()
+  await expect(page).toHaveURL(/candidate=/)
+  await page.reload()
+  await expect(
+    preview.getByRole("heading", { name: "Meera Nair" })
+  ).toBeVisible()
+
+  await preview.getByRole("checkbox").check()
+  await preview.getByRole("button", { name: "Unlock · 1 credit" }).click()
   await expect
     .poll(() => sent)
     .toEqual({
@@ -103,18 +124,17 @@ test("an employer searches interviewed candidates, filters, pages and unlocks on
       interview: [lockedRow?.interview_id],
     })
   await expect(
-    dialog.getByText("Everything for this candidate is unlocked.")
+    preview.getByText("Everything for this candidate is unlocked.")
   ).toBeVisible()
-  await page.keyboard.press("Escape")
+  await expect(page.getByRole("img", { name: "Unlocked" })).toHaveCount(2)
+
+  await page.getByRole("button", { name: /Meera Nair/ }).press("ArrowUp")
   await expect(
-    page.getByRole("button", { name: "Unlock Meera Nair" })
-  ).toBeHidden()
-  await expect(
-    page.getByRole("link", { name: "See unlocked candidates" })
-  ).toHaveCount(2)
+    preview.getByRole("heading", { name: "Ravi Kumar" })
+  ).toBeVisible()
 
   const calls = asked.length
   await page.getByRole("button", { name: "Clear search" }).click()
-  await expect(page.getByText("Who are you looking for?")).toBeVisible()
+  await expect(page.getByText("Search across every AI interview")).toBeVisible()
   expect(asked).toHaveLength(calls)
 })

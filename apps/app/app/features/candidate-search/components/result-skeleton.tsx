@@ -2,27 +2,34 @@ import { Skeleton } from "@workspace/ui/components/skeleton"
 
 export function ResultSkeleton() {
   return (
-    <ul aria-hidden="true" className="flex flex-col gap-3">
-      {[0, 1, 2].map((i) => (
-        <li
-          key={i}
-          className="flex flex-col gap-4 rounded-xl border p-4 sm:p-5"
-        >
-          <div className="flex items-start gap-4">
-            <Skeleton className="size-12 rounded-full" />
-            <div className="flex flex-1 flex-col gap-2">
-              <Skeleton className="h-4 w-40" />
-              <Skeleton className="h-3.5 w-56" />
-              <Skeleton className="h-3 w-72 max-w-full" />
+    <div
+      aria-hidden="true"
+      className="grid gap-4 lg:grid-cols-5 lg:items-start"
+    >
+      <ul className="divide-y rounded-xl border lg:col-span-2">
+        {[0, 1, 2, 3, 4].map((i) => (
+          <li key={i} className="flex items-center gap-3 px-4 py-3">
+            <Skeleton className="size-10 rounded-full" />
+            <div className="flex flex-1 flex-col gap-1.5">
+              <Skeleton className="h-3.5 w-32" />
+              <Skeleton className="h-3 w-44" />
+              <Skeleton className="h-2.5 w-24" />
             </div>
-            <Skeleton className="h-8 w-24 max-sm:hidden" />
+          </li>
+        ))}
+      </ul>
+      <div className="flex flex-col gap-5 rounded-xl border p-5 max-lg:hidden lg:col-span-3">
+        <div className="flex items-center gap-4">
+          <Skeleton className="size-14 rounded-full" />
+          <div className="flex flex-col gap-2">
+            <Skeleton className="h-4 w-40" />
+            <Skeleton className="h-3 w-56" />
           </div>
-          <div className="flex gap-2 border-t pt-3">
-            <Skeleton className="h-5 w-20 rounded-full" />
-            <Skeleton className="h-5 w-16 rounded-full" />
-          </div>
-        </li>
-      ))}
-    </ul>
+        </div>
+        <Skeleton className="h-2 w-full" />
+        <Skeleton className="h-3 w-3/4" />
+        <Skeleton className="h-3 w-2/3" />
+      </div>
+    </div>
   )
 }

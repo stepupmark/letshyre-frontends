@@ -15,6 +15,7 @@ export function FilterPopover({
   badge,
   open,
   onOpenChange,
+  className,
   children,
 }: {
   label: string
@@ -22,6 +23,7 @@ export function FilterPopover({
   badge?: ReactNode
   open?: boolean
   onOpenChange?: (open: boolean) => void
+  className?: string
   children: ReactNode
 }) {
   return (
@@ -33,7 +35,8 @@ export function FilterPopover({
             size="sm"
             className={cn(
               "group max-md:hidden",
-              active && "border-brand/40 bg-brand-muted hover:bg-brand-muted"
+              active && "border-brand/40 bg-brand-muted hover:bg-brand-muted",
+              className
             )}
           />
         }

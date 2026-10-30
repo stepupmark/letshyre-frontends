@@ -1,30 +1,13 @@
 {
   "title": "Trouver des candidats",
   "lead": "Cherchez parmi toutes les personnes qui ont passé un entretien IA, puis débloquez celles qui méritent une conversation.",
-  "panel": "Recherche de candidats",
   "searchLabel": "Rechercher par poste ou compétence",
   "searchPlaceholder": "Essayez DevOps engineer, React ou Data analyst",
   "clearSearch": "Effacer la recherche",
   "searching": "Recherche en cours",
-  "narrowBy": "Affiner par",
-  "idle": {
-    "title": "Qui recherchez-vous ?",
-    "body": "Saisissez un poste ou une compétence. Ajoutez des filtres pour affiner les résultats."
-  },
-  "steps": {
-    "label": "Comment ça marche",
-    "search": {
-      "title": "Rechercher",
-      "body": "Saisissez un poste ou une compétence pour voir toutes les personnes interrogées pour celui-ci."
-    },
-    "compare": {
-      "title": "Comparer",
-      "body": "Comparez côte à côte les scores d’entretien, l’expérience, la formation et les compétences."
-    },
-    "unlock": {
-      "title": "Débloquer",
-      "body": "Un crédit par entretien donne accès aux coordonnées, à l’évaluation, à l’enregistrement et au CV."
-    }
+  "start": {
+    "title": "Cherchez dans tous les entretiens IA",
+    "body": "Saisissez un poste ou une compétence ci-dessus. Les résultats s’affichent en liste, avec le profil complet de la personne choisie à côté."
   },
   "count_one": "<n>{{count}}</n> candidat correspond à « {{search}} »",
   "count_many": "<n>{{count}}</n> candidats correspondent à « {{search}} »",
@@ -44,16 +27,13 @@
     "interviews_many": "{{count}} entretiens",
     "interviews_other": "{{count}} entretiens",
     "lastInterview": "le dernier {{when}}",
-    "moreSkills": "+{{count}}",
-    "unlock": "Débloquer",
-    "unlockFor": "Débloquer {{name}}",
-    "unlocked": "Débloqué",
-    "viewUnlocked": "Voir les candidats débloqués",
-    "otherInterviews": "Autres entretiens",
-    "otherInterviewsFor": "Autres entretiens de {{name}}"
+    "unlocked": "Débloqué"
   },
-  "dialog": {
-    "interviewedFor": "Entretien pour {{role}}"
+  "preview": {
+    "interviewedFor": "Entretien pour {{role}}",
+    "interview": "Entretien",
+    "education": "Formation",
+    "skills": "Compétences"
   },
   "filters": {
     "title": "Filtres",

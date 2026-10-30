@@ -3,6 +3,11 @@ import type { SearchResult } from "../schemas/candidate-search.schema"
 export const rowKey = (row: SearchResult) =>
   `${row.candidate_id}:${String(row.interview_id ?? "")}`
 
+export const nameOf = (row: SearchResult, fallback: string) => {
+  const name = row.candidate_name?.trim() ?? ""
+  return name === "" ? fallback : name
+}
+
 export const initials = (name: string) =>
   name
     .split(/\s+/)

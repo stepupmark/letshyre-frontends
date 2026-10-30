@@ -27,7 +27,6 @@ export function FilterBar({
 }) {
   const { t } = useTranslation("candidateSearch")
   const labels = useFilterLabels()
-  const chips = labels.chips(filters)
   const [open, setOpen] = useState<Open>(null)
   const toggle = (name: Exclude<Open, null>) => (next: boolean) => {
     setOpen(next ? name : null)
@@ -38,7 +37,7 @@ export function FilterBar({
   }
 
   return (
-    <div className="flex flex-wrap items-center gap-2">
+    <div className="flex shrink-0 items-center gap-2">
       <FilterSheet
         filters={filters}
         count={filterCount(filters)}
@@ -51,6 +50,7 @@ export function FilterBar({
         active={hasExperience(filters)}
         open={open === "experience"}
         onOpenChange={toggle("experience")}
+        className="h-10"
         badge={
           hasExperience(filters) && (
             <span className="text-brand-text tabular-nums">
@@ -66,6 +66,7 @@ export function FilterBar({
         active={filters.education !== ""}
         open={open === "education"}
         onOpenChange={toggle("education")}
+        className="h-10"
       >
         <TextFilter
           key={filters.education}
@@ -84,6 +85,7 @@ export function FilterBar({
         active={filters.location !== ""}
         open={open === "location"}
         onOpenChange={toggle("location")}
+        className="h-10"
       >
         <TextFilter
           key={filters.location}
@@ -95,15 +97,28 @@ export function FilterBar({
           }}
         />
       </FilterPopover>
-      {chips.length > 0 && (
-        <FilterChips
-          chips={chips}
-          onRemove={(chip) => {
-            onChange(chip.change)
-          }}
-          onClear={onClear}
-        />
-      )}
     </div>
+  )
+}
+
+export function ActiveFilters({
+  filters,
+  onChange,
+  onClear,
+}: {
+  filters: SearchFilters
+  onChange: (change: SearchChange) => void
+  onClear: () => void
+}) {
+  const chips = useFilterLabels().chips(filters)
+  if (chips.length === 0) return null
+  return (
+    <FilterChips
+      chips={chips}
+      onRemove={(chip) => {
+        onChange(chip.change)
+      }}
+      onClear={onClear}
+    />
   )
 }
