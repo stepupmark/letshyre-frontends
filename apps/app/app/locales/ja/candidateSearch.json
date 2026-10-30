@@ -1,0 +1,63 @@
+{
+  "title": "候補者を探す",
+  "lead": "AI 面接を終えた全員から検索し、話す価値のある人をアンロックしましょう。",
+  "searchLabel": "職種またはスキルで検索",
+  "searchPlaceholder": "例: DevOps engineer、React、Data analyst",
+  "clearSearch": "検索をクリア",
+  "searching": "検索中",
+  "idle": {
+    "title": "どんな人を探していますか?",
+    "body": "職種かスキルを入力してください。フィルターで結果を絞り込めます。",
+    "suggest": "募集中の職種"
+  },
+  "count_other": "「{{search}}」に一致する候補者 <n>{{count}}</n> 人",
+  "emptyTitle": "「{{search}}」に一致する人はいません",
+  "emptyBody": "より広い職種で試すか、スキルで検索してください。",
+  "emptyFiltered": "フィルターを減らすか、より広い職種で試してください。",
+  "errorTitle": "検索できませんでした。",
+  "errorBody": "接続を確認して、もう一度お試しください。",
+  "card": {
+    "unnamed": "名前のない候補者",
+    "years_other": "{{count}} 年",
+    "underYear": "1年未満",
+    "interviews_other": "面接 {{count}} 件",
+    "lastInterview": "最終 {{when}}",
+    "moreSkills": "+{{count}}",
+    "unlock": "アンロック",
+    "unlockFor": "{{name}} さんをアンロック",
+    "unlocked": "アンロック済み",
+    "viewUnlocked": "アンロック済みの候補者を見る",
+    "otherInterviews": "ほかの面接",
+    "otherInterviewsFor": "{{name}} さんのほかの面接"
+  },
+  "dialog": {
+    "interviewedFor": "{{role}} の面接"
+  },
+  "filters": {
+    "title": "絞り込み",
+    "experience": "経験",
+    "experienceLabel": "経験年数",
+    "any": "すべて",
+    "rangeShort": "{{min}}〜{{max}}",
+    "minShort": "{{min}}+",
+    "range": "{{min}}〜{{max}} 年",
+    "minYears": "{{min}} 年以上",
+    "upTo": "{{max}} 年まで",
+    "custom": "範囲を指定",
+    "min": "最小",
+    "max": "最大",
+    "minOverMax": "最小は最大以下にしてください。",
+    "apply": "適用",
+    "education": "学歴",
+    "educationLabel": "学位",
+    "educationPlaceholder": "例: B.Tech",
+    "commonDegrees": "よくある学位",
+    "location": "勤務地",
+    "locationLabel": "都市",
+    "locationPlaceholder": "例: ハイデラバード",
+    "clear": "絞り込みを解除",
+    "done": "候補者を表示",
+    "doneCount_other": "{{count}} 人の候補者を表示",
+    "applied_other": "{{count}} 件の絞り込みを適用中"
+  }
+}

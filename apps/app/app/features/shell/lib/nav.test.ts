@@ -15,6 +15,7 @@ describe("isActive", () => {
     expect(activeAt("/employer/jobs/new")).toEqual(["postJob"])
     expect(activeAt("/employer/jobs/101/applicants")).toEqual(["jobs"])
     expect(activeAt("/employer/candidates/unlocked")).toEqual(["unlocked"])
+    expect(activeAt("/employer/find-candidates")).toEqual(["findCandidates"])
   })
 
   it("follows extra route patterns", () => {

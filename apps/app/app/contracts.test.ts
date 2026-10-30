@@ -7,6 +7,7 @@ import {
   interviewsSchema,
   unlockedPageSchema,
 } from "@/features/candidate-unlock/schemas/candidate-unlock.schema"
+import { searchPageSchema } from "@/features/candidate-search/schemas/candidate-search.schema"
 import {
   invoicesPageSchema,
   quoteSchema,
@@ -47,6 +48,7 @@ const CONTRACTS: Record<string, z.ZodType | z.ZodType[]> = {
   "user.v1.employer_job_ai.matching.101": matchesSchema,
   "user.v1.employer_candidate_interviews.5": interviewsSchema,
   "user.v1.employer_unlock_candidate": unlockedPageSchema,
+  "user.v1.employer_interviewed_candidates_search": searchPageSchema,
   "user.v1.employer_unlock_candidate.31": profileSchema,
   "user.v1.employer_unlock_candidate.31.scorecard": scorecardSchema,
   "user.v1.candidate_scorecard.9": scorecardSchema,

@@ -12,6 +12,7 @@ import {
   SquareUser,
   Trophy,
   UserRoundCheck,
+  UserRoundSearch,
   Users,
   UsersRound,
   type LucideIcon,
@@ -26,6 +27,7 @@ export interface NavItem {
     | "postJob"
     | "jobs"
     | "candidatePool"
+    | "findCandidates"
     | "unlocked"
     | "companyProfile"
     | "team"
@@ -75,6 +77,11 @@ export const NAV = {
           key: "candidatePool",
           to: href("/employer/candidates"),
           icon: Users,
+        },
+        {
+          key: "findCandidates",
+          to: href("/employer/find-candidates"),
+          icon: UserRoundSearch,
         },
         {
           key: "unlocked",

@@ -1,0 +1,64 @@
+{
+  "success": true,
+  "status": 200,
+  "message": "Interviewed candidates fetched successfully.",
+  "data": {
+    "count": 2,
+    "total_pages": 1,
+    "current_page": 1,
+    "page_size": 10,
+    "next": null,
+    "previous": null,
+    "results": [
+      {
+        "candidate_id": "3d1abbc2-6283-4506-9e27-4f336a7d5ca2",
+        "candidate_name": "Ravi Kumar",
+        "candidate_profile_photo": null,
+        "candidate_location": "Bengaluru",
+        "candidate_education": [
+          {
+            "degree": "Bachelor of Business Administration (BBA)",
+            "duration": "2020 – 2023",
+            "institution": "Osmania University, Hyderabad"
+          }
+        ],
+        "current_role": "Devops Engineer",
+        "interviewed_role": "Devops Engineer",
+        "interview_score": 55,
+        "total_experience_years": 5,
+        "completed_interviews_count": 2,
+        "last_interview_date": "2026-07-15T16:04:31.307672+05:30",
+        "skills_preview": ["CI/CD Pipe line", "Git"],
+        "interview_id": "9ebdaa13-097e-45a9-8d15-e8ec008c3c6a",
+        "already_unlocked": true
+      },
+      {
+        "candidate_id": "1e867188-b2ef-4591-a959-ef24c56e4396",
+        "candidate_name": "Meera Nair",
+        "candidate_profile_photo": null,
+        "candidate_location": "",
+        "candidate_education": [
+          {
+            "degree": "B.Tech",
+            "duration": "2015-2019",
+            "institution": "Vishnu Institute Of Technology"
+          },
+          {
+            "degree": "Intermediate",
+            "duration": "2013-2015",
+            "institution": "Sri Chaitanya Junior College"
+          }
+        ],
+        "current_role": "Devops Engineer",
+        "interviewed_role": "Devops Engineer",
+        "interview_score": 16.5,
+        "total_experience_years": 4.1,
+        "completed_interviews_count": 1,
+        "last_interview_date": "2026-07-10T13:12:07.371406+05:30",
+        "skills_preview": ["CI/CD Pipe line", "Git"],
+        "interview_id": "e47bbf76-097e-45a9-8d15-e8ec008c3c6a",
+        "already_unlocked": false
+      }
+    ]
+  }
+}

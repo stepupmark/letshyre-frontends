@@ -6,6 +6,7 @@ import type billing from "../locales/en/billing.json"
 import type candidate from "../locales/en/candidate.json"
 import type candidateJobs from "../locales/en/candidateJobs.json"
 import type candidateOnboarding from "../locales/en/candidateOnboarding.json"
+import type candidateSearch from "../locales/en/candidateSearch.json"
 import type common from "../locales/en/common.json"
 import type company from "../locales/en/company.json"
 import type dashboard from "../locales/en/dashboard.json"
@@ -29,6 +30,7 @@ declare module "i18next" {
       candidate: typeof candidate
       candidateJobs: typeof candidateJobs
       candidateOnboarding: typeof candidateOnboarding
+      candidateSearch: typeof candidateSearch
       common: typeof common
       company: typeof company
       dashboard: typeof dashboard

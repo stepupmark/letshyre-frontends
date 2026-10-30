@@ -1,0 +1,63 @@
+{
+  "title": "Cari kandidat",
+  "lead": "Cari di antara semua orang yang telah menyelesaikan wawancara AI, lalu buka profil orang yang layak diajak bicara.",
+  "searchLabel": "Cari berdasarkan posisi atau keahlian",
+  "searchPlaceholder": "Coba DevOps engineer, React, atau Data analyst",
+  "clearSearch": "Hapus pencarian",
+  "searching": "Mencari",
+  "idle": {
+    "title": "Siapa yang Anda cari?",
+    "body": "Ketik posisi atau keahlian. Tambahkan filter untuk mempersempit hasil.",
+    "suggest": "Posisi yang sedang Anda rekrut"
+  },
+  "count_other": "<n>{{count}}</n> kandidat cocok dengan “{{search}}”",
+  "emptyTitle": "Tidak ada yang cocok dengan “{{search}}”",
+  "emptyBody": "Coba posisi yang lebih luas, atau cari keahlian.",
+  "emptyFiltered": "Coba lebih sedikit filter, atau posisi yang lebih luas.",
+  "errorTitle": "Pencarian tidak berhasil.",
+  "errorBody": "Periksa koneksi Anda dan coba lagi.",
+  "card": {
+    "unnamed": "Kandidat tanpa nama",
+    "years_other": "{{count}} thn",
+    "underYear": "Kurang dari 1 thn",
+    "interviews_other": "{{count}} wawancara",
+    "lastInterview": "terakhir {{when}}",
+    "moreSkills": "+{{count}}",
+    "unlock": "Buka",
+    "unlockFor": "Buka profil {{name}}",
+    "unlocked": "Terbuka",
+    "viewUnlocked": "Lihat kandidat terbuka",
+    "otherInterviews": "Wawancara lain",
+    "otherInterviewsFor": "Wawancara lain {{name}}"
+  },
+  "dialog": {
+    "interviewedFor": "Wawancara untuk {{role}}"
+  },
+  "filters": {
+    "title": "Filter",
+    "experience": "Pengalaman",
+    "experienceLabel": "Tahun pengalaman",
+    "any": "Semua",
+    "rangeShort": "{{min}}–{{max}}",
+    "minShort": "{{min}}+",
+    "range": "{{min}}–{{max}} thn",
+    "minYears": "{{min}}+ thn",
+    "upTo": "Hingga {{max}} thn",
+    "custom": "Rentang khusus",
+    "min": "Minimal",
+    "max": "Maksimal",
+    "minOverMax": "Minimal tidak boleh lebih dari maksimal.",
+    "apply": "Terapkan",
+    "education": "Pendidikan",
+    "educationLabel": "Gelar",
+    "educationPlaceholder": "mis. B.Tech",
+    "commonDegrees": "Gelar umum",
+    "location": "Lokasi",
+    "locationLabel": "Kota",
+    "locationPlaceholder": "mis. Hyderabad",
+    "clear": "Hapus filter",
+    "done": "Lihat kandidat",
+    "doneCount_other": "Lihat {{count}} kandidat",
+    "applied_other": "{{count}} filter diterapkan"
+  }
+}

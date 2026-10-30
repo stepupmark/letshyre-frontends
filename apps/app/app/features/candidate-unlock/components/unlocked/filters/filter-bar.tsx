@@ -1,15 +1,7 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { Button } from "@workspace/ui/components/button"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@workspace/ui/components/popover"
-import { cn } from "@workspace/ui/lib/utils"
-import { ChevronDown } from "lucide-react"
-import type { ReactNode } from "react"
 
 import { FilterChips } from "@/components/filter-chips"
+import { FilterPopover } from "@/components/filter-popover"
 
 import { useFilterLabels } from "../../../hooks/use-filter-labels"
 import { filterCount, hasExperience } from "../../../lib/filters"
@@ -78,41 +70,5 @@ export function FilterBar({
         />
       )}
     </div>
-  )
-}
-
-function FilterPopover({
-  label,
-  active,
-  badge,
-  children,
-}: {
-  label: string
-  active: boolean
-  badge: ReactNode
-  children: ReactNode
-}) {
-  return (
-    <Popover>
-      <PopoverTrigger
-        render={
-          <Button
-            variant="outline"
-            size="sm"
-            className={cn(
-              "group max-md:hidden",
-              active && "border-brand/40 bg-brand-muted hover:bg-brand-muted"
-            )}
-          />
-        }
-      >
-        {label}
-        {badge}
-        <ChevronDown className="text-muted-foreground transition-transform duration-200 group-data-popup-open:rotate-180 motion-reduce:transition-none" />
-      </PopoverTrigger>
-      <PopoverContent align="start" className="w-80 gap-0 p-4">
-        {children}
-      </PopoverContent>
-    </Popover>
   )
 }
