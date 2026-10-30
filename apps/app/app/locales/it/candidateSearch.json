@@ -1,14 +1,30 @@
 {
   "title": "Trova candidati",
   "lead": "Cerca tra tutte le persone che hanno completato un colloquio con l’IA e sblocca quelle con cui vale la pena parlare.",
+  "panel": "Ricerca candidati",
   "searchLabel": "Cerca per ruolo o competenza",
   "searchPlaceholder": "Prova DevOps engineer, React o Data analyst",
   "clearSearch": "Cancella ricerca",
   "searching": "Ricerca in corso",
+  "narrowBy": "Restringi per",
   "idle": {
     "title": "Chi stai cercando?",
-    "body": "Scrivi un ruolo o una competenza. Aggiungi filtri per restringere i risultati.",
-    "suggest": "Ruoli per cui stai assumendo"
+    "body": "Scrivi un ruolo o una competenza. Aggiungi filtri per restringere i risultati."
+  },
+  "steps": {
+    "label": "Come funziona",
+    "search": {
+      "title": "Cerca",
+      "body": "Scrivi un ruolo o una competenza per vedere chi ha fatto un colloquio per quel ruolo."
+    },
+    "compare": {
+      "title": "Confronta",
+      "body": "Metti a confronto punteggi del colloquio, esperienza, istruzione e competenze."
+    },
+    "unlock": {
+      "title": "Sblocca",
+      "body": "Usa un credito per colloquio per vedere contatti, scheda di valutazione, registrazione e CV."
+    }
   },
   "count_one": "<n>{{count}}</n> candidato corrisponde a «{{search}}»",
   "count_many": "<n>{{count}}</n> candidati corrispondono a «{{search}}»",

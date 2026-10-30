@@ -1,14 +1,30 @@
 {
   "title": "Find candidates",
   "lead": "Search everyone who has finished an AI interview, then unlock the people worth a conversation.",
+  "panel": "Candidate search",
   "searchLabel": "Search by role or skill",
   "searchPlaceholder": "Try DevOps engineer, React or Data analyst",
   "clearSearch": "Clear search",
   "searching": "Searching",
+  "narrowBy": "Narrow by",
   "idle": {
     "title": "Who are you looking for?",
-    "body": "Type a role or a skill. Add filters to narrow the results.",
-    "suggest": "Roles you're hiring for"
+    "body": "Type a role or a skill. Add filters to narrow the results."
+  },
+  "steps": {
+    "label": "How it works",
+    "search": {
+      "title": "Search",
+      "body": "Type a role or a skill to see everyone who interviewed for it."
+    },
+    "compare": {
+      "title": "Compare",
+      "body": "Weigh interview scores, experience, education and skills side by side."
+    },
+    "unlock": {
+      "title": "Unlock",
+      "body": "Use a credit per interview to see contact details, the scorecard, the recording and the resume."
+    }
   },
   "count_one": "<n>{{count}}</n> candidate matches “{{search}}”",
   "count_other": "<n>{{count}}</n> candidates match “{{search}}”",

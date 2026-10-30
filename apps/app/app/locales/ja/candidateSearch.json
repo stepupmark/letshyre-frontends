@@ -1,14 +1,30 @@
 {
   "title": "候補者を探す",
   "lead": "AI 面接を終えた全員から検索し、話す価値のある人をアンロックしましょう。",
+  "panel": "候補者検索",
   "searchLabel": "職種またはスキルで検索",
   "searchPlaceholder": "例: DevOps engineer、React、Data analyst",
   "clearSearch": "検索をクリア",
   "searching": "検索中",
+  "narrowBy": "絞り込み",
   "idle": {
     "title": "どんな人を探していますか?",
-    "body": "職種かスキルを入力してください。フィルターで結果を絞り込めます。",
-    "suggest": "募集中の職種"
+    "body": "職種かスキルを入力してください。フィルターで結果を絞り込めます。"
+  },
+  "steps": {
+    "label": "使い方",
+    "search": {
+      "title": "検索する",
+      "body": "職種かスキルを入力すると、その面接を受けた全員が表示されます。"
+    },
+    "compare": {
+      "title": "比べる",
+      "body": "面接スコア、経験、学歴、スキルを並べて比べられます。"
+    },
+    "unlock": {
+      "title": "アンロックする",
+      "body": "面接 1 件につき 1 クレジットで、連絡先、スコアカード、録画、履歴書を確認できます。"
+    }
   },
   "count_other": "「{{search}}」に一致する候補者 <n>{{count}}</n> 人",
   "emptyTitle": "「{{search}}」に一致する人はいません",

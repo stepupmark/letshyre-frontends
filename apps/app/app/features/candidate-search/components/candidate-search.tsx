@@ -2,7 +2,6 @@ import { useTranslation } from "@workspace/i18n/react"
 import { keepPreviousData, useQuery } from "@tanstack/react-query"
 import { useState, type ReactNode } from "react"
 
-import { EmptyState } from "@/components/empty-state"
 import { useLastDefined } from "@/hooks/use-last-defined"
 
 import { useSearchState } from "../hooks/use-search-state"
@@ -10,17 +9,15 @@ import { rowKey } from "../lib/result"
 import { searchQuery } from "../queries/candidate-search.queries"
 import type { SearchResult } from "../schemas/candidate-search.schema"
 import { FilterBar } from "./filters/filter-bar"
+import { IdleGuide } from "./idle-guide"
 import { ResultList } from "./result-list"
-import { SearchArt } from "./search-art"
 import { SearchBar } from "./search-bar"
 import { UnlockDialog } from "./unlock-dialog"
 
 export function CandidateSearch({
   unlock,
-  suggestions = [],
 }: {
   unlock: (row: SearchResult) => ReactNode
-  suggestions?: string[]
 }) {
   const { t } = useTranslation("candidateSearch")
   const { params, update, clearFilters } = useSearchState()
@@ -36,7 +33,10 @@ export function CandidateSearch({
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-3">
+      <section
+        aria-label={t("panel")}
+        className="flex flex-col gap-4 rounded-2xl border bg-brand-muted/30 p-4 sm:p-6"
+      >
         <SearchBar
           value={params.search}
           busy={searching && query.isFetching}
@@ -44,17 +44,22 @@ export function CandidateSearch({
             update({ search })
           }}
         />
-        <FilterBar
-          filters={params}
-          total={
-            searching && settled
-              ? (query.data.count ?? query.data.results.length)
-              : null
-          }
-          onChange={update}
-          onClear={clearFilters}
-        />
-      </div>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 border-t pt-4">
+          <span className="text-xs font-medium text-muted-foreground max-md:hidden">
+            {t("narrowBy")}
+          </span>
+          <FilterBar
+            filters={params}
+            total={
+              searching && settled
+                ? (query.data.count ?? query.data.results.length)
+                : null
+            }
+            onChange={update}
+            onClear={clearFilters}
+          />
+        </div>
+      </section>
 
       {searching ? (
         <ResultList
@@ -69,35 +74,7 @@ export function CandidateSearch({
           onClearFilters={clearFilters}
         />
       ) : (
-        <EmptyState
-          art={<SearchArt />}
-          title={t("idle.title")}
-          description={t("idle.body")}
-          action={
-            suggestions.length > 0 && (
-              <div className="flex flex-col items-center gap-2">
-                <p className="text-xs text-muted-foreground">
-                  {t("idle.suggest")}
-                </p>
-                <ul className="flex flex-wrap justify-center gap-2">
-                  {suggestions.map((role) => (
-                    <li key={role}>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          update({ search: role })
-                        }}
-                        className="h-8 rounded-full border bg-background px-3 text-sm transition-colors outline-none hover:border-brand/40 hover:bg-brand-muted hover:text-brand-text focus-visible:ring-3 focus-visible:ring-ring/50 max-md:h-11"
-                      >
-                        {role}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )
-          }
-        />
+        <IdleGuide />
       )}
 
       <UnlockDialog

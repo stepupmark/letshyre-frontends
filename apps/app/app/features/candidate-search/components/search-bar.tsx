@@ -55,10 +55,13 @@ export function SearchBar({
         send(text, 0)
       }}
     >
-      <label htmlFor={id} className="text-sm font-medium">
+      <label
+        htmlFor={id}
+        className="text-base font-semibold text-balance text-brand-text"
+      >
         {t("searchLabel")}
       </label>
-      <InputGroup className="h-12 rounded-xl bg-card has-[[data-slot=input-group-control]:focus-visible]:border-brand/60">
+      <InputGroup className="h-14 rounded-xl bg-background has-[[data-slot=input-group-control]:focus-visible]:border-brand has-[[data-slot=input-group-control]:focus-visible]:ring-brand/15">
         <InputGroupAddon className="ps-4">
           <Search className="size-5 text-brand-text" aria-hidden="true" />
         </InputGroupAddon>

@@ -1,14 +1,30 @@
 {
   "title": "Kandidaten finden",
   "lead": "Durchsuchen Sie alle, die ein KI-Interview abgeschlossen haben, und schalten Sie die Personen frei, mit denen sich ein Gespräch lohnt.",
+  "panel": "Kandidatensuche",
   "searchLabel": "Nach Rolle oder Fähigkeit suchen",
   "searchPlaceholder": "z. B. DevOps Engineer, React oder Data Analyst",
   "clearSearch": "Suche löschen",
   "searching": "Suche läuft",
+  "narrowBy": "Eingrenzen nach",
   "idle": {
     "title": "Wen suchen Sie?",
-    "body": "Geben Sie eine Rolle oder eine Fähigkeit ein. Mit Filtern grenzen Sie die Ergebnisse ein.",
-    "suggest": "Rollen, für die Sie einstellen"
+    "body": "Geben Sie eine Rolle oder eine Fähigkeit ein. Mit Filtern grenzen Sie die Ergebnisse ein."
+  },
+  "steps": {
+    "label": "So funktioniert es",
+    "search": {
+      "title": "Suchen",
+      "body": "Geben Sie eine Rolle oder eine Fähigkeit ein, um alle zu sehen, die dafür ein Interview hatten."
+    },
+    "compare": {
+      "title": "Vergleichen",
+      "body": "Wägen Sie Interviewergebnisse, Erfahrung, Ausbildung und Fähigkeiten nebeneinander ab."
+    },
+    "unlock": {
+      "title": "Freischalten",
+      "body": "Ein Credit pro Interview zeigt Kontaktdaten, Scorecard, Aufzeichnung und Lebenslauf."
+    }
   },
   "count_one": "<n>{{count}}</n> Kandidat passt zu „{{search}}“",
   "count_other": "<n>{{count}}</n> Kandidaten passen zu „{{search}}“",

@@ -1,14 +1,30 @@
 {
   "title": "Cari kandidat",
   "lead": "Cari di antara semua orang yang telah menyelesaikan wawancara AI, lalu buka profil orang yang layak diajak bicara.",
+  "panel": "Pencarian kandidat",
   "searchLabel": "Cari berdasarkan posisi atau keahlian",
   "searchPlaceholder": "Coba DevOps engineer, React, atau Data analyst",
   "clearSearch": "Hapus pencarian",
   "searching": "Mencari",
+  "narrowBy": "Persempit menurut",
   "idle": {
     "title": "Siapa yang Anda cari?",
-    "body": "Ketik posisi atau keahlian. Tambahkan filter untuk mempersempit hasil.",
-    "suggest": "Posisi yang sedang Anda rekrut"
+    "body": "Ketik posisi atau keahlian. Tambahkan filter untuk mempersempit hasil."
+  },
+  "steps": {
+    "label": "Cara kerjanya",
+    "search": {
+      "title": "Cari",
+      "body": "Ketik posisi atau keahlian untuk melihat semua orang yang diwawancarai untuk itu."
+    },
+    "compare": {
+      "title": "Bandingkan",
+      "body": "Bandingkan skor wawancara, pengalaman, pendidikan, dan keahlian berdampingan."
+    },
+    "unlock": {
+      "title": "Buka profil",
+      "body": "Gunakan satu kredit per wawancara untuk melihat kontak, kartu skor, rekaman, dan CV."
+    }
   },
   "count_other": "<n>{{count}}</n> kandidat cocok dengan “{{search}}”",
   "emptyTitle": "Tidak ada yang cocok dengan “{{search}}”",

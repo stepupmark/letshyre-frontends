@@ -1,14 +1,30 @@
 {
   "title": "Kandidaten zoeken",
   "lead": "Zoek tussen iedereen die een AI-interview heeft afgerond en ontgrendel de mensen met wie een gesprek de moeite waard is.",
+  "panel": "Kandidaten zoeken",
   "searchLabel": "Zoeken op functie of vaardigheid",
   "searchPlaceholder": "Probeer DevOps engineer, React of Data analyst",
   "clearSearch": "Zoekopdracht wissen",
   "searching": "Zoeken",
+  "narrowBy": "Verfijnen op",
   "idle": {
     "title": "Wie zoekt u?",
-    "body": "Typ een functie of een vaardigheid. Voeg filters toe om de resultaten te verfijnen.",
-    "suggest": "Functies waarvoor u werft"
+    "body": "Typ een functie of een vaardigheid. Voeg filters toe om de resultaten te verfijnen."
+  },
+  "steps": {
+    "label": "Zo werkt het",
+    "search": {
+      "title": "Zoeken",
+      "body": "Typ een functie of vaardigheid om iedereen te zien die daarvoor een interview deed."
+    },
+    "compare": {
+      "title": "Vergelijken",
+      "body": "Leg interviewscores, ervaring, opleiding en vaardigheden naast elkaar."
+    },
+    "unlock": {
+      "title": "Ontgrendelen",
+      "body": "Met één credit per interview ziet u contactgegevens, scorecard, opname en cv."
+    }
   },
   "count_one": "<n>{{count}}</n> kandidaat komt overeen met ‘{{search}}’",
   "count_other": "<n>{{count}}</n> kandidaten komen overeen met ‘{{search}}’",

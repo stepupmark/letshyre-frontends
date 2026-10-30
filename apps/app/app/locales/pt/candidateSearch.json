@@ -1,14 +1,30 @@
 {
   "title": "Encontrar candidatos",
   "lead": "Pesquise entre todas as pessoas que concluíram uma entrevista com IA e desbloqueie as que valem uma conversa.",
+  "panel": "Pesquisa de candidatos",
   "searchLabel": "Pesquisar por cargo ou habilidade",
   "searchPlaceholder": "Experimente DevOps engineer, React ou Data analyst",
   "clearSearch": "Limpar pesquisa",
   "searching": "Pesquisando",
+  "narrowBy": "Refinar por",
   "idle": {
     "title": "Quem você está procurando?",
-    "body": "Digite um cargo ou uma habilidade. Adicione filtros para refinar os resultados.",
-    "suggest": "Cargos que você está contratando"
+    "body": "Digite um cargo ou uma habilidade. Adicione filtros para refinar os resultados."
+  },
+  "steps": {
+    "label": "Como funciona",
+    "search": {
+      "title": "Pesquisar",
+      "body": "Digite um cargo ou uma habilidade para ver todos que fizeram entrevista para ele."
+    },
+    "compare": {
+      "title": "Comparar",
+      "body": "Compare lado a lado notas de entrevista, experiência, formação e habilidades."
+    },
+    "unlock": {
+      "title": "Desbloquear",
+      "body": "Use um crédito por entrevista para ver contato, avaliação, gravação e currículo."
+    }
   },
   "count_one": "<n>{{count}}</n> candidato corresponde a “{{search}}”",
   "count_many": "<n>{{count}}</n> candidatos correspondem a “{{search}}”",
