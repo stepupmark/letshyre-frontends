@@ -48,7 +48,8 @@
     },
     "background": "पृष्ठभूमि",
     "currentPay": "मौजूदा वेतन",
-    "expectedPay": "अपेक्षित वेतन"
+    "expectedPay": "अपेक्षित वेतन",
+    "desiredPay": "इच्छित वेतन"
   },
   "scorecard": {
     "title": "स्कोरकार्ड",

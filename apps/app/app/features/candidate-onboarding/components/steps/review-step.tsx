@@ -65,6 +65,8 @@ export function ReviewStep({
               next: values.expected_ctc,
               count: Number(values.expected_ctc) || 0,
             }),
+          values.desired_ctc &&
+            t("review.desired", { value: values.desired_ctc }),
           values.preferred_locations.join(", "),
         ]
           .filter(Boolean)

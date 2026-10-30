@@ -46,7 +46,8 @@
     },
     "background": "Latar belakang",
     "currentPay": "Gaji saat ini",
-    "expectedPay": "Gaji yang diharapkan"
+    "expectedPay": "Gaji yang diharapkan",
+    "desiredPay": "Gaji yang diinginkan"
   },
   "scorecard": {
     "title": "Kartu skor",

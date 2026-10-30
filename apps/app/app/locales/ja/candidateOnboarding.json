@@ -49,6 +49,7 @@
     "lastDay": "最終出勤日",
     "current": "現在の給与（LPA）",
     "expected": "希望給与（LPA）",
+    "desired": "理想の給与（LPA）",
     "industry": "希望する業界",
     "places": "希望勤務地",
     "placesPlaceholder": "都市を入力して Enter を押す",
@@ -130,6 +131,7 @@
     "photoReady": "写真を追加済み",
     "missing": "未完了",
     "pay_other": "₹{{now}} → ₹{{next}} LPA",
+    "desired": "理想 ₹{{value}} LPA",
     "role_other": "{{role}}、スキル {{count}} 件",
     "edit": "{{step}}を編集",
     "editShort": "編集"

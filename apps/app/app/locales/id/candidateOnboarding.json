@@ -49,6 +49,7 @@
     "lastDay": "Hari kerja terakhir",
     "current": "Gaji saat ini (LPA)",
     "expected": "Gaji yang diharapkan (LPA)",
+    "desired": "Gaji yang diinginkan (LPA)",
     "industry": "Industri yang Anda inginkan",
     "places": "Tempat Anda ingin bekerja",
     "placesPlaceholder": "Ketik kota lalu tekan Enter",
@@ -130,6 +131,7 @@
     "photoReady": "Foto ditambahkan",
     "missing": "Belum selesai",
     "pay_other": "₹{{now}} → ₹{{next}} LPA",
+    "desired": "Diinginkan ₹{{value}} LPA",
     "role_other": "{{role}}, {{count}} keterampilan",
     "edit": "Edit {{step}}",
     "editShort": "Edit"

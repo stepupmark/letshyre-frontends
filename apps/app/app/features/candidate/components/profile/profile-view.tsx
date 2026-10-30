@@ -107,6 +107,14 @@ export function CandidateProfileView({
             value={pay(profile.candidate_expected_ctc)}
             delay={140}
           />
+          <div className="col-span-2 lg:col-span-1">
+            <StatCard
+              icon={Target}
+              label={t("profile.desiredPay")}
+              value={pay(profile.candidate_desired_ctc)}
+              delay={200}
+            />
+          </div>
         </div>
       </div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

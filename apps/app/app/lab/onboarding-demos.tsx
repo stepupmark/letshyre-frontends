@@ -125,6 +125,7 @@ export function CandidatePreviewDemo() {
       address_state: "Kerala",
       current_ctc: "12",
       expected_ctc: "16",
+      desired_ctc: "18",
       preferred_industry: "Information technology",
       preferred_locations: ["Kochi", "Bengaluru"],
     },

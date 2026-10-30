@@ -48,7 +48,8 @@
     },
     "background": "నేపథ్యం",
     "currentPay": "ప్రస్తుత జీతం",
-    "expectedPay": "ఆశించిన జీతం"
+    "expectedPay": "ఆశించిన జీతం",
+    "desiredPay": "కోరుకునే జీతం"
   },
   "scorecard": {
     "title": "స్కోర్‌కార్డ్",

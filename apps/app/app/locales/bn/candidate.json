@@ -48,7 +48,8 @@
     },
     "background": "পটভূমি",
     "currentPay": "বর্তমান বেতন",
-    "expectedPay": "প্রত্যাশিত বেতন"
+    "expectedPay": "প্রত্যাশিত বেতন",
+    "desiredPay": "কাঙ্ক্ষিত বেতন"
   },
   "scorecard": {
     "title": "স্কোরকার্ড",

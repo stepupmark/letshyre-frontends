@@ -29,6 +29,7 @@ const EMPTY: Pick<Values, TextField> = {
   last_day_of_working: "",
   current_ctc: "",
   expected_ctc: "",
+  desired_ctc: "",
   preferred_industry: "",
   preferred_locations: [],
   notice_period_proof_type: "",
@@ -82,7 +83,6 @@ export function discardDraft() {
   }
 }
 
-/** Saves the answers a moment after typing stops. Returns a save count. */
 export function useDraftAutosave(
   form: UseFormReturn<Values>,
   resume: ResumeState
@@ -100,7 +100,6 @@ export function useDraftAutosave(
 
 const STORED = [...FILE_FIELDS, "resume"] as const
 
-/** Puts back files picked before a refresh. True once that's done. */
 export const useStoredFiles = (
   form: UseFormReturn<Values>,
   onResume: (file: File) => void

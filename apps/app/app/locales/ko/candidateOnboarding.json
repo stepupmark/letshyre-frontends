@@ -49,6 +49,7 @@
     "lastDay": "마지막 근무일",
     "current": "현재 연봉 (LPA)",
     "expected": "희망 연봉 (LPA)",
+    "desired": "목표 연봉 (LPA)",
     "industry": "일하고 싶은 업계",
     "places": "희망 근무지",
     "placesPlaceholder": "도시를 입력하고 Enter를 누르세요",
@@ -130,6 +131,7 @@
     "photoReady": "사진 추가됨",
     "missing": "아직 안 됨",
     "pay_other": "₹{{now}} → ₹{{next}} LPA",
+    "desired": "목표 ₹{{value}} LPA",
     "role_other": "{{role}}, 역량 {{count}}개",
     "edit": "{{step}} 편집",
     "editShort": "편집"

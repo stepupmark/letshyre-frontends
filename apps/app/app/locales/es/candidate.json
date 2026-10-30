@@ -50,7 +50,8 @@
     },
     "background": "Trayectoria",
     "currentPay": "Salario actual",
-    "expectedPay": "Salario esperado"
+    "expectedPay": "Salario esperado",
+    "desiredPay": "Salario deseado"
   },
   "scorecard": {
     "title": "Ficha de evaluación",

@@ -56,7 +56,8 @@
     },
     "background": "الخلفية",
     "currentPay": "الراتب الحالي",
-    "expectedPay": "الراتب المتوقع"
+    "expectedPay": "الراتب المتوقع",
+    "desiredPay": "الراتب المطلوب"
   },
   "scorecard": {
     "title": "بطاقة التقييم",

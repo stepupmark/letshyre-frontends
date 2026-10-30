@@ -26,6 +26,7 @@ export function profileForm(values: Values, resume: Resume) {
   put("last_day_of_working", values.last_day_of_working)
   put("current_ctc", values.current_ctc)
   put("expected_ctc", values.expected_ctc)
+  put("desired_ctc", values.desired_ctc)
   put("preferred_industry", values.preferred_industry)
   put("preferred_locations", JSON.stringify(values.preferred_locations))
   put("resignation_letter", values.resignation_letter)

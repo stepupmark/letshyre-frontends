@@ -46,7 +46,8 @@
     },
     "background": "경력 사항",
     "currentPay": "현재 연봉",
-    "expectedPay": "희망 연봉"
+    "expectedPay": "희망 연봉",
+    "desiredPay": "목표 연봉"
   },
   "scorecard": {
     "title": "평가표",

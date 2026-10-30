@@ -48,7 +48,8 @@
     },
     "background": "Background",
     "currentPay": "Current pay",
-    "expectedPay": "Expected pay"
+    "expectedPay": "Expected pay",
+    "desiredPay": "Desired pay"
   },
   "scorecard": {
     "title": "Scorecard",

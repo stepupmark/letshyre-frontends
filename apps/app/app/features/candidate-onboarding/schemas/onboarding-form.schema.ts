@@ -93,6 +93,7 @@ export const STEPS = {
     "last_day_of_working",
     "current_ctc",
     "expected_ctc",
+    "desired_ctc",
     "preferred_industry",
     "preferred_locations",
   ],
@@ -210,6 +211,7 @@ export const makeSchema = (m: Messages) => {
       }, m.lastDayRange),
     current_ctc: ctc(m.ctc),
     expected_ctc: ctc(m.ctc),
+    desired_ctc: ctc(m.ctc),
     preferred_industry: z.string().min(1, m.industry),
     preferred_locations: z.array(z.string()).min(1, m.locations),
     resignation_letter: file(DOCUMENT, m.file),
@@ -225,9 +227,10 @@ export const makeSchema = (m: Messages) => {
       path: ["expected_ctc"],
       message: m.expectedLow,
       when: ({ issues }) =>
-        !issues.some((issue) => String(issue.path?.[0]).endsWith("_ctc")),
+        !issues.some((issue) =>
+          ["current_ctc", "expected_ctc"].includes(String(issue.path?.[0]))
+        ),
     }),
-    /** Whether one step's fields all pass. */
     isDone: (id: keyof typeof STEPS, values: z.input<typeof base>) => {
       const mask: Partial<Record<keyof typeof base.shape, true>> = {}
       for (const key of STEPS[id]) mask[key] = true

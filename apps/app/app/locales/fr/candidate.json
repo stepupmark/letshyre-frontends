@@ -50,7 +50,8 @@
     },
     "background": "Parcours",
     "currentPay": "Salaire actuel",
-    "expectedPay": "Salaire souhaité"
+    "expectedPay": "Salaire souhaité",
+    "desiredPay": "Salaire idéal"
   },
   "scorecard": {
     "title": "Grille",

@@ -50,7 +50,8 @@
     },
     "background": "Percorso",
     "currentPay": "Retribuzione attuale",
-    "expectedPay": "Retribuzione attesa"
+    "expectedPay": "Retribuzione attesa",
+    "desiredPay": "Retribuzione ideale"
   },
   "scorecard": {
     "title": "Scheda di valutazione",

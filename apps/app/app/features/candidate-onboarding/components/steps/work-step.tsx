@@ -107,6 +107,16 @@ export function WorkStep({ form }: { form: UseFormReturn<Values> }) {
           error={errors.expected_ctc?.message}
           {...checkOnBlur(form, "expected_ctc")}
         />
+        <TextField
+          label={t("work.desired")}
+          lead={rupee}
+          placeholder={example}
+          inputMode="decimal"
+          className="tabular-nums"
+          valid={isValid("desired_ctc")}
+          error={errors.desired_ctc?.message}
+          {...checkOnBlur(form, "desired_ctc")}
+        />
       </div>
       <ChoiceField
         form={form}

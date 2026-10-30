@@ -46,7 +46,8 @@
     },
     "background": "経歴",
     "currentPay": "現在の年収",
-    "expectedPay": "希望年収"
+    "expectedPay": "希望年収",
+    "desiredPay": "理想の年収"
   },
   "scorecard": {
     "title": "スコアカード",

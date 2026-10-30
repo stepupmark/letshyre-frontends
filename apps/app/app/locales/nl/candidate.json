@@ -48,7 +48,8 @@
     },
     "background": "Achtergrond",
     "currentPay": "Huidig salaris",
-    "expectedPay": "Gewenst salaris"
+    "expectedPay": "Gewenst salaris",
+    "desiredPay": "Ideaal salaris"
   },
   "scorecard": {
     "title": "Scorekaart",

@@ -48,7 +48,8 @@
     },
     "background": "ಹಿನ್ನೆಲೆ",
     "currentPay": "ಪ್ರಸ್ತುತ ವೇತನ",
-    "expectedPay": "ನಿರೀಕ್ಷಿತ ವೇತನ"
+    "expectedPay": "ನಿರೀಕ್ಷಿತ ವೇತನ",
+    "desiredPay": "ಬಯಸುವ ವೇತನ"
   },
   "scorecard": {
     "title": "ಸ್ಕೋರ್‌ಕಾರ್ಡ್",

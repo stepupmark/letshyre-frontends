@@ -48,7 +48,8 @@
     },
     "background": "Werdegang",
     "currentPay": "Aktuelles Gehalt",
-    "expectedPay": "Gehaltswunsch"
+    "expectedPay": "Gehaltswunsch",
+    "desiredPay": "Wunschgehalt"
   },
   "scorecard": {
     "title": "Scorecard",
