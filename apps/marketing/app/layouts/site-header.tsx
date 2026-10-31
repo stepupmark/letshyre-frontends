@@ -19,7 +19,6 @@ import { APP_LINKS } from "@/lib/app-links"
 import { useCompactNav } from "./site-header-compact"
 import { SiteLanguageSwitcher } from "./site-header-language"
 import { SiteHeaderMenu } from "./site-header-menu"
-import { SiteThemeToggle } from "./site-header-theme"
 import { useCurrent, useNavItems, useProductItems } from "./site-header-nav"
 
 function useScrolled() {
@@ -140,7 +139,6 @@ export function SiteHeader() {
               className="hidden sm:inline-flex lg:hidden"
             />
             <SiteLanguageSwitcher className="hidden lg:inline-flex" />
-            <SiteThemeToggle className="cursor-pointer" />
             <a
               href={APP_LINKS.getStarted}
               className={buttonVariants({
