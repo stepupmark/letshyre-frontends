@@ -7,8 +7,7 @@
       "all": "Todas",
       "open": "Abiertas",
       "paused": "En pausa",
-      "closed": "Cerradas",
-      "pending": "Pendientes de aprobación"
+      "closed": "Cerradas"
     },
     "columns": {
       "title": "Oferta",

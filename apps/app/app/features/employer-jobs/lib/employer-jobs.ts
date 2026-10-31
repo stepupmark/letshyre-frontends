@@ -34,7 +34,7 @@ export function bulkTargets(jobs: Job[], ids: string[]) {
 export const capitalised = (word: string) =>
   word.charAt(0).toUpperCase() + word.slice(1)
 
-export const JOB_TABS = ["all", "open", "paused", "closed", "pending"] as const
+export const JOB_TABS = ["all", "open", "paused", "closed"] as const
 
 export const JD_RULES: FileRules = {
   accept: [".pdf", ".doc", ".docx"],

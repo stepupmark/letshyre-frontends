@@ -7,8 +7,7 @@
       "all": "すべて",
       "open": "募集中",
       "paused": "一時停止",
-      "closed": "終了",
-      "pending": "承認待ち"
+      "closed": "終了"
     },
     "columns": {
       "title": "求人",

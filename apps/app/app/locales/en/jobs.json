@@ -7,8 +7,7 @@
       "all": "All",
       "open": "Open",
       "paused": "Paused",
-      "closed": "Closed",
-      "pending": "Waiting for approval"
+      "closed": "Closed"
     },
     "columns": {
       "title": "Job",

@@ -7,8 +7,7 @@
       "all": "Alle",
       "open": "Open",
       "paused": "Gepauzeerd",
-      "closed": "Gesloten",
-      "pending": "Wacht op goedkeuring"
+      "closed": "Gesloten"
     },
     "columns": {
       "title": "Vacature",

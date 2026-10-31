@@ -7,8 +7,7 @@
       "all": "Tutte",
       "open": "Aperte",
       "paused": "In pausa",
-      "closed": "Chiuse",
-      "pending": "In attesa di approvazione"
+      "closed": "Chiuse"
     },
     "columns": {
       "title": "Offerta",

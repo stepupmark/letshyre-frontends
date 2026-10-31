@@ -7,8 +7,7 @@
       "all": "Todas",
       "open": "Abertas",
       "paused": "Pausadas",
-      "closed": "Encerradas",
-      "pending": "Aguardando aprovação"
+      "closed": "Encerradas"
     },
     "columns": {
       "title": "Vaga",

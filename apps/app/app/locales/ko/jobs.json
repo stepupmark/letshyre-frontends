@@ -7,8 +7,7 @@
       "all": "전체",
       "open": "채용 중",
       "paused": "일시 중지",
-      "closed": "마감",
-      "pending": "승인 대기"
+      "closed": "마감"
     },
     "columns": {
       "title": "공고",

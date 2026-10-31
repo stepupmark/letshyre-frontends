@@ -12,9 +12,7 @@ export const jobsQuery = (params: { page: number; tab: JobTab }) =>
     queryKey: ["employer", "jobs", "list", params],
     queryFn: async () => {
       const search: Record<string, string> = { page: String(params.page) }
-      // the API takes capitalised statuses; approval is its own field
-      if (params.tab === "pending") search.approval_status = "pending"
-      else if (params.tab !== "all") search.status = capitalised(params.tab)
+      if (params.tab !== "all") search.status = capitalised(params.tab)
       return jobsPageSchema.parse(
         payloadOf(await api.get("user/v1/employer_jobs/", { query: search }))
       )

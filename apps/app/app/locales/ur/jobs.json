@@ -7,8 +7,7 @@
       "all": "سب",
       "open": "کھلی",
       "paused": "روکی گئی",
-      "closed": "بند",
-      "pending": "منظوری باقی"
+      "closed": "بند"
     },
     "columns": {
       "title": "ملازمت",
