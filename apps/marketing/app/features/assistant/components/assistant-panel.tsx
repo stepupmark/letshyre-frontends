@@ -19,6 +19,8 @@ const send = (
   signal: AbortSignal
 ) => sendAssistantMessage(api, { message, sessionId }, { signal })
 
+const DIALOG = "[role=dialog]"
+
 export function AssistantPanel({
   Title,
   onClose,
@@ -47,7 +49,7 @@ export function AssistantPanel({
                 setUndo(() => restore)
                 // the button leaves with the conversation; typing is what comes next
                 event.currentTarget
-                  .closest("[role=dialog]")
+                  .closest(DIALOG)
                   ?.querySelector("textarea")
                   ?.focus()
               }}

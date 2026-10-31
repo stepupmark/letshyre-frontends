@@ -97,7 +97,7 @@ export function AssistantLauncher() {
           side="top"
           align="end"
           sideOffset={12}
-          className="h-[min(40rem,calc(100dvh-8rem))] w-112 gap-0 overflow-hidden rounded-2xl border p-0 shadow-none ring-0 motion-reduce:animate-none"
+          className="h-[min(40rem,calc(100dvh-8rem))] w-md gap-0 overflow-hidden rounded-2xl border p-0 shadow-none ring-0 motion-reduce:animate-none"
         >
           {panel(PopoverTitle)}
         </PopoverContent>
