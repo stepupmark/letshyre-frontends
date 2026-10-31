@@ -19,7 +19,7 @@ export function SiteFooter() {
   const published = usePublished()
 
   return (
-    <footer className="border-t bg-muted/40 print:hidden">
+    <footer className="border-t print:hidden">
       <Container className="flex flex-col gap-10 pt-12 pb-10 sm:pt-16 sm:pb-14">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="flex max-w-sm flex-col gap-4 lg:col-span-4">
@@ -34,7 +34,7 @@ export function SiteFooter() {
             </p>
             <a
               href={`mailto:${SITE.email}`}
-              className="w-fit rounded-sm text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
+              className="inline-flex w-fit rounded-sm py-1 text-sm text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               {SITE.email}
             </a>
@@ -46,12 +46,9 @@ export function SiteFooter() {
           >
             {FOOTER_COLUMNS.map((column) => (
               <div key={column.id} className="flex flex-col gap-3">
-                <h2
-                  id={`footer-${column.id}`}
-                  className="text-sm font-semibold"
-                >
+                <p id={`footer-${column.id}`} className="text-sm font-semibold">
                   {t(column.title)}
-                </h2>
+                </p>
                 <ul
                   aria-labelledby={`footer-${column.id}`}
                   className="flex flex-col gap-1"

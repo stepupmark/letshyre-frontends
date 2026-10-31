@@ -23,7 +23,7 @@ export function Band({
       aria-labelledby={`${id}-title`}
       className={cn(
         "overflow-x-clip py-16 sm:py-24",
-        muted && "border-y bg-muted/40",
+        muted && "border-y",
         flushTop && "pt-0 sm:pt-0"
       )}
     >
