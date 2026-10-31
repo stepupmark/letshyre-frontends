@@ -48,10 +48,8 @@
     "scene": {
       "resumes": "247 resumes this week",
       "alike": "All look alike",
-      "week": "This week",
+      "buzzwords": ["Results-driven", "Team player", "Fast learner"],
       "days": ["Mon", "Tue", "Wed", "Thu"],
-      "call": "Intro call",
-      "length": "30 min",
       "question": "So, tell me about yourself.",
       "asked": "Asked 4 times"
     }
