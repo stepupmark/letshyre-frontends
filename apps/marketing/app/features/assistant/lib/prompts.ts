@@ -1,4 +1,4 @@
-export type Topic = "about" | "employers" | "seekers"
+type Topic = "about" | "employers" | "seekers"
 
 export type Prompt =
   | "what"
