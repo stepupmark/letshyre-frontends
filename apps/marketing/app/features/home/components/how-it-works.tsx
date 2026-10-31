@@ -14,7 +14,6 @@ import { BandHeading } from "@/components/band-heading"
 import { TextLink } from "@/components/cta-links"
 import { Band } from "@/components/band"
 
-import { JourneyStrip } from "./art/journey-strip"
 import { type Side, type Step, StepExplorer } from "./step-explorer"
 
 // where the two journeys meet: the employer's review (step 3) reads the professional's scorecard (step 4)
@@ -86,10 +85,6 @@ export function HowItWorks() {
         accent={t("how.accent")}
         className="slide-in"
       />
-
-      <div className="mt-8">
-        <JourneyStrip />
-      </div>
 
       <Tabs
         value={explorer.side}

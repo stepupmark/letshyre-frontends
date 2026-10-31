@@ -116,12 +116,6 @@
       "employers": "This scorecard comes from the professional's interview",
       "professionals": "See what employers see"
     },
-    "strip": {
-      "professionals": "Professionals",
-      "employers": "Employers",
-      "crossing": "Their scorecard is your evidence",
-      "hired": "Hired"
-    },
     "nav": {
       "step": "Step {{n}} of {{total}}",
       "back": "Back",
