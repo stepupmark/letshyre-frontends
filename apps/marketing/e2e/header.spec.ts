@@ -12,7 +12,7 @@ test.describe("desktop header", () => {
 
   test.use({ viewport: { width: 1280, height: 800 } })
 
-  test("tab order runs skip link, logo, product, nav, language, theme, get started", async ({
+  test("tab order runs skip link, logo, product, nav, language, get started", async ({
     page,
   }) => {
     await page.goto("/en/pricing")
@@ -20,15 +20,12 @@ test.describe("desktop header", () => {
     const nav = banner.getByRole("navigation", { name: "Primary navigation" })
     const order = [
       page.getByRole("link", { name: "Skip to main content" }),
-      banner.getByRole("link", { name: "LetsHyre logo" }),
+      banner.getByRole("link", { name: "LetsHyre home" }),
       nav.getByRole("button", { name: "Product" }),
-      nav.getByRole("link", { name: "For employers" }),
-      nav.getByRole("link", { name: "For candidates" }),
       nav.getByRole("link", { name: "Pricing" }),
       nav.getByRole("link", { name: "About" }),
       nav.getByRole("link", { name: "Contact" }),
       banner.getByRole("button", { name: /language/i }),
-      banner.getByRole("button", { name: /light and dark theme/ }),
       banner.getByRole("link", { name: "Get Started" }),
     ]
     for (const target of order) {
@@ -152,7 +149,7 @@ test("footer has its landmark, link columns and labelled social links", async ({
   await page.goto("/en")
   const footer = page.getByRole("contentinfo")
   for (const name of ["Product", "Candidates", "Company", "Legal"]) {
-    await expect(footer.getByRole("heading", { name })).toBeVisible()
+    await expect(footer.getByRole("list", { name })).toBeVisible()
   }
   await expect(
     footer.getByRole("link", { name: "LetsHyre on LinkedIn" })

@@ -34,7 +34,7 @@ export function Tension() {
         <SideBySide sides={sides} className="mt-10" />
       </div>
 
-      <div className="min-h-136">
+      <div className="max-md:hidden md:min-h-136">
         {hydrated && (
           <Suspense>
             <ScreeningGrind />

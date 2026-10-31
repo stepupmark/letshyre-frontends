@@ -12,12 +12,12 @@ export function Hero() {
     <section aria-labelledby="hero-title" className="overflow-x-clip">
       <Container className="grid grid-cols-1 items-center gap-12 pt-10 pb-16 sm:pt-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16 lg:pt-6 lg:pb-24">
         <div className="flex flex-col items-start lg:pb-20">
-          <h1 id="hero-title" className="flex flex-col items-start gap-6">
-            <span className="inline-flex items-center gap-2 rounded-full border bg-brand-muted px-3 py-1 text-sm font-medium text-brand-text">
-              <span aria-hidden className="size-1.5 rounded-full bg-brand" />
-              {t("hero.eyebrow")}
-            </span>
-            <span className="text-5xl font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl">
+          <p className="inline-flex items-center gap-2 rounded-full border bg-brand-muted px-3 py-1 text-sm font-medium text-brand-text">
+            <span aria-hidden className="size-1.5 rounded-full bg-brand" />
+            {t("hero.eyebrow")}
+          </p>
+          <h1 id="hero-title" className="mt-6">
+            <span className="block text-5xl font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl">
               {t("hero.title")}{" "}
               <span className="relative inline-block text-brand-text">
                 {t("hero.accent")}

@@ -2,11 +2,9 @@ import { useTranslation } from "@workspace/i18n/react"
 import {
   BriefcaseIcon,
   CheckIcon,
-  ChevronDownIcon,
   ClipboardCheckIcon,
   FileTextIcon,
   FileUpIcon,
-  LockIcon,
   LockOpenIcon,
   UserRoundIcon,
   VideoIcon,
@@ -50,30 +48,20 @@ export function FileAnatomy() {
         </ul>
       </div>
 
-      <details className="group border-t bg-muted/40">
-        <summary className="flex min-h-16 cursor-pointer list-none items-center gap-3 px-6 py-4 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-inset sm:px-7 [&::-webkit-details-marker]:hidden">
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-full border bg-background transition-colors group-open:border-primary group-open:bg-primary group-open:text-primary-foreground">
-            <LockIcon aria-hidden className="size-4 group-open:hidden" />
-            <LockOpenIcon
-              aria-hidden
-              className="pop hidden size-4 group-open:block"
-            />
-          </span>
-          <span className="flex-1 font-semibold">
+      <div className="border-t bg-muted/40 p-6 sm:p-7">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h3 className="flex items-center gap-2 font-semibold">
+            <LockOpenIcon aria-hidden className="size-4 text-brand-text" />
             {t("evidence.locked.title")}
-          </span>
+          </h3>
           <span
             aria-hidden
-            className="text-xs font-medium text-muted-foreground max-sm:hidden"
+            className="text-xs font-medium text-muted-foreground"
           >
             {t("evidence.notes.full")}
           </span>
-          <ChevronDownIcon
-            aria-hidden
-            className="size-4 text-muted-foreground transition-transform group-open:rotate-180 motion-reduce:transition-none"
-          />
-        </summary>
-        <ul className="rise grid gap-x-6 gap-y-3 px-6 pb-6 sm:grid-cols-2 sm:px-7">
+        </div>
+        <ul className="mt-5 grid gap-x-6 gap-y-3 sm:grid-cols-2">
           {locked.map((item, index) => {
             const Icon = LOCKED_ICONS[index] ?? BriefcaseIcon
             return (
@@ -84,7 +72,7 @@ export function FileAnatomy() {
             )
           })}
         </ul>
-      </details>
+      </div>
     </div>
   )
 }

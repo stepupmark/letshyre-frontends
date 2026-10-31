@@ -22,7 +22,6 @@ export function EvidenceCard({
   style?: CSSProperties
 }) {
   const { t } = useTranslation("home")
-  const skills = t("hero.file.skills", { returnObjects: true })
 
   return (
     <div
@@ -60,18 +59,6 @@ export function EvidenceCard({
           ))}
         </div>
       </div>
-
-      <ul className="mt-4 flex flex-wrap gap-1.5">
-        {skills.map((skill) => (
-          <li
-            key={skill}
-            className="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium"
-          >
-            <CheckIcon className="size-3 text-brand-text" />
-            {skill}
-          </li>
-        ))}
-      </ul>
     </div>
   )
 }

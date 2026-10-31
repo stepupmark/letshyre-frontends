@@ -51,8 +51,8 @@ export function PricingNote() {
         </ul>
       </div>
 
-      <div className="reveal mx-auto w-full max-w-md lg:me-0">
-        <div className="min-h-71 sm:min-h-65">
+      <div className="reveal mx-auto w-full max-w-md max-md:hidden lg:me-0">
+        <div className="min-h-65">
           {hydrated && (
             <Suspense>
               <CreditUnlock />

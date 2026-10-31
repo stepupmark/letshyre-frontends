@@ -21,7 +21,6 @@
       "jobMatch": "Job match",
       "skillMatch": "Skill match",
       "interview": "AI interview",
-      "skills": ["React", "TypeScript", "Testing"],
       "verified": "Verified"
     },
     "scene": {
@@ -31,7 +30,6 @@
       "claims": ["Expert in React", "10x engineer", "Great team player"],
       "interview": "AI interview",
       "duration": "24:10",
-      "question": "Frontend, question 5 of 8",
       "verdict": "Worth a call"
     }
   },
@@ -117,10 +115,7 @@
       "professionals": "See what employers see"
     },
     "nav": {
-      "step": "Step {{n}} of {{total}}",
-      "back": "Back",
-      "next": "Next",
-      "progress": "Progress"
+      "step": "Step {{n}} of {{total}}"
     },
     "preview": {
       "employers": {
@@ -271,25 +266,10 @@
       "Your verified profile is matched to relevant jobs",
       "Apply to jobs from employers hiring now"
     ],
+    "fresh": "Your profile stays in front of employers for 90 days after each interview, so they see people who are looking now.",
     "cta": "Create your profile",
     "guide": "Read the candidate guide",
     "download": "Download the app"
-  },
-  "fresh": {
-    "eyebrow": "Fresh by design",
-    "days": "days",
-    "title": "A talent pool that's",
-    "accent": "always current.",
-    "employer": {
-      "label": "For employers",
-      "body": "You see people who are looking now, not a database of profiles from years ago."
-    },
-    "candidate": {
-      "label": "For professionals",
-      "body": "Your profile stays in front of employers for 90 days after your interview."
-    },
-    "start": "Day 0",
-    "end": "Day 90"
   },
   "pricing": {
     "eyebrow": "Pricing",

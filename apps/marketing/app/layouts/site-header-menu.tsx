@@ -23,6 +23,7 @@ import { Link } from "react-router"
 import { MenuIcon, XIcon } from "lucide-react"
 
 import { APP_LINKS } from "@/lib/app-links"
+import { SITE } from "@/lib/seo/site"
 
 import { FOOTER_COLUMNS } from "./site-footer-links"
 import { SiteLanguageSwitcher } from "./site-header-language"
@@ -92,7 +93,7 @@ export function SiteHeaderMenu({ className }: { className?: string }) {
         className="w-full gap-0 sm:max-w-sm"
       >
         <SheetHeader className="h-16 flex-row items-center justify-between border-b px-4 py-0">
-          <Logo label={t("nav.logoAlt")} />
+          <Logo label={SITE.name} />
           <SheetTitle className="sr-only">{t("nav.siteNavigation")}</SheetTitle>
           <SheetClose
             render={<Button variant="ghost" size="icon-lg" />}
