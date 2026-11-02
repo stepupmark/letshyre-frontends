@@ -10,7 +10,7 @@ const [unlockedRow, lockedRow] = (
 const interviews = (row: Record<string, unknown> | undefined) =>
   `GET /user/v1/employer_candidate_interviews/${String(row?.candidate_id)}/`
 
-test("an employer searches interviewed candidates, filters, pages and unlocks one", async ({
+test("an employer searches interviewed candidates, filters, pages and unlocks one in the dialog", async ({
   page,
   api,
   signInAs,
@@ -104,19 +104,22 @@ test("an employer searches interviewed candidates, filters, pages and unlocks on
   await expect(page).not.toHaveURL(/location=|education=|experience_/)
   await expect(page.getByText("12 candidates match “devops”")).toBeVisible()
 
-  const preview = page.getByRole("complementary")
+  const dialog = page.getByRole("dialog")
+  const meera = page.getByRole("button", { name: /Meera Nair/ })
+  await expect(dialog).toHaveCount(0)
+  await meera.click()
   await expect(
-    preview.getByRole("heading", { name: "Ravi Kumar" })
+    dialog.getByRole("heading", { name: "Meera Nair" })
   ).toBeVisible()
-  await page.getByRole("button", { name: /Meera Nair/ }).click()
   await expect(page).toHaveURL(/candidate=/)
   await page.reload()
   await expect(
-    preview.getByRole("heading", { name: "Meera Nair" })
+    dialog.getByRole("heading", { name: "Meera Nair" })
   ).toBeVisible()
+  await axe(page)
 
-  await preview.getByRole("checkbox").check()
-  await preview.getByRole("button", { name: "Unlock · 1 credit" }).click()
+  await dialog.getByRole("checkbox").check()
+  await dialog.getByRole("button", { name: "Unlock · 1 credit" }).click()
   await expect
     .poll(() => sent)
     .toEqual({
@@ -124,14 +127,25 @@ test("an employer searches interviewed candidates, filters, pages and unlocks on
       interview: [lockedRow?.interview_id],
     })
   await expect(
-    preview.getByText("Everything for this candidate is unlocked.")
+    dialog.getByText("Everything for this candidate is unlocked.")
   ).toBeVisible()
-  await expect(page.getByRole("img", { name: "Unlocked" })).toHaveCount(2)
+  await expect(dialog.getByText("Unlocked for you")).toBeVisible()
 
-  await page.getByRole("button", { name: /Meera Nair/ }).press("ArrowUp")
+  await dialog.getByRole("button", { name: "Previous" }).click()
   await expect(
-    preview.getByRole("heading", { name: "Ravi Kumar" })
+    dialog.getByRole("heading", { name: "Ravi Kumar" })
   ).toBeVisible()
+  await expect(dialog.getByRole("heading", { name: "Meera Nair" })).toHaveCount(
+    0
+  )
+  await dialog.press("j")
+  await expect(
+    dialog.getByRole("heading", { name: "Meera Nair" })
+  ).toBeVisible()
+  await page.keyboard.press("Escape")
+  await expect(dialog).toHaveCount(0)
+  await expect(meera).toBeFocused()
+  await expect(page.getByRole("img", { name: "Unlocked" })).toHaveCount(2)
 
   const calls = asked.length
   await page.getByRole("button", { name: "Clear search" }).click()

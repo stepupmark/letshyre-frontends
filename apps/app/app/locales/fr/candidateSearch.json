@@ -7,7 +7,7 @@
   "searching": "Recherche en cours",
   "start": {
     "title": "Cherchez dans tous les entretiens IA",
-    "body": "Saisissez un poste ou une compétence ci-dessus. Les résultats s’affichent en liste, avec le profil complet de la personne choisie à côté."
+    "body": "Saisissez un poste ou une compétence ci-dessus. Les résultats s’affichent en liste ; ouvrez une personne pour voir son profil et la débloquer."
   },
   "count_one": "<n>{{count}}</n> candidat correspond à « {{search}} »",
   "count_many": "<n>{{count}}</n> candidats correspondent à « {{search}} »",
@@ -27,7 +27,8 @@
     "interviews_many": "{{count}} entretiens",
     "interviews_other": "{{count}} entretiens",
     "lastInterview": "le dernier {{when}}",
-    "unlocked": "Débloqué"
+    "unlocked": "Débloqué",
+    "moreSkills": "+{{n}}"
   },
   "preview": {
     "interviewedFor": "Entretien pour {{role}}",
@@ -65,5 +66,15 @@
     "applied_one": "{{count}} filtre appliqué",
     "applied_many": "{{count}} filtres appliqués",
     "applied_other": "{{count}} filtres appliqués"
+  },
+  "dialog": {
+    "locked": {
+      "title": "Visible après déblocage",
+      "titleDone": "Débloqué pour vous",
+      "contact": "Coordonnées",
+      "scorecard": "Évaluation complète",
+      "recording": "Enregistrement de l’entretien",
+      "resume": "CV"
+    }
   }
 }

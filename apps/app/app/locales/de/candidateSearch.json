@@ -7,7 +7,7 @@
   "searching": "Suche läuft",
   "start": {
     "title": "Alle KI-Interviews durchsuchen",
-    "body": "Geben Sie oben eine Rolle oder Fähigkeit ein. Treffer erscheinen als Liste, daneben das vollständige Profil der ausgewählten Person."
+    "body": "Geben Sie oben eine Rolle oder Fähigkeit ein. Treffer erscheinen als Liste; öffnen Sie eine Person, um ihr Profil zu sehen und sie freizuschalten."
   },
   "count_one": "<n>{{count}}</n> Kandidat passt zu „{{search}}“",
   "count_other": "<n>{{count}}</n> Kandidaten passen zu „{{search}}“",
@@ -24,7 +24,8 @@
     "interviews_one": "{{count}} Interview",
     "interviews_other": "{{count}} Interviews",
     "lastInterview": "zuletzt {{when}}",
-    "unlocked": "Freigeschaltet"
+    "unlocked": "Freigeschaltet",
+    "moreSkills": "+{{n}}"
   },
   "preview": {
     "interviewedFor": "Interview für {{role}}",
@@ -60,5 +61,15 @@
     "doneCount_other": "{{count}} Kandidaten anzeigen",
     "applied_one": "{{count}} Filter aktiv",
     "applied_other": "{{count}} Filter aktiv"
+  },
+  "dialog": {
+    "locked": {
+      "title": "Nach dem Freischalten sichtbar",
+      "titleDone": "Für Sie freigeschaltet",
+      "contact": "Kontaktdaten",
+      "scorecard": "Vollständige Bewertung",
+      "recording": "Interviewaufzeichnung",
+      "resume": "Lebenslauf"
+    }
   }
 }

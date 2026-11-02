@@ -3,19 +3,16 @@ import type { ReactNode } from "react"
 
 import { useLastDefined } from "@/hooks/use-last-defined"
 
-import { useMedia } from "../hooks/use-media"
 import { useSearchState } from "../hooks/use-search-state"
+import { neighbours } from "../lib/nav"
 import { rowKey } from "../lib/result"
 import { searchQuery } from "../queries/candidate-search.queries"
 import type { SearchResult } from "../schemas/candidate-search.schema"
-import { PreviewSheet } from "./preview-sheet"
+import { CandidateDialog } from "./candidate-dialog/candidate-dialog"
+import { CandidateProfile } from "./candidate-dialog/candidate-profile"
 import { ResultList } from "./result-list"
-import { ResultPreview } from "./result-preview"
 import { StartState } from "./start-state"
 import { Toolbar } from "./toolbar"
-
-// Tailwind's lg, where the preview sits beside the list instead of in a sheet
-const WIDE = "(min-width: 64rem)"
 
 export function CandidateSearch({
   unlock,
@@ -27,13 +24,13 @@ export function CandidateSearch({
     ...searchQuery(params),
     placeholderData: keepPreviousData,
   })
-  const wide = useMedia(WIDE)
   const searching = params.search !== ""
   const settled = query.data !== undefined && !query.isPlaceholderData
   const rows = query.data?.results ?? []
+  const keys = rows.map(rowKey)
   const picked = rows.find((row) => rowKey(row) === selected)
-  const current = picked ?? (wide ? rows[0] : undefined)
-  const sheetRow = useLastDefined(wide ? undefined : picked)
+  const shown = useLastDefined(picked)
+  const nav = neighbours(keys, selected)
 
   return (
     <div className="flex flex-col gap-4">
@@ -53,18 +50,8 @@ export function CandidateSearch({
         <ResultList
           query={query}
           params={params}
-          selectedKey={current && rowKey(current)}
-          preview={
-            wide &&
-            current && (
-              <ResultPreview
-                key={rowKey(current)}
-                row={current}
-                unlock={unlock(current)}
-              />
-            )
-          }
-          onSelect={(row) => {
+          openKey={picked ? selected : null}
+          onOpen={(row) => {
             select(rowKey(row))
           }}
           onPage={(page) => {
@@ -76,19 +63,37 @@ export function CandidateSearch({
         <StartState />
       )}
 
-      {!wide && (
-        <PreviewSheet
-          row={sheetRow}
-          open={picked !== undefined}
-          onClose={() => {
-            select(null)
-          }}
-        >
-          {sheetRow && (
-            <ResultPreview row={sheetRow} unlock={unlock(sheetRow)} />
-          )}
-        </PreviewSheet>
-      )}
+      <CandidateDialog
+        open={picked !== undefined}
+        contentKey={shown && rowKey(shown)}
+        position={nav && { current: nav.index + 1, total: keys.length }}
+        onPrevious={
+          nav?.previous
+            ? () => {
+                select(nav.previous)
+              }
+            : null
+        }
+        onNext={
+          nav?.next
+            ? () => {
+                select(nav.next)
+              }
+            : null
+        }
+        onClose={() => {
+          select(null)
+        }}
+        returnFocus={() =>
+          shown
+            ? document.querySelector<HTMLElement>(
+                `[data-row="${CSS.escape(rowKey(shown))}"]`
+              )
+            : null
+        }
+      >
+        {shown && <CandidateProfile row={shown} unlock={unlock(shown)} />}
+      </CandidateDialog>
     </div>
   )
 }

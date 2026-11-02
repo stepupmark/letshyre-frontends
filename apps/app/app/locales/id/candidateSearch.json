@@ -7,7 +7,7 @@
   "searching": "Mencari",
   "start": {
     "title": "Cari di semua wawancara AI",
-    "body": "Ketik posisi atau keahlian di atas. Hasil muncul sebagai daftar, dengan profil lengkap orang yang Anda pilih di sampingnya."
+    "body": "Ketik posisi atau keahlian di atas. Hasil muncul sebagai daftar; buka siapa pun untuk melihat profilnya dan membukanya."
   },
   "count_other": "<n>{{count}}</n> kandidat cocok dengan “{{search}}”",
   "emptyTitle": "Tidak ada yang cocok dengan “{{search}}”",
@@ -21,7 +21,8 @@
     "underYear": "Kurang dari 1 thn",
     "interviews_other": "{{count}} wawancara",
     "lastInterview": "terakhir {{when}}",
-    "unlocked": "Terbuka"
+    "unlocked": "Terbuka",
+    "moreSkills": "+{{n}}"
   },
   "preview": {
     "interviewedFor": "Wawancara untuk {{role}}",
@@ -55,5 +56,15 @@
     "done": "Lihat kandidat",
     "doneCount_other": "Lihat {{count}} kandidat",
     "applied_other": "{{count}} filter diterapkan"
+  },
+  "dialog": {
+    "locked": {
+      "title": "Terlihat setelah dibuka",
+      "titleDone": "Sudah dibuka untuk Anda",
+      "contact": "Detail kontak",
+      "scorecard": "Kartu nilai lengkap",
+      "recording": "Rekaman wawancara",
+      "resume": "Resume"
+    }
   }
 }

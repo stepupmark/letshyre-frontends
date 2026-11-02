@@ -46,7 +46,8 @@ are in the design lab (`pnpm --filter app dev`, then `http://localhost:5174/_lab
   and the checkout total rolling as they change, and a job's status badge
   crossfading after a bulk change, a job's facts settling in once, and the applicant panel's fit
   bars filling as each candidate opens, and the dashboard's figures and balance counting up as they
-  first arrive.
+  first arrive, the candidate dialog's sections settling in as it opens, its profile sliding toward
+  the next or previous candidate, and the locked fields' bars clearing as a candidate is unlocked.
 - Reduced motion: values jump, only fades remain (`MotionConfig reducedMotion="user"`).
 - Cost: ~10 kB gzip with the first paint, the `domMax` features (~29 kB) load after it.
 

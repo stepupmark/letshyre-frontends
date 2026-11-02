@@ -7,7 +7,7 @@
   "searching": "Zoeken",
   "start": {
     "title": "Zoek in alle AI-interviews",
-    "body": "Typ hierboven een functie of vaardigheid. Resultaten verschijnen als lijst, met het volledige profiel van de gekozen persoon ernaast."
+    "body": "Typ hierboven een functie of vaardigheid. Resultaten verschijnen als lijst; open iemand om het profiel te zien en te ontgrendelen."
   },
   "count_one": "<n>{{count}}</n> kandidaat komt overeen met ‘{{search}}’",
   "count_other": "<n>{{count}}</n> kandidaten komen overeen met ‘{{search}}’",
@@ -24,7 +24,8 @@
     "interviews_one": "{{count}} interview",
     "interviews_other": "{{count}} interviews",
     "lastInterview": "laatste {{when}}",
-    "unlocked": "Ontgrendeld"
+    "unlocked": "Ontgrendeld",
+    "moreSkills": "+{{n}}"
   },
   "preview": {
     "interviewedFor": "Interview voor {{role}}",
@@ -60,5 +61,15 @@
     "doneCount_other": "{{count}} kandidaten tonen",
     "applied_one": "{{count}} filter actief",
     "applied_other": "{{count}} filters actief"
+  },
+  "dialog": {
+    "locked": {
+      "title": "Zichtbaar na ontgrendelen",
+      "titleDone": "Voor u ontgrendeld",
+      "contact": "Contactgegevens",
+      "scorecard": "Volledige beoordeling",
+      "recording": "Opname van het interview",
+      "resume": "Cv"
+    }
   }
 }

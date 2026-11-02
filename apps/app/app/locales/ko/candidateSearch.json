@@ -7,7 +7,7 @@
   "searching": "검색 중",
   "start": {
     "title": "모든 AI 인터뷰에서 검색",
-    "body": "위에 직무나 기술을 입력하세요. 결과는 목록으로 보이고, 선택한 사람의 전체 프로필이 옆에 표시돼요."
+    "body": "위에 직무나 기술을 입력하세요. 결과는 목록으로 보이고, 원하는 사람을 열어 프로필을 보고 잠금 해제할 수 있어요."
   },
   "count_other": "‘{{search}}’와 일치하는 후보자 <n>{{count}}</n>명",
   "emptyTitle": "‘{{search}}’와 일치하는 사람이 없어요",
@@ -21,7 +21,8 @@
     "underYear": "1년 미만",
     "interviews_other": "인터뷰 {{count}}개",
     "lastInterview": "최근 {{when}}",
-    "unlocked": "잠금 해제됨"
+    "unlocked": "잠금 해제됨",
+    "moreSkills": "+{{n}}"
   },
   "preview": {
     "interviewedFor": "{{role}} 인터뷰",
@@ -55,5 +56,15 @@
     "done": "후보자 보기",
     "doneCount_other": "후보자 {{count}}명 보기",
     "applied_other": "필터 {{count}}개 적용됨"
+  },
+  "dialog": {
+    "locked": {
+      "title": "잠금 해제하면 볼 수 있어요",
+      "titleDone": "잠금 해제됨",
+      "contact": "연락처",
+      "scorecard": "전체 평가표",
+      "recording": "면접 녹화",
+      "resume": "이력서"
+    }
   }
 }

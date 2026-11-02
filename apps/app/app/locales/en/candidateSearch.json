@@ -7,7 +7,7 @@
   "searching": "Searching",
   "start": {
     "title": "Search across every AI interview",
-    "body": "Type a role or a skill above. Matches appear as a list, with the full profile beside the one you pick."
+    "body": "Type a role or a skill above. Matches appear as a list; open anyone to see their profile and unlock them."
   },
   "count_one": "<n>{{count}}</n> candidate matches “{{search}}”",
   "count_other": "<n>{{count}}</n> candidates match “{{search}}”",
@@ -24,7 +24,8 @@
     "interviews_one": "{{count}} interview",
     "interviews_other": "{{count}} interviews",
     "lastInterview": "last one {{when}}",
-    "unlocked": "Unlocked"
+    "unlocked": "Unlocked",
+    "moreSkills": "+{{n}}"
   },
   "preview": {
     "interviewedFor": "Interviewed for {{role}}",
@@ -60,5 +61,15 @@
     "doneCount_other": "Show {{count}} candidates",
     "applied_one": "{{count}} filter applied",
     "applied_other": "{{count}} filters applied"
+  },
+  "dialog": {
+    "locked": {
+      "title": "Unlock to see",
+      "titleDone": "Unlocked for you",
+      "contact": "Contact details",
+      "scorecard": "Full scorecard",
+      "recording": "Interview recording",
+      "resume": "Resume"
+    }
   }
 }

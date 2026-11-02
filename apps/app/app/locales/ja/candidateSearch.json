@@ -7,7 +7,7 @@
   "searching": "検索中",
   "start": {
     "title": "すべての AI 面接から検索",
-    "body": "上の欄に職種かスキルを入力してください。結果は一覧で表示され、選んだ人のプロフィール全体が横に表示されます。"
+    "body": "上の欄に職種かスキルを入力してください。結果は一覧で表示され、開くとプロフィールの確認とアンロックができます。"
   },
   "count_other": "「{{search}}」に一致する候補者 <n>{{count}}</n> 人",
   "emptyTitle": "「{{search}}」に一致する人はいません",
@@ -21,7 +21,8 @@
     "underYear": "1年未満",
     "interviews_other": "面接 {{count}} 件",
     "lastInterview": "最終 {{when}}",
-    "unlocked": "アンロック済み"
+    "unlocked": "アンロック済み",
+    "moreSkills": "+{{n}}"
   },
   "preview": {
     "interviewedFor": "{{role}} の面接",
@@ -55,5 +56,15 @@
     "done": "候補者を表示",
     "doneCount_other": "{{count}} 人の候補者を表示",
     "applied_other": "{{count}} 件の絞り込みを適用中"
+  },
+  "dialog": {
+    "locked": {
+      "title": "アンロックで見られる内容",
+      "titleDone": "アンロック済み",
+      "contact": "連絡先",
+      "scorecard": "評価シートの全文",
+      "recording": "面接の録画",
+      "resume": "履歴書"
+    }
   }
 }

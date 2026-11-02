@@ -3,7 +3,7 @@ import { Button } from "@workspace/ui/components/button"
 import { cn } from "@workspace/ui/lib/utils"
 import type { UseQueryResult } from "@tanstack/react-query"
 import * as m from "motion/react-m"
-import { useRef, type KeyboardEvent, type ReactNode } from "react"
+import { useRef, type KeyboardEvent } from "react"
 
 import { AnimatedNumber } from "@/components/animated-number"
 import { EmptyState } from "@/components/empty-state"
@@ -31,17 +31,15 @@ const PREVIOUS = new Set(["ArrowUp", "k"])
 export function ResultList({
   query,
   params,
-  selectedKey,
-  preview,
-  onSelect,
+  openKey,
+  onOpen,
   onPage,
   onClearFilters,
 }: {
   query: UseQueryResult<Page>
   params: SearchParams
-  selectedKey: string | undefined
-  preview: ReactNode
-  onSelect: (row: SearchResult) => void
+  openKey: string | null
+  onOpen: (row: SearchResult) => void
   onPage: (page: number) => void
   onClearFilters: () => void
 }) {
@@ -89,10 +87,8 @@ export function ResultList({
     if (!list) return
     const buttons = [...list.querySelectorAll<HTMLButtonElement>("[data-row]")]
     const to = Math.min(buttons.length - 1, Math.max(0, from + step))
-    const row = rows[to]
     event.preventDefault()
     buttons[to]?.focus()
-    if (row) onSelect(row)
   }
 
   return (
@@ -128,56 +124,47 @@ export function ResultList({
         )}
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-5 lg:items-start">
-        <div className="flex flex-col gap-4 lg:col-span-2">
-          <ol
-            aria-labelledby="search-results"
-            aria-busy={query.isPlaceholderData}
-            className={cn(
-              "divide-y overflow-hidden rounded-xl border transition-opacity duration-200 motion-reduce:transition-none",
-              query.isPlaceholderData && "opacity-60"
-            )}
-          >
-            {rows.map((row, i) => (
-              <m.li
-                key={`${String(params.page)}:${rowKey(row)}`}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: duration.base,
-                  ease,
-                  delay: Math.min(i, 8) * 0.03,
-                }}
-              >
-                <ResultRow
-                  row={row}
-                  search={params.search}
-                  selected={rowKey(row) === selectedKey}
-                  onSelect={() => {
-                    onSelect(row)
-                  }}
-                  onKeyDown={(event) => {
-                    move(event, i)
-                  }}
-                />
-              </m.li>
-            ))}
-          </ol>
-          <Pager
-            page={params.page}
-            pages={pages}
-            onPage={(page) => {
-              onPage(page)
-              heading.current?.focus()
-            }}
-          />
-        </div>
-        {preview && (
-          <aside className="sticky top-36 max-h-[calc(100svh-10rem)] overflow-y-auto rounded-xl border max-lg:hidden lg:col-span-3">
-            {preview}
-          </aside>
+      <ol
+        aria-labelledby="search-results"
+        aria-busy={query.isPlaceholderData}
+        className={cn(
+          "flex flex-col gap-2 transition-opacity duration-200 motion-reduce:transition-none",
+          query.isPlaceholderData && "opacity-60"
         )}
-      </div>
+      >
+        {rows.map((row, i) => (
+          <m.li
+            key={`${String(params.page)}:${rowKey(row)}`}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: duration.base,
+              ease,
+              delay: Math.min(i, 6) * 0.03,
+            }}
+          >
+            <ResultRow
+              row={row}
+              search={params.search}
+              open={rowKey(row) === openKey}
+              onOpen={() => {
+                onOpen(row)
+              }}
+              onKeyDown={(event) => {
+                move(event, i)
+              }}
+            />
+          </m.li>
+        ))}
+      </ol>
+      <Pager
+        page={params.page}
+        pages={pages}
+        onPage={(page) => {
+          onPage(page)
+          heading.current?.focus()
+        }}
+      />
     </section>
   )
 }

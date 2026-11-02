@@ -7,7 +7,7 @@
   "searching": "Pesquisando",
   "start": {
     "title": "Pesquise em todas as entrevistas com IA",
-    "body": "Digite acima um cargo ou uma habilidade. Os resultados aparecem em lista, com o perfil completo da pessoa escolhida ao lado."
+    "body": "Digite acima um cargo ou uma habilidade. Os resultados aparecem em lista; abra qualquer pessoa para ver o perfil e desbloqueá-la."
   },
   "count_one": "<n>{{count}}</n> candidato corresponde a “{{search}}”",
   "count_many": "<n>{{count}}</n> candidatos correspondem a “{{search}}”",
@@ -27,7 +27,8 @@
     "interviews_many": "{{count}} entrevistas",
     "interviews_other": "{{count}} entrevistas",
     "lastInterview": "a última {{when}}",
-    "unlocked": "Desbloqueado"
+    "unlocked": "Desbloqueado",
+    "moreSkills": "+{{n}}"
   },
   "preview": {
     "interviewedFor": "Entrevista para {{role}}",
@@ -65,5 +66,15 @@
     "applied_one": "{{count}} filtro aplicado",
     "applied_many": "{{count}} filtros aplicados",
     "applied_other": "{{count}} filtros aplicados"
+  },
+  "dialog": {
+    "locked": {
+      "title": "Visível após desbloquear",
+      "titleDone": "Desbloqueado para você",
+      "contact": "Dados de contato",
+      "scorecard": "Avaliação completa",
+      "recording": "Gravação da entrevista",
+      "resume": "Currículo"
+    }
   }
 }

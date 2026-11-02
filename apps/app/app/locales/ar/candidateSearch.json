@@ -7,7 +7,7 @@
   "searching": "جارٍ البحث",
   "start": {
     "title": "ابحث في كل مقابلات الذكاء الاصطناعي",
-    "body": "اكتب مسمى وظيفيًا أو مهارة في الأعلى. تظهر النتائج في قائمة، وبجانبها الملف الكامل لمن تختاره."
+    "body": "اكتب مسمى وظيفيًا أو مهارة في الأعلى. تظهر النتائج في قائمة، وافتح أي شخص لترى ملفه وتفتحه."
   },
   "count_zero": "لا مرشحين يطابقون «{{search}}» <n>{{count}}</n>",
   "count_one": "مرشح واحد يطابق «{{search}}» <n>{{count}}</n>",
@@ -36,7 +36,8 @@
     "interviews_many": "{{count}} مقابلة",
     "interviews_other": "{{count}} مقابلة",
     "lastInterview": "آخرها {{when}}",
-    "unlocked": "مفتوح"
+    "unlocked": "مفتوح",
+    "moreSkills": "+{{n}}"
   },
   "preview": {
     "interviewedFor": "مقابلة لوظيفة {{role}}",
@@ -80,5 +81,15 @@
     "applied_few": "{{count}} عوامل تصفية مطبّقة",
     "applied_many": "{{count}} عامل تصفية مطبّق",
     "applied_other": "{{count}} عامل تصفية مطبّق"
+  },
+  "dialog": {
+    "locked": {
+      "title": "افتح لترى",
+      "titleDone": "مفتوح لك",
+      "contact": "بيانات التواصل",
+      "scorecard": "بطاقة التقييم الكاملة",
+      "recording": "تسجيل المقابلة",
+      "resume": "السيرة الذاتية"
+    }
   }
 }

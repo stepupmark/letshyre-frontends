@@ -1,16 +1,25 @@
 import { useLocale, useTranslation } from "@workspace/i18n/react"
+import { DialogDescription, DialogTitle } from "@workspace/ui/components/dialog"
 import * as m from "motion/react-m"
-import { useId, type ReactNode } from "react"
+import type { ReactNode } from "react"
 
 import { ScoreBand } from "@/components/score-band"
 import { duration, ease } from "@/lib/motion"
 import { relativeTime } from "@/lib/relative-time"
 
-import { nameOf } from "../lib/result"
-import type { SearchResult } from "../schemas/candidate-search.schema"
-import { Facts, PersonAvatar } from "./person"
+import { nameOf } from "../../lib/result"
+import type { SearchResult } from "../../schemas/candidate-search.schema"
+import { Facts, PersonAvatar } from "../person"
+import { LockedFields } from "./locked-fields"
 
-export function ResultPreview({
+const [HIDDEN, SHOWN] = ["hidden", "shown"] as const
+
+const SETTLE = {
+  hidden: { opacity: 0, y: 4 },
+  shown: { opacity: 1, y: 0, transition: { duration: duration.base, ease } },
+}
+
+export function CandidateProfile({
   row,
   unlock,
 }: {
@@ -19,7 +28,6 @@ export function ResultPreview({
 }) {
   const { t } = useTranslation("candidateSearch")
   const locale = useLocale()
-  const id = useId()
   const name = nameOf(row, t("card.unnamed"))
   const role = row.interviewed_role ?? row.current_role
   const score = row.interview_score
@@ -31,34 +39,33 @@ export function ResultPreview({
 
   return (
     <m.article
-      aria-labelledby={`${id}-name`}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: duration.fast, ease }}
+      variants={{ shown: { transition: { staggerChildren: 0.04 } } }}
+      initial={HIDDEN}
+      animate={SHOWN}
       className="flex flex-col"
     >
-      <header className="flex items-center gap-4 border-b p-5">
-        <PersonAvatar row={row} name={name} className="size-14 text-sm" />
-        <div className="flex min-w-0 flex-col gap-0.5">
-          <h2
-            id={`${id}-name`}
-            className="truncate text-lg font-semibold tracking-tight text-brand-text"
-          >
+      <m.header
+        variants={SETTLE}
+        className="flex items-center gap-4 ps-5 pe-12 pt-5 pb-4 sm:ps-6"
+      >
+        <PersonAvatar row={row} name={name} className="size-16 text-base" />
+        <div className="flex min-w-0 flex-col gap-1">
+          <DialogTitle className="text-xl font-semibold tracking-tight text-balance text-brand-text">
             {name}
-          </h2>
+          </DialogTitle>
           {role && (
-            <p className="text-sm text-pretty">
+            <DialogDescription className="text-sm text-pretty text-foreground">
               {t("preview.interviewedFor", { role })}
-            </p>
+            </DialogDescription>
           )}
           <Facts
             row={row}
             className="text-xs text-muted-foreground tabular-nums"
           />
         </div>
-      </header>
+      </m.header>
 
-      <div className="flex flex-col gap-6 p-5">
+      <div className="flex flex-col gap-6 px-5 pt-2 pb-6 sm:px-6">
         {(score != null || interviews > 0) && (
           <Section title={t("preview.interview")}>
             {score != null && (
@@ -69,7 +76,6 @@ export function ResultPreview({
                   className="h-2 flex-1 overflow-hidden rounded-full bg-muted"
                 >
                   <m.span
-                    key={row.candidate_id}
                     className="block h-full origin-left rounded-full bg-brand rtl:origin-right"
                     style={{ width: `${Math.min(100, Math.max(0, score))}%` }}
                     initial={{ scaleX: 0 }}
@@ -90,6 +96,32 @@ export function ResultPreview({
             )}
           </Section>
         )}
+
+        {skills.length > 0 && (
+          <Section title={t("preview.skills")}>
+            <ul className="flex flex-wrap gap-1.5">
+              {skills.map((skill) => (
+                <li
+                  key={skill}
+                  className="rounded-full border px-2.5 py-0.5 text-xs"
+                >
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </Section>
+        )}
+
+        <Section
+          title={
+            row.already_unlocked
+              ? t("dialog.locked.titleDone")
+              : t("dialog.locked.title")
+          }
+        >
+          <LockedFields unlocked={Boolean(row.already_unlocked)} />
+          {unlock}
+        </Section>
 
         {education.length > 0 && (
           <Section title={t("preview.education")}>
@@ -112,23 +144,6 @@ export function ResultPreview({
             </ol>
           </Section>
         )}
-
-        {skills.length > 0 && (
-          <Section title={t("preview.skills")}>
-            <ul className="flex flex-wrap gap-1.5">
-              {skills.map((skill) => (
-                <li
-                  key={skill}
-                  className="rounded-full bg-muted px-2.5 py-0.5 text-xs"
-                >
-                  {skill}
-                </li>
-              ))}
-            </ul>
-          </Section>
-        )}
-
-        {unlock}
       </div>
     </m.article>
   )
@@ -136,9 +151,9 @@ export function ResultPreview({
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="flex flex-col gap-2.5">
+    <m.section variants={SETTLE} className="flex flex-col gap-3">
       <h3 className="text-xs font-medium text-muted-foreground">{title}</h3>
       {children}
-    </section>
+    </m.section>
   )
 }

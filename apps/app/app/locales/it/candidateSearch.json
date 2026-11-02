@@ -7,7 +7,7 @@
   "searching": "Ricerca in corso",
   "start": {
     "title": "Cerca in tutti i colloqui con l’IA",
-    "body": "Scrivi sopra un ruolo o una competenza. I risultati compaiono in un elenco, con il profilo completo della persona scelta accanto."
+    "body": "Scrivi sopra un ruolo o una competenza. I risultati compaiono in un elenco; apri chiunque per vederne il profilo e sbloccarlo."
   },
   "count_one": "<n>{{count}}</n> candidato corrisponde a «{{search}}»",
   "count_many": "<n>{{count}}</n> candidati corrispondono a «{{search}}»",
@@ -27,7 +27,8 @@
     "interviews_many": "{{count}} colloqui",
     "interviews_other": "{{count}} colloqui",
     "lastInterview": "l’ultimo {{when}}",
-    "unlocked": "Sbloccato"
+    "unlocked": "Sbloccato",
+    "moreSkills": "+{{n}}"
   },
   "preview": {
     "interviewedFor": "Colloquio per {{role}}",
@@ -65,5 +66,15 @@
     "applied_one": "{{count}} filtro applicato",
     "applied_many": "{{count}} filtri applicati",
     "applied_other": "{{count}} filtri applicati"
+  },
+  "dialog": {
+    "locked": {
+      "title": "Visibile dopo lo sblocco",
+      "titleDone": "Sbloccato per te",
+      "contact": "Contatti",
+      "scorecard": "Valutazione completa",
+      "recording": "Registrazione del colloquio",
+      "resume": "Curriculum"
+    }
   }
 }
