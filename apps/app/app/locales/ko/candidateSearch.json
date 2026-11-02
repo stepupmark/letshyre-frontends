@@ -20,8 +20,9 @@
     "years_other": "{{count}}년",
     "underYear": "1년 미만",
     "interviews_other": "인터뷰 {{count}}개",
-    "lastInterview": "최근 {{when}}",
+    "lastInterview": "면접 {{when}}",
     "unlocked": "잠금 해제됨",
+    "viewed": "열람함",
     "moreSkills": "+{{n}}"
   },
   "preview": {

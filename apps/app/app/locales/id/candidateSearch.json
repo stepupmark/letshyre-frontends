@@ -20,8 +20,9 @@
     "years_other": "{{count}} thn",
     "underYear": "Kurang dari 1 thn",
     "interviews_other": "{{count}} wawancara",
-    "lastInterview": "terakhir {{when}}",
+    "lastInterview": "Wawancara {{when}}",
     "unlocked": "Terbuka",
+    "viewed": "Dilihat",
     "moreSkills": "+{{n}}"
   },
   "preview": {

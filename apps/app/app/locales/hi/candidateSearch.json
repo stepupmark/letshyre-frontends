@@ -23,8 +23,9 @@
     "underYear": "1 साल से कम",
     "interviews_one": "{{count}} इंटरव्यू",
     "interviews_other": "{{count}} इंटरव्यू",
-    "lastInterview": "पिछला {{when}}",
+    "lastInterview": "इंटरव्यू {{when}}",
     "unlocked": "अनलॉक है",
+    "viewed": "देखा गया",
     "moreSkills": "+{{n}}"
   },
   "preview": {

@@ -33,3 +33,11 @@ export function splitMatch(text: string, term: string) {
     after: text.slice(at + term.length),
   }
 }
+
+export const tidyPlace = (place: string | null | undefined) => {
+  const tidy = (place ?? "")
+    .replace(/\s*,\s*/g, ", ")
+    .replace(/\s+/g, " ")
+    .replace(/^[\s,]+|[\s,]+$/g, "")
+  return tidy === "" ? null : tidy
+}

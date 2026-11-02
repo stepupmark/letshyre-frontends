@@ -1,9 +1,14 @@
 import { useLocale, useTranslation } from "@workspace/i18n/react"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@workspace/ui/components/collapsible"
 import { DialogDescription, DialogTitle } from "@workspace/ui/components/dialog"
+import { ChevronDown, GraduationCap } from "lucide-react"
 import * as m from "motion/react-m"
 import type { ReactNode } from "react"
 
-import { ScoreBand } from "@/components/score-band"
 import { duration, ease } from "@/lib/motion"
 import { relativeTime } from "@/lib/relative-time"
 
@@ -70,7 +75,6 @@ export function CandidateProfile({
           <Section title={t("preview.interview")}>
             {score != null && (
               <div className="flex items-center gap-3">
-                <ScoreBand score={score} of="interview" />
                 <span
                   aria-hidden="true"
                   className="h-2 flex-1 overflow-hidden rounded-full bg-muted"
@@ -112,6 +116,54 @@ export function CandidateProfile({
           </Section>
         )}
 
+        {education.length > 0 && (
+          <m.section variants={SETTLE}>
+            <Collapsible className="flex flex-col gap-3">
+              <CollapsibleTrigger className="group flex w-full items-center justify-between gap-2 rounded-md text-start text-xs font-medium text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50">
+                <span className="flex items-center gap-1.5">
+                  {t("preview.education")}
+                  <span className="rounded-full bg-muted px-1.5 text-xs tabular-nums">
+                    {education.length}
+                  </span>
+                </span>
+                <ChevronDown
+                  aria-hidden="true"
+                  className="size-4 transition-transform duration-200 group-data-panel-open:rotate-180 motion-reduce:transition-none"
+                />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0 motion-reduce:transition-none">
+                <ol className="flex flex-col divide-y rounded-lg border">
+                  {education.map((entry, i) => (
+                    <li key={i} className="flex items-start gap-3 px-3 py-3">
+                      <span
+                        aria-hidden="true"
+                        className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground"
+                      >
+                        <GraduationCap className="size-4" />
+                      </span>
+                      <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+                        <span className="text-sm font-medium text-pretty">
+                          {entry.degree ?? entry.institution}
+                        </span>
+                        {entry.degree && entry.institution && (
+                          <span className="text-xs text-pretty text-muted-foreground">
+                            {entry.institution}
+                          </span>
+                        )}
+                      </span>
+                      {entry.duration && (
+                        <span className="shrink-0 pt-0.5 text-xs text-muted-foreground tabular-nums">
+                          {entry.duration}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              </CollapsibleContent>
+            </Collapsible>
+          </m.section>
+        )}
+
         <Section
           title={
             row.already_unlocked
@@ -122,28 +174,6 @@ export function CandidateProfile({
           <LockedFields unlocked={Boolean(row.already_unlocked)} />
           {unlock}
         </Section>
-
-        {education.length > 0 && (
-          <Section title={t("preview.education")}>
-            <ol className="flex flex-col gap-3">
-              {education.map((entry, i) => (
-                <li key={i} className="flex flex-col gap-0.5 text-sm">
-                  <span className="font-medium">{entry.degree}</span>
-                  {entry.institution && (
-                    <span className="text-muted-foreground">
-                      {entry.institution}
-                    </span>
-                  )}
-                  {entry.duration && (
-                    <span className="text-xs text-muted-foreground tabular-nums">
-                      {entry.duration}
-                    </span>
-                  )}
-                </li>
-              ))}
-            </ol>
-          </Section>
-        )}
       </div>
     </m.article>
   )

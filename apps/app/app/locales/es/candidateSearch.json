@@ -26,8 +26,9 @@
     "interviews_one": "{{count}} entrevista",
     "interviews_many": "{{count}} entrevistas",
     "interviews_other": "{{count}} entrevistas",
-    "lastInterview": "la última {{when}}",
+    "lastInterview": "Entrevista {{when}}",
     "unlocked": "Desbloqueado",
+    "viewed": "Visto",
     "moreSkills": "+{{n}}"
   },
   "preview": {

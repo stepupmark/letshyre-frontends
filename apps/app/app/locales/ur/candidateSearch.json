@@ -23,8 +23,9 @@
     "underYear": "1 سال سے کم",
     "interviews_one": "{{count}} انٹرویو",
     "interviews_other": "{{count}} انٹرویو",
-    "lastInterview": "آخری {{when}}",
+    "lastInterview": "انٹرویو {{when}}",
     "unlocked": "اَن لاک ہے",
+    "viewed": "دیکھا گیا",
     "moreSkills": "+{{n}}"
   },
   "preview": {

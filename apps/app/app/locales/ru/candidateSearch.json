@@ -29,8 +29,9 @@
     "interviews_few": "{{count}} интервью",
     "interviews_many": "{{count}} интервью",
     "interviews_other": "{{count}} интервью",
-    "lastInterview": "последнее {{when}}",
+    "lastInterview": "Интервью {{when}}",
     "unlocked": "Открыто",
+    "viewed": "Просмотрен",
     "moreSkills": "+{{n}}"
   },
   "preview": {

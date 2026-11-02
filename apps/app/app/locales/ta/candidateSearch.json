@@ -23,8 +23,9 @@
     "underYear": "1 ஆண்டுக்குக் குறைவு",
     "interviews_one": "{{count}} நேர்காணல்",
     "interviews_other": "{{count}} நேர்காணல்கள்",
-    "lastInterview": "கடைசியாக {{when}}",
+    "lastInterview": "நேர்காணல் {{when}}",
     "unlocked": "திறக்கப்பட்டது",
+    "viewed": "பார்க்கப்பட்டது",
     "moreSkills": "+{{n}}"
   },
   "preview": {

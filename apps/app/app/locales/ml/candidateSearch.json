@@ -23,8 +23,9 @@
     "underYear": "1 വർഷത്തിൽ താഴെ",
     "interviews_one": "{{count}} ഇന്റർവ്യൂ",
     "interviews_other": "{{count}} ഇന്റർവ്യൂകൾ",
-    "lastInterview": "അവസാനത്തേത് {{when}}",
+    "lastInterview": "ഇന്റർവ്യൂ {{when}}",
     "unlocked": "അൺലോക്ക് ചെയ്തു",
+    "viewed": "കണ്ടു",
     "moreSkills": "+{{n}}"
   },
   "preview": {

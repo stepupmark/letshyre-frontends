@@ -23,8 +23,9 @@
     "underYear": "Under 1 yr",
     "interviews_one": "{{count}} interview",
     "interviews_other": "{{count}} interviews",
-    "lastInterview": "last one {{when}}",
+    "lastInterview": "Interviewed {{when}}",
     "unlocked": "Unlocked",
+    "viewed": "Viewed",
     "moreSkills": "+{{n}}"
   },
   "preview": {

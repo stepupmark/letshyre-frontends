@@ -1,7 +1,9 @@
 import { Trans, useLocale, useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
+import { Kbd } from "@workspace/ui/components/kbd"
 import { cn } from "@workspace/ui/lib/utils"
 import type { UseQueryResult } from "@tanstack/react-query"
+import { ArrowDown, ArrowUp } from "lucide-react"
 import * as m from "motion/react-m"
 import { useRef, type KeyboardEvent } from "react"
 
@@ -32,6 +34,7 @@ export function ResultList({
   query,
   params,
   openKey,
+  viewed,
   onOpen,
   onPage,
   onClearFilters,
@@ -39,6 +42,7 @@ export function ResultList({
   query: UseQueryResult<Page>
   params: SearchParams
   openKey: string | null
+  viewed: ReadonlySet<string>
   onOpen: (row: SearchResult) => void
   onPage: (page: number) => void
   onClearFilters: () => void
@@ -92,15 +96,16 @@ export function ResultList({
   }
 
   return (
-    <section aria-labelledby="search-results" className="flex flex-col gap-4">
-      <div
-        aria-live="polite"
-        className="flex items-baseline justify-between gap-3"
-      >
+    <section
+      aria-labelledby="search-results"
+      className="flex w-full max-w-5xl flex-col gap-4"
+    >
+      <div className="flex items-baseline justify-between gap-3">
         <h2
           ref={heading}
           id="search-results"
           tabIndex={-1}
+          aria-live="polite"
           className="text-sm text-muted-foreground outline-none"
         >
           <Trans
@@ -117,11 +122,24 @@ export function ResultList({
             }}
           />
         </h2>
-        {pages > 1 && (
-          <span className="shrink-0 text-xs text-muted-foreground tabular-nums max-sm:hidden">
-            {t("common:table.pageOf", { page: params.page, total: pages })}
-          </span>
-        )}
+        <div className="flex shrink-0 items-center gap-4 text-xs text-muted-foreground max-sm:hidden">
+          <p className="hidden items-center gap-1.5 md:flex">
+            <Kbd className="text-foreground">
+              <ArrowUp aria-label={t("common:detail.previous")} />
+            </Kbd>
+            <Kbd className="text-foreground">
+              <ArrowDown aria-label={t("common:detail.next")} />
+            </Kbd>
+            {t("common:table.navigateHint")}
+            <Kbd className="text-foreground">{t("common:table.enterKey")}</Kbd>
+            {t("common:table.openHint")}
+          </p>
+          {pages > 1 && (
+            <span className="tabular-nums">
+              {t("common:table.pageOf", { page: params.page, total: pages })}
+            </span>
+          )}
+        </div>
       </div>
 
       <ol
@@ -147,6 +165,7 @@ export function ResultList({
               row={row}
               search={params.search}
               open={rowKey(row) === openKey}
+              viewed={viewed.has(rowKey(row))}
               onOpen={() => {
                 onOpen(row)
               }}

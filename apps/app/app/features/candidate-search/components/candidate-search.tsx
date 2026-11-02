@@ -4,6 +4,7 @@ import type { ReactNode } from "react"
 import { useLastDefined } from "@/hooks/use-last-defined"
 
 import { useSearchState } from "../hooks/use-search-state"
+import { useViewed } from "../hooks/use-viewed"
 import { neighbours } from "../lib/nav"
 import { rowKey } from "../lib/result"
 import { searchQuery } from "../queries/candidate-search.queries"
@@ -31,6 +32,14 @@ export function CandidateSearch({
   const picked = rows.find((row) => rowKey(row) === selected)
   const shown = useLastDefined(picked)
   const nav = neighbours(keys, selected)
+  const previous = nav?.previous
+  const next = nav?.next
+  const { viewed, markViewed } = useViewed()
+
+  const open = (key: string) => {
+    markViewed(key)
+    select(key)
+  }
 
   return (
     <div className="flex flex-col gap-4">
@@ -51,8 +60,9 @@ export function CandidateSearch({
           query={query}
           params={params}
           openKey={picked ? selected : null}
+          viewed={viewed}
           onOpen={(row) => {
-            select(rowKey(row))
+            open(rowKey(row))
           }}
           onPage={(page) => {
             update({ page })
@@ -68,20 +78,21 @@ export function CandidateSearch({
         contentKey={shown && rowKey(shown)}
         position={nav && { current: nav.index + 1, total: keys.length }}
         onPrevious={
-          nav?.previous
+          previous
             ? () => {
-                select(nav.previous)
+                open(previous)
               }
             : null
         }
         onNext={
-          nav?.next
+          next
             ? () => {
-                select(nav.next)
+                open(next)
               }
             : null
         }
         onClose={() => {
+          if (shown) markViewed(rowKey(shown))
           select(null)
         }}
         returnFocus={() =>

@@ -145,7 +145,15 @@ test("an employer searches interviewed candidates, filters, pages and unlocks on
   await page.keyboard.press("Escape")
   await expect(dialog).toHaveCount(0)
   await expect(meera).toBeFocused()
-  await expect(page.getByRole("img", { name: "Unlocked" })).toHaveCount(2)
+  await expect(
+    page
+      .locator("[data-row]")
+      .getByText("Unlocked", { exact: true })
+      .filter({ visible: true })
+  ).toHaveCount(2)
+  await expect(
+    page.locator("[data-row]").getByText("Viewed", { exact: true })
+  ).toHaveCount(2)
 
   const calls = asked.length
   await page.getByRole("button", { name: "Clear search" }).click()

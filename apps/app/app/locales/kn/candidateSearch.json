@@ -23,8 +23,9 @@
     "underYear": "1 ವರ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ",
     "interviews_one": "{{count}} ಸಂದರ್ಶನ",
     "interviews_other": "{{count}} ಸಂದರ್ಶನಗಳು",
-    "lastInterview": "ಕೊನೆಯದು {{when}}",
+    "lastInterview": "ಸಂದರ್ಶನ {{when}}",
     "unlocked": "ಅನ್‌ಲಾಕ್ ಆಗಿದೆ",
+    "viewed": "ನೋಡಲಾಗಿದೆ",
     "moreSkills": "+{{n}}"
   },
   "preview": {

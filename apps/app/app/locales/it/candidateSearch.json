@@ -26,8 +26,9 @@
     "interviews_one": "{{count}} colloquio",
     "interviews_many": "{{count}} colloqui",
     "interviews_other": "{{count}} colloqui",
-    "lastInterview": "l’ultimo {{when}}",
+    "lastInterview": "Colloquio {{when}}",
     "unlocked": "Sbloccato",
+    "viewed": "Visto",
     "moreSkills": "+{{n}}"
   },
   "preview": {

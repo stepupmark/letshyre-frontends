@@ -20,8 +20,9 @@
     "years_other": "{{count}} 年",
     "underYear": "1年未満",
     "interviews_other": "面接 {{count}} 件",
-    "lastInterview": "最終 {{when}}",
+    "lastInterview": "面接 {{when}}",
     "unlocked": "アンロック済み",
+    "viewed": "閲覧済み",
     "moreSkills": "+{{n}}"
   },
   "preview": {

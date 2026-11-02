@@ -23,8 +23,9 @@
     "underYear": "1 సంవత్సరం కంటే తక్కువ",
     "interviews_one": "{{count}} ఇంటర్వ్యూ",
     "interviews_other": "{{count}} ఇంటర్వ్యూలు",
-    "lastInterview": "చివరిది {{when}}",
+    "lastInterview": "ఇంటర్వ్యూ {{when}}",
     "unlocked": "అన్‌లాక్ అయింది",
+    "viewed": "చూశారు",
     "moreSkills": "+{{n}}"
   },
   "preview": {

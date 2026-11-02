@@ -23,8 +23,9 @@
     "underYear": "১ বছরের কম",
     "interviews_one": "{{count}}টি ইন্টারভিউ",
     "interviews_other": "{{count}}টি ইন্টারভিউ",
-    "lastInterview": "সর্বশেষ {{when}}",
+    "lastInterview": "ইন্টারভিউ {{when}}",
     "unlocked": "আনলক করা",
+    "viewed": "দেখা হয়েছে",
     "moreSkills": "+{{n}}"
   },
   "preview": {

@@ -35,8 +35,9 @@
     "interviews_few": "{{count}} مقابلات",
     "interviews_many": "{{count}} مقابلة",
     "interviews_other": "{{count}} مقابلة",
-    "lastInterview": "آخرها {{when}}",
+    "lastInterview": "مقابلة {{when}}",
     "unlocked": "مفتوح",
+    "viewed": "تمت المشاهدة",
     "moreSkills": "+{{n}}"
   },
   "preview": {
