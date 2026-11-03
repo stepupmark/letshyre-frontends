@@ -1,7 +1,14 @@
 const { existsSync } = require("node:fs")
 
 const PORT = 4180
-const PAGES = ["", "/pricing", "/interview-guide", "/contact", "/terms"]
+const PAGES = [
+  "",
+  "/home-v2",
+  "/pricing",
+  "/interview-guide",
+  "/contact",
+  "/terms",
+]
 
 // Arabic joins once it's translated, so RTL layout gets measured too
 const urls = ["en", "ar"].flatMap((lang) =>

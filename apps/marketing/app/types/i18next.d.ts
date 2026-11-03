@@ -10,6 +10,7 @@ import type download from "../locales/en/download.json"
 import type employerGuide from "../locales/en/employerGuide.json"
 import type employers from "../locales/en/employers.json"
 import type home from "../locales/en/home.json"
+import type homeV2 from "../locales/en/homeV2.json"
 import type interview from "../locales/en/interview.json"
 import type legalPolicy from "../locales/en/legalPolicy.json"
 import type legalRefund from "../locales/en/legalRefund.json"
@@ -31,6 +32,7 @@ declare module "i18next" {
       employerGuide: typeof employerGuide
       employers: typeof employers
       home: typeof home
+      homeV2: typeof homeV2
       interview: typeof interview
       legalPolicy: typeof legalPolicy
       legalRefund: typeof legalRefund

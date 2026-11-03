@@ -7,7 +7,7 @@ import {
 } from "@workspace/i18n"
 import type { MetaArgs, MetaDescriptor } from "react-router"
 
-import { PAGES, type PageId } from "../pages"
+import { PAGES, type PageId, PREVIEW_PAGES } from "../pages"
 import { buildMeta } from "./meta"
 import { breadcrumbSchema, type JsonLd } from "./schema"
 
@@ -69,6 +69,7 @@ export function pageMeta(
       description: t("meta.description"),
       locales,
       og: page.og,
+      robots: PREVIEW_PAGES.includes(id) ? "noindex, nofollow" : undefined,
       jsonLd: [...crumbs, ...(jsonLd?.({ lang, t, path: page.path }) ?? [])],
     })
   }

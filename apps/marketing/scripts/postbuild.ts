@@ -13,6 +13,7 @@ import {
   MOVED_PATHS,
   PAGES,
   type PageId,
+  PREVIEW_PAGES,
   REPLACED_BY,
 } from "../app/lib/pages.ts"
 import { readyLocales } from "../app/lib/readiness.ts"
@@ -38,6 +39,7 @@ const production = env.VITE_ENV === "production"
 const enforceCsp = process.env.CSP_ENFORCE === "true"
 
 const FEATURE: Partial<Record<PageId, string>> = {
+  homeV2: "home",
   terms: "legal",
   privacy: "legal",
   refund: "legal",
@@ -85,17 +87,24 @@ writeFileSync(
   join(CLIENT, "sitemap.xml"),
   renderSitemap(
     site,
-    [...ready].map(([id, locales]) => ({
-      path: PAGES[id].path,
-      locales,
-      lastmod: lastmod(id),
-    }))
+    [...ready]
+      .filter(([id]) => !PREVIEW_PAGES.includes(id))
+      .map(([id, locales]) => ({
+        path: PAGES[id].path,
+        locales,
+        lastmod: lastmod(id),
+      }))
   )
 )
 writeFileSync(join(CLIENT, "robots.txt"), renderRobots(site, production))
 
 const routes = [...ready].flatMap(([id, locales]) =>
-  locales.map((lang) => ({ lang, path: PAGES[id].path, locales }))
+  locales.map((lang) => ({
+    lang,
+    path: PAGES[id].path,
+    locales,
+    preview: PREVIEW_PAGES.includes(id),
+  }))
 )
 
 for (const page of routes) {
@@ -111,7 +120,7 @@ for (const page of routes) {
     { ...page, html },
     {
       site,
-      production,
+      production: production && !page.preview,
       fileExists: (path) => existsSync(join(CLIENT, path)),
     }
   )) {

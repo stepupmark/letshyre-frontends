@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "title": "AI Hiring for Experienced Professionals | letshyre.ai",
+    "description": "Hire experienced professionals on evidence. LetsHyre ranks candidates with AI resume analysis, role-based interviews and scorecards you can check."
+  },
+  "sample": "A real LetsHyre screen with sample candidates.",
+  "hero": {
+    "alt": "The LetsHyre applicants list for a Senior React Developer job, with three candidates ranked by AI match and scored on role, skills and interview.",
+    "callouts": [
+      "Ranked by AI match, best first",
+      "Role, skills and interview, scored apart",
+      "Unlock only the people worth a call"
+    ]
+  },
+  "problem": {
+    "employerArt": "A recruiter behind a tall stack of resumes that all look the same.",
+    "candidateArt": "A candidate answering the same screening question on four different days."
+  },
+  "how": {
+    "employers": "If you're hiring",
+    "professionals": "If you're looking for a role"
+  },
+  "evidence": {
+    "alt": "A candidate's interview scorecard in LetsHyre: 78 out of 100, a strong interview, with a top strength, a point worth probing and an 82 job match.",
+    "callouts": [
+      "Interview score out of 100",
+      "Strengths and gaps in plain words",
+      "How well they fit your job"
+    ]
+  },
+  "professionals": {
+    "alt": "A professional's scorecards in LetsHyre: the latest frontend developer interview rated strong, with skills covered and earlier interviews below."
+  }
+}
