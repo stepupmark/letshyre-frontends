@@ -25,6 +25,13 @@ test("home v2 renders cleanly and stays out of search", async ({
   await expect(
     page.getByRole("img", { name: /shortlist/ }).first()
   ).toBeVisible()
+  for (const name of [/hiring manager/, /professional in headphones/]) {
+    const photo = page.getByRole("img", { name })
+    await photo.scrollIntoViewIfNeeded()
+    await expect
+      .poll(() => photo.evaluate((img: HTMLImageElement) => img.naturalWidth))
+      .toBeGreaterThan(0)
+  }
   await page.keyboard.press("End")
   await page.waitForLoadState("networkidle")
   expect(errors).toEqual([])

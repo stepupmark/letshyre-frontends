@@ -34,15 +34,12 @@ export function Panel({ className, ...props }: ComponentProps<"div">) {
   )
 }
 
-/** A 0–100 bar that fills as it scrolls in, or once on load with `onLoad`. */
-export function Bar({ value, onLoad }: { value: number; onLoad?: boolean }) {
+/** A 0–100 bar that fills as it scrolls in. */
+export function Bar({ value }: { value: number }) {
   return (
     <span className="block h-1.5 w-full overflow-hidden rounded-full bg-muted">
       <span
-        className={cn(
-          "block h-full origin-left rounded-full bg-brand",
-          onLoad ? "bar-in" : "grow-in"
-        )}
+        className="grow-in block h-full origin-left rounded-full bg-brand"
         style={{ width: `${String(value)}%` }}
       />
     </span>
