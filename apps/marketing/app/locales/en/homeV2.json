@@ -82,10 +82,12 @@
     "scene": {
       "resumes": "247 resumes",
       "buzzwords": ["Results-driven", "Team player", "Fast learner"],
-      "verified": "Interview-verified",
       "name": "Vyshnavi Rao",
       "role": "Frontend engineer · 7 yrs",
-      "score": "Interview 78/100"
+      "outOf": "/100",
+      "verified": "Interview-verified",
+      "recording": "Recording of 8 answers",
+      "rank": "Ranked 1st of 24"
     }
   },
   "shortlist": {
@@ -99,14 +101,74 @@
       "Matching profiles recommended from the talent pool"
     ],
     "scene": {
-      "label": "A job description for a Senior frontend engineer with four requirements found, next to the ranked shortlist it produced.",
+      "label": "A job description for a Senior frontend engineer with four requirements found, next to the ranked shortlist it produced. Two of the four people come from the talent pool.",
       "jd": "Job description",
       "title": "Senior frontend engineer",
+      "text": [
+        {
+          "text": "We're hiring a frontend engineer with ",
+          "mark": false
+        },
+        {
+          "text": "5+ years",
+          "mark": true
+        },
+        {
+          "text": " of building products in ",
+          "mark": false
+        },
+        {
+          "text": "React",
+          "mark": true
+        },
+        {
+          "text": " and ",
+          "mark": false
+        },
+        {
+          "text": "TypeScript",
+          "mark": true
+        },
+        {
+          "text": ". The role is fully ",
+          "mark": false
+        },
+        {
+          "text": "remote",
+          "mark": true
+        },
+        {
+          "text": ".",
+          "mark": false
+        }
+      ],
       "found": "4 requirements found",
       "chips": ["React", "TypeScript", "5+ years", "Remote"],
       "ranked": "Ranked shortlist",
-      "people": ["Vyshnavi Rao", "Arjun Mehta", "Meera Shah", "Kavya Rao"],
-      "scores": [86, 74, 68, 61]
+      "applied": "24 applied",
+      "pool": "From the talent pool",
+      "people": [
+        {
+          "name": "Vyshnavi Rao",
+          "score": 86,
+          "pool": false
+        },
+        {
+          "name": "Arjun Mehta",
+          "score": 74,
+          "pool": false
+        },
+        {
+          "name": "Meera Shah",
+          "score": 68,
+          "pool": true
+        },
+        {
+          "name": "Kavya Rao",
+          "score": 61,
+          "pool": true
+        }
+      ]
     }
   },
   "evidence": {
@@ -120,8 +182,9 @@
       "The full recording, question by question"
     ],
     "scene": {
-      "label": "An interview scorecard: 78 out of 100, with React at 84, TypeScript at 79 and system design at 66, a note worth probing and a recording of eight questions.",
+      "label": "An interview scorecard for Vyshnavi Rao: 78 out of 100, with React at 84, TypeScript at 79 and system design at 66, a strength, a note worth probing, and her recorded answer to question 5 of 8.",
       "title": "Interview scorecard",
+      "candidate": "Vyshnavi Rao · Frontend engineer",
       "strong": "Strong interview",
       "outOf": "/100",
       "skills": [
@@ -138,11 +201,13 @@
           "value": 66
         }
       ],
+      "strength": "Strength",
+      "strengthText": "Explains trade-offs between state libraries clearly",
       "probe": "Worth probing",
       "probeText": "Accessibility testing beyond automated checks",
-      "recording": "Recording",
       "question": "Question 5 of 8",
-      "duration": "24:10"
+      "duration": "24:10",
+      "answer": "“I'd lift the state to the closest shared parent first. If that means threading props through five layers, I'd move it into context and keep an eye on re-renders.”"
     }
   },
   "unlock": {
@@ -158,12 +223,16 @@
     "cta": "Start with 10 free credits",
     "pricing": "See pricing",
     "scene": {
-      "label": "A locked candidate file opens for one credit, and the credit balance goes from 10 to 9.",
+      "label": "A candidate file whose AI match of 86 and interview score of 78 are free to compare. Her contact details stay hidden until one credit unlocks them, and the credit balance goes from 10 to 9.",
       "credits": "Credits",
       "name": "Vyshnavi Rao",
       "role": "Frontend engineer · 7 yrs",
       "locked": "Locked",
       "unlocked": "Unlocked",
+      "free": "Free to compare",
+      "match": "AI match",
+      "interview": "Interview",
+      "outOf": "/100",
       "unlock": "Unlock for 1 credit",
       "email": "vyshnavi@example.com",
       "phone": "+91 98765 43210",

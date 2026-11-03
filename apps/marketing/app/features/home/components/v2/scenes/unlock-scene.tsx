@@ -52,17 +52,53 @@ export function UnlockScene() {
           </span>
         </div>
 
+        <div className="border-t px-4 py-3 sm:px-5">
+          <p className="text-xs text-muted-foreground">
+            {t("unlock.scene.free")}
+          </p>
+          <dl className="mt-2 grid grid-cols-2 gap-3">
+            <div className="rounded-lg bg-muted/60 px-3 py-2">
+              <dt className="text-xs text-muted-foreground">
+                {t("unlock.scene.match")}
+              </dt>
+              <dd className="text-lg font-semibold text-brand-text tabular-nums">
+                86
+              </dd>
+            </div>
+            <div className="rounded-lg bg-muted/60 px-3 py-2">
+              <dt className="text-xs text-muted-foreground">
+                {t("unlock.scene.interview")}
+              </dt>
+              <dd className="text-lg font-semibold tabular-nums">
+                78
+                <span className="text-xs font-normal text-muted-foreground">
+                  {t("unlock.scene.outOf")}
+                </span>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
         <div className="grid border-t">
-          <div className="unlock-out col-start-1 row-start-1 flex flex-col items-center gap-3 p-5 opacity-0">
-            <span className="flex w-full flex-col gap-2">
-              <span className="h-2 w-3/5 rounded-full bg-muted" />
-              <span className="h-2 w-2/5 rounded-full bg-muted" />
+          <div className="unlock-out col-start-1 row-start-1 flex flex-col gap-3 p-4 opacity-0 sm:p-5">
+            <span className="flex items-center gap-2 text-sm">
+              <MailIcon className="size-4 text-muted-foreground" />
+              <span className="blur-xs select-none">
+                {t("unlock.scene.email")}
+              </span>
             </span>
-            <span className="rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground">
+            <span className="flex items-center gap-2 text-sm tabular-nums">
+              <PhoneIcon className="size-4 text-muted-foreground" />
+              <span className="blur-xs select-none">
+                {t("unlock.scene.phone")}
+              </span>
+            </span>
+            <span className="inline-flex w-fit items-center gap-1.5 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground">
+              <LockOpenIcon className="size-3.5" />
               {t("unlock.scene.unlock")}
             </span>
           </div>
-          <div className="unlock-in col-start-1 row-start-1 flex flex-col gap-3 p-5">
+          <div className="unlock-in col-start-1 row-start-1 flex flex-col gap-3 p-4 sm:p-5">
             <span className="flex items-center gap-2 text-sm">
               <MailIcon className="size-4 text-muted-foreground" />
               {t("unlock.scene.email")}
