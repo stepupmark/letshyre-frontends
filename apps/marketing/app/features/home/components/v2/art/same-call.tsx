@@ -1,6 +1,5 @@
 import { useTranslation } from "@workspace/i18n/react"
-
-import { wait } from "@/components/art/delay"
+import type { CSSProperties } from "react"
 
 export function SameCall({ label }: { label: string }) {
   const { t } = useTranslation("home")
@@ -62,8 +61,8 @@ export function SameCall({ label }: { label: string }) {
           <g
             key={day}
             transform={`translate(${String(112 + index * 4)} ${String(14 + index * 40)})`}
-            className="rise"
-            style={wait(index * 120)}
+            className="drop-in"
+            style={{ "--i": index * 2 } as CSSProperties}
           >
             <rect
               width="196"

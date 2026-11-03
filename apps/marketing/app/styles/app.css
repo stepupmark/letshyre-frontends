@@ -550,3 +550,29 @@
     outline: none;
   }
 }
+
+/* hero copy settles in once on load; movement only, so the LCP text is never hidden */
+@utility lift {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: slide-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+/* lands in sequence (--i) as it scrolls into view */
+@utility drop-in {
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: drop-in linear both;
+      animation-timeline: view();
+      animation-range: entry calc(20% + var(--i, 0) * 8%) cover
+        calc(30% + var(--i, 0) * 4%);
+    }
+  }
+}
+
+@keyframes drop-in {
+  from {
+    opacity: 0;
+    translate: 0 -0.75rem;
+  }
+}

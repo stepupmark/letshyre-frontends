@@ -93,7 +93,9 @@ function Side({
               <span
                 aria-hidden
                 className="absolute inset-s-3.5 top-8 bottom-1 w-px bg-border"
-              />
+              >
+                <span className="fill-down block size-full bg-brand" />
+              </span>
             )}
             <span className="flex size-7 shrink-0 items-center justify-center rounded-full border bg-background text-sm font-semibold tabular-nums">
               {index + 1}

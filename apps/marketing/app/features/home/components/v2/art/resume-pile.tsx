@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react"
+
 const SHEETS = [0, 5, -3, 6, -2, 4, -5, 2, -1, 3]
 
 export function ResumePile({ label }: { label: string }) {
@@ -40,10 +42,12 @@ export function ResumePile({ label }: { label: string }) {
         className="fill-muted-foreground/35"
       />
 
-      <g className="rise">
+      <g>
         {SHEETS.map((shift, index) => (
           <g
             key={index}
+            className="drop-in"
+            style={{ "--i": index / 2 } as CSSProperties}
             transform={`translate(${String(168 + shift)} ${String(120 - index * 9)}) rotate(${String(shift / 3)})`}
           >
             <rect
@@ -63,7 +67,11 @@ export function ResumePile({ label }: { label: string }) {
             />
           </g>
         ))}
-        <g transform="translate(164 14) rotate(-2)">
+        <g
+          className="drop-in"
+          style={{ "--i": SHEETS.length / 2 } as CSSProperties}
+          transform="translate(164 14) rotate(-2)"
+        >
           <rect
             width="108"
             height="22"

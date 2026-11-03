@@ -1,12 +1,12 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { EyeIcon, LockOpenIcon } from "lucide-react"
-import type { ReactNode } from "react"
+import type { CSSProperties, ReactNode } from "react"
 
 import { BandHeading } from "@/components/band-heading"
 import { Band } from "@/components/band"
 
-import { Callouts, ProductShot } from "./product-shot"
-import { SCORECARD, SCORECARD_MARKERS } from "./shots"
+import { ExplainedShot } from "./product-shot"
+import { SCORECARD, SCORECARD_SPOTS } from "./shots"
 
 export function Evidence() {
   const { t } = useTranslation(["home", "homeV2"])
@@ -22,18 +22,14 @@ export function Evidence() {
         className="slide-in"
       />
       <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:items-start lg:gap-12">
-        <div className="reveal">
-          <ProductShot
-            shot={SCORECARD}
-            alt={t("homeV2:evidence.alt")}
-            sizes="(min-width: 1024px) 640px, 100vw"
-            markers={SCORECARD_MARKERS}
-          />
-          <Callouts
-            items={t("homeV2:evidence.callouts", { returnObjects: true })}
-            className="mt-6 text-sm"
-          />
-        </div>
+        <ExplainedShot
+          shot={SCORECARD}
+          alt={t("homeV2:evidence.alt")}
+          sizes="(min-width: 1024px) 680px, 100vw"
+          callouts={t("homeV2:evidence.callouts", { returnObjects: true })}
+          spots={SCORECARD_SPOTS}
+          className="reveal"
+        />
         <div className="slide-in grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
           <Layer
             icon={<EyeIcon aria-hidden className="size-4" />}
@@ -67,8 +63,12 @@ function Layer({
         {title}
       </h3>
       <ul className="mt-4 flex flex-col gap-2 text-sm">
-        {items.map((item) => (
-          <li key={item} className="flex items-center gap-2.5">
+        {items.map((item, index) => (
+          <li
+            key={item}
+            className="drop-in flex items-center gap-2.5"
+            style={{ "--i": index } as CSSProperties}
+          >
             <span aria-hidden className="size-1.5 rounded-full bg-brand" />
             {item}
           </li>

@@ -1,4 +1,7 @@
 import { cn } from "@workspace/ui/lib/utils"
+import { type ReactNode, useState } from "react"
+
+import { wait } from "@/components/art/delay"
 
 export interface Shot {
   /** Path without the width and extension, e.g. `/images/home-v2/applicants`. */
@@ -7,37 +10,32 @@ export interface Shot {
   height: number
 }
 
-/** Where each numbered marker sits, as percentages of the screenshot. */
-export type Marker = readonly [x: number, y: number]
+/** An area of the screenshot as percentages: x, y, width, height. */
+export type Spot = readonly [x: number, y: number, w: number, h: number]
 
 export function ProductShot({
   shot,
   alt,
   sizes,
-  markers = [],
   priority,
   className,
+  children,
 }: {
   shot: Shot
   alt: string
   sizes: string
-  markers?: readonly Marker[]
   priority?: boolean
   className?: string
+  children?: ReactNode
 }) {
   const set = (ext: string) =>
     `${shot.src}-720.${ext} 720w, ${shot.src}-1440.${ext} 1440w`
 
   return (
     <figure
-      className={cn("overflow-hidden rounded-2xl border bg-card", className)}
+      className={cn("rounded-2xl border bg-muted/60 p-1.5 sm:p-2.5", className)}
     >
-      <div aria-hidden className="flex gap-1.5 border-b px-4 py-3">
-        <span className="size-2.5 rounded-full bg-muted-foreground/25" />
-        <span className="size-2.5 rounded-full bg-muted-foreground/25" />
-        <span className="size-2.5 rounded-full bg-muted-foreground/25" />
-      </div>
-      <div className="relative">
+      <div className="relative overflow-hidden rounded-xl border bg-card">
         <picture>
           <source type="image/avif" srcSet={set("avif")} sizes={sizes} />
           <source type="image/webp" srcSet={set("webp")} sizes={sizes} />
@@ -53,38 +51,104 @@ export function ProductShot({
             className="block h-auto w-full"
           />
         </picture>
-        {markers.map(([x, y], index) => (
-          <span
-            key={index}
-            aria-hidden
-            className="absolute flex size-6 -translate-1/2 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground tabular-nums ring-4 ring-primary/20 sm:size-7 sm:text-sm"
-            style={{ left: `${String(x)}%`, top: `${String(y)}%` }}
-          >
-            {index + 1}
-          </span>
-        ))}
+        {children}
       </div>
     </figure>
   )
 }
 
-export function Callouts({
-  items,
-  className,
-}: {
-  items: readonly string[]
-  className?: string
+/** A screenshot with numbered spots; pointing at a callout lights its spot. */
+export function ExplainedShot({
+  callouts,
+  spots,
+  note,
+  onLoad,
+  ...shot
+}: Omit<Parameters<typeof ProductShot>[0], "children"> & {
+  callouts: readonly string[]
+  spots: readonly Spot[]
+  note?: string
+  /** Markers pop on load instead of as they scroll in. */
+  onLoad?: boolean
 }) {
+  const [active, setActive] = useState<number | null>(null)
+
   return (
-    <ol className={cn("grid gap-4 sm:grid-cols-3", className)}>
-      {items.map((item, index) => (
-        <li key={item} className="flex items-start gap-3 text-pretty">
-          <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-muted text-xs font-semibold text-brand-text tabular-nums">
-            {index + 1}
+    <div>
+      <ProductShot {...shot}>
+        {spots.map(([x, y, w, h], index) => (
+          <div
+            key={index}
+            aria-hidden
+            className={cn(
+              "pointer-events-none absolute rounded-lg ring-2 ring-primary transition-opacity duration-200 motion-reduce:transition-none",
+              active === index ? "opacity-100" : "opacity-0"
+            )}
+            style={{
+              boxShadow:
+                "0 0 0 100vmax color-mix(in oklab, var(--color-foreground) 22%, transparent)",
+              left: `${String(x)}%`,
+              top: `${String(y)}%`,
+              width: `${String(w)}%`,
+              height: `${String(h)}%`,
+            }}
+          />
+        ))}
+        {spots.map(([x, y], index) => (
+          <span
+            key={index}
+            aria-hidden
+            className={cn(
+              "absolute -translate-1/2 transition-transform duration-200 motion-reduce:transition-none",
+              active === index && "scale-125"
+            )}
+            style={{ left: `${String(x)}%`, top: `${String(y)}%` }}
+          >
+            <span
+              className={cn(
+                "flex size-6 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground tabular-nums ring-4 ring-background sm:size-7 sm:text-sm",
+                onLoad ? "pop" : "pop-in"
+              )}
+              style={wait(onLoad ? 500 + index * 120 : 0)}
+            >
+              {index + 1}
+            </span>
           </span>
-          {item}
-        </li>
-      ))}
-    </ol>
+        ))}
+      </ProductShot>
+
+      <ol className="mt-5 grid gap-2 sm:grid-cols-3">
+        {callouts.map((item, index) => (
+          <li key={item}>
+            <button
+              type="button"
+              aria-pressed={active === index}
+              onPointerEnter={() => {
+                setActive(index)
+              }}
+              onPointerLeave={() => {
+                setActive(null)
+              }}
+              onFocus={() => {
+                setActive(index)
+              }}
+              onBlur={() => {
+                setActive(null)
+              }}
+              onClick={() => {
+                setActive(active === index ? null : index)
+              }}
+              className="flex w-full items-start gap-3 rounded-xl p-3 text-start text-pretty transition-colors outline-none hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50 aria-pressed:bg-brand-muted motion-reduce:transition-none"
+            >
+              <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-muted text-xs font-semibold text-brand-text tabular-nums">
+                {index + 1}
+              </span>
+              {item}
+            </button>
+          </li>
+        ))}
+      </ol>
+      {note && <p className="mt-3 text-xs text-muted-foreground">{note}</p>}
+    </div>
   )
 }
