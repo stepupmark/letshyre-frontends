@@ -66,7 +66,7 @@ function Providers({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(createQueryClient)
 
   return (
-    <ThemeProvider switchable>
+    <ThemeProvider>
       <QueryClientProvider client={queryClient}>
         {children}
         <Toaster />

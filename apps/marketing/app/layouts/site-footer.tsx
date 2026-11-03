@@ -101,7 +101,7 @@ export function SiteFooter() {
 
         <div
           aria-hidden
-          className="reveal aspect-1223/300 w-full bg-linear-to-b from-brand/55 to-brand/10 mask-[url(/footer-logo.webp)] mask-contain mask-center mask-no-repeat max-sm:-mt-4 dark:from-brand-text/45 dark:to-brand-text/10"
+          className="reveal aspect-1223/300 w-full bg-linear-to-b from-brand/55 to-brand/10 mask-[url(/footer-logo.webp)] mask-contain mask-center mask-no-repeat max-sm:-mt-4"
         />
       </Container>
     </footer>

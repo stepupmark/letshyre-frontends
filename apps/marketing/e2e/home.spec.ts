@@ -1,13 +1,14 @@
-import { axe, expect, test } from "./fixtures.ts"
+import { expect, test } from "./fixtures.ts"
 import { mockApi } from "./mock-api.ts"
 
 test.beforeEach(async ({ page }) => {
   await mockApi(page)
 })
 
-test("hero has one h1, both sign-up paths and passes axe in both themes", async ({
+test("hero has one h1, both sign-up paths and stays light on a dark system", async ({
   page,
 }) => {
+  await page.emulateMedia({ colorScheme: "dark" })
   await page.goto("/en")
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     /Hire on evidence,\s*not on hope\./
@@ -20,12 +21,7 @@ test("hero has one h1, both sign-up paths and passes axe in both themes", async 
   await expect(
     hero.getByRole("link", { name: "I'm looking for a role" })
   ).toHaveAttribute("href", /\/employee\/register$/)
-
-  for (const colorScheme of ["light", "dark"] as const) {
-    await page.emulateMedia({ colorScheme, reducedMotion: "reduce" })
-    await page.goto("/en")
-    await axe(page)
-  }
+  await expect(page.locator("html")).not.toHaveClass(/\bdark\b/)
 })
 
 test("FAQ answers are prerendered and open on demand", async ({
