@@ -134,7 +134,7 @@ export function CandidateProfile({
               <CollapsibleContent className="transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0 motion-reduce:transition-none">
                 <ol className="flex flex-col divide-y rounded-lg border">
                   {education.map((entry, i) => (
-                    <li key={i} className="flex items-start gap-3 px-3 py-3">
+                    <li key={i} className="flex items-start gap-3 p-3">
                       <span
                         aria-hidden="true"
                         className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground"
