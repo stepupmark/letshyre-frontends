@@ -4,69 +4,54 @@ import { wait } from "@/components/art/delay"
 import { Container } from "@/components/section"
 
 import { AudienceCtas } from "../audience-ctas"
-import { ExplainedShot } from "./product-shot"
-import { APPLICANT_SPOTS, APPLICANTS } from "./shots"
+import { HeroScene } from "./scenes/hero-scene"
 
 export function Hero() {
-  const { t } = useTranslation(["home", "homeV2"])
+  const { t } = useTranslation("homeV2")
 
   return (
     <section aria-labelledby="hero-title" className="overflow-x-clip">
-      <Container className="pt-12 pb-16 sm:pt-20 lg:pb-24">
-        <div className="grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-12">
-          <div className="lift lg:col-span-7">
-            <p className="text-sm font-semibold text-brand-text">
-              {t("home:hero.eyebrow")}
-            </p>
-            <h1
-              id="hero-title"
-              className="mt-4 text-5xl font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl"
-            >
-              {t("home:hero.title")}{" "}
-              <span className="relative inline-block text-brand-text">
-                {t("home:hero.accent")}
-                <svg
-                  aria-hidden
-                  viewBox="0 0 200 12"
-                  preserveAspectRatio="none"
-                  fill="none"
-                  className="absolute inset-x-0 -bottom-2 h-3 w-full text-brand"
-                >
-                  <path
-                    pathLength={1}
-                    d="M3 9C48 4 120 2 197 6"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    className="ink"
-                  />
-                </svg>
-              </span>
-            </h1>
-          </div>
-          <div className="lift lg:col-span-5 lg:pb-2" style={wait(120)}>
-            <p className="text-lg text-pretty text-muted-foreground">
-              {t("home:hero.description")}
-            </p>
-            <AudienceCtas className="mt-8" />
+      <Container className="grid items-center gap-12 pt-12 pb-20 sm:pt-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-16 lg:pt-20 lg:pb-32">
+        <div className="lift">
+          <p className="text-sm font-semibold text-brand-text">
+            {t("hero.eyebrow")}
+          </p>
+          <h1
+            id="hero-title"
+            className="mt-4 text-5xl font-semibold tracking-tight text-balance sm:text-6xl lg:text-5xl xl:text-6xl"
+          >
+            {t("hero.title")}{" "}
+            <span className="relative inline-block text-brand-text">
+              {t("hero.accent")}
+              <svg
+                aria-hidden
+                viewBox="0 0 200 12"
+                preserveAspectRatio="none"
+                fill="none"
+                className="absolute inset-x-0 -bottom-2 h-3 w-full text-brand"
+              >
+                <path
+                  pathLength={1}
+                  d="M3 9C48 4 120 2 197 6"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  className="ink"
+                />
+              </svg>
+            </span>
+          </h1>
+          <p className="mt-8 max-w-xl text-lg text-pretty text-muted-foreground">
+            {t("hero.description")}
+          </p>
+          <div className="lift" style={wait(120)}>
+            <AudienceCtas className="mt-10" />
             <p className="mt-4 text-sm text-muted-foreground">
-              {t("home:hero.reassurance")}
+              {t("hero.reassurance")}
             </p>
           </div>
         </div>
-
-        <div className="lift mt-14 sm:mt-20" style={wait(240)}>
-          <ExplainedShot
-            shot={APPLICANTS}
-            alt={t("homeV2:hero.alt")}
-            sizes="(min-width: 1152px) 1104px, 100vw"
-            callouts={t("homeV2:hero.callouts", { returnObjects: true })}
-            spots={APPLICANT_SPOTS}
-            note={t("homeV2:sample")}
-            priority
-            onLoad
-          />
-        </div>
+        <HeroScene />
       </Container>
     </section>
   )

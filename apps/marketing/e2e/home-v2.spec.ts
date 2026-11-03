@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
   await mockApi(page)
 })
 
-test("home v2 renders its screenshots and stays out of search", async ({
+test("home v2 renders cleanly and stays out of search", async ({
   page,
   request,
 }) => {
@@ -20,18 +20,13 @@ test("home v2 renders its screenshots and stays out of search", async ({
 
   await page.goto("/en/home-v2")
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    /Hire on evidence,\s*not on hope\./
+    /See how they interview\s*before you ever call\./
   )
-
-  const shots = page.locator("figure img")
-  await expect(shots).toHaveCount(3)
-  for (const shot of await shots.all()) {
-    await shot.scrollIntoViewIfNeeded()
-    await expect(shot).toHaveAttribute("alt", /LetsHyre/)
-    await expect
-      .poll(() => shot.evaluate((img: HTMLImageElement) => img.naturalWidth))
-      .toBeGreaterThan(0)
-  }
+  await expect(
+    page.getByRole("img", { name: /shortlist/ }).first()
+  ).toBeVisible()
+  await page.keyboard.press("End")
+  await page.waitForLoadState("networkidle")
   expect(errors).toEqual([])
 
   const html = await (await request.get("/en/home-v2")).text()

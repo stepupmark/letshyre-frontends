@@ -3,32 +3,177 @@
     "title": "AI Hiring for Experienced Professionals | letshyre.ai",
     "description": "Hire experienced professionals on evidence. LetsHyre ranks candidates with AI resume analysis, role-based interviews and scorecards you can check."
   },
-  "sample": "A real LetsHyre screen with sample candidates.",
   "hero": {
-    "alt": "The LetsHyre applicants list for a Senior React Developer job, with three candidates ranked by AI match and scored on role, skills and interview.",
-    "callouts": [
-      "Ranked by AI match, best first",
-      "Role, skills and interview, scored apart",
-      "Unlock only the people worth a call"
+    "eyebrow": "AI hiring for experienced professionals",
+    "title": "See how they interview",
+    "accent": "before you ever call.",
+    "description": "Every LetsHyre candidate has taken a role-based AI interview. You get a ranked shortlist with scores, a scorecard and the recording, and pay only for the people you want to meet.",
+    "reassurance": "10 free credits for employers. Always free for professionals.",
+    "scene": {
+      "label": "A LetsHyre shortlist for a Senior React Developer job. Vyshnavi Rao ranks first with an 86 AI match and a 78 interview score, and her file has just been unlocked for one credit.",
+      "job": "Senior React Developer",
+      "summary": "24 applied · ranked by evidence",
+      "match": "AI match",
+      "people": [
+        {
+          "name": "Vyshnavi Rao",
+          "role": "Frontend engineer · 7 yrs",
+          "score": 86
+        },
+        {
+          "name": "Arjun Mehta",
+          "role": "React developer · 5 yrs",
+          "score": 74
+        },
+        { "name": "Meera Shah", "role": "UI engineer · 6 yrs", "score": 61 }
+      ],
+      "pool": "From pool",
+      "interview": "AI interview",
+      "strong": "Strong interview",
+      "outOf": "/100",
+      "strength": "Explains trade-offs between state libraries clearly",
+      "unlocked": "Unlocked",
+      "credit": "1 credit",
+      "contact": "Contact, resume and recording"
+    }
+  },
+  "facts": {
+    "label": "LetsHyre in numbers",
+    "items": [
+      { "value": "3", "label": "role-based AI interviews per professional" },
+      {
+        "value": "90 days",
+        "label": "a profile stays in the pool after each interview"
+      },
+      { "value": "1 credit", "label": "unlocks a full candidate file" },
+      { "value": "₹0", "label": "for professionals, start to finish" }
     ]
   },
-  "problem": {
-    "employerArt": "A recruiter behind a tall stack of resumes that all look the same.",
-    "candidateArt": "A candidate answering the same screening question on four different days."
+  "contrast": {
+    "eyebrow": "Why LetsHyre",
+    "title": "A resume tells you what someone claims.",
+    "accent": "An interview shows you.",
+    "before": {
+      "title": "Hiring from resumes",
+      "items": [
+        "Hundreds of resumes that read alike",
+        "Weeks of screening calls to find a few good people",
+        "The same \"tell me about yourself\" at every company"
+      ]
+    },
+    "after": {
+      "title": "Hiring on LetsHyre",
+      "items": [
+        "A shortlist ranked by job match, skills and interview",
+        "Scores, a scorecard and the recording before the first call",
+        "One interview a professional can reuse for every employer"
+      ]
+    },
+    "scene": {
+      "resumes": "247 resumes",
+      "buzzwords": ["Results-driven", "Team player", "Fast learner"],
+      "verified": "Interview-verified",
+      "name": "Vyshnavi Rao",
+      "role": "Frontend engineer · 7 yrs",
+      "score": "Interview 78/100"
+    }
   },
-  "how": {
-    "employers": "If you're hiring",
-    "professionals": "If you're looking for a role"
+  "shortlist": {
+    "eyebrow": "Shortlist",
+    "title": "Post a job.",
+    "accent": "Get a ranked shortlist.",
+    "body": "Paste your job description. LetsHyre reads the requirements and ranks everyone who applied, then adds matching professionals from the talent pool.",
+    "points": [
+      "Requirements pulled straight from your job description",
+      "Ranked by job match, skill match and interview score",
+      "Matching profiles recommended from the talent pool"
+    ],
+    "scene": {
+      "label": "A job description for a Senior frontend engineer with four requirements found, next to the ranked shortlist it produced.",
+      "jd": "Job description",
+      "title": "Senior frontend engineer",
+      "found": "4 requirements found",
+      "chips": ["React", "TypeScript", "5+ years", "Remote"],
+      "ranked": "Ranked shortlist",
+      "people": ["Vyshnavi Rao", "Arjun Mehta", "Meera Shah", "Kavya Rao"],
+      "scores": [86, 74, 68, 61]
+    }
   },
   "evidence": {
-    "alt": "A candidate's interview scorecard in LetsHyre: 78 out of 100, a strong interview, with a top strength, a point worth probing and an 82 job match.",
-    "callouts": [
-      "Interview score out of 100",
-      "Strengths and gaps in plain words",
-      "How well they fit your job"
-    ]
+    "eyebrow": "Evidence",
+    "title": "Read the interview",
+    "accent": "before the call.",
+    "body": "Each candidate file shows how they answered role-based questions: a score out of 100, their strengths, the gaps worth probing and the full recording.",
+    "points": [
+      "An interview score with a plain-language summary",
+      "A skill-by-skill scorecard",
+      "The full recording, question by question"
+    ],
+    "scene": {
+      "label": "An interview scorecard: 78 out of 100, with React at 84, TypeScript at 79 and system design at 66, a note worth probing and a recording of eight questions.",
+      "title": "Interview scorecard",
+      "strong": "Strong interview",
+      "outOf": "/100",
+      "skills": [
+        { "name": "React", "value": 84 },
+        { "name": "TypeScript", "value": 79 },
+        { "name": "System design", "value": 66 }
+      ],
+      "probe": "Worth probing",
+      "probeText": "Accessibility testing beyond automated checks",
+      "recording": "Recording",
+      "question": "Question 5 of 8",
+      "duration": "24:10"
+    }
+  },
+  "unlock": {
+    "eyebrow": "Pay per unlock",
+    "title": "Pay only for the people",
+    "accent": "you want to meet.",
+    "body": "Compare every candidate for free. When someone looks right, one credit unlocks their resume, contact details, documents and recording. Then reach out however you like.",
+    "points": [
+      "No subscription",
+      "Credits never expire",
+      "Your hiring process, your way"
+    ],
+    "cta": "Start with 10 free credits",
+    "pricing": "See pricing",
+    "scene": {
+      "label": "A locked candidate file opens for one credit, and the credit balance goes from 10 to 9.",
+      "credits": "Credits",
+      "name": "Vyshnavi Rao",
+      "role": "Frontend engineer · 7 yrs",
+      "locked": "Locked",
+      "unlocked": "Unlocked",
+      "unlock": "Unlock for 1 credit",
+      "email": "vyshnavi@example.com",
+      "phone": "+91 98765 43210",
+      "files": ["Resume", "Scorecard", "Recording"]
+    }
   },
   "professionals": {
-    "alt": "A professional's scorecards in LetsHyre: the latest frontend developer interview rated strong, with skills covered and earlier interviews below."
+    "eyebrow": "For professionals",
+    "title": "Interview once.",
+    "accent": "Get found for months.",
+    "body": "Take a role-based AI interview from the LetsHyre desktop app, whenever it suits you. Your scorecard joins the talent pool for 90 days, where employers hiring for your role find you.",
+    "points": [
+      "Up to 3 interviews: different roles, or a retake",
+      "A skill scorecard after every interview",
+      "Free for professionals, start to finish"
+    ],
+    "cta": "Create your profile",
+    "download": "Download the app",
+    "scene": {
+      "label": "The LetsHyre interview app on question 5 of 8 for a frontend engineer role, with one of three interviews used and the profile live in the talent pool for 90 days.",
+      "app": "AI interview · Frontend engineer",
+      "question": "Question 5 of 8",
+      "prompt": "Two components far apart in the tree need the same state. How would you share it, and what would you watch out for?",
+      "listening": "Listening",
+      "time": "24:10",
+      "attempts": "Interviews",
+      "used": "1 of 3 used",
+      "pool": "In the talent pool",
+      "days": "90 days"
+    }
   }
 }
