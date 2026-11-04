@@ -16,6 +16,7 @@
     "candidatePool": "База кандидатов",
     "findCandidates": "Поиск кандидатов",
     "unlocked": "Открытые кандидаты",
+    "invitations": "Приглашения",
     "companyProfile": "Профиль компании",
     "team": "Команда",
     "sharedLinks": "Общие ссылки",
@@ -42,6 +43,7 @@
       "candidatePool": "таланты совпадения кандидаты",
       "findCandidates": "поиск таланты люди должность навык",
       "unlocked": "контакты отбор сравнить",
+      "invitations": "email пригласить шаблоны отправить кандидаты интервью",
       "companyProfile": "компания проверка логотип данные",
       "team": "участники коллеги пригласить",
       "sharedLinks": "поделиться оценки ссылки",
@@ -55,9 +57,9 @@
     }
   },
   "credits": {
-    "label_one": "{{count}} кредит",
     "label_few": "{{count}} кредита",
     "label_many": "{{count}} кредитов",
+    "label_one": "{{count}} кредит",
     "label_other": "{{count}} кредита",
     "add": "Пополнить кредиты",
     "loading": "Загрузка кредитов",

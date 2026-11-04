@@ -1,0 +1,49 @@
+{
+  "title": "Undangan",
+  "lead": "Kirim email berisi tautan wawancara AI kepada kandidat, dengan gaya bahasa perusahaan Anda.",
+  "fields": {
+    "candidate_name": "Nama kandidat",
+    "job_role": "Posisi",
+    "employer_company_name": "Nama perusahaan",
+    "sender_name": "Nama Anda",
+    "invite_link": "Tautan undangan"
+  },
+  "library": {
+    "ownedTitle": "Template Anda",
+    "startersTitle": "Template awal",
+    "startersLead": "Ditulis oleh LetsHyre. Buat salinan untuk mengubah isinya.",
+    "starter": "Awal",
+    "byLetshyre": "Dari LetsHyre",
+    "yours": "Template Anda",
+    "edited": "Diedit {{when}}",
+    "subject": "Subjek:",
+    "copy": "Buat salinan",
+    "delete": "Hapus",
+    "actions": "Tindakan untuk {{name}}",
+    "emptyTitle": "Belum ada template milik Anda",
+    "emptyBody": "Salin template awal, lalu sesuaikan isi dan penutupnya dengan tim Anda.",
+    "emptyAction": "Salin template pertama",
+    "errorTitle": "Template Anda tidak termuat.",
+    "errorBody": "Tidak ada yang terkirim atau berubah. Periksa koneksi Anda dan coba lagi."
+  },
+  "copy": {
+    "title": "Buat salinan",
+    "lead": "Salinan Anda dimulai dari isi “{{name}}”. Hanya perusahaan Anda yang melihatnya.",
+    "name": "Nama template",
+    "suffix": "(salinan)",
+    "nameError": "Beri nama maksimal {{max}} karakter.",
+    "submit": "Buat salinan",
+    "copying": "Menyalin…"
+  },
+  "delete": {
+    "title": "Hapus “{{name}}”?",
+    "body": "Template dihapus untuk seluruh tim Anda. Undangan yang sudah terkirim tidak terpengaruh. Tindakan ini tidak bisa dibatalkan.",
+    "confirm": "Hapus template"
+  },
+  "toast": {
+    "copied": "“{{name}}” siap diedit",
+    "copyFailed": "Salinan tidak dibuat. Coba lagi.",
+    "deleted": "“{{name}}” dihapus",
+    "deleteFailed": "Template tidak dihapus. Coba lagi."
+  }
+}

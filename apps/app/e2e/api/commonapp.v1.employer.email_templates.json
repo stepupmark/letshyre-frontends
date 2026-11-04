@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "status": 200,
+  "message": "Email templates fetched successfully.",
+  "data": {
+    "count": 3,
+    "total_pages": 1,
+    "current_page": 1,
+    "page_size": 100,
+    "next": null,
+    "previous": null,
+    "results": [
+      {
+        "id": "b0e72f21-2699-4d9b-966b-115e80d44de5",
+        "name": "My Interview Invite",
+        "scope": "employer",
+        "is_system": false,
+        "subject_template": "You're invited to interview with {{employer_company_name}}",
+        "body_html_template": "<p>Hi {{candidate_name}},</p><p>Please complete your AI interview for the <strong>{{job_role}}</strong> role.</p><p>Start here: {{invite_link}}</p><p>Regards,<br>{{sender_name}}</p>",
+        "body_text_template": "",
+        "is_active": true,
+        "created_at": "2026-11-02T13:20:15.548468+05:30",
+        "updated_at": "2026-11-02T13:28:30.244703+05:30"
+      },
+      {
+        "id": "fa84bd79-7304-4ec7-9e90-e58a45e664f5",
+        "name": "Interview Invitation - Concise",
+        "scope": "system",
+        "is_system": true,
+        "subject_template": "Interview invitation: {{job_role}} at {{employer_company_name}}",
+        "body_html_template": "<p>Hi {{candidate_name}},</p><p>{{employer_company_name}} would like you to take an AI interview for the <strong>{{job_role}}</strong> role.</p><p>Start here: <a href=\"{{invite_link}}\">{{invite_link}}</a></p><div style=\"margin:20px 0 12px 0;padding:14px 16px;background-color:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-align:center;\"><p style=\"margin:0 0 12px 0;font-size:13px;color:#475569;\">Need help downloading and installing the LetsHyre desktop application?</p><a href=\"https://letshyre.ai/en/how-it-works-interview\" style=\"display:inline-block;background-color:#0f172a;color:#ffffff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600;font-size:13px;\">View Setup Guide</a></div><p>Thanks,<br>{{sender_name}}</p>",
+        "body_text_template": "",
+        "is_active": true,
+        "created_at": "2026-11-02T12:52:38.649916+05:30",
+        "updated_at": "2026-11-02T13:45:54.326073+05:30"
+      },
+      {
+        "id": "cc17de0d-2303-411f-983f-0bf05239b7d1",
+        "name": "Interview Invitation - Standard",
+        "scope": "system",
+        "is_system": true,
+        "subject_template": "You're invited to interview with {{employer_company_name}}",
+        "body_html_template": "<p>Hi {{candidate_name}},</p><p><strong>{{employer_company_name}}</strong> has invited you to complete an AI-powered interview for the <strong>{{job_role}}</strong> role.</p><p>The interview is conducted through the LetsHyre desktop application. To get started:</p><ol><li>Create your account and complete your candidate profile.</li><li>Download and install the LetsHyre desktop application.</li><li>Log in and take the AI interview.</li></ol><p style=\"font-size:13px;color:#6b7280;\"><strong>Important:</strong> When starting your interview, if your selected role matches the role mentioned in the email, continue with the interview. If it is different, choose the custom role option and enter the role mentioned in the email.</p><p style=\"text-align:center;margin:24px 0;\"><a href=\"{{invite_link}}\" style=\"display:inline-block;background-color:#2563eb;color:#ffffff;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:600;\">Get Started</a></p><p style=\"font-size:12px;color:#6b7280;\">If the button above does not work, copy and paste this link into your browser:<br>{{invite_link}}</p><div style=\"margin:20px 0 12px 0;padding:14px 16px;background-color:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-align:center;\"><p style=\"margin:0 0 12px 0;font-size:13px;color:#475569;\">Need help downloading and installing the LetsHyre desktop application?</p><a href=\"https://letshyre.ai/en/how-it-works-interview\" style=\"display:inline-block;background-color:#0f172a;color:#ffffff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600;font-size:13px;\">View Setup Guide</a></div><p>Best regards,<br>{{sender_name}}<br>{{employer_company_name}}</p>",
+        "body_text_template": "",
+        "is_active": true,
+        "created_at": "2026-11-02T12:52:38.648917+05:30",
+        "updated_at": "2026-11-02T14:35:39.044263+05:30"
+      }
+    ]
+  }
+}

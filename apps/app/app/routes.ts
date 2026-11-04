@@ -90,6 +90,7 @@ export default [
       route("candidates", "routes/employer/candidate-pool.tsx"),
       route("find-candidates", "routes/employer/find-candidates.tsx"),
       route("candidates/unlocked", "routes/employer/unlocked.tsx"),
+      route("invitations", "routes/employer/invitations.tsx"),
       route("candidates/compare", "routes/employer/compare.tsx"),
       route("candidates/:candidateId", "routes/employer/candidate-profile.tsx"),
       route(

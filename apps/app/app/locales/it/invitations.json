@@ -1,0 +1,49 @@
+{
+  "title": "Inviti",
+  "lead": "Invia ai candidati un link al loro colloquio con IA, con il tono della tua azienda.",
+  "fields": {
+    "candidate_name": "Nome del candidato",
+    "job_role": "Ruolo",
+    "employer_company_name": "Nome dell’azienda",
+    "sender_name": "Il tuo nome",
+    "invite_link": "Link di invito"
+  },
+  "library": {
+    "ownedTitle": "I tuoi modelli",
+    "startersTitle": "Modelli di partenza",
+    "startersLead": "Scritti da LetsHyre. Creane una copia per cambiare il testo.",
+    "starter": "Base",
+    "byLetshyre": "Di LetsHyre",
+    "yours": "Il tuo modello",
+    "edited": "Modificato {{when}}",
+    "subject": "Oggetto:",
+    "copy": "Crea una copia",
+    "delete": "Elimina",
+    "actions": "Azioni per {{name}}",
+    "emptyTitle": "Ancora nessun modello tuo",
+    "emptyBody": "Copia un modello di partenza, poi adatta testo e firma al tuo team.",
+    "emptyAction": "Copia il primo modello",
+    "errorTitle": "I tuoi modelli non sono stati caricati.",
+    "errorBody": "Nulla è stato inviato o modificato. Controlla la connessione e riprova."
+  },
+  "copy": {
+    "title": "Crea una copia",
+    "lead": "La copia parte dal testo di “{{name}}”. La vede solo la tua azienda.",
+    "name": "Nome del modello",
+    "suffix": "(copia)",
+    "nameError": "Usa un nome di massimo {{max}} caratteri.",
+    "submit": "Crea una copia",
+    "copying": "Copia in corso…"
+  },
+  "delete": {
+    "title": "Eliminare “{{name}}”?",
+    "body": "Il modello viene rimosso per tutto il team. Gli inviti già inviati non cambiano. L’operazione è irreversibile.",
+    "confirm": "Elimina modello"
+  },
+  "toast": {
+    "copied": "“{{name}}” è pronto da modificare",
+    "copyFailed": "La copia non è stata creata. Riprova.",
+    "deleted": "“{{name}}” eliminato",
+    "deleteFailed": "Il modello non è stato eliminato. Riprova."
+  }
+}

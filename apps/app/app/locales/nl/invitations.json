@@ -1,0 +1,49 @@
+{
+  "title": "Uitnodigingen",
+  "lead": "Mail kandidaten een link naar hun AI-interview, in de toon van je bedrijf.",
+  "fields": {
+    "candidate_name": "Naam kandidaat",
+    "job_role": "Functie",
+    "employer_company_name": "Bedrijfsnaam",
+    "sender_name": "Je naam",
+    "invite_link": "Uitnodigingslink"
+  },
+  "library": {
+    "ownedTitle": "Je sjablonen",
+    "startersTitle": "Startsjablonen",
+    "startersLead": "Geschreven door LetsHyre. Maak een kopie om de tekst te wijzigen.",
+    "starter": "Start",
+    "byLetshyre": "Van LetsHyre",
+    "yours": "Je sjabloon",
+    "edited": "Bewerkt {{when}}",
+    "subject": "Onderwerp:",
+    "copy": "Kopie maken",
+    "delete": "Verwijderen",
+    "actions": "Acties voor {{name}}",
+    "emptyTitle": "Nog geen eigen sjablonen",
+    "emptyBody": "Kopieer een startsjabloon en pas de tekst en afsluiting aan je team aan.",
+    "emptyAction": "Eerste startsjabloon kopiëren",
+    "errorTitle": "Je sjablonen zijn niet geladen.",
+    "errorBody": "Er is niets verzonden of gewijzigd. Controleer je verbinding en probeer het opnieuw."
+  },
+  "copy": {
+    "title": "Kopie maken",
+    "lead": "Je kopie begint met de tekst van ‘{{name}}’. Alleen je bedrijf ziet hem.",
+    "name": "Naam sjabloon",
+    "suffix": "(kopie)",
+    "nameError": "Geef een naam van maximaal {{max}} tekens.",
+    "submit": "Kopie maken",
+    "copying": "Kopiëren…"
+  },
+  "delete": {
+    "title": "‘{{name}}’ verwijderen?",
+    "body": "Het sjabloon verdwijnt voor je hele team. Verzonden uitnodigingen blijven ongewijzigd. Dit kan niet ongedaan worden gemaakt.",
+    "confirm": "Sjabloon verwijderen"
+  },
+  "toast": {
+    "copied": "‘{{name}}’ staat klaar om te bewerken",
+    "copyFailed": "De kopie is niet gemaakt. Probeer het opnieuw.",
+    "deleted": "‘{{name}}’ verwijderd",
+    "deleteFailed": "Het sjabloon is niet verwijderd. Probeer het opnieuw."
+  }
+}

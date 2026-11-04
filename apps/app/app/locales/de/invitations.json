@@ -1,0 +1,49 @@
+{
+  "title": "Einladungen",
+  "lead": "Senden Sie Kandidaten per E-Mail einen Link zu ihrem KI-Interview – in der Sprache Ihres Unternehmens.",
+  "fields": {
+    "candidate_name": "Name des Kandidaten",
+    "job_role": "Stelle",
+    "employer_company_name": "Firmenname",
+    "sender_name": "Ihr Name",
+    "invite_link": "Einladungslink"
+  },
+  "library": {
+    "ownedTitle": "Ihre Vorlagen",
+    "startersTitle": "Startvorlagen",
+    "startersLead": "Von LetsHyre verfasst. Erstellen Sie eine Kopie, um den Text zu ändern.",
+    "starter": "Start",
+    "byLetshyre": "Von LetsHyre",
+    "yours": "Ihre Vorlage",
+    "edited": "Bearbeitet {{when}}",
+    "subject": "Betreff:",
+    "copy": "Kopie erstellen",
+    "delete": "Löschen",
+    "actions": "Aktionen für {{name}}",
+    "emptyTitle": "Noch keine eigenen Vorlagen",
+    "emptyBody": "Kopieren Sie eine Startvorlage und passen Sie Text und Grußformel an Ihr Team an.",
+    "emptyAction": "Erste Startvorlage kopieren",
+    "errorTitle": "Ihre Vorlagen wurden nicht geladen.",
+    "errorBody": "Es wurde nichts gesendet oder geändert. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut."
+  },
+  "copy": {
+    "title": "Kopie erstellen",
+    "lead": "Ihre Kopie übernimmt den Text von „{{name}}“. Nur Ihr Unternehmen sieht sie.",
+    "name": "Name der Vorlage",
+    "suffix": "(Kopie)",
+    "nameError": "Geben Sie einen Namen mit bis zu {{max}} Zeichen ein.",
+    "submit": "Kopie erstellen",
+    "copying": "Wird kopiert…"
+  },
+  "delete": {
+    "title": "„{{name}}“ löschen?",
+    "body": "Die Vorlage wird für Ihr ganzes Team entfernt. Bereits gesendete Einladungen bleiben unberührt. Das lässt sich nicht rückgängig machen.",
+    "confirm": "Vorlage löschen"
+  },
+  "toast": {
+    "copied": "„{{name}}“ ist bereit zum Bearbeiten",
+    "copyFailed": "Die Kopie wurde nicht erstellt. Versuchen Sie es erneut.",
+    "deleted": "„{{name}}“ gelöscht",
+    "deleteFailed": "Die Vorlage wurde nicht gelöscht. Versuchen Sie es erneut."
+  }
+}

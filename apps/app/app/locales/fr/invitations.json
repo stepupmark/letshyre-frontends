@@ -1,0 +1,49 @@
+{
+  "title": "Invitations",
+  "lead": "Envoyez aux candidats un lien vers leur entretien IA, rédigé avec le ton de votre entreprise.",
+  "fields": {
+    "candidate_name": "Nom du candidat",
+    "job_role": "Poste",
+    "employer_company_name": "Nom de l’entreprise",
+    "sender_name": "Votre nom",
+    "invite_link": "Lien d’invitation"
+  },
+  "library": {
+    "ownedTitle": "Vos modèles",
+    "startersTitle": "Modèles de départ",
+    "startersLead": "Rédigés par LetsHyre. Faites-en une copie pour modifier le texte.",
+    "starter": "Départ",
+    "byLetshyre": "Par LetsHyre",
+    "yours": "Votre modèle",
+    "edited": "Modifié {{when}}",
+    "subject": "Objet :",
+    "copy": "Faire une copie",
+    "delete": "Supprimer",
+    "actions": "Actions pour {{name}}",
+    "emptyTitle": "Aucun modèle personnel pour l’instant",
+    "emptyBody": "Copiez un modèle de départ, puis adaptez le texte et la signature à votre équipe.",
+    "emptyAction": "Copier le premier modèle",
+    "errorTitle": "Vos modèles ne se sont pas chargés.",
+    "errorBody": "Rien n’a été envoyé ni modifié. Vérifiez votre connexion et réessayez."
+  },
+  "copy": {
+    "title": "Faire une copie",
+    "lead": "Votre copie reprend le texte de « {{name}} ». Seule votre entreprise la voit.",
+    "name": "Nom du modèle",
+    "suffix": "(copie)",
+    "nameError": "Donnez-lui un nom de {{max}} caractères maximum.",
+    "submit": "Faire une copie",
+    "copying": "Copie…"
+  },
+  "delete": {
+    "title": "Supprimer « {{name}} » ?",
+    "body": "Le modèle est supprimé pour toute votre équipe. Les invitations déjà envoyées ne changent pas. Action irréversible.",
+    "confirm": "Supprimer le modèle"
+  },
+  "toast": {
+    "copied": "« {{name}} » est prêt à être modifié",
+    "copyFailed": "La copie n’a pas été créée. Réessayez.",
+    "deleted": "« {{name}} » supprimé",
+    "deleteFailed": "Le modèle n’a pas été supprimé. Réessayez."
+  }
+}

@@ -11,6 +11,7 @@ import type common from "../locales/en/common.json"
 import type company from "../locales/en/company.json"
 import type dashboard from "../locales/en/dashboard.json"
 import type guide from "../locales/en/guide.json"
+import type invitations from "../locales/en/invitations.json"
 import type jobs from "../locales/en/jobs.json"
 import type matches from "../locales/en/matches.json"
 import type onboarding from "../locales/en/onboarding.json"
@@ -35,6 +36,7 @@ declare module "i18next" {
       company: typeof company
       dashboard: typeof dashboard
       guide: typeof guide
+      invitations: typeof invitations
       jobs: typeof jobs
       matches: typeof matches
       onboarding: typeof onboarding

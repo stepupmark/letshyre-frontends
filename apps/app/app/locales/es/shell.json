@@ -16,6 +16,7 @@
     "candidatePool": "Reserva de candidatos",
     "findCandidates": "Buscar candidatos",
     "unlocked": "Candidatos desbloqueados",
+    "invitations": "Invitaciones",
     "companyProfile": "Perfil de la empresa",
     "team": "Equipo",
     "sharedLinks": "Enlaces compartidos",
@@ -42,6 +43,7 @@
       "candidatePool": "talento coincidencias candidatos",
       "findCandidates": "buscar talento personas puesto habilidad",
       "unlocked": "contactos preselección comparar",
+      "invitations": "correo invitar plantillas enviar candidatos entrevista",
       "companyProfile": "empresa verificación logo datos",
       "team": "miembros compañeros invitar",
       "sharedLinks": "compartir evaluaciones enlaces",
@@ -55,8 +57,8 @@
     }
   },
   "credits": {
-    "label_one": "{{count}} crédito",
     "label_many": "{{count}} créditos",
+    "label_one": "{{count}} crédito",
     "label_other": "{{count}} créditos",
     "add": "Añadir créditos",
     "loading": "Cargando créditos",

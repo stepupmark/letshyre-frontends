@@ -7,6 +7,7 @@ import {
   FilePlus2,
   LayoutDashboard,
   Link2,
+  MailPlus,
   MessageCircleQuestion,
   Search,
   SquareUser,
@@ -29,6 +30,7 @@ export interface NavItem {
     | "candidatePool"
     | "findCandidates"
     | "unlocked"
+    | "invitations"
     | "companyProfile"
     | "team"
     | "sharedLinks"
@@ -88,6 +90,11 @@ export const NAV = {
           to: href("/employer/candidates/unlocked"),
           icon: UserRoundCheck,
           match: ["/employer/candidates/:candidateId"],
+        },
+        {
+          key: "invitations",
+          to: href("/employer/invitations"),
+          icon: MailPlus,
         },
       ],
     },

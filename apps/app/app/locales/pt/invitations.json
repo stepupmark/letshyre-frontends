@@ -1,0 +1,49 @@
+{
+  "title": "Convites",
+  "lead": "Envie aos candidatos um link para a entrevista com IA, com o tom da sua empresa.",
+  "fields": {
+    "candidate_name": "Nome do candidato",
+    "job_role": "Cargo",
+    "employer_company_name": "Nome da empresa",
+    "sender_name": "Seu nome",
+    "invite_link": "Link do convite"
+  },
+  "library": {
+    "ownedTitle": "Seus modelos",
+    "startersTitle": "Modelos iniciais",
+    "startersLead": "Escritos pela LetsHyre. Faça uma cópia para mudar o texto.",
+    "starter": "Inicial",
+    "byLetshyre": "Da LetsHyre",
+    "yours": "Seu modelo",
+    "edited": "Editado {{when}}",
+    "subject": "Assunto:",
+    "copy": "Fazer uma cópia",
+    "delete": "Excluir",
+    "actions": "Ações para {{name}}",
+    "emptyTitle": "Ainda não há modelos seus",
+    "emptyBody": "Copie um modelo inicial e ajuste o texto e a assinatura ao jeito da sua equipe.",
+    "emptyAction": "Copiar o primeiro modelo",
+    "errorTitle": "Seus modelos não carregaram.",
+    "errorBody": "Nada foi enviado ou alterado. Verifique sua conexão e tente de novo."
+  },
+  "copy": {
+    "title": "Fazer uma cópia",
+    "lead": "Sua cópia começa com o texto de “{{name}}”. Só sua empresa a vê.",
+    "name": "Nome do modelo",
+    "suffix": "(cópia)",
+    "nameError": "Use um nome de até {{max}} caracteres.",
+    "submit": "Fazer uma cópia",
+    "copying": "Copiando…"
+  },
+  "delete": {
+    "title": "Excluir “{{name}}”?",
+    "body": "O modelo é removido para toda a equipe. Convites já enviados não mudam. Não é possível desfazer.",
+    "confirm": "Excluir modelo"
+  },
+  "toast": {
+    "copied": "“{{name}}” está pronto para editar",
+    "copyFailed": "A cópia não foi feita. Tente de novo.",
+    "deleted": "“{{name}}” excluído",
+    "deleteFailed": "O modelo não foi excluído. Tente de novo."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "title": "초대",
+  "lead": "후보자에게 AI 면접 링크를 이메일로 보내세요. 회사의 말투로 작성할 수 있습니다.",
+  "fields": {
+    "candidate_name": "후보자 이름",
+    "job_role": "직무",
+    "employer_company_name": "회사 이름",
+    "sender_name": "내 이름",
+    "invite_link": "초대 링크"
+  },
+  "library": {
+    "ownedTitle": "내 템플릿",
+    "startersTitle": "기본 템플릿",
+    "startersLead": "LetsHyre가 작성했습니다. 문구를 바꾸려면 사본을 만드세요.",
+    "starter": "기본",
+    "byLetshyre": "LetsHyre 제공",
+    "yours": "내 템플릿",
+    "edited": "{{when}} 수정됨",
+    "subject": "제목:",
+    "copy": "사본 만들기",
+    "delete": "삭제",
+    "actions": "{{name}} 작업",
+    "emptyTitle": "아직 내 템플릿이 없습니다",
+    "emptyBody": "기본 템플릿을 복사한 뒤 문구와 맺음말을 팀에 맞게 바꾸세요.",
+    "emptyAction": "첫 번째 기본 템플릿 복사",
+    "errorTitle": "템플릿을 불러오지 못했습니다.",
+    "errorBody": "아무것도 보내거나 변경되지 않았습니다. 연결을 확인하고 다시 시도하세요."
+  },
+  "copy": {
+    "title": "사본 만들기",
+    "lead": "사본은 “{{name}}”의 문구로 시작합니다. 우리 회사만 볼 수 있습니다.",
+    "name": "템플릿 이름",
+    "suffix": "(사본)",
+    "nameError": "{{max}}자 이내로 이름을 지정하세요.",
+    "submit": "사본 만들기",
+    "copying": "복사 중…"
+  },
+  "delete": {
+    "title": "“{{name}}”을(를) 삭제할까요?",
+    "body": "팀 전체에서 템플릿이 삭제됩니다. 이미 보낸 초대에는 영향이 없습니다. 되돌릴 수 없습니다.",
+    "confirm": "템플릿 삭제"
+  },
+  "toast": {
+    "copied": "“{{name}}” 편집 준비 완료",
+    "copyFailed": "사본을 만들지 못했습니다. 다시 시도하세요.",
+    "deleted": "“{{name}}” 삭제됨",
+    "deleteFailed": "템플릿을 삭제하지 못했습니다. 다시 시도하세요."
+  }
+}

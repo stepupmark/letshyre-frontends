@@ -1,0 +1,49 @@
+{
+  "title": "Invitaciones",
+  "lead": "Envía por correo a los candidatos un enlace para su entrevista con IA, con el tono de tu empresa.",
+  "fields": {
+    "candidate_name": "Nombre del candidato",
+    "job_role": "Puesto",
+    "employer_company_name": "Nombre de la empresa",
+    "sender_name": "Tu nombre",
+    "invite_link": "Enlace de invitación"
+  },
+  "library": {
+    "ownedTitle": "Tus plantillas",
+    "startersTitle": "Plantillas iniciales",
+    "startersLead": "Escritas por LetsHyre. Haz una copia para cambiar el texto.",
+    "starter": "Inicial",
+    "byLetshyre": "De LetsHyre",
+    "yours": "Tu plantilla",
+    "edited": "Editada {{when}}",
+    "subject": "Asunto:",
+    "copy": "Hacer una copia",
+    "delete": "Eliminar",
+    "actions": "Acciones para {{name}}",
+    "emptyTitle": "Aún no tienes plantillas propias",
+    "emptyBody": "Copia una plantilla inicial y ajusta el texto y la despedida al estilo de tu equipo.",
+    "emptyAction": "Copiar la primera plantilla",
+    "errorTitle": "Tus plantillas no se cargaron.",
+    "errorBody": "No se ha enviado ni cambiado nada. Revisa tu conexión e inténtalo de nuevo."
+  },
+  "copy": {
+    "title": "Hacer una copia",
+    "lead": "Tu copia parte del texto de “{{name}}”. Solo tu empresa la ve.",
+    "name": "Nombre de la plantilla",
+    "suffix": "(copia)",
+    "nameError": "Ponle un nombre de hasta {{max}} caracteres.",
+    "submit": "Hacer una copia",
+    "copying": "Copiando…"
+  },
+  "delete": {
+    "title": "¿Eliminar “{{name}}”?",
+    "body": "La plantilla se elimina para todo tu equipo. Las invitaciones ya enviadas no se ven afectadas. No se puede deshacer.",
+    "confirm": "Eliminar plantilla"
+  },
+  "toast": {
+    "copied": "“{{name}}” está lista para editar",
+    "copyFailed": "No se hizo la copia. Inténtalo de nuevo.",
+    "deleted": "“{{name}}” eliminada",
+    "deleteFailed": "No se eliminó la plantilla. Inténtalo de nuevo."
+  }
+}

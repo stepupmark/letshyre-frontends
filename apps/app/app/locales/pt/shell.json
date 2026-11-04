@@ -16,6 +16,7 @@
     "candidatePool": "Banco de candidatos",
     "findCandidates": "Encontrar candidatos",
     "unlocked": "Candidatos desbloqueados",
+    "invitations": "Convites",
     "companyProfile": "Perfil da empresa",
     "team": "Equipe",
     "sharedLinks": "Links compartilhados",
@@ -42,6 +43,7 @@
       "candidatePool": "talentos correspondências candidatos",
       "findCandidates": "pesquisar talentos pessoas cargo habilidade",
       "unlocked": "contatos seleção comparar",
+      "invitations": "e-mail convidar modelos enviar candidatos entrevista",
       "companyProfile": "empresa verificação logo dados",
       "team": "membros colegas convidar",
       "sharedLinks": "compartilhar avaliações links",
@@ -55,8 +57,8 @@
     }
   },
   "credits": {
-    "label_one": "{{count}} crédito",
     "label_many": "{{count}} créditos",
+    "label_one": "{{count}} crédito",
     "label_other": "{{count}} créditos",
     "add": "Adicionar créditos",
     "loading": "Carregando créditos",

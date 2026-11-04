@@ -1,0 +1,49 @@
+{
+  "title": "招待",
+  "lead": "候補者にAI面接へのリンクをメールで送ります。文面は自社らしく調整できます。",
+  "fields": {
+    "candidate_name": "候補者名",
+    "job_role": "職種",
+    "employer_company_name": "会社名",
+    "sender_name": "あなたの名前",
+    "invite_link": "招待リンク"
+  },
+  "library": {
+    "ownedTitle": "自社のテンプレート",
+    "startersTitle": "スターターテンプレート",
+    "startersLead": "LetsHyreが用意した文面です。文面を変えるにはコピーを作成してください。",
+    "starter": "スターター",
+    "byLetshyre": "LetsHyre提供",
+    "yours": "自社のテンプレート",
+    "edited": "{{when}}に編集",
+    "subject": "件名：",
+    "copy": "コピーを作成",
+    "delete": "削除",
+    "actions": "{{name}}の操作",
+    "emptyTitle": "自社のテンプレートはまだありません",
+    "emptyBody": "スターターテンプレートをコピーして、文面や結びをチームに合わせて変更しましょう。",
+    "emptyAction": "最初のスターターをコピー",
+    "errorTitle": "テンプレートを読み込めませんでした。",
+    "errorBody": "送信や変更は行われていません。接続を確認してもう一度お試しください。"
+  },
+  "copy": {
+    "title": "コピーを作成",
+    "lead": "コピーは「{{name}}」の文面から始まります。自社の人だけが見られます。",
+    "name": "テンプレート名",
+    "suffix": "（コピー）",
+    "nameError": "{{max}}文字以内で名前を付けてください。",
+    "submit": "コピーを作成",
+    "copying": "コピー中…"
+  },
+  "delete": {
+    "title": "「{{name}}」を削除しますか？",
+    "body": "テンプレートはチーム全員から削除されます。送信済みの招待には影響しません。元に戻せません。",
+    "confirm": "テンプレートを削除"
+  },
+  "toast": {
+    "copied": "「{{name}}」を編集できます",
+    "copyFailed": "コピーを作成できませんでした。もう一度お試しください。",
+    "deleted": "「{{name}}」を削除しました",
+    "deleteFailed": "テンプレートを削除できませんでした。もう一度お試しください。"
+  }
+}

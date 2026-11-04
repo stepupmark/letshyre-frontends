@@ -1,0 +1,49 @@
+{
+  "title": "Invitations",
+  "lead": "Email candidates a link to take their AI interview, written the way your company speaks.",
+  "fields": {
+    "candidate_name": "Candidate name",
+    "job_role": "Job role",
+    "employer_company_name": "Company name",
+    "sender_name": "Your name",
+    "invite_link": "Invite link"
+  },
+  "library": {
+    "ownedTitle": "Your templates",
+    "startersTitle": "Starter templates",
+    "startersLead": "Written by LetsHyre. Make a copy to change the wording.",
+    "starter": "Starter",
+    "byLetshyre": "By LetsHyre",
+    "yours": "Your template",
+    "edited": "Edited {{when}}",
+    "subject": "Subject:",
+    "copy": "Make a copy",
+    "delete": "Delete",
+    "actions": "Actions for {{name}}",
+    "emptyTitle": "No templates of your own yet",
+    "emptyBody": "Copy a starter template, then change the wording and sign-off to sound like your team.",
+    "emptyAction": "Copy the first starter",
+    "errorTitle": "Your templates didn't load.",
+    "errorBody": "Nothing has been sent or changed. Check your connection and try again."
+  },
+  "copy": {
+    "title": "Make a copy",
+    "lead": "Your copy starts with the wording of “{{name}}”. Only your company sees it.",
+    "name": "Template name",
+    "suffix": "(copy)",
+    "nameError": "Give it a name of up to {{max}} characters.",
+    "submit": "Make a copy",
+    "copying": "Copying…"
+  },
+  "delete": {
+    "title": "Delete “{{name}}”?",
+    "body": "The template is removed for everyone on your team. Invitations already sent aren't affected. This can't be undone.",
+    "confirm": "Delete template"
+  },
+  "toast": {
+    "copied": "“{{name}}” is ready to edit",
+    "copyFailed": "The copy wasn't made. Try again.",
+    "deleted": "“{{name}}” deleted",
+    "deleteFailed": "The template wasn't deleted. Try again."
+  }
+}
