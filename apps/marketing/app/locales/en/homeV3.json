@@ -12,35 +12,33 @@
     "ctaCandidate": "I'm looking for a role",
     "reassurance": "10 free credits for employers. Always free for professionals.",
     "photo": "A young professional in glasses and earphones smiles at her laptop during an online interview.",
-    "file": {
-      "label": "Vyshnavi Rao's candidate file, for illustration: LetsHyre score 82, job match 86%, skill match 79% and an AI interview score of 78 out of 100, marked strong, with the recording attached.",
-      "verified": "Interview verified",
-      "verdict": "Strong interview",
-      "recording": "Interview recording",
-      "duration": "24:10",
+    "skip": "Skip the walkthrough",
+    "resume": {
+      "label": "Vyshnavi Rao's resume, for illustration: the same claims every resume makes.",
+      "kicker": "Resume",
       "name": "Vyshnavi Rao",
       "role": "Frontend engineer · 7 years",
-      "scoreValue": 82,
-      "outOf": "/100",
-      "layers": [
+      "summary": "Results-driven frontend engineer and great team player, passionate about building scalable, user-centric products.",
+      "skills": "Skills",
+      "claims": [
+        "Expert in React",
+        "10x engineer",
+        "Fast learner",
+        "Strong communicator"
+      ],
+      "experience": "Experience",
+      "jobs": [
         {
-          "label": "Job match",
-          "value": 86,
-          "suffix": "%"
+          "title": "Frontend engineer · Nimbus Labs",
+          "dates": "2021 – now"
         },
         {
-          "label": "Skill match",
-          "value": 79,
-          "suffix": "%"
-        },
-        {
-          "label": "AI interview",
-          "value": 78,
-          "suffix": "/100"
+          "title": "UI developer · Brightpath",
+          "dates": "2018 – 2021"
         }
-      ]
-    },
-    "skip": "Skip the walkthrough"
+      ],
+      "note": "Every resume on the pile says the same."
+    }
   },
   "proof": {
     "eyebrow": "Why LetsHyre",
@@ -187,18 +185,20 @@
         "credit": "1 credit",
         "phone": "+91 98765 43210"
       }
-    }
+    },
+    "hint": "Keep scrolling to move through the steps",
+    "jump": "Go to step {{n}}: {{title}}"
   },
   "professionals": {
-    "eyebrow": "For professionals",
+    "eyebrow": "Vyshnavi's side",
     "title": "Interview once.",
     "accent": "Get found for months.",
-    "body": "Take a role-based AI interview in the desktop app, whenever it suits you. For 90 days your scorecard sits in the talent pool, where employers hiring for your role find you.",
-    "photo": "A professional in a headset smiles while answering an interview question at his laptop.",
+    "body": "She took a role-based AI interview in the desktop app, at a time that suited her. For 90 days her scorecard sits in the talent pool, where employers hiring for her role find her. It's free for professionals.",
+    "photo": "Vyshnavi works through an interview at a round table in her flat, laptop open, earphones in.",
     "interviews": [
       {
         "label": "Interview 1",
-        "role": "Your main role"
+        "role": "Frontend engineer, her main role"
       },
       {
         "label": "Interview 2",
@@ -206,7 +206,7 @@
       },
       {
         "label": "Interview 3",
-        "role": "More evidence for your profile"
+        "role": "More evidence for her profile"
       }
     ],
     "days": "90 days",
@@ -225,12 +225,47 @@
       "Free for professionals"
     ],
     "cta": "Start with 10 free credits",
-    "more": "See pricing"
+    "more": "See pricing",
+    "ledger": {
+      "caption": "A sample credit ledger",
+      "columns": {
+        "entry": "Entry",
+        "credits": "Credits",
+        "balance": "Balance"
+      },
+      "rows": [
+        {
+          "entry": "Free credits to start",
+          "credits": "+10",
+          "balance": "10"
+        },
+        {
+          "entry": "Compared 24 candidates",
+          "credits": "0",
+          "balance": "10"
+        },
+        {
+          "entry": "Unlocked Vyshnavi Rao",
+          "credits": "−1",
+          "balance": "9"
+        },
+        {
+          "entry": "Unlocked Arjun Mehta",
+          "credits": "−1",
+          "balance": "8"
+        }
+      ]
+    }
   },
   "final": {
     "title": "Start with relevant candidates,",
     "accent": "not a pile of resumes.",
     "description": "And if you're the one being hired, go beyond your resume.",
-    "photo": "Two people shake hands across a desk in a bright office."
+    "photo": "Vyshnavi takes a coffee break in her flat, her laptop closed on the table.",
+    "notice": {
+      "title": "Your file was unlocked",
+      "body": "A hiring team at Orbit Commerce unlocked your file for the Senior frontend engineer role.",
+      "time": "Just now"
+    }
   }
 }

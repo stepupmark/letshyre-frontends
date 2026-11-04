@@ -1,8 +1,9 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { cn } from "@workspace/ui/lib/utils"
-import { clamp, useTransform } from "motion/react"
+import { clamp, useMotionValueEvent, useTransform } from "motion/react"
 import * as m from "motion/react-m"
-import { lazy, Suspense, useId } from "react"
+import { ArrowRightIcon } from "lucide-react"
+import { lazy, type MouseEvent, Suspense, useId, useState } from "react"
 
 import { Container } from "@/components/section"
 import { useHydrated } from "@/hooks/use-hydrated"
@@ -109,25 +110,66 @@ function JourneyStage({ titleId }: { titleId: string }) {
   )
 }
 
+// where the track rests with step `index` of `total` in view, matching the x mapping above
+const stepProgress = (index: number, total: number) =>
+  0.08 + 0.84 * (index / Math.max(total - 1, 1))
+
 function Rail({ labels }: { labels: string[] }) {
+  const { t } = useTranslation("homeV3")
   const { progress } = useScene()
+  const [active, setActive] = useState(0)
   const fill = useTransform(progress, [0.08, 0.92], [0, 1])
+  const hint = useTransform(progress, [0.06, 0.18], [1, 0])
+
+  useMotionValueEvent(progress, "change", (p) => {
+    const at = clamp(0, 1, (p - 0.08) / 0.84)
+    setActive(Math.round(at * (labels.length - 1)))
+  })
+
+  const jump = (event: MouseEvent<HTMLButtonElement>, index: number) => {
+    const section = event.currentTarget.closest("section")
+    if (!section) return
+    const top = section.getBoundingClientRect().top + window.scrollY
+    const span = section.offsetHeight - window.innerHeight
+    window.scrollTo({
+      top: top + span * stepProgress(index, labels.length),
+      behavior: "smooth",
+    })
+  }
 
   return (
-    <div aria-hidden className="mt-8 max-lg:hidden">
-      <div className="h-px bg-border">
+    <div className="mt-8 max-lg:hidden">
+      <div aria-hidden className="h-px bg-border">
         <m.div
           style={{ scaleX: fill }}
           className="h-px bg-foreground ltr:origin-left rtl:origin-right"
         />
       </div>
-      <ol className="mt-3 grid grid-cols-4 gap-4 text-sm text-muted-foreground tabular-nums">
+      <ol className="mt-2 grid grid-cols-4 gap-4 text-sm tabular-nums">
         {labels.map((label, i) => (
           <li key={label}>
-            <span className="text-foreground">{`0${i + 1}`}</span> {label}
+            <button
+              type="button"
+              aria-label={t("journey.jump", { n: i + 1, title: label })}
+              aria-current={i === active ? "step" : undefined}
+              onClick={(event) => {
+                jump(event, i)
+              }}
+              className="-ms-2 rounded-md p-2 text-start text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 aria-[current=step]:font-medium aria-[current=step]:text-foreground motion-reduce:transition-none"
+            >
+              <span className="text-foreground">{`0${i + 1}`}</span> {label}
+            </button>
           </li>
         ))}
       </ol>
+      <m.p
+        aria-hidden
+        style={{ opacity: hint }}
+        className="mt-2 flex items-center gap-1.5 text-xs text-muted-foreground"
+      >
+        {t("journey.hint")}
+        <ArrowRightIcon className="size-3.5 rtl:-scale-x-100" />
+      </m.p>
     </div>
   )
 }

@@ -9,6 +9,7 @@ import { CtaLink, TextLink } from "@/components/cta-links"
 import { Container } from "@/components/section"
 
 import { Magnetic } from "./pointer-effects"
+import { PricingLedger } from "./pricing-ledger"
 
 export function Pricing() {
   const { t } = useTranslation("homeV3")
@@ -39,15 +40,13 @@ export function Pricing() {
           <p className="max-w-lg text-lg text-pretty text-muted-foreground">
             {t("pricing.body")}
           </p>
-          <ul className="mt-8 divide-y border-y">
+          <PricingLedger />
+          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
             {t("pricing.points", { returnObjects: true }).map((point) => (
-              <li
-                key={point}
-                className="flex items-center gap-4 py-5 text-xl font-medium sm:text-2xl"
-              >
+              <li key={point} className="flex items-center gap-2">
                 <CheckIcon
                   aria-hidden
-                  className="size-5 shrink-0 text-success"
+                  className="size-4 shrink-0 text-success"
                 />
                 {point}
               </li>

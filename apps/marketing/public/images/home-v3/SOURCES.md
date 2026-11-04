@@ -11,6 +11,6 @@ with ffmpeg. The how-it-works track reuses three home v2 photos.
 | `resume-pile`    | Claims vs. proof, 1  | https://www.pexels.com/photo/a-close-up-shot-of-paper-clipped-documents-7054757/                    |
 | `live-interview` | Claims vs. proof, 2  | https://www.pexels.com/photo/smiling-man-in-headphones-talking-on-call-on-laptop-8770667/           |
 | `team-review`    | Claims vs. proof, 3  | https://www.pexels.com/photo/women-in-the-office-looking-at-laptop-screen-smiling-8145247/          |
-| `professional`   | For professionals    | https://www.pexels.com/photo/bearded-man-wearing-headphones-while-working-in-the-office-7504860/    |
-| `handshake`      | Final call to action | https://www.pexels.com/photo/business-handshake-in-modern-office-setting-36733334/                  |
+| `her-desk`       | For professionals    | https://www.pexels.com/photo/4050437/                                                               |
+| `her-break`      | Final call to action | https://www.pexels.com/photo/4050454/                                                               |
 | `shortlist`      | How it works, step 2 | https://www.pexels.com/photo/a-woman-engaged-in-a-video-call-using-a-laptop-9159663/                |

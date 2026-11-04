@@ -57,7 +57,7 @@ function Split({
     <Container className="grid items-center gap-12 md:grid-cols-2 lg:gap-20">
       <m.div style={{ x: photoX, opacity }}>
         <Photo
-          name="home-v3/professional"
+          name="home-v3/her-desk"
           alt={t("professionals.photo")}
           sizes="(min-width: 48rem) 36rem, 100vw"
           className="aspect-3/2 rounded-3xl border md:aspect-4/5"

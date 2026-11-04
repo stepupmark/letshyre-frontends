@@ -4,12 +4,12 @@ import * as m from "motion/react-m"
 import { useEffect, useId, useRef } from "react"
 
 import { AudienceCtas } from "./audience-ctas"
-import { HeroFile } from "./hero-file"
+import { HeroResume } from "./hero-resume"
 import { Photo } from "./photo"
 import { useScene } from "./scene-context"
 import { ScrollScene } from "./scroll-scene"
 
-// the photo shrinks into the file's 4:5 thumbnail slot: 4rem wide, inset by the card's 1.25rem padding
+// the photo shrinks into the resume's 4:5 photo slot: 4rem wide, inset by the card's 1.25rem padding
 const THUMB = 64
 const INSET = 20
 
@@ -66,7 +66,7 @@ function HeroStage() {
           priority
           className="aspect-4/5 rounded-3xl border"
         />
-        <HeroFile progress={progress} />
+        <HeroResume progress={progress} />
       </div>
     )
   }
@@ -107,7 +107,7 @@ function LiveStage({ progress }: { progress: MotionValue<number> }) {
       ref={stage}
       className="relative mx-auto aspect-4/5 w-full max-w-sm lg:max-w-md"
     >
-      <HeroFile progress={progress} slot />
+      <HeroResume progress={progress} slot />
       <m.div
         style={{ scale, x, y }}
         className="absolute inset-x-0 top-0 aspect-4/5 overflow-hidden rounded-3xl border ltr:origin-top-left rtl:origin-top-right"

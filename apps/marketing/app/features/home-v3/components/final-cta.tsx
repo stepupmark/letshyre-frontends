@@ -1,6 +1,7 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { type MotionValue, useScroll, useTransform } from "motion/react"
 import * as m from "motion/react-m"
+import { LockOpenIcon } from "lucide-react"
 import { useId, useRef } from "react"
 
 import { Container } from "@/components/section"
@@ -23,7 +24,7 @@ export function FinalCta() {
     <section
       ref={ref}
       aria-labelledby={titleId}
-      className="relative isolate grid min-h-svh place-items-center overflow-hidden"
+      className="overflow-x-clip border-t py-16 sm:py-28"
     >
       {/* transforms stay bound to the first value, so a switch remounts */}
       <Closing
@@ -43,39 +44,56 @@ function Closing({
   progress: MotionValue<number>
 }) {
   const { t } = useTranslation("homeV3")
-  const zoom = useTransform(progress, [0, 1], [1.2, 1])
-  const scale = useTransform(progress, [0.3, 0.9], [0.9, 1])
-  const opacity = useTransform(progress, [0.3, 0.7], [0, 1])
+  const zoom = useTransform(progress, [0, 1], [1.12, 1])
+  const rise = useTransform(progress, [0.45, 0.8], ["2rem", "0rem"])
+  const arrive = useTransform(progress, [0.45, 0.7], [0, 1])
 
   return (
-    <>
-      <m.div style={{ scale: zoom }} className="absolute inset-0 -z-10">
-        <Photo
-          name="home-v3/handshake"
-          alt={t("final.photo")}
-          sizes="100vw"
-          className="size-full"
-        />
-      </m.div>
-      <div aria-hidden className="absolute inset-0 -z-10 bg-background/80" />
-      <Container className="py-24">
-        <m.div
-          style={{ scale, opacity }}
-          className="mx-auto flex max-w-4xl flex-col items-center text-center"
+    <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="max-lg:text-center">
+        <h2
+          id={titleId}
+          className="text-4xl font-semibold tracking-tight text-balance sm:text-6xl"
         >
-          <h2
-            id={titleId}
-            className="text-4xl font-semibold tracking-tight text-balance sm:text-6xl"
-          >
-            {t("final.title")}{" "}
-            <span className="block text-brand-text">{t("final.accent")}</span>
-          </h2>
-          <p className="mt-5 max-w-xl text-lg text-pretty">
-            {t("final.description")}
-          </p>
-          <AudienceCtas className="mt-10 justify-center max-sm:w-full max-sm:flex-col max-sm:items-stretch" />
+          {t("final.title")}{" "}
+          <span className="block text-brand-text">{t("final.accent")}</span>
+        </h2>
+        <p className="mt-5 max-w-xl text-lg text-pretty max-lg:mx-auto">
+          {t("final.description")}
+        </p>
+        <AudienceCtas className="mt-10 max-lg:justify-center max-sm:w-full max-sm:flex-col max-sm:items-stretch" />
+      </div>
+      <div className="relative pb-10 sm:pb-12">
+        <div className="overflow-hidden rounded-3xl border">
+          <m.div style={{ scale: zoom }}>
+            <Photo
+              name="home-v3/her-break"
+              alt={t("final.photo")}
+              sizes="(min-width: 64rem) 36rem, 100vw"
+              className="aspect-3/2"
+            />
+          </m.div>
+        </div>
+        <m.div
+          style={{ opacity: arrive, y: rise }}
+          className="absolute inset-s-4 bottom-0 flex max-w-sm items-start gap-3 rounded-2xl border bg-card p-4 sm:inset-s-6"
+        >
+          <span className="grid size-9 shrink-0 place-items-center rounded-full bg-brand-muted text-brand-text">
+            <LockOpenIcon aria-hidden className="size-4" />
+          </span>
+          <div className="min-w-0">
+            <p className="flex items-baseline justify-between gap-3 text-sm font-semibold">
+              {t("final.notice.title")}
+              <span className="text-xs font-normal text-muted-foreground">
+                {t("final.notice.time")}
+              </span>
+            </p>
+            <p className="mt-1 text-sm text-pretty text-muted-foreground">
+              {t("final.notice.body")}
+            </p>
+          </div>
         </m.div>
-      </Container>
-    </>
+      </div>
+    </Container>
   )
 }
