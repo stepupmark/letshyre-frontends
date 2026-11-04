@@ -6,7 +6,7 @@ import {
   AlertTitle,
 } from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
-import { Copy, Eye, History, Lock, TriangleAlert } from "lucide-react"
+import { Copy, Eye, History } from "lucide-react"
 import { lazy, Suspense, useId, useMemo, useState } from "react"
 import { useForm, useWatch } from "react-hook-form"
 import { href } from "react-router"
@@ -30,6 +30,7 @@ import type { TemplateChanges } from "../../services/templates.service"
 import { CopyDialog } from "../library/copy-dialog"
 import { PreviewSheet } from "../preview/preview-sheet"
 import { EditorSkeleton } from "./editor-skeleton"
+import { FidelityNotice, ReadOnlyNotice } from "./editor-notices"
 import { EditorTips } from "./editor-tips"
 import { PreviewCard } from "./preview-card"
 import { Readiness } from "./readiness"
@@ -216,30 +217,13 @@ export function EditorForm({
           </AlertDescription>
         </Alert>
       )}
-      {!owned && (
-        <Alert>
-          <Lock />
-          <AlertTitle>{t("editor.readOnlyTitle")}</AlertTitle>
-          <AlertDescription>{t("editor.readOnlyBody")}</AlertDescription>
-        </Alert>
-      )}
+      {!owned && <ReadOnlyNotice />}
       {bodyLocked && (
-        <Alert>
-          <TriangleAlert />
-          <AlertTitle>{t("editor.fidelityTitle")}</AlertTitle>
-          <AlertDescription className="flex flex-col items-start gap-3">
-            {t("editor.fidelityBody")}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => {
-                setConvert(true)
-              }}
-            >
-              {t("editor.fidelityConvert")}
-            </Button>
-          </AlertDescription>
-        </Alert>
+        <FidelityNotice
+          onConvert={() => {
+            setConvert(true)
+          }}
+        />
       )}
 
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start">
