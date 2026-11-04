@@ -7,26 +7,27 @@ import {
   useRef,
 } from "react"
 
+import { useHydrated } from "@/hooks/use-hydrated"
+
 import { SceneContext, settled } from "./scene-context"
 
 /**
  * A section `screens` viewports tall whose content stays pinned while scroll drives
- * `progress`. With reduced motion it is an ordinary section and scenes render settled;
- * the pinning is CSS so prerendered HTML is already right before hydration.
+ * `progress`. With reduced motion it is an ordinary section and scenes render their still
+ * layout; the unpinning is CSS, so the prerendered page is already the right height.
  */
 export function ScrollScene({
   screens,
   className,
-  stageClassName,
   children,
   ...props
 }: Omit<ComponentProps<"section">, "children"> & {
   screens: number
-  stageClassName?: string
   children: ReactNode
 }) {
   const ref = useRef<HTMLElement>(null)
-  const still = useReducedMotion() ?? false
+  const reduced = useReducedMotion() ?? false
+  const still = useHydrated() && reduced
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
@@ -42,12 +43,7 @@ export function ScrollScene({
       style={{ "--screens": screens } as CSSProperties}
       {...props}
     >
-      <div
-        className={cn(
-          "motion-safe:sticky motion-safe:top-0 motion-safe:h-svh motion-safe:overflow-hidden",
-          stageClassName
-        )}
-      >
+      <div className="motion-safe:sticky motion-safe:top-0 motion-safe:h-svh motion-safe:overflow-hidden">
         <SceneContext
           value={{ progress: still ? settled : scrollYProgress, still }}
         >
