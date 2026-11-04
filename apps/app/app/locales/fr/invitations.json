@@ -77,7 +77,13 @@
     "missingBody": "Quelqu’un de votre équipe l’a peut-être supprimé.",
     "backToLibrary": "Retour aux modèles",
     "unsaved": "Modifications non enregistrées",
-    "saved": "Toutes les modifications sont enregistrées"
+    "saved": "Toutes les modifications sont enregistrées",
+    "preview": "Aperçu",
+    "previewCard": "Voir comme un candidat",
+    "previewCardBody": "Ouvrez l’e-mail avec vos modifications non enregistrées.",
+    "tipsTitle": "Conseils de rédaction",
+    "tipField": "insère un champ comme le nom du candidat.",
+    "tipLink": "ajoute un lien au texte sélectionné."
   },
   "errors": {
     "name": "Donnez-lui un nom de 120 caractères maximum.",
@@ -140,7 +146,8 @@
     },
     "insert": "Ajouter le bouton",
     "apply": "Enregistrer le bouton",
-    "remove": "Retirer le bouton"
+    "remove": "Retirer le bouton",
+    "linksTo": "Mène vers"
   },
   "preview": {
     "title": "Aperçu",
@@ -156,7 +163,8 @@
     "sampleName": "Alex Morgan",
     "sampleRole": "Backend Engineer",
     "sampleCompany": "Votre entreprise",
-    "sampleSender": "Vous"
+    "sampleSender": "Vous",
+    "sheetLead": "L’e-mail qu’un candidat reçoit, avec vos modifications non enregistrées. Changez l’exemple pour le voir pour quelqu’un d’autre."
   },
   "ready": {
     "title": "Prêt à envoyer",

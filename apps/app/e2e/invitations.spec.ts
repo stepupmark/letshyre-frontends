@@ -87,7 +87,9 @@ test("an employer copies a starter, rewords it and invites two candidates", asyn
   await tab.keyboard.press("Control+End")
   await tab.keyboard.type(" Ask {{sender")
   await tab.getByRole("option", { name: /Your name/ }).click()
+  await tab.getByRole("button", { name: "Preview", exact: true }).click()
   await expect(tab.getByTitle("Email preview")).toBeVisible()
+  await tab.keyboard.press("Escape")
   await tab.getByRole("button", { name: "Save changes" }).click()
   await expect(tab.getByText("Template saved")).toBeVisible()
 

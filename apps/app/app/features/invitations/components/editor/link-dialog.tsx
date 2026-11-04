@@ -36,7 +36,7 @@ export function LinkDialog({
         if (!open) onClose()
       }}
     >
-      <DialogContent>
+      <DialogContent className="sm:max-w-md">
         <form
           noValidate
           className="flex flex-col gap-6"

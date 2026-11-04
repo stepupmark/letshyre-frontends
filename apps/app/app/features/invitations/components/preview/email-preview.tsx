@@ -29,7 +29,6 @@ export function EmailPreview({
   body: string
 }) {
   const { t } = useTranslation("invitations")
-  const id = useId()
   const [sample, setSample] = useState({
     candidate_name: t("preview.sampleName"),
     job_role: t("preview.sampleRole"),
@@ -59,21 +58,32 @@ export function EmailPreview({
   })
 
   return (
-    <section
-      aria-labelledby={id}
-      className="flex flex-col overflow-hidden rounded-lg border bg-card"
-    >
-      <div className="flex items-center justify-between gap-3 border-b px-4 py-2.5">
-        <h2 id={id} className="text-sm font-medium">
-          {t("preview.title")}
-        </h2>
+    <div className="flex flex-col gap-4">
+      <div className="flex flex-wrap items-end gap-3">
+        <fieldset className="grid min-w-0 flex-1 gap-3 sm:grid-cols-2">
+          <legend className="sr-only">{t("preview.sampleLegend")}</legend>
+          <SampleInput
+            label={t("fields.candidate_name")}
+            value={sample.candidate_name}
+            onChange={(candidate_name) => {
+              setSample((current) => ({ ...current, candidate_name }))
+            }}
+          />
+          <SampleInput
+            label={t("fields.job_role")}
+            value={sample.job_role}
+            onChange={(job_role) => {
+              setSample((current) => ({ ...current, job_role }))
+            }}
+          />
+        </fieldset>
         <ToggleGroup
           aria-label={t("preview.device")}
           value={[device]}
           onValueChange={(next) => {
             if (next[0]) setDevice(next[0])
           }}
-          size="sm"
+          variant="outline"
         >
           <ToggleGroupItem value={DESKTOP} aria-label={t("preview.desktop")}>
             <Monitor />
@@ -84,49 +94,32 @@ export function EmailPreview({
         </ToggleGroup>
       </div>
 
-      <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1 border-b px-4 py-3 text-sm">
-        <dt className="text-muted-foreground">{t("preview.from")}</dt>
-        <dd className="truncate">{values.employer_company_name}</dd>
-        <dt className="text-muted-foreground">{t("preview.to")}</dt>
-        <dd className="truncate">{values.candidate_name}</dd>
-        <dt className="text-muted-foreground">{t("preview.subject")}</dt>
-        <dd className="font-medium text-pretty">
-          {fillFields(live.subject, values, { html: false }) ||
-            t("preview.noSubject")}
-        </dd>
-      </dl>
-
-      <div className="flex justify-center bg-muted/40 p-3">
-        <m.div
-          key={device}
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: duration.base, ease }}
-          data-device={device}
-          className="w-full overflow-hidden rounded-md border bg-background data-[device=phone]:max-w-sm"
-        >
-          <EmailFrame html={html} title={t("preview.frame")} />
-        </m.div>
+      <div className="overflow-hidden rounded-lg border bg-card">
+        <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1 border-b px-4 py-3 text-sm">
+          <dt className="text-muted-foreground">{t("preview.from")}</dt>
+          <dd className="truncate">{values.employer_company_name}</dd>
+          <dt className="text-muted-foreground">{t("preview.to")}</dt>
+          <dd className="truncate">{values.candidate_name}</dd>
+          <dt className="text-muted-foreground">{t("preview.subject")}</dt>
+          <dd className="font-medium text-pretty">
+            {fillFields(live.subject, values, { html: false }) ||
+              t("preview.noSubject")}
+          </dd>
+        </dl>
+        <div className="flex justify-center bg-muted/40 p-3">
+          <m.div
+            key={device}
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: duration.base, ease }}
+            data-device={device}
+            className="w-full overflow-hidden rounded-md border bg-background data-[device=phone]:max-w-sm"
+          >
+            <EmailFrame html={html} title={t("preview.frame")} />
+          </m.div>
+        </div>
       </div>
-
-      <fieldset className="grid gap-3 border-t px-4 py-3 sm:grid-cols-2">
-        <legend className="sr-only">{t("preview.sampleLegend")}</legend>
-        <SampleInput
-          label={t("fields.candidate_name")}
-          value={sample.candidate_name}
-          onChange={(candidate_name) => {
-            setSample((current) => ({ ...current, candidate_name }))
-          }}
-        />
-        <SampleInput
-          label={t("fields.job_role")}
-          value={sample.job_role}
-          onChange={(job_role) => {
-            setSample((current) => ({ ...current, job_role }))
-          }}
-        />
-      </fieldset>
-    </section>
+    </div>
   )
 }
 

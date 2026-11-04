@@ -77,7 +77,13 @@
     "missingBody": "It may have been deleted by someone on your team.",
     "backToLibrary": "Back to templates",
     "unsaved": "Unsaved changes",
-    "saved": "All changes saved"
+    "saved": "All changes saved",
+    "preview": "Preview",
+    "previewCard": "See it as a candidate",
+    "previewCardBody": "Open the email with your unsaved changes.",
+    "tipsTitle": "Writing tips",
+    "tipField": "inserts a field like the candidate's name.",
+    "tipLink": "links the selected text."
   },
   "errors": {
     "name": "Give it a name of up to 120 characters.",
@@ -140,7 +146,8 @@
     },
     "insert": "Add button",
     "apply": "Save button",
-    "remove": "Remove button"
+    "remove": "Remove button",
+    "linksTo": "Links to"
   },
   "preview": {
     "title": "Preview",
@@ -156,7 +163,8 @@
     "sampleName": "Alex Morgan",
     "sampleRole": "Backend Engineer",
     "sampleCompany": "Your company",
-    "sampleSender": "You"
+    "sampleSender": "You",
+    "sheetLead": "The email a candidate gets, with your unsaved changes. Change the sample to see it for someone else."
   },
   "ready": {
     "title": "Ready to send",

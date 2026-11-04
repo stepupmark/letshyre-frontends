@@ -77,7 +77,13 @@
     "missingBody": "Puede que alguien de tu equipo la haya eliminado.",
     "backToLibrary": "Volver a las plantillas",
     "unsaved": "Cambios sin guardar",
-    "saved": "Todos los cambios guardados"
+    "saved": "Todos los cambios guardados",
+    "preview": "Vista previa",
+    "previewCard": "Verlo como candidato",
+    "previewCardBody": "Abre el correo con tus cambios sin guardar.",
+    "tipsTitle": "Consejos de redacción",
+    "tipField": "inserta un campo como el nombre del candidato.",
+    "tipLink": "enlaza el texto seleccionado."
   },
   "errors": {
     "name": "Ponle un nombre de hasta 120 caracteres.",
@@ -140,7 +146,8 @@
     },
     "insert": "Añadir botón",
     "apply": "Guardar botón",
-    "remove": "Quitar botón"
+    "remove": "Quitar botón",
+    "linksTo": "Enlaza a"
   },
   "preview": {
     "title": "Vista previa",
@@ -156,7 +163,8 @@
     "sampleName": "Alex Morgan",
     "sampleRole": "Backend Engineer",
     "sampleCompany": "Tu empresa",
-    "sampleSender": "Tú"
+    "sampleSender": "Tú",
+    "sheetLead": "El correo que recibe un candidato, con tus cambios sin guardar. Cambia el ejemplo para verlo como otra persona."
   },
   "ready": {
     "title": "Lista para enviar",

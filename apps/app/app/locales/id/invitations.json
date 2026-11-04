@@ -77,7 +77,13 @@
     "missingBody": "Mungkin seseorang di tim Anda menghapusnya.",
     "backToLibrary": "Kembali ke template",
     "unsaved": "Perubahan belum disimpan",
-    "saved": "Semua perubahan tersimpan"
+    "saved": "Semua perubahan tersimpan",
+    "preview": "Pratinjau",
+    "previewCard": "Lihat sebagai kandidat",
+    "previewCardBody": "Buka email dengan perubahan yang belum disimpan.",
+    "tipsTitle": "Tips menulis",
+    "tipField": "menyisipkan kolom seperti nama kandidat.",
+    "tipLink": "menautkan teks yang dipilih."
   },
   "errors": {
     "name": "Beri nama maksimal 120 karakter.",
@@ -140,7 +146,8 @@
     },
     "insert": "Tambah tombol",
     "apply": "Simpan tombol",
-    "remove": "Hapus tombol"
+    "remove": "Hapus tombol",
+    "linksTo": "Menuju ke"
   },
   "preview": {
     "title": "Pratinjau",
@@ -156,7 +163,8 @@
     "sampleName": "Alex Morgan",
     "sampleRole": "Backend Engineer",
     "sampleCompany": "Perusahaan Anda",
-    "sampleSender": "Anda"
+    "sampleSender": "Anda",
+    "sheetLead": "Email yang diterima kandidat, dengan perubahan yang belum disimpan. Ubah contoh untuk melihatnya bagi orang lain."
   },
   "ready": {
     "title": "Siap dikirim",

@@ -6,7 +6,7 @@ import {
   AlertTitle,
 } from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
-import { Copy, History, Lock, TriangleAlert } from "lucide-react"
+import { Copy, Eye, History, Lock, TriangleAlert } from "lucide-react"
 import { lazy, Suspense, useId, useMemo, useState } from "react"
 import { useForm, useWatch } from "react-hook-form"
 import { href } from "react-router"
@@ -28,8 +28,9 @@ import {
 import type { Template } from "../../schemas/template.schema"
 import type { TemplateChanges } from "../../services/templates.service"
 import { CopyDialog } from "../library/copy-dialog"
-import { EmailPreview } from "../preview/email-preview"
+import { PreviewSheet } from "../preview/preview-sheet"
 import { EditorSkeleton } from "./editor-skeleton"
+import { EditorTips } from "./editor-tips"
 import { Readiness } from "./readiness"
 import { SaveState } from "./save-state"
 
@@ -71,6 +72,7 @@ export function EditorForm({
   const [exact, setExact] = useState(true)
   const [convert, setConvert] = useState(false)
   const [copying, setCopying] = useState(false)
+  const [previewing, setPreviewing] = useState(false)
   const schema = useMemo(
     () =>
       makeTemplateFormSchema({
@@ -138,6 +140,18 @@ export function EditorForm({
       save.mutate({ id: template.id, changes })
   })
 
+  const previewButton = (
+    <Button
+      variant="outline"
+      onClick={() => {
+        setPreviewing(true)
+      }}
+    >
+      <Eye />
+      {t("editor.preview")}
+    </Button>
+  )
+
   return (
     <>
       <PageHeader
@@ -147,6 +161,7 @@ export function EditorForm({
           owned ? (
             <div className="flex items-center gap-3">
               <SaveState dirty={dirty} saved={save.isSuccess} />
+              {previewButton}
               <Button
                 type="submit"
                 form={formId}
@@ -156,14 +171,17 @@ export function EditorForm({
               </Button>
             </div>
           ) : (
-            <Button
-              onClick={() => {
-                setCopying(true)
-              }}
-            >
-              <Copy />
-              {t("editor.copyToEdit")}
-            </Button>
+            <div className="flex items-center gap-2">
+              {previewButton}
+              <Button
+                onClick={() => {
+                  setCopying(true)
+                }}
+              >
+                <Copy />
+                {t("editor.copyToEdit")}
+              </Button>
+            </div>
           )
         }
       />
@@ -223,7 +241,7 @@ export function EditorForm({
         </Alert>
       )}
 
-      <div className="grid gap-8 xl:grid-cols-2 xl:items-start">
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start">
         <form
           id={formId}
           noValidate
@@ -250,17 +268,42 @@ export function EditorForm({
               onFidelity={setExact}
             />
           </Suspense>
-          {owned && <Readiness subject={subject} body={body} />}
         </form>
-        <aside className="min-w-0 xl:sticky xl:top-20">
-          <EmailPreview
-            templateId={template.id}
-            subject={subject}
-            body={body}
-          />
+        <aside className="flex min-w-0 flex-col gap-4 lg:sticky lg:top-20">
+          {owned && <Readiness subject={subject} body={body} />}
+          <button
+            type="button"
+            onClick={() => {
+              setPreviewing(true)
+            }}
+            className="group flex items-center gap-3 rounded-lg border p-4 text-start text-sm transition-colors outline-none hover:bg-muted/40 focus-visible:ring-3 focus-visible:ring-ring/50"
+          >
+            <span
+              aria-hidden="true"
+              className="flex size-9 shrink-0 items-center justify-center rounded-md bg-brand-muted text-brand-text transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none"
+            >
+              <Eye className="size-4" />
+            </span>
+            <span className="flex flex-col">
+              <span className="font-medium">{t("editor.previewCard")}</span>
+              <span className="text-muted-foreground">
+                {t("editor.previewCardBody")}
+              </span>
+            </span>
+          </button>
+          {owned && <EditorTips />}
         </aside>
       </div>
 
+      <PreviewSheet
+        open={previewing}
+        onClose={() => {
+          setPreviewing(false)
+        }}
+        templateId={template.id}
+        subject={subject}
+        body={body}
+      />
       {copying && (
         <CopyDialog
           source={template}

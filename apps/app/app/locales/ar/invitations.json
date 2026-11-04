@@ -77,7 +77,13 @@
     "missingBody": "ربما حذفه أحد أعضاء فريقك.",
     "backToLibrary": "العودة إلى القوالب",
     "unsaved": "تغييرات غير محفوظة",
-    "saved": "حُفظت كل التغييرات"
+    "saved": "حُفظت كل التغييرات",
+    "preview": "معاينة",
+    "previewCard": "شاهده كمرشح",
+    "previewCardBody": "افتح البريد مع تغييراتك غير المحفوظة.",
+    "tipsTitle": "نصائح للكتابة",
+    "tipField": "يُدرج حقلًا مثل اسم المرشح.",
+    "tipLink": "يربط النص المحدد."
   },
   "errors": {
     "name": "اختر اسمًا لا يتجاوز 120 حرفًا.",
@@ -140,7 +146,8 @@
     },
     "insert": "إضافة الزر",
     "apply": "حفظ الزر",
-    "remove": "إزالة الزر"
+    "remove": "إزالة الزر",
+    "linksTo": "يؤدي إلى"
   },
   "preview": {
     "title": "معاينة",
@@ -156,7 +163,8 @@
     "sampleName": "Alex Morgan",
     "sampleRole": "Backend Engineer",
     "sampleCompany": "شركتك",
-    "sampleSender": "أنت"
+    "sampleSender": "أنت",
+    "sheetLead": "البريد الذي يصل إلى المرشح مع تغييراتك غير المحفوظة. غيّر المثال لتراه لشخص آخر."
   },
   "ready": {
     "title": "جاهز للإرسال",

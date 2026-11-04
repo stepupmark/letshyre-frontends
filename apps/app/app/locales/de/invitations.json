@@ -77,7 +77,13 @@
     "missingBody": "Möglicherweise hat jemand aus Ihrem Team sie gelöscht.",
     "backToLibrary": "Zurück zu den Vorlagen",
     "unsaved": "Ungespeicherte Änderungen",
-    "saved": "Alle Änderungen gespeichert"
+    "saved": "Alle Änderungen gespeichert",
+    "preview": "Vorschau",
+    "previewCard": "Als Kandidat ansehen",
+    "previewCardBody": "Öffnen Sie die E-Mail mit Ihren ungespeicherten Änderungen.",
+    "tipsTitle": "Schreibtipps",
+    "tipField": "fügt ein Feld wie den Namen des Kandidaten ein.",
+    "tipLink": "verlinkt den markierten Text."
   },
   "errors": {
     "name": "Geben Sie einen Namen mit bis zu 120 Zeichen ein.",
@@ -140,7 +146,8 @@
     },
     "insert": "Schaltfläche hinzufügen",
     "apply": "Schaltfläche speichern",
-    "remove": "Schaltfläche entfernen"
+    "remove": "Schaltfläche entfernen",
+    "linksTo": "Verlinkt auf"
   },
   "preview": {
     "title": "Vorschau",
@@ -156,7 +163,8 @@
     "sampleName": "Alex Morgan",
     "sampleRole": "Backend Engineer",
     "sampleCompany": "Ihr Unternehmen",
-    "sampleSender": "Sie"
+    "sampleSender": "Sie",
+    "sheetLead": "Die E-Mail, die ein Kandidat erhält, mit Ihren ungespeicherten Änderungen. Ändern Sie das Beispiel, um sie für jemand anderen zu sehen."
   },
   "ready": {
     "title": "Bereit zum Senden",

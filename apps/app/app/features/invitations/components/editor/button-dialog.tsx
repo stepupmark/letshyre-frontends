@@ -9,9 +9,12 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@workspace/ui/components/dialog"
+import { AnimatePresence } from "motion/react"
+import * as m from "motion/react-m"
 import { useState } from "react"
 
 import { TextField } from "@/components/text-field"
+import { duration, ease } from "@/lib/motion"
 
 import type { ButtonValues } from "../../lib/editor/commands"
 import { BUTTON_TONES, toneOf, type ButtonTone } from "../../lib/email-styles"
@@ -47,7 +50,7 @@ export function ButtonDialog({
         if (!open) onClose()
       }}
     >
-      <DialogContent>
+      <DialogContent className="sm:max-w-lg">
         <form
           noValidate
           className="flex flex-col gap-6"
@@ -76,6 +79,31 @@ export function ButtonDialog({
             </DialogTitle>
             <DialogDescription>{t("button.lead")}</DialogDescription>
           </DialogHeader>
+          <div
+            aria-hidden="true"
+            className="flex flex-col items-center gap-4 rounded-lg border bg-muted/40 px-6 py-5"
+          >
+            <span className="flex w-full flex-col gap-1.5">
+              <span className="h-1.5 w-3/4 rounded-full bg-muted-foreground/20" />
+              <span className="h-1.5 w-1/2 rounded-full bg-muted-foreground/20" />
+            </span>
+            <span className="relative grid">
+              <AnimatePresence initial={false} mode="popLayout">
+                <m.span
+                  key={tone}
+                  data-tone={tone}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: duration.fast, ease }}
+                  className="max-w-72 truncate rounded-md px-5 py-2.5 text-sm font-semibold data-[tone=dark]:bg-foreground data-[tone=dark]:text-background data-[tone=primary]:bg-primary data-[tone=primary]:text-primary-foreground"
+                >
+                  {label.trim() || t("button.defaultLabel")}
+                </m.span>
+              </AnimatePresence>
+            </span>
+            <span className="h-1.5 w-2/3 self-start rounded-full bg-muted-foreground/20" />
+          </div>
           <div className="flex flex-col gap-5">
             <TextField
               label={t("button.label")}
@@ -87,18 +115,23 @@ export function ButtonDialog({
                 setLabel(event.target.value)
               }}
             />
-            <LinkTarget
-              href={href}
-              error={errors.href}
-              onChange={(next) => {
-                setHref(next)
-              }}
-            />
+            <fieldset className="flex flex-col gap-2">
+              <legend className="mb-2 text-sm font-medium">
+                {t("button.linksTo")}
+              </legend>
+              <LinkTarget
+                href={href}
+                error={errors.href}
+                onChange={(next) => {
+                  setHref(next)
+                }}
+              />
+            </fieldset>
             <fieldset className="flex flex-col gap-2">
               <legend className="mb-2 text-sm font-medium">
                 {t("button.style")}
               </legend>
-              <div className="flex gap-3">
+              <div className="flex gap-2">
                 {TONES.map((option) => (
                   <button
                     key={option}
@@ -107,14 +140,13 @@ export function ButtonDialog({
                     onClick={() => {
                       setTone(option)
                     }}
-                    className="flex flex-1 flex-col items-center gap-2 rounded-lg border p-3 text-sm text-muted-foreground transition-colors outline-none hover:bg-muted/50 focus-visible:ring-3 focus-visible:ring-ring/50 aria-pressed:border-brand aria-pressed:text-foreground"
+                    className="flex flex-1 items-center gap-2.5 rounded-lg border px-3 py-2 text-sm text-muted-foreground transition-colors outline-none hover:bg-muted/50 focus-visible:ring-3 focus-visible:ring-ring/50 aria-pressed:border-brand aria-pressed:text-foreground"
                   >
                     <span
+                      aria-hidden="true"
                       data-tone={option}
-                      className="truncate rounded-md px-4 py-1.5 text-xs font-semibold data-[tone=dark]:bg-foreground data-[tone=dark]:text-background data-[tone=primary]:bg-primary data-[tone=primary]:text-primary-foreground"
-                    >
-                      {label.trim() || t("button.defaultLabel")}
-                    </span>
+                      className="size-4 rounded-full ring-2 ring-background data-[tone=dark]:bg-foreground data-[tone=primary]:bg-primary"
+                    />
                     {t(`button.tones.${option}`)}
                   </button>
                 ))}

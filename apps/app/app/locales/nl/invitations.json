@@ -77,7 +77,13 @@
     "missingBody": "Misschien heeft iemand uit je team het verwijderd.",
     "backToLibrary": "Terug naar sjablonen",
     "unsaved": "Niet-opgeslagen wijzigingen",
-    "saved": "Alle wijzigingen opgeslagen"
+    "saved": "Alle wijzigingen opgeslagen",
+    "preview": "Voorbeeld",
+    "previewCard": "Bekijk als kandidaat",
+    "previewCardBody": "Open de e-mail met je niet-opgeslagen wijzigingen.",
+    "tipsTitle": "Schrijftips",
+    "tipField": "voegt een veld zoals de naam van de kandidaat in.",
+    "tipLink": "koppelt de geselecteerde tekst."
   },
   "errors": {
     "name": "Geef een naam van maximaal 120 tekens.",
@@ -140,7 +146,8 @@
     },
     "insert": "Knop toevoegen",
     "apply": "Knop opslaan",
-    "remove": "Knop verwijderen"
+    "remove": "Knop verwijderen",
+    "linksTo": "Linkt naar"
   },
   "preview": {
     "title": "Voorbeeld",
@@ -156,7 +163,8 @@
     "sampleName": "Alex Morgan",
     "sampleRole": "Backend Engineer",
     "sampleCompany": "Je bedrijf",
-    "sampleSender": "Jij"
+    "sampleSender": "Jij",
+    "sheetLead": "De e-mail die een kandidaat krijgt, met je niet-opgeslagen wijzigingen. Wijzig het voorbeeld om hem voor iemand anders te zien."
   },
   "ready": {
     "title": "Klaar om te versturen",

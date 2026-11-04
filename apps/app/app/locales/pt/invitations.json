@@ -77,7 +77,13 @@
     "missingBody": "Talvez alguém da sua equipe o tenha excluído.",
     "backToLibrary": "Voltar aos modelos",
     "unsaved": "Alterações não salvas",
-    "saved": "Todas as alterações salvas"
+    "saved": "Todas as alterações salvas",
+    "preview": "Prévia",
+    "previewCard": "Ver como candidato",
+    "previewCardBody": "Abra o e-mail com suas alterações não salvas.",
+    "tipsTitle": "Dicas de escrita",
+    "tipField": "insere um campo como o nome do candidato.",
+    "tipLink": "cria um link no texto selecionado."
   },
   "errors": {
     "name": "Use um nome de até 120 caracteres.",
@@ -140,7 +146,8 @@
     },
     "insert": "Adicionar botão",
     "apply": "Salvar botão",
-    "remove": "Remover botão"
+    "remove": "Remover botão",
+    "linksTo": "Leva a"
   },
   "preview": {
     "title": "Prévia",
@@ -156,7 +163,8 @@
     "sampleName": "Alex Morgan",
     "sampleRole": "Backend Engineer",
     "sampleCompany": "Sua empresa",
-    "sampleSender": "Você"
+    "sampleSender": "Você",
+    "sheetLead": "O e-mail que um candidato recebe, com suas alterações não salvas. Mude o exemplo para ver como outra pessoa."
   },
   "ready": {
     "title": "Pronto para enviar",

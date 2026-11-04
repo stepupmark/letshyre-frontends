@@ -77,7 +77,13 @@
     "missingBody": "チームの誰かが削除した可能性があります。",
     "backToLibrary": "テンプレート一覧に戻る",
     "unsaved": "未保存の変更があります",
-    "saved": "すべての変更を保存しました"
+    "saved": "すべての変更を保存しました",
+    "preview": "プレビュー",
+    "previewCard": "候補者として見る",
+    "previewCardBody": "未保存の変更を含めてメールを開きます。",
+    "tipsTitle": "書き方のヒント",
+    "tipField": "候補者名などのフィールドを挿入します。",
+    "tipLink": "選択したテキストにリンクを付けます。"
   },
   "errors": {
     "name": "120文字以内で名前を付けてください。",
@@ -140,7 +146,8 @@
     },
     "insert": "ボタンを追加",
     "apply": "ボタンを保存",
-    "remove": "ボタンを削除"
+    "remove": "ボタンを削除",
+    "linksTo": "リンク先"
   },
   "preview": {
     "title": "プレビュー",
@@ -156,7 +163,8 @@
     "sampleName": "Alex Morgan",
     "sampleRole": "Backend Engineer",
     "sampleCompany": "あなたの会社",
-    "sampleSender": "あなた"
+    "sampleSender": "あなた",
+    "sheetLead": "候補者に届くメールを未保存の変更込みで表示します。サンプルを変えると別の人として確認できます。"
   },
   "ready": {
     "title": "送信の準備",
