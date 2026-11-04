@@ -13,6 +13,7 @@ import { duration, ease } from "@/lib/motion"
 
 import { fillFields } from "../../lib/merge-fields"
 import { previewDocument } from "../../lib/preview-html"
+import { sampleInviteLink } from "../../lib/sample-values"
 import { previewQuery } from "../../queries/templates.queries"
 import { EmailFrame } from "./email-frame"
 
@@ -44,6 +45,7 @@ export function EmailPreview({
   const values = {
     employer_company_name: t("preview.sampleCompany"),
     sender_name: t("preview.sampleSender"),
+    invite_link: sampleInviteLink(),
     ...server.data?.merge_context,
     candidate_name: sample.candidate_name.trim() || t("preview.sampleName"),
     job_role: sample.job_role.trim() || t("preview.sampleRole"),

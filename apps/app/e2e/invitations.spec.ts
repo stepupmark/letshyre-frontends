@@ -126,7 +126,10 @@ test("an employer copies a starter, rewords it and invites two candidates", asyn
   )
   await tab.getByRole("button", { name: "Continue" }).click()
 
-  await expect(tab.getByText("Jane Doe · 1 of 2")).toBeVisible()
+  await expect(tab.getByRole("button", { name: /Jane Doe/ })).toHaveAttribute(
+    "aria-current",
+    "true"
+  )
   await tab.getByRole("button", { name: "Send 2 invitations" }).click()
   expect(sent.shift()).toEqual({
     recipients: [

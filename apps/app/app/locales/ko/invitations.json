@@ -223,12 +223,7 @@
     "remove": "{{email}} 삭제",
     "summaryTemplate": "템플릿",
     "summaryRole": "직무",
-    "summaryTo": "받는 사람",
-    "previewAs": "{{name}} · {{total}}명 중 {{at}}",
-    "previous": "이전 후보자",
-    "next": "다음 후보자",
-    "previewErrorTitle": "미리보기를 불러오지 못했습니다.",
-    "previewErrorBody": "아무것도 보내지 않았습니다. 다시 시도하세요.",
+    "localPreview": "실시간 미리보기를 불러오지 못해 여기서 그려 보여 줍니다. 회사 이름, 내 이름, 후보자별 초대 링크는 보낼 때 채워집니다.",
     "submit_other": "초대 {{count}}건 보내기",
     "sending": "보내는 중…",
     "errors": {

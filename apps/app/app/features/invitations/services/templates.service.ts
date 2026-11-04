@@ -1,4 +1,4 @@
-import { acknowledge } from "@workspace/api"
+import { acknowledge, HttpError } from "@workspace/api"
 
 import { api } from "@/lib/api"
 
@@ -36,11 +36,16 @@ export const updateTemplate = async (id: string, changes: TemplateChanges) =>
 export const deleteTemplate = async (id: string) =>
   acknowledge(await api.delete(`${BASE}${id}/`))
 
-// a GET body never leaves the browser, so the sample values go in the query
-export const previewTemplate = async (id: string, context: PreviewContext) =>
-  parsePreview(
-    await api.get(`${BASE}${id}/preview/`, { query: { ...context } })
-  )
+// browsers drop a GET body, so the values go in the query; a server that only reads a body gets a POST
+export async function previewTemplate(id: string, context: PreviewContext) {
+  const path = `${BASE}${id}/preview/`
+  try {
+    return parsePreview(await api.get(path, { query: { ...context } }))
+  } catch (error) {
+    if (!(error instanceof HttpError) || error.status >= 500) throw error
+    return parsePreview(await api.post(path, context))
+  }
+}
 
 export const sendInvitations = async (
   id: string,

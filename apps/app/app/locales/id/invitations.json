@@ -223,12 +223,7 @@
     "remove": "Hapus {{email}}",
     "summaryTemplate": "Template",
     "summaryRole": "Posisi",
-    "summaryTo": "Kepada",
-    "previewAs": "{{name}} · {{at}} dari {{total}}",
-    "previous": "Kandidat sebelumnya",
-    "next": "Kandidat berikutnya",
-    "previewErrorTitle": "Pratinjau tidak termuat.",
-    "previewErrorBody": "Tidak ada yang terkirim. Coba lagi.",
+    "localPreview": "Pratinjau langsung tidak termuat, jadi ditampilkan di sini. Nama perusahaan, nama Anda, dan tautan setiap kandidat diisi saat email dikirim.",
     "submit_other": "Kirim {{count}} undangan",
     "sending": "Mengirim…",
     "errors": {

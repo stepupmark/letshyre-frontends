@@ -223,12 +223,7 @@
     "remove": "{{email}} を削除",
     "summaryTemplate": "テンプレート",
     "summaryRole": "職種",
-    "summaryTo": "宛先",
-    "previewAs": "{{name}} · {{at}} / {{total}}",
-    "previous": "前の候補者",
-    "next": "次の候補者",
-    "previewErrorTitle": "プレビューを読み込めませんでした。",
-    "previewErrorBody": "送信は行われていません。もう一度お試しください。",
+    "localPreview": "ライブプレビューを読み込めなかったため、ここで表示しています。会社名、あなたの名前、候補者ごとの招待リンクは送信時に差し込まれます。",
     "submit_other": "{{count}}件の招待を送信",
     "sending": "送信中…",
     "errors": {
