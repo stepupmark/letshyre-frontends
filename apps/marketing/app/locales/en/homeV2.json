@@ -86,6 +86,11 @@
     "eyebrow": "Why LetsHyre",
     "title": "A resume tells you what someone claims.",
     "accent": "An interview shows you.",
+    "rows": [
+      "What lands on your desk",
+      "Before the first call",
+      "For the professional"
+    ],
     "before": {
       "title": "Hiring from resumes",
       "items": [
@@ -101,16 +106,6 @@
         "Scores, a scorecard and the recording before the first call",
         "One interview a professional can reuse for every employer"
       ]
-    },
-    "scene": {
-      "resumes": "247 resumes",
-      "buzzwords": ["Results-driven", "Team player", "Fast learner"],
-      "name": "Vyshnavi Rao",
-      "role": "Frontend engineer · 7 yrs",
-      "outOf": "/100",
-      "verified": "Interview-verified",
-      "recording": "Recording of 8 answers",
-      "rank": "Ranked 1st of 24"
     }
   },
   "how": {
