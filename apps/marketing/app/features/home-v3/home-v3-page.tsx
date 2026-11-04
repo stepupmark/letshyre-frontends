@@ -1,3 +1,4 @@
+import { CandidateFile } from "./components/candidate-file"
 import { Hero } from "./components/hero"
 import { Journey } from "./components/journey"
 import { MotionProvider } from "./components/motion-provider"
@@ -9,6 +10,7 @@ export function HomeV3Page() {
       <Hero />
       <Proof />
       <Journey />
+      <CandidateFile />
     </MotionProvider>
   )
 }

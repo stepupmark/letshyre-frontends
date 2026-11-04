@@ -32,6 +32,8 @@ const CLIENT = join(ROOT, "build/client")
 const HTML_BUDGET = 60 * 1024
 // react, react-router and i18next alone are ~130 kB; keep this a ratchet, not a target
 const JS_BUDGET = 280 * 1024
+// the scroll-design preview carries the motion runtime; owner-approved exemption while it's under review
+const JS_BUDGET_EXEMPT: readonly PageId[] = ["homeV3"]
 
 const env = parseEnv(loadEnv("production", ROOT, "VITE_"))
 const site = env.VITE_SITE_URL.replace(/\/$/, "")
@@ -134,6 +136,7 @@ const routes = [...ready].flatMap(([id, locales]) =>
     path: PAGES[id].path,
     locales,
     preview: PREVIEW_PAGES.includes(id),
+    jsExempt: JS_BUDGET_EXEMPT.includes(id),
   }))
 )
 
@@ -178,7 +181,7 @@ for (const page of routes) {
   const jsSize = initialScriptsOf(html)
     .map((src) => gzipSize(join(CLIENT, src)))
     .reduce((a, b) => a + b, 0)
-  if (jsSize > JS_BUDGET) {
+  if (jsSize > JS_BUDGET && !page.jsExempt) {
     problems.push(
       `${route}: initial JS is ${kb(jsSize)} gzip, budget ${kb(JS_BUDGET)}`
     )

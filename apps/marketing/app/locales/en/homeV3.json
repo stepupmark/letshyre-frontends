@@ -138,27 +138,25 @@
     "outOf": "/100",
     "layers": [
       {
-        "label": "LetsHyre score",
-        "value": "82"
-      },
-      {
         "label": "Job match",
-        "value": "86%"
+        "value": 86,
+        "suffix": "%"
       },
       {
         "label": "Skill match",
-        "value": "79%"
+        "value": 79,
+        "suffix": "%"
       },
       {
         "label": "AI interview",
-        "value": "78"
+        "value": 78,
+        "suffix": "/100"
       }
     ],
     "strengths": "Strengths",
     "strengthItems": ["State management", "Accessibility"],
     "gaps": "Worth probing",
     "gapItems": ["Testing at scale"],
-    "locked": "Included when you unlock",
     "lockedItems": [
       "Resume",
       "Contact details",
@@ -166,7 +164,15 @@
       "Full interview recording"
     ],
     "unlock": "Unlock for 1 credit",
-    "unlocked": "Unlocked"
+    "unlocked": "Unlocked",
+    "visible": "Visible before you unlock",
+    "visibleBody": "Scores, match and the interview verdict, for every candidate, free.",
+    "included": "Included when you unlock",
+    "includedBody": "One credit opens the resume, contact details, documents and the full recording.",
+    "label": "A sample candidate file for Vyshnavi Rao, for illustration.",
+    "sample": "Sample file",
+    "score": "LetsHyre score",
+    "scoreValue": 82
   },
   "facts": {
     "label": "LetsHyre in numbers",
