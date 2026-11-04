@@ -3,21 +3,20 @@ import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { ArrowRightIcon } from "lucide-react"
 
 import { APP_LINKS } from "@/lib/app-links"
+import { Band } from "@/components/band"
 import { CtaLink, TextLink } from "@/components/cta-links"
 import { PAGES } from "@/lib/pages"
 
-import { FeatureRow } from "./feature-row"
-import { InterviewScene } from "./scenes/interview-scene"
+import { Heading } from "./heading"
 import { ScorecardScene } from "./scenes/scorecard-scene"
 import { ShortlistScene } from "./scenes/shortlist-scene"
 import { UnlockScene } from "./scenes/unlock-scene"
+import { Step } from "./step"
 
 export function Features() {
   const { t } = useTranslation("homeV2")
   const lang = useLocale()
-  const copy = (
-    key: "shortlist" | "evidence" | "unlock" | "professionals"
-  ) => ({
+  const copy = (key: "shortlist" | "evidence" | "unlock") => ({
     id: key,
     eyebrow: t(`${key}.eyebrow`),
     title: t(`${key}.title`),
@@ -27,40 +26,34 @@ export function Features() {
   })
 
   return (
-    <>
-      <FeatureRow {...copy("shortlist")} scene={<ShortlistScene />} />
-      <FeatureRow {...copy("evidence")} scene={<ScorecardScene />} flip muted />
-      <FeatureRow
-        {...copy("unlock")}
-        scene={<UnlockScene />}
-        actions={
-          <>
-            <CtaLink href={APP_LINKS.employerRegister}>
-              {t("unlock.cta")}
-              <ArrowRightIcon aria-hidden />
-            </CtaLink>
-            <TextLink to={localePath(lang, PAGES.pricing.path)}>
-              {t("unlock.pricing")}
-            </TextLink>
-          </>
-        }
+    <Band id="how" muted>
+      <Heading
+        id="how-title"
+        eyebrow={t("how.eyebrow")}
+        title={t("how.title")}
+        accent={t("how.accent")}
+        className="slide-in"
       />
-      <FeatureRow
-        {...copy("professionals")}
-        scene={<InterviewScene />}
-        flip
-        muted
-        actions={
-          <>
-            <CtaLink href={APP_LINKS.candidateRegister}>
-              {t("professionals.cta")}
-            </CtaLink>
-            <TextLink to={localePath(lang, PAGES.download.path)}>
-              {t("professionals.download")}
-            </TextLink>
-          </>
-        }
-      />
-    </>
+      <div className="mt-12 grid gap-4 lg:grid-cols-2">
+        <Step step={1} {...copy("shortlist")} scene={<ShortlistScene />} wide />
+        <Step step={2} {...copy("evidence")} scene={<ScorecardScene />} />
+        <Step
+          step={3}
+          {...copy("unlock")}
+          scene={<UnlockScene />}
+          actions={
+            <>
+              <CtaLink href={APP_LINKS.employerRegister}>
+                {t("unlock.cta")}
+                <ArrowRightIcon aria-hidden />
+              </CtaLink>
+              <TextLink to={localePath(lang, PAGES.pricing.path)}>
+                {t("unlock.pricing")}
+              </TextLink>
+            </>
+          }
+        />
+      </div>
+    </Band>
   )
 }

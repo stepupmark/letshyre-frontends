@@ -3,24 +3,24 @@ import { cn } from "@workspace/ui/lib/utils"
 import { CheckIcon, XIcon } from "lucide-react"
 import type { ReactNode } from "react"
 
-import { BandHeading } from "@/components/band-heading"
 import { Band } from "@/components/band"
 
+import { Heading } from "./heading"
 import { ResumePile, VerifiedProfile } from "./scenes/contrast-scenes"
 
 export function Contrast() {
   const { t } = useTranslation("homeV2")
 
   return (
-    <Band id="contrast" muted>
-      <BandHeading
+    <Band id="contrast">
+      <Heading
         id="contrast-title"
         eyebrow={t("contrast.eyebrow")}
         title={t("contrast.title")}
         accent={t("contrast.accent")}
         className="slide-in max-w-3xl"
       />
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <div className="slide-in mt-12 grid overflow-hidden rounded-3xl border bg-card md:grid-cols-2">
         <Side
           tone="before"
           title={t("contrast.before.title")}
@@ -55,21 +55,23 @@ function Side({
   return (
     <article
       className={cn(
-        "slide-in flex flex-col rounded-3xl border bg-card p-3 sm:p-4",
-        !before && "border-brand/30"
+        "flex flex-col",
+        before ? "max-md:border-b md:border-e" : "bg-brand-muted/25"
       )}
     >
-      <div
-        className={cn(
-          "flex h-60 items-center justify-center overflow-hidden rounded-2xl p-6",
-          before ? "bg-muted/60" : "bg-brand-muted/40"
-        )}
-      >
+      <div className="flex h-64 items-center justify-center overflow-hidden border-b px-6">
         {scene}
       </div>
-      <div className="p-3 pt-8 sm:p-4 sm:pt-8">
-        <h3 className="text-lg font-semibold">{title}</h3>
-        <ul className="mt-4 flex flex-col gap-3">
+      <div className="p-6 sm:p-10">
+        <h3
+          className={cn(
+            "text-sm font-medium",
+            before ? "text-muted-foreground" : "text-brand-text"
+          )}
+        >
+          {title}
+        </h3>
+        <ul className="mt-5 flex flex-col gap-4">
           {items.map((item) => (
             <li key={item} className="flex gap-3 text-pretty">
               <span
@@ -77,7 +79,7 @@ function Side({
                   "mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full",
                   before
                     ? "bg-muted text-muted-foreground"
-                    : "bg-brand-muted text-brand-text"
+                    : "bg-brand text-primary-foreground"
                 )}
               >
                 <Icon aria-hidden className="size-3" />

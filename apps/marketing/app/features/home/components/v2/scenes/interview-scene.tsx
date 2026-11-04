@@ -20,7 +20,7 @@ export function InterviewScene() {
       <Photo
         name="video-interview"
         alt={t("professionals.photo")}
-        sizes="(min-width: 1152px) 600px, (min-width: 1024px) 52vw, calc(100vw - 2rem)"
+        sizes="(min-width: 1152px) 500px, (min-width: 1024px) 42vw, calc(100vw - 5rem)"
       />
 
       <div

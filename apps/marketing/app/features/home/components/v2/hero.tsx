@@ -11,46 +11,35 @@ export function Hero() {
 
   return (
     <section aria-labelledby="hero-title" className="overflow-x-clip">
-      <Container className="grid items-center gap-12 pt-12 pb-20 sm:pt-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-16 lg:pt-20 lg:pb-32">
-        <div className="lift">
-          <p className="text-sm font-semibold text-brand-text">
-            {t("hero.eyebrow")}
+      <Container className="flex flex-col items-center pt-14 text-center sm:pt-20 lg:pt-24">
+        <p className="lift inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1 text-sm text-muted-foreground">
+          <span aria-hidden className="size-1.5 rounded-full bg-brand" />
+          {t("hero.eyebrow")}
+        </p>
+        <h1
+          id="hero-title"
+          className="lift mt-6 max-w-4xl text-5xl font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl"
+        >
+          {t("hero.title")}{" "}
+          <span className="text-brand-text">{t("hero.accent")}</span>
+        </h1>
+        <p
+          className="lift mt-6 max-w-2xl text-lg text-pretty text-muted-foreground sm:text-xl"
+          style={wait(80)}
+        >
+          {t("hero.description")}
+        </p>
+        <div
+          className="lift mt-10 flex flex-col items-center"
+          style={wait(160)}
+        >
+          <AudienceCtas className="justify-center" />
+          <p className="mt-4 text-sm text-muted-foreground">
+            {t("hero.reassurance")}
           </p>
-          <h1
-            id="hero-title"
-            className="mt-4 text-5xl font-semibold tracking-tight text-balance sm:text-6xl lg:text-5xl xl:text-6xl"
-          >
-            {t("hero.title")}{" "}
-            <span className="relative inline-block text-brand-text">
-              {t("hero.accent")}
-              <svg
-                aria-hidden
-                viewBox="0 0 200 12"
-                preserveAspectRatio="none"
-                fill="none"
-                className="absolute inset-x-0 -bottom-2 h-3 w-full text-brand"
-              >
-                <path
-                  pathLength={1}
-                  d="M3 9C48 4 120 2 197 6"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  className="ink"
-                />
-              </svg>
-            </span>
-          </h1>
-          <p className="mt-8 max-w-xl text-lg text-pretty text-muted-foreground">
-            {t("hero.description")}
-          </p>
-          <div className="lift" style={wait(120)}>
-            <AudienceCtas className="mt-10" />
-            <p className="mt-4 text-sm text-muted-foreground">
-              {t("hero.reassurance")}
-            </p>
-          </div>
         </div>
+      </Container>
+      <Container className="mt-14 pb-16 sm:mt-20 sm:pb-24">
         <HeroScene />
       </Container>
     </section>

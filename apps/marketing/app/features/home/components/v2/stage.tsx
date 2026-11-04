@@ -1,7 +1,7 @@
 import { cn } from "@workspace/ui/lib/utils"
 import type { ComponentProps, ReactNode } from "react"
 
-/** The tinted backdrop a product scene sits on; `label` describes the scene to screen readers. */
+/** A product scene, announced to screen readers as one image described by `label`. */
 export function Stage({
   label,
   className,
@@ -12,14 +12,7 @@ export function Stage({
   children: ReactNode
 }) {
   return (
-    <div
-      role="img"
-      aria-label={label}
-      className={cn(
-        "relative rounded-3xl border bg-muted/60 p-4 sm:p-8",
-        className
-      )}
-    >
+    <div role="img" aria-label={label} className={cn("relative", className)}>
       <div aria-hidden className="relative">
         {children}
       </div>

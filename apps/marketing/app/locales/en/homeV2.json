@@ -11,31 +11,54 @@
     "reassurance": "10 free credits for employers. Always free for professionals.",
     "photo": "A hiring manager reads a candidate's resume at his desk, with candidate profiles open on his laptop.",
     "scene": {
-      "label": "A LetsHyre shortlist for a Senior React Developer job. Vyshnavi Rao ranks first with an 86 AI match, and her AI interview scored 78 out of 100.",
-      "job": "Senior React Developer",
+      "label": "A LetsHyre shortlist for a Senior frontend engineer job: four candidates ranked by AI match, each with an AI interview score. Vyshnavi Rao ranks first with an 86 match and a 78 interview, and her file is unlocked.",
+      "jobs": "Jobs",
+      "job": "Senior frontend engineer",
       "summary": "24 applied · ranked by evidence",
+      "columns": {
+        "candidate": "Candidate",
+        "match": "AI match",
+        "interview": "Interview",
+        "file": "File"
+      },
       "people": [
         {
           "name": "Vyshnavi Rao",
           "role": "Frontend engineer · 7 yrs",
-          "score": 86
+          "match": 86,
+          "interview": 78,
+          "pool": false,
+          "unlocked": true
         },
         {
           "name": "Arjun Mehta",
           "role": "React developer · 5 yrs",
-          "score": 74
+          "match": 74,
+          "interview": 71,
+          "pool": false,
+          "unlocked": false
         },
         {
           "name": "Meera Shah",
           "role": "UI engineer · 6 yrs",
-          "score": 61
+          "match": 68,
+          "interview": 69,
+          "pool": true,
+          "unlocked": false
+        },
+        {
+          "name": "Kavya Rao",
+          "role": "Frontend developer · 5 yrs",
+          "match": 61,
+          "interview": 64,
+          "pool": true,
+          "unlocked": false
         }
       ],
       "pool": "From pool",
-      "interview": "AI interview",
-      "strong": "Strong interview",
-      "outOf": "/100",
-      "strength": "Explains trade-offs between state libraries clearly"
+      "unlocked": "Unlocked",
+      "credit": "1 credit",
+      "outOf": "/100"
     }
   },
   "facts": {
@@ -89,6 +112,11 @@
       "recording": "Recording of 8 answers",
       "rank": "Ranked 1st of 24"
     }
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "From job post to first call",
+    "accent": "in three steps."
   },
   "shortlist": {
     "eyebrow": "Shortlist",

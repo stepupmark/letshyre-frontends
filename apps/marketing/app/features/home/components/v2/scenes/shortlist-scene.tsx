@@ -51,7 +51,7 @@ export function ShortlistScene() {
             {chips.map((chip, index) => (
               <li
                 key={chip}
-                className="drop-in rounded-md border border-brand/20 bg-brand-muted/60 px-2 py-0.5 text-xs font-medium text-brand-text"
+                className="drop-in rounded-md bg-brand-muted px-2 py-0.5 text-xs font-medium text-brand-text"
                 style={{ "--i": index + 2 } as CSSProperties}
               >
                 {chip}

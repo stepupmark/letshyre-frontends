@@ -18,7 +18,12 @@ export function Photo({
     `/images/home-v2/${name}-720.${type} 720w, /images/home-v2/${name}-1440.${type} 1440w`
 
   return (
-    <picture>
+    <picture
+      className={cn(
+        "block aspect-3/2 overflow-hidden rounded-2xl border bg-muted",
+        className
+      )}
+    >
       <source type="image/avif" srcSet={srcSet("avif")} sizes={sizes} />
       <img
         src={`/images/home-v2/${name}-1440.webp`}
@@ -29,11 +34,7 @@ export function Photo({
         height={960}
         loading={priority ? "eager" : "lazy"}
         fetchPriority={priority ? "high" : "auto"}
-        decoding={priority ? "sync" : "async"}
-        className={cn(
-          "aspect-3/2 h-auto w-full rounded-3xl border bg-muted object-cover",
-          className
-        )}
+        className="size-full object-cover"
       />
     </picture>
   )

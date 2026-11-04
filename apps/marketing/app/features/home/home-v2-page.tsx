@@ -4,6 +4,7 @@ import { Contrast } from "./components/v2/contrast"
 import { Facts } from "./components/v2/facts"
 import { Features } from "./components/v2/features"
 import { Hero } from "./components/v2/hero"
+import { Professionals } from "./components/v2/professionals"
 
 export function HomeV2Page() {
   return (
@@ -12,6 +13,7 @@ export function HomeV2Page() {
       <Facts />
       <Contrast />
       <Features />
+      <Professionals />
       <HomeFaq />
       <FinalCta />
     </>
