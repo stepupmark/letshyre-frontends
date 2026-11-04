@@ -25,8 +25,6 @@ const previewSchema = z.looseObject({
   merge_context: z.record(z.string(), z.string()).catch({}),
 })
 
-export type Preview = z.infer<typeof previewSchema>
-
 export const parsePreview = unwrap(previewSchema)
 
 const sentSchema = z.looseObject({

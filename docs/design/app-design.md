@@ -48,7 +48,11 @@ are in the design lab (`pnpm --filter app dev`, then `http://localhost:5174/_lab
   bars filling as each candidate opens, and the dashboard's figures and balance counting up as they
   first arrive, the candidate dialog's sections settling in as it opens, its profile sliding toward
   the next or previous candidate, and the locked fields' bars clearing as a candidate is unlocked, a result's "Unlocked" badge
-  popping in, and its "Viewed" note fading in once you've opened it.
+  popping in, and its "Viewed" note fading in once you've opened it, a merge field
+  chip popping into the template editor, the field menu dropping in under the caret, the
+  readiness checks crossfading to a tick, the save state turning to "All changes saved", the
+  preview easing between desktop and phone widths, candidates rising into the send list and
+  sliding out when removed, and the sent envelope lifting in as the count rolls up.
 - Reduced motion: values jump, only fades remain (`MotionConfig reducedMotion="user"`).
 - Cost: ~10 kB gzip with the first paint, the `domMax` features (~29 kB) load after it.
 

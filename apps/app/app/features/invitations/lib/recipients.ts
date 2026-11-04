@@ -8,10 +8,10 @@ export const RECIPIENT_LIMIT = 100
 const EMAIL = /^[^\s@<>,;"']+@[^\s@<>,;"']+\.[^\s@<>,;"']{2,}$/
 const ANGLED = /^\s*"?([^"<]*?)"?\s*<([^>]+)>\s*$/
 
-export const isEmail = (value: string) => EMAIL.test(value.trim())
+const isEmail = (value: string) => EMAIL.test(value.trim())
 
 /** "jane.doe-smith@x.com" → "Jane Doe Smith", for rows that came without a name. */
-export const nameFromEmail = (email: string) =>
+const nameFromEmail = (email: string) =>
   (email.split("@")[0] ?? "")
     .split(/[._+-]+/)
     .filter((part) => part && !/^\d+$/.test(part))

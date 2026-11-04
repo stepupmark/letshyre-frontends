@@ -8,6 +8,11 @@ import { duration, ease } from "@/lib/motion"
 
 import type { FieldMenuState } from "../../hooks/use-field-menu"
 
+const ROW = 36
+const GAP = 6
+// matches w-64
+const WIDTH = 256
+
 export function FieldMenu({
   menu,
   labelOf,
@@ -19,6 +24,17 @@ export function FieldMenu({
   const id = useId()
   const rect = menu?.rect
   const rtl = document.documentElement.dir === "rtl"
+  const estimate = Math.max(menu?.items.length ?? 0, 1) * ROW + 8
+  const above = rect ? rect.bottom + GAP + estimate > window.innerHeight : false
+  const start = rect
+    ? Math.max(
+        8,
+        Math.min(
+          rtl ? window.innerWidth - rect.right : rect.left,
+          window.innerWidth - WIDTH - 8
+        )
+      )
+    : 0
 
   return createPortal(
     <AnimatePresence>
@@ -27,14 +43,18 @@ export function FieldMenu({
           role="listbox"
           id={id}
           aria-label={t("toolbar.fields")}
-          initial={{ opacity: 0, y: -4 }}
+          initial={{ opacity: 0, y: above ? 4 : -4 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: duration.fast, ease }}
-          style={{
-            top: rect.bottom + 6,
-            insetInlineStart: rtl ? window.innerWidth - rect.right : rect.left,
-          }}
+          style={
+            above
+              ? {
+                  bottom: window.innerHeight - rect.top + GAP,
+                  insetInlineStart: start,
+                }
+              : { top: rect.bottom + GAP, insetInlineStart: start }
+          }
           className="fixed z-50 flex w-64 flex-col rounded-lg border bg-popover p-1 text-popover-foreground shadow-md"
         >
           {menu.items.length === 0 ? (
