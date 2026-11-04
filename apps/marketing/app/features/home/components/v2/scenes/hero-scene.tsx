@@ -17,13 +17,15 @@ export function HeroScene() {
       style={wait(240)}
     >
       <div className="grid gap-2 sm:gap-3 lg:grid-cols-[minmax(0,5fr)_minmax(0,8fr)]">
-        <Photo
-          name="hiring-manager"
-          alt={t("hero.photo")}
-          sizes="(min-width: 1152px) 420px, 36vw"
-          priority
-          className="aspect-auto max-lg:hidden"
-        />
+        <div className="relative max-lg:hidden">
+          <Photo
+            name="hiring-manager"
+            alt={t("hero.photo")}
+            sizes="(min-width: 1152px) 420px, 36vw"
+            priority
+            className="absolute inset-0 aspect-auto"
+          />
+        </div>
 
         <div
           role="img"
@@ -32,22 +34,24 @@ export function HeroScene() {
         >
           <div
             aria-hidden
-            className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b px-4 py-3 sm:px-5"
+            className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b px-4 py-3.5 sm:px-5"
           >
             <p className="flex items-center gap-1.5 text-sm">
               <span className="text-muted-foreground">
                 {t("hero.scene.jobs")}
               </span>
               <ChevronRightIcon className="size-3.5 text-muted-foreground rtl:-scale-x-100" />
-              <span className="font-semibold">{t("hero.scene.job")}</span>
+              <span className="font-semibold tracking-tight sm:text-base">
+                {t("hero.scene.job")}
+              </span>
             </p>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-muted-foreground tabular-nums">
               {t("hero.scene.summary")}
             </p>
           </div>
 
           <div aria-hidden>
-            <p className="grid grid-cols-[minmax(0,1fr)_3.5rem_4rem] gap-2 border-b bg-muted/40 px-4 py-2 text-xs text-muted-foreground sm:grid-cols-[minmax(0,1fr)_8rem_5rem_6rem] sm:gap-3 sm:px-5">
+            <p className="grid grid-cols-[minmax(0,1fr)_3.5rem_4rem] gap-2 border-b bg-muted/40 px-4 py-2.5 text-xs font-medium text-muted-foreground sm:grid-cols-[minmax(0,1fr)_8rem_5rem_6rem] sm:gap-3 sm:px-5">
               <span>{t("hero.scene.columns.candidate")}</span>
               <span>{t("hero.scene.columns.match")}</span>
               <span>{t("hero.scene.columns.interview")}</span>
@@ -60,25 +64,28 @@ export function HeroScene() {
                 <li
                   key={person.name}
                   className={cn(
-                    "lift grid grid-cols-[minmax(0,1fr)_3.5rem_4rem] items-center gap-2 border-b px-4 py-3 last:border-0 sm:grid-cols-[minmax(0,1fr)_8rem_5rem_6rem] sm:gap-3 sm:px-5",
+                    "lift grid grid-cols-[minmax(0,1fr)_3.5rem_4rem] items-center gap-2 border-b px-4 py-3.5 last:border-0 sm:grid-cols-[minmax(0,1fr)_8rem_5rem_6rem] sm:gap-3 sm:px-5",
                     index === 0 && "bg-brand-muted/30"
                   )}
                   style={wait(360 + index * 90)}
                 >
                   <span className="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                    <span className="w-3 text-xs font-medium text-muted-foreground tabular-nums max-sm:hidden">
+                      {index + 1}
+                    </span>
                     <Avatar name={person.name} className="size-8 text-xs" />
                     <span className="min-w-0">
-                      <span className="flex items-center gap-1.5 text-sm font-medium">
+                      <span className="flex items-center gap-2 text-sm font-semibold tracking-tight">
                         <span className="truncate">{person.name}</span>
                         {person.pool && (
-                          <span className="shrink-0 rounded-full border px-1.5 text-xs font-normal text-muted-foreground max-sm:hidden">
+                          <span className="shrink-0 rounded-md bg-muted px-1.5 py-0.5 text-xs font-medium tracking-normal text-muted-foreground max-sm:hidden lg:max-xl:hidden">
                             {t("hero.scene.pool")}
                           </span>
                         )}
                       </span>
-                      <span className="block truncate text-xs text-muted-foreground">
+                      <span className="mt-0.5 block truncate text-xs text-muted-foreground">
                         {person.role}
-                        <span className="max-sm:hidden">
+                        <span className="max-sm:hidden lg:max-xl:hidden">
                           {t("hero.scene.separator")}
                           {person.years}
                         </span>
@@ -99,7 +106,7 @@ export function HeroScene() {
                       />
                     </span>
                   </span>
-                  <span className="text-sm font-medium tabular-nums">
+                  <span className="text-sm font-semibold tabular-nums">
                     {person.interview}
                     <span className="text-xs font-normal text-muted-foreground">
                       {t("hero.scene.outOf")}

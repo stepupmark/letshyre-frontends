@@ -6,7 +6,7 @@ AVIF (libaom-av1, still picture) and WebP with ffmpeg.
 
 | File               | Used in              | Source                                                                                             | Photographer              |
 | ------------------ | -------------------- | -------------------------------------------------------------------------------------------------- | ------------------------- |
-| `hiring-manager`   | Hero                 | https://www.pexels.com/photo/ethnic-man-reading-document-and-working-on-laptop-7128952/            | Michael Burrows           |
+| `hiring-manager`   | Hero                 | https://www.pexels.com/photo/woman-talking-on-a-video-call-12912109/                               | Mizuno K                  |
 | `video-interview`  | For professionals    | https://www.pexels.com/photo/woman-in-video-call-with-laptop-in-office-34225007/                   | Julio Lopez               |
 | `post-a-job`       | How it works, step 1 | https://www.pexels.com/photo/a-woman-typing-on-her-laptop-8278836/                                 | ANTONI SHKRABA production |
 | `review-interview` | How it works, step 2 | https://www.pexels.com/photo/man-sitting-at-the-desk-in-an-office-and-using-a-computer-6803542/    | cottonbro studio          |
