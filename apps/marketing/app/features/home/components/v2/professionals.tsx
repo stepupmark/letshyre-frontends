@@ -8,7 +8,7 @@ import { PAGES } from "@/lib/pages"
 
 import { Heading } from "./heading"
 import { InterviewScene } from "./scenes/interview-scene"
-import { Points } from "./step"
+import { Points } from "./points"
 
 export function Professionals() {
   const { t } = useTranslation("homeV2")
