@@ -1,7 +1,7 @@
 # Home v2 photos
 
 All photos are from Pexels under the [Pexels licence](https://www.pexels.com/license/): free for
-commercial use, no attribution required. Each is resized to 720 and 1440 px wide (3:2, or cropped to 4:5 for the how-it-works steps) and encoded as
+commercial use, no attribution required. Each is resized to 720 and 1440 px wide (3:2, or cropped to 4:5 for the how-it-works steps and the professionals photo) and encoded as
 AVIF (libaom-av1, still picture) and WebP with ffmpeg.
 
 | File               | Used in              | Source                                                                                             | Photographer              |

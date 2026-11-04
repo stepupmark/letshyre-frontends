@@ -168,7 +168,7 @@
     "eyebrow": "For professionals",
     "title": "Interview once.",
     "accent": "Get found for months.",
-    "body": "Take a role-based AI interview from the LetsHyre desktop app, whenever it suits you. Your scorecard joins the talent pool for 90 days, where employers hiring for your role find you.",
+    "body": "Take a role-based AI interview in the desktop app, whenever it suits you. For 90 days your scorecard sits in the talent pool, where employers hiring for your role find you.",
     "points": [
       "Up to 3 interviews: different roles, or a retake",
       "A skill scorecard after every interview",
@@ -178,8 +178,7 @@
     "download": "Download the app",
     "photo": "A professional in headphones answers an interview question at her laptop.",
     "scene": {
-      "label": "The LetsHyre interview app on question 5 of 8 for a frontend engineer role, with one of three interviews used.",
-      "app": "AI interview · Frontend engineer",
+      "label": "The LetsHyre interview app on question 5 of 8, listening to the answer, with one of three interviews used.",
       "question": "Question 5 of 8",
       "prompt": "Two components far apart in the tree need the same state. How would you share it, and what would you watch out for?",
       "listening": "Listening",

@@ -6,43 +6,50 @@ import { Band } from "@/components/band"
 import { CtaLink, TextLink } from "@/components/cta-links"
 import { PAGES } from "@/lib/pages"
 
-import { Heading } from "./heading"
-import { InterviewScene } from "./scenes/interview-scene"
 import { Points } from "./points"
+import { InterviewScene } from "./scenes/interview-scene"
 
 export function Professionals() {
   const { t } = useTranslation("homeV2")
   const lang = useLocale()
 
   return (
-    <Band id="professionals">
-      <div className="slide-in grid overflow-hidden rounded-3xl border bg-card lg:grid-cols-2">
-        <div className="flex flex-col justify-center p-6 sm:p-12">
-          <Heading
-            id="professionals-title"
-            eyebrow={t("professionals.eyebrow")}
-            title={t("professionals.title")}
-            accent={t("professionals.accent")}
-            description={t("professionals.body")}
-          />
-          <Points
-            items={t("professionals.points", { returnObjects: true })}
-            className="mt-8"
-          />
-          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <CtaLink href={APP_LINKS.candidateRegister}>
-              {t("professionals.cta")}
-            </CtaLink>
-            <TextLink to={localePath(lang, PAGES.download.path)}>
-              {t("professionals.download")}
-            </TextLink>
-          </div>
+    <Band
+      id="professionals"
+      muted
+      className="grid items-center gap-12 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:gap-20"
+    >
+      <div className="slide-in">
+        <p className="text-sm font-medium text-brand-text">
+          {t("professionals.eyebrow")}
+        </p>
+        <h2
+          id="professionals-title"
+          className="mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+        >
+          {t("professionals.title")}{" "}
+          <span className="block text-muted-foreground">
+            {t("professionals.accent")}
+          </span>
+        </h2>
+        <p className="mt-6 max-w-lg text-lg text-pretty text-muted-foreground">
+          {t("professionals.body")}
+        </p>
+        <Points
+          items={t("professionals.points", { returnObjects: true })}
+          className="mt-8 text-base"
+        />
+        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <CtaLink href={APP_LINKS.candidateRegister}>
+            {t("professionals.cta")}
+          </CtaLink>
+          <TextLink to={localePath(lang, PAGES.download.path)}>
+            {t("professionals.download")}
+          </TextLink>
         </div>
-        <div className="flex items-center border-t bg-muted/50 p-6 sm:p-10 lg:border-s lg:border-t-0">
-          <div className="reveal w-full">
-            <InterviewScene />
-          </div>
-        </div>
+      </div>
+      <div className="reveal">
+        <InterviewScene />
       </div>
     </Band>
   )
