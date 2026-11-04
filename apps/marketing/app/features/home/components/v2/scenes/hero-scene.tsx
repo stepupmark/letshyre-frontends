@@ -78,7 +78,7 @@ export function HeroScene() {
                       <span className="flex items-center gap-2 text-sm font-semibold tracking-tight">
                         <span className="truncate">{person.name}</span>
                         {person.pool && (
-                          <span className="shrink-0 rounded-md bg-muted px-1.5 py-0.5 text-xs font-medium tracking-normal text-muted-foreground max-sm:hidden lg:max-xl:hidden">
+                          <span className="shrink-0 rounded-md bg-muted px-1.5 py-0.5 text-xs font-medium tracking-normal text-foreground/80 max-sm:hidden lg:max-xl:hidden">
                             {t("hero.scene.pool")}
                           </span>
                         )}
