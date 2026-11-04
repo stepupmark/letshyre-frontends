@@ -220,6 +220,7 @@
     "listTitle_one": "{{count}} kandidaat",
     "listTitle_other": "{{count}} kandidaten",
     "clear": "Lijst leegmaken",
+    "listEmpty": "Nog geen kandidaten. Plak adressen of upload een CSV; ze verschijnen hier zodat je ze voor verzending kunt controleren.",
     "overLimit": "Verstuur naar maximaal {{max}} kandidaten tegelijk.",
     "nameFor": "Naam voor {{email}}",
     "namePlaceholder": "Naam toevoegen",

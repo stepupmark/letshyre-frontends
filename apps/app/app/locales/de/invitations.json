@@ -220,6 +220,7 @@
     "listTitle_one": "{{count}} Kandidat",
     "listTitle_other": "{{count}} Kandidaten",
     "clear": "Liste leeren",
+    "listEmpty": "Noch keine Kandidaten. Fügen Sie Adressen ein oder laden Sie eine CSV hoch – sie erscheinen hier zur Prüfung vor dem Versand.",
     "overLimit": "Senden Sie an höchstens {{max}} Kandidaten auf einmal.",
     "nameFor": "Name für {{email}}",
     "namePlaceholder": "Namen hinzufügen",

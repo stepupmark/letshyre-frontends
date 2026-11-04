@@ -27,12 +27,15 @@ export function Wizard({
   pending = false,
   onStepChange,
   finishLabel,
+  wide = false,
 }: {
   steps: WizardStep[]
   onFinish: () => void | Promise<void>
   pending?: boolean
   onStepChange?: (id: string) => void
   finishLabel?: string
+  /** content uses the page width; the stepper stays form width */
+  wide?: boolean
 }) {
   const { t } = useTranslation("common")
   const dir = dirFor(useLocale())
@@ -94,12 +97,17 @@ export function Wizard({
   }
 
   return (
-    <div className="flex max-w-xl flex-col gap-6">
-      <Stepper
-        titles={steps.map((s) => s.title)}
-        current={index}
-        onSelect={goTo}
-      />
+    <div
+      data-wide={wide}
+      className="flex max-w-xl flex-col gap-6 data-[wide=true]:max-w-6xl"
+    >
+      <div className="max-w-xl">
+        <Stepper
+          titles={steps.map((s) => s.title)}
+          current={index}
+          onSelect={goTo}
+        />
+      </div>
 
       <StepTransition step={step.id} direction={direction} dir={dir}>
         <div className="flex flex-col gap-6">

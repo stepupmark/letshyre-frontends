@@ -216,6 +216,7 @@
     "reportInvalid_other": "{{count}} baris tidak terbaca dan tetap di kotak",
     "listTitle_other": "{{count}} kandidat",
     "clear": "Kosongkan daftar",
+    "listEmpty": "Belum ada kandidat. Tempel alamat atau unggah CSV, lalu periksa di sini sebelum dikirim.",
     "overLimit": "Kirim ke paling banyak {{max}} kandidat sekaligus.",
     "nameFor": "Nama untuk {{email}}",
     "namePlaceholder": "Tambah nama",

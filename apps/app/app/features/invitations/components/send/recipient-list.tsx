@@ -18,33 +18,42 @@ export function RecipientList({
 }) {
   const { t } = useTranslation("invitations")
   const id = useId()
-  if (recipients.length === 0) return null
   const over = recipients.length > RECIPIENT_LIMIT
 
   return (
-    <section aria-labelledby={id} className="flex flex-col gap-2">
-      <div className="flex items-baseline justify-between gap-3">
+    <section
+      aria-labelledby={id}
+      className="flex min-w-0 flex-col overflow-hidden rounded-lg border lg:sticky lg:top-20"
+    >
+      <div className="flex min-h-11 items-center justify-between gap-3 border-b bg-muted/30 px-4 py-2">
         <h3 id={id} className="text-sm font-medium tabular-nums">
           {t("send.listTitle", { count: recipients.length })}
         </h3>
-        <Button
-          type="button"
-          variant="link"
-          size="sm"
-          className="h-auto px-0 text-muted-foreground"
-          onClick={() => {
-            onChange([])
-          }}
-        >
-          {t("send.clear")}
-        </Button>
+        {recipients.length > 0 && (
+          <Button
+            type="button"
+            variant="link"
+            size="sm"
+            className="h-auto px-0 text-muted-foreground"
+            onClick={() => {
+              onChange([])
+            }}
+          >
+            {t("send.clear")}
+          </Button>
+        )}
       </div>
       {over && (
-        <p role="alert" className="text-sm text-danger">
+        <p role="alert" className="border-b px-4 py-2 text-sm text-danger">
           {t("send.overLimit", { max: RECIPIENT_LIMIT })}
         </p>
       )}
-      <ul className="max-h-96 divide-y overflow-y-auto rounded-lg border">
+      {recipients.length === 0 && (
+        <p className="px-4 py-10 text-center text-sm text-pretty text-muted-foreground">
+          {t("send.listEmpty")}
+        </p>
+      )}
+      <ul className="max-h-112 divide-y overflow-y-auto empty:hidden">
         <AnimatePresence initial={false}>
           {recipients.map((recipient, i) => (
             <m.li
@@ -58,7 +67,7 @@ export function RecipientList({
                 ease,
                 delay: Math.min(i, 8) * 0.02,
               }}
-              className="flex items-center gap-3 px-3 py-2"
+              className="flex items-center gap-3 px-4 py-2"
             >
               <span
                 aria-hidden="true"

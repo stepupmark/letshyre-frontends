@@ -134,6 +134,7 @@ function SendFlow({
     <>
       <PageHeader title={t("send.title")} description={t("send.lead")} />
       <Wizard
+        wide
         pending={send.isPending}
         finishLabel={
           send.isPending
@@ -189,7 +190,18 @@ function SendFlow({
               return Object.values(problems).every((v) => !v)
             },
             content: (
-              <div className="flex flex-col gap-6">
+              <RecipientsStep
+                recipients={plan.recipients}
+                role={plan.role}
+                roles={roles}
+                errors={errors}
+                onRecipients={(recipients) => {
+                  update({ recipients })
+                }}
+                onRole={(role) => {
+                  update({ role })
+                }}
+              >
                 {template && (
                   <ChosenTemplate
                     template={template}
@@ -202,19 +214,7 @@ function SendFlow({
                     }}
                   />
                 )}
-                <RecipientsStep
-                  recipients={plan.recipients}
-                  role={plan.role}
-                  roles={roles}
-                  errors={errors}
-                  onRecipients={(recipients) => {
-                    update({ recipients })
-                  }}
-                  onRole={(role) => {
-                    update({ role })
-                  }}
-                />
-              </div>
+              </RecipientsStep>
             ),
           },
           {
@@ -243,10 +243,10 @@ function ChosenTemplate({
 }) {
   const { t } = useTranslation("invitations")
   return (
-    <div className="flex items-center gap-3 rounded-lg border bg-muted/40 px-4 py-3">
+    <div className="flex items-center gap-3 rounded-lg border px-3 py-2">
       <span
         aria-hidden="true"
-        className="flex size-9 shrink-0 items-center justify-center rounded-md bg-brand-muted text-brand-text"
+        className="flex size-8 shrink-0 items-center justify-center rounded-md bg-brand-muted text-brand-text"
       >
         <Mail className="size-4" />
       </span>

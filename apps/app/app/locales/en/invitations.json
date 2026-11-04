@@ -220,6 +220,7 @@
     "listTitle_one": "{{count}} candidate",
     "listTitle_other": "{{count}} candidates",
     "clear": "Clear list",
+    "listEmpty": "No candidates yet. Paste addresses or upload a CSV, and they'll be listed here to check before sending.",
     "overLimit": "Send to at most {{max}} candidates at a time.",
     "nameFor": "Name for {{email}}",
     "namePlaceholder": "Add a name",

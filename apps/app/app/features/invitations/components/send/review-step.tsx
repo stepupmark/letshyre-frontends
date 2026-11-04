@@ -38,8 +38,8 @@ export function ReviewStep({
   })
 
   return (
-    <div className="flex flex-col gap-5">
-      <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-2 rounded-lg border p-4 text-sm">
+    <div className="grid gap-5 lg:grid-cols-[18rem_minmax(0,1fr)] lg:items-start">
+      <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-2 rounded-lg border p-4 text-sm lg:sticky lg:top-20">
         <dt className="text-muted-foreground">{t("send.summaryTemplate")}</dt>
         <dd className="truncate font-medium">{template.name}</dd>
         <dt className="text-muted-foreground">{t("send.summaryRole")}</dt>

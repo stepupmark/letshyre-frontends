@@ -236,6 +236,7 @@
     "listTitle_zero": "لا مرشحين",
     "listTitle_other": "{{count}} مرشح",
     "clear": "مسح القائمة",
+    "listEmpty": "لا يوجد مرشحون بعد. الصق العناوين أو ارفع ملف CSV وستظهر هنا لمراجعتها قبل الإرسال.",
     "overLimit": "أرسل إلى {{max}} مرشح كحد أقصى في كل مرة.",
     "nameFor": "اسم {{email}}",
     "namePlaceholder": "أضف اسمًا",

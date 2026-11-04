@@ -216,6 +216,7 @@
     "reportInvalid_other": "{{count}}行は読み取れず、入力欄に残っています",
     "listTitle_other": "候補者{{count}}人",
     "clear": "リストを空にする",
+    "listEmpty": "候補者はまだいません。アドレスを貼り付けるかCSVをアップロードすると、送信前に確認できるようここに表示されます。",
     "overLimit": "一度に送れるのは{{max}}人までです。",
     "nameFor": "{{email}} の名前",
     "namePlaceholder": "名前を追加",

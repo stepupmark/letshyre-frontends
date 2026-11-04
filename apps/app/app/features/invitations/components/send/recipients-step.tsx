@@ -8,7 +8,7 @@ import {
 } from "@workspace/ui/components/field"
 import { Textarea } from "@workspace/ui/components/textarea"
 import { FileUp, UserPlus } from "lucide-react"
-import { useId, useRef, useState } from "react"
+import { useId, useRef, useState, type ReactNode } from "react"
 
 import { TextField } from "@/components/text-field"
 
@@ -35,6 +35,7 @@ export function RecipientsStep({
   errors,
   onRecipients,
   onRole,
+  children,
 }: {
   recipients: Recipient[]
   role: string
@@ -42,6 +43,8 @@ export function RecipientsStep({
   errors: { recipients?: string; role?: string }
   onRecipients: (next: Recipient[]) => void
   onRole: (role: string) => void
+  /** shown above the fields, e.g. the chosen template */
+  children?: ReactNode
 }) {
   const { t } = useTranslation("invitations")
   const id = useId()
@@ -58,73 +61,79 @@ export function RecipientsStep({
   }
 
   return (
-    <div className="flex flex-col gap-6">
-      <TextField
-        label={t("send.role")}
-        hint={t("send.roleHint")}
-        value={role}
-        list={`${id}-roles`}
-        autoComplete="off"
-        error={errors.role}
-        onChange={(event) => {
-          onRole(event.target.value)
-        }}
-      />
-      <datalist id={`${id}-roles`}>
-        {roles.map((title) => (
-          <option key={title} value={title} />
-        ))}
-      </datalist>
-
-      <Field data-invalid={Boolean(errors.recipients)}>
-        <FieldLabel htmlFor={`${id}-paste`}>{t("send.paste")}</FieldLabel>
-        <Textarea
-          id={`${id}-paste`}
-          value={text}
-          rows={4}
-          placeholder={t("send.pastePlaceholder")}
-          aria-describedby={`${id}-paste-hint`}
-          className="font-mono text-sm"
+    <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+      <div className="flex min-w-0 flex-col gap-6">
+        {children}
+        <TextField
+          label={t("send.role")}
+          hint={t("send.roleHint")}
+          value={role}
+          list={`${id}-roles`}
+          autoComplete="off"
+          error={errors.role}
           onChange={(event) => {
-            setText(event.target.value)
-          }}
-          onPaste={(event) => {
-            const pasted = event.clipboardData.getData(PLAIN_TEXT)
-            if (!pasted.includes("@")) return
-            event.preventDefault()
-            add(`${text}\n${pasted}`)
-          }}
-          onKeyDown={(event) => {
-            if (event.key !== "Enter" || event.shiftKey || !text.trim()) return
-            event.preventDefault()
-            add(text)
+            onRole(event.target.value)
           }}
         />
-        <FieldDescription id={`${id}-paste-hint`}>
-          {t("send.pasteHint")}
-        </FieldDescription>
-        <div className="flex flex-wrap gap-2">
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            disabled={!text.trim()}
-            onClick={() => {
-              add(text)
-            }}
+        <datalist id={`${id}-roles`}>
+          {roles.map((title) => (
+            <option key={title} value={title} />
+          ))}
+        </datalist>
+
+        <Field data-invalid={Boolean(errors.recipients)}>
+          <FieldLabel htmlFor={`${id}-paste`}>{t("send.paste")}</FieldLabel>
+          <div
+            className="overflow-hidden rounded-lg border border-input transition-colors focus-within:border-ring focus-within:ring-3 focus-within:ring-ring/50 data-[invalid=true]:border-destructive"
+            data-invalid={Boolean(errors.recipients)}
           >
-            <UserPlus />
-            {t("send.add")}
-          </Button>
-          <Button
-            type="button"
-            variant="ghost"
-            size="sm"
-            onClick={() => file.current?.click()}
-          >
-            <FileUp />
-            {t("send.upload")}
-          </Button>
+            <Textarea
+              id={`${id}-paste`}
+              value={text}
+              rows={6}
+              placeholder={t("send.pastePlaceholder")}
+              aria-describedby={`${id}-paste-hint`}
+              className="resize-none rounded-none border-0 font-mono text-sm shadow-none focus-visible:ring-0"
+              onChange={(event) => {
+                setText(event.target.value)
+              }}
+              onPaste={(event) => {
+                const pasted = event.clipboardData.getData(PLAIN_TEXT)
+                if (!pasted.includes("@")) return
+                event.preventDefault()
+                add(`${text}\n${pasted}`)
+              }}
+              onKeyDown={(event) => {
+                if (event.key !== "Enter" || event.shiftKey || !text.trim())
+                  return
+                event.preventDefault()
+                add(text)
+              }}
+            />
+            <div className="flex items-center justify-between gap-2 border-t bg-muted/30 px-2 py-1.5">
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                className="text-muted-foreground"
+                onClick={() => file.current?.click()}
+              >
+                <FileUp />
+                {t("send.upload")}
+              </Button>
+              <Button
+                type="button"
+                size="sm"
+                disabled={!text.trim()}
+                onClick={() => {
+                  add(text)
+                }}
+              >
+                <UserPlus />
+                {t("send.add")}
+              </Button>
+            </div>
+          </div>
           <input
             ref={file}
             type="file"
@@ -147,24 +156,27 @@ export function RecipientsStep({
               void picked.text().then(add)
             }}
           />
-        </div>
-        <p
-          aria-live="polite"
-          className="text-sm text-muted-foreground tabular-nums empty:hidden"
-        >
-          {report &&
-            [
-              t("send.reportAdded", { count: report.added }),
-              report.duplicates > 0 &&
-                t("send.reportDuplicates", { count: report.duplicates }),
-              report.invalid.length > 0 &&
-                t("send.reportInvalid", { count: report.invalid.length }),
-            ]
-              .filter(Boolean)
-              .join(" · ")}
-        </p>
-        <FieldError>{errors.recipients}</FieldError>
-      </Field>
+          <FieldDescription id={`${id}-paste-hint`}>
+            {t("send.pasteHint")}
+          </FieldDescription>
+          <p
+            aria-live="polite"
+            className="text-sm text-muted-foreground tabular-nums empty:hidden"
+          >
+            {report &&
+              [
+                t("send.reportAdded", { count: report.added }),
+                report.duplicates > 0 &&
+                  t("send.reportDuplicates", { count: report.duplicates }),
+                report.invalid.length > 0 &&
+                  t("send.reportInvalid", { count: report.invalid.length }),
+              ]
+                .filter(Boolean)
+                .join(" · ")}
+          </p>
+          <FieldError>{errors.recipients}</FieldError>
+        </Field>
+      </div>
 
       <RecipientList recipients={recipients} onChange={onRecipients} />
     </div>

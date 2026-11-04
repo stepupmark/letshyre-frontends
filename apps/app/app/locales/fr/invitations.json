@@ -224,6 +224,7 @@
     "listTitle_one": "{{count}} candidat",
     "listTitle_other": "{{count}} candidats",
     "clear": "Vider la liste",
+    "listEmpty": "Aucun candidat pour l’instant. Collez des adresses ou importez un CSV : ils s’afficheront ici pour vérification avant l’envoi.",
     "overLimit": "Envoyez à {{max}} candidats maximum à la fois.",
     "nameFor": "Nom pour {{email}}",
     "namePlaceholder": "Ajouter un nom",
