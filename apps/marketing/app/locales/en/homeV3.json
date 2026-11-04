@@ -11,16 +11,14 @@
     "ctaHiring": "I'm hiring",
     "ctaCandidate": "I'm looking for a role",
     "reassurance": "10 free credits for employers. Always free for professionals.",
-    "scroll": "Scroll to see how",
-    "photo": "A hiring lead at a meeting table reads a candidate file on her laptop, with printed resumes beside it.",
-    "claims": [
-      "Expert in React",
-      "10x engineer",
-      "Great team player",
-      "Fast learner",
-      "Results-driven",
-      "Strong communicator"
-    ]
+    "photo": "A young professional in glasses and earphones smiles at her laptop during an online interview.",
+    "file": {
+      "label": "Vyshnavi Rao's candidate file, for illustration: LetsHyre score 82, job match 86%, skill match 79% and an AI interview score of 78 out of 100, marked strong, with the recording attached.",
+      "verified": "Interview verified",
+      "verdict": "Strong interview",
+      "recording": "Interview recording",
+      "duration": "24:10"
+    }
   },
   "proof": {
     "eyebrow": "Why LetsHyre",
