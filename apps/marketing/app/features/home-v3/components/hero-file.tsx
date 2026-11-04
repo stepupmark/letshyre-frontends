@@ -57,20 +57,6 @@ export function HeroFile({
       </m.ul>
       <m.div
         style={{ opacity: reveal, y: rise }}
-        className="grid grid-cols-2 gap-4 border-t pt-4 max-lg:hidden"
-      >
-        <Tags
-          title={t("hero.file.strengths")}
-          items={t("hero.file.strengthItems", { returnObjects: true })}
-          good
-        />
-        <Tags
-          title={t("hero.file.gaps")}
-          items={t("hero.file.gapItems", { returnObjects: true })}
-        />
-      </m.div>
-      <m.div
-        style={{ opacity: reveal, y: rise }}
         className="mt-auto rounded-2xl border bg-background p-4"
       >
         <p className="flex items-center justify-between gap-3 text-sm">
@@ -126,34 +112,5 @@ function Meter({
         />
       </span>
     </li>
-  )
-}
-
-function Tags({
-  title,
-  items,
-  good,
-}: {
-  title: string
-  items: string[]
-  good?: boolean
-}) {
-  return (
-    <div>
-      <p className="text-xs text-muted-foreground">{title}</p>
-      <ul className="mt-2 flex flex-wrap gap-1.5">
-        {items.map((item) => (
-          <li
-            key={item}
-            className={cn(
-              "rounded-md px-2 py-0.5 text-xs font-medium",
-              good ? "bg-success/10 text-success" : "bg-muted"
-            )}
-          >
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
   )
 }

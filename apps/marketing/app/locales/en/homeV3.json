@@ -38,11 +38,7 @@
           "value": 78,
           "suffix": "/100"
         }
-      ],
-      "strengths": "Strengths",
-      "strengthItems": ["State management", "Accessibility"],
-      "gaps": "Worth probing",
-      "gapItems": ["Testing at scale"]
+      ]
     },
     "skip": "Skip the walkthrough"
   },
@@ -69,6 +65,47 @@
         "photo": "Two colleagues review a candidate's interview together on a laptop."
       }
     ]
+  },
+  "interview": {
+    "eyebrow": "Inside her interview",
+    "title": "Read how she thinks, not what she claims.",
+    "body": "Every answer is recorded and scored against the role. Here is one question from Vyshnavi's frontend interview.",
+    "sample": "Sample interview, for illustration",
+    "session": "AI interview · Senior frontend engineer",
+    "progress": "Question 5 of 8",
+    "duration": "24:10",
+    "photo": "Vyshnavi Rao",
+    "asked": "Interviewer",
+    "answered": "Vyshnavi",
+    "question": "Two components far apart in the tree need the same state. How would you share it, and what would you watch out for?",
+    "answer": [
+      "I'd lift it to their nearest common parent first, and only reach for context if passing it down gets noisy.",
+      "If it changes often, I'd keep it in a small store, so only the components that read it re-render.",
+      "What I'd watch is stale values in effects, and that the state has exactly one owner."
+    ],
+    "scorecard": "Scorecard",
+    "overall": "Interview score",
+    "score": "78",
+    "outOf": "/100",
+    "verdict": "Strong interview",
+    "skills": [
+      {
+        "label": "State management",
+        "value": 84
+      },
+      {
+        "label": "Reasoning about trade-offs",
+        "value": 76
+      },
+      {
+        "label": "Communication",
+        "value": 79
+      }
+    ],
+    "strengths": "Strengths",
+    "strengthItems": ["State management", "Accessibility"],
+    "gaps": "Worth probing",
+    "gapItems": ["Testing at scale"]
   },
   "journey": {
     "eyebrow": "How it works",
