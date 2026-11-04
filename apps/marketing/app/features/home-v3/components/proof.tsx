@@ -20,7 +20,7 @@ export function Proof() {
   const titleId = useId()
 
   return (
-    <ScrollScene screens={2.4} aria-labelledby={titleId}>
+    <ScrollScene screens={2.4} pinFrom="lg" aria-labelledby={titleId}>
       <ProofStage titleId={titleId} />
     </ScrollScene>
   )
@@ -39,23 +39,13 @@ function ProofStage({ titleId }: { titleId: string }) {
   if (still) return <StillProof titleId={titleId} />
 
   return (
-    <div className="relative grid h-full place-items-center">
-      {stages.map((stage, i) => (
-        <Backdrop
-          key={stage.label}
-          index={i}
-          total={stages.length}
-          name={PHOTOS[i]}
-          alt={stage.photo}
-        />
-      ))}
-      <div aria-hidden className="absolute inset-0 bg-background/80" />
-      <Container className="relative pt-16 text-center">
+    <Container className="grid h-full grid-cols-2 items-center gap-16 pt-16">
+      <div>
         <p className="text-sm font-semibold text-brand-text">
           {t("proof.eyebrow")}
         </p>
         <ProofTitle id={titleId} />
-        <div className="mx-auto mt-10 grid max-w-xl">
+        <div className="mt-10 grid max-w-md">
           {stages.map((stage, i) => (
             <Caption
               key={stage.label}
@@ -67,8 +57,19 @@ function ProofStage({ titleId }: { titleId: string }) {
           ))}
         </div>
         <Ticks total={stages.length} />
-      </Container>
-    </div>
+      </div>
+      <div className="relative aspect-4/5 w-full max-w-md justify-self-end overflow-hidden rounded-3xl border bg-muted">
+        {stages.map((stage, i) => (
+          <Backdrop
+            key={stage.label}
+            index={i}
+            total={stages.length}
+            name={PHOTOS[i]}
+            alt={stage.photo}
+          />
+        ))}
+      </div>
+    </Container>
   )
 }
 
@@ -82,7 +83,7 @@ function ProofTitle({ id }: { id: string }) {
   return (
     <h2
       id={id}
-      className="mx-auto mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-balance sm:text-6xl"
+      className="mt-5 text-5xl font-semibold tracking-tight text-balance xl:text-6xl"
     >
       {t("proof.title")}{" "}
       <span className="relative inline-block">
@@ -127,7 +128,7 @@ function Backdrop({
 
   return (
     <m.div style={{ opacity, scale }} className="absolute inset-0">
-      <Photo name={name} alt={alt} sizes="100vw" className="size-full" />
+      <Photo name={name} alt={alt} sizes="28rem" className="size-full" />
     </m.div>
   )
 }
@@ -164,7 +165,7 @@ function Ticks({ total }: { total: number }) {
   const { progress } = useScene()
 
   return (
-    <div aria-hidden className="mx-auto mt-10 flex w-40 gap-2">
+    <div aria-hidden className="mt-10 flex w-40 gap-2">
       {Array.from({ length: total }, (_, i) => (
         <Tick key={i} index={i} total={total} progress={progress} />
       ))}
