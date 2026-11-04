@@ -36,9 +36,9 @@ export const updateTemplate = async (id: string, changes: TemplateChanges) =>
 export const deleteTemplate = async (id: string) =>
   acknowledge(await api.delete(`${BASE}${id}/`))
 
-// the preview is a POST to the template itself, with the sample values as the body
+// browsers can't send a GET body, so the sample values go in the query string
 export const previewTemplate = async (id: string, context: PreviewContext) =>
-  parsePreview(await api.post(`${BASE}${id}/`, context))
+  parsePreview(await api.get(`${BASE}${id}/`, { query: { ...context } }))
 
 export const sendInvitations = async (
   id: string,

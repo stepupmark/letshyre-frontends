@@ -43,13 +43,13 @@ test("an employer copies a starter, rewords it and invites two candidates", asyn
     },
     ...Object.fromEntries(
       list.data.results.map((t) => [
-        `POST ${BASE}/${String(t.id)}/`,
+        `GET ${BASE}/${String(t.id)}/`,
         fixture(
           `commonapp.v1.employer.email_templates.${String(t.id)}.preview.json`
         ),
       ])
     ),
-    [`POST ${BASE}/${COPY}/`]: fixture(
+    [`GET ${BASE}/${COPY}/`]: fixture(
       `commonapp.v1.employer.email_templates.${STANDARD}.preview.json`
     ),
     [`PATCH ${BASE}/${COPY}/`]: async (route) => {
