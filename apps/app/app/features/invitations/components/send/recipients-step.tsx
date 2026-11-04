@@ -61,13 +61,14 @@ export function RecipientsStep({
   }
 
   return (
-    <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+    <div className="grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-start">
       <div className="flex min-w-0 flex-col gap-6">
         {children}
         <TextField
           label={t("send.role")}
           hint={t("send.roleHint")}
           value={role}
+          placeholder={roles[0] ?? t("preview.sampleRole")}
           list={`${id}-roles`}
           autoComplete="off"
           error={errors.role}

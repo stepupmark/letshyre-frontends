@@ -26,8 +26,13 @@ export function RecipientList({
       className="flex min-w-0 flex-col overflow-hidden rounded-lg border lg:sticky lg:top-20"
     >
       <div className="flex min-h-11 items-center justify-between gap-3 border-b bg-muted/30 px-4 py-2">
-        <h3 id={id} className="text-sm font-medium tabular-nums">
-          {t("send.listTitle", { count: recipients.length })}
+        <h3 id={id} className="flex items-center gap-2 text-sm font-medium">
+          {t("send.steps.candidates")}
+          {recipients.length > 0 && (
+            <span className="rounded-full bg-brand-muted px-2 text-xs text-brand-text tabular-nums">
+              {recipients.length}
+            </span>
+          )}
         </h3>
         {recipients.length > 0 && (
           <Button
@@ -49,7 +54,7 @@ export function RecipientList({
         </p>
       )}
       {recipients.length === 0 && (
-        <p className="px-4 py-10 text-center text-sm text-pretty text-muted-foreground">
+        <p className="px-4 py-6 text-sm text-pretty text-muted-foreground">
           {t("send.listEmpty")}
         </p>
       )}
