@@ -4,14 +4,21 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@workspace/ui/components/dropdown-menu"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@workspace/ui/components/tabs"
 import { useQuery } from "@tanstack/react-query"
-import { Copy, Ellipsis, Eye, PenLine, Send, Trash2 } from "lucide-react"
+import { Copy, Ellipsis, Send, Trash2 } from "lucide-react"
 import { AnimatePresence } from "motion/react"
 import * as m from "motion/react-m"
 import { useId, useState, type ReactNode } from "react"
-import { href } from "react-router"
+import { href, useSearchParams } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { ConfirmDialog } from "@/components/confirm-dialog"
@@ -30,6 +37,10 @@ import { CopyDialog } from "./copy-dialog"
 import { LibrarySkeleton } from "./library-skeleton"
 import { TemplateCard } from "./template-card"
 
+const TAB = "tab"
+const YOURS = "yours"
+const LETSHYRE = "letshyre"
+
 export function TemplateLibrary() {
   const { t } = useTranslation("invitations")
   const templates = useQuery(templatesQuery())
@@ -43,7 +54,7 @@ export function TemplateLibrary() {
   })
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-6">
       <PageHeader
         title={t("title")}
         description={t("lead")}
@@ -52,7 +63,7 @@ export function TemplateLibrary() {
             to={href("/employer/invitations/send")}
             className={buttonLink()}
           >
-            <Send />
+            <Send className="rtl:-scale-x-100" />
             {t("library.send")}
           </AppLink>
         }
@@ -63,100 +74,32 @@ export function TemplateLibrary() {
         skeleton={<LibrarySkeleton />}
         error={{ title: t("library.errorTitle"), body: t("library.errorBody") }}
       >
-        {(list) => {
-          const owned = list.filter((template) => !template.is_system)
-          const starters = list.filter((template) => template.is_system)
-          const copyAction = (template: Template) => (
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => {
-                setCopying(template)
-              }}
-            >
-              <Copy />
-              {t("library.copy")}
-            </Button>
-          )
-          return (
-            <>
-              <Section title={t("library.ownedTitle")} count={owned.length}>
-                {owned.length === 0 ? (
-                  <EmptyState
-                    art={<EnvelopeArt />}
-                    title={t("library.emptyTitle")}
-                    description={t("library.emptyBody")}
-                    action={
-                      starters[0] && (
-                        <Button
-                          onClick={() => {
-                            if (starters[0]) setCopying(starters[0])
-                          }}
-                        >
-                          <Copy />
-                          {t("library.emptyAction")}
-                        </Button>
-                      )
-                    }
-                  />
-                ) : (
-                  <CardGrid>
-                    {owned.map((template) => (
-                      <CardItem key={template.id}>
-                        <TemplateCard
-                          template={template}
-                          menu={
-                            <OwnedMenu
-                              name={template.name}
-                              onDelete={() => {
-                                setDeleting(template)
-                              }}
-                            />
-                          }
-                        >
-                          {copyAction(template)}
-                          <OpenLink template={template} />
-                        </TemplateCard>
-                      </CardItem>
-                    ))}
-                  </CardGrid>
-                )}
-              </Section>
-
-              {starters.length > 0 && (
-                <Section
-                  title={t("library.startersTitle")}
-                  lead={t("library.startersLead")}
-                  count={starters.length}
-                >
-                  <CardGrid>
-                    {starters.map((template) => (
-                      <CardItem key={template.id}>
-                        <TemplateCard template={template}>
-                          {copyAction(template)}
-                          <OpenLink template={template} />
-                        </TemplateCard>
-                      </CardItem>
-                    ))}
-                  </CardGrid>
-                </Section>
-              )}
-
-              {copying && (
-                <CopyDialog
-                  source={copying}
-                  taken={list.map((template) => template.name)}
-                  onClose={() => {
-                    setCopying(null)
-                  }}
-                  onCopied={(copy) => {
-                    go(editorPath(copy.id))
-                  }}
-                />
-              )}
-            </>
-          )
-        }}
+        {(list) => (
+          <>
+            <LibraryTabs
+              owned={list.filter((template) => !template.is_system)}
+              starters={list.filter((template) => template.is_system)}
+              onCopy={setCopying}
+              onDelete={setDeleting}
+            />
+            {copying && (
+              <CopyDialog
+                source={copying}
+                taken={list.map((template) => template.name)}
+                onClose={() => {
+                  setCopying(null)
+                }}
+                onCopied={(copy) => {
+                  go(
+                    href("/employer/invitations/templates/:templateId", {
+                      templateId: copy.id,
+                    })
+                  )
+                }}
+              />
+            )}
+          </>
+        )}
       </QueryState>
 
       <ConfirmDialog
@@ -177,70 +120,180 @@ export function TemplateLibrary() {
   )
 }
 
-const editorPath = (templateId: string) =>
-  href("/employer/invitations/templates/:templateId", { templateId })
-
-function OpenLink({ template }: { template: Template }) {
+function LibraryTabs({
+  owned,
+  starters,
+  onCopy,
+  onDelete,
+}: {
+  owned: Template[]
+  starters: Template[]
+  onCopy: (template: Template) => void
+  onDelete: (template: Template) => void
+}) {
   const { t } = useTranslation("invitations")
+  const [params, setParams] = useSearchParams()
+  const indicator = useId()
+  const asked = params.get(TAB)
+  const tab =
+    asked === YOURS || asked === LETSHYRE
+      ? asked
+      : owned.length > 0
+        ? YOURS
+        : LETSHYRE
+  const open = (next: string) => {
+    setParams(
+      (prev) => {
+        const search = new URLSearchParams(prev)
+        search.set(TAB, next)
+        return search
+      },
+      { replace: true, preventScrollReset: true }
+    )
+  }
+  const tabs = [
+    { value: YOURS, label: t("library.tabs.yours"), count: owned.length },
+    {
+      value: LETSHYRE,
+      label: t("library.tabs.letshyre"),
+      count: starters.length,
+    },
+  ]
+
   return (
-    <>
-      <AppLink
-        to={editorPath(template.id)}
-        className={buttonLink({ variant: "outline", size: "sm" })}
+    <Tabs
+      value={tab}
+      onValueChange={(next) => {
+        open(String(next))
+      }}
+      className="gap-6"
+    >
+      <TabsList
+        variant="line"
+        aria-label={t("library.tabs.label")}
+        className="h-auto w-full justify-start gap-6 rounded-none border-b p-0"
       >
-        {template.is_system ? <Eye /> : <PenLine />}
-        {template.is_system ? t("library.view") : t("library.edit")}
-      </AppLink>
-      <AppLink
-        to={`${href("/employer/invitations/send")}?template=${template.id}`}
-        className={buttonLink({ size: "sm" })}
-      >
-        {t("library.use")}
-      </AppLink>
-    </>
+        {tabs.map((item) => (
+          <TabsTrigger
+            key={item.value}
+            value={item.value}
+            className="h-auto flex-none gap-2 px-0 pt-1 pb-3 text-sm after:hidden data-active:text-brand-text"
+          >
+            {item.label}
+            <span className="rounded-full bg-muted px-2 text-xs text-muted-foreground tabular-nums">
+              {item.count}
+            </span>
+            {item.value === tab && (
+              <m.span
+                layoutId={indicator}
+                aria-hidden="true"
+                transition={{ duration: duration.base, ease }}
+                className="absolute inset-x-0 -bottom-px h-0.5 rounded-full bg-brand"
+              />
+            )}
+          </TabsTrigger>
+        ))}
+      </TabsList>
+
+      <TabsContent value={YOURS}>
+        <Panel>
+          {owned.length === 0 ? (
+            <EmptyState
+              art={<EnvelopeArt />}
+              title={t("library.emptyTitle")}
+              description={t("library.emptyBody")}
+              action={
+                <Button
+                  onClick={() => {
+                    open(LETSHYRE)
+                  }}
+                >
+                  {t("library.emptyAction")}
+                </Button>
+              }
+            />
+          ) : (
+            <CardGrid>
+              {owned.map((template) => (
+                <CardItem key={template.id}>
+                  <TemplateCard
+                    template={template}
+                    menu={
+                      <CardMenu name={template.name}>
+                        <DropdownMenuItem
+                          onClick={() => {
+                            onCopy(template)
+                          }}
+                        >
+                          <Copy />
+                          {t("library.copy")}
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem
+                          variant="destructive"
+                          onClick={() => {
+                            onDelete(template)
+                          }}
+                        >
+                          <Trash2 />
+                          {t("library.delete")}
+                        </DropdownMenuItem>
+                      </CardMenu>
+                    }
+                  />
+                </CardItem>
+              ))}
+            </CardGrid>
+          )}
+        </Panel>
+      </TabsContent>
+
+      <TabsContent value={LETSHYRE}>
+        <Panel>
+          <p className="mb-4 text-sm text-pretty text-muted-foreground">
+            {t("library.startersLead")}
+          </p>
+          <CardGrid>
+            {starters.map((template) => (
+              <CardItem key={template.id}>
+                <TemplateCard
+                  template={template}
+                  secondary={
+                    <Button
+                      variant="outline"
+                      onClick={() => {
+                        onCopy(template)
+                      }}
+                    >
+                      <Copy />
+                      {t("library.copy")}
+                    </Button>
+                  }
+                />
+              </CardItem>
+            ))}
+          </CardGrid>
+        </Panel>
+      </TabsContent>
+    </Tabs>
   )
 }
 
-function Section({
-  title,
-  lead,
-  count,
-  children,
-}: {
-  title: string
-  lead?: string
-  count: number
-  children: ReactNode
-}) {
-  const id = useId()
+function Panel({ children }: { children: ReactNode }) {
   return (
-    <section aria-labelledby={id} className="flex flex-col gap-4">
-      <div>
-        <h2
-          id={id}
-          className="flex items-baseline gap-2 text-base font-semibold"
-        >
-          {title}
-          {count > 0 && (
-            <span className="text-sm font-normal text-muted-foreground tabular-nums">
-              {count}
-            </span>
-          )}
-        </h2>
-        {lead && (
-          <p className="mt-0.5 text-sm text-pretty text-muted-foreground">
-            {lead}
-          </p>
-        )}
-      </div>
+    <m.div
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: duration.base, ease }}
+    >
       {children}
-    </section>
+    </m.div>
   )
 }
 
 function CardGrid({ children }: { children: ReactNode }) {
   return (
-    <ul className="grid gap-4 md:grid-cols-2">
+    <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
       <AnimatePresence initial={false}>{children}</AnimatePresence>
     </ul>
   )
@@ -260,7 +313,7 @@ function CardItem({ children }: { children: ReactNode }) {
   )
 }
 
-function OwnedMenu({ name, onDelete }: { name: string; onDelete: () => void }) {
+function CardMenu({ name, children }: { name: string; children: ReactNode }) {
   const { t } = useTranslation("invitations")
   return (
     <DropdownMenu>
@@ -269,19 +322,14 @@ function OwnedMenu({ name, onDelete }: { name: string; onDelete: () => void }) {
           <Button
             variant="ghost"
             size="icon-sm"
-            className="-me-2 -mt-1 max-md:size-11"
+            className="-me-2 -mt-1 text-muted-foreground max-md:size-10"
             aria-label={t("library.actions", { name })}
           />
         }
       >
         <Ellipsis />
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem variant="destructive" onClick={onDelete}>
-          <Trash2 />
-          {t("library.delete")}
-        </DropdownMenuItem>
-      </DropdownMenuContent>
+      <DropdownMenuContent align="end">{children}</DropdownMenuContent>
     </DropdownMenu>
   )
 }

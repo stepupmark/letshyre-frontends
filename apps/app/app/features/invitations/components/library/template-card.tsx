@@ -1,64 +1,85 @@
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { Mail } from "lucide-react"
+import { PenLine, Send } from "lucide-react"
 import type { ReactNode } from "react"
+import { href } from "react-router"
 
+import { AppLink } from "@/components/app-link"
 import { StatusBadge } from "@/components/status-badge"
-import { relativeTime } from "@/lib/relative-time"
+import { buttonLink } from "@/lib/button-link"
 
-import { excerptOf } from "../../lib/plain-text"
 import type { Template } from "../../schemas/template.schema"
 import { TokenText } from "../shared/field-token"
+import { TemplateThumbnail } from "./template-thumbnail"
+
+const editorPath = (templateId: string) =>
+  href("/employer/invitations/templates/:templateId", { templateId })
 
 export function TemplateCard({
   template,
   menu,
-  children,
+  secondary,
 }: {
   template: Template
   menu?: ReactNode
-  children: ReactNode
+  /** replaces Edit, e.g. Make a copy on a LetsHyre template */
+  secondary?: ReactNode
 }) {
   const { t } = useTranslation("invitations")
   const locale = useLocale()
+  const inactive = template.is_active === false
+  const edited = template.updated_at
+    ? new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
+        new Date(template.updated_at)
+      )
+    : null
+
   return (
     <article className="group flex h-full flex-col rounded-lg border bg-card transition-colors hover:border-foreground/20">
-      <div className="flex flex-1 flex-col gap-3 p-5">
-        <div className="flex items-start gap-3">
-          <span
-            aria-hidden="true"
-            className="flex size-9 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 motion-reduce:transition-none"
-          >
-            <Mail className="size-4" />
-          </span>
-          <div className="flex min-w-0 flex-1 flex-col gap-0.5">
-            <h3 className="truncate font-medium">{template.name}</h3>
-            <p className="text-xs text-muted-foreground">
-              {template.is_system
-                ? t("library.byLetshyre")
-                : template.updated_at
-                  ? t("library.edited", {
-                      when: relativeTime(template.updated_at, locale),
-                    })
-                  : t("library.yours")}
-            </p>
-          </div>
-          {template.is_system && (
-            <StatusBadge tone="neutral">{t("library.starter")}</StatusBadge>
-          )}
+      <AppLink to={editorPath(template.id)} tabIndex={-1} aria-hidden="true">
+        <TemplateThumbnail template={template} />
+      </AppLink>
+      <div className="flex flex-1 flex-col gap-2 p-4">
+        <div className="flex items-start gap-2">
+          <h3 className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-1">
+            <AppLink
+              to={editorPath(template.id)}
+              className="truncate rounded-sm font-medium outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
+            >
+              {template.name}
+            </AppLink>
+            {inactive && (
+              <StatusBadge tone="neutral">{t("library.inactive")}</StatusBadge>
+            )}
+          </h3>
           {menu}
         </div>
-        <div className="flex flex-col gap-1.5">
-          <p className="text-sm text-pretty">
-            <span className="sr-only">{t("library.subject")} </span>
-            <TokenText text={template.subject_template} />
-          </p>
-          <p className="line-clamp-2 text-sm text-pretty text-muted-foreground">
-            <TokenText text={excerptOf(template.body_html_template)} />
-          </p>
-        </div>
+        <p className="line-clamp-2 text-sm text-pretty text-muted-foreground">
+          <span className="sr-only">{t("library.subject")} </span>
+          <TokenText text={template.subject_template} />
+        </p>
+        <p className="mt-auto pt-1 text-xs text-muted-foreground">
+          {template.is_system
+            ? t("library.byLetshyre")
+            : edited && t("library.editedOn", { date: edited })}
+        </p>
       </div>
-      <div className="flex flex-wrap items-center justify-end gap-2 border-t px-5 py-3">
-        {children}
+      <div className="grid grid-cols-2 gap-2 px-4 pb-4">
+        {secondary ?? (
+          <AppLink
+            to={editorPath(template.id)}
+            className={buttonLink({ variant: "outline" })}
+          >
+            <PenLine />
+            {t("library.edit")}
+          </AppLink>
+        )}
+        <AppLink
+          to={`${href("/employer/invitations/send")}?template=${template.id}`}
+          className={buttonLink()}
+        >
+          <Send className="rtl:-scale-x-100" />
+          {t("library.sendOne")}
+        </AppLink>
       </div>
     </article>
   )

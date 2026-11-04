@@ -9,26 +9,28 @@
     "invite_link": "Enlace de invitación"
   },
   "library": {
-    "ownedTitle": "Tus plantillas",
-    "startersTitle": "Plantillas iniciales",
     "startersLead": "Escritas por LetsHyre. Haz una copia para cambiar el texto.",
     "starter": "Inicial",
     "byLetshyre": "De LetsHyre",
-    "yours": "Tu plantilla",
-    "edited": "Editada {{when}}",
     "subject": "Asunto:",
     "copy": "Hacer una copia",
     "edit": "Editar",
-    "view": "Ver",
-    "use": "Usar",
     "send": "Enviar invitaciones",
     "delete": "Eliminar",
     "actions": "Acciones para {{name}}",
     "emptyTitle": "Aún no tienes plantillas propias",
     "emptyBody": "Copia una plantilla inicial y ajusta el texto y la despedida al estilo de tu equipo.",
-    "emptyAction": "Copiar la primera plantilla",
     "errorTitle": "Tus plantillas no se cargaron.",
-    "errorBody": "No se ha enviado ni cambiado nada. Revisa tu conexión e inténtalo de nuevo."
+    "errorBody": "No se ha enviado ni cambiado nada. Revisa tu conexión e inténtalo de nuevo.",
+    "tabs": {
+      "label": "Grupos de plantillas",
+      "yours": "Tus plantillas",
+      "letshyre": "Plantillas de LetsHyre"
+    },
+    "inactive": "Inactiva",
+    "editedOn": "Editada el {{date}}",
+    "sendOne": "Enviar",
+    "emptyAction": "Ver plantillas de LetsHyre"
   },
   "copy": {
     "title": "Hacer una copia",

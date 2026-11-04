@@ -9,26 +9,28 @@
     "invite_link": "Einladungslink"
   },
   "library": {
-    "ownedTitle": "Ihre Vorlagen",
-    "startersTitle": "Startvorlagen",
     "startersLead": "Von LetsHyre verfasst. Erstellen Sie eine Kopie, um den Text zu ändern.",
     "starter": "Start",
     "byLetshyre": "Von LetsHyre",
-    "yours": "Ihre Vorlage",
-    "edited": "Bearbeitet {{when}}",
     "subject": "Betreff:",
     "copy": "Kopie erstellen",
     "edit": "Bearbeiten",
-    "view": "Ansehen",
-    "use": "Verwenden",
     "send": "Einladungen senden",
     "delete": "Löschen",
     "actions": "Aktionen für {{name}}",
     "emptyTitle": "Noch keine eigenen Vorlagen",
     "emptyBody": "Kopieren Sie eine Startvorlage und passen Sie Text und Grußformel an Ihr Team an.",
-    "emptyAction": "Erste Startvorlage kopieren",
     "errorTitle": "Ihre Vorlagen wurden nicht geladen.",
-    "errorBody": "Es wurde nichts gesendet oder geändert. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut."
+    "errorBody": "Es wurde nichts gesendet oder geändert. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "tabs": {
+      "label": "Vorlagengruppen",
+      "yours": "Ihre Vorlagen",
+      "letshyre": "LetsHyre-Vorlagen"
+    },
+    "inactive": "Inaktiv",
+    "editedOn": "Bearbeitet am {{date}}",
+    "sendOne": "Senden",
+    "emptyAction": "LetsHyre-Vorlagen ansehen"
   },
   "copy": {
     "title": "Kopie erstellen",

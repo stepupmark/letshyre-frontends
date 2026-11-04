@@ -9,26 +9,28 @@
     "invite_link": "Uitnodigingslink"
   },
   "library": {
-    "ownedTitle": "Je sjablonen",
-    "startersTitle": "Startsjablonen",
     "startersLead": "Geschreven door LetsHyre. Maak een kopie om de tekst te wijzigen.",
     "starter": "Start",
     "byLetshyre": "Van LetsHyre",
-    "yours": "Je sjabloon",
-    "edited": "Bewerkt {{when}}",
     "subject": "Onderwerp:",
     "copy": "Kopie maken",
     "edit": "Bewerken",
-    "view": "Bekijken",
-    "use": "Gebruiken",
     "send": "Uitnodigingen versturen",
     "delete": "Verwijderen",
     "actions": "Acties voor {{name}}",
     "emptyTitle": "Nog geen eigen sjablonen",
     "emptyBody": "Kopieer een startsjabloon en pas de tekst en afsluiting aan je team aan.",
-    "emptyAction": "Eerste startsjabloon kopiëren",
     "errorTitle": "Je sjablonen zijn niet geladen.",
-    "errorBody": "Er is niets verzonden of gewijzigd. Controleer je verbinding en probeer het opnieuw."
+    "errorBody": "Er is niets verzonden of gewijzigd. Controleer je verbinding en probeer het opnieuw.",
+    "tabs": {
+      "label": "Sjabloongroepen",
+      "yours": "Je sjablonen",
+      "letshyre": "LetsHyre-sjablonen"
+    },
+    "inactive": "Inactief",
+    "editedOn": "Bewerkt op {{date}}",
+    "sendOne": "Versturen",
+    "emptyAction": "LetsHyre-sjablonen bekijken"
   },
   "copy": {
     "title": "Kopie maken",

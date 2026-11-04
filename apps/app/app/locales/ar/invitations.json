@@ -9,26 +9,28 @@
     "invite_link": "رابط الدعوة"
   },
   "library": {
-    "ownedTitle": "قوالبك",
-    "startersTitle": "قوالب جاهزة",
     "startersLead": "كتبتها LetsHyre. أنشئ نسخة لتغيير الصياغة.",
     "starter": "جاهز",
     "byLetshyre": "من LetsHyre",
-    "yours": "قالبك",
-    "edited": "عُدّل {{when}}",
     "subject": "الموضوع:",
     "copy": "إنشاء نسخة",
     "edit": "تعديل",
-    "view": "عرض",
-    "use": "استخدام",
     "send": "إرسال الدعوات",
     "delete": "حذف",
     "actions": "إجراءات لـ {{name}}",
     "emptyTitle": "لا توجد قوالب خاصة بك بعد",
     "emptyBody": "انسخ قالبًا جاهزًا، ثم عدّل الصياغة والتوقيع لتناسب فريقك.",
-    "emptyAction": "نسخ أول قالب جاهز",
     "errorTitle": "لم يتم تحميل قوالبك.",
-    "errorBody": "لم يُرسَل أو يتغير شيء. تحقق من اتصالك وحاول مرة أخرى."
+    "errorBody": "لم يُرسَل أو يتغير شيء. تحقق من اتصالك وحاول مرة أخرى.",
+    "tabs": {
+      "label": "مجموعات القوالب",
+      "yours": "قوالبك",
+      "letshyre": "قوالب LetsHyre"
+    },
+    "inactive": "غير نشط",
+    "editedOn": "عُدّل في {{date}}",
+    "sendOne": "إرسال",
+    "emptyAction": "تصفح قوالب LetsHyre"
   },
   "copy": {
     "title": "إنشاء نسخة",

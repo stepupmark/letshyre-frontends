@@ -9,26 +9,28 @@
     "invite_link": "Link di invito"
   },
   "library": {
-    "ownedTitle": "I tuoi modelli",
-    "startersTitle": "Modelli di partenza",
     "startersLead": "Scritti da LetsHyre. Creane una copia per cambiare il testo.",
     "starter": "Base",
     "byLetshyre": "Di LetsHyre",
-    "yours": "Il tuo modello",
-    "edited": "Modificato {{when}}",
     "subject": "Oggetto:",
     "copy": "Crea una copia",
     "edit": "Modifica",
-    "view": "Visualizza",
-    "use": "Usa",
     "send": "Invia inviti",
     "delete": "Elimina",
     "actions": "Azioni per {{name}}",
     "emptyTitle": "Ancora nessun modello tuo",
     "emptyBody": "Copia un modello di partenza, poi adatta testo e firma al tuo team.",
-    "emptyAction": "Copia il primo modello",
     "errorTitle": "I tuoi modelli non sono stati caricati.",
-    "errorBody": "Nulla è stato inviato o modificato. Controlla la connessione e riprova."
+    "errorBody": "Nulla è stato inviato o modificato. Controlla la connessione e riprova.",
+    "tabs": {
+      "label": "Gruppi di modelli",
+      "yours": "I tuoi modelli",
+      "letshyre": "Modelli LetsHyre"
+    },
+    "inactive": "Inattivo",
+    "editedOn": "Modificato il {{date}}",
+    "sendOne": "Invia",
+    "emptyAction": "Sfoglia i modelli LetsHyre"
   },
   "copy": {
     "title": "Crea una copia",

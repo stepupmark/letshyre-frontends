@@ -9,26 +9,28 @@
     "invite_link": "Invite link"
   },
   "library": {
-    "ownedTitle": "Your templates",
-    "startersTitle": "Starter templates",
     "startersLead": "Written by LetsHyre. Make a copy to change the wording.",
     "starter": "Starter",
     "byLetshyre": "By LetsHyre",
-    "yours": "Your template",
-    "edited": "Edited {{when}}",
     "subject": "Subject:",
     "copy": "Make a copy",
     "edit": "Edit",
-    "view": "View",
-    "use": "Use",
     "send": "Send invitations",
     "delete": "Delete",
     "actions": "Actions for {{name}}",
     "emptyTitle": "No templates of your own yet",
     "emptyBody": "Copy a starter template, then change the wording and sign-off to sound like your team.",
-    "emptyAction": "Copy the first starter",
     "errorTitle": "Your templates didn't load.",
-    "errorBody": "Nothing has been sent or changed. Check your connection and try again."
+    "errorBody": "Nothing has been sent or changed. Check your connection and try again.",
+    "tabs": {
+      "label": "Template groups",
+      "yours": "Your templates",
+      "letshyre": "LetsHyre templates"
+    },
+    "inactive": "Inactive",
+    "editedOn": "Edited {{date}}",
+    "sendOne": "Send",
+    "emptyAction": "Browse LetsHyre templates"
   },
   "copy": {
     "title": "Make a copy",

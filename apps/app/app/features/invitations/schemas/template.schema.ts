@@ -5,6 +5,7 @@ const templateSchema = z.looseObject({
   id: z.string(),
   name: z.string(),
   is_system: z.boolean(),
+  is_active: z.boolean().optional(),
   subject_template: z.string(),
   body_html_template: z.string(),
   updated_at: z.string().nullish(),

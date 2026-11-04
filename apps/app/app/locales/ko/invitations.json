@@ -9,26 +9,28 @@
     "invite_link": "초대 링크"
   },
   "library": {
-    "ownedTitle": "내 템플릿",
-    "startersTitle": "기본 템플릿",
     "startersLead": "LetsHyre가 작성했습니다. 문구를 바꾸려면 사본을 만드세요.",
     "starter": "기본",
     "byLetshyre": "LetsHyre 제공",
-    "yours": "내 템플릿",
-    "edited": "{{when}} 수정됨",
     "subject": "제목:",
     "copy": "사본 만들기",
     "edit": "편집",
-    "view": "보기",
-    "use": "사용",
     "send": "초대 보내기",
     "delete": "삭제",
     "actions": "{{name}} 작업",
     "emptyTitle": "아직 내 템플릿이 없습니다",
     "emptyBody": "기본 템플릿을 복사한 뒤 문구와 맺음말을 팀에 맞게 바꾸세요.",
-    "emptyAction": "첫 번째 기본 템플릿 복사",
     "errorTitle": "템플릿을 불러오지 못했습니다.",
-    "errorBody": "아무것도 보내거나 변경되지 않았습니다. 연결을 확인하고 다시 시도하세요."
+    "errorBody": "아무것도 보내거나 변경되지 않았습니다. 연결을 확인하고 다시 시도하세요.",
+    "tabs": {
+      "label": "템플릿 그룹",
+      "yours": "내 템플릿",
+      "letshyre": "LetsHyre 템플릿"
+    },
+    "inactive": "비활성",
+    "editedOn": "{{date}} 수정됨",
+    "sendOne": "보내기",
+    "emptyAction": "LetsHyre 템플릿 둘러보기"
   },
   "copy": {
     "title": "사본 만들기",

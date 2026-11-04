@@ -9,26 +9,28 @@
     "invite_link": "Tautan undangan"
   },
   "library": {
-    "ownedTitle": "Template Anda",
-    "startersTitle": "Template awal",
     "startersLead": "Ditulis oleh LetsHyre. Buat salinan untuk mengubah isinya.",
     "starter": "Awal",
     "byLetshyre": "Dari LetsHyre",
-    "yours": "Template Anda",
-    "edited": "Diedit {{when}}",
     "subject": "Subjek:",
     "copy": "Buat salinan",
     "edit": "Edit",
-    "view": "Lihat",
-    "use": "Gunakan",
     "send": "Kirim undangan",
     "delete": "Hapus",
     "actions": "Tindakan untuk {{name}}",
     "emptyTitle": "Belum ada template milik Anda",
     "emptyBody": "Salin template awal, lalu sesuaikan isi dan penutupnya dengan tim Anda.",
-    "emptyAction": "Salin template pertama",
     "errorTitle": "Template Anda tidak termuat.",
-    "errorBody": "Tidak ada yang terkirim atau berubah. Periksa koneksi Anda dan coba lagi."
+    "errorBody": "Tidak ada yang terkirim atau berubah. Periksa koneksi Anda dan coba lagi.",
+    "tabs": {
+      "label": "Grup template",
+      "yours": "Template Anda",
+      "letshyre": "Template LetsHyre"
+    },
+    "inactive": "Tidak aktif",
+    "editedOn": "Diedit {{date}}",
+    "sendOne": "Kirim",
+    "emptyAction": "Lihat template LetsHyre"
   },
   "copy": {
     "title": "Buat salinan",
