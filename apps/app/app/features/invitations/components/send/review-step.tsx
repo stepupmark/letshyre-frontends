@@ -52,106 +52,123 @@ export function ReviewStep({
       ? previewDocument({ body: template.body_html_template, values })
       : null)
 
-  return (
-    <div className="grid gap-6 lg:grid-cols-[20rem_minmax(0,1fr)] lg:items-start">
-      <div className="flex min-w-0 flex-col gap-4 lg:sticky lg:top-20">
-        <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-2 rounded-lg border p-4 text-sm">
-          <dt className="text-muted-foreground">{t("send.summaryTemplate")}</dt>
-          <dd className="truncate font-medium">{template.name}</dd>
-          <dt className="text-muted-foreground">{t("send.summaryRole")}</dt>
-          <dd className="truncate font-medium">{role}</dd>
-        </dl>
+  const company = values.employer_company_name
 
-        <section
-          aria-labelledby={listId}
-          className="overflow-hidden rounded-lg border"
+  return (
+    <div className="grid gap-6 lg:grid-cols-[18rem_minmax(0,1fr)] lg:items-start">
+      <aside className="min-w-0 overflow-hidden rounded-lg border lg:sticky lg:top-20">
+        <dl className="flex flex-col gap-3 border-b p-4 text-sm">
+          <div className="flex flex-col gap-0.5">
+            <dt className="text-xs text-muted-foreground">
+              {t("send.summaryTemplate")}
+            </dt>
+            <dd className="truncate font-medium">{template.name}</dd>
+          </div>
+          <div className="flex flex-col gap-0.5">
+            <dt className="text-xs text-muted-foreground">
+              {t("send.summaryRole")}
+            </dt>
+            <dd className="truncate font-medium">{role}</dd>
+          </div>
+        </dl>
+        <h3
+          id={listId}
+          className="flex items-center gap-2 px-4 pt-3 pb-1 text-xs text-muted-foreground"
         >
-          <h3
-            id={listId}
-            className="flex items-center gap-2 border-b bg-muted/30 px-4 py-2.5 text-sm font-medium"
-          >
-            {t("send.steps.candidates")}
-            <span className="rounded-full bg-brand-muted px-2 text-xs text-brand-text tabular-nums">
-              {recipients.length}
-            </span>
-          </h3>
-          <ul className="max-h-96 divide-y overflow-y-auto">
-            {recipients.map((item, i) => (
-              <li key={item.email}>
-                <button
-                  type="button"
-                  aria-current={i === at}
-                  onClick={() => {
-                    setIndex(i)
-                  }}
-                  className="relative flex w-full items-center gap-3 px-4 py-2.5 text-start transition-colors outline-none hover:bg-muted/40 focus-visible:bg-muted/40 aria-current:bg-brand-muted/40"
-                >
-                  {i === at && (
-                    <m.span
-                      layoutId={listId}
-                      aria-hidden="true"
-                      transition={{ duration: duration.base, ease }}
-                      className="absolute inset-y-1 inset-s-0 w-0.5 rounded-full bg-brand"
-                    />
-                  )}
-                  <span
+          {t("send.steps.candidates")}
+          <span className="rounded-full bg-muted px-1.5 tabular-nums">
+            {recipients.length}
+          </span>
+        </h3>
+        <ul aria-labelledby={listId} className="max-h-96 overflow-y-auto p-1.5">
+          {recipients.map((item, i) => (
+            <li key={item.email}>
+              <button
+                type="button"
+                aria-current={i === at}
+                onClick={() => {
+                  setIndex(i)
+                }}
+                className="relative flex w-full items-center gap-3 rounded-md px-2.5 py-2 text-start transition-colors outline-none hover:bg-muted/50 focus-visible:ring-3 focus-visible:ring-ring/50"
+              >
+                {i === at && (
+                  <m.span
+                    layoutId={listId}
                     aria-hidden="true"
-                    className="flex size-7 shrink-0 items-center justify-center rounded-full bg-brand-muted text-xs font-medium text-brand-text"
-                  >
-                    {item.name.charAt(0).toUpperCase()}
+                    transition={{ duration: duration.base, ease }}
+                    className="absolute inset-0 rounded-md bg-brand-muted/60"
+                  />
+                )}
+                <span
+                  aria-hidden="true"
+                  className="relative flex size-7 shrink-0 items-center justify-center rounded-full bg-background text-xs font-medium text-brand-text ring-1 ring-border"
+                >
+                  {item.name.charAt(0).toUpperCase()}
+                </span>
+                <span className="relative flex min-w-0 flex-col">
+                  <span className="truncate text-sm font-medium">
+                    {item.name}
                   </span>
-                  <span className="flex min-w-0 flex-col">
-                    <span className="truncate text-sm font-medium">
-                      {item.name}
-                    </span>
-                    <span className="truncate text-xs text-muted-foreground">
-                      {item.email}
-                    </span>
+                  <span className="truncate text-xs text-muted-foreground">
+                    {item.email}
                   </span>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </section>
-      </div>
+                </span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </aside>
 
       <section
         aria-label={t("preview.frame")}
         className="flex min-w-0 flex-col overflow-hidden rounded-lg border bg-card"
       >
-        <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1 border-b px-4 py-3 text-sm">
-          <dt className="text-muted-foreground">{t("preview.to")}</dt>
-          <dd className="truncate">
-            {recipient && `${recipient.name} <${recipient.email}>`}
-          </dd>
-          <dt className="text-muted-foreground">{t("preview.subject")}</dt>
-          <dd className="relative grid font-medium text-pretty">
+        <header className="flex flex-col gap-3 border-b px-5 py-4">
+          <div className="relative grid">
             <AnimatePresence initial={false} mode="popLayout">
-              <m.span
+              <m.h3
                 key={subject}
                 initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: duration.fast, ease }}
+                className="text-base font-semibold text-pretty"
               >
                 {subject}
-              </m.span>
+              </m.h3>
             </AnimatePresence>
-          </dd>
-        </dl>
-        {local && (
-          <p className="flex items-start gap-2 border-b bg-muted/30 px-4 py-2 text-xs text-pretty text-muted-foreground">
-            <Info aria-hidden="true" className="mt-px size-3.5 shrink-0" />
-            {t("send.localPreview")}
-          </p>
-        )}
-        <div className="bg-muted/40 p-3">
+          </div>
+          <div className="flex items-center gap-3 text-sm">
+            <span
+              aria-hidden="true"
+              className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-muted text-xs font-medium text-brand-text"
+            >
+              {company.charAt(0).toUpperCase()}
+            </span>
+            <span className="flex min-w-0 flex-col">
+              <span className="truncate font-medium">{company}</span>
+              <span className="truncate text-xs text-muted-foreground">
+                {t("preview.to")}{" "}
+                {recipient && `${recipient.name} <${recipient.email}>`}
+              </span>
+            </span>
+          </div>
+          {local && (
+            <p className="flex items-start gap-1.5 text-xs text-pretty text-muted-foreground">
+              <Info aria-hidden="true" className="mt-px size-3.5 shrink-0" />
+              {t("send.localPreview")}
+            </p>
+          )}
+        </header>
+        <div className="max-h-160 overflow-y-auto">
           {html ? (
-            <div className="overflow-hidden rounded-md border bg-background">
-              <EmailFrame html={html} title={t("preview.frame")} />
-            </div>
+            <EmailFrame html={html} title={t("preview.frame")} />
           ) : (
-            <Skeleton className="h-96 w-full" />
+            <div className="flex flex-col gap-3 p-5">
+              <Skeleton className="h-4 w-2/3" />
+              <Skeleton className="h-4 w-1/2" />
+              <Skeleton className="h-64 w-full" />
+            </div>
           )}
         </div>
       </section>
