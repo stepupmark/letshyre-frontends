@@ -29,12 +29,20 @@ Android Chrome:
 
 - [ ] Deploy in a low-traffic window; the host must apply each build's `csp.map` policies.
 - [ ] Spot-check the URL contract (`docs/baseline/url-contract.md`) on the live site.
-- [ ] Resubmit `https://letshyre.ai/sitemap.xml` in Search Console.
+- [ ] Resubmit `https://letshyre.ai/sitemap.xml` in Search Console and Bing Webmaster Tools.
+      Verify both by DNS record, so no verification tag needs a CSP hash. Bing's index also feeds
+      Copilot and other AI search, so it's worth the same care as Google.
+- [ ] `https://letshyre.ai/llms.txt` and `/robots.txt` answer 200 from the live host.
+- [ ] Rich Results Test on `/en`, `/en/pricing` and `/en/download`: no errors.
+- [ ] Paste a `/employer/register` link into Slack or WhatsApp: the card shows LetsHyre and the
+      default image.
 
 ## First 7 days
 
 - 404 and 302 rates, Search Console coverage and hreflang errors, CWV field data, sign-up
   conversion.
+- Search Console's "Page with redirect" report should stay empty for our own links; postbuild
+  fails on internal links to redirects, so anything there comes from outside.
 - After a clean week of report-only CSP: build with `CSP_ENFORCE=true` and drop the
   report-only header on the host.
 - Roll back if indexed pages drop more than 10% or errors spike: redeploy the previous build.

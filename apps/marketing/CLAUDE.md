@@ -25,6 +25,10 @@ the build to it. Don't rename or drop a URL without a redirect and an update to 
 docs/baseline/ holds the SEO baseline the build is compared against, and
 docs/launch-checklist.md the steps before going live.
 
+Link to a page with `usePagePath()` from `@/hooks/use-page-path`, never a hand-built
+`localePath(lang, …)`: postbuild fails any link to a path that wasn't prerendered. The structured
+data, `llms.txt` and the checks behind them are in ADR 0020.
+
 ## Design
 
 Default shadcn look: neutral colours, Outfit, generous white space, no gradients or decorative blobs.
