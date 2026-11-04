@@ -36,6 +36,12 @@ test("home v3 plays through cleanly and stays out of search", async ({
       .toBeGreaterThan(0)
   }
 
+  if (test.info().project.name === "chromium") {
+    const step = page.getByRole("button", { name: /Go to step 3/ })
+    await step.click()
+    await expect(step).toHaveAttribute("aria-current", "step")
+  }
+
   await page.keyboard.press("Home")
   await page.getByRole("link", { name: "Skip the walkthrough" }).focus()
   await page.keyboard.press("Enter")

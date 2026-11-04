@@ -37,6 +37,8 @@
           "dates": "2018 – 2021"
         }
       ],
+      "education": "Education",
+      "degree": "B.Tech, Computer Science · 2018",
       "note": "Every resume on the pile says the same."
     }
   },
@@ -72,7 +74,6 @@
     "session": "AI interview · Senior frontend engineer",
     "progress": "Question 5 of 8",
     "duration": "24:10",
-    "photo": "Vyshnavi Rao",
     "asked": "Interviewer",
     "answered": "Vyshnavi",
     "question": "Two components far apart in the tree need the same state. How would you share it, and what would you watch out for?",
@@ -142,7 +143,6 @@
       },
       "shortlist": {
         "label": "A shortlist of three candidates ranked by AI match: Vyshnavi Rao 86, Arjun Mehta 74 and Meera Shah 68, who joined from the talent pool.",
-        "kicker": "Ranked shortlist",
         "title": "24 applied · ranked by evidence",
         "match": "AI match",
         "pool": "From pool",
@@ -178,7 +178,6 @@
       },
       "unlock": {
         "label": "Vyshnavi Rao's file, unlocked for one credit, with her phone number showing.",
-        "kicker": "Candidate file",
         "name": "Vyshnavi Rao",
         "role": "Frontend engineer · 7 yrs",
         "unlocked": "Unlocked",

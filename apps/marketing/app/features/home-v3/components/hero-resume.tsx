@@ -73,6 +73,12 @@ export function HeroResume({
             ))}
           </ul>
         </div>
+        <div>
+          <p className="text-xs text-muted-foreground">
+            {t("hero.resume.education")}
+          </p>
+          <p className="mt-2 text-sm">{t("hero.resume.degree")}</p>
+        </div>
       </m.div>
       <m.p
         style={{ opacity: note }}
