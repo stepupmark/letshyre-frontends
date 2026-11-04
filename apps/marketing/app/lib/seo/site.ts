@@ -3,6 +3,8 @@ import { env } from "../env"
 export const SITE = {
   url: env.VITE_SITE_URL.replace(/\/$/, ""),
   name: "LetsHyre",
+  // page titles end with the domain, so search engines should know both names
+  domain: "letshyre.ai",
   twitter: "@letshyreAi",
   email: "support@letshyre.ai",
   sameAs: [

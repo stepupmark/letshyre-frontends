@@ -4,6 +4,7 @@ import type { Translate } from "@/lib/seo/page-meta"
 import {
   faqSchema,
   type JsonLd,
+  ref,
   softwareApplicationSchema,
   webPageSchema,
 } from "@/lib/seo/schema"
@@ -21,6 +22,7 @@ export function homeJsonLd({
   const faq = t("faq.items", { returnObjects: true }) as unknown
   return [
     softwareApplicationSchema({
+      id: "software",
       name: t("meta.name"),
       description: t("meta.schemaDescription"),
       os: "Web",
@@ -32,6 +34,7 @@ export function homeJsonLd({
       path,
       name: t("meta.title"),
       description: t("meta.description"),
+      about: ref("software"),
     }),
   ]
 }

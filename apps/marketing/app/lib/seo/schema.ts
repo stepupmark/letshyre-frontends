@@ -30,9 +30,14 @@ export const websiteSchema = (): JsonLd => ({
   "@type": "WebSite",
   "@id": `${SITE.url}/#website`,
   name: SITE.name,
+  alternateName: SITE.domain,
   url: SITE.url,
+  inLanguage: LOCALES,
   publisher: { "@id": `${SITE.url}/#organization` },
 })
+
+/** A node on another part of the graph, by `@id`. */
+export const ref = (fragment: string) => ({ "@id": `${SITE.url}/#${fragment}` })
 
 export function webPageSchema({
   type = "WebPage",
@@ -41,6 +46,7 @@ export function webPageSchema({
   name,
   description,
   dateModified,
+  about,
 }: {
   type?: "WebPage" | "AboutPage" | "ContactPage"
   lang: Locale
@@ -48,6 +54,8 @@ export function webPageSchema({
   name: string
   description: string
   dateModified?: string
+  /** What the page is about, by `ref()`; it must be defined on the same page. */
+  about?: JsonLd
 }): JsonLd {
   const url = absUrl(localePath(lang, path))
   return {
@@ -61,6 +69,7 @@ export function webPageSchema({
     publisher: { "@id": `${SITE.url}/#organization` },
     inLanguage: lang,
     ...(dateModified ? { dateModified } : {}),
+    ...(about ? { about } : {}),
   }
 }
 
@@ -100,12 +109,15 @@ export const faqSchema = (items: unknown): JsonLd => ({
 })
 
 export const softwareApplicationSchema = ({
+  id,
   name,
   description,
   os,
   url,
   downloadUrl,
 }: {
+  /** Fragment for its `@id`, so pages can point at it. */
+  id: string
   name: string
   description: string
   os: string
@@ -114,6 +126,7 @@ export const softwareApplicationSchema = ({
 }): JsonLd => ({
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  ...ref(id),
   name,
   description,
   operatingSystem: os,

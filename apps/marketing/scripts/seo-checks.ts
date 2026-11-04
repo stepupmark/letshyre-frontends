@@ -4,6 +4,7 @@ import {
   alternatesOf,
   canonicalOf,
   h1Count,
+  htmlLangOf,
   internalLinksOf,
   jsonLdOf,
   metaOf,
@@ -88,6 +89,9 @@ export function checkPage(
   )
 
   fail(canonicalOf(html) === self, `canonical isn't ${self}`)
+  // a share card for another URL splits the page's likes and links in two
+  fail(metaOf(html, "og:url") === self, `og:url isn't ${self}`)
+  fail(htmlLangOf(html) === lang, `<html lang> isn't ${lang}`)
 
   const expected = new Map(
     locales.map((l) => [l, site + localePath(l, path)] as const)

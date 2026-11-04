@@ -48,3 +48,6 @@ export const internalLinksOf = (html: string): string[] => [
     )
   ),
 ]
+
+export const htmlLangOf = (html: string) =>
+  first(html, /<html [^>]*lang="([^"]*)"/)

@@ -14,7 +14,7 @@ import { renderRobots, renderSitemap } from "./sitemap"
 const SITE = "https://letshyre.ai"
 
 const page = (head: string, body = "<h1>Pricing</h1>") =>
-  `<!DOCTYPE html><html><head><meta charSet="utf-8"/>${head}</head><body>${body}</body></html>`
+  `<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charSet="utf-8"/>${head}</head><body>${body}</body></html>`
 
 const goodHead = [
   `<title>Pricing: Pay per Candidate Unlock | letshyre.ai</title>`,
@@ -24,6 +24,7 @@ const goodHead = [
   `<link rel="alternate" hrefLang="de" href="${SITE}/de/pricing"/>`,
   `<link rel="alternate" hrefLang="x-default" href="${SITE}/en/pricing"/>`,
   `<meta property="og:title" content="Pricing"/>`,
+  `<meta property="og:url" content="${SITE}/en/pricing"/>`,
   `<meta property="og:image" content="${SITE}/og/pricing.jpg"/>`,
   `<meta property="og:locale" content="en_US"/>`,
   `<meta name="twitter:card" content="summary_large_image"/>`,
@@ -76,6 +77,16 @@ describe("checkPage", () => {
     )
     expect(problems).toEqual([
       "links to pages that aren't published here: /hi, /en/interview-guide",
+    ])
+  })
+
+  it("flags a share url or document language that isn't the page's", () => {
+    const html = page(goodHead)
+      .replace(`content="${SITE}/en/pricing"/>`, `content="${SITE}/en"/>`)
+      .replace('lang="en"', 'lang="de"')
+    expect(checkPage({ ...input, html }, options)).toEqual([
+      `og:url isn't ${SITE}/en/pricing`,
+      "<html lang> isn't en",
     ])
   })
 
