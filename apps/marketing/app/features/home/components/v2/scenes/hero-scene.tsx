@@ -12,14 +12,14 @@ export function HeroScene() {
   const people = t("hero.scene.people", { returnObjects: true })
 
   return (
-    <div className="relative">
+    <div className="relative mx-auto max-w-5xl">
       <div className="lift lg:w-3/4" style={wait(240)}>
         <Photo
           name="hiring-manager"
           alt={t("hero.photo")}
-          sizes="(min-width: 1152px) 816px, (min-width: 1024px) 75vw, calc(100vw - 2rem)"
+          sizes="(min-width: 1152px) 768px, (min-width: 1024px) 75vw, calc(100vw - 2rem)"
           priority
-          className="rounded-3xl max-sm:aspect-4/3"
+          className="rounded-3xl max-sm:aspect-4/3 lg:aspect-video"
         />
       </div>
 
@@ -61,7 +61,7 @@ export function HeroScene() {
               <li
                 key={person.name}
                 className={cn(
-                  "lift grid grid-cols-[minmax(0,1fr)_3.5rem_4rem] items-center gap-2 border-b px-4 py-3.5 last:border-0 sm:grid-cols-[minmax(0,1fr)_6.5rem_4.5rem_5.5rem] sm:gap-3 sm:px-5",
+                  "lift grid grid-cols-[minmax(0,1fr)_3.5rem_4rem] items-center gap-2 border-b px-4 py-3 last:border-0 sm:grid-cols-[minmax(0,1fr)_6.5rem_4.5rem_5.5rem] sm:gap-3 sm:px-5",
                   index === 0 && "bg-brand-muted/30"
                 )}
                 style={wait(360 + index * 90)}
