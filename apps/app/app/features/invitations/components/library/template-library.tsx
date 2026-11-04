@@ -152,12 +152,12 @@ function LibraryTabs({
     )
   }
   const tabs = [
-    { value: YOURS, label: t("library.tabs.yours"), count: owned.length },
     {
       value: LETSHYRE,
       label: t("library.tabs.letshyre"),
       count: starters.length,
     },
+    { value: YOURS, label: t("library.tabs.yours"), count: owned.length },
   ]
 
   return (
@@ -177,7 +177,7 @@ function LibraryTabs({
           <TabsTrigger
             key={item.value}
             value={item.value}
-            className="h-auto flex-none gap-2 px-0 pt-1 pb-3 text-sm after:hidden data-active:text-brand-text"
+            className="h-auto flex-none cursor-pointer gap-2 px-0 pt-1 pb-3 text-sm after:hidden data-active:text-brand-text"
           >
             {item.label}
             <span className="rounded-full bg-muted px-2 text-xs text-muted-foreground tabular-nums">
