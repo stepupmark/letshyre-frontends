@@ -14,14 +14,18 @@ export function Contrast() {
 
   return (
     <Band id="contrast" tinted>
-      <BandHeading
-        id="contrast-title"
-        eyebrow={t("contrast.eyebrow")}
-        title={t("contrast.title")}
-        accent={t("contrast.accent")}
-        stacked
-        className="slide-in max-w-3xl"
-      />
+      <div className="slide-in grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-end lg:gap-0">
+        <BandHeading
+          id="contrast-title"
+          eyebrow={t("contrast.eyebrow")}
+          title={t("contrast.title")}
+          accent={t("contrast.accent")}
+          stacked
+        />
+        <p className="max-w-md text-base text-pretty text-muted-foreground sm:text-lg lg:px-6 lg:pb-1">
+          {t("contrast.description")}
+        </p>
+      </div>
 
       <div className="slide-in mt-14">
         <div
