@@ -18,6 +18,8 @@
     "edited": "Bewerkt {{when}}",
     "subject": "Onderwerp:",
     "copy": "Kopie maken",
+    "edit": "Bewerken",
+    "view": "Bekijken",
     "delete": "Verwijderen",
     "actions": "Acties voor {{name}}",
     "emptyTitle": "Nog geen eigen sjablonen",
@@ -44,6 +46,37 @@
     "copied": "‘{{name}}’ staat klaar om te bewerken",
     "copyFailed": "De kopie is niet gemaakt. Probeer het opnieuw.",
     "deleted": "‘{{name}}’ verwijderd",
-    "deleteFailed": "Het sjabloon is niet verwijderd. Probeer het opnieuw."
+    "deleteFailed": "Het sjabloon is niet verwijderd. Probeer het opnieuw.",
+    "saved": "Sjabloon opgeslagen",
+    "saveFailed": "Je wijzigingen zijn niet opgeslagen. Probeer het opnieuw."
+  },
+  "editor": {
+    "lead": "Wijzigingen gelden voor uitnodigingen die je na het opslaan verstuurt.",
+    "starterLead": "Een startsjabloon van LetsHyre.",
+    "name": "Naam sjabloon",
+    "subject": "Onderwerp",
+    "subjectPlaceholder": "Wat kandidaten in hun inbox zien",
+    "body": "Bericht",
+    "bodyPlaceholder": "Schrijf je uitnodiging. Typ {{ om een veld zoals de naam van de kandidaat in te voegen.",
+    "bodyHint": "Velden worden bij het versturen per kandidaat ingevuld.",
+    "editButton": "Knop bewerken",
+    "save": "Wijzigingen opslaan",
+    "saving": "Opslaan…",
+    "copyToEdit": "Kopie maken om te bewerken",
+    "readOnlyTitle": "Startsjablonen kun je niet wijzigen",
+    "readOnlyBody": "Maak een kopie, dan kun je hem herschrijven, hernoemen en versturen.",
+    "fidelityTitle": "Sommige opmaak kun je hier niet bewerken",
+    "fidelityBody": "Dit sjabloon gebruikt een opmaak die de editor niet ondersteunt, dus het bericht is vergrendeld zodat het intact blijft. Naam en onderwerp kun je nog wijzigen. Bij omzetten blijft de tekst behouden, maar wordt die opmaak vereenvoudigd.",
+    "fidelityConvert": "Omzetten en bewerken",
+    "missingTitle": "Dit sjabloon bestaat niet meer",
+    "missingBody": "Misschien heeft iemand uit je team het verwijderd.",
+    "backToLibrary": "Terug naar sjablonen"
+  },
+  "errors": {
+    "name": "Geef een naam van maximaal 120 tekens.",
+    "subject": "Schrijf een onderwerp van maximaal 200 tekens.",
+    "body": "Schrijf het bericht dat kandidaten lezen.",
+    "inviteLink": "Voeg de uitnodigingslink toe zodat kandidaten hun interview kunnen starten.",
+    "unknown": "Verwijder velden die LetsHyre niet invult; ze zijn rood gemarkeerd."
   }
 }

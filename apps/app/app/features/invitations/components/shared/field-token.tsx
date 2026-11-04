@@ -2,7 +2,7 @@ import { useTranslation } from "@workspace/i18n/react"
 
 import { isMergeField, piecesOf } from "../../lib/merge-fields"
 
-export function FieldToken({ field }: { field: string }) {
+function FieldToken({ field }: { field: string }) {
   const { t } = useTranslation("invitations")
   const known = isMergeField(field)
   return (

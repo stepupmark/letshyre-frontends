@@ -43,6 +43,26 @@
   }
 }
 
+/* ProseMirror's structural rules, which Tiptap would otherwise inject as a <style> tag */
+@layer base {
+  .tiptap {
+    white-space: break-spaces;
+    overflow-wrap: break-word;
+    font-variant-ligatures: none;
+  }
+  .tiptap [contenteditable="false"] {
+    white-space: normal;
+  }
+  .tiptap img.ProseMirror-separator {
+    display: inline;
+    border: none;
+    margin: 0;
+  }
+  .tiptap-hideselection *::selection {
+    background: transparent;
+  }
+}
+
 /* the height left under the topbar inside #main's padding (h-14, then py-6 or md:p-8) */
 @utility min-h-main {
   min-height: calc(100svh - --spacing(26));

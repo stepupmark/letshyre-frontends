@@ -18,6 +18,8 @@
     "edited": "Edited {{when}}",
     "subject": "Subject:",
     "copy": "Make a copy",
+    "edit": "Edit",
+    "view": "View",
     "delete": "Delete",
     "actions": "Actions for {{name}}",
     "emptyTitle": "No templates of your own yet",
@@ -44,6 +46,37 @@
     "copied": "“{{name}}” is ready to edit",
     "copyFailed": "The copy wasn't made. Try again.",
     "deleted": "“{{name}}” deleted",
-    "deleteFailed": "The template wasn't deleted. Try again."
+    "deleteFailed": "The template wasn't deleted. Try again.",
+    "saved": "Template saved",
+    "saveFailed": "Your changes weren't saved. Try again."
+  },
+  "editor": {
+    "lead": "Changes apply to invitations you send after saving.",
+    "starterLead": "A starter template from LetsHyre.",
+    "name": "Template name",
+    "subject": "Subject",
+    "subjectPlaceholder": "What candidates see in their inbox",
+    "body": "Message",
+    "bodyPlaceholder": "Write your invitation. Type {{ to add a field like the candidate's name.",
+    "bodyHint": "Fields are filled in for each candidate when the email is sent.",
+    "editButton": "Edit button",
+    "save": "Save changes",
+    "saving": "Saving…",
+    "copyToEdit": "Make a copy to edit",
+    "readOnlyTitle": "Starter templates can't be changed",
+    "readOnlyBody": "Make a copy and it becomes yours to reword, rename and send.",
+    "fidelityTitle": "Some formatting can't be edited here",
+    "fidelityBody": "This template uses layout the editor doesn't support, so the message is locked to keep it intact. You can still change the name and subject. Converting keeps the words but simplifies that layout.",
+    "fidelityConvert": "Convert and edit",
+    "missingTitle": "This template isn't here anymore",
+    "missingBody": "It may have been deleted by someone on your team.",
+    "backToLibrary": "Back to templates"
+  },
+  "errors": {
+    "name": "Give it a name of up to 120 characters.",
+    "subject": "Write a subject of up to 200 characters.",
+    "body": "Write the message candidates will read.",
+    "inviteLink": "Add the invite link so candidates can start their interview.",
+    "unknown": "Remove fields LetsHyre doesn't fill in; they're shown in red."
   }
 }

@@ -18,6 +18,8 @@
     "edited": "Editado {{when}}",
     "subject": "Assunto:",
     "copy": "Fazer uma cópia",
+    "edit": "Editar",
+    "view": "Ver",
     "delete": "Excluir",
     "actions": "Ações para {{name}}",
     "emptyTitle": "Ainda não há modelos seus",
@@ -44,6 +46,37 @@
     "copied": "“{{name}}” está pronto para editar",
     "copyFailed": "A cópia não foi feita. Tente de novo.",
     "deleted": "“{{name}}” excluído",
-    "deleteFailed": "O modelo não foi excluído. Tente de novo."
+    "deleteFailed": "O modelo não foi excluído. Tente de novo.",
+    "saved": "Modelo salvo",
+    "saveFailed": "Suas alterações não foram salvas. Tente de novo."
+  },
+  "editor": {
+    "lead": "As alterações valem para os convites enviados depois de salvar.",
+    "starterLead": "Um modelo inicial da LetsHyre.",
+    "name": "Nome do modelo",
+    "subject": "Assunto",
+    "subjectPlaceholder": "O que os candidatos veem na caixa de entrada",
+    "body": "Mensagem",
+    "bodyPlaceholder": "Escreva seu convite. Digite {{ para inserir um campo como o nome do candidato.",
+    "bodyHint": "Os campos são preenchidos para cada candidato no envio.",
+    "editButton": "Editar botão",
+    "save": "Salvar alterações",
+    "saving": "Salvando…",
+    "copyToEdit": "Fazer uma cópia para editar",
+    "readOnlyTitle": "Modelos iniciais não podem ser alterados",
+    "readOnlyBody": "Faça uma cópia e ela será sua para reescrever, renomear e enviar.",
+    "fidelityTitle": "Parte da formatação não pode ser editada aqui",
+    "fidelityBody": "Este modelo usa um layout que o editor não suporta, então a mensagem fica bloqueada para continuar intacta. Você ainda pode mudar o nome e o assunto. Converter mantém o texto, mas simplifica esse layout.",
+    "fidelityConvert": "Converter e editar",
+    "missingTitle": "Este modelo não existe mais",
+    "missingBody": "Talvez alguém da sua equipe o tenha excluído.",
+    "backToLibrary": "Voltar aos modelos"
+  },
+  "errors": {
+    "name": "Use um nome de até 120 caracteres.",
+    "subject": "Escreva um assunto de até 200 caracteres.",
+    "body": "Escreva a mensagem que os candidatos vão ler.",
+    "inviteLink": "Adicione o link do convite para que os candidatos possam começar a entrevista.",
+    "unknown": "Remova os campos que a LetsHyre não preenche; eles aparecem em vermelho."
   }
 }

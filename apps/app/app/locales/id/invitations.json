@@ -18,6 +18,8 @@
     "edited": "Diedit {{when}}",
     "subject": "Subjek:",
     "copy": "Buat salinan",
+    "edit": "Edit",
+    "view": "Lihat",
     "delete": "Hapus",
     "actions": "Tindakan untuk {{name}}",
     "emptyTitle": "Belum ada template milik Anda",
@@ -44,6 +46,37 @@
     "copied": "“{{name}}” siap diedit",
     "copyFailed": "Salinan tidak dibuat. Coba lagi.",
     "deleted": "“{{name}}” dihapus",
-    "deleteFailed": "Template tidak dihapus. Coba lagi."
+    "deleteFailed": "Template tidak dihapus. Coba lagi.",
+    "saved": "Template disimpan",
+    "saveFailed": "Perubahan Anda tidak tersimpan. Coba lagi."
+  },
+  "editor": {
+    "lead": "Perubahan berlaku untuk undangan yang Anda kirim setelah menyimpan.",
+    "starterLead": "Template awal dari LetsHyre.",
+    "name": "Nama template",
+    "subject": "Subjek",
+    "subjectPlaceholder": "Yang dilihat kandidat di kotak masuk",
+    "body": "Pesan",
+    "bodyPlaceholder": "Tulis undangan Anda. Ketik {{ untuk menyisipkan kolom seperti nama kandidat.",
+    "bodyHint": "Kolom diisi untuk setiap kandidat saat email dikirim.",
+    "editButton": "Edit tombol",
+    "save": "Simpan perubahan",
+    "saving": "Menyimpan…",
+    "copyToEdit": "Buat salinan untuk diedit",
+    "readOnlyTitle": "Template awal tidak bisa diubah",
+    "readOnlyBody": "Buat salinan, lalu Anda bisa mengubah isi, nama, dan mengirimnya.",
+    "fidelityTitle": "Sebagian format tidak bisa diedit di sini",
+    "fidelityBody": "Template ini memakai tata letak yang tidak didukung editor, jadi pesannya dikunci agar tetap utuh. Anda masih bisa mengubah nama dan subjek. Mengonversi mempertahankan teks tetapi menyederhanakan tata letak itu.",
+    "fidelityConvert": "Konversi dan edit",
+    "missingTitle": "Template ini sudah tidak ada",
+    "missingBody": "Mungkin seseorang di tim Anda menghapusnya.",
+    "backToLibrary": "Kembali ke template"
+  },
+  "errors": {
+    "name": "Beri nama maksimal 120 karakter.",
+    "subject": "Tulis subjek maksimal 200 karakter.",
+    "body": "Tulis pesan yang akan dibaca kandidat.",
+    "inviteLink": "Tambahkan tautan undangan agar kandidat bisa memulai wawancara.",
+    "unknown": "Hapus kolom yang tidak diisi LetsHyre; kolom itu ditandai merah."
   }
 }

@@ -7,16 +7,20 @@ import {
   DropdownMenuTrigger,
 } from "@workspace/ui/components/dropdown-menu"
 import { useQuery } from "@tanstack/react-query"
-import { Copy, Ellipsis, Trash2 } from "lucide-react"
+import { Copy, Ellipsis, Eye, PenLine, Trash2 } from "lucide-react"
 import { AnimatePresence } from "motion/react"
 import * as m from "motion/react-m"
 import { useId, useState, type ReactNode } from "react"
+import { href } from "react-router"
 
+import { AppLink } from "@/components/app-link"
 import { ConfirmDialog } from "@/components/confirm-dialog"
 import { EmptyState } from "@/components/empty-state"
 import { PageHeader } from "@/components/page-header"
 import { QueryState } from "@/components/query-state"
+import { buttonLink } from "@/lib/button-link"
 import { duration, ease } from "@/lib/motion"
+import { useGo } from "@/lib/navigation"
 
 import { useDeleteTemplate } from "../../mutations/use-delete-template"
 import { templatesQuery } from "../../queries/templates.queries"
@@ -29,6 +33,7 @@ import { TemplateCard } from "./template-card"
 export function TemplateLibrary() {
   const { t } = useTranslation("invitations")
   const templates = useQuery(templatesQuery())
+  const go = useGo()
   const [copying, setCopying] = useState<Template | null>(null)
   const [deleting, setDeleting] = useState<Template | null>(null)
   const remove = useDeleteTemplate({
@@ -98,6 +103,7 @@ export function TemplateLibrary() {
                           }
                         >
                           {copyAction(template)}
+                          <OpenLink template={template} />
                         </TemplateCard>
                       </CardItem>
                     ))}
@@ -116,6 +122,7 @@ export function TemplateLibrary() {
                       <CardItem key={template.id}>
                         <TemplateCard template={template}>
                           {copyAction(template)}
+                          <OpenLink template={template} />
                         </TemplateCard>
                       </CardItem>
                     ))}
@@ -129,6 +136,9 @@ export function TemplateLibrary() {
                   taken={list.map((template) => template.name)}
                   onClose={() => {
                     setCopying(null)
+                  }}
+                  onCopied={(copy) => {
+                    go(editorPath(copy.id))
                   }}
                 />
               )}
@@ -152,6 +162,22 @@ export function TemplateLibrary() {
         }}
       />
     </div>
+  )
+}
+
+const editorPath = (templateId: string) =>
+  href("/employer/invitations/templates/:templateId", { templateId })
+
+function OpenLink({ template }: { template: Template }) {
+  const { t } = useTranslation("invitations")
+  return (
+    <AppLink
+      to={editorPath(template.id)}
+      className={buttonLink({ variant: "outline", size: "sm" })}
+    >
+      {template.is_system ? <Eye /> : <PenLine />}
+      {template.is_system ? t("library.view") : t("library.edit")}
+    </AppLink>
   )
 }
 

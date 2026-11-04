@@ -18,6 +18,8 @@
     "edited": "Modificato {{when}}",
     "subject": "Oggetto:",
     "copy": "Crea una copia",
+    "edit": "Modifica",
+    "view": "Visualizza",
     "delete": "Elimina",
     "actions": "Azioni per {{name}}",
     "emptyTitle": "Ancora nessun modello tuo",
@@ -44,6 +46,37 @@
     "copied": "“{{name}}” è pronto da modificare",
     "copyFailed": "La copia non è stata creata. Riprova.",
     "deleted": "“{{name}}” eliminato",
-    "deleteFailed": "Il modello non è stato eliminato. Riprova."
+    "deleteFailed": "Il modello non è stato eliminato. Riprova.",
+    "saved": "Modello salvato",
+    "saveFailed": "Le modifiche non sono state salvate. Riprova."
+  },
+  "editor": {
+    "lead": "Le modifiche valgono per gli inviti inviati dopo il salvataggio.",
+    "starterLead": "Un modello di partenza di LetsHyre.",
+    "name": "Nome del modello",
+    "subject": "Oggetto",
+    "subjectPlaceholder": "Ciò che i candidati vedono nella casella di posta",
+    "body": "Messaggio",
+    "bodyPlaceholder": "Scrivi il tuo invito. Digita {{ per inserire un campo come il nome del candidato.",
+    "bodyHint": "I campi vengono compilati per ogni candidato all’invio.",
+    "editButton": "Modifica pulsante",
+    "save": "Salva modifiche",
+    "saving": "Salvataggio…",
+    "copyToEdit": "Crea una copia da modificare",
+    "readOnlyTitle": "I modelli di partenza non si possono modificare",
+    "readOnlyBody": "Creane una copia: potrai riformularla, rinominarla e inviarla.",
+    "fidelityTitle": "Parte della formattazione non è modificabile qui",
+    "fidelityBody": "Questo modello usa un layout che l’editor non supporta, quindi il messaggio è bloccato per restare intatto. Puoi comunque cambiare nome e oggetto. Convertendolo il testo resta, ma il layout viene semplificato.",
+    "fidelityConvert": "Converti e modifica",
+    "missingTitle": "Questo modello non c’è più",
+    "missingBody": "Forse qualcuno del tuo team l’ha eliminato.",
+    "backToLibrary": "Torna ai modelli"
+  },
+  "errors": {
+    "name": "Usa un nome di massimo 120 caratteri.",
+    "subject": "Scrivi un oggetto di massimo 200 caratteri.",
+    "body": "Scrivi il messaggio che leggeranno i candidati.",
+    "inviteLink": "Aggiungi il link di invito così i candidati possono iniziare il colloquio.",
+    "unknown": "Rimuovi i campi che LetsHyre non compila; sono evidenziati in rosso."
   }
 }

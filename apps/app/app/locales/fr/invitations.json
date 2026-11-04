@@ -18,6 +18,8 @@
     "edited": "Modifié {{when}}",
     "subject": "Objet :",
     "copy": "Faire une copie",
+    "edit": "Modifier",
+    "view": "Voir",
     "delete": "Supprimer",
     "actions": "Actions pour {{name}}",
     "emptyTitle": "Aucun modèle personnel pour l’instant",
@@ -44,6 +46,37 @@
     "copied": "« {{name}} » est prêt à être modifié",
     "copyFailed": "La copie n’a pas été créée. Réessayez.",
     "deleted": "« {{name}} » supprimé",
-    "deleteFailed": "Le modèle n’a pas été supprimé. Réessayez."
+    "deleteFailed": "Le modèle n’a pas été supprimé. Réessayez.",
+    "saved": "Modèle enregistré",
+    "saveFailed": "Vos modifications n’ont pas été enregistrées. Réessayez."
+  },
+  "editor": {
+    "lead": "Les modifications s’appliquent aux invitations envoyées après l’enregistrement.",
+    "starterLead": "Un modèle de départ de LetsHyre.",
+    "name": "Nom du modèle",
+    "subject": "Objet",
+    "subjectPlaceholder": "Ce que les candidats voient dans leur boîte de réception",
+    "body": "Message",
+    "bodyPlaceholder": "Rédigez votre invitation. Tapez {{ pour insérer un champ comme le nom du candidat.",
+    "bodyHint": "Les champs sont remplis pour chaque candidat à l’envoi.",
+    "editButton": "Modifier le bouton",
+    "save": "Enregistrer",
+    "saving": "Enregistrement…",
+    "copyToEdit": "Faire une copie pour modifier",
+    "readOnlyTitle": "Les modèles de départ ne sont pas modifiables",
+    "readOnlyBody": "Faites-en une copie : vous pourrez la reformuler, la renommer et l’envoyer.",
+    "fidelityTitle": "Une partie de la mise en forme n’est pas modifiable ici",
+    "fidelityBody": "Ce modèle utilise une mise en page que l’éditeur ne prend pas en charge ; le message est donc verrouillé pour rester intact. Vous pouvez toujours modifier le nom et l’objet. La conversion garde le texte mais simplifie cette mise en page.",
+    "fidelityConvert": "Convertir et modifier",
+    "missingTitle": "Ce modèle n’existe plus",
+    "missingBody": "Quelqu’un de votre équipe l’a peut-être supprimé.",
+    "backToLibrary": "Retour aux modèles"
+  },
+  "errors": {
+    "name": "Donnez-lui un nom de 120 caractères maximum.",
+    "subject": "Rédigez un objet de 200 caractères maximum.",
+    "body": "Rédigez le message que liront les candidats.",
+    "inviteLink": "Ajoutez le lien d’invitation pour que les candidats puissent commencer leur entretien.",
+    "unknown": "Retirez les champs que LetsHyre ne remplit pas ; ils apparaissent en rouge."
   }
 }

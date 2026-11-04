@@ -18,6 +18,8 @@
     "edited": "Editada {{when}}",
     "subject": "Asunto:",
     "copy": "Hacer una copia",
+    "edit": "Editar",
+    "view": "Ver",
     "delete": "Eliminar",
     "actions": "Acciones para {{name}}",
     "emptyTitle": "Aún no tienes plantillas propias",
@@ -44,6 +46,37 @@
     "copied": "“{{name}}” está lista para editar",
     "copyFailed": "No se hizo la copia. Inténtalo de nuevo.",
     "deleted": "“{{name}}” eliminada",
-    "deleteFailed": "No se eliminó la plantilla. Inténtalo de nuevo."
+    "deleteFailed": "No se eliminó la plantilla. Inténtalo de nuevo.",
+    "saved": "Plantilla guardada",
+    "saveFailed": "Tus cambios no se guardaron. Inténtalo de nuevo."
+  },
+  "editor": {
+    "lead": "Los cambios se aplican a las invitaciones que envíes después de guardar.",
+    "starterLead": "Una plantilla inicial de LetsHyre.",
+    "name": "Nombre de la plantilla",
+    "subject": "Asunto",
+    "subjectPlaceholder": "Lo que los candidatos ven en su bandeja de entrada",
+    "body": "Mensaje",
+    "bodyPlaceholder": "Escribe tu invitación. Escribe {{ para añadir un campo como el nombre del candidato.",
+    "bodyHint": "Los campos se completan para cada candidato al enviar el correo.",
+    "editButton": "Editar botón",
+    "save": "Guardar cambios",
+    "saving": "Guardando…",
+    "copyToEdit": "Hacer una copia para editar",
+    "readOnlyTitle": "Las plantillas iniciales no se pueden cambiar",
+    "readOnlyBody": "Haz una copia y será tuya para reescribirla, renombrarla y enviarla.",
+    "fidelityTitle": "Parte del formato no se puede editar aquí",
+    "fidelityBody": "Esta plantilla usa un diseño que el editor no admite, así que el mensaje está bloqueado para mantenerlo intacto. Aún puedes cambiar el nombre y el asunto. Al convertirla se conserva el texto, pero se simplifica ese diseño.",
+    "fidelityConvert": "Convertir y editar",
+    "missingTitle": "Esta plantilla ya no está",
+    "missingBody": "Puede que alguien de tu equipo la haya eliminado.",
+    "backToLibrary": "Volver a las plantillas"
+  },
+  "errors": {
+    "name": "Ponle un nombre de hasta 120 caracteres.",
+    "subject": "Escribe un asunto de hasta 200 caracteres.",
+    "body": "Escribe el mensaje que leerán los candidatos.",
+    "inviteLink": "Añade el enlace de invitación para que los candidatos puedan empezar su entrevista.",
+    "unknown": "Quita los campos que LetsHyre no completa; aparecen en rojo."
   }
 }

@@ -6,7 +6,7 @@ import {
   type PreviewContext,
 } from "../services/templates.service"
 
-export const TEMPLATES_KEY = ["employer", "email-templates"] as const
+const TEMPLATES_KEY = ["employer", "email-templates"] as const
 
 export const templatesQuery = () =>
   queryOptions({

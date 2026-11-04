@@ -18,6 +18,8 @@
     "edited": "Bearbeitet {{when}}",
     "subject": "Betreff:",
     "copy": "Kopie erstellen",
+    "edit": "Bearbeiten",
+    "view": "Ansehen",
     "delete": "Löschen",
     "actions": "Aktionen für {{name}}",
     "emptyTitle": "Noch keine eigenen Vorlagen",
@@ -44,6 +46,37 @@
     "copied": "„{{name}}“ ist bereit zum Bearbeiten",
     "copyFailed": "Die Kopie wurde nicht erstellt. Versuchen Sie es erneut.",
     "deleted": "„{{name}}“ gelöscht",
-    "deleteFailed": "Die Vorlage wurde nicht gelöscht. Versuchen Sie es erneut."
+    "deleteFailed": "Die Vorlage wurde nicht gelöscht. Versuchen Sie es erneut.",
+    "saved": "Vorlage gespeichert",
+    "saveFailed": "Ihre Änderungen wurden nicht gespeichert. Versuchen Sie es erneut."
+  },
+  "editor": {
+    "lead": "Änderungen gelten für Einladungen, die Sie nach dem Speichern senden.",
+    "starterLead": "Eine Startvorlage von LetsHyre.",
+    "name": "Name der Vorlage",
+    "subject": "Betreff",
+    "subjectPlaceholder": "Was Kandidaten im Posteingang sehen",
+    "body": "Nachricht",
+    "bodyPlaceholder": "Schreiben Sie Ihre Einladung. Tippen Sie {{, um ein Feld wie den Namen des Kandidaten einzufügen.",
+    "bodyHint": "Felder werden beim Senden für jeden Kandidaten ausgefüllt.",
+    "editButton": "Schaltfläche bearbeiten",
+    "save": "Änderungen speichern",
+    "saving": "Wird gespeichert…",
+    "copyToEdit": "Kopie zum Bearbeiten erstellen",
+    "readOnlyTitle": "Startvorlagen lassen sich nicht ändern",
+    "readOnlyBody": "Erstellen Sie eine Kopie – dann können Sie sie umformulieren, umbenennen und senden.",
+    "fidelityTitle": "Manche Formatierung lässt sich hier nicht bearbeiten",
+    "fidelityBody": "Diese Vorlage nutzt ein Layout, das der Editor nicht unterstützt. Die Nachricht ist daher gesperrt, damit nichts verloren geht. Name und Betreff können Sie weiterhin ändern. Beim Umwandeln bleibt der Text erhalten, das Layout wird vereinfacht.",
+    "fidelityConvert": "Umwandeln und bearbeiten",
+    "missingTitle": "Diese Vorlage gibt es nicht mehr",
+    "missingBody": "Möglicherweise hat jemand aus Ihrem Team sie gelöscht.",
+    "backToLibrary": "Zurück zu den Vorlagen"
+  },
+  "errors": {
+    "name": "Geben Sie einen Namen mit bis zu 120 Zeichen ein.",
+    "subject": "Schreiben Sie einen Betreff mit bis zu 200 Zeichen.",
+    "body": "Schreiben Sie die Nachricht, die Kandidaten lesen.",
+    "inviteLink": "Fügen Sie den Einladungslink ein, damit Kandidaten ihr Interview starten können.",
+    "unknown": "Entfernen Sie Felder, die LetsHyre nicht ausfüllt; sie sind rot markiert."
   }
 }

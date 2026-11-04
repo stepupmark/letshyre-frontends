@@ -14,10 +14,9 @@ import { useState } from "react"
 import { TextField } from "@/components/text-field"
 
 import { copyName } from "../../lib/copy-name"
+import { NAME_LIMIT } from "../../lib/limits"
 import { useCopyTemplate } from "../../mutations/use-copy-template"
 import type { Template } from "../../schemas/template.schema"
-
-const MAX_NAME = 120
 
 export function CopyDialog({
   source,
@@ -44,8 +43,8 @@ export function CopyDialog({
 
   const submit = () => {
     const value = name.trim()
-    if (!value || value.length > MAX_NAME) {
-      setError(t("copy.nameError", { max: MAX_NAME }))
+    if (!value || value.length > NAME_LIMIT) {
+      setError(t("copy.nameError", { max: NAME_LIMIT }))
       return
     }
     copy.mutate({ source, name: value })
@@ -77,7 +76,7 @@ export function CopyDialog({
             label={t("copy.name")}
             value={name}
             autoComplete="off"
-            maxLength={MAX_NAME + 20}
+            maxLength={NAME_LIMIT + 20}
             error={error}
             onChange={(event) => {
               setName(event.target.value)
