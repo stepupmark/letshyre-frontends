@@ -201,6 +201,8 @@
       "review": "Revisar"
     },
     "templateLabel": "Modelo a enviar",
+    "sendingWith": "Enviando com",
+    "change": "Trocar",
     "role": "Cargo",
     "roleHint": "Preenche o campo de cargo e diz aos candidatos qual função escolher no app.",
     "paste": "Adicionar candidatos",

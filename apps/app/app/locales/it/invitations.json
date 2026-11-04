@@ -201,6 +201,8 @@
       "review": "Controlla"
     },
     "templateLabel": "Modello da inviare",
+    "sendingWith": "Invio con",
+    "change": "Cambia",
     "role": "Ruolo",
     "roleHint": "Compila il campo ruolo e dice ai candidati quale ruolo scegliere nell’app.",
     "paste": "Aggiungi candidati",

@@ -1,5 +1,7 @@
 import { useTranslation } from "@workspace/i18n/react"
+import { Button } from "@workspace/ui/components/button"
 import { useQuery } from "@tanstack/react-query"
+import { Mail } from "lucide-react"
 import { useState } from "react"
 import { href, useSearchParams } from "react-router"
 
@@ -187,18 +189,32 @@ function SendFlow({
               return Object.values(problems).every((v) => !v)
             },
             content: (
-              <RecipientsStep
-                recipients={plan.recipients}
-                role={plan.role}
-                roles={roles}
-                errors={errors}
-                onRecipients={(recipients) => {
-                  update({ recipients })
-                }}
-                onRole={(role) => {
-                  update({ role })
-                }}
-              />
+              <div className="flex flex-col gap-6">
+                {template && (
+                  <ChosenTemplate
+                    template={template}
+                    onChange={() => {
+                      setParams((prev) => {
+                        const search = new URLSearchParams(prev)
+                        search.set(STEP_PARAM, STEP.template)
+                        return search
+                      })
+                    }}
+                  />
+                )}
+                <RecipientsStep
+                  recipients={plan.recipients}
+                  role={plan.role}
+                  roles={roles}
+                  errors={errors}
+                  onRecipients={(recipients) => {
+                    update({ recipients })
+                  }}
+                  onRole={(role) => {
+                    update({ role })
+                  }}
+                />
+              </div>
             ),
           },
           {
@@ -215,5 +231,34 @@ function SendFlow({
         ]}
       />
     </>
+  )
+}
+
+function ChosenTemplate({
+  template,
+  onChange,
+}: {
+  template: Template
+  onChange: () => void
+}) {
+  const { t } = useTranslation("invitations")
+  return (
+    <div className="flex items-center gap-3 rounded-lg border bg-muted/40 px-4 py-3">
+      <span
+        aria-hidden="true"
+        className="flex size-9 shrink-0 items-center justify-center rounded-md bg-brand-muted text-brand-text"
+      >
+        <Mail className="size-4" />
+      </span>
+      <span className="flex min-w-0 flex-1 flex-col">
+        <span className="text-xs text-muted-foreground">
+          {t("send.sendingWith")}
+        </span>
+        <span className="truncate text-sm font-medium">{template.name}</span>
+      </span>
+      <Button type="button" variant="ghost" size="sm" onClick={onChange}>
+        {t("send.change")}
+      </Button>
+    </div>
   )
 }

@@ -201,6 +201,8 @@
       "review": "Controleren"
     },
     "templateLabel": "Te versturen sjabloon",
+    "sendingWith": "Versturen met",
+    "change": "Wijzigen",
     "role": "Functie",
     "roleHint": "Vult het veld functie in en vertelt kandidaten welke rol ze in de app kiezen.",
     "paste": "Kandidaten toevoegen",

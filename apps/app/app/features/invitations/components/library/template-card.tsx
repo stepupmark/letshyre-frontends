@@ -74,7 +74,7 @@ export function TemplateCard({
           </AppLink>
         )}
         <AppLink
-          to={`${href("/employer/invitations/send")}?template=${template.id}`}
+          to={`${href("/employer/invitations/send")}?template=${template.id}&step=candidates`}
           className={buttonLink()}
         >
           <Send className="rtl:-scale-x-100" />

@@ -201,6 +201,8 @@
       "review": "Revisar"
     },
     "templateLabel": "Plantilla que se enviará",
+    "sendingWith": "Se enviará con",
+    "change": "Cambiar",
     "role": "Puesto",
     "roleHint": "Completa el campo de puesto e indica a los candidatos qué rol elegir en la app.",
     "paste": "Añadir candidatos",

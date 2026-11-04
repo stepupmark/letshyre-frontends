@@ -201,6 +201,8 @@
       "review": "검토"
     },
     "templateLabel": "보낼 템플릿",
+    "sendingWith": "사용할 템플릿",
+    "change": "변경",
     "role": "직무",
     "roleHint": "직무 필드를 채우고 앱에서 어떤 직무를 골라야 하는지 후보자에게 알려 줍니다.",
     "paste": "후보자 추가",

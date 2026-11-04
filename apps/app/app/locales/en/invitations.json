@@ -201,6 +201,8 @@
       "review": "Review"
     },
     "templateLabel": "Template to send",
+    "sendingWith": "Sending with",
+    "change": "Change",
     "role": "Job role",
     "roleHint": "Fills in the job role field and tells candidates which role to pick in the app.",
     "paste": "Add candidates",

@@ -201,6 +201,8 @@
       "review": "Prüfen"
     },
     "templateLabel": "Zu sendende Vorlage",
+    "sendingWith": "Gesendet mit",
+    "change": "Ändern",
     "role": "Stelle",
     "roleHint": "Füllt das Feld Stelle aus und sagt Kandidaten, welche Rolle sie in der App wählen.",
     "paste": "Kandidaten hinzufügen",

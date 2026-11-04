@@ -201,6 +201,8 @@
       "review": "Tinjau"
     },
     "templateLabel": "Template yang dikirim",
+    "sendingWith": "Dikirim dengan",
+    "change": "Ganti",
     "role": "Posisi",
     "roleHint": "Mengisi kolom posisi dan memberi tahu kandidat peran mana yang dipilih di aplikasi.",
     "paste": "Tambah kandidat",

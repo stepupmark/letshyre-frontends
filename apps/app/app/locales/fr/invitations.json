@@ -201,6 +201,8 @@
       "review": "Vérifier"
     },
     "templateLabel": "Modèle à envoyer",
+    "sendingWith": "Envoyé avec",
+    "change": "Modifier",
     "role": "Poste",
     "roleHint": "Remplit le champ poste et indique aux candidats quel rôle choisir dans l’application.",
     "paste": "Ajouter des candidats",

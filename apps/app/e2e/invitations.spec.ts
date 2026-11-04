@@ -112,8 +112,8 @@ test("an employer copies a starter, rewords it and invites two candidates", asyn
     .filter({ hasText: "Acme invite" })
     .getByRole("link", { name: "Send", exact: true })
     .click()
-  await expect(tab.getByRole("radio", { name: /Acme invite/ })).toBeChecked()
-  await tab.getByRole("button", { name: "Continue" }).click()
+  await expect(tab.getByText("Sending with")).toBeVisible()
+  await expect(tab.getByText("Acme invite", { exact: true })).toBeVisible()
 
   await tab.getByRole("combobox", { name: "Job role" }).fill("Backend Engineer")
   await tab
