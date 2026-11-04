@@ -13,16 +13,18 @@ import { SceneContext, settled } from "./scene-context"
 
 /**
  * A section `screens` viewports tall whose content stays pinned while scroll drives
- * `progress`. With reduced motion it is an ordinary section and scenes render their still
+ * `progress`, from `pinFrom` up if given. With reduced motion it is an ordinary section and scenes render their still
  * layout; the unpinning is CSS, so the prerendered page is already the right height.
  */
 export function ScrollScene({
   screens,
+  pinFrom,
   className,
   children,
   ...props
 }: Omit<ComponentProps<"section">, "children"> & {
   screens: number
+  pinFrom?: "md"
   children: ReactNode
 }) {
   const ref = useRef<HTMLElement>(null)
@@ -37,13 +39,22 @@ export function ScrollScene({
     <section
       ref={ref}
       className={cn(
-        "relative motion-safe:h-[calc(var(--screens)*100svh)]",
+        "relative",
+        pinFrom
+          ? "md:motion-safe:h-[calc(var(--screens)*100svh)]"
+          : "motion-safe:h-[calc(var(--screens)*100svh)]",
         className
       )}
       style={{ "--screens": screens } as CSSProperties}
       {...props}
     >
-      <div className="motion-safe:sticky motion-safe:top-0 motion-safe:h-svh motion-safe:overflow-hidden">
+      <div
+        className={
+          pinFrom
+            ? "md:motion-safe:sticky md:motion-safe:top-0 md:motion-safe:h-svh md:motion-safe:overflow-hidden"
+            : "motion-safe:sticky motion-safe:top-0 motion-safe:h-svh motion-safe:overflow-hidden"
+        }
+      >
         <SceneContext
           value={{ progress: still ? settled : scrollYProgress, still }}
         >

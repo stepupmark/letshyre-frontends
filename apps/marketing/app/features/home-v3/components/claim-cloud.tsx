@@ -15,7 +15,7 @@ const SPOTS = [
 ] as const
 
 /** The resume buzzwords around the hero photo; scrolling clears them away. */
-export function ClaimCloud() {
+export default function ClaimCloud() {
   const { t } = useTranslation("homeV3")
   const { progress } = useScene()
   const claims = t("hero.claims", { returnObjects: true })

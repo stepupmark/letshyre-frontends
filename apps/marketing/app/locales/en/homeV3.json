@@ -59,7 +59,7 @@
       {
         "title": "Get a ranked shortlist",
         "body": "Everyone who applied is ranked by job match, skills and interview, with matching professionals added from the talent pool.",
-        "photo": "A hiring manager points at a shortlist on her laptop during a call."
+        "photo": "A hiring manager points at her laptop screen as she talks through a shortlist on a video call."
       },
       {
         "title": "Read the interview",
@@ -71,7 +71,62 @@
         "body": "One credit unlocks the resume, contact details and recording. Then you hire your way.",
         "photo": "A hiring manager smiles on a call with a candidate."
       }
-    ]
+    ],
+    "carousel": "How it works, four steps. Scroll sideways to see each one.",
+    "cards": {
+      "job": {
+        "label": "A job description for a Senior frontend engineer, with four requirements found: React, TypeScript, 5+ years and remote.",
+        "kicker": "Job description",
+        "title": "Senior frontend engineer",
+        "found": "4 requirements found",
+        "chips": ["React", "TypeScript", "5+ years", "Remote"]
+      },
+      "shortlist": {
+        "label": "A shortlist of three candidates ranked by AI match: Vyshnavi Rao 86, Arjun Mehta 74 and Meera Shah 68, who joined from the talent pool.",
+        "kicker": "Ranked shortlist",
+        "title": "24 applied · ranked by evidence",
+        "match": "AI match",
+        "pool": "From pool",
+        "people": [
+          {
+            "name": "Vyshnavi Rao",
+            "role": "Frontend engineer · 7 yrs",
+            "score": 86,
+            "pool": false
+          },
+          {
+            "name": "Arjun Mehta",
+            "role": "React developer · 5 yrs",
+            "score": 74,
+            "pool": false
+          },
+          {
+            "name": "Meera Shah",
+            "role": "UI engineer · 6 yrs",
+            "score": 68,
+            "pool": true
+          }
+        ]
+      },
+      "scorecard": {
+        "label": "An interview scorecard of 78 out of 100, marked as a strong interview, with the recording on question 5 of 8.",
+        "kicker": "Interview scorecard",
+        "score": "78",
+        "outOf": "/100",
+        "verdict": "Strong interview",
+        "question": "Question 5 of 8",
+        "duration": "24:10"
+      },
+      "unlock": {
+        "label": "Vyshnavi Rao's file, unlocked for one credit, with her phone number showing.",
+        "kicker": "Candidate file",
+        "name": "Vyshnavi Rao",
+        "role": "Frontend engineer · 7 yrs",
+        "unlocked": "Unlocked",
+        "credit": "1 credit",
+        "phone": "+91 98765 43210"
+      }
+    }
   },
   "file": {
     "eyebrow": "Inside a candidate file",

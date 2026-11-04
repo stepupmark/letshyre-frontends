@@ -1,13 +1,17 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { useTransform } from "motion/react"
 import * as m from "motion/react-m"
-import { useId } from "react"
+import { lazy, Suspense, useId } from "react"
+
+import { useHydrated } from "@/hooks/use-hydrated"
 
 import { AudienceCtas } from "./audience-ctas"
-import { ClaimCloud } from "./claim-cloud"
 import { Photo } from "./photo"
 import { useScene } from "./scene-context"
 import { ScrollScene } from "./scroll-scene"
+
+// decorative, so it loads after hydration; a prerendered Suspense needs inline scripts the CSP blocks
+const ClaimCloud = lazy(() => import("./claim-cloud"))
 
 export function Hero() {
   const titleId = useId()
@@ -57,6 +61,7 @@ function HeroCopy({ titleId }: { titleId: string }) {
 function HeroPhoto() {
   const { t } = useTranslation("homeV3")
   const { progress, still } = useScene()
+  const hydrated = useHydrated()
   const scale = useTransform(progress, [0, 0.75], [0.62, 1])
   const y = useTransform(progress, [0, 0.75], ["62svh", "0svh"])
   const zoom = useTransform(progress, [0, 1], [1.2, 1])
@@ -91,7 +96,11 @@ function HeroPhoto() {
           />
         </m.div>
       </m.div>
-      <ClaimCloud />
+      {hydrated ? (
+        <Suspense>
+          <ClaimCloud />
+        </Suspense>
+      ) : null}
     </>
   )
 }
