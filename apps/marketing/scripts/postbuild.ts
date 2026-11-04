@@ -23,6 +23,7 @@ import {
   nginxMap,
 } from "../../../tooling/csp.ts"
 import { pagePolicy } from "./csp.ts"
+import { type LlmsPage, renderLlms } from "./llms.ts"
 import { checkPage } from "./seo-checks.ts"
 import { renderRobots, renderSitemap } from "./sitemap.ts"
 
@@ -104,6 +105,27 @@ writeFileSync(
   )
 )
 writeFileSync(join(CLIENT, "robots.txt"), renderRobots(site, production))
+
+const englishMeta = (id: PageId) => {
+  const ns = PAGES[id].namespaces[0]
+  const catalog = JSON.parse(
+    readFileSync(join(ROOT, `app/locales/en/${ns}.json`), "utf8")
+  ) as { meta: { title: string; description: string } }
+  return catalog.meta
+}
+const llmsPages: LlmsPage[] = [...ready]
+  .filter(
+    ([id, locales]) => locales.includes("en") && !PREVIEW_PAGES.includes(id)
+  )
+  .map(([id]) => ({ id, path: PAGES[id].path, ...englishMeta(id) }))
+writeFileSync(
+  join(CLIENT, "llms.txt"),
+  renderLlms(
+    site,
+    { name: "LetsHyre", summary: englishMeta("home").description },
+    llmsPages
+  )
+)
 
 const routes = [...ready].flatMap(([id, locales]) =>
   locales.map((lang) => ({
@@ -201,5 +223,5 @@ if (problems.length) {
   process.exit(1)
 }
 console.log(
-  `postbuild: ${routes.length} pages checked, sitemap and robots written (${production ? "indexable" : "noindex"}), CSP ${enforceCsp ? "enforced" : "report-only"}`
+  `postbuild: ${routes.length} pages checked, sitemap, robots and llms.txt written (${production ? "indexable" : "noindex"}), CSP ${enforceCsp ? "enforced" : "report-only"}`
 )

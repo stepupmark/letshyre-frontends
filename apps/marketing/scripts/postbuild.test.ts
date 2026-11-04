@@ -8,6 +8,7 @@ import {
   parseNginxMap,
 } from "../../../tooling/csp"
 import { pagePolicy } from "./csp"
+import { renderLlms } from "./llms"
 import { checkPage, width } from "./seo-checks"
 import { renderRobots, renderSitemap } from "./sitemap"
 
@@ -108,6 +109,38 @@ describe("sitemap and robots", () => {
   it("only lets crawlers in on production", () => {
     expect(renderRobots(SITE, false)).toBe("User-agent: *\nDisallow: /\n")
     expect(renderRobots(SITE, true)).toContain(`Sitemap: ${SITE}/sitemap.xml`)
+  })
+})
+
+describe("llms.txt", () => {
+  const txt = renderLlms(
+    SITE,
+    { name: "LetsHyre", summary: "Hire on evidence." },
+    [
+      {
+        id: "terms",
+        path: "/terms",
+        title: "Terms and conditions | letshyre.ai",
+        description: "The terms.",
+      },
+      {
+        id: "pricing",
+        path: "/pricing",
+        title: "Pricing | letshyre.ai",
+        description: "Credit plans.",
+      },
+      { id: "home", path: "", title: "Home", description: "Hire on evidence." },
+    ]
+  )
+
+  it("groups English pages in a fixed order and leaves home to the summary", () => {
+    expect(txt).toMatch(/^# LetsHyre\n\n> Hire on evidence\.\n/)
+    expect(txt).toContain(
+      `## Employers\n\n- [Pricing](${SITE}/en/pricing): Credit plans.`
+    )
+    expect(txt.indexOf("## Employers")).toBeLessThan(txt.indexOf("## Optional"))
+    expect(txt).not.toContain("[Home]")
+    expect(txt).not.toContain("## Company")
   })
 })
 
