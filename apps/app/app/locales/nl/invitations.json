@@ -78,5 +78,61 @@
     "body": "Schrijf het bericht dat kandidaten lezen.",
     "inviteLink": "Voeg de uitnodigingslink toe zodat kandidaten hun interview kunnen starten.",
     "unknown": "Verwijder velden die LetsHyre niet invult; ze zijn rood gemarkeerd."
+  },
+  "toolbar": {
+    "label": "Opmaak",
+    "bold": "Vet",
+    "italic": "Cursief",
+    "bullets": "Opsomming",
+    "numbers": "Genummerde lijst",
+    "link": "Link",
+    "insertField": "Veld",
+    "insertFieldHint": "Of typ",
+    "fields": "Velden die per kandidaat worden ingevuld",
+    "noFields": "Geen veld gevonden",
+    "button": "Knop",
+    "callout": "Hulpkader",
+    "undo": "Ongedaan maken",
+    "redo": "Opnieuw",
+    "keys": {
+      "bold": "Ctrl B",
+      "italic": "Ctrl I",
+      "bullets": "Ctrl Shift 8",
+      "numbers": "Ctrl Shift 7",
+      "link": "Ctrl K",
+      "undo": "Ctrl Z",
+      "redo": "Ctrl Shift Z",
+      "field": "{{"
+    }
+  },
+  "link": {
+    "addTitle": "Link toevoegen",
+    "editTitle": "Link bewerken",
+    "lead": "Kies waar de link de kandidaat naartoe brengt.",
+    "target": "Link gaat naar",
+    "invite": "Uitnodigingslink",
+    "web": "Webadres",
+    "inviteHint": "Elke kandidaat krijgt een eigen link om zich aan te melden en het interview te starten.",
+    "url": "Webadres",
+    "urlPlaceholder": "https://",
+    "urlError": "Voer een volledig adres in dat begint met https://",
+    "apply": "Link toepassen",
+    "remove": "Link verwijderen"
+  },
+  "button": {
+    "addTitle": "Knop toevoegen",
+    "editTitle": "Knop bewerken",
+    "lead": "Een knop valt meer op dan een link. Gebruik hem voor de belangrijkste actie.",
+    "label": "Knoptekst",
+    "defaultLabel": "Start je interview",
+    "labelError": "Schrijf de tekst op de knop.",
+    "style": "Stijl",
+    "tones": {
+      "primary": "Primair",
+      "dark": "Donker"
+    },
+    "insert": "Knop toevoegen",
+    "apply": "Knop opslaan",
+    "remove": "Knop verwijderen"
   }
 }

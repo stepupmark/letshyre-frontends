@@ -78,5 +78,61 @@
     "body": "Escribe el mensaje que leerán los candidatos.",
     "inviteLink": "Añade el enlace de invitación para que los candidatos puedan empezar su entrevista.",
     "unknown": "Quita los campos que LetsHyre no completa; aparecen en rojo."
+  },
+  "toolbar": {
+    "label": "Formato",
+    "bold": "Negrita",
+    "italic": "Cursiva",
+    "bullets": "Lista con viñetas",
+    "numbers": "Lista numerada",
+    "link": "Enlace",
+    "insertField": "Campo",
+    "insertFieldHint": "O escribe",
+    "fields": "Campos que se completan para cada candidato",
+    "noFields": "Ningún campo coincide",
+    "button": "Botón",
+    "callout": "Recuadro de ayuda",
+    "undo": "Deshacer",
+    "redo": "Rehacer",
+    "keys": {
+      "bold": "Ctrl B",
+      "italic": "Ctrl I",
+      "bullets": "Ctrl Shift 8",
+      "numbers": "Ctrl Shift 7",
+      "link": "Ctrl K",
+      "undo": "Ctrl Z",
+      "redo": "Ctrl Shift Z",
+      "field": "{{"
+    }
+  },
+  "link": {
+    "addTitle": "Añadir enlace",
+    "editTitle": "Editar enlace",
+    "lead": "Elige a dónde lleva el enlace al candidato.",
+    "target": "El enlace va a",
+    "invite": "Enlace de invitación",
+    "web": "Dirección web",
+    "inviteHint": "Cada candidato recibe su propio enlace para registrarse y empezar la entrevista.",
+    "url": "Dirección web",
+    "urlPlaceholder": "https://",
+    "urlError": "Escribe una dirección completa que empiece por https://",
+    "apply": "Aplicar enlace",
+    "remove": "Quitar enlace"
+  },
+  "button": {
+    "addTitle": "Añadir botón",
+    "editTitle": "Editar botón",
+    "lead": "Un botón destaca más que un enlace. Úsalo para la acción principal.",
+    "label": "Texto del botón",
+    "defaultLabel": "Empieza tu entrevista",
+    "labelError": "Escribe el texto del botón.",
+    "style": "Estilo",
+    "tones": {
+      "primary": "Principal",
+      "dark": "Oscuro"
+    },
+    "insert": "Añadir botón",
+    "apply": "Guardar botón",
+    "remove": "Quitar botón"
   }
 }

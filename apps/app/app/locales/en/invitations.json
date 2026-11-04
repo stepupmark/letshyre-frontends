@@ -78,5 +78,61 @@
     "body": "Write the message candidates will read.",
     "inviteLink": "Add the invite link so candidates can start their interview.",
     "unknown": "Remove fields LetsHyre doesn't fill in; they're shown in red."
+  },
+  "toolbar": {
+    "label": "Formatting",
+    "bold": "Bold",
+    "italic": "Italic",
+    "bullets": "Bulleted list",
+    "numbers": "Numbered list",
+    "link": "Link",
+    "insertField": "Field",
+    "insertFieldHint": "Or type",
+    "fields": "Fields filled in for each candidate",
+    "noFields": "No field matches",
+    "button": "Button",
+    "callout": "Help box",
+    "undo": "Undo",
+    "redo": "Redo",
+    "keys": {
+      "bold": "Ctrl B",
+      "italic": "Ctrl I",
+      "bullets": "Ctrl Shift 8",
+      "numbers": "Ctrl Shift 7",
+      "link": "Ctrl K",
+      "undo": "Ctrl Z",
+      "redo": "Ctrl Shift Z",
+      "field": "{{"
+    }
+  },
+  "link": {
+    "addTitle": "Add a link",
+    "editTitle": "Edit link",
+    "lead": "Choose where the link takes the candidate.",
+    "target": "Link goes to",
+    "invite": "Invite link",
+    "web": "Web address",
+    "inviteHint": "Each candidate gets their own link to sign up and start the interview.",
+    "url": "Web address",
+    "urlPlaceholder": "https://",
+    "urlError": "Enter a full address that starts with https://",
+    "apply": "Apply link",
+    "remove": "Remove link"
+  },
+  "button": {
+    "addTitle": "Add a button",
+    "editTitle": "Edit button",
+    "lead": "A button stands out more than a link. Use one for the main action.",
+    "label": "Button text",
+    "defaultLabel": "Start your interview",
+    "labelError": "Write the text on the button.",
+    "style": "Style",
+    "tones": {
+      "primary": "Primary",
+      "dark": "Dark"
+    },
+    "insert": "Add button",
+    "apply": "Save button",
+    "remove": "Remove button"
   }
 }

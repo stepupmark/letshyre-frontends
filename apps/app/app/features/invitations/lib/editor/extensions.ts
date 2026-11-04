@@ -5,6 +5,7 @@ import { StarterKit } from "@tiptap/starter-kit"
 import { BODY_LIMIT, SUBJECT_LIMIT } from "../limits"
 import { Callout } from "./callout"
 import { EmailButton, type EmailButtonOptions } from "./email-button"
+import { FieldSuggestion, type FieldMenuBridge } from "./field-suggestion"
 import { MergeField, type MergeFieldOptions } from "./merge-field"
 import { PreserveStyle } from "./preserve-style"
 
@@ -16,10 +17,12 @@ export const bodyExtensions = ({
   placeholder,
   onEditButton,
   editLabel,
+  fieldMenu,
 }: MergeFieldOptions & {
   placeholder: string
   onEditButton: EmailButtonOptions["onEdit"]
   editLabel: string
+  fieldMenu?: FieldMenuBridge
 }) => [
   StarterKit.configure({
     code: false,
@@ -38,6 +41,9 @@ export const bodyExtensions = ({
   MergeField.configure({ labelOf }),
   Placeholder.configure({ placeholder }),
   CharacterCount.configure({ limit: BODY_LIMIT }),
+  ...(fieldMenu
+    ? [FieldSuggestion.configure({ bridge: fieldMenu, labelOf })]
+    : []),
 ]
 
 const SubjectDoc = Node.create({

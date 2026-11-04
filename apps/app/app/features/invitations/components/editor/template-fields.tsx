@@ -65,7 +65,7 @@ export default function TemplateFields({
       <Field data-invalid={Boolean(errors.body)}>
         <FieldLabel id={`${id}-body`}>{t("editor.body")}</FieldLabel>
         <div
-          className="overflow-hidden rounded-lg border border-input transition-colors focus-within:border-ring focus-within:ring-3 focus-within:ring-ring/50 data-[invalid=true]:border-destructive"
+          className="rounded-lg border border-input transition-colors focus-within:border-ring focus-within:ring-3 focus-within:ring-ring/50 data-[invalid=true]:border-destructive"
           data-invalid={Boolean(errors.body)}
         >
           <BodyEditor

@@ -78,5 +78,61 @@
     "body": "اكتب الرسالة التي سيقرؤها المرشحون.",
     "inviteLink": "أضف رابط الدعوة ليتمكن المرشحون من بدء مقابلتهم.",
     "unknown": "احذف الحقول التي لا تملؤها LetsHyre؛ وهي معروضة باللون الأحمر."
+  },
+  "toolbar": {
+    "label": "التنسيق",
+    "bold": "غامق",
+    "italic": "مائل",
+    "bullets": "قائمة نقطية",
+    "numbers": "قائمة مرقمة",
+    "link": "رابط",
+    "insertField": "حقل",
+    "insertFieldHint": "أو اكتب",
+    "fields": "حقول تُملأ لكل مرشح",
+    "noFields": "لا يوجد حقل مطابق",
+    "button": "زر",
+    "callout": "مربع مساعدة",
+    "undo": "تراجع",
+    "redo": "إعادة",
+    "keys": {
+      "bold": "Ctrl B",
+      "italic": "Ctrl I",
+      "bullets": "Ctrl Shift 8",
+      "numbers": "Ctrl Shift 7",
+      "link": "Ctrl K",
+      "undo": "Ctrl Z",
+      "redo": "Ctrl Shift Z",
+      "field": "{{"
+    }
+  },
+  "link": {
+    "addTitle": "إضافة رابط",
+    "editTitle": "تعديل الرابط",
+    "lead": "اختر إلى أين يأخذ الرابط المرشح.",
+    "target": "يذهب الرابط إلى",
+    "invite": "رابط الدعوة",
+    "web": "عنوان ويب",
+    "inviteHint": "يحصل كل مرشح على رابط خاص به للتسجيل وبدء المقابلة.",
+    "url": "عنوان الويب",
+    "urlPlaceholder": "https://",
+    "urlError": "أدخل عنوانًا كاملًا يبدأ بـ https://",
+    "apply": "تطبيق الرابط",
+    "remove": "إزالة الرابط"
+  },
+  "button": {
+    "addTitle": "إضافة زر",
+    "editTitle": "تعديل الزر",
+    "lead": "الزر أوضح من الرابط. استخدمه للإجراء الرئيسي.",
+    "label": "نص الزر",
+    "defaultLabel": "ابدأ مقابلتك",
+    "labelError": "اكتب نص الزر.",
+    "style": "النمط",
+    "tones": {
+      "primary": "أساسي",
+      "dark": "داكن"
+    },
+    "insert": "إضافة الزر",
+    "apply": "حفظ الزر",
+    "remove": "إزالة الزر"
   }
 }

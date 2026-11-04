@@ -78,5 +78,61 @@
     "body": "候補者が読む本文を入力してください。",
     "inviteLink": "候補者が面接を始められるよう招待リンクを入れてください。",
     "unknown": "LetsHyreが差し込まないフィールドを削除してください（赤で表示）。"
+  },
+  "toolbar": {
+    "label": "書式",
+    "bold": "太字",
+    "italic": "斜体",
+    "bullets": "箇条書き",
+    "numbers": "番号付きリスト",
+    "link": "リンク",
+    "insertField": "フィールド",
+    "insertFieldHint": "または入力",
+    "fields": "候補者ごとに差し込まれるフィールド",
+    "noFields": "一致するフィールドはありません",
+    "button": "ボタン",
+    "callout": "ヘルプ枠",
+    "undo": "元に戻す",
+    "redo": "やり直す",
+    "keys": {
+      "bold": "Ctrl B",
+      "italic": "Ctrl I",
+      "bullets": "Ctrl Shift 8",
+      "numbers": "Ctrl Shift 7",
+      "link": "Ctrl K",
+      "undo": "Ctrl Z",
+      "redo": "Ctrl Shift Z",
+      "field": "{{"
+    }
+  },
+  "link": {
+    "addTitle": "リンクを追加",
+    "editTitle": "リンクを編集",
+    "lead": "リンクの移動先を選んでください。",
+    "target": "リンク先",
+    "invite": "招待リンク",
+    "web": "Webアドレス",
+    "inviteHint": "候補者ごとに、登録して面接を始めるための専用リンクが届きます。",
+    "url": "Webアドレス",
+    "urlPlaceholder": "https://",
+    "urlError": "https:// で始まる完全なアドレスを入力してください",
+    "apply": "リンクを適用",
+    "remove": "リンクを削除"
+  },
+  "button": {
+    "addTitle": "ボタンを追加",
+    "editTitle": "ボタンを編集",
+    "lead": "ボタンはリンクより目立ちます。主な操作に使いましょう。",
+    "label": "ボタンの文言",
+    "defaultLabel": "面接を始める",
+    "labelError": "ボタンの文言を入力してください。",
+    "style": "スタイル",
+    "tones": {
+      "primary": "プライマリ",
+      "dark": "ダーク"
+    },
+    "insert": "ボタンを追加",
+    "apply": "ボタンを保存",
+    "remove": "ボタンを削除"
   }
 }

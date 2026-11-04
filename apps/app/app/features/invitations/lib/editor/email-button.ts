@@ -52,6 +52,7 @@ export const EmailButton = Node.create<EmailButtonOptions>({
 
   addNodeView() {
     const { onEdit, editLabel } = this.options
+    const editor = this.editor
     return ({ node, getPos }) => {
       const dom = document.createElement("div")
       dom.dataset.emailButton = ""
@@ -65,6 +66,7 @@ export const EmailButton = Node.create<EmailButtonOptions>({
       }
       render(node.attrs as ButtonAttributes)
       button.addEventListener("click", () => {
+        if (!editor.isEditable) return
         const pos = getPos()
         if (typeof pos === "number") onEdit(pos)
       })

@@ -78,5 +78,61 @@
     "body": "Rédigez le message que liront les candidats.",
     "inviteLink": "Ajoutez le lien d’invitation pour que les candidats puissent commencer leur entretien.",
     "unknown": "Retirez les champs que LetsHyre ne remplit pas ; ils apparaissent en rouge."
+  },
+  "toolbar": {
+    "label": "Mise en forme",
+    "bold": "Gras",
+    "italic": "Italique",
+    "bullets": "Liste à puces",
+    "numbers": "Liste numérotée",
+    "link": "Lien",
+    "insertField": "Champ",
+    "insertFieldHint": "Ou tapez",
+    "fields": "Champs remplis pour chaque candidat",
+    "noFields": "Aucun champ ne correspond",
+    "button": "Bouton",
+    "callout": "Encadré d’aide",
+    "undo": "Annuler",
+    "redo": "Rétablir",
+    "keys": {
+      "bold": "Ctrl B",
+      "italic": "Ctrl I",
+      "bullets": "Ctrl Shift 8",
+      "numbers": "Ctrl Shift 7",
+      "link": "Ctrl K",
+      "undo": "Ctrl Z",
+      "redo": "Ctrl Shift Z",
+      "field": "{{"
+    }
+  },
+  "link": {
+    "addTitle": "Ajouter un lien",
+    "editTitle": "Modifier le lien",
+    "lead": "Choisissez où le lien mène le candidat.",
+    "target": "Le lien mène à",
+    "invite": "Lien d’invitation",
+    "web": "Adresse web",
+    "inviteHint": "Chaque candidat reçoit son propre lien pour s’inscrire et commencer l’entretien.",
+    "url": "Adresse web",
+    "urlPlaceholder": "https://",
+    "urlError": "Saisissez une adresse complète commençant par https://",
+    "apply": "Appliquer le lien",
+    "remove": "Retirer le lien"
+  },
+  "button": {
+    "addTitle": "Ajouter un bouton",
+    "editTitle": "Modifier le bouton",
+    "lead": "Un bouton se remarque plus qu’un lien. Utilisez-le pour l’action principale.",
+    "label": "Texte du bouton",
+    "defaultLabel": "Commencer l’entretien",
+    "labelError": "Saisissez le texte du bouton.",
+    "style": "Style",
+    "tones": {
+      "primary": "Principal",
+      "dark": "Sombre"
+    },
+    "insert": "Ajouter le bouton",
+    "apply": "Enregistrer le bouton",
+    "remove": "Retirer le bouton"
   }
 }

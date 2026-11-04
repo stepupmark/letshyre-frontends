@@ -78,5 +78,61 @@
     "body": "Schreiben Sie die Nachricht, die Kandidaten lesen.",
     "inviteLink": "Fügen Sie den Einladungslink ein, damit Kandidaten ihr Interview starten können.",
     "unknown": "Entfernen Sie Felder, die LetsHyre nicht ausfüllt; sie sind rot markiert."
+  },
+  "toolbar": {
+    "label": "Formatierung",
+    "bold": "Fett",
+    "italic": "Kursiv",
+    "bullets": "Aufzählung",
+    "numbers": "Nummerierte Liste",
+    "link": "Link",
+    "insertField": "Feld",
+    "insertFieldHint": "Oder tippen Sie",
+    "fields": "Felder, die für jeden Kandidaten ausgefüllt werden",
+    "noFields": "Kein passendes Feld",
+    "button": "Schaltfläche",
+    "callout": "Hinweisbox",
+    "undo": "Rückgängig",
+    "redo": "Wiederholen",
+    "keys": {
+      "bold": "Ctrl B",
+      "italic": "Ctrl I",
+      "bullets": "Ctrl Shift 8",
+      "numbers": "Ctrl Shift 7",
+      "link": "Ctrl K",
+      "undo": "Ctrl Z",
+      "redo": "Ctrl Shift Z",
+      "field": "{{"
+    }
+  },
+  "link": {
+    "addTitle": "Link hinzufügen",
+    "editTitle": "Link bearbeiten",
+    "lead": "Wählen Sie, wohin der Link den Kandidaten führt.",
+    "target": "Link führt zu",
+    "invite": "Einladungslink",
+    "web": "Webadresse",
+    "inviteHint": "Jeder Kandidat erhält einen eigenen Link, um sich zu registrieren und das Interview zu starten.",
+    "url": "Webadresse",
+    "urlPlaceholder": "https://",
+    "urlError": "Geben Sie eine vollständige Adresse ein, die mit https:// beginnt",
+    "apply": "Link übernehmen",
+    "remove": "Link entfernen"
+  },
+  "button": {
+    "addTitle": "Schaltfläche hinzufügen",
+    "editTitle": "Schaltfläche bearbeiten",
+    "lead": "Eine Schaltfläche fällt mehr auf als ein Link. Nutzen Sie sie für die wichtigste Aktion.",
+    "label": "Text der Schaltfläche",
+    "defaultLabel": "Interview starten",
+    "labelError": "Schreiben Sie den Text der Schaltfläche.",
+    "style": "Stil",
+    "tones": {
+      "primary": "Primär",
+      "dark": "Dunkel"
+    },
+    "insert": "Schaltfläche hinzufügen",
+    "apply": "Schaltfläche speichern",
+    "remove": "Schaltfläche entfernen"
   }
 }

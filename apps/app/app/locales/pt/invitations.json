@@ -78,5 +78,61 @@
     "body": "Escreva a mensagem que os candidatos vão ler.",
     "inviteLink": "Adicione o link do convite para que os candidatos possam começar a entrevista.",
     "unknown": "Remova os campos que a LetsHyre não preenche; eles aparecem em vermelho."
+  },
+  "toolbar": {
+    "label": "Formatação",
+    "bold": "Negrito",
+    "italic": "Itálico",
+    "bullets": "Lista com marcadores",
+    "numbers": "Lista numerada",
+    "link": "Link",
+    "insertField": "Campo",
+    "insertFieldHint": "Ou digite",
+    "fields": "Campos preenchidos para cada candidato",
+    "noFields": "Nenhum campo corresponde",
+    "button": "Botão",
+    "callout": "Caixa de ajuda",
+    "undo": "Desfazer",
+    "redo": "Refazer",
+    "keys": {
+      "bold": "Ctrl B",
+      "italic": "Ctrl I",
+      "bullets": "Ctrl Shift 8",
+      "numbers": "Ctrl Shift 7",
+      "link": "Ctrl K",
+      "undo": "Ctrl Z",
+      "redo": "Ctrl Shift Z",
+      "field": "{{"
+    }
+  },
+  "link": {
+    "addTitle": "Adicionar link",
+    "editTitle": "Editar link",
+    "lead": "Escolha para onde o link leva o candidato.",
+    "target": "O link leva a",
+    "invite": "Link do convite",
+    "web": "Endereço web",
+    "inviteHint": "Cada candidato recebe o próprio link para se cadastrar e começar a entrevista.",
+    "url": "Endereço web",
+    "urlPlaceholder": "https://",
+    "urlError": "Digite um endereço completo que comece com https://",
+    "apply": "Aplicar link",
+    "remove": "Remover link"
+  },
+  "button": {
+    "addTitle": "Adicionar botão",
+    "editTitle": "Editar botão",
+    "lead": "Um botão chama mais atenção que um link. Use para a ação principal.",
+    "label": "Texto do botão",
+    "defaultLabel": "Comece sua entrevista",
+    "labelError": "Escreva o texto do botão.",
+    "style": "Estilo",
+    "tones": {
+      "primary": "Principal",
+      "dark": "Escuro"
+    },
+    "insert": "Adicionar botão",
+    "apply": "Salvar botão",
+    "remove": "Remover botão"
   }
 }

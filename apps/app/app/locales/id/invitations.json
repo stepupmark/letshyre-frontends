@@ -78,5 +78,61 @@
     "body": "Tulis pesan yang akan dibaca kandidat.",
     "inviteLink": "Tambahkan tautan undangan agar kandidat bisa memulai wawancara.",
     "unknown": "Hapus kolom yang tidak diisi LetsHyre; kolom itu ditandai merah."
+  },
+  "toolbar": {
+    "label": "Format",
+    "bold": "Tebal",
+    "italic": "Miring",
+    "bullets": "Daftar berpoin",
+    "numbers": "Daftar bernomor",
+    "link": "Tautan",
+    "insertField": "Kolom",
+    "insertFieldHint": "Atau ketik",
+    "fields": "Kolom yang diisi untuk setiap kandidat",
+    "noFields": "Tidak ada kolom yang cocok",
+    "button": "Tombol",
+    "callout": "Kotak bantuan",
+    "undo": "Urungkan",
+    "redo": "Ulangi",
+    "keys": {
+      "bold": "Ctrl B",
+      "italic": "Ctrl I",
+      "bullets": "Ctrl Shift 8",
+      "numbers": "Ctrl Shift 7",
+      "link": "Ctrl K",
+      "undo": "Ctrl Z",
+      "redo": "Ctrl Shift Z",
+      "field": "{{"
+    }
+  },
+  "link": {
+    "addTitle": "Tambah tautan",
+    "editTitle": "Edit tautan",
+    "lead": "Pilih ke mana tautan membawa kandidat.",
+    "target": "Tautan menuju",
+    "invite": "Tautan undangan",
+    "web": "Alamat web",
+    "inviteHint": "Setiap kandidat mendapat tautan sendiri untuk mendaftar dan memulai wawancara.",
+    "url": "Alamat web",
+    "urlPlaceholder": "https://",
+    "urlError": "Masukkan alamat lengkap yang diawali https://",
+    "apply": "Terapkan tautan",
+    "remove": "Hapus tautan"
+  },
+  "button": {
+    "addTitle": "Tambah tombol",
+    "editTitle": "Edit tombol",
+    "lead": "Tombol lebih menonjol daripada tautan. Gunakan untuk tindakan utama.",
+    "label": "Teks tombol",
+    "defaultLabel": "Mulai wawancara Anda",
+    "labelError": "Tulis teks tombol.",
+    "style": "Gaya",
+    "tones": {
+      "primary": "Utama",
+      "dark": "Gelap"
+    },
+    "insert": "Tambah tombol",
+    "apply": "Simpan tombol",
+    "remove": "Hapus tombol"
   }
 }

@@ -78,5 +78,61 @@
     "body": "Scrivi il messaggio che leggeranno i candidati.",
     "inviteLink": "Aggiungi il link di invito così i candidati possono iniziare il colloquio.",
     "unknown": "Rimuovi i campi che LetsHyre non compila; sono evidenziati in rosso."
+  },
+  "toolbar": {
+    "label": "Formattazione",
+    "bold": "Grassetto",
+    "italic": "Corsivo",
+    "bullets": "Elenco puntato",
+    "numbers": "Elenco numerato",
+    "link": "Link",
+    "insertField": "Campo",
+    "insertFieldHint": "Oppure digita",
+    "fields": "Campi compilati per ogni candidato",
+    "noFields": "Nessun campo corrisponde",
+    "button": "Pulsante",
+    "callout": "Riquadro di aiuto",
+    "undo": "Annulla",
+    "redo": "Ripeti",
+    "keys": {
+      "bold": "Ctrl B",
+      "italic": "Ctrl I",
+      "bullets": "Ctrl Shift 8",
+      "numbers": "Ctrl Shift 7",
+      "link": "Ctrl K",
+      "undo": "Ctrl Z",
+      "redo": "Ctrl Shift Z",
+      "field": "{{"
+    }
+  },
+  "link": {
+    "addTitle": "Aggiungi link",
+    "editTitle": "Modifica link",
+    "lead": "Scegli dove il link porta il candidato.",
+    "target": "Il link porta a",
+    "invite": "Link di invito",
+    "web": "Indirizzo web",
+    "inviteHint": "Ogni candidato riceve il proprio link per registrarsi e iniziare il colloquio.",
+    "url": "Indirizzo web",
+    "urlPlaceholder": "https://",
+    "urlError": "Inserisci un indirizzo completo che inizi con https://",
+    "apply": "Applica link",
+    "remove": "Rimuovi link"
+  },
+  "button": {
+    "addTitle": "Aggiungi pulsante",
+    "editTitle": "Modifica pulsante",
+    "lead": "Un pulsante si nota più di un link. Usalo per l’azione principale.",
+    "label": "Testo del pulsante",
+    "defaultLabel": "Inizia il colloquio",
+    "labelError": "Scrivi il testo del pulsante.",
+    "style": "Stile",
+    "tones": {
+      "primary": "Principale",
+      "dark": "Scuro"
+    },
+    "insert": "Aggiungi pulsante",
+    "apply": "Salva pulsante",
+    "remove": "Rimuovi pulsante"
   }
 }
