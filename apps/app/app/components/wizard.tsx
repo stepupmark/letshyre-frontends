@@ -99,7 +99,7 @@ export function Wizard({
   return (
     <div
       data-wide={wide}
-      className="flex max-w-xl flex-col gap-6 data-[wide=true]:max-w-6xl"
+      className="group/wizard flex max-w-xl flex-col gap-6 data-[wide=true]:max-w-6xl"
     >
       <div className="max-w-xl">
         <Stepper
@@ -138,7 +138,7 @@ export function Wizard({
           </Button>
         )}
         <Button
-          className="ms-auto"
+          className="ms-auto group-data-[wide=true]/wizard:sm:ms-0"
           onClick={() => void onContinue()}
           disabled={pending}
         >

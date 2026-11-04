@@ -68,7 +68,6 @@ export function RecipientsStep({
           label={t("send.role")}
           hint={t("send.roleHint")}
           value={role}
-          placeholder={roles[0] ?? t("preview.sampleRole")}
           list={`${id}-roles`}
           autoComplete="off"
           error={errors.role}
