@@ -31,6 +31,7 @@ import { CopyDialog } from "../library/copy-dialog"
 import { PreviewSheet } from "../preview/preview-sheet"
 import { EditorSkeleton } from "./editor-skeleton"
 import { EditorTips } from "./editor-tips"
+import { PreviewCard } from "./preview-card"
 import { Readiness } from "./readiness"
 import { SaveState } from "./save-state"
 
@@ -271,26 +272,11 @@ export function EditorForm({
         </form>
         <aside className="flex min-w-0 flex-col gap-4 lg:sticky lg:top-20">
           {owned && <Readiness subject={subject} body={body} />}
-          <button
-            type="button"
-            onClick={() => {
+          <PreviewCard
+            onOpen={() => {
               setPreviewing(true)
             }}
-            className="group flex items-center gap-3 rounded-lg border p-4 text-start text-sm transition-colors outline-none hover:bg-muted/40 focus-visible:ring-3 focus-visible:ring-ring/50"
-          >
-            <span
-              aria-hidden="true"
-              className="flex size-9 shrink-0 items-center justify-center rounded-md bg-brand-muted text-brand-text transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none"
-            >
-              <Eye className="size-4" />
-            </span>
-            <span className="flex flex-col">
-              <span className="font-medium">{t("editor.previewCard")}</span>
-              <span className="text-muted-foreground">
-                {t("editor.previewCardBody")}
-              </span>
-            </span>
-          </button>
+          />
           {owned && <EditorTips />}
         </aside>
       </div>

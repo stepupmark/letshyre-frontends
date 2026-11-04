@@ -1,11 +1,8 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import {
-  DropdownMenu,
-  DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
 } from "@workspace/ui/components/dropdown-menu"
 import {
   Tabs,
@@ -14,10 +11,9 @@ import {
   TabsTrigger,
 } from "@workspace/ui/components/tabs"
 import { useQuery } from "@tanstack/react-query"
-import { Copy, Ellipsis, Send, Trash2 } from "lucide-react"
-import { AnimatePresence } from "motion/react"
+import { Copy, Send, Trash2 } from "lucide-react"
 import * as m from "motion/react-m"
-import { useId, useState, type ReactNode } from "react"
+import { useId, useState } from "react"
 import { href, useSearchParams } from "react-router"
 
 import { AppLink } from "@/components/app-link"
@@ -34,6 +30,7 @@ import { templatesQuery } from "../../queries/templates.queries"
 import type { Template } from "../../schemas/template.schema"
 import { EnvelopeArt } from "../art/envelope-art"
 import { CopyDialog } from "./copy-dialog"
+import { CardGrid, CardItem, CardMenu, Panel } from "./library-parts"
 import { LibrarySkeleton } from "./library-skeleton"
 import { TemplateCard } from "./template-card"
 
@@ -276,60 +273,5 @@ function LibraryTabs({
         </Panel>
       </TabsContent>
     </Tabs>
-  )
-}
-
-function Panel({ children }: { children: ReactNode }) {
-  return (
-    <m.div
-      initial={{ opacity: 0, y: 6 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: duration.base, ease }}
-    >
-      {children}
-    </m.div>
-  )
-}
-
-function CardGrid({ children }: { children: ReactNode }) {
-  return (
-    <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-      <AnimatePresence initial={false}>{children}</AnimatePresence>
-    </ul>
-  )
-}
-
-function CardItem({ children }: { children: ReactNode }) {
-  return (
-    <m.li
-      layout
-      initial={{ opacity: 0, y: 6 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.98 }}
-      transition={{ duration: duration.base, ease }}
-    >
-      {children}
-    </m.li>
-  )
-}
-
-function CardMenu({ name, children }: { name: string; children: ReactNode }) {
-  const { t } = useTranslation("invitations")
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger
-        render={
-          <Button
-            variant="ghost"
-            size="icon-sm"
-            className="-me-2 -mt-1 text-muted-foreground max-md:size-10"
-            aria-label={t("library.actions", { name })}
-          />
-        }
-      >
-        <Ellipsis />
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">{children}</DropdownMenuContent>
-    </DropdownMenu>
   )
 }
