@@ -18,11 +18,6 @@ export interface TemplateChanges {
   body_html_template?: string
 }
 
-export interface PreviewContext {
-  candidate_name: string
-  job_role: string
-}
-
 // templates are few, so one large page saves paging through the library
 export const listTemplates = async () =>
   parseTemplates(await api.get(BASE, { query: { page_size: 100 } }))
@@ -36,9 +31,9 @@ export const updateTemplate = async (id: string, changes: TemplateChanges) =>
 export const deleteTemplate = async (id: string) =>
   acknowledge(await api.delete(`${BASE}${id}/`))
 
-// browsers can't send a GET body, so the sample values go in the query string
-export const previewTemplate = async (id: string, context: PreviewContext) =>
-  parsePreview(await api.get(`${BASE}${id}/`, { query: { ...context } }))
+// the server renders its own sample candidate; the app fills in real names over that frame
+export const previewTemplate = async (id: string) =>
+  parsePreview(await api.get(`${BASE}${id}/`))
 
 export const sendInvitations = async (
   id: string,

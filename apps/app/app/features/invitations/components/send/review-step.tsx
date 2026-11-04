@@ -31,13 +31,8 @@ export function ReviewStep({
   const at = Math.min(index, recipients.length - 1)
   const recipient = recipients[at]
   const preview = useQuery({
-    ...previewQuery(template.id, {
-      candidate_name: recipient?.name ?? "",
-      job_role: role,
-    }),
-    enabled: Boolean(recipient),
+    ...previewQuery(template.id),
     retry: false,
-    placeholderData: (previous) => previous,
   })
 
   const values = {

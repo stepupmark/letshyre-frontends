@@ -14,7 +14,7 @@ export function TemplateThumbnail({ template }: { template: Template }) {
     job_role: t("preview.sampleRole"),
   }
   const server = useQuery({
-    ...previewQuery(template.id, sample),
+    ...previewQuery(template.id),
     retry: false,
   })
   const html =

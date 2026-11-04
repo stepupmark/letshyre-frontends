@@ -35,12 +35,7 @@ export function EmailPreview({
     job_role: t("preview.sampleRole"),
   })
   const [device, setDevice] = useState(DESKTOP)
-  const server = useQuery(
-    previewQuery(templateId, {
-      candidate_name: t("preview.sampleName"),
-      job_role: t("preview.sampleRole"),
-    })
-  )
+  const server = useQuery(previewQuery(templateId))
   const live = useDeferredValue({ subject, body })
   const values = {
     employer_company_name: t("preview.sampleCompany"),
