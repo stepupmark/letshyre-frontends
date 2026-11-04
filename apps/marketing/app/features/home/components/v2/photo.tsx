@@ -1,17 +1,19 @@
 import { cn } from "@workspace/ui/lib/utils"
 
-/** A photo from public/images/home-v2, encoded at 720 and 1440 px wide in AVIF and WebP. */
+/** A photo from public/images/home-v2, encoded at 720 and 1440 px wide in AVIF and WebP, 3:2 or 4:5. */
 export function Photo({
   name,
   alt,
   sizes,
   priority,
+  portrait,
   className,
 }: {
   name: string
   alt: string
   sizes: string
   priority?: boolean
+  portrait?: boolean
   className?: string
 }) {
   const srcSet = (type: "avif" | "webp") =>
@@ -20,7 +22,8 @@ export function Photo({
   return (
     <picture
       className={cn(
-        "block aspect-3/2 overflow-hidden rounded-2xl border bg-muted",
+        "block overflow-hidden rounded-2xl border bg-muted",
+        portrait ? "aspect-4/5" : "aspect-3/2",
         className
       )}
     >
@@ -31,7 +34,7 @@ export function Photo({
         sizes={sizes}
         alt={alt}
         width={1440}
-        height={960}
+        height={portrait ? 1800 : 960}
         loading={priority ? "eager" : "lazy"}
         fetchPriority={priority ? "high" : "auto"}
         className="size-full object-cover"

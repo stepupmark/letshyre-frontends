@@ -118,80 +118,13 @@
     "title": "Post a job.",
     "accent": "Get a ranked shortlist.",
     "body": "Paste your job description. LetsHyre reads the requirements and ranks everyone who applied, then adds matching professionals from the talent pool.",
-    "points": [
-      "Requirements pulled straight from your job description",
-      "Ranked by job match, skill match and interview score",
-      "Matching profiles recommended from the talent pool"
-    ],
-    "scene": {
-      "label": "A job description for a Senior frontend engineer with four requirements found, next to the ranked shortlist it produced. Two of the four people come from the talent pool.",
+    "photo": "A recruiter at her desk types up a job description on her laptop.",
+    "card": {
+      "label": "A job description for a Senior frontend engineer, with four requirements found: React, TypeScript, 5+ years and remote.",
       "jd": "Job description",
-      "title": "Senior frontend engineer",
-      "text": [
-        {
-          "text": "We're hiring a frontend engineer with ",
-          "mark": false
-        },
-        {
-          "text": "5+ years",
-          "mark": true
-        },
-        {
-          "text": " of building products in ",
-          "mark": false
-        },
-        {
-          "text": "React",
-          "mark": true
-        },
-        {
-          "text": " and ",
-          "mark": false
-        },
-        {
-          "text": "TypeScript",
-          "mark": true
-        },
-        {
-          "text": ". The role is fully ",
-          "mark": false
-        },
-        {
-          "text": "remote",
-          "mark": true
-        },
-        {
-          "text": ".",
-          "mark": false
-        }
-      ],
+      "job": "Senior frontend engineer",
       "found": "4 requirements found",
-      "chips": ["React", "TypeScript", "5+ years", "Remote"],
-      "ranked": "Ranked shortlist",
-      "applied": "24 applied",
-      "pool": "From the talent pool",
-      "people": [
-        {
-          "name": "Vyshnavi Rao",
-          "score": 86,
-          "pool": false
-        },
-        {
-          "name": "Arjun Mehta",
-          "score": 74,
-          "pool": false
-        },
-        {
-          "name": "Meera Shah",
-          "score": 68,
-          "pool": true
-        },
-        {
-          "name": "Kavya Rao",
-          "score": 61,
-          "pool": true
-        }
-      ]
+      "chips": ["React", "TypeScript", "5+ years", "Remote"]
     }
   },
   "evidence": {
@@ -199,38 +132,14 @@
     "title": "Read the interview",
     "accent": "before the call.",
     "body": "Each candidate file shows how they answered role-based questions: a score out of 100, their strengths, the gaps worth probing and the full recording.",
-    "points": [
-      "An interview score with a plain-language summary",
-      "A skill-by-skill scorecard",
-      "The full recording, question by question"
-    ],
-    "scene": {
-      "label": "An interview scorecard for Vyshnavi Rao: 78 out of 100, with React at 84, TypeScript at 79 and system design at 66, a strength, a note worth probing, and her recorded answer to question 5 of 8.",
+    "photo": "A hiring manager in headphones works through a candidate's interview at his laptop.",
+    "card": {
+      "label": "An interview scorecard of 78 out of 100, marked as a strong interview, with the recording on question 5 of 8.",
       "title": "Interview scorecard",
-      "candidate": "Vyshnavi Rao · Frontend engineer",
       "strong": "Strong interview",
       "outOf": "/100",
-      "skills": [
-        {
-          "name": "React",
-          "value": 84
-        },
-        {
-          "name": "TypeScript",
-          "value": 79
-        },
-        {
-          "name": "System design",
-          "value": 66
-        }
-      ],
-      "strength": "Strength",
-      "strengthText": "Explains trade-offs between state libraries clearly",
-      "probe": "Worth probing",
-      "probeText": "Accessibility testing beyond automated checks",
       "question": "Question 5 of 8",
-      "duration": "24:10",
-      "answer": "“I'd lift the state to the closest shared parent first. If that means threading props through five layers, I'd move it into context and keep an eye on re-renders.”"
+      "duration": "24:10"
     }
   },
   "unlock": {
@@ -245,21 +154,14 @@
     ],
     "cta": "Start with 10 free credits",
     "pricing": "See pricing",
-    "scene": {
-      "label": "A candidate file whose AI match of 86 and interview score of 78 are free to compare. Her contact details stay hidden until one credit unlocks them, and the credit balance goes from 10 to 9.",
-      "credits": "Credits",
+    "photo": "A hiring manager calls a candidate from her office desk phone.",
+    "card": {
+      "label": "Vyshnavi Rao's file, unlocked for one credit, with her phone number showing.",
       "name": "Vyshnavi Rao",
       "role": "Frontend engineer · 7 yrs",
-      "locked": "Locked",
       "unlocked": "Unlocked",
-      "free": "Free to compare",
-      "match": "AI match",
-      "interview": "Interview",
-      "outOf": "/100",
-      "unlock": "Unlock for 1 credit",
-      "email": "vyshnavi@example.com",
-      "phone": "+91 98765 43210",
-      "files": ["Resume", "Scorecard", "Recording"]
+      "credit": "1 credit",
+      "phone": "+91 98765 43210"
     }
   },
   "professionals": {

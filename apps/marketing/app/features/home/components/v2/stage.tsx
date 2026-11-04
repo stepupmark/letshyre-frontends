@@ -26,15 +26,3 @@ export function Panel({ className, ...props }: ComponentProps<"div">) {
     <div className={cn("rounded-xl border bg-card", className)} {...props} />
   )
 }
-
-/** A 0–100 bar that fills as it scrolls in. */
-export function Bar({ value }: { value: number }) {
-  return (
-    <span className="block h-1.5 w-full overflow-hidden rounded-full bg-muted">
-      <span
-        className="grow-in block h-full origin-left rounded-full bg-brand"
-        style={{ width: `${String(value)}%` }}
-      />
-    </span>
-  )
-}

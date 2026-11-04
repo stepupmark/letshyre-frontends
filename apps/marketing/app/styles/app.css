@@ -576,19 +576,3 @@
     translate: 0 -0.75rem;
   }
 }
-
-/* a highlighter stroke drawn from the start edge, in order (--i), as it scrolls in */
-@utility mark-in {
-  transform-origin: left;
-  &:dir(rtl) {
-    transform-origin: right;
-  }
-  @supports (animation-timeline: view()) {
-    @media (prefers-reduced-motion: no-preference) {
-      animation: grow-in linear both;
-      animation-timeline: view();
-      animation-range: entry calc(60% + var(--i, 0) * 10%) cover
-        calc(40% + var(--i, 0) * 5%);
-    }
-  }
-}
