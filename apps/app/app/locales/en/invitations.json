@@ -20,6 +20,8 @@
     "copy": "Make a copy",
     "edit": "Edit",
     "view": "View",
+    "use": "Use",
+    "send": "Send invitations",
     "delete": "Delete",
     "actions": "Actions for {{name}}",
     "emptyTitle": "No templates of your own yet",
@@ -48,7 +50,8 @@
     "deleted": "“{{name}}” deleted",
     "deleteFailed": "The template wasn't deleted. Try again.",
     "saved": "Template saved",
-    "saveFailed": "Your changes weren't saved. Try again."
+    "saveFailed": "Your changes weren't saved. Try again.",
+    "sendFailed": "Nothing was sent. Check your connection and try again."
   },
   "editor": {
     "lead": "Changes apply to invitations you send after saving.",
@@ -178,5 +181,66 @@
     "title": "Leave without saving?",
     "body": "Your changes to this template will be lost.",
     "confirm": "Leave without saving"
+  },
+  "send": {
+    "title": "Send invitations",
+    "lead": "Pick a template, add candidates and check the email before it goes out.",
+    "steps": {
+      "template": "Template",
+      "candidates": "Candidates",
+      "review": "Review"
+    },
+    "templateLabel": "Template to send",
+    "role": "Job role",
+    "roleHint": "Fills in the job role field and tells candidates which role to pick in the app.",
+    "paste": "Add candidates",
+    "pastePlaceholder": "Jane Doe <jane@example.com>\njohn@example.com, John Smith",
+    "pasteHint": "Paste addresses, one per line or separated by commas, then press Enter. Names come from the line or the address.",
+    "add": "Add to list",
+    "upload": "Upload CSV",
+    "fileTooLarge": "That file is over 1 MB. Split it and upload the parts.",
+    "reportAdded_one": "{{count}} added",
+    "reportAdded_other": "{{count}} added",
+    "reportDuplicates_one": "{{count}} already in the list",
+    "reportDuplicates_other": "{{count}} already in the list",
+    "reportInvalid_one": "{{count}} line couldn't be read and stays in the box",
+    "reportInvalid_other": "{{count}} lines couldn't be read and stay in the box",
+    "listTitle_one": "{{count}} candidate",
+    "listTitle_other": "{{count}} candidates",
+    "clear": "Clear list",
+    "overLimit": "Send to at most {{max}} candidates at a time.",
+    "nameFor": "Name for {{email}}",
+    "namePlaceholder": "Add a name",
+    "remove": "Remove {{email}}",
+    "summaryTemplate": "Template",
+    "summaryRole": "Role",
+    "summaryTo": "To",
+    "previewAs": "{{name}} · {{at}} of {{total}}",
+    "previous": "Previous candidate",
+    "next": "Next candidate",
+    "previewErrorTitle": "The preview didn't load.",
+    "previewErrorBody": "Nothing has been sent. Try again.",
+    "submit_one": "Send {{count}} invitation",
+    "submit_other": "Send {{count}} invitations",
+    "sending": "Sending…",
+    "errors": {
+      "template": "Pick a template to send.",
+      "none": "Add at least one candidate.",
+      "names": "Give every candidate a name; it's used to greet them.",
+      "role": "Enter the job role they're interviewing for."
+    }
+  },
+  "result": {
+    "titleSent_one": "invitation on its way",
+    "titleSent_other": "invitations on their way",
+    "titleNone": "No invitations were sent",
+    "lead": "Each candidate gets their own link to the {{role}} interview. Emails can take a few minutes to arrive.",
+    "leadNone": "None of the addresses were accepted. Check them and try again.",
+    "missedTitle_one": "{{count}} wasn't sent",
+    "missedTitle_other": "{{count}} weren't sent",
+    "missedBody": "These addresses weren't queued. They may already have an invitation or can't receive email.",
+    "queuedTitle": "Sent to",
+    "again": "Send another batch",
+    "done": "Back to invitations"
   }
 }

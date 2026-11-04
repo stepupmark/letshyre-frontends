@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@workspace/ui/components/dropdown-menu"
 import { useQuery } from "@tanstack/react-query"
-import { Copy, Ellipsis, Eye, PenLine, Trash2 } from "lucide-react"
+import { Copy, Ellipsis, Eye, PenLine, Send, Trash2 } from "lucide-react"
 import { AnimatePresence } from "motion/react"
 import * as m from "motion/react-m"
 import { useId, useState, type ReactNode } from "react"
@@ -44,7 +44,19 @@ export function TemplateLibrary() {
 
   return (
     <div className="flex flex-col gap-8">
-      <PageHeader title={t("title")} description={t("lead")} />
+      <PageHeader
+        title={t("title")}
+        description={t("lead")}
+        actions={
+          <AppLink
+            to={href("/employer/invitations/send")}
+            className={buttonLink()}
+          >
+            <Send />
+            {t("library.send")}
+          </AppLink>
+        }
+      />
 
       <QueryState
         query={templates}
@@ -171,13 +183,21 @@ const editorPath = (templateId: string) =>
 function OpenLink({ template }: { template: Template }) {
   const { t } = useTranslation("invitations")
   return (
-    <AppLink
-      to={editorPath(template.id)}
-      className={buttonLink({ variant: "outline", size: "sm" })}
-    >
-      {template.is_system ? <Eye /> : <PenLine />}
-      {template.is_system ? t("library.view") : t("library.edit")}
-    </AppLink>
+    <>
+      <AppLink
+        to={editorPath(template.id)}
+        className={buttonLink({ variant: "outline", size: "sm" })}
+      >
+        {template.is_system ? <Eye /> : <PenLine />}
+        {template.is_system ? t("library.view") : t("library.edit")}
+      </AppLink>
+      <AppLink
+        to={`${href("/employer/invitations/send")}?template=${template.id}`}
+        className={buttonLink({ size: "sm" })}
+      >
+        {t("library.use")}
+      </AppLink>
+    </>
   )
 }
 

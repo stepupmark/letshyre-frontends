@@ -20,6 +20,8 @@
     "copy": "コピーを作成",
     "edit": "編集",
     "view": "表示",
+    "use": "使う",
+    "send": "招待を送信",
     "delete": "削除",
     "actions": "{{name}}の操作",
     "emptyTitle": "自社のテンプレートはまだありません",
@@ -48,7 +50,8 @@
     "deleted": "「{{name}}」を削除しました",
     "deleteFailed": "テンプレートを削除できませんでした。もう一度お試しください。",
     "saved": "テンプレートを保存しました",
-    "saveFailed": "変更を保存できませんでした。もう一度お試しください。"
+    "saveFailed": "変更を保存できませんでした。もう一度お試しください。",
+    "sendFailed": "送信されていません。接続を確認してもう一度お試しください。"
   },
   "editor": {
     "lead": "保存後に送信する招待に変更が反映されます。",
@@ -178,5 +181,59 @@
     "title": "保存せずに移動しますか？",
     "body": "このテンプレートへの変更は失われます。",
     "confirm": "保存せずに移動"
+  },
+  "send": {
+    "title": "招待を送信",
+    "lead": "テンプレートを選び、候補者を追加し、送信前にメールを確認します。",
+    "steps": {
+      "template": "テンプレート",
+      "candidates": "候補者",
+      "review": "確認"
+    },
+    "templateLabel": "送信するテンプレート",
+    "role": "職種",
+    "roleHint": "職種フィールドに入り、アプリでどの職種を選ぶか候補者に伝えます。",
+    "paste": "候補者を追加",
+    "pastePlaceholder": "Jane Doe <jane@example.com>\njohn@example.com, John Smith",
+    "pasteHint": "アドレスを1行に1件、またはカンマ区切りで貼り付けてEnterを押します。名前は行かアドレスから取ります。",
+    "add": "リストに追加",
+    "upload": "CSVをアップロード",
+    "fileTooLarge": "ファイルが1 MBを超えています。分割してアップロードしてください。",
+    "reportAdded_other": "{{count}}件追加",
+    "reportDuplicates_other": "{{count}}件はすでにリストにあります",
+    "reportInvalid_other": "{{count}}行は読み取れず、入力欄に残っています",
+    "listTitle_other": "候補者{{count}}人",
+    "clear": "リストを空にする",
+    "overLimit": "一度に送れるのは{{max}}人までです。",
+    "nameFor": "{{email}} の名前",
+    "namePlaceholder": "名前を追加",
+    "remove": "{{email}} を削除",
+    "summaryTemplate": "テンプレート",
+    "summaryRole": "職種",
+    "summaryTo": "宛先",
+    "previewAs": "{{name}} · {{at}} / {{total}}",
+    "previous": "前の候補者",
+    "next": "次の候補者",
+    "previewErrorTitle": "プレビューを読み込めませんでした。",
+    "previewErrorBody": "送信は行われていません。もう一度お試しください。",
+    "submit_other": "{{count}}件の招待を送信",
+    "sending": "送信中…",
+    "errors": {
+      "template": "送信するテンプレートを選んでください。",
+      "none": "候補者を1人以上追加してください。",
+      "names": "全員に名前を入れてください。呼びかけに使います。",
+      "role": "面接の職種を入力してください。"
+    }
+  },
+  "result": {
+    "titleSent_other": "件の招待を送信しました",
+    "titleNone": "招待は送信されませんでした",
+    "lead": "候補者ごとに{{role}}の面接用リンクが届きます。メールの到着まで数分かかることがあります。",
+    "leadNone": "受け付けられたアドレスはありません。確認してもう一度お試しください。",
+    "missedTitle_other": "{{count}}件は送信されませんでした",
+    "missedBody": "これらのアドレスは送信キューに入りませんでした。すでに招待済みか、メールを受信できない可能性があります。",
+    "queuedTitle": "送信先",
+    "again": "別のグループに送信",
+    "done": "招待一覧に戻る"
   }
 }

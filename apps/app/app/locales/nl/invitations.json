@@ -20,6 +20,8 @@
     "copy": "Kopie maken",
     "edit": "Bewerken",
     "view": "Bekijken",
+    "use": "Gebruiken",
+    "send": "Uitnodigingen versturen",
     "delete": "Verwijderen",
     "actions": "Acties voor {{name}}",
     "emptyTitle": "Nog geen eigen sjablonen",
@@ -48,7 +50,8 @@
     "deleted": "‘{{name}}’ verwijderd",
     "deleteFailed": "Het sjabloon is niet verwijderd. Probeer het opnieuw.",
     "saved": "Sjabloon opgeslagen",
-    "saveFailed": "Je wijzigingen zijn niet opgeslagen. Probeer het opnieuw."
+    "saveFailed": "Je wijzigingen zijn niet opgeslagen. Probeer het opnieuw.",
+    "sendFailed": "Er is niets verzonden. Controleer je verbinding en probeer het opnieuw."
   },
   "editor": {
     "lead": "Wijzigingen gelden voor uitnodigingen die je na het opslaan verstuurt.",
@@ -178,5 +181,66 @@
     "title": "Weggaan zonder op te slaan?",
     "body": "Je wijzigingen aan dit sjabloon gaan verloren.",
     "confirm": "Weggaan zonder opslaan"
+  },
+  "send": {
+    "title": "Uitnodigingen versturen",
+    "lead": "Kies een sjabloon, voeg kandidaten toe en controleer de e-mail voor verzending.",
+    "steps": {
+      "template": "Sjabloon",
+      "candidates": "Kandidaten",
+      "review": "Controleren"
+    },
+    "templateLabel": "Te versturen sjabloon",
+    "role": "Functie",
+    "roleHint": "Vult het veld functie in en vertelt kandidaten welke rol ze in de app kiezen.",
+    "paste": "Kandidaten toevoegen",
+    "pastePlaceholder": "Jane Doe <jane@example.com>\njohn@example.com, John Smith",
+    "pasteHint": "Plak adressen, één per regel of gescheiden door komma's, en druk op Enter. Namen komen uit de regel of het adres.",
+    "add": "Aan lijst toevoegen",
+    "upload": "CSV uploaden",
+    "fileTooLarge": "Dat bestand is groter dan 1 MB. Splits het en upload de delen.",
+    "reportAdded_one": "{{count}} toegevoegd",
+    "reportAdded_other": "{{count}} toegevoegd",
+    "reportDuplicates_one": "{{count}} stond al in de lijst",
+    "reportDuplicates_other": "{{count}} stonden al in de lijst",
+    "reportInvalid_one": "{{count}} regel was onleesbaar en blijft in het vak",
+    "reportInvalid_other": "{{count}} regels waren onleesbaar en blijven in het vak",
+    "listTitle_one": "{{count}} kandidaat",
+    "listTitle_other": "{{count}} kandidaten",
+    "clear": "Lijst leegmaken",
+    "overLimit": "Verstuur naar maximaal {{max}} kandidaten tegelijk.",
+    "nameFor": "Naam voor {{email}}",
+    "namePlaceholder": "Naam toevoegen",
+    "remove": "{{email}} verwijderen",
+    "summaryTemplate": "Sjabloon",
+    "summaryRole": "Functie",
+    "summaryTo": "Aan",
+    "previewAs": "{{name}} · {{at}} van {{total}}",
+    "previous": "Vorige kandidaat",
+    "next": "Volgende kandidaat",
+    "previewErrorTitle": "Het voorbeeld is niet geladen.",
+    "previewErrorBody": "Er is niets verzonden. Probeer het opnieuw.",
+    "submit_one": "{{count}} uitnodiging versturen",
+    "submit_other": "{{count}} uitnodigingen versturen",
+    "sending": "Versturen…",
+    "errors": {
+      "template": "Kies een sjabloon om te versturen.",
+      "none": "Voeg minstens één kandidaat toe.",
+      "names": "Geef elke kandidaat een naam; die wordt in de aanhef gebruikt.",
+      "role": "Vul de functie van het interview in."
+    }
+  },
+  "result": {
+    "titleSent_one": "uitnodiging onderweg",
+    "titleSent_other": "uitnodigingen onderweg",
+    "titleNone": "Er zijn geen uitnodigingen verzonden",
+    "lead": "Elke kandidaat krijgt een eigen link naar het interview voor {{role}}. E-mails kunnen een paar minuten onderweg zijn.",
+    "leadNone": "Geen van de adressen is geaccepteerd. Controleer ze en probeer het opnieuw.",
+    "missedTitle_one": "{{count}} niet verzonden",
+    "missedTitle_other": "{{count}} niet verzonden",
+    "missedBody": "Deze adressen zijn niet in de wachtrij gezet. Misschien hebben ze al een uitnodiging of kunnen ze geen e-mail ontvangen.",
+    "queuedTitle": "Verzonden naar",
+    "again": "Nog een groep versturen",
+    "done": "Terug naar uitnodigingen"
   }
 }

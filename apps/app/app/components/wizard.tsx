@@ -26,11 +26,13 @@ export function Wizard({
   onFinish,
   pending = false,
   onStepChange,
+  finishLabel,
 }: {
   steps: WizardStep[]
   onFinish: () => void | Promise<void>
   pending?: boolean
   onStepChange?: (id: string) => void
+  finishLabel?: string
 }) {
   const { t } = useTranslation("common")
   const dir = dirFor(useLocale())
@@ -132,7 +134,7 @@ export function Wizard({
           onClick={() => void onContinue()}
           disabled={pending}
         >
-          {last ? t("wizard.finish") : t("wizard.next")}
+          {last ? (finishLabel ?? t("wizard.finish")) : t("wizard.next")}
         </Button>
       </div>
     </div>

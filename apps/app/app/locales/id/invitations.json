@@ -20,6 +20,8 @@
     "copy": "Buat salinan",
     "edit": "Edit",
     "view": "Lihat",
+    "use": "Gunakan",
+    "send": "Kirim undangan",
     "delete": "Hapus",
     "actions": "Tindakan untuk {{name}}",
     "emptyTitle": "Belum ada template milik Anda",
@@ -48,7 +50,8 @@
     "deleted": "“{{name}}” dihapus",
     "deleteFailed": "Template tidak dihapus. Coba lagi.",
     "saved": "Template disimpan",
-    "saveFailed": "Perubahan Anda tidak tersimpan. Coba lagi."
+    "saveFailed": "Perubahan Anda tidak tersimpan. Coba lagi.",
+    "sendFailed": "Tidak ada yang terkirim. Periksa koneksi Anda dan coba lagi."
   },
   "editor": {
     "lead": "Perubahan berlaku untuk undangan yang Anda kirim setelah menyimpan.",
@@ -178,5 +181,59 @@
     "title": "Keluar tanpa menyimpan?",
     "body": "Perubahan pada template ini akan hilang.",
     "confirm": "Keluar tanpa menyimpan"
+  },
+  "send": {
+    "title": "Kirim undangan",
+    "lead": "Pilih template, tambahkan kandidat, dan periksa email sebelum dikirim.",
+    "steps": {
+      "template": "Template",
+      "candidates": "Kandidat",
+      "review": "Tinjau"
+    },
+    "templateLabel": "Template yang dikirim",
+    "role": "Posisi",
+    "roleHint": "Mengisi kolom posisi dan memberi tahu kandidat peran mana yang dipilih di aplikasi.",
+    "paste": "Tambah kandidat",
+    "pastePlaceholder": "Jane Doe <jane@example.com>\njohn@example.com, John Smith",
+    "pasteHint": "Tempel alamat, satu per baris atau dipisah koma, lalu tekan Enter. Nama diambil dari baris atau alamat.",
+    "add": "Tambah ke daftar",
+    "upload": "Unggah CSV",
+    "fileTooLarge": "File lebih dari 1 MB. Bagi dan unggah bagian-bagiannya.",
+    "reportAdded_other": "{{count}} ditambahkan",
+    "reportDuplicates_other": "{{count}} sudah ada di daftar",
+    "reportInvalid_other": "{{count}} baris tidak terbaca dan tetap di kotak",
+    "listTitle_other": "{{count}} kandidat",
+    "clear": "Kosongkan daftar",
+    "overLimit": "Kirim ke paling banyak {{max}} kandidat sekaligus.",
+    "nameFor": "Nama untuk {{email}}",
+    "namePlaceholder": "Tambah nama",
+    "remove": "Hapus {{email}}",
+    "summaryTemplate": "Template",
+    "summaryRole": "Posisi",
+    "summaryTo": "Kepada",
+    "previewAs": "{{name}} · {{at}} dari {{total}}",
+    "previous": "Kandidat sebelumnya",
+    "next": "Kandidat berikutnya",
+    "previewErrorTitle": "Pratinjau tidak termuat.",
+    "previewErrorBody": "Tidak ada yang terkirim. Coba lagi.",
+    "submit_other": "Kirim {{count}} undangan",
+    "sending": "Mengirim…",
+    "errors": {
+      "template": "Pilih template untuk dikirim.",
+      "none": "Tambahkan setidaknya satu kandidat.",
+      "names": "Beri nama setiap kandidat; nama dipakai untuk menyapa.",
+      "role": "Masukkan posisi wawancara."
+    }
+  },
+  "result": {
+    "titleSent_other": "undangan dalam perjalanan",
+    "titleNone": "Tidak ada undangan yang terkirim",
+    "lead": "Setiap kandidat mendapat tautan sendiri ke wawancara {{role}}. Email bisa butuh beberapa menit untuk sampai.",
+    "leadNone": "Tidak ada alamat yang diterima. Periksa dan coba lagi.",
+    "missedTitle_other": "{{count}} tidak terkirim",
+    "missedBody": "Alamat ini tidak masuk antrean. Mungkin sudah punya undangan atau tidak bisa menerima email.",
+    "queuedTitle": "Dikirim ke",
+    "again": "Kirim kelompok lain",
+    "done": "Kembali ke undangan"
   }
 }

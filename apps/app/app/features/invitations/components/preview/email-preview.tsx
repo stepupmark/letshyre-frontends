@@ -7,13 +7,14 @@ import {
 import { useQuery } from "@tanstack/react-query"
 import { Monitor, Smartphone } from "lucide-react"
 import * as m from "motion/react-m"
-import { useDeferredValue, useEffect, useId, useRef, useState } from "react"
+import { useDeferredValue, useId, useState } from "react"
 
 import { duration, ease } from "@/lib/motion"
 
 import { fillFields } from "../../lib/merge-fields"
 import { previewDocument } from "../../lib/preview-html"
 import { previewQuery } from "../../queries/templates.queries"
+import { EmailFrame } from "./email-frame"
 
 const DESKTOP = "desktop"
 const PHONE = "phone"
@@ -153,39 +154,5 @@ function SampleInput({
         }}
       />
     </div>
-  )
-}
-
-/** Same-origin so the text can be swapped without a white flash; scripts still can't run. */
-function EmailFrame({ html, title }: { html: string; title: string }) {
-  const frame = useRef<HTMLIFrameElement>(null)
-  const [height, setHeight] = useState(480)
-
-  useEffect(() => {
-    const doc = frame.current?.contentDocument
-    if (!doc) return
-    const next = new DOMParser().parseFromString(html, "text/html")
-    doc.replaceChild(
-      doc.importNode(next.documentElement, true),
-      doc.documentElement
-    )
-    // <html> never reports less than the frame, so the body is what shrinks with the text
-    const observer = new ResizeObserver(() => {
-      setHeight(doc.body.offsetHeight)
-    })
-    observer.observe(doc.body)
-    return () => {
-      observer.disconnect()
-    }
-  }, [html])
-
-  return (
-    <iframe
-      ref={frame}
-      title={title}
-      sandbox="allow-same-origin"
-      style={{ height }}
-      className="pointer-events-none block w-full"
-    />
   )
 }

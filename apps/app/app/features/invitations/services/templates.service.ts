@@ -2,6 +2,7 @@ import { acknowledge } from "@workspace/api"
 
 import { api } from "@/lib/api"
 
+import type { Recipient } from "../lib/recipients"
 import {
   parsePreview,
   parseSent,
@@ -20,11 +21,6 @@ export interface TemplateChanges {
 export interface PreviewContext {
   candidate_name: string
   job_role: string
-}
-
-export interface Recipient {
-  email: string
-  name: string
 }
 
 // templates are few, so one large page saves paging through the library

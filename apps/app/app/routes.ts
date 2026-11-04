@@ -91,6 +91,7 @@ export default [
       route("find-candidates", "routes/employer/find-candidates.tsx"),
       route("candidates/unlocked", "routes/employer/unlocked.tsx"),
       route("invitations", "routes/employer/invitations.tsx"),
+      route("invitations/send", "routes/employer/send-invitations.tsx"),
       route(
         "invitations/templates/:templateId",
         "routes/employer/invitation-template.tsx"
