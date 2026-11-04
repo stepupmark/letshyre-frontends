@@ -1,34 +1,14 @@
 import { cn } from "@workspace/ui/lib/utils"
-import { useReducedMotion, useScroll } from "motion/react"
+import { useScroll } from "motion/react"
 import {
   type ComponentProps,
   type CSSProperties,
   type ReactNode,
   useRef,
-  useSyncExternalStore,
 } from "react"
 
-import { useHydrated } from "@/hooks/use-hydrated"
-
 import { SceneContext, settled } from "./scene-context"
-
-const NARROW = "(width < 48rem)"
-
-const subscribeNarrow = (onChange: () => void) => {
-  const query = window.matchMedia(NARROW)
-  query.addEventListener("change", onChange)
-  return () => {
-    query.removeEventListener("change", onChange)
-  }
-}
-
-function useNarrow() {
-  return useSyncExternalStore(
-    subscribeNarrow,
-    () => window.matchMedia(NARROW).matches,
-    () => false
-  )
-}
+import { useStill } from "./use-still"
 
 /**
  * A section `screens` viewports tall whose content stays pinned while scroll drives
@@ -48,9 +28,7 @@ export function ScrollScene({
   children: ReactNode
 }) {
   const ref = useRef<HTMLElement>(null)
-  const reduced = useReducedMotion() ?? false
-  const narrow = useNarrow()
-  const still = useHydrated() && (reduced || (pinFrom !== undefined && narrow))
+  const still = useStill(pinFrom !== undefined)
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
