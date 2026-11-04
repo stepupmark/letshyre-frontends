@@ -70,7 +70,9 @@
     "fidelityConvert": "변환 후 편집",
     "missingTitle": "이 템플릿은 더 이상 없습니다",
     "missingBody": "팀원이 삭제했을 수 있습니다.",
-    "backToLibrary": "템플릿으로 돌아가기"
+    "backToLibrary": "템플릿으로 돌아가기",
+    "unsaved": "저장되지 않은 변경 사항",
+    "saved": "모든 변경 사항 저장됨"
   },
   "errors": {
     "name": "120자 이내로 이름을 지정하세요.",
@@ -134,5 +136,47 @@
     "insert": "버튼 추가",
     "apply": "버튼 저장",
     "remove": "버튼 삭제"
+  },
+  "preview": {
+    "title": "미리보기",
+    "device": "미리보기 크기",
+    "desktop": "데스크톱",
+    "phone": "휴대폰",
+    "from": "보낸 사람",
+    "to": "받는 사람",
+    "subject": "제목",
+    "noSubject": "아직 제목이 없습니다",
+    "frame": "이메일 미리보기",
+    "sampleLegend": "미리보기 대상",
+    "sampleName": "Alex Morgan",
+    "sampleRole": "Backend Engineer",
+    "sampleCompany": "우리 회사",
+    "sampleSender": "나"
+  },
+  "ready": {
+    "title": "보낼 준비",
+    "count": "{{total}}개 중 {{done}}개",
+    "subject": "제목이 있음",
+    "invite": "초대 링크 포함",
+    "name": "후보자 이름으로 인사",
+    "role": "직무 언급",
+    "known": "LetsHyre가 채우는 필드만 사용",
+    "unknown": "알 수 없는 필드: {{fields}}",
+    "state": {
+      "done": "완료:",
+      "todo": "권장:",
+      "problem": "수정 필요:"
+    }
+  },
+  "draft": {
+    "title": "이전에 저장하지 않은 변경 사항이 있습니다",
+    "body": "페이지를 떠날 때 이 기기에 보관되었습니다. 복원해서 계속 편집하거나 삭제하세요.",
+    "restore": "변경 사항 복원",
+    "discard": "삭제"
+  },
+  "leave": {
+    "title": "저장하지 않고 나갈까요?",
+    "body": "이 템플릿의 변경 사항이 사라집니다.",
+    "confirm": "저장하지 않고 나가기"
   }
 }

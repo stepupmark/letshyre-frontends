@@ -134,6 +134,8 @@ export function watch(page: Page) {
   const problems: string[] = []
   page.on("pageerror", (e) => problems.push(e.message))
   page.on("console", (m) => {
+    // Playwright's init scripts try every frame, including sandboxed previews
+    if (m.text().startsWith("Blocked script execution in 'about:blank'")) return
     if (m.type() === "error") problems.push(m.text())
   })
   void page.addInitScript(() => {

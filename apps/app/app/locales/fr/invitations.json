@@ -70,7 +70,9 @@
     "fidelityConvert": "Convertir et modifier",
     "missingTitle": "Ce modèle n’existe plus",
     "missingBody": "Quelqu’un de votre équipe l’a peut-être supprimé.",
-    "backToLibrary": "Retour aux modèles"
+    "backToLibrary": "Retour aux modèles",
+    "unsaved": "Modifications non enregistrées",
+    "saved": "Toutes les modifications sont enregistrées"
   },
   "errors": {
     "name": "Donnez-lui un nom de 120 caractères maximum.",
@@ -134,5 +136,47 @@
     "insert": "Ajouter le bouton",
     "apply": "Enregistrer le bouton",
     "remove": "Retirer le bouton"
+  },
+  "preview": {
+    "title": "Aperçu",
+    "device": "Taille de l’aperçu",
+    "desktop": "Ordinateur",
+    "phone": "Téléphone",
+    "from": "De",
+    "to": "À",
+    "subject": "Objet",
+    "noSubject": "Pas encore d’objet",
+    "frame": "Aperçu de l’e-mail",
+    "sampleLegend": "Aperçu pour",
+    "sampleName": "Alex Morgan",
+    "sampleRole": "Backend Engineer",
+    "sampleCompany": "Votre entreprise",
+    "sampleSender": "Vous"
+  },
+  "ready": {
+    "title": "Prêt à envoyer",
+    "count": "{{done}} sur {{total}}",
+    "subject": "A un objet",
+    "invite": "Contient le lien d’invitation",
+    "name": "Salue le candidat par son nom",
+    "role": "Mentionne le poste",
+    "known": "N’utilise que des champs remplis par LetsHyre",
+    "unknown": "Champs inconnus : {{fields}}",
+    "state": {
+      "done": "Fait :",
+      "todo": "Conseillé :",
+      "problem": "À corriger :"
+    }
+  },
+  "draft": {
+    "title": "Vous avez des modifications non enregistrées",
+    "body": "Elles ont été conservées sur cet appareil quand vous avez quitté la page. Restaurez-les pour continuer, ou supprimez-les.",
+    "restore": "Restaurer",
+    "discard": "Supprimer"
+  },
+  "leave": {
+    "title": "Quitter sans enregistrer ?",
+    "body": "Vos modifications de ce modèle seront perdues.",
+    "confirm": "Quitter sans enregistrer"
   }
 }

@@ -70,7 +70,9 @@
     "fidelityConvert": "Umwandeln und bearbeiten",
     "missingTitle": "Diese Vorlage gibt es nicht mehr",
     "missingBody": "Möglicherweise hat jemand aus Ihrem Team sie gelöscht.",
-    "backToLibrary": "Zurück zu den Vorlagen"
+    "backToLibrary": "Zurück zu den Vorlagen",
+    "unsaved": "Ungespeicherte Änderungen",
+    "saved": "Alle Änderungen gespeichert"
   },
   "errors": {
     "name": "Geben Sie einen Namen mit bis zu 120 Zeichen ein.",
@@ -134,5 +136,47 @@
     "insert": "Schaltfläche hinzufügen",
     "apply": "Schaltfläche speichern",
     "remove": "Schaltfläche entfernen"
+  },
+  "preview": {
+    "title": "Vorschau",
+    "device": "Vorschaugröße",
+    "desktop": "Desktop",
+    "phone": "Smartphone",
+    "from": "Von",
+    "to": "An",
+    "subject": "Betreff",
+    "noSubject": "Noch kein Betreff",
+    "frame": "E-Mail-Vorschau",
+    "sampleLegend": "Vorschau als",
+    "sampleName": "Alex Morgan",
+    "sampleRole": "Backend Engineer",
+    "sampleCompany": "Ihr Unternehmen",
+    "sampleSender": "Sie"
+  },
+  "ready": {
+    "title": "Bereit zum Senden",
+    "count": "{{done}} von {{total}}",
+    "subject": "Hat eine Betreffzeile",
+    "invite": "Enthält den Einladungslink",
+    "name": "Spricht den Kandidaten mit Namen an",
+    "role": "Nennt die Stelle",
+    "known": "Nutzt nur Felder, die LetsHyre ausfüllt",
+    "unknown": "Unbekannte Felder: {{fields}}",
+    "state": {
+      "done": "Erledigt:",
+      "todo": "Empfohlen:",
+      "problem": "Zu beheben:"
+    }
+  },
+  "draft": {
+    "title": "Sie haben noch ungespeicherte Änderungen",
+    "body": "Sie wurden auf diesem Gerät behalten, als Sie die Seite verlassen haben. Stellen Sie sie wieder her, um weiterzuarbeiten, oder verwerfen Sie sie.",
+    "restore": "Änderungen wiederherstellen",
+    "discard": "Verwerfen"
+  },
+  "leave": {
+    "title": "Ohne Speichern verlassen?",
+    "body": "Ihre Änderungen an dieser Vorlage gehen verloren.",
+    "confirm": "Ohne Speichern verlassen"
   }
 }

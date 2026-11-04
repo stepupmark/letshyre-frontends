@@ -70,7 +70,9 @@
     "fidelityConvert": "Converter e editar",
     "missingTitle": "Este modelo não existe mais",
     "missingBody": "Talvez alguém da sua equipe o tenha excluído.",
-    "backToLibrary": "Voltar aos modelos"
+    "backToLibrary": "Voltar aos modelos",
+    "unsaved": "Alterações não salvas",
+    "saved": "Todas as alterações salvas"
   },
   "errors": {
     "name": "Use um nome de até 120 caracteres.",
@@ -134,5 +136,47 @@
     "insert": "Adicionar botão",
     "apply": "Salvar botão",
     "remove": "Remover botão"
+  },
+  "preview": {
+    "title": "Prévia",
+    "device": "Tamanho da prévia",
+    "desktop": "Computador",
+    "phone": "Celular",
+    "from": "De",
+    "to": "Para",
+    "subject": "Assunto",
+    "noSubject": "Ainda sem assunto",
+    "frame": "Prévia do e-mail",
+    "sampleLegend": "Ver como",
+    "sampleName": "Alex Morgan",
+    "sampleRole": "Backend Engineer",
+    "sampleCompany": "Sua empresa",
+    "sampleSender": "Você"
+  },
+  "ready": {
+    "title": "Pronto para enviar",
+    "count": "{{done}} de {{total}}",
+    "subject": "Tem linha de assunto",
+    "invite": "Inclui o link do convite",
+    "name": "Cumprimenta o candidato pelo nome",
+    "role": "Menciona o cargo",
+    "known": "Usa só campos que a LetsHyre preenche",
+    "unknown": "Campos desconhecidos: {{fields}}",
+    "state": {
+      "done": "Feito:",
+      "todo": "Sugerido:",
+      "problem": "Corrigir:"
+    }
+  },
+  "draft": {
+    "title": "Você tem alterações não salvas de antes",
+    "body": "Elas ficaram guardadas neste dispositivo quando você saiu da página. Restaure para continuar editando ou descarte.",
+    "restore": "Restaurar alterações",
+    "discard": "Descartar"
+  },
+  "leave": {
+    "title": "Sair sem salvar?",
+    "body": "Suas alterações neste modelo serão perdidas.",
+    "confirm": "Sair sem salvar"
   }
 }

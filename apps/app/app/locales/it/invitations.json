@@ -70,7 +70,9 @@
     "fidelityConvert": "Converti e modifica",
     "missingTitle": "Questo modello non c’è più",
     "missingBody": "Forse qualcuno del tuo team l’ha eliminato.",
-    "backToLibrary": "Torna ai modelli"
+    "backToLibrary": "Torna ai modelli",
+    "unsaved": "Modifiche non salvate",
+    "saved": "Tutte le modifiche salvate"
   },
   "errors": {
     "name": "Usa un nome di massimo 120 caratteri.",
@@ -134,5 +136,47 @@
     "insert": "Aggiungi pulsante",
     "apply": "Salva pulsante",
     "remove": "Rimuovi pulsante"
+  },
+  "preview": {
+    "title": "Anteprima",
+    "device": "Dimensione anteprima",
+    "desktop": "Desktop",
+    "phone": "Telefono",
+    "from": "Da",
+    "to": "A",
+    "subject": "Oggetto",
+    "noSubject": "Ancora nessun oggetto",
+    "frame": "Anteprima email",
+    "sampleLegend": "Anteprima come",
+    "sampleName": "Alex Morgan",
+    "sampleRole": "Backend Engineer",
+    "sampleCompany": "La tua azienda",
+    "sampleSender": "Tu"
+  },
+  "ready": {
+    "title": "Pronto da inviare",
+    "count": "{{done}} di {{total}}",
+    "subject": "Ha un oggetto",
+    "invite": "Include il link di invito",
+    "name": "Saluta il candidato per nome",
+    "role": "Cita il ruolo",
+    "known": "Usa solo campi compilati da LetsHyre",
+    "unknown": "Campi sconosciuti: {{fields}}",
+    "state": {
+      "done": "Fatto:",
+      "todo": "Consigliato:",
+      "problem": "Da correggere:"
+    }
+  },
+  "draft": {
+    "title": "Hai modifiche non salvate di prima",
+    "body": "Sono state conservate su questo dispositivo quando hai lasciato la pagina. Ripristinale per continuare o scartale.",
+    "restore": "Ripristina modifiche",
+    "discard": "Scarta"
+  },
+  "leave": {
+    "title": "Uscire senza salvare?",
+    "body": "Le modifiche a questo modello andranno perse.",
+    "confirm": "Esci senza salvare"
   }
 }

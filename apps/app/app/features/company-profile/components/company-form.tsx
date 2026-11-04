@@ -26,9 +26,9 @@ import { ConfirmDialog } from "@/components/confirm-dialog"
 import { TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
 import { industriesQuery } from "@/lib/industries"
+import { useLeaveGuard } from "@/hooks/use-leave-guard"
 
 import { useCompanyForm } from "../hooks/use-company-form"
-import { useLeaveGuard } from "../hooks/use-leave-guard"
 import { useSaveCompany } from "../mutations/use-save-company"
 import {
   DESCRIPTION_MAX,

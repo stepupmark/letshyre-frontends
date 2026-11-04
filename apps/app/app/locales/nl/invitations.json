@@ -70,7 +70,9 @@
     "fidelityConvert": "Omzetten en bewerken",
     "missingTitle": "Dit sjabloon bestaat niet meer",
     "missingBody": "Misschien heeft iemand uit je team het verwijderd.",
-    "backToLibrary": "Terug naar sjablonen"
+    "backToLibrary": "Terug naar sjablonen",
+    "unsaved": "Niet-opgeslagen wijzigingen",
+    "saved": "Alle wijzigingen opgeslagen"
   },
   "errors": {
     "name": "Geef een naam van maximaal 120 tekens.",
@@ -134,5 +136,47 @@
     "insert": "Knop toevoegen",
     "apply": "Knop opslaan",
     "remove": "Knop verwijderen"
+  },
+  "preview": {
+    "title": "Voorbeeld",
+    "device": "Voorbeeldformaat",
+    "desktop": "Desktop",
+    "phone": "Telefoon",
+    "from": "Van",
+    "to": "Aan",
+    "subject": "Onderwerp",
+    "noSubject": "Nog geen onderwerp",
+    "frame": "E-mailvoorbeeld",
+    "sampleLegend": "Bekijken als",
+    "sampleName": "Alex Morgan",
+    "sampleRole": "Backend Engineer",
+    "sampleCompany": "Je bedrijf",
+    "sampleSender": "Jij"
+  },
+  "ready": {
+    "title": "Klaar om te versturen",
+    "count": "{{done}} van {{total}}",
+    "subject": "Heeft een onderwerpregel",
+    "invite": "Bevat de uitnodigingslink",
+    "name": "Spreekt de kandidaat aan met naam",
+    "role": "Noemt de functie",
+    "known": "Gebruikt alleen velden die LetsHyre invult",
+    "unknown": "Onbekende velden: {{fields}}",
+    "state": {
+      "done": "Klaar:",
+      "todo": "Aanbevolen:",
+      "problem": "Oplossen:"
+    }
+  },
+  "draft": {
+    "title": "Je hebt nog niet-opgeslagen wijzigingen",
+    "body": "Ze zijn op dit apparaat bewaard toen je de pagina verliet. Herstel ze om verder te gaan, of verwijder ze.",
+    "restore": "Wijzigingen herstellen",
+    "discard": "Verwijderen"
+  },
+  "leave": {
+    "title": "Weggaan zonder op te slaan?",
+    "body": "Je wijzigingen aan dit sjabloon gaan verloren.",
+    "confirm": "Weggaan zonder opslaan"
   }
 }

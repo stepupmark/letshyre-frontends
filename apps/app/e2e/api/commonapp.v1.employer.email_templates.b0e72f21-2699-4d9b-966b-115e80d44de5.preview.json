@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "status": 200,
+  "message": "Email preview generated successfully.",
+  "data": {
+    "subject": "You're invited to interview with Stepupmark Technologies Pvt Ltd",
+    "body_html": "<p>Hi Alex Morgan,</p><p>Please complete your AI interview for the <strong>Backend Engineer</strong> role.</p><p>Start here: https://www.letshyre.ai/employee/register</p><p>Regards,<br>Ram</p>",
+    "body_text": "",
+    "preview_html": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\" />\n    <title>You&#x27;re invited to interview with Stepupmark Technologies Pvt Ltd</title>\n  </head>\n  <body style=\"margin:0;padding:0;background:#0b1220;font-family:Arial,Helvetica,sans-serif;\">\n    <div style=\"max-width:640px;margin:0 auto;padding:28px 14px;\">\n      <div style=\"background:#0f172a;border-radius:14px;padding:24px 18px;border:1px solid rgba(255,255,255,0.08);\">\n        <img src=\"https://letshyre.com/assets/logo2-Dyp-1rqC.png\" alt=\"LetsHyre\" style=\"display:block;max-width:170px;height:auto;margin:0 auto 14px auto;\" />\n        <div style=\"background:#ffffff;border-radius:12px;padding:22px 20px;color:#111827;font-size:14px;line-height:1.65;\">\n          <p>Hi Alex Morgan,</p><p>Please complete your AI interview for the <strong>Backend Engineer</strong> role.</p><p>Start here: https://www.letshyre.ai/employee/register</p><p>Regards,<br>Ram</p>\n        </div>\n        <div style=\"color:#64748b;font-size:12px;line-height:1.5;text-align:center;margin:16px 0 0 0;\">\n          &copy; LetsHyre\n        </div>\n      </div>\n    </div>\n  </body>\n</html>",
+    "merge_context": {
+      "candidate_name": "Alex Morgan",
+      "employer_company_name": "Stepupmark Technologies Pvt Ltd",
+      "job_role": "Backend Engineer",
+      "invite_link": "https://www.letshyre.ai/employee/register",
+      "sender_name": "Ram"
+    }
+  }
+}

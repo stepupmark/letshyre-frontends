@@ -24,6 +24,8 @@ const env = parseEnv(loadEnv("production", ROOT, "VITE_"))
 const api = new URL(env.VITE_API_BASE_URL).origin
 // uploaded photos, resumes and recordings are served by the API
 const media = [api]
+// the invitation preview frame shows the logo the API puts in every email
+const emailAssets = ["https://letshyre.com"]
 
 const kb = (bytes: number) => `${(bytes / 1024).toFixed(1)} kB`
 const problems: string[] = []
@@ -34,7 +36,7 @@ const policy = pagePolicy(html, {
   script: ["https://checkout.razorpay.com"],
   frame: ["https://api.razorpay.com"],
   connect: [api, "https://api.razorpay.com", "https://lumberjack.razorpay.com"],
-  img: ["blob:", ...media],
+  img: ["blob:", ...media, ...emailAssets],
   media: ["blob:", ...media],
 })
 if (process.env.CSP_ENFORCE === "true") {

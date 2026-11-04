@@ -20,6 +20,7 @@ export const parseTemplates = unwrap(
 
 const previewSchema = z.looseObject({
   subject: z.string(),
+  body_html: z.string(),
   preview_html: z.string(),
   merge_context: z.record(z.string(), z.string()).catch({}),
 })

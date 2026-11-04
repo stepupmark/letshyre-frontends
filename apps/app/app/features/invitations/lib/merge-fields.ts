@@ -43,10 +43,12 @@ const escapeHtml = (value: string) =>
 
 /** Fills known fields; unknown ones stay as typed so the preview shows the mistake. */
 export const fillFields = (
-  html: string,
-  values: Partial<Record<MergeField, string>>
+  text: string,
+  values: Partial<Record<string, string>>,
+  { html = true } = {}
 ) =>
-  html.replace(tokenPattern(), (whole, key: string) => {
+  text.replace(tokenPattern(), (whole, key: string) => {
     const value = isMergeField(key) ? values[key] : undefined
-    return value === undefined ? whole : escapeHtml(value)
+    if (value === undefined) return whole
+    return html ? escapeHtml(value) : value
   })

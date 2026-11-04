@@ -70,7 +70,9 @@
     "fidelityConvert": "変換して編集",
     "missingTitle": "このテンプレートは見つかりません",
     "missingBody": "チームの誰かが削除した可能性があります。",
-    "backToLibrary": "テンプレート一覧に戻る"
+    "backToLibrary": "テンプレート一覧に戻る",
+    "unsaved": "未保存の変更があります",
+    "saved": "すべての変更を保存しました"
   },
   "errors": {
     "name": "120文字以内で名前を付けてください。",
@@ -134,5 +136,47 @@
     "insert": "ボタンを追加",
     "apply": "ボタンを保存",
     "remove": "ボタンを削除"
+  },
+  "preview": {
+    "title": "プレビュー",
+    "device": "プレビューのサイズ",
+    "desktop": "デスクトップ",
+    "phone": "スマートフォン",
+    "from": "差出人",
+    "to": "宛先",
+    "subject": "件名",
+    "noSubject": "件名が未入力です",
+    "frame": "メールのプレビュー",
+    "sampleLegend": "表示する内容",
+    "sampleName": "Alex Morgan",
+    "sampleRole": "Backend Engineer",
+    "sampleCompany": "あなたの会社",
+    "sampleSender": "あなた"
+  },
+  "ready": {
+    "title": "送信の準備",
+    "count": "{{done}} / {{total}}",
+    "subject": "件名がある",
+    "invite": "招待リンクを含む",
+    "name": "候補者を名前で呼びかけている",
+    "role": "職種に触れている",
+    "known": "LetsHyreが差し込むフィールドのみ",
+    "unknown": "不明なフィールド: {{fields}}",
+    "state": {
+      "done": "完了：",
+      "todo": "推奨：",
+      "problem": "要修正："
+    }
+  },
+  "draft": {
+    "title": "以前の未保存の変更があります",
+    "body": "ページを離れたときにこの端末に保存されていました。復元して編集を続けるか、破棄してください。",
+    "restore": "変更を復元",
+    "discard": "破棄"
+  },
+  "leave": {
+    "title": "保存せずに移動しますか？",
+    "body": "このテンプレートへの変更は失われます。",
+    "confirm": "保存せずに移動"
   }
 }

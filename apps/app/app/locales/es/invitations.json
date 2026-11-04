@@ -70,7 +70,9 @@
     "fidelityConvert": "Convertir y editar",
     "missingTitle": "Esta plantilla ya no está",
     "missingBody": "Puede que alguien de tu equipo la haya eliminado.",
-    "backToLibrary": "Volver a las plantillas"
+    "backToLibrary": "Volver a las plantillas",
+    "unsaved": "Cambios sin guardar",
+    "saved": "Todos los cambios guardados"
   },
   "errors": {
     "name": "Ponle un nombre de hasta 120 caracteres.",
@@ -134,5 +136,47 @@
     "insert": "Añadir botón",
     "apply": "Guardar botón",
     "remove": "Quitar botón"
+  },
+  "preview": {
+    "title": "Vista previa",
+    "device": "Tamaño de la vista previa",
+    "desktop": "Escritorio",
+    "phone": "Teléfono",
+    "from": "De",
+    "to": "Para",
+    "subject": "Asunto",
+    "noSubject": "Aún sin asunto",
+    "frame": "Vista previa del correo",
+    "sampleLegend": "Ver como",
+    "sampleName": "Alex Morgan",
+    "sampleRole": "Backend Engineer",
+    "sampleCompany": "Tu empresa",
+    "sampleSender": "Tú"
+  },
+  "ready": {
+    "title": "Lista para enviar",
+    "count": "{{done}} de {{total}}",
+    "subject": "Tiene asunto",
+    "invite": "Incluye el enlace de invitación",
+    "name": "Saluda al candidato por su nombre",
+    "role": "Menciona el puesto",
+    "known": "Solo usa campos que completa LetsHyre",
+    "unknown": "Campos desconocidos: {{fields}}",
+    "state": {
+      "done": "Hecho:",
+      "todo": "Sugerido:",
+      "problem": "Por corregir:"
+    }
+  },
+  "draft": {
+    "title": "Tienes cambios sin guardar de antes",
+    "body": "Se guardaron en este dispositivo al salir de la página. Restáuralos para seguir editando o descártalos.",
+    "restore": "Restaurar cambios",
+    "discard": "Descartar"
+  },
+  "leave": {
+    "title": "¿Salir sin guardar?",
+    "body": "Se perderán los cambios en esta plantilla.",
+    "confirm": "Salir sin guardar"
   }
 }

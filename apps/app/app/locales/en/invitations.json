@@ -70,7 +70,9 @@
     "fidelityConvert": "Convert and edit",
     "missingTitle": "This template isn't here anymore",
     "missingBody": "It may have been deleted by someone on your team.",
-    "backToLibrary": "Back to templates"
+    "backToLibrary": "Back to templates",
+    "unsaved": "Unsaved changes",
+    "saved": "All changes saved"
   },
   "errors": {
     "name": "Give it a name of up to 120 characters.",
@@ -134,5 +136,47 @@
     "insert": "Add button",
     "apply": "Save button",
     "remove": "Remove button"
+  },
+  "preview": {
+    "title": "Preview",
+    "device": "Preview size",
+    "desktop": "Desktop",
+    "phone": "Phone",
+    "from": "From",
+    "to": "To",
+    "subject": "Subject",
+    "noSubject": "No subject yet",
+    "frame": "Email preview",
+    "sampleLegend": "Preview as",
+    "sampleName": "Alex Morgan",
+    "sampleRole": "Backend Engineer",
+    "sampleCompany": "Your company",
+    "sampleSender": "You"
+  },
+  "ready": {
+    "title": "Ready to send",
+    "count": "{{done}} of {{total}}",
+    "subject": "Has a subject line",
+    "invite": "Includes the invite link",
+    "name": "Greets the candidate by name",
+    "role": "Mentions the job role",
+    "known": "Uses only fields LetsHyre fills in",
+    "unknown": "Unknown fields: {{fields}}",
+    "state": {
+      "done": "Done:",
+      "todo": "Suggested:",
+      "problem": "Needs fixing:"
+    }
+  },
+  "draft": {
+    "title": "You have unsaved changes from earlier",
+    "body": "They were kept on this device when you left the page. Restore them to keep editing, or discard them.",
+    "restore": "Restore changes",
+    "discard": "Discard"
+  },
+  "leave": {
+    "title": "Leave without saving?",
+    "body": "Your changes to this template will be lost.",
+    "confirm": "Leave without saving"
   }
 }

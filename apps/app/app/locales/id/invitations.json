@@ -70,7 +70,9 @@
     "fidelityConvert": "Konversi dan edit",
     "missingTitle": "Template ini sudah tidak ada",
     "missingBody": "Mungkin seseorang di tim Anda menghapusnya.",
-    "backToLibrary": "Kembali ke template"
+    "backToLibrary": "Kembali ke template",
+    "unsaved": "Perubahan belum disimpan",
+    "saved": "Semua perubahan tersimpan"
   },
   "errors": {
     "name": "Beri nama maksimal 120 karakter.",
@@ -134,5 +136,47 @@
     "insert": "Tambah tombol",
     "apply": "Simpan tombol",
     "remove": "Hapus tombol"
+  },
+  "preview": {
+    "title": "Pratinjau",
+    "device": "Ukuran pratinjau",
+    "desktop": "Desktop",
+    "phone": "Ponsel",
+    "from": "Dari",
+    "to": "Kepada",
+    "subject": "Subjek",
+    "noSubject": "Belum ada subjek",
+    "frame": "Pratinjau email",
+    "sampleLegend": "Lihat sebagai",
+    "sampleName": "Alex Morgan",
+    "sampleRole": "Backend Engineer",
+    "sampleCompany": "Perusahaan Anda",
+    "sampleSender": "Anda"
+  },
+  "ready": {
+    "title": "Siap dikirim",
+    "count": "{{done}} dari {{total}}",
+    "subject": "Memiliki baris subjek",
+    "invite": "Menyertakan tautan undangan",
+    "name": "Menyapa kandidat dengan nama",
+    "role": "Menyebut posisi",
+    "known": "Hanya memakai kolom yang diisi LetsHyre",
+    "unknown": "Kolom tidak dikenal: {{fields}}",
+    "state": {
+      "done": "Selesai:",
+      "todo": "Disarankan:",
+      "problem": "Perlu diperbaiki:"
+    }
+  },
+  "draft": {
+    "title": "Ada perubahan yang belum disimpan sebelumnya",
+    "body": "Perubahan disimpan di perangkat ini saat Anda meninggalkan halaman. Pulihkan untuk melanjutkan, atau buang.",
+    "restore": "Pulihkan perubahan",
+    "discard": "Buang"
+  },
+  "leave": {
+    "title": "Keluar tanpa menyimpan?",
+    "body": "Perubahan pada template ini akan hilang.",
+    "confirm": "Keluar tanpa menyimpan"
   }
 }
