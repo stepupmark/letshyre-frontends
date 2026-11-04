@@ -13,7 +13,6 @@ import { useScene } from "./scene-context"
 const ARRIVALS = [0.05, 0.18, 0.31, 0.44]
 const UNLOCK = [0.66, 0.74]
 
-/** A sample candidate file that assembles layer by layer and unlocks at the end. */
 export function FileCard() {
   const { t } = useTranslation("homeV3")
   const { progress } = useScene()

@@ -13,7 +13,6 @@ export const SceneContext = createContext<Scene>({
   still: true,
 })
 
-/** Where the reader is in the nearest scene, 0 to 1, and whether it plays at all. */
 export function useScene() {
   return use(SceneContext)
 }

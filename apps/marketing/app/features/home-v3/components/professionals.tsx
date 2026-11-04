@@ -27,7 +27,7 @@ export function Professionals() {
     <section
       ref={ref}
       aria-labelledby={titleId}
-      className="overflow-x-clip bg-muted py-16 sm:py-28"
+      className="overflow-x-clip border-y bg-muted/40 py-16 sm:py-28"
     >
       {/* transforms stay bound to the first value, so a switch remounts */}
       <Split

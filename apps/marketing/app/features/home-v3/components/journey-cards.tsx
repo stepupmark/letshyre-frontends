@@ -11,7 +11,6 @@ import { Tilt } from "./pointer-effects"
 const QUESTIONS = 8
 const CURRENT = 4
 
-/** The product view for journey step `index`, drawn as one labelled image. */
 export default function JourneyCard({
   index,
   className,

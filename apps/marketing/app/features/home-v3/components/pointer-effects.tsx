@@ -7,7 +7,6 @@ import { useFinePointer } from "./use-fine-pointer"
 
 const SPRING = { stiffness: 260, damping: 22, mass: 0.4 }
 
-/** Leans its child a few pixels toward the cursor, and springs back on leave. */
 export function Magnetic({
   className,
   children,
@@ -41,7 +40,6 @@ export function Magnetic({
   )
 }
 
-/** Tilts its child up to `max` degrees toward the cursor. */
 export function Tilt({
   max = 4,
   className,

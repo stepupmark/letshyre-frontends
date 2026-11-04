@@ -59,9 +59,9 @@ function JourneyStage({ titleId }: { titleId: string }) {
       <div
         role="region"
         aria-label={t("journey.carousel")}
-        // keyboard users scroll it on phones and with reduced motion, where it overflows
+        // only a carousel when still (phones, reduced motion); keyboard users scroll it then
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-        tabIndex={0}
+        tabIndex={still ? 0 : undefined}
         className={cn(
           "mt-8 min-h-0 flex-1 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 max-md:snap-x max-md:snap-mandatory max-md:scroll-px-4 max-md:overflow-x-auto",
           still && "snap-x snap-mandatory scroll-px-4 overflow-x-auto"

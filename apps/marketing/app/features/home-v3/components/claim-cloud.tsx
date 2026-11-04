@@ -14,7 +14,6 @@ const SPOTS = [
   { side: "end", inset: 6, y: 88, speed: 1.1 },
 ] as const
 
-/** The resume buzzwords around the hero photo; scrolling clears them away. */
 export default function ClaimCloud() {
   const { t } = useTranslation("homeV3")
   const { progress } = useScene()
