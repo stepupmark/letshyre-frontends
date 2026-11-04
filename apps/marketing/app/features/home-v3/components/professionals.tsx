@@ -72,9 +72,7 @@ function Split({
           className="mt-3 text-3xl font-semibold tracking-tight text-balance sm:text-5xl"
         >
           {t("professionals.title")}{" "}
-          <span className="block text-brand-text">
-            {t("professionals.accent")}
-          </span>
+          <span className="block">{t("professionals.accent")}</span>
         </h2>
         <p className="mt-4 max-w-md text-pretty text-muted-foreground sm:text-lg">
           {t("professionals.body")}

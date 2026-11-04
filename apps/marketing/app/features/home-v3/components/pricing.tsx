@@ -16,7 +16,12 @@ export function Pricing() {
   const titleId = useId()
 
   return (
-    <section aria-labelledby={titleId} className="py-16 sm:py-28">
+    <section
+      id="pricing"
+      tabIndex={-1}
+      aria-labelledby={titleId}
+      className="scroll-mt-20 py-16 outline-none sm:py-28"
+    >
       <Container className="grid gap-10 lg:grid-cols-2 lg:gap-20">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p className="text-sm font-semibold text-brand-text">
@@ -27,7 +32,7 @@ export function Pricing() {
             className="mt-3 text-3xl font-semibold tracking-tight text-balance sm:text-5xl"
           >
             {t("pricing.title")}{" "}
-            <span className="block text-brand-text">{t("pricing.accent")}</span>
+            <span className="block">{t("pricing.accent")}</span>
           </h2>
         </div>
         <div>

@@ -25,7 +25,7 @@ export function Journey() {
   const titleId = useId()
 
   return (
-    <ScrollScene screens={4} pinFrom="md" aria-labelledby={titleId}>
+    <ScrollScene screens={3} pinFrom="lg" aria-labelledby={titleId}>
       <JourneyStage titleId={titleId} />
     </ScrollScene>
   )
@@ -43,7 +43,7 @@ function JourneyStage({ titleId }: { titleId: string }) {
   })
 
   return (
-    <div className="flex h-full flex-col py-16 md:pt-24 md:pb-10">
+    <div className="flex h-full flex-col py-16 lg:pt-24 lg:pb-10">
       <Container>
         <p className="text-sm font-semibold text-brand-text">
           {t("journey.eyebrow")}
@@ -63,29 +63,29 @@ function JourneyStage({ titleId }: { titleId: string }) {
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
         tabIndex={still ? 0 : undefined}
         className={cn(
-          "mt-8 min-h-0 flex-1 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 max-md:snap-x max-md:snap-mandatory max-md:scroll-px-4 max-md:overflow-x-auto",
+          "mt-8 min-h-0 flex-1 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 max-lg:snap-x max-lg:snap-mandatory max-lg:scroll-px-4 max-lg:overflow-x-auto",
           still && "snap-x snap-mandatory scroll-px-4 overflow-x-auto"
         )}
       >
         <m.ol
           style={still ? undefined : { x }}
-          className="flex h-full w-max gap-4 px-4 max-md:transform-none! sm:gap-6 sm:px-6 lg:px-8"
+          className="flex h-full w-max gap-4 px-4 max-lg:transform-none! sm:gap-6 sm:px-6 lg:px-8"
         >
           {steps.map((step, i) => (
             <li
               key={step.title}
-              className="grid w-[85vw] snap-start gap-6 rounded-3xl border bg-card p-4 sm:p-6 md:w-[min(64rem,80vw)] md:grid-cols-5 md:gap-10"
+              className="grid w-[85vw] snap-start gap-6 rounded-3xl border bg-card p-4 sm:w-[min(36rem,80vw)] sm:p-6 lg:w-[min(64rem,80vw)] lg:grid-cols-5 lg:gap-10"
             >
               {PHOTOS[i] ? (
                 <Photo
                   name={PHOTOS[i]}
                   alt={step.photo}
-                  sizes="(min-width: 48rem) 26rem, 85vw"
+                  sizes="(min-width: 64rem) 26rem, (min-width: 40rem) 36rem, 85vw"
                   portrait
-                  className="aspect-4/5 rounded-2xl max-md:aspect-3/2 md:col-span-2 md:aspect-auto md:h-full"
+                  className="aspect-4/5 rounded-2xl max-lg:aspect-3/2 lg:col-span-2 lg:aspect-auto lg:h-full"
                 />
               ) : null}
-              <div className="flex flex-col justify-center md:col-span-3">
+              <div className="flex flex-col justify-center lg:col-span-3">
                 <p className="text-sm font-semibold text-brand-text tabular-nums">
                   {t("journey.progress", { n: i + 1, total: steps.length })}
                 </p>
@@ -114,7 +114,7 @@ function Rail({ labels }: { labels: string[] }) {
   const fill = useTransform(progress, [0.08, 0.92], [0, 1])
 
   return (
-    <div aria-hidden className="mt-8 max-md:hidden">
+    <div aria-hidden className="mt-8 max-lg:hidden">
       <div className="h-px bg-border">
         <m.div
           style={{ scaleX: fill }}

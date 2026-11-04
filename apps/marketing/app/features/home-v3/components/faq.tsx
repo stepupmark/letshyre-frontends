@@ -21,8 +21,7 @@ export function Faq() {
             id={titleId}
             className="text-3xl font-semibold tracking-tight text-balance sm:text-5xl"
           >
-            {t("faq.title")}{" "}
-            <span className="block text-brand-text">{t("faq.accent")}</span>
+            {t("faq.title")} <span className="block">{t("faq.accent")}</span>
           </h2>
           <p className="mt-4 max-w-sm text-pretty text-muted-foreground">
             {t("faq.description")}

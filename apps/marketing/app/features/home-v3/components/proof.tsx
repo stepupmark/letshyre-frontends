@@ -20,7 +20,7 @@ export function Proof() {
   const titleId = useId()
 
   return (
-    <ScrollScene screens={3.5} aria-labelledby={titleId}>
+    <ScrollScene screens={2.4} aria-labelledby={titleId}>
       <ProofStage titleId={titleId} />
     </ScrollScene>
   )

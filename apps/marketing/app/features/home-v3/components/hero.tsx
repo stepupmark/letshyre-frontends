@@ -18,26 +18,32 @@ export function Hero() {
   const { t } = useTranslation("homeV3")
 
   return (
-    <ScrollScene screens={2.4} pinFrom="md" aria-labelledby={titleId}>
-      <div className="mx-auto grid size-full max-w-6xl items-center gap-12 px-4 pt-12 pb-16 sm:px-6 md:grid-cols-2 md:pt-16 md:pb-0 lg:gap-16 lg:px-8">
-        <div className="max-md:text-center">
+    <ScrollScene screens={1.6} pinFrom="lg" aria-labelledby={titleId}>
+      <div className="mx-auto grid size-full max-w-6xl items-center gap-12 px-4 pt-12 pb-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:pt-16 lg:pb-0">
+        <div className="max-lg:text-center">
           <p className="text-sm font-semibold text-brand-text">
             {t("hero.eyebrow")}
           </p>
           <h1
             id={titleId}
-            className="mt-5 text-4xl font-semibold tracking-tight text-balance sm:text-6xl md:text-5xl lg:text-7xl"
+            className="mt-5 text-4xl font-semibold tracking-tight text-balance sm:text-6xl xl:text-7xl"
           >
             {t("hero.title")}{" "}
             <span className="block text-brand-text">{t("hero.accent")}</span>
           </h1>
-          <p className="mt-5 max-w-lg text-base text-pretty text-muted-foreground max-md:mx-auto sm:text-lg">
+          <p className="mt-5 max-w-lg text-base text-pretty text-muted-foreground max-lg:mx-auto sm:text-lg">
             {t("hero.description")}
           </p>
-          <AudienceCtas className="mt-8 max-md:justify-center max-sm:w-full max-sm:flex-col max-sm:items-stretch" />
+          <AudienceCtas className="mt-8 max-lg:justify-center max-sm:w-full max-sm:flex-col max-sm:items-stretch" />
           <p className="mt-4 text-xs text-muted-foreground sm:text-sm">
             {t("hero.reassurance")}
           </p>
+          <a
+            href="#pricing"
+            className="sr-only rounded-sm text-sm font-medium underline-offset-4 outline-none focus-visible:not-sr-only focus-visible:mt-4 focus-visible:inline-block focus-visible:underline focus-visible:ring-3 focus-visible:ring-ring/50"
+          >
+            {t("hero.skip")}
+          </a>
         </div>
         <HeroStage />
       </div>

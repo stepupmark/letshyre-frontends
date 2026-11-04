@@ -1,5 +1,3 @@
-import { CandidateFile } from "./components/candidate-file"
-import { FactsTicker } from "./components/facts-ticker"
 import { Faq } from "./components/faq"
 import { FinalCta } from "./components/final-cta"
 import { Hero } from "./components/hero"
@@ -15,8 +13,6 @@ export function HomeV3Page() {
       <Hero />
       <Proof />
       <Journey />
-      <CandidateFile />
-      <FactsTicker />
       <Professionals />
       <Pricing />
       <Faq />

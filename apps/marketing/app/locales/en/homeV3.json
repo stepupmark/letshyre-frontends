@@ -17,8 +17,34 @@
       "verified": "Interview verified",
       "verdict": "Strong interview",
       "recording": "Interview recording",
-      "duration": "24:10"
-    }
+      "duration": "24:10",
+      "name": "Vyshnavi Rao",
+      "role": "Frontend engineer · 7 years",
+      "scoreValue": 82,
+      "outOf": "/100",
+      "layers": [
+        {
+          "label": "Job match",
+          "value": 86,
+          "suffix": "%"
+        },
+        {
+          "label": "Skill match",
+          "value": 79,
+          "suffix": "%"
+        },
+        {
+          "label": "AI interview",
+          "value": 78,
+          "suffix": "/100"
+        }
+      ],
+      "strengths": "Strengths",
+      "strengthItems": ["State management", "Accessibility"],
+      "gaps": "Worth probing",
+      "gapItems": ["Testing at scale"]
+    },
+    "skip": "Skip the walkthrough"
   },
   "proof": {
     "eyebrow": "Why LetsHyre",
@@ -125,75 +151,6 @@
         "phone": "+91 98765 43210"
       }
     }
-  },
-  "file": {
-    "eyebrow": "Inside a candidate file",
-    "title": "What you see",
-    "accent": "before you call.",
-    "description": "Every profile carries the same layers of evidence, so you compare candidates like for like and only unlock the ones worth meeting.",
-    "name": "Vyshnavi Rao",
-    "role": "Frontend engineer · 7 years",
-    "outOf": "/100",
-    "layers": [
-      {
-        "label": "Job match",
-        "value": 86,
-        "suffix": "%"
-      },
-      {
-        "label": "Skill match",
-        "value": 79,
-        "suffix": "%"
-      },
-      {
-        "label": "AI interview",
-        "value": 78,
-        "suffix": "/100"
-      }
-    ],
-    "strengths": "Strengths",
-    "strengthItems": ["State management", "Accessibility"],
-    "gaps": "Worth probing",
-    "gapItems": ["Testing at scale"],
-    "lockedItems": [
-      "Resume",
-      "Contact details",
-      "Documents",
-      "Full interview recording"
-    ],
-    "unlock": "Unlock for 1 credit",
-    "unlocked": "Unlocked",
-    "visible": "Visible before you unlock",
-    "visibleBody": "Scores, match and the interview verdict, for every candidate, free.",
-    "included": "Included when you unlock",
-    "includedBody": "One credit opens the resume, contact details, documents and the full recording.",
-    "label": "A sample candidate file for Vyshnavi Rao, for illustration.",
-    "sample": "Sample file",
-    "score": "LetsHyre score",
-    "scoreValue": 82
-  },
-  "facts": {
-    "label": "LetsHyre in numbers",
-    "pause": "Pause the ticker",
-    "play": "Play the ticker",
-    "items": [
-      {
-        "value": "3",
-        "label": "role-based AI interviews per professional"
-      },
-      {
-        "value": "90 days",
-        "label": "a profile stays in the pool after each interview"
-      },
-      {
-        "value": "1 credit",
-        "label": "unlocks a full candidate file"
-      },
-      {
-        "value": "₹0",
-        "label": "for professionals, start to finish"
-      }
-    ]
   },
   "professionals": {
     "eyebrow": "For professionals",

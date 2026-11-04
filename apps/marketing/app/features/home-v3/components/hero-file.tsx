@@ -33,9 +33,11 @@ export function HeroFile({
       <m.div style={{ opacity: reveal }} className="flex items-start gap-4">
         {slot ? <span className="h-20 w-16 shrink-0" /> : null}
         <div className="min-w-0 flex-1">
-          <p className="truncate text-lg font-semibold">{t("file.name")}</p>
+          <p className="truncate text-lg font-semibold">
+            {t("hero.file.name")}
+          </p>
           <p className="truncate text-sm text-muted-foreground">
-            {t("file.role")}
+            {t("hero.file.role")}
           </p>
           <p className="mt-2 inline-flex items-center gap-1 rounded-full bg-success/10 px-2 py-0.5 text-xs font-medium text-success">
             <BadgeCheckIcon className="size-3.5" />
@@ -43,13 +45,13 @@ export function HeroFile({
           </p>
         </div>
         <ScoreRing
-          score={Number(t("file.scoreValue"))}
-          caption={t("file.outOf")}
+          score={Number(t("hero.file.scoreValue"))}
+          caption={t("hero.file.outOf")}
           compact
         />
       </m.div>
       <m.ul style={{ opacity: reveal, y: rise }} className="grid gap-3">
-        {t("file.layers", { returnObjects: true }).map((layer) => (
+        {t("hero.file.layers", { returnObjects: true }).map((layer) => (
           <Meter key={layer.label} {...layer} fill={fill} />
         ))}
       </m.ul>
@@ -58,13 +60,13 @@ export function HeroFile({
         className="grid grid-cols-2 gap-4 border-t pt-4 max-lg:hidden"
       >
         <Tags
-          title={t("file.strengths")}
-          items={t("file.strengthItems", { returnObjects: true })}
+          title={t("hero.file.strengths")}
+          items={t("hero.file.strengthItems", { returnObjects: true })}
           good
         />
         <Tags
-          title={t("file.gaps")}
-          items={t("file.gapItems", { returnObjects: true })}
+          title={t("hero.file.gaps")}
+          items={t("hero.file.gapItems", { returnObjects: true })}
         />
       </m.div>
       <m.div

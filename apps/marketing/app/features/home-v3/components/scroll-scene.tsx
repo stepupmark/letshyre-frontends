@@ -24,7 +24,7 @@ export function ScrollScene({
   ...props
 }: Omit<ComponentProps<"section">, "children"> & {
   screens: number
-  pinFrom?: "md"
+  pinFrom?: "lg"
   children: ReactNode
 }) {
   const ref = useRef<HTMLElement>(null)
@@ -40,7 +40,7 @@ export function ScrollScene({
       className={cn(
         "relative",
         pinFrom
-          ? "md:motion-safe:h-[calc(var(--screens)*100svh)]"
+          ? "lg:motion-safe:h-[calc(var(--screens)*100svh)]"
           : "motion-safe:h-[calc(var(--screens)*100svh)]",
         className
       )}
@@ -50,7 +50,7 @@ export function ScrollScene({
       <div
         className={
           pinFrom
-            ? "md:motion-safe:sticky md:motion-safe:top-0 md:motion-safe:h-svh md:motion-safe:overflow-hidden"
+            ? "lg:motion-safe:sticky lg:motion-safe:top-0 lg:motion-safe:h-svh lg:motion-safe:overflow-hidden"
             : "motion-safe:sticky motion-safe:top-0 motion-safe:h-svh motion-safe:overflow-hidden"
         }
       >

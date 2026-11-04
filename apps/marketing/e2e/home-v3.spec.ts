@@ -36,11 +36,10 @@ test("home v3 plays through cleanly and stays out of search", async ({
       .toBeGreaterThan(0)
   }
 
-  const pause = page.getByRole("button", { name: "Pause the ticker" })
-  await pause.click()
-  await expect(
-    page.getByRole("button", { name: "Play the ticker" })
-  ).toBeVisible()
+  await page.keyboard.press("Home")
+  await page.getByRole("link", { name: "Skip the walkthrough" }).focus()
+  await page.keyboard.press("Enter")
+  await expect(page.locator("#pricing")).toBeFocused()
   expect(errors).toEqual([])
 
   const html = await (await request.get("/en/home-v3")).text()

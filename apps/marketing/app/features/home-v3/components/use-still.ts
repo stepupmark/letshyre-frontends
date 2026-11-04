@@ -3,7 +3,7 @@ import { useSyncExternalStore } from "react"
 
 import { useHydrated } from "@/hooks/use-hydrated"
 
-const NARROW = "(width < 48rem)"
+const NARROW = "(width < 64rem)"
 
 const subscribe = (onChange: () => void) => {
   const query = window.matchMedia(NARROW)
@@ -14,15 +14,15 @@ const subscribe = (onChange: () => void) => {
 }
 
 /**
- * Whether scroll-driven motion should hold still: reduced motion, or a phone when the
- * scene only plays from `md`. False until hydration, so the markup matches the prerender.
+ * Whether scroll-driven motion should hold still: reduced motion, or below `lg` when
+ * the scene only plays from there. False until hydration, so the markup matches the prerender.
  */
-export function useStill(onlyFromMd: boolean) {
+export function useStill(onlyFromLg: boolean) {
   const reduced = useReducedMotion() ?? false
   const narrow = useSyncExternalStore(
     subscribe,
     () => window.matchMedia(NARROW).matches,
     () => false
   )
-  return useHydrated() && (reduced || (onlyFromMd && narrow))
+  return useHydrated() && (reduced || (onlyFromLg && narrow))
 }
