@@ -9,6 +9,7 @@ type Section = "Employers" | "Professionals" | "Company" | "Optional"
 const LLMS_SECTIONS: Record<PageId, Section | null> = {
   home: null,
   homeV2: null,
+  homeV3: null,
   employers: "Employers",
   pricing: "Employers",
   employerGuide: "Employers",

@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "title": "AI Hiring for Experienced Professionals | letshyre.ai",
+    "description": "Hire experienced professionals on evidence. LetsHyre ranks candidates with AI resume analysis, role-based interviews and scorecards you can check."
+  },
+  "hero": {
+    "eyebrow": "AI hiring for experienced professionals",
+    "title": "Hire on evidence,",
+    "accent": "not on hope.",
+    "description": "Every candidate brings an AI resume analysis, role-based interview scores and the full recording. Read the evidence first, then unlock the people worth a call.",
+    "ctaHiring": "I'm hiring",
+    "ctaCandidate": "I'm looking for a role",
+    "reassurance": "10 free credits for employers. Always free for professionals.",
+    "scroll": "Scroll to see how",
+    "photo": "A hiring lead at a meeting table reads a candidate file on her laptop, with printed resumes beside it.",
+    "claims": [
+      "Expert in React",
+      "10x engineer",
+      "Great team player",
+      "Fast learner",
+      "Results-driven",
+      "Strong communicator"
+    ]
+  },
+  "proof": {
+    "eyebrow": "Why LetsHyre",
+    "title": "A resume tells you what someone",
+    "claims": "claims.",
+    "shows": "shows you.",
+    "interview": "An interview",
+    "stages": [
+      {
+        "label": "What lands on your desk",
+        "body": "Hundreds of resumes that read alike, written to impress.",
+        "photo": "A tall stack of clipped paper resumes on a desk."
+      },
+      {
+        "label": "What LetsHyre does first",
+        "body": "Every candidate takes a role-based AI interview before you see them.",
+        "photo": "A professional in headphones answers interview questions on his laptop."
+      },
+      {
+        "label": "What you read before the call",
+        "body": "Scores, a scorecard and the recording, so you compare how people think.",
+        "photo": "Two colleagues review a candidate's interview together on a laptop."
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "How it works",
+    "title": "From job post to first call.",
+    "progress": "Step {{n}} of {{total}}",
+    "steps": [
+      {
+        "title": "Post a job",
+        "body": "Paste your job description. LetsHyre reads the role, the skills and the experience you need.",
+        "photo": "A recruiter at her desk types up a job description on her laptop."
+      },
+      {
+        "title": "Get a ranked shortlist",
+        "body": "Everyone who applied is ranked by job match, skills and interview, with matching professionals added from the talent pool.",
+        "photo": "A hiring manager points at a shortlist on her laptop during a call."
+      },
+      {
+        "title": "Read the interview",
+        "body": "A score out of 100, strengths, the gaps worth probing and the full recording.",
+        "photo": "A hiring manager in headphones works through a candidate's interview at his laptop."
+      },
+      {
+        "title": "Unlock and reach out",
+        "body": "One credit unlocks the resume, contact details and recording. Then you hire your way.",
+        "photo": "A hiring manager smiles on a call with a candidate."
+      }
+    ]
+  },
+  "file": {
+    "eyebrow": "Inside a candidate file",
+    "title": "What you see",
+    "accent": "before you call.",
+    "description": "Every profile carries the same layers of evidence, so you compare candidates like for like and only unlock the ones worth meeting.",
+    "name": "Vyshnavi Rao",
+    "role": "Frontend engineer · 7 years",
+    "outOf": "/100",
+    "layers": [
+      {
+        "label": "LetsHyre score",
+        "value": "82"
+      },
+      {
+        "label": "Job match",
+        "value": "86%"
+      },
+      {
+        "label": "Skill match",
+        "value": "79%"
+      },
+      {
+        "label": "AI interview",
+        "value": "78"
+      }
+    ],
+    "strengths": "Strengths",
+    "strengthItems": ["State management", "Accessibility"],
+    "gaps": "Worth probing",
+    "gapItems": ["Testing at scale"],
+    "locked": "Included when you unlock",
+    "lockedItems": [
+      "Resume",
+      "Contact details",
+      "Documents",
+      "Full interview recording"
+    ],
+    "unlock": "Unlock for 1 credit",
+    "unlocked": "Unlocked"
+  },
+  "facts": {
+    "label": "LetsHyre in numbers",
+    "pause": "Pause the ticker",
+    "play": "Play the ticker",
+    "items": [
+      {
+        "value": "3",
+        "label": "role-based AI interviews per professional"
+      },
+      {
+        "value": "90 days",
+        "label": "a profile stays in the pool after each interview"
+      },
+      {
+        "value": "1 credit",
+        "label": "unlocks a full candidate file"
+      },
+      {
+        "value": "₹0",
+        "label": "for professionals, start to finish"
+      }
+    ]
+  },
+  "professionals": {
+    "eyebrow": "For professionals",
+    "title": "Interview once.",
+    "accent": "Get found for months.",
+    "body": "Take a role-based AI interview in the desktop app, whenever it suits you. For 90 days your scorecard sits in the talent pool, where employers hiring for your role find you.",
+    "photo": "A professional in a headset smiles while answering an interview question at his laptop.",
+    "interviews": [
+      {
+        "label": "Interview 1",
+        "role": "Your main role"
+      },
+      {
+        "label": "Interview 2",
+        "role": "Another role, or a retake"
+      },
+      {
+        "label": "Interview 3",
+        "role": "More evidence for your profile"
+      }
+    ],
+    "days": "90 days",
+    "daysLabel": "in the talent pool",
+    "cta": "Create your profile",
+    "download": "Download the app"
+  },
+  "pricing": {
+    "eyebrow": "Pay per unlock",
+    "title": "Pay only for the people",
+    "accent": "you want to meet.",
+    "body": "Compare everyone for free. One credit unlocks a resume, contact details and the recording, so you can reach out your way.",
+    "points": [
+      "No subscription",
+      "Credits never expire",
+      "Free for professionals"
+    ],
+    "cta": "Start with 10 free credits",
+    "more": "See pricing"
+  },
+  "final": {
+    "title": "Start with relevant candidates,",
+    "accent": "not a pile of resumes.",
+    "description": "And if you're the one being hired, go beyond your resume.",
+    "photo": "Two people shake hands across a desk in a bright office."
+  }
+}

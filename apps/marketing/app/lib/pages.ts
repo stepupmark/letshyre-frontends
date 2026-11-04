@@ -9,6 +9,7 @@ export interface PageDef {
 export const PAGES = {
   home: { path: "", namespaces: ["home"], og: "home" },
   homeV2: { path: "/home-v2", namespaces: ["homeV2", "home"], og: "home" },
+  homeV3: { path: "/home-v3", namespaces: ["homeV3"], og: "home" },
   employers: {
     path: "/employers",
     namespaces: ["employers"],
@@ -60,7 +61,7 @@ export const MOVED_PATHS: Readonly<Record<string, string>> = {
 export type PageId = keyof typeof PAGES
 
 /** Pages up for review: noindex and left out of the sitemap. */
-export const PREVIEW_PAGES: readonly PageId[] = ["homeV2"]
+export const PREVIEW_PAGES: readonly PageId[] = ["homeV2", "homeV3"]
 
 /** A retiring page and its successor. Each locale moves over (301) once the successor ships there. */
 export const REPLACED_BY: Partial<Record<PageId, PageId>> = {

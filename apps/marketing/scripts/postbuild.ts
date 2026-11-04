@@ -47,6 +47,7 @@ const SOURCES: Partial<Record<PageId, string[]>> = {
     ":(exclude)app/features/home/home-v2-page.tsx",
   ],
   homeV2: ["app/features/home"],
+  homeV3: ["app/features/home-v3"],
   terms: ["app/features/legal"],
   privacy: ["app/features/legal"],
   refund: ["app/features/legal"],

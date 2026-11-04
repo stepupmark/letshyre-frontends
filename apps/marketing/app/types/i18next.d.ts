@@ -11,6 +11,7 @@ import type employerGuide from "../locales/en/employerGuide.json"
 import type employers from "../locales/en/employers.json"
 import type home from "../locales/en/home.json"
 import type homeV2 from "../locales/en/homeV2.json"
+import type homeV3 from "../locales/en/homeV3.json"
 import type interview from "../locales/en/interview.json"
 import type legalPolicy from "../locales/en/legalPolicy.json"
 import type legalRefund from "../locales/en/legalRefund.json"
@@ -33,6 +34,7 @@ declare module "i18next" {
       employers: typeof employers
       home: typeof home
       homeV2: typeof homeV2
+      homeV3: typeof homeV3
       interview: typeof interview
       legalPolicy: typeof legalPolicy
       legalRefund: typeof legalRefund
