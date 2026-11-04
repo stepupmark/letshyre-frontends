@@ -53,24 +53,26 @@ export function Features() {
                 <Card />
               </div>
             </div>
-            <div className="lg:mt-7">
-              <p className="flex items-center gap-3 text-sm font-medium">
-                <span className="text-muted-foreground tabular-nums">
+            <div className="lg:mt-8">
+              <p className="flex items-center gap-2.5 text-sm">
+                <span className="font-semibold text-brand-text tabular-nums">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span aria-hidden className="h-px w-6 bg-border" />
-                <span className="text-brand-text">{t(`${key}.eyebrow`)}</span>
+                <span aria-hidden className="h-px w-5 bg-border" />
+                <span className="font-medium text-muted-foreground">
+                  {t(`${key}.eyebrow`)}
+                </span>
               </p>
               <h3
                 id={`${key}-title`}
-                className="mt-3 text-xl font-semibold tracking-tight text-balance sm:text-2xl"
+                className="mt-4 text-xl font-semibold tracking-tight text-balance sm:text-2xl"
               >
                 {t(`${key}.title`)}{" "}
-                <span className="text-muted-foreground">
+                <span className="block text-muted-foreground">
                   {t(`${key}.accent`)}
                 </span>
               </h3>
-              <p className="mt-3 text-pretty text-muted-foreground">
+              <p className="mt-3 max-w-sm text-pretty text-muted-foreground">
                 {t(`${key}.body`)}
               </p>
             </div>

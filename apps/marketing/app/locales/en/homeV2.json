@@ -117,7 +117,7 @@
     "eyebrow": "Shortlist",
     "title": "Post a job.",
     "accent": "Get a ranked shortlist.",
-    "body": "Paste your job description. LetsHyre reads the requirements and ranks everyone who applied, then adds matching professionals from the talent pool.",
+    "body": "Paste your job description. LetsHyre ranks everyone who applied and adds matching professionals from the talent pool.",
     "photo": "A recruiter at her desk types up a job description on her laptop.",
     "card": {
       "label": "A job description for a Senior frontend engineer, with four requirements found: React, TypeScript, 5+ years and remote.",
@@ -131,7 +131,7 @@
     "eyebrow": "Evidence",
     "title": "Read the interview",
     "accent": "before the call.",
-    "body": "Each candidate file shows how they answered role-based questions: a score out of 100, their strengths, the gaps worth probing and the full recording.",
+    "body": "Every file shows how the candidate answered: a score out of 100, their strengths, the gaps worth probing and the full recording.",
     "photo": "A hiring manager in headphones works through a candidate's interview at his laptop.",
     "card": {
       "label": "An interview scorecard of 78 out of 100, marked as a strong interview, with the recording on question 5 of 8.",
@@ -146,7 +146,7 @@
     "eyebrow": "Pay per unlock",
     "title": "Pay only for the people",
     "accent": "you want to meet.",
-    "body": "Compare every candidate for free. When someone looks right, one credit unlocks their resume, contact details, documents and recording. Then reach out however you like.",
+    "body": "Compare everyone for free. One credit unlocks a resume, contact details and the recording, so you can reach out your way.",
     "points": [
       "No subscription",
       "Credits never expire",
@@ -154,7 +154,7 @@
     ],
     "cta": "Start with 10 free credits",
     "pricing": "See pricing",
-    "photo": "A hiring manager calls a candidate from her office desk phone.",
+    "photo": "A hiring manager smiles on a call with a candidate at her laptop.",
     "card": {
       "label": "Vyshnavi Rao's file, unlocked for one credit, with her phone number showing.",
       "name": "Vyshnavi Rao",
