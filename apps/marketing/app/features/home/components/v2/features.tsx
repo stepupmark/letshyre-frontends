@@ -26,7 +26,7 @@ export function Features() {
   })
 
   return (
-    <Band id="how" muted>
+    <Band id="how">
       <Heading
         id="how-title"
         eyebrow={t("how.eyebrow")}
@@ -34,8 +34,8 @@ export function Features() {
         accent={t("how.accent")}
         className="slide-in"
       />
-      <div className="mt-12 grid gap-4 lg:grid-cols-2">
-        <Step step={1} {...copy("shortlist")} scene={<ShortlistScene />} wide />
+      <ol className="mt-16 lg:mt-20">
+        <Step step={1} {...copy("shortlist")} scene={<ShortlistScene />} />
         <Step step={2} {...copy("evidence")} scene={<ScorecardScene />} />
         <Step
           step={3}
@@ -53,7 +53,7 @@ export function Features() {
             </>
           }
         />
-      </div>
+      </ol>
     </Band>
   )
 }
