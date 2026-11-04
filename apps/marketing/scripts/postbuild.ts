@@ -38,42 +38,49 @@ const apiOrigin = new URL(env.VITE_API_BASE_URL).origin
 const production = env.VITE_ENV === "production"
 const enforceCsp = process.env.CSP_ENFORCE === "true"
 
-const FEATURE: Partial<Record<PageId, string>> = {
-  homeV2: "home",
-  terms: "legal",
-  privacy: "legal",
-  refund: "legal",
-  employerGuide: "employer-guide",
-  candidateGuide: "candidate-guide",
+// the code each page is built from; a shared component changing doesn't make every page new
+const SOURCES: Partial<Record<PageId, string[]>> = {
+  home: [
+    "app/features/home",
+    ":(exclude)app/features/home/components/v2",
+    ":(exclude)app/features/home/home-v2-page.tsx",
+  ],
+  homeV2: ["app/features/home"],
+  terms: ["app/features/legal"],
+  privacy: ["app/features/legal"],
+  refund: ["app/features/legal"],
+  employerGuide: ["app/features/employer-guide"],
+  candidateGuide: ["app/features/candidate-guide"],
 }
 
 const gitDates = new Map<string, string>()
-const lastCommit = (path: string) => {
-  if (!gitDates.has(path)) {
+const lastCommit = (paths: string[]) => {
+  const key = paths.join("\0")
+  if (!gitDates.has(key)) {
     let date = ""
     try {
-      date = execFileSync("git", ["log", "-1", "--format=%cs", "--", path], {
-        cwd: ROOT,
-        encoding: "utf8",
-      }).trim()
+      date = execFileSync(
+        "git",
+        ["log", "-1", "--format=%cs", "--", ...paths],
+        {
+          cwd: ROOT,
+          encoding: "utf8",
+        }
+      ).trim()
     } catch {
       // no git (tarball build): fall back to today
     }
-    gitDates.set(path, date)
+    gitDates.set(key, date)
   }
-  return gitDates.get(path) ?? ""
+  return gitDates.get(key) ?? ""
 }
 
 const today = new Date().toISOString().slice(0, 10)
 const lastmod = (id: PageId) => (lang: Locale) =>
-  [
-    `app/features/${FEATURE[id] ?? id}`,
+  lastCommit([
+    ...(SOURCES[id] ?? [`app/features/${id}`]),
     ...PAGES[id].namespaces.map((ns) => `app/locales/${lang}/${ns}.json`),
-  ]
-    .map(lastCommit)
-    .filter(Boolean)
-    .sort()
-    .at(-1) ?? today
+  ]) || today
 
 const htmlFile = (route: string) => join(CLIENT, route, "index.html")
 const gzipSize = (file: string) => gzipSync(readFileSync(file)).length
@@ -107,6 +114,10 @@ const routes = [...ready].flatMap(([id, locales]) =>
   }))
 )
 
+const pagePaths = new Set(
+  routes.map((page) => localePath(page.lang, page.path))
+)
+
 for (const page of routes) {
   const route = localePath(page.lang, page.path)
   const file = htmlFile(route)
@@ -122,6 +133,7 @@ for (const page of routes) {
       site,
       production: production && !page.preview,
       fileExists: (path) => existsSync(join(CLIENT, path)),
+      isPage: (path) => pagePaths.has(path),
     }
   )) {
     problems.push(`${route}: ${problem}`)

@@ -35,6 +35,7 @@ const options = {
   site: SITE,
   production: true,
   fileExists: (path: string) => path === "/og/pricing.jpg",
+  isPage: (path: string) => ["/en", "/en/pricing"].includes(path),
 }
 
 describe("checkPage", () => {
@@ -65,6 +66,17 @@ describe("checkPage", () => {
     expect(problems).toMatch(/@id not defined: #org/)
     expect(problems).toMatch(/one <h1>, found 2/)
     expect(problems).toMatch(/production page is noindex/)
+  })
+
+  it("flags links that would go through a redirect", () => {
+    const body = `<h1>Pricing</h1><a href="/en">Home</a><a href="/en/pricing#faq">FAQ</a><a href="/hi">Hindi</a><a href="/en/interview-guide?x=1">Guide</a><a href="/og/pricing.jpg">Card</a><a href="https://letshyre.ai/employer/register">Join</a>`
+    const problems = checkPage(
+      { ...input, html: page(goodHead, body) },
+      options
+    )
+    expect(problems).toEqual([
+      "links to pages that aren't published here: /hi, /en/interview-guide",
+    ])
   })
 
   it("counts CJK as double width", () => {

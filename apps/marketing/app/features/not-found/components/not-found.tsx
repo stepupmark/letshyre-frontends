@@ -1,17 +1,17 @@
-import { localePath } from "@workspace/i18n"
-import { Trans, useLocale, useTranslation } from "@workspace/i18n/react"
+import { Trans, useTranslation } from "@workspace/i18n/react"
 import { Button, buttonVariants } from "@workspace/ui/components/button"
 import { Link, useNavigate } from "react-router"
 
 import { StatusPage } from "@/components/status-page"
 import { useHydrated } from "@/hooks/use-hydrated"
+import { usePagePath } from "@/hooks/use-page-path"
 import { reportHref } from "@/lib/report-href"
 
 import { NotFoundArt } from "./not-found-art"
 
 export function NotFound() {
   const { t } = useTranslation("common")
-  const lang = useLocale()
+  const pagePath = usePagePath()
   const navigate = useNavigate()
   // the prerendered page doesn't know the real URL, so wait for the browser
   const hydrated = useHydrated()
@@ -31,7 +31,7 @@ export function NotFound() {
       actions={
         <>
           <Link
-            to={localePath(lang)}
+            to={pagePath("home")}
             className={buttonVariants({ size: "lg" })}
           >
             {t("notFound.goHome")}

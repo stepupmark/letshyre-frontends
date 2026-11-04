@@ -5,6 +5,7 @@ import { ArrowUpRightIcon } from "lucide-react"
 import { Link } from "react-router"
 
 import { Container } from "@/components/section"
+import { usePagePath } from "@/hooks/use-page-path"
 import { usePublished } from "@/hooks/use-published"
 import { SocialLinks } from "@/components/social-links"
 import { NewsletterForm } from "@/features/newsletter"
@@ -17,6 +18,7 @@ export function SiteFooter() {
   const { t } = useTranslation("common")
   const lang = useLocale()
   const published = usePublished()
+  const pagePath = usePagePath()
 
   return (
     <footer className="border-t print:hidden">
@@ -24,7 +26,7 @@ export function SiteFooter() {
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="flex max-w-sm flex-col gap-4 lg:col-span-4">
             <Link
-              to={localePath(lang)}
+              to={pagePath("home")}
               className="w-fit rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               <Logo label={t("nav.logoAlt")} />

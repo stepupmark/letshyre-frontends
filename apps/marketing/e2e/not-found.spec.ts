@@ -1,4 +1,5 @@
 import { axe, expect, test } from "./fixtures.ts"
+import { SITEMAP } from "./sitemap.ts"
 
 for (const url of ["/404", "/en/does-not-exist", "/xx/nonsense"]) {
   test(`${url}: English 404 inside the site, with a way home`, async ({
@@ -30,9 +31,10 @@ test("a 404 under a locale switches to that language", async ({ page }) => {
     "यह पेज मौजूद नहीं है"
   )
   await expect(page.locator("html")).toHaveAttribute("lang", "hi")
+  // home links straight to English until the Hindi home page ships, never through a redirect
   await expect(page.getByRole("link", { name: "होम पर जाएं" })).toHaveAttribute(
     "href",
-    "/hi"
+    SITEMAP.some((entry) => entry.path === "/hi") ? "/hi" : "/en"
   )
 })
 

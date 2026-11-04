@@ -1,18 +1,16 @@
-import { localePath } from "@workspace/i18n"
-import { useLocale, useTranslation } from "@workspace/i18n/react"
+import { useTranslation } from "@workspace/i18n/react"
 import { ArrowRightIcon } from "lucide-react"
 
 import { AudienceHero } from "@/components/audience-hero"
 import { CtaLink, OutlineLink } from "@/components/cta-links"
 import { APP_LINKS } from "@/lib/app-links"
+import { usePagePath } from "@/hooks/use-page-path"
 
-import { useGuidePath } from "../hooks/use-guide-path"
 import { HeroCard } from "./art/hero-card"
 
 export function Hero() {
   const { t } = useTranslation("candidates")
-  const lang = useLocale()
-  const guide = useGuidePath()
+  const pagePath = usePagePath()
 
   return (
     <AudienceHero
@@ -27,7 +25,7 @@ export function Hero() {
             {t("hero.cta")}
             <ArrowRightIcon aria-hidden className="rtl:-scale-x-100" />
           </CtaLink>
-          <OutlineLink to={localePath(lang, guide)}>
+          <OutlineLink to={pagePath("interview")}>
             {t("hero.guide")}
           </OutlineLink>
         </>

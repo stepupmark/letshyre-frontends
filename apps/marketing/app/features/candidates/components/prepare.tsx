@@ -1,5 +1,4 @@
-import { localePath } from "@workspace/i18n"
-import { useLocale, useTranslation } from "@workspace/i18n/react"
+import { useTranslation } from "@workspace/i18n/react"
 import {
   CodeIcon,
   ListChecksIcon,
@@ -10,8 +9,7 @@ import {
 import { Band } from "@/components/band"
 import { BandHeading } from "@/components/band-heading"
 import { TextLink } from "@/components/cta-links"
-
-import { useGuidePath } from "../hooks/use-guide-path"
+import { usePagePath } from "@/hooks/use-page-path"
 
 interface Type {
   title: string
@@ -22,8 +20,7 @@ const ICONS = [ListChecksIcon, CodeIcon, PenLineIcon, AudioLinesIcon]
 
 export function Prepare() {
   const { t } = useTranslation("candidates")
-  const lang = useLocale()
-  const guide = useGuidePath()
+  const pagePath = usePagePath()
   const types = t("prepare.types", { returnObjects: true }) as Type[]
 
   return (
@@ -37,7 +34,7 @@ export function Prepare() {
           accent={t("prepare.accent")}
           description={t("prepare.description")}
         />
-        <TextLink to={localePath(lang, guide)}>{t("prepare.guide")}</TextLink>
+        <TextLink to={pagePath("interview")}>{t("prepare.guide")}</TextLink>
       </div>
 
       <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -1,11 +1,10 @@
-import { localePath } from "@workspace/i18n"
-import { useLocale, useTranslation } from "@workspace/i18n/react"
+import { useTranslation } from "@workspace/i18n/react"
 import { cn } from "@workspace/ui/lib/utils"
 import { useId } from "react"
 import { Link } from "react-router"
 
 import { Section, SectionHeader } from "@/components/section"
-import { PAGES } from "@/lib/pages"
+import { usePagePath } from "@/hooks/use-page-path"
 
 import { type ReasonId, WhyArt } from "./art/why-art"
 
@@ -19,7 +18,7 @@ const REASONS: { id: ReasonId; link?: "interview" | "pricing" }[] = [
 
 export function WhyLetsHyre() {
   const { t } = useTranslation("about")
-  const lang = useLocale()
+  const pagePath = usePagePath()
   const headingId = useId()
 
   return (
@@ -46,7 +45,7 @@ export function WhyLetsHyre() {
             </p>
             {link && (
               <Link
-                to={localePath(lang, PAGES[link].path)}
+                to={pagePath(link)}
                 className="more-link mt-auto w-fit pt-2 text-sm"
               >
                 {t(`why.links.${link}`)}

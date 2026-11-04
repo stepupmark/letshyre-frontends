@@ -14,6 +14,7 @@ import { type ReactNode, useEffect, useRef, useState } from "react"
 import { Link } from "react-router"
 
 import { Container } from "@/components/section"
+import { usePagePath } from "@/hooks/use-page-path"
 import { APP_LINKS } from "@/lib/app-links"
 
 import { useCompactNav } from "./site-header-compact"
@@ -48,6 +49,7 @@ export function SiteHeader() {
   const listRef = useRef<HTMLUListElement>(null)
   const compact = useCompactNav(rowRef, listRef, lang)
   const scrolled = useScrolled()
+  const pagePath = usePagePath()
   const productCurrent = productItems.some((item) => current(item))
 
   return (
@@ -63,7 +65,7 @@ export function SiteHeader() {
         >
           <div className="flex flex-1 basis-0">
             <Link
-              to={localePath(lang)}
+              to={pagePath("home")}
               className="shrink-0 rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               <Logo label={t("nav.logoAlt")} />

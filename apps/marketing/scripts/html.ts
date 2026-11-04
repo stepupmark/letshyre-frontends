@@ -39,3 +39,12 @@ export const jsonLdOf = (html: string): string[] =>
   ].map((m) => m[1] ?? "")
 
 export const h1Count = (html: string) => (html.match(/<h1[\s>]/g) ?? []).length
+
+/** Same-site `<a>` targets, without query or fragment. */
+export const internalLinksOf = (html: string): string[] => [
+  ...new Set(
+    [...html.matchAll(/<a [^>]*href="(\/(?!\/)[^"?#]*)/g)].map(
+      (m) => m[1] ?? ""
+    )
+  ),
+]

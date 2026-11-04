@@ -1,5 +1,4 @@
-import { localePath } from "@workspace/i18n"
-import { useLocale, useTranslation } from "@workspace/i18n/react"
+import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import {
   ArrowRightIcon,
@@ -14,7 +13,7 @@ import { Link } from "react-router"
 
 import { Section } from "@/components/section"
 import { useCopy } from "@/hooks/use-copy"
-import { PAGES } from "@/lib/pages"
+import { usePagePath } from "@/hooks/use-page-path"
 import { SITE } from "@/lib/seo/site"
 
 const LINKS = [
@@ -60,7 +59,7 @@ function ChannelIcon({ icon: Icon }: { icon: typeof MailIcon }) {
 
 export function ContactChannels() {
   const { t } = useTranslation("contact")
-  const lang = useLocale()
+  const pagePath = usePagePath()
   const titleId = useId()
 
   return (
@@ -89,7 +88,7 @@ export function ContactChannels() {
         {LINKS.map(({ id, icon, page }) => (
           <li key={id}>
             <Link
-              to={localePath(lang, PAGES[page].path)}
+              to={pagePath(page)}
               className="group/channel flex h-full flex-col gap-4 rounded-2xl border p-5 transition-colors duration-300 outline-none hover:border-brand/40 focus-visible:ring-3 focus-visible:ring-ring/50"
             >
               <ChannelIcon icon={icon} />

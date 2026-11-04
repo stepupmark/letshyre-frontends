@@ -8,6 +8,7 @@ import {
 } from "@workspace/ui/components/tabs"
 import { useState } from "react"
 
+import { usePagePath } from "@/hooks/use-page-path"
 import { usePublished } from "@/hooks/use-published"
 import { PAGES } from "@/lib/pages"
 import { BandHeading } from "@/components/band-heading"
@@ -45,9 +46,7 @@ export function HowItWorks() {
   const lang = useLocale()
   const published = usePublished()
   const explorer = useExplorer()
-  const candidateGuide = published("candidateGuide")
-    ? PAGES.candidateGuide
-    : PAGES.interview
+  const pagePath = usePagePath()
   const tracks = [
     {
       value: "employers" as const,
@@ -70,7 +69,7 @@ export function HowItWorks() {
         label: t("how.bridge.professionals"),
       },
       guide: {
-        to: localePath(lang, candidateGuide.path),
+        to: pagePath("interview"),
         label: t("professionals.guide"),
       },
     },

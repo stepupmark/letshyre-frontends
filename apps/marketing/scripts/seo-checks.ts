@@ -4,6 +4,7 @@ import {
   alternatesOf,
   canonicalOf,
   h1Count,
+  internalLinksOf,
   jsonLdOf,
   metaOf,
   titleOf,
@@ -20,6 +21,8 @@ interface Options {
   site: string
   production: boolean
   fileExists: (publicPath: string) => boolean
+  /** Whether a path is a prerendered page, rather than a redirect or a 404. */
+  isPage: (path: string) => boolean
 }
 
 const TITLE_SUFFIX = " | letshyre.ai"
@@ -65,7 +68,7 @@ function jsonLdProblems(blocks: string[]): string[] {
 /** Problems with one prerendered page, empty when it's fine. */
 export function checkPage(
   { lang, path, locales, html }: SeoPage,
-  { site, production, fileExists }: Options
+  { site, production, fileExists, isPage }: Options
 ): string[] {
   const problems: string[] = []
   const fail = (ok: boolean, message: string) => {
@@ -106,6 +109,15 @@ export function checkPage(
   for (const key of ["og:title", "og:locale", "twitter:card"]) {
     fail(metaOf(html, key) !== "", `${key} missing`)
   }
+
+  // files such as /og/home.jpg are served as they are
+  const redirected = internalLinksOf(html).filter(
+    (href) => !/\.[a-z0-9]+$/i.test(href) && !isPage(href)
+  )
+  fail(
+    redirected.length === 0,
+    `links to pages that aren't published here: ${redirected.join(", ")}`
+  )
 
   problems.push(...jsonLdProblems(jsonLdOf(html)))
   fail(h1Count(html) === 1, `expected one <h1>, found ${h1Count(html)}`)
