@@ -48,6 +48,10 @@ writeFileSync(join(ROOT, "build/csp.map"), nginxMap(new Map(), policy))
 if (!html.includes('name="robots" content="noindex, nofollow"')) {
   problems.push("index.html: missing noindex")
 }
+// shared links (register, scorecards) unfurl from this HTML alone
+if (!/<title>[^<]+<\/title>/.test(html)) {
+  problems.push("index.html: missing <title>")
+}
 
 const js = initialScriptsOf(html)
   .map((src) => gzipSync(readFileSync(join(CLIENT, src))).length)

@@ -17,6 +17,7 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router"
 import type { Route } from "./+types/root"
 import { MotionProvider } from "./components/motion/motion-provider"
 import { RouteError } from "./components/route-error"
+import { env } from "./lib/env"
 import { locale, namespaces } from "./lib/i18n"
 import { createQueryClient } from "./lib/query-client"
 import common from "./locales/en/common.json"
@@ -106,10 +107,20 @@ export default function App() {
   )
 }
 
-// prerendered into index.html, so it shows before any JS has loaded
+// the card for shared app links; marketing serves the image on the same origin
+const shareImage = new URL("/og/default.jpg", env.VITE_SITE_URL).href
+
+// Prerendered into index.html, so it shows before any JS has loaded. Link previews never run JS,
+// so these tags are all they see; each route's own <title> replaces them once this unmounts.
 export function HydrateFallback() {
   return (
     <div aria-busy="true" className="grid min-h-svh place-items-center">
+      <title>{common.appName}</title>
+      <meta property="og:site_name" content={common.appName} />
+      <meta property="og:title" content={common.appName} />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content={shareImage} />
+      <meta name="twitter:card" content="summary_large_image" />
       <LogoMark label="" className="size-10" />
     </div>
   )
