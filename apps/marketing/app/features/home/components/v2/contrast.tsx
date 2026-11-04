@@ -4,8 +4,7 @@ import { BadgeCheckIcon, CheckIcon, FilesIcon, XIcon } from "lucide-react"
 import type { CSSProperties } from "react"
 
 import { Band } from "@/components/band"
-
-import { Heading } from "./heading"
+import { BandHeading } from "@/components/band-heading"
 
 export function Contrast() {
   const { t } = useTranslation("homeV2")
@@ -14,12 +13,13 @@ export function Contrast() {
   const after = t("contrast.after.items", { returnObjects: true })
 
   return (
-    <Band id="contrast">
-      <Heading
+    <Band id="contrast" tinted>
+      <BandHeading
         id="contrast-title"
         eyebrow={t("contrast.eyebrow")}
         title={t("contrast.title")}
         accent={t("contrast.accent")}
+        stacked
         className="slide-in max-w-3xl"
       />
 

@@ -7,12 +7,14 @@ import { Container } from "@/components/section"
 export function Band({
   id,
   muted,
+  tinted,
   flushTop,
   className,
   children,
 }: {
   id: string
   muted?: boolean
+  tinted?: boolean
   flushTop?: boolean
   className?: string
   children: ReactNode
@@ -24,6 +26,7 @@ export function Band({
       className={cn(
         "overflow-x-clip py-16 sm:py-24",
         muted && "border-y",
+        tinted && "border-y bg-muted/40",
         flushTop && "pt-0 sm:pt-0"
       )}
     >

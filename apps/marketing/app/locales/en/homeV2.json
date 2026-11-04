@@ -24,7 +24,8 @@
       "people": [
         {
           "name": "Vyshnavi Rao",
-          "role": "Frontend engineer · 7 yrs",
+          "role": "Frontend engineer",
+          "years": "7 yrs",
           "match": 86,
           "interview": 78,
           "pool": false,
@@ -32,7 +33,8 @@
         },
         {
           "name": "Arjun Mehta",
-          "role": "React developer · 5 yrs",
+          "role": "React developer",
+          "years": "5 yrs",
           "match": 74,
           "interview": 71,
           "pool": false,
@@ -40,7 +42,8 @@
         },
         {
           "name": "Meera Shah",
-          "role": "UI engineer · 6 yrs",
+          "role": "UI engineer",
+          "years": "6 yrs",
           "match": 68,
           "interview": 69,
           "pool": true,
@@ -48,7 +51,8 @@
         },
         {
           "name": "Kavya Rao",
-          "role": "Frontend developer · 5 yrs",
+          "role": "Frontend developer",
+          "years": "5 yrs",
           "match": 61,
           "interview": 64,
           "pool": true,
@@ -58,7 +62,8 @@
       "pool": "From pool",
       "unlocked": "Unlocked",
       "credit": "1 credit",
-      "outOf": "/100"
+      "outOf": "/100",
+      "separator": " · "
     }
   },
   "facts": {
@@ -171,8 +176,7 @@
     "body": "Take a role-based AI interview in the desktop app, whenever it suits you. For 90 days your scorecard sits in the talent pool, where employers hiring for your role find you.",
     "points": [
       "Up to 3 interviews: different roles, or a retake",
-      "A skill scorecard after every interview",
-      "Free for professionals, start to finish"
+      "A skill scorecard after every interview"
     ],
     "cta": "Create your profile",
     "download": "Download the app",

@@ -5,10 +5,10 @@ import type { CSSProperties } from "react"
 
 import { APP_LINKS } from "@/lib/app-links"
 import { Band } from "@/components/band"
+import { BandHeading } from "@/components/band-heading"
 import { CtaLink, TextLink } from "@/components/cta-links"
 import { PAGES } from "@/lib/pages"
 
-import { Heading } from "./heading"
 import { Photo } from "./photo"
 import { EvidenceCard, ShortlistCard, UnlockCard } from "./scenes/step-cards"
 
@@ -24,11 +24,12 @@ export function Features() {
 
   return (
     <Band id="how">
-      <Heading
+      <BandHeading
         id="how-title"
         eyebrow={t("how.eyebrow")}
         title={t("how.title")}
         accent={t("how.accent")}
+        stacked
         className="slide-in"
       />
 
@@ -45,6 +46,7 @@ export function Features() {
                 alt={t(`${key}.photo`)}
                 sizes="(min-width: 1152px) 352px, (min-width: 1024px) 30vw, (min-width: 768px) 45vw, calc(100vw - 2rem)"
                 portrait
+                className="max-sm:aspect-square"
               />
               <div
                 className="drop-in absolute inset-x-3 bottom-3 sm:inset-x-4 sm:bottom-4"
@@ -81,7 +83,7 @@ export function Features() {
       </ol>
 
       <div className="slide-in mt-16 flex flex-col gap-6 border-t pt-8 lg:flex-row lg:items-center lg:justify-between">
-        <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <ul className="flex flex-col gap-2 text-sm sm:flex-row sm:flex-wrap sm:gap-x-6">
           {t("unlock.points", { returnObjects: true }).map((point) => (
             <li key={point} className="flex items-center gap-2">
               <CheckIcon aria-hidden className="size-4 text-brand-text" />
@@ -89,12 +91,15 @@ export function Features() {
             </li>
           ))}
         </ul>
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <div className="flex flex-col gap-x-6 gap-y-2 sm:flex-row sm:flex-wrap sm:items-center">
           <CtaLink href={APP_LINKS.employerRegister}>
             {t("unlock.cta")}
-            <ArrowRightIcon aria-hidden />
+            <ArrowRightIcon aria-hidden className="rtl:-scale-x-100" />
           </CtaLink>
-          <TextLink to={localePath(lang, PAGES.pricing.path)}>
+          <TextLink
+            to={localePath(lang, PAGES.pricing.path)}
+            className="max-sm:self-center"
+          >
             {t("unlock.pricing")}
           </TextLink>
         </div>

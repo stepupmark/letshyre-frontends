@@ -8,6 +8,7 @@ export function BandHeading({
   accent,
   description,
   center,
+  stacked,
   className,
 }: {
   id: string
@@ -16,6 +17,7 @@ export function BandHeading({
   accent: ReactNode
   description?: ReactNode
   center?: boolean
+  stacked?: boolean
   className?: string
 }) {
   return (
@@ -33,7 +35,10 @@ export function BandHeading({
         id={id}
         className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl"
       >
-        {title} <span className="text-brand-text">{accent}</span>
+        {title}{" "}
+        <span className={cn("text-brand-text", stacked && "block")}>
+          {accent}
+        </span>
       </h2>
       {description && (
         <p

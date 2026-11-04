@@ -47,7 +47,7 @@ export function HeroScene() {
           </div>
 
           <div aria-hidden>
-            <p className="grid grid-cols-[minmax(0,1fr)_4rem_4.5rem] gap-3 border-b bg-muted/40 px-4 py-2 text-xs text-muted-foreground sm:grid-cols-[minmax(0,1fr)_8rem_5rem_6rem] sm:px-5">
+            <p className="grid grid-cols-[minmax(0,1fr)_3.5rem_4rem] gap-2 border-b bg-muted/40 px-4 py-2 text-xs text-muted-foreground sm:grid-cols-[minmax(0,1fr)_8rem_5rem_6rem] sm:gap-3 sm:px-5">
               <span>{t("hero.scene.columns.candidate")}</span>
               <span>{t("hero.scene.columns.match")}</span>
               <span>{t("hero.scene.columns.interview")}</span>
@@ -60,12 +60,12 @@ export function HeroScene() {
                 <li
                   key={person.name}
                   className={cn(
-                    "lift grid grid-cols-[minmax(0,1fr)_4rem_4.5rem] items-center gap-3 border-b px-4 py-3 last:border-0 sm:grid-cols-[minmax(0,1fr)_8rem_5rem_6rem] sm:px-5",
+                    "lift grid grid-cols-[minmax(0,1fr)_3.5rem_4rem] items-center gap-2 border-b px-4 py-3 last:border-0 sm:grid-cols-[minmax(0,1fr)_8rem_5rem_6rem] sm:gap-3 sm:px-5",
                     index === 0 && "bg-brand-muted/30"
                   )}
                   style={wait(360 + index * 90)}
                 >
-                  <span className="flex min-w-0 items-center gap-3">
+                  <span className="flex min-w-0 items-center gap-2.5 sm:gap-3">
                     <Avatar name={person.name} className="size-8 text-xs" />
                     <span className="min-w-0">
                       <span className="flex items-center gap-1.5 text-sm font-medium">
@@ -78,6 +78,10 @@ export function HeroScene() {
                       </span>
                       <span className="block truncate text-xs text-muted-foreground">
                         {person.role}
+                        <span className="max-sm:hidden">
+                          {t("hero.scene.separator")}
+                          {person.years}
+                        </span>
                       </span>
                     </span>
                   </span>
