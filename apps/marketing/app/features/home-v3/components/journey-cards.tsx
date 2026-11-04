@@ -6,6 +6,8 @@ import type { ReactNode } from "react"
 import { Avatar } from "@/components/art/avatar"
 import { ScoreRing } from "@/components/art/score-ring"
 
+import { Tilt } from "./pointer-effects"
+
 const QUESTIONS = 8
 const CURRENT = 4
 
@@ -32,13 +34,15 @@ function Frame({
   children: ReactNode
 }) {
   return (
-    <div
-      role="img"
-      aria-label={label}
-      className={cn("max-w-sm rounded-2xl border bg-background p-4", className)}
-    >
-      {children}
-    </div>
+    <Tilt className={cn("max-w-sm", className)}>
+      <div
+        role="img"
+        aria-label={label}
+        className="rounded-2xl border bg-background p-4"
+      >
+        {children}
+      </div>
+    </Tilt>
   )
 }
 
