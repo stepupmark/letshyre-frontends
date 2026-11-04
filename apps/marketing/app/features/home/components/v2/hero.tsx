@@ -12,8 +12,7 @@ export function Hero() {
   return (
     <section aria-labelledby="hero-title" className="overflow-x-clip">
       <Container className="flex flex-col items-center pt-10 text-center sm:pt-20 lg:pt-24">
-        <p className="lift inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1 text-xs text-muted-foreground sm:text-sm">
-          <span aria-hidden className="size-1.5 rounded-full bg-brand" />
+        <p className="lift text-sm font-semibold text-brand-text">
           {t("hero.eyebrow")}
         </p>
         <h1
