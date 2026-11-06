@@ -30,8 +30,8 @@ const FAILED = {
   other: "panel.failed",
 } as const satisfies Record<UnlockProblem, string>
 
-const BLURRED = { opacity: 0, filter: "blur(4px)" }
-const SHARP = { opacity: 1, filter: "blur(0px)" }
+const HIDDEN = { opacity: 0, y: 4 }
+const SHOWN = { opacity: 1, y: 0 }
 
 export function UnlockPanel({
   candidateId,
@@ -118,8 +118,8 @@ export function UnlockPanel({
           {allUnlocked ? (
             <m.div
               key="unlocked"
-              initial={BLURRED}
-              animate={SHARP}
+              initial={HIDDEN}
+              animate={SHOWN}
               transition={{ duration: duration.slow, ease }}
               className="flex flex-col items-start gap-3"
             >
