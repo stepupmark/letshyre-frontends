@@ -41,14 +41,25 @@ const escapeHtml = (value: string) =>
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
 
-/** Fills known fields; unknown ones stay as typed so the preview shows the mistake. */
+const MARK =
+  '<mark style="background:#dbeafe;color:inherit;border-radius:3px;padding:0 2px;">'
+
+const insideTag = (text: string, at: number) =>
+  text.lastIndexOf("<", at) > text.lastIndexOf(">", at)
+
+/**
+ * Fills known fields; unknown ones stay as typed so the preview shows the mistake.
+ * `mark` highlights filled text, but never inside a tag, where it would break an href.
+ */
 export const fillFields = (
   text: string,
   values: Partial<Record<string, string>>,
-  { html = true } = {}
+  { html = true, mark = false } = {}
 ) =>
-  text.replace(tokenPattern(), (whole, key: string) => {
+  text.replace(tokenPattern(), (whole, key: string, at: number) => {
     const value = isMergeField(key) ? values[key] : undefined
     if (value === undefined) return whole
-    return html ? escapeHtml(value) : value
+    if (!html) return value
+    const safe = escapeHtml(value)
+    return mark && !insideTag(text, at) ? `${MARK}${safe}</mark>` : safe
   })

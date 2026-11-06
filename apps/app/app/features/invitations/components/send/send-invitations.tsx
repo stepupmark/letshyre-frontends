@@ -1,46 +1,28 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { Button } from "@workspace/ui/components/button"
+import { Spinner } from "@workspace/ui/components/spinner"
 import { useQuery } from "@tanstack/react-query"
-import { Mail } from "lucide-react"
+import { Send } from "lucide-react"
 import { useState } from "react"
-import { href, useSearchParams } from "react-router"
+import { href } from "react-router"
 
 import { BackLink } from "@/components/back-link"
 import { PageHeader } from "@/components/page-header"
 import { QueryState } from "@/components/query-state"
 import { Wizard } from "@/components/wizard"
-import { useAutosave } from "@/hooks/use-draft"
-import { clearDraft, loadDraft, saveDraft } from "@/lib/draft"
 
-import {
-  notQueued,
-  RECIPIENT_LIMIT,
-  type Recipient,
-} from "../../lib/recipients"
+import { SEND_STEP, useSendPlan } from "../../hooks/use-send-plan"
+import { notQueued, type Recipient } from "../../lib/recipients"
 import { useSendInvitations } from "../../mutations/use-send-invitations"
 import { templatesQuery } from "../../queries/templates.queries"
 import type { Template } from "../../schemas/template.schema"
-import { LibrarySkeleton } from "../library/library-skeleton"
 import { RecipientsStep } from "./recipients-step"
 import { ReviewStep } from "./review-step"
 import { SendResult } from "./send-result"
+import { SendSkeleton } from "./send-skeleton"
+import { SendSummary } from "./send-summary"
 import { TemplateStep } from "./template-step"
 
-const DRAFT = "invitation-send"
-const STEP_PARAM = "step"
-const STEP = {
-  template: "template",
-  candidates: "candidates",
-  review: "review",
-} as const
-
-interface Plan {
-  templateId: string | null
-  recipients: Recipient[]
-  role: string
-}
-
-export function SendInvitations({ roles }: { roles: string[] }) {
+export function SendInvitations({ jobTitles }: { jobTitles: string[] }) {
   const { t } = useTranslation("invitations")
   const templates = useQuery(templatesQuery())
   return (
@@ -48,10 +30,12 @@ export function SendInvitations({ roles }: { roles: string[] }) {
       <BackLink to={href("/employer/invitations")}>{t("title")}</BackLink>
       <QueryState
         query={templates}
-        skeleton={<LibrarySkeleton />}
+        skeleton={<SendSkeleton />}
         error={{ title: t("library.errorTitle"), body: t("library.errorBody") }}
       >
-        {(list) => <SendFlow templates={list} roles={roles} />}
+        {(list) => (
+          <SendFlow templates={list} roles={[...new Set(jobTitles)]} />
+        )}
       </QueryState>
     </div>
   )
@@ -65,52 +49,14 @@ function SendFlow({
   roles: string[]
 }) {
   const { t } = useTranslation("invitations")
-  const [params, setParams] = useSearchParams()
-  const exists = (id: string | null | undefined) =>
-    templates.some((template) => template.id === id)
-  const [plan, setPlan] = useState<Plan>(() => {
-    const draft = loadDraft<Plan>(DRAFT)
-    const asked = params.get("template")
-    return {
-      templateId: exists(asked)
-        ? asked
-        : exists(draft?.templateId)
-          ? (draft?.templateId ?? null)
-          : null,
-      recipients: draft?.recipients ?? [],
-      role: draft?.role ?? "",
-    }
-  })
-  const [errors, setErrors] = useState<{
-    template?: string
-    recipients?: string
-    role?: string
-  }>({})
+  const flow = useSendPlan(templates)
+  const { plan, template, errors, update } = flow
+  const send = useSendInvitations()
+  const [step, setStep] = useState<string>()
   const [result, setResult] = useState<{
     queued: string[]
     missed: Recipient[]
   } | null>(null)
-  const send = useSendInvitations()
-  useAutosave(plan, () => {
-    saveDraft(DRAFT, plan)
-  })
-
-  const template = templates.find((item) => item.id === plan.templateId)
-  const update = (next: Partial<Plan>) => {
-    setPlan((current) => ({ ...current, ...next }))
-    setErrors({})
-  }
-  const candidatesProblems = () => ({
-    recipients:
-      plan.recipients.length === 0
-        ? t("send.errors.none")
-        : plan.recipients.length > RECIPIENT_LIMIT
-          ? t("send.overLimit", { max: RECIPIENT_LIMIT })
-          : plan.recipients.some((recipient) => !recipient.name.trim())
-            ? t("send.errors.names")
-            : undefined,
-    role: plan.role.trim() ? undefined : t("send.errors.role"),
-  })
 
   if (result)
     return (
@@ -121,14 +67,20 @@ function SendFlow({
         onAgain={() => {
           setResult(null)
           update({ recipients: [] })
-          setParams((prev) => {
-            const search = new URLSearchParams(prev)
-            search.set(STEP_PARAM, STEP.candidates)
-            return search
-          })
+          flow.showStep(SEND_STEP.candidates)
         }}
       />
     )
+
+  const summary = (
+    <SendSummary
+      template={template}
+      role={plan.role}
+      recipients={plan.recipients}
+      current={step}
+      onChange={flow.showStep}
+    />
+  )
 
   return (
     <>
@@ -136,10 +88,19 @@ function SendFlow({
       <Wizard
         wide
         pending={send.isPending}
+        onStepChange={setStep}
         finishLabel={
-          send.isPending
-            ? t("send.sending")
-            : t("send.submit", { count: plan.recipients.length })
+          send.isPending ? (
+            <>
+              <Spinner />
+              {t("send.sending")}
+            </>
+          ) : (
+            <>
+              <Send className="rtl:-scale-x-100" />
+              {t("send.submit", { count: plan.recipients.length })}
+            </>
+          )
         }
         onFinish={async () => {
           if (!template) return
@@ -152,7 +113,7 @@ function SendFlow({
             recipients,
             jobRole: plan.role.trim(),
           })
-          clearDraft(DRAFT)
+          flow.clearDraft()
           setResult({
             queued: sent.recipients,
             missed: notQueued(recipients, sent.recipients),
@@ -160,14 +121,13 @@ function SendFlow({
         }}
         steps={[
           {
-            id: STEP.template,
+            id: SEND_STEP.template,
             title: t("send.steps.template"),
+            heading: t("send.templateHeading"),
+            description: t("send.templateLead"),
+            aside: summary,
             isComplete: () => Boolean(template),
-            validate: () => {
-              if (template) return true
-              setErrors({ template: t("send.errors.template") })
-              return false
-            },
+            validate: flow.checkTemplate,
             content: (
               <TemplateStep
                 templates={templates}
@@ -180,15 +140,13 @@ function SendFlow({
             ),
           },
           {
-            id: STEP.candidates,
+            id: SEND_STEP.candidates,
             title: t("send.steps.candidates"),
-            isComplete: () =>
-              Object.values(candidatesProblems()).every((v) => !v),
-            validate: () => {
-              const problems = candidatesProblems()
-              setErrors(problems)
-              return Object.values(problems).every((v) => !v)
-            },
+            heading: t("send.candidatesHeading"),
+            description: t("send.candidatesLead"),
+            aside: summary,
+            isComplete: flow.candidatesReady,
+            validate: flow.checkCandidates,
             content: (
               <RecipientsStep
                 recipients={plan.recipients}
@@ -201,25 +159,14 @@ function SendFlow({
                 onRole={(role) => {
                   update({ role })
                 }}
-              >
-                {template && (
-                  <ChosenTemplate
-                    template={template}
-                    onChange={() => {
-                      setParams((prev) => {
-                        const search = new URLSearchParams(prev)
-                        search.set(STEP_PARAM, STEP.template)
-                        return search
-                      })
-                    }}
-                  />
-                )}
-              </RecipientsStep>
+              />
             ),
           },
           {
-            id: STEP.review,
+            id: SEND_STEP.review,
             title: t("send.steps.review"),
+            heading: t("send.reviewHeading"),
+            description: t("send.reviewLead"),
             content: template && (
               <ReviewStep
                 template={template}
@@ -231,34 +178,5 @@ function SendFlow({
         ]}
       />
     </>
-  )
-}
-
-function ChosenTemplate({
-  template,
-  onChange,
-}: {
-  template: Template
-  onChange: () => void
-}) {
-  const { t } = useTranslation("invitations")
-  return (
-    <div className="flex items-center gap-3 rounded-lg border px-3 py-2">
-      <span
-        aria-hidden="true"
-        className="flex size-8 shrink-0 items-center justify-center rounded-md bg-brand-muted text-brand-text"
-      >
-        <Mail className="size-4" />
-      </span>
-      <span className="flex min-w-0 flex-1 flex-col">
-        <span className="text-xs text-muted-foreground">
-          {t("send.sendingWith")}
-        </span>
-        <span className="truncate text-sm font-medium">{template.name}</span>
-      </span>
-      <Button type="button" variant="ghost" size="sm" onClick={onChange}>
-        {t("send.change")}
-      </Button>
-    </div>
   )
 }

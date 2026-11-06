@@ -52,7 +52,10 @@ are in the design lab (`pnpm --filter app dev`, then `http://localhost:5174/_lab
   chip popping into the template editor, the field menu dropping in under the caret, the
   readiness checks crossfading to a tick, the save state turning to "All changes saved", the
   preview easing between desktop and phone widths, candidates rising into the send list and
-  sliding out when removed, and the sent envelope lifting in as the count rolls up.
+  sliding out when removed, a re-pasted candidate's row tinting once, the add box shaking once
+  when lines can't be read, the send summary filling in step by step (its preview crossfading to
+  the chosen template and avatars popping into its stack), the reviewed email's subject
+  crossfading between candidates, and the sent envelope lifting in as the count rolls up.
 - Reduced motion: values jump, only fades remain (`MotionConfig reducedMotion="user"`).
 - Cost: ~10 kB gzip with the first paint, the `domMax` features (~29 kB) load after it.
 

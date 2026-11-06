@@ -2,7 +2,7 @@ import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import { CircleAlert, MailCheck } from "lucide-react"
 import * as m from "motion/react-m"
-import { useId } from "react"
+import { useEffect, useId, useRef } from "react"
 import { href } from "react-router"
 
 import { AnimatedNumber } from "@/components/animated-number"
@@ -28,6 +28,11 @@ export function SendResult({
   const locale = useLocale()
   const queuedId = useId()
   const missedId = useId()
+  const heading = useRef<HTMLHeadingElement>(null)
+
+  useEffect(() => {
+    heading.current?.focus()
+  }, [])
 
   return (
     <div className="flex max-w-xl flex-col gap-8">
@@ -41,8 +46,8 @@ export function SendResult({
         </m.div>
         <div>
           <h1
+            ref={heading}
             tabIndex={-1}
-            ref={(el) => el?.focus()}
             className="text-2xl font-semibold tracking-tight text-balance outline-none"
           >
             {queued.length > 0 ? (
@@ -85,7 +90,9 @@ export function SendResult({
             {missed.map((recipient) => (
               <li key={recipient.email} className="truncate">
                 {recipient.name}{" "}
-                <span className="text-muted-foreground">{recipient.email}</span>
+                <bdi dir="ltr" className="text-muted-foreground">
+                  {recipient.email}
+                </bdi>
               </li>
             ))}
           </ul>
@@ -114,7 +121,9 @@ export function SendResult({
                   aria-hidden="true"
                   className="size-4 shrink-0 text-success"
                 />
-                <span className="truncate">{email}</span>
+                <span dir="ltr" className="truncate text-start">
+                  {email}
+                </span>
               </m.li>
             ))}
           </ul>

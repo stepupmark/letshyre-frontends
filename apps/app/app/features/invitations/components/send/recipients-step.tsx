@@ -8,10 +8,17 @@ import {
 } from "@workspace/ui/components/field"
 import { Textarea } from "@workspace/ui/components/textarea"
 import { FileUp, UserPlus } from "lucide-react"
-import { useId, useRef, useState, type ReactNode } from "react"
+import { AnimatePresence } from "motion/react"
+import * as m from "motion/react-m"
+import { useId, useRef, useState } from "react"
 
+import { Shake } from "@/components/motion/shake"
 import { TextField } from "@/components/text-field"
+import { checkFile } from "@/lib/file-rules"
+import { duration, ease } from "@/lib/motion"
 
+import { useFileDrop } from "../../hooks/use-file-drop"
+import { RECIPIENT_FILE } from "../../lib/limits"
 import {
   addRecipients,
   parseRecipients,
@@ -19,13 +26,13 @@ import {
 } from "../../lib/recipients"
 import { RecipientList } from "./recipient-list"
 
-const CSV_LIMIT = 1024 * 1024
-const PLAIN_TEXT = "text"
+const SUGGESTIONS = 6
 
 interface Report {
   added: number
   duplicates: number
-  invalid: string[]
+  invalid: number
+  at: number
 }
 
 export function RecipientsStep({
@@ -35,7 +42,6 @@ export function RecipientsStep({
   errors,
   onRecipients,
   onRole,
-  children,
 }: {
   recipients: Recipient[]
   role: string
@@ -43,65 +49,125 @@ export function RecipientsStep({
   errors: { recipients?: string; role?: string }
   onRecipients: (next: Recipient[]) => void
   onRole: (role: string) => void
-  /** shown above the fields, e.g. the chosen template */
-  children?: ReactNode
 }) {
   const { t } = useTranslation("invitations")
   const id = useId()
   const file = useRef<HTMLInputElement>(null)
   const [text, setText] = useState("")
   const [report, setReport] = useState<Report | null>(null)
+  const [fileError, setFileError] = useState<string>()
+  const [repeated, setRepeated] = useState<{ emails: string[]; at: number }>()
 
-  const add = (input: string) => {
+  const typed = role.trim().toLocaleLowerCase()
+  const suggestions = roles
+    .filter((title) => !typed || title.toLocaleLowerCase().includes(typed))
+    .slice(0, SUGGESTIONS)
+
+  const add = (input: string, keep = "") => {
     const { found, invalid } = parseRecipients(input)
+    const known = new Set(recipients.map((r) => r.email.toLowerCase()))
     const result = addRecipients(recipients, found)
+    const at = Date.now()
     onRecipients(result.list)
-    setReport({ added: result.added, duplicates: result.duplicates, invalid })
-    setText(invalid.join("\n"))
+    setReport({
+      added: result.added,
+      duplicates: result.duplicates,
+      invalid: invalid.length,
+      at,
+    })
+    setRepeated({
+      emails: found
+        .map((r) => r.email.toLowerCase())
+        .filter((email) => known.has(email)),
+      at,
+    })
+    setText([keep.trim(), ...invalid].filter(Boolean).join("\n"))
   }
 
+  const importFile = async (picked: File | undefined) => {
+    setFileError(undefined)
+    if (!picked) return
+    const problem = checkFile(picked, RECIPIENT_FILE)
+    if (problem) {
+      setFileError(
+        problem.kind === "tooLarge"
+          ? t("send.fileTooLarge")
+          : t("send.fileWrongType")
+      )
+      return
+    }
+    try {
+      add(await picked.text(), text)
+    } catch {
+      setFileError(t("send.fileUnreadable"))
+    }
+  }
+
+  const { dragging, zone } = useFileDrop((picked) => {
+    void importFile(picked)
+  })
+  const problem = errors.recipients ?? fileError
+
   return (
-    <div className="grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-start">
-      <div className="flex min-w-0 flex-col gap-6">
-        {children}
+    <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-3">
         <TextField
           label={t("send.role")}
           hint={t("send.roleHint")}
           value={role}
-          list={`${id}-roles`}
           autoComplete="off"
           error={errors.role}
           onChange={(event) => {
             onRole(event.target.value)
           }}
         />
-        <datalist id={`${id}-roles`}>
-          {roles.map((title) => (
-            <option key={title} value={title} />
-          ))}
-        </datalist>
-
-        <Field data-invalid={Boolean(errors.recipients)}>
-          <FieldLabel htmlFor={`${id}-paste`}>{t("send.paste")}</FieldLabel>
+        {suggestions.length > 0 && (
           <div
-            className="overflow-hidden rounded-lg border border-input transition-colors focus-within:border-ring focus-within:ring-3 focus-within:ring-ring/50 data-[invalid=true]:border-destructive"
-            data-invalid={Boolean(errors.recipients)}
+            role="group"
+            aria-label={t("send.openJobs")}
+            className="flex flex-wrap items-center gap-2"
+          >
+            <span aria-hidden="true" className="text-xs text-muted-foreground">
+              {t("send.openJobs")}
+            </span>
+            {suggestions.map((title) => (
+              <Button
+                key={title}
+                type="button"
+                variant="outline"
+                size="sm"
+                aria-pressed={role.trim() === title}
+                className="font-normal aria-pressed:border-brand aria-pressed:bg-brand-muted aria-pressed:text-brand-text max-md:h-11"
+                onClick={() => {
+                  onRole(title)
+                }}
+              >
+                {title}
+              </Button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <Field data-invalid={Boolean(problem)}>
+        <FieldLabel htmlFor={`${id}-paste`}>{t("send.paste")}</FieldLabel>
+        <Shake error={report?.invalid ? String(report.at) : fileError}>
+          <div
+            data-invalid={Boolean(problem)}
+            data-dragging={dragging}
+            ref={zone}
+            className="relative overflow-hidden rounded-lg border border-input transition-colors focus-within:border-ring focus-within:ring-3 focus-within:ring-ring/50 data-[dragging=true]:border-dashed data-[dragging=true]:border-brand data-[invalid=true]:border-destructive"
           >
             <Textarea
               id={`${id}-paste`}
               value={text}
-              rows={6}
+              rows={5}
+              dir="ltr"
               placeholder={t("send.pastePlaceholder")}
               aria-describedby={`${id}-paste-hint`}
               className="resize-none rounded-none border-0 font-mono text-sm shadow-none focus-visible:ring-0"
               onChange={(event) => {
                 setText(event.target.value)
-              }}
-              onPaste={(event) => {
-                const pasted = event.clipboardData.getData(PLAIN_TEXT)
-                if (!pasted.includes("@")) return
-                event.preventDefault()
-                add(`${text}\n${pasted}`)
               }}
               onKeyDown={(event) => {
                 if (event.key !== "Enter" || event.shiftKey || !text.trim())
@@ -115,15 +181,16 @@ export function RecipientsStep({
                 type="button"
                 variant="ghost"
                 size="sm"
-                className="text-muted-foreground"
+                className="text-muted-foreground max-md:h-11"
                 onClick={() => file.current?.click()}
               >
                 <FileUp />
-                {t("send.upload")}
+                {t("send.import")}
               </Button>
               <Button
                 type="button"
                 size="sm"
+                className="max-md:h-11"
                 disabled={!text.trim()}
                 onClick={() => {
                   add(text)
@@ -133,52 +200,63 @@ export function RecipientsStep({
                 {t("send.add")}
               </Button>
             </div>
+            <AnimatePresence>
+              {dragging && (
+                <m.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: duration.fast, ease }}
+                  className="pointer-events-none absolute inset-0 grid place-items-center bg-brand-muted/90 text-sm font-medium text-brand-text"
+                >
+                  <span className="flex items-center gap-2">
+                    <FileUp aria-hidden="true" className="size-4" />
+                    {t("send.dropHere")}
+                  </span>
+                </m.div>
+              )}
+            </AnimatePresence>
           </div>
-          <input
-            ref={file}
-            type="file"
-            accept=".csv,.txt,text/csv,text/plain"
-            className="sr-only"
-            tabIndex={-1}
-            aria-hidden="true"
-            onChange={(event) => {
-              const picked = event.target.files?.[0]
-              event.target.value = ""
-              if (!picked) return
-              if (picked.size > CSV_LIMIT) {
-                setReport({
-                  added: 0,
-                  duplicates: 0,
-                  invalid: [t("send.fileTooLarge")],
-                })
-                return
-              }
-              void picked.text().then(add)
-            }}
-          />
-          <FieldDescription id={`${id}-paste-hint`}>
-            {t("send.pasteHint")}
-          </FieldDescription>
-          <p
-            aria-live="polite"
-            className="text-sm text-muted-foreground tabular-nums empty:hidden"
-          >
-            {report &&
-              [
-                t("send.reportAdded", { count: report.added }),
-                report.duplicates > 0 &&
-                  t("send.reportDuplicates", { count: report.duplicates }),
-                report.invalid.length > 0 &&
-                  t("send.reportInvalid", { count: report.invalid.length }),
-              ]
-                .filter(Boolean)
-                .join(" · ")}
-          </p>
-          <FieldError>{errors.recipients}</FieldError>
-        </Field>
-      </div>
+        </Shake>
+        <input
+          ref={file}
+          type="file"
+          accept={RECIPIENT_FILE.accept.join(",")}
+          className="sr-only"
+          tabIndex={-1}
+          aria-hidden="true"
+          onChange={(event) => {
+            const picked = event.target.files?.[0]
+            event.target.value = ""
+            void importFile(picked)
+          }}
+        />
+        <FieldDescription id={`${id}-paste-hint`}>
+          {t("send.pasteHint")}
+        </FieldDescription>
+        <p
+          aria-live="polite"
+          className="text-sm text-muted-foreground tabular-nums empty:hidden"
+        >
+          {report &&
+            [
+              t("send.reportAdded", { count: report.added }),
+              report.duplicates > 0 &&
+                t("send.reportDuplicates", { count: report.duplicates }),
+              report.invalid > 0 &&
+                t("send.reportInvalid", { count: report.invalid }),
+            ]
+              .filter(Boolean)
+              .join(" · ")}
+        </p>
+        <FieldError>{problem}</FieldError>
+      </Field>
 
-      <RecipientList recipients={recipients} onChange={onRecipients} />
+      <RecipientList
+        recipients={recipients}
+        repeated={repeated}
+        onChange={onRecipients}
+      />
     </div>
   )
 }

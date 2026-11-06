@@ -1,6 +1,7 @@
 import { dirFor } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
+import { cn } from "@workspace/ui/lib/utils"
 import { useEffect, useRef, useState, type ReactNode } from "react"
 import { useSearchParams } from "react-router"
 
@@ -9,8 +10,13 @@ import { Stepper } from "./stepper"
 
 export interface WizardStep {
   id: string
+  /** Stepper label, and the heading unless `heading` is set. */
   title: string
+  heading?: string
+  description?: ReactNode
   content: ReactNode
+  /** Shown beside the content from `lg` up, in a `wide` wizard. */
+  aside?: ReactNode
   /** Runs on Continue; return false to stay (show the errors in the step). */
   validate?: () => boolean | Promise<boolean>
   /** Without errors shown; a link to a later step lands on the first incomplete one. */
@@ -30,10 +36,11 @@ export function Wizard({
   wide = false,
 }: {
   steps: WizardStep[]
+  /** Throw to stay on the last step; the caller reports what failed. */
   onFinish: () => void | Promise<void>
   pending?: boolean
   onStepChange?: (id: string) => void
-  finishLabel?: string
+  finishLabel?: ReactNode
   /** content uses the page width; the stepper stays form width */
   wide?: boolean
 }) {
@@ -42,6 +49,7 @@ export function Wizard({
   const [params, setParams] = useSearchParams()
   const [direction, setDirection] = useState<1 | -1>(1)
   const moved = useRef(false)
+  const focused = useRef<string | null>(null)
 
   const requested = Math.max(
     0,
@@ -92,9 +100,18 @@ export function Wizard({
 
   const onContinue = async () => {
     if (step.validate && !(await step.validate())) return
-    if (last) await onFinish()
-    else goTo(index + 1)
+    if (!last) {
+      goTo(index + 1)
+      return
+    }
+    try {
+      await onFinish()
+    } catch {
+      // the caller has shown what failed; stay so nothing is lost
+    }
   }
+
+  const aside = wide ? step.aside : undefined
 
   return (
     <div
@@ -109,27 +126,53 @@ export function Wizard({
         />
       </div>
 
-      <StepTransition step={step.id} direction={direction} dir={dir}>
-        <div className="flex flex-col gap-6">
-          <h2
-            // the new step mounts after the old one animates out
-            ref={(el) => {
-              if (el && moved.current) el.focus()
-            }}
-            tabIndex={-1}
-            className="text-xl font-semibold tracking-tight outline-none"
-          >
-            {step.title}
-          </h2>
-          {step.content}
+      <div
+        className={cn(
+          aside &&
+            "grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start"
+        )}
+      >
+        <div className="min-w-0">
+          <StepTransition step={step.id} direction={direction} dir={dir}>
+            <div className="flex flex-col gap-6">
+              <div>
+                <h2
+                  // the new step mounts after the old one animates out; focus it once per step
+                  ref={(el) => {
+                    if (!el || !moved.current || focused.current === step.id)
+                      return
+                    focused.current = step.id
+                    el.focus()
+                  }}
+                  tabIndex={-1}
+                  className="text-xl font-semibold tracking-tight text-balance outline-none"
+                >
+                  {step.heading ?? step.title}
+                </h2>
+                {step.description && (
+                  <p className="mt-1 text-sm text-pretty text-muted-foreground">
+                    {step.description}
+                  </p>
+                )}
+              </div>
+              {step.content}
+            </div>
+          </StepTransition>
         </div>
-      </StepTransition>
+        {aside && <div className="min-w-0 lg:sticky lg:top-20">{aside}</div>}
+      </div>
 
       {/* --gutter is the page's side padding, set by the shell */}
-      <div className="sticky bottom-0 -mx-(--gutter) flex gap-2 border-t bg-background px-(--gutter) py-3 sm:static sm:mx-0 sm:border-0 sm:p-0">
+      <div
+        className={cn(
+          "sticky bottom-0 z-10 -mx-(--gutter) flex items-center gap-2 border-t bg-background px-(--gutter) py-3",
+          wide ? "sm:mx-0 sm:px-0" : "sm:static sm:mx-0 sm:border-0 sm:p-0"
+        )}
+      >
         {index > 0 && (
           <Button
             variant="outline"
+            className="max-md:h-11"
             onClick={() => {
               goTo(index - 1)
             }}
@@ -138,7 +181,7 @@ export function Wizard({
           </Button>
         )}
         <Button
-          className="ms-auto group-data-[wide=true]/wizard:sm:ms-0"
+          className="ms-auto max-md:h-11"
           onClick={() => void onContinue()}
           disabled={pending}
         >

@@ -60,6 +60,10 @@ test("an employer copies a starter, rewords it and invites two candidates", asyn
     },
     [`POST ${BASE}/${COPY}/send/`]: async (route) => {
       sent.push(route.request().postDataJSON() as Record<string, unknown>)
+      if (sent.length === 1) {
+        await reply(route, { success: false }, 503)
+        return
+      }
       await reply(route, {
         success: true,
         data: {
@@ -71,7 +75,7 @@ test("an employer copies a starter, rewords it and invites two candidates", asyn
     },
   })
   await signInAs("employer")
-  await tab.goto("/employer/invitations")
+  await tab.goto("/employer/invitations?tab=letshyre")
 
   await tab
     .getByRole("article")
@@ -91,7 +95,8 @@ test("an employer copies a starter, rewords it and invites two candidates", asyn
 
   await expect(tab).toHaveURL(`/employer/invitations/templates/${COPY}`)
   const message = tab.getByRole("textbox", { name: "Message" })
-  await message.click()
+  // the middle of the message is the Get Started button, which opens its own dialog
+  await message.getByText(/Best regards/).click()
   await tab.keyboard.press("Control+End")
   await tab.keyboard.type(" Ask {{sender")
   await tab.getByRole("option", { name: /Your name/ }).click()
@@ -120,10 +125,10 @@ test("an employer copies a starter, rewords it and invites two candidates", asyn
     .filter({ hasText: "Acme invite" })
     .getByRole("link", { name: "Send", exact: true })
     .click()
-  await expect(tab.getByText("Sending with")).toBeVisible()
-  await expect(tab.getByText("Acme invite", { exact: true })).toBeVisible()
+  const summary = tab.getByRole("region", { name: "This invitation" })
+  await expect(summary.getByText("Acme invite", { exact: true })).toBeVisible()
 
-  await tab.getByRole("combobox", { name: "Job role" }).fill("Backend Engineer")
+  await tab.getByRole("textbox", { name: "Job role" }).fill("Backend Engineer")
   await tab
     .getByLabel("Add candidates")
     .fill("Jane Doe <jane@acme.test>\njohn.smith@acme.test\nJANE@acme.test")
@@ -138,18 +143,29 @@ test("an employer copies a starter, rewords it and invites two candidates", asyn
     "aria-current",
     "true"
   )
+  const email = tab.frameLocator('iframe[title="Email preview"]')
+  await expect(email.getByText("Hi Jane Doe,")).toBeVisible()
+  await tab.getByRole("button", { name: /John Smith/ }).click()
+  await expect(email.getByText("Hi John Smith,")).toBeVisible()
+
+  // a failed send keeps everyone on the review step to try again
   await tab.getByRole("button", { name: "Send 2 invitations" }).click()
-  expect(sent.shift()).toEqual({
+  await expect(
+    tab.getByText("Nothing was sent. Check your connection and try again.")
+  ).toBeVisible()
+  await tab.getByRole("button", { name: "Send 2 invitations" }).click()
+  const request = {
     recipients: [
       { email: "jane@acme.test", name: "Jane Doe" },
       { email: "john.smith@acme.test", name: "John Smith" },
     ],
     job_role: "Backend Engineer",
-  })
+  }
+  expect(sent).toEqual([request, request])
   await expect(
     tab.getByRole("heading", { name: "1 invitation on its way" })
   ).toBeVisible()
   await expect(tab.getByText("1 wasn't sent")).toBeVisible()
   await expect(tab.getByText("john.smith@acme.test")).toBeVisible()
-  expect(problems).toEqual([])
+  expect(problems.filter((p) => !p.includes("status of 503"))).toEqual([])
 })

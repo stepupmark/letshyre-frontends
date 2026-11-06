@@ -14,7 +14,7 @@ export default function SendInvitationsPage() {
   return (
     <>
       <title>{`${t("send.title")} · ${t("common:appName")}`}</title>
-      <SendInvitations roles={[...new Set(jobs?.map((job) => job.label))]} />
+      <SendInvitations jobTitles={jobs?.map((job) => job.label) ?? []} />
     </>
   )
 }

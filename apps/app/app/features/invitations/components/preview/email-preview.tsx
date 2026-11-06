@@ -4,17 +4,13 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from "@workspace/ui/components/toggle-group"
-import { useQuery } from "@tanstack/react-query"
 import { Monitor, Smartphone } from "lucide-react"
 import * as m from "motion/react-m"
 import { useDeferredValue, useId, useState } from "react"
 
 import { duration, ease } from "@/lib/motion"
 
-import { fillFields } from "../../lib/merge-fields"
-import { previewDocument } from "../../lib/preview-html"
-import { sampleInviteLink } from "../../lib/sample-values"
-import { previewQuery } from "../../queries/templates.queries"
+import { useEmailPreview } from "../../hooks/use-email-preview"
 import { EmailFrame } from "./email-frame"
 
 const DESKTOP = "desktop"
@@ -35,24 +31,17 @@ export function EmailPreview({
     job_role: t("preview.sampleRole"),
   })
   const [device, setDevice] = useState(DESKTOP)
-  const server = useQuery(previewQuery(templateId))
   const live = useDeferredValue({ subject, body })
-  const values = {
-    employer_company_name: t("preview.sampleCompany"),
-    sender_name: t("preview.sampleSender"),
-    invite_link: sampleInviteLink(),
-    ...server.data?.merge_context,
-    candidate_name: sample.candidate_name.trim() || t("preview.sampleName"),
-    job_role: sample.job_role.trim() || t("preview.sampleRole"),
-  }
-  const html = previewDocument({
+  const preview = useEmailPreview({
+    templateId,
+    subject: live.subject,
     body: live.body,
-    values,
-    frame: server.data && {
-      html: server.data.preview_html,
-      body: server.data.body_html,
+    person: {
+      candidate_name: sample.candidate_name.trim() || t("preview.sampleName"),
+      job_role: sample.job_role.trim() || t("preview.sampleRole"),
     },
   })
+  const { values, html } = preview
 
   return (
     <div className="flex flex-col gap-4">
@@ -99,8 +88,7 @@ export function EmailPreview({
           <dd className="truncate">{values.candidate_name}</dd>
           <dt className="text-muted-foreground">{t("preview.subject")}</dt>
           <dd className="font-medium text-pretty">
-            {fillFields(live.subject, values, { html: false }) ||
-              t("preview.noSubject")}
+            {preview.subject || t("preview.noSubject")}
           </dd>
         </dl>
         <div className="flex justify-center bg-muted/40 p-3">
