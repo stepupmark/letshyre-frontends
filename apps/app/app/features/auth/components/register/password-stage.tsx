@@ -9,7 +9,6 @@ import {
   FieldLabel,
 } from "@workspace/ui/components/field"
 import { Spinner } from "@workspace/ui/components/spinner"
-import { useMutation } from "@tanstack/react-query"
 import { useId, useMemo } from "react"
 import { Controller, useForm } from "react-hook-form"
 import { Link } from "react-router"
@@ -17,11 +16,8 @@ import { z } from "zod"
 
 import { locale } from "@/lib/i18n"
 
-import {
-  authErrorKey,
-  isVerificationLost,
-  type AuthErrorKey,
-} from "../../lib/errors"
+import { type AuthErrorKey } from "../../lib/errors"
+import { usePasswordSubmit } from "../../mutations/use-password-submit"
 import { FormAlert } from "../shared/form-alert"
 import { NewPasswordFields } from "../shared/new-password-fields"
 import { newPasswordShape, passwordsMatch } from "../../schemas/password.schema"
@@ -55,13 +51,11 @@ export function PasswordStage({
   })
   const { errors } = form.formState
 
-  const create = useMutation({
-    mutationFn: onCreate,
-    onSuccess: onCreated,
-    onError: (error) => {
-      const key = authErrorKey(error, "errors.registerFailed")
-      if (isVerificationLost(key)) onLost(key)
-    },
+  const create = usePasswordSubmit({
+    submit: onCreate,
+    onDone: onCreated,
+    onLost,
+    fallback: "errors.registerFailed",
   })
   const busy = create.isPending || create.isSuccess
 
@@ -75,11 +69,7 @@ export function PasswordStage({
         })(event)
       }}
     >
-      {create.isError && (
-        <FormAlert
-          message={t(authErrorKey(create.error, "errors.registerFailed"))}
-        />
-      )}
+      {create.errorKey && <FormAlert message={t(create.errorKey)} />}
       <FieldGroup>
         <NewPasswordFields form={form} label={t("fields.password")} />
         <Controller

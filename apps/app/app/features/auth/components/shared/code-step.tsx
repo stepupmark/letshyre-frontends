@@ -2,7 +2,6 @@ import { Trans, useTranslation } from "@workspace/i18n/react"
 import { Alert, AlertDescription } from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
 import { Spinner } from "@workspace/ui/components/spinner"
-import { useMutation } from "@tanstack/react-query"
 import { ArrowUpRight, Check, ShieldAlert } from "lucide-react"
 import { useReducedMotion } from "motion/react"
 import { useEffect, useEffectEvent, useId, useState } from "react"
@@ -12,6 +11,7 @@ import { Shake } from "@/components/motion/shake"
 import { useSecondsLeft } from "../../hooks/use-seconds-left"
 import { authErrorKey, type AuthErrorKey } from "../../lib/errors"
 import { inboxFor } from "../../lib/identity"
+import { useResendCode, useVerifyCode } from "../../mutations/use-code-check"
 import { CodeInput } from "./code-input"
 import { ResendTimer } from "./resend-timer"
 
@@ -60,7 +60,7 @@ export function CodeStep({
   const locked = failures >= MAX_TRIES
   const inbox = email ? inboxFor(email) : null
 
-  const check = useMutation({ mutationFn: verify })
+  const check = useVerifyCode(verify)
   const verified = check.isSuccess
 
   const proceed = useEffectEvent(onVerified)
@@ -73,18 +73,16 @@ export function CodeStep({
     }
   }, [verified, reduce])
 
-  const again = useMutation({
-    mutationFn: resend,
-    onSuccess: () => {
+  const again = useResendCode({
+    resend,
+    onSent: () => {
       setCode("")
       setTried(null)
       setFailures(0)
       setError(null)
       setNotice(true)
     },
-    onError: (err) => {
-      setError(authErrorKey(err, "errors.sendFailed"))
-    },
+    onFailed: setError,
   })
 
   const submit = (value: string) => {

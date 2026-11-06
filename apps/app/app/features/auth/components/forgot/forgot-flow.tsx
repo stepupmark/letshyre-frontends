@@ -4,7 +4,6 @@ import { Alert, AlertDescription } from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
 import { FieldGroup } from "@workspace/ui/components/field"
 import { Spinner } from "@workspace/ui/components/spinner"
-import { useMutation } from "@tanstack/react-query"
 import { CircleAlert } from "lucide-react"
 import { useMemo, useState } from "react"
 import { useForm } from "react-hook-form"
@@ -19,12 +18,9 @@ import {
   sendEmailCode,
   verifyEmailCode,
 } from "../../services/auth.service"
+import { usePasswordSubmit } from "../../mutations/use-password-submit"
 import { CodeStep } from "../shared/code-step"
-import {
-  authErrorKey,
-  isVerificationLost,
-  type AuthErrorKey,
-} from "../../lib/errors"
+import { authErrorKey, type AuthErrorKey } from "../../lib/errors"
 import { FORGOT_FLOW, FORGOT_STEPS, forgotReachable } from "../../lib/forgot"
 import { type ForgotAnswers, type ForgotStep } from "../../types"
 import { FormAlert } from "../shared/form-alert"
@@ -248,13 +244,11 @@ function NewPasswordForm({
     mode: "onSubmit",
   })
 
-  const save = useMutation({
-    mutationFn: onSave,
-    onSuccess: onSaved,
-    onError: (error) => {
-      const key = authErrorKey(error, "errors.resetFailed")
-      if (isVerificationLost(key)) onLost(key)
-    },
+  const save = usePasswordSubmit({
+    submit: onSave,
+    onDone: onSaved,
+    onLost,
+    fallback: "errors.resetFailed",
   })
 
   return (
@@ -267,11 +261,7 @@ function NewPasswordForm({
         })(event)
       }}
     >
-      {save.isError && (
-        <FormAlert
-          message={t(authErrorKey(save.error, "errors.resetFailed"))}
-        />
-      )}
+      {save.errorKey && <FormAlert message={t(save.errorKey)} />}
       <FieldGroup>
         <NewPasswordFields form={form} label={t("fields.newPassword")} />
       </FieldGroup>

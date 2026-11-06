@@ -1,7 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import {
   homeFor,
-  login,
   readSession,
   RoleNotAllowedError,
   safeNext,
@@ -11,7 +10,6 @@ import { Alert, AlertDescription } from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
 import { FieldGroup } from "@workspace/ui/components/field"
 import { Spinner } from "@workspace/ui/components/spinner"
-import { useMutation } from "@tanstack/react-query"
 import { CircleAlert } from "lucide-react"
 import { useMemo } from "react"
 import { useForm } from "react-hook-form"
@@ -21,10 +19,10 @@ import { z } from "zod"
 import { Shake } from "@/components/motion/shake"
 import { PasswordField, TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
-import { api } from "@/lib/api"
 
 import { ROLE_OF, type Audience } from "../../lib/audience"
 import { authErrorKey } from "../../lib/errors"
+import { useSignIn } from "../../mutations/use-sign-in"
 
 const schema = (
   t: (key: "validation.emailInvalid" | "validation.passwordRequired") => string
@@ -57,15 +55,14 @@ export function SignInForm({
   })
   const { errors } = form.formState
 
-  const signIn = useMutation({
-    mutationFn: (values: { email: string; password: string }) =>
-      login(api, values, audience ? { roles: [ROLE_OF[audience]] } : {}),
-    onSuccess: () => {
+  const signIn = useSignIn({
+    role: audience && ROLE_OF[audience],
+    onSignedIn: () => {
       const session = readSession()
       if (session.status !== "signed-in") return
       onSignedIn(safeNext(next) ?? homeFor(session))
     },
-    onError: () => {
+    onFailed: () => {
       form.setFocus("password")
     },
   })
