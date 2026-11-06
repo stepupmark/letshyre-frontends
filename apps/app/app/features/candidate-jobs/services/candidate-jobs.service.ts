@@ -1,4 +1,6 @@
+import { payloadOf } from "@workspace/api"
+
 import { api } from "@/lib/api"
 
-export const applyForJob = (jobId: string) =>
-  api.post("user/v1/candidate_jobs/", { job: jobId })
+export const applyForJob = async (jobId: string) =>
+  payloadOf(await api.post("user/v1/candidate_jobs/", { job: jobId }))
