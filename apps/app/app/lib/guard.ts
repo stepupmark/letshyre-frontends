@@ -5,6 +5,7 @@ import {
   type MiddlewareFunction,
 } from "react-router"
 
+import { claimAccountData } from "./account-data"
 import { isAppPath } from "./app-paths"
 
 /** Redirect within the app, or a full load when the target is a marketing page. */
@@ -16,6 +17,7 @@ export const guard =
   async ({ request }, next) => {
     const to = authRedirect(new URL(request.url), { roles })
     if (to) throw go(to)
+    claimAccountData()
     return next()
   }
 
