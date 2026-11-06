@@ -1,6 +1,17 @@
 @import "@workspace/ui/globals.css";
 @source "../../../../packages/blocks/src";
 
+/* only for floating controls; cards use borders */
+@theme {
+  --shadow-raised: 0 10px 30px -12px var(--raised-tint);
+}
+:root {
+  --raised-tint: rgb(15 23 42 / 0.12);
+}
+.dark {
+  --raised-tint: rgb(0 0 0 / 0.5);
+}
+
 /* a link inside running text */
 @utility text-link {
   @apply rounded-sm font-medium text-primary underline underline-offset-4 outline-none focus-visible:ring-3 focus-visible:ring-ring/50;

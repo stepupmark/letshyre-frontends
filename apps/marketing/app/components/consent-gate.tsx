@@ -4,6 +4,7 @@ import { localePath } from "@workspace/i18n"
 import { Trans, useLocale, useTranslation } from "@workspace/i18n/react"
 import { Link } from "react-router"
 
+import { useConsentPending } from "@/hooks/use-consent-pending"
 import { useHydrated } from "@/hooks/use-hydrated"
 import { analyticsEnabled } from "@/lib/analytics"
 import { PAGES } from "@/lib/pages"
@@ -12,10 +13,9 @@ import { PAGES } from "@/lib/pages"
 export function ConsentGate() {
   const { t } = useTranslation("common")
   const lang = useLocale()
-  const consent = useConsent()
-  const hydrated = useHydrated()
+  const pending = useConsentPending()
 
-  if (!analyticsEnabled || !hydrated || consent) return null
+  if (!pending) return null
 
   return (
     <ConsentBanner

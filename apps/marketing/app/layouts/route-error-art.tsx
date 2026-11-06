@@ -51,7 +51,7 @@ export function RouteErrorArt({ className }: { className?: string }) {
           width={140}
           height={72}
           rx={12}
-          className="fill-card stroke-border drop-shadow-sm"
+          className="fill-card stroke-border"
         />
         <circle cx={192} cy={174} r={12} className="fill-destructive/10" />
         <TriangleAlert

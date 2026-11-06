@@ -10,6 +10,8 @@ import { Spinner } from "@workspace/ui/components/spinner"
 import { XIcon } from "lucide-react"
 import { lazy, Suspense, useState, type ComponentProps } from "react"
 
+import { useConsentPending } from "@/hooks/use-consent-pending"
+
 import { LauncherFace } from "./components/launcher-face"
 import { LauncherGreeting } from "./components/launcher-greeting"
 import { PanelHeader, type PanelTitle } from "./components/panel-header"
@@ -33,6 +35,8 @@ export function AssistantLauncher() {
   const [open, setOpen] = useState(false)
   const [phone, setPhone] = useState(false)
   const launcher = useLauncher()
+  // the consent banner sits in the same corner
+  const consentPending = useConsentPending()
 
   const show = () => {
     launcher.opened()
@@ -64,6 +68,8 @@ export function AssistantLauncher() {
       <AssistantPanel Title={Title} onClose={close} />
     </Suspense>
   )
+
+  if (consentPending) return null
 
   return (
     <>

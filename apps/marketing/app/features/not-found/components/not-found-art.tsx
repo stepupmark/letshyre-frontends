@@ -48,7 +48,7 @@ export function NotFoundArt({ className }: { className?: string }) {
           width={132}
           height={104}
           rx={12}
-          className="fill-card stroke-border drop-shadow-sm"
+          className="fill-card stroke-border"
         />
         <Line x={192} y={136} width={64} strong />
         <Line x={192} y={152} width={92} />

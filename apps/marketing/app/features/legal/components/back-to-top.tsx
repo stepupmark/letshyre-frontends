@@ -35,7 +35,7 @@ export function BackToTop({ label }: { label: string }) {
         aria-hidden={!shown || undefined}
         tabIndex={shown ? undefined : -1}
         data-shown={shown || undefined}
-        className="pointer-events-none fixed inset-e-4 bottom-4 z-40 grid size-11 scale-90 place-items-center rounded-full border bg-background/90 text-foreground opacity-0 shadow-md backdrop-blur-md transition-[opacity,scale] duration-300 ease-out outline-none hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50 data-shown:pointer-events-auto data-shown:scale-100 data-shown:opacity-100 motion-reduce:transition-none sm:inset-e-6 sm:bottom-6 print:hidden"
+        className="shadow-raised pointer-events-none fixed inset-e-4 bottom-4 z-40 grid size-11 scale-90 place-items-center rounded-full border bg-background/90 text-foreground opacity-0 backdrop-blur-md transition-[opacity,scale] duration-300 ease-out outline-none hover:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50 data-shown:pointer-events-auto data-shown:scale-100 data-shown:opacity-100 motion-reduce:transition-none sm:inset-e-6 sm:bottom-6 print:hidden"
       >
         <ArrowUpIcon aria-hidden className="size-5" />
       </a>
