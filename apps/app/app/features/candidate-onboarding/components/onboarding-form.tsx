@@ -1,7 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { HttpError } from "@workspace/api"
 import { useTranslation } from "@workspace/i18n/react"
-import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useEffect, useMemo, useState, type ReactNode } from "react"
 import { useForm, useWatch } from "react-hook-form"
 import { useSearchParams } from "react-router"
@@ -18,14 +17,13 @@ import {
 } from "../hooks/use-onboarding-draft"
 import { profileForm } from "../lib/candidate-onboarding"
 import type { ResumeState } from "../lib/resume-state"
-import { myProfileQuery } from "../queries/candidate-onboarding.queries"
 import {
   makeSchema,
   STEPS,
   type StepId,
   type Values,
 } from "../schemas/onboarding-form.schema"
-import { submitProfile } from "../services/candidate-onboarding.service"
+import { useSubmitProfile } from "../mutations/use-onboarding-submit"
 import { ProfilePreview } from "./preview/profile-preview"
 import { PhotoStep } from "./steps/photo-step"
 import { ResumeStep } from "./steps/resume-step"
@@ -66,7 +64,6 @@ export function CandidateOnboarding({
   onDone: (role: string) => void
 }) {
   const { t } = useTranslation(["candidateOnboarding", "common"])
-  const queryClient = useQueryClient()
   const [, setParams] = useSearchParams()
   const start = useMemo(() => startingDraft(), [])
   const [resume, setResume] = useState<ResumeState>(start.resume)
@@ -134,29 +131,13 @@ export function CandidateOnboarding({
           ? t("errors.reason")
           : undefined
 
-  const submit = useMutation({
-    mutationFn: (values: Values) => {
-      if (!resume.review) throw new Error("resume missing")
-      return submitProfile(
-        profileForm(values, {
-          file: resume.file,
-          resumeId: resume.resumeId,
-          role: resume.role,
-          otherReason: resume.custom ? resume.otherReason : "",
-          review: resume.review,
-        }),
-        setProgress
-      )
-    },
-    onSuccess: () => {
+  const submit = useSubmitProfile({
+    onProgress: setProgress,
+    onSubmitted: () => {
       discardDraft()
-      queryClient.setQueryData(myProfileQuery().queryKey, (old) => ({
-        ...old,
-        is_profile_complete: true,
-      }))
       onDone(resume.role)
     },
-    onError: (error) => {
+    onFailed: (error) => {
       setProgress(0)
       const fields = error instanceof HttpError ? error.fieldErrors : undefined
       const known = Object.entries(fields ?? {}).filter(([field]) =>
@@ -274,7 +255,17 @@ export function CandidateOnboarding({
                     goTo("resume")
                     return
                   }
-                  submit.mutate(values)
+                  const { review } = resume
+                  if (!review) return
+                  submit.mutate(() =>
+                    profileForm(values, {
+                      file: resume.file,
+                      resumeId: resume.resumeId,
+                      role: resume.role,
+                      otherReason: resume.custom ? resume.otherReason : "",
+                      review,
+                    })
+                  )
                 },
                 (invalid) => {
                   const step = stepOf(Object.keys(invalid)[0] ?? "")

@@ -20,7 +20,10 @@ export async function uploadResume(
   return String(id)
 }
 
-export const submitProfile = (
+export const submitProfile = async (
   form: FormData,
   onProgress: (fraction: number) => void
-) => xhrUpload(api, "user/v1/candidate_profile/", form, { onProgress })
+) =>
+  payloadOf(
+    await xhrUpload(api, "user/v1/candidate_profile/", form, { onProgress })
+  )

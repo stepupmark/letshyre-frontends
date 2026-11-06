@@ -6,7 +6,7 @@ import {
 } from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
 import { cn } from "@workspace/ui/lib/utils"
-import { useMutation, useQuery } from "@tanstack/react-query"
+import { useQuery } from "@tanstack/react-query"
 import { Check, CircleAlert, FileText, LoaderCircle } from "lucide-react"
 import { useEffect, useState } from "react"
 
@@ -17,7 +17,7 @@ import {
   resumeStatusQuery,
   reviewQuery,
 } from "../../queries/candidate-onboarding.queries"
-import { uploadResume } from "../../services/candidate-onboarding.service"
+import { useUploadResume } from "../../mutations/use-onboarding-submit"
 import { type Review } from "../../schemas/candidate-onboarding.schema"
 import { EMPTY_RESUME, type ResumeState } from "../../lib/resume-state"
 import { Found } from "./resume-found"
@@ -41,9 +41,9 @@ export function ResumeStep({
   const { t } = useTranslation("candidateOnboarding")
   const [progress, setProgress] = useState(0)
 
-  const upload = useMutation({
-    mutationFn: (file: File) => uploadResume(file, setProgress),
-    onSuccess: (jobId, file) => {
+  const upload = useUploadResume({
+    onProgress: setProgress,
+    onUploaded: (jobId, file) => {
       onChange({ ...EMPTY_RESUME, file, fileName: file.name, jobId })
     },
   })

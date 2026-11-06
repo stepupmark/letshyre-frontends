@@ -1,8 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { HttpError } from "@workspace/api"
-import { updateUser } from "@workspace/auth"
 import { useTranslation } from "@workspace/i18n/react"
-import { useMutation } from "@tanstack/react-query"
 import { useEffect, useMemo, useState } from "react"
 import { useForm } from "react-hook-form"
 import { useSearchParams } from "react-router"
@@ -23,7 +21,7 @@ import {
   type StepId,
   type Values,
 } from "../schemas/onboarding-form.schema"
-import { submitKyc } from "../services/employer-onboarding.service"
+import { useSubmitKyc } from "../mutations/use-submit-kyc"
 import { OnboardingPreview } from "./preview/onboarding-preview"
 import { CompanyStep } from "./steps/company-step"
 import { DocumentsStep } from "./steps/documents-step"
@@ -91,14 +89,13 @@ export function OnboardingForm({
     )
   }
 
-  const submit = useMutation({
-    mutationFn: (values: Values) => submitKyc(values, setProgress),
-    onSuccess: () => {
+  const submit = useSubmitKyc({
+    onProgress: setProgress,
+    onSubmitted: () => {
       discardDraft()
-      updateUser({ is_profile_completed: true })
       onSubmitted()
     },
-    onError: (error) => {
+    onFailed: (error) => {
       setProgress(0)
       const fields = error instanceof HttpError ? error.fieldErrors : undefined
       const known = Object.entries(fields ?? {}).filter(([name]) =>
