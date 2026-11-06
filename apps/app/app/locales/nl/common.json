@@ -59,6 +59,8 @@
     "wrongType": "Dat bestandstype wordt niet geaccepteerd. Gebruik {{types}}.",
     "uploading": "{{name}} wordt geüpload",
     "failed": "Uploaden mislukt. Uw bestand staat er nog, dus u kunt het opnieuw proberen.",
+    "failedNetwork": "Het uploaden verloor de verbinding. Je bestand staat er nog, dus je kunt het opnieuw proberen.",
+    "failedTooLarge": "Dit bestand is te groot voor de server. Probeer een kleinere versie.",
     "retry": "Opnieuw proberen",
     "remove": "{{name}} verwijderen",
     "done": "Geüpload"

@@ -61,6 +61,8 @@
     "wrongType": "Ese tipo de archivo no se acepta. Use {{types}}.",
     "uploading": "Subiendo {{name}}",
     "failed": "La subida ha fallado. Su archivo sigue aquí, así que puede volver a intentarlo.",
+    "failedNetwork": "La subida perdió la conexión. Tu archivo sigue aquí, así que puedes volver a intentarlo.",
+    "failedTooLarge": "Este archivo es demasiado grande para el servidor. Prueba con una copia más pequeña.",
     "retry": "Reintentar",
     "remove": "Quitar {{name}}",
     "done": "Subido"

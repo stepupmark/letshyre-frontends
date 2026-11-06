@@ -5,7 +5,7 @@ import { cn } from "@workspace/ui/lib/utils"
 import { Check, FileUp, RotateCw, X, type LucideIcon } from "lucide-react"
 import { useId } from "react"
 
-import { useFileUpload } from "@/hooks/use-file-upload"
+import { UPLOAD_FAILED, useFileUpload } from "@/hooks/use-file-upload"
 import { formatBytes, type FileRules } from "@/lib/file-rules"
 
 import { FileImage } from "./file-image"
@@ -128,7 +128,7 @@ export function FileDropzone({
               role="alert"
               className="flex items-center justify-between gap-3 text-sm"
             >
-              <p className="text-danger">{t("upload.failed")}</p>
+              <p className="text-danger">{t(UPLOAD_FAILED[state.reason])}</p>
               <Button
                 variant="outline"
                 size="sm"
@@ -237,7 +237,7 @@ export function FileDropzone({
         )}
         {state.status === "failed" && (
           <div role="alert" className="flex items-center justify-between gap-3">
-            <p className="text-danger">{t("upload.failed")}</p>
+            <p className="text-danger">{t(UPLOAD_FAILED[state.reason])}</p>
             <Button
               variant="outline"
               size="sm"

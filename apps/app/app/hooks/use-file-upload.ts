@@ -1,13 +1,30 @@
+import { HttpError, NetworkError, TimeoutError } from "@workspace/api"
 import { useCallback, useEffect, useRef, useState } from "react"
 
 import { checkFile, type FileProblem, type FileRules } from "@/lib/file-rules"
+
+export type UploadFailure = "network" | "tooLarge" | "server"
+
+const failureOf = (error: unknown): UploadFailure =>
+  error instanceof NetworkError || error instanceof TimeoutError
+    ? "network"
+    : error instanceof HttpError && error.status === 413
+      ? "tooLarge"
+      : "server"
+
+/** The common-namespace message for each failure. */
+export const UPLOAD_FAILED = {
+  network: "upload.failedNetwork",
+  tooLarge: "upload.failedTooLarge",
+  server: "upload.failed",
+} as const satisfies Record<UploadFailure, string>
 
 export type UploadState =
   | { status: "idle" }
   | { status: "selected"; file: File }
   | { status: "invalid"; problem: FileProblem }
   | { status: "uploading"; file: File; progress: number }
-  | { status: "failed"; file: File }
+  | { status: "failed"; file: File; reason: UploadFailure }
   | { status: "done"; file: File }
 
 interface Options {
@@ -64,8 +81,7 @@ export function useFileUpload({
       onUploaded?.(result, file)
     } catch (error) {
       if (controller.current.signal.aborted) return
-      console.error(error)
-      setState({ status: "failed", file })
+      setState({ status: "failed", file, reason: failureOf(error) })
     }
   }
 

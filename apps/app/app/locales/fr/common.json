@@ -61,6 +61,8 @@
     "wrongType": "Ce type de fichier n'est pas accepté. Utilisez {{types}}.",
     "uploading": "Import de {{name}}",
     "failed": "L'import a échoué. Votre fichier est toujours là, vous pouvez réessayer.",
+    "failedNetwork": "L'envoi a perdu la connexion. Votre fichier est toujours là, vous pouvez réessayer.",
+    "failedTooLarge": "Ce fichier est trop volumineux pour le serveur. Essayez une version plus légère.",
     "retry": "Réessayer",
     "remove": "Retirer {{name}}",
     "done": "Importé"

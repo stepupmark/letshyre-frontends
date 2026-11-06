@@ -59,6 +59,8 @@
     "wrongType": "That file type isn't accepted. Use {{types}}.",
     "uploading": "Uploading {{name}}",
     "failed": "Upload failed. Your file is still here, so you can try again.",
+    "failedNetwork": "The upload lost its connection. Your file is still here, so you can try again.",
+    "failedTooLarge": "This file is too large for the server. Try a smaller copy.",
     "retry": "Try again",
     "remove": "Remove {{name}}",
     "done": "Uploaded"

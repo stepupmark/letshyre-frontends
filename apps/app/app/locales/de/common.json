@@ -59,6 +59,8 @@
     "wrongType": "Dieser Dateityp wird nicht akzeptiert. Verwenden Sie {{types}}.",
     "uploading": "{{name}} wird hochgeladen",
     "failed": "Der Upload ist fehlgeschlagen. Ihre Datei ist noch da, Sie können es erneut versuchen.",
+    "failedNetwork": "Beim Hochladen ist die Verbindung abgebrochen. Deine Datei ist noch da, du kannst es erneut versuchen.",
+    "failedTooLarge": "Diese Datei ist für den Server zu groß. Versuch es mit einer kleineren Version.",
     "retry": "Erneut versuchen",
     "remove": "{{name}} entfernen",
     "done": "Hochgeladen"

@@ -61,6 +61,8 @@
     "wrongType": "Esse tipo de arquivo não é aceito. Use {{types}}.",
     "uploading": "Enviando {{name}}",
     "failed": "O envio falhou. Seu arquivo continua aqui, então dá para tentar de novo.",
+    "failedNetwork": "O envio perdeu a conexão. Seu arquivo continua aqui, então você pode tentar de novo.",
+    "failedTooLarge": "Este arquivo é grande demais para o servidor. Tente uma cópia menor.",
     "retry": "Tentar de novo",
     "remove": "Remover {{name}}",
     "done": "Enviado"

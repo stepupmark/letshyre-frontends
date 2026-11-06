@@ -61,6 +61,8 @@
     "wrongType": "Questo tipo di file non è accettato. Usa {{types}}.",
     "uploading": "Caricamento di {{name}}",
     "failed": "Caricamento non riuscito. Il file è ancora qui, quindi puoi riprovare.",
+    "failedNetwork": "Il caricamento ha perso la connessione. Il file è ancora qui, quindi puoi riprovare.",
+    "failedTooLarge": "Questo file è troppo grande per il server. Prova con una copia più piccola.",
     "retry": "Riprova",
     "remove": "Rimuovi {{name}}",
     "done": "Caricato"

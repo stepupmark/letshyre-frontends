@@ -57,6 +57,8 @@
     "wrongType": "Jenis file itu tidak diterima. Gunakan {{types}}.",
     "uploading": "Mengunggah {{name}}",
     "failed": "Unggahan gagal. File Anda masih ada, jadi Anda bisa mencoba lagi.",
+    "failedNetwork": "Unggahan kehilangan koneksi. File Anda masih di sini, jadi Anda bisa mencoba lagi.",
+    "failedTooLarge": "File ini terlalu besar untuk server. Coba salinan yang lebih kecil.",
     "retry": "Coba lagi",
     "remove": "Hapus {{name}}",
     "done": "Terunggah"
