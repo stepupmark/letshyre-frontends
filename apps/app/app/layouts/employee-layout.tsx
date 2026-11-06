@@ -16,7 +16,8 @@ export const clientMiddleware = [
 
 export default function EmployeeLayout() {
   const me = useQuery(myProfileQuery())
-  // nothing here works for a candidate without a profile yet
+  // wait for the profile so a candidate without one never sees the dashboard
+  if (me.isPending) return <div aria-busy="true" className="min-h-svh" />
   if (me.data?.is_profile_complete === false)
     return <Navigate to={href("/employee/onboarding")} replace />
 
