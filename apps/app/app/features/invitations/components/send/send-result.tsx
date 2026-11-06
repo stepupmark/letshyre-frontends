@@ -20,6 +20,8 @@ import { duration, ease } from "@/lib/motion"
 import type { Recipient } from "../../lib/recipients"
 import { Monogram } from "../shared/monogram"
 
+const CHECK_PATH = "M5 12.5l4.5 4.5L19 7.5"
+
 const rise = (delay: number) => ({
   initial: { opacity: 0, y: 6 },
   animate: { opacity: 1, y: 0 },
@@ -64,7 +66,7 @@ export function SendResult({
       {...rise(0)}
       className="flex max-w-2xl flex-col overflow-hidden rounded-lg border bg-card"
     >
-      <header className="flex items-center gap-4 px-5 py-5 sm:px-6">
+      <header className="flex items-center gap-4 p-5 sm:px-6">
         <StatusMark sent={anySent} />
         <div className="min-w-0">
           <h1
@@ -148,7 +150,7 @@ function StatusMark({ sent }: { sent: boolean }) {
           className="size-5"
         >
           <m.path
-            d="M5 12.5l4.5 4.5L19 7.5"
+            d={CHECK_PATH}
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: duration.slow, ease, delay: 0.15 }}
