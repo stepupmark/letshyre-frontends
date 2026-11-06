@@ -2,7 +2,7 @@ import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import { Checkbox } from "@workspace/ui/components/checkbox"
 import { Skeleton } from "@workspace/ui/components/skeleton"
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
+import { useQuery } from "@tanstack/react-query"
 import { CircleCheck, LockOpen } from "lucide-react"
 import { AnimatePresence } from "motion/react"
 import * as m from "motion/react-m"
@@ -18,11 +18,8 @@ import { creditsQuery } from "@/lib/credits"
 import { duration, ease } from "@/lib/motion"
 import { buttonLink } from "@/lib/button-link"
 
-import {
-  interviewsQuery,
-  UNLOCKED_KEY,
-} from "../queries/candidate-unlock.queries"
-import { unlockCandidate } from "../services/candidate-unlock.service"
+import { useUnlock } from "../mutations/use-unlock"
+import { interviewsQuery } from "../queries/candidate-unlock.queries"
 import { costOf, toggle, unlockChoices } from "../lib/choices"
 import { unlockProblem, type UnlockProblem } from "../lib/unlock-error"
 
@@ -50,7 +47,6 @@ export function UnlockPanel({
   const { t } = useTranslation("unlock")
   const locale = useLocale()
   const location = useLocation()
-  const queryClient = useQueryClient()
   const interviews = useQuery(interviewsQuery(candidateId))
   const credits = useQuery(creditsQuery())
   const [selected, setSelected] = useState<ReadonlySet<string>>(new Set())
@@ -61,37 +57,18 @@ export function UnlockPanel({
   const short = balance !== undefined && cost > balance
   const back = `${location.pathname}${location.search}`
 
-  const unlock = useMutation({
-    mutationFn: () =>
-      unlockCandidate(
-        candidateId,
-        choices.filter((c) => selected.has(String(c.id))).map((c) => c.id)
-      ),
-    onSuccess: async () => {
+  const unlock = useUnlock(candidateId, {
+    onUnlocked: async (left) => {
       const used = cost
       setSelected(new Set())
-      await Promise.all([
-        queryClient.invalidateQueries({ queryKey: creditsQuery().queryKey }),
-        queryClient.invalidateQueries({
-          queryKey: interviewsQuery(candidateId).queryKey,
-        }),
-        queryClient.invalidateQueries({ queryKey: UNLOCKED_KEY }),
-        onUnlocked?.(),
-      ])
-      const left =
-        queryClient.getQueryData(creditsQuery().queryKey)?.available_credits ??
-        (balance ?? used) - used
       toast.success(t("done", { name }), {
-        description: t("doneBody", { count: used, left }),
+        description: t("doneBody", {
+          count: used,
+          left: left ?? (balance ?? used) - used,
+        }),
         position: "top-center",
       })
-    },
-    onError: (error) => {
-      void queryClient.invalidateQueries({ queryKey: creditsQuery().queryKey })
-      if (unlockProblem(error) === "alreadyUnlocked")
-        void queryClient.invalidateQueries({
-          queryKey: interviewsQuery(candidateId).queryKey,
-        })
+      await onUnlocked?.()
     },
   })
 
@@ -236,7 +213,11 @@ export function UnlockPanel({
                     }
                     aria-busy={unlock.isPending}
                     onClick={() => {
-                      unlock.mutate()
+                      unlock.mutate(
+                        choices
+                          .filter((c) => selected.has(String(c.id)))
+                          .map((c) => c.id)
+                      )
                     }}
                   >
                     <LockOpen />
