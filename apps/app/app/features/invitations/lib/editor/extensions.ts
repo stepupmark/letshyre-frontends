@@ -2,15 +2,13 @@ import { Node } from "@tiptap/react"
 import { CharacterCount, Placeholder } from "@tiptap/extensions"
 import { StarterKit } from "@tiptap/starter-kit"
 
+import { allowedHref } from "../link"
 import { BODY_LIMIT, SUBJECT_LIMIT } from "../limits"
 import { Callout } from "./callout"
 import { EmailButton, type EmailButtonOptions } from "./email-button"
 import { FieldSuggestion, type FieldMenuBridge } from "./field-suggestion"
 import { MergeField, type MergeFieldOptions } from "./merge-field"
 import { PreserveStyle } from "./preserve-style"
-
-const allowedHref = (url: string) =>
-  url === "{{invite_link}}" || /^(https?:\/\/|mailto:)/i.test(url)
 
 export const bodyExtensions = ({
   labelOf,

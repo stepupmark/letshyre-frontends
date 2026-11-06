@@ -8,3 +8,6 @@ export const isWebAddress = (value: string) => {
     return false
   }
 }
+
+export const allowedHref = (url: string) =>
+  url === INVITE_HREF || /^(https?:\/\/|mailto:)/i.test(url)

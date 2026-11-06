@@ -1,5 +1,6 @@
 import { Node } from "@tiptap/react"
 
+import { allowedHref, INVITE_HREF } from "../link"
 import { BUTTON_TONES, BUTTON_WRAP, styled, toneOf } from "../email-styles"
 
 export interface EmailButtonOptions {
@@ -34,7 +35,9 @@ export const EmailButton = Node.create<EmailButtonOptions>({
     {
       tag: "div[data-lh-button]",
       getAttrs: (element) => ({
-        href: element.dataset.href ?? "",
+        href: allowedHref(element.dataset.href ?? "")
+          ? element.dataset.href
+          : INVITE_HREF,
         label: element.dataset.label ?? "",
         style: element.dataset.style ?? BUTTON_TONES.primary,
         wrap: element.dataset.wrap ?? null,

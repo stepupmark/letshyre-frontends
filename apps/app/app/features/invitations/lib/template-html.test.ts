@@ -50,6 +50,11 @@ describe("template HTML through the editor", () => {
       '<p style="color:#111;background:url(https://x.test/a.png)" onclick="x()">Hi</p><script>alert(1)</script><a href="javascript:alert(1)">bad</a>'
     )
     expect(html).toBe('<p style="color:#111;">Hi</p><p>bad</p>')
+    expect(
+      roundTrip(
+        '<div data-lh-button data-href="javascript:alert(1)" data-label="Go"></div>'
+      )
+    ).toContain('href="{{invite_link}}"')
   })
 
   test("formatting the editor can't hold is reported, not silently kept", () => {

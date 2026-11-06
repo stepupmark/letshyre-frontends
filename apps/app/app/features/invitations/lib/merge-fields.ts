@@ -40,6 +40,7 @@ const escapeHtml = (value: string) =>
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;")
 
 const MARK =
   '<mark style="background:#dbeafe;color:inherit;border-radius:3px;padding:0 2px;">'
