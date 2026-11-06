@@ -17,6 +17,7 @@ export { compareIds, MAX_COMPARE } from "./lib/compare"
 export { isShareId, shareProblem } from "./lib/shared-scorecard"
 export {
   ownScorecardQuery,
+  ownScorecardsQuery,
   unlockedProfileQuery,
   unlockedScorecardQuery,
 } from "./queries/candidate.queries"

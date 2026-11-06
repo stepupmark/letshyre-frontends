@@ -26,11 +26,14 @@ export function errorKey(
   if (error.status === 429) return "errors.tooManyAttempts"
   if (error.status >= 500) return "errors.server"
 
-  const message = normalizeMessage(error.backendMessage)
-  if (!message) return fallback
-  return (
-    messages[message] ??
-    heuristics.find((rule) => rule.test(message))?.key ??
-    fallback
-  )
+  // a specific reason beats a generic message like "Validation failed."
+  const candidates = [...error.reasons, error.backendMessage]
+    .map(normalizeMessage)
+    .filter((message): message is string => Boolean(message))
+  for (const message of candidates) {
+    const key =
+      messages[message] ?? heuristics.find((rule) => rule.test(message))?.key
+    if (key) return key
+  }
+  return fallback
 }

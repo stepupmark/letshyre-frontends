@@ -153,7 +153,10 @@
     "note": "L'employeur voit votre profil et votre grille la plus récente.",
     "done": "Candidature envoyée. L'employeur peut maintenant voir votre profil.",
     "track": "Voir mes candidatures",
-    "failed": "Votre candidature n'est pas passée. Réessayez dans un instant."
+    "failed": "Votre candidature n'est pas passée. Réessayez dans un instant.",
+    "needsInterviewTitle": "Passez d'abord votre entretien IA",
+    "needsInterviewBody": "Les employeurs voient votre évaluation quand vous postulez.",
+    "takeInterview": "Comment passer l'entretien"
   },
   "timeline": {
     "label": "Avancement de la candidature",

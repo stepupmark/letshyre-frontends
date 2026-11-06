@@ -18,6 +18,8 @@ export class HttpError extends ApiError {
   readonly backendMessage: string | undefined
   /** DRF field errors as { field: "first message" }, for forms. */
   readonly fieldErrors: Record<string, string> | undefined
+  /** Errors not tied to a field, like `data.error` or `non_field_errors`; often more specific than the message. */
+  readonly reasons: string[]
   /** From the Retry-After header on a 429 or 503. */
   readonly retryAfterMs: number | undefined
 
@@ -28,6 +30,7 @@ export class HttpError extends ApiError {
     this.code = code
     this.backendMessage = message
     this.fieldErrors = fieldErrorsOf(body)
+    this.reasons = reasonsOf(body)
     this.retryAfterMs = retryAfterMs
   }
 }
@@ -67,4 +70,15 @@ function fieldErrorsOf(body: unknown): Record<string, string> | undefined {
     if (typeof first === "string") errors[field] = first
   }
   return Object.keys(errors).length > 0 ? errors : undefined
+}
+
+// { data: { error: ["…"] } } carries the reason when the message is just "Validation failed."
+function reasonsOf(body: unknown): string[] {
+  if (!isRecord(body)) return []
+  const reasons = [body, body.data, body.errors]
+    .filter(isRecord)
+    .flatMap((source) => [source.error, source.non_field_errors])
+    .flatMap((value): unknown[] => (Array.isArray(value) ? value : [value]))
+    .filter((value): value is string => typeof value === "string")
+  return [...new Set(reasons)]
 }

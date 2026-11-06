@@ -146,7 +146,10 @@
     "note": "De werkgever ziet uw profiel en nieuwste scorekaart.",
     "done": "Gesolliciteerd. De werkgever kan uw profiel nu zien.",
     "track": "Mijn sollicitaties bekijken",
-    "failed": "Uw sollicitatie is niet doorgekomen. Probeer het zo opnieuw."
+    "failed": "Uw sollicitatie is niet doorgekomen. Probeer het zo opnieuw.",
+    "needsInterviewTitle": "Doe eerst je AI-gesprek",
+    "needsInterviewBody": "Werkgevers zien je scorekaart als je solliciteert.",
+    "takeInterview": "Zo doe je het gesprek"
   },
   "timeline": {
     "label": "Voortgang van de sollicitatie",

@@ -2,7 +2,7 @@ import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
 import { useQuery } from "@tanstack/react-query"
 import { useReducedMotion } from "motion/react"
-import { useId, useRef } from "react"
+import { useId, useRef, useState } from "react"
 
 import { EmptyState } from "@/components/empty-state"
 import { GuideLink } from "@/components/guide-link"
@@ -23,8 +23,14 @@ import { ResultsList, ResultsSkeleton } from "./results-list"
 import { SavedSearches } from "./saved-searches"
 import { SearchBar } from "./search-bar"
 
-export function FindJobs() {
+export function FindJobs({
+  hasInterview,
+}: {
+  /** undefined while unknown; the backend still refuses applications without one */
+  hasInterview?: boolean
+}) {
   const { t } = useTranslation(["candidateJobs", "common"])
+  const [refused, setRefused] = useState(false)
   const { search, key, update, clear, clearAll, restore } = useJobSearch()
   const saved = useSavedSearches(key)
   const { chipsOf } = useFilterChips()
@@ -159,6 +165,10 @@ export function FindJobs() {
         openId={openId}
         query={search.q}
         onOpen={setOpenId}
+        needsInterview={refused || hasInterview === false}
+        onNeedsInterview={() => {
+          setRefused(true)
+        }}
       />
     </div>
   )

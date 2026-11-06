@@ -139,7 +139,10 @@
     "note": "Pemberi kerja melihat profil dan kartu skor terbaru Anda.",
     "done": "Lamaran terkirim. Pemberi kerja kini bisa melihat profil Anda.",
     "track": "Lihat lamaran saya",
-    "failed": "Lamaran Anda tidak terkirim. Coba lagi sebentar lagi."
+    "failed": "Lamaran Anda tidak terkirim. Coba lagi sebentar lagi.",
+    "needsInterviewTitle": "Ikuti wawancara AI Anda dulu",
+    "needsInterviewBody": "Pemberi kerja melihat kartu skor Anda saat Anda melamar.",
+    "takeInterview": "Cara mengikuti wawancara"
   },
   "timeline": {
     "label": "Perkembangan lamaran",

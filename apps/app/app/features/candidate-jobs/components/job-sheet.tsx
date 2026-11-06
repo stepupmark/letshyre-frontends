@@ -14,6 +14,7 @@ import { duration, ease } from "@/lib/motion"
 import { companyOf } from "../lib/candidate-jobs"
 import { useApply } from "../mutations/use-apply"
 import { type Job } from "../schemas/candidate-jobs.schema"
+import { InterviewFirst } from "./interview-first"
 import { JobDetail } from "./job-detail"
 import { ApplicationStatus } from "./job-parts"
 
@@ -22,14 +23,18 @@ export function JobSheet({
   openId,
   query,
   onOpen,
+  needsInterview,
+  onNeedsInterview,
 }: {
   jobs: Job[] | undefined
   openId: string | null
   query: string
   onOpen: (id: string | null) => void
+  needsInterview: boolean
+  onNeedsInterview: () => void
 }) {
   const { t } = useTranslation("candidateJobs")
-  const apply = useApply()
+  const apply = useApply({ onNeedsInterview })
   const index = jobs?.findIndex((job) => job.id === openId) ?? -1
   const open = index >= 0 ? jobs?.[index] : undefined
   const shown = useLastDefined(open)
@@ -85,6 +90,18 @@ export function JobSheet({
                 >
                   {t("apply.track")}
                 </AppLink>
+              </m.div>
+            ) : needsInterview ? (
+              <m.div
+                key="interview"
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: duration.base, ease }}
+                className="w-full"
+              >
+                <InterviewFirst
+                  focus={apply.isError && apply.variables === shown.id}
+                />
               </m.div>
             ) : (
               <m.div

@@ -3,11 +3,16 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { href, useNavigate } from "react-router"
 import { toast } from "sonner"
 
+import { applyProblem } from "../lib/apply-error"
 import { candidateJobsKeys } from "../queries/candidate-jobs.queries"
 import { applyForJob } from "../services/candidate-jobs.service"
 import { type JobsPage } from "../types"
 
-export function useApply() {
+export function useApply({
+  onNeedsInterview,
+}: {
+  onNeedsInterview: () => void
+}) {
   const { t } = useTranslation("candidateJobs")
   const queryClient = useQueryClient()
   const navigate = useNavigate()
@@ -35,8 +40,10 @@ export function useApply() {
         queryKey: candidateJobsKeys.applications,
       })
     },
-    onError: () => {
-      toast.error(t("apply.failed"))
+    onError: (error) => {
+      // retrying can't help here; the job sheet explains what to do instead
+      if (applyProblem(error) === "needsInterview") onNeedsInterview()
+      else toast.error(t("apply.failed"))
     },
   })
 }

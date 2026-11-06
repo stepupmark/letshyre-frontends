@@ -95,6 +95,50 @@ test("a candidate searches, saves the search, applies and follows the applicatio
   await axe(page)
 })
 
+test("without a finished interview, Apply turns into the way to take one", async ({
+  page,
+  api,
+  signInAs,
+}) => {
+  await api({
+    "POST /user/v1/candidate_jobs/": (route) =>
+      reply(
+        route,
+        {
+          success: false,
+          status: 400,
+          message: "Validation failed.",
+          data: {
+            error: [
+              "You must complete an interview before applying for a job.",
+            ],
+          },
+        },
+        400
+      ),
+  })
+  await signInAs("candidate")
+  await page.goto("/employee/jobs")
+
+  await page.getByRole("button", { name: "Frontend Developer" }).click()
+  const sheet = page.getByRole("dialog", { name: "Frontend Developer" })
+  await sheet.getByRole("button", { name: "Apply" }).click()
+  const guide = sheet.getByRole("link", { name: "How to take the interview" })
+  await expect(guide).toBeFocused()
+  await expect(sheet.getByText("Take your AI interview first")).toBeVisible()
+  await expect(page.getByText("didn't go through")).toHaveCount(0)
+
+  // the refusal holds for every job, so the next one doesn't offer Apply
+  await sheet.getByRole("button", { name: "Next" }).click()
+  await expect(
+    page.getByRole("dialog").getByRole("button", { name: "Apply" })
+  ).toHaveCount(0)
+  await expect(
+    page.getByRole("dialog").getByText("Take your AI interview first")
+  ).toBeVisible()
+  await axe(page)
+})
+
 test("on a phone, filters open in a sheet and apply as they change", async ({
   page,
   api,

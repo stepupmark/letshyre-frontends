@@ -153,7 +153,10 @@
     "note": "Il datore di lavoro vede il tuo profilo e la tua scheda più recente.",
     "done": "Candidatura inviata. Il datore di lavoro può ora vedere il tuo profilo.",
     "track": "Vedi le mie candidature",
-    "failed": "La candidatura non è andata a buon fine. Riprova tra poco."
+    "failed": "La candidatura non è andata a buon fine. Riprova tra poco.",
+    "needsInterviewTitle": "Prima fai il colloquio con IA",
+    "needsInterviewBody": "I datori di lavoro vedono la tua valutazione quando ti candidi.",
+    "takeInterview": "Come fare il colloquio"
   },
   "timeline": {
     "label": "Avanzamento della candidatura",
