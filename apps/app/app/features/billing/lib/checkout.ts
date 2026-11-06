@@ -37,7 +37,7 @@ export function checkoutItem(
 export const toPaise = (amount: number) => Math.round(amount * 100)
 
 /** Only a path inside the employer app may be returned to after paying. */
-export const safeNext = (value: string | null) =>
+export const employerNext = (value: string | null) =>
   value && /^\/employer(\/|\?|$)/.test(value) && !value.startsWith("//")
     ? value
     : null

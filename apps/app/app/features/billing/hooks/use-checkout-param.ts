@@ -1,6 +1,6 @@
 import { useLocation, useNavigate, useSearchParams } from "react-router"
 
-import { CHECKOUT, NEXT, safeNext } from "../lib/checkout"
+import { CHECKOUT, NEXT, employerNext } from "../lib/checkout"
 
 export function useCheckoutParam() {
   const [search, setSearch] = useSearchParams()
@@ -36,7 +36,7 @@ export function useCheckoutParam() {
 
   return {
     key: search.get(CHECKOUT),
-    next: safeNext(search.get(NEXT)),
+    next: employerNext(search.get(NEXT)),
     open,
     close,
   }

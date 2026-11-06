@@ -1,7 +1,7 @@
 import type { Plan } from "@workspace/api/public"
 import { describe, expect, it } from "vitest"
 
-import { checkoutItem, safeNext, toPaise } from "./checkout"
+import { checkoutItem, employerNext, toPaise } from "./checkout"
 
 const plan = (slug: string, planType: string): Plan => ({
   id: `id-${slug}`,
@@ -47,10 +47,10 @@ it("converts rupees to paise without float drift", () => {
 })
 
 it("returns only to a page in the employer app after paying", () => {
-  expect(safeNext("/employer/candidates?jobId=1&candidate=5")).toBe(
+  expect(employerNext("/employer/candidates?jobId=1&candidate=5")).toBe(
     "/employer/candidates?jobId=1&candidate=5"
   )
-  expect(safeNext("https://evil.example/employer")).toBeNull()
-  expect(safeNext("//evil.example/employer")).toBeNull()
-  expect(safeNext("/employerx")).toBeNull()
+  expect(employerNext("https://evil.example/employer")).toBeNull()
+  expect(employerNext("//evil.example/employer")).toBeNull()
+  expect(employerNext("/employerx")).toBeNull()
 })
