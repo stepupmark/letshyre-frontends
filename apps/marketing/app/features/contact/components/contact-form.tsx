@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { localePath } from "@workspace/i18n"
+import { DEFAULT_LOCALE, localePath } from "@workspace/i18n"
 import { Trans, useLocale, useTranslation } from "@workspace/i18n/react"
 import {
   Alert,
@@ -221,7 +221,8 @@ export function ContactForm({
           <Alert variant="destructive">
             <CircleAlertIcon aria-hidden />
             <AlertTitle>{t(`form.errors.${failure.kind}`)}</AlertTitle>
-            {failure.detail && (
+            {/* the backend only writes English */}
+            {failure.detail && lang === DEFAULT_LOCALE && (
               <AlertDescription>{failure.detail}</AlertDescription>
             )}
           </Alert>
