@@ -4,6 +4,7 @@ import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { ArrowUpRightIcon } from "lucide-react"
 import { Link } from "react-router"
 
+import { ConsentSettings } from "@/components/consent-gate"
 import { Container } from "@/components/section"
 import { usePagePath } from "@/hooks/use-page-path"
 import { usePublished } from "@/hooks/use-published"
@@ -91,9 +92,12 @@ export function SiteFooter() {
         <NewsletterForm />
 
         <div className="flex flex-col-reverse gap-4 border-t pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-muted-foreground">
-            {t("copyright", { year: new Date().getFullYear() })}
-          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <p className="text-sm text-muted-foreground">
+              {t("copyright", { year: new Date().getFullYear() })}
+            </p>
+            <ConsentSettings />
+          </div>
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
             <SiteLanguageSwitcher side="top" className="-ms-2.5" />
             <span aria-hidden className="hidden h-5 w-px bg-border sm:block" />

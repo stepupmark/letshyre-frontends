@@ -54,7 +54,8 @@
       "candidateRegister": "Bewerberprofil erstellen"
     },
     "nav": "Fußzeile",
-    "opensApp": "(öffnet die LetsHyre-App)"
+    "opensApp": "(öffnet die LetsHyre-App)",
+    "cookieSettings": "Cookie-Einstellungen"
   },
   "newsletter": {
     "emailPlaceholder": "name@company.com",

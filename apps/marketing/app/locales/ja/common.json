@@ -54,7 +54,8 @@
       "candidateRegister": "候補者プロフィールを作成"
     },
     "nav": "フッター",
-    "opensApp": "（LetsHyreアプリが開きます）"
+    "opensApp": "（LetsHyreアプリが開きます）",
+    "cookieSettings": "Cookie の設定"
   },
   "newsletter": {
     "emailPlaceholder": "name@company.com",

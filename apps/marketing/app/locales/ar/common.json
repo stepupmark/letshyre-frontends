@@ -54,7 +54,8 @@
       "candidateRegister": "إنشاء ملف مرشح"
     },
     "nav": "تذييل الصفحة",
-    "opensApp": "(يفتح تطبيق LetsHyre)"
+    "opensApp": "(يفتح تطبيق LetsHyre)",
+    "cookieSettings": "إعدادات ملفات تعريف الارتباط"
   },
   "newsletter": {
     "emailPlaceholder": "name@company.com",

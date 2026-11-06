@@ -54,7 +54,8 @@
       "candidateRegister": "Create candidate profile"
     },
     "nav": "Footer",
-    "opensApp": "(opens the LetsHyre app)"
+    "opensApp": "(opens the LetsHyre app)",
+    "cookieSettings": "Cookie settings"
   },
   "newsletter": {
     "emailPlaceholder": "name@company.com",

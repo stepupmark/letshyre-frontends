@@ -54,7 +54,8 @@
       "candidateRegister": "Buat profil kandidat"
     },
     "nav": "Footer",
-    "opensApp": "(membuka aplikasi LetsHyre)"
+    "opensApp": "(membuka aplikasi LetsHyre)",
+    "cookieSettings": "Pengaturan cookie"
   },
   "newsletter": {
     "emailPlaceholder": "name@company.com",

@@ -54,7 +54,8 @@
       "candidateRegister": "প্রার্থী প্রোফাইল তৈরি করুন"
     },
     "nav": "ফুটার",
-    "opensApp": "(LetsHyre অ্যাপ খোলে)"
+    "opensApp": "(LetsHyre অ্যাপ খোলে)",
+    "cookieSettings": "কুকি সেটিংস"
   },
   "newsletter": {
     "emailPlaceholder": "name@company.com",

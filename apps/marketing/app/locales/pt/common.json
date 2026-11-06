@@ -54,7 +54,8 @@
       "candidateRegister": "Criar perfil de candidato"
     },
     "nav": "Rodapé",
-    "opensApp": "(abre a aplicação LetsHyre)"
+    "opensApp": "(abre a aplicação LetsHyre)",
+    "cookieSettings": "Configurações de cookies"
   },
   "newsletter": {
     "emailPlaceholder": "name@company.com",

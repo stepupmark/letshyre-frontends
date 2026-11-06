@@ -54,7 +54,8 @@
       "candidateRegister": "지원자 프로필 만들기"
     },
     "nav": "바닥글",
-    "opensApp": "(LetsHyre 앱이 열립니다)"
+    "opensApp": "(LetsHyre 앱이 열립니다)",
+    "cookieSettings": "쿠키 설정"
   },
   "newsletter": {
     "emailPlaceholder": "name@company.com",

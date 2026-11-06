@@ -54,7 +54,8 @@
       "candidateRegister": "Kandidaatprofiel aanmaken"
     },
     "nav": "Voettekst",
-    "opensApp": "(opent de LetsHyre-app)"
+    "opensApp": "(opent de LetsHyre-app)",
+    "cookieSettings": "Cookie-instellingen"
   },
   "newsletter": {
     "emailPlaceholder": "name@company.com",
