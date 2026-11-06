@@ -40,7 +40,7 @@ export function CompanyCard({ control }: { control: Control<Values> }) {
   )?.label
 
   return (
-    <div className="flex flex-col gap-4 rounded-2xl border bg-card p-5 shadow-[0_12px_32px_-12px_rgb(15_23_42/0.18)]">
+    <div className="flex flex-col gap-4 rounded-2xl border bg-card p-5">
       <div className="flex items-center gap-3">
         <div className="grid size-12 shrink-0 place-items-center overflow-hidden rounded-xl bg-brand-muted text-base font-semibold text-brand-text">
           {logo instanceof File && logo.type.startsWith("image/") ? (

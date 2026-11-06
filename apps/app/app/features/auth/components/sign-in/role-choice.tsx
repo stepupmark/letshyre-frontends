@@ -36,7 +36,7 @@ export function RoleChoice({
             }
             state={state}
             viewTransition
-            className="group flex items-center gap-4 rounded-2xl border bg-card p-4 shadow-xs transition-[translate,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-5"
+            className="group flex items-center gap-4 rounded-2xl border bg-card p-4 transition-[translate,border-color] duration-200 hover:-translate-y-0.5 hover:border-brand/40 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-5"
           >
             <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-muted text-brand-text transition-transform duration-200 group-hover:scale-105 motion-reduce:transition-none">
               <Icon className="size-5" aria-hidden="true" />

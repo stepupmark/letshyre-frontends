@@ -15,7 +15,7 @@ export function DocumentsCard({ control }: { control: Control<Values> }) {
   const added = files.filter((file) => file instanceof File).length
 
   return (
-    <div className="flex flex-col gap-4 rounded-2xl border bg-card p-5 shadow-[0_12px_32px_-12px_rgb(15_23_42/0.18)]">
+    <div className="flex flex-col gap-4 rounded-2xl border bg-card p-5">
       <FolderArt filled={files.map((file) => file instanceof File)} />
       <ul className="flex flex-col gap-2.5">
         {DOCUMENTS.map(({ name }, i) => {

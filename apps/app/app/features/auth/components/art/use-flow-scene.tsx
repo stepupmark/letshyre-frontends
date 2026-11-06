@@ -91,7 +91,7 @@ export function useResetScene() {
     scene: (
       <div className="flex flex-col items-center gap-8">
         <Lock open={Boolean(data.verified)} sent={Boolean(data.key)} />
-        <div className="settle w-full max-w-sm rounded-3xl border bg-card p-6 shadow-[0_10px_30px_rgb(15_23_42/0.07)] delay-150">
+        <div className="settle shadow-raised w-full max-w-sm rounded-3xl border bg-card p-6 delay-150">
           <p className="text-sm font-medium">{t("reset.title")}</p>
           <p className="truncate text-sm text-muted-foreground">
             {data.email ? maskEmail(data.email) : t("fields.email")}

@@ -34,7 +34,7 @@ export function ProfileCard({
 
   return (
     <div className="relative mx-auto w-full max-w-sm">
-      <div className="settle relative rounded-3xl border bg-card p-6 shadow-[0_10px_30px_rgb(15_23_42/0.07)]">
+      <div className="settle shadow-raised relative rounded-3xl border bg-card p-6">
         <div className="flex items-center gap-4">
           <span className="relative grid size-16 shrink-0 place-items-center">
             <svg viewBox="0 0 64 64" className="absolute inset-0 -rotate-90">

@@ -10,6 +10,18 @@
   --color-stage: oklch(0.22 0.03 262);
 }
 
+/* only for floating layers and drawn art; cards use borders */
+@theme {
+  --shadow-raised: 0 10px 30px -12px var(--raised-tint);
+  --drop-shadow-raised: 0 10px 24px var(--raised-tint);
+}
+:root {
+  --raised-tint: rgb(15 23 42 / 0.12);
+}
+.dark {
+  --raised-tint: rgb(0 0 0 / 0.5);
+}
+
 /* Chrome tints only the <input>, so a grouped field (+91 | number) looks split;
    tint the whole group the same colour instead */
 :root {

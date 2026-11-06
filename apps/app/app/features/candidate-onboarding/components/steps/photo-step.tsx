@@ -113,7 +113,7 @@ export function PhotoStep({
     <div className="flex flex-col gap-5">
       <p className="text-sm text-muted-foreground">{t("photo.lead")}</p>
 
-      <div className="relative mx-auto aspect-square w-full max-w-72 overflow-hidden rounded-3xl bg-muted shadow-[0_12px_32px_-12px_rgb(15_23_42/0.25)]">
+      <div className="relative mx-auto aspect-square w-full max-w-72 overflow-hidden rounded-3xl bg-muted">
         {photo && !live ? (
           <Preview file={photo} />
         ) : live ? (

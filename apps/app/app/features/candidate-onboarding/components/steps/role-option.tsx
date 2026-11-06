@@ -91,7 +91,7 @@ export function RoleOption({
         "flex items-center gap-3 rounded-xl border px-4 py-3 text-start text-sm transition-[background-color,border-color,box-shadow] duration-200 outline-none hover:border-foreground/20 hover:bg-muted/50 focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:transition-none",
         other && !checked && "border-dashed",
         checked &&
-          "border-brand bg-brand-muted/50 font-medium shadow-[0_6px_16px_-8px_color-mix(in_oklab,var(--brand)_45%,transparent)] hover:border-brand hover:bg-brand-muted/50"
+          "border-brand bg-brand-muted/50 font-medium hover:border-brand hover:bg-brand-muted/50"
       )}
     >
       <span
@@ -111,7 +111,7 @@ export function RoleOption({
         />
       ) : (
         tag && (
-          <span className="flex shrink-0 items-center gap-1 rounded-full bg-brand-muted px-2 py-0.5 text-[0.6875rem] font-medium text-brand-text">
+          <span className="flex shrink-0 items-center gap-1 rounded-full bg-brand-muted px-2 py-0.5 text-xs font-medium text-brand-text">
             <Sparkles className="size-3" aria-hidden="true" />
             {tag}
           </span>

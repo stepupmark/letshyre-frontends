@@ -82,7 +82,7 @@ export function Submitted({ role }: { role: string }) {
 
       <section
         aria-labelledby="next-steps"
-        className="flex flex-col overflow-hidden rounded-2xl border bg-card shadow-[0_12px_32px_-12px_rgb(15_23_42/0.18)]"
+        className="flex flex-col overflow-hidden rounded-2xl border bg-card"
       >
         <h2
           id="next-steps"

@@ -31,7 +31,7 @@ export function Panel({
         width={width}
         height={height}
         rx={16}
-        className="fill-card stroke-border drop-shadow-[0_10px_24px_rgb(15_23_42/0.07)]"
+        className="drop-shadow-raised fill-card stroke-border"
       />
       {children}
     </g>

@@ -28,7 +28,7 @@ export function VerifyCard({ form }: { form: UseFormReturn<Values> }) {
   const passed = rows.filter((row) => row.ok).length
 
   return (
-    <div className="flex flex-col gap-4 rounded-2xl border bg-card p-5 shadow-[0_12px_32px_-12px_rgb(15_23_42/0.18)]">
+    <div className="flex flex-col gap-4 rounded-2xl border bg-card p-5">
       <CertificateArt passed={passed} total={rows.length} />
       <ul className="flex flex-col gap-3">
         {rows.map((row) => (

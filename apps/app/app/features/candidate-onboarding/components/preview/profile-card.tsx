@@ -69,7 +69,7 @@ export function ProfileCard({
         <div className="absolute inset-x-6 -bottom-3 -z-10 h-full rounded-2xl border bg-card/70" />
         <div className="absolute inset-x-3 -bottom-1.5 -z-10 h-full rounded-2xl border bg-card/90" />
 
-        <div className="flex flex-col overflow-hidden rounded-2xl border bg-card shadow-[0_12px_32px_-12px_rgb(15_23_42/0.18)]">
+        <div className="flex flex-col overflow-hidden rounded-2xl border bg-card">
           <Route
             home={city.trim()}
             places={places}
