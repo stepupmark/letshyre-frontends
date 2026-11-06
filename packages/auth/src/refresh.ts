@@ -4,6 +4,7 @@ import {
   clearSession,
   getAccessToken,
   getRefreshToken,
+  readSession,
   saveTokens,
 } from "./session.ts"
 
@@ -45,7 +46,14 @@ export function createRefresher({
     const current = getAccessToken()
     if (current && current !== failedAccess) return true
     const refresh = getRefreshToken()
-    if (!refresh) return false
+    if (!refresh) {
+      // a user record without tokens would otherwise fail every call and never ask to sign in
+      if (readSession().status === "signed-in") {
+        clearSession()
+        onExpired?.()
+      }
+      return false
+    }
 
     let response: Response
     try {

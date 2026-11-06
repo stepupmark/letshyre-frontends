@@ -206,6 +206,20 @@ describe("token refresh", () => {
     ).rejects.toBeInstanceOf(HttpError)
     expect(onSessionExpired).not.toHaveBeenCalled()
   })
+
+  it("ends a session whose tokens are gone instead of failing every call", async () => {
+    localStorage.setItem("user", JSON.stringify({ role: "Employer" }))
+    server.use(
+      http.get(url("jobs/"), () => HttpResponse.json({}, { status: 401 }))
+    )
+    const onSessionExpired = vi.fn()
+
+    await expect(
+      createAuthedClient({ baseUrl: BASE, onSessionExpired }).get("/jobs/")
+    ).rejects.toBeInstanceOf(HttpError)
+    expect(onSessionExpired).toHaveBeenCalledOnce()
+    expect(readSession().status).toBe("guest")
+  })
 })
 
 describe("login and logout", () => {
