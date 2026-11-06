@@ -17,7 +17,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@workspace/ui/components/select"
-import { useMutation } from "@tanstack/react-query"
 import { CalendarClock, Share2 } from "lucide-react"
 import { useId, useMemo } from "react"
 import { Controller, useForm, type FieldPath } from "react-hook-form"
@@ -26,7 +25,7 @@ import { toast } from "sonner"
 import { TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
 
-import { createShareLink } from "../services/share.service"
+import { useCreateShareLink } from "../mutations/use-shared-links"
 import {
   makeShareSchema,
   type ShareLink,
@@ -90,10 +89,9 @@ export function ShareForm({
       )
     : null
 
-  const create = useMutation({
-    mutationFn: (values: ShareValues) => createShareLink(unlockId, values),
-    onSuccess: onCreated,
-    onError: (error) => {
+  const create = useCreateShareLink(unlockId, {
+    onCreated,
+    onFailed: (error) => {
       const fields = error instanceof HttpError ? error.fieldErrors : undefined
       let placed = false
       for (const name of FIELDS) {

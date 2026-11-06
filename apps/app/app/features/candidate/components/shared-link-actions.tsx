@@ -16,7 +16,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@workspace/ui/components/dropdown-menu"
-import { useMutation, useQueryClient } from "@tanstack/react-query"
 import {
   Ban,
   Ellipsis,
@@ -30,9 +29,8 @@ import { toast } from "sonner"
 import { CopyButton } from "@/components/copy-button"
 import { TextField } from "@/components/text-field"
 
-import { updateSharedLink } from "../services/share.service"
+import { useExtendSharedLink } from "../mutations/use-shared-links"
 import { MAX_SHARE_DAYS, shareUrl, stateOf } from "../lib/share"
-import { SHARED_LINKS_KEY } from "../queries/share.queries"
 import { type SharedLink } from "../schemas/share.schema"
 
 export function Actions({
@@ -118,26 +116,18 @@ export function EditLink({
   onClose: () => void
 }) {
   const { t } = useTranslation(["candidate", "common"])
-  const queryClient = useQueryClient()
   const [days, setDays] = useState("0")
   const [views, setViews] = useState(String(link.max_views ?? 20))
   const [errors, setErrors] = useState<{ days?: string; views?: string }>({})
 
-  const save = useMutation({
-    mutationFn: () =>
-      updateSharedLink(link.id, {
-        extend_expiry_days: Number(days),
-        max_views: Number(views),
-      }),
-    onSuccess: () => {
+  const save = useExtendSharedLink(link.id, {
+    onSaved: () => {
       toast.success(t("links.saved"))
       onClose()
     },
-    onError: () => {
+    onFailed: () => {
       toast.error(t("links.failed"))
     },
-    onSettled: () =>
-      queryClient.invalidateQueries({ queryKey: SHARED_LINKS_KEY }),
   })
 
   return (
@@ -167,7 +157,8 @@ export function EditLink({
                     }),
             }
             setErrors(next)
-            if (!next.days && !next.views) save.mutate()
+            if (!next.days && !next.views)
+              save.mutate({ days: Number(days), views: Number(views) })
           }}
         >
           <DialogHeader>

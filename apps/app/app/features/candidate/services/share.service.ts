@@ -17,14 +17,14 @@ export const createShareLink = async (unlockId: string, values: ShareValues) =>
     )
   )
 
-export const updateSharedLink = (
+export const updateSharedLink = async (
   id: string,
   body: Partial<{
     is_active: boolean
     max_views: number
     extend_expiry_days: number
   }>
-) => api.patch(`user/v1/employer_shared_links/${id}/`, body)
+) => payloadOf(await api.patch(`user/v1/employer_shared_links/${id}/`, body))
 
-export const deleteSharedLink = (id: string) =>
-  api.delete(`user/v1/employer_shared_links/${id}/`)
+export const deleteSharedLink = async (id: string) =>
+  payloadOf(await api.delete(`user/v1/employer_shared_links/${id}/`))

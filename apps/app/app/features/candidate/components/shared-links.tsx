@@ -1,10 +1,5 @@
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import {
-  keepPreviousData,
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from "@tanstack/react-query"
+import { keepPreviousData, useQuery } from "@tanstack/react-query"
 import { useMemo, useState } from "react"
 import { href, useSearchParams } from "react-router"
 import { toast } from "sonner"
@@ -19,9 +14,12 @@ import { buttonLink } from "@/lib/button-link"
 import type { DataTableColumn } from "@/lib/data-table-features"
 import { undoToast } from "@/lib/undo-toast"
 
-import { deleteSharedLink, updateSharedLink } from "../services/share.service"
+import {
+  useDeleteSharedLink,
+  useSetLinkActive,
+} from "../mutations/use-shared-links"
 import { stateOf } from "../lib/share"
-import { SHARED_LINKS_KEY, sharedLinksQuery } from "../queries/share.queries"
+import { sharedLinksQuery } from "../queries/share.queries"
 import { type LinkState } from "../types"
 import { type SharedLink } from "../schemas/share.schema"
 import { Actions, EditLink } from "./shared-link-actions"
@@ -38,7 +36,6 @@ const rowId = (row: SharedLink) => row.id
 export function SharedLinks() {
   const { t } = useTranslation(["candidate", "common"])
   const locale = useLocale()
-  const queryClient = useQueryClient()
   const [search, setSearch] = useSearchParams()
   const table = readTableParams(search, { sortable: [] })
   const query = useQuery({
@@ -47,24 +44,9 @@ export function SharedLinks() {
   })
   const [editing, setEditing] = useState<SharedLink | null>(null)
   const [deleting, setDeleting] = useState<SharedLink | null>(null)
-  const key = sharedLinksQuery(table.page).queryKey
 
-  const setActive = useMutation({
-    mutationFn: ({ link, active }: { link: SharedLink; active: boolean }) =>
-      updateSharedLink(link.id, { is_active: active }),
-    onMutate: ({ link, active }) => {
-      queryClient.setQueryData(key, (page) =>
-        page
-          ? {
-              ...page,
-              results: page.results.map((row) =>
-                row.id === link.id ? { ...row, is_active: active } : row
-              ),
-            }
-          : page
-      )
-    },
-    onSuccess: (_, { link, active }) => {
+  const setActive = useSetLinkActive(table.page, {
+    onDone: (link, active) => {
       if (active) return
       undoToast(
         t("links.revoked", { name: link.candidate_name }),
@@ -74,24 +56,19 @@ export function SharedLinks() {
         }
       )
     },
-    onError: () => {
+    onFailed: () => {
       toast.error(t("links.failed"))
     },
-    onSettled: () =>
-      queryClient.invalidateQueries({ queryKey: SHARED_LINKS_KEY }),
   })
 
-  const remove = useMutation({
-    mutationFn: (link: SharedLink) => deleteSharedLink(link.id),
-    onSuccess: () => {
+  const remove = useDeleteSharedLink({
+    onDeleted: () => {
       setDeleting(null)
       toast.success(t("links.deleted"))
     },
-    onError: () => {
+    onFailed: () => {
       toast.error(t("links.failed"))
     },
-    onSettled: () =>
-      queryClient.invalidateQueries({ queryKey: SHARED_LINKS_KEY }),
   })
 
   const toggle = setActive.mutate
