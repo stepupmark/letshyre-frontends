@@ -18,3 +18,8 @@ so a policy that breaks the app fails the tests.
 
 - Hosting is not set up yet; whichever host is chosen must apply `csp.map` on every release.
 - Adding a third-party script means adding its origin to the build's policy, on purpose.
+- `style-src` keeps `'unsafe-inline'`: React and motion write `style` attributes, which hashes
+  can't cover. Don't widen any other directive to match.
+- `frame-ancestors` and the other security headers come from the host (url-contract §5), since a
+  meta-tag policy can't set them.
+- Nothing collects violation reports yet; `report-to` waits on an error-reporting endpoint.

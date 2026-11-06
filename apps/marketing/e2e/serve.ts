@@ -27,6 +27,13 @@ const SUCCESSOR = new Map(
   ])
 )
 
+// url-contract §5: what the host sends with every response
+const SECURITY_HEADERS = {
+  "x-content-type-options": "nosniff",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "x-frame-options": "DENY",
+}
+
 const TYPES: Record<string, string> = {
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript",
@@ -69,9 +76,12 @@ createServer((req, res) => {
       /^(text|application\/(json|xml|manifest))/.test(type) &&
       /\bgzip\b/.test(req.headers["accept-encoding"] ?? "")
     res.writeHead(status, {
+      ...SECURITY_HEADERS,
       "content-type": type,
       ...(gzip && { "content-encoding": "gzip", vary: "accept-encoding" }),
-      ...(policy && { "content-security-policy": policy }),
+      ...(policy && {
+        "content-security-policy": `${policy}; frame-ancestors 'none'`,
+      }),
     })
     const stream = createReadStream(file)
     if (gzip) stream.pipe(createGzip()).pipe(res)

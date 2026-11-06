@@ -83,6 +83,12 @@ The nginx config was removed and no host is chosen yet. Whatever serves `build/c
 - Unknown paths → 404 with the prerendered `/404` page as the body.
 - Prerender writes `en/pricing/index.html`. Serve it at `/en/pricing` with 200, without redirecting to
   `/en/pricing/` (many static hosts do this by default).
+- Each HTML response gets its policy from `build/csp.map` as `Content-Security-Policy-Report-Only`
+  (or `Content-Security-Policy` once enforced), with `frame-ancestors 'none'` appended; browsers
+  ignore that directive in a meta tag.
+- Every response sends `X-Content-Type-Options: nosniff`,
+  `Referrer-Policy: strict-origin-when-cross-origin`, `X-Frame-Options: DENY` and, on HTTPS,
+  `Strict-Transport-Security: max-age=31536000; includeSubDomains`.
 
 ## 6. App URLs (`apps/app`)
 
