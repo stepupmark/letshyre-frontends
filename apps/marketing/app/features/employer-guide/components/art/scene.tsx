@@ -3,7 +3,8 @@ import type { ReactNode } from "react"
 import { SketchWindow } from "@/components/art/sketch-window"
 
 import type { ChapterId } from "../../lib/chapters"
-import { PoolScene, ReviewScene, TeamScene, UnlockScene } from "./hiring-scenes"
+import { PoolScene, UnlockScene } from "./hiring-scenes"
+import { ReviewScene, TeamScene } from "./review-scenes"
 import { AccountScene, CompanyScene, PostScene } from "./setup-scenes"
 
 const SCENES: Record<ChapterId, () => ReactNode> = {

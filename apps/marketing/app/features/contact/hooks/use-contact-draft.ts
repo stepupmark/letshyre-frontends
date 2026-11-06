@@ -1,14 +1,18 @@
 import { useEffect } from "react"
 import type { UseFormReturn } from "react-hook-form"
 
-import type { ContactValues } from "../schemas/contact.schema"
+import {
+  contactDraftSchema,
+  type ContactValues,
+} from "../schemas/contact.schema"
 
 const DRAFT_KEY = "contact-draft"
 
 const readDraft = (): Partial<ContactValues> | null => {
   try {
     const raw = sessionStorage.getItem(DRAFT_KEY)
-    return raw ? (JSON.parse(raw) as Partial<ContactValues>) : null
+    const draft = raw ? contactDraftSchema.safeParse(JSON.parse(raw)) : null
+    return draft?.success ? draft.data : null
   } catch {
     return null
   }

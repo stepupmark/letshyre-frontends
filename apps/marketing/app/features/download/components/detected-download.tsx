@@ -1,13 +1,12 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
-import { useQuery } from "@tanstack/react-query"
 import { CheckIcon, LinkIcon } from "lucide-react"
 import { useId } from "react"
 
 import { useCopy } from "@/hooks/use-copy"
 
 import { useDetectedOs } from "../hooks/use-detected-os"
-import { releaseQuery } from "../queries/releases.queries"
+import { useRelease } from "../queries/releases.queries"
 import { DownloadLink, NextStep, ReleaseMeta } from "./download-link"
 
 /** The visitor's own download, up front. The slot keeps its height so nothing jumps. */
@@ -15,10 +14,7 @@ export function DetectedDownload() {
   const detected = useDetectedOs()
   const os = detected === "other" ? null : detected
   const versionId = useId()
-  const { data: release } = useQuery({
-    ...releaseQuery(os ?? "windows"),
-    enabled: os !== null,
-  })
+  const { data: release } = useRelease(os)
 
   return (
     <div className="mt-4 flex min-h-10 flex-col gap-3">

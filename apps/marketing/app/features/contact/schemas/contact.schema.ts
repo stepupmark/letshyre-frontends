@@ -44,3 +44,12 @@ export const makeContactSchema = (t: (key: ValidationKey) => string) =>
   })
 
 export type ContactValues = z.input<ReturnType<typeof makeContactSchema>>
+
+export const contactDraftSchema = z
+  .object({
+    name: z.string(),
+    email: z.string(),
+    subject: z.string(),
+    message: z.string(),
+  })
+  .partial()

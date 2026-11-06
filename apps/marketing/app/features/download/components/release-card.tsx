@@ -4,10 +4,9 @@ import { Badge } from "@workspace/ui/components/badge"
 import { Button } from "@workspace/ui/components/button"
 import { Card } from "@workspace/ui/components/card"
 import { Skeleton } from "@workspace/ui/components/skeleton"
-import { useQuery } from "@tanstack/react-query"
 import { useEffect, useId, useRef } from "react"
 
-import { releaseQuery } from "../queries/releases.queries"
+import { useRelease } from "../queries/releases.queries"
 import { Device } from "./art/device"
 import { DownloadLink, NextStep, ReleaseMeta } from "./download-link"
 
@@ -21,12 +20,7 @@ export function ReleaseCard({
   const { t } = useTranslation("download")
   const titleId = useId()
   const statusId = useId()
-  const {
-    data: release,
-    status,
-    refetch,
-    isFetching,
-  } = useQuery(releaseQuery(os))
+  const { data: release, status, refetch, isFetching } = useRelease(os)
   const name = t(`os.${os}`)
   const ready = status === "success" && release?.available ? release : null
 

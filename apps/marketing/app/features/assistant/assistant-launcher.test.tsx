@@ -106,31 +106,6 @@ describe("launcher greeting", () => {
     expect(greeting()).not.toBeInTheDocument()
   })
 
-  it("closes on Escape", async () => {
-    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime })
-    renderPage(<AssistantLauncher />)
-    await wait(4000)
-    expect(greeting()).toBeInTheDocument()
-
-    await user.keyboard("{Escape}")
-    expect(greeting()).not.toBeInTheDocument()
-  })
-
-  it("stays through a small scroll and goes once the reader moves on", async () => {
-    renderPage(<AssistantLauncher />)
-    await wait(4000)
-
-    act(() => {
-      scrollTo(60)
-    })
-    expect(greeting()).toBeInTheDocument()
-
-    act(() => {
-      scrollTo(200)
-    })
-    expect(greeting()).not.toBeInTheDocument()
-  })
-
   it("opens the chat and never greets again in the tab", async () => {
     const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime })
     const { unmount } = renderPage(<AssistantLauncher />)

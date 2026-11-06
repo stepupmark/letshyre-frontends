@@ -1,10 +1,10 @@
 import { HttpError } from "@workspace/api"
 import { type DesktopOs, getLatestRelease } from "@workspace/api/public"
-import { queryOptions } from "@tanstack/react-query"
+import { queryOptions, useQuery } from "@tanstack/react-query"
 
 import { api } from "@/lib/api"
 
-export const releaseQuery = (os: DesktopOs) =>
+const releaseQuery = (os: DesktopOs) =>
   queryOptions({
     queryKey: ["desktop-release", os],
     queryFn: async ({ signal }) => {
@@ -17,3 +17,7 @@ export const releaseQuery = (os: DesktopOs) =>
       }
     },
   })
+
+/** `null` os skips the lookup, for platforms with no build. */
+export const useRelease = (os: DesktopOs | null) =>
+  useQuery({ ...releaseQuery(os ?? "windows"), enabled: os !== null })
