@@ -142,7 +142,8 @@
     "failed": "応募できませんでした。少ししてからもう一度お試しください。",
     "needsInterviewTitle": "まず AI 面接を受けましょう",
     "needsInterviewBody": "応募すると、企業はあなたのスコアカードを確認します。",
-    "takeInterview": "面接の受け方"
+    "takeInterview": "面接の受け方",
+    "alreadyTaken": "受験済みですか？応募する"
   },
   "timeline": {
     "label": "応募の進み具合",

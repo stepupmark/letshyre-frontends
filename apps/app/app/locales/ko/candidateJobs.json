@@ -142,7 +142,8 @@
     "failed": "지원이 완료되지 않았어요. 잠시 후 다시 시도하세요.",
     "needsInterviewTitle": "먼저 AI 면접을 보세요",
     "needsInterviewBody": "지원하면 기업이 내 스코어카드를 봅니다.",
-    "takeInterview": "면접 보는 방법"
+    "takeInterview": "면접 보는 방법",
+    "alreadyTaken": "이미 보셨나요? 지원하기"
   },
   "timeline": {
     "label": "지원 진행 상황",

@@ -156,7 +156,8 @@
     "failed": "Votre candidature n'est pas passée. Réessayez dans un instant.",
     "needsInterviewTitle": "Passez d'abord votre entretien IA",
     "needsInterviewBody": "Les employeurs voient votre évaluation quand vous postulez.",
-    "takeInterview": "Comment passer l'entretien"
+    "takeInterview": "Comment passer l'entretien",
+    "alreadyTaken": "Déjà passé ? Postuler"
   },
   "timeline": {
     "label": "Avancement de la candidature",

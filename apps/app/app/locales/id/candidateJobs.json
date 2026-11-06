@@ -142,7 +142,8 @@
     "failed": "Lamaran Anda tidak terkirim. Coba lagi sebentar lagi.",
     "needsInterviewTitle": "Ikuti wawancara AI Anda dulu",
     "needsInterviewBody": "Pemberi kerja melihat kartu skor Anda saat Anda melamar.",
-    "takeInterview": "Cara mengikuti wawancara"
+    "takeInterview": "Cara mengikuti wawancara",
+    "alreadyTaken": "Sudah ikut? Lamar"
   },
   "timeline": {
     "label": "Perkembangan lamaran",

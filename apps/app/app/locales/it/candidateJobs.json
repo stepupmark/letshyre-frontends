@@ -156,7 +156,8 @@
     "failed": "La candidatura non è andata a buon fine. Riprova tra poco.",
     "needsInterviewTitle": "Prima fai il colloquio con IA",
     "needsInterviewBody": "I datori di lavoro vedono la tua valutazione quando ti candidi.",
-    "takeInterview": "Come fare il colloquio"
+    "takeInterview": "Come fare il colloquio",
+    "alreadyTaken": "Già fatto? Candidati"
   },
   "timeline": {
     "label": "Avanzamento della candidatura",

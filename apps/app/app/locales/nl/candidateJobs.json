@@ -149,7 +149,8 @@
     "failed": "Uw sollicitatie is niet doorgekomen. Probeer het zo opnieuw.",
     "needsInterviewTitle": "Doe eerst je AI-gesprek",
     "needsInterviewBody": "Werkgevers zien je scorekaart als je solliciteert.",
-    "takeInterview": "Zo doe je het gesprek"
+    "takeInterview": "Zo doe je het gesprek",
+    "alreadyTaken": "Al gedaan? Solliciteren"
   },
   "timeline": {
     "label": "Voortgang van de sollicitatie",

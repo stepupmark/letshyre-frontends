@@ -24,13 +24,18 @@ import { SavedSearches } from "./saved-searches"
 import { SearchBar } from "./search-bar"
 
 export function FindJobs({
-  hasInterview,
+  interviews,
+  onRecheck,
 }: {
-  /** undefined while unknown; the backend still refuses applications without one */
-  hasInterview?: boolean
+  /** finished interviews; undefined while unknown, and the API still decides */
+  interviews?: number
+  onRecheck: () => void
 }) {
   const { t } = useTranslation(["candidateJobs", "common"])
-  const [refused, setRefused] = useState(false)
+  // how many interviews there were when the API refused; a new one lifts it
+  const [refusedAt, setRefusedAt] = useState<number | null>(null)
+  const needsInterview =
+    interviews === 0 || (refusedAt !== null && (interviews ?? 0) <= refusedAt)
   const { search, key, update, clear, clearAll, restore } = useJobSearch()
   const saved = useSavedSearches(key)
   const { chipsOf } = useFilterChips()
@@ -165,9 +170,10 @@ export function FindJobs({
         openId={openId}
         query={search.q}
         onOpen={setOpenId}
-        needsInterview={refused || hasInterview === false}
+        needsInterview={needsInterview}
         onNeedsInterview={() => {
-          setRefused(true)
+          setRefusedAt(interviews ?? 0)
+          onRecheck()
         }}
       />
     </div>

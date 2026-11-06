@@ -12,15 +12,14 @@ export const clientMiddleware = [namespaces(["candidateJobs"])]
 
 export default function FindJobsPage() {
   const { t } = useTranslation("candidateJobs")
-  // a finished interview leaves a scorecard; if this fails, Apply stays open
-  const scorecards = useQuery(ownScorecardsQuery())
+  // stale at once, so coming back from the desktop app re-checks for a new interview
+  const scorecards = useQuery({ ...ownScorecardsQuery(), staleTime: 0 })
   return (
     <div className="flex flex-col gap-6">
       <PageHeader title={t("find.title")} description={t("find.lead")} />
       <FindJobs
-        hasInterview={
-          scorecards.isSuccess ? scorecards.data.length > 0 : undefined
-        }
+        interviews={scorecards.data?.length}
+        onRecheck={() => void scorecards.refetch()}
       />
     </div>
   )

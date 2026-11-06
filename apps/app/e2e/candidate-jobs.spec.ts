@@ -100,9 +100,16 @@ test("without a finished interview, Apply turns into the way to take one", async
   api,
   signInAs,
 }) => {
+  let attempts = 0
   await api({
-    "POST /user/v1/candidate_jobs/": (route) =>
-      reply(
+    "POST /user/v1/candidate_jobs/": async (route) => {
+      attempts++
+      // refused until the interview is done, then accepted
+      if (attempts > 1) {
+        await reply(route, { success: true, data: {} }, 201)
+        return
+      }
+      await reply(
         route,
         {
           success: false,
@@ -115,7 +122,8 @@ test("without a finished interview, Apply turns into the way to take one", async
           },
         },
         400
-      ),
+      )
+    },
   })
   await signInAs("candidate")
   await page.goto("/employee/jobs")
@@ -128,14 +136,10 @@ test("without a finished interview, Apply turns into the way to take one", async
   await expect(sheet.getByText("Take your AI interview first")).toBeVisible()
   await expect(page.getByText("didn't go through")).toHaveCount(0)
 
-  // the refusal holds for every job, so the next one doesn't offer Apply
-  await sheet.getByRole("button", { name: "Next" }).click()
-  await expect(
-    page.getByRole("dialog").getByRole("button", { name: "Apply" })
-  ).toHaveCount(0)
-  await expect(
-    page.getByRole("dialog").getByText("Take your AI interview first")
-  ).toBeVisible()
+  // the scorecard can lag behind the interview, so applying is never blocked outright
+  await sheet.getByRole("button", { name: "Already taken it? Apply" }).click()
+  await expect(sheet.getByText("Applied", { exact: true })).toBeVisible()
+  expect(attempts).toBe(2)
   await axe(page)
 })
 

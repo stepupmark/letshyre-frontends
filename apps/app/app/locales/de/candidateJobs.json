@@ -149,7 +149,8 @@
     "failed": "Ihre Bewerbung ist nicht durchgegangen. Versuchen Sie es gleich noch einmal.",
     "needsInterviewTitle": "Machen Sie zuerst Ihr KI-Interview",
     "needsInterviewBody": "Arbeitgeber sehen Ihre Bewertung, wenn Sie sich bewerben.",
-    "takeInterview": "So machen Sie das Interview"
+    "takeInterview": "So machen Sie das Interview",
+    "alreadyTaken": "Schon erledigt? Bewerben"
   },
   "timeline": {
     "label": "Bewerbungsstand",

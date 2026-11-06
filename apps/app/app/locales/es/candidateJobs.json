@@ -156,7 +156,8 @@
     "failed": "Su candidatura no se ha enviado. Inténtelo de nuevo en un momento.",
     "needsInterviewTitle": "Primero haz tu entrevista con IA",
     "needsInterviewBody": "Las empresas ven tu evaluación cuando te postulas.",
-    "takeInterview": "Cómo hacer la entrevista"
+    "takeInterview": "Cómo hacer la entrevista",
+    "alreadyTaken": "¿Ya la hiciste? Postúlate"
   },
   "timeline": {
     "label": "Progreso de la candidatura",

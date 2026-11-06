@@ -149,7 +149,8 @@
     "failed": "Your application didn't go through. Try again in a moment.",
     "needsInterviewTitle": "Take your AI interview first",
     "needsInterviewBody": "Employers see your scorecard when you apply.",
-    "takeInterview": "How to take the interview"
+    "takeInterview": "How to take the interview",
+    "alreadyTaken": "Already taken it? Apply"
   },
   "timeline": {
     "label": "Application progress",

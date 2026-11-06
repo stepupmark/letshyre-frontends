@@ -101,6 +101,10 @@ export function JobSheet({
               >
                 <InterviewFirst
                   focus={apply.isError && apply.variables === shown.id}
+                  applying={apply.isPending}
+                  onApply={() => {
+                    apply.mutate(shown.id)
+                  }}
                 />
               </m.div>
             ) : (
