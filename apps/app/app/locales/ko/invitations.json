@@ -261,11 +261,18 @@
   "result": {
     "titleSent_other": "건의 초대가 발송 중",
     "titleNone": "초대를 보내지 않았습니다",
-    "lead": "후보자마다 {{role}} 면접 링크를 받습니다. 이메일이 도착하기까지 몇 분 걸릴 수 있습니다.",
+    "leadShort": "이메일이 도착하기까지 몇 분 걸릴 수 있습니다.",
     "leadNone": "받아들여진 주소가 없습니다. 확인하고 다시 시도하세요.",
     "missedTitle_other": "{{count}}건 발송 안 됨",
     "missedBody": "이 주소들은 발송 대기열에 들어가지 않았습니다. 이미 초대를 받았거나 이메일을 받을 수 없을 수 있습니다.",
+    "retry": "이 주소로 다시 시도",
     "queuedTitle": "보낸 대상",
+    "queued": "대기 중",
+    "sentAt": "보낸 시간",
+    "nextTitle": "다음 단계",
+    "nextEmail": "후보자마다 본인 초대 링크가 담긴 이메일을 받습니다.",
+    "nextSetup": "후보자가 계정을 만들고 LetsHyre 데스크톱 앱을 설치합니다.",
+    "nextInterview": "{{role}} 직무 AI 면접을 봅니다.",
     "again": "다른 그룹에 보내기",
     "done": "초대로 돌아가기"
   }

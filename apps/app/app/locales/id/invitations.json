@@ -261,11 +261,18 @@
   "result": {
     "titleSent_other": "undangan dalam perjalanan",
     "titleNone": "Tidak ada undangan yang terkirim",
-    "lead": "Setiap kandidat mendapat tautan sendiri ke wawancara {{role}}. Email bisa butuh beberapa menit untuk sampai.",
+    "leadShort": "Email bisa butuh beberapa menit untuk sampai.",
     "leadNone": "Tidak ada alamat yang diterima. Periksa dan coba lagi.",
     "missedTitle_other": "{{count}} tidak terkirim",
     "missedBody": "Alamat ini tidak masuk antrean. Mungkin sudah punya undangan atau tidak bisa menerima email.",
+    "retry": "Coba lagi untuk ini",
     "queuedTitle": "Dikirim ke",
+    "queued": "Dalam antrean",
+    "sentAt": "Dikirim pada",
+    "nextTitle": "Selanjutnya",
+    "nextEmail": "Setiap kandidat menerima email dengan tautan undangannya sendiri.",
+    "nextSetup": "Mereka membuat akun dan memasang aplikasi desktop LetsHyre.",
+    "nextInterview": "Mereka mengikuti wawancara AI untuk posisi {{role}}.",
     "again": "Kirim kelompok lain",
     "done": "Kembali ke undangan"
   }

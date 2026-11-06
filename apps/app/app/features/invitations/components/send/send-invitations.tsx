@@ -54,21 +54,31 @@ function SendFlow({
   const send = useSendInvitations()
   const [step, setStep] = useState<string>()
   const [result, setResult] = useState<{
+    sent: Recipient[]
     queued: string[]
     missed: Recipient[]
+    at: Date
   } | null>(null)
+
+  const startOver = (recipients: Recipient[]) => {
+    setResult(null)
+    update({ recipients })
+    flow.showStep(SEND_STEP.candidates)
+  }
 
   if (result)
     return (
       <SendResult
+        sent={result.sent}
         queued={result.queued}
         missed={result.missed}
         role={plan.role.trim()}
+        templateName={template?.name ?? ""}
+        sentAt={result.at}
         onAgain={() => {
-          setResult(null)
-          update({ recipients: [] })
-          flow.showStep(SEND_STEP.candidates)
+          startOver([])
         }}
+        onRetry={startOver}
       />
     )
 
@@ -115,8 +125,10 @@ function SendFlow({
           })
           flow.clearDraft()
           setResult({
+            sent: recipients,
             queued: sent.recipients,
             missed: notQueued(recipients, sent.recipients),
+            at: new Date(),
           })
         }}
         steps={[
