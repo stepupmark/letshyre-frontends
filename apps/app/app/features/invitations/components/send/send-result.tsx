@@ -1,8 +1,15 @@
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
-import { Check, CircleAlert, RotateCcw } from "lucide-react"
+import {
+  BriefcaseBusiness,
+  Check,
+  CircleAlert,
+  Clock,
+  Mail,
+  RotateCcw,
+} from "lucide-react"
 import * as m from "motion/react-m"
-import { useEffect, useId, useRef } from "react"
+import { useEffect, useId, useRef, type ReactNode } from "react"
 import { href } from "react-router"
 
 import { AnimatedNumber } from "@/components/animated-number"
@@ -47,36 +54,23 @@ export function SendResult({
     name: names.get(email.toLowerCase()) ?? "",
   }))
   const anySent = queued.length > 0
-  const time = new Intl.DateTimeFormat(locale, { timeStyle: "short" }).format(
-    sentAt
-  )
 
   useEffect(() => {
     heading.current?.focus()
   }, [])
 
   return (
-    <div className="flex max-w-2xl flex-col gap-6">
-      <header className="flex items-start gap-4">
-        <m.span
-          aria-hidden="true"
-          initial={{ opacity: 0, scale: 0.6 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: duration.slow, ease }}
-          data-sent={anySent}
-          className="grid size-10 shrink-0 place-items-center rounded-full bg-danger-muted text-danger data-[sent=true]:bg-success-muted data-[sent=true]:text-success"
-        >
-          {anySent ? (
-            <Check className="size-5" strokeWidth={2.5} />
-          ) : (
-            <CircleAlert className="size-5" />
-          )}
-        </m.span>
+    <m.section
+      {...rise(0)}
+      className="flex max-w-2xl flex-col overflow-hidden rounded-lg border bg-card"
+    >
+      <header className="flex items-center gap-4 px-5 py-5 sm:px-6">
+        <StatusMark sent={anySent} />
         <div className="min-w-0">
           <h1
             ref={heading}
             tabIndex={-1}
-            className="text-2xl font-semibold tracking-tight text-balance outline-none"
+            className="text-xl font-semibold tracking-tight text-balance outline-none sm:text-2xl"
           >
             {anySent ? (
               <>
@@ -91,13 +85,17 @@ export function SendResult({
               t("result.titleNone")
             )}
           </h1>
-          <p className="mt-1 text-sm text-pretty text-muted-foreground">
-            {[templateName, role].filter(Boolean).join(" · ")}
-            {" · "}
-            <time dateTime={sentAt.toISOString()} className="tabular-nums">
-              {time}
-            </time>
-          </p>
+          <ul className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
+            <MetaItem icon={Mail}>{templateName}</MetaItem>
+            {role && <MetaItem icon={BriefcaseBusiness}>{role}</MetaItem>}
+            <MetaItem icon={Clock}>
+              <time dateTime={sentAt.toISOString()} className="tabular-nums">
+                {new Intl.DateTimeFormat(locale, { timeStyle: "short" }).format(
+                  sentAt
+                )}
+              </time>
+            </MetaItem>
+          </ul>
         </div>
       </header>
 
@@ -111,12 +109,12 @@ export function SendResult({
       )}
       {people.length > 0 && <Queued people={people} />}
 
-      <div className="flex flex-col-reverse gap-2 sm:flex-row">
+      <footer className="flex flex-col-reverse gap-2 border-t bg-muted/30 px-5 py-3 sm:flex-row sm:justify-end sm:px-6">
         <AppLink
           to={href("/employer/invitations")}
           className={buttonLink({
             variant: "outline",
-            className: "max-md:h-11",
+            className: "bg-background max-md:h-11",
           })}
         >
           {t("result.done")}
@@ -124,8 +122,57 @@ export function SendResult({
         <Button className="max-md:h-11" onClick={onAgain}>
           {t("result.again")}
         </Button>
-      </div>
-    </div>
+      </footer>
+    </m.section>
+  )
+}
+
+function StatusMark({ sent }: { sent: boolean }) {
+  return (
+    <m.span
+      aria-hidden="true"
+      initial={{ opacity: 0, scale: 0.6 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: duration.slow, ease }}
+      data-sent={sent}
+      className="grid size-11 shrink-0 place-items-center rounded-full bg-danger-muted text-danger ring-4 ring-danger-muted/40 data-[sent=true]:bg-success-muted data-[sent=true]:text-success data-[sent=true]:ring-success-muted/40"
+    >
+      {sent ? (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2.5}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="size-5"
+        >
+          <m.path
+            d="M5 12.5l4.5 4.5L19 7.5"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: duration.slow, ease, delay: 0.15 }}
+          />
+        </svg>
+      ) : (
+        <CircleAlert className="size-5" />
+      )}
+    </m.span>
+  )
+}
+
+function MetaItem({
+  icon: Icon,
+  children,
+}: {
+  icon: typeof Mail
+  children: ReactNode
+}) {
+  return (
+    <li className="flex min-w-0 items-center gap-1.5">
+      <Icon aria-hidden="true" className="size-3.5 shrink-0" />
+      <span className="truncate">{children}</span>
+    </li>
   )
 }
 
@@ -133,16 +180,16 @@ function Queued({ people }: { people: Recipient[] }) {
   const { t } = useTranslation("invitations")
   const id = useId()
   return (
-    <section aria-labelledby={id}>
+    <section aria-labelledby={id} className="border-t">
       <h2 id={id} className="sr-only">
         {t("result.queuedTitle")}
       </h2>
-      <ul className="flex max-h-96 flex-col divide-y overflow-y-auto rounded-lg border">
+      <ul className="flex max-h-96 flex-col divide-y overflow-y-auto">
         {people.map((person, i) => (
           <m.li
             key={person.email}
             {...rise(0.15 + Math.min(i, 6) * 0.03)}
-            className="flex items-center gap-3 px-4 py-2.5"
+            className="flex items-center gap-3 px-5 py-3 sm:px-6"
           >
             <Monogram name={person.name || person.email} />
             <span className="flex min-w-0 flex-1 flex-col">
@@ -158,11 +205,12 @@ function Queued({ people }: { people: Recipient[] }) {
                 {person.email}
               </span>
             </span>
-            <Check
+            <span
               aria-hidden="true"
-              className="pop size-4 shrink-0 text-success"
-              strokeWidth={2.5}
-            />
+              className="grid size-6 shrink-0 place-items-center rounded-full bg-success-muted text-success"
+            >
+              <Check className="pop size-3.5" strokeWidth={3} />
+            </span>
           </m.li>
         ))}
       </ul>
@@ -183,7 +231,7 @@ function Missed({
     <m.section
       {...rise(0.1)}
       aria-labelledby={id}
-      className="flex flex-col gap-3 rounded-lg border p-4"
+      className="flex flex-col gap-3 border-t bg-danger-muted/30 px-5 py-4 sm:px-6"
     >
       <div className="flex items-center justify-between gap-3">
         <div className="min-w-0">
@@ -201,7 +249,7 @@ function Missed({
         <Button
           variant="outline"
           size="sm"
-          className="shrink-0 max-md:h-11"
+          className="shrink-0 bg-background max-md:h-11"
           onClick={onRetry}
         >
           <RotateCcw />
@@ -213,7 +261,7 @@ function Missed({
           <li key={recipient.email} className="flex items-center gap-3">
             <Monogram
               name={recipient.name || recipient.email}
-              className="bg-danger-muted text-danger"
+              className="bg-background text-danger ring-1 ring-danger/20"
             />
             <span className="flex min-w-0 flex-col">
               <span className="truncate text-sm font-medium">
