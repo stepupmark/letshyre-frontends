@@ -19,7 +19,7 @@ export function Hero() {
 
   return (
     <ScrollScene screens={1.6} pinFrom="lg" aria-labelledby={titleId}>
-      <div className="mx-auto grid size-full max-w-6xl items-center gap-12 px-4 pt-12 pb-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:pt-16 lg:pb-0">
+      <div className="mx-auto grid size-full max-w-6xl items-center gap-12 px-4 pt-8 pb-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:pt-0 lg:pb-8">
         <div className="max-lg:text-center">
           <p className="text-sm font-semibold text-brand-text">
             {t("hero.eyebrow")}
