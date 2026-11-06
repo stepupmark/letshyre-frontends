@@ -51,7 +51,7 @@ export function ReleaseCard({
       aria-labelledby={titleId}
       data-os={os}
       data-recommended={recommended || undefined}
-      className="group/release flex-col gap-5 p-5 transition-[box-shadow,translate] duration-300 outline-none hover:-translate-y-0.5 hover:shadow-lg hover:shadow-foreground/5 data-recommended:ring-2 data-recommended:ring-brand motion-reduce:transition-none sm:flex-row sm:items-center sm:gap-6 sm:p-6"
+      className="group/release flex-col gap-5 p-5 transition-transform duration-200 outline-none hover:-translate-y-0.5 data-recommended:ring-2 data-recommended:ring-brand motion-reduce:transition-none sm:flex-row sm:items-center sm:gap-6 sm:p-6"
     >
       <Device os={os} ready={ready !== null} />
       <div className="flex min-w-0 flex-1 flex-col gap-1">

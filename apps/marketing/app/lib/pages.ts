@@ -1,4 +1,4 @@
-// Pure data: imported by react-router.config.ts and lh-i18n, so no Vite-only imports here.
+// Node loads this through react-router.config.ts, so no Vite-only imports.
 
 export interface PageDef {
   path: string

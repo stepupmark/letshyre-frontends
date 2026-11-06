@@ -4,18 +4,21 @@ import { useEffect, useState } from "react"
 import { priceStatus, SLOW_AFTER_MS } from "../lib/price-status"
 
 export function usePriceStatus(query: UseQueryResult) {
-  const [slow, setSlow] = useState(false)
+  const [slowAt, setSlowAt] = useState<number | null>(null)
   const waiting = query.isPending && query.fetchStatus === "fetching"
+  // each failure starts a new wait, so a retry gets its own grace period
+  const attempt = query.errorUpdateCount
+  const slow = waiting && slowAt === attempt
 
   useEffect(() => {
     if (!waiting) return
     const timer = setTimeout(() => {
-      setSlow(true)
+      setSlowAt(attempt)
     }, SLOW_AFTER_MS)
     return () => {
       clearTimeout(timer)
     }
-  }, [waiting])
+  }, [waiting, attempt])
 
   return {
     status: priceStatus({
