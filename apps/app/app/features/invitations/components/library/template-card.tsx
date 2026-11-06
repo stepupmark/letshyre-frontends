@@ -40,7 +40,7 @@ export function TemplateCard({
       </AppLink>
       <div className="flex flex-1 flex-col gap-2 p-4">
         <div className="flex items-start gap-2">
-          <h3 className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-1">
+          <h2 className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-1">
             <AppLink
               to={editorPath(template.id)}
               className="truncate rounded-sm font-medium outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50"
@@ -50,18 +50,18 @@ export function TemplateCard({
             {inactive && (
               <StatusBadge tone="neutral">{t("library.inactive")}</StatusBadge>
             )}
-          </h3>
+          </h2>
           {menu}
         </div>
         <p className="line-clamp-2 text-sm text-pretty text-muted-foreground">
           <span className="sr-only">{t("library.subject")} </span>
           <TokenText text={template.subject_template} />
         </p>
-        <p className="mt-auto pt-1 text-xs text-muted-foreground">
-          {template.is_system
-            ? t("library.byLetshyre")
-            : edited && t("library.editedOn", { date: edited })}
-        </p>
+        {!template.is_system && edited && (
+          <p className="mt-auto pt-1 text-xs text-muted-foreground">
+            {t("library.editedOn", { date: edited })}
+          </p>
+        )}
       </div>
       <div className="grid grid-cols-2 gap-2 px-4 pb-4">
         {secondary ?? (

@@ -1,6 +1,5 @@
 {
   "title": "Einladungen",
-  "lead": "Senden Sie Kandidaten per E-Mail einen Link zu ihrem KI-Interview – in der Sprache Ihres Unternehmens.",
   "fields": {
     "candidate_name": "Name des Kandidaten",
     "job_role": "Stelle",
@@ -9,9 +8,7 @@
     "invite_link": "Einladungslink"
   },
   "library": {
-    "startersLead": "Von LetsHyre verfasst. Erstellen Sie eine Kopie, um den Text zu ändern.",
     "starter": "Start",
-    "byLetshyre": "Von LetsHyre",
     "subject": "Betreff:",
     "copy": "Kopie erstellen",
     "edit": "Bearbeiten",
@@ -19,9 +16,7 @@
     "delete": "Löschen",
     "actions": "Aktionen für {{name}}",
     "emptyTitle": "Noch keine eigenen Vorlagen",
-    "emptyBody": "Kopieren Sie eine Startvorlage und passen Sie Text und Grußformel an Ihr Team an.",
     "errorTitle": "Ihre Vorlagen wurden nicht geladen.",
-    "errorBody": "Es wurde nichts gesendet oder geändert. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
     "tabs": {
       "label": "Vorlagengruppen",
       "yours": "Ihre Vorlagen",
@@ -30,11 +25,12 @@
     "inactive": "Inaktiv",
     "editedOn": "Bearbeitet am {{date}}",
     "sendOne": "Senden",
-    "emptyAction": "LetsHyre-Vorlagen ansehen"
+    "emptyAction": "LetsHyre-Vorlagen ansehen",
+    "emptyHint": "Kopieren Sie eine Vorlage, um Ihre eigene zu erstellen.",
+    "errorRetry": "Prüfen Sie Ihre Verbindung und versuchen Sie es erneut."
   },
   "copy": {
     "title": "Kopie erstellen",
-    "lead": "Ihre Kopie übernimmt den Text von „{{name}}“. Nur Ihr Unternehmen sieht sie.",
     "name": "Name der Vorlage",
     "suffix": "(Kopie)",
     "nameError": "Geben Sie einen Namen mit bis zu {{max}} Zeichen ein.",
@@ -43,8 +39,8 @@
   },
   "delete": {
     "title": "„{{name}}“ löschen?",
-    "body": "Die Vorlage wird für Ihr ganzes Team entfernt. Bereits gesendete Einladungen bleiben unberührt. Das lässt sich nicht rückgängig machen.",
-    "confirm": "Vorlage löschen"
+    "confirm": "Vorlage löschen",
+    "note": "Wird für Ihr ganzes Team entfernt. Gesendete Einladungen bleiben unberührt."
   },
   "toast": {
     "copied": "„{{name}}“ ist bereit zum Bearbeiten",
@@ -56,22 +52,15 @@
     "sendFailed": "Es wurde nichts gesendet. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut."
   },
   "editor": {
-    "lead": "Änderungen gelten für Einladungen, die Sie nach dem Speichern senden.",
-    "starterLead": "Eine Startvorlage von LetsHyre.",
     "name": "Name der Vorlage",
     "subject": "Betreff",
     "subjectPlaceholder": "Was Kandidaten im Posteingang sehen",
     "body": "Nachricht",
     "bodyPlaceholder": "Schreiben Sie Ihre Einladung. Tippen Sie {{, um ein Feld wie den Namen des Kandidaten einzufügen.",
-    "bodyHint": "Felder werden beim Senden für jeden Kandidaten ausgefüllt.",
     "editButton": "Schaltfläche bearbeiten",
     "save": "Änderungen speichern",
     "saving": "Wird gespeichert…",
     "copyToEdit": "Kopie zum Bearbeiten erstellen",
-    "readOnlyTitle": "Startvorlagen lassen sich nicht ändern",
-    "readOnlyBody": "Erstellen Sie eine Kopie – dann können Sie sie umformulieren, umbenennen und senden.",
-    "fidelityTitle": "Manche Formatierung lässt sich hier nicht bearbeiten",
-    "fidelityBody": "Diese Vorlage nutzt ein Layout, das der Editor nicht unterstützt. Die Nachricht ist daher gesperrt, damit nichts verloren geht. Name und Betreff können Sie weiterhin ändern. Beim Umwandeln bleibt der Text erhalten, das Layout wird vereinfacht.",
     "fidelityConvert": "Umwandeln und bearbeiten",
     "missingTitle": "Diese Vorlage gibt es nicht mehr",
     "missingBody": "Möglicherweise hat jemand aus Ihrem Team sie gelöscht.",
@@ -79,11 +68,7 @@
     "unsaved": "Ungespeicherte Änderungen",
     "saved": "Alle Änderungen gespeichert",
     "preview": "Vorschau",
-    "previewCard": "Als Kandidat ansehen",
-    "previewCardBody": "Öffnen Sie die E-Mail mit Ihren ungespeicherten Änderungen.",
-    "tipsTitle": "Schreibtipps",
-    "tipField": "fügt ein Feld wie den Namen des Kandidaten ein.",
-    "tipLink": "verlinkt den markierten Text."
+    "fidelityNote": "Dieses Layout lässt sich hier nicht bearbeiten. Beim Umwandeln bleibt der Text, das Layout wird vereinfacht."
   },
   "errors": {
     "name": "Geben Sie einen Namen mit bis zu 120 Zeichen ein.",
@@ -167,25 +152,14 @@
     "sheetLead": "Die E-Mail, die ein Kandidat erhält, mit Ihren ungespeicherten Änderungen. Ändern Sie das Beispiel, um sie für jemand anderen zu sehen."
   },
   "ready": {
-    "title": "Bereit zum Senden",
-    "count": "{{done}} von {{total}}",
-    "subject": "Hat eine Betreffzeile",
-    "invite": "Enthält den Einladungslink",
-    "name": "Spricht den Kandidaten mit Namen an",
-    "role": "Nennt die Stelle",
-    "known": "Nutzt nur Felder, die LetsHyre ausfüllt",
     "unknown": "Unbekannte Felder: {{fields}}",
-    "state": {
-      "done": "Erledigt:",
-      "todo": "Empfohlen:",
-      "problem": "Zu beheben:"
-    }
+    "needSubject": "Betreff hinzufügen",
+    "needInvite": "Einladungslink hinzufügen"
   },
   "draft": {
-    "title": "Sie haben noch ungespeicherte Änderungen",
-    "body": "Sie wurden auf diesem Gerät behalten, als Sie die Seite verlassen haben. Stellen Sie sie wieder her, um weiterzuarbeiten, oder verwerfen Sie sie.",
     "restore": "Änderungen wiederherstellen",
-    "discard": "Verwerfen"
+    "discard": "Verwerfen",
+    "prompt": "Ungespeicherte Änderungen wiederherstellen?"
   },
   "leave": {
     "title": "Ohne Speichern verlassen?",
@@ -194,38 +168,18 @@
   },
   "send": {
     "title": "Einladungen senden",
-    "lead": "Wählen Sie eine Vorlage, fügen Sie Kandidaten hinzu und prüfen Sie die E-Mail vor dem Versand.",
     "steps": {
       "template": "Vorlage",
       "candidates": "Kandidaten",
       "review": "Prüfen"
     },
     "templateLabel": "Zu sendende Vorlage",
-    "templateHeading": "Wählen Sie die E-Mail",
-    "templateLead": "Jede Person erhält sie mit ihrem eigenen Namen und Einladungslink.",
-    "candidatesHeading": "Wer bekommt sie?",
-    "candidatesLead": "Geben Sie die Rolle an, für die interviewt wird, und fügen Sie dann die Adressen ein oder importieren Sie sie.",
-    "reviewHeading": "Jede E-Mail prüfen",
-    "reviewLead": "Wählen Sie eine Person, um genau die E-Mail zu sehen, die sie erhält.",
     "search": "Vorlagen durchsuchen",
     "noMatch": "Keine Vorlage passt zu „{{query}}“.",
-    "blocked": {
-      "inactive": "Inaktive Vorlagen können nicht gesendet werden.",
-      "notReady": "Noch nicht bereit: Prüfen Sie Betreff, Einladungslink und Felder.",
-      "open": "Im Editor öffnen"
-    },
     "change": "Ändern",
-    "summaryTitle": "Diese Einladung",
-    "notChosen": "Noch nicht gewählt",
-    "notSet": "Noch nicht festgelegt",
-    "noCandidates": "Noch niemand hinzugefügt",
-    "previewEmpty": "Wählen Sie eine Vorlage, um die E-Mail hier zu sehen.",
     "role": "Stelle",
-    "roleHint": "Füllt das Feld Stelle aus und sagt Kandidaten, welche Rolle sie in der App wählen.",
-    "openJobs": "Offene Stellen",
     "paste": "Kandidaten hinzufügen",
     "pastePlaceholder": "Jane Doe <jane@example.com>\njohn@example.com, John Smith",
-    "pasteHint": "Fügen Sie Adressen ein, eine pro Zeile oder durch Kommas getrennt, und drücken Sie Enter. Namen stammen aus der Zeile oder der Adresse.",
     "add": "Zur Liste hinzufügen",
     "import": "Datei importieren",
     "dropHere": "Datei hier ablegen, um sie zu importieren",
@@ -234,13 +188,8 @@
     "fileUnreadable": "Die Datei konnte nicht gelesen werden. Speichern Sie sie als CSV und versuchen Sie es erneut.",
     "reportAdded_one": "{{count}} hinzugefügt",
     "reportAdded_other": "{{count}} hinzugefügt",
-    "reportDuplicates_one": "{{count}} bereits in der Liste",
-    "reportDuplicates_other": "{{count}} bereits in der Liste",
-    "reportInvalid_one": "{{count}} Zeile war nicht lesbar und bleibt im Feld",
-    "reportInvalid_other": "{{count}} Zeilen waren nicht lesbar und bleiben im Feld",
     "clear": "Liste leeren",
     "cleared": "Liste geleert",
-    "listEmpty": "Noch keine Kandidaten. Fügen Sie Adressen ein oder laden Sie eine CSV hoch – sie erscheinen hier zur Prüfung vor dem Versand.",
     "overLimit": "Senden Sie an höchstens {{max}} Kandidaten auf einmal.",
     "nameFor": "Name für {{email}}",
     "namePlaceholder": "Namen hinzufügen",
@@ -250,8 +199,6 @@
     "prevCandidate": "Vorherige Person",
     "nextCandidate": "Nächste Person",
     "position": "{{current}} von {{total}}",
-    "highlight": "Personalisierte Stellen hervorheben",
-    "localPreview": "Die Live-Vorschau wurde nicht geladen, daher wird sie hier gezeichnet. Firmenname, Ihr Name und der Einladungslink jedes Kandidaten werden beim Versand eingesetzt.",
     "submit_one": "{{count}} Einladung senden",
     "submit_other": "{{count}} Einladungen senden",
     "sending": "Wird gesendet…",
@@ -260,26 +207,27 @@
       "none": "Fügen Sie mindestens einen Kandidaten hinzu.",
       "names": "Geben Sie jedem Kandidaten einen Namen; damit wird er begrüßt.",
       "role": "Geben Sie die Stelle ein, für die das Interview ist."
-    }
+    },
+    "listNone": "Noch keine Personen.",
+    "sampleNote": "Die Vorschau nutzt Beispieldaten des Unternehmens.",
+    "highlightFields": "Felder hervorheben",
+    "notReady": "Nicht bereit",
+    "fix": "Beheben",
+    "reportRepeat_one": "{{count}} doppelt",
+    "reportRepeat_other": "{{count}} doppelt",
+    "reportUnread_one": "{{count}} ungültig",
+    "reportUnread_other": "{{count}} ungültig"
   },
   "result": {
     "titleSent_one": "Einladung unterwegs",
     "titleSent_other": "Einladungen unterwegs",
     "titleNone": "Es wurden keine Einladungen gesendet",
-    "leadShort": "E-Mails können einige Minuten brauchen.",
-    "leadNone": "Keine der Adressen wurde angenommen. Prüfen Sie sie und versuchen Sie es erneut.",
     "missedTitle_one": "{{count}} nicht gesendet",
     "missedTitle_other": "{{count}} nicht gesendet",
-    "missedBody": "Diese Adressen wurden nicht eingereiht. Vielleicht haben sie schon eine Einladung oder können keine E-Mails empfangen.",
-    "retry": "Diese erneut versuchen",
     "queuedTitle": "Gesendet an",
-    "queued": "In Warteschlange",
-    "sentAt": "Gesendet am",
-    "nextTitle": "So geht es weiter",
-    "nextEmail": "Jede Person erhält die E-Mail mit ihrem eigenen Einladungslink.",
-    "nextSetup": "Sie erstellt ein Konto und installiert die LetsHyre-Desktop-App.",
-    "nextInterview": "Sie führt das KI-Interview für die Rolle {{role}} durch.",
     "again": "Weitere senden",
-    "done": "Zurück zu den Einladungen"
+    "done": "Zurück zu den Einladungen",
+    "missedNote": "Bereits eingeladen oder kein E-Mail-Empfang möglich.",
+    "tryAgain": "Erneut versuchen"
   }
 }

@@ -193,13 +193,13 @@ export function ReviewStep({
                   setMark(checked)
                 }}
               />
-              {t("send.highlight")}
+              {t("send.highlightFields")}
             </label>
           </div>
           {preview.local && (
             <p className="flex items-start gap-1.5 text-xs text-pretty text-muted-foreground">
               <Info aria-hidden="true" className="mt-px size-3.5 shrink-0" />
-              {t("send.localPreview")}
+              {t("send.sampleNote")}
             </p>
           )}
         </header>

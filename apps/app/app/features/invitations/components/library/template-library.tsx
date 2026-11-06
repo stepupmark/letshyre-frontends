@@ -54,7 +54,6 @@ export function TemplateLibrary() {
     <div className="flex flex-col gap-6">
       <PageHeader
         title={t("title")}
-        description={t("lead")}
         actions={
           <AppLink
             to={href("/employer/invitations/send")}
@@ -69,7 +68,10 @@ export function TemplateLibrary() {
       <QueryState
         query={templates}
         skeleton={<LibrarySkeleton />}
-        error={{ title: t("library.errorTitle"), body: t("library.errorBody") }}
+        error={{
+          title: t("library.errorTitle"),
+          body: t("library.errorRetry"),
+        }}
       >
         {(list) => (
           <>
@@ -105,7 +107,7 @@ export function TemplateLibrary() {
           if (!open) setDeleting(null)
         }}
         title={t("delete.title", { name: deleting?.name ?? "" })}
-        description={t("delete.body")}
+        description={t("delete.note")}
         confirmLabel={t("delete.confirm")}
         destructive
         pending={remove.isPending}
@@ -198,7 +200,7 @@ function LibraryTabs({
             <EmptyState
               art={<EnvelopeArt />}
               title={t("library.emptyTitle")}
-              description={t("library.emptyBody")}
+              description={t("library.emptyHint")}
               action={
                 <Button
                   onClick={() => {
@@ -247,9 +249,6 @@ function LibraryTabs({
 
       <TabsContent value={LETSHYRE}>
         <Panel>
-          <p className="mb-4 text-sm text-pretty text-muted-foreground">
-            {t("library.startersLead")}
-          </p>
           <CardGrid>
             {starters.map((template) => (
               <CardItem key={template.id}>

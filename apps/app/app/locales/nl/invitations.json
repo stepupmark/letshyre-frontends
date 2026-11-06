@@ -1,6 +1,5 @@
 {
   "title": "Uitnodigingen",
-  "lead": "Mail kandidaten een link naar hun AI-interview, in de toon van je bedrijf.",
   "fields": {
     "candidate_name": "Naam kandidaat",
     "job_role": "Functie",
@@ -9,9 +8,7 @@
     "invite_link": "Uitnodigingslink"
   },
   "library": {
-    "startersLead": "Geschreven door LetsHyre. Maak een kopie om de tekst te wijzigen.",
     "starter": "Start",
-    "byLetshyre": "Van LetsHyre",
     "subject": "Onderwerp:",
     "copy": "Kopie maken",
     "edit": "Bewerken",
@@ -19,9 +16,7 @@
     "delete": "Verwijderen",
     "actions": "Acties voor {{name}}",
     "emptyTitle": "Nog geen eigen sjablonen",
-    "emptyBody": "Kopieer een startsjabloon en pas de tekst en afsluiting aan je team aan.",
     "errorTitle": "Je sjablonen zijn niet geladen.",
-    "errorBody": "Er is niets verzonden of gewijzigd. Controleer je verbinding en probeer het opnieuw.",
     "tabs": {
       "label": "Sjabloongroepen",
       "yours": "Je sjablonen",
@@ -30,11 +25,12 @@
     "inactive": "Inactief",
     "editedOn": "Bewerkt op {{date}}",
     "sendOne": "Versturen",
-    "emptyAction": "LetsHyre-sjablonen bekijken"
+    "emptyAction": "LetsHyre-sjablonen bekijken",
+    "emptyHint": "Kopieer een sjabloon om je eigen te maken.",
+    "errorRetry": "Controleer je verbinding en probeer het opnieuw."
   },
   "copy": {
     "title": "Kopie maken",
-    "lead": "Je kopie begint met de tekst van ‘{{name}}’. Alleen je bedrijf ziet hem.",
     "name": "Naam sjabloon",
     "suffix": "(kopie)",
     "nameError": "Geef een naam van maximaal {{max}} tekens.",
@@ -43,8 +39,8 @@
   },
   "delete": {
     "title": "‘{{name}}’ verwijderen?",
-    "body": "Het sjabloon verdwijnt voor je hele team. Verzonden uitnodigingen blijven ongewijzigd. Dit kan niet ongedaan worden gemaakt.",
-    "confirm": "Sjabloon verwijderen"
+    "confirm": "Sjabloon verwijderen",
+    "note": "Verwijderd voor je hele team. Verstuurde uitnodigingen blijven staan."
   },
   "toast": {
     "copied": "‘{{name}}’ staat klaar om te bewerken",
@@ -56,22 +52,15 @@
     "sendFailed": "Er is niets verzonden. Controleer je verbinding en probeer het opnieuw."
   },
   "editor": {
-    "lead": "Wijzigingen gelden voor uitnodigingen die je na het opslaan verstuurt.",
-    "starterLead": "Een startsjabloon van LetsHyre.",
     "name": "Naam sjabloon",
     "subject": "Onderwerp",
     "subjectPlaceholder": "Wat kandidaten in hun inbox zien",
     "body": "Bericht",
     "bodyPlaceholder": "Schrijf je uitnodiging. Typ {{ om een veld zoals de naam van de kandidaat in te voegen.",
-    "bodyHint": "Velden worden bij het versturen per kandidaat ingevuld.",
     "editButton": "Knop bewerken",
     "save": "Wijzigingen opslaan",
     "saving": "Opslaan…",
     "copyToEdit": "Kopie maken om te bewerken",
-    "readOnlyTitle": "Startsjablonen kun je niet wijzigen",
-    "readOnlyBody": "Maak een kopie, dan kun je hem herschrijven, hernoemen en versturen.",
-    "fidelityTitle": "Sommige opmaak kun je hier niet bewerken",
-    "fidelityBody": "Dit sjabloon gebruikt een opmaak die de editor niet ondersteunt, dus het bericht is vergrendeld zodat het intact blijft. Naam en onderwerp kun je nog wijzigen. Bij omzetten blijft de tekst behouden, maar wordt die opmaak vereenvoudigd.",
     "fidelityConvert": "Omzetten en bewerken",
     "missingTitle": "Dit sjabloon bestaat niet meer",
     "missingBody": "Misschien heeft iemand uit je team het verwijderd.",
@@ -79,11 +68,7 @@
     "unsaved": "Niet-opgeslagen wijzigingen",
     "saved": "Alle wijzigingen opgeslagen",
     "preview": "Voorbeeld",
-    "previewCard": "Bekijk als kandidaat",
-    "previewCardBody": "Open de e-mail met je niet-opgeslagen wijzigingen.",
-    "tipsTitle": "Schrijftips",
-    "tipField": "voegt een veld zoals de naam van de kandidaat in.",
-    "tipLink": "koppelt de geselecteerde tekst."
+    "fidelityNote": "Deze opmaak kan hier niet worden bewerkt. Omzetten houdt de tekst maar vereenvoudigt de opmaak."
   },
   "errors": {
     "name": "Geef een naam van maximaal 120 tekens.",
@@ -167,25 +152,14 @@
     "sheetLead": "De e-mail die een kandidaat krijgt, met je niet-opgeslagen wijzigingen. Wijzig het voorbeeld om hem voor iemand anders te zien."
   },
   "ready": {
-    "title": "Klaar om te versturen",
-    "count": "{{done}} van {{total}}",
-    "subject": "Heeft een onderwerpregel",
-    "invite": "Bevat de uitnodigingslink",
-    "name": "Spreekt de kandidaat aan met naam",
-    "role": "Noemt de functie",
-    "known": "Gebruikt alleen velden die LetsHyre invult",
     "unknown": "Onbekende velden: {{fields}}",
-    "state": {
-      "done": "Klaar:",
-      "todo": "Aanbevolen:",
-      "problem": "Oplossen:"
-    }
+    "needSubject": "Voeg een onderwerp toe",
+    "needInvite": "Voeg de uitnodigingslink toe"
   },
   "draft": {
-    "title": "Je hebt nog niet-opgeslagen wijzigingen",
-    "body": "Ze zijn op dit apparaat bewaard toen je de pagina verliet. Herstel ze om verder te gaan, of verwijder ze.",
     "restore": "Wijzigingen herstellen",
-    "discard": "Verwijderen"
+    "discard": "Verwijderen",
+    "prompt": "Niet-opgeslagen wijzigingen herstellen?"
   },
   "leave": {
     "title": "Weggaan zonder op te slaan?",
@@ -194,38 +168,18 @@
   },
   "send": {
     "title": "Uitnodigingen versturen",
-    "lead": "Kies een sjabloon, voeg kandidaten toe en controleer de e-mail voor verzending.",
     "steps": {
       "template": "Sjabloon",
       "candidates": "Kandidaten",
       "review": "Controleren"
     },
     "templateLabel": "Te versturen sjabloon",
-    "templateHeading": "Kies de e-mail",
-    "templateLead": "Elke kandidaat krijgt hem met de eigen naam en uitnodigingslink.",
-    "candidatesHeading": "Wie krijgt hem?",
-    "candidatesLead": "Vul de functie van het gesprek in en plak of importeer daarna de adressen.",
-    "reviewHeading": "Controleer elke e-mail",
-    "reviewLead": "Kies een kandidaat om precies de e-mail te zien die hij krijgt.",
     "search": "Sjablonen zoeken",
     "noMatch": "Geen sjabloon past bij ‘{{query}}’.",
-    "blocked": {
-      "inactive": "Inactieve sjablonen kunnen niet worden verstuurd.",
-      "notReady": "Nog niet klaar: controleer het onderwerp, de uitnodigingslink en de velden.",
-      "open": "Openen in editor"
-    },
     "change": "Wijzigen",
-    "summaryTitle": "Deze uitnodiging",
-    "notChosen": "Nog niet gekozen",
-    "notSet": "Nog niet ingevuld",
-    "noCandidates": "Nog niemand toegevoegd",
-    "previewEmpty": "Kies een sjabloon om de e-mail hier te zien.",
     "role": "Functie",
-    "roleHint": "Vult het veld functie in en vertelt kandidaten welke rol ze in de app kiezen.",
-    "openJobs": "Open vacatures",
     "paste": "Kandidaten toevoegen",
     "pastePlaceholder": "Jane Doe <jane@example.com>\njohn@example.com, John Smith",
-    "pasteHint": "Plak adressen, één per regel of gescheiden door komma's, en druk op Enter. Namen komen uit de regel of het adres.",
     "add": "Aan lijst toevoegen",
     "import": "Bestand importeren",
     "dropHere": "Zet het bestand neer om het te importeren",
@@ -234,13 +188,8 @@
     "fileUnreadable": "Het bestand kon niet worden gelezen. Sla het op als CSV en probeer het opnieuw.",
     "reportAdded_one": "{{count}} toegevoegd",
     "reportAdded_other": "{{count}} toegevoegd",
-    "reportDuplicates_one": "{{count}} stond al in de lijst",
-    "reportDuplicates_other": "{{count}} stonden al in de lijst",
-    "reportInvalid_one": "{{count}} regel was onleesbaar en blijft in het vak",
-    "reportInvalid_other": "{{count}} regels waren onleesbaar en blijven in het vak",
     "clear": "Lijst leegmaken",
     "cleared": "Lijst gewist",
-    "listEmpty": "Nog geen kandidaten. Plak adressen of upload een CSV; ze verschijnen hier zodat je ze voor verzending kunt controleren.",
     "overLimit": "Verstuur naar maximaal {{max}} kandidaten tegelijk.",
     "nameFor": "Naam voor {{email}}",
     "namePlaceholder": "Naam toevoegen",
@@ -250,8 +199,6 @@
     "prevCandidate": "Vorige kandidaat",
     "nextCandidate": "Volgende kandidaat",
     "position": "{{current}} van {{total}}",
-    "highlight": "Persoonlijke delen markeren",
-    "localPreview": "Het live voorbeeld is niet geladen, dus het wordt hier getekend. Bedrijfsnaam, je naam en de link van elke kandidaat worden bij verzending ingevuld.",
     "submit_one": "{{count}} uitnodiging versturen",
     "submit_other": "{{count}} uitnodigingen versturen",
     "sending": "Versturen…",
@@ -260,26 +207,27 @@
       "none": "Voeg minstens één kandidaat toe.",
       "names": "Geef elke kandidaat een naam; die wordt in de aanhef gebruikt.",
       "role": "Vul de functie van het interview in."
-    }
+    },
+    "listNone": "Nog geen kandidaten.",
+    "sampleNote": "De voorbeeldweergave gebruikt voorbeeldgegevens van het bedrijf.",
+    "highlightFields": "Velden markeren",
+    "notReady": "Niet klaar",
+    "fix": "Oplossen",
+    "reportRepeat_one": "{{count}} dubbel",
+    "reportRepeat_other": "{{count}} dubbel",
+    "reportUnread_one": "{{count}} ongeldig",
+    "reportUnread_other": "{{count}} ongeldig"
   },
   "result": {
     "titleSent_one": "uitnodiging onderweg",
     "titleSent_other": "uitnodigingen onderweg",
     "titleNone": "Er zijn geen uitnodigingen verzonden",
-    "leadShort": "E-mails kunnen een paar minuten onderweg zijn.",
-    "leadNone": "Geen van de adressen is geaccepteerd. Controleer ze en probeer het opnieuw.",
     "missedTitle_one": "{{count}} niet verzonden",
     "missedTitle_other": "{{count}} niet verzonden",
-    "missedBody": "Deze adressen zijn niet in de wachtrij gezet. Misschien hebben ze al een uitnodiging of kunnen ze geen e-mail ontvangen.",
-    "retry": "Deze opnieuw proberen",
     "queuedTitle": "Verzonden naar",
-    "queued": "In de wachtrij",
-    "sentAt": "Verstuurd op",
-    "nextTitle": "Wat er nu gebeurt",
-    "nextEmail": "Elke kandidaat krijgt de e-mail met een eigen uitnodigingslink.",
-    "nextSetup": "Ze maken een account aan en installeren de LetsHyre-desktopapp.",
-    "nextInterview": "Ze doen het AI-gesprek voor de functie {{role}}.",
     "again": "Nog een groep versturen",
-    "done": "Terug naar uitnodigingen"
+    "done": "Terug naar uitnodigingen",
+    "missedNote": "Al uitgenodigd of kan geen e-mail ontvangen.",
+    "tryAgain": "Opnieuw proberen"
   }
 }

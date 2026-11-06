@@ -10,10 +10,7 @@ import { Stepper } from "./stepper"
 
 export interface WizardStep {
   id: string
-  /** Stepper label, and the heading unless `heading` is set. */
   title: string
-  heading?: string
-  description?: ReactNode
   content: ReactNode
   /** Shown beside the content from `lg` up, in a `wide` wizard. */
   aside?: ReactNode
@@ -34,6 +31,7 @@ export function Wizard({
   onStepChange,
   finishLabel,
   wide = false,
+  hideHeadings = false,
 }: {
   steps: WizardStep[]
   /** Throw to stay on the last step; the caller reports what failed. */
@@ -43,6 +41,8 @@ export function Wizard({
   finishLabel?: ReactNode
   /** content uses the page width; the stepper stays form width */
   wide?: boolean
+  /** the stepper already names the step; the heading stays for screen readers and focus */
+  hideHeadings?: boolean
 }) {
   const { t } = useTranslation("common")
   const dir = dirFor(useLocale())
@@ -135,26 +135,22 @@ export function Wizard({
         <div className="min-w-0">
           <StepTransition step={step.id} direction={direction} dir={dir}>
             <div className="flex flex-col gap-6">
-              <div>
-                <h2
-                  // the new step mounts after the old one animates out; focus it once per step
-                  ref={(el) => {
-                    if (!el || !moved.current || focused.current === step.id)
-                      return
-                    focused.current = step.id
-                    el.focus()
-                  }}
-                  tabIndex={-1}
-                  className="text-xl font-semibold tracking-tight text-balance outline-none"
-                >
-                  {step.heading ?? step.title}
-                </h2>
-                {step.description && (
-                  <p className="mt-1 text-sm text-pretty text-muted-foreground">
-                    {step.description}
-                  </p>
+              <h2
+                // the new step mounts after the old one animates out; focus it once per step
+                ref={(el) => {
+                  if (!el || !moved.current || focused.current === step.id)
+                    return
+                  focused.current = step.id
+                  el.focus()
+                }}
+                tabIndex={-1}
+                className={cn(
+                  "text-xl font-semibold tracking-tight text-balance outline-none",
+                  hideHeadings && "sr-only"
                 )}
-              </div>
+              >
+                {step.title}
+              </h2>
               {step.content}
             </div>
           </StepTransition>

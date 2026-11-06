@@ -1,6 +1,5 @@
 {
   "title": "Undangan",
-  "lead": "Kirim email berisi tautan wawancara AI kepada kandidat, dengan gaya bahasa perusahaan Anda.",
   "fields": {
     "candidate_name": "Nama kandidat",
     "job_role": "Posisi",
@@ -9,9 +8,7 @@
     "invite_link": "Tautan undangan"
   },
   "library": {
-    "startersLead": "Ditulis oleh LetsHyre. Buat salinan untuk mengubah isinya.",
     "starter": "Awal",
-    "byLetshyre": "Dari LetsHyre",
     "subject": "Subjek:",
     "copy": "Buat salinan",
     "edit": "Edit",
@@ -19,9 +16,7 @@
     "delete": "Hapus",
     "actions": "Tindakan untuk {{name}}",
     "emptyTitle": "Belum ada template milik Anda",
-    "emptyBody": "Salin template awal, lalu sesuaikan isi dan penutupnya dengan tim Anda.",
     "errorTitle": "Template Anda tidak termuat.",
-    "errorBody": "Tidak ada yang terkirim atau berubah. Periksa koneksi Anda dan coba lagi.",
     "tabs": {
       "label": "Grup template",
       "yours": "Template Anda",
@@ -30,11 +25,12 @@
     "inactive": "Tidak aktif",
     "editedOn": "Diedit {{date}}",
     "sendOne": "Kirim",
-    "emptyAction": "Lihat template LetsHyre"
+    "emptyAction": "Lihat template LetsHyre",
+    "emptyHint": "Salin template awal untuk membuat milik Anda.",
+    "errorRetry": "Periksa koneksi Anda lalu coba lagi."
   },
   "copy": {
     "title": "Buat salinan",
-    "lead": "Salinan Anda dimulai dari isi “{{name}}”. Hanya perusahaan Anda yang melihatnya.",
     "name": "Nama template",
     "suffix": "(salinan)",
     "nameError": "Beri nama maksimal {{max}} karakter.",
@@ -43,8 +39,8 @@
   },
   "delete": {
     "title": "Hapus “{{name}}”?",
-    "body": "Template dihapus untuk seluruh tim Anda. Undangan yang sudah terkirim tidak terpengaruh. Tindakan ini tidak bisa dibatalkan.",
-    "confirm": "Hapus template"
+    "confirm": "Hapus template",
+    "note": "Dihapus untuk seluruh tim. Undangan yang terkirim tidak terpengaruh."
   },
   "toast": {
     "copied": "“{{name}}” siap diedit",
@@ -56,22 +52,15 @@
     "sendFailed": "Tidak ada yang terkirim. Periksa koneksi Anda dan coba lagi."
   },
   "editor": {
-    "lead": "Perubahan berlaku untuk undangan yang Anda kirim setelah menyimpan.",
-    "starterLead": "Template awal dari LetsHyre.",
     "name": "Nama template",
     "subject": "Subjek",
     "subjectPlaceholder": "Yang dilihat kandidat di kotak masuk",
     "body": "Pesan",
     "bodyPlaceholder": "Tulis undangan Anda. Ketik {{ untuk menyisipkan kolom seperti nama kandidat.",
-    "bodyHint": "Kolom diisi untuk setiap kandidat saat email dikirim.",
     "editButton": "Edit tombol",
     "save": "Simpan perubahan",
     "saving": "Menyimpan…",
     "copyToEdit": "Buat salinan untuk diedit",
-    "readOnlyTitle": "Template awal tidak bisa diubah",
-    "readOnlyBody": "Buat salinan, lalu Anda bisa mengubah isi, nama, dan mengirimnya.",
-    "fidelityTitle": "Sebagian format tidak bisa diedit di sini",
-    "fidelityBody": "Template ini memakai tata letak yang tidak didukung editor, jadi pesannya dikunci agar tetap utuh. Anda masih bisa mengubah nama dan subjek. Mengonversi mempertahankan teks tetapi menyederhanakan tata letak itu.",
     "fidelityConvert": "Konversi dan edit",
     "missingTitle": "Template ini sudah tidak ada",
     "missingBody": "Mungkin seseorang di tim Anda menghapusnya.",
@@ -79,11 +68,7 @@
     "unsaved": "Perubahan belum disimpan",
     "saved": "Semua perubahan tersimpan",
     "preview": "Pratinjau",
-    "previewCard": "Lihat sebagai kandidat",
-    "previewCardBody": "Buka email dengan perubahan yang belum disimpan.",
-    "tipsTitle": "Tips menulis",
-    "tipField": "menyisipkan kolom seperti nama kandidat.",
-    "tipLink": "menautkan teks yang dipilih."
+    "fidelityNote": "Tata letak ini tidak bisa diedit di sini. Konversi mempertahankan teks tetapi menyederhanakannya."
   },
   "errors": {
     "name": "Beri nama maksimal 120 karakter.",
@@ -167,25 +152,14 @@
     "sheetLead": "Email yang diterima kandidat, dengan perubahan yang belum disimpan. Ubah contoh untuk melihatnya bagi orang lain."
   },
   "ready": {
-    "title": "Siap dikirim",
-    "count": "{{done}} dari {{total}}",
-    "subject": "Memiliki baris subjek",
-    "invite": "Menyertakan tautan undangan",
-    "name": "Menyapa kandidat dengan nama",
-    "role": "Menyebut posisi",
-    "known": "Hanya memakai kolom yang diisi LetsHyre",
     "unknown": "Kolom tidak dikenal: {{fields}}",
-    "state": {
-      "done": "Selesai:",
-      "todo": "Disarankan:",
-      "problem": "Perlu diperbaiki:"
-    }
+    "needSubject": "Tambahkan subjek",
+    "needInvite": "Tambahkan tautan undangan"
   },
   "draft": {
-    "title": "Ada perubahan yang belum disimpan sebelumnya",
-    "body": "Perubahan disimpan di perangkat ini saat Anda meninggalkan halaman. Pulihkan untuk melanjutkan, atau buang.",
     "restore": "Pulihkan perubahan",
-    "discard": "Buang"
+    "discard": "Buang",
+    "prompt": "Pulihkan perubahan yang belum disimpan?"
   },
   "leave": {
     "title": "Keluar tanpa menyimpan?",
@@ -194,38 +168,18 @@
   },
   "send": {
     "title": "Kirim undangan",
-    "lead": "Pilih template, tambahkan kandidat, dan periksa email sebelum dikirim.",
     "steps": {
       "template": "Template",
       "candidates": "Kandidat",
       "review": "Tinjau"
     },
     "templateLabel": "Template yang dikirim",
-    "templateHeading": "Pilih email",
-    "templateLead": "Setiap kandidat menerimanya dengan nama dan tautan undangan masing-masing.",
-    "candidatesHeading": "Siapa yang menerimanya?",
-    "candidatesLead": "Tambahkan posisi wawancaranya, lalu tempel atau impor alamat mereka.",
-    "reviewHeading": "Periksa setiap email",
-    "reviewLead": "Pilih kandidat untuk melihat email yang akan mereka terima.",
     "search": "Cari template",
     "noMatch": "Tidak ada template yang cocok dengan “{{query}}”.",
-    "blocked": {
-      "inactive": "Template nonaktif tidak bisa dikirim.",
-      "notReady": "Belum siap dikirim: periksa subjek, tautan undangan, dan kolomnya.",
-      "open": "Buka di editor"
-    },
     "change": "Ganti",
-    "summaryTitle": "Undangan ini",
-    "notChosen": "Belum dipilih",
-    "notSet": "Belum diisi",
-    "noCandidates": "Belum ada yang ditambahkan",
-    "previewEmpty": "Pilih template untuk melihat emailnya di sini.",
     "role": "Posisi",
-    "roleHint": "Mengisi kolom posisi dan memberi tahu kandidat peran mana yang dipilih di aplikasi.",
-    "openJobs": "Lowongan terbuka",
     "paste": "Tambah kandidat",
     "pastePlaceholder": "Jane Doe <jane@example.com>\njohn@example.com, John Smith",
-    "pasteHint": "Tempel alamat, satu per baris atau dipisah koma, lalu tekan Enter. Nama diambil dari baris atau alamat.",
     "add": "Tambah ke daftar",
     "import": "Impor file",
     "dropHere": "Lepaskan file untuk mengimpornya",
@@ -233,11 +187,8 @@
     "fileWrongType": "Gunakan file .csv atau .txt.",
     "fileUnreadable": "File tidak bisa dibaca. Simpan sebagai CSV lalu coba lagi.",
     "reportAdded_other": "{{count}} ditambahkan",
-    "reportDuplicates_other": "{{count}} sudah ada di daftar",
-    "reportInvalid_other": "{{count}} baris tidak terbaca dan tetap di kotak",
     "clear": "Kosongkan daftar",
     "cleared": "Daftar dikosongkan",
-    "listEmpty": "Belum ada kandidat. Tempel alamat atau unggah CSV, lalu periksa di sini sebelum dikirim.",
     "overLimit": "Kirim ke paling banyak {{max}} kandidat sekaligus.",
     "nameFor": "Nama untuk {{email}}",
     "namePlaceholder": "Tambah nama",
@@ -247,8 +198,6 @@
     "prevCandidate": "Kandidat sebelumnya",
     "nextCandidate": "Kandidat berikutnya",
     "position": "{{current}} dari {{total}}",
-    "highlight": "Sorot bagian yang dipersonalisasi",
-    "localPreview": "Pratinjau langsung tidak termuat, jadi ditampilkan di sini. Nama perusahaan, nama Anda, dan tautan setiap kandidat diisi saat email dikirim.",
     "submit_other": "Kirim {{count}} undangan",
     "sending": "Mengirim…",
     "errors": {
@@ -256,24 +205,23 @@
       "none": "Tambahkan setidaknya satu kandidat.",
       "names": "Beri nama setiap kandidat; nama dipakai untuk menyapa.",
       "role": "Masukkan posisi wawancara."
-    }
+    },
+    "listNone": "Belum ada kandidat.",
+    "sampleNote": "Pratinjau memakai data perusahaan contoh.",
+    "highlightFields": "Sorot kolom",
+    "notReady": "Belum siap",
+    "fix": "Perbaiki",
+    "reportRepeat_other": "{{count}} duplikat",
+    "reportUnread_other": "{{count}} tidak valid"
   },
   "result": {
     "titleSent_other": "undangan dalam perjalanan",
     "titleNone": "Tidak ada undangan yang terkirim",
-    "leadShort": "Email bisa butuh beberapa menit untuk sampai.",
-    "leadNone": "Tidak ada alamat yang diterima. Periksa dan coba lagi.",
     "missedTitle_other": "{{count}} tidak terkirim",
-    "missedBody": "Alamat ini tidak masuk antrean. Mungkin sudah punya undangan atau tidak bisa menerima email.",
-    "retry": "Coba lagi untuk ini",
     "queuedTitle": "Dikirim ke",
-    "queued": "Dalam antrean",
-    "sentAt": "Dikirim pada",
-    "nextTitle": "Selanjutnya",
-    "nextEmail": "Setiap kandidat menerima email dengan tautan undangannya sendiri.",
-    "nextSetup": "Mereka membuat akun dan memasang aplikasi desktop LetsHyre.",
-    "nextInterview": "Mereka mengikuti wawancara AI untuk posisi {{role}}.",
     "again": "Kirim kelompok lain",
-    "done": "Kembali ke undangan"
+    "done": "Kembali ke undangan",
+    "missedNote": "Sudah diundang atau tidak bisa menerima email.",
+    "tryAgain": "Coba lagi"
   }
 }

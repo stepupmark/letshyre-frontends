@@ -1,10 +1,5 @@
 import { useTranslation } from "@workspace/i18n/react"
-import {
-  Field,
-  FieldDescription,
-  FieldError,
-  FieldLabel,
-} from "@workspace/ui/components/field"
+import { Field, FieldError, FieldLabel } from "@workspace/ui/components/field"
 import { useId } from "react"
 import { useFormState, type UseFormReturn } from "react-hook-form"
 
@@ -75,13 +70,7 @@ export default function TemplateFields({
             placeholder={t("editor.bodyPlaceholder")}
             editLabel={t("editor.editButton")}
             labelledBy={`${id}-body`}
-            describedBy={
-              errors.body
-                ? `${id}-body-error`
-                : readOnly
-                  ? undefined
-                  : `${id}-body-hint`
-            }
+            describedBy={errors.body ? `${id}-body-error` : undefined}
             invalid={Boolean(errors.body)}
             onChange={(value) => {
               set("body", value)
@@ -89,15 +78,7 @@ export default function TemplateFields({
             onFidelity={onFidelity}
           />
         </div>
-        {errors.body ? (
-          <FieldError id={`${id}-body-error`}>{errors.body.message}</FieldError>
-        ) : (
-          !readOnly && (
-            <FieldDescription id={`${id}-body-hint`}>
-              {t("editor.bodyHint")}
-            </FieldDescription>
-          )
-        )}
+        <FieldError id={`${id}-body-error`}>{errors.body?.message}</FieldError>
       </Field>
     </div>
   )

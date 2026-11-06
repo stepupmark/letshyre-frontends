@@ -1,6 +1,5 @@
 {
   "title": "Invitaciones",
-  "lead": "Envía por correo a los candidatos un enlace para su entrevista con IA, con el tono de tu empresa.",
   "fields": {
     "candidate_name": "Nombre del candidato",
     "job_role": "Puesto",
@@ -9,9 +8,7 @@
     "invite_link": "Enlace de invitación"
   },
   "library": {
-    "startersLead": "Escritas por LetsHyre. Haz una copia para cambiar el texto.",
     "starter": "Inicial",
-    "byLetshyre": "De LetsHyre",
     "subject": "Asunto:",
     "copy": "Hacer una copia",
     "edit": "Editar",
@@ -19,9 +16,7 @@
     "delete": "Eliminar",
     "actions": "Acciones para {{name}}",
     "emptyTitle": "Aún no tienes plantillas propias",
-    "emptyBody": "Copia una plantilla inicial y ajusta el texto y la despedida al estilo de tu equipo.",
     "errorTitle": "Tus plantillas no se cargaron.",
-    "errorBody": "No se ha enviado ni cambiado nada. Revisa tu conexión e inténtalo de nuevo.",
     "tabs": {
       "label": "Grupos de plantillas",
       "yours": "Tus plantillas",
@@ -30,11 +25,12 @@
     "inactive": "Inactiva",
     "editedOn": "Editada el {{date}}",
     "sendOne": "Enviar",
-    "emptyAction": "Ver plantillas de LetsHyre"
+    "emptyAction": "Ver plantillas de LetsHyre",
+    "emptyHint": "Copia una plantilla para crear la tuya.",
+    "errorRetry": "Revisa tu conexión e inténtalo de nuevo."
   },
   "copy": {
     "title": "Hacer una copia",
-    "lead": "Tu copia parte del texto de “{{name}}”. Solo tu empresa la ve.",
     "name": "Nombre de la plantilla",
     "suffix": "(copia)",
     "nameError": "Ponle un nombre de hasta {{max}} caracteres.",
@@ -43,8 +39,8 @@
   },
   "delete": {
     "title": "¿Eliminar “{{name}}”?",
-    "body": "La plantilla se elimina para todo tu equipo. Las invitaciones ya enviadas no se ven afectadas. No se puede deshacer.",
-    "confirm": "Eliminar plantilla"
+    "confirm": "Eliminar plantilla",
+    "note": "Se elimina para todo tu equipo. Las invitaciones enviadas no cambian."
   },
   "toast": {
     "copied": "“{{name}}” está lista para editar",
@@ -56,22 +52,15 @@
     "sendFailed": "No se envió nada. Revisa tu conexión e inténtalo de nuevo."
   },
   "editor": {
-    "lead": "Los cambios se aplican a las invitaciones que envíes después de guardar.",
-    "starterLead": "Una plantilla inicial de LetsHyre.",
     "name": "Nombre de la plantilla",
     "subject": "Asunto",
     "subjectPlaceholder": "Lo que los candidatos ven en su bandeja de entrada",
     "body": "Mensaje",
     "bodyPlaceholder": "Escribe tu invitación. Escribe {{ para añadir un campo como el nombre del candidato.",
-    "bodyHint": "Los campos se completan para cada candidato al enviar el correo.",
     "editButton": "Editar botón",
     "save": "Guardar cambios",
     "saving": "Guardando…",
     "copyToEdit": "Hacer una copia para editar",
-    "readOnlyTitle": "Las plantillas iniciales no se pueden cambiar",
-    "readOnlyBody": "Haz una copia y será tuya para reescribirla, renombrarla y enviarla.",
-    "fidelityTitle": "Parte del formato no se puede editar aquí",
-    "fidelityBody": "Esta plantilla usa un diseño que el editor no admite, así que el mensaje está bloqueado para mantenerlo intacto. Aún puedes cambiar el nombre y el asunto. Al convertirla se conserva el texto, pero se simplifica ese diseño.",
     "fidelityConvert": "Convertir y editar",
     "missingTitle": "Esta plantilla ya no está",
     "missingBody": "Puede que alguien de tu equipo la haya eliminado.",
@@ -79,11 +68,7 @@
     "unsaved": "Cambios sin guardar",
     "saved": "Todos los cambios guardados",
     "preview": "Vista previa",
-    "previewCard": "Verlo como candidato",
-    "previewCardBody": "Abre el correo con tus cambios sin guardar.",
-    "tipsTitle": "Consejos de redacción",
-    "tipField": "inserta un campo como el nombre del candidato.",
-    "tipLink": "enlaza el texto seleccionado."
+    "fidelityNote": "Este diseño no se puede editar aquí. Al convertirlo se mantiene el texto pero se simplifica."
   },
   "errors": {
     "name": "Ponle un nombre de hasta 120 caracteres.",
@@ -167,25 +152,14 @@
     "sheetLead": "El correo que recibe un candidato, con tus cambios sin guardar. Cambia el ejemplo para verlo como otra persona."
   },
   "ready": {
-    "title": "Lista para enviar",
-    "count": "{{done}} de {{total}}",
-    "subject": "Tiene asunto",
-    "invite": "Incluye el enlace de invitación",
-    "name": "Saluda al candidato por su nombre",
-    "role": "Menciona el puesto",
-    "known": "Solo usa campos que completa LetsHyre",
     "unknown": "Campos desconocidos: {{fields}}",
-    "state": {
-      "done": "Hecho:",
-      "todo": "Sugerido:",
-      "problem": "Por corregir:"
-    }
+    "needSubject": "Añade un asunto",
+    "needInvite": "Añade el enlace de invitación"
   },
   "draft": {
-    "title": "Tienes cambios sin guardar de antes",
-    "body": "Se guardaron en este dispositivo al salir de la página. Restáuralos para seguir editando o descártalos.",
     "restore": "Restaurar cambios",
-    "discard": "Descartar"
+    "discard": "Descartar",
+    "prompt": "¿Restaurar los cambios sin guardar?"
   },
   "leave": {
     "title": "¿Salir sin guardar?",
@@ -194,38 +168,18 @@
   },
   "send": {
     "title": "Enviar invitaciones",
-    "lead": "Elige una plantilla, añade candidatos y revisa el correo antes de enviarlo.",
     "steps": {
       "template": "Plantilla",
       "candidates": "Candidatos",
       "review": "Revisar"
     },
     "templateLabel": "Plantilla que se enviará",
-    "templateHeading": "Elige el correo",
-    "templateLead": "Cada candidato lo recibe con su propio nombre y enlace de invitación.",
-    "candidatesHeading": "¿Quién lo recibe?",
-    "candidatesLead": "Indica el puesto de la entrevista y luego pega o importa sus direcciones.",
-    "reviewHeading": "Revisa cada correo",
-    "reviewLead": "Elige un candidato para ver exactamente el correo que recibirá.",
     "search": "Buscar plantillas",
     "noMatch": "Ninguna plantilla coincide con «{{query}}».",
-    "blocked": {
-      "inactive": "Las plantillas inactivas no se pueden enviar.",
-      "notReady": "Aún no está lista: revisa el asunto, el enlace de invitación y los campos.",
-      "open": "Abrir en el editor"
-    },
     "change": "Cambiar",
-    "summaryTitle": "Esta invitación",
-    "notChosen": "Sin elegir",
-    "notSet": "Sin definir",
-    "noCandidates": "Nadie añadido todavía",
-    "previewEmpty": "Elige una plantilla para ver el correo aquí.",
     "role": "Puesto",
-    "roleHint": "Completa el campo de puesto e indica a los candidatos qué rol elegir en la app.",
-    "openJobs": "Vacantes abiertas",
     "paste": "Añadir candidatos",
     "pastePlaceholder": "Jane Doe <jane@example.com>\njohn@example.com, John Smith",
-    "pasteHint": "Pega direcciones, una por línea o separadas por comas, y pulsa Intro. Los nombres salen de la línea o de la dirección.",
     "add": "Añadir a la lista",
     "import": "Importar archivo",
     "dropHere": "Suelta el archivo para importarlo",
@@ -235,15 +189,8 @@
     "reportAdded_one": "{{count}} añadido",
     "reportAdded_many": "{{count}} añadidos",
     "reportAdded_other": "{{count}} añadidos",
-    "reportDuplicates_one": "{{count}} ya estaba en la lista",
-    "reportDuplicates_many": "{{count}} ya estaban en la lista",
-    "reportDuplicates_other": "{{count}} ya estaban en la lista",
-    "reportInvalid_one": "{{count}} línea no se pudo leer y queda en el cuadro",
-    "reportInvalid_many": "{{count}} líneas no se pudieron leer y quedan en el cuadro",
-    "reportInvalid_other": "{{count}} líneas no se pudieron leer y quedan en el cuadro",
     "clear": "Vaciar lista",
     "cleared": "Lista vaciada",
-    "listEmpty": "Aún no hay candidatos. Pega direcciones o sube un CSV y aparecerán aquí para revisarlos antes de enviar.",
     "overLimit": "Envía a un máximo de {{max}} candidatos a la vez.",
     "nameFor": "Nombre de {{email}}",
     "namePlaceholder": "Añadir nombre",
@@ -253,8 +200,6 @@
     "prevCandidate": "Candidato anterior",
     "nextCandidate": "Candidato siguiente",
     "position": "{{current}} de {{total}}",
-    "highlight": "Resaltar lo personalizado",
-    "localPreview": "La vista previa en vivo no se cargó, así que se dibuja aquí. El nombre de tu empresa, tu nombre y el enlace de cada candidato se completan al enviar.",
     "submit_one": "Enviar {{count}} invitación",
     "submit_many": "Enviar {{count}} invitaciones",
     "submit_other": "Enviar {{count}} invitaciones",
@@ -264,28 +209,31 @@
       "none": "Añade al menos un candidato.",
       "names": "Pon nombre a cada candidato; se usa para saludarle.",
       "role": "Escribe el puesto de la entrevista."
-    }
+    },
+    "listNone": "Aún no hay candidatos.",
+    "sampleNote": "La vista previa usa datos de empresa de ejemplo.",
+    "highlightFields": "Resaltar campos",
+    "notReady": "No está lista",
+    "fix": "Corregir",
+    "reportRepeat_one": "{{count}} duplicado",
+    "reportRepeat_many": "{{count}} duplicados",
+    "reportRepeat_other": "{{count}} duplicados",
+    "reportUnread_one": "{{count}} no válido",
+    "reportUnread_many": "{{count}} no válidos",
+    "reportUnread_other": "{{count}} no válidos"
   },
   "result": {
     "titleSent_one": "invitación en camino",
     "titleSent_many": "invitaciones en camino",
     "titleSent_other": "invitaciones en camino",
     "titleNone": "No se envió ninguna invitación",
-    "leadShort": "Los correos pueden tardar unos minutos en llegar.",
-    "leadNone": "No se aceptó ninguna dirección. Revísalas e inténtalo de nuevo.",
     "missedTitle_one": "{{count}} no se envió",
     "missedTitle_many": "{{count}} no se enviaron",
     "missedTitle_other": "{{count}} no se enviaron",
-    "missedBody": "Estas direcciones no se pusieron en cola. Puede que ya tengan una invitación o no reciban correo.",
-    "retry": "Reintentar con estos",
     "queuedTitle": "Enviado a",
-    "queued": "En cola",
-    "sentAt": "Enviado",
-    "nextTitle": "Qué pasa ahora",
-    "nextEmail": "Cada candidato recibe el correo con su propio enlace de invitación.",
-    "nextSetup": "Crea una cuenta e instala la aplicación de escritorio de LetsHyre.",
-    "nextInterview": "Hace la entrevista con IA para el puesto de {{role}}.",
     "again": "Enviar otro grupo",
-    "done": "Volver a invitaciones"
+    "done": "Volver a invitaciones",
+    "missedNote": "Ya invitado o no puede recibir correos.",
+    "tryAgain": "Reintentar"
   }
 }

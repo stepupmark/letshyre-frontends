@@ -4,7 +4,6 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -68,9 +67,6 @@ export function CopyDialog({
         >
           <DialogHeader>
             <DialogTitle>{t("copy.title")}</DialogTitle>
-            <DialogDescription>
-              {t("copy.lead", { name: source.name })}
-            </DialogDescription>
           </DialogHeader>
           <TextField
             label={t("copy.name")}

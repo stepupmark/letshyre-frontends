@@ -1,6 +1,5 @@
 {
   "title": "Inviti",
-  "lead": "Invia ai candidati un link al loro colloquio con IA, con il tono della tua azienda.",
   "fields": {
     "candidate_name": "Nome del candidato",
     "job_role": "Ruolo",
@@ -9,9 +8,7 @@
     "invite_link": "Link di invito"
   },
   "library": {
-    "startersLead": "Scritti da LetsHyre. Creane una copia per cambiare il testo.",
     "starter": "Base",
-    "byLetshyre": "Di LetsHyre",
     "subject": "Oggetto:",
     "copy": "Crea una copia",
     "edit": "Modifica",
@@ -19,9 +16,7 @@
     "delete": "Elimina",
     "actions": "Azioni per {{name}}",
     "emptyTitle": "Ancora nessun modello tuo",
-    "emptyBody": "Copia un modello di partenza, poi adatta testo e firma al tuo team.",
     "errorTitle": "I tuoi modelli non sono stati caricati.",
-    "errorBody": "Nulla è stato inviato o modificato. Controlla la connessione e riprova.",
     "tabs": {
       "label": "Gruppi di modelli",
       "yours": "I tuoi modelli",
@@ -30,11 +25,12 @@
     "inactive": "Inattivo",
     "editedOn": "Modificato il {{date}}",
     "sendOne": "Invia",
-    "emptyAction": "Sfoglia i modelli LetsHyre"
+    "emptyAction": "Sfoglia i modelli LetsHyre",
+    "emptyHint": "Copia un modello per crearne uno tuo.",
+    "errorRetry": "Controlla la connessione e riprova."
   },
   "copy": {
     "title": "Crea una copia",
-    "lead": "La copia parte dal testo di “{{name}}”. La vede solo la tua azienda.",
     "name": "Nome del modello",
     "suffix": "(copia)",
     "nameError": "Usa un nome di massimo {{max}} caratteri.",
@@ -43,8 +39,8 @@
   },
   "delete": {
     "title": "Eliminare “{{name}}”?",
-    "body": "Il modello viene rimosso per tutto il team. Gli inviti già inviati non cambiano. L’operazione è irreversibile.",
-    "confirm": "Elimina modello"
+    "confirm": "Elimina modello",
+    "note": "Viene rimosso per tutto il team. Gli inviti già inviati non cambiano."
   },
   "toast": {
     "copied": "“{{name}}” è pronto da modificare",
@@ -56,22 +52,15 @@
     "sendFailed": "Non è stato inviato nulla. Controlla la connessione e riprova."
   },
   "editor": {
-    "lead": "Le modifiche valgono per gli inviti inviati dopo il salvataggio.",
-    "starterLead": "Un modello di partenza di LetsHyre.",
     "name": "Nome del modello",
     "subject": "Oggetto",
     "subjectPlaceholder": "Ciò che i candidati vedono nella casella di posta",
     "body": "Messaggio",
     "bodyPlaceholder": "Scrivi il tuo invito. Digita {{ per inserire un campo come il nome del candidato.",
-    "bodyHint": "I campi vengono compilati per ogni candidato all’invio.",
     "editButton": "Modifica pulsante",
     "save": "Salva modifiche",
     "saving": "Salvataggio…",
     "copyToEdit": "Crea una copia da modificare",
-    "readOnlyTitle": "I modelli di partenza non si possono modificare",
-    "readOnlyBody": "Creane una copia: potrai riformularla, rinominarla e inviarla.",
-    "fidelityTitle": "Parte della formattazione non è modificabile qui",
-    "fidelityBody": "Questo modello usa un layout che l’editor non supporta, quindi il messaggio è bloccato per restare intatto. Puoi comunque cambiare nome e oggetto. Convertendolo il testo resta, ma il layout viene semplificato.",
     "fidelityConvert": "Converti e modifica",
     "missingTitle": "Questo modello non c’è più",
     "missingBody": "Forse qualcuno del tuo team l’ha eliminato.",
@@ -79,11 +68,7 @@
     "unsaved": "Modifiche non salvate",
     "saved": "Tutte le modifiche salvate",
     "preview": "Anteprima",
-    "previewCard": "Vedi come un candidato",
-    "previewCardBody": "Apri l’email con le modifiche non salvate.",
-    "tipsTitle": "Consigli di scrittura",
-    "tipField": "inserisce un campo come il nome del candidato.",
-    "tipLink": "collega il testo selezionato."
+    "fidelityNote": "Questo layout non si può modificare qui. Convertendolo il testo resta ma il layout si semplifica."
   },
   "errors": {
     "name": "Usa un nome di massimo 120 caratteri.",
@@ -167,25 +152,14 @@
     "sheetLead": "L’email che riceve un candidato, con le modifiche non salvate. Cambia l’esempio per vederla per qualcun altro."
   },
   "ready": {
-    "title": "Pronto da inviare",
-    "count": "{{done}} di {{total}}",
-    "subject": "Ha un oggetto",
-    "invite": "Include il link di invito",
-    "name": "Saluta il candidato per nome",
-    "role": "Cita il ruolo",
-    "known": "Usa solo campi compilati da LetsHyre",
     "unknown": "Campi sconosciuti: {{fields}}",
-    "state": {
-      "done": "Fatto:",
-      "todo": "Consigliato:",
-      "problem": "Da correggere:"
-    }
+    "needSubject": "Aggiungi un oggetto",
+    "needInvite": "Aggiungi il link di invito"
   },
   "draft": {
-    "title": "Hai modifiche non salvate di prima",
-    "body": "Sono state conservate su questo dispositivo quando hai lasciato la pagina. Ripristinale per continuare o scartale.",
     "restore": "Ripristina modifiche",
-    "discard": "Scarta"
+    "discard": "Scarta",
+    "prompt": "Ripristinare le modifiche non salvate?"
   },
   "leave": {
     "title": "Uscire senza salvare?",
@@ -194,38 +168,18 @@
   },
   "send": {
     "title": "Invia inviti",
-    "lead": "Scegli un modello, aggiungi i candidati e controlla l’email prima dell’invio.",
     "steps": {
       "template": "Modello",
       "candidates": "Candidati",
       "review": "Controlla"
     },
     "templateLabel": "Modello da inviare",
-    "templateHeading": "Scegli l'email",
-    "templateLead": "Ogni candidato la riceve con il proprio nome e link di invito.",
-    "candidatesHeading": "Chi la riceve?",
-    "candidatesLead": "Indica il ruolo del colloquio, poi incolla o importa i loro indirizzi.",
-    "reviewHeading": "Controlla ogni email",
-    "reviewLead": "Scegli un candidato per vedere esattamente l'email che riceverà.",
     "search": "Cerca modelli",
     "noMatch": "Nessun modello corrisponde a «{{query}}».",
-    "blocked": {
-      "inactive": "I modelli inattivi non possono essere inviati.",
-      "notReady": "Non ancora pronto: controlla oggetto, link di invito e campi.",
-      "open": "Apri nell'editor"
-    },
     "change": "Cambia",
-    "summaryTitle": "Questo invito",
-    "notChosen": "Non ancora scelto",
-    "notSet": "Non ancora impostato",
-    "noCandidates": "Nessuno aggiunto",
-    "previewEmpty": "Scegli un modello per vedere qui l'email.",
     "role": "Ruolo",
-    "roleHint": "Compila il campo ruolo e dice ai candidati quale ruolo scegliere nell’app.",
-    "openJobs": "Posizioni aperte",
     "paste": "Aggiungi candidati",
     "pastePlaceholder": "Jane Doe <jane@example.com>\njohn@example.com, John Smith",
-    "pasteHint": "Incolla gli indirizzi, uno per riga o separati da virgole, poi premi Invio. I nomi vengono dalla riga o dall’indirizzo.",
     "add": "Aggiungi all’elenco",
     "import": "Importa file",
     "dropHere": "Rilascia il file per importarlo",
@@ -235,15 +189,8 @@
     "reportAdded_one": "{{count}} aggiunto",
     "reportAdded_many": "{{count}} aggiunti",
     "reportAdded_other": "{{count}} aggiunti",
-    "reportDuplicates_one": "{{count}} già nell’elenco",
-    "reportDuplicates_many": "{{count}} già nell’elenco",
-    "reportDuplicates_other": "{{count}} già nell’elenco",
-    "reportInvalid_one": "{{count}} riga illeggibile resta nel campo",
-    "reportInvalid_many": "{{count}} righe illeggibili restano nel campo",
-    "reportInvalid_other": "{{count}} righe illeggibili restano nel campo",
     "clear": "Svuota elenco",
     "cleared": "Elenco svuotato",
-    "listEmpty": "Ancora nessun candidato. Incolla gli indirizzi o carica un CSV: compariranno qui da controllare prima dell’invio.",
     "overLimit": "Invia a massimo {{max}} candidati alla volta.",
     "nameFor": "Nome per {{email}}",
     "namePlaceholder": "Aggiungi un nome",
@@ -253,8 +200,6 @@
     "prevCandidate": "Candidato precedente",
     "nextCandidate": "Candidato successivo",
     "position": "{{current}} di {{total}}",
-    "highlight": "Evidenzia le parti personalizzate",
-    "localPreview": "L’anteprima dal vivo non è stata caricata, quindi viene disegnata qui. Nome dell’azienda, il tuo nome e il link di ogni candidato vengono inseriti all’invio.",
     "submit_one": "Invia {{count}} invito",
     "submit_many": "Invia {{count}} inviti",
     "submit_other": "Invia {{count}} inviti",
@@ -264,28 +209,31 @@
       "none": "Aggiungi almeno un candidato.",
       "names": "Dai un nome a ogni candidato: serve per salutarlo.",
       "role": "Inserisci il ruolo del colloquio."
-    }
+    },
+    "listNone": "Ancora nessun candidato.",
+    "sampleNote": "L'anteprima usa dati aziendali di esempio.",
+    "highlightFields": "Evidenzia i campi",
+    "notReady": "Non pronto",
+    "fix": "Correggi",
+    "reportRepeat_one": "{{count}} duplicato",
+    "reportRepeat_many": "{{count}} duplicati",
+    "reportRepeat_other": "{{count}} duplicati",
+    "reportUnread_one": "{{count}} non valido",
+    "reportUnread_many": "{{count}} non validi",
+    "reportUnread_other": "{{count}} non validi"
   },
   "result": {
     "titleSent_one": "invito in viaggio",
     "titleSent_many": "inviti in viaggio",
     "titleSent_other": "inviti in viaggio",
     "titleNone": "Nessun invito è stato inviato",
-    "leadShort": "Le email possono impiegare qualche minuto ad arrivare.",
-    "leadNone": "Nessun indirizzo è stato accettato. Controllali e riprova.",
     "missedTitle_one": "{{count}} non inviato",
     "missedTitle_many": "{{count}} non inviati",
     "missedTitle_other": "{{count}} non inviati",
-    "missedBody": "Questi indirizzi non sono stati messi in coda. Forse hanno già un invito o non ricevono email.",
-    "retry": "Riprova con questi",
     "queuedTitle": "Inviato a",
-    "queued": "In coda",
-    "sentAt": "Inviato il",
-    "nextTitle": "Cosa succede ora",
-    "nextEmail": "Ogni candidato riceve l'email con il proprio link di invito.",
-    "nextSetup": "Crea un account e installa l'app desktop di LetsHyre.",
-    "nextInterview": "Svolge il colloquio con IA per il ruolo di {{role}}.",
     "again": "Invia un altro gruppo",
-    "done": "Torna agli inviti"
+    "done": "Torna agli inviti",
+    "missedNote": "Già invitato o non può ricevere email.",
+    "tryAgain": "Riprova"
   }
 }

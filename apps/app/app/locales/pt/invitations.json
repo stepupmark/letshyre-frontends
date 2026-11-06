@@ -1,6 +1,5 @@
 {
   "title": "Convites",
-  "lead": "Envie aos candidatos um link para a entrevista com IA, com o tom da sua empresa.",
   "fields": {
     "candidate_name": "Nome do candidato",
     "job_role": "Cargo",
@@ -9,9 +8,7 @@
     "invite_link": "Link do convite"
   },
   "library": {
-    "startersLead": "Escritos pela LetsHyre. Faça uma cópia para mudar o texto.",
     "starter": "Inicial",
-    "byLetshyre": "Da LetsHyre",
     "subject": "Assunto:",
     "copy": "Fazer uma cópia",
     "edit": "Editar",
@@ -19,9 +16,7 @@
     "delete": "Excluir",
     "actions": "Ações para {{name}}",
     "emptyTitle": "Ainda não há modelos seus",
-    "emptyBody": "Copie um modelo inicial e ajuste o texto e a assinatura ao jeito da sua equipe.",
     "errorTitle": "Seus modelos não carregaram.",
-    "errorBody": "Nada foi enviado ou alterado. Verifique sua conexão e tente de novo.",
     "tabs": {
       "label": "Grupos de modelos",
       "yours": "Seus modelos",
@@ -30,11 +25,12 @@
     "inactive": "Inativo",
     "editedOn": "Editado em {{date}}",
     "sendOne": "Enviar",
-    "emptyAction": "Ver modelos da LetsHyre"
+    "emptyAction": "Ver modelos da LetsHyre",
+    "emptyHint": "Copie um modelo para criar o seu.",
+    "errorRetry": "Verifique sua conexão e tente de novo."
   },
   "copy": {
     "title": "Fazer uma cópia",
-    "lead": "Sua cópia começa com o texto de “{{name}}”. Só sua empresa a vê.",
     "name": "Nome do modelo",
     "suffix": "(cópia)",
     "nameError": "Use um nome de até {{max}} caracteres.",
@@ -43,8 +39,8 @@
   },
   "delete": {
     "title": "Excluir “{{name}}”?",
-    "body": "O modelo é removido para toda a equipe. Convites já enviados não mudam. Não é possível desfazer.",
-    "confirm": "Excluir modelo"
+    "confirm": "Excluir modelo",
+    "note": "Removido para toda a equipe. Convites enviados não são afetados."
   },
   "toast": {
     "copied": "“{{name}}” está pronto para editar",
@@ -56,22 +52,15 @@
     "sendFailed": "Nada foi enviado. Verifique sua conexão e tente de novo."
   },
   "editor": {
-    "lead": "As alterações valem para os convites enviados depois de salvar.",
-    "starterLead": "Um modelo inicial da LetsHyre.",
     "name": "Nome do modelo",
     "subject": "Assunto",
     "subjectPlaceholder": "O que os candidatos veem na caixa de entrada",
     "body": "Mensagem",
     "bodyPlaceholder": "Escreva seu convite. Digite {{ para inserir um campo como o nome do candidato.",
-    "bodyHint": "Os campos são preenchidos para cada candidato no envio.",
     "editButton": "Editar botão",
     "save": "Salvar alterações",
     "saving": "Salvando…",
     "copyToEdit": "Fazer uma cópia para editar",
-    "readOnlyTitle": "Modelos iniciais não podem ser alterados",
-    "readOnlyBody": "Faça uma cópia e ela será sua para reescrever, renomear e enviar.",
-    "fidelityTitle": "Parte da formatação não pode ser editada aqui",
-    "fidelityBody": "Este modelo usa um layout que o editor não suporta, então a mensagem fica bloqueada para continuar intacta. Você ainda pode mudar o nome e o assunto. Converter mantém o texto, mas simplifica esse layout.",
     "fidelityConvert": "Converter e editar",
     "missingTitle": "Este modelo não existe mais",
     "missingBody": "Talvez alguém da sua equipe o tenha excluído.",
@@ -79,11 +68,7 @@
     "unsaved": "Alterações não salvas",
     "saved": "Todas as alterações salvas",
     "preview": "Prévia",
-    "previewCard": "Ver como candidato",
-    "previewCardBody": "Abra o e-mail com suas alterações não salvas.",
-    "tipsTitle": "Dicas de escrita",
-    "tipField": "insere um campo como o nome do candidato.",
-    "tipLink": "cria um link no texto selecionado."
+    "fidelityNote": "Este layout não pode ser editado aqui. Converter mantém o texto, mas simplifica o layout."
   },
   "errors": {
     "name": "Use um nome de até 120 caracteres.",
@@ -167,25 +152,14 @@
     "sheetLead": "O e-mail que um candidato recebe, com suas alterações não salvas. Mude o exemplo para ver como outra pessoa."
   },
   "ready": {
-    "title": "Pronto para enviar",
-    "count": "{{done}} de {{total}}",
-    "subject": "Tem linha de assunto",
-    "invite": "Inclui o link do convite",
-    "name": "Cumprimenta o candidato pelo nome",
-    "role": "Menciona o cargo",
-    "known": "Usa só campos que a LetsHyre preenche",
     "unknown": "Campos desconhecidos: {{fields}}",
-    "state": {
-      "done": "Feito:",
-      "todo": "Sugerido:",
-      "problem": "Corrigir:"
-    }
+    "needSubject": "Adicione um assunto",
+    "needInvite": "Adicione o link de convite"
   },
   "draft": {
-    "title": "Você tem alterações não salvas de antes",
-    "body": "Elas ficaram guardadas neste dispositivo quando você saiu da página. Restaure para continuar editando ou descarte.",
     "restore": "Restaurar alterações",
-    "discard": "Descartar"
+    "discard": "Descartar",
+    "prompt": "Restaurar alterações não salvas?"
   },
   "leave": {
     "title": "Sair sem salvar?",
@@ -194,38 +168,18 @@
   },
   "send": {
     "title": "Enviar convites",
-    "lead": "Escolha um modelo, adicione candidatos e confira o e-mail antes do envio.",
     "steps": {
       "template": "Modelo",
       "candidates": "Candidatos",
       "review": "Revisar"
     },
     "templateLabel": "Modelo a enviar",
-    "templateHeading": "Escolha o e-mail",
-    "templateLead": "Cada candidato o recebe com o próprio nome e link de convite.",
-    "candidatesHeading": "Quem vai receber?",
-    "candidatesLead": "Informe a vaga da entrevista e depois cole ou importe os endereços.",
-    "reviewHeading": "Confira cada e-mail",
-    "reviewLead": "Escolha um candidato para ver exatamente o e-mail que ele vai receber.",
     "search": "Buscar modelos",
     "noMatch": "Nenhum modelo corresponde a “{{query}}”.",
-    "blocked": {
-      "inactive": "Modelos inativos não podem ser enviados.",
-      "notReady": "Ainda não está pronto: confira o assunto, o link de convite e os campos.",
-      "open": "Abrir no editor"
-    },
     "change": "Trocar",
-    "summaryTitle": "Este convite",
-    "notChosen": "Ainda não escolhido",
-    "notSet": "Ainda não definido",
-    "noCandidates": "Ninguém adicionado ainda",
-    "previewEmpty": "Escolha um modelo para ver o e-mail aqui.",
     "role": "Cargo",
-    "roleHint": "Preenche o campo de cargo e diz aos candidatos qual função escolher no app.",
-    "openJobs": "Vagas abertas",
     "paste": "Adicionar candidatos",
     "pastePlaceholder": "Jane Doe <jane@example.com>\njohn@example.com, John Smith",
-    "pasteHint": "Cole endereços, um por linha ou separados por vírgulas, e pressione Enter. Os nomes vêm da linha ou do endereço.",
     "add": "Adicionar à lista",
     "import": "Importar arquivo",
     "dropHere": "Solte o arquivo para importá-lo",
@@ -235,15 +189,8 @@
     "reportAdded_one": "{{count}} adicionado",
     "reportAdded_many": "{{count}} adicionados",
     "reportAdded_other": "{{count}} adicionados",
-    "reportDuplicates_one": "{{count}} já estava na lista",
-    "reportDuplicates_many": "{{count}} já estavam na lista",
-    "reportDuplicates_other": "{{count}} já estavam na lista",
-    "reportInvalid_one": "{{count}} linha ilegível ficou na caixa",
-    "reportInvalid_many": "{{count}} linhas ilegíveis ficaram na caixa",
-    "reportInvalid_other": "{{count}} linhas ilegíveis ficaram na caixa",
     "clear": "Limpar lista",
     "cleared": "Lista limpa",
-    "listEmpty": "Ainda não há candidatos. Cole endereços ou envie um CSV e eles aparecem aqui para conferir antes do envio.",
     "overLimit": "Envie para no máximo {{max}} candidatos por vez.",
     "nameFor": "Nome de {{email}}",
     "namePlaceholder": "Adicionar nome",
@@ -253,8 +200,6 @@
     "prevCandidate": "Candidato anterior",
     "nextCandidate": "Próximo candidato",
     "position": "{{current}} de {{total}}",
-    "highlight": "Destacar o que é personalizado",
-    "localPreview": "A prévia ao vivo não carregou, então ela é desenhada aqui. O nome da empresa, seu nome e o link de cada candidato são preenchidos no envio.",
     "submit_one": "Enviar {{count}} convite",
     "submit_many": "Enviar {{count}} convites",
     "submit_other": "Enviar {{count}} convites",
@@ -264,28 +209,31 @@
       "none": "Adicione pelo menos um candidato.",
       "names": "Dê um nome a cada candidato; ele é usado na saudação.",
       "role": "Informe o cargo da entrevista."
-    }
+    },
+    "listNone": "Nenhum candidato ainda.",
+    "sampleNote": "A prévia usa dados de empresa de exemplo.",
+    "highlightFields": "Destacar campos",
+    "notReady": "Não está pronto",
+    "fix": "Corrigir",
+    "reportRepeat_one": "{{count}} duplicado",
+    "reportRepeat_many": "{{count}} duplicados",
+    "reportRepeat_other": "{{count}} duplicados",
+    "reportUnread_one": "{{count}} inválido",
+    "reportUnread_many": "{{count}} inválidos",
+    "reportUnread_other": "{{count}} inválidos"
   },
   "result": {
     "titleSent_one": "convite a caminho",
     "titleSent_many": "convites a caminho",
     "titleSent_other": "convites a caminho",
     "titleNone": "Nenhum convite foi enviado",
-    "leadShort": "Os e-mails podem levar alguns minutos para chegar.",
-    "leadNone": "Nenhum endereço foi aceito. Confira e tente de novo.",
     "missedTitle_one": "{{count}} não foi enviado",
     "missedTitle_many": "{{count}} não foram enviados",
     "missedTitle_other": "{{count}} não foram enviados",
-    "missedBody": "Estes endereços não entraram na fila. Talvez já tenham um convite ou não recebam e-mails.",
-    "retry": "Tentar de novo com estes",
     "queuedTitle": "Enviado para",
-    "queued": "Na fila",
-    "sentAt": "Enviado em",
-    "nextTitle": "O que acontece agora",
-    "nextEmail": "Cada candidato recebe o e-mail com o próprio link de convite.",
-    "nextSetup": "Ele cria uma conta e instala o app para desktop da LetsHyre.",
-    "nextInterview": "Ele faz a entrevista com IA para a vaga de {{role}}.",
     "again": "Enviar outro grupo",
-    "done": "Voltar aos convites"
+    "done": "Voltar aos convites",
+    "missedNote": "Já convidado ou não pode receber e-mails.",
+    "tryAgain": "Tentar de novo"
   }
 }

@@ -1,11 +1,6 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
-import {
-  Field,
-  FieldDescription,
-  FieldError,
-  FieldLabel,
-} from "@workspace/ui/components/field"
+import { Field, FieldError, FieldLabel } from "@workspace/ui/components/field"
 import { Textarea } from "@workspace/ui/components/textarea"
 import { FileUp, UserPlus } from "lucide-react"
 import { AnimatePresence } from "motion/react"
@@ -27,6 +22,7 @@ import {
 import { RecipientList } from "./recipient-list"
 
 const SUGGESTIONS = 6
+const ENTER = "Enter"
 
 interface Report {
   added: number
@@ -113,7 +109,6 @@ export function RecipientsStep({
       <div className="flex flex-col gap-3">
         <TextField
           label={t("send.role")}
-          hint={t("send.roleHint")}
           value={role}
           autoComplete="off"
           error={errors.role}
@@ -122,14 +117,7 @@ export function RecipientsStep({
           }}
         />
         {suggestions.length > 0 && (
-          <div
-            role="group"
-            aria-label={t("send.openJobs")}
-            className="flex flex-wrap items-center gap-2"
-          >
-            <span aria-hidden="true" className="text-xs text-muted-foreground">
-              {t("send.openJobs")}
-            </span>
+          <div className="flex flex-wrap items-center gap-2">
             {suggestions.map((title) => (
               <Button
                 key={title}
@@ -164,7 +152,7 @@ export function RecipientsStep({
               rows={5}
               dir="ltr"
               placeholder={t("send.pastePlaceholder")}
-              aria-describedby={`${id}-paste-hint`}
+              aria-keyshortcuts={ENTER}
               className="resize-none rounded-none border-0 font-mono text-sm shadow-none focus-visible:ring-0"
               onChange={(event) => {
                 setText(event.target.value)
@@ -198,6 +186,12 @@ export function RecipientsStep({
               >
                 <UserPlus />
                 {t("send.add")}
+                <kbd
+                  aria-hidden="true"
+                  className="font-sans text-xs opacity-70 max-md:hidden"
+                >
+                  ↵
+                </kbd>
               </Button>
             </div>
             <AnimatePresence>
@@ -231,9 +225,6 @@ export function RecipientsStep({
             void importFile(picked)
           }}
         />
-        <FieldDescription id={`${id}-paste-hint`}>
-          {t("send.pasteHint")}
-        </FieldDescription>
         <p
           aria-live="polite"
           className="text-sm text-muted-foreground tabular-nums empty:hidden"
@@ -242,9 +233,9 @@ export function RecipientsStep({
             [
               t("send.reportAdded", { count: report.added }),
               report.duplicates > 0 &&
-                t("send.reportDuplicates", { count: report.duplicates }),
+                t("send.reportRepeat", { count: report.duplicates }),
               report.invalid > 0 &&
-                t("send.reportInvalid", { count: report.invalid }),
+                t("send.reportUnread", { count: report.invalid }),
             ]
               .filter(Boolean)
               .join(" · ")}

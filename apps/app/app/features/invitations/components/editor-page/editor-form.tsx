@@ -1,18 +1,14 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useTranslation } from "@workspace/i18n/react"
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-} from "@workspace/ui/components/alert"
 import { Button } from "@workspace/ui/components/button"
-import { Copy, Eye, History } from "lucide-react"
+import { Copy, Eye } from "lucide-react"
 import { lazy, Suspense, useId, useMemo, useState } from "react"
 import { useForm, useWatch } from "react-hook-form"
 import { href } from "react-router"
 
 import { ConfirmDialog } from "@/components/confirm-dialog"
 import { PageHeader } from "@/components/page-header"
+import { StatusBadge } from "@/components/status-badge"
 import { TextField } from "@/components/text-field"
 import { useAutosave } from "@/hooks/use-draft"
 import { useLeaveGuard } from "@/hooks/use-leave-guard"
@@ -20,6 +16,7 @@ import { clearDraft, loadDraft, saveDraft } from "@/lib/draft"
 import { checkOnBlur } from "@/lib/forms"
 import { useGo } from "@/lib/navigation"
 
+import { issuesOf } from "../../lib/readiness"
 import { useUpdateTemplate } from "../../mutations/use-update-template"
 import {
   makeTemplateFormSchema,
@@ -30,10 +27,8 @@ import type { TemplateChanges } from "../../services/templates.service"
 import { CopyDialog } from "../library/copy-dialog"
 import { PreviewSheet } from "../preview/preview-sheet"
 import { EditorSkeleton } from "./editor-skeleton"
-import { FidelityNotice, ReadOnlyNotice } from "./editor-notices"
-import { EditorTips } from "./editor-tips"
-import { PreviewCard } from "./preview-card"
-import { Readiness } from "./readiness"
+import { DraftNotice, FidelityNotice } from "./editor-notices"
+import { ReadinessIssues } from "./readiness"
 import { SaveState } from "./save-state"
 
 const TemplateFields = lazy(() => import("../editor/template-fields"))
@@ -110,6 +105,7 @@ export function EditorForm({
   })
   const guard = useLeaveGuard(dirty && !save.isPending)
   const bodyLocked = owned && !exact && !convert
+  const issues = owned ? issuesOf(subject, body) : []
 
   useAutosave(values, () => {
     if (!owned || draft) return
@@ -157,8 +153,16 @@ export function EditorForm({
   return (
     <>
       <PageHeader
-        title={template.name}
-        description={owned ? t("editor.lead") : t("editor.starterLead")}
+        title={
+          owned ? (
+            template.name
+          ) : (
+            <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
+              {template.name}
+              <StatusBadge tone="neutral">{t("library.starter")}</StatusBadge>
+            </span>
+          )
+        }
         actions={
           owned ? (
             <div className="flex items-center gap-3">
@@ -189,35 +193,16 @@ export function EditorForm({
       />
 
       {draft && (
-        <Alert>
-          <History />
-          <AlertTitle>{t("draft.title")}</AlertTitle>
-          <AlertDescription className="flex flex-col items-start gap-3">
-            {t("draft.body")}
-            <span className="flex gap-2">
-              <Button
-                size="sm"
-                onClick={() => {
-                  restore(draft)
-                }}
-              >
-                {t("draft.restore")}
-              </Button>
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={() => {
-                  clearDraft(draftKey(template.id))
-                  setDraft(null)
-                }}
-              >
-                {t("draft.discard")}
-              </Button>
-            </span>
-          </AlertDescription>
-        </Alert>
+        <DraftNotice
+          onRestore={() => {
+            restore(draft)
+          }}
+          onDiscard={() => {
+            clearDraft(draftKey(template.id))
+            setDraft(null)
+          }}
+        />
       )}
-      {!owned && <ReadOnlyNotice />}
       {bodyLocked && (
         <FidelityNotice
           onConvert={() => {
@@ -226,44 +211,34 @@ export function EditorForm({
         />
       )}
 
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start">
-        <form
-          id={formId}
-          noValidate
-          className="flex min-w-0 flex-col gap-6"
-          onSubmit={(event) => {
-            void submit(event)
-          }}
-        >
-          {owned && (
-            <TextField
-              label={t("editor.name")}
-              autoComplete="off"
-              error={form.formState.errors.name?.message}
-              {...checkOnBlur(form, "name")}
-            />
-          )}
-          <Suspense fallback={<EditorSkeleton />}>
-            <TemplateFields
-              key={mount}
-              form={form}
-              initial={initial}
-              readOnly={!owned}
-              bodyLocked={bodyLocked}
-              onFidelity={setExact}
-            />
-          </Suspense>
-        </form>
-        <aside className="flex min-w-0 flex-col gap-4 lg:sticky lg:top-20">
-          {owned && <Readiness subject={subject} body={body} />}
-          <PreviewCard
-            onOpen={() => {
-              setPreviewing(true)
-            }}
+      <form
+        id={formId}
+        noValidate
+        className="flex max-w-3xl min-w-0 flex-col gap-6"
+        onSubmit={(event) => {
+          void submit(event)
+        }}
+      >
+        {owned && (
+          <TextField
+            label={t("editor.name")}
+            autoComplete="off"
+            error={form.formState.errors.name?.message}
+            {...checkOnBlur(form, "name")}
           />
-          {owned && <EditorTips />}
-        </aside>
-      </div>
+        )}
+        <ReadinessIssues issues={issues} />
+        <Suspense fallback={<EditorSkeleton />}>
+          <TemplateFields
+            key={mount}
+            form={form}
+            initial={initial}
+            readOnly={!owned}
+            bodyLocked={bodyLocked}
+            onFidelity={setExact}
+          />
+        </Suspense>
+      </form>
 
       <PreviewSheet
         open={previewing}

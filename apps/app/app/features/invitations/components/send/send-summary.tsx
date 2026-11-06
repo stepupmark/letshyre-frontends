@@ -1,9 +1,8 @@
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
-import { Mail } from "lucide-react"
 import { AnimatePresence } from "motion/react"
 import * as m from "motion/react-m"
-import { useId, type ReactNode } from "react"
+import type { ReactNode } from "react"
 
 import { AnimatedNumber } from "@/components/animated-number"
 import { duration, ease } from "@/lib/motion"
@@ -17,7 +16,7 @@ import { Monogram } from "../shared/monogram"
 
 const STACK = 4
 
-/** The invitation as it stands, filled in step by step. */
+/** The invitation as it stands; rows appear as they're filled in. */
 export function SendSummary({
   template,
   role,
@@ -33,28 +32,22 @@ export function SendSummary({
 }) {
   const { t } = useTranslation("invitations")
   const locale = useLocale()
-  const titleId = useId()
+  if (!template) return null
   const extra = recipients.length - STACK
+  const onReview = current === SEND_STEP.review
 
   return (
-    <section
-      aria-labelledby={titleId}
-      className="flex flex-col overflow-hidden rounded-lg border bg-card"
-    >
-      <h3
-        id={titleId}
-        className="border-b px-4 py-3 text-sm font-medium text-muted-foreground"
-      >
-        {t("send.summaryTitle")}
-      </h3>
-      <dl className="flex flex-col divide-y">
+    <section className="flex flex-col overflow-hidden rounded-lg border bg-card">
+      <SummaryPreview
+        template={template}
+        role={role}
+        firstName={recipients[0]?.name}
+      />
+      <dl className="flex flex-col divide-y border-t">
         <Row
+          id={template.id}
           label={t("send.summaryTemplate")}
-          filled={Boolean(template)}
-          animateKey={template?.id}
-          placeholder={t("send.notChosen")}
           action={
-            template &&
             current !== SEND_STEP.template && (
               <ChangeButton
                 label={t("send.summaryTemplate")}
@@ -65,124 +58,105 @@ export function SendSummary({
             )
           }
         >
-          {template && <span className="font-medium">{template.name}</span>}
+          {template.name}
         </Row>
-        <Row
-          label={t("send.summaryRole")}
-          filled={Boolean(role.trim())}
-          placeholder={t("send.notSet")}
-          action={
-            role.trim() &&
-            current === SEND_STEP.review && (
-              <ChangeButton
-                label={t("send.summaryRole")}
-                onClick={() => {
-                  onChange(SEND_STEP.candidates)
-                }}
-              />
-            )
-          }
-        >
-          {role.trim() && <span className="font-medium">{role.trim()}</span>}
-        </Row>
-        <Row
-          label={t("send.steps.candidates")}
-          filled={recipients.length > 0}
-          placeholder={t("send.noCandidates")}
-          action={
-            recipients.length > 0 &&
-            current === SEND_STEP.review && (
-              <ChangeButton
-                label={t("send.steps.candidates")}
-                onClick={() => {
-                  onChange(SEND_STEP.candidates)
-                }}
-              />
-            )
-          }
-        >
-          {recipients.length > 0 && (
-            <span className="flex items-center gap-3">
-              <span className="flex -space-x-1.5 rtl:space-x-reverse">
-                <AnimatePresence initial={false}>
-                  {recipients.slice(0, STACK).map((recipient) => (
-                    <m.span
-                      key={recipient.email.toLowerCase()}
-                      initial={{ opacity: 0, scale: 0.6 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.6 }}
-                      transition={{ duration: duration.base, ease }}
-                    >
-                      <Monogram
-                        name={recipient.name || recipient.email}
-                        className="ring-2 ring-card"
-                      />
-                    </m.span>
-                  ))}
-                </AnimatePresence>
-                {extra > 0 && (
-                  <span className="grid size-7 place-items-center rounded-full bg-muted text-xs font-medium text-muted-foreground tabular-nums ring-2 ring-card">
-                    +{extra}
-                  </span>
-                )}
-              </span>
-              <span className="font-medium tabular-nums">
-                <AnimatedNumber value={recipients.length} locale={locale} />
-              </span>
-            </span>
+        <AnimatePresence initial={false}>
+          {role.trim() && (
+            <Row
+              key="role"
+              label={t("send.summaryRole")}
+              action={
+                onReview && (
+                  <ChangeButton
+                    label={t("send.summaryRole")}
+                    onClick={() => {
+                      onChange(SEND_STEP.candidates)
+                    }}
+                  />
+                )
+              }
+            >
+              {role.trim()}
+            </Row>
           )}
-        </Row>
+          {recipients.length > 0 && (
+            <Row
+              key="candidates"
+              label={t("send.steps.candidates")}
+              action={
+                onReview && (
+                  <ChangeButton
+                    label={t("send.steps.candidates")}
+                    onClick={() => {
+                      onChange(SEND_STEP.candidates)
+                    }}
+                  />
+                )
+              }
+            >
+              <span className="flex items-center gap-3">
+                <span className="flex -space-x-1.5 rtl:space-x-reverse">
+                  <AnimatePresence initial={false}>
+                    {recipients.slice(0, STACK).map((recipient) => (
+                      <m.span
+                        key={recipient.email.toLowerCase()}
+                        initial={{ opacity: 0, scale: 0.6 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.6 }}
+                        transition={{ duration: duration.base, ease }}
+                      >
+                        <Monogram
+                          name={recipient.name || recipient.email}
+                          className="ring-2 ring-card"
+                        />
+                      </m.span>
+                    ))}
+                  </AnimatePresence>
+                  {extra > 0 && (
+                    <span className="grid size-7 place-items-center rounded-full bg-muted text-xs font-medium text-muted-foreground tabular-nums ring-2 ring-card">
+                      +{extra}
+                    </span>
+                  )}
+                </span>
+                <span className="tabular-nums">
+                  <AnimatedNumber value={recipients.length} locale={locale} />
+                </span>
+              </span>
+            </Row>
+          )}
+        </AnimatePresence>
       </dl>
-      <SummaryPreview
-        template={template}
-        role={role}
-        firstName={recipients[0]?.name}
-      />
     </section>
   )
 }
 
 function Row({
+  id,
   label,
-  filled,
-  animateKey,
-  placeholder,
   action,
   children,
 }: {
+  /** a new value under this id fades in again, e.g. another template */
+  id?: string
   label: string
-  filled: boolean
-  /** a new value under this key fades in again, e.g. another template */
-  animateKey?: string
-  placeholder: string
   action?: ReactNode
   children: ReactNode
 }) {
   return (
-    <div className="flex flex-col gap-0.5 px-4 py-3 text-sm">
+    <m.div
+      key={id}
+      initial={{ opacity: 0, y: 4 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: duration.base, ease }}
+      className="flex flex-col px-4 py-2.5 text-sm"
+    >
       <dt className="text-xs text-muted-foreground">{label}</dt>
-      <dd className="flex min-w-0 items-start justify-between gap-3">
-        <span className="relative min-w-0 wrap-break-word">
-          <AnimatePresence initial={false} mode="popLayout">
-            <m.span
-              key={animateKey ?? String(filled)}
-              initial={{ opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: duration.base, ease }}
-              className="block"
-            >
-              {filled ? (
-                children
-              ) : (
-                <span className="text-muted-foreground">{placeholder}</span>
-              )}
-            </m.span>
-          </AnimatePresence>
-        </span>
+      <dd className="flex min-w-0 items-center justify-between gap-3">
+        <span className="min-w-0 font-medium wrap-break-word">{children}</span>
         {action}
       </dd>
-    </div>
+    </m.div>
   )
 }
 
@@ -199,7 +173,7 @@ function ChangeButton({
       type="button"
       variant="ghost"
       size="sm"
-      className="-my-1 -me-2 shrink-0 max-md:h-11"
+      className="-my-1.5 -me-2 shrink-0 max-md:h-11"
       onClick={onClick}
     >
       {t("send.change")}
@@ -213,20 +187,13 @@ function SummaryPreview({
   role,
   firstName,
 }: {
-  template: Template | undefined
+  template: Template
   role: string
   firstName: string | undefined
 }) {
   const { t } = useTranslation("invitations")
-  if (!template)
-    return (
-      <div className="flex h-48 flex-col items-center justify-center gap-2 border-t bg-muted/40 px-6 text-center text-sm text-pretty text-muted-foreground">
-        <Mail aria-hidden="true" className="size-5" />
-        {t("send.previewEmpty")}
-      </div>
-    )
   return (
-    <div className="relative h-56 overflow-hidden border-t bg-muted mask-b-from-70%">
+    <div className="relative h-56 overflow-hidden bg-muted mask-b-from-70%">
       <AnimatePresence initial={false}>
         <m.div
           key={template.id}

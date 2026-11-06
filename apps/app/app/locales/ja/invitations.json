@@ -1,6 +1,5 @@
 {
   "title": "招待",
-  "lead": "候補者にAI面接へのリンクをメールで送ります。文面は自社らしく調整できます。",
   "fields": {
     "candidate_name": "候補者名",
     "job_role": "職種",
@@ -9,9 +8,7 @@
     "invite_link": "招待リンク"
   },
   "library": {
-    "startersLead": "LetsHyreが用意した文面です。文面を変えるにはコピーを作成してください。",
     "starter": "スターター",
-    "byLetshyre": "LetsHyre提供",
     "subject": "件名：",
     "copy": "コピーを作成",
     "edit": "編集",
@@ -19,9 +16,7 @@
     "delete": "削除",
     "actions": "{{name}}の操作",
     "emptyTitle": "自社のテンプレートはまだありません",
-    "emptyBody": "スターターテンプレートをコピーして、文面や結びをチームに合わせて変更しましょう。",
     "errorTitle": "テンプレートを読み込めませんでした。",
-    "errorBody": "送信や変更は行われていません。接続を確認してもう一度お試しください。",
     "tabs": {
       "label": "テンプレートの種類",
       "yours": "自社のテンプレート",
@@ -30,11 +25,12 @@
     "inactive": "無効",
     "editedOn": "{{date}}に編集",
     "sendOne": "送信",
-    "emptyAction": "LetsHyreのテンプレートを見る"
+    "emptyAction": "LetsHyreのテンプレートを見る",
+    "emptyHint": "スターターをコピーして自分用を作成できます。",
+    "errorRetry": "接続を確認して、もう一度お試しください。"
   },
   "copy": {
     "title": "コピーを作成",
-    "lead": "コピーは「{{name}}」の文面から始まります。自社の人だけが見られます。",
     "name": "テンプレート名",
     "suffix": "（コピー）",
     "nameError": "{{max}}文字以内で名前を付けてください。",
@@ -43,8 +39,8 @@
   },
   "delete": {
     "title": "「{{name}}」を削除しますか？",
-    "body": "テンプレートはチーム全員から削除されます。送信済みの招待には影響しません。元に戻せません。",
-    "confirm": "テンプレートを削除"
+    "confirm": "テンプレートを削除",
+    "note": "チーム全員から削除されます。送信済みの招待には影響しません。"
   },
   "toast": {
     "copied": "「{{name}}」を編集できます",
@@ -56,22 +52,15 @@
     "sendFailed": "送信されていません。接続を確認してもう一度お試しください。"
   },
   "editor": {
-    "lead": "保存後に送信する招待に変更が反映されます。",
-    "starterLead": "LetsHyreのスターターテンプレートです。",
     "name": "テンプレート名",
     "subject": "件名",
     "subjectPlaceholder": "候補者の受信トレイに表示される件名",
     "body": "本文",
     "bodyPlaceholder": "招待文を書きましょう。{{ と入力すると候補者名などのフィールドを挿入できます。",
-    "bodyHint": "フィールドは送信時に候補者ごとに差し込まれます。",
     "editButton": "ボタンを編集",
     "save": "変更を保存",
     "saving": "保存中…",
     "copyToEdit": "コピーして編集",
-    "readOnlyTitle": "スターターテンプレートは変更できません",
-    "readOnlyBody": "コピーを作成すると、文面や名前を変えて送信できます。",
-    "fidelityTitle": "一部の書式はここで編集できません",
-    "fidelityBody": "このテンプレートにはエディターが対応していないレイアウトが含まれるため、本文は崩れないようロックされています。名前と件名は変更できます。変換すると文章は残り、レイアウトは簡素になります。",
     "fidelityConvert": "変換して編集",
     "missingTitle": "このテンプレートは見つかりません",
     "missingBody": "チームの誰かが削除した可能性があります。",
@@ -79,11 +68,7 @@
     "unsaved": "未保存の変更があります",
     "saved": "すべての変更を保存しました",
     "preview": "プレビュー",
-    "previewCard": "候補者として見る",
-    "previewCardBody": "未保存の変更を含めてメールを開きます。",
-    "tipsTitle": "書き方のヒント",
-    "tipField": "候補者名などのフィールドを挿入します。",
-    "tipLink": "選択したテキストにリンクを付けます。"
+    "fidelityNote": "このレイアウトはここでは編集できません。変換すると文章は残り、レイアウトは簡略化されます。"
   },
   "errors": {
     "name": "120文字以内で名前を付けてください。",
@@ -167,25 +152,14 @@
     "sheetLead": "候補者に届くメールを未保存の変更込みで表示します。サンプルを変えると別の人として確認できます。"
   },
   "ready": {
-    "title": "送信の準備",
-    "count": "{{done}} / {{total}}",
-    "subject": "件名がある",
-    "invite": "招待リンクを含む",
-    "name": "候補者を名前で呼びかけている",
-    "role": "職種に触れている",
-    "known": "LetsHyreが差し込むフィールドのみ",
     "unknown": "不明なフィールド: {{fields}}",
-    "state": {
-      "done": "完了：",
-      "todo": "推奨：",
-      "problem": "要修正："
-    }
+    "needSubject": "件名を追加してください",
+    "needInvite": "招待リンクを追加してください"
   },
   "draft": {
-    "title": "以前の未保存の変更があります",
-    "body": "ページを離れたときにこの端末に保存されていました。復元して編集を続けるか、破棄してください。",
     "restore": "変更を復元",
-    "discard": "破棄"
+    "discard": "破棄",
+    "prompt": "保存していない変更を復元しますか？"
   },
   "leave": {
     "title": "保存せずに移動しますか？",
@@ -194,38 +168,18 @@
   },
   "send": {
     "title": "招待を送信",
-    "lead": "テンプレートを選び、候補者を追加し、送信前にメールを確認します。",
     "steps": {
       "template": "テンプレート",
       "candidates": "候補者",
       "review": "確認"
     },
     "templateLabel": "送信するテンプレート",
-    "templateHeading": "メールを選ぶ",
-    "templateLead": "候補者ごとに、本人の名前と招待リンクが入った状態で届きます。",
-    "candidatesHeading": "誰に送りますか？",
-    "candidatesLead": "面接の職種を入力し、アドレスを貼り付けるかファイルから読み込みます。",
-    "reviewHeading": "メールを1通ずつ確認",
-    "reviewLead": "候補者を選ぶと、その人に届くメールを確認できます。",
     "search": "テンプレートを検索",
     "noMatch": "「{{query}}」に一致するテンプレートはありません。",
-    "blocked": {
-      "inactive": "無効なテンプレートは送信できません。",
-      "notReady": "まだ送信できません。件名、招待リンク、項目を確認してください。",
-      "open": "エディターで開く"
-    },
     "change": "変更",
-    "summaryTitle": "この招待",
-    "notChosen": "未選択",
-    "notSet": "未設定",
-    "noCandidates": "まだ追加されていません",
-    "previewEmpty": "テンプレートを選ぶと、ここにメールが表示されます。",
     "role": "職種",
-    "roleHint": "職種フィールドに入り、アプリでどの職種を選ぶか候補者に伝えます。",
-    "openJobs": "募集中の求人",
     "paste": "候補者を追加",
     "pastePlaceholder": "Jane Doe <jane@example.com>\njohn@example.com, John Smith",
-    "pasteHint": "アドレスを1行に1件、またはカンマ区切りで貼り付けてEnterを押します。名前は行かアドレスから取ります。",
     "add": "リストに追加",
     "import": "ファイルを読み込む",
     "dropHere": "ここにファイルをドロップして読み込む",
@@ -233,11 +187,8 @@
     "fileWrongType": ".csv または .txt ファイルを使ってください。",
     "fileUnreadable": "ファイルを読み込めませんでした。CSV で保存してもう一度お試しください。",
     "reportAdded_other": "{{count}}件追加",
-    "reportDuplicates_other": "{{count}}件はすでにリストにあります",
-    "reportInvalid_other": "{{count}}行は読み取れず、入力欄に残っています",
     "clear": "リストを空にする",
     "cleared": "リストを空にしました",
-    "listEmpty": "候補者はまだいません。アドレスを貼り付けるかCSVをアップロードすると、送信前に確認できるようここに表示されます。",
     "overLimit": "一度に送れるのは{{max}}人までです。",
     "nameFor": "{{email}} の名前",
     "namePlaceholder": "名前を追加",
@@ -247,8 +198,6 @@
     "prevCandidate": "前の候補者",
     "nextCandidate": "次の候補者",
     "position": "{{current}} / {{total}}",
-    "highlight": "個別に変わる部分を強調表示",
-    "localPreview": "ライブプレビューを読み込めなかったため、ここで表示しています。会社名、あなたの名前、候補者ごとの招待リンクは送信時に差し込まれます。",
     "submit_other": "{{count}}件の招待を送信",
     "sending": "送信中…",
     "errors": {
@@ -256,24 +205,23 @@
       "none": "候補者を1人以上追加してください。",
       "names": "全員に名前を入れてください。呼びかけに使います。",
       "role": "面接の職種を入力してください。"
-    }
+    },
+    "listNone": "候補者はまだいません。",
+    "sampleNote": "プレビューはサンプルの会社情報を使っています。",
+    "highlightFields": "差し込み項目を強調",
+    "notReady": "未完成",
+    "fix": "修正",
+    "reportRepeat_other": "重複 {{count}}件",
+    "reportUnread_other": "無効 {{count}}件"
   },
   "result": {
     "titleSent_other": "件の招待を送信しました",
     "titleNone": "招待は送信されませんでした",
-    "leadShort": "メールが届くまで数分かかることがあります。",
-    "leadNone": "受け付けられたアドレスはありません。確認してもう一度お試しください。",
     "missedTitle_other": "{{count}}件は送信されませんでした",
-    "missedBody": "これらのアドレスは送信キューに入りませんでした。すでに招待済みか、メールを受信できない可能性があります。",
-    "retry": "この宛先に再送する",
     "queuedTitle": "送信先",
-    "queued": "送信待ち",
-    "sentAt": "送信日時",
-    "nextTitle": "このあとの流れ",
-    "nextEmail": "候補者ごとに、本人専用の招待リンク付きのメールが届きます。",
-    "nextSetup": "候補者がアカウントを作成し、LetsHyre デスクトップアプリをインストールします。",
-    "nextInterview": "{{role}} の AI 面接を受けます。",
     "again": "別のグループに送信",
-    "done": "招待一覧に戻る"
+    "done": "招待一覧に戻る",
+    "missedNote": "招待済みか、メールを受信できません。",
+    "tryAgain": "再試行"
   }
 }

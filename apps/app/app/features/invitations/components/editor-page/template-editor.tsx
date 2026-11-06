@@ -23,7 +23,10 @@ export function TemplateEditor({ templateId }: { templateId: string }) {
       <QueryState
         query={templates}
         skeleton={<EditorSkeleton />}
-        error={{ title: t("library.errorTitle"), body: t("library.errorBody") }}
+        error={{
+          title: t("library.errorTitle"),
+          body: t("library.errorRetry"),
+        }}
       >
         {(list) => {
           const template = list.find((item) => item.id === templateId)

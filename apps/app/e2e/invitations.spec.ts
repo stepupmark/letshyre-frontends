@@ -125,15 +125,14 @@ test("an employer copies a starter, rewords it and invites two candidates", asyn
     .filter({ hasText: "Acme invite" })
     .getByRole("link", { name: "Send", exact: true })
     .click()
-  const summary = tab.getByRole("region", { name: "This invitation" })
-  await expect(summary.getByText("Acme invite", { exact: true })).toBeVisible()
+  await expect(tab.getByText("Acme invite", { exact: true })).toBeVisible()
 
   await tab.getByRole("textbox", { name: "Job role" }).fill("Backend Engineer")
   await tab
     .getByLabel("Add candidates")
     .fill("Jane Doe <jane@acme.test>\njohn.smith@acme.test\nJANE@acme.test")
   await tab.getByRole("button", { name: "Add to list" }).click()
-  await expect(tab.getByText("2 added · 1 already in the list")).toBeVisible()
+  await expect(tab.getByText("2 added · 1 duplicate")).toBeVisible()
   await expect(tab.getByLabel("Name for john.smith@acme.test")).toHaveValue(
     "John Smith"
   )

@@ -1,6 +1,5 @@
 {
   "title": "Invitations",
-  "lead": "Email candidates a link to take their AI interview, written the way your company speaks.",
   "fields": {
     "candidate_name": "Candidate name",
     "job_role": "Job role",
@@ -9,9 +8,7 @@
     "invite_link": "Invite link"
   },
   "library": {
-    "startersLead": "Written by LetsHyre. Make a copy to change the wording.",
     "starter": "Starter",
-    "byLetshyre": "By LetsHyre",
     "subject": "Subject:",
     "copy": "Make a copy",
     "edit": "Edit",
@@ -19,9 +16,7 @@
     "delete": "Delete",
     "actions": "Actions for {{name}}",
     "emptyTitle": "No templates of your own yet",
-    "emptyBody": "Copy a starter template, then change the wording and sign-off to sound like your team.",
     "errorTitle": "Your templates didn't load.",
-    "errorBody": "Nothing has been sent or changed. Check your connection and try again.",
     "tabs": {
       "label": "Template groups",
       "yours": "Your templates",
@@ -30,11 +25,12 @@
     "inactive": "Inactive",
     "editedOn": "Edited {{date}}",
     "sendOne": "Send",
-    "emptyAction": "Browse LetsHyre templates"
+    "emptyAction": "Browse LetsHyre templates",
+    "emptyHint": "Copy a starter to make your own.",
+    "errorRetry": "Check your connection and try again."
   },
   "copy": {
     "title": "Make a copy",
-    "lead": "Your copy starts with the wording of “{{name}}”. Only your company sees it.",
     "name": "Template name",
     "suffix": "(copy)",
     "nameError": "Give it a name of up to {{max}} characters.",
@@ -43,8 +39,8 @@
   },
   "delete": {
     "title": "Delete “{{name}}”?",
-    "body": "The template is removed for everyone on your team. Invitations already sent aren't affected. This can't be undone.",
-    "confirm": "Delete template"
+    "confirm": "Delete template",
+    "note": "Removed for your whole team. Sent invitations aren't affected."
   },
   "toast": {
     "copied": "“{{name}}” is ready to edit",
@@ -56,22 +52,15 @@
     "sendFailed": "Nothing was sent. Check your connection and try again."
   },
   "editor": {
-    "lead": "Changes apply to invitations you send after saving.",
-    "starterLead": "A starter template from LetsHyre.",
     "name": "Template name",
     "subject": "Subject",
     "subjectPlaceholder": "What candidates see in their inbox",
     "body": "Message",
     "bodyPlaceholder": "Write your invitation. Type {{ to add a field like the candidate's name.",
-    "bodyHint": "Fields are filled in for each candidate when the email is sent.",
     "editButton": "Edit button",
     "save": "Save changes",
     "saving": "Saving…",
     "copyToEdit": "Make a copy to edit",
-    "readOnlyTitle": "Starter templates can't be changed",
-    "readOnlyBody": "Make a copy and it becomes yours to reword, rename and send.",
-    "fidelityTitle": "Some formatting can't be edited here",
-    "fidelityBody": "This template uses layout the editor doesn't support, so the message is locked to keep it intact. You can still change the name and subject. Converting keeps the words but simplifies that layout.",
     "fidelityConvert": "Convert and edit",
     "missingTitle": "This template isn't here anymore",
     "missingBody": "It may have been deleted by someone on your team.",
@@ -79,11 +68,7 @@
     "unsaved": "Unsaved changes",
     "saved": "All changes saved",
     "preview": "Preview",
-    "previewCard": "See it as a candidate",
-    "previewCardBody": "Open the email with your unsaved changes.",
-    "tipsTitle": "Writing tips",
-    "tipField": "inserts a field like the candidate's name.",
-    "tipLink": "links the selected text."
+    "fidelityNote": "This layout can't be edited here. Converting keeps the words but simplifies it."
   },
   "errors": {
     "name": "Give it a name of up to 120 characters.",
@@ -167,25 +152,14 @@
     "sheetLead": "The email a candidate gets, with your unsaved changes. Change the sample to see it for someone else."
   },
   "ready": {
-    "title": "Ready to send",
-    "count": "{{done}} of {{total}}",
-    "subject": "Has a subject line",
-    "invite": "Includes the invite link",
-    "name": "Greets the candidate by name",
-    "role": "Mentions the job role",
-    "known": "Uses only fields LetsHyre fills in",
     "unknown": "Unknown fields: {{fields}}",
-    "state": {
-      "done": "Done:",
-      "todo": "Suggested:",
-      "problem": "Needs fixing:"
-    }
+    "needSubject": "Add a subject",
+    "needInvite": "Add the invite link"
   },
   "draft": {
-    "title": "You have unsaved changes from earlier",
-    "body": "They were kept on this device when you left the page. Restore them to keep editing, or discard them.",
     "restore": "Restore changes",
-    "discard": "Discard"
+    "discard": "Discard",
+    "prompt": "Restore unsaved changes?"
   },
   "leave": {
     "title": "Leave without saving?",
@@ -194,38 +168,18 @@
   },
   "send": {
     "title": "Send invitations",
-    "lead": "Pick a template, add candidates and check the email before it goes out.",
     "steps": {
       "template": "Template",
       "candidates": "Candidates",
       "review": "Review"
     },
     "templateLabel": "Template to send",
-    "templateHeading": "Choose the email",
-    "templateLead": "Each candidate gets it with their own name and invite link.",
-    "candidatesHeading": "Who's getting it?",
-    "candidatesLead": "Add the role they're interviewing for, then paste or import their addresses.",
-    "reviewHeading": "Check each email",
-    "reviewLead": "Pick a candidate to see the exact email they'll get.",
     "search": "Search templates",
     "noMatch": "No template matches “{{query}}”.",
-    "blocked": {
-      "inactive": "Inactive templates can't be sent.",
-      "notReady": "Not ready to send: check the subject, invite link and fields.",
-      "open": "Open in editor"
-    },
     "change": "Change",
-    "summaryTitle": "This invitation",
-    "notChosen": "Not chosen yet",
-    "notSet": "Not set yet",
-    "noCandidates": "No one added yet",
-    "previewEmpty": "Pick a template to see the email here.",
     "role": "Job role",
-    "roleHint": "Fills in the job role field and tells candidates which role to pick in the app.",
-    "openJobs": "Open jobs",
     "paste": "Add candidates",
     "pastePlaceholder": "Jane Doe <jane@example.com>\njohn@example.com, John Smith",
-    "pasteHint": "Paste addresses, one per line or separated by commas, then press Enter. Names come from the line or the address.",
     "add": "Add to list",
     "import": "Import file",
     "dropHere": "Drop the file to import it",
@@ -234,13 +188,8 @@
     "fileUnreadable": "That file couldn't be read. Save it as CSV and try again.",
     "reportAdded_one": "{{count}} added",
     "reportAdded_other": "{{count}} added",
-    "reportDuplicates_one": "{{count}} already in the list",
-    "reportDuplicates_other": "{{count}} already in the list",
-    "reportInvalid_one": "{{count}} line couldn't be read and stays in the box",
-    "reportInvalid_other": "{{count}} lines couldn't be read and stay in the box",
     "clear": "Clear list",
     "cleared": "List cleared",
-    "listEmpty": "No candidates yet. Paste addresses or upload a CSV, and they'll be listed here to check before sending.",
     "overLimit": "Send to at most {{max}} candidates at a time.",
     "nameFor": "Name for {{email}}",
     "namePlaceholder": "Add a name",
@@ -250,8 +199,6 @@
     "prevCandidate": "Previous candidate",
     "nextCandidate": "Next candidate",
     "position": "{{current}} of {{total}}",
-    "highlight": "Highlight personalised parts",
-    "localPreview": "The live preview didn't load, so this is drawn here. Your company name, your name and each candidate's invite link are filled in when the email is sent.",
     "submit_one": "Send {{count}} invitation",
     "submit_other": "Send {{count}} invitations",
     "sending": "Sending…",
@@ -260,26 +207,27 @@
       "none": "Add at least one candidate.",
       "names": "Give every candidate a name; it's used to greet them.",
       "role": "Enter the job role they're interviewing for."
-    }
+    },
+    "listNone": "No candidates yet.",
+    "sampleNote": "Preview uses sample company details.",
+    "highlightFields": "Highlight fields",
+    "notReady": "Not ready",
+    "fix": "Fix",
+    "reportRepeat_one": "{{count}} duplicate",
+    "reportRepeat_other": "{{count}} duplicates",
+    "reportUnread_one": "{{count}} invalid",
+    "reportUnread_other": "{{count}} invalid"
   },
   "result": {
     "titleSent_one": "invitation on its way",
     "titleSent_other": "invitations on their way",
     "titleNone": "No invitations were sent",
-    "leadShort": "Emails can take a few minutes to arrive.",
-    "leadNone": "None of the addresses were accepted. Check them and try again.",
     "missedTitle_one": "{{count}} wasn't sent",
     "missedTitle_other": "{{count}} weren't sent",
-    "missedBody": "These addresses weren't queued. They may already have an invitation or can't receive email.",
-    "retry": "Try these again",
     "queuedTitle": "Sent to",
-    "queued": "Queued",
-    "sentAt": "Sent at",
-    "nextTitle": "What happens next",
-    "nextEmail": "Each candidate gets the email with their own invite link.",
-    "nextSetup": "They create an account and install the LetsHyre desktop app.",
-    "nextInterview": "They take the AI interview for the {{role}} role.",
     "again": "Send another batch",
-    "done": "Back to invitations"
+    "done": "Back to invitations",
+    "missedNote": "Already invited or can't receive email.",
+    "tryAgain": "Try again"
   }
 }

@@ -31,7 +31,10 @@ export function SendInvitations({ jobTitles }: { jobTitles: string[] }) {
       <QueryState
         query={templates}
         skeleton={<SendSkeleton />}
-        error={{ title: t("library.errorTitle"), body: t("library.errorBody") }}
+        error={{
+          title: t("library.errorTitle"),
+          body: t("library.errorRetry"),
+        }}
       >
         {(list) => (
           <SendFlow templates={list} roles={[...new Set(jobTitles)]} />
@@ -94,9 +97,10 @@ function SendFlow({
 
   return (
     <>
-      <PageHeader title={t("send.title")} description={t("send.lead")} />
+      <PageHeader title={t("send.title")} />
       <Wizard
         wide
+        hideHeadings
         pending={send.isPending}
         onStepChange={setStep}
         finishLabel={
@@ -135,8 +139,6 @@ function SendFlow({
           {
             id: SEND_STEP.template,
             title: t("send.steps.template"),
-            heading: t("send.templateHeading"),
-            description: t("send.templateLead"),
             aside: summary,
             isComplete: () => Boolean(template),
             validate: flow.checkTemplate,
@@ -154,8 +156,6 @@ function SendFlow({
           {
             id: SEND_STEP.candidates,
             title: t("send.steps.candidates"),
-            heading: t("send.candidatesHeading"),
-            description: t("send.candidatesLead"),
             aside: summary,
             isComplete: flow.candidatesReady,
             validate: flow.checkCandidates,
@@ -177,8 +177,6 @@ function SendFlow({
           {
             id: SEND_STEP.review,
             title: t("send.steps.review"),
-            heading: t("send.reviewHeading"),
-            description: t("send.reviewLead"),
             content: template && (
               <ReviewStep
                 template={template}

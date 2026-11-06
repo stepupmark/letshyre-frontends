@@ -1,4 +1,4 @@
-import { useLocale, useTranslation } from "@workspace/i18n/react"
+import { useTranslation } from "@workspace/i18n/react"
 import {
   InputGroup,
   InputGroupAddon,
@@ -141,19 +141,13 @@ function TemplateOption({
   selection: string
 }) {
   const { t } = useTranslation("invitations")
-  const locale = useLocale()
   const reasonId = useId()
   const block = sendBlock(template)
-  const edited = template.updated_at
-    ? new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
-        new Date(template.updated_at)
-      )
-    : null
 
   return (
     <label
       data-blocked={Boolean(block)}
-      className="group relative flex cursor-pointer items-start gap-3 rounded-lg border bg-card p-4 transition-colors hover:bg-muted/40 has-focus-visible:ring-3 has-focus-visible:ring-ring/50 data-[blocked=true]:cursor-default data-[blocked=true]:bg-muted/30"
+      className="group relative flex cursor-pointer items-center gap-3 rounded-lg border bg-card px-4 py-3 transition-colors hover:bg-muted/40 has-focus-visible:ring-3 has-focus-visible:ring-ring/50 data-[blocked=true]:cursor-default data-[blocked=true]:bg-muted/30"
     >
       {selected && (
         <m.span
@@ -171,48 +165,36 @@ function TemplateOption({
       />
       <span
         aria-hidden="true"
-        className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border bg-background transition-colors group-has-data-checked:border-brand group-has-data-checked:bg-brand group-has-data-checked:text-background group-data-[blocked=true]:opacity-40"
+        className="flex size-5 shrink-0 items-center justify-center rounded-full border bg-background transition-colors group-has-data-checked:border-brand group-has-data-checked:bg-brand group-has-data-checked:text-background group-data-[blocked=true]:opacity-40"
       >
         <Check
           className="size-3 scale-0 transition-transform duration-200 group-has-data-checked:scale-100 motion-reduce:transition-none"
           strokeWidth={3}
         />
       </span>
-      <span className="flex min-w-0 flex-1 flex-col gap-1">
-        <span className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
-          <span className="min-w-0 truncate font-medium group-data-[blocked=true]:text-muted-foreground">
-            {template.name}
-          </span>
-          {template.is_system && (
-            <StatusBadge tone="neutral">{t("library.starter")}</StatusBadge>
-          )}
-          {template.is_active === false && (
-            <StatusBadge tone="neutral">{t("library.inactive")}</StatusBadge>
-          )}
+      <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+        <span className="truncate font-medium group-data-[blocked=true]:text-muted-foreground">
+          {template.name}
         </span>
-        <span className="line-clamp-2 text-sm text-pretty text-muted-foreground">
+        <span className="truncate text-sm text-muted-foreground">
           <TokenText text={template.subject_template} />
         </span>
-        {block ? (
-          <span id={reasonId} className="text-xs text-pretty text-danger">
-            {t(`send.blocked.${block}`)}{" "}
-            <AppLink
-              to={href("/employer/invitations/templates/:templateId", {
-                templateId: template.id,
-              })}
-              className="font-medium text-foreground underline underline-offset-2"
-            >
-              {t("send.blocked.open")}
-            </AppLink>
-          </span>
-        ) : (
-          <span className="text-xs text-muted-foreground">
-            {template.is_system
-              ? t("library.byLetshyre")
-              : edited && t("library.editedOn", { date: edited })}
-          </span>
-        )}
       </span>
+      {block && (
+        <span id={reasonId} className="flex shrink-0 items-center gap-2">
+          <StatusBadge tone="neutral">
+            {block === "inactive" ? t("library.inactive") : t("send.notReady")}
+          </StatusBadge>
+          <AppLink
+            to={href("/employer/invitations/templates/:templateId", {
+              templateId: template.id,
+            })}
+            className="rounded-sm text-sm font-medium underline-offset-2 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50 max-md:py-3"
+          >
+            {t("send.fix")}
+          </AppLink>
+        </span>
+      )}
     </label>
   )
 }
