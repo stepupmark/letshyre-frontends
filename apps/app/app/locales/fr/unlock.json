@@ -16,6 +16,9 @@
     "allUnlocked": "Tout est débloqué pour ce candidat.",
     "openUnlocked": "Voir les candidats débloqués",
     "failed": "Le déblocage n'est pas passé. Vérifiez votre solde avant de réessayer.",
+    "failedNoCredits": "Vous n'avez pas assez de crédits pour ce déblocage. Ajoutez des crédits et réessayez.",
+    "failedAlready": "Certains de ces entretiens sont déjà débloqués. La liste a été mise à jour.",
+    "failedNetwork": "Le déblocage ne nous est pas parvenu. Vérifiez votre connexion et réessayez.",
     "balanceFailed": "Le solde ne s’est pas chargé.",
     "retry": "Réessayer",
     "needBalance": "Votre solde doit se charger avant de pouvoir débloquer."

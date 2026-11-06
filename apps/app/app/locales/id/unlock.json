@@ -14,6 +14,9 @@
     "allUnlocked": "Semua untuk kandidat ini sudah terbuka.",
     "openUnlocked": "Lihat kandidat terbuka",
     "failed": "Pembukaan tidak berhasil. Periksa saldo Anda sebelum mencoba lagi.",
+    "failedNoCredits": "Kredit Anda tidak cukup untuk membuka ini. Tambahkan kredit lalu coba lagi.",
+    "failedAlready": "Beberapa wawancara ini sudah terbuka. Daftarnya sudah diperbarui.",
+    "failedNetwork": "Permintaan buka tidak sampai ke kami. Periksa koneksi Anda lalu coba lagi.",
     "balanceFailed": "Saldo gagal dimuat.",
     "retry": "Coba lagi",
     "needBalance": "Saldo Anda perlu dimuat sebelum bisa membuka."

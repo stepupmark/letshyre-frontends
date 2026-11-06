@@ -24,6 +24,14 @@ import {
 } from "../queries/candidate-unlock.queries"
 import { unlockCandidate } from "../services/candidate-unlock.service"
 import { costOf, toggle, unlockChoices } from "../lib/choices"
+import { unlockProblem, type UnlockProblem } from "../lib/unlock-error"
+
+const FAILED = {
+  noCredits: "panel.failedNoCredits",
+  alreadyUnlocked: "panel.failedAlready",
+  network: "panel.failedNetwork",
+  other: "panel.failed",
+} as const satisfies Record<UnlockProblem, string>
 
 const BLURRED = { opacity: 0, filter: "blur(4px)" }
 const SHARP = { opacity: 1, filter: "blur(0px)" }
@@ -60,12 +68,8 @@ export function UnlockPanel({
         choices.filter((c) => selected.has(String(c.id))).map((c) => c.id)
       ),
     onSuccess: async () => {
-      const left = (balance ?? cost) - cost
+      const used = cost
       setSelected(new Set())
-      toast.success(t("done", { name }), {
-        description: t("doneBody", { count: cost, left }),
-        position: "top-center",
-      })
       await Promise.all([
         queryClient.invalidateQueries({ queryKey: creditsQuery().queryKey }),
         queryClient.invalidateQueries({
@@ -74,9 +78,20 @@ export function UnlockPanel({
         queryClient.invalidateQueries({ queryKey: UNLOCKED_KEY }),
         onUnlocked?.(),
       ])
+      const left =
+        queryClient.getQueryData(creditsQuery().queryKey)?.available_credits ??
+        (balance ?? used) - used
+      toast.success(t("done", { name }), {
+        description: t("doneBody", { count: used, left }),
+        position: "top-center",
+      })
     },
-    onError: () => {
+    onError: (error) => {
       void queryClient.invalidateQueries({ queryKey: creditsQuery().queryKey })
+      if (unlockProblem(error) === "alreadyUnlocked")
+        void queryClient.invalidateQueries({
+          queryKey: interviewsQuery(candidateId).queryKey,
+        })
     },
   })
 
@@ -238,7 +253,7 @@ export function UnlockPanel({
               )}
               {unlock.isError && (
                 <p role="alert" className="text-destructive">
-                  {t("panel.failed")}
+                  {t(FAILED[unlockProblem(unlock.error)])}
                 </p>
               )}
             </m.div>

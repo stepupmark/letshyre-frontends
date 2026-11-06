@@ -15,6 +15,9 @@
     "allUnlocked": "Alles van deze kandidaat is ontgrendeld.",
     "openUnlocked": "Ontgrendelde kandidaten bekijken",
     "failed": "Het ontgrendelen is niet gelukt. Controleer uw saldo voordat u het opnieuw probeert.",
+    "failedNoCredits": "Je hebt niet genoeg credits voor deze ontgrendeling. Voeg credits toe en probeer het opnieuw.",
+    "failedAlready": "Sommige van deze interviews zijn al ontgrendeld. De lijst is bijgewerkt.",
+    "failedNetwork": "De ontgrendeling bereikte ons niet. Controleer je verbinding en probeer het opnieuw.",
     "balanceFailed": "Saldo niet geladen.",
     "retry": "Opnieuw proberen",
     "needBalance": "Je saldo moet geladen zijn voordat je kunt ontgrendelen."

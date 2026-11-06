@@ -15,6 +15,9 @@
     "allUnlocked": "Everything for this candidate is unlocked.",
     "openUnlocked": "See unlocked candidates",
     "failed": "The unlock didn't go through. Check your balance before trying again.",
+    "failedNoCredits": "You don't have enough credits for this unlock. Add credits and try again.",
+    "failedAlready": "Some of these interviews are already unlocked. The list has been updated.",
+    "failedNetwork": "The unlock couldn't reach us. Check your connection and try again.",
     "balanceFailed": "Balance didn't load.",
     "retry": "Try again",
     "needBalance": "Your balance needs to load before you can unlock."

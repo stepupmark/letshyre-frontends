@@ -15,6 +15,9 @@
     "allUnlocked": "Für diesen Kandidaten ist alles freigeschaltet.",
     "openUnlocked": "Freigeschaltete Kandidaten ansehen",
     "failed": "Das Freischalten ist nicht durchgegangen. Prüfen Sie Ihr Guthaben, bevor Sie es erneut versuchen.",
+    "failedNoCredits": "Dein Guthaben reicht für diese Freischaltung nicht. Lade Credits auf und versuch es erneut.",
+    "failedAlready": "Einige dieser Interviews sind bereits freigeschaltet. Die Liste wurde aktualisiert.",
+    "failedNetwork": "Die Freischaltung hat uns nicht erreicht. Prüf deine Verbindung und versuch es erneut.",
     "balanceFailed": "Guthaben nicht geladen.",
     "retry": "Erneut versuchen",
     "needBalance": "Ihr Guthaben muss geladen sein, bevor Sie freischalten können."

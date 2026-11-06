@@ -16,6 +16,9 @@
     "allUnlocked": "Tudo deste candidato está desbloqueado.",
     "openUnlocked": "Ver candidatos desbloqueados",
     "failed": "O desbloqueio não foi concluído. Confira seu saldo antes de tentar de novo.",
+    "failedNoCredits": "Você não tem créditos suficientes para este desbloqueio. Adicione créditos e tente novamente.",
+    "failedAlready": "Algumas destas entrevistas já estão desbloqueadas. A lista foi atualizada.",
+    "failedNetwork": "O desbloqueio não chegou até nós. Verifique sua conexão e tente novamente.",
     "balanceFailed": "O saldo não carregou.",
     "retry": "Tentar de novo",
     "needBalance": "Seu saldo precisa carregar antes de desbloquear."

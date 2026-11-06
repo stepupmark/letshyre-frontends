@@ -16,6 +16,9 @@
     "allUnlocked": "Per questo candidato è tutto sbloccato.",
     "openUnlocked": "Vedi i candidati sbloccati",
     "failed": "Lo sblocco non è andato a buon fine. Controlla il saldo prima di riprovare.",
+    "failedNoCredits": "Non hai crediti sufficienti per questo sblocco. Aggiungi crediti e riprova.",
+    "failedAlready": "Alcuni di questi colloqui sono già sbloccati. L'elenco è stato aggiornato.",
+    "failedNetwork": "Lo sblocco non ci ha raggiunto. Controlla la connessione e riprova.",
     "balanceFailed": "Il saldo non è stato caricato.",
     "retry": "Riprova",
     "needBalance": "Il saldo deve caricarsi prima di poter sbloccare."
