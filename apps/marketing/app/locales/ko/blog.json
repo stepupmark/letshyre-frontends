@@ -8,13 +8,53 @@
   "index": {
     "eyebrow": "블로그",
     "title": "좋은 채용을 위한 노트",
-    "description": "면접을 진행하는 기업과 면접을 준비하는 전문가를 위한 실용 가이드입니다."
+    "description": "면접을 진행하는 기업과 면접을 준비하는 전문가를 위한 실용 가이드입니다.",
+    "latest": "최신 글",
+    "more": "더 많은 글",
+    "feed": "RSS로 구독"
   },
   "post": {
     "published": "게시일: {{date}}",
     "updated": "업데이트: {{date}}",
     "readTime": "{{count}}분 소요",
     "allPosts": "모든 글",
-    "backToTop": "맨 위로"
+    "backToTop": "맨 위로",
+    "toc": "이 페이지의 내용",
+    "sectionLink": "이 섹션 링크",
+    "byTeam": "LetsHyre 팀",
+    "by": "{{name}}, {{role}}",
+    "draft": "초안",
+    "scheduled": "예약됨",
+    "share": "이 글 공유",
+    "shareOn": "{{network}}에 공유",
+    "shareEmail": "이메일로 공유",
+    "copyLink": "링크 복사",
+    "copied": "링크를 복사했습니다",
+    "related": "이어서 읽기"
+  },
+  "topics": {
+    "interviewing": "면접",
+    "hiring": "채용",
+    "careers": "커리어"
+  },
+  "cta": {
+    "employers": {
+      "title": "만나기 전에 면접과 평가표가 준비됩니다",
+      "description": "LetsHyre는 모든 지원자와 직무 기반 AI 면접을 진행하고, 팀이 비교할 수 있는 평가표를 제공합니다.",
+      "primary": "무료 크레딧 10개로 시작",
+      "secondary": "요금 보기"
+    },
+    "candidates": {
+      "title": "쓴 내용만이 아니라 할 수 있는 것을 보여 주세요",
+      "description": "프로필을 만들고 첫 AI 면접을 본 뒤, 내 직무로 채용 중인 기업이 나를 찾게 하세요.",
+      "primary": "프로필 만들기",
+      "secondary": "전문가를 위한 이용 방법"
+    }
+  },
+  "mdx": {
+    "avoid": "피하세요",
+    "prefer": "이렇게 하세요",
+    "source": "출처",
+    "play": "동영상 재생: {{title}}"
   }
 }

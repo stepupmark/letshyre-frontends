@@ -5,12 +5,18 @@ import { Link } from "react-router"
 
 import { BackToTop } from "@/components/back-to-top"
 import { ReadProgress } from "@/components/read-progress"
-import { Container, PageHeader } from "@/components/section"
+import { Container } from "@/components/section"
+import { postPath } from "@/lib/blog/paths"
 import type { Post } from "@/lib/blog/post"
 import { PAGES } from "@/lib/pages"
+import { absUrl } from "@/lib/seo/site"
 
 import { mdxComponents } from "./components/mdx"
-import { PostFacts } from "./components/post-facts"
+import { PostCta } from "./components/post-cta"
+import { PostHeader } from "./components/post-header"
+import { PostShare } from "./components/post-share"
+import { PostToc } from "./components/post-toc"
+import { RelatedPosts } from "./components/related-posts"
 import { usePostBody } from "./hooks/use-post-body"
 
 function PostBody({ post }: { post: Post }) {
@@ -19,38 +25,44 @@ function PostBody({ post }: { post: Post }) {
   return <Body components={mdxComponents} />
 }
 
-export function PostPage({ post }: { post: Post }) {
+export function PostPage({
+  post,
+  related,
+}: {
+  post: Post
+  related: readonly Post[]
+}) {
   const { t } = useTranslation("blog")
   const lang = useLocale()
-  const blogPath = localePath(lang, PAGES.blog.path)
 
   return (
     <div className="relative">
       <ReadProgress />
       <BackToTop label={t("post.backToTop")} />
-      <PageHeader
-        eyebrow={
-          <Link to={blogPath} className="hover:underline">
-            {t("index.eyebrow")}
-          </Link>
-        }
-        title={post.title}
-        description={post.description}
-      >
-        <PostFacts post={post} />
-      </PageHeader>
-      <Container className="py-10 sm:py-14">
-        <article className="flex max-w-prose flex-col gap-5 text-base text-foreground/85">
-          <PostBody post={post} />
-        </article>
-        <Link
-          to={blogPath}
-          className="text-link mt-12 inline-flex items-center gap-2 text-sm font-medium"
-        >
-          <ArrowLeftIcon aria-hidden className="size-4 rtl:-scale-x-100" />
-          {t("post.allPosts")}
-        </Link>
+      <PostHeader post={post} />
+      <Container className="grid gap-8 py-10 sm:py-14 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-14">
+        {post.headings.length > 1 && <PostToc headings={post.headings} />}
+        <div className="flex min-w-0 flex-col gap-12 lg:col-start-2">
+          <article className="flex flex-col gap-5 text-base text-foreground/85 *:max-w-prose *:data-wide:max-w-none">
+            <PostBody post={post} />
+          </article>
+          <footer className="flex max-w-prose flex-col items-start gap-6 border-t pt-8">
+            <PostShare
+              url={absUrl(localePath(lang, postPath(post.slug)))}
+              title={post.title}
+            />
+            <Link
+              to={localePath(lang, PAGES.blog.path)}
+              className="text-link inline-flex items-center gap-2 text-sm font-medium"
+            >
+              <ArrowLeftIcon aria-hidden className="size-4 rtl:-scale-x-100" />
+              {t("post.allPosts")}
+            </Link>
+          </footer>
+          <RelatedPosts posts={related} />
+        </div>
       </Container>
+      <PostCta audience={post.audience} />
     </div>
   )
 }

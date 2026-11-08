@@ -6,7 +6,7 @@ import type { ComponentProps } from "react"
 import { SITE } from "@/lib/seo/site"
 import { type SocialNetwork, socialNetwork } from "@/lib/social"
 
-function SocialIcon({ network }: { network: SocialNetwork }) {
+export function SocialIcon({ network }: { network: SocialNetwork }) {
   const props: ComponentProps<"svg"> = {
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 24 24",

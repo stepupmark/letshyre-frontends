@@ -29,6 +29,8 @@ Android Chrome:
 
 - [ ] Deploy in a low-traffic window; the host must apply each build's `csp.map` policies.
 - [ ] Schedule a daily production build, so blog posts dated in the future go live on their day
+- [ ] Set `INDEXNOW_KEY` for production builds and run `pnpm --filter marketing indexnow` after
+      each deploy, so Bing and other IndexNow engines hear about new and updated posts
       (ADR 0021).
 - [ ] Spot-check the URL contract (`docs/baseline/url-contract.md`) on the live site.
 - [ ] Resubmit `https://letshyre.ai/sitemap.xml` in Search Console and Bing Webmaster Tools.

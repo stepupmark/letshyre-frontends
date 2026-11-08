@@ -8,13 +8,53 @@
   "index": {
     "eyebrow": "Blog",
     "title": "Catatan untuk merekrut dengan baik",
-    "description": "Panduan praktis bagi perusahaan yang melakukan wawancara dan bagi profesional yang mempersiapkannya."
+    "description": "Panduan praktis bagi perusahaan yang melakukan wawancara dan bagi profesional yang mempersiapkannya.",
+    "latest": "Artikel terbaru",
+    "more": "Artikel lainnya",
+    "feed": "Berlangganan lewat RSS"
   },
   "post": {
     "published": "Diterbitkan {{date}}",
     "updated": "Diperbarui {{date}}",
     "readTime": "{{count}} menit membaca",
     "allPosts": "Semua artikel",
-    "backToTop": "Kembali ke atas"
+    "backToTop": "Kembali ke atas",
+    "toc": "Di halaman ini",
+    "sectionLink": "Tautan ke bagian ini",
+    "byTeam": "Oleh tim LetsHyre",
+    "by": "Oleh {{name}}, {{role}}",
+    "draft": "Draf",
+    "scheduled": "Terjadwal",
+    "share": "Bagikan artikel ini",
+    "shareOn": "Bagikan di {{network}}",
+    "shareEmail": "Bagikan lewat email",
+    "copyLink": "Salin tautan",
+    "copied": "Tautan disalin",
+    "related": "Baca selanjutnya"
+  },
+  "topics": {
+    "interviewing": "Wawancara",
+    "hiring": "Rekrutmen",
+    "careers": "Karier"
+  },
+  "cta": {
+    "employers": {
+      "title": "Wawancara dan scorecard siap sebelum Anda bertemu siapa pun",
+      "description": "LetsHyre menjalankan wawancara AI berbasis peran dengan setiap kandidat dan memberi tim Anda scorecard untuk dibandingkan.",
+      "primary": "Mulai dengan 10 kredit gratis",
+      "secondary": "Lihat harga"
+    },
+    "candidates": {
+      "title": "Tunjukkan apa yang bisa Anda lakukan, bukan hanya yang Anda tulis",
+      "description": "Buat profil Anda, ikuti wawancara AI pertama, dan biarkan pemberi kerja yang merekrut untuk peran Anda menemukan Anda.",
+      "primary": "Buat profil Anda",
+      "secondary": "Cara kerjanya untuk profesional"
+    }
+  },
+  "mdx": {
+    "avoid": "Hindari",
+    "prefer": "Lebih baik",
+    "source": "Sumber",
+    "play": "Putar video: {{title}}"
   }
 }

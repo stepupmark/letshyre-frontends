@@ -1,6 +1,27 @@
 // Runs inside the MDX compiler (vite.config.ts), so no Vite-only imports.
 
-export const MDX_COMPONENTS = ["Figure", "Callout"] as const
+export const MDX_COMPONENTS = [
+  "Callout",
+  "Compare",
+  "Figure",
+  "Quote",
+  "Stat",
+  "Step",
+  "Steps",
+  "VideoEmbed",
+] as const
+
+type Component = (typeof MDX_COMPONENTS)[number]
+
+// props a component can't render without; Figure's size stops the page shifting as images load
+const REQUIRED: Partial<Record<Component, string[]>> = {
+  Compare: ["avoid", "prefer"],
+  Figure: ["src", "alt", "width", "height"],
+  Quote: ["by"],
+  Stat: ["value", "label", "source", "cite"],
+  Step: ["title"],
+  VideoEmbed: ["id", "title", "poster"],
+}
 
 interface Node {
   type: string
@@ -35,14 +56,23 @@ function problemOf(node: Node): string | undefined {
       const name = node.name ?? ""
       if (!(MDX_COMPONENTS as readonly string[]).includes(name))
         return `<${name}> isn't in the blog's component set`
-      if (name !== "Figure") return undefined
       const attr = (key: string) =>
         node.attributes?.find((a) => a.name === key)?.value
-      const alt = attr("alt")
-      if (typeof alt !== "string" || !alt.trim())
-        return "<Figure> needs alt text"
-      if (attr("width") == null || attr("height") == null)
-        return "<Figure> needs width and height, or the page shifts as it loads"
+      const missing = REQUIRED[name as Component]?.find((key) => {
+        const value = attr(key)
+        return value == null || (typeof value === "string" && !value.trim())
+      })
+      if (missing) return `<${name}> needs ${missing}`
+      if (name === "Stat" && !String(attr("source")).startsWith("https://"))
+        return "<Stat> source must be an https link to the study"
+      if (name === "VideoEmbed" && !/^[\w-]{11}$/.test(String(attr("id"))))
+        return "<VideoEmbed> id must be the 11-character YouTube id"
+      if (
+        name === "Callout" &&
+        attr("tone") != null &&
+        !["note", "tip", "warning"].includes(String(attr("tone")))
+      )
+        return "<Callout> tone is note, tip or warning"
       return undefined
     }
     default:

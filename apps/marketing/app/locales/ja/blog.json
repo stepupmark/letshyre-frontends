@@ -8,13 +8,53 @@
   "index": {
     "eyebrow": "ブログ",
     "title": "より良い採用のためのノート",
-    "description": "面接を行う企業と、面接に臨むプロフェッショナルのための実践ガイド。"
+    "description": "面接を行う企業と、面接に臨むプロフェッショナルのための実践ガイド。",
+    "latest": "最新の記事",
+    "more": "その他の記事",
+    "feed": "RSSで購読"
   },
   "post": {
     "published": "公開日：{{date}}",
     "updated": "更新日：{{date}}",
     "readTime": "{{count}} 分で読めます",
     "allPosts": "すべての記事",
-    "backToTop": "ページの先頭に戻る"
+    "backToTop": "ページの先頭に戻る",
+    "toc": "このページの内容",
+    "sectionLink": "このセクションへのリンク",
+    "byTeam": "LetsHyreチーム",
+    "by": "{{name}}（{{role}}）",
+    "draft": "下書き",
+    "scheduled": "公開予定",
+    "share": "この記事を共有",
+    "shareOn": "{{network}}で共有",
+    "shareEmail": "メールで共有",
+    "copyLink": "リンクをコピー",
+    "copied": "リンクをコピーしました",
+    "related": "次に読む"
+  },
+  "topics": {
+    "interviewing": "面接",
+    "hiring": "採用",
+    "careers": "キャリア"
+  },
+  "cta": {
+    "employers": {
+      "title": "会う前に、面接とスコアカードが揃う",
+      "description": "LetsHyreはすべての候補者に職務に沿ったAI面接を行い、チームで比較できるスコアカードを用意します。",
+      "primary": "10クレジット無料で始める",
+      "secondary": "料金を見る"
+    },
+    "candidates": {
+      "title": "書いたことだけでなく、できることを見せよう",
+      "description": "プロフィールを作成し、最初のAI面接を受けて、あなたの職種で採用中の企業に見つけてもらいましょう。",
+      "primary": "プロフィールを作成",
+      "secondary": "プロフェッショナル向けの仕組み"
+    }
+  },
+  "mdx": {
+    "avoid": "避けたい例",
+    "prefer": "良い例",
+    "source": "出典",
+    "play": "動画を再生：{{title}}"
   }
 }

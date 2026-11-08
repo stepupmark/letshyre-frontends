@@ -1,7 +1,7 @@
 // Runs after `react-router build`: sitemap, robots, SEO and size checks, CSP.
 
 import { execFileSync } from "node:child_process"
-import { existsSync, readFileSync, writeFileSync } from "node:fs"
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { join, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { gzipSync } from "node:zlib"
@@ -16,7 +16,7 @@ import {
   PREVIEW_PAGES,
   REPLACED_BY,
 } from "../app/lib/pages.ts"
-import { postPath } from "../app/lib/blog/post.ts"
+import { feedPath, postPath } from "../app/lib/blog/paths.ts"
 import { BLOG_DIR, readiness } from "../app/lib/readiness.ts"
 import {
   initialScriptsOf,
@@ -24,6 +24,7 @@ import {
   nginxMap,
 } from "../../../tooling/csp.ts"
 import { pagePolicy } from "./csp.ts"
+import { renderFeed } from "./feed.ts"
 import { type LlmsPage, renderLlms } from "./llms.ts"
 import { checkPage } from "./seo-checks.ts"
 import { renderRobots, renderSitemap } from "./sitemap.ts"
@@ -41,6 +42,7 @@ const site = env.VITE_SITE_URL.replace(/\/$/, "")
 const apiOrigin = new URL(env.VITE_API_BASE_URL).origin
 const production = env.VITE_ENV === "production"
 const enforceCsp = process.env.CSP_ENFORCE === "true"
+const indexNowKey = process.env.INDEXNOW_KEY
 
 // the code each page is built from; a shared component changing doesn't make every page new
 const SOURCES: Partial<Record<PageId, string[]>> = {
@@ -92,7 +94,7 @@ const htmlFile = (route: string) => join(CLIENT, route, "index.html")
 const gzipSize = (file: string) => gzipSync(readFileSync(file)).length
 const kb = (bytes: number) => `${(bytes / 1024).toFixed(1)} kB`
 
-const { pages: ready, posts } = readiness(ROOT)
+const { pages: ready, posts } = readiness(ROOT, env.VITE_ENV === "staging")
 const postLocales = (slug: string) =>
   posts.filter((post) => post.slug === slug).map((post) => post.lang)
 const slugs = [...new Set(posts.map((post) => post.slug))]
@@ -120,6 +122,29 @@ writeFileSync(
   ])
 )
 writeFileSync(join(CLIENT, "robots.txt"), renderRobots(site, production))
+
+for (const lang of ready.get("blog") ?? []) {
+  const copy = JSON.parse(
+    readFileSync(join(ROOT, `app/locales/${lang}/blog.json`), "utf8")
+  ) as { meta: { name: string }; index: { description: string } }
+  const file = join(CLIENT, localePath(lang, feedPath))
+  mkdirSync(join(file, ".."), { recursive: true })
+  writeFileSync(
+    file,
+    renderFeed(
+      site,
+      lang,
+      { title: copy.meta.name, description: copy.index.description },
+      posts.filter((post) => post.lang === lang)
+    )
+  )
+}
+
+// IndexNow checks this file before it accepts a ping (scripts/indexnow.ts)
+if (indexNowKey && !/^[a-zA-Z0-9-]{8,128}$/.test(indexNowKey))
+  problems.push("INDEXNOW_KEY: use 8 to 128 letters, digits or dashes")
+else if (indexNowKey)
+  writeFileSync(join(CLIENT, `${indexNowKey}.txt`), indexNowKey)
 
 const englishMeta = (id: PageId) => {
   const ns = PAGES[id].namespaces[0]
@@ -251,5 +276,5 @@ if (problems.length) {
   process.exit(1)
 }
 console.log(
-  `postbuild: ${routes.length} pages checked, sitemap, robots and llms.txt written (${production ? "indexable" : "noindex"}), CSP ${enforceCsp ? "enforced" : "report-only"}`
+  `postbuild: ${routes.length} pages checked, sitemap, feeds, robots and llms.txt written (${production ? "indexable" : "noindex"}), CSP ${enforceCsp ? "enforced" : "report-only"}`
 )

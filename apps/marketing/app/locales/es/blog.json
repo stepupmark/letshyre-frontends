@@ -8,13 +8,53 @@
   "index": {
     "eyebrow": "Blog",
     "title": "Apuntes para contratar bien",
-    "description": "Guías prácticas para empresas que realizan entrevistas y para profesionales que se preparan para ellas."
+    "description": "Guías prácticas para empresas que realizan entrevistas y para profesionales que se preparan para ellas.",
+    "latest": "Última publicación",
+    "more": "Más publicaciones",
+    "feed": "Suscribirse por RSS"
   },
   "post": {
     "published": "Publicado el {{date}}",
     "updated": "Actualizado el {{date}}",
     "readTime": "{{count}} min de lectura",
     "allPosts": "Todos los artículos",
-    "backToTop": "Volver arriba"
+    "backToTop": "Volver arriba",
+    "toc": "En esta página",
+    "sectionLink": "Enlace a esta sección",
+    "byTeam": "Por el equipo de LetsHyre",
+    "by": "Por {{name}}, {{role}}",
+    "draft": "Borrador",
+    "scheduled": "Programado",
+    "share": "Compartir esta publicación",
+    "shareOn": "Compartir en {{network}}",
+    "shareEmail": "Compartir por correo",
+    "copyLink": "Copiar enlace",
+    "copied": "Enlace copiado",
+    "related": "Sigue leyendo"
+  },
+  "topics": {
+    "interviewing": "Entrevistas",
+    "hiring": "Contratación",
+    "careers": "Carrera profesional"
+  },
+  "cta": {
+    "employers": {
+      "title": "Entrevistas y fichas de evaluación listas antes de conocer a nadie",
+      "description": "LetsHyre realiza una entrevista con IA basada en el puesto a cada candidato y entrega a tu equipo una ficha de evaluación para comparar.",
+      "primary": "Empieza con 10 créditos gratis",
+      "secondary": "Ver precios"
+    },
+    "candidates": {
+      "title": "Muestra lo que sabes hacer, no solo lo que escribiste",
+      "description": "Crea tu perfil, haz tu primera entrevista con IA y deja que te encuentren las empresas que contratan para tu puesto.",
+      "primary": "Crea tu perfil",
+      "secondary": "Cómo funciona para profesionales"
+    }
+  },
+  "mdx": {
+    "avoid": "Evita",
+    "prefer": "Mejor",
+    "source": "Fuente",
+    "play": "Reproducir vídeo: {{title}}"
   }
 }

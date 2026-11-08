@@ -1,6 +1,8 @@
 import { isLocale, type Locale } from "@workspace/i18n"
 import { data } from "react-router"
 
+import { ogImageOf } from "./blog/posts.server"
+import { relatedPosts } from "./blog/related"
 import {
   loadMessages,
   postLocales,
@@ -33,14 +35,17 @@ export function blogData(lang: string | undefined) {
   return { ...page, posts: postsIn(lang as Locale) }
 }
 
-/** Loader for a post: the blog's copy, the post and the locales it's written in. */
+/** Loader for a post: the blog's copy, the post, its locales and what to read next. */
 export function postData(lang: string | undefined, slug: string | undefined) {
   if (!isLocale(lang)) throw notFound()
-  const post = postsIn(lang).find((p) => p.slug === slug)
+  const posts = postsIn(lang)
+  const post = posts.find((p) => p.slug === slug)
   if (!post) throw notFound()
   return {
     messages: loadMessages(lang, PAGES.blog.namespaces),
     locales: postLocales(post.slug),
     post,
+    related: relatedPosts(post, posts),
+    ogImage: ogImageOf(post.slug),
   }
 }

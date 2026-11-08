@@ -8,13 +8,53 @@
   "index": {
     "eyebrow": "Blog",
     "title": "Notes on hiring well",
-    "description": "Practical guides for employers who run interviews and for professionals preparing for them."
+    "description": "Practical guides for employers who run interviews and for professionals preparing for them.",
+    "latest": "Latest post",
+    "more": "More posts",
+    "feed": "Subscribe via RSS"
   },
   "post": {
     "published": "Published {{date}}",
     "updated": "Updated {{date}}",
     "readTime": "{{count}} min read",
     "allPosts": "All posts",
-    "backToTop": "Back to top"
+    "backToTop": "Back to top",
+    "toc": "On this page",
+    "sectionLink": "Link to this section",
+    "byTeam": "By the LetsHyre team",
+    "by": "By {{name}}, {{role}}",
+    "draft": "Draft",
+    "scheduled": "Scheduled",
+    "share": "Share this post",
+    "shareOn": "Share on {{network}}",
+    "shareEmail": "Share by email",
+    "copyLink": "Copy link",
+    "copied": "Link copied",
+    "related": "Keep reading"
+  },
+  "topics": {
+    "interviewing": "Interviewing",
+    "hiring": "Hiring",
+    "careers": "Careers"
+  },
+  "cta": {
+    "employers": {
+      "title": "Interviews and scorecards, ready before you meet anyone",
+      "description": "LetsHyre runs a role-based AI interview with every candidate and gives your team a scorecard to compare.",
+      "primary": "Start with 10 free credits",
+      "secondary": "See pricing"
+    },
+    "candidates": {
+      "title": "Show what you can do, not just what you wrote",
+      "description": "Create your profile, take your first AI interview and let employers hiring for your role find you.",
+      "primary": "Create your profile",
+      "secondary": "How it works for professionals"
+    }
+  },
+  "mdx": {
+    "avoid": "Avoid",
+    "prefer": "Prefer",
+    "source": "Source",
+    "play": "Play video: {{title}}"
   }
 }

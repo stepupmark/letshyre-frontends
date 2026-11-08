@@ -43,12 +43,14 @@ export function useProductItems() {
 
 const NAV_ITEMS = [
   { id: "pricing", label: "nav.pricing", path: "/pricing" },
+  { id: "blog", label: "nav.blog", path: PAGES.blog.path, page: "blog" },
   { id: "about", label: "nav.about", path: "/about" },
   { id: "contact", label: "nav.contact", path: "/contact" },
 ] as const
 
 export function useNavItems() {
-  return NAV_ITEMS
+  const published = usePublished()
+  return NAV_ITEMS.filter((item) => !("page" in item) || published(item.page))
 }
 
 export type NavItem =

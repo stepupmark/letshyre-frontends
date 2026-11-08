@@ -29,12 +29,22 @@ describe("remarkGuard", () => {
     [
       "figure without alt",
       `<Figure src="/a.svg" alt="" width={1} height={1} />`,
-      /alt text/,
+      /needs alt/,
     ],
     [
       "figure without size",
       `<Figure src="/a.svg" alt="A chart" />`,
-      /width and height/,
+      /needs width/,
+    ],
+    [
+      "stat without a source",
+      `<Stat value="2x" label="Better" source="" cite="A study" />`,
+      /needs source/,
+    ],
+    [
+      "video with a url for an id",
+      `<VideoEmbed id="https://youtu.be/x" title="Demo" poster="/a.jpg" />`,
+      /YouTube id/,
     ],
   ])("fails the build on %s", async (_, mdx, reason) => {
     await expect(build(mdx)).rejects.toThrow(reason)

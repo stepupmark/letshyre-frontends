@@ -587,3 +587,11 @@
     translate: 0 -0.75rem;
   }
 }
+
+/* code blocks are highlighted at build time with both themes (mdx-options.ts) */
+.shiki span {
+  color: var(--shiki-light);
+}
+.dark .shiki span {
+  color: var(--shiki-dark);
+}

@@ -8,13 +8,53 @@
   "index": {
     "eyebrow": "Blog",
     "title": "Appunti per assumere bene",
-    "description": "Guide pratiche per le aziende che conducono colloqui e per i professionisti che si preparano ad affrontarli."
+    "description": "Guide pratiche per le aziende che conducono colloqui e per i professionisti che si preparano ad affrontarli.",
+    "latest": "Ultimo articolo",
+    "more": "Altri articoli",
+    "feed": "Iscriviti via RSS"
   },
   "post": {
     "published": "Pubblicato il {{date}}",
     "updated": "Aggiornato il {{date}}",
     "readTime": "{{count}} min di lettura",
     "allPosts": "Tutti gli articoli",
-    "backToTop": "Torna all'inizio"
+    "backToTop": "Torna all'inizio",
+    "toc": "In questa pagina",
+    "sectionLink": "Link a questa sezione",
+    "byTeam": "Dal team LetsHyre",
+    "by": "Di {{name}}, {{role}}",
+    "draft": "Bozza",
+    "scheduled": "Programmato",
+    "share": "Condividi questo articolo",
+    "shareOn": "Condividi su {{network}}",
+    "shareEmail": "Condividi via email",
+    "copyLink": "Copia link",
+    "copied": "Link copiato",
+    "related": "Continua a leggere"
+  },
+  "topics": {
+    "interviewing": "Colloqui",
+    "hiring": "Selezione",
+    "careers": "Carriera"
+  },
+  "cta": {
+    "employers": {
+      "title": "Colloqui e schede di valutazione pronti prima di incontrare chiunque",
+      "description": "LetsHyre conduce con ogni candidato un colloquio IA basato sul ruolo e fornisce al tuo team una scheda di valutazione da confrontare.",
+      "primary": "Inizia con 10 crediti gratuiti",
+      "secondary": "Vedi i prezzi"
+    },
+    "candidates": {
+      "title": "Mostra cosa sai fare, non solo cosa hai scritto",
+      "description": "Crea il tuo profilo, fai il tuo primo colloquio IA e lascia che ti trovino le aziende che assumono per il tuo ruolo.",
+      "primary": "Crea il tuo profilo",
+      "secondary": "Come funziona per i professionisti"
+    }
+  },
+  "mdx": {
+    "avoid": "Da evitare",
+    "prefer": "Meglio",
+    "source": "Fonte",
+    "play": "Riproduci video: {{title}}"
   }
 }

@@ -1,18 +1,14 @@
+import { cn } from "@workspace/ui/lib/utils"
 import type { ComponentProps } from "react"
 import { Link } from "react-router"
 
+import { SectionHeading } from "./heading"
+
 export const prose = {
-  h2: ({ children, ...props }: ComponentProps<"h2">) => (
-    <h2
-      className="mt-8 text-2xl font-semibold tracking-tight text-balance text-foreground"
-      {...props}
-    >
-      {children}
-    </h2>
-  ),
+  h2: SectionHeading,
   h3: ({ children, ...props }: ComponentProps<"h3">) => (
     <h3
-      className="mt-4 text-xl font-semibold tracking-tight text-balance text-foreground"
+      className="mt-4 scroll-mt-24 text-xl font-semibold tracking-tight text-balance text-foreground"
       {...props}
     >
       {children}
@@ -42,6 +38,21 @@ export const prose = {
   blockquote: (props: ComponentProps<"blockquote">) => (
     <blockquote
       className="rounded-xl border bg-muted/40 px-5 py-4 text-lg text-pretty text-foreground"
+      {...props}
+    />
+  ),
+  pre: ({ className, ...props }: ComponentProps<"pre">) => (
+    <pre
+      className={cn(
+        "overflow-x-auto rounded-xl border bg-muted/40 p-4 text-sm",
+        className
+      )}
+      {...props}
+    />
+  ),
+  code: (props: ComponentProps<"code">) => (
+    <code
+      className="rounded-sm bg-muted px-1 py-0.5 font-mono text-[0.9em] text-foreground in-[pre]:bg-transparent in-[pre]:p-0 in-[pre]:text-inherit"
       {...props}
     />
   ),

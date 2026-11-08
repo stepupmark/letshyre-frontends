@@ -7,7 +7,9 @@ import {
   nginxMap,
   parseNginxMap,
 } from "../../../tooling/csp"
+import { parsePost } from "../app/lib/blog/post"
 import { pagePolicy } from "./csp"
+import { renderFeed } from "./feed"
 import { renderLlms } from "./llms"
 import { checkPage, width } from "./seo-checks"
 import { renderRobots, renderSitemap } from "./sitemap"
@@ -157,6 +159,35 @@ describe("llms.txt", () => {
 - [Structured interviews](${SITE}/en/blog/structured-interviews): How to run one.`
     )
     expect(txt.indexOf("## Blog")).toBeLessThan(txt.indexOf("## Optional"))
+  })
+})
+
+describe("feed", () => {
+  it("escapes post copy and links every item to its locale's page", () => {
+    const post = parsePost(
+      "/content/blog/pay-bands/de.mdx",
+      `---
+title: Pay bands & <offers>
+description: Why "fair" pay needs bands.
+audience: employers
+topic: hiring
+publishedAt: 2026-11-02
+---
+
+Body.`
+    )
+    const xml = renderFeed(
+      SITE,
+      "de",
+      { title: "LetsHyre blog", description: "Notes" },
+      [post]
+    )
+    expect(xml).toContain("<title>Pay bands &amp; &lt;offers&gt;</title>")
+    expect(xml).toContain(
+      "<description>Why &quot;fair&quot; pay needs bands.</description>"
+    )
+    expect(xml).toContain(`<link>${SITE}/de/blog/pay-bands</link>`)
+    expect(xml).toContain("<pubDate>Mon, 02 Nov 2026 00:00:00 GMT</pubDate>")
   })
 })
 

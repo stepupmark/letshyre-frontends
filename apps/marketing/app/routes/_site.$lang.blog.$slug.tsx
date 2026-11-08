@@ -24,5 +24,5 @@ export async function clientLoader({
 export const meta = postMeta
 
 export default function BlogPost({ loaderData }: Route.ComponentProps) {
-  return <PostPage post={loaderData.post} />
+  return <PostPage post={loaderData.post} related={loaderData.related} />
 }

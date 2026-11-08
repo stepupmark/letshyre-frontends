@@ -1,12 +1,24 @@
+import { compile } from "@mdx-js/mdx"
+import rehypeSlug from "rehype-slug"
+import remarkFrontmatter from "remark-frontmatter"
 import { describe, expect, it } from "vitest"
 
-import { isLive, parsePost, publishedPosts, withBlogIndex } from "./post"
+import {
+  isLive,
+  parsePost,
+  publishedPosts,
+  visiblePosts,
+  withBlogIndex,
+} from "./post"
+import { relatedPosts } from "./related"
 
 const source = (frontmatter: string, body = "Hiring well takes a plan.") =>
   `---\n${frontmatter}\n---\n\n${body}\n`
 
 const valid = `title: Structured interviews
 description: How to run one.
+audience: employers
+topic: interviewing
 publishedAt: 2026-11-08`
 
 describe("parsePost", () => {
@@ -42,7 +54,12 @@ describe("parsePost", () => {
     [
       "/content/blog/structured/en.mdx",
       source(`${valid}\nauthor: someone`),
-      /author/,
+      /authors\.ts/,
+    ],
+    [
+      "/content/blog/structured/en.mdx",
+      source(valid.replace("employers", "everyone")),
+      /audience/,
     ],
   ])("fails the build for %s with a bad post", (file, raw, reason) => {
     expect(() => parsePost(file, raw)).toThrow(reason)
@@ -57,6 +74,81 @@ describe("isLive", () => {
     expect(isLive(post(), "2026-11-08")).toBe(true)
     expect(isLive(post(), "2026-11-07")).toBe(false)
     expect(isLive(post("\ndraft: true"), "2026-12-01")).toBe(false)
+  })
+
+  it("shows held-back posts only on preview builds, marked as previews", () => {
+    const draft = post("\ndraft: true")
+    expect(visiblePosts([draft], false)).toEqual([])
+    expect(visiblePosts([draft], true)).toEqual([{ ...draft, preview: true }])
+  })
+})
+
+describe("headings", () => {
+  it("gets the same ids rehype-slug gives the rendered headings", async () => {
+    const body = [
+      "# Title",
+      "## Score *each* answer",
+      "```md\n## Not a heading\n```",
+      "### Score each answer",
+      "## [Debrief](/en/employers) on `evidence` ##",
+      "## Debrief on evidence",
+      "## Entretiens structurés",
+    ].join("\n\n")
+    const compiled = String(
+      await compile(source(valid, body), {
+        remarkPlugins: [remarkFrontmatter],
+        rehypePlugins: [rehypeSlug],
+      })
+    )
+    const rendered = [
+      ...compiled.matchAll(/_components\.h2, \{\s*id: "([^"]+)"/g),
+    ].map((m) => m[1])
+
+    const { headings } = parsePost(
+      "/content/blog/structured/en.mdx",
+      source(valid, body)
+    )
+    expect(rendered).toHaveLength(4)
+    expect(headings.map((h) => h.id)).toEqual(rendered)
+    expect(headings.map((h) => h.text)).toEqual([
+      "Score each answer",
+      "Debrief on evidence",
+      "Debrief on evidence",
+      "Entretiens structurés",
+    ])
+  })
+})
+
+describe("relatedPosts", () => {
+  const post = (
+    slug: string,
+    audience: string,
+    topic: string,
+    publishedAt = "2026-10-01"
+  ) =>
+    parsePost(
+      `/content/blog/${slug}/en.mdx`,
+      source(
+        valid
+          .replace("employers", audience)
+          .replace("interviewing", topic)
+          .replace("2026-11-08", publishedAt)
+      )
+    )
+  const current = post("current", "employers", "interviewing")
+
+  it("prefers the same topic, then the same audience, then the newest", () => {
+    const posts = [
+      current,
+      post("newest", "candidates", "careers", "2026-11-01"),
+      post("audience", "employers", "hiring"),
+      post("topic", "candidates", "interviewing"),
+    ]
+    expect(relatedPosts(current, posts).map((p) => p.slug)).toEqual([
+      "topic",
+      "audience",
+      "newest",
+    ])
   })
 })
 

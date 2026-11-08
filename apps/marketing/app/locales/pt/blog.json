@@ -8,13 +8,53 @@
   "index": {
     "eyebrow": "Blog",
     "title": "Notas para contratar bem",
-    "description": "Guias práticos para empresas que conduzem entrevistas e para profissionais que se preparam para elas."
+    "description": "Guias práticos para empresas que conduzem entrevistas e para profissionais que se preparam para elas.",
+    "latest": "Publicação mais recente",
+    "more": "Mais publicações",
+    "feed": "Assinar via RSS"
   },
   "post": {
     "published": "Publicado em {{date}}",
     "updated": "Atualizado em {{date}}",
     "readTime": "{{count}} min de leitura",
     "allPosts": "Todos os artigos",
-    "backToTop": "Voltar ao topo"
+    "backToTop": "Voltar ao topo",
+    "toc": "Nesta página",
+    "sectionLink": "Link para esta seção",
+    "byTeam": "Pela equipe LetsHyre",
+    "by": "Por {{name}}, {{role}}",
+    "draft": "Rascunho",
+    "scheduled": "Agendado",
+    "share": "Compartilhar esta publicação",
+    "shareOn": "Compartilhar no {{network}}",
+    "shareEmail": "Compartilhar por e-mail",
+    "copyLink": "Copiar link",
+    "copied": "Link copiado",
+    "related": "Continue lendo"
+  },
+  "topics": {
+    "interviewing": "Entrevistas",
+    "hiring": "Contratação",
+    "careers": "Carreira"
+  },
+  "cta": {
+    "employers": {
+      "title": "Entrevistas e scorecards prontos antes de conhecer qualquer pessoa",
+      "description": "A LetsHyre faz uma entrevista com IA baseada na vaga com cada candidato e entrega à sua equipe um scorecard para comparar.",
+      "primary": "Comece com 10 créditos grátis",
+      "secondary": "Ver preços"
+    },
+    "candidates": {
+      "title": "Mostre o que você sabe fazer, não só o que escreveu",
+      "description": "Crie seu perfil, faça sua primeira entrevista com IA e deixe que empresas contratando para sua função encontrem você.",
+      "primary": "Criar seu perfil",
+      "secondary": "Como funciona para profissionais"
+    }
+  },
+  "mdx": {
+    "avoid": "Evite",
+    "prefer": "Prefira",
+    "source": "Fonte",
+    "play": "Reproduzir vídeo: {{title}}"
   }
 }

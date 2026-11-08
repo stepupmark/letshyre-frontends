@@ -6,6 +6,7 @@ import {
 } from "@workspace/i18n"
 import type { MetaDescriptor } from "react-router"
 
+import { feedPath } from "../blog/paths"
 import { type JsonLd, organizationSchema, websiteSchema } from "./schema"
 import { absUrl, SITE } from "./site"
 
@@ -18,6 +19,8 @@ interface MetaInput {
   /** Locales the page is published in. Drives hreflang. */
   locales: readonly Locale[]
   og?: string
+  /** A share image by its built path, in place of `/og/<og>.jpg`; same 1024 × 535 size. */
+  image?: string
   jsonLd?: JsonLd[]
   robots?: string
   article?: { published: string; modified: string }
@@ -30,12 +33,13 @@ export function buildMeta({
   description,
   locales,
   og = "default",
+  image: imagePath = `/og/${og}.jpg`,
   jsonLd = [],
   robots = "index, follow",
   article,
 }: MetaInput): MetaDescriptor[] {
   const url = absUrl(localePath(lang, path))
-  const image = absUrl(`/og/${og}.jpg`)
+  const image = absUrl(imagePath)
   const alt = `${SITE.name}: ${title}`
 
   return [
@@ -96,3 +100,11 @@ export function buildMeta({
     })),
   ]
 }
+
+export const feedLink = (lang: Locale, title: string): MetaDescriptor => ({
+  tagName: "link",
+  rel: "alternate",
+  type: "application/rss+xml",
+  title,
+  href: absUrl(localePath(lang, feedPath)),
+})

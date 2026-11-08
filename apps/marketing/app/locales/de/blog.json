@@ -8,13 +8,53 @@
   "index": {
     "eyebrow": "Blog",
     "title": "Notizen zum guten Einstellen",
-    "description": "Praxisleitfäden für Arbeitgeber, die Interviews führen, und für Fachkräfte, die sich darauf vorbereiten."
+    "description": "Praxisleitfäden für Arbeitgeber, die Interviews führen, und für Fachkräfte, die sich darauf vorbereiten.",
+    "latest": "Neuester Beitrag",
+    "more": "Weitere Beiträge",
+    "feed": "Per RSS abonnieren"
   },
   "post": {
     "published": "Veröffentlicht am {{date}}",
     "updated": "Aktualisiert am {{date}}",
     "readTime": "{{count}} Min. Lesezeit",
     "allPosts": "Alle Beiträge",
-    "backToTop": "Nach oben"
+    "backToTop": "Nach oben",
+    "toc": "Auf dieser Seite",
+    "sectionLink": "Link zu diesem Abschnitt",
+    "byTeam": "Vom LetsHyre-Team",
+    "by": "Von {{name}}, {{role}}",
+    "draft": "Entwurf",
+    "scheduled": "Geplant",
+    "share": "Beitrag teilen",
+    "shareOn": "Auf {{network}} teilen",
+    "shareEmail": "Per E-Mail teilen",
+    "copyLink": "Link kopieren",
+    "copied": "Link kopiert",
+    "related": "Weiterlesen"
+  },
+  "topics": {
+    "interviewing": "Vorstellungsgespräche",
+    "hiring": "Einstellung",
+    "careers": "Karriere"
+  },
+  "cta": {
+    "employers": {
+      "title": "Interviews und Scorecards, bevor Sie jemanden treffen",
+      "description": "LetsHyre führt mit jedem Kandidaten ein rollenbasiertes KI-Interview und gibt Ihrem Team eine vergleichbare Scorecard.",
+      "primary": "Mit 10 kostenlosen Credits starten",
+      "secondary": "Preise ansehen"
+    },
+    "candidates": {
+      "title": "Zeigen Sie, was Sie können, nicht nur, was Sie geschrieben haben",
+      "description": "Erstellen Sie Ihr Profil, absolvieren Sie Ihr erstes KI-Interview und lassen Sie sich von Arbeitgebern finden, die für Ihre Rolle einstellen.",
+      "primary": "Profil erstellen",
+      "secondary": "So funktioniert es für Fachkräfte"
+    }
+  },
+  "mdx": {
+    "avoid": "Vermeiden",
+    "prefer": "Besser",
+    "source": "Quelle",
+    "play": "Video abspielen: {{title}}"
   }
 }

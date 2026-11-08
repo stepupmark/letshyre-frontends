@@ -26,7 +26,8 @@ Pages: `/:lang`, `/:lang/about`, `/:lang/contact`, `/:lang/download`, `/:lang/in
 (English only for now), `/:lang/pricing`,
 `/:lang/terms`, `/:lang/privacy-policy`, `/:lang/refund-policy`.
 `/:lang/blog` and `/:lang/blog/:slug` ship only in locales with a published post; today that's `en`
-only ([ADR 0021](../adr/0021-marketing-blog.md)). A post's slug never changes once published.
+only ([ADR 0021](../adr/0021-marketing-blog.md)). A post's slug never changes once published. Each of
+those locales also has its RSS feed at `/:lang/blog/feed.xml`.
 `/:lang/policy` moved to `/:lang/privacy-policy` (301).
 `/:lang/how-it-works-interview` moved to `/:lang/interview-guide` (301).
 `/:lang/interview-guide` moves to `/:lang/candidate-guide` (301) in each locale the candidate guide

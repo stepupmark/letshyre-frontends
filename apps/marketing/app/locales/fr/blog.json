@@ -8,13 +8,53 @@
   "index": {
     "eyebrow": "Blog",
     "title": "Bien recruter, en pratique",
-    "description": "Des guides pratiques pour les employeurs qui mènent des entretiens et pour les professionnels qui s’y préparent."
+    "description": "Des guides pratiques pour les employeurs qui mènent des entretiens et pour les professionnels qui s’y préparent.",
+    "latest": "Dernier article",
+    "more": "Plus d'articles",
+    "feed": "S'abonner par RSS"
   },
   "post": {
     "published": "Publié le {{date}}",
     "updated": "Mis à jour le {{date}}",
     "readTime": "{{count}} min de lecture",
     "allPosts": "Tous les articles",
-    "backToTop": "Retour en haut"
+    "backToTop": "Retour en haut",
+    "toc": "Sur cette page",
+    "sectionLink": "Lien vers cette section",
+    "byTeam": "Par l'équipe LetsHyre",
+    "by": "Par {{name}}, {{role}}",
+    "draft": "Brouillon",
+    "scheduled": "Programmé",
+    "share": "Partager cet article",
+    "shareOn": "Partager sur {{network}}",
+    "shareEmail": "Partager par e-mail",
+    "copyLink": "Copier le lien",
+    "copied": "Lien copié",
+    "related": "À lire ensuite"
+  },
+  "topics": {
+    "interviewing": "Entretiens",
+    "hiring": "Recrutement",
+    "careers": "Carrière"
+  },
+  "cta": {
+    "employers": {
+      "title": "Entretiens et grilles d'évaluation prêts avant toute rencontre",
+      "description": "LetsHyre mène un entretien IA adapté au poste avec chaque candidat et fournit à votre équipe une grille d'évaluation à comparer.",
+      "primary": "Commencer avec 10 crédits gratuits",
+      "secondary": "Voir les tarifs"
+    },
+    "candidates": {
+      "title": "Montrez ce que vous savez faire, pas seulement ce que vous avez écrit",
+      "description": "Créez votre profil, passez votre premier entretien IA et laissez les employeurs qui recrutent pour votre poste vous trouver.",
+      "primary": "Créer votre profil",
+      "secondary": "Comment ça marche pour les professionnels"
+    }
+  },
+  "mdx": {
+    "avoid": "À éviter",
+    "prefer": "À privilégier",
+    "source": "Source",
+    "play": "Lire la vidéo : {{title}}"
   }
 }

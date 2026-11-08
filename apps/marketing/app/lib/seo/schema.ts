@@ -1,6 +1,7 @@
 import { LOCALES, type Locale, localePath } from "@workspace/i18n"
 import { z } from "zod"
 
+import type { Author } from "../blog/authors"
 import { absUrl, SITE } from "./site"
 
 // parsed in the browser on every page; skip zod's new Function() probe, which the CSP reports
@@ -80,6 +81,8 @@ export function blogPostingSchema({
   description,
   datePublished,
   dateModified,
+  image = "/og/default.jpg",
+  author,
 }: {
   lang: Locale
   path: string
@@ -87,6 +90,8 @@ export function blogPostingSchema({
   description: string
   datePublished: string
   dateModified: string
+  image?: string
+  author?: Author
 }): JsonLd {
   const url = absUrl(localePath(lang, path))
   return {
@@ -99,9 +104,16 @@ export function blogPostingSchema({
     datePublished,
     dateModified,
     inLanguage: lang,
-    image: absUrl("/og/default.jpg"),
-    // posts are signed by the organization until there are named authors (ADR 0021)
-    author: { "@id": `${SITE.url}/#organization` },
+    image: absUrl(image),
+    // unsigned posts are the team's, so the organization is their author (ADR 0021)
+    author: author
+      ? {
+          "@type": "Person",
+          name: author.name,
+          jobTitle: author.jobTitle,
+          ...(author.url ? { url: author.url, sameAs: [author.url] } : {}),
+        }
+      : { "@id": `${SITE.url}/#organization` },
     publisher: { "@id": `${SITE.url}/#organization` },
     isPartOf: { "@id": `${SITE.url}/#website` },
   }
