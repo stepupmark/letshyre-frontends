@@ -17,6 +17,11 @@ export default defineConfig(({ mode }) => {
 
   return {
     resolve: { tsconfigPaths: true },
+    // a post's images are fetched by the page; inlined, they'd ship in its HTML and its JS chunk too
+    build: {
+      assetsInlineLimit: (file: string) =>
+        /[\\/]content[\\/]blog[\\/]/.test(file) ? false : undefined,
+    },
     plugins: [
       tailwindcss(),
       {

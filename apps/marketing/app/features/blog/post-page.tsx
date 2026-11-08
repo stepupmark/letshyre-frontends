@@ -1,9 +1,10 @@
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { ArrowLeftIcon } from "lucide-react"
-import { Suspense } from "react"
 import { Link } from "react-router"
 
+import { BackToTop } from "@/components/back-to-top"
+import { ReadProgress } from "@/components/read-progress"
 import { Container, PageHeader } from "@/components/section"
 import type { Post } from "@/lib/blog/post"
 import { PAGES } from "@/lib/pages"
@@ -24,7 +25,9 @@ export function PostPage({ post }: { post: Post }) {
   const blogPath = localePath(lang, PAGES.blog.path)
 
   return (
-    <>
+    <div className="relative">
+      <ReadProgress />
+      <BackToTop label={t("post.backToTop")} />
       <PageHeader
         eyebrow={
           <Link to={blogPath} className="hover:underline">
@@ -37,10 +40,8 @@ export function PostPage({ post }: { post: Post }) {
         <PostFacts post={post} />
       </PageHeader>
       <Container className="py-10 sm:py-14">
-        <article className="flex max-w-[65ch] flex-col gap-5 text-base/7 text-foreground/85">
-          <Suspense>
-            <PostBody post={post} />
-          </Suspense>
+        <article className="flex max-w-prose flex-col gap-5 text-base text-foreground/85">
+          <PostBody post={post} />
         </article>
         <Link
           to={blogPath}
@@ -50,6 +51,6 @@ export function PostPage({ post }: { post: Post }) {
           {t("post.allPosts")}
         </Link>
       </Container>
-    </>
+    </div>
   )
 }

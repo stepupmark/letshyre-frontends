@@ -14,6 +14,7 @@
     "published": "Publicado el {{date}}",
     "updated": "Actualizado el {{date}}",
     "readTime": "{{count}} min de lectura",
-    "allPosts": "Todos los artículos"
+    "allPosts": "Todos los artículos",
+    "backToTop": "Volver arriba"
   }
 }

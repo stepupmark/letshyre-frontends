@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 
-import { parsePost, publishedPosts, withBlogIndex } from "./post"
+import { isLive, parsePost, publishedPosts, withBlogIndex } from "./post"
 
 const source = (frontmatter: string, body = "Hiring well takes a plan.") =>
   `---\n${frontmatter}\n---\n\n${body}\n`
@@ -46,6 +46,17 @@ describe("parsePost", () => {
     ],
   ])("fails the build for %s with a bad post", (file, raw, reason) => {
     expect(() => parsePost(file, raw)).toThrow(reason)
+  })
+})
+
+describe("isLive", () => {
+  const post = (extra = "") =>
+    parsePost("/content/blog/structured/en.mdx", source(`${valid}${extra}`))
+
+  it("holds back drafts and posts dated after the build", () => {
+    expect(isLive(post(), "2026-11-08")).toBe(true)
+    expect(isLive(post(), "2026-11-07")).toBe(false)
+    expect(isLive(post("\ndraft: true"), "2026-12-01")).toBe(false)
   })
 })
 

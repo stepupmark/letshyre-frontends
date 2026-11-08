@@ -14,6 +14,7 @@
     "published": "公開日：{{date}}",
     "updated": "更新日：{{date}}",
     "readTime": "{{count}} 分で読めます",
-    "allPosts": "すべての記事"
+    "allPosts": "すべての記事",
+    "backToTop": "ページの先頭に戻る"
   }
 }

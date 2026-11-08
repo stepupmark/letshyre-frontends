@@ -14,6 +14,7 @@
     "published": "प्रकाशित {{date}}",
     "updated": "अपडेट किया गया {{date}}",
     "readTime": "{{count}} मिनट में पढ़ें",
-    "allPosts": "सभी लेख"
+    "allPosts": "सभी लेख",
+    "backToTop": "ऊपर वापस जाएं"
   }
 }

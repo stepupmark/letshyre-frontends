@@ -7,15 +7,6 @@
     .dot { fill: #e4e4e7; }
     .on { fill: #18181b; }
     .note { fill: #f4f4f5; }
-    @media (prefers-color-scheme: dark) {
-      .card { fill: #18181b; stroke: #3f3f46; }
-      .ink { fill: #fafafa; }
-      .muted { fill: #a1a1aa; }
-      .rule { stroke: #3f3f46; }
-      .dot { fill: #3f3f46; }
-      .on { fill: #fafafa; }
-      .note { fill: #27272a; }
-    }
   </style>
   <rect class="card" x="24" y="24" width="672" height="352" rx="16" stroke-width="2"/>
   <text class="ink" x="56" y="72" font-size="22" font-weight="600">Interview scorecard</text>

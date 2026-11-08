@@ -14,6 +14,7 @@
     "published": "Diterbitkan {{date}}",
     "updated": "Diperbarui {{date}}",
     "readTime": "{{count}} menit membaca",
-    "allPosts": "Semua artikel"
+    "allPosts": "Semua artikel",
+    "backToTop": "Kembali ke atas"
   }
 }

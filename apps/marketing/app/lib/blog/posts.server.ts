@@ -1,4 +1,4 @@
-import { parsePost, type Post } from "./post"
+import { isLive, parsePost, type Post } from "./post"
 
 const sources = import.meta.glob<string>("/content/blog/*/*.mdx", {
   eager: true,
@@ -8,4 +8,4 @@ const sources = import.meta.glob<string>("/content/blog/*/*.mdx", {
 
 export const allPosts: Post[] = Object.entries(sources)
   .map(([file, source]) => parsePost(file, source))
-  .filter((post) => import.meta.env.DEV || !post.draft)
+  .filter((post) => import.meta.env.DEV || isLive(post))

@@ -14,6 +14,7 @@
     "published": "게시일: {{date}}",
     "updated": "업데이트: {{date}}",
     "readTime": "{{count}}분 소요",
-    "allPosts": "모든 글"
+    "allPosts": "모든 글",
+    "backToTop": "맨 위로"
   }
 }

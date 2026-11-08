@@ -1,9 +1,9 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs"
 import { join } from "node:path"
 
-import { parsePost, type Post } from "./post.ts"
+import { isLive, parsePost, type Post } from "./post.ts"
 
-/** Build-time only. Drafts never ship. */
+/** Build-time only. Drafts and future posts never ship. */
 export function readPosts(contentDir: string): Post[] {
   if (!existsSync(contentDir)) return []
   return readdirSync(contentDir, { withFileTypes: true })
@@ -16,5 +16,5 @@ export function readPosts(contentDir: string): Post[] {
           return parsePost(file, readFileSync(file, "utf8"))
         })
     )
-    .filter((post) => !post.draft)
+    .filter((post) => isLive(post))
 }

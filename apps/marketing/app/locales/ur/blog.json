@@ -14,6 +14,7 @@
     "published": "شائع شدہ {{date}}",
     "updated": "تازہ کاری {{date}}",
     "readTime": "{{count}} منٹ کا مطالعہ",
-    "allPosts": "تمام مضامین"
+    "allPosts": "تمام مضامین",
+    "backToTop": "اوپر واپس جائیں"
   }
 }

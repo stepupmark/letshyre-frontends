@@ -28,6 +28,8 @@ Android Chrome:
 ## Production
 
 - [ ] Deploy in a low-traffic window; the host must apply each build's `csp.map` policies.
+- [ ] Schedule a daily production build, so blog posts dated in the future go live on their day
+      (ADR 0021).
 - [ ] Spot-check the URL contract (`docs/baseline/url-contract.md`) on the live site.
 - [ ] Resubmit `https://letshyre.ai/sitemap.xml` in Search Console and Bing Webmaster Tools.
       Verify both by DNS record, so no verification tag needs a CSP hash. Bing's index also feeds

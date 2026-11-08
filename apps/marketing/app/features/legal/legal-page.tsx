@@ -2,10 +2,11 @@ import { localePath } from "@workspace/i18n"
 import { Trans, useLocale, useTranslation } from "@workspace/i18n/react"
 import { Link } from "react-router"
 
+import { BackToTop } from "@/components/back-to-top"
+import { ReadProgress } from "@/components/read-progress"
 import { Container } from "@/components/section"
 import { useActiveSection } from "@/hooks/use-active-section"
 
-import { BackToTop } from "./components/back-to-top"
 import { LegalFooter } from "./components/legal-footer"
 import { LegalHeader } from "./components/legal-header"
 import { LegalMobileNav, LegalNav } from "./components/legal-nav"
@@ -35,10 +36,7 @@ export function LegalPage({ ns }: { ns: LegalNamespace }) {
 
   return (
     <div className="relative">
-      <div
-        aria-hidden
-        className="read-progress pointer-events-none fixed inset-x-0 top-0 z-50 h-0.5 origin-left bg-brand rtl:origin-right"
-      />
+      <ReadProgress />
       <BackToTop label={t("chrome.backToTop")} />
       <LegalHeader
         ns={ns}

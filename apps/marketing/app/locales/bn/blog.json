@@ -14,6 +14,7 @@
     "published": "প্রকাশিত {{date}}",
     "updated": "হালনাগাদ {{date}}",
     "readTime": "{{count}} মিনিট পড়ার সময়",
-    "allPosts": "সব লেখা"
+    "allPosts": "সব লেখা",
+    "backToTop": "শীর্ষে ফিরুন"
   }
 }

@@ -14,6 +14,7 @@
     "published": "ಪ್ರಕಟಿಸಲಾಗಿದೆ {{date}}",
     "updated": "ನವೀಕರಿಸಲಾಗಿದೆ {{date}}",
     "readTime": "{{count}} ನಿಮಿಷ ಓದುವಿಕೆ",
-    "allPosts": "ಎಲ್ಲಾ ಲೇಖನಗಳು"
+    "allPosts": "ಎಲ್ಲಾ ಲೇಖನಗಳು",
+    "backToTop": "ಮೇಲಕ್ಕೆ ಹಿಂತಿರುಗಿ"
   }
 }

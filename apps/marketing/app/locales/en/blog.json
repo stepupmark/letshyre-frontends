@@ -14,6 +14,7 @@
     "published": "Published {{date}}",
     "updated": "Updated {{date}}",
     "readTime": "{{count}} min read",
-    "allPosts": "All posts"
+    "allPosts": "All posts",
+    "backToTop": "Back to top"
   }
 }

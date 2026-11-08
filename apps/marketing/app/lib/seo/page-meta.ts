@@ -35,6 +35,17 @@ export function collectMessages(
   return messages
 }
 
+/** The page's locale and a translator over every catalog its route matches loaded. */
+export function metaContext({
+  matches,
+  params,
+}: Pick<MetaArgs, "matches" | "params">) {
+  const lang = toLocale(params.lang)
+  addMessages(collectMessages(matches))
+  const i18n = getI18n(lang)
+  return { lang, i18n, t: i18n.t.bind(i18n) as unknown as Translate }
+}
+
 /**
  * `meta` for a page route. Title, description and crumb come from `<ns>:meta`, so the
  * tags always match the copy on the page.
@@ -44,12 +55,9 @@ export function pageMeta(
   jsonLd?: (ctx: { lang: Locale; t: Translate; path: string }) => JsonLd[]
 ) {
   return ({ matches, params }: MetaArgs): MetaDescriptor[] => {
-    const lang = toLocale(params.lang)
-    addMessages(collectMessages(matches))
-    const i18n = getI18n(lang)
+    const { lang, i18n, t: tr } = metaContext({ matches, params })
     const page = PAGES[id]
     const ns = page.namespaces[0]
-    const tr = i18n.t.bind(i18n) as unknown as Translate
     const t: Translate = (key, options) => tr(`${ns}:${key}`, options)
     const locales = (matches.at(-1)?.loaderData as PageData | undefined)
       ?.locales ?? [lang]

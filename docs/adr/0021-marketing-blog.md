@@ -30,8 +30,11 @@ host with hash-based CSP ([ADR 0002](./0002-react-router-rendering.md),
   the source behind them without touching routes.
 - **Each post is its own chunk.** The post route loads the post's module lazily; the loader awaits
   it at build time so the prerendered HTML has the full post, and the client hydrates it when its
-  chunk arrives. The JS budget doesn't grow with the number of posts.
-- `draft: true` posts render in dev and are never built.
+  chunk arrives. The JS budget doesn't grow with the number of posts. The post body has no Suspense
+  boundary: React streams a large boundary out of place behind an inline script, which would hide
+  the text from readers and crawlers without JavaScript. e2e checks the text is there without JS.
+- `draft: true` posts, and posts whose `publishedAt` (a UTC date) is after the build date, render
+  in dev and are never built.
 
 ## Not yet
 
@@ -46,5 +49,6 @@ host with hash-based CSP ([ADR 0002](./0002-react-router-rendering.md),
 
 - A new post is a folder under `content/blog/`. There is no route or registry to edit.
 - Post URLs join the URL contract; renaming one needs a `MOVED_PATHS` entry.
-- Scheduled posts need a rebuild on the publish date; nothing publishes itself.
+- Scheduled posts go live with the first build on or after their date, so the deploy pipeline must
+  rebuild at least daily (docs/launch-checklist.md).
 - Blog chrome copy follows the usual rule: all 19 locales in the same change.

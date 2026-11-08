@@ -17,7 +17,7 @@ import {
   REPLACED_BY,
 } from "../app/lib/pages.ts"
 import { postPath } from "../app/lib/blog/post.ts"
-import { readiness } from "../app/lib/readiness.ts"
+import { BLOG_DIR, readiness } from "../app/lib/readiness.ts"
 import {
   initialScriptsOf,
   injectMetaPolicy,
@@ -56,7 +56,7 @@ const SOURCES: Partial<Record<PageId, string[]>> = {
   refund: ["app/features/legal"],
   employerGuide: ["app/features/employer-guide"],
   candidateGuide: ["app/features/candidate-guide"],
-  blog: ["app/features/blog", "content/blog"],
+  blog: ["app/features/blog", BLOG_DIR],
 }
 
 const gitDates = new Map<string, string>()
@@ -92,7 +92,7 @@ const htmlFile = (route: string) => join(CLIENT, route, "index.html")
 const gzipSize = (file: string) => gzipSync(readFileSync(file)).length
 const kb = (bytes: number) => `${(bytes / 1024).toFixed(1)} kB`
 
-const { pages: ready, posts } = readiness(join(ROOT, "app/locales"))
+const { pages: ready, posts } = readiness(ROOT)
 const postLocales = (slug: string) =>
   posts.filter((post) => post.slug === slug).map((post) => post.lang)
 const slugs = [...new Set(posts.map((post) => post.slug))]

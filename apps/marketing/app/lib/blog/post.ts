@@ -68,6 +68,12 @@ export function parsePost(file: string, source: string): Post {
 
 export const postPath = (slug: string) => `/blog/${slug}`
 
+export const today = () => new Date().toISOString().slice(0, 10)
+
+/** Built and indexed: not a draft, and its UTC publish date has come. */
+export const isLive = (post: Post, date = today()) =>
+  !post.draft && post.publishedAt <= date
+
 /** Newest first. Posts need the blog's copy in their locale to ship. */
 export const publishedPosts = (
   posts: readonly Post[],

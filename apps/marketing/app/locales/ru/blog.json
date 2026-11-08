@@ -14,6 +14,7 @@
     "published": "Опубликовано {{date}}",
     "updated": "Обновлено {{date}}",
     "readTime": "{{count}} мин чтения",
-    "allPosts": "Все статьи"
+    "allPosts": "Все статьи",
+    "backToTop": "Наверх"
   }
 }
