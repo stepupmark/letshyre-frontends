@@ -130,6 +130,13 @@ describe("llms.txt", () => {
         description: "Credit plans.",
       },
       { id: "home", path: "", title: "Home", description: "Hire on evidence." },
+    ],
+    [
+      {
+        path: "/blog/structured-interviews",
+        title: "Structured interviews | letshyre.ai",
+        description: "How to run one.",
+      },
     ]
   )
 
@@ -141,6 +148,15 @@ describe("llms.txt", () => {
     expect(txt.indexOf("## Employers")).toBeLessThan(txt.indexOf("## Optional"))
     expect(txt).not.toContain("[Home]")
     expect(txt).not.toContain("## Company")
+  })
+
+  it("lists posts under Blog, before the optional pages", () => {
+    expect(txt).toContain(
+      `## Blog
+
+- [Structured interviews](${SITE}/en/blog/structured-interviews): How to run one.`
+    )
+    expect(txt.indexOf("## Blog")).toBeLessThan(txt.indexOf("## Optional"))
   })
 })
 

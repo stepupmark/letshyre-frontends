@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "Blog : recrutement et entretiens | letshyre.ai",
+    "description": "Guides pratiques sur les entretiens structurés, l’évaluation équitable des candidats et la recherche d’emploi pour les professionnels expérimentés.",
+    "crumb": "Blog",
+    "name": "Blog LetsHyre"
+  },
+  "index": {
+    "eyebrow": "Blog",
+    "title": "Bien recruter, en pratique",
+    "description": "Des guides pratiques pour les employeurs qui mènent des entretiens et pour les professionnels qui s’y préparent."
+  },
+  "post": {
+    "published": "Publié le {{date}}",
+    "updated": "Mis à jour le {{date}}",
+    "readTime": "{{count}} min de lecture",
+    "allPosts": "Tous les articles"
+  }
+}

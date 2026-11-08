@@ -1,0 +1,66 @@
+import type { ComponentProps } from "react"
+import { Link } from "react-router"
+
+export const prose = {
+  h2: ({ children, ...props }: ComponentProps<"h2">) => (
+    <h2
+      className="mt-8 text-2xl font-semibold tracking-tight text-balance text-foreground"
+      {...props}
+    >
+      {children}
+    </h2>
+  ),
+  h3: ({ children, ...props }: ComponentProps<"h3">) => (
+    <h3
+      className="mt-4 text-xl font-semibold tracking-tight text-balance text-foreground"
+      {...props}
+    >
+      {children}
+    </h3>
+  ),
+  p: (props: ComponentProps<"p">) => <p className="text-pretty" {...props} />,
+  ul: (props: ComponentProps<"ul">) => (
+    <ul className="flex list-disc flex-col gap-2 ps-6" {...props} />
+  ),
+  ol: (props: ComponentProps<"ol">) => (
+    <ol className="flex list-decimal flex-col gap-2 ps-6" {...props} />
+  ),
+  li: (props: ComponentProps<"li">) => <li className="ps-1" {...props} />,
+  strong: (props: ComponentProps<"strong">) => (
+    <strong className="font-semibold text-foreground" {...props} />
+  ),
+  a: ({ href = "", children, ...props }: ComponentProps<"a">) =>
+    href.startsWith("/") ? (
+      <Link to={href} className="text-link" {...props}>
+        {children}
+      </Link>
+    ) : (
+      <a href={href} rel="noopener" className="text-link" {...props}>
+        {children}
+      </a>
+    ),
+  blockquote: (props: ComponentProps<"blockquote">) => (
+    <blockquote
+      className="rounded-xl border bg-muted/40 px-5 py-4 text-lg text-pretty text-foreground"
+      {...props}
+    />
+  ),
+  hr: () => <hr className="my-4 border-border" />,
+  table: (props: ComponentProps<"table">) => (
+    <div className="overflow-x-auto rounded-xl border">
+      <table className="w-full text-start text-sm" {...props} />
+    </div>
+  ),
+  thead: (props: ComponentProps<"thead">) => (
+    <thead className="bg-muted/50" {...props} />
+  ),
+  th: (props: ComponentProps<"th">) => (
+    <th
+      className="px-4 py-3 text-start font-semibold text-foreground"
+      {...props}
+    />
+  ),
+  td: (props: ComponentProps<"td">) => (
+    <td className="border-t px-4 py-3 align-top" {...props} />
+  ),
+}

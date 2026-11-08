@@ -44,6 +44,7 @@ export const FOOTER_COLUMNS = [
     title: "footer.company",
     links: [
       { label: "footer.links.about", path: "/about" },
+      { label: "footer.links.blog", path: PAGES.blog.path, page: "blog" },
       { label: "footer.links.contact", path: "/contact" },
     ],
   },

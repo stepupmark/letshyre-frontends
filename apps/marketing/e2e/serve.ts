@@ -19,7 +19,7 @@ const csp = existsSync(CSP_MAP)
   : undefined
 
 const LOCALES = "en|hi|fr|ja|ar|te|ta|es|nl|ru|kn|ml|ur|bn|de|pt|it|ko|id"
-const LOCALE_PAGE = new RegExp(`^/(${LOCALES})(/[a-z0-9-]+)?$`)
+const LOCALE_PAGE = new RegExp(`^/(${LOCALES})((?:/[a-z0-9-]+){1,2})?$`)
 const SUCCESSOR = new Map(
   Object.entries(REPLACED_BY).map(([from, to]) => [
     PAGES[from as keyof typeof PAGES].path as string,

@@ -20,6 +20,7 @@ interface MetaInput {
   og?: string
   jsonLd?: JsonLd[]
   robots?: string
+  article?: { published: string; modified: string }
 }
 
 export function buildMeta({
@@ -31,6 +32,7 @@ export function buildMeta({
   og = "default",
   jsonLd = [],
   robots = "index, follow",
+  article,
 }: MetaInput): MetaDescriptor[] {
   const url = absUrl(localePath(lang, path))
   const image = absUrl(`/og/${og}.jpg`)
@@ -61,7 +63,13 @@ export function buildMeta({
         ]
       : []),
 
-    { property: "og:type", content: "website" },
+    { property: "og:type", content: article ? "article" : "website" },
+    ...(article
+      ? [
+          { property: "article:published_time", content: article.published },
+          { property: "article:modified_time", content: article.modified },
+        ]
+      : []),
     { property: "og:site_name", content: SITE.name },
     { property: "og:title", content: title },
     { property: "og:description", content: description },

@@ -2,6 +2,7 @@ import "i18next"
 
 import type about from "../locales/en/about.json"
 import type assistant from "../locales/en/assistant.json"
+import type blog from "../locales/en/blog.json"
 import type common from "../locales/en/common.json"
 import type candidates from "../locales/en/candidates.json"
 import type candidateGuide from "../locales/en/candidateGuide.json"
@@ -25,6 +26,7 @@ declare module "i18next" {
     resources: {
       about: typeof about
       assistant: typeof assistant
+      blog: typeof blog
       common: typeof common
       candidates: typeof candidates
       candidateGuide: typeof candidateGuide

@@ -16,7 +16,8 @@ import {
   PREVIEW_PAGES,
   REPLACED_BY,
 } from "../app/lib/pages.ts"
-import { readyLocales } from "../app/lib/readiness.ts"
+import { postPath } from "../app/lib/blog/post.ts"
+import { readiness } from "../app/lib/readiness.ts"
 import {
   initialScriptsOf,
   injectMetaPolicy,
@@ -55,6 +56,7 @@ const SOURCES: Partial<Record<PageId, string[]>> = {
   refund: ["app/features/legal"],
   employerGuide: ["app/features/employer-guide"],
   candidateGuide: ["app/features/candidate-guide"],
+  blog: ["app/features/blog", "content/blog"],
 }
 
 const gitDates = new Map<string, string>()
@@ -90,22 +92,32 @@ const htmlFile = (route: string) => join(CLIENT, route, "index.html")
 const gzipSize = (file: string) => gzipSync(readFileSync(file)).length
 const kb = (bytes: number) => `${(bytes / 1024).toFixed(1)} kB`
 
-const ready = readyLocales(join(ROOT, "app/locales"))
+const { pages: ready, posts } = readiness(join(ROOT, "app/locales"))
+const postLocales = (slug: string) =>
+  posts.filter((post) => post.slug === slug).map((post) => post.lang)
+const slugs = [...new Set(posts.map((post) => post.slug))]
 const problems: string[] = []
 const policies = new Map<string, string>()
 
 writeFileSync(
   join(CLIENT, "sitemap.xml"),
-  renderSitemap(
-    site,
-    [...ready]
+  renderSitemap(site, [
+    ...[...ready]
       .filter(([id]) => !PREVIEW_PAGES.includes(id))
       .map(([id, locales]) => ({
         path: PAGES[id].path,
         locales,
         lastmod: lastmod(id),
-      }))
-  )
+      })),
+    ...slugs.map((slug) => ({
+      path: postPath(slug),
+      locales: postLocales(slug),
+      lastmod: (lang: Locale) => {
+        const post = posts.find((p) => p.slug === slug && p.lang === lang)
+        return post?.updatedAt ?? post?.publishedAt ?? today
+      },
+    })),
+  ])
 )
 writeFileSync(join(CLIENT, "robots.txt"), renderRobots(site, production))
 
@@ -126,19 +138,31 @@ writeFileSync(
   renderLlms(
     site,
     { name: "LetsHyre", summary: englishMeta("home").description },
-    llmsPages
+    llmsPages,
+    posts
+      .filter((post) => post.lang === "en")
+      .map((post) => ({ path: postPath(post.slug), ...post }))
   )
 )
 
-const routes = [...ready].flatMap(([id, locales]) =>
-  locales.map((lang) => ({
-    lang,
-    path: PAGES[id].path,
-    locales,
-    preview: PREVIEW_PAGES.includes(id),
-    jsExempt: JS_BUDGET_EXEMPT.includes(id),
-  }))
-)
+const routes = [
+  ...[...ready].flatMap(([id, locales]) =>
+    locales.map((lang) => ({
+      lang,
+      path: PAGES[id].path,
+      locales,
+      preview: PREVIEW_PAGES.includes(id),
+      jsExempt: JS_BUDGET_EXEMPT.includes(id),
+    }))
+  ),
+  ...posts.map((post) => ({
+    lang: post.lang,
+    path: postPath(post.slug),
+    locales: postLocales(post.slug),
+    preview: false,
+    jsExempt: false,
+  })),
+]
 
 const pagePaths = new Set(
   routes.map((page) => localePath(page.lang, page.path))

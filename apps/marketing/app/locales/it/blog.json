@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "Blog: consigli su selezione e colloqui | letshyre.ai",
+    "description": "Guide pratiche su colloqui strutturati, valutazione equa dei candidati e ricerca di lavoro per professionisti con esperienza.",
+    "crumb": "Blog",
+    "name": "Blog di LetsHyre"
+  },
+  "index": {
+    "eyebrow": "Blog",
+    "title": "Appunti per assumere bene",
+    "description": "Guide pratiche per le aziende che conducono colloqui e per i professionisti che si preparano ad affrontarli."
+  },
+  "post": {
+    "published": "Pubblicato il {{date}}",
+    "updated": "Aggiornato il {{date}}",
+    "readTime": "{{count}} min di lettura",
+    "allPosts": "Tutti gli articoli"
+  }
+}

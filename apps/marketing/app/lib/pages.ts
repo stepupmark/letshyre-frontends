@@ -39,6 +39,7 @@ export const PAGES = {
   download: { path: "/download", namespaces: ["download"], og: "download" },
   contact: { path: "/contact", namespaces: ["contact"], og: "contact" },
   about: { path: "/about", namespaces: ["about"], og: "about" },
+  blog: { path: "/blog", namespaces: ["blog"], og: "default" },
   terms: { path: "/terms", namespaces: ["legalTerms"], og: "terms" },
   privacy: {
     path: "/privacy-policy",

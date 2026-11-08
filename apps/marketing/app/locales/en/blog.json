@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "Blog: Hiring and Interviewing Advice | letshyre.ai",
+    "description": "Practical guides on structured interviews, fair candidate evaluation and job searching for experienced professionals, written by the LetsHyre team.",
+    "crumb": "Blog",
+    "name": "LetsHyre blog"
+  },
+  "index": {
+    "eyebrow": "Blog",
+    "title": "Notes on hiring well",
+    "description": "Practical guides for employers who run interviews and for professionals preparing for them."
+  },
+  "post": {
+    "published": "Published {{date}}",
+    "updated": "Updated {{date}}",
+    "readTime": "{{count}} min read",
+    "allPosts": "All posts"
+  }
+}

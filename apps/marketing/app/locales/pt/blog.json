@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "Blog: dicas de recrutamento e entrevistas | letshyre.ai",
+    "description": "Guias práticos sobre entrevistas estruturadas, avaliação justa de candidatos e busca de emprego para profissionais experientes.",
+    "crumb": "Blog",
+    "name": "Blog da LetsHyre"
+  },
+  "index": {
+    "eyebrow": "Blog",
+    "title": "Notas para contratar bem",
+    "description": "Guias práticos para empresas que conduzem entrevistas e para profissionais que se preparam para elas."
+  },
+  "post": {
+    "published": "Publicado em {{date}}",
+    "updated": "Atualizado em {{date}}",
+    "readTime": "{{count}} min de leitura",
+    "allPosts": "Todos os artigos"
+  }
+}

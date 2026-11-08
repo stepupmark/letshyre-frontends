@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "ブログ：採用と面接のヒント | letshyre.ai",
+    "description": "構造化面接、候補者の公正な評価、経験豊富なプロフェッショナルの転職活動について、LetsHyreチームが実践的なガイドをお届けします。",
+    "crumb": "ブログ",
+    "name": "LetsHyreブログ"
+  },
+  "index": {
+    "eyebrow": "ブログ",
+    "title": "より良い採用のためのノート",
+    "description": "面接を行う企業と、面接に臨むプロフェッショナルのための実践ガイド。"
+  },
+  "post": {
+    "published": "公開日：{{date}}",
+    "updated": "更新日：{{date}}",
+    "readTime": "{{count}} 分で読めます",
+    "allPosts": "すべての記事"
+  }
+}

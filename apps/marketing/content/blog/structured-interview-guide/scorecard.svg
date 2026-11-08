@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" width="720" height="400" font-family="Outfit, system-ui, sans-serif">
+  <style>
+    .card { fill: #ffffff; stroke: #e4e4e7; }
+    .ink { fill: #18181b; }
+    .muted { fill: #71717a; }
+    .rule { stroke: #e4e4e7; }
+    .dot { fill: #e4e4e7; }
+    .on { fill: #18181b; }
+    .note { fill: #f4f4f5; }
+    @media (prefers-color-scheme: dark) {
+      .card { fill: #18181b; stroke: #3f3f46; }
+      .ink { fill: #fafafa; }
+      .muted { fill: #a1a1aa; }
+      .rule { stroke: #3f3f46; }
+      .dot { fill: #3f3f46; }
+      .on { fill: #fafafa; }
+      .note { fill: #27272a; }
+    }
+  </style>
+  <rect class="card" x="24" y="24" width="672" height="352" rx="16" stroke-width="2"/>
+  <text class="ink" x="56" y="72" font-size="22" font-weight="600">Interview scorecard</text>
+  <text class="muted" x="56" y="98" font-size="15">Same questions, same scale, scored before the debrief</text>
+
+  <text class="muted" x="56" y="140" font-size="13" font-weight="600">CRITERION</text>
+  <text class="muted" x="420" y="140" font-size="13" font-weight="600">RATING (1–4)</text>
+  <line class="rule" x1="56" y1="154" x2="664" y2="154" stroke-width="1.5"/>
+
+  <text class="ink" x="56" y="190" font-size="16">Breaks a vague problem into steps</text>
+  <circle class="on" cx="432" cy="185" r="9"/><circle class="on" cx="462" cy="185" r="9"/><circle class="on" cx="492" cy="185" r="9"/><circle class="dot" cx="522" cy="185" r="9"/>
+  <line class="rule" x1="56" y1="210" x2="664" y2="210" stroke-width="1"/>
+
+  <text class="ink" x="56" y="246" font-size="16">Explains trade-offs to a non-expert</text>
+  <circle class="on" cx="432" cy="241" r="9"/><circle class="on" cx="462" cy="241" r="9"/><circle class="dot" cx="492" cy="241" r="9"/><circle class="dot" cx="522" cy="241" r="9"/>
+  <line class="rule" x1="56" y1="266" x2="664" y2="266" stroke-width="1"/>
+
+  <text class="ink" x="56" y="302" font-size="16">Owns a past mistake and its fix</text>
+  <circle class="on" cx="432" cy="297" r="9"/><circle class="on" cx="462" cy="297" r="9"/><circle class="on" cx="492" cy="297" r="9"/><circle class="on" cx="522" cy="297" r="9"/>
+
+  <rect class="note" x="56" y="322" width="608" height="36" rx="8"/>
+  <text class="muted" x="72" y="345" font-size="14">Evidence: what the candidate said or did, in a sentence, for every rating</text>
+</svg>

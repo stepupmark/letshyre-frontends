@@ -25,3 +25,4 @@ record that supersedes the old one; old records stay as written.
 | [0018](./0018-launcher-idle-loop.md)        | The marketing chat launcher may loop                        | Accepted                                     |
 | [0019](./0019-email-template-editor.md)     | Tiptap edits invitation email templates                     | Accepted                                     |
 | [0020](./0020-search-and-answer-engines.md) | Search and answer engines: what the build guarantees        | Accepted                                     |
+| [0021](./0021-marketing-blog.md)            | The blog: MDX files, prerendered in marketing               | Accepted                                     |

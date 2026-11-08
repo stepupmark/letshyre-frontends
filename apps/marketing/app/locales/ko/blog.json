@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "블로그: 채용과 면접 팁 | letshyre.ai",
+    "description": "구조화 면접, 공정한 후보자 평가, 경력직 전문가의 구직 활동에 관한 LetsHyre 팀의 실용적인 가이드입니다.",
+    "crumb": "블로그",
+    "name": "LetsHyre 블로그"
+  },
+  "index": {
+    "eyebrow": "블로그",
+    "title": "좋은 채용을 위한 노트",
+    "description": "면접을 진행하는 기업과 면접을 준비하는 전문가를 위한 실용 가이드입니다."
+  },
+  "post": {
+    "published": "게시일: {{date}}",
+    "updated": "업데이트: {{date}}",
+    "readTime": "{{count}}분 소요",
+    "allPosts": "모든 글"
+  }
+}

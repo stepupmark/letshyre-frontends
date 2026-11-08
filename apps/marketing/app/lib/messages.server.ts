@@ -1,6 +1,8 @@
 import { type Catalog, type Locale, type Messages } from "@workspace/i18n"
 import { type Catalogs, readinessFrom } from "@workspace/i18n/node"
 
+import { allPosts } from "./blog/posts.server"
+import { type Post, publishedPosts, withBlogIndex } from "./blog/post"
 import { PAGES, type PageId, pageNamespaces, withoutReplaced } from "./pages"
 
 const files = import.meta.glob<Catalog>("../locales/*/*.json", {
@@ -16,7 +18,7 @@ for (const [path, catalog] of Object.entries(files)) {
   catalogs.set(lang as Locale, byNs)
 }
 
-const readiness = withoutReplaced(
+const catalogReadiness = withoutReplaced(
   readinessFrom(
     catalogs,
     Object.fromEntries(
@@ -40,5 +42,16 @@ export function loadMessages(
   }
 }
 
+const posts = publishedPosts(allPosts, catalogReadiness.get("blog") ?? [])
+const readiness = withBlogIndex(catalogReadiness, posts)
+
 /** Locales the page is published in, for hreflang and the language switcher. */
 export const readyLocales = (id: PageId): Locale[] => readiness.get(id) ?? []
+
+/** Published posts in a locale, newest first. */
+export const postsIn = (lang: Locale): Post[] =>
+  posts.filter((post) => post.lang === lang)
+
+/** The locales a post is written in. */
+export const postLocales = (slug: string): Locale[] =>
+  posts.filter((post) => post.slug === slug).map((post) => post.lang)

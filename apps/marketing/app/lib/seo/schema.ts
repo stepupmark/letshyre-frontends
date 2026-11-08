@@ -48,7 +48,7 @@ export function webPageSchema({
   dateModified,
   about,
 }: {
-  type?: "WebPage" | "AboutPage" | "ContactPage"
+  type?: "WebPage" | "AboutPage" | "ContactPage" | "CollectionPage"
   lang: Locale
   path: string
   name: string
@@ -70,6 +70,40 @@ export function webPageSchema({
     inLanguage: lang,
     ...(dateModified ? { dateModified } : {}),
     ...(about ? { about } : {}),
+  }
+}
+
+export function blogPostingSchema({
+  lang,
+  path,
+  headline,
+  description,
+  datePublished,
+  dateModified,
+}: {
+  lang: Locale
+  path: string
+  headline: string
+  description: string
+  datePublished: string
+  dateModified: string
+}): JsonLd {
+  const url = absUrl(localePath(lang, path))
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    mainEntityOfPage: { "@id": `${url}#webpage` },
+    headline,
+    description,
+    datePublished,
+    dateModified,
+    inLanguage: lang,
+    image: absUrl("/og/default.jpg"),
+    // posts are signed by the organization until there are named authors (ADR 0021)
+    author: { "@id": `${SITE.url}/#organization` },
+    publisher: { "@id": `${SITE.url}/#organization` },
+    isPartOf: { "@id": `${SITE.url}/#website` },
   }
 }
 

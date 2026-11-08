@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "Blog: Tipps für Recruiting und Interviews | letshyre.ai",
+    "description": "Praxisleitfäden zu strukturierten Interviews, fairer Kandidatenbewertung und Jobsuche für erfahrene Fachkräfte, vom LetsHyre-Team.",
+    "crumb": "Blog",
+    "name": "LetsHyre-Blog"
+  },
+  "index": {
+    "eyebrow": "Blog",
+    "title": "Notizen zum guten Einstellen",
+    "description": "Praxisleitfäden für Arbeitgeber, die Interviews führen, und für Fachkräfte, die sich darauf vorbereiten."
+  },
+  "post": {
+    "published": "Veröffentlicht am {{date}}",
+    "updated": "Aktualisiert am {{date}}",
+    "readTime": "{{count}} Min. Lesezeit",
+    "allPosts": "Alle Beiträge"
+  }
+}
