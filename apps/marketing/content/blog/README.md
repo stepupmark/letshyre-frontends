@@ -13,8 +13,8 @@ metaTitle: How to Run a Structured Interview # optional, for the browser tab and
 description: One or two sentences, shown in search results and on the index.
 publishedAt: 2026-11-08 # UTC; the post goes live with the first build on or after it
 updatedAt: 2026-12-01 # optional, after a real revision
-audience: employers # employers | candidates: picks the closing call to action
-topic: interviewing # interviewing | hiring | careers
+audience: employers # employers | candidates | everyone: picks the closing call to action
+topic: interviewing # interviewing | hiring | careers | trends | news
 author: priya # optional, an id from app/lib/blog/authors.ts; unsigned posts are the team's
 draft: true # optional; drafts show on dev and staging only
 ---

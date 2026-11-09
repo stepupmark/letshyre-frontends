@@ -4,9 +4,9 @@ Accepted 2026-11-08. Applies to `apps/marketing` only.
 
 ## Context
 
-We want the site to rank for hiring and career questions. There is no backend for content, each
-post has its own structure and images, and the marketing site is already prerendered on a static
-host with hash-based CSP ([ADR 0002](./0002-react-router-rendering.md),
+We want the site to rank for hiring and career questions, and a place to post hiring trends and
+LetsHyre news. There is no backend for content, each post has its own structure and images, and
+the marketing site is already prerendered on a static host with hash-based CSP ([ADR 0002](./0002-react-router-rendering.md),
 [ADR 0012](./0012-csp-hashes.md)).
 
 ## Decision
@@ -39,7 +39,8 @@ host with hash-based CSP ([ADR 0002](./0002-react-router-rendering.md),
   the parser reads the same ids from the source for the table of contents, so it is in the loader
   data at build time. A test compiles real MDX to keep the two in step.
 - **Every post has an `audience` and a `topic`.** They pick the closing call to action and the
-  related posts. There are no tag pages until there are enough posts to fill them.
+  related posts. Trends and news posts are for `everyone` and close with a way in for each side.
+  There are no tag pages until there are enough posts to fill them.
 - **Code is highlighted at build time** with Shiki in both themes, so no highlighter ships.
 - **Feeds are RSS 2.0, one per locale** at `/<lang>/blogs/feed.xml`, written by postbuild.
 - **A post's share image is `<slug>/og.jpg`**, drawn from its page header by

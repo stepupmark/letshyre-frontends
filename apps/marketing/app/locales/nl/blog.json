@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Blog: advies over werven en interviews | letshyre.ai",
-    "description": "Gidsen over gestructureerde interviews, eerlijke beoordeling van kandidaten en zoeken naar werk voor ervaren professionals.",
+    "title": "Blog: werving, carrière en trends | letshyre.ai",
+    "description": "Wervingsadvies voor werkgevers, carrièreadvies voor professionals, wervingstrends en productnieuws van het LetsHyre-team.",
     "crumb": "Blogs",
     "name": "LetsHyre-blog"
   },
   "index": {
     "eyebrow": "Blogs",
-    "title": "Notities over goed werven",
-    "description": "Gidsen voor werkgevers die interviews afnemen en voor professionals die zich erop voorbereiden.",
+    "title": "Werving, carrière en nieuws van LetsHyre",
+    "description": "Advies voor werkgevers en professionals, wat er verandert in werving en waar we bij LetsHyre aan werken.",
     "latest": "Nieuwste artikel",
     "more": "Meer artikelen",
     "feed": "Abonneren via RSS"
@@ -35,7 +35,9 @@
   "topics": {
     "interviewing": "Sollicitatiegesprekken",
     "hiring": "Werving",
-    "careers": "Carrière"
+    "careers": "Carrière",
+    "trends": "Wervingstrends",
+    "news": "Nieuws van LetsHyre"
   },
   "cta": {
     "employers": {
@@ -49,6 +51,12 @@
       "description": "Maak je profiel, doe je eerste AI-interview en laat werkgevers die voor jouw functie werven je vinden.",
       "primary": "Maak je profiel",
       "secondary": "Zo werkt het voor professionals"
+    },
+    "everyone": {
+      "title": "Ben je aan het werven of zoek je je volgende functie?",
+      "description": "Werkgevers krijgen van elke kandidaat een AI-interview en een scorecard. Professionals krijgen één profiel dat werkgevers die voor hun functie werven kunnen vinden.",
+      "primary": "Ik werf",
+      "secondary": "Ik zoek werk"
     }
   },
   "mdx": {

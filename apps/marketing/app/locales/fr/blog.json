@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Blog : recrutement et entretiens | letshyre.ai",
-    "description": "Guides sur les entretiens structurés, l’évaluation équitable des candidats et la recherche d’emploi pour les professionnels expérimentés.",
+    "title": "Blog : recrutement, carrière et tendances | letshyre.ai",
+    "description": "Conseils de recrutement pour les employeurs, conseils de carrière pour les professionnels, tendances du recrutement et actualités produit de l'équipe LetsHyre.",
     "crumb": "Blogs",
     "name": "Blog LetsHyre"
   },
   "index": {
     "eyebrow": "Blogs",
-    "title": "Bien recruter, en pratique",
-    "description": "Des guides pour les employeurs qui mènent des entretiens et pour les professionnels qui s’y préparent.",
+    "title": "Recrutement, carrière et actualités de LetsHyre",
+    "description": "Des conseils pour les employeurs et les professionnels, ce qui change dans le recrutement et ce que nous construisons chez LetsHyre.",
     "latest": "Dernier article",
     "more": "Plus d'articles",
     "feed": "S'abonner par RSS"
@@ -35,7 +35,9 @@
   "topics": {
     "interviewing": "Entretiens",
     "hiring": "Recrutement",
-    "careers": "Carrière"
+    "careers": "Carrière",
+    "trends": "Tendances du recrutement",
+    "news": "Actualités LetsHyre"
   },
   "cta": {
     "employers": {
@@ -49,6 +51,12 @@
       "description": "Créez votre profil, passez votre premier entretien IA et laissez les employeurs qui recrutent pour votre poste vous trouver.",
       "primary": "Créer votre profil",
       "secondary": "Comment ça marche pour les professionnels"
+    },
+    "everyone": {
+      "title": "Vous recrutez ou cherchez votre prochain poste ?",
+      "description": "Les employeurs reçoivent un entretien IA et une grille d'évaluation pour chaque candidat. Les professionnels ont un profil que trouvent les employeurs qui recrutent pour leur poste.",
+      "primary": "Je recrute",
+      "secondary": "Je cherche un poste"
     }
   },
   "mdx": {

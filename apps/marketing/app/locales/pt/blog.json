@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Blog: dicas de recrutamento e entrevistas | letshyre.ai",
-    "description": "Guias sobre entrevistas estruturadas, avaliação justa de candidatos e busca de emprego para profissionais experientes.",
+    "title": "Blog: contratação, carreira e tendências | letshyre.ai",
+    "description": "Dicas de contratação para empresas, dicas de carreira para profissionais, tendências de contratação e novidades de produto da equipe LetsHyre.",
     "crumb": "Blogs",
     "name": "Blog da LetsHyre"
   },
   "index": {
     "eyebrow": "Blogs",
-    "title": "Notas para contratar bem",
-    "description": "Guias para empresas que conduzem entrevistas e para profissionais que se preparam para elas.",
+    "title": "Contratação, carreira e novidades da LetsHyre",
+    "description": "Conselhos para empresas e profissionais, o que está mudando na contratação e o que estamos construindo na LetsHyre.",
     "latest": "Publicação mais recente",
     "more": "Mais publicações",
     "feed": "Assinar via RSS"
@@ -35,7 +35,9 @@
   "topics": {
     "interviewing": "Entrevistas",
     "hiring": "Contratação",
-    "careers": "Carreira"
+    "careers": "Carreira",
+    "trends": "Tendências de contratação",
+    "news": "Novidades da LetsHyre"
   },
   "cta": {
     "employers": {
@@ -49,6 +51,12 @@
       "description": "Crie seu perfil, faça sua primeira entrevista com IA e deixe que empresas contratando para sua função encontrem você.",
       "primary": "Criar seu perfil",
       "secondary": "Como funciona para profissionais"
+    },
+    "everyone": {
+      "title": "Está contratando ou buscando sua próxima vaga?",
+      "description": "Empresas recebem uma entrevista com IA e um scorecard de cada candidato. Profissionais têm um perfil que as empresas contratando para sua função podem encontrar.",
+      "primary": "Estou contratando",
+      "secondary": "Estou procurando trabalho"
     }
   },
   "mdx": {

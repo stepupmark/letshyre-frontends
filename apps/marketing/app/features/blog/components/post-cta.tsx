@@ -8,6 +8,7 @@ import type { Post } from "@/lib/blog/post"
 const TARGETS = {
   employers: { href: APP_LINKS.employerRegister, page: "pricing" },
   candidates: { href: APP_LINKS.candidateRegister, page: "candidates" },
+  everyone: { href: APP_LINKS.employerRegister, page: "candidates" },
 } as const
 
 export function PostCta({ audience }: { audience: Post["audience"] }) {

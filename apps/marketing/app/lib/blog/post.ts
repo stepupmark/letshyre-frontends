@@ -8,8 +8,8 @@ import { z } from "zod"
 import type { PageId } from "../pages.ts"
 import { AUTHORS } from "./authors.ts"
 
-const AUDIENCES = ["employers", "candidates"] as const
-const TOPICS = ["interviewing", "hiring", "careers"] as const
+const AUDIENCES = ["employers", "candidates", "everyone"] as const
+const TOPICS = ["interviewing", "hiring", "careers", "trends", "news"] as const
 
 const frontmatterSchema = z
   .strictObject({

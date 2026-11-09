@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Blog: Hiring and Interviewing Advice | letshyre.ai",
-    "description": "Guides on structured interviews, fair candidate evaluation and job searching for experienced professionals, written by the LetsHyre team.",
+    "title": "Blog: Hiring Advice, Careers and Trends | letshyre.ai",
+    "description": "Hiring advice for employers, career advice for professionals, hiring trends and product news from the LetsHyre team.",
     "crumb": "Blogs",
     "name": "LetsHyre blog"
   },
   "index": {
     "eyebrow": "Blogs",
-    "title": "Notes on hiring well",
-    "description": "Guides for employers who run interviews and for professionals preparing for them.",
+    "title": "Hiring, careers and LetsHyre news",
+    "description": "Advice for employers and professionals, what's changing in hiring, and what we're building at LetsHyre.",
     "latest": "Latest post",
     "more": "More posts",
     "feed": "Subscribe via RSS"
@@ -35,7 +35,9 @@
   "topics": {
     "interviewing": "Interviewing",
     "hiring": "Hiring",
-    "careers": "Careers"
+    "careers": "Careers",
+    "trends": "Hiring trends",
+    "news": "LetsHyre news"
   },
   "cta": {
     "employers": {
@@ -49,6 +51,12 @@
       "description": "Create your profile, take your first AI interview and let employers hiring for your role find you.",
       "primary": "Create your profile",
       "secondary": "How it works for professionals"
+    },
+    "everyone": {
+      "title": "Hiring, or looking for your next role?",
+      "description": "Employers get an AI interview and a scorecard for every candidate. Professionals get one profile that employers hiring for their role can find.",
+      "primary": "I'm hiring",
+      "secondary": "I'm looking for work"
     }
   },
   "mdx": {

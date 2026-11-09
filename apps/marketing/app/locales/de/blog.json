@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Blog: Tipps für Recruiting und Interviews | letshyre.ai",
-    "description": "Leitfäden zu strukturierten Interviews, fairer Kandidatenbewertung und Jobsuche für erfahrene Fachkräfte, vom LetsHyre-Team.",
+    "title": "Blog: Recruiting, Karriere und Trends | letshyre.ai",
+    "description": "Recruiting-Tipps für Arbeitgeber, Karrieretipps für Fachkräfte, Recruiting-Trends und Produktneuigkeiten vom LetsHyre-Team.",
     "crumb": "Blogs",
     "name": "LetsHyre-Blog"
   },
   "index": {
     "eyebrow": "Blogs",
-    "title": "Notizen zum guten Einstellen",
-    "description": "Leitfäden für Arbeitgeber, die Interviews führen, und für Fachkräfte, die sich darauf vorbereiten.",
+    "title": "Recruiting, Karriere und Neues von LetsHyre",
+    "description": "Rat für Arbeitgeber und Fachkräfte, was sich beim Einstellen ändert und woran wir bei LetsHyre arbeiten.",
     "latest": "Neuester Beitrag",
     "more": "Weitere Beiträge",
     "feed": "Per RSS abonnieren"
@@ -35,7 +35,9 @@
   "topics": {
     "interviewing": "Vorstellungsgespräche",
     "hiring": "Einstellung",
-    "careers": "Karriere"
+    "careers": "Karriere",
+    "trends": "Recruiting-Trends",
+    "news": "Neues von LetsHyre"
   },
   "cta": {
     "employers": {
@@ -49,6 +51,12 @@
       "description": "Erstellen Sie Ihr Profil, absolvieren Sie Ihr erstes KI-Interview und lassen Sie sich von Arbeitgebern finden, die für Ihre Rolle einstellen.",
       "primary": "Profil erstellen",
       "secondary": "So funktioniert es für Fachkräfte"
+    },
+    "everyone": {
+      "title": "Sie stellen ein oder suchen Ihre nächste Stelle?",
+      "description": "Arbeitgeber erhalten für jeden Kandidaten ein KI-Interview und eine Scorecard. Fachkräfte erhalten ein Profil, über das Arbeitgeber sie für ihre Rolle finden.",
+      "primary": "Ich stelle ein",
+      "secondary": "Ich suche eine Stelle"
     }
   },
   "mdx": {

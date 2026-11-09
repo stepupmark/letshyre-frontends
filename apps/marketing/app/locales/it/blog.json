@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Blog: consigli su selezione e colloqui | letshyre.ai",
-    "description": "Guide su colloqui strutturati, valutazione equa dei candidati e ricerca di lavoro per professionisti con esperienza.",
+    "title": "Blog: selezione, carriera e tendenze | letshyre.ai",
+    "description": "Consigli di selezione per le aziende, consigli di carriera per i professionisti, tendenze della selezione e novità di prodotto dal team LetsHyre.",
     "crumb": "Blog",
     "name": "Blog di LetsHyre"
   },
   "index": {
     "eyebrow": "Blog",
-    "title": "Appunti per assumere bene",
-    "description": "Guide per le aziende che conducono colloqui e per i professionisti che si preparano ad affrontarli.",
+    "title": "Selezione, carriera e novità da LetsHyre",
+    "description": "Consigli per aziende e professionisti, cosa sta cambiando nella selezione e cosa stiamo costruendo in LetsHyre.",
     "latest": "Ultimo articolo",
     "more": "Altri articoli",
     "feed": "Iscriviti via RSS"
@@ -35,7 +35,9 @@
   "topics": {
     "interviewing": "Colloqui",
     "hiring": "Selezione",
-    "careers": "Carriera"
+    "careers": "Carriera",
+    "trends": "Tendenze della selezione",
+    "news": "Novità da LetsHyre"
   },
   "cta": {
     "employers": {
@@ -49,6 +51,12 @@
       "description": "Crea il tuo profilo, fai il tuo primo colloquio IA e lascia che ti trovino le aziende che assumono per il tuo ruolo.",
       "primary": "Crea il tuo profilo",
       "secondary": "Come funziona per i professionisti"
+    },
+    "everyone": {
+      "title": "Stai assumendo o cerchi il tuo prossimo ruolo?",
+      "description": "Le aziende ricevono un colloquio IA e una scheda di valutazione per ogni candidato. I professionisti hanno un profilo che le aziende che assumono per il loro ruolo possono trovare.",
+      "primary": "Sto assumendo",
+      "secondary": "Cerco lavoro"
     }
   },
   "mdx": {
