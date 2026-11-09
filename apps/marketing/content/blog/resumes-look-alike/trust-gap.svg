@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 256" width="720" height="256" font-family="Outfit, system-ui, -apple-system, Segoe UI, sans-serif">
+  <text x="40" y="52" font-size="15" font-weight="600" fill="#18181b">Used AI while applying for a job</text><rect x="40" y="68" width="640" height="22" rx="11" fill="#e9ebef"/><rect x="40" y="68" width="250" height="22" rx="11" fill="#266fff"/><text x="303.6" y="87" font-size="26" font-weight="600" fill="#18181b">39%</text>
+  <text x="40" y="138" font-size="15" font-weight="600" fill="#18181b">Trust AI to judge their application fairly</text><rect x="40" y="154" width="640" height="22" rx="11" fill="#e9ebef"/><rect x="40" y="154" width="166" height="22" rx="11" fill="#a9c3fb"/><text x="220.4" y="173" font-size="26" font-weight="600" fill="#18181b">26%</text>
+  <line x1="40" y1="214" x2="680" y2="214" stroke="#e4e4e7" stroke-width="1"/>
+  <text x="40" y="240" font-size="13" fill="#71717a">Share of 3,290 job candidates surveyed by Gartner in late 2024</text>
+</svg>
