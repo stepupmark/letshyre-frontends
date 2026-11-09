@@ -35,7 +35,7 @@ const page = await browser.newPage({
   javaScriptEnabled: false,
 })
 // the image is the header alone, like the other pages'; scripts are off, so restyle the HTML
-await page.route("**/en/blog/*", async (route) => {
+await page.route("**/en/blogs/*", async (route) => {
   const response = await route.fetch()
   const html = (await response.text()).replace(
     "</head>",
@@ -44,7 +44,7 @@ await page.route("**/en/blog/*", async (route) => {
   await route.fulfill({ response, body: html })
 })
 for (const slug of slugs) {
-  await page.goto(`${BASE}/en/blog/${slug}`)
+  await page.goto(`${BASE}/en/blogs/${slug}`)
   const box = await page.locator("main header").first().boundingBox()
   if (!box) throw new Error(`${slug}: no page header`)
   await page.screenshot({

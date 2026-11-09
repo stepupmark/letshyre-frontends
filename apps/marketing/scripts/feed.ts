@@ -43,7 +43,7 @@ export function renderFeed(
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>${escape(title)}</title>
-    <link>${url("/blog")}</link>
+    <link>${url("/blogs")}</link>
     <atom:link href="${url(feedPath)}" rel="self" type="application/rss+xml"/>
     <description>${escape(description)}</description>
     <language>${lang}</language>

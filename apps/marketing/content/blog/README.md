@@ -1,7 +1,7 @@
 # Writing a post
 
 A post is a folder: `content/blog/<slug>/<lang>.mdx`, with its images beside it. The slug is the
-URL (`/en/blog/<slug>`) and never changes once published. Why it works this way is in
+URL (`/en/blogs/<slug>`) and never changes once published. Why it works this way is in
 [ADR 0021](../../../../docs/adr/0021-marketing-blog.md).
 
 ## Frontmatter

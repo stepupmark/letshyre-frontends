@@ -1,6 +1,6 @@
 import { expect, test } from "./fixtures.ts"
 
-const POST = "/en/blog/structured-interview-guide"
+const POST = "/en/blogs/structured-interview-guide"
 const lastSection = { level: 2, name: "Debrief on evidence" } as const
 
 test("a post's full text is in its prerendered HTML", async ({ browser }) => {
@@ -20,7 +20,7 @@ test("opening a post from the index loads it in place, without errors", async ({
   })
   page.on("pageerror", (error) => errors.push(error.message))
 
-  await page.goto("/en/blog")
+  await page.goto("/en/blogs")
   await page.waitForLoadState("networkidle")
   await page.evaluate(() => {
     document.documentElement.dataset.visited = "index"

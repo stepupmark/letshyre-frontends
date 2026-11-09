@@ -23,7 +23,7 @@ test.describe("desktop header", () => {
       banner.getByRole("link", { name: "LetsHyre home" }),
       nav.getByRole("button", { name: "Product" }),
       nav.getByRole("link", { name: "Pricing" }),
-      nav.getByRole("link", { name: "Blog" }),
+      nav.getByRole("link", { name: "Blogs" }),
       nav.getByRole("link", { name: "About" }),
       nav.getByRole("link", { name: "Contact" }),
       banner.getByRole("button", { name: /language/i }),

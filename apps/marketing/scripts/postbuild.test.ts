@@ -135,7 +135,7 @@ describe("llms.txt", () => {
     ],
     [
       {
-        path: "/blog/structured-interviews",
+        path: "/blogs/structured-interviews",
         title: "Structured interviews | letshyre.ai",
         description: "How to run one.",
       },
@@ -154,11 +154,11 @@ describe("llms.txt", () => {
 
   it("lists posts under Blog, before the optional pages", () => {
     expect(txt).toContain(
-      `## Blog
+      `## Blogs
 
-- [Structured interviews](${SITE}/en/blog/structured-interviews): How to run one.`
+- [Structured interviews](${SITE}/en/blogs/structured-interviews): How to run one.`
     )
-    expect(txt.indexOf("## Blog")).toBeLessThan(txt.indexOf("## Optional"))
+    expect(txt.indexOf("## Blogs")).toBeLessThan(txt.indexOf("## Optional"))
   })
 })
 
@@ -186,7 +186,7 @@ Body.`
     expect(xml).toContain(
       "<description>Why &quot;fair&quot; pay needs bands.</description>"
     )
-    expect(xml).toContain(`<link>${SITE}/de/blog/pay-bands</link>`)
+    expect(xml).toContain(`<link>${SITE}/de/blogs/pay-bands</link>`)
     expect(xml).toContain("<pubDate>Mon, 02 Nov 2026 00:00:00 GMT</pubDate>")
   })
 })

@@ -25,9 +25,9 @@ Pages: `/:lang`, `/:lang/about`, `/:lang/contact`, `/:lang/download`, `/:lang/in
 `/:lang/employer-guide`, `/:lang/candidate-guide`, `/:lang/employers` and `/:lang/candidates`
 (English only for now), `/:lang/pricing`,
 `/:lang/terms`, `/:lang/privacy-policy`, `/:lang/refund-policy`.
-`/:lang/blog` and `/:lang/blog/:slug` ship only in locales with a published post; today that's `en`
+`/:lang/blogs` and `/:lang/blogs/:slug` ship only in locales with a published post; today that's `en`
 only ([ADR 0021](../adr/0021-marketing-blog.md)). A post's slug never changes once published. Each of
-those locales also has its RSS feed at `/:lang/blog/feed.xml`.
+those locales also has its RSS feed at `/:lang/blogs/feed.xml`.
 `/:lang/policy` moved to `/:lang/privacy-policy` (301).
 `/:lang/how-it-works-interview` moved to `/:lang/interview-guide` (301).
 `/:lang/interview-guide` moves to `/:lang/candidate-guide` (301) in each locale the candidate guide
@@ -84,7 +84,7 @@ The nginx config was removed and no host is chosen yet. Whatever serves `build/c
 - Trailing slash → 301 to the same path without it.
 - A page not ready in a locale → 302 `/en/...`.
 - Unknown paths → 404 with the prerendered `/404` page as the body.
-- Pages can be two segments deep (`/en/blog/<slug>`); the same rules apply to them.
+- Pages can be two segments deep (`/en/blogs/<slug>`); the same rules apply to them.
 - Prerender writes `en/pricing/index.html`. Serve it at `/en/pricing` with 200, without redirecting to
   `/en/pricing/` (many static hosts do this by default).
 - Each HTML response gets its policy from `build/csp.map` as `Content-Security-Policy-Report-Only`

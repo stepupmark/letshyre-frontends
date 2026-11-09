@@ -6,7 +6,7 @@ import { feedLink } from "@/lib/seo/meta"
 import { metaContext, pageMeta } from "@/lib/seo/page-meta"
 import { webPageSchema } from "@/lib/seo/schema"
 
-import type { Route } from "./+types/_site.$lang.blog._index"
+import type { Route } from "./+types/_site.$lang.blogs._index"
 
 export const loader = ({ params }: Route.LoaderArgs) => blogData(params.lang)
 

@@ -3,7 +3,7 @@ import { DEFAULT_LOCALE, localePath } from "@workspace/i18n"
 import type { PageId } from "../app/lib/pages.ts"
 
 // "Optional" is the llms.txt name for links a reader with little context can skip
-type Section = "Employers" | "Professionals" | "Company" | "Blog" | "Optional"
+type Section = "Employers" | "Professionals" | "Company" | "Blogs" | "Optional"
 
 // typed over every page, so a new page has to be placed or left out on purpose
 const LLMS_SECTIONS: Record<PageId, Section | null> = {
@@ -19,7 +19,7 @@ const LLMS_SECTIONS: Record<PageId, Section | null> = {
   download: "Professionals",
   about: "Company",
   contact: "Company",
-  blog: "Blog",
+  blog: "Blogs",
   terms: "Optional",
   privacy: "Optional",
   refund: "Optional",
@@ -29,7 +29,7 @@ const ORDER: Section[] = [
   "Employers",
   "Professionals",
   "Company",
-  "Blog",
+  "Blogs",
   "Optional",
 ]
 
@@ -58,7 +58,7 @@ export function renderLlms(
   const sections = ORDER.flatMap((section) => {
     const links: Link[] = [
       ...pages.filter((page) => LLMS_SECTIONS[page.id] === section),
-      ...(section === "Blog" ? posts : []),
+      ...(section === "Blogs" ? posts : []),
     ]
     return links.length
       ? [`## ${section}\n\n${links.map(line).join("\n")}`]

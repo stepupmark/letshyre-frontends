@@ -8,8 +8,8 @@ const PAGES = [
   "/interview-guide",
   "/contact",
   "/terms",
-  "/blog",
-  "/blog/structured-interview-guide",
+  "/blogs",
+  "/blogs/structured-interview-guide",
 ]
 
 // Arabic joins once it's translated, so RTL layout gets measured too

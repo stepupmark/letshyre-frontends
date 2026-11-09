@@ -13,7 +13,7 @@ host with hash-based CSP ([ADR 0002](./0002-react-router-rendering.md),
 
 - **Prerendered, not SSR.** Posts change only when we publish, so a post is a static page like any
   other. SSR would need a server and nonce-based CSP for no reader-facing gain.
-- **In `apps/marketing`, under `/<lang>/blog`.** A subfolder keeps the domain's authority, and the
+- **In `apps/marketing`, under `/<lang>/blogs`.** A subfolder keeps the domain's authority, and the
   site chrome, consent, sitemap, `llms.txt` and postbuild checks already exist there. No new app or
   package.
 - **MDX files in git.** A post is `content/blog/<slug>/<lang>.mdx` with YAML frontmatter, next to its
@@ -41,7 +41,7 @@ host with hash-based CSP ([ADR 0002](./0002-react-router-rendering.md),
 - **Every post has an `audience` and a `topic`.** They pick the closing call to action and the
   related posts. There are no tag pages until there are enough posts to fill them.
 - **Code is highlighted at build time** with Shiki in both themes, so no highlighter ships.
-- **Feeds are RSS 2.0, one per locale** at `/<lang>/blog/feed.xml`, written by postbuild.
+- **Feeds are RSS 2.0, one per locale** at `/<lang>/blogs/feed.xml`, written by postbuild.
 - **A post's share image is `<slug>/og.jpg`**, drawn from its page header by
   `pnpm --filter marketing blog:og` like the other pages' images. Without one, the default is used.
 - **Authors are optional.** `app/lib/blog/authors.ts` lists the people who sign posts; an unsigned

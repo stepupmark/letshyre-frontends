@@ -2,7 +2,7 @@ import { loadPostBody, PostPage } from "@/features/blog"
 import { postData } from "@/lib/page-data.server"
 import { postMeta } from "@/lib/seo/post-meta"
 
-import type { Route } from "./+types/_site.$lang.blog.$slug"
+import type { Route } from "./+types/_site.$lang.blogs.$slug"
 
 export async function loader({ params }: Route.LoaderArgs) {
   const data = postData(params.lang, params.slug)
