@@ -9,7 +9,7 @@ const PAGES = [
   "/contact",
   "/terms",
   "/blogs",
-  "/blogs/structured-interview-guide",
+  "/blogs/why-we-built-letshyre",
 ]
 
 // Arabic joins once it's translated, so RTL layout gets measured too

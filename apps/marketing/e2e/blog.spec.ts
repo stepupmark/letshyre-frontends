@@ -1,7 +1,7 @@
 import { expect, test } from "./fixtures.ts"
 
-const POST = "/en/blogs/structured-interview-guide"
-const lastSection = { level: 2, name: "Debrief on evidence" } as const
+const POST = "/en/blogs/why-we-built-letshyre"
+const lastSection = { level: 2, name: "Where LetsHyre is today" } as const
 
 test("a post's full text is in its prerendered HTML", async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false })
@@ -25,9 +25,7 @@ test("opening a post from the index loads it in place, without errors", async ({
   await page.evaluate(() => {
     document.documentElement.dataset.visited = "index"
   })
-  await page
-    .getByRole("link", { name: "How to run a structured interview" })
-    .click()
+  await page.getByRole("link", { name: "Why we built LetsHyre" }).click()
 
   await expect(page).toHaveURL(POST)
   await expect(page.getByRole("heading", lastSection)).toBeVisible()
@@ -42,14 +40,14 @@ test("a post's topic links to a topic page that lists it", async ({ page }) => {
   await page.goto(POST)
   await page
     .getByRole("main")
-    .getByRole("link", { name: "Interviewing", exact: true })
+    .getByRole("link", { name: "LetsHyre news", exact: true })
     .click()
 
-  await expect(page).toHaveURL("/en/blogs/topics/interviewing")
+  await expect(page).toHaveURL("/en/blogs/topics/news")
   await expect(
-    page.getByRole("heading", { level: 1, name: "Interviewing" })
+    page.getByRole("heading", { level: 1, name: "LetsHyre news" })
   ).toBeVisible()
   await expect(
-    page.getByRole("link", { name: "How to run a structured interview" })
+    page.getByRole("link", { name: "Why we built LetsHyre" })
   ).toBeVisible()
 })
