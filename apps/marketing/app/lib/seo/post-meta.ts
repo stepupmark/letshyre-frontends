@@ -2,7 +2,7 @@ import type { Locale } from "@workspace/i18n"
 import type { MetaArgs, MetaDescriptor } from "react-router"
 
 import { AUTHORS } from "../blog/authors"
-import { postPath } from "../blog/paths"
+import { postPath, topicPath } from "../blog/paths"
 import type { Post } from "../blog/post"
 import { PAGES } from "../pages"
 import { buildMeta, feedLink } from "./meta"
@@ -32,6 +32,7 @@ export function postMeta({ matches, params }: MetaArgs): MetaDescriptor[] {
       jsonLd: [
         breadcrumbSchema(lang, t("seo:homeCrumb"), [
           { name: t("blog:meta.crumb"), path: PAGES.blog.path },
+          { name: t(`blog:topics.${post.topic}`), path: topicPath(post.topic) },
           { name: post.title, path },
         ]),
         webPageSchema({

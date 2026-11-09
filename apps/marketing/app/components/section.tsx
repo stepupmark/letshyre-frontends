@@ -57,43 +57,71 @@ export function SectionHeader({
   )
 }
 
-/** The h1 band at the top of every page except home. `art` sits beside the copy on large screens. */
+/**
+ * The h1 band at the top of every page except home. `art` sits beside the copy on large screens;
+ * `masthead` centres the copy on a brand tint, for section fronts like the blog.
+ */
 export function PageHeader({
   eyebrow,
   title,
   description,
   children,
   art,
+  variant = "default",
 }: {
   eyebrow?: ReactNode
   title: ReactNode
   description?: ReactNode
   children?: ReactNode
   art?: ReactNode
+  variant?: "default" | "masthead"
 }) {
+  const masthead = variant === "masthead"
+
   return (
-    <header className="overflow-hidden border-b">
+    <header
+      className={cn("overflow-hidden border-b", masthead && "bg-brand-muted")}
+    >
       <Container
         className={cn(
           "py-10 sm:py-14",
+          masthead && "py-12 sm:py-16",
           art &&
             "grid items-center gap-10 sm:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:gap-16 xl:grid-cols-[minmax(0,1fr)_minmax(0,32rem)]"
         )}
       >
-        <div className="flex flex-col gap-4">
+        <div
+          className={cn(
+            "flex flex-col gap-4",
+            masthead && "items-center gap-5 text-center"
+          )}
+        >
           {eyebrow && (
-            <p className="text-sm font-semibold text-primary">{eyebrow}</p>
+            <p
+              className={cn(
+                "text-sm font-semibold text-primary",
+                masthead && "text-brand-text"
+              )}
+            >
+              {eyebrow}
+            </p>
           )}
           <h1
             className={cn(
               "text-4xl/[1.1] font-semibold tracking-tight text-balance sm:text-5xl/[1.05]",
-              art ? "max-w-xl" : "max-w-3xl"
+              art ? "max-w-xl" : "max-w-3xl",
+              masthead && "lg:max-w-none"
             )}
           >
             {title}
           </h1>
           {description && (
-            <p className="max-w-2xl text-lg/7 text-pretty text-muted-foreground">
+            <p
+              className={cn(
+                "max-w-2xl text-lg/7 text-pretty text-muted-foreground",
+                masthead && "max-w-3xl text-balance text-foreground/75"
+              )}
+            >
               {description}
             </p>
           )}

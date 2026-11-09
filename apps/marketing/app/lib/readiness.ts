@@ -2,8 +2,13 @@ import { join } from "node:path"
 import type { Locale } from "@workspace/i18n"
 import { computeReadiness } from "@workspace/i18n/node"
 
-import { postPath } from "./blog/paths.ts"
-import { type Post, publishedPosts, withBlogIndex } from "./blog/post.ts"
+import { postPath, topicPath } from "./blog/paths.ts"
+import {
+  type Post,
+  publishedPosts,
+  topicsOf,
+  withBlogIndex,
+} from "./blog/post.ts"
 import { readPosts } from "./blog/read-posts.ts"
 import { PAGES, type PageId, pageNamespaces, withoutReplaced } from "./pages.ts"
 
@@ -33,7 +38,16 @@ export function readiness(
   return { pages: withBlogIndex(pages, posts), posts }
 }
 
-/** Every `/<lang><path>` whose catalogs are complete, and every post. */
+/** Each locale's blog topics that have a post, as `/<lang>` and topic. */
+export const topicPages = (posts: readonly Post[]) =>
+  [...new Set(posts.map((post) => post.lang))].flatMap((lang) =>
+    topicsOf(posts.filter((post) => post.lang === lang)).map((topic) => ({
+      lang,
+      topic,
+    }))
+  )
+
+/** Every `/<lang><path>` whose catalogs are complete, every post and every topic page. */
 export function readyPaths(root: string, previews = false): string[] {
   const { pages, posts } = readiness(root, previews)
   return [
@@ -41,5 +55,8 @@ export function readyPaths(root: string, previews = false): string[] {
       locales.map((lang) => `/${lang}${PAGES[id].path}`)
     ),
     ...posts.map((post) => `/${post.lang}${postPath(post.slug)}`),
+    ...topicPages(posts).map(
+      ({ lang, topic }) => `/${lang}${topicPath(topic)}`
+    ),
   ]
 }

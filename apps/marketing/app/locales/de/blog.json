@@ -9,9 +9,10 @@
     "eyebrow": "Blogs",
     "title": "Recruiting, Karriere und Neues von LetsHyre",
     "description": "Rat für Arbeitgeber und Fachkräfte, was sich beim Einstellen ändert und woran wir bei LetsHyre arbeiten.",
-    "latest": "Neuester Beitrag",
     "more": "Weitere Beiträge",
-    "feed": "Per RSS abonnieren"
+    "feed": "Per RSS abonnieren",
+    "all": "Alle",
+    "topics": "Themen"
   },
   "post": {
     "published": "Veröffentlicht am {{date}}",
@@ -64,5 +65,15 @@
     "prefer": "Besser",
     "source": "Quelle",
     "play": "Video abspielen: {{title}}"
+  },
+  "topicPage": {
+    "metaTitle": "{{topic}} | LetsHyre-Blog",
+    "description": {
+      "interviewing": "Wie Sie Interviews planen, führen und bewerten, damit Sie Kandidaten anhand von Belegen vergleichen.",
+      "hiring": "Wie Sie Rollen beschreiben, Menschen finden und entscheiden, wen Sie einstellen, vom Briefing bis zum Angebot.",
+      "careers": "Rat für erfahrene Fachkräfte zu Jobsuche, Interviews und dem Wechsel in die nächste Rolle.",
+      "trends": "Was sich beim Einstellen ändert: Daten, Regeln und Werkzeuge, die Arbeitgeber und Fachkräfte kennen sollten.",
+      "news": "Produktneuigkeiten, Starts und weitere Nachrichten vom LetsHyre-Team."
+    }
   }
 }

@@ -47,6 +47,12 @@ Import images from the post's folder: `import chart from "./chart.svg"`.
 - Photos as JPEG, PNG or WebP at least 1440 px wide; the build makes AVIF and WebP sizes.
 - Alt text says what the image shows. `width` and `height` are the image's own size.
 
+## Cover
+
+`cover.svg` in the post's folder is the card image on the index, topic pages and related posts. Draw
+the post's idea in brand colours at 640 × 400 with no words, so it reads in every locale, and add
+`cover-dark.svg` for the dark theme. Without one, the card shows the topic's icon.
+
 ## Share image
 
 `og.jpg` in the post's folder is used when the post is shared. To draw it from the post's header,

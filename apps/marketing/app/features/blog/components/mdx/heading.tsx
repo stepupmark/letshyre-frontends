@@ -14,7 +14,7 @@ export function SectionHeading({
     <div className="group mt-8 flex items-baseline gap-2">
       <h2
         id={id}
-        className="scroll-mt-24 text-2xl font-semibold tracking-tight text-balance text-foreground"
+        className="scroll-mt-24 text-2xl font-semibold tracking-tight text-balance text-foreground lg:text-3xl"
         {...props}
       >
         {children}

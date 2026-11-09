@@ -48,6 +48,7 @@ export function webPageSchema({
   description,
   dateModified,
   about,
+  mainEntity,
 }: {
   type?: "WebPage" | "AboutPage" | "ContactPage" | "CollectionPage"
   lang: Locale
@@ -57,6 +58,7 @@ export function webPageSchema({
   dateModified?: string
   /** What the page is about, by `ref()`; it must be defined on the same page. */
   about?: JsonLd
+  mainEntity?: JsonLd
 }): JsonLd {
   const url = absUrl(localePath(lang, path))
   return {
@@ -71,8 +73,23 @@ export function webPageSchema({
     inLanguage: lang,
     ...(dateModified ? { dateModified } : {}),
     ...(about ? { about } : {}),
+    ...(mainEntity ? { mainEntity } : {}),
   }
 }
+
+/** The posts a blog listing shows, in order, for a CollectionPage's `mainEntity`. */
+export const postListSchema = (
+  lang: Locale,
+  posts: readonly { path: string; name: string }[]
+): JsonLd => ({
+  "@type": "ItemList",
+  itemListElement: posts.map((post, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: absUrl(localePath(lang, post.path)),
+    name: post.name,
+  })),
+})
 
 export function blogPostingSchema({
   lang,

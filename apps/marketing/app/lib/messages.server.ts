@@ -54,3 +54,9 @@ export const postsIn = (lang: Locale): Post[] =>
 
 export const postLocales = (slug: string): Locale[] =>
   posts.filter((post) => post.slug === slug).map((post) => post.lang)
+
+export const topicLocales = (topic: string): Locale[] => [
+  ...new Set(
+    posts.filter((post) => post.topic === topic).map((post) => post.lang)
+  ),
+]

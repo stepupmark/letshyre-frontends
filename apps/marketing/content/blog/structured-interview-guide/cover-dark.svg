@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400">
+  <rect x="200" y="56" width="360" height="250" rx="18" fill="#141a26" stroke="#2c3f66" stroke-width="2"/>
+  <rect x="232" y="72" width="120" height="10" rx="5" fill="#2d4270"/>
+  <circle cx="476" cy="200" r="7" fill="#3a5f9e"/><circle cx="498" cy="200" r="7" fill="#3a5f9e"/><circle cx="520" cy="200" r="7" fill="#3a5f9e"/><circle cx="542" cy="200" r="7" fill="#263a5f"/>
+  <circle cx="476" cy="245" r="7" fill="#3a5f9e"/><circle cx="498" cy="245" r="7" fill="#3a5f9e"/><circle cx="520" cy="245" r="7" fill="#263a5f"/><circle cx="542" cy="245" r="7" fill="#263a5f"/>
+  <circle cx="476" cy="290" r="7" fill="#3a5f9e"/><circle cx="498" cy="290" r="7" fill="#3a5f9e"/><circle cx="520" cy="290" r="7" fill="#3a5f9e"/><circle cx="542" cy="290" r="7" fill="#263a5f"/>
+  <rect x="80" y="96" width="380" height="250" rx="18" fill="#141a26" stroke="#2c3f66" stroke-width="2"/>
+  <rect x="112" y="128" width="150" height="12" rx="6" fill="#6b9bff"/>
+  <rect x="112" y="150" width="230" height="8" rx="4" fill="#2d4270"/>
+  <line x1="112" y1="222" x2="428" y2="222" stroke="#1f2c47" stroke-width="2"/>
+  <line x1="112" y1="267" x2="428" y2="267" stroke="#1f2c47" stroke-width="2"/>
+  <rect x="112" y="195" width="130" height="10" rx="5" fill="#253657"/>
+  <circle cx="312" cy="200" r="9" fill="#4d86ff"/><circle cx="342" cy="200" r="9" fill="#4d86ff"/><circle cx="372" cy="200" r="9" fill="#4d86ff"/><circle cx="402" cy="200" r="9" fill="#263a5f"/>
+  <rect x="112" y="240" width="130" height="10" rx="5" fill="#253657"/>
+  <circle cx="312" cy="245" r="9" fill="#4d86ff"/><circle cx="342" cy="245" r="9" fill="#4d86ff"/><circle cx="372" cy="245" r="9" fill="#263a5f"/><circle cx="402" cy="245" r="9" fill="#263a5f"/>
+  <rect x="112" y="285" width="130" height="10" rx="5" fill="#253657"/>
+  <circle cx="312" cy="290" r="9" fill="#4d86ff"/><circle cx="342" cy="290" r="9" fill="#4d86ff"/><circle cx="372" cy="290" r="9" fill="#4d86ff"/><circle cx="402" cy="290" r="9" fill="#4d86ff"/>
+</svg>

@@ -1,24 +1,29 @@
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { RssIcon } from "lucide-react"
-import { useId } from "react"
 
-import { Container, PageHeader } from "@/components/section"
+import { PageHeader } from "@/components/section"
 import { feedPath } from "@/lib/blog/paths"
-import type { Post } from "@/lib/blog/post"
+import type { Post, Topic } from "@/lib/blog/post"
 
-import { PostLead } from "./components/post-lead"
-import { PostRow } from "./components/post-row"
+import { PostCta } from "./components/post-cta"
+import { PostList } from "./components/post-list"
+import { TopicNav } from "./components/topic-nav"
 
-export function BlogIndexPage({ posts }: { posts: Post[] }) {
+export function BlogIndexPage({
+  posts,
+  topics,
+}: {
+  posts: readonly Post[]
+  topics: readonly Topic[]
+}) {
   const { t } = useTranslation("blog")
   const lang = useLocale()
-  const moreId = useId()
-  const [lead, ...rest] = posts
 
   return (
     <>
       <PageHeader
+        variant="masthead"
         eyebrow={t("index.eyebrow")}
         title={t("index.title")}
         description={t("index.description")}
@@ -32,23 +37,9 @@ export function BlogIndexPage({ posts }: { posts: Post[] }) {
           {t("index.feed")}
         </a>
       </PageHeader>
-      <Container className="flex flex-col gap-12 py-10 sm:py-14">
-        {lead && <PostLead post={lead} />}
-        {rest.length > 0 && (
-          <section aria-labelledby={moreId} className="flex flex-col gap-2">
-            <h2 id={moreId} className="text-xl font-semibold tracking-tight">
-              {t("index.more")}
-            </h2>
-            <ol className="divide-y border-y">
-              {rest.map((post) => (
-                <li key={post.slug}>
-                  <PostRow post={post} />
-                </li>
-              ))}
-            </ol>
-          </section>
-        )}
-      </Container>
+      <TopicNav topics={topics} />
+      <PostList posts={posts} />
+      <PostCta audience="everyone" />
     </>
   )
 }

@@ -9,9 +9,10 @@
     "eyebrow": "Blogs",
     "title": "Werving, carrière en nieuws van LetsHyre",
     "description": "Advies voor werkgevers en professionals, wat er verandert in werving en waar we bij LetsHyre aan werken.",
-    "latest": "Nieuwste artikel",
     "more": "Meer artikelen",
-    "feed": "Abonneren via RSS"
+    "feed": "Abonneren via RSS",
+    "all": "Alles",
+    "topics": "Onderwerpen"
   },
   "post": {
     "published": "Gepubliceerd op {{date}}",
@@ -64,5 +65,15 @@
     "prefer": "Beter",
     "source": "Bron",
     "play": "Video afspelen: {{title}}"
+  },
+  "topicPage": {
+    "metaTitle": "{{topic}} | LetsHyre-blog",
+    "description": {
+      "interviewing": "Hoe je gesprekken plant, voert en scoort zodat je kandidaten op bewijs vergelijkt, voor wie aanneemt.",
+      "hiring": "Hoe je functies beschrijft, mensen vindt en beslist wie je aanneemt, van de eerste briefing tot het aanbod.",
+      "careers": "Advies voor ervaren professionals over werk zoeken, sollicitatiegesprekken en de stap naar je volgende functie.",
+      "trends": "Wat er verandert in werving: de cijfers, de regels en de tools die werkgevers en professionals moeten kennen.",
+      "news": "Productupdates, lanceringen en ander nieuws van het LetsHyre-team."
+    }
   }
 }

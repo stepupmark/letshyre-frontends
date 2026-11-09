@@ -9,9 +9,10 @@
     "eyebrow": "Blog",
     "title": "Selezione, carriera e novità da LetsHyre",
     "description": "Consigli per aziende e professionisti, cosa sta cambiando nella selezione e cosa stiamo costruendo in LetsHyre.",
-    "latest": "Ultimo articolo",
     "more": "Altri articoli",
-    "feed": "Iscriviti via RSS"
+    "feed": "Iscriviti via RSS",
+    "all": "Tutti",
+    "topics": "Argomenti"
   },
   "post": {
     "published": "Pubblicato il {{date}}",
@@ -64,5 +65,15 @@
     "prefer": "Meglio",
     "source": "Fonte",
     "play": "Riproduci video: {{title}}"
+  },
+  "topicPage": {
+    "metaTitle": "{{topic}} | Blog di LetsHyre",
+    "description": {
+      "interviewing": "Come preparare, condurre e valutare colloqui che confrontano i candidati sulle prove, per chi assume.",
+      "hiring": "Come descrivere i ruoli, trovare persone e decidere chi assumere, dal primo brief all'offerta.",
+      "careers": "Consigli per professionisti esperti su ricerca di lavoro, colloqui e passaggio al ruolo successivo.",
+      "trends": "Cosa sta cambiando nella selezione: dati, regole e strumenti che aziende e professionisti dovrebbero conoscere.",
+      "news": "Novità di prodotto, lanci e altre notizie dal team LetsHyre."
+    }
   }
 }

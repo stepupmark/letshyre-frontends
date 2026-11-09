@@ -37,3 +37,19 @@ test("opening a post from the index loads it in place, without errors", async ({
   ).toBe("index")
   expect(errors).toEqual([])
 })
+
+test("a post's topic links to a topic page that lists it", async ({ page }) => {
+  await page.goto(POST)
+  await page
+    .getByRole("main")
+    .getByRole("link", { name: "Interviewing", exact: true })
+    .click()
+
+  await expect(page).toHaveURL("/en/blogs/topics/interviewing")
+  await expect(
+    page.getByRole("heading", { level: 1, name: "Interviewing" })
+  ).toBeVisible()
+  await expect(
+    page.getByRole("link", { name: "How to run a structured interview" })
+  ).toBeVisible()
+})

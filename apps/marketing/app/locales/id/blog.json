@@ -9,9 +9,10 @@
     "eyebrow": "Blog",
     "title": "Rekrutmen, karier, dan kabar LetsHyre",
     "description": "Saran untuk pemberi kerja dan profesional, apa yang berubah dalam rekrutmen, dan apa yang kami bangun di LetsHyre.",
-    "latest": "Artikel terbaru",
     "more": "Artikel lainnya",
-    "feed": "Berlangganan lewat RSS"
+    "feed": "Berlangganan lewat RSS",
+    "all": "Semua",
+    "topics": "Topik"
   },
   "post": {
     "published": "Diterbitkan {{date}}",
@@ -64,5 +65,15 @@
     "prefer": "Lebih baik",
     "source": "Sumber",
     "play": "Putar video: {{title}}"
+  },
+  "topicPage": {
+    "metaTitle": "{{topic}} | Blog LetsHyre",
+    "description": {
+      "interviewing": "Cara merencanakan, menjalankan, dan menilai wawancara yang membandingkan kandidat berdasarkan bukti, untuk perekrut.",
+      "hiring": "Cara menulis peran, menemukan orang, dan memutuskan siapa yang direkrut, dari brief pertama hingga penawaran.",
+      "careers": "Saran untuk profesional berpengalaman tentang mencari kerja, wawancara, dan pindah ke peran berikutnya.",
+      "trends": "Apa yang berubah dalam rekrutmen: data, aturan, dan alat yang perlu diketahui pemberi kerja dan profesional.",
+      "news": "Pembaruan produk, peluncuran, dan kabar lain dari tim LetsHyre."
+    }
   }
 }

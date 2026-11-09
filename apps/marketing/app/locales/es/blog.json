@@ -9,9 +9,10 @@
     "eyebrow": "Blogs",
     "title": "Contratación, carrera profesional y novedades de LetsHyre",
     "description": "Consejos para empresas y profesionales, lo que está cambiando en la contratación y lo que construimos en LetsHyre.",
-    "latest": "Última publicación",
     "more": "Más publicaciones",
-    "feed": "Suscribirse por RSS"
+    "feed": "Suscribirse por RSS",
+    "all": "Todo",
+    "topics": "Temas"
   },
   "post": {
     "published": "Publicado el {{date}}",
@@ -64,5 +65,15 @@
     "prefer": "Mejor",
     "source": "Fuente",
     "play": "Reproducir vídeo: {{title}}"
+  },
+  "topicPage": {
+    "metaTitle": "{{topic}} | Blog de LetsHyre",
+    "description": {
+      "interviewing": "Cómo planificar, hacer y puntuar entrevistas que comparan a los candidatos con evidencias, para quienes contratan.",
+      "hiring": "Cómo describir puestos, encontrar personas y decidir a quién contratar, desde el primer encargo hasta la oferta.",
+      "careers": "Consejos para profesionales con experiencia sobre búsqueda de empleo, entrevistas y el paso al siguiente puesto.",
+      "trends": "Lo que cambia en la contratación: los datos, las normas y las herramientas que empresas y profesionales deben conocer.",
+      "news": "Novedades de producto, lanzamientos y otras noticias del equipo de LetsHyre."
+    }
   }
 }

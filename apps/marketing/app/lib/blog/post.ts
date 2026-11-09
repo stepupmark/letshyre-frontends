@@ -9,7 +9,14 @@ import type { PageId } from "../pages.ts"
 import { AUTHORS } from "./authors.ts"
 
 const AUDIENCES = ["employers", "candidates", "everyone"] as const
-const TOPICS = ["interviewing", "hiring", "careers", "trends", "news"] as const
+export const TOPICS = [
+  "interviewing",
+  "hiring",
+  "careers",
+  "trends",
+  "news",
+] as const
+export type Topic = (typeof TOPICS)[number]
 
 const frontmatterSchema = z
   .strictObject({
@@ -41,6 +48,8 @@ export type Post = z.output<typeof frontmatterSchema> & {
   lang: Locale
   minutes: number
   headings: Heading[]
+  /** `<slug>/cover.svg`, and `cover-dark.svg` if drawn. */
+  cover?: { src: string; srcDark?: string }
   /** Set on staging builds for a draft or a post that isn't due yet. */
   preview?: true
 }
@@ -142,3 +151,7 @@ export function withBlogIndex(
     ])
   )
 }
+
+/** The topics these posts cover, in the order the index lists them. */
+export const topicsOf = (posts: readonly Post[]): Topic[] =>
+  TOPICS.filter((topic) => posts.some((post) => post.topic === topic))

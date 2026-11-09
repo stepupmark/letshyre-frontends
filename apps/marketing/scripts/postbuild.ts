@@ -16,8 +16,8 @@ import {
   PREVIEW_PAGES,
   REPLACED_BY,
 } from "../app/lib/pages.ts"
-import { feedPath, postPath } from "../app/lib/blog/paths.ts"
-import { BLOG_DIR, readiness } from "../app/lib/readiness.ts"
+import { feedPath, postPath, topicPath } from "../app/lib/blog/paths.ts"
+import { BLOG_DIR, readiness, topicPages } from "../app/lib/readiness.ts"
 import {
   initialScriptsOf,
   injectMetaPolicy,
@@ -98,6 +98,9 @@ const { pages: ready, posts } = readiness(ROOT, env.VITE_ENV === "staging")
 const postLocales = (slug: string) =>
   posts.filter((post) => post.slug === slug).map((post) => post.lang)
 const slugs = [...new Set(posts.map((post) => post.slug))]
+const topics = topicPages(posts)
+const topicLocales = (topic: string) =>
+  topics.filter((page) => page.topic === topic).map((page) => page.lang)
 const problems: string[] = []
 const policies = new Map<string, string>()
 
@@ -116,6 +119,14 @@ writeFileSync(
       locales: postLocales(slug),
       lastmod: (lang: Locale) => {
         const post = posts.find((p) => p.slug === slug && p.lang === lang)
+        return post?.updatedAt ?? post?.publishedAt ?? today
+      },
+    })),
+    ...[...new Set(topics.map((page) => page.topic))].map((topic) => ({
+      path: topicPath(topic),
+      locales: topicLocales(topic),
+      lastmod: (lang: Locale) => {
+        const post = posts.find((p) => p.topic === topic && p.lang === lang)
         return post?.updatedAt ?? post?.publishedAt ?? today
       },
     })),
@@ -184,6 +195,13 @@ const routes = [
     lang: post.lang,
     path: postPath(post.slug),
     locales: postLocales(post.slug),
+    preview: false,
+    jsExempt: false,
+  })),
+  ...topics.map(({ lang, topic }) => ({
+    lang,
+    path: topicPath(topic),
+    locales: topicLocales(topic),
     preview: false,
     jsExempt: false,
   })),

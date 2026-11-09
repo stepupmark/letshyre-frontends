@@ -40,7 +40,11 @@ the marketing site is already prerendered on a static host with hash-based CSP (
   data at build time. A test compiles real MDX to keep the two in step.
 - **Every post has an `audience` and a `topic`.** They pick the closing call to action and the
   related posts. Trends and news posts are for `everyone` and close with a way in for each side.
-  There are no tag pages until there are enough posts to fill them.
+- **A topic has a page once it has a post.** `/<lang>/blogs/topics/<topic>` is prerendered for each
+  topic with a post in that locale, so topic lists are real, indexable URLs rather than a client-side
+  filter. The topic bar shows only once posts cover two topics; with one, it repeats the index.
+- **Covers are drawn, not stock.** `<slug>/cover.svg`, with `cover-dark.svg` for the dark theme, is
+  a diagram of the post's idea in brand colours. Without one, the card shows the topic's icon.
 - **Code is highlighted at build time** with Shiki in both themes, so no highlighter ships.
 - **Feeds are RSS 2.0, one per locale** at `/<lang>/blogs/feed.xml`, written by postbuild.
 - **A post's share image is `<slug>/og.jpg`**, drawn from its page header by
@@ -56,7 +60,9 @@ the marketing site is already prerendered on a static host with hash-based CSP (
 
 ## Not yet
 
-- Tag and author pages, and search across posts.
+- Author pages, and search across posts.
+- Pagination. When the index passes about a dozen posts, add prerendered `/page/2` pages rather
+  than infinite scroll, so every post stays a crawlable link.
 - A git-based CMS (Keystatic or TinaCMS) once someone outside engineering writes posts.
 - React Server Components. React Router 8.4 has them behind `unstable_` flags. Keep MDX components
   free of hooks and browser APIs so posts can move to server components once that ships stable.

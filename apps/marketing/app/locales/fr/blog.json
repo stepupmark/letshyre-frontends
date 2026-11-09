@@ -9,9 +9,10 @@
     "eyebrow": "Blogs",
     "title": "Recrutement, carrière et actualités de LetsHyre",
     "description": "Des conseils pour les employeurs et les professionnels, ce qui change dans le recrutement et ce que nous construisons chez LetsHyre.",
-    "latest": "Dernier article",
     "more": "Plus d'articles",
-    "feed": "S'abonner par RSS"
+    "feed": "S'abonner par RSS",
+    "all": "Tout",
+    "topics": "Thèmes"
   },
   "post": {
     "published": "Publié le {{date}}",
@@ -64,5 +65,15 @@
     "prefer": "À privilégier",
     "source": "Source",
     "play": "Lire la vidéo : {{title}}"
+  },
+  "topicPage": {
+    "metaTitle": "{{topic}} | Blog LetsHyre",
+    "description": {
+      "interviewing": "Préparer, mener et noter des entretiens qui comparent les candidats sur des preuves, pour ceux qui recrutent.",
+      "hiring": "Décrire un poste, trouver des candidats et décider qui recruter, du premier brief à l'offre.",
+      "careers": "Conseils aux professionnels expérimentés sur la recherche d'emploi, les entretiens et le passage au poste suivant.",
+      "trends": "Ce qui change dans le recrutement : les données, les règles et les outils à connaître pour employeurs et professionnels.",
+      "news": "Nouveautés produit, lancements et autres actualités de l'équipe LetsHyre."
+    }
   }
 }

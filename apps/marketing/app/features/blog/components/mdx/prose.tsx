@@ -8,7 +8,7 @@ export const prose = {
   h2: SectionHeading,
   h3: ({ children, ...props }: ComponentProps<"h3">) => (
     <h3
-      className="mt-4 scroll-mt-24 text-xl font-semibold tracking-tight text-balance text-foreground"
+      className="mt-4 scroll-mt-24 text-xl font-semibold tracking-tight text-balance text-foreground lg:text-2xl"
       {...props}
     >
       {children}

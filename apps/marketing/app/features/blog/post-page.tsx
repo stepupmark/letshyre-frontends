@@ -41,12 +41,16 @@ export function PostPage({
       <BackToTop label={t("post.backToTop")} />
       <PostHeader post={post} />
       <Container className="grid gap-8 py-10 sm:py-14 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-14">
-        {post.headings.length > 1 && <PostToc headings={post.headings} />}
+        {post.headings.length > 1 && (
+          <div className="print:hidden">
+            <PostToc headings={post.headings} />
+          </div>
+        )}
         <div className="flex min-w-0 flex-col gap-12 lg:col-start-2">
-          <article className="flex flex-col gap-5 text-base text-foreground/85 *:max-w-prose *:data-wide:max-w-none">
+          <article className="flex flex-col gap-5 text-base text-foreground/85 *:max-w-prose *:data-wide:max-w-none lg:text-lg/8">
             <PostBody post={post} />
           </article>
-          <footer className="flex max-w-prose flex-col items-start gap-6 border-t pt-8">
+          <footer className="flex max-w-prose flex-col items-start gap-6 border-t pt-8 sm:flex-row sm:items-center sm:justify-between print:hidden">
             <PostShare
               url={absUrl(localePath(lang, postPath(post.slug)))}
               title={post.title}
@@ -59,10 +63,12 @@ export function PostPage({
               {t("post.allPosts")}
             </Link>
           </footer>
-          <RelatedPosts posts={related} />
         </div>
       </Container>
-      <PostCta audience={post.audience} />
+      <RelatedPosts posts={related} />
+      <div className="print:hidden">
+        <PostCta audience={post.audience} />
+      </div>
     </div>
   )
 }

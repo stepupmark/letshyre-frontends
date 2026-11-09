@@ -2,12 +2,14 @@ import { isLocale, type Locale } from "@workspace/i18n"
 import { data } from "react-router"
 
 import { ogImageOf } from "./blog/posts.server"
+import { topicsOf } from "./blog/post"
 import { relatedPosts } from "./blog/related"
 import {
   loadMessages,
   postLocales,
   postsIn,
   readyLocales,
+  topicLocales,
 } from "./messages.server"
 import { LAYOUT_NAMESPACES, PAGES, type PageId } from "./pages"
 
@@ -30,7 +32,23 @@ export function pageData(lang: string | undefined, id: PageId) {
 
 export function blogData(lang: string | undefined) {
   const page = pageData(lang, "blog")
-  return { ...page, posts: postsIn(lang as Locale) }
+  const posts = postsIn(lang as Locale)
+  return { ...page, posts, topics: topicsOf(posts) }
+}
+
+export function topicData(lang: string | undefined, topic: string | undefined) {
+  const { messages } = pageData(lang, "blog")
+  const all = postsIn(lang as Locale)
+  const posts = all.filter((post) => post.topic === topic)
+  const current = posts[0]?.topic
+  if (!current) throw notFound()
+  return {
+    messages,
+    locales: topicLocales(current),
+    topic: current,
+    posts,
+    topics: topicsOf(all),
+  }
 }
 
 export function postData(lang: string | undefined, slug: string | undefined) {

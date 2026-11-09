@@ -4,9 +4,11 @@ import { Link } from "react-router"
 
 import { PageHeader } from "@/components/section"
 import { AUTHORS } from "@/lib/blog/authors"
+import { topicPath } from "@/lib/blog/paths"
 import type { Post } from "@/lib/blog/post"
 import { PAGES } from "@/lib/pages"
 
+import { PostCover } from "./post-cover"
 import { PostFacts } from "./post-facts"
 
 export function PostHeader({ post }: { post: Post }) {
@@ -27,13 +29,19 @@ export function PostHeader({ post }: { post: Post }) {
           <span aria-hidden className="mx-2 text-muted-foreground">
             /
           </span>
-          <span className="text-muted-foreground">
+          <Link
+            to={localePath(lang, topicPath(post.topic))}
+            className="hover:underline"
+          >
             {t(`topics.${post.topic}`)}
-          </span>
+          </Link>
         </>
       }
       title={post.title}
       description={post.description}
+      art={
+        post.cover && <PostCover post={post} className="rounded-xl border" />
+      }
     >
       <div className="flex flex-col gap-2">
         <p className="text-sm font-medium">

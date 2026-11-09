@@ -9,9 +9,10 @@
     "eyebrow": "Blogs",
     "title": "Hiring, careers and LetsHyre news",
     "description": "Advice for employers and professionals, what's changing in hiring, and what we're building at LetsHyre.",
-    "latest": "Latest post",
     "more": "More posts",
-    "feed": "Subscribe via RSS"
+    "feed": "Subscribe via RSS",
+    "all": "All",
+    "topics": "Topics"
   },
   "post": {
     "published": "Published {{date}}",
@@ -64,5 +65,15 @@
     "prefer": "Prefer",
     "source": "Source",
     "play": "Play video: {{title}}"
+  },
+  "topicPage": {
+    "metaTitle": "{{topic}} | LetsHyre blog",
+    "description": {
+      "interviewing": "How to plan, run and score interviews that compare candidates on evidence, written for the people who hire.",
+      "hiring": "How to write roles, find people and decide who to hire, from the first brief to the offer.",
+      "careers": "Advice for experienced professionals on job searching, interviews and moving to the next role.",
+      "trends": "What's changing in hiring: the data, the rules and the tools employers and professionals should know about.",
+      "news": "Product updates, launches and other news from the LetsHyre team."
+    }
   }
 }

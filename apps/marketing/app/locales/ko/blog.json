@@ -9,9 +9,10 @@
     "eyebrow": "블로그",
     "title": "채용, 커리어, LetsHyre 소식",
     "description": "기업과 전문가를 위한 조언, 채용에서 달라지는 것, 그리고 LetsHyre가 만들고 있는 것.",
-    "latest": "최신 글",
     "more": "더 많은 글",
-    "feed": "RSS로 구독"
+    "feed": "RSS로 구독",
+    "all": "전체",
+    "topics": "주제"
   },
   "post": {
     "published": "게시일: {{date}}",
@@ -64,5 +65,15 @@
     "prefer": "이렇게 하세요",
     "source": "출처",
     "play": "동영상 재생: {{title}}"
+  },
+  "topicPage": {
+    "metaTitle": "{{topic}} | LetsHyre 블로그",
+    "description": {
+      "interviewing": "근거로 지원자를 비교하는 면접을 계획하고 진행하고 평가하는 방법. 채용하는 사람을 위한 글입니다.",
+      "hiring": "직무를 정의하고, 사람을 찾고, 누구를 채용할지 결정하는 방법. 첫 요청부터 오퍼까지.",
+      "careers": "경력 전문가를 위한 구직, 면접, 다음 직무로의 이동에 관한 조언.",
+      "trends": "채용에서 달라지는 것: 기업과 전문가가 알아야 할 데이터, 규칙, 도구.",
+      "news": "LetsHyre 팀의 제품 업데이트, 출시 소식, 그 밖의 소식."
+    }
   }
 }
