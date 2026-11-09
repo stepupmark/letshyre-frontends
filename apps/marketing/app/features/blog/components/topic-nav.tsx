@@ -30,15 +30,18 @@ export function TopicNav({
   ]
 
   return (
-    <nav aria-label={t("index.topics")} className="border-b">
+    <nav
+      aria-label={t("index.topics")}
+      className="relative -mt-px border-b bg-brand-muted"
+    >
       <Container>
-        <ul className="mx-auto -mb-px flex w-fit max-w-full gap-6 overflow-x-auto">
+        <ul className="mx-auto -mb-px flex w-fit max-w-full gap-1 overflow-x-auto">
           {links.map((link) => (
             <li key={link.key} className="shrink-0">
               <Link
                 to={localePath(lang, link.to)}
                 aria-current={link.on ? "page" : undefined}
-                className="block rounded-sm border-b-2 border-transparent py-3 text-sm font-medium text-muted-foreground transition-colors duration-200 outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 aria-[current=page]:border-brand aria-[current=page]:text-brand-text motion-reduce:transition-none"
+                className="block rounded-t-lg border border-b-0 border-transparent px-4 pt-2.5 pb-3 text-sm font-medium text-muted-foreground transition-colors duration-200 outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 aria-[current=page]:border-border aria-[current=page]:bg-background aria-[current=page]:text-brand-text motion-reduce:transition-none"
               >
                 {link.label}
               </Link>
