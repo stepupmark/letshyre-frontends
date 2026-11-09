@@ -1,4 +1,3 @@
-import { QuoteIcon } from "lucide-react"
 import type { ReactNode } from "react"
 
 export function Quote({
@@ -12,7 +11,6 @@ export function Quote({
 }) {
   return (
     <figure className="my-2 flex flex-col gap-4 rounded-xl border p-6">
-      <QuoteIcon aria-hidden className="size-5 text-brand rtl:-scale-x-100" />
       <blockquote className="flex flex-col gap-3 text-lg text-pretty text-foreground">
         {children}
       </blockquote>
