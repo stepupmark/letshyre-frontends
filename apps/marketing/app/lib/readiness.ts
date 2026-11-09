@@ -1,11 +1,12 @@
 import { join } from "node:path"
-import type { Locale } from "@workspace/i18n"
+import { LOCALES, type Locale } from "@workspace/i18n"
 import { computeReadiness } from "@workspace/i18n/node"
 
 import { postPath, topicPath } from "./blog/paths.ts"
 import {
   type Post,
   publishedPosts,
+  TOPICS,
   topicsOf,
   withBlogIndex,
 } from "./blog/post.ts"
@@ -46,6 +47,30 @@ export const topicPages = (posts: readonly Post[]) =>
       topic,
     }))
   )
+
+/**
+ * Topic URLs with no page and no English page to fall back to, each sent to the nearest blog index.
+ * Temporary, because a new post in the topic brings the page back.
+ */
+export function emptyTopicRedirects(
+  posts: readonly Post[]
+): [string, string][] {
+  const blogLangs = new Set(posts.map((post) => post.lang))
+  if (!blogLangs.has("en")) return []
+  const shipped = new Set(
+    topicPages(posts).map(({ lang, topic }) => `/${lang}${topicPath(topic)}`)
+  )
+  return LOCALES.flatMap((lang) =>
+    TOPICS.filter(
+      (topic) =>
+        !shipped.has(`/${lang}${topicPath(topic)}`) &&
+        !shipped.has(`/en${topicPath(topic)}`)
+    ).map((topic): [string, string] => [
+      `/${lang}${topicPath(topic)}`,
+      `/${blogLangs.has(lang) ? lang : "en"}${PAGES.blog.path}`,
+    ])
+  )
+}
 
 /** Every `/<lang><path>` whose catalogs are complete, every post and every topic page. */
 export function readyPaths(root: string, previews = false): string[] {

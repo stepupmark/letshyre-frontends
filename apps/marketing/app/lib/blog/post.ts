@@ -56,6 +56,8 @@ export type Post = z.output<typeof frontmatterSchema> & {
 
 const FILE = /([^/\\]+)[/\\]([^/\\]+)\.mdx$/
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
+// Segments under /blogs that belong to the blog's own pages, now or later.
+const RESERVED_SLUGS = ["topics", "page", "authors", "feed"]
 const FRONTMATTER = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/
 const HEADING = /^(#{1,6})\s+(.+?)(?:\s+#+)?\s*$/
 const FENCE = /^\s*(```|~~~)/
@@ -99,6 +101,7 @@ export function parsePost(file: string, source: string): Post {
     throw new Error(`${file}: ${reason}`)
   }
   if (!SLUG.test(slug)) fail(`"${slug}" isn't a lowercase-hyphenated slug`)
+  if (RESERVED_SLUGS.includes(slug)) fail(`"${slug}" is a reserved slug`)
   if (!isLocale(lang)) fail(`"${lang}" isn't a locale`)
 
   const match = FRONTMATTER.exec(source)

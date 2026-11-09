@@ -33,6 +33,20 @@ those locales also has its RSS feed at `/:lang/blogs/feed.xml`, and a page per t
 `/:lang/how-it-works-interview` moved to `/:lang/interview-guide` (301).
 `/:lang/interview-guide` moves to `/:lang/candidate-guide` (301) in each locale the candidate guide
 ships in; today that's `en` only (`REPLACED_BY` in `app/lib/pages.ts`).
+
+The blog's URLs, all new (`e2e/url-contract.spec.ts` checks each):
+
+| Request                                               | Answer                       | Why                                            |
+| ----------------------------------------------------- | ---------------------------- | ---------------------------------------------- |
+| `/en/blogs`, `/en/blogs/:slug`, `/en/blogs/feed.xml`  | 200                          |                                                |
+| `/en/blogs/topics/:topic` (topic has a post)          | 200                          |                                                |
+| `/hi/blogs/:slug` (post not written in `hi`)          | 302 → `/en/blogs/:slug`      | Same rule as any page not ready in a locale    |
+| `/en/blogs/topics`                                    | 301 → `/en/blogs`            | Someone trimmed the URL                        |
+| `/en/blogs/topics/:topic` (known topic, no post yet)  | 302 → nearest `/:lang/blogs` | Comes back as a 200 once a post uses the topic |
+| `/en/blogs/topics/nonsense`, `/en/blogs/no-such-post` | 404                          |                                                |
+
+Post slugs `topics`, `page`, `authors` and `feed` are reserved and fail the build.
+
 Locales: `en hi fr ja ar te ta es nl ru kn ml ur bn de pt it ko id`.
 
 ## 2. App routes
@@ -40,15 +54,15 @@ Locales: `en hi fr ja ar te ta es nl ru kn ml ur bn de pt it ko id`.
 The app serves these on `letshyre.ai`, the same origin as marketing
 ([ADR 0004](../adr/0004-incremental-rollout.md)). The full list is in [§6](#6-app-urls-appsapp).
 
-| Path                                       | Behaviour                                                       |
-| ------------------------------------------ | --------------------------------------------------------------- |
-| `/` (app root)                             | role choice, same page as `/get-started`; sign-out lands here   |
-| `/get-started`                             | alias of the `/sign-in` role choice                             |
-| `/forgot-password`                         | same path                                                       |
+| Path                                       | Behaviour                                                        |
+| ------------------------------------------ | ---------------------------------------------------------------- |
+| `/` (app root)                             | role choice, same page as `/get-started`; sign-out lands here    |
+| `/get-started`                             | alias of the `/sign-in` role choice                              |
+| `/forgot-password`                         | same path                                                        |
 | `/employer/sign-in`, `/employee/sign-in`   | redirect to `/sign-in` ([ADR 0017](../adr/0017-auth-screens.md)) |
-| `/employer/register`, `/employee/register` | same paths                                                      |
-| `/employer/**`, `/employee/**`             | cleaned-up paths, old ones redirect ([§6](#6-app-urls-appsapp)) |
-| `/shared-scorecard/:shareId`               | same path                                                       |
+| `/employer/register`, `/employee/register` | same paths                                                       |
+| `/employer/**`, `/employee/**`             | cleaned-up paths, old ones redirect ([§6](#6-app-urls-appsapp))  |
+| `/shared-scorecard/:shareId`               | same path                                                        |
 
 Links already sent to people (shared scorecards, password-reset emails) keep working. All app paths
 keep `X-Robots-Tag: noindex, nofollow`. A move to `app.letshyre.ai` is deferred.
@@ -82,6 +96,8 @@ The nginx config was removed and no host is chosen yet. Whatever serves `build/c
 - `/` → 301 `/en`.
 - Moved and replaced pages → 301 to their new path. `build/redirects.map` lists them as nginx map
   lines.
+- `build/redirects-temporary.map` → 302, same format, checked after the 301s. It changes with the
+  posts on every build, so the host must reload it on each deploy.
 - Trailing slash → 301 to the same path without it.
 - A page not ready in a locale → 302 `/en/...`.
 - Unknown paths → 404 with the prerendered `/404` page as the body.

@@ -7,7 +7,6 @@ import { extname, join, normalize, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { createGzip } from "node:zlib"
 
-import { MOVED_PATHS, PAGES, REPLACED_BY } from "../app/lib/pages.ts"
 import { parseNginxMap } from "../../../tooling/csp.ts"
 
 const ROOT = resolve(fileURLToPath(new URL("../build/client", import.meta.url)))
@@ -19,13 +18,33 @@ const csp = existsSync(CSP_MAP)
   : undefined
 
 const LOCALES = "en|hi|fr|ja|ar|te|ta|es|nl|ru|kn|ml|ur|bn|de|pt|it|ko|id"
-const LOCALE_PAGE = new RegExp(`^/(${LOCALES})((?:/[a-z0-9-]+){1,2})?$`)
-const SUCCESSOR = new Map(
-  Object.entries(REPLACED_BY).map(([from, to]) => [
-    PAGES[from as keyof typeof PAGES].path as string,
-    PAGES[to].path,
-  ])
-)
+const LOCALE_PAGE = new RegExp(`^/(${LOCALES})((?:/[a-z0-9-]+){1,3})?$`)
+
+// the nginx map lines postbuild writes: `~^regex$ /target;` or `/exact /target;`
+const redirectsIn = (name: string) => {
+  const file = resolve(ROOT, "..", name)
+  if (!existsSync(file)) return []
+  return readFileSync(file, "utf8")
+    .split("\n")
+    .flatMap((line) => {
+      const [from, to] = line.replace(/;$/, "").split(" ")
+      if (!from || !to) return []
+      return [
+        from.startsWith("~")
+          ? { match: new RegExp(from.slice(1)), to }
+          : { match: new RegExp(`^${from}$`), to },
+      ]
+    })
+}
+const PERMANENT = redirectsIn("redirects.map")
+const TEMPORARY = redirectsIn("redirects-temporary.map")
+const redirectFor = (
+  rules: ReturnType<typeof redirectsIn>,
+  path: string
+): string | undefined => {
+  const rule = rules.find(({ match }) => match.test(path))
+  return rule && path.replace(rule.match, rule.to)
+}
 
 // url-contract §5: what the host sends with every response
 const SECURITY_HEADERS = {
@@ -97,12 +116,12 @@ createServer((req, res) => {
   const asset = fileAt(path)
   if (asset) return send(200, asset)
 
+  const moved = redirectFor(PERMANENT, path)
+  if (moved) return redirect(301, moved)
+  const elsewhere = redirectFor(TEMPORARY, path)
+  if (elsewhere) return redirect(302, elsewhere)
+
   const page = LOCALE_PAGE.exec(path)
-  const moved = page?.[2] && MOVED_PATHS[page[2]]
-  if (page && moved) return redirect(301, `/${page[1]}${moved}`)
-  const next = page?.[2] && SUCCESSOR.get(page[2])
-  if (page && next && fileAt(`/${page[1]}${next}/index.html`))
-    return redirect(301, `/${page[1]}${next}`)
   if (page) {
     const html = fileAt(`${path}/index.html`)
     if (html) return send(200, html)

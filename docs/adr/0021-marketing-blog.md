@@ -43,6 +43,13 @@ the marketing site is already prerendered on a static host with hash-based CSP (
 - **A topic has a page once it has a post.** `/<lang>/blogs/topics/<topic>` is prerendered for each
   topic with a post in that locale, so topic lists are real, indexable URLs rather than a client-side
   filter. The topic bar shows only once posts cover two topics; with one, it repeats the index.
+- **URLs stay flat and stable.** A post is `/<lang>/blogs/<slug>` with no topic in it, so moving a
+  post to another topic never breaks its link. Topic segments stay English in every locale, as
+  slugs do. `topics`, `page`, `authors` and `feed` are reserved and fail a post's build, because
+  the blog's own pages live at those segments now or will later. `/<lang>/blogs/topics` 301s to the
+  index. A topic URL with no page in its locale, and no English page to fall back to, 302s to the
+  nearest blog index (`build/redirects-temporary.map`), so a topic that loses its last post, or
+  hasn't had one yet, never 404s; it's a 302 because a new post brings the page back.
 - **Covers are drawn, not stock.** `<slug>/cover.svg`, with `cover-dark.svg` for the dark theme, is
   a diagram of the post's idea in brand colours. Without one, the card shows the topic's icon.
 - **Code is highlighted at build time** with Shiki in both themes, so no highlighter ships.

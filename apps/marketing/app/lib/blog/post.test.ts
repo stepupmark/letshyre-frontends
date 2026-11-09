@@ -3,6 +3,7 @@ import rehypeSlug from "rehype-slug"
 import remarkFrontmatter from "remark-frontmatter"
 import { describe, expect, it } from "vitest"
 
+import { emptyTopicRedirects } from "../readiness"
 import {
   isLive,
   parsePost,
@@ -39,6 +40,7 @@ describe("parsePost", () => {
 
   it.each([
     ["/content/blog/Structured_Interviews/en.mdx", source(valid), /slug/],
+    ["/content/blog/topics/en.mdx", source(valid), /reserved/],
     ["/content/blog/structured/xx.mdx", source(valid), /locale/],
     ["/content/blog/structured/en.mdx", "No frontmatter here.", /frontmatter/],
     [
@@ -175,5 +177,14 @@ describe("readiness", () => {
     )
     expect(ready.get("blog")).toEqual(["en", "de"])
     expect(ready.get("about")).toEqual(["en", "fr"])
+  })
+
+  it("sends a topic with no page to the nearest blog index", () => {
+    const redirects = new Map(emptyTopicRedirects(posts))
+    expect(redirects.get("/en/blogs/topics/hiring")).toBe("/en/blogs")
+    expect(redirects.get("/de/blogs/topics/hiring")).toBe("/de/blogs")
+    expect(redirects.get("/fr/blogs/topics/hiring")).toBe("/en/blogs")
+    expect(redirects.has("/en/blogs/topics/interviewing")).toBe(false)
+    expect(redirects.has("/fr/blogs/topics/interviewing")).toBe(false)
   })
 })

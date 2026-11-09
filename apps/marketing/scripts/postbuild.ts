@@ -16,8 +16,18 @@ import {
   PREVIEW_PAGES,
   REPLACED_BY,
 } from "../app/lib/pages.ts"
-import { feedPath, postPath, topicPath } from "../app/lib/blog/paths.ts"
-import { BLOG_DIR, readiness, topicPages } from "../app/lib/readiness.ts"
+import {
+  feedPath,
+  postPath,
+  topicPath,
+  topicsPath,
+} from "../app/lib/blog/paths.ts"
+import {
+  BLOG_DIR,
+  emptyTopicRedirects,
+  readiness,
+  topicPages,
+} from "../app/lib/readiness.ts"
 import {
   initialScriptsOf,
   injectMetaPolicy,
@@ -273,19 +283,25 @@ writeFileSync(join(ROOT, "build/csp.map"), nginxMap(policies, fallbackPolicy))
 const replaced = Object.entries(REPLACED_BY).flatMap(([from, to]) =>
   (ready.get(to) ?? []).map(
     (lang) =>
-      `~^/${lang}${PAGES[from as PageId].path}$ /${lang}${PAGES[to].path};
-`
+      `~^/${lang}${PAGES[from as PageId].path}$ /${lang}${PAGES[to].path};\n`
   )
 )
 writeFileSync(
   join(ROOT, "build/redirects.map"),
   [
     ...Object.entries(MOVED_PATHS).map(
-      ([from, to]) => `~^/([a-z]{2})${from}$ /$1${to};
-`
+      ([from, to]) => `~^/([a-z]{2})${from}$ /$1${to};\n`
     ),
     ...replaced,
+    `~^/([a-z]{2})${topicsPath}$ /$1${PAGES.blog.path};\n`,
   ].join("")
+)
+// 302s: pages that come back once there's content for them
+writeFileSync(
+  join(ROOT, "build/redirects-temporary.map"),
+  emptyTopicRedirects(posts)
+    .map(([from, to]) => `${from} ${to};\n`)
+    .join("")
 )
 
 if (problems.length) {
