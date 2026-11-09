@@ -58,12 +58,19 @@ export type NavItem =
 
 /**
  * aria-current for a nav item. The prerender sees `/en/pricing/`, so a trailing slash is
- * ignored to keep the hydrated markup identical.
+ * ignored to keep the hydrated markup identical. Blogs stays marked on its posts and topics.
  */
 export function useCurrent() {
   const lang = useLocale()
   const pathname = useLocation().pathname.replace(/(.)\/$/, "$1")
 
-  return (item: NavItem): "page" | undefined =>
-    localePath(lang, item.path) === pathname ? "page" : undefined
+  return (item: NavItem): "page" | "true" | undefined => {
+    const path = localePath(lang, item.path)
+    if (path === pathname) return "page"
+    return "page" in item &&
+      item.page === "blog" &&
+      pathname.startsWith(`${path}/`)
+      ? "true"
+      : undefined
+  }
 }
