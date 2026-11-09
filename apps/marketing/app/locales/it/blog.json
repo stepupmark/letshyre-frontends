@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Blog: consigli su selezione e colloqui | letshyre.ai",
-    "description": "Guide pratiche su colloqui strutturati, valutazione equa dei candidati e ricerca di lavoro per professionisti con esperienza.",
+    "description": "Guide su colloqui strutturati, valutazione equa dei candidati e ricerca di lavoro per professionisti con esperienza.",
     "crumb": "Blog",
     "name": "Blog di LetsHyre"
   },
   "index": {
     "eyebrow": "Blog",
     "title": "Appunti per assumere bene",
-    "description": "Guide pratiche per le aziende che conducono colloqui e per i professionisti che si preparano ad affrontarli.",
+    "description": "Guide per le aziende che conducono colloqui e per i professionisti che si preparano ad affrontarli.",
     "latest": "Ultimo articolo",
     "more": "Altri articoli",
     "feed": "Iscriviti via RSS"
@@ -45,7 +45,7 @@
       "secondary": "Vedi i prezzi"
     },
     "candidates": {
-      "title": "Mostra cosa sai fare, non solo cosa hai scritto",
+      "title": "Il tuo CV dice cosa hai fatto. Il tuo colloquio mostra come lavori.",
       "description": "Crea il tuo profilo, fai il tuo primo colloquio IA e lascia che ti trovino le aziende che assumono per il tuo ruolo.",
       "primary": "Crea il tuo profilo",
       "secondary": "Come funziona per i professionisti"

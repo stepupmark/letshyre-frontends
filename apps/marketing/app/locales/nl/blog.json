@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Blog: advies over werven en interviews | letshyre.ai",
-    "description": "Praktische gidsen over gestructureerde interviews, eerlijke beoordeling van kandidaten en zoeken naar werk voor ervaren professionals.",
+    "description": "Gidsen over gestructureerde interviews, eerlijke beoordeling van kandidaten en zoeken naar werk voor ervaren professionals.",
     "crumb": "Blog",
     "name": "LetsHyre-blog"
   },
   "index": {
     "eyebrow": "Blog",
     "title": "Notities over goed werven",
-    "description": "Praktische gidsen voor werkgevers die interviews afnemen en voor professionals die zich erop voorbereiden.",
+    "description": "Gidsen voor werkgevers die interviews afnemen en voor professionals die zich erop voorbereiden.",
     "latest": "Nieuwste artikel",
     "more": "Meer artikelen",
     "feed": "Abonneren via RSS"
@@ -45,7 +45,7 @@
       "secondary": "Bekijk prijzen"
     },
     "candidates": {
-      "title": "Laat zien wat je kunt, niet alleen wat je hebt geschreven",
+      "title": "Je cv laat zien wat je hebt gedaan. Je interview laat zien hoe je werkt.",
       "description": "Maak je profiel, doe je eerste AI-interview en laat werkgevers die voor jouw functie werven je vinden.",
       "primary": "Maak je profiel",
       "secondary": "Zo werkt het voor professionals"

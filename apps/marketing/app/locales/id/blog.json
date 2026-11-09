@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Blog: tips rekrutmen dan wawancara | letshyre.ai",
-    "description": "Panduan praktis tentang wawancara terstruktur, penilaian kandidat yang adil, dan pencarian kerja untuk profesional berpengalaman.",
+    "description": "Panduan tentang wawancara terstruktur, penilaian kandidat yang adil, dan pencarian kerja untuk profesional berpengalaman.",
     "crumb": "Blog",
     "name": "Blog LetsHyre"
   },
   "index": {
     "eyebrow": "Blog",
     "title": "Catatan untuk merekrut dengan baik",
-    "description": "Panduan praktis bagi perusahaan yang melakukan wawancara dan bagi profesional yang mempersiapkannya.",
+    "description": "Panduan bagi perusahaan yang melakukan wawancara dan bagi profesional yang mempersiapkannya.",
     "latest": "Artikel terbaru",
     "more": "Artikel lainnya",
     "feed": "Berlangganan lewat RSS"
@@ -45,7 +45,7 @@
       "secondary": "Lihat harga"
     },
     "candidates": {
-      "title": "Tunjukkan apa yang bisa Anda lakukan, bukan hanya yang Anda tulis",
+      "title": "CV Anda mencantumkan apa yang pernah Anda lakukan. Wawancara Anda menunjukkan cara Anda bekerja.",
       "description": "Buat profil Anda, ikuti wawancara AI pertama, dan biarkan pemberi kerja yang merekrut untuk peran Anda menemukan Anda.",
       "primary": "Buat profil Anda",
       "secondary": "Cara kerjanya untuk profesional"

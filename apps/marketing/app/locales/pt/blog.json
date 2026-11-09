@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Blog: dicas de recrutamento e entrevistas | letshyre.ai",
-    "description": "Guias práticos sobre entrevistas estruturadas, avaliação justa de candidatos e busca de emprego para profissionais experientes.",
+    "description": "Guias sobre entrevistas estruturadas, avaliação justa de candidatos e busca de emprego para profissionais experientes.",
     "crumb": "Blog",
     "name": "Blog da LetsHyre"
   },
   "index": {
     "eyebrow": "Blog",
     "title": "Notas para contratar bem",
-    "description": "Guias práticos para empresas que conduzem entrevistas e para profissionais que se preparam para elas.",
+    "description": "Guias para empresas que conduzem entrevistas e para profissionais que se preparam para elas.",
     "latest": "Publicação mais recente",
     "more": "Mais publicações",
     "feed": "Assinar via RSS"
@@ -45,7 +45,7 @@
       "secondary": "Ver preços"
     },
     "candidates": {
-      "title": "Mostre o que você sabe fazer, não só o que escreveu",
+      "title": "Seu currículo mostra o que você fez. Sua entrevista mostra como você trabalha.",
       "description": "Crie seu perfil, faça sua primeira entrevista com IA e deixe que empresas contratando para sua função encontrem você.",
       "primary": "Criar seu perfil",
       "secondary": "Como funciona para profissionais"

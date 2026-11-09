@@ -48,10 +48,9 @@ const readiness = withBlogIndex(catalogReadiness, posts)
 /** Locales the page is published in, for hreflang and the language switcher. */
 export const readyLocales = (id: PageId): Locale[] => readiness.get(id) ?? []
 
-/** Published posts in a locale, newest first. */
+/** Newest first. */
 export const postsIn = (lang: Locale): Post[] =>
   posts.filter((post) => post.lang === lang)
 
-/** The locales a post is written in. */
 export const postLocales = (slug: string): Locale[] =>
   posts.filter((post) => post.slug === slug).map((post) => post.lang)

@@ -24,8 +24,8 @@ A bad field fails the build with the file name.
 
 ## Body
 
-Markdown with GitHub tables, plus these components. Anything else, raw HTML, code expressions or
-imports other than local images fail the build.
+Markdown with GitHub tables, plus these components. Raw HTML, code expressions, unknown components
+and imports other than local images fail the build.
 
 | Component                                                  | For                                                                |
 | ---------------------------------------------------------- | ------------------------------------------------------------------ |
@@ -50,7 +50,7 @@ Import images from the post's folder: `import chart from "./chart.svg"`.
 ## Share image
 
 `og.jpg` in the post's folder is used when the post is shared. To draw it from the post's header,
-build, serve and run:
+build, start the preview server and leave it running, then run `blog:og` in a second terminal:
 
 ```bash
 pnpm --filter marketing build

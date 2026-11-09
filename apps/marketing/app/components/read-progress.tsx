@@ -1,4 +1,4 @@
-/** A bar across the top that fills as the page scrolls. CSS only; hidden where unsupported. */
+/** CSS only; hidden where scroll-driven animations aren't supported. */
 export function ReadProgress() {
   return (
     <div

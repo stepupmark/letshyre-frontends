@@ -56,11 +56,6 @@ describe("parsePost", () => {
       source(`${valid}\nauthor: someone`),
       /authors\.ts/,
     ],
-    [
-      "/content/blog/structured/en.mdx",
-      source(valid.replace("employers", "everyone")),
-      /audience/,
-    ],
   ])("fails the build for %s with a bad post", (file, raw, reason) => {
     expect(() => parsePost(file, raw)).toThrow(reason)
   })

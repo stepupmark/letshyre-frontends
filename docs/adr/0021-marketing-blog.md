@@ -4,7 +4,7 @@ Accepted 2026-11-08. Applies to `apps/marketing` only.
 
 ## Context
 
-We want a blog to be found for hiring and career questions. There is no backend for content, each
+We want the site to rank for hiring and career questions. There is no backend for content, each
 post has its own structure and images, and the marketing site is already prerendered on a static
 host with hash-based CSP ([ADR 0002](./0002-react-router-rendering.md),
 [ADR 0012](./0012-csp-hashes.md)).
@@ -33,8 +33,8 @@ host with hash-based CSP ([ADR 0002](./0002-react-router-rendering.md),
   chunk arrives. The JS budget doesn't grow with the number of posts. The post body has no Suspense
   boundary: React streams a large boundary out of place behind an inline script, which would hide
   the text from readers and crawlers without JavaScript. e2e checks the text is there without JS.
-- `draft: true` posts, and posts whose `publishedAt` (a UTC date) is after the build date, never
-  reach production. Dev and staging builds show them with a badge, so they can be reviewed in place.
+- **Drafts and future posts stay off production.** `draft: true` posts, and posts whose
+  `publishedAt` (a UTC date) is after the build date, never reach production. Dev and staging builds show them with a badge, so they can be reviewed in place.
 - **Headings are read twice, from the same rules.** rehype-slug gives the rendered h2s their ids;
   the parser reads the same ids from the source for the table of contents, so it is in the loader
   data at build time. A test compiles real MDX to keep the two in step.

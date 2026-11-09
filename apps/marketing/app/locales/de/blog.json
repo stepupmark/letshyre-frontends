@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Blog: Tipps für Recruiting und Interviews | letshyre.ai",
-    "description": "Praxisleitfäden zu strukturierten Interviews, fairer Kandidatenbewertung und Jobsuche für erfahrene Fachkräfte, vom LetsHyre-Team.",
+    "description": "Leitfäden zu strukturierten Interviews, fairer Kandidatenbewertung und Jobsuche für erfahrene Fachkräfte, vom LetsHyre-Team.",
     "crumb": "Blog",
     "name": "LetsHyre-Blog"
   },
   "index": {
     "eyebrow": "Blog",
     "title": "Notizen zum guten Einstellen",
-    "description": "Praxisleitfäden für Arbeitgeber, die Interviews führen, und für Fachkräfte, die sich darauf vorbereiten.",
+    "description": "Leitfäden für Arbeitgeber, die Interviews führen, und für Fachkräfte, die sich darauf vorbereiten.",
     "latest": "Neuester Beitrag",
     "more": "Weitere Beiträge",
     "feed": "Per RSS abonnieren"
@@ -45,7 +45,7 @@
       "secondary": "Preise ansehen"
     },
     "candidates": {
-      "title": "Zeigen Sie, was Sie können, nicht nur, was Sie geschrieben haben",
+      "title": "Ihr Lebenslauf zeigt, was Sie getan haben. Ihr Interview zeigt, wie Sie arbeiten.",
       "description": "Erstellen Sie Ihr Profil, absolvieren Sie Ihr erstes KI-Interview und lassen Sie sich von Arbeitgebern finden, die für Ihre Rolle einstellen.",
       "primary": "Profil erstellen",
       "secondary": "So funktioniert es für Fachkräfte"

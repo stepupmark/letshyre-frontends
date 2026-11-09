@@ -10,7 +10,6 @@ import { metaContext } from "./page-meta"
 import { blogPostingSchema, breadcrumbSchema, webPageSchema } from "./schema"
 import { SITE } from "./site"
 
-/** `meta` for a blog post, from its frontmatter. */
 export function postMeta({ matches, params }: MetaArgs): MetaDescriptor[] {
   const data = matches.at(-1)?.loaderData as
     { post: Post; locales: Locale[]; ogImage?: string } | undefined

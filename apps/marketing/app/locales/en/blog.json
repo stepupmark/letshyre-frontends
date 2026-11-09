@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Blog: Hiring and Interviewing Advice | letshyre.ai",
-    "description": "Practical guides on structured interviews, fair candidate evaluation and job searching for experienced professionals, written by the LetsHyre team.",
+    "description": "Guides on structured interviews, fair candidate evaluation and job searching for experienced professionals, written by the LetsHyre team.",
     "crumb": "Blog",
     "name": "LetsHyre blog"
   },
   "index": {
     "eyebrow": "Blog",
     "title": "Notes on hiring well",
-    "description": "Practical guides for employers who run interviews and for professionals preparing for them.",
+    "description": "Guides for employers who run interviews and for professionals preparing for them.",
     "latest": "Latest post",
     "more": "More posts",
     "feed": "Subscribe via RSS"
@@ -45,7 +45,7 @@
       "secondary": "See pricing"
     },
     "candidates": {
-      "title": "Show what you can do, not just what you wrote",
+      "title": "Your CV lists what you did. Your interview shows how you work.",
       "description": "Create your profile, take your first AI interview and let employers hiring for your role find you.",
       "primary": "Create your profile",
       "secondary": "How it works for professionals"

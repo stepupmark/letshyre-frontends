@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Blog : recrutement et entretiens | letshyre.ai",
-    "description": "Guides pratiques sur les entretiens structurés, l’évaluation équitable des candidats et la recherche d’emploi pour les professionnels expérimentés.",
+    "description": "Guides sur les entretiens structurés, l’évaluation équitable des candidats et la recherche d’emploi pour les professionnels expérimentés.",
     "crumb": "Blog",
     "name": "Blog LetsHyre"
   },
   "index": {
     "eyebrow": "Blog",
     "title": "Bien recruter, en pratique",
-    "description": "Des guides pratiques pour les employeurs qui mènent des entretiens et pour les professionnels qui s’y préparent.",
+    "description": "Des guides pour les employeurs qui mènent des entretiens et pour les professionnels qui s’y préparent.",
     "latest": "Dernier article",
     "more": "Plus d'articles",
     "feed": "S'abonner par RSS"
@@ -45,7 +45,7 @@
       "secondary": "Voir les tarifs"
     },
     "candidates": {
-      "title": "Montrez ce que vous savez faire, pas seulement ce que vous avez écrit",
+      "title": "Votre CV dit ce que vous avez fait. Votre entretien montre comment vous travaillez.",
       "description": "Créez votre profil, passez votre premier entretien IA et laissez les employeurs qui recrutent pour votre poste vous trouver.",
       "primary": "Créer votre profil",
       "secondary": "Comment ça marche pour les professionnels"

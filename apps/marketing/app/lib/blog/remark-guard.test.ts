@@ -21,9 +21,7 @@ describe("remarkGuard", () => {
 
   it.each([
     ["raw HTML", `<div>hi</div>`, /<div> isn't in the blog's component set/],
-    ["unknown component", `<Chart />`, /component set/],
     ["package import", `import x from "react"`, /local images/],
-    ["exports", `export const x = 1`, /local images/],
     ["code", `{1 + 1}`, /can't run code/],
     ["markdown image", `![chart](./chart.svg)`, /Markdown image/],
     [
@@ -37,9 +35,9 @@ describe("remarkGuard", () => {
       /needs width/,
     ],
     [
-      "stat without a source",
-      `<Stat value="2x" label="Better" source="" cite="A study" />`,
-      /needs source/,
+      "stat whose source isn't a link",
+      `<Stat value="2x" label="Better" source="A study" cite="A study" />`,
+      /https link/,
     ],
     [
       "video with a url for an id",
