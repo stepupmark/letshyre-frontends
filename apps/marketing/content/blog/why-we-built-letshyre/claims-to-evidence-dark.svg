@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360" font-family="Outfit, system-ui, -apple-system, Segoe UI, sans-serif">
+  <text x="40" y="52" font-size="12" font-weight="600" fill="#a1a1aa">WHAT IT SAYS</text>
+  <text x="300" y="52" font-size="12" font-weight="600" fill="#a1a1aa">WHAT IT TESTS</text>
+  <text x="480" y="52" font-size="12" font-weight="600" fill="#a1a1aa">WHAT IT SHOWS</text>
+  <rect x="40" y="70" width="204" height="270" rx="14" fill="#18181b" stroke="#3f3f46" stroke-width="2"/>
+  <text x="60" y="104" font-size="16" font-weight="600" fill="#fafafa">Resume</text>
+  <rect x="60" y="126" width="164" height="32" rx="8" fill="#27272a"/><text x="74" y="147" font-size="13" fill="#a1a1aa">Expert in React</text><rect x="60" y="170" width="164" height="32" rx="8" fill="#27272a"/><text x="74" y="191" font-size="13" fill="#a1a1aa">Great team player</text><rect x="60" y="214" width="164" height="32" rx="8" fill="#27272a"/><text x="74" y="235" font-size="13" fill="#a1a1aa">10x engineer</text>
+  <text x="60" y="300" font-size="13" fill="#a1a1aa">Claims, in the</text>
+  <text x="60" y="318" font-size="13" fill="#a1a1aa">candidate's own words</text>
+  <line x1="252" y1="205" x2="292" y2="205" stroke="#4d86ff" stroke-width="2.5" stroke-linecap="round"/><path d="M283 198 L292 205 L283 212" fill="none" stroke="#4d86ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="300" y="140" width="128" height="130" rx="14" fill="#141a26" stroke="#2c3f66" stroke-width="2"/>
+  <circle cx="364" cy="186" r="20" fill="#4d86ff"/><path d="M358.0 177.6 L373.0 186 L358.0 194.4 Z" fill="#0b1020"/>
+  <text x="364" y="232" font-size="14" font-weight="600" text-anchor="middle" fill="#fafafa">AI interview</text>
+  <text x="364" y="251" font-size="12" text-anchor="middle" fill="#a1a1aa">Role-based</text>
+  <line x1="436" y1="205" x2="472" y2="205" stroke="#4d86ff" stroke-width="2.5" stroke-linecap="round"/><path d="M463 198 L472 205 L463 212" fill="none" stroke="#4d86ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="480" y="70" width="200" height="270" rx="14" fill="#18181b" stroke="#2c3f66" stroke-width="2"/>
+  <text x="500" y="104" font-size="16" font-weight="600" fill="#fafafa">Candidate file</text>
+  <text x="500" y="140" font-size="12" fill="#a1a1aa">LetsHyre score</text><rect x="500" y="148" width="156" height="8" rx="4" fill="#263a5f"/><rect x="500" y="148" width="126" height="8" rx="4" fill="#4d86ff"/><text x="500" y="180" font-size="12" fill="#a1a1aa">Job match</text><rect x="500" y="188" width="156" height="8" rx="4" fill="#263a5f"/><rect x="500" y="188" width="112" height="8" rx="4" fill="#4d86ff"/><text x="500" y="220" font-size="12" fill="#a1a1aa">Skill match</text><rect x="500" y="228" width="156" height="8" rx="4" fill="#263a5f"/><rect x="500" y="228" width="134" height="8" rx="4" fill="#4d86ff"/><text x="500" y="260" font-size="12" fill="#a1a1aa">AI interview</text><rect x="500" y="268" width="156" height="8" rx="4" fill="#263a5f"/><rect x="500" y="268" width="118" height="8" rx="4" fill="#4d86ff"/>
+  <circle cx="508" cy="312" r="9" fill="#4d86ff"/><path d="M505.3 308.2 L512.0 312 L505.3 315.8 Z" fill="#0b1020"/>
+  <text x="524" y="316" font-size="13" fill="#fafafa">Full recording</text>
+</svg>

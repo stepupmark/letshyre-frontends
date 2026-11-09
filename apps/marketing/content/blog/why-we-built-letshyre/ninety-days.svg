@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 250" width="720" height="250" font-family="Outfit, system-ui, -apple-system, Segoe UI, sans-serif">
+  <line x1="80" y1="130" x2="620" y2="130" stroke="#e4e4e7" stroke-width="4" stroke-linecap="round"/>
+  <line x1="80" y1="130" x2="360" y2="130" stroke="#266fff" stroke-width="4" stroke-linecap="round"/>
+  <text x="220" y="118" font-size="13" font-weight="600" text-anchor="middle" fill="#1d5ce0">90 days in the talent pool</text>
+  <circle cx="80" cy="130" r="11" fill="#266fff"/>
+  <circle cx="360" cy="130" r="11" fill="#ffffff" stroke="#266fff" stroke-width="3"/>
+  <circle cx="620" cy="130" r="9" fill="#ffffff" stroke="#e4e4e7" stroke-width="3"/>
+  <text x="80" y="88" font-size="12" font-weight="600" text-anchor="middle" fill="#71717a">DAY 1</text>
+  <text x="360" y="88" font-size="12" font-weight="600" text-anchor="middle" fill="#71717a">DAY 90</text>
+  <text x="620" y="88" font-size="12" font-weight="600" text-anchor="middle" fill="#71717a">LATER</text>
+  <text x="60" y="178" font-size="15" font-weight="600" fill="#18181b">In front of employers</text>
+  <text x="60" y="200" font-size="13" fill="#71717a">Matched to roles that fit,</text>
+  <text x="60" y="218" font-size="13" fill="#71717a">and you can update the profile</text>
+  <text x="340" y="178" font-size="15" font-weight="600" fill="#18181b">Leaves the pool</text>
+  <text x="340" y="200" font-size="13" fill="#71717a">Employers don't chase</text>
+  <text x="340" y="218" font-size="13" fill="#71717a">people who stopped looking</text>
+  <text x="680" y="178" font-size="15" font-weight="600" text-anchor="end" fill="#18181b">Come back</text>
+  <text x="680" y="200" font-size="13" text-anchor="end" fill="#71717a">with a new profile</text>
+  <text x="680" y="218" font-size="13" text-anchor="end" fill="#71717a">whenever you like</text>
+</svg>
