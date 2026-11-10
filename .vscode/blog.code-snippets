@@ -1,0 +1,89 @@
+{
+  "Post frontmatter": {
+    "scope": "mdx",
+    "prefix": "frontmatter",
+    "description": "A blog post's frontmatter; apps/marketing/content/blog/README.md explains each field",
+    "body": [
+      "---",
+      "title: ${1:Title}",
+      "description: ${2:One or two sentences for search results and the blog index.}",
+      "publishedAt: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+      "audience: ${3|employers,candidates,everyone|}",
+      "topic: ${4|interviewing,hiring,careers,trends,news|}",
+      "draft: true",
+      "---",
+      "",
+      "$0",
+    ],
+  },
+  "Figure": {
+    "scope": "mdx",
+    "prefix": "figure",
+    "body": [
+      "import ${1:chart} from \"./${2:chart}.svg\"",
+      "",
+      "<Figure src={$1} alt=\"${3:What the image shows}\" width={${4:720}} height={${5:400}} caption=\"$6\" />",
+    ],
+  },
+  "Callout": {
+    "scope": "mdx",
+    "prefix": "callout",
+    "body": ["<Callout tone=\"${1|note,tip,warning|}\">", "$0", "</Callout>"],
+  },
+  "Steps": {
+    "scope": "mdx",
+    "prefix": "steps",
+    "body": [
+      "<Steps>",
+      "<Step title=\"${1:First step}\">",
+      "$2",
+      "</Step>",
+      "<Step title=\"${3:Second step}\">",
+      "$0",
+      "</Step>",
+      "</Steps>",
+    ],
+  },
+  "Compare": {
+    "scope": "mdx",
+    "prefix": "compare",
+    "body": [
+      "<Compare avoid=\"${1:The weak version}\" prefer=\"${2:The better version}\" />",
+    ],
+  },
+  "Stat": {
+    "scope": "mdx",
+    "prefix": "stat",
+    "body": [
+      "<Stat value=\"${1:39%}\" label=\"${2:of what, measured how}\" source=\"https://${3:link to the study}\" cite=\"${4:Who, what, year}\" />",
+    ],
+  },
+  "Feature": {
+    "scope": "mdx",
+    "prefix": "feature",
+    "body": ["<Feature audience=\"${1|employers,candidates|}\" />"],
+  },
+  "Quote": {
+    "scope": "mdx",
+    "prefix": "quote",
+    "body": [
+      "<Quote by=\"${1:Name}\" role=\"${2:Role, company}\">",
+      "$0",
+      "</Quote>",
+    ],
+  },
+  "VideoEmbed": {
+    "scope": "mdx",
+    "prefix": "video",
+    "body": [
+      "import ${1:poster} from \"./${1:poster}.jpg\"",
+      "",
+      "<VideoEmbed id=\"${2:11-character YouTube id}\" title=\"${3:What the video shows}\" poster={$1} />",
+    ],
+  },
+  "Reviewer note": {
+    "scope": "mdx",
+    "prefix": "note",
+    "body": ["{/* $0 */}"],
+  },
+}

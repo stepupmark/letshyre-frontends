@@ -1,0 +1,80 @@
+---
+title: Style reference, every component used the right way
+description: A draft that never ships. It shows each blog component with real props, so you can copy from it and see how it renders on dev and staging.
+publishedAt: 2026-11-10
+audience: employers
+topic: news
+draft: true
+---
+
+import scorecard from "./scorecard.svg"
+import scorecardDark from "./scorecard-dark.svg"
+
+{/* This post stays a draft. Copy what you need into your own post; docs/blog-style.md says when to use each part. */}
+
+Open with the answer. Two or three sentences that tell the reader what they'll get and who it's for,
+before any background. Someone who reads only this paragraph should still leave with the main point.
+
+## One idea per section
+
+Each `##` heading is one idea, written as a plain statement a reader could skim. Keep paragraphs to
+three or four sentences. Link a claim to
+[the study that backs it up](https://press.roberthalf.com/2016-08-11-Are-You-Taking-Too-Long-To-Hire),
+and the link is listed under the post as a numbered source.
+
+Link to the rest of the site with a path, like [the employers page](/en/employers).
+
+### A smaller heading inside a section
+
+Use `###` only inside a `##` section, never on its own.
+
+## Show the thing
+
+<Figure
+  src={scorecard}
+  srcDark={scorecardDark}
+  alt="A scorecard with three skills, each scored on a bar"
+  width={720}
+  height={400}
+  caption="Draw diagrams as SVG, with a second file for the dark theme."
+/>
+
+<Steps>
+<Step title="Write the steps as actions">
+Start each one with a verb, and keep it to one or two sentences.
+</Step>
+<Step title="Number only real sequences">
+If the order doesn't matter, use a bulleted list instead.
+</Step>
+</Steps>
+
+<Compare
+  avoid="We're looking for a rockstar who thrives in a fast-moving team."
+  prefer="You'll own our payments service and ship a change to production in your first week."
+/>
+
+## Back up the numbers
+
+<Stat
+  value="39%"
+  label="of workers said they lose interest and pursue other roles when a hiring process drags on"
+  source="https://press.roberthalf.com/2016-08-11-Are-You-Taking-Too-Long-To-Hire"
+  cite="Robert Half survey of 1,000+ US office workers, 2016"
+/>
+
+<Callout tone="tip">
+Use a callout for something the reader might miss: a shortcut, a caveat, a common mistake. One or
+two per post at most.
+</Callout>
+
+<Quote by="Name of the person" role="Their role, company">
+Quote a real person only with their agreement, and only in their own words.
+</Quote>
+
+## Point to LetsHyre where the text leads there
+
+<Feature audience="employers" />
+
+## What to do next
+
+End with what the reader can do today, not a summary of the post.

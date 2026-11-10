@@ -1,0 +1,29 @@
+name: Blog
+
+on:
+  pull_request:
+    paths:
+      - apps/marketing/content/blog/**
+
+concurrency:
+  group: blog-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # annotates the PR's files; dead links are warnings, since other sites go down for a while
+      - run: pnpm --filter marketing blog:check --links --ci

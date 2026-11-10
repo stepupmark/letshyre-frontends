@@ -21,7 +21,12 @@ the marketing site is already prerendered on a static host with hash-based CSP (
   post. The slug is the URL and never changes once published.
 - **A closed component set.** Posts may use Markdown, the components in
   `features/blog/components/mdx`, and imports of local images. `app/lib/blog/remark-guard.ts` fails
-  the build on raw HTML, other imports, unknown components or images without alt text.
+  the build on raw HTML, other imports, unknown components or images without alt text. A
+  comment-only expression is allowed, for notes to the reviewer.
+- **Writing is checked before the build.** `blog:new` scaffolds a valid draft, and `blog:check`
+  lints posts in seconds: the build's own rules plus heading order, alt text, image sizes, internal
+  links, description length and filler words. Errors block review; warnings guide it. The Blog
+  workflow runs it on every PR that touches `content/blog`, with dead external links as warnings.
 - **A post exists only in the locales it is written in.** The blog index ships in a locale only
   when its copy is complete there and at least one post is published in it, the same readiness
   rule as [ADR 0007](./0007-i18n-readiness.md). There are no machine-translated posts.
@@ -75,7 +80,9 @@ the marketing site is already prerendered on a static host with hash-based CSP (
 ## Not yet
 
 - Author pages, and search beyond titles and descriptions.
-- A git-based CMS (Keystatic or TinaCMS) once someone outside engineering writes posts.
+- A git-based CMS once someone outside engineering writes posts. Keystatic's router adapter
+  supports Remix 1 and 2 only, so it would be its own small app with a server for GitHub sign-in;
+  that needs hosting decided first.
 - React Server Components. React Router 8.4 has them behind `unstable_` flags. Keep MDX components
   free of hooks and browser APIs so posts can move to server components once that ships stable.
 

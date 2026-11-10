@@ -8,7 +8,11 @@ const previews = loadEnv("production", ".", "VITE_").VITE_ENV === "staging"
 export default {
   ssr: false,
   prerender: {
-    paths: () => [...readyPaths(".", previews), "/404"],
+    // dev serves only these paths, so it lists drafts too, read fresh for a post added mid-session
+    paths: () => [
+      ...readyPaths(".", previews || process.env.NODE_ENV === "development"),
+      "/404",
+    ],
     concurrency: 4,
   },
   subResourceIntegrity: true,

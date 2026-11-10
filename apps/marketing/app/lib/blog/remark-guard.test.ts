@@ -6,9 +6,11 @@ import { remarkGuard } from "./remark-guard"
 const build = (mdx: string) => compile(mdx, { remarkPlugins: [remarkGuard] })
 
 describe("remarkGuard", () => {
-  it("accepts markdown, the component set and local image imports", async () => {
+  it("accepts markdown, the component set, local image imports and comments", async () => {
     await expect(
       build(`import chart from "./chart.svg"
+
+{/* a note for the reviewer */}
 
 ## Heading
 

@@ -1,7 +1,8 @@
 // Draws each post's share image, content/blog/<slug>/og.jpg, from its English page header, the
-// way the other pages' images in public/og were made. Needs a build served by `pnpm preview`.
-// usage: node scripts/blog-og.ts [slug…] (default: posts without one)
+// way the other pages' images in public/og were made. Builds and serves the site itself.
+// usage: pnpm blog:og [slug…] (default: published posts without one); --no-build reuses the last build
 
+import { execSync, spawn } from "node:child_process"
 import { existsSync } from "node:fs"
 import { join, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
@@ -11,21 +12,44 @@ import { readPosts } from "../app/lib/blog/read-posts.ts"
 import { BLOG_DIR } from "../app/lib/readiness.ts"
 
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)))
-const BASE = process.env.PREVIEW_URL ?? "http://127.0.0.1:4173"
+const PORT = 4179
+const BASE = `http://127.0.0.1:${PORT}`
 // the size buildMeta announces for every share image
 const SIZE = { width: 1024, height: 535 }
 
 const imageOf = (slug: string) => join(ROOT, BLOG_DIR, slug, "og.jpg")
-const asked = process.argv.slice(2)
+const args = process.argv.slice(2)
+const asked = args.filter((arg) => !arg.startsWith("--"))
 const slugs = asked.length
   ? asked
   : [
       ...new Set(
-        readPosts(join(ROOT, BLOG_DIR), true)
+        readPosts(join(ROOT, BLOG_DIR), false)
           .filter((post) => post.lang === "en")
           .map((post) => post.slug)
       ),
     ].filter((slug) => !existsSync(imageOf(slug)))
+
+if (slugs.length === 0) {
+  console.log("blog-og: every published post has an og.jpg")
+  process.exit(0)
+}
+
+if (!args.includes("--no-build"))
+  execSync("pnpm build", { cwd: ROOT, stdio: "inherit" })
+const server = spawn(process.execPath, ["e2e/serve.ts", String(PORT)], {
+  cwd: ROOT,
+  stdio: "ignore",
+})
+for (let tries = 0; ; tries++) {
+  const up = await fetch(BASE).then(
+    () => true,
+    () => false
+  )
+  if (up) break
+  if (tries === 50) throw new Error("blog-og: the preview server didn't start")
+  await new Promise((done) => setTimeout(done, 200))
+}
 
 const browser = await chromium.launch()
 // without scripts the prerendered page is all there is: no consent banner, no read progress
@@ -61,3 +85,4 @@ for (const slug of slugs) {
   console.log(`blog-og: ${slug}/og.jpg`)
 }
 await browser.close()
+server.kill()

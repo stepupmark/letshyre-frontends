@@ -21,6 +21,7 @@ lighthouse-report/
 
 .vscode/*
 !.vscode/extensions.json
+!.vscode/blog.code-snippets
 .idea
 .claude/
 

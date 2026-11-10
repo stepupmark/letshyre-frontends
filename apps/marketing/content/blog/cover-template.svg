@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400">
+  <!-- Copy to <slug>/cover.svg. No words: the cover reads the same in every locale.
+       Light: #1d5ce0 strong, #4d86ff mid, #a9c3fb soft, #dbe6fe faint, #ffffff paper, #18181b ink.
+       Dark (cover-dark.svg): #8fb3ff strong, #266fff mid, #3a5a96 soft, #22345a faint, #18181b paper.
+       The card shows a light blue behind the drawing, so leave the background empty. -->
+  <g id="delete-me">
+    <rect x="48" y="40" width="544" height="320" rx="16" fill="none" stroke="#a9c3fb" stroke-dasharray="8 8"/>
+    <rect x="232" y="132" width="176" height="136" rx="16" fill="#dbe6fe"/>
+    <circle cx="320" cy="200" r="36" fill="#1d5ce0"/>
+  </g>
+</svg>

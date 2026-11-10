@@ -13,7 +13,7 @@ import { TOPICS, visiblePosts } from "./list.ts"
 
 export type { Topic } from "./list.ts"
 
-const AUDIENCES = ["employers", "candidates", "everyone"] as const
+export const AUDIENCES = ["employers", "candidates", "everyone"] as const
 
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 

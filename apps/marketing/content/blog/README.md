@@ -1,5 +1,30 @@
 # Writing a post
 
+## Quick start
+
+```bash
+pnpm --filter marketing blog:new
+```
+
+```bash
+pnpm --filter marketing dev
+```
+
+```bash
+pnpm --filter marketing blog:check <slug>
+```
+
+1. `blog:new` asks for a title, reader and topic, and creates the post as a draft.
+2. Write it with the dev server open at `/en/blogs/<slug>`; it reloads as you save.
+3. `blog:check` reports what to fix in seconds, without a build.
+4. Open a PR with the blog post template (`?template=blog-post.md`); CI checks the post and its
+   links.
+5. When it's ready, remove `draft: true` and set `publishedAt`.
+
+How to write it well is in [docs/blog-style.md](../../../../docs/blog-style.md). Every component in
+use is in the `style-reference` draft, shown on dev and staging only. In VS Code, type
+`frontmatter`, `figure`, `stat` and the other component names in an `.mdx` file for a snippet.
+
 A post is a folder: `content/blog/<slug>/<lang>.mdx`, with its images beside it. The slug is the
 URL (`/en/blogs/<slug>`) and never changes once published. Why it works this way is in
 [ADR 0021](../../../../docs/adr/0021-marketing-blog.md).
@@ -26,7 +51,8 @@ A bad field fails the build with the file name.
 ## Body
 
 Markdown with GitHub tables, plus these components. Raw HTML, code expressions, unknown components
-and imports other than local images fail the build.
+and imports other than local images fail the build. A note for the reviewer goes in a comment,
+`{/* like this */}`, which never renders.
 
 | Component                                                  | For                                                                                                              |
 | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -55,28 +81,23 @@ Import images from the post's folder: `import chart from "./chart.svg"`.
 
 `cover.svg` in the post's folder is the card image on the index, topic pages and related posts. Draw
 the post's idea in brand colours at 640 × 400 with no words, so it reads in every locale, and add
-`cover-dark.svg` for the dark theme. Without one, the card shows the topic's icon.
+`cover-dark.svg` for the dark theme. Without one, the card shows the topic's icon. Start from
+`cover-template.svg`, which has the palette and the safe area.
 
 ## Share image
 
-`og.jpg` in the post's folder is used when the post is shared. To draw it from the post's header,
-build, start the preview server and leave it running, then run `blog:og` in a second terminal:
+`og.jpg` in the post's folder is used when the post is shared. Once the post is published, draw it
+from the post's header and commit it:
 
 ```bash
-pnpm --filter marketing build
+pnpm --filter marketing blog:og <slug>
 ```
 
-```bash
-pnpm --filter marketing preview
-```
-
-```bash
-pnpm --filter marketing blog:og
-```
-
-Then build again so the post picks it up.
+It builds the site, draws the image and stops. Without a slug it draws every published post that
+has none.
 
 ## Translations
 
 A translation is another file in the same folder, `de.mdx`, with the same slug. It ships when the
-blog's interface copy is complete in that locale.
+blog's interface copy is complete in that locale. `pnpm --filter marketing blog:translations` lists
+each post's locales, and the translations older than the English they follow.

@@ -44,6 +44,7 @@ interface File {
 }
 
 const LOCAL_IMAGE = /^import \w+ from "\.\/[\w-]+\.(svg|png|jpe?g|webp|avif)"$/
+const COMMENT = /^(\s*\/\*[\s\S]*?\*\/)+\s*$/
 
 function problemOf(node: Node): string | undefined {
   switch (node.type) {
@@ -53,17 +54,19 @@ function problemOf(node: Node): string | undefined {
         .split("\n")
         .every((line) => LOCAL_IMAGE.test(line.trim().replace(/;$/, "")))
         ? undefined
-        : "posts may only import local images"
+        : 'posts may only import local images, like import chart from "./chart.svg" (README: Images)'
     case "mdxFlowExpression":
     case "mdxTextExpression":
-      return "posts can't run code; use a component"
+      return COMMENT.test(node.value ?? "")
+        ? undefined
+        : "posts can't run code; use a component, or {/* … */} for a note (README: Body)"
     case "image":
-      return "use <Figure> with an imported image, not a Markdown image"
+      return "use <Figure> with an imported image, not a Markdown image (README: Images)"
     case "mdxJsxFlowElement":
     case "mdxJsxTextElement": {
       const name = node.name ?? ""
       if (!(MDX_COMPONENTS as readonly string[]).includes(name))
-        return `<${name}> isn't in the blog's component set`
+        return `<${name}> isn't in the blog's component set (README: Body)`
       const attr = (key: string) =>
         node.attributes?.find((a) => a.name === key)?.value
       const missing = REQUIRED[name as Component]?.find((key) => {
