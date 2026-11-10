@@ -13,12 +13,14 @@ import type { PostSummary } from "@/lib/blog/search"
 
 import { PostGrid } from "./post-list"
 
-export function SearchResults({
+export default function SearchResults({
   query,
+  words,
   posts,
   onClear,
 }: {
   query: string
+  words: readonly string[]
   posts: readonly PostSummary[]
   onClear: () => void
 }) {
@@ -35,7 +37,7 @@ export function SearchResults({
         {t("index.results", { count: posts.length })}
       </p>
       {posts.length > 0 ? (
-        <PostGrid posts={posts} />
+        <PostGrid posts={posts} highlight={words} />
       ) : (
         <Empty className="border py-12">
           <EmptyHeader>

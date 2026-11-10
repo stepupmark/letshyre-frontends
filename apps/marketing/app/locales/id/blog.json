@@ -29,6 +29,8 @@
     "published": "Diterbitkan {{date}}",
     "updated": "Diperbarui {{date}}",
     "readTime": "{{count}} menit membaca",
+    "timeLeft": "{{count}} menit lagi",
+    "almostDone": "Hampir selesai",
     "allPosts": "Semua artikel",
     "backToTop": "Kembali ke atas",
     "toc": "Di halaman ini",
@@ -43,6 +45,9 @@
     "copyLink": "Salin tautan",
     "copied": "Tautan disalin",
     "related": "Baca selanjutnya",
+    "sources": "Sumber",
+    "sourceQuote": "“{{text}}”",
+    "subscribe": "Tips rekrutmen dan karier lewat email",
     "neighbours": "Lainnya dalam topik ini",
     "older": "Artikel sebelumnya",
     "newer": "Artikel berikutnya"
@@ -80,10 +85,25 @@
     "source": "Sumber",
     "play": "Putar video: {{title}}",
     "zoom": "Perbesar gambar",
-    "close": "Tutup"
+    "close": "Tutup",
+    "feature": {
+      "employers": {
+        "title": "Wawancarai setiap kandidat sebelum Anda bertemu",
+        "description": "LetsHyre menjalankan wawancara AI sesuai peran dengan setiap kandidat dan memberi tim Anda kartu nilai untuk dibandingkan."
+      },
+      "candidates": {
+        "title": "Tunjukkan cara Anda bekerja, bukan hanya apa yang sudah Anda lakukan",
+        "description": "Ikuti wawancara AI sesuai peran dan biarkan perusahaan yang merekrut untuk peran Anda melihat kartu nilai dan rekamannya."
+      }
+    }
   },
   "topicPage": {
     "metaTitle": "{{topic}}, Blog LetsHyre | letshyre.ai",
+    "for": {
+      "employers": "Untuk perusahaan",
+      "candidates": "Untuk profesional",
+      "both": "Untuk perusahaan dan profesional"
+    },
     "description": {
       "interviewing": "Cara merencanakan, menjalankan, dan menilai wawancara yang membandingkan kandidat berdasarkan bukti, untuk perekrut.",
       "hiring": "Cara menulis peran, menemukan orang, dan memutuskan siapa yang direkrut, dari brief pertama hingga penawaran.",

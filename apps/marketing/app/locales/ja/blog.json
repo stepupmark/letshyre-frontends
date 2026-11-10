@@ -29,6 +29,8 @@
     "published": "公開日：{{date}}",
     "updated": "更新日：{{date}}",
     "readTime": "{{count}} 分で読めます",
+    "timeLeft": "残り{{count}}分",
+    "almostDone": "もう少しです",
     "allPosts": "すべての記事",
     "backToTop": "ページの先頭に戻る",
     "toc": "このページの内容",
@@ -43,6 +45,9 @@
     "copyLink": "リンクをコピー",
     "copied": "リンクをコピーしました",
     "related": "次に読む",
+    "sources": "出典",
+    "sourceQuote": "「{{text}}」",
+    "subscribe": "採用とキャリアのヒントをメールで",
     "neighbours": "このトピックの記事",
     "older": "前の記事",
     "newer": "次の記事"
@@ -80,10 +85,25 @@
     "source": "出典",
     "play": "動画を再生：{{title}}",
     "zoom": "画像を拡大",
-    "close": "閉じる"
+    "close": "閉じる",
+    "feature": {
+      "employers": {
+        "title": "会う前に、すべての候補者と面接を",
+        "description": "LetsHyreは候補者一人ひとりと職種別のAI面接を行い、比較できるスコアカードをチームに届けます。"
+      },
+      "candidates": {
+        "title": "経歴だけでなく、仕事の進め方を企業に見せましょう",
+        "description": "職種別のAI面接を受ければ、その職種で採用中の企業があなたのスコアカードと録画を見られます。"
+      }
+    }
   },
   "topicPage": {
     "metaTitle": "{{topic}}、LetsHyreブログ | letshyre.ai",
+    "for": {
+      "employers": "企業向け",
+      "candidates": "プロフェッショナル向け",
+      "both": "企業とプロフェッショナル向け"
+    },
     "description": {
       "interviewing": "根拠で候補者を比較できる面接の計画、実施、評価の方法。採用に携わる人向けです。",
       "hiring": "職務の書き方、人材の探し方、採用の決め方。最初の要件定義からオファーまで。",

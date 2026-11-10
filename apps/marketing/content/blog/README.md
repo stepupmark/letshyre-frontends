@@ -28,15 +28,18 @@ A bad field fails the build with the file name.
 Markdown with GitHub tables, plus these components. Raw HTML, code expressions, unknown components
 and imports other than local images fail the build.
 
-| Component                                                  | For                                                                |
-| ---------------------------------------------------------- | ------------------------------------------------------------------ |
-| `<Figure src={img} alt="…" width={720} height={400} />`    | An image. `srcDark`, `caption` and `wide` are optional             |
-| `<Callout tone="tip">…</Callout>`                          | An aside. Tone is `note` (default), `tip` or `warning`             |
-| `<Steps><Step title="…">…</Step></Steps>`                  | A numbered procedure                                               |
-| `<Compare avoid="…" prefer="…" />`                         | A weak example beside a better one                                 |
-| `<Stat value="…" label="…" source="https://…" cite="…" />` | A number, always with the study it comes from                      |
-| `<Quote by="…" role="…">…</Quote>`                         | A quote from a real person who agreed to it                        |
-| `<VideoEmbed id="…" title="…" poster={img} />`             | A YouTube video (11-character id); nothing loads until it's played |
+| Component                                                  | For                                                                                                              |
+| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `<Figure src={img} alt="…" width={720} height={400} />`    | An image. `srcDark`, `caption` and `wide` are optional                                                           |
+| `<Callout tone="tip">…</Callout>`                          | An aside. Tone is `note` (default), `tip` or `warning`                                                           |
+| `<Steps><Step title="…">…</Step></Steps>`                  | A numbered procedure                                                                                             |
+| `<Compare avoid="…" prefer="…" />`                         | A weak example beside a better one                                                                               |
+| `<Stat value="…" label="…" source="https://…" cite="…" />` | A number, always with the study it comes from                                                                    |
+| `<Feature audience="candidates" />`                        | A link to the LetsHyre page for that reader, where the text leads to it. It replaces the mid-post call to action |
+| `<Quote by="…" role="…">…</Quote>`                         | A quote from a real person who agreed to it                                                                      |
+| `<VideoEmbed id="…" title="…" poster={img} />`             | A YouTube video (11-character id); nothing loads until it's played                                               |
+
+External links and `<Stat>` sources are numbered and listed under the post as its sources.
 
 Code fences are highlighted at build time; give them a language (` ```ts `).
 

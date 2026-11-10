@@ -1,5 +1,7 @@
 import { useTranslation } from "@workspace/i18n/react"
 
+import { SourceMark } from "../post-sources"
+
 /** A figure with the study it comes from; the guard won't build one without a source. */
 export function Stat({
   value,
@@ -25,6 +27,7 @@ export function Stat({
         <a href={source} rel="noopener" className="text-link">
           {cite}
         </a>
+        <SourceMark url={source} />
       </figcaption>
     </figure>
   )

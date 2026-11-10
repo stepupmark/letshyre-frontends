@@ -44,11 +44,22 @@ export interface Heading {
   text: string
 }
 
+/** A study cited by a `<Stat>` has a title; a link in the text has the words that link it. */
+export interface Source {
+  url: string
+  title?: string
+  linkText?: string
+}
+
 export type Post = z.output<typeof frontmatterSchema> & {
   slug: string
   lang: Locale
   minutes: number
   headings: Heading[]
+  /** Every external link and study, in reading order, numbered by its place here. */
+  sources: Source[]
+  /** Has a `<Feature>`, so it skips the mid-post call to action. */
+  promoted: boolean
   /** `<slug>/cover.svg`, and `cover-dark.svg` if drawn. */
   cover?: { src: string; srcDark?: string }
   /** Set on staging builds for a draft or a post that isn't due yet. */
@@ -95,6 +106,31 @@ function headingsOf(body: string): Heading[] {
   return headings
 }
 
+const LINK = /\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g
+const STAT = /<Stat\b[^>]*>/g
+const ATTR = {
+  source: /\bsource="([^"]*)"/,
+  cite: /\bcite="([^"]*)"/,
+}
+const attr = (tag: string, name: keyof typeof ATTR) => ATTR[name].exec(tag)?.[1]
+
+const tidy = (text: string) => text.replace(/\s+/g, " ")
+
+function sourcesOf(body: string): Source[] {
+  const found: (Source & { at: number })[] = []
+  for (const m of body.matchAll(LINK))
+    found.push({ url: m[2] ?? "", linkText: tidy(m[1] ?? ""), at: m.index })
+  for (const m of body.matchAll(STAT)) {
+    const url = attr(m[0], "source")
+    if (url) found.push({ url, title: attr(m[0], "cite"), at: m.index })
+  }
+  const seen = new Set<string>()
+  return found
+    .sort((x, y) => x.at - y.at)
+    .filter(({ url }) => !seen.has(url) && seen.add(url))
+    .map(({ at: _at, ...source }) => source)
+}
+
 /** Reads `<slug>/<lang>.mdx`; throws with the file name so a bad post fails the build. */
 export function parsePost(file: string, source: string): Post {
   const [, slug = "", lang = ""] = FILE.exec(file) ?? []
@@ -117,6 +153,8 @@ export function parsePost(file: string, source: string): Post {
     lang: lang as Locale,
     minutes: readingMinutes(body, lang as Locale),
     headings: headingsOf(body),
+    sources: sourcesOf(body),
+    promoted: /<Feature\b/.test(body),
   }
 }
 

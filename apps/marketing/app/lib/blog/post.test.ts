@@ -66,6 +66,24 @@ describe("parsePost", () => {
   })
 })
 
+describe("sources", () => {
+  it("lists external links and studies once each, in reading order", () => {
+    const body = [
+      "A [new study](https://a.org/x) found it.",
+      '<Stat value="9x" label="More" source="https://b.org/y" cite="B report" />',
+      "Again, [the same study](https://a.org/x) and [our post](/en/blogs/other).",
+    ].join("\n\n")
+    const { sources } = parsePost(
+      "/content/blog/structured/en.mdx",
+      source(valid, body)
+    )
+    expect(sources).toEqual([
+      { url: "https://a.org/x", linkText: "new study" },
+      { url: "https://b.org/y", title: "B report" },
+    ])
+  })
+})
+
 describe("isLive", () => {
   const post = (extra = "") =>
     parsePost("/content/blog/structured/en.mdx", source(`${valid}${extra}`))
@@ -207,14 +225,23 @@ describe("index pages", () => {
 
 describe("searchPosts", () => {
   const posts = [
-    { title: "Negotiating your offer", description: "CTC and fixed pay" },
-    { title: "Explain a career gap", description: "Without apologising" },
-  ]
+    {
+      title: "Negotiating your offer",
+      description: "CTC and fixed pay",
+      topic: "careers",
+    },
+    {
+      title: "Explain a career gap",
+      description: "Without apologising",
+      topic: "careers",
+    },
+  ] as const
+  const titles = (query: string) =>
+    searchPosts(posts, query, "en", () => "Careers").map((post) => post.title)
 
-  it("matches every word, in any order and any case, across title and description", () => {
-    const titles = (query: string) =>
-      searchPosts(posts, query, "en").map((post) => post.title)
+  it("matches every word, in any order and any case, across title, description and topic", () => {
     expect(titles("fixed OFFER")).toEqual(["Negotiating your offer"])
+    expect(titles("careers gap")).toEqual(["Explain a career gap"])
     expect(titles("offer gap")).toEqual([])
     expect(titles("   ")).toEqual([])
   })

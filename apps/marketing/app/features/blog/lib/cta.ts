@@ -14,10 +14,11 @@ export const InlineCtaSlot = createContext<
   { before: string; audience: Post["audience"] } | undefined
 >(undefined)
 
-/** Halfway through, a post of five minutes or more with four sections or more. */
+/** Halfway through a post of five minutes or more with four sections, unless it links a `<Feature>`. */
 export function inlineCtaHeading(
-  post: Pick<Post, "minutes" | "headings">
+  post: Pick<Post, "minutes" | "headings" | "promoted">
 ): string | undefined {
-  if (post.minutes < 5 || post.headings.length < 4) return undefined
+  if (post.promoted || post.minutes < 5 || post.headings.length < 4)
+    return undefined
   return post.headings[Math.floor(post.headings.length / 2)]?.id
 }

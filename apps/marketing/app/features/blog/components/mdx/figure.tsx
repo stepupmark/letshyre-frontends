@@ -1,10 +1,12 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { cn } from "@workspace/ui/lib/utils"
 import { Maximize2Icon } from "lucide-react"
-import { useState } from "react"
+import { lazy, Suspense, useState } from "react"
 
-import { FigureZoom } from "./figure-zoom"
 import { Image, type ImageSource } from "./image"
+
+// only after a click, so the dialog stays out of every post's initial JS
+const FigureZoom = lazy(() => import("./figure-zoom"))
 
 export function Figure({
   src,
@@ -80,17 +82,19 @@ export function Figure({
         </figcaption>
       )}
       {zoomed && (
-        <FigureZoom
-          src={src}
-          srcDark={srcDark}
-          alt={alt}
-          width={width}
-          height={height}
-          caption={caption}
-          onClose={() => {
-            setZoomed(false)
-          }}
-        />
+        <Suspense>
+          <FigureZoom
+            src={src}
+            srcDark={srcDark}
+            alt={alt}
+            width={width}
+            height={height}
+            caption={caption}
+            onClose={() => {
+              setZoomed(false)
+            }}
+          />
+        </Suspense>
       )}
     </figure>
   )

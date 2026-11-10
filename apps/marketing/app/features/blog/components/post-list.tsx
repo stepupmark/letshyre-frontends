@@ -38,12 +38,18 @@ export function PostList({
   )
 }
 
-export function PostGrid({ posts }: { posts: readonly PostSummary[] }) {
+export function PostGrid({
+  posts,
+  highlight,
+}: {
+  posts: readonly PostSummary[]
+  highlight?: readonly string[]
+}) {
   return (
     <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {posts.map((post) => (
         <li key={post.slug}>
-          <PostCard post={post} />
+          <PostCard post={post} highlight={highlight} />
         </li>
       ))}
     </ol>

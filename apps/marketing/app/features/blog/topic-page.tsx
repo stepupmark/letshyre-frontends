@@ -7,10 +7,21 @@ import type { Post, Topic } from "@/lib/blog/post"
 import { PAGES } from "@/lib/pages"
 
 import { FeedLink } from "./components/feed-link"
+import { PendingList } from "./components/pending-list"
 import { PostCta } from "./components/post-cta"
 import { PostList } from "./components/post-list"
 import { RelatedPosts } from "./components/related-posts"
 import { TopicNav } from "./components/topic-nav"
+
+/** Who the topic's posts are written for; posts for everyone don't narrow it. */
+function readersOf(posts: readonly Post[]) {
+  const audiences = new Set(posts.map((post) => post.audience))
+  if (audiences.has("employers") && !audiences.has("candidates"))
+    return "employers"
+  if (audiences.has("candidates") && !audiences.has("employers"))
+    return "candidates"
+  return "both"
+}
 
 export function TopicPage({
   topic,
@@ -41,11 +52,16 @@ export function TopicPage({
         title={t(`topics.${topic}`)}
         description={t(`topicPage.description.${topic}`)}
       >
+        <p className="text-sm font-medium text-foreground/75">
+          {t(`topicPage.for.${readersOf(posts)}`)}
+        </p>
         <FeedLink />
       </PageHeader>
       <TopicNav topics={topics} current={topic} />
       <Container className="py-10 sm:py-14">
-        <PostList posts={posts} />
+        <PendingList>
+          <PostList posts={posts} />
+        </PendingList>
       </Container>
       <RelatedPosts title={t("topicPage.others")} posts={others} />
       <PostCta audience="everyone" />

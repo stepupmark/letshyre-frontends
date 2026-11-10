@@ -29,6 +29,8 @@
     "published": "Publié le {{date}}",
     "updated": "Mis à jour le {{date}}",
     "readTime": "{{count}} min de lecture",
+    "timeLeft": "Encore {{count}} min",
+    "almostDone": "Presque fini",
     "allPosts": "Tous les articles",
     "backToTop": "Retour en haut",
     "toc": "Sur cette page",
@@ -43,6 +45,9 @@
     "copyLink": "Copier le lien",
     "copied": "Lien copié",
     "related": "À lire ensuite",
+    "sources": "Sources",
+    "sourceQuote": "« {{text}} »",
+    "subscribe": "Conseils recrutement et carrière par e-mail",
     "neighbours": "Plus sur ce thème",
     "older": "Article précédent",
     "newer": "Article suivant"
@@ -80,10 +85,25 @@
     "source": "Source",
     "play": "Lire la vidéo : {{title}}",
     "zoom": "Agrandir l’image",
-    "close": "Fermer"
+    "close": "Fermer",
+    "feature": {
+      "employers": {
+        "title": "Faites passer un entretien à chaque candidat avant de le rencontrer",
+        "description": "LetsHyre fait passer à chaque candidat un entretien IA adapté au poste et donne à votre équipe une grille à comparer."
+      },
+      "candidates": {
+        "title": "Montrez aux employeurs comment vous travaillez, pas seulement ce que vous avez fait",
+        "description": "Passez un entretien IA adapté au poste, et les employeurs qui recrutent pour votre métier voient votre grille et l’enregistrement."
+      }
+    }
   },
   "topicPage": {
     "metaTitle": "{{topic}}, Blog LetsHyre | letshyre.ai",
+    "for": {
+      "employers": "Pour les employeurs",
+      "candidates": "Pour les professionnels",
+      "both": "Pour les employeurs et les professionnels"
+    },
     "description": {
       "interviewing": "Préparer, mener et noter des entretiens qui comparent les candidats sur des preuves, pour ceux qui recrutent.",
       "hiring": "Décrire un poste, trouver des candidats et décider qui recruter, du premier brief à l'offre.",

@@ -59,6 +59,10 @@ the marketing site is already prerendered on a static host with hash-based CSP (
 - **The index pages, ten posts then nine a page.** `/<lang>/blogs/page/<n>` is prerendered, never
   infinite scroll, so every post stays a crawlable link. Each page also carries every post's title
   and description, so search on it runs in the browser across the whole blog.
+- **Sources are listed, not just linked.** The parser collects every external link and `<Stat>`
+  source in reading order; the post numbers them in the text and lists them at the end.
+- **Each blog route loads only its own page.** The Vite config marks the feature's `index.ts` as
+  free of side effects, so a post doesn't ship the index's search and pagination, or the reverse.
 - **Authors are optional.** `app/lib/blog/authors.ts` lists the people who sign posts; an unsigned
   post is the team's and its structured data names the organization.
 - **Photos become responsive at build time.** A PNG, JPEG or WebP imported by a post is turned into

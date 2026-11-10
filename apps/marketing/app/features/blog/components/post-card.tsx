@@ -5,10 +5,17 @@ import { Link } from "react-router"
 import { postPath } from "@/lib/blog/paths"
 import type { PostSummary } from "@/lib/blog/search"
 
+import { Highlight } from "./highlight"
 import { PostCover } from "./post-cover"
 import { PostFacts } from "./post-facts"
 
-export function PostCard({ post }: { post: PostSummary }) {
+export function PostCard({
+  post,
+  highlight,
+}: {
+  post: PostSummary
+  highlight?: readonly string[]
+}) {
   const { t } = useTranslation("blog")
   const lang = useLocale()
 
@@ -25,11 +32,11 @@ export function PostCard({ post }: { post: PostSummary }) {
             prefetch="intent"
             className="outline-none after:absolute after:inset-0"
           >
-            {post.title}
+            <Highlight text={post.title} words={highlight} />
           </Link>
         </h3>
         <p className="line-clamp-3 text-sm text-pretty text-muted-foreground">
-          {post.description}
+          <Highlight text={post.description} words={highlight} />
         </p>
         <div className="mt-auto pt-2">
           <PostFacts post={post} variant="short" />

@@ -10,7 +10,7 @@ import { Image, type ImageSource } from "./image"
  * scrolling sideways where the screen is narrower. A native dialog, so focus, Esc and the
  * backdrop come from the browser.
  */
-export function FigureZoom({
+export default function FigureZoom({
   src,
   srcDark,
   alt,

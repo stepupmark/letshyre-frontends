@@ -1,17 +1,24 @@
+import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { useState } from "react"
+import { lazy, Suspense } from "react"
+import { Link } from "react-router"
 
 import { Container, PageHeader } from "@/components/section"
 import { postsOnPage, type Topic } from "@/lib/blog/post"
-import { type PostSummary, searchPosts } from "@/lib/blog/search"
+import { PAGES } from "@/lib/pages"
+import { type PostSummary, searchPosts, searchWords } from "@/lib/blog/search"
 
 import { FeedLink } from "./components/feed-link"
 import { IndexPagination } from "./components/index-pagination"
+import { PendingList } from "./components/pending-list"
 import { PostCta } from "./components/post-cta"
 import { PostList } from "./components/post-list"
 import { PostSearch } from "./components/post-search"
-import { SearchResults } from "./components/search-results"
 import { TopicNav } from "./components/topic-nav"
+import { useSearchQuery } from "./hooks/use-search-query"
+
+// shown only once someone types, so it loads then
+const SearchResults = lazy(() => import("./components/search-results"))
 
 export function BlogIndexPage({
   posts,
@@ -26,14 +33,31 @@ export function BlogIndexPage({
 }) {
   const { t } = useTranslation("blog")
   const lang = useLocale()
-  const [query, setQuery] = useState("")
+  const [query, setQuery] = useSearchQuery()
   const searching = query.trim() !== ""
 
   return (
     <>
       <PageHeader
         variant="masthead"
-        eyebrow={t("index.eyebrow")}
+        eyebrow={
+          page === 1 ? (
+            t("index.eyebrow")
+          ) : (
+            <>
+              <Link
+                to={localePath(lang, PAGES.blog.path)}
+                className="hover:underline"
+              >
+                {t("index.eyebrow")}
+              </Link>
+              <span aria-hidden className="mx-2 text-muted-foreground">
+                /
+              </span>
+              {t("index.page", { page })}
+            </>
+          )
+        }
         title={page === 1 ? t("index.title") : t("index.pageTitle", { page })}
         description={t("index.description")}
       >
@@ -43,16 +67,23 @@ export function BlogIndexPage({
       <TopicNav topics={topics} />
       <Container className="flex flex-col gap-12 py-10 sm:py-14">
         {searching ? (
-          <SearchResults
-            query={query.trim()}
-            posts={searchPosts(posts, query, lang)}
-            onClear={() => {
-              setQuery("")
-            }}
-          />
+          <Suspense>
+            <SearchResults
+              query={query.trim()}
+              words={searchWords(query, lang)}
+              posts={searchPosts(posts, query, lang, (topic) =>
+                t(`topics.${topic}`)
+              )}
+              onClear={() => {
+                setQuery("")
+              }}
+            />
+          </Suspense>
         ) : (
           <>
-            <PostList posts={postsOnPage(posts, page)} lead={page === 1} />
+            <PendingList>
+              <PostList posts={postsOnPage(posts, page)} lead={page === 1} />
+            </PendingList>
             <IndexPagination page={page} pages={pages} />
           </>
         )}

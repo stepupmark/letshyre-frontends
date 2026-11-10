@@ -29,6 +29,8 @@
     "published": "Publicado el {{date}}",
     "updated": "Actualizado el {{date}}",
     "readTime": "{{count}} min de lectura",
+    "timeLeft": "Quedan {{count}} min",
+    "almostDone": "Casi has terminado",
     "allPosts": "Todos los artículos",
     "backToTop": "Volver arriba",
     "toc": "En esta página",
@@ -43,6 +45,9 @@
     "copyLink": "Copiar enlace",
     "copied": "Enlace copiado",
     "related": "Sigue leyendo",
+    "sources": "Fuentes",
+    "sourceQuote": "«{{text}}»",
+    "subscribe": "Consejos de contratación y carrera por correo",
     "neighbours": "Más sobre este tema",
     "older": "Artículo anterior",
     "newer": "Artículo más reciente"
@@ -80,10 +85,25 @@
     "source": "Fuente",
     "play": "Reproducir vídeo: {{title}}",
     "zoom": "Ampliar imagen",
-    "close": "Cerrar"
+    "close": "Cerrar",
+    "feature": {
+      "employers": {
+        "title": "Entrevista a cada candidato antes de conocerlo",
+        "description": "LetsHyre hace una entrevista con IA basada en el puesto a cada candidato y da a tu equipo una evaluación para comparar."
+      },
+      "candidates": {
+        "title": "Muestra a las empresas cómo trabajas, no solo lo que has hecho",
+        "description": "Haz una entrevista con IA basada en el puesto y deja que las empresas que contratan para tu puesto vean tu evaluación y la grabación."
+      }
+    }
   },
   "topicPage": {
     "metaTitle": "{{topic}}, Blog de LetsHyre | letshyre.ai",
+    "for": {
+      "employers": "Para empresas",
+      "candidates": "Para profesionales",
+      "both": "Para empresas y profesionales"
+    },
     "description": {
       "interviewing": "Cómo planificar, hacer y puntuar entrevistas que comparan a los candidatos con evidencias, para quienes contratan.",
       "hiring": "Cómo describir puestos, encontrar personas y decidir a quién contratar, desde el primer encargo hasta la oferta.",

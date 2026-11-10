@@ -32,7 +32,7 @@ export function PostCover({
   return (
     <div
       className={cn(
-        "grid aspect-16/10 place-items-center overflow-hidden bg-brand-muted",
+        "grid aspect-16/10 place-items-center overflow-hidden bg-brand-muted *:transition-transform *:duration-300 *:ease-out group-hover:*:scale-103 motion-reduce:*:transition-none motion-reduce:group-hover:*:scale-100",
         className
       )}
     >

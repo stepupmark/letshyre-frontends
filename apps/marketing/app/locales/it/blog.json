@@ -29,6 +29,8 @@
     "published": "Pubblicato il {{date}}",
     "updated": "Aggiornato il {{date}}",
     "readTime": "{{count}} min di lettura",
+    "timeLeft": "Ancora {{count}} min",
+    "almostDone": "Quasi finito",
     "allPosts": "Tutti gli articoli",
     "backToTop": "Torna all'inizio",
     "toc": "In questa pagina",
@@ -43,6 +45,9 @@
     "copyLink": "Copia link",
     "copied": "Link copiato",
     "related": "Continua a leggere",
+    "sources": "Fonti",
+    "sourceQuote": "«{{text}}»",
+    "subscribe": "Consigli su assunzioni e carriera via email",
     "neighbours": "Altro su questo argomento",
     "older": "Articolo precedente",
     "newer": "Articolo successivo"
@@ -80,10 +85,25 @@
     "source": "Fonte",
     "play": "Riproduci video: {{title}}",
     "zoom": "Ingrandisci immagine",
-    "close": "Chiudi"
+    "close": "Chiudi",
+    "feature": {
+      "employers": {
+        "title": "Fai un colloquio a ogni candidato prima di incontrarlo",
+        "description": "LetsHyre fa a ogni candidato un colloquio con IA basato sul ruolo e dà al tuo team una valutazione da confrontare."
+      },
+      "candidates": {
+        "title": "Mostra alle aziende come lavori, non solo cosa hai fatto",
+        "description": "Fai un colloquio con IA basato sul ruolo e lascia che le aziende che assumono per il tuo ruolo vedano la tua valutazione e la registrazione."
+      }
+    }
   },
   "topicPage": {
     "metaTitle": "{{topic}}, Blog di LetsHyre | letshyre.ai",
+    "for": {
+      "employers": "Per le aziende",
+      "candidates": "Per i professionisti",
+      "both": "Per aziende e professionisti"
+    },
     "description": {
       "interviewing": "Come preparare, condurre e valutare colloqui che confrontano i candidati sulle prove, per chi assume.",
       "hiring": "Come descrivere i ruoli, trovare persone e decidere chi assumere, dal primo brief all'offerta.",

@@ -56,7 +56,7 @@ const THIN_TOPIC = 4
 export function topicData(lang: string | undefined, topic: string | undefined) {
   const { messages } = pageData(lang, "blog")
   const all = postsIn(lang as Locale)
-  const posts = all.filter((post) => post.topic === topic)
+  const posts = featuredFirst(all.filter((post) => post.topic === topic))
   const current = posts[0]?.topic
   if (!current) throw notFound()
   return {

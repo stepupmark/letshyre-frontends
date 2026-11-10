@@ -2,6 +2,7 @@ import { cn } from "@workspace/ui/lib/utils"
 import type { ComponentProps } from "react"
 import { Link } from "react-router"
 
+import { SourceMark } from "../post-sources"
 import { SectionHeading } from "./heading"
 
 export const prose = {
@@ -31,9 +32,12 @@ export const prose = {
         {children}
       </Link>
     ) : (
-      <a href={href} rel="noopener" className="text-link" {...props}>
-        {children}
-      </a>
+      <>
+        <a href={href} rel="noopener" className="text-link" {...props}>
+          {children}
+        </a>
+        <SourceMark url={href} />
+      </>
     ),
   blockquote: (props: ComponentProps<"blockquote">) => (
     <blockquote

@@ -9,7 +9,7 @@ import { NewsletterFields } from "./newsletter-fields"
 // Suspense needs inline scripts the CSP blocks, so it loads after hydration
 const SubscribeForm = lazy(() => import("./subscribe-form"))
 
-export function NewsletterForm() {
+export function NewsletterForm({ title }: { title?: string }) {
   const { t } = useTranslation("common")
   const id = useId()
   const hydrated = useHydrated()
@@ -19,7 +19,7 @@ export function NewsletterForm() {
     <div className="grid gap-4 rounded-2xl border bg-background p-5 sm:p-6 md:grid-cols-2 md:items-center md:gap-8">
       <div className="flex flex-col gap-1">
         <h2 id={`${id}-title`} className="text-sm font-semibold">
-          {t("footer.stayUpdated")}
+          {title ?? t("footer.stayUpdated")}
         </h2>
         <p id={`${id}-desc`} className="text-sm text-muted-foreground">
           {t("footer.newsletterDesc")}

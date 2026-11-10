@@ -29,6 +29,8 @@
     "published": "Published {{date}}",
     "updated": "Updated {{date}}",
     "readTime": "{{count}} min read",
+    "timeLeft": "{{count}} min left",
+    "almostDone": "Almost done",
     "allPosts": "All posts",
     "backToTop": "Back to top",
     "toc": "On this page",
@@ -43,6 +45,9 @@
     "copyLink": "Copy link",
     "copied": "Link copied",
     "related": "Keep reading",
+    "sources": "Sources",
+    "sourceQuote": "“{{text}}”",
+    "subscribe": "Get hiring and career tips by email",
     "neighbours": "More in this topic",
     "older": "Older post",
     "newer": "Newer post"
@@ -80,10 +85,25 @@
     "source": "Source",
     "play": "Play video: {{title}}",
     "zoom": "Enlarge image",
-    "close": "Close"
+    "close": "Close",
+    "feature": {
+      "employers": {
+        "title": "Interview every candidate before you meet them",
+        "description": "LetsHyre runs a role-based AI interview with each candidate and gives your team a scorecard to compare."
+      },
+      "candidates": {
+        "title": "Show employers how you work, not just what you did",
+        "description": "Take a role-based AI interview and let employers hiring for your role see your scorecard and recording."
+      }
+    }
   },
   "topicPage": {
     "metaTitle": "{{topic}}, LetsHyre blog | letshyre.ai",
+    "for": {
+      "employers": "For employers",
+      "candidates": "For professionals",
+      "both": "For employers and professionals"
+    },
     "description": {
       "interviewing": "How to plan, run and score interviews that compare candidates on evidence, written for the people who hire.",
       "hiring": "How to write roles, find people and decide who to hire, from the first brief to the offer.",

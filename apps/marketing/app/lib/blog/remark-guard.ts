@@ -3,6 +3,7 @@
 export const MDX_COMPONENTS = [
   "Callout",
   "Compare",
+  "Feature",
   "Figure",
   "Quote",
   "Stat",
@@ -16,6 +17,7 @@ type Component = (typeof MDX_COMPONENTS)[number]
 // props a component can't render without; Figure's size stops the page shifting as images load
 const REQUIRED: Partial<Record<Component, string[]>> = {
   Compare: ["avoid", "prefer"],
+  Feature: ["audience"],
   Figure: ["src", "alt", "width", "height"],
   Quote: ["by"],
   Stat: ["value", "label", "source", "cite"],
@@ -73,6 +75,11 @@ function problemOf(node: Node): string | undefined {
         !["note", "tip", "warning"].includes(String(attr("tone")))
       )
         return "<Callout> tone is note, tip or warning"
+      if (
+        name === "Feature" &&
+        !["employers", "candidates"].includes(String(attr("audience")))
+      )
+        return "<Feature> audience is employers or candidates"
       return undefined
     }
     default:

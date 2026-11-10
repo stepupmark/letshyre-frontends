@@ -29,6 +29,8 @@
     "published": "Veröffentlicht am {{date}}",
     "updated": "Aktualisiert am {{date}}",
     "readTime": "{{count}} Min. Lesezeit",
+    "timeLeft": "Noch {{count}} Min.",
+    "almostDone": "Fast geschafft",
     "allPosts": "Alle Beiträge",
     "backToTop": "Nach oben",
     "toc": "Auf dieser Seite",
@@ -43,6 +45,9 @@
     "copyLink": "Link kopieren",
     "copied": "Link kopiert",
     "related": "Weiterlesen",
+    "sources": "Quellen",
+    "sourceQuote": "„{{text}}“",
+    "subscribe": "Tipps zu Recruiting und Karriere per E-Mail",
     "neighbours": "Mehr zu diesem Thema",
     "older": "Älterer Beitrag",
     "newer": "Neuerer Beitrag"
@@ -80,10 +85,25 @@
     "source": "Quelle",
     "play": "Video abspielen: {{title}}",
     "zoom": "Bild vergrößern",
-    "close": "Schließen"
+    "close": "Schließen",
+    "feature": {
+      "employers": {
+        "title": "Führen Sie mit jeder Kandidatin und jedem Kandidaten ein Interview, bevor Sie sich treffen",
+        "description": "LetsHyre führt mit allen Kandidaten ein rollenbasiertes KI-Interview und gibt Ihrem Team eine Bewertung zum Vergleichen."
+      },
+      "candidates": {
+        "title": "Zeigen Sie Arbeitgebern, wie Sie arbeiten, nicht nur, was Sie getan haben",
+        "description": "Machen Sie ein rollenbasiertes KI-Interview, und Arbeitgeber, die für Ihre Rolle einstellen, sehen Ihre Bewertung und die Aufzeichnung."
+      }
+    }
   },
   "topicPage": {
     "metaTitle": "{{topic}}, LetsHyre-Blog | letshyre.ai",
+    "for": {
+      "employers": "Für Arbeitgeber",
+      "candidates": "Für Fachkräfte",
+      "both": "Für Arbeitgeber und Fachkräfte"
+    },
     "description": {
       "interviewing": "Wie Sie Interviews planen, führen und bewerten, damit Sie Kandidaten anhand von Belegen vergleichen.",
       "hiring": "Wie Sie Rollen beschreiben, Menschen finden und entscheiden, wen Sie einstellen, vom Briefing bis zum Angebot.",

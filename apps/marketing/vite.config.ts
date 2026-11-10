@@ -9,6 +9,7 @@ import { parseEnv } from "./app/lib/env.schema.ts"
 
 const compileMdx = mdx(mdxOptions)
 const POST_ASSET = /[\\/]content[\\/]blog[\\/]/
+const BLOG_BARREL = /[\\/]features[\\/]blog[\\/]index\.ts$/
 const POST_PHOTO = /[\\/]content[\\/]blog[\\/].+\.(png|jpe?g|webp)$/
 
 export default defineConfig(({ mode }) => {
@@ -20,6 +21,12 @@ export default defineConfig(({ mode }) => {
     build: {
       assetsInlineLimit: (file: string) =>
         POST_ASSET.test(file) ? false : undefined,
+      // lets each blog route take only its own page from the feature's barrel
+      rolldownOptions: {
+        treeshake: {
+          moduleSideEffects: (id: string) => !BLOG_BARREL.test(id),
+        },
+      },
     },
     plugins: [
       tailwindcss(),

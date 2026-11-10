@@ -29,6 +29,8 @@
     "published": "게시일: {{date}}",
     "updated": "업데이트: {{date}}",
     "readTime": "{{count}}분 소요",
+    "timeLeft": "{{count}}분 남음",
+    "almostDone": "거의 다 읽었어요",
     "allPosts": "모든 글",
     "backToTop": "맨 위로",
     "toc": "이 페이지의 내용",
@@ -43,6 +45,9 @@
     "copyLink": "링크 복사",
     "copied": "링크를 복사했습니다",
     "related": "이어서 읽기",
+    "sources": "출처",
+    "sourceQuote": "‘{{text}}’",
+    "subscribe": "채용과 커리어 팁을 이메일로 받아 보세요",
     "neighbours": "이 주제의 다른 글",
     "older": "이전 글",
     "newer": "다음 글"
@@ -80,10 +85,25 @@
     "source": "출처",
     "play": "동영상 재생: {{title}}",
     "zoom": "이미지 확대",
-    "close": "닫기"
+    "close": "닫기",
+    "feature": {
+      "employers": {
+        "title": "만나기 전에 모든 지원자를 인터뷰하세요",
+        "description": "LetsHyre는 모든 지원자와 직무 기반 AI 인터뷰를 진행하고, 팀이 비교할 수 있는 평가표를 제공합니다."
+      },
+      "candidates": {
+        "title": "한 일만이 아니라 일하는 방식을 보여 주세요",
+        "description": "직무 기반 AI 인터뷰를 보면, 해당 직무로 채용 중인 기업이 평가표와 녹화를 볼 수 있습니다."
+      }
+    }
   },
   "topicPage": {
     "metaTitle": "{{topic}}, LetsHyre 블로그 | letshyre.ai",
+    "for": {
+      "employers": "기업용",
+      "candidates": "직장인용",
+      "both": "기업과 직장인용"
+    },
     "description": {
       "interviewing": "근거로 지원자를 비교하는 면접을 계획하고 진행하고 평가하는 방법. 채용하는 사람을 위한 글입니다.",
       "hiring": "직무를 정의하고, 사람을 찾고, 누구를 채용할지 결정하는 방법. 첫 요청부터 오퍼까지.",

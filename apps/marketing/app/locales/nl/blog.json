@@ -29,6 +29,8 @@
     "published": "Gepubliceerd op {{date}}",
     "updated": "Bijgewerkt op {{date}}",
     "readTime": "{{count}} min leestijd",
+    "timeLeft": "Nog {{count}} min",
+    "almostDone": "Bijna klaar",
     "allPosts": "Alle artikelen",
     "backToTop": "Terug naar boven",
     "toc": "Op deze pagina",
@@ -43,6 +45,9 @@
     "copyLink": "Link kopiëren",
     "copied": "Link gekopieerd",
     "related": "Verder lezen",
+    "sources": "Bronnen",
+    "sourceQuote": "‘{{text}}’",
+    "subscribe": "Tips over werving en loopbaan per e-mail",
     "neighbours": "Meer over dit onderwerp",
     "older": "Ouder bericht",
     "newer": "Nieuwer bericht"
@@ -80,10 +85,25 @@
     "source": "Bron",
     "play": "Video afspelen: {{title}}",
     "zoom": "Afbeelding vergroten",
-    "close": "Sluiten"
+    "close": "Sluiten",
+    "feature": {
+      "employers": {
+        "title": "Interview elke kandidaat voordat u diegene ontmoet",
+        "description": "LetsHyre houdt met elke kandidaat een AI-interview voor de rol en geeft uw team een scorekaart om te vergelijken."
+      },
+      "candidates": {
+        "title": "Laat werkgevers zien hoe u werkt, niet alleen wat u deed",
+        "description": "Doe een AI-interview voor uw rol en laat werkgevers die voor die rol werven uw scorekaart en opname zien."
+      }
+    }
   },
   "topicPage": {
     "metaTitle": "{{topic}}, LetsHyre-blog | letshyre.ai",
+    "for": {
+      "employers": "Voor werkgevers",
+      "candidates": "Voor professionals",
+      "both": "Voor werkgevers en professionals"
+    },
     "description": {
       "interviewing": "Hoe je gesprekken plant, voert en scoort zodat je kandidaten op bewijs vergelijkt, voor wie aanneemt.",
       "hiring": "Hoe je functies beschrijft, mensen vindt en beslist wie je aanneemt, van de eerste briefing tot het aanbod.",
