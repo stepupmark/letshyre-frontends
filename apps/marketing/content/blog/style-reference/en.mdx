@@ -40,12 +40,12 @@ Use `###` only inside a `##` section, never on its own.
 />
 
 <Steps>
-<Step title="Write the steps as actions">
-Start each one with a verb, and keep it to one or two sentences.
-</Step>
-<Step title="Number only real sequences">
-If the order doesn't matter, use a bulleted list instead.
-</Step>
+  <Step title="Write the steps as actions">
+    Start each one with a verb, and keep it to one or two sentences.
+  </Step>
+  <Step title="Number only real sequences">
+    If the order doesn't matter, use a bulleted list instead.
+  </Step>
 </Steps>
 
 <Compare
@@ -63,13 +63,51 @@ If the order doesn't matter, use a bulleted list instead.
 />
 
 <Callout tone="tip">
-Use a callout for something the reader might miss: a shortcut, a caveat, a common mistake. One or
-two per post at most.
+  Use a callout for something the reader might miss: a shortcut, a caveat, a
+  common mistake. One or two per post at most.
 </Callout>
 
 <Quote by="Name of the person" role="Their role, company">
-Quote a real person only with their agreement, and only in their own words.
+  Quote a real person only with their agreement, and only in their own words.
 </Quote>
+
+## Explain a word without leaving the page
+
+Wrap the first use of a word from the glossary, like <Term id="ctc">CTC</Term>, and readers can
+hover or tap it for the definition. Add a new word to `content/glossary` first.
+
+A side note that would break the sentence goes in a footnote.[^aside] Use them sparingly.
+
+[^aside]: Footnotes open beside the text, and are listed again at the end of the post.
+
+## Give readers something to do
+
+<Checklist title="Before you publish">
+  <Check>The opening paragraph answers the headline.</Check>
+  <Check>Every number links to where it came from.</Check>
+  <Check>`pnpm blog:check` shows no errors.</Check>
+</Checklist>
+
+A calculator from the tool set, when the post is about a number the reader can work out for
+themselves:
+
+<Tool name="hire-cost" />
+
+Offer a template beside the post with `<Download src={file} title="…" />`, after importing the
+file like an image.
+
+## Questions people ask
+
+<Faq>
+  <Question q="When should a post have a FAQ?">
+    When readers really do ask these questions, and each answer stands on its
+    own in two or three sentences. Search engines can show them from the page's
+    structured data.
+  </Question>
+  <Question q="Can the answers have links?">
+    Yes, any Markdown works inside an answer.
+  </Question>
+</Faq>
 
 ## Point to LetsHyre where the text leads there
 

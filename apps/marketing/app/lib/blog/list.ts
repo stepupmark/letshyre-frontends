@@ -12,6 +12,25 @@ export const TOPICS = [
 ] as const
 export type Topic = (typeof TOPICS)[number]
 
+export const TAGS = [
+  "ai",
+  "resumes",
+  "interviews",
+  "salary",
+  "india",
+  "job-search",
+  "hiring-process",
+  "skills",
+  "career-growth",
+] as const
+export type Tag = (typeof TAGS)[number]
+
+export const LENGTHS = ["quick", "standard", "long"] as const
+export type Length = (typeof LENGTHS)[number]
+
+export const lengthOf = (minutes: number): Length =>
+  minutes < 5 ? "quick" : minutes < 10 ? "standard" : "long"
+
 const today = () => new Date().toISOString().slice(0, 10)
 
 /** Built and indexed: not a draft, and its UTC publish date has come. */
@@ -51,6 +70,10 @@ export function withBlogIndex(
 /** The topics these posts cover, in the order the index lists them. */
 export const topicsOf = (posts: readonly Post[]): Topic[] =>
   TOPICS.filter((topic) => posts.some((post) => post.topic === topic))
+
+/** Each tag these posts carry, in the order of TAGS. */
+export const tagsOf = (posts: readonly Pick<Post, "tags">[]): Tag[] =>
+  TAGS.filter((tag) => posts.some((post) => post.tags.includes(tag)))
 
 export const topicCounts = (posts: readonly Post[]) =>
   topicsOf(posts).map((topic) => ({

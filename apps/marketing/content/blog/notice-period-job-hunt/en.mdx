@@ -5,12 +5,14 @@ description: A 60 or 90-day notice period doesn't have to cost you good offers. 
 publishedAt: 2026-11-09
 audience: candidates
 topic: careers
+tags: [job-search, india, salary]
 ---
 
 import timeline from "./notice-timeline.svg"
 import timelineDark from "./notice-timeline-dark.svg"
 import buyout from "./buyout-math.svg"
 import buyoutDark from "./buyout-math-dark.svg"
+import offers from "./offer-comparison.csv"
 
 You've handed in your resignation. Your manager has stopped inviting you to planning meetings. And
 somewhere between the farewell lunch and your last day, you're supposed to find your next job.
@@ -23,12 +25,21 @@ Here's how to make the long notice period work for you instead of against you.
 
 ## First, read your own contract
 
-Notice periods in India are set by your contract, not by one national rule. Before you plan anything,
-find your appointment letter and any later policy updates, and check three things:
+<Term id="notice-period">Notice periods</Term> in India are set by your
+contract, not by one national rule. Before you plan anything, find your
+appointment letter and any later policy updates, and check three things:
 
-- **How long your notice is**, and whether it changes with seniority or after confirmation.
-- **Whether early release is allowed**, and who can approve it.
-- **How a buyout is calculated**, if your employer allows one at all: on basic pay or gross pay.
+<Checklist title="Check your contract for">
+  <Check>
+    **How long your notice is**, and whether it changes with seniority or after
+    confirmation.
+  </Check>
+  <Check>**Whether early release is allowed**, and who can approve it.</Check>
+  <Check>
+    **How a buyout is calculated**, if your employer allows one at all: on basic
+    pay or gross pay.
+  </Check>
+</Checklist>
 
 <Callout tone="warning">
   This post is general guidance, not legal advice. If your contract is unclear,
@@ -69,8 +80,8 @@ expect to wait. What they hate is surprises.
 
 ### The last month, lock it down
 
-Once you have an offer, the work shifts to making sure the start date holds. Get your relieving
-date confirmed by your current employer, agree any buyout in writing, and make sure your new
+Once you have an offer, the work shifts to making sure the start date holds. Get your <Term id="relieving-letter">relieving
+date</Term> confirmed by your current employer, agree any buyout in writing, and make sure your new
 employer knows the exact date you can join.
 
 ## Lead with your date, not your notice
@@ -91,7 +102,7 @@ ways to lose goodwill with a new employer.
 
 ## Understand the buyout before you're asked about it
 
-Some employers let you leave early by paying for the days you don't serve. Some new employers will
+Some employers let you leave early by paying for the days you don't serve, a <Term id="notice-buyout">notice buyout</Term>. Some new employers will
 offer to cover that cost. The usual calculation is simple, but the details matter.
 
 <Figure
@@ -102,6 +113,10 @@ offer to cover that cost. The usual calculation is simple, but the details matte
   height={232}
   caption="An example only. Your employer's policy decides the formula, and whether a buyout is allowed at all."
 />
+
+Try it with your own dates. Leave the joining date empty to see when your notice ends.
+
+<Tool name="notice-buyout" />
 
 A few things worth knowing before you agree to one:
 
@@ -130,6 +145,33 @@ A long notice period gives you something most job seekers don't have: time to co
     can fix the pay and leave every other reason you wanted to go untouched.
   </Step>
 </Steps>
+
+<Download src={offers} title="Offer comparison sheet" />
+
+## Questions people ask
+
+<Faq>
+  <Question q="Can I job-hunt while serving my notice period?">
+    Yes. Your contract covers the work you owe your current employer, not your
+    search. Do the handover properly, interview outside your working hours where
+    you can, and be open with recruiters about the date you can join.
+  </Question>
+  <Question q="Does my employer have to accept a notice buyout?">
+    Usually not. A buyout is normally at your employer's discretion, and their
+    policy decides the formula. Ask HR in writing, and get the answer in writing
+    too.
+  </Question>
+  <Question q="How is a notice buyout calculated?">
+    A common formula is the days you don't serve times a day's pay, with a day's
+    pay being a month's pay divided by 30. Whether that's basic or gross pay
+    comes from your employer's policy.
+  </Question>
+  <Question q="Should I tell recruiters my notice period or my joining date?">
+    Your joining date, once you've resigned. "I can join on 14 January" gives a
+    recruiter something to plan around. "My notice is 90 days" makes them count
+    from today.
+  </Question>
+</Faq>
 
 ## Make your experience visible while you wait
 

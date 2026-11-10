@@ -6,8 +6,17 @@ import { join, relative, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { parseArgs } from "node:util"
 
+import { namesOf } from "../app/lib/blog/glossary.ts"
+import { postPath } from "../app/lib/blog/paths.ts"
 import { parsePost } from "../app/lib/blog/post.ts"
-import { BLOG_DIR, readyPaths } from "../app/lib/readiness.ts"
+import { readGuides, readPosts, readTerms } from "../app/lib/blog/read-posts.ts"
+import {
+  BLOG_DIR,
+  checkTerms,
+  GLOSSARY_DIR,
+  GUIDES_DIR,
+  readyPaths,
+} from "../app/lib/readiness.ts"
 import { type Image, type Issue, lintPost } from "./blog-lint.ts"
 
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)))
@@ -90,8 +99,25 @@ const folders = slugs.length
       statSync(join(blogDir, name)).isDirectory()
     )
 const paths = new Set(readyPaths(ROOT, true))
+const allPosts = readPosts(blogDir, true)
+const terms = readTerms(join(ROOT, GLOSSARY_DIR))
 let errors = 0
 let warnings = 0
+let suggestions = 0
+
+try {
+  checkTerms(allPosts, terms)
+  const slugsByLang = new Set(allPosts.map((p) => `${p.lang}/${p.slug}`))
+  for (const guide of readGuides(join(ROOT, GUIDES_DIR)))
+    for (const slug of guide.reading)
+      if (!slugsByLang.has(`${guide.lang}/${slug}`))
+        throw new Error(
+          `${GUIDES_DIR}/${guide.topic}/${guide.lang}.mdx: reading lists "${slug}", which has no ${guide.lang} post`
+        )
+} catch (error) {
+  console.log(`error  ${(error as Error).message}`)
+  errors++
+}
 
 for (const slug of folders) {
   const dir = join(blogDir, slug)
@@ -107,6 +133,16 @@ for (const slug of folders) {
       paths,
       image: (image) => readImage(join(dir, image)),
       has: (other) => existsSync(join(dir, other)),
+      terms: terms
+        .filter((term) => name === `${term.lang}.mdx`)
+        .map((term) => ({ id: term.id, names: namesOf(term) })),
+      posts: allPosts
+        .filter((p) => name === `${p.lang}.mdx` && p.slug !== slug)
+        .map((p) => ({
+          path: `/${p.lang}${postPath(p.slug)}`,
+          title: p.title,
+          tags: p.tags,
+        })),
     })
     if (flags.links && !issues.some((issue) => issue.level === "error")) {
       const urls = parsePost(file, source).sources.map((source) => source.url)
@@ -116,22 +152,23 @@ for (const slug of folders) {
 
     for (const { level, message, line } of issues) {
       if (level === "error") errors++
-      else warnings++
+      else if (level === "warning") warnings++
+      else suggestions++
       if (flags.ci)
         console.log(
-          `::${level} file=${relative(REPO, file).replaceAll("\\", "/")}${line ? `,line=${line}` : ""}::${message}`
+          `::${level === "suggestion" ? "notice" : level} file=${relative(REPO, file).replaceAll("\\", "/")}${line ? `,line=${line}` : ""}::${message}`
         )
       else
         console.log(
-          `${relative(ROOT, file)}${line ? `:${line}` : ""}  ${level === "error" ? "error  " : "warning"}  ${message}`
+          `${relative(ROOT, file)}${line ? `:${line}` : ""}  ${level.padEnd(10)}  ${message}`
         )
     }
   }
 }
 
 console.log(
-  errors || warnings
-    ? `\n${errors} errors, ${warnings} warnings. Fix the errors before merging; warnings are for the reviewer.`
+  errors || warnings || suggestions
+    ? `\n${errors} errors, ${warnings} warnings, ${suggestions} suggestions. Fix the errors before merging; the rest are for the writer and reviewer.`
     : "All posts pass."
 )
 process.exitCode = errors ? 1 : 0

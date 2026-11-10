@@ -4,7 +4,11 @@
     "description": "기업을 위한 채용 조언, 전문가를 위한 커리어 조언, 채용 트렌드, LetsHyre 팀의 제품 소식.",
     "pageTitle": "블로그 {{page}}페이지 | letshyre.ai",
     "crumb": "블로그",
-    "name": "LetsHyre 블로그"
+    "name": "LetsHyre 블로그",
+    "tagTitle": "{{tag}} 관련 글, LetsHyre 블로그 | letshyre.ai",
+    "archiveTitle": "블로그 아카이브, 월별 전체 글 | letshyre.ai",
+    "glossaryTitle": "채용 용어집: CTC, 퇴사 통보 기간 등 | letshyre.ai",
+    "termTitle": "{{term}}, 채용 용어집 | letshyre.ai"
   },
   "index": {
     "eyebrow": "블로그",
@@ -27,7 +31,13 @@
     "resultsTitle": "검색 결과",
     "searching": "글을 검색하는 중…",
     "searchFailed": "검색을 불러오지 못했습니다. 연결을 확인하고 다시 시도하세요.",
-    "retry": "다시 시도"
+    "retry": "다시 시도",
+    "browse": "블로그 둘러보기",
+    "archive": "아카이브",
+    "glossary": "용어집",
+    "saved": "저장한 글",
+    "length": "읽는 시간",
+    "noLengthResults": "아직 이 길이의 글이 없습니다"
   },
   "post": {
     "published": "게시일: {{date}}",
@@ -54,7 +64,28 @@
     "neighbours": "이 주제의 다른 글",
     "older": "이전 글",
     "newer": "다음 글",
-    "sourceMark": "출처 {{n}}"
+    "sourceMark": "출처 {{n}}",
+    "seriesFirst": "시리즈 1편",
+    "followSeries": "이 시리즈 구독하기",
+    "tags": "태그",
+    "listen": "듣기",
+    "pause": "일시정지",
+    "keepListening": "이어서 듣기",
+    "stopListening": "읽기 중지",
+    "save": "나중에 읽기",
+    "saved": "저장됨",
+    "savedToast": "나중에 읽도록 저장했습니다",
+    "unsavedToast": "저장한 글에서 삭제했습니다",
+    "viewSaved": "저장한 글 보기",
+    "continue": "읽던 곳부터 이어서 볼까요?",
+    "continueAction": "이어서 읽기",
+    "quoteActions": "이 인용문 공유하기",
+    "copyQuote": "인용문 복사",
+    "quoteCopied": "링크와 함께 인용문을 복사했습니다",
+    "quoteOn": "{{network}}에 인용문 공유",
+    "footnote": "주 {{n}}",
+    "footnotes": "주",
+    "backToText": "본문으로 돌아가기"
   },
   "topics": {
     "interviewing": "면접",
@@ -104,6 +135,32 @@
       "note": "참고:",
       "tip": "팁:",
       "warning": "주의:"
+    },
+    "download": "내려받을 수 있는 {{type}} 파일",
+    "checklist": {
+      "progress": "{{count}}개 중 {{done}}개 완료",
+      "download": "텍스트로 내려받기",
+      "reset": "체크 해제"
+    },
+    "hireCost": {
+      "title": "비어 있는 자리의 비용",
+      "salary": "이 직무의 연봉(₹)",
+      "daysNow": "지금 채용에 걸리는 일수",
+      "daysTarget": "줄일 수 있는 일수",
+      "perDay": "자리가 비어 있는 하루마다",
+      "extra_other": "추가로 걸리는 {{count}}일",
+      "note": "대략적인 최솟값입니다. 하루를 그 직무의 하루치 급여로 계산합니다. 기다리는 동안 놓치는 지원자는 포함하지 않았는데, 보통 그쪽 비용이 더 큽니다."
+    },
+    "noticeBuyout": {
+      "title": "퇴사 통보 기간이 끝나는 날, 그리고 일찍 떠나는 비용",
+      "resignedOn": "사직서를 내는 날",
+      "noticeDays": "퇴사 통보 기간(일)",
+      "monthlyPay": "보상액 계산에 쓰는 월급(₹)",
+      "joinOn": "입사하고 싶은 날",
+      "freeFrom": "입사 가능한 날",
+      "unserved": "근무하지 않는 일수",
+      "buyout": "보상액(세전)",
+      "note": "달력 기준 일수와 월급을 30으로 나눈 값으로 계산합니다. 실제 계산식, 기본급과 총급여 중 무엇을 쓰는지, 조기 퇴사가 가능한지는 회사 규정에 따라 정해집니다."
     }
   },
   "topicPage": {
@@ -120,6 +177,44 @@
       "trends": "채용에서 달라지는 것: 기업과 전문가가 알아야 할 데이터, 규칙, 도구.",
       "news": "LetsHyre 팀의 제품 업데이트, 출시 소식, 그 밖의 소식."
     },
-    "others": "블로그의 다른 글"
+    "others": "블로그의 다른 글",
+    "readingOrder": "이 순서로 읽어 보세요"
+  },
+  "length": {
+    "any": "모든 길이",
+    "quick": "5분 미만",
+    "standard": "5~9분",
+    "long": "10분 이상"
+  },
+  "tags": {
+    "ai": "AI",
+    "resumes": "이력서",
+    "interviews": "면접",
+    "salary": "연봉과 오퍼",
+    "india": "인도",
+    "job-search": "구직",
+    "hiring-process": "채용 절차",
+    "skills": "역량",
+    "career-growth": "커리어 성장"
+  },
+  "tagPage": {
+    "description": "LetsHyre 블로그에서 {{tag}} 태그가 붙은 모든 글입니다. 채용 조언부터 이직까지 최신 글부터 보여 드립니다."
+  },
+  "archive": {
+    "title": "아카이브",
+    "description": "블로그의 모든 글을 발행한 달별로, 최신 글부터 보여 드립니다."
+  },
+  "saved": {
+    "empty": "아직 저장한 글이 없습니다",
+    "emptyHint": "글에서 '나중에 읽기'를 누르면 여기에 나타납니다.",
+    "browse": "글 둘러보기"
+  },
+  "glossary": {
+    "title": "채용 용어집",
+    "description": "채용하거나 일을 찾을 때 만나는 용어를 CTC부터 퇴사 통보 기간 보상까지 쉽게 풀어 설명합니다.",
+    "aka": "다른 이름: {{names}}",
+    "mentionedIn": "이 용어가 나오는 글",
+    "readMore": "전체 설명 읽기",
+    "all": "모든 용어"
   }
 }

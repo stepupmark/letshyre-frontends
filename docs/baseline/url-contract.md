@@ -29,7 +29,11 @@ Pages: `/:lang`, `/:lang/about`, `/:lang/contact`, `/:lang/download`, `/:lang/in
 only ([ADR 0021](../adr/0021-marketing-blog.md)). A post's slug never changes once published. Each of
 those locales also has its RSS feed at `/:lang/blogs/feed.xml`, and a page per topic with a post,
 `/:lang/blogs/topics/:topic`. Past ten posts the index runs on to `/:lang/blogs/page/:n`, nine
-posts a page.
+posts a page. A tag with a post has `/:lang/blogs/tags/:tag`, every post is listed by month at
+`/:lang/blogs/archive`, and a series has its own feed at `/:lang/blogs/series/:series/feed.xml`.
+The glossary is `/:lang/blogs/glossary`, one page per entry at `/:lang/blogs/glossary/:term`, in
+locales with an entry. Saved posts are a view of the index, `/:lang/blogs?saved=1`, kept in the
+reader's browser.
 `/:lang/policy` moved to `/:lang/privacy-policy` (301).
 `/:lang/how-it-works-interview` moved to `/:lang/interview-guide` (301).
 `/:lang/interview-guide` moves to `/:lang/candidate-guide` (301) in each locale the candidate guide
@@ -42,13 +46,17 @@ The blog's URLs, all new (`e2e/url-contract.spec.ts` checks each):
 | `/en/blogs`, `/en/blogs/:slug`, `/en/blogs/feed.xml`  | 200                          |                                                |
 | `/en/blogs/topics/:topic` (topic has a post)          | 200                          |                                                |
 | `/en/blogs/page/:n` (2 up to the last page)           | 200                          |                                                |
+| `/en/blogs/tags/:tag` (tag has a post)                | 200                          |                                                |
+| `/en/blogs/archive`, `/en/blogs/glossary`             | 200                          |                                                |
+| `/en/blogs/glossary/:term`                            | 200                          |                                                |
 | `/hi/blogs/:slug` (post not written in `hi`)          | 302 → `/en/blogs/:slug`      | Same rule as any page not ready in a locale    |
 | `/en/blogs/topics`                                    | 301 → `/en/blogs`            | Someone trimmed the URL                        |
 | `/en/blogs/topics/:topic` (known topic, no post yet)  | 302 → nearest `/:lang/blogs` | Comes back as a 200 once a post uses the topic |
 | `/en/blogs/topics/nonsense`, `/en/blogs/no-such-post` | 404                          |                                                |
 | `/en/blogs/page/1`, a page past the last              | 404                          | Page one is `/en/blogs`                        |
 
-Post slugs `topics`, `page`, `authors` and `feed` are reserved and fail the build.
+Post slugs `topics`, `tags`, `page`, `authors`, `feed`, `archive`, `glossary`, `saved` and `series` are
+reserved and fail the build.
 
 Locales: `en hi fr ja ar te ta es nl ru kn ml ur bn de pt it ko id`.
 

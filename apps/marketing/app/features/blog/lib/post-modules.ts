@@ -1,19 +1,27 @@
 import type { MDXContent } from "mdx/types"
 
-const modules = import.meta.glob<{ default: MDXContent }>(
-  "/content/blog/*/*.mdx"
-)
+const modules = import.meta.glob<{ default: MDXContent }>([
+  "/content/blog/*/*.mdx",
+  "/content/glossary/*/*.mdx",
+  "/content/guides/*/*.mdx",
+])
 const loaded = new Map<string, MDXContent>()
 const pending = new Map<string, Promise<void>>()
 
-const keyOf = (lang: string, slug: string) =>
-  `/content/blog/${slug}/${lang}.mdx`
+export type BodyKind = "blog" | "glossary" | "guides"
 
-/** Each post is its own chunk; this fetches it once. */
-export function loadPostBody(lang: string, slug: string): Promise<void> {
-  const key = keyOf(lang, slug)
+const keyOf = (kind: BodyKind, lang: string, id: string) =>
+  `/content/${kind}/${id}/${lang}.mdx`
+
+/** Each body is its own chunk; this fetches it once. */
+export function loadBody(
+  kind: BodyKind,
+  lang: string,
+  id: string
+): Promise<void> {
+  const key = keyOf(kind, lang, id)
   const load = modules[key]
-  if (!load) return Promise.reject(new Error(`No post at ${key}`))
+  if (!load) return Promise.reject(new Error(`Nothing at ${key}`))
 
   let promise = pending.get(key)
   if (!promise) {
@@ -31,5 +39,8 @@ export function loadPostBody(lang: string, slug: string): Promise<void> {
   return promise
 }
 
-export const loadedPostBody = (lang: string, slug: string) =>
-  loaded.get(keyOf(lang, slug))
+export const loadPostBody = (lang: string, slug: string) =>
+  loadBody("blog", lang, slug)
+
+export const loadedBody = (kind: BodyKind, lang: string, id: string) =>
+  loaded.get(keyOf(kind, lang, id))

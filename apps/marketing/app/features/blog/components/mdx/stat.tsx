@@ -1,8 +1,9 @@
 import { useTranslation } from "@workspace/i18n/react"
 
-import { SourceMark } from "../post-sources"
-
-/** A figure with the study it comes from; the guard won't build one without a source. */
+/**
+ * A figure with the study it comes from; the guard won't build one without a source. The cite is
+ * the link, so it skips the source number: beside it, two small targets crowd each other.
+ */
 export function Stat({
   value,
   label,
@@ -24,12 +25,9 @@ export function Stat({
       <p className="text-pretty">{label}</p>
       <figcaption className="flex flex-col gap-0.5 text-sm text-muted-foreground">
         <span className="text-xs">{t("mdx.source")}</span>
-        <span>
-          <a href={source} rel="noopener" className="text-link">
-            {cite}
-          </a>
-          <SourceMark url={source} />
-        </span>
+        <a href={source} rel="noopener" className="text-link self-start">
+          {cite}
+        </a>
       </figcaption>
     </figure>
   )

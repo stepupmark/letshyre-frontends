@@ -7,9 +7,10 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@workspace/ui/components/empty"
-import { SearchXIcon, WifiOffIcon } from "lucide-react"
+import { BookmarkIcon, SearchXIcon, WifiOffIcon } from "lucide-react"
 import { use, useId, useState } from "react"
 
+import type { Length } from "@/lib/blog/list"
 import { searchPosts, searchWords } from "@/lib/blog/search"
 
 import { useDebounced } from "../hooks/use-debounced"
@@ -18,9 +19,14 @@ import { PostGrid } from "./post-list"
 
 export default function SearchResults({
   query,
+  length,
+  saved,
   onClear,
 }: {
   query: string
+  length: Length | undefined
+  /** Show only these posts, in this order: the reader's saved ones. */
+  saved?: readonly string[]
   onClear: () => void
 }) {
   const { t } = useTranslation("blog")
@@ -28,9 +34,13 @@ export default function SearchResults({
   const titleId = useId()
   const [, setAttempt] = useState(0)
   const index = use(loadSearchIndex(lang))
-  const posts = searchPosts(index ?? [], query, lang, (topic) =>
-    t(`topics.${topic}`)
-  )
+  const base = saved
+    ? saved.flatMap((slug) => index?.find((post) => post.slug === slug) ?? [])
+    : (index ?? [])
+  const posts =
+    saved && !query && !length
+      ? base
+      : searchPosts(base, query, lang, (topic) => t(`topics.${topic}`), length)
   // announced once typing pauses, not on every key
   const announced = useDebounced(posts.length, 400)
 
@@ -70,6 +80,19 @@ export default function SearchResults({
         </Empty>
       ) : posts.length > 0 ? (
         <PostGrid posts={posts} highlight={searchWords(query, lang)} />
+      ) : saved && base.length === 0 ? (
+        <Empty className="border py-12">
+          <EmptyHeader>
+            <EmptyMedia variant="icon">
+              <BookmarkIcon aria-hidden />
+            </EmptyMedia>
+            <EmptyTitle className="text-base">{t("saved.empty")}</EmptyTitle>
+            <EmptyDescription>{t("saved.emptyHint")}</EmptyDescription>
+          </EmptyHeader>
+          <Button variant="outline" onClick={onClear}>
+            {t("saved.browse")}
+          </Button>
+        </Empty>
       ) : (
         <Empty className="border py-12">
           <EmptyHeader>
@@ -77,7 +100,9 @@ export default function SearchResults({
               <SearchXIcon aria-hidden />
             </EmptyMedia>
             <EmptyTitle className="text-base">
-              {t("index.noResults", { query })}
+              {query
+                ? t("index.noResults", { query })
+                : t("index.noLengthResults")}
             </EmptyTitle>
             <EmptyDescription>{t("index.noResultsHint")}</EmptyDescription>
           </EmptyHeader>

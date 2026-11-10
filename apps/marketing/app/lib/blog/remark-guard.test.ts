@@ -6,7 +6,7 @@ import { remarkGuard } from "./remark-guard"
 const build = (mdx: string) => compile(mdx, { remarkPlugins: [remarkGuard] })
 
 describe("remarkGuard", () => {
-  it("accepts markdown, the component set, local image imports and comments", async () => {
+  it("accepts markdown, the component set, local imports, comments and Prettier's spacing", async () => {
     await expect(
       build(`import chart from "./chart.svg"
 
@@ -14,7 +14,10 @@ describe("remarkGuard", () => {
 
 ## Heading
 
-<Callout tone="tip">A tip with **bold** text.</Callout>
+<Callout tone="tip">
+  A tip with **bold** text and a{" "}
+  <Term id="ctc">CTC</Term>.
+</Callout>
 
 <Figure src={chart} alt="A chart" width={720} height={400} />
 `)
@@ -23,7 +26,7 @@ describe("remarkGuard", () => {
 
   it.each([
     ["raw HTML", `<div>hi</div>`, /<div> isn't in the blog's component set/],
-    ["package import", `import x from "react"`, /local images/],
+    ["package import", `import x from "react"`, /import files beside them/],
     ["code", `{1 + 1}`, /can't run code/],
     ["markdown image", `![chart](./chart.svg)`, /Markdown image/],
     [

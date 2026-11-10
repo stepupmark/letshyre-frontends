@@ -2,17 +2,24 @@ import type { Locale } from "@workspace/i18n"
 import type { MetaArgs, MetaDescriptor } from "react-router"
 
 import { AUTHORS } from "../blog/authors"
-import { postPath, topicPath } from "../blog/paths"
+import { postPath, seriesFeedPath, topicPath } from "../blog/paths"
 import type { Post } from "../blog/post"
 import { PAGES } from "../pages"
 import { buildMeta, feedLink } from "./meta"
 import { metaContext } from "./page-meta"
+import { postFaqSchema } from "./blog-schema"
 import { blogPostingSchema, breadcrumbSchema, webPageSchema } from "./schema"
 import { SITE } from "./site"
 
 export function postMeta({ matches, params }: MetaArgs): MetaDescriptor[] {
   const data = matches.at(-1)?.loaderData as
-    { post: Post; locales: Locale[]; ogImage?: string } | undefined
+    | {
+        post: Post
+        locales: Locale[]
+        ogImage?: string
+        series: Pick<Post, "title">[]
+      }
+    | undefined
   if (!data) return []
 
   const { lang, t } = metaContext({ matches, params })
@@ -52,8 +59,18 @@ export function postMeta({ matches, params }: MetaArgs): MetaDescriptor[] {
           image: ogImage,
           author: post.author ? AUTHORS[post.author] : undefined,
         }),
+        ...(post.faq.length ? [postFaqSchema(post.faq)] : []),
       ],
     }),
     feedLink(lang, t("blog:meta.name")),
+    ...(post.series
+      ? [
+          feedLink(
+            lang,
+            data.series[0]?.title ?? post.title,
+            seriesFeedPath(post.series)
+          ),
+        ]
+      : []),
   ]
 }

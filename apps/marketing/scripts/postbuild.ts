@@ -17,9 +17,14 @@ import {
   REPLACED_BY,
 } from "../app/lib/pages.ts"
 import {
+  archivePath,
   feedPath,
+  glossaryPath,
   indexPagePath,
   postPath,
+  seriesFeedPath,
+  tagPath,
+  termPath,
   topicPath,
   topicsPath,
 } from "../app/lib/blog/paths.ts"
@@ -28,6 +33,7 @@ import {
   emptyTopicRedirects,
   indexPages,
   readiness,
+  tagPages,
   topicPages,
 } from "../app/lib/readiness.ts"
 import {
@@ -106,7 +112,11 @@ const htmlFile = (route: string) => join(CLIENT, route, "index.html")
 const gzipSize = (file: string) => gzipSync(readFileSync(file)).length
 const kb = (bytes: number) => `${(bytes / 1024).toFixed(1)} kB`
 
-const { pages: ready, posts } = readiness(ROOT, env.VITE_ENV === "staging")
+const {
+  pages: ready,
+  posts,
+  terms,
+} = readiness(ROOT, env.VITE_ENV === "staging")
 const postLocales = (slug: string) =>
   posts.filter((post) => post.slug === slug).map((post) => post.lang)
 const slugs = [...new Set(posts.map((post) => post.slug))]
@@ -114,6 +124,20 @@ const topics = topicPages(posts)
 const topicLocales = (topic: string) =>
   topics.filter((page) => page.topic === topic).map((page) => page.lang)
 const laterPages = indexPages(posts)
+const tags = tagPages(posts)
+const tagLocales = (tag: string) =>
+  tags.filter((page) => page.tag === tag).map((page) => page.lang)
+const blogLocales = ready.get("blog") ?? []
+const glossaryLocales = [...new Set(terms.map((term) => term.lang))]
+const termLocales = (id: string) =>
+  terms.filter((term) => term.id === id).map((term) => term.lang)
+const newestIn = (
+  lang: Locale,
+  match: (post: (typeof posts)[number]) => boolean
+) => {
+  const post = posts.find((p) => p.lang === lang && match(p))
+  return post?.updatedAt ?? post?.publishedAt ?? today
+}
 const laterPageLocales = (n: number) =>
   laterPages.filter((p) => p.page === n).map((p) => p.lang)
 const problems: string[] = []
@@ -150,6 +174,30 @@ writeFileSync(
       locales: laterPageLocales(n),
       lastmod: lastmod("blog"),
     })),
+    ...[...new Set(tags.map((page) => page.tag))].map((tag) => ({
+      path: tagPath(tag),
+      locales: tagLocales(tag),
+      lastmod: (lang: Locale) => newestIn(lang, (p) => p.tags.includes(tag)),
+    })),
+    {
+      path: archivePath,
+      locales: blogLocales,
+      lastmod: (lang: Locale) => newestIn(lang, () => true),
+    },
+    ...(glossaryLocales.length
+      ? [
+          {
+            path: glossaryPath,
+            locales: glossaryLocales,
+            lastmod: lastmod("blog"),
+          },
+        ]
+      : []),
+    ...[...new Set(terms.map((term) => term.id))].map((id) => ({
+      path: termPath(id),
+      locales: termLocales(id),
+      lastmod: lastmod("blog"),
+    })),
   ])
 )
 writeFileSync(join(CLIENT, "robots.txt"), renderRobots(site, production))
@@ -169,6 +217,27 @@ for (const lang of ready.get("blog") ?? []) {
       posts.filter((post) => post.lang === lang)
     )
   )
+  // one feed per series, so a reader can follow just that series
+  for (const series of new Set(posts.flatMap((p) => p.series ?? []))) {
+    const parts = posts.filter((p) => p.lang === lang && p.series === series)
+    const first = parts.at(-1)
+    if (!first) continue
+    const seriesFile = join(CLIENT, localePath(lang, seriesFeedPath(series)))
+    mkdirSync(join(seriesFile, ".."), { recursive: true })
+    writeFileSync(
+      seriesFile,
+      renderFeed(
+        site,
+        lang,
+        {
+          title: `${copy.meta.name}: ${first.title}`,
+          description: first.description,
+        },
+        parts,
+        seriesFeedPath(series)
+      )
+    )
+  }
 }
 
 // IndexNow checks this file before it accepts a ping (scripts/indexnow.ts)
@@ -229,6 +298,36 @@ const routes = [
     lang,
     path: indexPagePath(page),
     locales: laterPageLocales(page),
+    preview: false,
+    jsExempt: false,
+  })),
+  ...tags.map(({ lang, tag }) => ({
+    lang,
+    path: tagPath(tag),
+    locales: tagLocales(tag),
+    preview: false,
+    jsExempt: false,
+  })),
+  ...blogLocales.flatMap((lang) => [
+    {
+      lang,
+      path: archivePath,
+      locales: blogLocales,
+      preview: false,
+      jsExempt: false,
+    },
+  ]),
+  ...glossaryLocales.map((lang) => ({
+    lang,
+    path: glossaryPath,
+    locales: glossaryLocales,
+    preview: false,
+    jsExempt: false,
+  })),
+  ...terms.map((term) => ({
+    lang: term.lang,
+    path: termPath(term.id),
+    locales: termLocales(term.id),
     preview: false,
     jsExempt: false,
   })),

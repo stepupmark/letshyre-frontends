@@ -4,7 +4,11 @@ import { describe, expect, it } from "vitest"
 
 import { TOPICS } from "../app/lib/blog/list"
 import { AUDIENCES } from "../app/lib/blog/post"
-import { CALLOUT_TONES, FEATURE_AUDIENCES } from "../app/lib/blog/remark-guard"
+import {
+  CALLOUT_TONES,
+  FEATURE_AUDIENCES,
+  TOOLS,
+} from "../app/lib/blog/remark-guard"
 import { type LintContext, lintPost, TEMPLATE_DESCRIPTION } from "./blog-lint"
 
 it("offers the same choices in the editor snippets as the build accepts", () => {
@@ -21,6 +25,7 @@ it("offers the same choices in the editor snippets as the build accepts", () => 
     TOPICS.join(","),
     CALLOUT_TONES.join(","),
     FEATURE_AUDIENCES.join(","),
+    TOOLS.join(","),
   ])
 })
 
@@ -86,6 +91,35 @@ A [broken link](/en/nowhere) about Letshyre.
       expect.stringMatching(/^error:19:alt "chart.svg"/),
       expect.stringMatching(/^error:19:width and height \(400 × 400\)/),
       expect.stringMatching(/^warning:17:write "LetsHyre"/),
+    ])
+  })
+
+  it("suggests glossary terms by whole word, and tagged posts it doesn't link yet", async () => {
+    const source = post(
+      "Your CTC isn't your take-home. ATSes read it too. See [the gap post](/en/blogs/gap).",
+      description
+    ).replace(
+      "topic: interviewing",
+      "topic: interviewing\ntags: [salary, resumes]"
+    )
+    const issues = await lintPost(FILE, source, {
+      ...ctx,
+      paths: new Set(["/en/blogs/gap"]),
+      terms: [
+        { id: "ctc", names: ["CTC", "cost to company"] },
+        { id: "ats", names: ["ATS"] },
+      ],
+      posts: [
+        { path: "/en/blogs/gap", title: "Gap", tags: ["resumes"] },
+        { path: "/en/blogs/offer", title: "Offer", tags: ["salary"] },
+        { path: "/en/blogs/other", title: "Other", tags: ["ai"] },
+      ],
+    })
+    expect(
+      issues.filter((i) => i.level === "suggestion").map((i) => i.message)
+    ).toEqual([
+      expect.stringContaining('<Term id="ctc">'),
+      expect.stringContaining("(/en/blogs/offer)"),
     ])
   })
 })

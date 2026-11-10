@@ -9,9 +9,9 @@ import { parse as parseYaml } from "yaml"
 import { z } from "zod"
 
 import { AUTHORS } from "./authors.ts"
-import { TOPICS, visiblePosts } from "./list.ts"
+import { TAGS, TOPICS, visiblePosts } from "./list.ts"
 
-export type { Topic } from "./list.ts"
+export type { Tag, Topic } from "./list.ts"
 
 export const AUDIENCES = ["employers", "candidates", "everyone"] as const
 
@@ -26,6 +26,7 @@ const frontmatterSchema = z
     updatedAt: z.iso.date().optional(),
     audience: z.enum(AUDIENCES),
     topic: z.enum(TOPICS),
+    tags: z.array(z.enum(TAGS)).max(3).default([]),
     author: z
       .string()
       .refine((id) => id in AUTHORS, "isn't in app/lib/blog/authors.ts")
@@ -54,6 +55,11 @@ export interface Source {
   linkText?: string
 }
 
+interface Faq {
+  q: string
+  a: string
+}
+
 export type Post = z.output<typeof frontmatterSchema> & {
   slug: string
   lang: Locale
@@ -61,6 +67,10 @@ export type Post = z.output<typeof frontmatterSchema> & {
   headings: Heading[]
   /** Every external link and study, in reading order, numbered by its place here. */
   sources: Source[]
+  /** Glossary ids the post's `<Term>`s point at. */
+  terms: string[]
+  /** The `<Question>`s in its `<Faq>`, as plain text for the FAQ schema. */
+  faq: Faq[]
   /** Has a `<Feature>`, so it skips the mid-post call to action. */
   promoted: boolean
   /** `<slug>/cover.svg`, and `cover-dark.svg` if drawn. */
@@ -76,6 +86,7 @@ export type PostSummary = Pick<
   | "title"
   | "description"
   | "topic"
+  | "tags"
   | "publishedAt"
   | "updatedAt"
   | "minutes"
@@ -86,7 +97,17 @@ export type PostSummary = Pick<
 
 const FILE = /([^/\\]+)[/\\]([^/\\]+)\.mdx$/
 // Segments under /blogs that belong to the blog's own pages, now or later.
-const RESERVED_SLUGS = ["topics", "page", "authors", "feed"]
+const RESERVED_SLUGS = [
+  "topics",
+  "tags",
+  "page",
+  "authors",
+  "feed",
+  "archive",
+  "glossary",
+  "saved",
+  "series",
+]
 const FRONTMATTER = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/
 
 interface Node {
@@ -183,6 +204,41 @@ function sourcesOf(tree: Node): Source[] {
   return [...sources.values()]
 }
 
+function termsOf(tree: Node): string[] {
+  const ids = new Set<string>()
+  walk(tree, (node) => {
+    const id = node.name === "Term" ? attr(node, "id") : undefined
+    if (id) ids.add(id)
+  })
+  return [...ids]
+}
+
+function faqOf(tree: Node): Faq[] {
+  const faq: Faq[] = []
+  walk(tree, (node) => {
+    const q = node.name === "Question" ? attr(node, "q") : undefined
+    if (q) faq.push({ q: tidy(q), a: tidy(textOf(node)) })
+  })
+  return faq
+}
+
+/** Splits a file into its frontmatter and its parsed body; throws with the file name. */
+export function readMdx<S extends z.ZodType>(
+  file: string,
+  source: string,
+  schema: S
+): { data: z.output<S>; tree: Node } {
+  const match = FRONTMATTER.exec(source)
+  if (!match) throw new Error(`${file}: no frontmatter`)
+  const result = schema.safeParse(parseYaml(match[1] ?? ""))
+  if (!result.success)
+    throw new Error(`${file}: ${z.prettifyError(result.error)}`)
+  return {
+    data: result.data,
+    tree: processor.parse(source.slice(match[0].length)),
+  }
+}
+
 /** Reads `<slug>/<lang>.mdx`; throws with the file name so a bad post fails the build. */
 export function parsePost(file: string, source: string): Post {
   const [, slug = "", lang = ""] = FILE.exec(file) ?? []
@@ -193,19 +249,16 @@ export function parsePost(file: string, source: string): Post {
   if (RESERVED_SLUGS.includes(slug)) fail(`"${slug}" is a reserved slug`)
   if (!isLocale(lang)) fail(`"${lang}" isn't a locale`)
 
-  const match = FRONTMATTER.exec(source)
-  if (!match) return fail("no frontmatter")
-  const result = frontmatterSchema.safeParse(parseYaml(match[1] ?? ""))
-  if (!result.success) return fail(z.prettifyError(result.error))
-
-  const tree = processor.parse(source.slice(match[0].length)) as Node
+  const { data, tree } = readMdx(file, source, frontmatterSchema)
   return {
-    ...result.data,
+    ...data,
     slug,
     lang: lang as Locale,
     minutes: readingMinutes(tree, lang as Locale),
     headings: headingsOf(tree),
     sources: sourcesOf(tree),
+    terms: termsOf(tree),
+    faq: faqOf(tree),
     promoted: contains(tree, "Feature"),
   }
 }

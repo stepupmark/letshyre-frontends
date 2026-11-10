@@ -1,16 +1,29 @@
 import { isLocale, type Locale } from "@workspace/i18n"
 import { data } from "react-router"
 
-import { featuredFirst, pageCount, postsOnPage, topicCounts } from "./blog/list"
+import {
+  featuredFirst,
+  pageCount,
+  postsOnPage,
+  LENGTHS,
+  lengthOf,
+  type Tag,
+  topicCounts,
+} from "./blog/list"
 import { ogImageOf } from "./blog/posts.server"
 import { relatedPosts, seriesOf } from "./blog/related"
 import { summarize } from "./blog/search"
 import {
+  glossaryLocales,
+  guideFor,
   indexPageLocales,
   loadMessages,
   postLocales,
   postsIn,
   readyLocales,
+  tagLocales,
+  termLocales,
+  termsIn,
   topicLocales,
 } from "./messages.server"
 import { LAYOUT_NAMESPACES, PAGES, type PageId } from "./pages"
@@ -46,6 +59,10 @@ export function blogData(lang: string | undefined, pageParam?: string) {
     page,
     pages,
     topics: topicCounts(posts),
+    glossary: termsIn(lang as Locale).length > 0,
+    lengths: LENGTHS.filter((length) =>
+      posts.some((post) => lengthOf(post.minutes) === length)
+    ),
   }
 }
 
@@ -58,10 +75,21 @@ export function topicData(lang: string | undefined, topic: string | undefined) {
   const posts = featuredFirst(all.filter((post) => post.topic === topic))
   const current = posts[0]?.topic
   if (!current) throw notFound()
+  const guide = guideFor(lang as Locale, current)
+  const live = new Map(all.map((post) => [post.slug, post]))
   return {
     messages,
     locales: topicLocales(current),
     topic: current,
+    guide: guide && {
+      title: guide.title,
+      description: guide.description,
+      // a draft or an unpublished translation drops out of the path instead of breaking it
+      reading: guide.reading.flatMap((slug) => {
+        const post = live.get(slug)
+        return post ? [summarize(post)] : []
+      }),
+    },
     posts,
     others:
       posts.length < THIN_TOPIC
@@ -101,6 +129,67 @@ export function postData(lang: string | undefined, slug: string | undefined) {
       posts.filter((p) => !shown.has(p.slug))
     ),
     ogImage: ogImageOf(post.slug),
+    terms: Object.fromEntries(
+      termsIn(lang)
+        .filter((term) => post.terms.includes(term.id))
+        .map(({ id, term, short }) => [id, { term, short }])
+    ),
+  }
+}
+
+export function tagData(lang: string | undefined, tag: string | undefined) {
+  const { messages } = pageData(lang, "blog")
+  const posts = postsIn(lang as Locale).filter((post) =>
+    post.tags.includes(tag as Tag)
+  )
+  if (!posts.length) throw notFound()
+  return {
+    messages,
+    locales: tagLocales(tag as Tag),
+    tag: tag as Tag,
+    posts: posts.map(summarize),
+  }
+}
+
+/** Every post, newest first, for the archive's month-by-month list. */
+export function archiveData(lang: string | undefined) {
+  const { messages, locales } = pageData(lang, "blog")
+  return {
+    messages,
+    locales,
+    posts: postsIn(lang as Locale).map(
+      ({ slug, title, topic, publishedAt }) => ({
+        slug,
+        title,
+        topic,
+        publishedAt,
+      })
+    ),
+  }
+}
+
+export function glossaryData(lang: string | undefined) {
+  const { messages } = pageData(lang, "blog")
+  const terms = termsIn(lang as Locale)
+  if (!terms.length) throw notFound()
+  return {
+    messages,
+    locales: glossaryLocales(),
+    terms: terms.map(({ id, term, short }) => ({ id, term, short })),
+  }
+}
+
+export function termData(lang: string | undefined, id: string | undefined) {
+  const { messages } = pageData(lang, "blog")
+  const term = termsIn(lang as Locale).find((entry) => entry.id === id)
+  if (!term) throw notFound()
+  return {
+    messages,
+    locales: termLocales(term.id),
+    term,
+    posts: postsIn(lang as Locale)
+      .filter((post) => post.terms.includes(term.id))
+      .map(summarize),
   }
 }
 

@@ -3,6 +3,7 @@ import type { ComponentProps } from "react"
 import { Link } from "react-router"
 
 import { SourceMark } from "../post-sources"
+import { FootnoteBack, FootnoteRef, Footnotes } from "./footnotes"
 import { SectionHeading } from "./heading"
 
 export const prose = {
@@ -27,6 +28,13 @@ export const prose = {
     <strong className="font-semibold text-foreground" {...props} />
   ),
   a: ({ href = "", className, children, ...props }: ComponentProps<"a">) => {
+    if ("data-footnote-ref" in props)
+      return (
+        <FootnoteRef href={href} id={props.id}>
+          {children}
+        </FootnoteRef>
+      )
+    if ("data-footnote-backref" in props) return <FootnoteBack href={href} />
     const classes = cn("text-link", className)
     if (href.startsWith("/"))
       return (
@@ -49,6 +57,12 @@ export const prose = {
       </>
     )
   },
+  section: (props: ComponentProps<"section">) =>
+    "data-footnotes" in props ? (
+      <Footnotes {...props} />
+    ) : (
+      <section {...props} />
+    ),
   blockquote: (props: ComponentProps<"blockquote">) => (
     <blockquote
       className="rounded-xl border bg-muted/40 px-5 py-4 text-lg text-pretty text-foreground"

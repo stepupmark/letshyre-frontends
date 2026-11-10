@@ -6,7 +6,7 @@ import { parsePost, type Post } from "../app/lib/blog/post.ts"
 import { remarkGuard } from "../app/lib/blog/remark-guard.ts"
 
 export interface Issue {
-  level: "error" | "warning"
+  level: "error" | "warning" | "suggestion"
   message: string
   line?: number
 }
@@ -24,6 +24,10 @@ export interface LintContext {
   image: (name: string) => Image | undefined
   /** Whether a file sits beside the post. */
   has: (name: string) => boolean
+  /** Glossary entries in the post's locale, by every name they go by. */
+  terms?: readonly { id: string; names: readonly string[] }[]
+  /** The other posts in the post's locale. */
+  posts?: readonly { path: string; title: string; tags: readonly string[] }[]
 }
 
 interface Node {
@@ -47,6 +51,7 @@ const BRAND = /\b(?:Letshyre|LetsHire|Lets Hyre|letshyre)\b(?!\.ai)/
 const LONG_SENTENCE = 35
 const PHOTO_BYTES = 500 * 1024
 const RASTER = /\.(png|jpe?g|webp)$/i
+const MAX_POST_SUGGESTIONS = 3
 
 const processor = createProcessor({
   remarkPlugins: [remarkFrontmatter, remarkGfm],
@@ -192,6 +197,53 @@ function bodyIssues(tree: Node, ctx: LintContext): Issue[] {
   return issues
 }
 
+const escape = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+
+/** Glossary words the post uses without a `<Term>`, and posts on its tags it doesn't link yet. */
+function linkSuggestions(post: Post, tree: Node, ctx: LintContext): Issue[] {
+  const texts: string[] = []
+  const links = new Set<string>()
+  walk(tree, (node) => {
+    if (node.type === "text" && node.value) texts.push(node.value)
+    if (node.type === "link" && node.url?.startsWith("/"))
+      links.add(node.url.replace(/[?#].*$/, "").replace(/\/$/, ""))
+  })
+  const text = texts.join(" ")
+  const issues: Issue[] = []
+
+  for (const term of ctx.terms ?? []) {
+    if (post.terms.includes(term.id)) continue
+    const name = term.names.find((n) =>
+      new RegExp(
+        `(?<![\\p{L}\\p{N}])${escape(n)}(?![\\p{L}\\p{N}])`,
+        "iu"
+      ).test(text)
+    )
+    if (name)
+      issues.push({
+        level: "suggestion",
+        message: `mentions "${name}"; wrap the first one in <Term id="${term.id}"> so readers can look it up`,
+      })
+  }
+
+  const related = (ctx.posts ?? [])
+    .map((other) => ({
+      ...other,
+      shared: other.tags.filter((tag) => (post.tags as string[]).includes(tag)),
+    }))
+    .filter((other) => other.shared.length > 0 && !links.has(other.path))
+    .sort((a, b) => b.shared.length - a.shared.length)
+    .slice(0, MAX_POST_SUGGESTIONS)
+  for (const other of related)
+    issues.push({
+      level: "suggestion",
+      message: `"${other.title}" (${other.path}) is also tagged ${other.shared.join(", ")}; link it where it helps the reader`,
+    })
+  return issues
+}
+
+const RANK = { error: 0, warning: 1, suggestion: 2 } as const
+
 /** Everything wrong with one post file, worst first; the build would fail on the errors. */
 export async function lintPost(
   file: string,
@@ -220,7 +272,9 @@ export async function lintPost(
   }
 
   const tree = processor.parse(source) as Node
-  return [...frontmatterIssues(post, ctx), ...bodyIssues(tree, ctx)].sort(
-    (a, b) => (a.level === b.level ? 0 : a.level === "error" ? -1 : 1)
-  )
+  return [
+    ...frontmatterIssues(post, ctx),
+    ...bodyIssues(tree, ctx),
+    ...linkSuggestions(post, tree, ctx),
+  ].sort((a, b) => RANK[a.level] - RANK[b.level])
 }

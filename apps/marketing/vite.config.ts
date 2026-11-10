@@ -17,6 +17,8 @@ export default defineConfig(({ mode }) => {
 
   return {
     resolve: { tsconfigPaths: true },
+    // files a post offers for download, imported beside it like its images
+    assetsInclude: ["**/content/blog/**/*.{csv,docx,xlsx}"],
     // a post's images are fetched by the page; inlined, they'd ship in its HTML and its JS chunk too
     build: {
       assetsInlineLimit: (file: string) =>

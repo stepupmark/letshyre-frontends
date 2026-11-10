@@ -4,7 +4,11 @@
     "description": "Hiring advice for employers, career advice for professionals, hiring trends and product news from the LetsHyre team.",
     "pageTitle": "Blog, page {{page}} | letshyre.ai",
     "crumb": "Blog",
-    "name": "LetsHyre blog"
+    "name": "LetsHyre blog",
+    "tagTitle": "Posts about {{tag}}, LetsHyre blog | letshyre.ai",
+    "archiveTitle": "Blog archive, every post by month | letshyre.ai",
+    "glossaryTitle": "Hiring glossary: CTC, notice periods and more | letshyre.ai",
+    "termTitle": "{{term}}, hiring glossary | letshyre.ai"
   },
   "index": {
     "eyebrow": "Blog",
@@ -27,7 +31,13 @@
     "resultsTitle": "Search results",
     "searching": "Searching posts…",
     "searchFailed": "Search couldn't load. Check your connection and try again.",
-    "retry": "Try again"
+    "retry": "Try again",
+    "browse": "Browse the blog",
+    "archive": "Archive",
+    "glossary": "Glossary",
+    "saved": "Saved posts",
+    "length": "Reading time",
+    "noLengthResults": "No posts of that length yet"
   },
   "post": {
     "published": "Published {{date}}",
@@ -54,7 +64,28 @@
     "neighbours": "More in this topic",
     "older": "Older post",
     "newer": "Newer post",
-    "sourceMark": "Source {{n}}"
+    "sourceMark": "Source {{n}}",
+    "seriesFirst": "Part 1 of a series",
+    "followSeries": "Follow this series",
+    "tags": "Tags",
+    "listen": "Listen",
+    "pause": "Pause",
+    "keepListening": "Keep listening",
+    "stopListening": "Stop listening",
+    "save": "Save for later",
+    "saved": "Saved",
+    "savedToast": "Saved to read later",
+    "unsavedToast": "Removed from saved posts",
+    "viewSaved": "View saved",
+    "continue": "Pick up where you left off?",
+    "continueAction": "Continue reading",
+    "quoteActions": "Share this quote",
+    "copyQuote": "Copy quote",
+    "quoteCopied": "Quote copied with a link back",
+    "quoteOn": "Share quote on {{network}}",
+    "footnote": "Note {{n}}",
+    "footnotes": "Notes",
+    "backToText": "Back to the text"
   },
   "topics": {
     "interviewing": "Interviewing",
@@ -104,6 +135,33 @@
       "note": "Note:",
       "tip": "Tip:",
       "warning": "Warning:"
+    },
+    "download": "{{type}} file to download",
+    "checklist": {
+      "progress": "{{done}} of {{count}} done",
+      "download": "Download as text",
+      "reset": "Clear ticks"
+    },
+    "hireCost": {
+      "title": "What your open role costs",
+      "salary": "Yearly salary for the role (₹)",
+      "daysNow": "Days it takes you to fill now",
+      "daysTarget": "Days you could get it to",
+      "perDay": "Each day the seat is empty",
+      "extra_one": "The {{count}} extra day",
+      "extra_other": "The {{count}} extra days",
+      "note": "A rough floor: each day is valued at the role's salary for that day. It leaves out the candidates you lose while you wait, which usually cost more."
+    },
+    "noticeBuyout": {
+      "title": "When your notice ends, and what leaving early costs",
+      "resignedOn": "You resign on",
+      "noticeDays": "Notice period (days)",
+      "monthlyPay": "Monthly pay the buyout uses (₹)",
+      "joinOn": "You want to join on",
+      "freeFrom": "Free to join from",
+      "unserved": "Days you wouldn't serve",
+      "buyout": "Buyout, before tax",
+      "note": "Counts calendar days and a month's pay over 30. Your employer's policy decides the real formula, whether it's basic or gross pay, and whether a buyout is allowed at all."
     }
   },
   "topicPage": {
@@ -120,6 +178,44 @@
       "trends": "What's changing in hiring: the data, the rules and the tools employers and professionals should know about.",
       "news": "Product updates, launches and other news from the LetsHyre team."
     },
-    "others": "More from the blog"
+    "others": "More from the blog",
+    "readingOrder": "Read in this order"
+  },
+  "length": {
+    "any": "Any length",
+    "quick": "Under 5 min",
+    "standard": "5 to 9 min",
+    "long": "10 min or more"
+  },
+  "tags": {
+    "ai": "AI",
+    "resumes": "Resumes",
+    "interviews": "Interviews",
+    "salary": "Salary and offers",
+    "india": "India",
+    "job-search": "Job search",
+    "hiring-process": "Hiring process",
+    "skills": "Skills",
+    "career-growth": "Career growth"
+  },
+  "tagPage": {
+    "description": "Every post on the LetsHyre blog tagged {{tag}}, from hiring advice to career moves, newest first."
+  },
+  "archive": {
+    "title": "Archive",
+    "description": "Every post on the blog, newest first, by the month it was published."
+  },
+  "saved": {
+    "empty": "Nothing saved yet",
+    "emptyHint": "Choose Save for later on any post and it shows up here.",
+    "browse": "Browse posts"
+  },
+  "glossary": {
+    "title": "Hiring glossary",
+    "description": "Plain definitions of the words that come up when you hire or look for work, from CTC to notice buyouts.",
+    "aka": "Also called {{names}}",
+    "mentionedIn": "Posts that use it",
+    "readMore": "Read the full definition",
+    "all": "All terms"
   }
 }

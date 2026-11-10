@@ -11,6 +11,7 @@ import { PendingList } from "./components/pending-list"
 import { PostCta } from "./components/post-cta"
 import { PostList } from "./components/post-list"
 import { RelatedPosts } from "./components/related-posts"
+import { TopicGuide, type TopicGuideData } from "./components/topic-guide"
 import { TopicNav } from "./components/topic-nav"
 
 /** Who the topic's posts are written for; posts for everyone don't narrow it. */
@@ -25,11 +26,13 @@ function readersOf(posts: readonly Post[]) {
 
 export function TopicPage({
   topic,
+  guide,
   posts,
   others,
   topics,
 }: {
   topic: Topic
+  guide?: TopicGuideData
   posts: readonly Post[]
   others: readonly Post[]
   topics: readonly { topic: Topic; count: number }[]
@@ -58,7 +61,8 @@ export function TopicPage({
         <FeedLink />
       </PageHeader>
       <TopicNav topics={topics} current={topic} />
-      <Container className="py-10 sm:py-14">
+      <Container className="flex flex-col gap-12 py-10 sm:py-14">
+        {guide && <TopicGuide key={topic} topic={topic} guide={guide} />}
         <PendingList>
           <PostList posts={posts} />
         </PendingList>

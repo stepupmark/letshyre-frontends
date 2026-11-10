@@ -101,10 +101,14 @@ export function buildMeta({
   ]
 }
 
-export const feedLink = (lang: Locale, title: string): MetaDescriptor => ({
+export const feedLink = (
+  lang: Locale,
+  title: string,
+  path = feedPath
+): MetaDescriptor => ({
   tagName: "link",
   rel: "alternate",
   type: "application/rss+xml",
   title,
-  href: absUrl(localePath(lang, feedPath)),
+  href: absUrl(localePath(lang, path)),
 })

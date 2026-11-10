@@ -2,25 +2,44 @@ import { join } from "node:path"
 import { LOCALES, type Locale } from "@workspace/i18n"
 import { computeReadiness } from "@workspace/i18n/node"
 
+import type { Term } from "./blog/glossary.ts"
 import {
+  archivePath,
+  glossaryPath,
   indexPagePath,
   postPath,
   searchIndexPath,
+  tagPath,
+  termPath,
   topicPath,
 } from "./blog/paths.ts"
 import {
   pageCount,
   publishedPosts,
+  tagsOf,
   TOPICS,
   topicsOf,
   withBlogIndex,
 } from "./blog/list.ts"
 import type { Post } from "./blog/post.ts"
-import { readPosts } from "./blog/read-posts.ts"
+import { readPosts, readTerms } from "./blog/read-posts.ts"
 import { PAGES, type PageId, pageNamespaces, withoutReplaced } from "./pages.ts"
 
 const LOCALES_DIR = "app/locales"
 export const BLOG_DIR = "content/blog"
+export const GLOSSARY_DIR = "content/glossary"
+export const GUIDES_DIR = "content/guides"
+
+/** Fails the build when a post's `<Term>` has no glossary entry in its locale. */
+export function checkTerms(posts: readonly Post[], terms: readonly Term[]) {
+  const known = new Set(terms.map((term) => `${term.lang}/${term.id}`))
+  for (const post of posts)
+    for (const id of post.terms)
+      if (!known.has(`${post.lang}/${id}`))
+        throw new Error(
+          `${BLOG_DIR}/${post.slug}/${post.lang}.mdx: <Term id="${id}"> has no ${GLOSSARY_DIR}/${id}/${post.lang}.mdx`
+        )
+}
 
 /** Build-time only: the locales each page ships in, and the posts that ship. `root` is the app's. */
 export function readiness(
@@ -29,6 +48,7 @@ export function readiness(
 ): {
   pages: Map<PageId, Locale[]>
   posts: Post[]
+  terms: Term[]
 } {
   const pages = withoutReplaced(
     computeReadiness({
@@ -42,8 +62,22 @@ export function readiness(
     readPosts(join(root, BLOG_DIR), previews),
     pages.get("blog") ?? []
   )
-  return { pages: withBlogIndex(pages, posts), posts }
+  const blog = new Set(pages.get("blog"))
+  const terms = readTerms(join(root, GLOSSARY_DIR)).filter((term) =>
+    blog.has(term.lang)
+  )
+  checkTerms(posts, terms)
+  return { pages: withBlogIndex(pages, posts), posts, terms }
 }
+
+/** Each locale's tags that have a post. */
+export const tagPages = (posts: readonly Post[]) =>
+  [...new Set(posts.map((post) => post.lang))].flatMap((lang) =>
+    tagsOf(posts.filter((post) => post.lang === lang)).map((tag) => ({
+      lang,
+      tag,
+    }))
+  )
 
 /** Each locale's blog topics that have a post, as `/<lang>` and topic. */
 export const topicPages = (posts: readonly Post[]) =>
@@ -90,9 +124,10 @@ export function emptyTopicRedirects(
   )
 }
 
-/** Every `/<lang><path>` whose catalogs are complete, and every post, topic and index page. */
+/** Every `/<lang><path>` whose catalogs are complete, and every blog page. */
 export function readyPaths(root: string, previews = false): string[] {
-  const { pages, posts } = readiness(root, previews)
+  const { pages, posts, terms } = readiness(root, previews)
+  const blogLangs = pages.get("blog") ?? []
   return [
     ...[...pages].flatMap(([id, locales]) =>
       locales.map((lang) => `/${lang}${PAGES[id].path}`)
@@ -104,6 +139,14 @@ export function readyPaths(root: string, previews = false): string[] {
     ...indexPages(posts).map(
       ({ lang, page }) => `/${lang}${indexPagePath(page)}`
     ),
-    ...(pages.get("blog") ?? []).map((lang) => `/${lang}${searchIndexPath}`),
+    ...tagPages(posts).map(({ lang, tag }) => `/${lang}${tagPath(tag)}`),
+    ...blogLangs.flatMap((lang) => [
+      `/${lang}${searchIndexPath}`,
+      `/${lang}${archivePath}`,
+    ]),
+    ...[...new Set(terms.map((term) => term.lang))].map(
+      (lang) => `/${lang}${glossaryPath}`
+    ),
+    ...terms.map((term) => `/${term.lang}${termPath(term.id)}`),
   ]
 }

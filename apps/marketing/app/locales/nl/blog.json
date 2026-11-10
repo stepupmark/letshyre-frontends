@@ -4,7 +4,11 @@
     "description": "Wervingsadvies voor werkgevers, carrièreadvies voor professionals, wervingstrends en productnieuws van het LetsHyre-team.",
     "pageTitle": "Blog, pagina {{page}} | letshyre.ai",
     "crumb": "Blog",
-    "name": "LetsHyre-blog"
+    "name": "LetsHyre-blog",
+    "tagTitle": "Artikelen over {{tag}}, LetsHyre-blog | letshyre.ai",
+    "archiveTitle": "Blogarchief, alle artikelen per maand | letshyre.ai",
+    "glossaryTitle": "Wervingsbegrippen: CTC, opzegtermijn en meer | letshyre.ai",
+    "termTitle": "{{term}}, wervingsbegrippen | letshyre.ai"
   },
   "index": {
     "eyebrow": "Blog",
@@ -27,7 +31,13 @@
     "resultsTitle": "Zoekresultaten",
     "searching": "Berichten zoeken…",
     "searchFailed": "Zoeken kon niet worden geladen. Controleer je verbinding en probeer het opnieuw.",
-    "retry": "Opnieuw proberen"
+    "retry": "Opnieuw proberen",
+    "browse": "Door de blog bladeren",
+    "archive": "Archief",
+    "glossary": "Begrippenlijst",
+    "saved": "Bewaarde artikelen",
+    "length": "Leestijd",
+    "noLengthResults": "Nog geen artikelen van die lengte"
   },
   "post": {
     "published": "Gepubliceerd op {{date}}",
@@ -54,7 +64,28 @@
     "neighbours": "Meer over dit onderwerp",
     "older": "Ouder bericht",
     "newer": "Nieuwer bericht",
-    "sourceMark": "Bron {{n}}"
+    "sourceMark": "Bron {{n}}",
+    "seriesFirst": "Deel 1 van een reeks",
+    "followSeries": "Deze reeks volgen",
+    "tags": "Tags",
+    "listen": "Beluisteren",
+    "pause": "Pauzeren",
+    "keepListening": "Verder luisteren",
+    "stopListening": "Stoppen met voorlezen",
+    "save": "Bewaren voor later",
+    "saved": "Bewaard",
+    "savedToast": "Bewaard om later te lezen",
+    "unsavedToast": "Verwijderd uit bewaarde artikelen",
+    "viewSaved": "Bewaarde bekijken",
+    "continue": "Verder waar je gebleven was?",
+    "continueAction": "Verder lezen",
+    "quoteActions": "Dit citaat delen",
+    "copyQuote": "Citaat kopiëren",
+    "quoteCopied": "Citaat gekopieerd met een link",
+    "quoteOn": "Citaat delen op {{network}}",
+    "footnote": "Noot {{n}}",
+    "footnotes": "Noten",
+    "backToText": "Terug naar de tekst"
   },
   "topics": {
     "interviewing": "Sollicitatiegesprekken",
@@ -104,6 +135,33 @@
       "note": "Opmerking:",
       "tip": "Tip:",
       "warning": "Waarschuwing:"
+    },
+    "download": "{{type}}-bestand om te downloaden",
+    "checklist": {
+      "progress": "{{done}} van {{count}} klaar",
+      "download": "Downloaden als tekst",
+      "reset": "Vinkjes wissen"
+    },
+    "hireCost": {
+      "title": "Wat je openstaande vacature kost",
+      "salary": "Jaarsalaris voor de functie (₹)",
+      "daysNow": "Dagen die je nu nodig hebt om te vullen",
+      "daysTarget": "Dagen waar je naartoe zou kunnen",
+      "perDay": "Elke dag dat de plek leeg blijft",
+      "extra_one": "De {{count}} extra dag",
+      "extra_other": "De {{count}} extra dagen",
+      "note": "Een ruwe ondergrens: elke dag telt als het salaris van de functie voor die dag. Kandidaten die je verliest terwijl je wacht, en die meestal meer kosten, tellen niet mee."
+    },
+    "noticeBuyout": {
+      "title": "Wanneer je opzegtermijn afloopt, en wat eerder vertrekken kost",
+      "resignedOn": "Je neemt ontslag op",
+      "noticeDays": "Opzegtermijn (dagen)",
+      "monthlyPay": "Maandsalaris voor de afkoop (₹)",
+      "joinOn": "Je wilt beginnen op",
+      "freeFrom": "Vrij om te beginnen vanaf",
+      "unserved": "Dagen die je niet zou werken",
+      "buyout": "Afkoop, vóór belasting",
+      "note": "Telt kalenderdagen en een maandsalaris gedeeld door 30. Het beleid van je werkgever bepaalt de echte formule, of het basis- of brutosalaris telt en of afkoop überhaupt mag."
     }
   },
   "topicPage": {
@@ -120,6 +178,44 @@
       "trends": "Wat er verandert in werving: de cijfers, de regels en de tools die werkgevers en professionals moeten kennen.",
       "news": "Productupdates, lanceringen en ander nieuws van het LetsHyre-team."
     },
-    "others": "Meer uit de blog"
+    "others": "Meer uit de blog",
+    "readingOrder": "Lees in deze volgorde"
+  },
+  "length": {
+    "any": "Elke lengte",
+    "quick": "Korter dan 5 min",
+    "standard": "5 tot 9 min",
+    "long": "10 min of langer"
+  },
+  "tags": {
+    "ai": "AI",
+    "resumes": "Cv’s",
+    "interviews": "Sollicitatiegesprekken",
+    "salary": "Salaris en aanbiedingen",
+    "india": "India",
+    "job-search": "Werk zoeken",
+    "hiring-process": "Wervingsproces",
+    "skills": "Vaardigheden",
+    "career-growth": "Loopbaangroei"
+  },
+  "tagPage": {
+    "description": "Alle artikelen op de LetsHyre-blog met de tag {{tag}}, van wervingsadvies tot een nieuwe baan, de nieuwste eerst."
+  },
+  "archive": {
+    "title": "Archief",
+    "description": "Alle artikelen op de blog, de nieuwste eerst, per maand van publicatie."
+  },
+  "saved": {
+    "empty": "Nog niets bewaard",
+    "emptyHint": "Kies ‘Bewaren voor later’ bij een artikel en het verschijnt hier.",
+    "browse": "Artikelen bekijken"
+  },
+  "glossary": {
+    "title": "Wervingsbegrippen",
+    "description": "Eenvoudige uitleg van de woorden die je tegenkomt bij werven of werk zoeken, van CTC tot het afkopen van je opzegtermijn.",
+    "aka": "Ook wel {{names}}",
+    "mentionedIn": "Artikelen die het gebruiken",
+    "readMore": "Volledige uitleg lezen",
+    "all": "Alle begrippen"
   }
 }

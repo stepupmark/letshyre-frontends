@@ -1,8 +1,8 @@
 import { type Catalog, type Locale, type Messages } from "@workspace/i18n"
 import { type Catalogs, readinessFrom } from "@workspace/i18n/node"
 
-import { allPosts } from "./blog/posts.server"
-import { pageCount, publishedPosts, withBlogIndex } from "./blog/list"
+import { allGuides, allPosts, allTerms } from "./blog/posts.server"
+import { pageCount, publishedPosts, type Tag, withBlogIndex } from "./blog/list"
 import type { Post } from "./blog/post"
 import { PAGES, type PageId, pageNamespaces, withoutReplaced } from "./pages"
 
@@ -45,6 +45,9 @@ export function loadMessages(
 
 const posts = publishedPosts(allPosts, catalogReadiness.get("blog") ?? [])
 const readiness = withBlogIndex(catalogReadiness, posts)
+const terms = allTerms.filter((term) =>
+  readiness.get("blog")?.includes(term.lang)
+)
 
 /** Locales the page is published in, for hreflang and the language switcher. */
 export const readyLocales = (id: PageId): Locale[] => readiness.get(id) ?? []
@@ -64,3 +67,25 @@ export const topicLocales = (topic: string): Locale[] => [
 
 export const indexPageLocales = (page: number): Locale[] =>
   readyLocales("blog").filter((lang) => pageCount(postsIn(lang).length) >= page)
+
+export const tagLocales = (tag: Tag): Locale[] => [
+  ...new Set(
+    posts.filter((post) => post.tags.includes(tag)).map((post) => post.lang)
+  ),
+]
+
+/** A–Z in the locale's own order. */
+export const termsIn = (lang: Locale) =>
+  terms
+    .filter((term) => term.lang === lang)
+    .sort((a, b) => a.term.localeCompare(b.term, lang))
+
+export const termLocales = (id: string): Locale[] =>
+  terms.filter((term) => term.id === id).map((term) => term.lang)
+
+export const glossaryLocales = (): Locale[] => [
+  ...new Set(terms.map((term) => term.lang)),
+]
+
+export const guideFor = (lang: Locale, topic: string) =>
+  allGuides.find((guide) => guide.lang === lang && guide.topic === topic)

@@ -22,7 +22,8 @@ export function renderFeed(
   site: string,
   lang: Locale,
   { title, description }: { title: string; description: string },
-  posts: readonly Post[]
+  posts: readonly Post[],
+  self = feedPath
 ): string {
   const url = (path: string) => escape(`${site}${localePath(lang, path)}`)
   const items = posts.map(
@@ -44,7 +45,7 @@ export function renderFeed(
   <channel>
     <title>${escape(title)}</title>
     <link>${url("/blogs")}</link>
-    <atom:link href="${url(feedPath)}" rel="self" type="application/rss+xml"/>
+    <atom:link href="${url(self)}" rel="self" type="application/rss+xml"/>
     <description>${escape(description)}</description>
     <language>${lang}</language>
 ${updated ? `    <lastBuildDate>${rfc822(updated)}</lastBuildDate>\n` : ""}${items.join("\n")}

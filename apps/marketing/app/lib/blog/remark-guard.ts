@@ -2,18 +2,26 @@
 
 export const MDX_COMPONENTS = [
   "Callout",
+  "Check",
+  "Checklist",
   "Compare",
+  "Download",
+  "Faq",
   "Feature",
   "Figure",
+  "Question",
   "Quote",
   "Stat",
   "Step",
   "Steps",
+  "Term",
+  "Tool",
   "VideoEmbed",
 ] as const
 
 export const CALLOUT_TONES = ["note", "tip", "warning"] as const
 export const FEATURE_AUDIENCES = ["employers", "candidates"] as const
+export const TOOLS = ["hire-cost", "notice-buyout"] as const
 
 type Component = (typeof MDX_COMPONENTS)[number]
 
@@ -22,12 +30,17 @@ const isOneOf = (list: readonly string[], value: unknown) =>
 
 // props a component can't render without; Figure's size stops the page shifting as images load
 const REQUIRED: Partial<Record<Component, string[]>> = {
+  Checklist: ["title"],
   Compare: ["avoid", "prefer"],
+  Download: ["src", "title"],
   Feature: ["audience"],
   Figure: ["src", "alt", "width", "height"],
+  Question: ["q"],
   Quote: ["by"],
   Stat: ["value", "label", "source", "cite"],
   Step: ["title"],
+  Term: ["id"],
+  Tool: ["name"],
   VideoEmbed: ["id", "title", "poster"],
 }
 
@@ -43,8 +56,11 @@ interface File {
   fail(reason: string, parent: Node): never
 }
 
-const LOCAL_IMAGE = /^import \w+ from "\.\/[\w-]+\.(svg|png|jpe?g|webp|avif)"$/
+const LOCAL_FILE =
+  /^import \w+ from "\.\/[\w-]+\.(svg|png|jpe?g|webp|avif|pdf|csv|txt|docx|xlsx)"$/
 const COMMENT = /^(\s*\/\*[\s\S]*?\*\/)+\s*$/
+// Prettier writes {" "} where it wraps a line between text and a component
+const SPACE = /^\s*" "\s*$/
 
 function problemOf(node: Node): string | undefined {
   switch (node.type) {
@@ -52,12 +68,12 @@ function problemOf(node: Node): string | undefined {
       return node.value
         ?.trim()
         .split("\n")
-        .every((line) => LOCAL_IMAGE.test(line.trim().replace(/;$/, "")))
+        .every((line) => LOCAL_FILE.test(line.trim().replace(/;$/, "")))
         ? undefined
-        : 'posts may only import local images, like import chart from "./chart.svg" (README: Images)'
+        : 'posts may only import files beside them, like import chart from "./chart.svg" (README: Images)'
     case "mdxFlowExpression":
     case "mdxTextExpression":
-      return COMMENT.test(node.value ?? "")
+      return COMMENT.test(node.value ?? "") || SPACE.test(node.value ?? "")
         ? undefined
         : "posts can't run code; use a component, or {/* … */} for a note (README: Body)"
     case "image":
@@ -86,6 +102,8 @@ function problemOf(node: Node): string | undefined {
         return `<Callout> tone is one of ${CALLOUT_TONES.join(", ")}`
       if (name === "Feature" && !isOneOf(FEATURE_AUDIENCES, attr("audience")))
         return `<Feature> audience is one of ${FEATURE_AUDIENCES.join(", ")}`
+      if (name === "Tool" && !isOneOf(TOOLS, attr("name")))
+        return `<Tool> name is one of ${TOOLS.join(", ")}`
       return undefined
     }
     default:

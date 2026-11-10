@@ -4,7 +4,11 @@
     "description": "Conseils de recrutement pour les employeurs, conseils de carrière pour les professionnels, tendances du recrutement et actualités produit de l'équipe LetsHyre.",
     "pageTitle": "Blog, page {{page}} | letshyre.ai",
     "crumb": "Blog",
-    "name": "Blog LetsHyre"
+    "name": "Blog LetsHyre",
+    "tagTitle": "Articles sur {{tag}}, blog LetsHyre | letshyre.ai",
+    "archiveTitle": "Archives du blog, tous les articles par mois | letshyre.ai",
+    "glossaryTitle": "Glossaire du recrutement : CTC, préavis et plus | letshyre.ai",
+    "termTitle": "{{term}}, glossaire du recrutement | letshyre.ai"
   },
   "index": {
     "eyebrow": "Blog",
@@ -27,7 +31,13 @@
     "resultsTitle": "Résultats de recherche",
     "searching": "Recherche des articles…",
     "searchFailed": "La recherche n'a pas pu se charger. Vérifiez votre connexion et réessayez.",
-    "retry": "Réessayer"
+    "retry": "Réessayer",
+    "browse": "Parcourir le blog",
+    "archive": "Archives",
+    "glossary": "Glossaire",
+    "saved": "Articles enregistrés",
+    "length": "Temps de lecture",
+    "noLengthResults": "Aucun article de cette longueur pour l’instant"
   },
   "post": {
     "published": "Publié le {{date}}",
@@ -54,7 +64,28 @@
     "neighbours": "Plus sur ce thème",
     "older": "Article précédent",
     "newer": "Article suivant",
-    "sourceMark": "Source {{n}}"
+    "sourceMark": "Source {{n}}",
+    "seriesFirst": "Partie 1 d’une série",
+    "followSeries": "Suivre cette série",
+    "tags": "Mots-clés",
+    "listen": "Écouter",
+    "pause": "Pause",
+    "keepListening": "Reprendre l’écoute",
+    "stopListening": "Arrêter la lecture",
+    "save": "Lire plus tard",
+    "saved": "Enregistré",
+    "savedToast": "Enregistré pour plus tard",
+    "unsavedToast": "Retiré des articles enregistrés",
+    "viewSaved": "Voir les articles enregistrés",
+    "continue": "Reprendre là où vous vous êtes arrêté ?",
+    "continueAction": "Reprendre la lecture",
+    "quoteActions": "Partager cette citation",
+    "copyQuote": "Copier la citation",
+    "quoteCopied": "Citation copiée avec un lien",
+    "quoteOn": "Partager la citation sur {{network}}",
+    "footnote": "Note {{n}}",
+    "footnotes": "Notes",
+    "backToText": "Retour au texte"
   },
   "topics": {
     "interviewing": "Entretiens",
@@ -104,6 +135,34 @@
       "note": "Remarque :",
       "tip": "Conseil :",
       "warning": "Attention :"
+    },
+    "download": "Fichier {{type}} à télécharger",
+    "checklist": {
+      "progress": "{{done}} sur {{count}} fait",
+      "download": "Télécharger en texte",
+      "reset": "Tout décocher"
+    },
+    "hireCost": {
+      "title": "Ce que vous coûte votre poste vacant",
+      "salary": "Salaire annuel du poste (₹)",
+      "daysNow": "Jours qu’il vous faut aujourd’hui pour recruter",
+      "daysTarget": "Jours auxquels vous pourriez descendre",
+      "perDay": "Chaque jour où le poste reste vide",
+      "extra_one": "Le {{count}} jour en trop",
+      "extra_many": "Les {{count}} jours en trop",
+      "extra_other": "Les {{count}} jours en trop",
+      "note": "Une estimation basse : chaque jour vaut le salaire du poste pour ce jour. Elle ne compte pas les candidats perdus pendant l’attente, qui coûtent généralement plus."
+    },
+    "noticeBuyout": {
+      "title": "Quand votre préavis se termine, et ce que coûte un départ anticipé",
+      "resignedOn": "Vous démissionnez le",
+      "noticeDays": "Préavis (jours)",
+      "monthlyPay": "Salaire mensuel pris en compte (₹)",
+      "joinOn": "Vous voulez commencer le",
+      "freeFrom": "Disponible à partir du",
+      "unserved": "Jours de préavis non effectués",
+      "buyout": "Rachat, avant impôts",
+      "note": "Compte les jours calendaires et un mois de salaire divisé par 30. La politique de votre employeur fixe la vraie formule, le salaire de base ou brut retenu, et si un rachat est même possible."
     }
   },
   "topicPage": {
@@ -120,6 +179,44 @@
       "trends": "Ce qui change dans le recrutement : les données, les règles et les outils à connaître pour employeurs et professionnels.",
       "news": "Nouveautés produit, lancements et autres actualités de l'équipe LetsHyre."
     },
-    "others": "Plus d’articles du blog"
+    "others": "Plus d’articles du blog",
+    "readingOrder": "À lire dans cet ordre"
+  },
+  "length": {
+    "any": "Toutes durées",
+    "quick": "Moins de 5 min",
+    "standard": "5 à 9 min",
+    "long": "10 min ou plus"
+  },
+  "tags": {
+    "ai": "IA",
+    "resumes": "CV",
+    "interviews": "Entretiens",
+    "salary": "Salaire et offres",
+    "india": "Inde",
+    "job-search": "Recherche d’emploi",
+    "hiring-process": "Processus de recrutement",
+    "skills": "Compétences",
+    "career-growth": "Évolution de carrière"
+  },
+  "tagPage": {
+    "description": "Tous les articles du blog LetsHyre sur {{tag}}, des conseils de recrutement aux changements de poste, du plus récent au plus ancien."
+  },
+  "archive": {
+    "title": "Archives",
+    "description": "Tous les articles du blog, du plus récent au plus ancien, classés par mois de publication."
+  },
+  "saved": {
+    "empty": "Rien d’enregistré pour l’instant",
+    "emptyHint": "Choisissez « Lire plus tard » sur un article et il apparaîtra ici.",
+    "browse": "Parcourir les articles"
+  },
+  "glossary": {
+    "title": "Glossaire du recrutement",
+    "description": "Des définitions simples des mots qu’on croise en recrutant ou en cherchant un emploi, du CTC au rachat de préavis.",
+    "aka": "Aussi appelé {{names}}",
+    "mentionedIn": "Articles qui l’utilisent",
+    "readMore": "Lire la définition complète",
+    "all": "Tous les termes"
   }
 }

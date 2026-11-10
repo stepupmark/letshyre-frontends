@@ -4,7 +4,11 @@
     "description": "Dicas de contratação para empresas, dicas de carreira para profissionais, tendências de contratação e novidades de produto da equipe LetsHyre.",
     "pageTitle": "Blog, página {{page}} | letshyre.ai",
     "crumb": "Blog",
-    "name": "Blog da LetsHyre"
+    "name": "Blog da LetsHyre",
+    "tagTitle": "Artigos sobre {{tag}}, blog da LetsHyre | letshyre.ai",
+    "archiveTitle": "Arquivo do blog, todos os artigos por mês | letshyre.ai",
+    "glossaryTitle": "Glossário de contratação: CTC, aviso prévio e mais | letshyre.ai",
+    "termTitle": "{{term}}, glossário de contratação | letshyre.ai"
   },
   "index": {
     "eyebrow": "Blog",
@@ -27,7 +31,13 @@
     "resultsTitle": "Resultados da pesquisa",
     "searching": "Pesquisando artigos…",
     "searchFailed": "Não foi possível carregar a pesquisa. Verifique sua conexão e tente novamente.",
-    "retry": "Tentar novamente"
+    "retry": "Tentar novamente",
+    "browse": "Explorar o blog",
+    "archive": "Arquivo",
+    "glossary": "Glossário",
+    "saved": "Artigos salvos",
+    "length": "Tempo de leitura",
+    "noLengthResults": "Ainda não há artigos com essa duração"
   },
   "post": {
     "published": "Publicado em {{date}}",
@@ -54,7 +64,28 @@
     "neighbours": "Mais sobre este tema",
     "older": "Artigo anterior",
     "newer": "Artigo seguinte",
-    "sourceMark": "Fonte {{n}}"
+    "sourceMark": "Fonte {{n}}",
+    "seriesFirst": "Parte 1 de uma série",
+    "followSeries": "Seguir esta série",
+    "tags": "Tags",
+    "listen": "Ouvir",
+    "pause": "Pausar",
+    "keepListening": "Continuar ouvindo",
+    "stopListening": "Parar de ouvir",
+    "save": "Salvar para depois",
+    "saved": "Salvo",
+    "savedToast": "Salvo para ler depois",
+    "unsavedToast": "Removido dos artigos salvos",
+    "viewSaved": "Ver salvos",
+    "continue": "Continuar de onde você parou?",
+    "continueAction": "Continuar lendo",
+    "quoteActions": "Compartilhar esta citação",
+    "copyQuote": "Copiar citação",
+    "quoteCopied": "Citação copiada com um link",
+    "quoteOn": "Compartilhar a citação no {{network}}",
+    "footnote": "Nota {{n}}",
+    "footnotes": "Notas",
+    "backToText": "Voltar ao texto"
   },
   "topics": {
     "interviewing": "Entrevistas",
@@ -104,6 +135,34 @@
       "note": "Nota:",
       "tip": "Dica:",
       "warning": "Atenção:"
+    },
+    "download": "Arquivo {{type}} para baixar",
+    "checklist": {
+      "progress": "{{done}} de {{count}} feitos",
+      "download": "Baixar como texto",
+      "reset": "Desmarcar tudo"
+    },
+    "hireCost": {
+      "title": "Quanto custa sua vaga aberta",
+      "salary": "Salário anual da vaga (₹)",
+      "daysNow": "Dias que você leva hoje para contratar",
+      "daysTarget": "Dias a que você poderia chegar",
+      "perDay": "Cada dia com a vaga vazia",
+      "extra_one": "O {{count}} dia a mais",
+      "extra_many": "Os {{count}} dias a mais",
+      "extra_other": "Os {{count}} dias a mais",
+      "note": "Um piso aproximado: cada dia vale o salário da vaga naquele dia. Não inclui os candidatos que você perde enquanto espera, que costumam custar mais."
+    },
+    "noticeBuyout": {
+      "title": "Quando seu aviso prévio termina e quanto custa sair antes",
+      "resignedOn": "Você pede demissão em",
+      "noticeDays": "Aviso prévio (dias)",
+      "monthlyPay": "Salário mensal usado no cálculo (₹)",
+      "joinOn": "Você quer começar em",
+      "freeFrom": "Livre para começar a partir de",
+      "unserved": "Dias que você não cumpriria",
+      "buyout": "Valor a pagar, antes de impostos",
+      "note": "Conta dias corridos e um mês de salário dividido por 30. A política do seu empregador define a fórmula real, se vale o salário-base ou o bruto e se a saída antecipada é permitida."
     }
   },
   "topicPage": {
@@ -120,6 +179,44 @@
       "trends": "O que está mudando na contratação: os dados, as regras e as ferramentas que empresas e profissionais devem conhecer.",
       "news": "Novidades de produto, lançamentos e outras notícias da equipe LetsHyre."
     },
-    "others": "Mais do blog"
+    "others": "Mais do blog",
+    "readingOrder": "Leia nesta ordem"
+  },
+  "length": {
+    "any": "Qualquer duração",
+    "quick": "Menos de 5 min",
+    "standard": "De 5 a 9 min",
+    "long": "10 min ou mais"
+  },
+  "tags": {
+    "ai": "IA",
+    "resumes": "Currículos",
+    "interviews": "Entrevistas",
+    "salary": "Salário e propostas",
+    "india": "Índia",
+    "job-search": "Busca de emprego",
+    "hiring-process": "Processo de contratação",
+    "skills": "Habilidades",
+    "career-growth": "Crescimento na carreira"
+  },
+  "tagPage": {
+    "description": "Todos os artigos do blog da LetsHyre com a tag {{tag}}, de dicas de contratação a mudanças de emprego, dos mais recentes aos mais antigos."
+  },
+  "archive": {
+    "title": "Arquivo",
+    "description": "Todos os artigos do blog, dos mais recentes aos mais antigos, pelo mês em que foram publicados."
+  },
+  "saved": {
+    "empty": "Nada salvo ainda",
+    "emptyHint": "Escolha \"Salvar para depois\" em qualquer artigo e ele aparece aqui.",
+    "browse": "Ver artigos"
+  },
+  "glossary": {
+    "title": "Glossário de contratação",
+    "description": "Definições simples das palavras que aparecem quando você contrata ou procura emprego, do CTC à compra do aviso prévio.",
+    "aka": "Também chamado de {{names}}",
+    "mentionedIn": "Artigos que usam o termo",
+    "readMore": "Ler a definição completa",
+    "all": "Todos os termos"
   }
 }

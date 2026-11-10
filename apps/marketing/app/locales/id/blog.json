@@ -4,7 +4,11 @@
     "description": "Tips rekrutmen untuk pemberi kerja, tips karier untuk profesional, tren rekrutmen, dan kabar produk dari tim LetsHyre.",
     "pageTitle": "Blog, halaman {{page}} | letshyre.ai",
     "crumb": "Blog",
-    "name": "Blog LetsHyre"
+    "name": "Blog LetsHyre",
+    "tagTitle": "Artikel tentang {{tag}}, blog LetsHyre | letshyre.ai",
+    "archiveTitle": "Arsip blog, semua artikel per bulan | letshyre.ai",
+    "glossaryTitle": "Glosarium rekrutmen: CTC, masa pemberitahuan, dll | letshyre.ai",
+    "termTitle": "{{term}}, glosarium rekrutmen | letshyre.ai"
   },
   "index": {
     "eyebrow": "Blog",
@@ -27,7 +31,13 @@
     "resultsTitle": "Hasil pencarian",
     "searching": "Mencari artikel…",
     "searchFailed": "Pencarian tidak dapat dimuat. Periksa koneksi Anda dan coba lagi.",
-    "retry": "Coba lagi"
+    "retry": "Coba lagi",
+    "browse": "Jelajahi blog",
+    "archive": "Arsip",
+    "glossary": "Glosarium",
+    "saved": "Artikel tersimpan",
+    "length": "Waktu baca",
+    "noLengthResults": "Belum ada artikel sepanjang itu"
   },
   "post": {
     "published": "Diterbitkan {{date}}",
@@ -54,7 +64,28 @@
     "neighbours": "Lainnya dalam topik ini",
     "older": "Artikel sebelumnya",
     "newer": "Artikel berikutnya",
-    "sourceMark": "Sumber {{n}}"
+    "sourceMark": "Sumber {{n}}",
+    "seriesFirst": "Bagian 1 dari sebuah seri",
+    "followSeries": "Ikuti seri ini",
+    "tags": "Tag",
+    "listen": "Dengarkan",
+    "pause": "Jeda",
+    "keepListening": "Lanjut dengarkan",
+    "stopListening": "Berhenti membacakan",
+    "save": "Simpan untuk nanti",
+    "saved": "Tersimpan",
+    "savedToast": "Disimpan untuk dibaca nanti",
+    "unsavedToast": "Dihapus dari artikel tersimpan",
+    "viewSaved": "Lihat yang tersimpan",
+    "continue": "Lanjutkan dari bagian terakhir?",
+    "continueAction": "Lanjut membaca",
+    "quoteActions": "Bagikan kutipan ini",
+    "copyQuote": "Salin kutipan",
+    "quoteCopied": "Kutipan disalin beserta tautannya",
+    "quoteOn": "Bagikan kutipan di {{network}}",
+    "footnote": "Catatan {{n}}",
+    "footnotes": "Catatan",
+    "backToText": "Kembali ke teks"
   },
   "topics": {
     "interviewing": "Wawancara",
@@ -104,6 +135,32 @@
       "note": "Catatan:",
       "tip": "Tips:",
       "warning": "Peringatan:"
+    },
+    "download": "File {{type}} untuk diunduh",
+    "checklist": {
+      "progress": "{{done}} dari {{count}} selesai",
+      "download": "Unduh sebagai teks",
+      "reset": "Hapus centang"
+    },
+    "hireCost": {
+      "title": "Biaya posisi yang masih kosong",
+      "salary": "Gaji tahunan untuk posisi ini (₹)",
+      "daysNow": "Hari yang sekarang Anda butuhkan untuk mengisi",
+      "daysTarget": "Hari yang bisa Anda capai",
+      "perDay": "Setiap hari posisi dibiarkan kosong",
+      "extra_other": "{{count}} hari tambahan",
+      "note": "Perkiraan batas bawah: setiap hari dihitung sebesar gaji posisi itu untuk satu hari. Kandidat yang hilang selama Anda menunggu tidak dihitung, padahal biasanya lebih mahal."
+    },
+    "noticeBuyout": {
+      "title": "Kapan masa pemberitahuan Anda berakhir, dan biaya keluar lebih awal",
+      "resignedOn": "Anda mengundurkan diri pada",
+      "noticeDays": "Masa pemberitahuan (hari)",
+      "monthlyPay": "Gaji bulanan untuk perhitungan (₹)",
+      "joinOn": "Anda ingin mulai pada",
+      "freeFrom": "Bebas mulai bekerja dari",
+      "unserved": "Hari yang tidak Anda jalani",
+      "buyout": "Biaya pengganti, sebelum pajak",
+      "note": "Menghitung hari kalender dan gaji sebulan dibagi 30. Kebijakan pemberi kerja Anda yang menentukan rumus sebenarnya, gaji pokok atau gaji kotor, dan apakah keluar lebih awal diizinkan."
     }
   },
   "topicPage": {
@@ -120,6 +177,44 @@
       "trends": "Apa yang berubah dalam rekrutmen: data, aturan, dan alat yang perlu diketahui pemberi kerja dan profesional.",
       "news": "Pembaruan produk, peluncuran, dan kabar lain dari tim LetsHyre."
     },
-    "others": "Lainnya dari blog"
+    "others": "Lainnya dari blog",
+    "readingOrder": "Baca dengan urutan ini"
+  },
+  "length": {
+    "any": "Semua panjang",
+    "quick": "Kurang dari 5 mnt",
+    "standard": "5 sampai 9 mnt",
+    "long": "10 mnt atau lebih"
+  },
+  "tags": {
+    "ai": "AI",
+    "resumes": "CV",
+    "interviews": "Wawancara",
+    "salary": "Gaji dan tawaran",
+    "india": "India",
+    "job-search": "Mencari kerja",
+    "hiring-process": "Proses rekrutmen",
+    "skills": "Keterampilan",
+    "career-growth": "Pengembangan karier"
+  },
+  "tagPage": {
+    "description": "Semua artikel di blog LetsHyre dengan tag {{tag}}, dari saran rekrutmen sampai pindah kerja, yang terbaru lebih dulu."
+  },
+  "archive": {
+    "title": "Arsip",
+    "description": "Semua artikel di blog, yang terbaru lebih dulu, menurut bulan terbitnya."
+  },
+  "saved": {
+    "empty": "Belum ada yang disimpan",
+    "emptyHint": "Pilih \"Simpan untuk nanti\" di artikel mana pun dan artikel itu akan muncul di sini.",
+    "browse": "Lihat artikel"
+  },
+  "glossary": {
+    "title": "Glosarium rekrutmen",
+    "description": "Penjelasan sederhana tentang istilah yang muncul saat merekrut atau mencari kerja, dari CTC sampai menebus masa pemberitahuan.",
+    "aka": "Disebut juga {{names}}",
+    "mentionedIn": "Artikel yang memakainya",
+    "readMore": "Baca penjelasan lengkap",
+    "all": "Semua istilah"
   }
 }

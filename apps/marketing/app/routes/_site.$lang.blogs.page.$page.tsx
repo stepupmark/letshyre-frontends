@@ -18,6 +18,8 @@ export default function BlogIndexLaterPage({
       page={loaderData.page}
       pages={loaderData.pages}
       topics={loaderData.topics}
+      glossary={loaderData.glossary}
+      lengths={loaderData.lengths}
     />
   )
 }

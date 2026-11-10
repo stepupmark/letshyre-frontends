@@ -4,7 +4,11 @@
     "description": "企業向けの採用アドバイス、プロフェッショナル向けのキャリアアドバイス、採用トレンド、LetsHyreチームからの製品ニュース。",
     "pageTitle": "ブログ {{page}}ページ目 | letshyre.ai",
     "crumb": "ブログ",
-    "name": "LetsHyreブログ"
+    "name": "LetsHyreブログ",
+    "tagTitle": "{{tag}}の記事、LetsHyreブログ | letshyre.ai",
+    "archiveTitle": "ブログアーカイブ、月別の全記事 | letshyre.ai",
+    "glossaryTitle": "採用用語集：CTC、退職予告期間など | letshyre.ai",
+    "termTitle": "{{term}}、採用用語集 | letshyre.ai"
   },
   "index": {
     "eyebrow": "ブログ",
@@ -27,7 +31,13 @@
     "resultsTitle": "検索結果",
     "searching": "記事を検索しています…",
     "searchFailed": "検索を読み込めませんでした。接続を確認して、もう一度お試しください。",
-    "retry": "再試行"
+    "retry": "再試行",
+    "browse": "ブログを見る",
+    "archive": "アーカイブ",
+    "glossary": "用語集",
+    "saved": "保存した記事",
+    "length": "読了時間",
+    "noLengthResults": "この長さの記事はまだありません"
   },
   "post": {
     "published": "公開日：{{date}}",
@@ -54,7 +64,28 @@
     "neighbours": "このトピックの記事",
     "older": "前の記事",
     "newer": "次の記事",
-    "sourceMark": "出典 {{n}}"
+    "sourceMark": "出典 {{n}}",
+    "seriesFirst": "シリーズの第1回",
+    "followSeries": "このシリーズをフォロー",
+    "tags": "タグ",
+    "listen": "聞く",
+    "pause": "一時停止",
+    "keepListening": "続きを聞く",
+    "stopListening": "読み上げを停止",
+    "save": "あとで読む",
+    "saved": "保存済み",
+    "savedToast": "あとで読むために保存しました",
+    "unsavedToast": "保存した記事から削除しました",
+    "viewSaved": "保存した記事を見る",
+    "continue": "前回の続きから読みますか？",
+    "continueAction": "続きを読む",
+    "quoteActions": "この引用を共有",
+    "copyQuote": "引用をコピー",
+    "quoteCopied": "リンク付きで引用をコピーしました",
+    "quoteOn": "{{network}}で引用を共有",
+    "footnote": "注{{n}}",
+    "footnotes": "注",
+    "backToText": "本文に戻る"
   },
   "topics": {
     "interviewing": "面接",
@@ -104,6 +135,32 @@
       "note": "注：",
       "tip": "ヒント：",
       "warning": "注意："
+    },
+    "download": "ダウンロードできる{{type}}ファイル",
+    "checklist": {
+      "progress": "{{count}}件中{{done}}件完了",
+      "download": "テキストでダウンロード",
+      "reset": "チェックを外す"
+    },
+    "hireCost": {
+      "title": "空いているポジションのコスト",
+      "salary": "このポジションの年収（₹）",
+      "daysNow": "現在、採用にかかっている日数",
+      "daysTarget": "短縮できそうな日数",
+      "perDay": "席が空いている1日あたり",
+      "extra_other": "余分な{{count}}日分",
+      "note": "大まかな下限です。1日をそのポジションの1日分の給与として計算しています。待っている間に失う候補者の分は含まれず、通常はそちらの方が高くつきます。"
+    },
+    "noticeBuyout": {
+      "title": "退職予告期間が終わる日と、早く辞める場合の費用",
+      "resignedOn": "退職を申し出る日",
+      "noticeDays": "退職予告期間（日）",
+      "monthlyPay": "買い取りの計算に使う月給（₹）",
+      "joinOn": "入社したい日",
+      "freeFrom": "入社できる日",
+      "unserved": "勤務しない日数",
+      "buyout": "買い取り額（税引前）",
+      "note": "暦日と、月給を30で割った額で計算しています。実際の計算式、基本給と総支給額のどちらを使うか、買い取りが認められるかどうかは雇用主の規定で決まります。"
     }
   },
   "topicPage": {
@@ -120,6 +177,44 @@
       "trends": "採用で何が変わっているのか。企業とプロフェッショナルが知っておくべきデータ、ルール、ツール。",
       "news": "LetsHyreチームからの製品アップデート、リリース、その他のお知らせ。"
     },
-    "others": "ブログのほかの記事"
+    "others": "ブログのほかの記事",
+    "readingOrder": "この順番で読む"
+  },
+  "length": {
+    "any": "すべての長さ",
+    "quick": "5分未満",
+    "standard": "5〜9分",
+    "long": "10分以上"
+  },
+  "tags": {
+    "ai": "AI",
+    "resumes": "履歴書",
+    "interviews": "面接",
+    "salary": "給与とオファー",
+    "india": "インド",
+    "job-search": "仕事探し",
+    "hiring-process": "採用プロセス",
+    "skills": "スキル",
+    "career-growth": "キャリアアップ"
+  },
+  "tagPage": {
+    "description": "LetsHyreブログの「{{tag}}」タグの全記事。採用のアドバイスから転職まで、新しい順に並べています。"
+  },
+  "archive": {
+    "title": "アーカイブ",
+    "description": "ブログの全記事を、公開した月ごとに新しい順で並べています。"
+  },
+  "saved": {
+    "empty": "保存した記事はまだありません",
+    "emptyHint": "記事で「あとで読む」を選ぶと、ここに表示されます。",
+    "browse": "記事を見る"
+  },
+  "glossary": {
+    "title": "採用用語集",
+    "description": "採用や仕事探しで出てくる言葉を、CTCから退職予告期間の買い取りまで、わかりやすく説明します。",
+    "aka": "別名：{{names}}",
+    "mentionedIn": "この用語を使っている記事",
+    "readMore": "詳しい説明を読む",
+    "all": "すべての用語"
   }
 }

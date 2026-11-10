@@ -4,7 +4,11 @@
     "description": "Recruiting-Tipps für Arbeitgeber, Karrieretipps für Fachkräfte, Recruiting-Trends und Produktneuigkeiten vom LetsHyre-Team.",
     "pageTitle": "Blog, Seite {{page}} | letshyre.ai",
     "crumb": "Blog",
-    "name": "LetsHyre-Blog"
+    "name": "LetsHyre-Blog",
+    "tagTitle": "Beiträge zu {{tag}}, LetsHyre-Blog | letshyre.ai",
+    "archiveTitle": "Blog-Archiv, alle Beiträge nach Monat | letshyre.ai",
+    "glossaryTitle": "Recruiting-Glossar: CTC, Kündigungsfrist und mehr | letshyre.ai",
+    "termTitle": "{{term}}, Recruiting-Glossar | letshyre.ai"
   },
   "index": {
     "eyebrow": "Blog",
@@ -27,7 +31,13 @@
     "resultsTitle": "Suchergebnisse",
     "searching": "Beiträge werden gesucht…",
     "searchFailed": "Die Suche konnte nicht geladen werden. Prüfe deine Verbindung und versuche es erneut.",
-    "retry": "Erneut versuchen"
+    "retry": "Erneut versuchen",
+    "browse": "Im Blog stöbern",
+    "archive": "Archiv",
+    "glossary": "Glossar",
+    "saved": "Gemerkte Beiträge",
+    "length": "Lesezeit",
+    "noLengthResults": "Noch keine Beiträge dieser Länge"
   },
   "post": {
     "published": "Veröffentlicht am {{date}}",
@@ -54,7 +64,28 @@
     "neighbours": "Mehr zu diesem Thema",
     "older": "Älterer Beitrag",
     "newer": "Neuerer Beitrag",
-    "sourceMark": "Quelle {{n}}"
+    "sourceMark": "Quelle {{n}}",
+    "seriesFirst": "Teil 1 einer Reihe",
+    "followSeries": "Dieser Reihe folgen",
+    "tags": "Schlagwörter",
+    "listen": "Anhören",
+    "pause": "Pause",
+    "keepListening": "Weiter anhören",
+    "stopListening": "Vorlesen beenden",
+    "save": "Für später merken",
+    "saved": "Gemerkt",
+    "savedToast": "Zum späteren Lesen gemerkt",
+    "unsavedToast": "Aus den gemerkten Beiträgen entfernt",
+    "viewSaved": "Gemerkte ansehen",
+    "continue": "Dort weiterlesen, wo du aufgehört hast?",
+    "continueAction": "Weiterlesen",
+    "quoteActions": "Dieses Zitat teilen",
+    "copyQuote": "Zitat kopieren",
+    "quoteCopied": "Zitat mit Link kopiert",
+    "quoteOn": "Zitat auf {{network}} teilen",
+    "footnote": "Anmerkung {{n}}",
+    "footnotes": "Anmerkungen",
+    "backToText": "Zurück zum Text"
   },
   "topics": {
     "interviewing": "Vorstellungsgespräche",
@@ -104,6 +135,33 @@
       "note": "Hinweis:",
       "tip": "Tipp:",
       "warning": "Warnung:"
+    },
+    "download": "{{type}}-Datei zum Herunterladen",
+    "checklist": {
+      "progress": "{{done}} von {{count}} erledigt",
+      "download": "Als Text herunterladen",
+      "reset": "Häkchen entfernen"
+    },
+    "hireCost": {
+      "title": "Was dich deine offene Stelle kostet",
+      "salary": "Jahresgehalt für die Stelle (₹)",
+      "daysNow": "Tage, die du heute zum Besetzen brauchst",
+      "daysTarget": "Tage, auf die du kommen könntest",
+      "perDay": "Jeder Tag, an dem die Stelle leer bleibt",
+      "extra_one": "Der {{count}} zusätzliche Tag",
+      "extra_other": "Die {{count}} zusätzlichen Tage",
+      "note": "Eine grobe Untergrenze: Jeder Tag zählt mit dem Gehalt der Stelle für diesen Tag. Die Kandidaten, die du beim Warten verlierst, sind nicht eingerechnet, und sie kosten meist mehr."
+    },
+    "noticeBuyout": {
+      "title": "Wann deine Kündigungsfrist endet und was ein früherer Abschied kostet",
+      "resignedOn": "Du kündigst am",
+      "noticeDays": "Kündigungsfrist (Tage)",
+      "monthlyPay": "Monatsgehalt für die Ablöse (₹)",
+      "joinOn": "Du möchtest anfangen am",
+      "freeFrom": "Frei für den Start ab",
+      "unserved": "Tage, die du nicht ableisten würdest",
+      "buyout": "Ablöse vor Steuern",
+      "note": "Zählt Kalendertage und ein Monatsgehalt geteilt durch 30. Die Regelung deines Arbeitgebers entscheidet über die echte Formel, ob Grund- oder Bruttogehalt zählt und ob eine Ablöse überhaupt möglich ist."
     }
   },
   "topicPage": {
@@ -120,6 +178,44 @@
       "trends": "Was sich beim Einstellen ändert: Daten, Regeln und Werkzeuge, die Arbeitgeber und Fachkräfte kennen sollten.",
       "news": "Produktneuigkeiten, Starts und weitere Nachrichten vom LetsHyre-Team."
     },
-    "others": "Mehr aus dem Blog"
+    "others": "Mehr aus dem Blog",
+    "readingOrder": "In dieser Reihenfolge lesen"
+  },
+  "length": {
+    "any": "Jede Länge",
+    "quick": "Unter 5 Min.",
+    "standard": "5 bis 9 Min.",
+    "long": "10 Min. oder mehr"
+  },
+  "tags": {
+    "ai": "KI",
+    "resumes": "Lebensläufe",
+    "interviews": "Vorstellungsgespräche",
+    "salary": "Gehalt und Angebote",
+    "india": "Indien",
+    "job-search": "Jobsuche",
+    "hiring-process": "Einstellungsprozess",
+    "skills": "Fähigkeiten",
+    "career-growth": "Karriereentwicklung"
+  },
+  "tagPage": {
+    "description": "Alle Beiträge im LetsHyre-Blog mit dem Schlagwort {{tag}}, von Recruiting-Tipps bis zum Jobwechsel, die neuesten zuerst."
+  },
+  "archive": {
+    "title": "Archiv",
+    "description": "Alle Beiträge im Blog, die neuesten zuerst, nach dem Monat ihrer Veröffentlichung."
+  },
+  "saved": {
+    "empty": "Noch nichts gemerkt",
+    "emptyHint": "Wähle bei einem Beitrag „Für später merken“, dann erscheint er hier.",
+    "browse": "Beiträge ansehen"
+  },
+  "glossary": {
+    "title": "Recruiting-Glossar",
+    "description": "Einfache Erklärungen der Begriffe, die beim Einstellen und bei der Jobsuche auftauchen, von CTC bis zur Ablöse der Kündigungsfrist.",
+    "aka": "Auch genannt: {{names}}",
+    "mentionedIn": "Beiträge, die den Begriff verwenden",
+    "readMore": "Ganze Erklärung lesen",
+    "all": "Alle Begriffe"
   }
 }

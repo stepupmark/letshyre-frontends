@@ -81,6 +81,48 @@
       "<VideoEmbed id=\"${2:11-character YouTube id}\" title=\"${3:What the video shows}\" poster={$1} />",
     ],
   },
+  "Term": {
+    "scope": "mdx",
+    "prefix": "term",
+    "body": ["<Term id=\"${1:ctc}\">${2:CTC}</Term>"],
+  },
+  "Faq": {
+    "scope": "mdx",
+    "prefix": "faq",
+    "body": [
+      "## ${1:Questions people ask}",
+      "",
+      "<Faq>",
+      "<Question q=\"${2:The question, as a reader would ask it}\">",
+      "$0",
+      "</Question>",
+      "</Faq>",
+    ],
+  },
+  "Checklist": {
+    "scope": "mdx",
+    "prefix": "checklist",
+    "body": [
+      "<Checklist title=\"${1:Before you resign}\">",
+      "<Check>${2:First thing to check}</Check>",
+      "<Check>$0</Check>",
+      "</Checklist>",
+    ],
+  },
+  "Download": {
+    "scope": "mdx",
+    "prefix": "download",
+    "body": [
+      "import ${1:sheet} from \"./${2:sheet.csv}\"",
+      "",
+      "<Download src={$1} title=\"${3:What the file is}\" />",
+    ],
+  },
+  "Tool": {
+    "scope": "mdx",
+    "prefix": "tool",
+    "body": ["<Tool name=\"${1|hire-cost,notice-buyout|}\" />"],
+  },
   "Reviewer note": {
     "scope": "mdx",
     "prefix": "note",

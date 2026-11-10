@@ -1,7 +1,7 @@
 import { type Locale, localePath } from "@workspace/i18n"
 import { z } from "zod"
 
-import { TOPICS } from "@/lib/blog/list"
+import { TAGS, TOPICS } from "@/lib/blog/list"
 import { searchIndexPath } from "@/lib/blog/paths"
 import type { PostSummary } from "@/lib/blog/post"
 
@@ -11,6 +11,7 @@ const indexSchema = z.array(
     title: z.string(),
     description: z.string(),
     topic: z.enum(TOPICS),
+    tags: z.array(z.enum(TAGS)),
     publishedAt: z.string(),
     updatedAt: z.string().optional(),
     minutes: z.number(),

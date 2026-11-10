@@ -10,14 +10,21 @@ import { breadcrumbSchema, postListSchema, webPageSchema } from "./schema"
 
 export function topicMeta({ matches, params }: MetaArgs): MetaDescriptor[] {
   const data = matches.at(-1)?.loaderData as
-    { topic: Topic; posts: Post[]; locales: Locale[] } | undefined
+    | {
+        topic: Topic
+        posts: Post[]
+        locales: Locale[]
+        guide?: { description: string }
+      }
+    | undefined
   if (!data) return []
 
   const { lang, t } = metaContext({ matches, params })
   const { topic, posts, locales } = data
   const path = topicPath(topic)
   const name = t(`blog:topics.${topic}`)
-  const description = t(`blog:topicPage.description.${topic}`)
+  const description =
+    data.guide?.description ?? t(`blog:topicPage.description.${topic}`)
 
   return [
     ...buildMeta({

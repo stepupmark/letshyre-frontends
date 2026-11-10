@@ -241,20 +241,29 @@ describe("searchPosts", () => {
       title: "Negotiating your offer",
       description: "CTC and fixed pay",
       topic: "careers",
+      minutes: 4,
     },
     {
       title: "Explain a career gap",
       description: "Without apologising",
       topic: "careers",
+      minutes: 5,
     },
   ] as const
-  const titles = (query: string) =>
-    searchPosts(posts, query, "en", () => "Careers").map((post) => post.title)
+  const titles = (query: string, length?: "quick" | "standard") =>
+    searchPosts(posts, query, "en", () => "Careers", length).map(
+      (post) => post.title
+    )
 
   it("matches every word, in any order and any case, across title, description and topic", () => {
     expect(titles("fixed OFFER")).toEqual(["Negotiating your offer"])
     expect(titles("careers gap")).toEqual(["Explain a career gap"])
     expect(titles("offer gap")).toEqual([])
     expect(titles("   ")).toEqual([])
+  })
+
+  it("filters by length on its own, with four minutes the last quick read", () => {
+    expect(titles("", "quick")).toEqual(["Negotiating your offer"])
+    expect(titles("careers", "standard")).toEqual(["Explain a career gap"])
   })
 })

@@ -15,6 +15,8 @@ export default function BlogIndex({ loaderData }: Route.ComponentProps) {
       page={loaderData.page}
       pages={loaderData.pages}
       topics={loaderData.topics}
+      glossary={loaderData.glossary}
+      lengths={loaderData.lengths}
     />
   )
 }

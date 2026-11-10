@@ -40,6 +40,8 @@ publishedAt: 2026-11-08 # UTC; the post goes live with the first build on or aft
 updatedAt: 2026-12-01 # optional, after a real revision
 audience: employers # employers | candidates | everyone: picks the closing call to action
 topic: interviewing # interviewing | hiring | careers | trends | news
+tags: [interviews, hiring-process] # optional, up to three from TAGS in app/lib/blog/list.ts
+series: structured-interviews # optional; parts share an id and get a series feed
 author: priya # optional, an id from app/lib/blog/authors.ts; unsigned posts are the team's
 draft: true # optional; drafts show on dev and staging only
 featured: true # optional; leads the blog index instead of the newest post
@@ -50,9 +52,9 @@ A bad field fails the build with the file name.
 
 ## Body
 
-Markdown with GitHub tables, plus these components. Raw HTML, code expressions, unknown components
-and imports other than local images fail the build. A note for the reviewer goes in a comment,
-`{/* like this */}`, which never renders.
+Markdown with GitHub tables and footnotes (`[^1]`), plus these components. Raw HTML, code
+expressions, unknown components and imports of anything but files beside the post fail the build. A
+note for the reviewer goes in a comment, `{/* like this */}`, which never renders.
 
 | Component                                                  | For                                                                                                              |
 | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -64,10 +66,32 @@ and imports other than local images fail the build. A note for the reviewer goes
 | `<Feature audience="candidates" />`                        | A link to the LetsHyre page for that reader, where the text leads to it. It replaces the mid-post call to action |
 | `<Quote by="…" role="…">…</Quote>`                         | A quote from a real person who agreed to it                                                                      |
 | `<VideoEmbed id="…" title="…" poster={img} />`             | A YouTube video (11-character id); nothing loads until it's played                                               |
+| `<Term id="ctc">CTC</Term>`                                | A word from the glossary; readers hover or tap it for the definition. The entry must exist (see Glossary)        |
+| `<Faq><Question q="…">…</Question></Faq>`                  | Questions readers ask, under a `##` heading. They also become the page's FAQ structured data                     |
+| `<Checklist title="…"><Check>…</Check></Checklist>`        | A list the reader can tick off and download; ticks stay in their browser                                         |
+| `<Download src={file} title="…" />`                        | A template beside the post (PDF, CSV, TXT, DOCX or XLSX), imported like an image                                 |
+| `<Tool name="hire-cost" />`                                | A calculator: `hire-cost` or `notice-buyout`. New ones go in `components/mdx/tools` and `TOOLS`                  |
 
 External links and `<Stat>` sources are numbered and listed under the post as its sources.
 
 Code fences are highlighted at build time; give them a language (` ```ts `).
+
+`pnpm blog:check` also suggests glossary words to wrap in `<Term>` and posts that share a tag but
+aren't linked yet. They're suggestions; add the links that help the reader.
+
+## Glossary
+
+Each entry is `content/glossary/<id>/en.mdx`: a `term`, a `short` definition of 20 to 160
+characters for the hover card and search, and optional `aliases`. The body is a few plain
+paragraphs and links, and gets its own page at `/en/blogs/glossary/<id>`. A `<Term>` pointing at a
+missing entry fails the build.
+
+## Topic guides
+
+A topic page can open with a guide, `content/guides/<topic>/en.mdx`: a `title`, a `description`
+(used for the page's meta description) and `reading`, the post slugs in the order to read them.
+The body says what the topic covers in two or three paragraphs. Drafts drop out of the reading
+order until they're published.
 
 ## Images
 
