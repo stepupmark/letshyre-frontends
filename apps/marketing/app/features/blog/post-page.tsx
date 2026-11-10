@@ -18,6 +18,7 @@ import { mdxComponents } from "./components/mdx"
 import { PostCta } from "./components/post-cta"
 import { PostHeader } from "./components/post-header"
 import { PostNeighbours } from "./components/post-neighbours"
+import { PostSeries } from "./components/post-series"
 import { PostShare } from "./components/post-share"
 import { PostSources } from "./components/post-sources"
 import { PostToc } from "./components/post-toc"
@@ -48,12 +49,14 @@ export function PostPage({
   post,
   newer,
   older,
+  series,
   related,
   subscribe,
 }: {
   post: Post
   newer?: Post
   older?: Post
+  series: readonly Pick<Post, "slug" | "title">[]
   related: readonly Post[]
   /** The newsletter form, passed in by the route: features don't import each other. */
   subscribe: ReactNode
@@ -81,6 +84,7 @@ export function PostPage({
           </div>
         )}
         <div className="flex min-w-0 flex-col gap-12 lg:col-start-2">
+          <PostSeries slug={post.slug} parts={series} />
           <article
             ref={article}
             className="flex flex-col gap-5 text-base text-foreground/85 *:max-w-prose *:data-wide:max-w-none lg:text-lg/8 print:text-foreground"

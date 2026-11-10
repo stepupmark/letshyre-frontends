@@ -35,6 +35,8 @@
     "backToTop": "పైకి తిరిగి వెళ్ళండి",
     "toc": "ఈ పేజీలో",
     "sectionLink": "ఈ విభాగానికి లింక్",
+    "sectionCopied": "ఈ విభాగానికి లింక్ కాపీ అయింది",
+    "seriesPart": "ఈ సిరీస్‌లో {{count}}లో భాగం {{part}}",
     "byTeam": "LetsHyre బృందం రాసినది",
     "by": "{{name}}, {{role}} రాసినది",
     "draft": "డ్రాఫ్ట్",

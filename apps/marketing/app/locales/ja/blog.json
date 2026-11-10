@@ -35,6 +35,8 @@
     "backToTop": "ページの先頭に戻る",
     "toc": "このページの内容",
     "sectionLink": "このセクションへのリンク",
+    "sectionCopied": "このセクションへのリンクをコピーしました",
+    "seriesPart": "このシリーズの {{count}} 回中 {{part}} 回目",
     "byTeam": "LetsHyreチーム",
     "by": "{{name}}（{{role}}）",
     "draft": "下書き",

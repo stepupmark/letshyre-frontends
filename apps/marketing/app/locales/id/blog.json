@@ -35,6 +35,8 @@
     "backToTop": "Kembali ke atas",
     "toc": "Di halaman ini",
     "sectionLink": "Tautan ke bagian ini",
+    "sectionCopied": "Tautan ke bagian ini disalin",
+    "seriesPart": "Bagian {{part}} dari {{count}} dalam seri ini",
     "byTeam": "Oleh tim LetsHyre",
     "by": "Oleh {{name}}, {{role}}",
     "draft": "Draf",

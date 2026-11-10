@@ -17,7 +17,7 @@ export function Stat({
   const { t } = useTranslation("blog")
 
   return (
-    <figure className="my-2 flex flex-col gap-2 rounded-xl border p-6">
+    <figure className="my-2 flex flex-col gap-2 rounded-xl border p-6 print:break-inside-avoid">
       <p className="text-4xl font-semibold tracking-tight text-foreground tabular-nums">
         {value}
       </p>

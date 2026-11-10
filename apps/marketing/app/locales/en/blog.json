@@ -35,6 +35,8 @@
     "backToTop": "Back to top",
     "toc": "On this page",
     "sectionLink": "Link to this section",
+    "sectionCopied": "Link to this section copied",
+    "seriesPart": "Part {{part}} of {{count}} in this series",
     "byTeam": "By the LetsHyre team",
     "by": "By {{name}}, {{role}}",
     "draft": "Draft",

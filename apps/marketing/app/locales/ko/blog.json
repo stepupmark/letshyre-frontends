@@ -35,6 +35,8 @@
     "backToTop": "맨 위로",
     "toc": "이 페이지의 내용",
     "sectionLink": "이 섹션 링크",
+    "sectionCopied": "이 섹션 링크를 복사했습니다",
+    "seriesPart": "이 시리즈 {{count}}편 중 {{part}}편",
     "byTeam": "LetsHyre 팀",
     "by": "{{name}}, {{role}}",
     "draft": "초안",

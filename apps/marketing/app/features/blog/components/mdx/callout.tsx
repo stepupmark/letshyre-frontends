@@ -20,7 +20,7 @@ export function Callout({
     <aside
       role="note"
       className={cn(
-        "my-2 flex gap-3 rounded-xl border p-4",
+        "my-2 flex gap-3 rounded-xl border p-4 print:break-inside-avoid",
         tone === "warning" ? "bg-warning-muted" : "bg-muted/40"
       )}
     >

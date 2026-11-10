@@ -31,6 +31,10 @@ const frontmatterSchema = z
       .string()
       .refine((id) => id in AUTHORS, "isn't in app/lib/blog/authors.ts")
       .optional(),
+    series: z
+      .string()
+      .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "isn't a lowercase-hyphenated id")
+      .optional(),
     draft: z.boolean().default(false),
     featured: z.boolean().default(false),
   })

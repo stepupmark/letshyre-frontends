@@ -10,7 +10,7 @@ export function Quote({
   children: ReactNode
 }) {
   return (
-    <figure className="my-2 flex flex-col gap-4 rounded-xl border p-6">
+    <figure className="my-2 flex flex-col gap-4 rounded-xl border p-6 print:break-inside-avoid">
       <blockquote className="flex flex-col gap-3 text-lg text-pretty text-foreground">
         {children}
       </blockquote>

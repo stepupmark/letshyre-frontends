@@ -35,6 +35,8 @@
     "backToTop": "ಮೇಲಕ್ಕೆ ಹಿಂತಿರುಗಿ",
     "toc": "ಈ ಪುಟದಲ್ಲಿ",
     "sectionLink": "ಈ ವಿಭಾಗಕ್ಕೆ ಲಿಂಕ್",
+    "sectionCopied": "ಈ ವಿಭಾಗದ ಲಿಂಕ್ ನಕಲಿಸಲಾಗಿದೆ",
+    "seriesPart": "ಈ ಸರಣಿಯ {{count}} ರಲ್ಲಿ ಭಾಗ {{part}}",
     "byTeam": "LetsHyre ತಂಡದಿಂದ",
     "by": "{{name}}, {{role}} ಅವರಿಂದ",
     "draft": "ಕರಡು",

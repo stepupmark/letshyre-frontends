@@ -5,7 +5,7 @@ export function Compare({ avoid, prefer }: { avoid: string; prefer: string }) {
   const { t } = useTranslation("blog")
 
   return (
-    <div className="my-2 grid gap-3 sm:grid-cols-2">
+    <div className="my-2 grid gap-3 sm:grid-cols-2 print:break-inside-avoid">
       <div className="flex flex-col gap-2 rounded-xl border p-4">
         <p className="inline-flex items-center gap-2 text-sm font-semibold text-destructive">
           <XIcon aria-hidden className="size-4" />

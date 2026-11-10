@@ -35,6 +35,8 @@
     "backToTop": "শীর্ষে ফিরুন",
     "toc": "এই পেজে",
     "sectionLink": "এই অংশের লিংক",
+    "sectionCopied": "এই অংশের লিংক কপি হয়েছে",
+    "seriesPart": "এই সিরিজের {{count}}টির মধ্যে পর্ব {{part}}",
     "byTeam": "LetsHyre টিমের লেখা",
     "by": "{{name}}, {{role}}-এর লেখা",
     "draft": "খসড়া",

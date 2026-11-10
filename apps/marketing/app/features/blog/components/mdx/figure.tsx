@@ -34,7 +34,10 @@ export function Figure({
     : "(min-width: 768px) 40rem, 100vw"
 
   return (
-    <figure data-wide={wide || undefined} className="my-4 flex flex-col gap-3">
+    <figure
+      data-wide={wide || undefined}
+      className="my-4 flex flex-col gap-3 print:break-inside-avoid"
+    >
       <div className="group relative">
         {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions -- a pointer shortcut; the button below is the keyboard way in */}
         <div

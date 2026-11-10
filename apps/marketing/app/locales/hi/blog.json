@@ -35,6 +35,8 @@
     "backToTop": "ऊपर वापस जाएं",
     "toc": "इस पेज पर",
     "sectionLink": "इस सेक्शन का लिंक",
+    "sectionCopied": "इस सेक्शन का लिंक कॉपी हो गया",
+    "seriesPart": "इस सीरीज़ का भाग {{part}}, कुल {{count}}",
     "byTeam": "LetsHyre टीम की ओर से",
     "by": "{{name}}, {{role}} द्वारा",
     "draft": "ड्राफ़्ट",

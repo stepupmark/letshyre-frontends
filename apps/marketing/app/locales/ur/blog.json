@@ -35,6 +35,8 @@
     "backToTop": "اوپر واپس جائیں",
     "toc": "اس صفحے پر",
     "sectionLink": "اس حصے کا لنک",
+    "sectionCopied": "اس حصے کا لنک کاپی ہو گیا",
+    "seriesPart": "اس سلسلے کا حصہ {{part}} از {{count}}",
     "byTeam": "LetsHyre ٹیم کی جانب سے",
     "by": "{{name}}، {{role}} کی جانب سے",
     "draft": "مسودہ",

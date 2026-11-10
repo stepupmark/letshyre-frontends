@@ -35,6 +35,8 @@
     "backToTop": "Retour en haut",
     "toc": "Sur cette page",
     "sectionLink": "Lien vers cette section",
+    "sectionCopied": "Lien vers cette section copié",
+    "seriesPart": "Partie {{part}} sur {{count}} de cette série",
     "byTeam": "Par l'équipe LetsHyre",
     "by": "Par {{name}}, {{role}}",
     "draft": "Brouillon",

@@ -35,6 +35,8 @@
     "backToTop": "Terug naar boven",
     "toc": "Op deze pagina",
     "sectionLink": "Link naar deze sectie",
+    "sectionCopied": "Link naar deze sectie gekopieerd",
+    "seriesPart": "Deel {{part}} van {{count}} in deze reeks",
     "byTeam": "Door het LetsHyre-team",
     "by": "Door {{name}}, {{role}}",
     "draft": "Concept",

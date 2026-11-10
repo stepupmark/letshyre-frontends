@@ -3,7 +3,7 @@ import { data } from "react-router"
 
 import { featuredFirst, pageCount, topicCounts } from "./blog/post"
 import { ogImageOf } from "./blog/posts.server"
-import { relatedPosts } from "./blog/related"
+import { relatedPosts, seriesOf } from "./blog/related"
 import { summarize } from "./blog/search"
 import {
   indexPageLocales,
@@ -81,15 +81,19 @@ export function postData(lang: string | undefined, slug: string | undefined) {
   const at = inTopic.indexOf(post)
   const newer = inTopic[at - 1]
   const older = inTopic[at + 1]
+  const series = seriesOf(post, posts)
+  const shown = new Set([newer, older].map((p) => p?.slug))
+  for (const part of series) shown.add(part.slug)
   return {
     messages: loadMessages(lang, PAGES.blog.namespaces),
     locales: postLocales(post.slug),
     post,
     newer,
     older,
+    series,
     related: relatedPosts(
       post,
-      posts.filter((p) => p !== newer && p !== older)
+      posts.filter((p) => !shown.has(p.slug))
     ),
     ogImage: ogImageOf(post.slug),
   }

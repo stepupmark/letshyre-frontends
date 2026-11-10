@@ -35,6 +35,8 @@
     "backToTop": "Наверх",
     "toc": "На этой странице",
     "sectionLink": "Ссылка на этот раздел",
+    "sectionCopied": "Ссылка на этот раздел скопирована",
+    "seriesPart": "Часть {{part}} из {{count}} в этой серии",
     "byTeam": "Команда LetsHyre",
     "by": "{{name}}, {{role}}",
     "draft": "Черновик",

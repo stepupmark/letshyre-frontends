@@ -56,6 +56,7 @@ export function PostSources({ sources }: { sources: readonly Source[] }) {
                 ? hostOf(source.url)
                 : t("post.sourceQuote", { text: source.linkText })}
             </span>
+            <span className="hidden break-all print:block">{source.url}</span>
           </li>
         ))}
       </ol>

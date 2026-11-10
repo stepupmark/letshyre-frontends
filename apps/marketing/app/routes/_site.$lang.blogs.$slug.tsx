@@ -33,6 +33,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
       post={loaderData.post}
       newer={loaderData.newer}
       older={loaderData.older}
+      series={loaderData.series}
       related={loaderData.related}
       subscribe={<NewsletterForm title={t("post.subscribe")} />}
     />

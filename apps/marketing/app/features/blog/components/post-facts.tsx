@@ -3,7 +3,7 @@ import { Badge } from "@workspace/ui/components/badge"
 
 import type { Post } from "@/lib/blog/post"
 
-/** `short` is for lists: the publish date alone, as in "Nov 8, 2026". */
+/** `short` is for lists: one date, the update if there is one. */
 export function PostFacts({
   post,
   variant = "full",
@@ -26,9 +26,17 @@ export function PostFacts({
         </Badge>
       )}
       {variant === "short" ? (
-        <time dateTime={post.publishedAt}>
-          {format.date(post.publishedAt, { dateStyle: "medium" })}
-        </time>
+        post.updatedAt ? (
+          <time dateTime={post.updatedAt}>
+            {t("post.updated", {
+              date: format.date(post.updatedAt, { dateStyle: "medium" }),
+            })}
+          </time>
+        ) : (
+          <time dateTime={post.publishedAt}>
+            {format.date(post.publishedAt, { dateStyle: "medium" })}
+          </time>
+        )
       ) : (
         <>
           <time dateTime={post.publishedAt}>
