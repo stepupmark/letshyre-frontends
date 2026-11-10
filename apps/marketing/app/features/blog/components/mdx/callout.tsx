@@ -1,21 +1,28 @@
+import { useTranslation } from "@workspace/i18n/react"
 import { cn } from "@workspace/ui/lib/utils"
 import { InfoIcon, LightbulbIcon, TriangleAlertIcon } from "lucide-react"
 import type { ReactNode } from "react"
+
+import type { CALLOUT_TONES } from "@/lib/blog/remark-guard"
+
+type Tone = (typeof CALLOUT_TONES)[number]
 
 const ICONS = {
   note: InfoIcon,
   tip: LightbulbIcon,
   warning: TriangleAlertIcon,
-}
+} satisfies Record<Tone, unknown>
 
 export function Callout({
   tone = "note",
   children,
 }: {
-  tone?: keyof typeof ICONS
+  tone?: Tone
   children: ReactNode
 }) {
+  const { t } = useTranslation("blog")
   const Icon = ICONS[tone]
+
   return (
     <aside
       role="note"
@@ -31,7 +38,10 @@ export function Callout({
           tone === "warning" ? "text-warning" : "text-brand"
         )}
       />
-      <div className="flex min-w-0 flex-col gap-3">{children}</div>
+      <div className="flex min-w-0 flex-col gap-3">
+        <span className="sr-only">{t(`mdx.callout.${tone}`)}</span>
+        {children}
+      </div>
     </aside>
   )
 }

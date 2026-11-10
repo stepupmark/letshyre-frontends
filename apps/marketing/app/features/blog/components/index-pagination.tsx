@@ -1,9 +1,10 @@
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { buttonVariants } from "@workspace/ui/components/button"
-import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
+import { ArrowLeftIcon, ArrowRightIcon, EllipsisIcon } from "lucide-react"
 import { Link } from "react-router"
 
+import { pageWindow } from "@/lib/blog/list"
 import { indexPagePath } from "@/lib/blog/paths"
 
 export function IndexPagination({
@@ -39,22 +40,32 @@ export function IndexPagination({
         </Link>
       ) : null}
       <ol className="col-span-2 row-start-2 flex items-center justify-center gap-1 sm:col-span-1 sm:col-start-2 sm:row-start-1">
-        {Array.from({ length: pages }, (_, i) => i + 1).map((n) => (
-          <li key={n}>
-            <Link
-              to={to(n)}
-              aria-label={t("index.page", { page: n })}
-              aria-current={n === page ? "page" : undefined}
-              className={buttonVariants({
-                variant: n === page ? "secondary" : "ghost",
-                size: "icon-lg",
-                className: "tabular-nums",
-              })}
+        {pageWindow(page, pages).map((n, i) =>
+          n === 0 ? (
+            <li
+              key={`gap-${i}`}
+              aria-hidden
+              className="grid size-9 place-items-center text-muted-foreground"
             >
-              {n}
-            </Link>
-          </li>
-        ))}
+              <EllipsisIcon className="size-4" />
+            </li>
+          ) : (
+            <li key={n}>
+              <Link
+                to={to(n)}
+                aria-label={t("index.page", { page: n })}
+                aria-current={n === page ? "page" : undefined}
+                className={buttonVariants({
+                  variant: n === page ? "secondary" : "ghost",
+                  size: "icon-lg",
+                  className: "tabular-nums",
+                })}
+              >
+                {n}
+              </Link>
+            </li>
+          )
+        )}
       </ol>
       {page < pages ? (
         <Link

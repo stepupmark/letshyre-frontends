@@ -1,7 +1,4 @@
-import { useTranslation } from "@workspace/i18n/react"
-
 import { loadPostBody, PostPage } from "@/features/blog"
-import { NewsletterForm } from "@/features/newsletter"
 import { postData } from "@/lib/page-data.server"
 import { postMeta } from "@/lib/seo/post-meta"
 
@@ -27,7 +24,6 @@ export async function clientLoader({
 export const meta = postMeta
 
 export default function BlogPost({ loaderData }: Route.ComponentProps) {
-  const { t } = useTranslation("blog")
   return (
     <PostPage
       post={loaderData.post}
@@ -35,7 +31,6 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
       older={loaderData.older}
       series={loaderData.series}
       related={loaderData.related}
-      subscribe={<NewsletterForm title={t("post.subscribe")} />}
     />
   )
 }

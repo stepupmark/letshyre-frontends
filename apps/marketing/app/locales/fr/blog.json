@@ -3,11 +3,11 @@
     "title": "Blog : recrutement, carrière et tendances | letshyre.ai",
     "description": "Conseils de recrutement pour les employeurs, conseils de carrière pour les professionnels, tendances du recrutement et actualités produit de l'équipe LetsHyre.",
     "pageTitle": "Blog, page {{page}} | letshyre.ai",
-    "crumb": "Blogs",
+    "crumb": "Blog",
     "name": "Blog LetsHyre"
   },
   "index": {
-    "eyebrow": "Blogs",
+    "eyebrow": "Blog",
     "title": "Recrutement, carrière et actualités de LetsHyre",
     "description": "Des conseils pour les employeurs et les professionnels, ce qui change dans le recrutement et ce que nous construisons chez LetsHyre.",
     "pageTitle": "Articles du blog, page {{page}}",
@@ -23,14 +23,16 @@
     "newer": "Articles plus récents",
     "older": "Articles plus anciens",
     "all": "Tout",
-    "topics": "Thèmes"
+    "topics": "Thèmes",
+    "resultsTitle": "Résultats de recherche",
+    "searching": "Recherche des articles…",
+    "searchFailed": "La recherche n'a pas pu se charger. Vérifiez votre connexion et réessayez.",
+    "retry": "Réessayer"
   },
   "post": {
     "published": "Publié le {{date}}",
     "updated": "Mis à jour le {{date}}",
     "readTime": "{{count}} min de lecture",
-    "timeLeft": "Encore {{count}} min",
-    "almostDone": "Presque fini",
     "allPosts": "Tous les articles",
     "backToTop": "Retour en haut",
     "toc": "Sur cette page",
@@ -49,10 +51,10 @@
     "related": "À lire ensuite",
     "sources": "Sources",
     "sourceQuote": "« {{text}} »",
-    "subscribe": "Conseils recrutement et carrière par e-mail",
     "neighbours": "Plus sur ce thème",
     "older": "Article précédent",
-    "newer": "Article suivant"
+    "newer": "Article suivant",
+    "sourceMark": "Source {{n}}"
   },
   "topics": {
     "interviewing": "Entretiens",
@@ -97,6 +99,11 @@
         "title": "Montrez aux employeurs comment vous travaillez, pas seulement ce que vous avez fait",
         "description": "Passez un entretien IA adapté au poste, et les employeurs qui recrutent pour votre métier voient votre grille et l’enregistrement."
       }
+    },
+    "callout": {
+      "note": "Remarque :",
+      "tip": "Conseil :",
+      "warning": "Attention :"
     }
   },
   "topicPage": {

@@ -1,4 +1,4 @@
-import { parsePost, type Post, visiblePosts } from "./post"
+import { parsePosts, type Post } from "./post"
 
 const sources = import.meta.glob<string>("/content/blog/*/*.mdx", {
   eager: true,
@@ -25,8 +25,8 @@ function withCover(post: Post): Post {
   return { ...post, cover: srcDark ? { src, srcDark } : { src } }
 }
 
-export const allPosts: Post[] = visiblePosts(
-  Object.entries(sources).map(([file, source]) => parsePost(file, source)),
+export const allPosts: Post[] = parsePosts(
+  Object.entries(sources),
   import.meta.env.DEV || import.meta.env.VITE_ENV === "staging"
 ).map(withCover)
 

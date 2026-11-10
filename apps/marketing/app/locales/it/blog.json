@@ -23,14 +23,16 @@
     "newer": "Articoli più recenti",
     "older": "Articoli meno recenti",
     "all": "Tutti",
-    "topics": "Argomenti"
+    "topics": "Argomenti",
+    "resultsTitle": "Risultati della ricerca",
+    "searching": "Ricerca degli articoli…",
+    "searchFailed": "Impossibile caricare la ricerca. Controlla la connessione e riprova.",
+    "retry": "Riprova"
   },
   "post": {
     "published": "Pubblicato il {{date}}",
     "updated": "Aggiornato il {{date}}",
     "readTime": "{{count}} min di lettura",
-    "timeLeft": "Ancora {{count}} min",
-    "almostDone": "Quasi finito",
     "allPosts": "Tutti gli articoli",
     "backToTop": "Torna all'inizio",
     "toc": "In questa pagina",
@@ -49,10 +51,10 @@
     "related": "Continua a leggere",
     "sources": "Fonti",
     "sourceQuote": "«{{text}}»",
-    "subscribe": "Consigli su assunzioni e carriera via email",
     "neighbours": "Altro su questo argomento",
     "older": "Articolo precedente",
-    "newer": "Articolo successivo"
+    "newer": "Articolo successivo",
+    "sourceMark": "Fonte {{n}}"
   },
   "topics": {
     "interviewing": "Colloqui",
@@ -97,6 +99,11 @@
         "title": "Mostra alle aziende come lavori, non solo cosa hai fatto",
         "description": "Fai un colloquio con IA basato sul ruolo e lascia che le aziende che assumono per il tuo ruolo vedano la tua valutazione e la registrazione."
       }
+    },
+    "callout": {
+      "note": "Nota:",
+      "tip": "Consiglio:",
+      "warning": "Attenzione:"
     }
   },
   "topicPage": {

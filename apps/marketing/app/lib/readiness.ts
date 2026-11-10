@@ -2,15 +2,20 @@ import { join } from "node:path"
 import { LOCALES, type Locale } from "@workspace/i18n"
 import { computeReadiness } from "@workspace/i18n/node"
 
-import { indexPagePath, postPath, topicPath } from "./blog/paths.ts"
+import {
+  indexPagePath,
+  postPath,
+  searchIndexPath,
+  topicPath,
+} from "./blog/paths.ts"
 import {
   pageCount,
-  type Post,
   publishedPosts,
   TOPICS,
   topicsOf,
   withBlogIndex,
-} from "./blog/post.ts"
+} from "./blog/list.ts"
+import type { Post } from "./blog/post.ts"
 import { readPosts } from "./blog/read-posts.ts"
 import { PAGES, type PageId, pageNamespaces, withoutReplaced } from "./pages.ts"
 
@@ -99,5 +104,6 @@ export function readyPaths(root: string, previews = false): string[] {
     ...indexPages(posts).map(
       ({ lang, page }) => `/${lang}${indexPagePath(page)}`
     ),
+    ...(pages.get("blog") ?? []).map((lang) => `/${lang}${searchIndexPath}`),
   ]
 }

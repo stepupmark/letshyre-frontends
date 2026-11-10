@@ -26,19 +26,29 @@ export const prose = {
   strong: (props: ComponentProps<"strong">) => (
     <strong className="font-semibold text-foreground" {...props} />
   ),
-  a: ({ href = "", children, ...props }: ComponentProps<"a">) =>
-    href.startsWith("/") ? (
-      <Link to={href} className="text-link" {...props}>
-        {children}
-      </Link>
-    ) : (
+  a: ({ href = "", className, children, ...props }: ComponentProps<"a">) => {
+    const classes = cn("text-link", className)
+    if (href.startsWith("/"))
+      return (
+        <Link to={href} className={classes} {...props}>
+          {children}
+        </Link>
+      )
+    if (!href.startsWith("https://"))
+      return (
+        <a href={href} className={classes} {...props}>
+          {children}
+        </a>
+      )
+    return (
       <>
-        <a href={href} rel="noopener" className="text-link" {...props}>
+        <a href={href} rel="noopener" className={classes} {...props}>
           {children}
         </a>
         <SourceMark url={href} />
       </>
-    ),
+    )
+  },
   blockquote: (props: ComponentProps<"blockquote">) => (
     <blockquote
       className="rounded-xl border bg-muted/40 px-5 py-4 text-lg text-pretty text-foreground"

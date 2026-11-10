@@ -23,14 +23,16 @@
     "newer": "Artikel lebih baru",
     "older": "Artikel lebih lama",
     "all": "Semua",
-    "topics": "Topik"
+    "topics": "Topik",
+    "resultsTitle": "Hasil pencarian",
+    "searching": "Mencari artikel…",
+    "searchFailed": "Pencarian tidak dapat dimuat. Periksa koneksi Anda dan coba lagi.",
+    "retry": "Coba lagi"
   },
   "post": {
     "published": "Diterbitkan {{date}}",
     "updated": "Diperbarui {{date}}",
     "readTime": "{{count}} menit membaca",
-    "timeLeft": "{{count}} menit lagi",
-    "almostDone": "Hampir selesai",
     "allPosts": "Semua artikel",
     "backToTop": "Kembali ke atas",
     "toc": "Di halaman ini",
@@ -49,10 +51,10 @@
     "related": "Baca selanjutnya",
     "sources": "Sumber",
     "sourceQuote": "“{{text}}”",
-    "subscribe": "Tips rekrutmen dan karier lewat email",
     "neighbours": "Lainnya dalam topik ini",
     "older": "Artikel sebelumnya",
-    "newer": "Artikel berikutnya"
+    "newer": "Artikel berikutnya",
+    "sourceMark": "Sumber {{n}}"
   },
   "topics": {
     "interviewing": "Wawancara",
@@ -97,6 +99,11 @@
         "title": "Tunjukkan cara Anda bekerja, bukan hanya apa yang sudah Anda lakukan",
         "description": "Ikuti wawancara AI sesuai peran dan biarkan perusahaan yang merekrut untuk peran Anda melihat kartu nilai dan rekamannya."
       }
+    },
+    "callout": {
+      "note": "Catatan:",
+      "tip": "Tips:",
+      "warning": "Peringatan:"
     }
   },
   "topicPage": {

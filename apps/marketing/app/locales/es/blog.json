@@ -3,11 +3,11 @@
     "title": "Blog: contratación, carrera y tendencias | letshyre.ai",
     "description": "Consejos de contratación para empresas, consejos de carrera para profesionales, tendencias de contratación y novedades del equipo de LetsHyre.",
     "pageTitle": "Blog, página {{page}} | letshyre.ai",
-    "crumb": "Blogs",
+    "crumb": "Blog",
     "name": "Blog de LetsHyre"
   },
   "index": {
-    "eyebrow": "Blogs",
+    "eyebrow": "Blog",
     "title": "Contratación, carrera profesional y novedades de LetsHyre",
     "description": "Consejos para empresas y profesionales, lo que está cambiando en la contratación y lo que construimos en LetsHyre.",
     "pageTitle": "Artículos del blog, página {{page}}",
@@ -23,14 +23,16 @@
     "newer": "Artículos más recientes",
     "older": "Artículos anteriores",
     "all": "Todo",
-    "topics": "Temas"
+    "topics": "Temas",
+    "resultsTitle": "Resultados de búsqueda",
+    "searching": "Buscando artículos…",
+    "searchFailed": "No se pudo cargar la búsqueda. Revisa tu conexión e inténtalo de nuevo.",
+    "retry": "Reintentar"
   },
   "post": {
     "published": "Publicado el {{date}}",
     "updated": "Actualizado el {{date}}",
     "readTime": "{{count}} min de lectura",
-    "timeLeft": "Quedan {{count}} min",
-    "almostDone": "Casi has terminado",
     "allPosts": "Todos los artículos",
     "backToTop": "Volver arriba",
     "toc": "En esta página",
@@ -49,10 +51,10 @@
     "related": "Sigue leyendo",
     "sources": "Fuentes",
     "sourceQuote": "«{{text}}»",
-    "subscribe": "Consejos de contratación y carrera por correo",
     "neighbours": "Más sobre este tema",
     "older": "Artículo anterior",
-    "newer": "Artículo más reciente"
+    "newer": "Artículo más reciente",
+    "sourceMark": "Fuente {{n}}"
   },
   "topics": {
     "interviewing": "Entrevistas",
@@ -97,6 +99,11 @@
         "title": "Muestra a las empresas cómo trabajas, no solo lo que has hecho",
         "description": "Haz una entrevista con IA basada en el puesto y deja que las empresas que contratan para tu puesto vean tu evaluación y la grabación."
       }
+    },
+    "callout": {
+      "note": "Nota:",
+      "tip": "Consejo:",
+      "warning": "Advertencia:"
     }
   },
   "topicPage": {

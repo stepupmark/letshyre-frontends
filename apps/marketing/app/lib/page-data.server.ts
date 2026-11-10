@@ -1,7 +1,7 @@
 import { isLocale, type Locale } from "@workspace/i18n"
 import { data } from "react-router"
 
-import { featuredFirst, pageCount, topicCounts } from "./blog/post"
+import { featuredFirst, pageCount, postsOnPage, topicCounts } from "./blog/list"
 import { ogImageOf } from "./blog/posts.server"
 import { relatedPosts, seriesOf } from "./blog/related"
 import { summarize } from "./blog/search"
@@ -32,7 +32,6 @@ export function pageData(lang: string | undefined, id: PageId) {
   return { messages: loadMessages(lang, PAGES[id].namespaces), locales }
 }
 
-/** Every post goes to every index page, so search covers them all; the page shows its own slice. */
 export function blogData(lang: string | undefined, pageParam?: string) {
   const { messages, locales } = pageData(lang, "blog")
   const posts = featuredFirst(postsIn(lang as Locale))
@@ -43,7 +42,7 @@ export function blogData(lang: string | undefined, pageParam?: string) {
   return {
     messages,
     locales: page === 1 ? locales : indexPageLocales(page),
-    posts: posts.map(summarize),
+    posts: postsOnPage(posts, page).map(summarize),
     page,
     pages,
     topics: topicCounts(posts),
@@ -77,13 +76,19 @@ export function postData(lang: string | undefined, slug: string | undefined) {
   const posts = postsIn(lang)
   const post = posts.find((p) => p.slug === slug)
   if (!post) throw notFound()
-  const inTopic = posts.filter((p) => p.topic === post.topic)
+  const series = seriesOf(post, posts)
+  // a series lists its own parts, so the topic neighbours would repeat them
+  const inTopic = series.length
+    ? []
+    : posts.filter((p) => p.topic === post.topic)
   const at = inTopic.indexOf(post)
   const newer = inTopic[at - 1]
   const older = inTopic[at + 1]
-  const series = seriesOf(post, posts)
-  const shown = new Set([newer, older].map((p) => p?.slug))
-  for (const part of series) shown.add(part.slug)
+  const shown = new Set([
+    ...series.map((part) => part.slug),
+    newer?.slug,
+    older?.slug,
+  ])
   return {
     messages: loadMessages(lang, PAGES.blog.namespaces),
     locales: postLocales(post.slug),
@@ -97,4 +102,10 @@ export function postData(lang: string | undefined, slug: string | undefined) {
     ),
     ogImage: ogImageOf(post.slug),
   }
+}
+
+/** Every post in the locale, for the index search, which fetches it on the first query. */
+export function searchIndexData(lang: string | undefined) {
+  if (!isLocale(lang) || !readyLocales("blog").includes(lang)) throw notFound()
+  return featuredFirst(postsIn(lang)).map(summarize)
 }

@@ -12,7 +12,13 @@ export const MDX_COMPONENTS = [
   "VideoEmbed",
 ] as const
 
+export const CALLOUT_TONES = ["note", "tip", "warning"] as const
+export const FEATURE_AUDIENCES = ["employers", "candidates"] as const
+
 type Component = (typeof MDX_COMPONENTS)[number]
+
+const isOneOf = (list: readonly string[], value: unknown) =>
+  list.includes(String(value))
 
 // props a component can't render without; Figure's size stops the page shifting as images load
 const REQUIRED: Partial<Record<Component, string[]>> = {
@@ -72,14 +78,11 @@ function problemOf(node: Node): string | undefined {
       if (
         name === "Callout" &&
         attr("tone") != null &&
-        !["note", "tip", "warning"].includes(String(attr("tone")))
+        !isOneOf(CALLOUT_TONES, attr("tone"))
       )
-        return "<Callout> tone is note, tip or warning"
-      if (
-        name === "Feature" &&
-        !["employers", "candidates"].includes(String(attr("audience")))
-      )
-        return "<Feature> audience is employers or candidates"
+        return `<Callout> tone is one of ${CALLOUT_TONES.join(", ")}`
+      if (name === "Feature" && !isOneOf(FEATURE_AUDIENCES, attr("audience")))
+        return `<Feature> audience is one of ${FEATURE_AUDIENCES.join(", ")}`
       return undefined
     }
     default:

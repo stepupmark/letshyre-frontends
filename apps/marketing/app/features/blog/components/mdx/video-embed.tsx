@@ -32,6 +32,9 @@ export function VideoEmbed({
           title={title}
           allow="autoplay; encrypted-media; picture-in-picture"
           allowFullScreen
+          ref={(frame) => {
+            frame?.focus()
+          }}
           className="size-full"
         />
       ) : (

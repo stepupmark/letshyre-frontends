@@ -3,11 +3,11 @@
     "title": "Blog: Recruiting, Karriere und Trends | letshyre.ai",
     "description": "Recruiting-Tipps für Arbeitgeber, Karrieretipps für Fachkräfte, Recruiting-Trends und Produktneuigkeiten vom LetsHyre-Team.",
     "pageTitle": "Blog, Seite {{page}} | letshyre.ai",
-    "crumb": "Blogs",
+    "crumb": "Blog",
     "name": "LetsHyre-Blog"
   },
   "index": {
-    "eyebrow": "Blogs",
+    "eyebrow": "Blog",
     "title": "Recruiting, Karriere und Neues von LetsHyre",
     "description": "Rat für Arbeitgeber und Fachkräfte, was sich beim Einstellen ändert und woran wir bei LetsHyre arbeiten.",
     "pageTitle": "Blogbeiträge, Seite {{page}}",
@@ -23,14 +23,16 @@
     "newer": "Neuere Beiträge",
     "older": "Ältere Beiträge",
     "all": "Alle",
-    "topics": "Themen"
+    "topics": "Themen",
+    "resultsTitle": "Suchergebnisse",
+    "searching": "Beiträge werden gesucht…",
+    "searchFailed": "Die Suche konnte nicht geladen werden. Prüfe deine Verbindung und versuche es erneut.",
+    "retry": "Erneut versuchen"
   },
   "post": {
     "published": "Veröffentlicht am {{date}}",
     "updated": "Aktualisiert am {{date}}",
     "readTime": "{{count}} Min. Lesezeit",
-    "timeLeft": "Noch {{count}} Min.",
-    "almostDone": "Fast geschafft",
     "allPosts": "Alle Beiträge",
     "backToTop": "Nach oben",
     "toc": "Auf dieser Seite",
@@ -49,10 +51,10 @@
     "related": "Weiterlesen",
     "sources": "Quellen",
     "sourceQuote": "„{{text}}“",
-    "subscribe": "Tipps zu Recruiting und Karriere per E-Mail",
     "neighbours": "Mehr zu diesem Thema",
     "older": "Älterer Beitrag",
-    "newer": "Neuerer Beitrag"
+    "newer": "Neuerer Beitrag",
+    "sourceMark": "Quelle {{n}}"
   },
   "topics": {
     "interviewing": "Vorstellungsgespräche",
@@ -97,6 +99,11 @@
         "title": "Zeigen Sie Arbeitgebern, wie Sie arbeiten, nicht nur, was Sie getan haben",
         "description": "Machen Sie ein rollenbasiertes KI-Interview, und Arbeitgeber, die für Ihre Rolle einstellen, sehen Ihre Bewertung und die Aufzeichnung."
       }
+    },
+    "callout": {
+      "note": "Hinweis:",
+      "tip": "Tipp:",
+      "warning": "Warnung:"
     }
   },
   "topicPage": {

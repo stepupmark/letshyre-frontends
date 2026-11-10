@@ -1,22 +1,21 @@
-// Node loads this through react-router.config.ts, so no Vite-only imports.
+// Node loads this through react-router.config.ts, so no Vite-only imports. Pages import list.ts.
 
+import { createProcessor } from "@mdx-js/mdx"
 import { isLocale, type Locale } from "@workspace/i18n"
 import GithubSlugger from "github-slugger"
+import remarkFrontmatter from "remark-frontmatter"
+import remarkGfm from "remark-gfm"
 import { parse as parseYaml } from "yaml"
 import { z } from "zod"
 
-import type { PageId } from "../pages.ts"
 import { AUTHORS } from "./authors.ts"
+import { TOPICS, visiblePosts } from "./list.ts"
+
+export type { Topic } from "./list.ts"
 
 const AUDIENCES = ["employers", "candidates", "everyone"] as const
-export const TOPICS = [
-  "interviewing",
-  "hiring",
-  "careers",
-  "trends",
-  "news",
-] as const
-export type Topic = (typeof TOPICS)[number]
+
+const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 
 const frontmatterSchema = z
   .strictObject({
@@ -33,7 +32,7 @@ const frontmatterSchema = z
       .optional(),
     series: z
       .string()
-      .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "isn't a lowercase-hyphenated id")
+      .regex(SLUG, "isn't a lowercase-hyphenated id")
       .optional(),
     draft: z.boolean().default(false),
     featured: z.boolean().default(false),
@@ -70,69 +69,118 @@ export type Post = z.output<typeof frontmatterSchema> & {
   preview?: true
 }
 
+/** What a card shows, and all that index pages and search get. */
+export type PostSummary = Pick<
+  Post,
+  | "slug"
+  | "title"
+  | "description"
+  | "topic"
+  | "publishedAt"
+  | "updatedAt"
+  | "minutes"
+  | "draft"
+  | "cover"
+  | "preview"
+>
+
 const FILE = /([^/\\]+)[/\\]([^/\\]+)\.mdx$/
-const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 // Segments under /blogs that belong to the blog's own pages, now or later.
 const RESERVED_SLUGS = ["topics", "page", "authors", "feed"]
 const FRONTMATTER = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/
-const HEADING = /^(#{1,6})\s+(.+?)(?:\s+#+)?\s*$/
-const FENCE = /^\s*(```|~~~)/
 
-function readingMinutes(body: string, lang: Locale): number {
-  const text = body
-    .replace(/^import .*$/gm, "")
-    .replace(/<[^>]*>/g, " ")
-    .replace(/[#*_`>|[\]()-]/g, " ")
+interface Node {
+  type: string
+  name?: string | null
+  value?: string
+  depth?: number
+  url?: string
+  identifier?: string
+  attributes?: { name?: string; value?: unknown }[]
+  children?: Node[]
+}
+
+// the compiler's own parser, so headings and links match what the page renders
+const processor = createProcessor({
+  remarkPlugins: [remarkFrontmatter, remarkGfm],
+})
+
+const TEXT = new Set(["text", "inlineCode", "code"])
+
+const textOf = (node: Node): string =>
+  TEXT.has(node.type)
+    ? (node.value ?? "")
+    : (node.children ?? []).map(textOf).join("")
+
+function walk(node: Node, visit: (node: Node) => void) {
+  visit(node)
+  node.children?.forEach((child) => {
+    walk(child, visit)
+  })
+}
+
+const contains = (node: Node, name: string): boolean =>
+  node.name === name ||
+  (node.children ?? []).some((child) => contains(child, name))
+
+function readingMinutes(tree: Node, lang: Locale): number {
+  const parts: string[] = []
+  walk(tree, (node) => {
+    if (TEXT.has(node.type)) parts.push(node.value ?? "")
+  })
   let words = 0
   for (const segment of new Intl.Segmenter(lang, {
     granularity: "word",
-  }).segment(text)) {
+  }).segment(parts.join(" "))) {
     if (segment.isWordLike) words++
   }
   return Math.max(1, Math.round(words / 200))
 }
 
 /** The h2s, with the ids rehype-slug gives them; every level is slugged so duplicates count alike. */
-function headingsOf(body: string): Heading[] {
+function headingsOf(tree: Node): Heading[] {
   const slugger = new GithubSlugger()
   const headings: Heading[] = []
-  let inFence = false
-  for (const line of body.split(/\r?\n/)) {
-    if (FENCE.test(line)) inFence = !inFence
-    const match = inFence ? null : HEADING.exec(line)
-    if (!match) continue
-    const text = (match[2] ?? "")
-      .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
-      .replace(/(\*\*|__|\*|_|`)(.+?)\1/g, "$2")
+  walk(tree, (node) => {
+    if (node.type !== "heading") return
+    const text = textOf(node)
     const id = slugger.slug(text)
-    if (match[1] === "##") headings.push({ id, text })
-  }
+    if (node.depth === 2) headings.push({ id, text })
+  })
   return headings
 }
 
-const LINK = /\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g
-const STAT = /<Stat\b[^>]*>/g
-const ATTR = {
-  source: /\bsource="([^"]*)"/,
-  cite: /\bcite="([^"]*)"/,
+const tidy = (text: string) => text.replace(/\s+/g, " ").trim()
+
+const attr = (node: Node, name: string) => {
+  const value = node.attributes?.find((a) => a.name === name)?.value
+  return typeof value === "string" ? value : undefined
 }
-const attr = (tag: string, name: keyof typeof ATTR) => ATTR[name].exec(tag)?.[1]
 
-const tidy = (text: string) => text.replace(/\s+/g, " ")
+function sourcesOf(tree: Node): Source[] {
+  const definitions = new Map<string, string>()
+  walk(tree, (node) => {
+    if (node.type === "definition" && node.identifier && node.url)
+      definitions.set(node.identifier, node.url)
+  })
 
-function sourcesOf(body: string): Source[] {
-  const found: (Source & { at: number })[] = []
-  for (const m of body.matchAll(LINK))
-    found.push({ url: m[2] ?? "", linkText: tidy(m[1] ?? ""), at: m.index })
-  for (const m of body.matchAll(STAT)) {
-    const url = attr(m[0], "source")
-    if (url) found.push({ url, title: attr(m[0], "cite"), at: m.index })
+  const sources = new Map<string, Source>()
+  const add = (source: Source) => {
+    if (source.url.startsWith("https://") && !sources.has(source.url))
+      sources.set(source.url, source)
   }
-  const seen = new Set<string>()
-  return found
-    .sort((x, y) => x.at - y.at)
-    .filter(({ url }) => !seen.has(url) && seen.add(url))
-    .map(({ at: _at, ...source }) => source)
+  walk(tree, (node) => {
+    if (node.type === "link" && node.url)
+      add({ url: node.url, linkText: tidy(textOf(node)) })
+    else if (node.type === "linkReference" && node.identifier) {
+      const url = definitions.get(node.identifier)
+      if (url) add({ url, linkText: tidy(textOf(node)) })
+    } else if (node.name === "Stat") {
+      const url = attr(node, "source")
+      if (url) add({ url, title: attr(node, "cite") })
+    }
+  })
+  return [...sources.values()]
 }
 
 /** Reads `<slug>/<lang>.mdx`; throws with the file name so a bad post fails the build. */
@@ -150,81 +198,24 @@ export function parsePost(file: string, source: string): Post {
   const result = frontmatterSchema.safeParse(parseYaml(match[1] ?? ""))
   if (!result.success) return fail(z.prettifyError(result.error))
 
-  const body = source.slice(match[0].length)
+  const tree = processor.parse(source.slice(match[0].length)) as Node
   return {
     ...result.data,
     slug,
     lang: lang as Locale,
-    minutes: readingMinutes(body, lang as Locale),
-    headings: headingsOf(body),
-    sources: sourcesOf(body),
-    promoted: /<Feature\b/.test(body),
+    minutes: readingMinutes(tree, lang as Locale),
+    headings: headingsOf(tree),
+    sources: sourcesOf(tree),
+    promoted: contains(tree, "Feature"),
   }
 }
 
-const today = () => new Date().toISOString().slice(0, 10)
-
-/** Built and indexed: not a draft, and its UTC publish date has come. */
-export const isLive = (post: Post, date = today()) =>
-  !post.draft && post.publishedAt <= date
-
-/** Production ships live posts only; staging and dev also show the rest, marked as previews. */
-export const visiblePosts = (posts: readonly Post[], previews: boolean) =>
-  posts.flatMap((post): Post[] => {
-    if (isLive(post)) return [post]
-    return previews ? [{ ...post, preview: true }] : []
-  })
-
-/** Newest first. Posts need the blog's copy in their locale to ship. */
-export const publishedPosts = (
-  posts: readonly Post[],
-  blogLocales: readonly Locale[]
+/** Every post file, as `[path, source]`, parsed; drafts and future posts only when `previews`. */
+export const parsePosts = (
+  files: readonly (readonly [string, string])[],
+  previews: boolean
 ): Post[] =>
-  posts
-    .filter((post) => blogLocales.includes(post.lang))
-    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
-
-/** The blog index ships only where at least one post does. */
-export function withBlogIndex(
-  ready: Map<PageId, Locale[]>,
-  posts: readonly Post[]
-): Map<PageId, Locale[]> {
-  const langs = new Set(posts.map((post) => post.lang))
-  return new Map(
-    [...ready].map(([id, locales]) => [
-      id,
-      id === "blog" ? locales.filter((lang) => langs.has(lang)) : locales,
-    ])
+  visiblePosts(
+    files.map(([file, source]) => parsePost(file, source)),
+    previews
   )
-}
-
-/** The topics these posts cover, in the order the index lists them. */
-export const topicsOf = (posts: readonly Post[]): Topic[] =>
-  TOPICS.filter((topic) => posts.some((post) => post.topic === topic))
-
-export const topicCounts = (posts: readonly Post[]) =>
-  topicsOf(posts).map((topic) => ({
-    topic,
-    count: posts.filter((post) => post.topic === topic).length,
-  }))
-
-/** Newest first, with the newest featured post moved to the top of the index. */
-export function featuredFirst<T extends Pick<Post, "featured">>(
-  posts: readonly T[]
-): T[] {
-  const lead = posts.find((post) => post.featured)
-  return lead ? [lead, ...posts.filter((post) => post !== lead)] : [...posts]
-}
-
-// Page one is a lead post over a grid of nine; later pages are the grid alone.
-const FIRST_PAGE = 10
-const PAGE_SIZE = 9
-
-export const pageCount = (total: number) =>
-  total <= FIRST_PAGE ? 1 : 1 + Math.ceil((total - FIRST_PAGE) / PAGE_SIZE)
-
-export function postsOnPage<T>(posts: readonly T[], page: number): T[] {
-  if (page === 1) return posts.slice(0, FIRST_PAGE)
-  const start = FIRST_PAGE + (page - 2) * PAGE_SIZE
-  return posts.slice(start, start + PAGE_SIZE)
-}

@@ -7,6 +7,7 @@ import { SourcesContext } from "../lib/sources"
 
 /** The source's number in the list at the end of the post, as a link down to it. */
 export function SourceMark({ url }: { url: string }) {
+  const { t } = useTranslation("blog")
   const sources = use(SourcesContext)
   const n = sources.findIndex((source) => source.url === url) + 1
   if (n === 0) return null
@@ -14,7 +15,8 @@ export function SourceMark({ url }: { url: string }) {
     <sup className="ms-0.5 text-xs">
       <a
         href={`#source-${n}`}
-        className="text-muted-foreground tabular-nums no-underline hover:text-foreground"
+        aria-label={t("post.sourceMark", { n })}
+        className="relative text-muted-foreground tabular-nums no-underline after:absolute after:-inset-2 hover:text-foreground"
       >
         {n}
       </a>

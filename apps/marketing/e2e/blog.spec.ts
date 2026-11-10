@@ -37,6 +37,21 @@ test("searching the index finds a post and opens it in place, without errors", a
   expect(errors).toEqual([])
 })
 
+test("a shared search link opens its results, and they survive a reload", async ({
+  page,
+}) => {
+  await page.goto("/en/blogs?q=built")
+  const search = page.getByRole("searchbox", { name: "Search posts" })
+  const result = page.getByRole("link", { name: /Why we built LetsHyre/ })
+  await expect(search).toHaveValue("built")
+  await expect(result).toBeVisible()
+  await expect(page.getByRole("heading", { name: "More posts" })).toBeHidden()
+
+  await page.reload()
+  await expect(search).toHaveValue("built")
+  await expect(result).toBeVisible()
+})
+
 test("a post's topic links to a topic page that lists it", async ({ page }) => {
   await page.goto(POST)
   await page

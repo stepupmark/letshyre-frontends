@@ -3,11 +3,11 @@
     "title": "Blog: Hiring Advice, Careers and Trends | letshyre.ai",
     "description": "Hiring advice for employers, career advice for professionals, hiring trends and product news from the LetsHyre team.",
     "pageTitle": "Blog, page {{page}} | letshyre.ai",
-    "crumb": "Blogs",
+    "crumb": "Blog",
     "name": "LetsHyre blog"
   },
   "index": {
-    "eyebrow": "Blogs",
+    "eyebrow": "Blog",
     "title": "Hiring, careers and LetsHyre news",
     "description": "Advice for employers and professionals, what's changing in hiring, and what we're building at LetsHyre.",
     "pageTitle": "Blog posts, page {{page}}",
@@ -23,14 +23,16 @@
     "newer": "Newer posts",
     "older": "Older posts",
     "all": "All",
-    "topics": "Topics"
+    "topics": "Topics",
+    "resultsTitle": "Search results",
+    "searching": "Searching posts…",
+    "searchFailed": "Search couldn't load. Check your connection and try again.",
+    "retry": "Try again"
   },
   "post": {
     "published": "Published {{date}}",
     "updated": "Updated {{date}}",
     "readTime": "{{count}} min read",
-    "timeLeft": "{{count}} min left",
-    "almostDone": "Almost done",
     "allPosts": "All posts",
     "backToTop": "Back to top",
     "toc": "On this page",
@@ -49,10 +51,10 @@
     "related": "Keep reading",
     "sources": "Sources",
     "sourceQuote": "“{{text}}”",
-    "subscribe": "Get hiring and career tips by email",
     "neighbours": "More in this topic",
     "older": "Older post",
-    "newer": "Newer post"
+    "newer": "Newer post",
+    "sourceMark": "Source {{n}}"
   },
   "topics": {
     "interviewing": "Interviewing",
@@ -97,6 +99,11 @@
         "title": "Show employers how you work, not just what you did",
         "description": "Take a role-based AI interview and let employers hiring for your role see your scorecard and recording."
       }
+    },
+    "callout": {
+      "note": "Note:",
+      "tip": "Tip:",
+      "warning": "Warning:"
     }
   },
   "topicPage": {

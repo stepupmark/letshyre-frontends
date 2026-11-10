@@ -4,9 +4,8 @@ import { lazy, Suspense } from "react"
 import { Link } from "react-router"
 
 import { Container, PageHeader } from "@/components/section"
-import { postsOnPage, type Topic } from "@/lib/blog/post"
+import type { PostSummary, Topic } from "@/lib/blog/post"
 import { PAGES } from "@/lib/pages"
-import { type PostSummary, searchPosts, searchWords } from "@/lib/blog/search"
 
 import { FeedLink } from "./components/feed-link"
 import { IndexPagination } from "./components/index-pagination"
@@ -17,7 +16,7 @@ import { PostSearch } from "./components/post-search"
 import { TopicNav } from "./components/topic-nav"
 import { useSearchQuery } from "./hooks/use-search-query"
 
-// shown only once someone types, so it loads then
+// loads, with the search index, only once someone searches
 const SearchResults = lazy(() => import("./components/search-results"))
 
 export function BlogIndexPage({
@@ -67,13 +66,15 @@ export function BlogIndexPage({
       <TopicNav topics={topics} />
       <Container className="flex flex-col gap-12 py-10 sm:py-14">
         {searching ? (
-          <Suspense>
+          <Suspense
+            fallback={
+              <p role="status" className="text-sm text-muted-foreground">
+                {t("index.searching")}
+              </p>
+            }
+          >
             <SearchResults
               query={query.trim()}
-              words={searchWords(query, lang)}
-              posts={searchPosts(posts, query, lang, (topic) =>
-                t(`topics.${topic}`)
-              )}
               onClear={() => {
                 setQuery("")
               }}
@@ -82,7 +83,7 @@ export function BlogIndexPage({
         ) : (
           <>
             <PendingList>
-              <PostList posts={postsOnPage(posts, page)} lead={page === 1} />
+              <PostList posts={posts} lead={page === 1} />
             </PendingList>
             <IndexPagination page={page} pages={pages} />
           </>

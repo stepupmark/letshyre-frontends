@@ -23,14 +23,16 @@
     "newer": "최신 글",
     "older": "이전 글",
     "all": "전체",
-    "topics": "주제"
+    "topics": "주제",
+    "resultsTitle": "검색 결과",
+    "searching": "글을 검색하는 중…",
+    "searchFailed": "검색을 불러오지 못했습니다. 연결을 확인하고 다시 시도하세요.",
+    "retry": "다시 시도"
   },
   "post": {
     "published": "게시일: {{date}}",
     "updated": "업데이트: {{date}}",
     "readTime": "{{count}}분 소요",
-    "timeLeft": "{{count}}분 남음",
-    "almostDone": "거의 다 읽었어요",
     "allPosts": "모든 글",
     "backToTop": "맨 위로",
     "toc": "이 페이지의 내용",
@@ -49,10 +51,10 @@
     "related": "이어서 읽기",
     "sources": "출처",
     "sourceQuote": "‘{{text}}’",
-    "subscribe": "채용과 커리어 팁을 이메일로 받아 보세요",
     "neighbours": "이 주제의 다른 글",
     "older": "이전 글",
-    "newer": "다음 글"
+    "newer": "다음 글",
+    "sourceMark": "출처 {{n}}"
   },
   "topics": {
     "interviewing": "면접",
@@ -97,6 +99,11 @@
         "title": "한 일만이 아니라 일하는 방식을 보여 주세요",
         "description": "직무 기반 AI 인터뷰를 보면, 해당 직무로 채용 중인 기업이 평가표와 녹화를 볼 수 있습니다."
       }
+    },
+    "callout": {
+      "note": "참고:",
+      "tip": "팁:",
+      "warning": "주의:"
     }
   },
   "topicPage": {

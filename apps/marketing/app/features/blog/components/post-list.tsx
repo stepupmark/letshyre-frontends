@@ -1,7 +1,7 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { useId } from "react"
 
-import type { PostSummary } from "@/lib/blog/search"
+import type { PostSummary } from "@/lib/blog/post"
 
 import { PostCard } from "./post-card"
 import { PostLead } from "./post-lead"

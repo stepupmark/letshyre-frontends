@@ -3,11 +3,11 @@
     "title": "Blog: contratação, carreira e tendências | letshyre.ai",
     "description": "Dicas de contratação para empresas, dicas de carreira para profissionais, tendências de contratação e novidades de produto da equipe LetsHyre.",
     "pageTitle": "Blog, página {{page}} | letshyre.ai",
-    "crumb": "Blogs",
+    "crumb": "Blog",
     "name": "Blog da LetsHyre"
   },
   "index": {
-    "eyebrow": "Blogs",
+    "eyebrow": "Blog",
     "title": "Contratação, carreira e novidades da LetsHyre",
     "description": "Conselhos para empresas e profissionais, o que está mudando na contratação e o que estamos construindo na LetsHyre.",
     "pageTitle": "Artigos do blog, página {{page}}",
@@ -23,14 +23,16 @@
     "newer": "Artigos mais recentes",
     "older": "Artigos mais antigos",
     "all": "Todos",
-    "topics": "Temas"
+    "topics": "Temas",
+    "resultsTitle": "Resultados da pesquisa",
+    "searching": "Pesquisando artigos…",
+    "searchFailed": "Não foi possível carregar a pesquisa. Verifique sua conexão e tente novamente.",
+    "retry": "Tentar novamente"
   },
   "post": {
     "published": "Publicado em {{date}}",
     "updated": "Atualizado em {{date}}",
     "readTime": "{{count}} min de leitura",
-    "timeLeft": "Faltam {{count}} min",
-    "almostDone": "Quase no fim",
     "allPosts": "Todos os artigos",
     "backToTop": "Voltar ao topo",
     "toc": "Nesta página",
@@ -49,10 +51,10 @@
     "related": "Continue lendo",
     "sources": "Fontes",
     "sourceQuote": "“{{text}}”",
-    "subscribe": "Dicas de contratação e carreira por e-mail",
     "neighbours": "Mais sobre este tema",
     "older": "Artigo anterior",
-    "newer": "Artigo seguinte"
+    "newer": "Artigo seguinte",
+    "sourceMark": "Fonte {{n}}"
   },
   "topics": {
     "interviewing": "Entrevistas",
@@ -97,6 +99,11 @@
         "title": "Mostre às empresas como você trabalha, não só o que fez",
         "description": "Faça uma entrevista com IA baseada na função e deixe as empresas que contratam para sua função verem sua avaliação e a gravação."
       }
+    },
+    "callout": {
+      "note": "Nota:",
+      "tip": "Dica:",
+      "warning": "Atenção:"
     }
   },
   "topicPage": {

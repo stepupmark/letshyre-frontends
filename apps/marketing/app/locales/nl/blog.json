@@ -3,11 +3,11 @@
     "title": "Blog: werving, carrière en trends | letshyre.ai",
     "description": "Wervingsadvies voor werkgevers, carrièreadvies voor professionals, wervingstrends en productnieuws van het LetsHyre-team.",
     "pageTitle": "Blog, pagina {{page}} | letshyre.ai",
-    "crumb": "Blogs",
+    "crumb": "Blog",
     "name": "LetsHyre-blog"
   },
   "index": {
-    "eyebrow": "Blogs",
+    "eyebrow": "Blog",
     "title": "Werving, carrière en nieuws van LetsHyre",
     "description": "Advies voor werkgevers en professionals, wat er verandert in werving en waar we bij LetsHyre aan werken.",
     "pageTitle": "Blogberichten, pagina {{page}}",
@@ -23,14 +23,16 @@
     "newer": "Nieuwere berichten",
     "older": "Oudere berichten",
     "all": "Alles",
-    "topics": "Onderwerpen"
+    "topics": "Onderwerpen",
+    "resultsTitle": "Zoekresultaten",
+    "searching": "Berichten zoeken…",
+    "searchFailed": "Zoeken kon niet worden geladen. Controleer je verbinding en probeer het opnieuw.",
+    "retry": "Opnieuw proberen"
   },
   "post": {
     "published": "Gepubliceerd op {{date}}",
     "updated": "Bijgewerkt op {{date}}",
     "readTime": "{{count}} min leestijd",
-    "timeLeft": "Nog {{count}} min",
-    "almostDone": "Bijna klaar",
     "allPosts": "Alle artikelen",
     "backToTop": "Terug naar boven",
     "toc": "Op deze pagina",
@@ -49,10 +51,10 @@
     "related": "Verder lezen",
     "sources": "Bronnen",
     "sourceQuote": "‘{{text}}’",
-    "subscribe": "Tips over werving en loopbaan per e-mail",
     "neighbours": "Meer over dit onderwerp",
     "older": "Ouder bericht",
-    "newer": "Nieuwer bericht"
+    "newer": "Nieuwer bericht",
+    "sourceMark": "Bron {{n}}"
   },
   "topics": {
     "interviewing": "Sollicitatiegesprekken",
@@ -97,6 +99,11 @@
         "title": "Laat werkgevers zien hoe u werkt, niet alleen wat u deed",
         "description": "Doe een AI-interview voor uw rol en laat werkgevers die voor die rol werven uw scorekaart en opname zien."
       }
+    },
+    "callout": {
+      "note": "Opmerking:",
+      "tip": "Tip:",
+      "warning": "Waarschuwing:"
     }
   },
   "topicPage": {

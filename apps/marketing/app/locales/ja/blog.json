@@ -23,14 +23,16 @@
     "newer": "新しい記事",
     "older": "古い記事",
     "all": "すべて",
-    "topics": "トピック"
+    "topics": "トピック",
+    "resultsTitle": "検索結果",
+    "searching": "記事を検索しています…",
+    "searchFailed": "検索を読み込めませんでした。接続を確認して、もう一度お試しください。",
+    "retry": "再試行"
   },
   "post": {
     "published": "公開日：{{date}}",
     "updated": "更新日：{{date}}",
     "readTime": "{{count}} 分で読めます",
-    "timeLeft": "残り{{count}}分",
-    "almostDone": "もう少しです",
     "allPosts": "すべての記事",
     "backToTop": "ページの先頭に戻る",
     "toc": "このページの内容",
@@ -49,10 +51,10 @@
     "related": "次に読む",
     "sources": "出典",
     "sourceQuote": "「{{text}}」",
-    "subscribe": "採用とキャリアのヒントをメールで",
     "neighbours": "このトピックの記事",
     "older": "前の記事",
-    "newer": "次の記事"
+    "newer": "次の記事",
+    "sourceMark": "出典 {{n}}"
   },
   "topics": {
     "interviewing": "面接",
@@ -97,6 +99,11 @@
         "title": "経歴だけでなく、仕事の進め方を企業に見せましょう",
         "description": "職種別のAI面接を受ければ、その職種で採用中の企業があなたのスコアカードと録画を見られます。"
       }
+    },
+    "callout": {
+      "note": "注：",
+      "tip": "ヒント：",
+      "warning": "注意："
     }
   },
   "topicPage": {

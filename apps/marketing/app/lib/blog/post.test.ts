@@ -7,12 +7,13 @@ import { emptyTopicRedirects } from "../readiness"
 import {
   isLive,
   pageCount,
-  parsePost,
+  pageWindow,
   postsOnPage,
   publishedPosts,
   visiblePosts,
   withBlogIndex,
-} from "./post"
+} from "./list"
+import { parsePost } from "./post"
 import { relatedPosts } from "./related"
 import { searchPosts } from "./search"
 
@@ -70,8 +71,11 @@ describe("sources", () => {
   it("lists external links and studies once each, in reading order", () => {
     const body = [
       "A [new study](https://a.org/x) found it.",
+      "```md\n[not a source](https://code.org/z)\n```",
       '<Stat value="9x" label="More" source="https://b.org/y" cite="B report" />',
       "Again, [the same study](https://a.org/x) and [our post](/en/blogs/other).",
+      "See [the survey][s].",
+      "[s]: https://c.org/s",
     ].join("\n\n")
     const { sources } = parsePost(
       "/content/blog/structured/en.mdx",
@@ -80,6 +84,7 @@ describe("sources", () => {
     expect(sources).toEqual([
       { url: "https://a.org/x", linkText: "new study" },
       { url: "https://b.org/y", title: "B report" },
+      { url: "https://c.org/s", linkText: "the survey" },
     ])
   })
 })
@@ -220,6 +225,13 @@ describe("index pages", () => {
     const pages = [1, 2, 3].map((page) => postsOnPage(posts, page))
     expect(pages.map((page) => page.length)).toEqual([10, 9, 1])
     expect(pages.flat()).toEqual(posts)
+  })
+
+  it("numbers the first, last and nearby pages, with 0 for a gap", () => {
+    expect(pageWindow(1, 3)).toEqual([1, 2, 3])
+    expect(pageWindow(1, 9)).toEqual([1, 2, 0, 9])
+    expect(pageWindow(5, 9)).toEqual([1, 0, 4, 5, 6, 0, 9])
+    expect(pageWindow(4, 9)).toEqual([1, 2, 3, 4, 5, 0, 9])
   })
 })
 

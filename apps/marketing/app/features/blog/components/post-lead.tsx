@@ -3,7 +3,7 @@ import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { Link } from "react-router"
 
 import { postPath } from "@/lib/blog/paths"
-import type { PostSummary } from "@/lib/blog/search"
+import type { PostSummary } from "@/lib/blog/post"
 
 import { PostCover } from "./post-cover"
 import { PostFacts } from "./post-facts"

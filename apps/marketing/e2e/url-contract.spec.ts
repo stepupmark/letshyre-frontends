@@ -3,7 +3,7 @@ import { LOCALES } from "@workspace/i18n"
 
 import { expect, test } from "./fixtures.ts"
 import { indexPagePath, postPath, topicPath } from "../app/lib/blog/paths.ts"
-import { pageCount, TOPICS } from "../app/lib/blog/post.ts"
+import { pageCount, TOPICS } from "../app/lib/blog/list.ts"
 import { MOVED_PATHS } from "../app/lib/pages.ts"
 import { readiness } from "../app/lib/readiness.ts"
 

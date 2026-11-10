@@ -2,8 +2,7 @@ import type { Locale } from "@workspace/i18n"
 import type { MetaArgs, MetaDescriptor } from "react-router"
 
 import { indexPagePath, postPath } from "../blog/paths"
-import { postsOnPage } from "../blog/post"
-import type { PostSummary } from "../blog/search"
+import type { PostSummary } from "../blog/post"
 import { PAGES } from "../pages"
 import { buildMeta, feedLink } from "./meta"
 import { metaContext, pageMeta } from "./page-meta"
@@ -31,7 +30,7 @@ export function blogIndexMeta(args: MetaArgs): MetaDescriptor[] {
       description,
       mainEntity: postListSchema(
         lang,
-        postsOnPage(data.posts, page).map((post) => ({
+        data.posts.map((post) => ({
           path: postPath(post.slug),
           name: post.title,
         }))

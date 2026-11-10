@@ -2,12 +2,8 @@ import { type Catalog, type Locale, type Messages } from "@workspace/i18n"
 import { type Catalogs, readinessFrom } from "@workspace/i18n/node"
 
 import { allPosts } from "./blog/posts.server"
-import {
-  pageCount,
-  type Post,
-  publishedPosts,
-  withBlogIndex,
-} from "./blog/post"
+import { pageCount, publishedPosts, withBlogIndex } from "./blog/list"
+import type { Post } from "./blog/post"
 import { PAGES, type PageId, pageNamespaces, withoutReplaced } from "./pages"
 
 const files = import.meta.glob<Catalog>("../locales/*/*.json", {

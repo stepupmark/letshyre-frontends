@@ -3,8 +3,13 @@ import { ArrowRightIcon } from "lucide-react"
 import { Link } from "react-router"
 
 import { usePagePath } from "@/hooks/use-page-path"
+import type { FEATURE_AUDIENCES } from "@/lib/blog/remark-guard"
+import type { PageId } from "@/lib/pages"
 
-const PAGE = { employers: "employers", candidates: "candidates" } as const
+const PAGE = {
+  employers: "employers",
+  candidates: "candidates",
+} as const satisfies Record<(typeof FEATURE_AUDIENCES)[number], PageId>
 
 /** A short link, inside a post, to the part of LetsHyre the paragraph above is about. */
 export function Feature({ audience }: { audience: keyof typeof PAGE }) {

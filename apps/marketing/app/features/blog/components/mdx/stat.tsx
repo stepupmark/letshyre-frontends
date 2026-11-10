@@ -22,12 +22,14 @@ export function Stat({
         {value}
       </p>
       <p className="text-pretty">{label}</p>
-      <figcaption className="text-sm text-muted-foreground">
-        {t("mdx.source")}{" "}
-        <a href={source} rel="noopener" className="text-link">
-          {cite}
-        </a>
-        <SourceMark url={source} />
+      <figcaption className="flex flex-col gap-0.5 text-sm text-muted-foreground">
+        <span className="text-xs">{t("mdx.source")}</span>
+        <span>
+          <a href={source} rel="noopener" className="text-link">
+            {cite}
+          </a>
+          <SourceMark url={source} />
+        </span>
       </figcaption>
     </figure>
   )

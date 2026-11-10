@@ -1,14 +1,17 @@
-import type { Post } from "./post"
+import type { Post, PostSummary } from "./post"
 
-/** What the index sends for search: every post in the locale, without the parts only a post page needs. */
-export type PostSummary = Omit<Post, "headings" | "metaTitle" | "sources">
-
-export const summarize = ({
-  headings: _headings,
-  metaTitle: _metaTitle,
-  sources: _sources,
-  ...summary
-}: Post): PostSummary => summary
+export const summarize = (post: Post): PostSummary => ({
+  slug: post.slug,
+  title: post.title,
+  description: post.description,
+  topic: post.topic,
+  publishedAt: post.publishedAt,
+  updatedAt: post.updatedAt,
+  minutes: post.minutes,
+  draft: post.draft,
+  cover: post.cover,
+  preview: post.preview,
+})
 
 export const searchWords = (query: string, lang: string) =>
   query.toLocaleLowerCase(lang).split(/\s+/).filter(Boolean)
