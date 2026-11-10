@@ -55,12 +55,12 @@ export function PostSearch({
         }}
         aria-label={t("index.search")}
         placeholder={t("index.search")}
-        className="h-11 w-full rounded-lg border border-input bg-background ps-9 pe-11 text-base transition-colors outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:transition-none [&::-webkit-search-cancel-button]:hidden"
+        className="peer h-11 w-full rounded-lg border border-input bg-background ps-9 pe-11 text-base transition-colors outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:transition-none [&::-webkit-search-cancel-button]:hidden"
       />
       {!query && (
         <Kbd
           aria-hidden
-          className="absolute inset-e-3 top-1/2 hidden -translate-y-1/2 border sm:inline-flex"
+          className="absolute inset-e-3 top-1/2 hidden -translate-y-1/2 border sm:inline-flex sm:peer-focus:hidden"
         >
           /
         </Kbd>
