@@ -2,6 +2,7 @@
   "meta": {
     "title": "Blog: Hiring Advice, Careers and Trends | letshyre.ai",
     "description": "Hiring advice for employers, career advice for professionals, hiring trends and product news from the LetsHyre team.",
+    "pageTitle": "Blog, page {{page}} | letshyre.ai",
     "crumb": "Blogs",
     "name": "LetsHyre blog"
   },
@@ -9,8 +10,18 @@
     "eyebrow": "Blogs",
     "title": "Hiring, careers and LetsHyre news",
     "description": "Advice for employers and professionals, what's changing in hiring, and what we're building at LetsHyre.",
+    "pageTitle": "Blog posts, page {{page}}",
     "more": "More posts",
     "feed": "Subscribe via RSS",
+    "search": "Search posts",
+    "clear": "Clear search",
+    "results": "Matching posts: {{count}}",
+    "noResults": "Nothing matches “{{query}}”",
+    "noResultsHint": "Try fewer words, or browse the topics above.",
+    "pages": "Blog pages",
+    "page": "Page {{page}}",
+    "newer": "Newer posts",
+    "older": "Older posts",
     "all": "All",
     "topics": "Topics"
   },
@@ -31,7 +42,10 @@
     "shareEmail": "Share by email",
     "copyLink": "Copy link",
     "copied": "Link copied",
-    "related": "Keep reading"
+    "related": "Keep reading",
+    "neighbours": "More in this topic",
+    "older": "Older post",
+    "newer": "Newer post"
   },
   "topics": {
     "interviewing": "Interviewing",
@@ -64,16 +78,19 @@
     "avoid": "Avoid",
     "prefer": "Prefer",
     "source": "Source",
-    "play": "Play video: {{title}}"
+    "play": "Play video: {{title}}",
+    "zoom": "Enlarge image",
+    "close": "Close"
   },
   "topicPage": {
-    "metaTitle": "{{topic}} | LetsHyre blog",
+    "metaTitle": "{{topic}}, LetsHyre blog | letshyre.ai",
     "description": {
       "interviewing": "How to plan, run and score interviews that compare candidates on evidence, written for the people who hire.",
       "hiring": "How to write roles, find people and decide who to hire, from the first brief to the offer.",
       "careers": "Advice for experienced professionals on job searching, interviews and moving to the next role.",
       "trends": "What's changing in hiring: the data, the rules and the tools employers and professionals should know about.",
       "news": "Product updates, launches and other news from the LetsHyre team."
-    }
+    },
+    "others": "More from the blog"
   }
 }

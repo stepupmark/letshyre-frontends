@@ -2,6 +2,7 @@
   "meta": {
     "title": "ブログ：採用とキャリアのヒント、採用トレンド | letshyre.ai",
     "description": "企業向けの採用アドバイス、プロフェッショナル向けのキャリアアドバイス、採用トレンド、LetsHyreチームからの製品ニュース。",
+    "pageTitle": "ブログ {{page}}ページ目 | letshyre.ai",
     "crumb": "ブログ",
     "name": "LetsHyreブログ"
   },
@@ -9,8 +10,18 @@
     "eyebrow": "ブログ",
     "title": "採用、キャリア、LetsHyreのお知らせ",
     "description": "企業とプロフェッショナルへのアドバイス、採用の変化、そしてLetsHyreで私たちが作っているもの。",
+    "pageTitle": "ブログ記事 {{page}}ページ目",
     "more": "その他の記事",
     "feed": "RSSで購読",
+    "search": "記事を検索",
+    "clear": "検索をクリア",
+    "results": "該当する記事：{{count}}件",
+    "noResults": "「{{query}}」に一致する記事はありません",
+    "noResultsHint": "言葉を減らすか、上のトピックから探してください。",
+    "pages": "ブログのページ",
+    "page": "{{page}}ページ目",
+    "newer": "新しい記事",
+    "older": "古い記事",
     "all": "すべて",
     "topics": "トピック"
   },
@@ -31,7 +42,10 @@
     "shareEmail": "メールで共有",
     "copyLink": "リンクをコピー",
     "copied": "リンクをコピーしました",
-    "related": "次に読む"
+    "related": "次に読む",
+    "neighbours": "このトピックの記事",
+    "older": "前の記事",
+    "newer": "次の記事"
   },
   "topics": {
     "interviewing": "面接",
@@ -64,16 +78,19 @@
     "avoid": "避けたい例",
     "prefer": "良い例",
     "source": "出典",
-    "play": "動画を再生：{{title}}"
+    "play": "動画を再生：{{title}}",
+    "zoom": "画像を拡大",
+    "close": "閉じる"
   },
   "topicPage": {
-    "metaTitle": "{{topic}} | LetsHyreブログ",
+    "metaTitle": "{{topic}}、LetsHyreブログ | letshyre.ai",
     "description": {
       "interviewing": "根拠で候補者を比較できる面接の計画、実施、評価の方法。採用に携わる人向けです。",
       "hiring": "職務の書き方、人材の探し方、採用の決め方。最初の要件定義からオファーまで。",
       "careers": "経験豊富なプロフェッショナル向けに、転職活動、面接、次の職務への移り方をアドバイスします。",
       "trends": "採用で何が変わっているのか。企業とプロフェッショナルが知っておくべきデータ、ルール、ツール。",
       "news": "LetsHyreチームからの製品アップデート、リリース、その他のお知らせ。"
-    }
+    },
+    "others": "ブログのほかの記事"
   }
 }

@@ -17,14 +17,14 @@ export function useCopy() {
     }
   }, [copied])
 
-  const copy = (text: string) => {
+  const copy = (text: string) =>
     navigator.clipboard.writeText(text).then(
       () => {
         setCopied(true)
+        return true
       },
-      () => undefined
+      () => false
     )
-  }
 
   return { canCopy, copied, copy }
 }

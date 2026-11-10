@@ -1,10 +1,12 @@
 import { isLocale, type Locale } from "@workspace/i18n"
 import { data } from "react-router"
 
+import { featuredFirst, pageCount, topicCounts } from "./blog/post"
 import { ogImageOf } from "./blog/posts.server"
-import { topicsOf } from "./blog/post"
 import { relatedPosts } from "./blog/related"
+import { summarize } from "./blog/search"
 import {
+  indexPageLocales,
   loadMessages,
   postLocales,
   postsIn,
@@ -30,11 +32,26 @@ export function pageData(lang: string | undefined, id: PageId) {
   return { messages: loadMessages(lang, PAGES[id].namespaces), locales }
 }
 
-export function blogData(lang: string | undefined) {
-  const page = pageData(lang, "blog")
-  const posts = postsIn(lang as Locale)
-  return { ...page, posts, topics: topicsOf(posts) }
+/** Every post goes to every index page, so search covers them all; the page shows its own slice. */
+export function blogData(lang: string | undefined, pageParam?: string) {
+  const { messages, locales } = pageData(lang, "blog")
+  const posts = featuredFirst(postsIn(lang as Locale))
+  const pages = pageCount(posts.length)
+  const page = pageParam === undefined ? 1 : Number(pageParam)
+  if (!Number.isInteger(page) || page > pages || (pageParam && page < 2))
+    throw notFound()
+  return {
+    messages,
+    locales: page === 1 ? locales : indexPageLocales(page),
+    posts: posts.map(summarize),
+    page,
+    pages,
+    topics: topicCounts(posts),
+  }
 }
+
+// a topic this thin gets the newest posts from the others under it, so its page isn't a dead end
+const THIN_TOPIC = 4
 
 export function topicData(lang: string | undefined, topic: string | undefined) {
   const { messages } = pageData(lang, "blog")
@@ -47,7 +64,11 @@ export function topicData(lang: string | undefined, topic: string | undefined) {
     locales: topicLocales(current),
     topic: current,
     posts,
-    topics: topicsOf(all),
+    others:
+      posts.length < THIN_TOPIC
+        ? all.filter((post) => post.topic !== current).slice(0, 3)
+        : [],
+    topics: topicCounts(all),
   }
 }
 
@@ -56,11 +77,20 @@ export function postData(lang: string | undefined, slug: string | undefined) {
   const posts = postsIn(lang)
   const post = posts.find((p) => p.slug === slug)
   if (!post) throw notFound()
+  const inTopic = posts.filter((p) => p.topic === post.topic)
+  const at = inTopic.indexOf(post)
+  const newer = inTopic[at - 1]
+  const older = inTopic[at + 1]
   return {
     messages: loadMessages(lang, PAGES.blog.namespaces),
     locales: postLocales(post.slug),
     post,
-    related: relatedPosts(post, posts),
+    newer,
+    older,
+    related: relatedPosts(
+      post,
+      posts.filter((p) => p !== newer && p !== older)
+    ),
     ogImage: ogImageOf(post.slug),
   }
 }

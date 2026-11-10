@@ -2,7 +2,12 @@ import { type Catalog, type Locale, type Messages } from "@workspace/i18n"
 import { type Catalogs, readinessFrom } from "@workspace/i18n/node"
 
 import { allPosts } from "./blog/posts.server"
-import { type Post, publishedPosts, withBlogIndex } from "./blog/post"
+import {
+  pageCount,
+  type Post,
+  publishedPosts,
+  withBlogIndex,
+} from "./blog/post"
 import { PAGES, type PageId, pageNamespaces, withoutReplaced } from "./pages"
 
 const files = import.meta.glob<Catalog>("../locales/*/*.json", {
@@ -60,3 +65,6 @@ export const topicLocales = (topic: string): Locale[] => [
     posts.filter((post) => post.topic === topic).map((post) => post.lang)
   ),
 ]
+
+export const indexPageLocales = (page: number): Locale[] =>
+  readyLocales("blog").filter((lang) => pageCount(postsIn(lang).length) >= page)

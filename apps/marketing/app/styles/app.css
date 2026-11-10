@@ -46,13 +46,20 @@
   }
 }
 
-/* legal pages: reading progress, only where scroll timelines exist */
+/* rows that scroll sideways on small screens, like the blog's topic tabs */
+@utility scrollbar-none {
+  scrollbar-width: none;
+}
+
+/* legal pages and posts: reading progress, where scroll timelines exist and motion is welcome */
 @utility read-progress {
   display: none;
   @supports (animation-timeline: scroll()) {
-    display: block;
-    animation: read-progress linear both;
-    animation-timeline: scroll(root);
+    @media (prefers-reduced-motion: no-preference) {
+      display: block;
+      animation: read-progress linear both;
+      animation-timeline: scroll(root);
+    }
   }
   @media print {
     display: none;
@@ -554,6 +561,11 @@
   /* keeps focused elements and anchor targets out from under the sticky header (WCAG 2.4.11) */
   html {
     scroll-padding-top: 5.5rem;
+  }
+
+  /* a modal dialog (an enlarged figure) holds the page still behind it */
+  html:has(dialog[open]) {
+    overflow: hidden;
   }
 
   #main:focus,

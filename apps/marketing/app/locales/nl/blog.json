@@ -2,6 +2,7 @@
   "meta": {
     "title": "Blog: werving, carrière en trends | letshyre.ai",
     "description": "Wervingsadvies voor werkgevers, carrièreadvies voor professionals, wervingstrends en productnieuws van het LetsHyre-team.",
+    "pageTitle": "Blog, pagina {{page}} | letshyre.ai",
     "crumb": "Blogs",
     "name": "LetsHyre-blog"
   },
@@ -9,8 +10,18 @@
     "eyebrow": "Blogs",
     "title": "Werving, carrière en nieuws van LetsHyre",
     "description": "Advies voor werkgevers en professionals, wat er verandert in werving en waar we bij LetsHyre aan werken.",
+    "pageTitle": "Blogberichten, pagina {{page}}",
     "more": "Meer artikelen",
     "feed": "Abonneren via RSS",
+    "search": "Berichten zoeken",
+    "clear": "Zoekopdracht wissen",
+    "results": "Gevonden berichten: {{count}}",
+    "noResults": "Niets gevonden voor ‘{{query}}’",
+    "noResultsHint": "Probeer minder woorden, of bekijk de onderwerpen hierboven.",
+    "pages": "Blogpagina’s",
+    "page": "Pagina {{page}}",
+    "newer": "Nieuwere berichten",
+    "older": "Oudere berichten",
     "all": "Alles",
     "topics": "Onderwerpen"
   },
@@ -31,7 +42,10 @@
     "shareEmail": "Delen via e-mail",
     "copyLink": "Link kopiëren",
     "copied": "Link gekopieerd",
-    "related": "Verder lezen"
+    "related": "Verder lezen",
+    "neighbours": "Meer over dit onderwerp",
+    "older": "Ouder bericht",
+    "newer": "Nieuwer bericht"
   },
   "topics": {
     "interviewing": "Sollicitatiegesprekken",
@@ -64,16 +78,19 @@
     "avoid": "Vermijd",
     "prefer": "Beter",
     "source": "Bron",
-    "play": "Video afspelen: {{title}}"
+    "play": "Video afspelen: {{title}}",
+    "zoom": "Afbeelding vergroten",
+    "close": "Sluiten"
   },
   "topicPage": {
-    "metaTitle": "{{topic}} | LetsHyre-blog",
+    "metaTitle": "{{topic}}, LetsHyre-blog | letshyre.ai",
     "description": {
       "interviewing": "Hoe je gesprekken plant, voert en scoort zodat je kandidaten op bewijs vergelijkt, voor wie aanneemt.",
       "hiring": "Hoe je functies beschrijft, mensen vindt en beslist wie je aanneemt, van de eerste briefing tot het aanbod.",
       "careers": "Advies voor ervaren professionals over werk zoeken, sollicitatiegesprekken en de stap naar je volgende functie.",
       "trends": "Wat er verandert in werving: de cijfers, de regels en de tools die werkgevers en professionals moeten kennen.",
       "news": "Productupdates, lanceringen en ander nieuws van het LetsHyre-team."
-    }
+    },
+    "others": "Meer uit de blog"
   }
 }

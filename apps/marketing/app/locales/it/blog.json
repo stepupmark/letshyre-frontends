@@ -2,6 +2,7 @@
   "meta": {
     "title": "Blog: selezione, carriera e tendenze | letshyre.ai",
     "description": "Consigli di selezione per le aziende, consigli di carriera per i professionisti, tendenze della selezione e novità di prodotto dal team LetsHyre.",
+    "pageTitle": "Blog, pagina {{page}} | letshyre.ai",
     "crumb": "Blog",
     "name": "Blog di LetsHyre"
   },
@@ -9,8 +10,18 @@
     "eyebrow": "Blog",
     "title": "Selezione, carriera e novità da LetsHyre",
     "description": "Consigli per aziende e professionisti, cosa sta cambiando nella selezione e cosa stiamo costruendo in LetsHyre.",
+    "pageTitle": "Articoli del blog, pagina {{page}}",
     "more": "Altri articoli",
     "feed": "Iscriviti via RSS",
+    "search": "Cerca negli articoli",
+    "clear": "Cancella ricerca",
+    "results": "Articoli trovati: {{count}}",
+    "noResults": "Nessun risultato per «{{query}}»",
+    "noResultsHint": "Prova con meno parole o sfoglia gli argomenti qui sopra.",
+    "pages": "Pagine del blog",
+    "page": "Pagina {{page}}",
+    "newer": "Articoli più recenti",
+    "older": "Articoli meno recenti",
     "all": "Tutti",
     "topics": "Argomenti"
   },
@@ -31,7 +42,10 @@
     "shareEmail": "Condividi via email",
     "copyLink": "Copia link",
     "copied": "Link copiato",
-    "related": "Continua a leggere"
+    "related": "Continua a leggere",
+    "neighbours": "Altro su questo argomento",
+    "older": "Articolo precedente",
+    "newer": "Articolo successivo"
   },
   "topics": {
     "interviewing": "Colloqui",
@@ -64,16 +78,19 @@
     "avoid": "Da evitare",
     "prefer": "Meglio",
     "source": "Fonte",
-    "play": "Riproduci video: {{title}}"
+    "play": "Riproduci video: {{title}}",
+    "zoom": "Ingrandisci immagine",
+    "close": "Chiudi"
   },
   "topicPage": {
-    "metaTitle": "{{topic}} | Blog di LetsHyre",
+    "metaTitle": "{{topic}}, Blog di LetsHyre | letshyre.ai",
     "description": {
       "interviewing": "Come preparare, condurre e valutare colloqui che confrontano i candidati sulle prove, per chi assume.",
       "hiring": "Come descrivere i ruoli, trovare persone e decidere chi assumere, dal primo brief all'offerta.",
       "careers": "Consigli per professionisti esperti su ricerca di lavoro, colloqui e passaggio al ruolo successivo.",
       "trends": "Cosa sta cambiando nella selezione: dati, regole e strumenti che aziende e professionisti dovrebbero conoscere.",
       "news": "Novità di prodotto, lanci e altre notizie dal team LetsHyre."
-    }
+    },
+    "others": "Altro dal blog"
   }
 }

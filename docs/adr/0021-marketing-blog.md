@@ -56,6 +56,9 @@ the marketing site is already prerendered on a static host with hash-based CSP (
 - **Feeds are RSS 2.0, one per locale** at `/<lang>/blogs/feed.xml`, written by postbuild.
 - **A post's share image is `<slug>/og.jpg`**, drawn from its page header by
   `pnpm --filter marketing blog:og` like the other pages' images. Without one, the default is used.
+- **The index pages, ten posts then nine a page.** `/<lang>/blogs/page/<n>` is prerendered, never
+  infinite scroll, so every post stays a crawlable link. Each page also carries every post's title
+  and description, so search on it runs in the browser across the whole blog.
 - **Authors are optional.** `app/lib/blog/authors.ts` lists the people who sign posts; an unsigned
   post is the team's and its structured data names the organization.
 - **Photos become responsive at build time.** A PNG, JPEG or WebP imported by a post is turned into
@@ -67,9 +70,7 @@ the marketing site is already prerendered on a static host with hash-based CSP (
 
 ## Not yet
 
-- Author pages, and search across posts.
-- Pagination. When the index passes about a dozen posts, add prerendered `/page/2` pages rather
-  than infinite scroll, so every post stays a crawlable link.
+- Author pages, and search beyond titles and descriptions.
 - A git-based CMS (Keystatic or TinaCMS) once someone outside engineering writes posts.
 - React Server Components. React Router 8.4 has them behind `unstable_` flags. Keep MDX components
   free of hooks and browser APIs so posts can move to server components once that ships stable.

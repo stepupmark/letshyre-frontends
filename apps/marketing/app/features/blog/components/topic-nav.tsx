@@ -12,7 +12,7 @@ export function TopicNav({
   topics,
   current,
 }: {
-  topics: readonly Topic[]
+  topics: readonly { topic: Topic; count: number }[]
   current?: Topic
 }) {
   const { t } = useTranslation("blog")
@@ -20,10 +20,17 @@ export function TopicNav({
   if (topics.length < 2) return null
 
   const links = [
-    { key: "all", label: t("index.all"), to: PAGES.blog.path, on: !current },
-    ...topics.map((topic) => ({
+    {
+      key: "all",
+      label: t("index.all"),
+      count: topics.reduce((sum, { count }) => sum + count, 0),
+      to: PAGES.blog.path,
+      on: !current,
+    },
+    ...topics.map(({ topic, count }) => ({
       key: topic,
       label: t(`topics.${topic}`),
+      count,
       to: topicPath(topic),
       on: topic === current,
     })),
@@ -32,18 +39,21 @@ export function TopicNav({
   return (
     <nav
       aria-label={t("index.topics")}
-      className="relative -mt-px border-b bg-brand-muted"
+      className="relative -mt-px border-b bg-brand-muted print:hidden"
     >
       <Container>
-        <ul className="mx-auto -mb-px flex w-fit max-w-full gap-1 overflow-x-auto">
+        <ul className="mx-auto -mb-px flex w-fit max-w-full scrollbar-none gap-1 overflow-x-auto">
           {links.map((link) => (
             <li key={link.key} className="shrink-0">
               <Link
                 to={localePath(lang, link.to)}
                 aria-current={link.on ? "page" : undefined}
-                className="block rounded-t-lg border border-b-0 border-transparent px-4 pt-2.5 pb-3 text-sm font-medium text-muted-foreground transition-colors duration-200 outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 aria-[current=page]:border-border aria-[current=page]:bg-background aria-[current=page]:text-brand-text motion-reduce:transition-none"
+                className="group flex items-center gap-2 rounded-t-lg border border-b-0 border-transparent px-4 pt-2.5 pb-3 text-sm font-medium text-foreground/75 transition-colors duration-200 outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-inset aria-[current=page]:border-border aria-[current=page]:bg-background aria-[current=page]:text-brand-text motion-reduce:transition-none"
               >
                 {link.label}
+                <span className="rounded-full bg-background px-1.5 text-xs text-foreground/75 tabular-nums group-aria-[current=page]:bg-muted">
+                  {link.count}
+                </span>
               </Link>
             </li>
           ))}

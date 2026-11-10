@@ -2,8 +2,8 @@ import { fileURLToPath } from "node:url"
 import { LOCALES } from "@workspace/i18n"
 
 import { expect, test } from "./fixtures.ts"
-import { postPath, topicPath } from "../app/lib/blog/paths.ts"
-import { TOPICS } from "../app/lib/blog/post.ts"
+import { indexPagePath, postPath, topicPath } from "../app/lib/blog/paths.ts"
+import { pageCount, TOPICS } from "../app/lib/blog/post.ts"
 import { MOVED_PATHS } from "../app/lib/pages.ts"
 import { readiness } from "../app/lib/readiness.ts"
 
@@ -52,7 +52,11 @@ test.describe("url contract", () => {
       [`/en${topicPath(post.topic)}`, 200],
       ["/en/blogs/topics", 301, "/en/blogs"],
       ["/en/blogs/topics/nonsense", 404],
+      ["/en/blogs/page/1", 404],
     ]
+    const pages = pageCount(posts.filter((p) => p.lang === "en").length)
+    if (pages > 1) expected.push([`/en${indexPagePath(pages)}`, 200])
+    expected.push([`/en${indexPagePath(pages + 1)}`, 404])
     if (untranslated)
       expected.push([
         `/${untranslated}${postPath(post.slug)}`,

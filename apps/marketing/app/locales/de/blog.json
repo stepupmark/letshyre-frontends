@@ -2,6 +2,7 @@
   "meta": {
     "title": "Blog: Recruiting, Karriere und Trends | letshyre.ai",
     "description": "Recruiting-Tipps für Arbeitgeber, Karrieretipps für Fachkräfte, Recruiting-Trends und Produktneuigkeiten vom LetsHyre-Team.",
+    "pageTitle": "Blog, Seite {{page}} | letshyre.ai",
     "crumb": "Blogs",
     "name": "LetsHyre-Blog"
   },
@@ -9,8 +10,18 @@
     "eyebrow": "Blogs",
     "title": "Recruiting, Karriere und Neues von LetsHyre",
     "description": "Rat für Arbeitgeber und Fachkräfte, was sich beim Einstellen ändert und woran wir bei LetsHyre arbeiten.",
+    "pageTitle": "Blogbeiträge, Seite {{page}}",
     "more": "Weitere Beiträge",
     "feed": "Per RSS abonnieren",
+    "search": "Beiträge durchsuchen",
+    "clear": "Suche löschen",
+    "results": "Passende Beiträge: {{count}}",
+    "noResults": "Nichts passt zu „{{query}}“",
+    "noResultsHint": "Versuchen Sie weniger Wörter oder stöbern Sie in den Themen oben.",
+    "pages": "Blogseiten",
+    "page": "Seite {{page}}",
+    "newer": "Neuere Beiträge",
+    "older": "Ältere Beiträge",
     "all": "Alle",
     "topics": "Themen"
   },
@@ -31,7 +42,10 @@
     "shareEmail": "Per E-Mail teilen",
     "copyLink": "Link kopieren",
     "copied": "Link kopiert",
-    "related": "Weiterlesen"
+    "related": "Weiterlesen",
+    "neighbours": "Mehr zu diesem Thema",
+    "older": "Älterer Beitrag",
+    "newer": "Neuerer Beitrag"
   },
   "topics": {
     "interviewing": "Vorstellungsgespräche",
@@ -64,16 +78,19 @@
     "avoid": "Vermeiden",
     "prefer": "Besser",
     "source": "Quelle",
-    "play": "Video abspielen: {{title}}"
+    "play": "Video abspielen: {{title}}",
+    "zoom": "Bild vergrößern",
+    "close": "Schließen"
   },
   "topicPage": {
-    "metaTitle": "{{topic}} | LetsHyre-Blog",
+    "metaTitle": "{{topic}}, LetsHyre-Blog | letshyre.ai",
     "description": {
       "interviewing": "Wie Sie Interviews planen, führen und bewerten, damit Sie Kandidaten anhand von Belegen vergleichen.",
       "hiring": "Wie Sie Rollen beschreiben, Menschen finden und entscheiden, wen Sie einstellen, vom Briefing bis zum Angebot.",
       "careers": "Rat für erfahrene Fachkräfte zu Jobsuche, Interviews und dem Wechsel in die nächste Rolle.",
       "trends": "Was sich beim Einstellen ändert: Daten, Regeln und Werkzeuge, die Arbeitgeber und Fachkräfte kennen sollten.",
       "news": "Produktneuigkeiten, Starts und weitere Nachrichten vom LetsHyre-Team."
-    }
+    },
+    "others": "Mehr aus dem Blog"
   }
 }

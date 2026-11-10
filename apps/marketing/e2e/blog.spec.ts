@@ -11,7 +11,7 @@ test("a post's full text is in its prerendered HTML", async ({ browser }) => {
   await context.close()
 })
 
-test("opening a post from the index loads it in place, without errors", async ({
+test("searching the index finds a post and opens it in place, without errors", async ({
   page,
 }) => {
   const errors: string[] = []
@@ -25,7 +25,8 @@ test("opening a post from the index loads it in place, without errors", async ({
   await page.evaluate(() => {
     document.documentElement.dataset.visited = "index"
   })
-  await page.getByRole("link", { name: "Why we built LetsHyre" }).click()
+  await page.getByRole("searchbox", { name: "Search posts" }).fill("built")
+  await page.getByRole("link", { name: /Why we built LetsHyre/ }).click()
 
   await expect(page).toHaveURL(POST)
   await expect(page.getByRole("heading", lastSection)).toBeVisible()

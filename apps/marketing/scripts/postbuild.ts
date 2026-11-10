@@ -18,6 +18,7 @@ import {
 } from "../app/lib/pages.ts"
 import {
   feedPath,
+  indexPagePath,
   postPath,
   topicPath,
   topicsPath,
@@ -25,6 +26,7 @@ import {
 import {
   BLOG_DIR,
   emptyTopicRedirects,
+  indexPages,
   readiness,
   topicPages,
 } from "../app/lib/readiness.ts"
@@ -111,6 +113,9 @@ const slugs = [...new Set(posts.map((post) => post.slug))]
 const topics = topicPages(posts)
 const topicLocales = (topic: string) =>
   topics.filter((page) => page.topic === topic).map((page) => page.lang)
+const laterPages = indexPages(posts)
+const laterPageLocales = (n: number) =>
+  laterPages.filter((p) => p.page === n).map((p) => p.lang)
 const problems: string[] = []
 const policies = new Map<string, string>()
 
@@ -139,6 +144,11 @@ writeFileSync(
         const post = posts.find((p) => p.topic === topic && p.lang === lang)
         return post?.updatedAt ?? post?.publishedAt ?? today
       },
+    })),
+    ...[...new Set(laterPages.map((p) => p.page))].map((n) => ({
+      path: indexPagePath(n),
+      locales: laterPageLocales(n),
+      lastmod: lastmod("blog"),
     })),
   ])
 )
@@ -212,6 +222,13 @@ const routes = [
     lang,
     path: topicPath(topic),
     locales: topicLocales(topic),
+    preview: false,
+    jsExempt: false,
+  })),
+  ...laterPages.map(({ lang, page }) => ({
+    lang,
+    path: indexPagePath(page),
+    locales: laterPageLocales(page),
     preview: false,
     jsExempt: false,
   })),

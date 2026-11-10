@@ -17,6 +17,7 @@ audience: employers # employers | candidates | everyone: picks the closing call 
 topic: interviewing # interviewing | hiring | careers | trends | news
 author: priya # optional, an id from app/lib/blog/authors.ts; unsigned posts are the team's
 draft: true # optional; drafts show on dev and staging only
+featured: true # optional; leads the blog index instead of the newest post
 ---
 ```
 

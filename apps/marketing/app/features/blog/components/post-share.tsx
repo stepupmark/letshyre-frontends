@@ -1,6 +1,7 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { Button, buttonVariants } from "@workspace/ui/components/button"
 import { CheckIcon, LinkIcon, MailIcon } from "lucide-react"
+import { toast } from "sonner"
 
 import { SocialIcon } from "@/components/social-links"
 import { useCopy } from "@/hooks/use-copy"
@@ -46,13 +47,13 @@ export function PostShare({ url, title }: { url: string; title: string }) {
           variant="outline"
           size="lg"
           onClick={() => {
-            copy(url)
+            void copy(url).then((done) => {
+              if (done) toast.success(t("post.copied"))
+            })
           }}
         >
           {copied ? <CheckIcon aria-hidden /> : <LinkIcon aria-hidden />}
-          <span aria-live="polite">
-            {copied ? t("post.copied") : t("post.copyLink")}
-          </span>
+          {t("post.copyLink")}
         </Button>
       )}
     </div>

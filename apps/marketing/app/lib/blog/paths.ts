@@ -4,3 +4,5 @@ export const postPath = (slug: string) => `/blogs/${slug}`
 export const topicsPath = "/blogs/topics"
 export const topicPath = (topic: string) => `${topicsPath}/${topic}`
 export const feedPath = "/blogs/feed.xml"
+export const indexPagePath = (page: number) =>
+  page === 1 ? "/blogs" : `/blogs/page/${page}`

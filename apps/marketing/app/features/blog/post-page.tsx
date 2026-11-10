@@ -6,6 +6,7 @@ import { Link } from "react-router"
 import { BackToTop } from "@/components/back-to-top"
 import { ReadProgress } from "@/components/read-progress"
 import { Container } from "@/components/section"
+import { useLightPrint } from "@/hooks/use-light-print"
 import { postPath } from "@/lib/blog/paths"
 import type { Post } from "@/lib/blog/post"
 import { PAGES } from "@/lib/pages"
@@ -14,26 +15,40 @@ import { absUrl } from "@/lib/seo/site"
 import { mdxComponents } from "./components/mdx"
 import { PostCta } from "./components/post-cta"
 import { PostHeader } from "./components/post-header"
+import { PostNeighbours } from "./components/post-neighbours"
 import { PostShare } from "./components/post-share"
 import { PostToc } from "./components/post-toc"
 import { RelatedPosts } from "./components/related-posts"
 import { usePostBody } from "./hooks/use-post-body"
+import { inlineCtaHeading, InlineCtaSlot } from "./lib/cta"
 
 function PostBody({ post }: { post: Post }) {
   const Body = usePostBody(post.lang, post.slug)
-  // eslint-disable-next-line react-hooks/static-components -- cached per post, so it never changes identity
-  return <Body components={mdxComponents} />
+  const before = inlineCtaHeading(post)
+  return (
+    <InlineCtaSlot
+      value={before ? { before, audience: post.audience } : undefined}
+    >
+      {/* eslint-disable-next-line react-hooks/static-components -- cached per post, so it never changes identity */}
+      <Body components={mdxComponents} />
+    </InlineCtaSlot>
+  )
 }
 
 export function PostPage({
   post,
+  newer,
+  older,
   related,
 }: {
   post: Post
+  newer?: Post
+  older?: Post
   related: readonly Post[]
 }) {
   const { t } = useTranslation("blog")
   const lang = useLocale()
+  useLightPrint()
 
   return (
     <div className="relative">
@@ -47,7 +62,7 @@ export function PostPage({
           </div>
         )}
         <div className="flex min-w-0 flex-col gap-12 lg:col-start-2">
-          <article className="flex flex-col gap-5 text-base text-foreground/85 *:max-w-prose *:data-wide:max-w-none lg:text-lg/8">
+          <article className="flex flex-col gap-5 text-base text-foreground/85 *:max-w-prose *:data-wide:max-w-none lg:text-lg/8 print:text-foreground">
             <PostBody post={post} />
           </article>
           <footer className="flex max-w-prose flex-col items-start gap-6 border-t pt-8 sm:flex-row sm:items-center sm:justify-between print:hidden">
@@ -63,9 +78,10 @@ export function PostPage({
               {t("post.allPosts")}
             </Link>
           </footer>
+          <PostNeighbours older={older} newer={newer} />
         </div>
       </Container>
-      <RelatedPosts posts={related} />
+      <RelatedPosts title={t("post.related")} posts={related} />
       <div className="print:hidden">
         <PostCta audience={post.audience} />
       </div>

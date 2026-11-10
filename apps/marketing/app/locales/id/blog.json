@@ -2,6 +2,7 @@
   "meta": {
     "title": "Blog: rekrutmen, karier, dan tren | letshyre.ai",
     "description": "Tips rekrutmen untuk pemberi kerja, tips karier untuk profesional, tren rekrutmen, dan kabar produk dari tim LetsHyre.",
+    "pageTitle": "Blog, halaman {{page}} | letshyre.ai",
     "crumb": "Blog",
     "name": "Blog LetsHyre"
   },
@@ -9,8 +10,18 @@
     "eyebrow": "Blog",
     "title": "Rekrutmen, karier, dan kabar LetsHyre",
     "description": "Saran untuk pemberi kerja dan profesional, apa yang berubah dalam rekrutmen, dan apa yang kami bangun di LetsHyre.",
+    "pageTitle": "Artikel blog, halaman {{page}}",
     "more": "Artikel lainnya",
     "feed": "Berlangganan lewat RSS",
+    "search": "Cari artikel",
+    "clear": "Hapus pencarian",
+    "results": "Artikel yang cocok: {{count}}",
+    "noResults": "Tidak ada yang cocok dengan “{{query}}”",
+    "noResultsHint": "Coba kata yang lebih sedikit, atau jelajahi topik di atas.",
+    "pages": "Halaman blog",
+    "page": "Halaman {{page}}",
+    "newer": "Artikel lebih baru",
+    "older": "Artikel lebih lama",
     "all": "Semua",
     "topics": "Topik"
   },
@@ -31,7 +42,10 @@
     "shareEmail": "Bagikan lewat email",
     "copyLink": "Salin tautan",
     "copied": "Tautan disalin",
-    "related": "Baca selanjutnya"
+    "related": "Baca selanjutnya",
+    "neighbours": "Lainnya dalam topik ini",
+    "older": "Artikel sebelumnya",
+    "newer": "Artikel berikutnya"
   },
   "topics": {
     "interviewing": "Wawancara",
@@ -64,16 +78,19 @@
     "avoid": "Hindari",
     "prefer": "Lebih baik",
     "source": "Sumber",
-    "play": "Putar video: {{title}}"
+    "play": "Putar video: {{title}}",
+    "zoom": "Perbesar gambar",
+    "close": "Tutup"
   },
   "topicPage": {
-    "metaTitle": "{{topic}} | Blog LetsHyre",
+    "metaTitle": "{{topic}}, Blog LetsHyre | letshyre.ai",
     "description": {
       "interviewing": "Cara merencanakan, menjalankan, dan menilai wawancara yang membandingkan kandidat berdasarkan bukti, untuk perekrut.",
       "hiring": "Cara menulis peran, menemukan orang, dan memutuskan siapa yang direkrut, dari brief pertama hingga penawaran.",
       "careers": "Saran untuk profesional berpengalaman tentang mencari kerja, wawancara, dan pindah ke peran berikutnya.",
       "trends": "Apa yang berubah dalam rekrutmen: data, aturan, dan alat yang perlu diketahui pemberi kerja dan profesional.",
       "news": "Pembaruan produk, peluncuran, dan kabar lain dari tim LetsHyre."
-    }
+    },
+    "others": "Lainnya dari blog"
   }
 }

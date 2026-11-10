@@ -28,7 +28,8 @@ Pages: `/:lang`, `/:lang/about`, `/:lang/contact`, `/:lang/download`, `/:lang/in
 `/:lang/blogs` and `/:lang/blogs/:slug` ship only in locales with a published post; today that's `en`
 only ([ADR 0021](../adr/0021-marketing-blog.md)). A post's slug never changes once published. Each of
 those locales also has its RSS feed at `/:lang/blogs/feed.xml`, and a page per topic with a post,
-`/:lang/blogs/topics/:topic`.
+`/:lang/blogs/topics/:topic`. Past ten posts the index runs on to `/:lang/blogs/page/:n`, nine
+posts a page.
 `/:lang/policy` moved to `/:lang/privacy-policy` (301).
 `/:lang/how-it-works-interview` moved to `/:lang/interview-guide` (301).
 `/:lang/interview-guide` moves to `/:lang/candidate-guide` (301) in each locale the candidate guide
@@ -40,10 +41,12 @@ The blog's URLs, all new (`e2e/url-contract.spec.ts` checks each):
 | ----------------------------------------------------- | ---------------------------- | ---------------------------------------------- |
 | `/en/blogs`, `/en/blogs/:slug`, `/en/blogs/feed.xml`  | 200                          |                                                |
 | `/en/blogs/topics/:topic` (topic has a post)          | 200                          |                                                |
+| `/en/blogs/page/:n` (2 up to the last page)           | 200                          |                                                |
 | `/hi/blogs/:slug` (post not written in `hi`)          | 302 → `/en/blogs/:slug`      | Same rule as any page not ready in a locale    |
 | `/en/blogs/topics`                                    | 301 → `/en/blogs`            | Someone trimmed the URL                        |
 | `/en/blogs/topics/:topic` (known topic, no post yet)  | 302 → nearest `/:lang/blogs` | Comes back as a 200 once a post uses the topic |
 | `/en/blogs/topics/nonsense`, `/en/blogs/no-such-post` | 404                          |                                                |
+| `/en/blogs/page/1`, a page past the last              | 404                          | Page one is `/en/blogs`                        |
 
 Post slugs `topics`, `page`, `authors` and `feed` are reserved and fail the build.
 

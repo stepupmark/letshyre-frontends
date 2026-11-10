@@ -6,12 +6,15 @@ import { describe, expect, it } from "vitest"
 import { emptyTopicRedirects } from "../readiness"
 import {
   isLive,
+  pageCount,
   parsePost,
+  postsOnPage,
   publishedPosts,
   visiblePosts,
   withBlogIndex,
 } from "./post"
 import { relatedPosts } from "./related"
+import { searchPosts } from "./search"
 
 const source = (frontmatter: string, body = "Hiring well takes a plan.") =>
   `---\n${frontmatter}\n---\n\n${body}\n`
@@ -186,5 +189,33 @@ describe("readiness", () => {
     expect(redirects.get("/fr/blogs/topics/hiring")).toBe("/en/blogs")
     expect(redirects.has("/en/blogs/topics/interviewing")).toBe(false)
     expect(redirects.has("/fr/blogs/topics/interviewing")).toBe(false)
+  })
+})
+
+describe("index pages", () => {
+  const posts = Array.from({ length: 20 }, (_, i) => i)
+
+  it("leads with ten posts, then nine a page, with none lost or repeated", () => {
+    expect(pageCount(10)).toBe(1)
+    expect(pageCount(11)).toBe(2)
+    expect(pageCount(20)).toBe(3)
+    const pages = [1, 2, 3].map((page) => postsOnPage(posts, page))
+    expect(pages.map((page) => page.length)).toEqual([10, 9, 1])
+    expect(pages.flat()).toEqual(posts)
+  })
+})
+
+describe("searchPosts", () => {
+  const posts = [
+    { title: "Negotiating your offer", description: "CTC and fixed pay" },
+    { title: "Explain a career gap", description: "Without apologising" },
+  ]
+
+  it("matches every word, in any order and any case, across title and description", () => {
+    const titles = (query: string) =>
+      searchPosts(posts, query, "en").map((post) => post.title)
+    expect(titles("fixed OFFER")).toEqual(["Negotiating your offer"])
+    expect(titles("offer gap")).toEqual([])
+    expect(titles("   ")).toEqual([])
   })
 })

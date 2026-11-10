@@ -2,8 +2,9 @@ import { join } from "node:path"
 import { LOCALES, type Locale } from "@workspace/i18n"
 import { computeReadiness } from "@workspace/i18n/node"
 
-import { postPath, topicPath } from "./blog/paths.ts"
+import { indexPagePath, postPath, topicPath } from "./blog/paths.ts"
 import {
+  pageCount,
   type Post,
   publishedPosts,
   TOPICS,
@@ -48,6 +49,18 @@ export const topicPages = (posts: readonly Post[]) =>
     }))
   )
 
+/** Each locale's blog index pages after the first, as `/<lang>` and page number. */
+export const indexPages = (posts: readonly Post[]) =>
+  [...new Set(posts.map((post) => post.lang))].flatMap((lang) =>
+    Array.from(
+      {
+        length:
+          pageCount(posts.filter((post) => post.lang === lang).length) - 1,
+      },
+      (_, i) => ({ lang, page: i + 2 })
+    )
+  )
+
 /**
  * Topic URLs with no page and no English page to fall back to, each sent to the nearest blog index.
  * Temporary, because a new post in the topic brings the page back.
@@ -72,7 +85,7 @@ export function emptyTopicRedirects(
   )
 }
 
-/** Every `/<lang><path>` whose catalogs are complete, every post and every topic page. */
+/** Every `/<lang><path>` whose catalogs are complete, and every post, topic and index page. */
 export function readyPaths(root: string, previews = false): string[] {
   const { pages, posts } = readiness(root, previews)
   return [
@@ -82,6 +95,9 @@ export function readyPaths(root: string, previews = false): string[] {
     ...posts.map((post) => `/${post.lang}${postPath(post.slug)}`),
     ...topicPages(posts).map(
       ({ lang, topic }) => `/${lang}${topicPath(topic)}`
+    ),
+    ...indexPages(posts).map(
+      ({ lang, page }) => `/${lang}${indexPagePath(page)}`
     ),
   ]
 }

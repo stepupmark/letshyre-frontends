@@ -1,34 +1,51 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { useId } from "react"
 
-import { Container } from "@/components/section"
-import type { Post } from "@/lib/blog/post"
+import type { PostSummary } from "@/lib/blog/search"
 
 import { PostCard } from "./post-card"
 import { PostLead } from "./post-lead"
 
-export function PostList({ posts }: { posts: readonly Post[] }) {
+export function PostList({
+  posts,
+  lead = true,
+}: {
+  posts: readonly PostSummary[]
+  lead?: boolean
+}) {
   const { t } = useTranslation("blog")
   const moreId = useId()
-  const [lead, ...rest] = posts
+  const first = lead ? posts[0] : undefined
+  const rest = lead ? posts.slice(1) : posts
 
   return (
-    <Container className="flex flex-col gap-12 py-10 sm:py-14">
-      {lead && <PostLead post={lead} />}
+    <div className="flex flex-col gap-12">
+      {first && <PostLead post={first} />}
       {rest.length > 0 && (
         <section aria-labelledby={moreId} className="flex flex-col gap-6">
-          <h2 id={moreId} className="text-xl font-semibold tracking-tight">
+          <h2
+            id={moreId}
+            className={
+              lead ? "text-xl font-semibold tracking-tight" : "sr-only"
+            }
+          >
             {t("index.more")}
           </h2>
-          <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {rest.map((post) => (
-              <li key={post.slug}>
-                <PostCard post={post} />
-              </li>
-            ))}
-          </ol>
+          <PostGrid posts={rest} />
         </section>
       )}
-    </Container>
+    </div>
+  )
+}
+
+export function PostGrid({ posts }: { posts: readonly PostSummary[] }) {
+  return (
+    <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => (
+        <li key={post.slug}>
+          <PostCard post={post} />
+        </li>
+      ))}
+    </ol>
   )
 }

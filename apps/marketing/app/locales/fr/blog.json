@@ -2,6 +2,7 @@
   "meta": {
     "title": "Blog : recrutement, carrière et tendances | letshyre.ai",
     "description": "Conseils de recrutement pour les employeurs, conseils de carrière pour les professionnels, tendances du recrutement et actualités produit de l'équipe LetsHyre.",
+    "pageTitle": "Blog, page {{page}} | letshyre.ai",
     "crumb": "Blogs",
     "name": "Blog LetsHyre"
   },
@@ -9,8 +10,18 @@
     "eyebrow": "Blogs",
     "title": "Recrutement, carrière et actualités de LetsHyre",
     "description": "Des conseils pour les employeurs et les professionnels, ce qui change dans le recrutement et ce que nous construisons chez LetsHyre.",
+    "pageTitle": "Articles du blog, page {{page}}",
     "more": "Plus d'articles",
     "feed": "S'abonner par RSS",
+    "search": "Rechercher un article",
+    "clear": "Effacer la recherche",
+    "results": "Articles trouvés : {{count}}",
+    "noResults": "Aucun résultat pour « {{query}} »",
+    "noResultsHint": "Essayez avec moins de mots, ou parcourez les thèmes ci-dessus.",
+    "pages": "Pages du blog",
+    "page": "Page {{page}}",
+    "newer": "Articles plus récents",
+    "older": "Articles plus anciens",
     "all": "Tout",
     "topics": "Thèmes"
   },
@@ -31,7 +42,10 @@
     "shareEmail": "Partager par e-mail",
     "copyLink": "Copier le lien",
     "copied": "Lien copié",
-    "related": "À lire ensuite"
+    "related": "À lire ensuite",
+    "neighbours": "Plus sur ce thème",
+    "older": "Article précédent",
+    "newer": "Article suivant"
   },
   "topics": {
     "interviewing": "Entretiens",
@@ -64,16 +78,19 @@
     "avoid": "À éviter",
     "prefer": "À privilégier",
     "source": "Source",
-    "play": "Lire la vidéo : {{title}}"
+    "play": "Lire la vidéo : {{title}}",
+    "zoom": "Agrandir l’image",
+    "close": "Fermer"
   },
   "topicPage": {
-    "metaTitle": "{{topic}} | Blog LetsHyre",
+    "metaTitle": "{{topic}}, Blog LetsHyre | letshyre.ai",
     "description": {
       "interviewing": "Préparer, mener et noter des entretiens qui comparent les candidats sur des preuves, pour ceux qui recrutent.",
       "hiring": "Décrire un poste, trouver des candidats et décider qui recruter, du premier brief à l'offre.",
       "careers": "Conseils aux professionnels expérimentés sur la recherche d'emploi, les entretiens et le passage au poste suivant.",
       "trends": "Ce qui change dans le recrutement : les données, les règles et les outils à connaître pour employeurs et professionnels.",
       "news": "Nouveautés produit, lancements et autres actualités de l'équipe LetsHyre."
-    }
+    },
+    "others": "Plus d’articles du blog"
   }
 }

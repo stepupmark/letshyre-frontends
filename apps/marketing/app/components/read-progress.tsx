@@ -1,4 +1,4 @@
-/** CSS only; hidden where scroll-driven animations aren't supported. */
+/** CSS only; hidden where scroll-driven animations aren't supported or motion is reduced. */
 export function ReadProgress() {
   return (
     <div

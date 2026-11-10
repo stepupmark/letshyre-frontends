@@ -32,6 +32,7 @@ const frontmatterSchema = z
       .refine((id) => id in AUTHORS, "isn't in app/lib/blog/authors.ts")
       .optional(),
     draft: z.boolean().default(false),
+    featured: z.boolean().default(false),
   })
   .refine((post) => !post.updatedAt || post.updatedAt >= post.publishedAt, {
     message: "updatedAt is before publishedAt",
@@ -158,3 +159,30 @@ export function withBlogIndex(
 /** The topics these posts cover, in the order the index lists them. */
 export const topicsOf = (posts: readonly Post[]): Topic[] =>
   TOPICS.filter((topic) => posts.some((post) => post.topic === topic))
+
+export const topicCounts = (posts: readonly Post[]) =>
+  topicsOf(posts).map((topic) => ({
+    topic,
+    count: posts.filter((post) => post.topic === topic).length,
+  }))
+
+/** Newest first, with the newest featured post moved to the top of the index. */
+export function featuredFirst<T extends Pick<Post, "featured">>(
+  posts: readonly T[]
+): T[] {
+  const lead = posts.find((post) => post.featured)
+  return lead ? [lead, ...posts.filter((post) => post !== lead)] : [...posts]
+}
+
+// Page one is a lead post over a grid of nine; later pages are the grid alone.
+const FIRST_PAGE = 10
+const PAGE_SIZE = 9
+
+export const pageCount = (total: number) =>
+  total <= FIRST_PAGE ? 1 : 1 + Math.ceil((total - FIRST_PAGE) / PAGE_SIZE)
+
+export function postsOnPage<T>(posts: readonly T[], page: number): T[] {
+  if (page === 1) return posts.slice(0, FIRST_PAGE)
+  const start = FIRST_PAGE + (page - 2) * PAGE_SIZE
+  return posts.slice(start, start + PAGE_SIZE)
+}

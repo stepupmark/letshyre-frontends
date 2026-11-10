@@ -2,6 +2,7 @@
   "meta": {
     "title": "Blog: contratación, carrera y tendencias | letshyre.ai",
     "description": "Consejos de contratación para empresas, consejos de carrera para profesionales, tendencias de contratación y novedades del equipo de LetsHyre.",
+    "pageTitle": "Blog, página {{page}} | letshyre.ai",
     "crumb": "Blogs",
     "name": "Blog de LetsHyre"
   },
@@ -9,8 +10,18 @@
     "eyebrow": "Blogs",
     "title": "Contratación, carrera profesional y novedades de LetsHyre",
     "description": "Consejos para empresas y profesionales, lo que está cambiando en la contratación y lo que construimos en LetsHyre.",
+    "pageTitle": "Artículos del blog, página {{page}}",
     "more": "Más publicaciones",
     "feed": "Suscribirse por RSS",
+    "search": "Buscar artículos",
+    "clear": "Borrar búsqueda",
+    "results": "Artículos encontrados: {{count}}",
+    "noResults": "Nada coincide con «{{query}}»",
+    "noResultsHint": "Prueba con menos palabras o explora los temas de arriba.",
+    "pages": "Páginas del blog",
+    "page": "Página {{page}}",
+    "newer": "Artículos más recientes",
+    "older": "Artículos anteriores",
     "all": "Todo",
     "topics": "Temas"
   },
@@ -31,7 +42,10 @@
     "shareEmail": "Compartir por correo",
     "copyLink": "Copiar enlace",
     "copied": "Enlace copiado",
-    "related": "Sigue leyendo"
+    "related": "Sigue leyendo",
+    "neighbours": "Más sobre este tema",
+    "older": "Artículo anterior",
+    "newer": "Artículo más reciente"
   },
   "topics": {
     "interviewing": "Entrevistas",
@@ -64,16 +78,19 @@
     "avoid": "Evita",
     "prefer": "Mejor",
     "source": "Fuente",
-    "play": "Reproducir vídeo: {{title}}"
+    "play": "Reproducir vídeo: {{title}}",
+    "zoom": "Ampliar imagen",
+    "close": "Cerrar"
   },
   "topicPage": {
-    "metaTitle": "{{topic}} | Blog de LetsHyre",
+    "metaTitle": "{{topic}}, Blog de LetsHyre | letshyre.ai",
     "description": {
       "interviewing": "Cómo planificar, hacer y puntuar entrevistas que comparan a los candidatos con evidencias, para quienes contratan.",
       "hiring": "Cómo describir puestos, encontrar personas y decidir a quién contratar, desde el primer encargo hasta la oferta.",
       "careers": "Consejos para profesionales con experiencia sobre búsqueda de empleo, entrevistas y el paso al siguiente puesto.",
       "trends": "Lo que cambia en la contratación: los datos, las normas y las herramientas que empresas y profesionales deben conocer.",
       "news": "Novedades de producto, lanzamientos y otras noticias del equipo de LetsHyre."
-    }
+    },
+    "others": "Más del blog"
   }
 }

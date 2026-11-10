@@ -29,14 +29,20 @@ export function PostFacts({
         <time dateTime={post.publishedAt}>
           {format.date(post.publishedAt, { dateStyle: "medium" })}
         </time>
-      ) : post.updatedAt ? (
-        <time dateTime={post.updatedAt}>
-          {t("post.updated", { date: date(post.updatedAt) })}
-        </time>
       ) : (
-        <time dateTime={post.publishedAt}>
-          {t("post.published", { date: date(post.publishedAt) })}
-        </time>
+        <>
+          <time dateTime={post.publishedAt}>
+            {t("post.published", { date: date(post.publishedAt) })}
+          </time>
+          {post.updatedAt && (
+            <>
+              <span aria-hidden>·</span>
+              <time dateTime={post.updatedAt}>
+                {t("post.updated", { date: date(post.updatedAt) })}
+              </time>
+            </>
+          )}
+        </>
       )}
       <span aria-hidden>·</span>
       <span className="tabular-nums">
