@@ -11,6 +11,29 @@ const LONG_PARAGRAPH = 6
 // a revision this size is more than a typo fix
 const REVISED_LINES = 5
 
+// fine once, but repeated they make every post sound alike (docs/blog-style.md, Voice)
+const HABITS = [
+  {
+    name: '"actually"',
+    pattern: /\bactually\b/gi,
+    allowed: 2,
+    fix: "keep it only where it marks a real contrast",
+  },
+  {
+    name: "the \"isn't X. It's Y\" turn",
+    pattern:
+      /\b(?:isn't|aren't|wasn't|weren't|not)\b[^.!?]{3,80}\.\s+(?:It's|They're|That's)\b/g,
+    allowed: 1,
+    fix: "say the second half on its own",
+  },
+  {
+    name: '", exactly."',
+    pattern: /, exactly\./g,
+    allowed: 0,
+    fix: "say what was or wasn't wrong",
+  },
+] as const
+
 // a word in italics or code is mentioned, not used, so the filler check skips it
 const usedTextOf = (node: Node): string =>
   node.type === "emphasis" || node.type === "inlineCode"
@@ -49,11 +72,21 @@ function changedLines(before: string, after: string) {
 export /** The voice rules from docs/blog-style.md, on each paragraph's and heading's whole text. */
 function textIssues(tree: Node): Issue[] {
   const issues: Issue[] = []
+  const habits = HABITS.map((habit) => ({
+    ...habit,
+    count: 0,
+    line: undefined as number | undefined,
+  }))
+  let opened = false
   walk(tree, (node) => {
     if (node.type !== "paragraph" && node.type !== "heading") return
     const text = textOf(node)
     const add = (level: Issue["level"], message: string) =>
       issues.push({ level, message, line: lineOf(node) })
+    for (const habit of habits) {
+      habit.count += usedTextOf(node).match(habit.pattern)?.length ?? 0
+      if (habit.count > habit.allowed) habit.line ??= lineOf(node)
+    }
     const tell = TELLS.exec(usedTextOf(node))
     if (tell)
       add("warning", `"${tell[0]}" reads as filler; say the specific thing`)
@@ -66,6 +99,9 @@ function textIssues(tree: Node): Issue[] {
       )
     if (node.type === "heading") return
     const sentences = sentencesOf(text)
+    if (!opened && sentences[0]?.endsWith("?"))
+      add("suggestion", "the post opens on a question; open on what happened")
+    opened = true
     for (const sentence of sentences) {
       const words = sentence.split(" ").length
       if (words > LONG_SENTENCE)
@@ -77,6 +113,13 @@ function textIssues(tree: Node): Issue[] {
         `a ${sentences.length}-sentence paragraph; three or four read best`
       )
   })
+  for (const { name, fix, count, line } of habits)
+    if (line)
+      issues.push({
+        level: "suggestion",
+        message: `${name} ${count === 1 ? "once" : `${count} times`}; ${fix}`,
+        line,
+      })
   return issues
 }
 

@@ -83,7 +83,9 @@ A [broken link](/en/nowhere) about Letshyre.
 
 <Figure src={chart} alt="chart.svg" width={400} height={400} />
 
-Teams that [ask every candidate the same questions](/en/employers) in the same order and score each answer against the same short rubric before they talk to each other end up with notes they can actually compare when they sit down to decide who gets the offer.`
+Teams that [ask every candidate the same questions](/en/employers) in the same order and score each answer against the same short rubric before they talk to each other end up with notes they can actually compare when they sit down to decide who gets the offer.
+
+Speed isn't the goal. It's the waiting, and silence isn't neutral. It's a signal.`
     const issues = await lint(post(body, TEMPLATE_DESCRIPTION))
     expect(issues).toEqual([
       "error:-:description is still the template's; write the post's own",
@@ -94,6 +96,9 @@ Teams that [ask every candidate the same questions](/en/employers) in the same o
       expect.stringMatching(/^error:19:width and height \(400 × 400\)/),
       expect.stringMatching(/^warning:17:write "LetsHyre"/),
       expect.stringMatching(/^warning:21:a 45-word sentence/),
+      expect.stringMatching(
+        /^suggestion:23:the "isn.t X. It.s Y" turn 2 times/
+      ),
     ])
   })
 

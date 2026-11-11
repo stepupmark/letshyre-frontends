@@ -28,7 +28,7 @@ pnpm --filter marketing blog:publish <slug>
    links.
 
 `pnpm --filter marketing blog:status` lists drafts, scheduled posts, thin topics, tags one post
-short of a page, and missing or stale translations.
+short of a page, phrases and closings several posts share, and missing or stale translations.
 
 How to write it well is in [docs/blog-style.md](../../../../docs/blog-style.md). Every component in
 use is in the `style-reference` draft, shown on dev and staging only. In VS Code, type
