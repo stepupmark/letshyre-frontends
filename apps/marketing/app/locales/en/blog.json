@@ -6,7 +6,6 @@
     "crumb": "Blog",
     "name": "LetsHyre blog",
     "tagTitle": "Posts about {{tag}}, LetsHyre blog | letshyre.ai",
-    "archiveTitle": "Blog archive, every post by month | letshyre.ai",
     "glossaryTitle": "Hiring glossary: CTC, notice periods and more | letshyre.ai",
     "termTitle": "{{term}}, hiring glossary | letshyre.ai"
   },
@@ -34,7 +33,6 @@
     "searchFailed": "Search couldn't load. Check your connection and try again.",
     "retry": "Try again",
     "browse": "Browse the blog",
-    "archive": "Archive",
     "glossary": "Glossary",
     "saved": "Saved posts",
     "length": "Reading time",
@@ -49,7 +47,6 @@
     "toc": "On this page",
     "sectionLink": "Link to this section",
     "sectionCopied": "Link to this section copied",
-    "seriesPart": "Part {{part}} of {{count}} in this series",
     "byTeam": "By the LetsHyre team",
     "by": "By {{name}}, {{role}}",
     "draft": "Draft",
@@ -66,8 +63,6 @@
     "older": "Older post",
     "newer": "Newer post",
     "sourceMark": "Source {{n}}",
-    "seriesFirst": "Part 1 of a series",
-    "followSeries": "Follow this series",
     "tags": "Tags",
     "listen": "Listen",
     "pause": "Pause",
@@ -201,10 +196,6 @@
   },
   "tagPage": {
     "description": "Every post on the LetsHyre blog tagged {{tag}}, from hiring advice to career moves, newest first."
-  },
-  "archive": {
-    "title": "Archive",
-    "description": "Every post on the blog, newest first, by the month it was published."
   },
   "saved": {
     "empty": "Nothing saved yet",

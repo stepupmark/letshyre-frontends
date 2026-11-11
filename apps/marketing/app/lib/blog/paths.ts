@@ -6,12 +6,9 @@ export const postPath = (slug: string) => `${BLOG}/${slug}`
 export const topicsPath = `${BLOG}/topics`
 export const topicPath = (topic: string) => `${topicsPath}/${topic}`
 export const tagPath = (tag: string) => `${BLOG}/tags/${tag}`
-export const archivePath = `${BLOG}/archive`
 export const glossaryPath = `${BLOG}/glossary`
 export const termPath = (id: string) => `${glossaryPath}/${id}`
 export const feedPath = `${BLOG}/feed.xml`
-export const seriesFeedPath = (series: string) =>
-  `${BLOG}/series/${series}/feed.xml`
 export const searchIndexPath = `${BLOG}/search.json`
 export const indexPagePath = (page: number) =>
   page === 1 ? BLOG : `${BLOG}/page/${page}`

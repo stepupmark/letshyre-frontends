@@ -6,7 +6,6 @@
     "crumb": "بلاگ",
     "name": "LetsHyre بلاگ",
     "tagTitle": "{{tag}} پر مضامین، LetsHyre بلاگ | letshyre.ai",
-    "archiveTitle": "بلاگ آرکائیو، ہر مہینے کے سب مضامین | letshyre.ai",
     "glossaryTitle": "بھرتی کی اصطلاحات: CTC، نوٹس پیریڈ اور مزید | letshyre.ai",
     "termTitle": "{{term}}، بھرتی کی اصطلاحات | letshyre.ai"
   },
@@ -34,7 +33,6 @@
     "searchFailed": "تلاش لوڈ نہیں ہو سکی۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔",
     "retry": "دوبارہ کوشش کریں",
     "browse": "بلاگ دیکھیں",
-    "archive": "آرکائیو",
     "glossary": "اصطلاحات",
     "saved": "محفوظ مضامین",
     "length": "پڑھنے کا وقت",
@@ -49,7 +47,6 @@
     "toc": "اس صفحے پر",
     "sectionLink": "اس حصے کا لنک",
     "sectionCopied": "اس حصے کا لنک کاپی ہو گیا",
-    "seriesPart": "اس سلسلے کا حصہ {{part}} از {{count}}",
     "byTeam": "LetsHyre ٹیم کی جانب سے",
     "by": "{{name}}، {{role}} کی جانب سے",
     "draft": "مسودہ",
@@ -66,8 +63,6 @@
     "older": "پرانی تحریر",
     "newer": "نئی تحریر",
     "sourceMark": "ماخذ {{n}}",
-    "seriesFirst": "ایک سلسلے کا پہلا حصہ",
-    "followSeries": "یہ سلسلہ فالو کریں",
     "tags": "ٹیگ",
     "listen": "سنیں",
     "pause": "روکیں",
@@ -201,10 +196,6 @@
   },
   "tagPage": {
     "description": "LetsHyre بلاگ کے {{tag}} ٹیگ والے سب مضامین، بھرتی کے مشوروں سے نوکری بدلنے تک، نئے پہلے۔"
-  },
-  "archive": {
-    "title": "آرکائیو",
-    "description": "بلاگ کے سب مضامین، نئے پہلے، شائع ہونے کے مہینے کے لحاظ سے۔"
   },
   "saved": {
     "empty": "ابھی کچھ محفوظ نہیں",

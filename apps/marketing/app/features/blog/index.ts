@@ -1,4 +1,3 @@
-export { ArchivePage } from "./archive-page"
 export { BlogIndexPage } from "./blog-index-page"
 export { GlossaryPage } from "./glossary-page"
 export { loadBody, loadPostBody } from "./lib/post-modules"

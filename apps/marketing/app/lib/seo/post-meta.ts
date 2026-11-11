@@ -2,7 +2,7 @@ import type { Locale } from "@workspace/i18n"
 import type { MetaArgs, MetaDescriptor } from "react-router"
 
 import { AUTHORS } from "../blog/authors"
-import { postPath, seriesFeedPath, topicPath } from "../blog/paths"
+import { postPath, topicPath } from "../blog/paths"
 import type { Post } from "../blog/post"
 import { PAGES } from "../pages"
 import { buildMeta, feedLink } from "./meta"
@@ -17,7 +17,6 @@ export function postMeta({ matches, params }: MetaArgs): MetaDescriptor[] {
         post: Post
         locales: Locale[]
         ogImage?: string
-        series: Pick<Post, "title">[]
       }
     | undefined
   if (!data) return []
@@ -63,14 +62,5 @@ export function postMeta({ matches, params }: MetaArgs): MetaDescriptor[] {
       ],
     }),
     feedLink(lang, t("blog:meta.name")),
-    ...(post.series
-      ? [
-          feedLink(
-            lang,
-            data.series[0]?.title ?? post.title,
-            seriesFeedPath(post.series)
-          ),
-        ]
-      : []),
   ]
 }

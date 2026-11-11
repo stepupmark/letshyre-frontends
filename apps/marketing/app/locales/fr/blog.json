@@ -6,7 +6,6 @@
     "crumb": "Blog",
     "name": "Blog LetsHyre",
     "tagTitle": "Articles sur {{tag}}, blog LetsHyre | letshyre.ai",
-    "archiveTitle": "Archives du blog, tous les articles par mois | letshyre.ai",
     "glossaryTitle": "Glossaire du recrutement : CTC, préavis et plus | letshyre.ai",
     "termTitle": "{{term}}, glossaire du recrutement | letshyre.ai"
   },
@@ -34,7 +33,6 @@
     "searchFailed": "La recherche n'a pas pu se charger. Vérifiez votre connexion et réessayez.",
     "retry": "Réessayer",
     "browse": "Parcourir le blog",
-    "archive": "Archives",
     "glossary": "Glossaire",
     "saved": "Articles enregistrés",
     "length": "Temps de lecture",
@@ -49,7 +47,6 @@
     "toc": "Sur cette page",
     "sectionLink": "Lien vers cette section",
     "sectionCopied": "Lien vers cette section copié",
-    "seriesPart": "Partie {{part}} sur {{count}} de cette série",
     "byTeam": "Par l'équipe LetsHyre",
     "by": "Par {{name}}, {{role}}",
     "draft": "Brouillon",
@@ -66,8 +63,6 @@
     "older": "Article précédent",
     "newer": "Article suivant",
     "sourceMark": "Source {{n}}",
-    "seriesFirst": "Partie 1 d’une série",
-    "followSeries": "Suivre cette série",
     "tags": "Mots-clés",
     "listen": "Écouter",
     "pause": "Pause",
@@ -202,10 +197,6 @@
   },
   "tagPage": {
     "description": "Tous les articles du blog LetsHyre sur {{tag}}, des conseils de recrutement aux changements de poste, du plus récent au plus ancien."
-  },
-  "archive": {
-    "title": "Archives",
-    "description": "Tous les articles du blog, du plus récent au plus ancien, classés par mois de publication."
   },
   "saved": {
     "empty": "Rien d’enregistré pour l’instant",

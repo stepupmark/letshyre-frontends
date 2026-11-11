@@ -6,7 +6,6 @@
     "crumb": "المدونة",
     "name": "مدونة LetsHyre",
     "tagTitle": "مقالات عن {{tag}}، مدونة LetsHyre | letshyre.ai",
-    "archiveTitle": "أرشيف المدونة، كل المقالات حسب الشهر | letshyre.ai",
     "glossaryTitle": "مسرد التوظيف: CTC وفترة الإشعار وغيرها | letshyre.ai",
     "termTitle": "{{term}}، مسرد التوظيف | letshyre.ai"
   },
@@ -34,7 +33,6 @@
     "searchFailed": "تعذّر تحميل البحث. تحقّق من اتصالك وحاول مرة أخرى.",
     "retry": "إعادة المحاولة",
     "browse": "تصفح المدونة",
-    "archive": "الأرشيف",
     "glossary": "المسرد",
     "saved": "المقالات المحفوظة",
     "length": "مدة القراءة",
@@ -49,7 +47,6 @@
     "toc": "في هذه الصفحة",
     "sectionLink": "رابط إلى هذا القسم",
     "sectionCopied": "تم نسخ رابط هذا القسم",
-    "seriesPart": "الجزء {{part}} من {{count}} في هذه السلسلة",
     "byTeam": "بقلم فريق LetsHyre",
     "by": "بقلم {{name}}، {{role}}",
     "draft": "مسودة",
@@ -66,8 +63,6 @@
     "older": "المقال الأقدم",
     "newer": "المقال الأحدث",
     "sourceMark": "المصدر {{n}}",
-    "seriesFirst": "الجزء الأول من سلسلة",
-    "followSeries": "تابع هذه السلسلة",
     "tags": "الوسوم",
     "listen": "استمع",
     "pause": "إيقاف مؤقت",
@@ -205,10 +200,6 @@
   },
   "tagPage": {
     "description": "كل مقالات مدونة LetsHyre بوسم {{tag}}، من نصائح التوظيف إلى تغيير العمل، الأحدث أولًا."
-  },
-  "archive": {
-    "title": "الأرشيف",
-    "description": "كل مقالات المدونة، الأحدث أولًا، حسب شهر النشر."
   },
   "saved": {
     "empty": "لم تحفظ شيئًا بعد",

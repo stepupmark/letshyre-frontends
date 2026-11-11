@@ -18,7 +18,6 @@ import { mdxComponents } from "./components/mdx"
 import { PostCta } from "./components/post-cta"
 import { PostHeader } from "./components/post-header"
 import { PostNeighbours } from "./components/post-neighbours"
-import { PostSeries } from "./components/post-series"
 import { PostShare } from "./components/post-share"
 import { PostSources } from "./components/post-sources"
 import { PostToc } from "./components/post-toc"
@@ -66,14 +65,12 @@ export function PostPage({
   post,
   newer,
   older,
-  series,
   related,
   terms,
 }: {
   post: Post
   newer?: Post
   older?: Post
-  series: readonly Pick<Post, "slug" | "title">[]
   related: readonly Post[]
   terms: Terms
 }) {
@@ -108,7 +105,6 @@ export function PostPage({
             )}
             <SaveButton slug={post.slug} />
           </div>
-          <PostSeries slug={post.slug} parts={series} series={post.series} />
           <article
             id={POST_BODY_ID}
             className="flex flex-col gap-5 text-base text-foreground/85 *:max-w-prose *:data-wide:max-w-none lg:text-lg/8 print:text-foreground"

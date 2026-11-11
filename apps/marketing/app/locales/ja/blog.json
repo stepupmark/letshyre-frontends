@@ -6,7 +6,6 @@
     "crumb": "ブログ",
     "name": "LetsHyreブログ",
     "tagTitle": "{{tag}}の記事、LetsHyreブログ | letshyre.ai",
-    "archiveTitle": "ブログアーカイブ、月別の全記事 | letshyre.ai",
     "glossaryTitle": "採用用語集：CTC、退職予告期間など | letshyre.ai",
     "termTitle": "{{term}}、採用用語集 | letshyre.ai"
   },
@@ -34,7 +33,6 @@
     "searchFailed": "検索を読み込めませんでした。接続を確認して、もう一度お試しください。",
     "retry": "再試行",
     "browse": "ブログを見る",
-    "archive": "アーカイブ",
     "glossary": "用語集",
     "saved": "保存した記事",
     "length": "読了時間",
@@ -49,7 +47,6 @@
     "toc": "このページの内容",
     "sectionLink": "このセクションへのリンク",
     "sectionCopied": "このセクションへのリンクをコピーしました",
-    "seriesPart": "このシリーズの {{count}} 回中 {{part}} 回目",
     "byTeam": "LetsHyreチーム",
     "by": "{{name}}（{{role}}）",
     "draft": "下書き",
@@ -66,8 +63,6 @@
     "older": "前の記事",
     "newer": "次の記事",
     "sourceMark": "出典 {{n}}",
-    "seriesFirst": "シリーズの第1回",
-    "followSeries": "このシリーズをフォロー",
     "tags": "タグ",
     "listen": "聞く",
     "pause": "一時停止",
@@ -200,10 +195,6 @@
   },
   "tagPage": {
     "description": "LetsHyreブログの「{{tag}}」タグの全記事。採用のアドバイスから転職まで、新しい順に並べています。"
-  },
-  "archive": {
-    "title": "アーカイブ",
-    "description": "ブログの全記事を、公開した月ごとに新しい順で並べています。"
   },
   "saved": {
     "empty": "保存した記事はまだありません",

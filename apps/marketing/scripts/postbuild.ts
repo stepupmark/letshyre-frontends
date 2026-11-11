@@ -17,12 +17,10 @@ import {
   REPLACED_BY,
 } from "../app/lib/pages.ts"
 import {
-  archivePath,
   feedPath,
   glossaryPath,
   indexPagePath,
   postPath,
-  seriesFeedPath,
   tagPath,
   termPath,
   topicPath,
@@ -127,7 +125,6 @@ const laterPages = indexPages(posts)
 const tags = tagPages(posts)
 const tagLocales = (tag: string) =>
   tags.filter((page) => page.tag === tag).map((page) => page.lang)
-const blogLocales = ready.get("blog") ?? []
 const glossaryLocales = [...new Set(terms.map((term) => term.lang))]
 const termLocales = (id: string) =>
   terms.filter((term) => term.id === id).map((term) => term.lang)
@@ -179,11 +176,6 @@ writeFileSync(
       locales: tagLocales(tag),
       lastmod: (lang: Locale) => newestIn(lang, (p) => p.tags.includes(tag)),
     })),
-    {
-      path: archivePath,
-      locales: blogLocales,
-      lastmod: (lang: Locale) => newestIn(lang, () => true),
-    },
     ...(glossaryLocales.length
       ? [
           {
@@ -217,27 +209,6 @@ for (const lang of ready.get("blog") ?? []) {
       posts.filter((post) => post.lang === lang)
     )
   )
-  // one feed per series, so a reader can follow just that series
-  for (const series of new Set(posts.flatMap((p) => p.series ?? []))) {
-    const parts = posts.filter((p) => p.lang === lang && p.series === series)
-    const first = parts.at(-1)
-    if (!first) continue
-    const seriesFile = join(CLIENT, localePath(lang, seriesFeedPath(series)))
-    mkdirSync(join(seriesFile, ".."), { recursive: true })
-    writeFileSync(
-      seriesFile,
-      renderFeed(
-        site,
-        lang,
-        {
-          title: `${copy.meta.name}: ${first.title}`,
-          description: first.description,
-        },
-        parts,
-        seriesFeedPath(series)
-      )
-    )
-  }
 }
 
 // IndexNow checks this file before it accepts a ping (scripts/indexnow.ts)
@@ -308,15 +279,6 @@ const routes = [
     preview: false,
     jsExempt: false,
   })),
-  ...blogLocales.flatMap((lang) => [
-    {
-      lang,
-      path: archivePath,
-      locales: blogLocales,
-      preview: false,
-      jsExempt: false,
-    },
-  ]),
   ...glossaryLocales.map((lang) => ({
     lang,
     path: glossaryPath,

@@ -58,7 +58,6 @@ test.describe("url contract", () => {
       ["/en/blogs/topics", 301, "/en/blogs"],
       ["/en/blogs/topics/nonsense", 404],
       ["/en/blogs/page/1", 404],
-      ["/en/blogs/archive", 200],
       ["/en/blogs/tags/nonsense", 404],
     ]
     const tag = post.tags[0]

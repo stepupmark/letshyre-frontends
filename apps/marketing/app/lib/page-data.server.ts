@@ -11,7 +11,7 @@ import {
   topicCounts,
 } from "./blog/list"
 import { ogImageOf } from "./blog/posts.server"
-import { relatedPosts, seriesOf } from "./blog/related"
+import { relatedPosts } from "./blog/related"
 import { summarize } from "./blog/search"
 import {
   glossaryLocales,
@@ -104,26 +104,17 @@ export function postData(lang: string | undefined, slug: string | undefined) {
   const posts = postsIn(lang)
   const post = posts.find((p) => p.slug === slug)
   if (!post) throw notFound()
-  const series = seriesOf(post, posts)
-  // a series lists its own parts, so the topic neighbours would repeat them
-  const inTopic = series.length
-    ? []
-    : posts.filter((p) => p.topic === post.topic)
+  const inTopic = posts.filter((p) => p.topic === post.topic)
   const at = inTopic.indexOf(post)
   const newer = inTopic[at - 1]
   const older = inTopic[at + 1]
-  const shown = new Set([
-    ...series.map((part) => part.slug),
-    newer?.slug,
-    older?.slug,
-  ])
+  const shown = new Set([newer?.slug, older?.slug])
   return {
     messages: loadMessages(lang, PAGES.blog.namespaces),
     locales: postLocales(post.slug),
     post,
     newer,
     older,
-    series,
     related: relatedPosts(
       post,
       posts.filter((p) => !shown.has(p.slug))
@@ -148,23 +139,6 @@ export function tagData(lang: string | undefined, tag: string | undefined) {
     locales: tagLocales(tag as Tag),
     tag: tag as Tag,
     posts: posts.map(summarize),
-  }
-}
-
-/** Every post, newest first, for the archive's month-by-month list. */
-export function archiveData(lang: string | undefined) {
-  const { messages, locales } = pageData(lang, "blog")
-  return {
-    messages,
-    locales,
-    posts: postsIn(lang as Locale).map(
-      ({ slug, title, topic, publishedAt }) => ({
-        slug,
-        title,
-        topic,
-        publishedAt,
-      })
-    ),
   }
 }
 

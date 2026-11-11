@@ -1,9 +1,9 @@
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { BookmarkIcon, BookOpenIcon, CalendarIcon, RssIcon } from "lucide-react"
+import { BookmarkIcon, BookOpenIcon, RssIcon } from "lucide-react"
 import { Link } from "react-router"
 
-import { archivePath, feedPath, glossaryPath } from "@/lib/blog/paths"
+import { feedPath, glossaryPath } from "@/lib/blog/paths"
 
 export function BlogLinks({
   glossary,
@@ -16,12 +16,9 @@ export function BlogLinks({
 }) {
   const { t } = useTranslation("blog")
   const lang = useLocale()
-  const links = [
-    { to: archivePath, label: t("index.archive"), Icon: CalendarIcon },
-    ...(glossary
-      ? [{ to: glossaryPath, label: t("index.glossary"), Icon: BookOpenIcon }]
-      : []),
-  ]
+  const links = glossary
+    ? [{ to: glossaryPath, label: t("index.glossary"), Icon: BookOpenIcon }]
+    : []
 
   return (
     <nav

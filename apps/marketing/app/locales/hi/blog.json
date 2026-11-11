@@ -6,7 +6,6 @@
     "crumb": "ब्लॉग",
     "name": "LetsHyre ब्लॉग",
     "tagTitle": "{{tag}} पर लेख, LetsHyre ब्लॉग | letshyre.ai",
-    "archiveTitle": "ब्लॉग आर्काइव, महीने के हिसाब से सभी लेख | letshyre.ai",
     "glossaryTitle": "हायरिंग शब्दावली: CTC, नोटिस पीरियड और बहुत कुछ | letshyre.ai",
     "termTitle": "{{term}}, हायरिंग शब्दावली | letshyre.ai"
   },
@@ -34,7 +33,6 @@
     "searchFailed": "खोज लोड नहीं हो सकी। अपना कनेक्शन जांचें और फिर से कोशिश करें।",
     "retry": "फिर से कोशिश करें",
     "browse": "ब्लॉग देखें",
-    "archive": "आर्काइव",
     "glossary": "शब्दावली",
     "saved": "सेव किए गए लेख",
     "length": "पढ़ने का समय",
@@ -49,7 +47,6 @@
     "toc": "इस पेज पर",
     "sectionLink": "इस सेक्शन का लिंक",
     "sectionCopied": "इस सेक्शन का लिंक कॉपी हो गया",
-    "seriesPart": "इस सीरीज़ का भाग {{part}}, कुल {{count}}",
     "byTeam": "LetsHyre टीम की ओर से",
     "by": "{{name}}, {{role}} द्वारा",
     "draft": "ड्राफ़्ट",
@@ -66,8 +63,6 @@
     "older": "पुरानी पोस्ट",
     "newer": "नई पोस्ट",
     "sourceMark": "स्रोत {{n}}",
-    "seriesFirst": "एक सीरीज़ का पहला भाग",
-    "followSeries": "यह सीरीज़ फ़ॉलो करें",
     "tags": "टैग",
     "listen": "सुनें",
     "pause": "रोकें",
@@ -201,10 +196,6 @@
   },
   "tagPage": {
     "description": "LetsHyre ब्लॉग के {{tag}} टैग वाले सभी लेख, हायरिंग सलाह से लेकर नौकरी बदलने तक, नए पहले।"
-  },
-  "archive": {
-    "title": "आर्काइव",
-    "description": "ब्लॉग के सभी लेख, नए पहले, प्रकाशन के महीने के हिसाब से।"
   },
   "saved": {
     "empty": "अभी कुछ सेव नहीं किया",

@@ -6,7 +6,6 @@
     "crumb": "Blog",
     "name": "LetsHyre-blog",
     "tagTitle": "Artikelen over {{tag}}, LetsHyre-blog | letshyre.ai",
-    "archiveTitle": "Blogarchief, alle artikelen per maand | letshyre.ai",
     "glossaryTitle": "Wervingsbegrippen: CTC, opzegtermijn en meer | letshyre.ai",
     "termTitle": "{{term}}, wervingsbegrippen | letshyre.ai"
   },
@@ -34,7 +33,6 @@
     "searchFailed": "Zoeken kon niet worden geladen. Controleer je verbinding en probeer het opnieuw.",
     "retry": "Opnieuw proberen",
     "browse": "Door de blog bladeren",
-    "archive": "Archief",
     "glossary": "Begrippenlijst",
     "saved": "Bewaarde artikelen",
     "length": "Leestijd",
@@ -49,7 +47,6 @@
     "toc": "Op deze pagina",
     "sectionLink": "Link naar deze sectie",
     "sectionCopied": "Link naar deze sectie gekopieerd",
-    "seriesPart": "Deel {{part}} van {{count}} in deze reeks",
     "byTeam": "Door het LetsHyre-team",
     "by": "Door {{name}}, {{role}}",
     "draft": "Concept",
@@ -66,8 +63,6 @@
     "older": "Ouder bericht",
     "newer": "Nieuwer bericht",
     "sourceMark": "Bron {{n}}",
-    "seriesFirst": "Deel 1 van een reeks",
-    "followSeries": "Deze reeks volgen",
     "tags": "Tags",
     "listen": "Beluisteren",
     "pause": "Pauzeren",
@@ -201,10 +196,6 @@
   },
   "tagPage": {
     "description": "Alle artikelen op de LetsHyre-blog met de tag {{tag}}, van wervingsadvies tot een nieuwe baan, de nieuwste eerst."
-  },
-  "archive": {
-    "title": "Archief",
-    "description": "Alle artikelen op de blog, de nieuwste eerst, per maand van publicatie."
   },
   "saved": {
     "empty": "Nog niets bewaard",

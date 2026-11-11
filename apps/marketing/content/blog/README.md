@@ -41,7 +41,6 @@ updatedAt: 2026-12-01 # optional, after a real revision
 audience: employers # employers | candidates | everyone: picks the closing call to action
 topic: interviewing # interviewing | hiring | careers | trends | news
 tags: [interviews, hiring-process] # optional, up to three from TAGS in app/lib/blog/list.ts
-series: structured-interviews # optional; parts share an id and get a series feed
 author: priya # optional, an id from app/lib/blog/authors.ts; unsigned posts are the team's
 draft: true # optional; drafts show on dev and staging only
 featured: true # optional; leads the blog index instead of the newest post

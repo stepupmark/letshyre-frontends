@@ -6,7 +6,6 @@
     "crumb": "블로그",
     "name": "LetsHyre 블로그",
     "tagTitle": "{{tag}} 관련 글, LetsHyre 블로그 | letshyre.ai",
-    "archiveTitle": "블로그 아카이브, 월별 전체 글 | letshyre.ai",
     "glossaryTitle": "채용 용어집: CTC, 퇴사 통보 기간 등 | letshyre.ai",
     "termTitle": "{{term}}, 채용 용어집 | letshyre.ai"
   },
@@ -34,7 +33,6 @@
     "searchFailed": "검색을 불러오지 못했습니다. 연결을 확인하고 다시 시도하세요.",
     "retry": "다시 시도",
     "browse": "블로그 둘러보기",
-    "archive": "아카이브",
     "glossary": "용어집",
     "saved": "저장한 글",
     "length": "읽는 시간",
@@ -49,7 +47,6 @@
     "toc": "이 페이지의 내용",
     "sectionLink": "이 섹션 링크",
     "sectionCopied": "이 섹션 링크를 복사했습니다",
-    "seriesPart": "이 시리즈 {{count}}편 중 {{part}}편",
     "byTeam": "LetsHyre 팀",
     "by": "{{name}}, {{role}}",
     "draft": "초안",
@@ -66,8 +63,6 @@
     "older": "이전 글",
     "newer": "다음 글",
     "sourceMark": "출처 {{n}}",
-    "seriesFirst": "시리즈 1편",
-    "followSeries": "이 시리즈 구독하기",
     "tags": "태그",
     "listen": "듣기",
     "pause": "일시정지",
@@ -200,10 +195,6 @@
   },
   "tagPage": {
     "description": "LetsHyre 블로그에서 {{tag}} 태그가 붙은 모든 글입니다. 채용 조언부터 이직까지 최신 글부터 보여 드립니다."
-  },
-  "archive": {
-    "title": "아카이브",
-    "description": "블로그의 모든 글을 발행한 달별로, 최신 글부터 보여 드립니다."
   },
   "saved": {
     "empty": "아직 저장한 글이 없습니다",

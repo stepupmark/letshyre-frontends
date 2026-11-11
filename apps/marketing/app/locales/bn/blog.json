@@ -6,7 +6,6 @@
     "crumb": "ব্লগ",
     "name": "LetsHyre ব্লগ",
     "tagTitle": "{{tag}} নিয়ে লেখা, LetsHyre ব্লগ | letshyre.ai",
-    "archiveTitle": "ব্লগ আর্কাইভ, মাস অনুযায়ী সব লেখা | letshyre.ai",
     "glossaryTitle": "নিয়োগের শব্দকোষ: CTC, নোটিস পিরিয়ড আর আরও | letshyre.ai",
     "termTitle": "{{term}}, নিয়োগের শব্দকোষ | letshyre.ai"
   },
@@ -34,7 +33,6 @@
     "searchFailed": "অনুসন্ধান লোড করা যায়নি। সংযোগ পরীক্ষা করে আবার চেষ্টা করুন।",
     "retry": "আবার চেষ্টা করুন",
     "browse": "ব্লগ ঘুরে দেখুন",
-    "archive": "আর্কাইভ",
     "glossary": "শব্দকোষ",
     "saved": "সেভ করা লেখা",
     "length": "পড়ার সময়",
@@ -49,7 +47,6 @@
     "toc": "এই পেজে",
     "sectionLink": "এই অংশের লিংক",
     "sectionCopied": "এই অংশের লিংক কপি হয়েছে",
-    "seriesPart": "এই সিরিজের {{count}}টির মধ্যে পর্ব {{part}}",
     "byTeam": "LetsHyre টিমের লেখা",
     "by": "{{name}}, {{role}}-এর লেখা",
     "draft": "খসড়া",
@@ -66,8 +63,6 @@
     "older": "আগের পোস্ট",
     "newer": "পরের পোস্ট",
     "sourceMark": "সূত্র {{n}}",
-    "seriesFirst": "একটি সিরিজের প্রথম পর্ব",
-    "followSeries": "এই সিরিজ ফলো করুন",
     "tags": "ট্যাগ",
     "listen": "শুনুন",
     "pause": "থামান",
@@ -201,10 +196,6 @@
   },
   "tagPage": {
     "description": "LetsHyre ব্লগে {{tag}} ট্যাগ করা সব লেখা, নিয়োগের পরামর্শ থেকে চাকরি বদল পর্যন্ত, নতুনগুলো আগে।"
-  },
-  "archive": {
-    "title": "আর্কাইভ",
-    "description": "ব্লগের সব লেখা, নতুনগুলো আগে, প্রকাশের মাস অনুযায়ী।"
   },
   "saved": {
     "empty": "এখনও কিছু সেভ করেননি",

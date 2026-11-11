@@ -6,7 +6,6 @@
     "crumb": "Blog",
     "name": "Blog LetsHyre",
     "tagTitle": "Artikel tentang {{tag}}, blog LetsHyre | letshyre.ai",
-    "archiveTitle": "Arsip blog, semua artikel per bulan | letshyre.ai",
     "glossaryTitle": "Glosarium rekrutmen: CTC, masa pemberitahuan, dll | letshyre.ai",
     "termTitle": "{{term}}, glosarium rekrutmen | letshyre.ai"
   },
@@ -34,7 +33,6 @@
     "searchFailed": "Pencarian tidak dapat dimuat. Periksa koneksi Anda dan coba lagi.",
     "retry": "Coba lagi",
     "browse": "Jelajahi blog",
-    "archive": "Arsip",
     "glossary": "Glosarium",
     "saved": "Artikel tersimpan",
     "length": "Waktu baca",
@@ -49,7 +47,6 @@
     "toc": "Di halaman ini",
     "sectionLink": "Tautan ke bagian ini",
     "sectionCopied": "Tautan ke bagian ini disalin",
-    "seriesPart": "Bagian {{part}} dari {{count}} dalam seri ini",
     "byTeam": "Oleh tim LetsHyre",
     "by": "Oleh {{name}}, {{role}}",
     "draft": "Draf",
@@ -66,8 +63,6 @@
     "older": "Artikel sebelumnya",
     "newer": "Artikel berikutnya",
     "sourceMark": "Sumber {{n}}",
-    "seriesFirst": "Bagian 1 dari sebuah seri",
-    "followSeries": "Ikuti seri ini",
     "tags": "Tag",
     "listen": "Dengarkan",
     "pause": "Jeda",
@@ -200,10 +195,6 @@
   },
   "tagPage": {
     "description": "Semua artikel di blog LetsHyre dengan tag {{tag}}, dari saran rekrutmen sampai pindah kerja, yang terbaru lebih dulu."
-  },
-  "archive": {
-    "title": "Arsip",
-    "description": "Semua artikel di blog, yang terbaru lebih dulu, menurut bulan terbitnya."
   },
   "saved": {
     "empty": "Belum ada yang disimpan",

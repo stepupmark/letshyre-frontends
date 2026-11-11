@@ -2,13 +2,7 @@ import { type Locale, localePath } from "@workspace/i18n"
 import type { MetaArgs, MetaDescriptor } from "react-router"
 
 import type { Tag } from "../blog/list"
-import {
-  archivePath,
-  glossaryPath,
-  postPath,
-  tagPath,
-  termPath,
-} from "../blog/paths"
+import { glossaryPath, postPath, tagPath, termPath } from "../blog/paths"
 import type { PostSummary } from "../blog/post"
 import { PAGES } from "../pages"
 import { buildMeta, feedLink } from "./meta"
@@ -64,27 +58,6 @@ export function tagMeta(args: MetaArgs): MetaDescriptor[] {
     }),
     feedLink(lang, t("blog:meta.name")),
   ]
-}
-
-export function archiveMeta(args: MetaArgs): MetaDescriptor[] {
-  const data = dataOf(args) as WithLocales<object>
-  if (!data) return []
-  const { lang, t } = metaContext(args)
-  const name = t("blog:archive.title")
-
-  return buildMeta({
-    lang,
-    path: archivePath,
-    title: t("blog:meta.archiveTitle"),
-    description: t("blog:archive.description"),
-    locales: data.locales,
-    jsonLd: [
-      breadcrumbSchema(lang, t("seo:homeCrumb"), [
-        blogCrumb(t),
-        { name, path: archivePath },
-      ]),
-    ],
-  })
 }
 
 export function glossaryMeta(args: MetaArgs): MetaDescriptor[] {

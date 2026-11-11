@@ -4,7 +4,6 @@ import { computeReadiness } from "@workspace/i18n/node"
 
 import type { Term } from "./blog/glossary.ts"
 import {
-  archivePath,
   glossaryPath,
   indexPagePath,
   postPath,
@@ -141,10 +140,7 @@ export function readyPaths(root: string, previews = false): string[] {
       ({ lang, page }) => `/${lang}${indexPagePath(page)}`
     ),
     ...tagPages(posts).map(({ lang, tag }) => `/${lang}${tagPath(tag)}`),
-    ...blogLangs.flatMap((lang) => [
-      `/${lang}${searchIndexPath}`,
-      `/${lang}${archivePath}`,
-    ]),
+    ...blogLangs.map((lang) => `/${lang}${searchIndexPath}`),
     ...[...new Set(terms.map((term) => term.lang))].map(
       (lang) => `/${lang}${glossaryPath}`
     ),
