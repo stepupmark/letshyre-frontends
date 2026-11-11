@@ -12,7 +12,8 @@ every component in use, open the `style-reference` draft on dev or staging.
   answer. Background comes after, if at all.
 - **One idea per `##` section.** Write headings as plain statements a reader can skim: "Ask every
   candidate the same questions", not "Consistency".
-- **Three or four sentences a paragraph.** `blog:check` warns on sentences over 35 words.
+- **Three or four sentences a paragraph.** `blog:check` warns on sentences over 35 words and
+  paragraphs over six sentences.
 - **End with an action** the reader can take today, not a summary of what they just read.
 - **4 to 8 minutes** suits most topics. Longer posts need more sections, not longer ones.
 
@@ -21,8 +22,9 @@ every component in use, open the `style-reference` draft on dev or staging.
 - Write to one reader, as "you". Use "we" for LetsHyre.
 - Say the specific thing. "Most offers fail in the week after the final interview" beats "timing is
   crucial".
-- Plain words: "use", not "leverage"; "help", not "empower". `blog:check` flags the usual filler
-  ("delve", "game-changer", "in today's fast-paced world").
+- Plain words: "use", not "leverage"; "help", not "empower"; "key" or the reason itself, not
+  "crucial" or "pivotal". `blog:check` flags these and the usual filler ("delve", "game-changer",
+  "in today's fast-paced world"). To write about such a word, put it in italics: _leveraged_.
 - No em dashes. End the sentence or use a comma.
 - The product is "LetsHyre", the site "letshyre.ai".
 

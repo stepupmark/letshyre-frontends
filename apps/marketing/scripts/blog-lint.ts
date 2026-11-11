@@ -2,8 +2,11 @@ import { compile, createProcessor } from "@mdx-js/mdx"
 import remarkFrontmatter from "remark-frontmatter"
 import remarkGfm from "remark-gfm"
 
+import { MIN_TAG_POSTS } from "../app/lib/blog/list.ts"
 import { parsePost, type Post } from "../app/lib/blog/post.ts"
 import { remarkGuard } from "../app/lib/blog/remark-guard.ts"
+import { revisionIssues, textIssues } from "./blog-text.ts"
+import { attr, lineOf, type Node, textOf, walk } from "./mdx-tree.ts"
 
 export interface Issue {
   level: "error" | "warning" | "suggestion"
@@ -28,27 +31,13 @@ export interface LintContext {
   terms?: readonly { id: string; names: readonly string[] }[]
   /** The other posts in the post's locale. */
   posts?: readonly { path: string; title: string; tags: readonly string[] }[]
-}
-
-interface Node {
-  type: string
-  name?: string | null
-  value?: string
-  depth?: number
-  url?: string
-  position?: { start: { line: number } }
-  attributes?: { name?: string; value?: unknown }[]
-  children?: Node[]
+  /** The file as it is on the base branch, to spot revisions that need `updatedAt`. */
+  before?: string
 }
 
 export const TEMPLATE_DESCRIPTION =
   "Write one or two sentences for search results and the blog index."
 
-// words that make a post read as generated; the style guide says what to write instead
-const TELLS =
-  /\b(delve|tapestry|game-changer|cutting-edge|seamless(?:ly)?|revolutioni[sz]e|unlock(?:s|ing)? the|in today's|fast-paced world|it's important to note|in conclusion|embark|elevate your)\b/i
-const BRAND = /\b(?:Letshyre|LetsHire|Lets Hyre|letshyre)\b(?!\.ai)/
-const LONG_SENTENCE = 35
 const PHOTO_BYTES = 500 * 1024
 const RASTER = /\.(png|jpe?g|webp)$/i
 const MAX_POST_SUGGESTIONS = 3
@@ -56,23 +45,6 @@ const MAX_POST_SUGGESTIONS = 3
 const processor = createProcessor({
   remarkPlugins: [remarkFrontmatter, remarkGfm],
 })
-
-function walk(node: Node, visit: (node: Node) => void) {
-  visit(node)
-  node.children?.forEach((child) => {
-    walk(child, visit)
-  })
-}
-
-const lineOf = (node: Node) => node.position?.start.line
-
-const attr = (node: Node, name: string): string | undefined => {
-  const value = node.attributes?.find((a) => a.name === name)?.value
-  if (typeof value === "string") return value
-  if (value && typeof value === "object" && "value" in value)
-    return String(value.value)
-  return undefined
-}
 
 const imports = (tree: Node) => {
   const found = new Map<string, string>()
@@ -111,7 +83,10 @@ function frontmatterIssues(post: Post, ctx: LintContext): Issue[] {
   return issues
 }
 
-function bodyIssues(tree: Node, ctx: LintContext): Issue[] {
+function bodyIssues(
+  tree: Node,
+  ctx: Pick<LintContext, "paths" | "image">
+): Issue[] {
   const issues: Issue[] = []
   const add = (level: Issue["level"], node: Node, message: string) =>
     issues.push({ level, message, line: lineOf(node) })
@@ -158,31 +133,6 @@ function bodyIssues(tree: Node, ctx: LintContext): Issue[] {
           node,
           `width and height (${width} × ${height}) don't match ${file} (${image.width} × ${image.height})`
         )
-    }
-
-    if (node.type === "text" && node.value) {
-      const tell = TELLS.exec(node.value)
-      if (tell)
-        add(
-          "warning",
-          node,
-          `"${tell[0]}" reads as filler; say the specific thing`
-        )
-      const brand = BRAND.exec(node.value)
-      if (brand) add("warning", node, `write "LetsHyre", not "${brand[0]}"`)
-      if (node.value.includes("—"))
-        add(
-          "warning",
-          node,
-          "the blog doesn't use em dashes; use a comma or a full stop"
-        )
-      for (const sentence of node.value.split(/(?<=[.!?])\s+/))
-        if (sentence.split(/\s+/).length > LONG_SENTENCE)
-          add(
-            "warning",
-            node,
-            `a ${sentence.split(/\s+/).length}-word sentence; split it`
-          )
     }
   })
 
@@ -239,10 +189,33 @@ function linkSuggestions(post: Post, tree: Node, ctx: LintContext): Issue[] {
       level: "suggestion",
       message: `"${other.title}" (${other.path}) is also tagged ${other.shared.join(", ")}; link it where it helps the reader`,
     })
+
+  if (!post.draft)
+    for (const tag of post.tags) {
+      const count =
+        1 + (ctx.posts ?? []).filter((other) => other.tags.includes(tag)).length
+      if (count === MIN_TAG_POSTS - 1)
+        issues.push({
+          level: "suggestion",
+          message: `${tag} has ${count} posts; one more gives it a page`,
+        })
+    }
   return issues
 }
 
 const RANK = { error: 0, warning: 1, suggestion: 2 } as const
+
+async function compileIssue(source: string): Promise<Issue | undefined> {
+  try {
+    await compile(source, {
+      remarkPlugins: [remarkFrontmatter, remarkGfm, remarkGuard],
+    })
+    return undefined
+  } catch (error) {
+    const { message, line } = error as { message: string; line?: number }
+    return { level: "error", message, line }
+  }
+}
 
 /** Everything wrong with one post file, worst first; the build would fail on the errors. */
 export async function lintPost(
@@ -262,19 +235,46 @@ export async function lintPost(
     ]
   }
 
-  try {
-    await compile(source, {
-      remarkPlugins: [remarkFrontmatter, remarkGfm, remarkGuard],
-    })
-  } catch (error) {
-    const { message, line } = error as { message: string; line?: number }
-    return [{ level: "error", message, line }]
-  }
+  const failed = await compileIssue(source)
+  if (failed) return [failed]
 
   const tree = processor.parse(source) as Node
   return [
     ...frontmatterIssues(post, ctx),
     ...bodyIssues(tree, ctx),
+    ...textIssues(tree),
+    ...revisionIssues(file, source, post, ctx.before),
     ...linkSuggestions(post, tree, ctx),
+  ].sort((a, b) => RANK[a.level] - RANK[b.level])
+}
+
+/**
+ * A glossary entry's or topic guide's body, by the same rules as a post's; the build checks its
+ * frontmatter. `short` is an entry's hover text, which its page shows above the body.
+ */
+export async function lintBody(
+  source: string,
+  paths: ReadonlySet<string>,
+  short?: string
+): Promise<Issue[]> {
+  const failed = await compileIssue(source)
+  if (failed) return [failed]
+  const tree = processor.parse(source) as Node
+  const first = tree.children?.find((node) => node.type === "paragraph")
+  const tidy = (text: string) => text.replace(/\s+/g, " ").trim().toLowerCase()
+  const repeats = short && first && tidy(textOf(first)).startsWith(tidy(short))
+  return [
+    ...bodyIssues(tree, { paths, image: () => undefined }),
+    ...textIssues(tree),
+    ...(repeats
+      ? [
+          {
+            level: "warning" as const,
+            message:
+              "the body opens with the short definition, so the page shows it twice",
+            line: lineOf(first),
+          },
+        ]
+      : []),
   ].sort((a, b) => RANK[a.level] - RANK[b.level])
 }

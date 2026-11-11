@@ -76,7 +76,7 @@ export const topicsOf = (posts: readonly Post[]): Topic[] =>
   TOPICS.filter((topic) => posts.some((post) => post.topic === topic))
 
 // below this a tag's page only repeats its topic page
-const MIN_TAG_POSTS = 3
+export const MIN_TAG_POSTS = 3
 
 /** The tags with enough of these posts for a page of their own, in the order of TAGS. */
 export const tagsOf = (posts: readonly Pick<Post, "tags">[]): Tag[] =>

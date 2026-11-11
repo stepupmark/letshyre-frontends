@@ -1,12 +1,14 @@
-// usage: pnpm blog:check [slug…] [--links] [--ci]
-// --links also asks each external source whether it still answers; --ci prints GitHub annotations.
+// usage: pnpm blog:check [slug…] [--links] [--ci] [--base <ref>] [--watch]
+// --links asks each external source whether it still answers; --ci prints GitHub annotations;
+// --base compares published posts with that ref to ask for updatedAt; --watch reruns on save.
 
-import { existsSync, readdirSync, readFileSync, statSync } from "node:fs"
+import { execFileSync } from "node:child_process"
+import { existsSync, readdirSync, readFileSync, statSync, watch } from "node:fs"
 import { join, relative, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { parseArgs } from "node:util"
 
-import { namesOf } from "../app/lib/blog/glossary.ts"
+import { namesOf, parseTerm } from "../app/lib/blog/glossary.ts"
 import { postPath } from "../app/lib/blog/paths.ts"
 import { parsePost } from "../app/lib/blog/post.ts"
 import { readGuides, readPosts, readTerms } from "../app/lib/blog/read-posts.ts"
@@ -17,14 +19,19 @@ import {
   GUIDES_DIR,
   readyPaths,
 } from "../app/lib/readiness.ts"
-import { type Image, type Issue, lintPost } from "./blog-lint.ts"
+import { type Image, type Issue, lintBody, lintPost } from "./blog-lint.ts"
 
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)))
 const REPO = resolve(ROOT, "../..")
 
 const { values: flags, positionals: slugs } = parseArgs({
   allowPositionals: true,
-  options: { links: { type: "boolean" }, ci: { type: "boolean" } },
+  options: {
+    links: { type: "boolean" },
+    ci: { type: "boolean" },
+    base: { type: "string" },
+    watch: { type: "boolean" },
+  },
 })
 
 function svgSize(text: string) {
@@ -93,67 +100,46 @@ async function deadLinks(urls: readonly string[]) {
 }
 
 const blogDir = join(ROOT, BLOG_DIR)
-const folders = slugs.length
-  ? slugs
-  : readdirSync(blogDir).filter((name) =>
-      statSync(join(blogDir, name)).isDirectory()
-    )
-const paths = new Set(readyPaths(ROOT, true))
-const allPosts = readPosts(blogDir, true)
-const terms = readTerms(join(ROOT, GLOSSARY_DIR))
-let errors = 0
-let warnings = 0
-let suggestions = 0
 
-try {
-  checkTerms(allPosts, terms)
-  const slugsByLang = new Set(allPosts.map((p) => `${p.lang}/${p.slug}`))
-  for (const guide of readGuides(join(ROOT, GUIDES_DIR)))
-    for (const slug of guide.reading)
-      if (!slugsByLang.has(`${guide.lang}/${slug}`))
-        throw new Error(
-          `${GUIDES_DIR}/${guide.topic}/${guide.lang}.mdx: reading lists "${slug}", which has no ${guide.lang} post`
+const mdxIn = (dir: string) =>
+  existsSync(dir)
+    ? readdirSync(dir)
+        .filter((name) => statSync(join(dir, name)).isDirectory())
+        .flatMap((name) =>
+          readdirSync(join(dir, name))
+            .filter((file) => file.endsWith(".mdx"))
+            .map((file) => join(dir, name, file))
         )
-} catch (error) {
-  console.log(`error  ${(error as Error).message}`)
-  errors++
+    : []
+
+/** The file on the base branch, or undefined when it's new there. */
+function atBase(file: string): string | undefined {
+  if (!flags.base) return undefined
+  try {
+    return execFileSync(
+      "git",
+      ["show", `${flags.base}:${relative(REPO, file).replaceAll("\\", "/")}`],
+      { cwd: REPO, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }
+    )
+  } catch {
+    return undefined
+  }
 }
 
-for (const slug of folders) {
-  const dir = join(blogDir, slug)
-  if (!existsSync(dir)) {
-    console.error(`${BLOG_DIR}/${slug} doesn't exist`)
-    errors++
-    continue
-  }
-  for (const name of readdirSync(dir).filter((file) => file.endsWith(".mdx"))) {
-    const file = join(dir, name)
-    const source = readFileSync(file, "utf8")
-    const issues: Issue[] = await lintPost(file, source, {
-      paths,
-      image: (image) => readImage(join(dir, image)),
-      has: (other) => existsSync(join(dir, other)),
-      terms: terms
-        .filter((term) => name === `${term.lang}.mdx`)
-        .map((term) => ({ id: term.id, names: namesOf(term) })),
-      posts: allPosts
-        .filter((p) => name === `${p.lang}.mdx` && p.slug !== slug)
-        .map((p) => ({
-          path: `/${p.lang}${postPath(p.slug)}`,
-          title: p.title,
-          tags: p.tags,
-        })),
-    })
-    if (flags.links && !issues.some((issue) => issue.level === "error")) {
-      const urls = parsePost(file, source).sources.map((source) => source.url)
-      for (const message of await deadLinks(urls))
-        issues.push({ level: "warning", message })
-    }
+async function check() {
+  const folders = slugs.length
+    ? slugs
+    : readdirSync(blogDir).filter((name) =>
+        statSync(join(blogDir, name)).isDirectory()
+      )
+  const paths = new Set(readyPaths(ROOT, true))
+  const allPosts = readPosts(blogDir, true)
+  const terms = readTerms(join(ROOT, GLOSSARY_DIR))
+  const count = { error: 0, warning: 0, suggestion: 0 }
 
+  const report = (file: string, issues: readonly Issue[]) => {
     for (const { level, message, line } of issues) {
-      if (level === "error") errors++
-      else if (level === "warning") warnings++
-      else suggestions++
+      count[level]++
       if (flags.ci)
         console.log(
           `::${level === "suggestion" ? "notice" : level} file=${relative(REPO, file).replaceAll("\\", "/")}${line ? `,line=${line}` : ""}::${message}`
@@ -164,11 +150,97 @@ for (const slug of folders) {
         )
     }
   }
+
+  try {
+    checkTerms(allPosts, terms)
+    const slugsByLang = new Set(allPosts.map((p) => `${p.lang}/${p.slug}`))
+    for (const guide of readGuides(join(ROOT, GUIDES_DIR)))
+      for (const slug of guide.reading)
+        if (!slugsByLang.has(`${guide.lang}/${slug}`))
+          throw new Error(
+            `${GUIDES_DIR}/${guide.topic}/${guide.lang}.mdx: reading lists "${slug}", which has no ${guide.lang} post`
+          )
+  } catch (error) {
+    console.log(`error  ${(error as Error).message}`)
+    count.error++
+  }
+
+  for (const slug of folders) {
+    const dir = join(blogDir, slug)
+    if (!existsSync(dir)) {
+      console.error(`${BLOG_DIR}/${slug} doesn't exist`)
+      count.error++
+      continue
+    }
+    for (const name of readdirSync(dir).filter((f) => f.endsWith(".mdx"))) {
+      const file = join(dir, name)
+      const source = readFileSync(file, "utf8")
+      const issues: Issue[] = await lintPost(file, source, {
+        paths,
+        image: (image) => readImage(join(dir, image)),
+        has: (other) => existsSync(join(dir, other)),
+        terms: terms
+          .filter((term) => name === `${term.lang}.mdx`)
+          .map((term) => ({ id: term.id, names: namesOf(term) })),
+        posts: allPosts
+          .filter((p) => name === `${p.lang}.mdx` && p.slug !== slug)
+          .map((p) => ({
+            path: `/${p.lang}${postPath(p.slug)}`,
+            title: p.title,
+            tags: p.tags,
+          })),
+        before: atBase(file),
+      })
+      if (flags.links && !issues.some((issue) => issue.level === "error")) {
+        const urls = parsePost(file, source).sources.map((s) => s.url)
+        for (const message of await deadLinks(urls))
+          issues.push({ level: "warning", message })
+      }
+      report(file, issues)
+    }
+  }
+
+  // entries and guides belong to no post, so they're checked when every post is
+  if (!slugs.length) {
+    for (const file of mdxIn(join(ROOT, GLOSSARY_DIR))) {
+      const source = readFileSync(file, "utf8")
+      let short: string | undefined
+      try {
+        short = parseTerm(file, source).short
+      } catch (error) {
+        report(file, [{ level: "error", message: (error as Error).message }])
+        continue
+      }
+      report(file, await lintBody(source, paths, short))
+    }
+    for (const file of mdxIn(join(ROOT, GUIDES_DIR)))
+      report(file, await lintBody(readFileSync(file, "utf8"), paths))
+  }
+
+  const { error, warning, suggestion } = count
+  console.log(
+    error || warning || suggestion
+      ? `\n${error} errors, ${warning} warnings, ${suggestion} suggestions. Fix the errors before merging; the rest are for the writer and reviewer.`
+      : "All posts pass."
+  )
+  return error
 }
 
-console.log(
-  errors || warnings || suggestions
-    ? `\n${errors} errors, ${warnings} warnings, ${suggestions} suggestions. Fix the errors before merging; the rest are for the writer and reviewer.`
-    : "All posts pass."
-)
-process.exitCode = errors ? 1 : 0
+if (flags.watch) {
+  const dirs = slugs.length
+    ? slugs.map((slug) => join(blogDir, slug))
+    : [join(ROOT, "content")]
+  let timer: ReturnType<typeof setTimeout> | undefined
+  const rerun = () => {
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      console.clear()
+      void check()
+    }, 200)
+  }
+  for (const dir of dirs) watch(dir, { recursive: true }, rerun)
+  await check()
+  console.log("\nWatching for changes; Ctrl+C to stop.")
+} else {
+  process.exitCode = (await check()) ? 1 : 0
+}

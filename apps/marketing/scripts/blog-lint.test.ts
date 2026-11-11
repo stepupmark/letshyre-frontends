@@ -81,7 +81,9 @@ See [what we offer](/en/employers).
 
 A [broken link](/en/nowhere) about Letshyre.
 
-<Figure src={chart} alt="chart.svg" width={400} height={400} />`
+<Figure src={chart} alt="chart.svg" width={400} height={400} />
+
+Teams that [ask every candidate the same questions](/en/employers) in the same order and score each answer against the same short rubric before they talk to each other end up with notes they can actually compare when they sit down to decide who gets the offer.`
     const issues = await lint(post(body, TEMPLATE_DESCRIPTION))
     expect(issues).toEqual([
       "error:-:description is still the template's; write the post's own",
@@ -91,10 +93,11 @@ A [broken link](/en/nowhere) about Letshyre.
       expect.stringMatching(/^error:19:alt "chart.svg"/),
       expect.stringMatching(/^error:19:width and height \(400 × 400\)/),
       expect.stringMatching(/^warning:17:write "LetsHyre"/),
+      expect.stringMatching(/^warning:21:a 45-word sentence/),
     ])
   })
 
-  it("suggests glossary terms by whole word, and tagged posts it doesn't link yet", async () => {
+  it("suggests glossary terms, tagged posts it doesn't link yet, and tags one post short of a page", async () => {
     const source = post(
       "Your CTC isn't your take-home. ATSes read it too. See [the gap post](/en/blogs/gap).",
       description
@@ -120,6 +123,8 @@ A [broken link](/en/nowhere) about Letshyre.
     ).toEqual([
       expect.stringContaining('<Term id="ctc">'),
       expect.stringContaining("(/en/blogs/offer)"),
+      "salary has 2 posts; one more gives it a page",
+      "resumes has 2 posts; one more gives it a page",
     ])
   })
 })

@@ -3,7 +3,8 @@ name: Blog
 on:
   pull_request:
     paths:
-      - apps/marketing/content/blog/**
+      - apps/marketing/content/**
+      - apps/marketing/scripts/blog-*.ts
 
 concurrency:
   group: blog-${{ github.ref }}
@@ -15,6 +16,9 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
+        with:
+          # the base branch too, so the check can tell a revised post from a new one
+          fetch-depth: 0
 
       - uses: pnpm/action-setup@v4
 
@@ -26,4 +30,4 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       # annotates the PR's files; dead links are warnings, since other sites go down for a while
-      - run: pnpm --filter marketing blog:check --links --ci
+      - run: pnpm --filter marketing blog:check --links --ci --base origin/${{ github.base_ref }}
