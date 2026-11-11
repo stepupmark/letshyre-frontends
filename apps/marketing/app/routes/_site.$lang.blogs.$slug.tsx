@@ -1,4 +1,5 @@
 import { loadPostBody, PostPage } from "@/features/blog"
+import { readingFontPreload } from "@/lib/reading-font"
 import { postData } from "@/lib/page-data.server"
 import { postMeta } from "@/lib/seo/post-meta"
 
@@ -22,6 +23,8 @@ export async function clientLoader({
 }
 
 export const meta = postMeta
+
+export const links: Route.LinksFunction = () => [readingFontPreload]
 
 export default function BlogPost({ loaderData }: Route.ComponentProps) {
   return (

@@ -25,16 +25,18 @@ export function DownloadPage() {
 
   return (
     <DownloadState value={state}>
-      <DownloadHero />
-      <Container className="flex flex-col gap-16 py-12 sm:gap-24 sm:py-20">
-        <ReleaseList />
-        <InstallSteps />
-        <DownloadFaq />
-        <SupportBand />
-      </Container>
-      <p role="status" className="sr-only">
-        {started ? t("next.body") : ""}
-      </p>
+      <div className="reading-font">
+        <DownloadHero />
+        <Container className="flex flex-col gap-16 py-12 sm:gap-24 sm:py-20">
+          <ReleaseList />
+          <InstallSteps />
+          <DownloadFaq />
+          <SupportBand />
+        </Container>
+        <p role="status" className="sr-only">
+          {started ? t("next.body") : ""}
+        </p>
+      </div>
     </DownloadState>
   )
 }

@@ -55,7 +55,7 @@ export function EmployerGuidePage() {
   ]
 
   return (
-    <>
+    <div className="reading-font">
       <PageHeader
         eyebrow={t("meta.crumb")}
         title={<Trans t={t} i18nKey="title" components={HIGHLIGHT} />}
@@ -104,6 +104,6 @@ export function EmployerGuidePage() {
         primary={{ label: t("cta.button"), href: APP_LINKS.employerRegister }}
         secondary={{ label: t("cta.secondary"), to: pricing }}
       />
-    </>
+    </div>
   )
 }

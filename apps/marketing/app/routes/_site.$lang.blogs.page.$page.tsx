@@ -1,4 +1,5 @@
 import { BlogIndexPage } from "@/features/blog"
+import { readingFontPreload } from "@/lib/reading-font"
 import { blogData } from "@/lib/page-data.server"
 import { blogIndexMeta } from "@/lib/seo/blog-meta"
 
@@ -8,6 +9,8 @@ export const loader = ({ params }: Route.LoaderArgs) =>
   blogData(params.lang, params.page)
 
 export const meta = blogIndexMeta
+
+export const links: Route.LinksFunction = () => [readingFontPreload]
 
 export default function BlogIndexLaterPage({
   loaderData,

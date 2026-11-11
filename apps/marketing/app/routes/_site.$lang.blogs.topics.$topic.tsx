@@ -1,4 +1,5 @@
 import { loadBody, TopicPage } from "@/features/blog"
+import { readingFontPreload } from "@/lib/reading-font"
 import { topicData } from "@/lib/page-data.server"
 import { topicMeta } from "@/lib/seo/topic-meta"
 
@@ -20,6 +21,8 @@ export async function clientLoader({
 }
 
 export const meta = topicMeta
+
+export const links: Route.LinksFunction = () => [readingFontPreload]
 
 export default function BlogTopic({ loaderData }: Route.ComponentProps) {
   return (

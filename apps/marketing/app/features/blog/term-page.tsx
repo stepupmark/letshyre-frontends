@@ -29,7 +29,7 @@ export function TermPage({
   const lang = useLocale()
 
   return (
-    <>
+    <div className="reading-font">
       <PageHeader
         eyebrow={
           <BlogCrumbs
@@ -64,6 +64,6 @@ export function TermPage({
         <BackLink to={glossaryPath} label={t("glossary.all")} />
       </Container>
       <PostCta audience="everyone" />
-    </>
+    </div>
   )
 }

@@ -7,13 +7,13 @@ import { TopUpPacks } from "./components/top-up-packs"
 
 export function PricingPage() {
   return (
-    <>
+    <div className="reading-font">
       <PricingHero />
       <PlanGrid />
       <PlanComparisonTable />
       <TopUpPacks />
       <PricingFaq />
       <PricingCta />
-    </>
+    </div>
   )
 }

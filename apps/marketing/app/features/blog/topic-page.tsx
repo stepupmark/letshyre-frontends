@@ -30,7 +30,7 @@ export function TopicPage({
   const { t } = useTranslation("blog")
 
   return (
-    <>
+    <div className="reading-font">
       <PageHeader
         variant="masthead"
         eyebrow={<BlogCrumbs />}
@@ -51,6 +51,6 @@ export function TopicPage({
       </Container>
       <RelatedPosts title={t("topicPage.others")} posts={others} />
       <PostCta audience="everyone" />
-    </>
+    </div>
   )
 }

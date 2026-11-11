@@ -1,5 +1,6 @@
 import { CandidateGuidePage } from "@/features/candidate-guide"
 import { pageData } from "@/lib/page-data.server"
+import { readingFontPreload } from "@/lib/reading-font"
 import { pageMeta } from "@/lib/seo/page-meta"
 import { faqSchema, webPageSchema } from "@/lib/seo/schema"
 import { SITE } from "@/lib/seo/site"
@@ -8,6 +9,8 @@ import type { Route } from "./+types/_site.$lang.candidate-guide"
 
 export const loader = ({ params }: Route.LoaderArgs) =>
   pageData(params.lang, "candidateGuide")
+
+export const links: Route.LinksFunction = () => [readingFontPreload]
 
 export const meta = pageMeta("candidateGuide", ({ lang, t, path }) => [
   {

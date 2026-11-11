@@ -20,7 +20,7 @@ export function TagPage({
   const name = t(`tags.${tag}`)
 
   return (
-    <>
+    <div className="reading-font">
       <PageHeader
         variant="masthead"
         eyebrow={<BlogCrumbs />}
@@ -35,6 +35,6 @@ export function TagPage({
         </PendingList>
       </Container>
       <PostCta audience="everyone" />
-    </>
+    </div>
   )
 }

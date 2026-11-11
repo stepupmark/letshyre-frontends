@@ -35,7 +35,7 @@ export function LegalPage({ ns }: { ns: LegalNamespace }) {
   const nav = { label: t("chrome.contents"), entries: toc, active }
 
   return (
-    <div className="relative">
+    <div className="reading-font relative">
       <ReadProgress />
       <BackToTop label={t("chrome.backToTop")} />
       <LegalHeader

@@ -88,7 +88,7 @@ export function PostPage({
   }, [post.audience])
 
   return (
-    <div className="relative">
+    <div className="reading-font relative">
       <ReadProgress />
       <BackToTop label={t("post.backToTop")} />
       <PostHeader post={post} />

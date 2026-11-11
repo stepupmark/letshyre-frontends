@@ -1,4 +1,6 @@
 @import "@workspace/ui/globals.css";
+@import "@fontsource-variable/schibsted-grotesk/wght.css";
+@import "@fontsource-variable/schibsted-grotesk/wght-italic.css";
 @source "../../../../packages/blocks/src";
 
 /* only for floating controls; cards use borders */
@@ -10,6 +12,12 @@
 }
 .dark {
   --raised-tint: rgb(0 0 0 / 0.5);
+}
+
+/* Schibsted Grotesk for the pages that opt in; Outfit has no italic, which posts need */
+@utility reading-font {
+  --font-sans: "Schibsted Grotesk Variable", "Outfit Variable", sans-serif;
+  font-family: var(--font-sans);
 }
 
 /* a link inside running text */
