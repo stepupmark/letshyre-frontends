@@ -8,6 +8,7 @@ import {
   LENGTHS,
   lengthOf,
   type Tag,
+  tagsOf,
   topicCounts,
 } from "./blog/list"
 import { ogImageOf } from "./blog/posts.server"
@@ -120,6 +121,7 @@ export function postData(lang: string | undefined, slug: string | undefined) {
       posts.filter((p) => !shown.has(p.slug))
     ),
     ogImage: ogImageOf(post.slug),
+    tags: tagsOf(posts).filter((tag) => post.tags.includes(tag)),
     terms: Object.fromEntries(
       termsIn(lang)
         .filter((term) => post.terms.includes(term.id))
@@ -130,10 +132,9 @@ export function postData(lang: string | undefined, slug: string | undefined) {
 
 export function tagData(lang: string | undefined, tag: string | undefined) {
   const { messages } = pageData(lang, "blog")
-  const posts = postsIn(lang as Locale).filter((post) =>
-    post.tags.includes(tag as Tag)
-  )
-  if (!posts.length) throw notFound()
+  const all = postsIn(lang as Locale)
+  if (!tagsOf(all).includes(tag as Tag)) throw notFound()
+  const posts = all.filter((post) => post.tags.includes(tag as Tag))
   return {
     messages,
     locales: tagLocales(tag as Tag),

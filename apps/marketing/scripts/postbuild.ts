@@ -29,6 +29,7 @@ import {
 import {
   BLOG_DIR,
   emptyTopicRedirects,
+  GLOSSARY_DIR,
   indexPages,
   readiness,
   tagPages,
@@ -181,14 +182,15 @@ writeFileSync(
           {
             path: glossaryPath,
             locales: glossaryLocales,
-            lastmod: lastmod("blog"),
+            lastmod: () => lastCommit([GLOSSARY_DIR]) || today,
           },
         ]
       : []),
     ...[...new Set(terms.map((term) => term.id))].map((id) => ({
       path: termPath(id),
       locales: termLocales(id),
-      lastmod: lastmod("blog"),
+      lastmod: (lang: Locale) =>
+        lastCommit([`${GLOSSARY_DIR}/${id}/${lang}.mdx`]) || today,
     })),
   ])
 )

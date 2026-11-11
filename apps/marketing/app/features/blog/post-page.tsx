@@ -10,7 +10,7 @@ import { Container } from "@/components/section"
 import { useHydrated } from "@/hooks/use-hydrated"
 import { useLightPrint } from "@/hooks/use-light-print"
 import { postPath, tagPath } from "@/lib/blog/paths"
-import type { Post } from "@/lib/blog/post"
+import type { Post, Tag } from "@/lib/blog/post"
 import { PAGES } from "@/lib/pages"
 import { absUrl } from "@/lib/seo/site"
 
@@ -66,12 +66,15 @@ export function PostPage({
   newer,
   older,
   related,
+  tags,
   terms,
 }: {
   post: Post
   newer?: Post
   older?: Post
   related: readonly Post[]
+  /** The post's tags that have a page. */
+  tags: readonly Tag[]
   terms: Terms
 }) {
   const { t } = useTranslation("blog")
@@ -119,10 +122,10 @@ export function PostPage({
           <div className="max-w-prose">
             <PostSources sources={post.sources} />
           </div>
-          {post.tags.length > 0 && (
+          {tags.length > 0 && (
             <div className="flex max-w-prose flex-wrap items-center gap-2 print:hidden">
               <p className="me-1 text-sm font-medium">{t("post.tags")}</p>
-              {post.tags.map((tag) => (
+              {tags.map((tag) => (
                 <Link
                   key={tag}
                   to={localePath(lang, tagPath(tag))}

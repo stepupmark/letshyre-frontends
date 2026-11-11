@@ -71,9 +71,15 @@ export function withBlogIndex(
 export const topicsOf = (posts: readonly Post[]): Topic[] =>
   TOPICS.filter((topic) => posts.some((post) => post.topic === topic))
 
-/** Each tag these posts carry, in the order of TAGS. */
+// below this a tag's page only repeats its topic page
+export const MIN_TAG_POSTS = 3
+
+/** The tags with enough of these posts for a page of their own, in the order of TAGS. */
 export const tagsOf = (posts: readonly Pick<Post, "tags">[]): Tag[] =>
-  TAGS.filter((tag) => posts.some((post) => post.tags.includes(tag)))
+  TAGS.filter(
+    (tag) =>
+      posts.filter((post) => post.tags.includes(tag)).length >= MIN_TAG_POSTS
+  )
 
 export const topicCounts = (posts: readonly Post[]) =>
   topicsOf(posts).map((topic) => ({

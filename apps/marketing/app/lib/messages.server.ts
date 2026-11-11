@@ -2,7 +2,13 @@ import { type Catalog, type Locale, type Messages } from "@workspace/i18n"
 import { type Catalogs, readinessFrom } from "@workspace/i18n/node"
 
 import { allGuides, allPosts, allTerms } from "./blog/posts.server"
-import { pageCount, publishedPosts, type Tag, withBlogIndex } from "./blog/list"
+import {
+  pageCount,
+  publishedPosts,
+  type Tag,
+  tagsOf,
+  withBlogIndex,
+} from "./blog/list"
 import type { Post } from "./blog/post"
 import { PAGES, type PageId, pageNamespaces, withoutReplaced } from "./pages"
 
@@ -68,11 +74,8 @@ export const topicLocales = (topic: string): Locale[] => [
 export const indexPageLocales = (page: number): Locale[] =>
   readyLocales("blog").filter((lang) => pageCount(postsIn(lang).length) >= page)
 
-export const tagLocales = (tag: Tag): Locale[] => [
-  ...new Set(
-    posts.filter((post) => post.tags.includes(tag)).map((post) => post.lang)
-  ),
-]
+export const tagLocales = (tag: Tag): Locale[] =>
+  readyLocales("blog").filter((lang) => tagsOf(postsIn(lang)).includes(tag))
 
 /** A–Z in the locale's own order. */
 export const termsIn = (lang: Locale) =>
