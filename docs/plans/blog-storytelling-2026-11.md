@@ -7,10 +7,19 @@ posts in `apps/marketing/content/blog`, `app/lib/blog/authors.ts` and the checks
 
 ## Status
 
-Phases 1 and 3 are done. On today's posts the new checks flag "actually" in three posts, the
-repeated reversal in five and ", exactly." in two. `blog:status` finds eight pairs of closings that
-read alike, and phrases like "it's free for candidates" and "here's how it works" in three or more
-posts each. Phase 4 starts from that list.
+Phases 1, 3, 4 and 5 are done. Phase 2 waits on you: the authors' details, and the first people
+who agree to be quoted.
+
+- The 11 posts other than `why-we-built-letshyre` now end on the reader's next step, most of them
+  calling back to their opening. Four keep one plain sentence about LetsHyre where the post leads
+  there: notice periods, CTC on the profile, interview practice and recorded interviews.
+  `why-we-built-letshyre` is the product post, so its ending stays.
+- The composite opening in `cost-of-a-slow-hire` is now marked as an example.
+- `blog:check` flags none of the habits on any post, and `blog:status` finds no closings that read
+  alike. The one phrase left in three or more posts is the name of the Willo report.
+- The sentence check now ends a sentence at a closing quote, which turned up one paragraph of
+  quoted fragments in `skills-over-degrees`.
+- The rewrites went in as one commit, not one per post. Each post's `updatedAt` is 2026-11-11.
 
 ## What a reader notices
 
