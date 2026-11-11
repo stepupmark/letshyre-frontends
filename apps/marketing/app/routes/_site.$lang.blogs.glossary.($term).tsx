@@ -2,7 +2,6 @@ import type { MetaArgs } from "react-router"
 
 import { GlossaryPage, loadBody, TermPage } from "@/features/blog"
 import { glossaryData, termData } from "@/lib/page-data.server"
-import { readingFontPreload } from "@/lib/reading-font"
 import { glossaryMeta, termMeta } from "@/lib/seo/blog-pages-meta"
 
 import type { Route } from "./+types/_site.$lang.blogs.glossary.($term)"
@@ -25,8 +24,6 @@ export async function clientLoader({
   ])
   return data
 }
-
-export const links: Route.LinksFunction = () => [readingFontPreload]
 
 export const meta = (args: MetaArgs) =>
   args.params.term ? termMeta(args) : glossaryMeta(args)

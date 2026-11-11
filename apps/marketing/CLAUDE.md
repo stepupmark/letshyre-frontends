@@ -32,7 +32,8 @@ ADR 0020.
 
 ## Design
 
-Default shadcn look: neutral colours, Outfit, generous white space, no gradients or decorative blobs.
+Default shadcn look: neutral colours, Schibsted Grotesk (set in `app.css`), generous white space, no
+gradients or decorative blobs.
 
 - Width through `Container` (`max-w-6xl`); bands through `Section` with `SectionHeader`.
 - Inner pages open with `PageHeader`, the only `h1`. Home has its own hero.

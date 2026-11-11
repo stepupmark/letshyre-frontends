@@ -45,7 +45,7 @@ Routes and layouts import features through `index.ts` only. Features never impor
 
 ## Design
 
-Default shadcn look: neutral colors, Outfit, plenty of white space, no gradients or decorative blobs.
+Default shadcn look: neutral colors, Schibsted Grotesk, plenty of white space, no gradients or decorative blobs.
 
 - Width: `Container` (`max-w-6xl`). Bands: `Section` (`py-16 sm:py-24`) with `SectionHeader`.
 - Inner pages open with `PageHeader` (the only `h1`). Home has its own hero.

@@ -1,6 +1,5 @@
 import { AboutPage } from "@/features/about"
 import { pageData } from "@/lib/page-data.server"
-import { readingFontPreload } from "@/lib/reading-font"
 import { pageMeta } from "@/lib/seo/page-meta"
 import { webPageSchema } from "@/lib/seo/schema"
 import { SITE } from "@/lib/seo/site"
@@ -9,8 +8,6 @@ import type { Route } from "./+types/_site.$lang.about"
 
 export const loader = ({ params }: Route.LoaderArgs) =>
   pageData(params.lang, "about")
-
-export const links: Route.LinksFunction = () => [readingFontPreload]
 
 export const meta = pageMeta("about", ({ lang, t, path }) => [
   {

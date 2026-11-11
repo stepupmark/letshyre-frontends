@@ -46,7 +46,7 @@ export function BlogIndexPage({
   const searching = query.trim() !== "" || length !== undefined || showSaved
 
   return (
-    <div className="reading-font">
+    <>
       <PageHeader
         variant="masthead"
         eyebrow={
@@ -108,6 +108,6 @@ export function BlogIndexPage({
         )}
       </Container>
       <PostCta audience="everyone" />
-    </div>
+    </>
   )
 }

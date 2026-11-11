@@ -1,4 +1,4 @@
-import outfitLatin from "@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2?url"
+import schibstedLatin from "@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2?url"
 import { QueryClientProvider } from "@tanstack/react-query"
 import { useRouteFocus } from "@workspace/blocks/route-focus"
 import { ThemeProvider } from "@workspace/blocks/theme-provider"
@@ -28,7 +28,7 @@ import "./styles/app.css"
 export const links: Route.LinksFunction = () => [
   {
     rel: "preload",
-    href: outfitLatin,
+    href: schibstedLatin,
     as: "font",
     type: "font/woff2",
     crossOrigin: "anonymous",

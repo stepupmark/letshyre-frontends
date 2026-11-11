@@ -19,7 +19,7 @@ export function GlossaryPage({
   const lang = useLocale()
 
   return (
-    <div className="reading-font">
+    <>
       <PageHeader
         eyebrow={<BlogCrumbs />}
         title={t("glossary.title")}
@@ -50,6 +50,6 @@ export function GlossaryPage({
         <BackLink to={PAGES.blog.path} label={t("post.allPosts")} />
       </Container>
       <PostCta audience="everyone" />
-    </div>
+    </>
   )
 }

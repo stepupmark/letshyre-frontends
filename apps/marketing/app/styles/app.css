@@ -3,6 +3,11 @@
 @import "@fontsource-variable/schibsted-grotesk/wght-italic.css";
 @source "../../../../packages/blocks/src";
 
+/* replaces the shared Outfit, which has no italic; the blog sets mentioned words in italics */
+@theme inline {
+  --font-sans: "Schibsted Grotesk Variable", sans-serif;
+}
+
 /* only for floating controls; cards use borders */
 @theme {
   --shadow-raised: 0 10px 30px -12px var(--raised-tint);
@@ -12,12 +17,6 @@
 }
 .dark {
   --raised-tint: rgb(0 0 0 / 0.5);
-}
-
-/* Schibsted Grotesk for the pages that opt in; Outfit has no italic, which posts need */
-@utility reading-font {
-  --font-sans: "Schibsted Grotesk Variable", "Outfit Variable", sans-serif;
-  font-family: var(--font-sans);
 }
 
 /* a link inside running text */

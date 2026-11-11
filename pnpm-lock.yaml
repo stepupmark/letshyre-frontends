@@ -394,9 +394,6 @@ importers:
 
   apps/marketing:
     dependencies:
-      '@fontsource-variable/outfit':
-        specifier: 'catalog:'
-        version: 5.3.0
       '@fontsource-variable/schibsted-grotesk':
         specifier: ^5.3.0
         version: 5.3.0

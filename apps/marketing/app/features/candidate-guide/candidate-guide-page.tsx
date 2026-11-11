@@ -52,7 +52,7 @@ export function CandidateGuidePage() {
   ]
 
   return (
-    <div className="reading-font">
+    <>
       <PageHeader
         eyebrow={t("meta.crumb")}
         title={<Trans t={t} i18nKey="title" components={HIGHLIGHT} />}
@@ -101,6 +101,6 @@ export function CandidateGuidePage() {
         primary={{ label: t("cta.button"), href: APP_LINKS.candidateRegister }}
         secondary={{ label: t("cta.secondary"), to: download }}
       />
-    </div>
+    </>
   )
 }

@@ -16,7 +16,7 @@ export function AboutPage() {
   const { t } = useTranslation("about")
 
   return (
-    <div className="reading-font">
+    <>
       <PageHeader
         eyebrow={t("meta.crumb")}
         title={<Trans t={t} i18nKey="hero.title" components={HIGHLIGHT} />}
@@ -41,6 +41,6 @@ export function AboutPage() {
           href: APP_LINKS.candidateRegister,
         }}
       />
-    </div>
+    </>
   )
 }
