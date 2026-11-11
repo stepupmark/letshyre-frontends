@@ -33,6 +33,8 @@ export interface LintContext {
   posts?: readonly { path: string; title: string; tags: readonly string[] }[]
   /** The file as it is on the base branch, to spot revisions that need `updatedAt`. */
   before?: string
+  /** Files beside the post that are still `cover-template.svg` unchanged. */
+  placeholders?: readonly string[]
 }
 
 export const TEMPLATE_DESCRIPTION =
@@ -74,6 +76,8 @@ function frontmatterIssues(post: Post, ctx: LintContext): Issue[] {
     warn("title is over 70 characters; add a shorter metaTitle for search")
   if (!ctx.has("cover.svg"))
     warn("no cover.svg; the card shows the topic icon (README: Cover)")
+  for (const name of ctx.placeholders ?? [])
+    warn(`${name} is still the template; draw the post's own (README: Cover)`)
   if (!ctx.has("og.jpg"))
     warn("no og.jpg; shares use the blog's image (README: Share image)")
   if (post.minutes > 3 && post.headings.length < 3)

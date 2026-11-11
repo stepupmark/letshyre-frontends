@@ -8,7 +8,8 @@
 - [ ] Every number and claim links to a source I opened myself
 - [ ] Alt text describes each image; covers have a dark version
 - [ ] Read on the staging preview, light and dark
-- [ ] `publishedAt` is the day it should go live, and `draft: true` is gone
+- [ ] Published with `blog:publish <slug>` (add `--on YYYY-MM-DD` to schedule it), which also
+      drew `og.jpg`
 
 ## For the reviewer
 

@@ -11,15 +11,24 @@ pnpm --filter marketing dev
 ```
 
 ```bash
-pnpm --filter marketing blog:check <slug>
+pnpm --filter marketing blog:check <slug> --watch
 ```
 
-1. `blog:new` asks for a title, reader and topic, and creates the post as a draft.
+```bash
+pnpm --filter marketing blog:publish <slug>
+```
+
+1. `blog:new` asks for a title, reader, topic and tags, and creates the post as a draft with
+   placeholder covers to draw over.
 2. Write it with the dev server open at `/en/blogs/<slug>`; it reloads as you save.
-3. `blog:check` reports what to fix in seconds, without a build.
-4. Open a PR with the blog post template (`?template=blog-post.md`); CI checks the post and its
+3. `blog:check --watch` reruns the checks each time you save, without a build.
+4. When it's ready, `blog:publish` checks it, removes `draft: true`, sets `publishedAt` to today
+   (or `--on YYYY-MM-DD`) and draws its share image.
+5. Open a PR with the blog post template (`?template=blog-post.md`); CI checks the post and its
    links.
-5. When it's ready, remove `draft: true` and set `publishedAt`.
+
+`pnpm --filter marketing blog:status` lists drafts, scheduled posts, thin topics, tags one post
+short of a page, and missing or stale translations.
 
 How to write it well is in [docs/blog-style.md](../../../../docs/blog-style.md). Every component in
 use is in the `style-reference` draft, shown on dev and staging only. In VS Code, type
@@ -104,13 +113,14 @@ Import images from the post's folder: `import chart from "./chart.svg"`.
 
 `cover.svg` in the post's folder is the card image on the index, topic pages and related posts. Draw
 the post's idea in brand colours at 640 × 400 with no words, so it reads in every locale, and add
-`cover-dark.svg` for the dark theme. Without one, the card shows the topic's icon. Start from
-`cover-template.svg`, which has the palette and the safe area.
+`cover-dark.svg` for the dark theme. Without one, the card shows the topic's icon. `blog:new` copies
+`cover-template.svg`, which has the palette and the safe area, to both; `blog:check` warns until
+they're the post's own.
 
 ## Share image
 
-`og.jpg` in the post's folder is used when the post is shared. Once the post is published, draw it
-from the post's header and commit it:
+`og.jpg` in the post's folder is used when the post is shared. `blog:publish` draws it from the
+post's header. After changing a published post's title or description, draw it again:
 
 ```bash
 pnpm --filter marketing blog:og <slug>
@@ -122,5 +132,5 @@ has none.
 ## Translations
 
 A translation is another file in the same folder, `de.mdx`, with the same slug. It ships when the
-blog's interface copy is complete in that locale. `pnpm --filter marketing blog:translations` lists
+blog's interface copy is complete in that locale. `pnpm --filter marketing blog:status` lists
 each post's locales, and the translations older than the English they follow.

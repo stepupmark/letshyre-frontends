@@ -60,4 +60,4 @@ LetsHyre does; a post with one skips the automatic mid-post call to action.
 - [ ] `pnpm --filter marketing blog:check <slug>` shows no errors
 - [ ] Every number has a source you opened yourself
 - [ ] The opening paragraph works on its own
-- [ ] `draft: true` removed and `publishedAt` set, when it's ready to go live
+- [ ] Published with `pnpm --filter marketing blog:publish <slug>`, when it's ready to go live

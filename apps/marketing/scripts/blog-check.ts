@@ -100,6 +100,14 @@ async function deadLinks(urls: readonly string[]) {
 }
 
 const blogDir = join(ROOT, BLOG_DIR)
+const template = readFileSync(join(blogDir, "cover-template.svg"))
+
+const placeholdersIn = (dir: string) =>
+  ["cover.svg", "cover-dark.svg"].filter(
+    (name) =>
+      existsSync(join(dir, name)) &&
+      readFileSync(join(dir, name)).equals(template)
+  )
 
 const mdxIn = (dir: string) =>
   existsSync(dir)
@@ -190,6 +198,7 @@ async function check() {
             tags: p.tags,
           })),
         before: atBase(file),
+        placeholders: placeholdersIn(dir),
       })
       if (flags.links && !issues.some((issue) => issue.level === "error")) {
         const urls = parsePost(file, source).sources.map((s) => s.url)
