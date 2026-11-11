@@ -7,7 +7,7 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@workspace/ui/components/empty"
-import { BookmarkIcon, SearchXIcon, WifiOffIcon } from "lucide-react"
+import { BookmarkIcon, SearchXIcon, WifiOffIcon, XIcon } from "lucide-react"
 import { use, useId, useState } from "react"
 
 import type { Length } from "@/lib/blog/list"
@@ -49,16 +49,35 @@ export default function SearchResults({
       <h2 id={titleId} className="sr-only">
         {t("index.resultsTitle")}
       </h2>
-      <p
-        role="status"
+      <div
         className={
           index && posts.length > 0
-            ? "text-sm text-muted-foreground"
-            : "sr-only"
+            ? "flex items-center justify-between gap-4"
+            : "contents"
         }
       >
-        {index && t("index.results", { count: announced })}
-      </p>
+        <p
+          role="status"
+          className={
+            index && posts.length > 0
+              ? "text-sm text-muted-foreground tabular-nums"
+              : "sr-only"
+          }
+        >
+          {index && t("index.results", { count: announced })}
+        </p>
+        {index && posts.length > 0 && (
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={onClear}
+            className="-me-2.5"
+          >
+            <XIcon aria-hidden />
+            {t("index.clearFilters")}
+          </Button>
+        )}
+      </div>
       {!index ? (
         <Empty className="border py-12">
           <EmptyHeader>

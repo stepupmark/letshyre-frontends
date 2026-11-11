@@ -1,11 +1,9 @@
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { BookmarkIcon, BookOpenIcon, CalendarIcon } from "lucide-react"
+import { BookmarkIcon, BookOpenIcon, CalendarIcon, RssIcon } from "lucide-react"
 import { Link } from "react-router"
 
-import { archivePath, glossaryPath } from "@/lib/blog/paths"
-
-import { FeedLink } from "./feed-link"
+import { archivePath, feedPath, glossaryPath } from "@/lib/blog/paths"
 
 export function BlogLinks({
   glossary,
@@ -28,14 +26,14 @@ export function BlogLinks({
   return (
     <nav
       aria-label={t("index.browse")}
-      className="flex flex-wrap items-center gap-x-5 gap-y-2"
+      className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-5"
     >
       {links.map(({ to, label, Icon }) => (
         <Link
           key={to}
           to={localePath(lang, to)}
           prefetch="intent"
-          className="inline-flex items-center gap-2 text-sm font-medium text-brand-text underline-offset-4 hover:underline"
+          className="inline-flex items-center gap-1.5 rounded-sm text-sm text-foreground/75 transition-colors duration-200 outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:transition-none"
         >
           <Icon aria-hidden className="size-4" />
           {label}
@@ -47,12 +45,23 @@ export function BlogLinks({
         onClick={() => {
           onSavedChange(!saved)
         }}
-        className="inline-flex items-center gap-2 rounded-sm text-sm font-medium text-brand-text underline-offset-4 outline-none hover:underline focus-visible:ring-3 focus-visible:ring-ring/50 aria-pressed:underline"
+        className="group inline-flex items-center gap-1.5 rounded-sm text-sm text-foreground/75 transition-colors duration-200 outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 aria-pressed:font-medium aria-pressed:text-brand-text motion-reduce:transition-none"
       >
-        <BookmarkIcon aria-hidden className="size-4" />
+        <BookmarkIcon
+          aria-hidden
+          className="size-4 group-aria-pressed:fill-current"
+        />
         {t("index.saved")}
       </button>
-      <FeedLink />
+      <a
+        href={localePath(lang, feedPath)}
+        type="application/rss+xml"
+        title={t("index.feed")}
+        className="inline-flex items-center gap-1.5 rounded-sm text-sm text-foreground/75 transition-colors duration-200 outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:transition-none"
+      >
+        <RssIcon aria-hidden className="size-4" />
+        <span className="max-sm:sr-only">{t("index.feed")}</span>
+      </a>
     </nav>
   )
 }

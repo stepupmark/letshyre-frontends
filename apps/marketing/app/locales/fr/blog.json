@@ -19,6 +19,7 @@
     "feed": "S'abonner par RSS",
     "search": "Rechercher un article",
     "clear": "Effacer la recherche",
+    "clearFilters": "Effacer les filtres",
     "results": "Articles trouvés : {{count}}",
     "noResults": "Aucun résultat pour « {{query}} »",
     "noResultsHint": "Essayez avec moins de mots, ou parcourez les thèmes ci-dessus.",

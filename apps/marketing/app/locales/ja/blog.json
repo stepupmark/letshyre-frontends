@@ -19,6 +19,7 @@
     "feed": "RSSで購読",
     "search": "記事を検索",
     "clear": "検索をクリア",
+    "clearFilters": "絞り込みを解除",
     "results": "該当する記事：{{count}}件",
     "noResults": "「{{query}}」に一致する記事はありません",
     "noResultsHint": "言葉を減らすか、上のトピックから探してください。",

@@ -19,6 +19,7 @@
     "feed": "RSS로 구독",
     "search": "글 검색",
     "clear": "검색 지우기",
+    "clearFilters": "필터 지우기",
     "results": "일치하는 글: {{count}}개",
     "noResults": "‘{{query}}’와 일치하는 글이 없습니다",
     "noResultsHint": "단어를 줄이거나 위의 주제를 둘러보세요.",

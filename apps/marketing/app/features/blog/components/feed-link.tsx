@@ -12,7 +12,7 @@ export function FeedLink() {
     <a
       href={localePath(lang, feedPath)}
       type="application/rss+xml"
-      className="inline-flex items-center gap-2 text-sm font-medium text-brand-text underline-offset-4 hover:underline"
+      className="inline-flex items-center gap-1.5 rounded-sm text-sm text-foreground/75 transition-colors duration-200 outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:transition-none"
     >
       <RssIcon aria-hidden className="size-4" />
       {t("index.feed")}

@@ -85,7 +85,7 @@ export function PageHeader({
       <Container
         className={cn(
           "py-10 sm:py-14",
-          masthead && "py-12 sm:py-16",
+          masthead && "pt-12 pb-10 sm:pt-16 sm:pb-12",
           art &&
             "grid items-center gap-10 sm:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:gap-16 xl:grid-cols-[minmax(0,1fr)_minmax(0,32rem)]"
         )}

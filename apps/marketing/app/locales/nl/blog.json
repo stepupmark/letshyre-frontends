@@ -19,6 +19,7 @@
     "feed": "Abonneren via RSS",
     "search": "Berichten zoeken",
     "clear": "Zoekopdracht wissen",
+    "clearFilters": "Filters wissen",
     "results": "Gevonden berichten: {{count}}",
     "noResults": "Niets gevonden voor ‘{{query}}’",
     "noResultsHint": "Probeer minder woorden, of bekijk de onderwerpen hierboven.",

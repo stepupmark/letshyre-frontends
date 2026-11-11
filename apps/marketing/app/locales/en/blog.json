@@ -19,6 +19,7 @@
     "feed": "Subscribe via RSS",
     "search": "Search posts",
     "clear": "Clear search",
+    "clearFilters": "Clear filters",
     "results": "Matching posts: {{count}}",
     "noResults": "Nothing matches “{{query}}”",
     "noResultsHint": "Try fewer words, or browse the topics above.",

@@ -73,23 +73,25 @@ export function BlogIndexPage({
         description={t("index.description")}
       >
         <PostSearch query={query} onQueryChange={setQuery} />
-        <LengthFilter
-          lengths={lengths}
-          value={length}
-          onChange={(next: Length | undefined) => {
-            setLength(next ?? "")
-          }}
-        />
-        <BlogLinks
-          glossary={glossary}
-          saved={showSaved}
-          onSavedChange={(on) => {
-            setSaved(on ? "1" : "")
-          }}
-        />
       </PageHeader>
       <TopicNav topics={topics} />
-      <Container className="flex flex-col gap-12 py-10 sm:py-14">
+      <Container className="flex flex-col gap-8 py-8 sm:py-10">
+        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-4">
+          <LengthFilter
+            lengths={lengths}
+            value={length}
+            onChange={(next: Length | undefined) => {
+              setLength(next ?? "")
+            }}
+          />
+          <BlogLinks
+            glossary={glossary}
+            saved={showSaved}
+            onSavedChange={(on) => {
+              setSaved(on ? "1" : "")
+            }}
+          />
+        </div>
         {searching ? (
           <Suspense
             fallback={
@@ -110,12 +112,12 @@ export function BlogIndexPage({
             />
           </Suspense>
         ) : (
-          <>
+          <div className="flex flex-col gap-12">
             <PendingList>
               <PostList posts={posts} lead={page === 1} />
             </PendingList>
             <IndexPagination page={page} pages={pages} />
-          </>
+          </div>
         )}
       </Container>
       <PostCta audience="everyone" />

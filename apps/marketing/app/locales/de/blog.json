@@ -19,6 +19,7 @@
     "feed": "Per RSS abonnieren",
     "search": "Beiträge durchsuchen",
     "clear": "Suche löschen",
+    "clearFilters": "Filter zurücksetzen",
     "results": "Passende Beiträge: {{count}}",
     "noResults": "Nichts passt zu „{{query}}“",
     "noResultsHint": "Versuchen Sie weniger Wörter oder stöbern Sie in den Themen oben.",
