@@ -1,7 +1,7 @@
 import { type Locale, localePath } from "@workspace/i18n"
 
-import { feedPath, postPath } from "../app/lib/blog/paths.ts"
-import type { Post } from "../app/lib/blog/post.ts"
+import { feedPath, postPath } from "./paths"
+import type { Post } from "./post"
 
 const escape = (text: string) =>
   text.replace(

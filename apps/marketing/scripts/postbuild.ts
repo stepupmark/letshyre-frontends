@@ -1,7 +1,7 @@
 // Runs after `react-router build`: sitemap, robots, SEO and size checks, CSP.
 
 import { execFileSync } from "node:child_process"
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
+import { existsSync, readFileSync, writeFileSync } from "node:fs"
 import { join, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { gzipSync } from "node:zlib"
@@ -17,7 +17,7 @@ import {
   REPLACED_BY,
 } from "../app/lib/pages.ts"
 import { previewsOn } from "../app/lib/blog/list.ts"
-import { feedPath, postPath, topicsPath } from "../app/lib/blog/paths.ts"
+import { postPath, topicsPath } from "../app/lib/blog/paths.ts"
 import type { BlogRoute } from "../app/lib/blog/routes.ts"
 import {
   BLOG_DIR,
@@ -31,7 +31,6 @@ import {
   nginxMap,
 } from "../../../tooling/csp.ts"
 import { pagePolicy } from "./csp.ts"
-import { renderFeed } from "./feed.ts"
 import { type LlmsPage, renderLlms } from "./llms.ts"
 import { checkPage } from "./seo-checks.ts"
 import { renderRobots, renderSitemap } from "./sitemap.ts"
@@ -143,23 +142,6 @@ writeFileSync(
   ])
 )
 writeFileSync(join(CLIENT, "robots.txt"), renderRobots(site, production))
-
-for (const lang of ready.get("blog") ?? []) {
-  const copy = JSON.parse(
-    readFileSync(join(ROOT, `app/locales/${lang}/blog.json`), "utf8")
-  ) as { meta: { name: string }; index: { description: string } }
-  const file = join(CLIENT, localePath(lang, feedPath))
-  mkdirSync(join(file, ".."), { recursive: true })
-  writeFileSync(
-    file,
-    renderFeed(
-      site,
-      lang,
-      { title: copy.meta.name, description: copy.index.description },
-      posts.filter((post) => post.lang === lang)
-    )
-  )
-}
 
 // IndexNow checks this file before it accepts a ping (scripts/indexnow.ts)
 if (indexNowKey && !/^[a-zA-Z0-9-]{8,128}$/.test(indexNowKey))
@@ -303,5 +285,5 @@ if (problems.length) {
   process.exit(1)
 }
 console.log(
-  `postbuild: ${routes.length} pages checked, sitemap, feeds, robots and llms.txt written (${production ? "indexable" : "noindex"}), CSP ${enforceCsp ? "enforced" : "report-only"}`
+  `postbuild: ${routes.length} pages checked, sitemap, robots and llms.txt written (${production ? "indexable" : "noindex"}), CSP ${enforceCsp ? "enforced" : "report-only"}`
 )

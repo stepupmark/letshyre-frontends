@@ -29,10 +29,12 @@ import {
   postsIn,
   termsIn,
 } from "./blog/posts.server"
+import { renderFeed } from "./blog/feed"
 import { relatedPosts } from "./blog/related"
 import { summarize } from "./blog/search"
 import { catalogReadiness, loadMessages } from "./messages.server"
 import { LAYOUT_NAMESPACES, PAGES, type PageId } from "./pages"
+import { SITE } from "./seo/site"
 
 const notFound = () => data(null, { status: 404 })
 
@@ -199,4 +201,18 @@ export function termData(lang: string | undefined, id: string | undefined) {
 export function searchIndexData(lang: string | undefined) {
   if (!isLocale(lang) || !readyLocales("blog").includes(lang)) throw notFound()
   return featuredFirst(postsIn(lang)).map(summarize)
+}
+
+export function feedXml(lang: string | undefined) {
+  if (!isLocale(lang) || !readyLocales("blog").includes(lang)) throw notFound()
+  const copy = loadMessages(lang, ["blog"])[lang]?.blog as {
+    meta: { name: string }
+    index: { description: string }
+  }
+  return renderFeed(
+    SITE.url,
+    lang,
+    { title: copy.meta.name, description: copy.index.description },
+    postsIn(lang)
+  )
 }

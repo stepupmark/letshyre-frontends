@@ -9,7 +9,7 @@ import {
 } from "../../../tooling/csp"
 import { parsePost } from "../app/lib/blog/post"
 import { pagePolicy } from "./csp"
-import { renderFeed } from "./feed"
+import { renderFeed } from "../app/lib/blog/feed"
 import { renderLlms } from "./llms"
 import { checkPage, width } from "./seo-checks"
 import { renderRobots, renderSitemap } from "./sitemap"

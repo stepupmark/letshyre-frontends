@@ -4,7 +4,7 @@ import { computeReadiness } from "@workspace/i18n/node"
 
 import type { Term } from "./blog/glossary.ts"
 import { publishedPosts, TOPICS, withBlogIndex } from "./blog/list.ts"
-import { searchIndexPath, topicPath } from "./blog/paths.ts"
+import { feedPath, searchIndexPath, topicPath } from "./blog/paths.ts"
 import type { Post } from "./blog/post.ts"
 import { readPosts, readTerms } from "./blog/read-posts.ts"
 import { type BlogRoute, blogRoutes } from "./blog/routes.ts"
@@ -91,6 +91,9 @@ export function readyPaths(root: string, previews = false): string[] {
       locales.map((lang) => `/${lang}${PAGES[id].path}`)
     ),
     ...routes.map((route) => `/${route.lang}${route.path}`),
-    ...(pages.get("blog") ?? []).map((lang) => `/${lang}${searchIndexPath}`),
+    ...(pages.get("blog") ?? []).flatMap((lang) => [
+      `/${lang}${searchIndexPath}`,
+      `/${lang}${feedPath}`,
+    ]),
   ]
 }
