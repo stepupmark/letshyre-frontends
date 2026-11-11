@@ -1,22 +1,15 @@
-import type { Locale } from "@workspace/i18n"
 import type { MetaArgs, MetaDescriptor } from "react-router"
 
 import { indexPagePath, postPath } from "../blog/paths"
-import type { PostSummary } from "../blog/post"
+import type { blogData } from "../page-data.server"
 import { PAGES } from "../pages"
 import { buildMeta, feedLink } from "./meta"
-import { metaContext, pageMeta } from "./page-meta"
+import { loaderDataOf, metaContext, pageMeta } from "./page-meta"
 import { breadcrumbSchema, postListSchema, webPageSchema } from "./schema"
-
-interface IndexData {
-  posts: PostSummary[]
-  page: number
-  locales: Locale[]
-}
 
 /** The blog index and its later pages; each page is its own canonical URL. */
 export function blogIndexMeta(args: MetaArgs): MetaDescriptor[] {
-  const data = args.matches.at(-1)?.loaderData as IndexData | undefined
+  const data = loaderDataOf<typeof blogData>(args)
   if (!data) return []
   const { lang, t } = metaContext(args)
   const { page } = data

@@ -37,6 +37,10 @@ const today = () => new Date().toISOString().slice(0, 10)
 export const isLive = (post: Post, date = today()) =>
   !post.draft && post.publishedAt <= date
 
+/** Drafts and scheduled posts show on staging and in dev, never in production. */
+export const previewsOn = (viteEnv: string | undefined, dev = false) =>
+  dev || viteEnv === "staging"
+
 /** Production ships live posts only; staging and dev also show the rest, marked as previews. */
 export const visiblePosts = (posts: readonly Post[], previews: boolean) =>
   posts.flatMap((post): Post[] => {
@@ -72,7 +76,7 @@ export const topicsOf = (posts: readonly Post[]): Topic[] =>
   TOPICS.filter((topic) => posts.some((post) => post.topic === topic))
 
 // below this a tag's page only repeats its topic page
-export const MIN_TAG_POSTS = 3
+const MIN_TAG_POSTS = 3
 
 /** The tags with enough of these posts for a page of their own, in the order of TAGS. */
 export const tagsOf = (posts: readonly Pick<Post, "tags">[]): Tag[] =>

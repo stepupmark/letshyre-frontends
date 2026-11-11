@@ -1,62 +1,44 @@
-import { localePath } from "@workspace/i18n"
-import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { Link } from "react-router"
+import { useTranslation } from "@workspace/i18n/react"
 
 import { Container, PageHeader } from "@/components/section"
-import type { Post, Topic } from "@/lib/blog/post"
-import { PAGES } from "@/lib/pages"
+import type { PostSummary, Topic } from "@/lib/blog/post"
 
 import { FeedLink } from "./components/feed-link"
 import { PendingList } from "./components/pending-list"
+import { BlogCrumbs } from "./components/blog-crumbs"
 import { PostCta } from "./components/post-cta"
 import { PostList } from "./components/post-list"
 import { RelatedPosts } from "./components/related-posts"
 import { TopicGuide, type TopicGuideData } from "./components/topic-guide"
 import { TopicNav } from "./components/topic-nav"
 
-/** Who the topic's posts are written for; posts for everyone don't narrow it. */
-function readersOf(posts: readonly Post[]) {
-  const audiences = new Set(posts.map((post) => post.audience))
-  if (audiences.has("employers") && !audiences.has("candidates"))
-    return "employers"
-  if (audiences.has("candidates") && !audiences.has("employers"))
-    return "candidates"
-  return "both"
-}
-
 export function TopicPage({
   topic,
   guide,
+  readers,
   posts,
   others,
   topics,
 }: {
   topic: Topic
   guide?: TopicGuideData
-  posts: readonly Post[]
-  others: readonly Post[]
+  readers: "employers" | "candidates" | "both"
+  posts: readonly PostSummary[]
+  others: readonly PostSummary[]
   topics: readonly { topic: Topic; count: number }[]
 }) {
   const { t } = useTranslation("blog")
-  const lang = useLocale()
 
   return (
     <>
       <PageHeader
         variant="masthead"
-        eyebrow={
-          <Link
-            to={localePath(lang, PAGES.blog.path)}
-            className="hover:underline"
-          >
-            {t("index.eyebrow")}
-          </Link>
-        }
+        eyebrow={<BlogCrumbs />}
         title={t(`topics.${topic}`)}
         description={t(`topicPage.description.${topic}`)}
       >
         <p className="text-sm font-medium text-foreground/75">
-          {t(`topicPage.for.${readersOf(posts)}`)}
+          {t(`topicPage.for.${readers}`)}
         </p>
         <FeedLink />
       </PageHeader>

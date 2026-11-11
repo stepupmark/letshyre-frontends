@@ -16,24 +16,14 @@ import {
   PREVIEW_PAGES,
   REPLACED_BY,
 } from "../app/lib/pages.ts"
-import {
-  feedPath,
-  glossaryPath,
-  indexPagePath,
-  postPath,
-  tagPath,
-  termPath,
-  topicPath,
-  topicsPath,
-} from "../app/lib/blog/paths.ts"
+import { previewsOn } from "../app/lib/blog/list.ts"
+import { feedPath, postPath, topicsPath } from "../app/lib/blog/paths.ts"
+import type { BlogRoute } from "../app/lib/blog/routes.ts"
 import {
   BLOG_DIR,
   emptyTopicRedirects,
   GLOSSARY_DIR,
-  indexPages,
   readiness,
-  tagPages,
-  topicPages,
 } from "../app/lib/readiness.ts"
 import {
   initialScriptsOf,
@@ -114,32 +104,20 @@ const kb = (bytes: number) => `${(bytes / 1024).toFixed(1)} kB`
 const {
   pages: ready,
   posts,
-  terms,
-} = readiness(ROOT, env.VITE_ENV === "staging")
-const postLocales = (slug: string) =>
-  posts.filter((post) => post.slug === slug).map((post) => post.lang)
-const slugs = [...new Set(posts.map((post) => post.slug))]
-const topics = topicPages(posts)
-const topicLocales = (topic: string) =>
-  topics.filter((page) => page.topic === topic).map((page) => page.lang)
-const laterPages = indexPages(posts)
-const tags = tagPages(posts)
-const tagLocales = (tag: string) =>
-  tags.filter((page) => page.tag === tag).map((page) => page.lang)
-const glossaryLocales = [...new Set(terms.map((term) => term.lang))]
-const termLocales = (id: string) =>
-  terms.filter((term) => term.id === id).map((term) => term.lang)
-const newestIn = (
-  lang: Locale,
-  match: (post: (typeof posts)[number]) => boolean
-) => {
-  const post = posts.find((p) => p.lang === lang && match(p))
-  return post?.updatedAt ?? post?.publishedAt ?? today
-}
-const laterPageLocales = (n: number) =>
-  laterPages.filter((p) => p.page === n).map((p) => p.lang)
+  routes: blogRoutes,
+} = readiness(ROOT, previewsOn(env.VITE_ENV))
 const problems: string[] = []
 const policies = new Map<string, string>()
+
+function blogLastmod(route: BlogRoute) {
+  if (route.updated) return route.updated
+  if (route.kind === "term")
+    return (
+      lastCommit([`${GLOSSARY_DIR}/${route.term}/${route.lang}.mdx`]) || today
+    )
+  if (route.kind === "glossary") return lastCommit([GLOSSARY_DIR]) || today
+  return lastmod("blog")(route.lang)
+}
 
 writeFileSync(
   join(CLIENT, "sitemap.xml"),
@@ -151,47 +129,17 @@ writeFileSync(
         locales,
         lastmod: lastmod(id),
       })),
-    ...slugs.map((slug) => ({
-      path: postPath(slug),
-      locales: postLocales(slug),
-      lastmod: (lang: Locale) => {
-        const post = posts.find((p) => p.slug === slug && p.lang === lang)
-        return post?.updatedAt ?? post?.publishedAt ?? today
-      },
-    })),
-    ...[...new Set(topics.map((page) => page.topic))].map((topic) => ({
-      path: topicPath(topic),
-      locales: topicLocales(topic),
-      lastmod: (lang: Locale) => {
-        const post = posts.find((p) => p.topic === topic && p.lang === lang)
-        return post?.updatedAt ?? post?.publishedAt ?? today
-      },
-    })),
-    ...[...new Set(laterPages.map((p) => p.page))].map((n) => ({
-      path: indexPagePath(n),
-      locales: laterPageLocales(n),
-      lastmod: lastmod("blog"),
-    })),
-    ...[...new Set(tags.map((page) => page.tag))].map((tag) => ({
-      path: tagPath(tag),
-      locales: tagLocales(tag),
-      lastmod: (lang: Locale) => newestIn(lang, (p) => p.tags.includes(tag)),
-    })),
-    ...(glossaryLocales.length
-      ? [
-          {
-            path: glossaryPath,
-            locales: glossaryLocales,
-            lastmod: () => lastCommit([GLOSSARY_DIR]) || today,
-          },
-        ]
-      : []),
-    ...[...new Set(terms.map((term) => term.id))].map((id) => ({
-      path: termPath(id),
-      locales: termLocales(id),
-      lastmod: (lang: Locale) =>
-        lastCommit([`${GLOSSARY_DIR}/${id}/${lang}.mdx`]) || today,
-    })),
+    ...[...new Set(blogRoutes.map((route) => route.path))].map((path) => {
+      const byLang = blogRoutes.filter((route) => route.path === path)
+      return {
+        path,
+        locales: byLang[0]?.locales ?? [],
+        lastmod: (lang: Locale) => {
+          const route = byLang.find((r) => r.lang === lang)
+          return route ? blogLastmod(route) : today
+        },
+      }
+    }),
   ])
 )
 writeFileSync(join(CLIENT, "robots.txt"), renderRobots(site, production))
@@ -253,45 +201,10 @@ const routes = [
       jsExempt: JS_BUDGET_EXEMPT.includes(id),
     }))
   ),
-  ...posts.map((post) => ({
-    lang: post.lang,
-    path: postPath(post.slug),
-    locales: postLocales(post.slug),
-    preview: false,
-    jsExempt: false,
-  })),
-  ...topics.map(({ lang, topic }) => ({
+  ...blogRoutes.map(({ lang, path, locales }) => ({
     lang,
-    path: topicPath(topic),
-    locales: topicLocales(topic),
-    preview: false,
-    jsExempt: false,
-  })),
-  ...laterPages.map(({ lang, page }) => ({
-    lang,
-    path: indexPagePath(page),
-    locales: laterPageLocales(page),
-    preview: false,
-    jsExempt: false,
-  })),
-  ...tags.map(({ lang, tag }) => ({
-    lang,
-    path: tagPath(tag),
-    locales: tagLocales(tag),
-    preview: false,
-    jsExempt: false,
-  })),
-  ...glossaryLocales.map((lang) => ({
-    lang,
-    path: glossaryPath,
-    locales: glossaryLocales,
-    preview: false,
-    jsExempt: false,
-  })),
-  ...terms.map((term) => ({
-    lang: term.lang,
-    path: termPath(term.id),
-    locales: termLocales(term.id),
+    path,
+    locales,
     preview: false,
     jsExempt: false,
   })),

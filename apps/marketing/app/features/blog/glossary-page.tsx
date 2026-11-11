@@ -1,12 +1,13 @@
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { ArrowLeftIcon } from "lucide-react"
 import { Link } from "react-router"
 
 import { Container, PageHeader } from "@/components/section"
 import { termPath } from "@/lib/blog/paths"
 import { PAGES } from "@/lib/pages"
 
+import { BackLink } from "./components/back-link"
+import { BlogCrumbs } from "./components/blog-crumbs"
 import { PostCta } from "./components/post-cta"
 
 export function GlossaryPage({
@@ -20,14 +21,7 @@ export function GlossaryPage({
   return (
     <>
       <PageHeader
-        eyebrow={
-          <Link
-            to={localePath(lang, PAGES.blog.path)}
-            className="hover:underline"
-          >
-            {t("index.eyebrow")}
-          </Link>
-        }
+        eyebrow={<BlogCrumbs />}
         title={t("glossary.title")}
         description={t("glossary.description")}
       />
@@ -53,13 +47,7 @@ export function GlossaryPage({
             </div>
           ))}
         </dl>
-        <Link
-          to={localePath(lang, PAGES.blog.path)}
-          className="text-link inline-flex items-center gap-2 self-start text-sm font-medium"
-        >
-          <ArrowLeftIcon aria-hidden className="size-4 rtl:-scale-x-100" />
-          {t("post.allPosts")}
-        </Link>
+        <BackLink to={PAGES.blog.path} label={t("post.allPosts")} />
       </Container>
       <PostCta audience="everyone" />
     </>

@@ -1,6 +1,5 @@
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { ArrowLeftIcon } from "lucide-react"
 import { lazy, Suspense, useEffect } from "react"
 import { Link } from "react-router"
 
@@ -10,8 +9,7 @@ import { Container } from "@/components/section"
 import { useHydrated } from "@/hooks/use-hydrated"
 import { useLightPrint } from "@/hooks/use-light-print"
 import { postPath, tagPath } from "@/lib/blog/paths"
-import type { Post, Tag } from "@/lib/blog/post"
-import { PAGES } from "@/lib/pages"
+import type { Post, PostSummary, Tag } from "@/lib/blog/post"
 import { absUrl } from "@/lib/seo/site"
 
 import { mdxComponents } from "./components/mdx"
@@ -35,6 +33,7 @@ import { TermsContext } from "./lib/terms"
 const ListenButton = lazy(() => import("./components/listen-button"))
 const QuoteShare = lazy(() => import("./components/quote-share"))
 
+type PostLink = Pick<Post, "slug" | "title">
 type Terms = Readonly<Record<string, { term: string; short: string }>>
 
 function PostBody({
@@ -70,9 +69,9 @@ export function PostPage({
   terms,
 }: {
   post: Post
-  newer?: Post
-  older?: Post
-  related: readonly Post[]
+  newer?: PostLink
+  older?: PostLink
+  related: readonly PostSummary[]
   /** The post's tags that have a page. */
   tags: readonly Tag[]
   terms: Terms
@@ -122,30 +121,23 @@ export function PostPage({
           <div className="max-w-prose">
             <PostSources sources={post.sources} />
           </div>
-          {tags.length > 0 && (
-            <div className="flex max-w-prose flex-wrap items-center gap-2 print:hidden">
-              <p className="me-1 text-sm font-medium">{t("post.tags")}</p>
-              {tags.map((tag) => (
-                <Link
-                  key={tag}
-                  to={localePath(lang, tagPath(tag))}
-                  prefetch="intent"
-                  className="rounded-full border px-3 py-1 text-sm transition-colors duration-200 hover:border-brand/40 hover:text-brand-text motion-reduce:transition-none"
-                >
-                  {t(`tags.${tag}`)}
-                </Link>
-              ))}
-            </div>
-          )}
-          <footer className="flex max-w-prose flex-col items-start gap-6 border-t pt-8 sm:flex-row sm:items-center sm:justify-between print:hidden">
+          <footer className="flex max-w-prose flex-col gap-6 border-t pt-8 print:hidden">
+            {tags.length > 0 && (
+              <div className="flex flex-wrap items-center gap-2">
+                <p className="me-1 text-sm font-medium">{t("post.tags")}</p>
+                {tags.map((tag) => (
+                  <Link
+                    key={tag}
+                    to={localePath(lang, tagPath(tag))}
+                    prefetch="intent"
+                    className="rounded-full border px-3 py-1 text-sm transition-colors duration-200 hover:border-brand/40 hover:text-brand-text motion-reduce:transition-none"
+                  >
+                    {t(`tags.${tag}`)}
+                  </Link>
+                ))}
+              </div>
+            )}
             <PostShare url={url} title={post.title} />
-            <Link
-              to={localePath(lang, PAGES.blog.path)}
-              className="text-link inline-flex items-center gap-2 text-sm font-medium"
-            >
-              <ArrowLeftIcon aria-hidden className="size-4 rtl:-scale-x-100" />
-              {t("post.allPosts")}
-            </Link>
           </footer>
           <PostNeighbours older={older} newer={newer} />
         </div>

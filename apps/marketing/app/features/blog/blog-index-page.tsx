@@ -1,17 +1,15 @@
-import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { lazy, Suspense } from "react"
-import { Link } from "react-router"
 
 import { Container, PageHeader } from "@/components/section"
 import { LENGTHS, type Length } from "@/lib/blog/list"
 import type { PostSummary, Topic } from "@/lib/blog/post"
-import { PAGES } from "@/lib/pages"
 
 import { BlogLinks } from "./components/blog-links"
 import { IndexPagination } from "./components/index-pagination"
 import { LengthFilter } from "./components/length-filter"
 import { PendingList } from "./components/pending-list"
+import { BlogCrumbs } from "./components/blog-crumbs"
 import { PostCta } from "./components/post-cta"
 import { PostList } from "./components/post-list"
 import { PostSearch } from "./components/post-search"
@@ -55,18 +53,7 @@ export function BlogIndexPage({
           page === 1 ? (
             t("index.eyebrow")
           ) : (
-            <>
-              <Link
-                to={localePath(lang, PAGES.blog.path)}
-                className="hover:underline"
-              >
-                {t("index.eyebrow")}
-              </Link>
-              <span aria-hidden className="mx-2 text-muted-foreground">
-                /
-              </span>
-              {t("index.page", { page })}
-            </>
+            <BlogCrumbs trail={[{ label: t("index.page", { page }) }]} />
           )
         }
         title={page === 1 ? t("index.title") : t("index.pageTitle", { page })}

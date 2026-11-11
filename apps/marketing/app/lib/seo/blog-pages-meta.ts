@@ -1,19 +1,14 @@
-import { type Locale, localePath } from "@workspace/i18n"
+import { localePath } from "@workspace/i18n"
 import type { MetaArgs, MetaDescriptor } from "react-router"
 
-import type { Tag } from "../blog/list"
 import { glossaryPath, postPath, tagPath, termPath } from "../blog/paths"
-import type { PostSummary } from "../blog/post"
+import type { glossaryData, tagData, termData } from "../page-data.server"
 import { PAGES } from "../pages"
 import { buildMeta, feedLink } from "./meta"
-import { metaContext } from "./page-meta"
+import { loaderDataOf, metaContext } from "./page-meta"
 import { definedTermSchema } from "./blog-schema"
 import { breadcrumbSchema, postListSchema, webPageSchema } from "./schema"
 import { absUrl } from "./site"
-
-type WithLocales<T> = (T & { locales: Locale[] }) | undefined
-
-const dataOf = (args: MetaArgs): unknown => args.matches.at(-1)?.loaderData
 
 const blogCrumb = (t: ReturnType<typeof metaContext>["t"]) => ({
   name: t("blog:meta.crumb"),
@@ -21,7 +16,7 @@ const blogCrumb = (t: ReturnType<typeof metaContext>["t"]) => ({
 })
 
 export function tagMeta(args: MetaArgs): MetaDescriptor[] {
-  const data = dataOf(args) as WithLocales<{ tag: Tag; posts: PostSummary[] }>
+  const data = loaderDataOf<typeof tagData>(args)
   if (!data) return []
   const { lang, t } = metaContext(args)
   const name = t(`blog:tags.${data.tag}`)
@@ -61,9 +56,7 @@ export function tagMeta(args: MetaArgs): MetaDescriptor[] {
 }
 
 export function glossaryMeta(args: MetaArgs): MetaDescriptor[] {
-  const data = dataOf(args) as WithLocales<{
-    terms: { id: string; term: string; short: string }[]
-  }>
+  const data = loaderDataOf<typeof glossaryData>(args)
   if (!data) return []
   const { lang, t } = metaContext(args)
   const name = t("blog:glossary.title")
@@ -95,9 +88,7 @@ export function glossaryMeta(args: MetaArgs): MetaDescriptor[] {
 }
 
 export function termMeta(args: MetaArgs): MetaDescriptor[] {
-  const data = dataOf(args) as WithLocales<{
-    term: { id: string; term: string; short: string }
-  }>
+  const data = loaderDataOf<typeof termData>(args)
   if (!data) return []
   const { lang, t } = metaContext(args)
   const { id, term, short } = data.term

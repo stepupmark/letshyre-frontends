@@ -36,6 +36,11 @@ export function collectMessages(
 }
 
 /** The page's locale and a translator over every catalog its route matches loaded. */
+/** The page's own loader data, typed by the loader that returns it. */
+export const loaderDataOf = <Loader extends (...args: never[]) => unknown>(
+  args: Pick<MetaArgs, "matches">
+) => args.matches.at(-1)?.loaderData as Awaited<ReturnType<Loader>> | undefined
+
 export function metaContext({
   matches,
   params,

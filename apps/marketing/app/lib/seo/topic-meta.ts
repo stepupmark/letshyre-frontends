@@ -1,22 +1,14 @@
-import type { Locale } from "@workspace/i18n"
 import type { MetaArgs, MetaDescriptor } from "react-router"
 
 import { postPath, topicPath } from "../blog/paths"
-import type { Post, Topic } from "../blog/post"
+import type { topicData } from "../page-data.server"
 import { PAGES } from "../pages"
 import { buildMeta, feedLink } from "./meta"
-import { metaContext } from "./page-meta"
+import { loaderDataOf, metaContext } from "./page-meta"
 import { breadcrumbSchema, postListSchema, webPageSchema } from "./schema"
 
 export function topicMeta({ matches, params }: MetaArgs): MetaDescriptor[] {
-  const data = matches.at(-1)?.loaderData as
-    | {
-        topic: Topic
-        posts: Post[]
-        locales: Locale[]
-        guide?: { description: string }
-      }
-    | undefined
+  const data = loaderDataOf<typeof topicData>({ matches })
   if (!data) return []
 
   const { lang, t } = metaContext({ matches, params })

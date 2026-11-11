@@ -1,7 +1,7 @@
 import { useId } from "react"
 
 import { Container } from "@/components/section"
-import type { Post } from "@/lib/blog/post"
+import type { PostSummary } from "@/lib/blog/post"
 
 import { PostGrid } from "./post-list"
 
@@ -10,7 +10,7 @@ export function RelatedPosts({
   posts,
 }: {
   title: string
-  posts: readonly Post[]
+  posts: readonly PostSummary[]
 }) {
   const titleId = useId()
   if (!posts.length) return null

@@ -26,6 +26,7 @@ export default function BlogTopic({ loaderData }: Route.ComponentProps) {
     <TopicPage
       topic={loaderData.topic}
       guide={loaderData.guide}
+      readers={loaderData.readers}
       posts={loaderData.posts}
       others={loaderData.others}
       topics={loaderData.topics}

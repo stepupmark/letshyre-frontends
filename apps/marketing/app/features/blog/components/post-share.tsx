@@ -6,8 +6,6 @@ import { toast } from "sonner"
 import { SocialIcon } from "@/components/social-links"
 import { useCopy } from "@/hooks/use-copy"
 
-const iconLink = buttonVariants({ variant: "outline", size: "icon-lg" })
-
 export function PostShare({ url, title }: { url: string; title: string }) {
   const { t } = useTranslation("blog")
   const { canCopy, copied, copy } = useCopy()
@@ -22,7 +20,7 @@ export function PostShare({ url, title }: { url: string; title: string }) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={t("post.shareOn", { network: "LinkedIn" })}
-        className={iconLink}
+        className={buttonVariants({ variant: "outline", size: "icon-lg" })}
       >
         <SocialIcon network="linkedin" />
       </a>
@@ -31,14 +29,14 @@ export function PostShare({ url, title }: { url: string; title: string }) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={t("post.shareOn", { network: "X" })}
-        className={iconLink}
+        className={buttonVariants({ variant: "outline", size: "icon-lg" })}
       >
         <SocialIcon network="x" />
       </a>
       <a
         href={`mailto:?subject=${text}&body=${link}`}
         aria-label={t("post.shareEmail")}
-        className={iconLink}
+        className={buttonVariants({ variant: "outline", size: "icon-lg" })}
       >
         <MailIcon aria-hidden />
       </a>

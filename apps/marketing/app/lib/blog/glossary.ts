@@ -4,10 +4,7 @@ import { isLocale, type Locale } from "@workspace/i18n"
 import { z } from "zod"
 
 import { TOPICS, type Topic } from "./list.ts"
-import { readMdx } from "./post.ts"
-
-const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
-const FILE = /([^/\\]+)[/\\]([^/\\]+)\.mdx$/
+import { FILE, readMdx, SLUG } from "./post.ts"
 
 const termSchema = z.strictObject({
   term: z.string().min(1),

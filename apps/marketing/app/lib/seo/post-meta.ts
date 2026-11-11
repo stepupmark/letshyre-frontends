@@ -1,24 +1,17 @@
-import type { Locale } from "@workspace/i18n"
 import type { MetaArgs, MetaDescriptor } from "react-router"
 
 import { AUTHORS } from "../blog/authors"
 import { postPath, topicPath } from "../blog/paths"
-import type { Post } from "../blog/post"
+import type { postData } from "../page-data.server"
 import { PAGES } from "../pages"
 import { buildMeta, feedLink } from "./meta"
-import { metaContext } from "./page-meta"
+import { loaderDataOf, metaContext } from "./page-meta"
 import { postFaqSchema } from "./blog-schema"
 import { blogPostingSchema, breadcrumbSchema, webPageSchema } from "./schema"
 import { SITE } from "./site"
 
 export function postMeta({ matches, params }: MetaArgs): MetaDescriptor[] {
-  const data = matches.at(-1)?.loaderData as
-    | {
-        post: Post
-        locales: Locale[]
-        ogImage?: string
-      }
-    | undefined
+  const data = loaderDataOf<typeof postData>({ matches })
   if (!data) return []
 
   const { lang, t } = metaContext({ matches, params })

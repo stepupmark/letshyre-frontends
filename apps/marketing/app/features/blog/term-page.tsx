@@ -1,15 +1,13 @@
-import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
-import { ArrowLeftIcon } from "lucide-react"
-import { Link } from "react-router"
 
 import { Container, PageHeader } from "@/components/section"
 import type { Term } from "@/lib/blog/glossary"
 import { glossaryPath } from "@/lib/blog/paths"
 import type { PostSummary } from "@/lib/blog/post"
-import { PAGES } from "@/lib/pages"
 
 import { plainComponents } from "./components/mdx/plain"
+import { BackLink } from "./components/back-link"
+import { BlogCrumbs } from "./components/blog-crumbs"
 import { PostCta } from "./components/post-cta"
 import { PostGrid } from "./components/post-list"
 import { useMdxBody } from "./hooks/use-post-body"
@@ -34,23 +32,9 @@ export function TermPage({
     <>
       <PageHeader
         eyebrow={
-          <>
-            <Link
-              to={localePath(lang, PAGES.blog.path)}
-              className="hover:underline"
-            >
-              {t("index.eyebrow")}
-            </Link>
-            <span aria-hidden className="mx-2 text-muted-foreground">
-              /
-            </span>
-            <Link
-              to={localePath(lang, glossaryPath)}
-              className="hover:underline"
-            >
-              {t("glossary.title")}
-            </Link>
-          </>
+          <BlogCrumbs
+            trail={[{ label: t("glossary.title"), to: glossaryPath }]}
+          />
         }
         title={term.term}
         description={term.short}
@@ -77,13 +61,7 @@ export function TermPage({
             <PostGrid posts={posts} />
           </section>
         )}
-        <Link
-          to={localePath(lang, glossaryPath)}
-          className="text-link inline-flex items-center gap-2 self-start text-sm font-medium"
-        >
-          <ArrowLeftIcon aria-hidden className="size-4 rtl:-scale-x-100" />
-          {t("glossary.all")}
-        </Link>
+        <BackLink to={glossaryPath} label={t("glossary.all")} />
       </Container>
       <PostCta audience="everyone" />
     </>

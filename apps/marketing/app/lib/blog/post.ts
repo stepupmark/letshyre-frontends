@@ -15,7 +15,7 @@ export type { Tag, Topic } from "./list.ts"
 
 export const AUDIENCES = ["employers", "candidates", "everyone"] as const
 
-const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
+export const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 
 const frontmatterSchema = z
   .strictObject({
@@ -91,7 +91,7 @@ export type PostSummary = Pick<
   | "preview"
 >
 
-const FILE = /([^/\\]+)[/\\]([^/\\]+)\.mdx$/
+export const FILE = /([^/\\]+)[/\\]([^/\\]+)\.mdx$/
 // Segments under /blogs that belong to the blog's own pages, now or later.
 const RESERVED_SLUGS = [
   "topics",

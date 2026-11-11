@@ -10,26 +10,48 @@ import {
   type Tag,
   tagsOf,
   topicCounts,
+  withBlogIndex,
 } from "./blog/list"
-import { ogImageOf } from "./blog/posts.server"
+import {
+  glossaryPath,
+  indexPagePath,
+  postPath,
+  tagPath,
+  termPath,
+  topicPath,
+} from "./blog/paths"
+import type { Post } from "./blog/post"
+import {
+  blogLocalesOf,
+  guideFor,
+  ogImageOf,
+  posts as allPosts,
+  postsIn,
+  termsIn,
+} from "./blog/posts.server"
 import { relatedPosts } from "./blog/related"
 import { summarize } from "./blog/search"
-import {
-  glossaryLocales,
-  guideFor,
-  indexPageLocales,
-  loadMessages,
-  postLocales,
-  postsIn,
-  readyLocales,
-  tagLocales,
-  termLocales,
-  termsIn,
-  topicLocales,
-} from "./messages.server"
+import { catalogReadiness, loadMessages } from "./messages.server"
 import { LAYOUT_NAMESPACES, PAGES, type PageId } from "./pages"
 
 const notFound = () => data(null, { status: 404 })
+
+const readiness = withBlogIndex(catalogReadiness, allPosts)
+
+/** Locales the page is published in, for hreflang and the language switcher. */
+const readyLocales = (id: PageId): Locale[] => readiness.get(id) ?? []
+
+/** Who a topic's posts are written for; posts for everyone don't narrow it. */
+function readersOf(
+  posts: readonly Post[]
+): "employers" | "candidates" | "both" {
+  const audiences = new Set(posts.map((post) => post.audience))
+  if (audiences.has("employers") && !audiences.has("candidates"))
+    return "employers"
+  if (audiences.has("candidates") && !audiences.has("employers"))
+    return "candidates"
+  return "both"
+}
 
 /** Runs at build time only. */
 export function layoutData(lang: string | undefined) {
@@ -55,7 +77,7 @@ export function blogData(lang: string | undefined, pageParam?: string) {
     throw notFound()
   return {
     messages,
-    locales: page === 1 ? locales : indexPageLocales(page),
+    locales: page === 1 ? locales : blogLocalesOf(indexPagePath(page)),
     posts: postsOnPage(posts, page).map(summarize),
     page,
     pages,
@@ -80,7 +102,8 @@ export function topicData(lang: string | undefined, topic: string | undefined) {
   const live = new Map(all.map((post) => [post.slug, post]))
   return {
     messages,
-    locales: topicLocales(current),
+    locales: blogLocalesOf(topicPath(current)),
+    readers: readersOf(posts),
     topic: current,
     guide: guide && {
       title: guide.title,
@@ -91,10 +114,13 @@ export function topicData(lang: string | undefined, topic: string | undefined) {
         return post ? [summarize(post)] : []
       }),
     },
-    posts,
+    posts: posts.map(summarize),
     others:
       posts.length < THIN_TOPIC
-        ? all.filter((post) => post.topic !== current).slice(0, 3)
+        ? all
+            .filter((post) => post.topic !== current)
+            .slice(0, 3)
+            .map(summarize)
         : [],
     topics: topicCounts(all),
   }
@@ -109,17 +135,18 @@ export function postData(lang: string | undefined, slug: string | undefined) {
   const at = inTopic.indexOf(post)
   const newer = inTopic[at - 1]
   const older = inTopic[at + 1]
+  const link = (p: Post | undefined) => p && { slug: p.slug, title: p.title }
   const shown = new Set([newer?.slug, older?.slug])
   return {
     messages: loadMessages(lang, PAGES.blog.namespaces),
-    locales: postLocales(post.slug),
+    locales: blogLocalesOf(postPath(post.slug)),
     post,
-    newer,
-    older,
+    newer: link(newer),
+    older: link(older),
     related: relatedPosts(
       post,
       posts.filter((p) => !shown.has(p.slug))
-    ),
+    ).map(summarize),
     ogImage: ogImageOf(post.slug),
     tags: tagsOf(posts).filter((tag) => post.tags.includes(tag)),
     terms: Object.fromEntries(
@@ -137,7 +164,7 @@ export function tagData(lang: string | undefined, tag: string | undefined) {
   const posts = all.filter((post) => post.tags.includes(tag as Tag))
   return {
     messages,
-    locales: tagLocales(tag as Tag),
+    locales: blogLocalesOf(tagPath(tag as Tag)),
     tag: tag as Tag,
     posts: posts.map(summarize),
   }
@@ -149,7 +176,7 @@ export function glossaryData(lang: string | undefined) {
   if (!terms.length) throw notFound()
   return {
     messages,
-    locales: glossaryLocales(),
+    locales: blogLocalesOf(glossaryPath),
     terms: terms.map(({ id, term, short }) => ({ id, term, short })),
   }
 }
@@ -160,7 +187,7 @@ export function termData(lang: string | undefined, id: string | undefined) {
   if (!term) throw notFound()
   return {
     messages,
-    locales: termLocales(term.id),
+    locales: blogLocalesOf(termPath(term.id)),
     term,
     posts: postsIn(lang as Locale)
       .filter((post) => post.terms.includes(term.id))

@@ -3,25 +3,11 @@ import { LOCALES, type Locale } from "@workspace/i18n"
 import { computeReadiness } from "@workspace/i18n/node"
 
 import type { Term } from "./blog/glossary.ts"
-import {
-  glossaryPath,
-  indexPagePath,
-  postPath,
-  searchIndexPath,
-  tagPath,
-  termPath,
-  topicPath,
-} from "./blog/paths.ts"
-import {
-  pageCount,
-  publishedPosts,
-  tagsOf,
-  TOPICS,
-  topicsOf,
-  withBlogIndex,
-} from "./blog/list.ts"
+import { publishedPosts, TOPICS, withBlogIndex } from "./blog/list.ts"
+import { searchIndexPath, topicPath } from "./blog/paths.ts"
 import type { Post } from "./blog/post.ts"
 import { readPosts, readTerms } from "./blog/read-posts.ts"
+import { type BlogRoute, blogRoutes } from "./blog/routes.ts"
 import { PAGES, type PageId, pageNamespaces, withoutReplaced } from "./pages.ts"
 
 const LOCALES_DIR = "app/locales"
@@ -40,7 +26,7 @@ export function checkTerms(posts: readonly Post[], terms: readonly Term[]) {
         )
 }
 
-/** Build-time only: the locales each page ships in, and the posts that ship. `root` is the app's. */
+/** Build-time only: the locales each page ships in, the posts and entries that ship, and the blog's routes. */
 export function readiness(
   root: string,
   previews = false
@@ -48,8 +34,9 @@ export function readiness(
   pages: Map<PageId, Locale[]>
   posts: Post[]
   terms: Term[]
+  routes: BlogRoute[]
 } {
-  const pages = withoutReplaced(
+  const catalogs = withoutReplaced(
     computeReadiness({
       localesDir: join(root, LOCALES_DIR),
       pages: Object.fromEntries(
@@ -59,46 +46,16 @@ export function readiness(
   )
   const posts = publishedPosts(
     readPosts(join(root, BLOG_DIR), previews),
-    pages.get("blog") ?? []
+    catalogs.get("blog") ?? []
   )
-  const ready = withBlogIndex(pages, posts)
-  const blog = new Set(ready.get("blog"))
+  const pages = withBlogIndex(catalogs, posts)
+  const blog = new Set(pages.get("blog"))
   const terms = readTerms(join(root, GLOSSARY_DIR)).filter((term) =>
     blog.has(term.lang)
   )
   checkTerms(posts, terms)
-  return { pages: ready, posts, terms }
+  return { pages, posts, terms, routes: blogRoutes(posts, terms) }
 }
-
-/** Each locale's tags that have a post. */
-export const tagPages = (posts: readonly Post[]) =>
-  [...new Set(posts.map((post) => post.lang))].flatMap((lang) =>
-    tagsOf(posts.filter((post) => post.lang === lang)).map((tag) => ({
-      lang,
-      tag,
-    }))
-  )
-
-/** Each locale's blog topics that have a post, as `/<lang>` and topic. */
-export const topicPages = (posts: readonly Post[]) =>
-  [...new Set(posts.map((post) => post.lang))].flatMap((lang) =>
-    topicsOf(posts.filter((post) => post.lang === lang)).map((topic) => ({
-      lang,
-      topic,
-    }))
-  )
-
-/** Each locale's blog index pages after the first, as `/<lang>` and page number. */
-export const indexPages = (posts: readonly Post[]) =>
-  [...new Set(posts.map((post) => post.lang))].flatMap((lang) =>
-    Array.from(
-      {
-        length:
-          pageCount(posts.filter((post) => post.lang === lang).length) - 1,
-      },
-      (_, i) => ({ lang, page: i + 2 })
-    )
-  )
 
 /**
  * Topic URLs with no page and no English page to fall back to, each sent to the nearest blog index.
@@ -110,7 +67,9 @@ export function emptyTopicRedirects(
   const blogLangs = new Set(posts.map((post) => post.lang))
   if (!blogLangs.has("en")) return []
   const shipped = new Set(
-    topicPages(posts).map(({ lang, topic }) => `/${lang}${topicPath(topic)}`)
+    blogRoutes(posts, [])
+      .filter((route) => route.kind === "topic")
+      .map((route) => `/${route.lang}${route.path}`)
   )
   return LOCALES.flatMap((lang) =>
     TOPICS.filter(
@@ -126,24 +85,12 @@ export function emptyTopicRedirects(
 
 /** Every `/<lang><path>` whose catalogs are complete, and every blog page. */
 export function readyPaths(root: string, previews = false): string[] {
-  const { pages, posts, terms } = readiness(root, previews)
-  const blogLangs = pages.get("blog") ?? []
+  const { pages, routes } = readiness(root, previews)
   return [
     ...[...pages].flatMap(([id, locales]) =>
       locales.map((lang) => `/${lang}${PAGES[id].path}`)
     ),
-    ...posts.map((post) => `/${post.lang}${postPath(post.slug)}`),
-    ...topicPages(posts).map(
-      ({ lang, topic }) => `/${lang}${topicPath(topic)}`
-    ),
-    ...indexPages(posts).map(
-      ({ lang, page }) => `/${lang}${indexPagePath(page)}`
-    ),
-    ...tagPages(posts).map(({ lang, tag }) => `/${lang}${tagPath(tag)}`),
-    ...blogLangs.map((lang) => `/${lang}${searchIndexPath}`),
-    ...[...new Set(terms.map((term) => term.lang))].map(
-      (lang) => `/${lang}${glossaryPath}`
-    ),
-    ...terms.map((term) => `/${term.lang}${termPath(term.id)}`),
+    ...routes.map((route) => `/${route.lang}${route.path}`),
+    ...(pages.get("blog") ?? []).map((lang) => `/${lang}${searchIndexPath}`),
   ]
 }

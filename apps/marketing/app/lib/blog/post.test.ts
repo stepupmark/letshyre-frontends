@@ -15,6 +15,7 @@ import {
 } from "./list"
 import { parsePost } from "./post"
 import { relatedPosts } from "./related"
+import { blogRoutes } from "./routes"
 import { searchPosts } from "./search"
 
 const source = (frontmatter: string, body = "Hiring well takes a plan.") =>
@@ -203,6 +204,32 @@ describe("readiness", () => {
     )
     expect(ready.get("blog")).toEqual(["en", "de"])
     expect(ready.get("about")).toEqual(["en", "fr"])
+  })
+
+  it("routes a glossary only where posts ship, and a tag only once it has three posts", () => {
+    const term = (lang: "en" | "de") => ({
+      id: "ctc",
+      lang,
+      term: "CTC",
+      short: "Cost to company, the full yearly package.",
+      aliases: [],
+    })
+    const tagged = ["a", "b", "c"].map((slug) => ({
+      ...post(slug, "en", "2026-11-01"),
+      tags: ["ai" as const],
+    }))
+    const routes = blogRoutes(
+      [...tagged, post("d", "de", "2026-11-01")],
+      [term("en"), term("de"), { ...term("en"), lang: "fr" as const }]
+    )
+    const paths = routes.map((r) => `/${r.lang}${r.path}`)
+    expect(paths).toContain("/en/blogs/tags/ai")
+    expect(paths).not.toContain("/de/blogs/tags/ai")
+    expect(paths).not.toContain("/fr/blogs/glossary")
+    expect(routes.find((r) => r.path === "/blogs/glossary")?.locales).toEqual([
+      "en",
+      "de",
+    ])
   })
 
   it("sends a topic with no page to the nearest blog index", () => {
