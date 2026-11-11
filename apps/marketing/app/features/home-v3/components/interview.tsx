@@ -69,7 +69,7 @@ function Transcript() {
           <p className="truncate text-sm font-semibold">
             {t("interview.session")}
           </p>
-          <p className="text-xs text-muted-foreground tabular-nums">
+          <p className="text-xs text-muted-foreground">
             {t("interview.progress")} · {t("interview.duration")}
           </p>
         </div>

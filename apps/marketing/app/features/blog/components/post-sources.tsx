@@ -41,14 +41,11 @@ export function PostSources({ sources }: { sources: readonly Source[] }) {
       </h2>
       <ol className="flex list-decimal flex-col gap-2 ps-6 text-sm text-muted-foreground">
         {sources.map((source, i) => (
-          <li
-            key={source.url}
-            id={`source-${i + 1}`}
-            className="ps-1 tabular-nums"
-          >
+          <li key={source.url} id={`source-${i + 1}`} className="ps-1">
             <a
               href={source.url}
-              rel="noopener"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-link wrap-break-word"
             >
               {source.title ?? hostOf(source.url)}

@@ -25,7 +25,12 @@ export function Stat({
       <p className="text-pretty">{label}</p>
       <figcaption className="flex flex-col gap-0.5 text-sm text-muted-foreground">
         <span className="text-xs">{t("mdx.source")}</span>
-        <a href={source} rel="noopener" className="text-link self-start">
+        <a
+          href={source}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-link self-start"
+        >
           {cite}
         </a>
       </figcaption>

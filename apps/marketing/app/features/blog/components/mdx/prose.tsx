@@ -50,7 +50,13 @@ export const prose = {
       )
     return (
       <>
-        <a href={href} rel="noopener" className={classes} {...props}>
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes}
+          {...props}
+        >
           {children}
         </a>
         <SourceMark url={href} />

@@ -8,6 +8,13 @@
   --font-sans: "Schibsted Grotesk Variable", sans-serif;
 }
 
+/* browsers give list markers tabular figures, and Schibsted's widen the full stop in "1." */
+@layer base {
+  ::marker {
+    font-variant-numeric: normal;
+  }
+}
+
 /* only for floating controls; cards use borders */
 @theme {
   --shadow-raised: 0 10px 30px -12px var(--raised-tint);

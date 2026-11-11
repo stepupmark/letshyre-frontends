@@ -21,7 +21,13 @@ export const plainComponents: MDXComponents = {
         {children}
       </Link>
     ) : (
-      <a href={href} rel="noopener" className="text-link" {...props}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-link"
+        {...props}
+      >
         {children}
       </a>
     ),

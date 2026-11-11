@@ -72,7 +72,11 @@ export function LegalToc({
               onNavigate={onNavigate}
               className={cn("py-1.5", within && "text-foreground")}
             >
-              {number && <span className="tabular-nums">{number}. </span>}
+              {number && (
+                <span>
+                  <span className="tabular-nums">{number}</span>.{" "}
+                </span>
+              )}
               {rest}
             </TocLink>
             {entry.children.length > 0 && (

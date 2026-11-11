@@ -57,7 +57,7 @@ export function EvidenceCard() {
         <div className="mt-3 border-t pt-3">
           <p className="flex justify-between text-xs text-muted-foreground">
             {t("evidence.card.question")}
-            <span className="tabular-nums">{t("evidence.card.duration")}</span>
+            <span>{t("evidence.card.duration")}</span>
           </p>
           <span className="mt-2 flex gap-1">
             {Array.from({ length: QUESTIONS }, (_, index) => (

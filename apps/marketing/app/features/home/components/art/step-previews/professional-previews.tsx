@@ -101,7 +101,7 @@ export function InterviewPreview() {
         <span className="truncate text-muted-foreground">
           {t("how.preview.professionals.interview.role")}
         </span>
-        <span className="ms-auto inline-flex items-center gap-1.5 text-muted-foreground tabular-nums">
+        <span className="ms-auto inline-flex items-center gap-1.5 text-muted-foreground">
           <span className="size-1.5 rounded-full bg-destructive" />
           {t("how.preview.professionals.interview.duration")}
         </span>

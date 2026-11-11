@@ -30,11 +30,7 @@ export function InterviewScene() {
         strokeWidth={2.5}
         className="text-brand-text"
       />
-      <Label
-        x={186}
-        y={50.5}
-        className="fill-brand-text font-semibold tabular-nums"
-      >
+      <Label x={186} y={50.5} className="fill-brand-text font-semibold">
         {t("scenes.timer")}
       </Label>
 

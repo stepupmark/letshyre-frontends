@@ -29,7 +29,7 @@ export function InterviewLens({
           />
         ))}
         <span className="ms-1.5 truncate">{t("hero.scene.interview")}</span>
-        <span className="ms-auto inline-flex items-center gap-1.5 font-medium text-muted-foreground tabular-nums">
+        <span className="ms-auto inline-flex items-center gap-1.5 font-medium text-muted-foreground">
           <span className="size-1.5 rounded-full bg-destructive" />
           {t("hero.scene.duration")}
         </span>

@@ -59,7 +59,7 @@ export function InterviewScene() {
             <span className="font-medium text-brand-text">
               {t("professionals.scene.question")}
             </span>
-            <span className="inline-flex items-center gap-1.5 text-muted-foreground tabular-nums">
+            <span className="inline-flex items-center gap-1.5 text-muted-foreground">
               <span className="size-1.5 rounded-full bg-destructive" />
               {t("professionals.scene.time")}
             </span>
