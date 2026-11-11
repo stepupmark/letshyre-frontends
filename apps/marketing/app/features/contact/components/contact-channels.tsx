@@ -33,7 +33,7 @@ function CopyEmail() {
         size="icon-sm"
         aria-label={t("channels.email.copy")}
         onClick={() => {
-          copy(SITE.email)
+          void copy(SITE.email)
         }}
       >
         {copied ? (

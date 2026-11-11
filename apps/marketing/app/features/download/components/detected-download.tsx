@@ -48,7 +48,7 @@ function ElsewhereNote() {
           size="lg"
           className="h-10 px-4"
           onClick={() => {
-            copy(window.location.href)
+            void copy(window.location.href)
           }}
         >
           {copied ? (

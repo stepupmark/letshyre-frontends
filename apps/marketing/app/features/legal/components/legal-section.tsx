@@ -22,7 +22,7 @@ function CopyLink({ id, title }: { id: string; title: string }) {
         aria-label={t("legal.copyLink", { title })}
         data-copied={copied || undefined}
         onClick={() => {
-          copy(`${location.origin}${location.pathname}#${id}`)
+          void copy(`${location.origin}${location.pathname}#${id}`)
         }}
         className="mt-0.5 shrink-0 text-muted-foreground opacity-0 group-hover/heading:opacity-100 focus-visible:opacity-100 data-copied:opacity-100 print:hidden pointer-coarse:opacity-100"
       >
