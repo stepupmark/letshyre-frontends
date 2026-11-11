@@ -58,9 +58,7 @@ export function ToolResult({ label, value }: { label: string; value: string }) {
   return (
     <span className="flex flex-col gap-1">
       <span className="text-sm text-muted-foreground">{label}</span>
-      <span className="text-xl font-semibold text-foreground tabular-nums">
-        {value}
-      </span>
+      <span className="text-xl font-semibold text-foreground">{value}</span>
     </span>
   )
 }

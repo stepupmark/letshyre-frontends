@@ -138,6 +138,16 @@
       "download": "Scarica come testo",
       "reset": "Togli le spunte"
     },
+    "ctcTakeHome": {
+      "title": "Quanto ti paga davvero un CTC",
+      "ctc": "CTC annuo (₹)",
+      "variable": "Parte variabile del CTC (%)",
+      "basic": "Stipendio base, in % del fisso",
+      "monthly": "Netto ogni mese",
+      "variableAfterTax": "Variabile dopo le tasse, se pagata per intero",
+      "tax": "Imposta sul reddito dell'anno",
+      "note": "Una stima con gli scaglioni 2025-26 del nuovo regime fiscale indiano, con PF al 12% dello stipendio base, gratuity inclusa nel CTC e 200 ₹ al mese di professional tax. Esclude la maggiorazione oltre i 50 lakh, e la ripartizione dello stipendio del tuo datore di lavoro decide le cifre reali."
+    },
     "hireCost": {
       "title": "Quanto ti costa la posizione aperta",
       "salary": "Stipendio annuo del ruolo (₹)",

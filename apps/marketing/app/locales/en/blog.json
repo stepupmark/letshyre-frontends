@@ -138,6 +138,16 @@
       "download": "Download as text",
       "reset": "Clear ticks"
     },
+    "ctcTakeHome": {
+      "title": "What a CTC pays you",
+      "ctc": "CTC per year (₹)",
+      "variable": "Variable pay in the CTC (%)",
+      "basic": "Basic, as % of fixed pay",
+      "monthly": "In hand each month",
+      "variableAfterTax": "Variable pay after tax, if paid in full",
+      "tax": "Income tax for the year",
+      "note": "An estimate under the new tax regime's 2025-26 slabs, with PF at 12% of basic, gratuity inside the CTC and ₹200 a month of professional tax. It leaves out surcharge above ₹50 lakh, and your employer's salary breakup decides the real figures."
+    },
     "hireCost": {
       "title": "What your open role costs",
       "salary": "Yearly salary for the role (₹)",

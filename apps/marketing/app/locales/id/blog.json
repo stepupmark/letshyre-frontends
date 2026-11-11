@@ -138,6 +138,16 @@
       "download": "Unduh sebagai teks",
       "reset": "Hapus centang"
     },
+    "ctcTakeHome": {
+      "title": "Yang benar-benar Anda terima dari CTC",
+      "ctc": "CTC per tahun (₹)",
+      "variable": "Gaji variabel dalam CTC (%)",
+      "basic": "Gaji pokok, % dari gaji tetap",
+      "monthly": "Diterima setiap bulan",
+      "variableAfterTax": "Gaji variabel setelah pajak, jika dibayar penuh",
+      "tax": "Pajak penghasilan setahun",
+      "note": "Perkiraan berdasarkan lapisan rezim pajak baru India 2025-26, dengan PF 12% dari gaji pokok, gratuity di dalam CTC, dan pajak profesi ₹200 per bulan. Tidak termasuk tambahan pajak di atas ₹50 lakh, dan rincian gaji dari pemberi kerja Anda yang menentukan angka sebenarnya."
+    },
     "hireCost": {
       "title": "Biaya posisi yang masih kosong",
       "salary": "Gaji tahunan untuk posisi ini (₹)",

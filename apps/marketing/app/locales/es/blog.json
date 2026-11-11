@@ -138,6 +138,16 @@
       "download": "Descargar como texto",
       "reset": "Desmarcar todo"
     },
+    "ctcTakeHome": {
+      "title": "Lo que te paga un CTC",
+      "ctc": "CTC anual (₹)",
+      "variable": "Variable dentro del CTC (%)",
+      "basic": "Salario base, en % del fijo",
+      "monthly": "Neto cada mes",
+      "variableAfterTax": "Variable después de impuestos, si se paga entero",
+      "tax": "Impuesto sobre la renta del año",
+      "note": "Estimación con los tramos 2025-26 del nuevo régimen fiscal indio, con un PF del 12 % del salario base, la gratuity incluida en el CTC y 200 ₹ al mes de professional tax. No incluye el recargo por encima de 50 lakhs, y el desglose salarial de tu empresa decide las cifras reales."
+    },
     "hireCost": {
       "title": "Lo que te cuesta tu vacante",
       "salary": "Salario anual del puesto (₹)",

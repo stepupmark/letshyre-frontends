@@ -21,7 +21,7 @@ export const MDX_COMPONENTS = [
 
 export const CALLOUT_TONES = ["note", "tip", "warning"] as const
 export const FEATURE_AUDIENCES = ["employers", "candidates"] as const
-export const TOOLS = ["hire-cost", "notice-buyout"] as const
+export const TOOLS = ["ctc-take-home", "hire-cost", "notice-buyout"] as const
 
 type Component = (typeof MDX_COMPONENTS)[number]
 

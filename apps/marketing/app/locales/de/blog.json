@@ -138,6 +138,16 @@
       "download": "Als Text herunterladen",
       "reset": "Häkchen entfernen"
     },
+    "ctcTakeHome": {
+      "title": "Was ein CTC wirklich auszahlt",
+      "ctc": "CTC pro Jahr (₹)",
+      "variable": "Variabler Anteil am CTC (%)",
+      "basic": "Grundgehalt, in % des Fixgehalts",
+      "monthly": "Netto pro Monat",
+      "variableAfterTax": "Variable nach Steuern, bei voller Auszahlung",
+      "tax": "Einkommensteuer für das Jahr",
+      "note": "Eine Schätzung nach den Stufen des neuen indischen Steuersystems für 2025-26, mit PF von 12 % des Grundgehalts, Gratuity innerhalb des CTC und 200 ₹ Professional Tax pro Monat. Der Zuschlag über 50 Lakh ist nicht enthalten, und die Gehaltsaufstellung deines Arbeitgebers bestimmt die echten Beträge."
+    },
     "hireCost": {
       "title": "Was dich deine offene Stelle kostet",
       "salary": "Jahresgehalt für die Stelle (₹)",

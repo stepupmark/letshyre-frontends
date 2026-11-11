@@ -138,6 +138,16 @@
       "download": "Downloaden als tekst",
       "reset": "Vinkjes wissen"
     },
+    "ctcTakeHome": {
+      "title": "Wat een CTC je oplevert",
+      "ctc": "CTC per jaar (₹)",
+      "variable": "Variabel deel van de CTC (%)",
+      "basic": "Basissalaris, als % van het vaste loon",
+      "monthly": "Netto per maand",
+      "variableAfterTax": "Variabel na belasting, als het volledig wordt uitbetaald",
+      "tax": "Inkomstenbelasting voor het jaar",
+      "note": "Een schatting volgens de schijven van het nieuwe Indiase belastingstelsel voor 2025-26, met PF van 12% van het basissalaris, gratuity binnen de CTC en ₹200 per maand professional tax. De toeslag boven ₹50 lakh telt niet mee, en de salarisopbouw van je werkgever bepaalt de echte bedragen."
+    },
     "hireCost": {
       "title": "Wat je openstaande vacature kost",
       "salary": "Jaarsalaris voor de functie (₹)",
