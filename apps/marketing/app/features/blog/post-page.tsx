@@ -91,7 +91,19 @@ export function PostPage({
     <div className="relative">
       <ReadProgress />
       <BackToTop label={t("post.backToTop")} />
-      <PostHeader post={post} />
+      <PostHeader
+        post={post}
+        actions={
+          <>
+            {hydrated && (
+              <Suspense>
+                <ListenButton key={post.slug} lang={post.lang} />
+              </Suspense>
+            )}
+            <SaveButton slug={post.slug} />
+          </>
+        }
+      />
       <Container className="grid gap-8 py-10 sm:py-14 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-14">
         {post.headings.length > 1 && (
           <div className="print:hidden">
@@ -99,14 +111,6 @@ export function PostPage({
           </div>
         )}
         <div className="flex min-w-0 flex-col gap-12 lg:col-start-2">
-          <div className="flex min-h-8 flex-wrap items-center gap-2 print:hidden">
-            {hydrated && (
-              <Suspense>
-                <ListenButton key={post.slug} lang={post.lang} />
-              </Suspense>
-            )}
-            <SaveButton slug={post.slug} />
-          </div>
           <article
             id={POST_BODY_ID}
             className="flex flex-col gap-5 text-base text-foreground/85 *:max-w-prose *:data-wide:max-w-none lg:text-lg/8 print:text-foreground"
