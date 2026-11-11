@@ -110,7 +110,9 @@ topic: ${topic}
 ${tags.length ? `tags: [${tags.join(", ")}]\n` : ""}draft: true
 ---
 
-{/* Open with the answer in two or three sentences: who this is for and what they'll take away. */}
+{/* The moment: who, when and what went wrong. Invented? Say so ("say you're hiring…"). */}
+
+{/* The answer, by the second paragraph: what the reader will take away. */}
 
 ## The first point
 
@@ -118,7 +120,11 @@ ${tags.length ? `tags: [${tags.join(", ")}]\n` : ""}draft: true
 
 ## The second point
 
+{/* Where the obvious answer stops working. Use a component only when the text needs it. */}
+
 ## What to do next
+
+{/* The reader's next step, in the opening's terms. Not a summary or a pitch. */}
 `
 )
 
