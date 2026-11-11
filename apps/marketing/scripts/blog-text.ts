@@ -46,7 +46,7 @@ const sentencesOf = (text: string) =>
   text
     .replace(/\s+/g, " ")
     .trim()
-    .split(/(?<=[.!?])\s+/)
+    .split(/(?<=[.!?]["”’)]?)\s+/)
     .filter(Boolean)
 
 const bodyLines = (source: string) =>
