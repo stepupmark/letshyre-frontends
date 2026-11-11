@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
 import { SocialIcon } from "@/components/social-links"
+import { useCopy } from "@/hooks/use-copy"
 
 import { POST_BODY_ID } from "../lib/post-body"
 
@@ -65,6 +66,7 @@ export default function QuoteShare({
 }) {
   const { t } = useTranslation("blog")
   const [selected, setSelected] = useState<Selected>()
+  const { copy } = useCopy()
 
   useEffect(() => {
     let frame = 0
@@ -107,9 +109,9 @@ export default function QuoteShare({
         variant="ghost"
         size="sm"
         onClick={() => {
-          void navigator.clipboard
-            .writeText(`${quote}\n\n${title}\n${link}`)
-            .then(() => toast.success(t("post.quoteCopied")))
+          void copy(`${quote}\n\n${title}\n${link}`).then((done) => {
+            if (done) toast.success(t("post.quoteCopied"))
+          })
         }}
       >
         <CopyIcon aria-hidden />
