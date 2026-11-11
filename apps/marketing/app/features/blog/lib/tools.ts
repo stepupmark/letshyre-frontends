@@ -37,7 +37,10 @@ export function noticeBuyout({
 }) {
   const free = Date.parse(`${resignedOn}T00:00:00Z`) + noticeDays * DAY
   const join = joinOn ? Date.parse(`${joinOn}T00:00:00Z`) : free
-  const unserved = Math.max(0, Math.round((free - join) / DAY))
+  const unserved = Math.min(
+    noticeDays,
+    Math.max(0, Math.round((free - join) / DAY))
+  )
   return {
     freeFrom: new Date(free).toISOString().slice(0, 10),
     unserved,

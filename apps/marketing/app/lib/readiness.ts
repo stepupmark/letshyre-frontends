@@ -62,12 +62,13 @@ export function readiness(
     readPosts(join(root, BLOG_DIR), previews),
     pages.get("blog") ?? []
   )
-  const blog = new Set(pages.get("blog"))
+  const ready = withBlogIndex(pages, posts)
+  const blog = new Set(ready.get("blog"))
   const terms = readTerms(join(root, GLOSSARY_DIR)).filter((term) =>
     blog.has(term.lang)
   )
   checkTerms(posts, terms)
-  return { pages: withBlogIndex(pages, posts), posts, terms }
+  return { pages: ready, posts, terms }
 }
 
 /** Each locale's tags that have a post. */

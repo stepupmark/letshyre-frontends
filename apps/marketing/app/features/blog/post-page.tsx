@@ -100,10 +100,10 @@ export function PostPage({
           </div>
         )}
         <div className="flex min-w-0 flex-col gap-12 lg:col-start-2">
-          <div className="flex flex-wrap items-center gap-2 print:hidden">
+          <div className="flex min-h-8 flex-wrap items-center gap-2 print:hidden">
             {hydrated && (
               <Suspense>
-                <ListenButton lang={post.lang} />
+                <ListenButton key={post.slug} lang={post.lang} />
               </Suspense>
             )}
             <SaveButton slug={post.slug} />

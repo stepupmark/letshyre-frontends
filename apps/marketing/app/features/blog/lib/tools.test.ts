@@ -15,4 +15,5 @@ it("counts the notice in calendar days across a year end, and prices only the da
     buyout: 300_000,
   })
   expect(noticeBuyout({ ...base, joinOn: "2027-02-01" }).unserved).toBe(0)
+  expect(noticeBuyout({ ...base, joinOn: "2026-10-01" }).unserved).toBe(90)
 })

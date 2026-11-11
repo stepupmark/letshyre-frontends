@@ -5,7 +5,8 @@ import { numberOf, noticeBuyout } from "../../../lib/tools"
 import { ToolField, ToolFrame, ToolResult } from "./tool-frame"
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
-const today = () => new Date().toISOString().slice(0, 10)
+// the reader's own calendar day; en-CA formats it as YYYY-MM-DD
+const today = () => new Date().toLocaleDateString("en-CA")
 
 export default function NoticeBuyout() {
   const { t } = useTranslation("blog")

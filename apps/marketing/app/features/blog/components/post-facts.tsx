@@ -16,7 +16,9 @@ export function PostFacts({
 }) {
   const { t } = useTranslation("blog")
   const format = useFormat()
-  const date = (iso: string) => format.date(iso, { dateStyle: "long" })
+  // publish dates are calendar days, so read them in UTC or the Americas see the day before
+  const date = (iso: string, dateStyle: "long" | "medium" = "long") =>
+    format.date(iso, { dateStyle, timeZone: "UTC" })
 
   return (
     <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
@@ -29,12 +31,12 @@ export function PostFacts({
         post.updatedAt ? (
           <time dateTime={post.updatedAt}>
             {t("post.updated", {
-              date: format.date(post.updatedAt, { dateStyle: "medium" }),
+              date: date(post.updatedAt, "medium"),
             })}
           </time>
         ) : (
           <time dateTime={post.publishedAt}>
-            {format.date(post.publishedAt, { dateStyle: "medium" })}
+            {date(post.publishedAt, "medium")}
           </time>
         )
       ) : (

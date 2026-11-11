@@ -11,6 +11,24 @@ test("a post's full text is in its prerendered HTML", async ({ browser }) => {
   await context.close()
 })
 
+test("a post's date reads the same day west of UTC once it hydrates", async ({
+  browser,
+}) => {
+  const context = await browser.newContext({
+    timezoneId: "America/Los_Angeles",
+  })
+  const page = await context.newPage()
+  await page.goto(POST)
+  await expect(page.getByRole("button", { name: /save/i })).toBeVisible()
+  const time = page.locator("header time").first()
+  const day = new Intl.DateTimeFormat("en", {
+    dateStyle: "long",
+    timeZone: "UTC",
+  }).format(new Date((await time.getAttribute("datetime")) ?? ""))
+  await expect(time).toContainText(day)
+  await context.close()
+})
+
 test("searching the index finds a post and opens it in place, without errors", async ({
   page,
 }) => {
