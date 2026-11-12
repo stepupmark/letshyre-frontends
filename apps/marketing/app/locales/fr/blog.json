@@ -81,7 +81,8 @@
     "quoteOn": "Partager la citation sur {{network}}",
     "footnote": "Note {{n}}",
     "footnotes": "Notes",
-    "backToText": "Retour au texte"
+    "backToText": "Retour au texte",
+    "seriesPart": "Partie {{part}} sur {{total}} d'une série"
   },
   "topics": {
     "interviewing": "Entretiens",
@@ -169,6 +170,31 @@
       "unserved": "Jours de préavis non effectués",
       "buyout": "Rachat, avant impôts",
       "note": "Compte les jours calendaires et un mois de salaire divisé par 30. La politique de votre employeur fixe la vraie formule, le salaire de base ou brut retenu, et si un rachat est même possible."
+    },
+    "money": {
+      "lakh": "{{value}} lakh",
+      "crore": "{{value}} crore"
+    },
+    "salaryHike": {
+      "title": "Ce qu'une augmentation ajoute à votre fiche de paie",
+      "current": "CTC actuel par an",
+      "offered": "CTC proposé par an",
+      "variable": "Part variable de chaque CTC (%)",
+      "ctcHike": "Hausse du CTC",
+      "inHandHike": "Hausse du net mensuel",
+      "extra": "Net en plus chaque mois",
+      "note": "Une estimation selon les tranches du nouveau régime fiscal 2025-26, avec la même part variable dans les deux CTC et un salaire de base égal à la moitié du fixe. La part variable n'entre pas dans les chiffres mensuels, car elle n'est pas versée chaque mois."
+    },
+    "offerCompare": {
+      "title": "Deux offres côte à côte sur la première année",
+      "ctc": "Offre {{offer}} : CTC annuel",
+      "variable": "Offre {{offer}} : part variable (%)",
+      "bonus": "Offre {{offer}} : prime d'arrivée",
+      "yearOne": "Offre {{offer}}, net la première année",
+      "more": "Paie plus la première année",
+      "ahead": "Offre {{offer}}, de {{amount}}",
+      "even": "Aucune, elles sont égales",
+      "note": "Douze fiches de paie, la part variable si elle est versée en entier et la prime d'arrivée après impôt, selon les tranches du nouveau régime fiscal 2025-26 et un salaire de base égal à la moitié du fixe. Demandez si la prime est à rembourser en cas de départ dans l'année."
     }
   },
   "topicPage": {

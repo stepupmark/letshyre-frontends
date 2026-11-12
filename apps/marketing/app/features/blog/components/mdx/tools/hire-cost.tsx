@@ -1,12 +1,13 @@
-import { useFormat, useTranslation } from "@workspace/i18n/react"
+import { useTranslation } from "@workspace/i18n/react"
 import { useState } from "react"
 
+import { useRupees } from "../../../hooks/use-rupees"
 import { numberOf, vacancyCost } from "../../../lib/tools"
-import { ToolField, ToolFrame, ToolResult } from "./tool-frame"
+import { ToolField, ToolFrame, ToolMoneyField, ToolResult } from "./tool-frame"
 
 export default function HireCost() {
   const { t } = useTranslation("blog")
-  const format = useFormat()
+  const money = useRupees()
   const [salary, setSalary] = useState("1800000")
   const [daysNow, setDaysNow] = useState("39")
   const [daysTarget, setDaysTarget] = useState("25")
@@ -15,8 +16,6 @@ export default function HireCost() {
     daysNow: numberOf(daysNow),
     daysTarget: numberOf(daysTarget),
   })
-  const money = (value: number) =>
-    format.currency(value, "INR", { maximumFractionDigits: 0 })
 
   return (
     <ToolFrame
@@ -24,16 +23,10 @@ export default function HireCost() {
       note={t("mdx.hireCost.note")}
       fields={
         <>
-          <ToolField
+          <ToolMoneyField
             label={t("mdx.hireCost.salary")}
-            type="number"
-            inputMode="numeric"
-            min={0}
-            step={50000}
             value={salary}
-            onChange={(event) => {
-              setSalary(event.target.value)
-            }}
+            onValueChange={setSalary}
           />
           <ToolField
             label={t("mdx.hireCost.daysNow")}

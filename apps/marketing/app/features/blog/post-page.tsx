@@ -18,6 +18,7 @@ import { PostCta } from "./components/post-cta"
 import { PostHeader } from "./components/post-header"
 import { PostNeighbours } from "./components/post-neighbours"
 import { PostShare } from "./components/post-share"
+import { PostSeries } from "./components/post-series"
 import { PostSources } from "./components/post-sources"
 import { PostToc } from "./components/post-toc"
 import { RelatedPosts } from "./components/related-posts"
@@ -66,6 +67,7 @@ export function PostPage({
   newer,
   older,
   related,
+  series,
   tags,
   terms,
 }: {
@@ -73,6 +75,7 @@ export function PostPage({
   newer?: PostLink
   older?: PostLink
   related: readonly PostSummary[]
+  series?: { title: string; posts: readonly PostLink[] }
   /** The post's tags that have a page. */
   tags: readonly Tag[]
   terms: Terms
@@ -119,6 +122,7 @@ export function PostPage({
           </div>
         )}
         <div className="flex min-w-0 flex-col gap-10 pt-2 sm:gap-12 lg:col-start-2 lg:pt-0">
+          {series && <PostSeries series={series} current={post.slug} />}
           <article
             id={POST_BODY_ID}
             className="flex flex-col gap-5 text-base text-foreground/85 *:max-w-prose *:data-wide:max-w-none lg:text-lg/8 print:text-foreground"

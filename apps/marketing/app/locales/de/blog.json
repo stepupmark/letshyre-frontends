@@ -81,7 +81,8 @@
     "quoteOn": "Zitat auf {{network}} teilen",
     "footnote": "Anmerkung {{n}}",
     "footnotes": "Anmerkungen",
-    "backToText": "Zurück zum Text"
+    "backToText": "Zurück zum Text",
+    "seriesPart": "Teil {{part}} von {{total}} einer Reihe"
   },
   "topics": {
     "interviewing": "Vorstellungsgespräche",
@@ -168,6 +169,31 @@
       "unserved": "Tage, die du nicht ableisten würdest",
       "buyout": "Ablöse vor Steuern",
       "note": "Zählt Kalendertage und ein Monatsgehalt geteilt durch 30. Die Regelung deines Arbeitgebers entscheidet über die echte Formel, ob Grund- oder Bruttogehalt zählt und ob eine Ablöse überhaupt möglich ist."
+    },
+    "money": {
+      "lakh": "{{value}} Lakh",
+      "crore": "{{value}} Crore"
+    },
+    "salaryHike": {
+      "title": "Was eine Gehaltserhöhung auf dem Lohnzettel bringt",
+      "current": "Aktueller CTC pro Jahr",
+      "offered": "Angebotener CTC pro Jahr",
+      "variable": "Variabler Anteil an jedem CTC (%)",
+      "ctcHike": "Erhöhung des CTC",
+      "inHandHike": "Erhöhung des monatlichen Nettos",
+      "extra": "Monatlich mehr netto",
+      "note": "Eine Schätzung nach den Steuerstufen des neuen Steuersystems für 2025-26, mit gleichem variablem Anteil in beiden CTCs und einem Grundgehalt von der Hälfte des Fixgehalts. Variable Vergütung fehlt in den Monatswerten, weil sie nicht jeden Monat gezahlt wird."
+    },
+    "offerCompare": {
+      "title": "Zwei Angebote im ersten Jahr nebeneinander",
+      "ctc": "Angebot {{offer}}: CTC pro Jahr",
+      "variable": "Angebot {{offer}}: variabler Anteil (%)",
+      "bonus": "Angebot {{offer}}: Antrittsprämie",
+      "yearOne": "Angebot {{offer}}, netto im ersten Jahr",
+      "more": "Zahlt im ersten Jahr mehr",
+      "ahead": "Angebot {{offer}}, um {{amount}}",
+      "even": "Keines, beide gleich",
+      "note": "Zwölf Gehaltszahlungen, die variable Vergütung bei voller Auszahlung und die Antrittsprämie nach Steuern, nach den Steuerstufen des neuen Steuersystems für 2025-26 und mit einem Grundgehalt von der Hälfte des Fixgehalts. Fragen Sie, ob die Antrittsprämie zurückzuzahlen ist, wenn Sie innerhalb eines Jahres gehen."
     }
   },
   "topicPage": {

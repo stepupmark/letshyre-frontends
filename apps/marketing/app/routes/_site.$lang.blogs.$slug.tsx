@@ -30,6 +30,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
       newer={loaderData.newer}
       older={loaderData.older}
       related={loaderData.related}
+      series={loaderData.series}
       tags={loaderData.tags}
       terms={loaderData.terms}
     />

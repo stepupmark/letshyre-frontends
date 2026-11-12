@@ -99,10 +99,64 @@ export function ctcTakeHome({
   const gross = (ctc - variable) / (1 + basic * (EMPLOYER_PF + GRATUITY))
   const employeePf = gross * basic * EMPLOYER_PF
   const fixedTax = incomeTax(Math.max(0, gross - STANDARD_DEDUCTION))
-  const tax = incomeTax(Math.max(0, gross + variable - STANDARD_DEDUCTION))
+  const taxable = Math.max(0, gross + variable - STANDARD_DEDUCTION)
+  const tax = incomeTax(taxable)
   return {
     monthly: (gross - employeePf - PROFESSIONAL_TAX - fixedTax) / 12,
     variable: variable - (tax - fixedTax),
     tax,
+    taxable,
   }
+}
+
+/** The hike on paper against the hike in the monthly payslip, which tax and PF shrink. */
+export function salaryHike({
+  current,
+  offered,
+  variableShare,
+  basicShare = 0.5,
+}: {
+  current: number
+  offered: number
+  variableShare: number
+  basicShare?: number
+}) {
+  const now = ctcTakeHome({ ctc: current, variableShare, basicShare }).monthly
+  const next = ctcTakeHome({ ctc: offered, variableShare, basicShare }).monthly
+  return {
+    ctcHike: current > 0 ? (offered - current) / current : 0,
+    inHandHike: now > 0 ? (next - now) / now : 0,
+    extraPerMonth: next - now,
+  }
+}
+
+/**
+ * The cash an offer pays in its first year: twelve payslips, the variable if paid in full and a
+ * joining bonus, which is taxed on top of the rest of the year's income.
+ */
+export function offerYearOne({
+  ctc,
+  variableShare,
+  joiningBonus,
+  basicShare = 0.5,
+}: {
+  ctc: number
+  variableShare: number
+  joiningBonus: number
+  basicShare?: number
+}) {
+  const pay = ctcTakeHome({ ctc, variableShare, basicShare })
+  const bonusTax = incomeTax(pay.taxable + joiningBonus) - pay.tax
+  return {
+    monthly: pay.monthly,
+    yearOne: pay.monthly * 12 + pay.variable + joiningBonus - bonusTax,
+  }
+}
+
+/** A rupee amount in the unit Indian pay is talked about in, or nothing under a lakh. */
+export function indianUnit(value: number) {
+  if (value >= 10_000_000)
+    return { unit: "crore", value: value / 10_000_000 } as const
+  if (value >= 100_000) return { unit: "lakh", value: value / 100_000 } as const
+  return undefined
 }

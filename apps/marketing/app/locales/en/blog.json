@@ -81,7 +81,8 @@
     "quoteOn": "Share quote on {{network}}",
     "footnote": "Note {{n}}",
     "footnotes": "Notes",
-    "backToText": "Back to the text"
+    "backToText": "Back to the text",
+    "seriesPart": "Part {{part}} of {{total}} in a series"
   },
   "topics": {
     "interviewing": "Interviewing",
@@ -168,6 +169,31 @@
       "unserved": "Days you wouldn't serve",
       "buyout": "Buyout, before tax",
       "note": "Counts calendar days and a month's pay over 30. Your employer's policy decides the real formula, whether it's basic or gross pay, and whether a buyout is allowed at all."
+    },
+    "money": {
+      "lakh": "{{value}} lakh",
+      "crore": "{{value}} crore"
+    },
+    "salaryHike": {
+      "title": "What a hike adds to your payslip",
+      "current": "Current CTC per year",
+      "offered": "Offered CTC per year",
+      "variable": "Variable pay in each CTC (%)",
+      "ctcHike": "Hike on the CTC",
+      "inHandHike": "Hike in monthly in-hand pay",
+      "extra": "Extra in hand each month",
+      "note": "An estimate under the new tax regime's 2025-26 slabs, with the same variable share in both CTCs and basic at half of fixed pay. Variable pay is left out of the monthly figures because it isn't paid every month."
+    },
+    "offerCompare": {
+      "title": "Two offers, side by side for the first year",
+      "ctc": "Offer {{offer}}: CTC per year",
+      "variable": "Offer {{offer}}: variable pay (%)",
+      "bonus": "Offer {{offer}}: joining bonus",
+      "yearOne": "Offer {{offer}}, in hand in the first year",
+      "more": "Pays more in the first year",
+      "ahead": "Offer {{offer}}, by {{amount}}",
+      "even": "Neither, they're level",
+      "note": "Twelve payslips, the variable if it pays out in full and the joining bonus after tax, under the new tax regime's 2025-26 slabs with basic at half of fixed pay. Ask whether the joining bonus has to be paid back if you leave within a year."
     }
   },
   "topicPage": {

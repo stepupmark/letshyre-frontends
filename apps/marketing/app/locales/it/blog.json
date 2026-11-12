@@ -81,7 +81,8 @@
     "quoteOn": "Condividi la citazione su {{network}}",
     "footnote": "Nota {{n}}",
     "footnotes": "Note",
-    "backToText": "Torna al testo"
+    "backToText": "Torna al testo",
+    "seriesPart": "Parte {{part}} di {{total}} di una serie"
   },
   "topics": {
     "interviewing": "Colloqui",
@@ -169,6 +170,31 @@
       "unserved": "Giorni che non lavoreresti",
       "buyout": "Indennità, al lordo delle tasse",
       "note": "Conta i giorni di calendario e un mese di stipendio diviso per 30. La policy del tuo datore di lavoro decide la formula vera, se vale lo stipendio base o lordo e se l’uscita anticipata è possibile."
+    },
+    "money": {
+      "lakh": "{{value}} lakh",
+      "crore": "{{value}} crore"
+    },
+    "salaryHike": {
+      "title": "Quanto un aumento aggiunge alla busta paga",
+      "current": "CTC attuale annuo",
+      "offered": "CTC offerto annuo",
+      "variable": "Parte variabile di ogni CTC (%)",
+      "ctcHike": "Aumento del CTC",
+      "inHandHike": "Aumento del netto mensile",
+      "extra": "Netto in più ogni mese",
+      "note": "Una stima secondo gli scaglioni del nuovo regime fiscale 2025-26, con la stessa parte variabile nei due CTC e lo stipendio base pari a metà del fisso. La parte variabile resta fuori dalle cifre mensili perché non viene pagata ogni mese."
+    },
+    "offerCompare": {
+      "title": "Due offerte a confronto nel primo anno",
+      "ctc": "Offerta {{offer}}: CTC annuo",
+      "variable": "Offerta {{offer}}: parte variabile (%)",
+      "bonus": "Offerta {{offer}}: bonus d'ingresso",
+      "yearOne": "Offerta {{offer}}, netto nel primo anno",
+      "more": "Paga di più il primo anno",
+      "ahead": "Offerta {{offer}}, di {{amount}}",
+      "even": "Nessuna, sono pari",
+      "note": "Dodici buste paga, la parte variabile se pagata per intero e il bonus d'ingresso al netto delle tasse, secondo gli scaglioni del nuovo regime fiscale 2025-26 e con lo stipendio base pari a metà del fisso. Chiedi se il bonus va restituito se lasci entro un anno."
     }
   },
   "topicPage": {

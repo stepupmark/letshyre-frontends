@@ -2,7 +2,7 @@ import type { Locale } from "@workspace/i18n"
 
 import { env } from "../env"
 import { catalogReadiness } from "../messages.server"
-import { parseGuide, parseTerm } from "./glossary"
+import { parseGuide, parseSeries, parseTerm } from "./glossary"
 import { previewsOn, publishedPosts } from "./list"
 import { parsePosts, type Post } from "./post"
 import { blogRoutes } from "./routes"
@@ -37,6 +37,12 @@ const guideSources = import.meta.glob<string>("/content/guides/*/*.mdx", {
   import: "default",
 })
 
+const seriesSources = import.meta.glob<string>("/content/series/*/*.mdx", {
+  eager: true,
+  query: "?raw",
+  import: "default",
+})
+
 function withCover(post: Post): Post {
   const src = covers[`/content/blog/${post.slug}/cover.svg`]
   if (!src) return post
@@ -59,6 +65,10 @@ const terms = Object.entries(termSources)
   .filter((term) => postLangs.has(term.lang))
 const guides = Object.entries(guideSources).map(([file, source]) =>
   parseGuide(file, source)
+)
+
+const series = Object.entries(seriesSources).map(([file, source]) =>
+  parseSeries(file, source)
 )
 
 const routeLocales = new Map(
@@ -84,3 +94,7 @@ export const termsIn = (lang: Locale) =>
 
 export const guideFor = (lang: Locale, topic: string) =>
   guides.find((guide) => guide.lang === lang && guide.topic === topic)
+
+/** The series a post is part of in its locale, if any. */
+export const seriesOf = (lang: Locale, slug: string) =>
+  series.find((s) => s.lang === lang && s.posts.includes(slug))

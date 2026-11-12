@@ -81,7 +81,8 @@
     "quoteOn": "Citaat delen op {{network}}",
     "footnote": "Noot {{n}}",
     "footnotes": "Noten",
-    "backToText": "Terug naar de tekst"
+    "backToText": "Terug naar de tekst",
+    "seriesPart": "Deel {{part}} van {{total}} in een reeks"
   },
   "topics": {
     "interviewing": "Sollicitatiegesprekken",
@@ -168,6 +169,31 @@
       "unserved": "Dagen die je niet zou werken",
       "buyout": "Afkoop, vóór belasting",
       "note": "Telt kalenderdagen en een maandsalaris gedeeld door 30. Het beleid van je werkgever bepaalt de echte formule, of het basis- of brutosalaris telt en of afkoop überhaupt mag."
+    },
+    "money": {
+      "lakh": "{{value}} lakh",
+      "crore": "{{value}} crore"
+    },
+    "salaryHike": {
+      "title": "Wat een loonsverhoging toevoegt aan je loonstrook",
+      "current": "Huidige CTC per jaar",
+      "offered": "Aangeboden CTC per jaar",
+      "variable": "Variabel deel van elke CTC (%)",
+      "ctcHike": "Verhoging van de CTC",
+      "inHandHike": "Verhoging van het maandelijkse netto",
+      "extra": "Netto extra per maand",
+      "note": "Een schatting volgens de schijven van het nieuwe belastingstelsel voor 2025-26, met hetzelfde variabele deel in beide CTC's en een basissalaris van de helft van het vaste loon. Variabel loon telt niet mee in de maandbedragen, omdat het niet elke maand wordt betaald."
+    },
+    "offerCompare": {
+      "title": "Twee aanbiedingen naast elkaar in het eerste jaar",
+      "ctc": "Aanbod {{offer}}: CTC per jaar",
+      "variable": "Aanbod {{offer}}: variabel deel (%)",
+      "bonus": "Aanbod {{offer}}: welkomstbonus",
+      "yearOne": "Aanbod {{offer}}, netto in het eerste jaar",
+      "more": "Betaalt meer in het eerste jaar",
+      "ahead": "Aanbod {{offer}}, met {{amount}}",
+      "even": "Geen van beide, ze zijn gelijk",
+      "note": "Twaalf loonstroken, het variabele deel als het volledig wordt uitbetaald en de welkomstbonus na belasting, volgens de schijven van het nieuwe belastingstelsel voor 2025-26 en met een basissalaris van de helft van het vaste loon. Vraag of je de bonus moet terugbetalen als je binnen een jaar vertrekt."
     }
   },
   "topicPage": {

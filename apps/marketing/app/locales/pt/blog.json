@@ -81,7 +81,8 @@
     "quoteOn": "Compartilhar a citação no {{network}}",
     "footnote": "Nota {{n}}",
     "footnotes": "Notas",
-    "backToText": "Voltar ao texto"
+    "backToText": "Voltar ao texto",
+    "seriesPart": "Parte {{part}} de {{total}} de uma série"
   },
   "topics": {
     "interviewing": "Entrevistas",
@@ -169,6 +170,31 @@
       "unserved": "Dias que você não cumpriria",
       "buyout": "Valor a pagar, antes de impostos",
       "note": "Conta dias corridos e um mês de salário dividido por 30. A política do seu empregador define a fórmula real, se vale o salário-base ou o bruto e se a saída antecipada é permitida."
+    },
+    "money": {
+      "lakh": "{{value}} lakh",
+      "crore": "{{value}} crore"
+    },
+    "salaryHike": {
+      "title": "O que um aumento acrescenta ao seu contracheque",
+      "current": "CTC atual por ano",
+      "offered": "CTC oferecido por ano",
+      "variable": "Variável em cada CTC (%)",
+      "ctcHike": "Aumento no CTC",
+      "inHandHike": "Aumento no líquido mensal",
+      "extra": "Líquido a mais por mês",
+      "note": "Uma estimativa pelas faixas do novo regime tributário de 2025-26, com a mesma parte variável nos dois CTCs e salário-base de metade do fixo. A variável fica fora dos valores mensais porque não é paga todo mês."
+    },
+    "offerCompare": {
+      "title": "Duas ofertas lado a lado no primeiro ano",
+      "ctc": "Oferta {{offer}}: CTC anual",
+      "variable": "Oferta {{offer}}: variável (%)",
+      "bonus": "Oferta {{offer}}: bônus de contratação",
+      "yearOne": "Oferta {{offer}}, líquido no primeiro ano",
+      "more": "Paga mais no primeiro ano",
+      "ahead": "Oferta {{offer}}, por {{amount}}",
+      "even": "Nenhuma, estão empatadas",
+      "note": "Doze contracheques, a variável se for paga integralmente e o bônus de contratação após impostos, pelas faixas do novo regime tributário de 2025-26 e com salário-base de metade do fixo. Pergunte se o bônus precisa ser devolvido se você sair em menos de um ano."
     }
   },
   "topicPage": {

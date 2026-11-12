@@ -78,7 +78,7 @@ note for the reviewer goes in a comment, `{/* like this */}`, which never render
 | `<Faq><Question q="…">…</Question></Faq>`                  | Questions readers ask, under a `##` heading. They also become the page's FAQ structured data                     |
 | `<Checklist title="…"><Check>…</Check></Checklist>`        | A list the reader can tick off and download; ticks stay in their browser                                         |
 | `<Download src={file} title="…" />`                        | A template beside the post (PDF, CSV, TXT, DOCX or XLSX), imported like an image                                 |
-| `<Tool name="hire-cost" />`                                | A calculator: `hire-cost` or `notice-buyout`. New ones go in `components/mdx/tools` and `TOOLS`                  |
+| `<Tool name="hire-cost" />`                                | A calculator, one of `TOOLS` in `app/lib/blog/remark-guard.ts`. New ones go in `components/mdx/tools` too        |
 
 External links and `<Stat>` sources are numbered and listed under the post as its sources.
 

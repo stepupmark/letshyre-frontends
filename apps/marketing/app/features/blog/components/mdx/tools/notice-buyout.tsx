@@ -1,8 +1,9 @@
 import { useFormat, useTranslation } from "@workspace/i18n/react"
 import { useState } from "react"
 
+import { useRupees } from "../../../hooks/use-rupees"
 import { numberOf, noticeBuyout } from "../../../lib/tools"
-import { ToolField, ToolFrame, ToolResult } from "./tool-frame"
+import { ToolField, ToolFrame, ToolMoneyField, ToolResult } from "./tool-frame"
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
 // the reader's own calendar day; en-CA formats it as YYYY-MM-DD
@@ -11,6 +12,7 @@ const today = () => new Date().toLocaleDateString("en-CA")
 export default function NoticeBuyout() {
   const { t } = useTranslation("blog")
   const format = useFormat()
+  const money = useRupees()
   const [resignedOn, setResignedOn] = useState(today)
   const [noticeDays, setNoticeDays] = useState("90")
   const [monthlyPay, setMonthlyPay] = useState("150000")
@@ -47,16 +49,10 @@ export default function NoticeBuyout() {
               setNoticeDays(event.target.value)
             }}
           />
-          <ToolField
+          <ToolMoneyField
             label={t("mdx.noticeBuyout.monthlyPay")}
-            type="number"
-            inputMode="numeric"
-            min={0}
-            step={5000}
             value={monthlyPay}
-            onChange={(event) => {
-              setMonthlyPay(event.target.value)
-            }}
+            onValueChange={setMonthlyPay}
           />
           <ToolField
             label={t("mdx.noticeBuyout.joinOn")}
@@ -86,9 +82,7 @@ export default function NoticeBuyout() {
           />
           <ToolResult
             label={t("mdx.noticeBuyout.buyout")}
-            value={format.currency(result.buyout, "INR", {
-              maximumFractionDigits: 0,
-            })}
+            value={money(result.buyout)}
           />
         </>
       }

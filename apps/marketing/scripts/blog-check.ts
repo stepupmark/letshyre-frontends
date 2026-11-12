@@ -11,13 +11,19 @@ import { parseArgs } from "node:util"
 import { namesOf, parseTerm } from "../app/lib/blog/glossary.ts"
 import { postPath } from "../app/lib/blog/paths.ts"
 import { parsePost } from "../app/lib/blog/post.ts"
-import { readGuides, readPosts, readTerms } from "../app/lib/blog/read-posts.ts"
+import {
+  readGuides,
+  readPosts,
+  readSeries,
+  readTerms,
+} from "../app/lib/blog/read-posts.ts"
 import {
   BLOG_DIR,
   checkTerms,
   GLOSSARY_DIR,
   GUIDES_DIR,
   readyPaths,
+  SERIES_DIR,
 } from "../app/lib/readiness.ts"
 import { type Image, type Issue, lintBody, lintPost } from "./blog-lint.ts"
 
@@ -167,6 +173,12 @@ async function check() {
         if (!slugsByLang.has(`${guide.lang}/${slug}`))
           throw new Error(
             `${GUIDES_DIR}/${guide.topic}/${guide.lang}.mdx: reading lists "${slug}", which has no ${guide.lang} post`
+          )
+    for (const series of readSeries(join(ROOT, SERIES_DIR)))
+      for (const slug of series.posts)
+        if (!slugsByLang.has(`${series.lang}/${slug}`))
+          throw new Error(
+            `${SERIES_DIR}/${series.id}/${series.lang}.mdx: posts lists "${slug}", which has no ${series.lang} post`
           )
   } catch (error) {
     console.log(`error  ${(error as Error).message}`)

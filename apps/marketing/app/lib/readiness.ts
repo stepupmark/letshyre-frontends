@@ -14,6 +14,7 @@ const LOCALES_DIR = "app/locales"
 export const BLOG_DIR = "content/blog"
 export const GLOSSARY_DIR = "content/glossary"
 export const GUIDES_DIR = "content/guides"
+export const SERIES_DIR = "content/series"
 
 /** Fails the build when a post's `<Term>` has no glossary entry in its locale. */
 export function checkTerms(posts: readonly Post[], terms: readonly Term[]) {

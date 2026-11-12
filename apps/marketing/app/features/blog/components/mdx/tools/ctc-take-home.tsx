@@ -1,12 +1,13 @@
-import { useFormat, useTranslation } from "@workspace/i18n/react"
+import { useTranslation } from "@workspace/i18n/react"
 import { useState } from "react"
 
+import { useRupees } from "../../../hooks/use-rupees"
 import { ctcTakeHome, numberOf } from "../../../lib/tools"
-import { ToolField, ToolFrame, ToolResult } from "./tool-frame"
+import { ToolField, ToolFrame, ToolMoneyField, ToolResult } from "./tool-frame"
 
 export default function CtcTakeHome() {
   const { t } = useTranslation("blog")
-  const format = useFormat()
+  const money = useRupees()
   const [ctc, setCtc] = useState("2000000")
   const [variable, setVariable] = useState("10")
   const [basic, setBasic] = useState("50")
@@ -15,8 +16,7 @@ export default function CtcTakeHome() {
     variableShare: numberOf(variable) / 100,
     basicShare: numberOf(basic) / 100,
   })
-  const rupees = (value: number) =>
-    format.currency(Math.max(0, value), "INR", { maximumFractionDigits: 0 })
+  const rupees = (value: number) => money(Math.max(0, value))
 
   return (
     <ToolFrame
@@ -24,16 +24,10 @@ export default function CtcTakeHome() {
       note={t("mdx.ctcTakeHome.note")}
       fields={
         <>
-          <ToolField
+          <ToolMoneyField
             label={t("mdx.ctcTakeHome.ctc")}
-            type="number"
-            inputMode="numeric"
-            min={0}
-            step={50000}
             value={ctc}
-            onChange={(event) => {
-              setCtc(event.target.value)
-            }}
+            onValueChange={setCtc}
           />
           <ToolField
             label={t("mdx.ctcTakeHome.variable")}

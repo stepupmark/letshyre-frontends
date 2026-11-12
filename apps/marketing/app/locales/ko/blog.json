@@ -81,7 +81,8 @@
     "quoteOn": "{{network}}에 인용문 공유",
     "footnote": "주 {{n}}",
     "footnotes": "주",
-    "backToText": "본문으로 돌아가기"
+    "backToText": "본문으로 돌아가기",
+    "seriesPart": "시리즈 {{total}}편 중 {{part}}편"
   },
   "topics": {
     "interviewing": "면접",
@@ -167,6 +168,31 @@
       "unserved": "근무하지 않는 일수",
       "buyout": "보상액(세전)",
       "note": "달력 기준 일수와 월급을 30으로 나눈 값으로 계산합니다. 실제 계산식, 기본급과 총급여 중 무엇을 쓰는지, 조기 퇴사가 가능한지는 회사 규정에 따라 정해집니다."
+    },
+    "money": {
+      "lakh": "{{value}}라크",
+      "crore": "{{value}}크로르"
+    },
+    "salaryHike": {
+      "title": "연봉 인상이 급여명세서에 더하는 금액",
+      "current": "현재 연간 CTC",
+      "offered": "제시된 연간 CTC",
+      "variable": "각 CTC의 변동급 비율 (%)",
+      "ctcHike": "CTC 인상률",
+      "inHandHike": "월 실수령액 인상률",
+      "extra": "매달 늘어나는 실수령액",
+      "note": "2025-26 신 세제 구간을 기준으로 한 추정치로, 두 CTC의 변동급 비율은 같고 기본급은 고정급의 절반으로 가정했습니다. 변동급은 매달 지급되지 않으므로 월별 금액에서 제외했습니다."
+    },
+    "offerCompare": {
+      "title": "두 제안을 첫해 기준으로 나란히 비교",
+      "ctc": "제안 {{offer}}: 연간 CTC",
+      "variable": "제안 {{offer}}: 변동급 (%)",
+      "bonus": "제안 {{offer}}: 입사 보너스",
+      "yearOne": "제안 {{offer}}, 첫해 실수령액",
+      "more": "첫해에 더 많이 받는 쪽",
+      "ahead": "제안 {{offer}}, {{amount}} 더 많음",
+      "even": "같음",
+      "note": "12개월 급여, 전액 지급 시의 변동급, 세후 입사 보너스를 합한 금액이며 2025-26 신 세제 구간과 고정급의 절반인 기본급을 기준으로 했습니다. 1년 안에 퇴사하면 입사 보너스를 돌려줘야 하는지 확인하세요."
     }
   },
   "topicPage": {

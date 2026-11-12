@@ -81,7 +81,8 @@
     "quoteOn": "Bagikan kutipan di {{network}}",
     "footnote": "Catatan {{n}}",
     "footnotes": "Catatan",
-    "backToText": "Kembali ke teks"
+    "backToText": "Kembali ke teks",
+    "seriesPart": "Bagian {{part}} dari {{total}} dalam satu seri"
   },
   "topics": {
     "interviewing": "Wawancara",
@@ -167,6 +168,31 @@
       "unserved": "Hari yang tidak Anda jalani",
       "buyout": "Biaya pengganti, sebelum pajak",
       "note": "Menghitung hari kalender dan gaji sebulan dibagi 30. Kebijakan pemberi kerja Anda yang menentukan rumus sebenarnya, gaji pokok atau gaji kotor, dan apakah keluar lebih awal diizinkan."
+    },
+    "money": {
+      "lakh": "{{value}} lakh",
+      "crore": "{{value}} crore"
+    },
+    "salaryHike": {
+      "title": "Apa yang ditambahkan kenaikan gaji ke slip gaji Anda",
+      "current": "CTC saat ini per tahun",
+      "offered": "CTC yang ditawarkan per tahun",
+      "variable": "Gaji variabel di setiap CTC (%)",
+      "ctcHike": "Kenaikan CTC",
+      "inHandHike": "Kenaikan gaji bersih bulanan",
+      "extra": "Tambahan diterima setiap bulan",
+      "note": "Perkiraan berdasarkan lapisan pajak rezim baru 2025-26, dengan porsi variabel yang sama di kedua CTC dan gaji pokok setengah dari gaji tetap. Gaji variabel tidak masuk angka bulanan karena tidak dibayar setiap bulan."
+    },
+    "offerCompare": {
+      "title": "Dua tawaran berdampingan di tahun pertama",
+      "ctc": "Tawaran {{offer}}: CTC per tahun",
+      "variable": "Tawaran {{offer}}: gaji variabel (%)",
+      "bonus": "Tawaran {{offer}}: bonus bergabung",
+      "yearOne": "Tawaran {{offer}}, diterima di tahun pertama",
+      "more": "Membayar lebih di tahun pertama",
+      "ahead": "Tawaran {{offer}}, selisih {{amount}}",
+      "even": "Tidak ada, keduanya sama",
+      "note": "Dua belas slip gaji, gaji variabel jika dibayar penuh, dan bonus bergabung setelah pajak, berdasarkan lapisan pajak rezim baru 2025-26 dengan gaji pokok setengah dari gaji tetap. Tanyakan apakah bonus harus dikembalikan jika Anda keluar dalam setahun."
     }
   },
   "topicPage": {

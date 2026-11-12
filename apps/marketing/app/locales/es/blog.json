@@ -81,7 +81,8 @@
     "quoteOn": "Compartir la cita en {{network}}",
     "footnote": "Nota {{n}}",
     "footnotes": "Notas",
-    "backToText": "Volver al texto"
+    "backToText": "Volver al texto",
+    "seriesPart": "Parte {{part}} de {{total}} de una serie"
   },
   "topics": {
     "interviewing": "Entrevistas",
@@ -169,6 +170,31 @@
       "unserved": "Días que no cumplirías",
       "buyout": "Compensación, antes de impuestos",
       "note": "Cuenta días naturales y un mes de sueldo dividido entre 30. La política de tu empresa decide la fórmula real, si usa el salario base o el bruto y si se permite la compensación."
+    },
+    "money": {
+      "lakh": "{{value}} lakh",
+      "crore": "{{value}} crore"
+    },
+    "salaryHike": {
+      "title": "Lo que un aumento suma a tu nómina",
+      "current": "CTC actual al año",
+      "offered": "CTC ofrecido al año",
+      "variable": "Variable en cada CTC (%)",
+      "ctcHike": "Aumento del CTC",
+      "inHandHike": "Aumento del neto mensual",
+      "extra": "Neto extra cada mes",
+      "note": "Una estimación con los tramos del nuevo régimen fiscal 2025-26, con la misma parte variable en ambos CTC y el salario base en la mitad del fijo. La variable queda fuera de las cifras mensuales porque no se paga cada mes."
+    },
+    "offerCompare": {
+      "title": "Dos ofertas, lado a lado en el primer año",
+      "ctc": "Oferta {{offer}}: CTC anual",
+      "variable": "Oferta {{offer}}: variable (%)",
+      "bonus": "Oferta {{offer}}: bono de incorporación",
+      "yearOne": "Oferta {{offer}}, neto en el primer año",
+      "more": "Paga más el primer año",
+      "ahead": "Oferta {{offer}}, por {{amount}}",
+      "even": "Ninguna, están igual",
+      "note": "Doce nóminas, la variable si se paga entera y el bono de incorporación después de impuestos, con los tramos del nuevo régimen fiscal 2025-26 y el salario base en la mitad del fijo. Pregunta si tendrías que devolver el bono si te vas antes de un año."
     }
   },
   "topicPage": {

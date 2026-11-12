@@ -27,6 +27,7 @@ import {
   ogImageOf,
   posts as allPosts,
   postsIn,
+  seriesOf,
   termsIn,
 } from "./blog/posts.server"
 import { renderFeed } from "./blog/feed"
@@ -139,6 +140,12 @@ export function postData(lang: string | undefined, slug: string | undefined) {
   const older = inTopic[at + 1]
   const link = (p: Post | undefined) => p && { slug: p.slug, title: p.title }
   const shown = new Set([newer?.slug, older?.slug])
+  const inSeries = seriesOf(lang, post.slug)
+  // a draft or an unpublished part drops out instead of breaking the list
+  const parts = inSeries?.posts.flatMap((s) => {
+    const part = posts.find((p) => p.slug === s)
+    return part ? [{ slug: part.slug, title: part.title }] : []
+  })
   return {
     messages: loadMessages(lang, PAGES.blog.namespaces),
     locales: blogLocalesOf(postPath(post.slug)),
@@ -149,6 +156,10 @@ export function postData(lang: string | undefined, slug: string | undefined) {
       post,
       posts.filter((p) => !shown.has(p.slug))
     ).map(summarize),
+    series:
+      inSeries && parts && parts.length > 1
+        ? { title: inSeries.title, posts: parts }
+        : undefined,
     ogImage: ogImageOf(post.slug),
     tags: tagsOf(posts).filter((tag) => post.tags.includes(tag)),
     terms: Object.fromEntries(

@@ -7,6 +7,8 @@ const kit: Record<(typeof TOOLS)[number], ReturnType<typeof lazy>> = {
   "ctc-take-home": lazy(() => import("./tools/ctc-take-home")),
   "hire-cost": lazy(() => import("./tools/hire-cost")),
   "notice-buyout": lazy(() => import("./tools/notice-buyout")),
+  "offer-compare": lazy(() => import("./tools/offer-compare")),
+  "salary-hike": lazy(() => import("./tools/salary-hike")),
 }
 
 // close to the loaded tool's height, so the text below doesn't jump

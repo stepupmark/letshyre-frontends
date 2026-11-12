@@ -1,7 +1,14 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs"
 import { join } from "node:path"
 
-import { parseGuide, parseTerm, type Guide, type Term } from "./glossary.ts"
+import {
+  type Guide,
+  parseGuide,
+  parseSeries,
+  parseTerm,
+  type Series,
+  type Term,
+} from "./glossary.ts"
 import { parsePosts, type Post } from "./post.ts"
 
 /** Every `<dir>/<name>/<lang>.mdx`, as `[path, source]`. Build-time only. */
@@ -25,3 +32,6 @@ export const readTerms = (contentDir: string): Term[] =>
 
 export const readGuides = (contentDir: string): Guide[] =>
   mdxFiles(contentDir).map(([file, source]) => parseGuide(file, source))
+
+export const readSeries = (contentDir: string): Series[] =>
+  mdxFiles(contentDir).map(([file, source]) => parseSeries(file, source))

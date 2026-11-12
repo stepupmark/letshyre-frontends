@@ -21,6 +21,16 @@ const guideSchema = z.strictObject({
   reading: z.array(z.string().regex(SLUG)).min(2),
 })
 
+const seriesSchema = z.strictObject({
+  title: z.string().min(1),
+  posts: z.array(z.string().regex(SLUG)).min(2),
+})
+
+export type Series = z.output<typeof seriesSchema> & {
+  id: string
+  lang: Locale
+}
+
 export type Guide = z.output<typeof guideSchema> & {
   topic: Topic
   lang: Locale
@@ -50,6 +60,12 @@ export function parseGuide(file: string, source: string): Guide {
     topic: id as Topic,
     lang,
   }
+}
+
+/** Reads `content/series/<id>/<lang>.mdx`: posts meant to be read in order. */
+export function parseSeries(file: string, source: string): Series {
+  const { id, lang } = idAndLang(file)
+  return { ...readMdx(file, source, seriesSchema).data, id, lang }
 }
 
 /** Every name a term goes by, for spotting it in a post. */
