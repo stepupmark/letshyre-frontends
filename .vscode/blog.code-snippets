@@ -121,7 +121,7 @@
   "Tool": {
     "scope": "mdx",
     "prefix": "tool",
-    "body": ["<Tool name=\"${1|ctc-take-home,hire-cost,notice-buyout|}\" />"],
+    "body": ["<Tool name=\"${1|bonus-clawback,commute-cost,ctc-take-home,hire-cost,notice-buyout,offer-compare,salary-hike|}\" />"],
   },
   "Reviewer note": {
     "scope": "mdx",

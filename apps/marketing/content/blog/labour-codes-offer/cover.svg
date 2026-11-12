@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400">
+  <g transform="rotate(-7 214 210)">
+    <rect x="132" y="84" width="196" height="256" rx="14" fill="#dbe6fe"/>
+    <rect x="124" y="76" width="196" height="256" rx="14" fill="#ffffff" stroke="#a9c3fb" stroke-width="2"/>
+    <rect x="146" y="100" width="76" height="12" rx="6" fill="#d4d4d8"/>
+    <rect x="146" y="136" width="76" height="8" rx="4" fill="#e9ebef"/>
+    <rect x="250" y="136" width="48" height="8" rx="4" fill="#d4d4d8"/>
+    <rect x="146" y="162" width="54" height="8" rx="4" fill="#e9ebef"/>
+    <rect x="258" y="162" width="40" height="8" rx="4" fill="#d4d4d8"/>
+    <rect x="146" y="188" width="66" height="8" rx="4" fill="#e9ebef"/>
+    <rect x="246" y="188" width="52" height="8" rx="4" fill="#d4d4d8"/>
+    <rect x="146" y="214" width="45" height="8" rx="4" fill="#e9ebef"/>
+    <rect x="262" y="214" width="36" height="8" rx="4" fill="#d4d4d8"/>
+    <rect x="146" y="240" width="60" height="8" rx="4" fill="#e9ebef"/>
+    <rect x="254" y="240" width="44" height="8" rx="4" fill="#d4d4d8"/>
+    <rect x="146" y="266" width="76" height="8" rx="4" fill="#e9ebef"/>
+    <rect x="250" y="266" width="48" height="8" rx="4" fill="#d4d4d8"/>
+  </g>
+  <g transform="rotate(4 340 220)">
+    <rect x="258" y="98" width="190" height="262" rx="14" fill="#dbe6fe"/>
+    <path d="M250 104 a14 14 0 0 1 14 -14 h162 a14 14 0 0 1 14 14 V346 L434 354 L428 346 L422 354 L416 346 L410 354 L404 346 L398 354 L392 346 L386 354 L380 346 L374 354 L368 346 L362 354 L356 346 L350 354 L344 346 L338 354 L332 346 L326 354 L320 346 L314 354 L308 346 L302 354 L296 346 L290 354 L284 346 L278 354 L272 346 L266 354 L260 346 L254 354 L250 346 Z" fill="#ffffff" stroke="#a9c3fb" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="282" cy="120" r="10" fill="#266fff"/>
+    <rect x="300" y="114" width="84" height="12" rx="6" fill="#18181b" opacity="0.85"/>
+    <line x1="272" y1="146" x2="420" y2="146" stroke="#e9ebef" stroke-width="2"/>
+    <rect x="274" y="164" width="72" height="8" rx="4" fill="#e9ebef"/>
+    <rect x="370" y="164" width="48" height="8" rx="4" fill="#d4d4d8"/>
+    <rect x="274" y="190" width="51" height="8" rx="4" fill="#e9ebef"/>
+    <rect x="378" y="190" width="40" height="8" rx="4" fill="#d4d4d8"/>
+    <rect x="264" y="207" width="164" height="26" rx="8" fill="#dbe6fe"/>
+    <rect x="274" y="216" width="60" height="8" rx="4" fill="#a9c3fb"/>
+    <rect x="362" y="216" width="56" height="8" rx="4" fill="#266fff"/>
+    <rect x="274" y="242" width="43" height="8" rx="4" fill="#e9ebef"/>
+    <rect x="382" y="242" width="36" height="8" rx="4" fill="#d4d4d8"/>
+    <rect x="274" y="268" width="57" height="8" rx="4" fill="#e9ebef"/>
+    <rect x="374" y="268" width="44" height="8" rx="4" fill="#d4d4d8"/>
+    <line x1="272" y1="300" x2="420" y2="300" stroke="#e9ebef" stroke-width="2"/>
+    <rect x="274" y="314" width="56" height="10" rx="5" fill="#a9c3fb"/>
+    <rect x="350" y="310" width="68" height="16" rx="8" fill="#1d5ce0"/>
+  </g>
+  <path d="M438 214 C474 184, 500 176, 512 214" fill="none" stroke="#1d5ce0" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+  <circle cx="470" cy="190" r="11" fill="#266fff"/><circle cx="470" cy="190" r="6" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+  <rect x="470" y="236" width="96" height="112" rx="22" fill="#dbe6fe" transform="translate(6 6)"/>
+  <rect x="470" y="236" width="96" height="112" rx="22" fill="#f3f7ff" stroke="#1d5ce0" stroke-width="3"/>
+  <rect x="478" y="222" width="80" height="18" rx="7" fill="#266fff"/>
+  <rect x="496" y="334" width="44" height="10" rx="5" fill="#a9c3fb" stroke="#1d5ce0" stroke-width="2"/><rect x="496" y="325" width="44" height="10" rx="5" fill="#a9c3fb" stroke="#1d5ce0" stroke-width="2"/><rect x="496" y="316" width="44" height="10" rx="5" fill="#a9c3fb" stroke="#1d5ce0" stroke-width="2"/><rect x="496" y="307" width="44" height="10" rx="5" fill="#a9c3fb" stroke="#1d5ce0" stroke-width="2"/><ellipse cx="518.0" cy="307" rx="18.0" ry="2.5" fill="#1d5ce0" opacity="0.35"/>
+  <rect x="500" y="256" width="36" height="26" rx="6" fill="#1d5ce0"/>
+  <path d="M508 256 v-7 a10 10 0 0 1 20 0 v7" fill="none" stroke="#1d5ce0" stroke-width="4"/>
+  <circle cx="518" cy="266" r="4" fill="#ffffff"/><rect x="516.5" y="267" width="3" height="8" rx="1.5" fill="#ffffff"/>
+</svg>

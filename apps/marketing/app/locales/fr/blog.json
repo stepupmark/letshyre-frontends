@@ -139,6 +139,26 @@
       "download": "Télécharger en texte",
       "reset": "Tout décocher"
     },
+    "bonusClawback": {
+      "title": "Ce que vaut une prime d'embauche si vous partez tôt",
+      "ctc": "CTC par an",
+      "bonus": "Prime d'embauche",
+      "months": "Mois passés",
+      "inHand": "Prime nette, après impôt",
+      "prorated": "À rembourser, si c'est au prorata",
+      "full": "À rembourser, si c'est en totalité",
+      "note": "Suppose une clause de 12 mois. Une estimation selon les tranches 2025-26 du nouveau régime fiscal, la prime étant imposée en plus du salaire de l'année. Votre employeur peut retenir le remboursement sur votre solde de tout compte, et l'impôt payé se récupère plus facilement au cours du même exercice."
+    },
+    "commuteCost": {
+      "title": "Ce que vous coûte le trajet",
+      "days": "Jours au bureau par semaine",
+      "minutes": "Minutes aller-retour",
+      "cost": "Coût aller-retour",
+      "hours": "Heures de trajet par mois",
+      "money": "Dépenses de trajet par mois",
+      "workdays": "Journées de huit heures par an",
+      "note": "Compte chaque semaine de l'année comme travaillée : retirez congés et jours fériés pour un chiffre plus juste. Le coût comprend taxi ou carburant, stationnement et tout autre frais du trajet."
+    },
     "ctcTakeHome": {
       "title": "Ce que vous rapporte un CTC",
       "ctc": "CTC annuel (₹)",

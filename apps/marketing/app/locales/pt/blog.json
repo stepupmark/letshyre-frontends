@@ -139,6 +139,26 @@
       "download": "Baixar como texto",
       "reset": "Desmarcar tudo"
     },
+    "bonusClawback": {
+      "title": "Quanto vale um bônus de contratação se você sair cedo",
+      "ctc": "CTC por ano",
+      "bonus": "Bônus de contratação",
+      "months": "Meses que você fica",
+      "inHand": "Bônus líquido, após impostos",
+      "prorated": "A devolver, se for proporcional",
+      "full": "A devolver, se for integral",
+      "note": "Considera uma cláusula de 12 meses. Uma estimativa pelas faixas 2025-26 do novo regime fiscal, com o bônus tributado sobre o salário do ano. Seu empregador pode descontar a devolução do acerto final, e o imposto pago é mais fácil de recuperar dentro do mesmo ano fiscal."
+    },
+    "commuteCost": {
+      "title": "Quanto custa o seu trajeto",
+      "days": "Dias no escritório por semana",
+      "minutes": "Minutos de ida e volta",
+      "cost": "Custo de ida e volta",
+      "hours": "Horas por mês em trânsito",
+      "money": "Gasto mensal com transporte",
+      "workdays": "Dias de oito horas por ano",
+      "note": "Conta todas as semanas do ano como de trabalho, então desconte férias e feriados para um número mais preciso. O custo inclui táxi ou combustível, estacionamento e qualquer outro gasto do trajeto."
+    },
     "ctcTakeHome": {
       "title": "O que um CTC paga de verdade",
       "ctc": "CTC anual (₹)",

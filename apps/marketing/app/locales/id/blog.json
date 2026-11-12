@@ -139,6 +139,26 @@
       "download": "Unduh sebagai teks",
       "reset": "Hapus centang"
     },
+    "bonusClawback": {
+      "title": "Berapa nilai bonus bergabung jika Anda keluar lebih awal",
+      "ctc": "CTC per tahun",
+      "bonus": "Bonus bergabung",
+      "months": "Bulan Anda bertahan",
+      "inHand": "Bonus bersih, setelah pajak",
+      "prorated": "Dikembalikan, jika proporsional",
+      "full": "Dikembalikan, jika penuh",
+      "note": "Mengasumsikan klausul 12 bulan. Perkiraan berdasarkan tarif rezim pajak baru 2025-26, dengan bonus dikenai pajak di atas gaji setahun. Pemberi kerja dapat memotong pengembalian dari penyelesaian akhir Anda, dan pajaknya paling mudah diklaim kembali dalam tahun buku yang sama."
+    },
+    "commuteCost": {
+      "title": "Berapa biaya perjalanan kerja Anda",
+      "days": "Hari ke kantor per minggu",
+      "minutes": "Menit pulang pergi",
+      "cost": "Biaya pulang pergi",
+      "hours": "Jam per bulan di perjalanan",
+      "money": "Biaya perjalanan per bulan",
+      "workdays": "Hari kerja delapan jam per tahun",
+      "note": "Menghitung setiap minggu dalam setahun sebagai minggu kerja, jadi kurangi cuti dan hari libur agar lebih akurat. Biaya mencakup taksi atau bensin, parkir, dan pengeluaran lain untuk perjalanan."
+    },
     "ctcTakeHome": {
       "title": "Yang benar-benar Anda terima dari CTC",
       "ctc": "CTC per tahun (₹)",

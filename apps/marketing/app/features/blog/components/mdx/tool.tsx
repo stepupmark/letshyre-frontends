@@ -4,6 +4,8 @@ import { useHydrated } from "@/hooks/use-hydrated"
 import type { TOOLS } from "@/lib/blog/remark-guard"
 
 const kit: Record<(typeof TOOLS)[number], ReturnType<typeof lazy>> = {
+  "bonus-clawback": lazy(() => import("./tools/bonus-clawback")),
+  "commute-cost": lazy(() => import("./tools/commute-cost")),
   "ctc-take-home": lazy(() => import("./tools/ctc-take-home")),
   "hire-cost": lazy(() => import("./tools/hire-cost")),
   "notice-buyout": lazy(() => import("./tools/notice-buyout")),

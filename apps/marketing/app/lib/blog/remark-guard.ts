@@ -22,6 +22,8 @@ export const MDX_COMPONENTS = [
 export const CALLOUT_TONES = ["note", "tip", "warning"] as const
 export const FEATURE_AUDIENCES = ["employers", "candidates"] as const
 export const TOOLS = [
+  "bonus-clawback",
+  "commute-cost",
   "ctc-take-home",
   "hire-cost",
   "notice-buyout",

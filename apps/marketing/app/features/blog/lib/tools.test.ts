@@ -1,6 +1,8 @@
 import { expect, it } from "vitest"
 
 import {
+  bonusClawback,
+  commuteCost,
   ctcTakeHome,
   incomeTax,
   noticeBuyout,
@@ -71,4 +73,33 @@ it("taxes a joining bonus at the year's top slab, so a bigger payslip can pay le
   )
   expect(Math.round(variable.yearOne)).toBe(1_875_146)
   expect(Math.round(bonus.yearOne)).toBe(1_857_110)
+})
+
+it("repays a joining bonus in full or pro-rata, against the bonus after its tax", () => {
+  // the bonus lands in the 25% slab, so 52,000 of it goes in tax
+  expect(
+    bonusClawback({ ctc: 2_400_000, bonus: 200_000, monthsStayed: 9 })
+  ).toEqual({ inHand: 148_000, prorated: 50_000, full: 200_000 })
+  expect(
+    bonusClawback({ ctc: 2_400_000, bonus: 200_000, monthsStayed: 12 })
+  ).toMatchObject({ prorated: 0, full: 0 })
+  // under the 12 lakh rebate the bonus isn't taxed at all
+  expect(
+    bonusClawback({ ctc: 1_000_000, bonus: 200_000, monthsStayed: 3 }).inHand
+  ).toBe(200_000)
+})
+
+it("turns a daily commute into hours, rupees and working days", () => {
+  const five = commuteCost({
+    daysPerWeek: 5,
+    minutesPerTrip: 150,
+    costPerTrip: 350,
+  })
+  expect(Math.round(five.hoursPerMonth)).toBe(54)
+  expect(Math.round(five.costPerMonth)).toBe(7583)
+  expect(Math.round(five.workdaysPerYear)).toBe(81)
+  expect(
+    commuteCost({ daysPerWeek: 2, minutesPerTrip: 150, costPerTrip: 350 })
+      .hoursPerMonth / five.hoursPerMonth
+  ).toBeCloseTo(0.4)
 })

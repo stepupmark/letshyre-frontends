@@ -139,6 +139,26 @@
       "download": "Downloaden als tekst",
       "reset": "Vinkjes wissen"
     },
+    "bonusClawback": {
+      "title": "Wat een welkomstbonus waard is als je vroeg vertrekt",
+      "ctc": "CTC per jaar",
+      "bonus": "Welkomstbonus",
+      "months": "Maanden dat je blijft",
+      "inHand": "Bonus netto, na belasting",
+      "prorated": "Terug te betalen, als het naar rato is",
+      "full": "Terug te betalen, als het volledig is",
+      "note": "Gaat uit van een clausule van 12 maanden. Een schatting volgens de schijven 2025-26 van het nieuwe belastingstelsel, waarbij de bonus bovenop het jaarsalaris wordt belast. Je werkgever kan de terugbetaling inhouden op je eindafrekening, en de belasting erover krijg je het makkelijkst terug binnen hetzelfde boekjaar."
+    },
+    "commuteCost": {
+      "title": "Wat je woon-werkverkeer kost",
+      "days": "Kantoordagen per week",
+      "minutes": "Minuten heen en terug",
+      "cost": "Kosten heen en terug",
+      "hours": "Uren per maand onderweg",
+      "money": "Reiskosten per maand",
+      "workdays": "Werkdagen van acht uur per jaar",
+      "note": "Telt elke week van het jaar als werkweek, dus trek je vakantie en feestdagen af voor een preciezer getal. De kosten omvatten taxi of brandstof, parkeren en alles wat de rit verder kost."
+    },
     "ctcTakeHome": {
       "title": "Wat een CTC je oplevert",
       "ctc": "CTC per jaar (₹)",

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" height="340" font-family="Outfit, system-ui, -apple-system, Segoe UI, sans-serif">
+  <text x="40" y="34" font-size="11" font-weight="600" letter-spacing="0.12em" fill="#a1a1aa">BASIC AT 30% OF FIXED PAY</text>
+  <rect x="40" y="48" width="300" height="206" rx="12" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+  <text x="60" y="80" font-size="14" fill="#fafafa">Gross salary</text>
+  <text x="320" y="80" font-size="14" text-anchor="end" fill="#fafafa">₹1,28,519</text>
+  <text x="60" y="112" font-size="14" fill="#fafafa">of which basic</text>
+  <text x="320" y="112" font-size="14" text-anchor="end" fill="#fafafa">₹38,556</text>
+  <text x="60" y="144" font-size="14" fill="#fafafa">Your PF</text>
+  <text x="320" y="144" font-size="14" text-anchor="end" fill="#fafafa">−₹4,627</text>
+  <text x="60" y="176" font-size="14" fill="#fafafa">Income tax and PT</text>
+  <text x="320" y="176" font-size="14" text-anchor="end" fill="#fafafa">−₹8,874</text>
+  <line x1="60" y1="196" x2="320" y2="196" stroke="#3f3f46" stroke-width="1"/>
+  <text x="60" y="228" font-size="14" font-weight="600" fill="#fafafa">In hand</text>
+  <text x="320" y="230" font-size="20" font-weight="600" text-anchor="end" fill="#8fb3ff">₹1,15,018</text>
+  <rect x="40" y="268" width="300" height="40" rx="10" fill="#141a26"/>
+  <text x="60" y="293" font-size="13" fill="#a1a1aa">Saved for later</text>
+  <text x="320" y="294" font-size="15" font-weight="600" text-anchor="end" fill="#fafafa">₹11,109</text>
+  <text x="380" y="34" font-size="11" font-weight="600" letter-spacing="0.12em" fill="#a1a1aa">BASIC AT 50% OF FIXED PAY</text>
+  <rect x="380" y="48" width="300" height="206" rx="12" fill="#18181b" stroke="#3f3f46" stroke-width="1.5"/>
+  <text x="400" y="80" font-size="14" fill="#fafafa">Gross salary</text>
+  <text x="660" y="80" font-size="14" text-anchor="end" fill="#fafafa">₹1,24,533</text>
+  <text x="400" y="112" font-size="14" fill="#fafafa">of which basic</text>
+  <text x="660" y="112" font-size="14" text-anchor="end" fill="#fafafa">₹62,267</text>
+  <rect x="388" y="125" width="284" height="28" rx="6" fill="#22345a"/>
+  <text x="400" y="144" font-size="14" fill="#fafafa">Your PF</text>
+  <text x="660" y="144" font-size="14" text-anchor="end" fill="#fafafa">−₹7,472</text>
+  <text x="400" y="176" font-size="14" fill="#fafafa">Income tax and PT</text>
+  <text x="660" y="176" font-size="14" text-anchor="end" fill="#fafafa">−₹8,252</text>
+  <line x1="400" y1="196" x2="660" y2="196" stroke="#3f3f46" stroke-width="1"/>
+  <text x="400" y="228" font-size="14" font-weight="600" fill="#fafafa">In hand</text>
+  <text x="660" y="230" font-size="20" font-weight="600" text-anchor="end" fill="#8fb3ff">₹1,08,809</text>
+  <rect x="380" y="268" width="300" height="40" rx="10" fill="#141a26"/>
+  <text x="400" y="293" font-size="13" fill="#a1a1aa">Saved for later</text>
+  <text x="660" y="294" font-size="15" font-weight="600" text-anchor="end" fill="#fafafa">₹17,939</text>
+  <path d="M348 158 h22" stroke="#8fb3ff" stroke-width="2.5" stroke-linecap="round"/><path d="M364 152 L371 158 L364 164" fill="none" stroke="#8fb3ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="40" y="332" font-size="13" fill="#a1a1aa">Each month, same ₹18 lakh CTC. Saved for later is your PF, the employer's PF and gratuity.</text>
+</svg>

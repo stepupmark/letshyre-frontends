@@ -139,6 +139,26 @@
       "download": "Als Text herunterladen",
       "reset": "Häkchen entfernen"
     },
+    "bonusClawback": {
+      "title": "Was ein Antrittsbonus wert ist, wenn Sie früh gehen",
+      "ctc": "CTC pro Jahr",
+      "bonus": "Antrittsbonus",
+      "months": "Monate, die Sie bleiben",
+      "inHand": "Bonus netto, nach Steuern",
+      "prorated": "Zurückzuzahlen, wenn anteilig",
+      "full": "Zurückzuzahlen, wenn vollständig",
+      "note": "Geht von einer 12-monatigen Klausel aus. Eine Schätzung nach den Steuersätzen 2025-26 des neuen Steuersystems, wobei der Bonus zusätzlich zum Jahresgehalt besteuert wird. Ihr Arbeitgeber kann die Rückzahlung von Ihrer Schlussabrechnung abziehen, und die Steuer darauf bekommen Sie am leichtesten im selben Geschäftsjahr zurück."
+    },
+    "commuteCost": {
+      "title": "Was Ihr Arbeitsweg kostet",
+      "days": "Bürotage pro Woche",
+      "minutes": "Minuten hin und zurück",
+      "cost": "Kosten hin und zurück",
+      "hours": "Stunden pro Monat unterwegs",
+      "money": "Fahrtkosten pro Monat",
+      "workdays": "Achtstündige Tage pro Jahr",
+      "note": "Zählt jede Woche des Jahres als Arbeitswoche. Ziehen Sie Urlaub und Feiertage ab, um genauer zu rechnen. Die Kosten umfassen Taxi oder Benzin, Parken und alles andere, was die Fahrt kostet."
+    },
     "ctcTakeHome": {
       "title": "Was ein CTC wirklich auszahlt",
       "ctc": "CTC pro Jahr (₹)",

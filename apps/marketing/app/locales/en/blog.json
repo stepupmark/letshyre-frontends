@@ -139,6 +139,26 @@
       "download": "Download as text",
       "reset": "Clear ticks"
     },
+    "bonusClawback": {
+      "title": "What a joining bonus is worth if you leave early",
+      "ctc": "CTC per year",
+      "bonus": "Joining bonus",
+      "months": "Months you stay",
+      "inHand": "Bonus in hand, after tax",
+      "prorated": "To pay back, if it's pro-rata",
+      "full": "To pay back, if it's in full",
+      "note": "Assumes a 12-month clause. An estimate under the new tax regime's 2025-26 slabs, with the bonus taxed on top of the year's salary. Your employer may take the repayment from your final settlement, and the tax on it is easiest to get back within the same financial year."
+    },
+    "commuteCost": {
+      "title": "What your commute costs",
+      "days": "Office days a week",
+      "minutes": "Minutes there and back",
+      "cost": "Cost there and back",
+      "hours": "Hours a month travelling",
+      "money": "Spent on travel a month",
+      "workdays": "Eight-hour days a year",
+      "note": "Counts every week of the year as a working week, so take off your leave and holidays for a closer figure. Cost covers a cab or fuel, parking and anything else the trip adds."
+    },
     "ctcTakeHome": {
       "title": "What a CTC pays you",
       "ctc": "CTC per year (₹)",

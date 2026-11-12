@@ -160,3 +160,49 @@ export function indianUnit(value: number) {
   if (value >= 100_000) return { unit: "lakh", value: value / 100_000 } as const
   return undefined
 }
+
+/**
+ * A joining bonus after the tax it adds to the year, and what leaving before the clause runs out
+ * costs when it's paid back pro-rata or in full.
+ */
+export function bonusClawback({
+  ctc,
+  bonus,
+  monthsStayed,
+  lockMonths = 12,
+}: {
+  ctc: number
+  bonus: number
+  monthsStayed: number
+  lockMonths?: number
+}) {
+  const pay = ctcTakeHome({ ctc, variableShare: 0, basicShare: 0.5 })
+  const unserved = Math.min(lockMonths, Math.max(0, lockMonths - monthsStayed))
+  return {
+    inHand: bonus - (incomeTax(pay.taxable + bonus) - pay.tax),
+    prorated: (bonus * unserved) / lockMonths,
+    full: unserved > 0 ? bonus : 0,
+  }
+}
+
+const WEEKS_PER_MONTH = 52 / 12
+const WORKDAY_HOURS = 8
+
+/** A commute over a month and a year, counting every week of the year as a working week. */
+export function commuteCost({
+  daysPerWeek,
+  minutesPerTrip,
+  costPerTrip,
+}: {
+  daysPerWeek: number
+  minutesPerTrip: number
+  costPerTrip: number
+}) {
+  const trips = Math.min(7, daysPerWeek) * WEEKS_PER_MONTH
+  const hoursPerMonth = (trips * minutesPerTrip) / 60
+  return {
+    hoursPerMonth,
+    costPerMonth: trips * costPerTrip,
+    workdaysPerYear: (hoursPerMonth * 12) / WORKDAY_HOURS,
+  }
+}

@@ -139,6 +139,26 @@
       "download": "Descargar como texto",
       "reset": "Desmarcar todo"
     },
+    "bonusClawback": {
+      "title": "Cuánto vale un bono de incorporación si te vas pronto",
+      "ctc": "CTC al año",
+      "bonus": "Bono de incorporación",
+      "months": "Meses que te quedas",
+      "inHand": "Bono neto, después de impuestos",
+      "prorated": "A devolver, si es proporcional",
+      "full": "A devolver, si es íntegro",
+      "note": "Supone una cláusula de 12 meses. Una estimación con los tramos 2025-26 del nuevo régimen fiscal, con el bono gravado sobre el salario del año. Tu empresa puede descontar la devolución de tu liquidación final, y el impuesto pagado es más fácil de recuperar dentro del mismo ejercicio fiscal."
+    },
+    "commuteCost": {
+      "title": "Lo que te cuesta ir a la oficina",
+      "days": "Días de oficina por semana",
+      "minutes": "Minutos de ida y vuelta",
+      "cost": "Coste de ida y vuelta",
+      "hours": "Horas al mes de trayecto",
+      "money": "Gasto mensual en transporte",
+      "workdays": "Jornadas de ocho horas al año",
+      "note": "Cuenta todas las semanas del año como laborables, así que resta vacaciones y festivos para afinar. El coste incluye taxi o combustible, aparcamiento y cualquier otro gasto del trayecto."
+    },
     "ctcTakeHome": {
       "title": "Lo que te paga un CTC",
       "ctc": "CTC anual (₹)",

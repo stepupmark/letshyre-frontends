@@ -139,6 +139,26 @@
       "download": "Scarica come testo",
       "reset": "Togli le spunte"
     },
+    "bonusClawback": {
+      "title": "Quanto vale un bonus d'ingresso se te ne vai presto",
+      "ctc": "CTC all'anno",
+      "bonus": "Bonus d'ingresso",
+      "months": "Mesi in cui resti",
+      "inHand": "Bonus netto, dopo le tasse",
+      "prorated": "Da restituire, se è proporzionale",
+      "full": "Da restituire, se è per intero",
+      "note": "Presuppone una clausola di 12 mesi. Una stima con gli scaglioni 2025-26 del nuovo regime fiscale, con il bonus tassato sopra lo stipendio dell'anno. Il datore di lavoro può trattenere la restituzione dalla liquidazione finale, e l'imposta pagata si recupera più facilmente nello stesso anno fiscale."
+    },
+    "commuteCost": {
+      "title": "Quanto ti costa il tragitto",
+      "days": "Giorni in ufficio a settimana",
+      "minutes": "Minuti andata e ritorno",
+      "cost": "Costo andata e ritorno",
+      "hours": "Ore al mese in viaggio",
+      "money": "Spesa mensile per il viaggio",
+      "workdays": "Giornate di otto ore all'anno",
+      "note": "Conta ogni settimana dell'anno come lavorativa: togli ferie e festività per una cifra più precisa. Il costo include taxi o carburante, parcheggio e ogni altra spesa del tragitto."
+    },
     "ctcTakeHome": {
       "title": "Quanto ti paga davvero un CTC",
       "ctc": "CTC annuo (₹)",
