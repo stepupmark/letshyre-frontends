@@ -15,6 +15,7 @@ export function useActiveSection(ids: readonly string[]): string | undefined {
       .filter((el): el is HTMLElement => el !== null)
     if (headings.length === 0) return
 
+    // a scroll check, not an observer: a fast fling can carry a heading past the line unseen
     const update = () => {
       const atBottom =
         window.innerHeight + window.scrollY >=
@@ -27,23 +28,12 @@ export function useActiveSection(ids: readonly string[]): string | undefined {
       setActive(atBottom ? headings.at(-1)?.id : current)
     }
 
-    // the answer only changes when a heading crosses the line or the page bottoms out
-    const line = new IntersectionObserver(update, {
-      rootMargin: "0px 0px -66% 0px",
-    })
-    headings.forEach((heading) => {
-      line.observe(heading)
-    })
-    const end = document.createElement("div")
-    end.setAttribute("aria-hidden", "true")
-    document.body.append(end)
-    const bottom = new IntersectionObserver(update)
-    bottom.observe(end)
-
+    update()
+    window.addEventListener("scroll", update, { passive: true })
+    window.addEventListener("resize", update)
     return () => {
-      line.disconnect()
-      bottom.disconnect()
-      end.remove()
+      window.removeEventListener("scroll", update)
+      window.removeEventListener("resize", update)
     }
   }, [key])
 

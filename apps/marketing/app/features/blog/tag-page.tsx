@@ -29,7 +29,7 @@ export function TagPage({
       >
         <FeedLink />
       </PageHeader>
-      <Container className="py-10 sm:py-14">
+      <Container className="py-8 sm:py-14">
         <PendingList>
           <PostList posts={posts} lead={false} />
         </PendingList>

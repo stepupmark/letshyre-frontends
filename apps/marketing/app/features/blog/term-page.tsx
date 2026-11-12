@@ -49,7 +49,7 @@ export function TermPage({
           </p>
         )}
       </PageHeader>
-      <Container className="flex flex-col gap-12 py-10 sm:py-14">
+      <Container className="flex flex-col gap-10 py-8 sm:gap-12 sm:py-14">
         <article className="flex max-w-prose flex-col gap-5 text-base text-foreground/85 lg:text-lg/8">
           <TermBody term={term} />
         </article>

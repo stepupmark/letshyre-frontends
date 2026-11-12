@@ -99,7 +99,7 @@ export function BlogIndexPage({
             />
           </Suspense>
         ) : (
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-10 sm:gap-12">
             <PendingList>
               <PostList posts={posts} lead={page === 1} />
             </PendingList>

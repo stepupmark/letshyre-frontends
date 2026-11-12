@@ -1,5 +1,6 @@
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
+import { cn } from "@workspace/ui/lib/utils"
 import { Link } from "react-router"
 
 import { postPath } from "@/lib/blog/paths"
@@ -38,7 +39,12 @@ export function PostCard({
             <Highlight text={post.title} words={highlight} />
           </Link>
         </h3>
-        <p className="line-clamp-3 text-sm text-pretty text-muted-foreground max-sm:hidden">
+        <p
+          className={cn(
+            "line-clamp-3 text-sm text-pretty text-muted-foreground",
+            !highlight?.length && "max-sm:hidden"
+          )}
+        >
           <Highlight text={post.description} words={highlight} />
         </p>
         <div className="mt-auto pt-2">

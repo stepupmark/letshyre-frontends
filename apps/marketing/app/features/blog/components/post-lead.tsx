@@ -19,7 +19,7 @@ export function PostLead({ post }: { post: PostSummary }) {
         priority
         className="border-b lg:border-e lg:border-b-0"
       />
-      <div className="flex flex-col gap-4 p-6 sm:p-8">
+      <div className="flex flex-col gap-3 p-5 sm:gap-4 sm:p-8">
         <p className="text-sm font-medium text-brand-text">
           {t(`topics.${post.topic}`)}
         </p>

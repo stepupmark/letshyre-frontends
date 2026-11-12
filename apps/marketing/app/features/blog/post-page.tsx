@@ -1,5 +1,6 @@
 import { localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
+import { cn } from "@workspace/ui/lib/utils"
 import { lazy, Suspense, useEffect } from "react"
 import { Link } from "react-router"
 
@@ -79,6 +80,7 @@ export function PostPage({
   const { t } = useTranslation("blog")
   const lang = useLocale()
   const ctaBefore = inlineCtaHeading(post)
+  const hasToc = post.headings.length > 1
   const url = absUrl(localePath(lang, postPath(post.slug)))
   const hydrated = useHydrated()
   useLightPrint()
@@ -104,13 +106,19 @@ export function PostPage({
           </>
         }
       />
-      <Container className="grid gap-8 py-10 sm:py-14 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-14">
-        {post.headings.length > 1 && (
-          <div className="print:hidden">
+      <Container
+        className={cn(
+          "grid gap-6 pb-10 sm:gap-8 sm:pb-14 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-14 lg:pt-14",
+          !hasToc && "pt-8 sm:pt-10"
+        )}
+      >
+        {hasToc && (
+          // contents, so the toc is a grid item and stays sticky the length of the post
+          <div className="contents print:hidden">
             <PostToc headings={post.headings} />
           </div>
         )}
-        <div className="flex min-w-0 flex-col gap-12 lg:col-start-2">
+        <div className="flex min-w-0 flex-col gap-10 pt-2 sm:gap-12 lg:col-start-2 lg:pt-0">
           <article
             id={POST_BODY_ID}
             className="flex flex-col gap-5 text-base text-foreground/85 *:max-w-prose *:data-wide:max-w-none lg:text-lg/8 print:text-foreground"

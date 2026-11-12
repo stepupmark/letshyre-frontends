@@ -25,7 +25,7 @@ export function GlossaryPage({
         title={t("glossary.title")}
         description={t("glossary.description")}
       />
-      <Container className="flex flex-col gap-10 py-10 sm:py-14">
+      <Container className="flex flex-col gap-8 py-8 sm:gap-10 sm:py-14">
         <dl className="grid gap-4 sm:grid-cols-2">
           {terms.map((term) => (
             <div

@@ -72,8 +72,8 @@ export function PostHeader({
 
   return (
     <header className="border-b">
-      <Container className="grid gap-10 py-10 sm:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:items-center lg:gap-14 xl:grid-cols-[minmax(0,1fr)_minmax(0,30rem)] xl:gap-20">
-        <div className="flex max-w-2xl flex-col gap-5">
+      <Container className="grid gap-10 py-8 sm:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:items-center lg:gap-14 xl:grid-cols-[minmax(0,1fr)_minmax(0,30rem)] xl:gap-20">
+        <div className="flex max-w-2xl flex-col gap-4 sm:gap-5">
           <p className="text-sm font-semibold text-primary">
             <BlogCrumbs
               trail={[
@@ -87,7 +87,7 @@ export function PostHeader({
           <p className="text-lg/7 text-pretty text-muted-foreground sm:text-xl/8">
             {post.description}
           </p>
-          <div className="mt-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-4 border-t pt-6">
+          <div className="mt-1 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t pt-5 sm:mt-3 sm:gap-y-4 sm:pt-6">
             <Byline post={post} />
             {actions && (
               <div className="flex min-h-8 flex-wrap items-center gap-2 print:hidden">

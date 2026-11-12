@@ -19,7 +19,7 @@ export function PostList({
   const rest = lead ? posts.slice(1) : posts
 
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-10 sm:gap-12">
       {first && <PostLead post={first} />}
       {rest.length > 0 && (
         <section aria-labelledby={moreId} className="flex flex-col gap-6">
@@ -46,7 +46,7 @@ export function PostGrid({
   highlight?: readonly string[]
 }) {
   return (
-    <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <ol className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
       {posts.map((post) => (
         <li key={post.slug}>
           <PostCard post={post} highlight={highlight} />

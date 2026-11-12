@@ -70,6 +70,37 @@ test("a shared search link opens its results, and they survive a reload", async 
   await expect(result).toBeVisible()
 })
 
+test("on a phone, a reader jumps through a post's contents, saves it and finds it again", async ({
+  page,
+}) => {
+  const title = 'How to answer "What are your salary expectations?"'
+  const section = "Say a range, in fixed pay"
+  await page.setViewportSize({ width: 360, height: 760 })
+  await page.goto("/en/blogs/salary-expectations")
+  const save = page.getByRole("button", { name: "Save for later" })
+  await expect(save).toBeVisible()
+
+  const contents = page.getByRole("navigation", { name: "On this page" })
+  await contents.getByText("On this page").click()
+  await contents.getByRole("link", { name: section }).click()
+  await expect(page).toHaveURL(/#say-a-range/)
+  await expect(page.getByRole("heading", { name: section })).toBeInViewport()
+  await expect(contents.getByRole("link", { name: section })).toBeHidden()
+  await expect(contents).toContainText(section)
+
+  await save.click()
+  await expect(
+    page.getByRole("button", { name: "Saved", exact: true })
+  ).toBeVisible()
+  await page.getByRole("button", { name: "View saved" }).click()
+  await expect(page).toHaveURL("/en/blogs?saved=1")
+  await expect(page.getByRole("link", { name: title })).toBeVisible()
+
+  const feed = await (await page.request.get("/en/blogs/feed.xml")).text()
+  expect(feed).toContain("<rss")
+  expect(feed).toContain("/en/blogs/salary-expectations")
+})
+
 test("a post's topic links to a topic page that lists it", async ({ page }) => {
   await page.goto(POST)
   await page

@@ -43,7 +43,7 @@ export function TopicPage({
         <FeedLink />
       </PageHeader>
       <TopicNav topics={topics} current={topic} />
-      <Container className="flex flex-col gap-12 py-10 sm:py-14">
+      <Container className="flex flex-col gap-10 py-8 sm:gap-12 sm:py-14">
         {guide && <TopicGuide key={topic} topic={topic} guide={guide} />}
         <PendingList>
           <PostList posts={posts} />

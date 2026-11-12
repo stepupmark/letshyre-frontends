@@ -17,7 +17,7 @@ export function RelatedPosts({
 
   return (
     <section aria-labelledby={titleId} className="border-t print:hidden">
-      <Container className="flex flex-col gap-6 py-10 sm:py-14">
+      <Container className="flex flex-col gap-6 py-8 sm:py-14">
         <h2 id={titleId} className="text-xl font-semibold tracking-tight">
           {title}
         </h2>

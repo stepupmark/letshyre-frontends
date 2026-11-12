@@ -19,10 +19,11 @@ export function SectionHeading({
   return (
     <>
       <InlineCta before={id} />
-      <div className="group mt-8 flex items-baseline gap-2 print:break-after-avoid">
+      <div className="group mt-5 flex items-baseline gap-2 sm:mt-8 print:break-after-avoid">
         <h2
           id={id}
-          className="text-2xl font-semibold tracking-tight text-balance text-foreground lg:text-3xl"
+          // clears the sticky contents bar below lg
+          className="scroll-mt-14 text-2xl font-semibold tracking-tight text-balance text-foreground lg:scroll-mt-0 lg:text-3xl"
           {...props}
         >
           {children}

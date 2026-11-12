@@ -25,7 +25,7 @@ function TocLink({
   )
 }
 
-function TocLinks({
+export function TocLinks({
   groups,
   active,
 }: {
