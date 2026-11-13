@@ -1,22 +1,25 @@
 import { useTranslation } from "@workspace/i18n/react"
-import type { CSSProperties } from "react"
+// import type { CSSProperties } from "react"
 
 import type { OwnProfile } from "../../schemas/candidate.schema"
 
-const RADIUS = 22
+// const RADIUS = 22
 
 export function CompletionRing({ profile }: { profile: OwnProfile }) {
   const { t } = useTranslation("candidate")
-  const score = Math.min(
-    100,
-    Math.max(0, profile.profile_completion_score ?? 0)
-  )
-  const arc = score / 100
+  // const score = Math.min(
+  //   100,
+  //   Math.max(0, profile.profile_completion_score ?? 0)
+  // )
+  // const arc = score / 100
   const used = profile.interview_attempts_used
   const max = profile.max_interviews_allowed
 
+  if (used == null || max == null || max <= 0) return null
+
   return (
     <div className="flex items-center gap-3 rounded-xl border p-3 pe-4">
+      {/*
       <svg viewBox="0 0 56 56" className="size-14 shrink-0" aria-hidden="true">
         <circle
           cx={28}
@@ -47,16 +50,19 @@ export function CompletionRing({ profile }: { profile: OwnProfile }) {
           {`${score}%`}
         </text>
       </svg>
+      */}
       <div className="flex flex-col gap-0.5 text-sm">
+        {/*
         <p className="font-semibold">
           {score === 100
             ? t("own.completion")
             : t("own.completionScore", { score })}
         </p>
+        */}
         {used != null && max != null && max > 0 && (
           <p className="text-muted-foreground">
             <span className="tabular-nums">
-              {t("own.interviewsUsed", { used, max })}
+              {t("list.attempts", { used: Math.min(used, max), max })}
             </span>{" "}
             {t("own.interviewsLeft", { count: Math.max(0, max - used) })}
           </p>
