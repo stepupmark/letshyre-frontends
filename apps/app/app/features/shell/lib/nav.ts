@@ -15,7 +15,7 @@ import {
   UserRoundCheck,
   UserRoundSearch,
   Users,
-  UsersRound,
+  // UsersRound,
   type LucideIcon,
 } from "lucide-react"
 import { href, matchPath } from "react-router"
@@ -106,11 +106,11 @@ export const NAV = {
           to: href("/employer/company"),
           icon: Building2,
         },
-        {
-          key: "team",
-          to: href("/employer/team"),
-          icon: UsersRound,
-        },
+        // {
+        //   key: "team",
+        //   to: href("/employer/team"),
+        //   icon: UsersRound,
+        // },
         {
           key: "sharedLinks",
           to: href("/employer/shared-links"),
