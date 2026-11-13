@@ -14,7 +14,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@workspace/ui/components/tooltip"
-import { Maximize2, Sparkles } from "lucide-react"
+import { Maximize2, MessageCircleMore } from "lucide-react"
 import { lazy, Suspense, useState } from "react"
 import { href, useLocation } from "react-router"
 
@@ -65,7 +65,7 @@ export function AssistantLauncher({ side }: { side: Side }) {
             />
           }
         >
-          <Sparkles />
+          <MessageCircleMore />
         </TooltipTrigger>
         <TooltipContent>{t("assistant.open")}</TooltipContent>
       </Tooltip>

@@ -43,7 +43,7 @@ export function Topbar({
         <Button
           ref={searchRef}
           variant="ghost"
-          className="w-9 justify-center px-0 text-muted-foreground max-md:size-10 lg:w-64 lg:justify-start lg:border-border lg:px-3 xl:w-80"
+          className="w-9 justify-center px-0 text-muted-foreground max-md:size-10 lg:w-48 lg:justify-start lg:border-border lg:px-3 xl:w-56"
           onClick={onSearch}
           aria-label={t("search.button")}
           aria-keyshortcuts={`${mod}+K`}
