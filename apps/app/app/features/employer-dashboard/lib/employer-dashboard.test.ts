@@ -38,17 +38,12 @@ describe("setupSteps", () => {
     expect(state(undefined)).toBe("waiting")
   })
 
-  it("marks jobs and team from what exists", () => {
+  it("marks jobs from what exists", () => {
     const steps = setupSteps({
       hasJobs: true,
       hasTeam: false,
       review: "verified",
     })
-    expect(steps.map((step) => step.state)).toEqual([
-      "done",
-      "done",
-      "done",
-      "todo",
-    ])
+    expect(steps.map((step) => step.state)).toEqual(["done", "done", "done"])
   })
 })

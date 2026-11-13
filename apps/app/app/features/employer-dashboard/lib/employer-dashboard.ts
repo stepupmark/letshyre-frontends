@@ -49,6 +49,6 @@ export function setupSteps({
             : "waiting",
     },
     { key: "job", state: hasJobs ? "done" : "todo" },
-    { key: "team", state: hasTeam ? "done" : "todo" },
+    // { key: "team", state: hasTeam ? "done" : "todo" },
   ]
 }
