@@ -5,7 +5,8 @@ import { href } from "react-router"
 
 import { AppLink } from "@/components/app-link"
 import { PageHeader } from "@/components/page-header"
-import { CompareAction, MAX_COMPARE, ShareDialog } from "@/features/candidate"
+import { ShareDialog } from "@/features/candidate"
+// import { CompareAction, MAX_COMPARE, ShareDialog } from "@/features/candidate"
 import { UnlockedList, type Unlocked } from "@/features/candidate-unlock"
 import { useJobOptions } from "@/features/employer-jobs"
 import { buttonLink } from "@/lib/button-link"
@@ -51,20 +52,20 @@ export default function UnlockedPage() {
       />
       <UnlockedList
         share={share}
-        note={
-          <span className="text-xs">
-            {t("list.compareHint", { max: MAX_COMPARE })}
-          </span>
-        }
-        selected={(rows) => (
-          <CompareAction
-            people={rows.map((row) => ({
-              id: row.id,
-              name: row.candidate_name ?? "",
-              photo: row.candidate_profile_photo,
-            }))}
-          />
-        )}
+        // note={
+        //   <span className="text-xs">
+        //     {t("list.compareHint", { max: MAX_COMPARE })}
+        //   </span>
+        // }
+        // selected={(rows) => (
+        //   <CompareAction
+        //     people={rows.map((row) => ({
+        //       id: row.id,
+        //       name: row.candidate_name ?? "",
+        //       photo: row.candidate_profile_photo,
+        //     }))}
+        //   />
+        // )}
       />
     </div>
   )
