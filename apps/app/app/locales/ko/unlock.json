@@ -50,6 +50,7 @@
       "pay": "연봉 (LPA)",
       "notice": "퇴직 통보",
       "interview": "인터뷰",
+      "interviewScore": "인터뷰 점수",
       "unlocked": "잠금 해제일",
       "actions": "작업"
     },

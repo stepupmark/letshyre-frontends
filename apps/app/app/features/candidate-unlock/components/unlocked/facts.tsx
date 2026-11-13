@@ -45,9 +45,11 @@ export function Pay({ row }: { row: Unlocked }) {
 }
 
 export function Band({ row }: { row: Unlocked }) {
-  const { t } = useTranslation("unlock")
   const score = row.ai_overall_score
   if (score == null) return <Blank />
-  const band = bandOf(score)
-  return <StatusBadge tone={toneOf[band]}>{t(`list.band.${band}`)}</StatusBadge>
+  return (
+    <StatusBadge tone={toneOf[bandOf(score)]}>
+      <span className="tabular-nums">{`${Math.round(score)}%`}</span>
+    </StatusBadge>
+  )
 }

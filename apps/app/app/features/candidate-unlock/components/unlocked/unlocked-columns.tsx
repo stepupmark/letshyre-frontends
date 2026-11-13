@@ -61,7 +61,7 @@ export function useUnlockedColumns(share?: (row: Unlocked) => ReactNode) {
       },
       {
         id: "interview",
-        header: t("list.columns.interview"),
+        header: t("list.columns.interviewScore"),
         cell: ({ row }) => <Band row={row.original} />,
       },
       {

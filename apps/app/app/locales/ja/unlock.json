@@ -50,6 +50,7 @@
       "pay": "給与（LPA）",
       "notice": "退職予告",
       "interview": "面接",
+      "interviewScore": "面接スコア",
       "unlocked": "アンロック日",
       "actions": "操作"
     },
