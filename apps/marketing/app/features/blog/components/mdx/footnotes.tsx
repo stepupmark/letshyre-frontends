@@ -26,6 +26,7 @@ export function FootnoteRef({
       <button
         id={refId}
         type="button"
+        data-no-listen=""
         popoverTarget={id}
         aria-label={t("post.footnote", { n: children as ReactNode })}
         style={{ anchorName: `--fn${id.replace(/\W/g, "")}` }}
@@ -81,6 +82,7 @@ export function Footnotes({ children, ...props }: ComponentProps<"section">) {
   return (
     <section
       {...props}
+      data-no-listen=""
       className="mt-6 flex flex-col gap-3 border-t pt-6 text-sm text-muted-foreground [&_ol]:flex [&_ol]:list-decimal [&_ol]:flex-col [&_ol]:gap-2 [&_ol]:ps-5"
     >
       <h2

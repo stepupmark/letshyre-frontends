@@ -74,7 +74,10 @@ export function Checklist({
         <h3 id={titleId} className="text-lg font-semibold text-foreground">
           {title}
         </h3>
-        <p className="text-sm text-muted-foreground tabular-nums">
+        <p
+          data-no-listen=""
+          className="text-sm text-muted-foreground tabular-nums"
+        >
           {t("mdx.checklist.progress", {
             done: done.length,
             count: items.length,

@@ -102,7 +102,11 @@ export function PostPage({
           <>
             {hydrated && (
               <Suspense>
-                <ListenButton key={post.slug} lang={post.lang} />
+                <ListenButton
+                  key={post.slug}
+                  lang={post.lang}
+                  title={post.title}
+                />
               </Suspense>
             )}
             <SaveButton slug={post.slug} />
@@ -125,7 +129,7 @@ export function PostPage({
           {series && <PostSeries series={series} current={post.slug} />}
           <article
             id={POST_BODY_ID}
-            className="flex flex-col gap-5 text-base text-foreground/85 *:max-w-prose *:data-wide:max-w-none lg:text-lg/8 print:text-foreground"
+            className="flex flex-col gap-5 text-base text-foreground/85 *:max-w-prose **:data-listening:rounded-sm **:data-listening:bg-muted **:data-listening:ring-4 **:data-listening:ring-muted *:data-wide:max-w-none lg:text-lg/8 print:text-foreground"
           >
             <PostBody post={post} terms={terms} before={ctaBefore} />
           </article>

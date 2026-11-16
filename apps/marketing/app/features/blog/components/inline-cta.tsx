@@ -19,6 +19,7 @@ export function InlineCta({ before }: { before: string | undefined }) {
   return (
     <aside
       aria-label={t(`cta.${audience}.title`)}
+      data-no-listen=""
       className="my-4 flex flex-col gap-4 rounded-xl border bg-muted/40 p-5 text-base sm:p-6 print:hidden"
     >
       <div className="flex flex-col gap-1">

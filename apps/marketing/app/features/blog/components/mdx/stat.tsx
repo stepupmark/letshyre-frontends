@@ -23,7 +23,10 @@ export function Stat({
         {value}
       </p>
       <p className="text-pretty">{label}</p>
-      <figcaption className="flex flex-col gap-0.5 text-sm text-muted-foreground">
+      <figcaption
+        data-no-listen=""
+        className="flex flex-col gap-0.5 text-sm text-muted-foreground"
+      >
         <span className="text-xs">{t("mdx.source")}</span>
         <a
           href={source}
