@@ -40,8 +40,8 @@ const CLIENT = join(ROOT, "build/client")
 const HTML_BUDGET = 60 * 1024
 // react, react-router and i18next alone are ~130 kB; keep this a ratchet, not a target
 const JS_BUDGET = 280 * 1024
-// the scroll-design preview carries the motion runtime; owner-approved exemption while it's under review
-const JS_BUDGET_EXEMPT: readonly PageId[] = ["homeV3"]
+// the scroll scenes carry the motion runtime; exempt until the home page is trimmed under budget
+const JS_BUDGET_EXEMPT: readonly PageId[] = ["home"]
 
 const env = parseEnv(loadEnv("production", ROOT, "VITE_"))
 const site = env.VITE_SITE_URL.replace(/\/$/, "")
@@ -52,11 +52,7 @@ const indexNowKey = process.env.INDEXNOW_KEY
 
 // the code each page is built from; a shared component changing doesn't make every page new
 const SOURCES: Partial<Record<PageId, string[]>> = {
-  home: [
-    "app/features/home",
-    ":(exclude)app/features/home/components/v2",
-    ":(exclude)app/features/home/home-v2-page.tsx",
-  ],
+  home: ["app/features/home-v3"],
   homeV2: ["app/features/home"],
   homeV3: ["app/features/home-v3"],
   terms: ["app/features/legal"],

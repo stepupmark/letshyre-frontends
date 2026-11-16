@@ -50,3 +50,39 @@ test("ships SoftwareApplication, FAQPage and WebPage JSON-LD", async ({
     expect.arrayContaining(["SoftwareApplication", "FAQPage", "WebPage"])
   )
 })
+
+test("plays through every scene without errors", async ({ page }) => {
+  const errors: string[] = []
+  page.on("console", (msg) => {
+    if (msg.type() === "error") errors.push(msg.text())
+  })
+  page.on("pageerror", (error) => errors.push(String(error)))
+  page.on("response", (res) => {
+    if (res.status() >= 400) errors.push(`${res.status()}: ${res.url()}`)
+  })
+
+  await page.goto("/en")
+  // pinned scenes only request their photos once scrolled into
+  const height = await page.evaluate(() => document.body.scrollHeight)
+  for (let y = 0; y < height; y += 600) {
+    await page.mouse.wheel(0, 600)
+  }
+  await page.waitForLoadState("networkidle")
+  for (const photo of await page.locator("picture img").all()) {
+    await expect
+      .poll(() => photo.evaluate((img: HTMLImageElement) => img.naturalWidth))
+      .toBeGreaterThan(0)
+  }
+
+  if (test.info().project.name === "chromium") {
+    const step = page.getByRole("button", { name: /Go to step 3/ })
+    await step.click()
+    await expect(step).toHaveAttribute("aria-current", "step")
+  }
+
+  await page.keyboard.press("Home")
+  await page.getByRole("link", { name: "Skip the walkthrough" }).focus()
+  await page.keyboard.press("Enter")
+  await expect(page.locator("#pricing")).toBeFocused()
+  expect(errors).toEqual([])
+})
