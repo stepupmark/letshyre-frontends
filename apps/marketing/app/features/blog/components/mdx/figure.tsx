@@ -1,5 +1,4 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { cn } from "@workspace/ui/lib/utils"
 import { Maximize2Icon } from "lucide-react"
 import { lazy, Suspense, useState } from "react"
 
@@ -10,7 +9,6 @@ const FigureZoom = lazy(() => import("./figure-zoom"))
 
 export function Figure({
   src,
-  srcDark,
   alt,
   width,
   height,
@@ -18,8 +16,6 @@ export function Figure({
   wide = false,
 }: {
   src: ImageSource
-  /** Drawn for the dark theme; it follows the site's theme, not the OS setting. */
-  srcDark?: ImageSource
   alt: string
   width: number
   height: number
@@ -52,21 +48,8 @@ export function Figure({
             width={width}
             height={height}
             sizes={sizes}
-            className={cn(
-              "rounded-xl border bg-card",
-              srcDark && "dark:hidden"
-            )}
+            className="rounded-xl border bg-card"
           />
-          {srcDark && (
-            <Image
-              src={srcDark}
-              alt={alt}
-              width={width}
-              height={height}
-              sizes={sizes}
-              className="hidden rounded-xl border bg-card dark:block"
-            />
-          )}
         </div>
         <button
           type="button"
@@ -88,7 +71,6 @@ export function Figure({
         <Suspense>
           <FigureZoom
             src={src}
-            srcDark={srcDark}
             alt={alt}
             width={width}
             height={height}

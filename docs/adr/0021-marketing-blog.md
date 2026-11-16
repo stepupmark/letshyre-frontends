@@ -55,8 +55,8 @@ the marketing site is already prerendered on a static host with hash-based CSP (
   index. A topic URL with no page in its locale, and no English page to fall back to, 302s to the
   nearest blog index (`build/redirects-temporary.map`), so a topic that loses its last post, or
   hasn't had one yet, never 404s; it's a 302 because a new post brings the page back.
-- **Covers are drawn, not stock.** `<slug>/cover.svg`, with `cover-dark.svg` for the dark theme, is
-  a diagram of the post's idea in brand colours. Without one, the card shows the topic's icon.
+- **Covers are drawn, not stock.** `<slug>/cover.svg` is a diagram of the post's idea
+  in brand colours, light only: the blog has no dark versions of covers or figures. Without one, the card shows the topic's icon.
 - **Code is highlighted at build time** with Shiki in both themes, so no highlighter ships.
 - **Feeds are RSS 2.0, one per locale** at `/<lang>/blogs/feed.xml`, written by postbuild.
 - **A post's share image is `<slug>/og.jpg`**, drawn from its page header by

@@ -37,32 +37,16 @@ export function PostCover({
       )}
     >
       {post.cover ? (
-        <>
-          <img
-            src={post.cover.src}
-            alt=""
-            width={640}
-            height={400}
-            loading={priority ? "eager" : "lazy"}
-            fetchPriority={priority ? "high" : undefined}
-            decoding="async"
-            className={cn(
-              "size-full object-cover",
-              post.cover.srcDark && "dark:hidden"
-            )}
-          />
-          {post.cover.srcDark && (
-            <img
-              src={post.cover.srcDark}
-              alt=""
-              width={640}
-              height={400}
-              loading={priority ? "eager" : "lazy"}
-              decoding="async"
-              className="hidden size-full object-cover dark:block"
-            />
-          )}
-        </>
+        <img
+          src={post.cover.src}
+          alt=""
+          width={640}
+          height={400}
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : undefined}
+          decoding="async"
+          className="size-full object-cover"
+        />
       ) : (
         <Icon
           aria-hidden

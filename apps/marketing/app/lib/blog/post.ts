@@ -69,8 +69,8 @@ export type Post = z.output<typeof frontmatterSchema> & {
   faq: Faq[]
   /** Has a `<Feature>`, so it skips the mid-post call to action. */
   promoted: boolean
-  /** `<slug>/cover.svg`, and `cover-dark.svg` if drawn. */
-  cover?: { src: string; srcDark?: string }
+  /** `<slug>/cover.svg`, if drawn. */
+  cover?: { src: string }
   /** Set on staging builds for a draft or a post that isn't due yet. */
   preview?: true
 }

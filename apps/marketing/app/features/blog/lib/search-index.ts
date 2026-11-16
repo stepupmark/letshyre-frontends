@@ -16,9 +16,7 @@ const indexSchema = z.array(
     updatedAt: z.string().optional(),
     minutes: z.number(),
     draft: z.boolean(),
-    cover: z
-      .object({ src: z.string(), srcDark: z.string().optional() })
-      .optional(),
+    cover: z.object({ src: z.string() }).optional(),
     preview: z.literal(true).optional(),
   })
 ) satisfies z.ZodType<PostSummary[]>

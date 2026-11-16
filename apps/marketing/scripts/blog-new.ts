@@ -129,11 +129,10 @@ ${tags.length ? `tags: [${tags.join(", ")}]\n` : ""}draft: true
 )
 
 // a placeholder to draw over; blog:check warns until it's the post's own
-for (const cover of ["cover.svg", "cover-dark.svg"])
-  copyFileSync(join(ROOT, BLOG_DIR, "cover-template.svg"), join(dir, cover))
+copyFileSync(join(ROOT, BLOG_DIR, "cover-template.svg"), join(dir, "cover.svg"))
 
 console.log(`
-Created ${BLOG_DIR}/${slug}/en.mdx as a draft, with covers to draw over.
+Created ${BLOG_DIR}/${slug}/en.mdx as a draft, with a cover to draw over.
   See it:    pnpm --filter marketing dev, then /en/blogs/${slug}
   Check it:  pnpm --filter marketing blog:check ${slug}
   Publish:   pnpm --filter marketing blog:publish ${slug}

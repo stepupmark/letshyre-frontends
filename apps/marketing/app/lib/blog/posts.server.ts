@@ -19,7 +19,7 @@ const ogImages = import.meta.glob<string>("/content/blog/*/og.jpg", {
   import: "default",
 })
 
-const covers = import.meta.glob<string>("/content/blog/*/cover*.svg", {
+const covers = import.meta.glob<string>("/content/blog/*/cover.svg", {
   eager: true,
   query: "?url",
   import: "default",
@@ -45,9 +45,7 @@ const seriesSources = import.meta.glob<string>("/content/series/*/*.mdx", {
 
 function withCover(post: Post): Post {
   const src = covers[`/content/blog/${post.slug}/cover.svg`]
-  if (!src) return post
-  const srcDark = covers[`/content/blog/${post.slug}/cover-dark.svg`]
-  return { ...post, cover: srcDark ? { src, srcDark } : { src } }
+  return src ? { ...post, cover: { src } } : post
 }
 
 /** Newest first: the posts that ship, each in a locale whose blog copy is complete. */

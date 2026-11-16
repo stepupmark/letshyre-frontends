@@ -12,7 +12,6 @@ import { Image, type ImageSource } from "./image"
  */
 export default function FigureZoom({
   src,
-  srcDark,
   alt,
   width,
   height,
@@ -20,7 +19,6 @@ export default function FigureZoom({
   onClose,
 }: {
   src: ImageSource
-  srcDark?: ImageSource
   alt: string
   width: number
   height: number
@@ -65,18 +63,8 @@ export default function FigureZoom({
           width={width}
           height={height}
           sizes="100vw"
-          className={srcDark ? "min-w-180 dark:hidden" : "min-w-180"}
+          className="min-w-180"
         />
-        {srcDark && (
-          <Image
-            src={srcDark}
-            alt={alt}
-            width={width}
-            height={height}
-            sizes="100vw"
-            className="hidden min-w-180 dark:block"
-          />
-        )}
       </div>
     </dialog>
   )

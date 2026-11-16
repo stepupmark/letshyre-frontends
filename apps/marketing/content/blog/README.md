@@ -19,7 +19,7 @@ pnpm --filter marketing blog:publish <slug>
 ```
 
 1. `blog:new` asks for a title, reader, topic and tags, and creates the post as a draft with
-   placeholder covers to draw over.
+   a placeholder cover to draw over.
 2. Write it with the dev server open at `/en/blogs/<slug>`; it reloads as you save.
 3. `blog:check --watch` reruns the checks each time you save, without a build.
 4. When it's ready, `blog:publish` checks it, removes `draft: true`, sets `publishedAt` to today
@@ -66,7 +66,7 @@ note for the reviewer goes in a comment, `{/* like this */}`, which never render
 
 | Component                                                  | For                                                                                                              |
 | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `<Figure src={img} alt="…" width={720} height={400} />`    | An image. `srcDark`, `caption` and `wide` are optional                                                           |
+| `<Figure src={img} alt="…" width={720} height={400} />`    | An image. `caption` and `wide` are optional                                                                      |
 | `<Callout tone="tip">…</Callout>`                          | An aside. Tone is `note` (default), `tip` or `warning`                                                           |
 | `<Steps><Step title="…">…</Step></Steps>`                  | A numbered procedure                                                                                             |
 | `<Compare avoid="…" prefer="…" />`                         | A weak example beside a better one                                                                               |
@@ -105,17 +105,17 @@ order until they're published.
 
 Import images from the post's folder: `import chart from "./chart.svg"`.
 
-- Diagrams as SVG. Draw a second one for dark mode and pass it as `srcDark`.
+- Diagrams as SVG, on a light background. There's no dark version.
 - Photos as JPEG, PNG or WebP at least 1440 px wide; the build makes AVIF and WebP sizes.
 - Alt text says what the image shows. `width` and `height` are the image's own size.
 
 ## Cover
 
 `cover.svg` in the post's folder is the card image on the index, topic pages and related posts. Draw
-the post's idea in brand colours at 640 × 400 with no words, so it reads in every locale, and add
-`cover-dark.svg` for the dark theme. Without one, the card shows the topic's icon. `blog:new` copies
-`cover-template.svg`, which has the palette and the safe area, to both; `blog:check` warns until
-they're the post's own.
+the post's idea in brand colours at 640 × 400 with no words, so it reads in every locale. There's
+one cover, light only. Without one, the card shows the topic's icon. `blog:new` copies
+`cover-template.svg`, which has the palette and the safe area; `blog:check` warns until it's the
+post's own.
 
 ## Share image
 
