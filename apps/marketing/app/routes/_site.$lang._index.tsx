@@ -1,6 +1,5 @@
 import { AssistantLauncher } from "@/features/assistant"
-import { homeJsonLd } from "@/features/home"
-import { HomeV3Page } from "@/features/home-v3"
+import { HomeV3Page, homeJsonLd } from "@/features/home-v3"
 import { pageData } from "@/lib/page-data.server"
 import { pageMeta } from "@/lib/seo/page-meta"
 

@@ -3,7 +3,7 @@
 All photos are from Pexels under the [Pexels licence](https://www.pexels.com/license/): free for
 commercial use, no attribution required. Landscape photos are cropped to 3:2 at 960 and 1920 px wide,
 portraits to 4:5 at 720 and 1440 px, and all are encoded as AVIF (libaom-av1, still picture) and WebP
-with ffmpeg. The how-it-works track reuses three home v2 photos.
+with ffmpeg. The journey also uses three photos from `home-v2/`.
 
 | File             | Used in              | Source                                                                                              |
 | ---------------- | -------------------- | --------------------------------------------------------------------------------------------------- |

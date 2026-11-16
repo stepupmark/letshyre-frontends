@@ -80,9 +80,8 @@ Steps:
 - Build, check the sitemap and hreflang in `en`, `ar` and `hi`, and check the 301s in `redirects.map`.
 - No new tests: `e2e/i18n.spec.ts` and `seo.spec.ts` already follow readiness.
 
-**2b. Decide which home page wins.** _On hold: the landing page isn't final. Don't delete or
-change `home`, `homeV2`, `homeV3` or their features, specs or namespaces without the owner's
-say-so._ Three versions ship:
+**2b. Decide which home page wins.** _Done 2026-11-16: home-v3 won and serves `/:lang`; see
+`home-v3-promotion.md`._ Three versions shipped:
 
 - `home` (live)
 - `homeV2`, built from `features/home/components/v2`
@@ -158,7 +157,7 @@ These come from `docs/launch-checklist.md` and still have no owner:
 ## Suggested order
 
 Phase 0, then 1a, 1d and 3. Phase 3 must not touch the home page features (`features/home`,
-`features/home-v3`). 2a, 2b and 4d wait for the owner. 1b and Phase 5 go in parallel with ops.
+`features/home-v3`). 2a and 4d wait for the owner. 1b and Phase 5 go in parallel with ops.
 Nothing starts until the owner says so.
 
 ## Checks run for this audit

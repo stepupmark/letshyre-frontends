@@ -35,6 +35,7 @@ locales with an entry. Saved posts are a view of the index, `/:lang/blogs?saved=
 reader's browser.
 `/:lang/policy` moved to `/:lang/privacy-policy` (301).
 `/:lang/how-it-works-interview` moved to `/:lang/interview-guide` (301).
+`/:lang/home-v2` and `/:lang/home-v3`, the landing page previews, moved to `/:lang` (301).
 `/:lang/interview-guide` moves to `/:lang/candidate-guide` (301) in each locale the candidate guide
 ships in; today that's `en` only (`REPLACED_BY` in `app/lib/pages.ts`).
 

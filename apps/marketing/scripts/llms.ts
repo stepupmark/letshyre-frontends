@@ -8,8 +8,6 @@ type Section = "Employers" | "Professionals" | "Company" | "Blogs" | "Optional"
 // typed over every page, so a new page has to be placed or left out on purpose
 const LLMS_SECTIONS: Record<PageId, Section | null> = {
   home: null,
-  homeV2: null,
-  homeV3: null,
   employers: "Employers",
   pricing: "Employers",
   employerGuide: "Employers",

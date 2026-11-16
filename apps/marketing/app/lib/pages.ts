@@ -8,8 +8,6 @@ export interface PageDef {
 
 export const PAGES = {
   home: { path: "", namespaces: ["homeV3", "home"], og: "home" },
-  homeV2: { path: "/home-v2", namespaces: ["homeV2", "home"], og: "home" },
-  homeV3: { path: "/home-v3", namespaces: ["homeV3", "home"], og: "home" },
   employers: {
     path: "/employers",
     namespaces: ["employers"],
@@ -57,12 +55,14 @@ export const PAGES = {
 export const MOVED_PATHS: Readonly<Record<string, string>> = {
   "/policy": "/privacy-policy",
   "/how-it-works-interview": "/interview-guide",
+  "/home-v2": "",
+  "/home-v3": "",
 }
 
 export type PageId = keyof typeof PAGES
 
 /** Pages up for review: noindex and left out of the sitemap. */
-export const PREVIEW_PAGES: readonly PageId[] = ["homeV2", "homeV3"]
+export const PREVIEW_PAGES: readonly PageId[] = []
 
 /** A retiring page and its successor. Each locale moves over (301) once the successor ships there. */
 export const REPLACED_BY: Partial<Record<PageId, PageId>> = {

@@ -3,7 +3,6 @@ const { existsSync } = require("node:fs")
 const PORT = 4180
 const PAGES = [
   "",
-  "/home-v2",
   "/pricing",
   "/interview-guide",
   "/contact",
