@@ -1,6 +1,5 @@
 export { LinkUnavailable } from "./components/link-unavailable"
 export { OwnProfile } from "./components/own-profile/own-profile"
-export { CompareAction } from "./components/compare/compare-action"
 export { CompareSkeleton } from "./components/compare/compare-skeleton"
 export { CompareView } from "./components/compare/compare-view"
 export { CandidateProfileView } from "./components/profile/profile-view"
@@ -13,7 +12,7 @@ export { SharedByFooter } from "./components/shared-by-footer"
 export { ShareDialog } from "./components/share-dialog"
 export { SharedLinks } from "./components/shared-links"
 export { isRecordId } from "./lib/candidate"
-export { compareIds, MAX_COMPARE } from "./lib/compare"
+export { compareIds } from "./lib/compare"
 export { isShareId, shareProblem } from "./lib/shared-scorecard"
 export {
   ownScorecardQuery,

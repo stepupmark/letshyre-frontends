@@ -2,7 +2,7 @@ import { href } from "react-router"
 
 import { isRecordId } from "./candidate"
 
-export const MAX_COMPARE = 3
+const MAX_COMPARE = 3
 
 export const compareIds = (raw: string | null) =>
   [...new Set((raw ?? "").split(",").map((id) => id.trim()))]

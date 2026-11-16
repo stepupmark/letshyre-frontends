@@ -79,7 +79,6 @@
       "partial": "Mitigé",
       "strong": "Solide"
     },
-    "compareHint": "Sélectionnez 2 à {{max}} candidats pour les comparer",
     "errorTitle": "Les candidats débloqués ne se sont pas chargés.",
     "errorBody": "Vos déblocages restent sur votre compte. Vérifiez votre connexion et réessayez.",
     "profile": "Profil"

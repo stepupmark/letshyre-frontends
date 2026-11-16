@@ -75,7 +75,6 @@
       "partial": "Mixed",
       "strong": "Strong"
     },
-    "compareHint": "Select 2 to {{max}} to compare side by side",
     "errorTitle": "Unlocked candidates didn't load.",
     "errorBody": "Your unlocks are still on your account. Check your connection and try again.",
     "profile": "Profile"
