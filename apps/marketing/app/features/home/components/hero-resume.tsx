@@ -12,7 +12,7 @@ export function HeroResume({
   progress: MotionValue<number>
   slot?: boolean
 }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const reveal = useTransform(progress, [0.45, 0.65], [0, 1])
   const rise = useTransform(reveal, [0, 1], ["1rem", "0rem"])
   const note = useTransform(progress, [0.7, 0.85], [0, 1])

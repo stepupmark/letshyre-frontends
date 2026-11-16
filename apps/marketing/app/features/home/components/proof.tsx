@@ -27,12 +27,12 @@ export function Proof() {
 }
 
 function useStages() {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   return t("proof.stages", { returnObjects: true })
 }
 
 function ProofStage({ titleId }: { titleId: string }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const { still } = useScene()
   const stages = useStages()
 
@@ -74,7 +74,7 @@ function ProofStage({ titleId }: { titleId: string }) {
 }
 
 function ProofTitle({ id }: { id: string }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const { progress } = useScene()
   const strike = useTransform(progress, [0.3, 0.4], [0, 1])
   const reveal = useTransform(progress, [0.63, 0.73], [0, 1])
@@ -199,7 +199,7 @@ function Tick({
 }
 
 function StillProof({ titleId }: { titleId: string }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const stages = useStages()
 
   return (

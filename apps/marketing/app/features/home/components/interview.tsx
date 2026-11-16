@@ -30,7 +30,7 @@ export function Interview() {
 }
 
 function InterviewCopy({ titleId }: { titleId: string }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
 
   return (
     <div className="lg:col-span-2">
@@ -51,7 +51,7 @@ function InterviewCopy({ titleId }: { titleId: string }) {
 }
 
 function Transcript() {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const { progress } = useScene()
   const answer = t("interview.answer", { returnObjects: true })
 
@@ -127,7 +127,7 @@ function Line({
 }
 
 function Scorecard({ progress }: { progress: MotionValue<number> }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const opacity = useTransform(progress, [SCORE_FROM, SCORE_FROM + 0.1], [0, 1])
   const fill = useTransform(progress, [SCORE_FROM + 0.05, 0.9], [0, 1])
 

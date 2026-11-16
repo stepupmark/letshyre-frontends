@@ -8,7 +8,7 @@ import { Pricing } from "./components/pricing"
 import { Professionals } from "./components/professionals"
 import { Proof } from "./components/proof"
 
-export function HomeV3Page() {
+export function HomePage() {
   return (
     <MotionProvider>
       <Hero />

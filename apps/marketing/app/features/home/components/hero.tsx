@@ -15,7 +15,7 @@ const INSET = 20
 
 export function Hero() {
   const titleId = useId()
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
 
   return (
     <ScrollScene screens={1.6} pinFrom="lg" aria-labelledby={titleId}>
@@ -52,7 +52,7 @@ export function Hero() {
 }
 
 function HeroStage() {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const { progress, still } = useScene()
 
   if (still) {
@@ -75,7 +75,7 @@ function HeroStage() {
 }
 
 function LiveStage({ progress }: { progress: MotionValue<number> }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const stage = useRef<HTMLDivElement>(null)
   const ratio = useRef(0.15)
 

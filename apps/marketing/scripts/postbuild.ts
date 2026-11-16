@@ -52,7 +52,7 @@ const indexNowKey = process.env.INDEXNOW_KEY
 
 // the code each page is built from; a shared component changing doesn't make every page new
 const SOURCES: Partial<Record<PageId, string[]>> = {
-  home: ["app/features/home-v3"],
+  home: ["app/features/home"],
   terms: ["app/features/legal"],
   privacy: ["app/features/legal"],
   refund: ["app/features/legal"],

@@ -46,7 +46,7 @@ function Split({
   titleId: string
   progress: MotionValue<number>
 }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const lang = useLocale()
   const photoX = useTransform(progress, [0, 0.8], ["-14%", "0%"])
   const copyX = useTransform(progress, [0, 0.8], ["14%", "0%"])

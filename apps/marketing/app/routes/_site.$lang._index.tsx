@@ -1,5 +1,5 @@
 import { AssistantLauncher } from "@/features/assistant"
-import { HomeV3Page, homeJsonLd } from "@/features/home-v3"
+import { HomePage, homeJsonLd } from "@/features/home"
 import { pageData } from "@/lib/page-data.server"
 import { pageMeta } from "@/lib/seo/page-meta"
 
@@ -13,7 +13,7 @@ export const meta = pageMeta("home", homeJsonLd)
 export default function HomeRoute() {
   return (
     <>
-      <HomeV3Page />
+      <HomePage />
       <AssistantLauncher />
     </>
   )

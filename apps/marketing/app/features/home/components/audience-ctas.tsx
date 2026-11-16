@@ -9,7 +9,7 @@ import { CtaLink } from "@/components/cta-links"
 import { Magnetic } from "./pointer-effects"
 
 export function AudienceCtas({ className }: { className?: string }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
 
   return (
     <div className={cn("flex flex-wrap items-center gap-3", className)}>

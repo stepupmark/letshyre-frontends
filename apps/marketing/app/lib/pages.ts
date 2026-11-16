@@ -7,7 +7,7 @@ export interface PageDef {
 }
 
 export const PAGES = {
-  home: { path: "", namespaces: ["homeV3", "home"], og: "home" },
+  home: { path: "", namespaces: ["home"], og: "home" },
   employers: {
     path: "/employers",
     namespaces: ["employers"],

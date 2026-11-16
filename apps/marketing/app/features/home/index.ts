@@ -1,2 +1,2 @@
-export { HomeV3Page } from "./home-v3-page"
+export { HomePage } from "./home-page"
 export { homeJsonLd } from "./lib/home-json-ld"

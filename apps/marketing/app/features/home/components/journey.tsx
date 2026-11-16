@@ -33,7 +33,7 @@ export function Journey() {
 }
 
 function JourneyStage({ titleId }: { titleId: string }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const { progress, still } = useScene()
   const hydrated = useHydrated()
   const steps = t("journey.steps", { returnObjects: true })
@@ -115,7 +115,7 @@ const stepProgress = (index: number, total: number) =>
   0.08 + 0.84 * (index / Math.max(total - 1, 1))
 
 function Rail({ labels }: { labels: string[] }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const { progress } = useScene()
   const [active, setActive] = useState(0)
   const fill = useTransform(progress, [0.08, 0.92], [0, 1])

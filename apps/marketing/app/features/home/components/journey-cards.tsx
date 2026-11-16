@@ -55,7 +55,7 @@ function Kicker({ children }: { children: ReactNode }) {
 }
 
 function JobCard({ className }: { className?: string }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
 
   return (
     <Frame label={t("journey.cards.job.label")} className={className}>
@@ -81,7 +81,7 @@ function JobCard({ className }: { className?: string }) {
 }
 
 function ShortlistCard({ className }: { className?: string }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const people = t("journey.cards.shortlist.people", { returnObjects: true })
 
   return (
@@ -114,7 +114,7 @@ function ShortlistCard({ className }: { className?: string }) {
 }
 
 function ScorecardCard({ className }: { className?: string }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
 
   return (
     <Frame label={t("journey.cards.scorecard.label")} className={className}>
@@ -161,7 +161,7 @@ function ScorecardCard({ className }: { className?: string }) {
 }
 
 function UnlockCard({ className }: { className?: string }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
 
   return (
     <Frame label={t("journey.cards.unlock.label")} className={className}>

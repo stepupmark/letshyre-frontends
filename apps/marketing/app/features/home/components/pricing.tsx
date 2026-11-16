@@ -12,7 +12,7 @@ import { Magnetic } from "./pointer-effects"
 import { PricingLedger } from "./pricing-ledger"
 
 export function Pricing() {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const lang = useLocale()
   const titleId = useId()
 

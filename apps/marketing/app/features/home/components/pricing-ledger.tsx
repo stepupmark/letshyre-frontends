@@ -26,7 +26,7 @@ export function PricingLedger() {
 }
 
 function Rows({ progress }: { progress: MotionValue<number> }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const rows = t("pricing.ledger.rows", { returnObjects: true })
 
   return (

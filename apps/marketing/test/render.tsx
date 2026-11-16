@@ -19,7 +19,12 @@ export function renderPage(ui: ReactNode, { path = "/en" } = {}) {
   })
   return render(
     <QueryClientProvider client={client}>
-      <I18nProvider lang="en" messages={{ en: { common, home, pricing, seo } }}>
+      <I18nProvider
+        lang="en"
+        messages={{
+          en: { common, home: { chatbot: home.chatbot }, pricing, seo },
+        }}
+      >
         <RouterProvider router={router} />
       </I18nProvider>
     </QueryClientProvider>

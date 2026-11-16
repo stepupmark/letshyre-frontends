@@ -43,7 +43,7 @@ function Closing({
   titleId: string
   progress: MotionValue<number>
 }) {
-  const { t } = useTranslation("homeV3")
+  const { t } = useTranslation("home")
   const zoom = useTransform(progress, [0, 1], [1.12, 1])
   const rise = useTransform(progress, [0.45, 0.8], ["2rem", "0rem"])
   const arrive = useTransform(progress, [0.45, 0.7], [0, 1])
