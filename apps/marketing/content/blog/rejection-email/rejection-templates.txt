@@ -1,0 +1,65 @@
+Candidate rejection templates
+From the LetsHyre blog: letshyre.ai/en/blogs/rejection-email
+Replace the words in [brackets]. Send each one within the time in its heading.
+
+
+1. After an application (within a week of deciding)
+
+Subject: Your application for [role] at [company]
+
+Hi [first name],
+
+Thank you for applying for the [role] role. We've reviewed your application and won't be taking it forward this time.
+
+We had [number] applications for this role, so we can't give individual feedback at this stage. We're grateful you considered us.
+
+[Your name]
+[Company]
+
+
+2. After a screening call (within two working days)
+
+Subject: [Role] at [company]
+
+Hi [first name],
+
+Thank you for speaking with me on [day]. We've decided not to move forward with your application for the [role] role.
+
+[One sentence on why, about the role: for example, "We need someone who has run payroll for more than 500 people, and your experience so far has been with smaller teams."]
+
+Thank you again for your time, and good luck with your search.
+
+[Your name]
+
+
+3. After interview rounds (within two working days)
+
+Subject: [Role] at [company]
+
+Hi [first name],
+
+Thank you for the time you spent with [names or "the team"] over the last [two weeks]. We've decided not to move forward with your application for the [role] role.
+
+The panel's main reason: [one or two sentences from the scorecard, about the job].
+
+[Something specific they did well, only if it's true.]
+
+If you have questions about this, reply to this email and I'll answer what I can.
+
+[Your name]
+
+
+4. After a final round or take-home (call first, then send within the same day)
+
+Subject: Thank you, [first name]
+
+Hi [first name],
+
+Thank you again for speaking with me today, and for the work you put into [the case study / the assignment]. As I said on the call, we've offered the role to another candidate.
+
+This was a close decision. The panel's main reason was [one or two sentences from the scorecard]. They particularly valued [something specific].
+
+[Only if you mean it:] We'd like to get in touch when we open a similar role, which we expect in [month or quarter]. Would that be all right with you?
+
+Thank you,
+[Your name]
