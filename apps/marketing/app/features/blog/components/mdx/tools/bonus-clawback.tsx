@@ -6,7 +6,7 @@ import { bonusClawback, numberOf } from "../../../lib/tools"
 import { ToolField, ToolFrame, ToolMoneyField, ToolResult } from "./tool-frame"
 
 export default function BonusClawback() {
-  const { t } = useTranslation("blog")
+  const { t } = useTranslation("blogTools")
   const money = useRupees()
   const [ctc, setCtc] = useState("2400000")
   const [bonus, setBonus] = useState("200000")
@@ -19,22 +19,22 @@ export default function BonusClawback() {
 
   return (
     <ToolFrame
-      title={t("mdx.bonusClawback.title")}
-      note={t("mdx.bonusClawback.note")}
+      title={t("bonusClawback.title")}
+      note={t("bonusClawback.note")}
       fields={
         <>
           <ToolMoneyField
-            label={t("mdx.bonusClawback.ctc")}
+            label={t("bonusClawback.ctc")}
             value={ctc}
             onValueChange={setCtc}
           />
           <ToolMoneyField
-            label={t("mdx.bonusClawback.bonus")}
+            label={t("bonusClawback.bonus")}
             value={bonus}
             onValueChange={setBonus}
           />
           <ToolField
-            label={t("mdx.bonusClawback.months")}
+            label={t("bonusClawback.months")}
             type="number"
             inputMode="numeric"
             min={0}
@@ -49,15 +49,15 @@ export default function BonusClawback() {
       results={
         <>
           <ToolResult
-            label={t("mdx.bonusClawback.inHand")}
+            label={t("bonusClawback.inHand")}
             value={money(result.inHand)}
           />
           <ToolResult
-            label={t("mdx.bonusClawback.prorated")}
+            label={t("bonusClawback.prorated")}
             value={money(result.prorated)}
           />
           <ToolResult
-            label={t("mdx.bonusClawback.full")}
+            label={t("bonusClawback.full")}
             value={money(result.full)}
           />
         </>

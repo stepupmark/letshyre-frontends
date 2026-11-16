@@ -14,10 +14,11 @@ export async function clientLoader({
   params,
   serverLoader,
 }: Route.ClientLoaderArgs) {
-  const [data] = await Promise.all([
-    serverLoader(),
-    loadPostBody(params.lang, params.slug),
-  ])
+  // fetched alongside the data, but the data goes first so an unknown slug is a 404, not an error
+  const body = loadPostBody(params.lang, params.slug)
+  void body.catch(() => undefined)
+  const data = await serverLoader()
+  await body
   return data
 }
 

@@ -23,20 +23,28 @@ const indexSchema = z.array(
 
 const loads = new Map<Locale, Promise<PostSummary[] | undefined>>()
 
-/** Every post in the locale, fetched once; undefined if it failed, so the caller can offer a retry. */
+// the build's own id, so a deploy never serves the previous build's index from a cache
+const VERSION = typeof __BLOG_BUILD_ID__ === "string" ? __BLOG_BUILD_ID__ : ""
+
+/**
+ * Every post in the locale, fetched once. A failure resolves to undefined and stays cached until
+ * `retrySearchIndex`, so typing while offline doesn't refetch on every key.
+ */
 export function loadSearchIndex(lang: Locale) {
   let load = loads.get(lang)
   if (!load) {
-    load = fetch(localePath(lang, searchIndexPath))
+    const url = localePath(lang, searchIndexPath)
+    load = fetch(VERSION ? `${url}?v=${VERSION}` : url)
       .then(async (response) => {
         if (!response.ok) throw new Error(`HTTP ${response.status}`)
         return indexSchema.parse(await response.json())
       })
-      .catch(() => {
-        loads.delete(lang)
-        return undefined
-      })
+      .catch(() => undefined)
     loads.set(lang, load)
   }
   return load
+}
+
+export function retrySearchIndex(lang: Locale) {
+  loads.delete(lang)
 }

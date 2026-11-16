@@ -16,6 +16,7 @@ import {
   PREVIEW_PAGES,
   REPLACED_BY,
 } from "../app/lib/pages.ts"
+import { resumeBlogBuild } from "../app/lib/blog/build.ts"
 import { previewsOn } from "../app/lib/blog/list.ts"
 import { postPath, topicsPath } from "../app/lib/blog/paths.ts"
 import type { BlogRoute } from "../app/lib/blog/routes.ts"
@@ -32,12 +33,15 @@ import {
 } from "../../../tooling/csp.ts"
 import { pagePolicy } from "./csp.ts"
 import { type LlmsPage, renderLlms } from "./llms.ts"
+import { strayPostPages } from "./blog-parity.ts"
 import { checkPage } from "./seo-checks.ts"
 import { renderRobots, renderSitemap } from "./sitemap.ts"
 
 const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)))
 const CLIENT = join(ROOT, "build/client")
 const HTML_BUDGET = 60 * 1024
+// a long post nears the cap one figure at a time; flag it while there's still room to trim
+const HTML_WARNING = 0.85 * HTML_BUDGET
 // react, react-router and i18next alone are ~130 kB; keep this a ratchet, not a target
 const JS_BUDGET = 280 * 1024
 // the scroll scenes carry the motion runtime; exempt until the home page is trimmed under budget
@@ -94,12 +98,15 @@ const htmlFile = (route: string) => join(CLIENT, route, "index.html")
 const gzipSize = (file: string) => gzipSync(readFileSync(file)).length
 const kb = (bytes: number) => `${(bytes / 1024).toFixed(1)} kB`
 
+// the date and previews the build used, so the pages checked are the pages it prerendered
+const blog = resumeBlogBuild(join(ROOT, "build"), previewsOn(env.VITE_ENV))
 const {
   pages: ready,
   posts,
   routes: blogRoutes,
-} = readiness(ROOT, previewsOn(env.VITE_ENV))
+} = readiness(ROOT, blog.previews, blog.date)
 const problems: string[] = []
+const warnings: string[] = []
 const policies = new Map<string, string>()
 
 function blogLastmod(route: BlogRoute) {
@@ -223,6 +230,10 @@ for (const page of routes) {
     problems.push(
       `${route}: HTML is ${kb(htmlSize)} gzip, budget ${kb(HTML_BUDGET)}`
     )
+  } else if (htmlSize > HTML_WARNING) {
+    warnings.push(
+      `${route}: HTML is ${kb(htmlSize)} gzip, ${Math.round((htmlSize / HTML_BUDGET) * 100)}% of the ${kb(HTML_BUDGET)} budget`
+    )
   }
   const jsSize = initialScriptsOf(html)
     .map((src) => gzipSize(join(CLIENT, src)))
@@ -233,6 +244,8 @@ for (const page of routes) {
     )
   }
 }
+
+problems.push(...strayPostPages(CLIENT, ready.get("blog") ?? [], pagePaths))
 
 // any unknown URL is answered with the 404 page, so its policy is the default
 let fallbackPolicy = "default-src 'self'"
@@ -273,6 +286,7 @@ writeFileSync(
     .join("")
 )
 
+if (warnings.length) console.warn(warnings.map((w) => `! ${w}`).join("\n"))
 if (problems.length) {
   console.error(problems.map((p) => `✖ ${p}`).join("\n"))
   console.error(`\npostbuild: ${problems.length} problem(s)`)

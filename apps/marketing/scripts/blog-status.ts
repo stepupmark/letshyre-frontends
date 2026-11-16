@@ -41,7 +41,7 @@ section(
   english.filter((post) => post.draft).map((post) => post.slug)
 )
 section(
-  "Scheduled",
+  "Scheduled: live with the first build on or after the date (UTC)",
   english
     .filter((post) => !post.draft && !isLive(post))
     .map((post) => `${post.publishedAt}  ${post.slug}`)

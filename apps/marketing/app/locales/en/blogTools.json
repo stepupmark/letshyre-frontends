@@ -1,0 +1,78 @@
+{
+  "bonusClawback": {
+    "title": "What a joining bonus is worth if you leave early",
+    "ctc": "CTC per year",
+    "bonus": "Joining bonus",
+    "months": "Months you stay",
+    "inHand": "Bonus in hand, after tax",
+    "prorated": "To pay back, if it's pro-rata",
+    "full": "To pay back, if it's in full",
+    "note": "Assumes a 12-month clause. An estimate under the new tax regime's 2025-26 slabs, with the bonus taxed on top of the year's salary. Your employer may take the repayment from your final settlement, and the tax on it is easiest to get back within the same financial year."
+  },
+  "commuteCost": {
+    "title": "What your commute costs",
+    "days": "Office days a week",
+    "minutes": "Minutes there and back",
+    "cost": "Cost there and back",
+    "hours": "Hours a month travelling",
+    "money": "Spent on travel a month",
+    "workdays": "Eight-hour days a year",
+    "note": "Counts every week of the year as a working week, so take off your leave and holidays for a closer figure. Cost covers a cab or fuel, parking and anything else the trip adds."
+  },
+  "ctcTakeHome": {
+    "title": "What a CTC pays you",
+    "ctc": "CTC per year (₹)",
+    "variable": "Variable pay in the CTC (%)",
+    "basic": "Basic, as % of fixed pay",
+    "monthly": "In hand each month",
+    "variableAfterTax": "Variable pay after tax, if paid in full",
+    "tax": "Income tax for the year",
+    "note": "An estimate under the new tax regime's 2025-26 slabs, with PF at 12% of basic, gratuity inside the CTC and ₹200 a month of professional tax. It leaves out surcharge above ₹50 lakh, and your employer's salary breakup decides the real figures."
+  },
+  "hireCost": {
+    "title": "What your open role costs",
+    "salary": "Yearly salary for the role (₹)",
+    "daysNow": "Days it takes you to fill now",
+    "daysTarget": "Days you could get it to",
+    "perDay": "Each day the seat is empty",
+    "extra_one": "The {{count}} extra day",
+    "extra_other": "The {{count}} extra days",
+    "note": "A rough floor: each day is valued at the role's salary for that day. It leaves out the candidates you lose while you wait, which usually cost more."
+  },
+  "noticeBuyout": {
+    "title": "When your notice ends, and what leaving early costs",
+    "resignedOn": "You resign on",
+    "noticeDays": "Notice period (days)",
+    "monthlyPay": "Monthly pay the buyout uses (₹)",
+    "joinOn": "You want to join on",
+    "freeFrom": "Free to join from",
+    "unserved": "Days you wouldn't serve",
+    "buyout": "Buyout, before tax",
+    "note": "Counts calendar days and a month's pay over 30. Your employer's policy decides the real formula, whether it's basic or gross pay, and whether a buyout is allowed at all."
+  },
+  "money": {
+    "lakh": "{{value}} lakh",
+    "crore": "{{value}} crore"
+  },
+  "salaryHike": {
+    "title": "What a hike adds to your payslip",
+    "current": "Current CTC per year",
+    "offered": "Offered CTC per year",
+    "variable": "Variable pay in each CTC (%)",
+    "ctcHike": "Hike on the CTC",
+    "inHandHike": "Hike in monthly in-hand pay",
+    "extra": "Extra in hand each month",
+    "note": "An estimate under the new tax regime's 2025-26 slabs, with the same variable share in both CTCs and basic at half of fixed pay. Variable pay is left out of the monthly figures because it isn't paid every month."
+  },
+  "offerCompare": {
+    "title": "Two offers, side by side for the first year",
+    "ctc": "Offer {{offer}}: CTC per year",
+    "variable": "Offer {{offer}}: variable pay (%)",
+    "bonus": "Offer {{offer}}: joining bonus",
+    "yearOne": "Offer {{offer}}, in hand in the first year",
+    "more": "Pays more in the first year",
+    "ahead": "Offer {{offer}}, by {{amount}}",
+    "even": "Neither, they're level",
+    "note": "Twelve payslips, the variable if it pays out in full and the joining bonus after tax, under the new tax regime's 2025-26 slabs with basic at half of fixed pay. Ask whether the joining bonus has to be paid back if you leave within a year."
+  }
+}

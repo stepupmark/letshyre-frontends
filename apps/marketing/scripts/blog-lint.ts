@@ -42,7 +42,7 @@ export const TEMPLATE_DESCRIPTION =
 
 const PHOTO_BYTES = 500 * 1024
 const RASTER = /\.(png|jpe?g|webp)$/i
-const MAX_POST_SUGGESTIONS = 3
+const MAX_POST_SUGGESTIONS = 2
 
 const processor = createProcessor({
   remarkPlugins: [remarkFrontmatter, remarkGfm],

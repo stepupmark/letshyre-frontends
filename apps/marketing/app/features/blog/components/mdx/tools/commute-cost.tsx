@@ -6,7 +6,7 @@ import { commuteCost, numberOf } from "../../../lib/tools"
 import { ToolField, ToolFrame, ToolMoneyField, ToolResult } from "./tool-frame"
 
 export default function CommuteCost() {
-  const { t } = useTranslation("blog")
+  const { t } = useTranslation("blogTools")
   const format = useFormat()
   const money = useRupees()
   const [days, setDays] = useState("5")
@@ -22,12 +22,12 @@ export default function CommuteCost() {
 
   return (
     <ToolFrame
-      title={t("mdx.commuteCost.title")}
-      note={t("mdx.commuteCost.note")}
+      title={t("commuteCost.title")}
+      note={t("commuteCost.note")}
       fields={
         <>
           <ToolField
-            label={t("mdx.commuteCost.days")}
+            label={t("commuteCost.days")}
             type="number"
             inputMode="numeric"
             min={0}
@@ -38,7 +38,7 @@ export default function CommuteCost() {
             }}
           />
           <ToolField
-            label={t("mdx.commuteCost.minutes")}
+            label={t("commuteCost.minutes")}
             type="number"
             inputMode="numeric"
             min={0}
@@ -48,7 +48,7 @@ export default function CommuteCost() {
             }}
           />
           <ToolMoneyField
-            label={t("mdx.commuteCost.cost")}
+            label={t("commuteCost.cost")}
             value={cost}
             onValueChange={setCost}
           />
@@ -57,15 +57,15 @@ export default function CommuteCost() {
       results={
         <>
           <ToolResult
-            label={t("mdx.commuteCost.hours")}
+            label={t("commuteCost.hours")}
             value={whole(result.hoursPerMonth)}
           />
           <ToolResult
-            label={t("mdx.commuteCost.money")}
+            label={t("commuteCost.money")}
             value={money(result.costPerMonth)}
           />
           <ToolResult
-            label={t("mdx.commuteCost.workdays")}
+            label={t("commuteCost.workdays")}
             value={whole(result.workdaysPerYear)}
           />
         </>

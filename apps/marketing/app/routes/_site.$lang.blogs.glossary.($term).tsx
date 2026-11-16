@@ -18,10 +18,11 @@ export async function clientLoader({
   params,
   serverLoader,
 }: Route.ClientLoaderArgs) {
-  const [data] = await Promise.all([
-    serverLoader(),
-    params.term && loadBody("glossary", params.lang, params.term),
-  ])
+  // the data goes first so an unknown term is a 404, not an error
+  const body = params.term && loadBody("glossary", params.lang, params.term)
+  if (body) void body.catch(() => undefined)
+  const data = await serverLoader()
+  await body
   return data
 }
 

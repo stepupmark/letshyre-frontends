@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 
+import { onScrollFrame } from "@/lib/scroll-frame"
+
 /**
  * Id of the last heading scrolled past the top third of the viewport. At the very bottom
  * it's the last one, since short closing sections never reach that line.
@@ -29,12 +31,7 @@ export function useActiveSection(ids: readonly string[]): string | undefined {
     }
 
     update()
-    window.addEventListener("scroll", update, { passive: true })
-    window.addEventListener("resize", update)
-    return () => {
-      window.removeEventListener("scroll", update)
-      window.removeEventListener("resize", update)
-    }
+    return onScrollFrame(update)
   }, [key])
 
   return active

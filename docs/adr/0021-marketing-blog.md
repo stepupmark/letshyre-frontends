@@ -30,16 +30,24 @@ the marketing site is already prerendered on a static host with hash-based CSP (
 - **A post exists only in the locales it is written in.** The blog index ships in a locale only
   when its copy is complete there and at least one post is published in it, the same readiness
   rule as [ADR 0007](./0007-i18n-readiness.md). There are no machine-translated posts.
-- **One reader per runtime.** Node (prerender list, postbuild) reads posts with `fs`; route loaders
-  read them through `import.meta.glob`. Both go through the same parser, so a CMS can later replace
-  the source behind them without touching routes.
+- **One reader per runtime, one model.** Node (prerender list, postbuild) reads posts with `fs`;
+  route loaders read them through `import.meta.glob`. Both hand the files to `blogModel` in
+  `app/lib/blog/model.ts`, which decides what ships, so a CMS can later replace the source behind
+  them without touching routes. `app/lib/blog/build.ts` fixes the build's date and preview setting
+  once, in `react-router.config.ts`, and leaves them in `build/blog-build.json` for postbuild. A
+  build that crosses UTC midnight still ships one set of posts, and postbuild fails if a
+  prerendered post page and the model disagree.
 - **Each post is its own chunk.** The post route loads the post's module lazily; the loader awaits
   it at build time so the prerendered HTML has the full post, and the client hydrates it when its
   chunk arrives. The JS budget doesn't grow with the number of posts. The post body has no Suspense
   boundary: React streams a large boundary out of place behind an inline script, which would hide
   the text from readers and crawlers without JavaScript. e2e checks the text is there without JS.
 - **Drafts and future posts stay off production.** `draft: true` posts, and posts whose
-  `publishedAt` (a UTC date) is after the build date, never reach production. Dev and staging builds show them with a badge, so they can be reviewed in place.
+  `publishedAt` (a UTC date) is after the build date, never reach production. `publishedAt` may
+  carry a UTC time (`2026-11-16T09:30`), which only orders posts published the same day; posts
+  with the same date and time fall back to slug order. `blog:publish` writes the current UTC date
+  and time. `.github/workflows/scheduled-build.yml` calls the production deploy hook daily at
+  00:30 UTC, so a scheduled post goes live on its day. Dev and staging builds show them with a badge, so they can be reviewed in place.
 - **Headings are read twice, from the same rules.** rehype-slug gives the rendered h2s their ids;
   the parser reads the same ids from the source for the table of contents, so it is in the loader
   data at build time. A test compiles real MDX to keep the two in step.
@@ -62,8 +70,9 @@ the marketing site is already prerendered on a static host with hash-based CSP (
 - **A post's share image is `<slug>/og.jpg`**, drawn from its page header by
   `pnpm --filter marketing blog:og` like the other pages' images. Without one, the default is used.
 - **The index pages, ten posts then nine a page.** `/<lang>/blogs/page/<n>` is prerendered, never
-  infinite scroll, so every post stays a crawlable link. Each page also carries every post's title
-  and description, so search on it runs in the browser across the whole blog.
+  infinite scroll, so every post stays a crawlable link. Search runs in the browser across the
+  whole blog: the first query fetches `/<lang>/blogs/search.json` (titles, descriptions and card
+  fields), with the build's id in the query string so a cache never serves an older build's index.
 - **Sources are listed, not just linked.** The parser collects every external link and `<Stat>`
   source in reading order; the post numbers them in the text and lists them at the end.
 - **Each blog route loads only its own page.** The Vite config marks the feature's `index.ts` as
@@ -77,9 +86,27 @@ the marketing site is already prerendered on a static host with hash-based CSP (
 - **IndexNow** is pinged after a production deploy with the pages whose `lastmod` changed
   (`scripts/indexnow.ts`). Google doesn't use it; the sitemap still serves Google.
 
+- **Reader conveniences stay in the browser.** Saved posts (the newest 200 per locale), checklist
+  ticks (keyed by each item's text, so they survive edits), reading position and read-aloud
+  settings live in `localStorage`; nothing is sent anywhere. The audience used to tailor the
+  closing call to action lives in `sessionStorage`, for the tab only, since the reader didn't ask
+  us to keep it.
+- **Read-aloud uses the browser's own voices.** The post is read in pieces of at most 180
+  characters, because Chrome's online voices stop about 15 seconds into an utterance, and a
+  watchdog moves on if one goes quiet without ending. Collapsed FAQ answers aren't read.
+- **Calculator copy loads only with a calculator.** `<Tool>` copy is the `blogTools` namespace,
+  added to a post's messages only when the post has one, so other blog pages don't carry it.
+- **Guides, series, tags and the glossary.** A topic page can open with a guide
+  (`content/guides/<topic>/<lang>.mdx`), posts can form a series (`content/series`), a tag gets a
+  page at three posts, and `<Term>`s link to glossary entries (`content/glossary`) shipped in the
+  locales that have posts.
+
 ## Not yet
 
 - Author pages, and search beyond titles and descriptions.
+- Fewer locales for the blog's own copy. Posts are English only, so the blog ships only in English,
+  yet its copy is kept in all 19 locales. Revisit if that cost outweighs having the copy ready
+  for a first translated post.
 - A git-based CMS once someone outside engineering writes posts. Keystatic's router adapter
   supports Remix 1 and 2 only, so it would be its own small app with a server for GitHub sign-in;
   that needs hosting decided first.

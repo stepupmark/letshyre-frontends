@@ -14,7 +14,7 @@ import type { Length } from "@/lib/blog/list"
 import { searchPosts, searchWords } from "@/lib/blog/search"
 
 import { useDebounced } from "../hooks/use-debounced"
-import { loadSearchIndex } from "../lib/search-index"
+import { loadSearchIndex, retrySearchIndex } from "../lib/search-index"
 import { PostGrid } from "./post-list"
 
 export default function SearchResults({
@@ -91,6 +91,7 @@ export default function SearchResults({
           <Button
             variant="outline"
             onClick={() => {
+              retrySearchIndex(lang)
               setAttempt((n) => n + 1)
             }}
           >

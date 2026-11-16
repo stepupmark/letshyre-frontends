@@ -4,6 +4,8 @@ import tailwindcss from "@tailwindcss/vite"
 import { defineConfig, loadEnv } from "vite"
 import { imagetools } from "vite-imagetools"
 
+import { startBlogBuild } from "./app/lib/blog/build.ts"
+import { previewsOn } from "./app/lib/blog/list.ts"
 import { mdxOptions } from "./app/lib/blog/mdx-options.ts"
 import { parseEnv } from "./app/lib/env.schema.ts"
 
@@ -13,10 +15,15 @@ const BLOG_BARREL = /[\\/]features[\\/]blog[\\/]index\.ts$/
 const POST_PHOTO = /[\\/]content[\\/]blog[\\/].+\.(png|jpe?g|webp)$/
 
 export default defineConfig(({ mode }) => {
-  parseEnv(loadEnv(mode, import.meta.dirname, "VITE_"))
+  const env = parseEnv(loadEnv(mode, import.meta.dirname, "VITE_"))
+  // react-router.config.ts has usually fixed these already; the first call wins
+  const blog = startBlogBuild(previewsOn(env.VITE_ENV, mode === "development"))
 
   return {
     resolve: { tsconfigPaths: true },
+    // a bare constant: on import.meta.env it would ride in the shared env object and change the
+    // site chunk's hash on every build
+    define: { __BLOG_BUILD_ID__: JSON.stringify(blog.id) },
     // files a post offers for download, imported beside it like its images
     assetsInclude: ["**/content/blog/**/*.{csv,docx,xlsx}"],
     // a post's images are fetched by the page; inlined, they'd ship in its HTML and its JS chunk too

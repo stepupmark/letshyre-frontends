@@ -6,7 +6,7 @@ import { ctcTakeHome, numberOf } from "../../../lib/tools"
 import { ToolField, ToolFrame, ToolMoneyField, ToolResult } from "./tool-frame"
 
 export default function CtcTakeHome() {
-  const { t } = useTranslation("blog")
+  const { t } = useTranslation("blogTools")
   const money = useRupees()
   const [ctc, setCtc] = useState("2000000")
   const [variable, setVariable] = useState("10")
@@ -20,17 +20,17 @@ export default function CtcTakeHome() {
 
   return (
     <ToolFrame
-      title={t("mdx.ctcTakeHome.title")}
-      note={t("mdx.ctcTakeHome.note")}
+      title={t("ctcTakeHome.title")}
+      note={t("ctcTakeHome.note")}
       fields={
         <>
           <ToolMoneyField
-            label={t("mdx.ctcTakeHome.ctc")}
+            label={t("ctcTakeHome.ctc")}
             value={ctc}
             onValueChange={setCtc}
           />
           <ToolField
-            label={t("mdx.ctcTakeHome.variable")}
+            label={t("ctcTakeHome.variable")}
             type="number"
             inputMode="numeric"
             min={0}
@@ -41,7 +41,7 @@ export default function CtcTakeHome() {
             }}
           />
           <ToolField
-            label={t("mdx.ctcTakeHome.basic")}
+            label={t("ctcTakeHome.basic")}
             type="number"
             inputMode="numeric"
             min={0}
@@ -56,17 +56,14 @@ export default function CtcTakeHome() {
       results={
         <>
           <ToolResult
-            label={t("mdx.ctcTakeHome.monthly")}
+            label={t("ctcTakeHome.monthly")}
             value={rupees(result.monthly)}
           />
           <ToolResult
-            label={t("mdx.ctcTakeHome.variableAfterTax")}
+            label={t("ctcTakeHome.variableAfterTax")}
             value={rupees(result.variable)}
           />
-          <ToolResult
-            label={t("mdx.ctcTakeHome.tax")}
-            value={rupees(result.tax)}
-          />
+          <ToolResult label={t("ctcTakeHome.tax")} value={rupees(result.tax)} />
         </>
       }
     />

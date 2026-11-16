@@ -17,12 +17,24 @@ export const AUDIENCES = ["employers", "candidates", "everyone"] as const
 
 export const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 
+// the time is UTC and optional; it only orders posts published on the same day
+const PUBLISHED = /^\d{4}-\d{2}-\d{2}(?:T(?:[01]\d|2[0-3]):[0-5]\d)?$/
+
 const frontmatterSchema = z
   .strictObject({
     title: z.string().min(1),
     metaTitle: z.string().min(1).optional(),
     description: z.string().min(1),
-    publishedAt: z.iso.date(),
+    publishedAt: z
+      .string()
+      .regex(
+        PUBLISHED,
+        "isn't a date or a UTC date and time; use YYYY-MM-DD or YYYY-MM-DDTHH:MM"
+      )
+      .refine(
+        (value) => z.iso.date().safeParse(value.slice(0, 10)).success,
+        "isn't a real date"
+      ),
     updatedAt: z.iso.date().optional(),
     audience: z.enum(AUDIENCES),
     topic: z.enum(TOPICS),
@@ -34,10 +46,14 @@ const frontmatterSchema = z
     draft: z.boolean().default(false),
     featured: z.boolean().default(false),
   })
-  .refine((post) => !post.updatedAt || post.updatedAt >= post.publishedAt, {
-    message: "updatedAt is before publishedAt",
-    path: ["updatedAt"],
-  })
+  .refine(
+    (post) =>
+      !post.updatedAt || post.updatedAt >= post.publishedAt.slice(0, 10),
+    {
+      message: "updatedAt is before publishedAt",
+      path: ["updatedAt"],
+    }
+  )
 
 export interface Heading {
   id: string
@@ -57,6 +73,8 @@ interface Faq {
 }
 
 export type Post = z.output<typeof frontmatterSchema> & {
+  /** The UTC time from `publishedAt`, as HH:MM, when it has one; `publishedAt` keeps the date. */
+  publishedTime?: string
   slug: string
   lang: Locale
   minutes: number
@@ -69,6 +87,8 @@ export type Post = z.output<typeof frontmatterSchema> & {
   faq: Faq[]
   /** Has a `<Feature>`, so it skips the mid-post call to action. */
   promoted: boolean
+  /** Has a `<Tool>`, so its page loads the calculators' copy. */
+  tools: boolean
   /** `<slug>/cover.svg`, if drawn. */
   cover?: { src: string }
   /** Set on staging builds for a draft or a post that isn't due yet. */
@@ -248,6 +268,8 @@ export function parsePost(file: string, source: string): Post {
   const { data, tree } = readMdx(file, source, frontmatterSchema)
   return {
     ...data,
+    publishedAt: data.publishedAt.slice(0, 10),
+    publishedTime: data.publishedAt.slice(11) || undefined,
     slug,
     lang: lang as Locale,
     minutes: readingMinutes(tree, lang as Locale),
@@ -256,15 +278,21 @@ export function parsePost(file: string, source: string): Post {
     terms: termsOf(tree),
     faq: faqOf(tree),
     promoted: contains(tree, "Feature"),
+    tools: contains(tree, "Tool"),
   }
 }
 
-/** Every post file, as `[path, source]`, parsed; drafts and future posts only when `previews`. */
+/**
+ * Every post file, as `[path, source]`, parsed; drafts and posts dated after `date` only when
+ * `previews`.
+ */
 export const parsePosts = (
   files: readonly (readonly [string, string])[],
-  previews: boolean
+  previews: boolean,
+  date?: string
 ): Post[] =>
   visiblePosts(
     files.map(([file, source]) => parsePost(file, source)),
-    previews
+    previews,
+    date
   )

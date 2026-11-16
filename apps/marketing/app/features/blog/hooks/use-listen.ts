@@ -114,12 +114,17 @@ export function useListen(lang: string, title: string) {
       return
     }
     const gen = generation.current
-    const utterance = new SpeechSynthesisUtterance(spoken(block.text, lang))
+    const text = spoken(block.text, lang)
+    const utterance = new SpeechSynthesisUtterance(text)
     utterance.voice = voice
     utterance.lang = voice.lang
     utterance.rate = rateStore.read()
-    utterance.onend = () => {
-      if (gen !== generation.current) return
+    let watchdog: ReturnType<typeof setTimeout> | undefined
+    let finished = false
+    const finish = () => {
+      if (finished || gen !== generation.current) return
+      finished = true
+      clearTimeout(watchdog)
       setTimeout(
         () => {
           if (gen === generation.current) speakAt(list, i + 1)
@@ -127,13 +132,22 @@ export function useListen(lang: string, title: string) {
         gapAfter(list, i)
       )
     }
+    utterance.onend = finish
     utterance.onerror = () => {
+      clearTimeout(watchdog)
       if (gen !== generation.current) return
       generation.current += 1
       setStatus("idle")
       setIndex(0)
     }
     speechSynthesis.speak(utterance)
+    // Chrome's online voices can go quiet mid-utterance and never end it; move on regardless,
+    // allowing about 12 characters a second, well under any voice's pace
+    if (!voice.localService)
+      watchdog = setTimeout(
+        finish,
+        (text.length / 12 / utterance.rate + 4) * 1000
+      )
     setIndex(i)
     setStatus("playing")
   }

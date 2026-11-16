@@ -1,0 +1,79 @@
+{
+  "bonusClawback": {
+    "title": "Quanto vale um bônus de contratação se você sair cedo",
+    "ctc": "CTC por ano",
+    "bonus": "Bônus de contratação",
+    "months": "Meses que você fica",
+    "inHand": "Bônus líquido, após impostos",
+    "prorated": "A devolver, se for proporcional",
+    "full": "A devolver, se for integral",
+    "note": "Considera uma cláusula de 12 meses. Uma estimativa pelas faixas 2025-26 do novo regime fiscal, com o bônus tributado sobre o salário do ano. Seu empregador pode descontar a devolução do acerto final, e o imposto pago é mais fácil de recuperar dentro do mesmo ano fiscal."
+  },
+  "commuteCost": {
+    "title": "Quanto custa o seu trajeto",
+    "days": "Dias no escritório por semana",
+    "minutes": "Minutos de ida e volta",
+    "cost": "Custo de ida e volta",
+    "hours": "Horas por mês em trânsito",
+    "money": "Gasto mensal com transporte",
+    "workdays": "Dias de oito horas por ano",
+    "note": "Conta todas as semanas do ano como de trabalho, então desconte férias e feriados para um número mais preciso. O custo inclui táxi ou combustível, estacionamento e qualquer outro gasto do trajeto."
+  },
+  "ctcTakeHome": {
+    "title": "O que um CTC paga de verdade",
+    "ctc": "CTC anual (₹)",
+    "variable": "Variável dentro do CTC (%)",
+    "basic": "Salário base, em % do fixo",
+    "monthly": "Líquido por mês",
+    "variableAfterTax": "Variável após impostos, se paga integralmente",
+    "tax": "Imposto de renda do ano",
+    "note": "Estimativa pelas faixas de 2025-26 do novo regime fiscal indiano, com PF de 12% do salário base, gratuity incluída no CTC e ₹200 por mês de professional tax. Não inclui a sobretaxa acima de 50 lakhs, e a composição salarial do seu empregador define os valores reais."
+  },
+  "hireCost": {
+    "title": "Quanto custa sua vaga aberta",
+    "salary": "Salário anual da vaga (₹)",
+    "daysNow": "Dias que você leva hoje para contratar",
+    "daysTarget": "Dias a que você poderia chegar",
+    "perDay": "Cada dia com a vaga vazia",
+    "extra_one": "O {{count}} dia a mais",
+    "extra_many": "Os {{count}} dias a mais",
+    "extra_other": "Os {{count}} dias a mais",
+    "note": "Um piso aproximado: cada dia vale o salário da vaga naquele dia. Não inclui os candidatos que você perde enquanto espera, que costumam custar mais."
+  },
+  "noticeBuyout": {
+    "title": "Quando seu aviso prévio termina e quanto custa sair antes",
+    "resignedOn": "Você pede demissão em",
+    "noticeDays": "Aviso prévio (dias)",
+    "monthlyPay": "Salário mensal usado no cálculo (₹)",
+    "joinOn": "Você quer começar em",
+    "freeFrom": "Livre para começar a partir de",
+    "unserved": "Dias que você não cumpriria",
+    "buyout": "Valor a pagar, antes de impostos",
+    "note": "Conta dias corridos e um mês de salário dividido por 30. A política do seu empregador define a fórmula real, se vale o salário-base ou o bruto e se a saída antecipada é permitida."
+  },
+  "money": {
+    "lakh": "{{value}} lakh",
+    "crore": "{{value}} crore"
+  },
+  "salaryHike": {
+    "title": "O que um aumento acrescenta ao seu contracheque",
+    "current": "CTC atual por ano",
+    "offered": "CTC oferecido por ano",
+    "variable": "Variável em cada CTC (%)",
+    "ctcHike": "Aumento no CTC",
+    "inHandHike": "Aumento no líquido mensal",
+    "extra": "Líquido a mais por mês",
+    "note": "Uma estimativa pelas faixas do novo regime tributário de 2025-26, com a mesma parte variável nos dois CTCs e salário-base de metade do fixo. A variável fica fora dos valores mensais porque não é paga todo mês."
+  },
+  "offerCompare": {
+    "title": "Duas ofertas lado a lado no primeiro ano",
+    "ctc": "Oferta {{offer}}: CTC anual",
+    "variable": "Oferta {{offer}}: variável (%)",
+    "bonus": "Oferta {{offer}}: bônus de contratação",
+    "yearOne": "Oferta {{offer}}, líquido no primeiro ano",
+    "more": "Paga mais no primeiro ano",
+    "ahead": "Oferta {{offer}}, por {{amount}}",
+    "even": "Nenhuma, estão empatadas",
+    "note": "Doze contracheques, a variável se for paga integralmente e o bônus de contratação após impostos, pelas faixas do novo regime tributário de 2025-26 e com salário-base de metade do fixo. Pergunte se o bônus precisa ser devolvido se você sair em menos de um ano."
+  }
+}

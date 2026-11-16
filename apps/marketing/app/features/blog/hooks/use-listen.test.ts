@@ -24,7 +24,13 @@ beforeEach(() => {
   vi.stubGlobal("SpeechSynthesisUtterance", Utterance)
   vi.stubGlobal("speechSynthesis", {
     getVoices: () => [
-      { lang: "en-IN", name: "Test", default: true, voiceURI: "en-IN" },
+      {
+        lang: "en-IN",
+        name: "Test",
+        default: true,
+        voiceURI: "en-IN",
+        localService: true,
+      },
     ],
     speak: (u: Utterance) => spoken.push(u),
     cancel: vi.fn(),
@@ -92,6 +98,30 @@ it("resumes the paused block, and ignores what the cancelled utterance reports",
   })
   expect(spoken.at(-1)?.text).toBe("One.")
   expect(result.current.status).toBe("playing")
+})
+
+it("moves on when an online voice goes quiet without ending", () => {
+  vi.stubGlobal("speechSynthesis", {
+    speak: (u: Utterance) => spoken.push(u),
+    cancel: vi.fn(),
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    getVoices: () => [
+      {
+        lang: "en-IN",
+        name: "Google English",
+        default: true,
+        voiceURI: "google-en-IN",
+        localService: false,
+      },
+    ],
+  })
+  start()
+  expect(spoken.map((u) => u.text)).toEqual(["Title"])
+  act(() => {
+    vi.advanceTimersByTime(6_000)
+  })
+  expect(spoken.map((u) => u.text)).toEqual(["Title", "One."])
 })
 
 it("stops on a real speech error instead of staying on pause", () => {

@@ -14,20 +14,33 @@ const subscribe = (onChange: () => void) => {
   }
 }
 
-function readRaw(key: string): string | null {
+type Area = "local" | "session"
+
+const storage = (area: Area) =>
+  area === "session" ? window.sessionStorage : window.localStorage
+
+function readRaw(area: Area, key: string): string | null {
   try {
-    return localStorage.getItem(PREFIX + key)
+    return storage(area).getItem(PREFIX + key)
   } catch {
     return null
   }
 }
 
-/** A JSON value in localStorage, checked on read; private mode or a full disk just forgets it. */
-export function localStore<T>(key: string, schema: z.ZodType<T>, fallback: T) {
+/**
+ * A JSON value in web storage, checked on read; private mode or a full disk just forgets it.
+ * `session` keeps it for the tab only.
+ */
+export function localStore<T>(
+  key: string,
+  schema: z.ZodType<T>,
+  fallback: T,
+  area: Area = "local"
+) {
   let cache: { raw: string | null; value: T } | undefined
 
   const read = (): T => {
-    const raw = readRaw(key)
+    const raw = readRaw(area, key)
     if (cache?.raw !== raw) {
       let value = fallback
       try {
@@ -43,7 +56,7 @@ export function localStore<T>(key: string, schema: z.ZodType<T>, fallback: T) {
 
   const write = (value: T) => {
     try {
-      localStorage.setItem(PREFIX + key, JSON.stringify(value))
+      storage(area).setItem(PREFIX + key, JSON.stringify(value))
     } catch {
       return
     }

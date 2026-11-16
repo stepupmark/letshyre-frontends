@@ -1,0 +1,78 @@
+{
+  "bonusClawback": {
+    "title": "Was ein Antrittsbonus wert ist, wenn Sie früh gehen",
+    "ctc": "CTC pro Jahr",
+    "bonus": "Antrittsbonus",
+    "months": "Monate, die Sie bleiben",
+    "inHand": "Bonus netto, nach Steuern",
+    "prorated": "Zurückzuzahlen, wenn anteilig",
+    "full": "Zurückzuzahlen, wenn vollständig",
+    "note": "Geht von einer 12-monatigen Klausel aus. Eine Schätzung nach den Steuersätzen 2025-26 des neuen Steuersystems, wobei der Bonus zusätzlich zum Jahresgehalt besteuert wird. Ihr Arbeitgeber kann die Rückzahlung von Ihrer Schlussabrechnung abziehen, und die Steuer darauf bekommen Sie am leichtesten im selben Geschäftsjahr zurück."
+  },
+  "commuteCost": {
+    "title": "Was Ihr Arbeitsweg kostet",
+    "days": "Bürotage pro Woche",
+    "minutes": "Minuten hin und zurück",
+    "cost": "Kosten hin und zurück",
+    "hours": "Stunden pro Monat unterwegs",
+    "money": "Fahrtkosten pro Monat",
+    "workdays": "Achtstündige Tage pro Jahr",
+    "note": "Zählt jede Woche des Jahres als Arbeitswoche. Ziehen Sie Urlaub und Feiertage ab, um genauer zu rechnen. Die Kosten umfassen Taxi oder Benzin, Parken und alles andere, was die Fahrt kostet."
+  },
+  "ctcTakeHome": {
+    "title": "Was ein CTC wirklich auszahlt",
+    "ctc": "CTC pro Jahr (₹)",
+    "variable": "Variabler Anteil am CTC (%)",
+    "basic": "Grundgehalt, in % des Fixgehalts",
+    "monthly": "Netto pro Monat",
+    "variableAfterTax": "Variable nach Steuern, bei voller Auszahlung",
+    "tax": "Einkommensteuer für das Jahr",
+    "note": "Eine Schätzung nach den Stufen des neuen indischen Steuersystems für 2025-26, mit PF von 12 % des Grundgehalts, Gratuity innerhalb des CTC und 200 ₹ Professional Tax pro Monat. Der Zuschlag über 50 Lakh ist nicht enthalten, und die Gehaltsaufstellung deines Arbeitgebers bestimmt die echten Beträge."
+  },
+  "hireCost": {
+    "title": "Was dich deine offene Stelle kostet",
+    "salary": "Jahresgehalt für die Stelle (₹)",
+    "daysNow": "Tage, die du heute zum Besetzen brauchst",
+    "daysTarget": "Tage, auf die du kommen könntest",
+    "perDay": "Jeder Tag, an dem die Stelle leer bleibt",
+    "extra_one": "Der {{count}} zusätzliche Tag",
+    "extra_other": "Die {{count}} zusätzlichen Tage",
+    "note": "Eine grobe Untergrenze: Jeder Tag zählt mit dem Gehalt der Stelle für diesen Tag. Die Kandidaten, die du beim Warten verlierst, sind nicht eingerechnet, und sie kosten meist mehr."
+  },
+  "noticeBuyout": {
+    "title": "Wann deine Kündigungsfrist endet und was ein früherer Abschied kostet",
+    "resignedOn": "Du kündigst am",
+    "noticeDays": "Kündigungsfrist (Tage)",
+    "monthlyPay": "Monatsgehalt für die Ablöse (₹)",
+    "joinOn": "Du möchtest anfangen am",
+    "freeFrom": "Frei für den Start ab",
+    "unserved": "Tage, die du nicht ableisten würdest",
+    "buyout": "Ablöse vor Steuern",
+    "note": "Zählt Kalendertage und ein Monatsgehalt geteilt durch 30. Die Regelung deines Arbeitgebers entscheidet über die echte Formel, ob Grund- oder Bruttogehalt zählt und ob eine Ablöse überhaupt möglich ist."
+  },
+  "money": {
+    "lakh": "{{value}} Lakh",
+    "crore": "{{value}} Crore"
+  },
+  "salaryHike": {
+    "title": "Was eine Gehaltserhöhung auf dem Lohnzettel bringt",
+    "current": "Aktueller CTC pro Jahr",
+    "offered": "Angebotener CTC pro Jahr",
+    "variable": "Variabler Anteil an jedem CTC (%)",
+    "ctcHike": "Erhöhung des CTC",
+    "inHandHike": "Erhöhung des monatlichen Nettos",
+    "extra": "Monatlich mehr netto",
+    "note": "Eine Schätzung nach den Steuerstufen des neuen Steuersystems für 2025-26, mit gleichem variablem Anteil in beiden CTCs und einem Grundgehalt von der Hälfte des Fixgehalts. Variable Vergütung fehlt in den Monatswerten, weil sie nicht jeden Monat gezahlt wird."
+  },
+  "offerCompare": {
+    "title": "Zwei Angebote im ersten Jahr nebeneinander",
+    "ctc": "Angebot {{offer}}: CTC pro Jahr",
+    "variable": "Angebot {{offer}}: variabler Anteil (%)",
+    "bonus": "Angebot {{offer}}: Antrittsprämie",
+    "yearOne": "Angebot {{offer}}, netto im ersten Jahr",
+    "more": "Zahlt im ersten Jahr mehr",
+    "ahead": "Angebot {{offer}}, um {{amount}}",
+    "even": "Keines, beide gleich",
+    "note": "Zwölf Gehaltszahlungen, die variable Vergütung bei voller Auszahlung und die Antrittsprämie nach Steuern, nach den Steuerstufen des neuen Steuersystems für 2025-26 und mit einem Grundgehalt von der Hälfte des Fixgehalts. Fragen Sie, ob die Antrittsprämie zurückzuzahlen ist, wenn Sie innerhalb eines Jahres gehen."
+  }
+}

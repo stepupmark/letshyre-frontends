@@ -6,7 +6,7 @@ import { numberOf, vacancyCost } from "../../../lib/tools"
 import { ToolField, ToolFrame, ToolMoneyField, ToolResult } from "./tool-frame"
 
 export default function HireCost() {
-  const { t } = useTranslation("blog")
+  const { t } = useTranslation("blogTools")
   const money = useRupees()
   const [salary, setSalary] = useState("1800000")
   const [daysNow, setDaysNow] = useState("39")
@@ -19,17 +19,17 @@ export default function HireCost() {
 
   return (
     <ToolFrame
-      title={t("mdx.hireCost.title")}
-      note={t("mdx.hireCost.note")}
+      title={t("hireCost.title")}
+      note={t("hireCost.note")}
       fields={
         <>
           <ToolMoneyField
-            label={t("mdx.hireCost.salary")}
+            label={t("hireCost.salary")}
             value={salary}
             onValueChange={setSalary}
           />
           <ToolField
-            label={t("mdx.hireCost.daysNow")}
+            label={t("hireCost.daysNow")}
             type="number"
             inputMode="numeric"
             min={0}
@@ -39,7 +39,7 @@ export default function HireCost() {
             }}
           />
           <ToolField
-            label={t("mdx.hireCost.daysTarget")}
+            label={t("hireCost.daysTarget")}
             type="number"
             inputMode="numeric"
             min={0}
@@ -52,9 +52,9 @@ export default function HireCost() {
       }
       results={
         <>
-          <ToolResult label={t("mdx.hireCost.perDay")} value={money(perDay)} />
+          <ToolResult label={t("hireCost.perDay")} value={money(perDay)} />
           <ToolResult
-            label={t("mdx.hireCost.extra", {
+            label={t("hireCost.extra", {
               count: Math.max(0, numberOf(daysNow) - numberOf(daysTarget)),
             })}
             value={money(extra)}

@@ -6,7 +6,7 @@ import { numberOf, salaryHike } from "../../../lib/tools"
 import { ToolField, ToolFrame, ToolMoneyField, ToolResult } from "./tool-frame"
 
 export default function SalaryHike() {
-  const { t } = useTranslation("blog")
+  const { t } = useTranslation("blogTools")
   const format = useFormat()
   const money = useRupees()
   const [current, setCurrent] = useState("2000000")
@@ -22,22 +22,22 @@ export default function SalaryHike() {
 
   return (
     <ToolFrame
-      title={t("mdx.salaryHike.title")}
-      note={t("mdx.salaryHike.note")}
+      title={t("salaryHike.title")}
+      note={t("salaryHike.note")}
       fields={
         <>
           <ToolMoneyField
-            label={t("mdx.salaryHike.current")}
+            label={t("salaryHike.current")}
             value={current}
             onValueChange={setCurrent}
           />
           <ToolMoneyField
-            label={t("mdx.salaryHike.offered")}
+            label={t("salaryHike.offered")}
             value={offered}
             onValueChange={setOffered}
           />
           <ToolField
-            label={t("mdx.salaryHike.variable")}
+            label={t("salaryHike.variable")}
             type="number"
             inputMode="decimal"
             min={0}
@@ -52,15 +52,15 @@ export default function SalaryHike() {
       results={
         <>
           <ToolResult
-            label={t("mdx.salaryHike.ctcHike")}
+            label={t("salaryHike.ctcHike")}
             value={percent(result.ctcHike)}
           />
           <ToolResult
-            label={t("mdx.salaryHike.inHandHike")}
+            label={t("salaryHike.inHandHike")}
             value={percent(result.inHandHike)}
           />
           <ToolResult
-            label={t("mdx.salaryHike.extra")}
+            label={t("salaryHike.extra")}
             value={money(result.extraPerMonth)}
           />
         </>

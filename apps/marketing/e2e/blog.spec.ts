@@ -29,6 +29,25 @@ test("a post's date reads the same day west of UTC once it hydrates", async ({
   await context.close()
 })
 
+test("navigating in the app to a post that doesn't exist shows the 404 page", async ({
+  page,
+}) => {
+  await page.goto("/en/blogs")
+  await page.waitForLoadState("networkidle")
+  await page.evaluate(async () => {
+    const router = (
+      window as unknown as {
+        __reactRouterDataRouter: { navigate: (to: string) => Promise<void> }
+      }
+    ).__reactRouterDataRouter
+    await router.navigate("/en/blogs/not-a-post")
+  })
+
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "This page doesn't exist"
+  )
+})
+
 test("searching the index finds a post and opens it in place, without errors", async ({
   page,
 }) => {

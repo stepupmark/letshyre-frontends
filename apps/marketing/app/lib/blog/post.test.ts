@@ -43,8 +43,39 @@ describe("parsePost", () => {
     })
   })
 
+  it("keeps a publish time apart from the date, and orders same-day posts by it", () => {
+    const at = (slug: string, publishedAt: string) =>
+      parsePost(
+        `/content/blog/${slug}/en.mdx`,
+        source(
+          `${valid.replace("2026-11-08", publishedAt)}\nupdatedAt: 2026-11-08`
+        )
+      )
+    const morning = at("morning", "2026-11-08T09:00")
+    expect(morning).toMatchObject({
+      publishedAt: "2026-11-08",
+      publishedTime: "09:00",
+    })
+    expect(isLive(morning, "2026-11-08")).toBe(true)
+    expect(
+      publishedPosts(
+        [
+          at("a-untimed", "2026-11-08"),
+          morning,
+          at("evening", "2026-11-08T18:30"),
+        ],
+        ["en"]
+      ).map((post) => post.slug)
+    ).toEqual(["evening", "morning", "a-untimed"])
+  })
+
   it.each([
     ["/content/blog/Structured_Interviews/en.mdx", source(valid), /slug/],
+    [
+      "/content/blog/structured/en.mdx",
+      source(valid.replace("2026-11-08", "2026-11-08T25:00")),
+      /publishedAt/,
+    ],
     ["/content/blog/topics/en.mdx", source(valid), /reserved/],
     ["/content/blog/structured/xx.mdx", source(valid), /locale/],
     ["/content/blog/structured/en.mdx", "No frontmatter here.", /frontmatter/],

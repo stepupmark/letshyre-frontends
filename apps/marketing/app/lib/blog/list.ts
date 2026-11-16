@@ -42,20 +42,29 @@ export const previewsOn = (viteEnv: string | undefined, dev = false) =>
   dev || viteEnv === "staging"
 
 /** Production ships live posts only; staging and dev also show the rest, marked as previews. */
-export const visiblePosts = (posts: readonly Post[], previews: boolean) =>
+export const visiblePosts = (
+  posts: readonly Post[],
+  previews: boolean,
+  date = today()
+) =>
   posts.flatMap((post): Post[] => {
-    if (isLive(post)) return [post]
+    if (isLive(post, date)) return [post]
     return previews ? [{ ...post, preview: true }] : []
   })
+
+const publishOrder = (post: Pick<Post, "publishedAt" | "publishedTime">) =>
+  `${post.publishedAt}T${post.publishedTime ?? "00:00"}`
+
+/** Newest first, by date then time, then slug so the order never depends on file order. */
+const newestFirst = (a: Post, b: Post) =>
+  publishOrder(b).localeCompare(publishOrder(a)) || a.slug.localeCompare(b.slug)
 
 /** Newest first. Posts need the blog's copy in their locale to ship. */
 export const publishedPosts = (
   posts: readonly Post[],
   blogLocales: readonly Locale[]
 ): Post[] =>
-  posts
-    .filter((post) => blogLocales.includes(post.lang))
-    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+  posts.filter((post) => blogLocales.includes(post.lang)).sort(newestFirst)
 
 /** The blog index ships only where at least one post does. */
 export function withBlogIndex(

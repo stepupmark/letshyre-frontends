@@ -19,7 +19,7 @@ function useOffer(ctc: string, variable: string, bonus: string) {
 }
 
 export default function OfferCompare() {
-  const { t } = useTranslation("blog")
+  const { t } = useTranslation("blogTools")
   const money = useRupees()
   const offers = {
     A: useOffer("2400000", "15", "0"),
@@ -30,17 +30,17 @@ export default function OfferCompare() {
 
   return (
     <ToolFrame
-      title={t("mdx.offerCompare.title")}
-      note={t("mdx.offerCompare.note")}
+      title={t("offerCompare.title")}
+      note={t("offerCompare.note")}
       fields={(["A", "B"] as const).map((offer) => {
         const { state, set } = offers[offer]
         return (
           <OfferFields
             key={offer}
             labels={{
-              ctc: t("mdx.offerCompare.ctc", { offer }),
-              variable: t("mdx.offerCompare.variable", { offer }),
-              bonus: t("mdx.offerCompare.bonus", { offer }),
+              ctc: t("offerCompare.ctc", { offer }),
+              variable: t("offerCompare.variable", { offer }),
+              bonus: t("offerCompare.bonus", { offer }),
             }}
             state={state}
             set={set}
@@ -50,19 +50,19 @@ export default function OfferCompare() {
       results={
         <>
           <ToolResult
-            label={t("mdx.offerCompare.yearOne", { offer: "A" })}
+            label={t("offerCompare.yearOne", { offer: "A" })}
             value={money(offers.A.yearOne)}
           />
           <ToolResult
-            label={t("mdx.offerCompare.yearOne", { offer: "B" })}
+            label={t("offerCompare.yearOne", { offer: "B" })}
             value={money(offers.B.yearOne)}
           />
           <ToolResult
-            label={t("mdx.offerCompare.more")}
+            label={t("offerCompare.more")}
             value={
               Math.abs(gap) < 1
-                ? t("mdx.offerCompare.even")
-                : t("mdx.offerCompare.ahead", {
+                ? t("offerCompare.even")
+                : t("offerCompare.ahead", {
                     offer: ahead,
                     amount: money(Math.abs(gap)),
                   })

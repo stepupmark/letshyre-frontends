@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react"
 import { TocLinks } from "@/components/guide/guide-toc"
 import { useActiveSection } from "@/hooks/use-active-section"
 import type { Heading } from "@/lib/blog/post"
+import { onScrollFrame } from "@/lib/scroll-frame"
 
 // useActiveSection names the first heading before it's reached; the bar shouldn't
 function useReachedFirst(id: string | undefined) {
@@ -18,10 +19,7 @@ function useReachedFirst(id: string | undefined) {
       setReached(heading.getBoundingClientRect().top < window.innerHeight / 3)
     }
     update()
-    window.addEventListener("scroll", update, { passive: true })
-    return () => {
-      window.removeEventListener("scroll", update)
-    }
+    return onScrollFrame(update)
   }, [id])
 
   return reached

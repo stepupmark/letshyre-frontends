@@ -4,7 +4,9 @@ import type { Post } from "@/lib/blog/post"
 
 import { localStore } from "./local-store"
 
-const slugs = z.array(z.string()).max(200)
+const MAX_SAVED = 200
+// trimmed on read as well, so a list saved over the cap loses its oldest, not everything
+const slugs = z.array(z.string()).transform((list) => list.slice(0, MAX_SAVED))
 const savedStores = new Map<string, ReturnType<typeof makeSaved>>()
 const makeSaved = (lang: string) => localStore(`saved:${lang}`, slugs, [])
 
@@ -18,7 +20,11 @@ export function savedPosts(lang: string) {
   const toggle = (slug: string): boolean => {
     const saved = store.read()
     const on = !saved.includes(slug)
-    store.write(on ? [slug, ...saved] : saved.filter((s) => s !== slug))
+    store.write(
+      on
+        ? [slug, ...saved].slice(0, MAX_SAVED)
+        : saved.filter((s) => s !== slug)
+    )
     return on
   }
   return { ...store, toggle }
@@ -38,11 +44,15 @@ export function rememberPosition(key: string, at: number) {
   readingPositions.write({ ...Object.fromEntries(kept), [key]: at })
 }
 
-/** Who the reader seems to be: set by the posts they read and the call to action they pick. */
+/**
+ * Who the reader seems to be: set by the posts they read and the call to action they pick. Kept
+ * for the tab only, since tailoring a call to action isn't something the reader asked us to store.
+ */
 export const readerAudience = localStore(
   "audience",
   z.enum(["employers", "candidates"]).nullable(),
-  null
+  null,
+  "session"
 )
 
 export const rememberAudience = (audience: Post["audience"]) => {

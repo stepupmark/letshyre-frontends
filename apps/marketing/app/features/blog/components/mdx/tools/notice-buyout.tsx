@@ -10,7 +10,7 @@ const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
 const today = () => new Date().toLocaleDateString("en-CA")
 
 export default function NoticeBuyout() {
-  const { t } = useTranslation("blog")
+  const { t } = useTranslation("blogTools")
   const format = useFormat()
   const money = useRupees()
   const [resignedOn, setResignedOn] = useState(today)
@@ -27,12 +27,12 @@ export default function NoticeBuyout() {
 
   return (
     <ToolFrame
-      title={t("mdx.noticeBuyout.title")}
-      note={t("mdx.noticeBuyout.note")}
+      title={t("noticeBuyout.title")}
+      note={t("noticeBuyout.note")}
       fields={
         <>
           <ToolField
-            label={t("mdx.noticeBuyout.resignedOn")}
+            label={t("noticeBuyout.resignedOn")}
             type="date"
             value={resignedOn}
             onChange={(event) => {
@@ -40,7 +40,7 @@ export default function NoticeBuyout() {
             }}
           />
           <ToolField
-            label={t("mdx.noticeBuyout.noticeDays")}
+            label={t("noticeBuyout.noticeDays")}
             type="number"
             inputMode="numeric"
             min={0}
@@ -50,12 +50,12 @@ export default function NoticeBuyout() {
             }}
           />
           <ToolMoneyField
-            label={t("mdx.noticeBuyout.monthlyPay")}
+            label={t("noticeBuyout.monthlyPay")}
             value={monthlyPay}
             onValueChange={setMonthlyPay}
           />
           <ToolField
-            label={t("mdx.noticeBuyout.joinOn")}
+            label={t("noticeBuyout.joinOn")}
             type="date"
             min={resigned}
             value={joinOn}
@@ -68,7 +68,7 @@ export default function NoticeBuyout() {
       results={
         <>
           <ToolResult
-            label={t("mdx.noticeBuyout.freeFrom")}
+            label={t("noticeBuyout.freeFrom")}
             value={
               format.date(`${result.freeFrom}T00:00:00Z`, {
                 dateStyle: "long",
@@ -77,11 +77,11 @@ export default function NoticeBuyout() {
             }
           />
           <ToolResult
-            label={t("mdx.noticeBuyout.unserved")}
+            label={t("noticeBuyout.unserved")}
             value={format.number(result.unserved)}
           />
           <ToolResult
-            label={t("mdx.noticeBuyout.buyout")}
+            label={t("noticeBuyout.buyout")}
             value={money(result.buyout)}
           />
         </>

@@ -2,10 +2,10 @@ import type { Locale } from "@workspace/i18n"
 
 import { env } from "../env"
 import { catalogReadiness } from "../messages.server"
-import { parseGuide, parseSeries, parseTerm } from "./glossary"
-import { previewsOn, publishedPosts } from "./list"
-import { parsePosts, type Post } from "./post"
-import { blogRoutes } from "./routes"
+import { blogBuild } from "./build"
+import { previewsOn } from "./list"
+import { blogModel } from "./model"
+import type { Post } from "./post"
 
 const sources = import.meta.glob<string>("/content/blog/*/*.mdx", {
   eager: true,
@@ -48,29 +48,31 @@ function withCover(post: Post): Post {
   return src ? { ...post, cover: { src } } : post
 }
 
+// react-router.config.ts fixed the build's date and previews, so these match the prerender list
+const build = blogBuild()
+const model = blogModel(
+  {
+    posts: Object.entries(sources),
+    terms: Object.entries(termSources),
+    guides: Object.entries(guideSources),
+    series: Object.entries(seriesSources),
+  },
+  {
+    previews:
+      process.env.BLOG_PREVIEWS === undefined
+        ? previewsOn(env.VITE_ENV, import.meta.env.DEV)
+        : build.previews,
+    blogLocales: catalogReadiness.get("blog") ?? [],
+    date: build.date,
+  }
+)
+
 /** Newest first: the posts that ship, each in a locale whose blog copy is complete. */
-export const posts: Post[] = publishedPosts(
-  parsePosts(
-    Object.entries(sources),
-    previewsOn(env.VITE_ENV, import.meta.env.DEV)
-  ).map(withCover),
-  catalogReadiness.get("blog") ?? []
-)
-
-const postLangs = new Set(posts.map((post) => post.lang))
-const terms = Object.entries(termSources)
-  .map(([file, source]) => parseTerm(file, source))
-  .filter((term) => postLangs.has(term.lang))
-const guides = Object.entries(guideSources).map(([file, source]) =>
-  parseGuide(file, source)
-)
-
-const series = Object.entries(seriesSources).map(([file, source]) =>
-  parseSeries(file, source)
-)
+export const posts: Post[] = model.posts.map(withCover)
+const { terms, guides, series } = model
 
 const routeLocales = new Map(
-  blogRoutes(posts, terms).map((route) => [route.path, route.locales])
+  model.routes.map((route) => [route.path, route.locales])
 )
 
 /** The locales a blog path ships in, for hreflang. */

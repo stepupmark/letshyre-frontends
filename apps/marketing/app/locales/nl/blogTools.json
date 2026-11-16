@@ -1,0 +1,78 @@
+{
+  "bonusClawback": {
+    "title": "Wat een welkomstbonus waard is als je vroeg vertrekt",
+    "ctc": "CTC per jaar",
+    "bonus": "Welkomstbonus",
+    "months": "Maanden dat je blijft",
+    "inHand": "Bonus netto, na belasting",
+    "prorated": "Terug te betalen, als het naar rato is",
+    "full": "Terug te betalen, als het volledig is",
+    "note": "Gaat uit van een clausule van 12 maanden. Een schatting volgens de schijven 2025-26 van het nieuwe belastingstelsel, waarbij de bonus bovenop het jaarsalaris wordt belast. Je werkgever kan de terugbetaling inhouden op je eindafrekening, en de belasting erover krijg je het makkelijkst terug binnen hetzelfde boekjaar."
+  },
+  "commuteCost": {
+    "title": "Wat je woon-werkverkeer kost",
+    "days": "Kantoordagen per week",
+    "minutes": "Minuten heen en terug",
+    "cost": "Kosten heen en terug",
+    "hours": "Uren per maand onderweg",
+    "money": "Reiskosten per maand",
+    "workdays": "Werkdagen van acht uur per jaar",
+    "note": "Telt elke week van het jaar als werkweek, dus trek je vakantie en feestdagen af voor een preciezer getal. De kosten omvatten taxi of brandstof, parkeren en alles wat de rit verder kost."
+  },
+  "ctcTakeHome": {
+    "title": "Wat een CTC je oplevert",
+    "ctc": "CTC per jaar (₹)",
+    "variable": "Variabel deel van de CTC (%)",
+    "basic": "Basissalaris, als % van het vaste loon",
+    "monthly": "Netto per maand",
+    "variableAfterTax": "Variabel na belasting, als het volledig wordt uitbetaald",
+    "tax": "Inkomstenbelasting voor het jaar",
+    "note": "Een schatting volgens de schijven van het nieuwe Indiase belastingstelsel voor 2025-26, met PF van 12% van het basissalaris, gratuity binnen de CTC en ₹200 per maand professional tax. De toeslag boven ₹50 lakh telt niet mee, en de salarisopbouw van je werkgever bepaalt de echte bedragen."
+  },
+  "hireCost": {
+    "title": "Wat je openstaande vacature kost",
+    "salary": "Jaarsalaris voor de functie (₹)",
+    "daysNow": "Dagen die je nu nodig hebt om te vullen",
+    "daysTarget": "Dagen waar je naartoe zou kunnen",
+    "perDay": "Elke dag dat de plek leeg blijft",
+    "extra_one": "De {{count}} extra dag",
+    "extra_other": "De {{count}} extra dagen",
+    "note": "Een ruwe ondergrens: elke dag telt als het salaris van de functie voor die dag. Kandidaten die je verliest terwijl je wacht, en die meestal meer kosten, tellen niet mee."
+  },
+  "noticeBuyout": {
+    "title": "Wanneer je opzegtermijn afloopt, en wat eerder vertrekken kost",
+    "resignedOn": "Je neemt ontslag op",
+    "noticeDays": "Opzegtermijn (dagen)",
+    "monthlyPay": "Maandsalaris voor de afkoop (₹)",
+    "joinOn": "Je wilt beginnen op",
+    "freeFrom": "Vrij om te beginnen vanaf",
+    "unserved": "Dagen die je niet zou werken",
+    "buyout": "Afkoop, vóór belasting",
+    "note": "Telt kalenderdagen en een maandsalaris gedeeld door 30. Het beleid van je werkgever bepaalt de echte formule, of het basis- of brutosalaris telt en of afkoop überhaupt mag."
+  },
+  "money": {
+    "lakh": "{{value}} lakh",
+    "crore": "{{value}} crore"
+  },
+  "salaryHike": {
+    "title": "Wat een loonsverhoging toevoegt aan je loonstrook",
+    "current": "Huidige CTC per jaar",
+    "offered": "Aangeboden CTC per jaar",
+    "variable": "Variabel deel van elke CTC (%)",
+    "ctcHike": "Verhoging van de CTC",
+    "inHandHike": "Verhoging van het maandelijkse netto",
+    "extra": "Netto extra per maand",
+    "note": "Een schatting volgens de schijven van het nieuwe belastingstelsel voor 2025-26, met hetzelfde variabele deel in beide CTC's en een basissalaris van de helft van het vaste loon. Variabel loon telt niet mee in de maandbedragen, omdat het niet elke maand wordt betaald."
+  },
+  "offerCompare": {
+    "title": "Twee aanbiedingen naast elkaar in het eerste jaar",
+    "ctc": "Aanbod {{offer}}: CTC per jaar",
+    "variable": "Aanbod {{offer}}: variabel deel (%)",
+    "bonus": "Aanbod {{offer}}: welkomstbonus",
+    "yearOne": "Aanbod {{offer}}, netto in het eerste jaar",
+    "more": "Betaalt meer in het eerste jaar",
+    "ahead": "Aanbod {{offer}}, met {{amount}}",
+    "even": "Geen van beide, ze zijn gelijk",
+    "note": "Twaalf loonstroken, het variabele deel als het volledig wordt uitbetaald en de welkomstbonus na belasting, volgens de schijven van het nieuwe belastingstelsel voor 2025-26 en met een basissalaris van de helft van het vaste loon. Vraag of je de bonus moet terugbetalen als je binnen een jaar vertrekt."
+  }
+}

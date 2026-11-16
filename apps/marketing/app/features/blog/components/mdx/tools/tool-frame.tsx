@@ -108,7 +108,7 @@ export function ToolMoneyField({
   value: string
   onValueChange: (digits: string) => void
 }) {
-  const { t } = useTranslation("blog")
+  const { t } = useTranslation("blogTools")
   const format = useFormat()
   const ref = useRef<HTMLInputElement>(null)
   // digits left of the caret, so a comma that appears or goes doesn't throw it to the end
@@ -133,7 +133,7 @@ export function ToolMoneyField({
       label={label}
       hint={
         unit &&
-        t(`mdx.money.${unit.unit}`, {
+        t(`money.${unit.unit}`, {
           value: format.number(unit.value, { maximumFractionDigits: 2 }),
         })
       }

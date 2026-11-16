@@ -147,7 +147,13 @@ export function postData(lang: string | undefined, slug: string | undefined) {
     return part ? [{ slug: part.slug, title: part.title }] : []
   })
   return {
-    messages: loadMessages(lang, PAGES.blog.namespaces),
+    // only posts with a calculator carry its copy
+    messages: loadMessages(
+      lang,
+      post.tools
+        ? [...PAGES.blog.namespaces, "blogTools"]
+        : PAGES.blog.namespaces
+    ),
     locales: blogLocalesOf(postPath(post.slug)),
     post,
     newer: link(newer),

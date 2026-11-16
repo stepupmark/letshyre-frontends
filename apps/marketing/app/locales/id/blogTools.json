@@ -1,0 +1,77 @@
+{
+  "bonusClawback": {
+    "title": "Berapa nilai bonus bergabung jika Anda keluar lebih awal",
+    "ctc": "CTC per tahun",
+    "bonus": "Bonus bergabung",
+    "months": "Bulan Anda bertahan",
+    "inHand": "Bonus bersih, setelah pajak",
+    "prorated": "Dikembalikan, jika proporsional",
+    "full": "Dikembalikan, jika penuh",
+    "note": "Mengasumsikan klausul 12 bulan. Perkiraan berdasarkan tarif rezim pajak baru 2025-26, dengan bonus dikenai pajak di atas gaji setahun. Pemberi kerja dapat memotong pengembalian dari penyelesaian akhir Anda, dan pajaknya paling mudah diklaim kembali dalam tahun buku yang sama."
+  },
+  "commuteCost": {
+    "title": "Berapa biaya perjalanan kerja Anda",
+    "days": "Hari ke kantor per minggu",
+    "minutes": "Menit pulang pergi",
+    "cost": "Biaya pulang pergi",
+    "hours": "Jam per bulan di perjalanan",
+    "money": "Biaya perjalanan per bulan",
+    "workdays": "Hari kerja delapan jam per tahun",
+    "note": "Menghitung setiap minggu dalam setahun sebagai minggu kerja, jadi kurangi cuti dan hari libur agar lebih akurat. Biaya mencakup taksi atau bensin, parkir, dan pengeluaran lain untuk perjalanan."
+  },
+  "ctcTakeHome": {
+    "title": "Yang benar-benar Anda terima dari CTC",
+    "ctc": "CTC per tahun (₹)",
+    "variable": "Gaji variabel dalam CTC (%)",
+    "basic": "Gaji pokok, % dari gaji tetap",
+    "monthly": "Diterima setiap bulan",
+    "variableAfterTax": "Gaji variabel setelah pajak, jika dibayar penuh",
+    "tax": "Pajak penghasilan setahun",
+    "note": "Perkiraan berdasarkan lapisan rezim pajak baru India 2025-26, dengan PF 12% dari gaji pokok, gratuity di dalam CTC, dan pajak profesi ₹200 per bulan. Tidak termasuk tambahan pajak di atas ₹50 lakh, dan rincian gaji dari pemberi kerja Anda yang menentukan angka sebenarnya."
+  },
+  "hireCost": {
+    "title": "Biaya posisi yang masih kosong",
+    "salary": "Gaji tahunan untuk posisi ini (₹)",
+    "daysNow": "Hari yang sekarang Anda butuhkan untuk mengisi",
+    "daysTarget": "Hari yang bisa Anda capai",
+    "perDay": "Setiap hari posisi dibiarkan kosong",
+    "extra_other": "{{count}} hari tambahan",
+    "note": "Perkiraan batas bawah: setiap hari dihitung sebesar gaji posisi itu untuk satu hari. Kandidat yang hilang selama Anda menunggu tidak dihitung, padahal biasanya lebih mahal."
+  },
+  "noticeBuyout": {
+    "title": "Kapan masa pemberitahuan Anda berakhir, dan biaya keluar lebih awal",
+    "resignedOn": "Anda mengundurkan diri pada",
+    "noticeDays": "Masa pemberitahuan (hari)",
+    "monthlyPay": "Gaji bulanan untuk perhitungan (₹)",
+    "joinOn": "Anda ingin mulai pada",
+    "freeFrom": "Bebas mulai bekerja dari",
+    "unserved": "Hari yang tidak Anda jalani",
+    "buyout": "Biaya pengganti, sebelum pajak",
+    "note": "Menghitung hari kalender dan gaji sebulan dibagi 30. Kebijakan pemberi kerja Anda yang menentukan rumus sebenarnya, gaji pokok atau gaji kotor, dan apakah keluar lebih awal diizinkan."
+  },
+  "money": {
+    "lakh": "{{value}} lakh",
+    "crore": "{{value}} crore"
+  },
+  "salaryHike": {
+    "title": "Apa yang ditambahkan kenaikan gaji ke slip gaji Anda",
+    "current": "CTC saat ini per tahun",
+    "offered": "CTC yang ditawarkan per tahun",
+    "variable": "Gaji variabel di setiap CTC (%)",
+    "ctcHike": "Kenaikan CTC",
+    "inHandHike": "Kenaikan gaji bersih bulanan",
+    "extra": "Tambahan diterima setiap bulan",
+    "note": "Perkiraan berdasarkan lapisan pajak rezim baru 2025-26, dengan porsi variabel yang sama di kedua CTC dan gaji pokok setengah dari gaji tetap. Gaji variabel tidak masuk angka bulanan karena tidak dibayar setiap bulan."
+  },
+  "offerCompare": {
+    "title": "Dua tawaran berdampingan di tahun pertama",
+    "ctc": "Tawaran {{offer}}: CTC per tahun",
+    "variable": "Tawaran {{offer}}: gaji variabel (%)",
+    "bonus": "Tawaran {{offer}}: bonus bergabung",
+    "yearOne": "Tawaran {{offer}}, diterima di tahun pertama",
+    "more": "Membayar lebih di tahun pertama",
+    "ahead": "Tawaran {{offer}}, selisih {{amount}}",
+    "even": "Tidak ada, keduanya sama",
+    "note": "Dua belas slip gaji, gaji variabel jika dibayar penuh, dan bonus bergabung setelah pajak, berdasarkan lapisan pajak rezim baru 2025-26 dengan gaji pokok setengah dari gaji tetap. Tanyakan apakah bonus harus dikembalikan jika Anda keluar dalam setahun."
+  }
+}

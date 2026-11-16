@@ -1,6 +1,8 @@
-// usage: pnpm blog:check [slug…] [--links] [--ci] [--base <ref>] [--watch]
+// usage: pnpm blog:check [slug…] [--links] [--ci] [--base <ref>] [--watch] [--suggest]
 // --links asks each external source whether it still answers; --ci prints GitHub annotations;
 // --base compares published posts with that ref to ask for updatedAt; --watch reruns on save.
+// Suggestions print when checking named posts, in CI or with --suggest; across every post they'd
+// bury the warnings.
 
 import { execFileSync } from "node:child_process"
 import { existsSync, readdirSync, readFileSync, statSync, watch } from "node:fs"
@@ -37,6 +39,7 @@ const { values: flags, positionals: slugs } = parseArgs({
     ci: { type: "boolean" },
     base: { type: "string" },
     watch: { type: "boolean" },
+    suggest: { type: "boolean" },
   },
 })
 
@@ -150,10 +153,13 @@ async function check() {
   const allPosts = readPosts(blogDir, true)
   const terms = readTerms(join(ROOT, GLOSSARY_DIR))
   const count = { error: 0, warning: 0, suggestion: 0 }
+  const showSuggestions =
+    flags.suggest === true || flags.ci === true || slugs.length > 0
 
   const report = (file: string, issues: readonly Issue[]) => {
     for (const { level, message, line } of issues) {
       count[level]++
+      if (level === "suggestion" && !showSuggestions) continue
       if (flags.ci)
         console.log(
           `::${level === "suggestion" ? "notice" : level} file=${relative(REPO, file).replaceAll("\\", "/")}${line ? `,line=${line}` : ""}::${message}`
@@ -241,7 +247,7 @@ async function check() {
   const { error, warning, suggestion } = count
   console.log(
     error || warning || suggestion
-      ? `\n${error} errors, ${warning} warnings, ${suggestion} suggestions. Fix the errors before merging; the rest are for the writer and reviewer.`
+      ? `\n${error} errors, ${warning} warnings, ${suggestion} suggestions${showSuggestions || !suggestion ? "" : " (name a post or add --suggest to see them)"}. Fix the errors before merging; the rest are for the writer and reviewer.`
       : "All posts pass."
   )
   return error

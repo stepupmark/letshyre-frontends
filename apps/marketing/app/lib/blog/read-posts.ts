@@ -12,7 +12,7 @@ import {
 import { parsePosts, type Post } from "./post.ts"
 
 /** Every `<dir>/<name>/<lang>.mdx`, as `[path, source]`. Build-time only. */
-function mdxFiles(contentDir: string): [string, string][] {
+export function mdxFiles(contentDir: string): [string, string][] {
   if (!existsSync(contentDir)) return []
   return readdirSync(contentDir, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
@@ -24,8 +24,11 @@ function mdxFiles(contentDir: string): [string, string][] {
     .map((file) => [file, readFileSync(file, "utf8")])
 }
 
-export const readPosts = (contentDir: string, previews: boolean): Post[] =>
-  parsePosts(mdxFiles(contentDir), previews)
+export const readPosts = (
+  contentDir: string,
+  previews: boolean,
+  date?: string
+): Post[] => parsePosts(mdxFiles(contentDir), previews, date)
 
 export const readTerms = (contentDir: string): Term[] =>
   mdxFiles(contentDir).map(([file, source]) => parseTerm(file, source))
