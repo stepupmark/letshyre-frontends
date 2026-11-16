@@ -19,6 +19,7 @@ test("the assistant opens from home, answers and passes axe", async ({
   const dialog = page.getByRole("dialog", { name: "LetsHyre Assistant" })
   await expect(dialog).toBeVisible()
 
+  await dialog.getByRole("tab", { name: "For employers" }).click()
   await dialog
     .getByRole("button", { name: "How does it work for employers?" })
     .click()
