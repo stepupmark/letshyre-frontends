@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" width="720" height="260" font-family="Outfit, system-ui, -apple-system, Segoe UI, sans-serif">
+<text x="215" y="38" font-size="12" text-anchor="middle" fill="#71717a">J</text>
+<text x="253" y="38" font-size="12" text-anchor="middle" fill="#71717a">F</text>
+<text x="291" y="38" font-size="12" text-anchor="middle" fill="#71717a">M</text>
+<text x="329" y="38" font-size="12" text-anchor="middle" fill="#71717a">A</text>
+<text x="367" y="38" font-size="12" text-anchor="middle" fill="#71717a">M</text>
+<text x="405" y="38" font-size="12" text-anchor="middle" fill="#71717a">J</text>
+<text x="443" y="38" font-size="12" text-anchor="middle" fill="#71717a">J</text>
+<text x="481" y="38" font-size="12" text-anchor="middle" fill="#71717a">A</text>
+<text x="519" y="38" font-size="12" text-anchor="middle" fill="#71717a">S</text>
+<text x="557" y="38" font-size="12" text-anchor="middle" fill="#71717a">O</text>
+<text x="595" y="38" font-size="12" text-anchor="middle" fill="#71717a">N</text>
+<text x="633" y="38" font-size="12" text-anchor="middle" fill="#71717a">D</text>
+<text x="40" y="84" font-size="14" font-weight="600" fill="#18181b">Subscription</text>
+<text x="40" y="102" font-size="12" fill="#71717a">billed every month</text>
+<rect x="200" y="62" width="30" height="40" rx="6" fill="#a9c3fb"/>
+<rect x="238" y="62" width="30" height="40" rx="6" fill="#a9c3fb"/>
+<rect x="276" y="62" width="30" height="40" rx="6" fill="#a9c3fb"/>
+<rect x="314" y="62" width="30" height="40" rx="6" fill="#a9c3fb"/>
+<rect x="352" y="62" width="30" height="40" rx="6" fill="#a9c3fb"/>
+<rect x="390" y="62" width="30" height="40" rx="6" fill="#a9c3fb"/>
+<rect x="428" y="62" width="30" height="40" rx="6" fill="#a9c3fb"/>
+<rect x="466" y="62" width="30" height="40" rx="6" fill="#a9c3fb"/>
+<rect x="504" y="62" width="30" height="40" rx="6" fill="#a9c3fb"/>
+<rect x="542" y="62" width="30" height="40" rx="6" fill="#a9c3fb"/>
+<rect x="580" y="62" width="30" height="40" rx="6" fill="#a9c3fb"/>
+<rect x="618" y="62" width="30" height="40" rx="6" fill="#a9c3fb"/>
+<text x="40" y="164" font-size="14" font-weight="600" fill="#18181b">LetsHyre credits</text>
+<text x="40" y="182" font-size="12" fill="#71717a">used when you hire</text>
+<rect x="200" y="142" width="30" height="40" rx="6" fill="#f4f4f5" stroke="none" stroke-width="2"/>
+<rect x="238" y="142" width="30" height="40" rx="6" fill="#f4f4f5" stroke="none" stroke-width="2"/>
+<rect x="276" y="142" width="30" height="40" rx="6" fill="#dbe6fe" stroke="#266fff" stroke-width="2"/>
+<text x="291" y="167" font-size="14" font-weight="600" text-anchor="middle" fill="#1d5ce0">4</text>
+<rect x="314" y="142" width="30" height="40" rx="6" fill="#f4f4f5" stroke="none" stroke-width="2"/>
+<rect x="352" y="142" width="30" height="40" rx="6" fill="#f4f4f5" stroke="none" stroke-width="2"/>
+<rect x="390" y="142" width="30" height="40" rx="6" fill="#f4f4f5" stroke="none" stroke-width="2"/>
+<rect x="428" y="142" width="30" height="40" rx="6" fill="#dbe6fe" stroke="#266fff" stroke-width="2"/>
+<text x="443" y="167" font-size="14" font-weight="600" text-anchor="middle" fill="#1d5ce0">4</text>
+<rect x="466" y="142" width="30" height="40" rx="6" fill="#f4f4f5" stroke="none" stroke-width="2"/>
+<rect x="504" y="142" width="30" height="40" rx="6" fill="#f4f4f5" stroke="none" stroke-width="2"/>
+<rect x="542" y="142" width="30" height="40" rx="6" fill="#f4f4f5" stroke="none" stroke-width="2"/>
+<rect x="580" y="142" width="30" height="40" rx="6" fill="#dbe6fe" stroke="#266fff" stroke-width="2"/>
+<text x="595" y="167" font-size="14" font-weight="600" text-anchor="middle" fill="#1d5ce0">4</text>
+<rect x="618" y="142" width="30" height="40" rx="6" fill="#f4f4f5" stroke="none" stroke-width="2"/>
+<line x1="40" y1="210" x2="680" y2="210" stroke="#e4e4e7" stroke-width="1"/>
+<text x="40" y="238" font-size="13" fill="#71717a">Three roles, four interviews unlocked for each</text>
+<text x="680" y="238" font-size="15" font-weight="600" text-anchor="end" fill="#18181b">12 credits, <tspan fill="#1d5ce0">10 free on sign-up</tspan></text>
+</svg>

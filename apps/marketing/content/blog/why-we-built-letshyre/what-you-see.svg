@@ -8,5 +8,5 @@
   <circle cx="408" cy="125" r="4" fill="#c3d5fc"/><text x="422" y="130" font-size="14" fill="#18181b">Resume</text><circle cx="408" cy="159" r="4" fill="#c3d5fc"/><text x="422" y="164" font-size="14" fill="#18181b">Contact details</text><circle cx="408" cy="193" r="4" fill="#c3d5fc"/><text x="422" y="198" font-size="14" fill="#18181b">Documents</text><circle cx="408" cy="227" r="4" fill="#c3d5fc"/><text x="422" y="232" font-size="14" fill="#18181b">AI skill scorecard</text><circle cx="408" cy="261" r="4" fill="#c3d5fc"/><text x="422" y="266" font-size="14" fill="#18181b">Full interview recording</text>
   <rect x="400" y="300" width="84" height="30" rx="15" fill="#266fff"/>
   <text x="442" y="320" font-size="13" font-weight="600" text-anchor="middle" fill="#ffffff">1 credit</text>
-  <text x="496" y="320" font-size="13" fill="#71717a">per candidate</text>
+  <text x="496" y="320" font-size="13" fill="#71717a">per interview</text>
 </svg>

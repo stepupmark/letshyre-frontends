@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" height="340" font-family="Outfit, system-ui, -apple-system, Segoe UI, sans-serif">
+<text x="40" y="34" font-size="11" font-weight="600" letter-spacing="0.12em" fill="#71717a">FREE FOR EVERY CANDIDATE</text>
+<text x="440" y="34" font-size="11" font-weight="600" letter-spacing="0.12em" fill="#71717a">WHEN YOU UNLOCK AN INTERVIEW</text>
+<rect x="40" y="48" width="370" height="262" rx="12" fill="#ffffff" stroke="#e4e4e7" stroke-width="1.5"/>
+<circle cx="76" cy="84" r="18" fill="#dbe6fe"/>
+<text x="104" y="80" font-size="15" font-weight="600" fill="#18181b">Sample candidate</text>
+<text x="104" y="98" font-size="13" fill="#71717a">Frontend developer</text>
+<rect x="320" y="72" width="70" height="24" rx="12" fill="#dbe6fe"/><text x="355" y="88" font-size="12" font-weight="600" text-anchor="middle" fill="#1d5ce0">Strong</text>
+<line x1="60" y1="118" x2="390" y2="118" stroke="#e4e4e7" stroke-width="1"/>
+<rect x="60" y="140" width="160" height="48" rx="8" fill="#f3f7ff"/>
+<text x="74" y="159" font-size="12" fill="#71717a">Experience</text>
+<text x="74" y="179" font-size="17" font-weight="600" fill="#18181b">6 yrs</text>
+<rect x="230" y="140" width="160" height="48" rx="8" fill="#f3f7ff"/>
+<text x="244" y="159" font-size="12" fill="#71717a">Interview score</text>
+<text x="244" y="179" font-size="17" font-weight="600" fill="#1d5ce0">82</text>
+<rect x="60" y="198" width="160" height="48" rx="8" fill="#f3f7ff"/>
+<text x="74" y="217" font-size="12" fill="#71717a">Match</text>
+<text x="74" y="237" font-size="17" font-weight="600" fill="#1d5ce0">91%</text>
+<rect x="230" y="198" width="160" height="48" rx="8" fill="#f3f7ff"/>
+<text x="244" y="217" font-size="12" fill="#71717a">Role fit</text>
+<text x="244" y="237" font-size="17" font-weight="600" fill="#18181b">Strong</text>
+<rect x="60" y="256" width="160" height="48" rx="8" fill="#f3f7ff"/>
+<text x="74" y="275" font-size="12" fill="#71717a">Skills fit</text>
+<text x="74" y="295" font-size="17" font-weight="600" fill="#18181b">7 of 8</text>
+<rect x="230" y="256" width="160" height="48" rx="8" fill="#f3f7ff"/>
+<text x="244" y="275" font-size="12" fill="#71717a">Interviews</text>
+<text x="244" y="295" font-size="17" font-weight="600" fill="#18181b">3</text>
+<rect x="440" y="48" width="240" height="262" rx="12" fill="#f4f4f5" stroke="#e4e4e7" stroke-width="1.5"/>
+<rect x="545" y="82" width="30.0" height="24.0" rx="5.0" fill="#1d5ce0"/><path d="M552.0 82 v-6.0 a8.0 8.0 0 0 1 16.0 0 v6.0" fill="none" stroke="#1d5ce0" stroke-width="4.0"/><circle cx="560.0" cy="94.0" r="3.5" fill="#ffffff"/>
+<circle cx="466" cy="148" r="4" fill="#a9c3fb"/><text x="482" y="152" font-size="14" fill="#18181b">Contact details</text>
+<circle cx="466" cy="186" r="4" fill="#a9c3fb"/><text x="482" y="190" font-size="14" fill="#18181b">Full AI scorecard</text>
+<circle cx="466" cy="224" r="4" fill="#a9c3fb"/><text x="482" y="228" font-size="14" fill="#18181b">Interview recording</text>
+<circle cx="466" cy="262" r="4" fill="#a9c3fb"/><text x="482" y="266" font-size="14" fill="#18181b">Resume and documents</text>
+<text x="560" y="294" font-size="12" text-anchor="middle" fill="#71717a">1 credit per interview</text></svg>
