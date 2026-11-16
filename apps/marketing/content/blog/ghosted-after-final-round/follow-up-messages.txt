@@ -1,0 +1,55 @@
+Follow-up messages after an interview
+From the LetsHyre blog: letshyre.ai/en/blogs/ghosted-after-final-round
+Replace the words in [brackets]. Send to the recruiter by email unless the message says otherwise.
+
+
+1. First follow-up (one working day after the date they gave, or five working days if none)
+
+Subject: [Role] interview on [day]
+
+Hi [recruiter],
+
+Thank you again for organising [day]'s round. I enjoyed [one specific part, e.g. the design discussion with Priya]. Is there an update on the timeline? I'm still very interested in the role.
+
+Thanks,
+[Your name]
+
+
+2. Second follow-up (a week after the first)
+
+Subject: Re: [Role] interview on [day]
+
+Hi [recruiter],
+
+Following up on my note from last week. Since we spoke I've [one new thing: thought more about the data pipeline question / finished the project I mentioned], and I'm keen to keep talking.
+
+Could you let me know where things stand, even if the decision isn't made yet?
+
+Thanks,
+[Your name]
+
+
+3. When you hold another offer (only if it's real)
+
+Subject: [Role]: a timeline question
+
+Hi [recruiter],
+
+I wanted to let you know that I've received an offer from another company, and I need to give them an answer by [date]. [Company] is my first choice, so I'd like to hear from you before then if that's possible.
+
+If your process needs longer, I understand. Please let me know either way.
+
+Thanks,
+[Your name]
+
+
+4. Closing message (after two follow-ups and about three weeks)
+
+Subject: Re: [Role] interview on [day]
+
+Hi [recruiter],
+
+I haven't heard back, so I'll assume the role has moved on without me. I enjoyed meeting the team and would be glad to hear about future roles. Thank you for your help.
+
+Best,
+[Your name]

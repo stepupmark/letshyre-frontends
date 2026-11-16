@@ -1,0 +1,29 @@
+Referral request messages
+From the LetsHyre blog: letshyre.ai/en/blogs/ask-for-referral
+Replace the words in [brackets]. Keep each message short enough to read without scrolling.
+
+
+1. Someone you share a link with (college, former employer, community)
+
+Hi [name], I'm [your name], from [the link: CUSAT's 2021 batch / your old team at X]. I'm applying for the [role] role at [company] (job ID [number]). I've spent [time] on [the work closest to this role], which matches most of the listing. Would you be comfortable referring me? Completely fine if not.
+
+
+2. Someone you have no link with
+
+Hi [name], I came across your profile while looking at the [team] team at [company]. I'm [your name], a [your role] with [time] of [relevant experience]. I'm applying for [role] (job ID [number]) and wanted to ask whether you'd be open to referring me, or to telling me if I'm not a fit. Either answer is helpful, and thanks for reading.
+
+
+3. The note they can forward (send after they agree)
+
+Job: [role], [link], job ID [number]
+
+[Your name] is a [current role] at [company] with [time] of experience in [area]. [One result closest to this role, with a number if you have one.] They're applying because [one specific reason about this company or team].
+
+CV attached: [Your-Name]-[Role].pdf
+
+
+4. Thank-you (the day they refer you, and again with the result)
+
+Thanks so much for referring me, [name]. I'll let you know how it goes.
+
+[Later] I wanted to let you know [I've got an offer / they've decided to go another way]. Thank you again for putting me forward, I really appreciated it.
