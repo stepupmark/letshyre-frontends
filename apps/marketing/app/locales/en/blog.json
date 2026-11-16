@@ -74,6 +74,7 @@
     "speed": "Speed {{rate}}×, change speed",
     "rate": "{{rate}}×",
     "progress": "{{current}} of {{total}}",
+    "voice": "Voice",
     "save": "Save for later",
     "saved": "Saved",
     "savedToast": "Saved to read later",

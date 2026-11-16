@@ -74,6 +74,7 @@
     "speed": "속도 {{rate}}×, 속도 변경",
     "rate": "{{rate}}×",
     "progress": "{{current}} / {{total}}",
+    "voice": "음성",
     "save": "나중에 읽기",
     "saved": "저장됨",
     "savedToast": "나중에 읽도록 저장했습니다",

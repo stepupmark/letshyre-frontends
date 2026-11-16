@@ -1,13 +1,19 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from "react"
 import { z } from "zod"
 
-import { listenBlocks, type ListenBlock, pickVoice } from "../lib/listen-text"
+import { listenBlocks, type ListenBlock, spoken } from "../lib/listen-text"
 import { localStore } from "../lib/local-store"
 import { POST_BODY_ID } from "../lib/post-body"
+import { rankVoices } from "../lib/voices"
 
 const RATES = [1, 1.25, 1.5, 2, 0.75] as const
 type Rate = (typeof RATES)[number]
 const rateStore = localStore<Rate>("listen-rate", z.literal(RATES), 1)
+const voiceStore = localStore(
+  "listen-voice",
+  z.record(z.string(), z.string()),
+  {}
+)
 
 type Status = "idle" | "playing" | "paused"
 
@@ -22,10 +28,37 @@ const subscribeVoices = (onChange: () => void) => {
   }
 }
 
-const voiceFor = (lang: string) =>
+const ranked = (lang: string) =>
   supported()
-    ? pickVoice(speechSynthesis.getVoices(), lang, navigator.languages)
-    : undefined
+    ? rankVoices(speechSynthesis.getVoices(), lang, navigator.languages)
+    : []
+
+interface VoiceOption {
+  uri: string
+  name: string
+}
+
+// JSON, so the snapshot stays equal while the list does
+const voiceList = (lang: string) =>
+  JSON.stringify(
+    ranked(lang).map((voice): VoiceOption => ({
+      uri: voice.voiceURI,
+      name: voice.name,
+    }))
+  )
+
+const voiceFor = (lang: string) => {
+  const voices = ranked(lang)
+  const chosen = voiceStore.read()[lang]
+  return voices.find((voice) => voice.voiceURI === chosen) ?? voices[0]
+}
+
+// a beat after a heading and between paragraphs; sentences of one paragraph run on
+const gapAfter = (list: readonly ListenBlock[], i: number) => {
+  const el = list[i]?.el
+  if (!el || /^H[2-4]$/.test(el.tagName)) return 400
+  return list[i + 1]?.el === el ? 0 : 150
+}
 
 function follow(from: HTMLElement | null, to: HTMLElement) {
   if (!from || from === to) return
@@ -43,11 +76,15 @@ function follow(from: HTMLElement | null, to: HTMLElement) {
  * `speechSynthesis.pause()` does nothing on Android.
  */
 export function useListen(lang: string, title: string) {
-  const voiceUri = useSyncExternalStore(
-    subscribeVoices,
-    () => voiceFor(lang)?.voiceURI,
-    () => undefined
-  )
+  const voices = JSON.parse(
+    useSyncExternalStore(
+      subscribeVoices,
+      () => voiceList(lang),
+      () => "[]"
+    )
+  ) as VoiceOption[]
+  const chosen = voiceStore.useValue()?.[lang]
+  const voice = voices.find((v) => v.uri === chosen)?.uri ?? voices[0]?.uri
   const rate = rateStore.useValue() ?? 1
   const [status, setStatus] = useState<Status>("idle")
   const [blocks, setBlocks] = useState<readonly ListenBlock[]>([])
@@ -77,12 +114,18 @@ export function useListen(lang: string, title: string) {
       return
     }
     const gen = generation.current
-    const utterance = new SpeechSynthesisUtterance(block.text)
+    const utterance = new SpeechSynthesisUtterance(spoken(block.text, lang))
     utterance.voice = voice
     utterance.lang = voice.lang
     utterance.rate = rateStore.read()
     utterance.onend = () => {
-      if (gen === generation.current) speakAt(list, i + 1)
+      if (gen !== generation.current) return
+      setTimeout(
+        () => {
+          if (gen === generation.current) speakAt(list, i + 1)
+        },
+        gapAfter(list, i)
+      )
     }
     utterance.onerror = () => {
       if (gen !== generation.current) return
@@ -120,7 +163,9 @@ export function useListen(lang: string, title: string) {
   }, [status, index, blocks])
 
   return {
-    available: voiceUri !== undefined,
+    available: voice !== undefined,
+    voices,
+    voice,
     status,
     blocks,
     index,
@@ -148,6 +193,10 @@ export function useListen(lang: string, title: string) {
     },
     cycleRate: () => {
       rateStore.write(RATES[(RATES.indexOf(rate) + 1) % RATES.length] ?? 1)
+      if (status === "playing") speakAt(blocks, index)
+    },
+    setVoice: (uri: string) => {
+      voiceStore.write({ ...voiceStore.read(), [lang]: uri })
       if (status === "playing") speakAt(blocks, index)
     },
     stop,

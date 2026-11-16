@@ -1,6 +1,6 @@
 import { expect, it } from "vitest"
 
-import { listenBlocks, pickVoice } from "./listen-text"
+import { listenBlocks, spoken } from "./listen-text"
 
 const post = (html: string) => {
   const root = document.createElement("article")
@@ -46,17 +46,12 @@ it("splits a long paragraph at sentence ends, every part pointing at that paragr
   expect(parts.map((p) => p.text).join(" ")).toBe(sentence.repeat(12).trim())
 })
 
-it("picks the reader's regional voice, then the default, for the post's language", () => {
-  const voice = (lang: string, isDefault = false) =>
-    ({ lang, default: isDefault, voiceURI: lang }) as SpeechSynthesisVoice
-  const voices = [
-    voice("en-US"),
-    voice("hi-IN"),
-    voice("en_IN"),
-    voice("en-GB", true),
-  ]
-
-  expect(pickVoice(voices, "en", ["en-IN", "hi"])?.voiceURI).toBe("en_IN")
-  expect(pickVoice(voices, "en", ["fr-FR"])?.voiceURI).toBe("en-GB")
-  expect(pickVoice(voices, "ta", ["en-IN"])).toBeUndefined()
+it("says rupee amounts and the brand the way a person would", () => {
+  expect(
+    spoken("Offered ₹18 lakh, up from 28L and ₹1.5Cr vs ₹500.", "en")
+  ).toBe(
+    "Offered 18 lakh rupees, up from 28 lakh and 1.5 crore rupees versus 500 rupees."
+  )
+  expect(spoken("Why we built LetsHyre", "en")).toBe("Why we built Lets Hire")
+  expect(spoken("₹18 लाख", "hi")).toBe("₹18 लाख")
 })

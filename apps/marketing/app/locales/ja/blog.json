@@ -74,6 +74,7 @@
     "speed": "速度 {{rate}}×、速度を変更",
     "rate": "{{rate}}×",
     "progress": "{{current}} / {{total}}",
+    "voice": "音声",
     "save": "あとで読む",
     "saved": "保存済み",
     "savedToast": "あとで読むために保存しました",

@@ -74,6 +74,7 @@
     "speed": "السرعة {{rate}}×، غيّر السرعة",
     "rate": "{{rate}}×",
     "progress": "{{current}} من {{total}}",
+    "voice": "الصوت",
     "save": "احفظ لوقت لاحق",
     "saved": "محفوظ",
     "savedToast": "حُفظ لتقرأه لاحقًا",

@@ -1,5 +1,5 @@
 import { act, renderHook } from "@testing-library/react"
-import { beforeEach, expect, it, vi } from "vitest"
+import { afterEach, beforeEach, expect, it, vi } from "vitest"
 
 import { POST_BODY_ID } from "../lib/post-body"
 import { useListen } from "./use-listen"
@@ -19,10 +19,13 @@ class Utterance {
 let spoken: Utterance[] = []
 
 beforeEach(() => {
+  vi.useFakeTimers()
   spoken = []
   vi.stubGlobal("SpeechSynthesisUtterance", Utterance)
   vi.stubGlobal("speechSynthesis", {
-    getVoices: () => [{ lang: "en-IN", default: true, voiceURI: "en-IN" }],
+    getVoices: () => [
+      { lang: "en-IN", name: "Test", default: true, voiceURI: "en-IN" },
+    ],
     speak: (u: Utterance) => spoken.push(u),
     cancel: vi.fn(),
     addEventListener: vi.fn(),
@@ -30,6 +33,18 @@ beforeEach(() => {
   })
   document.body.innerHTML = `<article id="${POST_BODY_ID}"><p>One.</p><p>Two.</p></article>`
 })
+
+afterEach(() => {
+  vi.useRealTimers()
+})
+
+// ends the utterance being spoken, and the pause after it
+const end = () => {
+  act(() => {
+    spoken.at(-1)?.onend?.()
+    vi.runAllTimers()
+  })
+}
 
 const start = () => {
   const view = renderHook(() => useListen("en", "Title"))
@@ -41,7 +56,9 @@ const start = () => {
 
 it("reads block after block and goes idle after the last", () => {
   const { result } = start()
-  for (const _ of ["Title", "One.", "Two."]) act(() => spoken.at(-1)?.onend?.())
+  end()
+  end()
+  end()
 
   expect(spoken.map((u) => u.text)).toEqual(["Title", "One.", "Two."])
   expect(result.current.status).toBe("idle")
@@ -49,7 +66,17 @@ it("reads block after block and goes idle after the last", () => {
 
 it("resumes the paused block, and ignores what the cancelled utterance reports", () => {
   const { result } = start()
-  act(() => spoken.at(-1)?.onend?.())
+  end()
+  // paused in the beat between two blocks, the next one mustn't start
+  act(() => {
+    spoken.at(-1)?.onend?.()
+    result.current.pause()
+    vi.runAllTimers()
+  })
+  expect(spoken).toHaveLength(2)
+  act(() => {
+    result.current.resume()
+  })
   const paused = spoken.at(-1)
   act(() => {
     result.current.pause()
@@ -58,7 +85,7 @@ it("resumes the paused block, and ignores what the cancelled utterance reports",
   act(() => paused?.onend?.())
   act(() => paused?.onerror?.())
   expect(result.current.status).toBe("paused")
-  expect(spoken).toHaveLength(2)
+  expect(spoken).toHaveLength(3)
 
   act(() => {
     result.current.resume()

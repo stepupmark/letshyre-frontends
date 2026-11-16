@@ -61,19 +61,22 @@ export function listenBlocks(
   return blocks
 }
 
-/** The reader's own region first (en-IN over en-US), then the system default for the language. */
-export function pickVoice(
-  voices: readonly SpeechSynthesisVoice[],
-  lang: string,
-  preferred: readonly string[]
-): SpeechSynthesisVoice | undefined {
-  const tag = (voice: SpeechSynthesisVoice) =>
-    voice.lang.replace("_", "-").toLowerCase()
-  const forLang = voices.filter((voice) => tag(voice).split("-")[0] === lang)
-  const wanted = preferred.map((p) => p.toLowerCase())
-  return (
-    forLang.find((voice) => wanted.includes(tag(voice))) ??
-    forLang.find((voice) => voice.default) ??
-    forLang[0]
-  )
+const unit = (u = "") =>
+  u.toLowerCase().startsWith("l")
+    ? "lakh "
+    : u.toLowerCase().startsWith("c")
+      ? "crore "
+      : ""
+
+/** A block's text as the voice should say it; browsers ignore SSML, so the text is the only lever. */
+export function spoken(text: string, lang: string): string {
+  if (lang !== "en") return text
+  return text
+    .replace(
+      /₹\s?(\d[\d,]*(?:\.\d+)?)(?:\s?(lakhs?|crores?|L|Cr)\b)?/g,
+      (_, amount: string, u?: string) => `${amount} ${unit(u)}rupees`
+    )
+    .replace(/\b(\d+(?:\.\d+)?)L\b/g, "$1 lakh")
+    .replace(/\bLetsHyre\b/g, "Lets Hire")
+    .replace(/\bvs\.?(?=\s)/g, "versus")
 }

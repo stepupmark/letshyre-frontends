@@ -74,6 +74,7 @@
     "speed": "Snelheid {{rate}}×, snelheid wijzigen",
     "rate": "{{rate}}×",
     "progress": "{{current}} van {{total}}",
+    "voice": "Stem",
     "save": "Bewaren voor later",
     "saved": "Bewaard",
     "savedToast": "Bewaard om later te lezen",

@@ -74,6 +74,7 @@
     "speed": "ವೇಗ {{rate}}×, ವೇಗ ಬದಲಿಸಿ",
     "rate": "{{rate}}×",
     "progress": "{{total}} ರಲ್ಲಿ {{current}}",
+    "voice": "ಧ್ವನಿ",
     "save": "ನಂತರ ಓದಲು ಉಳಿಸಿ",
     "saved": "ಉಳಿಸಲಾಗಿದೆ",
     "savedToast": "ನಂತರ ಓದಲು ಉಳಿಸಲಾಗಿದೆ",

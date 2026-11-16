@@ -10,6 +10,7 @@ import {
 } from "lucide-react"
 
 import type { Listen } from "../hooks/use-listen"
+import { ListenVoices } from "./listen-voices"
 
 export function ListenPlayer({
   listen,
@@ -43,14 +44,17 @@ export function ListenPlayer({
         aria-label={t("post.player")}
       />
       <div className="flex items-center justify-between gap-1">
-        <Button
-          variant="ghost"
-          className="tabular-nums"
-          aria-label={t("post.speed", { rate })}
-          onClick={listen.cycleRate}
-        >
-          {t("post.rate", { rate })}
-        </Button>
+        <div className="flex items-center gap-1">
+          <Button
+            variant="ghost"
+            className="tabular-nums"
+            aria-label={t("post.speed", { rate })}
+            onClick={listen.cycleRate}
+          >
+            {t("post.rate", { rate })}
+          </Button>
+          <ListenVoices listen={listen} />
+        </div>
         <div className="flex items-center gap-1">
           <Button
             variant="ghost"
