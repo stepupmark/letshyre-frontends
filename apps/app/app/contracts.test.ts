@@ -21,10 +21,7 @@ import { sharedLinksPageSchema } from "@/features/candidate/schemas/share.schema
 import { companySchema } from "@/features/company-profile/schemas/company-profile.schema"
 import { membersSchema } from "@/features/team/schemas/team.schema"
 import { scorecardSchema } from "@/features/candidate/schemas/scorecard.schema"
-import {
-  cardsSchema,
-  teamSchema,
-} from "@/features/employer-dashboard/schemas/employer-dashboard.schema"
+import { cardsSchema } from "@/features/employer-dashboard/schemas/employer-dashboard.schema"
 import {
   jobSchema,
   jobsPageSchema,
@@ -41,7 +38,7 @@ const CONTRACTS: Record<string, z.ZodType | z.ZodType[]> = {
   "payment.v1.credit_purchase_history": invoicesPageSchema,
   "user.v1.public.shared-candidate": scorecardSchema,
   "user.v1.employer_dashboard_cards": cardsSchema,
-  "user.v1.employer_team_members": [teamSchema, membersSchema],
+  "user.v1.employer_team_members": membersSchema,
   "user.v1.industries.list": industriesSchema,
   "user.v1.employer_jobs": jobsPageSchema,
   "user.v1.employer_job_detail.101": jobSchema,

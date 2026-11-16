@@ -70,12 +70,6 @@
       "todo": "Suba una descripción del puesto y rellenaremos el formulario.",
       "action": "Publicar una oferta"
     },
-    "team": {
-      "title": "Invite a su equipo",
-      "done": "Hecho",
-      "todo": "Añada compañeros para que revisen candidatos con usted.",
-      "action": "Invitar"
-    },
     "is": {
       "done": "(hecho)",
       "waiting": "(en revisión)",

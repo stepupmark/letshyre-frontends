@@ -27,16 +27,13 @@ const read = (key: string) => {
 const ACTION: Partial<Record<Step["key"], string>> = {
   company: href("/employer/company"),
   job: href("/employer/jobs/new"),
-  team: href("/employer/team"),
 }
 
 export function SetupChecklist({
   hasJobs,
-  hasTeam,
   review,
 }: {
   hasJobs: boolean
-  hasTeam: boolean
   review: Review | undefined
 }) {
   const { t } = useTranslation("dashboard")
@@ -61,13 +58,9 @@ export function SetupChecklist({
             : t("setup.company.waiting")
       case "job":
         return step.state === "done" ? t("setup.job.done") : t("setup.job.todo")
-      case "team":
-        return step.state === "done"
-          ? t("setup.team.done")
-          : t("setup.team.todo")
     }
   }
-  const steps = setupSteps({ hasJobs, hasTeam, review })
+  const steps = setupSteps({ hasJobs, review })
   const done = steps.filter((step) => step.state === "done").length
   const next = steps.find(
     (step) => step.state === "todo" || step.state === "fix"
@@ -136,9 +129,7 @@ export function SetupChecklist({
               >
                 {step.key === "company"
                   ? t("setup.company.action")
-                  : step.key === "job"
-                    ? t("setup.job.action")
-                    : t("setup.team.action")}
+                  : t("setup.job.action")}
               </AppLink>
             )}
           </li>

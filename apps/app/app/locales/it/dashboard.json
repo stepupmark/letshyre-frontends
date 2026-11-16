@@ -70,12 +70,6 @@
       "todo": "Carica una descrizione del ruolo e compiliamo noi il modulo.",
       "action": "Pubblica un'offerta"
     },
-    "team": {
-      "title": "Invita il tuo team",
-      "done": "Fatto",
-      "todo": "Aggiungi colleghi perché valutino i candidati con te.",
-      "action": "Invita"
-    },
     "is": {
       "done": "(fatto)",
       "waiting": "(in revisione)",

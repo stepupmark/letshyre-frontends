@@ -68,12 +68,6 @@
       "todo": "Upload een functieomschrijving en wij vullen het formulier in.",
       "action": "Vacature plaatsen"
     },
-    "team": {
-      "title": "Nodig uw team uit",
-      "done": "Klaar",
-      "todo": "Voeg collega's toe zodat ze samen met u kandidaten beoordelen.",
-      "action": "Uitnodigen"
-    },
     "is": {
       "done": "(klaar)",
       "waiting": "(in beoordeling)",

@@ -66,12 +66,6 @@
       "todo": "Unggah deskripsi pekerjaan dan kami isi formulirnya.",
       "action": "Pasang lowongan"
     },
-    "team": {
-      "title": "Undang tim Anda",
-      "done": "Selesai",
-      "todo": "Tambahkan rekan agar bisa meninjau kandidat bersama Anda.",
-      "action": "Undang"
-    },
     "is": {
       "done": "(selesai)",
       "waiting": "(ditinjau)",

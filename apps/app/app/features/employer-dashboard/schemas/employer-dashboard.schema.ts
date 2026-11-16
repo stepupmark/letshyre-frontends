@@ -8,5 +8,3 @@ export const cardsSchema = z.looseObject({
   total_applications: count,
   credits: z.looseObject({ usage_percent: count, available: count }).nullish(),
 })
-
-export const teamSchema = z.looseObject({ count })

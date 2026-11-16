@@ -20,7 +20,7 @@ export function attentionOf({
   return items
 }
 
-type StepKey = "account" | "company" | "job" | "team"
+type StepKey = "account" | "company" | "job"
 type StepState = "done" | "waiting" | "todo" | "fix"
 
 export interface Step {
@@ -30,11 +30,9 @@ export interface Step {
 
 export function setupSteps({
   hasJobs,
-  hasTeam,
   review,
 }: {
   hasJobs: boolean
-  hasTeam: boolean
   review: Review | undefined
 }): Step[] {
   return [
@@ -49,6 +47,5 @@ export function setupSteps({
             : "waiting",
     },
     { key: "job", state: hasJobs ? "done" : "todo" },
-    // { key: "team", state: hasTeam ? "done" : "todo" },
   ]
 }

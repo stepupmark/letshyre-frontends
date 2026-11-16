@@ -68,12 +68,6 @@
       "todo": "Upload a job description and we'll fill in the form.",
       "action": "Post a job"
     },
-    "team": {
-      "title": "Invite your team",
-      "done": "Done",
-      "todo": "Add colleagues so they can review candidates with you.",
-      "action": "Invite"
-    },
     "is": {
       "done": "(done)",
       "waiting": "(in review)",

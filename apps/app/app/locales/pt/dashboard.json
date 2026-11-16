@@ -70,12 +70,6 @@
       "todo": "Envie a descrição da vaga e nós preenchemos o formulário.",
       "action": "Publicar uma vaga"
     },
-    "team": {
-      "title": "Convide sua equipe",
-      "done": "Feito",
-      "todo": "Adicione colegas para avaliarem candidatos com você.",
-      "action": "Convidar"
-    },
     "is": {
       "done": "(feito)",
       "waiting": "(em análise)",

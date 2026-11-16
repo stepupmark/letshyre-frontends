@@ -68,12 +68,6 @@
       "todo": "Laden Sie eine Stellenbeschreibung hoch, und wir füllen das Formular aus.",
       "action": "Stelle veröffentlichen"
     },
-    "team": {
-      "title": "Team einladen",
-      "done": "Erledigt",
-      "todo": "Fügen Sie Kollegen hinzu, damit sie Kandidaten mit Ihnen prüfen können.",
-      "action": "Einladen"
-    },
     "is": {
       "done": "(erledigt)",
       "waiting": "(in Prüfung)",

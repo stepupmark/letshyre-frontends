@@ -7,7 +7,7 @@ import { useDelayed } from "@/hooks/use-delayed"
 import { creditsQuery } from "@/lib/credits"
 
 import { attentionOf, type Review } from "../lib/employer-dashboard"
-import { cardsQuery, teamQuery } from "../queries/employer-dashboard.queries"
+import { cardsQuery } from "../queries/employer-dashboard.queries"
 import { AttentionList } from "./attention-list"
 import { CreditsCard } from "./credits-card"
 import { SummarySkeleton } from "./dashboard-skeleton"
@@ -23,7 +23,6 @@ export function EmployerDashboard({
 }) {
   const { t } = useTranslation("dashboard")
   const cards = useQuery(cardsQuery())
-  const team = useQuery(teamQuery())
   const credits = useQuery(creditsQuery())
   const skeleton = useDelayed(cards.isPending)
   const data = cards.data
@@ -46,13 +45,8 @@ export function EmployerDashboard({
             retrying={cards.isFetching}
           />
         )}
-        {/* wait for the team count, so a done step doesn't flash as to-do */}
-        {data && team.isFetched && (
-          <SetupChecklist
-            hasJobs={openJobs + closedJobs > 0}
-            hasTeam={(team.data?.count ?? 0) > 0}
-            review={review}
-          />
+        {data && (
+          <SetupChecklist hasJobs={openJobs + closedJobs > 0} review={review} />
         )}
         <AttentionList
           items={attention}

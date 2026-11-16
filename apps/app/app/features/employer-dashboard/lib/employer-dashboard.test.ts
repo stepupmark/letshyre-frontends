@@ -27,9 +27,8 @@ describe("attentionOf", () => {
 
 describe("setupSteps", () => {
   const state = (review: "pending" | "verified" | "rejected" | undefined) =>
-    setupSteps({ hasJobs: true, hasTeam: false, review }).find(
-      (step) => step.key === "company"
-    )?.state
+    setupSteps({ hasJobs: true, review }).find((step) => step.key === "company")
+      ?.state
 
   it("follows the company review instead of assuming it's done", () => {
     expect(state("verified")).toBe("done")
@@ -39,11 +38,7 @@ describe("setupSteps", () => {
   })
 
   it("marks jobs from what exists", () => {
-    const steps = setupSteps({
-      hasJobs: true,
-      hasTeam: false,
-      review: "verified",
-    })
+    const steps = setupSteps({ hasJobs: true, review: "verified" })
     expect(steps.map((step) => step.state)).toEqual(["done", "done", "done"])
   })
 })

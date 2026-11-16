@@ -70,12 +70,6 @@
       "todo": "Importez une fiche de poste et nous remplirons le formulaire.",
       "action": "Publier une offre"
     },
-    "team": {
-      "title": "Invitez votre équipe",
-      "done": "Fait",
-      "todo": "Ajoutez des collègues pour qu'ils examinent les candidats avec vous.",
-      "action": "Inviter"
-    },
     "is": {
       "done": "(fait)",
       "waiting": "(en vérification)",
