@@ -67,7 +67,7 @@ function Closing({
         <div className="overflow-hidden rounded-3xl border">
           <m.div style={{ scale: zoom }}>
             <Photo
-              name="home-v3/her-break"
+              name="home/her-break"
               alt={t("final.photo")}
               sizes="(min-width: 64rem) 36rem, 100vw"
               className="aspect-3/2"

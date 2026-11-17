@@ -13,7 +13,7 @@
     "ctaHiring": "I'm hiring",
     "ctaCandidate": "I'm looking for a role",
     "reassurance": "10 free credits for employers. Always free for professionals.",
-    "photo": "A young professional in glasses and earphones smiles at her laptop during an online interview.",
+    "photo": "An illustrated recruiter looks through resumes with a magnifying glass.",
     "skip": "Skip the walkthrough",
     "resume": {
       "label": "Vyshnavi Rao's resume, for illustration: the same claims every resume makes.",
@@ -54,17 +54,17 @@
       {
         "label": "What lands on your desk",
         "body": "Hundreds of resumes that read alike, written to impress.",
-        "photo": "A tall stack of clipped paper resumes on a desk."
+        "photo": "An illustrated pile of resumes under a magnifying glass."
       },
       {
         "label": "What LetsHyre does first",
         "body": "Every candidate takes a role-based AI interview before you see them.",
-        "photo": "A professional in headphones answers interview questions on his laptop."
+        "photo": "An illustrated candidate talks through his answers to an AI interview on his laptop."
       },
       {
         "label": "What you read before the call",
         "body": "Scores, a scorecard and the recording, so you compare how people think.",
-        "photo": "Two colleagues review a candidate's interview together on a laptop."
+        "photo": "An illustrated interviewer and candidate in conversation across a small table."
       }
     ]
   },
@@ -116,22 +116,22 @@
       {
         "title": "Post a job",
         "body": "Paste your job description. LetsHyre reads the role, the skills and the experience you need.",
-        "photo": "A recruiter at her desk types up a job description on her laptop."
+        "photo": "An illustrated recruiter at her desk publishes a job post from her tablet."
       },
       {
         "title": "Get a ranked shortlist",
         "body": "Everyone who applied is ranked by job match, skills and interview, with matching professionals added from the talent pool.",
-        "photo": "A hiring manager points at her laptop screen as she talks through a shortlist on a video call."
+        "photo": "An illustrated hiring manager checks her tablet as the best matches in a crowd of candidates are circled."
       },
       {
         "title": "Read the interview",
         "body": "A score out of 100, strengths, the gaps worth probing and the full recording.",
-        "photo": "A hiring manager in headphones works through a candidate's interview at his laptop."
+        "photo": "An illustrated candidate beside her match scores for role, skills, interviews and experience, with the full insights locked."
       },
       {
         "title": "Unlock and reach out",
         "body": "One credit unlocks the resume, contact details and recording. Then you hire your way.",
-        "photo": "A hiring manager smiles on a call with a candidate."
+        "photo": "An illustrated hiring manager shakes hands with a candidate after connecting on LetsHyre."
       }
     ],
     "carousel": "How it works, four steps. Scroll sideways to see each one.",
@@ -219,6 +219,7 @@
     "eyebrow": "Pay per unlock",
     "title": "Pay only for the people",
     "accent": "you want to meet.",
+    "photo": "A row of candidates stands on a LetsHyre platform, and the one you unlock is lit up in blue.",
     "body": "Compare everyone for free. One credit unlocks a resume, contact details and the recording, so you can reach out your way.",
     "points": [
       "No subscription",

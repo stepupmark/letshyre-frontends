@@ -23,11 +23,11 @@ export function HeroResume({
       aria-label={t("hero.resume.label")}
       className={cn(
         "flex flex-col gap-5 rounded-3xl border bg-card p-5",
-        slot && "absolute inset-0"
+        slot && "absolute inset-0 gap-4 p-4"
       )}
     >
       <m.div style={{ opacity: reveal }} className="flex items-start gap-4">
-        {slot ? <span className="h-20 w-16 shrink-0" /> : null}
+        {slot ? <span className="size-16 shrink-0" /> : null}
         <div className="min-w-0 flex-1">
           <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <FileTextIcon className="size-3.5" />

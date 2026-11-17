@@ -16,10 +16,10 @@ import { ScrollScene } from "./scroll-scene"
 const JourneyCard = lazy(() => import("./journey-cards"))
 
 const PHOTOS: PhotoName[] = [
-  "home-v2/post-a-job",
-  "home-v3/shortlist",
-  "home-v2/review-interview",
-  "home-v2/reach-out",
+  "home/post-a-job",
+  "home/shortlist",
+  "home/review-interview",
+  "home/reach-out",
 ]
 
 export function Journey() {
@@ -75,18 +75,17 @@ function JourneyStage({ titleId }: { titleId: string }) {
           {steps.map((step, i) => (
             <li
               key={step.title}
-              className="grid w-[85vw] snap-start gap-6 rounded-3xl border bg-card p-4 sm:w-[min(36rem,80vw)] sm:p-6 lg:w-[min(64rem,80vw)] lg:grid-cols-5 lg:gap-10"
+              className="grid w-[85vw] snap-start gap-6 rounded-3xl border bg-card p-4 sm:w-[min(36rem,80vw)] sm:p-6 lg:w-[min(72rem,85vw)] lg:grid-cols-5 lg:items-center lg:gap-10"
             >
               {PHOTOS[i] ? (
                 <Photo
                   name={PHOTOS[i]}
                   alt={step.photo}
-                  sizes="(min-width: 64rem) 26rem, (min-width: 40rem) 36rem, 85vw"
-                  portrait
-                  className="aspect-4/5 rounded-2xl max-lg:aspect-3/2 lg:col-span-2 lg:aspect-auto lg:h-full"
+                  sizes="(min-width: 64rem) 40rem, (min-width: 40rem) 36rem, 85vw"
+                  className="aspect-video rounded-2xl lg:col-span-3"
                 />
               ) : null}
-              <div className="flex flex-col justify-center lg:col-span-3">
+              <div className="flex flex-col justify-center lg:col-span-2">
                 <p className="text-sm font-semibold text-brand-text tabular-nums">
                   {t("journey.progress", { n: i + 1, total: steps.length })}
                 </p>

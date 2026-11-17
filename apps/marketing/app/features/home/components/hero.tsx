@@ -59,12 +59,12 @@ function HeroStage() {
     return (
       <div className="mx-auto grid w-full max-w-sm gap-4">
         <Photo
-          name="home-v3/candidate"
+          name="home/hero"
           alt={t("hero.photo")}
           sizes="24rem"
           portrait
           priority
-          className="aspect-4/5 rounded-3xl border"
+          className="aspect-square rounded-3xl border"
         />
         <HeroResume progress={progress} />
       </div>
@@ -105,15 +105,15 @@ function LiveStage({ progress }: { progress: MotionValue<number> }) {
   return (
     <div
       ref={stage}
-      className="relative mx-auto aspect-4/5 w-full max-w-sm lg:max-w-md"
+      className="relative mx-auto aspect-square w-full max-w-sm lg:max-w-md"
     >
       <HeroResume progress={progress} slot />
       <m.div
         style={{ scale, x, y }}
-        className="absolute inset-x-0 top-0 aspect-4/5 overflow-hidden rounded-3xl border ltr:origin-top-left rtl:origin-top-right"
+        className="absolute inset-x-0 top-0 aspect-square overflow-hidden rounded-3xl border ltr:origin-top-left rtl:origin-top-right"
       >
         <Photo
-          name="home-v3/candidate"
+          name="home/hero"
           alt={t("hero.photo")}
           sizes="(min-width: 64rem) 28rem, 24rem"
           portrait

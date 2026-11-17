@@ -11,9 +11,9 @@ import { ScrollScene } from "./scroll-scene"
 import { stageWindow } from "./stage-window"
 
 const PHOTOS: PhotoName[] = [
-  "home-v3/resume-pile",
-  "home-v3/live-interview",
-  "home-v3/team-review",
+  "home/resume-pile",
+  "home/live-interview",
+  "home/team-review",
 ]
 
 export function Proof() {
@@ -58,7 +58,7 @@ function ProofStage({ titleId }: { titleId: string }) {
         </div>
         <Ticks total={stages.length} />
       </div>
-      <div className="relative aspect-4/5 w-full max-w-md justify-self-end overflow-hidden rounded-3xl border bg-muted">
+      <div className="relative aspect-4/3 w-full max-w-xl justify-self-end overflow-hidden rounded-3xl border bg-muted">
         {stages.map((stage, i) => (
           <Backdrop
             key={stage.label}
@@ -128,7 +128,7 @@ function Backdrop({
 
   return (
     <m.div style={{ opacity, scale }} className="absolute inset-0">
-      <Photo name={name} alt={alt} sizes="28rem" className="size-full" />
+      <Photo name={name} alt={alt} sizes="36rem" className="size-full" />
     </m.div>
   )
 }
@@ -224,7 +224,7 @@ function StillProof({ titleId }: { titleId: string }) {
                 name={PHOTOS[i]}
                 alt={stage.photo}
                 sizes="(min-width: 48rem) 33vw, 100vw"
-                className="aspect-3/2 rounded-2xl border"
+                className="aspect-4/3 rounded-2xl border"
               />
             ) : null}
             <p className="mt-4 text-sm font-semibold">{stage.label}</p>

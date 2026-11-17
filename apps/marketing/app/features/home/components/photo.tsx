@@ -1,16 +1,11 @@
 import { cn } from "@workspace/ui/lib/utils"
 
-const SETS = {
-  "home-v2": [720, 1440],
-  "home-v3": [960, 1920],
-} as const
+const WIDTHS = [960, 1200] as const
+const PORTRAIT_WIDTHS = [600, 960] as const
 
-// portraits are 4:5 at 720 and 1440 in every set
-const PORTRAIT = [720, 1440] as const
+export type PhotoName = `home/${string}`
 
-export type PhotoName = `${keyof typeof SETS}/${string}`
-
-/** A photo from public/images in AVIF and WebP: 3:2 at the set's two widths, or 4:5 portrait. */
+/** A photo from public/images in AVIF and WebP at two widths; portraits are the narrower set. */
 export function Photo({
   name,
   alt,
@@ -26,8 +21,7 @@ export function Photo({
   portrait?: boolean
   className?: string
 }) {
-  const [set] = name.split("/") as [keyof typeof SETS]
-  const [small, large] = portrait ? PORTRAIT : SETS[set]
+  const [small, large] = portrait ? PORTRAIT_WIDTHS : WIDTHS
   const srcSet = (type: "avif" | "webp") =>
     `/images/${name}-${small}.${type} ${small}w, /images/${name}-${large}.${type} ${large}w`
 

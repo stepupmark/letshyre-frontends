@@ -8,6 +8,7 @@ import { PAGES } from "@/lib/pages"
 import { CtaLink, TextLink } from "@/components/cta-links"
 import { Container } from "@/components/section"
 
+import { Photo } from "./photo"
 import { Magnetic } from "./pointer-effects"
 import { PricingLedger } from "./pricing-ledger"
 
@@ -35,6 +36,12 @@ export function Pricing() {
             {t("pricing.title")}{" "}
             <span className="block">{t("pricing.accent")}</span>
           </h2>
+          <Photo
+            name="home/unlock-podium"
+            alt={t("pricing.photo")}
+            sizes="(min-width: 64rem) 36rem, 100vw"
+            className="mt-10 aspect-video rounded-3xl border"
+          />
         </div>
         <div>
           <p className="max-w-lg text-lg text-pretty text-muted-foreground">

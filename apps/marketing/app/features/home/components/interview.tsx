@@ -59,7 +59,7 @@ function Transcript() {
     <figure className="rounded-3xl border bg-card p-5 sm:p-6 lg:col-span-3">
       <div className="flex items-center gap-3 border-b pb-4">
         <Photo
-          name="home-v3/candidate"
+          name="home/candidate"
           alt=""
           sizes="2.5rem"
           portrait

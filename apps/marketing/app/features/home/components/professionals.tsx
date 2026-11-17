@@ -54,16 +54,16 @@ function Split({
   const pool = useTransform(progress, [0.75, 1], [0, 1])
 
   return (
-    <Container className="grid items-center gap-12 md:grid-cols-2 lg:gap-20">
-      <m.div style={{ x: photoX, opacity }}>
+    <Container className="grid items-center gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-16">
+      <m.div style={{ x: photoX, opacity }} className="lg:col-span-7">
         <Photo
-          name="home-v3/her-desk"
+          name="home/her-desk"
           alt={t("professionals.photo")}
-          sizes="(min-width: 48rem) 36rem, 100vw"
-          className="aspect-3/2 rounded-3xl border md:aspect-4/5"
+          sizes="(min-width: 64rem) 44rem, (min-width: 48rem) 50vw, 100vw"
+          className="aspect-4/3 rounded-3xl border md:aspect-square"
         />
       </m.div>
-      <m.div style={{ x: copyX, opacity }}>
+      <m.div style={{ x: copyX, opacity }} className="lg:col-span-5">
         <p className="text-sm font-semibold text-brand-text">
           {t("professionals.eyebrow")}
         </p>
