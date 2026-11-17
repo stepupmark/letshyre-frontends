@@ -7,6 +7,7 @@ import { lazy, type MouseEvent, Suspense, useId, useState } from "react"
 
 import { Container } from "@/components/section"
 import { useHydrated } from "@/hooks/use-hydrated"
+import { twoDigit } from "@/lib/two-digit"
 
 import { type PhotoName } from "../lib/photos"
 import { Photo } from "./photo"
@@ -15,6 +16,12 @@ import { ScrollScene } from "./scroll-scene"
 
 // illustration only, so it loads after hydration; a prerendered Suspense needs inline scripts the CSP blocks
 const JourneyCard = lazy(() => import("./journey-cards"))
+
+// the track holds still for the first and last 8% of the scene, so each end gets a beat on screen
+const TRACK_START = 0.08
+const TRACK_SPAN = 0.84
+
+const trackAt = (p: number) => clamp(0, 1, (p - TRACK_START) / TRACK_SPAN)
 
 const PHOTOS: PhotoName[] = [
   "home/post-a-job",
@@ -41,7 +48,7 @@ function JourneyStage({ titleId }: { titleId: string }) {
   // the track ends with its last panel flush to the viewport edge; in RTL it runs rightwards
   const sign = dirFor(useLocale()) === "rtl" ? -1 : 1
   const x = useTransform(progress, (p) => {
-    const at = clamp(0, 1, (p - 0.08) / 0.84) * sign
+    const at = trackAt(p) * sign
     return `calc(${-at * 100}% + ${at * 100}vw)`
   })
 
@@ -119,20 +126,23 @@ function JourneyStage({ titleId }: { titleId: string }) {
   )
 }
 
-// where the track rests with step `index` of `total` in view, matching the x mapping above
+// where the track rests with step `index` of `total` in view
 const stepProgress = (index: number, total: number) =>
-  0.08 + 0.84 * (index / Math.max(total - 1, 1))
+  TRACK_START + TRACK_SPAN * (index / Math.max(total - 1, 1))
 
 function Rail({ labels }: { labels: string[] }) {
   const { t } = useTranslation("home")
   const { progress } = useScene()
   const [active, setActive] = useState(0)
-  const fill = useTransform(progress, [0.08, 0.92], [0, 1])
+  const fill = useTransform(
+    progress,
+    [TRACK_START, TRACK_START + TRACK_SPAN],
+    [0, 1]
+  )
   const hint = useTransform(progress, [0.06, 0.18], [1, 0])
 
   useMotionValueEvent(progress, "change", (p) => {
-    const at = clamp(0, 1, (p - 0.08) / 0.84)
-    setActive(Math.round(at * (labels.length - 1)))
+    setActive(Math.round(trackAt(p) * (labels.length - 1)))
   })
 
   const jump = (event: MouseEvent<HTMLButtonElement>, index: number) => {
@@ -166,7 +176,7 @@ function Rail({ labels }: { labels: string[] }) {
               }}
               className="-ms-2 rounded-md p-2 text-start text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 aria-[current=step]:font-medium aria-[current=step]:text-foreground motion-reduce:transition-none"
             >
-              <span className="text-foreground">{`0${i + 1}`}</span> {label}
+              <span className="text-foreground">{twoDigit(i + 1)}</span> {label}
             </button>
           </li>
         ))}

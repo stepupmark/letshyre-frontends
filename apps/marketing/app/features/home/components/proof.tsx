@@ -4,6 +4,7 @@ import * as m from "motion/react-m"
 import { useId } from "react"
 
 import { Container } from "@/components/section"
+import { twoDigit } from "@/lib/two-digit"
 
 import { type PhotoName } from "../lib/photos"
 import { Photo } from "./photo"
@@ -142,7 +143,7 @@ function Stage({
         className="pin:col-span-4 pin:col-start-1 pin:row-start-3 pin:mt-10 pin:max-w-md unpin:opacity-100! unpin:transform-none! unpin:mt-4 unpin:sm:mt-0 unpin:lg:mt-4"
       >
         <p className="text-sm font-semibold tabular-nums">
-          <span className="text-brand-text">{`0${index + 1}`}</span>
+          <span className="text-brand-text">{twoDigit(index + 1)}</span>
           <span className="text-muted-foreground"> · </span>
           {label}
         </p>

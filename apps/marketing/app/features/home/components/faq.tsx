@@ -3,7 +3,7 @@ import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { useId } from "react"
 
 import { TextLink } from "@/components/cta-links"
-import { type FaqItem, FaqList } from "@/components/faq-list"
+import { FaqList } from "@/components/faq-list"
 import { PAGES } from "@/lib/pages"
 import { Container } from "@/components/section"
 
@@ -11,7 +11,7 @@ export function Faq() {
   const { t } = useTranslation("home")
   const lang = useLocale()
   const titleId = useId()
-  const items = t("faq.items", { returnObjects: true }) as FaqItem[]
+  const items = t("faq.items", { returnObjects: true })
 
   return (
     <section

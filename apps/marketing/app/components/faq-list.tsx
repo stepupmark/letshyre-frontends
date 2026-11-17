@@ -1,11 +1,11 @@
 import { PlusIcon } from "lucide-react"
 
+import { twoDigit } from "@/lib/two-digit"
+
 export interface FaqItem {
   q: string
   a: string
 }
-
-const twoDigit = (n: number) => String(n).padStart(2, "0")
 
 export function FaqList({ items }: { items: FaqItem[] }) {
   return (

@@ -12,10 +12,8 @@ import { usePlayOnView } from "./use-play-on-view"
 import { useStill } from "./use-still"
 
 /**
- * A section `screens` viewports tall whose content stays pinned below the header while
- * scroll drives `progress`. Where the `pin` variant doesn't apply it is an ordinary section
- * and scenes play their still layout once in view; the unpinning is CSS, so the prerendered page is
- * already the right height.
+ * A section `screens` viewports tall that pins its content while scroll drives `progress`.
+ * Unpinned, it plays once in view.
  */
 export function ScrollScene({
   screens,
@@ -27,6 +25,9 @@ export function ScrollScene({
   children: ReactNode
 }) {
   const ref = useRef<HTMLElement>(null)
+  const style: CSSProperties & Record<"--screens", number> = {
+    "--screens": screens,
+  }
   const still = useStill(true)
   const played = usePlayOnView(ref, 2)
   const { scrollYProgress } = useScroll({
@@ -38,7 +39,7 @@ export function ScrollScene({
     <section
       ref={ref}
       className={cn("pin:h-[calc(var(--screens)*100svh)] relative", className)}
-      style={{ "--screens": screens } as CSSProperties}
+      style={style}
       {...props}
     >
       <div className="pin:sticky pin:top-0 pin:h-svh pin:overflow-hidden pin:pt-18">
