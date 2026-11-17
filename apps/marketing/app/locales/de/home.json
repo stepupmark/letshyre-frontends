@@ -143,39 +143,51 @@
         "chips": ["React", "TypeScript", "5+ Jahre", "Remote"]
       },
       "shortlist": {
-        "label": "Eine Shortlist mit drei Kandidaten, gerankt nach KI-Match: Vyshnavi Rao 86, Arjun Mehta 74 und Meera Shah 68, die aus dem Talentpool kam.",
-        "title": "24 Bewerbungen · nach Belegen gerankt",
+        "label": "Von der KI gefundene Kandidaten für die Stelle Senior Frontend-Entwicklerin, nach KI-Match sortiert: Vyshnavi Rao 86, Arjun Mehta 74 und Meera Shah 68.",
+        "title": "Von der KI gefundene Kandidaten",
         "match": "KI-Match",
-        "pool": "Aus dem Pool",
         "people": [
           {
             "name": "Vyshnavi Rao",
             "role": "Frontend-Entwicklerin · 7 J.",
-            "score": 86,
-            "pool": false
+            "score": 86
           },
           {
             "name": "Arjun Mehta",
             "role": "React-Entwickler · 5 J.",
-            "score": 74,
-            "pool": false
+            "score": 74
           },
           {
             "name": "Meera Shah",
             "role": "UI-Entwicklerin · 6 J.",
-            "score": 68,
-            "pool": true
+            "score": 68
           }
         ]
       },
-      "scorecard": {
-        "label": "Eine Interview-Scorecard mit 78 von 100, als starkes Interview markiert, mit der Aufzeichnung bei Frage 5 von 8.",
-        "kicker": "Interview-Scorecard",
-        "score": "78",
+      "insights": {
+        "label": "Kandidaten-Einblicke zu Vyshnavi Rao: KI-Match 86 von 100, Skills 88, Rollenpassung 84, Interviews 78 und Erfahrung 90. Alle Details werden mit einem Credit freigeschaltet.",
+        "kicker": "Kandidaten-Einblicke",
+        "score": "86",
         "outOf": "/100",
-        "verdict": "Starkes Interview",
-        "question": "Frage 5 von 8",
-        "duration": "24:10"
+        "rows": [
+          {
+            "label": "Skills",
+            "score": 88
+          },
+          {
+            "label": "Rollenpassung",
+            "score": 84
+          },
+          {
+            "label": "Interviews",
+            "score": 78
+          },
+          {
+            "label": "Erfahrung",
+            "score": 90
+          }
+        ],
+        "locked": "Freischalten, um alle Details zu sehen"
       },
       "unlock": {
         "label": "Das Profil von Vyshnavi Rao, für einen Credit freigeschaltet, mit sichtbarer Telefonnummer.",

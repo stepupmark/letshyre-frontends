@@ -143,39 +143,51 @@
         "chips": ["React", "TypeScript", "5+ tahun", "Remote"]
       },
       "shortlist": {
-        "label": "Daftar pendek tiga kandidat yang diperingkat menurut kecocokan AI: Vyshnavi Rao 86, Arjun Mehta 74, dan Meera Shah 68, yang bergabung dari talent pool.",
-        "title": "24 pelamar · diperingkat berdasarkan bukti",
+        "label": "Kandidat yang dicocokkan AI untuk Senior frontend engineer, diurutkan menurut kecocokan AI: Vyshnavi Rao 86, Arjun Mehta 74, dan Meera Shah 68.",
+        "title": "Kandidat yang dicocokkan AI",
         "match": "Kecocokan AI",
-        "pool": "Dari pool",
         "people": [
           {
             "name": "Vyshnavi Rao",
             "role": "Frontend engineer · 7 thn",
-            "score": 86,
-            "pool": false
+            "score": 86
           },
           {
             "name": "Arjun Mehta",
             "role": "React developer · 5 thn",
-            "score": 74,
-            "pool": false
+            "score": 74
           },
           {
             "name": "Meera Shah",
             "role": "UI engineer · 6 thn",
-            "score": 68,
-            "pool": true
+            "score": 68
           }
         ]
       },
-      "scorecard": {
-        "label": "Scorecard wawancara 78 dari 100, ditandai sebagai wawancara kuat, dengan rekaman di pertanyaan 5 dari 8.",
-        "kicker": "Scorecard wawancara",
-        "score": "78",
+      "insights": {
+        "label": "Wawasan kandidat untuk Vyshnavi Rao: kecocokan AI 86 dari 100, keterampilan 88, kesesuaian peran 84, wawancara 78, dan pengalaman 90. Detail lengkap terbuka dengan satu kredit.",
+        "kicker": "Wawasan kandidat",
+        "score": "86",
         "outOf": "/100",
-        "verdict": "Wawancara kuat",
-        "question": "Pertanyaan 5 dari 8",
-        "duration": "24:10"
+        "rows": [
+          {
+            "label": "Keterampilan",
+            "score": 88
+          },
+          {
+            "label": "Kesesuaian peran",
+            "score": 84
+          },
+          {
+            "label": "Wawancara",
+            "score": 78
+          },
+          {
+            "label": "Pengalaman",
+            "score": 90
+          }
+        ],
+        "locked": "Buka akses untuk melihat detail lengkap"
       },
       "unlock": {
         "label": "Berkas Vyshnavi Rao, terbuka dengan satu kredit, dengan nomor teleponnya terlihat.",

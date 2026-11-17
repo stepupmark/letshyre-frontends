@@ -143,39 +143,51 @@
         "chips": ["React", "TypeScript", "5+ years", "Remote"]
       },
       "shortlist": {
-        "label": "A shortlist of three candidates ranked by AI match: Vyshnavi Rao 86, Arjun Mehta 74 and Meera Shah 68, who joined from the talent pool.",
-        "title": "24 applied · ranked by evidence",
+        "label": "AI-Matched Candidates for a Senior frontend engineer, ranked by AI match: Vyshnavi Rao 86, Arjun Mehta 74 and Meera Shah 68.",
+        "title": "AI-Matched Candidates",
         "match": "AI match",
-        "pool": "From pool",
         "people": [
           {
             "name": "Vyshnavi Rao",
             "role": "Frontend engineer · 7 yrs",
-            "score": 86,
-            "pool": false
+            "score": 86
           },
           {
             "name": "Arjun Mehta",
             "role": "React developer · 5 yrs",
-            "score": 74,
-            "pool": false
+            "score": 74
           },
           {
             "name": "Meera Shah",
             "role": "UI engineer · 6 yrs",
-            "score": 68,
-            "pool": true
+            "score": 68
           }
         ]
       },
-      "scorecard": {
-        "label": "An interview scorecard of 78 out of 100, marked as a strong interview, with the recording on question 5 of 8.",
-        "kicker": "Interview scorecard",
-        "score": "78",
+      "insights": {
+        "label": "Candidate insights for Vyshnavi Rao: AI match 86 out of 100, skills 88, role fit 84, interviews 78 and experience 90. Full details unlock with one credit.",
+        "kicker": "Candidate insights",
+        "score": "86",
         "outOf": "/100",
-        "verdict": "Strong interview",
-        "question": "Question 5 of 8",
-        "duration": "24:10"
+        "rows": [
+          {
+            "label": "Skills",
+            "score": 88
+          },
+          {
+            "label": "Role fit",
+            "score": 84
+          },
+          {
+            "label": "Interviews",
+            "score": 78
+          },
+          {
+            "label": "Experience",
+            "score": 90
+          }
+        ],
+        "locked": "Unlock to view complete details"
       },
       "unlock": {
         "label": "Vyshnavi Rao's file, unlocked for one credit, with her phone number showing.",

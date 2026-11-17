@@ -5,6 +5,7 @@ import { LockOpenIcon } from "lucide-react"
 import { useId, useRef } from "react"
 
 import { Container } from "@/components/section"
+import { useHydrated } from "@/hooks/use-hydrated"
 
 import { AudienceCtas } from "./audience-ctas"
 import { Photo } from "./photo"
@@ -14,6 +15,7 @@ import { useStill } from "./use-still"
 export function FinalCta() {
   const ref = useRef<HTMLElement>(null)
   const titleId = useId()
+  const hydrated = useHydrated()
   const still = useStill(false)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -27,11 +29,11 @@ export function FinalCta() {
       data-watch="final"
       className="overflow-x-clip border-t py-12 sm:py-20 lg:py-24"
     >
-      {/* transforms stay bound to the first value, so a switch remounts */}
+      {/* settled until hydration so the prerender shows everything; a switch remounts the transforms */}
       <Closing
-        key={still ? "still" : "live"}
+        key={hydrated && !still ? "live" : "still"}
         titleId={titleId}
-        progress={still ? settled : scrollYProgress}
+        progress={hydrated && !still ? scrollYProgress : settled}
       />
     </section>
   )

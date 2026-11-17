@@ -143,39 +143,51 @@
         "chips": ["React", "TypeScript", "5+ jaar", "Remote"]
       },
       "shortlist": {
-        "label": "Een shortlist van drie kandidaten gerangschikt op AI-match: Vyshnavi Rao 86, Arjun Mehta 74 en Meera Shah 68, die uit de talentpool kwam.",
-        "title": "24 sollicitaties · gerangschikt op bewijs",
+        "label": "Door AI gematchte kandidaten voor Senior frontend engineer, gerangschikt op AI-match: Vyshnavi Rao 86, Arjun Mehta 74 en Meera Shah 68.",
+        "title": "Door AI gematchte kandidaten",
         "match": "AI-match",
-        "pool": "Uit de pool",
         "people": [
           {
             "name": "Vyshnavi Rao",
             "role": "Frontend engineer · 7 jr",
-            "score": 86,
-            "pool": false
+            "score": 86
           },
           {
             "name": "Arjun Mehta",
             "role": "React-ontwikkelaar · 5 jr",
-            "score": 74,
-            "pool": false
+            "score": 74
           },
           {
             "name": "Meera Shah",
             "role": "UI-engineer · 6 jr",
-            "score": 68,
-            "pool": true
+            "score": 68
           }
         ]
       },
-      "scorecard": {
-        "label": "Een interviewscorekaart van 78 op 100, gemarkeerd als sterk interview, met de opname bij vraag 5 van 8.",
-        "kicker": "Interviewscorekaart",
-        "score": "78",
+      "insights": {
+        "label": "Kandidaatinzichten voor Vyshnavi Rao: AI-match 86 van 100, vaardigheden 88, rolfit 84, interviews 78 en ervaring 90. Alle details ontgrendel je met één credit.",
+        "kicker": "Kandidaatinzichten",
+        "score": "86",
         "outOf": "/100",
-        "verdict": "Sterk interview",
-        "question": "Vraag 5 van 8",
-        "duration": "24:10"
+        "rows": [
+          {
+            "label": "Vaardigheden",
+            "score": 88
+          },
+          {
+            "label": "Rolfit",
+            "score": 84
+          },
+          {
+            "label": "Interviews",
+            "score": 78
+          },
+          {
+            "label": "Ervaring",
+            "score": 90
+          }
+        ],
+        "locked": "Ontgrendel om alle details te zien"
       },
       "unlock": {
         "label": "Het dossier van Vyshnavi Rao, ontgrendeld voor één credit, met haar telefoonnummer zichtbaar.",

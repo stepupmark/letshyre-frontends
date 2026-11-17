@@ -1,15 +1,12 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { cn } from "@workspace/ui/lib/utils"
-import { FileTextIcon, LockOpenIcon, PhoneIcon } from "lucide-react"
+import { FileTextIcon, LockIcon, LockOpenIcon, PhoneIcon } from "lucide-react"
 import type { ReactNode } from "react"
 
 import { Avatar } from "@/components/art/avatar"
 import { ScoreRing } from "@/components/art/score-ring"
 
 import { Tilt } from "./pointer-effects"
-
-const QUESTIONS = 8
-const CURRENT = 4
 
 export default function JourneyCard({
   index,
@@ -18,7 +15,7 @@ export default function JourneyCard({
   index: number
   className?: string
 }) {
-  const cards = [JobCard, ShortlistCard, ScorecardCard, UnlockCard]
+  const cards = [JobCard, ShortlistCard, InsightsCard, UnlockCard]
   const Card = cards[index]
   return Card ? <Card className={className} /> : null
 }
@@ -100,7 +97,6 @@ function ShortlistCard({ className }: { className?: string }) {
               </span>
               <span className="block truncate text-xs text-muted-foreground">
                 {person.role}
-                {person.pool ? ` · ${t("journey.cards.shortlist.pool")}` : null}
               </span>
             </span>
             <span className="text-sm font-semibold tabular-nums">
@@ -113,49 +109,52 @@ function ShortlistCard({ className }: { className?: string }) {
   )
 }
 
-function ScorecardCard({ className }: { className?: string }) {
+function InsightsCard({ className }: { className?: string }) {
   const { t } = useTranslation("home")
+  const rows = t("journey.cards.insights.rows", { returnObjects: true })
 
   return (
-    <Frame label={t("journey.cards.scorecard.label")} className={className}>
+    <Frame label={t("journey.cards.insights.label")} className={className}>
       <div className="flex items-center gap-3">
         <ScoreRing
-          score={Number(t("journey.cards.scorecard.score"))}
-          caption={t("journey.cards.scorecard.outOf")}
+          score={Number(t("journey.cards.insights.score"))}
+          caption={t("journey.cards.insights.outOf")}
           compact
         />
         <div className="min-w-0">
-          <p className="text-sm font-semibold">
-            {t("journey.cards.scorecard.kicker")}
+          <p className="text-xs text-muted-foreground">
+            {t("journey.cards.insights.kicker")}
           </p>
-          <p className="mt-1 inline-flex rounded-full bg-success/10 px-2 py-0.5 text-xs font-medium text-success">
-            {t("journey.cards.scorecard.verdict")}
+          <p className="mt-0.5 truncate text-sm font-semibold">
+            {t("journey.cards.unlock.name")}
+          </p>
+          <p className="truncate text-xs text-muted-foreground">
+            {t("journey.cards.unlock.role")}
           </p>
         </div>
       </div>
-      <div className="mt-3 border-t pt-3">
-        <p className="flex justify-between text-xs text-muted-foreground">
-          {t("journey.cards.scorecard.question")}
-          <span className="tabular-nums">
-            {t("journey.cards.scorecard.duration")}
-          </span>
-        </p>
-        <span className="mt-2 flex gap-1">
-          {Array.from({ length: QUESTIONS }, (_, i) => (
-            <span
-              key={i}
-              className={cn(
-                "h-1.5 flex-1 rounded-full",
-                i < CURRENT
-                  ? "bg-brand"
-                  : i === CURRENT
-                    ? "bg-brand/40"
-                    : "bg-muted"
-              )}
-            />
-          ))}
-        </span>
-      </div>
+      <ul className="mt-3 grid gap-2 border-t pt-3">
+        {rows.map((row) => (
+          <li key={row.label} className="flex items-center gap-3 text-xs">
+            <span className="w-28 shrink-0 truncate text-muted-foreground">
+              {row.label}
+            </span>
+            <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+              <span
+                style={{ width: `${row.score}%` }}
+                className="block h-full rounded-full bg-brand"
+              />
+            </span>
+            <span className="w-6 text-end font-medium tabular-nums">
+              {row.score}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-3 flex items-center gap-1.5 border-t pt-3 text-xs text-muted-foreground">
+        <LockIcon className="size-3.5" />
+        {t("journey.cards.insights.locked")}
+      </p>
     </Frame>
   )
 }

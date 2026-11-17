@@ -6,6 +6,7 @@ import { useEffect, useId, useRef } from "react"
 
 import { AudienceCtas } from "./audience-ctas"
 import { HeroResume } from "./hero-resume"
+import { HERO_SIZES } from "../lib/photos"
 import { Photo } from "./photo"
 import { useScene } from "./scene-context"
 import { ScrollScene } from "./scroll-scene"
@@ -13,7 +14,6 @@ import { ScrollScene } from "./scroll-scene"
 // the photo shrinks into the resume's 4:5 photo slot: 4rem wide, inset by the card's 1.25rem padding
 const THUMB = 64
 const INSET = 20
-
 export function Hero() {
   const titleId = useId()
   const { t } = useTranslation("home")
@@ -65,7 +65,6 @@ function HeroStage() {
           name="home/hero"
           alt={t("hero.photo")}
           sizes="24rem"
-          portrait
           priority
           lazy
           className="aspect-square rounded-3xl border"
@@ -120,8 +119,7 @@ function LiveStage({ progress }: { progress: MotionValue<number> }) {
         <Photo
           name="home/hero"
           alt={t("hero.photo")}
-          sizes="(min-width: 80rem) 32rem, (min-width: 64rem) 28rem, 24rem"
-          portrait
+          sizes={HERO_SIZES}
           priority
           lazy
           className="size-full"

@@ -9,14 +9,17 @@ import { APP_LINKS } from "@/lib/app-links"
 import { PAGES } from "@/lib/pages"
 import { CtaLink, TextLink } from "@/components/cta-links"
 import { Container } from "@/components/section"
+import { useHydrated } from "@/hooks/use-hydrated"
 
 import { Photo } from "./photo"
+import { settled } from "./scene-context"
 import { usePlayOnView } from "./use-play-on-view"
 import { useStill } from "./use-still"
 
 export function Professionals() {
   const ref = useRef<HTMLElement>(null)
   const titleId = useId()
+  const hydrated = useHydrated()
   const still = useStill(true)
   const played = usePlayOnView(ref, 1.4)
   const { scrollYProgress } = useScroll({
@@ -30,11 +33,11 @@ export function Professionals() {
       aria-labelledby={titleId}
       className="overflow-x-clip border-y bg-muted/40 py-12 sm:py-20 lg:py-24"
     >
-      {/* transforms stay bound to the first value, so a switch remounts */}
+      {/* settled until hydration so the prerender shows everything; a switch remounts the transforms */}
       <Split
-        key={still ? "still" : "live"}
+        key={hydrated ? (still ? "still" : "live") : "prerender"}
         titleId={titleId}
-        progress={still ? played : scrollYProgress}
+        progress={hydrated ? (still ? played : scrollYProgress) : settled}
       />
     </section>
   )

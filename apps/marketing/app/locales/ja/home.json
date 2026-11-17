@@ -143,39 +143,51 @@
         "chips": ["React", "TypeScript", "5年以上", "リモート"]
       },
       "shortlist": {
-        "label": "AI一致度でランク付けされた3人の候補者リスト:Vyshnavi Rao 86、Arjun Mehta 74、人材プールから加わったMeera Shah 68。",
-        "title": "応募24件 · 根拠でランク付け",
+        "label": "シニアフロントエンドエンジニアの求人でAIがマッチした候補者。AI一致度順にVyshnavi Rao 86、Arjun Mehta 74、Meera Shah 68。",
+        "title": "AIがマッチした候補者",
         "match": "AI一致度",
-        "pool": "プールから",
         "people": [
           {
             "name": "Vyshnavi Rao",
             "role": "フロントエンドエンジニア · 7年",
-            "score": 86,
-            "pool": false
+            "score": 86
           },
           {
             "name": "Arjun Mehta",
             "role": "Reactデベロッパー · 5年",
-            "score": 74,
-            "pool": false
+            "score": 74
           },
           {
             "name": "Meera Shah",
             "role": "UIエンジニア · 6年",
-            "score": 68,
-            "pool": true
+            "score": 68
           }
         ]
       },
-      "scorecard": {
-        "label": "100点中78点の面接スコアカード。優れた面接と評価され、録画は質問5/8の位置。",
-        "kicker": "面接スコアカード",
-        "score": "78",
+      "insights": {
+        "label": "Vyshnavi Raoの候補者インサイト：AI一致度は100点中86、スキル88、職種への適性84、面接78、経験90。詳細はすべて1クレジットでアンロックできます。",
+        "kicker": "候補者のインサイト",
+        "score": "86",
         "outOf": "/100",
-        "verdict": "優れた面接",
-        "question": "質問 5 / 8",
-        "duration": "24:10"
+        "rows": [
+          {
+            "label": "スキル",
+            "score": 88
+          },
+          {
+            "label": "職種への適性",
+            "score": 84
+          },
+          {
+            "label": "面接",
+            "score": 78
+          },
+          {
+            "label": "経験",
+            "score": 90
+          }
+        ],
+        "locked": "アンロックして詳細をすべて確認"
       },
       "unlock": {
         "label": "1クレジットでアンロックされたVyshnavi Raoのプロフィール。電話番号が表示されている。",

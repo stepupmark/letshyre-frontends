@@ -143,39 +143,51 @@
         "chips": ["React", "TypeScript", "5+ anni", "Da remoto"]
       },
       "shortlist": {
-        "label": "Una shortlist di tre candidati ordinati per corrispondenza IA: Vyshnavi Rao 86, Arjun Mehta 74 e Meera Shah 68, arrivata dal talent pool.",
-        "title": "24 candidature · ordinate per prove",
+        "label": "Candidati trovati dall’IA per Ingegnera frontend senior, ordinati per corrispondenza IA: Vyshnavi Rao 86, Arjun Mehta 74 e Meera Shah 68.",
+        "title": "Candidati trovati dall’IA",
         "match": "Corrispondenza IA",
-        "pool": "Dal pool",
         "people": [
           {
             "name": "Vyshnavi Rao",
             "role": "Ingegnera frontend · 7 anni",
-            "score": 86,
-            "pool": false
+            "score": 86
           },
           {
             "name": "Arjun Mehta",
             "role": "Sviluppatore React · 5 anni",
-            "score": 74,
-            "pool": false
+            "score": 74
           },
           {
             "name": "Meera Shah",
             "role": "Ingegnera UI · 6 anni",
-            "score": 68,
-            "pool": true
+            "score": 68
           }
         ]
       },
-      "scorecard": {
-        "label": "Una scheda del colloquio di 78 su 100, segnata come colloquio solido, con la registrazione alla domanda 5 di 8.",
-        "kicker": "Scheda del colloquio",
-        "score": "78",
+      "insights": {
+        "label": "Analisi di Vyshnavi Rao: corrispondenza IA 86 su 100, competenze 88, adeguatezza al ruolo 84, colloqui 78 ed esperienza 90. Tutti i dettagli si sbloccano con un credito.",
+        "kicker": "Analisi del candidato",
+        "score": "86",
         "outOf": "/100",
-        "verdict": "Colloquio solido",
-        "question": "Domanda 5 di 8",
-        "duration": "24:10"
+        "rows": [
+          {
+            "label": "Competenze",
+            "score": 88
+          },
+          {
+            "label": "Adeguatezza al ruolo",
+            "score": 84
+          },
+          {
+            "label": "Colloqui",
+            "score": 78
+          },
+          {
+            "label": "Esperienza",
+            "score": 90
+          }
+        ],
+        "locked": "Sblocca per vedere tutti i dettagli"
       },
       "unlock": {
         "label": "Il profilo di Vyshnavi Rao, sbloccato con un credito, con il suo numero di telefono visibile.",

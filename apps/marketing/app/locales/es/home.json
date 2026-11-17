@@ -143,39 +143,51 @@
         "chips": ["React", "TypeScript", "5+ años", "Remoto"]
       },
       "shortlist": {
-        "label": "Una lista de tres candidatos clasificados por encaje IA: Vyshnavi Rao 86, Arjun Mehta 74 y Meera Shah 68, que llegó del banco de talento.",
-        "title": "24 postulaciones · clasificadas por pruebas",
+        "label": "Candidatos encontrados por la IA para Ingeniera frontend sénior, ordenados por encaje IA: Vyshnavi Rao 86, Arjun Mehta 74 y Meera Shah 68.",
+        "title": "Candidatos encontrados por la IA",
         "match": "Encaje IA",
-        "pool": "Del banco",
         "people": [
           {
             "name": "Vyshnavi Rao",
             "role": "Ingeniera frontend · 7 años",
-            "score": 86,
-            "pool": false
+            "score": 86
           },
           {
             "name": "Arjun Mehta",
             "role": "Desarrollador React · 5 años",
-            "score": 74,
-            "pool": false
+            "score": 74
           },
           {
             "name": "Meera Shah",
             "role": "Ingeniera UI · 6 años",
-            "score": 68,
-            "pool": true
+            "score": 68
           }
         ]
       },
-      "scorecard": {
-        "label": "Una evaluación de entrevista de 78 sobre 100, marcada como entrevista sólida, con la grabación en la pregunta 5 de 8.",
-        "kicker": "Evaluación de la entrevista",
-        "score": "78",
+      "insights": {
+        "label": "Análisis de Vyshnavi Rao: encaje IA de 86 sobre 100, habilidades 88, encaje con el puesto 84, entrevistas 78 y experiencia 90. Los detalles completos se desbloquean con un crédito.",
+        "kicker": "Análisis del candidato",
+        "score": "86",
         "outOf": "/100",
-        "verdict": "Entrevista sólida",
-        "question": "Pregunta 5 de 8",
-        "duration": "24:10"
+        "rows": [
+          {
+            "label": "Habilidades",
+            "score": 88
+          },
+          {
+            "label": "Encaje con el puesto",
+            "score": 84
+          },
+          {
+            "label": "Entrevistas",
+            "score": 78
+          },
+          {
+            "label": "Experiencia",
+            "score": 90
+          }
+        ],
+        "locked": "Desbloquea para ver todos los detalles"
       },
       "unlock": {
         "label": "El perfil de Vyshnavi Rao, desbloqueado por un crédito, con su número de teléfono visible.",

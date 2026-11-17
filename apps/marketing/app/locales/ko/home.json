@@ -143,39 +143,51 @@
         "chips": ["React", "TypeScript", "5년 이상", "원격"]
       },
       "shortlist": {
-        "label": "AI 적합도 순으로 정렬된 후보 3명: Vyshnavi Rao 86, Arjun Mehta 74, 인재풀에서 합류한 Meera Shah 68.",
-        "title": "지원 24건 · 근거로 순위 매김",
+        "label": "시니어 프론트엔드 엔지니어 공고에 AI가 매칭한 후보자, AI 적합도순: Vyshnavi Rao 86, Arjun Mehta 74, Meera Shah 68.",
+        "title": "AI가 매칭한 후보자",
         "match": "AI 적합도",
-        "pool": "인재풀",
         "people": [
           {
             "name": "Vyshnavi Rao",
             "role": "프론트엔드 엔지니어 · 7년",
-            "score": 86,
-            "pool": false
+            "score": 86
           },
           {
             "name": "Arjun Mehta",
             "role": "React 개발자 · 5년",
-            "score": 74,
-            "pool": false
+            "score": 74
           },
           {
             "name": "Meera Shah",
             "role": "UI 엔지니어 · 6년",
-            "score": 68,
-            "pool": true
+            "score": 68
           }
         ]
       },
-      "scorecard": {
-        "label": "100점 중 78점의 인터뷰 스코어카드. 우수한 인터뷰로 표시되었고 녹화본은 질문 5/8에 있습니다.",
-        "kicker": "인터뷰 스코어카드",
-        "score": "78",
+      "insights": {
+        "label": "Vyshnavi Rao 후보자 인사이트: AI 적합도 100점 중 86점, 기술 88, 직무 적합성 84, 인터뷰 78, 경력 90. 전체 정보는 크레딧 1개로 잠금 해제됩니다.",
+        "kicker": "후보자 인사이트",
+        "score": "86",
         "outOf": "/100",
-        "verdict": "우수한 인터뷰",
-        "question": "질문 5 / 8",
-        "duration": "24:10"
+        "rows": [
+          {
+            "label": "기술",
+            "score": 88
+          },
+          {
+            "label": "직무 적합성",
+            "score": 84
+          },
+          {
+            "label": "인터뷰",
+            "score": 78
+          },
+          {
+            "label": "경력",
+            "score": 90
+          }
+        ],
+        "locked": "잠금 해제해 전체 정보 확인"
       },
       "unlock": {
         "label": "크레딧 하나로 잠금 해제된 Vyshnavi Rao의 프로필. 전화번호가 보입니다.",

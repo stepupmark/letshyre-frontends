@@ -8,7 +8,8 @@ import { lazy, type MouseEvent, Suspense, useId, useState } from "react"
 import { Container } from "@/components/section"
 import { useHydrated } from "@/hooks/use-hydrated"
 
-import { Photo, type PhotoName } from "./photo"
+import { type PhotoName } from "../lib/photos"
+import { Photo } from "./photo"
 import { useScene } from "./scene-context"
 import { ScrollScene } from "./scroll-scene"
 

@@ -143,39 +143,51 @@
         "chips": ["React", "TypeScript", "5+ سال", "ریموٹ"]
       },
       "shortlist": {
-        "label": "AI میچ کے لحاظ سے درجہ بند تین امیدواروں کی شارٹ لسٹ: Vyshnavi Rao 86، Arjun Mehta 74 اور ٹیلنٹ پول سے آئی Meera Shah 68۔",
-        "title": "24 درخواستیں · ثبوت سے درجہ بند",
+        "label": "سینئر فرنٹ اینڈ انجینئر کے لیے AI کے میچ کیے گئے امیدوار، AI میچ کی ترتیب سے: Vyshnavi Rao 86، Arjun Mehta 74 اور Meera Shah 68۔",
+        "title": "AI کے میچ کیے گئے امیدوار",
         "match": "AI میچ",
-        "pool": "پول سے",
         "people": [
           {
             "name": "Vyshnavi Rao",
             "role": "فرنٹ اینڈ انجینئر · 7 سال",
-            "score": 86,
-            "pool": false
+            "score": 86
           },
           {
             "name": "Arjun Mehta",
             "role": "React ڈیولپر · 5 سال",
-            "score": 74,
-            "pool": false
+            "score": 74
           },
           {
             "name": "Meera Shah",
             "role": "UI انجینئر · 6 سال",
-            "score": 68,
-            "pool": true
+            "score": 68
           }
         ]
       },
-      "scorecard": {
-        "label": "100 میں سے 78 کا انٹرویو اسکورکارڈ، مضبوط انٹرویو کے طور پر نشان زد، ریکارڈنگ سوال 5 از 8 پر۔",
-        "kicker": "انٹرویو اسکورکارڈ",
-        "score": "78",
+      "insights": {
+        "label": "Vyshnavi Rao کی امیدوار معلومات: AI میچ 100 میں سے 86، مہارتیں 88، کردار سے مطابقت 84، انٹرویوز 78 اور تجربہ 90۔ مکمل تفصیلات ایک کریڈٹ سے اَن لاک ہوتی ہیں۔",
+        "kicker": "امیدوار کی معلومات",
+        "score": "86",
         "outOf": "/100",
-        "verdict": "مضبوط انٹرویو",
-        "question": "سوال 5 از 8",
-        "duration": "24:10"
+        "rows": [
+          {
+            "label": "مہارتیں",
+            "score": 88
+          },
+          {
+            "label": "کردار سے مطابقت",
+            "score": 84
+          },
+          {
+            "label": "انٹرویوز",
+            "score": 78
+          },
+          {
+            "label": "تجربہ",
+            "score": 90
+          }
+        ],
+        "locked": "مکمل تفصیلات دیکھنے کے لیے اَن لاک کریں"
       },
       "unlock": {
         "label": "ایک کریڈٹ میں اَن لاک ہوئی Vyshnavi Rao کی فائل، فون نمبر نظر آ رہا ہے۔",
