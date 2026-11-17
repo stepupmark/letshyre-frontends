@@ -11,13 +11,14 @@ import { CtaLink, TextLink } from "@/components/cta-links"
 import { Container } from "@/components/section"
 
 import { Photo } from "./photo"
-import { settled } from "./scene-context"
+import { usePlayOnView } from "./use-play-on-view"
 import { useStill } from "./use-still"
 
 export function Professionals() {
   const ref = useRef<HTMLElement>(null)
   const titleId = useId()
   const still = useStill(true)
+  const played = usePlayOnView(ref, 1.4)
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "center center"],
@@ -33,7 +34,7 @@ export function Professionals() {
       <Split
         key={still ? "still" : "live"}
         titleId={titleId}
-        progress={still ? settled : scrollYProgress}
+        progress={still ? played : scrollYProgress}
       />
     </section>
   )

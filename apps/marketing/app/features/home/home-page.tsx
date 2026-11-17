@@ -7,6 +7,7 @@ import { MotionProvider } from "./components/motion-provider"
 import { Pricing } from "./components/pricing"
 import { Professionals } from "./components/professionals"
 import { Proof } from "./components/proof"
+import { StickyCtas } from "./components/sticky-ctas"
 
 export function HomePage() {
   return (
@@ -19,6 +20,7 @@ export function HomePage() {
       <Pricing />
       <Faq />
       <FinalCta />
+      <StickyCtas />
     </MotionProvider>
   )
 }

@@ -36,7 +36,7 @@ export function Faq() {
             </TextLink>
           </p>
         </div>
-        <div className="pb-4 lg:col-span-3">
+        <div className="reveal pb-4 lg:col-span-3">
           <FaqList items={items} />
         </div>
       </Container>

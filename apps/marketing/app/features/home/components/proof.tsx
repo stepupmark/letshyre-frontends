@@ -220,7 +220,7 @@ function StillProof({ titleId }: { titleId: string }) {
         {stages.map((stage, i) => (
           <li
             key={stage.label}
-            className="sm:grid sm:grid-cols-2 sm:items-center sm:gap-6 lg:block"
+            className="reveal sm:grid sm:grid-cols-2 sm:items-center sm:gap-6 lg:block"
           >
             {PHOTOS[i] ? (
               <Photo

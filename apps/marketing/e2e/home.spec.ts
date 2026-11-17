@@ -63,7 +63,7 @@ test("the journey track runs rightwards in RTL and ends on the last step", async
   const journey = page.getByRole("region", {
     name: "من إعلان الوظيفة إلى أول اتصال.",
   })
-  const last = journey.getByRole("region").getByRole("listitem").last()
+  const last = journey.locator("ol[style] > li").last()
   // moves on each try so a scroll event fires once the scene has hydrated
   await expect
     .poll(

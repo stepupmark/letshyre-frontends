@@ -11,6 +11,7 @@ export function Photo({
   alt,
   sizes,
   priority,
+  lazy,
   portrait,
   className,
 }: {
@@ -18,6 +19,8 @@ export function Photo({
   alt: string
   sizes: string
   priority?: boolean
+  /** Keeps a priority photo lazy, so a screen that hides it never fetches it. */
+  lazy?: boolean
   portrait?: boolean
   className?: string
 }) {
@@ -35,7 +38,7 @@ export function Photo({
         alt={alt}
         width={large}
         height={portrait ? (large * 5) / 4 : (large * 2) / 3}
-        loading={priority ? "eager" : "lazy"}
+        loading={priority && !lazy ? "eager" : "lazy"}
         fetchPriority={priority ? "high" : "auto"}
         className="size-full object-cover"
       />

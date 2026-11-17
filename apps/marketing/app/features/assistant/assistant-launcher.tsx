@@ -16,6 +16,7 @@ import { LauncherFace } from "./components/launcher-face"
 import { LauncherGreeting } from "./components/launcher-greeting"
 import { PanelHeader, type PanelTitle } from "./components/panel-header"
 import { useLauncher } from "./hooks/use-launcher"
+import { useTucked } from "./hooks/use-tucked"
 
 const AssistantPanel = lazy(() =>
   import("./components/assistant-panel").then((m) => ({
@@ -37,6 +38,7 @@ export function AssistantLauncher() {
   const launcher = useLauncher()
   // the consent banner sits in the same corner
   const consentPending = useConsentPending()
+  const tucked = useTucked()
 
   const show = () => {
     launcher.opened()
@@ -74,7 +76,10 @@ export function AssistantLauncher() {
   return (
     <>
       <Popover open={open && !phone} onOpenChange={changeOpen} modal={false}>
-        <div className="fixed inset-e-4 bottom-4 z-40 flex flex-col items-end gap-2 sm:inset-e-6 sm:bottom-6 sm:flex-row print:hidden">
+        <div
+          data-tucked={tucked && !open ? "" : undefined}
+          className="max-lg:with-cta-bar:bottom-24 fixed inset-e-4 bottom-4 z-40 flex flex-col items-end gap-2 transition duration-200 motion-reduce:transition-none max-sm:data-tucked:pointer-events-none max-sm:data-tucked:translate-y-24 max-sm:data-tucked:opacity-0 sm:inset-e-6 sm:bottom-6 sm:flex-row print:hidden"
+        >
           {launcher.greeting && !open && (
             <LauncherGreeting
               onOpen={show}
