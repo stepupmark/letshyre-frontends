@@ -121,3 +121,33 @@ test("plays through every scene without errors", async ({ page }) => {
   await expect(page.locator("#pricing")).toBeFocused()
   expect(errors).toEqual([])
 })
+
+test.describe("without JavaScript on a phone", () => {
+  // axe needs scripts, and a11y.spec.ts already covers this page
+  test.use({
+    javaScriptEnabled: false,
+    viewport: { width: 375, height: 812 },
+    axeAtEnd: false,
+  })
+
+  test("the prerender is stacked and nothing waits on motion", async ({
+    page,
+  }) => {
+    await page.goto("/en")
+    const proof = page.getByRole("region", { name: /A resume tells you/ })
+    await expect(proof.getByRole("listitem")).toHaveCount(3)
+    const photo = await proof.locator("picture").first().boundingBox()
+    expect(photo?.width).toBeGreaterThan(300)
+
+    // motion writes its starting opacity inline; before hydration none may hide content
+    const hidden = await page.evaluate(() =>
+      [...document.querySelectorAll<HTMLElement>("main [style*='opacity']")]
+        .filter(
+          (el) =>
+            el.checkVisibility() && Number(getComputedStyle(el).opacity) < 1
+        )
+        .map((el) => el.textContent.slice(0, 40))
+    )
+    expect(hidden).toEqual([])
+  })
+})

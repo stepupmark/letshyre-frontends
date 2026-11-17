@@ -34,7 +34,7 @@ export function Journey() {
   const titleId = useId()
 
   return (
-    <ScrollScene screens={2.4} aria-labelledby={titleId}>
+    <ScrollScene screens={2} aria-labelledby={titleId}>
       <JourneyStage titleId={titleId} />
     </ScrollScene>
   )
