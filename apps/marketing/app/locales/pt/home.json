@@ -119,18 +119,18 @@
         "photo": "Uma recrutadora ilustrada publica uma vaga pelo tablet, em sua mesa."
       },
       {
-        "title": "Receba uma lista classificada",
-        "body": "Todos que se candidataram são classificados por aderência à vaga, habilidades e entrevista, com profissionais compatíveis adicionados do banco de talentos.",
+        "title": "Encontre candidatos no seu banco",
+        "body": "Abra o Banco de candidatos, selecione a vaga publicada e vá para “Candidatos encontrados pela IA”.",
         "photo": "Uma gestora de contratação ilustrada olha o tablet enquanto os melhores perfis de uma multidão de candidatos são circulados."
       },
       {
-        "title": "Leia a entrevista",
-        "body": "Uma nota de 0 a 100, pontos fortes, as lacunas que vale investigar e a gravação completa.",
+        "title": "Veja os insights dos candidatos",
+        "body": "Compare candidatos por aderência IA, habilidades, encaixe na função, entrevistas e experiência e desbloqueie para ver todos os detalhes.",
         "photo": "Uma candidata ilustrada ao lado de suas notas de aderência por função, habilidades, entrevistas e experiência, com a análise completa bloqueada."
       },
       {
-        "title": "Desbloqueie e entre em contato",
-        "body": "Um crédito desbloqueia o currículo, os contatos e a gravação. Depois, contrate do seu jeito.",
+        "title": "Conecte-se e contrate",
+        "body": "Acesse o currículo, o vídeo da entrevista, o scorecard e os dados do candidato desbloqueado, depois entre em contato e siga com sua contratação.",
         "photo": "Uma gestora de contratação ilustrada aperta a mão de um candidato após se conectarem na LetsHyre."
       }
     ],
@@ -190,7 +190,6 @@
     "jump": "Ir para a etapa {{n}}: {{title}}"
   },
   "professionals": {
-    "eyebrow": "O lado da Vyshnavi",
     "title": "Uma entrevista.",
     "accent": "Meses sendo encontrada.",
     "body": "Ela fez uma entrevista com IA por função no app para desktop, na hora que lhe convinha. Por 90 dias o scorecard dela fica no banco de talentos, onde empresas que contratam para a função dela a encontram. É grátis para profissionais.",
@@ -226,37 +225,7 @@
       "Grátis para profissionais"
     ],
     "cta": "Comece com 10 créditos grátis",
-    "more": "Ver preços",
-    "ledger": {
-      "caption": "Um exemplo de extrato de créditos",
-      "columns": {
-        "entry": "Lançamento",
-        "credits": "Créditos",
-        "balance": "Saldo"
-      },
-      "rows": [
-        {
-          "entry": "Créditos grátis para começar",
-          "credits": "+10",
-          "balance": "10"
-        },
-        {
-          "entry": "24 candidatos comparados",
-          "credits": "0",
-          "balance": "10"
-        },
-        {
-          "entry": "Vyshnavi Rao desbloqueada",
-          "credits": "−1",
-          "balance": "9"
-        },
-        {
-          "entry": "Arjun Mehta desbloqueado",
-          "credits": "−1",
-          "balance": "8"
-        }
-      ]
-    }
+    "more": "Ver preços"
   },
   "faq": {
     "title": "Perguntas,",

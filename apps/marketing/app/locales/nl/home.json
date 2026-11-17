@@ -119,18 +119,18 @@
         "photo": "Een getekende recruiter aan haar bureau plaatst een vacature vanaf haar tablet."
       },
       {
-        "title": "Krijg een gerangschikte shortlist",
-        "body": "Iedereen die solliciteerde wordt gerangschikt op functiematch, vaardigheden en interview, aangevuld met passende professionals uit de talentpool.",
+        "title": "Vind kandidaten in je pool",
+        "body": "Open de Kandidatenpool, kies je geplaatste vacature en ga naar ‘Door AI gematchte kandidaten’.",
         "photo": "Een getekende hiring manager kijkt op haar tablet terwijl de beste matches in een menigte kandidaten worden omcirkeld."
       },
       {
-        "title": "Lees het interview",
-        "body": "Een score op 100, sterke punten, de gaten die doorvragen waard zijn en de volledige opname.",
+        "title": "Bekijk kandidaatinzichten",
+        "body": "Vergelijk kandidaten op AI-match, vaardigheden, rolfit, interviews en ervaring, en ontgrendel om alle details te zien.",
         "photo": "Een getekende kandidaat naast haar matchscores voor rol, vaardigheden, interviews en ervaring, met de volledige inzichten vergrendeld."
       },
       {
-        "title": "Ontgrendel en neem contact op",
-        "body": "Eén credit ontgrendelt het cv, de contactgegevens en de opname. Daarna werf je op jouw manier.",
+        "title": "Neem contact op en neem aan",
+        "body": "Bekijk het cv, de interviewvideo, de scorekaart en de gegevens van de ontgrendelde kandidaat, neem contact op en ga verder met je wervingsproces.",
         "photo": "Een getekende hiring manager schudt een kandidaat de hand na het contact via LetsHyre."
       }
     ],
@@ -190,7 +190,6 @@
     "jump": "Ga naar stap {{n}}: {{title}}"
   },
   "professionals": {
-    "eyebrow": "Vyshnavi's kant",
     "title": "Eén keer interviewen.",
     "accent": "Maandenlang gevonden worden.",
     "body": "Ze deed een rolgericht AI-interview in de desktop-app, op een moment dat haar uitkwam. 90 dagen lang staat haar scorekaart in de talentpool, waar werkgevers die voor haar rol werven haar vinden. Voor professionals is het gratis.",
@@ -226,37 +225,7 @@
       "Gratis voor professionals"
     ],
     "cta": "Begin met 10 gratis credits",
-    "more": "Bekijk prijzen",
-    "ledger": {
-      "caption": "Een voorbeeld van een creditoverzicht",
-      "columns": {
-        "entry": "Post",
-        "credits": "Credits",
-        "balance": "Saldo"
-      },
-      "rows": [
-        {
-          "entry": "Gratis startcredits",
-          "credits": "+10",
-          "balance": "10"
-        },
-        {
-          "entry": "24 kandidaten vergeleken",
-          "credits": "0",
-          "balance": "10"
-        },
-        {
-          "entry": "Vyshnavi Rao ontgrendeld",
-          "credits": "−1",
-          "balance": "9"
-        },
-        {
-          "entry": "Arjun Mehta ontgrendeld",
-          "credits": "−1",
-          "balance": "8"
-        }
-      ]
-    }
+    "more": "Bekijk prijzen"
   },
   "faq": {
     "title": "Vragen,",

@@ -29,13 +29,6 @@
   }
 }
 
-/* laptop heights, where a pinned scene's densest card has to tighten up */
-@custom-variant short {
-  @media (height < 56rem) {
-    @slot;
-  }
-}
-
 /* set on <html> while the home page's sticky sign-up bar shows */
 @custom-variant with-cta-bar (html[data-cta-bar] &);
 

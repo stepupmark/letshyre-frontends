@@ -56,27 +56,24 @@ function Split({
   const pool = useTransform(progress, [0.75, 1], [0, 1])
 
   return (
-    <Container className="grid items-center gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-16">
-      <m.div style={{ x: photoX, opacity }} className="lg:col-span-7">
+    <Container className="grid items-center gap-12 md:grid-cols-2 lg:gap-16">
+      <m.div style={{ x: photoX, opacity }}>
         <Photo
           name="home/her-desk"
           alt={t("professionals.photo")}
-          sizes="(min-width: 64rem) 44rem, (min-width: 48rem) 50vw, 100vw"
+          sizes="(min-width: 64rem) 34rem, (min-width: 48rem) 50vw, 100vw"
           className="aspect-4/3 rounded-3xl border"
         />
       </m.div>
-      <m.div style={{ x: copyX, opacity }} className="lg:col-span-5">
-        <p className="text-sm font-semibold text-brand-text">
-          {t("professionals.eyebrow")}
-        </p>
+      <m.div style={{ x: copyX, opacity }}>
         <h2
           id={titleId}
-          className="mt-3 text-3xl font-semibold tracking-tight text-balance sm:text-5xl"
+          className="text-3xl font-semibold tracking-tight text-balance sm:text-5xl"
         >
           {t("professionals.title")}{" "}
           <span className="block">{t("professionals.accent")}</span>
         </h2>
-        <p className="mt-4 max-w-md text-pretty text-muted-foreground sm:text-lg">
+        <p className="mt-5 max-w-xl text-pretty text-muted-foreground sm:text-lg">
           {t("professionals.body")}
         </p>
         <ol className="mt-8 grid gap-2">
@@ -86,7 +83,7 @@ function Split({
             )
           )}
         </ol>
-        <div className="mt-6 max-w-md">
+        <div className="mt-6">
           <p className="flex justify-between text-sm">
             <span className="font-semibold tabular-nums">
               {t("professionals.days")}
@@ -97,7 +94,7 @@ function Split({
           </p>
           <span
             aria-hidden
-            className="mt-2 block h-1.5 overflow-hidden rounded-full bg-background"
+            className="mt-2 block h-1.5 overflow-hidden rounded-full bg-border"
           >
             <m.span
               style={{ scaleX: pool }}
@@ -134,7 +131,7 @@ function Slot({
   const fill = useTransform(progress, [start, start + 0.1], [0, 1])
 
   return (
-    <li className="flex max-w-md items-center gap-3 rounded-xl border bg-background px-4 py-3">
+    <li className="flex items-center gap-3 rounded-xl border bg-background px-4 py-3">
       <span
         aria-hidden
         className="grid size-6 shrink-0 place-items-center rounded-full border"
@@ -144,8 +141,10 @@ function Slot({
           className="size-3 rounded-full bg-brand"
         />
       </span>
-      <span className="text-sm font-semibold">{label}</span>
-      <span className="text-sm text-muted-foreground">{role}</span>
+      <span className="flex min-w-0 flex-wrap items-baseline gap-x-3 text-sm">
+        <span className="font-semibold">{label}</span>
+        <span className="text-muted-foreground">{role}</span>
+      </span>
     </li>
   )
 }

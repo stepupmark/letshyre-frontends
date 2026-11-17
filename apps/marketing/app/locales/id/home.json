@@ -119,18 +119,18 @@
         "photo": "Seorang perekrut dalam ilustrasi memasang lowongan dari tabletnya di meja kerja."
       },
       {
-        "title": "Dapatkan daftar pendek berperingkat",
-        "body": "Semua pelamar diperingkat menurut kecocokan pekerjaan, keterampilan, dan wawancara, ditambah profesional yang cocok dari talent pool.",
+        "title": "Temukan kandidat di kumpulan Anda",
+        "body": "Buka Kumpulan kandidat, pilih lowongan yang Anda pasang, lalu buka “Kandidat yang dicocokkan AI”.",
         "photo": "Seorang hiring manager dalam ilustrasi melihat tabletnya saat kandidat terbaik di antara kerumunan dilingkari."
       },
       {
-        "title": "Baca wawancaranya",
-        "body": "Skor dari 100, kekuatan, kekurangan yang perlu didalami, dan rekaman lengkap.",
+        "title": "Lihat wawasan kandidat",
+        "body": "Bandingkan kandidat berdasarkan kecocokan AI, keterampilan, kesesuaian peran, wawancara, dan pengalaman, lalu buka akses untuk melihat detail lengkap.",
         "photo": "Seorang kandidat dalam ilustrasi di samping skor kecocokannya untuk peran, keterampilan, wawancara, dan pengalaman, dengan wawasan lengkap terkunci."
       },
       {
-        "title": "Buka akses dan hubungi",
-        "body": "Satu kredit membuka CV, detail kontak, dan rekaman. Setelah itu, rekrut dengan cara Anda.",
+        "title": "Hubungi dan rekrut",
+        "body": "Akses CV, video wawancara, scorecard, dan detail kandidat yang sudah dibuka, lalu hubungi dan lanjutkan proses rekrutmen Anda.",
         "photo": "Seorang hiring manager dalam ilustrasi berjabat tangan dengan kandidat setelah terhubung di LetsHyre."
       }
     ],
@@ -190,7 +190,6 @@
     "jump": "Ke langkah {{n}}: {{title}}"
   },
   "professionals": {
-    "eyebrow": "Sisi Vyshnavi",
     "title": "Wawancara sekali.",
     "accent": "Ditemukan berbulan-bulan.",
     "body": "Dia mengikuti wawancara AI sesuai peran di aplikasi desktop, pada waktu yang cocok baginya. Selama 90 hari scorecard-nya ada di talent pool, tempat perusahaan yang merekrut untuk perannya menemukannya. Gratis untuk profesional.",
@@ -226,37 +225,7 @@
       "Gratis untuk profesional"
     ],
     "cta": "Mulai dengan 10 kredit gratis",
-    "more": "Lihat harga",
-    "ledger": {
-      "caption": "Contoh catatan kredit",
-      "columns": {
-        "entry": "Entri",
-        "credits": "Kredit",
-        "balance": "Saldo"
-      },
-      "rows": [
-        {
-          "entry": "Kredit gratis untuk mulai",
-          "credits": "+10",
-          "balance": "10"
-        },
-        {
-          "entry": "Membandingkan 24 kandidat",
-          "credits": "0",
-          "balance": "10"
-        },
-        {
-          "entry": "Membuka Vyshnavi Rao",
-          "credits": "−1",
-          "balance": "9"
-        },
-        {
-          "entry": "Membuka Arjun Mehta",
-          "credits": "−1",
-          "balance": "8"
-        }
-      ]
-    }
+    "more": "Lihat harga"
   },
   "faq": {
     "title": "Pertanyaan,",

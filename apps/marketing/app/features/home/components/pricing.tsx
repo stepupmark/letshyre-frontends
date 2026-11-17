@@ -10,7 +10,6 @@ import { Container } from "@/components/section"
 
 import { Photo } from "./photo"
 import { Magnetic } from "./pointer-effects"
-import { PricingLedger } from "./pricing-ledger"
 
 export function Pricing() {
   const { t } = useTranslation("home")
@@ -24,8 +23,8 @@ export function Pricing() {
       aria-labelledby={titleId}
       className="scroll-mt-20 py-12 outline-none sm:py-20 lg:py-24"
     >
-      <Container className="grid gap-10 lg:grid-cols-2 lg:gap-20">
-        <div className="lg:sticky lg:top-28 lg:self-start">
+      <Container className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+        <div className="lg:col-span-5">
           <p className="text-sm font-semibold text-brand-text">
             {t("pricing.eyebrow")}
           </p>
@@ -36,30 +35,31 @@ export function Pricing() {
             {t("pricing.title")}{" "}
             <span className="block">{t("pricing.accent")}</span>
           </h2>
-          <Photo
-            name="home/unlock-podium"
-            alt={t("pricing.photo")}
-            sizes="(min-width: 64rem) 36rem, 100vw"
-            className="mt-10 aspect-video rounded-3xl border"
-          />
-        </div>
-        <div>
-          <p className="max-w-lg text-lg text-pretty text-muted-foreground">
+          <p className="mt-5 max-w-lg text-pretty text-muted-foreground sm:text-lg">
             {t("pricing.body")}
           </p>
-          <PricingLedger />
-          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-            {t("pricing.points", { returnObjects: true }).map((point) => (
-              <li key={point} className="flex items-center gap-2">
-                <CheckIcon
-                  aria-hidden
-                  className="size-4 shrink-0 text-success"
-                />
-                {point}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+        </div>
+        <div className="lg:col-span-7">
+          <div className="overflow-hidden rounded-3xl border bg-card">
+            <Photo
+              name="home/unlock-podium"
+              alt={t("pricing.photo")}
+              sizes="(min-width: 64rem) 38rem, 100vw"
+              className="aspect-video"
+            />
+            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t px-5 py-4 text-sm font-medium">
+              {t("pricing.points", { returnObjects: true }).map((point) => (
+                <li key={point} className="flex items-center gap-2">
+                  <CheckIcon
+                    aria-hidden
+                    className="size-4 shrink-0 text-success"
+                  />
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
             <Magnetic>
               <CtaLink href={APP_LINKS.employerRegister}>
                 {t("pricing.cta")}

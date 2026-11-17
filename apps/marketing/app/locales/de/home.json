@@ -119,18 +119,18 @@
         "photo": "Eine illustrierte Recruiterin an ihrem Schreibtisch veröffentlicht eine Stellenanzeige über ihr Tablet."
       },
       {
-        "title": "Eine gerankte Shortlist erhalten",
-        "body": "Alle Bewerber werden nach Job-Match, Skills und Interview gerankt, ergänzt um passende Fachkräfte aus dem Talentpool.",
+        "title": "Kandidaten in Ihrem Pool finden",
+        "body": "Öffnen Sie den Kandidatenpool, wählen Sie Ihre veröffentlichte Stelle und gehen Sie zu „Von der KI gefundene Kandidaten“.",
         "photo": "Eine illustrierte Hiring-Managerin blickt auf ihr Tablet, während die besten Treffer in einer Menge von Kandidaten markiert werden."
       },
       {
-        "title": "Das Interview lesen",
-        "body": "Ein Score von 100, Stärken, die Lücken, bei denen sich Nachfragen lohnt, und die vollständige Aufzeichnung.",
+        "title": "Kandidaten-Einblicke ansehen",
+        "body": "Vergleichen Sie Kandidaten nach KI-Match, Skills, Rollenpassung, Interviews und Erfahrung und schalten Sie dann frei, um alle Details zu sehen.",
         "photo": "Eine illustrierte Kandidatin neben ihren Match-Scores für Rolle, Skills, Interviews und Erfahrung, die vollständigen Einblicke gesperrt."
       },
       {
-        "title": "Freischalten und Kontakt aufnehmen",
-        "body": "Ein Credit schaltet Lebenslauf, Kontaktdaten und Aufzeichnung frei. Dann stellen Sie ein, wie Sie möchten.",
+        "title": "Kontakt aufnehmen und einstellen",
+        "body": "Sehen Sie Lebenslauf, Interviewvideo, Scorecard und Details des freigeschalteten Kandidaten, nehmen Sie Kontakt auf und setzen Sie Ihren Einstellungsprozess fort.",
         "photo": "Eine illustrierte Hiring-Managerin schüttelt einem Kandidaten die Hand, nachdem sie sich über LetsHyre verbunden haben."
       }
     ],
@@ -190,7 +190,6 @@
     "jump": "Zu Schritt {{n}}: {{title}}"
   },
   "professionals": {
-    "eyebrow": "Vyshnavis Seite",
     "title": "Einmal interviewen.",
     "accent": "Monatelang gefunden werden.",
     "body": "Sie hat ein rollenbasiertes KI-Interview in der Desktop-App gemacht, wann es ihr passte. 90 Tage lang liegt ihre Scorecard im Talentpool, wo Arbeitgeber, die für ihre Rolle suchen, sie finden. Für Fachkräfte ist es kostenlos.",
@@ -226,37 +225,7 @@
       "Kostenlos für Fachkräfte"
     ],
     "cta": "Mit 10 kostenlosen Credits starten",
-    "more": "Preise ansehen",
-    "ledger": {
-      "caption": "Ein Beispiel für ein Credit-Konto",
-      "columns": {
-        "entry": "Eintrag",
-        "credits": "Credits",
-        "balance": "Saldo"
-      },
-      "rows": [
-        {
-          "entry": "Kostenlose Start-Credits",
-          "credits": "+10",
-          "balance": "10"
-        },
-        {
-          "entry": "24 Kandidaten verglichen",
-          "credits": "0",
-          "balance": "10"
-        },
-        {
-          "entry": "Vyshnavi Rao freigeschaltet",
-          "credits": "−1",
-          "balance": "9"
-        },
-        {
-          "entry": "Arjun Mehta freigeschaltet",
-          "credits": "−1",
-          "balance": "8"
-        }
-      ]
-    }
+    "more": "Preise ansehen"
   },
   "faq": {
     "title": "Fragen,",

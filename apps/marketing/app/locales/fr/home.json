@@ -119,18 +119,18 @@
         "photo": "Une recruteuse illustrée publie une offre d'emploi depuis sa tablette, à son bureau."
       },
       {
-        "title": "Recevez une liste classée",
-        "body": "Tous les candidats sont classés selon l'adéquation au poste, les compétences et l'entretien, avec des professionnels correspondants ajoutés depuis le vivier de talents.",
+        "title": "Trouvez des candidats dans votre vivier",
+        "body": "Ouvrez le Vivier de candidats, sélectionnez votre offre publiée et allez dans « Candidats trouvés par l’IA ».",
         "photo": "Une responsable du recrutement illustrée consulte sa tablette tandis que les meilleurs profils d'une foule de candidats sont entourés."
       },
       {
-        "title": "Lisez l'entretien",
-        "body": "Un score sur 100, les points forts, les lacunes à approfondir et l'enregistrement complet.",
+        "title": "Voir les analyses des candidats",
+        "body": "Comparez les candidats selon l’adéquation IA, les compétences, l’adéquation au poste, les entretiens et l’expérience, puis débloquez pour voir tous les détails.",
         "photo": "Une candidate illustrée à côté de ses scores d'adéquation pour le poste, les compétences, les entretiens et l'expérience, les analyses complètes verrouillées."
       },
       {
-        "title": "Débloquez et contactez",
-        "body": "Un crédit débloque le CV, les coordonnées et l'enregistrement. Ensuite, recrutez à votre façon.",
+        "title": "Contactez et recrutez",
+        "body": "Accédez au CV, à la vidéo d’entretien, à la grille d’évaluation et aux informations du candidat débloqué, puis contactez-le et poursuivez votre recrutement.",
         "photo": "Une responsable du recrutement illustrée serre la main d'un candidat après leur mise en relation sur LetsHyre."
       }
     ],
@@ -190,7 +190,6 @@
     "jump": "Aller à l'étape {{n}} : {{title}}"
   },
   "professionals": {
-    "eyebrow": "Du côté de Vyshnavi",
     "title": "Un seul entretien.",
     "accent": "Visible pendant des mois.",
     "body": "Elle a passé un entretien IA adapté au poste dans l'application de bureau, au moment qui lui convenait. Pendant 90 jours, sa grille reste dans le vivier de talents, où les employeurs qui recrutent pour son poste la trouvent. C'est gratuit pour les professionnels.",
@@ -226,37 +225,7 @@
       "Gratuit pour les professionnels"
     ],
     "cta": "Commencer avec 10 crédits offerts",
-    "more": "Voir les tarifs",
-    "ledger": {
-      "caption": "Un exemple de relevé de crédits",
-      "columns": {
-        "entry": "Opération",
-        "credits": "Crédits",
-        "balance": "Solde"
-      },
-      "rows": [
-        {
-          "entry": "Crédits offerts au départ",
-          "credits": "+10",
-          "balance": "10"
-        },
-        {
-          "entry": "24 candidats comparés",
-          "credits": "0",
-          "balance": "10"
-        },
-        {
-          "entry": "Vyshnavi Rao débloquée",
-          "credits": "−1",
-          "balance": "9"
-        },
-        {
-          "entry": "Arjun Mehta débloqué",
-          "credits": "−1",
-          "balance": "8"
-        }
-      ]
-    }
+    "more": "Voir les tarifs"
   },
   "faq": {
     "title": "Vos questions,",

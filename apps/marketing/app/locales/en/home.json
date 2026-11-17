@@ -119,18 +119,18 @@
         "photo": "An illustrated recruiter at her desk publishes a job post from her tablet."
       },
       {
-        "title": "Get a ranked shortlist",
-        "body": "Everyone who applied is ranked by job match, skills and interview, with matching professionals added from the talent pool.",
+        "title": "Find candidates in your pool",
+        "body": "Open Candidate Pool, select your posted job, and navigate to AI-Matched Candidates.",
         "photo": "An illustrated hiring manager checks her tablet as the best matches in a crowd of candidates are circled."
       },
       {
-        "title": "Read the interview",
-        "body": "A score out of 100, strengths, the gaps worth probing and the full recording.",
+        "title": "See candidate insights",
+        "body": "Compare candidates with AI match, skills, role fit, interviews and experience, then unlock to view complete details.",
         "photo": "An illustrated candidate beside her match scores for role, skills, interviews and experience, with the full insights locked."
       },
       {
-        "title": "Unlock and reach out",
-        "body": "One credit unlocks the resume, contact details and recording. Then you hire your way.",
+        "title": "Connect and hire",
+        "body": "Access the unlocked candidate's resume, interview video, scorecard and details, then connect and continue with your hiring process.",
         "photo": "An illustrated hiring manager shakes hands with a candidate after connecting on LetsHyre."
       }
     ],
@@ -190,7 +190,6 @@
     "jump": "Go to step {{n}}: {{title}}"
   },
   "professionals": {
-    "eyebrow": "Vyshnavi's side",
     "title": "Interview once.",
     "accent": "Get found for months.",
     "body": "She took a role-based AI interview in the desktop app, at a time that suited her. For 90 days her scorecard sits in the talent pool, where employers hiring for her role find her. It's free for professionals.",
@@ -226,37 +225,7 @@
       "Free for professionals"
     ],
     "cta": "Start with 10 free credits",
-    "more": "See pricing",
-    "ledger": {
-      "caption": "A sample credit ledger",
-      "columns": {
-        "entry": "Entry",
-        "credits": "Credits",
-        "balance": "Balance"
-      },
-      "rows": [
-        {
-          "entry": "Free credits to start",
-          "credits": "+10",
-          "balance": "10"
-        },
-        {
-          "entry": "Compared 24 candidates",
-          "credits": "0",
-          "balance": "10"
-        },
-        {
-          "entry": "Unlocked Vyshnavi Rao",
-          "credits": "−1",
-          "balance": "9"
-        },
-        {
-          "entry": "Unlocked Arjun Mehta",
-          "credits": "−1",
-          "balance": "8"
-        }
-      ]
-    }
+    "more": "See pricing"
   },
   "faq": {
     "title": "Questions,",

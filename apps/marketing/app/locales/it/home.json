@@ -119,18 +119,18 @@
         "photo": "Una recruiter illustrata alla scrivania pubblica un annuncio dal suo tablet."
       },
       {
-        "title": "Ricevi una shortlist ordinata",
-        "body": "Chi si è candidato viene ordinato per corrispondenza al ruolo, competenze e colloquio, con professionisti adatti aggiunti dal talent pool.",
+        "title": "Trova candidati nel tuo bacino",
+        "body": "Apri il Bacino di candidati, seleziona l’annuncio pubblicato e vai su «Candidati trovati dall’IA».",
         "photo": "Una hiring manager illustrata guarda il tablet mentre i profili migliori in una folla di candidati vengono cerchiati."
       },
       {
-        "title": "Leggi il colloquio",
-        "body": "Un punteggio su 100, punti di forza, le lacune da approfondire e la registrazione completa.",
+        "title": "Guarda le analisi dei candidati",
+        "body": "Confronta i candidati per corrispondenza IA, competenze, adeguatezza al ruolo, colloqui ed esperienza, poi sblocca per vedere tutti i dettagli.",
         "photo": "Una candidata illustrata accanto ai suoi punteggi per ruolo, competenze, colloqui ed esperienza, con l'analisi completa bloccata."
       },
       {
-        "title": "Sblocca e contatta",
-        "body": "Un credito sblocca CV, contatti e registrazione. Poi assumi a modo tuo.",
+        "title": "Contatta e assumi",
+        "body": "Accedi a CV, video del colloquio, scheda di valutazione e dettagli del candidato sbloccato, poi contattalo e prosegui con la tua selezione.",
         "photo": "Una hiring manager illustrata stringe la mano a un candidato dopo il contatto su LetsHyre."
       }
     ],
@@ -190,7 +190,6 @@
     "jump": "Vai al passo {{n}}: {{title}}"
   },
   "professionals": {
-    "eyebrow": "Dalla parte di Vyshnavi",
     "title": "Un colloquio.",
     "accent": "Mesi di visibilità.",
     "body": "Ha sostenuto un colloquio IA basato sul ruolo nell'app desktop, quando le faceva comodo. Per 90 giorni la sua scheda resta nel talent pool, dove la trovano le aziende che cercano il suo ruolo. Per i professionisti è gratis.",
@@ -226,37 +225,7 @@
       "Gratis per i professionisti"
     ],
     "cta": "Inizia con 10 crediti gratuiti",
-    "more": "Vedi i prezzi",
-    "ledger": {
-      "caption": "Un esempio di registro crediti",
-      "columns": {
-        "entry": "Voce",
-        "credits": "Crediti",
-        "balance": "Saldo"
-      },
-      "rows": [
-        {
-          "entry": "Crediti gratuiti iniziali",
-          "credits": "+10",
-          "balance": "10"
-        },
-        {
-          "entry": "24 candidati confrontati",
-          "credits": "0",
-          "balance": "10"
-        },
-        {
-          "entry": "Vyshnavi Rao sbloccata",
-          "credits": "−1",
-          "balance": "9"
-        },
-        {
-          "entry": "Arjun Mehta sbloccato",
-          "credits": "−1",
-          "balance": "8"
-        }
-      ]
-    }
+    "more": "Vedi i prezzi"
   },
   "faq": {
     "title": "Domande,",

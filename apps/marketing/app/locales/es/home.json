@@ -119,18 +119,18 @@
         "photo": "Una reclutadora ilustrada publica una oferta desde su tableta en su escritorio."
       },
       {
-        "title": "Recibe una lista clasificada",
-        "body": "Todos los que se postularon se clasifican por encaje con el puesto, habilidades y entrevista, junto con profesionales afines del banco de talento.",
+        "title": "Encuentra candidatos en tu reserva",
+        "body": "Abre la Reserva de candidatos, selecciona la oferta que publicaste y ve a «Candidatos encontrados por la IA».",
         "photo": "Una responsable de contratación ilustrada mira su tableta mientras se marcan los mejores perfiles entre una multitud de candidatos."
       },
       {
-        "title": "Lee la entrevista",
-        "body": "Una puntuación sobre 100, fortalezas, las carencias que conviene indagar y la grabación completa.",
+        "title": "Mira el análisis de cada candidato",
+        "body": "Compara candidatos por encaje IA, habilidades, encaje con el puesto, entrevistas y experiencia, y desbloquea para ver todos los detalles.",
         "photo": "Una candidata ilustrada junto a sus puntuaciones de encaje por puesto, habilidades, entrevistas y experiencia, con el análisis completo bloqueado."
       },
       {
-        "title": "Desbloquea y contacta",
-        "body": "Un crédito desbloquea el CV, los datos de contacto y la grabación. Después, contrata a tu manera.",
+        "title": "Contacta y contrata",
+        "body": "Accede al CV, el video de la entrevista, la evaluación y los datos del candidato desbloqueado, y luego contacta y sigue con tu proceso de contratación.",
         "photo": "Una responsable de contratación ilustrada estrecha la mano de un candidato tras conectar en LetsHyre."
       }
     ],
@@ -190,7 +190,6 @@
     "jump": "Ir al paso {{n}}: {{title}}"
   },
   "professionals": {
-    "eyebrow": "El lado de Vyshnavi",
     "title": "Una entrevista.",
     "accent": "Meses de visibilidad.",
     "body": "Hizo una entrevista con IA según el puesto en la app de escritorio, cuando le vino bien. Durante 90 días su evaluación está en el banco de talento, donde la encuentran las empresas que buscan su perfil. Es gratis para profesionales.",
@@ -226,37 +225,7 @@
       "Gratis para profesionales"
     ],
     "cta": "Empieza con 10 créditos gratis",
-    "more": "Ver precios",
-    "ledger": {
-      "caption": "Un ejemplo de registro de créditos",
-      "columns": {
-        "entry": "Movimiento",
-        "credits": "Créditos",
-        "balance": "Saldo"
-      },
-      "rows": [
-        {
-          "entry": "Créditos gratis para empezar",
-          "credits": "+10",
-          "balance": "10"
-        },
-        {
-          "entry": "24 candidatos comparados",
-          "credits": "0",
-          "balance": "10"
-        },
-        {
-          "entry": "Vyshnavi Rao desbloqueada",
-          "credits": "−1",
-          "balance": "9"
-        },
-        {
-          "entry": "Arjun Mehta desbloqueado",
-          "credits": "−1",
-          "balance": "8"
-        }
-      ]
-    }
+    "more": "Ver precios"
   },
   "faq": {
     "title": "Preguntas,",
