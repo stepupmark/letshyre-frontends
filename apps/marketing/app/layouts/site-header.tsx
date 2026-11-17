@@ -68,7 +68,7 @@ export function SiteHeader() {
               to={pagePath("home")}
               className="shrink-0 rounded-md outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
             >
-              <Logo label={t("nav.logoAlt")} />
+              <Logo label={t("nav.logoAlt")} className="lg:h-7" />
             </Link>
           </div>
 
