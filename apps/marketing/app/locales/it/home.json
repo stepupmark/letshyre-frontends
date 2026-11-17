@@ -68,46 +68,6 @@
       }
     ]
   },
-  "interview": {
-    "eyebrow": "Dentro il suo colloquio",
-    "title": "Leggi come ragiona, non cosa dichiara.",
-    "body": "Ogni risposta viene registrata e valutata rispetto al ruolo. Ecco una domanda dal colloquio frontend di Vyshnavi.",
-    "sample": "Colloquio di esempio, a titolo illustrativo",
-    "session": "Colloquio IA · Ingegnera frontend senior",
-    "progress": "Domanda 5 di 8",
-    "duration": "24:10",
-    "asked": "Intervistatore",
-    "answered": "Vyshnavi",
-    "question": "Due componenti lontani nell'albero hanno bisogno dello stesso stato. Come lo condivideresti e a cosa faresti attenzione?",
-    "answer": [
-      "Prima lo porterei al loro antenato comune più vicino, e userei un context solo se passarlo verso il basso diventa scomodo.",
-      "Se cambia spesso, lo terrei in un piccolo store, così si aggiornano solo i componenti che lo leggono.",
-      "Farei attenzione ai valori obsoleti negli effect e che lo stato abbia un solo proprietario."
-    ],
-    "scorecard": "Scheda di valutazione",
-    "overall": "Punteggio del colloquio",
-    "score": "78",
-    "outOf": "/100",
-    "verdict": "Colloquio solido",
-    "skills": [
-      {
-        "label": "Gestione dello stato",
-        "value": 84
-      },
-      {
-        "label": "Ragionamento sui compromessi",
-        "value": 76
-      },
-      {
-        "label": "Comunicazione",
-        "value": 79
-      }
-    ],
-    "strengths": "Punti di forza",
-    "strengthItems": ["Gestione dello stato", "Accessibilità"],
-    "gaps": "Da approfondire",
-    "gapItems": ["Test su larga scala"]
-  },
   "journey": {
     "eyebrow": "Come funziona",
     "title": "Dall'annuncio alla prima chiamata.",

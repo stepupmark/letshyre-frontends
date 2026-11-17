@@ -68,46 +68,6 @@
       }
     ]
   },
-  "interview": {
-    "eyebrow": "In ihrem Interview",
-    "title": "Lesen Sie, wie sie denkt, nicht was sie behauptet.",
-    "body": "Jede Antwort wird aufgezeichnet und an der Rolle gemessen. Hier ist eine Frage aus Vyshnavis Frontend-Interview.",
-    "sample": "Beispielinterview, zur Veranschaulichung",
-    "session": "KI-Interview · Senior Frontend-Entwicklerin",
-    "progress": "Frage 5 von 8",
-    "duration": "24:10",
-    "asked": "Interviewer",
-    "answered": "Vyshnavi",
-    "question": "Zwei weit voneinander entfernte Komponenten im Baum brauchen denselben State. Wie würden Sie ihn teilen, und worauf würden Sie achten?",
-    "answer": [
-      "Ich würde ihn zuerst in den nächsten gemeinsamen Elternteil heben und erst zu Context greifen, wenn das Durchreichen unübersichtlich wird.",
-      "Wenn er sich oft ändert, käme er in einen kleinen Store, damit nur die Komponenten neu rendern, die ihn lesen.",
-      "Achten würde ich auf veraltete Werte in Effects und darauf, dass der State genau einen Besitzer hat."
-    ],
-    "scorecard": "Scorecard",
-    "overall": "Interview-Score",
-    "score": "78",
-    "outOf": "/100",
-    "verdict": "Starkes Interview",
-    "skills": [
-      {
-        "label": "State-Management",
-        "value": 84
-      },
-      {
-        "label": "Abwägen von Trade-offs",
-        "value": 76
-      },
-      {
-        "label": "Kommunikation",
-        "value": 79
-      }
-    ],
-    "strengths": "Stärken",
-    "strengthItems": ["State-Management", "Barrierefreiheit"],
-    "gaps": "Nachfragen lohnt sich",
-    "gapItems": ["Testen im großen Maßstab"]
-  },
   "journey": {
     "eyebrow": "So funktioniert es",
     "title": "Von der Stellenanzeige zum ersten Gespräch.",

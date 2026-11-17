@@ -68,46 +68,6 @@
       }
     ]
   },
-  "interview": {
-    "eyebrow": "Dentro de su entrevista",
-    "title": "Lee cómo piensa, no lo que afirma.",
-    "body": "Cada respuesta se graba y se puntúa según el puesto. Esta es una pregunta de la entrevista frontend de Vyshnavi.",
-    "sample": "Entrevista de ejemplo, como ilustración",
-    "session": "Entrevista con IA · Ingeniera frontend sénior",
-    "progress": "Pregunta 5 de 8",
-    "duration": "24:10",
-    "asked": "Entrevistador",
-    "answered": "Vyshnavi",
-    "question": "Dos componentes alejados en el árbol necesitan el mismo estado. ¿Cómo lo compartirías y qué vigilarías?",
-    "answer": [
-      "Primero lo subiría a su ancestro común más cercano, y solo usaría un contexto si pasarlo hacia abajo se vuelve engorroso.",
-      "Si cambia a menudo, lo guardaría en un store pequeño, para que solo se vuelvan a renderizar los componentes que lo leen.",
-      "Vigilaría los valores obsoletos en los efectos y que el estado tenga un único dueño."
-    ],
-    "scorecard": "Evaluación",
-    "overall": "Puntuación de la entrevista",
-    "score": "78",
-    "outOf": "/100",
-    "verdict": "Entrevista sólida",
-    "skills": [
-      {
-        "label": "Gestión del estado",
-        "value": 84
-      },
-      {
-        "label": "Razonamiento sobre compromisos",
-        "value": 76
-      },
-      {
-        "label": "Comunicación",
-        "value": 79
-      }
-    ],
-    "strengths": "Fortalezas",
-    "strengthItems": ["Gestión del estado", "Accesibilidad"],
-    "gaps": "Conviene indagar",
-    "gapItems": ["Pruebas a gran escala"]
-  },
   "journey": {
     "eyebrow": "Cómo funciona",
     "title": "De la oferta a la primera llamada.",

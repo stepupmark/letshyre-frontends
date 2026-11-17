@@ -68,46 +68,6 @@
       }
     ]
   },
-  "interview": {
-    "eyebrow": "In haar interview",
-    "title": "Lees hoe ze denkt, niet wat ze beweert.",
-    "body": "Elk antwoord wordt opgenomen en beoordeeld op de rol. Hier is één vraag uit het frontend-interview van Vyshnavi.",
-    "sample": "Voorbeeldinterview, ter illustratie",
-    "session": "AI-interview · Senior frontend engineer",
-    "progress": "Vraag 5 van 8",
-    "duration": "24:10",
-    "asked": "Interviewer",
-    "answered": "Vyshnavi",
-    "question": "Twee componenten ver uit elkaar in de boom hebben dezelfde state nodig. Hoe zou je die delen, en waar zou je op letten?",
-    "answer": [
-      "Ik zou hem eerst naar hun dichtstbijzijnde gemeenschappelijke ouder tillen, en pas context gebruiken als het doorgeven rommelig wordt.",
-      "Als hij vaak verandert, zou ik hem in een kleine store zetten, zodat alleen de componenten die hem lezen opnieuw renderen.",
-      "Ik zou letten op verouderde waarden in effects, en dat de state precies één eigenaar heeft."
-    ],
-    "scorecard": "Scorekaart",
-    "overall": "Interviewscore",
-    "score": "78",
-    "outOf": "/100",
-    "verdict": "Sterk interview",
-    "skills": [
-      {
-        "label": "State management",
-        "value": 84
-      },
-      {
-        "label": "Afwegen van trade-offs",
-        "value": 76
-      },
-      {
-        "label": "Communicatie",
-        "value": 79
-      }
-    ],
-    "strengths": "Sterke punten",
-    "strengthItems": ["State management", "Toegankelijkheid"],
-    "gaps": "Doorvragen waard",
-    "gapItems": ["Testen op schaal"]
-  },
   "journey": {
     "eyebrow": "Hoe het werkt",
     "title": "Van vacature tot eerste gesprek.",

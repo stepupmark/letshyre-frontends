@@ -68,46 +68,6 @@
       }
     ]
   },
-  "interview": {
-    "eyebrow": "Dans son entretien",
-    "title": "Voyez comment elle réfléchit, pas ce qu'elle affirme.",
-    "body": "Chaque réponse est enregistrée et évaluée au regard du poste. Voici une question de l'entretien frontend de Vyshnavi.",
-    "sample": "Exemple d'entretien, à titre d'illustration",
-    "session": "Entretien IA · Ingénieure frontend senior",
-    "progress": "Question 5 sur 8",
-    "duration": "24:10",
-    "asked": "Intervieweur",
-    "answered": "Vyshnavi",
-    "question": "Deux composants éloignés dans l'arbre ont besoin du même état. Comment le partageriez-vous, et à quoi feriez-vous attention ?",
-    "answer": [
-      "Je le remonterais d'abord vers leur parent commun le plus proche, et je n'utiliserais un contexte que si le passage de props devient lourd.",
-      "S'il change souvent, je le garderais dans un petit store, pour que seuls les composants qui le lisent se re-rendent.",
-      "Je surveillerais les valeurs obsolètes dans les effets, et que l'état ait un seul et unique propriétaire."
-    ],
-    "scorecard": "Grille d'évaluation",
-    "overall": "Score d'entretien",
-    "score": "78",
-    "outOf": "/100",
-    "verdict": "Entretien solide",
-    "skills": [
-      {
-        "label": "Gestion d'état",
-        "value": 84
-      },
-      {
-        "label": "Raisonnement sur les compromis",
-        "value": 76
-      },
-      {
-        "label": "Communication",
-        "value": 79
-      }
-    ],
-    "strengths": "Points forts",
-    "strengthItems": ["Gestion d'état", "Accessibilité"],
-    "gaps": "À approfondir",
-    "gapItems": ["Tests à grande échelle"]
-  },
   "journey": {
     "eyebrow": "Comment ça marche",
     "title": "De l'offre d'emploi au premier appel.",

@@ -68,46 +68,6 @@
       }
     ]
   },
-  "interview": {
-    "eyebrow": "Dentro da entrevista dela",
-    "title": "Veja como ela pensa, não o que ela alega.",
-    "body": "Cada resposta é gravada e avaliada em relação à função. Aqui está uma pergunta da entrevista de frontend da Vyshnavi.",
-    "sample": "Entrevista de exemplo, como ilustração",
-    "session": "Entrevista com IA · Engenheira frontend sênior",
-    "progress": "Pergunta 5 de 8",
-    "duration": "24:10",
-    "asked": "Entrevistador",
-    "answered": "Vyshnavi",
-    "question": "Dois componentes distantes na árvore precisam do mesmo estado. Como você o compartilharia e com o que tomaria cuidado?",
-    "answer": [
-      "Eu o levaria primeiro ao ancestral comum mais próximo, e só usaria um contexto se repassá-lo para baixo ficasse confuso.",
-      "Se ele muda com frequência, eu o manteria em uma store pequena, para que só os componentes que o leem renderizem de novo.",
-      "Eu ficaria de olho em valores desatualizados nos efeitos e em garantir que o estado tenha um único dono."
-    ],
-    "scorecard": "Scorecard",
-    "overall": "Nota da entrevista",
-    "score": "78",
-    "outOf": "/100",
-    "verdict": "Entrevista forte",
-    "skills": [
-      {
-        "label": "Gerenciamento de estado",
-        "value": 84
-      },
-      {
-        "label": "Raciocínio sobre trade-offs",
-        "value": 76
-      },
-      {
-        "label": "Comunicação",
-        "value": 79
-      }
-    ],
-    "strengths": "Pontos fortes",
-    "strengthItems": ["Gerenciamento de estado", "Acessibilidade"],
-    "gaps": "Vale investigar",
-    "gapItems": ["Testes em escala"]
-  },
   "journey": {
     "eyebrow": "Como funciona",
     "title": "Da vaga à primeira ligação.",

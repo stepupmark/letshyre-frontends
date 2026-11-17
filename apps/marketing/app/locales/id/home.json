@@ -68,46 +68,6 @@
       }
     ]
   },
-  "interview": {
-    "eyebrow": "Di dalam wawancaranya",
-    "title": "Lihat cara dia berpikir, bukan apa yang dia klaim.",
-    "body": "Setiap jawaban direkam dan dinilai sesuai peran. Ini satu pertanyaan dari wawancara frontend Vyshnavi.",
-    "sample": "Contoh wawancara, sebagai ilustrasi",
-    "session": "Wawancara AI · Senior frontend engineer",
-    "progress": "Pertanyaan 5 dari 8",
-    "duration": "24:10",
-    "asked": "Pewawancara",
-    "answered": "Vyshnavi",
-    "question": "Dua komponen yang berjauhan di pohon membutuhkan state yang sama. Bagaimana Anda membagikannya, dan apa yang perlu diwaspadai?",
-    "answer": [
-      "Saya akan mengangkatnya dulu ke induk bersama terdekat, dan baru memakai context jika meneruskannya ke bawah jadi berantakan.",
-      "Jika sering berubah, saya simpan di store kecil, agar hanya komponen yang membacanya yang dirender ulang.",
-      "Yang saya waspadai adalah nilai basi di effect, dan bahwa state hanya punya satu pemilik."
-    ],
-    "scorecard": "Scorecard",
-    "overall": "Skor wawancara",
-    "score": "78",
-    "outOf": "/100",
-    "verdict": "Wawancara kuat",
-    "skills": [
-      {
-        "label": "Manajemen state",
-        "value": 84
-      },
-      {
-        "label": "Menimbang trade-off",
-        "value": 76
-      },
-      {
-        "label": "Komunikasi",
-        "value": 79
-      }
-    ],
-    "strengths": "Kekuatan",
-    "strengthItems": ["Manajemen state", "Aksesibilitas"],
-    "gaps": "Perlu didalami",
-    "gapItems": ["Pengujian skala besar"]
-  },
   "journey": {
     "eyebrow": "Cara kerjanya",
     "title": "Dari lowongan hingga panggilan pertama.",
