@@ -22,7 +22,7 @@ export function Pricing() {
       id="pricing"
       tabIndex={-1}
       aria-labelledby={titleId}
-      className="scroll-mt-20 py-16 outline-none sm:py-28"
+      className="scroll-mt-20 py-12 outline-none sm:py-20 lg:py-24"
     >
       <Container className="grid gap-10 lg:grid-cols-2 lg:gap-20">
         <div className="lg:sticky lg:top-28 lg:self-start">

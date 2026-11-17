@@ -24,7 +24,7 @@ export function FinalCta() {
     <section
       ref={ref}
       aria-labelledby={titleId}
-      className="overflow-x-clip border-t py-16 sm:py-28"
+      className="overflow-x-clip border-t py-12 sm:py-20 lg:py-24"
     >
       {/* transforms stay bound to the first value, so a switch remounts */}
       <Closing

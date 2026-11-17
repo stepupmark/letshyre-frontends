@@ -21,7 +21,7 @@ export function Interview() {
 
   return (
     <ScrollScene screens={2} aria-labelledby={titleId}>
-      <Container className="pin:h-full pin:py-6 grid gap-12 py-16 sm:py-24 lg:grid-cols-5 lg:items-center lg:gap-16">
+      <Container className="pin:h-full pin:py-6 grid gap-12 py-12 sm:py-20 lg:grid-cols-5 lg:items-center lg:gap-16">
         <InterviewCopy titleId={titleId} />
         <Transcript />
       </Container>

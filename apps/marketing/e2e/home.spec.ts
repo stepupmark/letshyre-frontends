@@ -59,23 +59,30 @@ test("the journey track runs rightwards in RTL and ends on the last step", async
     "pinned scenes need a desktop viewport"
   )
   await page.goto("/ar")
+  await page.waitForLoadState("networkidle")
   const journey = page.getByRole("region", {
     name: "من إعلان الوظيفة إلى أول اتصال.",
   })
   const last = journey.getByRole("region").getByRole("listitem").last()
-  // scrolls again on each try, since the scene only listens once hydrated
+  // moves on each try so a scroll event fires once the scene has hydrated
   await expect
-    .poll(async () => {
-      await journey.evaluate((section: HTMLElement) => {
-        const top = section.getBoundingClientRect().top + window.scrollY
-        window.scrollTo(0, top + section.offsetHeight - window.innerHeight - 1)
-        window.scrollBy(0, 1)
-      })
-      return last.evaluate((li) => {
-        const { left, right } = li.getBoundingClientRect()
-        return left >= 0 && right <= window.innerWidth
-      })
-    })
+    .poll(
+      async () => {
+        await journey.evaluate(async (section: HTMLElement) => {
+          const top = section.getBoundingClientRect().top + window.scrollY
+          const end = top + section.offsetHeight - window.innerHeight
+          window.scrollTo(0, end - 40)
+          await new Promise(requestAnimationFrame)
+          window.scrollTo(0, end)
+          await new Promise(requestAnimationFrame)
+        })
+        return last.evaluate((li) => {
+          const { left, right } = li.getBoundingClientRect()
+          return left >= 0 && right <= window.innerWidth
+        })
+      },
+      { timeout: 15_000 }
+    )
     .toBe(true)
 })
 

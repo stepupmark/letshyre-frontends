@@ -14,7 +14,10 @@ export function Faq() {
   const items = t("faq.items", { returnObjects: true }) as FaqItem[]
 
   return (
-    <section aria-labelledby={titleId} className="border-t py-16 sm:py-28">
+    <section
+      aria-labelledby={titleId}
+      className="border-t py-12 sm:py-20 lg:py-24"
+    >
       <Container className="grid gap-10 lg:grid-cols-5 lg:gap-20">
         <div className="lg:sticky lg:top-28 lg:col-span-2 lg:self-start">
           <h2
@@ -33,7 +36,7 @@ export function Faq() {
             </TextLink>
           </p>
         </div>
-        <div className="lg:col-span-3">
+        <div className="pb-4 lg:col-span-3">
           <FaqList items={items} />
         </div>
       </Container>

@@ -45,7 +45,7 @@ function JourneyStage({ titleId }: { titleId: string }) {
   })
 
   return (
-    <div className="pin:pt-8 pin:pb-10 flex h-full flex-col py-16">
+    <div className="pin:pt-8 pin:pb-10 flex h-full flex-col py-12">
       <Container>
         <p className="text-sm font-semibold text-brand-text">
           {t("journey.eyebrow")}

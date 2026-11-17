@@ -20,7 +20,7 @@ export function Proof() {
   const titleId = useId()
 
   return (
-    <ScrollScene screens={2.4} aria-labelledby={titleId}>
+    <ScrollScene screens={2} aria-labelledby={titleId}>
       <ProofStage titleId={titleId} />
     </ScrollScene>
   )
@@ -39,8 +39,8 @@ function ProofStage({ titleId }: { titleId: string }) {
   if (still) return <StillProof titleId={titleId} />
 
   return (
-    <Container className="grid h-full grid-cols-2 items-center gap-16 py-6">
-      <div>
+    <Container className="grid h-full grid-cols-9 items-center gap-16 py-6">
+      <div className="col-span-4">
         <p className="text-sm font-semibold text-brand-text">
           {t("proof.eyebrow")}
         </p>
@@ -58,7 +58,7 @@ function ProofStage({ titleId }: { titleId: string }) {
         </div>
         <Ticks total={stages.length} />
       </div>
-      <div className="relative aspect-4/3 w-full max-w-xl justify-self-end overflow-hidden rounded-3xl border bg-muted">
+      <div className="relative col-span-5 aspect-4/3 w-full justify-self-end overflow-hidden rounded-3xl border bg-muted">
         {stages.map((stage, i) => (
           <Backdrop
             key={stage.label}
@@ -128,7 +128,7 @@ function Backdrop({
 
   return (
     <m.div style={{ opacity, scale }} className="absolute inset-0">
-      <Photo name={name} alt={alt} sizes="36rem" className="size-full" />
+      <Photo name={name} alt={alt} sizes="40rem" className="size-full" />
     </m.div>
   )
 }
@@ -203,7 +203,7 @@ function StillProof({ titleId }: { titleId: string }) {
   const stages = useStages()
 
   return (
-    <Container className="py-16 sm:py-24">
+    <Container className="py-12 sm:py-20">
       <p className="text-sm font-semibold text-brand-text">
         {t("proof.eyebrow")}
       </p>
