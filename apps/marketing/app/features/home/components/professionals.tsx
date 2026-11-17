@@ -1,4 +1,4 @@
-import { localePath } from "@workspace/i18n"
+import { dirFor, localePath } from "@workspace/i18n"
 import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { type MotionValue, useScroll, useTransform } from "motion/react"
 import * as m from "motion/react-m"
@@ -48,8 +48,9 @@ function Split({
 }) {
   const { t } = useTranslation("home")
   const lang = useLocale()
-  const photoX = useTransform(progress, [0, 0.8], ["-14%", "0%"])
-  const copyX = useTransform(progress, [0, 0.8], ["14%", "0%"])
+  const from = dirFor(lang) === "rtl" ? -14 : 14
+  const photoX = useTransform(progress, [0, 0.8], [`${-from}%`, "0%"])
+  const copyX = useTransform(progress, [0, 0.8], [`${from}%`, "0%"])
   const opacity = useTransform(progress, [0, 0.5], [0, 1])
   const pool = useTransform(progress, [0.75, 1], [0, 1])
 
@@ -60,7 +61,7 @@ function Split({
           name="home/her-desk"
           alt={t("professionals.photo")}
           sizes="(min-width: 64rem) 44rem, (min-width: 48rem) 50vw, 100vw"
-          className="aspect-4/3 rounded-3xl border md:aspect-square"
+          className="aspect-4/3 rounded-3xl border"
         />
       </m.div>
       <m.div style={{ x: copyX, opacity }} className="lg:col-span-5">

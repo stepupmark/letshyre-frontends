@@ -20,8 +20,8 @@ export function Interview() {
   const titleId = useId()
 
   return (
-    <ScrollScene screens={2} pinFrom="lg" aria-labelledby={titleId}>
-      <Container className="grid gap-12 py-16 sm:py-24 lg:h-full lg:grid-cols-5 lg:items-center lg:gap-16 lg:py-0 lg:pt-16">
+    <ScrollScene screens={2} aria-labelledby={titleId}>
+      <Container className="pin:h-full pin:py-6 grid gap-12 py-16 sm:py-24 lg:grid-cols-5 lg:items-center lg:gap-16">
         <InterviewCopy titleId={titleId} />
         <Transcript />
       </Container>
@@ -33,7 +33,7 @@ function InterviewCopy({ titleId }: { titleId: string }) {
   const { t } = useTranslation("home")
 
   return (
-    <div className="lg:col-span-2">
+    <div className="min-w-0 lg:col-span-2">
       <p className="text-sm font-semibold text-brand-text">
         {t("interview.eyebrow")}
       </p>
@@ -46,6 +46,9 @@ function InterviewCopy({ titleId }: { titleId: string }) {
       <p className="mt-4 max-w-md text-pretty text-muted-foreground sm:text-lg">
         {t("interview.body")}
       </p>
+      <p className="mt-4 text-xs text-muted-foreground">
+        {t("interview.sample")}
+      </p>
     </div>
   )
 }
@@ -56,8 +59,8 @@ function Transcript() {
   const answer = t("interview.answer", { returnObjects: true })
 
   return (
-    <figure className="rounded-3xl border bg-card p-5 sm:p-6 lg:col-span-3">
-      <div className="flex items-center gap-3 border-b pb-4">
+    <figure className="short:p-4 min-w-0 rounded-3xl border bg-card p-5 sm:p-6 lg:col-span-3">
+      <div className="short:pb-3 flex items-center gap-3 border-b pb-4">
         <Photo
           name="home/candidate"
           alt=""
@@ -74,12 +77,12 @@ function Transcript() {
           </p>
         </div>
       </div>
-      <dl className="mt-5 grid gap-4">
+      <dl className="short:mt-3 short:gap-3 mt-5 grid gap-4">
         <div>
           <dt className="text-xs font-medium text-muted-foreground">
             {t("interview.asked")}
           </dt>
-          <dd className="mt-1 text-lg font-medium text-pretty">
+          <dd className="short:text-base mt-1 text-lg font-medium text-pretty">
             {t("interview.question")}
           </dd>
         </div>
@@ -100,9 +103,6 @@ function Transcript() {
         </div>
       </dl>
       <Scorecard progress={progress} />
-      <figcaption className="mt-5 text-xs text-muted-foreground">
-        {t("interview.sample")}
-      </figcaption>
     </figure>
   )
 }
@@ -135,7 +135,7 @@ function Scorecard({ progress }: { progress: MotionValue<number> }) {
     <m.section
       style={{ opacity }}
       aria-label={t("interview.scorecard")}
-      className="mt-6 grid gap-5 rounded-2xl border bg-background p-4 sm:grid-cols-5"
+      className="short:mt-4 short:gap-3 short:p-3 mt-6 grid gap-5 rounded-2xl border bg-background p-4 sm:grid-cols-5"
     >
       <div className="flex items-center gap-3 sm:col-span-2 sm:flex-col sm:items-start">
         <ScoreRing
@@ -151,12 +151,12 @@ function Scorecard({ progress }: { progress: MotionValue<number> }) {
         </div>
       </div>
       <div className="grid gap-4 sm:col-span-3">
-        <ul className="grid gap-3">
+        <ul className="short:gap-2 grid gap-3">
           {t("interview.skills", { returnObjects: true }).map((skill) => (
             <Skill key={skill.label} {...skill} fill={fill} />
           ))}
         </ul>
-        <div className="grid grid-cols-2 gap-4 border-t pt-4">
+        <div className="short:hidden grid grid-cols-2 gap-4 border-t pt-4">
           <Tags
             title={t("interview.strengths")}
             items={t("interview.strengthItems", { returnObjects: true })}

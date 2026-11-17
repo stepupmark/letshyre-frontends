@@ -1,4 +1,320 @@
 {
+  "meta": {
+    "title": "AI-werving voor ervaren professionals | letshyre.ai",
+    "description": "Neem ervaren professionals aan op bewijs: AI-cv-analyse, rolgerichte interviews en controleerbare scorekaarten.",
+    "name": "LetsHyre — AI-wervingsplatform voor ervaren professionals",
+    "schemaDescription": "AI-wervingsplatform dat werkgevers koppelt aan ervaren professionals, gecontroleerd via cv-analyse, rolgerichte AI-interviews en vaardigheidsscorekaarten."
+  },
+  "hero": {
+    "eyebrow": "AI-werving voor ervaren professionals",
+    "title": "Neem aan op bewijs,",
+    "accent": "niet op hoop.",
+    "description": "Elke kandidaat heeft een AI-cv-analyse, scores uit rolgerichte interviews en de volledige opname. Lees eerst het bewijs en ontgrendel dan de mensen die een gesprek waard zijn.",
+    "ctaHiring": "Ik werf",
+    "ctaCandidate": "Ik zoek een functie",
+    "reassurance": "10 gratis credits voor werkgevers. Altijd gratis voor professionals.",
+    "photo": "Een getekende recruiter bekijkt cv's met een vergrootglas.",
+    "skip": "Rondleiding overslaan",
+    "resume": {
+      "label": "Het cv van Vyshnavi Rao, ter illustratie: dezelfde beweringen als in elk cv.",
+      "kicker": "Cv",
+      "name": "Vyshnavi Rao",
+      "role": "Frontend engineer · 7 jaar",
+      "summary": "Resultaatgerichte frontend engineer en echte teamspeler, met een passie voor schaalbare, gebruikersgerichte producten.",
+      "skills": "Vaardigheden",
+      "claims": [
+        "Expert in React",
+        "10x-engineer",
+        "Leert snel",
+        "Sterke communicator"
+      ],
+      "experience": "Ervaring",
+      "jobs": [
+        {
+          "title": "Frontend engineer · Nimbus Labs",
+          "dates": "2021 – now"
+        },
+        {
+          "title": "UI-ontwikkelaar · Brightpath",
+          "dates": "2018 – 2021"
+        }
+      ],
+      "education": "Opleiding",
+      "degree": "B.Tech, Informatica · 2018",
+      "note": "Elk cv op de stapel zegt hetzelfde."
+    }
+  },
+  "proof": {
+    "eyebrow": "Waarom LetsHyre",
+    "title": "Een cv vertelt je wat iemand",
+    "claims": "beweert.",
+    "shows": "Een interview",
+    "interview": "laat het je zien.",
+    "stages": [
+      {
+        "label": "Wat er op je bureau belandt",
+        "body": "Honderden cv's die op elkaar lijken, geschreven om indruk te maken.",
+        "photo": "Een getekende stapel cv's onder een vergrootglas."
+      },
+      {
+        "label": "Wat LetsHyre eerst doet",
+        "body": "Elke kandidaat doet een rolgericht AI-interview voordat jij hem ziet.",
+        "photo": "Een getekende kandidaat licht zijn antwoorden toe in een AI-interview op zijn laptop."
+      },
+      {
+        "label": "Wat je leest vóór het gesprek",
+        "body": "Scores, een scorekaart en de opname, zodat je vergelijkt hoe mensen denken.",
+        "photo": "Een getekende interviewer en kandidaat in gesprek aan een kleine tafel."
+      }
+    ]
+  },
+  "interview": {
+    "eyebrow": "In haar interview",
+    "title": "Lees hoe ze denkt, niet wat ze beweert.",
+    "body": "Elk antwoord wordt opgenomen en beoordeeld op de rol. Hier is één vraag uit het frontend-interview van Vyshnavi.",
+    "sample": "Voorbeeldinterview, ter illustratie",
+    "session": "AI-interview · Senior frontend engineer",
+    "progress": "Vraag 5 van 8",
+    "duration": "24:10",
+    "asked": "Interviewer",
+    "answered": "Vyshnavi",
+    "question": "Twee componenten ver uit elkaar in de boom hebben dezelfde state nodig. Hoe zou je die delen, en waar zou je op letten?",
+    "answer": [
+      "Ik zou hem eerst naar hun dichtstbijzijnde gemeenschappelijke ouder tillen, en pas context gebruiken als het doorgeven rommelig wordt.",
+      "Als hij vaak verandert, zou ik hem in een kleine store zetten, zodat alleen de componenten die hem lezen opnieuw renderen.",
+      "Ik zou letten op verouderde waarden in effects, en dat de state precies één eigenaar heeft."
+    ],
+    "scorecard": "Scorekaart",
+    "overall": "Interviewscore",
+    "score": "78",
+    "outOf": "/100",
+    "verdict": "Sterk interview",
+    "skills": [
+      {
+        "label": "State management",
+        "value": 84
+      },
+      {
+        "label": "Afwegen van trade-offs",
+        "value": 76
+      },
+      {
+        "label": "Communicatie",
+        "value": 79
+      }
+    ],
+    "strengths": "Sterke punten",
+    "strengthItems": ["State management", "Toegankelijkheid"],
+    "gaps": "Doorvragen waard",
+    "gapItems": ["Testen op schaal"]
+  },
+  "journey": {
+    "eyebrow": "Hoe het werkt",
+    "title": "Van vacature tot eerste gesprek.",
+    "progress": "Stap {{n}} van {{total}}",
+    "steps": [
+      {
+        "title": "Plaats een vacature",
+        "body": "Plak je functieomschrijving. LetsHyre leest de rol, de vaardigheden en de ervaring die je nodig hebt.",
+        "photo": "Een getekende recruiter aan haar bureau plaatst een vacature vanaf haar tablet."
+      },
+      {
+        "title": "Krijg een gerangschikte shortlist",
+        "body": "Iedereen die solliciteerde wordt gerangschikt op functiematch, vaardigheden en interview, aangevuld met passende professionals uit de talentpool.",
+        "photo": "Een getekende hiring manager kijkt op haar tablet terwijl de beste matches in een menigte kandidaten worden omcirkeld."
+      },
+      {
+        "title": "Lees het interview",
+        "body": "Een score op 100, sterke punten, de gaten die doorvragen waard zijn en de volledige opname.",
+        "photo": "Een getekende kandidaat naast haar matchscores voor rol, vaardigheden, interviews en ervaring, met de volledige inzichten vergrendeld."
+      },
+      {
+        "title": "Ontgrendel en neem contact op",
+        "body": "Eén credit ontgrendelt het cv, de contactgegevens en de opname. Daarna werf je op jouw manier.",
+        "photo": "Een getekende hiring manager schudt een kandidaat de hand na het contact via LetsHyre."
+      }
+    ],
+    "carousel": "Hoe het werkt, in vier stappen. Scroll opzij om ze allemaal te zien.",
+    "cards": {
+      "job": {
+        "label": "Een functieomschrijving voor een senior frontend engineer, met vier gevonden eisen: React, TypeScript, 5+ jaar en remote.",
+        "kicker": "Functieomschrijving",
+        "title": "Senior frontend engineer",
+        "found": "4 eisen gevonden",
+        "chips": ["React", "TypeScript", "5+ jaar", "Remote"]
+      },
+      "shortlist": {
+        "label": "Een shortlist van drie kandidaten gerangschikt op AI-match: Vyshnavi Rao 86, Arjun Mehta 74 en Meera Shah 68, die uit de talentpool kwam.",
+        "title": "24 sollicitaties · gerangschikt op bewijs",
+        "match": "AI-match",
+        "pool": "Uit de pool",
+        "people": [
+          {
+            "name": "Vyshnavi Rao",
+            "role": "Frontend engineer · 7 jr",
+            "score": 86,
+            "pool": false
+          },
+          {
+            "name": "Arjun Mehta",
+            "role": "React-ontwikkelaar · 5 jr",
+            "score": 74,
+            "pool": false
+          },
+          {
+            "name": "Meera Shah",
+            "role": "UI-engineer · 6 jr",
+            "score": 68,
+            "pool": true
+          }
+        ]
+      },
+      "scorecard": {
+        "label": "Een interviewscorekaart van 78 op 100, gemarkeerd als sterk interview, met de opname bij vraag 5 van 8.",
+        "kicker": "Interviewscorekaart",
+        "score": "78",
+        "outOf": "/100",
+        "verdict": "Sterk interview",
+        "question": "Vraag 5 van 8",
+        "duration": "24:10"
+      },
+      "unlock": {
+        "label": "Het dossier van Vyshnavi Rao, ontgrendeld voor één credit, met haar telefoonnummer zichtbaar.",
+        "name": "Vyshnavi Rao",
+        "role": "Frontend engineer · 7 jr",
+        "unlocked": "Ontgrendeld",
+        "credit": "1 credit",
+        "phone": "+91 98765 43210"
+      }
+    },
+    "hint": "Blijf scrollen om door de stappen te gaan",
+    "jump": "Ga naar stap {{n}}: {{title}}"
+  },
+  "professionals": {
+    "eyebrow": "Vyshnavi's kant",
+    "title": "Eén keer interviewen.",
+    "accent": "Maandenlang gevonden worden.",
+    "body": "Ze deed een rolgericht AI-interview in de desktop-app, op een moment dat haar uitkwam. 90 dagen lang staat haar scorekaart in de talentpool, waar werkgevers die voor haar rol werven haar vinden. Voor professionals is het gratis.",
+    "photo": "Een getekende professional staat in de spotlight, verbonden met de bedrijven rondom.",
+    "interviews": [
+      {
+        "label": "Interview 1",
+        "role": "Frontend engineer, haar hoofdrol"
+      },
+      {
+        "label": "Interview 2",
+        "role": "Een andere rol, of een herkansing"
+      },
+      {
+        "label": "Interview 3",
+        "role": "Meer bewijs voor haar profiel"
+      }
+    ],
+    "days": "90 dagen",
+    "daysLabel": "in de talentpool",
+    "cta": "Maak je profiel",
+    "download": "Download de app"
+  },
+  "pricing": {
+    "eyebrow": "Betaal per ontgrendeling",
+    "title": "Betaal alleen voor de mensen",
+    "accent": "die je wilt ontmoeten.",
+    "photo": "Een rij kandidaten staat op een LetsHyre-platform, en degene die je ontgrendelt licht blauw op.",
+    "body": "Vergelijk iedereen gratis. Eén credit ontgrendelt een cv, de contactgegevens en de opname, zodat je op jouw manier contact opneemt.",
+    "points": [
+      "Geen abonnement",
+      "Credits verlopen nooit",
+      "Gratis voor professionals"
+    ],
+    "cta": "Begin met 10 gratis credits",
+    "more": "Bekijk prijzen",
+    "ledger": {
+      "caption": "Een voorbeeld van een creditoverzicht",
+      "columns": {
+        "entry": "Post",
+        "credits": "Credits",
+        "balance": "Saldo"
+      },
+      "rows": [
+        {
+          "entry": "Gratis startcredits",
+          "credits": "+10",
+          "balance": "10"
+        },
+        {
+          "entry": "24 kandidaten vergeleken",
+          "credits": "0",
+          "balance": "10"
+        },
+        {
+          "entry": "Vyshnavi Rao ontgrendeld",
+          "credits": "−1",
+          "balance": "9"
+        },
+        {
+          "entry": "Arjun Mehta ontgrendeld",
+          "credits": "−1",
+          "balance": "8"
+        }
+      ]
+    }
+  },
+  "faq": {
+    "title": "Vragen,",
+    "accent": "beantwoord.",
+    "description": "Heldere antwoorden over hoe LetsHyre werkt voor werkgevers en professionals.",
+    "contact": {
+      "title": "Nog een vraag?",
+      "body": "Stuur hem naar ons en het team neemt contact met je op.",
+      "cta": "Neem contact op",
+      "note": "we lezen ze allemaal"
+    },
+    "items": [
+      {
+        "q": "Wat is LetsHyre?",
+        "a": "LetsHyre is een AI-wervingsplatform voor ervaren professionals. Kandidaten worden gecontroleerd via AI-cv-analyse, rolgerichte AI-interviews en vaardigheidsscorekaarten, en werkgevers vinden ze via AI-matching."
+      },
+      {
+        "q": "Voor wie is LetsHyre?",
+        "a": "Voor werkgevers en HR-teams die ervaren mensen aannemen, en voor ervaren professionals, ook in hun opzegtermijn, die meer willen dan een cv dat voor hen spreekt."
+      },
+      {
+        "q": "Wat krijgt een werkgever als hij een kandidaat ontgrendelt?",
+        "a": "Het cv, de contactgegevens, documenten, de AI-vaardigheidsscorekaart en de volledige opname van het AI-interview. Daarna neem je contact op met de kandidaat en ga je buiten LetsHyre verder met werven."
+      },
+      {
+        "q": "Hoe worden kandidaten beoordeeld?",
+        "a": "Elke kandidaat doet rolgerichte AI-interviews, en elk interview levert een vaardigheidsscorekaart op. LetsHyre combineert die met de cv-analyse tot een LetsHyre-score, functiematch en vaardigheidsmatch per rol."
+      },
+      {
+        "q": "Hoeveel interviews kan een kandidaat doen?",
+        "a": "Tot drie, voor drie verschillende rollen of meer dan één poging voor dezelfde rol."
+      },
+      {
+        "q": "Waarom blijven profielen 90 dagen staan?",
+        "a": "Zodat werkgevers mensen zien die actief zoeken. Een profiel blijft 90 dagen na het interview in de talentpool."
+      },
+      {
+        "q": "Kost LetsHyre iets voor professionals?",
+        "a": "Nee. LetsHyre is gratis voor professionals. Werkgevers betalen alleen met credits als ze een kandidaat ontgrendelen."
+      },
+      {
+        "q": "Is elke functie al live?",
+        "a": "LetsHyre is in early access en er komen nieuwe functies bij. Mist er iets wat je nodig hebt, neem dan contact op en vertel ons wat je nodig hebt."
+      }
+    ]
+  },
+  "final": {
+    "title": "Begin met relevante kandidaten,",
+    "accent": "niet met een stapel cv's.",
+    "description": "En als jij degene bent die wordt aangenomen: laat meer zien dan je cv.",
+    "photo": "Vijf getekende professionals naast elkaar, verbonden door een netwerk van lijnen.",
+    "notice": {
+      "title": "Je dossier is ontgrendeld",
+      "body": "Een wervingsteam van Orbit Commerce heeft je dossier ontgrendeld voor de rol van senior frontend engineer.",
+      "time": "Zojuist"
+    }
+  },
   "chatbot": {
     "title": "LetsHyre assistent",
     "subtitle": "Stel ons alles",

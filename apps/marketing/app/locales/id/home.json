@@ -1,4 +1,320 @@
 {
+  "meta": {
+    "title": "Rekrutmen AI untuk profesional berpengalaman | letshyre.ai",
+    "description": "Rekrut profesional berpengalaman berdasarkan bukti: analisis CV AI, wawancara per peran, dan scorecard.",
+    "name": "LetsHyre — Platform rekrutmen AI untuk profesional berpengalaman",
+    "schemaDescription": "Platform rekrutmen AI yang mempertemukan perusahaan dengan profesional berpengalaman, terverifikasi melalui analisis CV, wawancara AI sesuai peran, dan scorecard keterampilan."
+  },
+  "hero": {
+    "eyebrow": "Rekrutmen AI untuk profesional berpengalaman",
+    "title": "Rekrut berdasarkan bukti,",
+    "accent": "bukan harapan.",
+    "description": "Setiap kandidat membawa analisis CV berbasis AI, skor wawancara sesuai peran, dan rekaman lengkap. Baca buktinya dulu, lalu buka akses orang yang layak dihubungi.",
+    "ctaHiring": "Saya merekrut",
+    "ctaCandidate": "Saya mencari pekerjaan",
+    "reassurance": "10 kredit gratis untuk perusahaan. Selalu gratis untuk profesional.",
+    "photo": "Seorang perekrut dalam ilustrasi memeriksa CV dengan kaca pembesar.",
+    "skip": "Lewati panduan",
+    "resume": {
+      "label": "CV Vyshnavi Rao, sebagai ilustrasi: klaim yang sama seperti di setiap CV.",
+      "kicker": "CV",
+      "name": "Vyshnavi Rao",
+      "role": "Frontend engineer · 7 tahun",
+      "summary": "Frontend engineer yang berorientasi hasil dan pemain tim yang hebat, bersemangat membangun produk yang skalabel dan berpusat pada pengguna.",
+      "skills": "Keterampilan",
+      "claims": [
+        "Ahli React",
+        "Engineer 10x",
+        "Cepat belajar",
+        "Komunikator andal"
+      ],
+      "experience": "Pengalaman",
+      "jobs": [
+        {
+          "title": "Frontend engineer · Nimbus Labs",
+          "dates": "2021 – now"
+        },
+        {
+          "title": "UI developer · Brightpath",
+          "dates": "2018 – 2021"
+        }
+      ],
+      "education": "Pendidikan",
+      "degree": "B.Tech, Ilmu Komputer · 2018",
+      "note": "Setiap CV di tumpukan mengatakan hal yang sama."
+    }
+  },
+  "proof": {
+    "eyebrow": "Mengapa LetsHyre",
+    "title": "CV memberi tahu apa yang seseorang",
+    "claims": "klaim.",
+    "shows": "Wawancara",
+    "interview": "menunjukkannya.",
+    "stages": [
+      {
+        "label": "Yang sampai di meja Anda",
+        "body": "Ratusan CV yang terdengar sama, ditulis untuk mengesankan.",
+        "photo": "Tumpukan CV dalam ilustrasi di bawah kaca pembesar."
+      },
+      {
+        "label": "Yang LetsHyre lakukan lebih dulu",
+        "body": "Setiap kandidat mengikuti wawancara AI sesuai peran sebelum Anda melihatnya.",
+        "photo": "Seorang kandidat dalam ilustrasi menjelaskan jawabannya dalam wawancara AI di laptopnya."
+      },
+      {
+        "label": "Yang Anda baca sebelum menelepon",
+        "body": "Skor, scorecard, dan rekaman, agar Anda bisa membandingkan cara orang berpikir.",
+        "photo": "Seorang pewawancara dan kandidat dalam ilustrasi berbincang di meja kecil."
+      }
+    ]
+  },
+  "interview": {
+    "eyebrow": "Di dalam wawancaranya",
+    "title": "Lihat cara dia berpikir, bukan apa yang dia klaim.",
+    "body": "Setiap jawaban direkam dan dinilai sesuai peran. Ini satu pertanyaan dari wawancara frontend Vyshnavi.",
+    "sample": "Contoh wawancara, sebagai ilustrasi",
+    "session": "Wawancara AI · Senior frontend engineer",
+    "progress": "Pertanyaan 5 dari 8",
+    "duration": "24:10",
+    "asked": "Pewawancara",
+    "answered": "Vyshnavi",
+    "question": "Dua komponen yang berjauhan di pohon membutuhkan state yang sama. Bagaimana Anda membagikannya, dan apa yang perlu diwaspadai?",
+    "answer": [
+      "Saya akan mengangkatnya dulu ke induk bersama terdekat, dan baru memakai context jika meneruskannya ke bawah jadi berantakan.",
+      "Jika sering berubah, saya simpan di store kecil, agar hanya komponen yang membacanya yang dirender ulang.",
+      "Yang saya waspadai adalah nilai basi di effect, dan bahwa state hanya punya satu pemilik."
+    ],
+    "scorecard": "Scorecard",
+    "overall": "Skor wawancara",
+    "score": "78",
+    "outOf": "/100",
+    "verdict": "Wawancara kuat",
+    "skills": [
+      {
+        "label": "Manajemen state",
+        "value": 84
+      },
+      {
+        "label": "Menimbang trade-off",
+        "value": 76
+      },
+      {
+        "label": "Komunikasi",
+        "value": 79
+      }
+    ],
+    "strengths": "Kekuatan",
+    "strengthItems": ["Manajemen state", "Aksesibilitas"],
+    "gaps": "Perlu didalami",
+    "gapItems": ["Pengujian skala besar"]
+  },
+  "journey": {
+    "eyebrow": "Cara kerjanya",
+    "title": "Dari lowongan hingga panggilan pertama.",
+    "progress": "Langkah {{n}} dari {{total}}",
+    "steps": [
+      {
+        "title": "Pasang lowongan",
+        "body": "Tempel deskripsi pekerjaan Anda. LetsHyre membaca peran, keterampilan, dan pengalaman yang Anda butuhkan.",
+        "photo": "Seorang perekrut dalam ilustrasi memasang lowongan dari tabletnya di meja kerja."
+      },
+      {
+        "title": "Dapatkan daftar pendek berperingkat",
+        "body": "Semua pelamar diperingkat menurut kecocokan pekerjaan, keterampilan, dan wawancara, ditambah profesional yang cocok dari talent pool.",
+        "photo": "Seorang hiring manager dalam ilustrasi melihat tabletnya saat kandidat terbaik di antara kerumunan dilingkari."
+      },
+      {
+        "title": "Baca wawancaranya",
+        "body": "Skor dari 100, kekuatan, kekurangan yang perlu didalami, dan rekaman lengkap.",
+        "photo": "Seorang kandidat dalam ilustrasi di samping skor kecocokannya untuk peran, keterampilan, wawancara, dan pengalaman, dengan wawasan lengkap terkunci."
+      },
+      {
+        "title": "Buka akses dan hubungi",
+        "body": "Satu kredit membuka CV, detail kontak, dan rekaman. Setelah itu, rekrut dengan cara Anda.",
+        "photo": "Seorang hiring manager dalam ilustrasi berjabat tangan dengan kandidat setelah terhubung di LetsHyre."
+      }
+    ],
+    "carousel": "Cara kerjanya, empat langkah. Geser ke samping untuk melihat setiap langkah.",
+    "cards": {
+      "job": {
+        "label": "Deskripsi pekerjaan untuk Senior frontend engineer, dengan empat persyaratan ditemukan: React, TypeScript, 5+ tahun, dan remote.",
+        "kicker": "Deskripsi pekerjaan",
+        "title": "Senior frontend engineer",
+        "found": "4 persyaratan ditemukan",
+        "chips": ["React", "TypeScript", "5+ tahun", "Remote"]
+      },
+      "shortlist": {
+        "label": "Daftar pendek tiga kandidat yang diperingkat menurut kecocokan AI: Vyshnavi Rao 86, Arjun Mehta 74, dan Meera Shah 68, yang bergabung dari talent pool.",
+        "title": "24 pelamar · diperingkat berdasarkan bukti",
+        "match": "Kecocokan AI",
+        "pool": "Dari pool",
+        "people": [
+          {
+            "name": "Vyshnavi Rao",
+            "role": "Frontend engineer · 7 thn",
+            "score": 86,
+            "pool": false
+          },
+          {
+            "name": "Arjun Mehta",
+            "role": "React developer · 5 thn",
+            "score": 74,
+            "pool": false
+          },
+          {
+            "name": "Meera Shah",
+            "role": "UI engineer · 6 thn",
+            "score": 68,
+            "pool": true
+          }
+        ]
+      },
+      "scorecard": {
+        "label": "Scorecard wawancara 78 dari 100, ditandai sebagai wawancara kuat, dengan rekaman di pertanyaan 5 dari 8.",
+        "kicker": "Scorecard wawancara",
+        "score": "78",
+        "outOf": "/100",
+        "verdict": "Wawancara kuat",
+        "question": "Pertanyaan 5 dari 8",
+        "duration": "24:10"
+      },
+      "unlock": {
+        "label": "Berkas Vyshnavi Rao, terbuka dengan satu kredit, dengan nomor teleponnya terlihat.",
+        "name": "Vyshnavi Rao",
+        "role": "Frontend engineer · 7 thn",
+        "unlocked": "Terbuka",
+        "credit": "1 kredit",
+        "phone": "+91 98765 43210"
+      }
+    },
+    "hint": "Terus gulir untuk melewati setiap langkah",
+    "jump": "Ke langkah {{n}}: {{title}}"
+  },
+  "professionals": {
+    "eyebrow": "Sisi Vyshnavi",
+    "title": "Wawancara sekali.",
+    "accent": "Ditemukan berbulan-bulan.",
+    "body": "Dia mengikuti wawancara AI sesuai peran di aplikasi desktop, pada waktu yang cocok baginya. Selama 90 hari scorecard-nya ada di talent pool, tempat perusahaan yang merekrut untuk perannya menemukannya. Gratis untuk profesional.",
+    "photo": "Seorang profesional dalam ilustrasi berdiri di bawah sorotan, terhubung dengan perusahaan di sekelilingnya.",
+    "interviews": [
+      {
+        "label": "Wawancara 1",
+        "role": "Frontend engineer, peran utamanya"
+      },
+      {
+        "label": "Wawancara 2",
+        "role": "Peran lain, atau mengulang"
+      },
+      {
+        "label": "Wawancara 3",
+        "role": "Lebih banyak bukti untuk profilnya"
+      }
+    ],
+    "days": "90 hari",
+    "daysLabel": "di talent pool",
+    "cta": "Buat profil Anda",
+    "download": "Unduh aplikasinya"
+  },
+  "pricing": {
+    "eyebrow": "Bayar per buka akses",
+    "title": "Bayar hanya untuk orang",
+    "accent": "yang ingin Anda temui.",
+    "photo": "Sederet kandidat berdiri di platform LetsHyre, dan yang Anda buka aksesnya menyala biru.",
+    "body": "Bandingkan semua orang secara gratis. Satu kredit membuka CV, detail kontak, dan rekaman, agar Anda bisa menghubungi dengan cara Anda.",
+    "points": [
+      "Tanpa langganan",
+      "Kredit tidak pernah kedaluwarsa",
+      "Gratis untuk profesional"
+    ],
+    "cta": "Mulai dengan 10 kredit gratis",
+    "more": "Lihat harga",
+    "ledger": {
+      "caption": "Contoh catatan kredit",
+      "columns": {
+        "entry": "Entri",
+        "credits": "Kredit",
+        "balance": "Saldo"
+      },
+      "rows": [
+        {
+          "entry": "Kredit gratis untuk mulai",
+          "credits": "+10",
+          "balance": "10"
+        },
+        {
+          "entry": "Membandingkan 24 kandidat",
+          "credits": "0",
+          "balance": "10"
+        },
+        {
+          "entry": "Membuka Vyshnavi Rao",
+          "credits": "−1",
+          "balance": "9"
+        },
+        {
+          "entry": "Membuka Arjun Mehta",
+          "credits": "−1",
+          "balance": "8"
+        }
+      ]
+    }
+  },
+  "faq": {
+    "title": "Pertanyaan,",
+    "accent": "terjawab.",
+    "description": "Jawaban lugas tentang cara kerja LetsHyre untuk perusahaan dan profesional.",
+    "contact": {
+      "title": "Masih ada pertanyaan?",
+      "body": "Kirimkan kepada kami dan tim akan membalas Anda.",
+      "cta": "Hubungi kami",
+      "note": "kami membaca semuanya"
+    },
+    "items": [
+      {
+        "q": "Apa itu LetsHyre?",
+        "a": "LetsHyre adalah platform rekrutmen AI untuk profesional berpengalaman. Kandidat diverifikasi melalui analisis CV berbasis AI, wawancara AI sesuai peran, dan scorecard keterampilan, dan perusahaan menemukan mereka melalui pencocokan AI."
+      },
+      {
+        "q": "Untuk siapa LetsHyre?",
+        "a": "Untuk perusahaan dan tim HR yang merekrut orang berpengalaman, dan untuk profesional berpengalaman, termasuk yang sedang menjalani masa pemberitahuan, yang ingin lebih dari sekadar CV yang berbicara untuk mereka."
+      },
+      {
+        "q": "Apa yang didapat perusahaan saat membuka akses kandidat?",
+        "a": "CV, detail kontak, dokumen, scorecard keterampilan AI, dan rekaman lengkap wawancara AI. Setelah itu Anda menghubungi kandidat dan melanjutkan rekrutmen di luar LetsHyre."
+      },
+      {
+        "q": "Bagaimana kandidat dinilai?",
+        "a": "Setiap kandidat mengikuti wawancara AI sesuai peran, dan setiap wawancara menghasilkan scorecard keterampilan. LetsHyre menggabungkannya dengan analisis CV untuk menampilkan skor LetsHyre, kecocokan pekerjaan, dan kecocokan keterampilan untuk setiap peran."
+      },
+      {
+        "q": "Berapa banyak wawancara yang bisa diikuti kandidat?",
+        "a": "Hingga tiga, untuk tiga peran berbeda atau lebih dari satu percobaan untuk peran yang sama."
+      },
+      {
+        "q": "Mengapa profil berlaku 90 hari?",
+        "a": "Agar perusahaan melihat orang yang sedang aktif mencari. Profil tetap di talent pool selama 90 hari setelah wawancara."
+      },
+      {
+        "q": "Apakah LetsHyre berbayar bagi profesional?",
+        "a": "Tidak. LetsHyre gratis untuk profesional. Perusahaan membayar dengan kredit hanya saat membuka akses kandidat."
+      },
+      {
+        "q": "Apakah semua fitur sudah tersedia?",
+        "a": "LetsHyre masih dalam akses awal dan fitur baru terus ditambahkan. Jika ada yang Anda butuhkan belum tersedia, hubungi kami dan beri tahu kebutuhan Anda."
+      }
+    ]
+  },
+  "final": {
+    "title": "Mulai dengan kandidat yang relevan,",
+    "accent": "bukan tumpukan CV.",
+    "description": "Dan jika Anda yang sedang direkrut, tunjukkan lebih dari CV Anda.",
+    "photo": "Lima profesional dalam ilustrasi berdiri berdampingan, terhubung oleh jaringan garis.",
+    "notice": {
+      "title": "Berkas Anda telah dibuka",
+      "body": "Tim rekrutmen di Orbit Commerce membuka berkas Anda untuk peran Senior frontend engineer.",
+      "time": "Baru saja"
+    }
+  },
   "chatbot": {
     "title": "Asisten LetsHyre",
     "subtitle": "Tanyakan apa saja kepada kami",

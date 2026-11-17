@@ -70,7 +70,7 @@ function Closing({
               name="home/her-break"
               alt={t("final.photo")}
               sizes="(min-width: 64rem) 36rem, 100vw"
-              className="aspect-3/2"
+              className="aspect-video"
             />
           </m.div>
         </div>

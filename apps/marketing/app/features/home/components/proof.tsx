@@ -20,7 +20,7 @@ export function Proof() {
   const titleId = useId()
 
   return (
-    <ScrollScene screens={2.4} pinFrom="lg" aria-labelledby={titleId}>
+    <ScrollScene screens={2.4} aria-labelledby={titleId}>
       <ProofStage titleId={titleId} />
     </ScrollScene>
   )
@@ -39,7 +39,7 @@ function ProofStage({ titleId }: { titleId: string }) {
   if (still) return <StillProof titleId={titleId} />
 
   return (
-    <Container className="grid h-full grid-cols-2 items-center gap-16 pt-16">
+    <Container className="grid h-full grid-cols-2 items-center gap-16 py-6">
       <div>
         <p className="text-sm font-semibold text-brand-text">
           {t("proof.eyebrow")}
@@ -216,21 +216,26 @@ function StillProof({ titleId }: { titleId: string }) {
           {t("proof.interview")} {t("proof.shows")}
         </span>
       </h2>
-      <ol className="mt-12 grid gap-6 md:grid-cols-3">
+      <ol className="mt-12 grid gap-10 lg:grid-cols-3 lg:gap-6">
         {stages.map((stage, i) => (
-          <li key={stage.label}>
+          <li
+            key={stage.label}
+            className="sm:grid sm:grid-cols-2 sm:items-center sm:gap-6 lg:block"
+          >
             {PHOTOS[i] ? (
               <Photo
                 name={PHOTOS[i]}
                 alt={stage.photo}
-                sizes="(min-width: 48rem) 33vw, 100vw"
+                sizes="(min-width: 64rem) 33vw, (min-width: 40rem) 50vw, 100vw"
                 className="aspect-4/3 rounded-2xl border"
               />
             ) : null}
-            <p className="mt-4 text-sm font-semibold">{stage.label}</p>
-            <p className="mt-1 text-pretty text-muted-foreground">
-              {stage.body}
-            </p>
+            <div className="mt-4 sm:mt-0 lg:mt-4">
+              <p className="text-sm font-semibold">{stage.label}</p>
+              <p className="mt-1 text-pretty text-muted-foreground">
+                {stage.body}
+              </p>
+            </div>
           </li>
         ))}
       </ol>

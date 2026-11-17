@@ -15,6 +15,27 @@
   }
 }
 
+/* the home page's scroll scenes pin only where a whole scene fits: a desktop width and a laptop height */
+@custom-variant pin {
+  @media (width >= 64rem) and (height >= 42rem) and (prefers-reduced-motion: no-preference) {
+    @slot;
+  }
+}
+
+/* everywhere `pin` doesn't apply */
+@custom-variant unpin {
+  @media (width < 64rem) or (height < 42rem) or (prefers-reduced-motion: reduce) {
+    @slot;
+  }
+}
+
+/* laptop heights, where a pinned scene's densest card has to tighten up */
+@custom-variant short {
+  @media (height < 56rem) {
+    @slot;
+  }
+}
+
 /* only for floating controls; cards use borders */
 @theme {
   --shadow-raised: 0 10px 30px -12px var(--raised-tint);

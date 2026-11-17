@@ -1,4 +1,5 @@
-import { useTranslation } from "@workspace/i18n/react"
+import { dirFor } from "@workspace/i18n"
+import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { clamp, type MotionValue, useTransform } from "motion/react"
 import * as m from "motion/react-m"
 import { useEffect, useId, useRef } from "react"
@@ -18,7 +19,7 @@ export function Hero() {
   const { t } = useTranslation("home")
 
   return (
-    <ScrollScene screens={1.6} pinFrom="lg" aria-labelledby={titleId}>
+    <ScrollScene screens={1.6} aria-labelledby={titleId}>
       <div className="mx-auto grid size-full max-w-6xl items-center gap-12 px-4 pt-8 pb-16 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:pt-0 lg:pb-8">
         <div className="max-lg:text-center">
           <p className="text-sm font-semibold text-brand-text">
@@ -66,7 +67,9 @@ function HeroStage() {
           priority
           className="aspect-square rounded-3xl border"
         />
-        <HeroResume progress={progress} />
+        <div className="max-lg:hidden">
+          <HeroResume progress={progress} />
+        </div>
       </div>
     )
   }
@@ -78,6 +81,7 @@ function LiveStage({ progress }: { progress: MotionValue<number> }) {
   const { t } = useTranslation("home")
   const stage = useRef<HTMLDivElement>(null)
   const ratio = useRef(0.15)
+  const inset = dirFor(useLocale()) === "rtl" ? -INSET : INSET
 
   // the target scale depends on the rendered width, which the breakpoints change
   useEffect(() => {
@@ -99,13 +103,13 @@ function LiveStage({ progress }: { progress: MotionValue<number> }) {
     progress,
     (p) => 1 - shrink(p) * (1 - ratio.current)
   )
-  const x = useTransform(progress, (p) => shrink(p) * INSET)
+  const x = useTransform(progress, (p) => shrink(p) * inset)
   const y = useTransform(progress, (p) => shrink(p) * INSET)
 
   return (
     <div
       ref={stage}
-      className="relative mx-auto aspect-square w-full max-w-sm lg:max-w-md"
+      className="relative mx-auto aspect-square w-full max-w-sm lg:max-w-md xl:max-w-lg"
     >
       <HeroResume progress={progress} slot />
       <m.div
@@ -115,7 +119,7 @@ function LiveStage({ progress }: { progress: MotionValue<number> }) {
         <Photo
           name="home/hero"
           alt={t("hero.photo")}
-          sizes="(min-width: 64rem) 28rem, 24rem"
+          sizes="(min-width: 80rem) 32rem, (min-width: 64rem) 28rem, 24rem"
           portrait
           priority
           className="size-full"

@@ -1,4 +1,320 @@
 {
+  "meta": {
+    "title": "Selezione con IA per professionisti esperti | letshyre.ai",
+    "description": "Assumi professionisti esperti sulle prove: analisi IA del CV, colloqui per ruolo e schede verificabili.",
+    "name": "LetsHyre — Piattaforma di selezione con IA per professionisti esperti",
+    "schemaDescription": "Piattaforma di selezione con IA che mette in contatto aziende e professionisti esperti, verificati tramite analisi del CV, colloqui IA basati sul ruolo e schede delle competenze."
+  },
+  "hero": {
+    "eyebrow": "Selezione con IA per professionisti esperti",
+    "title": "Assumi sulle prove,",
+    "accent": "non sulle speranze.",
+    "description": "Ogni candidato porta un'analisi IA del CV, i punteggi di colloqui basati sul ruolo e la registrazione completa. Leggi prima le prove, poi sblocca le persone che meritano una chiamata.",
+    "ctaHiring": "Sto assumendo",
+    "ctaCandidate": "Cerco un ruolo",
+    "reassurance": "10 crediti gratuiti per le aziende. Sempre gratis per i professionisti.",
+    "photo": "Una recruiter illustrata esamina i CV con una lente d'ingrandimento.",
+    "skip": "Salta la presentazione",
+    "resume": {
+      "label": "Il CV di Vyshnavi Rao, a titolo illustrativo: le stesse affermazioni di ogni CV.",
+      "kicker": "Curriculum",
+      "name": "Vyshnavi Rao",
+      "role": "Ingegnera frontend · 7 anni",
+      "summary": "Ingegnera frontend orientata ai risultati e ottima giocatrice di squadra, appassionata di prodotti scalabili e incentrati sull'utente.",
+      "skills": "Competenze",
+      "claims": [
+        "Esperta di React",
+        "Ingegnera 10x",
+        "Impara in fretta",
+        "Ottima comunicatrice"
+      ],
+      "experience": "Esperienza",
+      "jobs": [
+        {
+          "title": "Ingegnera frontend · Nimbus Labs",
+          "dates": "2021 – now"
+        },
+        {
+          "title": "Sviluppatrice UI · Brightpath",
+          "dates": "2018 – 2021"
+        }
+      ],
+      "education": "Istruzione",
+      "degree": "B.Tech, Informatica · 2018",
+      "note": "Ogni CV della pila dice la stessa cosa."
+    }
+  },
+  "proof": {
+    "eyebrow": "Perché LetsHyre",
+    "title": "Un CV ti dice ciò che una persona",
+    "claims": "dichiara.",
+    "shows": "Un colloquio",
+    "interview": "te lo mostra.",
+    "stages": [
+      {
+        "label": "Cosa arriva sulla tua scrivania",
+        "body": "Centinaia di CV tutti uguali, scritti per fare colpo.",
+        "photo": "Una pila di CV illustrata sotto una lente d'ingrandimento."
+      },
+      {
+        "label": "Cosa fa prima LetsHyre",
+        "body": "Ogni candidato sostiene un colloquio IA basato sul ruolo prima che tu lo veda.",
+        "photo": "Un candidato illustrato spiega le sue risposte in un colloquio IA sul suo portatile."
+      },
+      {
+        "label": "Cosa leggi prima della chiamata",
+        "body": "Punteggi, una scheda di valutazione e la registrazione, per confrontare come ragionano le persone.",
+        "photo": "Un'intervistatrice e un candidato illustrati conversano a un tavolino."
+      }
+    ]
+  },
+  "interview": {
+    "eyebrow": "Dentro il suo colloquio",
+    "title": "Leggi come ragiona, non cosa dichiara.",
+    "body": "Ogni risposta viene registrata e valutata rispetto al ruolo. Ecco una domanda dal colloquio frontend di Vyshnavi.",
+    "sample": "Colloquio di esempio, a titolo illustrativo",
+    "session": "Colloquio IA · Ingegnera frontend senior",
+    "progress": "Domanda 5 di 8",
+    "duration": "24:10",
+    "asked": "Intervistatore",
+    "answered": "Vyshnavi",
+    "question": "Due componenti lontani nell'albero hanno bisogno dello stesso stato. Come lo condivideresti e a cosa faresti attenzione?",
+    "answer": [
+      "Prima lo porterei al loro antenato comune più vicino, e userei un context solo se passarlo verso il basso diventa scomodo.",
+      "Se cambia spesso, lo terrei in un piccolo store, così si aggiornano solo i componenti che lo leggono.",
+      "Farei attenzione ai valori obsoleti negli effect e che lo stato abbia un solo proprietario."
+    ],
+    "scorecard": "Scheda di valutazione",
+    "overall": "Punteggio del colloquio",
+    "score": "78",
+    "outOf": "/100",
+    "verdict": "Colloquio solido",
+    "skills": [
+      {
+        "label": "Gestione dello stato",
+        "value": 84
+      },
+      {
+        "label": "Ragionamento sui compromessi",
+        "value": 76
+      },
+      {
+        "label": "Comunicazione",
+        "value": 79
+      }
+    ],
+    "strengths": "Punti di forza",
+    "strengthItems": ["Gestione dello stato", "Accessibilità"],
+    "gaps": "Da approfondire",
+    "gapItems": ["Test su larga scala"]
+  },
+  "journey": {
+    "eyebrow": "Come funziona",
+    "title": "Dall'annuncio alla prima chiamata.",
+    "progress": "Passo {{n}} di {{total}}",
+    "steps": [
+      {
+        "title": "Pubblica un annuncio",
+        "body": "Incolla la descrizione del lavoro. LetsHyre legge il ruolo, le competenze e l'esperienza che ti servono.",
+        "photo": "Una recruiter illustrata alla scrivania pubblica un annuncio dal suo tablet."
+      },
+      {
+        "title": "Ricevi una shortlist ordinata",
+        "body": "Chi si è candidato viene ordinato per corrispondenza al ruolo, competenze e colloquio, con professionisti adatti aggiunti dal talent pool.",
+        "photo": "Una hiring manager illustrata guarda il tablet mentre i profili migliori in una folla di candidati vengono cerchiati."
+      },
+      {
+        "title": "Leggi il colloquio",
+        "body": "Un punteggio su 100, punti di forza, le lacune da approfondire e la registrazione completa.",
+        "photo": "Una candidata illustrata accanto ai suoi punteggi per ruolo, competenze, colloqui ed esperienza, con l'analisi completa bloccata."
+      },
+      {
+        "title": "Sblocca e contatta",
+        "body": "Un credito sblocca CV, contatti e registrazione. Poi assumi a modo tuo.",
+        "photo": "Una hiring manager illustrata stringe la mano a un candidato dopo il contatto su LetsHyre."
+      }
+    ],
+    "carousel": "Come funziona, in quattro passi. Scorri in orizzontale per vederli tutti.",
+    "cards": {
+      "job": {
+        "label": "Una descrizione del lavoro per un'ingegnera frontend senior, con quattro requisiti trovati: React, TypeScript, 5+ anni e da remoto.",
+        "kicker": "Descrizione del lavoro",
+        "title": "Ingegnera frontend senior",
+        "found": "4 requisiti trovati",
+        "chips": ["React", "TypeScript", "5+ anni", "Da remoto"]
+      },
+      "shortlist": {
+        "label": "Una shortlist di tre candidati ordinati per corrispondenza IA: Vyshnavi Rao 86, Arjun Mehta 74 e Meera Shah 68, arrivata dal talent pool.",
+        "title": "24 candidature · ordinate per prove",
+        "match": "Corrispondenza IA",
+        "pool": "Dal pool",
+        "people": [
+          {
+            "name": "Vyshnavi Rao",
+            "role": "Ingegnera frontend · 7 anni",
+            "score": 86,
+            "pool": false
+          },
+          {
+            "name": "Arjun Mehta",
+            "role": "Sviluppatore React · 5 anni",
+            "score": 74,
+            "pool": false
+          },
+          {
+            "name": "Meera Shah",
+            "role": "Ingegnera UI · 6 anni",
+            "score": 68,
+            "pool": true
+          }
+        ]
+      },
+      "scorecard": {
+        "label": "Una scheda del colloquio di 78 su 100, segnata come colloquio solido, con la registrazione alla domanda 5 di 8.",
+        "kicker": "Scheda del colloquio",
+        "score": "78",
+        "outOf": "/100",
+        "verdict": "Colloquio solido",
+        "question": "Domanda 5 di 8",
+        "duration": "24:10"
+      },
+      "unlock": {
+        "label": "Il profilo di Vyshnavi Rao, sbloccato con un credito, con il suo numero di telefono visibile.",
+        "name": "Vyshnavi Rao",
+        "role": "Ingegnera frontend · 7 anni",
+        "unlocked": "Sbloccato",
+        "credit": "1 credito",
+        "phone": "+91 98765 43210"
+      }
+    },
+    "hint": "Continua a scorrere per passare da un passo all'altro",
+    "jump": "Vai al passo {{n}}: {{title}}"
+  },
+  "professionals": {
+    "eyebrow": "Dalla parte di Vyshnavi",
+    "title": "Un colloquio.",
+    "accent": "Mesi di visibilità.",
+    "body": "Ha sostenuto un colloquio IA basato sul ruolo nell'app desktop, quando le faceva comodo. Per 90 giorni la sua scheda resta nel talent pool, dove la trovano le aziende che cercano il suo ruolo. Per i professionisti è gratis.",
+    "photo": "Un professionista illustrato sotto un riflettore, collegato alle aziende tutt'intorno.",
+    "interviews": [
+      {
+        "label": "Colloquio 1",
+        "role": "Ingegnera frontend, il suo ruolo principale"
+      },
+      {
+        "label": "Colloquio 2",
+        "role": "Un altro ruolo o un nuovo tentativo"
+      },
+      {
+        "label": "Colloquio 3",
+        "role": "Più prove per il suo profilo"
+      }
+    ],
+    "days": "90 giorni",
+    "daysLabel": "nel talent pool",
+    "cta": "Crea il tuo profilo",
+    "download": "Scarica l'app"
+  },
+  "pricing": {
+    "eyebrow": "Paghi per sblocco",
+    "title": "Paghi solo le persone",
+    "accent": "che vuoi incontrare.",
+    "photo": "Una fila di candidati su una piattaforma LetsHyre, e quello che sblocchi si illumina di blu.",
+    "body": "Confronta tutti gratis. Un credito sblocca un CV, i contatti e la registrazione, così puoi contattare a modo tuo.",
+    "points": [
+      "Nessun abbonamento",
+      "I crediti non scadono mai",
+      "Gratis per i professionisti"
+    ],
+    "cta": "Inizia con 10 crediti gratuiti",
+    "more": "Vedi i prezzi",
+    "ledger": {
+      "caption": "Un esempio di registro crediti",
+      "columns": {
+        "entry": "Voce",
+        "credits": "Crediti",
+        "balance": "Saldo"
+      },
+      "rows": [
+        {
+          "entry": "Crediti gratuiti iniziali",
+          "credits": "+10",
+          "balance": "10"
+        },
+        {
+          "entry": "24 candidati confrontati",
+          "credits": "0",
+          "balance": "10"
+        },
+        {
+          "entry": "Vyshnavi Rao sbloccata",
+          "credits": "−1",
+          "balance": "9"
+        },
+        {
+          "entry": "Arjun Mehta sbloccato",
+          "credits": "−1",
+          "balance": "8"
+        }
+      ]
+    }
+  },
+  "faq": {
+    "title": "Domande,",
+    "accent": "risposte.",
+    "description": "Risposte chiare su come funziona LetsHyre per aziende e professionisti.",
+    "contact": {
+      "title": "Hai ancora una domanda?",
+      "body": "Inviacela e il team ti risponderà.",
+      "cta": "Contattaci",
+      "note": "le leggiamo tutte"
+    },
+    "items": [
+      {
+        "q": "Cos'è LetsHyre?",
+        "a": "LetsHyre è una piattaforma di selezione con IA per professionisti esperti. I candidati sono verificati con l'analisi IA del CV, colloqui IA basati sul ruolo e schede delle competenze, e le aziende li trovano con il matching IA."
+      },
+      {
+        "q": "Per chi è LetsHyre?",
+        "a": "Per aziende e team HR che assumono persone esperte, e per professionisti esperti, anche in periodo di preavviso, che vogliono più di un CV a parlare per loro."
+      },
+      {
+        "q": "Cosa ottiene un'azienda sbloccando un candidato?",
+        "a": "Il CV, i contatti, i documenti, la scheda delle competenze IA e la registrazione completa del colloquio IA. Poi contatti il candidato e prosegui la selezione fuori da LetsHyre."
+      },
+      {
+        "q": "Come vengono valutati i candidati?",
+        "a": "Ogni candidato sostiene colloqui IA basati sul ruolo, e ogni colloquio produce una scheda delle competenze. LetsHyre la combina con l'analisi del CV per mostrare un punteggio LetsHyre, la corrispondenza al lavoro e alle competenze per ogni ruolo."
+      },
+      {
+        "q": "Quanti colloqui può sostenere un candidato?",
+        "a": "Fino a tre, per tre ruoli diversi o più tentativi per lo stesso ruolo."
+      },
+      {
+        "q": "Perché i profili durano 90 giorni?",
+        "a": "Così le aziende vedono persone che cercano attivamente. Un profilo resta nel talent pool per 90 giorni dopo il colloquio."
+      },
+      {
+        "q": "LetsHyre costa qualcosa ai professionisti?",
+        "a": "No. LetsHyre è gratis per i professionisti. Le aziende pagano in crediti solo quando sbloccano un candidato."
+      },
+      {
+        "q": "Tutte le funzioni sono già disponibili?",
+        "a": "LetsHyre è in accesso anticipato e nuove funzioni sono in arrivo. Se manca qualcosa che ti serve, contattaci e dicci di cosa hai bisogno."
+      }
+    ]
+  },
+  "final": {
+    "title": "Parti da candidati pertinenti,",
+    "accent": "non da una pila di CV.",
+    "description": "E se sei tu a essere assunto, vai oltre il tuo CV.",
+    "photo": "Cinque professionisti illustrati fianco a fianco, uniti da una rete di linee.",
+    "notice": {
+      "title": "Il tuo profilo è stato sbloccato",
+      "body": "Un team di selezione di Orbit Commerce ha sbloccato il tuo profilo per il ruolo di ingegnera frontend senior.",
+      "time": "Adesso"
+    }
+  },
   "chatbot": {
     "title": "Assistente LetsHyre",
     "subtitle": "Chiedici qualsiasi cosa",

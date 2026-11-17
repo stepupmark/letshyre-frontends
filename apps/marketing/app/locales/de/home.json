@@ -1,4 +1,320 @@
 {
+  "meta": {
+    "title": "KI-Recruiting für erfahrene Fachkräfte | letshyre.ai",
+    "description": "Erfahrene Fachkräfte nach Belegen einstellen: KI-Lebenslaufanalyse, rollenbasierte Interviews, prüfbare Scorecards.",
+    "name": "LetsHyre – KI-Recruiting-Plattform für erfahrene Fachkräfte",
+    "schemaDescription": "KI-Recruiting-Plattform, die Arbeitgeber mit erfahrenen Fachkräften zusammenbringt, geprüft durch Lebenslaufanalyse, rollenbasierte KI-Interviews und Skill-Scorecards."
+  },
+  "hero": {
+    "eyebrow": "KI-Recruiting für erfahrene Fachkräfte",
+    "title": "Einstellen nach Belegen,",
+    "accent": "nicht nach Hoffnung.",
+    "description": "Jeder Kandidat bringt eine KI-Lebenslaufanalyse, rollenbasierte Interview-Scores und die vollständige Aufzeichnung mit. Lesen Sie zuerst die Belege und schalten Sie dann die Menschen frei, die einen Anruf wert sind.",
+    "ctaHiring": "Ich stelle ein",
+    "ctaCandidate": "Ich suche eine Stelle",
+    "reassurance": "10 kostenlose Credits für Arbeitgeber. Für Fachkräfte immer kostenlos.",
+    "photo": "Eine illustrierte Recruiterin prüft Lebensläufe mit einer Lupe.",
+    "skip": "Rundgang überspringen",
+    "resume": {
+      "label": "Lebenslauf von Vyshnavi Rao, zur Veranschaulichung: dieselben Behauptungen wie in jedem Lebenslauf.",
+      "kicker": "Lebenslauf",
+      "name": "Vyshnavi Rao",
+      "role": "Frontend-Entwicklerin · 7 Jahre",
+      "summary": "Ergebnisorientierte Frontend-Entwicklerin und echte Teamplayerin, mit Leidenschaft für skalierbare, nutzerzentrierte Produkte.",
+      "skills": "Skills",
+      "claims": [
+        "React-Expertin",
+        "10x-Entwicklerin",
+        "Lernt schnell",
+        "Starke Kommunikatorin"
+      ],
+      "experience": "Berufserfahrung",
+      "jobs": [
+        {
+          "title": "Frontend-Entwicklerin · Nimbus Labs",
+          "dates": "2021 – now"
+        },
+        {
+          "title": "UI-Entwicklerin · Brightpath",
+          "dates": "2018 – 2021"
+        }
+      ],
+      "education": "Ausbildung",
+      "degree": "B.Tech, Informatik · 2018",
+      "note": "Jeder Lebenslauf auf dem Stapel sagt dasselbe."
+    }
+  },
+  "proof": {
+    "eyebrow": "Warum LetsHyre",
+    "title": "Ein Lebenslauf zeigt Ihnen, was jemand",
+    "claims": "behauptet.",
+    "shows": "Ein Interview",
+    "interview": "zeigt es Ihnen.",
+    "stages": [
+      {
+        "label": "Was auf Ihrem Tisch landet",
+        "body": "Hunderte Lebensläufe, die sich gleich lesen und beeindrucken sollen.",
+        "photo": "Ein illustrierter Stapel Lebensläufe unter einer Lupe."
+      },
+      {
+        "label": "Was LetsHyre zuerst tut",
+        "body": "Jeder Kandidat absolviert ein rollenbasiertes KI-Interview, bevor Sie ihn sehen.",
+        "photo": "Ein illustrierter Kandidat erklärt seine Antworten in einem KI-Interview an seinem Laptop."
+      },
+      {
+        "label": "Was Sie vor dem Anruf lesen",
+        "body": "Scores, eine Scorecard und die Aufzeichnung, damit Sie vergleichen, wie Menschen denken.",
+        "photo": "Eine illustrierte Interviewerin und ein Kandidat im Gespräch an einem kleinen Tisch."
+      }
+    ]
+  },
+  "interview": {
+    "eyebrow": "In ihrem Interview",
+    "title": "Lesen Sie, wie sie denkt, nicht was sie behauptet.",
+    "body": "Jede Antwort wird aufgezeichnet und an der Rolle gemessen. Hier ist eine Frage aus Vyshnavis Frontend-Interview.",
+    "sample": "Beispielinterview, zur Veranschaulichung",
+    "session": "KI-Interview · Senior Frontend-Entwicklerin",
+    "progress": "Frage 5 von 8",
+    "duration": "24:10",
+    "asked": "Interviewer",
+    "answered": "Vyshnavi",
+    "question": "Zwei weit voneinander entfernte Komponenten im Baum brauchen denselben State. Wie würden Sie ihn teilen, und worauf würden Sie achten?",
+    "answer": [
+      "Ich würde ihn zuerst in den nächsten gemeinsamen Elternteil heben und erst zu Context greifen, wenn das Durchreichen unübersichtlich wird.",
+      "Wenn er sich oft ändert, käme er in einen kleinen Store, damit nur die Komponenten neu rendern, die ihn lesen.",
+      "Achten würde ich auf veraltete Werte in Effects und darauf, dass der State genau einen Besitzer hat."
+    ],
+    "scorecard": "Scorecard",
+    "overall": "Interview-Score",
+    "score": "78",
+    "outOf": "/100",
+    "verdict": "Starkes Interview",
+    "skills": [
+      {
+        "label": "State-Management",
+        "value": 84
+      },
+      {
+        "label": "Abwägen von Trade-offs",
+        "value": 76
+      },
+      {
+        "label": "Kommunikation",
+        "value": 79
+      }
+    ],
+    "strengths": "Stärken",
+    "strengthItems": ["State-Management", "Barrierefreiheit"],
+    "gaps": "Nachfragen lohnt sich",
+    "gapItems": ["Testen im großen Maßstab"]
+  },
+  "journey": {
+    "eyebrow": "So funktioniert es",
+    "title": "Von der Stellenanzeige zum ersten Gespräch.",
+    "progress": "Schritt {{n}} von {{total}}",
+    "steps": [
+      {
+        "title": "Stelle ausschreiben",
+        "body": "Fügen Sie Ihre Stellenbeschreibung ein. LetsHyre erfasst die Rolle, die Skills und die Erfahrung, die Sie brauchen.",
+        "photo": "Eine illustrierte Recruiterin an ihrem Schreibtisch veröffentlicht eine Stellenanzeige über ihr Tablet."
+      },
+      {
+        "title": "Eine gerankte Shortlist erhalten",
+        "body": "Alle Bewerber werden nach Job-Match, Skills und Interview gerankt, ergänzt um passende Fachkräfte aus dem Talentpool.",
+        "photo": "Eine illustrierte Hiring-Managerin blickt auf ihr Tablet, während die besten Treffer in einer Menge von Kandidaten markiert werden."
+      },
+      {
+        "title": "Das Interview lesen",
+        "body": "Ein Score von 100, Stärken, die Lücken, bei denen sich Nachfragen lohnt, und die vollständige Aufzeichnung.",
+        "photo": "Eine illustrierte Kandidatin neben ihren Match-Scores für Rolle, Skills, Interviews und Erfahrung, die vollständigen Einblicke gesperrt."
+      },
+      {
+        "title": "Freischalten und Kontakt aufnehmen",
+        "body": "Ein Credit schaltet Lebenslauf, Kontaktdaten und Aufzeichnung frei. Dann stellen Sie ein, wie Sie möchten.",
+        "photo": "Eine illustrierte Hiring-Managerin schüttelt einem Kandidaten die Hand, nachdem sie sich über LetsHyre verbunden haben."
+      }
+    ],
+    "carousel": "So funktioniert es, vier Schritte. Scrollen Sie seitwärts, um jeden zu sehen.",
+    "cards": {
+      "job": {
+        "label": "Eine Stellenbeschreibung für eine Senior Frontend-Entwicklerin mit vier erkannten Anforderungen: React, TypeScript, 5+ Jahre und remote.",
+        "kicker": "Stellenbeschreibung",
+        "title": "Senior Frontend-Entwicklerin",
+        "found": "4 Anforderungen erkannt",
+        "chips": ["React", "TypeScript", "5+ Jahre", "Remote"]
+      },
+      "shortlist": {
+        "label": "Eine Shortlist mit drei Kandidaten, gerankt nach KI-Match: Vyshnavi Rao 86, Arjun Mehta 74 und Meera Shah 68, die aus dem Talentpool kam.",
+        "title": "24 Bewerbungen · nach Belegen gerankt",
+        "match": "KI-Match",
+        "pool": "Aus dem Pool",
+        "people": [
+          {
+            "name": "Vyshnavi Rao",
+            "role": "Frontend-Entwicklerin · 7 J.",
+            "score": 86,
+            "pool": false
+          },
+          {
+            "name": "Arjun Mehta",
+            "role": "React-Entwickler · 5 J.",
+            "score": 74,
+            "pool": false
+          },
+          {
+            "name": "Meera Shah",
+            "role": "UI-Entwicklerin · 6 J.",
+            "score": 68,
+            "pool": true
+          }
+        ]
+      },
+      "scorecard": {
+        "label": "Eine Interview-Scorecard mit 78 von 100, als starkes Interview markiert, mit der Aufzeichnung bei Frage 5 von 8.",
+        "kicker": "Interview-Scorecard",
+        "score": "78",
+        "outOf": "/100",
+        "verdict": "Starkes Interview",
+        "question": "Frage 5 von 8",
+        "duration": "24:10"
+      },
+      "unlock": {
+        "label": "Das Profil von Vyshnavi Rao, für einen Credit freigeschaltet, mit sichtbarer Telefonnummer.",
+        "name": "Vyshnavi Rao",
+        "role": "Frontend-Entwicklerin · 7 J.",
+        "unlocked": "Freigeschaltet",
+        "credit": "1 Credit",
+        "phone": "+91 98765 43210"
+      }
+    },
+    "hint": "Scrollen Sie weiter, um durch die Schritte zu gehen",
+    "jump": "Zu Schritt {{n}}: {{title}}"
+  },
+  "professionals": {
+    "eyebrow": "Vyshnavis Seite",
+    "title": "Einmal interviewen.",
+    "accent": "Monatelang gefunden werden.",
+    "body": "Sie hat ein rollenbasiertes KI-Interview in der Desktop-App gemacht, wann es ihr passte. 90 Tage lang liegt ihre Scorecard im Talentpool, wo Arbeitgeber, die für ihre Rolle suchen, sie finden. Für Fachkräfte ist es kostenlos.",
+    "photo": "Eine illustrierte Fachkraft steht im Scheinwerferlicht, verbunden mit den Unternehmen ringsum.",
+    "interviews": [
+      {
+        "label": "Interview 1",
+        "role": "Frontend-Entwicklerin, ihre Hauptrolle"
+      },
+      {
+        "label": "Interview 2",
+        "role": "Eine weitere Rolle oder ein neuer Versuch"
+      },
+      {
+        "label": "Interview 3",
+        "role": "Mehr Belege für ihr Profil"
+      }
+    ],
+    "days": "90 Tage",
+    "daysLabel": "im Talentpool",
+    "cta": "Profil erstellen",
+    "download": "App herunterladen"
+  },
+  "pricing": {
+    "eyebrow": "Bezahlen pro Freischaltung",
+    "title": "Zahlen Sie nur für die Menschen,",
+    "accent": "die Sie kennenlernen möchten.",
+    "photo": "Eine Reihe von Kandidaten steht auf einer LetsHyre-Plattform, und die Person, die Sie freischalten, leuchtet blau.",
+    "body": "Vergleichen Sie alle kostenlos. Ein Credit schaltet Lebenslauf, Kontaktdaten und Aufzeichnung frei, damit Sie sich auf Ihre Art melden können.",
+    "points": [
+      "Kein Abonnement",
+      "Credits verfallen nie",
+      "Kostenlos für Fachkräfte"
+    ],
+    "cta": "Mit 10 kostenlosen Credits starten",
+    "more": "Preise ansehen",
+    "ledger": {
+      "caption": "Ein Beispiel für ein Credit-Konto",
+      "columns": {
+        "entry": "Eintrag",
+        "credits": "Credits",
+        "balance": "Saldo"
+      },
+      "rows": [
+        {
+          "entry": "Kostenlose Start-Credits",
+          "credits": "+10",
+          "balance": "10"
+        },
+        {
+          "entry": "24 Kandidaten verglichen",
+          "credits": "0",
+          "balance": "10"
+        },
+        {
+          "entry": "Vyshnavi Rao freigeschaltet",
+          "credits": "−1",
+          "balance": "9"
+        },
+        {
+          "entry": "Arjun Mehta freigeschaltet",
+          "credits": "−1",
+          "balance": "8"
+        }
+      ]
+    }
+  },
+  "faq": {
+    "title": "Fragen,",
+    "accent": "beantwortet.",
+    "description": "Klare Antworten darauf, wie LetsHyre für Arbeitgeber und Fachkräfte funktioniert.",
+    "contact": {
+      "title": "Noch eine Frage?",
+      "body": "Schicken Sie sie uns, und das Team meldet sich bei Ihnen.",
+      "cta": "Kontakt",
+      "note": "wir lesen jede Nachricht"
+    },
+    "items": [
+      {
+        "q": "Was ist LetsHyre?",
+        "a": "LetsHyre ist eine KI-Recruiting-Plattform für erfahrene Fachkräfte. Kandidaten werden durch KI-Lebenslaufanalyse, rollenbasierte KI-Interviews und Skill-Scorecards geprüft, und Arbeitgeber finden sie per KI-Matching."
+      },
+      {
+        "q": "Für wen ist LetsHyre?",
+        "a": "Für Arbeitgeber und HR-Teams, die erfahrene Leute einstellen, und für erfahrene Fachkräfte, auch in der Kündigungsfrist, die mehr als einen Lebenslauf für sich sprechen lassen wollen."
+      },
+      {
+        "q": "Was erhält ein Arbeitgeber, wenn er einen Kandidaten freischaltet?",
+        "a": "Den Lebenslauf, die Kontaktdaten, Dokumente, die KI-Skill-Scorecard und die vollständige Aufzeichnung des KI-Interviews. Danach kontaktieren Sie den Kandidaten und setzen den Prozess außerhalb von LetsHyre fort."
+      },
+      {
+        "q": "Wie werden Kandidaten bewertet?",
+        "a": "Jeder Kandidat absolviert rollenbasierte KI-Interviews, und jedes Interview ergibt eine Skill-Scorecard. LetsHyre kombiniert sie mit der Lebenslaufanalyse zu einem LetsHyre-Score, Job-Match und Skill-Match für jede Rolle."
+      },
+      {
+        "q": "Wie viele Interviews kann ein Kandidat machen?",
+        "a": "Bis zu drei, für drei verschiedene Rollen oder mehrere Versuche für dieselbe Rolle."
+      },
+      {
+        "q": "Warum bleiben Profile 90 Tage bestehen?",
+        "a": "Damit Arbeitgeber Menschen sehen, die aktiv suchen. Ein Profil bleibt nach dem Interview 90 Tage im Talentpool."
+      },
+      {
+        "q": "Kostet LetsHyre Fachkräfte etwas?",
+        "a": "Nein. LetsHyre ist für Fachkräfte kostenlos. Arbeitgeber zahlen nur mit Credits, wenn sie einen Kandidaten freischalten."
+      },
+      {
+        "q": "Ist jede Funktion schon verfügbar?",
+        "a": "LetsHyre ist im Early Access, und neue Funktionen kommen laufend hinzu. Wenn etwas fehlt, das Sie brauchen, kontaktieren Sie uns und sagen Sie uns, was Sie brauchen."
+      }
+    ]
+  },
+  "final": {
+    "title": "Starten Sie mit passenden Kandidaten,",
+    "accent": "nicht mit einem Stapel Lebensläufe.",
+    "description": "Und wenn Sie diejenige oder derjenige sind, die eingestellt werden: Zeigen Sie mehr als Ihren Lebenslauf.",
+    "photo": "Fünf illustrierte Fachkräfte stehen nebeneinander, verbunden durch ein Netz aus Linien.",
+    "notice": {
+      "title": "Ihr Profil wurde freigeschaltet",
+      "body": "Ein Recruiting-Team von Orbit Commerce hat Ihr Profil für die Rolle Senior Frontend-Entwicklerin freigeschaltet.",
+      "time": "Gerade eben"
+    }
+  },
   "chatbot": {
     "title": "LetsHyre-Assistent",
     "subtitle": "Fragen Sie uns alles",

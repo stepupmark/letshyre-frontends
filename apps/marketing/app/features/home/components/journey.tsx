@@ -1,5 +1,5 @@
-import { useTranslation } from "@workspace/i18n/react"
-import { cn } from "@workspace/ui/lib/utils"
+import { dirFor } from "@workspace/i18n"
+import { useLocale, useTranslation } from "@workspace/i18n/react"
 import { clamp, useMotionValueEvent, useTransform } from "motion/react"
 import * as m from "motion/react-m"
 import { ArrowRightIcon } from "lucide-react"
@@ -26,7 +26,7 @@ export function Journey() {
   const titleId = useId()
 
   return (
-    <ScrollScene screens={3} pinFrom="lg" aria-labelledby={titleId}>
+    <ScrollScene screens={2.4} aria-labelledby={titleId}>
       <JourneyStage titleId={titleId} />
     </ScrollScene>
   )
@@ -37,14 +37,15 @@ function JourneyStage({ titleId }: { titleId: string }) {
   const { progress, still } = useScene()
   const hydrated = useHydrated()
   const steps = t("journey.steps", { returnObjects: true })
-  // the track ends with its last panel flush to the viewport edge
+  // the track ends with its last panel flush to the viewport edge; in RTL it runs rightwards
+  const sign = dirFor(useLocale()) === "rtl" ? -1 : 1
   const x = useTransform(progress, (p) => {
-    const at = clamp(0, 1, (p - 0.08) / 0.84)
+    const at = clamp(0, 1, (p - 0.08) / 0.84) * sign
     return `calc(${-at * 100}% + ${at * 100}vw)`
   })
 
   return (
-    <div className="flex h-full flex-col py-16 lg:pt-24 lg:pb-10">
+    <div className="pin:pt-8 pin:pb-10 flex h-full flex-col py-16">
       <Container>
         <p className="text-sm font-semibold text-brand-text">
           {t("journey.eyebrow")}
@@ -63,14 +64,11 @@ function JourneyStage({ titleId }: { titleId: string }) {
         // only a carousel when still (phones, reduced motion); keyboard users scroll it then
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
         tabIndex={still ? 0 : undefined}
-        className={cn(
-          "mt-8 min-h-0 flex-1 outline-none focus-visible:ring-3 focus-visible:ring-ring/50 max-lg:snap-x max-lg:snap-mandatory max-lg:scroll-px-4 max-lg:overflow-x-auto",
-          still && "snap-x snap-mandatory scroll-px-4 overflow-x-auto"
-        )}
+        className="unpin:snap-x unpin:snap-mandatory unpin:scroll-px-4 unpin:overflow-x-auto mt-8 min-h-0 flex-1 outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
       >
         <m.ol
           style={still ? undefined : { x }}
-          className="flex h-full w-max gap-4 px-4 max-lg:transform-none! sm:gap-6 sm:px-6 lg:px-8"
+          className="unpin:transform-none! flex h-full w-max gap-4 px-4 sm:gap-6 sm:px-6 lg:px-8"
         >
           {steps.map((step, i) => (
             <li

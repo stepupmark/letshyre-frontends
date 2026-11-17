@@ -57,6 +57,8 @@ function merge(
     const existing = lookup(current, path)
     return typeof existing === "string" ? existing : batch[path.join(".")]
   }
+  // numbers and flags in the English shape aren't copy; every locale keeps them as they are
+  if (typeof english !== "object" || english === null) return english
   if (Array.isArray(english)) {
     const items = english.map((item, i) =>
       merge(item, current, batch, locale, [...path, String(i)])

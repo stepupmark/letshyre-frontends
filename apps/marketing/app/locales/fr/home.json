@@ -1,4 +1,320 @@
 {
+  "meta": {
+    "title": "Recrutement IA de professionnels expérimentés | letshyre.ai",
+    "description": "Recrutez des profils expérimentés sur preuves : analyse de CV par IA, entretiens par poste et grilles vérifiables.",
+    "name": "LetsHyre — Plateforme de recrutement IA pour professionnels expérimentés",
+    "schemaDescription": "Plateforme de recrutement IA qui met en relation employeurs et professionnels expérimentés, vérifiés par l'analyse de CV, des entretiens IA adaptés au poste et des grilles de compétences."
+  },
+  "hero": {
+    "eyebrow": "Le recrutement IA pour professionnels expérimentés",
+    "title": "Recrutez sur des preuves,",
+    "accent": "pas sur des espoirs.",
+    "description": "Chaque candidat arrive avec une analyse de CV par IA, des scores d'entretien adaptés au poste et l'enregistrement complet. Lisez d'abord les preuves, puis débloquez les personnes qui méritent un appel.",
+    "ctaHiring": "Je recrute",
+    "ctaCandidate": "Je cherche un poste",
+    "reassurance": "10 crédits offerts aux employeurs. Toujours gratuit pour les professionnels.",
+    "photo": "Une recruteuse illustrée examine des CV à la loupe.",
+    "skip": "Passer la présentation",
+    "resume": {
+      "label": "Le CV de Vyshnavi Rao, à titre d'illustration : les mêmes affirmations que dans tous les CV.",
+      "kicker": "CV",
+      "name": "Vyshnavi Rao",
+      "role": "Ingénieure frontend · 7 ans",
+      "summary": "Ingénieure frontend orientée résultats et excellente coéquipière, passionnée par la création de produits évolutifs centrés sur l'utilisateur.",
+      "skills": "Compétences",
+      "claims": [
+        "Experte React",
+        "Ingénieure 10x",
+        "Apprend vite",
+        "Excellente communicante"
+      ],
+      "experience": "Expérience",
+      "jobs": [
+        {
+          "title": "Ingénieure frontend · Nimbus Labs",
+          "dates": "2021 – now"
+        },
+        {
+          "title": "Développeuse UI · Brightpath",
+          "dates": "2018 – 2021"
+        }
+      ],
+      "education": "Formation",
+      "degree": "B.Tech, Informatique · 2018",
+      "note": "Tous les CV de la pile disent la même chose."
+    }
+  },
+  "proof": {
+    "eyebrow": "Pourquoi LetsHyre",
+    "title": "Un CV vous dit ce que quelqu'un",
+    "claims": "affirme.",
+    "shows": "Un entretien",
+    "interview": "vous le montre.",
+    "stages": [
+      {
+        "label": "Ce qui arrive sur votre bureau",
+        "body": "Des centaines de CV qui se ressemblent, écrits pour impressionner.",
+        "photo": "Une pile de CV illustrée sous une loupe."
+      },
+      {
+        "label": "Ce que LetsHyre fait d'abord",
+        "body": "Chaque candidat passe un entretien IA adapté au poste avant que vous ne le voyiez.",
+        "photo": "Un candidat illustré explique ses réponses lors d'un entretien IA sur son ordinateur portable."
+      },
+      {
+        "label": "Ce que vous lisez avant l'appel",
+        "body": "Des scores, une grille d'évaluation et l'enregistrement, pour comparer la façon dont les gens réfléchissent.",
+        "photo": "Une intervieweuse et un candidat illustrés en conversation autour d'une petite table."
+      }
+    ]
+  },
+  "interview": {
+    "eyebrow": "Dans son entretien",
+    "title": "Voyez comment elle réfléchit, pas ce qu'elle affirme.",
+    "body": "Chaque réponse est enregistrée et évaluée au regard du poste. Voici une question de l'entretien frontend de Vyshnavi.",
+    "sample": "Exemple d'entretien, à titre d'illustration",
+    "session": "Entretien IA · Ingénieure frontend senior",
+    "progress": "Question 5 sur 8",
+    "duration": "24:10",
+    "asked": "Intervieweur",
+    "answered": "Vyshnavi",
+    "question": "Deux composants éloignés dans l'arbre ont besoin du même état. Comment le partageriez-vous, et à quoi feriez-vous attention ?",
+    "answer": [
+      "Je le remonterais d'abord vers leur parent commun le plus proche, et je n'utiliserais un contexte que si le passage de props devient lourd.",
+      "S'il change souvent, je le garderais dans un petit store, pour que seuls les composants qui le lisent se re-rendent.",
+      "Je surveillerais les valeurs obsolètes dans les effets, et que l'état ait un seul et unique propriétaire."
+    ],
+    "scorecard": "Grille d'évaluation",
+    "overall": "Score d'entretien",
+    "score": "78",
+    "outOf": "/100",
+    "verdict": "Entretien solide",
+    "skills": [
+      {
+        "label": "Gestion d'état",
+        "value": 84
+      },
+      {
+        "label": "Raisonnement sur les compromis",
+        "value": 76
+      },
+      {
+        "label": "Communication",
+        "value": 79
+      }
+    ],
+    "strengths": "Points forts",
+    "strengthItems": ["Gestion d'état", "Accessibilité"],
+    "gaps": "À approfondir",
+    "gapItems": ["Tests à grande échelle"]
+  },
+  "journey": {
+    "eyebrow": "Comment ça marche",
+    "title": "De l'offre d'emploi au premier appel.",
+    "progress": "Étape {{n}} sur {{total}}",
+    "steps": [
+      {
+        "title": "Publiez une offre",
+        "body": "Collez votre description de poste. LetsHyre comprend le rôle, les compétences et l'expérience dont vous avez besoin.",
+        "photo": "Une recruteuse illustrée publie une offre d'emploi depuis sa tablette, à son bureau."
+      },
+      {
+        "title": "Recevez une liste classée",
+        "body": "Tous les candidats sont classés selon l'adéquation au poste, les compétences et l'entretien, avec des professionnels correspondants ajoutés depuis le vivier de talents.",
+        "photo": "Une responsable du recrutement illustrée consulte sa tablette tandis que les meilleurs profils d'une foule de candidats sont entourés."
+      },
+      {
+        "title": "Lisez l'entretien",
+        "body": "Un score sur 100, les points forts, les lacunes à approfondir et l'enregistrement complet.",
+        "photo": "Une candidate illustrée à côté de ses scores d'adéquation pour le poste, les compétences, les entretiens et l'expérience, les analyses complètes verrouillées."
+      },
+      {
+        "title": "Débloquez et contactez",
+        "body": "Un crédit débloque le CV, les coordonnées et l'enregistrement. Ensuite, recrutez à votre façon.",
+        "photo": "Une responsable du recrutement illustrée serre la main d'un candidat après leur mise en relation sur LetsHyre."
+      }
+    ],
+    "carousel": "Comment ça marche, en quatre étapes. Faites défiler horizontalement pour voir chacune.",
+    "cards": {
+      "job": {
+        "label": "Une description de poste d'ingénieure frontend senior, avec quatre exigences repérées : React, TypeScript, 5 ans et plus, et télétravail.",
+        "kicker": "Description de poste",
+        "title": "Ingénieure frontend senior",
+        "found": "4 exigences repérées",
+        "chips": ["React", "TypeScript", "5 ans et plus", "Télétravail"]
+      },
+      "shortlist": {
+        "label": "Une liste de trois candidats classés par adéquation IA : Vyshnavi Rao 86, Arjun Mehta 74 et Meera Shah 68, venue du vivier de talents.",
+        "title": "24 candidatures · classées sur preuves",
+        "match": "Adéquation IA",
+        "pool": "Du vivier",
+        "people": [
+          {
+            "name": "Vyshnavi Rao",
+            "role": "Ingénieure frontend · 7 ans",
+            "score": 86,
+            "pool": false
+          },
+          {
+            "name": "Arjun Mehta",
+            "role": "Développeur React · 5 ans",
+            "score": 74,
+            "pool": false
+          },
+          {
+            "name": "Meera Shah",
+            "role": "Ingénieure UI · 6 ans",
+            "score": 68,
+            "pool": true
+          }
+        ]
+      },
+      "scorecard": {
+        "label": "Une grille d'entretien à 78 sur 100, marquée comme entretien solide, avec l'enregistrement à la question 5 sur 8.",
+        "kicker": "Grille d'entretien",
+        "score": "78",
+        "outOf": "/100",
+        "verdict": "Entretien solide",
+        "question": "Question 5 sur 8",
+        "duration": "24:10"
+      },
+      "unlock": {
+        "label": "Le dossier de Vyshnavi Rao, débloqué pour un crédit, avec son numéro de téléphone visible.",
+        "name": "Vyshnavi Rao",
+        "role": "Ingénieure frontend · 7 ans",
+        "unlocked": "Débloqué",
+        "credit": "1 crédit",
+        "phone": "+91 98765 43210"
+      }
+    },
+    "hint": "Continuez à faire défiler pour parcourir les étapes",
+    "jump": "Aller à l'étape {{n}} : {{title}}"
+  },
+  "professionals": {
+    "eyebrow": "Du côté de Vyshnavi",
+    "title": "Un seul entretien.",
+    "accent": "Visible pendant des mois.",
+    "body": "Elle a passé un entretien IA adapté au poste dans l'application de bureau, au moment qui lui convenait. Pendant 90 jours, sa grille reste dans le vivier de talents, où les employeurs qui recrutent pour son poste la trouvent. C'est gratuit pour les professionnels.",
+    "photo": "Un professionnel illustré se tient sous un projecteur, relié aux entreprises tout autour.",
+    "interviews": [
+      {
+        "label": "Entretien 1",
+        "role": "Ingénieure frontend, son poste principal"
+      },
+      {
+        "label": "Entretien 2",
+        "role": "Un autre poste, ou une nouvelle tentative"
+      },
+      {
+        "label": "Entretien 3",
+        "role": "Plus de preuves pour son profil"
+      }
+    ],
+    "days": "90 jours",
+    "daysLabel": "dans le vivier de talents",
+    "cta": "Créer votre profil",
+    "download": "Télécharger l'application"
+  },
+  "pricing": {
+    "eyebrow": "Payez au déblocage",
+    "title": "Ne payez que pour les personnes",
+    "accent": "que vous voulez rencontrer.",
+    "photo": "Une rangée de candidats se tient sur une plateforme LetsHyre, et celui que vous débloquez s'illumine en bleu.",
+    "body": "Comparez tout le monde gratuitement. Un crédit débloque un CV, les coordonnées et l'enregistrement, pour que vous puissiez prendre contact à votre façon.",
+    "points": [
+      "Sans abonnement",
+      "Les crédits n'expirent jamais",
+      "Gratuit pour les professionnels"
+    ],
+    "cta": "Commencer avec 10 crédits offerts",
+    "more": "Voir les tarifs",
+    "ledger": {
+      "caption": "Un exemple de relevé de crédits",
+      "columns": {
+        "entry": "Opération",
+        "credits": "Crédits",
+        "balance": "Solde"
+      },
+      "rows": [
+        {
+          "entry": "Crédits offerts au départ",
+          "credits": "+10",
+          "balance": "10"
+        },
+        {
+          "entry": "24 candidats comparés",
+          "credits": "0",
+          "balance": "10"
+        },
+        {
+          "entry": "Vyshnavi Rao débloquée",
+          "credits": "−1",
+          "balance": "9"
+        },
+        {
+          "entry": "Arjun Mehta débloqué",
+          "credits": "−1",
+          "balance": "8"
+        }
+      ]
+    }
+  },
+  "faq": {
+    "title": "Vos questions,",
+    "accent": "nos réponses.",
+    "description": "Des réponses claires sur le fonctionnement de LetsHyre pour les employeurs et les professionnels.",
+    "contact": {
+      "title": "Encore une question ?",
+      "body": "Envoyez-la-nous et l'équipe vous répondra.",
+      "cta": "Nous contacter",
+      "note": "nous les lisons toutes"
+    },
+    "items": [
+      {
+        "q": "Qu'est-ce que LetsHyre ?",
+        "a": "LetsHyre est une plateforme de recrutement IA pour professionnels expérimentés. Les candidats sont vérifiés par l'analyse de CV par IA, des entretiens IA adaptés au poste et des grilles de compétences, et les employeurs les trouvent grâce au matching IA."
+      },
+      {
+        "q": "À qui s'adresse LetsHyre ?",
+        "a": "Aux employeurs et équipes RH qui recrutent des profils expérimentés, et aux professionnels expérimentés, y compris en préavis, qui veulent plus qu'un CV pour parler d'eux."
+      },
+      {
+        "q": "Qu'obtient un employeur en débloquant un candidat ?",
+        "a": "Le CV, les coordonnées, les documents, la grille de compétences IA et l'enregistrement complet de l'entretien IA. Vous contactez ensuite le candidat et poursuivez le recrutement en dehors de LetsHyre."
+      },
+      {
+        "q": "Comment les candidats sont-ils évalués ?",
+        "a": "Chaque candidat passe des entretiens IA adaptés au poste, et chaque entretien produit une grille de compétences. LetsHyre la combine à l'analyse du CV pour afficher un score LetsHyre, une adéquation au poste et une adéquation des compétences pour chaque rôle."
+      },
+      {
+        "q": "Combien d'entretiens un candidat peut-il passer ?",
+        "a": "Jusqu'à trois, pour trois postes différents ou plusieurs tentatives pour le même poste."
+      },
+      {
+        "q": "Pourquoi les profils durent-ils 90 jours ?",
+        "a": "Pour que les employeurs voient des personnes en recherche active. Un profil reste dans le vivier de talents pendant 90 jours après l'entretien."
+      },
+      {
+        "q": "LetsHyre est-il payant pour les professionnels ?",
+        "a": "Non. LetsHyre est gratuit pour les professionnels. Les employeurs paient en crédits uniquement lorsqu'ils débloquent un candidat."
+      },
+      {
+        "q": "Toutes les fonctionnalités sont-elles disponibles ?",
+        "a": "LetsHyre est en accès anticipé et de nouvelles fonctionnalités arrivent. Si quelque chose vous manque, contactez-nous et dites-nous ce dont vous avez besoin."
+      }
+    ]
+  },
+  "final": {
+    "title": "Commencez avec des candidats pertinents,",
+    "accent": "pas avec une pile de CV.",
+    "description": "Et si c'est vous qu'on recrute, allez au-delà de votre CV.",
+    "photo": "Cinq professionnels illustrés côte à côte, reliés par un réseau de lignes.",
+    "notice": {
+      "title": "Votre dossier a été débloqué",
+      "body": "Une équipe de recrutement d'Orbit Commerce a débloqué votre dossier pour le poste d'ingénieure frontend senior.",
+      "time": "À l'instant"
+    }
+  },
   "chatbot": {
     "title": "Assistant LetsHyre",
     "subtitle": "Posez-nous vos questions",
