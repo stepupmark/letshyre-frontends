@@ -14,7 +14,8 @@ import { expectAccessible } from "./axe.ts"
 
 function setup(
   locales: readonly Locale[] = ["en", "hi", "ar"],
-  current: Locale = "en"
+  current: Locale = "en",
+  closeOnScroll = false
 ) {
   const onSelect = vi.fn()
   render(
@@ -26,6 +27,7 @@ function setup(
       emptyLabel="No language found"
       hrefFor={(l) => `/${l}/pricing`}
       onSelect={onSelect}
+      closeOnScroll={closeOnScroll}
     />
   )
   return { onSelect, user: userEvent.setup() }
@@ -81,7 +83,7 @@ describe("LanguageSwitcher", () => {
   })
 
   it("closes when the page scrolls but not when the list does", async () => {
-    const { user } = setup(LOCALES)
+    const { user } = setup(LOCALES, "en", true)
     await user.click(screen.getByRole("button", { name: /Change language/ }))
     const dialog = await screen.findByRole("dialog")
 

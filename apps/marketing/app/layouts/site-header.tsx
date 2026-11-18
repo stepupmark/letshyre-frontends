@@ -138,9 +138,13 @@ export function SiteHeader() {
           <div className="flex flex-1 basis-0 items-center justify-end gap-1 sm:gap-2">
             <SiteLanguageSwitcher
               display="code"
+              closeOnScroll
               className="hidden sm:inline-flex lg:hidden"
             />
-            <SiteLanguageSwitcher className="hidden lg:inline-flex" />
+            <SiteLanguageSwitcher
+              closeOnScroll
+              className="hidden lg:inline-flex"
+            />
             <a
               href={APP_LINKS.getStarted}
               className={buttonVariants({

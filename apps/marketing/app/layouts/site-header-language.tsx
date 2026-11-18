@@ -8,7 +8,7 @@ import { env } from "@/lib/env"
 
 type Props = Pick<
   ComponentProps<typeof LanguageSwitcher>,
-  "display" | "side" | "className"
+  "display" | "side" | "closeOnScroll" | "className"
 >
 
 /** Lists the locales this page is published in, or every home when there's no page (the 404). */

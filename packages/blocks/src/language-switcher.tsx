@@ -35,6 +35,8 @@ interface LanguageSwitcherProps {
   /** `code` shows "EN" instead of the full name, for tight headers. */
   display?: "name" | "code"
   side?: "top" | "bottom"
+  /** For a trigger in a sticky header, where the open list would lag behind the page. */
+  closeOnScroll?: boolean
   className?: string
 }
 
@@ -53,6 +55,7 @@ export function LanguageSwitcher({
   onSelect,
   display = "name",
   side = "bottom",
+  closeOnScroll = false,
   className,
 }: LanguageSwitcherProps) {
   const [open, setOpen] = useState(false)
@@ -75,7 +78,7 @@ export function LanguageSwitcher({
   }
 
   useEffect(() => {
-    if (!open) return
+    if (!open || !closeOnScroll) return
     // window scroll fires for the page only, so scrolling the list keeps it open
     const close = () => {
       setOpen(false)
@@ -85,7 +88,7 @@ export function LanguageSwitcher({
     return () => {
       window.removeEventListener("scroll", close)
     }
-  }, [open])
+  }, [open, closeOnScroll])
 
   return (
     <Popover
