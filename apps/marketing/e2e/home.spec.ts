@@ -103,7 +103,9 @@ test("plays through every scene without errors", async ({ page }) => {
     await page.mouse.wheel(0, 600)
   }
   await page.waitForLoadState("networkidle")
-  for (const photo of await page.locator("picture img").all()) {
+  // phones hide the hero photo, and a hidden lazy image never loads
+  const photos = page.locator("picture img").filter({ visible: true })
+  for (const photo of await photos.all()) {
     await expect
       .poll(() => photo.evaluate((img: HTMLImageElement) => img.naturalWidth))
       .toBeGreaterThan(0)

@@ -1,11 +1,11 @@
 import { axe, expect, test } from "./fixtures.ts"
 
 const PAGES = [
-  { url: "/en/employers", nav: "For employers" },
-  { url: "/en/candidates", nav: "For candidates" },
+  { url: "/en/employers", eyebrow: "For employers" },
+  { url: "/en/candidates", eyebrow: "For professionals" },
 ]
 
-for (const { url, nav } of PAGES) {
+for (const { url, eyebrow } of PAGES) {
   test(`${url} passes axe and ships FAQ JSON-LD in English only`, async ({
     page,
     request,
@@ -17,7 +17,7 @@ for (const { url, nav } of PAGES) {
     const html = await (await request.get(url)).text()
     expect(html).toContain('"@type":"FAQPage"')
     expect(html).not.toMatch(/hreflang="hi"/)
-    expect(html).toContain(`>${nav}<`)
+    expect(html).toContain(`>${eyebrow}<`)
   })
 }
 

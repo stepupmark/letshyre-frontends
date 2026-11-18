@@ -36,10 +36,14 @@ for (const { path, lang, alternates } of SITEMAP) {
     const text = await page.locator("body").innerText()
     expect(KEYS.filter((key) => text.includes(key))).toEqual([])
 
-    await page
+    const trigger = page
       .getByRole("contentinfo")
       .locator("button:has(> span[lang])")
-      .click()
+    // a click before hydration does nothing, and long posts hydrate late on a busy machine
+    await expect(async () => {
+      if (!(await page.getByRole("dialog").isVisible())) await trigger.click()
+      await expect(page.getByRole("dialog")).toBeVisible({ timeout: 1000 })
+    }).toPass()
     const items = page.getByRole("dialog").getByRole("link")
     await expect(items).toHaveCount(alternates.size)
     for (const [lang, href] of alternates) {
