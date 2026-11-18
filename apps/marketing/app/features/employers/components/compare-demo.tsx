@@ -35,7 +35,13 @@ export function CompareDemo() {
       />
 
       <figure className="reveal min-w-0">
-        <div className="overflow-x-auto rounded-3xl border bg-card">
+        <div
+          role="region"
+          aria-labelledby="compare-title"
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- keyboard users scroll the table on narrow screens
+          tabIndex={0}
+          className="overflow-x-auto rounded-3xl border bg-card outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+        >
           <table className="w-full min-w-md text-sm">
             <thead>
               <tr className="border-b">
