@@ -6,6 +6,7 @@
   "exports": {
     "./assistant-store": "./src/assistant-store.ts",
     "./route-focus": "./src/route-focus.ts",
+    "./stale-chunks": "./src/stale-chunks.ts",
     "./*": "./src/*.tsx"
   },
   "scripts": {
