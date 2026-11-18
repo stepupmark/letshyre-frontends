@@ -46,6 +46,8 @@ jobs:
 
       - run: pnpm ui:drift
 
+      - run: pnpm test:edge
+
       - run: pnpm knip
 
       - name: Playwright browsers
