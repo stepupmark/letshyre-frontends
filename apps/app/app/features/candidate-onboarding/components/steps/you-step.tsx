@@ -5,7 +5,7 @@ import { Controller, type UseFormReturn } from "react-hook-form"
 import { DateField } from "@/components/date-field"
 import { TextField } from "@/components/text-field"
 import { parseIsoDate, startOfToday, yearsBetween } from "@/lib/date"
-import { checkOnBlur } from "@/lib/forms"
+import { afterPress, checkOnBlur } from "@/lib/forms"
 import { useFieldValid } from "@/hooks/use-field-valid"
 
 import { GENDERS, type Values } from "../../schemas/onboarding-form.schema"
@@ -61,7 +61,8 @@ export function YouStep({ form }: { form: UseFormReturn<Values> }) {
               onChange={field.onChange}
               onBlur={() => {
                 field.onBlur()
-                if (form.getValues("dob")) void form.trigger("dob")
+                if (form.getValues("dob"))
+                  afterPress(() => void form.trigger("dob"))
               }}
             />
           )}

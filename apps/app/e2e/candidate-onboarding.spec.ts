@@ -127,9 +127,6 @@ test("a new candidate sets up their profile from photo to resume review", async 
   ).toBeVisible()
   await page.getByLabel("Expected pay (LPA)").fill("16")
   await page.getByLabel("Desired pay (LPA)").fill("18")
-  // leaving the field clears its error and moves Continue, so settle that before clicking
-  await page.getByLabel("Desired pay (LPA)").blur()
-  await expect(page.getByText("Enter an amount in lakhs")).toHaveCount(0)
   await page.getByRole("button", { name: "Continue" }).click()
 
   await page.getByLabel("Notice period proof", { exact: true }).click()

@@ -16,7 +16,7 @@ import { DateField } from "@/components/date-field"
 import { TextField } from "@/components/text-field"
 import { parseIsoDate, relativeDay } from "@/lib/date"
 import { formatPercent } from "@/lib/format"
-import { checkOnBlur } from "@/lib/forms"
+import { afterPress, checkOnBlur } from "@/lib/forms"
 import { industriesQuery } from "@/lib/industries"
 import { useFieldValid } from "@/hooks/use-field-valid"
 
@@ -74,7 +74,7 @@ export function WorkStep({ form }: { form: UseFormReturn<Values> }) {
                 onBlur={() => {
                   field.onBlur()
                   if (form.getValues("last_day_of_working"))
-                    void form.trigger("last_day_of_working")
+                    afterPress(() => void form.trigger("last_day_of_working"))
                 }}
               />
             )
