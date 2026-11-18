@@ -17,7 +17,11 @@ export function Stepper({
   const roomy = titles.length <= 4
 
   return (
-    <ol aria-label={t("wizard.progress")} className="flex items-center gap-2">
+    // contained so the titles' natural width never widens the page on a phone
+    <ol
+      aria-label={t("wizard.progress")}
+      className="flex items-center gap-1 contain-inline-size sm:gap-2"
+    >
       {titles.map((title, i) => {
         const done = i < current
         const active = i === current
@@ -65,7 +69,7 @@ export function Stepper({
             aria-current={active ? "step" : undefined}
             title={roomy || active ? undefined : title}
             className={cn(
-              "flex min-w-0 items-center gap-2",
+              "flex min-w-0 items-center gap-1 sm:gap-2",
               // the current title takes the room it needs, then truncates
               roomy || !active ? "not-last:flex-1" : "flex-auto"
             )}
@@ -86,7 +90,7 @@ export function Stepper({
             {i < titles.length - 1 && (
               <span
                 aria-hidden="true"
-                className="relative h-px min-w-4 flex-1 overflow-hidden bg-border"
+                className="relative h-px min-w-2 flex-1 overflow-hidden bg-border sm:min-w-4"
               >
                 <span
                   className={cn(
