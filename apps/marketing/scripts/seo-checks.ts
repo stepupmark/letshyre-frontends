@@ -20,7 +20,7 @@ export interface SeoPage {
 
 interface Options {
   site: string
-  production: boolean
+  indexable: boolean
   fileExists: (publicPath: string) => boolean
   /** Whether a path is a prerendered page, rather than a redirect or a 404. */
   isPage: (path: string) => boolean
@@ -69,7 +69,7 @@ function jsonLdProblems(blocks: string[]): string[] {
 /** Problems with one prerendered page, empty when it's fine. */
 export function checkPage(
   { lang, path, locales, html }: SeoPage,
-  { site, production, fileExists, isPage }: Options
+  { site, indexable, fileExists, isPage }: Options
 ): string[] {
   const problems: string[] = []
   const fail = (ok: boolean, message: string) => {
@@ -128,10 +128,10 @@ export function checkPage(
 
   const noindex = /<meta name="robots" content="[^"]*noindex/.test(html)
   fail(
-    noindex !== production,
-    production
-      ? "production page is noindex"
-      : "non-production page is indexable"
+    noindex !== indexable,
+    indexable
+      ? "indexable page is noindex"
+      : "noindex build has an indexable page"
   )
 
   return problems

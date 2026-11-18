@@ -14,6 +14,7 @@ env:
   VITE_SITE_URL: http://localhost:4173
   VITE_APP_URL: http://localhost:5175
   VITE_API_BASE_URL: https://api.letshyre.ai
+  VITE_INDEXABLE: "false"
 
 jobs:
   verify:

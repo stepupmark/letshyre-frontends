@@ -24,6 +24,9 @@ export const initialScriptsOf = (html: string): string[] => [
   ),
 ]
 
+// the host carries each policy in S3 object metadata, which holds 2 KB in all (docs/deployment.md)
+export const POLICY_MAX = 1800
+
 const sha256 = (script: string) =>
   `'sha256-${createHash("sha256").update(script, "utf8").digest("base64")}'`
 

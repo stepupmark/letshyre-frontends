@@ -3,7 +3,7 @@
 const BLOG = "/blogs"
 
 export const postPath = (slug: string) => `${BLOG}/${slug}`
-export const topicsPath = `${BLOG}/topics`
+const topicsPath = `${BLOG}/topics`
 export const topicPath = (topic: string) => `${topicsPath}/${topic}`
 export const tagPath = (tag: string) => `${BLOG}/tags/${tag}`
 export const glossaryPath = `${BLOG}/glossary`

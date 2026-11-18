@@ -1,7 +1,6 @@
 import { readFileSync } from "node:fs"
 
 import { expect, test } from "./fixtures.ts"
-import { MOVED_PATHS } from "../app/lib/pages.ts"
 import { jsonLdOf, metaOf, titleOf } from "../scripts/html.ts"
 import { SEO_ALLOWLIST } from "./seo-allowlist.ts"
 import { SITEMAP } from "./sitemap.ts"
@@ -21,6 +20,12 @@ const baseline = JSON.parse(
   )
 ) as { pages: BaselinePage[] }
 
+// pages the old site served under another path, compared under their new one
+const RENAMED: Readonly<Record<string, string>> = {
+  "/policy": "/privacy-policy",
+  "/how-it-works-interview": "/interview-guide",
+}
+
 const before = new Map(
   baseline.pages.map((p) => [new URL(p.url).pathname.replace(/\/$/, ""), p])
 )
@@ -33,7 +38,7 @@ test.describe("seo baseline", () => {
   test.skip(({ browserName }) => browserName !== "chromium", "static HTML")
 
   for (const { path: url } of SITEMAP) {
-    const path = Object.entries(MOVED_PATHS).reduce(
+    const path = Object.entries(RENAMED).reduce(
       (p, [from, to]) => p.replace(new RegExp(`${to}$`), from),
       url
     )

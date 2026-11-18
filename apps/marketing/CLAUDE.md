@@ -21,7 +21,8 @@ Check new layouts in English and Arabic.
 ## URLs and SEO
 
 The live site's URLs are a contract: docs/baseline/url-contract.md lists them and the e2e tests hold
-the build to it. Don't rename or drop a URL without a redirect and an update to the contract.
+the build to it. The site launches without redirects; once it's public, don't rename or drop a URL
+without an update to the contract.
 docs/baseline/ holds the SEO baseline the build is compared against, and
 docs/launch-checklist.md the steps before going live.
 

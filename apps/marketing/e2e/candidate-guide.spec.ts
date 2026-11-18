@@ -26,12 +26,11 @@ test("ships FAQ JSON-LD and is published in English only", async ({
   expect(html).not.toMatch(/hreflang="hi"/)
 })
 
-test("replaces the interview guide only where it's published", async ({
+test("retires the interview guide only where it's replaced", async ({
   request,
 }) => {
   const en = await request.get("/en/interview-guide", { maxRedirects: 0 })
-  expect(en.status()).toBe(301)
-  expect(en.headers().location).toBe(URL)
+  expect(en.status()).toBe(404)
 
   const hi = await request.get("/hi/interview-guide", { maxRedirects: 0 })
   expect(hi.status()).toBe(200)
