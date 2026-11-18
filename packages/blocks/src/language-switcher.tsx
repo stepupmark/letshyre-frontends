@@ -4,7 +4,7 @@ import {
   LanguagesIcon,
   SearchIcon,
 } from "lucide-react"
-import { type KeyboardEvent, useRef, useState } from "react"
+import { type KeyboardEvent, useEffect, useRef, useState } from "react"
 import {
   LOCALE_ENGLISH_NAMES,
   LOCALE_NAMES,
@@ -55,6 +55,7 @@ export function LanguageSwitcher({
   side = "bottom",
   className,
 }: LanguageSwitcherProps) {
+  const [open, setOpen] = useState(false)
   const [query, setQuery] = useState("")
   const searchRef = useRef<HTMLInputElement>(null)
   const searchable = locales.length > SEARCH_FROM
@@ -73,10 +74,25 @@ export function LanguageSwitcher({
     links[Math.max(0, at + step)]?.focus()
   }
 
+  useEffect(() => {
+    if (!open) return
+    // window scroll fires for the page only, so scrolling the list keeps it open
+    const close = () => {
+      setOpen(false)
+      setQuery("")
+    }
+    window.addEventListener("scroll", close, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", close)
+    }
+  }, [open])
+
   return (
     <Popover
-      onOpenChange={(open) => {
-        if (!open) setQuery("")
+      open={open}
+      onOpenChange={(next) => {
+        setOpen(next)
+        if (!next) setQuery("")
       }}
     >
       <PopoverTrigger

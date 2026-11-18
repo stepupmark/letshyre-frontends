@@ -1,4 +1,10 @@
-import { render, screen, within } from "@testing-library/react"
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  within,
+} from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { LOCALES, type Locale } from "@workspace/i18n"
 import { describe, expect, it, vi } from "vitest"
@@ -72,5 +78,19 @@ describe("LanguageSwitcher", () => {
     })
     await user.click(hindi)
     expect(onSelect).toHaveBeenCalledWith("hi")
+  })
+
+  it("closes when the page scrolls but not when the list does", async () => {
+    const { user } = setup(LOCALES)
+    await user.click(screen.getByRole("button", { name: /Change language/ }))
+    const dialog = await screen.findByRole("dialog")
+
+    fireEvent.scroll(within(dialog).getByRole("list"))
+    expect(dialog).toBeInTheDocument()
+
+    fireEvent.scroll(window)
+    await waitFor(() => {
+      expect(screen.queryByRole("dialog")).not.toBeInTheDocument()
+    })
   })
 })

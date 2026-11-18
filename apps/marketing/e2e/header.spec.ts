@@ -39,6 +39,31 @@ test.describe("desktop header", () => {
     )
   })
 
+  test("the language menu scrolls on its own and closes when the page scrolls", async ({
+    page,
+  }) => {
+    await page.goto("/en")
+    await page
+      .getByRole("banner")
+      .getByRole("button", { name: /language/i })
+      .click()
+    const languages = page.getByRole("dialog")
+    const list = languages.getByRole("list")
+    await expect(languages).toBeVisible()
+
+    await list.hover()
+    await page.mouse.wheel(0, 200)
+    await expect
+      .poll(() => list.evaluate((el) => el.scrollTop))
+      .toBeGreaterThan(0)
+    await expect(languages).toBeVisible()
+    expect(await page.evaluate(() => window.scrollY)).toBe(0)
+
+    await page.mouse.move(640, 600)
+    await page.mouse.wheel(0, 400)
+    await expect(languages).toBeHidden()
+  })
+
   test("product menu works from the keyboard", async ({ page }) => {
     await page.goto("/en/pricing")
     const trigger = page
