@@ -138,13 +138,21 @@ test("an employer copies a starter, rewords it and invites two candidates", asyn
   )
   await tab.getByRole("button", { name: "Continue" }).click()
 
-  await expect(tab.getByRole("button", { name: /Jane Doe/ })).toHaveAttribute(
-    "aria-current",
-    "true"
-  )
   const email = tab.frameLocator('iframe[title="Email preview"]')
+  // phones page through recipients; wider screens list them beside the preview
+  const phone = test.info().project.name === "mobile"
+  if (!phone) {
+    await expect(tab.getByRole("button", { name: /Jane Doe/ })).toHaveAttribute(
+      "aria-current",
+      "true"
+    )
+  }
   await expect(email.getByText("Hi Jane Doe,")).toBeVisible()
-  await tab.getByRole("button", { name: /John Smith/ }).click()
+  await (
+    phone
+      ? tab.getByRole("button", { name: "Next candidate" })
+      : tab.getByRole("button", { name: /John Smith/ })
+  ).click()
   await expect(email.getByText("Hi John Smith,")).toBeVisible()
 
   // a failed send keeps everyone on the review step to try again

@@ -74,7 +74,7 @@ test("an employer reads an unlocked candidate and shares their scorecard", async
   })
 })
 
-test("an employer picks three unlocked candidates, compares them and drops one", async ({
+test("an employer compares three unlocked candidates and drops one", async ({
   page,
   api,
   signInAs,
@@ -114,20 +114,8 @@ test("an employer picks three unlocked candidates, compares them and drops one",
     ),
   })
   await signInAs("employer")
-  await page.goto("/employer/candidates/unlocked")
-
-  const bar = page.getByRole("toolbar", { name: "Bulk actions" })
-  for (const p of people) {
-    await page
-      .getByRole("checkbox", { name: `Select ${p.candidate_name}` })
-      .filter({ visible: true })
-      .check()
-    if (p.id === 31) await expect(bar.getByText("Pick one more")).toBeVisible()
-  }
-  await axe(page)
-  await bar.getByRole("link", { name: "Compare" }).click()
-
-  await expect(page).toHaveURL("/employer/candidates/compare?ids=31,32,33")
+  // picking from the unlocked list is hidden for now; the compare page still opens by URL
+  await page.goto("/employer/candidates/compare?ids=31,32,33")
   const table = page.getByRole("table", { name: "Compare candidates" })
   await expect(
     table.getByRole("link", { name: "Rahul Verma", exact: true })

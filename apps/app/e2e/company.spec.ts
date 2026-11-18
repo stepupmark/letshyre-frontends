@@ -111,4 +111,6 @@ test("a revoked shared link can be turned back on with Undo", async ({
   await expect
     .poll(() => sent)
     .toEqual([{ is_active: false }, { is_active: true }])
+  // on a phone the toast's Undo sits over the credits link, whose tooltip axe would then flag
+  await page.mouse.move(0, page.viewportSize()?.height ?? 0)
 })

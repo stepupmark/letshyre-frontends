@@ -34,15 +34,13 @@ test("a new employer gets a setup checklist they can hide", async ({
       reply(route, {
         data: { active_jobs: 0, in_active_jobs: 0, total_applications: 0 },
       }),
-    "GET /user/v1/employer_team_members/": (route) =>
-      reply(route, { data: { count: 0 } }),
     "GET /payment/v1/employer_credits/": (route) =>
       reply(route, { data: { available_credits: 2 } }),
   })
   await signInAs("employer")
   await page.goto("/employer/dashboard")
 
-  await expect(page.getByText("2 of 4 done")).toBeVisible()
+  await expect(page.getByText("2 of 3 done")).toBeVisible()
   await expect(page.getByText("Credits are running low")).toBeVisible()
   const attention = page.getByRole("region", { name: "Needs your attention" })
   await expect(
@@ -68,13 +66,11 @@ test("the checklist shows a company still under review, not done", async ({
       ...profile,
       data: { ...data, kyc: { ...data.kyc, kyc_status: "Pending" } },
     },
-    "GET /user/v1/employer_team_members/": (route) =>
-      reply(route, { data: { count: 0 } }),
   })
   await signInAs("employer")
   await page.goto("/employer/dashboard")
 
-  await expect(page.getByText("2 of 4 done")).toBeVisible()
+  await expect(page.getByText("2 of 3 done")).toBeVisible()
   await expect(
     page.getByText("Under review. We'll email you when it's checked.")
   ).toBeVisible()

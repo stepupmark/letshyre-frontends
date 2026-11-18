@@ -47,10 +47,12 @@ test("an employer reviews their company and edits it, with a guard on leaving", 
   const linkedin = page.getByLabel("LinkedIn page")
   await linkedin.fill("https://example.com/acme")
   await expect(page.getByText("Unsaved changes")).toBeVisible()
-  await save.click()
+  // leaving the field shows its error and moves the bar, so settle that before saving
+  await linkedin.blur()
   await expect(
     page.getByText("Enter a linkedin.com link, or leave it empty.")
   ).toBeVisible()
+  await save.click()
   await expect(linkedin).toBeFocused()
   await axe(page)
 

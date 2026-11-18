@@ -61,7 +61,10 @@ test("sign out ends the session on the server and here", async ({
   await page.evaluate(() => {
     const seen = window as unknown as { sawPrompt: () => Promise<boolean> }
     new MutationObserver(() => {
-      if (document.querySelector('[role="dialog"]')) void seen.sawPrompt()
+      // the mobile sidebar is a dialog too, so look for the sign-in prompt by its title
+      const dialogs = [...document.querySelectorAll('[role="dialog"]')]
+      if (dialogs.some((d) => d.textContent.includes("Sign in to continue")))
+        void seen.sawPrompt()
     }).observe(document.body, { childList: true, subtree: true })
   })
   // A slow home page is when the old dashboard used to show the prompt.
