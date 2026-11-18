@@ -248,12 +248,7 @@
     "title": "Commencez avec des candidats pertinents,",
     "accent": "pas avec une pile de CV.",
     "description": "Et si c'est vous qu'on recrute, allez au-delà de votre CV.",
-    "photo": "Cinq professionnels illustrés côte à côte, reliés par un réseau de lignes.",
-    "notice": {
-      "title": "Votre dossier a été débloqué",
-      "body": "Une équipe de recrutement d'Orbit Commerce a débloqué votre dossier pour le poste d'ingénieure frontend senior.",
-      "time": "À l'instant"
-    }
+    "photo": "Cinq professionnels illustrés côte à côte, reliés par un réseau de lignes."
   },
   "chatbot": {
     "title": "Assistant LetsHyre",

@@ -248,12 +248,7 @@
     "title": "Start with relevant candidates,",
     "accent": "not a pile of resumes.",
     "description": "And if you're the one being hired, go beyond your resume.",
-    "photo": "Five illustrated professionals stand side by side, linked by a network of lines.",
-    "notice": {
-      "title": "Your file was unlocked",
-      "body": "A hiring team at Orbit Commerce unlocked your file for the Senior frontend engineer role.",
-      "time": "Just now"
-    }
+    "photo": "Five illustrated professionals stand side by side, linked by a network of lines."
   },
   "chatbot": {
     "title": "LetsHyre Assistant",

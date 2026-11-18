@@ -248,12 +248,7 @@
     "title": "Empieza con candidatos relevantes,",
     "accent": "no con un montón de CV.",
     "description": "Y si eres tú a quien contratan, ve más allá de tu CV.",
-    "photo": "Cinco profesionales ilustrados de pie, uno al lado del otro, unidos por una red de líneas.",
-    "notice": {
-      "title": "Tu perfil fue desbloqueado",
-      "body": "Un equipo de contratación de Orbit Commerce desbloqueó tu perfil para el puesto de ingeniera frontend sénior.",
-      "time": "Ahora mismo"
-    }
+    "photo": "Cinco profesionales ilustrados de pie, uno al lado del otro, unidos por una red de líneas."
   },
   "chatbot": {
     "title": "Asistente LetsHyre",
