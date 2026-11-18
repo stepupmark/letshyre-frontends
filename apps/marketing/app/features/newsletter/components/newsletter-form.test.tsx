@@ -1,7 +1,7 @@
 import { screen, waitFor } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { subscribe } from "@workspace/api/public"
-import { beforeEach, describe, expect, it, vi } from "vitest"
+import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest"
 
 import { renderPage } from "../../../../test/render"
 import { NewsletterForm } from "./newsletter-form"
@@ -10,6 +10,11 @@ vi.mock("@workspace/api/public", () => ({ subscribe: vi.fn() }))
 
 const subscribeMock = vi.mocked(subscribe)
 
+// load the lazy form up front so a busy test run doesn't outlast waitFor
+beforeAll(async () => {
+  await import("./subscribe-form")
+})
+
 beforeEach(() => {
   subscribeMock.mockReset()
 })
@@ -17,7 +22,6 @@ beforeEach(() => {
 const setup = async () => {
   const user = userEvent.setup()
   renderPage(<NewsletterForm />)
-  // the button stays disabled until the lazy form logic has loaded
   await waitFor(() => {
     expect(screen.getByRole("button", { name: "Subscribe" })).toBeEnabled()
   })
