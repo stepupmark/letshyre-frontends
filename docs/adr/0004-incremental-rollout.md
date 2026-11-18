@@ -1,6 +1,7 @@
 # 0004 · Incremental rollout on `letshyre.ai`; subdomain later
 
-Accepted at gate 5. Amended 2026-10-05: the subdomain move is deferred.
+Superseded by [0022](./0022-hosting-s3-cloudfront.md). Accepted at gate 5; amended 2026-10-05: the
+subdomain move is deferred.
 
 ## Context
 
