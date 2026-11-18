@@ -128,6 +128,10 @@ describe("marketing-router", () => {
       assert.equal(answer(uri), `rewrite ${uri}`, uri)
     }
   })
+
+  it("never serves the deploy manifest", () => {
+    assert.equal(answer("/_deploy/manifest.json"), "rewrite /_deploy")
+  })
 })
 
 describe("spa-router", () => {
@@ -139,6 +143,7 @@ describe("spa-router", () => {
     assert.equal(answer("/"), "rewrite /index.html")
     assert.equal(answer("/employer/jobs/42"), "rewrite /index.html")
     assert.equal(answer("/shared-scorecard/abc.def"), "rewrite /index.html")
+    assert.equal(answer("/_deploy/manifest.json"), "rewrite /index.html")
   })
 
   it("never answers a missing asset with the shell", () => {

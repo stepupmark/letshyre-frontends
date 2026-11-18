@@ -32,7 +32,9 @@ little. DNS is at Hostinger; nobody on the team runs infrastructure-as-code.
 - **Beta is production content that search engines skip**: `VITE_ENV=production` with
   `VITE_INDEXABLE=false`, plus an `X-Robots-Tag` from the edge.
 - AWS is set up in the console; function code lives in the repo and distribution configs are
-  committed as snapshots. GitHub Actions deploys through OIDC roles, one per app.
+  committed as snapshots. GitHub Actions deploys through OIDC roles, one per app
+  (`.github/workflows/deploy.yml`). The nightly build ADR 0021 needs is a schedule in that
+  workflow, rebuilding the live commit, in place of `scheduled-build.yml` and its deploy hook.
 
 docs/deployment.md has the full plan, the request-by-request behaviour and the runbook for the
 move to `letshyre.ai`.

@@ -3,7 +3,9 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [main, "migration/**"]
+    branches: ["migration/**"]
+  # main runs this from deploy.yml, before it deploys
+  workflow_call:
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -48,6 +50,8 @@ jobs:
       - run: pnpm ui:drift
 
       - run: pnpm test:edge
+
+      - run: pnpm test:deploy
 
       - run: pnpm knip
 

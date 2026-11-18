@@ -51,6 +51,11 @@ function handler(event) {
   if (uri.length > 1 && uri.endsWith("/")) {
     return redirect(uri.slice(0, -1) + query)
   }
+  // the deploy's manifest lives in the bucket; a key that can't exist makes it S3's 404 page
+  if (uri.startsWith("/_deploy/")) {
+    request.uri = "/_deploy"
+    return request
+  }
   if (FILE.test(uri)) return request
   if (LOCALE_PAGE.test(uri)) request.uri = uri + "/index.html"
   return request

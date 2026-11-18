@@ -296,7 +296,7 @@ page handling.
 | 17  | `public/images/home/SOURCES.md`, internal notes on where photos came from, is copied into the build and would be public.                          | Move it out of `public/` (next to the photos' source files, or `docs/`). The deploy script also refuses `.md` files.                                                                                                                                                                                                                                                                                               |
 | 18  | The resource routes prerender stray `feed.xml.data` and `search.json.data` files nobody requests.                                                 | The deploy script skips `*.xml.data` and `*.json.data`.                                                                                                                                                                                                                                                                                                                                                            |
 | 19  | **The nightly deploy skips CI.** If it built `main` HEAD, a commit that failed CI on push would still reach production at 00:30 UTC.              | The nightly run rebuilds the SHA of the last successful `marketing-production` deployment, never HEAD. Only the build date changes, so only the future-dated posts are new.                                                                                                                                                                                                                                        |
-| 20  | A nightly deploy with nothing new would still re-upload every file and flush the edge cache every day.                                            | The deploy script compares each file's MD5 with the S3 ETag (files upload in one part, so the ETag is the MD5), uploads only changed files, and skips the invalidation when nothing changed.                                                                                                                                                                                                                       |
+| 20  | A nightly deploy with nothing new would still re-upload every file and flush the edge cache every day.                                            | The deploy keeps each file's fingerprint (bytes, type, cache header, CSP) in a manifest in the bucket, uploads only files whose fingerprint changed, and skips the invalidation when nothing changed.                                                                                                                                                                                                              |
 | 21  | `aws s3 sync` guesses content types and leaves out charsets; an unknown extension silently becomes `application/octet-stream`.                    | One table in the deploy script: `.html` `text/html; charset=utf-8`, `.data` `text/x-script`, `.txt` `text/plain; charset=utf-8`, `sitemap.xml` `application/xml; charset=utf-8`, `feed.xml` `application/rss+xml; charset=utf-8`, `.json`, `.webmanifest` `application/manifest+json`, `.avif`, `.webp`, `.jpg`, `.png`, `.svg`, `.ico`, `.woff2`, `.csv`, `.docx`, `.xlsx`. Any other extension fails the deploy. |
 | 22  | `pnpm --filter marketing indexnow` reads URLs from the sitemap. Run on beta, it would announce `beta.letshyre.ai` URLs to Bing.                   | The script exits unless `VITE_INDEXABLE=true`; the workflow only calls it after the move to the apex.                                                                                                                                                                                                                                                                                                              |
 | 23  | The 404 page is English for every locale: CloudFront allows one error page per status code.                                                       | Accepted. The page already links to the locales that are published. A localised 404 would need a prerendered `/:lang/404` and a smarter router; not worth it now.                                                                                                                                                                                                                                                  |
@@ -317,17 +317,29 @@ page handling.
 **Deploy order** (one script, `tooling/deploy/deploy.ts`, using AWS SDK v3; `aws s3 sync` can't
 set per-file metadata or content types correctly):
 
-1. Upload `/assets/*` that aren't in the bucket yet. Hashed names mean same name = same bytes.
-2. Upload public files, then `.data`, then HTML with CSP metadata, each only when its MD5
-   differs from the S3 ETag (problem 20). Skip the marketing root `index.html`, `*.md`,
+Every deploy ends by writing `_deploy/manifest.json` to the bucket: the app it belongs to, the
+commit, each file's fingerprint, and when each retired asset left the build. The routers keep it
+from being served (`/_deploy/*` is a 404 on marketing and the shell on the SPAs).
+
+1. Read the bucket listing and the last manifest. Stop if the manifest names another app, or if
+   the bucket has files but no manifest (`--adopt` takes such a bucket over), so a mistyped
+   `BUCKET` can't wipe the wrong site.
+2. Upload in four phases, each finished before the next starts: `/assets/*` that aren't in the
+   bucket yet (hashed names: same name, same bytes), public files, `.data`, then HTML with CSP
+   metadata. Within a phase 16 uploads run at once, and after a failure no new one starts. Files
+   other than assets go up only when their fingerprint differs from the manifest's (problem 20).
+   The fingerprint covers the bytes, content type, cache header and CSP metadata, so switching
+   `CSP_MODE` re-uploads every page. Skip the marketing root `index.html`, `*.md`,
    `*.xml.data` and `*.json.data` (problems 17, 18). Content types come from one table
    (problem 21).
 3. Delete objects that left the build, **except** `/assets/*`.
 4. If anything changed, invalidate `/*` and wait for it to finish. One wildcard path counts as
    one invalidation path.
-5. Prune `/assets/*` objects that aren't in this build **and** were last modified more than 30
-   days ago.
-6. Smoke test (section 7.3).
+5. Prune assets that left the build more than 30 days ago, counted from the deploy that dropped
+   them, not from their upload.
+6. Write the new manifest. A deploy that fails before this leaves the old one, so the next deploy
+   re-uploads whatever might be half done.
+7. Smoke test (section 7.3).
 
 A tab that loaded the previous release keeps finding its chunks for 30 days, and problem 6's
 reload covers anything older.
@@ -340,27 +352,36 @@ the rollback path).
 
 ## 6. Environment per app
 
-GitHub environments `marketing-production`, `app-production` and `admin-production`, each limited
-to the `main` branch. Values are **variables**, not secrets: `VITE_*` is public and inlined into the
-bundle anyway.
+Values are GitHub **variables**, not secrets: `VITE_*` is public and inlined into the bundle
+anyway, and the deploy uses OIDC, so there are no keys to store.
 
-| Variable                    | marketing (beta phase)          | app                        | admin                 |
-| --------------------------- | ------------------------------- | -------------------------- | --------------------- |
-| `VITE_ENV`                  | `production`                    | `production`               | —                     |
-| `VITE_INDEXABLE`            | `false` (new, problem 3)        | —                          | —                     |
-| `VITE_SITE_URL`             | `https://beta.letshyre.ai`      | `https://beta.letshyre.ai` | —                     |
-| `VITE_APP_URL`              | `https://app.letshyre.ai`       | `https://app.letshyre.ai`  | —                     |
-| `VITE_API_BASE_URL`         | `https://api.letshyre.ai`       | same                       | same                  |
-| `VITE_COOKIE_DOMAIN`        | `.letshyre.ai`                  | `.letshyre.ai`             | —                     |
-| `VITE_META_PIXEL_ID`        | the pixel id                    | —                          | —                     |
-| `CSP_MODE`                  | `report-only`                   | `report-only`              | `report-only`         |
-| `AWS_ROLE_ARN`              | deploy role for marketing       | deploy role for app        | deploy role for admin |
-| `BUCKET`, `DISTRIBUTION_ID` | per app                         | per app                    | per app               |
-| `SITE_HOST`                 | `beta.letshyre.ai`              | `app.letshyre.ai`          | `adm.letshyre.ai`     |
-| `INDEXNOW_KEY`              | only after the move to the apex | —                          | —                     |
+**Repository variables**, read by the build job. Every app's build gets the same set and its
+`env.schema.ts` reads what it needs. They aren't environment variables because a job that names an
+environment records a deployment there, and the build isn't one.
 
-Each app's `env.schema.ts` and `.env.example` gain `VITE_INDEXABLE` as CLAUDE.md requires, and
-`ci.yml` gets the matching test value.
+| Variable             | Beta phase                 | After the move to the apex |
+| -------------------- | -------------------------- | -------------------------- |
+| `VITE_ENV`           | `production`               | same                       |
+| `VITE_INDEXABLE`     | `false` (problem 3)        | `true`                     |
+| `VITE_SITE_URL`      | `https://beta.letshyre.ai` | `https://letshyre.ai`      |
+| `VITE_APP_URL`       | `https://app.letshyre.ai`  | same                       |
+| `VITE_API_BASE_URL`  | `https://api.letshyre.ai`  | same                       |
+| `VITE_COOKIE_DOMAIN` | `.letshyre.ai`             | same                       |
+| `VITE_META_PIXEL_ID` | the pixel id               | same                       |
+| `INDEXNOW_KEY`       | empty                      | 8–128 letters, digits, `-` |
+
+**Environment variables**, on `marketing-production`, `app-production` and `admin-production`,
+each limited to the `main` branch. Only the deploy job uses them.
+
+| Variable            | marketing                               | app                     | admin                     |
+| ------------------- | --------------------------------------- | ----------------------- | ------------------------- |
+| `AWS_ROLE_ARN`      | `gha-deploy-marketing`'s ARN            | `gha-deploy-app`'s ARN  | `gha-deploy-admin`'s ARN  |
+| `AWS_REGION`        | the buckets' region, e.g. `ap-south-1`  | same                    | same                      |
+| `BUCKET`            | `letshyre-prod-web-marketing`           | `letshyre-prod-web-app` | `letshyre-prod-web-admin` |
+| `DISTRIBUTION_ID`   | its distribution                        | its distribution        | its distribution          |
+| `CLOUDFRONT_DOMAIN` | its `dXXXX.cloudfront.net` (smoke test) | same                    | same                      |
+| `SITE_HOST`         | `beta.letshyre.ai`, later `letshyre.ai` | `app.letshyre.ai`       | `adm.letshyre.ai`         |
+| `CSP_MODE`          | `report-only`, later `enforce`          | same                    | same                      |
 
 **Outside this repo**, before the first real sign-in:
 
@@ -402,97 +423,73 @@ Role permissions, scoped to that app's resources only:
 The deploy job can't change functions, distributions or WAF. Those change by hand in the console
 (section 9), and the change is committed to `infra/cloudfront/` in the same sitting.
 
-### 7.2 Workflow shape: `.github/workflows/deploy.yml`
+### 7.2 The workflow: `.github/workflows/deploy.yml`
 
-```yaml
-name: Deploy
+| Job      | Runs                                                                                                                                                                                                                        |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `verify` | On push and manual runs: the whole of `ci.yml` (lint, typecheck, build, tests, e2e, Lighthouse), called as a reusable workflow.                                                                                             |
+| `plan`   | `tooling/deploy/affected.ts` picks the apps and the commit (below).                                                                                                                                                         |
+| `build`  | One job per app: `pnpm turbo run build --filter=<app>` with the repository variables; uploads `build/client` and `csp.map` as an artifact kept 30 days.                                                                     |
+| `deploy` | One app at a time, in its `<app>-production` environment: assumes the app's role, records a deployment, runs `tooling/deploy/deploy.ts`, marks the record live, then `smoke.ts`; on an indexable marketing build, IndexNow. |
 
-on:
-  push:
-    branches: [main]
-  schedule:
-    - cron: "30 0 * * *" # marketing only: future-dated posts go live (ADR 0021)
-  workflow_dispatch:
-    inputs:
-      app: { type: choice, options: [all, marketing, app, admin], default: all }
+What `plan` picks:
 
-permissions: {}
+- **Push to `main`**: each app whose files changed since the commit of its last successful
+  deployment, at the pushed commit. Shared code, the lockfile
+  and the deploy tooling count for every app; docs, `infra/cloudfront` and CI-only changes don't.
+  An app with no deployment yet always deploys. Comparing with the deployed commit, not `HEAD~1`,
+  means a failed deploy is caught up by the next push.
+- **Nightly (00:30 UTC)**: marketing only, rebuilt at the commit that's live, so future-dated
+  posts appear and nothing that skipped CI ships (problem 19). If the build is unchanged, the
+  deploy uploads nothing and skips the invalidation.
+- **Run workflow** (manual): the chosen app, or all three, at the chosen branch's commit, after
+  `verify` passes.
 
-concurrency:
-  group: deploy-production
-  cancel-in-progress: false # never stop a deploy halfway; queue the next one
+**Deployment records.** The deploy job's environment has `deployment: false`: GitHub's own record
+would carry the workflow's commit, which for a nightly rebuild or a rollback isn't the one that
+shipped. `tooling/deploy/record.ts` writes the record instead, with the built commit. It's marked
+success as soon as the files are live, before the smoke test, because that's what's serving; a
+failed smoke test fails the run without pretending the old build is back. A failed upload marks
+it failure, and the next deploy compares with the last success.
 
-jobs:
-  verify:
-    if: github.event_name == 'push'
-    uses: ./.github/workflows/ci.yml # ci.yml gains `workflow_call` and drops `push: main`
+Rules the workflow keeps:
 
-  plan:
-    # which apps changed since the SHA of each environment's last successful GitHub deployment
-    # (GitHub records it per environment); dispatch → the input
-    # schedule → marketing only, at the SHA of its last successful deployment, not HEAD (problem 19)
-    # (turbo run build --filter=<app>...[<deployed sha>] --dry=json)
-
-  build:
-    needs: [verify, plan]
-    strategy: { matrix: { app: ${{ fromJSON(needs.plan.outputs.apps) }} } }
-    environment: ${{ matrix.app }}-production # for its vars; no AWS access here
-    steps:
-      # checkout with fetch-depth: 0 (sitemap lastmod reads git log)
-      # pnpm + node from .nvmrc, pnpm install --frozen-lockfile
-      # pnpm turbo run build --filter=${{ matrix.app }} --concurrency=1
-      # upload-artifact build/ (retention-days: 30): this exact artifact is what deploys
-
-  deploy:
-    needs: build
-    strategy: { matrix: …same apps…, max-parallel: 1 }
-    environment:
-      name: ${{ matrix.app }}-production
-      url: https://${{ vars.SITE_HOST }}
-    permissions: { id-token: write, contents: read }
-    steps:
-      # download-artifact
-      # aws-actions/configure-aws-credentials with role-to-assume: ${{ vars.AWS_ROLE_ARN }}
-      # node tooling/deploy/deploy.ts --app ${{ matrix.app }}
-      # smoke tests (7.3)
-      # marketing on the apex only: pnpm --filter marketing indexnow
-```
-
-Rules for this workflow:
-
-- **Pin every action to a full commit SHA**, with the version in a comment, and let Dependabot
-  update them. This job can write to production; a re-tagged action must not be able to.
-- `permissions: {}` at the top; only the deploy job gets `id-token: write`.
-- Build once, deploy that artifact. Rolling back re-runs an old deploy, never a rebuild (7.4).
-- `if: github.event_name == 'push'` on `verify`, so the nightly marketing rebuild doesn't run the
-  whole suite again. Its postbuild checks still run.
-- The `plan` job compares against the **deployed** SHA, not `HEAD~1`. A failed or skipped deploy
-  is then caught up by the next push.
+- Every action is pinned to a full commit SHA with its version in a comment; Dependabot
+  (`.github/dependabot.yml`) proposes updates after a 14-day cooldown.
+- `permissions: {}` at the top; each job asks for what it uses, and only `deploy` gets
+  `id-token: write` and `deployments: write`.
+- The deploy job installs only the root's dependencies (`--filter letshyre`), which is all the
+  deploy scripts use.
+- One deploy at a time (`concurrency: deploy-production`, never cancelled halfway).
+- The build has no AWS access; the deploy never builds. What ships is the artifact.
+- If any app's build fails, nothing deploys.
 
 ### 7.3 Smoke tests after every deploy
 
-Reuse the Playwright specs that already describe the contract: make `playwright.config.ts` accept
-`BASE_URL` and skip the local web server when it's set, then run `url-contract.spec.ts` and
-`seo.spec.ts` against the live host. Add header checks:
+`tooling/deploy/smoke.ts` checks the live host through CloudFront with plain `fetch`, so the
+deploy job needs no browser. The same rules are already covered before merge: the e2e suite runs
+them against `serve.ts`, and `pnpm test:edge` runs the edge functions themselves. The smoke test
+checks the wiring:
 
-- `/` → 301 `/en`; `/en/pricing/` → 301 `/en/pricing`; `/en/pricing/index.html` → 301
-- `/en/pricing` → 200, `text/html`, CSP header present, HSTS present, no `x-amz-*`
-- `/en.data` → 200 `text/x-script`; `/en/blogs/feed.xml` → 200
-- `/en/does-not-exist`, `/en/policy`, `/assets/nope.js` and a page in a locale it doesn't ship in
-  → 404
-- `https://<dist>.cloudfront.net/en` → 301 to the canonical host
-- app and admin: `/employer/dashboard` → 200 HTML with `X-Robots-Tag`; `/assets/nope.js` → 404
-  and not HTML
-- beta: `robots.txt` is `Disallow: /`, `X-Robots-Tag: noindex` on every page
+- marketing: `/`, `/?utm_source=…`, `/index.html`, `/en/` and `/en/pricing/index.html` 301 to
+  the right place, query kept; `/en` and `/en/pricing` are 200 HTML with the CSP header,
+  HSTS, `nosniff` and `X-Frame-Options`, plus `X-Robots-Tag: noindex` exactly when the build's
+  `robots.txt` is closed; `/en.data` is `text/x-script`; `/en/does-not-exist` is a 404 that still
+  carries the CSP; `/en/policy` and an English-only page in `hi` are 404s
+- app and admin: `/`, a dashboard route and `/shared-scorecard/abc.def` get the shell with
+  `X-Robots-Tag: noindex`
+- all: a real asset is `immutable`; a missing asset is a 404 and, on the SPAs, not HTML; no
+  `x-amz-meta-*` header leaks; `https://<CLOUDFRONT_DOMAIN>/en` 301s to the canonical host
 
 A failing smoke test fails the run and notifies; it doesn't roll back on its own.
 
 ### 7.4 Rollback
 
 - **Normal**: open the last good run of `Deploy` in GitHub and re-run its `deploy` job. It
-  redeploys that run's artifact (kept 30 days) in about two minutes.
-- During a marketing incident, disable the schedule first (`gh workflow disable deploy.yml`), or
-  the nightly build puts `main` back.
+  redeploys that run's artifact (kept 30 days) in about two minutes and records that run's
+  commit as live.
+- The nightly build rebuilds whatever commit is live, so a rollback stays rolled back until the
+  next push to `main` deploys.
 - **Edge function**: CloudFront keeps the previous function code; re-publish the last committed
   version from `infra/cloudfront/`.
 - **Last resort**: S3 object versions (30 days).
@@ -602,19 +599,28 @@ redirects to HTTPS, and `https://dXXXX.cloudfront.net` 301s to `adm.letshyre.ai`
 2. **IAM** → Roles → create `gha-deploy-marketing`, `gha-deploy-app`, `gha-deploy-admin`: trusted
    entity "Web identity", that provider. Then edit each trust policy so `sub` is that app's
    environment (section 7.1), and attach an inline policy with only the permissions in 7.1.
-3. **GitHub** → Settings → Environments: create `marketing-production`, `app-production`,
-   `admin-production`, each with deployment branch `main` only and the variables from section 6.
-   Optionally require a reviewer on marketing while it's beta.
-4. **GitHub** → branch protection on `main`: CI required, no direct pushes.
+3. **GitHub** → Settings → Secrets and variables → Actions → Variables: add the repository
+   variables from section 6.
+4. **GitHub** → Settings → Environments: create `marketing-production`, `app-production`,
+   `admin-production`, each with deployment branch `main` only and its environment variables
+   from section 6. Optionally require a reviewer on marketing while it's beta.
+5. **GitHub** → branch protection on `main`: the CI check required on pull requests, no direct
+   pushes. On `main` itself CI runs inside the Deploy workflow, before anything ships.
 
-### Phase 4: deploy tooling and workflow (repo)
+### Phase 4: deploy tooling and workflow (repo) — done 2026-11-18
 
-1. `tooling/deploy/deploy.ts`: the steps in section 5, with a `--dry-run` that prints the plan,
-   and unit tests for what's easy to get wrong: the content-type table, the skip list, the ETag
-   comparison and the 30-day asset prune.
-2. `.github/workflows/deploy.yml` (section 7.2); `ci.yml` becomes callable; delete
-   `scheduled-build.yml`, and `MARKETING_DEPLOY_HOOK` from the checklist.
-3. Smoke-test mode for Playwright (section 7.3).
+1. `tooling/deploy/`: `deploy.ts` (section 5), `smoke.ts` (7.3) and `affected.ts` (7.2), with
+   `pnpm test:deploy` covering the content types, cache headers, skip list, upload phases,
+   fingerprint comparison, asset retirement and prune, the bucket check, stopping after a failed
+   upload, and which changes deploy which app. `record.ts` writes the deployment records.
+2. `.github/workflows/deploy.yml` (section 7.2); `ci.yml` is callable and no longer runs on
+   pushes to `main`; `scheduled-build.yml` is gone.
+
+Try it locally against a build, with no AWS access:
+
+```bash
+node tooling/deploy/deploy.ts --app marketing --dry-run --offline
+```
 
 ### Phase 5: first deploy
 
