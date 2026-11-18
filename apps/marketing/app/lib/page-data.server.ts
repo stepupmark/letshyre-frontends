@@ -56,6 +56,15 @@ function readersOf(
   return "both"
 }
 
+/** Pages published in each locale, for the 404, which one file serves in every language. */
+export function publishedByLocale() {
+  const ids = Object.keys(PAGES) as PageId[]
+  const byLocale: Partial<Record<Locale, PageId[]>> = {}
+  for (const id of ids)
+    for (const lang of readyLocales(id)) (byLocale[lang] ??= []).push(id)
+  return byLocale
+}
+
 /** Runs at build time only. */
 export function layoutData(lang: string | undefined) {
   if (!isLocale(lang)) throw notFound()

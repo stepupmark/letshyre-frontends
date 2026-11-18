@@ -1,5 +1,8 @@
 import { NotFoundPage } from "@/layouts/not-found-page"
+import { publishedByLocale } from "@/lib/page-data.server"
 import seo from "@/locales/en/seo.json"
+
+export const loader = () => ({ publishedByLocale: publishedByLocale() })
 
 // prerendered to /404/index.html, which the server serves for every unknown URL
 export const meta = () => [
