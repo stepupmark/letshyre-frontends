@@ -11,10 +11,10 @@ import {
 import { Spinner } from "@workspace/ui/components/spinner"
 import { useId, useMemo } from "react"
 import { Controller, useForm } from "react-hook-form"
-import { Link } from "react-router"
 import { z } from "zod"
 
 import { locale } from "@/lib/i18n"
+import { sitePage } from "@/lib/site"
 
 import { type AuthErrorKey } from "../../lib/errors"
 import { usePasswordSubmit } from "../../mutations/use-password-submit"
@@ -97,18 +97,18 @@ export function PasswordStage({
                     i18nKey="register.terms"
                     components={{
                       terms: (
-                        <Link
-                          to={`/${locale}/terms`}
-                          reloadDocument
+                        <a
+                          href={sitePage(locale, "/terms")}
                           target="_blank"
+                          rel="noreferrer"
                           className="underline underline-offset-4"
                         />
                       ),
                       privacy: (
-                        <Link
-                          to={`/${locale}/privacy-policy`}
-                          reloadDocument
+                        <a
+                          href={sitePage(locale, "/privacy-policy")}
                           target="_blank"
+                          rel="noreferrer"
                           className="underline underline-offset-4"
                         />
                       ),
