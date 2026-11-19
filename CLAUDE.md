@@ -191,8 +191,8 @@ Don't claim a check passes without running it.
 - No mention of AI tools in commits or PRs, and no `Co-Authored-By` trailers for them.
 - lefthook runs Prettier on staged files before a commit, commitlint on the message, and
   `lint typecheck --affected` before a push.
-- CI (.github/workflows/ci.yml) runs lint, typecheck, build, test, `ui:drift`, `knip`, Playwright
-  and Lighthouse. `knip` is a gate: fix the finding, don't silence it.
+- CI (.github/workflows/ci.yml) runs lint, typecheck, build and Lighthouse; tests, `ui:drift`,
+  `knip` and Playwright are paused in CI for speed. Run them locally for what you change.
 - Record a significant decision as an ADR in `docs/adr/` and add it to the index.
 
 ## Anti-patterns

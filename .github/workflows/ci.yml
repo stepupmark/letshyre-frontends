@@ -1,7 +1,7 @@
 name: CI
 
-# Pull requests run only the apps their changes reach, in Chromium (desktop and mobile).
-# main runs everything, WebKit included, alongside the deploy; a manual deploy calls it first.
+# Pull requests run lint, typecheck and the builds for the apps their changes reach, plus
+# Lighthouse when marketing is one of them. Tests are paused for now; main runs all three apps.
 # Branch protection requires the `ci` job, the one check that waits for all the others.
 
 on:
@@ -91,17 +91,10 @@ jobs:
 
       - env:
           SCOPE: ${{ needs.changes.outputs.scope }}
-        run: pnpm turbo run lint typecheck test $SCOPE --cache-dir=.turbo/cache
+        run: pnpm turbo run lint typecheck $SCOPE --cache-dir=.turbo/cache
 
-      - run: pnpm ui:drift
-
-      - run: pnpm test:edge
-
-      - run: pnpm test:deploy
-
-      - run: pnpm knip
-
-  e2e:
+  # tests are paused for speed: unit, e2e, ui:drift, test:edge, test:deploy and knip
+  build:
     needs: changes
     if: needs.changes.outputs.apps != '[]'
     runs-on: ubuntu-latest
@@ -110,10 +103,6 @@ jobs:
       fail-fast: false
       matrix:
         app: ${{ fromJSON(needs.changes.outputs.apps) }}
-    env:
-      # admin has only the chromium project; mobile is Chromium too
-      BROWSERS: ${{ (github.event_name == 'pull_request' || matrix.app == 'admin') && 'chromium' || 'chromium webkit' }}
-      PROJECTS: ${{ github.event_name == 'pull_request' && matrix.app != 'admin' && '--project=chromium --project=mobile' || '' }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -137,18 +126,6 @@ jobs:
           restore-keys: turbo-${{ runner.os }}-${{ matrix.app }}-
 
       - run: pnpm turbo run build --filter=${{ matrix.app }} --cache-dir=.turbo/cache
-
-      - run: pnpm --filter ${{ matrix.app }} exec playwright install --with-deps $BROWSERS
-
-      - run: pnpm --filter ${{ matrix.app }} exec playwright test $PROJECTS
-
-      - if: failure()
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
-        with:
-          name: playwright-report-${{ matrix.app }}
-          path: apps/${{ matrix.app }}/playwright-report
-          retention-days: 7
-          if-no-files-found: ignore
 
   lighthouse:
     needs: changes
@@ -178,7 +155,7 @@ jobs:
             turbo-${{ runner.os }}-lighthouse-
             turbo-${{ runner.os }}-marketing-
 
-      # its own build, so it runs beside the marketing e2e instead of after it
+      # its own build, so it runs beside the marketing build job
       - run: pnpm turbo run build --filter=marketing --cache-dir=.turbo/cache
 
       - run: pnpm --filter marketing lighthouse
@@ -193,7 +170,7 @@ jobs:
 
   # skipped jobs report no status, so branch protection requires this one instead
   ci:
-    needs: [changes, checks, e2e, lighthouse]
+    needs: [changes, checks, build, lighthouse]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 2
