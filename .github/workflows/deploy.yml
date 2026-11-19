@@ -114,7 +114,8 @@ jobs:
 
   deploy:
     needs: [plan, build]
-    if: ${{ !cancelled() && needs.build.result == 'success' }}
+    # one app's failed build mustn't hold back the others; its own deploy fails at the download
+    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.build.result != 'skipped' }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
