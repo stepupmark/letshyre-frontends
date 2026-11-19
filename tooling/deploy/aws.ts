@@ -1,5 +1,4 @@
-// The S3 and CloudFront calls a deploy makes. Credentials and region come from the environment
-// (the GitHub job assumes its role through OIDC).
+// The S3 and CloudFront calls a deploy makes. Credentials and region come from the environment.
 
 import { readFileSync } from "node:fs"
 import {

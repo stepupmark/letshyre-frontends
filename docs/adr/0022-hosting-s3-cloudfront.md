@@ -9,7 +9,7 @@ Accepted 2026-11-18. Supersedes [0004](./0004-incremental-rollout.md). Changes h
 Hosting was undecided (ADR 0012, url-contract §5), and 0004 had the app sharing `letshyre.ai`
 with marketing until the backend offered a refresh cookie. The sites aren't public yet: the old
 `letshyre.ai` has fewer than 10 users, so nobody depends on old URLs and a one-time re-login costs
-little. DNS is at Hostinger; nobody on the team runs infrastructure-as-code.
+little. DNS is at GoDaddy; nobody on the team runs infrastructure-as-code.
 
 ## Decision
 
@@ -32,7 +32,7 @@ little. DNS is at Hostinger; nobody on the team runs infrastructure-as-code.
 - **Beta is production content that search engines skip**: `VITE_ENV=production` with
   `VITE_INDEXABLE=false`, plus an `X-Robots-Tag` from the edge.
 - AWS is set up in the console; function code lives in the repo and distribution configs are
-  committed as snapshots. GitHub Actions deploys through OIDC roles, one per app
+  committed as snapshots. GitHub Actions deploys with one IAM user's access keys, limited to the three sites
   (`.github/workflows/deploy.yml`). The nightly build ADR 0021 needs is a schedule in that
   workflow, rebuilding the live commit, in place of `scheduled-build.yml` and its deploy hook.
 

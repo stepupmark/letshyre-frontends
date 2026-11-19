@@ -13,7 +13,7 @@ yet; section 9 is the order to do it in. The four open decisions were settled on
 `main` deploys production. Staging is out of scope for now, but every setting below is per GitHub
 environment, so adding staging later means adding environments, not changing the design.
 
-DNS stays at Hostinger. AWS resources are set up in the console; the edge function code and a
+DNS stays where it is, at GoDaddy (`ns29/ns30.domaincontrol.com`). AWS resources are set up in the console; the edge function code and a
 snapshot of each distribution's config live in the repo under `infra/cloudfront/`, so changes
 still get reviewed.
 
@@ -79,7 +79,7 @@ The only redirects left are URL normalisation: HTTP → HTTPS, wrong host → ca
 ## 3. Target architecture
 
 ```
-                      Hostinger DNS (letshyre.ai zone)
+                      GoDaddy DNS (letshyre.ai zone)
             beta.letshyre.ai      app.letshyre.ai      adm.letshyre.ai     CNAME → dXXXX.cloudfront.net
                   │                     │                     │            (apex later: ALIAS)
                   ▼                     ▼                     ▼
@@ -95,7 +95,7 @@ The only redirects left are URL normalisation: HTTP → HTTPS, wrong host → ca
           S3 marketing           S3 app                 S3 admin       private, versioned,
                                                                        SSE-S3, no website hosting
                  ▲                     ▲                     ▲
-                 └──────── GitHub Actions (OIDC → one IAM role per app) ───────┘
+                 └──────── GitHub Actions (access keys of one IAM user)──────────┘
 ```
 
 **Why three distributions, not one**: separate headers, functions, caches, WAF rules and
@@ -116,7 +116,7 @@ pay-as-you-go and on the flat-rate plans. Recommended:
 | Distribution | Plan                      | Why                                                                    |
 | ------------ | ------------------------- | ---------------------------------------------------------------------- |
 | marketing    | Flat-rate **Pro**, $15/mo | Access logs (not in Free) for watching 404s after launch; 10M requests |
-| app          | Flat-rate **Free**        | Under 10 users today; 1M requests. Move to Pro when you need its logs  |
+| app          | **Pay-as-you-go**         | No request cap; WAF and logs are optional and billed separately        |
 | admin        | Flat-rate **Free**        | A few staff users                                                      |
 
 On flat-rate plans a function can't be shared between distributions, so each distribution gets its
@@ -353,7 +353,7 @@ the rollback path).
 ## 6. Environment per app
 
 Values are GitHub **variables**, not secrets: `VITE_*` is public and inlined into the bundle
-anyway, and the deploy uses OIDC, so there are no keys to store.
+anyway. The only secrets are the deploy user's AWS access key pair (section 7.1).
 
 **Repository variables**, read by the build job. Every app's build gets the same set and its
 `env.schema.ts` reads what it needs. They aren't environment variables because a job that names an
@@ -375,7 +375,6 @@ each limited to the `main` branch. Only the deploy job uses them.
 
 | Variable            | marketing                               | app                     | admin                     |
 | ------------------- | --------------------------------------- | ----------------------- | ------------------------- |
-| `AWS_ROLE_ARN`      | `gha-deploy-marketing`'s ARN            | `gha-deploy-app`'s ARN  | `gha-deploy-admin`'s ARN  |
 | `AWS_REGION`        | the buckets' region, e.g. `ap-south-1`  | same                    | same                      |
 | `BUCKET`            | `letshyre-prod-web-marketing`           | `letshyre-prod-web-app` | `letshyre-prod-web-admin` |
 | `DISTRIBUTION_ID`   | its distribution                        | its distribution        | its distribution          |
@@ -400,37 +399,33 @@ each limited to the `main` branch. Only the deploy job uses them.
 
 ## 7. GitHub Actions
 
-### 7.1 Trust: OIDC, no access keys
+### 7.1 Trust: one IAM user for the three apps
 
-One IAM OIDC provider for `token.actions.githubusercontent.com`, and one role per app that only its
-environment can assume:
+The deploy job signs in as the IAM user `gha-deploy`, which has no console access. Its access key
+pair is stored as the repository secrets `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. Chosen
+over OIDC roles to keep the IAM setup to one user and one policy. The costs: the key is long-lived,
+so rotate it every 90 days (create the new key, update the secrets, run a deploy, then delete the
+old key) and delete it at once if it leaks; and a leaked key reaches all three sites. A wrong
+`BUCKET` variable isn't stopped by IAM, but `deploy.ts` still refuses a bucket whose manifest
+names another app.
 
-```json
-"Condition": {
-  "StringEquals": {
-    "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-    "token.actions.githubusercontent.com:sub": "repo:<owner>/<repo>:environment:marketing-production"
-  }
-}
-```
+User permissions, an inline policy scoped to the three sites only:
 
-Role permissions, scoped to that app's resources only:
-
-- `s3:ListBucket` on the bucket, and `s3:GetObject`, `s3:PutObject`, `s3:DeleteObject` on
-  `bucket/*`
-- `cloudfront:CreateInvalidation`, `cloudfront:GetInvalidation` on the distribution
+- `s3:ListBucket` on the three buckets, and `s3:GetObject`, `s3:PutObject`, `s3:DeleteObject` on
+  `bucket/*` for each
+- `cloudfront:CreateInvalidation`, `cloudfront:GetInvalidation` on the three distributions
 
 The deploy job can't change functions, distributions or WAF. Those change by hand in the console
 (section 9), and the change is committed to `infra/cloudfront/` in the same sitting.
 
 ### 7.2 The workflow: `.github/workflows/deploy.yml`
 
-| Job      | Runs                                                                                                                                                                                                                        |
-| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `verify` | On push and manual runs: the whole of `ci.yml` (lint, typecheck, build, tests, e2e, Lighthouse), called as a reusable workflow.                                                                                             |
-| `plan`   | `tooling/deploy/affected.ts` picks the apps and the commit (below).                                                                                                                                                         |
-| `build`  | One job per app: `pnpm turbo run build --filter=<app>` with the repository variables; uploads `build/client` and `csp.map` as an artifact kept 30 days.                                                                     |
-| `deploy` | One app at a time, in its `<app>-production` environment: assumes the app's role, records a deployment, runs `tooling/deploy/deploy.ts`, marks the record live, then `smoke.ts`; on an indexable marketing build, IndexNow. |
+| Job      | Runs                                                                                                                                                                                                                 |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `verify` | On push and manual runs: the whole of `ci.yml` (lint, typecheck, build, tests, e2e, Lighthouse), called as a reusable workflow.                                                                                      |
+| `plan`   | `tooling/deploy/affected.ts` picks the apps and the commit (below).                                                                                                                                                  |
+| `build`  | One job per app: `pnpm turbo run build --filter=<app>` with the repository variables; uploads `build/client` and `csp.map` as an artifact kept 30 days.                                                              |
+| `deploy` | One app at a time, in its `<app>-production` environment: signs in to AWS, records a deployment, runs `tooling/deploy/deploy.ts`, marks the record live, then `smoke.ts`; on an indexable marketing build, IndexNow. |
 
 What `plan` picks:
 
@@ -457,7 +452,7 @@ Rules the workflow keeps:
 - Every action is pinned to a full commit SHA with its version in a comment; Dependabot
   (`.github/dependabot.yml`) proposes updates after a 14-day cooldown.
 - `permissions: {}` at the top; each job asks for what it uses, and only `deploy` gets
-  `id-token: write` and `deployments: write`.
+  `deployments: write`.
 - The deploy job installs only the root's dependencies (`--filter letshyre`), which is all the
   deploy scripts use.
 - One deploy at a time (`concurrency: deploy-production`, never cancelled halfway).
@@ -547,22 +542,27 @@ settings don't change.
 4. **ACM**: switch the console region to **US East (N. Virginia)** (CloudFront only reads
    certificates from there). Request a public certificate for `letshyre.ai` and
    `*.letshyre.ai`, DNS validation. ACM shows one CNAME name/value pair (shared by both names).
-5. **Hostinger** → hPanel → Domains → `letshyre.ai` → DNS / Nameservers:
-   - If the zone has any **CAA** records, add `0 issue "amazon.com"`, or ACM can't issue.
-   - Add the validation **CNAME**. Hostinger appends the domain, so the name is only the part
-     before `.letshyre.ai` (for example `_3f2a…`), and the target is ACM's value.
-6. Wait for the certificate to show **Issued** (minutes to an hour; Hostinger can take longer).
+5. **GoDaddy** (the zone's nameservers are `ns29/ns30.domaincontrol.com`) → Domain → DNS → DNS
+   Records:
+   - If the zone has any **CAA** records, add `0 issue "amazon.com"`, or ACM can't issue (it had
+     none on 19 Nov 2026).
+   - Add the validation **CNAME**. GoDaddy appends the domain, so the name is only the part
+     before `.letshyre.ai` (for example `_3f2a…`), and the target is ACM's value. Keep it: ACM
+     renews with it.
+6. Wait for the certificate to show **Issued** (usually 5–30 minutes).
 
 Check: each bucket's Permissions tab says "Bucket and objects not public"; the certificate is
 Issued.
 
 ### Phase 2: CloudFront (console), once per app
 
-Do admin first, then app, then marketing.
+Do app first, then admin, then marketing. The steps below use admin's names; for the app, swap
+in `app-router`, `app-headers`, `app.letshyre.ai` and the app bucket.
 
 1. **Functions** → Create function `admin-router`, runtime `cloudfront-js-2.0`. Paste
-   `infra/cloudfront/admin-router.js`, run every case from its test file in the **Test** tab, then
-   **Publish**. Same for `admin-headers`.
+   `infra/cloudfront/spa-router.js` with `HOST` set to `"adm.letshyre.ai"`, try a few cases in the
+   **Test** tab, then **Publish**. Same for `admin-headers` from `infra/cloudfront/headers.js`,
+   unchanged. Marketing uses `marketing-router.js`.
 2. **Distributions** → Create:
    - Origin: choose the bucket from the list (the REST endpoint, not `s3-website`). Origin access:
      **Origin access control settings** → create a new OAC (sign requests).
@@ -572,14 +572,14 @@ Do admin first, then app, then marketing.
    - Settings: alternate domain `adm.letshyre.ai`; the ACM certificate; security policy
      TLSv1.2_2021 or newer; HTTP/2 and HTTP/3; IPv6 on; default root object empty.
    - Security: enable WAF and add the rules from section 4.5.
-   - Pricing plan: Free for app and admin, Pro for marketing (section 3).
+   - Pricing plan: pay-as-you-go for app, Free for admin, Pro for marketing (section 3).
 3. After creating, copy the bucket policy the console offers into the bucket's policy, then add
    `s3:ListBucket` on the bucket ARN (section 4.1).
 4. **Behaviors** → add `/assets/*`: same origin, CachingOptimized, viewer response =
    `admin-headers`, no viewer request function.
 5. Marketing only: **Error pages** → 404 → `/404/index.html`, response code 404, error caching TTL
    60; repeat for 403. Marketing logging: standard logs → CloudWatch Logs, 90-day retention.
-6. **Hostinger**: add a CNAME `adm` → the distribution's `dXXXX.cloudfront.net`. Same later for
+6. **GoDaddy DNS**: add a CNAME `adm` → the distribution's `dXXXX.cloudfront.net`. Same later for
    `app` and `beta`. Remove any existing record with the same name first.
 7. **Snapshot**: commit the configuration so it can be reviewed and rebuilt:
 
@@ -594,16 +594,16 @@ redirects to HTTPS, and `https://dXXXX.cloudfront.net` 301s to `adm.letshyre.ai`
 
 ### Phase 3: GitHub and IAM (console)
 
-1. **IAM** → Identity providers → add an OpenID Connect provider: URL
-   `https://token.actions.githubusercontent.com`, audience `sts.amazonaws.com`.
-2. **IAM** → Roles → create `gha-deploy-marketing`, `gha-deploy-app`, `gha-deploy-admin`: trusted
-   entity "Web identity", that provider. Then edit each trust policy so `sub` is that app's
-   environment (section 7.1), and attach an inline policy with only the permissions in 7.1.
-3. **GitHub** → Settings → Secrets and variables → Actions → Variables: add the repository
-   variables from section 6.
+1. **IAM** → Users → create `gha-deploy`, without console access. Attach an inline policy with
+   only the permissions in 7.1. Add each distribution's ID to it as the distribution is created.
+2. **IAM** → `gha-deploy` → Security credentials → Create access key → "Third-party service".
+   Copy the pair straight into step 3; it is shown once.
+3. **GitHub** → Settings → Secrets and variables → Actions: the repository secrets
+   `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` from step 2, and the repository variables from
+   section 6.
 4. **GitHub** → Settings → Environments: create `marketing-production`, `app-production`,
-   `admin-production`, each with deployment branch `main` only and its environment variables
-   from section 6. Optionally require a reviewer on marketing while it's beta.
+   `admin-production`, each with deployment branch `main` only and its environment variables from
+   section 6. Optionally require a reviewer on marketing while it's beta.
 5. **GitHub** → branch protection on `main`: the CI check required on pull requests, no direct
    pushes. On `main` itself CI runs inside the Deploy workflow, before anything ships.
 
@@ -673,5 +673,8 @@ Rollback for this runbook: restore the old apex records in Hostinger, re-publish
 - **B. Admin access: API auth only.** No IP allowlist; a WAF rate-based rule only.
 - **C. Infrastructure: AWS console**, no IaC tool. Function code and distribution config
   snapshots are committed under `infra/cloudfront/`.
-- **D. DNS: stays at Hostinger.** CNAMEs for `beta`, `app`, `adm` and `www`; the apex uses
-  Hostinger's ALIAS (a CNAME on `@`). Route 53 isn't used.
+- **D. DNS: stays put, Route 53 isn't used.** The zone turned out to be at GoDaddy, not
+  Hostinger. CNAMEs for `beta`, `app`, `adm` and `www` work there. **Open:** GoDaddy can't put a
+  CNAME or ALIAS on the apex, so the cutover runbook (section 10, written for Hostinger's ALIAS)
+  needs the zone moved to a provider that can, or the apex redirected to `www`. Decide before the
+  move to `letshyre.ai`.

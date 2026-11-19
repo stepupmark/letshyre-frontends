@@ -117,14 +117,13 @@ jobs:
     timeout-minutes: 30
     permissions:
       contents: read
-      id-token: write
       deployments: write
     strategy:
       fail-fast: false
       max-parallel: 1
       matrix:
         include: ${{ fromJSON(needs.plan.outputs.include) }}
-    # for its variables and the OIDC subject; record.ts writes the deployment with the built commit
+    # for its variables; record.ts writes the deployment with the built commit
     environment:
       name: ${{ matrix.app }}-production
       deployment: false
@@ -159,7 +158,9 @@ jobs:
 
       - uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
         with:
-          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          # one IAM user, limited to the three buckets and distributions (docs/deployment.md §7.1)
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ vars.AWS_REGION }}
 
       - name: Record the deploy
