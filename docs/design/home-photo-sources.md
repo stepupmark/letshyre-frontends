@@ -1,4 +1,7 @@
-# Sources
+# Home page photo sources
+
+The photos themselves are in `apps/marketing/public/images/home/`; this file lives outside
+`public/` so it never ships with the site.
 
 | Photo              | Used in                                 | Source                           |
 | ------------------ | --------------------------------------- | -------------------------------- |

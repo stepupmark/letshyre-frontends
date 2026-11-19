@@ -51,20 +51,12 @@ export const PAGES = {
   },
 } as const satisfies Record<string, PageDef>
 
-/** Old page paths and where they live now. Hosts answer these with a 301. */
-export const MOVED_PATHS: Readonly<Record<string, string>> = {
-  "/policy": "/privacy-policy",
-  "/how-it-works-interview": "/interview-guide",
-  "/home-v2": "",
-  "/home-v3": "",
-}
-
 export type PageId = keyof typeof PAGES
 
 /** Pages up for review: noindex and left out of the sitemap. */
 export const PREVIEW_PAGES: readonly PageId[] = []
 
-/** A retiring page and its successor. Each locale moves over (301) once the successor ships there. */
+/** A retiring page and its successor. Each locale drops the old page once the successor ships there. */
 export const REPLACED_BY: Partial<Record<PageId, PageId>> = {
   interview: "candidateGuide",
 }

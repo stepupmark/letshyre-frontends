@@ -20,32 +20,6 @@ const csp = existsSync(CSP_MAP)
 const LOCALES = "en|hi|fr|ja|ar|te|ta|es|nl|ru|kn|ml|ur|bn|de|pt|it|ko|id"
 const LOCALE_PAGE = new RegExp(`^/(${LOCALES})((?:/[a-z0-9-]+){1,3})?$`)
 
-// the nginx map lines postbuild writes: `~^regex$ /target;` or `/exact /target;`
-const redirectsIn = (name: string) => {
-  const file = resolve(ROOT, "..", name)
-  if (!existsSync(file)) return []
-  return readFileSync(file, "utf8")
-    .split("\n")
-    .flatMap((line) => {
-      const [from, to] = line.replace(/;$/, "").split(" ")
-      if (!from || !to) return []
-      return [
-        from.startsWith("~")
-          ? { match: new RegExp(from.slice(1)), to }
-          : { match: new RegExp(`^${from}$`), to },
-      ]
-    })
-}
-const PERMANENT = redirectsIn("redirects.map")
-const TEMPORARY = redirectsIn("redirects-temporary.map")
-const redirectFor = (
-  rules: ReturnType<typeof redirectsIn>,
-  path: string
-): string | undefined => {
-  const rule = rules.find(({ match }) => match.test(path))
-  return rule && path.replace(rule.match, rule.to)
-}
-
 // url-contract §5: what the host sends with every response
 const SECURITY_HEADERS = {
   "x-content-type-options": "nosniff",
@@ -109,25 +83,19 @@ createServer((req, res) => {
   const redirect = (status: number, to: string) =>
     res.writeHead(status, { location: to + url.search }).end()
 
-  if (path === "/") return redirect(301, "/en")
+  // the same order as infra/cloudfront/marketing-router.js; no other redirects exist
+  if (path === "/" || path === "/index.html") return redirect(301, "/en")
+  if (path.endsWith("/index.html"))
+    return redirect(301, path.slice(0, -"/index.html".length))
   if (path.length > 1 && path.endsWith("/"))
     return redirect(301, path.slice(0, -1))
 
   const asset = fileAt(path)
   if (asset) return send(200, asset)
 
-  const moved = redirectFor(PERMANENT, path)
-  if (moved) return redirect(301, moved)
-  const elsewhere = redirectFor(TEMPORARY, path)
-  if (elsewhere) return redirect(302, elsewhere)
-
-  const page = LOCALE_PAGE.exec(path)
-  if (page) {
+  if (LOCALE_PAGE.test(path)) {
     const html = fileAt(`${path}/index.html`)
     if (html) return send(200, html)
-    if (page[1] !== "en" && fileAt(`/en${page[2] ?? ""}/index.html`)) {
-      return redirect(302, `/en${page[2] ?? ""}`)
-    }
   }
 
   send(404, fileAt("/404/index.html"))

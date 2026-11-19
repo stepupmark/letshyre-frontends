@@ -11,6 +11,7 @@ import {
   injectMetaPolicy,
   nginxMap,
   pagePolicy,
+  POLICY_MAX,
 } from "../../../tooling/csp.ts"
 import { parseEnv } from "../app/lib/env.schema.ts"
 
@@ -41,6 +42,11 @@ if (process.env.CSP_ENFORCE === "true") {
   writeFileSync(INDEX, html)
 }
 writeFileSync(join(ROOT, "build/csp.map"), nginxMap(new Map(), policy))
+if (policy.length > POLICY_MAX) {
+  problems.push(
+    `CSP is ${policy.length} bytes, over the ${POLICY_MAX} the host can carry`
+  )
+}
 
 if (!html.includes('name="robots" content="noindex, nofollow"')) {
   problems.push("index.html: missing noindex")

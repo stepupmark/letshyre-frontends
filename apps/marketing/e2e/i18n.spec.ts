@@ -57,21 +57,17 @@ for (const { path, lang, alternates } of SITEMAP) {
 test.describe("untranslated pages", () => {
   test.skip(({ browserName }) => browserName !== "chromium", "server behaviour")
 
-  test("fall back to English with a temporary redirect", async ({
-    request,
-  }) => {
+  test("are 404s, with no redirect to English", async ({ request }) => {
     const missing = SITEMAP.filter((p) => p.lang === "en").flatMap(
       ({ path, alternates }) =>
-        LOCALES.filter((l) => !alternates.has(l)).map((l) => ({
-          from: path.replace(/^\/en/, `/${l}`),
-          to: path,
-        }))
+        LOCALES.filter((l) => !alternates.has(l)).map((l) =>
+          path.replace(/^\/en/, `/${l}`)
+        )
     )
     test.skip(missing.length === 0, "every page is translated")
-    for (const { from, to } of missing.slice(0, 5)) {
-      const res = await request.get(from, { maxRedirects: 0 })
-      expect(res.status(), from).toBe(302)
-      expect(res.headers().location, from).toBe(to)
+    for (const path of missing.slice(0, 5)) {
+      const res = await request.get(path, { maxRedirects: 0 })
+      expect(res.status(), path).toBe(404)
     }
   })
 })

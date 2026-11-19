@@ -1,5 +1,5 @@
 // Tells IndexNow search engines (Bing, Yandex, Seznam…) which pages changed. Run after a
-// production deploy, with the INDEXNOW_KEY the build was made with.
+// production deploy on letshyre.ai, with the INDEXNOW_KEY the build was made with.
 // usage: INDEXNOW_KEY=… node scripts/indexnow.ts [since YYYY-MM-DD, default today]
 
 import { readFileSync } from "node:fs"
@@ -10,6 +10,12 @@ const ROOT = resolve(fileURLToPath(new URL("..", import.meta.url)))
 const key = process.env.INDEXNOW_KEY
 const since = process.argv[2] ?? new Date().toISOString().slice(0, 10)
 if (!key) throw new Error("INDEXNOW_KEY is not set")
+
+const robots = readFileSync(join(ROOT, "build/client/robots.txt"), "utf8")
+if (/^Disallow: \/\s*$/m.test(robots))
+  throw new Error(
+    "indexnow: this build is noindex (VITE_INDEXABLE=false), so its URLs must not be announced"
+  )
 
 const sitemap = readFileSync(join(ROOT, "build/client/sitemap.xml"), "utf8")
 const urls = [

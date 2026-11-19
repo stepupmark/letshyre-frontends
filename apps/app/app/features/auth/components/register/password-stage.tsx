@@ -15,6 +15,7 @@ import { Link } from "react-router"
 import { z } from "zod"
 
 import { locale } from "@/lib/i18n"
+import { sitePage } from "@/lib/site"
 
 import { type AuthErrorKey } from "../../lib/errors"
 import { usePasswordSubmit } from "../../mutations/use-password-submit"
@@ -98,17 +99,17 @@ export function PasswordStage({
                     components={{
                       terms: (
                         <Link
-                          to={`/${locale}/terms`}
-                          reloadDocument
+                          to={sitePage(locale, "/terms")}
                           target="_blank"
+                          rel="noreferrer"
                           className="underline underline-offset-4"
                         />
                       ),
                       privacy: (
                         <Link
-                          to={`/${locale}/privacy-policy`}
-                          reloadDocument
+                          to={sitePage(locale, "/privacy-policy")}
                           target="_blank"
+                          rel="noreferrer"
                           className="underline underline-offset-4"
                         />
                       ),

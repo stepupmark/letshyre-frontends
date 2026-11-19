@@ -37,7 +37,7 @@ const goodHead = [
 
 const options = {
   site: SITE,
-  production: true,
+  indexable: true,
   fileExists: (path: string) => path === "/og/pricing.jpg",
   isPage: (path: string) => ["/en", "/en/pricing"].includes(path),
 }
@@ -58,7 +58,7 @@ describe("checkPage", () => {
     ).toMatch(/hreflang/)
   })
 
-  it("flags dangling JSON-LD ids, extra h1s and noindex in production", () => {
+  it("flags dangling JSON-LD ids, extra h1s and noindex on an indexable build", () => {
     const html = page(
       goodHead.replace(
         `"@id":"#org"}</script><script`,
@@ -69,7 +69,7 @@ describe("checkPage", () => {
     const problems = checkPage({ ...input, html }, options).join("\n")
     expect(problems).toMatch(/@id not defined: #org/)
     expect(problems).toMatch(/one <h1>, found 2/)
-    expect(problems).toMatch(/production page is noindex/)
+    expect(problems).toMatch(/indexable page is noindex/)
   })
 
   it("flags links that would go through a redirect", () => {
@@ -108,7 +108,7 @@ describe("sitemap and robots", () => {
     expect(xml).toContain(`hreflang="x-default" href="${SITE}/en/about"`)
   })
 
-  it("only lets crawlers in on production", () => {
+  it("only lets crawlers in on an indexable build", () => {
     expect(renderRobots(SITE, false)).toBe("User-agent: *\nDisallow: /\n")
     expect(renderRobots(SITE, true)).toContain(`Sitemap: ${SITE}/sitemap.xml`)
   })

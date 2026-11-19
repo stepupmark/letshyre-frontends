@@ -20,29 +20,6 @@ const lab =
         ]),
       ])
 
-// URLs from before the 2026-10 cleanup; lib/moved.ts maps each to its new home
-const moved = [
-  "employer",
-  "employer/post-job",
-  "employer/view-jobs",
-  "employer/view-jobs/:jobId",
-  "employer/view-jobs/applicants/:jobId",
-  "employer/candidate-pool",
-  "employer/unlocked-candidates",
-  "employer/employee-profile",
-  "employer/employee-score-card",
-  "employer/invoice",
-  "employer/your-team",
-  "employer/profile",
-  "employer/chatbot",
-  "employee",
-  "employee/find-jobs",
-  "employee/my-applications",
-  "employee/score-cards-list",
-  "employee/scorecard",
-  "employee/chatbot",
-].map((path) => route(path, "routes/moved.tsx", { id: `moved:${path}` }))
-
 export default [
   layout("layouts/auth-layout.tsx", [
     route("sign-in", "routes/auth/sign-in.tsx"),
@@ -79,6 +56,7 @@ export default [
   ]),
   layout("layouts/employer-layout.tsx", [
     ...prefix("employer", [
+      index("routes/role-home.tsx", { id: "employer-home" }),
       route("dashboard", "routes/employer/dashboard.tsx"),
       route("jobs", "routes/employer/jobs.tsx"),
       route("jobs/new", "routes/employer/post-job.tsx"),
@@ -114,6 +92,7 @@ export default [
   ]),
   layout("layouts/employee-layout.tsx", [
     ...prefix("employee", [
+      index("routes/role-home.tsx", { id: "employee-home" }),
       route("jobs", "routes/employee/find-jobs.tsx"),
       route("applications", "routes/employee/applications.tsx"),
       route("scorecards", "routes/employee/scorecards.tsx"),
@@ -124,6 +103,5 @@ export default [
       route("*", "routes/not-found.tsx", { id: "employee-not-found" }),
     ]),
   ]),
-  ...moved,
   ...lab,
 ] satisfies RouteConfig

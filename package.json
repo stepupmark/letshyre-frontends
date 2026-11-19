@@ -18,11 +18,15 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "ui:drift": "node tooling/ui-drift.ts",
+    "test:edge": "node --test \"infra/cloudfront/*.test.ts\"",
+    "test:deploy": "node --test \"tooling/deploy/*.test.ts\"",
     "i18n:apply": "node tooling/i18n/apply.ts",
     "i18n:apply:app": "node tooling/i18n/apply.ts --app",
-    "verify": "turbo run lint typecheck --concurrency=2 && pnpm ui:drift && pnpm knip && turbo run build test test:e2e --concurrency=1"
+    "verify": "turbo run lint typecheck --concurrency=2 && pnpm ui:drift && pnpm test:edge && pnpm test:deploy && pnpm knip && turbo run build test test:e2e --concurrency=1"
   },
   "devDependencies": {
+    "@aws-sdk/client-cloudfront": "^3.1170.0",
+    "@aws-sdk/client-s3": "^3.1170.0",
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "^21.2.3",
     "knip": "^6.40.0",

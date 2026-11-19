@@ -1,13 +1,15 @@
 # Marketing launch checklist
 
-Everything here runs once hosting is decided and a staging host exists.
+Hosting is S3 and CloudFront (docs/deployment.md, ADR 0022). "Staging" below is the beta:
+`beta.letshyre.ai` with `app.letshyre.ai`.
 
-## Before staging
+## Before the beta
 
 - [ ] Translation batch done. `pnpm --filter marketing build` lists the pages per locale
       in the sitemap; nothing ships in a locale until its namespaces are complete.
-- [ ] Production env set: `VITE_ENV=production`, `VITE_SITE_URL=https://letshyre.ai`,
-      `VITE_APP_URL=https://letshyre.ai`, `VITE_META_PIXEL_ID`, `VITE_COOKIE_DOMAIN=.letshyre.ai`.
+- [ ] Beta env set: `VITE_ENV=production`, `VITE_INDEXABLE=false`,
+      `VITE_SITE_URL=https://beta.letshyre.ai`, `VITE_APP_URL=https://app.letshyre.ai`,
+      `VITE_META_PIXEL_ID`, `VITE_COOKIE_DOMAIN=.letshyre.ai` (docs/deployment.md §6).
 - [ ] `pnpm verify` green, plus `pnpm --filter marketing lighthouse`.
 
 ## Staging UAT
@@ -27,10 +29,10 @@ Android Chrome:
 
 ## Production
 
-- [ ] Deploy in a low-traffic window; the host must apply each build's `csp.map` policies.
-- [ ] Set the `MARKETING_DEPLOY_HOOK` repository secret to the host's production deploy hook.
-      `.github/workflows/scheduled-build.yml` calls it daily at 00:30 UTC, so blog posts dated in
-      the future go live on their day.
+- [ ] Move to `letshyre.ai` with the runbook in docs/deployment.md §10, in a low-traffic window:
+      `VITE_SITE_URL=https://letshyre.ai` and `VITE_INDEXABLE=true`, then DNS.
+- [ ] The deploy workflow's nightly run (00:30 UTC) is on, so blog posts dated in the future go
+      live on their day.
 - [ ] Set `INDEXNOW_KEY` for production builds and run `pnpm --filter marketing indexnow` after
       each deploy, so Bing and other IndexNow engines hear about new and updated posts
       (ADR 0021).
@@ -45,10 +47,10 @@ Android Chrome:
 
 ## First 7 days
 
-- 404 and 302 rates, Search Console coverage and hreflang errors, CWV field data, sign-up
+- 404 rates, Search Console coverage and hreflang errors, CWV field data, sign-up
   conversion.
-- Search Console's "Page with redirect" report should stay empty for our own links; postbuild
-  fails on internal links to redirects, so anything there comes from outside.
-- After a clean week of report-only CSP: build with `CSP_ENFORCE=true` and drop the
-  report-only header on the host.
-- Roll back if indexed pages drop more than 10% or errors spike: redeploy the previous build.
+- Search Console's "Page with redirect" report should list only `http://`, `www.` and `beta.`
+  URLs; postbuild fails on internal links to pages that weren't prerendered.
+- After a clean week of report-only CSP: set `CSP_MODE=enforce` for the app and redeploy
+  (docs/deployment.md §4.3).
+- Roll back if indexed pages drop more than 10% or errors spike: re-run the previous deploy.

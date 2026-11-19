@@ -9,27 +9,17 @@ import { type Locale, localePath } from "@workspace/i18n"
 import { loadEnv } from "vite"
 
 import { parseEnv } from "../app/lib/env.schema.ts"
-import {
-  MOVED_PATHS,
-  PAGES,
-  type PageId,
-  PREVIEW_PAGES,
-  REPLACED_BY,
-} from "../app/lib/pages.ts"
+import { PAGES, type PageId, PREVIEW_PAGES } from "../app/lib/pages.ts"
 import { resumeBlogBuild } from "../app/lib/blog/build.ts"
 import { previewsOn } from "../app/lib/blog/list.ts"
-import { postPath, topicsPath } from "../app/lib/blog/paths.ts"
+import { postPath } from "../app/lib/blog/paths.ts"
 import type { BlogRoute } from "../app/lib/blog/routes.ts"
-import {
-  BLOG_DIR,
-  emptyTopicRedirects,
-  GLOSSARY_DIR,
-  readiness,
-} from "../app/lib/readiness.ts"
+import { BLOG_DIR, GLOSSARY_DIR, readiness } from "../app/lib/readiness.ts"
 import {
   initialScriptsOf,
   injectMetaPolicy,
   nginxMap,
+  POLICY_MAX,
 } from "../../../tooling/csp.ts"
 import { pagePolicy } from "./csp.ts"
 import { type LlmsPage, renderLlms } from "./llms.ts"
@@ -50,7 +40,7 @@ const JS_BUDGET_EXEMPT: readonly PageId[] = ["home"]
 const env = parseEnv(loadEnv("production", ROOT, "VITE_"))
 const site = env.VITE_SITE_URL.replace(/\/$/, "")
 const apiOrigin = new URL(env.VITE_API_BASE_URL).origin
-const production = env.VITE_ENV === "production"
+const indexable = env.VITE_INDEXABLE
 const enforceCsp = process.env.CSP_ENFORCE === "true"
 const indexNowKey = process.env.INDEXNOW_KEY
 
@@ -142,7 +132,7 @@ writeFileSync(
     }),
   ])
 )
-writeFileSync(join(CLIENT, "robots.txt"), renderRobots(site, production))
+writeFileSync(join(CLIENT, "robots.txt"), renderRobots(site, indexable))
 
 // IndexNow checks this file before it accepts a ping (scripts/indexnow.ts)
 if (indexNowKey && !/^[a-zA-Z0-9-]{8,128}$/.test(indexNowKey))
@@ -210,7 +200,7 @@ for (const page of routes) {
     { ...page, html },
     {
       site,
-      production: production && !page.preview,
+      indexable: indexable && !page.preview,
       fileExists: (path) => existsSync(join(CLIENT, path)),
       isPage: (path) => pagePaths.has(path),
     }
@@ -260,31 +250,16 @@ if (existsSync(notFound)) {
   problems.push("/404: not prerendered")
 }
 
+for (const [route, policy] of new Map([
+  ...policies,
+  ["/404", fallbackPolicy],
+])) {
+  if (policy.length > POLICY_MAX)
+    problems.push(
+      `${route}: CSP is ${policy.length} bytes, over the ${POLICY_MAX} the host can carry`
+    )
+}
 writeFileSync(join(ROOT, "build/csp.map"), nginxMap(policies, fallbackPolicy))
-// old URL -> new URL pairs for the host's 301s
-const replaced = Object.entries(REPLACED_BY).flatMap(([from, to]) =>
-  (ready.get(to) ?? []).map(
-    (lang) =>
-      `~^/${lang}${PAGES[from as PageId].path}$ /${lang}${PAGES[to].path};\n`
-  )
-)
-writeFileSync(
-  join(ROOT, "build/redirects.map"),
-  [
-    ...Object.entries(MOVED_PATHS).map(
-      ([from, to]) => `~^/([a-z]{2})${from}$ /$1${to};\n`
-    ),
-    ...replaced,
-    `~^/([a-z]{2})${topicsPath}$ /$1${PAGES.blog.path};\n`,
-  ].join("")
-)
-// 302s: pages that come back once there's content for them
-writeFileSync(
-  join(ROOT, "build/redirects-temporary.map"),
-  emptyTopicRedirects(posts)
-    .map(([from, to]) => `${from} ${to};\n`)
-    .join("")
-)
 
 if (warnings.length) console.warn(warnings.map((w) => `! ${w}`).join("\n"))
 if (problems.length) {
@@ -293,5 +268,5 @@ if (problems.length) {
   process.exit(1)
 }
 console.log(
-  `postbuild: ${routes.length} pages checked, sitemap, robots and llms.txt written (${production ? "indexable" : "noindex"}), CSP ${enforceCsp ? "enforced" : "report-only"}`
+  `postbuild: ${routes.length} pages checked, sitemap, robots and llms.txt written (${indexable ? "indexable" : "noindex"}), CSP ${enforceCsp ? "enforced" : "report-only"}`
 )

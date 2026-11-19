@@ -2,7 +2,7 @@
   "$schema": "https://unpkg.com/knip@6/schema.json",
   "workspaces": {
     ".": {
-      "entry": ["tooling/**/*.ts"]
+      "entry": ["tooling/**/*.ts", "infra/cloudfront/*.{js,ts}"]
     },
     "packages/ui": {
       "entry": ["src/components/*.tsx", "src/lib/*.ts"]

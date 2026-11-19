@@ -1,15 +1,15 @@
 import { join } from "node:path"
-import { LOCALES, type Locale } from "@workspace/i18n"
+import type { Locale } from "@workspace/i18n"
 import { computeReadiness } from "@workspace/i18n/node"
 
 import { blogBuild } from "./blog/build.ts"
 import type { Term } from "./blog/glossary.ts"
-import { TOPICS, withBlogIndex } from "./blog/list.ts"
+import { withBlogIndex } from "./blog/list.ts"
 import { blogModel } from "./blog/model.ts"
-import { feedPath, searchIndexPath, topicPath } from "./blog/paths.ts"
+import { feedPath, searchIndexPath } from "./blog/paths.ts"
 import type { Post } from "./blog/post.ts"
 import { mdxFiles } from "./blog/read-posts.ts"
-import { type BlogRoute, blogRoutes } from "./blog/routes.ts"
+import type { BlogRoute } from "./blog/routes.ts"
 import { PAGES, type PageId, pageNamespaces, withoutReplaced } from "./pages.ts"
 
 export { checkTerms } from "./blog/model.ts"
@@ -50,32 +50,6 @@ export function readiness(
     { previews, blogLocales: catalogs.get("blog") ?? [], date }
   )
   return { pages: withBlogIndex(catalogs, posts), posts, terms, routes }
-}
-
-/**
- * Topic URLs with no page and no English page to fall back to, each sent to the nearest blog index.
- * Temporary, because a new post in the topic brings the page back.
- */
-export function emptyTopicRedirects(
-  posts: readonly Post[]
-): [string, string][] {
-  const blogLangs = new Set(posts.map((post) => post.lang))
-  if (!blogLangs.has("en")) return []
-  const shipped = new Set(
-    blogRoutes(posts, [])
-      .filter((route) => route.kind === "topic")
-      .map((route) => `/${route.lang}${route.path}`)
-  )
-  return LOCALES.flatMap((lang) =>
-    TOPICS.filter(
-      (topic) =>
-        !shipped.has(`/${lang}${topicPath(topic)}`) &&
-        !shipped.has(`/en${topicPath(topic)}`)
-    ).map((topic): [string, string] => [
-      `/${lang}${topicPath(topic)}`,
-      `/${blogLangs.has(lang) ? lang : "en"}${PAGES.blog.path}`,
-    ])
-  )
 }
 
 /** Every `/<lang><path>` whose catalogs are complete, and every blog page. */

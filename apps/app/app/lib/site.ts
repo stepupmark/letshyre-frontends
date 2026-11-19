@@ -18,8 +18,12 @@ const GUIDE_CHAPTERS = {
 
 export type GuideChapter = keyof typeof GUIDE_CHAPTERS
 
-/** A chapter of a marketing guide. They're English only for now; other locales redirect there. */
+// the guides marketing publishes in more than English; add a locale here once it ships there
+const GUIDE_LOCALES: readonly Locale[] = ["en"]
+
+/** A chapter of a marketing guide, in English where the reader's language has no guide. */
 export const guideChapter = (locale: Locale, chapter: GuideChapter) => {
   const [path, anchor] = GUIDE_CHAPTERS[chapter]
-  return `${sitePage(locale, path)}#${anchor}`
+  const lang = GUIDE_LOCALES.includes(locale) ? locale : "en"
+  return `${sitePage(lang, path)}#${anchor}`
 }

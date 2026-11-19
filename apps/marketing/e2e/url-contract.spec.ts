@@ -9,7 +9,6 @@ import {
   topicPath,
 } from "../app/lib/blog/paths.ts"
 import { pageCount, TOPICS } from "../app/lib/blog/list.ts"
-import { MOVED_PATHS } from "../app/lib/pages.ts"
 import { readiness } from "../app/lib/readiness.ts"
 
 const { posts } = readiness(fileURLToPath(new URL("..", import.meta.url)))
@@ -34,11 +33,28 @@ test.describe("url contract", () => {
     expect(res.status()).toBe(200)
   })
 
-  test("old page URLs move permanently", async ({ request }) => {
-    for (const [from, to] of Object.entries(MOVED_PATHS)) {
-      const res = await request.get(`/hi${from}`, { maxRedirects: 0 })
+  test("the index.html form redirects to the canonical URL", async ({
+    request,
+  }) => {
+    for (const [from, to] of [
+      ["/index.html", "/en"],
+      ["/en/index.html", "/en"],
+      ["/en/pricing/index.html", "/en/pricing"],
+    ] as const) {
+      const res = await request.get(from, { maxRedirects: 0 })
       expect(res.status(), from).toBe(301)
-      expect(res.headers().location).toBe(`/hi${to}`)
+      expect(res.headers().location, from).toBe(to)
+    }
+  })
+
+  test("pre-launch URLs are gone, not redirected", async ({ request }) => {
+    for (const path of [
+      "/en/policy",
+      "/hi/how-it-works-interview",
+      "/en/home-v2",
+    ]) {
+      const res = await request.get(path, { maxRedirects: 0 })
+      expect(res.status(), path).toBe(404)
     }
   })
 
@@ -55,7 +71,7 @@ test.describe("url contract", () => {
       ["/en/blogs", 200],
       [`/en${postPath(post.slug)}`, 200],
       [`/en${topicPath(post.topic)}`, 200],
-      ["/en/blogs/topics", 301, "/en/blogs"],
+      ["/en/blogs/topics", 404],
       ["/en/blogs/topics/nonsense", 404],
       ["/en/blogs/page/1", 404],
       ["/en/blogs/tags/nonsense", 404],
@@ -66,12 +82,8 @@ test.describe("url contract", () => {
     if (pages > 1) expected.push([`/en${indexPagePath(pages)}`, 200])
     expected.push([`/en${indexPagePath(pages + 1)}`, 404])
     if (untranslated)
-      expected.push([
-        `/${untranslated}${postPath(post.slug)}`,
-        302,
-        `/en${postPath(post.slug)}`,
-      ])
-    if (empty) expected.push([`/en${topicPath(empty)}`, 302, "/en/blogs"])
+      expected.push([`/${untranslated}${postPath(post.slug)}`, 404])
+    if (empty) expected.push([`/en${topicPath(empty)}`, 404])
 
     for (const [path, status, location] of expected) {
       const res = await request.get(path, { maxRedirects: 0 })

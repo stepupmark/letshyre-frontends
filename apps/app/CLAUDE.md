@@ -11,7 +11,8 @@ Routes are declared in `app/routes.ts`, not by file name (ADR 0014). Route files
 - Employers live under `/employer`, candidates under `/employee`. Each role layout in `app/layouts`
   is wrapped in `guard()` from `@/lib/guard` and ends with a `*` not-found route.
 - Links use `href()` so a renamed route fails the type check.
-- Old URLs from before the 2026-10 cleanup redirect through `lib/moved.ts`; keep that list working.
+- Old URLs from before the 2026-10 cleanup are 404s; the app launched on `app.letshyre.ai` without
+  redirects (docs/deployment.md). Only the bare `/employer` and `/employee` open their home page.
 - Each role has its own sign-in and register page; `/sign-in` and `/` are the role choosers
   (ADR 0017).
 

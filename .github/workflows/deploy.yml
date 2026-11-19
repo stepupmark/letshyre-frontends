@@ -1,0 +1,190 @@
+name: Deploy
+
+# Builds and ships the three apps to S3 + CloudFront (docs/deployment.md §7).
+# Roll back by re-running the deploy job of an earlier successful run: it ships that run's build.
+# Each deploy is recorded as a GitHub deployment of the commit it built (tooling/deploy/record.ts).
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # future-dated blog posts go live with the first build on their date (ADR 0021)
+    - cron: "30 0 * * *"
+  workflow_dispatch:
+    inputs:
+      app:
+        description: Which app to build and deploy from this commit
+        type: choice
+        options: [all, marketing, app, admin]
+        default: all
+
+permissions: {}
+
+concurrency:
+  group: deploy-production
+  # a deploy stopped halfway leaves a bucket between two builds
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    # a push to main passed CI on its pull request, which branch protection keeps up to date with
+    # main; the nightly build rebuilds the live commit. Only a manual deploy is checked here.
+    if: github.event_name == 'workflow_dispatch'
+    permissions:
+      contents: read
+    uses: ./.github/workflows/ci.yml
+
+  plan:
+    needs: verify
+    # runs when verify passed or was skipped
+    if: ${{ !cancelled() && !failure() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      deployments: read
+    outputs:
+      include: ${{ steps.affected.outputs.include }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+
+      - id: affected
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          INPUT_APP: ${{ inputs.app }}
+        run: node tooling/deploy/affected.ts
+
+  build:
+    needs: plan
+    if: ${{ needs.plan.outputs.include != '[]' && needs.plan.outputs.include != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.include) }}
+    # repository variables: the build has no AWS access and records no deployment
+    env:
+      VITE_ENV: ${{ vars.VITE_ENV }}
+      VITE_INDEXABLE: ${{ vars.VITE_INDEXABLE }}
+      VITE_SITE_URL: ${{ vars.VITE_SITE_URL }}
+      VITE_APP_URL: ${{ vars.VITE_APP_URL }}
+      VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL }}
+      VITE_COOKIE_DOMAIN: ${{ vars.VITE_COOKIE_DOMAIN }}
+      VITE_META_PIXEL_ID: ${{ vars.VITE_META_PIXEL_ID }}
+      INDEXNOW_KEY: ${{ vars.INDEXNOW_KEY }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ matrix.ref }}
+          # sitemap lastmod comes from git log
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # one at a time: parallel prerenders hit React Router's fixed 10 s timeout
+      - run: pnpm turbo run build --filter=${{ matrix.app }} --concurrency=1
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: build-${{ matrix.app }}
+          path: |
+            apps/${{ matrix.app }}/build/client
+            apps/${{ matrix.app }}/build/csp.map
+          retention-days: 30
+          if-no-files-found: error
+
+  deploy:
+    needs: [plan, build]
+    if: ${{ !cancelled() && needs.build.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      deployments: write
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.include) }}
+    # for its variables; record.ts writes the deployment with the built commit
+    environment:
+      name: ${{ matrix.app }}-production
+      deployment: false
+    env:
+      DEPLOY_COMMIT: ${{ matrix.ref }}
+      GITHUB_TOKEN: ${{ github.token }}
+      BUCKET: ${{ vars.BUCKET }}
+      DISTRIBUTION_ID: ${{ vars.DISTRIBUTION_ID }}
+      CLOUDFRONT_DOMAIN: ${{ vars.CLOUDFRONT_DOMAIN }}
+      SITE_HOST: ${{ vars.SITE_HOST }}
+      CSP_MODE: ${{ vars.CSP_MODE }}
+    steps:
+      # the deploy tooling from this run; the site itself comes from the artifact
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      # the deploy scripts need only the root's AWS SDK, not the apps' dependencies
+      - run: pnpm install --frozen-lockfile --filter letshyre
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: build-${{ matrix.app }}
+          path: apps/${{ matrix.app }}/build
+
+      - uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          # one IAM user, limited to the three buckets and distributions (docs/deployment.md §7.1)
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Record the deploy
+        id: record
+        run: node tooling/deploy/record.ts start --app ${{ matrix.app }} --ref "$DEPLOY_COMMIT"
+
+      - name: Upload and invalidate
+        id: upload
+        run: node tooling/deploy/deploy.ts --app ${{ matrix.app }}
+
+      # the build is live now, whatever the smoke test says, so the record says so too
+      - name: Record it live
+        run: node tooling/deploy/record.ts finish --id "${{ steps.record.outputs.id }}" --state success --url "https://$SITE_HOST"
+
+      - name: Record the failure
+        if: ${{ failure() && steps.record.outputs.id != '' && steps.upload.outcome != 'success' }}
+        run: node tooling/deploy/record.ts finish --id "${{ steps.record.outputs.id }}" --state failure
+
+      - name: Smoke test
+        run: node tooling/deploy/smoke.ts --app ${{ matrix.app }}
+
+      - name: Tell IndexNow
+        if: ${{ matrix.app == 'marketing' && vars.VITE_INDEXABLE == 'true' && vars.INDEXNOW_KEY != '' }}
+        env:
+          INDEXNOW_KEY: ${{ vars.INDEXNOW_KEY }}
+        run: pnpm --filter marketing indexnow

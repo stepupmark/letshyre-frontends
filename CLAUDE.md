@@ -42,6 +42,7 @@ packages/analytics          consent-aware tracking
 packages/eslint-config      base, react and react-router-app presets plus local rules
 packages/typescript-config  shared tsconfigs
 tooling/                    ui-drift, CSP hashing, i18n apply, baseline capture
+infra/cloudfront            CloudFront Functions for the three distributions (docs/deployment.md)
 docs/                       ADRs, design standard, baseline, security, new-app guide
 ```
 
@@ -177,6 +178,7 @@ Run from the root so Turbo handles ordering and caching.
 | `pnpm verify`                      | Everything CI runs                                         |
 | `pnpm format`                      | Prettier, which also sorts Tailwind classes                |
 | `pnpm ui:drift`                    | Fails if a packages/ui component differs from the registry |
+| `pnpm test:edge`                   | Tests the CloudFront Functions in `infra/cloudfront`       |
 | `pnpm knip`                        | Unused files, exports and dependencies                     |
 
 Don't claim a check passes without running it.
