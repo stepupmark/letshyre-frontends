@@ -11,6 +11,7 @@ import {
 import { Spinner } from "@workspace/ui/components/spinner"
 import { useId, useMemo } from "react"
 import { Controller, useForm } from "react-hook-form"
+import { Link } from "react-router"
 import { z } from "zod"
 
 import { locale } from "@/lib/i18n"
@@ -97,16 +98,16 @@ export function PasswordStage({
                     i18nKey="register.terms"
                     components={{
                       terms: (
-                        <a
-                          href={sitePage(locale, "/terms")}
+                        <Link
+                          to={sitePage(locale, "/terms")}
                           target="_blank"
                           rel="noreferrer"
                           className="underline underline-offset-4"
                         />
                       ),
                       privacy: (
-                        <a
-                          href={sitePage(locale, "/privacy-policy")}
+                        <Link
+                          to={sitePage(locale, "/privacy-policy")}
                           target="_blank"
                           rel="noreferrer"
                           className="underline underline-offset-4"
