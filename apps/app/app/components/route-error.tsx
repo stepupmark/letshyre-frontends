@@ -30,7 +30,6 @@ export function RouteError({ error }: { error: unknown }) {
           <Link to={home} className={buttonLink({ size: "lg" })}>
             {t("notFound.goHome")}
           </Link>
-          <hr className="w-full" />
         </NotFoundScreen>
       </>
     )
