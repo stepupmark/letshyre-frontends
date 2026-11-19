@@ -44,7 +44,7 @@ jobs:
       contents: read
       deployments: read
     outputs:
-      include: ${{ steps.affected.outputs.include }}
+      include: ${{ steps.enabled.outputs.include }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -60,6 +60,14 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           INPUT_APP: ${{ inputs.app }}
         run: node tooling/deploy/affected.ts
+
+      # only app.letshyre.ai has its bucket and distribution so far (docs/deployment.md Phase 2)
+      - id: enabled
+        env:
+          INCLUDE: ${{ steps.affected.outputs.include }}
+          ENABLED: '["app"]'
+          # ENABLED: '["marketing", "app", "admin"]'
+        run: echo "include=$(jq -c --argjson on "$ENABLED" '[.[] | select(.app as $a | $on | index($a))]' <<< "$INCLUDE")" >> "$GITHUB_OUTPUT"
 
   build:
     needs: plan
