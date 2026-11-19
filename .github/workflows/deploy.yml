@@ -63,7 +63,8 @@ jobs:
 
   build:
     needs: plan
-    if: ${{ needs.plan.outputs.include != '[]' && needs.plan.outputs.include != '' }}
+    # a skipped verify would otherwise skip this too, since skips pass down the chain of needs
+    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.include != '[]' && needs.plan.outputs.include != '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
