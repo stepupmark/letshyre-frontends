@@ -422,7 +422,7 @@ The deploy job can't change functions, distributions or WAF. Those change by han
 
 | Job      | Runs                                                                                                                                                                                                                 |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `verify` | On push and manual runs: the whole of `ci.yml` (lint, typecheck, build, tests, e2e, Lighthouse), called as a reusable workflow.                                                                                      |
+| `verify` | Manual runs only: the whole of `ci.yml`, called as a reusable workflow. A push to `main` already passed CI on its pull request.                                                                                      |
 | `plan`   | `tooling/deploy/affected.ts` picks the apps and the commit (below).                                                                                                                                                  |
 | `build`  | One job per app: `pnpm turbo run build --filter=<app>` with the repository variables; uploads `build/client` and `csp.map` as an artifact kept 30 days.                                                              |
 | `deploy` | One app at a time, in its `<app>-production` environment: signs in to AWS, records a deployment, runs `tooling/deploy/deploy.ts`, marks the record live, then `smoke.ts`; on an indexable marketing build, IndexNow. |
@@ -439,6 +439,10 @@ What `plan` picks:
   deploy uploads nothing and skips the invalidation.
 - **Run workflow** (manual): the chosen app, or all three, at the chosen branch's commit, after
   `verify` passes.
+
+A push to `main` deploys without re-running CI: branch protection requires the pull request's `ci`
+check and that the branch is up to date with `main`, so the merged commit is the one CI passed.
+CI still runs on `main` alongside the deploy, with WebKit, and reports a failure after the fact.
 
 **Deployment records.** The deploy job's environment has `deployment: false`: GitHub's own record
 would carry the workflow's commit, which for a nightly rebuild or a rollback isn't the one that
@@ -604,8 +608,9 @@ redirects to HTTPS, and `https://dXXXX.cloudfront.net` 301s to `adm.letshyre.ai`
 4. **GitHub** → Settings → Environments: create `marketing-production`, `app-production`,
    `admin-production`, each with deployment branch `main` only and its environment variables from
    section 6. Optionally require a reviewer on marketing while it's beta.
-5. **GitHub** → branch protection on `main`: the CI check required on pull requests, no direct
-   pushes. On `main` itself CI runs inside the Deploy workflow, before anything ships.
+5. **GitHub** → branch protection on `main`: require the `ci` status check, require branches to be
+   up to date before merging, and no direct pushes. The deploy trusts this: it doesn't re-run CI
+   on a push to `main`.
 
 ### Phase 4: deploy tooling and workflow (repo) — done 2026-11-18
 
@@ -613,8 +618,8 @@ redirects to HTTPS, and `https://dXXXX.cloudfront.net` 301s to `adm.letshyre.ai`
    `pnpm test:deploy` covering the content types, cache headers, skip list, upload phases,
    fingerprint comparison, asset retirement and prune, the bucket check, stopping after a failed
    upload, and which changes deploy which app. `record.ts` writes the deployment records.
-2. `.github/workflows/deploy.yml` (section 7.2); `ci.yml` is callable and no longer runs on
-   pushes to `main`; `scheduled-build.yml` is gone.
+2. `.github/workflows/deploy.yml` (section 7.2); `ci.yml` is callable for manual deploys;
+   `scheduled-build.yml` is gone.
 
 Try it locally against a build, with no AWS access:
 
