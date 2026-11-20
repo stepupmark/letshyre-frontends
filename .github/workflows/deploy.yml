@@ -165,8 +165,14 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ vars.AWS_REGION }}
 
+      # a nightly rebuild that changes nothing would otherwise add an empty deployment record
+      - name: Plan the deploy
+        id: check
+        run: node tooling/deploy/deploy.ts --app ${{ matrix.app }} --dry-run
+
       - name: Record the deploy
         id: record
+        if: ${{ steps.check.outputs.needed == 'true' }}
         run: node tooling/deploy/record.ts start --app ${{ matrix.app }} --ref "$DEPLOY_COMMIT"
 
       - name: Upload and invalidate
@@ -175,6 +181,7 @@ jobs:
 
       # the build is live now, whatever the smoke test says, so the record says so too
       - name: Record it live
+        if: ${{ steps.record.outputs.id != '' }}
         run: node tooling/deploy/record.ts finish --id "${{ steps.record.outputs.id }}" --state success --url "https://$SITE_HOST"
 
       # a cancelled deploy counts too, or its record would say in progress forever

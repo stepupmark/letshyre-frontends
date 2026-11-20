@@ -448,8 +448,9 @@ result is the `verify` job of the Deploy run.
 would carry the workflow's commit, which for a nightly rebuild or a rollback isn't the one that
 shipped. `tooling/deploy/record.ts` writes the record instead, with the built commit. It's marked
 success as soon as the files are live, before the smoke test, because that's what's serving; a
-failed smoke test fails the run without pretending the old build is back. A failed upload marks
-it failure, and the next deploy compares with the last success.
+failed smoke test fails the run without pretending the old build is back. A failed or cancelled
+upload marks it failure, and the next deploy compares with the last success. A deploy that would
+change neither the files nor the live commit, like most nightly rebuilds, writes no record.
 
 Rules the workflow keeps:
 

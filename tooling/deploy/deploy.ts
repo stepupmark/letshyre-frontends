@@ -2,7 +2,8 @@
 // usage: node tooling/deploy/deploy.ts --app marketing [--dry-run] [--offline] [--adopt]
 //   env: BUCKET, DISTRIBUTION_ID, CSP_MODE (report-only, the default, or enforce),
 //        DEPLOY_COMMIT (the commit the build came from), AWS credentials and region
-//   --dry-run   reads the bucket, prints the plan, changes nothing
+//   --dry-run   reads the bucket, prints the plan, changes nothing; in Actions it also writes
+//               `needed=true|false`: whether the files or the live commit would change
 //   --offline   with --dry-run: no AWS at all, plans against an empty bucket
 //   --adopt     take over a bucket that has files but no deploy manifest yet
 
@@ -75,6 +76,10 @@ if (dryRun) {
   for (const file of uploads) console.log(`  + ${file.key}`)
   for (const key of plan.remove) console.log(`  - ${key}`)
   for (const key of plan.prune) console.log(`  x ${key}`)
+  // the workflow records a deployment only when this ships something new
+  const needed = plan.changed || previous?.commit !== commit
+  if (process.env.GITHUB_OUTPUT)
+    appendFileSync(process.env.GITHUB_OUTPUT, `needed=${String(needed)}\n`)
   process.exit(0)
 }
 if (!aws) throw new Error("unreachable: AWS is only skipped offline")
