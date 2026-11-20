@@ -61,12 +61,11 @@ jobs:
           INPUT_APP: ${{ inputs.app }}
         run: node tooling/deploy/affected.ts
 
-      # only app and admin have their buckets and distributions so far (docs/deployment.md Phase 2)
+      # apps listed here have their buckets and distributions (docs/deployment.md Phase 2)
       - id: enabled
         env:
           INCLUDE: ${{ steps.affected.outputs.include }}
-          ENABLED: '["app", "admin"]'
-          # ENABLED: '["marketing", "app", "admin"]'
+          ENABLED: '["marketing", "app", "admin"]'
         run: echo "include=$(jq -c --argjson on "$ENABLED" '[.[] | select(.app as $a | $on | index($a))]' <<< "$INCLUDE")" >> "$GITHUB_OUTPUT"
 
   build:
