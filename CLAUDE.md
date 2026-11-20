@@ -190,9 +190,11 @@ Don't claim a check passes without running it.
   `marketing`, `admin`, `ui`, `i18n`, …) and body lines of 100 characters or fewer.
 - No mention of AI tools in commits or PRs, and no `Co-Authored-By` trailers for them.
 - lefthook runs Prettier on staged files before a commit, commitlint on the message, and
-  `lint typecheck --affected` before a push.
-- CI (.github/workflows/ci.yml) runs lint, typecheck, build and Lighthouse; tests, `ui:drift`,
-  `knip` and Playwright are paused in CI for speed. Run them locally for what you change.
+  `lint typecheck --affected` (plus `lint:tooling typecheck:tooling` when `tooling/` or `infra/`
+  changed) before a push.
+- CI (.github/workflows/ci.yml) runs lint, typecheck, unit tests, the tooling checks, `ui:drift`,
+  `knip`, the builds and Lighthouse. Playwright is paused in CI for speed; run it locally for what
+  you change. On `main`, CI runs inside the Deploy workflow, before anything ships.
 - Record a significant decision as an ADR in `docs/adr/` and add it to the index.
 
 ## Anti-patterns

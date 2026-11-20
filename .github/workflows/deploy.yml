@@ -27,9 +27,9 @@ concurrency:
 
 jobs:
   verify:
-    # a push to main passed CI on its pull request, which branch protection keeps up to date with
-    # main; the nightly build rebuilds the live commit. Only a manual deploy is checked here.
-    if: github.event_name == 'workflow_dispatch'
+    # CI for main runs here, so nothing ships before it passes; the nightly build rebuilds the
+    # live commit, which passed it already
+    if: github.event_name != 'schedule'
     permissions:
       contents: read
     uses: ./.github/workflows/ci.yml

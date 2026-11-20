@@ -422,7 +422,7 @@ The deploy job can't change functions, distributions or WAF. Those change by han
 
 | Job      | Runs                                                                                                                                                                                                                 |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `verify` | Manual runs only: the whole of `ci.yml`, called as a reusable workflow. A push to `main` already passed CI on its pull request.                                                                                      |
+| `verify` | Pushes and manual runs: the whole of `ci.yml`, called as a reusable workflow. The nightly run skips it, since it rebuilds a commit that passed already.                                                              |
 | `plan`   | `tooling/deploy/affected.ts` picks the apps and the commit (below).                                                                                                                                                  |
 | `build`  | One job per app: `pnpm turbo run build --filter=<app>` with the repository variables; uploads `build/client` and `csp.map` as an artifact kept 30 days.                                                              |
 | `deploy` | One app at a time, in its `<app>-production` environment: signs in to AWS, records a deployment, runs `tooling/deploy/deploy.ts`, marks the record live, then `smoke.ts`; on an indexable marketing build, IndexNow. |
@@ -440,9 +440,9 @@ What `plan` picks:
 - **Run workflow** (manual): the chosen app, or all three, at the chosen branch's commit, after
   `verify` passes.
 
-A push to `main` deploys without re-running CI: branch protection requires the pull request's `ci`
-check and that the branch is up to date with `main`, so the merged commit is the one CI passed.
-CI still runs on `main` alongside the deploy, with WebKit, and reports a failure after the fact.
+A push to `main` ships only after `verify` passes on that commit, so a commit pushed straight to
+`main` gets the same checks as a pull request. `ci.yml` doesn't run on its own for `main`; its
+result is the `verify` job of the Deploy run.
 
 **Deployment records.** The deploy job's environment has `deployment: false`: GitHub's own record
 would carry the workflow's commit, which for a nightly rebuild or a rollback isn't the one that

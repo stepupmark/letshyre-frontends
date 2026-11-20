@@ -1,22 +1,22 @@
 name: CI
 
 # Pull requests run lint, typecheck, unit tests and the builds for the apps their changes reach,
-# plus Lighthouse when marketing is one of them. Playwright is paused; main runs all three apps.
-# Branch protection requires the `ci` job, the one check that waits for all the others.
+# plus Lighthouse when marketing is one of them. Playwright is paused. On main, the Deploy workflow
+# calls this before it ships, for all three apps. `ci` is the one job that waits for all the others.
 
 on:
   pull_request:
   push:
-    branches: [main, "migration/**"]
+    branches: ["migration/**"]
   workflow_call:
 
 permissions:
   contents: read
 
 concurrency:
-  # a manual deploy calls this on main too, and must not cancel or be cancelled by the push run
   group: ci-${{ github.event_name }}-${{ github.ref }}
-  cancel-in-progress: true
+  # a newer push replaces a pull request's run; a deploy's run always finishes
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 env:
   VITE_ENV: development
