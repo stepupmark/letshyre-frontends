@@ -149,12 +149,12 @@ if (app === "marketing") {
   await check("/en.data", { status: 200, type: /^text\/x-script/ })
   await check("/sitemap.xml", { status: 200, type: /xml/ })
   await check("/robots.txt", { status: 200, type: /^text\/plain/ })
-  // CloudFront runs no viewer-response function on an error, so the 404 page gets the static
-  // headers from the marketing-errors response headers policy but no CSP (docs/deployment.md §4.3)
+  // no viewer-response function runs on an error: the 404 page gets AWS's managed
+  // SecurityHeadersPolicy, which sends SAMEORIGIN, and no CSP (docs/deployment.md §4.3)
   await check("/en/does-not-exist", {
     status: 404,
     type: HTML,
-    headers: SECURE,
+    headers: { ...SECURE, "x-frame-options": /^(DENY|SAMEORIGIN)$/ },
   })
   await check("/en/policy", { status: 404 })
   if (englishOnly) await check(`/hi/${englishOnly}`, { status: 404 })

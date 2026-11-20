@@ -10,6 +10,7 @@ import {
   cacheControlOf,
   contentTypeOf,
   cspRouteOf,
+  isErrorPage,
   isHtml,
   isSkipped,
 } from "./files.ts"
@@ -38,8 +39,12 @@ export function readBuild(
       const contentType = contentTypeOf(key)
       const cacheControl = cacheControlOf(key)
       const route = cspRouteOf(app, key)
-      const policy = route ? csp.policies.get(route) : csp.fallback
-      if (isHtml(key) && !policy)
+      const policy = isErrorPage(app, key)
+        ? undefined
+        : route
+          ? csp.policies.get(route)
+          : csp.fallback
+      if (isHtml(key) && !isErrorPage(app, key) && !policy)
         throw new Error(
           `${key}: no policy for ${route ?? "the fallback"} in csp.map`
         )

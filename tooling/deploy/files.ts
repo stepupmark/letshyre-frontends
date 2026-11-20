@@ -73,5 +73,12 @@ export function cspRouteOf(app: AppName, key: string): string | null {
 
 export const isHtml = (key: string) => key.endsWith(".html")
 
+/**
+ * Marketing's 404 page, served only as CloudFront's error page. No viewer-response function runs on
+ * errors, so CSP metadata on it would reach the browser as raw `x-amz-meta-*` headers.
+ */
+export const isErrorPage = (app: AppName, key: string) =>
+  app === "marketing" && key === "404/index.html"
+
 // the routers keep it from ever being served (infra/cloudfront)
 export const MANIFEST_KEY = "_deploy/manifest.json"

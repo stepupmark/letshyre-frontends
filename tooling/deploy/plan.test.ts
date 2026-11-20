@@ -7,6 +7,7 @@ import {
   cacheControlOf,
   contentTypeOf,
   cspRouteOf,
+  isErrorPage,
   isSkipped,
   MANIFEST_KEY,
 } from "./files.ts"
@@ -69,6 +70,12 @@ describe("files", () => {
     )
     assert.equal(cspRouteOf("marketing", "404/index.html"), null)
     assert.equal(cspRouteOf("app", "index.html"), null)
+  })
+
+  it("knows marketing's 404 page is served only as an error, where metadata would leak", () => {
+    assert.ok(isErrorPage("marketing", "404/index.html"))
+    assert.ok(!isErrorPage("marketing", "en/index.html"))
+    assert.ok(!isErrorPage("app", "404/index.html"))
   })
 })
 
