@@ -128,9 +128,9 @@ jobs:
     permissions:
       contents: read
       deployments: write
+    # the apps have their own buckets and distributions, so they deploy side by side
     strategy:
       fail-fast: false
-      max-parallel: 1
       matrix:
         include: ${{ fromJSON(needs.plan.outputs.include) }}
     # for its variables; record.ts writes the deployment with the built commit

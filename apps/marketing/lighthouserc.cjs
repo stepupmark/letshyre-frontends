@@ -35,7 +35,9 @@ module.exports = {
       url: urls,
       startServerCommand: `node e2e/serve.ts ${PORT}`,
       startServerReadyPattern: "serving",
-      numberOfRuns: 3,
+      // what fails the check (accessibility, SEO, best practices, layout shift) is steady run to
+      // run; the timing scores that vary only warn
+      numberOfRuns: 1,
       settings: {
         // non-production builds are noindex on purpose; postbuild checks robots per environment
         skipAudits: ["is-crawlable"],
