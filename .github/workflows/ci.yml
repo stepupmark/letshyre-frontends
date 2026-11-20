@@ -87,6 +87,8 @@ jobs:
       - run: pnpm test:edge
       - run: pnpm test:deploy
       - run: pnpm ui:drift
+      # knip resolves the apps' ./+types imports; a cached or skipped typecheck doesn't write them
+      - run: pnpm --filter "./apps/*" exec react-router typegen
       - run: pnpm knip
 
   # Playwright is paused for speed
