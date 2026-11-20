@@ -13,6 +13,7 @@ import {
 import { eachLimited } from "./limit.ts"
 import {
   checkBucket,
+  claimManifest,
   type LocalFile,
   type Manifest,
   planDeploy,
@@ -232,6 +233,27 @@ describe("checkBucket", () => {
     assert.doesNotThrow(() => checkBucket("admin", null, []))
     assert.doesNotThrow(() =>
       checkBucket("marketing", manifest(), [object("en/index.html")])
+    )
+  })
+})
+
+describe("claimManifest", () => {
+  it("lets a failed first deploy re-run, re-sending every page but not assets already there", () => {
+    const claim = claimManifest("marketing", "def", NOW)
+    const remote = [
+      object(MANIFEST_KEY),
+      object("assets/a.js"),
+      object("en/index.html"),
+    ]
+    assert.doesNotThrow(() => checkBucket("marketing", claim, remote))
+    const result = plan(
+      [file("assets/a.js"), file("en/index.html")],
+      remote,
+      claim
+    )
+    assert.deepEqual(
+      result.phases.flat().map((f) => f.key),
+      ["en/index.html"]
     )
   })
 })

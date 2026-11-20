@@ -62,6 +62,19 @@ export function checkBucket(
     )
 }
 
+/** Written before a first deploy's uploads: it lists no files, so the next deploy re-sends every page. */
+export const claimManifest = (
+  app: AppName,
+  commit: string,
+  now = new Date()
+): Manifest => ({
+  app,
+  commit,
+  deployedAt: now.toISOString(),
+  files: {},
+  retired: {},
+})
+
 export function planDeploy(
   app: AppName,
   local: readonly LocalFile[],

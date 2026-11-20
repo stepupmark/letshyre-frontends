@@ -13,7 +13,12 @@ import { parseArgs } from "node:util"
 
 import { type CspMode, readBuild } from "./build.ts"
 import { isAppName } from "./files.ts"
-import { checkBucket, type DeployPlan, planDeploy } from "./plan.ts"
+import {
+  checkBucket,
+  claimManifest,
+  type DeployPlan,
+  planDeploy,
+} from "./plan.ts"
 
 const ROOT = resolve(fileURLToPath(new URL("../..", import.meta.url)))
 
@@ -40,17 +45,19 @@ const cspMode = (process.env.CSP_MODE || "report-only") as CspMode
 if (cspMode !== "report-only" && cspMode !== "enforce")
   throw new Error("CSP_MODE must be report-only or enforce")
 
+// every setting is read before the bucket is touched, so a missing one can't strand a half deploy
+const bucket = values.offline ? "(offline)" : required("BUCKET")
+const distributionId = dryRun ? "" : required("DISTRIBUTION_ID")
+const commit = process.env.DEPLOY_COMMIT || "unknown"
+
 const local = readBuild(app, join(ROOT, "apps", app, "build"), cspMode)
 
 const aws = values.offline ? undefined : await import("./aws.ts")
-const bucket = values.offline ? "(offline)" : required("BUCKET")
 const [remote, previous] = aws
   ? await Promise.all([aws.listBucket(bucket), aws.readManifest(bucket)])
   : [[], null]
 checkBucket(app, previous, remote, { adopt: values.adopt })
-const plan = planDeploy(app, local, remote, previous, {
-  commit: process.env.DEPLOY_COMMIT || "unknown",
-})
+const plan = planDeploy(app, local, remote, previous, { commit })
 
 const uploads = plan.phases.flat()
 const summary = (p: DeployPlan) =>
@@ -70,11 +77,13 @@ if (dryRun) {
 }
 if (!aws) throw new Error("unreachable: AWS is only skipped offline")
 
+// a first deploy that fails partway leaves a bucket the next run still recognises as this app's
+if (!previous) await aws.writeManifest(bucket, claimManifest(app, commit))
 // each phase lands completely before the next one starts
 for (const phase of plan.phases) await aws.upload(bucket, phase)
 await aws.remove(bucket, plan.remove)
 if (plan.changed) {
-  const id = await aws.invalidateAll(required("DISTRIBUTION_ID"))
+  const id = await aws.invalidateAll(distributionId)
   console.log(`invalidation ${id} complete`)
 }
 await aws.remove(bucket, plan.prune)
