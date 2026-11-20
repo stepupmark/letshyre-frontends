@@ -26,7 +26,9 @@ const load = (file: string, host?: string): Handler => {
   let source = readFileSync(new URL(file, import.meta.url), "utf8")
   if (host)
     source = source.replace(/^var HOST = ".*"$/m, `var HOST = "${host}"`)
-  return new Function(`${source}\nreturn handler`)() as Handler
+  // eslint-disable-next-line @typescript-eslint/no-implied-eval -- runs the file the way CloudFront does
+  const run = new Function(`${source}\nreturn handler`) as () => Handler
+  return run()
 }
 
 const request = (

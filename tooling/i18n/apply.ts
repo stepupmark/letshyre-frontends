@@ -58,12 +58,15 @@ function merge(
     return typeof existing === "string" ? existing : batch[path.join(".")]
   }
   // numbers and flags in the English shape aren't copy; every locale keeps them as they are
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- the JSON holds them, the type doesn't
   if (typeof english !== "object" || english === null) return english
   if (Array.isArray(english)) {
     const items = english.map((item, i) =>
       merge(item, current, batch, locale, [...path, String(i)])
     )
-    return items.includes(undefined) ? undefined : (items as Node[])
+    return items.includes(undefined)
+      ? undefined
+      : (items as (string | Catalog)[])
   }
 
   const out: Record<string, Node> = {}

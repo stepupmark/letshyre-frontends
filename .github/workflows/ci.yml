@@ -1,7 +1,7 @@
 name: CI
 
-# Pull requests run lint, typecheck and the builds for the apps their changes reach, plus
-# Lighthouse when marketing is one of them. Tests are paused for now; main runs all three apps.
+# Pull requests run lint, typecheck, unit tests and the builds for the apps their changes reach,
+# plus Lighthouse when marketing is one of them. Playwright is paused; main runs all three apps.
 # Branch protection requires the `ci` job, the one check that waits for all the others.
 
 on:
@@ -53,8 +53,8 @@ jobs:
           EVENT: ${{ github.event_name }}
           BASE: ${{ github.event.pull_request.base.sha }}
         run: |
-          # turbo can't see that this file changed, so a change to it runs everything
-          if [ "$EVENT" != pull_request ] || git diff --name-only "$BASE"...HEAD | grep -qx .github/workflows/ci.yml; then
+          # turbo can't see the pipeline or its scripts, so a change to them runs everything
+          if [ "$EVENT" != pull_request ] || git diff --name-only "$BASE"...HEAD | grep -qE '^(\.github|tooling)/'; then
             echo 'apps=["marketing","app","admin"]' >> "$GITHUB_OUTPUT"
             echo 'scope=' >> "$GITHUB_OUTPUT"
           else
@@ -91,9 +91,17 @@ jobs:
 
       - env:
           SCOPE: ${{ needs.changes.outputs.scope }}
-        run: pnpm turbo run lint typecheck $SCOPE --cache-dir=.turbo/cache
+        run: pnpm turbo run lint typecheck test $SCOPE --cache-dir=.turbo/cache
 
-  # tests are paused for speed: unit, e2e, ui:drift, test:edge, test:deploy and knip
+      # the deploy scripts and edge functions sit outside the workspaces turbo runs
+      - run: pnpm lint:tooling
+      - run: pnpm typecheck:tooling
+      - run: pnpm test:edge
+      - run: pnpm test:deploy
+      - run: pnpm ui:drift
+      - run: pnpm knip
+
+  # Playwright is paused for speed
   build:
     needs: changes
     if: needs.changes.outputs.apps != '[]'

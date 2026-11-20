@@ -40,9 +40,11 @@ const required = (name: string) => {
   if (!value) throw new Error(`${name} is not set`)
   return value
 }
+const isCspMode = (value: string): value is CspMode =>
+  value === "report-only" || value === "enforce"
 // an unset GitHub variable arrives as an empty string
-const cspMode = (process.env.CSP_MODE || "report-only") as CspMode
-if (cspMode !== "report-only" && cspMode !== "enforce")
+const cspMode = process.env.CSP_MODE || "report-only"
+if (!isCspMode(cspMode))
   throw new Error("CSP_MODE must be report-only or enforce")
 
 // every setting is read before the bucket is touched, so a missing one can't strand a half deploy

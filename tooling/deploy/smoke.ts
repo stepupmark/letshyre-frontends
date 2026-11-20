@@ -8,7 +8,7 @@ import { join, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { parseArgs } from "node:util"
 
-import { type AppName, isAppName } from "./files.ts"
+import { isAppName } from "./files.ts"
 
 const ROOT = resolve(fileURLToPath(new URL("../..", import.meta.url)))
 

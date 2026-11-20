@@ -86,13 +86,13 @@ function extract(html: string) {
     Object.fromEntries(
       metas
         .filter((m) => m[key]?.startsWith(p))
-        .map((m) => [m[key]!, m.content ?? ""])
+        .map((m) => [m[key]!, m.content ?? ""] as const)
         .sort(([a], [b]) => a.localeCompare(b))
     )
   const hreflang = Object.fromEntries(
     links
       .filter((l) => l.rel === "alternate" && l.hreflang)
-      .map((l) => [l.hreflang!, l.href ?? ""])
+      .map((l) => [l.hreflang!, l.href ?? ""] as const)
       .sort(([a], [b]) => a.localeCompare(b))
   )
   return {
@@ -111,7 +111,7 @@ function extract(html: string) {
   }
 }
 
-async function get(url: string, redirect: RequestRedirect) {
+async function get(url: string, redirect: RequestInit["redirect"]) {
   const res = await fetch(url, {
     redirect,
     signal: AbortSignal.timeout(TIMEOUT_MS),

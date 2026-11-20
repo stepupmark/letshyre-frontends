@@ -21,3 +21,6 @@ pre-push:
   commands:
     check:
       run: pnpm turbo run lint typecheck --affected
+    tooling:
+      glob: "{tooling,infra}/**/*.ts"
+      run: pnpm lint:tooling && pnpm typecheck:tooling
