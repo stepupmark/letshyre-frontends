@@ -218,6 +218,16 @@ atomic. The function:
 - deletes every `x-amz-*` header;
 - adds the static headers in the next table.
 
+**Error responses.** CloudFront runs no viewer-response function when the origin answers 400 or
+higher, so the marketing 404 page would go out with S3's `x-amz-meta-*` headers and none of the
+headers below. The response headers policy `marketing-errors`, on both marketing behaviors, covers
+it: HSTS, `X-Content-Type-Options`, `X-Frame-Options` and `Referrer-Policy` as below, plus
+`X-Robots-Tag: noindex, nofollow` while the host is `beta.`, each with **Override** off so the
+function's values win on every other answer; and it removes `x-amz-meta-csp` and
+`x-amz-meta-csp-mode`. The 404 page has no CSP, since its script hashes change with every build;
+`X-Frame-Options: DENY` still keeps it out of frames. App and admin need no such policy: their
+only errors are missing files, which carry no metadata.
+
 Moving from report-only to enforced is a GitHub variable (`CSP_MODE=enforce`) and a redeploy. The
 meta-tag route in ADR 0012 (`CSP_ENFORCE=true`) isn't needed any more; amend the ADR.
 
@@ -285,9 +295,12 @@ Checked against the current build (250 pages, 251 `.data` files, deepest page fo
 | `POST`, `PUT`, `DELETE`                                                | 403 from CloudFront                           | GET and HEAD only                                                |
 | `/images/home/SOURCES.md`, `/en/blogs/feed.xml.data`                   | 404                                           | never uploaded (problems 17, 18)                                 |
 
-Every HTML answer, the 404 page included, carries the page's CSP and the section 4.3 headers. The
-smoke test checks the 404 response too, because it's the one that goes through CloudFront's error
-page handling.
+Every HTML page carries its CSP and the section 4.3 headers. The 404 page is the exception:
+CloudFront runs no viewer-response function when the origin answers 400 or higher, so the
+response headers policy `marketing-errors` (section 4.3) gives it the static headers and strips
+`x-amz-meta-*`, but it has no CSP, since its script hashes change with every build. The smoke test
+checks the 404 response for that, because it's the one that goes through CloudFront's error page
+handling.
 
 **More problems found in the marketing re-check**, continuing the section 2 numbering:
 
@@ -475,8 +488,8 @@ checks the wiring:
 - marketing: `/`, `/?utm_source=…`, `/index.html`, `/en/` and `/en/pricing/index.html` 301 to
   the right place, query kept; `/en` and `/en/pricing` are 200 HTML with the CSP header,
   HSTS, `nosniff` and `X-Frame-Options`, plus `X-Robots-Tag: noindex` exactly when the build's
-  `robots.txt` is closed; `/en.data` is `text/x-script`; `/en/does-not-exist` is a 404 that still
-  carries the CSP; `/en/policy` and an English-only page in `hi` are 404s
+  `robots.txt` is closed; `/en.data` is `text/x-script`; `/en/does-not-exist` is an HTML 404 with
+  HSTS, `nosniff` and `X-Frame-Options` from the response headers policy; `/en/policy` and an English-only page in `hi` are 404s
 - app and admin: `/`, a dashboard route and `/shared-scorecard/abc.def` get the shell with
   `X-Robots-Tag: noindex`
 - all: a real asset is `immutable`; a missing asset is a 404 and, on the SPAs, not HTML; no
@@ -584,7 +597,8 @@ in `app-router`, `app-headers`, `app.letshyre.ai` and the app bucket.
 4. **Behaviors** → add `/assets/*`: same origin, CachingOptimized, viewer response =
    `admin-headers`, no viewer request function.
 5. Marketing only: **Error pages** → 404 → `/404/index.html`, response code 404, error caching TTL
-   60; repeat for 403. Marketing logging: standard logs → CloudWatch Logs, 90-day retention.
+   60; repeat for 403. Then the response headers policy `marketing-errors` (section 4.3) on both
+   behaviors. Marketing logging: standard logs → CloudWatch Logs, 90-day retention.
 6. **GoDaddy DNS**: add a CNAME `adm` → the distribution's `dXXXX.cloudfront.net`. Same later for
    `app` and `beta`. Remove any existing record with the same name first.
 7. **Snapshot**: commit the configuration so it can be reviewed and rebuilt:
