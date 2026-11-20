@@ -140,6 +140,7 @@ jobs:
     env:
       DEPLOY_COMMIT: ${{ matrix.ref }}
       GITHUB_TOKEN: ${{ github.token }}
+      AWS_REGION: ${{ vars.AWS_REGION }}
       BUCKET: ${{ vars.BUCKET }}
       DISTRIBUTION_ID: ${{ vars.DISTRIBUTION_ID }}
       CLOUDFRONT_DOMAIN: ${{ vars.CLOUDFRONT_DOMAIN }}
@@ -160,6 +161,9 @@ jobs:
 
       # the deploy scripts need only the root's AWS SDK, not the apps' dependencies
       - run: pnpm install --frozen-lockfile --filter letshyre
+
+      - name: Check the settings
+        run: node tooling/deploy/preflight.ts
 
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
@@ -185,8 +189,9 @@ jobs:
       - name: Record it live
         run: node tooling/deploy/record.ts finish --id "${{ steps.record.outputs.id }}" --state success --url "https://$SITE_HOST"
 
+      # a cancelled deploy counts too, or its record would say in progress forever
       - name: Record the failure
-        if: ${{ failure() && steps.record.outputs.id != '' && steps.upload.outcome != 'success' }}
+        if: ${{ (failure() || cancelled()) && steps.record.outputs.id != '' && steps.upload.outcome != 'success' }}
         run: node tooling/deploy/record.ts finish --id "${{ steps.record.outputs.id }}" --state failure
 
       - name: Smoke test

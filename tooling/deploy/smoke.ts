@@ -3,6 +3,7 @@
 //   env: SITE_HOST (beta.letshyre.ai, app.letshyre.ai, adm.letshyre.ai), CSP_MODE,
 //        CLOUDFRONT_DOMAIN (optional, dXXXX.cloudfront.net, to check the host redirect)
 
+import { lookup } from "node:dns/promises"
 import { existsSync, readdirSync, readFileSync } from "node:fs"
 import { join, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
@@ -34,13 +35,31 @@ interface Expect {
 
 const failures: string[] = []
 
+// an edge location that's still taking the invalidation can drop a request; three tries cover it
+async function fetchRetrying(url: string): Promise<Response> {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await fetch(url, {
+        redirect: "manual",
+        signal: AbortSignal.timeout(10_000),
+      })
+    } catch (error) {
+      if (attempt === 3) throw error
+      await new Promise((done) => setTimeout(done, attempt * 2000))
+    }
+  }
+}
+
 async function check(path: string, expect: Expect, base = `https://${host}`) {
   const url = base + path
   let response: Response
   try {
-    response = await fetch(url, { redirect: "manual" })
-  } catch {
-    response = await fetch(url, { redirect: "manual" })
+    response = await fetchRetrying(url)
+  } catch (error) {
+    const reason = error instanceof Error ? error.message : String(error)
+    console.log(`✖ ${url}`)
+    failures.push(`${url}: no answer (${reason})`)
+    return
   }
   const problems: string[] = []
   const header = (name: string) => response.headers.get(name) ?? ""
@@ -65,6 +84,15 @@ async function check(path: string, expect: Expect, base = `https://${host}`) {
   await response.body?.cancel()
   console.log(`${problems.length ? "✖" : "✔"} ${url}`)
   failures.push(...problems.map((p) => `${url}: ${p}`))
+}
+
+try {
+  await lookup(host)
+} catch {
+  console.error(
+    `✖ ${host} doesn't resolve: add its DNS record, then re-run this job`
+  )
+  process.exit(1)
 }
 
 const HTML = /^text\/html/

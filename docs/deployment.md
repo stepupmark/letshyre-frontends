@@ -420,12 +420,12 @@ The deploy job can't change functions, distributions or WAF. Those change by han
 
 ### 7.2 The workflow: `.github/workflows/deploy.yml`
 
-| Job      | Runs                                                                                                                                                                                                                 |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `verify` | Pushes and manual runs: the whole of `ci.yml`, called as a reusable workflow. The nightly run skips it, since it rebuilds a commit that passed already.                                                              |
-| `plan`   | `tooling/deploy/affected.ts` picks the apps and the commit (below).                                                                                                                                                  |
-| `build`  | One job per app: `pnpm turbo run build --filter=<app>` with the repository variables; uploads `build/client` and `csp.map` as an artifact kept 30 days.                                                              |
-| `deploy` | One app at a time, in its `<app>-production` environment: signs in to AWS, records a deployment, runs `tooling/deploy/deploy.ts`, marks the record live, then `smoke.ts`; on an indexable marketing build, IndexNow. |
+| Job      | Runs                                                                                                                                                                                                                                                             |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `verify` | Pushes and manual runs: the whole of `ci.yml`, called as a reusable workflow. The nightly run skips it, since it rebuilds a commit that passed already.                                                                                                          |
+| `plan`   | `tooling/deploy/affected.ts` picks the apps and the commit (below).                                                                                                                                                                                              |
+| `build`  | One job per app: `pnpm turbo run build --filter=<app>` with the repository variables; uploads `build/client` and `csp.map` as an artifact kept 30 days.                                                                                                          |
+| `deploy` | One app at a time, in its `<app>-production` environment: `preflight.ts` checks the settings, then it signs in to AWS, records a deployment, runs `tooling/deploy/deploy.ts`, marks the record live, then `smoke.ts`; on an indexable marketing build, IndexNow. |
 
 What `plan` picks:
 
@@ -466,7 +466,8 @@ Rules the workflow keeps:
 ### 7.3 Smoke tests after every deploy
 
 `tooling/deploy/smoke.ts` checks the live host through CloudFront with plain `fetch`, so the
-deploy job needs no browser. The same rules are already covered before merge: the e2e suite runs
+deploy job needs no browser. It stops at once if the host doesn't resolve, and tries each request
+three times, 10 seconds each, before calling it failed. The same rules are already covered before merge: the e2e suite runs
 them against `serve.ts`, and `pnpm test:edge` runs the edge functions themselves. The smoke test
 checks the wiring:
 
