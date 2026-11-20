@@ -22,6 +22,7 @@ import {
 import { Link } from "react-router"
 import { MenuIcon, XIcon } from "lucide-react"
 
+import { env } from "@/lib/env"
 import { APP_LINKS } from "@/lib/app-links"
 import { SITE } from "@/lib/seo/site"
 
@@ -125,12 +126,14 @@ export function SiteHeaderMenu({ className }: { className?: string }) {
             ))}
           </MenuGroup>
 
-          <div className="flex items-center justify-between gap-3 border-t px-3 pt-4">
-            <span className="text-sm text-muted-foreground">
-              {t("nav.language")}
-            </span>
-            <SiteLanguageSwitcher />
-          </div>
+          {env.VITE_LANGUAGE_SWITCHER && (
+            <div className="flex items-center justify-between gap-3 border-t px-3 pt-4">
+              <span className="text-sm text-muted-foreground">
+                {t("nav.language")}
+              </span>
+              <SiteLanguageSwitcher />
+            </div>
+          )}
         </div>
 
         <SheetFooter className="border-t">

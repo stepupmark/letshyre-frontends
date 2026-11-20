@@ -10,6 +10,7 @@ import { usePagePath } from "@/hooks/use-page-path"
 import { usePublished } from "@/hooks/use-published"
 import { SocialLinks } from "@/components/social-links"
 import { NewsletterForm } from "@/features/newsletter"
+import { env } from "@/lib/env"
 import { SITE } from "@/lib/seo/site"
 
 import { FOOTER_COLUMNS } from "./site-footer-links"
@@ -99,8 +100,15 @@ export function SiteFooter() {
             <ConsentSettings />
           </div>
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-            <SiteLanguageSwitcher side="top" className="-ms-2.5" />
-            <span aria-hidden className="hidden h-5 w-px bg-border sm:block" />
+            {env.VITE_LANGUAGE_SWITCHER && (
+              <>
+                <SiteLanguageSwitcher side="top" className="-ms-2.5" />
+                <span
+                  aria-hidden
+                  className="hidden h-5 w-px bg-border sm:block"
+                />
+              </>
+            )}
             <SocialLinks />
           </div>
         </div>

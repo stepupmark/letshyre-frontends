@@ -2,6 +2,7 @@ import { LanguageSwitcher } from "@workspace/blocks/language-switcher"
 import { useTranslation } from "@workspace/i18n/react"
 import { useLocation } from "react-router"
 
+import { env } from "@/lib/env"
 import { APP_LOCALES, locale, rememberLocale } from "@/lib/i18n"
 
 /** The language menu for pages outside the dashboard; picking one reloads the page. */
@@ -15,7 +16,7 @@ export function LanguagePicker({
   const { t } = useTranslation("shell")
   const { pathname, search } = useLocation()
 
-  if (APP_LOCALES.length < 2) return null
+  if (!env.VITE_LANGUAGE_SWITCHER || APP_LOCALES.length < 2) return null
 
   return (
     <LanguageSwitcher

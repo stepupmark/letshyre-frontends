@@ -16,6 +16,11 @@ const schema = z
       .transform((v) => (v === "" ? undefined : v)),
     // a production build on a beta host is published content that search engines must not index
     VITE_INDEXABLE: z.enum(["true", "false", ""]).optional(),
+    // "true" shows the language menus; anything else hides them
+    VITE_LANGUAGE_SWITCHER: z
+      .enum(["true", "false", ""])
+      .optional()
+      .transform((v) => v === "true"),
   })
   .refine((env) => env.VITE_ENV !== "production" || env.VITE_META_PIXEL_ID, {
     message: "VITE_META_PIXEL_ID is required in production",

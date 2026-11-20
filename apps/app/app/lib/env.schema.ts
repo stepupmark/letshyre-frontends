@@ -10,6 +10,11 @@ const schema = z.object({
     .string()
     .optional()
     .transform((v) => (v === "" ? undefined : v)),
+  // "true" shows the language menus; anything else hides them
+  VITE_LANGUAGE_SWITCHER: z
+    .enum(["true", "false", ""])
+    .optional()
+    .transform((v) => v === "true"),
 })
 
 export type Env = z.output<typeof schema>

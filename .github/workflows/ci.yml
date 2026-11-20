@@ -24,6 +24,7 @@ env:
   VITE_APP_URL: http://localhost:5175
   VITE_API_BASE_URL: https://api.letshyre.ai
   VITE_INDEXABLE: "false"
+  VITE_LANGUAGE_SWITCHER: "true"
 
 jobs:
   changes:

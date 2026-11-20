@@ -89,6 +89,7 @@ jobs:
       VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL }}
       VITE_COOKIE_DOMAIN: ${{ vars.VITE_COOKIE_DOMAIN }}
       VITE_META_PIXEL_ID: ${{ vars.VITE_META_PIXEL_ID }}
+      VITE_LANGUAGE_SWITCHER: ${{ vars.VITE_LANGUAGE_SWITCHER }}
       INDEXNOW_KEY: ${{ vars.INDEXNOW_KEY }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

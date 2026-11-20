@@ -30,6 +30,7 @@ import {
 } from "lucide-react"
 import { href } from "react-router"
 
+import { env } from "@/lib/env"
 import { APP_LOCALES, changeLocale, locale } from "@/lib/i18n"
 import { useGo } from "@/lib/navigation"
 import { displayName, initials } from "@/lib/user-name"
@@ -103,7 +104,7 @@ export function UserMenu({
               <UserRound />
               {employer ? t("nav.companyProfile") : t("user.profile")}
             </DropdownMenuItem>
-            {APP_LOCALES.length > 1 && (
+            {env.VITE_LANGUAGE_SWITCHER && APP_LOCALES.length > 1 && (
               <DropdownMenuSub>
                 <DropdownMenuSubTrigger>
                   <Languages />

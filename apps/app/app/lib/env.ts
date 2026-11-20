@@ -6,4 +6,5 @@ export const env = {
   VITE_SITE_URL: raw.VITE_SITE_URL ?? "",
   VITE_COOKIE_DOMAIN:
     raw.VITE_COOKIE_DOMAIN === "" ? undefined : raw.VITE_COOKIE_DOMAIN,
+  VITE_LANGUAGE_SWITCHER: raw.VITE_LANGUAGE_SWITCHER === "true",
 }

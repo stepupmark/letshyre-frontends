@@ -17,6 +17,8 @@ export function SiteLanguageSwitcher(props: Props) {
   const lang = useLocale()
   const { locales, path } = usePageLocales()
 
+  if (!env.VITE_LANGUAGE_SWITCHER) return null
+
   return (
     <LanguageSwitcher
       {...props}
