@@ -2,7 +2,8 @@ version: 2
 updates:
   # workflows pin actions to commit SHAs; this keeps those pins current
   - package-ecosystem: github-actions
-    directory: /
+    # the shared setup action pins actions too
+    directories: ["/", "/.github/actions/*"]
     schedule:
       interval: weekly
     cooldown:

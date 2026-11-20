@@ -38,7 +38,7 @@ jobs:
     needs: verify
     # runs when verify passed or was skipped
     if: ${{ !cancelled() && !failure() }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
       contents: read
@@ -72,7 +72,7 @@ jobs:
     needs: plan
     # a skipped verify would otherwise skip this too, since skips pass down the chain of needs
     if: ${{ !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.include != '[]' && needs.plan.outputs.include != '' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       contents: read
@@ -98,14 +98,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
-
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version-file: .nvmrc
-          cache: pnpm
-
-      - run: pnpm install --frozen-lockfile
+      - uses: ./.github/actions/setup
 
       # one at a time: parallel prerenders hit React Router's fixed 10 s timeout
       - run: pnpm turbo run build --filter=${{ matrix.app }} --concurrency=1
@@ -123,7 +116,7 @@ jobs:
     needs: [plan, build]
     # one app's failed build mustn't hold back the others; its own deploy fails at the download
     if: ${{ !cancelled() && needs.plan.result == 'success' && needs.build.result != 'skipped' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       contents: read
@@ -152,15 +145,10 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
-
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version-file: .nvmrc
-          cache: pnpm
-
       # the deploy scripts need only the root's AWS SDK, not the apps' dependencies
-      - run: pnpm install --frozen-lockfile --filter letshyre
+      - uses: ./.github/actions/setup
+        with:
+          filter: letshyre
 
       - name: Check the settings
         run: node tooling/deploy/preflight.ts

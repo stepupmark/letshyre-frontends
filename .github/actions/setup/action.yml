@@ -1,0 +1,23 @@
+name: Setup
+description: pnpm and the Node version in .nvmrc, then the workspace's dependencies
+
+inputs:
+  filter:
+    description: Install only this workspace and its dependencies; every workspace when empty
+    required: false
+    default: ""
+
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+
+    - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+      with:
+        node-version-file: .nvmrc
+        cache: pnpm
+
+    - shell: bash
+      env:
+        FILTER: ${{ inputs.filter }}
+      run: pnpm install --frozen-lockfile ${FILTER:+--filter "$FILTER"}
