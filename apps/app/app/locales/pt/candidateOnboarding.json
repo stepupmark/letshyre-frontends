@@ -1,7 +1,7 @@
 {
   "eyebrow": "Perfil de candidato",
   "title": "Configure seu perfil",
-  "lead": "Cerca de 8 minutos. Suas respostas são salvas neste dispositivo enquanto você preenche.",
+  "lead": "Cerca de 8 minutos.",
   "steps": {
     "you": "Sobre você",
     "photo": "Sua foto",
@@ -11,7 +11,6 @@
     "review": "Revisar e concluir"
   },
   "you": {
-    "lead": "Usamos isso para confirmar que você é uma pessoa real. Os empregadores não veem seu número Aadhaar.",
     "gender": "Gênero",
     "genders": {
       "Male": "Masculino",
@@ -55,18 +54,11 @@
     "placesPlaceholder": "Digite uma cidade e pressione Enter",
     "removePlace": "Remover {{place}}",
     "documents": "Documentos",
-    "documentsLead": "Só os empregadores que desbloquearem você podem abri-los.",
     "docs": {
       "resignation_letter": "Carta de demissão",
       "experience_letter": "Carta de experiência",
       "notice_period_proof": "Comprovante de aviso prévio",
       "present_offer": "Proposta atual"
-    },
-    "docHints": {
-      "resignation_letter": "Ou o e-mail de aceite da sua demissão, salvo em PDF.",
-      "experience_letter": "Do seu empregador atual ou anterior.",
-      "notice_period_proof": "A carta de desligamento ou de proposta que você escolheu acima.",
-      "present_offer": "Se você já tem uma proposta de outro lugar."
     },
     "optional": "{{label}} (opcional)",
     "proofType": "Comprovante de aviso prévio",
@@ -110,12 +102,10 @@
     "roleSkills": "Sua entrevista para {{role}} cobre:",
     "onResume": "{{count}} de {{total}} no seu currículo",
     "skills": "Habilidades",
-    "addSkill": "Adicionar uma habilidade",
-    "removeSkill": "Remover {{skill}}",
     "experience": "Experiência",
     "noExperience": "Nada encontrado. Adicione seus empregos, se tiver.",
     "education": "Formação",
-    "noEducation": "Nada encontrado. Adicione seus estudos.",
+    "noEducation": "Nada encontrado.",
     "fields": {
       "role": "Cargo",
       "company": "Empresa",
@@ -153,6 +143,7 @@
     "lastDay": "Digite a data.",
     "ctc": "Digite um valor em lakhs, como 8.5.",
     "expectedLow": "O salário pretendido não pode ser menor que o atual.",
+    "desiredLow": "O salário desejado deve ser maior que o salário esperado.",
     "industry": "Escolha um setor.",
     "locations": "Adicione pelo menos uma cidade.",
     "proofType": "Escolha qual carta você vai enviar.",
@@ -176,8 +167,7 @@
     "industry": "Setor",
     "skills": "Principais habilidades",
     "aadhaar": "Aadhaar adicionado",
-    "photo": "Foto adicionada",
-    "private": "Seu Aadhaar e documentos ficam privados."
+    "photo": "Foto adicionada"
   },
   "done": {
     "title": "Tudo pronto",

@@ -1,7 +1,7 @@
 {
   "eyebrow": "Perfil de candidato",
   "title": "Configure su perfil",
-  "lead": "Unos 8 minutos. Tus respuestas se guardan en este dispositivo mientras avanzas.",
+  "lead": "Unos 8 minutos.",
   "steps": {
     "you": "Sobre usted",
     "photo": "Su foto",
@@ -11,7 +11,6 @@
     "review": "Revisar y terminar"
   },
   "you": {
-    "lead": "Los usamos para comprobar que es una persona real. Los empleadores no ven su número Aadhaar.",
     "gender": "Género",
     "genders": {
       "Male": "Hombre",
@@ -55,18 +54,11 @@
     "placesPlaceholder": "Escriba una ciudad y pulse Intro",
     "removePlace": "Quitar {{place}}",
     "documents": "Documentos",
-    "documentsLead": "Solo los empleadores que le desbloqueen pueden abrirlos.",
     "docs": {
       "resignation_letter": "Carta de renuncia",
       "experience_letter": "Carta de experiencia",
       "notice_period_proof": "Justificante de preaviso",
       "present_offer": "Oferta actual"
-    },
-    "docHints": {
-      "resignation_letter": "O el correo de aceptación de su renuncia, guardado como PDF.",
-      "experience_letter": "De su empleador actual o anterior.",
-      "notice_period_proof": "La carta de baja o de oferta que eligió arriba.",
-      "present_offer": "Si ya tiene una oferta en otro sitio."
     },
     "optional": "{{label}} (opcional)",
     "proofType": "Justificante de preaviso",
@@ -110,12 +102,10 @@
     "roleSkills": "Su entrevista para {{role}} cubre:",
     "onResume": "{{count}} de {{total}} en tu currículum",
     "skills": "Habilidades",
-    "addSkill": "Añadir una habilidad",
-    "removeSkill": "Quitar {{skill}}",
     "experience": "Experiencia",
     "noExperience": "No se encontró nada. Añada sus empleos si tiene.",
     "education": "Formación",
-    "noEducation": "No se encontró nada. Añada sus estudios.",
+    "noEducation": "No se encontró nada.",
     "fields": {
       "role": "Puesto",
       "company": "Empresa",
@@ -153,6 +143,7 @@
     "lastDay": "Introduzca la fecha.",
     "ctc": "Introduzca un importe en lakhs, por ejemplo 8.5.",
     "expectedLow": "El salario esperado no puede ser inferior al actual.",
+    "desiredLow": "El salario deseado debe ser mayor que el salario esperado.",
     "industry": "Elija un sector.",
     "locations": "Añada al menos una ciudad.",
     "proofType": "Elija qué carta va a subir.",
@@ -176,8 +167,7 @@
     "industry": "Sector",
     "skills": "Habilidades principales",
     "aadhaar": "Aadhaar añadido",
-    "photo": "Foto añadida",
-    "private": "Tu Aadhaar y tus documentos son privados."
+    "photo": "Foto añadida"
   },
   "done": {
     "title": "Todo listo",

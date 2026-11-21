@@ -1,7 +1,7 @@
 {
   "eyebrow": "Profilo candidato",
   "title": "Configura il tuo profilo",
-  "lead": "Circa 8 minuti. Le tue risposte vengono salvate su questo dispositivo mentre procedi.",
+  "lead": "Circa 8 minuti.",
   "steps": {
     "you": "Su di te",
     "photo": "La tua foto",
@@ -11,7 +11,6 @@
     "review": "Controlla e concludi"
   },
   "you": {
-    "lead": "Li usiamo per verificare che tu sia una persona reale. I datori di lavoro non vedono il tuo numero Aadhaar.",
     "gender": "Genere",
     "genders": {
       "Male": "Uomo",
@@ -55,18 +54,11 @@
     "placesPlaceholder": "Scrivi una città e premi Invio",
     "removePlace": "Rimuovi {{place}}",
     "documents": "Documenti",
-    "documentsLead": "Solo i datori di lavoro che ti sbloccano possono aprirli.",
     "docs": {
       "resignation_letter": "Lettera di dimissioni",
       "experience_letter": "Lettera di esperienza",
       "notice_period_proof": "Prova del preavviso",
       "present_offer": "Offerta attuale"
-    },
-    "docHints": {
-      "resignation_letter": "Oppure l'email di accettazione delle dimissioni, salvata in PDF.",
-      "experience_letter": "Dal tuo datore di lavoro attuale o precedente.",
-      "notice_period_proof": "La lettera di fine rapporto o di offerta scelta sopra.",
-      "present_offer": "Se hai già un'offerta altrove."
     },
     "optional": "{{label}} (facoltativo)",
     "proofType": "Prova del preavviso",
@@ -110,12 +102,10 @@
     "roleSkills": "Il colloquio per {{role}} copre:",
     "onResume": "{{count}} su {{total}} nel tuo curriculum",
     "skills": "Competenze",
-    "addSkill": "Aggiungi una competenza",
-    "removeSkill": "Rimuovi {{skill}}",
     "experience": "Esperienza",
     "noExperience": "Nessuna trovata. Aggiungi i tuoi lavori se ne hai.",
     "education": "Formazione",
-    "noEducation": "Nessuna trovata. Aggiungi i tuoi studi.",
+    "noEducation": "Nessun risultato.",
     "fields": {
       "role": "Ruolo",
       "company": "Azienda",
@@ -153,6 +143,7 @@
     "lastDay": "Inserisci la data.",
     "ctc": "Inserisci un importo in lakh, per esempio 8.5.",
     "expectedLow": "La retribuzione desiderata non può essere inferiore a quella attuale.",
+    "desiredLow": "La retribuzione desiderata deve essere superiore a quella prevista.",
     "industry": "Scegli un settore.",
     "locations": "Aggiungi almeno una città.",
     "proofType": "Scegli quale lettera caricherai.",
@@ -176,8 +167,7 @@
     "industry": "Settore",
     "skills": "Competenze principali",
     "aadhaar": "Aadhaar aggiunto",
-    "photo": "Foto aggiunta",
-    "private": "Il tuo Aadhaar e i documenti restano privati."
+    "photo": "Foto aggiunta"
   },
   "done": {
     "title": "Tutto pronto",

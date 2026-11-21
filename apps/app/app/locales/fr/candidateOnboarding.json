@@ -1,7 +1,7 @@
 {
   "eyebrow": "Profil candidat",
   "title": "Configurer votre profil",
-  "lead": "Environ 8 minutes. Vos réponses sont enregistrées sur cet appareil au fur et à mesure.",
+  "lead": "Environ 8 minutes.",
   "steps": {
     "you": "À propos de vous",
     "photo": "Votre photo",
@@ -11,7 +11,6 @@
     "review": "Vérifier et terminer"
   },
   "you": {
-    "lead": "Nous les utilisons pour vérifier que vous êtes une vraie personne. Les employeurs ne voient pas votre numéro Aadhaar.",
     "gender": "Genre",
     "genders": {
       "Male": "Homme",
@@ -55,18 +54,11 @@
     "placesPlaceholder": "Saisissez une ville et appuyez sur Entrée",
     "removePlace": "Retirer {{place}}",
     "documents": "Documents",
-    "documentsLead": "Seuls les employeurs qui vous débloquent peuvent les ouvrir.",
     "docs": {
       "resignation_letter": "Lettre de démission",
       "experience_letter": "Certificat de travail",
       "notice_period_proof": "Justificatif de préavis",
       "present_offer": "Offre d'emploi actuelle"
-    },
-    "docHints": {
-      "resignation_letter": "Ou l'e-mail d'acceptation de votre démission, enregistré en PDF.",
-      "experience_letter": "De votre employeur actuel ou précédent.",
-      "notice_period_proof": "La lettre de fin de contrat ou d'offre choisie ci-dessus.",
-      "present_offer": "Si vous avez déjà une offre ailleurs."
     },
     "optional": "{{label}} (facultatif)",
     "proofType": "Justificatif de préavis",
@@ -110,12 +102,10 @@
     "roleSkills": "Votre entretien pour {{role}} couvre :",
     "onResume": "{{count}} sur {{total}} dans votre CV",
     "skills": "Compétences",
-    "addSkill": "Ajouter une compétence",
-    "removeSkill": "Retirer {{skill}}",
     "experience": "Expérience",
     "noExperience": "Rien trouvé. Ajoutez vos emplois si vous en avez.",
     "education": "Formation",
-    "noEducation": "Rien trouvé. Ajoutez vos études.",
+    "noEducation": "Rien trouvé.",
     "fields": {
       "role": "Poste",
       "company": "Entreprise",
@@ -153,6 +143,7 @@
     "lastDay": "Saisissez la date.",
     "ctc": "Saisissez un montant en lakhs, par exemple 8.5.",
     "expectedLow": "La rémunération souhaitée ne peut pas être inférieure à la rémunération actuelle.",
+    "desiredLow": "La rémunération souhaitée doit être supérieure à la rémunération attendue.",
     "industry": "Choisissez un secteur.",
     "locations": "Ajoutez au moins une ville.",
     "proofType": "Choisissez la lettre que vous allez importer.",
@@ -176,8 +167,7 @@
     "industry": "Secteur",
     "skills": "Compétences clés",
     "aadhaar": "Aadhaar ajouté",
-    "photo": "Photo ajoutée",
-    "private": "Votre Aadhaar et vos documents restent privés."
+    "photo": "Photo ajoutée"
   },
   "done": {
     "title": "Tout est prêt",

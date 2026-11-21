@@ -35,7 +35,6 @@ export function YouStep({ form }: { form: UseFormReturn<Values> }) {
 
   return (
     <FieldGroup>
-      <p className="text-sm text-muted-foreground">{t("you.lead")}</p>
       <div className="grid gap-6 sm:grid-cols-2">
         <ChoiceField
           form={form}

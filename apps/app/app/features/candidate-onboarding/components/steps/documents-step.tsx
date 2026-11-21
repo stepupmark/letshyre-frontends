@@ -37,7 +37,6 @@ export function DocumentsStep({ form }: { form: UseFormReturn<Values> }) {
 
   return (
     <FieldGroup>
-      <p className="text-sm text-muted-foreground">{t("work.documentsLead")}</p>
       <ChoiceField
         form={form}
         name="notice_period_proof_type"
@@ -73,7 +72,6 @@ export function DocumentsStep({ form }: { form: UseFormReturn<Values> }) {
                       ? t("work.optional", { label: t(`work.docs.${name}`) })
                       : t(`work.docs.${name}`)
                   }
-                  description={t(`work.docHints.${name}`)}
                   rules={DOCUMENT}
                   layout="row"
                   icon={ICONS[name]}

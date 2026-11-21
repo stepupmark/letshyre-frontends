@@ -1,7 +1,7 @@
 {
   "eyebrow": "지원자 프로필",
   "title": "프로필 설정",
-  "lead": "약 8분 걸립니다. 입력하는 대로 이 기기에 저장됩니다.",
+  "lead": "약 8분 걸립니다.",
   "steps": {
     "you": "내 정보",
     "photo": "사진",
@@ -11,7 +11,6 @@
     "review": "확인하고 마치기"
   },
   "you": {
-    "lead": "실제 사람인지 확인하는 데 사용해요. 고용주는 아다르 번호를 볼 수 없어요.",
     "gender": "성별",
     "genders": {
       "Male": "남성",
@@ -55,18 +54,11 @@
     "placesPlaceholder": "도시를 입력하고 Enter를 누르세요",
     "removePlace": "{{place}} 삭제",
     "documents": "서류",
-    "documentsLead": "나를 잠금 해제한 고용주만 열 수 있어요.",
     "docs": {
       "resignation_letter": "사직서",
       "experience_letter": "경력 증명서",
       "notice_period_proof": "퇴직 통보 증빙",
       "present_offer": "현재 받은 오퍼"
-    },
-    "docHints": {
-      "resignation_letter": "또는 사직 수락 이메일을 PDF로 저장한 파일.",
-      "experience_letter": "현재 또는 이전 고용주에게서 받은 것.",
-      "notice_period_proof": "위에서 고른 퇴직 확인서나 오퍼 레터.",
-      "present_offer": "다른 곳에서 이미 오퍼를 받았다면."
     },
     "optional": "{{label}} (선택)",
     "proofType": "퇴직 통보 증빙",
@@ -110,12 +102,10 @@
     "roleSkills": "{{role}} 인터뷰에서 다루는 내용:",
     "onResume": "{{total}}개 중 {{count}}개가 이력서에 있음",
     "skills": "역량",
-    "addSkill": "역량 추가",
-    "removeSkill": "{{skill}} 삭제",
     "experience": "경력",
     "noExperience": "찾지 못했어요. 경력이 있다면 추가하세요.",
     "education": "학력",
-    "noEducation": "찾지 못했어요. 학력을 추가하세요.",
+    "noEducation": "찾지 못했어요.",
     "fields": {
       "role": "직무",
       "company": "회사",
@@ -149,6 +139,7 @@
     "lastDay": "날짜를 입력하세요.",
     "ctc": "라크 단위 금액을 입력하세요(예: 8.5).",
     "expectedLow": "희망 연봉은 현재 연봉보다 낮을 수 없어요.",
+    "desiredLow": "희망 연봉은 기대 연봉보다 높아야 해요.",
     "industry": "업계를 선택하세요.",
     "locations": "도시를 하나 이상 추가하세요.",
     "proofType": "업로드할 서류를 선택하세요.",
@@ -172,8 +163,7 @@
     "industry": "업종",
     "skills": "주요 기술",
     "aadhaar": "Aadhaar 추가됨",
-    "photo": "사진 추가됨",
-    "private": "Aadhaar와 서류는 비공개로 유지됩니다."
+    "photo": "사진 추가됨"
   },
   "done": {
     "title": "준비가 끝났어요",

@@ -1,7 +1,7 @@
 {
   "eyebrow": "候補者プロフィール",
   "title": "プロフィールを設定",
-  "lead": "所要時間は約8分です。入力内容はこの端末に随時保存されます。",
+  "lead": "所要時間は約8分です。",
   "steps": {
     "you": "あなたについて",
     "photo": "写真",
@@ -11,7 +11,6 @@
     "review": "確認して完了"
   },
   "you": {
-    "lead": "実在の人物であることの確認に使います。雇用主にアーダール番号は表示されません。",
     "gender": "性別",
     "genders": {
       "Male": "男性",
@@ -55,18 +54,11 @@
     "placesPlaceholder": "都市を入力して Enter を押す",
     "removePlace": "{{place}} を削除",
     "documents": "書類",
-    "documentsLead": "あなたをアンロックした雇用主だけが開けます。",
     "docs": {
       "resignation_letter": "退職届",
       "experience_letter": "在職証明書",
       "notice_period_proof": "退職予告期間の証明",
       "present_offer": "現在の内定通知"
-    },
-    "docHints": {
-      "resignation_letter": "または退職承認メールを PDF で保存したもの。",
-      "experience_letter": "現在または直近の勤務先から。",
-      "notice_period_proof": "上で選んだ退職証明書または内定通知。",
-      "present_offer": "他社から既に内定がある場合。"
     },
     "optional": "{{label}}（任意）",
     "proofType": "退職予告期間の証明",
@@ -110,12 +102,10 @@
     "roleSkills": "{{role}} の面接で扱う内容：",
     "onResume": "{{total}}件中{{count}}件が履歴書にあります",
     "skills": "スキル",
-    "addSkill": "スキルを追加",
-    "removeSkill": "{{skill}} を削除",
     "experience": "職歴",
     "noExperience": "見つかりませんでした。職歴があれば追加してください。",
     "education": "学歴",
-    "noEducation": "見つかりませんでした。学歴を追加してください。",
+    "noEducation": "見つかりませんでした。",
     "fields": {
       "role": "職種",
       "company": "会社",
@@ -149,6 +139,7 @@
     "lastDay": "日付を入力してください。",
     "ctc": "ラク単位で金額を入力してください（例：8.5）。",
     "expectedLow": "希望給与は現在の給与より低くできません。",
+    "desiredLow": "希望年収は想定年収より高くしてください。",
     "industry": "業界を選んでください。",
     "locations": "都市を1つ以上追加してください。",
     "proofType": "アップロードする書類を選んでください。",
@@ -172,8 +163,7 @@
     "industry": "業界",
     "skills": "主なスキル",
     "aadhaar": "Aadhaar 追加済み",
-    "photo": "写真追加済み",
-    "private": "Aadhaar と書類は非公開です。"
+    "photo": "写真追加済み"
   },
   "done": {
     "title": "準備が整いました",

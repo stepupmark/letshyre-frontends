@@ -1,7 +1,7 @@
 {
   "eyebrow": "Candidate profile",
   "title": "Set up your profile",
-  "lead": "About 8 minutes. Your answers are saved on this device as you go.",
+  "lead": "About 8 minutes.",
   "steps": {
     "you": "About you",
     "photo": "Your photo",
@@ -11,7 +11,6 @@
     "review": "Check and finish"
   },
   "you": {
-    "lead": "We use these to verify you're a real person. Employers don't see your Aadhaar number.",
     "gender": "Gender",
     "genders": {
       "Male": "Male",
@@ -55,18 +54,11 @@
     "placesPlaceholder": "Type a city and press Enter",
     "removePlace": "Remove {{place}}",
     "documents": "Documents",
-    "documentsLead": "Only employers who unlock you can open them.",
     "docs": {
       "resignation_letter": "Resignation letter",
       "experience_letter": "Experience letter",
       "notice_period_proof": "Notice period proof",
       "present_offer": "Current offer letter"
-    },
-    "docHints": {
-      "resignation_letter": "Or your accepted resignation email, saved as a PDF.",
-      "experience_letter": "From your current or last employer.",
-      "notice_period_proof": "The relieving or offer letter you chose above.",
-      "present_offer": "If you already hold an offer elsewhere."
     },
     "optional": "{{label}} (optional)",
     "proofType": "Notice period proof",
@@ -110,12 +102,10 @@
     "roleSkills": "Your interview for {{role}} covers:",
     "onResume": "{{count}} of {{total}} on your resume",
     "skills": "Skills",
-    "addSkill": "Add a skill",
-    "removeSkill": "Remove {{skill}}",
     "experience": "Experience",
     "noExperience": "None found. Add your jobs if you have any.",
     "education": "Education",
-    "noEducation": "None found. Add your studies.",
+    "noEducation": "None found.",
     "fields": {
       "role": "Role",
       "company": "Company",
@@ -151,6 +141,7 @@
     "lastDay": "Enter the date.",
     "ctc": "Enter an amount in lakhs, like 8.5.",
     "expectedLow": "Expected pay can't be lower than your current pay.",
+    "desiredLow": "Desired pay must be higher than your expected pay.",
     "industry": "Choose an industry.",
     "locations": "Add at least one city.",
     "proofType": "Choose which letter you'll upload.",
@@ -174,8 +165,7 @@
     "industry": "Industry",
     "skills": "Top skills",
     "aadhaar": "Aadhaar added",
-    "photo": "Photo added",
-    "private": "Your Aadhaar and documents stay private."
+    "photo": "Photo added"
   },
   "done": {
     "title": "You're all set",

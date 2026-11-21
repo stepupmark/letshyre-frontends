@@ -1,7 +1,7 @@
 {
   "eyebrow": "Bewerberprofil",
   "title": "Profil einrichten",
-  "lead": "Etwa 8 Minuten. Deine Antworten werden laufend auf diesem Gerät gespeichert.",
+  "lead": "Etwa 8 Minuten.",
   "steps": {
     "you": "Über Sie",
     "photo": "Ihr Foto",
@@ -11,7 +11,6 @@
     "review": "Prüfen und abschließen"
   },
   "you": {
-    "lead": "Damit prüfen wir, dass Sie eine echte Person sind. Arbeitgeber sehen Ihre Aadhaar-Nummer nicht.",
     "gender": "Geschlecht",
     "genders": {
       "Male": "Männlich",
@@ -55,18 +54,11 @@
     "placesPlaceholder": "Stadt eingeben und Enter drücken",
     "removePlace": "{{place}} entfernen",
     "documents": "Dokumente",
-    "documentsLead": "Nur Arbeitgeber, die Sie freischalten, können sie öffnen.",
     "docs": {
       "resignation_letter": "Kündigungsschreiben",
       "experience_letter": "Arbeitszeugnis",
       "notice_period_proof": "Nachweis der Kündigungsfrist",
       "present_offer": "Aktuelles Angebotsschreiben"
-    },
-    "docHints": {
-      "resignation_letter": "Oder Ihre bestätigte Kündigungs-E-Mail, als PDF gespeichert.",
-      "experience_letter": "Von Ihrem aktuellen oder letzten Arbeitgeber.",
-      "notice_period_proof": "Das oben gewählte Aufhebungs- oder Angebotsschreiben.",
-      "present_offer": "Falls Sie bereits ein Angebot von woanders haben."
     },
     "optional": "{{label}} (optional)",
     "proofType": "Nachweis der Kündigungsfrist",
@@ -110,12 +102,10 @@
     "roleSkills": "Ihr Interview für {{role}} umfasst:",
     "onResume": "{{count}} von {{total}} in deinem Lebenslauf",
     "skills": "Fähigkeiten",
-    "addSkill": "Fähigkeit hinzufügen",
-    "removeSkill": "{{skill}} entfernen",
     "experience": "Erfahrung",
     "noExperience": "Nichts gefunden. Fügen Sie Ihre Jobs hinzu, falls Sie welche haben.",
     "education": "Ausbildung",
-    "noEducation": "Nichts gefunden. Fügen Sie Ihre Ausbildung hinzu.",
+    "noEducation": "Nichts gefunden.",
     "fields": {
       "role": "Rolle",
       "company": "Unternehmen",
@@ -151,6 +141,7 @@
     "lastDay": "Geben Sie das Datum ein.",
     "ctc": "Geben Sie einen Betrag in Lakhs ein, z. B. 8.5.",
     "expectedLow": "Der Gehaltswunsch darf nicht unter dem aktuellen Gehalt liegen.",
+    "desiredLow": "Ihr Wunschgehalt muss höher als Ihr erwartetes Gehalt sein.",
     "industry": "Wählen Sie eine Branche.",
     "locations": "Fügen Sie mindestens eine Stadt hinzu.",
     "proofType": "Wählen Sie, welches Schreiben Sie hochladen.",
@@ -174,8 +165,7 @@
     "industry": "Branche",
     "skills": "Top-Fähigkeiten",
     "aadhaar": "Aadhaar hinzugefügt",
-    "photo": "Foto hinzugefügt",
-    "private": "Deine Aadhaar-Nummer und Dokumente bleiben privat."
+    "photo": "Foto hinzugefügt"
   },
   "done": {
     "title": "Alles erledigt",

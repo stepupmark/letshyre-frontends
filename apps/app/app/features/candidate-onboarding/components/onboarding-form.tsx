@@ -92,6 +92,7 @@ export function CandidateOnboarding({
         lastDayRange: t("errors.lastDayRange"),
         ctc: t("errors.ctc"),
         expectedLow: t("errors.expectedLow"),
+        desiredLow: t("errors.desiredLow"),
         industry: t("errors.industry"),
         locations: t("errors.locations"),
         proofType: t("errors.proofType"),

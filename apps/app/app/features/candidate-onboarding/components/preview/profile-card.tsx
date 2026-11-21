@@ -185,10 +185,6 @@ export function ProfileCard({
                 })}
               </Stamp>
             </ul>
-            <p className="flex items-center justify-center gap-1.5 text-xs text-muted-foreground">
-              <ShieldCheck className="size-3.5 shrink-0" />
-              {t("preview.private")}
-            </p>
           </Section>
         </div>
       </div>

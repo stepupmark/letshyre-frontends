@@ -140,6 +140,7 @@ type Messages = Record<
   | "lastDayRange"
   | "ctc"
   | "expectedLow"
+  | "desiredLow"
   | "industry"
   | "locations"
   | "proofType"
@@ -162,6 +163,14 @@ export const payRaise = (v: { current_ctc: string; expected_ctc: string }) =>
 
 const payOk = (v: { current_ctc: string; expected_ctc: string }) =>
   Number(v.expected_ctc) >= Number(v.current_ctc)
+
+export const desiredOk = (v: { expected_ctc: string; desired_ctc: string }) =>
+  Number(v.desired_ctc) > Number(v.expected_ctc)
+
+const untouched =
+  (fields: string[]) =>
+  ({ issues }: { issues: { path?: PropertyKey[] }[] }) =>
+    !issues.some((issue) => fields.includes(String(issue.path?.[0])))
 
 export const makeSchema = (m: Messages) => {
   const file = (rules: FileRules, message: string) =>
@@ -223,20 +232,23 @@ export const makeSchema = (m: Messages) => {
     present_offer: file(DOCUMENT, m.file).nullish(),
   })
   return {
-    schema: base.refine(payOk, {
-      path: ["expected_ctc"],
-      message: m.expectedLow,
-      when: ({ issues }) =>
-        !issues.some((issue) =>
-          ["current_ctc", "expected_ctc"].includes(String(issue.path?.[0]))
-        ),
-    }),
+    schema: base
+      .refine(payOk, {
+        path: ["expected_ctc"],
+        message: m.expectedLow,
+        when: untouched(["current_ctc", "expected_ctc"]),
+      })
+      .refine(desiredOk, {
+        path: ["desired_ctc"],
+        message: m.desiredLow,
+        when: untouched(["expected_ctc", "desired_ctc"]),
+      }),
     isDone: (id: keyof typeof STEPS, values: z.input<typeof base>) => {
       const mask: Partial<Record<keyof typeof base.shape, true>> = {}
       for (const key of STEPS[id]) mask[key] = true
       return (
         base.pick(mask).safeParse(values).success &&
-        (id !== "work" || payOk(values))
+        (id !== "work" || (payOk(values) && desiredOk(values)))
       )
     },
   }

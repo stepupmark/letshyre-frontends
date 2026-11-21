@@ -1,6 +1,6 @@
 import { expect, it } from "vitest"
 
-import { isAadhaar, isAdult } from "./onboarding-form.schema"
+import { desiredOk, isAadhaar, isAdult } from "./onboarding-form.schema"
 
 it("accepts an Aadhaar number only with a valid check digit", () => {
   expect(isAadhaar("2345 6789 0124")).toBe(true)
@@ -15,4 +15,10 @@ it("counts someone as 18 from their birthday, not before", () => {
   expect(isAdult("2008-10-04", today)).toBe(true)
   expect(isAdult("2008-10-05", today)).toBe(false)
   expect(isAdult("", today)).toBe(false)
+})
+
+it("wants desired pay above expected pay, not equal to it", () => {
+  expect(desiredOk({ expected_ctc: "16", desired_ctc: "18" })).toBe(true)
+  expect(desiredOk({ expected_ctc: "16", desired_ctc: "16" })).toBe(false)
+  expect(desiredOk({ expected_ctc: "16.5", desired_ctc: "9" })).toBe(false)
 })

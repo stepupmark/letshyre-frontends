@@ -126,6 +126,11 @@ test("a new candidate sets up their profile from photo to resume review", async 
     page.getByText("Expected pay can't be lower than your current pay.")
   ).toBeVisible()
   await page.getByLabel("Expected pay (LPA)").fill("16")
+  await page.getByLabel("Desired pay (LPA)").fill("14")
+  await page.getByRole("button", { name: "Continue" }).click()
+  await expect(
+    page.getByText("Desired pay must be higher than your expected pay.")
+  ).toBeVisible()
   await page.getByLabel("Desired pay (LPA)").fill("18")
   await page.getByRole("button", { name: "Continue" }).click()
 
@@ -169,9 +174,7 @@ test("a new candidate sets up their profile from photo to resume review", async 
     page.getByRole("radio", { name: "Frontend Developer" })
   ).toHaveAttribute("aria-checked", "true")
   await expect(page.getByText("Accessibility")).toBeVisible()
-  await page.getByRole("button", { name: "Remove CSS" }).click()
-  await page.getByLabel("Add a skill").first().fill("Playwright")
-  await page.getByLabel("Add a skill").first().press("Enter")
+  await expect(page.getByRole("button", { name: "Remove CSS" })).toHaveCount(0)
   await axe(page)
   await page.getByRole("button", { name: "Continue" }).click()
 
@@ -194,7 +197,7 @@ test("a new candidate sets up their profile from photo to resume review", async 
   expect(field("resume_id")).toBe("88")
   expect(field("total_experience_years")).toBe("2.5")
   expect(JSON.parse(field("parsed_resume_data") ?? "{}")).toMatchObject({
-    skills: ["React", "Playwright"],
+    skills: ["React", "CSS"],
   })
   expect(sent).toContain('name="profile_photo"; filename="me.png"')
   expect(sent).toContain('name="notice_period_prof"; filename="relieving.pdf"')
