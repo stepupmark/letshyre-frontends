@@ -19,8 +19,8 @@ export function Hero() {
   const { t } = useTranslation("home")
 
   return (
-    <ScrollScene screens={1.4} aria-labelledby={titleId} data-watch="hero">
-      <div className="pin:content-start pin:pt-4 mx-auto grid size-full max-w-6xl items-center gap-12 px-4 pt-8 pb-12 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:pt-0 lg:pb-8">
+    <ScrollScene fit="content" aria-labelledby={titleId} data-watch="hero">
+      <div className="pin:pt-4 mx-auto grid max-w-6xl items-center gap-12 px-4 pt-8 pb-12 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:pt-0 lg:pb-8">
         <div className="max-lg:text-center">
           <p className="text-sm font-semibold text-brand-text">
             {t("hero.eyebrow")}

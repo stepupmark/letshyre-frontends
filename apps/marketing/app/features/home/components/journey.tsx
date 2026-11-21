@@ -10,6 +10,7 @@ import { useHydrated } from "@/hooks/use-hydrated"
 import { twoDigit } from "@/lib/two-digit"
 
 import { type PhotoName } from "../lib/photos"
+import { pinScrollTop } from "../lib/pin"
 import { Photo } from "./photo"
 import { useScene } from "./scene-context"
 import { ScrollScene } from "./scroll-scene"
@@ -148,10 +149,8 @@ function Rail({ labels }: { labels: string[] }) {
   const jump = (event: MouseEvent<HTMLButtonElement>, index: number) => {
     const section = event.currentTarget.closest("section")
     if (!section) return
-    const top = section.getBoundingClientRect().top + window.scrollY
-    const span = section.offsetHeight - window.innerHeight
     window.scrollTo({
-      top: top + span * stepProgress(index, labels.length),
+      top: pinScrollTop(section, stepProgress(index, labels.length)),
       behavior: "smooth",
     })
   }
