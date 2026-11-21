@@ -200,7 +200,7 @@
       },
       {
         "q": "How current is the talent pool?",
-        "a": "A profile stays in the pool for 90 days after the candidate's interview, so you see people who are looking now."
+        "a": "A profile stays in the pool for 90 days after it is created, so you see people who are looking now."
       }
     ]
   },

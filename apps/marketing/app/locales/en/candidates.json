@@ -134,7 +134,7 @@
     },
     "timeline": {
       "title": "In front of employers for 90 days",
-      "body": "Your profile stays in the talent pool for 90 days after your interview, so the people who find you are hiring now.",
+      "body": "Your profile stays in the talent pool for 90 days after you create it, so the people who find you are hiring now.",
       "start": "Interview",
       "end": "Day 90"
     }
@@ -161,7 +161,7 @@
       },
       {
         "q": "Why does my profile last 90 days?",
-        "a": "So employers see people who are actively looking. Your profile stays in the talent pool for 90 days after your interview."
+        "a": "So employers see people who are actively looking. Your profile stays in the talent pool for 90 days after you create it."
       }
     ]
   },
