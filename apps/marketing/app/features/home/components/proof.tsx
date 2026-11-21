@@ -63,7 +63,6 @@ function ProofStage({ titleId }: { titleId: string }) {
 function ProofTitle({ id }: { id: string }) {
   const { t } = useTranslation("home")
   const { progress, still } = useScene()
-  const strike = useTransform(progress, [0.3, 0.4], [0, 1])
   const reveal = useTransform(progress, [0.63, 0.73], [0, 1])
   const rise = useTransform(progress, [0.63, 0.73], ["0.5em", "0em"])
 
@@ -72,17 +71,7 @@ function ProofTitle({ id }: { id: string }) {
       id={id}
       className="pin:mt-5 pin:max-w-none pin:text-5xl pin:xl:text-6xl mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-balance sm:text-5xl"
     >
-      {t("proof.title")}{" "}
-      <span className="relative inline-block">
-        {t("proof.claims")}
-        {still ? null : (
-          <m.span
-            aria-hidden
-            style={{ scaleX: strike }}
-            className="unpin:hidden absolute inset-x-0 top-1/2 h-1 bg-foreground ltr:origin-left rtl:origin-right"
-          />
-        )}
-      </span>{" "}
+      {t("proof.title")} {t("proof.claims")}{" "}
       <m.span
         style={still ? undefined : { opacity: reveal, y: rise }}
         className="unpin:opacity-100! unpin:transform-none! block text-brand-text"
