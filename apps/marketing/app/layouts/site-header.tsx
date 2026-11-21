@@ -56,7 +56,7 @@ export function SiteHeader() {
     <header
       data-compact={compact || undefined}
       data-scrolled={scrolled || undefined}
-      className="group/header sticky top-0 z-40 border-b border-transparent bg-background transition-[background-color,border-color,box-shadow] data-scrolled:border-border data-scrolled:bg-background/85 data-scrolled:shadow-xs data-scrolled:backdrop-blur-md print:hidden"
+      className="group/header sticky top-0 z-40 border-b border-transparent bg-background transition-[border-color,box-shadow] data-scrolled:border-border data-scrolled:shadow-xs print:hidden"
     >
       <Container>
         <div
