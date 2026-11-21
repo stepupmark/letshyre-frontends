@@ -81,12 +81,26 @@ export function SiteHeader() {
               ref={listRef}
               className="min-w-0 gap-1 self-stretch overflow-hidden"
             >
+              {navItems.map((item) => (
+                <NavigationMenuItem key={item.id} className="shrink-0">
+                  <Link
+                    to={localePath(lang, item.path)}
+                    prefetch="intent"
+                    aria-current={current(item)}
+                    data-current={current(item) ? "" : undefined}
+                    className="group/link flex h-11 items-center rounded-lg px-3 text-sm font-medium whitespace-nowrap text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 data-current:text-foreground"
+                  >
+                    <NavLabel>{t(item.label)}</NavLabel>
+                  </Link>
+                </NavigationMenuItem>
+              ))}
+
               <NavigationMenuItem className="shrink-0">
                 <NavigationMenuTrigger
                   data-current={productCurrent || undefined}
                   className="group/link h-11 bg-transparent px-3 text-muted-foreground hover:bg-transparent hover:text-foreground focus:bg-transparent data-current:text-foreground data-popup-open:bg-transparent data-popup-open:text-foreground data-popup-open:hover:bg-transparent data-open:bg-transparent data-open:text-foreground data-open:hover:bg-transparent data-open:focus:bg-transparent"
                 >
-                  <NavLabel>{t("footer.product")}</NavLabel>
+                  <NavLabel>{t("nav.guides")}</NavLabel>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="w-88 p-1.5">
                   <ul className="flex flex-col gap-0.5">
@@ -118,20 +132,6 @@ export function SiteHeader() {
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-
-              {navItems.map((item) => (
-                <NavigationMenuItem key={item.id} className="shrink-0">
-                  <Link
-                    to={localePath(lang, item.path)}
-                    prefetch="intent"
-                    aria-current={current(item)}
-                    data-current={current(item) ? "" : undefined}
-                    className="group/link flex h-11 items-center rounded-lg px-3 text-sm font-medium whitespace-nowrap text-muted-foreground outline-none hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 data-current:text-foreground"
-                  >
-                    <NavLabel>{t(item.label)}</NavLabel>
-                  </Link>
-                </NavigationMenuItem>
-              ))}
             </NavigationMenuList>
           </NavigationMenu>
 

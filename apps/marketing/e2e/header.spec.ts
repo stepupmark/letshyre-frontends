@@ -12,7 +12,7 @@ test.describe("desktop header", () => {
 
   test.use({ viewport: { width: 1280, height: 800 } })
 
-  test("tab order runs skip link, logo, product, nav, language, get started", async ({
+  test("tab order runs skip link, logo, nav, guides, language, get started", async ({
     page,
   }) => {
     await page.goto("/en/pricing")
@@ -21,11 +21,11 @@ test.describe("desktop header", () => {
     const order = [
       page.getByRole("link", { name: "Skip to main content" }),
       banner.getByRole("link", { name: "LetsHyre home" }),
-      nav.getByRole("button", { name: "Product" }),
       nav.getByRole("link", { name: "Pricing" }),
       nav.getByRole("link", { name: "Blog" }),
       nav.getByRole("link", { name: "About" }),
       nav.getByRole("link", { name: "Contact" }),
+      nav.getByRole("button", { name: "Guides" }),
       banner.getByRole("button", { name: /language/i }),
       banner.getByRole("link", { name: "Get Started" }),
     ]
@@ -64,11 +64,11 @@ test.describe("desktop header", () => {
     await expect(languages).toBeHidden()
   })
 
-  test("product menu works from the keyboard", async ({ page }) => {
+  test("guides menu works from the keyboard", async ({ page }) => {
     await page.goto("/en/pricing")
     const trigger = page
       .getByRole("navigation", { name: "Primary navigation" })
-      .getByRole("button", { name: "Product" })
+      .getByRole("button", { name: "Guides" })
     await trigger.focus()
     await page.keyboard.press("Enter")
     const guide = page.getByRole("link", { name: /^Candidate Guide / })

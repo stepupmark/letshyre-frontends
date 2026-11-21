@@ -86,7 +86,7 @@ export function SiteHeaderMenu({ className }: { className?: string }) {
         }
         aria-label={t("nav.toggle")}
       >
-        <MenuIcon />
+        <MenuIcon className="size-6" />
       </SheetTrigger>
       <SheetContent
         side={dirFor(lang) === "rtl" ? "left" : "right"}
@@ -100,17 +100,17 @@ export function SiteHeaderMenu({ className }: { className?: string }) {
             render={<Button variant="ghost" size="icon-lg" />}
             aria-label={t("nav.close")}
           >
-            <XIcon />
+            <XIcon className="size-6" />
           </SheetClose>
         </SheetHeader>
 
         <div className="flex flex-1 flex-col gap-6 overflow-y-auto p-3">
           <nav aria-label={t("nav.mobileAria")} className="flex flex-col gap-6">
-            <MenuGroup title={t("footer.product")}>
-              {productItems.map(navLink)}
-            </MenuGroup>
             <MenuGroup title={t("footer.company")}>
               {navItems.map(navLink)}
+            </MenuGroup>
+            <MenuGroup title={t("nav.guides")}>
+              {productItems.map(navLink)}
             </MenuGroup>
           </nav>
 
