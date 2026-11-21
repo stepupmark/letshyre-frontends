@@ -5,7 +5,6 @@ import {
   FieldError,
   FieldGroup,
   FieldLabel,
-  FieldLegend,
   FieldSet,
 } from "@workspace/ui/components/field"
 import {
@@ -53,7 +52,6 @@ export function CompanyStep({ form }: { form: UseFormReturn<Values> }) {
   return (
     <FieldGroup className="gap-8">
       <FieldSet>
-        <FieldLegend>{t("groups.about")}</FieldLegend>
         <FieldGroup>
           <TextField
             label={t("fields.companyName")}
@@ -147,7 +145,6 @@ export function CompanyStep({ form }: { form: UseFormReturn<Values> }) {
       </FieldSet>
 
       <FieldSet>
-        <FieldLegend>{t("groups.presence")}</FieldLegend>
         <FieldGroup>
           <TextField
             label={t("fields.website")}
@@ -170,7 +167,6 @@ export function CompanyStep({ form }: { form: UseFormReturn<Values> }) {
             label={t("fields.officialEmail")}
             type="email"
             autoComplete="email"
-            hint={t("fields.officialEmailHint")}
             valid={isValid("official_email")}
             error={errors.official_email?.message}
             {...checkOnBlur(form, "official_email")}

@@ -1,7 +1,7 @@
 {
   "eyebrow": "Configuração da empresa",
   "title": "Conte sobre sua empresa",
-  "lead": "Cerca de cinco minutos, em três etapas. Salvamos seu progresso neste dispositivo, então você pode parar e voltar.",
+  "lead": "Cerca de cinco minutos, em três etapas.",
   "steps": {
     "company": "Dados da empresa",
     "legal": "Registro e impostos",
@@ -11,20 +11,16 @@
     "companyName": "Nome da empresa",
     "website": "Site",
     "officialEmail": "E-mail oficial",
-    "officialEmailHint": "Para onde enviamos mensagens da conta e de cobrança.",
     "industry": "Setor",
     "industryPlaceholder": "Escolha um setor",
     "industryFailed": "Os setores não carregaram. Recarregue para tentar de novo.",
     "linkedin": "Página da empresa no LinkedIn",
     "description": "O que sua empresa faz?",
-    "descriptionHint": "Uma ou duas frases que os candidatos vão ler.",
+    "descriptionHint": "Pelo menos 200 caracteres. Os candidatos vão ler isto.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Número de registro da empresa",
-    "registrationHint": "O CIN ou o número do seu certificado de registro, ex. U72900TG2024PTC123456.",
     "pan": "PAN",
-    "panHint": "10 caracteres, como ABCDE1234F",
     "gst": "GSTIN",
-    "gstHint": "15 caracteres, como 36ABCDE1234F1Z5",
     "address": "Endereço registrado",
     "addressLine": "Endereço",
     "city": "Cidade",
@@ -32,44 +28,50 @@
     "pin": "Código PIN"
   },
   "documents": {
-    "lead": "Digitalizações ou fotos nítidas, até 5 MB cada. Os candidatos nunca veem estes documentos.",
-    "keepWarning": "Os arquivos ficam neste dispositivo até o envio, então você pode sair e voltar.",
     "count": "{{count}} de {{total}} adicionados",
     "company_logo": {
-      "label": "Logotipo da empresa",
-      "hint": "Quadrado funciona melhor"
+      "label": "Logotipo da empresa"
     },
     "registration_certificate": {
-      "label": "Certificado de registro",
-      "hint": "Certificado de constituição"
+      "label": "Certificado de registro"
     },
     "gst_certificate": {
-      "label": "Certificado de GST",
-      "hint": "Seu registro de GST"
+      "label": "Certificado de GST"
     },
     "address_proof": {
-      "label": "Comprovante de endereço",
-      "hint": "Uma conta de consumo ou contrato de aluguel"
+      "label": "Comprovante de endereço"
     },
     "logoNotSquare": "Este logo tem {{width}} × {{height}}. Um quadrado fica melhor, pois o exibimos em um quadrado."
   },
   "submitting": "Enviando seus documentos… {{percent}}%",
   "submitFailed": "Não conseguimos enviar seus dados. Tudo o que você digitou continua aqui, então tente de novo.",
   "validation": {
-    "nameMin": "Digite o nome da sua empresa",
-    "website": "Digite um endereço como https://example.com",
-    "email": "Digite um e-mail como financeiro@empresa.com",
+    "nameRequired": "Insira o nome da sua empresa",
+    "nameMin": "O nome da empresa tem pelo menos 2 caracteres",
+    "websiteRequired": "Insira seu site",
+    "website": "Insira um endereço web válido",
+    "emailRequired": "Insira seu e-mail oficial",
+    "email": "Insira um e-mail válido",
     "industry": "Escolha um setor",
-    "linkedin": "Digite um endereço como https://www.linkedin.com/company/example",
+    "linkedinRequired": "Insira a página da sua empresa no LinkedIn",
+    "linkedin": "Insira um endereço de página do LinkedIn válido",
     "linkedinDomain": "Use a página da sua empresa no linkedin.com",
-    "description": "Escreva pelo menos uma frase sobre o que vocês fazem",
-    "registration": "Digite seu número de registro (5 a 50 caracteres)",
-    "pan": "Um PAN tem 10 caracteres, como ABCDE1234F",
-    "gst": "Um GSTIN tem 15 caracteres, como 36ABCDE1234F1Z5",
-    "address": "Digite seu endereço",
-    "city": "Digite uma cidade",
-    "state": "Digite um estado",
-    "pin": "O código PIN tem 6 dígitos, como 500081",
+    "descriptionRequired": "Descreva o que sua empresa faz",
+    "description": "Escreva pelo menos 200 caracteres",
+    "registrationRequired": "Insira seu CIN",
+    "registration": "Um CIN tem 21 caracteres",
+    "panRequired": "Insira seu PAN",
+    "pan": "Um PAN tem 10 caracteres",
+    "gstRequired": "Insira seu GSTIN",
+    "gst": "Um GSTIN tem 15 caracteres",
+    "addressRequired": "Insira seu endereço",
+    "address": "O endereço tem pelo menos 5 caracteres",
+    "cityRequired": "Insira sua cidade",
+    "city": "O nome da cidade tem pelo menos 2 caracteres",
+    "stateRequired": "Insira seu estado",
+    "state": "O nome do estado tem pelo menos 2 caracteres",
+    "pinRequired": "Insira seu código PIN",
+    "pin": "O código PIN tem 6 dígitos",
     "fileRequired": "Adicione este documento",
     "fileInvalid": "Use um arquivo de um tipo aceito, até 5 MB"
   },
@@ -99,22 +101,12 @@
     },
     "fixDetails": "Atualizar dados da empresa"
   },
-  "groups": {
-    "about": "Sobre a empresa",
-    "presence": "Onde as pessoas encontram você"
-  },
-  "legal": {
-    "lead": "Usamos estes dados uma única vez para verificar sua empresa. Os candidatos nunca os veem."
-  },
   "review": {
     "heading": "Confira seus dados",
     "edit": "Editar",
     "editLabel": "Editar {{section}}"
   },
   "preview": {
-    "company": {
-      "caption": "Como os candidatos verão sua empresa"
-    },
     "legal": {
       "caption": "Verificado uma vez pela nossa equipe e mantido privado"
     },

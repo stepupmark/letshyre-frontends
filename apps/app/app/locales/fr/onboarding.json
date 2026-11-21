@@ -1,7 +1,7 @@
 {
   "eyebrow": "Configuration de l'entreprise",
   "title": "Parlez-nous de votre entreprise",
-  "lead": "Environ cinq minutes, en trois étapes. Nous enregistrons votre progression sur cet appareil, vous pouvez donc vous arrêter et revenir.",
+  "lead": "Environ cinq minutes, en trois étapes.",
   "steps": {
     "company": "Informations sur l'entreprise",
     "legal": "Immatriculation et fiscalité",
@@ -11,20 +11,16 @@
     "companyName": "Nom de l'entreprise",
     "website": "Site web",
     "officialEmail": "E-mail officiel",
-    "officialEmailHint": "Là où nous envoyons les messages concernant le compte et la facturation.",
     "industry": "Secteur",
     "industryPlaceholder": "Choisir un secteur",
     "industryFailed": "Les secteurs ne se sont pas chargés. Rechargez pour réessayer.",
     "linkedin": "Page LinkedIn de l'entreprise",
     "description": "Que fait votre entreprise ?",
-    "descriptionHint": "Une ou deux phrases que les candidats liront.",
+    "descriptionHint": "Au moins 200 caractères. Les candidats le liront.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Numéro d'immatriculation de l'entreprise",
-    "registrationHint": "Le CIN ou le numéro de votre certificat d'immatriculation, ex. U72900TG2024PTC123456.",
     "pan": "PAN",
-    "panHint": "10 caractères, par ex. ABCDE1234F",
     "gst": "GSTIN",
-    "gstHint": "15 caractères, par ex. 36ABCDE1234F1Z5",
     "address": "Adresse du siège",
     "addressLine": "Adresse",
     "city": "Ville",
@@ -32,44 +28,50 @@
     "pin": "Code PIN"
   },
   "documents": {
-    "lead": "Scans ou photos nets, jusqu'à 5 Mo chacun. Les candidats ne les voient jamais.",
-    "keepWarning": "Les fichiers restent sur cet appareil jusqu'à l'envoi : vous pouvez partir et revenir.",
     "count": "{{count}} sur {{total}} ajoutés",
     "company_logo": {
-      "label": "Logo de l'entreprise",
-      "hint": "Un format carré fonctionne le mieux"
+      "label": "Logo de l'entreprise"
     },
     "registration_certificate": {
-      "label": "Certificat d'immatriculation",
-      "hint": "Certificat de constitution"
+      "label": "Certificat d'immatriculation"
     },
     "gst_certificate": {
-      "label": "Certificat GST",
-      "hint": "Votre enregistrement GST"
+      "label": "Certificat GST"
     },
     "address_proof": {
-      "label": "Justificatif d'adresse",
-      "hint": "Une facture ou un bail"
+      "label": "Justificatif d'adresse"
     },
     "logoNotSquare": "Ce logo mesure {{width}} × {{height}}. Un logo carré rend mieux, car nous l'affichons dans un carré."
   },
   "submitting": "Import de vos documents… {{percent}} %",
   "submitFailed": "Nous n'avons pas pu envoyer vos informations. Tout ce que vous avez saisi est conservé, réessayez.",
   "validation": {
-    "nameMin": "Saisissez le nom de votre entreprise",
-    "website": "Saisissez une adresse web comme https://example.com",
-    "email": "Saisissez une adresse e-mail comme compta@entreprise.com",
+    "nameRequired": "Saisissez le nom de votre entreprise",
+    "nameMin": "Le nom de l'entreprise comporte au moins 2 caractères",
+    "websiteRequired": "Saisissez votre site web",
+    "website": "Saisissez une adresse web valide",
+    "emailRequired": "Saisissez votre e-mail officiel",
+    "email": "Saisissez une adresse e-mail valide",
     "industry": "Choisissez un secteur",
-    "linkedin": "Saisissez une adresse web comme https://www.linkedin.com/company/example",
+    "linkedinRequired": "Saisissez la page LinkedIn de votre entreprise",
+    "linkedin": "Saisissez une adresse de page LinkedIn valide",
     "linkedinDomain": "Utilisez la page linkedin.com de votre entreprise",
-    "description": "Écrivez au moins une phrase sur votre activité",
-    "registration": "Saisissez votre numéro d'immatriculation (5 à 50 caractères)",
-    "pan": "Un PAN comporte 10 caractères, comme ABCDE1234F",
-    "gst": "Un GSTIN comporte 15 caractères, comme 36ABCDE1234F1Z5",
-    "address": "Saisissez votre adresse",
-    "city": "Saisissez une ville",
-    "state": "Saisissez un État",
-    "pin": "Un code PIN compte 6 chiffres, par ex. 500081",
+    "descriptionRequired": "Décrivez l'activité de votre entreprise",
+    "description": "Écrivez au moins 200 caractères",
+    "registrationRequired": "Saisissez votre CIN",
+    "registration": "Un CIN comporte 21 caractères",
+    "panRequired": "Saisissez votre PAN",
+    "pan": "Un PAN comporte 10 caractères",
+    "gstRequired": "Saisissez votre GSTIN",
+    "gst": "Un GSTIN comporte 15 caractères",
+    "addressRequired": "Saisissez votre adresse",
+    "address": "L'adresse comporte au moins 5 caractères",
+    "cityRequired": "Saisissez votre ville",
+    "city": "Le nom de la ville comporte au moins 2 caractères",
+    "stateRequired": "Saisissez votre État",
+    "state": "Le nom de l'État comporte au moins 2 caractères",
+    "pinRequired": "Saisissez votre code PIN",
+    "pin": "Le code PIN comporte 6 chiffres",
     "fileRequired": "Ajoutez ce document",
     "fileInvalid": "Utilisez un fichier d'un type accepté, jusqu'à 5 Mo"
   },
@@ -99,22 +101,12 @@
     },
     "fixDetails": "Mettre à jour l'entreprise"
   },
-  "groups": {
-    "about": "À propos de l'entreprise",
-    "presence": "Où vous trouver"
-  },
-  "legal": {
-    "lead": "Nous les utilisons une seule fois pour vérifier votre entreprise. Les candidats ne les voient jamais."
-  },
   "review": {
     "heading": "Vérifiez vos informations",
     "edit": "Modifier",
     "editLabel": "Modifier {{section}}"
   },
   "preview": {
-    "company": {
-      "caption": "Ce que les candidats verront de votre entreprise"
-    },
     "legal": {
       "caption": "Vérifié une fois par notre équipe, et gardé privé"
     },

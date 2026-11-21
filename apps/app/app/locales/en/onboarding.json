@@ -1,7 +1,7 @@
 {
   "eyebrow": "Company setup",
   "title": "Tell us about your company",
-  "lead": "About five minutes, in three steps. We save your progress on this device, so you can stop and come back.",
+  "lead": "About five minutes, in three steps.",
   "steps": {
     "company": "Company details",
     "legal": "Registration and tax",
@@ -11,20 +11,16 @@
     "companyName": "Company name",
     "website": "Website",
     "officialEmail": "Official email",
-    "officialEmailHint": "Where we send account and billing messages.",
     "industry": "Industry",
     "industryPlaceholder": "Choose an industry",
     "industryFailed": "Industries didn't load. Reload to try again.",
     "linkedin": "Company LinkedIn page",
     "description": "What does your company do?",
-    "descriptionHint": "A sentence or two that candidates will read.",
+    "descriptionHint": "At least 200 characters. Candidates will read this.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Company registration number",
-    "registrationHint": "The CIN or your registration certificate's number, e.g. U72900TG2024PTC123456.",
     "pan": "PAN",
-    "panHint": "10 characters, like ABCDE1234F",
     "gst": "GSTIN",
-    "gstHint": "15 characters, like 36ABCDE1234F1Z5",
     "address": "Registered address",
     "addressLine": "Street address",
     "city": "City",
@@ -32,44 +28,50 @@
     "pin": "PIN code"
   },
   "documents": {
-    "lead": "Clear scans or photos, up to 5 MB each. Candidates never see these.",
-    "keepWarning": "Files stay on this device until you submit, so you can leave and come back.",
     "count": "{{count}} of {{total}} added",
     "company_logo": {
-      "label": "Company logo",
-      "hint": "Square works best"
+      "label": "Company logo"
     },
     "registration_certificate": {
-      "label": "Registration certificate",
-      "hint": "Certificate of incorporation"
+      "label": "Registration certificate"
     },
     "gst_certificate": {
-      "label": "GST certificate",
-      "hint": "Your GST registration"
+      "label": "GST certificate"
     },
     "address_proof": {
-      "label": "Address proof",
-      "hint": "A utility bill or lease agreement"
+      "label": "Address proof"
     },
     "logoNotSquare": "This logo is {{width}} × {{height}}. A square one looks best, since we show it in a square."
   },
   "submitting": "Uploading your documents… {{percent}}%",
   "submitFailed": "We couldn't submit your details. Everything you entered is still here, so try again.",
   "validation": {
-    "nameMin": "Enter your company's name",
-    "website": "Enter a web address like https://example.com",
-    "email": "Enter an email address like accounts@company.com",
+    "nameRequired": "Enter your company's name",
+    "nameMin": "A company name has at least 2 characters",
+    "websiteRequired": "Enter your website",
+    "website": "Enter a valid web address",
+    "emailRequired": "Enter your official email",
+    "email": "Enter a valid email address",
     "industry": "Choose an industry",
-    "linkedin": "Enter a web address like https://www.linkedin.com/company/example",
+    "linkedinRequired": "Enter your company's LinkedIn page",
+    "linkedin": "Enter a valid LinkedIn page address",
     "linkedinDomain": "Use your company's linkedin.com page",
-    "description": "Write at least a sentence about what you do",
-    "registration": "Enter your registration number (5 to 50 characters)",
-    "pan": "A PAN has 10 characters, like ABCDE1234F",
-    "gst": "A GSTIN has 15 characters, like 36ABCDE1234F1Z5",
-    "address": "Enter your street address",
-    "city": "Enter a city",
-    "state": "Enter a state",
-    "pin": "A PIN code has 6 digits, like 500081",
+    "descriptionRequired": "Describe what your company does",
+    "description": "Write at least 200 characters",
+    "registrationRequired": "Enter your CIN",
+    "registration": "A CIN has 21 characters",
+    "panRequired": "Enter your PAN",
+    "pan": "A PAN has 10 characters",
+    "gstRequired": "Enter your GSTIN",
+    "gst": "A GSTIN has 15 characters",
+    "addressRequired": "Enter your street address",
+    "address": "A street address has at least 5 characters",
+    "cityRequired": "Enter your city",
+    "city": "A city name has at least 2 characters",
+    "stateRequired": "Enter your state",
+    "state": "A state name has at least 2 characters",
+    "pinRequired": "Enter your PIN code",
+    "pin": "A PIN code has 6 digits",
     "fileRequired": "Add this document",
     "fileInvalid": "Use a file of an accepted type, up to 5 MB"
   },
@@ -99,22 +101,12 @@
     },
     "fixDetails": "Update company details"
   },
-  "groups": {
-    "about": "About the company",
-    "presence": "Where people find you"
-  },
-  "legal": {
-    "lead": "We use these once to verify your company. Candidates never see them."
-  },
   "review": {
     "heading": "Check your details",
     "edit": "Edit",
     "editLabel": "Edit {{section}}"
   },
   "preview": {
-    "company": {
-      "caption": "How candidates will see your company"
-    },
     "legal": {
       "caption": "Checked once by our team and kept private"
     },

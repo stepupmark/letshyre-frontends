@@ -1,6 +1,5 @@
-import { useTranslation } from "@workspace/i18n/react"
 import { useQuery } from "@tanstack/react-query"
-import { BadgeCheck, Globe, Link2, MapPin } from "lucide-react"
+import { BadgeCheck, Globe, Link2 } from "lucide-react"
 import { useWatch, type Control } from "react-hook-form"
 
 import { FileImage } from "@/components/file-image"
@@ -19,22 +18,18 @@ const host = (url: string) => {
 
 /** The company as candidates will see it, filling in while the form is typed. */
 export function CompanyCard({ control }: { control: Control<Values> }) {
-  const { t } = useTranslation("onboarding")
   const industries = useQuery(industriesQuery())
-  const [name, industry, description, website, linkedin, city, state, logo] =
-    useWatch({
-      control,
-      name: [
-        "company_name",
-        "company_industry",
-        "company_description",
-        "company_website",
-        "linkedin_url",
-        "address_city",
-        "address_state",
-        "company_logo",
-      ],
-    })
+  const [name, industry, description, website, linkedin, logo] = useWatch({
+    control,
+    name: [
+      "company_name",
+      "company_industry",
+      "company_description",
+      "company_website",
+      "linkedin_url",
+      "company_logo",
+    ],
+  })
   const industryLabel = industries.data?.find(
     (item) => item.value === industry
   )?.label
@@ -85,14 +80,7 @@ export function CompanyCard({ control }: { control: Control<Values> }) {
       <ul className="flex flex-col gap-2 border-t pt-4 text-sm">
         <Detail icon={Globe} value={website && host(website)} />
         <Detail icon={Link2} value={linkedin && host(linkedin)} />
-        <Detail
-          icon={MapPin}
-          value={[city, state].filter((part) => part.trim()).join(", ")}
-        />
       </ul>
-      <p className="text-xs text-muted-foreground">
-        {t("preview.company.caption")}
-      </p>
     </div>
   )
 }

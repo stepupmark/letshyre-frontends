@@ -1,7 +1,7 @@
 {
   "eyebrow": "Unternehmen einrichten",
   "title": "Erzählen Sie uns von Ihrem Unternehmen",
-  "lead": "Etwa fünf Minuten in drei Schritten. Wir speichern Ihren Fortschritt auf diesem Gerät, Sie können also pausieren und später weitermachen.",
+  "lead": "Etwa fünf Minuten in drei Schritten.",
   "steps": {
     "company": "Unternehmensdaten",
     "legal": "Registrierung und Steuern",
@@ -11,20 +11,16 @@
     "companyName": "Firmenname",
     "website": "Website",
     "officialEmail": "Offizielle E-Mail",
-    "officialEmailHint": "Hierhin senden wir Konto- und Abrechnungsnachrichten.",
     "industry": "Branche",
     "industryPlaceholder": "Branche wählen",
     "industryFailed": "Die Branchen wurden nicht geladen. Laden Sie neu, um es erneut zu versuchen.",
     "linkedin": "LinkedIn-Seite des Unternehmens",
     "description": "Was macht Ihr Unternehmen?",
-    "descriptionHint": "Ein, zwei Sätze, die Bewerbende lesen.",
+    "descriptionHint": "Mindestens 200 Zeichen. Bewerber lesen diesen Text.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Registrierungsnummer des Unternehmens",
-    "registrationHint": "Die CIN oder die Nummer Ihrer Registrierungsurkunde, z. B. U72900TG2024PTC123456.",
     "pan": "PAN",
-    "panHint": "10 Zeichen, z. B. ABCDE1234F",
     "gst": "GSTIN",
-    "gstHint": "15 Zeichen, z. B. 36ABCDE1234F1Z5",
     "address": "Eingetragene Adresse",
     "addressLine": "Straße und Hausnummer",
     "city": "Stadt",
@@ -32,44 +28,50 @@
     "pin": "PIN-Code"
   },
   "documents": {
-    "lead": "Klare Scans oder Fotos, je bis 5 MB. Kandidaten sehen diese nie.",
-    "keepWarning": "Dateien bleiben bis zum Absenden auf diesem Gerät, Sie können also gehen und später weitermachen.",
     "count": "{{count}} von {{total}} hinzugefügt",
     "company_logo": {
-      "label": "Firmenlogo",
-      "hint": "Quadratisch eignet sich am besten"
+      "label": "Firmenlogo"
     },
     "registration_certificate": {
-      "label": "Registrierungsurkunde",
-      "hint": "Gründungsurkunde"
+      "label": "Registrierungsurkunde"
     },
     "gst_certificate": {
-      "label": "GST-Bescheinigung",
-      "hint": "Ihre GST-Registrierung"
+      "label": "GST-Bescheinigung"
     },
     "address_proof": {
-      "label": "Adressnachweis",
-      "hint": "Eine Versorgerrechnung oder ein Mietvertrag"
+      "label": "Adressnachweis"
     },
     "logoNotSquare": "Dieses Logo ist {{width}} × {{height}}. Quadratisch wirkt es am besten, da wir es quadratisch zeigen."
   },
   "submitting": "Ihre Dokumente werden hochgeladen… {{percent}} %",
   "submitFailed": "Wir konnten Ihre Angaben nicht übermitteln. Alle Eingaben sind noch da, versuchen Sie es erneut.",
   "validation": {
-    "nameMin": "Geben Sie den Namen Ihres Unternehmens ein",
-    "website": "Geben Sie eine Webadresse wie https://example.com ein",
-    "email": "Geben Sie eine E-Mail-Adresse wie buchhaltung@firma.de ein",
+    "nameRequired": "Geben Sie den Namen Ihres Unternehmens ein",
+    "nameMin": "Ein Unternehmensname hat mindestens 2 Zeichen",
+    "websiteRequired": "Geben Sie Ihre Website ein",
+    "website": "Geben Sie eine gültige Webadresse ein",
+    "emailRequired": "Geben Sie Ihre offizielle E-Mail-Adresse ein",
+    "email": "Geben Sie eine gültige E-Mail-Adresse ein",
     "industry": "Wählen Sie eine Branche",
-    "linkedin": "Geben Sie eine Webadresse wie https://www.linkedin.com/company/example ein",
+    "linkedinRequired": "Geben Sie die LinkedIn-Seite Ihres Unternehmens ein",
+    "linkedin": "Geben Sie eine gültige LinkedIn-Seitenadresse ein",
     "linkedinDomain": "Verwenden Sie die linkedin.com-Seite Ihres Unternehmens",
-    "description": "Schreiben Sie mindestens einen Satz darüber, was Sie tun",
-    "registration": "Geben Sie Ihre Registrierungsnummer ein (5 bis 50 Zeichen)",
-    "pan": "Eine PAN hat 10 Zeichen, z. B. ABCDE1234F",
-    "gst": "Eine GSTIN hat 15 Zeichen, z. B. 36ABCDE1234F1Z5",
-    "address": "Geben Sie Straße und Hausnummer ein",
-    "city": "Geben Sie eine Stadt ein",
-    "state": "Geben Sie einen Bundesstaat ein",
-    "pin": "Ein PIN-Code hat 6 Ziffern, z. B. 500081",
+    "descriptionRequired": "Beschreiben Sie, was Ihr Unternehmen macht",
+    "description": "Schreiben Sie mindestens 200 Zeichen",
+    "registrationRequired": "Geben Sie Ihre CIN ein",
+    "registration": "Eine CIN hat 21 Zeichen",
+    "panRequired": "Geben Sie Ihre PAN ein",
+    "pan": "Eine PAN hat 10 Zeichen",
+    "gstRequired": "Geben Sie Ihre GSTIN ein",
+    "gst": "Eine GSTIN hat 15 Zeichen",
+    "addressRequired": "Geben Sie Straße und Hausnummer ein",
+    "address": "Eine Straßenadresse hat mindestens 5 Zeichen",
+    "cityRequired": "Geben Sie Ihre Stadt ein",
+    "city": "Ein Stadtname hat mindestens 2 Zeichen",
+    "stateRequired": "Geben Sie Ihren Bundesstaat ein",
+    "state": "Ein Bundesstaat hat mindestens 2 Zeichen",
+    "pinRequired": "Geben Sie Ihre PIN-Postleitzahl ein",
+    "pin": "Eine PIN-Postleitzahl hat 6 Ziffern",
     "fileRequired": "Fügen Sie dieses Dokument hinzu",
     "fileInvalid": "Verwenden Sie eine Datei eines akzeptierten Typs bis 5 MB"
   },
@@ -99,22 +101,12 @@
     },
     "fixDetails": "Unternehmensdaten aktualisieren"
   },
-  "groups": {
-    "about": "Über das Unternehmen",
-    "presence": "Wo man Sie findet"
-  },
-  "legal": {
-    "lead": "Wir nutzen diese Angaben einmal, um Ihr Unternehmen zu prüfen. Bewerbende sehen sie nie."
-  },
   "review": {
     "heading": "Angaben prüfen",
     "edit": "Bearbeiten",
     "editLabel": "{{section}} bearbeiten"
   },
   "preview": {
-    "company": {
-      "caption": "So sehen Bewerbende Ihr Unternehmen"
-    },
     "legal": {
       "caption": "Einmal von unserem Team geprüft und vertraulich behandelt"
     },

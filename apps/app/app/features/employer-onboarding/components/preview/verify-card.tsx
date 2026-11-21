@@ -1,6 +1,6 @@
 import { useTranslation } from "@workspace/i18n/react"
 import { cn } from "@workspace/ui/lib/utils"
-import { Check } from "lucide-react"
+import { Check, MapPin } from "lucide-react"
 import { useWatch, type UseFormReturn } from "react-hook-form"
 
 import { useFieldValid } from "@/hooks/use-field-valid"
@@ -12,10 +12,17 @@ import type { Values } from "../../schemas/onboarding-form.schema"
 export function VerifyCard({ form }: { form: UseFormReturn<Values> }) {
   const { t } = useTranslation("onboarding")
   const isValid = useFieldValid(form)
-  const [registration, pan, gst] = useWatch({
+  const [registration, pan, gst, city, state] = useWatch({
     control: form.control,
-    name: ["company_registration_number", "pan_number", "gst_number"],
+    name: [
+      "company_registration_number",
+      "pan_number",
+      "gst_number",
+      "address_city",
+      "address_state",
+    ],
   })
+  const location = [city, state].filter((part) => part.trim()).join(", ")
   const rows = [
     {
       label: t("fields.registration"),
@@ -54,6 +61,16 @@ export function VerifyCard({ form }: { form: UseFormReturn<Values> }) {
           </li>
         ))}
       </ul>
+      <p className="flex min-w-0 items-center gap-2 border-t pt-4 text-sm text-muted-foreground">
+        <MapPin className="size-4 shrink-0" />
+        {location ? (
+          <span className="truncate text-foreground motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-1">
+            {location}
+          </span>
+        ) : (
+          <span className="h-2.5 w-28 rounded-full bg-muted-foreground/15" />
+        )}
+      </p>
       <p className="text-xs text-muted-foreground">
         {t("preview.legal.caption")}
       </p>

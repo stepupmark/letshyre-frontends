@@ -6,7 +6,6 @@ import {
   FileBadge,
   FileText,
   ImageIcon,
-  Info,
   MapPinHouse,
   type LucideIcon,
 } from "lucide-react"
@@ -55,14 +54,9 @@ export function DocumentsStep({
 
   return (
     <div className="flex flex-col gap-5">
-      <Alert>
-        <Info />
-        <AlertDescription>{t("documents.keepWarning")}</AlertDescription>
-      </Alert>
       <div className="overflow-hidden rounded-xl border">
-        <div className="flex items-center justify-between gap-4 border-b bg-muted/30 px-4 py-3">
-          <p className="text-sm text-muted-foreground">{t("documents.lead")}</p>
-          <p className="shrink-0 text-xs font-medium tabular-nums">
+        <div className="border-b bg-muted/30 px-4 py-3">
+          <p className="text-xs font-medium tabular-nums">
             {t("documents.count", { count: added, total: DOCUMENTS.length })}
           </p>
         </div>
@@ -75,7 +69,6 @@ export function DocumentsStep({
               render={({ field }) => (
                 <FileDropzone
                   label={t(`documents.${name}.label`)}
-                  description={t(`documents.${name}.hint`)}
                   rules={rules}
                   layout="row"
                   icon={ICONS[name]}

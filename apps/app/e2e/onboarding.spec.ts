@@ -44,7 +44,11 @@ test("a new employer completes company details and documents, then reaches the d
     .fill("https://in.linkedin.com/company/acme")
   await page
     .getByLabel("What does your company do?")
-    .fill("We build hiring software for small teams.")
+    .fill(
+      "We build hiring software for small teams. Our product helps founders and hiring managers " +
+        "post roles, interview candidates and compare them on one scorecard, so they can hire " +
+        "with confidence and without a recruiting team."
+    )
   await axe(page)
   await page.getByRole("button", { name: "Continue" }).click()
 

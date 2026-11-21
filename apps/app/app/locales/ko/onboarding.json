@@ -1,7 +1,7 @@
 {
   "eyebrow": "회사 설정",
   "title": "회사에 대해 알려 주세요",
-  "lead": "3단계로 약 5분 걸려요. 진행 상황은 이 기기에 저장되니 멈췄다가 다시 와도 돼요.",
+  "lead": "3단계로 약 5분 걸려요.",
   "steps": {
     "company": "회사 정보",
     "legal": "등록과 세금",
@@ -11,20 +11,16 @@
     "companyName": "회사 이름",
     "website": "웹사이트",
     "officialEmail": "공식 이메일",
-    "officialEmailHint": "계정과 결제 관련 알림을 보내는 곳이에요.",
     "industry": "업계",
     "industryPlaceholder": "업계 선택",
     "industryFailed": "업계 목록을 불러오지 못했어요. 새로고침하세요.",
     "linkedin": "회사 LinkedIn 페이지",
     "description": "회사는 어떤 일을 하나요?",
-    "descriptionHint": "지원자가 읽을 한두 문장.",
+    "descriptionHint": "200자 이상. 지원자가 읽게 됩니다.",
     "descriptionCount": "{{count}} / 500",
     "registration": "회사 등록 번호",
-    "registrationHint": "CIN 또는 등록 증명서 번호, 예: U72900TG2024PTC123456.",
     "pan": "PAN",
-    "panHint": "10자, 예: ABCDE1234F",
     "gst": "GSTIN",
-    "gstHint": "15자, 예: 36ABCDE1234F1Z5",
     "address": "등록 주소",
     "addressLine": "도로명 주소",
     "city": "도시",
@@ -32,44 +28,50 @@
     "pin": "PIN 코드"
   },
   "documents": {
-    "lead": "선명한 스캔본이나 사진, 각 5 MB 이하. 후보자는 절대 볼 수 없어요.",
-    "keepWarning": "제출할 때까지 파일이 이 기기에 남아 있으니 나갔다가 다시 와도 됩니다.",
     "count": "{{total}}개 중 {{count}}개 추가됨",
     "company_logo": {
-      "label": "회사 로고",
-      "hint": "정사각형이 가장 좋아요"
+      "label": "회사 로고"
     },
     "registration_certificate": {
-      "label": "등록 증명서",
-      "hint": "법인 설립 증명서"
+      "label": "등록 증명서"
     },
     "gst_certificate": {
-      "label": "GST 증명서",
-      "hint": "GST 등록"
+      "label": "GST 증명서"
     },
     "address_proof": {
-      "label": "주소 증빙",
-      "hint": "공과금 고지서나 임대 계약서"
+      "label": "주소 증빙"
     },
     "logoNotSquare": "이 로고는 {{width}} × {{height}}입니다. 정사각형으로 보여 주므로 정사각형 로고가 가장 좋습니다."
   },
   "submitting": "서류 업로드 중… {{percent}}%",
   "submitFailed": "정보를 제출하지 못했어요. 입력한 내용은 그대로 있으니 다시 시도하세요.",
   "validation": {
-    "nameMin": "회사 이름을 입력하세요",
-    "website": "https://example.com 같은 웹 주소를 입력하세요",
-    "email": "accounts@company.com 같은 이메일 주소를 입력하세요",
+    "nameRequired": "회사 이름을 입력하세요",
+    "nameMin": "회사 이름은 2자 이상이에요",
+    "websiteRequired": "웹사이트를 입력하세요",
+    "website": "올바른 웹 주소를 입력하세요",
+    "emailRequired": "공식 이메일을 입력하세요",
+    "email": "올바른 이메일 주소를 입력하세요",
     "industry": "업계를 선택하세요",
-    "linkedin": "https://www.linkedin.com/company/example 같은 웹 주소를 입력하세요",
+    "linkedinRequired": "회사 LinkedIn 페이지를 입력하세요",
+    "linkedin": "올바른 LinkedIn 페이지 주소를 입력하세요",
     "linkedinDomain": "회사의 linkedin.com 페이지를 사용하세요",
-    "description": "회사가 하는 일을 한 문장 이상 쓰세요",
-    "registration": "등록 번호를 입력하세요(5~50자)",
-    "pan": "PAN은 ABCDE1234F처럼 10자예요",
-    "gst": "GSTIN은 36ABCDE1234F1Z5처럼 15자예요",
-    "address": "도로명 주소를 입력하세요",
-    "city": "도시를 입력하세요",
-    "state": "주를 입력하세요",
-    "pin": "PIN 코드는 6자리입니다(예: 500081)",
+    "descriptionRequired": "회사가 하는 일을 설명해 주세요",
+    "description": "200자 이상 작성하세요",
+    "registrationRequired": "CIN을 입력하세요",
+    "registration": "CIN은 21자예요",
+    "panRequired": "PAN을 입력하세요",
+    "pan": "PAN은 10자예요",
+    "gstRequired": "GSTIN을 입력하세요",
+    "gst": "GSTIN은 15자예요",
+    "addressRequired": "도로명 주소를 입력하세요",
+    "address": "도로명 주소는 5자 이상이에요",
+    "cityRequired": "도시를 입력하세요",
+    "city": "도시 이름은 2자 이상이에요",
+    "stateRequired": "주를 입력하세요",
+    "state": "주 이름은 2자 이상이에요",
+    "pinRequired": "PIN 코드를 입력하세요",
+    "pin": "PIN 코드는 6자리 숫자예요",
     "fileRequired": "이 서류를 추가하세요",
     "fileInvalid": "허용되는 형식의 5 MB 이하 파일을 사용하세요"
   },
@@ -99,22 +101,12 @@
     },
     "fixDetails": "회사 정보 수정"
   },
-  "groups": {
-    "about": "회사 소개",
-    "presence": "회사를 찾을 수 있는 곳"
-  },
-  "legal": {
-    "lead": "회사 확인에 한 번만 사용합니다. 지원자에게는 보이지 않습니다."
-  },
   "review": {
     "heading": "입력 내용 확인",
     "edit": "수정",
     "editLabel": "{{section}} 수정"
   },
   "preview": {
-    "company": {
-      "caption": "지원자에게 보이는 회사 모습"
-    },
     "legal": {
       "caption": "팀이 한 번 확인하고 비공개로 보관합니다"
     },

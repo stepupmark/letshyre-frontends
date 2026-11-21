@@ -1,7 +1,7 @@
 import { z } from "zod"
 
 import { joinAddress as join } from "@/lib/address"
-import { GSTIN, isLinkedIn, PAN, PIN_CODE } from "@/lib/company-ids"
+import { CIN, GSTIN, isLinkedIn, PAN, PIN_CODE } from "@/lib/company-ids"
 import type { FileRules } from "@/lib/file-rules"
 import { checkFile } from "@/lib/file-rules"
 
@@ -54,19 +54,31 @@ export const DOCUMENTS: { name: FileField; rules: FileRules }[] = [
 ]
 
 type Messages = Record<
+  | "nameRequired"
   | "nameMin"
+  | "websiteRequired"
   | "website"
+  | "emailRequired"
   | "email"
   | "industry"
+  | "linkedinRequired"
   | "linkedin"
   | "linkedinDomain"
+  | "descriptionRequired"
   | "description"
+  | "registrationRequired"
   | "registration"
+  | "panRequired"
   | "pan"
+  | "gstRequired"
   | "gst"
+  | "addressRequired"
   | "address"
+  | "cityRequired"
   | "city"
+  | "stateRequired"
   | "state"
+  | "pinRequired"
   | "pin"
   | "fileRequired"
   | "fileInvalid",
@@ -78,25 +90,30 @@ export const makeSchema = (m: Messages) => {
     z
       .custom<File>((value) => value instanceof File, m.fileRequired)
       .refine((value) => checkFile(value, rules) === null, m.fileInvalid)
+  // the required message comes first, so an empty field never shows the format one
+  const filled = (required: string) => z.string().trim().min(1, required)
 
   return z.object({
-    company_name: z.string().trim().min(2, m.nameMin).max(100),
-    company_website: z.url(m.website),
-    official_email: z.email(m.email),
+    company_name: filled(m.nameRequired).min(2, m.nameMin).max(100),
+    company_website: filled(m.websiteRequired).pipe(z.url(m.website)),
+    official_email: filled(m.emailRequired).pipe(z.email(m.email)),
     company_industry: z.string().min(1, m.industry),
-    linkedin_url: z.url(m.linkedin).refine(isLinkedIn, m.linkedinDomain),
-    company_description: z.string().trim().min(10, m.description).max(500),
-    company_registration_number: z
-      .string()
-      .trim()
-      .min(5, m.registration)
-      .max(50, m.registration),
-    pan_number: z.string().regex(PAN, m.pan),
-    gst_number: z.string().regex(GSTIN, m.gst),
-    address_line: z.string().trim().min(5, m.address),
-    address_city: z.string().trim().min(2, m.city),
-    address_state: z.string().trim().min(2, m.state),
-    address_pin: z.string().trim().regex(PIN_CODE, m.pin),
+    linkedin_url: filled(m.linkedinRequired).pipe(
+      z.url(m.linkedin).refine(isLinkedIn, m.linkedinDomain)
+    ),
+    company_description: filled(m.descriptionRequired)
+      .min(200, m.description)
+      .max(500),
+    company_registration_number: filled(m.registrationRequired).regex(
+      CIN,
+      m.registration
+    ),
+    pan_number: filled(m.panRequired).regex(PAN, m.pan),
+    gst_number: filled(m.gstRequired).regex(GSTIN, m.gst),
+    address_line: filled(m.addressRequired).min(5, m.address),
+    address_city: filled(m.cityRequired).min(2, m.city),
+    address_state: filled(m.stateRequired).min(2, m.state),
+    address_pin: filled(m.pinRequired).regex(PIN_CODE, m.pin),
     company_logo: file(IMAGE),
     registration_certificate: file(DOCUMENT),
     gst_certificate: file(DOCUMENT),

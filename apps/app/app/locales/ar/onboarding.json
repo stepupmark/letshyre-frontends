@@ -1,7 +1,7 @@
 {
   "eyebrow": "إعداد الشركة",
   "title": "أخبرنا عن شركتك",
-  "lead": "نحو خمس دقائق، في ثلاث خطوات. نحفظ تقدمك على هذا الجهاز، فيمكنك التوقف والعودة.",
+  "lead": "نحو خمس دقائق، في ثلاث خطوات.",
   "steps": {
     "company": "بيانات الشركة",
     "legal": "التسجيل والضرائب",
@@ -11,20 +11,16 @@
     "companyName": "اسم الشركة",
     "website": "الموقع الإلكتروني",
     "officialEmail": "البريد الرسمي",
-    "officialEmailHint": "حيث نرسل رسائل الحساب والفوترة.",
     "industry": "القطاع",
     "industryPlaceholder": "اختر قطاعًا",
     "industryFailed": "لم تُحمَّل القطاعات. أعد التحميل للمحاولة مجددًا.",
     "linkedin": "صفحة الشركة على LinkedIn",
     "description": "ماذا تعمل شركتك؟",
-    "descriptionHint": "جملة أو جملتان سيقرؤهما المرشحون.",
+    "descriptionHint": "200 حرف على الأقل. سيقرأ المرشحون هذا.",
     "descriptionCount": "{{count}} / 500",
     "registration": "رقم تسجيل الشركة",
-    "registrationHint": "رقم CIN أو رقم شهادة التسجيل، مثل U72900TG2024PTC123456.",
     "pan": "PAN",
-    "panHint": "10 أحرف، مثل ABCDE1234F",
     "gst": "GSTIN",
-    "gstHint": "15 حرفًا، مثل 36ABCDE1234F1Z5",
     "address": "العنوان المسجّل",
     "addressLine": "عنوان الشارع",
     "city": "المدينة",
@@ -32,44 +28,50 @@
     "pin": "الرمز البريدي (PIN)"
   },
   "documents": {
-    "lead": "مسح ضوئي أو صور واضحة، حتى 5 ميغابايت لكل منها. لا يراها المرشحون أبدًا.",
-    "keepWarning": "تبقى الملفات على هذا الجهاز حتى الإرسال، لذا يمكنك المغادرة والعودة.",
     "count": "تمت إضافة {{count}} من {{total}}",
     "company_logo": {
-      "label": "شعار الشركة",
-      "hint": "الشكل المربع هو الأفضل"
+      "label": "شعار الشركة"
     },
     "registration_certificate": {
-      "label": "شهادة التسجيل",
-      "hint": "شهادة التأسيس"
+      "label": "شهادة التسجيل"
     },
     "gst_certificate": {
-      "label": "شهادة GST",
-      "hint": "تسجيلك في GST"
+      "label": "شهادة GST"
     },
     "address_proof": {
-      "label": "إثبات العنوان",
-      "hint": "فاتورة خدمات أو عقد إيجار"
+      "label": "إثبات العنوان"
     },
     "logoNotSquare": "مقاس هذا الشعار {{width}} × {{height}}. الشعار المربع أفضل لأننا نعرضه داخل مربع."
   },
   "submitting": "جارٍ رفع مستنداتك… {{percent}}%",
   "submitFailed": "تعذّر إرسال بياناتك. كل ما أدخلته ما زال هنا، فحاول مجددًا.",
   "validation": {
-    "nameMin": "أدخل اسم شركتك",
-    "website": "أدخل عنوان ويب مثل https://example.com",
-    "email": "أدخل بريدًا مثل accounts@company.com",
+    "nameRequired": "أدخل اسم شركتك",
+    "nameMin": "يتكون اسم الشركة من حرفين على الأقل",
+    "websiteRequired": "أدخل موقعك الإلكتروني",
+    "website": "أدخل عنوان ويب صالحًا",
+    "emailRequired": "أدخل بريدك الإلكتروني الرسمي",
+    "email": "أدخل بريدًا إلكترونيًا صالحًا",
     "industry": "اختر قطاعًا",
-    "linkedin": "أدخل عنوان ويب مثل https://www.linkedin.com/company/example",
+    "linkedinRequired": "أدخل صفحة شركتك على LinkedIn",
+    "linkedin": "أدخل عنوان صفحة LinkedIn صالحًا",
     "linkedinDomain": "استخدم صفحة شركتك على linkedin.com",
-    "description": "اكتب جملة واحدة على الأقل عمّا تقومون به",
-    "registration": "أدخل رقم التسجيل (من 5 إلى 50 حرفًا)",
-    "pan": "يتكون PAN من 10 أحرف، مثل ABCDE1234F",
-    "gst": "يتكون GSTIN من 15 حرفًا، مثل 36ABCDE1234F1Z5",
-    "address": "أدخل عنوان الشارع",
-    "city": "أدخل المدينة",
-    "state": "أدخل الولاية",
-    "pin": "الرمز البريدي من 6 أرقام، مثل 500081",
+    "descriptionRequired": "صِف ما تقوم به شركتك",
+    "description": "اكتب 200 حرف على الأقل",
+    "registrationRequired": "أدخل رقم CIN",
+    "registration": "يتكون CIN من 21 حرفًا",
+    "panRequired": "أدخل رقم PAN",
+    "pan": "يتكون PAN من 10 أحرف",
+    "gstRequired": "أدخل رقم GSTIN",
+    "gst": "يتكون GSTIN من 15 حرفًا",
+    "addressRequired": "أدخل عنوان الشارع",
+    "address": "يتكون عنوان الشارع من 5 أحرف على الأقل",
+    "cityRequired": "أدخل مدينتك",
+    "city": "يتكون اسم المدينة من حرفين على الأقل",
+    "stateRequired": "أدخل ولايتك",
+    "state": "يتكون اسم الولاية من حرفين على الأقل",
+    "pinRequired": "أدخل الرمز البريدي PIN",
+    "pin": "يتكون الرمز البريدي PIN من 6 أرقام",
     "fileRequired": "أضف هذا المستند",
     "fileInvalid": "استخدم ملفًا من نوع مقبول، حتى 5 ميغابايت"
   },
@@ -99,22 +101,12 @@
     },
     "fixDetails": "تحديث بيانات الشركة"
   },
-  "groups": {
-    "about": "عن الشركة",
-    "presence": "أين يجدك الناس"
-  },
-  "legal": {
-    "lead": "نستخدمها مرة واحدة للتحقق من شركتك. لا يراها المرشحون أبدًا."
-  },
   "review": {
     "heading": "راجع بياناتك",
     "edit": "تعديل",
     "editLabel": "تعديل {{section}}"
   },
   "preview": {
-    "company": {
-      "caption": "كيف سيرى المرشحون شركتك"
-    },
     "legal": {
       "caption": "يراجعها فريقنا مرة واحدة وتبقى خاصة"
     },

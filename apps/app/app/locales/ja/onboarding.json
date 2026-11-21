@@ -1,7 +1,7 @@
 {
   "eyebrow": "会社の設定",
   "title": "会社について教えてください",
-  "lead": "3ステップで約5分です。進み具合はこの端末に保存されるので、中断して後で戻れます。",
+  "lead": "3ステップで約5分です。",
   "steps": {
     "company": "会社情報",
     "legal": "登録と税務",
@@ -11,20 +11,16 @@
     "companyName": "会社名",
     "website": "ウェブサイト",
     "officialEmail": "公式メールアドレス",
-    "officialEmailHint": "アカウントや請求に関するお知らせの送り先です。",
     "industry": "業界",
     "industryPlaceholder": "業界を選択",
     "industryFailed": "業界を読み込めませんでした。再読み込みしてください。",
     "linkedin": "会社の LinkedIn ページ",
     "description": "どんな事業をしていますか？",
-    "descriptionHint": "候補者が読む、1〜2文の紹介です。",
+    "descriptionHint": "200文字以上。候補者が読む内容です。",
     "descriptionCount": "{{count}} / 500",
     "registration": "会社の登録番号",
-    "registrationHint": "CIN または登記証明書の番号。例：U72900TG2024PTC123456。",
     "pan": "PAN",
-    "panHint": "10文字（例：ABCDE1234F）",
     "gst": "GSTIN",
-    "gstHint": "15文字（例：36ABCDE1234F1Z5）",
     "address": "登記上の住所",
     "addressLine": "番地",
     "city": "市区町村",
@@ -32,44 +28,50 @@
     "pin": "PINコード"
   },
   "documents": {
-    "lead": "鮮明なスキャンか写真、各 5 MB まで。候補者には表示されません。",
-    "keepWarning": "ファイルは送信するまでこの端末に保存されるので、途中で離れても戻ってこられます。",
     "count": "{{total}}件中{{count}}件追加済み",
     "company_logo": {
-      "label": "会社ロゴ",
-      "hint": "正方形がおすすめです"
+      "label": "会社ロゴ"
     },
     "registration_certificate": {
-      "label": "登記証明書",
-      "hint": "設立証明書"
+      "label": "登記証明書"
     },
     "gst_certificate": {
-      "label": "GST 証明書",
-      "hint": "GST 登録"
+      "label": "GST 証明書"
     },
     "address_proof": {
-      "label": "住所証明",
-      "hint": "公共料金の請求書または賃貸契約書"
+      "label": "住所証明"
     },
     "logoNotSquare": "このロゴは {{width}} × {{height}} です。正方形で表示するため、正方形のロゴがおすすめです。"
   },
   "submitting": "書類をアップロード中… {{percent}}%",
   "submitFailed": "情報を送信できませんでした。入力内容は残っているので、もう一度お試しください。",
   "validation": {
-    "nameMin": "会社名を入力してください",
-    "website": "https://example.com のようなアドレスを入力してください",
-    "email": "accounts@company.com のようなメールアドレスを入力してください",
+    "nameRequired": "会社名を入力してください",
+    "nameMin": "会社名は2文字以上です",
+    "websiteRequired": "ウェブサイトを入力してください",
+    "website": "有効なウェブアドレスを入力してください",
+    "emailRequired": "公式メールアドレスを入力してください",
+    "email": "有効なメールアドレスを入力してください",
     "industry": "業界を選んでください",
-    "linkedin": "https://www.linkedin.com/company/example のようなアドレスを入力してください",
+    "linkedinRequired": "会社の LinkedIn ページを入力してください",
+    "linkedin": "有効な LinkedIn ページのアドレスを入力してください",
     "linkedinDomain": "会社の linkedin.com ページを使ってください",
-    "description": "事業内容を1文以上書いてください",
-    "registration": "登録番号を入力してください（5〜50文字）",
-    "pan": "PAN は ABCDE1234F のような10文字です",
-    "gst": "GSTIN は 36ABCDE1234F1Z5 のような15文字です",
-    "address": "番地を入力してください",
-    "city": "市区町村を入力してください",
-    "state": "州を入力してください",
-    "pin": "PINコードは6桁です（例：500081）",
+    "descriptionRequired": "会社の事業内容を入力してください",
+    "description": "200文字以上で入力してください",
+    "registrationRequired": "CIN を入力してください",
+    "registration": "CIN は21文字です",
+    "panRequired": "PAN を入力してください",
+    "pan": "PAN は10文字です",
+    "gstRequired": "GSTIN を入力してください",
+    "gst": "GSTIN は15文字です",
+    "addressRequired": "番地を入力してください",
+    "address": "番地は5文字以上です",
+    "cityRequired": "市区町村を入力してください",
+    "city": "市区町村名は2文字以上です",
+    "stateRequired": "州を入力してください",
+    "state": "州名は2文字以上です",
+    "pinRequired": "PIN コードを入力してください",
+    "pin": "PIN コードは6桁です",
     "fileRequired": "この書類を追加してください",
     "fileInvalid": "対応している形式で 5 MB までのファイルを使ってください"
   },
@@ -99,22 +101,12 @@
     },
     "fixDetails": "会社情報を更新"
   },
-  "groups": {
-    "about": "会社について",
-    "presence": "会社の情報が見られる場所"
-  },
-  "legal": {
-    "lead": "会社の確認に一度だけ使います。候補者には表示されません。"
-  },
   "review": {
     "heading": "入力内容の確認",
     "edit": "編集",
     "editLabel": "{{section}}を編集"
   },
   "preview": {
-    "company": {
-      "caption": "候補者に表示される会社情報"
-    },
     "legal": {
       "caption": "チームが一度だけ確認し、非公開で保管します"
     },

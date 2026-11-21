@@ -2,6 +2,9 @@
 
 export const PAN = /^[A-Z]{5}[0-9]{4}[A-Z]$/
 
+// listed or unlisted, industry code, state, year, company type, registration number
+export const CIN = /^[LU][0-9]{5}[A-Z]{2}[0-9]{4}[A-Z]{3}[0-9]{6}$/
+
 // state code, the PAN, entity number, a fixed Z, checksum
 export const GSTIN = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z][1-9A-Z]Z[0-9A-Z]$/
 

@@ -17,7 +17,9 @@ export function LegalStep({ form }: { form: UseFormReturn<Values> }) {
   const isValid = useFieldValid(form)
   const { errors } = form.formState
 
-  const upperField = (name: "pan_number" | "gst_number") => ({
+  const upperField = (
+    name: "company_registration_number" | "pan_number" | "gst_number"
+  ) => ({
     ...checkOnBlur(form, name),
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
       form.setValue(name, event.target.value.toUpperCase(), {
@@ -28,20 +30,19 @@ export function LegalStep({ form }: { form: UseFormReturn<Values> }) {
 
   return (
     <FieldGroup>
-      <p className="text-sm text-muted-foreground">{t("legal.lead")}</p>
       <TextField
         label={t("fields.registration")}
-        hint={t("fields.registrationHint")}
         autoCapitalize="characters"
         spellCheck={false}
+        maxLength={21}
+        className="font-mono tracking-wider uppercase"
         valid={isValid("company_registration_number")}
         error={errors.company_registration_number?.message}
-        {...checkOnBlur(form, "company_registration_number")}
+        {...upperField("company_registration_number")}
       />
       <div className="grid gap-5 md:grid-cols-2">
         <TextField
           label={t("fields.pan")}
-          hint={t("fields.panHint")}
           autoCapitalize="characters"
           spellCheck={false}
           maxLength={10}
@@ -52,7 +53,6 @@ export function LegalStep({ form }: { form: UseFormReturn<Values> }) {
         />
         <TextField
           label={t("fields.gst")}
-          hint={t("fields.gstHint")}
           autoCapitalize="characters"
           spellCheck={false}
           maxLength={15}

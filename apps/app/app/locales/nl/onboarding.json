@@ -1,7 +1,7 @@
 {
   "eyebrow": "Bedrijf instellen",
   "title": "Vertel ons over uw bedrijf",
-  "lead": "Ongeveer vijf minuten, in drie stappen. We bewaren uw voortgang op dit apparaat, dus u kunt stoppen en later terugkomen.",
+  "lead": "Ongeveer vijf minuten, in drie stappen.",
   "steps": {
     "company": "Bedrijfsgegevens",
     "legal": "Registratie en belasting",
@@ -11,20 +11,16 @@
     "companyName": "Bedrijfsnaam",
     "website": "Website",
     "officialEmail": "Officieel e-mailadres",
-    "officialEmailHint": "Hierheen sturen we account- en factuurberichten.",
     "industry": "Sector",
     "industryPlaceholder": "Kies een sector",
     "industryFailed": "De sectoren zijn niet geladen. Laad de pagina opnieuw.",
     "linkedin": "LinkedIn-pagina van het bedrijf",
     "description": "Wat doet uw bedrijf?",
-    "descriptionHint": "Een of twee zinnen die kandidaten lezen.",
+    "descriptionHint": "Minimaal 200 tekens. Kandidaten lezen dit.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Registratienummer van het bedrijf",
-    "registrationHint": "Het CIN of het nummer van uw registratiebewijs, bijv. U72900TG2024PTC123456.",
     "pan": "PAN",
-    "panHint": "10 tekens, zoals ABCDE1234F",
     "gst": "GSTIN",
-    "gstHint": "15 tekens, zoals 36ABCDE1234F1Z5",
     "address": "Statutair adres",
     "addressLine": "Straat en huisnummer",
     "city": "Plaats",
@@ -32,44 +28,50 @@
     "pin": "PIN-code"
   },
   "documents": {
-    "lead": "Duidelijke scans of foto's, tot 5 MB per stuk. Kandidaten zien deze nooit.",
-    "keepWarning": "Bestanden blijven op dit apparaat tot je verstuurt, dus je kunt weggaan en terugkomen.",
     "count": "{{count}} van {{total}} toegevoegd",
     "company_logo": {
-      "label": "Bedrijfslogo",
-      "hint": "Vierkant werkt het best"
+      "label": "Bedrijfslogo"
     },
     "registration_certificate": {
-      "label": "Registratiebewijs",
-      "hint": "Oprichtingsakte"
+      "label": "Registratiebewijs"
     },
     "gst_certificate": {
-      "label": "GST-certificaat",
-      "hint": "Uw GST-registratie"
+      "label": "GST-certificaat"
     },
     "address_proof": {
-      "label": "Adresbewijs",
-      "hint": "Een energierekening of huurcontract"
+      "label": "Adresbewijs"
     },
     "logoNotSquare": "Dit logo is {{width}} × {{height}}. Een vierkant logo werkt het best, want we tonen het in een vierkant."
   },
   "submitting": "Uw documenten worden geüpload… {{percent}}%",
   "submitFailed": "We konden uw gegevens niet versturen. Alles wat u invulde staat er nog, dus probeer het opnieuw.",
   "validation": {
-    "nameMin": "Vul de naam van uw bedrijf in",
-    "website": "Vul een webadres in zoals https://example.com",
-    "email": "Vul een e-mailadres in zoals boekhouding@bedrijf.nl",
+    "nameRequired": "Voer de naam van uw bedrijf in",
+    "nameMin": "Een bedrijfsnaam heeft minimaal 2 tekens",
+    "websiteRequired": "Voer uw website in",
+    "website": "Voer een geldig webadres in",
+    "emailRequired": "Voer uw officiële e-mailadres in",
+    "email": "Voer een geldig e-mailadres in",
     "industry": "Kies een sector",
-    "linkedin": "Vul een webadres in zoals https://www.linkedin.com/company/example",
+    "linkedinRequired": "Voer de LinkedIn-pagina van uw bedrijf in",
+    "linkedin": "Voer een geldig adres van een LinkedIn-pagina in",
     "linkedinDomain": "Gebruik de linkedin.com-pagina van uw bedrijf",
-    "description": "Schrijf minstens één zin over wat u doet",
-    "registration": "Vul uw registratienummer in (5 tot 50 tekens)",
-    "pan": "Een PAN heeft 10 tekens, zoals ABCDE1234F",
-    "gst": "Een GSTIN heeft 15 tekens, zoals 36ABCDE1234F1Z5",
-    "address": "Vul je straat en huisnummer in",
-    "city": "Vul een plaats in",
-    "state": "Vul een staat in",
-    "pin": "Een PIN-code heeft 6 cijfers, zoals 500081",
+    "descriptionRequired": "Beschrijf wat uw bedrijf doet",
+    "description": "Schrijf minimaal 200 tekens",
+    "registrationRequired": "Voer uw CIN in",
+    "registration": "Een CIN heeft 21 tekens",
+    "panRequired": "Voer uw PAN in",
+    "pan": "Een PAN heeft 10 tekens",
+    "gstRequired": "Voer uw GSTIN in",
+    "gst": "Een GSTIN heeft 15 tekens",
+    "addressRequired": "Voer uw straatadres in",
+    "address": "Een straatadres heeft minimaal 5 tekens",
+    "cityRequired": "Voer uw stad in",
+    "city": "Een plaatsnaam heeft minimaal 2 tekens",
+    "stateRequired": "Voer uw staat in",
+    "state": "Een staatsnaam heeft minimaal 2 tekens",
+    "pinRequired": "Voer uw pincode in",
+    "pin": "Een pincode heeft 6 cijfers",
     "fileRequired": "Voeg dit document toe",
     "fileInvalid": "Gebruik een bestand van een toegestaan type, tot 5 MB"
   },
@@ -99,22 +101,12 @@
     },
     "fixDetails": "Bedrijfsgegevens bijwerken"
   },
-  "groups": {
-    "about": "Over het bedrijf",
-    "presence": "Waar mensen je vinden"
-  },
-  "legal": {
-    "lead": "We gebruiken deze één keer om je bedrijf te verifiëren. Kandidaten zien ze nooit."
-  },
   "review": {
     "heading": "Controleer je gegevens",
     "edit": "Bewerken",
     "editLabel": "{{section}} bewerken"
   },
   "preview": {
-    "company": {
-      "caption": "Zo zien kandidaten je bedrijf"
-    },
     "legal": {
       "caption": "Eén keer gecontroleerd door ons team en privé gehouden"
     },

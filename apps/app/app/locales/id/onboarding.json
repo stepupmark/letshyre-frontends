@@ -1,7 +1,7 @@
 {
   "eyebrow": "Penyiapan perusahaan",
   "title": "Ceritakan tentang perusahaan Anda",
-  "lead": "Sekitar lima menit, dalam tiga langkah. Kami menyimpan progres Anda di perangkat ini, jadi Anda bisa berhenti dan kembali lagi.",
+  "lead": "Sekitar lima menit, dalam tiga langkah.",
   "steps": {
     "company": "Detail perusahaan",
     "legal": "Registrasi dan pajak",
@@ -11,20 +11,16 @@
     "companyName": "Nama perusahaan",
     "website": "Situs web",
     "officialEmail": "Email resmi",
-    "officialEmailHint": "Tujuan kami mengirim pesan akun dan penagihan.",
     "industry": "Industri",
     "industryPlaceholder": "Pilih industri",
     "industryFailed": "Daftar industri tidak termuat. Muat ulang untuk mencoba lagi.",
     "linkedin": "Halaman LinkedIn perusahaan",
     "description": "Apa yang dilakukan perusahaan Anda?",
-    "descriptionHint": "Satu atau dua kalimat yang akan dibaca kandidat.",
+    "descriptionHint": "Minimal 200 karakter. Kandidat akan membacanya.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Nomor registrasi perusahaan",
-    "registrationHint": "CIN atau nomor sertifikat registrasi Anda, mis. U72900TG2024PTC123456.",
     "pan": "PAN",
-    "panHint": "10 karakter, seperti ABCDE1234F",
     "gst": "GSTIN",
-    "gstHint": "15 karakter, seperti 36ABCDE1234F1Z5",
     "address": "Alamat terdaftar",
     "addressLine": "Alamat jalan",
     "city": "Kota",
@@ -32,44 +28,50 @@
     "pin": "Kode PIN"
   },
   "documents": {
-    "lead": "Hasil pindai atau foto yang jelas, masing-masing hingga 5 MB. Kandidat tidak pernah melihatnya.",
-    "keepWarning": "File tetap di perangkat ini sampai Anda kirim, jadi Anda bisa pergi dan kembali.",
     "count": "{{count}} dari {{total}} ditambahkan",
     "company_logo": {
-      "label": "Logo perusahaan",
-      "hint": "Persegi paling bagus"
+      "label": "Logo perusahaan"
     },
     "registration_certificate": {
-      "label": "Sertifikat registrasi",
-      "hint": "Akta pendirian"
+      "label": "Sertifikat registrasi"
     },
     "gst_certificate": {
-      "label": "Sertifikat GST",
-      "hint": "Registrasi GST Anda"
+      "label": "Sertifikat GST"
     },
     "address_proof": {
-      "label": "Bukti alamat",
-      "hint": "Tagihan utilitas atau perjanjian sewa"
+      "label": "Bukti alamat"
     },
     "logoNotSquare": "Logo ini {{width}} × {{height}}. Logo persegi terlihat paling baik karena kami menampilkannya dalam persegi."
   },
   "submitting": "Mengunggah dokumen Anda… {{percent}}%",
   "submitFailed": "Kami tidak bisa mengirim detail Anda. Semua yang Anda isi masih ada, jadi coba lagi.",
   "validation": {
-    "nameMin": "Masukkan nama perusahaan Anda",
-    "website": "Masukkan alamat web seperti https://example.com",
-    "email": "Masukkan email seperti keuangan@perusahaan.com",
+    "nameRequired": "Masukkan nama perusahaan Anda",
+    "nameMin": "Nama perusahaan terdiri dari minimal 2 karakter",
+    "websiteRequired": "Masukkan situs web Anda",
+    "website": "Masukkan alamat web yang valid",
+    "emailRequired": "Masukkan email resmi Anda",
+    "email": "Masukkan alamat email yang valid",
     "industry": "Pilih industri",
-    "linkedin": "Masukkan alamat web seperti https://www.linkedin.com/company/example",
+    "linkedinRequired": "Masukkan halaman LinkedIn perusahaan Anda",
+    "linkedin": "Masukkan alamat halaman LinkedIn yang valid",
     "linkedinDomain": "Gunakan halaman linkedin.com perusahaan Anda",
-    "description": "Tulis minimal satu kalimat tentang apa yang Anda lakukan",
-    "registration": "Masukkan nomor registrasi Anda (5 sampai 50 karakter)",
-    "pan": "PAN terdiri dari 10 karakter, seperti ABCDE1234F",
-    "gst": "GSTIN terdiri dari 15 karakter, seperti 36ABCDE1234F1Z5",
-    "address": "Masukkan alamat jalan",
-    "city": "Masukkan kota",
-    "state": "Masukkan negara bagian",
-    "pin": "Kode PIN terdiri dari 6 angka, seperti 500081",
+    "descriptionRequired": "Jelaskan apa yang dilakukan perusahaan Anda",
+    "description": "Tulis minimal 200 karakter",
+    "registrationRequired": "Masukkan CIN Anda",
+    "registration": "CIN terdiri dari 21 karakter",
+    "panRequired": "Masukkan PAN Anda",
+    "pan": "PAN terdiri dari 10 karakter",
+    "gstRequired": "Masukkan GSTIN Anda",
+    "gst": "GSTIN terdiri dari 15 karakter",
+    "addressRequired": "Masukkan alamat jalan Anda",
+    "address": "Alamat jalan terdiri dari minimal 5 karakter",
+    "cityRequired": "Masukkan kota Anda",
+    "city": "Nama kota terdiri dari minimal 2 karakter",
+    "stateRequired": "Masukkan negara bagian Anda",
+    "state": "Nama negara bagian terdiri dari minimal 2 karakter",
+    "pinRequired": "Masukkan kode PIN Anda",
+    "pin": "Kode PIN terdiri dari 6 angka",
     "fileRequired": "Tambahkan dokumen ini",
     "fileInvalid": "Gunakan file dengan jenis yang diterima, hingga 5 MB"
   },
@@ -99,22 +101,12 @@
     },
     "fixDetails": "Perbarui data perusahaan"
   },
-  "groups": {
-    "about": "Tentang perusahaan",
-    "presence": "Tempat orang menemukan Anda"
-  },
-  "legal": {
-    "lead": "Kami menggunakannya sekali untuk memverifikasi perusahaan Anda. Kandidat tidak pernah melihatnya."
-  },
   "review": {
     "heading": "Periksa data Anda",
     "edit": "Ubah",
     "editLabel": "Ubah {{section}}"
   },
   "preview": {
-    "company": {
-      "caption": "Tampilan perusahaan Anda bagi kandidat"
-    },
     "legal": {
       "caption": "Diperiksa sekali oleh tim kami dan dijaga kerahasiaannya"
     },
