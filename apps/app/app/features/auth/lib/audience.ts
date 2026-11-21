@@ -1,4 +1,4 @@
-import { ROLE_SIGN_IN, ROLES, SIGN_IN, type Role } from "@workspace/auth"
+import { ROLE_SIGN_IN, ROLES, type Role } from "@workspace/auth"
 import { href } from "react-router"
 
 /** Who an auth page is for. The URL says "employee"; the copy says job seeker. */
@@ -17,7 +17,7 @@ export const audienceFromPath = (pathname: string): Audience | null =>
       : null
 
 export const signInPath = (audience: Audience | null) =>
-  audience ? ROLE_SIGN_IN[ROLE_OF[audience]] : SIGN_IN
+  audience ? ROLE_SIGN_IN[ROLE_OF[audience]] : href("/")
 
 export const REGISTER_PATH = {
   employer: href("/employer/register"),

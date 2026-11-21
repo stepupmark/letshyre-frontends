@@ -70,8 +70,8 @@ The app has its own origin ([ADR 0022](../adr/0022-hosting-s3-cloudfront.md)). T
 
 | Path                                       | Behaviour                                                       |
 | ------------------------------------------ | --------------------------------------------------------------- |
-| `/` (app root)                             | role choice, same page as `/get-started`; sign-out lands here   |
-| `/get-started`                             | alias of the `/sign-in` role choice                             |
+| `/` (app root), `/sign-in`                 | sign-in role choice; sign-out lands on `/`                      |
+| `/get-started`                             | create-account role choice                                      |
 | `/forgot-password`                         |                                                                 |
 | `/employer/sign-in`, `/employee/sign-in`   | each role's sign-in page ([ADR 0017](../adr/0017-auth-screens.md)) |
 | `/employer/register`, `/employee/register` |                                                                 |
@@ -87,7 +87,7 @@ All come from one module (`apps/marketing/app/lib/app-links.ts`) built from `VIT
 
 | Marketing CTA                                    | Path on `VITE_APP_URL`                 | Notes                                                                                           |
 | ------------------------------------------------ | -------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Log in (header)                                  | `/get-started`                         | Role choice, then sign-in                                                                       |
+| Log in (header)                                  | `/`                                    | Sign-in role choice                                                                             |
 | Get started (header), "I'm hiring", Start hiring | `/employer/register`                   |                                                                                                 |
 | "I'm looking for a job", Apply                   | `/employee/register`                   |                                                                                                 |
 | Pricing: Free plan "Start free"                  | `/employer/register`                   |                                                                                                 |
@@ -147,5 +147,5 @@ The `/employee` prefix is not renamed to `/candidate` because backend emails use
 ## Approved (Gate 1, 2026-10-03; redirects removed 2026-11-18)
 
 - No-slash URLs are canonical and served with 200. The trailing-slash form 301s to them.
-- "Log in" goes to `/get-started` until the app has a unified sign-in.
+- "Log in" goes to the app root, which is the sign-in role choice.
 - No redirects for old or missing URLs ([ADR 0022](../adr/0022-hosting-s3-cloudfront.md)).

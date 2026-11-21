@@ -28,7 +28,7 @@ export default function SignIn() {
       <p className="text-sm text-muted-foreground">
         {t("signIn.noAccount")}{" "}
         <Link
-          to={href("/")}
+          to={href("/get-started")}
           viewTransition
           className="font-medium text-foreground underline underline-offset-4"
         >
