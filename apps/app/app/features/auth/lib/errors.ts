@@ -5,6 +5,8 @@ import { AccountInactiveError } from "@workspace/auth"
 const MESSAGES: Record<string, string> = {
   "invalid credentials": "errors.invalidCredentials",
   "an account with this email already exists": "errors.emailExists",
+  "employer registration requires a company domain email address":
+    "errors.companyEmailRequired",
   "phone number is already registered": "errors.phoneExists",
   "the entered otp is incorrect please try again": "errors.otpIncorrect",
   "incorrect otp please try again": "errors.otpIncorrect",
@@ -28,6 +30,10 @@ const HEURISTICS = [
     key: "errors.emailExists",
   },
   {
+    test: (m: string) => m.includes("company") && m.includes("email"),
+    key: "errors.companyEmailRequired",
+  },
+  {
     test: (m: string) =>
       m.includes("already") && (m.includes("phone") || m.includes("mobile")),
     key: "errors.phoneExists",
@@ -45,6 +51,7 @@ export type AuthErrorKey =
   | "errors.network"
   | "errors.server"
   | "errors.emailExists"
+  | "errors.companyEmailRequired"
   | "errors.phoneExists"
   | "errors.otpIncorrect"
   | "errors.otpExpired"
@@ -74,6 +81,7 @@ export const isVerificationLost = (key: AuthErrorKey) =>
 /** Errors that belong to one field rather than the whole form. */
 export const FIELD_OF: Partial<Record<AuthErrorKey, "email" | "phone">> = {
   "errors.emailExists": "email",
+  "errors.companyEmailRequired": "email",
   "errors.emailNotFound": "email",
   "errors.phoneExists": "phone",
 }

@@ -154,6 +154,52 @@ test("an employer registers, verifies email and mobile, and lands on onboarding"
   expect(stored).not.toContain("a-long-password")
 })
 
+test("registration explains why an email was refused, under the email field", async ({
+  page,
+  api,
+}) => {
+  await api({
+    "POST /commonapp/v1/send_otp/": async (route) => {
+      const { email } = route.request().postDataJSON() as { email: string }
+      await (email === "priya@gmail.com"
+        ? reply(
+            route,
+            {
+              message:
+                "Employer registration requires a company domain email address.",
+            },
+            400
+          )
+        : // some refusals arrive as a 200 with only a message
+          reply(route, {
+            message: "An account with this email already exists.",
+          }))
+    },
+  })
+
+  await page.goto("/employer/register")
+  await page.getByLabel("Full name").fill("Priya Shah")
+  const email = page.getByLabel("Work email")
+
+  await email.fill("priya@gmail.com")
+  await page.getByRole("button", { name: "Continue" }).click()
+  await expect(email).toHaveAccessibleDescription(
+    /Use your company email address/
+  )
+  await expect(email).toBeFocused()
+  await expect(page.getByText("We couldn't send the code")).toHaveCount(0)
+
+  await email.fill("priya@acme.in")
+  await page.getByRole("button", { name: "Continue" }).click()
+  await expect(email).toHaveAccessibleDescription(
+    /An account with this email already exists/
+  )
+  await expect(
+    page.getByRole("link", { name: "Sign in instead" })
+  ).toBeVisible()
+  await expect(page).toHaveURL("/employer/register")
+})
+
 test("a forgotten password is reset with an email code", async ({
   page,
   api,

@@ -17,8 +17,8 @@ async function post(path: string, body: Body): Promise<Body> {
 
 function sessionKey(data: Body): string {
   const parsed = codeSessionSchema.safeParse(data)
-  if (!parsed.success)
-    throw new HttpError(400, { message: "no otp session key" })
+  // some refusals come back as 200 with only a message, so keep it for the error mapping
+  if (!parsed.success) throw new HttpError(400, data)
   return parsed.data
 }
 
