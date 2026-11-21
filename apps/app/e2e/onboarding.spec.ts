@@ -84,6 +84,9 @@ test("a new employer completes company details and documents, then reaches the d
     buffer: PNG,
   })
   await files.nth(0).setInputFiles(pdf("certificate.pdf"))
+  await page.getByRole("button", { name: "Finish" }).click()
+  await expect(page.getByText("Add this document")).toBeVisible()
+  await axe(page)
   await files.nth(0).setInputFiles(pdf("gst.pdf"))
 
   // picked files survive a refresh, once they're written to IndexedDB
@@ -110,10 +113,6 @@ test("a new employer completes company details and documents, then reaches the d
   await page.reload()
   await expect(page.getByText("gst.pdf")).toBeVisible()
   await page.getByRole("button", { name: "Finish" }).click()
-  await expect(page.getByText("Add this document")).toBeVisible()
-  await axe(page)
-  await files.nth(0).setInputFiles(pdf("lease.pdf"))
-  await page.getByRole("button", { name: "Finish" }).click()
 
   await expect(
     page.getByRole("heading", { name: "Thanks, your details are in" })
@@ -125,7 +124,7 @@ test("a new employer completes company details and documents, then reaches the d
     "ABCDE1234F",
     "1 Hitech City, Hyderabad, Telangana 500081",
     'filename="logo.png"',
-    'filename="lease.pdf"',
+    'filename="gst.pdf"',
   ])
     expect(sent).toContain(part)
 

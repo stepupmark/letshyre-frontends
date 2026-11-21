@@ -6,7 +6,6 @@ import {
   FileBadge,
   FileText,
   ImageIcon,
-  MapPinHouse,
   type LucideIcon,
 } from "lucide-react"
 import { Controller, useWatch, type UseFormReturn } from "react-hook-form"
@@ -27,7 +26,6 @@ const ICONS: Record<FileField, LucideIcon> = {
   company_logo: ImageIcon,
   registration_certificate: FileBadge,
   gst_certificate: FileText,
-  address_proof: MapPinHouse,
 }
 
 export function DocumentsStep({

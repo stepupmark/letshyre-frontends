@@ -63,10 +63,9 @@ export function DocumentsCard({ control }: { control: Control<Values> }) {
 }
 
 const SLOTS = [
-  { x: 56, rotate: -8 },
-  { x: 100, rotate: -3 },
-  { x: 144, rotate: 3 },
-  { x: 188, rotate: 8 },
+  { x: 78, rotate: -6 },
+  { x: 122, rotate: 0 },
+  { x: 166, rotate: 6 },
 ]
 
 function FolderArt({ filled }: { filled: boolean[] }) {

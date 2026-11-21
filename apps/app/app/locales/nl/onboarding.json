@@ -16,7 +16,7 @@
     "industryFailed": "De sectoren zijn niet geladen. Laad de pagina opnieuw.",
     "linkedin": "LinkedIn-pagina van het bedrijf",
     "description": "Wat doet uw bedrijf?",
-    "descriptionHint": "Minimaal 200 tekens. Kandidaten lezen dit.",
+    "descriptionHint": "Minimaal 200 tekens.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Registratienummer van het bedrijf",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "GST-certificaat"
-    },
-    "address_proof": {
-      "label": "Adresbewijs"
     },
     "logoNotSquare": "Dit logo is {{width}} × {{height}}. Een vierkant logo werkt het best, want we tonen het in een vierkant."
   },

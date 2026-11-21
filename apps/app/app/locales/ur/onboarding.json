@@ -16,7 +16,7 @@
     "industryFailed": "صنعتیں لوڈ نہیں ہوئیں۔ دوبارہ کوشش کے لیے ری لوڈ کریں۔",
     "linkedin": "کمپنی کا LinkedIn صفحہ",
     "description": "آپ کی کمپنی کیا کرتی ہے؟",
-    "descriptionHint": "کم از کم 200 حروف۔ امیدوار اسے پڑھیں گے۔",
+    "descriptionHint": "کم از کم 200 حروف۔",
     "descriptionCount": "{{count}} / 500",
     "registration": "کمپنی رجسٹریشن نمبر",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "GST سرٹیفکیٹ"
-    },
-    "address_proof": {
-      "label": "پتے کا ثبوت"
     },
     "logoNotSquare": "یہ لوگو {{width}} × {{height}} ہے۔ مربع لوگو بہتر لگتا ہے کیونکہ ہم اسے مربع میں دکھاتے ہیں۔"
   },

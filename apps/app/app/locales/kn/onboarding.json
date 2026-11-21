@@ -16,7 +16,7 @@
     "industryFailed": "ಉದ್ಯಮಗಳು ಲೋಡ್ ಆಗಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಲು ರೀಲೋಡ್ ಮಾಡಿ.",
     "linkedin": "ಕಂಪನಿಯ LinkedIn ಪುಟ",
     "description": "ನಿಮ್ಮ ಕಂಪನಿ ಏನು ಮಾಡುತ್ತದೆ?",
-    "descriptionHint": "ಕನಿಷ್ಠ 200 ಅಕ್ಷರಗಳು. ಅಭ್ಯರ್ಥಿಗಳು ಇದನ್ನು ಓದುತ್ತಾರೆ.",
+    "descriptionHint": "ಕನಿಷ್ಠ 200 ಅಕ್ಷರಗಳು.",
     "descriptionCount": "{{count}} / 500",
     "registration": "ಕಂಪನಿ ನೋಂದಣಿ ಸಂಖ್ಯೆ",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "GST ಪ್ರಮಾಣಪತ್ರ"
-    },
-    "address_proof": {
-      "label": "ವಿಳಾಸ ಪುರಾವೆ"
     },
     "logoNotSquare": "ಈ ಲೋಗೋ {{width}} × {{height}}. ನಾವು ಚೌಕದಲ್ಲಿ ತೋರಿಸುವುದರಿಂದ ಚೌಕ ಲೋಗೋ ಉತ್ತಮ."
   },

@@ -16,7 +16,7 @@
     "industryFailed": "শিল্পের তালিকা লোড হয়নি। আবার চেষ্টা করতে রিলোড করুন।",
     "linkedin": "কোম্পানির LinkedIn পেজ",
     "description": "আপনার কোম্পানি কী করে?",
-    "descriptionHint": "কমপক্ষে ২০০ অক্ষর। প্রার্থীরা এটি পড়বেন।",
+    "descriptionHint": "কমপক্ষে ২০০ অক্ষর।",
     "descriptionCount": "{{count}} / 500",
     "registration": "কোম্পানির নিবন্ধন নম্বর",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "GST শংসাপত্র"
-    },
-    "address_proof": {
-      "label": "ঠিকানার প্রমাণ"
     },
     "logoNotSquare": "এই লোগো {{width}} × {{height}}। আমরা বর্গাকারে দেখাই, তাই বর্গাকার লোগো ভালো দেখায়।"
   },

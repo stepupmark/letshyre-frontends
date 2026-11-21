@@ -16,7 +16,7 @@
     "industryFailed": "വ്യവസായങ്ങൾ ലോഡ് ആയില്ല. വീണ്ടും ശ്രമിക്കാൻ റീലോഡ് ചെയ്യുക.",
     "linkedin": "കമ്പനിയുടെ LinkedIn പേജ്",
     "description": "നിങ്ങളുടെ കമ്പനി എന്താണ് ചെയ്യുന്നത്?",
-    "descriptionHint": "കുറഞ്ഞത് 200 അക്ഷരങ്ങൾ. ഉദ്യോഗാർഥികൾ ഇത് വായിക്കും.",
+    "descriptionHint": "കുറഞ്ഞത് 200 അക്ഷരങ്ങൾ.",
     "descriptionCount": "{{count}} / 500",
     "registration": "കമ്പനി രജിസ്ട്രേഷൻ നമ്പർ",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "GST സർട്ടിഫിക്കറ്റ്"
-    },
-    "address_proof": {
-      "label": "വിലാസ തെളിവ്"
     },
     "logoNotSquare": "ഈ ലോഗോ {{width}} × {{height}} ആണ്. ചതുരത്തിൽ കാണിക്കുന്നതിനാൽ ചതുര ലോഗോയാണ് നല്ലത്."
   },

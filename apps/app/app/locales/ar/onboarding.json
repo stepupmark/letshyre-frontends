@@ -16,7 +16,7 @@
     "industryFailed": "لم تُحمَّل القطاعات. أعد التحميل للمحاولة مجددًا.",
     "linkedin": "صفحة الشركة على LinkedIn",
     "description": "ماذا تعمل شركتك؟",
-    "descriptionHint": "200 حرف على الأقل. سيقرأ المرشحون هذا.",
+    "descriptionHint": "200 حرف على الأقل.",
     "descriptionCount": "{{count}} / 500",
     "registration": "رقم تسجيل الشركة",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "شهادة GST"
-    },
-    "address_proof": {
-      "label": "إثبات العنوان"
     },
     "logoNotSquare": "مقاس هذا الشعار {{width}} × {{height}}. الشعار المربع أفضل لأننا نعرضه داخل مربع."
   },

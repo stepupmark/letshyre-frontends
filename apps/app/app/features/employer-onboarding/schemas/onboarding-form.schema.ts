@@ -34,12 +34,7 @@ export const STEPS = {
     "address_state",
     "address_pin",
   ],
-  documents: [
-    "company_logo",
-    "registration_certificate",
-    "gst_certificate",
-    "address_proof",
-  ],
+  documents: ["company_logo", "registration_certificate", "gst_certificate"],
 } as const
 
 export type StepId = keyof typeof STEPS
@@ -50,7 +45,6 @@ export const DOCUMENTS: { name: FileField; rules: FileRules }[] = [
   { name: "company_logo", rules: IMAGE },
   { name: "registration_certificate", rules: DOCUMENT },
   { name: "gst_certificate", rules: DOCUMENT },
-  { name: "address_proof", rules: DOCUMENT },
 ]
 
 type Messages = Record<
@@ -117,7 +111,6 @@ export const makeSchema = (m: Messages) => {
     company_logo: file(IMAGE),
     registration_certificate: file(DOCUMENT),
     gst_certificate: file(DOCUMENT),
-    address_proof: file(DOCUMENT),
   })
 }
 

@@ -16,7 +16,7 @@
     "industryFailed": "Daftar industri tidak termuat. Muat ulang untuk mencoba lagi.",
     "linkedin": "Halaman LinkedIn perusahaan",
     "description": "Apa yang dilakukan perusahaan Anda?",
-    "descriptionHint": "Minimal 200 karakter. Kandidat akan membacanya.",
+    "descriptionHint": "Minimal 200 karakter.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Nomor registrasi perusahaan",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "Sertifikat GST"
-    },
-    "address_proof": {
-      "label": "Bukti alamat"
     },
     "logoNotSquare": "Logo ini {{width}} × {{height}}. Logo persegi terlihat paling baik karena kami menampilkannya dalam persegi."
   },

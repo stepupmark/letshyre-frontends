@@ -16,7 +16,7 @@
     "industryFailed": "Отрасли не загрузились. Обновите страницу.",
     "linkedin": "Страница компании в LinkedIn",
     "description": "Чем занимается компания?",
-    "descriptionHint": "Не менее 200 символов. Кандидаты прочитают этот текст.",
+    "descriptionHint": "Не менее 200 символов.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Регистрационный номер компании",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "Сертификат GST"
-    },
-    "address_proof": {
-      "label": "Подтверждение адреса"
     },
     "logoNotSquare": "Размер логотипа {{width}} × {{height}}. Лучше квадратный: мы показываем его в квадрате."
   },

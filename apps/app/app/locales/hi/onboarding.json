@@ -16,7 +16,7 @@
     "industryFailed": "उद्योग लोड नहीं हुए। फिर से कोशिश करने के लिए रीलोड करें।",
     "linkedin": "कंपनी का LinkedIn पेज",
     "description": "आपकी कंपनी क्या करती है?",
-    "descriptionHint": "कम से कम 200 अक्षर। उम्मीदवार इसे पढ़ेंगे।",
+    "descriptionHint": "कम से कम 200 अक्षर।",
     "descriptionCount": "{{count}} / 500",
     "registration": "कंपनी पंजीकरण संख्या",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "GST प्रमाणपत्र"
-    },
-    "address_proof": {
-      "label": "पते का प्रमाण"
     },
     "logoNotSquare": "यह लोगो {{width}} × {{height}} है। वर्गाकार लोगो सबसे अच्छा दिखता है, क्योंकि हम इसे वर्ग में दिखाते हैं।"
   },

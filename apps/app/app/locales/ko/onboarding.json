@@ -16,7 +16,7 @@
     "industryFailed": "업계 목록을 불러오지 못했어요. 새로고침하세요.",
     "linkedin": "회사 LinkedIn 페이지",
     "description": "회사는 어떤 일을 하나요?",
-    "descriptionHint": "200자 이상. 지원자가 읽게 됩니다.",
+    "descriptionHint": "200자 이상.",
     "descriptionCount": "{{count}} / 500",
     "registration": "회사 등록 번호",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "GST 증명서"
-    },
-    "address_proof": {
-      "label": "주소 증빙"
     },
     "logoNotSquare": "이 로고는 {{width}} × {{height}}입니다. 정사각형으로 보여 주므로 정사각형 로고가 가장 좋습니다."
   },

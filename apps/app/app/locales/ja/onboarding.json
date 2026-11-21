@@ -16,7 +16,7 @@
     "industryFailed": "業界を読み込めませんでした。再読み込みしてください。",
     "linkedin": "会社の LinkedIn ページ",
     "description": "どんな事業をしていますか？",
-    "descriptionHint": "200文字以上。候補者が読む内容です。",
+    "descriptionHint": "200文字以上。",
     "descriptionCount": "{{count}} / 500",
     "registration": "会社の登録番号",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "GST 証明書"
-    },
-    "address_proof": {
-      "label": "住所証明"
     },
     "logoNotSquare": "このロゴは {{width}} × {{height}} です。正方形で表示するため、正方形のロゴがおすすめです。"
   },

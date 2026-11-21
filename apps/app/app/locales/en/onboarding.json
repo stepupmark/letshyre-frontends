@@ -16,7 +16,7 @@
     "industryFailed": "Industries didn't load. Reload to try again.",
     "linkedin": "Company LinkedIn page",
     "description": "What does your company do?",
-    "descriptionHint": "At least 200 characters. Candidates will read this.",
+    "descriptionHint": "At least 200 characters.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Company registration number",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "GST certificate"
-    },
-    "address_proof": {
-      "label": "Address proof"
     },
     "logoNotSquare": "This logo is {{width}} × {{height}}. A square one looks best, since we show it in a square."
   },

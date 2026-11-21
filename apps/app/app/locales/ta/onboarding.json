@@ -16,7 +16,7 @@
     "industryFailed": "துறைகள் ஏறவில்லை. மீண்டும் முயல மறுஏற்றம் செய்யவும்.",
     "linkedin": "நிறுவனத்தின் LinkedIn பக்கம்",
     "description": "உங்கள் நிறுவனம் என்ன செய்கிறது?",
-    "descriptionHint": "குறைந்தது 200 எழுத்துகள். விண்ணப்பதாரர்கள் இதைப் படிப்பார்கள்.",
+    "descriptionHint": "குறைந்தது 200 எழுத்துகள்.",
     "descriptionCount": "{{count}} / 500",
     "registration": "நிறுவனப் பதிவு எண்",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "GST சான்றிதழ்"
-    },
-    "address_proof": {
-      "label": "முகவரிச் சான்று"
     },
     "logoNotSquare": "இந்த லோகோ {{width}} × {{height}}. சதுரத்தில் காட்டுவதால் சதுர லோகோ சிறப்பாகத் தெரியும்."
   },

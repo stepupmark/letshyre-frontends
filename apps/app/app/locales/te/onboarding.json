@@ -16,7 +16,7 @@
     "industryFailed": "రంగాలు లోడ్ కాలేదు. మళ్లీ ప్రయత్నించడానికి రీలోడ్ చేయండి.",
     "linkedin": "కంపెనీ LinkedIn పేజీ",
     "description": "మీ కంపెనీ ఏం చేస్తుంది?",
-    "descriptionHint": "కనీసం 200 అక్షరాలు. అభ్యర్థులు దీన్ని చదువుతారు.",
+    "descriptionHint": "కనీసం 200 అక్షరాలు.",
     "descriptionCount": "{{count}} / 500",
     "registration": "కంపెనీ నమోదు సంఖ్య",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "GST ధృవపత్రం"
-    },
-    "address_proof": {
-      "label": "చిరునామా రుజువు"
     },
     "logoNotSquare": "ఈ లోగో {{width}} × {{height}}. మేము చతురస్రంలో చూపిస్తాం కాబట్టి చతురస్ర లోగో బాగుంటుంది."
   },

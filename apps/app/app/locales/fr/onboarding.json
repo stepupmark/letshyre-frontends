@@ -16,7 +16,7 @@
     "industryFailed": "Les secteurs ne se sont pas chargés. Rechargez pour réessayer.",
     "linkedin": "Page LinkedIn de l'entreprise",
     "description": "Que fait votre entreprise ?",
-    "descriptionHint": "Au moins 200 caractères. Les candidats le liront.",
+    "descriptionHint": "Au moins 200 caractères.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Numéro d'immatriculation de l'entreprise",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "Certificat GST"
-    },
-    "address_proof": {
-      "label": "Justificatif d'adresse"
     },
     "logoNotSquare": "Ce logo mesure {{width}} × {{height}}. Un logo carré rend mieux, car nous l'affichons dans un carré."
   },

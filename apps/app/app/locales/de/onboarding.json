@@ -16,7 +16,7 @@
     "industryFailed": "Die Branchen wurden nicht geladen. Laden Sie neu, um es erneut zu versuchen.",
     "linkedin": "LinkedIn-Seite des Unternehmens",
     "description": "Was macht Ihr Unternehmen?",
-    "descriptionHint": "Mindestens 200 Zeichen. Bewerber lesen diesen Text.",
+    "descriptionHint": "Mindestens 200 Zeichen.",
     "descriptionCount": "{{count}} / 500",
     "registration": "Registrierungsnummer des Unternehmens",
     "pan": "PAN",
@@ -37,9 +37,6 @@
     },
     "gst_certificate": {
       "label": "GST-Bescheinigung"
-    },
-    "address_proof": {
-      "label": "Adressnachweis"
     },
     "logoNotSquare": "Dieses Logo ist {{width}} × {{height}}. Quadratisch wirkt es am besten, da wir es quadratisch zeigen."
   },
