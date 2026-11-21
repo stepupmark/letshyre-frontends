@@ -22,15 +22,6 @@
   --raised-tint: rgb(0 0 0 / 0.5);
 }
 
-/* Chrome tints only the <input>, so a grouped field (+91 | number) looks split;
-   tint the whole group the same colour instead */
-:root {
-  --autofill: #e8f0fe;
-}
-.dark {
-  --autofill: color-mix(in oklab, rgb(70 90 126) 40%, var(--background));
-}
-
 @layer base {
   /* rem-based, so text, spacing and the sidebar grow together on laptops and large screens */
   @media (width >= 80rem) {
@@ -43,16 +34,14 @@
       font-size: 112.5%;
     }
   }
-  input:autofill {
-    -webkit-text-fill-color: var(--foreground);
-    caret-color: var(--foreground);
-  }
-  [data-slot="input-group"]:has(input:autofill) {
-    background-color: var(--autofill);
-  }
-  [data-slot="input-group"] input:autofill {
-    box-shadow: inset 0 0 0 100vmax var(--autofill);
-  }
+}
+
+/* browsers paint autofilled inputs blue and ignore background overrides, so delay that paint
+   indefinitely; unlayered so the inputs' transition-colors utility can't undo it */
+input:autofill {
+  -webkit-text-fill-color: var(--foreground);
+  caret-color: var(--foreground);
+  transition: background-color 0s 600000s;
 }
 
 /* ProseMirror's structural rules, which Tiptap would otherwise inject as a <style> tag */
