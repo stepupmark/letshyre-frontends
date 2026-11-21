@@ -35,7 +35,10 @@ import {
   useProductItems,
 } from "./site-header-nav"
 
-const CANDIDATE_LINKS = FOOTER_COLUMNS[1].links
+// the guides already have their own group in the menu
+const CANDIDATE_LINKS = FOOTER_COLUMNS[1].links.filter(
+  (link) => !("page" in link)
+)
 
 export function SiteHeaderMenu({ className }: { className?: string }) {
   const { t } = useTranslation("common")
