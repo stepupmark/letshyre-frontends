@@ -26,7 +26,7 @@
    the hero, sized to its content, holds for --scene-hold before it scrolls away */
 :root {
   --scene-stage: min(100svh, 56rem);
-  --scene-hold: min(40svh, 20rem);
+  --scene-hold: min(12svh, 5rem);
 }
 
 /* everywhere `pin` doesn't apply */

@@ -21,8 +21,13 @@ const PHOTOS: PhotoName[] = [
 export function Proof() {
   const titleId = useId()
 
+  // the longest locales need about 46rem pinned, so the stage stops at 48rem, not 56rem
   return (
-    <ScrollScene screens={2} aria-labelledby={titleId}>
+    <ScrollScene
+      screens={2}
+      aria-labelledby={titleId}
+      className="pin:[--scene-stage:min(100svh,48rem)]"
+    >
       <ProofStage titleId={titleId} />
     </ScrollScene>
   )

@@ -15,7 +15,7 @@ import { usePlayOnView } from "./use-play-on-view"
 import { useStill } from "./use-still"
 
 type Size =
-  /** a stage one screen tall, up to `--scene-stage`, held for `screens - 1` more of them */
+  /** a screen-high stage under the 4.5rem header, up to `--scene-stage`; held `screens - 1` more */
   | { screens: number; fit?: never }
   /** a stage as tall as its content, held for `--scene-hold` under the header */
   | { fit: "content"; screens?: never }
@@ -53,10 +53,10 @@ export function ScrollScene({
     >
       <div
         className={cn(
-          "pin:sticky pin:overflow-hidden pin:pt-18",
+          "pin:sticky pin:overflow-hidden",
           fit === "content"
-            ? "pin:top-0"
-            : "pin:top-[max(0px,calc((100svh-var(--scene-stage))/2))] pin:h-(--scene-stage)"
+            ? "pin:top-18"
+            : "pin:top-[calc(4.5rem+max(0px,(100svh-var(--scene-stage))/2))] pin:h-[calc(var(--scene-stage)-4.5rem)]"
         )}
       >
         {/* transforms and inline styles stay bound to the first value, so a switch remounts */}
