@@ -87,7 +87,7 @@ export function RegisterFlow({
             </Alert>
           )}
           <AboutStage
-            employer={employer}
+            role={role}
             signIn={signIn}
             defaults={{ name: data.name ?? "", email }}
             onDraft={flow.update}
@@ -130,7 +130,11 @@ export function RegisterFlow({
             }
             resend={async () => {
               flow.update({
-                emailKey: await sendEmailCode(email, "Registration"),
+                emailKey: await sendEmailCode({
+                  email,
+                  purpose: "Registration",
+                  role,
+                }),
                 emailSentAt: Date.now(),
               })
             }}

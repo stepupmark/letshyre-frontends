@@ -22,8 +22,18 @@ function sessionKey(data: Body): string {
   return parsed.data
 }
 
-export const sendEmailCode = async (email: string, purpose: CodePurpose) =>
-  sessionKey(await post("commonapp/v1/send_otp/", { email, otp_type: purpose }))
+type EmailCodeRequest =
+  | { email: string; purpose: "Registration"; role: Role }
+  | { email: string; purpose: "Forgot Password" }
+
+export const sendEmailCode = async (input: EmailCodeRequest) =>
+  sessionKey(
+    await post("commonapp/v1/send_otp/", {
+      email: input.email,
+      otp_type: input.purpose,
+      ...(input.purpose === "Registration" && { role: input.role }),
+    })
+  )
 
 export const verifyEmailCode = (input: {
   email: string

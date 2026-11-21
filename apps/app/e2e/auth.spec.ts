@@ -76,9 +76,18 @@ test("an employer registers, verifies email and mobile, and lands on onboarding"
   api,
 }) => {
   let registered: Record<string, unknown> = {}
+  let emailCodeRequest: Record<string, unknown> = {}
   await api({
-    "POST /commonapp/v1/send_otp/": (route) =>
-      reply(route, { success: true, data: { otp_session_key: "email-key" } }),
+    "POST /commonapp/v1/send_otp/": async (route) => {
+      emailCodeRequest = route.request().postDataJSON() as Record<
+        string,
+        unknown
+      >
+      await reply(route, {
+        success: true,
+        data: { otp_session_key: "email-key" },
+      })
+    },
     "POST /commonapp/v1/verify_otp/": (route) =>
       reply(route, { success: true }),
     "POST /commonapp/v1/mobile_send_otp/": (route) =>
@@ -102,6 +111,11 @@ test("an employer registers, verifies email and mobile, and lands on onboarding"
   await page.getByRole("button", { name: "Continue" }).click()
 
   await expect(page.getByText("We sent it to p••••@acme.in.")).toBeVisible()
+  expect(emailCodeRequest).toEqual({
+    email: "priya@acme.in",
+    otp_type: "Registration",
+    role: "Employer",
+  })
   await axe(page)
   await enterCode(page)
 

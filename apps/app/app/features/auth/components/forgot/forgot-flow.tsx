@@ -37,7 +37,7 @@ const NO_ACCOUNT = "no-account"
 
 async function sendResetCode(email: string) {
   try {
-    return await sendEmailCode(email, "Forgot Password")
+    return await sendEmailCode({ email, purpose: "Forgot Password" })
   } catch (error) {
     if (authErrorKey(error, "errors.sendFailed") === "errors.emailNotFound")
       return NO_ACCOUNT

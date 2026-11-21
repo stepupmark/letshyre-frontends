@@ -12,17 +12,18 @@ import { TextField } from "@/components/text-field"
 import { checkOnBlur } from "@/lib/forms"
 
 import { sendEmailCode } from "../../services/auth.service"
+import type { Role } from "../../types"
 import { FormAlert } from "../shared/form-alert"
 import { useSendCode } from "../../mutations/use-send-code"
 
 export function AboutStage({
-  employer,
+  role,
   signIn,
   defaults,
   onDraft,
   onSent,
 }: {
-  employer: boolean
+  role: Role
   signIn: string
   defaults: { name: string; email: string }
   onDraft: (draft: { name: string; draftEmail: string }) => void
@@ -34,6 +35,7 @@ export function AboutStage({
   }) => void
 }) {
   const { t } = useTranslation("auth")
+  const employer = role === "Employer"
   const form = useForm({
     resolver: zodResolver(
       useMemo(
@@ -68,7 +70,11 @@ export function AboutStage({
     send: async (values) => ({
       name: values.name.trim(),
       email: values.email,
-      emailKey: await sendEmailCode(values.email, "Registration"),
+      emailKey: await sendEmailCode({
+        email: values.email,
+        purpose: "Registration",
+        role,
+      }),
       emailSentAt: Date.now(),
     }),
     onSent,
