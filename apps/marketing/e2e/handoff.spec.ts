@@ -7,6 +7,7 @@ import { SITEMAP } from "./sitemap.ts"
 
 // docs/baseline/url-contract.md §3: the only dashboard paths marketing may link to
 const CONTRACT = [
+  /^\/$/,
   /^\/get-started$/,
   /^\/employer\/register$/,
   /^\/employee\/register$/,
