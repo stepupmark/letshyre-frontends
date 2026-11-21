@@ -55,13 +55,6 @@
       "title": "Maak uw account aan",
       "done": "Klaar"
     },
-    "company": {
-      "title": "Voeg bedrijfsgegevens en documenten toe",
-      "verified": "Geverifieerd",
-      "waiting": "Wordt beoordeeld. We mailen je zodra het klaar is.",
-      "fix": "Heeft wijzigingen nodig voordat kandidaten je vacatures zien.",
-      "action": "Gegevens bekijken"
-    },
     "job": {
       "title": "Plaats uw eerste vacature",
       "done": "Klaar",
@@ -70,9 +63,7 @@
     },
     "is": {
       "done": "(klaar)",
-      "waiting": "(in beoordeling)",
-      "todo": "(te doen)",
-      "fix": "(wijzigingen nodig)"
+      "todo": "(te doen)"
     }
   },
   "lead": "Je werving in één oogopslag."

@@ -55,13 +55,6 @@
       "title": "Konto erstellen",
       "done": "Erledigt"
     },
-    "company": {
-      "title": "Unternehmensdaten und Dokumente hinzufügen",
-      "verified": "Verifiziert",
-      "waiting": "Wird geprüft. Wir schreiben Ihnen, sobald es fertig ist.",
-      "fix": "Braucht Änderungen, bevor Kandidaten Ihre Stellen sehen.",
-      "action": "Angaben prüfen"
-    },
     "job": {
       "title": "Erste Stelle veröffentlichen",
       "done": "Erledigt",
@@ -70,9 +63,7 @@
     },
     "is": {
       "done": "(erledigt)",
-      "waiting": "(in Prüfung)",
-      "todo": "(offen)",
-      "fix": "(braucht Änderungen)"
+      "todo": "(offen)"
     }
   },
   "lead": "Ihr Recruiting auf einen Blick."

@@ -57,13 +57,6 @@
       "title": "Crea il tuo account",
       "done": "Fatto"
     },
-    "company": {
-      "title": "Aggiungi dati e documenti aziendali",
-      "verified": "Verificata",
-      "waiting": "In revisione. Ti scriveremo quando è pronta.",
-      "fix": "Servono modifiche prima che i candidati vedano le tue offerte.",
-      "action": "Rivedi i dati"
-    },
     "job": {
       "title": "Pubblica la tua prima offerta",
       "done": "Fatto",
@@ -72,9 +65,7 @@
     },
     "is": {
       "done": "(fatto)",
-      "waiting": "(in revisione)",
-      "todo": "(da fare)",
-      "fix": "(servono modifiche)"
+      "todo": "(da fare)"
     }
   },
   "lead": "Le tue assunzioni in breve."

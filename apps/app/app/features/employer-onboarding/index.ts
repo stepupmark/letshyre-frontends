@@ -5,4 +5,3 @@ export type {
   StepId as OnboardingStep,
   Values as OnboardingValues,
 } from "./schemas/onboarding-form.schema"
-export { kycStatusQuery } from "./queries/kyc-status.queries"

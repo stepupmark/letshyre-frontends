@@ -1,7 +1,5 @@
 import { LOW_CREDITS } from "@/lib/credits"
 
-export type Review = "pending" | "verified" | "rejected"
-
 export type Attention = "creditsOut" | "creditsLow" | "noOpenJobs" | "noJobs"
 
 export function attentionOf({
@@ -20,32 +18,17 @@ export function attentionOf({
   return items
 }
 
-type StepKey = "account" | "company" | "job"
-type StepState = "done" | "waiting" | "todo" | "fix"
+type StepKey = "account" | "job"
+type StepState = "done" | "todo"
 
 export interface Step {
   key: StepKey
   state: StepState
 }
 
-export function setupSteps({
-  hasJobs,
-  review,
-}: {
-  hasJobs: boolean
-  review: Review | undefined
-}): Step[] {
+export function setupSteps({ hasJobs }: { hasJobs: boolean }): Step[] {
   return [
     { key: "account", state: "done" },
-    {
-      key: "company",
-      state:
-        review === "verified"
-          ? "done"
-          : review === "rejected"
-            ? "fix"
-            : "waiting",
-    },
     { key: "job", state: hasJobs ? "done" : "todo" },
   ]
 }

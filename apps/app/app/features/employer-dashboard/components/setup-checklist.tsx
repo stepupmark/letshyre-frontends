@@ -1,7 +1,7 @@
 import { useSession } from "@workspace/auth/react"
 import { useTranslation } from "@workspace/i18n/react"
 import { Button } from "@workspace/ui/components/button"
-import { Check, CircleAlert, CircleDashed, Hourglass } from "lucide-react"
+import { Check, CircleDashed } from "lucide-react"
 import * as m from "motion/react-m"
 import { useId, useState } from "react"
 import { href } from "react-router"
@@ -10,7 +10,7 @@ import { AppLink } from "@/components/app-link"
 import { buttonLink } from "@/lib/button-link"
 import { duration, ease } from "@/lib/motion"
 
-import { setupSteps, type Review, type Step } from "../lib/employer-dashboard"
+import { setupSteps, type Step } from "../lib/employer-dashboard"
 import { Meter } from "./meter"
 
 // per account, so someone else signing in on this browser still sees theirs
@@ -24,18 +24,7 @@ const read = (key: string) => {
   }
 }
 
-const ACTION: Partial<Record<Step["key"], string>> = {
-  company: href("/employer/company"),
-  job: href("/employer/jobs/new"),
-}
-
-export function SetupChecklist({
-  hasJobs,
-  review,
-}: {
-  hasJobs: boolean
-  review: Review | undefined
-}) {
+export function SetupChecklist({ hasJobs }: { hasJobs: boolean }) {
   const { t } = useTranslation("dashboard")
   const session = useSession()
   const id = useId()
@@ -50,21 +39,12 @@ export function SetupChecklist({
     switch (step.key) {
       case "account":
         return t("setup.account.done")
-      case "company":
-        return step.state === "done"
-          ? t("setup.company.verified")
-          : step.state === "fix"
-            ? t("setup.company.fix")
-            : t("setup.company.waiting")
       case "job":
         return step.state === "done" ? t("setup.job.done") : t("setup.job.todo")
     }
   }
-  const steps = setupSteps({ hasJobs, review })
+  const steps = setupSteps({ hasJobs })
   const done = steps.filter((step) => step.state === "done").length
-  const next = steps.find(
-    (step) => step.state === "todo" || step.state === "fix"
-  )
   if (hidden || done === steps.length) return null
 
   return (
@@ -119,17 +99,15 @@ export function SetupChecklist({
                 {detail(step)}
               </p>
             </div>
-            {step === next && ACTION[step.key] && (
+            {step.key === "job" && step.state === "todo" && (
               <AppLink
-                to={ACTION[step.key] ?? ""}
+                to={href("/employer/jobs/new")}
                 className={buttonLink({
                   size: "sm",
                   className: "shrink-0 max-sm:ms-7",
                 })}
               >
-                {step.key === "company"
-                  ? t("setup.company.action")
-                  : t("setup.job.action")}
+                {t("setup.job.action")}
               </AppLink>
             )}
           </li>
@@ -152,17 +130,10 @@ function StepIcon({ state }: { state: Step["state"] }) {
         <Check className="size-3" strokeWidth={3} />
       </m.span>
     )
-  const Icon =
-    state === "waiting"
-      ? Hourglass
-      : state === "fix"
-        ? CircleAlert
-        : CircleDashed
   return (
-    <Icon
+    <CircleDashed
       aria-hidden="true"
-      data-state={state}
-      className="mt-0.5 size-4 shrink-0 text-muted-foreground data-[state=fix]:text-destructive data-[state=waiting]:text-warning"
+      className="mt-0.5 size-4 shrink-0 text-muted-foreground"
     />
   )
 }

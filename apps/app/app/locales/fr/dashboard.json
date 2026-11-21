@@ -57,13 +57,6 @@
       "title": "Créer votre compte",
       "done": "Fait"
     },
-    "company": {
-      "title": "Ajouter les informations et documents de l'entreprise",
-      "verified": "Vérifiée",
-      "waiting": "En cours de vérification. Nous vous écrirons une fois terminé.",
-      "fix": "À corriger avant que les candidats voient vos offres.",
-      "action": "Revoir les infos"
-    },
     "job": {
       "title": "Publiez votre première offre",
       "done": "Fait",
@@ -72,9 +65,7 @@
     },
     "is": {
       "done": "(fait)",
-      "waiting": "(en vérification)",
-      "todo": "(à faire)",
-      "fix": "(à corriger)"
+      "todo": "(à faire)"
     }
   },
   "lead": "Votre recrutement en un coup d'œil."

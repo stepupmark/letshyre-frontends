@@ -57,13 +57,6 @@
       "title": "Cree su cuenta",
       "done": "Hecho"
     },
-    "company": {
-      "title": "Añada datos y documentos de la empresa",
-      "verified": "Verificada",
-      "waiting": "En revisión. Te escribiremos cuando esté lista.",
-      "fix": "Necesita cambios antes de que los candidatos vean tus empleos.",
-      "action": "Revisar datos"
-    },
     "job": {
       "title": "Publique su primera oferta",
       "done": "Hecho",
@@ -72,9 +65,7 @@
     },
     "is": {
       "done": "(hecho)",
-      "waiting": "(en revisión)",
-      "todo": "(pendiente)",
-      "fix": "(necesita cambios)"
+      "todo": "(pendiente)"
     }
   },
   "lead": "Tu contratación de un vistazo."

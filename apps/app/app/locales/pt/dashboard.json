@@ -57,13 +57,6 @@
       "title": "Crie sua conta",
       "done": "Feito"
     },
-    "company": {
-      "title": "Adicione dados e documentos da empresa",
-      "verified": "Verificada",
-      "waiting": "Em análise. Avisaremos por e-mail quando terminar.",
-      "fix": "Precisa de ajustes antes que candidatos vejam suas vagas.",
-      "action": "Revisar dados"
-    },
     "job": {
       "title": "Publique sua primeira vaga",
       "done": "Feito",
@@ -72,9 +65,7 @@
     },
     "is": {
       "done": "(feito)",
-      "waiting": "(em análise)",
-      "todo": "(a fazer)",
-      "fix": "(precisa de ajustes)"
+      "todo": "(a fazer)"
     }
   },
   "lead": "Suas contratações em resumo."

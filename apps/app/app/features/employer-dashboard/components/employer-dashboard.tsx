@@ -6,7 +6,7 @@ import { LoadError, RefreshNote } from "@/components/query-state"
 import { useDelayed } from "@/hooks/use-delayed"
 import { creditsQuery } from "@/lib/credits"
 
-import { attentionOf, type Review } from "../lib/employer-dashboard"
+import { attentionOf } from "../lib/employer-dashboard"
 import { cardsQuery } from "../queries/employer-dashboard.queries"
 import { AttentionList } from "./attention-list"
 import { CreditsCard } from "./credits-card"
@@ -14,13 +14,7 @@ import { SummarySkeleton } from "./dashboard-skeleton"
 import { HiringSummary } from "./hiring-summary"
 import { SetupChecklist } from "./setup-checklist"
 
-export function EmployerDashboard({
-  review,
-  recent,
-}: {
-  review: Review | undefined
-  recent?: ReactNode
-}) {
+export function EmployerDashboard({ recent }: { recent?: ReactNode }) {
   const { t } = useTranslation("dashboard")
   const cards = useQuery(cardsQuery())
   const credits = useQuery(creditsQuery())
@@ -45,9 +39,7 @@ export function EmployerDashboard({
             retrying={cards.isFetching}
           />
         )}
-        {data && (
-          <SetupChecklist hasJobs={openJobs + closedJobs > 0} review={review} />
-        )}
+        {data && <SetupChecklist hasJobs={openJobs + closedJobs > 0} />}
         <AttentionList
           items={attention}
           credits={credits.data?.available_credits}

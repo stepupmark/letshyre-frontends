@@ -26,19 +26,10 @@ describe("attentionOf", () => {
 })
 
 describe("setupSteps", () => {
-  const state = (review: "pending" | "verified" | "rejected" | undefined) =>
-    setupSteps({ hasJobs: true, review }).find((step) => step.key === "company")
-      ?.state
-
-  it("follows the company review instead of assuming it's done", () => {
-    expect(state("verified")).toBe("done")
-    expect(state("pending")).toBe("waiting")
-    expect(state("rejected")).toBe("fix")
-    expect(state(undefined)).toBe("waiting")
-  })
-
   it("marks jobs from what exists", () => {
-    const steps = setupSteps({ hasJobs: true, review: "verified" })
-    expect(steps.map((step) => step.state)).toEqual(["done", "done", "done"])
+    const states = (hasJobs: boolean) =>
+      setupSteps({ hasJobs }).map((step) => step.state)
+    expect(states(true)).toEqual(["done", "done"])
+    expect(states(false)).toEqual(["done", "todo"])
   })
 })

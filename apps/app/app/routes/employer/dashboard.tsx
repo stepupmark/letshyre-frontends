@@ -1,5 +1,4 @@
 import { useTranslation } from "@workspace/i18n/react"
-import { useQuery } from "@tanstack/react-query"
 import { Plus } from "lucide-react"
 import { href } from "react-router"
 
@@ -7,7 +6,6 @@ import { AppLink } from "@/components/app-link"
 import { PageHeader } from "@/components/page-header"
 import { EmployerDashboard } from "@/features/employer-dashboard"
 import { RecentJobs } from "@/features/employer-jobs"
-import { kycStatusQuery } from "@/features/employer-onboarding"
 import { namespaces } from "@/lib/i18n"
 import { buttonLink } from "@/lib/button-link"
 
@@ -17,7 +15,6 @@ export const clientMiddleware = [namespaces(["dashboard", "jobs"])]
 
 export default function EmployerDashboardPage() {
   const { t } = useTranslation(["dashboard", "common"])
-  const review = useQuery(kycStatusQuery())
 
   return (
     <div className="flex flex-col gap-8">
@@ -32,7 +29,7 @@ export default function EmployerDashboardPage() {
           </AppLink>
         }
       />
-      <EmployerDashboard review={review.data} recent={<RecentJobs />} />
+      <EmployerDashboard recent={<RecentJobs />} />
     </div>
   )
 }

@@ -55,13 +55,6 @@
       "title": "Create your account",
       "done": "Done"
     },
-    "company": {
-      "title": "Add company details and documents",
-      "verified": "Verified",
-      "waiting": "Under review. We'll email you when it's checked.",
-      "fix": "Needs changes before candidates can see your jobs.",
-      "action": "Review details"
-    },
     "job": {
       "title": "Post your first job",
       "done": "Done",
@@ -70,9 +63,7 @@
     },
     "is": {
       "done": "(done)",
-      "waiting": "(in review)",
-      "todo": "(to do)",
-      "fix": "(needs changes)"
+      "todo": "(to do)"
     }
   },
   "lead": "Your hiring at a glance."

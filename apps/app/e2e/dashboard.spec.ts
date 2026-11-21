@@ -1,4 +1,4 @@
-import { axe, expect, fixture, reply, test } from "./fixtures"
+import { axe, expect, reply, test } from "./fixtures"
 
 test("a settled employer sees what needs them, their numbers and credits", async ({
   page,
@@ -40,7 +40,7 @@ test("a new employer gets a setup checklist they can hide", async ({
   await signInAs("employer")
   await page.goto("/employer/dashboard")
 
-  await expect(page.getByText("2 of 3 done")).toBeVisible()
+  await expect(page.getByText("1 of 2 done")).toBeVisible()
   await expect(page.getByText("Credits are running low")).toBeVisible()
   const attention = page.getByRole("region", { name: "Needs your attention" })
   await expect(
@@ -52,29 +52,6 @@ test("a new employer gets a setup checklist they can hide", async ({
   await page.reload()
   await expect(page.getByText("Credits are running low")).toBeVisible()
   await expect(page.getByText("Finish setting up")).toBeHidden()
-})
-
-test("the checklist shows a company still under review, not done", async ({
-  page,
-  api,
-  signInAs,
-}) => {
-  const profile = fixture("user.v1.employer_profile.json")
-  const data = profile.data as { kyc: object }
-  await api({
-    "GET /user/v1/employer_profile/": {
-      ...profile,
-      data: { ...data, kyc: { ...data.kyc, kyc_status: "Pending" } },
-    },
-  })
-  await signInAs("employer")
-  await page.goto("/employer/dashboard")
-
-  await expect(page.getByText("2 of 3 done")).toBeVisible()
-  await expect(
-    page.getByText("Under review. We'll email you when it's checked.")
-  ).toBeVisible()
-  await axe(page)
 })
 
 test("a balance that fails to load keeps Add credits working", async ({
